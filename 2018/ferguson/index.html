@@ -125,7 +125,22 @@ below.</p>
 <h2 id="to-use">To use:</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span></span></code></pre></div>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.sh</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.sh</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># For those who believe in &#39;&quot;intelligent&quot; design&#39; or want to see how easy it is</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># to prove evolution is a proven fact:</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">./id.sh</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># For those who want to see if Eric the monkey can type the word &#39;words&#39; before</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># falling asleep or giving up:</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="ex">./monkey-words.sh</span></span></code></pre></div>
+<p>NOTE: the <a href="try.sh">try.sh</a> script will run the other two
+scripts but if the first one, <a href="id.sh">id.sh</a> is terminated
+early in the try script, the second one, <a
+href="monkey-words.sh">monkey-words.sh</a> will not be run.</p>
+<p>You can reconfigure certain values. These are described by the author
+in more detail in the <a href="#constants">S, M and N Constants</a>
+section. The script above will make use of some of these.</p>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This version has a simpler keyboard (fewer characters). The author
 wrote more about this under the <a href="#keyboards">keyboards</a>
@@ -137,7 +152,27 @@ section.</p>
 <p>Use <code>weasel.alt</code> as you would <code>weasel</code>
 above.</p>
 <h3 id="alternate-try">Alternate try:</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.alt.sh</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.alt.sh</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># For those who believe in &#39;&quot;intelligent&quot; design&#39; or want to see how easy it is</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># to prove evolution is a proven fact:</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">./id.alt.sh</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># For those who want to see if Eric the monkey can type the word &#39;words&#39; before</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># falling asleep or giving up:</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="ex">./monkey-words.alt.sh</span></span></code></pre></div>
+<p>NOTE: the <a href="try.alt.sh">try.alt.sh</a> script will run the
+other two scripts but if the first one, <a
+href="id.alt.sh">id.alt.sh</a> is terminated early in the try script,
+the second one, <a href="monkey-words.alt.sh">monkey-words.alt.sh</a>
+will not be run.</p>
+<p>You can reconfigure certain values. These are described by the author
+in more detail in the <a href="#constants">S, M and N Constants</a>
+section. The script above will make use of some of these.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.alt.sh</span></span></code></pre></div>
+<p>You can reconfigure certain values. These are described by the author
+in more detail in the <a href="#constants">S, M and N Constants</a>
+section. The script above will make use of some of these.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Looking back over the strata of past IOCCC entries, this program
 marks a new mutation on our understanding of sequencing of code. In
@@ -153,7 +188,7 @@ which us Homo sapiens hang from the phylogenetic tree of life.</p>
 code era, while using more Cenozoic minded code migration, read
 rpm.md.</p>
 <p>If you find yourself in an evolutionary dead end, try:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> ./weasel.1</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> ./weasel.1</span></code></pre></div>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <ol start="0" type="1">
 <li>Preface</li>
@@ -182,7 +217,7 @@ people don’t like to read long texts. To resolve this I think the best
 way is referencing the judges’ remarks: if you want a quick rundown of
 the entry try what they suggest and view the man page (it explains all
 the options and describes the program briefly):</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> ./weasel.man</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> ./weasel.man</span></code></pre></div>
 <p>If that isn’t sufficient <strong>I would recommend reading this
 section</strong> <em>(and possibly the next)</em> where I attempt to
 give a brief explanation of the sections to make reading it easier and
@@ -215,10 +250,11 @@ after.</p>
 techniques that might not be used.</p>
 <p><strong><a href="#build">How to build</a>:</strong> Here I describe
 briefly <a href="#constants">the constants that can be redefined</a>
-<code>S</code> and <code>N</code>: the maximum size of the chromosome
-(target string; the maximum length is <code>S - 1</code> but it must be
-&gt;= the default 38) and the number of offspring, respectively. I also
-give <a href="#compiling">example compiler invocations</a>, <a
+<code>S</code>, <code>M</code> and <code>N</code>: the maximum size of
+the chromosome (target string; the maximum length is <code>S - 1</code>
+but it must be &gt;= the default 38), the number of maximum attempts
+before giving up and the number of offspring, respectively. I also give
+<a href="#compiling">example compiler invocations</a>, <a
 href="#portability">portability notes</a>, an <a href="#bugs">more
 portability notes</a> and a <a href="#rpm">note on rpm.md</a>.</p>
 <p>On the subject of <code>S</code> and <code>N</code>: As the judges’
@@ -458,18 +494,18 @@ means you’ll need to quote the string if it has more than one word (that
 is it contains spaces) or anything else interpreted specially by your
 shell e.g. parentheses. For instance if you just want to find
 <code>METHINKS</code> you could do one of:</p>
-<div class="sourceCode" id="cb15"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> METHINKS</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="st">&quot;METHINKS&quot;</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="st">&#39;METHINKS&#39;</span></span></code></pre></div>
-<p>If you wanted <code>YOU ARE A MONKEY</code>:</p>
 <div class="sourceCode" id="cb16"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="st">&quot;YOU ARE A MONKEY&quot;</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="st">&#39;YOU ARE A MONKEY&#39;</span></span></code></pre></div>
-<p>If you do one of:</p>
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> METHINKS</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="st">&quot;METHINKS&quot;</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="st">&#39;METHINKS&#39;</span></span></code></pre></div>
+<p>If you wanted <code>YOU ARE A MONKEY</code>:</p>
 <div class="sourceCode" id="cb17"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="st">&quot;METHINKS IT IS A&quot;</span> <span class="st">&quot;MONKEY&quot;</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> METHINKS IT IS A MONKEY</span></code></pre></div>
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="st">&quot;YOU ARE A MONKEY&quot;</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="st">&#39;YOU ARE A MONKEY&#39;</span></span></code></pre></div>
+<p>If you do one of:</p>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="st">&quot;METHINKS IT IS A&quot;</span> <span class="st">&quot;MONKEY&quot;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> METHINKS IT IS A MONKEY</span></code></pre></div>
 <p><br />
 It will search for <code>MONKEY</code> in both cases; in other words
 it’s the last one. If the string is too long given the value of
@@ -479,14 +515,14 @@ truncated.</p>
 <p>If you actually do want to search for a string starting with a
 <code>-</code> you must disable further parsing of options by using the
 <code>-</code> option itself; for example if you were to do any of:</p>
-<div class="sourceCode" id="cb18"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="at">-q-</span> <span class="at">--</span> <span class="at">-test</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="at">-q-</span> <span class="at">-test</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="at">-q</span> <span class="at">--</span> <span class="at">-test</span></span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="at">-q-</span> <span class="at">--</span> <span class="at">-test</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="at">-q-</span> <span class="at">-test</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="at">-q</span> <span class="at">--</span> <span class="at">-test</span></span></code></pre></div>
 <p>The target string will be: <code>-TEST</code>. This means though that
 here:</p>
-<div class="sourceCode" id="cb19"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="at">-q</span> <span class="at">--</span> <span class="at">-test</span> <span class="at">-r5</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="at">-q</span> <span class="at">--</span> <span class="at">-test</span> <span class="at">-r5</span></span></code></pre></div>
 <p>The string to be searched would actually be <code>-r5</code> and the
 mutation rate will remain the default because after the <code>-</code>
 option is seen it will no longer parse additional options: only target
@@ -497,8 +533,8 @@ three above are equivalent i.e. the following two are equivalent:</p>
     -q --</code></pre>
 <p><br />
 As for the caveat I referenced what does the following do?</p>
-<div class="sourceCode" id="cb21"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="at">-qr</span> 5</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="at">-qr</span> 5</span></code></pre></div>
 <p>In fact it will set quiet output and set the target string to be ‘5’.
 So the mutation rate will be out of range, thus enabling that Easter
 egg, but it will likely come to an answer fairly quickly because it’s
@@ -507,21 +543,21 @@ option; if the program is currently parsing <code>argv[N]</code>, for
 example, and it encounters a <code>--</code> then depending on where the
 other options are in the command line it might still parse the options.
 Thus you have:</p>
-<div class="sourceCode" id="cb22"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./weasel <span class="at">-qr-r5</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quiet</span> output</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="ex">mutation</span> rate out of range</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="ex">target</span> <span class="st">&#39;METHINKS IT IS LIKE A WEASEL&#39;</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="ex">mutation</span> rate 5</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Generation</span>  440 Offspring 20: METHINKS IT IS LIKE A WEASEL</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./weasel <span class="at">-qr-r5</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quiet</span> output</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="ex">mutation</span> rate out of range</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="ex">target</span> <span class="st">&#39;METHINKS IT IS LIKE A WEASEL&#39;</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="ex">mutation</span> rate 5</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Generation</span>  440 Offspring 20: METHINKS IT IS LIKE A WEASEL</span></code></pre></div>
 <p>Similarly this would set quiet output, then an invalid mutation rate
 and then a mutation rate of 5:</p>
-<div class="sourceCode" id="cb23"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="at">--qrr5</span></span></code></pre></div>
-<p>If you were instead to do one of (for example):</p>
 <div class="sourceCode" id="cb24"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="at">-q</span> <span class="at">--</span> <span class="at">-r</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="at">-q</span> <span class="at">-q-</span> <span class="at">-r</span></span></code></pre></div>
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="at">--qrr5</span></span></code></pre></div>
+<p>If you were instead to do one of (for example):</p>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="at">-q</span> <span class="at">--</span> <span class="at">-r</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./weasel</span> <span class="at">-q</span> <span class="at">-q-</span> <span class="at">-r</span></span></code></pre></div>
 <p>Then it <em>would</em> set quiet output then see the <code>--</code>
 (the <code>-</code> option itself) and then the target string would
 <em>literally</em> be set to <code>-r</code> because it no longer cares
@@ -555,16 +591,16 @@ If yes how do we know if monkey mode was specially requested? There are
 at least two ways to go about it: I took the monkey safe (‘fool safe’)
 method; *if you explicitly request monkey mode you cannot disable it in
 the same invocation of <code>weasel</code>!</p>
-<div class="sourceCode" id="cb25"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./weasel <span class="at">-qr101r5r101r1r</span> test</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quiet</span> output</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="ex">mutation</span> rate out of range</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="ex">mutation</span> rate out of range</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="ex">mutation</span> rate out of range</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="ex">target</span> <span class="st">&#39;test&#39;</span></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="ex">mutation</span> rate 0</span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="ex">monkey</span> at typewriter</span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="ex">Generation</span> 16844        Offspring 22: TEST</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./weasel <span class="at">-qr101r5r101r1r</span> test</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quiet</span> output</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="ex">mutation</span> rate out of range</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="ex">mutation</span> rate out of range</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="ex">mutation</span> rate out of range</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="ex">target</span> <span class="st">&#39;test&#39;</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="ex">mutation</span> rate 0</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="ex">monkey</span> at typewriter</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="ex">Generation</span> 16844        Offspring 22: TEST</span></code></pre></div>
 <p>So in this case I joined the options in the following order:</p>
 <ol type="1">
 <li><p><code>-q</code></p>
@@ -601,27 +637,27 @@ for <code>TEST</code>).</p></li>
 <p>Given that it was a short string it did find the answer relatively
 quickly, even in monkey mode.</p>
 <p>Another example:</p>
-<div class="sourceCode" id="cb26"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./weasel <span class="at">-q</span> <span class="at">-r101</span> test <span class="at">-r5</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quiet</span> output</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="ex">mutation</span> rate out of range</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="ex">target</span> <span class="st">&#39;test&#39;</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="ex">mutation</span> rate 5</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Generation</span>  109 Offspring 13: TEST</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./weasel <span class="at">-q</span> <span class="at">-r101</span> test <span class="at">-r5</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quiet</span> output</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="ex">mutation</span> rate out of range</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="ex">target</span> <span class="st">&#39;test&#39;</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="ex">mutation</span> rate 5</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Generation</span>  109 Offspring 13: TEST</span></code></pre></div>
 <p>In this case I also enabled quiet mode but I didn’t join the options;
 the <code>-r101</code> reports that it’s out of range and sets monkey
 mode. I then specify the target string and then set a valid mutation
 rate. This disabled monkey mode which means that it’ll use the genetic
 algorithm.</p>
 <p>One more example of monkey mode:</p>
-<div class="sourceCode" id="cb27"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./weasel <span class="at">-q</span> <span class="at">-mr101</span> test <span class="at">-r5</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quiet</span> output</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="ex">mutation</span> rate out of range</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="ex">target</span> <span class="st">&#39;test&#39;</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="ex">mutation</span> rate 5</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="ex">monkey</span> at typewriter</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="ex">Generation</span> 465298       Offspring 10: TEST</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./weasel <span class="at">-q</span> <span class="at">-mr101</span> test <span class="at">-r5</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quiet</span> output</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="ex">mutation</span> rate out of range</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="ex">target</span> <span class="st">&#39;test&#39;</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="ex">mutation</span> rate 5</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="ex">monkey</span> at typewriter</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="ex">Generation</span> 465298       Offspring 10: TEST</span></code></pre></div>
 <p>Here I also requested quiet output and then <em>explicitly requested
 that Eric the monkey types.</em> After this I set the mutation rate to
 be 101 which would have set monkey mode (<em>in this case only
@@ -715,13 +751,13 @@ read from the file and pass each string to the program itself</em>. I’ve
 included a script <code>test.sh</code> and a file of sample input
 <code>test-strings.txt</code> that you can play with.</p>
 <p>Try:</p>
-<div class="sourceCode" id="cb32"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> test</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> test</span></code></pre></div>
 <p>This will essentially make sure the program is compiled and then
 do:</p>
-<div class="sourceCode" id="cb33"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x test.sh</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./test.sh</span></span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x test.sh</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./test.sh</span></span></code></pre></div>
 <p>The script will first try compiling the program (if necessary) and if
 it fails for any reason it will exit; else it will read each line in the
 file <code>test-strings.txt</code> (if the file doesn’t exist or can’t
@@ -732,8 +768,8 @@ until all the strings have been read and processed).</p>
 <p>You can pass additional options directly to the script but remember
 that it stops when there are no more strings in the file - so if you
 try:</p>
-<div class="sourceCode" id="cb34"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./test.sh</span> <span class="at">-q</span> test</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./test.sh</span> <span class="at">-q</span> test</span></code></pre></div>
 <p>The final string <code>test</code> won’t be searched for; it will
 however run the program in all invocations with quiet output enabled.
 The following are some notes about how the shell and the program
@@ -762,12 +798,12 @@ keyboard the program prints an error message and then exits (returning
 1). But since the keyboard doesn’t have <code>'\n'</code> if you were to
 type a <code>'</code> and send a <code>'\n'</code> before the closing
 <code>'</code> you might see something like:</p>
-<div class="sourceCode" id="cb35"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./weasel <span class="st">&#39;!!</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="st">&gt; &#39;</span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;</span></span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;</span> not in keyboard <span class="st">&quot; !&quot;</span>#$<span class="op">&lt;</span>%:<span class="op">&gt;&amp;</span><span class="st">&#39;()*+,-./0123456789;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`{|}~&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./weasel <span class="st">&#39;!!</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="st">&gt; &#39;</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;</span> not in keyboard <span class="st">&quot; !&quot;</span>#$<span class="op">&lt;</span>%:<span class="op">&gt;&amp;</span><span class="st">&#39;()*+,-./0123456789;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`{|}~&quot;</span></span></code></pre></div>
 <p>I showed that <code>'</code> is in the keyboard already; however the
 user sent a <code>\n</code> (hence the secondary prompt
 <code>&gt;</code> on line two) before literally typing the closing
@@ -793,9 +829,9 @@ read.</p>
 (like <code>S</code>) as well as some C keywords.</p></li>
 <li><p>The way <code>main()</code> is declared is:</p></li>
 </ol>
-<div class="sourceCode" id="cb36"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Special C main() handler (encapsulation): */</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#define r</span><span class="op">(</span><span class="pp">main</span><span class="op">)</span><span class="pp"> main</span></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>r<span class="op">(</span>k main<span class="op">(</span>k a<span class="op">,</span> E <span class="op">**</span>V<span class="op">))</span> <span class="op">{</span></span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Special C main() handler (encapsulation): */</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#define r</span><span class="op">(</span><span class="pp">main</span><span class="op">)</span><span class="pp"> main</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>r<span class="op">(</span>k main<span class="op">(</span>k a<span class="op">,</span> E <span class="op">**</span>V<span class="op">))</span> <span class="op">{</span></span></code></pre></div>
 <pre><code>It appears to be recursively defined but is it? And is it truly</code></pre>
 <p>encapsulation? And is it executing code of any kind? It mightn’t seem
 like it isn’t encapsulation and also isn’t executing code but assuming
@@ -852,18 +888,22 @@ wrong. Yes some of it might look like a blob but this is clearly false;
 or misleading it should be made clear in the comments! :)</em></p>
 <h2 id="how-to-build"><strong>5. <a name="build">How to
 build</a></strong></h2>
-<h3 id="s-and-n-constants"><a name="constants">S and N
+<h3 id="s-m-and-n-constants"><a name="constants">S, M and N
 Constants</a></h3>
 <p>Skip to <a href="#compiling">Compilation</a>.</p>
-<p>These two <code>#define</code>d constants can be redefined at
-compilation to modify the behaviour of the program in a number of ways
-(see the <strong><a href="#compiling">Compilation</a></strong>
+<p>There are three <code>#define</code>d constants that can be redefined
+at compilation to modify the behaviour of the program in a number of
+ways (see the <strong><a href="#compiling">Compilation</a></strong>
 subsection for example invocations). Both are capped to be no greater
-than <code>SIZE_MAX - 1</code>. This is handled by the C
-preprocessor.</p>
-<p><code>S</code></p>
-<p>This determines the maximum size of the target string but it
-<strong>must be at least 38</strong>; this is because
+than <code>SIZE_MAX - 1</code> or whatever <code>M</code> (which can’t
+be lower than 100) is set to (maximum attempts before giving up). This
+is handled by the C preprocessor.</p>
+<ul>
+<li><code>S</code></li>
+</ul>
+<p>The macro <code>S</code> (or <code>MAX_SIZE</code> in the Makefile)
+is the maximum size of the target string but it <strong>must be at least
+38</strong> (which is protected against in the code); this is because
 <code>38 &gt;= 29</code> and because
 <code>strlen("METHINKS IT IS LIKE A WEASEL") == 28</code> (which is the
 default target string - it would hardly be an implementation of the
@@ -874,33 +914,58 @@ works</a></strong> and specifically an Easter egg I referenced there
 (it’s <em>not the only Easter egg</em> but it’s the only Easter egg I
 won’t spoil; yes this ironically and amusingly means I’ve left a rotten
 egg somewhere!).</p>
-<p><code>N</code></p>
-<p>This is the number of offspring per generation. Anything less than 4
-will be set to 3 (that’s not a typo!) and this is part of an Easter
-egg.</p>
-<p>Be aware that depending on the size of <code>S</code> and
-<code>N</code> (individually and together) the program will use varying
-amounts of memory and the larger the values the more memory it’ll
-require.</p>
+<p>The Makefile simplifies how to reconfigure this value with the
+variable <code>MAX_SIZE</code>:</p>
+<div class="sourceCode" id="cb39"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber MAX_SIZE=55 all</span></code></pre></div>
+<p>The next macro that can be reconfigured, <code>M</code> (or
+<code>MAX_ATTEMPTS</code> in the Makefile), is the maximum attempts
+before giving up. This was added as another feature in 2024 but it was
+not made an alt version because there already is an alt version. This
+macro allows for seeing what happens when reaching the maximum number
+attempts without waiting for a very long time.</p>
+<p>The Makefile simplifies how to reconfigure this value with the
+variable <code>MAX_ATTEMPTS</code>:</p>
+<div class="sourceCode" id="cb40"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber MAX_ATTEMPTS=100 all</span></code></pre></div>
+<p>The final macro, <code>N</code> (or <code>OFFSPRING</code> in the
+Makefile), is the number of offspring per generation.</p>
+<p>Anything less than 4 will be set to 3 (that’s not a typo!) and this
+is part of an Easter egg.</p>
+<p>Be aware that depending on the size of <code>S</code>
+(<code>MAX_SIZE</code>) and <code>N</code> (<code>OFFSPRING</code>) both
+individually and together the program will use varying amounts of memory
+and the larger the values the more memory it’ll require.</p>
+<p>The Makefile simplifies how to reconfigure this value with the
+variable <code>OFFSPRING</code>:</p>
+<div class="sourceCode" id="cb41"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber OFFSPRING=55 all</span></code></pre></div>
 <h3 id="compilation"><a name="compiling">Compilation</a></h3>
 <p>Skip to <a href="#portability">Portability</a>.</p>
 <p>The following options <strong>must always be passed to the
 compiler:</strong></p>
-<div class="sourceCode" id="cb38"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-DQ=</span><span class="st">&#39;typedef&#39;</span> <span class="at">-D</span><span class="st">&#39;g(o)&#39;</span><span class="op">=</span><span class="st">&#39;goto o;&#39;</span> <span class="at">-D</span><span class="st">&#39;w(x)&#39;</span><span class="op">=</span><span class="st">&quot;x:&quot;</span> <span class="at">-D</span><span class="st">&#39;H(main)&#39;</span><span class="op">=</span><span class="st">&#39;r(main)&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-DQ=</span><span class="st">&#39;typedef&#39;</span> <span class="at">-D</span><span class="st">&#39;g(o)&#39;</span><span class="op">=</span><span class="st">&#39;goto o;&#39;</span> <span class="at">-D</span><span class="st">&#39;w(x)&#39;</span><span class="op">=</span><span class="st">&quot;x:&quot;</span> <span class="at">-D</span><span class="st">&#39;H(main)&#39;</span><span class="op">=</span><span class="st">&#39;r(main)&#39;</span></span></code></pre></div>
+<p>which running <code>make</code> will always do.</p>
 <p>If you want to increase the number of offspring to <code>50</code>
-and the size of the chromosome to <code>75</code> you would pass to the
-compiler:</p>
-<div class="sourceCode" id="cb39"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-DQ=</span><span class="st">&#39;typedef&#39;</span> <span class="at">-D</span><span class="st">&#39;g(o)&#39;</span><span class="op">=</span><span class="st">&#39;goto o;&#39;</span> <span class="at">-D</span><span class="st">&#39;w(x)&#39;</span><span class="op">=</span><span class="st">&quot;x:&quot;</span> <span class="at">-D</span><span class="st">&#39;H(main)&#39;</span><span class="op">=</span><span class="st">&#39;r(main)&#39;</span> <span class="at">-DN</span><span class="op">=</span>50 <span class="at">-DS</span><span class="op">=</span>75</span></code></pre></div>
+(<code>N</code>) and the size of the chromosome to <code>75</code>
+(<code>S</code>) you would do:</p>
+<div class="sourceCode" id="cb43"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber OFFSPRING=50 MAX_SIZE=75 everything</span></code></pre></div>
 <p>If you wanted to change <code>N</code> to <code>3</code>:</p>
-<div class="sourceCode" id="cb40"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-DQ=</span><span class="st">&#39;typedef&#39;</span> <span class="at">-D</span><span class="st">&#39;g(o)&#39;</span><span class="op">=</span><span class="st">&#39;goto o;&#39;</span> <span class="at">-D</span><span class="st">&#39;w(x)&#39;</span><span class="op">=</span><span class="st">&quot;x:&quot;</span> <span class="at">-D</span><span class="st">&#39;H(main)&#39;</span><span class="op">=</span><span class="st">&#39;r(main)&#39;</span> <span class="at">-DN</span><span class="op">=</span>3</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber OFFSPRING=3 everything</span></code></pre></div>
 <p>Remember that it cannot be less than <code>3</code>; <em>more
 correctly if it’s less than 4 it’s redefined to 3</em> so you could have
-passed in <code>-DN=2</code> and have the same result. Remember too that
-<code>S</code> cannot be less than <code>38</code>. Both <code>S</code>
-and <code>N</code> are capped at <code>SIZE_MAX - 1</code>.</p>
+passed in <code>-DN=2</code> (or <code>MAX_SIZE=2</code>) and have the
+same result. Remember too that <code>S</code> (<code>MAX_SIZE</code>)
+cannot be less than <code>38</code>. Both <code>S</code> and
+<code>N</code> are capped at <code>SIZE_MAX - 1</code> or whatever
+<code>M</code> (<code>MAX_ATTEMPTS</code>) is set to.</p>
+<p>If you wanted to change the maximum number attempts to 100 you could
+do:</p>
+<div class="sourceCode" id="cb45"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber MAX_ATTEMPTS=100 everything</span></code></pre></div>
 <h3 id="portability"><a name="portability">Portability</a></h3>
 <p>Skip to <a href="#bugs">An aside on bugs</a>.</p>
 <p>This entry requires at least C99 even if you translate digraphs. The
@@ -911,48 +976,48 @@ some data type sizes will be smaller and this I believe includes
 issues (if any) either but I have no way to test this. Originally I
 tested it on the below systems.</p>
 <h4 id="fedora-26">Fedora 26:</h4>
-<div class="sourceCode" id="cb41"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> clang <span class="at">--version</span><span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">clang</span> version 4.0.1 <span class="er">(</span><span class="ex">tags/RELEASE_401/final</span><span class="kw">)</span></span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gcc <span class="at">--version</span><span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span></span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="er">(</span><span class="ex">GCC</span><span class="kw">)</span> <span class="ex">7.3.1</span> 20180130 <span class="er">(</span><span class="ex">Red</span> Hat 7.3.1-2<span class="kw">)</span></span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> /lib64/libc-2.25.so <span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span><span class="kw">|</span><span class="fu">cut</span> <span class="at">-d</span><span class="st">&#39;,&#39;</span> <span class="at">-f1-1</span></span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="ex">GNU</span> C Library <span class="er">(</span><span class="ex">GNU</span> libc<span class="kw">)</span> <span class="ex">stable</span> release version 2.25</span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> lscpu <span class="kw">|</span><span class="fu">grep</span> Endian</span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Byte</span> Order:          Little Endian</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> clang <span class="at">--version</span><span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">clang</span> version 4.0.1 <span class="er">(</span><span class="ex">tags/RELEASE_401/final</span><span class="kw">)</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gcc <span class="at">--version</span><span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="er">(</span><span class="ex">GCC</span><span class="kw">)</span> <span class="ex">7.3.1</span> 20180130 <span class="er">(</span><span class="ex">Red</span> Hat 7.3.1-2<span class="kw">)</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> /lib64/libc-2.25.so <span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span><span class="kw">|</span><span class="fu">cut</span> <span class="at">-d</span><span class="st">&#39;,&#39;</span> <span class="at">-f1-1</span></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="ex">GNU</span> C Library <span class="er">(</span><span class="ex">GNU</span> libc<span class="kw">)</span> <span class="ex">stable</span> release version 2.25</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> lscpu <span class="kw">|</span><span class="fu">grep</span> Endian</span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Byte</span> Order:          Little Endian</span></code></pre></div>
 <h4 id="centos-linux-release-7.4.1708-core">CentOS Linux release
 7.4.1708 (Core)</h4>
-<div class="sourceCode" id="cb42"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> clang <span class="at">--version</span><span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">clang</span> version 3.4.2 <span class="er">(</span><span class="ex">tags/RELEASE_34/dot2-final</span><span class="kw">)</span></span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gcc <span class="at">--version</span><span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span></span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="er">(</span><span class="ex">GCC</span><span class="kw">)</span> <span class="ex">4.8.5</span> 20150623 <span class="er">(</span><span class="ex">Red</span> Hat 4.8.5-16<span class="kw">)</span></span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> /lib64/libc-2.17.so <span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span> <span class="kw">|</span><span class="fu">cut</span> <span class="at">-d,</span> <span class="at">-f1-1</span></span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="ex">GNU</span> C Library <span class="er">(</span><span class="ex">GNU</span> libc<span class="kw">)</span> <span class="ex">stable</span> release version 2.17</span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> lscpu <span class="kw">|</span><span class="fu">grep</span> Endian</span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Byte</span> Order:            Little Endian</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> clang <span class="at">--version</span><span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">clang</span> version 3.4.2 <span class="er">(</span><span class="ex">tags/RELEASE_34/dot2-final</span><span class="kw">)</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gcc <span class="at">--version</span><span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="er">(</span><span class="ex">GCC</span><span class="kw">)</span> <span class="ex">4.8.5</span> 20150623 <span class="er">(</span><span class="ex">Red</span> Hat 4.8.5-16<span class="kw">)</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> /lib64/libc-2.17.so <span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span> <span class="kw">|</span><span class="fu">cut</span> <span class="at">-d,</span> <span class="at">-f1-1</span></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="ex">GNU</span> C Library <span class="er">(</span><span class="ex">GNU</span> libc<span class="kw">)</span> <span class="ex">stable</span> release version 2.17</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> lscpu <span class="kw">|</span><span class="fu">grep</span> Endian</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Byte</span> Order:            Little Endian</span></code></pre></div>
 <h4 id="fedora-27">Fedora 27:</h4>
-<div class="sourceCode" id="cb43"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> clang <span class="at">--version</span><span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">clang</span> version 5.0.1 <span class="er">(</span><span class="ex">tags/RELEASE_501/final</span><span class="kw">)</span></span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gcc <span class="at">--version</span><span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="er">(</span><span class="ex">GCC</span><span class="kw">)</span> <span class="ex">7.3.1</span> 20180303 <span class="er">(</span><span class="ex">Red</span> Hat 7.3.1-5<span class="kw">)</span></span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> /lib64/libc-2.26.so <span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span><span class="kw">|</span><span class="fu">cut</span> <span class="at">-d,</span> <span class="at">-f1-1</span></span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="ex">GNU</span> C Library <span class="er">(</span><span class="ex">GNU</span> libc<span class="kw">)</span> <span class="ex">stable</span> release version 2.26</span>
-<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> lscpu <span class="kw">|</span><span class="fu">grep</span> Endian</span>
-<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Byte</span> Order:          Little Endian</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> clang <span class="at">--version</span><span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">clang</span> version 5.0.1 <span class="er">(</span><span class="ex">tags/RELEASE_501/final</span><span class="kw">)</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gcc <span class="at">--version</span><span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="er">(</span><span class="ex">GCC</span><span class="kw">)</span> <span class="ex">7.3.1</span> 20180303 <span class="er">(</span><span class="ex">Red</span> Hat 7.3.1-5<span class="kw">)</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> /lib64/libc-2.26.so <span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span><span class="kw">|</span><span class="fu">cut</span> <span class="at">-d,</span> <span class="at">-f1-1</span></span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a><span class="ex">GNU</span> C Library <span class="er">(</span><span class="ex">GNU</span> libc<span class="kw">)</span> <span class="ex">stable</span> release version 2.26</span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> lscpu <span class="kw">|</span><span class="fu">grep</span> Endian</span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Byte</span> Order:          Little Endian</span></code></pre></div>
 <h4 id="macos">macOS:</h4>
 <p>System Version: macOS 10.13.4 (17E199) Kernel Version: Darwin
 17.5.0</p>
-<div class="sourceCode" id="cb44"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gcc <span class="at">-v</span></span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Configured</span> with: <span class="at">--prefix</span><span class="op">=</span>/Library/Developer/CommandLineTools/usr <span class="at">--with-gxx-include-dir</span><span class="op">=</span>/usr/include/c++/4.2.1</span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Apple</span> LLVM version 9.1.0 <span class="er">(</span><span class="ex">clang-902.0.39.1</span><span class="kw">)</span></span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Target:</span> x86_64-apple-darwin17.5.0</span>
-<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Thread</span> model: posix</span>
-<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="ex">InstalledDir:</span> /Library/Developer/CommandLineTools/usr/bin</span>
-<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> uname <span class="at">-srmv</span></span>
-<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Darwin</span> 17.5.0 Darwin Kernel Version 17.5.0: Mon Mar  5 22:24:32 PST 2018<span class="kw">;</span> <span class="ex">root:xnu-4570.51.1~1/RELEASE_X86_64</span> x86_64</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gcc <span class="at">-v</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Configured</span> with: <span class="at">--prefix</span><span class="op">=</span>/Library/Developer/CommandLineTools/usr <span class="at">--with-gxx-include-dir</span><span class="op">=</span>/usr/include/c++/4.2.1</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Apple</span> LLVM version 9.1.0 <span class="er">(</span><span class="ex">clang-902.0.39.1</span><span class="kw">)</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Target:</span> x86_64-apple-darwin17.5.0</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Thread</span> model: posix</span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="ex">InstalledDir:</span> /Library/Developer/CommandLineTools/usr/bin</span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> uname <span class="at">-srmv</span></span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Darwin</span> 17.5.0 Darwin Kernel Version 17.5.0: Mon Mar  5 22:24:32 PST 2018<span class="kw">;</span> <span class="ex">root:xnu-4570.51.1~1/RELEASE_X86_64</span> x86_64</span></code></pre></div>
 <h4 id="an-aside"><a name="bugs">An aside</a></h4>
 <p>Skip to <a href="#rpm">Installing</a>.</p>
 <p>Any undocumented bugs are the result of insolent monkeys tampering
@@ -1082,8 +1147,8 @@ we quickly added additional cryptic features and evolved into B, BCPL,
 and finally C. We stopped when we got a clean compile on the following
 syntax:</p>
 </blockquote>
-<div class="sourceCode" id="cb45"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span><span class="op">(;</span>P<span class="op">(</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">),</span>R<span class="op">=;</span>P<span class="op">(</span><span class="st">&quot;|&quot;</span><span class="op">))</span><span class="cf">for</span><span class="op">(</span>e<span class="op">=</span>C<span class="op">;</span>e<span class="op">=</span>P<span class="op">(</span><span class="st">&quot;_&quot;</span><span class="op">+(*</span>u<span class="op">++/</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span><span class="op">)%</span><span class="dv">2</span><span class="op">))</span>P<span class="op">(</span><span class="st">&quot;|&quot;</span><span class="op">+(*</span>u<span class="op">/</span><span class="dv">4</span><span class="op">)%</span><span class="dv">2</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span><span class="op">(;</span>P<span class="op">(</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">),</span>R<span class="op">=;</span>P<span class="op">(</span><span class="st">&quot;|&quot;</span><span class="op">))</span><span class="cf">for</span><span class="op">(</span>e<span class="op">=</span>C<span class="op">;</span>e<span class="op">=</span>P<span class="op">(</span><span class="st">&quot;_&quot;</span><span class="op">+(*</span>u<span class="op">++/</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span><span class="op">)%</span><span class="dv">2</span><span class="op">))</span>P<span class="op">(</span><span class="st">&quot;|&quot;</span><span class="op">+(*</span>u<span class="op">/</span><span class="dv">4</span><span class="op">)%</span><span class="dv">2</span><span class="op">);</span></span></code></pre></div>
 <blockquote>
 <p>“To think that modern programmers would try to use a language that
 allowed such a statement was beyond our comprehension! We actually
@@ -1129,8 +1194,8 @@ since he was part of its creation I don’t think it’s a bad thing;
 <strong>on the contrary it makes all of us C programmers even more
 talented! :)</strong> I do wonder if he tested that bit of C code
 though:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span><span class="op">(;</span>P<span class="op">(</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">),</span>R<span class="op">=;</span>P<span class="op">(</span><span class="st">&quot;|&quot;</span><span class="op">))</span><span class="cf">for</span><span class="op">(</span>e<span class="op">=</span>C<span class="op">;</span>e<span class="op">=</span>P<span class="op">(</span><span class="st">&quot;_&quot;</span><span class="op">+(*</span>u<span class="op">++/</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span><span class="op">)%</span><span class="dv">2</span><span class="op">))</span>P<span class="op">(</span><span class="st">&quot;|&quot;</span><span class="op">+(*</span>u<span class="op">/</span><span class="dv">4</span><span class="op">)%</span><span class="dv">2</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span><span class="op">(;</span>P<span class="op">(</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">),</span>R<span class="op">=;</span>P<span class="op">(</span><span class="st">&quot;|&quot;</span><span class="op">))</span><span class="cf">for</span><span class="op">(</span>e<span class="op">=</span>C<span class="op">;</span>e<span class="op">=</span>P<span class="op">(</span><span class="st">&quot;_&quot;</span><span class="op">+(*</span>u<span class="op">++/</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span><span class="op">)%</span><span class="dv">2</span><span class="op">))</span>P<span class="op">(</span><span class="st">&quot;|&quot;</span><span class="op">+(*</span>u<span class="op">/</span><span class="dv">4</span><span class="op">)%</span><span class="dv">2</span><span class="op">);</span></span></code></pre></div>
 <p><br />
 How is <code>R=;</code> valid? Since I don’t have the context maybe
 there is something I’m missing but either way it’s a funny piece. It
@@ -1232,6 +1297,18 @@ href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/ferguson/pro
 <li><a
 href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/ferguson/FILES">FILES</a>
 - information about various files</li>
+<li><a
+href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/ferguson/id.alt.sh">id.alt.sh</a>
+- how to run</li>
+<li><a
+href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/ferguson/id.sh">id.sh</a>
+- how to run</li>
+<li><a
+href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/ferguson/monkey-words.alt.sh">monkey-words.alt.sh</a>
+- how to run</li>
+<li><a
+href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/ferguson/monkey-words.sh">monkey-words.sh</a>
+- how to run</li>
 <li><a href="rpm.html">rpm.html</a> - about forming the rpm</li>
 <li><a
 href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/ferguson/test.sh">test.sh</a>

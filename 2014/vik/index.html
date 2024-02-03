@@ -127,11 +127,11 @@ href="#alternate-code">Alternate code</a> section below.</p>
 <p>For more detailed information see <a href="/bugs.md#2014-vik">2014
 vik in bugs.md</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prog</span> <span class="op">&gt;</span> foo.c</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> foo <span class="kw">|</span> <span class="ex">./prog</span> <span class="op">&gt;</span> audio_file.raw</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> foo <span class="kw">|</span> <span class="ex">./prog</span> <span class="kw">|</span> <span class="ex">mplayer</span> <span class="at">-demuxer</span> rawaudio <span class="at">-</span></span></code></pre></div>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&#39;Want to hear me beep?&#39;</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="op">&gt;</span> audio_file.raw</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&#39;No. I want chocolate!&#39;</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="kw">|</span> <span class="ex">mplayer</span> <span class="at">-demuxer</span> rawaudio <span class="at">-</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.sh</span></span></code></pre></div>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>The alternate code, <a href="prog.alt.c">prog.alt.c</a>, is based on
 the author’s instructions on how to get it to work with Windows.</p>
@@ -212,6 +212,9 @@ href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/vik/prog.alt
 <li><a
 href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/vik/prog.orig.c">prog.orig.c</a>
 - original source</li>
+<li><a
+href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/vik/try.sh">try.sh</a>
+- how to run</li>
 <li><a href="2014_vik.tar.bz2">2014_vik.tar.bz2</a> - download winning
 source</li>
 </ul>
