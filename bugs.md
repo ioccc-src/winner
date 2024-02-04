@@ -291,6 +291,18 @@ techniques to get them to compile. In some cases this introduced a problem but
 typically if not always that problem exists with compilers that are less strict.
 
 
+## STATUS: main() has only one arg - try and make it have 2 or 3
+
+Because some versions of clang complain about the number of args of `main()` and
+in particular say (when it has four, for instance) that it's only allowed to
+have 0, 2 or 3 args, numerous entries had a second arg added to `main()` (if
+they only had one). This is in case clang adds further restrictions which is not
+impossible especially as it already claims having only one arg is not allowed.
+At this time (04 Feb 2024) there is one entry known (it is possible that not all
+were checked) that has this problem but it's not as simple as the others to fix
+without breaking it.
+
+
 ## STATUS: compiled executable crashes - please help us fix
 
 NOTE: we're still locating entries and working on fixes with this status so we're not yet
@@ -2121,14 +2133,29 @@ There's also no way to escape meta characters.
 ## 2001 westley
 
 
-### STATUS: missing files - please provide them
 ### STATUS: uses gets() - change to fgets() if possible
 ### Source code: [2001/westley/westley.c](2001/westley/westley.c)
 ### Information: [2001/westley/README.md](2001/westley/README.md)
 
 This function uses `gets(3)` but it would be ideal if it used `fgets(3)`. This
-one is rather complicated and will be looked at later but you are welcome to try
+one is rather complicated and will be looked at later (some progress was made by
+Cody but it is less important than other work) but you are welcome to try
 and fix this if you wish.
+
+
+### STATUS: main() has only one arg - try and make it have 2 or 3
+
+This program only has one arg to `main()`. However changing it to have 2 is not
+as simple as it might seem. Doing this breaks things. If memory serves changing
+it to two will, for instance, break the punch card code output. It might be that
+that is for `fgets(3)`, however, but the point remains: in order to test any
+fixes you must determine if the extra files generated (some from `sort(1)`) -
+see the README.md file - generate correct output as well as that the main entry
+does too. You might try running the `try.sh` script and redirect it to a file
+first so that you can compare the output. Make sure to recreate the extra files
+as described by the author if you do fix this. This might be looked at later if
+nobody else takes up the challenge.
+
 
 ### STATUS: missing files - please provide them
 

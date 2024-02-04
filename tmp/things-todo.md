@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Sun 04 Feb 2024 17:11:22 UTC*
+*Last updated: Sun 04 Feb 2024 17:30:08 UTC*
 
 This document is for [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) as
 he (that is I :-) ) wanted a way to keep track of things in a way that did not
@@ -27,9 +27,6 @@ completed.
 - Check the [GitHub issue #3 comment
 1615962832](https://github.com/ioccc-src/temp-test-ioccc/issues/3#issuecomment-1615962832)
 for links about the todo items wrt the [FAQ](/faq.md).
-
-- Check 2001/westley for making `main()` have two args. Easy to make it have two
-args but harder to make it function right.
 
 - Check for video links in README.md files and see if the videos can be
 embedded into the README.md files themselves. An entry that the video file is
