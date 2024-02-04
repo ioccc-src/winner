@@ -56,27 +56,29 @@ read -r -n 1 -p "Press any key to run: rm -vf ioccc.out ioccc.out2: "
 echo 1>&2
 rm -vf ioccc.out ioccc.out2
 
-read -r -n 1 -p "Press any key to test the output a couple times on herrmann2.ioccc: "
-echo "$ ./herrmann2 < herrmann2.ioccc" 1>&2
+read -r -n 1 -p "Press any key to run: ./herrmann2 < herrmann2.ioccc | tee ioccc.out: "
+echo 1>&2
 ./herrmann2 < herrmann2.ioccc | tee ioccc.out
 sleep 2
-echo "$ ./herrmann2 < herrmann2.ioccc" 1>&2
-./herrmann2 < herrmann2.ioccc | tee ioccc.out2
-read -r -n 1 -p "Press any key to run: diff -s ioccc.out ioccc.out2: "
+read -r -n 1 -p "Press any key to run: ./herrmann2 < herrmann2.ioccc | tee ioccc.out2: "
 echo 1>&2
-diff -s ioccc.out ioccc.out2
+./herrmann2 < herrmann2.ioccc | tee ioccc.out2
+read -r -n 1 -p "Press any key to run: diff ioccc.out ioccc.out2 (space = next page, q = quit): "
+echo 1>&2
+diff ioccc.out ioccc.out2 | less -rEXFK
 rm -f ioccc.out ioccc.out2
 echo 1>&2
 
-read -r -n 1 -p "Press any key to test the output a couple times on herrmann2.cup: "
-echo "$ ./herrmann2 < herrmann2.cup" 1>&2
+read -r -n 1 -p "Press any key to run: ./herrmann2 < herrmann2.cup | tee cup.out: "
+echo 1>&2
 ./herrmann2 < herrmann2.cup | tee cup.out
 sleep 2
-echo "$ ./herrmann2 < herrmann2.cup" 1>&2
-./herrmann2 < herrmann2.cup | tee cup.out2
-read -r -n 1 -p "Press any key to run: diff -s cup.out cup.out2: "
+read -r -n 1 -p "Press any key to run: ./herrmann2 < herrmann2.cup | tee cup.out2: "
 echo 1>&2
-diff -s cup.out cup.out2
+./herrmann2 < herrmann2.cup | tee cup.out2
+read -r -n 1 -p "Press any key to run: diff cup.out cup.out2 (space = next page, q = quit): "
+echo 1>&2
+diff cup.out cup.out2 | less -rEXFK
 echo 1>&2
 
 rm -f cup.out cup.out2
