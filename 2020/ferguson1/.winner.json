@@ -98,14 +98,6 @@
 	    "winners_text" : "script to reset - preset colors"
 	},
 	{
-	    "file_path" : "ioccc-and-chocolate.pdf",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "pdf",
-	    "display_via_github" : false,
-	    "winners_text" : "IOCCC publications"
-	},
-	{
 	    "file_path" : "prog.2.c",
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,

@@ -138,6 +138,14 @@
 	    "winners_text" : "run with English data"
 	},
 	{
+	    "file_path" : "fr.alt.sh",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "winners_text" : "how to run alternative code in French"
+	},
+	{
 	    "file_path" : "fr.sh",
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,

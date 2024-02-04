@@ -106,14 +106,6 @@
 	    "winners_text" : "Enigma simulator man page"
 	},
 	{
-	    "file_path" : "ioccc-and-chocolate.pdf",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "pdf",
-	    "display_via_github" : false,
-	    "winners_text" : "IOCCC publications"
-	},
-	{
 	    "file_path" : "key.txt",
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
