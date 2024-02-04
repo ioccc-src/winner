@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Fri 02 Feb 2024 16:39:08 UTC*
+*Last updated: Sun 04 Feb 2024 17:11:22 UTC*
 
 This document is for [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) as
 he (that is I :-) ) wanted a way to keep track of things in a way that did not
@@ -37,6 +37,3 @@ downloaded already is 2006/sykes1. There are others that I need to look at once
 the rest of the entries are done, assuming that it's possible.
 
 - Test and fix as and if necessary 2018/ferguson/weasel.spec.
-
-- Update formatting in 2020/ferguson[12]/chocolate-cake.md specifically with
-bold versus bold and italic in important points.
