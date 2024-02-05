@@ -2511,6 +2511,9 @@ terminal.
 [Cody](#cody) fixed this to compile in systems that require one to explicitly link in
 `libm`.
 
+Cody also added the [try.sh](/2000/briddlebane/try.sh) script for those who are
+feeling a bit too confident, cocky or even happy :-)
+
 
 ## <a name="2000_dhyang"></a>[2000/dhyang](/2000/dhyang/dhyang.c) ([README.md](/2000/dhyang/README.md]))
 
