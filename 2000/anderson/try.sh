@@ -25,17 +25,17 @@ echo 1>&2
 echo 'Hello, world!' | ./anderson
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: ./anderson < anderson.c: "
+read -r -n 1 -p "Press any key to run: ./anderson < anderson.c (space = next page, q = quit): "
 echo 1>&2
-./anderson < anderson.c
-echo 1>&2
-
-read -r -n 1 -p "Press any key to run: ./anderson < README.md: "
-echo 1>&2
-./anderson < README.md
+./anderson < anderson.c | less -rEXFK
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: cat README.md anderson.c | ./anderson: "
+read -r -n 1 -p "Press any key to run: ./anderson < README.md (space = next page, q = quit): "
 echo 1>&2
-cat README.md anderson.c | ./anderson
+./anderson < README.md | less -rEXFK
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: cat README.md anderson.c | ./anderson (space = next page, q = quit): "
+echo 1>&2
+cat README.md anderson.c | ./anderson | less -rEXFK
 echo 1>&2
