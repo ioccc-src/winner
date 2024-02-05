@@ -49,41 +49,41 @@ baking. The FAQ talks about what looks like substitutes but I have no idea what
 that would turn out as; I somehow suspect it wouldn't be good.
 
 Either way **PLEASE STILL PAY ATTENTION TO ALL THE NOTES on the chocolate IN THE RECIPE and
-RECIPE NOTES because they're really important!**
+RECIPE NOTES BECAUSE THEY'RE _EXTREMELY IMPORTANT!_**
 
 
 ## Special notes for the cake
 
 **PAY CLOSE ATTENTION TO THESE:**
 
-*   **USE *MARGARINE*! DO *NOT* USE BUTTER!** Butter does not work well. If you
+*   **USE _MARGARINE_! DO _NOT_ USE BUTTER!** Butter does not work well. If you
     think it will come out better by using butter you're very mistaken; it will
     come out badly! People have come back saying it didn't come out well and
     they are asked if they used butter or margarine. They had used butter
-    because they 'know better' but they were very wrong; they did not know
-    better and the cake was awful because of this.
+    because they 'know better' but they were very wrong and it is why the cake
+    was ruined.
 
 *   Over the years they changed the size of the unsweetened chocolate squares;
-    they used to be one ounce each now they are 1/4 ounce each square so be sure to
-    note the amount is by ounce not squares as listed. See the measurements link
-    if there's any doubt.
+    they used to be one ounce each; now they are 1/4 ounce each square so be sure to
+    remember that **THE AMOUNT IS BY OUNCE _NOT SQUARES_ AS LISTED**. See the
+    measurements link if there's any doubt.
 
 *   Pay careful attention to the **COOK FOR ONLY THE INDICATED TIME** part. Note
     that if your oven cooks a bit hotter you might have to adjust the timing a
     bit.  This is likely the case if the cake comes out a little bit dry.
 
-*   **REMOVE THE CAKE FROM THE PANS *2 MINUTES AFTER REMOVING FROM OVEN*** and
-    then allow to **FULLY COOL *ON RACKS*!** The important point is that they
-    don't overcook.
+*   **REMOVE THE CAKE FROM THE PANS _2 MINUTES AFTER REMOVING FROM OVEN_** and
+    then allow to **FULLY COOL _ON RACKS!_** The important point is to **MAKE SURE
+    THAT THEY _DON'T OVERCOOK_**.
 
 *   When the recipe was first written they sold powdered sugar in a box; now
     it's confectionery sugar in a bag. My mum experimented with the amount and
     found that 4 cups seems about right.
 
-*   **USE *WHOLE MILK!*** Don't try skim milk or whatever per cent of fat milk you
+*   **USE _WHOLE MILK!_** Don't try skim milk or whatever per cent of fat milk you
     have.
 
-*   Use **ONLY *PURE* VANILLA EXTRACT!** **DO *NOT USE IMITATION VANILLA!*** Not
+*   Use **ONLY _PURE_ VANILLA EXTRACT!** **DO _NOT USE IMITATION VANILLA!_** Not
     following this rule will lead to a worse outcome.
 
 
@@ -95,17 +95,17 @@ RECIPE NOTES because they're really important!**
 *   1/2 tsp salt
 *   2 and 1/4 cups packed brown sugar
 *   3 eggs
-*   1 and 1/2 tsp **PURE VANILLA EXTRACT (*NOT IMITATION VANILLA!*)**
-*   1/2 cups ***MARGARINE (NOT BUTTER!)***
+*   1 and 1/2 tsp **PURE VANILLA EXTRACT (_NOT IMITATION VANILLA!_)**
+*   1/2 cup **MARGARINE (_NOT BUTTER!_)**
 *   1 cup (boiling) water
 *   1 cup sour cream
 
 
 ## Cake Preparation
 
-1.  Lightly grease **TWO 9 X 1.5 INCH ROUND PANS**; lightly dust with flour.
+1.  Lightly grease **TWO 9 x 1.5 INCH ROUND PANS**; lightly dust with flour.
 
-2.  Preheat oven to **350 F (176.67 C)**.
+2.  Preheat oven to **350 F / 176.67 C**.
 
 
 ## Cake Directions
@@ -113,16 +113,16 @@ RECIPE NOTES because they're really important!**
 1.  Melt **3 OZ UNSWEETENED CHOCOLATE** in double boiler or small bowl over
     **hot (*BUT NOT BOILING*) water**; let cool whilst proceeding.
 
-2.  Sift **2 1/4 CUPS FLOUR**, **2 TSP BAKING SODA**, and **1/2 TSP SALT**
+2.  Sift **2 and 1/4 CUPS FLOUR**, **2 TSP BAKING SODA**, and **1/2 TSP SALT**
 
-3.  Beat **1 STICK *MARGARINE (NOT BUTTER!)*** in large bowl *until soft*. Again
-    ***MARGARINE, NOT BUTTER!***
+3.  Beat **1 STICK MARGARINE (_NOT BUTTER!_)** in large bowl *until soft*. Again
+    **MARGARINE, _NOT BUTTER!_**
 
-4.  Add **2 1/4 CUPS PACKED BROWN SUGAR** and **3 EGGS**. Beat until light and
+4.  Add **2 and 1/4 CUPS PACKED BROWN SUGAR** and **3 EGGS**. Beat until light and
     fluffy.
 
-5.  Beat in **1 1/2 TSP *PURE* VANILLA EXTRACT (*NOT IMITATION VANILLA!)** and
-    ***COOLED* MELTED CHOCOLATE**.
+5.  Beat in **1 1/2 TSP _PURE_ VANILLA EXTRACT (_NOT IMITATION VANILLA!_)** and
+    **_COOLED_ MELTED CHOCOLATE**.
 
 6.  Stir in dry ingredients alternately with **1 CUP SOUR CREAM**; always beat
     until smooth.
@@ -131,20 +131,20 @@ RECIPE NOTES because they're really important!**
 
 8.  Pour into prepared pans.
 
-9.  Bake for **ONLY 35 MINUTES** (**NO LONGER!**) at **350 F (176.67 C)**.
+9.  Bake for **ONLY 35 MINUTES** (**NO LONGER!**) at **350 F / 176.67 C**.
 
-10. When you take the cake out put the cake pans on a cooling rack for **TWO
-    MINUTES *ONLY* AND *THEN IMMEDIATELY TURN CAKES OUT* ON TO RACK**. Let **COOL
-    *COMPLETELY*!**
+10. When you take the cake out put the cake pans on a cooling rack for **_ONLY
+    TWO MINUTES AND THEN _IMMEDIATELY TURN CAKES OUT ON TO RACK_**. Let **COOL
+    _COMPLETELY!_**
 
 
 ## Icing Ingredients
 
 *   4 oz unsweetened chocolate (Baker's chocolate)
-*   1/2 cup ***MARGARINE (NOT BUTTER!)***
+*   1/2 cup **MARGARINE (_NOT BUTTER!_)**
 *   4 cups powdered sugar
 *   1/2 cup whole milk
-*   2 tsp ***PURE* VANILLA EXTRACT (*NOT IMITATION VANILLA!)**
+*   2 tsp **_PURE_ VANILLA EXTRACT (_NOT IMITATION VANILLA!_)**
 
 You will also need a bigger pan or bowl that can have ice water that the icing
 bowl can sit in.
@@ -153,22 +153,24 @@ bowl can sit in.
 
 **PAY CLOSE ATTENTION TO THESE:**
 
-*   **MAKE SURE** that the melted chocolate and ***MARGARINE (NOT BUTTER!)***
-    does not get solid.
+*   **MAKE SURE** that the melted chocolate and **MARGARINE (_NOT BUTTER!_)**
+    do not get solid.
 
 *   For step #4 put **8 to 10 ICE CUBES** in a pan or big bowl (that's big
-    enough that another bowl can fit in it). **ADD AN INCH OF WATER** and **set
+    enough that another bowl can fit in it). **ADD AN INCH OF WATER** and **SET
     THE BOWL WITH THE ICING IN THE PAN OR BOWL** of ice water. **DO NOT LET THE
     ICING GET WET!**
 
 *   **DO NOT LET ICING GET TOO THICK.**
 
-*   Use **WHOLE MILK.**
+*   **USE _WHOLE MILK!_** Don't try skim milk or whatever per cent of fat milk you
+    have.
 
 *   Use **ONLY PURE VANILLA EXTRACT**! **DO NOT USE IMITATION VANILLA!** Not
     following this rule will lead to a worse outcome. As I recall the icing was
-    quite a bit worse (but still good) the times we had imitation vanilla. Just
-    don't do it.
+    quite a bit worse (but still chocolaty at least) the times we had imitation
+    vanilla (simply because we couldn't get pure vanilla at the time we needed
+    it). Just don't do it.
 
 
 
@@ -179,14 +181,14 @@ bowl can sit in.
     BUTTER!)*** in pan. Melt and remove from heat. **DO NOT LET IT GET SOLID!**
 
 2.  Combine **3 1/4 CUPS POWDERED SUGAR**, **1/2 CUPS WHOLE MILK** and **2 TSP
-    ***PURE* VANILLA EXTRACT (*NOT IMITATION VANILLA!*)** into a bowl. **STIR
+    ***PURE* VANILLA EXTRACT (_NOT IMITATION VANILLA!_)** into a bowl. **STIR
     UNTIL SMOOTH**.
 
 3.  Add chocolate mixture.
 
 4.  Set bowl in pan/bowl of ice and water. Beat with spoon/mixer until it's
     thick BUT not too thick. **Make *SURE* ICING DOES *NOT* GET WET!** The idea is to
-    **MAKE THE BOWL IT'S IN COLD *but not let the icing get wet***.
+    **MAKE THE BOWL IT'S IN COLD *BUT TO NOT LET THE ICING GET WET!***
 
 [IOCCC and chocolate]: ioccc-and-chocolate.pdf
 [chocolates FAQ]: https://www.davidlebovitz.com/chocolate-faqs/
