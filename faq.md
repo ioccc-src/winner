@@ -660,6 +660,8 @@ POSIX-conforming.
 
 ### <a name="faq2_4"></a>FAQ 2.4: How many judging rounds do you have?
 
+Are you trying to trick us? :-)
+
 By tradition, we do not say how many judging rounds we have in a given IOCCC.
 
 We often report when the IOCCC judges start the 1st round, and
