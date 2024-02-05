@@ -154,7 +154,7 @@ bowl can sit in.
 **PAY CLOSE ATTENTION TO THESE:**
 
 *   **MAKE SURE** that the melted chocolate and **MARGARINE (_NOT BUTTER!_)**
-    does not get solid.
+    do not get solid.
 
 *   For step #4 put **8 to 10 ICE CUBES** in a pan or big bowl (that's big
     enough that another bowl can fit in it). **ADD AN INCH OF WATER** and **SET
