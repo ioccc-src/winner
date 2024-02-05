@@ -375,7 +375,7 @@ One day (1984 March 23 to be exact), Larry Bassel and I (Landon Curt
 Noll) were working for National Semiconductor's Genix porting group, we
 were both in our offices trying to fix some very broken code.
 
-Larry had been trying to fix a bug in the classic Bourne shell (C code #defined
+Larry had been trying to fix a bug in the classic Bourne shell (C code `#define`d
 to death to sort of look like Algol) and I had been working on the finger
 program from early BSD (a bug ridden finger implementation to be sure).
 
@@ -444,7 +444,7 @@ and the tradition continues as the longest running contest on the Internet.
 P.S. Part of the inspiration for making the IOCCC a contest goes to the
 [Bulwer-Lytton fiction contest](http://www.bulwer-lytton.com/).
 
-P^2.S. See the [overall README](/all/README) for more details.
+P^2.S. See the [overall README](/all/README.md) for more details.
 
 
 ### <a name="faq1_1"></a>FAQ 1.1: Why are some years missing IOCCC winners?
