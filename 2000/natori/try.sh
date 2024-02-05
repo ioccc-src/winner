@@ -29,6 +29,10 @@ moon()
 	    ./"$NATORI".alt
 	    echo 1>&2
 	fi
+	if [[ "$i" != 10 ]]; then
+	    read -r -n 1 -p "Press any key to continue: "
+	    echo 1>&2
+	fi
     done
 
     echo 1>&2
@@ -37,19 +41,39 @@ moon()
 	read -r -n 1 -p "Press any key to alternate between the northern/southern hemisphere Moon: "
 	echo 1>&2
 	./"$NATORI"
+	read -r -n 1 -p "Press any key to continue: "
+	echo 1>&2
 	./"$NATORI".alt
+	read -r -n 1 -p "Press any key to continue: "
+	echo 1>&2
 	./"$NATORI"
+	read -r -n 1 -p "Press any key to continue: "
+	echo 1>&2
 	./"$NATORI".alt
+	read -r -n 1 -p "Press any key to continue: "
+	echo 1>&2
 	./"$NATORI"
+	read -r -n 1 -p "Press any key to continue: "
+	echo 1>&2
 	./"$NATORI".alt
     else
 	read -r -n 1 -p "Press any key to alternate between the southern/northern hemisphere Moon: "
 	echo 1>&2
 	./"$NATORI".alt
+	read -r -n 1 -p "Press any key to continue: "
+	echo 1>&2
 	./"$NATORI"
+	read -r -n 1 -p "Press any key to continue: "
+	echo 1>&2
 	./"$NATORI".alt
+	read -r -n 1 -p "Press any key to continue: "
+	echo 1>&2
 	./"$NATORI"
+	read -r -n 1 -p "Press any key to continue: "
+	echo 1>&2
 	./"$NATORI".alt
+	read -r -n 1 -p "Press any key to continue: "
+	echo 1>&2
 	./"$NATORI"
     fi
 
@@ -61,19 +85,39 @@ moon()
 	read -r -n 1 -p "Press any key to alternate between the northern/southern hemisphere Moon: "
 	echo 1>&2
 	./"$NATORI"
+	read -r -n 1 -p "Press any key to continue: "
+	echo 1>&2
 	./"$NATORI".alt
+	read -r -n 1 -p "Press any key to continue: "
+	echo 1>&2
 	./"$NATORI"
+	read -r -n 1 -p "Press any key to continue: "
+	echo 1>&2
 	./"$NATORI".alt
+	read -r -n 1 -p "Press any key to continue: "
+	echo 1>&2
 	./"$NATORI"
+	read -r -n 1 -p "Press any key to continue: "
+	echo 1>&2
 	./"$NATORI".alt
     else
 	read -r -n 1 -p "Press any key to alternate between the southern/northern hemisphere Moon: "
 	echo 1>&2
 	./"$NATORI".alt
+	read -r -n 1 -p "Press any key to continue: "
+	echo 1>&2
 	./"$NATORI"
+	read -r -n 1 -p "Press any key to continue: "
+	echo 1>&2
 	./"$NATORI".alt
+	read -r -n 1 -p "Press any key to continue: "
+	echo 1>&2
 	./"$NATORI"
+	read -r -n 1 -p "Press any key to continue: "
+	echo 1>&2
 	./"$NATORI".alt
+	read -r -n 1 -p "Press any key to continue: "
+	echo 1>&2
 	./"$NATORI"
     fi
 

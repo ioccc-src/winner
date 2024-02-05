@@ -28,7 +28,7 @@ echo 1>&2
 
 read -r -n 1 -p "Press any key to run: grep '[0-9]' prog.c || echo \"no digits in prog.c!\": "
 echo 1>&2
-grep -q '[0-9]' prog.c || echo "no digits in prog.c!"
+grep -q '[0-9]' prog.c || echo "no digits found in prog.c!"
 echo 1>&2
 
 read -r -n 1 -p "Press any key to show calc.in (space = next page, q = quit): "
@@ -46,9 +46,15 @@ echo 1>&2
 less -rEXFK try.this.txt
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: ./calc < try.this.txt: "
+read -r -n 1 -p "Press any key to run: ./calc < try.this.txt (space = net page, q = quit): "
 echo 1>&2
-./calc < try.this.txt
+./calc < try.this.txt | less -rEXFK
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./ecalc < try.this.txt (space = next page, q = quit): "
+echo 1>&2
+./ecalc < try.this.txt | less -rEXFK
+echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./calc 42 # show hex value of 42: "
 echo 1>&2

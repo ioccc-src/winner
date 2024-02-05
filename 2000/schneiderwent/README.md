@@ -28,6 +28,15 @@ paint dry :-) ) you might also try:
 ./try.sh
 ```
 
+Alternatively, you can check on it later on, to see all the entry does. Or if
+you wish to make it run faster, you can override how long it sleeps per
+iterations and how many iterations it runs. For instance to make it sleep only
+30 seconds and run only twice:
+
+```sh
+SLEEP=30 ITERATIONS=2 ./try.sh
+```
+
 
 ## Judges' remarks:
 

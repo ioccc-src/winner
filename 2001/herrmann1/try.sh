@@ -20,12 +20,12 @@ clear
 echo "$ ./herrmann1.sh 'prg=herrmann1.times2'" 1>&2
 read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
 echo 1>&2
-./herrmann1.sh 'prg=herrmann1.times2'
+./herrmann1.sh 'prg=herrmann1.times2' | less -rEXFK
 echo 1>&2
 
 echo "$ ./herrmann1.sh 'prg=herrmann1.gcd'" 1>&2
 read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
 echo 1>&2
-./herrmann1.sh 'prg=herrmann1.gcd'
+./herrmann1.sh 'prg=herrmann1.gcd' | less -rEXFK
 echo 1>&2
 

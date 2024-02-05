@@ -34,11 +34,11 @@ echo 1>&2
 
 read -r -n 1 -p "Press any key to show try.sh.txt (space = next page, q = quit): "
 echo 1>&2
-less -rEXF try.sh.txt
+less -rEXFK try.sh.txt
 echo 1>&2
 
 echo "$ diff try.sh try.sh.txt"
 read -r -n 1 -p "Press any key to see diff (space = next page, q = quit): " 1>&2
-diff try.sh try.sh.txt | less -rEXF
+diff try.sh try.sh.txt | less -rEXFK
 
 rm -f try.sh.txt

@@ -23,12 +23,11 @@ echo 1>&2
 read -r -n 1 -p "Press any key to run: ./rince 0.001 $(./dmy2jd 7.8 1 1610): "
 echo 1>&2
 
-# ShellCheck is incorrect about:
+# We actually need word splitting here so we disable the shellcheck warning
+# SC2046.
 #
-#   SC2046 (warning): Quote this to prevent word splitting.
-#
-# because we actually want word splitting.
-#
+# SC2046 (warning): Quote this to prevent word splitting.
+# https://www.shellcheck.net/wiki/SC2046
 # shellcheck disable=SC2046
 ./rince 0.001 $(./dmy2jd 7.8 1 1610)
 echo 1>&2
@@ -48,38 +47,47 @@ echo 1>&2
 ./rince 0.01 2441193.6
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: ./rince 0 $(./dmy2jd 7.8 1 1610): "
+read -r -n 1 -p "Press any key to run: ./dmy2jd 7.8 1 1610: "
 echo 1>&2
-# ShellCheck is incorrect about:
+./dmy2jd 7.8 1 1610
+echo 1>&2
+read -r -n 1 -p "Press any key to run: ./rince 0 \$(./dmy2jd 7.8 1 1610): "
+echo 1>&2
+# We actually need word splitting here so we disable the shellcheck warning
+# SC2046.
 #
-#   SC2046 (warning): Quote this to prevent word splitting.
-#
-# because we actually want word splitting.
-#
+# SC2046 (warning): Quote this to prevent word splitting.
+# https://www.shellcheck.net/wiki/SC2046
 # shellcheck disable=SC2046
 ./rince 0 $(./dmy2jd 7.8 1 1610)
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: ./rince 0 $(./dmy2jd 8.8 1 1610): "
+read -r -n 1 -p "Press any key to run: ./dmy2jd 8.8 1 1610: "
 echo 1>&2
-# ShellCheck is incorrect about:
+./dmy2jd 8.8 1 1610
+echo 1>&2
+read -r -n 1 -p "Press any key to run: ./rince 0 \$(./dmy2jd 8.8 1 1610): "
+echo 1>&2
+# We actually need word splitting here so we disable the shellcheck warning
+# SC2046.
 #
-#   SC2046 (warning): Quote this to prevent word splitting.
-#
-# because we actually want word splitting.
-#
+# SC2046 (warning): Quote this to prevent word splitting.
+# https://www.shellcheck.net/wiki/SC2046
 # shellcheck disable=SC2046
 ./rince 0 $(./dmy2jd 8.8 1 1610)
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: ./rince 0 $(./dmy2jd 10.8 1 1610): "
+read -r -n 1 -p "Press any key to run: ./dmy2jd 10.8 1 1610: "
 echo 1>&2
-# ShellCheck is incorrect about:
+./dmy2jd 10.8 1 1610
+echo 1>&2
+read -r -n 1 -p "Press any key to run: ./rince 0 \$(./dmy2jd 10.8 1 1610): "
+echo 1>&2
+# We actually need word splitting here so we disable the shellcheck warning
+# SC2046.
 #
-#   SC2046 (warning): Quote this to prevent word splitting.
-#
-# because we actually want word splitting.
-#
+# SC2046 (warning): Quote this to prevent word splitting.
+# https://www.shellcheck.net/wiki/SC2046
 # shellcheck disable=SC2046
 ./rince 0 $(./dmy2jd 10.8 1 1610)
 echo 1>&2

@@ -17,6 +17,14 @@ make
 For some fun every time you log in try running this from your `.bashrc` or
 equivalent file!
 
+You might also like to try:
+
+```sh
+./try.sh
+
+INSULTS=15 ./try.sh
+```
+
 
 ## Judges' remarks:
 
