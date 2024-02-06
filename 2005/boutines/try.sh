@@ -43,7 +43,6 @@ if [[ ! -f result.svg && ! -f test.svg ]]; then
 fi
 
 if [[ -n "$CONVERT" ]]; then
-
     read -r -n 1 -p "Press any key to run: convert test.svg test.png: "
     echo 1>&2
     if ! convert test.svg test.png; then
