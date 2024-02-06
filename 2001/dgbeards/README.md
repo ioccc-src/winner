@@ -55,13 +55,6 @@ It's a very simple thing to do. Read the author's remarks for clues.
 
 This game crashes if it loses.
 
-This is supposed to happen.  As is written in the
-[The Jargon File](http://catb.org/jargon/html/F/feature.html):
-
-```
-That's not a bug, that's a feature.
-```
-
 
 ## Judges' remarks:
 
