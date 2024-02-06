@@ -2,6 +2,7 @@
 # sort with: ../../bin/sgi
 *.dSYM
 ctk
+ctk.alt
 ctk.orig
 indent
 indent.c
