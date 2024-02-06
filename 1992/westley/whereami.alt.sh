@@ -23,16 +23,18 @@ fi
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
 # this way allows us to have the user specify a different compiler in an easy
 # way.
-if [[ -z "$CC" ]]; then
-    CC="cc"
-fi
+[[ -z "$CC" ]] && CC="cc"
 
 # try getting the columns the simple way first: tput cols
-COLUMNS="$(tput cols)"
-
-if [[ "$?" -ne 0 ]]; then
-    # if tput failed for any reason try stty(1) with awk(1):
-    COLUMNS="$(stty size|awkf '{print $NF}')"
+if ! COLUMNS="$(tput cols)"; then
+    # if tput failed for any reason try stty(1) with awk(1).
+    #
+    # Disable this warning of shellcheck as it's wrong: awk needs single quotes.
+    #
+    # SC2016 (info): Expressions don't expand in single quotes, use double quotes for that.
+    # https://www.shellcheck.net/wiki/SC2016
+    # shellcheck disable=SC2016
+    COLUMNS="$(stty size|awk '{print $NF}')"
 fi
 
 if [[ "$COLUMNS" -lt 80 ]]; then
