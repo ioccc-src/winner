@@ -2808,13 +2808,18 @@ void e(n,h){
 
 ```
 
-This was not really worth a thanks per se but it was originally done by adding
-`int`. The better solution is to disable the warning which is what was done
-later on to make it more like the original.
+and for some reason it was being reported as an error. This was not really worth
+a thanks per se but it was originally done by adding `int`. The better solution
+is to disable the warning which is what was done later on to make it more like
+the original.
 
-Yusuke provided a proper command line for macOS (to do with sound; see his
+[Yusuke](#yusuke) provided a proper command line for those without `/dev/audio`
+or `/dev/sound/dsp` (which is most everyone nowadays, it seems, and especially
+those with macOS) (to do with sound; see his
 [/2013/endoh3/README.md](/2013/endoh3/README.md) entry where he also refers to
 sound devices in macOS).
+
+Cody added the [try.sh](/2001/coupard/try.sh).
 
 
 ## <a name="2001_ctk"></a>[2001/ctk](/2001/ctk/ctk.c) ([README.md](/2001/ctk/README.md]))

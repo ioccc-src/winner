@@ -14,19 +14,8 @@ make
 
 ## Try:
 
-If you have access to `/dev/audio` or `/dev/sound/dsp`:
-
 ```sh
-./coupard > /dev/audio
-./coupard > /dev/sound/dsp
-```
-
-If you do not, first install [sox](https://en.wikipedia.org/wiki/SoX). If you
-use macOS you might install it from [MacPorts](https://www.macports.org) or
-[Homebrew](https://brew.sh). Then you can try:
-
-```sh
-./coupard | sox -q -traw -r8000 -b8 -e unsigned-integer - -tcoreaudio
+./try.sh
 ```
 
 
