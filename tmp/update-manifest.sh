@@ -81,7 +81,7 @@ fi
 
 # first determine if git is executable
 if [[ -z "$GIT" || ! -f "$GIT" || ! -x "$GIT" ]]; then
-    echo "$0: ERROR: git not an executable file: $GIT" 1>&2
+    echo "$0: ERROR: git not a regular executable file: $GIT" 1>&2
     exit 3
 fi
 
@@ -106,17 +106,28 @@ if ! cd "$TOPDIR"; then
 fi
 
 # I have found problems using git rev-parse to verify that we're in a git repo
-# so use git status instead. Plus we need the user to see git status anyway.
-"$GIT" status 1>&2
-status="$?"
-if [[ "$status" -ne 0 ]]; then
+# plus we need the user to see git status anyway so use git status instead.
+if ! "$GIT" status 1>&2; then
     echo "$USAGE" 1>&2
     echo 1>&2
     echo "$(basename "$0"): ERROR: ${PWD} is not a git repository" 1>&2
     exit 3
 fi
 
+echo 1>&2
+echo "NOTE: manifest.numbers and manifest.csv may be modified here but nothing else" 1>&2
+echo "may be and no new files may be staged for commit either:" 1>&2
 read -r -p "Do you have a clean state from git status (Y/N)? "
+if [[ "$REPLY" != "Y" && "$REPLY" != "y" ]]; then
+    echo "$0: exiting 4 due to user telling us there's a problem." 1>&2
+    exit 4
+fi
+
+# ask user if they're on the correct branch
+#
+echo "Showing branches: " 1>&2
+"$GIT" branch 1>&2
+read -r -p "Are you on the right branch (Y/N)? "
 if [[ "$REPLY" != "Y" && "$REPLY" != "y" ]]; then
     echo "$0: exiting 4 due to user telling us there's a problem." 1>&2
     exit 4

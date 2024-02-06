@@ -43,7 +43,6 @@ if [[ ! -f result.svg && ! -f test.svg ]]; then
 fi
 
 if [[ -n "$CONVERT" ]]; then
-
     read -r -n 1 -p "Press any key to run: convert test.svg test.png: "
     echo 1>&2
     if ! convert test.svg test.png; then
@@ -66,4 +65,5 @@ else
     echo 1>&2
     echo "convert not found (ImageMagick not installed?)" 1>&2
     echo "Try viewing *.svg with a graphics viewer that can view SVG files." 1>&2
+    echo "Tip: see https://github.com/ioccc-src/temp-test-ioccc/blob/master/faq.md#imagemagick." 1>&2
 fi

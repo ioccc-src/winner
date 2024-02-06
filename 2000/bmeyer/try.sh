@@ -19,17 +19,12 @@ clear
 # be determined: we just use a default value.
 #
 # try getting the columns the simple way first: tput cols
-if ! COLUMNS="$(tput cols)"; then
-    # if tput failed for any reason try stty(1) with awk(1).
-    #
-    # Disable this warning of shellcheck as it's wrong: awk needs single quotes.
-    #
-    # SC2016 (info): Expressions don't expand in single quotes, use double quotes for that.
-    # https://www.shellcheck.net/wiki/SC2016
-    # shellcheck disable=SC2016
-    COLUMNS="$(stty size|awk '{print $NF}')"
-    
-    if [[ "$?" -ne 0 ]]; then
+if  COLUMNS="$(tput cols)"; then
+    # if tput failed for any reason try stty(1) with cut(1).
+    COLUMNS="$(stty size|cut -f2 -d' ')"
+
+    # if however either stty size or cut fails, set to 150.
+    if [[ "${PIPESTATUS[0]}" -ne 0 || "${PIPESTATUS[1]}" -ne 0 ]]; then
 	COLUMNS=150
     fi
 fi

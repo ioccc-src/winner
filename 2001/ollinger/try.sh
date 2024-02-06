@@ -19,25 +19,25 @@ clear
 
 read -r -n 1 -p "Press any key to run: ./ollinger 1000 | cut -c -200 (space = next page, q = quit): "
 echo 1>&2
-./ollinger 1000 | cut -c -200 | less -rEXF
+./ollinger 1000 | cut -c -200 | less -rEXFK
 echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./ollinger 1000 | cut -c -100 (space = next page, q = quit): "
 echo 1>&2
-./ollinger 1000 | cut -c -100 | less -rEXF
+./ollinger 1000 | cut -c -100 | less -rEXFK
 echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./ollinger 42 (space = next page, q = quit): "
 echo 1>&2
-./ollinger 42 | less -rEXF
+./ollinger 42 | less -rEXFK
 echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./ollinger 42 | cut -c -100 (space = next page, q = quit): "
 echo 1>&2
-./ollinger 42 | cut -c -100 | less -rEXF
+./ollinger 42 | cut -c -100 | less -rEXFK
 echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./ollinger 42 | cut -c -200 (space = next page, q = quit): "
 echo 1>&2
-./ollinger 42 | cut -c -200 | less -rEXF
+./ollinger 42 | cut -c -200 | less -rEXFK
 echo 1>&2

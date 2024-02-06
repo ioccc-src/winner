@@ -17,12 +17,12 @@ clear
 
 read -r -n 1 -p "Press any key to show sds.c (space = next page, q = quit): "
 echo 1>&2
-less -rEXF sds.c
+less -rEXFK sds.c
 echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./sds < sds.c | tee encoder.c (space = next page, q = quit): "
 echo 1>&2
-./sds < sds.c | tee encoder.c | less -rEXF
+./sds < sds.c | tee encoder.c | less -rEXFK
 echo 1>&2
 
 read -r -n 1 -p "Press any key to run: make encoder 2>/dev/null: "
@@ -33,7 +33,7 @@ echo 1>&2
 echo "$ ./encoder README.md <sds.c | tee sds_msg.c" 1>&2
 read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
 echo 1>&2
-./encoder README.md <sds.c | tee sds_msg.c | less -rEXF
+./encoder README.md <sds.c | tee sds_msg.c | less -rEXFK
 
 read -r -n 1 -p "Press any key to run: make sds_msg 2>/dev/null: "
 echo 1>&2
@@ -43,7 +43,7 @@ echo 1>&2
 echo "$ ./sds_msg < sds.c | tee sds2_msg.c | less -rEXF" 1>&2
 read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
 echo 1>&2
-./sds_msg < sds.c | tee sds2_msg.c | less -rEXF
+./sds_msg < sds.c | tee sds2_msg.c | less -rEXFK
 
 read -r -n 1 -p "Press any key to run: diff -s sds2_msg.c encoder.c: "
 echo 1>&2
@@ -58,12 +58,12 @@ echo 1>&2
 echo "$ ./encoder message < README.md | tee remarks.md" 1>&2
 read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
 echo 1>&2
-./encoder message < README.md | tee remarks.md | less -rEXF
+./encoder message < README.md | tee remarks.md | less -rEXFK
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: diff remarks.md README.md: "
+read -r -n 1 -p "Press any key to run: diff remarks.md README.md (space = next page, q = quit): "
 echo 1>&2
-diff remarks.md README.md # notice how similar they are
+diff remarks.md README.md | less -rEXFK
 echo "Did you notice how similar they are?" 1>&2
 echo 1>&2
 
