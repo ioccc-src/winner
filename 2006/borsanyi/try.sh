@@ -41,6 +41,7 @@ while :; do
 	fi
     fi
     read -r -n 1 -p "Do you wish to make another one (Y/N)? "
+    echo 1>&2
     if [[ "$REPLY" != "Y" && "$REPLY" != "y" ]]; then
 	break
     fi
