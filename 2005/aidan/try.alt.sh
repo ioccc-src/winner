@@ -23,16 +23,16 @@ echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./$AIDAN < blank.sudoku (space = next page, q = quit): "
 echo 1>&2
-./"$AIDAN" < blank.sudoku | less -rEXF
+./"$AIDAN" < blank.sudoku | less -rEXFK
 echo 1>&2
 
 read -r -n 1 -p "Press any key to run: echo IOCCC | ./$AIDAN (space = next page, q = quit): "
-echo IOCCC | ./"$AIDAN" | less -rEXF
+echo IOCCC | ./"$AIDAN" | less -rEXFK
 echo "What just happened?" 1>&2
 echo 1>&2
 
 read -r -n 1 -p "Press any key to run: echo IOCCC | ./$AIDAN 42 (space = next page, q = quit): "
-echo IOCCC | ./"$AIDAN" 42 1>&2 | less -rEXF
+echo IOCCC | ./"$AIDAN" 42 1>&2 | less -rEXFK
 echo 1>&2
 echo "Seeing that, was the 'echo IOCCC' relevant?" 1>&2
 echo 1>&2
