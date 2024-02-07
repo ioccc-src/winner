@@ -74,3 +74,18 @@ read -r -n 1 -p "Press any key to run: ./klausler werewolf vampire | head -n 10:
 echo 1>&2
 ./klausler werewolf vampire | head -n 10
 echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./klausler dennis ritchie | head -n 10: "
+echo 1>&2
+./klausler dennis ritchie | head -n 10
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./klausler ken thompson | head -n 10: "
+echo 1>&2
+./klausler ken thompson | head -n 10
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./klausler Linus Torvalds | head -n 10: "
+echo 1>&2
+./klausler linus torvalds | head -n 10
+echo 1>&2

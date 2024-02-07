@@ -1,11 +1,10 @@
 #
 # sort with: ../../bin/sgi
 *.dSYM
-foo.gif
+*.gif
 indent
 indent.c
 indent.o
 persano
 persano.orig
 prog.orig
-seal.gif

@@ -3,15 +3,14 @@
 # try.sh - demonstrate IOCCC winner 2005/timwi
 #
 # This only does one thing and that is from the judges. This is because
-# brainfuck has too much potential to knacker the brain.
+# brainfuck has too much potential to knacker the brain so we don't try.sh to
+# make it worse :-)
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
 # this way allows us to have the user specify a different compiler in an easy
 # way.
-if [[ -z "$CC" ]]; then
-    CC="cc"
-fi
+[[ -z "$CC" ]] && CC="cc"
 
 make CC="$CC" all >/dev/null || exit 1
 
