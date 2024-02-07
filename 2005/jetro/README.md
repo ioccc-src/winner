@@ -1,9 +1,8 @@
 ## To build:
 
-This entry requires SDL to be installed.
-
-See [3.8  - How do I compile an IOCCC winner that requires SDL1 or
-SDL2?](/faq.md#SDL) for information on how to install it if you haven't already.
+This entry requires SDL. See [3.8  - How do I compile an IOCCC winner that
+requires SDL1 or SDL2?](/faq.md#SDL) for information on how to install it if you
+haven't already.
 
 If you have SDL installed:
 
