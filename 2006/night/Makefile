@@ -134,7 +134,6 @@ all: data ${TARGET}
 	sandwich supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "This next step may take some time to run:"
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # alternative executable
@@ -143,7 +142,6 @@ alt: data ${ALT_TARGET}
 	@${TRUE}
 
 ${PROG}.alt: ${PROG}.alt.c
-	@echo "This next step may take some time to run:"
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # data files
