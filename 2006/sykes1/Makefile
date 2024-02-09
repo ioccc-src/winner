@@ -218,7 +218,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -rf *.dSYM
+	${RM} -rf *.dSYM *.gif
 	${RM} -f ${PROG}.html
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \

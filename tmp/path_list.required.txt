@@ -1116,6 +1116,7 @@
 2000/briddlebane/README.md
 2000/briddlebane/briddlebane.c
 2000/briddlebane/briddlebane.orig.c
+2000/briddlebane/try.sh
 2000/dhyang/.gitignore
 2000/dhyang/.winner.json
 2000/dhyang/Makefile
@@ -1222,6 +1223,7 @@
 2001/coupard/README.md
 2001/coupard/coupard.c
 2001/coupard/coupard.orig.c
+2001/coupard/try.sh
 2001/ctk/.gitignore
 2001/ctk/.winner.json
 2001/ctk/Makefile
