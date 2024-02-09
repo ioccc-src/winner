@@ -220,7 +220,7 @@ clean:
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
 	${RM} -rf *.dSYM
-	${RM} -f ${PROG}2.c ${PROG}3.c
+	${RM} -f ${PROG}2.c ${PROG}3.c  ${PROG}2.alt.c ${PROG}3.alt.c
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
