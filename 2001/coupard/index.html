@@ -122,15 +122,7 @@ href="/temp-test-ioccc/location.html#ZZ">ZZ</a></p>
 <h2 id="to-use">To use:</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./coupard</span></span></code></pre></div>
 <h2 id="try">Try:</h2>
-<p>If you have access to <code>/dev/audio</code> or
-<code>/dev/sound/dsp</code>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./coupard</span> <span class="op">&gt;</span> /dev/audio</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./coupard</span> <span class="op">&gt;</span> /dev/sound/dsp</span></code></pre></div>
-<p>If you do not, first install <a
-href="https://en.wikipedia.org/wiki/SoX">sox</a>. If you use macOS you
-might install it from <a href="https://www.macports.org">MacPorts</a> or
-<a href="https://brew.sh">Homebrew</a>. Then you can try:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./coupard</span> <span class="kw">|</span> <span class="fu">sox</span> <span class="at">-q</span> <span class="at">-traw</span> <span class="at">-r8000</span> <span class="at">-b8</span> <span class="at">-e</span> unsigned-integer <span class="at">-</span> <span class="at">-tcoreaudio</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.sh</span></span></code></pre></div>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>You may need to run this a few times to understand exactly what is
 being said. You might even need to look somewhere on your desktop, your
@@ -156,7 +148,7 @@ that is supported by the majority of Unices that can do sound, as a
 lowest-denominator sound I/O interface.</p>
 <h3 id="program-usage">Program usage</h3>
 <p>To listen to what the program says directly, invoke</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./coupard</span> <span class="op">&gt;</span> /dev/audio</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./coupard</span> <span class="op">&gt;</span> /dev/audio</span></code></pre></div>
 <p>The program then speaks out something like</p>
 <blockquote>
 <p>The time is HH hours MM minutes SS seconds</p>
@@ -169,7 +161,7 @@ audio format, you can pipe it to <a
 href="https://en.wikipedia.org/wiki/SoX">SoX</a> for example
 (<code>sox</code> is the Swiss army knife of Unix audio tools). The
 command:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./coupard</span> <span class="kw">|</span> <span class="fu">sox</span> <span class="at">-c1</span> <span class="at">-r8000</span> <span class="at">-tub</span> <span class="at">-</span> <span class="at">-c2</span> <span class="at">-r44100</span> <span class="at">-twav</span> test.wav</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./coupard</span> <span class="kw">|</span> <span class="fu">sox</span> <span class="at">-c1</span> <span class="at">-r8000</span> <span class="at">-tub</span> <span class="at">-</span> <span class="at">-c2</span> <span class="at">-r44100</span> <span class="at">-twav</span> test.wav</span></code></pre></div>
 <p>converts the output of the program into a 44.1KHz stereo .WAV file
 and saves it into <code>test.wav</code>.</p>
 <p>The output format of the program is 8KHz, unsigned 8-bit samples.</p>
@@ -254,6 +246,9 @@ href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/coupard/Make
 <li><a
 href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/coupard/coupard.orig.c">coupard.orig.c</a>
 - original source</li>
+<li><a
+href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/coupard/try.sh">try.sh</a>
+- how to run</li>
 <li><a href="2001_coupard.tar.bz2">2001_coupard.tar.bz2</a> - download
 winning source</li>
 </ul>
