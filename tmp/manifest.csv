@@ -35,7 +35,7 @@
 1984,mullender,Makefile,30,true,makefile,true,winner Makefile
 1984,mullender,mullender.alt.c,40,true,c,true,alternative source
 1984,mullender,mullender.orig.c,50,false,c,true,original source
-1984,mullender,a.out.h,150,true,c,true,header file for systems that lack it for gentab.c
+1984,mullender,a.out.h,150,true,c,true,header file for gentab.c for compatibility with 1984 systems
 1984,mullender,gentab.c,150,true,c,true,author tool to create constants
 1984,mullender,1984_mullender.tar.bz2,300,false,tbz2,false,download winning source
 1984,mullender,README.md,4294967295,true,markdown,true,markdown source for index.html
