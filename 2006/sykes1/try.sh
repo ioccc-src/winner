@@ -25,7 +25,7 @@ try()
 
     read -r -n 1 -p "Press any key to see $SYKES1.c (space = next page, q = quit): "
     echo 1>&2
-    less -rEXF "$SYKES1.c"
+    less -rEXFK "$SYKES1.c"
     echo 1>&2
 
     read -r -n 1 -p "Press any key to run: diff -s $SYKES1.c $SYKES1.html: "
@@ -35,17 +35,17 @@ try()
 
     read -r -n 1 -p "Press any key to run: ./$SYKES1 (space = next page, q = quit): "
     echo 1>&2
-    ./"$SYKES1" | less -rEXF
+    ./"$SYKES1" | less -rEXFK
     echo 1>&2
 
     read -r -n 1 -p "Press any key to run: ./$SYKES1 5 (space = next page, q = quit): "
     echo 1>&2
-    ./"$SYKES1" 5 | less -rEXF
+    ./"$SYKES1" 5 | less -rEXFK
     echo 1>&2
 
     read -r -n 1 -p "Press any key to run: ./$SYKES1 -1 (space = next page, q = quit): "
     echo 1>&2
-    ./"$SYKES1" -1 | less -rEXF
+    ./"$SYKES1" -1 | less -rEXFK
     echo 1>&2
     echo "What happened and why did it happen?" 1>&2
     echo 1>&2
@@ -72,5 +72,5 @@ echo 1>&2
 
 read -r -n 1 -p "Press any key to run: diff sykes1.out sykes1.alt.out (space = next page, q = quit): "
 echo 1>&2
-diff sykes1.out sykes1.alt.out | less -rEXF
+diff sykes1.out sykes1.alt.out | less -rEXFK
 rm -f sykes1.out sykes1.alt.out
