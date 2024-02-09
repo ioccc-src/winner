@@ -106,20 +106,24 @@ if ! cd "$TOPDIR"; then
 fi
 
 # I have found problems using git rev-parse to verify that we're in a git repo
-# plus we need the user to see git status anyway so use git status instead.
+# and we need the user to see git status anyway so use git status instead.
 if ! "$GIT" status 1>&2; then
     echo "$USAGE" 1>&2
     echo 1>&2
-    echo "$(basename "$0"): ERROR: ${PWD} is not a git repository" 1>&2
+    echo "ERROR: ${PWD} is not a git repository" 1>&2
     exit 3
 fi
 
 echo 1>&2
-echo "NOTE: manifest.numbers and manifest.csv may be modified here but nothing else" 1>&2
-echo "may be and no new files may be staged for commit either:" 1>&2
+echo "NOTE: manifest.numbers and manifest.csv may be modified here BUT NOTHING ELSE" 1>&2
+echo "MAY BE (UNLESS RERUNNING THIS SCRIPT AFTER FIXING A PROBLEM: then related files" 1>&2
+echo "in /tmp/ may be modified BUT ONLY FILES RELEVANT TO THE MANIFEST!). NO NEW FILES" 1>&2
+echo "MAY BE STAGED FOR COMMIT EITHER!" 1>&2
 read -r -p "Do you have a clean state from git status (Y/N)? "
 if [[ "$REPLY" != "Y" && "$REPLY" != "y" ]]; then
-    echo "$0: exiting 4 due to user telling us there's a problem." 1>&2
+    echo 1>&2
+    echo "exiting 4 due to user telling us that manifest.numbers and/or" 1>&2
+    echo "manifest.csv NOT UPDATED." 1>&2
     exit 4
 fi
 
@@ -129,7 +133,7 @@ echo "Showing branches: " 1>&2
 "$GIT" branch 1>&2
 read -r -p "Are you on the right branch (Y/N)? "
 if [[ "$REPLY" != "Y" && "$REPLY" != "y" ]]; then
-    echo "$0: exiting 4 due to user telling us there's a problem." 1>&2
+    echo "exiting 4 due to user telling us they're on the WRONG BRANCH." 1>&2
     exit 4
 fi
 
@@ -143,7 +147,7 @@ fi
 # now check that manifest.csv is a regular readable file
 #
 if [[ ! -f manifest.csv || ! -r manifest.csv ]]; then
-    echo "$0: manifest.csv does not exist or not a regular readable file" 1>&2
+    echo "manifest.csv does not exist or not a regular readable file" 1>&2
     exit 3
 fi
 
@@ -152,27 +156,23 @@ fi
 echo "We will now try and update the manifest files. Are you sure that you updated" 1>&2
 read -r -p "AND sorted the manifest.numbers spreadsheet AND exported to manifest.csv (Y/N)? "
 if [[ "$REPLY" != "y" && "$REPLY" != "Y" ]]; then
-    echo "$0: exiting 4 due to user not updating manifest files before running this tool" 1>&2
+    echo "exiting 4 due to user not updating manifest files before running this tool" 1>&2
     exit 4
 fi
 
 # run ./fix_csv.sh first
 #
-if [[ "$V_FLAG" -gt 0 ]]; then
-    echo "$0: debug[1]: about to run: ./fix_csv.sh -v $CAP_D_FLAG" 1>&2
-fi
+echo "$(basename "$0"): now will run: ./fix_csv.sh -v $CAP_D_FLAG" 1>&2
 if ! ./fix_csv.sh -v "$CAP_D_FLAG" ; then
-    echo "$0: fix_csv.sh failed, try updating manifest.csv and try again." 1>&2
+    echo "fix_csv.sh failed, try updating manifest.csv and try again." 1>&2
     exit 5
 fi
 
 # run ./gen_path_list.found.sh
 #
-if [[ "$V_FLAG" -gt 0 ]]; then
-    echo "$0: debug[1]: about to run: ./gen_path_list.found.sh -v $CAP_D_FLAG" 1>&2
-fi
+echo "$(basename "$0"): now will run: ./gen_path_list.found.sh -v $CAP_D_FLAG" 1>&2
 if ! ./gen_path_list.found.sh -v "$CAP_D_FLAG" ; then
-    echo "$0: gen_path_list.found.sh failed, try updating manifest.csv and try again." 1>&2
+    echo "gen_path_list.found.sh failed, try updating manifest.csv and try again." 1>&2
     exit 5
 fi
 
@@ -184,15 +184,16 @@ echo 1>&2
 
 read -r -p "Does everything look okay (Y/N)? "
 if [[ "$REPLY" != "y" && "$REPLY" != "Y" ]]; then
-    echo "$0: exiting 4 due to user telling us there's a problem." 1>&2
+    echo "exiting 4 due to user telling us that git diff path_list.found.txt DOES" 1>&2
+    echo "NOT LOOK OKAY." 1>&2
     exit 4
 fi
 
 # run ./check_path_list.sh
 #
-echo "$0: now will run: ./check_path_list.sh -v $CAP_D_FLAG" 1>&2
+echo "$(basename "$0"): now will run: ./check_path_list.sh -v $CAP_D_FLAG" 1>&2
 if ! ./check_path_list.sh -v "$CAP_D_FLAG"; then
-    echo "$0: ./check_path_list.sh failed, try updating manifest.csv and try again." 1>&2
+    echo "check_path_list.sh failed, try updating manifest.csv and try again." 1>&2
     exit 5
 fi
 
@@ -241,10 +242,10 @@ else
 fi
 
 echo 1>&2
-echo "now will run ./run_all.sh -v $CAP_D_FLAG ./gen_winner_json.sh" 1>&2
+echo "$(basename "$0"): now will run ./run_all.sh -v $CAP_D_FLAG ./gen_winner_json.sh" 1>&2
 echo "NOTE: this step will take a while." 1>&2
 if ! ./run_all.sh -v "$CAP_D_FLAG" ./gen_winner_json.sh; then
-    echo "$0: problem with ./run_all.sh, fix manifest and try again." 1>&2
+    echo "problem with ./run_all.sh, fix manifest and try again." 1>&2
     exit 5
 fi
 
@@ -297,19 +298,19 @@ cd ..
 read -r -n 1 -p "Press any key to continue: "
 echo 1>&2
 
-echo "Will now update index.html files." 1>&2
+echo "$(basename "$0"): will now update index.html files." 1>&2
 read -r -p "Do you wish to use quick-readme2index.sh (Y/N)? "
 if [[ "$REPLY" != "Y" && "$REPLY" != "y" ]]; then
-    echo "$0: now will run: bin/all-run.sh -v $CAP_D_FLAG bin/readme2index.sh -v $CAP_D_FLAG" 1>&2
+    echo "$(basename "$0"): now will run: bin/all-run.sh -v $CAP_D_FLAG bin/readme2index.sh -v $CAP_D_FLAG" 1>&2
     if ! bin/all-run.sh -v "$CAP_D_FLAG" bin/readme2index.sh -v "$CAP_D_FLAG"; then
-	echo "$0: problem running bin/all-run bin/readme2index.sh, fix and try again." 1>&2
+	echo "problem running bin/all-run bin/readme2index.sh, fix and try again." 1>&2
 	exit 5
     fi
 else
-    echo "$0: now will run: bin/all-run.sh -v $CAP_D_FLAG bin/quick-readme2index.sh -v $CAP_D_FLAG"
+    echo "$(basename "$0"): now will run: bin/all-run.sh -v $CAP_D_FLAG bin/quick-readme2index.sh -v $CAP_D_FLAG"
     echo "NOTE: this will take a while." 1>&2
     if ! bin/all-run.sh -v "$CAP_D_FLAG" bin/quick-readme2index.sh -v "$CAP_D_FLAG"; then
-	echo "$0: problem running bin/all-run bin bin/quick-readme2index.sh, fix and try again." 1>&2
+	echo "problem running bin/all-run bin bin/quick-readme2index.sh, fix and try again." 1>&2
 	exit 5
     fi
 fi
@@ -321,7 +322,7 @@ echo 1>&2
 
 read -r -p "Does everything look okay (Y/N)? "
 if [[ "$REPLY" != "Y" && "$REPLY" != "y" ]]; then
-    echo "$0: exiting 4 due to user telling us there's a problem." 1>&2
+    echo "$0: exiting 4 due to user telling us git diff DOES NOT LOOK OKAY." 1>&2
     exit 4
 fi
 

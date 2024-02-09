@@ -35,7 +35,7 @@
 1984,mullender,Makefile,30,true,makefile,true,winner Makefile
 1984,mullender,mullender.alt.c,40,true,c,true,alternative source
 1984,mullender,mullender.orig.c,50,false,c,true,original source
-1984,mullender,a.out.h,150,true,c,true,head file for system who lack it
+1984,mullender,a.out.h,150,true,c,true,header file for systems that lack it for gentab.c
 1984,mullender,gentab.c,150,true,c,true,author tool to create constants
 1984,mullender,1984_mullender.tar.bz2,300,false,tbz2,false,download winning source
 1984,mullender,README.md,4294967295,true,markdown,true,markdown source for index.html
@@ -1542,6 +1542,7 @@
 2000,briddlebane,briddlebane.c,20,true,c,true,winning source
 2000,briddlebane,Makefile,30,true,makefile,true,winner Makefile
 2000,briddlebane,briddlebane.orig.c,50,false,c,true,original source
+2000,briddlebane,try.sh,100,true,shellscript,true,how to run
 2000,briddlebane,2000_briddlebane.tar.bz2,300,false,tbz2,false,download winning source
 2000,briddlebane,README.md,4294967295,true,markdown,true,markdown source for index.html
 2000,briddlebane,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -1690,6 +1691,7 @@
 2001,coupard,coupard.c,20,true,c,true,winning source
 2001,coupard,Makefile,30,true,makefile,true,winner Makefile
 2001,coupard,coupard.orig.c,50,false,c,true,original source
+2001,coupard,try.sh,100,true,shellscript,true,how to run
 2001,coupard,2001_coupard.tar.bz2,300,false,tbz2,false,download winning source
 2001,coupard,README.md,4294967295,true,markdown,true,markdown source for index.html
 2001,coupard,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
