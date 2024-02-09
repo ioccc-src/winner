@@ -56,7 +56,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "winners_text" : "header file for systems that lack it for gentab.c"
+	    "winners_text" : "header file for gentab.c for compatibility with 1984 systems"
 	},
 	{
 	    "file_path" : "gentab.c",
