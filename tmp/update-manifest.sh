@@ -242,9 +242,9 @@ else
 fi
 
 echo 1>&2
-echo "$(basename "$0"): now will run ./run_all.sh -v $CAP_D_FLAG ./gen_winner_json.sh" 1>&2
+echo "$(basename "$0"): now will run ./run_all.sh -v $CAP_D_FLAG ./gen_winner_json.sh -v $CAP_D_FLAG" 1>&2
 echo "NOTE: this step will take a while." 1>&2
-if ! ./run_all.sh -v "$CAP_D_FLAG" ./gen_winner_json.sh; then
+if ! ./run_all.sh -v "$CAP_D_FLAG" ./gen_winner_json.sh -v $CAP_D_FLAG; then
     echo "problem with ./run_all.sh, fix manifest and try again." 1>&2
     exit 5
 fi
