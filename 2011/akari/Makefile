@@ -226,7 +226,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -rf *.dSYM
+	${RM} -rf *.dSYM rot13.c
 	${RM} -f akari2.c akari3.c akari4.c odd_output.ppm even_output.ppm expanded_and_rot13_output.txt expanded_output.txt
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
