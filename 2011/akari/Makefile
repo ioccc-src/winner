@@ -227,7 +227,7 @@ clean:
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
 	${RM} -rf *.dSYM
-	${RM} -f akari2.c akari3.c akari4.c
+	${RM} -f akari2.c akari3.c akari4.c *.ppm
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
