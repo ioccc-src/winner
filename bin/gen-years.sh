@@ -565,14 +565,15 @@ fi
 
 # write markdown for each IOCCC year in reverse order
 #
-export YEAR_COUNT=0
+YEAR_COUNT=$(wc -l < "$TOP_FILE" | sed -e 's/[[:space:]]//g')
+export YEAR_COUNT
 export YYYY
 for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
 
     # debug YYYY
     #
     if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[1]: starting to process year: $YYYY" 1>&2
+	echo "$0: debug[1]: using: $TOP_FILE starting to process year: $YYYY" 1>&2
     fi
 
     # verify that YYYY is a readable directory
@@ -623,10 +624,6 @@ for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	continue
     fi
-
-    # count this year
-    #
-    ((++YEAR_COUNT))
 
     # write leading markdown for this IOCCC year
     #
@@ -766,7 +763,7 @@ for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
     else
         cat > /dev/null
         if [[ $V_FLAG -ge 3 ]]; then
-            echo "$0: debug[3]: because of -n, $YYYY_DIR markdown data is NOT written into: $TMP_YEARS_MD" 1>&2
+            echo "$0: debug[3]: because of -n, markdown data is NOT written into: $TMP_YEARS_MD" 1>&2
         fi
     fi
 
@@ -784,6 +781,10 @@ for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
 	    echo "$0: debug[3]: because of -n, IOCCC year $YYYY ending markdown data is NOT written into: $TMP_YEARS_MD" 1>&2
 	fi
     fi
+
+    # count down this year
+    #
+    ((--YEAR_COUNT))
 done
 
 # use the md2html.sh tool to form a location HTML file, unless -n
