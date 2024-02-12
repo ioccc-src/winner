@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# gen-location.sh - output location.html
+# gen-location.sh - create the top level location.html page
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #

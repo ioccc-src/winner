@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# gen-authors.sh - output to level authors.html page
+# gen-authors.sh - create the top level authors.html page
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #

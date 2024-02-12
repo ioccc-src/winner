@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# gen-years.sh - output the top level entries.html page
+# gen-years.sh - create the top level years.html page
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
