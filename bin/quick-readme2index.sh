@@ -496,7 +496,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: DOT_PATH=$DOT_PATH" 1>&2
     echo "$0: debug[3]: README_PATH=$README_PATH" 1>&2
     echo "$0: debug[3]: INDEX_PATH=$INDEX_PATH" 1>&2
-    echo "$0: debug[3]: ENTRY_JSON=$WINNER_JSON" 1>&2
+    echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
 fi
 
 # -N stops early before any processing is performed

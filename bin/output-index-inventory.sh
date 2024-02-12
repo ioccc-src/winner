@@ -394,7 +394,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: WINNER_ID=$WINNER_ID" 1>&2
     echo "$0: debug[3]: DOT_YEAR=$DOT_YEAR" 1>&2
     echo "$0: debug[3]: DOT_PATH=$DOT_PATH" 1>&2
-    echo "$0: debug[3]: ENTRY_JSON=$WINNER_JSON" 1>&2
+    echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
