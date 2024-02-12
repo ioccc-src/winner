@@ -6,8 +6,8 @@
 #
 # This tool is intended to be invoked by a tool such as 'readme2index.sh"
 # and as such, the leading options will include "-p pandoc_wrapper" and -P "optstr",
-# the final arg will be in yyyy/dir form, and will be called from
-# the topdir directory under which the yyyy/dir winner directory must be found.
+# the final arg will be in YYYY/dir form, and will be called from
+# the topdir directory under which the YYYY/dir winner directory must be found.
 #
 # Copyright (c) 2023,2024 by Landon Curt Noll.  All Rights Reserved.
 #
@@ -35,7 +35,7 @@
 
 # firewall - must be bash with a version 4.2 or later
 #
-# We must declare arrays with -ag or -Ag
+# We must declare arrays with -ag or -Ag, and we need loops to "export" modified variables.
 #
 if [[ -z ${BASH_VERSINFO[0]} || ${BASH_VERSINFO[0]} -lt 4 || ${BASH_VERSINFO[0]} -eq 4 && ${BASH_VERSINFO[1]} -lt 2 ]]; then
     echo "$0: ERROR: bash version must be >= 4.2: $BASH_VERSION" 1>&2
@@ -56,7 +56,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.2 2024-01-19"
+export VERSION="1.4 2024-02-05"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -64,8 +64,8 @@ export PANDOC_TOOL
 GIT_TOOL=$(type -P git)
 export GIT_TOOL
 if [[ -z "$GIT_TOOL" ]]; then
-    echo "$0: FATAL: git tool is not installed or not in PATH" 1>&2
-    exit 200
+    echo "$0: FATAL: git tool is not installed or not in \$PATH" 1>&2
+    exit 210
 fi
 "$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
 status="$?"
@@ -76,16 +76,20 @@ PANDOC_TOOL=$(type -P pandoc)
 if [[ -z $PANDOC_TOOL ]]; then
     PANDOC_TOOL="/opt/homebrew/bin/pandoc"
 fi
-export PANDOC_ARGS="-f markdown -t html --fail-if-warnings=true"
 export PANDOC_WRAPPER="bin/pandoc_wapper.sh"
-export PANDOC_WRAPPER_OPTSTR="-f markdown -t html --fail-if-warnings=true"
+unset PANDOC_OPTION
+declare -ag PANDOC_OPTION
+PANDOC_OPTION+=("-f")
+PANDOC_OPTION+=("markdown")
+PANDOC_OPTION+=("-t")
+PANDOC_OPTION+=("html")
+PANDOC_OPTION+=("--fail-if-warnings=true")
 export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc"
-export TOP_URL="https://ioccc-src.github.io/temp-test-ioccc"
 
 # set usage message
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
-			[-p pandoc_tool] [-P pandoc_opts] [-u repo_url] [-U top_url] [-e string ..] [-E exitcode]
+			[-p pandoc_tool] [-u repo_url] [-e string ..] [-E exitcode]
 			file.md output.html
 
 	-h		print help message and exit
@@ -98,11 +102,8 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 	-N		do not process file, just parse arguments and ignore the file (def: process the file)
 
 	-p pandoc_tool	path to the pandoc tool (not the wrapper) (def: $PANDOC_TOOL)
-	-P pandoc_opts	options given to the pandoc tool (def: $PANDOC_ARGS)
-			NOTE: The 'pandoc_opts' may not contain a single-quote or a double-quote.
 
 	-u repo_url	Base level URL of target git repo (def: $REPO_URL)
-	-U top_url	Top level URL of web site where HTML files will be viewed (def: $TOP_URL)
 
 	-e string	output string, followed by newline, to stderr (def: do not)
 	-E exitcode	force exit with exitcode (def: exit based on success or failure of the action)
@@ -121,8 +122,8 @@ Exit codes:
      4         bash version is < 4.2
      5         file.md file not found or not readable file
      6         pandoc tool not found or not executable
- >= 10 < 200   ((not used))
- >= 200	       internal error
+ >= 10  < 210  ((not used))
+ >= 210	       internal tool error
 
 $NAME version: $VERSION"
 
@@ -133,7 +134,7 @@ export DO_NOT_PROCESS=
 
 # parse command line
 #
-while getopts :hv:Vd:nNp:P:u:U:e:E: flag; do
+while getopts :hv:Vd:nNp:u:e:E: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -151,11 +152,7 @@ while getopts :hv:Vd:nNp:P:u:U:e:E: flag; do
 	;;
     p) PANDOC_TOOL="$OPTARG"
 	;;
-    P) PANDOC_ARGS="$OPTARG"
-	;;
     u) REPO_URL="$OPTARG"
-	;;
-    U) TOP_URL="$OPTARG"
 	;;
     e) echo "$OPTARG" 1>&2
 	;;
@@ -163,7 +160,7 @@ while getopts :hv:Vd:nNp:P:u:U:e:E: flag; do
 	;;
     \?) echo "$0: ERROR: invalid option: -$OPTARG" 1>&2
 	echo 1>&2
-	print_usage 1>&2
+	echo "$USAGE" 1>&2
 	exit 3
 	;;
     :) echo "$0: ERROR: option -$OPTARG requires an argument" 1>&2
@@ -224,16 +221,20 @@ fi
 # verify that we have a topdir directory
 #
 REPO_NAME=$(basename "$REPO_URL")
-export REPO_NAME
 if [[ -z $TOPDIR ]]; then
     echo "$0: ERROR: cannot find top of git repo directory" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
-    exit 201
+    exit 211
+fi
+if [[ ! -e $TOPDIR ]]; then
+    echo "$0: ERROR: TOPDIR does not exist: $TOPDIR" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    exit 212
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR is not a directory: $TOPDIR" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
-    exit 202
+    exit 213
 fi
 
 # verify that we have an author subdirectory
@@ -241,7 +242,7 @@ fi
 export AUTHOR_PATH="$TOPDIR/author"
 if [[ ! -d $AUTHOR_PATH ]]; then
     echo "$0: ERROR: author is not a directory under topdir: $AUTHOR_PATH" 1>&2
-    exit 203
+    exit 214
 fi
 export AUTHOR_DIR="author"
 
@@ -250,7 +251,7 @@ export AUTHOR_DIR="author"
 export INC_PATH="$TOPDIR/inc"
 if [[ ! -d $INC_PATH ]]; then
     echo "$0: ERROR: inc is not a directory under topdir: $INC_PATH" 1>&2
-    exit 204
+    exit 215
 fi
 export INC_DIR="inc"
 
@@ -259,7 +260,7 @@ export INC_DIR="inc"
 export BIN_PATH="$TOPDIR/bin"
 if [[ ! -d $BIN_PATH ]]; then
     echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
-    exit 205
+    exit 216
 fi
 export BIN_DIR="bin"
 
@@ -267,11 +268,11 @@ export BIN_DIR="bin"
 #
 if [[ ! -e $TOPDIR ]]; then
     echo "$0: ERROR: cannot cd to non-existent path: $TOPDIR" 1>&2
-    exit 206
+    exit 217
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: cannot cd to a non-directory: $TOPDIR" 1>&2
-    exit 207
+    exit 218
 fi
 export CD_FAILED
 if [[ $V_FLAG -ge 5 ]]; then
@@ -280,7 +281,7 @@ fi
 cd "$TOPDIR" || CD_FAILED="true"
 if [[ -n $CD_FAILED ]]; then
     echo "$0: ERROR: cd $TOPDIR failed" 1>&2
-    exit 208
+    exit 219
 fi
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
@@ -292,7 +293,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: NAME=$NAME" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
-    echo "$0: debug[3]: TOP_URL=$TOP_URL" 1>&2
     echo "$0: debug[3]: AUTHOR_PATH=$AUTHOR_PATH" 1>&2
     echo "$0: debug[3]: AUTHOR_DIR=$AUTHOR_DIR" 1>&2
     echo "$0: debug[3]: INC_PATH=$INC_PATH" 1>&2
@@ -316,27 +316,15 @@ fi
 #
 if [[ -z $NOOP ]]; then
     if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[1]: will execute pandoc as: $PANDOC_TOOL -o $HTML_OUTPUT $PANDOC_ARGS $MARKDOWN_INPUT" 1>&2
+	echo "$0: debug[1]: will execute pandoc as: $PANDOC_TOOL ${PANDOC_OPTION[*]} -o $HTML_OUTPUT $MARKDOWN_INPUT" 1>&2
     fi
-    # The pandoc args $PANDOC_ARGS does contain things that must be
-    # globbed and split (SC2086) for the pandoc tool.
-    #
-    # SC2086 (info): Double quote to prevent globbing and word splitting.
-    # https://www.shellcheck.net/wiki/SC2086
-    # shellcheck disable=SC2086
-    "$PANDOC_TOOL" -o "$HTML_OUTPUT" $PANDOC_ARGS "$MARKDOWN_INPUT"
+    "$PANDOC_TOOL" "${PANDOC_OPTION[@]}" -o "$HTML_OUTPUT" "$MARKDOWN_INPUT"
     status="$?"
 else
     if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[3]: will execute pandoc as: $PANDOC_TOOL $PANDOC_ARGS -o /dev/null $MARKDOWN_INPUT" 1>&2
+	echo "$0: debug[3]: will execute pandoc as: $PANDOC_TOOL ${PANDOC_OPTION[*]} -o /dev/null $MARKDOWN_INPUT" 1>&2
     fi
-    # The pandoc args $PANDOC_ARGS does contain things that must be
-    # globbed and split (SC2086) for the pandoc tool.
-    #
-    # SC2086 (info): Double quote to prevent globbing and word splitting.
-    # https://www.shellcheck.net/wiki/SC2086
-    # shellcheck disable=SC2086
-    "$PANDOC_TOOL" $PANDOC_ARGS -o /dev/null "$MARKDOWN_INPUT"
+    "$PANDOC_TOOL" "${PANDOC_OPTION[*]}" -o /dev/null "$MARKDOWN_INPUT"
     status="$?"
 fi
 if [[ $status -ne 0 ]]; then

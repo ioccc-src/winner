@@ -1,0 +1,461 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "winner_JSON_format_version" : "1.1 2024-02-11",
+    "award" : "Best painting tool",
+    "year" : 2013,
+    "dir" : "birken",
+    "winner_id" : "2013_birken",
+    "author_set" : [
+	{ "author_handle" : "Michael_Birken" }
+    ],
+    "manifest" : [
+	{
+	    "file_path" : "index.html",
+	    "inventory_order" : 10,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "entry home page"
+	},
+	{
+	    "file_path" : "birken.c",
+	    "inventory_order" : 20,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "winning source"
+	},
+	{
+	    "file_path" : "Makefile",
+	    "inventory_order" : 30,
+	    "OK_to_edit" : true,
+	    "display_as" : "makefile",
+	    "display_via_github" : true,
+	    "entry_text" : "entry Makefile"
+	},
+	{
+	    "file_path" : "birken.alt.c",
+	    "inventory_order" : 40,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "alternative source"
+	},
+	{
+	    "file_path" : "birken.orig.c",
+	    "inventory_order" : 50,
+	    "OK_to_edit" : false,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "original source"
+	},
+	{
+	    "file_path" : "belmont.txt",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "bloober.txt",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "bomberman.txt",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "boo.txt",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "bub.txt",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "cheepcheep.txt",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "format.txt",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "gurin.txt",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "happyface.txt",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "helloworld.txt",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "hilbert.txt",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "ioccc.txt",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "koopaparatroopa.txt",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "lakitu.txt",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "landon.txt",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "leo.txt",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "mario.txt",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "mspacman.txt",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "names.png",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "palette.png",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "paranaplant.txt",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "rhino.txt",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "rotations.png",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "samus.txt",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "simon.txt",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "snoo.txt",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "toad.txt",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "try.alt.sh",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "how to run alternative code"
+	},
+	{
+	    "file_path" : "try.sh",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "how to run"
+	},
+	{
+	    "file_path" : "2013_birken.tar.bz2",
+	    "inventory_order" : 300,
+	    "OK_to_edit" : false,
+	    "display_as" : "tbz2",
+	    "display_via_github" : false,
+	    "entry_text" : "download winning source"
+	},
+	{
+	    "file_path" : ".gitignore",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "gitignore",
+	    "display_via_github" : true,
+	    "entry_text" : "list of files that should not be committed under git"
+	},
+	{
+	    "file_path" : ".path",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : false,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "directory path from top directory"
+	},
+	{
+	    "file_path" : ".entry.json",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "json",
+	    "display_via_github" : true,
+	    "entry_text" : "description of entry in JSON"
+	},
+	{
+	    "file_path" : "README.md",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "markdown",
+	    "display_via_github" : true,
+	    "entry_text" : "markdown source for index.html"
+	},
+	{
+	    "file_path" : "multi2.gif",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "stages of multi-square emitters"
+	},
+	{
+	    "file_path" : "multi3.gif",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "stages showing multi-square emitters"
+	},
+	{
+	    "file_path" : "multi4.gif",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "stages showing multi-square emitters"
+	},
+	{
+	    "file_path" : "multi5.gif",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "stages of multi-square emitters"
+	},
+	{
+	    "file_path" : "pen0.gif",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "stages of single square rotruding from the bottom"
+	},
+	{
+	    "file_path" : "pen1.gif",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "stages of single square rotruding from the bottom"
+	},
+	{
+	    "file_path" : "pen2.gif",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "stages of single square rotruding from the bottom"
+	},
+	{
+	    "file_path" : "pen4.gif",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "stages of single square rotruding from the bottom"
+	},
+	{
+	    "file_path" : "pen5.gif",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "stages of single square rotruding from the bottom"
+	},
+	{
+	    "file_path" : "pen6.gif",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "stages of single square rotruding from the bottom"
+	},
+	{
+	    "file_path" : "pen7.gif",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "stages of single square rotruding from the bottom"
+	},
+	{
+	    "file_path" : "pen8.gif",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "stages of single square rotruding from the bottom"
+	},
+	{
+	    "file_path" : "platform0.gif",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "stages of 5 red squares above a row of 3 red squares"
+	},
+	{
+	    "file_path" : "platform1.gif",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "stages of 5 red squares above a row of 3 red squares"
+	},
+	{
+	    "file_path" : "platform2.gif",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "stages of 5 red squares above a row of 3 red squares"
+	},
+	{
+	    "file_path" : "triple0.gif",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "stages of constructed of rectangular regions"
+	},
+	{
+	    "file_path" : "triple1.gif",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "stages of constructed of rectangular regions"
+	}
+    ]
+}

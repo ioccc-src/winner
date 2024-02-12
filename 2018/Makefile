@@ -41,7 +41,7 @@ include ../var.mk
 # IOCCC winners
 ###############
 #
-WINNERS= anderson algmyr bellard burton1 burton2 ciura endoh1 endoh2 ferguson \
+WINNERS= algmyr anderson bellard burton1 burton2 ciura endoh1 endoh2 ferguson \
 	 giles hou mills poikola vokes yang
 
 YEAR= 2018

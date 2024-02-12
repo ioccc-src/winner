@@ -1,6 +1,6 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_JSON_format_version" : "1.1 2024-02-11",
     "author_handle" : "Qiming_HOU",
     "full_name" : "Qiming HOU",
     "sort_word" : "hou",
@@ -15,10 +15,10 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "winner_id" : "2011_hou" },
-	{ "winner_id" : "2012_hou" },
-	{ "winner_id" : "2013_hou" },
-	{ "winner_id" : "2015_hou" },
-	{ "winner_id" : "2018_hou" }
+	{ "entry_id" : "2011_hou" },
+	{ "entry_id" : "2012_hou" },
+	{ "entry_id" : "2013_hou" },
+	{ "entry_id" : "2015_hou" },
+	{ "entry_id" : "2018_hou" }
     ]
 }

@@ -478,7 +478,7 @@ grep -v '^#' "$AUTHOR_HANDLE_TXT" | while read -r AUTHOR_HANDLE; do
 	    #
 	    echo '{'
 	    echo '    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",'
-	    echo '    "author_JSON_format_version" : "1.0 2023-06-10",'
+	    echo '    "author_JSON_format_version" : "1.1 2024-02-11",'
 
 	    # print author handle related JSON members from AUTHOR_CSV
 	    #
@@ -534,12 +534,12 @@ grep -v '^#' "$AUTHOR_HANDLE_TXT" | while read -r AUTHOR_HANDLE; do
 	    WIN_COUNT=$(echo "$WINS" | sed -e 's/,/\n/g' | wc -l)
 	    export WIN_COUNT
 	    export WIN_NUMBER=0
-	    echo "$WINS" | sed -e 's/,/\n/g' | while read -r WINNER_ID; do
+	    echo "$WINS" | sed -e 's/,/\n/g' | while read -r ENTRY_ID; do
 		((++WIN_NUMBER))
 		if [[ $WIN_NUMBER -lt $WIN_COUNT ]]; then
-		    echo '	{ "winner_id" : "'"$WINNER_ID"'" },'
+		    echo '	{ "entry_id" : "'"$ENTRY_ID"'" },'
 		else
-		    echo '	{ "winner_id" : "'"$WINNER_ID"'" }'
+		    echo '	{ "entry_id" : "'"$ENTRY_ID"'" }'
 		fi
 	    done
 	    echo '    ]'

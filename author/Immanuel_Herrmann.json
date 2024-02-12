@@ -1,6 +1,6 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_JSON_format_version" : "1.1 2024-02-11",
     "author_handle" : "Immanuel_Herrmann",
     "full_name" : "Immanuel Herrmann",
     "sort_word" : "herrmann",
@@ -15,7 +15,7 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "winner_id" : "2001_herrmann1" },
-	{ "winner_id" : "2001_herrmann2" }
+	{ "entry_id" : "2001_herrmann1" },
+	{ "entry_id" : "2001_herrmann2" }
     ]
 }

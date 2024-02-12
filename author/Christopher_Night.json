@@ -1,6 +1,6 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_JSON_format_version" : "1.1 2024-02-11",
     "author_handle" : "Christopher_Night",
     "full_name" : "Christopher Night",
     "sort_word" : "night",
@@ -15,6 +15,6 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "winner_id" : "2006_night" }
+	{ "entry_id" : "2006_night" }
     ]
 }

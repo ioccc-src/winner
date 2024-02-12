@@ -1,0 +1,149 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "winner_JSON_format_version" : "1.1 2024-02-11",
+    "award" : "Best of Show",
+    "year" : 2004,
+    "dir" : "gavin",
+    "winner_id" : "2004_gavin",
+    "author_set" : [
+	{ "author_handle" : "Gavin_Barraclough" }
+    ],
+    "manifest" : [
+	{
+	    "file_path" : "index.html",
+	    "inventory_order" : 10,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "entry home page"
+	},
+	{
+	    "file_path" : "gavin.c",
+	    "inventory_order" : 20,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "winning source"
+	},
+	{
+	    "file_path" : "Makefile",
+	    "inventory_order" : 30,
+	    "OK_to_edit" : true,
+	    "display_as" : "makefile",
+	    "display_via_github" : true,
+	    "entry_text" : "entry Makefile"
+	},
+	{
+	    "file_path" : "gavin.alt.c",
+	    "inventory_order" : 40,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "alternative source"
+	},
+	{
+	    "file_path" : "gavin.orig.c",
+	    "inventory_order" : 50,
+	    "OK_to_edit" : false,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "original source"
+	},
+	{
+	    "file_path" : "gavin.html",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "author usage guide"
+	},
+	{
+	    "file_path" : "lilo.conf",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "boot loader configuration"
+	},
+	{
+	    "file_path" : "boot.b",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "binary",
+	    "display_via_github" : false,
+	    "entry_text" : "boot sector"
+	},
+	{
+	    "file_path" : "img/fs.tar",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "tarball",
+	    "display_via_github" : false,
+	    "entry_text" : "tar of root file system"
+	},
+	{
+	    "file_path" : "img/kernel",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "kernel",
+	    "display_via_github" : false,
+	    "entry_text" : "Linux kernel x86 boot executable zImage"
+	},
+	{
+	    "file_path" : "prim",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "binary",
+	    "display_via_github" : false,
+	    "entry_text" : "prime number printing program"
+	},
+	{
+	    "file_path" : "2004_gavin.tar.bz2",
+	    "inventory_order" : 300,
+	    "OK_to_edit" : false,
+	    "display_as" : "tbz2",
+	    "display_via_github" : false,
+	    "entry_text" : "download winning source"
+	},
+	{
+	    "file_path" : ".gitignore",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "gitignore",
+	    "display_via_github" : true,
+	    "entry_text" : "list of files that should not be committed under git"
+	},
+	{
+	    "file_path" : ".path",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : false,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "directory path from top directory"
+	},
+	{
+	    "file_path" : ".entry.json",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "json",
+	    "display_via_github" : true,
+	    "entry_text" : "description of entry in JSON"
+	},
+	{
+	    "file_path" : "README.md",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "markdown",
+	    "display_via_github" : true,
+	    "entry_text" : "markdown source for index.html"
+	},
+	{
+	    "file_path" : "gavin.md",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "markdown",
+	    "display_via_github" : true,
+	    "entry_text" : "markdown source for gavin.html"
+	}
+    ]
+}

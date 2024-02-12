@@ -1,6 +1,6 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_JSON_format_version" : "1.1 2024-02-11",
     "author_handle" : "Aaron_Grothe",
     "full_name" : "Aaron Grothe",
     "sort_word" : "grothe",
@@ -15,7 +15,7 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "winner_id" : "2006_grothe" },
-	{ "winner_id" : "2012_grothe" }
+	{ "entry_id" : "2006_grothe" },
+	{ "entry_id" : "2012_grothe" }
     ]
 }

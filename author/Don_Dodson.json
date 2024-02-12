@@ -1,6 +1,6 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_JSON_format_version" : "1.1 2024-02-11",
     "author_handle" : "Don_Dodson",
     "full_name" : "Don Dodson",
     "sort_word" : "dodson",
@@ -15,9 +15,9 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "winner_id" : "1994_dodsond1" },
-	{ "winner_id" : "1994_dodsond2" },
-	{ "winner_id" : "1995_dodsond1" },
-	{ "winner_id" : "1995_dodsond2" }
+	{ "entry_id" : "1994_dodsond1" },
+	{ "entry_id" : "1994_dodsond2" },
+	{ "entry_id" : "1995_dodsond1" },
+	{ "entry_id" : "1995_dodsond2" }
     ]
 }

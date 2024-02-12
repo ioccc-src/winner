@@ -1,6 +1,6 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_JSON_format_version" : "1.1 2024-02-11",
     "author_handle" : "Etienne_Duble",
     "full_name" : "Etienne Duble",
     "sort_word" : "duble",
@@ -15,7 +15,7 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "winner_id" : "2015_duble" },
-	{ "winner_id" : "2019_duble" }
+	{ "entry_id" : "2015_duble" },
+	{ "entry_id" : "2019_duble" }
     ]
 }

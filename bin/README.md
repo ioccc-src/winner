@@ -30,14 +30,37 @@ bin/all-run.sh -v 3 bin/readme2index.sh -v 1
 ```
 
 
-### [gen-author.sh](gen-author.sh)
+### [gen-authors.sh](gen-authors.sh)
 
-Output winning author(s) Related HTML.
+Generate the top level `/authors.html` page.
+
+Usage:
+
+```sh
+bin/gen-authors.sh -v 1
+```
 
 
-### [gen-inventory.sh](gen-inventory.sh)
+### [gen-location.sh](gen-location.sh)
 
-Output the inventory in HTML form for a winner index.html page.
+Generate the top level `/location.html` page.
+
+Usage:
+
+```sh
+bin/gen-location.sh -v 1
+```
+
+
+### [gen-years.sh](gen-years.sh)
+
+Generate the top level `/years.html` page.
+
+Usage:
+
+```sh
+bin/gen-years.sh -v 1
+```
 
 
 ### [ioccc-status.sh](ioccc-status)
@@ -45,9 +68,29 @@ Output the inventory in HTML form for a winner index.html page.
 Updates the [status.json](/status.json) file.
 
 
-### [manifest.winner.json.awk](manifest.winner.json.awk)
+### [manifest.entry.json.awk](manifest.entry.json.awk)
 
-Output manifest table from a winner .winner.json file.
+Output manifest table from a entry .winner.json file.
+
+
+### [md2html.sh](md2html.sh)
+
+This is the primary tool that forms IOCCC generated HTML content from
+markdown files (permanent markdown files or temporarily generated
+markdown files) and HTML fragments from the [inc](/inc) directory.
+
+The [../inc/md2html.cfg](../inc/md2html.cfg) configuration file is
+used by [md2html.sh](md2html.sh) to drive the generation process.
+
+
+### [output-index-author.sh](output-index-author.sh)
+
+Output author(s) Related HTML for for an entry's index.html page.
+
+
+### [output-index-inventory.sh](output-index-inventory.sh)
+
+Output the inventory in HTML form for an entry's index.html page.
 
 
 ### [pandoc-wrapper.sh](pandoc-wrapper.sh)
@@ -57,16 +100,16 @@ Wrapper tool to run pandoc.
 
 ### [quick-readme2index.sh](quick-readme2index.sh)
 
-Runs [readme2index.sh](readme2index.sh) if the winner directory
+Runs [readme2index.sh](readme2index.sh) if the entry directory
 does not have a non-empty `index.hmtl` file, or if either
 `.winner.json` or `README.md` is newer than the `index.hmtl` file.
 
-This is useful when only a few winners have been
+This is useful when only a few entries have been
 modified (resulting in an updated `.winner.json` file)
-or if the `README.md` of a few winners have been changed.
+or if the `README.md` of a few entries have been changed.
 
 While the [readme2index.sh](readme2index.sh) take a few
-seconds to run, when applied to 300+ winners,
+seconds to run, when applied to 300+ entries,
 the extra time can add up.
 
 If only a few `index.hmtl` files need updating, then
@@ -88,10 +131,10 @@ bin/all-run.sh -v 3 bin/readme2index.sh -v 1
 
 ### [readme2index.sh](readme2index.sh)
 
-Convert README.md into index.html.
+Convert a entry README.md into entry directory index.html.
 
 
-### [sgi](sgi)
+### [sgi.sh](sgi.sh)
 
 Sort .gitignore content from stdin to stdout.
 
@@ -100,21 +143,23 @@ We sort with lines starting with * second.
 We sort with lines that do not start with [#!*] third.
 We sort with lines starting with ! fourth.
 
+This tool is used by [sort.gitignore.sh](sort.gitignore.sh).
 
-### [sort.gitignore](sort.gitignore)
 
-Sort a .gitignore in a winner directory.
+### [sort.gitignore.sh](sort.gitignore.sh)
+
+Sort a .gitignore in a entry directory.
 
 Usage:
 
 ```sh
-bin/sort.gitignore -v 1 YYYY/dir
+bin/sort.gitignore.sh -v 1 YYYY/dir
 ```
 
 Suggested usage:
 
 ```sh
-bin/all-run.sh bin/sort.gitignore -v 1
+bin/all-run.sh bin/sort.gitignore.sh -v 1
 ```
 
 
@@ -123,30 +168,67 @@ bin/all-run.sh bin/sort.gitignore -v 1
 Print default substitutions.
 
 
-### [subst.winner-index.sh](subst.winner-index.sh)
+### [subst.entry-index..sh](subst.entry-index..sh)
 
-Print substitutions for a winner index.html.
-
-
-### [subst.winner-navbar.awk](subst.winner-navbar.awk)
-
-Output substitutions for navbar on behalf of a winner.
+Print substitutions for a entry index.html.
 
 
-## How HTML content is built
+### [subst.entry-navbar.awk](subst.entry-navbar.awk)
 
-Files under the [inc](../inc/README.md) directory contain HTML fragments that the
-tools in the [bin](README.md) directory
-tools use to form HTML content for the [official IOCCC web site](https://www.ioccc.org).
+Output substitutions for navbar on behalf of a entry.
 
-The canonical way that HTML content is built uses, by default, files of the form:
+
+# <a name="how"></a>How IOCCC HTML content is built
+
+The [md2html.sh](md2html.sh) tool is the primary tool that
+is used to form all IOCCC related HTML pages for the [official IOCCC web
+site](https://www.ioccc.org).
+
+Nearly all IOCCC related HTML pages are built from markdown files,
+from either permanent markdown files or temporary generated markdown files,
+as well as HTML fragments from the [inc](../inc/README.md) directory.
+
+Most HTML content is built from permanant markdown files, such as a `README.md`
+markdown file found in each entry directory.  Some HTML content are generated
+from temporary markdown files.  These temporary markdown files are produced by
+tools in the [bin](README.md) directory and exist only while the tool is running.
+
+In addition to converting markdown to HTML, the canonical way that HTML content is
+built uses, by default, files from the [inc](../inc/README.md) directory, of the form:
 
 ```
 *.default.html
 ```
 
+By using command line options of the form
 
-### HTML phases
+```sh
+-H phase=name
+```
+
+where `phase` is the name of an HTML phase,
+a non-default file may be used.  For example:
+
+```sh
+-H topnav=up2index
+```
+
+will cause [inc/topnav.up2index.html](../inc/topnav.up2index.html)
+instead of [inc/topnav.default.html](../inc/topnav.default.html) to be
+used during the _topnav_ HTML phase.
+
+If _name_ is dot (i.e., "."), then the given HTML phase is skipped.
+For example:
+
+```sh
+-H footer=.
+```
+
+will cause no HTML content to be produced during the _footer_ HTML phase.
+
+
+
+## <a name="html"></a>HTML phases
 
 The following HTML phase files are used to build HTML content:
 
@@ -186,7 +268,108 @@ See the tool [readme2index.sh](readme2index.sh) for an example of
 how HTML phases are implemented.
 
 
-### Tool command line
+## <a name="getopt"></a>Getopt phase processing of the command line
+
+The command options are evaluated in the following getopt phases:
+
+
+### Getopt phase 0
+
+In getopt phase 0 we parse command line options and save all arguments for the end of the final command line.
+
+Depending on the program, the argument at the end is directory under topdir, or it is a file under topdir.
+
+In getopt phase 0 is the only getopt phase where "-d topdir" and "-c md2html.cfg" may be used.
+
+
+### Getopt phase 1
+
+In getopt phase 1 we execute each -o "output tool" from getopt phase 0, parsing the output as a command line.
+
+The -o "output tool" may be given optstr from "-O tool=optstr", followed by the phase 0 argument.
+
+The -o "output tool" is not allowed to output another "-o tool", nor a "-O tool=optstr".
+Instead an -o "output tool" may execute another -o "output tool" merge the output into its own.
+
+
+### Getopt phase 2
+
+In getopt phase 2 we parse the "cfg_options" from the first "md2html.cfg" line matched by saved argument.
+
+The match is made with the (possibly modified) phase 0 argument.
+
+
+### Getopt phase 3
+
+In getopt phase 3 we execute each -o "output tool" from getopt phase 2, parsing the output as a command line.
+
+The -o "output tool" may be given optstr from "-O tool=optstr", followed by the phase 0 argument.
+
+The -o "output tool" is not allowed to output another "-o tool", nor a "-O tool=optstr".
+Instead an -o "output tool" may execute another -o "output tool" merge the output into its own.
+
+
+### Command line option order
+
+Most command line options override earlier copies of the same option.  However in the case of
+'-H phase=name', later '-H phase=name' only overrides an earlier use of '-H' for the same 'phase' only.
+Also in the case of '-s token=value', later '-s token=value' only overrides an earlier use of '-s'
+for the same 'token' only.
+
+
+### Output tools
+
+An "output tool" may be used to add certain additional command line options to be processed.
+
+IMPORTANT: An "output tool" will print each command line option / argument on a separate line.
+So for example, if an "output tool" wishes to convey:
+
+```
+-s TITIE='IOCCC entry locations' -H topnav=top-of-site
+```
+
+The  "output tool" would output the following 4 lines:
+
+```
+-s
+TITIE='IOCCC entry locations'
+-H
+topnav=top-of-site
+```
+
+The command line opions printed by an "output tool" are processed
+after all command line options, and all options from a matching
+line from the md2html.cfg file, and before any filename arguments
+on the command line.
+
+For exmaple:
+
+```
+command [command_options ..] [cfg_options ..] [output_tool_options ..] [--] [filename_arg ..]
+```
+
+Here the 'command' first processes any command line options, then
+it processes 'cfg_options' obtained from this file from a 1st match of a given file_glob, then
+it processes 'output tool' (i.e., -o tool) options found in 'command_options', and 'cfg_options', then
+an optional -- (end of all options), then zero of more 'filename_arg' filename arguments.
+
+The '-o tool' must NOT output any '-o tool' options as '-o tool' is NOT RECURSIVE.  A '-o tool' is free, however,
+to execute other '-o tool' output tools and merge the output from those tools into its own.
+
+
+### Special -E exitcode option
+
+When '-E exitcode' is evaluated, the application will exit with the 'exitcode' value.  If one wishes to also
+output a message to stderr, the '-e string' must come BEFORE any '-E exitcode' in the command line.
+
+
+### Substitution tokens
+
+All tokens (i.e., strings of the form '%%token%%') MUST be substituted (by some -s token=value)
+in all HTML output, except during phase numbers 20-29 (i.e., except 'before tool' output, pandoc wrapper output,
+and except 'after tool' output), or command will exit non-zero, unless -S is given.  If -S is given,
+only a warning about un-substituted tokens will be written to stderr.
+
 
 The command line of tools in the [bin](README.md) directory,
 and perhaps modified via [md2html config file](../inc/md2html.cfg) file may change
@@ -197,7 +380,7 @@ a different "topnav" navigation bar is needed.  So instead of the
 usual top navigation bar that normally directs people to the previous
 entry for the year, or go up to the year page, or to the next entry
 for the year, a top navigation bar to just go up to the entry's
-main page is needed.   A line the [md2html config file](../inc/md2html.cfg) file
+main page is needed.   A line in the [md2html config file](../inc/md2html.cfg) file
 that refers to `2020/ferguson1/chocolate-cake.md` may specify use
 of `topnav.up2index.html` instead of using the `topnav.default.html` default.
 
@@ -209,7 +392,7 @@ See also, the tool [readme2index.sh](readme2index.sh) for an example of
 how such command lines are used.
 
 
-## Use CAUTION when modifying inc files
+# Use CAUTION when modifying inc files
 
 Some of the files under this directory are used to form **MOST** of the HTML content
 on the [official IOCCC web site](https://www.ioccc.org).
@@ -230,14 +413,14 @@ consider making a copy of the default file and modifying the [md2html config fil
 not impact **MOST** of the HTML content.
 
 
-## Why do we do not use certain well know HTML technology
+# Why do we do not use certain well-known HTML technologies
 
 You may wonder why we need these files in the first place.
 You may wonder why we even need the tools in the [bin](README.md) directory
 when there other solutions available to form web pages.
 
 
-### <a name="static-only"></a>Static web pages only
+## <a name="static-only"></a>Static web pages only
 
 Here are some reasons why we are using these files and
 special tools to create HTML content / IOCCC web pages:
@@ -246,23 +429,23 @@ We host [official IOCCC web site](https://www.ioccc.org) via [GitHub pages](http
 As of the time this file written, **only static web pages are supported**.
 
 
-### Cannot use server side include
+## We cannot use server side include
 
 We use [static web pages](#static-only), so use of "server side include" is not available to the IOCCC.
 
 For example, Apache SSI "#include" does not work on [GitHub pages](https://pages.github.com).
 
 
-### Cannot use a back-end database
+## We cannot use a back-end database
 
 We use [static web pages](#static-only), so use of "back-end database" is not available to the IOCCC.
 
 
-### <a name="why-github"></a>Cannot use non-GitHub web servers
+## <a name="why-github"></a>We cannot use non-GitHub web servers
 
 The [GitHub pages](https://pages.github.com) have the distributed server capacity needed to handle
 the **huge download volume** or [Slashdot effect](https://en.wikipedia.org/wiki/Slashdot_effect)
-that happens when a IOCCC winners are published.
+that happens when a IOCCC entries are published.
 
 Most so-called low cost web hosting sites have a somewhat hidden excessive bandwidth charge
 and/or cap bandwidth when the volume gets too high, and/or do not have the infrastructure
@@ -279,7 +462,7 @@ with some supporting documentation.  As such it is a natural fit for GitHub and
 [GitHub pages](https://pages.github.com).
 
 
-### cannot use the HTML object tag
+## We cannot use the HTML object tag
 
 The _<_ object _>_ HTML tag does not work for our needs.
 
@@ -288,7 +471,7 @@ HTML tag does not extend into the content that the tag includes.
 For example, menu bars will not operate as specified by the [ioccc CSS](../ioccc.css).
 
 
-### cannot use the HTML embed tag
+## We cannot use the HTML embed tag
 
 The _<_ embed _>_ HTML tag does not work for our needs.
 
@@ -301,7 +484,7 @@ Specifying a _width_ and _height_ in pixels will not work well in
 all of those screen size contexts.
 
 
-### cannot use the HTML iframe tag
+## We cannot use the HTML iframe tag
 
 The _<_ iframe _>_ HTML tag does not work for our needs.
 
@@ -314,7 +497,7 @@ Specifying a _width_ and _height_ in pixels will not work well in
 all of those screen size contexts.
 
 
-### cannot use JavaScript to include content
+## We cannot use JavaScript to include content
 
 We do not use JavaScript to include HTML content.
 
@@ -327,10 +510,9 @@ The IOCCC will **NOT MANDATE USE OF JavaScript** to view [official IOCCC web sit
 For this reason, we cannot use JavaScript include HTML content.
 
 
-# terms
+# <a name="terms"></a>IOCCC terms
 
-The following terms apply to tools, JSON files, and the directory structure
-of this repo.
+The following IOCCC terms apply to tools, JSON files, and the directory structure of this repo.
 
 
 ## `author`
@@ -400,20 +582,22 @@ Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$
 ```
 
 
-## `winner`
+## `entry`
 
 An IOCCC entry that won an award for given IOCCC.
 
-A `winner` has one more more `author`s.
+A `entry` has one more more `author`s.
 
-Each `winner` is contained under its own directory.  The parent of the winner directory
+Each `entry` is contained under its own directory.  The parent of the entry directory
 is the year's directory.
 
-While in most cases a `winner` consists of files under a `winner` directory,
-there are a few cases where a `winner` directory contains subdirectories.
+While in most cases a `entry` consists of files under a entry's directory,
+there are a few cases where a `entry` directory contains subdirectories.
 
-Use of subdirectories under a `winner` directory is discouraged and
-may be limited to previous `winner`s that used them.
+Use of subdirectories under a `entry` directory is discouraged and
+may be limited to previous `entry`s that used them.
+
+NOTE: In the past, the term _winner_ was used in instead of today's term of _entry_.
 
 
 ## `year`
@@ -445,7 +629,7 @@ instance, [2020/.year](/2020/.year) has the string: `2020`.
 
 ## `dir`
 
-A `dir` is a POSIX safe string that holds an winner.
+A `dir` is a POSIX safe string that holds an entry.
 
 A `dir` is a string that matches this regexp:
 
@@ -453,11 +637,11 @@ A `dir` is a string that matches this regexp:
 ^[a-z][0-9a-z.-]*$
 ```
 
-Each `winner` is under its own individual directory.  This directory
+Each `_entry_ is under its own individual directory.  This directory
 is directly under a `year` directory.
 
 
-### `winner_id`
+### `entry_id`
 
 A string that identifies the winning entry.  The string is of the form:
 

@@ -41,8 +41,8 @@ include ../var.mk
 # IOCCC winners
 ###############
 #
-WINNERS= akari blakely borsanyi dlowe eastman fredriksson goren hou \
-	 konno hamaji richards toledo vik zucker
+WINNERS= akari blakely borsanyi dlowe eastman fredriksson goren hamaji hou \
+	 konno richards toledo vik zucker
 
 YEAR= 2011
 

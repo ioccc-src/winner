@@ -1,6 +1,6 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_JSON_format_version" : "1.1 2024-02-11",
     "author_handle" : "Arch_D_Robison",
     "full_name" : "Arch D. Robison",
     "sort_word" : "robison",
@@ -15,9 +15,9 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "winner_id" : "1988_robison" },
-	{ "winner_id" : "1989_robison" },
-	{ "winner_id" : "2000_robison" },
-	{ "winner_id" : "2013_robison" }
+	{ "entry_id" : "1988_robison" },
+	{ "entry_id" : "1989_robison" },
+	{ "entry_id" : "2000_robison" },
+	{ "entry_id" : "2013_robison" }
     ]
 }

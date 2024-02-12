@@ -1,6 +1,6 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_JSON_format_version" : "1.1 2024-02-11",
     "author_handle" : "Anthony_C_Howe",
     "full_name" : "Anthony C. Howe",
     "sort_word" : "howe",
@@ -15,11 +15,11 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "winner_id" : "1991_ant" },
-	{ "winner_id" : "1992_ant" },
-	{ "winner_id" : "1993_ant" },
-	{ "winner_id" : "2004_hibachi" },
-	{ "winner_id" : "2005_mynx" },
-	{ "winner_id" : "2015_howe" }
+	{ "entry_id" : "1991_ant" },
+	{ "entry_id" : "1992_ant" },
+	{ "entry_id" : "1993_ant" },
+	{ "entry_id" : "2004_hibachi" },
+	{ "entry_id" : "2005_mynx" },
+	{ "entry_id" : "2015_howe" }
     ]
 }

@@ -2,6 +2,35 @@
 #
 # all-run.sh - run a command for all winners
 #
+# We cd to topdir, than then walk the winner directory tree.
+# We obtain the set of winner years (YYYY) via the .top file.
+# For each year (YYYY), we obtain the set of winner directories (dir).
+# For all winner directories (YYYY/dir) we run the tool.
+#
+# The tool argument, if not an absolute path, must be relative to topdir.
+# The tool argument is the first argument command line.  Any additional
+# arguments beyond the first tool argument are treated as more tool options.
+#
+# NOTE: A command line option is a dashed letter (e.g., -n or --) followed by an optional string (e.g., -v 3).
+#	Command line arguments follow any command line options (including any final -- option).
+#	While the 1st command line cannot start with a dash, optional line arguments that follow by start with a dash.
+#
+# Each tool run with command line of the form:
+#
+#	tool [any -D, -t tagline, -T md2html.sh, -p tool, -u repo_url, -w site_url] [more_options] YYYY/dir
+#
+# For example:
+#
+#	all-run.sh -v 3 -t readme2html -U https://www.ioccc.org bin/quick-readme2html.sh -v 1
+#
+# will run the tool bin/quick-readme2html.sh for each winner YYYY/dir as follows:
+#
+#	bin/quick-readme2html.sh -t readme2html -U https://www.ioccc.org YYYY/dir -v 1
+#
+# Only the "-D -t, -T, -p, -u, -w" option set are passed to the tool command line.
+# For all other special tool options, pass them as additional tool options (i.e., command line arguments
+# that follow the 1st command line argument) OR consider simply running the tool directly.
+#
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
@@ -28,7 +57,7 @@
 
 # firewall - must be bash with a version 4.2 or later
 #
-# We must declare arrays with -ag or -Ag
+# We must declare arrays with -ag or -Ag, and we need loops to "export" modified variables.
 #
 if [[ -z ${BASH_VERSINFO[0]} || ${BASH_VERSINFO[0]} -lt 4 || ${BASH_VERSINFO[0]} -eq 4 && ${BASH_VERSINFO[1]} -lt 2 ]]; then
     echo "$0: ERROR: bash version must be >= 4.2: $BASH_VERSION" 1>&2
@@ -49,14 +78,14 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.2 2024-01-20"
+export VERSION="1.3 2024-02-11"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
 GIT_TOOL=$(type -P git)
 export GIT_TOOL
 if [[ -z "$GIT_TOOL" ]]; then
-    echo "$0: FATAL: git tool is not installed or not in PATH" 1>&2
+    echo "$0: FATAL: git tool is not installed or not in \$PATH" 1>&2
     exit 10
 fi
 "$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
@@ -64,63 +93,69 @@ status="$?"
 if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
+export DOCROOT_SLASH="../../"
+export TAGLINE="unspecified"
+export MD2HTML_SH="bin/md2html.sh"
 export PANDOC_WRAPPER="bin/pandoc-wrapper.sh"
-export PANDOC_WRAPPER_OPTSTR="-f markdown -t html --fail-if-warnings=true"
 export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc"
-export TOP_URL="https://ioccc-src.github.io/temp-test-ioccc"
-export DOCROOT_URL_SLASH="/temp-test-ioccc/"
+export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 #
 export NOOP=
 export DO_NOT_PROCESS=
 export EXIT_CODE="0"
+
+# clear options we will add to tools
 #
-export P_FLAG_FOUND=
-export CAP_P_FLAG_FOUND=
-export U_FLAG_FOUND=
-export CAP_U_FLAG_FOUND=
+unset TOOL_OPTION
+declare -ag TOOL_OPTION
 
 # usage
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
-			[-p tool] [-P optstr] [-u repo_url] [-U top_url] [-e string ..] [-E exitcode]
-			tool [tool_options]
+export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
+			[-t tagline] [-T md2html.sh] [-p tool] [-u repo_url] [-w site_url]
+			tool [more_options]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
 	-V		print version string and exit
 
 	-d topdir	set topdir (def: $TOPDIR)
-			NOTE: The '-d topdir' is passed as leading options on tool command lines.
+	-D docroot/	set the document root path followed by slash (def: $DOCROOT_SLASH)
+			NOTE: The '-D docroot/' is passed as leading options on tool command lines.
+			NOTE: 'docroot' must end in a slash
 
 	-n		go thru the actions, but do not update any files (def: do the action)
-			NOTE: -n is passed to tool
-	-N		do not process file, just parse arguments and ignore the file (def: process the file)
-			NOTE: -N disables running a tool
+	-N		do not process anything, just parse arguments (def: process something)
+
+	-t tagline	string to write about the tool that formed the markdown content (def: $TAGLINE)
+			NOTE: 'pandoc_opts' may be enclosed within, but may NOT contain an internal single-quote or double-quote.
+	-T md2html.sh	run 'markdown to html tool' to convert markdown into HTML (def: $MD2HTML_SH)
 
 	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use $PANDOC_WRAPPER)
-			NOTE: The '-p tool' is passed as leading options on tool command lines.
-	-P pandoc_opts	run 'pandoc wrapper tool' with options found in 'optstr' (def: $PANDOC_WRAPPER_OPTSTR)
-			NOTE: The '-P pandoc_opts' is passed as leading options on tool command lines.
-			NOTE: The 'pandoc_opts' may not contain a single-quote or a double-quote.
 
 	-u repo_url	Base level URL of target git repo (def: $REPO_URL)
 			NOTE: The '-u repo_url' is passed as leading options on tool command lines.
-	-U top_url	Top level URL of web site where HTML files will be viewed (def: $TOP_URL)
-			NOTE: The '-U top_url' is passed as leading options on tool command lines.
+
+	-w site_url	Base URL of the web site (def: $SITE_URL)
+			NOTE: The '-w site_url' is passed as leading options on tool command lines.
 
 	tool		the tool to run over all winners
-	tool_options	tool command line options to use before YYYY/dir
+	[more_options]	additional tool command line options to use before the YYYY/dir argument
+
+NOTE: Any '-t tagline', '-T md2html.sh', '-p tool', '-P pandoc_opts', '-u repo_url', '-U top_url'
+      are passed to the 'tool' at the beginning of the command line, and
+      before any optional 'more_options' and before the final YYYY/dir argument.
 
 Exit codes:
      0         all OK
-     1	       some execution of tool exited non-zero
+     1	       some tool exited non-zero
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is < 4.2
-     5	       tool is not an executable
-     6	       topdir is not in proper form
-     7	       topdir/YYYY is not in proper form
-     8	       topdir/YYYY/dir is not in proper form
+     5	       tool and/or md2html.sh is not an executable file
+     6	       problems found with or in the topdir directory
+     7	       problems found with or in the topdir/YYYY directory
+     8	       problems found with or in the topdir/YYYY/dir directory
  >= 10 < 200   internal error
  >= 200	       ((not used))
 
@@ -128,7 +163,7 @@ $NAME version: $VERSION"
 
 # parse command line
 #
-while getopts :hv:Vd:nNp:P:u:U: flag; do
+while getopts :hv:Vd:D:nNt:T:p:u:w: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -140,36 +175,58 @@ while getopts :hv:Vd:nNp:P:u:U: flag; do
 	;;
     d) TOPDIR="$OPTARG"
 	;;
+    D) # parse -D docroot/
+	case "$OPTARG" in
+	*/) ;;
+	*) echo "$0: ERROR: in -D docroot/, the docroot must end in /" 1>&2
+	   echo 1>&2
+	   print_usage 1>&2
+	   exit 3
+	   ;;
+	esac
+	DOCROOT_SLASH="$OPTARG"
+	TOOL_OPTION+=("-D")
+	TOOL_OPTION+=("$DOCROOT_SLASH")
+	;;
     n) NOOP="-n"
 	;;
     N) DO_NOT_PROCESS="-N"
 	;;
-    p) PANDOC_WRAPPER="$OPTARG"
-	P_FLAG_FOUND="-p" ;;
-    P) # parse -P optstr
+    t) # parse -t tagline
 	case "$OPTARG" in
 	*"'"*)
-	    echo "$0: ERROR: in -P optstr, the optstr may not contain a single-quote character: $OPTARG" 1>&2
+	    echo "$0: ERROR: in -t tagline, the tagline may not contain a single-quote character: $OPTARG" 1>&2
 	    echo 1>&2
 	    print_usage 1>&2
 	    exit 3
 	    ;;
 	*'"'*)
-	    echo "$0: ERROR: in -P optstr, the optstr may not contain a double-quote character: $OPTARG" 1>&2
+	    echo "$0: ERROR: in -t tagline, the tagline may not contain a double-quote character: $OPTARG" 1>&2
 	    echo 1>&2
 	    print_usage 1>&2
 	    exit 3
 	    ;;
 	*) ;;
 	esac
-	PANDOC_WRAPPER_OPTSTR="$OPTARG"
-	CAP_P_FLAG_FOUND="-P"
+	TAGLINE="$OPTARG"
+	TOOL_OPTION+=("-t")
+	TOOL_OPTION+=("$TAGLINE")
+	;;
+    T) MD2HTML_SH="$OPTARG"
+	TOOL_OPTION+=("-T")
+	TOOL_OPTION+=("$MD2HTML_SH")
+	;;
+    p) PANDOC_WRAPPER="$OPTARG"
+	TOOL_OPTION+=("-p")
+	TOOL_OPTION+=("$PANDOC_WRAPPER")
 	;;
     u) REPO_URL="$OPTARG"
-	U_FLAG_FOUND="-u"
+	TOOL_OPTION+=("-u")
+	TOOL_OPTION+=("$REPO_URL")
 	;;
-    U) TOP_URL="$OPTARG"
-	CAP_U_FLAG_FOUND="-U"
+    w) SITE_URL="$OPTARG"
+	TOOL_OPTION+=("-w")
+	TOOL_OPTION+=("$SITE_URL")
 	;;
     \?) echo "$0: ERROR: invalid option: -$OPTARG" 1>&2
 	echo 1>&2
@@ -188,11 +245,7 @@ while getopts :hv:Vd:nNp:P:u:U: flag; do
 	;;
   esac
 done
-#
-if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: debug level: $V_FLAG" 1>&2
-fi
-#
+
 # remove the options
 #
 shift $(( OPTIND - 1 ));
@@ -203,7 +256,7 @@ fi
 #
 # verify arg count and parse args
 #
-export TOOL TOOL_OPTIONS
+export TOOL
 case "$#" in
 0) echo "$0: ERROR: expected 1 or more args, found: $#" 1>&2
    echo "$USAGE" 1>&2
@@ -213,53 +266,12 @@ case "$#" in
    ;;
 *) TOOL="$1"
    shift
-   TOOL_OPTIONS="$*"
+   while [[ $# -gt 0 ]]; do
+	TOOL_OPTION+=("$1")
+	shift
+   done
    ;;
 esac
-
-# clear options we will add to tools
-#
-export OPTSTR=
-
-# add '-p tool' options to tool arguments
-#
-if [[ -n $P_FLAG_FOUND && -n $PANDOC_WRAPPER ]]; then
-    if [[ -z $OPTSTR ]]; then
-	OPTSTR="-p \"$PANDOC_WRAPPER\""
-    else
-	OPTSTR="$OPTSTR -p \"$PANDOC_WRAPPER\""
-    fi
-fi
-
-# add '-P optstr' options to tool arguments
-#
-if [[ -n $CAP_P_FLAG_FOUND && -n $PANDOC_WRAPPER_OPTSTR ]]; then
-    if [[ -z $OPTSTR ]]; then
-	OPTSTR="-P \"$PANDOC_WRAPPER_OPTSTR\""
-    else
-	OPTSTR="$OPTSTR -P \"$PANDOC_WRAPPER_OPTSTR\""
-    fi
-fi
-
-# add '-u repo_url' options to tool arguments
-#
-if [[ -n $U_FLAG_FOUND && -n $REPO_URL ]]; then
-    if [[ -z $OPTSTR ]]; then
-	OPTSTR="-u \"$REPO_URL\""
-    else
-	OPTSTR="$OPTSTR -u \"$REPO_URL\""
-    fi
-fi
-
-# add '-U top_url' options to tool arguments
-#
-if [[ -n $CAP_U_FLAG_FOUND && -n $TOP_URL ]]; then
-    if [[ -z $OPTSTR ]]; then
-	OPTSTR="-U \"$TOP_URL\""
-    else
-	OPTSTR="$OPTSTR -U \"$TOP_URL\""
-    fi
-fi
 
 # verify that we have a topdir directory
 #
@@ -270,38 +282,16 @@ if [[ -z $TOPDIR ]]; then
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
+if [[ ! -e $TOPDIR ]]; then
+    echo "$0: ERROR: TOPDIR does not exist: $TOPDIR" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    exit 6
+fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR is not a directory: $TOPDIR" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
-
-# verify that we have an author subdirectory
-#
-export AUTHOR_PATH="$TOPDIR/author"
-if [[ ! -d $AUTHOR_PATH ]]; then
-    echo "$0: ERROR: author is not a directory under topdir: $AUTHOR_PATH" 1>&2
-    exit 6
-fi
-export AUTHOR_DIR="author"
-
-# verify that we have an inc subdirectory
-#
-export INC_PATH="$TOPDIR/inc"
-if [[ ! -d $INC_PATH ]]; then
-    echo "$0: ERROR: inc is not a directory under topdir: $INC_PATH" 1>&2
-    exit 6
-fi
-export INC_DIR="inc"
-
-# verify that we have an bin subdirectory
-#
-export BIN_PATH="$TOPDIR/bin"
-if [[ ! -d $BIN_PATH ]]; then
-    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
-    exit 6
-fi
-export BIN_DIR="bin"
 
 # cd to topdir
 #
@@ -328,7 +318,7 @@ fi
 
 # verify we have a non-empty readable .top file
 #
-TOP_FILE=".top"
+export TOP_FILE=".top"
 if [[ ! -e $TOP_FILE ]]; then
     echo  "$0: ERROR: .top does not exist: $TOP_FILE" 1>&2
     exit 6
@@ -361,23 +351,55 @@ if [[ ! -x $TOOL ]]; then
     exit 5
 fi
 
+# verify that the md2html.sh is executable
+#
+if [[ ! -e $MD2HTML_SH ]]; then
+    echo  "$0: ERROR: md2html.sh does not exist: $MD2HTML_SH" 1>&2
+    exit 5
+fi
+if [[ ! -f $MD2HTML_SH ]]; then
+    echo  "$0: ERROR: md2html.sh is not a regular file: $MD2HTML_SH" 1>&2
+    exit 5
+fi
+if [[ ! -x $MD2HTML_SH ]]; then
+    echo  "$0: ERROR: md2html.sh is not an executable file: $MD2HTML_SH" 1>&2
+    exit 5
+fi
+
 # print running info if verbose
 #
+# If -v 3 or higher, print exported variables in order that they were exported.
+#
 if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: VERSION=$VERSION" 1>&2
     echo "$0: debug[3]: NAME=$NAME" 1>&2
-    echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
-    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
-    echo "$0: debug[3]: TOP_URL=$TOP_URL" 1>&2
+    echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
+    echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
+    echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
-    echo "$0: debug[3]: AUTHOR_PATH=$AUTHOR_PATH" 1>&2
-    echo "$0: debug[3]: AUTHOR_DIR=$AUTHOR_DIR" 1>&2
-    echo "$0: debug[3]: INC_PATH=$INC_PATH" 1>&2
-    echo "$0: debug[3]: INC_DIR=$INC_DIR" 1>&2
-    echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
-    echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
-    echo "$0: debug[3]: OPTSTR=$OPTSTR" 1>&2
-    echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
+    echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
+    echo "$0: debug[3]: TAGLINE=$TAGLINE" 1>&2
+    echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
+    echo "$0: debug[3]: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
+    echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
+    echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
+    echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
+    echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
+    echo "$0: debug[3]: TOOL=$TOOL" 1>&2
+    for index in "${!TOOL_OPTION[@]}"; do
+	echo "$0: debug[3]: TOOL_OPTION[$index]=${TOOL_OPTION[$index]}" 1>&2
+    done
+    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
+fi
+
+# -N stops early before any processing is performed
+#
+if [[ -n $DO_NOT_PROCESS ]]; then
+    if [[ $V_FLAG -ge 3 ]]; then
+	echo "$0: debug[3]: arguments parsed, -N given, exiting 0" 1>&2
+    fi
+    exit 0
 fi
 
 # process each year
@@ -397,16 +419,19 @@ for YYYY in $(< "$TOP_FILE"); do
 	echo  "$0: ERROR: YYYY does not exist: $YYYY" 1>&2
 	EXIT_CODE="7"  # exit 7
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	continue
     fi
     if [[ ! -d $YYYY ]]; then
 	echo  "$0: ERROR: YYYY is not a directory: $YYYY" 1>&2
 	EXIT_CODE="7"  # exit 7
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	continue
     fi
     if [[ ! -r $YYYY ]]; then
 	echo  "$0: ERROR: YYYY is not an readable directory: $YYYY" 1>&2
 	EXIT_CODE="7"  # exit 7
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	continue
     fi
 
     # verify that YYYY has a non-empty readable .year file
@@ -416,153 +441,158 @@ for YYYY in $(< "$TOP_FILE"); do
 	echo  "$0: ERROR: YYYY/.year does not exist: $YEAR_FILE" 1>&2
 	EXIT_CODE="7"  # exit 7
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	continue
     fi
     if [[ ! -f $YEAR_FILE ]]; then
 	echo  "$0: ERROR: YYYY/.year is not a regular file: $YEAR_FILE" 1>&2
 	EXIT_CODE="7"  # exit 7
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	continue
     fi
     if [[ ! -r $YEAR_FILE ]]; then
 	echo  "$0: ERROR: YYYY/.year is not an readable file: $YEAR_FILE" 1>&2
 	EXIT_CODE="7"  # exit 7
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	continue
     fi
     if [[ ! -s $YEAR_FILE ]]; then
 	echo  "$0: ERROR: YYYY/.year is not a non-empty readable file: $YEAR_FILE" 1>&2
 	EXIT_CODE="7"  # exit 7
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	continue
     fi
 
     # process each winner under YYYY
     #
-    export WINNER_PATH
-    for WINNER_PATH in $(< "$YEAR_FILE"); do
+    export YYYY_DIR
+    for YYYY_DIR in $(< "$YEAR_FILE"); do
 
 	# debug YYYY
 	#
 	if [[ $V_FLAG -ge 3 ]]; then
-	    echo "$0: debug[3]: starting to process year/dir: $WINNER_PATH" 1>&2
+	    echo "$0: debug[3]: starting to process year/dir: $YYYY_DIR" 1>&2
 	fi
 
-	# parse WINNER_PATH
+	# parse YYYY_DIR
 	#
-	if [[ ! -d $WINNER_PATH ]]; then
-	    echo "$0: ERROR: WINNER_PATH is not a directory: $WINNER_PATH" 1>&2
+	if [[ ! -d $YYYY_DIR ]]; then
+	    echo "$0: ERROR: YYYY_DIR is not a directory: $YYYY_DIR" 1>&2
 	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    continue
 	fi
-	if [[ ! -w $WINNER_PATH ]]; then
-	    echo "$0: ERROR: WINNER_PATH is not a writable directory: $WINNER_PATH" 1>&2
+	if [[ ! -w $YYYY_DIR ]]; then
+	    echo "$0: ERROR: YYYY_DIR is not a writable directory: $YYYY_DIR" 1>&2
 	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    continue
 	fi
-	export YEAR_DIR=${WINNER_PATH%%/*}
+	export YEAR_DIR=${YYYY_DIR%%/*}
 	if [[ -z $YEAR_DIR ]]; then
-	    echo "$0: ERROR: WINNER_PATH not in yyyy/dir form: $WINNER_PATH" 1>&2
+	    echo "$0: ERROR: YYYY_DIR not in YYYY/dir form: $YYYY_DIR" 1>&2
 	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    continue
 	fi
-	export WINNER_DIR=${WINNER_PATH#*/}
+	export WINNER_DIR=${YYYY_DIR#*/}
 	if [[ -z $WINNER_DIR ]]; then
-	    echo "$0: ERROR: WINNER_PATH not in $YEAR_DIR/dir form: $WINNER_PATH" 1>&2
+	    echo "$0: ERROR: YYYY_DIR not in $YEAR_DIR/dir form: $YYYY_DIR" 1>&2
 	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    continue
 	fi
 	if [[ $WINNER_DIR = */* ]]; then
-	    echo "$0: ERROR: WINNER_PATH: $WINNER_PATH dir contains a /: $WINNER_DIR" 1>&2
+	    echo "$0: ERROR: YYYY_DIR: $YYYY_DIR dir contains a /: $WINNER_DIR" 1>&2
 	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    continue
 	fi
 
-	# verify that WINNER_PATH is a writable directory
+	# verify that YYYY_DIR is a writable directory
 	#
-	if [[ ! -e $WINNER_PATH ]]; then
-	    echo  "$0: ERROR: WINNER_PATH does not exist: $WINNER_PATH" 1>&2
+	if [[ ! -e $YYYY_DIR ]]; then
+	    echo  "$0: ERROR: YYYY_DIR does not exist: $YYYY_DIR" 1>&2
 	    EXIT_CODE="8"  # exit 8
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    continue
 	fi
-	if [[ ! -d $WINNER_PATH ]]; then
-	    echo  "$0: ERROR: WINNER_PATH is not a directory: $WINNER_PATH" 1>&2
+	if [[ ! -d $YYYY_DIR ]]; then
+	    echo  "$0: ERROR: YYYY_DIR is not a directory: $YYYY_DIR" 1>&2
 	    EXIT_CODE="8"  # exit 8
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    continue
 	fi
-	if [[ ! -w $WINNER_PATH ]]; then
-	    echo  "$0: ERROR: WINNER_PATH is not an writable directory: $WINNER_PATH" 1>&2
+	if [[ ! -w $YYYY_DIR ]]; then
+	    echo  "$0: ERROR: YYYY_DIR is not an writable directory: $YYYY_DIR" 1>&2
 	    EXIT_CODE="8"  # exit 8
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    continue
 	fi
 
 	# verify YYYY/dir/.path
 	#
-	export DOT_PATH="$WINNER_PATH/.path"
+	export DOT_PATH="$YYYY_DIR/.path"
 	if [[ ! -s $DOT_PATH ]]; then
 	    echo "$0: ERROR: not a non-empty file: $DOT_PATH" 1>&2
 	    EXIT_CODE="8"  # exit 8
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    continue
 	fi
 	DOT_PATH_CONTENT=$(< "$DOT_PATH")
-	if [[ $WINNER_PATH != "$DOT_PATH_CONTENT" ]]; then
-	    echo "$0: ERROR: arg: $WINNER_PATH does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
+	if [[ $YYYY_DIR != "$DOT_PATH_CONTENT" ]]; then
+	    echo "$0: ERROR: arg: $YYYY_DIR does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
 	    EXIT_CODE="8"  # exit 8
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    continue
 	fi
-	export WINNER_JSON="$WINNER_PATH/.winner.json"
-	if [[ ! -e $WINNER_JSON ]]; then
-	    echo "$0: ERROR: .winner.json does not exist: $WINNER_JSON" 1>&2
+	export ENTRY_JSON="$YYYY_DIR/.entry.json"
+	if [[ ! -e $ENTRY_JSON ]]; then
+	    echo "$0: ERROR: .entry.json does not exist: $ENTRY_JSON" 1>&2
 	    EXIT_CODE="8"  # exit 8
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    continue
 	fi
-	if [[ ! -f $WINNER_JSON ]]; then
-	    echo "$0: ERROR: .winner.json is not a file: $WINNER_JSON" 1>&2
+	if [[ ! -f $ENTRY_JSON ]]; then
+	    echo "$0: ERROR: .entry.json is not a file: $ENTRY_JSON" 1>&2
 	    EXIT_CODE="8"  # exit 8
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    continue
 	fi
-	if [[ ! -r $WINNER_JSON ]]; then
-	    echo "$0: ERROR: .winner.json is not a readable file: $WINNER_JSON" 1>&2
+	if [[ ! -r $ENTRY_JSON ]]; then
+	    echo "$0: ERROR: .entry.json is not a readable file: $ENTRY_JSON" 1>&2
 	    EXIT_CODE="8"  # exit 8
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    continue
 	fi
 
-	# run the tool
+	# run the tool unless -n
 	#
-	if [[ -z $DO_NOT_PROCESS ]]; then
-
-	    # run the tool
-	    #
-	    if [[ -z $NOOP ]]; then
-		if [[ $V_FLAG -ge 5 ]]; then
-		    echo "$0: debug[5]: about to run: $TOOL $OPTSTR $TOOL_OPTIONS \"$WINNER_PATH\"" 1>&2
-		fi
-		eval "$TOOL" "$OPTSTR" "$TOOL_OPTIONS" '"'"$WINNER_PATH"'"'
-		status="$?"
-		if [[ $status -ne 0 ]]; then
-		    echo "$0: ERROR: tool: $TOOL failed, error: $status" 1>&2
-		    EXIT_CODE="1"  # exit 1
-		    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-		fi
-
-	    # report disabled by -n
-	    #
-	    elif [[ $V_FLAG -ge 5 ]]; then
-		echo "$0: debug[5]: because of -n, did not run: $TOOL $OPTSTR $TOOL_OPTIONS \"$WINNER_PATH\"" 1>&2
-	    fi
-
-	# report disabled by -N
-	#
-	else
+	if [[ -z $NOOP ]]; then
 	    if [[ $V_FLAG -ge 5 ]]; then
-		echo "$0: debug[5]: arguments parsed, -N given, not running tool" 1>&2
+		echo "$0: debug[5]: about to run: $TOOL ${TOOL_OPTION[*]} -- $YYYY_DIR" 1>&2
 	    fi
+	    "$TOOL" "${TOOL_OPTION[@]}" -- "$YYYY_DIR"
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: tool: $TOOL ${TOOL_OPTION[*]} -- $YYYY_DIR failed, error: $status" 1>&2
+		EXIT_CODE="1"  # exit 1
+		echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+		continue
+	    fi
+
+	# report disabled by -n
+	#
+	elif [[ $V_FLAG -ge 5 ]]; then
+	    echo "$0: debug[5]: because of -n, did not run: $TOOL ${TOOL_OPTION[*]} -- $YYYY_DIR" 1>&2
 	fi
     done
 done
 
 # All Done!!! -- Jessica Noll, Age 2
 #
-if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: about to exit $EXIT_CODE" 1>&2
-fi
 if [[ $EXIT_CODE -ne 0 ]]; then
     echo "$0: Warning: about to exit non-zero: $EXIT_CODE" 1>&2
+elif [[ $V_FLAG -ge 1 ]]; then
+    echo "$0: debug[1]: about to exit $EXIT_CODE" 1>&2
 fi
 exit "$EXIT_CODE"

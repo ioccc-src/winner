@@ -31,9 +31,11 @@ later on, after the contents of this directory are removed.
 
 The files in the [OLD_manifest](OLD_manifest) were in the top of
 the tmp directory as of 2023 Oct 26.  They represent the first
-complete manifest that matched the winner file directories.
+complete manifest that matched the _YYYY/dir_ entry directories.
 
-These files in this directory are kept as a temporary snapshot for now.
+These files in this directory are kept as a temporary snapshot.
+
+Some obsolete files and tools were moved under [OLD_manifest](OLD_manifest).
 
 
 ### [README.md](README.md)
@@ -41,47 +43,26 @@ These files in this directory are kept as a temporary snapshot for now.
 This file.
 
 
-### [author_names.txt](author_names.txt)
+### [author.csv](author.csv)
 
-A text file of full names of each `author`: one full name per line.
+The [author.csv](author.csv) is a CSV file that was exported from the
+[author.numbers](author.numbers) file.
 
-In the case of anonymous authors the form is:
+In case of conflict, the data in [author.numbers](author.numbers) file is
+considered authoritative over the [author.csv](author.csv) file.
 
-```
-Anonymous YYYY
-```
-
-
-### [author_wins.numbers](author_wins.numbers)
-
-A [macOS](https://www.apple.com/macos) [Numbers](https://www.apple.com/numbers/)
-spreadsheet: one line per `author`.
-
-The first field is an `author_handle`.
-
-The other fields are the `winner_id`'s of all `winner`s won by the `author`.
-
-
-### [author_wins.csv](author_wins.csv)
-
-The [author_wins.csv](author_wins.csv) is a CSV file that was exported from the
-[author_wins.numbers](author_wins.numbers) file.
-
-In case of conflict, the data in [author_wins.numbers](author_wins.numbers) file is
-considered authoritative over the [author_wins.csv](author_wins.csv) file.
-
-The [author_wins.csv.csv](author_wins.csv) is generated from the [author_wins.numbers](author_wins.numbers) file,
+The [author.csv](author.csv) is generated from the [author.numbers](author.numbers) file,
 via the [macOS](https://www.apple.com/macos/)
 [Numbers](https://www.apple.com/numbers/) spreadsheet app, as follows:
 
-0. open [author_wins.numbers](author_wins.numbers) in numbers: modify if/as needed
+0. open [author.csv](author.csv) in numbers: modify if/as needed
 
 1. File -> Export To -> CSV...
     * 1a. `[ ]` Include table names (unset)
     * 1b. Text Encoding: Unicode (UTF-8)
     * 1c. Click ((Save..))
 
-2. Save As: author_wins.csv
+2. Save As: author.csv
     * 2a. Select the `tmp` directory
 
 3. Click ((Export))
@@ -123,26 +104,43 @@ following fields:
    was given.
 
 
-### [author.csv](author.csv)
+### [author_handle.txt](author_handle.txt)
 
-The [author.csv](author.csv) is a CSV file that was exported from the
-[author.numbers](author.numbers) file.
+A text file containing `author_handle`s for each `author`: one `author_handle`
+per line.
 
-In case of conflict, the data in [author.numbers](author.numbers) file is
-considered authoritative over the [author.csv](author.csv) file.
 
-The [author.csv](author.csv) is generated from the [author.numbers](author.numbers) file,
+### [author_names.txt](author_names.txt)
+
+A text file of full names of each `author`: one full name per line.
+
+In the case of anonymous authors the form is:
+
+```
+Anonymous YYYY
+```
+
+
+### [author_wins.csv](author_wins.csv)
+
+The [author_wins.csv](author_wins.csv) is a CSV file that was exported from the
+[author_wins.numbers](author_wins.numbers) file.
+
+In case of conflict, the data in [author_wins.numbers](author_wins.numbers) file is
+considered authoritative over the [author_wins.csv](author_wins.csv) file.
+
+The [author_wins.csv.csv](author_wins.csv) is generated from the [author_wins.numbers](author_wins.numbers) file,
 via the [macOS](https://www.apple.com/macos/)
 [Numbers](https://www.apple.com/numbers/) spreadsheet app, as follows:
 
-0. open [author.csv](author.csv) in numbers: modify if/as needed
+0. open [author_wins.numbers](author_wins.numbers) in numbers: modify if/as needed
 
 1. File -> Export To -> CSV...
     * 1a. `[ ]` Include table names (unset)
     * 1b. Text Encoding: Unicode (UTF-8)
     * 1c. Click ((Save..))
 
-2. Save As: author.csv
+2. Save As: author_wins.csv
     * 2a. Select the `tmp` directory
 
 3. Click ((Export))
@@ -151,29 +149,14 @@ via the [macOS](https://www.apple.com/macos/)
 4. Execute ./[fix_csv.sh](fix_csv.sh)
 
 
-### [author_handle.txt](author_handle.txt)
+### [author_wins.numbers](author_wins.numbers)
 
-A text file containing `author_handle`s for each `author`: one `author_handle`
-per line.
+A [macOS](https://www.apple.com/macos) [Numbers](https://www.apple.com/numbers/)
+spreadsheet: one line per `author`.
 
+The first field is an `author_handle`.
 
-### [awards_check.sh](awards_check.sh)
-
-Script to verify that the award name for each entry as found as a level 1
-markdown header in each entry's `README.md` file.
-
-Run the script from the top level directory.  The output should end in ":1".
-
-For example, this command should not produce any output.
-
-```sh
-tmp/awards_check.sh | grep -v ':1$'
-```
-
-Any output is an indication that either an award name is incorrect, or the
-award is not formed at a level 1 markdown header, or that more than one
-award line as at a level 1 markdown header we found, or the `README.md`
-file is missing, etc.
+The other fields are the `entry_id`'s of all _YYYY/dir_ entry's won by the `author`.
 
 
 ### [check_path_list.sh](check_path_list.sh)
@@ -194,6 +177,17 @@ print information about problems.
 Tool that simply echos it arguments: used to test [run_all.sh](run_all.sh).
 
 
+### [entry_dir.txt](entry_dir.txt)
+
+A list of paths to _YYYY/dir_ entry directories that reside
+under year directories.
+
+
+### [entry_id.txt](entry_id.txt)
+
+A text file containing `entry_id` strings: one `entry_id` per line.
+
+
 ### [example.author.json](example.author.json)
 
 This is a JSON file containing an example `author/author_handle.json` for a
@@ -203,23 +197,18 @@ An `author/author_handle.json` file will be derived from the contents of the
 [author.csv](author.csv) file and the [author_wins.csv](author_wins.csv) file.
 
 
-### [example.dot_winner.json](example.dot_winner.json)
+### [example.dot_entry.json](example.dot_entry.json)
 
-This is a JSON file containing an example `year/dir/.winner.json` for a
-fictitious `winner`.
+This is a JSON file containing an example `year/dir/.entry.json` for a
+fictitious winning _YYYY/dir_ entry.
 
-A `year/dir/.winner.json` file will be derived from the contents the `year/dir/.id` file,
+A `year/dir/.entry.json` file will be derived from the contents the `year/dir/.id` file,
 the [author_wins.csv](author_wins.csv) file, the `year/dir/.year` file,  and the
 the [manifest.csv](manifest.csv) file.
 
 The 11 field names in [manifest.numbers](manifest.numbers) match
 the JSON member names found in
-[example.dot_winner.json](example.dot_winner.json).
-
-
-### [fake.gen_index.sh](fake.gen_index.sh)
-
-Generate a fake index.html for a given winner.
+[example.dot_entry.json](example.dot_entry.json).
 
 
 ### [fix_csv.sh](fix_csv.sh)
@@ -243,6 +232,11 @@ This tool also forms [path_list.built.txt](path_list.built.txt),
 [manifest.csv](manifest.csv).
 
 
+### [format-headers.sh](format-headers.sh)
+
+This tool helped format the `README.md` files for _YYYY/dir_ winning entries.
+
+
 ### [gen_author_json.sh](gen_author_json.sh)
 
 Temporary tool used to generate the `author/author_handle.json` files.
@@ -254,105 +248,17 @@ rm -rf ../author ; ./gen_author_json.sh  author_handle.txt author.csv author_win
 ```
 
 
-### [gen_winner_json.sh](gen_winner_json.sh)
+### [gen_entry_json.sh](gen_entry_json.sh)
 
-Generate a `.winner.json` for a given winner.
+Generate a `.entry.json` for a given winning _YYYY/dir_ entry.
 
 
 ### [gen_path_list.found.sh](gen_path_list.found.sh)
 
-The list of paths of files in winners.
+The list of paths of files in all winning entries.
 
 After doing a `make clobber` this tool updates, if needed,
 form [path_list.found.txt](path_list.found.txt).
-
-
-## [old-ioccc.css](old-ioccc.css)
-
-The previous version of `/ioccc.css`, now `tmp/old-ioccc.css` to make
-room for the new IOCCC css being developed.
-
-
-### [manifest.numbers](manifest.numbers)
-
-
-A [macOS](https://www.apple.com/macos) [Numbers](https://www.apple.com/numbers/)
-spreadsheet contains information about files in winner directories under year directories.
-This file as the following fields:
-
-1. year:
-
-   IOCCC year as a 4-character string.  Normally this would be a 4 digit year string,
-   however it may also be a string such as "mock".
-
-   NOTE: If year begins with "#", then dir is a comment, and the
-   rest of the row is to be ignored.  Rows of this form do NOT
-   contain manifest information for a file.
-
-2. dir:
-
-   Directory name number the IOCCC year.
-
-3. path:
-
-   Path under the IOCCC/directory.  In a few cases this is a path,
-   not just a simple filename under the IOCCC/directory.
-
-4. inventory_order:
-
-   This number is the winners rank showing the order
-   that this file is to be listed for the given entry's in
-   [winners.html](winners.html).
-
-   If the number is 9 digits or less, then the given file
-   is considered a primary file when listed in the inventory
-   of files for a given winner.
-
-   If the number is 10 digits or more, then the given file
-   is considered a secondary file when listed in the inventory
-   of files for a given winner.  We recommend using the
-   value **4294967295** (2^32-1) for secondary files.
-
-5. OK_to_edit:
-
-   If the value is `true`, then the file is one that may be
-   edited directly.
-
-   If the value is `false`, then the file should **NOT** be
-   edited, because the given file is generated by a tool.
-   One should **NOT** modify such a file directly, but
-   instead modify source files (i.e., markdown files,
-   JSON files, etc.)
-
-6. display_as:
-
-   The type of given file.
-
-7. display_via_github
-
-   If `true`, then the contents of the file should be viewed
-   via the GitHub repo.
-
-   If `false`, then the contents of the file should be viewed
-   in the web browser directly.  In some cases this may
-   result in the file being downloaded instead of being displayed.
-
-8. winners_text:
-
-    Any text that should be displayed at the end of line in `winners.html`
-    (with a preceding " - "), or null is no such text is to be displayed.
-
-
-The 8 field names in [manifest.numbers](manifest.numbers), must
-match the JSON member names found in
-[example.dot_winner.json](example.dot_winner.json).
-
-NOTE: Cells containing true or false are JSON booleans.
-NOTE: All other cells are JSON strings that need to be double quoted, including the year.
-NOTE: Do not put commas, nor quotes, nor newlines in fields as these are bound to cause problems.
-
-In case of conflict, the data in [manifest.numbers](manifest.numbers) file is
-considered authoritative over the [manifest.csv](manifest.csv) file.
 
 
 ### [manifest.csv](manifest.csv)
@@ -383,9 +289,91 @@ via the [macOS](https://www.apple.com/macos/)
 4. Execute ./[fix_csv.sh](fix_csv.sh)
 
 
+### [manifest.numbers](manifest.numbers)
+
+
+A [macOS](https://www.apple.com/macos) [Numbers](https://www.apple.com/numbers/)
+spreadsheet contains information about files in _YYYY/dir_ entry directories under year directories.
+This file as the following fields:
+
+1. year:
+
+   IOCCC year as a 4-character string.  Normally this would be a 4 digit year string,
+   however it may also be a string such as "mock".
+
+   NOTE: If year begins with "#", then dir is a comment, and the
+   rest of the row is to be ignored.  Rows of this form do NOT
+   contain manifest information for a file.
+
+2. dir:
+
+   Directory name number the IOCCC year.
+
+3. path:
+
+   Path under the IOCCC/directory.  In a few cases this is a path,
+   not just a simple filename under the IOCCC/directory.
+
+4. inventory_order:
+
+   This number is the rank showing the order
+   that this file is to be listed for the given entry's in
+   the winning entry's `index.html` file.
+
+   If the number is 9 digits or less, then the given file
+   is considered a primary file when listed in the inventory
+   of files for a given winning _YYYY/dir_ entry.
+
+   If the number is 10 digits or more, then the given file
+   is considered a secondary file when listed in the inventory
+   of files for a given winning _YYYY/dir_ entry  We recommend using the
+   value **4294967295** (2^32-1) for secondary files.
+
+5. OK_to_edit:
+
+   If the value is `true`, then the file is one that may be
+   edited directly.
+
+   If the value is `false`, then the file should **NOT** be
+   edited, because the given file is generated by a tool.
+   One should **NOT** modify such a file directly, but
+   instead modify source files (i.e., markdown files,
+   JSON files, etc.)
+
+6. display_as:
+
+   The type of given file.
+
+7. display_via_github
+
+   If `true`, then the contents of the file should be viewed
+   via the GitHub repo.
+
+   If `false`, then the contents of the file should be viewed
+   in the web browser directly.  In some cases this may
+   result in the file being downloaded instead of being displayed.
+
+8. entry_text:
+
+    Any text that should be displayed at the end of line in `index.html`
+    (with a preceding " - "), or null is no such text is to be displayed.
+
+
+The 8 field names in [manifest.numbers](manifest.numbers), must
+match the JSON member names found in
+[example.dot_entry.json](example.dot_entry.json).
+
+NOTE: Cells containing true or false are JSON booleans.
+NOTE: All other cells are JSON strings that need to be double quoted, including the year.
+NOTE: Do not put commas, nor quotes, nor newlines in fields as these are bound to cause problems.
+
+In case of conflict, the data in [manifest.numbers](manifest.numbers) file is
+considered authoritative over the [manifest.csv](manifest.csv) file.
+
+
 ### [path_list.built.txt](path_list.built.txt)
 
-A list of file paths (from the top directory) of winner directories,
+A list of file paths (from the top directory) of _YYYY/dir_ entry directories,
 that are built from other primary content files.
 
 These paths are formed from [manifest.numbers](manifest.numbers)
@@ -398,7 +386,7 @@ This file is formed by the [fix_csv.sh](fix_csv.sh) tool.
 ### [path_list.found.txt](path_list.found.txt)
 
 A list of files that exist, or should exist once the tools to generate certain files,
-such as the `index.html`, or the `.winner.json` files for each entry, are created.
+such as the `index.html`, or the `.entry.json` files for each entry, are created.
 
 This file is created by [gen_path_list.found.sh](gen_path_list.found.sh).
 
@@ -406,14 +394,14 @@ This file is created by [gen_path_list.found.sh](gen_path_list.found.sh).
 ### [path_list.manifest.txt](path_list.manifest.txt)
 
 This is the list of file paths, both primary and constructed
-files from winners.
+files from _YYYY/dir_ entry directories.
 
 This file is formed by the [fix_csv.sh](fix_csv.sh) tool.
 
 
 ### [path_list.required.txt](path_list.required.txt)
 
-A list of file paths (from the top directory) of winner directories,
+A list of file paths (from the top directory) of _YYYY/dir_ entry directories,
 that are required to exist.
 
 These paths are formed from [manifest.numbers](manifest.numbers)
@@ -423,10 +411,16 @@ entries where the "created_by" (5th) field is non-null.  See
 This file is formed by the [fix_csv.sh](fix_csv.sh) tool.
 
 
-### [sql/winners.sql](sql/winners.sql)
+### [run_all.sh](run_all.sh)
 
-This is a SQL file, extracted from another SQL file that was used in the past
-to generate data for the old winners directory tree.
+A tool to run another tool over all _YYYY/dir_ entry directories.
+
+Examples:
+
+```sh
+./run_all.sh -v 3 ./fake.gen_index.sh
+./run_all.sh -v 1 ./gen_entry_json.sh
+```
 
 
 ### [src](src)
@@ -438,66 +432,14 @@ Eventually a separate [build-ioccc repo](https://github.com/ioccc-src/build-iocc
 will hold these tools.
 
 
-### [run_all.sh](run_all.sh)
+### [things-todo.md](things-todo.md)
 
-A tool to run another tool over all winner directories.
-
-Examples:
-
-```sh
-./run_all.sh -v 3 ./fake.gen_index.sh
-./run_all.sh -v 1 ./gen_winner_json.sh
-```
-
-### templates
-### [template-footer.html](template-footer.html)
-### [template-header.html](template-header.html)
-### [template-top.html](template-top.html)
-
-An HTML template for what goes into the top of constructed HTML pages.
+A todo list of known things to check and/or do.
 
 
-Constructed HTML pages will be as follows:
+### [update-manifest.sh](update-manifest.sh)
 
-0. [template-top.html](template-top.html)
-1. file: _path_ HTML comment
-2. created by tool: _tool-name_ HTML comment
-3. tool version: _tool-version_ HTML comment
-4. content source: _path_ HTML comment
-... possible multiple content source HTML comments ...
-n. [template-header.html])(template-header.html)
-n+1. _content generated by a tool such as pandoc_
-n+2. [template-footer.html](template-footer.html)
-
-
-### [test.html](test.html)
-
-A test page for [ioccc.css](../ioccc.css).
-
-This page was modeled after the above mentioned templates
-with the "_content generated by a tool such as pandoc_"
-replaced with some j-random test text.
-
-
-### [winner_dir.txt](winner_dir.txt)
-
-A list of paths to winner directories that reside
-under year directories.
-
-
-### [winner_id.txt](winner_id.txt)
-
-A text file containing `winner_id` strings: one `winner_id` per line.
-
-
-### [year_prize.numbers](year_prize.numbers)
-
-A [macOS](https://www.apple.com/macos) [Numbers](https://www.apple.com/numbers/)
-spreadsheet: one line per `winner`.
-
-The first field is a `winner_id`.
-
-The second field is the name of the award for given `winner`.
+Interactive script to update the IOCCC manifest step by step post manifest.csv export.
 
 
 ### [year_prize.csv](year_prize.csv)
@@ -526,3 +468,13 @@ via the [macOS](https://www.apple.com/macos/)
     * 3a. If needed click ((Replace))
 
 4. Execute ./[fix_csv.sh](fix_csv.sh)
+
+
+### [year_prize.numbers](year_prize.numbers)
+
+A [macOS](https://www.apple.com/macos) [Numbers](https://www.apple.com/numbers/)
+spreadsheet: one line per _YYYY/dir_ entry directory.
+
+The first field is a `entry_id`.
+
+The second field is the name of the award for given _YYYY/dir_ entry.

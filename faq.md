@@ -68,7 +68,7 @@ other inconsistencies with the original entry?](#faq4_3)
 - [6.4  - Why do you sometimes use the first person plural?](#faq6_4)
 - [6.5  - What is an author handle?](#faq6_5)
 - [6.6  - What is a author_handle.json file and how are they used?](#faq6_6)
-- [6.7  - What is a winner_id?](#faq6_7)
+- [6.7  - What is a entry_id?](#faq6_7)
 - [6.8 -  What is the purpose of the .top, .year and .path files?](#faq6_8)
 
 
@@ -2357,24 +2357,24 @@ As of _Thu Nov 30 23:51:12 UTC 2023_, the contents was as follows:
     "github" : "@mame",
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "winner_id" : "2012_endoh1" },
-	{ "winner_id" : "2012_endoh2" },
-	{ "winner_id" : "2013_endoh1" },
-	{ "winner_id" : "2013_endoh2" },
-	{ "winner_id" : "2013_endoh3" },
-	{ "winner_id" : "2013_endoh4" },
-	{ "winner_id" : "2014_endoh1" },
-	{ "winner_id" : "2014_endoh2" },
-	{ "winner_id" : "2015_endoh1" },
-	{ "winner_id" : "2015_endoh2" },
-	{ "winner_id" : "2015_endoh3" },
-	{ "winner_id" : "2015_endoh4" },
-	{ "winner_id" : "2018_endoh1" },
-	{ "winner_id" : "2018_endoh2" },
-	{ "winner_id" : "2019_endoh" },
-	{ "winner_id" : "2020_endoh1" },
-	{ "winner_id" : "2020_endoh2" },
-	{ "winner_id" : "2020_endoh3" }
+	{ "entry_id" : "2012_endoh1" },
+	{ "entry_id" : "2012_endoh2" },
+	{ "entry_id" : "2013_endoh1" },
+	{ "entry_id" : "2013_endoh2" },
+	{ "entry_id" : "2013_endoh3" },
+	{ "entry_id" : "2013_endoh4" },
+	{ "entry_id" : "2014_endoh1" },
+	{ "entry_id" : "2014_endoh2" },
+	{ "entry_id" : "2015_endoh1" },
+	{ "entry_id" : "2015_endoh2" },
+	{ "entry_id" : "2015_endoh3" },
+	{ "entry_id" : "2015_endoh4" },
+	{ "entry_id" : "2018_endoh1" },
+	{ "entry_id" : "2018_endoh2" },
+	{ "entry_id" : "2019_endoh" },
+	{ "entry_id" : "2020_endoh1" },
+	{ "entry_id" : "2020_endoh2" },
+	{ "entry_id" : "2020_endoh3" }
     ]
 }
 ```
@@ -2433,7 +2433,7 @@ See [FAQ 6.5](#faq6_5) for more information about an author handles.
 
 Normally the _author_handle_ _JSON value_ should **NOT** be changed
 **unless there is a strong reason to do so**.  If the  _JSON value_
-changes, then all of the `.winner.json` files for all of this authors
+changes, then all of the `.entry.json` files for all of this authors
 winning IOCCC entries should also be changed.  The _author_handle_
 _JSON value_ must match the basename (without the leading path and
 without the trailing `.json`) of the `author_handle.json` file.  So
@@ -2785,25 +2785,25 @@ NOTE: The _JSON null_ is **NOT** enclosed in quotes!
 
 
 ##### winning_entry_set
-##### winner_id
+##### entry_id
 
 ```json
     "winning_entry_set" : [
-        { "winner_id" : "2012_endoh1" },
-        { "winner_id" : "2012_endoh2" },
-	{ "winner_id" : "2013_endoh1" },
+        { "entry_id" : "2012_endoh1" },
+        { "entry_id" : "2012_endoh2" },
+	{ "entry_id" : "2013_endoh1" },
 ...
-	{ "winner_id" : "2020_endoh1" },
-        { "winner_id" : "2020_endoh2" },
-        { "winner_id" : "2020_endoh3" }
+	{ "entry_id" : "2020_endoh1" },
+        { "entry_id" : "2020_endoh2" },
+        { "entry_id" : "2020_endoh3" }
     ]
 ```
 
-The `winning_entry_set` _JSON member_ holds _JSON array_ containing one or more `winner_id` _JSON member_s.
+The `winning_entry_set` _JSON member_ holds _JSON array_ containing one or more `entry_id` _JSON member_s.
 
 There **MUST** be one and only one `winning_entry_set` and the  _JSON value_ **MUST**
 be a non-empty _JSON array_.  Each value in that _JSON array_ **MUST** must contain
-a _JSON member_ whose _JSON name_ **MUST** be "_winner_id_" and those _JSON value_
+a _JSON member_ whose _JSON name_ **MUST** be "_entry_id_" and those _JSON value_
 is a valid winner ID.
 
 Due to the nature of the  _So-called JSON spec_, the last value of the `winning_entry_set`
@@ -2815,20 +2815,20 @@ See [FAQ 5.5](#faq5_5) for information about how to update
 and/or correct IOCCC author information.
 
 
-### <a name="faq6_7"></a><a name="author_json"></a>FAQ 6.7: What is a winner_id?
+### <a name="faq6_7"></a><a name="author_json"></a>FAQ 6.7: What is a entry_id?
 
-A `winner_id` is a string that identifies a winning entry of the IOCCC.
+A `entry_id` is a string that identifies a winning entry of the IOCCC.
 
-A `winner_id` is a 4-digit year, followed by an underscore, followed by a directory name.
+A `entry_id` is a 4-digit year, followed by an underscore, followed by a directory name.
 
-For example, the `winner_id` associated with Cody Boone Ferguson's 2nd winning IOCCC entry
+For example, the `entry_id` associated with Cody Boone Ferguson's 2nd winning IOCCC entry
 of 2020 is found under the following directory:
 
 ```
 2020/ferguson2
 ```
 
-The `winner_id` for that winning entry is:
+The `entry_id` for that winning entry is:
 
 ```
 2020_ferguson2

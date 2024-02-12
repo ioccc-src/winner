@@ -1,6 +1,6 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_JSON_format_version" : "1.1 2024-02-11",
     "author_handle" : "Gil_Dogon",
     "full_name" : "Gil Dogon",
     "sort_word" : "dogon",
@@ -15,8 +15,8 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "winner_id" : "2005_giljade" },
-	{ "winner_id" : "2015_dogon" },
-	{ "winner_id" : "2019_dogon" }
+	{ "entry_id" : "2005_giljade" },
+	{ "entry_id" : "2015_dogon" },
+	{ "entry_id" : "2019_dogon" }
     ]
 }

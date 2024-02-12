@@ -41,7 +41,7 @@ include ../var.mk
 # IOCCC winners
 ###############
 #
-WINNERS= giles diels-grabsch1 poikola lynn burton dogon karns mills ciura diels-grabsch2 endoh yang duble adamovsky
+WINNERS= adamovsky burton ciura diels-grabsch1 diels-grabsch2 dogon duble endoh giles karns lynn mills poikola yang
 
 YEAR= 2019
 

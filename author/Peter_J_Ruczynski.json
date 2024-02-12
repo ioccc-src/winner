@@ -1,6 +1,6 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_JSON_format_version" : "1.1 2024-02-11",
     "author_handle" : "Peter_J_Ruczynski",
     "full_name" : "Peter J Ruczynski",
     "sort_word" : "ruczynski",
@@ -15,6 +15,6 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "winner_id" : "1990_pjr" }
+	{ "entry_id" : "1990_pjr" }
     ]
 }

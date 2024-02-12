@@ -1,6 +1,6 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_JSON_format_version" : "1.1 2024-02-11",
     "author_handle" : "Jack_Applin",
     "full_name" : "Jack Applin",
     "sort_word" : "applin",
@@ -15,8 +15,8 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "winner_id" : "1985_applin" },
-	{ "winner_id" : "1986_applin" },
-	{ "winner_id" : "1988_applin" }
+	{ "entry_id" : "1985_applin" },
+	{ "entry_id" : "1986_applin" },
+	{ "entry_id" : "1988_applin" }
     ]
 }
