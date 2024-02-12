@@ -143,7 +143,7 @@ END {
     #
     if (length(entry_path) == 0) {
 	print "-e";
-	print "'ERROR: github variable not set, call with -v github=REPO_URL'";
+	print "ERROR: github variable not set, call with -v github=REPO_URL";
 	print "-E";
 	print "210";		# use 210 to match length(entry_path) == 0 error in the BEGIN section
 	exit 210;		# use 210 to match length(entry_path) == 0 error in the BEGIN section
