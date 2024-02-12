@@ -1,6 +1,6 @@
 #!/usr/bin/env awk
 #
-# subst.entry-navbar.awk - output substitutions for navbar on behalf of a winner
+# subst.entry-navbar.awk - output substitutions for navbar on behalf of an entry
 #
 # This tool is usually invoked from the bin/subst.entry-index.sh output tool.
 # That tool, in turn, is usually invoked by:
