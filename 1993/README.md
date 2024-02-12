@@ -1,4 +1,4 @@
-# 1993 marked the "The Tenth International Obfuscated C Code Contest"
+# Tenth International Obfuscated C Code Contest
 
 Look at the README.md file for the given winning entry for information
 on how to compile it and how to run the winning program.

@@ -1,4 +1,4 @@
-# 2016 marked the "The Twenty Sixth International Obfuscated C Code Contest"
+# Twenty Sixth International Obfuscated C Code Contest
 
 
 ## Standard IOCCC stuff

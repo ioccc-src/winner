@@ -1,4 +1,4 @@
-# 2018 marked the "The Twenty Fifth International Obfuscated C Code Contest"
+# Twenty Fifth International Obfuscated C Code Contest
 
 
 ## Standard IOCCC stuff

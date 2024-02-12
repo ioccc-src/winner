@@ -1,4 +1,4 @@
-# In 1984 the first annual Obfuscated C Code Contest was held
+# First annual Obfuscated C Code Contest
 
 In [1984](/years.html#1984), the first contest was held.  The name of the
 contest was simply "`First annual Obfuscated C Code Contest`".

@@ -1,4 +1,4 @@
-# 2012 marked the "The Twenty First International Obfuscated C Code Contest"
+# Twenty First International Obfuscated C Code Contest
 
 
 ## Standard IOCCC stuff

@@ -1,4 +1,4 @@
-# 1995 marked the "The Twelfth International Obfuscated C Code Contest"
+# Twelfth International Obfuscated C Code Contest
 
 Look at the README.md file for the given winning entry for information
 on how to compile and run the winning program.  Look at the winning source and

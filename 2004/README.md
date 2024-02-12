@@ -1,4 +1,4 @@
-# 2004 marked the "The Seventeenth International Obfuscated C Code Contest"
+# Seventeenth International Obfuscated C Code Contest
 
 
 ## Standard IOCCC stuff

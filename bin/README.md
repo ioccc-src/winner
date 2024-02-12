@@ -93,6 +93,11 @@ Output author(s) Related HTML for for an entry's index.html page.
 Output the inventory in HTML form for an entry's index.html page.
 
 
+### [output-year-index.sh](output-year-index.sh)
+
+Output markdown of winner links for a given year.
+
+
 ### [pandoc-wrapper.sh](pandoc-wrapper.sh)
 
 Wrapper tool to run pandoc.

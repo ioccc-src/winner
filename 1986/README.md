@@ -1,4 +1,4 @@
-# The 1986 contest was named "The Third International Obfuscated C Code Contest"
+# Third International Obfuscated C Code Contest
 
 Look at the `README.md` file for the given winning entry for information on how
 to compile it and how to run the winning program.  Look at the winning source

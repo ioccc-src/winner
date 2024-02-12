@@ -1,4 +1,4 @@
-# 2020 marked the "The Twenty Seventh International Obfuscated C Code Contest"
+# Twenty Seventh International Obfuscated C Code Contest
 
 
 ## Standard IOCCC stuff

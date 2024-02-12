@@ -1,4 +1,4 @@
-# 2005 marked the "The Eighteenth International Obfuscated C Code Contest"
+# Eighteenth International Obfuscated C Code Contest
 
 
 ## Standard IOCCC stuff

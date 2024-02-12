@@ -1,4 +1,4 @@
-# 2014 marked the "The Twenty Third International Obfuscated C Code Contest"
+# Twenty Third International Obfuscated C Code Contest
 
 
 ## Standard IOCCC stuff

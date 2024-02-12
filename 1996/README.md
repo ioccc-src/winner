@@ -1,4 +1,4 @@
-# 1996 marked the "The Thirteenth International Obfuscated C Code Contest"
+# Thirteenth International Obfuscated C Code Contest
 
 
 ## Standard IOCCC stuff

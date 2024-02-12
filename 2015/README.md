@@ -1,4 +1,4 @@
-# 2015 marked the "The Twenty Fourth International Obfuscated C Code Contest"
+# Twenty Fourth International Obfuscated C Code Contest
 
 
 ## Standard IOCCC stuff

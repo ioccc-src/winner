@@ -1,4 +1,4 @@
-# 1985 marked the second year of the International Obfuscated C Code Contest
+# Second year of the International Obfuscated C Code Contest
 
 Look at the `README.md` file for the given winning entry for information on how
 to compile it and how to run the winning program.  Look at the winning source

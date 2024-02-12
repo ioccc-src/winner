@@ -36,6 +36,17 @@ SHELL= bash
 #
 include var.mk
 
+#################################
+# IOCCC web site maintenance tulz
+#################################
+
+ALL_RUN= bin/all-run.sh
+GEN_AUTHORS= bin/gen-authors.sh
+GEN_LOCATION= bin/gen-location.sh
+GEN_YEARS= bin/gen-years.sh
+README2INDEX= bin/readme2index.sh
+QUICK_README2INDEX= bin/quick-readme2index.sh
+
 
 #############
 # IOCCC years
@@ -194,6 +205,30 @@ indent.c:
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
+
+#################################
+# IOCCC web site maintenance rulz
+#################################
+
+# NOTE: The rules in this section are intended to be used by those
+#	who maintain the official IOCCC site.
+#
+# These rules make certain assumptions about critical tools that
+# must be installed on your system in order to be effective.
+# While code sometimes makes tests and issues errors if critical
+# tools are not found, those tests are NOT exhaustive.
+#
+# Finally: The rules in this section are NOT needed if you
+#	   simple want to examine, run / test winning IOCCC entries.
+
+# XXX - The rules in this section are undergoing development and change.
+#	They might not even work (right now).  :-)
+
+.PHONY: genpath gen_authors gen_location gen_years entry_index quick_entry_index \
+	quick_www www
+
+# form the top level .top, YYYY level .year and winner level .path files
+#
 genpath:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	@${RM} -f .tmp.genpath
@@ -210,6 +245,73 @@ genpath:
 	    ${CHMOD} 0444 .top; \
 	    echo "updated .top"; \
 	fi
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# generate the top level authors.html page
+#
+gen_authors: ${GEN_AUTHORS} authors.html
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${GEN_AUTHORS} -v 1
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# generate the top level location.html page
+#
+gen_location: ${GEN_LOCATION} location.html
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${GEN_LOCATION} -v 1
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# generate the top level years.html page
+#
+gen_years: ${GEN_YEARS} years.html
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${GEN_YEARS} -v 1
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# force the build of all winner index.html files
+#
+entry_index: ${ALL_RUN} ${README2INDEX}
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${ALL_RUN} -v 3 ${README2INDEX} -v 1
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# build winner index.html files that might be out of date
+#
+# This rule uses the QUICK_README2INDEX tool, so
+# some winner index.html files that seem to be up to date
+# (but might not be up to date) won't be built.
+#
+quick_entry_index: ${ALL_RUN} ${QUICK_README2INDEX}
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${ALL_RUN} -v 3 ${QUICK_README2INDEX} -v 1
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# do work to build HTML content for the web site
+#
+# This rule uses quick_entry_index, not slow_entry_index, so
+# some winner index.html files that seem to be up to date
+# (but might not be up to date) won't be built.
+#
+# Well, short of pushing changes to the GitHub repo, that is.  :-)
+#
+quick_www:
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${MAKE} gen_authors
+	${MAKE} gen_location
+	${MAKE} gen_years
+	${MAKE} quick_entry_index
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# do everything needed to build HTML content for the web site
+#
+# Well, short of pushing changes to the GitHub repo, that is.  :-)
+#
+www:
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${MAKE} gen_authors
+	${MAKE} gen_location
+	${MAKE} gen_years
+	${MAKE} entry_index
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 

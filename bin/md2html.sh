@@ -1897,6 +1897,14 @@ fi
 if [[ -n $BEFORE_TOOL ]]; then
     if [[ -z $NOOP ]]; then
 
+	# write START of section comment
+	#
+	{
+	    echo "<!-- START: this line starts content for HTML phase $CUR_PHASE_NUM" \
+		 "by: $BEFORE_TOOL via bin/$NAME -->"
+	    echo
+	} >> "$TMP_INDEX_HTML"
+
 	# append before tool output
 	#
 	if [[ $V_FLAG -ge 5 ]]; then
@@ -1911,6 +1919,14 @@ if [[ -n $BEFORE_TOOL ]]; then
 		 "error code: $status" 1>&2
 	    exit 95
 	fi
+
+	# write START of section comment
+	#
+	{
+	    echo
+	    echo "<!-- END: this line ends content for HTML phase $CUR_PHASE_NUM" \
+		 "by: $BEFORE_TOOL via bin/$NAME -->"
+	} >> "$TMP_INDEX_HTML"
 
     elif [[ $V_FLAG -ge 5 ]]; then
 	echo "$0: debug[5]: because of -n, disabled use of before tool: $BEFORE_TOOL" 1>&2
@@ -1941,6 +1957,14 @@ fi
 if [[ -n $PANDOC_WRAPPER ]]; then
     if [[ -z $NOOP ]]; then
 
+	# write START of section comment
+	#
+	{
+	    echo "<!-- START: this line starts content for HTML phase $CUR_PHASE_NUM" \
+		 "by: $PANDOC_WRAPPER via bin/$NAME -->"
+	    echo
+	} >> "$TMP_INDEX_HTML"
+
 	# append pandoc wrapper tool output
 	#
 	if [[ $V_FLAG -ge 5 ]]; then
@@ -1955,6 +1979,14 @@ if [[ -n $PANDOC_WRAPPER ]]; then
 	         "error code: $status" 1>&2
 	    exit 100
 	fi
+
+	# write START of section comment
+	#
+	{
+	    echo
+	    echo "<!-- END: this line ends content for HTML phase $CUR_PHASE_NUM" \
+		 "by: $PANDOC_WRAPPER via bin/$NAME -->"
+	} >> "$TMP_INDEX_HTML"
 
     elif [[ $V_FLAG -ge 5 ]]; then
 	echo "$0: debug[5]: because of -n, disabled use of pandoc wrapper tool: $PANDOC_WRAPPER" 1>&2
@@ -1985,6 +2017,14 @@ fi
 if [[ -n $AFTER_TOOL ]]; then
     if [[ -z $NOOP ]]; then
 
+	# write START of section comment
+	#
+	{
+	    echo "<!-- START: this line starts content for HTML phase $CUR_PHASE_NUM" \
+		 "by: $AFTER_TOOL via bin/$NAME -->"
+	    echo
+	} >> "$TMP_INDEX_HTML"
+
 	# append after tool output
 	#
 	if [[ $V_FLAG -ge 5 ]]; then
@@ -2000,6 +2040,14 @@ if [[ -n $AFTER_TOOL ]]; then
 	    exit 105
 	fi
 
+	# write START of section comment
+	#
+	{
+	    echo
+	    echo "<!-- END: this line ends content for HTML phase $CUR_PHASE_NUM" \
+		 "by: $AFTER_TOOL via bin/$NAME -->"
+	} >> "$TMP_INDEX_HTML"
+
     elif [[ $V_FLAG -ge 5 ]]; then
 	echo "$0: debug[5]: because of -n, disabled use of after tool: $AFTER_TOOL" 1>&2
     fi
@@ -2008,7 +2056,7 @@ elif [[ $V_FLAG -ge 5 ]]; then
 fi
 #
 if [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: successfully completed HTML phase $CUR_PHASE_NUM ($CUR_PHASE_NAME)" 1>&2
+    echo "$0: debug[3]: successfully completed HTML phase $CUR_PHASE_NUM" 1>&2
 fi
 
 ##################################################
@@ -2180,7 +2228,7 @@ if [[ -z $NOOP ]]; then
 	    echo "$0: ERROR: mv -f -- $TMP_INDEX_HTML $OUTPUT_HTML filed, error code: $status" 1>&2
 	    exit 139
 	elif [[ $V_FLAG -ge 1 ]]; then
-	    echo "$0: debug[1]: built index HTML file: $OUTPUT_HTML" 1>&2
+	    echo "$0: debug[1]: built replaced HTML file: $OUTPUT_HTML" 1>&2
 	fi
 	if [[ ! -s $OUTPUT_HTML ]]; then
 	    echo "$0: ERROR: not a non-empty index HTML file: $OUTPUT_HTML" 1>&2

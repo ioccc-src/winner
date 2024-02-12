@@ -1,4 +1,4 @@
-# 2001 marked the "The Sixteenth International Obfuscated C Code Contest"
+# Sixteenth International Obfuscated C Code Contest
 
 
 ## Standard IOCCC stuff

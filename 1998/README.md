@@ -1,4 +1,4 @@
-# 1998 marked the "The Fourteenth International Obfuscated C Code Contest"
+# Fourteenth International Obfuscated C Code Contest
 
 
 ## Standard IOCCC stuff

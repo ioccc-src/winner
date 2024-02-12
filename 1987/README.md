@@ -1,4 +1,4 @@
-# 1987 marked the "The Fourth International Obfuscated C Code Contest"
+# Fourth International Obfuscated C Code Contest
 
 Look at the README.md file for the given winning entry for information on how to
 compile it and how to run the winning program.  Look at the winning source and

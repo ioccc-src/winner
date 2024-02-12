@@ -1,4 +1,4 @@
-# 2011 marked the "The Twentieth International Obfuscated C Code Contest"
+# Twentieth International Obfuscated C Code Contest
 
 
 ## Standard IOCCC stuff

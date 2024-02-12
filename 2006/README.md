@@ -1,4 +1,4 @@
-# 2006 marked the "The Nineteenth International Obfuscated C Code Contest"
+# Nineteenth International Obfuscated C Code Contest
 
 
 ## Standard IOCCC stuff

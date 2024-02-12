@@ -1,4 +1,4 @@
-# 2000 marked the "The Fifteenth International Obfuscated C Code Contest"
+# Fifteenth International Obfuscated C Code Contest
 
 
 ## Standard IOCCC stuff
