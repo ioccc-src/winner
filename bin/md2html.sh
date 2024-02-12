@@ -1035,7 +1035,7 @@ fi
 #
 # We will use the dirname of match.md as our working directory.  This is path from
 # topdir, that is to be used to match an entry in the inc/md2html.cfg configuration file.
-# In the case of a winner directory, this will be a YYYY/dir working directory.
+# In the case of a entry directory, this will be a YYYY/dir working directory.
 # In the case of a year level directory, this will be a YYYY working directory.
 # In the case of a top level directory, this will be just a . working directory.
 #

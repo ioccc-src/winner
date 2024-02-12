@@ -11,7 +11,7 @@
 #
 # usage:
 #
-#	awk -v winner_path=YYYY/dir -f bin/subst.winner-navbar.awk YYYY/.year
+#	awk -v entry_path=YYYY/dir -f bin/subst.winner-navbar.awk YYYY/.year
 #
 # where:
 #
@@ -23,15 +23,15 @@ BEGIN {
     # setup
     #
     VERSION="1.1 2024-01-29"
-    process_next_line = 0;	# 1 ==> we found our winner_path, now process the next line
-    found_winner_path = 0;	# 1 ==> we found our winner_path
+    process_next_line = 0;	# 1 ==> we found our entry_path, now process the next line
+    found_entry_path = 0;	# 1 ==> we found our entry_path
     prev_line = "";		# the previous YYYY/dir line
     topnav_phase = "mid";	# topnav name to use (-H topnav=topnav_phase)
 
     # error if github is not set via -v github=REPO_URL
     #
-    if (length(winner_path) == 0) {
-	exit 210;	# use 210 to match length(winner_path) == 0 error in the END section
+    if (length(entry_path) == 0) {
+	exit 210;	# use 210 to match length(entry_path) == 0 error in the END section
     }
 }
 
@@ -53,11 +53,11 @@ $0 ~ /[^\/]+\/[^\/]+/ {
     year = file[1];
     dir = file[2];
 
-    # if we need the line after we found our winner_path
+    # if we need the line after we found our entry_path
     #
     if (process_next_line) {
 
-	# process the line after we found our winner_path
+	# process the line after we found our entry_path
 	#
 	# report the previous entry for this year
 	print "-s";
@@ -66,14 +66,14 @@ $0 ~ /[^\/]+\/[^\/]+/ {
 	print "RIGHT_TEXT=" dir;
 	process_next_line = 0;
 
-    # if we found our winner_path
+    # if we found our entry_path
     #
-    } else if (winner_path == $0) {
+    } else if (entry_path == $0) {
 
-	# in case our our winner_path is the 1st line
+	# in case our our entry_path is the 1st line
 	#
 	if (NR == 1) {
-	    # no previous line winner_path is the 1st line
+	    # no previous line entry_path is the 1st line
 	    topnav_phase = "first";
 	}
 
@@ -109,7 +109,7 @@ $0 ~ /[^\/]+\/[^\/]+/ {
 	    print "LEFT_TEXT=" prev_dir;
 	}
 
-	# process our found winner_path
+	# process our found entry_path
 	#
 	# report up link top year index.html
 	print "-s";
@@ -117,7 +117,7 @@ $0 ~ /[^\/]+\/[^\/]+/ {
 	print "-s";
 	print "UP_TEXT=" year;
 	process_next_line = 1;
-	found_winner_path = 1;
+	found_entry_path = 1;
     }
 
     # save the line as the next previous line
@@ -141,12 +141,12 @@ END {
 
     # error if github is not set via -v github=REPO_URL
     #
-    if (length(winner_path) == 0) {
+    if (length(entry_path) == 0) {
 	print "-e";
 	print "'ERROR: github variable not set, call with -v github=REPO_URL'";
 	print "-E";
-	print "210";		# use 210 to match length(winner_path) == 0 error in the BEGIN section
-	exit 210;		# use 210 to match length(winner_path) == 0 error in the BEGIN section
+	print "210";		# use 210 to match length(entry_path) == 0 error in the BEGIN section
+	exit 210;		# use 210 to match length(entry_path) == 0 error in the BEGIN section
     }
 
     # output inventory link information
@@ -156,18 +156,18 @@ END {
     print "-s";
     print "INVENTORY_TEXT=Inventory";
 
-    # case: we did not find our winner_path
+    # case: we did not find our entry_path
     #
-    if (!found_winner_path) {
-	# ERROR: winner_path was not found
+    if (!found_entry_path) {
+	# ERROR: entry_path was not found
 	print "-e";
-	print "'we did not find:", winner_path "'";
+	print "'we did not find:", entry_path "'";
 	print "-E";
 	print "215";
 	exit
 
     } else if (process_next_line) {
-	# no next line winner_path is the last line
+	# no next line entry_path is the last line
 	topnav_phase = "last";
     }
 

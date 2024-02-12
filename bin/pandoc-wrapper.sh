@@ -7,7 +7,7 @@
 # This tool is intended to be invoked by a tool such as 'readme2index.sh"
 # and as such, the leading options will include "-p pandoc_wrapper" and -P "optstr",
 # the final arg will be in YYYY/dir form, and will be called from
-# the topdir directory under which the YYYY/dir winner directory must be found.
+# the topdir directory under which the YYYY/dir entry directory must be found.
 #
 # Copyright (c) 2023,2024 by Landon Curt Noll.  All Rights Reserved.
 #

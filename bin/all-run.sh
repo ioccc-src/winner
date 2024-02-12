@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 #
-# all-run.sh - run a command for all winners
+# all-run.sh - run a command for all entries
 #
-# We cd to topdir, than then walk the winner directory tree.
-# We obtain the set of winner years (YYYY) via the .top file.
-# For each year (YYYY), we obtain the set of winner directories (dir).
-# For all winner directories (YYYY/dir) we run the tool.
+# We cd to topdir, than then walk the entry directory tree.
+# We obtain the set of IOCCC years (YYYY) via the .top file.
+# For each year (YYYY), we obtain the set of entry directories (dir).
+# For all entry directories (YYYY/dir) we run the tool.
 #
 # The tool argument, if not an absolute path, must be relative to topdir.
 # The tool argument is the first argument command line.  Any additional
@@ -23,7 +23,7 @@
 #
 #	all-run.sh -v 3 -t readme2html -U https://www.ioccc.org bin/quick-readme2html.sh -v 1
 #
-# will run the tool bin/quick-readme2html.sh for each winner YYYY/dir as follows:
+# will run the tool bin/quick-readme2html.sh for each entry YYYY/dir as follows:
 #
 #	bin/quick-readme2html.sh -t readme2html -U https://www.ioccc.org YYYY/dir -v 1
 #
@@ -139,7 +139,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	-w site_url	Base URL of the web site (def: $SITE_URL)
 			NOTE: The '-w site_url' is passed as leading options on tool command lines.
 
-	tool		the tool to run over all winners
+	tool		the tool to run over all entries
 	[more_options]	additional tool command line options to use before the YYYY/dir argument
 
 NOTE: Any '-t tagline', '-T md2html.sh', '-p tool', '-P pandoc_opts', '-u repo_url', '-U top_url'
@@ -462,7 +462,7 @@ for YYYY in $(< "$TOP_FILE"); do
 	continue
     fi
 
-    # process each winner under YYYY
+    # process each entry directroy under YYYY
     #
     export YYYY_DIR
     for YYYY_DIR in $(< "$YEAR_FILE"); do
@@ -494,15 +494,15 @@ for YYYY in $(< "$TOP_FILE"); do
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
-	export WINNER_DIR=${YYYY_DIR#*/}
-	if [[ -z $WINNER_DIR ]]; then
+	export ENTRY_DIR=${YYYY_DIR#*/}
+	if [[ -z $ENTRY_DIR ]]; then
 	    echo "$0: ERROR: YYYY_DIR not in $YEAR_DIR/dir form: $YYYY_DIR" 1>&2
 	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
-	if [[ $WINNER_DIR = */* ]]; then
-	    echo "$0: ERROR: YYYY_DIR: $YYYY_DIR dir contains a /: $WINNER_DIR" 1>&2
+	if [[ $ENTRY_DIR = */* ]]; then
+	    echo "$0: ERROR: YYYY_DIR: $YYYY_DIR dir contains a /: $ENTRY_DIR" 1>&2
 	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue

@@ -127,7 +127,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	-w site_url	Base URL of the web site (def: $SITE_URL)
 			NOTE: The '-w site_url' is passed as leading options on tool command lines.
 
-	tool		the tool to run over all winners
+	tool		the tool to run over all entries
 	[more_options]	additional tool command line options to use before the YYYY/dir argument
 
 NOTE: Any '-t tagline', '-T md2html.sh', '-p tool', '-P pandoc_opts', '-u repo_url', '-U top_url'
@@ -249,9 +249,9 @@ if [[ $# -ne 1 ]]; then
     exit 3
 fi
 #
-export WINNER_PATH="$1"
+export ENTRY_PATH="$1"
 if [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: WINNER_PATH=$WINNER_PATH" 1>&2
+    echo "$0: debug[3]: ENTRY_PATH=$ENTRY_PATH" 1>&2
 fi
 
 # always add the '-v level' option, unless level is empty, to the set of options passed to the md2html.sh tool
@@ -268,40 +268,40 @@ if [[ -n $TAGLINE ]]; then
     TOOL_OPTION+=("$TAGLINE")
 fi
 
-# parse the WINNER_PATH arg
+# parse the ENTRY_PATH arg
 #
-# verify that WINNER_PATH is in proper form
+# verify that ENTRY_PATH is in proper form
 #
-# Also obtain the YEAR_DIR and WINNER_DIR from WINNER_PATH.
+# Also obtain the YEAR_DIR and ENTRY_DIR from ENTRY_PATH.
 #
-if [[ -z $WINNER_PATH ]]; then
+if [[ -z $ENTRY_PATH ]]; then
     echo "$0: ERROR: arg is an empty string" 1>&2
     exit 3
 fi
-if [[ ! -d $WINNER_PATH ]]; then
-    echo "$0: ERROR: arg is not a directory: $WINNER_PATH" 1>&2
+if [[ ! -d $ENTRY_PATH ]]; then
+    echo "$0: ERROR: arg is not a directory: $ENTRY_PATH" 1>&2
     exit 3
 fi
-if [[ ! -w $WINNER_PATH ]]; then
-    echo "$0: ERROR: arg is not a writable directory: $WINNER_PATH" 1>&2
+if [[ ! -w $ENTRY_PATH ]]; then
+    echo "$0: ERROR: arg is not a writable directory: $ENTRY_PATH" 1>&2
     exit 3
 fi
-export YEAR_DIR=${WINNER_PATH%%/*}
+export YEAR_DIR=${ENTRY_PATH%%/*}
 if [[ -z $YEAR_DIR ]]; then
-    echo "$0: ERROR: arg not in YYYY/dir form: $WINNER_PATH" 1>&2
+    echo "$0: ERROR: arg not in YYYY/dir form: $ENTRY_PATH" 1>&2
     exit 3
 fi
 if [[ ! -d $YEAR_DIR ]]; then
-    echo "$0: ERROR: YYYY from arg: $WINNER_PATH is not a directory: $YEAR_DIR" 1>&2
+    echo "$0: ERROR: YYYY from arg: $ENTRY_PATH is not a directory: $YEAR_DIR" 1>&2
     exit 3
 fi
-export WINNER_DIR=${WINNER_PATH#*/}
-if [[ -z $WINNER_DIR ]]; then
-    echo "$0: ERROR: arg: $WINNER_PATH not in $YEAR_DIR/dir form: $WINNER_PATH" 1>&2
+export ENTRY_DIR=${ENTRY_PATH#*/}
+if [[ -z $ENTRY_DIR ]]; then
+    echo "$0: ERROR: arg: $ENTRY_PATH not in $YEAR_DIR/dir form: $ENTRY_PATH" 1>&2
     exit 3
 fi
-if [[ $WINNER_DIR = */* ]]; then
-    echo "$0: ERROR: dir from arg: $WINNER_PATH contains a /: $WINNER_DIR" 1>&2
+if [[ $ENTRY_DIR = */* ]]; then
+    echo "$0: ERROR: dir from arg: $ENTRY_PATH contains a /: $ENTRY_DIR" 1>&2
     exit 3
 fi
 
@@ -363,59 +363,59 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
-# perform tests on YYYY_DIR (YYYY/dir) as a winner directory
+# perform tests on YYYY_DIR (YYYY/dir) as a entry directory
 #
 export DOT_YEAR="$YEAR_DIR/.year"
 if [[ ! -e $DOT_YEAR ]]; then
-    echo "$0: ERROR: in $WINNER_PATH .year does not exist: $DOT_YEAR" 1>&2
+    echo "$0: ERROR: in $ENTRY_PATH .year does not exist: $DOT_YEAR" 1>&2
     exit 7
 fi
 if [[ ! -f $DOT_YEAR ]]; then
-    echo "$0: ERROR: in $WINNER_PATH .year is not a file: $DOT_YEAR" 1>&2
+    echo "$0: ERROR: in $ENTRY_PATH .year is not a file: $DOT_YEAR" 1>&2
     exit 7
 fi
 if [[ ! -r $DOT_YEAR ]]; then
-    echo "$0: ERROR: in $WINNER_PATH .year is not a readable file: $DOT_YEAR" 1>&2
+    echo "$0: ERROR: in $ENTRY_PATH .year is not a readable file: $DOT_YEAR" 1>&2
     exit 7
 fi
 if [[ ! -s $DOT_YEAR ]]; then
-    echo "$0: ERROR: in $WINNER_PATH .year is not a non-empty readable file: $DOT_YEAR" 1>&2
+    echo "$0: ERROR: in $ENTRY_PATH .year is not a non-empty readable file: $DOT_YEAR" 1>&2
     exit 7
 fi
 # Now that we have moved to topdir, form and verify YYYY_DIR is a writable directory
-export YYYY_DIR="$YEAR_DIR/$WINNER_DIR"
+export YYYY_DIR="$YEAR_DIR/$ENTRY_DIR"
 if [[ ! -e $YYYY_DIR ]]; then
-    echo "$0: ERROR: YYYY/dir from arg: $WINNER_PATH does not exist: $YYYY_DIR" 1>&2
+    echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH does not exist: $YYYY_DIR" 1>&2
     exit 7
 fi
 if [[ ! -d $YYYY_DIR ]]; then
-    echo "$0: ERROR: YYYY/dir from arg: $WINNER_PATH is not a directory: $YYYY_DIR" 1>&2
+    echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH is not a directory: $YYYY_DIR" 1>&2
     exit 7
 fi
 if [[ ! -w $YYYY_DIR ]]; then
-    echo "$0: ERROR: YYYY/dir from arg: $WINNER_PATH is not a writable directory: $YYYY_DIR" 1>&2
+    echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH is not a writable directory: $YYYY_DIR" 1>&2
     exit 7
 fi
 export DOT_PATH="$YYYY_DIR/.path"
 if [[ ! -e $DOT_PATH ]]; then
-    echo "$0: ERROR: in $WINNER_PATH .path does not exist: $DOT_PATH" 1>&2
+    echo "$0: ERROR: in $ENTRY_PATH .path does not exist: $DOT_PATH" 1>&2
     exit 8
 fi
 if [[ ! -f $DOT_PATH ]]; then
-    echo "$0: ERROR: in $WINNER_PATH .path is not a file: $DOT_PATH" 1>&2
+    echo "$0: ERROR: in $ENTRY_PATH .path is not a file: $DOT_PATH" 1>&2
     exit 8
 fi
 if [[ ! -r $DOT_PATH ]]; then
-    echo "$0: ERROR: in $WINNER_PATH .path is not a readable file: $DOT_PATH" 1>&2
+    echo "$0: ERROR: in $ENTRY_PATH .path is not a readable file: $DOT_PATH" 1>&2
     exit 8
 fi
 if [[ ! -s $DOT_PATH ]]; then
-    echo "$0: ERROR: in $WINNER_PATH .path is not a non-empty readable file: $DOT_PATH" 1>&2
+    echo "$0: ERROR: in $ENTRY_PATH .path is not a non-empty readable file: $DOT_PATH" 1>&2
     exit 8
 fi
 DOT_PATH_CONTENT=$(< "$DOT_PATH")
-if [[ $WINNER_PATH != "$DOT_PATH_CONTENT" ]]; then
-    echo "$0: ERROR: in $WINNER_PATH .path: $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
+if [[ $ENTRY_PATH != "$DOT_PATH_CONTENT" ]]; then
+    echo "$0: ERROR: in $ENTRY_PATH .path: $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
     exit 8
 fi
 
@@ -424,19 +424,19 @@ fi
 export README_PATH="$YYYY_DIR/README.md"
 export INDEX_PATH="$YYYY_DIR/index.html"
 if [[ ! -e $README_PATH ]]; then
-    echo "$0: ERROR: in $WINNER_PATH README.md does not exist: $README_PATH" 1>&2
+    echo "$0: ERROR: in $ENTRY_PATH README.md does not exist: $README_PATH" 1>&2
     exit 8
 fi
 if [[ ! -f $README_PATH ]]; then
-    echo "$0: ERROR: in $WINNER_PATH README.md is not a file: $README_PATH" 1>&2
+    echo "$0: ERROR: in $ENTRY_PATH README.md is not a file: $README_PATH" 1>&2
     exit 8
 fi
 if [[ ! -r $README_PATH ]]; then
-    echo "$0: ERROR: in $WINNER_PATH README.md is not a readable file: $README_PATH" 1>&2
+    echo "$0: ERROR: in $ENTRY_PATH README.md is not a readable file: $README_PATH" 1>&2
     exit 8
 fi
 if [[ ! -s $README_PATH ]]; then
-    echo "$0: ERROR: in $WINNER_PATH README.md is not a non-empty readable file: $README_PATH" 1>&2
+    echo "$0: ERROR: in $ENTRY_PATH README.md is not a non-empty readable file: $README_PATH" 1>&2
     exit 8
 fi
 
@@ -444,23 +444,23 @@ fi
 #
 export ENTRY_JSON="$YYYY_DIR/.entry.json"
 if [[ ! -e $ENTRY_JSON ]]; then
-    echo "$0: ERROR: in $WINNER_PATH .entry.json does not exist: $ENTRY_JSON" 1>&2
+    echo "$0: ERROR: in $ENTRY_PATH .entry.json does not exist: $ENTRY_JSON" 1>&2
     exit 8
 fi
 if [[ ! -f $ENTRY_JSON ]]; then
-    echo "$0: ERROR: in $WINNER_PATH .entry.json is not a file: $ENTRY_JSON" 1>&2
+    echo "$0: ERROR: in $ENTRY_PATH .entry.json is not a file: $ENTRY_JSON" 1>&2
     exit 8
 fi
 if [[ ! -r $ENTRY_JSON ]]; then
-    echo "$0: ERROR: in $WINNER_PATH .entry.json is not a readable file: $ENTRY_JSON" 1>&2
+    echo "$0: ERROR: in $ENTRY_PATH .entry.json is not a readable file: $ENTRY_JSON" 1>&2
     exit 8
 fi
 if [[ ! -s $ENTRY_JSON ]]; then
-    echo "$0: ERROR: in $WINNER_PATH .entry.json is not a non-empty readable file: $ENTRY_JSON" 1>&2
+    echo "$0: ERROR: in $ENTRY_PATH .entry.json is not a non-empty readable file: $ENTRY_JSON" 1>&2
     exit 8
 fi
 
-# always add the '-U URL' for the winner index.html file
+# always add the '-U URL' for the entry's index.html file
 #
 TOOL_OPTION+=("-U")
 TOOL_OPTION+=("$SITE_URL/$YYYY_DIR/index.html")
@@ -484,9 +484,9 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
-    echo "$0: debug[3]: WINNER_PATH=$WINNER_PATH" 1>&2
+    echo "$0: debug[3]: ENTRY_PATH=$ENTRY_PATH" 1>&2
     echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
-    echo "$0: debug[3]: WINNER_DIR=$WINNER_DIR" 1>&2
+    echo "$0: debug[3]: ENTRY_DIR=$ENTRY_DIR" 1>&2
     for index in "${!TOOL_OPTION[@]}"; do
 	echo "$0: debug[3]: TOOL_OPTION[$index]=${TOOL_OPTION[$index]}" 1>&2
     done

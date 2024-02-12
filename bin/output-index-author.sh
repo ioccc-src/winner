@@ -6,7 +6,7 @@
 #
 # This tool is intended to be invoked by a tool such as "readme2index.sh".
 # The final arg will be in YYYY/dir form, and will be called from
-# the topdir directory under which the YYYY/dir winner directory must be found.
+# the topdir directory under which the YYYY/dir entry directory must be found.
 #
 # Copyright (c) 2023,2024 by Landon Curt Noll.  All Rights Reserved.
 #
@@ -102,7 +102,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	-e string	output string, followed by newline, to stderr (def: do not)
 	-E exitcode	force exit with exitcode (def: exit based on success or failure of the action)
 
-	YYYY/dir	path from topdir to winner directory: must contain the files: README.md, .path and .entry.json
+	YYYY/dir	path from topdir to entry directory: must contain the files: README.md, .path and .entry.json
 
 Exit codes:
      0         all OK
@@ -110,7 +110,7 @@ Exit codes:
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is < 4.2
-     5	       YYYY/dir is not a winner directory
+     5	       YYYY/dir is not a entry directory
      6         pandoc tool not found or not executable
  >= 10  < 210  ((not used))
  >= 210	       internal tool error
@@ -124,7 +124,7 @@ export DO_NOT_PROCESS=
 
 # output_author_handles
 #
-# Write the author handle(s) for the YYYY/dir winner to standard output (stdout)
+# Write the author handle(s) for the YYYY/dir entry to standard output (stdout)
 #
 # XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 # XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
@@ -177,7 +177,7 @@ function output_author_handles
 
 # output_entry_ids
 #
-# Write the winner ids from an author/author_handle.json file to standard output (stdout)
+# Write the entry ids from an author/author_handle.json file to standard output (stdout)
 #
 # XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 # XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
@@ -195,7 +195,7 @@ function output_author_handles
 function output_entry_ids
 {
     local AUTHOR_HANDLE_JSON_PATH;	# the .entry.json path
-    local entry_id;			# a found winner id
+    local entry_id;			# a found entry id
 
     # parse args
     #
@@ -217,7 +217,7 @@ function output_entry_ids
 	return 4
     fi
 
-    # extract winner ids from the author/author_handle.json file
+    # extract entry ids from the author/author_handle.json file
     #
     grep -F entry_id "$AUTHOR_HANDLE_JSON_PATH" |
       awk 'NF == 5 { print $4; }' |
@@ -397,9 +397,9 @@ if [[ $# -ne 1 ]]; then
     exit 3
 fi
 #
-export WINNER_PATH="$1"
+export ENTRY_PATH="$1"
 if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: WINNER_PATH=$WINNER_PATH" 1>&2
+    echo "$0: debug[1]: ENTRY_PATH=$ENTRY_PATH" 1>&2
 fi
 
 # verify that we have a topdir directory
@@ -472,61 +472,61 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
-# verify that WINNER_PATH is a winner directory
+# verify that ENTRY_PATH is a entry directory
 #
-# WINNER_PATH must be in YYYY/dir form
+# ENTRY_PATH must be in YYYY/dir form
 # YYYY must be a directory
 # YYYY must be a writable directory
 # YYYY/.year must be a non-empty file
 # YYYY/dir must be a directory
 # YYYY/dir/.path must be a non-empty file
-# WINNER_PATH must match the contents of YYYY/dir/.path
+# ENTRY_PATH must match the contents of YYYY/dir/.path
 # YYYY/dir/.entry.json must be a non-empty file
 #
-if [[ ! -d $WINNER_PATH ]]; then
-    echo "$0: ERROR: arg is not a directory: $WINNER_PATH" 1>&2
+if [[ ! -d $ENTRY_PATH ]]; then
+    echo "$0: ERROR: arg is not a directory: $ENTRY_PATH" 1>&2
     exit 5
 fi
-if [[ ! -w $WINNER_PATH ]]; then
-    echo "$0: ERROR: arg is not a writable directory: $WINNER_PATH" 1>&2
+if [[ ! -w $ENTRY_PATH ]]; then
+    echo "$0: ERROR: arg is not a writable directory: $ENTRY_PATH" 1>&2
     exit 5
 fi
-export YEAR_DIR=${WINNER_PATH%%/*}
+export YEAR_DIR=${ENTRY_PATH%%/*}
 if [[ -z $YEAR_DIR ]]; then
-    echo "$0: ERROR: arg not in YYYY/dir form: $WINNER_PATH" 1>&2
+    echo "$0: ERROR: arg not in YYYY/dir form: $ENTRY_PATH" 1>&2
     exit 5
 fi
-export WINNER_DIR=${WINNER_PATH#*/}
-if [[ -z $WINNER_DIR ]]; then
-    echo "$0: ERROR: arg: $WINNER_PATH not in $YEAR_DIR/dir form: $WINNER_PATH" 1>&2
+export ENTRY_DIR=${ENTRY_PATH#*/}
+if [[ -z $ENTRY_DIR ]]; then
+    echo "$0: ERROR: arg: $ENTRY_PATH not in $YEAR_DIR/dir form: $ENTRY_PATH" 1>&2
     exit 5
 fi
-if [[ $WINNER_DIR = */* ]]; then
-    echo "$0: ERROR: dir from arg: $WINNER_PATH contains a /: $WINNER_DIR" 1>&2
+if [[ $ENTRY_DIR = */* ]]; then
+    echo "$0: ERROR: dir from arg: $ENTRY_PATH contains a /: $ENTRY_DIR" 1>&2
     exit 5
 fi
 if [[ ! -d $YEAR_DIR ]]; then
-    echo "$0: ERROR: YYYY from arg: $WINNER_PATH is not a directory: $YEAR_DIR" 1>&2
+    echo "$0: ERROR: YYYY from arg: $ENTRY_PATH is not a directory: $YEAR_DIR" 1>&2
     exit 5
 fi
-export ENTRY_ID="${YEAR_DIR}_${WINNER_DIR}"
+export ENTRY_ID="${YEAR_DIR}_${ENTRY_DIR}"
 export DOT_YEAR="$YEAR_DIR/.year"
 if [[ ! -s $DOT_YEAR ]]; then
     echo "$0: ERROR: not a non-empty file: $DOT_YEAR" 1>&2
     exit 5
 fi
 # Now that we have moved to topdir, form and verify YYYY_DIR is a writable directory
-export YYYY_DIR="$YEAR_DIR/$WINNER_DIR"
+export YYYY_DIR="$YEAR_DIR/$ENTRY_DIR"
 if [[ ! -e $YYYY_DIR ]]; then
-    echo "$0: ERROR: YYYY/dir from arg: $WINNER_PATH does not exist: $YYYY_DIR" 1>&2
+    echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH does not exist: $YYYY_DIR" 1>&2
     exit 5
 fi
 if [[ ! -d $YYYY_DIR ]]; then
-    echo "$0: ERROR: YYYY/dir from arg: $WINNER_PATH is not a directory: $YYYY_DIR" 1>&2
+    echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH is not a directory: $YYYY_DIR" 1>&2
     exit 5
 fi
 if [[ ! -w $YYYY_DIR ]]; then
-    echo "$0: ERROR: YYYY/dir from arg: $WINNER_PATH is not a writable directory: $YYYY_DIR" 1>&2
+    echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH is not a writable directory: $YYYY_DIR" 1>&2
     exit 5
 fi
 export DOT_PATH="$YYYY_DIR/.path"
@@ -535,8 +535,8 @@ if [[ ! -s $DOT_PATH ]]; then
     exit 5
 fi
 DOT_PATH_CONTENT=$(< "$DOT_PATH")
-if [[ $WINNER_PATH != "$DOT_PATH_CONTENT" ]]; then
-    echo "$0: ERROR: arg: $WINNER_PATH does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
+if [[ $ENTRY_PATH != "$DOT_PATH_CONTENT" ]]; then
+    echo "$0: ERROR: arg: $ENTRY_PATH does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
     exit 5
 fi
 export ENTRY_JSON="$YYYY_DIR/.entry.json"
@@ -570,7 +570,7 @@ fi
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: NAME=$NAME" 1>&2
     echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
-    echo "$0: debug[3]: WINNER_DIR=$WINNER_DIR" 1>&2
+    echo "$0: debug[3]: ENTRY_DIR=$ENTRY_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_ID=$ENTRY_ID" 1>&2
     echo "$0: debug[3]: DOT_YEAR=$DOT_YEAR" 1>&2
     echo "$0: debug[3]: DOT_PATH=$DOT_PATH" 1>&2
@@ -638,11 +638,11 @@ for author_handle in $AUTHOR_HANDLE_SET; do
     ENTRY_ID_FOUND=$(output_entry_ids "$AUTHOR_HANDLE_JSON" | grep -F -- "$ENTRY_ID")
     status="$?"
     if [[ $status -ne 0 || -z $ENTRY_ID_FOUND ]]; then
-	echo "$0: ERROR: winner id: $ENTRY_ID not found in author JSON file: $AUTHOR_HANDLE_JSON, status: $status" 1>&2
+	echo "$0: ERROR: entry id: $ENTRY_ID not found in author JSON file: $AUTHOR_HANDLE_JSON, status: $status" 1>&2
 	exit 224
     fi
     if [[ $V_FLAG -ge 7 ]]; then
-	echo "$0: debug[7]: readable author JSON file: $AUTHOR_HANDLE_JSON mentions winner id: $ENTRY_ID" 1>&2
+	echo "$0: debug[7]: readable author JSON file: $AUTHOR_HANDLE_JSON mentions entry id: $ENTRY_ID" 1>&2
     fi
 
     # verify that we have a Full Name in the /author/author_handle.json file

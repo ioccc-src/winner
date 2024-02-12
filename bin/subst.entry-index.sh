@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# subst.entry-index.sh - print substitutions for a winner index.html
+# subst.entry-index.sh - print substitutions for a entry's index.html
 #
 # This tool is used in conjunction with the inc/md2html.cfg configuration
 # file, and the tools that use that use that configuration file such as "bin/md2html.sh".
@@ -101,7 +101,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 	-e string	output string, followed by newline, to stderr (def: do not)
 	-E exitcode	force exit with exitcode (def: exit based on success or failure of the action)
 
-	YYYY/dir	path from topdir to winner directory: must contain the files: README.md, .path and .entry.json
+	YYYY/dir	path from topdir to entry directory: must contain the files: README.md, .path and .entry.json
 
 Exit codes:
      0         all OK
@@ -109,7 +109,7 @@ Exit codes:
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is < 4.2
-     5	       YYYY/dir is not a winner directory
+     5	       YYYY/dir is not a entry directory
      6	       subst.entry-navbar.awk tool not found
      7	       cannot find important information about the author or winning entry
  >= 10  < 210  ((not used))
@@ -121,7 +121,7 @@ $NAME version: $VERSION"
 #
 # XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 # XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the .entry.json file - XXX
+# XXX - until we have the jnamval command, we must FAKE PARSE the .entry.json file  - XXX
 # XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
 # XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 #
@@ -245,9 +245,9 @@ if [[ $# -ne 1 ]]; then
     exit 3
 fi
 #
-export WINNER_PATH="$1"
+export ENTRY_PATH="$1"
 if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: WINNER_PATH=$WINNER_PATH" 1>&2
+    echo "$0: debug[1]: ENTRY_PATH=$ENTRY_PATH" 1>&2
 fi
 
 # verify that we have a topdir directory
@@ -320,61 +320,61 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
-# verify that WINNER_PATH is a winner directory
+# verify that ENTRY_PATH is a entry directory
 #
-# WINNER_PATH must be in YYYY/dir form
+# ENTRY_PATH must be in YYYY/dir form
 # YYYY must be a directory
 # YYYY must be a writable directory
 # YYYY/.year must be a non-empty file
 # YYYY/dir must be a directory
 # YYYY/dir/.path must be a non-empty file
-# WINNER_PATH must match the contents of YYYY/dir/.path
+# ENTRY_PATH must match the contents of YYYY/dir/.path
 # YYYY/dir/.entry.json must be a non-empty file
 #
-if [[ ! -d $WINNER_PATH ]]; then
-    echo "$0: ERROR: arg is not a directory: $WINNER_PATH" 1>&2
+if [[ ! -d $ENTRY_PATH ]]; then
+    echo "$0: ERROR: arg is not a directory: $ENTRY_PATH" 1>&2
     exit 5
 fi
-if [[ ! -w $WINNER_PATH ]]; then
-    echo "$0: ERROR: arg is not a writable directory: $WINNER_PATH" 1>&2
+if [[ ! -w $ENTRY_PATH ]]; then
+    echo "$0: ERROR: arg is not a writable directory: $ENTRY_PATH" 1>&2
     exit 5
 fi
-export YEAR_DIR=${WINNER_PATH%%/*}
+export YEAR_DIR=${ENTRY_PATH%%/*}
 if [[ -z $YEAR_DIR ]]; then
-    echo "$0: ERROR: arg not in YYYY/dir form: $WINNER_PATH" 1>&2
+    echo "$0: ERROR: arg not in YYYY/dir form: $ENTRY_PATH" 1>&2
     exit 5
 fi
-export WINNER_DIR=${WINNER_PATH#*/}
-if [[ -z $WINNER_DIR ]]; then
-    echo "$0: ERROR: arg: $WINNER_PATH not in $YEAR_DIR/dir form: $WINNER_PATH" 1>&2
+export ENTRY_DIR=${ENTRY_PATH#*/}
+if [[ -z $ENTRY_DIR ]]; then
+    echo "$0: ERROR: arg: $ENTRY_PATH not in $YEAR_DIR/dir form: $ENTRY_PATH" 1>&2
     exit 5
 fi
-if [[ $WINNER_DIR = */* ]]; then
-    echo "$0: ERROR: dir from arg: $WINNER_PATH contains a /: $WINNER_DIR" 1>&2
+if [[ $ENTRY_DIR = */* ]]; then
+    echo "$0: ERROR: dir from arg: $ENTRY_PATH contains a /: $ENTRY_DIR" 1>&2
     exit 5
 fi
 if [[ ! -d $YEAR_DIR ]]; then
-    echo "$0: ERROR: YYYY from arg: $WINNER_PATH is not a directory: $YEAR_DIR" 1>&2
+    echo "$0: ERROR: YYYY from arg: $ENTRY_PATH is not a directory: $YEAR_DIR" 1>&2
     exit 5
 fi
-export WINNER_ID="${YEAR_DIR}_${WINNER_DIR}"
+export ENTRY_ID="${YEAR_DIR}_${ENTRY_DIR}"
 export DOT_YEAR="$YEAR_DIR/.year"
 if [[ ! -s $DOT_YEAR ]]; then
     echo "$0: ERROR: not a non-empty file: $DOT_YEAR" 1>&2
     exit 5
 fi
 # Now that we have moved to topdir, form and verify YYYY_DIR is a writable directory
-export YYYY_DIR="$YEAR_DIR/$WINNER_DIR"
+export YYYY_DIR="$YEAR_DIR/$ENTRY_DIR"
 if [[ ! -e $YYYY_DIR ]]; then
-    echo "$0: ERROR: YYYY/dir from arg: $WINNER_PATH does not exist: $YYYY_DIR" 1>&2
+    echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH does not exist: $YYYY_DIR" 1>&2
     exit 5
 fi
 if [[ ! -d $YYYY_DIR ]]; then
-    echo "$0: ERROR: YYYY/dir from arg: $WINNER_PATH is not a directory: $YYYY_DIR" 1>&2
+    echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH is not a directory: $YYYY_DIR" 1>&2
     exit 5
 fi
 if [[ ! -w $YYYY_DIR ]]; then
-    echo "$0: ERROR: YYYY/dir from arg: $WINNER_PATH is not a writable directory: $YYYY_DIR" 1>&2
+    echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH is not a writable directory: $YYYY_DIR" 1>&2
     exit 5
 fi
 export DOT_PATH="$YYYY_DIR/.path"
@@ -383,8 +383,8 @@ if [[ ! -s $DOT_PATH ]]; then
     exit 5
 fi
 DOT_PATH_CONTENT=$(< "$DOT_PATH")
-if [[ $WINNER_PATH != "$DOT_PATH_CONTENT" ]]; then
-    echo "$0: ERROR: arg: $WINNER_PATH does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
+if [[ $ENTRY_PATH != "$DOT_PATH_CONTENT" ]]; then
+    echo "$0: ERROR: arg: $ENTRY_PATH does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
     exit 5
 fi
 export ENTRY_JSON="$YYYY_DIR/.entry.json"
@@ -403,17 +403,17 @@ fi
 
 # verify we have our awk script
 #
-export WINNER_NAVBAR_AWK="$BIN_DIR/subst.entry-navbar.awk"
-if [[ ! -e $WINNER_NAVBAR_AWK ]]; then
-    echo "$0: ERROR: bin/subst.entry-navbar.awk does not exist: $WINNER_NAVBAR_AWK" 1>&2
+export ENTRY_NAVBAR_AWK="$BIN_DIR/subst.entry-navbar.awk"
+if [[ ! -e $ENTRY_NAVBAR_AWK ]]; then
+    echo "$0: ERROR: bin/subst.entry-navbar.awk does not exist: $ENTRY_NAVBAR_AWK" 1>&2
     exit 6
 fi
-if [[ ! -f $WINNER_NAVBAR_AWK ]]; then
-    echo "$0: ERROR: bin/subst.entry-navbar.awk is not a file: $WINNER_NAVBAR_AWK" 1>&2
+if [[ ! -f $ENTRY_NAVBAR_AWK ]]; then
+    echo "$0: ERROR: bin/subst.entry-navbar.awk is not a file: $ENTRY_NAVBAR_AWK" 1>&2
     exit 6
 fi
-if [[ ! -r $WINNER_NAVBAR_AWK ]]; then
-    echo "$0: ERROR: bin/subst.entry-navbar.awk is not a readable file: $WINNER_NAVBAR_AWK" 1>&2
+if [[ ! -r $ENTRY_NAVBAR_AWK ]]; then
+    echo "$0: ERROR: bin/subst.entry-navbar.awk is not a readable file: $ENTRY_NAVBAR_AWK" 1>&2
     exit 6
 fi
 
@@ -431,8 +431,8 @@ export AWARD
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: NAME=$NAME" 1>&2
     echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
-    echo "$0: debug[3]: WINNER_DIR=$WINNER_DIR" 1>&2
-    echo "$0: debug[3]: WINNER_ID=$WINNER_ID" 1>&2
+    echo "$0: debug[3]: ENTRY_DIR=$ENTRY_DIR" 1>&2
+    echo "$0: debug[3]: ENTRY_ID=$ENTRY_ID" 1>&2
     echo "$0: debug[3]: DOT_YEAR=$DOT_YEAR" 1>&2
     echo "$0: debug[3]: DOT_PATH=$DOT_PATH" 1>&2
     echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
@@ -448,7 +448,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: INC_DIR=$INC_DIR" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
-    echo "$0: debug[3]: WINNER_NAVBAR_AWK=$WINNER_NAVBAR_AWK" 1>&2
+    echo "$0: debug[3]: ENTRY_NAVBAR_AWK=$ENTRY_NAVBAR_AWK" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
 fi
@@ -470,12 +470,12 @@ echo "TITIE=$YYYY_DIR - $AWARD"
 # output DESCRIPTION substitution
 #
 echo "-s"
-echo "DESCRIPTION=$YEAR_DIR IOCCC winner $WINNER_DIR - $AWARD"
+echo "DESCRIPTION=$YEAR_DIR IOCCC entry $ENTRY_DIR - $AWARD"
 
 # output KEYWORDS substitution
 #
 echo "-s"
-echo "KEYWORDS=IOCCC, $YEAR_DIR, IOCCC $YEAR_DIR, IOCCC winner, $WINNER_DIR, $AWARD"
+echo "KEYWORDS=IOCCC, $YEAR_DIR, IOCCC $YEAR_DIR, IOCCC entry, $ENTRY_DIR, $AWARD"
 
 # output HEADER_2 substitution
 #
@@ -484,7 +484,7 @@ echo "HEADER_2=$YYYY_DIR - $AWARD"
 
 # output topnav links
 #
-awk -v winner_path="$YYYY_DIR" -f "$WINNER_NAVBAR_AWK" "$DOT_YEAR"
+awk -v entry_path="$YYYY_DIR" -f "$ENTRY_NAVBAR_AWK" "$DOT_YEAR"
 status="$?"
 if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: subst.entry-navbar.awk failed, error: $status" 1>&2

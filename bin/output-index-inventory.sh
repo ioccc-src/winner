@@ -6,7 +6,7 @@
 #
 # This tool is intended to be invoked by a tool such as "readme2index.sh".
 # The final arg will be in YYYY/dir form, and will be called from
-# the topdir directory under which the YYYY/dir winner directory must be found.
+# the topdir directory under which the YYYY/dir entry directory must be found.
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
@@ -197,9 +197,9 @@ if [[ $# -ne 1 ]]; then
     exit 3
 fi
 #
-export WINNER_PATH="$1"
+export ENTRY_PATH="$1"
 if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: WINNER_PATH=$WINNER_PATH" 1>&2
+    echo "$0: debug[1]: ENTRY_PATH=$ENTRY_PATH" 1>&2
 fi
 
 # verify that we have a topdir directory
@@ -272,65 +272,65 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
-# verify that WINNER_PATH is a winner directory
+# verify that ENTRY_PATH is a entry directory
 #
-# WINNER_PATH must be in YYYY/dir form
+# ENTRY_PATH must be in YYYY/dir form
 # YYYY must be a directory
 # YYYY must be a writable directory
 # YYYY/.year must be a non-empty file
 # YYYY/dir must be a directory
 # YYYY/dir/.path must be a non-empty file
-# WINNER_PATH must match the contents of YYYY/dir/.path
+# ENTRY_PATH must match the contents of YYYY/dir/.path
 # YYYY/dir/.entry.json must be a non-empty file
 #
-if [[ ! -d $WINNER_PATH ]]; then
-    echo "$0: ERROR: arg is not a directory: $WINNER_PATH" 1>&2
+if [[ ! -d $ENTRY_PATH ]]; then
+    echo "$0: ERROR: arg is not a directory: $ENTRY_PATH" 1>&2
     exit 5
 fi
-if [[ ! -w $WINNER_PATH ]]; then
-    echo "$0: ERROR: arg is not a writable directory: $WINNER_PATH" 1>&2
+if [[ ! -w $ENTRY_PATH ]]; then
+    echo "$0: ERROR: arg is not a writable directory: $ENTRY_PATH" 1>&2
     exit 5
 fi
-export YEAR_DIR=${WINNER_PATH%%/*}
+export YEAR_DIR=${ENTRY_PATH%%/*}
 if [[ -z $YEAR_DIR ]]; then
-    echo "$0: ERROR: arg not in YYYY/dir form: $WINNER_PATH" 1>&2
+    echo "$0: ERROR: arg not in YYYY/dir form: $ENTRY_PATH" 1>&2
     exit 5
 fi
-export WINNER_DIR=${WINNER_PATH#*/}
-if [[ -z $WINNER_DIR ]]; then
-    echo "$0: ERROR: arg: $WINNER_PATH not in $YEAR_DIR/dir form: $WINNER_PATH" 1>&2
+export ENTRY_DIR=${ENTRY_PATH#*/}
+if [[ -z $ENTRY_DIR ]]; then
+    echo "$0: ERROR: arg: $ENTRY_PATH not in $YEAR_DIR/dir form: $ENTRY_PATH" 1>&2
     exit 5
 fi
-if [[ $WINNER_DIR = */* ]]; then
-    echo "$0: ERROR: dir from arg: $WINNER_PATH contains a /: $WINNER_DIR" 1>&2
+if [[ $ENTRY_DIR = */* ]]; then
+    echo "$0: ERROR: dir from arg: $ENTRY_PATH contains a /: $ENTRY_DIR" 1>&2
     exit 5
 fi
 if [[ ! -d $YEAR_DIR ]]; then
-    echo "$0: ERROR: YYYY from arg: $WINNER_PATH is not a directory: $YEAR_DIR" 1>&2
+    echo "$0: ERROR: YYYY from arg: $ENTRY_PATH is not a directory: $YEAR_DIR" 1>&2
     exit 5
 fi
-export WINNER_ID="${YEAR_DIR}_${WINNER_DIR}"
+export ENTRY_ID="${YEAR_DIR}_${ENTRY_DIR}"
 export DOT_YEAR="$YEAR_DIR/.year"
 if [[ ! -s $DOT_YEAR ]]; then
     echo "$0: ERROR: not a non-empty file: $DOT_YEAR" 1>&2
     exit 5
 fi
 # Now that we have moved to topdir, form and verify YYYY_DIR is a writable directory
-export YYYY_DIR="$YEAR_DIR/$WINNER_DIR"
+export YYYY_DIR="$YEAR_DIR/$ENTRY_DIR"
 if [[ ! -e $YYYY_DIR ]]; then
-    echo "$0: ERROR: YYYY/dir from arg: $WINNER_PATH does not exist: $YYYY_DIR" 1>&2
+    echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH does not exist: $YYYY_DIR" 1>&2
     exit 5
 fi
 if [[ ! -d $YYYY_DIR ]]; then
-    echo "$0: ERROR: YYYY/dir from arg: $WINNER_PATH is not a directory: $YYYY_DIR" 1>&2
+    echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH is not a directory: $YYYY_DIR" 1>&2
     exit 5
 fi
 if [[ ! -w $YYYY_DIR ]]; then
-    echo "$0: ERROR: YYYY/dir from arg: $WINNER_PATH is not a writable directory: $YYYY_DIR" 1>&2
+    echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH is not a writable directory: $YYYY_DIR" 1>&2
     exit 5
 fi
 if [[ ! -d $YYYY_DIR ]]; then
-    echo "$0: ERROR: YYYY/dir from arg: $WINNER_PATH is not a directory: $YYYY_DIR" 1>&2
+    echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH is not a directory: $YYYY_DIR" 1>&2
     exit 5
 fi
 export DOT_PATH="$YYYY_DIR/.path"
@@ -339,8 +339,8 @@ if [[ ! -s $DOT_PATH ]]; then
     exit 5
 fi
 DOT_PATH_CONTENT=$(< "$DOT_PATH")
-if [[ $WINNER_PATH != "$DOT_PATH_CONTENT" ]]; then
-    echo "$0: ERROR: arg: $WINNER_PATH does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
+if [[ $ENTRY_PATH != "$DOT_PATH_CONTENT" ]]; then
+    echo "$0: ERROR: arg: $ENTRY_PATH does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
     exit 5
 fi
 export ENTRY_JSON="$YYYY_DIR/.entry.json"
@@ -390,8 +390,8 @@ fi
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: NAME=$NAME" 1>&2
     echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
-    echo "$0: debug[3]: WINNER_DIR=$WINNER_DIR" 1>&2
-    echo "$0: debug[3]: WINNER_ID=$WINNER_ID" 1>&2
+    echo "$0: debug[3]: ENTRY_DIR=$ENTRY_DIR" 1>&2
+    echo "$0: debug[3]: ENTRY_ID=$ENTRY_ID" 1>&2
     echo "$0: debug[3]: DOT_YEAR=$DOT_YEAR" 1>&2
     echo "$0: debug[3]: DOT_PATH=$DOT_PATH" 1>&2
     echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
@@ -475,10 +475,10 @@ if [[ -z $NOOP ]]; then
 	exit 224
     fi
     {
-	# load numerically sorted winners_rank lines into the temporary markdown file
+	# load numerically sorted inventory_order lines into the temporary markdown file
 	#
-	# Any winners_rank that is 1 to 9 decimal digits is considered a primary file.
-	# Any winners_rank that is 10 or more decimal digits is considered a secondary file.
+	# Any inventory_order that is 1 to 9 decimal digits is considered a primary file.
+	# Any inventory_order that is 10 or more decimal digits is considered a secondary file.
 	#
 	echo '# <a name="inventory"></a>Inventory for' "$YYYY_DIR"
 	echo

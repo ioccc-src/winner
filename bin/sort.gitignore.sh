@@ -97,7 +97,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 	-n		go thru the actions, but do not update any files (def: do the action)
 	-N		do not process file, just parse arguments and ignore the file (def: process the file)
 
-	YYYY/dir	path from topdir to winner directory: must contain the files: README.md, .path and .entry.json
+	YYYY/dir	path from topdir to entry directory: must contain the files: README.md, .path and .entry.json
 
 Exit codes:
      0         all OK
@@ -105,7 +105,7 @@ Exit codes:
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is < 4.2
-     5	       YYYY/dir is not a winner directory
+     5	       YYYY/dir is not a entry directory
      6         sgi.sh tool not found or not executable
  >= 10	       internal error
 
@@ -168,9 +168,9 @@ if [[ $# -ne 1 ]]; then
     exit 3
 fi
 #
-export WINNER_PATH="$1"
+export ENTRY_PATH="$1"
 if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: WINNER_PATH=$WINNER_PATH" 1>&2
+    echo "$0: debug[1]: ENTRY_PATH=$ENTRY_PATH" 1>&2
 fi
 
 # verify that we have a topdir directory
@@ -235,64 +235,64 @@ if [[ ! -x $SGI_TOOL ]]; then
     exit 6
 fi
 
-# verify that WINNER_PATH is a winner directory
+# verify that ENTRY_PATH is a entry directory
 #
-# WINNER_PATH must be in YYYY/dir form
+# ENTRY_PATH must be in YYYY/dir form
 # YYYY must be a directory
 # YYYY must be a writable directory
 # YYYY/.year must be a non-empty file
 # YYYY/dir must be a directory
 # YYYY/dir/.path must be a non-empty file
-# WINNER_PATH must match the contents of YYYY/dir/.path
+# ENTRY_PATH must match the contents of YYYY/dir/.path
 # YYYY/dir/.gitignore.json must be a writable file
 #
-if [[ ! -d $WINNER_PATH ]]; then
-    echo "$0: ERROR: arg is not a directory: $WINNER_PATH" 1>&2
+if [[ ! -d $ENTRY_PATH ]]; then
+    echo "$0: ERROR: arg is not a directory: $ENTRY_PATH" 1>&2
     exit 5
 fi
-if [[ ! -w $WINNER_PATH ]]; then
-    echo "$0: ERROR: arg is not a writable directory: $WINNER_PATH" 1>&2
+if [[ ! -w $ENTRY_PATH ]]; then
+    echo "$0: ERROR: arg is not a writable directory: $ENTRY_PATH" 1>&2
     exit 5
 fi
-export YEAR_DIR=${WINNER_PATH%%/*}
+export YEAR_DIR=${ENTRY_PATH%%/*}
 if [[ -z $YEAR_DIR ]]; then
-    echo "$0: ERROR: arg not in YYYY/dir form: $WINNER_PATH" 1>&2
+    echo "$0: ERROR: arg not in YYYY/dir form: $ENTRY_PATH" 1>&2
     exit 5
 fi
-export WINNER_DIR=${WINNER_PATH#*/}
-if [[ -z $WINNER_DIR ]]; then
-    echo "$0: ERROR: arg: $WINNER_PATH not in $YEAR_DIR/dir form: $WINNER_PATH" 1>&2
+export ENTRY_DIR=${ENTRY_PATH#*/}
+if [[ -z $ENTRY_DIR ]]; then
+    echo "$0: ERROR: arg: $ENTRY_PATH not in $YEAR_DIR/dir form: $ENTRY_PATH" 1>&2
     exit 5
 fi
-if [[ $WINNER_DIR = */* ]]; then
-    echo "$0: ERROR: dir from arg: $WINNER_PATH contains a /: $WINNER_DIR" 1>&2
+if [[ $ENTRY_DIR = */* ]]; then
+    echo "$0: ERROR: dir from arg: $ENTRY_PATH contains a /: $ENTRY_DIR" 1>&2
     exit 5
 fi
 if [[ ! -d $YEAR_DIR ]]; then
-    echo "$0: ERROR: YYYY from arg: $WINNER_PATH is not a directory: $YEAR_DIR" 1>&2
+    echo "$0: ERROR: YYYY from arg: $ENTRY_PATH is not a directory: $YEAR_DIR" 1>&2
     exit 5
 fi
-export WINNER_ID="${YEAR_DIR}_${WINNER_DIR}"
+export ENTRY_ID="${YEAR_DIR}_${ENTRY_DIR}"
 export DOT_YEAR="$YEAR_DIR/.year"
 if [[ ! -s $DOT_YEAR ]]; then
     echo "$0: ERROR: not a non-empty file: $DOT_YEAR" 1>&2
     exit 5
 fi
-if [[ ! -d $YEAR_DIR/$WINNER_DIR ]]; then
-    echo "$0: ERROR: YYYY/dir from arg: $WINNER_PATH is not a directory: $YEAR_DIR/$WINNER_DIR" 1>&2
+if [[ ! -d $YEAR_DIR/$ENTRY_DIR ]]; then
+    echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH is not a directory: $YEAR_DIR/$ENTRY_DIR" 1>&2
     exit 5
 fi
-export DOT_PATH="$YEAR_DIR/$WINNER_DIR/.path"
+export DOT_PATH="$YEAR_DIR/$ENTRY_DIR/.path"
 if [[ ! -s $DOT_PATH ]]; then
     echo "$0: ERROR: not a non-empty file: $DOT_PATH" 1>&2
     exit 5
 fi
 DOT_PATH_CONTENT=$(< "$DOT_PATH")
-if [[ $WINNER_PATH != "$DOT_PATH_CONTENT" ]]; then
-    echo "$0: ERROR: arg: $WINNER_PATH does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
+if [[ $ENTRY_PATH != "$DOT_PATH_CONTENT" ]]; then
+    echo "$0: ERROR: arg: $ENTRY_PATH does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
     exit 5
 fi
-export GITIGNORE="$YEAR_DIR/$WINNER_DIR/.gitignore"
+export GITIGNORE="$YEAR_DIR/$ENTRY_DIR/.gitignore"
 if [[ ! -e $GITIGNORE ]]; then
     echo "$0: ERROR: .entry.json does not exist: $GITIGNORE" 1>&2
     exit 5
@@ -316,13 +316,13 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: SGI_TOOL=$SGI_TOOL" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
-    echo "$0: debug[3]: WINNER_PATH=$WINNER_PATH" 1>&2
+    echo "$0: debug[3]: ENTRY_PATH=$ENTRY_PATH" 1>&2
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
     echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
-    echo "$0: debug[3]: WINNER_DIR=$WINNER_DIR" 1>&2
-    echo "$0: debug[3]: WINNER_ID=$WINNER_ID" 1>&2
+    echo "$0: debug[3]: ENTRY_DIR=$ENTRY_DIR" 1>&2
+    echo "$0: debug[3]: ENTRY_ID=$ENTRY_ID" 1>&2
     echo "$0: debug[3]: DOT_YEAR=$DOT_YEAR" 1>&2
     echo "$0: debug[3]: DOT_PATH=$DOT_PATH" 1>&2
     echo "$0: debug[3]: GITIGNORE=$GITIGNORE" 1>&2
@@ -339,7 +339,7 @@ fi
 
 # create a temporary markdown for pandoc to process
 #
-TMP_FILE="$WINNER_PATH/.$NAME.$$.sgi.sh"
+TMP_FILE="$ENTRY_PATH/.$NAME.$$.sgi.sh"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary markdown file: $TMP_FILE" 1>&2
 fi

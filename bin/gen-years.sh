@@ -645,7 +645,7 @@ for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
 	fi
     fi
 
-    # process each winner under YYYY
+    # process each entry under YYYY
     #
     export YYYY_DIR
     for YYYY_DIR in $(< "$YEAR_FILE"); do
@@ -677,15 +677,15 @@ for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
-	export WINNER_DIR=${YYYY_DIR#*/}
-	if [[ -z $WINNER_DIR ]]; then
+	export ENTRY_DIR=${YYYY_DIR#*/}
+	if [[ -z $ENTRY_DIR ]]; then
 	    echo "$0: ERROR: YYYY_DIR not in $YEAR_DIR/dir form: $YYYY_DIR" 1>&2
 	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
-	if [[ $WINNER_DIR = */* ]]; then
-	    echo "$0: ERROR: YYYY_DIR: $YYYY_DIR dir contains a /: $WINNER_DIR" 1>&2
+	if [[ $ENTRY_DIR = */* ]]; then
+	    echo "$0: ERROR: YYYY_DIR: $YYYY_DIR dir contains a /: $ENTRY_DIR" 1>&2
 	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
@@ -766,7 +766,7 @@ for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
     else
         cat > /dev/null
         if [[ $V_FLAG -ge 3 ]]; then
-            echo "$0: debug[3]: because of -n, $YYYY winner markdown data is NOT written into: $TMP_YEARS_MD" 1>&2
+            echo "$0: debug[3]: because of -n, $YYYY_DIR markdown data is NOT written into: $TMP_YEARS_MD" 1>&2
         fi
     fi
 

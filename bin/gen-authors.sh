@@ -164,7 +164,7 @@ $NAME version: $VERSION"
 
 # output_entry_ids
 #
-# Write the winner ids from an author/author_handle.json file to standard output (stdout)
+# Write the entry ids from an author/author_handle.json file to standard output (stdout)
 #
 # XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 # XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
@@ -182,7 +182,7 @@ $NAME version: $VERSION"
 function output_entry_ids
 {
     local AUTHOR_HANDLE_JSON_PATH;	# the .entry.json path
-    local entry_id;			# a found winner id
+    local entry_id;			# a found entry id
 
     # parse args
     #
@@ -204,7 +204,7 @@ function output_entry_ids
 	return 4
     fi
 
-    # extract winner ids from the author/author_handle.json file
+    # extract entry ids from the author/author_handle.json file
     #
     grep -F entry_id "$AUTHOR_HANDLE_JSON_PATH" | awk 'NF == 5 { print $4; }' | tr -d '"'
     return 0
@@ -251,7 +251,7 @@ function output_author_handle
 	return 4
     fi
 
-    # extract winner ids from the author/author_handle.json file
+    # extract entry ids from the author/author_handle.json file
     #
     grep -F author_handle "$AUTHOR_HANDLE_JSON_PATH" | sed -e 's/.*"author_handle" : "//' -e 's/",.*//'
     return 0
@@ -657,26 +657,26 @@ if [[ -n $DO_NOT_PROCESS ]]; then
     exit 0
 fi
 
-# create a temporary winners markdown file
+# create a temporary entry markdown file
 #
-TMP_WINNERS_MD=".$NAME.$$.winners.md"
+TMP_AUTHORS_MD=".$NAME.$$.entry.md"
 if [[ $V_FLAG -ge 3 ]]; then
-    echo  "$0: debug[3]: temporary winners markdown file: $TMP_WINNERS_MD" 1>&2
+    echo  "$0: debug[3]: temporary entry markdown file: $TMP_AUTHORS_MD" 1>&2
 fi
 if [[ -z $NOOP ]]; then
-    trap 'rm -f $TMP_WINNERS_MD; exit' 0 1 2 3 15
-    rm -f "$TMP_WINNERS_MD"
-    if [[ -e $TMP_WINNERS_MD ]]; then
-	echo "$0: ERROR: cannot remove temporary winners markdown file: $TMP_WINNERS_MD" 1>&2
+    trap 'rm -f $TMP_AUTHORS_MD; exit' 0 1 2 3 15
+    rm -f "$TMP_AUTHORS_MD"
+    if [[ -e $TMP_AUTHORS_MD ]]; then
+	echo "$0: ERROR: cannot remove temporary entry markdown file: $TMP_AUTHORS_MD" 1>&2
 	exit 212
     fi
-    :> "$TMP_WINNERS_MD"
-    if [[ ! -e $TMP_WINNERS_MD ]]; then
-	echo "$0: ERROR: cannot create temporary winners markdown file: $TMP_WINNERS_MD" 1>&2
+    :> "$TMP_AUTHORS_MD"
+    if [[ ! -e $TMP_AUTHORS_MD ]]; then
+	echo "$0: ERROR: cannot create temporary entry markdown file: $TMP_AUTHORS_MD" 1>&2
 	exit 213
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, temporary winners markdown file is not used: $TMP_WINNERS_MD" 1>&2
+    echo "$0: debug[3]: because of -n, temporary entry markdown file is not used: $TMP_AUTHORS_MD" 1>&2
 fi
 
 # create a temporary sort word list file
@@ -686,7 +686,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary sort word list file: $TMP_SORT_WORD" 1>&2
 fi
 if [[ -z $NOOP ]]; then
-    trap 'rm -f $TMP_WINNERS_MD $TMP_SORT_WORD; exit' 0 1 2 3 15
+    trap 'rm -f $TMP_AUTHORS_MD $TMP_SORT_WORD; exit' 0 1 2 3 15
     rm -f "$TMP_SORT_WORD"
     if [[ -e $TMP_SORT_WORD ]]; then
 	echo "$0: ERROR: cannot remove temporary sort word list file: $TMP_SORT_WORD" 1>&2
@@ -729,7 +729,7 @@ if [[ $status -ne 0 ]]; then
     exit 216
 fi
 
-# generate the temporary winners markdown file
+# generate the temporary entry markdown file
 #
 # XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 # XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
@@ -836,7 +836,7 @@ EOF
 	    #
 	    output_entry_ids "$filename" | while read -r ENTRY_ID; do
 
-		# verify the winner id
+		# verify the entry id
 		#
 		if [[ $ENTRY_ID =~ ^[^_][^_]*_[^_][^_]*$ ]]; then
 		    if [[ $V_FLAG -ge 7 ]]; then
@@ -875,7 +875,7 @@ EOF
 		    echo "$0: debug[7]: .entry.json: $ENTRY_JSON" 1>&2
 		fi
 
-		# collect the award for this winner id
+		# collect the award for this entry id
 		#
 		AWARD=$(output_award "$ENTRY_JSON")
 		if [[ -z $AWARD ]]; then
@@ -891,11 +891,11 @@ EOF
 	fi
     done < "$TMP_SORT_WORD"
 } | if [[ -z $NOOP ]]; then
-    cat >> "$TMP_WINNERS_MD"
+    cat >> "$TMP_AUTHORS_MD"
 else
     cat > /dev/null
     if [[ $V_FLAG -ge 3 ]]; then
-        echo "$0: debug[3]: because of -n, temporary winners markdown file is NOT written into: $TMP_WINNERS_MD" 1>&2
+        echo "$0: debug[3]: because of -n, temporary entry markdown file is NOT written into: $TMP_AUTHORS_MD" 1>&2
     fi
 fi
 
@@ -903,12 +903,12 @@ fi
 #
 if [[ -z $NOOP ]]; then
     if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[1]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]} -- winners.md $TMP_WINNERS_MD $AUTHORS_HTML" 1>&2
+	echo "$0: debug[1]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]} -- authors.md $TMP_AUTHORS_MD $AUTHORS_HTML" 1>&2
     fi
-    "$MD2HTML_SH" "${TOOL_OPTION[@]}" -- winners.md "$TMP_WINNERS_MD" "$AUTHORS_HTML"
+    "$MD2HTML_SH" "${TOOL_OPTION[@]}" -- authors.md "$TMP_AUTHORS_MD" "$AUTHORS_HTML"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: Warning: md2html.sh: $MD2HTML_SH ${TOOL_OPTION[*]} -- winners.md $TMP_WINNERS_MD $AUTHORS_HTML" \
+	echo "$0: Warning: md2html.sh: $MD2HTML_SH ${TOOL_OPTION[*]} -- authors.md $TMP_AUTHORS_MD $AUTHORS_HTML" \
 	     "failed, error: $status" 1>&2
 	EXIT_CODE="1"  # exit 1
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
@@ -919,15 +919,15 @@ if [[ -z $NOOP ]]; then
 # report disabled by -n
 #
 elif [[ $V_FLAG -ge 5 ]]; then
-    echo "$0: debug[5]: because of -n, did not run: $MD2HTML_SH ${TOOL_OPTION[*]} -- winners.md $TMP_WINNERS_MD $AUTHORS_HTML" 1>&2
+    echo "$0: debug[5]: because of -n, did not run: $MD2HTML_SH ${TOOL_OPTION[*]} -- authors.md $TMP_AUTHORS_MD $AUTHORS_HTML" 1>&2
 fi
 
 # file cleanup
 #
 if [[ -z $NOOP ]]; then
-    rm -f -- "$TMP_WINNERS_MD"
+    rm -f -- "$TMP_AUTHORS_MD"
 elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, disabled: rm -f -- $TMP_WINNERS_MD" 1>&2
+    echo "$0: debug[3]: because of -n, disabled: rm -f -- $TMP_AUTHORS_MD" 1>&2
 fi
 
 # All Done!!! -- Jessica Noll, Age 2
