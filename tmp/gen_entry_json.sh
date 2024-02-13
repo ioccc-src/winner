@@ -290,11 +290,11 @@ fi
 # collect inventory
 #
 NUMBER_RANKED_MANIFEST_SET=$(grep -E "^$YEAR,$WINNER,[^,][^,]*,[0-9]" "$MANIFEST_CSV" | sort -t, -k4n)
-declare -a FILE_PATH INVENTORY_ORDER OK_TO_EDIT DISPLAY_AS DISPLAY_VIA_GITHUB WINNER_TEXT
+declare -a FILE_PATH INVENTORY_ORDER OK_TO_EDIT DISPLAY_AS DISPLAY_VIA_GITHUB ENTRY_TEXT
 #
 # process inventory with a numerical inventory_order
 #
-while IFS=, read -r year dir file_path inventory_order OK_to_edit display_as display_via_github entries_text extra; do
+while IFS=, read -r year dir file_path inventory_order OK_to_edit display_as display_via_github entry_text extra; do
 
         # firewall - year dir much match
 	#
@@ -309,7 +309,7 @@ while IFS=, read -r year dir file_path inventory_order OK_to_edit display_as dis
 	if [[ $V_FLAG -ge 7 ]]; then
 	    echo "$0: debug[7]: found: year: $year dir: $dir inventory_order: $inventory_order file_path: $file_path" 1>&2
 	    echo "$0: debug[7]:  also: display_as: $display_as display_via_github: $display_via_github" 1>&2
-	    echo "$0: debug[7]:   and: entries_text: $entries_text extra: $extra" 1>&2
+	    echo "$0: debug[7]:   and: entry_text: $entry_text extra: $extra" 1>&2
 	fi
 
 	# firewall - nothing except extra should be empty
@@ -334,8 +334,8 @@ while IFS=, read -r year dir file_path inventory_order OK_to_edit display_as dis
 	    echo "$0: ERROR: ^$YEAR,$WINNER inventory_order: $inventory_order empty display_via_github" 1>&2
 	    exit 38
 	fi
-	if [[ -z $entries_text ]]; then
-	    echo "$0: ERROR: ^$YEAR,$WINNER inventory_order: $inventory_order empty entries_text" 1>&2
+	if [[ -z $entry_text ]]; then
+	    echo "$0: ERROR: ^$YEAR,$WINNER inventory_order: $inventory_order empty entry_text" 1>&2
 	    exit 39
 	fi
 
@@ -346,7 +346,7 @@ while IFS=, read -r year dir file_path inventory_order OK_to_edit display_as dis
 	OK_TO_EDIT+=( "$OK_to_edit" )
 	DISPLAY_AS+=( "$display_as" )
 	DISPLAY_VIA_GITHUB+=( "$display_via_github" )
-	WINNER_TEXT+=( "$entries_text" )
+	ENTRY_TEXT+=( "$entry_text" )
 done <<< "$NUMBER_RANKED_MANIFEST_SET"
 export FILE_COUNT=${#FILE_PATH[@]}
 if [[ $FILE_COUNT -le 0 ]]; then
@@ -406,7 +406,7 @@ for i in "${!INVENTORY_ORDER[@]}"; do
     # write OK_to_edit of a given file in manifest of .entry.json
     # write display_as of a given file in manifest of .entry.json
     # write display_via_github of a given file in manifest of .entry.json
-    # write entries_text of a given file in manifest of .entry.json
+    # write entry_text of a given file in manifest of .entry.json
     #
     cat >> "$TMP_DOT_ENTRY_JSON" << EOF
 	{
@@ -415,7 +415,7 @@ for i in "${!INVENTORY_ORDER[@]}"; do
 	    "OK_to_edit" : ${OK_TO_EDIT[$i]},
 	    "display_as" : "${DISPLAY_AS[$i]}",
 	    "display_via_github" : ${DISPLAY_VIA_GITHUB[$i]},
-	    "entries_text" : "${WINNER_TEXT[$i]}"
+	    "entry_text" : "${ENTRY_TEXT[$i]}"
 EOF
 
     # stupid JSON syntax does not allow a trailing comma
