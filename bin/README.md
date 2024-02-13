@@ -40,6 +40,34 @@ For example:
 all-years.sh -v 1 bin/gen-year-index.sh -v 1
 ```
 
+Or for example:
+
+```sh
+all-years.sh -v 1 bin/chk-entry.sh
+```
+
+
+### [chk-entry.sh](chk-entry.sh)
+
+Check of files required by an entry matches the entry's manifest as found in `.entry.json`.
+
+For example:
+
+```sh
+bin/chk-entry.sh 2020/ferguson1
+```
+
+
+### [filelist.entry.json.awk](filelist.entry.json.awk)
+
+Generate the list of files in the entry's manifest `.entry.json`.
+
+For example:
+
+```sh
+awk -f bin/filelist.entry.json.awk 2020/ferguson1/.entry.json
+```
+
 
 ### [gen-authors.sh](gen-authors.sh)
 
