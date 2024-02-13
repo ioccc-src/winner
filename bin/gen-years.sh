@@ -64,6 +64,7 @@ status="$?"
 if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
+export TOPDIR
 TAC_TOOL=$(type -P tac)
 export TAC_TOOL
 if [[ ! -x $TAC_TOOL ]]; then
@@ -480,6 +481,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: NAME=$NAME" 1>&2
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
+    echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: TAC_TOOL=$TAC_TOOL" 1>&2
     echo "$0: debug[3]: FMT_TOOL=$FMT_TOOL" 1>&2
     echo "$0: debug[3]: TAGLINE=$TAGLINE" 1>&2
@@ -487,17 +489,17 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
-    echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
-    echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
-    echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
-    echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
+    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
     for index in "${!TOOL_OPTION[@]}"; do
 	echo "$0: debug[3]: TOOL_OPTION[$index]=${TOOL_OPTION[$index]}" 1>&2
     done
-    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
+    echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
+    echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
+    echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
+    echo "$0: debug[3]: YEARS_HTML=$YEARS_HTML" 1>&2
 fi
 
 # -N stops early before any processing is performed

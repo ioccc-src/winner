@@ -122,6 +122,7 @@ status="$?"
 if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
+export TOPDIR
 export DOCROOT_SLASH="./"
 export PANDOC_WRAPPER="bin/pandoc-wrapper.sh"
 export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc"
@@ -673,25 +674,32 @@ function debug_parameters
 
     # print values that could be modified by parse_command_line
     #
-    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: NOOP=$NOOP" 1>&2
-    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: VERSION=$VERSION" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: NAME=$NAME" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: V_FLAG=$V_FLAG" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: TOPDIR=$TOPDIR" 1>&2
-    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: MD2HTML_CFG=$MD2HTML_CFG" 1>&2
-    for index in "${!PHASE_NAME[@]}"; do
-	echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: phase name $index: ${PHASE_NAME[$index]}"
-    done 1>&2
-    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: TAGLINE=$TAGLINE" 1>&2
-    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: BEFORE_TOOL=$BEFORE_TOOL" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
-    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: AFTER_TOOL=$AFTER_TOOL" 1>&2
-    for index in "${!TOKEN[@]}"; do
-	echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: token $index to be replaced with: ${TOKEN[$index]}"
-    done 1>&2
-    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: CAP_S_FLAG=$CAP_S_FLAG" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: SITE_URL=$SITE_URL" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: URL=$URL" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: NOOP=$NOOP" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: MD2HTML_CFG=$MD2HTML_CFG" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: TAGLINE=$TAGLINE" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: BEFORE_TOOL=$BEFORE_TOOL" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: AFTER_TOOL=$AFTER_TOOL" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: WORKING_DIR=$WORKING_DIR" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: REPO_NAME=$REPO_NAME" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: INC_PATH=$INC_PATH" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: TOP=$TOP" 1>&2
+    for index in "${!PHASE_NAME[@]}"; do
+	echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: phase name $index: ${PHASE_NAME[$index]}"
+    done 1>&2
+    for index in "${!TOKEN[@]}"; do
+	echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: token $index to be replaced with: ${TOKEN[$index]}"
+    done 1>&2
     for index in "${!OUTPUT_TOOL[@]}"; do
 	echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: OUTPUT_TOOL[$index]=${OUTPUT_TOOL[$index]}"
     done 1>&2

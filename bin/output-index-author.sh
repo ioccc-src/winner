@@ -70,6 +70,7 @@ status="$?"
 if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
+export TOPDIR
 export DOCROOT_SLASH="../../"
 export PANDOC_WRAPPER="bin/pandoc-wrapper.sh"
 export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc"
@@ -568,28 +569,32 @@ fi
 # parameter debugging
 #
 if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: VERSION=$VERSION" 1>&2
     echo "$0: debug[3]: NAME=$NAME" 1>&2
-    echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
-    echo "$0: debug[3]: ENTRY_DIR=$ENTRY_DIR" 1>&2
-    echo "$0: debug[3]: ENTRY_ID=$ENTRY_ID" 1>&2
-    echo "$0: debug[3]: DOT_YEAR=$DOT_YEAR" 1>&2
-    echo "$0: debug[3]: DOT_PATH=$DOT_PATH" 1>&2
-    echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
+    echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
+    echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
+    echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
+    echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
+    echo "$0: debug[3]: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
-    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
-    echo "$0: debug[3]: URL=$URL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
+    echo "$0: debug[3]: URL=$URL" 1>&2
+    echo "$0: debug[3]: NOOP=$NOOP" 1>&2
+    echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
+    echo "$0: debug[3]: ENTRY_PATH=$ENTRY_PATH" 1>&2
+    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
     echo "$0: debug[3]: AUTHOR_PATH=$AUTHOR_PATH" 1>&2
     echo "$0: debug[3]: AUTHOR_DIR=$AUTHOR_DIR" 1>&2
     echo "$0: debug[3]: INC_PATH=$INC_PATH" 1>&2
     echo "$0: debug[3]: INC_DIR=$INC_DIR" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
-    echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
-    echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
-    echo "$0: debug[3]: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
-    echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
-    echo "$0: debug[3]: NOOP=$NOOP" 1>&2
+    echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
+    echo "$0: debug[3]: ENTRY_DIR=$ENTRY_DIR" 1>&2
+    echo "$0: debug[3]: ENTRY_ID=$ENTRY_ID" 1>&2
+    echo "$0: debug[3]: DOT_YEAR=$DOT_YEAR" 1>&2
+    echo "$0: debug[3]: DOT_PATH=$DOT_PATH" 1>&2
+    echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
 fi
 
 # Set AUTHOR_HANDLE_SET with author handles from .entry.json

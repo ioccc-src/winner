@@ -67,6 +67,7 @@ status="$?"
 if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
+export TOPDIR
 export DOCROOT_SLASH="../../"
 export TAGLINE="bin/$NAME"
 export MD2HTML_SH="bin/md2html.sh"

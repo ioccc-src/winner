@@ -40,10 +40,19 @@ include var.mk
 # IOCCC web site maintenance tulz
 #################################
 
+# NOTE: The "tulz" (tools) in this section are intended to be used by those
+#	who maintain the official IOCCC site.
+#
+# We file "tulz" paths should be relative to the top directory of the repo.
+# We need only list those "tulz" that are invoked directly by the
+# "IOCCC web site maintenance rulz" section below.
+
 ALL_RUN= bin/all-run.sh
+ALL_YEARS= bin/all-years.sh
 GEN_AUTHORS= bin/gen-authors.sh
 GEN_LOCATION= bin/gen-location.sh
 GEN_YEARS= bin/gen-years.sh
+GEN_YEAR_INDEX= bin/gen-year-index.sh
 README2INDEX= bin/readme2index.sh
 QUICK_README2INDEX= bin/quick-readme2index.sh
 
@@ -224,8 +233,25 @@ indent.c:
 # XXX - The rules in this section are undergoing development and change.
 #	They might not even work (right now).  :-)
 
-.PHONY: genpath gen_authors gen_location gen_years entry_index quick_entry_index \
-	quick_www www
+.PHONY: help genpath gen_authors gen_location gen_years entry_index quick_entry_index \
+	gen_year_index quick_www www
+
+# Suggest rules in this section
+#
+# This may not be much help to people who are not already familiar with
+# the tools needed to build the web site, but it is does print out a friendly
+# reminder to hose who to understand.  For all else, there is "RTFS". :-)
+#
+help:
+	@echo make genpath
+	@echo make gen_authors
+	@echo make gen_location
+	@echo make gen_years
+	@echo make entry_index
+	@echo make gen_year_index
+	@echo make quick_entry_index
+	@echo make quick_www
+	@echo make www
 
 # form the top level .top, YYYY level .year and winner level .path files
 #
@@ -275,6 +301,13 @@ entry_index: ${ALL_RUN} ${README2INDEX}
 	${ALL_RUN} -v 3 ${README2INDEX} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
+# generate year level index.html files
+#
+gen_year_index: ${ALL_YEARS} ${GEN_YEAR_INDEX}
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${ALL_YEARS} -v 1 ${GEN_YEAR_INDEX} -v 1
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
 # build winner index.html files that might be out of date
 #
 # This rule uses the QUICK_README2INDEX tool, so
@@ -299,6 +332,7 @@ quick_www:
 	${MAKE} gen_authors
 	${MAKE} gen_location
 	${MAKE} gen_years
+	${MAKE} gen_year_index
 	${MAKE} quick_entry_index
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
@@ -311,6 +345,7 @@ www:
 	${MAKE} gen_authors
 	${MAKE} gen_location
 	${MAKE} gen_years
+	${MAKE} gen_year_index
 	${MAKE} entry_index
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 

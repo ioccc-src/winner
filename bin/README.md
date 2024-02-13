@@ -30,6 +30,17 @@ bin/all-run.sh -v 3 bin/readme2index.sh -v 1
 ```
 
 
+### [all-years.sh](all-years.sh)
+
+Run a command on all IOCCC years.
+
+For example:
+
+```sh
+all-years.sh -v 1 bin/gen-year-index.sh -v 1
+```
+
+
 ### [gen-authors.sh](gen-authors.sh)
 
 Generate the top level `/authors.html` page.
@@ -49,6 +60,17 @@ Usage:
 
 ```sh
 bin/gen-location.sh -v 1
+```
+
+
+### [gen-year-index.sh](gen-year-index.sh)
+
+Generate an `index.html` page for an given IOCCC year.
+
+Usage:
+
+```sh
+bin/gen-year-index.sh -v 1 2020
 ```
 
 
@@ -173,7 +195,7 @@ bin/all-run.sh bin/sort.gitignore.sh -v 1
 Print default substitutions.
 
 
-### [subst.entry-index..sh](subst.entry-index..sh)
+### [subst.entry-index.sh](subst.entry-index.sh)
 
 Print substitutions for a entry index.html.
 
@@ -181,6 +203,16 @@ Print substitutions for a entry index.html.
 ### [subst.entry-navbar.awk](subst.entry-navbar.awk)
 
 Output substitutions for navbar on behalf of a entry.
+
+
+### [subst.year-index.sh](subst.year-index.sh)
+
+Print substitutions for a year level index.html.
+
+
+### [subst.year-navbar.awk](subst.year-navbar.awk)
+
+Output substitutions for navbar on behalf of a year level index.html.
 
 
 # <a name="how"></a>How IOCCC HTML content is built

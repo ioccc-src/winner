@@ -73,6 +73,7 @@ status="$?"
 if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
+export TOPDIR
 export DOCROOT_SLASH="../../"
 export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc"
 export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
@@ -189,15 +190,24 @@ if [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: file argument count: $#" 1>&2
 fi
 
+# form Nu Html Checker doc url string
+#
+VALIDATOR_ENCODED_URL=$(echo "$URL" | sed -e 's;/;%2F;g' -e 's;:;%3A;')
+
 # parameter debugging
 #
 if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: VERSION=$VERSION" 1>&2
     echo "$0: debug[3]: NAME=$NAME" 1>&2
+    echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
+    echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
     echo "$0: debug[3]: URL=$URL" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
+    echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
+    echo "$0: debug[3]: VALIDATOR_ENCODED_URL=$VALIDATOR_ENCODED_URL" 1>&2
 fi
 
 # If -N, time to exit
@@ -218,10 +228,6 @@ echo "HEADER_1=The International Obfuscated C Code Contest"
 #
 echo "-s"
 echo "DOCROOT_SLASH=$DOCROOT_SLASH"
-
-# form Nu Html Checker doc url string
-#
-VALIDATOR_ENCODED_URL=$(echo "$URL" | sed -e 's;/;%2F;g' -e 's;:;%3A;')
 export VALIDATOR_ENCODED_URL
 
 # output the Validator encoded URL

@@ -73,6 +73,7 @@ status="$?"
 if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
+export TOPDIR
 export DOCROOT_SLASH="../../"
 # We use the tagline of "bin/readme2index.sh" instead of:
 #
@@ -117,7 +118,6 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	-N		do not process anything, just parse arguments (def: process something)
 
 	-t tagline	string to write about the tool that formed the markdown content (def: $TAGLINE)
-			NOTE: 'pandoc_opts' may be enclosed within, but may NOT contain an internal single-quote or double-quote.
 	-T md2html.sh	run 'markdown to html tool' to convert markdown into HTML (def: $MD2HTML_SH)
 
 	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use $PANDOC_WRAPPER)
@@ -130,7 +130,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	tool		the tool to run over all entries
 	[more_options]	additional tool command line options to use before the YYYY/dir argument
 
-NOTE: Any '-t tagline', '-T md2html.sh', '-p tool', '-P pandoc_opts', '-u repo_url', '-U top_url'
+NOTE: Any '-t tagline', '-T md2html.sh', '-p tool', '-u repo_url', '-w site_url'
       are passed to the 'tool' at the beginning of the command line, and
       before any optional 'more_options' and before the final YYYY/dir argument.
 

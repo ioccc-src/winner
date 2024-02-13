@@ -64,6 +64,7 @@ status="$?"
 if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
+export TOPDIR
 export DOCROOT_SLASH="./"
 export TAGLINE="bin/$NAME"
 export MD2HTML_SH="bin/md2html.sh"
@@ -358,23 +359,23 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: NAME=$NAME" 1>&2
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
+    echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
+    echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: TAGLINE=$TAGLINE" 1>&2
     echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
     echo "$0: debug[3]: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
-    echo "$0: debug[3]: AUTHOR_PATH=$AUTHOR_PATH" 1>&2
-    echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
-    echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
-    echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
-    echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
+    echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
+    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
     for index in "${!TOOL_OPTION[@]}"; do
 	echo "$0: debug[3]: TOOL_OPTION[$index]=${TOOL_OPTION[$index]}" 1>&2
     done
-    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
-    echo "$0: debug[3]: LOCATION_TOOL=$LOCATION_TOOL" 1>&2
+    echo "$0: debug[3]: AUTHOR_PATH=$AUTHOR_PATH" 1>&2
+    echo "$0: debug[3]: AUTHOR_DIR=$AUTHOR_DIR" 1>&2
+    echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: LOCATION_HTML=$LOCATION_HTML" 1>&2
 fi
 

@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 #
-# all-run.sh - run a command for all entries
+# all-years.sh - run a command for all IOCCC years
 #
 # We cd to topdir, than then walk the entry directory tree.
 # We obtain the set of IOCCC years (YYYY) via the .top file.
-# For each year (YYYY), we obtain the set of entry directories (dir).
-# For all entry directories (YYYY/dir) we run the tool.
+# For each year (YYYY), we run the tool.
 #
 # The tool argument, if not an absolute path, must be relative to topdir.
 # The tool argument is the first argument command line.  Any additional
@@ -17,15 +16,15 @@
 #
 # Each tool run with command line of the form:
 #
-#	tool [any -D, -t tagline, -T md2html.sh, -p tool, -u repo_url, -w site_url] [more_options] YYYY/dir
+#	tool [any -D, -t tagline, -T md2html.sh, -p tool, -u repo_url, -w site_url] [more_options] YYYY
 #
 # For example:
 #
-#	all-run.sh -v 3 -t readme2html -w https://www.ioccc.org bin/quick-readme2html.sh -v 1
+#	all-years.sh -v 3 -w https://www.ioccc.org bin/gen-year-index,sh bin/gen-year-index.sh -v 1
 #
-# will run the tool bin/quick-readme2html.sh for each entry YYYY/dir as follows:
+# will run the tool bin/quick-readme2html.sh for each entry YYYY as follows:
 #
-#	bin/quick-readme2html.sh -t readme2html -w https://www.ioccc.org YYYY/dir -v 1
+#	bin/gen-year-index.sh -w https://www.ioccc.org YYYY -v 1
 #
 # Only the "-D -t, -T, -p, -u, -w" option set are passed to the tool command line.
 # For all other special tool options, pass them as additional tool options (i.e., command line arguments
@@ -78,7 +77,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3 2024-02-11"
+export VERSION="1.0 2024-02-12"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -118,6 +117,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
+			NOTE: The '-v level' is passed as leading options on tool command lines.
 	-V		print version string and exit
 
 	-d topdir	set topdir (def: $TOPDIR)
@@ -144,7 +144,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	tool		the tool to run over all entries
 	[more_options]	additional tool command line options to use before the YYYY/dir argument
 
-NOTE: Any '-D docroot/', '-t tagline', '-T md2html.sh', '-p tool', '-u repo_url', '-w site_url'
+NOTE: Any '-t tagline', '-T md2html.sh', '-p tool', '-u repo_url', '-w site_url'
       are passed to the 'tool' at the beginning of the command line, and
       before any optional 'more_options' and before the final YYYY/dir argument.
 
@@ -378,6 +378,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
+    echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: TAGLINE=$TAGLINE" 1>&2
     echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
@@ -392,7 +393,6 @@ if [[ $V_FLAG -ge 3 ]]; then
 	echo "$0: debug[3]: TOOL_OPTION[$index]=${TOOL_OPTION[$index]}" 1>&2
     done
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
-    echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
 fi
 
 # -N stops early before any processing is performed
@@ -464,130 +464,26 @@ for YYYY in $(< "$TOP_FILE"); do
 	continue
     fi
 
-    # process each entry directroy under YYYY
+    # run the tool unless -n
     #
-    export YYYY_DIR
-    for YYYY_DIR in $(< "$YEAR_FILE"); do
-
-	# debug YYYY
-	#
+    if [[ -z $NOOP ]]; then
 	if [[ $V_FLAG -ge 3 ]]; then
-	    echo "$0: debug[3]: starting to process year/dir: $YYYY_DIR" 1>&2
+	    echo "$0: debug[3]: about to run: $TOOL ${TOOL_OPTION[*]} -- $YYYY" 1>&2
 	fi
-
-	# parse YYYY_DIR
-	#
-	if [[ ! -d $YYYY_DIR ]]; then
-	    echo "$0: ERROR: YYYY_DIR is not a directory: $YYYY_DIR" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	if [[ ! -w $YYYY_DIR ]]; then
-	    echo "$0: ERROR: YYYY_DIR is not a writable directory: $YYYY_DIR" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	export YEAR_DIR=${YYYY_DIR%%/*}
-	if [[ -z $YEAR_DIR ]]; then
-	    echo "$0: ERROR: YYYY_DIR not in YYYY/dir form: $YYYY_DIR" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	export ENTRY_DIR=${YYYY_DIR#*/}
-	if [[ -z $ENTRY_DIR ]]; then
-	    echo "$0: ERROR: YYYY_DIR not in $YEAR_DIR/dir form: $YYYY_DIR" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	if [[ $ENTRY_DIR = */* ]]; then
-	    echo "$0: ERROR: YYYY_DIR: $YYYY_DIR dir contains a /: $ENTRY_DIR" 1>&2
-	    EXIT_CODE="7"  # exit 7
+	"$TOOL" "${TOOL_OPTION[@]}" -- "$YYYY"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: tool: $TOOL ${TOOL_OPTION[*]} -- $YYYY failed, error: $status" 1>&2
+	    EXIT_CODE="1"  # exit 1
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
 
-	# verify that YYYY_DIR is a writable directory
-	#
-	if [[ ! -e $YYYY_DIR ]]; then
-	    echo  "$0: ERROR: YYYY_DIR does not exist: $YYYY_DIR" 1>&2
-	    EXIT_CODE="8"  # exit 8
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	if [[ ! -d $YYYY_DIR ]]; then
-	    echo  "$0: ERROR: YYYY_DIR is not a directory: $YYYY_DIR" 1>&2
-	    EXIT_CODE="8"  # exit 8
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	if [[ ! -w $YYYY_DIR ]]; then
-	    echo  "$0: ERROR: YYYY_DIR is not an writable directory: $YYYY_DIR" 1>&2
-	    EXIT_CODE="8"  # exit 8
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-
-	# verify YYYY/dir/.path
-	#
-	export DOT_PATH="$YYYY_DIR/.path"
-	if [[ ! -s $DOT_PATH ]]; then
-	    echo "$0: ERROR: not a non-empty file: $DOT_PATH" 1>&2
-	    EXIT_CODE="8"  # exit 8
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	DOT_PATH_CONTENT=$(< "$DOT_PATH")
-	if [[ $YYYY_DIR != "$DOT_PATH_CONTENT" ]]; then
-	    echo "$0: ERROR: arg: $YYYY_DIR does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
-	    EXIT_CODE="8"  # exit 8
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	export ENTRY_JSON="$YYYY_DIR/.entry.json"
-	if [[ ! -e $ENTRY_JSON ]]; then
-	    echo "$0: ERROR: .entry.json does not exist: $ENTRY_JSON" 1>&2
-	    EXIT_CODE="8"  # exit 8
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	if [[ ! -f $ENTRY_JSON ]]; then
-	    echo "$0: ERROR: .entry.json is not a file: $ENTRY_JSON" 1>&2
-	    EXIT_CODE="8"  # exit 8
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	if [[ ! -r $ENTRY_JSON ]]; then
-	    echo "$0: ERROR: .entry.json is not a readable file: $ENTRY_JSON" 1>&2
-	    EXIT_CODE="8"  # exit 8
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-
-	# run the tool unless -n
-	#
-	if [[ -z $NOOP ]]; then
-	    if [[ $V_FLAG -ge 5 ]]; then
-		echo "$0: debug[5]: about to run: $TOOL ${TOOL_OPTION[*]} -- $YYYY_DIR" 1>&2
-	    fi
-	    "$TOOL" "${TOOL_OPTION[@]}" -- "$YYYY_DIR"
-	    status="$?"
-	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: tool: $TOOL ${TOOL_OPTION[*]} -- $YYYY_DIR failed, error: $status" 1>&2
-		EXIT_CODE="1"  # exit 1
-		echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-		continue
-	    fi
-
-	# report disabled by -n
-	#
-	elif [[ $V_FLAG -ge 5 ]]; then
-	    echo "$0: debug[5]: because of -n, did not run: $TOOL ${TOOL_OPTION[*]} -- $YYYY_DIR" 1>&2
-	fi
-    done
+    # report disabled by -n
+    #
+    elif [[ $V_FLAG -ge 5 ]]; then
+	echo "$0: debug[5]: because of -n, did not run: $TOOL ${TOOL_OPTION[*]} -- $YYYY" 1>&2
+    fi
 done
 
 # All Done!!! -- Jessica Noll, Age 2
