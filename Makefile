@@ -362,8 +362,8 @@ quick_www:
 	${MAKE} gen_location
 	${MAKE} gen_years
 	${MAKE} gen_year_index
-	${MAKE} form_entry_tarball
 	${MAKE} quick_entry_index
+	${MAKE} form_entry_tarball
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # do everything needed to build HTML content for the web site
@@ -377,8 +377,8 @@ www:
 	${MAKE} gen_location
 	${MAKE} gen_years
 	${MAKE} gen_year_index
-	${MAKE} form_entry_tarball
 	${MAKE} entry_index
+	${MAKE} form_entry_tarball
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 
