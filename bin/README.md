@@ -243,6 +243,23 @@ Print substitutions for a year level index.html.
 Output substitutions for navbar on behalf of a year level index.html.
 
 
+## [tar-entry.sh](tar-entry.sh)
+
+Form a compress tarball for an entry.
+
+Usage:
+
+```sh
+bin/tar-entry.sh -v 1 YYYY/dir
+```
+
+Suggested usage:
+
+```sh
+bin/all-run.sh -v 3 bin/tar-entry.sh -v 1 -W
+```
+
+
 # <a name="how"></a>How IOCCC HTML content is built
 
 The [md2html.sh](md2html.sh) tool is the primary tool that

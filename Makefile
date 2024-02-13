@@ -53,6 +53,8 @@ GEN_AUTHORS= bin/gen-authors.sh
 GEN_LOCATION= bin/gen-location.sh
 GEN_YEARS= bin/gen-years.sh
 GEN_YEAR_INDEX= bin/gen-year-index.sh
+CHK_ENTRY= bin/chk-entry.sh
+TAR_ENTRY= bin/tar-entry.sh
 README2INDEX= bin/readme2index.sh
 QUICK_README2INDEX= bin/quick-readme2index.sh
 
@@ -233,8 +235,8 @@ indent.c:
 # XXX - The rules in this section are undergoing development and change.
 #	They might not even work (right now).  :-)
 
-.PHONY: help genpath gen_authors gen_location gen_years entry_index quick_entry_index \
-	gen_year_index quick_www www
+.PHONY: help verify_entry_files genpath gen_authors gen_location gen_years \
+	entry_index quick_entry_index form_entry_tarball gen_year_index quick_www www
 
 # Suggest rules in this section
 #
@@ -243,6 +245,7 @@ indent.c:
 # reminder to hose who to understand.  For all else, there is "RTFS". :-)
 #
 help:
+	@echo make verify_entry_files
 	@echo make genpath
 	@echo make gen_authors
 	@echo make gen_location
@@ -250,8 +253,16 @@ help:
 	@echo make entry_index
 	@echo make gen_year_index
 	@echo make quick_entry_index
+	@echo make form_entry_tarball
 	@echo make quick_www
 	@echo make www
+
+# check to be sure all files in all entries exist
+#
+verify_entry_files: ${ALL_RUN} ${CHK_ENTRY}
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${ALL_RUN} -v 3 ${CHK_ENTRY}
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # form the top level .top, YYYY level .year and winner level .path files
 #
@@ -319,6 +330,17 @@ quick_entry_index: ${ALL_RUN} ${QUICK_README2INDEX}
 	${ALL_RUN} -v 3 ${QUICK_README2INDEX} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
+# form all entry compressed tarballs
+#
+# XXX - We also use -W because some entry files don't yet exist - XXX
+# XXX - Remove -W when make verify_entry_files runs without err - XXX
+# XXX - We do not yet form year level and the top level tarball - XXX
+#
+form_entry_tarball: ${ALL_RUN} ${TAR_ENTRY}
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${ALL_RUN} -v 3 ${TAR_ENTRY} -v 1 -W
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
 # do work to build HTML content for the web site
 #
 # This rule uses quick_entry_index, not slow_entry_index, so
@@ -329,10 +351,12 @@ quick_entry_index: ${ALL_RUN} ${QUICK_README2INDEX}
 #
 quick_www:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	-${MAKE} verify_entry_files # remove - when all files exist
 	${MAKE} gen_authors
 	${MAKE} gen_location
 	${MAKE} gen_years
 	${MAKE} gen_year_index
+	${MAKE} form_entry_tarball
 	${MAKE} quick_entry_index
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
@@ -342,10 +366,12 @@ quick_www:
 #
 www:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	-${MAKE} verify_entry_files # remove - when all files exist
 	${MAKE} gen_authors
 	${MAKE} gen_location
 	${MAKE} gen_years
 	${MAKE} gen_year_index
+	${MAKE} form_entry_tarball
 	${MAKE} entry_index
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 

@@ -49,7 +49,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0 2024-02-12"
+export VERSION="1.0.1 2024-02-13"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -65,11 +65,7 @@ if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
 export TOPDIR
-export DOCROOT_SLASH="../../"
-export PANDOC_WRAPPER="bin/pandoc-wrapper.sh"
 export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc"
-export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
-export URL="#"
 
 # set usage message
 #
@@ -375,11 +371,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
-    echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
-    echo "$0: debug[3]: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
-    echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
-    echo "$0: debug[3]: URL=$URL" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: ENTRY_PATH=$ENTRY_PATH" 1>&2
@@ -411,47 +403,49 @@ fi
 #
 TMP_MANIFEST_LIST=".$NAME.$$.manifest.list"
 if [[ $V_FLAG -ge 3 ]]; then
-    echo  "$0: debug[3]: temporary markdown file: $TMP_MANIFEST_LIST" 1>&2
+    echo  "$0: debug[3]: temporary file manifest list: $TMP_MANIFEST_LIST" 1>&2
 fi
 if [[ -z $NOOP ]]; then
     trap 'rm -f $TMP_MANIFEST_LIST; exit' 0 1 2 3 15
     rm -f "$TMP_MANIFEST_LIST"
     if [[ -e $TMP_MANIFEST_LIST ]]; then
-	echo "$0: ERROR: cannot remove temporary markdown file: $TMP_MANIFEST_LIST" 1>&2
+	echo "$0: ERROR: cannot remove temporary file manifest list: $TMP_MANIFEST_LIST" 1>&2
 	exit 227
     fi
     :> "$TMP_MANIFEST_LIST"
     if [[ ! -e $TMP_MANIFEST_LIST ]]; then
-	echo "$0: ERROR: cannot create temporary markdown file: $TMP_MANIFEST_LIST" 1>&2
+	echo "$0: ERROR: cannot create temporary file manifest list: $TMP_MANIFEST_LIST" 1>&2
 	exit 228
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, temporary markdown file is not used: $TMP_MANIFEST_LIST" 1>&2
+    echo "$0: debug[3]: because of -n, temporary file manifest list is not used: $TMP_MANIFEST_LIST" 1>&2
 fi
 
 # create a temporary find files list
 #
 TMP_FILE_LIST=".$NAME.$$.find.list"
 if [[ $V_FLAG -ge 3 ]]; then
-    echo  "$0: debug[3]: temporary markdown file: $TMP_FILE_LIST" 1>&2
+    echo  "$0: debug[3]: temporary file manifest list: $TMP_FILE_LIST" 1>&2
 fi
 if [[ -z $NOOP ]]; then
     trap 'rm -f $TMP_MANIFEST_LIST $TMP_FILE_LIST; exit' 0 1 2 3 15
     rm -f "$TMP_FILE_LIST"
     if [[ -e $TMP_FILE_LIST ]]; then
-	echo "$0: ERROR: cannot remove temporary markdown file: $TMP_FILE_LIST" 1>&2
+	echo "$0: ERROR: cannot remove temporary file manifest list: $TMP_FILE_LIST" 1>&2
 	exit 227
     fi
     :> "$TMP_FILE_LIST"
     if [[ ! -e $TMP_FILE_LIST ]]; then
-	echo "$0: ERROR: cannot create temporary markdown file: $TMP_FILE_LIST" 1>&2
+	echo "$0: ERROR: cannot create temporary file manifest list: $TMP_FILE_LIST" 1>&2
 	exit 228
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, temporary markdown file is not used: $TMP_FILE_LIST" 1>&2
+    echo "$0: debug[3]: because of -n, temporary file manifest list is not used: $TMP_FILE_LIST" 1>&2
 fi
 
 # generate sorted list of entry files from the entry's manifest
+#
+# We also add ioccc.css and var.mk from the top level.
 #
 awk -f "$FILELIST_ENTRY_JSON_AWK" "$ENTRY_JSON" > "$TMP_MANIFEST_LIST"
 status="$?"
@@ -469,6 +463,8 @@ if [[ $status -ne 0 ]]; then
 fi
 
 # generate sorted list of found entry files
+#
+# We also add ioccc.css and var.mk from the top level.
 #
 find "$IOCCC_CSS" "$VAR_MK" "$ENTRY_PATH" -type f -print > "$TMP_FILE_LIST"
 status="$?"
