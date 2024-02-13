@@ -239,8 +239,8 @@ indent.c:
 # Suggest rules in this section
 #
 # This may not be much help to people who are not already familiar with
-# the tools needed to build the web site, but it is does print out a friendly
-# reminder to hose who to understand.  For all else, there is "RTFS". :-)
+# the tools needed to build the web site, but it does print out a friendly
+# reminder to those who understand it. For all else, there is "RTFS". :-)
 #
 help:
 	@echo make genpath
@@ -273,35 +273,40 @@ genpath:
 	fi
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-# generate the top level authors.html page
+# generate the top level authors.html page using the
+# ${GEN_AUTHORS} tool (bin/gen-authors.sh).
 #
 gen_authors: ${GEN_AUTHORS} authors.html
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${GEN_AUTHORS} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-# generate the top level location.html page
+# generate the top level location.html page using the
+# ${GEN_LOCATION} tool (bin/gen-location.sh).
 #
 gen_location: ${GEN_LOCATION} location.html
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${GEN_LOCATION} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-# generate the top level years.html page
+# generate the top level years.html page using the ${GEN_YEARS}
+# tool (bin/gen-years.sh).
 #
 gen_years: ${GEN_YEARS} years.html
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${GEN_YEARS} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-# force the build of all winner index.html files
+# force the build of ALL winner index.html files using
+# the ${README2INDEX} tool (bin/readme2index.sh)
 #
-entry_index: ${ALL_RUN} ${README2INDEX}
+entry_index readme2index: ${ALL_RUN} ${README2INDEX}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${ALL_RUN} -v 3 ${README2INDEX} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-# generate year level index.html files
+# generate year level index.html files using the
+# ${GEN_YEAR_INDEX} tool (bin/gen-year-index.sh).
 #
 gen_year_index: ${ALL_YEARS} ${GEN_YEAR_INDEX}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
@@ -310,11 +315,12 @@ gen_year_index: ${ALL_YEARS} ${GEN_YEAR_INDEX}
 
 # build winner index.html files that might be out of date
 #
-# This rule uses the QUICK_README2INDEX tool, so
-# some winner index.html files that seem to be up to date
+# This rule uses the ${QUICK_README2INDEX} tool
+# (bin/quick-readme2index.sh), so some winner
+# index.html files that seem to be up to date
 # (but might not be up to date) won't be built.
 #
-quick_entry_index: ${ALL_RUN} ${QUICK_README2INDEX}
+quick_entry_index quick_readme2index: ${ALL_RUN} ${QUICK_README2INDEX}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${ALL_RUN} -v 3 ${QUICK_README2INDEX} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
