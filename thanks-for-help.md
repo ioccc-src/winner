@@ -2557,6 +2557,10 @@ one-liner but rather a small program. At the same point Cody made the code
 itself a one-line like the code is in the original entry. Now it looks much more
 like the original entry but with the two fixes.
 
+Finally Cody fixed the Makefile that had the `-Wno-foo` options in the `CDEFINE`
+variable which although works it is incongruent with the other Makefiles and is
+more confusing (even if not confusing).
+
 
 ## <a name="2000_primenum"></a>[2000/primenum](/2000/primenum/primenum.c) ([README.md](/2000/primenum/README.md]))
 

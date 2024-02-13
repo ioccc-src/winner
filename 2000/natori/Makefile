@@ -38,7 +38,8 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE=
+CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-implicit-int \
+	  -Wno-int-conversion -Wno-pointer-to-int-cast -Wno-unused-parameter
 
 # Common C compiler warning flags
 #
@@ -57,8 +58,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE= -Wno-error -Wno-implicit-function-declaration -Wno-implicit-int \
-	-Wno-int-conversion -Wno-pointer-to-int-cast -Wno-unused-parameter
+CDEFINE=
 
 # Include files that are needed to compile
 #
