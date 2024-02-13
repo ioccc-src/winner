@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # 
-# bas1.sh - run IOCCC winner 1998/bas1
+# bas1.sh - run IOCCC entry 1998/bas1
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it

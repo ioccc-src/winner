@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.bw.sh - demonstrate IOCCC winner 2012/endoh1 w/o colour
+# try.bw.sh - demonstrate IOCCC entry 2012/endoh1 w/o colour
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# mkdict.sh - make a dictionary file for IOCCC winner 1992/gson
+# mkdict.sh - make a dictionary file for IOCCC entry 1992/gson
 #
 # This OBFUSCATED script was provided by the author.
 #

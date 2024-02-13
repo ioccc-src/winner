@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.sh - demonstrate IOCCC winner 2019/poikola
+# try.sh - demonstrate IOCCC entry 2019/poikola
 #
 # 'When you are about to jump, you are all alone and have to make your own
 # decisions. Up there, it's all "up yours".'

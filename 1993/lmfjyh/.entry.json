@@ -1,10 +1,10 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "winner_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.1 2024-02-11",
     "award" : "Most Versatile Source",
     "year" : 1993,
     "dir" : "lmfjyh",
-    "winner_id" : "1993_lmfjyh",
+    "entry_id" : "1993_lmfjyh",
     "author_set" : [
 	{ "author_handle" : "Jyrki_Holopainen" }
     ],

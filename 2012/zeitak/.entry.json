@@ -1,10 +1,10 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "winner_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.1 2024-02-11",
     "award" : "Balanced use of obfuscation - Gold award",
     "year" : 2012,
     "dir" : "zeitak",
-    "winner_id" : "2012_zeitak",
+    "entry_id" : "2012_zeitak",
     "author_set" : [
 	{ "author_handle" : "Adar_Zeitak" }
     ],

@@ -107,7 +107,7 @@ Parameters are:
 ### Example
 
 You can try this with the inputs provided with
-[2019/mills](/2019/mills/README.md) from the IOCCC winners.
+[2019/mills](/2019/mills/README.md) from the IOCCC entries.
 
 
 ```sh

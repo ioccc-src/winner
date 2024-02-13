@@ -120,7 +120,7 @@ Updates the [status.json](/status.json) file.
 
 ### [manifest.entry.json.awk](manifest.entry.json.awk)
 
-Output manifest table from a entry .winner.json file.
+Output manifest table from a entry .entry.json file.
 
 
 ### [md2html.sh](md2html.sh)
@@ -157,10 +157,10 @@ Wrapper tool to run pandoc.
 
 Runs [readme2index.sh](readme2index.sh) if the entry directory
 does not have a non-empty `index.hmtl` file, or if either
-`.winner.json` or `README.md` is newer than the `index.hmtl` file.
+`.entry.json` or `README.md` is newer than the `index.hmtl` file.
 
 This is useful when only a few entries have been
-modified (resulting in an updated `.winner.json` file)
+modified (resulting in an updated `.entry.json` file)
 or if the `README.md` of a few entries have been changed.
 
 While the [readme2index.sh](readme2index.sh) take a few
@@ -176,7 +176,7 @@ bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1
 ```
 
 **NOTE**: This command assumes that the relative
-modification times for `index.hmtl`, .winner.json`,
+modification times for `index.hmtl`, .entry.json`,
 and `README.md` are correct.  If in doubt, use:
 
 ```sh

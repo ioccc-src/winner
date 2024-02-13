@@ -6,7 +6,7 @@
 # tmp/author_handle.txt and tmp/author.csv and tmp/author-wins.csv.
 #
 # XXX - This is a temporary utility that will be replaced when
-#	the .winner.json files are built.
+#	the .entry.json files are built.
 #
 # Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
 #

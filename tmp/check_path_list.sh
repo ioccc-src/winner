@@ -3,7 +3,7 @@
 # check_path_list.sh - look for problems with path_list.* files
 #
 # XXX - This is a temporary utility that will be replaced when
-#	the .winner.json files are built
+#	the .entry.json files are built
 #
 
 # setup

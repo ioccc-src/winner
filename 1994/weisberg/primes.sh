@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # 
-# primes.sh - feed primes(1) IOCCC winner 1994/weisberg
+# primes.sh - feed primes(1) IOCCC entry 1994/weisberg
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it

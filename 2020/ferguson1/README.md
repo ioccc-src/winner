@@ -524,21 +524,21 @@ both do.
 ### <a name="winning" href="#toc">Winning thoughts, dedications and thanks</a>
 
 Once again I'm honoured to win along with some of the other veterans who I have
-a huge amount of respect for; there's [Don Yang](/winners.html#Don_Yang), [Dave
-Burton](/winners.html#Dave_Burton), [Yusuke Endoh](/winners.html#Yusuke_Endoh)
-and [Edward Giles](/winners.html#Edward_Giles) all of whom are amazing
+a huge amount of respect for; there's [Don Yang](/authors.html#Don_Yang), [Dave
+Burton](/authors.html#Dave_Burton), [Yusuke Endoh](/authors.html#Yusuke_Endoh)
+and [Edward Giles](/authors.html#Edward_Giles) all of whom are amazing
 programmers. I'm especially proud to win besides Dave Burton and Yusuke Endoh
 but Don Yang and Edward Giles too.
 
 But there are some others who I don't remember like [Ilya
-Kurdyukov](/winners.html#https://en.wikipedia.org/wiki/Signals_intelligence#World_War_II)
+Kurdyukov](/authors.html#https://en.wikipedia.org/wiki/Signals_intelligence#World_War_II)
 (who's offered a lot of interesting thoughts on [Snake](../ferguson1/prog.c) and
 who plans to have his own version after the entries are published), [Nathan
-Otterness](/winners.html#Nathan_Otterness), [Nicholas
-Carlini](/winners.html#Nicholas_Carlini) (your entry is an absolutely brilliant
+Otterness](/authors.html#Nathan_Otterness), [Nicholas
+Carlini](/authors.html#Nicholas_Carlini) (your entry is an absolutely brilliant
 abuse of `printf` - and I totally agree with the judges remarks that your entry
 is so novel that it'll be worth special mention in the future Best of IOCCC
-list!) and [tsoj](/winners.html#_tsoj) too.
+list!) and [tsoj](/authors.html#_tsoj) too.
 
 Well done and congratulations to all of you again!  Thank you for submitting the
 wonderful entries and I'm honoured to have my two entries beside yours!

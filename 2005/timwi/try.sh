@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.sh - demonstrate IOCCC winner 2005/timwi
+# try.sh - demonstrate IOCCC entry 2005/timwi
 #
 # This only does one thing and that is from the judges. This is because
 # brainfuck has too much potential to knacker the brain so we don't try.sh to

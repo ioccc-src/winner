@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # 
-# try.sh - show IOCCC winner 1995/dodsond1
+# try.sh - show IOCCC entry 1995/dodsond1
 #
 
 # get CC

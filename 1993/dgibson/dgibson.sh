@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# dgibson.sh - run the IOCCC winner 1993/dgibson
+# dgibson.sh - run the IOCCC entry 1993/dgibson
 #
 # usage:
 #	dgibson.sh [data_file]

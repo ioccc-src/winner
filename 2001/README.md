@@ -47,7 +47,7 @@ away with using the same technique next time ... :-)
 
 This year there were several repeat winners.  This is understating the
 achievement a little - [one
-person](https://www.ioccc.org/winners.html#Brian_Westley) has won 8 times
+person](https://www.ioccc.org/authors.html#Brian_Westley) has won 8 times
 before! (Please note that judging is done completely anonymously.)
 
 

@@ -43,9 +43,9 @@ will be able deobfuscate the many legal obfuscations.  :-)
 ## Remarks on some of the entries
 
 This year, [Jens
-Schweikhardt](https://www.ioccc.org/winners.html#Jens_Schweikhardt) won 3 times
+Schweikhardt](https://www.ioccc.org/authors.html#Jens_Schweikhardt) won 3 times
 ... a new IOCCC record.  Meanwhile, [Brian
-Westley](https://www.ioccc.org/winners.html#Brian_Westley) came up with his 8th
+Westley](https://www.ioccc.org/authors.html#Brian_Westley) came up with his 8th
 winning entry, twice the number of the next highest count.  But with people like
 Schweikhardt around, this lead could fall fast.
 

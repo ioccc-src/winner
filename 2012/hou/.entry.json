@@ -1,10 +1,10 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "winner_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.1 2024-02-11",
     "award" : "Most useful obfuscation",
     "year" : 2012,
     "dir" : "hou",
-    "winner_id" : "2012_hou",
+    "entry_id" : "2012_hou",
     "author_set" : [
 	{ "author_handle" : "Qiming_HOU" }
     ],

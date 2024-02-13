@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.sh - script to show IOCCC winner 1992/westley
+# try.sh - script to show IOCCC entry 1992/westley
 #
 # This script runs westley on a variety of locations to show different cities in
 # the world, based on the author's remarks and the judges' remarks.

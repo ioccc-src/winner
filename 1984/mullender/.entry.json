@@ -1,10 +1,10 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "winner_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.1 2024-02-11",
     "award" : "Grand Prize",
     "year" : 1984,
     "dir" : "mullender",
-    "winner_id" : "1984_mullender",
+    "entry_id" : "1984_mullender",
     "author_set" : [
 	{ "author_handle" : "Robbert_van_Renesse" },
 	{ "author_handle" : "Sjoerd_Mullender" }

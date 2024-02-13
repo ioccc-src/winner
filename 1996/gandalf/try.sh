@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.sh - show IOCCC winner 1996/gandalf
+# try.sh - show IOCCC entry 1996/gandalf
 #
 # BTW: it is absolutely perilous to 'try' the patience of Gandalf: go ahead,
 # 'try it'! :-)

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.sh - demonstrate IOCCC winner 2011/konno
+# try.sh - demonstrate IOCCC entry 2011/konno
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it

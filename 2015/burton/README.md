@@ -93,7 +93,7 @@ Printed in 8 pt Courier, it makes aesthetically pleasing 8.5 x 11 wall art.
 
 ### prog.c vs prog.alt.c
 
-[Dominik Muth](/winners.html#Dominik_Muth) observed a syntax error on `1+1`,
+[Dominik Muth](/authors.html#Dominik_Muth) observed a syntax error on `1+1`,
 `1-1`, `1|1`, and `1^1` when using an ARM based computer, although `1*1` and
 others worked correctly.  This occurs because some platforms by default treat
 `char` as `unsigned char`.  The original code has this weakness, which can be

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.alt.sh - demonstrate IOCCC winner 2012/omoikane alt code
+# try.alt.sh - demonstrate IOCCC entry 2012/omoikane alt code
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it

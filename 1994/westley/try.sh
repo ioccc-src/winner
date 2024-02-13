@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.sh - demonstrate IOCCC winner 1994/westley
+# try.sh - demonstrate IOCCC entry 1994/westley
 #
 
 # make sure CC is set so that one can control what compiler to use in an easy

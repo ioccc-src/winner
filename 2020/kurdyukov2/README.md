@@ -75,7 +75,7 @@ make prog_ppm
 
 ### Building on macOS with MacPorts:
 
-Thanks to [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) for this
+Thanks to [Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) for this
 information!
 
 First, make sure you have the compiler tools installed e.g. by:

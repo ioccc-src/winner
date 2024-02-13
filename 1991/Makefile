@@ -8,7 +8,7 @@
 # and worked in the past may no longer be liked/allowed or compile/run today.
 #
 # Bug fixes, corrections and typo fixes are VERY WELCOME.  If you see a problem,
-# first check this URL for a list of known bugs and (mis)features of IOCCC winners:
+# first check this URL for a list of known bugs and (mis)features of IOCCC entries:
 #
 #	https://www.ioccc.org/bugs.md
 #
@@ -38,10 +38,10 @@ include ../var.mk
 
 
 ###############
-# IOCCC winners
+# IOCCC entries
 ###############
 #
-WINNERS= ant brnstnd buzzard cdupont davidguy dds fine rince westley
+ENTRIES= ant brnstnd buzzard cdupont davidguy dds fine rince westley
 
 YEAR= 1991
 
@@ -53,7 +53,7 @@ YEAR= 1991
 all:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
-	@for i in ${WINNERS}; do \
+	@for i in ${ENTRIES}; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && ${MAKE} $@)"; \
 	    (cd $$i && ${MAKE} $@); \
@@ -72,7 +72,7 @@ all:
 alt:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
-	@for i in ${WINNERS}; do \
+	@for i in ${ENTRIES}; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && ${MAKE} $@)"; \
 	    (cd $$i && ${MAKE} $@); \
@@ -86,7 +86,7 @@ alt:
 data:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
-	@for i in ${WINNERS}; do \
+	@for i in ${ENTRIES}; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && ${MAKE} $@)"; \
 	    (cd $$i && ${MAKE} $@); \
@@ -100,7 +100,7 @@ data:
 everything:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
-	@for i in ${WINNERS}; do \
+	@for i in ${ENTRIES}; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && ${MAKE} $@)"; \
 	    (cd $$i && ${MAKE} $@); \
@@ -119,7 +119,7 @@ everything:
 diff_orig_prog:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
-	@for i in ${WINNERS}; do \
+	@for i in ${ENTRIES}; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && ${MAKE} $@)"; \
 	    (cd $$i && ${MAKE} $@); \
@@ -133,7 +133,7 @@ diff_orig_prog:
 diff_prog_orig:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
-	@for i in ${WINNERS}; do \
+	@for i in ${ENTRIES}; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && ${MAKE} $@)"; \
 	    (cd $$i && ${MAKE} $@); \
@@ -147,7 +147,7 @@ diff_prog_orig:
 diff_alt_prog:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
-	@for i in ${WINNERS}; do \
+	@for i in ${ENTRIES}; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && ${MAKE} $@)"; \
 	    (cd $$i && ${MAKE} $@); \
@@ -161,7 +161,7 @@ diff_alt_prog:
 diff_prog_alt:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
-	@for i in ${WINNERS}; do \
+	@for i in ${ENTRIES}; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && ${MAKE} $@)"; \
 	    (cd $$i && ${MAKE} $@); \
@@ -175,7 +175,7 @@ diff_prog_alt:
 diff_orig_alt:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
-	@for i in ${WINNERS}; do \
+	@for i in ${ENTRIES}; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && ${MAKE} $@)"; \
 	    (cd $$i && ${MAKE} $@); \
@@ -188,7 +188,7 @@ diff_orig_alt:
 diff_alt_orig:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
-	@for i in ${WINNERS}; do \
+	@for i in ${ENTRIES}; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && ${MAKE} $@)"; \
 	    (cd $$i && ${MAKE} $@); \
@@ -205,7 +205,7 @@ diff_alt_orig:
 clean:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
-	@for i in ${WINNERS}; do \
+	@for i in ${ENTRIES}; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && ${MAKE} $@)"; \
 	    (cd $$i && ${MAKE} $@); \
@@ -217,7 +217,7 @@ clean:
 clobber:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
-	@for i in ${WINNERS}; do \
+	@for i in ${ENTRIES}; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && ${MAKE} $@)"; \
 	    (cd $$i && ${MAKE} $@); \
@@ -229,7 +229,7 @@ clobber:
 install:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
-	@for i in ${WINNERS}; do \
+	@for i in ${ENTRIES}; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && ${MAKE} $@)"; \
 	    (cd $$i && ${MAKE} $@); \
@@ -241,7 +241,7 @@ install:
 indent.c:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
-	@for i in ${WINNERS}; do \
+	@for i in ${ENTRIES}; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && ${MAKE} $@)"; \
 	    (cd $$i && ${MAKE} $@); \
@@ -253,7 +253,7 @@ indent.c:
 genpath:
 	@echo '=-=-= IOCCC begin make $@ =-=-='
 	@${RM} -f .tmp.genpath
-	@-for i in ${WINNERS}; do \
+	@-for i in ${ENTRIES}; do \
 	    echo "${YEAR}/$$i" >> .tmp.genpath; \
 	    rm -f "$$i/.tmp.genpath"; \
 	    echo "${YEAR}/$$i" >> "$$i/.tmp.genpath"; \
@@ -284,7 +284,7 @@ genpath:
 love:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
-	@for i in ${WINNERS}; do \
+	@for i in ${ENTRIES}; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && ${MAKE} $@)"; \
 	    (cd $$i && ${MAKE} $@); \
@@ -296,7 +296,7 @@ love:
 haste:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
-	@for i in ${WINNERS}; do \
+	@for i in ${ENTRIES}; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && ${MAKE} $@)"; \
 	    (cd $$i && ${MAKE} $@); \
@@ -308,7 +308,7 @@ haste:
 waste:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
-	@for i in ${WINNERS}; do \
+	@for i in ${ENTRIES}; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && ${MAKE} $@)"; \
 	    (cd $$i && ${MAKE} $@); \
@@ -320,7 +320,7 @@ waste:
 maker:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
-	@for i in ${WINNERS}; do \
+	@for i in ${ENTRIES}; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && ${MAKE} $@)"; \
 	    (cd $$i && ${MAKE} $@); \
@@ -332,7 +332,7 @@ maker:
 easter_egg:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
-	@for i in ${WINNERS}; do \
+	@for i in ${ENTRIES}; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && ${MAKE} $@)"; \
 	    (cd $$i && ${MAKE} $@); \
@@ -344,7 +344,7 @@ easter_egg:
 sandwich:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
-	@for i in ${WINNERS}; do \
+	@for i in ${ENTRIES}; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && ${MAKE} $@)"; \
 	    (cd $$i && ${MAKE} $@); \
@@ -359,7 +359,7 @@ sandwich:
 supernova:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
-	@for i in ${WINNERS}; do \
+	@for i in ${ENTRIES}; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && ${MAKE} $@)"; \
 	    (cd $$i && ${MAKE} $@); \
@@ -371,7 +371,7 @@ supernova:
 deep_magic:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
-	@for i in ${WINNERS}; do \
+	@for i in ${ENTRIES}; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && ${MAKE} $@)"; \
 	    (cd $$i && ${MAKE} $@); \
@@ -383,7 +383,7 @@ deep_magic:
 magic:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
-	@for i in ${WINNERS}; do \
+	@for i in ${ENTRIES}; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && ${MAKE} $@)"; \
 	    (cd $$i && ${MAKE} $@); \
@@ -395,7 +395,7 @@ magic:
 charon:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
-	@for i in ${WINNERS}; do \
+	@for i in ${ENTRIES}; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && ${MAKE} $@)"; \
 	    (cd $$i && ${MAKE} $@); \
@@ -407,7 +407,7 @@ charon:
 pluto:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
-	@for i in ${WINNERS}; do \
+	@for i in ${ENTRIES}; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && ${MAKE} $@)"; \
 	    (cd $$i && ${MAKE} $@); \

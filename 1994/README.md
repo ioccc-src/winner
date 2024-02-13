@@ -92,7 +92,7 @@ describing your site and any other appropriate comments.  Thanks!
 
 Due to changes in the USENIX conference calendar, the 1995 contest will
 be delayed.  Because there will be no Summer 1995 USENIX conference,
-the 1995 IOCCC winners will be announced at the Jan 1996 USENIX conference.
+the 1995 IOCCC entries will be announced at the Jan 1996 USENIX conference.
 
 The 1995 contest will not open until late October 1995, and will close
 sometime around the end of December 1995.  The rules for the 1995

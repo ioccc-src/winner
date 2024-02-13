@@ -1,10 +1,10 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "winner_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.1 2024-02-11",
     "award" : "Best Handwriting",
     "year" : 2015,
     "dir" : "duble",
-    "winner_id" : "2015_duble",
+    "entry_id" : "2015_duble",
     "author_set" : [
 	{ "author_handle" : "Etienne_Duble" }
     ],

@@ -1,10 +1,10 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "winner_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.1 2024-02-11",
     "award" : "Best simple task performed in a complex way",
     "year" : 1986,
     "dir" : "holloway",
-    "winner_id" : "1986_holloway",
+    "entry_id" : "1986_holloway",
     "author_set" : [
 	{ "author_handle" : "Bruce_Holloway" }
     ],

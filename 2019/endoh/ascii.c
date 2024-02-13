@@ -1,6 +1,6 @@
 /*
  * ascii.c - simple program that shows the character value of ASCII values, if
- * isascii() is true, to help demonstrate IOCCC winner 2019/endoh.
+ * isascii() is true, to help demonstrate IOCCC entry 2019/endoh.
  *
  * Will not do anything if no args specified. Use xargs(1) to pass args to
  * program if it's a lot of characters.

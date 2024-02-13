@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# 1992/nathan/try.sh - show IOCCC winner 1992/nathan
+# 1992/nathan/try.sh - show IOCCC entry 1992/nathan
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
 # this way allows us to have the user specify a different compiler in an easy

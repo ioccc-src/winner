@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# giana.sh - demonstrate IOCCC winner 2014/maffiodo1 The Great Giana Sisters
+# giana.sh - demonstrate IOCCC entry 2014/maffiodo1 The Great Giana Sisters
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it

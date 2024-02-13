@@ -526,7 +526,7 @@ See the file [how.md](how.md).
 ### Acknowledgements
 
 Christopher Hendrie, Bertram Felgenhauer, Alex Stangl, Seong-hoon Kang,
-and [Yusuke Endoh](/winners.html#Yusuke_Endoh) have contributed ideas and
+and [Yusuke Endoh](/authors.html#Yusuke_Endoh) have contributed ideas and
 suggestions for improvement.
 
 

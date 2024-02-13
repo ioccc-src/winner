@@ -108,7 +108,7 @@
 	    "entry_text" : "list of files that should not be committed under git"
 	},
 	{
-	    "file_path" : ".winner.json",
+	    "file_path" : ".entry.json",
 	    "inventory_order" : 4294967295,
 	    "OK_to_edit" : true,
 	    "display_as" : "json",

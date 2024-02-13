@@ -71,7 +71,7 @@ wondering if it was not the reason for its very erratic behaviour.
 
 The file [prog.alt.c](prog.alt.c) is the one I submitted.
 
-[Gil Dogon](/winners.html#Gil_Dogon) noted a few unsafe statements (statements
+[Gil Dogon](/authors.html#Gil_Dogon) noted a few unsafe statements (statements
 whose behaviour is undefined in the C standard and, as such, could cause issues
 with other compilers or optimization levels). These have been fixed in
 [prog.c](prog.c).

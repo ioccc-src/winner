@@ -35,7 +35,7 @@ the rules.  This year we allowed it due to the functionality of the program.
 This entry is one of the easiest to read!  Don't assume you can win using
 similar techniques next time ... :-)
 
-This year a [single person](/winners.html#Daniel_Vik) won two awards!  We also
+This year a [single person](/authors.html#Daniel_Vik) won two awards!  We also
 had repeat winners with their 6th, 4th and 2nd winning entries this year!
 (Please note that judging is done completely anonymously.  Be warned that we may
 disqualify entries that reveal the identity of the submitter.)

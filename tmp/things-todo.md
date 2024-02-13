@@ -1,7 +1,7 @@
 # A todo list of known things to check and/or do
 *Last updated: Sun 04 Feb 2024 17:30:08 UTC*
 
-This document is for [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) as
+This document is for [Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) as
 he (that is I :-) ) wanted a way to keep track of things in a way that did not
 require the information getting lost in the thousands of changes in the repo and
 because it might be too much to add to the todo list in the issues themselves.

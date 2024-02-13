@@ -47,7 +47,7 @@ it successfully fooled half of the judges, including me.
 
 ### Description
 
-For 15 years, IOCCC winners have obfuscated programs using esoteric,
+For 15 years, IOCCC entries have obfuscated programs using esoteric,
 difficult-to-interpret, confusing algorithms.  This entry finally bucks
 that trend and obfuscates in the most "obvious" way possible: by
 painstakingly describing the algorithm in clear pseudocode.  Even novice

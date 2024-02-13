@@ -13,17 +13,17 @@ the rest.  We selected 3 entries that were, in our opinion, went beyond
 all of the other entries this year:
 
 - [Grand Prize](westley/README.md) by [Brian
-Westley](https://www.ioccc.org/winners.html#Brian_Westley)
+Westley](https://www.ioccc.org/authors.html#Brian_Westley)
 - [Most Well Rounded](dds/README.md) by [Diomidis
-Spinellis](https://www.ioccc.org/winners.html#Diomidis_Spinellis)
+Spinellis](https://www.ioccc.org/authors.html#Diomidis_Spinellis)
 - [Best Of Show](brnstnd/README.md) by [Daniel J.
-Bernstein](https://www.ioccc.org/winners.html#Daniel_J._Bernstein)
+Bernstein](https://www.ioccc.org/authors.html#Daniel_J._Bernstein)
 
 Name and address information are separated from the actual program
 prior to judging.  This eliminates any chance that we would bias our
 judging for/against any person or group.  In the end, we are surprised
 as you are to see who has won.  Even so, it is worth noting that
-[Brian Westley](https://www.ioccc.org/winners.html#Brian_Westley) has submitted
+[Brian Westley](https://www.ioccc.org/authors.html#Brian_Westley) has submitted
 a winning entry for the past 5 years!
 
 ## A few notes regarding possible changes to the contest:

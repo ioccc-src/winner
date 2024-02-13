@@ -1,10 +1,10 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "winner_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.1 2024-02-11",
     "award" : "Don't tread on me award",
     "year" : 2020,
     "dir" : "ferguson1",
-    "winner_id" : "2020_ferguson1",
+    "entry_id" : "2020_ferguson1",
     "author_set" : [
 	{ "author_handle" : "Cody_Boone_Ferguson" }
     ],
