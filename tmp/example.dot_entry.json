@@ -17,7 +17,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "winner home page"
+	    "entry_text" : "entry home page"
 	},
 	{
 	    "file_path" : "prog.c",
@@ -113,7 +113,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "json",
 	    "display_via_github" : true,
-	    "entry_text" : "description of winner in JSON"
+	    "entry_text" : "description of entry in JSON"
 	},
 	{
 	    "file_path" : "README.md",

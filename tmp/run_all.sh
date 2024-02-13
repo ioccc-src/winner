@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# run_all.sh - run a command for all winners
+# run_all.sh - run a command for all entrys
 #
 # XXX - This is a temporary utility that will be replaced when
 #	the .entry.json files are built
@@ -41,12 +41,12 @@ export DOMAIN="ioccc-src.github.io"
 export DOCPATH="/temp-test-ioccc"
 export GITHUB_REPO="https://github.com/ioccc-src/temp-test-ioccc/blob/master"
 export TOPDIR=".."
-export WINNER_DIR_TXT="winner_dir.txt"
+export ENTRY_DIR_TXT="entry_dir.txt"
 
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-D level]
-    [-d www.domain.org] [-p /path/to/docroot] [-g github_url ] [-t topdir] [-w winner_dir.txt]
+    [-d www.domain.org] [-p /path/to/docroot] [-g github_url ] [-t topdir] [-w entry_dir.txt]
     tool
 
 	-h		print help message and exit
@@ -58,17 +58,17 @@ export USAGE="usage: $0 [-h] [-v level] [-D level]
 	-g github_url		path to the GitHub repo (def: $GITHUB_REPO)
 	-t topdir		path to top of the local GitHub repo tree (def: $TOPDIR)
 
-	-w winner_dir.txt
+	-w entry_dir.txt
 
-	tool			the tool to run over all winners
+	tool			the tool to run over all entrys
 
 Exit codes:
      0	    all OK
      2	    -h and help string printed or -V and version string printed
      3	    command line error
-     4	    cannot find writable winner directory
+     4	    cannot find writable entry directory
      5	    tool is not an executable file
-     6	    missing winner directory as found in winner_dir.txt
+     6	    missing entry directory as found in entry_dir.txt
      7	    tool exited non-zero
  >= 10	    internal error
 
@@ -93,7 +93,7 @@ while getopts :hv:D:d:p:g:t:w: flag; do
     	;;
     t) TOPDIR="$OPTARG"
     	;;
-    w) WINNER_DIR_TXT="$OPTARG"
+    w) ENTRY_DIR_TXT="$OPTARG"
     	;;
     \?) echo "$0: ERROR: invalid option: -$OPTARG" 1>&2
 	echo 1>&2
@@ -139,25 +139,25 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: GITHUB_REPO=$GITHUB_REPO" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: TOOL=$TOOL" 1>&2
-    echo "$0: debug[3]: WINNER_DIR_TXT=$WINNER_DIR_TXT" 1>&2
+    echo "$0: debug[3]: ENTRY_DIR_TXT=$ENTRY_DIR_TXT" 1>&2
 fi
 
 # make it easier to process CSV files
 #
 IFS="$IFS,"
 
-# verify winner_dir.txt is readable
+# verify entry_dir.txt is readable
 #
-if [[ ! -e $WINNER_DIR_TXT ]]; then
-    echo  "$0: ERROR: WINNER_DIR_TXT does not exist: $WINNER_DIR_TXT" 1>&2
+if [[ ! -e $ENTRY_DIR_TXT ]]; then
+    echo  "$0: ERROR: ENTRY_DIR_TXT does not exist: $ENTRY_DIR_TXT" 1>&2
     exit 4
 fi
-if [[ ! -f $WINNER_DIR_TXT ]]; then
-    echo  "$0: ERROR: WINNER_DIR_TXT is not a regular file: $WINNER_DIR_TXT" 1>&2
+if [[ ! -f $ENTRY_DIR_TXT ]]; then
+    echo  "$0: ERROR: ENTRY_DIR_TXT is not a regular file: $ENTRY_DIR_TXT" 1>&2
     exit 4
 fi
-if [[ ! -r $WINNER_DIR_TXT ]]; then
-    echo  "$0: ERROR: WINNER_DIR_TXT is not a readable file: $WINNER_DIR_TXT" 1>&2
+if [[ ! -r $ENTRY_DIR_TXT ]]; then
+    echo  "$0: ERROR: ENTRY_DIR_TXT is not a readable file: $ENTRY_DIR_TXT" 1>&2
     exit 4
 fi
 
@@ -176,12 +176,12 @@ if [[ ! -x $TOOL ]]; then
     exit 5
 fi
 
-# verify that the winner directories exist
+# verify that the entry directories exist
 #
-for d in $(< "$WINNER_DIR_TXT"); do
+for d in $(< "$ENTRY_DIR_TXT"); do
     dir="$TOPDIR/$d"
     if [[ ! -e $dir ]]; then
-	echo  "$0: ERROR: winner directory does not exist: $dir" 1>&2
+	echo  "$0: ERROR: entry directory does not exist: $dir" 1>&2
 	exit 6
     fi
     if [[ ! -d $dir ]]; then
@@ -194,9 +194,9 @@ for d in $(< "$WINNER_DIR_TXT"); do
     fi
 done
 
-# process tool for each winner
+# process tool for each entry
 #
-for dir in $(< "$WINNER_DIR_TXT"); do
+for dir in $(< "$ENTRY_DIR_TXT"); do
     if [[ $V_FLAG -ge 1 ]]; then
         echo "$0: debug[1]: $TOOL -d $DOMAIN -p $DOCPATH -g $GITHUB_REPO -t $TOPDIR -v $CAP_D_FLAG -- $dir" 1>&2
     fi

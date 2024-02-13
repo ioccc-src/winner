@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# gen_entry_json.sh - generate .entry.json for a winner
+# gen_entry_json.sh - generate .entry.json for an entry
 #
 # XXX - This is a temporary utility that will be replaced when
 #	the .entry.json files are built.
@@ -62,14 +62,14 @@ export USAGE="usage: $0 [-h] [-v level]
 	-t topdir		path to top of the local tree (def: $TOPDIR)
 	-P /path/to/pandoc	path to the pandoc tool (def: $PANDOC)
 
-	year[/dir]		path to winner directory (or just year if there is a path arg
-	[dir]			optional winner directory (1st arg is just year)
+	year[/dir]		path ton entry directory (or just year if there is a path arg
+	[dir]			optionaln entry directory (1st arg is just year)
 
 Exit codes:
      0	    all OK
      2	    -h and help string printed or -V and version string printed
      3	    command line error
-     4	    cannot find writable winner directory
+     4	    cannot find writablen entry directory
      5	    cannot find readable author_wins.csv
      6	    cannot find readable year_prize.csv
      7	    cannot find readable manifest.csv
@@ -123,32 +123,32 @@ shift $(( OPTIND - 1 ));
 #
 # verify arg count and parse args
 #
-export WINNER_PATH
+export ENTRY_PATH
 export YEAR
-export WINNER
+export ENTRY
 case "$#" in
-1) WINNER_PATH="$1"
-   YEAR="${WINNER_PATH%/*}"
-   WINNER="${WINNER_PATH#*/}"
+1) ENTRY_PATH="$1"
+   YEAR="${ENTRY_PATH%/*}"
+   ENTRY="${ENTRY_PATH#*/}"
    ;;
-2) WINNER_PATH="$1/$2"
+2) ENTRY_PATH="$1/$2"
    YEAR="$1"
-   WINNER="$2"
+   ENTRY="$2"
    ;;
 *) echo "$0: ERROR: expected 1 or 2 args, found: $#" 1>&2
    echo "$USAGE" 1>&2
    exit 3
    ;;
 esac
-export FULL_WINNER_PATH="$TOPDIR/$WINNER_PATH"
-export ENTRY_ID="${YEAR}_${WINNER}"
+export FULL_ENTRY_PATH="$TOPDIR/$ENTRY_PATH"
+export ENTRY_ID="${YEAR}_${ENTRY}"
 
-export URL_PATH="https://$DOMAIN$DOCPATH/$YEAR/$WINNER"
+export URL_PATH="https://$DOMAIN$DOCPATH/$YEAR/$ENTRY"
 
 # setup temporary files
 #
-export ENTRY_JSON_PATH="$FULL_WINNER_PATH/$DOT_ENTRY_JSON_BASENAME"
-export TMP_DOT_ENTRY_JSON="$FULL_WINNER_PATH/tmp.$$.$DOT_ENTRY_JSON_BASENAME"
+export ENTRY_JSON_PATH="$FULL_ENTRY_PATH/$DOT_ENTRY_JSON_BASENAME"
+export TMP_DOT_ENTRY_JSON="$FULL_ENTRY_PATH/tmp.$$.$DOT_ENTRY_JSON_BASENAME"
 trap 'rm -f $TMP_DOT_ENTRY_JSON' 0 1 2 3 15
 
 # print running info if verbose
@@ -167,11 +167,11 @@ if [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: GITHUB_REPO=$GITHUB_REPO" 1>&2
     echo "$0: debug[5]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[5]: PANDOC=$PANDOC" 1>&2
-    echo "$0: debug[5]: FULL_WINNER_PATH=$FULL_WINNER_PATH" 1>&2
+    echo "$0: debug[5]: FULL_ENTRY_PATH=$FULL_ENTRY_PATH" 1>&2
     echo "$0: debug[5]: ENTRY_ID=$ENTRY_ID" 1>&2
     echo "$0: debug[5]: YEAR=$YEAR" 1>&2
-    echo "$0: debug[5]: WINNER=$WINNER" 1>&2
-    echo "$0: debug[5]: WINNER_PATH=$WINNER_PATH" 1>&2
+    echo "$0: debug[5]: ENTRY=$ENTRY" 1>&2
+    echo "$0: debug[5]: ENTRY_PATH=$ENTRY_PATH" 1>&2
     echo "$0: debug[5]: URL_PATH=$URL_PATH" 1>&2
     echo "$0: debug[5]: DOT_ENTRY_JSON_BASENAME=$DOT_ENTRY_JSON_BASENAME" 1>&2
     echo "$0: debug[5]: ENTRY_JSON_PATH=$ENTRY_JSON_PATH" 1>&2
@@ -182,18 +182,18 @@ fi
 #
 IFS="$IFS,"
 
-# verify winner directory is writable
+# verify entry directory is writable
 #
-if [[ ! -e $FULL_WINNER_PATH ]]; then
-    echo  "$0: ERROR: FULL_WINNER_PATH does not exist: $FULL_WINNER_PATH" 1>&2
+if [[ ! -e $FULL_ENTRY_PATH ]]; then
+    echo  "$0: ERROR: FULL_ENTRY_PATH does not exist: $FULL_ENTRY_PATH" 1>&2
     exit 4
 fi
-if [[ ! -d $FULL_WINNER_PATH ]]; then
-    echo  "$0: ERROR: FULL_WINNER_PATH is not a directory: $FULL_WINNER_PATH" 1>&2
+if [[ ! -d $FULL_ENTRY_PATH ]]; then
+    echo  "$0: ERROR: FULL_ENTRY_PATH is not a directory: $FULL_ENTRY_PATH" 1>&2
     exit 4
 fi
-if [[ ! -w $FULL_WINNER_PATH ]]; then
-    echo  "$0: ERROR: FULL_WINNER_PATH is not a writable directory: $FULL_WINNER_PATH" 1>&2
+if [[ ! -w $FULL_ENTRY_PATH ]]; then
+    echo  "$0: ERROR: FULL_ENTRY_PATH is not a writable directory: $FULL_ENTRY_PATH" 1>&2
     exit 4
 fi
 
@@ -289,7 +289,7 @@ fi
 
 # collect inventory
 #
-NUMBER_RANKED_MANIFEST_SET=$(grep -E "^$YEAR,$WINNER,[^,][^,]*,[0-9]" "$MANIFEST_CSV" | sort -t, -k4n)
+NUMBER_RANKED_MANIFEST_SET=$(grep -E "^$YEAR,$ENTRY,[^,][^,]*,[0-9]" "$MANIFEST_CSV" | sort -t, -k4n)
 declare -a FILE_PATH INVENTORY_ORDER OK_TO_EDIT DISPLAY_AS DISPLAY_VIA_GITHUB ENTRY_TEXT
 #
 # process inventory with a numerical inventory_order
@@ -299,11 +299,11 @@ while IFS=, read -r year dir file_path inventory_order OK_to_edit display_as dis
         # firewall - year dir much match
 	#
 	if [[ $YEAR != "$year" ]]; then
-	    echo "$0: ERROR:  ^$YEAR,$WINNER inventory_order: $inventory_order YEAR: $YEAR != $year" 1>&2
+	    echo "$0: ERROR:  ^$YEAR,$ENTRY inventory_order: $inventory_order YEAR: $YEAR != $year" 1>&2
 	    exit 30
 	fi
-	if [[ $WINNER != "$dir" ]]; then
-	    echo "$0: ERROR:  ^$YEAR,$WINNER inventory_order: $inventory_order WINNER: $WINNER != $dir" 1>&2
+	if [[ $ENTRY != "$dir" ]]; then
+	    echo "$0: ERROR:  ^$YEAR,$ENTRY inventory_order: $inventory_order ENTRY: $ENTRY != $dir" 1>&2
 	    exit 31
 	fi
 	if [[ $V_FLAG -ge 7 ]]; then
@@ -315,27 +315,27 @@ while IFS=, read -r year dir file_path inventory_order OK_to_edit display_as dis
 	# firewall - nothing except extra should be empty
 	#
 	if [[ -z $file_path ]]; then
-	    echo "$0: ERROR: ^$YEAR,$WINNER inventory_order: $inventory_order empty file_path" 1>&2
+	    echo "$0: ERROR: ^$YEAR,$ENTRY inventory_order: $inventory_order empty file_path" 1>&2
 	    exit 32
 	fi
 	if [[ -z $inventory_order ]]; then
-	    echo "$0: ERROR: ^$YEAR,$WINNER inventory_order: $inventory_order empty inventory_order" 1>&2
+	    echo "$0: ERROR: ^$YEAR,$ENTRY inventory_order: $inventory_order empty inventory_order" 1>&2
 	    exit 33
 	fi
 	if [[ -z $OK_to_edit ]]; then
-	    echo "$0: ERROR: ^$YEAR,$WINNER inventory_order: $inventory_order empty OK_to_edit" 1>&2
+	    echo "$0: ERROR: ^$YEAR,$ENTRY inventory_order: $inventory_order empty OK_to_edit" 1>&2
 	    exit 34
 	fi
 	if [[ -z $display_as ]]; then
-	    echo "$0: ERROR: ^$YEAR,$WINNER inventory_order: $inventory_order empty display_as" 1>&2
+	    echo "$0: ERROR: ^$YEAR,$ENTRY inventory_order: $inventory_order empty display_as" 1>&2
 	    exit 37
 	fi
 	if [[ -z $display_via_github ]]; then
-	    echo "$0: ERROR: ^$YEAR,$WINNER inventory_order: $inventory_order empty display_via_github" 1>&2
+	    echo "$0: ERROR: ^$YEAR,$ENTRY inventory_order: $inventory_order empty display_via_github" 1>&2
 	    exit 38
 	fi
 	if [[ -z $entry_text ]]; then
-	    echo "$0: ERROR: ^$YEAR,$WINNER inventory_order: $inventory_order empty entry_text" 1>&2
+	    echo "$0: ERROR: ^$YEAR,$ENTRY inventory_order: $inventory_order empty entry_text" 1>&2
 	    exit 39
 	fi
 
@@ -367,7 +367,7 @@ cat > "$TMP_DOT_ENTRY_JSON" << EOF
     "entry_JSON_format_version" : "$ENTRY_JSON_FORMAT_VERSION",
     "award" : "$AWARD",
     "year" : $YEAR,
-    "dir" : "$WINNER",
+    "dir" : "$ENTRY",
     "entry_id" : "$ENTRY_ID",
     "author_set" : [
 EOF
