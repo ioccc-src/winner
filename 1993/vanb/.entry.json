@@ -1,10 +1,10 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "winner_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.1 2024-02-11",
     "award" : "Most Irregular Expression",
     "year" : 1993,
     "dir" : "vanb",
-    "winner_id" : "1993_vanb",
+    "entry_id" : "1993_vanb",
     "author_set" : [
 	{ "author_handle" : "David_Van_Brackle" }
     ],

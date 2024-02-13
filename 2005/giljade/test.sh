@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# test.sh - demonstrate IOCCC winner 2005/giljade test suite feature
+# test.sh - demonstrate IOCCC entry 2005/giljade test suite feature
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it

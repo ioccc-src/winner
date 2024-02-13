@@ -90,7 +90,7 @@ colors, has a black background and the size is at least 125x38.
 Special note for Mac users: `Terminal.app` does not work as expected; you might
 need xterm from XQuartz (see [FAQ 3.7: How do I compile and use on macOS, an
 IOCCC winner that requires X11?](/faq.md#X11macos)) or some other working
-terminal. Thanks to [Dave Burton](/winners.html#Dave_Burton) for spotting this
+terminal. Thanks to [Dave Burton](/authors.html#Dave_Burton) for spotting this
 problem.
 
 The main reason for the header `unistd.h` is `getdelim(3)` but once I included it

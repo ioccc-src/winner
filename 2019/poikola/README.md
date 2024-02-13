@@ -252,7 +252,7 @@ arrays, so I did it.
 
 ### Other stuff
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson): I really like that you enjoyed my
+[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson): I really like that you enjoyed my
 previous entry. I hope that you will like this entry too.  Because I did not
 want to give too many clues to [the Judges](/judges.html), I tried to write this
 entry in a different way than [Most Stellar](/2018/poikola/README.md), but in this
@@ -271,7 +271,7 @@ checksum](https://en.wikipedia.org/wiki/Fletcher%27s_checksum#Fletcher-16) does
 not match anymore and `goto` jumps to the end of the code.
 
 I see that one of the [Volker
-Diels-Grabsch](/winners.html#Volker_Diels-Grabsch)'s winning entries is
+Diels-Grabsch](/authors.html#Volker_Diels-Grabsch)'s winning entries is
 awarded the category [Most self-aware](/2019/diels-grabsch2/prog.c). In last
 year, my entry incorporates the [Fletcher's 16
 algorithm](https://en.wikipedia.org/wiki/Fletcher%27s_checksum#Fletcher-16) to

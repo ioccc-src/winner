@@ -1,12 +1,12 @@
 # Bugs and (Mis)features
 
-There are a number of known problems with IOCCC winners: many of
+There are a number of known problems with IOCCC entries: many of
 which have to do with differences between today's compiler environments
 and those of today. In some cases the original code has a bug, some
 of which were recently discovered and many of which were fixed. In some cases
 attempt to port older code to more modern environments introduced bugs.
 
-The following is a known list of **BUGS and (mis)FEATURES** in IOCCC winners.
+The following is a known list of **BUGS and (mis)FEATURES** in IOCCC entries.
 
 Can you fix/improve entries not under the INABIAF (it's not a bug it's a
 feature)? You are **VERY WELCOME** to try.
@@ -42,7 +42,7 @@ it takes away some instructional value or even usability. _In this case we're
 judgement but invariably some might have been the wrong decision. Thank you for
 understanding!
 
-I ([Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson))
+I ([Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson))
 accept the blame in some cases; when working on getting entries to compile
 sometimes I got carried away with it and there might be that I fixed some things
 that should not have been fixed. I am correcting these mistakes as I come across
@@ -58,7 +58,7 @@ to happen (if it's not yet fixed). This has actually already happened to us.
 Sometimes it is okay: some entries are known to not work but they can still have
 improvements (rarer situation but it's happened). Some might have slightly
 different output but which is not a problem for instance a newline after output
-in [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson)'s changing it to
+in [Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson)'s changing it to
 [1994/ldb](1994/ldb/ldb.c) use `fgets()` from `gets()`.
 
 Make **ABSOLUTE CERTAIN** that you read the README.md file _BEFORE_ your changes
@@ -92,13 +92,13 @@ means that either they all apply or they compliment each other. For instance
 [2004/gavin](2004/gavin/gavin.c) crashes but it also doesn't even compile with
 some platforms/architectures.
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) has been working on
+[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) has been working on
 resolving these issues and has fixed many but you're welcome to have a go at it
 too (though he'll be very sad if he doesn't have a chance to at first fix it :-(
 so you might want to hold off for now :-) .. or not :-) ). He hopes to have most
 of the remaining entries resolved in the near future but nevertheless if you're
 okay making people very sad you may have a go at the entries :-) [Yusuke
-Endoh](/winners.html#Yusuke_Endoh) has also fixed a number of entries though at
+Endoh](/authors.html#Yusuke_Endoh) has also fixed a number of entries though at
 this point he does not know it. :-) Cody will remove this part later on.
 
 
@@ -121,7 +121,7 @@ Another type of warning that would be hard to keep track of is different data
 sizes on different platforms.  These tend to be required at the risk that
 sometimes the entry will not work for certain platforms, some of which might or
 might not be fixable; a good example where it was required to change and is okay
-is when [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the
+is when [Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) fixed the
 segfault in macOS of [1989/paul](1994/paul/paul.c): changing the `int *` to a
 `long *` was required and it works just as well with linux.
 
@@ -169,7 +169,7 @@ consider a one-liner. Thank you!
 If you make changes _PLEASE TRY AND KEEP THE SOURCE CODE LAYOUT AS CLOSE TO THE
 ORIGINAL AS POSSIBLE_. This might not always be possible and if you have an
 editor that does formatting it can cause problems. Sometimes formatters can even
-break code! [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) has
+break code! [Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) has
 experienced this many times with vim so he tends to disable all format options
 when formatting code. In vim you should be able to do that with:
 
@@ -269,7 +269,7 @@ versions have an additional defect where they only allow 0, 2 or 3 args, the
 latter of which affected `1989/westley`, so these entries do not work with
 clang.
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) looked at the source
+[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) looked at the source
 code of clang and reported that there is no way to override the requirement of
 arg types so these entries will fail to compile with clang. That's why in some
 entries he fixed he did it by adding a function called `pain()`. :-) He did not
@@ -325,7 +325,7 @@ ready for help. We will remove this when we are.
 
 Entries with this status use `gets()` which is unsafe because it has no limit on
 the length of the string. [Cody Boone
-Ferguson](/winners.html#Cody_Boone_Ferguson) has fixed several of these and he's
+Ferguson](/authors.html#Cody_Boone_Ferguson) has fixed several of these and he's
 working on others in between fixing other things.
 
 There's a very good reason for this even though it is bordering on tampering
@@ -760,9 +760,9 @@ $ for n in $(seq 1 18); do echo "$n"; echo "$n" | time "./baruch" | wc -l | sed 
 ### Source code: [1990/jaw/jaw.c](1990/jaw/jaw.c)
 ### Information: [1990/jaw/README.md](1990/jaw/README.md)
 
-[Cody Boone Ferguson](https://www.ioccc.org/winners.html#Cody_Boone_Ferguson)
+[Cody Boone Ferguson](https://www.ioccc.org/authors.html#Cody_Boone_Ferguson)
 fixed some issues in this program and [Yusuke
-Endoh](https://www.ioccc.org/winners.html#Yusuke_Endoh) provided the `btoa`
+Endoh](https://www.ioccc.org/authors.html#Yusuke_Endoh) provided the `btoa`
 script but it appears there is a bug in this entry. The judges wrote that to
 test the entry one can do:
 
@@ -824,7 +824,7 @@ The authors provided a list of features in the
 ### Source code: [1990/theorem/theorem.c](1990/theorem/theorem.c)
 ### Information: [1990/theorem/README.md](1990/theorem/README.md)
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed many bugs that
+[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) fixed many bugs that
 prevented this from working properly (including segfaults) but one thing to note
 is that if you pass two zeroes to `theorem_bkp` or `fibonacci` the program
 will enter an infinite loop, printing 0 over and over again; another condition
@@ -994,7 +994,7 @@ to be read (in case the `gets(3)` was not used in a loop).
 ### Information: [1992/kivinen/README.md](1992/kivinen/README.md)
 
 When you start the program everything starts to move over to the right side and
-then ends.  [Yusuke Endoh](/winners.html#Yusuke_Endoh) pointed out that if you
+then ends.  [Yusuke Endoh](/authors.html#Yusuke_Endoh) pointed out that if you
 click the mouse it takes it back towards the centre.
 
 If you want to try and fix this (mis)feature, you are welcome to try.
@@ -1006,7 +1006,7 @@ If you want to try and fix this (mis)feature, you are welcome to try.
 ### Source code: [1992/lush/lush.c](1992/lush/lush.c)
 ### Information: [1992/lush/README.md](1992/lush/README.md)
 
-We used a patch from [Yusuke Endoh](/winners.html#Yusuke_Endoh) to get this to
+We used a patch from [Yusuke Endoh](/authors.html#Yusuke_Endoh) to get this to
 work but it only works with gcc. Cody removed the warnings of `gets()` and
 provided a script to run the entry properly.
 
@@ -1269,7 +1269,7 @@ pit room you will end up dying even though you didn't explicitly move there.
 ### Source code: [1994/ldb/ldb.c](1994/ldb/ldb.c)
 ### Information: [1994/ldb/README.md](1994/ldb/README.md)
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to compile
+[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) fixed this to compile
 with modern systems (see the [thanks](/thanks-for-help.md) file for
 what had to change) but the entry also used `gets()` which in some systems would
 print out a warning along with the output of the program. Naturally it could
@@ -1307,7 +1307,7 @@ writing this on 02 November 2023, only just noticed the author's remarks and
 will later on look at this if nobody takes up the challenge. More important work
 like getting to a place that the next contest can run must be done first.
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) explains the magic of
+[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) explains the magic of
 how this entry works, which will be necessary if this entry is to be fixed,
 below.
 
@@ -1420,7 +1420,7 @@ that's compiled) cannot be opened in the directory it is run from.
 
 ### STATUS: missing file - please provide it
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) noted that the
+[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) noted that the
 README.md file refers to an alternative version of the code that is not
 obfuscated but it is missing from the entry directory and the archive. Do you
 have this file?
@@ -1431,7 +1431,7 @@ we'll take care of it.
 
 ### Important reminder and a note about the `-1` value check for `getc()`:
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the code to not
+[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) fixed the code to not
 use `-1` for the return value of `getc()`; this is important because `EOF` is
 **NOT** guaranteed to be `-1` but rather any negative value. On systems where
 `EOF != -1` the program would enter an infinite loop until the program crashed,
@@ -1481,7 +1481,7 @@ doesn't break something else.
 ### Information: [1995/cdua/README.md](1995/cdua/README.md)
 
 This did not originally compile under macOS and after it did compile under
-macOS, it crashed. [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson)
+macOS, it crashed. [Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson)
 fixed these problems.
 
 It should be noted however that there is a condition where the program will
@@ -1965,7 +1965,7 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing))! :-) ).
 ### Source code: [2001/anonymous/anonymous.c](2001/anonymous/anonymous.c)
 ### Information: [2001/anonymous/README.md](2001/anonymous/README.md)
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this so that it
+[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) fixed this so that it
 doesn't segfault and then also fixed the functionality of it (but see below).
 
 Cody also fixed the [anonymous.ten.c](2001/anonymous/anonymous.ten.c) program
@@ -2002,7 +2002,7 @@ the other hand it would be nice if there was an alternate version which worked
 for modern systems. This does seem quite unlikely but some fixes, described
 next, were made.
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed an initial
+[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) fixed an initial
 segfault (trying to open the file) and he also fixed the [supplementary program
 bellard.otccex.c](2001/bellard/bellard.otccex.c) but this still crashes in
 systems not i386 linux which is what the author stated.
@@ -2474,7 +2474,7 @@ for running itself.
 ### Source code: [2005/mynx/mynx.c](2005/mynx/mynx.c)
 ### Information: [2005/mynx/README.md](2005/mynx/README.md)
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) notes that, though
+[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) notes that, though
 probably obvious, this entry will not work with https. He added an alt version
 that scans for https in case someone wants to set up a pipeline or other
 workaround (perhaps with stunnel) or even add additional code to it to make it
@@ -2603,11 +2603,11 @@ return without outputting a solution.  If you can wait that long.
 ### Source code: [2006/toledo2/toledo2.c](2006/toledo2/toledo2.c)
 ### Information: [2006/toledo2/README.md](2006/toledo2/README.md)
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this program to
+[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) fixed this program to
 not crash in macOS (it appeared to work fine in fedora linux on an `x86_64`
 architecture but he does not know if it crashed in macOS Ventura due to the fact
 it is an `arm64` CPU - the Apple silicon chip). This fix, BTW, is a mix of a fix
-by [Yusuke Endoh](/winners.html#Yusuke_Endoh) and Cody's. Nevertheless there are
+by [Yusuke Endoh](/authors.html#Yusuke_Endoh) and Cody's. Nevertheless there are
 two features that are not bugs. Later the author made some slight changes to
 make it not crash in x86_64 macOS.
 
@@ -2721,7 +2721,7 @@ like it _might_ (see Apple resources below) be but it could also be a wider
 problem with macOS. It appears that Apple does not allow certain combinations of
 memory protections with the arm64 processor.
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) tried some of the
+[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) tried some of the
 workarounds but at this time he could not get it to work. He offers some earlier
 debugging sessions below as well as a resource from the author as well as some
 resources on Apple's website should anyone wish to take a crack at it. He might
@@ -3226,7 +3226,7 @@ This program will very likely crash if no arg is given.
 ### Source code: [2014/vik/prog.c](2014/vik/prog.c)
 ### Information: [2014/vik/README.md](2014/vik/README.md)
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) discovered a bug to do
+[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) discovered a bug to do
 with translating sound to text that shows itself in some cases (it works in
 others) when working on his winning [2020 Enigma machine](2020/ferguson2/prog.c)
 ('Most enigmatic') entry. See his [README.md](2020/ferguson2/README.md) for
@@ -3515,7 +3515,7 @@ values but his implementation matches that of macOS and FreeBSD.
 ### Source code: [2019/ciura/prog.c](2019/ciura/prog.c)
 ### Information: [2019/ciura/README.md](2019/ciura/README.md)
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the scripts so
+[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) fixed the scripts so
 that they can work but it might end up that the scripts don't show any output
 anyway as they use the full alphabet. To test that it works one can have a
 script like:
@@ -3570,7 +3570,7 @@ beginning.
 
 This program will also very likely leave sockets lying about in the current
 working directory. For instance [Cody Boone
-Ferguson](/winners.html#Cody_Boone_Ferguson) showed us this:
+Ferguson](/authors.html#Cody_Boone_Ferguson) showed us this:
 
 ```sh
 $ ls -al |grep '^s'

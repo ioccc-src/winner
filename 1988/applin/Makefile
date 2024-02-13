@@ -8,7 +8,7 @@
 # and worked in the past may no longer be liked/allowed or compile/run today.
 #
 # Bug fixes, corrections and typo fixes are VERY WELCOME.  If you see a problem,
-# first check this URL for a list of known bugs and (mis)features of IOCCC winners:
+# first check this URL for a list of known bugs and (mis)features of IOCCC entries:
 #
 #	http://www.ioccc.org/bugs.md
 #

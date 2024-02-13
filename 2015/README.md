@@ -48,7 +48,7 @@ And while you are at it, cat the _endoh2_ prog.c code.  Compile it
 and look at the source code again.
 
 In a "Back to the Future" moment, _endoh3_ gave us a twist on one of
-the all time best IOCCC winners from 1984.
+the all time best IOCCC entries from 1984.
 
 We also suggest that you take a very good look at how the _muth_ code
 makes full use of the C Pre-Processor.

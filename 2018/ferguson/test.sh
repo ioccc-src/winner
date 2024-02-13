@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# test.sh - make test script for IOCCC winner 2018/ferguson
+# test.sh - make test script for IOCCC entry 2018/ferguson
 
 # Make sure the program has been compiled
 make everything 1> /dev/null|| exit 1

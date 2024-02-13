@@ -220,7 +220,7 @@ turn up - yes the program is unsafe, but it's pretty cool anyway.
 Despite all this, the translator is not exclusively limited to running the
 [anonymous.ten](anonymous.ten.c) program.  Other trivial **_x86_** programs may
 run on the translator \- and I have successfully run a wide range of "Hello
-World" programs, including one of last year's IOCCC winners,
+World" programs, including one of last year's IOCCC entries,
 [tomx](/2000/tomx/tomx.c).
 
 

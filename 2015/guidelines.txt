@@ -698,8 +698,8 @@ JUDGING PROCESS:
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 An important 2023 update to how winners are announced
 
-The IOCCC no longer uses twitter.  IOCCC winners will be announced
-by a git commit to the IOCCC winners repo:
+The IOCCC no longer uses twitter.  IOCCC entries will be announced
+by a git commit to the IOCCC entries repo:
 
 	https://github.com/ioccc-src/winner
 
@@ -822,8 +822,8 @@ ANNOUNCEMENT OF WINNERS:
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 An important 2023 update to how winners are announced
 
-The IOCCC no longer uses twitter.  IOCCC winners will be announced
-by a git commit to the IOCCC winners repo:
+The IOCCC no longer uses twitter.  IOCCC entries will be announced
+by a git commit to the IOCCC entries repo:
 
 	https://github.com/ioccc-src/winner
 
@@ -878,8 +878,8 @@ End of important 2023 update to this historic note.
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 An important 2023 update to how winners are announced
 
-The IOCCC no longer uses twitter.  IOCCC winners will be announced
-by a git commit to the IOCCC winners repo:
+The IOCCC no longer uses twitter.  IOCCC entries will be announced
+by a git commit to the IOCCC entries repo:
 
 	https://github.com/ioccc-src/winner
 

@@ -20,7 +20,7 @@ line will be removed when this web site becomes official - XXX
 ## What follows is the actual README.md file - Remove from top down to this line - XXX
 # About the IOCCC winner GitHub repository
 
-The [official IOCCC winners GitHub repository](https://github.com/ioccc-src/winner) are the
+The [official IOCCC entries GitHub repository](https://github.com/ioccc-src/winner) are the
 official winners of the **International Obfuscated C Code Contest (IOCCC)**, the
 Internet's oldest ongoing contest.
 

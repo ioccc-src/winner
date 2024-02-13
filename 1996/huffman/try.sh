@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.sh - show IOCCC winner 1996/huffman
+# try.sh - show IOCCC entry 1996/huffman
 #
 #   ...
 #

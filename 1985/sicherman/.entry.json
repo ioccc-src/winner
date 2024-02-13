@@ -1,10 +1,10 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "winner_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.1 2024-02-11",
     "award" : "Worst abuse of the C preprocessor",
     "year" : 1985,
     "dir" : "sicherman",
-    "winner_id" : "1985_sicherman",
+    "entry_id" : "1985_sicherman",
     "author_set" : [
 	{ "author_handle" : "Col_G_L_Sicherman" }
     ],

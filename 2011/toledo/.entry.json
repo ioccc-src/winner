@@ -1,10 +1,10 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "winner_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.1 2024-02-11",
     "award" : "Best non-chess game",
     "year" : 2011,
     "dir" : "toledo",
-    "winner_id" : "2011_toledo",
+    "entry_id" : "2011_toledo",
     "author_set" : [
 	{ "author_handle" : "Oscar_Toledo" }
     ],

@@ -115,7 +115,7 @@ If you do not want to mess with a floppy and you use GRUB, see
 You can put additional text files in `fs.tar` for browsing with vi.
 
 If you do not want to bother rebooting your computer at all, see
-<http://bellard.org> for QEMU ([Fabrice Bellard](/winners.html#Fabrice_Bellard)
+<http://bellard.org> for QEMU ([Fabrice Bellard](/authors.html#Fabrice_Bellard)
 is an IOCCC 2001 winner), but your experience will be limited; use the
 [alternate code](#alternate-code) instead. You'll have to move the mouse to
 trigger the initial screen update.

@@ -1,10 +1,10 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "winner_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.1 2024-02-11",
     "award" : "Best use of parenthesis",
     "year" : 2005,
     "dir" : "mikeash",
-    "winner_id" : "2005_mikeash",
+    "entry_id" : "2005_mikeash",
     "author_set" : [
 	{ "author_handle" : "Michael_Ash" }
     ],

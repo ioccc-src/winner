@@ -68,7 +68,7 @@ In this case it will be built as `sicherman.alt`.
 
 This program abuses the C preprocessor so much that some `cpp`s fail to strip
 out all of the comments on the first pass!  If you were able to understand
-[Decot's](/winners.html#Dave_Decot) [entry in 1984](/1984/decot/README.md), you
+[Decot's](/authors.html#Dave_Decot) [entry in 1984](/1984/decot/README.md), you
 will have a head start on this one.
 
 Be sure to run this program through lint!  If your lint works

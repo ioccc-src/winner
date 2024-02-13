@@ -28,10 +28,10 @@ local compiler.
 We believe you will again be impressed with this year's winners.
 
 This year, 9 won 15 awards.  For the first time in the history of the contest,
-one person, [Yusuke Endoh](https://www.ioccc.org/winners.html#Yusuke_Endoh) won
-4 times while [Adrian Cable](https://www.ioccc.org/winners.html#Adrian_Cable)
+one person, [Yusuke Endoh](https://www.ioccc.org/authors.html#Yusuke_Endoh) won
+4 times while [Adrian Cable](https://www.ioccc.org/authors.html#Adrian_Cable)
 won 3 times!  It is also worth noting that [Chris
-Mills](https://www.ioccc.org/winners.html#Christopher_Mills) last win was in 1993.
+Mills](https://www.ioccc.org/authors.html#Christopher_Mills) last win was in 1993.
 Welcome back Chris!
 
 We, the judges, were very surprised by this as many of the multiple

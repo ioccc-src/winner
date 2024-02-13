@@ -1,10 +1,10 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "winner_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.1 2024-02-11",
     "award" : "Best Small Program",
     "year" : 1990,
     "dir" : "baruch",
-    "winner_id" : "1990_baruch",
+    "entry_id" : "1990_baruch",
     "author_set" : [
 	{ "author_handle" : "Baruch_Nissenbaum" },
 	{ "author_handle" : "Doron_Osovlanski" }

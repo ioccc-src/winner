@@ -1,10 +1,10 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "winner_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.1 2024-02-11",
     "award" : "Most beauteous visuals",
     "year" : 2005,
     "dir" : "vince",
-    "winner_id" : "2005_vince",
+    "entry_id" : "2005_vince",
     "author_set" : [
 	{ "author_handle" : "Vincent_Weaver" }
     ],

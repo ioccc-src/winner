@@ -48,11 +48,11 @@ The number of judges now is only 2, Landon Curt Noll and Leonid A. Broukhis.
 ## Remarks on some of the entries
 
 This year, [Jens
-Schweikhardt](https://www.ioccc.org/winners.html#Jens_Schweikhardt) won 3 times
+Schweikhardt](https://www.ioccc.org/authors.html#Jens_Schweikhardt) won 3 times
 ... AGAIN!  He is the only person who was able to do this, let alone do it in
 two contests in a row. [Bas de
-Bakker](https://www.ioccc.org/winners.html#Bas_de_Bakker) and [David
-Lowe](https://www.ioccc.org/winners.html#J_David_Lowe) won twice this year as
+Bakker](https://www.ioccc.org/authors.html#Bas_de_Bakker) and [David
+Lowe](https://www.ioccc.org/authors.html#J_David_Lowe) won twice this year as
 well.
 
 As we stated in the [guidelines](guidelines.txt), the names of the winners are

@@ -100,7 +100,7 @@ printf("\"");
 
 #### Obfuscation
 
-[IOCCC winners](/years.html) already contain entries without digits, control-flow
+[IOCCC entries](/years.html) already contain entries without digits, control-flow
 keywords and certain operators in their source. This entry has an
 even more limited source, that is:
 

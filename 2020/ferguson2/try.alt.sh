@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.sh - demonstrate IOCCC winner 2020/ferguson2
+# try.sh - demonstrate IOCCC entry 2020/ferguson2
 #
 # I, Cody Boone Ferguson, want to dedicate this entry in part to the millions of
 # poor souls that were lost during the tragedy that is the Second World War.

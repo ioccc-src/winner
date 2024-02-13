@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# mario.sh - demonstrate IOCCC winner 2014/maffiodo1 Super Mario Bros.
+# mario.sh - demonstrate IOCCC entry 2014/maffiodo1 Super Mario Bros.
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it

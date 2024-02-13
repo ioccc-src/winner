@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# lush.sh - run IOCCC winner 1992/lush
+# lush.sh - run IOCCC entry 1992/lush
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it

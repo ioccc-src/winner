@@ -2,7 +2,7 @@
 
 If you are trying to:
 
-* Fix a winning IOCCC entry - (see [FAQ 5.2](/faq.md#fix_a_winner))
+* Fix a winning IOCCC entry - (see [FAQ 5.2](/faq.md#fix_an_entry))
 * Update winning author information - (see [FAQ 5.5](/faq.md#fix_author))
 * Correct a web site problem - (see [FAQ 5.4](/faw.md#fix_web_site) or [FAQ 5.6](/faq.md#fix_link))
 

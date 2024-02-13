@@ -242,9 +242,9 @@ else
 fi
 
 echo 1>&2
-echo "$(basename "$0"): now will run ./run_all.sh -v $CAP_D_FLAG ./gen_winner_json.sh" 1>&2
+echo "$(basename "$0"): now will run ./run_all.sh -v $CAP_D_FLAG ./gen_entry.json.sh" 1>&2
 echo "NOTE: this step will take a while." 1>&2
-if ! ./run_all.sh -v "$CAP_D_FLAG" ./gen_winner_json.sh; then
+if ! ./run_all.sh -v "$CAP_D_FLAG" ./gen_entry.json.sh; then
     echo "problem with ./run_all.sh, fix manifest and try again." 1>&2
     exit 5
 fi
@@ -262,7 +262,7 @@ if [[ -n "$A_FLAG" ]]; then
     echo "Do you wish to automatically run the commands:" 1>&2
     echo "    $GIT add -u" 1>&2
     echo "    $GIT status" 1>&2
-    echo "    $GIT commit -m'update .winner.json files per recent manifest changes'" 1>&2
+    echo "    $GIT commit -m'update .entry.json files per recent manifest changes'" 1>&2
 
     read -r -p "Enter your choice (Y/N): "
     if [[ "$REPLY" != "Y" && "$REPLY" != "y" ]]; then
@@ -271,14 +271,14 @@ if [[ -n "$A_FLAG" ]]; then
 	echo 1>&2
 	echo "    $GIT add -u" 1>&2
 	echo "    $GIT status" 1>&2
-	echo "    $GIT commit -m'update .winner.json files per recent manifest changes'" 1>&2
+	echo "    $GIT commit -m'update .entry.json files per recent manifest changes'" 1>&2
 	echo 1>&2
 	read -r -n 1 -p "Press any key when this is done: "
 	echo 1>&2
     else
 	"$GIT" add -u
 	"$GIT" status
-	"$GIT" commit -m'update .winner.json files per recent manifest changes'
+	"$GIT" commit -m'update .entry.json files per recent manifest changes'
     fi
 else
     echo "Now you should run the following commands in another terminal," 1>&2
@@ -286,7 +286,7 @@ else
     echo 1>&2
     echo "    $GIT add -u" 1>&2
     echo "    $GIT status" 1>&2
-    echo "    $GIT commit -m'update .winner.json files per recent manifest changes'" 1>&2
+    echo "    $GIT commit -m'update .entry.json files per recent manifest changes'" 1>&2
     echo 1>&2
     read -r -n 1 -p "Press any key when this is done: "
     echo 1>&2
@@ -330,7 +330,7 @@ if [[ -n "$A_FLAG" ]]; then
     echo "Do you wish to automatically run the commands:" 1>&2
     echo "    git add -u" 1>&2
     echo "    git status" 1>&2
-    echo "    git commit -m'update index.html and .winner.json per recent manifest changes'" 1>&2
+    echo "    git commit -m'update index.html and .entry.json per recent manifest changes'" 1>&2
     read -r -p "Enter your choice (Y/N): "
     if [[ "$REPLY" != "Y" && "$REPLY" != "y" ]]; then
 	echo "Now you should run the following commands in another terminal," 1>&2
@@ -338,14 +338,14 @@ if [[ -n "$A_FLAG" ]]; then
 	echo 1>&2
 	echo "    git add -u" 1>&2
 	echo "    git status" 1>&2
-	echo "    git commit -m'update index.html and .winner.json per recent manifest changes'" 1>&2
+	echo "    git commit -m'update index.html and .entry.json per recent manifest changes'" 1>&2
 	echo 1>&2
 	read -r -n 1 -p "Press any key when this is done: "
 	echo 1>&2
     else
 	"$GIT" add -u
 	"$GIT" status
-	"$GIT" commit -m'update index.html and .winner.json per recent manifest changes'
+	"$GIT" commit -m'update index.html and .entry.json per recent manifest changes'
     fi
 else
     echo "Now you should run the following commands in another terminal," 1>&2
@@ -353,7 +353,7 @@ else
     echo 1>&2
     echo "    git add -u" 1>&2
     echo "    git status" 1>&2
-    echo "    git commit -m'update index.html and .winner.json per recent manifest changes'" 1>&2
+    echo "    git commit -m'update index.html and .entry.json per recent manifest changes'" 1>&2
     echo 1>&2
     read -r -n 1 -p "Press any key when this is done: "
     echo 1>&2

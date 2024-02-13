@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.sh - demonstrate IOCCC winner 1993/dgibson
+# try.sh - demonstrate IOCCC entry 1993/dgibson
 #
 
 # we make use of the script dgibson.sh so we don't need to compile it. In any

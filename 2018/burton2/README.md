@@ -334,7 +334,7 @@ The following reserved word files are included:
 * [c++11](c++11)    ISO/IEC 14882:2011(E) N3337 2012-01-16
 * [c++14](c++14)    ISO/IEC 14882:2014(E) N4296 2014-11-09
 * [java8](java8)    <http://docs.oracle.com/javase/specs/index.html>
-* [ioccc.kw.freq](ioccc.kw.freq)    c11 + additional words, sorted on frequency of occurrence in IOCCC winners
+* [ioccc.kw.freq](ioccc.kw.freq)    c11 + additional words, sorted on frequency of occurrence in IOCCC entries
 
 
 NB: The keyword file used in this code is derived from the list in [iocccsize.c](https://www.ioccc.org/2018/iocccsize.c),
@@ -389,7 +389,7 @@ cc -ansi -Wall -trigraphs -Wno-trigraphs -Wno-parentheses -Wno-empty-body -Wno-c
 
 ### Coda:
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) was relentless in his pursuit of bugs.
+[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) was relentless in his pursuit of bugs.
 Thanks to his reports, the version of [unob.sh](unob.sh) is stronger,
 `tac` groks digraphs, [tokenfix.sh](tokenfix.sh) corrects for missing digraphs
 in [prog.c](prog.c), and the program [manpage.sh](manpage.sh) was added to the corpus.

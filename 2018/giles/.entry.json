@@ -1,10 +1,10 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "winner_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.1 2024-02-11",
     "award" : "Most unstable",
     "year" : 2018,
     "dir" : "giles",
-    "winner_id" : "2018_giles",
+    "entry_id" : "2018_giles",
     "author_set" : [
 	{ "author_handle" : "Edward_Giles" }
     ],

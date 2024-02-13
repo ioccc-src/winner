@@ -71,11 +71,11 @@ rm -f ioccc-winlose-trained.net
 where:
 
 - `ioccc_won_training/`
-    1/2 of C code of the 20th IOCCC winners (except for [dlowe.c](dlowe.c) from 2011)
+    1/2 of C code of the 20th IOCCC entries (except for [dlowe.c](dlowe.c) from 2011)
     plus 1/2 of the C code winners from prior IOCCC contests
 
 - `ioccc_won_test/`
-    1/2 of C code of the 20th IOCCC winners (except for [dlowe.c](dlowe.c) from 2011)
+    1/2 of C code of the 20th IOCCC entries (except for [dlowe.c](dlowe.c) from 2011)
     plus 1/2 of the C code winners from prior IOCCC contests
 
 - `ioccc_lost_training/`
@@ -337,7 +337,7 @@ shame to waste it.
 - Lots of magic numbers expressed in various ways.
 - Random abuse of random C trivia.
 - Some textual changes were made to maximize the classification of this program
-by a network trained to recognize [IOCCC winners](/winners.html) ;)
+by a network trained to recognize [IOCCC entries](/authors.html) ;)
 
 ... but mostly zombies!
 

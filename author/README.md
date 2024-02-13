@@ -75,7 +75,7 @@ There must be the following JSON members:
 - `"location_code"` value is a 2 UPPER CASE ISO 3166 code selected by the author
 - `"location_name"` value is the formal name corresponding to the `"location_code"`, in JSON encoded string form
 
-A `"sort_word"` that is used to determine the position within the `winners.html` file,
+A `"sort_word"` that is used to determine the position within the `authors.html` file,
 an `author` and the `winners` they submitted are to be listed.
 
 A `sort_word` matches this regexp:
@@ -126,7 +126,7 @@ The `"winning_entry_set"` is an array of JSON members that indicate
 each of the IOCCC winning entries that the author is the author of.  :-)
 
 ```json
-{ "winner_id" : "YYYY_dirname" }
+{ "entry_id" : "YYYY_dirname" }
 ```
 
 The `"YYYY_dirname"` is a winner ID in JSON encoded string form.  
@@ -138,9 +138,9 @@ For example:
 
 ```json
 "winning_entry_set" : [
-    { "winner_id" : "1987_somedir" },
-    { "winner_id" : "2020_entrydir" },
-    { "winner_id" : "2024_dirname" }
+    { "entry_id" : "1987_somedir" },
+    { "entry_id" : "2020_entrydir" },
+    { "entry_id" : "2024_dirname" }
 ]
 ```
 
@@ -166,9 +166,9 @@ Here is a fictitious author_handle.json example:
     "github" : "@github0",
     "affiliation" : "an affiliation group",
     "winning_entry_set" : [
-	{ "winner_id" : "1987_somedir" },
-	{ "winner_id" : "2020_entrydir" },
-	{ "winner_id" : "2024_dirname" }
+	{ "entry_id" : "1987_somedir" },
+	{ "entry_id" : "2020_entrydir" },
+	{ "entry_id" : "2024_dirname" }
     ]
 }
 ```
@@ -194,9 +194,9 @@ withheld are null:
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "winner_id" : "1987_somedir" },
-	{ "winner_id" : "2020_entrydir" },
-	{ "winner_id" : "2024_dirname" }
+	{ "entry_id" : "1987_somedir" },
+	{ "entry_id" : "2020_entrydir" },
+	{ "entry_id" : "2024_dirname" }
     ]
 }
 ```

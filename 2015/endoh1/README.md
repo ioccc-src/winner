@@ -56,7 +56,7 @@ cc -O3 -std=c99 \
 
 Then, run it with the `tcpserver` command in the
 [ucspi-tcp](http://cr.yp.to/ucspi-tcp.html) package, which was created by
-[Daniel J. Bernstein](/winners.html#Daniel_J._Bernstein), [IOCCC 1991 "Best of
+[Daniel J. Bernstein](/authors.html#Daniel_J._Bernstein), [IOCCC 1991 "Best of
 Show"](../../1991/brnstnd/brnstnd.c) ([README.md](../../1991/brnstnd/README.md)).
 
 ```sh

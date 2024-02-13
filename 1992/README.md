@@ -39,7 +39,7 @@ Name and address information are separated from the actual program
 prior to judging.  This eliminates any chance that we would bias our
 judging for/against any person or group.  In the end, we are surprised
 as you are to see who has won.  Even so, it is worth noting that
-[Brian Westley](https://www.ioccc.org/winners.html#Brian_Westley) has submitted
+[Brian Westley](https://www.ioccc.org/authors.html#Brian_Westley) has submitted
 a winning entry for the past 6 years!
 
 

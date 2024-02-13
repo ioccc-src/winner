@@ -1,10 +1,10 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "winner_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.1 2024-02-11",
     "award" : "Best of Show",
     "year" : 2000,
     "dir" : "jarijyrki",
-    "winner_id" : "2000_jarijyrki",
+    "entry_id" : "2000_jarijyrki",
     "author_set" : [
 	{ "author_handle" : "Jari_Arkko" },
 	{ "author_handle" : "Jyrki_Holopainen" }

@@ -1,10 +1,10 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "winner_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.1 2024-02-11",
     "award" : "Most Useful Label",
     "year" : 1991,
     "dir" : "cdupont",
-    "winner_id" : "1991_cdupont",
+    "entry_id" : "1991_cdupont",
     "author_set" : [
 	{ "author_handle" : "Christian_Dupont" }
     ],

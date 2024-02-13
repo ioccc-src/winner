@@ -1,10 +1,10 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "winner_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.1 2024-02-11",
     "award" : "Third place",
     "year" : 1984,
     "dir" : "laman",
-    "winner_id" : "1984_laman",
+    "entry_id" : "1984_laman",
     "author_set" : [
 	{ "author_handle" : "Mike_Laman" }
     ],

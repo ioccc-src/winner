@@ -90,7 +90,7 @@ Use `monge.alt` exactly as you would `monge` above.
 
 ## Judges' remarks:
 
-For those who are familiar with the previous [IOCCC winners](/winners.html),
+For those who are familiar with the previous [IOCCC entries](/authors.html),
 this program is best described as "[1994/tvr](/1994/tvr/tvr.c) meets
 [2001/bellard](/2001/bellard/bellard.c)". Here you have mouse-manipulated
 fractals AND generated binary code, all in one package.

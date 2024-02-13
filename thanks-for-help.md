@@ -7,7 +7,7 @@ To avoid having to change numerous "_README.md_" files to add thank you notes,
 we centralize them below.
 
 The [IOCCC judges](https://www.ioccc.org/judges.html) wish to recognize the many
-important contributions to the IOCCC presentation of past IOCCC winners.
+important contributions to the IOCCC presentation of past IOCCC entries.
 We are pleased to note the many contributions, **made since 2021 Jan 01**,
 on a winner by winner basis.
 
@@ -3552,7 +3552,7 @@ Cody also added the (untested) alt code that is based on the author's remarks to
 port this to systems that have the non-standard `kbhit()` and `getch()` (not the
 one from curses) which is typically (always?) in `conio.h`.
 
-The author, [Oscar Toledo G.](/winners.html#Oscar_Toledo), later went back over
+The author, [Oscar Toledo G.](/authors.html#Oscar_Toledo), later went back over
 the program and modified the `fread(3)`/`fwrite(3)` section to use the variable
 `FILE *e` (that Cody changed) instead of `int y`, making it to work on x86_64
 (perhaps Cody's fix was for arm64 only?). Also, he added a note to clarify from
@@ -4498,7 +4498,7 @@ file. The rule requires the tool `pdflatex`.
 
 Cody also added the [try.sh](/2018/poikola/try.sh) script.
 
-[Dave Burton](/winners.html#Dave_Burton), during the preview period, noticed a
+[Dave Burton](/authors.html#Dave_Burton), during the preview period, noticed a
 problem where the macOS `Terminal.app` does not work properly for this program.
 We added some additional notes on what might happen (it varies depending on
 configuration).
@@ -4990,17 +4990,17 @@ contributed thousands, that we wish to thank.
 ### Authors
 
 A good number of the [past winners of the
-IOCCC](https://www.ioccc.org/winners.html) tested, identified and helped correct
-and/or improve the write-ups of fellow IOCCC winners for the year that they won.
+IOCCC](https://www.ioccc.org/authors.html) tested, identified and helped correct
+and/or improve the write-ups of fellow IOCCC entries for the year that they won.
 The list of those past winners is too long to mention: nevertheless the [IOCCC
 judges](https://www.ioccc.org/judges.html) **VERY MUCH APPRECIATE** those who
-helped improve the presentation of their fellow IOCCC winners.
+helped improve the presentation of their fellow IOCCC entries.
 
 
 ### <a name="cody"></a>Cody Boone Ferguson
 
 We call out the extensive contributions of [Cody Boone
-Ferguson](https://www.ioccc.org/winners.html#Cody_Boone_Ferguson) who is
+Ferguson](https://www.ioccc.org/authors.html#Cody_Boone_Ferguson) who is
 responsible for most of the improvements and fixes including many **EXTREMELY
 HARD bug fixes** like [1988/phillipps](/thanks-for-help.md#1988_phillipps),
 [1992/vern](/thanks-for-help.md#1992_vern),
@@ -5034,14 +5034,14 @@ inconsistent award titles in the README files and CSV file (that he generated
 from the SQL file).
 
 **THANK YOU VERY MUCH** for your extensive efforts in helping improve the IOCCC
-presentation of past IOCCC winners and fixing almost all past entries for modern
+presentation of past IOCCC entries and fixing almost all past entries for modern
 systems!
 
 
 ### <a name="yusuke"></a>Yusuke Endoh
 
-[Yusuke Endoh](https://www.ioccc.org/winners.html#Yusuke_Endoh) supplied a
-number of important bug fixes to a number of past IOCCC winners. Some of those
+[Yusuke Endoh](https://www.ioccc.org/authors.html#Yusuke_Endoh) supplied a
+number of important bug fixes to a number of past IOCCC entries. Some of those
 fixes were **EXTREMELY TECHNICALLY CHALLENGING** such as
 [1989/robison](/thanks-for-help.md#1989_robison),
 [1990/cmills](/thanks-for-help.md#1990_cmills),
