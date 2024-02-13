@@ -40,7 +40,8 @@
 - [3.14 - How do I compile and install tcpserver for entries that require it?](#faq3_14)
 - [3.15 - How do I compile and install netpbm for entries that require it?](#faq3_15)
 - [3.16 - How do I compile and install libjpeg-turbo for entries that require it?](#faq3_16)
-- [3.16 - How do I compile and install ImageMagick for entries that require it?](#faq3_17)
+- [3.17 - How do I compile and install ImageMagick for entries that require it?](#faq3_17)
+- [3.18 - How do I compile and install OpenGL for entries that require it?](#faq3_18)
 
 
 ## Section  4 - [Changes made to IOCCC winners](#faq4)
@@ -53,7 +54,7 @@ other inconsistencies with the original entry?](#faq4_3)
 
 ## Section  5 - [Helping the IOCCC](#faq5)
 - [5.0  - How may I help the IOCCC?](#faq5_0)
-- [5.1  - How do I report a bug in an IOCCC winner?](#faq5_1)
+- [5.1  - How do I report a bug in an IOCCC winner?(#faq5_1)
 - [5.2  - How may I submit a fix to an IOCCC winner?](#faq5_2)
 - [5.3  - How may I report an IOCCC web site problem?](#faq5_3)
 - [5.4  - How may I submit a fix to the IOCCC web site?](#faq5_4)
@@ -1660,7 +1661,6 @@ for downloading, installing and using libjpeg-turbo.
 We recommend trying a method suitable for your environment first, if possible.
 
 
-
 ### <a name="faq3_17"></a><a name="imagemagick"></a>3.17 - How do I compile and install ImageMagick for entries that require it?
 
 This depends on your operating system for which we describe a couple below.
@@ -1734,6 +1734,94 @@ Go to the [ImageMagick website](https://imagemagick.org) and follow their instru
 for downloading, installing and using ImageMagick.
 
 We recommend trying a method suitable for your environment first, if possible.
+
+
+### <a name="faq3_18"></a><a name="OpenGL"></a>3.18 - How do I compile and install OpenGL for entries that require it?
+
+This depends on your operating system for which we describe a couple below.
+
+In general OpenGL needs X11 to be installed and the X Window Server to be running.
+See [FAQ 3.7: How do I run an IOCCC winner that requires X11?](#X11_general) for
+general information about X11.
+
+Once X11 is install and the X Window Server is running, one needs to compile
+and link with the two libraries, _GL_ and _GLU_:
+
+```sh
+cc ... -lGL -lGLU -L _location-where-X11-libs-are-installed_ -lX11
+``
+
+NOTE: The OpenGL development effort is being manageed by [vulkan.org](https://vulkan.org).
+We suggest you check out their resource for further information on OpenGL.
+
+
+#### Red Hat based Linux
+
+Execute the following as root or via sudo:
+
+```sh
+sudo dnf install glew-devel SDL2-devel SDL2_image-devel glm-devel freetype-devel
+```
+
+See [OpenGL Programming/Installation/Linux](https://en.wikibooks.org/wiki/OpenGL_Programming/Installation/Linux) for details.
+
+Older RHEL distributions might have to use "yum" instead of "dnf"
+in the above command.
+
+
+#### macOS
+
+In the past, macOS has come with OpenGL pre-installed.  However as of macOS 10.14,
+[OpenGL has been deprecated on macOS](https://developer.apple.com/library/archive/documentation/GraphicsImaging/Conceptual/OpenGL-MacProgGuide/opengl_intro/opengl_intro.html) (in favor of Metal).
+
+As long as Apple continues to ship OpenGL pre-installed and it works, you
+should be able to go.  However in Apple drops support for OpenGL later on,
+you might look to install OpenGL via Homebrew or MacPorts.
+
+
+#### Debian based Linux
+
+Execute the following as root or via sudo:
+
+```sh
+sudo apt-get install libglew-dev libsdl2-dev libsdl2-image-dev libglm-dev libfreetype6-dev
+```
+
+and then try `make all` again.
+
+See [OpenGL Programming/Installation/Linux](https://en.wikibooks.org/wiki/OpenGL_Programming/Installation/Linux) for details.
+
+
+#### Other Linux distributions
+
+Use your package manager to install the appropriate packages. Try the search
+feature of the package manager to determine which packages you need to install.
+Note that you might have to install both the library and the developmental
+packages: one for compiling and one for linking / running.
+
+
+#### package website
+
+Go to the [Vulkan website](https://vulkan.org) and follow their instructions
+for downloading, installing and using OpenGL.
+
+We recommend trying a method suitable for your environment first, if possible.
+
+
+
+## <a name="faq4"></a>Section 4: Changes made to IOCCC winners
+
+
+### <a name="faq4_0"></a>FAQ 4.0: Why are some winning entry remarks incongruent with the winning IOCCC code?
+
+It is very likely in this case that the code was fixed to work for modern
+systems as part of the reworking of the website. If you have this problem in
+some entries you should look at the original code as in `winner.orig.c` or
+`prog.orig.c`. `winner` is the directory name. For instance, one of Landon's
+favourite entries of all time is [1984/mullender](/1984/mullender/README.md) and
+the winner there would be `mullender`. Sometimes the original is in an alt
+version like `winner.alt.c` or `prog.alt.c`. In fact it is advisable to look at
+the original code when reading the author's (and sometimes authors') remarks.
 
 
 
