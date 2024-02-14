@@ -6,8 +6,8 @@
 2018/.gitignore
 2018/guidelines.txt
 2018/hint.css
+2018/index.html
 2018/iocccsize.c
 2018/iocccsize.mk
 2018/rules.txt
 2018/.year
-var.mk

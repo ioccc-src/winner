@@ -5,8 +5,8 @@
 2013/.gitignore
 2013/guidelines.txt
 2013/hint.css
+2013/index.html
 2013/iocccsize.c
 2013/iocccsize.mk
 2013/rules.txt
 2013/.year
-var.mk

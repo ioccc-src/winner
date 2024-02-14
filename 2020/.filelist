@@ -6,9 +6,9 @@
 2020/.gitignore
 2020/guidelines.txt
 2020/hint.css
+2020/index.html
 2020/iocccsize.c
 2020/iocccsize.mk
 2020/iocccsize-test.sh
 2020/rules.txt
 2020/.year
-var.mk
