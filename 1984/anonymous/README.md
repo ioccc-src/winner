@@ -80,10 +80,10 @@ Landon Curt Noll, the one who told the author about the tattoo, wrote back:
 ### Regrets:
 
 Landon Curt Noll wrote that the author regrets not making the program a
-one-liner and not moving the `int i` into an arg of main (so that the line would
-have started with main). On the other hand the author likes the "two line look"
-and the way `hell o` was split. :-) And they like the fact that it ends in a
-smily face: `;}`.
+one-liner and not moving the `int i` into an arg of `main()` (so that the line
+would have started with `main()`). On the other hand the author likes the "two
+line look" and the way `hell o` was split. :-) And they like the fact that it
+ends in a smily face: `;}`.
 
 
 ## Copyright and CC BY-SA 4.0 License:
