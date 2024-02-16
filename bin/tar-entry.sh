@@ -635,7 +635,7 @@ if [[ -z $EXIT_CODE ]]; then
     exit 234
 fi
 
-# move the tarball in place onlt if differnt
+# move the tarball in place only if different
 #
 if [[ -z $NOOP ]]; then
     if cmp -s "$TMP_TARBALL" "$TARBALL"; then
