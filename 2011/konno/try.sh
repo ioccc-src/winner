@@ -26,7 +26,7 @@ echo 1>&2
 ./konno ioccc
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: ./konno \"the quick brown fox jumps over the lazy dog\": "
+read -r -n 1 -p "Press any key to run: ./konno 'the quick brown fox jumps over the lazy dog': "
 echo 1>&2
 ./konno 'the quick brown fox jumps over the lazy dog'
 echo 1>&2
