@@ -33,43 +33,30 @@ if [[ -z "$DICT" || ! -f "$DICT" || ! -r "$DICT" ]]; then
     fi
 fi
 
+ag()
+{
+    if [[ "$#" -lt 2 ]]; then
+	echo "$0: ag() requires at least two args, given: $#" 1>&2
+	return
+    fi
+
+    echo "$ ./ag ${@:2} < $1" 1>&2
+    read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
+    echo 1>&2
+    ./ag "${@:2}" < "$1" 2>/dev/null | less -rEXF
+
+    echo 1>&2
+}
 # safety check that DICT is not empty and is a readable file
 #
 if [[ -n "$DICT" && -f "$DICT" && -r "$DICT" ]]; then
-    echo "$ ./ag free software foundation < $DICT" 1>&2
-    read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
-    echo 1>&2
-    ./ag free software foundation < "$DICT" 2>/dev/null | less -rEXF
-
-    echo "$ ./ag obfuscated c contest < $DICT" 1>&2
-    read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
-    echo 1>&2
-    ./ag obfuscated c contest < "$DICT" 2>/dev/null | less -rEXF
-
-    echo "$ ./ag unix international	< $DICT" 1>&2
-    read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
-    echo 1>&2
-    ./ag unix international	< "$DICT" 2>/dev/null | less -rEXF
-
-    echo "$ ./ag george bush < $DICT" 1>&2
-    read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
-    echo 1>&2
-    ./ag george bush < "$DICT" 2>/dev/null | less -rEXF
-
-    echo "$ ./ag bill clinton < $DICT" 1>&2
-    read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
-    echo 1>&2
-    ./ag bill clinton < "$DICT" 2>/dev/null | less -rEXF
-
-    echo "$ ./ag ross perot	< $DICT" 1>&2
-    read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
-    echo 1>&2
-    ./ag ross perot	< "$DICT" 2>/dev/null | less -rEXF
-
-    echo "$ ./ag paul e tsongas < $DICT" 1>&2
-    read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
-    echo 1>&2
-    ./ag paul e tsongas < "$DICT" 2>/dev/null | less -rEXF
+    ag "$DICT" free software foundation
+    ag "$DICT" obfuscated c contest
+    ag "$DICT" unix international
+    ag "$DICT" george bush
+    ag "$DICT" bill clinton
+    ag "$DICT" ross perot
+    ag "$DICT" paul e tsongas
 fi
 
 # now try making our own dictionary with mkdict.sh:
@@ -80,38 +67,11 @@ DICT="words"
 
 read -r -n 1 -p "Press any key to use our own dict from mkdict.sh: "
 echo 1>&2
+ag "$DICT" free software foundation
+ag "$DICT" obfuscated c contest
+ag "$DICT" unix international
+ag "$DICT" george bush
+ag "$DICT" bill clinton
+ag "$DICT" ross perot
+ag "$DICT" paul e tsongas
 
-echo "$ ./ag free software foundation < $DICT" 1>&2
-read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
-echo 1>&2
-./ag free software foundation < "$DICT" 2>/dev/null | less -rEXF
-
-echo "$ ./ag obfuscated c contest < $DICT" 1>&2
-read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
-echo 1>&2
-./ag obfuscated c contest < "$DICT" 2>/dev/null | less -rEXF
-
-echo "$ ./ag unix international	< $DICT" 1>&2
-read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
-echo 1>&2
-./ag unix international	< "$DICT" 2>/dev/null | less -rEXF
-
-echo "$ ./ag george bush < $DICT" 1>&2
-read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
-echo 1>&2
-./ag george bush < "$DICT" 2>/dev/null | less -rEXF
-
-echo "$ ./ag bill clinton < $DICT" 1>&2
-read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
-echo 1>&2
-./ag bill clinton < "$DICT" 2>/dev/null | less -rEXF
-
-echo "$ ./ag ross perot	< $DICT" 1>&2
-read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
-echo 1>&2
-./ag ross perot	< "$DICT" 2>/dev/null | less -rEXF
-
-echo "$ ./ag paul e tsongas < $DICT" 1>&2
-read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
-echo 1>&2
-./ag paul e tsongas < "$DICT" 2>/dev/null | less -rEXF

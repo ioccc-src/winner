@@ -22,14 +22,19 @@ read -r -n 1 -p "Press any key to run: ./zucker > ioccc.ppm: "
 echo 1>&2
 ./zucker > ioccc.ppm
 echo 1>&2
+echo "Now open ioccc.ppm in a graphics viewer." 1>&2
 
 read -r -n 1 -p "Press any key to run: ./zucker \"Hello!!!\" > hello.ppm: "
 echo 1>&2
 ./zucker "Hello\!\!\!" > hello.ppm
+echo "Now open hello.ppm in a graphics viewer." 1>&2
 
 read -r -n 1 -p "Press any key to run: ./zucker faster\! -preview > image2.ppm: "
 echo 1>&2
 ./zucker faster\! -preview > image2.ppm
+echo "Now open image2.ppm in a graphics viewer." 1>&2
 echo 1>&2
+
+
 
 

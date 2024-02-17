@@ -464,7 +464,7 @@ for YYYY in $(< "$TOP_FILE"); do
 	continue
     fi
 
-    # process each entry directroy under YYYY
+    # process each entry directory under YYYY
     #
     export YYYY_DIR
     for YYYY_DIR in $(< "$YEAR_FILE"); do

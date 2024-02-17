@@ -21,15 +21,18 @@ rm -f akari2 akari3 akari4
 clear
 
 
+echo "Before you begin you might wish to open example.ppm in a graphics viewer." 1>&2
 read -r -n 1 -p "Press any key to run: ./akari < example.ppm > odd_output.ppm: "
 echo 1>&2
 ./akari < example.ppm > odd_output.ppm
 echo 1>&2
+echo "You might care to open odd_output.ppm in a graphics viewer." 1>&2
 
 read -r -n 1 -p "Press any key to run: ./akari - - even < example.ppm > even_output.ppm: "
 echo 1>&2
 ./akari - - even < example.ppm > even_output.ppm
 echo 1>&2
+echo "You might care to open even_output.ppm in a graphics viewer." 1>&2
 
 read -r -n 1 -p "Press any key to run: ./akari example.ppm odd_output.ppm: "
 echo 1>&2
