@@ -20,9 +20,9 @@ echo 1>&2
 ./blakely < 3.dat | head -100
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: ./blakely - < 3.dat | head -40: "
+read -r -n 1 -p "Press any key to run: ./blakely - < 3.dat | head -30: "
 echo 1>&2
-./blakely - < 3.dat | head -40
+./blakely - < 3.dat | head -30
 echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./blakely < evolve_to_3.dat | head -55: "
