@@ -54,7 +54,7 @@ other inconsistencies with the original entry?](#faq4_3)
 
 ## Section  5 - [Helping the IOCCC](#faq5)
 - [5.0  - How may I help the IOCCC?](#faq5_0)
-- [5.1  - How do I report a bug in an IOCCC winner?(#faq5_1)
+- [5.1  - How do I report a bug in an IOCCC winner?](#faq5_1)
 - [5.2  - How may I submit a fix to an IOCCC winner?](#faq5_2)
 - [5.3  - How may I report an IOCCC web site problem?](#faq5_3)
 - [5.4  - How may I submit a fix to the IOCCC web site?](#faq5_4)
