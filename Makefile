@@ -410,15 +410,15 @@ quick_www:
 	${MAKE} clobber
 	${MAKE} genpath
 	${MAKE} genfilelist
-	-${MAKE} verify_entry_files # remove - when all files exist
+	-${MAKE} verify_entry_files # XXX - remove - when all files exist
 	${MAKE} gen_authors
 	${MAKE} gen_location
 	${MAKE} gen_years
 	${MAKE} gen_year_index
 	${MAKE} quick_entry_index
-	${MAKE} form_entry_tarball
-	${MAKE} form_year_tarball
-	${MAKE} form_all_tarball
+	@echo XXX - disable tarball updates until mods settle down - XXX - ${MAKE} form_entry_tarball
+	@echo XXX - disable tarball updates until mods settle down - XXX - ${MAKE} form_year_tarball
+	@echo XXX - disable tarball updates until mods settle down - XXX - ${MAKE} form_all_tarball
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # do everything needed to build HTML content for the web site
@@ -430,15 +430,15 @@ www:
 	${MAKE} clobber
 	${MAKE} genpath
 	${MAKE} genfilelist
-	-${MAKE} verify_entry_files # remove - when all files exist
+	-${MAKE} verify_entry_files # XXX - remove - when all files exist
 	${MAKE} gen_authors
 	${MAKE} gen_location
 	${MAKE} gen_years
 	${MAKE} gen_year_index
 	${MAKE} entry_index
-	${MAKE} form_entry_tarball
-	${MAKE} form_year_tarball
-	${MAKE} form_all_tarball
+	@echo XXX - disable tarball updates until mods settle down - XXX - ${MAKE} form_entry_tarball
+	@echo XXX - disable tarball updates until mods settle down - XXX - ${MAKE} form_year_tarball
+	@echo XXX - disable tarball updates until mods settle down - XXX - ${MAKE} form_all_tarball
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 
