@@ -49,7 +49,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.1 2024-02-13"
+export VERSION="1.1 2024-02-17"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -323,46 +323,6 @@ if [[ ! -s $FILELIST_ENTRY_JSON_AWK ]]; then
     exit 6
 fi
 
-# verify we have non-empty readable ioccc.css file
-#
-IOCCC_CSS="ioccc.css"
-if [[ ! -e $IOCCC_CSS ]]; then
-    echo "$0: ERROR: ioccc.css does not exist: $IOCCC_CSS" 1>&2
-    exit 8
-fi
-if [[ ! -f $IOCCC_CSS ]]; then
-    echo "$0: ERROR: ioccc.css is not a file: $IOCCC_CSS" 1>&2
-    exit 8
-fi
-if [[ ! -r $IOCCC_CSS ]]; then
-    echo "$0: ERROR: ioccc.css is not a readable file: $IOCCC_CSS" 1>&2
-    exit 8
-fi
-if [[ ! -s $IOCCC_CSS ]]; then
-    echo "$0: ERROR: ioccc.css is not a not a non-empty readable file: $IOCCC_CSS" 1>&2
-    exit 8
-fi
-
-# verify we have non-empty readable ioccc.css file
-#
-VAR_MK="var.mk"
-if [[ ! -e $VAR_MK ]]; then
-    echo "$0: ERROR: var.mk does not exist: $VAR_MK" 1>&2
-    exit 8
-fi
-if [[ ! -f $VAR_MK ]]; then
-    echo "$0: ERROR: var.mk is not a file: $VAR_MK" 1>&2
-    exit 8
-fi
-if [[ ! -r $VAR_MK ]]; then
-    echo "$0: ERROR: var.mk is not a readable file: $VAR_MK" 1>&2
-    exit 8
-fi
-if [[ ! -s $VAR_MK ]]; then
-    echo "$0: ERROR: var.mk is not a not a non-empty readable file: $VAR_MK" 1>&2
-    exit 8
-fi
-
 # parameter debugging
 #
 if [[ $V_FLAG -ge 3 ]]; then
@@ -386,8 +346,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: DOT_PATH=$DOT_PATH" 1>&2
     echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
     echo "$0: debug[3]: FILELIST_ENTRY_JSON_AWK=$FILELIST_ENTRY_JSON_AWK" 1>&2
-    echo "$0: debug[3]: IOCCC_CSS=$IOCCC_CSS" 1>&2
-    echo "$0: debug[3]: VAR_MK=$VAR_MK" 1>&2
 fi
 
 # If -N, time to exit
@@ -453,8 +411,6 @@ if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: awk -f $FILELIST_ENTRY_JSON_AWK $ENTRY_JSON > $TMP_MANIFEST_LIST failed, error: $status" 1>&2
     exit 7
 fi
-echo "$IOCCC_CSS" >> "$TMP_MANIFEST_LIST"
-echo "$VAR_MK" >> "$TMP_MANIFEST_LIST"
 sort -d -u "$TMP_MANIFEST_LIST" -o "$TMP_MANIFEST_LIST"
 status="$?"
 if [[ $status -ne 0 ]]; then
@@ -466,10 +422,10 @@ fi
 #
 # We also add ioccc.css and var.mk from the top level.
 #
-find "$IOCCC_CSS" "$VAR_MK" "$ENTRY_PATH" -type f -print > "$TMP_FILE_LIST"
+find "$ENTRY_PATH" -type f -print > "$TMP_FILE_LIST"
 status="$?"
 if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: find $IOCCC_CSS $VAR_MK $ENTRY_PATH -type f -print > $TMP_FILE_LIST failed, error: $status" 1>&2
+    echo "$0: ERROR: find $ENTRY_PATH -type f -print > $TMP_FILE_LIST failed, error: $status" 1>&2
     exit 7
 fi
 sort -d -u "$TMP_FILE_LIST" -o "$TMP_FILE_LIST"
