@@ -316,7 +316,7 @@ export TARBALL="$YYYY_DIR/$ENTRY_ID.tar.bz2"
 
 # verify we have our awk tool
 #
-FILELIST_ENTRY_JSON_AWK="$BIN_DIR/filelist.entry.json.awk"
+export FILELIST_ENTRY_JSON_AWK="$BIN_DIR/filelist.entry.json.awk"
 if [[ ! -e $FILELIST_ENTRY_JSON_AWK ]]; then
     echo "$0: ERROR: filelist.entry.json.awk  does not exist: $FILELIST_ENTRY_JSON_AWK" 1>&2
     exit 6
@@ -336,7 +336,7 @@ fi
 
 # verify we have non-empty readable ioccc.css file
 #
-IOCCC_CSS="ioccc.css"
+export IOCCC_CSS="ioccc.css"
 if [[ ! -e $IOCCC_CSS ]]; then
     echo "$0: ERROR: ioccc.css does not exist: $IOCCC_CSS" 1>&2
     exit 8
@@ -356,7 +356,7 @@ fi
 
 # verify we have non-empty readable ioccc.css file
 #
-VAR_MK="var.mk"
+export VAR_MK="var.mk"
 if [[ ! -e $VAR_MK ]]; then
     echo "$0: ERROR: var.mk does not exist: $VAR_MK" 1>&2
     exit 8
