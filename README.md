@@ -217,4 +217,4 @@ Copyright (C) 2020,2023,2024 Landon Curt Noll. All Rights Reserved.
 This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
 If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
-(but does not require) if you were to [send us a note about your use](/contact.html).
+(but do not require) if you were to [send us a note about your use](/contact.html).
