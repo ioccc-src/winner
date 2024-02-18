@@ -58,6 +58,7 @@ README2INDEX= bin/readme2index.sh
 QUICK_README2INDEX= bin/quick-readme2index.sh
 TAR_ENTRY= bin/tar-entry.sh
 TAR_YEAR= bin/tar-year.sh
+TAR_ALL= bin/tar-all.sh
 
 
 #############
@@ -237,7 +238,7 @@ indent.c:
 #	They might not even work (right now).  :-)
 
 .PHONY: help genpath genfilelist verify_entry_files gen_authors gen_location gen_years \
-	entry_index quick_entry_index form_entry_tarball form_year_tarball \
+	entry_index quick_entry_index form_entry_tarball form_year_tarball form_all_tarball \
 	gen_year_index quick_www www
 
 # Suggest rules in this section
@@ -258,6 +259,7 @@ help:
 	@echo make quick_entry_index
 	@echo make form_entry_tarball
 	@echo make form_year_tarball
+	@echo make form_all_tarball
 	@echo make quick_www
 	@echo make www
 
@@ -384,6 +386,17 @@ form_year_tarball: ${ALL_YEARS} ${TAR_YEAR}
 	${ALL_YEARS} -v 3 ${TAR_YEAR} -v 1 -W
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
+# form compressed tarball for all of the IOCCC
+#
+# XXX - We also use -W because some entry files don't yet exist - XXX
+# XXX - Remove -W when make verify_entry_files runs without err - XXX
+# XXX - We do not yet form year level and the top level tarball - XXX
+#
+form_all_tarball: ${TAR_ALL}
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${TAR_ALL} -v 1 -W
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
 # do work to build HTML content for the web site
 #
 # This rule uses quick_entry_index, not slow_entry_index, so
@@ -405,6 +418,7 @@ quick_www:
 	${MAKE} quick_entry_index
 	${MAKE} form_entry_tarball
 	${MAKE} form_year_tarball
+	${MAKE} form_all_tarball
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # do everything needed to build HTML content for the web site
@@ -424,6 +438,7 @@ www:
 	${MAKE} entry_index
 	${MAKE} form_entry_tarball
 	${MAKE} form_year_tarball
+	${MAKE} form_all_tarball
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 

@@ -260,6 +260,17 @@ bin/all-run.sh -v 3 bin/tar-entry.sh -v 1 -W
 ```
 
 
+## [tar-all.sh](tar-all.sh)
+
+Form the compressed tarball for all IOCCC years and all IOCCC entries.
+
+Usage:
+
+```sh
+bin/tar-all.sh -v 1
+```
+
+
 ## [tar-year.sh](tar-year.sh)
 
 Form a compress tarball for an IOCCC year.

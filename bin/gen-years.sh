@@ -543,7 +543,7 @@ fi
 
 ## All IOCCC years
 
-**Download IOCCC** [all entry source](all/ioccc.all.tar.bz2)
+**Download IOCCC** [all entry source](ioccc.tar.bz2)
 
 ### Jump to:
 EOF
