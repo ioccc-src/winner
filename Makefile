@@ -54,9 +54,10 @@ GEN_LOCATION= bin/gen-location.sh
 GEN_YEARS= bin/gen-years.sh
 GEN_YEAR_INDEX= bin/gen-year-index.sh
 CHK_ENTRY= bin/chk-entry.sh
-TAR_ENTRY= bin/tar-entry.sh
 README2INDEX= bin/readme2index.sh
 QUICK_README2INDEX= bin/quick-readme2index.sh
+TAR_ENTRY= bin/tar-entry.sh
+TAR_YEAR= bin/tar-year.sh
 
 
 #############
@@ -235,8 +236,9 @@ indent.c:
 # XXX - The rules in this section are undergoing development and change.
 #	They might not even work (right now).  :-)
 
-.PHONY: help verify_entry_files genpath gen_authors gen_location gen_years \
-	entry_index quick_entry_index form_entry_tarball gen_year_index quick_www www
+.PHONY: help genpath genfilelist verify_entry_files gen_authors gen_location gen_years \
+	entry_index quick_entry_index form_entry_tarball form_year_tarball \
+	gen_year_index quick_www www
 
 # Suggest rules in this section
 #
@@ -245,8 +247,9 @@ indent.c:
 # reminder to those who understand it. For all else, there is "RTFS". :-)
 #
 help:
-	@echo make verify_entry_files
 	@echo make genpath
+	@echo make genfilelist
+	@echo make verify_entry_files
 	@echo make gen_authors
 	@echo make gen_location
 	@echo make gen_years
@@ -254,17 +257,13 @@ help:
 	@echo make gen_year_index
 	@echo make quick_entry_index
 	@echo make form_entry_tarball
+	@echo make form_year_tarball
 	@echo make quick_www
 	@echo make www
 
-# check to be sure all files in all entries exist
-#
-verify_entry_files: ${ALL_RUN} ${CHK_ENTRY}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	${ALL_RUN} -v 3 ${CHK_ENTRY}
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
-
 # form the top level .top, YYYY level .year and winner level .path files
+#
+# IMPORTANT: This file assumes that make clobber was previously done.
 #
 genpath:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
@@ -282,6 +281,33 @@ genpath:
 	    ${CHMOD} 0444 .top; \
 	    echo "updated .top"; \
 	fi
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# generate YYYY level .filelist
+#
+# IMPORTANT: This file assumes that make clobber was previously done.
+#
+genfilelist:
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@-for i in ${YEARS}; do \
+	    rm -f "$$i/.genfilelist.tmp"; \
+	    find "$$i" -mindepth 1 -maxdepth 1 -type f ! -path "$$i/.genfilelist.tmp" | sort -d -u > "$$i/.genfilelist.tmp"; \
+	    if ${CMP} -s "$$i/.genfilelist.tmp" "$$i/.filelist"; then \
+		${RM} -f "$$i/.genfilelist.tmp"; \
+		echo "$$i/.filelist already up to date"; \
+	    else \
+		${MV} -f "$$i/.genfilelist.tmp" "$$i/.filelist"; \
+		${CHMOD} 0444 "$$i/.filelist"; \
+		echo "updated $$i/.filelist"; \
+	    fi; \
+	done
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# check to be sure all files in all entries exist
+#
+verify_entry_files: ${ALL_RUN} ${CHK_ENTRY}
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${ALL_RUN} -v 3 ${CHK_ENTRY}
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # generate the top level authors.html page using the
@@ -347,6 +373,17 @@ form_entry_tarball: ${ALL_RUN} ${TAR_ENTRY}
 	${ALL_RUN} -v 3 ${TAR_ENTRY} -v 1 -W
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
+# form all IOCCC year level compressed tarballs
+#
+# XXX - We also use -W because some entry files don't yet exist - XXX
+# XXX - Remove -W when make verify_entry_files runs without err - XXX
+# XXX - We do not yet form year level and the top level tarball - XXX
+#
+form_year_tarball: ${ALL_YEARS} ${TAR_YEAR}
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${ALL_YEARS} -v 3 ${TAR_YEAR} -v 1 -W
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
 # do work to build HTML content for the web site
 #
 # This rule uses quick_entry_index, not slow_entry_index, so
@@ -357,6 +394,9 @@ form_entry_tarball: ${ALL_RUN} ${TAR_ENTRY}
 #
 quick_www:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${MAKE} clobber
+	${MAKE} genpath
+	${MAKE} genfilelist
 	-${MAKE} verify_entry_files # remove - when all files exist
 	${MAKE} gen_authors
 	${MAKE} gen_location
@@ -364,6 +404,7 @@ quick_www:
 	${MAKE} gen_year_index
 	${MAKE} quick_entry_index
 	${MAKE} form_entry_tarball
+	${MAKE} form_year_tarball
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # do everything needed to build HTML content for the web site
@@ -372,6 +413,9 @@ quick_www:
 #
 www:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${MAKE} clobber
+	${MAKE} genpath
+	${MAKE} genfilelist
 	-${MAKE} verify_entry_files # remove - when all files exist
 	${MAKE} gen_authors
 	${MAKE} gen_location
@@ -379,6 +423,7 @@ www:
 	${MAKE} gen_year_index
 	${MAKE} entry_index
 	${MAKE} form_entry_tarball
+	${MAKE} form_year_tarball
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 

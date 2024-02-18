@@ -260,6 +260,23 @@ bin/all-run.sh -v 3 bin/tar-entry.sh -v 1 -W
 ```
 
 
+## [tar-year.sh](tar-year.sh)
+
+Form a compress tarball for an IOCCC year.
+
+Usage:
+
+```sh
+bin/tar-year.sh -v 1 YYYY
+```
+
+Suggested usage:
+
+```sh
+bin/all-years.sh -v 3 bin/tar-year.sh -v 1 -W
+```
+
+
 # <a name="how"></a>How IOCCC HTML content is built
 
 The [md2html.sh](md2html.sh) tool is the primary tool that
