@@ -1,15 +1,11 @@
 #
 # sort with: ../../bin/sgi
 *.dSYM
-hello.ppm
-image2.ppm
-image.png
-image.ppm
+*.png
+*.ppm
 indent
 indent.c
 indent.o
-ioccc2011.png
-ioccc2011.ppm
 prog.orig
 zucker
 zucker.orig

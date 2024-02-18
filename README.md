@@ -18,12 +18,12 @@ XXX - The text from the top down to the _What follows is the actual README.md fi
 line will be removed when this web site becomes official - XXX
 
 
-## What follows is the actual README.md file - Remove from top down to this line - XXX
+## What follows is the actual README.md file - Remove from top down through this line - XXX
 
 
 # The International Obfuscated C Code Contest
 
-# **Obfuscate** | *verb* [with object]
+## **Obfuscate** | *verb* [with object]
 
 - render obscure, unclear, or unintelligible: the spelling changes will deform
 some familiar words and obfuscate their etymological origins.
@@ -31,7 +31,8 @@ some familiar words and obfuscate their etymological origins.
     - bewilder (someone): it is more likely to obfuscate people than enlighten them.
 obfuscatory | adjective
 
-    From late Middle English (as adjective): from late Latin obfuscat- 'darkened', from the verb obfuscare, based on Latin fuscus 'dark'.
+    late Middle English (as adjective): from late Latin **obfuscat-**
+    'darkened', from the verb **obfuscare**, based on Latin **fuscus** 'dark'.
 
 ## **Obfuscation** | *noun*
 
@@ -39,14 +40,16 @@ obfuscatory | adjective
 confronted with sharp questions they resort to obfuscation | ministers put up
 mealy-mouthed denials and obfuscations.
 
-    From late Middle English: from late Latin obfuscatio(n-), from obfuscare 'to darken or obscure' (see obfuscate).
+    late Middle English: from late Latin **obfuscatio(n-)**, from **obfuscare**
+    'to darken or obscure' (see *obfuscate*).
 
 The official IOCCC web site is <https://www.ioccc.org>.
 
 ## How it was started:
 
 The original inspiration of the International Obfuscated C Code Contest came
-from the Bourne Shell source and the finger command as distributed in 4.2BSD.
+from the Bourne Shell source and the `finger(1)` command as distributed in
+[4.2BSD](https://en.wikipedia.org/wiki/History_of_the_Berkeley_Software_Distribution#4.2BSD).
 If this is what could result from what some people claim is reasonable
 programming practice, then to what depths might quality sink if people really
 tried to write poor code?
@@ -71,7 +74,7 @@ the definitions of *satire*:
 
 The authors of the winning entries placed a great deal of thought into their
 programs.  These programs in turn exposed and discredited what I considered to
-be the programmer's equivalent of "vice or folly".
+be the programmer's equivalent of "*vice or folly*".
 
 There were two unexpected benefits that came from the contest winners.  First
 was an educational value to the programs.  To understand these C programs is to
@@ -101,30 +104,34 @@ Makefiles look at the variable `CDEFINE`.
 
 The next stage towards understanding is to use a C beautifier or C indenting
 program on the source.  Be warned that a number of these entries are so twisted
-that such tools may abort or become very confused.  You may need to help out by
-doing some initial formatting with an editor.  You might also try renaming
-variables and labels to give more meaningful names.
+that such tools may abort or become very confused, sometimes even preventing
+them from compiling.  You may need to help out by doing some initial formatting
+with an editor.  You might also try renaming variables and labels to give more
+meaningful names. Be aware, however, that some entries will not work if you
+rename variables, even if you manage to determine where exactly they are (to say
+nothing of the fact that the name might be elsewhere in the code).
 
 Now try linting the program.  You may be surprised at how little lint complains
 about these programs.  Pay careful attention to messages about unused variables,
 wrong types, pointer conversions, etc.  But be careful, some lints produce
-incorrect error messages or even abort!  Your lint may detect syntax errors in
-the source.  See the next paragraph for suggestions on how to deal with this.
+incorrect error messages or even abort (or even crash)!  Your lint may detect
+syntax errors in the source.  See the next paragraph for suggestions on how to
+deal with this.
 
 When you get to the stage where you are ready to compile the program, examine
-the compilation comments above each entry.  A simple define or edit may be
-required due to differing semantics between operating systems. If you are able
-to successfully compile the program, experiment with it by giving it different
-arguments or input.  You may also use the Makefile provided to compile the
-program. Look at the `To build` and `Try` sections at the top of the README.md
-for each entry as well.  Keep in mind that C compilers often have bugs, or
-features which result the program failing to compile.  You may have to do some
-syntax changing as we did to get old programs to compile on strict ANSI C
-compilers.
+the compilation comments above each entry.  A simple `#define` (or `-D` at the
+compiler) or edit may be required due to differing semantics between operating
+systems. If you are able to successfully compile the program, experiment with it
+by giving it different arguments or input.  You may also use the Makefile
+provided to compile the program. Look at the `To build` and `Try` sections at
+the top of the README.md for each entry as well.  Keep in mind that C compilers
+often have bugs, or features which result the program failing to compile.  You
+may have to do some syntax changing as we did to get old programs to compile on
+strict ANSI C compilers.
 
 Last, read the judges' remarks/spoilers on the program.  Hints for `foo.c` are
 given in `README.md`.  Often they will contain suggested arguments or
-recommended data to use.
+recommended data to use. Authors also sometimes give spoilers.
 
 If you do gain some understanding of how a program works, go back to the source
 and reexamine it using some of the techniques outlined above.  See if you can
@@ -147,7 +154,7 @@ The following URL is the official archive of the winning entries:
 <https://www.ioccc.org/years.html>.
 
 
-Regarding the distribution of sources:
+## Regarding the distribution of sources:
 
 All contest results are in the public domain.  We do ask that you observe the
 following request:
@@ -157,7 +164,8 @@ doing the same.  If some of these files and/or contest entries are
 published in printed form, or if you use them in a business or classroom
 setting, please let us know.  We ask that you drop a line to the
 judges' email box.  See <https://www.ioccc.org/contact.html> for instructions on
-how to send us a message:
+how to send us a message.
+
 
 ## Some final things to remember:
 
@@ -169,8 +177,8 @@ after the judges examine all of the entries.
 The judges' hints assume that the program resides in a file with the same
 username as the author or `prog.c` (depending on the year).  Where there is more
 than one author, the first named author is used. If an author wins more than
-one entry per year there are different formats used but the most recent one is
-the first entry has 1 appended, the second has 2 etc.
+one entry _per year_ there are different formats used but the first entry has 1
+appended, the second has 2 etc. In some years it was `.1` and `.2` instead.
 
 Some C compilers are unable to compile some of these programs.  The judges tried
 to select programs that were widely portable and compilable, but did not always
@@ -209,4 +217,4 @@ Copyright (C) 2020,2023,2024 Landon Curt Noll. All Rights Reserved.
 This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
 If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
-(but does not require) if you were to [send us a note about your use](/contact.html).
+(but do not require) if you were to [send us a note about your use](/contact.html).
