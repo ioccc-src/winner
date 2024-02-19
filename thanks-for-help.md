@@ -3860,10 +3860,11 @@ does this for the few who might use Windows.
 ## <a name="2012_zeitak"></a>[2012/zeitak](/2012/zeitak/zeitak.c) ([README.md](/2012/zeitak/README.md]))
 
 [Cody](#cody) added the `make test` rule and the [test.sh](/2012/zeitak/test.sh) along
-with a number of files that will be correctly be flagged as incorrect (including
+with a number of files that will correctly be flagged as incorrect (including
 a text file to show that it's not that it parses C but rather just matching
-pairs though that should be obvious) and also some that are correct including
-1984/anonymous (as the author explicitly mentioned it).
+pairs though that's probably obvious) and also some that are correct including
+[1984/anonymous](/1984/anonymous/README.md) (as the author explicitly mentioned
+it).
 
 
 # <a name="2013"></a>2013
