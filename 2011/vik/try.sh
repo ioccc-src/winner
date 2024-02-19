@@ -17,13 +17,18 @@ make CC="$CC" all >/dev/null
 # clear screen after compilation so that only the entry is shown
 clear
 
-# fine mplayer
+# find mplayer
 MPLAYER="$(type -P mplayer)"
+# find perl
+PERL="$(type -P perl)"
 
 raw2wav()
 {
     if [[ "$#" != 2 ]]; then
 	echo "$0: raw2wav() expects two args, got: $#" 1>&2
+	return
+    elif [[ -z "$PERL" ]]; then
+	# silently return if perl not installed
 	return
     fi
 
@@ -40,10 +45,18 @@ raw2wav()
     echo 1>&2
 }
 
+if [[ -z "$MPLAYER" && -z "$PERL" ]]; then
+    echo "Neither mplayer(1) nor perl(1) installed. Please install one or" 1>&2
+    echo "both of these and try again." 1>&2
+    echo 1>&
+    exit 1
+fi
+
+# If we have mplayer we'll try playing the sounds directly. In either case,
+# if perl is installed, the alternate procedure will be run, creating WAV
+# files. If they do not have mplayer then if they have perl we will create WAV
+# files.
 if [[ -n "$MPLAYER" && -f "$MPLAYER" && -x "$MPLAYER" ]]; then
-    # If we have mplayer we'll try playing the sounds directly. If however it
-    # fails for some reason we will run the alternate procedure, creating WAV
-    # files.
     read -r -n 1 -p "Press any key to run: ./vik randowan.mod | $MPLAYER -demuxer rawaudio -: "
     echo 1>&2
     ./vik randowan.mod | mplayer -demuxer rawaudio -
