@@ -25,7 +25,7 @@ zeitak()
 	return
     fi
 
-    read -r -n 1 -p "Press any key to run show $1 (space = next page, q = quit): "
+    read -r -n 1 -p "Press any key to show $1 (space = next page, q = quit): "
     echo 1>&2
     less -rEXFK "$1"
     read -r -n 1 -p "Press any key to test $1 for nesting errors: "
@@ -60,5 +60,9 @@ zeitak incorrect.single.quote.c 10
 zeitak incorrect.1.quote.c 10
 
 zeitak incorrect.txt 10
+
+zeitak incorrect.java 10
+
+zeitak correct.java 3
 
 exit "$ERROR"

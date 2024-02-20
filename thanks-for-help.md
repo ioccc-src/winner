@@ -3859,12 +3859,18 @@ does this for the few who might use Windows.
 
 ## <a name="2012_zeitak"></a>[2012/zeitak](/2012/zeitak/zeitak.c) ([README.md](/2012/zeitak/README.md]))
 
-[Cody](#cody) added the `make test` rule and the [test.sh](/2012/zeitak/test.sh) along
-with a number of files that will correctly be flagged as incorrect (including
-a text file to show that it's not that it parses C but rather just matching
-pairs though that's probably obvious) and also some that are correct including
+[Cody](#cody) [test.sh](/2012/zeitak/test.sh) script and the `make test` rule
+that uses the script along with a number of files that will correctly be flagged
+as incorrect (including a text file and a java file, with a joke, to show that
+it's not that it parses C but rather just matching pairs though that's probably
+obvious) and some correctly nested files were also added including
 [1984/anonymous](/1984/anonymous/README.md) (as the author explicitly mentioned
-it).
+it) and a java file as well with another joke.
+
+A minor point is that the author noted that one should
+look at the program source with tab space of 4 characters so Cody added the
+command to do this in vim for those who use it, in the judges' remarks, to make
+it easier for those who do not know how, and to make it more obvious to try it.
 
 
 # <a name="2013"></a>2013
