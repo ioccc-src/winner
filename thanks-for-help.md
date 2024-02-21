@@ -2061,7 +2061,9 @@ added.
 
 ## <a name="1995_leo"></a>[1995/leo](/1995/leo/leo.c) ([README.md](/1995/leo/README.md]))
 
-At our change in how to deal with spoilers, [Cody](#cody) uudecoded the spoiler provided
+[Cody](#cody) added the [try.sh](/1995/leo/try.sh) script.
+
+At our change in how to deal with spoilers, Cody also uudecoded the spoiler provided
 by the author, putting it in [spoiler1.md](/1995/leo/spoiler1.md).
 
 

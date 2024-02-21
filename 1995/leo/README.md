@@ -5,6 +5,18 @@ make all
 ```
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: known bug - please help us fix
+```
+
+For more detailed information see [1995 leo in bugs.md](/bugs.md#1995-leo).
+
+
+
 ## To use:
 
 ```sh
@@ -17,19 +29,8 @@ See the author's information below on these details.
 ## Try:
 
 ```sh
-./leo 1 | cat - /dev/tty | gs -
-
-./leo 37 80 | cat - /dev/tty | gs -
+./try.sh
 ```
-
-If you don't have gs or an equivalent postscript viewer, try:
-
-```sh
-echo "" | ./leo 1 > foo.ps
-```
-
-and send foo.ps to your local postscript printer or open it in an appropriate
-application (e.g. GIMP).
 
 
 ## Judges' remarks:
