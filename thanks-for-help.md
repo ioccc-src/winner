@@ -4187,7 +4187,7 @@ kill it). This is done this way in case it jams (see README.md for details).
 
 [Cody](#cody) fixed the Makefile to compile this entry in modern systems. The problem was
 that the `CDEFINE` variable in the Makefile was missing `'`s: the `#define CC`
-is an actual string that is, in the Makefile, is `"${CC} -fPIC"`, which
+is an actual string that is, in the Makefile, `"${CC} -fPIC"`, which
 translates to whatever the compiler is followed by a space followed by `-fPIC`
 but without the `'`s it was incomplete and so would not compile. Cody didn't
 have a chance to really look at the compiler error.
