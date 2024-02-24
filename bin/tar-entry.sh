@@ -49,7 +49,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0 2024-02-13"
+export VERSION="1.0.1 2024-02-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -57,7 +57,7 @@ GIT_TOOL=$(type -P git)
 export GIT_TOOL
 if [[ -z "$GIT_TOOL" ]]; then
     echo "$0: FATAL: git tool is not installed or not in \$PATH" 1>&2
-    exit 210
+    exit 5
 fi
 "$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
 status="$?"
@@ -71,7 +71,7 @@ GTAR_TOOL=$(type -P gtar)
 export GTAR_TOOL
 if [[ -z "$GIT_TOOL" ]]; then
     echo "$0: FATAL: gtar (gnu tar) tool is not installed or not in \$PATH" 1>&2
-    exit 9
+    exit 8
 fi
 
 # set usage message
@@ -101,17 +101,15 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 Exit codes:
      0         all OK
-     1	       some file in the .entry.json manifest is missing and -W was not used or no files were found
+     1	       some internal tool exited non-zero
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is < 4.2
-     5	       YYYY/dir is not a entry directory
-     6	       bin/filelist.entry.json.awk is not a non-empty readable file
-     7	       error in trying to determine files used by the entry
-     8	       missing critical top level file
-     9	       gnu tar is missing or execution failed
- >= 10  < 210  ((not used))
- >= 210	       internal tool error
+     5	       some internal tool is not found or not an executable file
+     6	       problems found with or in the topdir or topdir/YYYY directory
+     7	       problems found with or in the entry topdir/YYYY/dir directory
+     8	       gnu tar is missing or execution failed or error in forming compressed tarball
+ >= 10         internal error
 
 $NAME version: $VERSION"
 
@@ -189,37 +187,28 @@ export REPO_NAME
 if [[ -z $TOPDIR ]]; then
     echo "$0: ERROR: cannot find top of git repo directory" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
-    exit 220
+    exit 6
 fi
 if [[ ! -e $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR does not exist: $TOPDIR" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
-    exit 221
+    exit 6
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR is not a directory: $TOPDIR" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
-    exit 222
+    exit 6
 fi
-
-# verify that we have an bin subdirectory
-#
-export BIN_PATH="$TOPDIR/bin"
-if [[ ! -d $BIN_PATH ]]; then
-    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
-    exit 223
-fi
-export BIN_DIR="bin"
 
 # cd to topdir
 #
 if [[ ! -e $TOPDIR ]]; then
     echo "$0: ERROR: cannot cd to non-existent path: $TOPDIR" 1>&2
-    exit 224
+    exit 6
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: cannot cd to a non-directory: $TOPDIR" 1>&2
-    exit 225
+    exit 6
 fi
 export CD_FAILED
 if [[ $V_FLAG -ge 5 ]]; then
@@ -228,63 +217,68 @@ fi
 cd "$TOPDIR" || CD_FAILED="true"
 if [[ -n $CD_FAILED ]]; then
     echo "$0: ERROR: cd $TOPDIR failed" 1>&2
-    exit 226
+    exit 6
 fi
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
-# verify that ENTRY_PATH is a entry directory
+# verify that we have an bin subdirectory
 #
-# ENTRY_PATH must be in YYYY/dir form
-# YYYY must be a directory
-# YYYY must be a writable directory
-# YYYY/.year must be a non-empty file
-# YYYY/dir must be a directory
-# YYYY/dir/.path must be a non-empty file
-# ENTRY_PATH must match the contents of YYYY/dir/.path
-# YYYY/dir/.entry.json must be a non-empty file
+export BIN_PATH="$TOPDIR/bin"
+if [[ ! -d $BIN_PATH ]]; then
+    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
+    exit 6
+fi
+export BIN_DIR="bin"
+
+# verify that ENTRY_PATH is a entry directory
 #
 if [[ ! -d $ENTRY_PATH ]]; then
     echo "$0: ERROR: arg is not a directory: $ENTRY_PATH" 1>&2
-    exit 5
+    exit 3
 fi
 if [[ ! -w $ENTRY_PATH ]]; then
     echo "$0: ERROR: arg is not a writable directory: $ENTRY_PATH" 1>&2
-    exit 5
+    exit 3
 fi
 export YEAR_DIR=${ENTRY_PATH%%/*}
 if [[ -z $YEAR_DIR ]]; then
     echo "$0: ERROR: arg not in YYYY/dir form: $ENTRY_PATH" 1>&2
-    exit 5
+    exit 3
 fi
 export ENTRY_DIR=${ENTRY_PATH#*/}
 if [[ -z $ENTRY_DIR ]]; then
     echo "$0: ERROR: arg: $ENTRY_PATH not in $YEAR_DIR/dir form: $ENTRY_PATH" 1>&2
-    exit 5
+    exit 3
 fi
 if [[ $ENTRY_DIR = */* ]]; then
     echo "$0: ERROR: dir from arg: $ENTRY_PATH contains a /: $ENTRY_DIR" 1>&2
-    exit 5
+    exit 3
 fi
 if [[ ! -d $YEAR_DIR ]]; then
     echo "$0: ERROR: YYYY from arg: $ENTRY_PATH is not a directory: $YEAR_DIR" 1>&2
-    exit 5
+    exit 3
 fi
 export ENTRY_ID="${YEAR_DIR}_${ENTRY_DIR}"
+export DOT_YEAR="$YEAR_DIR/.year"
+if [[ ! -s $DOT_YEAR ]]; then
+    echo "$0: ERROR: not a non-empty file: $DOT_YEAR" 1>&2
+    exit 6
+fi
 # Now that we have moved to topdir, form and verify YYYY_DIR is a writable directory
 export YYYY_DIR="$YEAR_DIR/$ENTRY_DIR"
 if [[ ! -e $YYYY_DIR ]]; then
     echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH does not exist: $YYYY_DIR" 1>&2
-    exit 5
+    exit 7
 fi
 if [[ ! -d $YYYY_DIR ]]; then
     echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH is not a directory: $YYYY_DIR" 1>&2
-    exit 5
+    exit 7
 fi
 if [[ ! -w $YYYY_DIR ]]; then
     echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH is not a writable directory: $YYYY_DIR" 1>&2
-    exit 5
+    exit 7
 fi
 export DOT_PATH="$YYYY_DIR/.path"
 if [[ ! -s $DOT_PATH ]]; then
@@ -319,19 +313,19 @@ export TARBALL="$YYYY_DIR/$ENTRY_ID.tar.bz2"
 export FILELIST_ENTRY_JSON_AWK="$BIN_DIR/filelist.entry.json.awk"
 if [[ ! -e $FILELIST_ENTRY_JSON_AWK ]]; then
     echo "$0: ERROR: filelist.entry.json.awk  does not exist: $FILELIST_ENTRY_JSON_AWK" 1>&2
-    exit 6
+    exit 5
 fi
 if [[ ! -f $FILELIST_ENTRY_JSON_AWK ]]; then
     echo "$0: ERROR: filelist.entry.json.awk  is not a file: $FILELIST_ENTRY_JSON_AWK" 1>&2
-    exit 6
+    exit 5
 fi
 if [[ ! -r $FILELIST_ENTRY_JSON_AWK ]]; then
     echo "$0: ERROR: filelist.entry.json.awk  is not a readable file: $FILELIST_ENTRY_JSON_AWK" 1>&2
-    exit 6
+    exit 5
 fi
 if [[ ! -s $FILELIST_ENTRY_JSON_AWK ]]; then
     echo "$0: ERROR: filelist.entry.json.awk  is not a not a non-empty readable file: $FILELIST_ENTRY_JSON_AWK" 1>&2
-    exit 6
+    exit 5
 fi
 
 # verify we have non-empty readable ioccc.css file
@@ -339,19 +333,19 @@ fi
 export IOCCC_CSS="ioccc.css"
 if [[ ! -e $IOCCC_CSS ]]; then
     echo "$0: ERROR: ioccc.css does not exist: $IOCCC_CSS" 1>&2
-    exit 8
+    exit 6
 fi
 if [[ ! -f $IOCCC_CSS ]]; then
     echo "$0: ERROR: ioccc.css is not a file: $IOCCC_CSS" 1>&2
-    exit 8
+    exit 6
 fi
 if [[ ! -r $IOCCC_CSS ]]; then
     echo "$0: ERROR: ioccc.css is not a readable file: $IOCCC_CSS" 1>&2
-    exit 8
+    exit 6
 fi
 if [[ ! -s $IOCCC_CSS ]]; then
     echo "$0: ERROR: ioccc.css is not a not a non-empty readable file: $IOCCC_CSS" 1>&2
-    exit 8
+    exit 6
 fi
 
 # verify we have non-empty readable ioccc.css file
@@ -359,19 +353,19 @@ fi
 export VAR_MK="var.mk"
 if [[ ! -e $VAR_MK ]]; then
     echo "$0: ERROR: var.mk does not exist: $VAR_MK" 1>&2
-    exit 8
+    exit 6
 fi
 if [[ ! -f $VAR_MK ]]; then
     echo "$0: ERROR: var.mk is not a file: $VAR_MK" 1>&2
-    exit 8
+    exit 6
 fi
 if [[ ! -r $VAR_MK ]]; then
     echo "$0: ERROR: var.mk is not a readable file: $VAR_MK" 1>&2
-    exit 8
+    exit 6
 fi
 if [[ ! -s $VAR_MK ]]; then
     echo "$0: ERROR: var.mk is not a not a non-empty readable file: $VAR_MK" 1>&2
-    exit 8
+    exit 6
 fi
 
 # parameter debugging
@@ -423,12 +417,12 @@ if [[ -z $NOOP ]]; then
     rm -f "$TMP_MANIFEST_LIST"
     if [[ -e $TMP_MANIFEST_LIST ]]; then
 	echo "$0: ERROR: cannot remove temporary file manifest list: $TMP_MANIFEST_LIST" 1>&2
-	exit 227
+	exit 10
     fi
     :> "$TMP_MANIFEST_LIST"
     if [[ ! -e $TMP_MANIFEST_LIST ]]; then
 	echo "$0: ERROR: cannot create temporary file manifest list: $TMP_MANIFEST_LIST" 1>&2
-	exit 228
+	exit 11
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary file manifest list is not used: $TMP_MANIFEST_LIST" 1>&2
@@ -445,12 +439,12 @@ if [[ -z $NOOP ]]; then
     rm -f "$TMP_TAR_LIST"
     if [[ -e $TMP_TAR_LIST ]]; then
 	echo "$0: ERROR: cannot remove temporary file tar list: $TMP_TAR_LIST" 1>&2
-	exit 231
+	exit 12
     fi
     :> "$TMP_TAR_LIST"
     if [[ ! -e $TMP_TAR_LIST ]]; then
 	echo "$0: ERROR: cannot create temporary file tar list: $TMP_TAR_LIST" 1>&2
-	exit 232
+	exit 13
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary file tar list is not used: $TMP_TAR_LIST" 1>&2
@@ -470,12 +464,12 @@ if [[ -z $NOOP ]]; then
     rm -f "$TMP_EXIT_CODE"
     if [[ -e $TMP_EXIT_CODE ]]; then
 	echo "$0: ERROR: cannot remove temporary exit code: $TMP_EXIT_CODE" 1>&2
-	exit 233
+	exit 14
     fi
     echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
     if [[ ! -e $TMP_EXIT_CODE ]]; then
 	echo "$0: ERROR: cannot create temporary exit code: $TMP_EXIT_CODE" 1>&2
-	exit 234
+	exit 15
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary exit code is not used: $TMP_EXIT_CODE" 1>&2
@@ -492,12 +486,12 @@ if [[ -z $NOOP ]]; then
     rm -f "$TMP_TARBALL"
     if [[ -e $TMP_TARBALL ]]; then
 	echo "$0: ERROR: cannot remove temporary tarball: $TMP_TARBALL" 1>&2
-	exit 231
+	exit 16
     fi
     :> "$TMP_TARBALL"
     if [[ ! -e $TMP_TARBALL ]]; then
 	echo "$0: ERROR: cannot create temporary tarball: $TMP_TARBALL" 1>&2
-	exit 232
+	exit 17
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary tarball is not used: $TMP_TARBALL" 1>&2
@@ -512,7 +506,7 @@ if [[ -z $NOOP ]]; then
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: awk -f $FILELIST_ENTRY_JSON_AWK $ENTRY_JSON > $TMP_MANIFEST_LIST failed, error: $status" 1>&2
-	exit 7
+	exit 1
     fi
     echo "$IOCCC_CSS" >> "$TMP_MANIFEST_LIST"
     echo "$VAR_MK" >> "$TMP_MANIFEST_LIST"
@@ -520,7 +514,7 @@ if [[ -z $NOOP ]]; then
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: sort -d -u $TMP_MANIFEST_LIST -o $TMP_MANIFEST_LIST failed, error: $status" 1>&2
-	exit 7
+	exit 1
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary file manifest list was not formed: $TMP_MANIFEST_LIST" 1>&2
@@ -563,7 +557,7 @@ fi
 EXIT_CODE=$(< "$TMP_EXIT_CODE")
 if [[ -z $EXIT_CODE ]]; then
     echo "$0: ERROR: temporary exit file is empty: $TMP_EXIT_CODE" 1>&2
-    exit 233
+    exit 18
 fi
 
 # form the tarball
@@ -592,7 +586,7 @@ if [[ -z $NOOP ]]; then
 		"--owner=501 --group=20 --numeric-owner --totals" \
 		"--pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime" \
 		"-jcvf $TMP_TARBALL < $TMP_TAR_LIST failed, error: $status" 1>&2
-	    EXIT_CODE=9 # exit 9
+	    EXIT_CODE=8 # exit 8
 	fi
 
     # case: form the tarball silently
@@ -609,7 +603,7 @@ if [[ -z $NOOP ]]; then
 		"--owner=501 --group=20 --numeric-owner" \
 		"--pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime" \
 		"-jcf $TMP_TARBALL < $TMP_TAR_LIST failed, error: $status" 1>&2
-	    EXIT_CODE=9 # exit 9
+	    EXIT_CODE=8 # exit 8
 	fi
     fi
 
@@ -617,7 +611,7 @@ if [[ -z $NOOP ]]; then
     #
     if [[ ! -s $TMP_TARBALL ]]; then
 	echo "$0: ERROR: tarball is missing os empty: $TMP_TARBALL" 1>&2
-	EXIT_CODE=9 # exit 9
+	EXIT_CODE=8 # exit 8
     fi
 
 # case: -n
@@ -632,7 +626,7 @@ fi
 EXIT_CODE=$(< "$TMP_EXIT_CODE")
 if [[ -z $EXIT_CODE ]]; then
     echo "$0: ERROR: temporary exit file has no contents: $TMP_EXIT_CODE" 1>&2
-    exit 234
+    exit 19
 fi
 
 # move the tarball in place only if different
@@ -662,13 +656,13 @@ if [[ -z $NOOP ]]; then
 	fi
 	if [[ status -ne 0 ]]; then
 	    echo "$0: ERROR: mv -f -- $TMP_TARBALL $TARBALL filed, error code: $status" 1>&2
-	    EXIT_CODE=9 # exit 9
+	    EXIT_CODE=8 # exit 8
 	elif [[ $V_FLAG -ge 1 ]]; then
 	    echo "$0: debug[1]: built replaced HTML file: $TARBALL" 1>&2
 	fi
 	if [[ ! -s $TARBALL ]]; then
 	    echo "$0: ERROR: not a non-empty index HTML file: $TARBALL" 1>&2
-	    EXIT_CODE=9 # exit 9
+	    EXIT_CODE=8 # exit 8
 	fi
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
@@ -677,7 +671,7 @@ fi
 EXIT_CODE=$(< "$TMP_EXIT_CODE")
 if [[ -z $EXIT_CODE ]]; then
     echo "$0: ERROR: temporary exit file has no contents: $TMP_EXIT_CODE" 1>&2
-    exit 234
+    exit 20
 fi
 
 # All Done!!! -- Jessica Noll, Age 2

@@ -56,7 +56,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4 2024-02-05"
+export VERSION="1.4.1 2024-02-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -65,7 +65,7 @@ GIT_TOOL=$(type -P git)
 export GIT_TOOL
 if [[ -z "$GIT_TOOL" ]]; then
     echo "$0: FATAL: git tool is not installed or not in \$PATH" 1>&2
-    exit 210
+    exit 5
 fi
 "$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
 status="$?"
@@ -77,7 +77,6 @@ PANDOC_TOOL=$(type -P pandoc)
 if [[ -z $PANDOC_TOOL ]]; then
     PANDOC_TOOL="/opt/homebrew/bin/pandoc"
 fi
-export PANDOC_WRAPPER="bin/pandoc_wapper.sh"
 unset PANDOC_OPTION
 declare -ag PANDOC_OPTION
 PANDOC_OPTION+=("-f")
@@ -121,10 +120,9 @@ Exit codes:
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is < 4.2
-     5         file.md file not found or not readable file
-     6         pandoc tool not found or not executable
- >= 10  < 210  ((not used))
- >= 210	       internal tool error
+     5	       some internal tool is not found or not an executable file
+     6	       problems found with or in the topdir or topdir/YYYY directory
+ >= 10         internal error
 
 $NAME version: $VERSION"
 
@@ -204,19 +202,19 @@ fi
 #
 if [[ ! -e $MARKDOWN_INPUT ]]; then
     echo "$0: ERROR: markdown input file does not exist: $MARKDOWN_INPUT" 1>&2
-    exit 5
+    exit 3
 fi
 if [[ ! -f $MARKDOWN_INPUT ]]; then
     echo "$0: ERROR: markdown input is not a file: $MARKDOWN_INPUT" 1>&2
-    exit 5
+    exit 3
 fi
 if [[ ! -r $MARKDOWN_INPUT ]]; then
     echo "$0: ERROR: markdown input is not a readable file: $MARKDOWN_INPUT" 1>&2
-    exit 5
+    exit 3
 fi
 if [[ ! -x $PANDOC_TOOL ]]; then
     echo "$0: ERROR: cannot find an executable pandoc tool: $PANDOC_TOOL" 1>&2
-    exit 6
+    exit 5
 fi
 
 # verify that we have a topdir directory
@@ -225,55 +223,28 @@ REPO_NAME=$(basename "$REPO_URL")
 if [[ -z $TOPDIR ]]; then
     echo "$0: ERROR: cannot find top of git repo directory" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
-    exit 211
+    exit 6
 fi
 if [[ ! -e $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR does not exist: $TOPDIR" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
-    exit 212
+    exit 6
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR is not a directory: $TOPDIR" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
-    exit 213
+    exit 6
 fi
-
-# verify that we have an author subdirectory
-#
-export AUTHOR_PATH="$TOPDIR/author"
-if [[ ! -d $AUTHOR_PATH ]]; then
-    echo "$0: ERROR: author is not a directory under topdir: $AUTHOR_PATH" 1>&2
-    exit 214
-fi
-export AUTHOR_DIR="author"
-
-# verify that we have an inc subdirectory
-#
-export INC_PATH="$TOPDIR/inc"
-if [[ ! -d $INC_PATH ]]; then
-    echo "$0: ERROR: inc is not a directory under topdir: $INC_PATH" 1>&2
-    exit 215
-fi
-export INC_DIR="inc"
-
-# verify that we have an bin subdirectory
-#
-export BIN_PATH="$TOPDIR/bin"
-if [[ ! -d $BIN_PATH ]]; then
-    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
-    exit 216
-fi
-export BIN_DIR="bin"
 
 # cd to topdir
 #
 if [[ ! -e $TOPDIR ]]; then
     echo "$0: ERROR: cannot cd to non-existent path: $TOPDIR" 1>&2
-    exit 217
+    exit 6
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: cannot cd to a non-directory: $TOPDIR" 1>&2
-    exit 218
+    exit 6
 fi
 export CD_FAILED
 if [[ $V_FLAG -ge 5 ]]; then
@@ -282,11 +253,38 @@ fi
 cd "$TOPDIR" || CD_FAILED="true"
 if [[ -n $CD_FAILED ]]; then
     echo "$0: ERROR: cd $TOPDIR failed" 1>&2
-    exit 219
+    exit 6
 fi
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
+
+# verify that we have an author subdirectory
+#
+export AUTHOR_PATH="$TOPDIR/author"
+if [[ ! -d $AUTHOR_PATH ]]; then
+    echo "$0: ERROR: author is not a directory under topdir: $AUTHOR_PATH" 1>&2
+    exit 6
+fi
+export AUTHOR_DIR="author"
+
+# verify that we have an inc subdirectory
+#
+export INC_PATH="$TOPDIR/inc"
+if [[ ! -d $INC_PATH ]]; then
+    echo "$0: ERROR: inc is not a directory under topdir: $INC_PATH" 1>&2
+    exit 6
+fi
+export INC_DIR="inc"
+
+# verify that we have an bin subdirectory
+#
+export BIN_PATH="$TOPDIR/bin"
+if [[ ! -d $BIN_PATH ]]; then
+    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
+    exit 6
+fi
+export BIN_DIR="bin"
 
 # parameter debugging
 #
@@ -297,7 +295,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: PANDOC_TOOL=$PANDOC_TOOL" 1>&2
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
-    echo "$0: debug[3]: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2

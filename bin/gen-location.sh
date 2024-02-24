@@ -49,7 +49,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0 2024-02-11"
+export VERSION="1.0.1 2024-02-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -57,7 +57,7 @@ GIT_TOOL=$(type -P git)
 export GIT_TOOL
 if [[ -z "$GIT_TOOL" ]]; then
     echo "$0: FATAL: git tool is not installed or not in \$PATH" 1>&2
-    exit 10
+    exit 5
 fi
 "$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
 status="$?"
@@ -119,16 +119,14 @@ NOTE: The '-v level' is passed as initial command line options to the 'markdown 
 
 Exit codes:
      0         all OK
-     1	       md2html.sh exited non-zero
+     1	       some internal tool exited non-zero
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is < 4.2
-     5	       md2html.sh and/or location is not an executable file
-     6	       problems found with or in the topdir directory
-     7	       problems found with or in the topdir/YYYY directory
-     8	       problems found with or in the topdir/YYYY/dir directory
- >= 10  < 210  ((not used))
- >= 210	       internal tool error
+     5	       some internal tool is not found or not an executable file
+     6	       problems found with or in the topdir or topdir/YYYY directory
+     7	       problems found with or in the entry topdir/YYYY/dir directory
+ >= 10         internal error
 
 $NAME version: $VERSION"
 
@@ -276,24 +274,6 @@ if [[ ! -d $TOPDIR ]]; then
     exit 6
 fi
 
-# verify that we have an author subdirectory
-#
-export AUTHOR_PATH="$TOPDIR/author"
-if [[ ! -d $AUTHOR_PATH ]]; then
-    echo "$0: ERROR: author is not a directory under topdir: $AUTHOR_PATH" 1>&2
-    exit 210
-fi
-export AUTHOR_DIR="author"
-
-# verify that we have an bin subdirectory
-#
-export BIN_PATH="$TOPDIR/bin"
-if [[ ! -d $BIN_PATH ]]; then
-    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
-    exit 211
-fi
-export BIN_DIR="bin"
-
 # cd to topdir
 #
 if [[ ! -e $TOPDIR ]]; then
@@ -316,6 +296,24 @@ fi
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
+
+# verify that we have an author subdirectory
+#
+export AUTHOR_PATH="$TOPDIR/author"
+if [[ ! -d $AUTHOR_PATH ]]; then
+    echo "$0: ERROR: author is not a directory under topdir: $AUTHOR_PATH" 1>&2
+    exit 6
+fi
+export AUTHOR_DIR="author"
+
+# verify that we have an bin subdirectory
+#
+export BIN_PATH="$TOPDIR/bin"
+if [[ ! -d $BIN_PATH ]]; then
+    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
+    exit 6
+fi
+export BIN_DIR="bin"
 
 # verify that the md2html tool is executable
 #
@@ -399,12 +397,12 @@ if [[ -z $NOOP ]]; then
     rm -f "$TMP_LOC_MD"
     if [[ -e $TMP_LOC_MD ]]; then
 	echo "$0: ERROR: cannot remove temporary location markdown file: $TMP_LOC_MD" 1>&2
-	exit 212
+	exit 10
     fi
     :> "$TMP_LOC_MD"
     if [[ ! -e $TMP_LOC_MD ]]; then
 	echo "$0: ERROR: cannot create temporary location markdown file: $TMP_LOC_MD" 1>&2
-	exit 213
+	exit 11
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary location markdown file is not used: $TMP_LOC_MD" 1>&2
@@ -433,7 +431,7 @@ fi
 	status="$?"
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: cannot determine location name for location ISO 3166 code: $LOCATION_CODE" 1>&2
-	    exit 214
+	    exit 12
 	fi
 
 	# found the number of authors at this location
@@ -444,7 +442,7 @@ fi
 		       sed -e 's/[[:space:]]*//')
 	if [[ -z $AUTHOR_COUNT || $AUTHOR_COUNT -le 0 ]]; then
 	    echo "$0: ERROR: author count was zero for location: $LOCATION_CODE" 1>&2
-	    exit 215
+	    exit 13
 	fi
 
 	# output markdown entry for this location

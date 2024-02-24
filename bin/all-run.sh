@@ -78,7 +78,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3 2024-02-11"
+export VERSION="1.3.1 2024-02-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -86,7 +86,7 @@ GIT_TOOL=$(type -P git)
 export GIT_TOOL
 if [[ -z "$GIT_TOOL" ]]; then
     echo "$0: FATAL: git tool is not installed or not in \$PATH" 1>&2
-    exit 10
+    exit 5
 fi
 "$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
 status="$?"
@@ -150,16 +150,14 @@ NOTE: Any '-D docroot/', '-t tagline', '-T md2html.sh', '-p tool', '-u repo_url'
 
 Exit codes:
      0         all OK
-     1	       some tool exited non-zero
+     1	       some internal tool exited non-zero
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is < 4.2
-     5	       tool and/or md2html.sh is not an executable file
-     6	       problems found with or in the topdir directory
-     7	       problems found with or in the topdir/YYYY directory
-     8	       problems found with or in the topdir/YYYY/dir directory
- >= 10 < 200   internal error
- >= 200	       ((not used))
+     5	       some internal tool is not found or not an executable file
+     6	       problems found with or in the topdir or topdir/YYYY directory
+     7	       problems found with or in the entry topdir/YYYY/dir directory
+ >= 10         internal error
 
 $NAME version: $VERSION"
 
@@ -419,19 +417,19 @@ for YYYY in $(< "$TOP_FILE"); do
     #
     if [[ ! -e $YYYY ]]; then
 	echo  "$0: ERROR: YYYY does not exist: $YYYY" 1>&2
-	EXIT_CODE="7"  # exit 7
+	EXIT_CODE="6"  # exit 6
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	continue
     fi
     if [[ ! -d $YYYY ]]; then
 	echo  "$0: ERROR: YYYY is not a directory: $YYYY" 1>&2
-	EXIT_CODE="7"  # exit 7
+	EXIT_CODE="6"  # exit 6
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	continue
     fi
     if [[ ! -r $YYYY ]]; then
 	echo  "$0: ERROR: YYYY is not an readable directory: $YYYY" 1>&2
-	EXIT_CODE="7"  # exit 7
+	EXIT_CODE="6"  # exit 6
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	continue
     fi
@@ -441,25 +439,25 @@ for YYYY in $(< "$TOP_FILE"); do
     export YEAR_FILE="$YYYY/.year"
     if [[ ! -e $YEAR_FILE ]]; then
 	echo  "$0: ERROR: YYYY/.year does not exist: $YEAR_FILE" 1>&2
-	EXIT_CODE="7"  # exit 7
+	EXIT_CODE="6"  # exit 6
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	continue
     fi
     if [[ ! -f $YEAR_FILE ]]; then
 	echo  "$0: ERROR: YYYY/.year is not a regular file: $YEAR_FILE" 1>&2
-	EXIT_CODE="7"  # exit 7
+	EXIT_CODE="6"  # exit 6
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	continue
     fi
     if [[ ! -r $YEAR_FILE ]]; then
 	echo  "$0: ERROR: YYYY/.year is not an readable file: $YEAR_FILE" 1>&2
-	EXIT_CODE="7"  # exit 7
+	EXIT_CODE="6"  # exit 6
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	continue
     fi
     if [[ ! -s $YEAR_FILE ]]; then
 	echo  "$0: ERROR: YYYY/.year is not a non-empty readable file: $YEAR_FILE" 1>&2
-	EXIT_CODE="7"  # exit 7
+	EXIT_CODE="6"  # exit 6
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	continue
     fi
@@ -479,33 +477,33 @@ for YYYY in $(< "$TOP_FILE"); do
 	#
 	if [[ ! -d $YYYY_DIR ]]; then
 	    echo "$0: ERROR: YYYY_DIR is not a directory: $YYYY_DIR" 1>&2
-	    EXIT_CODE="7"  # exit 7
+	    EXIT_CODE="6"  # exit 6
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
 	if [[ ! -w $YYYY_DIR ]]; then
 	    echo "$0: ERROR: YYYY_DIR is not a writable directory: $YYYY_DIR" 1>&2
-	    EXIT_CODE="7"  # exit 7
+	    EXIT_CODE="6"  # exit 6
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
 	export YEAR_DIR=${YYYY_DIR%%/*}
 	if [[ -z $YEAR_DIR ]]; then
 	    echo "$0: ERROR: YYYY_DIR not in YYYY/dir form: $YYYY_DIR" 1>&2
-	    EXIT_CODE="7"  # exit 7
+	    EXIT_CODE="6"  # exit 6
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
 	export ENTRY_DIR=${YYYY_DIR#*/}
 	if [[ -z $ENTRY_DIR ]]; then
 	    echo "$0: ERROR: YYYY_DIR not in $YEAR_DIR/dir form: $YYYY_DIR" 1>&2
-	    EXIT_CODE="7"  # exit 7
+	    EXIT_CODE="6"  # exit 6
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
 	if [[ $ENTRY_DIR = */* ]]; then
 	    echo "$0: ERROR: YYYY_DIR: $YYYY_DIR dir contains a /: $ENTRY_DIR" 1>&2
-	    EXIT_CODE="7"  # exit 7
+	    EXIT_CODE="6"  # exit 6
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
@@ -514,19 +512,19 @@ for YYYY in $(< "$TOP_FILE"); do
 	#
 	if [[ ! -e $YYYY_DIR ]]; then
 	    echo  "$0: ERROR: YYYY_DIR does not exist: $YYYY_DIR" 1>&2
-	    EXIT_CODE="8"  # exit 8
+	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
 	if [[ ! -d $YYYY_DIR ]]; then
 	    echo  "$0: ERROR: YYYY_DIR is not a directory: $YYYY_DIR" 1>&2
-	    EXIT_CODE="8"  # exit 8
+	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
 	if [[ ! -w $YYYY_DIR ]]; then
 	    echo  "$0: ERROR: YYYY_DIR is not an writable directory: $YYYY_DIR" 1>&2
-	    EXIT_CODE="8"  # exit 8
+	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
@@ -536,33 +534,33 @@ for YYYY in $(< "$TOP_FILE"); do
 	export DOT_PATH="$YYYY_DIR/.path"
 	if [[ ! -s $DOT_PATH ]]; then
 	    echo "$0: ERROR: not a non-empty file: $DOT_PATH" 1>&2
-	    EXIT_CODE="8"  # exit 8
+	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
 	DOT_PATH_CONTENT=$(< "$DOT_PATH")
 	if [[ $YYYY_DIR != "$DOT_PATH_CONTENT" ]]; then
 	    echo "$0: ERROR: arg: $YYYY_DIR does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
-	    EXIT_CODE="8"  # exit 8
+	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
 	export ENTRY_JSON="$YYYY_DIR/.entry.json"
 	if [[ ! -e $ENTRY_JSON ]]; then
 	    echo "$0: ERROR: .entry.json does not exist: $ENTRY_JSON" 1>&2
-	    EXIT_CODE="8"  # exit 8
+	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
 	if [[ ! -f $ENTRY_JSON ]]; then
 	    echo "$0: ERROR: .entry.json is not a file: $ENTRY_JSON" 1>&2
-	    EXIT_CODE="8"  # exit 8
+	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
 	if [[ ! -r $ENTRY_JSON ]]; then
 	    echo "$0: ERROR: .entry.json is not a readable file: $ENTRY_JSON" 1>&2
-	    EXIT_CODE="8"  # exit 8
+	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi

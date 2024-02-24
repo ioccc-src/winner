@@ -56,7 +56,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0 2024-02-12"
+export VERSION="1.0.1 2024-02-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -64,7 +64,7 @@ GIT_TOOL=$(type -P git)
 export GIT_TOOL
 if [[ -z "$GIT_TOOL" ]]; then
     echo "$0: FATAL: git tool is not installed or not in \$PATH" 1>&2
-    exit 210
+    exit 5
 fi
 "$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
 status="$?"
@@ -107,15 +107,14 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 
 Exit codes:
      0         all OK
+     1	       some internal tool exited non-zero
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is < 4.2
-     5	       YYYY is not a year directory
-     6	       subst.year-navbar.awk tool or pandoc wrapper not found
-     7	       cannot find a non-empty or read .year file
-     8	       entry under year YYYY is not in proper form
- >= 10  < 210  ((not used))
- >= 210	       internal tool error
+     5	       some internal tool is not found or not an executable file
+     6	       problems found with or in the topdir or topdir/YYYY directory
+     7	       problems found with or in the entry topdir/YYYY/dir directory
+ >= 10         internal error
 
 $NAME version: $VERSION"
 
@@ -328,28 +327,28 @@ export REPO_NAME
 if [[ -z $TOPDIR ]]; then
     echo "$0: ERROR: cannot find top of git repo directory" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
-    exit 211
+    exit 6
 fi
 if [[ ! -e $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR does not exist: $TOPDIR" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
-    exit 212
+    exit 6
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR is not a directory: $TOPDIR" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
-    exit 213
+    exit 6
 fi
 
 # cd to topdir
 #
 if [[ ! -e $TOPDIR ]]; then
     echo "$0: ERROR: cannot cd to non-existent path: $TOPDIR" 1>&2
-    exit 217
+    exit 6
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: cannot cd to a non-directory: $TOPDIR" 1>&2
-    exit 218
+    exit 6
 fi
 export CD_FAILED
 if [[ $V_FLAG -ge 5 ]]; then
@@ -358,7 +357,7 @@ fi
 cd "$TOPDIR" || CD_FAILED="true"
 if [[ -n $CD_FAILED ]]; then
     echo "$0: ERROR: cd $TOPDIR failed" 1>&2
-    exit 219
+    exit 6
 fi
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
@@ -368,26 +367,26 @@ fi
 #
 if [[ ! -e $PANDOC_WRAPPER ]]; then
     echo "$0: ERROR: pandoc wrapper tool does not exist: $PANDOC_WRAPPER" 1>&2
-    exit 6
+    exit 5
 fi
 if [[ ! -f $PANDOC_WRAPPER ]]; then
     echo "$0: ERROR: pandoc wrapper tool is not a file: $PANDOC_WRAPPER" 1>&2
-    exit 6
+    exit 5
 fi
 if [[ ! -x $PANDOC_WRAPPER ]]; then
     echo "$0: ERROR: pandoc wrapper tool is not an executable file: $PANDOC_WRAPPER" 1>&2
-    exit 6
+    exit 5
 fi
 
 # verify that YYYY is a entry directory
 #
 if [[ ! -d $YYYY ]]; then
     echo "$0: ERROR: arg is not a directory: $YYYY" 1>&2
-    exit 5
+    exit 6
 fi
 if [[ ! -r $YYYY ]]; then
     echo "$0: ERROR: arg is not a writable directory: $YYYY" 1>&2
-    exit 5
+    exit 6
 fi
 
 # verify we have a non-empty readable .top file
@@ -415,19 +414,19 @@ fi
 export YEAR_FILE="$YYYY/.year"
 if [[ ! -e $YEAR_FILE ]]; then
     echo  "$0: ERROR: YYYY/.year does not exist: $YEAR_FILE" 1>&2
-    exit 7
+    exit 6
 fi
 if [[ ! -f $YEAR_FILE ]]; then
     echo  "$0: ERROR: YYYY/.year is not a regular file: $YEAR_FILE" 1>&2
-    exit 7
+    exit 6
 fi
 if [[ ! -r $YEAR_FILE ]]; then
     echo  "$0: ERROR: YYYY/.year is not an readable file: $YEAR_FILE" 1>&2
-    exit 7
+    exit 6
 fi
 if [[ ! -s $YEAR_FILE ]]; then
     echo  "$0: ERROR: YYYY/.year is not a non-empty readable file: $YEAR_FILE" 1>&2
-    exit 7
+    exit 6
 fi
 
 # determine The N-th IOCCC string
@@ -435,13 +434,13 @@ fi
 LINE_NUM=$(sed -n "/$YYYY/=" "$TOP_FILE" | head -1)
 if [[ -z $LINE_NUM ]]; then
     echo  "$0: ERROR: cannot determine line number in $TOP_FILE for year: $YYYY" 1>&2
-    exit 220
+    exit 10
 fi
 ORDINAL=$(output_ordinal "$LINE_NUM")
 export ORDINAL
 if [[ -z $ORDINAL ]]; then
     echo  "$0: ERROR: cannot determine ordinal for: $LINE_NUM" 1>&2
-    exit 221
+    exit 11
 fi
 
 # parameter debugging
@@ -486,12 +485,12 @@ if [[ -z $NOOP ]]; then
     rm -f "$TMP_FILE"
     if [[ -e $TMP_FILE ]]; then
 	echo "$0: ERROR: cannot remove temporary markdown file: $TMP_FILE" 1>&2
-	exit 227
+	exit 12
     fi
     :> "$TMP_FILE"
     if [[ ! -e $TMP_FILE ]]; then
 	echo "$0: ERROR: cannot create temporary markdown file: $TMP_FILE" 1>&2
-	exit 228
+	exit 13
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary markdown file is not used: $TMP_FILE" 1>&2
@@ -526,42 +525,31 @@ for YYYY_DIR in $(< "$YEAR_FILE"); do
 
     # parse YYYY_DIR
     #
+    if [[ ! -e $YYYY_DIR ]]; then
+	echo  "$0: ERROR: YYYY_DIR does not exist: $YYYY_DIR" 1>&2
+	exit 7
+    fi
     if [[ ! -d $YYYY_DIR ]]; then
 	echo "$0: ERROR: YYYY_DIR is not a directory: $YYYY_DIR" 1>&2
-	exit 8
+	exit 7
     fi
     if [[ ! -w $YYYY_DIR ]]; then
 	echo "$0: ERROR: YYYY_DIR is not a writable directory: $YYYY_DIR" 1>&2
-	exit 8
+	exit 7
     fi
     export YEAR_DIR=${YYYY_DIR%%/*}
     if [[ -z $YEAR_DIR ]]; then
 	echo "$0: ERROR: YYYY_DIR not in YYYY/dir form: $YYYY_DIR" 1>&2
-	exit 8
+	exit 7
     fi
     export ENTRY_DIR=${YYYY_DIR#*/}
     if [[ -z $ENTRY_DIR ]]; then
 	echo "$0: ERROR: YYYY_DIR not in $YEAR_DIR/dir form: $YYYY_DIR" 1>&2
-	exit 8
+	exit 7
     fi
     if [[ $ENTRY_DIR = */* ]]; then
 	echo "$0: ERROR: YYYY_DIR: $YYYY_DIR dir contains a /: $ENTRY_DIR" 1>&2
-	exit 8
-    fi
-
-    # verify that YYYY_DIR is a writable directory
-    #
-    if [[ ! -e $YYYY_DIR ]]; then
-	echo  "$0: ERROR: YYYY_DIR does not exist: $YYYY_DIR" 1>&2
-	exit 8
-    fi
-    if [[ ! -d $YYYY_DIR ]]; then
-	echo  "$0: ERROR: YYYY_DIR is not a directory: $YYYY_DIR" 1>&2
-	exit 8
-    fi
-    if [[ ! -w $YYYY_DIR ]]; then
-	echo  "$0: ERROR: YYYY_DIR is not an writable directory: $YYYY_DIR" 1>&2
-	exit 8
+	exit 7
     fi
 
     # verify YYYY/dir/.path
@@ -569,25 +557,25 @@ for YYYY_DIR in $(< "$YEAR_FILE"); do
     export DOT_PATH="$YYYY_DIR/.path"
     if [[ ! -s $DOT_PATH ]]; then
 	echo "$0: ERROR: not a non-empty file: $DOT_PATH" 1>&2
-	exit 8
+	exit 7
     fi
     DOT_PATH_CONTENT=$(< "$DOT_PATH")
     if [[ $YYYY_DIR != "$DOT_PATH_CONTENT" ]]; then
 	echo "$0: ERROR: arg: $YYYY_DIR does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
-	exit 8
+	exit 7
     fi
     export ENTRY_JSON="$YYYY_DIR/.entry.json"
     if [[ ! -e $ENTRY_JSON ]]; then
 	echo "$0: ERROR: .entry.json does not exist: $ENTRY_JSON" 1>&2
-	exit 8
+	exit 7
     fi
     if [[ ! -f $ENTRY_JSON ]]; then
 	echo "$0: ERROR: .entry.json is not a file: $ENTRY_JSON" 1>&2
-	exit 8
+	exit 7
     fi
     if [[ ! -r $ENTRY_JSON ]]; then
 	echo "$0: ERROR: .entry.json is not a readable file: $ENTRY_JSON" 1>&2
-	exit 8
+	exit 7
     fi
 
     # determine the award for this entry
@@ -595,7 +583,7 @@ for YYYY_DIR in $(< "$YEAR_FILE"); do
     AWARD=$(output_award "$ENTRY_JSON")
     if [[ -z $AWARD ]]; then
 	echo "$0: ERROR: cannot find award in .entry.json: $ENTRY_JSON" 1>&2
-	exit 8
+	exit 7
     fi
 
     # output markdown for this entry
@@ -637,7 +625,7 @@ if [[ -z $NOOP ]]; then
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: pandoc failed, error: $status" 1>&2
-	exit 231
+	exit 1
     fi
     echo
     echo "<!-- END: next line ends content generated by: bin/$NAME -->"

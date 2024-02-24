@@ -107,7 +107,7 @@ shopt -s lastpipe	# run last command of a pipeline not executed in the backgroun
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0 2024-02-05"
+export VERSION="1.0.1 2024-02-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -115,7 +115,7 @@ GIT_TOOL=$(type -P git)
 export GIT_TOOL
 if [[ -z "$GIT_TOOL" ]]; then
     echo "$0: FATAL: git tool is not installed or not in \$PATH" 1>&2
-    exit 10
+    exit 4
 fi
 "$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
 status="$?"
@@ -202,17 +202,16 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 Exit codes:
      0	       all OK
-     1	       cannot read input.md
      2	       -h and help string printed or -V and version string printed
      3	       command line error
      4	       bash version is < 4.2
-     5	       cannot write output.html
-     6	       tool not found or not executable (before, pandoc wrapper, after, output tools)
-     7	       HTML phase file not found or not readable
-     8	       error in reading inc/md2html.cfg
- >= 10  < 200  internal error
- >= 200	< 209  error generated via inc/md2html.cfg
- >= 210	       internal tool error
+     5	       some internal tool is not found or not an executable file
+     6         problems found with or in the topdir or topdir/YYYY directory
+     7         problems found with or in the entry topdir/YYYY/dir directory
+     8	       HTML phase file not found or not readable
+ >= 10  < 39   internal error
+ >= 40  < 200  HTML phase error
+ >= 200	       error generated via -e exit_code, or via inc/md2html.cfg, or awk script error
 
 $NAME version: $VERSION"
 
@@ -281,7 +280,7 @@ function global_variable_setup
     export GIT_TOOL
     if [[ -z "$GIT_TOOL" ]]; then
 	echo "$0: FATAL: git tool is not installed or not in PATH" 1>&2
-	exit 10
+	exit 5
     fi
     "$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
     status="$?"
@@ -661,7 +660,7 @@ function debug_parameters
     #
     if [[ $# -ne 2 ]]; then
 	echo "$0: ERROR: debug_parameters requires 2 args, found: $#" 1>&2
-	exit 11
+	exit 10
     fi
     DEBUG_LEVEL="$1"
     DBG_PREFIX="$2"
@@ -1057,17 +1056,40 @@ export REPO_NAME
 if [[ -z $TOPDIR ]]; then
     echo "$0: ERROR: cannot find top of git repo directory" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
-    exit 13
+    exit 6
 fi
 if [[ ! -e $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR does not exist: $TOPDIR" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
-    exit 14
+    exit 6
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR is not a directory: $TOPDIR" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
-    exit 15
+    exit 6
+fi
+
+# cd to topdir
+#
+if [[ ! -e $TOPDIR ]]; then
+    echo "$0: ERROR: cannot cd to non-existent path: $TOPDIR" 1>&2
+    exit 6
+fi
+if [[ ! -d $TOPDIR ]]; then
+    echo "$0: ERROR: cannot cd to a non-directory: $TOPDIR" 1>&2
+    exit 6
+fi
+export CD_FAILED
+if [[ $V_FLAG -ge 5 ]]; then
+    echo "$0: debug[5]: about to: cd $TOPDIR" 1>&2
+fi
+cd "$TOPDIR" || CD_FAILED="true"
+if [[ -n $CD_FAILED ]]; then
+    echo "$0: ERROR: cd $TOPDIR failed" 1>&2
+    exit 6
+fi
+if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
 # verify that we have a inc subdirectory
@@ -1075,7 +1097,7 @@ fi
 export INC_PATH="$TOPDIR/inc"
 if [[ ! -d $INC_PATH ]]; then
     echo "$0: ERROR: inc is not a directory under topdir: $INC_PATH" 1>&2
-    exit 16
+    exit 6
 fi
 export INC_DIR="inc"
 
@@ -1084,15 +1106,15 @@ export INC_DIR="inc"
 export TOP="$TOPDIR/.top"
 if [[ ! -e $TOP ]]; then
     echo "$0: ERROR: topdir/.top does not exist: $TOP" 1>&2
-    exit 17
+    exit 6
 fi
 if [[ ! -f $TOP ]]; then
     echo "$0: ERROR: topdir/.top is not a file: $TOP" 1>&2
-    exit 18
+    exit 6
 fi
 if [[ ! -r $TOP ]]; then
     echo "$0: ERROR: topdir/.top is not a readable file: $TOP" 1>&2
-    exit 19
+    exit 6
 fi
 
 # verify we have a readable md2html.cfg file
@@ -1102,38 +1124,15 @@ if [[ -z $MD2HTML_CFG ]]; then
 fi
 if [[ ! -e $MD2HTML_CFG ]]; then
     echo "$0: ERROR: md2html.cfg does not exist: $MD2HTML_CFG" 1>&2
-    exit 20
+    exit 5
 fi
 if [[ ! -f $MD2HTML_CFG ]]; then
     echo "$0: ERROR: md2html.cfg is not a file: $MD2HTML_CFG" 1>&2
-    exit 21
+    exit 5
 fi
 if [[ ! -r $MD2HTML_CFG ]]; then
     echo "$0: ERROR: md2html.cfg is not a readable file: $MD2HTML_CFG" 1>&2
-    exit 22
-fi
-
-# cd to topdir
-#
-if [[ ! -e $TOPDIR ]]; then
-    echo "$0: ERROR: cannot cd to non-existent path: $TOPDIR" 1>&2
-    exit 23
-fi
-if [[ ! -d $TOPDIR ]]; then
-    echo "$0: ERROR: cannot cd to a non-directory: $TOPDIR" 1>&2
-    exit 24
-fi
-export CD_FAILED
-if [[ $V_FLAG -ge 5 ]]; then
-    echo "$0: debug[5]: about to: cd $TOPDIR" 1>&2
-fi
-cd "$TOPDIR" || CD_FAILED="true"
-if [[ -n $CD_FAILED ]]; then
-    echo "$0: ERROR: cd $TOPDIR failed" 1>&2
-    exit 25
-fi
-if [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
+    exit 5
 fi
 
 # new parameter debugging
@@ -1171,15 +1170,15 @@ for n in "${!OUTPUT_TOOL[@]}"; do
     VALUE="${OUTPUT_TOOL[$n]}"
     if [[ ! -e "$VALUE" ]]; then
 	echo "$0: ERROR: phase ${GETOPT_PHASE} -o output tool not found: $VALUE" 1>&2
-	exit 6
+	exit 5
     fi
     if [[ ! -f "$VALUE" ]]; then
 	echo "$0: ERROR: phase ${GETOPT_PHASE} -o output tool not a file: $VALUE" 1>&2
-	exit 6
+	exit 5
     fi
     if [[ ! -x "$VALUE" ]]; then
 	echo "$0: ERROR: phase ${GETOPT_PHASE} -o output tool not an executable file: $VALUE" 1>&2
-	exit 6
+	exit 5
     fi
 done
 
@@ -1321,15 +1320,15 @@ for n in "${!OUTPUT_TOOL[@]}"; do
     VALUE="${OUTPUT_TOOL[$n]}"
     if [[ ! -e "$VALUE" ]]; then
 	echo "$0: ERROR: phase ${GETOPT_PHASE} -o output tool not found: $VALUE" 1>&2
-	exit 6
+	exit 5
     fi
     if [[ ! -f "$VALUE" ]]; then
 	echo "$0: ERROR: phase ${GETOPT_PHASE} -o output tool not a file: $VALUE" 1>&2
-	exit 6
+	exit 5
     fi
     if [[ ! -x "$VALUE" ]]; then
 	echo "$0: ERROR: phase ${GETOPT_PHASE} -o output tool not an executable file: $VALUE" 1>&2
-	exit 6
+	exit 5
     fi
 done
 
@@ -1429,15 +1428,15 @@ for n in "${PHASE_NAME[@]}"; do
 	fi
 	if [[ ! -e "$HTML_PHASE_FILE" ]]; then
 	    echo "$0: ERROR: HTML phase $n file not found: $HTML_PHASE_FILE" 1>&2
-	    exit 7
+	    exit 8
 	fi
 	if [[ ! -f "$HTML_PHASE_FILE" ]]; then
 	    echo "$0: ERROR: HTML phase $n not a file: $HTML_PHASE_FILE" 1>&2
-	    exit 7
+	    exit 8
 	fi
 	if [[ ! -r "$HTML_PHASE_FILE" ]]; then
 	    echo "$0: ERROR: HTML phase $n not a readable file: $HTML_PHASE_FILE" 1>&2
-	    exit 7
+	    exit 8
 	fi
     else
 	if [[ $V_FLAG -ge 9 ]]; then
@@ -1456,15 +1455,15 @@ if [[ -n $BEFORE_TOOL ]]; then
     fi
     if [[ ! -e "$BEFORE_TOOL" ]]; then
 	echo "$0: ERROR: -b before tool not found: $BEFORE_TOOL" 1>&2
-	exit 6
+	exit 5
     fi
     if [[ ! -f "$BEFORE_TOOL" ]]; then
 	echo "$0: ERROR: -b before tool not a file: $BEFORE_TOOL" 1>&2
-	exit 6
+	exit 5
     fi
     if [[ ! -x "$BEFORE_TOOL" ]]; then
 	echo "$0: ERROR: -b before tool not an executable file: $BEFORE_TOOL" 1>&2
-	exit 6
+	exit 5
     fi
 fi
 
@@ -1478,15 +1477,15 @@ if [[ -n $PANDOC_WRAPPER ]]; then
     fi
     if [[ ! -e "$PANDOC_WRAPPER" ]]; then
 	echo "$0: ERROR: -p pandoc wrapper tool not found: $PANDOC_WRAPPER" 1>&2
-	exit 6
+	exit 5
     fi
     if [[ ! -f "$PANDOC_WRAPPER" ]]; then
 	echo "$0: ERROR: -p pandoc wrapper tool not a file: $PANDOC_WRAPPER" 1>&2
-	exit 6
+	exit 5
     fi
     if [[ ! -x "$PANDOC_WRAPPER" ]]; then
 	echo "$0: ERROR: -p pandoc wrapper tool not an executable file: $PANDOC_WRAPPER" 1>&2
-	exit 6
+	exit 5
     fi
 fi
 
@@ -1500,15 +1499,15 @@ if [[ -n $AFTER_TOOL ]]; then
     fi
     if [[ ! -e "$AFTER_TOOL" ]]; then
 	echo "$0: ERROR: -a after tool not found: $AFTER_TOOL" 1>&2
-	exit 6
+	exit 5
     fi
     if [[ ! -f "$AFTER_TOOL" ]]; then
 	echo "$0: ERROR: -a after tool not a file: $AFTER_TOOL" 1>&2
-	exit 6
+	exit 5
     fi
     if [[ ! -x "$AFTER_TOOL" ]]; then
 	echo "$0: ERROR: -a after tool not an executable file: $AFTER_TOOL" 1>&2
-	exit 6
+	exit 5
     fi
 fi
 
@@ -1547,12 +1546,12 @@ if [[ -z $NOOP ]]; then
     rm -f "$TMP_SED_SCRIPT"
     if [[ -e $TMP_SED_SCRIPT ]]; then
 	echo "$0: ERROR: cannot remove temporary sed script: $TMP_SED_SCRIPT" 1>&2
-	exit 27
+	exit 14
     fi
     :> "$TMP_SED_SCRIPT"
     if [[ ! -e $TMP_SED_SCRIPT ]]; then
 	echo "$0: ERROR: cannot create temporary sed script: $TMP_SED_SCRIPT" 1>&2
-	exit 28
+	exit 15
     fi
 
     # load the sed script with sed commands from any "-s token=value"
@@ -1590,12 +1589,12 @@ if [[ -z $NOOP ]]; then
     rm -f "$TMP_PHASE"
     if [[ -e $TMP_PHASE ]]; then
 	echo "$0: ERROR: cannot remove temporary HTML file: $TMP_PHASE" 1>&2
-	exit 29
+	exit 15
     fi
     :> "$TMP_PHASE"
     if [[ ! -e $TMP_PHASE ]]; then
 	echo "$0: ERROR: cannot create temporary HTML file: $TMP_PHASE" 1>&2
-	exit 30
+	exit 17
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary HTML file is not formed: $TMP_PHASE" 1>&2
@@ -1617,12 +1616,12 @@ if [[ -z $NOOP ]]; then
     rm -f "$TMP_INDEX_HTML"
     if [[ -e $TMP_INDEX_HTML ]]; then
 	echo "$0: ERROR: cannot remove temporary index HTML file: $TMP_INDEX_HTML" 1>&2
-	exit 31
+	exit 18
     fi
     :> "$TMP_INDEX_HTML"
     if [[ ! -e $TMP_INDEX_HTML ]]; then
 	echo "$0: ERROR: cannot create temporary index HTML file: $TMP_PHASE" 1>&2
-	exit 32
+	exit 19
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary index HTML file is not formed: $TMP_INDEX_HTML" 1>&2
@@ -1639,12 +1638,12 @@ if [[ $INPUT_MD == - ]]; then
     rm -f "$TMP_INPUT_MD"
     if [[ -e $TMP_INPUT_MD ]]; then
 	echo "$0: ERROR: cannot remove temporary stdin file: $TMP_INPUT_MD" 1>&2
-	exit 33
+	exit 20
     fi
     :> "$TMP_INPUT_MD"
     if [[ ! -e $TMP_INPUT_MD ]]; then
 	echo "$0: ERROR: cannot create temporary stdin file: $TMP_INPUT_MD" 1>&2
-	exit 34
+	exit 21
     fi
 
     # capture standard input into the temporary stdin file
@@ -1656,7 +1655,7 @@ if [[ $INPUT_MD == - ]]; then
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: cat into stdin file: $TMP_INPUT_MD failed, error code: $status" 1>&2
-	exit 35
+	exit 22
     fi
 
     # replace 'input.md' of - with temporary stdin file

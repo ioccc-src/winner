@@ -58,7 +58,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0 2024-02-11"
+export VERSION="1.0.1 2024-02-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -66,7 +66,7 @@ GIT_TOOL=$(type -P git)
 export GIT_TOOL
 if [[ -z "$GIT_TOOL" ]]; then
     echo "$0: FATAL: git tool is not installed or not in \$PATH" 1>&2
-    exit 210
+    exit 5
 fi
 "$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
 status="$?"
@@ -106,15 +106,14 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 
 Exit codes:
      0         all OK
-     1	       pandoc exited non-zero
+     1	       some internal tool exited non-zero
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is < 4.2
-     5	       YYYY is not a year directory
-     6	       subst.year-navbar.awk tool not found
-     7	       cannot find important information about the author or winning entry
- >= 10  < 210  ((not used))
- >= 210	       internal tool error
+     5	       some internal tool is not found or not an executable file
+     6	       problems found with or in the topdir or topdir/YYYY directory
+     7	       problems found with or in the entry topdir/YYYY/dir directory
+ >= 10         internal error
 
 $NAME version: $VERSION"
 
@@ -269,17 +268,17 @@ export REPO_NAME
 if [[ -z $TOPDIR ]]; then
     echo "$0: ERROR: cannot find top of git repo directory" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
-    exit 211
+    exit 6
 fi
 if [[ ! -e $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR does not exist: $TOPDIR" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
-    exit 212
+    exit 6
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR is not a directory: $TOPDIR" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
-    exit 213
+    exit 6
 fi
 
 # verify that we have an author subdirectory
@@ -287,7 +286,7 @@ fi
 export AUTHOR_PATH="$TOPDIR/author"
 if [[ ! -d $AUTHOR_PATH ]]; then
     echo "$0: ERROR: author is not a directory under topdir: $AUTHOR_PATH" 1>&2
-    exit 214
+    exit 6
 fi
 export AUTHOR_DIR="author"
 
@@ -296,7 +295,7 @@ export AUTHOR_DIR="author"
 export INC_PATH="$TOPDIR/inc"
 if [[ ! -d $INC_PATH ]]; then
     echo "$0: ERROR: inc is not a directory under topdir: $INC_PATH" 1>&2
-    exit 215
+    exit 6
 fi
 export INC_DIR="inc"
 
@@ -305,7 +304,7 @@ export INC_DIR="inc"
 export BIN_PATH="$TOPDIR/bin"
 if [[ ! -d $BIN_PATH ]]; then
     echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
-    exit 216
+    exit 6
 fi
 export BIN_DIR="bin"
 
@@ -313,11 +312,11 @@ export BIN_DIR="bin"
 #
 if [[ ! -e $TOPDIR ]]; then
     echo "$0: ERROR: cannot cd to non-existent path: $TOPDIR" 1>&2
-    exit 217
+    exit 6
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: cannot cd to a non-directory: $TOPDIR" 1>&2
-    exit 218
+    exit 6
 fi
 export CD_FAILED
 if [[ $V_FLAG -ge 5 ]]; then
@@ -326,7 +325,7 @@ fi
 cd "$TOPDIR" || CD_FAILED="true"
 if [[ -n $CD_FAILED ]]; then
     echo "$0: ERROR: cd $TOPDIR failed" 1>&2
-    exit 219
+    exit 6
 fi
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
@@ -334,27 +333,18 @@ fi
 
 # verify that YEAR_ARG is a entry directory
 #
-# YEAR_ARG must be in YYYY/dir form
-# YYYY must be a directory
-# YYYY must be a writable directory
-# YYYY/.year must be a non-empty file
-# YYYY/dir must be a directory
-# YYYY/dir/.path must be a non-empty file
-# YEAR_ARG must match the contents of YYYY/dir/.path
-# YYYY/dir/.entry.json must be a non-empty file
-#
 if [[ ! -d $YEAR_ARG ]]; then
     echo "$0: ERROR: arg is not a directory: $YEAR_ARG" 1>&2
-    exit 5
+    exit 3
 fi
 if [[ ! -w $YEAR_ARG ]]; then
     echo "$0: ERROR: arg is not a writable directory: $YEAR_ARG" 1>&2
-    exit 5
+    exit 3
 fi
 export YEAR_DIR=${YEAR_ARG%%/*}
 if [[ -z $YEAR_DIR ]]; then
     echo "$0: ERROR: arg not in YYYY/dir form: $YEAR_ARG" 1>&2
-    exit 5
+    exit 3
 fi
 
 # verify we have a non-empty readable .top file
@@ -382,15 +372,15 @@ fi
 export YEAR_NAVBAR_AWK="$BIN_DIR/subst.year-navbar.awk"
 if [[ ! -e $YEAR_NAVBAR_AWK ]]; then
     echo "$0: ERROR: bin/subst.year-navbar.awk does not exist: $YEAR_NAVBAR_AWK" 1>&2
-    exit 6
+    exit 5
 fi
 if [[ ! -f $YEAR_NAVBAR_AWK ]]; then
     echo "$0: ERROR: bin/subst.year-navbar.awk is not a file: $YEAR_NAVBAR_AWK" 1>&2
-    exit 6
+    exit 5
 fi
 if [[ ! -r $YEAR_NAVBAR_AWK ]]; then
     echo "$0: ERROR: bin/subst.year-navbar.awk is not a readable file: $YEAR_NAVBAR_AWK" 1>&2
-    exit 6
+    exit 5
 fi
 
 # determine The N-th IOCCC string
@@ -401,8 +391,8 @@ if [[ -z $LINE_NUM ]]; then
     echo '-e'
     echo "cannot determine line number in $TOP_FILE for year: $YEAR_DIR"
     echo '-E'
-    echo 220
-    exit 220
+    echo 210
+    exit 210
 fi
 ORDINAL=$(output_ordinal "$LINE_NUM")
 export ORDINAL
@@ -410,8 +400,8 @@ if [[ -z $ORDINAL ]]; then
     echo '-e'
     echo "cannot determine ordinal for: $LINE_NUM"
     echo '-E'
-    echo 221
-    exit 221
+    echo 211
+    exit 211
 fi
 
 # parameter debugging
@@ -476,7 +466,7 @@ awk -v year_arg="$YEAR_DIR" -f "$YEAR_NAVBAR_AWK" "$TOP_FILE"
 status="$?"
 if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: subst.year-navbar.awk failed, error: $status" 1>&2
-    exit 219
+    exit 1
 fi
 
 # All Done!!! -- Jessica Noll, Age 2

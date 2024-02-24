@@ -52,7 +52,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2 2024-02-11"
+export VERSION="1.2.1 2024-02-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -60,7 +60,7 @@ GIT_TOOL=$(type -P git)
 export GIT_TOOL
 if [[ -z "$GIT_TOOL" ]]; then
     echo "$0: FATAL: git tool is not installed or not in \$PATH" 1>&2
-    exit 10
+    exit 5
 fi
 "$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
 status="$?"
@@ -127,17 +127,14 @@ NOTE: The '-v level' is passed as initial command line options to the 'markdown 
 
 Exit codes:
      0         all OK
-     1	       md2html.sh exited non-zero
+     1	       some internal tool exited non-zero
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is < 4.2
-     5	       md2html.sh is not an executable file
-     XXX - update this - XXX
-     6	       problems found with or in the topdir directory
-     7	       problems found with or in the topdir/YYYY directory
-     8	       problems found with or in the topdir/YYYY/dir directory
- >= 10 < 200   internal error
- >= 200	       ((not used))
+     5	       some internal tool is not found or not an executable file
+     6	       problems found with or in the topdir or topdir/YYYY directory
+     7	       problems found with or in the entry topdir/YYYY/dir directory
+ >= 10         internal error
 
 $NAME version: $VERSION"
 
@@ -262,58 +259,6 @@ if [[ -n $TAGLINE ]]; then
     TOOL_OPTION+=("$TAGLINE")
 fi
 
-# parse the ENTRY_PATH arg
-#
-# verify that ENTRY_PATH is in proper form
-#
-# Also obtain the YEAR_DIR and ENTRY_DIR from ENTRY_PATH.
-#
-if [[ -z $ENTRY_PATH ]]; then
-    echo "$0: ERROR: arg is an empty string" 1>&2
-    exit 3
-fi
-if [[ ! -d $ENTRY_PATH ]]; then
-    echo "$0: ERROR: arg is not a directory: $ENTRY_PATH" 1>&2
-    exit 3
-fi
-if [[ ! -w $ENTRY_PATH ]]; then
-    echo "$0: ERROR: arg is not a writable directory: $ENTRY_PATH" 1>&2
-    exit 3
-fi
-export YEAR_DIR=${ENTRY_PATH%%/*}
-if [[ -z $YEAR_DIR ]]; then
-    echo "$0: ERROR: arg not in YYYY/dir form: $ENTRY_PATH" 1>&2
-    exit 3
-fi
-if [[ ! -d $YEAR_DIR ]]; then
-    echo "$0: ERROR: YYYY from arg: $ENTRY_PATH is not a directory: $YEAR_DIR" 1>&2
-    exit 3
-fi
-export ENTRY_DIR=${ENTRY_PATH#*/}
-if [[ -z $ENTRY_DIR ]]; then
-    echo "$0: ERROR: arg: $ENTRY_PATH not in $YEAR_DIR/dir form: $ENTRY_PATH" 1>&2
-    exit 3
-fi
-if [[ $ENTRY_DIR = */* ]]; then
-    echo "$0: ERROR: dir from arg: $ENTRY_PATH contains a /: $ENTRY_DIR" 1>&2
-    exit 3
-fi
-
-# verify that the md2html tool is executable
-#
-if [[ ! -e $MD2HTML_SH ]]; then
-    echo  "$0: ERROR: md2html.sh does not exist: $MD2HTML_SH" 1>&2
-    exit 5
-fi
-if [[ ! -f $MD2HTML_SH ]]; then
-    echo  "$0: ERROR: md2html.sh is not a regular file: $MD2HTML_SH" 1>&2
-    exit 5
-fi
-if [[ ! -x $MD2HTML_SH ]]; then
-    echo  "$0: ERROR: md2html.sh is not an executable file: $MD2HTML_SH" 1>&2
-    exit 5
-fi
-
 # verify that we have a topdir directory
 #
 REPO_NAME=$(basename "$REPO_URL")
@@ -357,24 +302,39 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
-# perform tests on YYYY_DIR (YYYY/dir) as a entry directory
+# verify that ENTRY_PATH is a entry directory
 #
+if [[ ! -d $ENTRY_PATH ]]; then
+    echo "$0: ERROR: arg is not a directory: $ENTRY_PATH" 1>&2
+    exit 3
+fi
+if [[ ! -w $ENTRY_PATH ]]; then
+    echo "$0: ERROR: arg is not a writable directory: $ENTRY_PATH" 1>&2
+    exit 3
+fi
+export YEAR_DIR=${ENTRY_PATH%%/*}
+if [[ -z $YEAR_DIR ]]; then
+    echo "$0: ERROR: arg not in YYYY/dir form: $ENTRY_PATH" 1>&2
+    exit 3
+fi
+export ENTRY_DIR=${ENTRY_PATH#*/}
+if [[ -z $ENTRY_DIR ]]; then
+    echo "$0: ERROR: arg: $ENTRY_PATH not in $YEAR_DIR/dir form: $ENTRY_PATH" 1>&2
+    exit 3
+fi
+if [[ $ENTRY_DIR = */* ]]; then
+    echo "$0: ERROR: dir from arg: $ENTRY_PATH contains a /: $ENTRY_DIR" 1>&2
+    exit 3
+fi
+if [[ ! -d $YEAR_DIR ]]; then
+    echo "$0: ERROR: YYYY from arg: $ENTRY_PATH is not a directory: $YEAR_DIR" 1>&2
+    exit 3
+fi
+export ENTRY_ID="${YEAR_DIR}_${ENTRY_DIR}"
 export DOT_YEAR="$YEAR_DIR/.year"
-if [[ ! -e $DOT_YEAR ]]; then
-    echo "$0: ERROR: in $ENTRY_PATH .year does not exist: $DOT_YEAR" 1>&2
-    exit 7
-fi
-if [[ ! -f $DOT_YEAR ]]; then
-    echo "$0: ERROR: in $ENTRY_PATH .year is not a file: $DOT_YEAR" 1>&2
-    exit 7
-fi
-if [[ ! -r $DOT_YEAR ]]; then
-    echo "$0: ERROR: in $ENTRY_PATH .year is not a readable file: $DOT_YEAR" 1>&2
-    exit 7
-fi
 if [[ ! -s $DOT_YEAR ]]; then
-    echo "$0: ERROR: in $ENTRY_PATH .year is not a non-empty readable file: $DOT_YEAR" 1>&2
-    exit 7
+    echo "$0: ERROR: not a non-empty file: $DOT_YEAR" 1>&2
+    exit 6
 fi
 # Now that we have moved to topdir, form and verify YYYY_DIR is a writable directory
 export YYYY_DIR="$YEAR_DIR/$ENTRY_DIR"
@@ -391,26 +351,42 @@ if [[ ! -w $YYYY_DIR ]]; then
     exit 7
 fi
 export DOT_PATH="$YYYY_DIR/.path"
-if [[ ! -e $DOT_PATH ]]; then
-    echo "$0: ERROR: in $ENTRY_PATH .path does not exist: $DOT_PATH" 1>&2
-    exit 8
-fi
-if [[ ! -f $DOT_PATH ]]; then
-    echo "$0: ERROR: in $ENTRY_PATH .path is not a file: $DOT_PATH" 1>&2
-    exit 8
-fi
-if [[ ! -r $DOT_PATH ]]; then
-    echo "$0: ERROR: in $ENTRY_PATH .path is not a readable file: $DOT_PATH" 1>&2
-    exit 8
-fi
 if [[ ! -s $DOT_PATH ]]; then
-    echo "$0: ERROR: in $ENTRY_PATH .path is not a non-empty readable file: $DOT_PATH" 1>&2
-    exit 8
+    echo "$0: ERROR: not a non-empty file: $DOT_PATH" 1>&2
+    exit 7
 fi
 DOT_PATH_CONTENT=$(< "$DOT_PATH")
 if [[ $ENTRY_PATH != "$DOT_PATH_CONTENT" ]]; then
-    echo "$0: ERROR: in $ENTRY_PATH .path: $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
-    exit 8
+    echo "$0: ERROR: arg: $ENTRY_PATH does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
+    exit 7
+fi
+export ENTRY_JSON="$YYYY_DIR/.entry.json"
+if [[ ! -e $ENTRY_JSON ]]; then
+    echo "$0: ERROR: .entry.json does not exist: $ENTRY_JSON" 1>&2
+    exit 7
+fi
+if [[ ! -f $ENTRY_JSON ]]; then
+    echo "$0: ERROR: .entry.json is not a file: $ENTRY_JSON" 1>&2
+    exit 7
+fi
+if [[ ! -r $ENTRY_JSON ]]; then
+    echo "$0: ERROR: .entry.json is not a readable file: $ENTRY_JSON" 1>&2
+    exit 7
+fi
+
+# verify that the md2html tool is executable
+#
+if [[ ! -e $MD2HTML_SH ]]; then
+    echo  "$0: ERROR: md2html.sh does not exist: $MD2HTML_SH" 1>&2
+    exit 5
+fi
+if [[ ! -f $MD2HTML_SH ]]; then
+    echo  "$0: ERROR: md2html.sh is not a regular file: $MD2HTML_SH" 1>&2
+    exit 5
+fi
+if [[ ! -x $MD2HTML_SH ]]; then
+    echo  "$0: ERROR: md2html.sh is not an executable file: $MD2HTML_SH" 1>&2
+    exit 5
 fi
 
 # setup README_PATH and INDEX_PATH using YYYY_DIR
@@ -419,19 +395,39 @@ export README_PATH="$YYYY_DIR/README.md"
 export INDEX_PATH="$YYYY_DIR/index.html"
 if [[ ! -e $README_PATH ]]; then
     echo "$0: ERROR: in $ENTRY_PATH README.md does not exist: $README_PATH" 1>&2
-    exit 8
+    exit 7
 fi
 if [[ ! -f $README_PATH ]]; then
     echo "$0: ERROR: in $ENTRY_PATH README.md is not a file: $README_PATH" 1>&2
-    exit 8
+    exit 7
 fi
 if [[ ! -r $README_PATH ]]; then
     echo "$0: ERROR: in $ENTRY_PATH README.md is not a readable file: $README_PATH" 1>&2
-    exit 8
+    exit 7
 fi
 if [[ ! -s $README_PATH ]]; then
     echo "$0: ERROR: in $ENTRY_PATH README.md is not a non-empty readable file: $README_PATH" 1>&2
-    exit 8
+    exit 7
+fi
+
+# verify that .entry.json is a non-empty readable file
+#
+export ENTRY_JSON="$YYYY_DIR/.entry.json"
+if [[ ! -e $ENTRY_JSON ]]; then
+    echo "$0: ERROR: in $ENTRY_PATH .entry.json does not exist: $ENTRY_JSON" 1>&2
+    exit 7
+fi
+if [[ ! -f $ENTRY_JSON ]]; then
+    echo "$0: ERROR: in $ENTRY_PATH .entry.json is not a file: $ENTRY_JSON" 1>&2
+    exit 7
+fi
+if [[ ! -r $ENTRY_JSON ]]; then
+    echo "$0: ERROR: in $ENTRY_PATH .entry.json is not a readable file: $ENTRY_JSON" 1>&2
+    exit 7
+fi
+if [[ ! -s $ENTRY_JSON ]]; then
+    echo "$0: ERROR: in $ENTRY_PATH .entry.json is not a non-empty readable file: $ENTRY_JSON" 1>&2
+    exit 7
 fi
 
 # always add the '-U URL' for the entry's index.html file

@@ -64,7 +64,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1 2024-02-11"
+export VERSION="1.1.1 2024-02-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -72,7 +72,7 @@ GIT_TOOL=$(type -P git)
 export GIT_TOOL
 if [[ -z "$GIT_TOOL" ]]; then
     echo "$0: FATAL: git tool is not installed or not in PATH" 1>&2
-    exit 200
+    exit 5
 fi
 "$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
 status="$?"
@@ -102,13 +102,14 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 
 Exit codes:
      0         all OK
-     1	       sgi.sh exited non-zero
+     1	       some internal tool exited non-zero
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is < 4.2
-     5	       YYYY/dir is not a entry directory
-     6         sgi.sh tool not found or not executable
- >= 10	       internal error
+     5	       some internal tool is not found or not an executable file
+     6	       problems found with or in the topdir or topdir/YYYY directory
+     7	       problems found with or in the entry topdir/YYYY/dir directory
+ >= 10         internal error
 
 $NAME version: $VERSION"
 
@@ -181,32 +182,23 @@ export REPO_NAME
 if [[ -z $TOPDIR ]]; then
     echo "$0: ERROR: cannot find top of git repo directory" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
-    exit 201
+    exit 6
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR is not a directory: $TOPDIR" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
-    exit 202
+    exit 6
 fi
-
-# verify that we have an bin subdirectory
-#
-export BIN_PATH="$TOPDIR/bin"
-if [[ ! -d $BIN_PATH ]]; then
-    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
-    exit 205
-fi
-export BIN_DIR="bin"
 
 # cd to topdir
 #
 if [[ ! -e $TOPDIR ]]; then
     echo "$0: ERROR: cannot cd to non-existent path: $TOPDIR" 1>&2
-    exit 206
+    exit 6
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: cannot cd to a non-directory: $TOPDIR" 1>&2
-    exit 207
+    exit 6
 fi
 export CD_FAILED
 if [[ $V_FLAG -ge 5 ]]; then
@@ -215,96 +207,122 @@ fi
 cd "$TOPDIR" || CD_FAILED="true"
 if [[ -n $CD_FAILED ]]; then
     echo "$0: ERROR: cd $TOPDIR failed" 1>&2
-    exit 208
+    exit 6
 fi
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
+# verify that we have an bin subdirectory
+#
+export BIN_PATH="$TOPDIR/bin"
+if [[ ! -d $BIN_PATH ]]; then
+    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
+    exit 6
+fi
+export BIN_DIR="bin"
+
 # verify we have an executable sgi.sh tool
 #
 if [[ ! -e $SGI_TOOL ]]; then
     echo "$0: ERROR: sgi.sh tool does not exist: $SGI_TOOL" 1>&2
-    exit 6
+    exit 5
 fi
 if [[ ! -f $SGI_TOOL ]]; then
     echo "$0: ERROR: sgi.sh tool is not a file: $SGI_TOOL" 1>&2
-    exit 6
+    exit 5
 fi
 if [[ ! -x $SGI_TOOL ]]; then
     echo "$0: ERROR: sgi.sh tool is not an executable file: $SGI_TOOL" 1>&2
-    exit 6
+    exit 5
 fi
 
 # verify that ENTRY_PATH is a entry directory
 #
-# ENTRY_PATH must be in YYYY/dir form
-# YYYY must be a directory
-# YYYY must be a writable directory
-# YYYY/.year must be a non-empty file
-# YYYY/dir must be a directory
-# YYYY/dir/.path must be a non-empty file
-# ENTRY_PATH must match the contents of YYYY/dir/.path
-# YYYY/dir/.gitignore.json must be a writable file
-#
 if [[ ! -d $ENTRY_PATH ]]; then
     echo "$0: ERROR: arg is not a directory: $ENTRY_PATH" 1>&2
-    exit 5
+    exit 3
 fi
 if [[ ! -w $ENTRY_PATH ]]; then
     echo "$0: ERROR: arg is not a writable directory: $ENTRY_PATH" 1>&2
-    exit 5
+    exit 3
 fi
 export YEAR_DIR=${ENTRY_PATH%%/*}
 if [[ -z $YEAR_DIR ]]; then
     echo "$0: ERROR: arg not in YYYY/dir form: $ENTRY_PATH" 1>&2
-    exit 5
+    exit 3
 fi
 export ENTRY_DIR=${ENTRY_PATH#*/}
 if [[ -z $ENTRY_DIR ]]; then
     echo "$0: ERROR: arg: $ENTRY_PATH not in $YEAR_DIR/dir form: $ENTRY_PATH" 1>&2
-    exit 5
+    exit 3
 fi
 if [[ $ENTRY_DIR = */* ]]; then
     echo "$0: ERROR: dir from arg: $ENTRY_PATH contains a /: $ENTRY_DIR" 1>&2
-    exit 5
+    exit 3
 fi
 if [[ ! -d $YEAR_DIR ]]; then
     echo "$0: ERROR: YYYY from arg: $ENTRY_PATH is not a directory: $YEAR_DIR" 1>&2
-    exit 5
+    exit 3
 fi
 export ENTRY_ID="${YEAR_DIR}_${ENTRY_DIR}"
 export DOT_YEAR="$YEAR_DIR/.year"
 if [[ ! -s $DOT_YEAR ]]; then
     echo "$0: ERROR: not a non-empty file: $DOT_YEAR" 1>&2
-    exit 5
+    exit 6
 fi
-if [[ ! -d $YEAR_DIR/$ENTRY_DIR ]]; then
-    echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH is not a directory: $YEAR_DIR/$ENTRY_DIR" 1>&2
-    exit 5
+# Now that we have moved to topdir, form and verify YYYY_DIR is a writable directory
+export YYYY_DIR="$YEAR_DIR/$ENTRY_DIR"
+if [[ ! -e $YYYY_DIR ]]; then
+    echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH does not exist: $YYYY_DIR" 1>&2
+    exit 7
 fi
-export DOT_PATH="$YEAR_DIR/$ENTRY_DIR/.path"
+if [[ ! -d $YYYY_DIR ]]; then
+    echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH is not a directory: $YYYY_DIR" 1>&2
+    exit 7
+fi
+if [[ ! -w $YYYY_DIR ]]; then
+    echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH is not a writable directory: $YYYY_DIR" 1>&2
+    exit 7
+fi
+export DOT_PATH="$YYYY_DIR/.path"
 if [[ ! -s $DOT_PATH ]]; then
     echo "$0: ERROR: not a non-empty file: $DOT_PATH" 1>&2
-    exit 5
+    exit 7
 fi
 DOT_PATH_CONTENT=$(< "$DOT_PATH")
 if [[ $ENTRY_PATH != "$DOT_PATH_CONTENT" ]]; then
     echo "$0: ERROR: arg: $ENTRY_PATH does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
-    exit 5
+    exit 7
 fi
+export ENTRY_JSON="$YYYY_DIR/.entry.json"
+if [[ ! -e $ENTRY_JSON ]]; then
+    echo "$0: ERROR: .entry.json does not exist: $ENTRY_JSON" 1>&2
+    exit 7
+fi
+if [[ ! -f $ENTRY_JSON ]]; then
+    echo "$0: ERROR: .entry.json is not a file: $ENTRY_JSON" 1>&2
+    exit 7
+fi
+if [[ ! -r $ENTRY_JSON ]]; then
+    echo "$0: ERROR: .entry.json is not a readable file: $ENTRY_JSON" 1>&2
+    exit 7
+fi
+
+# verify .gitignore
+#
 export GITIGNORE="$YEAR_DIR/$ENTRY_DIR/.gitignore"
 if [[ ! -e $GITIGNORE ]]; then
     echo "$0: ERROR: .entry.json does not exist: $GITIGNORE" 1>&2
-    exit 5
+    exit 7
 fi
 if [[ ! -f $GITIGNORE ]]; then
     echo "$0: ERROR: .entry.json is not a file: $GITIGNORE" 1>&2
-    exit 5
+    exit 7
 fi
 if [[ ! -w $GITIGNORE ]]; then
     echo "$0: ERROR: .entry.json is not a writable file: $GITIGNORE" 1>&2
-    exit 5
+    exit 7
 fi
 
 # parameter debugging
@@ -352,12 +370,12 @@ if [[ -z $NOOP ]]; then
     rm -f "$TMP_FILE"
     if [[ -e $TMP_FILE ]]; then
 	echo "$0: ERROR: cannot remove temporary markdown file: $TMP_FILE" 1>&2
-	exit 216
+	exit 10
     fi
     :> "$TMP_FILE"
     if [[ ! -e $TMP_FILE ]]; then
 	echo "$0: ERROR: cannot create temporary markdown file: $TMP_FILE" 1>&2
-	exit 217
+	exit 11
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary markdown file is not used: $TMP_FILE" 1>&2
@@ -373,7 +391,7 @@ if [[ -z $NOOP ]]; then
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: sgi.sh failed, error: $status" 1>&2
-	exit 220
+	exit 12
     fi
     if [[ $V_FLAG -ge 1 ]]; then
 	echo  "$0: debug[1]: about to execute: mv -f $TMP_FILE $GITIGNORE" 1>&2
@@ -382,7 +400,7 @@ if [[ -z $NOOP ]]; then
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: sgi.sh failed, error: $status" 1>&2
-	exit 220
+	exit 13
     fi
 elif [[ $V_FLAG -ge 1 ]]; then
     echo  "$0: debug[1]: -n disabled execution of: $SGI_TOOL < $GITIGNORE > $TMP_FILE" 1>&2

@@ -49,7 +49,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0 2024-02-11"
+export VERSION="1.0.1 2024-02-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -57,7 +57,7 @@ GIT_TOOL=$(type -P git)
 export GIT_TOOL
 if [[ -z "$GIT_TOOL" ]]; then
     echo "$0: FATAL: git tool is not installed or not in \$PATH" 1>&2
-    exit 10
+    exit 5
 fi
 "$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
 status="$?"
@@ -150,16 +150,14 @@ NOTE: The '-v level' is passed as initial command line options to the 'markdown 
 
 Exit codes:
      0         all OK
-     1	       md2html.sh exited non-zero
+     1	       some internal tool exited non-zero
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is < 4.2
-     5	       md2html.sh and/or location is not an executable file
-     6	       problems found with or in the topdir directory
-     7	       problems found with or in the topdir/YYYY directory
-     8	       problems found with or in the topdir/YYYY/dir directory
- >= 10  < 200  ((not used))
- >= 210	       internal tool error
+     5	       some internal tool is not found or not an executable file
+     6	       problems found with or in the topdir or topdir/YYYY directory
+     7	       problems found with or in the entry topdir/YYYY/dir directory
+ >= 10         internal error
 
 $NAME version: $VERSION"
 
@@ -548,24 +546,6 @@ if [[ ! -d $TOPDIR ]]; then
     exit 6
 fi
 
-# verify that we have an author subdirectory
-#
-export AUTHOR_PATH="$TOPDIR/author"
-if [[ ! -d $AUTHOR_PATH ]]; then
-    echo "$0: ERROR: author is not a directory under topdir: $AUTHOR_PATH" 1>&2
-    exit 210
-fi
-export AUTHOR_DIR="author"
-
-# verify that we have an bin subdirectory
-#
-export BIN_PATH="$TOPDIR/bin"
-if [[ ! -d $BIN_PATH ]]; then
-    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
-    exit 211
-fi
-export BIN_DIR="bin"
-
 # cd to topdir
 #
 if [[ ! -e $TOPDIR ]]; then
@@ -603,6 +583,24 @@ if [[ ! -x $MD2HTML_SH ]]; then
     echo  "$0: ERROR: md2html.sh is not an executable file: $MD2HTML_SH" 1>&2
     exit 5
 fi
+
+# verify that we have an author subdirectory
+#
+export AUTHOR_PATH="$TOPDIR/author"
+if [[ ! -d $AUTHOR_PATH ]]; then
+    echo "$0: ERROR: author is not a directory under topdir: $AUTHOR_PATH" 1>&2
+    exit 6
+fi
+export AUTHOR_DIR="author"
+
+# verify that we have an bin subdirectory
+#
+export BIN_PATH="$TOPDIR/bin"
+if [[ ! -d $BIN_PATH ]]; then
+    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
+    exit 6
+fi
+export BIN_DIR="bin"
 
 # find the location tool
 #
@@ -670,12 +668,12 @@ if [[ -z $NOOP ]]; then
     rm -f "$TMP_AUTHORS_MD"
     if [[ -e $TMP_AUTHORS_MD ]]; then
 	echo "$0: ERROR: cannot remove temporary entry markdown file: $TMP_AUTHORS_MD" 1>&2
-	exit 212
+	exit 10
     fi
     :> "$TMP_AUTHORS_MD"
     if [[ ! -e $TMP_AUTHORS_MD ]]; then
 	echo "$0: ERROR: cannot create temporary entry markdown file: $TMP_AUTHORS_MD" 1>&2
-	exit 213
+	exit 11
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary entry markdown file is not used: $TMP_AUTHORS_MD" 1>&2
@@ -692,12 +690,12 @@ if [[ -z $NOOP ]]; then
     rm -f "$TMP_SORT_WORD"
     if [[ -e $TMP_SORT_WORD ]]; then
 	echo "$0: ERROR: cannot remove temporary sort word list file: $TMP_SORT_WORD" 1>&2
-	exit 214
+	exit 12
     fi
     :> "$TMP_SORT_WORD"
     if [[ ! -e $TMP_SORT_WORD ]]; then
 	echo "$0: ERROR: cannot create temporary sort word list file: $TMP_SORT_WORD" 1>&2
-	exit 215
+	exit 13
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary sort word list file is not used: $TMP_SORT_WORD" 1>&2
@@ -728,7 +726,7 @@ sort -f -d "$TMP_SORT_WORD" -o "$TMP_SORT_WORD"
 status="$?"
 if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: sort -f -d $TMP_SORT_WORD -o $TMP_SORT_WORD failed, error: $status" 1>&2
-    exit 216
+    exit 14
 fi
 
 # generate the temporary entry markdown file
@@ -801,32 +799,32 @@ EOF
 	    #
 	    if [[ -z $sort_word ]]; then
 		echo "$0: ERROR: sort_word is empty" 1>&2
-		exit 217
+		exit 15
 	    fi
 	    FULL_NAME=$(output_full_name "$filename")
 	    if [[ -z $FULL_NAME ]]; then
 		echo "$0: ERROR: full name is empty in: $filename" 1>&2
-		exit 218
+		exit 16
 	    fi
 	    LOCATION_CODE=$(output_location_code "$filename")
 	    if [[ -z $LOCATION_CODE ]]; then
 		echo "$0: ERROR: location code is empty in: $filename" 1>&2
-		exit 219
+		exit 17
 	    fi
 	    LOCATION_NAME=$("$LOCATION_TOOL" "$LOCATION_CODE" 2>/dev/null)
 	    status="$?"
 	    if [[ $status -ne 0 ]]; then
 		echo "$0: ERROR: cannot determine location name for location ISO 3166 code: $LOCATION_CODE" 1>&2
-		exit 220
+		exit 18
 	    fi
 	    if [[ -z $LOCATION_NAME ]]; then
 		echo "$0: ERROR: location name for location ISO 3166 code: $LOCATION_CODE is empty: $LOCATION_NAME" 1>&2
-		exit 221
+		exit 19
 	    fi
 	    AUTHOR_HANDLE=$(output_author_handle "$filename")
 	    if [[ -z $AUTHOR_HANDLE ]]; then
 		echo "$0: ERROR: author handle is empty in: $filename" 1>&2
-		exit 222
+		exit 20
 	    fi
 
 	    # output author information
@@ -846,12 +844,12 @@ EOF
 		    fi
 		else
 		    echo "$0: ERROR: entry_id is not in YYYY_dir formmat: $entry_id" 1>&2
-		    exit 223
+		    exit 21
 		fi
 		YYYY_DIR=$(echo "$ENTRY_ID" | tr _ /)
 		if [[ ! -d $YYYY_DIR ]]; then
 		    echo "$0: ERROR: YYYY/dir is not a directory" 1>&2
-		    exit 224
+		    exit 22
 		fi
 
 		# verify that the .entry.json file is a non-empty readable file
@@ -859,19 +857,19 @@ EOF
 		ENTRY_JSON="$YYYY_DIR/.entry.json"
 		if [[ ! -e $ENTRY_JSON ]]; then
 		    echo "$0: ERROR: .entry.json does not exist: $ENTRY_JSON" 1>&2
-		    exit 225
+		    exit 23
 		fi
 		if [[ ! -f $ENTRY_JSON ]]; then
 		    echo "$0: ERROR: .entry.json is not a file: $ENTRY_JSON" 1>&2
-		    exit 226
+		    exit 24
 		fi
 		if [[ ! -r $ENTRY_JSON ]]; then
 		    echo "$0: ERROR: .entry.json is not a readable file: $ENTRY_JSON" 1>&2
-		    exit 227
+		    exit 24
 		fi
 		if [[ ! -s $ENTRY_JSON ]]; then
 		    echo "$0: ERROR: .entry.json is not a non-empty readable file: $ENTRY_JSON" 1>&2
-		    exit 228
+		    exit 25
 		fi
 		if [[ $V_FLAG -ge 7 ]]; then
 		    echo "$0: debug[7]: .entry.json: $ENTRY_JSON" 1>&2
@@ -882,7 +880,7 @@ EOF
 		AWARD=$(output_award "$ENTRY_JSON")
 		if [[ -z $AWARD ]]; then
 		    echo "$0: ERROR: award not found in .entry.json: $ENTRY_JSON" 1>&2
-		    exit 229
+		    exit 27
 		fi
 
 		# output the YYYY/dir entry for this author
