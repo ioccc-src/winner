@@ -1491,6 +1491,36 @@ supposed to be printed again and one is supposed to press a key as at that point
 it calls `getchar()` via the pointer `m`. So this is a feature not a bug.
 
 
+## 1995 leo
+
+### STATUS: known bug - please help us fix
+### Source code: [1995/leo/leo.c](1995/leo/leo.c)
+### Information: [1995/leo/README.md](1995/leo/README.md)
+
+The judges suggested that the following commands should result in output:
+
+
+```sh
+./leo 1 | cat - /dev/tty | gs -
+
+./leo 37 80 | cat - /dev/tty | gs -
+```
+
+The first one can work if one does instead:
+
+```sh
+echo "" | ./leo 1 > foo.ps
+gs foo.ps
+```
+
+but it is supposed to work in the pipeline as is. The second one does not appear
+to work at all even if one redirects to a file (like the workaround for the
+first) as it appears to just block.
+
+It is not known if this is platform specific but this was observed in macOS and
+it would be good if it was fixed.
+
+
 ## 1995 savastio
 
 ### STATUS: INABIAF - please **DO NOT** fix

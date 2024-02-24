@@ -38,48 +38,32 @@ while [[ "$i" -lt 10 ]]; do
 done
 
 
-# finally use some preselected values
-read -r -n 1 -p "Press any key to run: ./konno 30: "
-echo 1>&2
-./konno 30
-echo 1>&2
+konno()
+{
+    if [[ "$#" -ne 1 ]]; then
+	echo "$0: konno() requires 1 arg, given: $#" 1>&2
+	return
+    fi
 
-read -r -n 1 -p "Press any key to run: ./konno 90: "
-echo 1>&2
-./konno 90
-echo 1>&2
+    read -r -n 1 -p "Press any key to run: ./konno $1: "
+    echo 1>&2
+    ./konno "$1"
+    echo 1>&2
+}
+konno 30
 
-read -r -n 1 -p "Press any key to run: ./konno 102: "
-echo 1>&2
-./konno 102
-echo 1>&2
+konno 90
 
-read -r -n 1 -p "Press any key to run: ./konno 109: "
-echo 1>&2
-./konno 109
-echo 1>&2
+konno 102
 
-read -r -n 1 -p "Press any key to run: ./konno 165: "
-echo 1>&2
-./konno 165
-echo 1>&2
+konno 109
 
-read -r -n 1 -p "Press any key to run: ./konno 42: "
-echo 1>&2
-./konno 42 
-echo 1>&2
+konno 165
 
-read -r -n 1 -p "Press any key to run: ./konno 37: "
-echo 1>&2
-./konno 37 
-echo 1>&2
+konno 42 
 
-read -r -n 1 -p "Press any key to run: ./konno 255: "
-echo 1>&2
-./konno 255 
-echo 1>&2
+konno 37 
 
-read -r -n 1 -p "Press any key to run: ./konno 10000: "
-echo 1>&2
-./konno 10000
-echo 1>&2
+konno 255 
+
+konno 10000

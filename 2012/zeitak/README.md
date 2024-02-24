@@ -11,11 +11,12 @@ code](#alternate-code) below.
 ## To use:
 
 ```sh
-./zeitak < file.c
+./zeitak < file
 ```
 
-where `file.c` is the file to be checked for nesting errors. For example, you may
-try [incorrect.c](incorrect.c) and the program itself.
+where `file` is the file to be checked for nesting errors. For example, you may
+try [incorrect.c](incorrect.c) and the program itself. You may also run it on
+text files that are not code.
 
 
 ## Try:
@@ -24,15 +25,15 @@ try [incorrect.c](incorrect.c) and the program itself.
 make test
 ```
 
-NOTE: it prints an error and exits on the first nesting error so it will not
-detect multiple issues!
+NOTE: the program prints an error and exits on the first nesting error so it
+will not detect multiple issues.
 
 
 ## Alternate code:
 
-This version, [zeitak.alt.c](zeitak.alt.c), is a version that has been slightly
-deobfuscated.  You may find reading it helpful in your attempt to understand
-this extremely subtle entry.
+The alternate code, [zeitak.alt.c](zeitak.alt.c), is a version that was slightly
+deobfuscated by the author. You may find reading it helpful in your attempt to
+understand this extremely subtle entry.
 
 
 ### Alternate build:
@@ -51,11 +52,19 @@ Use `zeitak.alt` as you would `zeitak` above.
 
 This is an extremely subtle and twisted piece of Gold award winning code!
 
-The judges had spent a considerable amount of time analyzing this entry.
+The judges spent a considerable amount of time analyzing this entry.
 At one point we spent
 [18
 minutes](https://web.archive.org/web/20130925190722/https://twitter.com/ioccc/status/252162898800033792)
-just to understand 18 key characters of this code.
+just to understand _18 key **characters**_ of this code.
+
+NOTE: if you use vim to view the code, make sure to do:
+
+```
+:set tabstop=4
+```
+
+in command mode, before looking at the code, to see the correct layout.
 
 
 ## Author's remarks:
@@ -88,6 +97,7 @@ printf(")");
 ```
 
 * Doesn't get confused by the [1984/anonymous](/1984/anonymous/anonymous.c) entry!
+
 
 #### Mis-Features
 
