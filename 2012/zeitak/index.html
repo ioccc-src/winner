@@ -130,18 +130,19 @@ Location: <a href="../../location.html#IL">IL</a> <br><br></li>
 <p>There is an alternate version that is slightly deobfuscated. See <a
 href="#alternate-code">alternate code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./zeitak</span> <span class="op">&lt;</span> file.c</span></code></pre></div>
-<p>where <code>file.c</code> is the file to be checked for nesting
-errors. For example, you may try <a href="incorrect.c">incorrect.c</a>
-and the program itself.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./zeitak</span> <span class="op">&lt;</span> file</span></code></pre></div>
+<p>where <code>file</code> is the file to be checked for nesting errors.
+For example, you may try <a href="incorrect.c">incorrect.c</a> and the
+program itself. You may also run it on text files that are not code.</p>
 <h2 id="try">Try:</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> test</span></code></pre></div>
-<p>NOTE: it prints an error and exits on the first nesting error so it
-will not detect multiple issues!</p>
+<p>NOTE: the program prints an error and exits on the first nesting
+error so it will not detect multiple issues.</p>
 <h2 id="alternate-code">Alternate code:</h2>
-<p>This version, <a href="zeitak.alt.c">zeitak.alt.c</a>, is a version
-that has been slightly deobfuscated. You may find reading it helpful in
-your attempt to understand this extremely subtle entry.</p>
+<p>The alternate code, <a href="zeitak.alt.c">zeitak.alt.c</a>, is a
+version that was slightly deobfuscated by the author. You may find
+reading it helpful in your attempt to understand this extremely subtle
+entry.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> alt</span></code></pre></div>
 <h3 id="alternate-use">Alternate use:</h3>
@@ -150,10 +151,15 @@ above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This is an extremely subtle and twisted piece of Gold award winning
 code!</p>
-<p>The judges had spent a considerable amount of time analyzing this
-entry. At one point we spent <a
+<p>The judges spent a considerable amount of time analyzing this entry.
+At one point we spent <a
 href="https://web.archive.org/web/20130925190722/https://twitter.com/ioccc/status/252162898800033792">18
-minutes</a> just to understand 18 key characters of this code.</p>
+minutes</a> just to understand <em>18 key
+<strong>characters</strong></em> of this code.</p>
+<p>NOTE: if you use vim to view the code, make sure to do:</p>
+<pre><code>:set tabstop=4</code></pre>
+<p>in command mode, before looking at the code, to see the correct
+layout.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="nesting-errors-detector">Nesting Errors Detector</h3>
 <h4 id="what-does-it-do">What does it do</h4>
@@ -173,7 +179,7 @@ characters around it’s position.</p>
 <li>Ignores parenthesis inside strings or character constants, so no
 errors will be detected in the following line:</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>printf<span class="op">(</span><span class="st">&quot;)&quot;</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>printf<span class="op">(</span><span class="st">&quot;)&quot;</span><span class="op">);</span></span></code></pre></div>
 <ul>
 <li>Doesn’t get confused by the <a
 href="/1984/anonymous/anonymous.c">1984/anonymous</a> entry!</li>
@@ -183,7 +189,7 @@ href="/1984/anonymous/anonymous.c">1984/anonymous</a> entry!</li>
 <li>Escapes (e.g. <code>\"</code>) are ignored, so the following line
 will produce an error:</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>printf<span class="op">(</span><span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>printf<span class="op">(</span><span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span><span class="op">);</span></span></code></pre></div>
 <h4 id="obfuscation">Obfuscation</h4>
 <p><a href="/years.html">IOCCC entries</a> already contain entries
 without digits, control-flow keywords and certain operators in their
