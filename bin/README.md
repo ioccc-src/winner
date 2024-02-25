@@ -91,6 +91,26 @@ bin/gen-location.sh -v 1
 ```
 
 
+### [gen-top-md2html.sh](gen-top-md2html.sh)
+
+Generate a number of top level HTML pages for the IOCCC web sites.
+
+Usage:
+
+```sh
+bin/gen-top-md2html.sh -v 1
+```
+
+Examples of top level HTML pages built by this tool include:
+
+- [CODE_OF_CONDUCT.html](CODE_OF_CONDUCT.html)
+- [README.html](README.html)
+- [bugs.html](bugs.html)
+- [contact.html](contact.html)
+- [faq.html](faq.html)
+- [thanks-for-help.html](thanks-for-help.html)
+
+
 ### [gen-year-index.sh](gen-year-index.sh)
 
 Generate an `index.html` page for an given IOCCC year.
@@ -435,14 +455,14 @@ IMPORTANT: An "output tool" will print each command line option / argument on a 
 So for example, if an "output tool" wishes to convey:
 
 ```
--s TITIE='IOCCC entry locations' -H topnav=top-of-site
+-s TITLE='IOCCC entry locations' -H topnav=top-of-site
 ```
 
 The  "output tool" would output the following 4 lines:
 
 ```
 -s
-TITIE='IOCCC entry locations'
+TITLE='IOCCC entry locations'
 -H
 topnav=top-of-site
 ```

@@ -443,7 +443,7 @@ fi
 # output TITLE substitution
 #
 echo "-s"
-echo "TITIE=$YEAR_DIR - The $ORDINAL IOCCC"
+echo "TITLE=$YEAR_DIR - The $ORDINAL IOCCC"
 
 # output DESCRIPTION substitution
 #

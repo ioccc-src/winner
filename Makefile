@@ -54,6 +54,7 @@ GEN_LOCATION= bin/gen-location.sh
 GEN_YEARS= bin/gen-years.sh
 GEN_YEAR_INDEX= bin/gen-year-index.sh
 CHK_ENTRY= bin/chk-entry.sh
+GEN_TOP_MD2HTML= bin/gen-top-md2html.sh
 README2INDEX= bin/readme2index.sh
 QUICK_README2INDEX= bin/quick-readme2index.sh
 TAR_ENTRY= bin/tar-entry.sh
@@ -238,7 +239,8 @@ indent.c:
 #	They might not even work (right now).  :-)
 
 .PHONY: help genpath genfilelist verify_entry_files gen_authors gen_location gen_years \
-	entry_index quick_entry_index form_entry_tarball form_year_tarball form_all_tarball \
+	entry_index gen_top_md2html quick_entry_index \
+	form_entry_tarball form_year_tarball form_all_tarball \
 	gen_year_index quick_www www
 
 # Suggest rules in this section
@@ -255,6 +257,7 @@ help:
 	@echo make gen_location
 	@echo make gen_years
 	@echo make entry_index
+	@echo make gen_top_md2html
 	@echo make gen_year_index
 	@echo make quick_entry_index
 	@echo make form_entry_tarball
@@ -344,6 +347,13 @@ entry_index readme2index: ${ALL_RUN} ${README2INDEX}
 	${ALL_RUN} -v 3 ${README2INDEX} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
+# generate a number of the top level HTML files from top level markdown files
+#
+gen_top_md2html: ${GEN_TOP_MD2HTML}
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${GEN_TOP_MD2HTML} -v 1
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
 # generate year level index.html files using the
 # ${GEN_YEAR_INDEX} tool (bin/gen-year-index.sh).
 #
@@ -415,6 +425,7 @@ quick_www:
 	${MAKE} gen_location
 	${MAKE} gen_years
 	${MAKE} gen_year_index
+	${MAKE} gen_top_md2html
 	${MAKE} quick_entry_index
 	@echo XXX - disable tarball updates until mods settle down - XXX - ${MAKE} form_entry_tarball
 	@echo XXX - disable tarball updates until mods settle down - XXX - ${MAKE} form_year_tarball
@@ -435,6 +446,7 @@ www:
 	${MAKE} gen_location
 	${MAKE} gen_years
 	${MAKE} gen_year_index
+	${MAKE} gen_top_md2html
 	${MAKE} entry_index
 	@echo XXX - disable tarball updates until mods settle down - XXX - ${MAKE} form_entry_tarball
 	@echo XXX - disable tarball updates until mods settle down - XXX - ${MAKE} form_year_tarball

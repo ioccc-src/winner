@@ -58,7 +58,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.1 2024-02-23"
+export VERSION="1.2.2 2024-02-25"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -460,7 +460,7 @@ fi
 # output TITLE substitution
 #
 echo "-s"
-echo "TITIE=$YYYY_DIR - $AWARD"
+echo "TITLE=$YYYY_DIR - $AWARD"
 
 # output DESCRIPTION substitution
 #
