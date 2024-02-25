@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# output-year-index.sh - output markdown of winner links for a given year
+# output-year-index.sh - output markdown of winning entry links for a given year
 #
 # This tool is used in conjunction with the inc/md2html.cfg configuration
 # file, and the tools that use that use that configuration file such as "bin/md2html.sh".

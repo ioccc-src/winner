@@ -11,12 +11,12 @@
 #
 # usage:
 #
-#	awk -v entry_path=YYYY/dir -f bin/subst.winner-navbar.awk YYYY/.year
+#	awk -v entry_path=YYYY/dir -f bin/subst.entry-navbar.awk YYYY/.year
 #
 # where:
 #
 #	YYYY	IOCCC year or mock
-#	dir	name of winner directory under YYYY
+#	dir	name of entry directory under YYYY
 
 BEGIN {
 
