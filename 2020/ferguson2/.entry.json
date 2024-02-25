@@ -23,7 +23,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "winning source"
+	    "entry_text" : "entry source"
 	},
 	{
 	    "file_path" : "Makefile",
@@ -135,7 +135,15 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "tbz2",
 	    "display_via_github" : false,
-	    "entry_text" : "download winning source"
+	    "entry_text" : "download entry source"
+	},
+	{
+	    "file_path" : ".entry.json",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "json",
+	    "display_via_github" : true,
+	    "entry_text" : "description of entry in JSON"
 	},
 	{
 	    "file_path" : ".gitignore",
@@ -152,14 +160,6 @@
 	    "display_as" : "text",
 	    "display_via_github" : false,
 	    "entry_text" : "directory path from top directory"
-	},
-	{
-	    "file_path" : ".entry.json",
-	    "inventory_order" : 4294967295,
-	    "OK_to_edit" : true,
-	    "display_as" : "json",
-	    "display_via_github" : true,
-	    "entry_text" : "description of entry in JSON"
 	},
 	{
 	    "file_path" : "README.md",
