@@ -204,7 +204,7 @@ clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
 	${RM} -rf *.dSYM
 	${RM} -f encodedimg.png restored.png chocolate-in-ioccc.png ioccc-in-chocolate.png
-	${RM} -f restored-chocolate.png restored-ioccc.png
+	${RM} -f restored-chocolate.png restored-ioccc.png mmm-chocolate.png
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \

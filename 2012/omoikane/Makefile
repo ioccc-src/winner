@@ -215,7 +215,7 @@ clean:
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
 	${RM} -rf *.dSYM
-	${RM} -f output.c key.c data.c regenerated.bin
+	${RM} -f output.c key.c data.c regenerated.bin data output output.2
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
