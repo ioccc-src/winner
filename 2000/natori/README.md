@@ -22,11 +22,14 @@ version](#alternate-code) below.
 ./try.sh
 ```
 
-Try running this on different days, say a few days apart, and each time run it
-several times in a row (or several times in a day).
+Try running this on different days, say a few days apart (even better if the
+Moon phase changes), and each time run it several times in a row (or several
+times in a day).
 
 Also try modifying the code so that it will show another Moon phase based on
-input or else just by the code itself. Bonus points if you can make it show all~
+input or else just by the code itself. Bonus points if you can make it show all.
+
+NOTE: if it's a Full Moon the script won't look as nice.
 
 
 ## Alternate code:
@@ -66,7 +69,11 @@ versions? Or are there any?
 ./try.alt.sh
 ```
 
-Like with [try.sh](try.sh), try using this multiple times.
+Like with [try.sh](try.sh), try using this multiple times in a row or throughout
+the day on different days (if different phases of the Moon you'll see more of a
+difference, of course).
+
+NOTE: if it's a Full Moon the script won't look as nice.
 
 
 ## Judges' remarks:
