@@ -236,6 +236,8 @@ are they used?</a></li>
 <li><a href="#faq6_7">6.7 - What is a entry_id?</a></li>
 <li><a href="#faq6_8">6.8 - What is the purpose of the .top, .year and
 .path files?</a></li>
+<li><a href="#faq6_9">6.9 - What is the current meaning of the IOCCC
+terms Author, Entry, and Submission?</a></li>
 </ul>
 <h1 id="the-ioccc-faq">The IOCCC FAQ</h1>
 <h2
@@ -2614,6 +2616,66 @@ href="/1984/anonymous/.path">1984/anonymous/.path</a>.</p>
 Makefile, by:</p>
 <div class="sourceCode" id="cb104"><pre
 class="sourceCode sh"><code class="sourceCode bash"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> genpath</span></code></pre></div>
+<h3
+id="faq-6.9-what-is-the-current-meaning-of-the-ioccc-terms-author-entry-and-submission"><a name="faq6_9"></a>FAQ
+6.9: What is the current meaning of the IOCCC terms Author, Entry, and
+Submission?</h3>
+<p>The IOCCC is now attempting to use the following terms:</p>
+<ul>
+<li>Author</li>
+</ul>
+<p>An <em>author</em> is someone who has submitted an entry that has won
+the IOCCC.</p>
+<p>An entry can have more than one authors. A number of authors have
+submitted entries that have won the IOCCC, sometimes in the same IOCCC
+contest year.</p>
+<p><strong>An apology for being inconsistent</strong>: In the past, the
+IOCCC used the term <em>winner</em> to refer to what is now an
+<em>author</em>. In a number of historical cases, such as old rules and
+old guidelines, terms such as <em>winner</em> may still be found.
+Moreover, out of habit, the IOCCC judges sometimes use old names such as
+<em>winner</em> when they should use <em>author</em>. Sorry (tm Canada)!
+:-)</p>
+<ul>
+<li>Entry</li>
+</ul>
+<p>An <em>entry</em> is a submission that won the IOCCC.</p>
+<p>An <em>entry</em> has one or more <em>authors</em>.</p>
+<p>An <em>entry</em> includes all of the files needed to compile it,
+plus sample input files, a <code>Makefile</code>, an
+<code>.entry.json</code> file describing the entry, a compressed tarball
+containing all of files in the entry, etc. Under the IOCCC tree, an
+<em>entry</em> that win the IOCCC in year <em>YYYY</em> is located under
+the directory <code>YYYY/entry</code>.</p>
+<p><strong>An apology for being inconsistent</strong>: In the past, the
+IOCCC used the term <em>winner</em> to refer to what is now an
+<em>entry</em>. In a number of historical cases, such as old rules and
+old guidelines, terms such as <em>winner</em> may still be found.
+Moreover, out of habit, the IOCCC judges sometimes use old names such as
+<em>winner</em> when they should use <em>entry</em>. Sorry (tm Canada)!
+:-)</p>
+<ul>
+<li>Submission</li>
+</ul>
+<p>A <em>submission</em> is something given to the IOCCC judges for
+consideration when the IOCCC is open.</p>
+<p>When the IOCCC is open for submissions, those who register to enter
+the IOCCC may use the <a
+href="https://github.com/ioccc-src/mkiocccentry">mkliocccentry tool</a>
+to package their code into a compressed tarball that may be uploaded to
+the <a href="https://submit.ioccc.org">IOCCC submit server</a>. This
+compressed tarball is formatted in such a way that the IOCCC judges do
+not see who wrote the code.</p>
+<p>A <em>submission</em> that the IOCCC judges deem to have won the
+IOCCC becomes an <em>entry</em>. Only then do the IOCCC judges look into
+the special JSON file to discover who the <em>author</em>(s) are.</p>
+<p><strong>An apology for being inconsistent</strong>: In the past, the
+IOCCC used the term <em>entry</em> to refer to what is now an
+<em>submission</em>. In a number of historical cases, such as old rules
+and old guidelines, terms such as <em>entry</em> may still be found.
+Moreover, out of habit, the IOCCC judges sometimes use old names such as
+<em>entry</em> when they should use <em>submission</em>. Sorry (tm
+Canada)! :-)</p>
 
 <!-- END: this line ends content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 <!-- START: this line starts content from: inc/after-content.default.html -->

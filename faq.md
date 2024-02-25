@@ -71,6 +71,7 @@ other inconsistencies with the original entry?](#faq4_3)
 - [6.6  - What is a author_handle.json file and how are they used?](#faq6_6)
 - [6.7  - What is a entry_id?](#faq6_7)
 - [6.8 -  What is the purpose of the .top, .year and .path files?](#faq6_8)
+- [6.9 -  What is the current meaning of the IOCCC terms Author, Entry, and Submission?](#faq6_9)
 
 
 # The IOCCC FAQ
@@ -2941,3 +2942,62 @@ The .top, .year and .path files are generated from the top level Makefile, by:
 ```sh
 make genpath
 ```
+
+
+### <a name="faq6_9"></a>FAQ 6.9: What is the current meaning of the IOCCC terms Author, Entry, and Submission?
+
+The IOCCC is now attempting to use the following terms:
+
+- Author
+
+An _author_ is someone who has submitted an entry that has won the IOCCC.
+
+An entry can have more than one authors.  A number of authors have submitted
+entries that have won the IOCCC, sometimes in the same IOCCC contest year.
+
+**An apology for being inconsistent**: In the past, the IOCCC used the term _winner_ to
+refer to what is now an _author_.  In a number of historical cases,
+such as old rules and old guidelines, terms such as _winner_ may still be
+found.  Moreover, out of habit, the IOCCC judges sometimes use old
+names such as _winner_ when they should use _author_.  Sorry (tm Canada)! :-)
+
+- Entry
+
+An _entry_ is a submission that won the IOCCC.
+
+An _entry_ has one or more _authors_.
+
+An _entry_ includes all of the files needed to compile it,
+plus sample input files, a `Makefile`, an `.entry.json` file
+describing the entry, a compressed tarball containing all of
+files in the entry, etc.  Under the IOCCC tree, an _entry_
+that win the IOCCC in year _YYYY_ is located under the
+directory `YYYY/entry`.
+
+**An apology for being inconsistent**: In the past, the IOCCC used the term _winner_ to
+refer to what is now an _entry_.  In a number of historical cases,
+such as old rules and old guidelines, terms such as _winner_ may still be
+found.  Moreover, out of habit, the IOCCC judges sometimes use old
+names such as _winner_ when they should use _entry_.  Sorry (tm Canada)! :-)
+
+- Submission
+
+A _submission_ is something given to the IOCCC judges
+for consideration when the IOCCC is open.
+
+When the IOCCC is open for submissions, those who register
+to enter the IOCCC may use the [mkliocccentry tool](https://github.com/ioccc-src/mkiocccentry)
+to package their code into a compressed tarball that may be
+uploaded to the [IOCCC submit server](https://submit.ioccc.org).
+This compressed tarball is formatted in such a way that
+the IOCCC judges do not see who wrote the code.
+
+A _submission_ that the IOCCC judges deem to have won the IOCCC
+becomes an _entry_.  Only then do the IOCCC judges look into
+the special JSON file to discover who the _author_(s) are.
+
+**An apology for being inconsistent**: In the past, the IOCCC used the term _entry_ to
+refer to what is now an _submission_.  In a number of historical cases,
+such as old rules and old guidelines, terms such as _entry_ may still be
+found.  Moreover, out of habit, the IOCCC judges sometimes use old
+names such as _entry_ when they should use _submission_.  Sorry (tm Canada)! :-)
