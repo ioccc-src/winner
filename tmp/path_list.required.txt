@@ -842,6 +842,7 @@
 1995/leo/leo.c
 1995/leo/leo.orig.c
 1995/leo/spoiler1.md
+1995/leo/try.sh
 1995/makarios/.entry.json
 1995/makarios/.gitignore
 1995/makarios/Makefile

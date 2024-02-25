@@ -722,6 +722,8 @@
 2012/vik/index.html
 2012/zeitak/.path
 2012/zeitak/2012_zeitak.tar.bz2
+2012/zeitak/correct.java
+2012/zeitak/incorrect.java
 2012/zeitak/index.html
 2013/birken/.path
 2013/birken/2013_birken.tar.bz2
