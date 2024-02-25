@@ -16,7 +16,7 @@
 ## Section  2 - [IOCCC Judging process](#faq2)
 - [2.0  - How many entries do the judges receive for a given IOCCC?](#faq2_0)
 - [2.1  - What should I put in the remarks.md file of my entry?](#faq2_1)
-- [2.2  - Why don't you publish non-winners?](#faq2_2)
+- [2.2  - Why don't you publish entries that do not win?](#faq2_2)
 - [2.3  - How much time does it take to judge the contest?](#faq2_3)
 - [2.4  - How many judging rounds do you have?](#faq2_4)
 - [2.5  - Why do some IOCCC entries receive the Grand Prize or Best of Show award?](#faq2_5)
@@ -24,19 +24,19 @@
 
 ## Section  3 - [Compiling and running IOCCC entries](#faq3)
 - [3.0  - What Makefile rules are available to build or clean up IOCCC entries?](#faq3_0)
-- [3.1  - Why doesn't this IOCCC winner compile?](#faq3_1)
-- [3.2  - Why does a IOCCC winner fail on my 64-bit system?](#faq3_2)
+- [3.1  - Why doesn't this IOCCC entry compile?](#faq3_1)
+- [3.2  - Why does a IOCCC entry fail on my 64-bit system?](#faq3_2)
 - [3.3  - Why do some IOCCC entries fail to compile under macOS?](#faq3_3)
-- [3.4  - Why does clang or gcc fail to compile an IOCCC winner?](#faq3_4)
+- [3.4  - Why does clang or gcc fail to compile an IOCCC entry?](#faq3_4)
 - [3.5  - What is this cb tool that is mentioned in the IOCCC?](#faq3_5)
-- [3.6  - An IOCCC winner messed up my terminal application, how do I fix this?](#faq3_6)
-- [3.7  - How do I run an IOCCC winner that requires X11?](#faq3_7)
-- [3.8  - How do I compile an IOCCC winner that requires SDL1 or SDL2?](#faq3_8)
-- [3.9  - How do I compile an IOCCC winner that requires (n)curses?](#faq3_9)
-- [3.10 - How do I compile and use an IOCCC winner that requires sound?](#faq3_10)
+- [3.6  - An IOCCC entry messed up my terminal application, how do I fix this?](#faq3_6)
+- [3.7  - How do I run an IOCCC entry that requires X11?](#faq3_7)
+- [3.8  - How do I compile an IOCCC entry that requires SDL1 or SDL2?](#faq3_8)
+- [3.9  - How do I compile an IOCCC entry that requires (n)curses?](#faq3_9)
+- [3.10 - How do I compile and use an IOCCC entry that requires sound?](#faq3_10)
 - [3.11 - Why do Makefiles use -Weverything with clang?](#faq3_11)
 - [3.12 - How do I find out how to send interrupt/EOF etc. for entries that require it?](#faq3_12)
-- [3.13 - Why does an IOCCC winner fail to compile or or fail run?](#faq3_13)
+- [3.13 - Why does an IOCCC entry fail to compile or or fail run?](#faq3_13)
 - [3.14 - How do I compile and install tcpserver for entries that require it?](#faq3_14)
 - [3.15 - How do I compile and install netpbm for entries that require it?](#faq3_15)
 - [3.16 - How do I compile and install libjpeg-turbo for entries that require it?](#faq3_16)
@@ -47,15 +47,15 @@
 ## Section  4 - [Changes made to IOCCC entries](#faq4)
 - [4.0  - Why are some winning author remarks incongruent with the winning IOCCC code?](#faq4_0)
 - [4.1  - Why were some calls to the libc function `gets(3)` changed to use `fgets(3)`?](#faq4_1)
-- [4.2  - What was changed in an IOCCC winner source code?](#faq4_2)
+- [4.2  - What was changed in an IOCCC entry source code?](#faq4_2)
 - [4.3  - Why do author remarks sometimes not match the source and/or why are there
 other inconsistencies with the original entry?](#faq4_3)
 - [4.4  - What is the meaning of the file ending in .orig.c in IOCCC entries?](#faq4_4)
 
 ## Section  5 - [Helping the IOCCC](#faq5)
 - [5.0  - How may I help the IOCCC?](#faq5_0)
-- [5.1  - How do I report a bug in an IOCCC winner?](#faq5_1)
-- [5.2  - How may I submit a fix to an IOCCC winner?](#faq5_2)
+- [5.1  - How do I report a bug in an IOCCC entry?](#faq5_1)
+- [5.2  - How may I submit a fix to an IOCCC entry?](#faq5_2)
 - [5.3  - How may I report an IOCCC web site problem?](#faq5_3)
 - [5.4  - How may I submit a fix to the IOCCC web site?](#faq5_4)
 - [5.5  - How may I correct or update IOCCC author information?](#faq5_5)
@@ -170,9 +170,10 @@ __over-submitted__ types of entries, level of the competition from
 previous IOCCC entries make it more challenging to be successful.
 
 
-It is also important to note that the [guidelines](/guidelines.html) say:
+It is also important to note that the [guidelines](/guidelines.html) often
+state something along the lines of:
 
-> _We tend to dislike programs that: are similar to previous winners_
+> _We tend to dislike programs that: are similar to previous winning entries_
 
 
 #### maze generator
@@ -203,7 +204,7 @@ It is also important to note that the [guidelines](/guidelines.html) say:
 - [1994/dodsond1](/years.html#1994_dodsond1)
 
 
-#### generating small primes (below is the list of all prime related winners)
+#### generating small primes (below is the list of all prime related winning entries)
 
 - [1985/august](/years.html#1985_august)
 
@@ -416,7 +417,7 @@ The
 [1st IOCCC entries](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=837%40nsc.UUCP&rnum=2&filter=0)
 were posted on 17 April 1984.
 
-There were 4 winners in 1984:
+There were 4 entries that won in 1984:
 
 1. [(dis)honorable mention](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=842%40nsc.UUCP&rnum=8&filter=0)
 2.  [3rd place](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=843%40nsc.UUCP&rnum=7&filter=0)
@@ -480,7 +481,7 @@ web site.
 #### 2020 Dec 28 bzip2 compressed tarball archive
 
 Furthermore, a bzip2 compressed tarball containing the released
-IOCCC winner source code may be found under the
+IOCCC entry source code may be found under the
 [archive/historic](/archive/histroic) directory.  The file
 [archive-all.tar.bz2](/archive/historic/archive-all.tar.bz2) contains
 all years and the individual years are in the form
@@ -506,7 +507,7 @@ changes and important improvements such as:
 
 * Moving IOCCC entries into their own separate directories
 * Fixing lots and lots of typos
-* Fixing Makefiles and code to allow for nearly all winners to be compiled and
+* Fixing Makefiles and code to allow for nearly all winning entries to be compiled and
 work on modern systems
 * Reworking the Makefiles to use a consistent set of rules
 * Reworking the Makefiles specific to the gcc and clang C compilers
@@ -635,19 +636,19 @@ this is not clear!
 - leaving the remark section empty.
 
 
-### <a name="faq2_1"></a>FAQ 2.2: Why don't you publish non-winners?
+### <a name="faq2_1"></a>FAQ 2.2: Why don't you publish entries that do not win?
 
 Because the publication on the IOCCC site **_IS_** the award!
 Anyone is free to put their IOCCC hopefuls, lookalikes and/or
-non-winners on their web page for everyone to see.
+entries that do not win on their web page for everyone to see.
 
 
 ### <a name="faq2_3"></a>FAQ 2.3: How much time does it take to judge the contest?
 
 It takes a fair amount of time to setup, run, answer email, process entries,
-review entries, trim down the set entries to a set of winners, doing the
-write-up of the winners, announcing the winners, reviewing final edits of the
-winning entry set, posting the winners, being flamed :-), tell folks who send in
+review entries, trim down the set entries to a set of winning entries, doing the
+write-up of the entries, announcing the entries, reviewing final edits of the
+winning entry set, posting the winning entries, being flamed :-), tell folks who send in
 late entries to wait until the next contest, etc... It takes a few weekends and
 a number nights of study and work ... which is hard given that we are busy with
 many other activities as well.
@@ -672,9 +673,9 @@ sometimes we also report when we enter what we believe is the final judging roun
 
 ### <a name="faq2_5"></a>FAQ 2.5: Why do some IOCCC entries receive the Grand Prize or Best of Show award?
 
-In some years, the IOCCC judges discover a truly amazing IOCCC winner that
+In some years, the IOCCC judges discover a truly amazing IOCCC entry that
 stands out among all of the other IOCCC entries received that year.
-For such an IOCCC winner, the IOCCC judges award a "Grand Prize"
+For such an IOCCC entry, the IOCCC judges award a "Grand Prize"
 or "Best of Show award.
 
 In 1984-1987, the grand prize winners are:
@@ -727,9 +728,9 @@ more other entries that came in close behind.
 
 Once the [IOCCC](https://www.ioccc.org/index.html#enter) closes, the judges
 will select the [winning entries](https://www.ioccc.org/years.html) announce them
-on the [@IOCCC mastodon feed](https://fosstodon.org/@ioccc), notify the winners
-via email using their previously registered email address, and upload the
-winning code to the [winner repo](https://github.com/ioccc-src/winner)
+on the [@IOCCC mastodon feed](https://fosstodon.org/@ioccc), notify the authors
+of entries that won the IOCCC via email using their previously registered email address,
+and upload the winning code to the [winner repo](https://github.com/ioccc-src/winner)
 which in turn will cause them to be displayed on the [IOCCC winning entries
 page](https://www.ioccc.org/years.html).
 
@@ -789,9 +790,9 @@ enable or disable additional warnings or flags. Even so different versions or
 compilers might do different things, have different defects or other issues.
 
 
-### <a name="faq3_1"></a>FAQ 3.1: Why doesn't this IOCCC winner compile?
+### <a name="faq3_1"></a>FAQ 3.1: Why doesn't this IOCCC entry compile?
 
-Some winners, particularly winners from long ago, no longer compile on more
+Some entries that won the IOCCC, particularly entries from long ago, no longer compile on more
 modern systems because the C language has evolved (i.e. the modern C compilers
 are much more strict in what they accept as a valid program), or the entry
 depended on operation system and library features that where common back then
@@ -803,7 +804,7 @@ hints, especially in cases were something else needs to be installed.
 Please see the [bugs.md](/bugs.md) file for details about known problems with IOCCC entries.  In some cases you may be dealing with a problematic entry.  In a few fun cases, the IOCCC does not compile by design!
 
 If you have a fix that makes a minimal impact to the entry, then please consider submitting that change in the form of a pull request.  Please
-see FAQ 5.2 <a href="#fix_an_entry">"How may I submit a fix to an IOCCC winner"</a> for details.
+see FAQ 5.2 <a href="#fix_an_entry">"How may I submit a fix to an IOCCC entry"</a> for details.
 
 In some cases alternative code has been added that does compile on some or most systems.  Check the write up for the entry for "alt" code and possible ways to compile and run that code.  In some cases we replaced the original code (but not the `.orig.c` file!) with code
 that works for modern systems but one can view the original code in the
@@ -811,7 +812,7 @@ that works for modern systems but one can view the original code in the
 `winner.alt.c` or `prog.alt.c`).
 
 
-### <a name="faq3_2"></a>FAQ 3.2: Why does a IOCCC winner fail on my 64-bit system?
+### <a name="faq3_2"></a>FAQ 3.2: Why does a IOCCC entry fail on my 64-bit system?
 
 Unfortunately some older entries are non-portable and require 32-bit support or
 32-bit binaries. A problem system here is macOS Catalina (10.15) as as of that
@@ -833,7 +834,7 @@ now work with 32-bit AND 64-bit systems.
 
 Please see the [bugs.md](/bugs.md) file for the problematic entry in question to see if the problem is known, and if a fix is wanted, consider trying to port the code to a 64-bit system and submitting a pull request with that change.  Pull requests that fix such code while trying to minimize the impact of any changes and preserving the spirit of the original code are very welcome!
 Please
-see FAQ 5.2 <a href="#fix_an_entry">"How may I submit a fix to an IOCCC winner"</a> for details.
+see FAQ 5.2 <a href="#fix_an_entry">"How may I submit a fix to an IOCCC entry"</a> for details.
 
 
 ### <a name="faq3_3"></a>FAQ 3.3: Why do some IOCCC entries fail to compile under macOS?
@@ -847,10 +848,10 @@ others will be looked at, when found.
 
 In some cases the [bugs.md](/bugs.md) file may note a known macOS problem with an entry.  Should you manage to port the entry, and assuming your changes also attempt to preserve the original intent of the IOCCC entry, we would encourage you to submit a pull request with your ported code.
 Please
-see FAQ 5.2 <a href="#fix_an_entry">"How may I submit a fix to an IOCCC winner"</a> for details.
+see FAQ 5.2 <a href="#fix_an_entry">"How may I submit a fix to an IOCCC entry"</a> for details.
 
 
-### <a name="faq3_4"></a>FAQ 3.4: Why does clang or gcc fail to compile an IOCCC winner?
+### <a name="faq3_4"></a>FAQ 3.4: Why does clang or gcc fail to compile an IOCCC entry?
 
 Although we have fixed numerous entries to work with clang (sometimes in an alt
 version but usually in the program itself) there are some that simply cannot be
@@ -868,7 +869,7 @@ other things that have to be done plus remembering to do it.
 
 See if the problem is mentioned in [bugs.md](/bugs.md).  If you have a change that fixes the problem (even if it just a change to the `Makefile`) that doesn't negatively impact the entry too much, consider submitting that change in the form of a pull request.
 Please
-see FAQ 5.2 <a href="#fix_an_entry">"How may I submit a fix to an IOCCC winner"</a> for details.
+see FAQ 5.2 <a href="#fix_an_entry">"How may I submit a fix to an IOCCC entry"</a> for details.
 
 
 ### <a name="faq3_5"></a>FAQ 3.5: What is this cb tool that is mentioned in the IOCCC?
@@ -879,7 +880,7 @@ judging the IOCCC. A Unix man page for `cb`
 [still exists](https://www.ibm.com/docs/en/aix/7.3?topic=c-cb-command).
 
 
-### <a name="faq3_6"></a>FAQ 3.6: An IOCCC winner messed up my terminal application, how do I fix this?
+### <a name="faq3_6"></a>FAQ 3.6: An IOCCC entry messed up my terminal application, how do I fix this?
 
 The simplest way to do this is to type `reset`. If echo was disabled you can get
 usually away with `stty echo`. Sometimes you can also get away with `stty sane`.
@@ -887,13 +888,13 @@ usually away with `stty echo`. Sometimes you can also get away with `stty sane`.
 will too but it won't reset the terminal).
 
 
-### <a name="faq3_7"></a><a name="X11macos"></a><a name="X11"></a>FAQ 3.7: How do I run an IOCCC winner that requires X11?
+### <a name="faq3_7"></a><a name="X11macos"></a><a name="X11"></a>FAQ 3.7: How do I run an IOCCC entry that requires X11?
 
 
-#### <a name="X11_general"></a>Generally, to compile and run an IOCCC winner that requires X11:
+#### <a name="X11_general"></a>Generally, to compile and run an IOCCC entry that requires X11:
 
 You must have the X11 related include files and X11 libraries in order to
-compile the IOCCC winner. In order to do this you will need to install Xorg and
+compile the IOCCC entry. In order to do this you will need to install Xorg and
 related packages including development related packages. If you have macOS see
 further down for different instructions. Otherwise: in particular you must:
 
@@ -902,7 +903,7 @@ further down for different instructions. Otherwise: in particular you must:
 * Install a X11 terminal application.
 * Start the Xorg server.
 * Launch the X11 terminal application.
-* Run the IOCCC winner in the X11 terminal application.
+* Run the IOCCC entry in the X11 terminal application.
 
 By X11 terminal application we suggest one of:
 
@@ -936,7 +937,7 @@ See the [Wayland](https://wayland.freedesktop.org) web site for more details.
 
 **IMPORTANT NOTE**: We do **NOT** know if IOCCC entries will run under
 **Wayland**.  Some IOCCC entries that use X11 might be OK while other IOCCC
-winners that use X11 in an unusual way might fail under **Wayland**.
+entries that use X11 in an unusual way might fail under **Wayland**.
 
 
 See the [Wayland FAQ](https://wayland.freedesktop.org/faq.html) for more
@@ -946,8 +947,8 @@ If your system uses **Wayland** and not X11, you might give the IOCCC entries
 that use X11 a try.  They might work but again we do not know.
 
 **IMPORTANT NOTE**: The [IOCCC judges](/judges.html) [do not support IOCCC entries](#no_support).
-So if an IOCCC winner that uses X11 fails under **Wayland**, and you wish to
-provide a fix to the IOCCC winner so that it will run under **Wayland**,
+So if an IOCCC entry that uses X11 fails under **Wayland**, and you wish to
+provide a fix to the IOCCC entry so that it will run under **Wayland**,
 then consider [submitting a fix](#fix_an_entry) so that it will run under **Wayland**.
 
 Basically: if you discover an entry does not work in Wayland you are welcome to
@@ -978,7 +979,7 @@ See the above note for details.
 First, see the above note on [installing and starting Xorg](#X11_general).
 However, for macOS, instead of installing the Xorg server, you need to install and launch
 the [most recent XQuartz](https://www.xquartz.org) application
-and then run the IOCCC winner from the [Xterm window
+and then run the IOCCC entry from the [Xterm window
 shell](https://en.wikipedia.org/wiki/Xterm).
 
 As an example we will use [1993/jonth](/1993/jonth/README.md) which works
@@ -1074,7 +1075,7 @@ See the [X.org](https://x.org/wiki/) foundation web site.
 See the above note for details.
 
 
-### <a name="faq3_8"></a><a name="SDL"></a>FAQ 3.8: How do I compile an IOCCC winner that requires SDL1 or SDL2?
+### <a name="faq3_8"></a><a name="SDL"></a>FAQ 3.8: How do I compile an IOCCC entry that requires SDL1 or SDL2?
 
 This depends on your operating system but below are instructions for Linux and
 macOS with alternative methods for macOS and different package managers with Linux.
@@ -1189,7 +1190,7 @@ details. If something is not noted you're welcome to report it as an issue or
 fix it and make a new pull request.
 
 
-### <a name="faq3_9"></a>FAQ 3.9: How do I compile an IOCCC winner that requires (n)curses?
+### <a name="faq3_9"></a>FAQ 3.9: How do I compile an IOCCC entry that requires (n)curses?
 
 This depends on your operating system but below are instructions for Linux and
 macOS with alternative methods for macOS and different package managers with Linux.
@@ -1252,7 +1253,7 @@ for downloading, installing and using ncurses.
 We recommend trying a method suitable for your environment first, if possible.
 
 
-### <a name="faq3_10"></a><a name="sox"></a>FAQ 3.10: How do I compile and use an IOCCC winner that requires sound?
+### <a name="faq3_10"></a><a name="sox"></a>FAQ 3.10: How do I compile and use an IOCCC entry that requires sound?
 
 This might depend on the entry but most likely the Swiss Army Knife of sound
 processing programs, [SoX](https://sox.sourceforge.net), will work. How to
@@ -1314,7 +1315,7 @@ include this here, at least for now.
 
 While we know that use of `-Weverything` is generally not recommended
 by `clang` C compiler developers, we do use the `-Weverything`
-option in a certain case in IOCCC winner `Makefile`s.
+option in a certain case in IOCCC entry `Makefile`s.
 
 The use of `-Weverything` is limited to when one forces `CC=clang` or more
 generally if the string 'clang' is in `$(CC)`. If `$(CC)` contains 'gcc' the
@@ -1446,11 +1447,11 @@ reason it's not you might have to do something else including just piping it to
 just `grep intr` or whatever.
 
 
-### <a name="faq3_13"></a><a name="no_support"></a>FAQ 3.13: Why does an IOCCC winner fail to compile or or fail run?
+### <a name="faq3_13"></a><a name="no_support"></a>FAQ 3.13: Why does an IOCCC entry fail to compile or or fail run?
 
 What may have worked years ago may not work well or work at all today.
 Please note that the IOCCC judges do **NOT** support IOCCC entries.
-Nevertheless, there may be a number of reasons why an IOCCC winner
+Nevertheless, there may be a number of reasons why an IOCCC entry
 may fail to compile or run well or fail to run on your system.
 
 In some cases the American National Standards Institute's ANSI C
@@ -1465,23 +1466,23 @@ Some IOCCC entries fail to compile under clang, or gcc.
 Some IOCCC entries require operating system services that
 may not be present on your system.
 
-In some cases the IOCCC winner simply has bugs or (Mis)features.
+In some cases the IOCCC entry simply has bugs or (Mis)features.
 
-If you are having problems compiling or running an IOCCC winner,
+If you are having problems compiling or running an IOCCC entry,
 we recommend that you look in [bugs.md](/bugs.md) to see if
 there is a known bugs or (Mis)feature.  In some cases what you
 may think is a bug is actually an feature that was intentionally
 written by the authors.  In some cases the problem is well
 known and we are looking for someone to attempt to fix it.
 
-In some cases there is an alternate version of the IOCCC winner
+In some cases there is an alternate version of the IOCCC entry
 that you may wish to try.
 
 It also possible that you may have discovered a bug in an IOCCC
-winner.  If so, you are invited to try an fix the IOCCC winner and
+winner.  If so, you are invited to try an fix the IOCCC entry and
 submit that fix by way of a [GitHub pull
 request](https://github.com/ioccc-src/temp-test-ioccc/pulls).
-Please see [FAQ 5.2](#faq5_2) for how to submit a fix to an IOCCC winner.
+Please see [FAQ 5.2](#faq5_2) for how to submit a fix to an IOCCC entry.
 
 
 ### <a name="faq3_14"></a><a name="tcpserver"></a>FAQ 3.14 - How do I compile and install tcpserver for entries that require it?
@@ -1741,7 +1742,7 @@ We recommend trying a method suitable for your environment first, if possible.
 This depends on your operating system for which we describe a couple below.
 
 In general OpenGL needs X11 to be installed and the X Window Server to be running.
-See [FAQ 3.7: How do I run an IOCCC winner that requires X11?](#X11_general) for
+See [FAQ 3.7: How do I run an IOCCC entry that requires X11?](#X11_general) for
 general information about X11.
 
 Once X11 is install and the X Window Server is running, one needs to compile
@@ -1890,7 +1891,7 @@ can look almost identical.
 
 
 
-### <a name="faq4_2"></a>FAQ 4.2: What was changed in an IOCCC winner source code?
+### <a name="faq4_2"></a>FAQ 4.2: What was changed in an IOCCC entry source code?
 
 We have set up make rules to easily do see what was changed in the IOCCC
 winner source.  Using the `Makefile` in the winner directory, use
@@ -2005,7 +2006,7 @@ some cases, such as `1984/mullender`, the original code is the same as the code
 as no changes were made (there is an alt version for systems that are not
 VAX-11/PDP-11, however).
 
-See also [FAQ 4.2: What was changed in an IOCCC winner source code?](#faq4_2)
+See also [FAQ 4.2: What was changed in an IOCCC entry source code?](#faq4_2)
 
 
 ### <a name="faq4_4"></a>FAQ 4.4: What is the meaning of the file ending in .orig.c in IOCCC entries?
@@ -2023,12 +2024,12 @@ we can find.
 ### We welcome your help in fixing IOCCC entries
 
 The [known bugs](/bugs.md) file, order by IOCCC years, contains a
-list of known bugs & (mis)features.  If you are looking for an IOCCC winner
+list of known bugs & (mis)features.  If you are looking for an IOCCC entry
 to try and fix, this file is a good place to start.
 
 See [FAQ 5.2](#faq5_2) for information on how to submit a fix to
-an IOCCC winner.  Before you consider trying to fix an IOCCC winner,
-please check the [known bugs](/bugs.md) file for the IOCCC winner
+an IOCCC entry.  Before you consider trying to fix an IOCCC winner,
+please check the [known bugs](/bugs.md) file for the IOCCC entry
 in question.  Note that in several cases what you may have discovered,
 while a (mis)feature is not considered a bug and should **not be fixed**.
 In cases where the bug is known, the entry's [known bugs](/bugs.md) file
@@ -2037,14 +2038,14 @@ section may offer you important fixing clues.
 ### We welcome your help on fixing the IOCCC web site
 
 
-### <a name="faq5_1"></a><a name="report_bug"></a>FAQ 5.1: How do I report a bug in an IOCCC winner?
+### <a name="faq5_1"></a><a name="report_bug"></a>FAQ 5.1: How do I report a bug in an IOCCC entry?
 
-We do not 'maintain' the contest winners as such. The code is made available on an 'AS
+We do not 'maintain' the contest entries as such. The code is made available on an 'AS
 IS' basis. If you have a FIX for an entry, we suggest that you submit your fixes in a [GitHub pull
 request](https://github.com/ioccc-src/temp-test-ioccc/pulls) as we welcome pull requests that have a
 minimal impact on the entry while improving the portability, functionality, and/or addressing known problems.
 
-If you do submit a pull request, we ask that each pull request address just one IOCCC winner at a time.
+If you do submit a pull request, we ask that each pull request address just one IOCCC entry at a time.
 
 Note that just because you have a fix does not mean it'll be accepted. This
 might be because the author objects or it doesn't fit in some way or another. Of
@@ -2056,7 +2057,7 @@ link to your entries; if you're not we can link to your website if you wish.
 See [FAQ 5.2](#faq5_2) for information on how to submit a fix to an IOCCC entry.
 
 
-### <a name="faq5_2"></a><a name="fix_an_entry"></a>FAQ 5.2: How may I submit a fix to an IOCCC winner?
+### <a name="faq5_2"></a><a name="fix_an_entry"></a>FAQ 5.2: How may I submit a fix to an IOCCC entry?
 
 If you see a problem with an IOCCC entry, first check the [known bugs](/bugs.md)
 file.  In some cases what you might think of as a bug is instead a known
@@ -2071,7 +2072,7 @@ repo](https://github.com/ioccc-src/winner).
 
 BTW: A **problem** is not limited to the code itself.  Fixing typos in files
 such as "_README.md_" files, fixing issues in a "_Makefile_", or otherwise
-correcting an IOCCC winner is **VERY MUCH WELCOME**!  Please use the same
+correcting an IOCCC entry is **VERY MUCH WELCOME**!  Please use the same
 [GitHub pull request](https://github.com/ioccc-src/winner/pulls) process against
 the master [branch](https://github.com/ioccc-src/winner/branches) of the
 [ioccc-src/winner repo](https://github.com/ioccc-src/winner).
@@ -2085,7 +2086,7 @@ IOCCC winning entries are presented!
 In any event we will happily add you to the
 [thanks](/thanks-for-help.md) file for your help!
 
-And of course, an IOCCC winner may update their own entries
+And of course, an IOCCC entry may update their own entries
 (metadata as well as source code and any extra files) by opening a
 [GitHub pull request](https://github.com/ioccc-src/winner/pulls)
 against the master [branch](https://github.com/ioccc-src/winner/branches)
@@ -2098,13 +2099,13 @@ have the final say in the matter.
 ### <a name="faq5_3"></a><a name="report_web_problem"></a>FAQ 5.3: How may I report an IOCCC web site problem?
 
 If you discover a problem with the IOCCC web site that is related
-to a particular IOCCC winner, please see [FAQ 5.1](#faq5_1) for
-information about reporting a bug in an IOCCC winner, and see [FAQ
-5.2](#faq5_2) for information on how to submit a fix to an IOCCC winner.
+to a particular IOCCC entry, please see [FAQ 5.1](#faq5_1) for
+information about reporting a bug in an IOCCC entry, and see [FAQ
+5.2](#faq5_2) for information on how to submit a fix to an IOCCC entry.
 
 If you discover a problem with the IOCCC web site (such as a broken link, which
-may or may not be specific to a particular IOCCC winner) that is **not related
-to a particular IOCCC winner**, the best way you can help is to submit a fix to
+may or may not be specific to a particular IOCCC entry) that is **not related
+to a particular IOCCC entry**, the best way you can help is to submit a fix to
 the IOCCC web site.  See [FAQ 5.4](#faq5_4) for information on submitting fixes
 to the IOCCC web site.
 
@@ -2119,8 +2120,8 @@ issue](//github.com/ioccc-src/winner/issues).
 
 ### <a name="faq5_4"></a><a name="fix_web_site"></a>FAQ 5.4: How may I submit a fix to the IOCCC web site?
 
-For IOCCC web site problems that relate to a particular IOCCC winner, please
-see [FAQ 5.2](#faq5_2) for information on how submit a fix to an IOCCC winner.
+For IOCCC web site problems that relate to a particular IOCCC entry, please
+see [FAQ 5.2](#faq5_2) for information on how submit a fix to an IOCCC entry.
 
 You may open a [GitHub pull request](https://github.com/ioccc-src/winner/pulls)
 against the master [branch](https://github.com/ioccc-src/winner/branches)
@@ -2392,14 +2393,14 @@ HTML files as well to contact an author.
 The content of these JSON files are used by tools from the [build-ioccc
 repo](https://github.com/ioccc-src/build-ioccc) to help build HTML
 content for the [official IOCCC web site](https://www.ioccc.org).
-For example, the `index.html` file for each IOCCC winner contains
+For example, the `index.html` file for each IOCCC entry contains
 selected information about the authors.  Tools from the [build-ioccc
 repo](https://github.com/ioccc-src/build-ioccc) use the content of
 these JSON files to generate the `index.html` files for each IOCCC
 winning entry.
 
 Moreover, should the [IOCCC judges](/judges.html) need to
-contact an authors of a IOCCC winner, they will consult the contents
+contact an authors of a IOCCC entry, they will consult the contents
 of the author's JSON file for ways to contact them.
 
 Each author of an IOCCC winning entry has their own `author_handle.json` file
@@ -2929,9 +2930,9 @@ The [.top](/.top) file resides at the top directory.  This file contains the com
 of IOCCC years.
 
 Under each IOCCC year. one will find a `.year` file.  These files contain directory paths from the top directory,
-of the IOCCC winner directories for a given year.  For example, see the [1984/.year](/.1984/.year) file.
+of the IOCCC entry directories for a given year.  For example, see the [1984/.year](/.1984/.year) file.
 
-Under each IOCCC winner directory, you will find a `.path` file.
+Under each IOCCC entry directory, you will find a `.path` file.
 These files contain the directory path from the top directory.
 For example see [1984/anonymous/.path](/1984/anonymous/.path).
 

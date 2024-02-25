@@ -21,10 +21,10 @@ REQUEST *PER* FIX, please)!
 
 We will be **happy to credit anyone who submits successful [GitHub pull
 requests](https://github.com/ioccc-src/temp-test-ioccc/pulls)** in the
-[thanks](/thanks-for-help.md) file. If you're a previous winner we will
-add a link to your winning entries in the file (if you're not a previous
-winner we can add a link to your GitHub page or personal website if you
-have one, should you wish).
+[thanks](/thanks-for-help.md) file. If you're the author of an entry
+that win the IOCCC, we will add a link to your winning entries in the file
+(if you're not an author, we can add a link to your GitHub page or personal
+website if you have one, should you wish).
 
 If you do fix an entry please feel free to delete the entry from this file!
 Otherwise if you wish to not worry about it we can do that to make sure the

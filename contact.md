@@ -13,7 +13,7 @@ of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner).
 
 If you are trying to:
 
-* Report a bug in an IOCCC winner - (see [FAQ 5.1](/faq.md#report_bug))
+* Report a bug in an IOCCC winning entry - (see [FAQ 5.1](/faq.md#report_bug))
 * Report an IOCCC web site problem - (see [FAQ 5.3](/faq.md#report_web_problem))
 * Report a broken or wrong web link - (see [FAQ 5.6](/faq.md#fix_link))
 

@@ -65,7 +65,7 @@ in 512 bytes or less, the worst complete C program.
 
 Thru the contest I have tried to instill two things in people.  First is a
 disgust for poor coding style.  Second was the notion of just how much utility
-is lost when a program is written in an unstructured fashion.  Contest winners
+is lost when a program is written in an unstructured fashion.  IOCCC winning entries
 help do this by what I call *satirical programming*.  To see why, observe one of
 the definitions of *satire*:
 
@@ -76,7 +76,7 @@ The authors of the winning entries placed a great deal of thought into their
 programs.  These programs in turn exposed and discredited what I considered to
 be the programmer's equivalent of "*vice or folly*".
 
-There were two unexpected benefits that came from the contest winners.  First
+There were two unexpected benefits that came from IOCCC winning entries.  First
 was an educational value to the programs.  To understand these C programs is to
 understand subtle points of the C programming language.  The second benefit is
 the entertainment value, which should become evident as you read further!
@@ -200,10 +200,10 @@ contest entry!  :-)
 Happy pondering!
 
 
-## About the IOCCC winner GitHub repository
+## About the IOCCC GitHub repository
 
 The [official IOCCC entries GitHub repository](https://github.com/ioccc-src/winner) are the
-official winners of the **International Obfuscated C Code Contest (IOCCC)**, the
+official entries that won the **International Obfuscated C Code Contest (IOCCC)**, the
 Internet's oldest ongoing contest.
 
 **IMPORTANT NOTE**: See [contact.html](/contact.html) for up to date contact details

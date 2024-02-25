@@ -9,18 +9,18 @@ we centralize them below.
 The [IOCCC judges](https://www.ioccc.org/judges.html) wish to recognize the many
 important contributions to the IOCCC presentation of past IOCCC entries.
 We are pleased to note the many contributions, **made since 2021 Jan 01**,
-on a winner by winner basis.
+on a IOCCC entry by entry basis.
 
 
 ## IOCCC thank you table of contents
 
-- [1984 winners](#1984)	|	[1985 winners](#1985)	|	[1986 winners](#1986)	|	[1987 winners](#1987)
-- [1988 winners](#1988)	|	[1989 winners](#1989)	|	[1990 winners](#1990)	|	[1991 winners](#1991)
-- [1992 winners](#1992)	|	[1993 winners](#1993)	|	[1994 winners](#1994)	|	[1995 winners](#1995)
-- [1996 winners](#1996)	|	[1998 winners](#1998)	|	[2000 winners](#2000)	|	[2001 winners](#2001)
-- [2004 winners](#2004)	|	[2005 winners](#2005)	|	[2006 winners](#2006)	|	[2011 winners](#2011)
-- [2012 winners](#2012)	|	[2013 winners](#2013)	|	[2014 winners](#2014)	|	[2015 winners](#2015)
-- [2018 winners](#2018)	|	[2019 winners](#2019)	|	[2020 winners](#2020)
+- [1984 entries](#1984)	|	[1985 entries](#1985)	|	[1986 entries](#1986)	|	[1987 entries](#1987)
+- [1988 entries](#1988)	|	[1989 entries](#1989)	|	[1990 entries](#1990)	|	[1991 entries](#1991)
+- [1992 entries](#1992)	|	[1993 entries](#1993)	|	[1994 entries](#1994)	|	[1995 entries](#1995)
+- [1996 entries](#1996)	|	[1998 entries](#1998)	|	[2000 entries](#2000)	|	[2001 entries](#2001)
+- [2004 entries](#2004)	|	[2005 entries](#2005)	|	[2006 entries](#2006)	|	[2011 entries](#2011)
+- [2012 entries](#2012)	|	[2013 entries](#2013)	|	[2014 entries](#2014)	|	[2015 entries](#2015)
+- [2018 entries](#2018)	|	[2019 entries](#2019)	|	[2020 entries](#2020)
 - [General thanks](#general_thanks)
 - [Makefiles fixes and improvements](#makefiles_fixes_improvements)
 - [Consistency improvements](#consistency_improvements)
@@ -1425,7 +1425,7 @@ should have been removed.
 [Cody](#cody) fixed the code so that it will try opening the file the code was compiled
 from (`__FILE__`), not	`adgrep.c`, as the latter does not exist: `adgrep` is
 simply a link to `adrian` as `adgrep` is what the program was submitted as but
-the winner is `adrian.c`.
+the entry's winning source file is `adrian.c`.
 
 Not fixing the above problem would have also caused the program to crash if no
 arg was specified as the file doesn't exist. In making the above fix, at first
@@ -4586,8 +4586,8 @@ bugs.md](/bugs.md#2019-ciura) for more details.
 
 Cody also added the file [Shakespeare.txt](/2019/diels-grabsch1/Shakespeare.txt)
 from [2019/mills](/2019/mills/README.md) (after running `make`) so that one can
-not worry about having the entire winner tree (or at least the 2019 tree each
-winner in a subdirectory). This is more important as there is discussion of
+not worry about having the entire IOCCC winning entry tree (or at least the 2019 tree each
+entry in a subdirectory). This is more important as there is discussion of
 having tarballs for each individual entry as a convenience.
 
 
@@ -4998,10 +4998,10 @@ contributed thousands, that we wish to thank.
 
 ### Authors
 
-A good number of the [past winners of the
+A good number of the [wining entries of the
 IOCCC](https://www.ioccc.org/authors.html) tested, identified and helped correct
 and/or improve the write-ups of fellow IOCCC entries for the year that they won.
-The list of those past winners is too long to mention: nevertheless the [IOCCC
+The list of those entries is too long to mention: nevertheless the [IOCCC
 judges](https://www.ioccc.org/judges.html) **VERY MUCH APPRECIATE** those who
 helped improve the presentation of their fellow IOCCC entries.
 
@@ -5065,6 +5065,6 @@ If you submitted a fix to an entry for which you are not the author,
 and your fix is accepted (in part or as a whole), we would be happy
 to add you to this [honor roll list](#thank_you_honor_roll).
 
-If you believe we incorporated one of your fixes to an IOCCC winner (that you
+If you believe we incorporated one of your fixes to an IOCCC winning entry (that you
 are not the author of) for which we neglected to mention in this file, please
 [contact the IOCCC](contact.html) so that we may correct the record.
