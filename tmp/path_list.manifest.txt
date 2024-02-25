@@ -1168,6 +1168,7 @@
 1995/leo/leo.orig.c
 1995/leo/spoiler1.html
 1995/leo/spoiler1.md
+1995/leo/try.sh
 1995/makarios/.entry.json
 1995/makarios/.gitignore
 1995/makarios/.path
@@ -2856,10 +2857,12 @@
 2012/zeitak/README.md
 2012/zeitak/anonymous.alt.c
 2012/zeitak/anonymous.c
+2012/zeitak/correct.java
 2012/zeitak/incorrect.1.quote.c
 2012/zeitak/incorrect.3.quotes.c
 2012/zeitak/incorrect.brace.c
 2012/zeitak/incorrect.bracket.c
+2012/zeitak/incorrect.java
 2012/zeitak/incorrect.paren.c
 2012/zeitak/incorrect.quote-esc.c
 2012/zeitak/incorrect.single.quote.c

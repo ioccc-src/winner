@@ -1163,6 +1163,7 @@
 1995,leo,Makefile,30,true,makefile,true,entry Makefile
 1995,leo,leo.orig.c,50,false,c,true,original source
 1995,leo,spoiler1.html,100,false,html,false,spoiler document
+1995,leo,try.sh,100,true,shell script,true,how to run
 1995,leo,1995_leo.tar.bz2,300,false,tbz2,false,download entry source
 1995,leo,README.md,4294967295,true,markdown,true,markdown source for index.html
 1995,leo,.entry.json,4294967295,true,json,true,description of entry in JSON
@@ -2857,10 +2858,12 @@
 2012,zeitak,zeitak.alt.c,40,true,c,true,alternative source
 2012,zeitak,zeitak.orig.c,50,true,c,true,original source
 2012,zeitak,test.sh,100,true,shellscript,true,test tool
+2012,zeitak,correct.java,150,false,java,true,example source with correct brace (supposedly :-) )
 2012,zeitak,incorrect.1.quote.c,150,true,c,true,example source with incorrect quote
 2012,zeitak,incorrect.3.quotes.c,150,true,c,true,example source with incorrect quote
 2012,zeitak,incorrect.brace.c,150,true,c,true,example source with incorrect brace
 2012,zeitak,incorrect.bracket.c,150,true,c,true,example source with incorrect bracket
+2012,zeitak,incorrect.java,150,false,java,true,example source with incorrect brace
 2012,zeitak,incorrect.paren.c,150,true,c,true,example source with incorrect parenthesis
 2012,zeitak,incorrect.quote-esc.c,150,true,c,true,example source with incorrect quote escape
 2012,zeitak,incorrect.single.quote.c,150,true,c,true,example source with incorrect single quote
