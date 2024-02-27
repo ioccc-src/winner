@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Sun 04 Feb 2024 17:30:08 UTC*
+*Last updated: Tue 27 Feb 2024 16:16:25 UTC*
 
 This document is for [Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) as
 he (that is I :-) ) wanted a way to keep track of things in a way that did not
@@ -24,13 +24,15 @@ completed.
     changes that might be required in those years too so a pass over all of them
     will have to be done at the time the files are to be reviewed.
 
-- Check the [GitHub issue #3 comment
-1615962832](https://github.com/ioccc-src/temp-test-ioccc/issues/3#issuecomment-1615962832)
-for links about the todo items wrt the [FAQ](/faq.md).
+- Check that the following todo tasks at:
+    <https://github.com/ioccc-src/temp-test-ioccc/issues/3#issuecomment-1583842154>,
+    <https://github.com/ioccc-src/temp-test-ioccc/issues/3#issuecomment-1583836962>,
+    <https://github.com/ioccc-src/temp-test-ioccc/issues/3#issuecomment-1583834979>,
+    <https://github.com/ioccc-src/temp-test-ioccc/issues/3#issuecomment-1583833132>,
+    <https://github.com/ioccc-src/temp-test-ioccc/issues/3#issuecomment-1583832622>,
+    <https://github.com/ioccc-src/temp-test-ioccc/issues/3#issuecomment-1583829356>
+    and
+    <https://github.com/ioccc-src/temp-test-ioccc/issues/3#issuecomment-1583828473>
 
-- Check for video links in README.md files and see if the videos can be
-embedded into the README.md files themselves. An entry that the video file is
-downloaded already is 2006/sykes1. There are others that I need to look at once
-the rest of the entries are done, assuming that it's possible.
-
-- Test and fix as and if necessary 2018/ferguson/weasel.spec.
+    have been finished. It is quite possible that some or all of these have been
+    corrected by now but this has not yet been determined.
