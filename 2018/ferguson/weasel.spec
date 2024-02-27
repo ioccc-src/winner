@@ -7,7 +7,7 @@ Summary:        Implementation of Richard Dawkins's Weasel program
 
 License:        Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
 URL:            http://ioccc.xexyl.net/weasel
-Source0:        weasel.tar.bz2
+Source0:        2018_ferguson.tar.bz2
 
 BuildRequires:  gcc make
 AutoReq:	1
@@ -34,11 +34,10 @@ AutoReq:	1
     string amongst others. See weasel(1) for more information.
 
 %prep
-%setup -n weasel
+%setup -n 2018/ferguson
 
 %build
 make weasel weasel.alt
-mv -f README.md README.md 2>/dev/null || :
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -53,9 +52,7 @@ install -m 644 Makefile -D $RPM_BUILD_ROOT%{_usrsrc}/weasel
 install -m 644 prog.alt.c -D $RPM_BUILD_ROOT%{_usrsrc}/weasel/weasel.alt.c
 ln -s weasel.alt.c $RPM_BUILD_ROOT%{_usrsrc}/weasel/prog.alt.c
 install -m 644 weasel.1 -D $RPM_BUILD_ROOT%{_mandir}/man1/weasel.1
-install -m 644 hint.html -D $RPM_BUILD_ROOT%{_docdir}/weasel/weasel.html
-install -m 644 README.md -D $RPM_BUILD_ROOT%{_docdir}/weasel/weasel.markdown
-install -m 644 hint.css -D $RPM_BUILD_ROOT%{_docdir}/weasel/hint.css
+install -m 644 README.md -D $RPM_BUILD_ROOT%{_docdir}/weasel/weasel.md
 install -m 644 FILES -D $RPM_BUILD_ROOT%{_docdir}/weasel/FILES
 
 %files
