@@ -37,13 +37,13 @@ Run a command on all IOCCC years.
 For example:
 
 ```sh
-all-years.sh -v 1 bin/gen-year-index.sh -v 1
+bin/all-years.sh -v 1 bin/gen-year-index.sh -v 1
 ```
 
 Or for example:
 
 ```sh
-all-years.sh -v 1 bin/chk-entry.sh
+bin/all-years.sh -v 1 bin/chk-entry.sh
 ```
 
 
@@ -88,6 +88,17 @@ Usage:
 
 ```sh
 bin/gen-location.sh -v 1
+```
+
+
+### [gen-other-html.sh](gen-other-html.sh)
+
+Generate entry HTML files from markdown other than README.md to index.html HTML files.
+
+Usage:
+
+```sh
+bin/gen-other-html.sh -v 1
 ```
 
 

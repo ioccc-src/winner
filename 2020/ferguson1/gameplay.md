@@ -885,7 +885,7 @@ years ago but I know it's true now. **Believe in yourself. Always.**
 [cannibalism.log.md]: cannibalism.log.md
 [cannibalism.log.html]: cannibalism.log.html
 [crazy.log.md]: crazy.log.md
-[crazy.log.md]: crazy.log.html
+[crazy.log.html]: crazy.log.html
 [play.sh]: play.sh
 
 -----------------------------------------------------------------------------------------------------

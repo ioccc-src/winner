@@ -524,6 +524,7 @@
 1992/buzzard.2/buzzard.2.README.md
 1992/buzzard.2/buzzard.2.alt.c
 1992/buzzard.2/buzzard.2.c
+1992/buzzard.2/buzzard.2.design.html
 1992/buzzard.2/buzzard.2.design.md
 1992/buzzard.2/buzzard.2.orig.c
 1992/buzzard.2/demo1.1st
@@ -3154,6 +3155,7 @@
 2020/endoh2/spoiler/gen.rb
 2020/endoh2/spoiler/glyphs.txt
 2020/endoh2/spoiler/prog.c
+2020/endoh2/spoiler/spoiler.html
 2020/endoh2/spoiler/spoiler.md
 2020/endoh2/spoiler/tmpl.txt
 2020/endoh2/try.sh
@@ -3199,11 +3201,13 @@
 2020/ferguson2/Makefile
 2020/ferguson2/README.md
 2020/ferguson2/cake.jpg
+2020/ferguson2/chocolate-cake.html
 2020/ferguson2/chocolate-cake.md
 2020/ferguson2/enigma.1
 2020/ferguson2/input.txt
 2020/ferguson2/ioccc-cake.jpg
 2020/ferguson2/key.txt
+2020/ferguson2/obfuscation.html
 2020/ferguson2/obfuscation.key
 2020/ferguson2/obfuscation.md
 2020/ferguson2/obfuscation.txt
@@ -3212,6 +3216,7 @@
 2020/ferguson2/prog.orig.c
 2020/ferguson2/recode.1
 2020/ferguson2/recode.c
+2020/ferguson2/recode.html
 2020/ferguson2/recode.md
 2020/ferguson2/try.alt.sh
 2020/ferguson2/try.sh

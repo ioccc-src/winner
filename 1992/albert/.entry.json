@@ -10,14 +10,6 @@
     ],
     "manifest" : [
 	{
-	    "file_path" : "index.html",
-	    "inventory_order" : 10,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "entry home page"
-	},
-	{
 	    "file_path" : "albert.c",
 	    "inventory_order" : 20,
 	    "OK_to_edit" : true,
@@ -72,6 +64,14 @@
 	    "display_as" : "tbz2",
 	    "display_via_github" : false,
 	    "entry_text" : "download entry source"
+	},
+	{
+	    "file_path" : "index.html",
+	    "inventory_order" : 2000000000,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "entry home page"
 	},
 	{
 	    "file_path" : ".entry.json",

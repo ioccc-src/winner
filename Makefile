@@ -55,6 +55,7 @@ GEN_YEARS= bin/gen-years.sh
 GEN_YEAR_INDEX= bin/gen-year-index.sh
 CHK_ENTRY= bin/chk-entry.sh
 GEN_TOP_MD2HTML= bin/gen-top-md2html.sh
+GEN_OTHER_HTML= bin/gen-other-html.sh
 README2INDEX= bin/readme2index.sh
 QUICK_README2INDEX= bin/quick-readme2index.sh
 TAR_ENTRY= bin/tar-entry.sh
@@ -239,7 +240,7 @@ indent.c:
 #	They might not even work (right now).  :-)
 
 .PHONY: help genpath genfilelist verify_entry_files gen_authors gen_location gen_years \
-	entry_index gen_top_md2html quick_entry_index \
+	entry_index gen_top_md2html gen_other_html quick_entry_index \
 	form_entry_tarball form_year_tarball form_all_tarball \
 	gen_year_index quick_www www
 
@@ -258,6 +259,7 @@ help:
 	@echo make gen_years
 	@echo make entry_index
 	@echo make gen_top_md2html
+	@echo make gen_other_html
 	@echo make gen_year_index
 	@echo make quick_entry_index
 	@echo make form_entry_tarball
@@ -354,6 +356,13 @@ gen_top_md2html: ${GEN_TOP_MD2HTML}
 	${GEN_TOP_MD2HTML} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
+# generate build entry HTML files from markdown other than README.md to index.html HTML files
+#
+gen_other_html: ${GEN_OTHER_HTML}
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${GEN_OTHER_HTML} -v 1
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
 # generate year level index.html files using the
 # ${GEN_YEAR_INDEX} tool (bin/gen-year-index.sh).
 #
@@ -420,12 +429,13 @@ quick_www:
 	${MAKE} clobber
 	${MAKE} genpath
 	${MAKE} genfilelist
-	-${MAKE} verify_entry_files # XXX - remove - when all files exist
+	${MAKE} verify_entry_files
 	${MAKE} gen_authors
 	${MAKE} gen_location
 	${MAKE} gen_years
 	${MAKE} gen_year_index
 	${MAKE} gen_top_md2html
+	${MAKE} gen_other_html
 	${MAKE} quick_entry_index
 	@echo XXX - disable tarball updates until mods settle down - XXX - ${MAKE} form_entry_tarball
 	@echo XXX - disable tarball updates until mods settle down - XXX - ${MAKE} form_year_tarball
@@ -441,12 +451,13 @@ www:
 	${MAKE} clobber
 	${MAKE} genpath
 	${MAKE} genfilelist
-	-${MAKE} verify_entry_files # XXX - remove - when all files exist
+	${MAKE} verify_entry_files
 	${MAKE} gen_authors
 	${MAKE} gen_location
 	${MAKE} gen_years
 	${MAKE} gen_year_index
 	${MAKE} gen_top_md2html
+	${MAKE} gen_other_html
 	${MAKE} entry_index
 	@echo XXX - disable tarball updates until mods settle down - XXX - ${MAKE} form_entry_tarball
 	@echo XXX - disable tarball updates until mods settle down - XXX - ${MAKE} form_year_tarball

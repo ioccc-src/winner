@@ -10,14 +10,6 @@
     ],
     "manifest" : [
 	{
-	    "file_path" : "index.html",
-	    "inventory_order" : 10,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "entry home page"
-	},
-	{
 	    "file_path" : "prog.c",
 	    "inventory_order" : 20,
 	    "OK_to_edit" : true,
@@ -66,6 +58,14 @@
 	    "entry_text" : "information for herpetologist hackers"
 	},
 	{
+	    "file_path" : "bugs.html",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "current bugs and things that look like bugs but are not"
+	},
+	{
 	    "file_path" : "cannibalism.log.html",
 	    "inventory_order" : 100,
 	    "OK_to_edit" : false,
@@ -74,12 +74,28 @@
 	    "entry_text" : "about the snake game"
 	},
 	{
+	    "file_path" : "chocolate-cake.html",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "double-layered chocolate fudge cake recipe"
+	},
+	{
 	    "file_path" : "crazy.log.html",
 	    "inventory_order" : 100,
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
 	    "entry_text" : "about some screen dumps"
+	},
+	{
+	    "file_path" : "gameplay.html",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "how to play the game"
 	},
 	{
 	    "file_path" : "play.sh",
@@ -96,6 +112,30 @@
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
 	    "entry_text" : "script to reset - preset colors"
+	},
+	{
+	    "file_path" : "spoilers.html",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "SPOILER ALERT - about the code"
+	},
+	{
+	    "file_path" : "terminals.html",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "terminal capabilities and dimensions and colors"
+	},
+	{
+	    "file_path" : "troubleshooting.html",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "troubleshooting the game"
 	},
 	{
 	    "file_path" : "prog.2.c",
@@ -146,6 +186,14 @@
 	    "entry_text" : "download entry source"
 	},
 	{
+	    "file_path" : "index.html",
+	    "inventory_order" : 2000000000,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "entry home page"
+	},
+	{
 	    "file_path" : ".entry.json",
 	    "inventory_order" : 4294967295,
 	    "OK_to_edit" : true,
@@ -175,7 +223,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
-	    "entry_text" : "markdown source for crazy.log.html"
+	    "entry_text" : "markdown source for COMPILING.html"
 	},
 	{
 	    "file_path" : "HACKING.md",
@@ -215,7 +263,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
-	    "entry_text" : "markdown source for chocolate-cake.html"
+	    "entry_text" : "markdown source for cannibalism.log.html"
 	},
 	{
 	    "file_path" : "chocolate-cake.md",
@@ -231,7 +279,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
-	    "entry_text" : "markdown source for deckmyn.html"
+	    "entry_text" : "markdown source for crazy.log.html"
 	},
 	{
 	    "file_path" : "gameplay.md",

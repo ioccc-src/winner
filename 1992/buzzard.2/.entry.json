@@ -10,14 +10,6 @@
     ],
     "manifest" : [
 	{
-	    "file_path" : "index.html",
-	    "inventory_order" : 10,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "entry home page"
-	},
-	{
 	    "file_path" : "buzzard.2.c",
 	    "inventory_order" : 20,
 	    "OK_to_edit" : true,
@@ -58,11 +50,11 @@
 	    "entry_text" : "author description of files"
 	},
 	{
-	    "file_path" : "buzzard.2.design.md",
+	    "file_path" : "buzzard.2.design.html",
 	    "inventory_order" : 100,
 	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
+	    "display_as" : "html",
+	    "display_via_github" : false,
 	    "entry_text" : "about the FORTH language"
 	},
 	{
@@ -162,6 +154,14 @@
 	    "entry_text" : "download entry source"
 	},
 	{
+	    "file_path" : "index.html",
+	    "inventory_order" : 2000000000,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "entry home page"
+	},
+	{
 	    "file_path" : ".entry.json",
 	    "inventory_order" : 4294967295,
 	    "OK_to_edit" : true,
@@ -199,7 +199,15 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
-	    "entry_text" : "markdown source for cannibalism.log.html"
+	    "entry_text" : "markdown source for buzzard.2.README.html"
+	},
+	{
+	    "file_path" : "buzzard.2.design.md",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : true,
+	    "display_as" : "markdown",
+	    "display_via_github" : true,
+	    "entry_text" : "markdown source for buzzard.2.design.html"
 	}
     ]
 }

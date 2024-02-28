@@ -10,14 +10,6 @@
     ],
     "manifest" : [
 	{
-	    "file_path" : "index.html",
-	    "inventory_order" : 10,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "entry home page"
-	},
-	{
 	    "file_path" : "leo.c",
 	    "inventory_order" : 20,
 	    "OK_to_edit" : true,
@@ -66,6 +58,14 @@
 	    "entry_text" : "download entry source"
 	},
 	{
+	    "file_path" : "index.html",
+	    "inventory_order" : 2000000000,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "entry home page"
+	},
+	{
 	    "file_path" : ".entry.json",
 	    "inventory_order" : 4294967295,
 	    "OK_to_edit" : true,
@@ -103,7 +103,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
-	    "entry_text" : "spoiler document"
+	    "entry_text" : "markdown source for spoiler1.html"
 	}
     ]
 }

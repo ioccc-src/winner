@@ -149,6 +149,7 @@
 1986/marshall/1986_marshall.tar.bz2
 1986/marshall/Makefile
 1986/marshall/README.md
+1986/marshall/compilers.html
 1986/marshall/compilers.md
 1986/marshall/index.html
 1986/marshall/marshall.alt.c
@@ -583,6 +584,7 @@
 1991/brnstnd/brnstnd.c
 1991/brnstnd/brnstnd.orig.c
 1991/brnstnd/index.html
+1991/brnstnd/sorta.README.html
 1991/brnstnd/sorta.README.md
 1991/brnstnd/sorta.i2+2
 1991/brnstnd/sorta.iarg0
@@ -727,9 +729,11 @@
 1992/buzzard.2/1992_buzzard.2.tar.bz2
 1992/buzzard.2/Makefile
 1992/buzzard.2/README.md
+1992/buzzard.2/buzzard.2.README.html
 1992/buzzard.2/buzzard.2.README.md
 1992/buzzard.2/buzzard.2.alt.c
 1992/buzzard.2/buzzard.2.c
+1992/buzzard.2/buzzard.2.design.html
 1992/buzzard.2/buzzard.2.design.md
 1992/buzzard.2/buzzard.2.orig.c
 1992/buzzard.2/demo1.1st
@@ -875,8 +879,10 @@
 1993/ejb/README.md
 1993/ejb/ejb.c
 1993/ejb/ejb.orig.c
+1993/ejb/hanoi.html
 1993/ejb/hanoi.md
 1993/ejb/index.html
+1993/ejb/patience.html
 1993/ejb/patience.md
 1993/ejb/try.sh
 1993/jonth/.entry.json
@@ -925,6 +931,7 @@
 1993/rince/1993_rince.tar.bz2
 1993/rince/Makefile
 1993/rince/README.md
+1993/rince/design.html
 1993/rince/design.md
 1993/rince/index.html
 1993/rince/rince.alt.c
@@ -1033,6 +1040,7 @@
 1994/shapiro/README.md
 1994/shapiro/index.html
 1994/shapiro/shapiro.c
+1994/shapiro/shapiro.html
 1994/shapiro/shapiro.md
 1994/shapiro/shapiro.orig.c
 1994/smr/.entry.json
@@ -1159,6 +1167,7 @@
 1995/leo/index.html
 1995/leo/leo.c
 1995/leo/leo.orig.c
+1995/leo/spoiler1.html
 1995/leo/spoiler1.md
 1995/leo/try.sh
 1995/makarios/.entry.json
@@ -1424,6 +1433,7 @@
 1998/dorssel/Makefile
 1998/dorssel/README.md
 1998/dorssel/dorssel.c
+1998/dorssel/dorssel.html
 1998/dorssel/dorssel.md
 1998/dorssel/dorssel.orig.c
 1998/dorssel/index.html
@@ -1458,6 +1468,7 @@
 1998/schweikh1/charcount.pl
 1998/schweikh1/index.html
 1998/schweikh1/info
+1998/schweikh1/macos.html
 1998/schweikh1/macos.md
 1998/schweikh1/schweikh1.alt.c
 1998/schweikh1/schweikh1.c
@@ -1855,6 +1866,7 @@
 2004/gavin/boot.b
 2004/gavin/gavin.alt.c
 2004/gavin/gavin.c
+2004/gavin/gavin.html
 2004/gavin/gavin.md
 2004/gavin/gavin.orig.c
 2004/gavin/img/fs.tar
@@ -2651,6 +2663,7 @@
 2012/deckmyn/Makefile
 2012/deckmyn/README.md
 2012/deckmyn/deckmyn.c
+2012/deckmyn/deckmyn.html
 2012/deckmyn/deckmyn.md
 2012/deckmyn/deckmyn.orig.c
 2012/deckmyn/example_beethoven
@@ -2749,6 +2762,7 @@
 2012/hou/ansi.txt
 2012/hou/chk.txt
 2012/hou/header.htm
+2012/hou/hint.html
 2012/hou/hint.md
 2012/hou/hou.c
 2012/hou/hou.orig.c
@@ -2808,6 +2822,7 @@
 2012/tromp/bf.Blc
 2012/tromp/deflate.Blc
 2012/tromp/hilbert.Blc
+2012/tromp/how.html
 2012/tromp/how.md
 2012/tromp/hw.bf
 2012/tromp/index.html
@@ -3183,6 +3198,7 @@
 2013/hou/doc/camera.png
 2013/hou/doc/cosine.png
 2013/hou/doc/draft.png
+2013/hou/doc/example.html
 2013/hou/doc/example.md
 2013/hou/hou.c
 2013/hou/hou.orig.c
@@ -3286,6 +3302,7 @@
 2014/endoh1/rake.sh
 2014/endoh1/register.rb
 2014/endoh1/serialize.rb
+2014/endoh1/spoilers.html
 2014/endoh1/spoilers.md
 2014/endoh1/src.rb
 2014/endoh1/tool.rb
@@ -3396,8 +3413,10 @@
 2015/burton/prog.alt.c
 2015/burton/prog.c
 2015/burton/prog.orig.c
+2015/burton/road.to.obscurity.html
 2015/burton/road.to.obscurity.md
 2015/burton/rule2.c
+2015/burton/spoilers.html
 2015/burton/spoilers.md
 2015/burton/src.doc.txt
 2015/burton/test.in
@@ -3635,6 +3654,7 @@
 2018/burton2/c++98
 2018/burton2/c11
 2018/burton2/c99
+2018/burton2/discrepancies.html
 2018/burton2/discrepancies.md
 2018/burton2/fixed_iocccsize.c
 2018/burton2/freqcount.sh
@@ -3737,6 +3757,7 @@
 2018/ferguson/prog.alt.c
 2018/ferguson/prog.c
 2018/ferguson/prog.orig.c
+2018/ferguson/rpm.html
 2018/ferguson/rpm.md
 2018/ferguson/test-strings.txt
 2018/ferguson/test.sh
@@ -4086,6 +4107,7 @@
 2020/endoh2/spoiler/gen.rb
 2020/endoh2/spoiler/glyphs.txt
 2020/endoh2/spoiler/prog.c
+2020/endoh2/spoiler/spoiler.html
 2020/endoh2/spoiler/spoiler.md
 2020/endoh2/spoiler/tmpl.txt
 2020/endoh2/try.sh
@@ -4106,15 +4128,22 @@
 2020/ferguson1/.gitignore
 2020/ferguson1/.path
 2020/ferguson1/2020_ferguson1.tar.bz2
+2020/ferguson1/COMPILING.html
 2020/ferguson1/COMPILING.md
+2020/ferguson1/HACKING.html
 2020/ferguson1/HACKING.md
 2020/ferguson1/Makefile
 2020/ferguson1/README.md
+2020/ferguson1/bugs.html
 2020/ferguson1/bugs.md
 2020/ferguson1/cake.jpg
+2020/ferguson1/cannibalism.log.html
 2020/ferguson1/cannibalism.log.md
+2020/ferguson1/chocolate-cake.html
 2020/ferguson1/chocolate-cake.md
+2020/ferguson1/crazy.log.html
 2020/ferguson1/crazy.log.md
+2020/ferguson1/gameplay.html
 2020/ferguson1/gameplay.md
 2020/ferguson1/halfwidth_vs_fullwidth.png
 2020/ferguson1/index.html
@@ -4128,9 +4157,12 @@
 2020/ferguson1/prog.orig.c
 2020/ferguson1/snake-colours.sh
 2020/ferguson1/snake.1
+2020/ferguson1/spoilers.html
 2020/ferguson1/spoilers.md
 2020/ferguson1/termcaps.c
+2020/ferguson1/terminals.html
 2020/ferguson1/terminals.md
+2020/ferguson1/troubleshooting.html
 2020/ferguson1/troubleshooting.md
 2020/ferguson2/.entry.json
 2020/ferguson2/.gitignore
@@ -4139,12 +4171,14 @@
 2020/ferguson2/Makefile
 2020/ferguson2/README.md
 2020/ferguson2/cake.jpg
+2020/ferguson2/chocolate-cake.html
 2020/ferguson2/chocolate-cake.md
 2020/ferguson2/enigma.1
 2020/ferguson2/index.html
 2020/ferguson2/input.txt
 2020/ferguson2/ioccc-cake.jpg
 2020/ferguson2/key.txt
+2020/ferguson2/obfuscation.html
 2020/ferguson2/obfuscation.key
 2020/ferguson2/obfuscation.md
 2020/ferguson2/obfuscation.txt
@@ -4153,6 +4187,7 @@
 2020/ferguson2/prog.orig.c
 2020/ferguson2/recode.1
 2020/ferguson2/recode.c
+2020/ferguson2/recode.html
 2020/ferguson2/recode.md
 2020/ferguson2/try.alt.sh
 2020/ferguson2/try.sh

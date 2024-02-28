@@ -10,14 +10,6 @@
     ],
     "manifest" : [
 	{
-	    "file_path" : "index.html",
-	    "inventory_order" : 10,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "entry home page"
-	},
-	{
 	    "file_path" : "prog.c",
 	    "inventory_order" : 20,
 	    "OK_to_edit" : true,
@@ -50,12 +42,28 @@
 	    "entry_text" : "original source"
 	},
 	{
+	    "file_path" : "chocolate-cake.html",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "encrypted chocolate cake recipe"
+	},
+	{
 	    "file_path" : "input.txt",
 	    "inventory_order" : 100,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
 	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "obfuscation.html",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "about the obfuscation of this entry"
 	},
 	{
 	    "file_path" : "obfuscation.txt",
@@ -72,6 +80,14 @@
 	    "display_as" : "c",
 	    "display_via_github" : true,
 	    "entry_text" : "Enigma machine simulato source code"
+	},
+	{
+	    "file_path" : "recode.html",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "recode configurator documentation"
 	},
 	{
 	    "file_path" : "try.alt.sh",
@@ -138,6 +154,14 @@
 	    "entry_text" : "download entry source"
 	},
 	{
+	    "file_path" : "index.html",
+	    "inventory_order" : 2000000000,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "entry home page"
+	},
+	{
 	    "file_path" : ".entry.json",
 	    "inventory_order" : 4294967295,
 	    "OK_to_edit" : true,
@@ -183,7 +207,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
-	    "entry_text" : "markdown source for COMPILING.html"
+	    "entry_text" : "markdown source for chocolate-cake.html"
 	},
 	{
 	    "file_path" : "ioccc-cake.jpg",
@@ -207,7 +231,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
-	    "entry_text" : "markdown source for index.html"
+	    "entry_text" : "markdown source for recode.html"
 	}
     ]
 }
