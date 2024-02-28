@@ -242,7 +242,7 @@ indent.c:
 .PHONY: help genpath genfilelist verify_entry_files gen_authors gen_location gen_years \
 	entry_index gen_top_md2html gen_other_html quick_entry_index \
 	form_entry_tarball form_year_tarball form_all_tarball \
-	gen_year_index quick_www www
+	gen_year_index quick_www www tar
 
 # Suggest rules in this section
 #
@@ -267,6 +267,7 @@ help:
 	@echo make form_all_tarball
 	@echo make quick_www
 	@echo make www
+	@echo make tar
 
 # form the top level .top, YYYY level .year and winner level .path files
 #
@@ -437,9 +438,6 @@ quick_www:
 	${MAKE} gen_top_md2html
 	${MAKE} gen_other_html
 	${MAKE} quick_entry_index
-	@echo XXX - disable tarball updates until mods settle down - XXX - ${MAKE} form_entry_tarball
-	@echo XXX - disable tarball updates until mods settle down - XXX - ${MAKE} form_year_tarball
-	@echo XXX - disable tarball updates until mods settle down - XXX - ${MAKE} form_all_tarball
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # do everything needed to build HTML content for the web site
@@ -459,9 +457,19 @@ www:
 	${MAKE} gen_top_md2html
 	${MAKE} gen_other_html
 	${MAKE} entry_index
-	@echo XXX - disable tarball updates until mods settle down - XXX - ${MAKE} form_entry_tarball
-	@echo XXX - disable tarball updates until mods settle down - XXX - ${MAKE} form_year_tarball
-	@echo XXX - disable tarball updates until mods settle down - XXX - ${MAKE} form_all_tarball
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# build all tarballs
+#
+tar:
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${MAKE} clobber
+	${MAKE} genpath
+	${MAKE} genfilelist
+	${MAKE} verify_entry_files
+	${MAKE} form_entry_tarball
+	${MAKE} form_year_tarball
+	${MAKE} form_all_tarball
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 

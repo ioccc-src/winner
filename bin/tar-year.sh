@@ -49,7 +49,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.1 2024-02-23"
+export VERSION="1.1 2024-02-27"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -677,18 +677,18 @@ if [[ -z $NOOP ]]; then
     #
     if [[ $V_FLAG -gt 3 ]]; then
 	echo "$0: debug[3]: about to execute:" \
-	    "$GTAR_TOOL --files-from=- --sparse --no-acls --sort=name" \
+	    "$GTAR_TOOL --files-from=- --sparse --no-acls --no-xattrs --no-selinux --sort=name" \
 	    "--owner=501 --group=20 --numeric-owner --totals" \
 	    "--pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime" \
 	    "-jcvf $TMP_TARBALL < $TMP_TAR_LIST" 1>&2
-	"$GTAR_TOOL" --files-from=- --sparse --no-acls --sort=name \
+	"$GTAR_TOOL" --files-from=- --sparse --no-acls --no-xattrs --no-selinux --sort=name \
 		     --owner=501 --group=20 --numeric-owner --totals \
 		     --pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime \
 		     -jcvf "$TMP_TARBALL" < "$TMP_TAR_LIST"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR:" \
-		"$GTAR_TOOL --files-from=- --sparse --no-acls --sort=name" \
+		"$GTAR_TOOL --files-from=- --sparse --no-acls --no-xattrs --no-selinux --sort=name" \
 		"--owner=501 --group=20 --numeric-owner --totals" \
 		"--pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime" \
 		"-jcvf $TMP_TARBALL < $TMP_TAR_LIST failed, error: $status" 1>&2
@@ -698,14 +698,14 @@ if [[ -z $NOOP ]]; then
     # case: form the tarball silently
     #
     else
-	"$GTAR_TOOL" --files-from=- --sparse --no-acls --sort=name \
+	"$GTAR_TOOL" --files-from=- --sparse --no-acls --no-xattrs --no-selinux --sort=name \
 		     --owner=501 --group=20 --numeric-owner \
 		     --pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime \
 		     -jcf "$TMP_TARBALL" < "$TMP_TAR_LIST"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR:" \
-		"$GTAR_TOOL --files-from=- --sparse --no-acls --sort=name" \
+		"$GTAR_TOOL --files-from=- --sparse --no-acls --no-xattrs --no-selinux --sort=name" \
 		"--owner=501 --group=20 --numeric-owner" \
 		"--pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime" \
 		"-jcf $TMP_TARBALL < $TMP_TAR_LIST failed, error: $status" 1>&2
@@ -724,7 +724,7 @@ if [[ -z $NOOP ]]; then
 #
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, did not execute:" \
-		"$GTAR_TOOL --files-from=- --sparse --no-acls --sort=name" \
+		"$GTAR_TOOL --files-from=- --sparse --no-acls --no-xattrs --no-selinux --sort=name" \
 		"--owner=501 --group=20 --numeric-owner --totals" \
 		"--pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime" \
 		"-jcvf $TMP_TARBALL < $TMP_TAR_LIST" 1>&2
