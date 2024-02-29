@@ -1,1 +1,3 @@
 User-Agent: *
+Allow: /
+Sitemap: https://www.ioccc.org/sitemap.xml

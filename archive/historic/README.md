@@ -1,4 +1,48 @@
-# archive IOCCC winning source
+# Historic archive of IOCCC winning entries
+
+
+## Historic archives as bz2 compressed tarballs
+
+**WARNING:** These historic archives contain lots of code that will no longer compile,
+contains lots of typos, has broken links, has missing files, and contains many programs that will not
+run in modern systems.
+<br><br>
+These archives provided for historic purposes and are
+**NOT RECOMMENDED** for casual viewing.
+<br><br>
+**Instead of using these archives, you should use the code from the** [Winning Entries](../../years.html) and related links.
+
+* [archive-all.tar.bz2](archive-all.tar.bz2)
+* [archive-1984.tar.bz2](archive-1984.tar.bz2)
+* [archive-1985.tar.bz2](archive-1985.tar.bz2)
+* [archive-1986.tar.bz2](archive-1986.tar.bz2)
+* [archive-1987.tar.bz2](archive-1987.tar.bz2)
+* [archive-1988.tar.bz2](archive-1988.tar.bz2)
+* [archive-1989.tar.bz2](archive-1989.tar.bz2)
+* [archive-1990.tar.bz2](archive-1990.tar.bz2)
+* [archive-1991.tar.bz2](archive-1991.tar.bz2)
+* [archive-1992.tar.bz2](archive-1992.tar.bz2)
+* [archive-1993.tar.bz2](archive-1993.tar.bz2)
+* [archive-1994.tar.bz2](archive-1994.tar.bz2)
+* [archive-1995.tar.bz2](archive-1995.tar.bz2)
+* [archive-1996.tar.bz2](archive-1996.tar.bz2)
+* [archive-1998.tar.bz2](archive-1998.tar.bz2)
+* [archive-2000.tar.bz2](archive-2000.tar.bz2)
+* [archive-2001.tar.bz2](archive-2001.tar.bz2)
+* [archive-2004.tar.bz2](archive-2004.tar.bz2)
+* [archive-2005.tar.bz2](archive-2005.tar.bz2)
+* [archive-2006.tar.bz2](archive-2006.tar.bz2)
+* [archive-2011.tar.bz2](archive-2011.tar.bz2)
+* [archive-2012.tar.bz2](archive-2012.tar.bz2)
+* [archive-2013.tar.bz2](archive-2013.tar.bz2)
+* [archive-2014.tar.bz2](archive-2014.tar.bz2)
+* [archive-2015.tar.bz2](archive-2015.tar.bz2)
+* [archive-2018.tar.bz2](archive-2018.tar.bz2)
+* [archive-2019.tar.bz2](archive-2019.tar.bz2)
+* [archive-2020.tar.bz2](archive-2020.tar.bz2)
+
+
+## Notes on these archives
 
 These zip2 compressed tarballs were preserved as an archive of the
 winning source code that was available on the [official IOCCC web
@@ -29,6 +73,9 @@ For your convenience we keep an archive of the zip2 compressed
 tarballs as found in the [Internet Archive Wayback
 Machine](https://web.archive.org) as of [2022 Dec
 28)(https://web.archive.org/web/20201228005211/https://www.ioccc.org/).
+
+
+## How to unpack
 
 *HINT*: To uncompress a given bzip2 compressed tarball file, use:
 

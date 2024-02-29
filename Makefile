@@ -54,7 +54,7 @@ GEN_LOCATION= bin/gen-location.sh
 GEN_YEARS= bin/gen-years.sh
 GEN_YEAR_INDEX= bin/gen-year-index.sh
 CHK_ENTRY= bin/chk-entry.sh
-GEN_TOP_MD2HTML= bin/gen-top-md2html.sh
+GEN_TOP_HTML= bin/gen-top-html.sh
 GEN_OTHER_HTML= bin/gen-other-html.sh
 README2INDEX= bin/readme2index.sh
 QUICK_README2INDEX= bin/quick-readme2index.sh
@@ -240,7 +240,7 @@ indent.c:
 #	They might not even work (right now).  :-)
 
 .PHONY: help genpath genfilelist verify_entry_files gen_authors gen_location gen_years \
-	entry_index gen_top_md2html gen_other_html quick_entry_index \
+	entry_index gen_top_html gen_other_html quick_entry_index \
 	form_entry_tarball form_year_tarball form_all_tarball \
 	gen_year_index quick_www www tar
 
@@ -258,7 +258,7 @@ help:
 	@echo make gen_location
 	@echo make gen_years
 	@echo make entry_index
-	@echo make gen_top_md2html
+	@echo make gen_top_html
 	@echo make gen_other_html
 	@echo make gen_year_index
 	@echo make quick_entry_index
@@ -352,9 +352,9 @@ entry_index readme2index: ${ALL_RUN} ${README2INDEX}
 
 # generate a number of the top level HTML files from top level markdown files
 #
-gen_top_md2html: ${GEN_TOP_MD2HTML}
+gen_top_html: ${GEN_TOP_HTML}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	${GEN_TOP_MD2HTML} -v 1
+	${GEN_TOP_HTML} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # generate build entry HTML files from markdown other than README.md to index.html HTML files
@@ -435,7 +435,7 @@ quick_www:
 	${MAKE} gen_location
 	${MAKE} gen_years
 	${MAKE} gen_year_index
-	${MAKE} gen_top_md2html
+	${MAKE} gen_top_html
 	${MAKE} gen_other_html
 	${MAKE} quick_entry_index
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
@@ -454,7 +454,7 @@ www:
 	${MAKE} gen_location
 	${MAKE} gen_years
 	${MAKE} gen_year_index
-	${MAKE} gen_top_md2html
+	${MAKE} gen_top_html
 	${MAKE} gen_other_html
 	${MAKE} entry_index
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='

@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 #
-# gen-top-md2html.sh - generate select top level HTML files from markdown files
+# gen-top-html.sh - generate select top level HTML files from markdown files
 #
 # We also generate the bin/index.html file from the bin/README.md file.
+# We also generate the inc/index.html file from the inc/README.md file.
+# We also generate the archive/historic/index.html file from the archive/historic/README.md file.
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
@@ -52,7 +54,7 @@ TOP_MD_SET+=("faq")
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1 2024-02-28"
+export VERSION="1.2 2024-02-29"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -78,6 +80,7 @@ export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 unset TOP_MD_SET
 TOP_MD_SET+=("CODE_OF_CONDUCT")
 TOP_MD_SET+=("README")
+TOP_MD_SET+=("archive/historic/README")
 TOP_MD_SET+=("bin/README")
 TOP_MD_SET+=("bugs")
 TOP_MD_SET+=("contact")
@@ -444,6 +447,10 @@ for name in "${TOP_MD_SET[@]}"; do
     # inc/README is a special case
     if [[ $name == inc/README ]]; then
 	HTML_FILE="inc/index.html"
+    fi
+    # archive/historic/README is a special case
+    if [[ $name == archive/historic/README ]]; then
+	HTML_FILE="archive/historic/index.html"
     fi
 
     # use the md2html.sh tool to form the HTML file, unless -n

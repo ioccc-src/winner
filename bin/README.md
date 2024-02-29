@@ -102,14 +102,14 @@ bin/gen-other-html.sh -v 1
 ```
 
 
-### [gen-top-md2html.sh](gen-top-md2html.sh)
+### [gen-top-html.sh](gen-top-html.sh)
 
 Generate a number of top level HTML pages for the IOCCC web sites.
 
 Usage:
 
 ```sh
-bin/gen-top-md2html.sh -v 1
+bin/gen-top-html.sh -v 1
 ```
 
 Examples of top level HTML pages built by this tool include:
