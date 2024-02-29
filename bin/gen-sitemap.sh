@@ -49,7 +49,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1 2024-02-27"
+export VERSION="1.2 2024-02-29"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -431,7 +431,7 @@ EOF0
 
 # add files from selected sub-directories
 #
-find "$ARCHIVE_HISTORIC_PATH" "$AUTHOR_DIR" "$BIN_DIR" "$INC_DIR" -type f -print >> "$TMP_MANIFEST_LIST"
+find "$ARCHIVE_HISTORIC_DIR" "$AUTHOR_DIR" "$BIN_DIR" "$INC_DIR" -type f -print >> "$TMP_MANIFEST_LIST"
 
 # generate sorted list of entry files from the full IOCCC manifest
 #
