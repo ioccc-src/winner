@@ -2,6 +2,8 @@
 #
 # gen-top-md2html.sh - generate select top level HTML files from markdown files
 #
+# We also generate the bin/index.html file from the bin/README.md file.
+#
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
@@ -50,7 +52,7 @@ TOP_MD_SET+=("faq")
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0 2024-02-24"
+export VERSION="1.1 2024-02-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -76,9 +78,14 @@ export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 unset TOP_MD_SET
 TOP_MD_SET+=("CODE_OF_CONDUCT")
 TOP_MD_SET+=("README")
+TOP_MD_SET+=("bin/README")
 TOP_MD_SET+=("bugs")
 TOP_MD_SET+=("contact")
 TOP_MD_SET+=("faq")
+TOP_MD_SET+=("inc/README")
+TOP_MD_SET+=("index")
+TOP_MD_SET+=("judges")
+TOP_MD_SET+=("news")
 TOP_MD_SET+=("thanks-for-help")
 #
 export NOOP=
@@ -430,6 +437,14 @@ for name in "${TOP_MD_SET[@]}"; do
 	continue
     fi
     export HTML_FILE="$name.html"
+    # bin/README is a special case
+    if [[ $name == bin/README ]]; then
+	HTML_FILE="bin/index.html"
+    fi
+    # inc/README is a special case
+    if [[ $name == inc/README ]]; then
+	HTML_FILE="inc/index.html"
+    fi
 
     # use the md2html.sh tool to form the HTML file, unless -n
     #
