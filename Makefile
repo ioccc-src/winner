@@ -58,6 +58,7 @@ GEN_TOP_HTML= bin/gen-top-html.sh
 GEN_OTHER_HTML= bin/gen-other-html.sh
 README2INDEX= bin/readme2index.sh
 QUICK_README2INDEX= bin/quick-readme2index.sh
+GEN_SITEMAP= bin/gen-sitemap.sh
 TAR_ENTRY= bin/tar-entry.sh
 TAR_YEAR= bin/tar-year.sh
 TAR_ALL= bin/tar-all.sh
@@ -236,13 +237,10 @@ indent.c:
 # Finally: The rules in this section are NOT needed if you
 #	   simple want to examine, run / test winning IOCCC entries.
 
-# XXX - The rules in this section are undergoing development and change.
-#	They might not even work (right now).  :-)
-
 .PHONY: help genpath genfilelist verify_entry_files gen_authors gen_location gen_years \
 	entry_index gen_top_html gen_other_html quick_entry_index \
-	form_entry_tarball form_year_tarball form_all_tarball \
-	gen_year_index quick_www www tar
+	gen_year_index quick_www www gen_sitemap \
+	form_entry_tarball form_year_tarball form_all_tarball tar
 
 # Suggest rules in this section
 #
@@ -262,11 +260,12 @@ help:
 	@echo make gen_other_html
 	@echo make gen_year_index
 	@echo make quick_entry_index
+	@echo make quick_www
+	@echo make www
+	@echo make gen_sitemap
 	@echo make form_entry_tarball
 	@echo make form_year_tarball
 	@echo make form_all_tarball
-	@echo make quick_www
-	@echo make www
 	@echo make tar
 
 # form the top level .top, YYYY level .year and winner level .path files
@@ -384,6 +383,57 @@ quick_entry_index quick_readme2index: ${ALL_RUN} ${QUICK_README2INDEX}
 	${ALL_RUN} -v 3 ${QUICK_README2INDEX} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
+# generate the XML sitemap
+#
+gen_sitemap: ${GEN_SITEMAP}
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${GEN_SITEMAP} -v 1
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# do work to build HTML content for the web site
+#
+# This rule uses quick_entry_index, not slow_entry_index, so
+# some winner index.html files that seem to be up to date
+# (but might not be up to date) won't be built.
+#
+# Well, short of pushing changes to the GitHub repo, that is.  :-)
+#
+quick_www:
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${MAKE} clobber
+	${MAKE} genpath
+	${MAKE} genfilelist
+	${MAKE} verify_entry_files
+	${MAKE} gen_authors
+	${MAKE} gen_location
+	${MAKE} gen_years
+	${MAKE} gen_year_index
+	${MAKE} gen_top_html
+	${MAKE} gen_other_html
+	${MAKE} quick_entry_index
+	${MAKE} gen_sitemap
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# do everything needed to build HTML content for the web site
+#
+# Well, short of pushing changes to the GitHub repo, that is.  :-)
+#
+www:
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${MAKE} clobber
+	${MAKE} genpath
+	${MAKE} genfilelist
+	${MAKE} verify_entry_files
+	${MAKE} gen_authors
+	${MAKE} gen_location
+	${MAKE} gen_years
+	${MAKE} gen_year_index
+	${MAKE} gen_top_html
+	${MAKE} gen_other_html
+	${MAKE} entry_index
+	${MAKE} gen_sitemap
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
 # form all entry compressed tarballs
 #
 # XXX - We also use -W because some entry files don't yet exist - XXX
@@ -415,48 +465,6 @@ form_year_tarball: ${ALL_YEARS} ${TAR_YEAR}
 form_all_tarball: ${TAR_ALL}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${TAR_ALL} -v 1 -W
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
-
-# do work to build HTML content for the web site
-#
-# This rule uses quick_entry_index, not slow_entry_index, so
-# some winner index.html files that seem to be up to date
-# (but might not be up to date) won't be built.
-#
-# Well, short of pushing changes to the GitHub repo, that is.  :-)
-#
-quick_www:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	${MAKE} clobber
-	${MAKE} genpath
-	${MAKE} genfilelist
-	${MAKE} verify_entry_files
-	${MAKE} gen_authors
-	${MAKE} gen_location
-	${MAKE} gen_years
-	${MAKE} gen_year_index
-	${MAKE} gen_top_html
-	${MAKE} gen_other_html
-	${MAKE} quick_entry_index
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
-
-# do everything needed to build HTML content for the web site
-#
-# Well, short of pushing changes to the GitHub repo, that is.  :-)
-#
-www:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	${MAKE} clobber
-	${MAKE} genpath
-	${MAKE} genfilelist
-	${MAKE} verify_entry_files
-	${MAKE} gen_authors
-	${MAKE} gen_location
-	${MAKE} gen_years
-	${MAKE} gen_year_index
-	${MAKE} gen_top_html
-	${MAKE} gen_other_html
-	${MAKE} entry_index
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # build all tarballs

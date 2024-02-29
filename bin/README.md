@@ -101,6 +101,16 @@ Usage:
 bin/gen-other-html.sh -v 1
 ```
 
+### [gen-sitemap.sh](gen-sitemap.sh)
+
+Generate an XML sitemap for the IOCCC web site.
+
+Usage:
+
+```sh
+bin/gen-sitemap.sh -v 1
+```
+
 
 ### [gen-top-html.sh](gen-top-html.sh)
 
