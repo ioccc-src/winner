@@ -238,6 +238,8 @@ are they used?</a></li>
 .path files?</a></li>
 <li><a href="#faq6_9">6.9 - What is the current meaning of the IOCCC
 terms Author, Entry, and Submission?</a></li>
+<li><a href="#faq6_10">6.10 - How does someone make a change to a file
+and submit that change as a GitHub pull request?</a></li>
 </ul>
 <h1 id="the-ioccc-faq">The IOCCC FAQ</h1>
 <h2
@@ -2661,7 +2663,7 @@ Moreover, out of habit, the IOCCC judges sometimes use old names such as
 consideration when the IOCCC is open.</p>
 <p>When the IOCCC is open for submissions, those who register to enter
 the IOCCC may use the <a
-href="https://github.com/ioccc-src/mkiocccentry">mkliocccentry tool</a>
+href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry tool</a>
 to package their code into a compressed tarball that may be uploaded to
 the <a href="https://submit.ioccc.org">IOCCC submit server</a>. This
 compressed tarball is formatted in such a way that the IOCCC judges do
@@ -2676,6 +2678,205 @@ and old guidelines, terms such as <em>entry</em> may still be found.
 Moreover, out of habit, the IOCCC judges sometimes use old names such as
 <em>entry</em> when they should use <em>submission</em>. Sorry (tm
 Canada)! :-)</p>
+<h3
+id="faq-6.10-how-does-someone-make-a-change-to-a-file-and-submit-that-change-as-a-github-pull-request"><a name="faq6_10"></a>FAQ
+6.10: How does someone make a change to a file and submit that change as
+a GitHub pull request?</h3>
+<p>First, if you do not already have a GitHub account or you have not
+installed an ssh key to your account you must do so. For this we will
+assume you do not have a GitHub account. For the steps following
+creating a GitHub account you will have to be logged into your
+account.</p>
+<p>To help you out here is a navigation menu in this FAQ entry:</p>
+<ul>
+<li><a href="#creating-a-github-account">Creating a GitHub
+account</a></li>
+<li><a href="#installing-an-ssh-key">Installing an ssh key to
+GitHub</a></li>
+<li><a href="#forking-the-temp-test-ioccc-repo">Forking the
+temp-test-ioccc repo</a></li>
+<li><a href="#cloning-the-temp-test-ioccc-repo">Cloning the
+temp-test-ioccc repo</a></li>
+<li><a href="#making-changes-fixes-etc">Making changes, fixes
+etc.</a></li>
+<li><a href="#committing-your-changes">Committing your changes</a></li>
+<li><a href="#opening-a-pull-request">Opening a pull request</a></li>
+<li><a href="#what-to-do-after-a-merge">What to do after a
+merge</a></li>
+</ul>
+<h4 id="creating-a-github-account">Creating a GitHub account</h4>
+<p>Go to <a href="https://github.com/">GitHub</a> and click on ‘Sign
+up’. Follow the instructions. Once you’ve completed this task make sure
+you log in to GitHub.</p>
+<h4 id="installing-an-ssh-key-to-github">Installing an ssh key to
+GitHub</h4>
+<p>Assuming you do not have an ssh key you should go to the command
+prompt and type (if you already have one and are okay using it for
+GitHub you can use that one):</p>
+<div class="sourceCode" id="cb105"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> rsa <span class="at">-b</span> 4096 <span class="at">-C</span> <span class="st">&quot;luser@example.com&quot;</span></span></code></pre></div>
+<p>where <code>luser@example.com</code> is the email you want associated
+with your key. Follow the instructions. It will tell you the key
+files.</p>
+<p>Once you have an ssh key you need to go to your <a
+href="https://github.com/settings/profile">account settings</a>. Once
+there, in the menu on the left you should see the item <em>SSH and GPG
+keys</em>. Click that and then click (on the right side) the button that
+says <em>New SSH key</em>. You will see that you have to specify a
+title, the key type and the PUBLIC key. Put whatever title you want and
+keep the key type as <em>Authentication Key</em>. Now you need to put
+the PUBLIC key in.</p>
+<p>If you used an rsa key the default file will likely be found in:
+<code>~/.ssh/id_rsa.pub</code>. If you used a different algorithm the
+file name will be different. For instance if you used
+<code>ed25519</code> the default PUBLIC key file would be
+<code>~/.ssh/id_ed25519</code>. If, like some people do, you have a
+separate key for GitHub, it could be anything you wish, as long as it’s
+in <code>~/.ssh</code>. For instance it might be
+<code>~/.ssh/github.pub</code>.</p>
+<p>Whatever the key file is, copy the contents and paste it into the
+GitHub field labelled <em>Key</em>. Once you have done so click on
+<em>Add SSH key</em>.</p>
+<h4 id="forking-the-temp-test-ioccc-repo">Forking the temp-test-ioccc
+repo</h4>
+<p>Open in your browser the link: <a
+href="https://github.com/ioccc-src/temp-test-ioccc/fork"
+class="uri">https://github.com/ioccc-src/temp-test-ioccc/fork</a>. You
+now should follow the instructions in forking the repo.</p>
+<h4 id="cloning-the-temp-test-ioccc-repo">Cloning the temp-test-ioccc
+repo</h4>
+<p>Once you have forked the repo you are ready to clone it to your
+system. For instance Cody Boone Ferguson has the GitHub handle
+<em>xexyl</em> so he would type in:</p>
+<div class="sourceCode" id="cb106"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/xexyl/temp-test-ioccc <span class="pp">[</span><span class="ss">target_dir</span><span class="pp">]</span></span></code></pre></div>
+<p>Once that is completed you will need to change to that directory. The
+default directory would be the name of the repo but if you specified a
+target directory it will be that. For instance using the above example
+you might do:</p>
+<div class="sourceCode" id="cb107"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> temp-test-ioccc</span></code></pre></div>
+<p>You’re ready to make your changes now!</p>
+<h4 id="making-changes-fixes-etc.">Making changes, fixes etc.</h4>
+<p>Here you must use your wits, knowledge, creativity and whatever else
+you have. Let’s say that Cody wants to update his file <a
+href="/2020/ferguson1/play.sh">/2020/ferguson1/play.sh</a> script. He
+would open it in his editor of choice (in his case vim) and make the
+changes. He would then make sure (as there is a last updated date) to
+update the last updated date. For instance he might add the
+following:</p>
+<blockquote>
+<p>BTW: did you know that some people believe in snake human hybrids?
+It’s true! See http://www.macroevolution.net/snake-human-hybrids.html
+and have a laugh, shock or an exercise in sibilance!</p>
+</blockquote>
+<p>Then, assuming that the date is 1 March 2024, he would update the
+line that starts with <code># Last updated:</code> to refer to
+<code>01 March 2024</code> rather than what it is now (at the time of
+writing this), <code>15 April 2023</code>.</p>
+<p>But what if he wanted to add a file? He’d create the file and then
+type:</p>
+<div class="sourceCode" id="cb108"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add foo</span></code></pre></div>
+<p>where <em>foo</em> is the file to add.</p>
+<p>When he’s ready to make a commit he would need to create a new branch
+for the pull request.</p>
+<h4 id="committing-your-changes">Committing your changes</h4>
+<p>First, as an aside, if this is your first pull request (which we
+assume is if you’re reading this :-) ) you need to make sure that you
+can push changes to GitHub with your ssh key. To do this you need to
+do:</p>
+<div class="sourceCode" id="cb109"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-T</span> git@github.com</span></code></pre></div>
+<p>Cody would see:</p>
+<blockquote>
+<p>Hi xexyl! You’ve successfully authenticated, but GitHub does not
+provide shell access.</p>
+</blockquote>
+<p>Now, assuming that the forked repo is <a
+href="https://github.com/xexyl/temp-test-ioccc"
+class="uri">https://github.com/xexyl/temp-test-ioccc</a>, you’d
+type:</p>
+<div class="sourceCode" id="cb110"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote set-url origin git@github.com:xexyl/temp-test-ioccc.git</span></code></pre></div>
+<p>Now you’d be ready to make your commits.</p>
+<p>Before doing anything else, however, a new branch needs to be
+created. Continuing the example above for <a
+href="/2020/ferguson1/play.sh">2020/ferguson1/play.sh</a>, it might be
+that:</p>
+<div class="sourceCode" id="cb111"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-B</span> human-snakes</span></code></pre></div>
+<p>This would change the branch to the newly created branch
+<code>human-snakes</code> branch. Now Cody could commit the changes:</p>
+<div class="sourceCode" id="cb112"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit play.sh <span class="co"># if specifying specific files</span></span>
+<span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-a</span> <span class="co"># if committing everything</span></span></code></pre></div>
+<p>He could also have done:</p>
+<div class="sourceCode" id="cb113"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add play.sh</span>
+<span id="cb113-2"><a href="#cb113-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit</span></code></pre></div>
+<p>In any case this would open an editor (in his case vim) to write a
+commit log. It is recommended that the first line is &lt;=51 chars and
+the next line is blank. Then if necessary add a description for the log.
+For instance the above might warrant the log:</p>
+<pre><code>Add fun link to 2020/ferguson1/play.sh
+
+Did you know some people believe in snake human hybrids? I added a link to the
+script that discusses this and gives supposed examples.</code></pre>
+<p>Now a pull request has to be opened.</p>
+<h4 id="opening-a-pull-request">Opening a pull request</h4>
+<p>To do this depends on the branch name. Assuming the branch from
+above, <code>human-snakes</code>, you would type:</p>
+<div class="sourceCode" id="cb115"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">--set-upstream</span> origin human-snakes</span></code></pre></div>
+<p>This might show:</p>
+<pre><code>Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 739 bytes | 147.00 KiB/s, done.
+Total 5 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+remote:
+remote: Create a pull request for &#39;human-snakes&#39; on GitHub by visiting:
+remote:      https://github.com/xexyl/temp-test-ioccc/pull/new/human-snakes
+remote:
+To github.com:xexyl/temp-test-ioccc.git
+ * [new branch]                                                                        human-snakes -&gt; human-snakes
+branch &#39;human-snakes&#39; set up to track &#39;origin/human-snakes&#39;.</code></pre>
+<p>The link referred to above would then be opened to open a pull
+request. Just follow the instructions at this point. If however it does
+not show a link it is likely because the branch already exists in your
+GitHub account (for the repo). In this case you can open the link: <a
+href="https://github.com/ioccc-src/temp-test-ioccc/pulls"
+class="uri">https://github.com/ioccc-src/temp-test-ioccc/pulls</a> which
+might show something like:</p>
+<pre><code>xexyl:human-snakes had recent pushes 1 minute ago</code></pre>
+<p>and to the right of it you would see a button that says <em>Compare
+&amp; pull request</em> which you could click on. Do that and follow the
+instructions.</p>
+<p>An important note is if you have more than one pull request opened
+it’ll only show the branch name as the summary. You should in that case
+copy paste the log you put in into the website. For instance the line
+(on the website) <em>Add a title</em> could have:</p>
+<blockquote>
+<p>Add fun link to 2020/ferguson1/play.sh</p>
+</blockquote>
+<p>and then the text field that is labelled <em>Add a description</em>
+would have:</p>
+<blockquote>
+<p>Did you know some people believe in snake human hybrids? I added a
+link to the script that discusses this and gives supposed examples.</p>
+</blockquote>
+<p>Once you’ve done this you should click on <em>Create pull
+request</em>.</p>
+<h4 id="what-to-do-after-a-merge">What to do after a merge</h4>
+<p>When the judges have merged the pull request you now need to make
+sure your fork has the merge. To do this from the command line, assuming
+the fork in the above example, you would type:</p>
+<div class="sourceCode" id="cb118"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout master <span class="kw">&amp;&amp;</span> <span class="fu">git</span> pull https://github.com/ioccc-src/temp-test-ioccc.git master <span class="kw">&amp;&amp;</span> <span class="fu">git</span> push origin master</span></code></pre></div>
+<p>This will merge your pull request to your fork.</p>
 
 <!-- END: this line ends content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 <!-- START: this line starts content from: inc/after-content.default.html -->
