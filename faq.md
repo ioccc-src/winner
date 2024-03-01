@@ -72,6 +72,7 @@ other inconsistencies with the original entry?](#faq4_3)
 - [6.7  - What is a entry_id?](#faq6_7)
 - [6.8 -  What is the purpose of the .top, .year and .path files?](#faq6_8)
 - [6.9 -  What is the current meaning of the IOCCC terms Author, Entry, and Submission?](#faq6_9)
+- [6.10 - How does someone make a change to a file and submit that change as a GitHub pull request?](#faq6_10)
 
 
 # The IOCCC FAQ
@@ -2986,7 +2987,7 @@ A _submission_ is something given to the IOCCC judges
 for consideration when the IOCCC is open.
 
 When the IOCCC is open for submissions, those who register
-to enter the IOCCC may use the [mkliocccentry tool](https://github.com/ioccc-src/mkiocccentry)
+to enter the IOCCC may use the [mkiocccentry tool](https://github.com/ioccc-src/mkiocccentry)
 to package their code into a compressed tarball that may be
 uploaded to the [IOCCC submit server](https://submit.ioccc.org).
 This compressed tarball is formatted in such a way that
@@ -3001,3 +3002,246 @@ refer to what is now an _submission_.  In a number of historical cases,
 such as old rules and old guidelines, terms such as _entry_ may still be
 found.  Moreover, out of habit, the IOCCC judges sometimes use old
 names such as _entry_ when they should use _submission_.  Sorry (tm Canada)! :-)
+
+### <a name="faq6_10"></a>FAQ 6.10: How does someone make a change to a file and submit that change as a GitHub pull request?
+
+First, if you do not already have a GitHub account or you have not installed an
+ssh key to your account you must do so. For this we will assume you do not have
+a GitHub account. For the steps following creating a GitHub account you will
+have to be logged into your account.
+
+To help you out here is a navigation menu in this FAQ entry:
+
+- [Creating a GitHub account](#creating-a-github-account)
+- [Installing an ssh key to GitHub](#installing-an-ssh-key)
+- [Forking the temp-test-ioccc repo](#forking-the-temp-test-ioccc-repo)
+- [Cloning the temp-test-ioccc repo](#cloning-the-temp-test-ioccc-repo)
+- [Making changes, fixes etc.](#making-changes-fixes-etc)
+- [Committing your changes](#committing-your-changes)
+- [Opening a pull request](#opening-a-pull-request)
+- [What to do after a merge](#what-to-do-after-a-merge)
+
+
+#### Creating a GitHub account
+
+Go to [GitHub](https://github.com/) and click on 'Sign up'. Follow the
+instructions. Once you've completed this task make sure you log in to GitHub.
+
+#### Installing an ssh key to GitHub
+
+Assuming you do not have an ssh key you should go to the command prompt and
+type (if you already have one and are okay using it for GitHub you can use that
+one):
+
+
+```sh
+ssh-keygen -t rsa -b 4096 -C "luser@example.com"
+```
+
+where `luser@example.com` is the email you want associated with your key.
+Follow the instructions. It will tell you the key files.
+
+Once you have an ssh key you need to go to your [account
+settings](https://github.com/settings/profile). Once there, in the menu
+on the left you should see the item _SSH and GPG keys_. Click that and then
+click (on the right side) the button that says _New SSH key_. You will see that
+you have to specify a title, the key type and the PUBLIC key. Put whatever title
+you want and keep the key type as _Authentication Key_. Now you need to put the
+PUBLIC key in.
+
+If you used an rsa key the default file will likely be found in:
+`~/.ssh/id_rsa.pub`. If you used a different algorithm the file name will be
+different. For instance if you used `ed25519` the default PUBLIC key file would
+be `~/.ssh/id_ed25519`. If, like some people do, you have a separate key for
+GitHub, it could be anything you wish, as long as it's in `~/.ssh`. For instance
+it might be `~/.ssh/github.pub`.
+
+Whatever the key file is, copy the contents and paste it into the GitHub field
+labelled _Key_. Once you have done so click on _Add SSH key_.
+
+#### Forking the temp-test-ioccc repo
+
+Open in your browser the link:
+<https://github.com/ioccc-src/temp-test-ioccc/fork>. You now should follow the
+instructions in forking the repo.
+
+
+#### Cloning the temp-test-ioccc repo
+
+Once you have forked the repo you are ready to clone it to your system. For
+instance Cody Boone Ferguson has the GitHub handle _xexyl_ so he would type in:
+
+```sh
+git clone https://github.com/xexyl/temp-test-ioccc [target_dir]
+```
+
+Once that is completed you will need to change to that directory. The default
+directory would be the name of the repo but if you specified a target directory
+it will be that. For instance using the above example you might do:
+
+```sh
+cd temp-test-ioccc
+```
+
+You're ready to make your changes now!
+
+
+#### Making changes, fixes etc.
+
+Here you must use your wits, knowledge, creativity and whatever else you have.
+Let's say that Cody wants to update his file
+[/2020/ferguson1/play.sh](/2020/ferguson1/play.sh) script. He would open it in
+his editor of choice (in his case vim) and make the changes. He would then make
+sure (as there is a last updated date) to update the last updated date. For
+instance he might add the following:
+
+> BTW: did you know that some people believe in snake human hybrids? It's true! See
+> http://www.macroevolution.net/snake-human-hybrids.html and have a laugh, shock
+> or an exercise in sibilance!
+
+Then, assuming that the date is 1 March 2024, he would update the line that
+starts with `# Last updated: ` to refer to `01 March 2024` rather than what it
+is now (at the time of writing this), `15 April 2023`.
+
+But what if he wanted to add a file? He'd create the file and then type:
+
+```sh
+git add foo
+```
+
+where _foo_ is the file to add.
+
+When he's ready to make a commit he would need to create a new branch for the
+pull request.
+
+#### Committing your changes
+
+First, as an aside, if this is your first pull request (which we assume is if you're
+reading this :-) ) you need to make sure that you can push changes to GitHub
+with your ssh key. To do this you need to do:
+
+```sh
+ssh -T git@github.com
+```
+
+Cody would see:
+
+> Hi xexyl! You've successfully authenticated, but GitHub does not provide shell access.
+
+Now, assuming that the forked repo is
+<https://github.com/xexyl/temp-test-ioccc>, you'd type:
+
+
+```sh
+git remote set-url origin git@github.com:xexyl/temp-test-ioccc.git
+```
+
+Now you'd be ready to make your commits.
+
+Before doing anything else, however, a new branch needs to be created.
+Continuing the example above for
+[2020/ferguson1/play.sh](/2020/ferguson1/play.sh), it might be that:
+
+
+```sh
+git checkout -B human-snakes
+```
+
+This would change the branch to the newly created branch `human-snakes` branch.
+Now Cody could commit the changes:
+
+```sh
+git commit play.sh # if specifying specific files
+git commit -a # if committing everything
+```
+
+He could also have done:
+
+```sh
+git add play.sh
+git commit
+```
+
+In any case this would open an editor (in his case vim) to write a commit log.
+It is recommended that the first line is <=51 chars and the next line is blank.
+Then if necessary add a description for the log. For instance the above might
+warrant the log:
+
+```
+Add fun link to 2020/ferguson1/play.sh
+
+Did you know some people believe in snake human hybrids? I added a link to the
+script that discusses this and gives supposed examples.
+```
+
+Now a pull request has to be opened.
+
+
+#### Opening a pull request
+
+To do this depends on the branch name. Assuming the branch from above,
+`human-snakes`, you would type:
+
+```sh
+git push --set-upstream origin human-snakes
+```
+
+This might show:
+
+```
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 739 bytes | 147.00 KiB/s, done.
+Total 5 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+remote:
+remote: Create a pull request for 'human-snakes' on GitHub by visiting:
+remote:      https://github.com/xexyl/temp-test-ioccc/pull/new/human-snakes
+remote:
+To github.com:xexyl/temp-test-ioccc.git
+ * [new branch]                                                                        human-snakes -> human-snakes
+branch 'human-snakes' set up to track 'origin/human-snakes'.
+```
+
+The link referred to above would then be opened to open a pull request. Just
+follow the instructions at this point. If however it does not show a link it is
+likely because the branch already exists in your GitHub account (for the repo).
+In this case you can open the link:
+<https://github.com/ioccc-src/temp-test-ioccc/pulls> which might show something
+like:
+
+```
+xexyl:human-snakes had recent pushes 1 minute ago
+```
+
+and to the right of it you would see a button that says _Compare & pull request_
+which you could click on. Do that and follow the instructions.
+
+An important note is if you have more than one pull request opened it'll only
+show the branch name as the summary. You should in that case copy paste the log
+you put in into the website. For instance the line (on the website) _Add a
+title_ could have:
+
+> Add fun link to 2020/ferguson1/play.sh
+
+and then the text field that is labelled _Add a description_ would have:
+
+> Did you know some people believe in snake human hybrids? I added a link to the
+> script that discusses this and gives supposed examples.
+
+Once you've done this you should click on _Create pull request_.
+
+
+#### What to do after a merge
+
+When the judges have merged the pull request you now need to make sure your fork
+has the merge. To do this from the command line, assuming the fork in the above
+example, you would type:
+
+```sh
+git checkout master && git pull https://github.com/ioccc-src/temp-test-ioccc.git master && git push origin master
+```
+
+This will merge your pull request to your fork.
