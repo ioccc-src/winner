@@ -499,35 +499,145 @@ details about these bzip2 compressed tarballs.
 **XXX**: Change the references to _temp-test-ioccc_ to _winners_
 when these fixes are merged.
 
-#### 2022 Dec 29 repo fork
+#### 2022 Dec 29 Official IOCCC winner repo
 
-On 2022 Dec 29, the [IOCCC winner repo](https://github.com/ioccc-src/winner),
-from which the [official IOCCC web site of 2022 Dec
+The [Official IOCCC winner repo](https://github.com/ioccc-src/winner)
+was [created on 2020 Dec
+29](https://github.com/ioccc-src/winner/commit/28efc67f5dd692a3544708bf7fa26286adb82dfb).
+
+#### 2020 Dec 30 IOCCC content uploaded to GitHub
+
+An [IOCCC judge](https://www.ioccc.org/judges.html) formed a local
+directory [git](https://git-scm.com) repo on **Tue Dec 29 23:48:30
+2020 -0800** via [commit
+28efc67f5dd692a3544708bf7fa26286adb82dfb](https://github.com/ioccc-src/winner/commit/28efc67f5dd692a3544708bf7fa26286adb82dfb)
+and then on **Wed Dec 30 16:57:03 2020 -0800** added a preview of
+1984-2019 via [commit
+c0663537cb88d39b74285a930ff1a668c6d5968b](https://github.com/ioccc-src/winner/commit/c0663537cb88d39b74285a930ff1a668c6d5968b).
+
+On [2020 Dec
+30](https://github.com/ioccc-src/winner/commit/c0663537cb88d39b74285a930ff1a668c6d5968b)
+the [official IOCCC web site of 2022 Dec
 29](https://web.archive.org/web/20221231001721/https://www.ioccc.org/) was
-generated, was forked into a temporary repo where it underwent several thousand
-changes and important improvements such as:
+uploaded into the [Official IOCCC winner
+repo](https://github.com/ioccc-src/winner).
+
+#### 2020 IOCCC winning entries released using git via GitHub
+
+The [winning entries of the 2020
+IOCCC](https://github.com/ioccc-src/winner/commit/9d61fc0fb4a3245afb1435458cfb597fad0e8e6a),
+after a far too long of a delay
+(due in part to a [former IOCCC judge who resignation was noted on
+2021 Jan 04](https://github.com/ioccc-src/winner/commit/c94fc84c35dc83e3eb9900720b95917a15c27afe))
+from their initial [2020 Jul 25
+announcement](https://web.archive.org/web/20200726232505/http://www.ioccc.org:80/index.html),
+the [2020 IOCCC winning entries](https://www.ioccc.org/years.html#2020)
+were added by an [IOCCC judge](https://www.ioccc.org/judges.html)
+to their local [git](https://git-scm.com) repository, then were
+merged into the [Official IOCCC winner repo on 2020 Dec
+31](https://github.com/ioccc-src/winner/commit/b1638ff0012964d79ab1c44aa815d3f824f35b6c).
+
+These [2020 IOCCC winning entries](https://www.ioccc.org/years.html#2020),
+as shown in the [Internet Wayback Machine](https://web.archive.org)
+[2021 Jan 02](https://web.archive.org/web/20210102042216/www.ioccc.org/years.html)
+snapshot, were the first IOCCC entries to have been released via
+[git](https://git-scm.com) and [GitHub](https://github.com).
+
+#### 2020 Dec 30 thru 202y MMM DD - Work on the temp-test-ioccc GitHub repo
+
+Starting on [2020 Dec
+30](https://github.com/ioccc-src/winner/commit/2f20ae8451ada03f4601ac727d10e1d8630861a8)
+edits to the [Official IOCCC winner
+repo](https://github.com/ioccc-src/winner) began.
+
+The local [git](https://git-scm.com) repository of an [IOCCC
+judge](https://www.ioccc.org/judges.html) was edited starting [Wed
+Dec 30 16:57:03 2020
+-0800](https://github.com/ioccc-src/winner/commit/c0663537cb88d39b74285a930ff1a668c6d5968b)
+and was occasionally committed to the [Official IOCCC winner
+repo](https://github.com/ioccc-src/winner).
+
+The [first accepted pull request](https://github.com/ioccc-src/winner/pull/2)
+to the [Official IOCCC winner
+repo](https://github.com/ioccc-src/winner) was made by [Yusuke Endoh](https://github.com/mame)
+on [2021 Jan 5](https://github.com/ioccc-src/winner/commit/84c62c4cbf56ac1351ea91e5019f51103615fda2).
+
+Between [Wed Dec 30 16:57:03 2020
+-0800](https://github.com/ioccc-src/winner/commit/c0663537cb88d39b74285a930ff1a668c6d5968b)
+and [Sat Jan 29 21:56:53 2022
+-0800](https://github.com/ioccc-src/winner/commit/098a3e7e04d43e480ecc4b5482c83274e1434002),
+an [IOCCC judge](https://www.ioccc.org/judges.html) made edits to
+their local repository with occasional the [Official IOCCC winner
+repo](https://github.com/ioccc-src/winner) and the [Official
+www.ioccc.org web site](https://www.ioccc.org/index.html).  After
+that time and until the **Great Fork Merge**, only a very few changes
+were made to the [Official IOCCC winner
+repo](https://github.com/ioccc-src/winner) and the [Official
+www.ioccc.org web site](https://www.ioccc.org/index.html) most of
+which were news updates.
+
+While the [temp-test-ioccc
+repo](https://github.com/ioccc-src/temp-test-ioccc) has history
+going back to [2020 Dec
+29](https://github.com/ioccc-src/temp-test-ioccc/commit/28efc67f5dd692a3544708bf7fa26286adb82dfb),
+the repo was forked on **Sun Sep 18 17:30:00 2022 -0700**.  The
+first push into the temp-test-ioccc repo occurred on [Sun Sep 18 11:15:49 2022
+-0700](https://github.com/ioccc-src/temp-test-ioccc/commit/edbc3089e1b755d85a020af7975bbc7df3737a5f).
+As this same time, the [temp-test-ioccc web site](https://ioccc-src.github.io/temp-test-ioccc/) went live.
+
+Edits were made by an [IOCCC judge](https://www.ioccc.org/judges.html)
+to their local [git](https://git-scm.com) repository,
+were pushed onto the [temp-test-ioccc
+repo](https://github.com/ioccc-src/temp-test-ioccc/commit/2f20ae8451ada03f4601ac727d10e1d8630861a8)
+and to the [temp-test-ioccc web site](https://ioccc-src.github.io/temp-test-ioccc/).
+
+The [first accepted pull request](https://github.com/ioccc-src/temp-test-ioccc/pull/15)
+made directly to the [temp-test-ioccc
+repo](https://github.com/ioccc-src/temp-test-ioccc) on
+[Wed Feb 22 05:44:55 2023 -0800](https://github.com/ioccc-src/temp-test-ioccc/commit/11bb36ac8ce790f32a9a3e5d2131ee12820fb8ec)
+
+A [decision was made by the
+IOCCC](https://github.com/ioccc-src/temp-test-ioccc/discussions/1918) to
+mostly use frequent commits to individual components of the IOCCC,
+rather than to use occasional site wide massive updates in order
+to improve the tractability of changes made to components of the
+IOCCC such as IOCCC entries.  Although occasionally site wide updated
+were performed in order to address an issue common to many IOCCC
+entries.  And while some people prefer infrequent updates to a repo
+the [IOCCC judges](https://www.ioccc.org/judges.html) believe
+the ability to trace changes with commit messages is important.
+
+Changes to the IOCCC content included things such as:
 
 * Moving IOCCC entries into their own separate directories
+* Establishing a detailed manifest for an IOCCC winning entries
 * Fixing lots and lots of typos
-* Fixing Makefiles and code to allow for nearly all winning entries to be compiled and
-work on modern systems
+* Fixing Makefiles and code to allow for nearly all winning entries to be compiled modern systems
+* Fixing Makefiles and code to allow for nearly all winning entries to run modern systems
 * Reworking the Makefiles to use a consistent set of rules
 * Reworking the Makefiles specific to the gcc and clang C compilers
 * Replacing the various hint files with a index.html markdown that is more consistent across IOCCC years
+* Generating HTML content from markdown files and JSON data files via a set to tools and scripts
 * Setting up a system whereby authors of IOCCC entries may update their own contact information via a GitHub pull request
 * Setting up to generate the top level years.html file via a tool
 * Setting up to generate the top level authors.html file via a tool
+* Making use of an new and improved IOCCC CSS for web site consistency
 * etc.
 
-#### 20yy mm dd the great fork merge
+#### 202y mm dd The Great Fork Merge
 
-On 20yy mm dd, the temporary repo was merged back into the [IOCCC winner
+As of 2024 Mar 5 [temp-test-ioccc
+repo](https://github.com/ioccc-src/temp-test-ioccc)
+there were [4513 commits ahead](https://github.com/ioccc-src/winner/compare/master...ioccc-src:temp-test-ioccc:master)
+of the [IOCCC winner repo](https://github.com/ioccc-src/winner).
+
+On 202y mm dd, the temporary repo was merged back into the [IOCCC winner
 repo](https://github.com/ioccc-src/winner) resulting in substantial improvements
 to the [official IOCCC web site](https://www.ioccc.org).
 
 **XXX**: Fill in the date when the pull request happens including the
 size of the pull request and/or number of changes that went into the pull request.
-We call this the **great fork merge**.
+We call this the **Great Fork Merge**.
 
 
 ### <a name="faq1_3"></a><a name="size_rule"></a>FAQ 1.3: How has the IOCCC size limit rule changed over the years?
