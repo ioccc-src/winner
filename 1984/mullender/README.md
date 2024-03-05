@@ -19,7 +19,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [1984 mullender in bugs.md](/bugs.md#1984-mullender).
+For more detailed information see [1984 mullender bugs](../../bugs.html#1984_mullender).
 
 
 ## To use:
@@ -123,7 +123,7 @@ favorite entries!
 ### gentab.c
 
 In 2023 remarks were discovered from [Sjoerd
-Mullender](/authors.html#Sjoerd_Mullender), one of the authors, and so was the
+Mullender](../../authors.html#Sjoerd_Mullender), one of the authors, and so was the
 program that was used by the authors to generate the array that he referred to.
 Because [a.out.h](a.out.h), which [gentab.c](gentab.c) uses, is not available in
 all systems (like macOS) and more importantly because we wanted it to be as

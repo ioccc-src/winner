@@ -22,7 +22,7 @@ STATUS: doesn't work with some platforms - please help us fix
 STATUS: known bug - please help us fix
 ```
 
-For more detailed information see [2000 dlowe in bugs.md](/bugs.md#2000-dlowe).
+For more detailed information see [2000 dlowe bugs](../../bugs.html#2000_dlowe).
 
 
 ## To use:
@@ -44,15 +44,15 @@ For more detailed information see [2000 dlowe in bugs.md](/bugs.md#2000-dlowe).
 When this entry was submitted the rules of the IOCCC did not prohibit
 the use of embedded language interpreters.  The judges considered
 disqualifying this entry because of the use of perl, but on the other
-hand it qualifies as the Worst Abuse of the Rules.  As a previous winner\*
-David Lowe continues to inflict the highest quality "poot" on the
+hand it qualifies as the Worst Abuse of the Rules.  As a previous author,
+[David Lowe](../../authors.html#J_David_Lowe) continues to inflict the highest quality "poot" on the
 Judges.
 
 The program also contains an undocumented command for Chad and Chongo (Landon).
 The judges' remarks contain a clue to the hidden command :-).
 
 * The IOCCC uses an anonymous judging process which keeps the identity
-of the submitters hidden until all the prize winners have been selected.
+of the submitters hidden until all winning entries have been selected.
 
 
 ## Author's remarks:

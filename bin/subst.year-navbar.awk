@@ -21,7 +21,7 @@ BEGIN {
 
     # setup
     #
-    VERSION="1.0 2024-02-11"
+    VERSION="1.1 2024-03-02"
     process_next_line = 0;	# 1 ==> we found our year_arg, now process the next line
     found_year_arg = 0;		# 1 ==> we found our year_arg
     prev_line = "";		# the previous YYYY line
@@ -107,13 +107,6 @@ END {
 	print "210";		# use 210 to match length(year_arg) == 0 error in the BEGIN section
 	exit 210;		# use 210 to match length(year_arg) == 0 error in the BEGIN section
     }
-
-    # output inventory link information
-    #
-    print "-s";
-    print "INVENTORY_LINK=#inventory";
-    print "-s";
-    print "INVENTORY_TEXT=Inventory";
 
     # case: we did not find our year_arg
     #

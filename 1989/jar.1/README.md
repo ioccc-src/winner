@@ -51,7 +51,7 @@ cc -c -o /dev/tty jar.1.c
 As a last resort the `jar.1.sh` script provided simulates
 writing the raw binary of the .o file to the terminal.
 
-Abuse of the rules winners usually result in a change of the rules.
+Abuse of the rules winning entry usually result in a change of the rules.
 Starting in 1990, compiling entries must result an regular file
 which can be executed.
 

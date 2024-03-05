@@ -10,8 +10,8 @@ make alt
 
 NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
 compile. If you're under macOS and do not know how to install and use X11
-programs see [FAQ 3.7  - How do I compile and use on macOS, an IOCCC winner that
-requires X11?](/faq.md#faq3_7).
+programs see [FAQ 3.7  - How do I compile and use on macOS, an IOCCC entry that
+requires X11?](../../faq.html#X11macos).
 
 
 To configure how many microseconds to sleep before updates try:
@@ -30,7 +30,7 @@ The current status of this entry is:
 STATUS: known bug - please help us fix
 ```
 
-For more detailed information see [1993 cmills in bugs.md](/bugs.md#1993-cmills).
+For more detailed information see [1993 cmills bugs](../../bugs.html#1993_cmills).
 
 
 ## To use:

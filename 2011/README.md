@@ -3,21 +3,19 @@
 
 ## Standard IOCCC stuff
 
-Look at the README.md file for the given winning entry for information
+View the `index.html` web page for the given winning entry for information on how
 on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
 The IOCCC has a web site and now has a number of international mirrors.
-The primary site can be found at,
-
->	<https://www.ioccc.org/>
+The primary site can be found at [www.ioccc.org](https://www.ioccc.org).
 
 Use `make` to compile entries.  It is possible that on non-Unix / non-Linux
 systems the Makefile needs to be changed.  See the Makefile for details.
 
 This year we included most of the information included by the submitters
-in the README.md files.
+in the `README.md` files (that were used to build the `index.html` web pages).
 
 Read over the Makefile for compile/build issues.  Your system may require
 certain changes (add or remove a library, add or remove a #define).
@@ -41,21 +39,21 @@ some very good entries lost because they:
 We hope the authors of some of those entries will fix and re-submit
 them for the next IOCCC.
 
-We believe you will be impressed with this year's winners. The Best
+We believe you will be impressed with this year's winning entries. The Best
 of Show is a fine example of character stitching.  But don't ignore the other
-winners!  There are games, puzzle solvers, utilities, eye candy, calculators and graphical and audio tools.
+entries!  There are games, puzzle solvers, utilities, eye candy, calculators and graphical and audio tools.
 
-This year all winners are different, and there is a winner from a new country -
-China!  Many winners won for the first time. (Please note that judging is done
+This year all authors are different, and there is a authors from a new country -
+China!  Many authors won for the first time. (Please note that judging is done
 completely anonymously.  Be warned that we may disqualify entries that reveal
 the identity of the submitter).
 
 
 ## Final Comments
 
-**IMPORTANT NOTE**: See [contact.html](/contact.html) for up to date contact details
+**IMPORTANT NOTE**: See [contact.html](../contact.html) for up to date contact details
 as well as details on how to provide fixes to any of the entries.
-See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
+See also [the IOCCC FAQ](../faq.html) for addition information on the IOCCC.
 
 
 # Copyright and License
@@ -63,5 +61,5 @@ See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
 Copyright (c) 2012,2023, Landon Curt Noll and Leonid A. Broukhis. All Rights Reserved.
 This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
-If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
-(but does not require) if you were to [send us a note about your use](/contact.html).
+If you do use this work in some form, the [IOCCC judges](../judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](../contact.html).

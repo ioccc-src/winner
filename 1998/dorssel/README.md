@@ -55,7 +55,7 @@ echo ". -..- . .-. -.-. .. ... .
 
 and make the necessary adjustments.
 
-You might also want to read the [dorssel.md](dorssel.md) file.
+You might also want to read the [dorssel.html](dorssel.html) file.
 
 
 ## Author's remarks:

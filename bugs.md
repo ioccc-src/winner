@@ -11,17 +11,13 @@ The following is a known list of **BUGS and (mis)FEATURES** in IOCCC entries.
 Can you fix/improve entries not under the INABIAF (it's not a bug it's a
 feature)? You are **VERY WELCOME** to try.
 
-NOTE: currently this file is mostly for us. We are not yet ready for help except
-for dead links and missing files. We will remove this notice when this changes.
-We will note this below for each status we're not yet ready for help with.
-
 As far as how to help: please submit your fixes in a [GitHub pull
 request](https://github.com/ioccc-src/temp-test-ioccc/pulls) (with ONE PULL
 REQUEST *PER* FIX, please)!
 
 We will be **happy to credit anyone who submits successful [GitHub pull
 requests](https://github.com/ioccc-src/temp-test-ioccc/pulls)** in the
-[thanks](/thanks-for-help.md) file. If you're the author of an entry
+[thanks](thanks-for-help.html) file. If you're the author of an entry
 that win the IOCCC, we will add a link to your winning entries in the file
 (if you're not an author, we can add a link to your GitHub page or personal
 website if you have one, should you wish).
@@ -38,11 +34,11 @@ THANK YOU!
 If you're the author of an entry that has been fixed and you find it against
 your liking **PLEASE** let us know and we'll be happy to undo any fixes even if
 it takes away some instructional value or even usability. _In this case we're
-**VERY SORRY_** about it: it's a fine line, we know, and we tried to use careful
+**VERY SORRY** about it: it's a fine line, we know, and we tried to use careful
 judgement but invariably some might have been the wrong decision. Thank you for
 understanding!
 
-I ([Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson))
+I ([Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson))
 accept the blame in some cases; when working on getting entries to compile
 sometimes I got carried away with it and there might be that I fixed some things
 that should not have been fixed. I am correcting these mistakes as I come across
@@ -58,12 +54,12 @@ to happen (if it's not yet fixed). This has actually already happened to us.
 Sometimes it is okay: some entries are known to not work but they can still have
 improvements (rarer situation but it's happened). Some might have slightly
 different output but which is not a problem for instance a newline after output
-in [Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson)'s changing it to
+in [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson)'s changing it to
 [1994/ldb](1994/ldb/ldb.c) use `fgets()` from `gets()`.
 
-Make **ABSOLUTE CERTAIN** that you read the README.md file _BEFORE_ your changes
+Make **ABSOLUTE CERTAIN** that you read the index.html file _BEFORE_ your changes
 as it's important to see that the code is doing what it is supposed to. In the
-case that it's not obvious (some README.md files do not even have commands to
+case that it's not obvious (some index.html files do not even have commands to
 try or even explain how to use it!) then you should either skip the entry OR ask
 someone who will know e.g. us.
 
@@ -81,25 +77,11 @@ Again, THANK YOU!
 
 # LIST OF STATUSES - PLEASE READ BEFORE FIXING (you may skip if you're only interested in knowing about entries with known issues)
 
-NOTE: when going through the entries you can skip to the next entry (some are
-detailed explanations) by searching for `^## STATUS:` in your editor (or
-searching for it - probably without the `^` in your browser). For a specific
-year try `^# YYYY` where `YYYY` is the year as a number.
-
 Entries below have one or more of the following _**STATUS**_ values. Please see
 the text below for more information. If an entry has more than one status it
 means that either they all apply or they compliment each other. For instance
 [2004/gavin](2004/gavin/gavin.c) crashes but it also doesn't even compile with
 some platforms/architectures.
-
-[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) has been working on
-resolving these issues and has fixed many but you're welcome to have a go at it
-too (though he'll be very sad if he doesn't have a chance to at first fix it :-(
-so you might want to hold off for now :-) .. or not :-) ). He hopes to have most
-of the remaining entries resolved in the near future but nevertheless if you're
-okay making people very sad you may have a go at the entries :-) [Yusuke
-Endoh](/authors.html#Yusuke_Endoh) has also fixed a number of entries though at
-this point he does not know it. :-) Cody will remove this part later on.
 
 
 ## General notes about the statuses and making fixes
@@ -121,7 +103,7 @@ Another type of warning that would be hard to keep track of is different data
 sizes on different platforms.  These tend to be required at the risk that
 sometimes the entry will not work for certain platforms, some of which might or
 might not be fixable; a good example where it was required to change and is okay
-is when [Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) fixed the
+is when [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed the
 segfault in macOS of [1989/paul](1994/paul/paul.c): changing the `int *` to a
 `long *` was required and it works just as well with linux.
 
@@ -169,7 +151,7 @@ consider a one-liner. Thank you!
 If you make changes _PLEASE TRY AND KEEP THE SOURCE CODE LAYOUT AS CLOSE TO THE
 ORIGINAL AS POSSIBLE_. This might not always be possible and if you have an
 editor that does formatting it can cause problems. Sometimes formatters can even
-break code! [Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) has
+break code! [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) has
 experienced this many times with vim so he tends to disable all format options
 when formatting code. In vim you should be able to do that with:
 
@@ -179,9 +161,6 @@ when formatting code. In vim you should be able to do that with:
 
 
 ## STATUS: known bug - please help us fix
-
-NOTE: we're still locating entries and working on fixes with this status so we're not yet
-ready for help. We will remove this when we are.
 
 Entries with this status have one or more bugs that need to be fixed. Are you
 able to fix it? We welcome your help!
@@ -194,9 +173,6 @@ careful judgement when fixing bugs please!
 
 ## STATUS: possible bug (possibly depending on system) - please help test and if necessary fix
 
-NOTE: we're still locating entries and working on fixes with this status so we're not yet
-ready for help. We will remove this when we are.
-
 Entries with this status might or might not have a bug possibly depending on the
 system.  In these entries it's unknown if there is a bug and sometimes it's
 because we do not remember and sometimes we don't have the appropriate system or
@@ -205,18 +181,12 @@ environment to test and fix any possible problems.
 
 ## STATUS: might not be completely functional - can you confirm?
 
-NOTE: we're still locating entries and working on fixes with this status so we're not yet
-ready for help. We will remove this when we are.
-
 Although these entries _appear_ to work for one or more reasons we're unsure if
 they are completely functional. Can you confirm this? Please let us know so we
 can fix it!
 
 
 ## STATUS: probable bug (possibly depending on system) - please help test and if necessary fix
-
-NOTE: we're still locating entries and working on fixes with this status so we're not yet
-ready for help. We will remove this when we are.
 
 Entries with this status almost certainly have a bug or some other problem. The
 issue or issues might depend on the system much like the above _STATUS: possible
@@ -225,17 +195,11 @@ bug (possibly depending on system)_.
 
 ## STATUS: doesn't work with some platforms - please help us fix
 
-NOTE: we're still locating entries and working on fixes with this status so we're not yet
-ready for help. We will remove this when we are.
-
 Entries with this status do not work under some OSes and/or architectures (and/or
 something else?). Please help us to fix it!
 
 
 ## STATUS: doesn't work with some compilers - please provide alternative code or fix for more compilers
-
-NOTE: we're still locating entries and working on fixes with this status so we're not yet
-ready for help. We will remove this when we are.
 
 Some entries do not work with some compilers. A good example is
 [1992/lush](1992/lush/lush.c) which uses error messages from the compiler to
@@ -269,7 +233,7 @@ versions have an additional defect where they only allow 0, 2 or 3 args, the
 latter of which affected `1989/westley`, so these entries do not work with
 clang.
 
-[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) looked at the source
+[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) looked at the source
 code of clang and reported that there is no way to override the requirement of
 arg types so these entries will fail to compile with clang. That's why in some
 entries he fixed he did it by adding a function called `pain()`. :-) He did not
@@ -305,9 +269,6 @@ without breaking it.
 
 ## STATUS: compiled executable crashes - please help us fix
 
-NOTE: we're still locating entries and working on fixes with this status so we're not yet
-ready for help. We will remove this when we are.
-
 While such entries can compile, the resulting executable sometimes or always
 crashes.
 
@@ -320,12 +281,9 @@ or if you can `-ggdb3` when compiling as that will help with debugging symbols.
 
 ## STATUS: uses gets() - change to fgets() if possible
 
-NOTE: we're still locating entries and working on fixes with this status so we're not yet
-ready for help. We will remove this when we are.
-
 Entries with this status use `gets()` which is unsafe because it has no limit on
 the length of the string. [Cody Boone
-Ferguson](/authors.html#Cody_Boone_Ferguson) has fixed several of these and he's
+Ferguson](authors.html#Cody_Boone_Ferguson) has fixed several of these and he's
 working on others in between fixing other things.
 
 There's a very good reason for this even though it is bordering on tampering
@@ -379,7 +337,7 @@ contact the author (unless you are the author! :-) ).
 ## STATUS: missing make rules - please provide them
 
 In these entries one or more make rules noted by the author and/or judges is/are
-missing. You might consider looking at the [archive](/archive) as a good place
+missing. You might consider looking at the [archive](archive) as a good place
 to find them.
 
 
@@ -415,7 +373,7 @@ something was noted by the author, the judges, a consequence of earlier
 requirements for winning entries or the purpose was to do something that might
 appear to be buggy. An example of system specific entries:
 
-[1984/mullender](1984/mullender/mullender.c) (see below and the [FAQ](/faq.md)
+[1984/mullender](1984/mullender/mullender.c) (see below and the [FAQ](faq.html)
 for a version that works in modern systems) is very system specific and was
 before system specific winning entries were discouraged. This is an all time
 personal favourite of Landon Curt Noll. Run the alternate code to understand why
@@ -425,7 +383,7 @@ An example where a crash is not a bug: [2019/endoh](2019/endoh/endoh.c) is
 supposed to crash. There are others that are also supposed to crash or that are
 known to segfault but are considered features.
 
-An important note is that if the README.md of the entry has a bug status that
+An important note is that if the index.html of the entry has a bug status that
 says it can be fixed it can be. Otherwise it should not be.
 
 Nonetheless we challenge you to fix these entries for educational/instructional
@@ -451,14 +409,14 @@ own fix or suggest that they're fixed!
 # List of entries by year, sorted in alphabetical order per year
 
 
-# 1984
+# <a name="1984"></a>1984
 
 
-## 1984 decot
+## <a name="1984_decot"></a>1984/decot
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1984/decot/dedot.c](1984/decot/decot.c)
-### Information: [1984/decot/README.md](1984/decot/README.md)
+### Information: [1984/decot/index.html](1984/decot/index.html)
 
 The purpose of this program is to print out a string of rubbish. In particular
 you should see something like:
@@ -472,17 +430,17 @@ $ ./decot
 without a newline after the `\`. This is not a bug.
 
 
-## 1984 mullender
+## <a name="1984_mullender"></a>1984/mullender
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1984/mullender/mullender.c](1984/mullender/mullender.c)
-### Information: [1984/mullender/README.md](1984/mullender/README.md)
+### Information: [1984/mullender/index.html](1984/mullender/index.html)
 
 Although there is an alt version and supplementary program added by Cody that
 will work in modern systems, if you do not have a
 [VAX-11](https://en.wikipedia.org/wiki/VAX-11) or
 [PDP-11](https://en.wikipedia.org/wiki/PDP-11) to run the original entry on it
-will not work. See the README.md for details on the alternate versions.
+will not work. See the index.html for details on the alternate versions.
 
 Cody added and fixed the [gentab.c](1984/mullender/gentab.c) which is from the
 author's (or one of them, Mullender) remarks found by Cody. Cody fixed this to
@@ -491,54 +449,54 @@ emulator to test it) but running the code on the binary itself produces a
 `short[]` that can compile in modern systems though it'll not work.
 
 
-# 1985
+# <a name="1985"></a>1985
 
 There are no known bugs and (Mis)features for entries in 1985.
 
 
-# 1986
+# <a name="1986"></a>1986
 
 
-## 1986 august
+## <a name="1986_august"></a>1986/august
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1986/august/august.c](1986/august/august.c)
-### Information: [1986/august/README.md](1986/august/README.md)
+### Information: [1986/august/index.html](1986/august/index.html)
 
 
 This entry is known to segfault after printing its output. It was documented by
 the judges and shouldn't be fixed.
 
 
-# 1987
+# <a name="1987"></a>1987
 
 There are no known bugs and (Mis)features for entries in 1987.
 
 
-# 1988
+# <a name="1988"></a>1988
 
 
-## 1988 dale
+## <a name="1988_dale"></a>1988/dale
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1988/dale/dale.c](1988/dale/dale.c)
-### Information: [1988/dale/README.md](1988/dale/README.md)
+### Information: [1988/dale/index.html](1988/dale/index.html)
 
 In linux it might happen that despite no error message or message about doing
 so, the program drops a core file into the directory even though the entry works
 and does not crash.
 
 
-# 1989
+# <a name="1989"></a>1989
 
 
-## 1989 fubar
+## <a name="1989_fubar"></a>1989/fubar
 
 ### STATUS: known bug - please help us fix
 ### Source code: [1989/fubar/fubar.c](1989/fubar/fubar.c)
-### Information: [1989/fubar/README.md](1989/fubar/README.md)
+### Information: [1989/fubar/index.html](1989/fubar/index.html)
 
-If you use either `fubar` or `ouroboros.c` (it's executable, see README.md for
+If you use either `fubar` or `ouroboros.c` (it's executable, see index.html for
 details) with a number < 0 or larger than, say 20, it's very likely that the
 program will turn into an infinite loop trying to compile code with syntax
 errors.
@@ -546,11 +504,11 @@ errors.
 If you want to try and fix this (mis)feature, you are welcome to try.
 
 
-## 1989 robison
+## <a name="1989_robison"></a>1989/robison
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1989/robison/robison.c](1989/robison/robison.c)
-### Information: [1989/robison/README.md](1989/robison/README.md)
+### Information: [1989/robison/index.html](1989/robison/index.html)
 
 This program will very likely crash or break into tiny bits :-) if you feed it
 numbers with non-binary digits.
@@ -559,11 +517,11 @@ There are also other cases where this can happen for instance using unsupported
 operators like `/`. To see what operators are supported check the source code.
 
 
-## 1989 westley
+## <a name="1989_westley"></a>1989/westley
 
 ### STATUS: known bug - please help us fix
 ### Source code: [1989/westley/westley.c](1989/westley/westley.c)
-### Information: [1989/westley/README.md](1989/westley/README.md)
+### Information: [1989/westley/index.html](1989/westley/index.html)
 
 With version 2 it sometimes segfaults even with the same input where other times
 it does not. We don't believe this is because of the fix that lets some versions
@@ -576,7 +534,7 @@ be compiled with clang. An example invocation is:
 ### A useful note on changing/fixing this program
 
 It should be noted that in additional to rot13 names there is code that is the
-reverse of other code (also wrt names). See the source file and the README.md
+reverse of other code (also wrt names). See the source file and the index.html
 (in the author's remarks) for more details.
 
 Fixing the (Mis)feature is likely to be a very difficult challenge especially
@@ -618,7 +576,7 @@ becomes the first and the first line becomes the last! Now if you look at the
 code you'll see on the first line:
 
 ```c
-/**//*/};)/**/pain(/*//**/tang 	  ,gnat/**//*/,ABBA~,0-0(avnz;)0-0,tang,raeN
+/**//*/};)/**/pain(*//**/tang 	  ,gnat/**//*/,ABBA~,0-0(avnz;)0-0,tang,raeN
 ```
 
 In `ver0` it'll be the same but the others are more interesting.
@@ -632,7 +590,7 @@ cnva((vag)NOON&2/*//*\\**/,gnat,tang	,NOON/**//*/(niam/**/);}/*//**/
 and on the first line:
 
 ```c
-/**//*/};)/**/cnva(/*//**/gnat 	  ,tang/**//*/,NOON~,0-0(niam;)0-0,gnat,enrA
+/**//*/};)/**/cnva(*//**/gnat 	  ,tang/**//*/,NOON~,0-0(niam;)0-0,gnat,enrA
 ```
 
 Observe that the ROT13 of `pain` is `cnva` and the ROT13 of `main` is `znva`.
@@ -652,7 +610,7 @@ Now notice how the `avnz` in the first line got changed to `niam`, its ROT13
 value.  Notice also how some of these are in comments!
 
 `main()` is in there somewhere and that had to be changed to call
-`pain()` (see the [thanks](/thanks-for-help.md#1989_westley)
+`pain()` (see the [thanks](thanks-for-help.html#1989_westley)
 file (see the _1989/westley_ section for details on how as this was
 not as straight forward as it is for other entries) as well. Now
 if you notice on that line you have in a comment `niam`. If you
@@ -682,14 +640,14 @@ That's about all I can say for how it works as other things have to be done too.
 Enjoy! :-)
 
 
-# 1990
+# <a name="1990"></a>1990
 
 
-## 1990 baruch
+## <a name="1990_baruch"></a>1990/baruch
 
 ### STATUS: known bug - please help us fix
 ### Source code: [1990/baruch/baruch.c](1990/baruch/baruch.c)
-### Information: [1990/baruch/README.md](1990/baruch/README.md)
+### Information: [1990/baruch/index.html](1990/baruch/index.html)
 
 A point worth considering is that as the number passed into the program gets
 bigger the number of lines of output gets substantially larger and it takes much
@@ -754,15 +712,15 @@ $ for n in $(seq 1 18); do echo "$n"; echo "$n" | time "./baruch" | wc -l | sed 
 ```
 
 
-## 1990 jaw
+## <a name="1990_jaw"></a>1990/jaw
 
 ### STATUS: known bug - please help us fix
 ### Source code: [1990/jaw/jaw.c](1990/jaw/jaw.c)
-### Information: [1990/jaw/README.md](1990/jaw/README.md)
+### Information: [1990/jaw/index.html](1990/jaw/index.html)
 
-[Cody Boone Ferguson](https://www.ioccc.org/authors.html#Cody_Boone_Ferguson)
+[Cody Boone Ferguson](../authors.html#Cody_Boone_Ferguson)
 fixed some issues in this program and [Yusuke
-Endoh](https://www.ioccc.org/authors.html#Yusuke_Endoh) provided the `btoa`
+Endoh](../authors.html#Yusuke_Endoh) provided the `btoa`
 script but it appears there is a bug in this entry. The judges wrote that to
 test the entry one can do:
 
@@ -801,43 +759,44 @@ oops
 which seems to be an error message (one of the fixes was to make it not use
 `perror(3)` - this fixed something else though it's no longer known what).
 
-The script [shark.sh](/1990/jaw/shark.sh) has some issues too in that due to
+The script [shark.sh](1990/jaw/shark.sh) has some issues too in that due to
 path not having `.` (this and maybe some other things were fixed) and `tar` not
 wanting to accept reading from `stdin` (this in particular) even with the right
 options used, seemingly, it has to write to disk the tarball which seems to
 defeat the purpose. This would ideally be fixed.
 
 
-## 1990 tbr
+## <a name="1990_tbr"></a>1990/tbr
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1990/tbr/tbr.c](1990/tbr/tbr.c)
-### Information: [1990/tbr/README.md](1990/tbr/README.md)
+### Information: [1990/tbr/index.html](1990/tbr/index.html)
 
 The authors provided a list of features in the
-[BUGS](/1990/tbr/README.md#bugs) section in their remarks.
+[BUGS](1990/tbr/index.html#bugs) section in their remarks.
 
 
-## 1990 theorem
+## <a name="1990_theorem"></a>1990/theorem
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1990/theorem/theorem.c](1990/theorem/theorem.c)
-### Information: [1990/theorem/README.md](1990/theorem/README.md)
+### Information: [1990/theorem/index.html](1990/theorem/index.html)
 
-[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) fixed many bugs that
+[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed many bugs that
 prevented this from working properly (including segfaults) but one thing to note
 is that if you pass two zeroes to `theorem_bkp` or `fibonacci` the program
 will enter an infinite loop, printing 0 over and over again; another condition
 where this occurred was fixed but this one should not be fixed. Thank you.
 
 
-# 1991
+# <a name="1991"></a>1991
 
-## 1991 buzzard
+
+## <a name="1991_buzzard"></a>1991/buzzard
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1991/buzzard/buzzard.c](1991/buzzard/buzzard.c)
-### Information: [1991/buzzard/README.md](1991/buzzard/README.md)
+### Information: [1991/buzzard/index.html](1991/buzzard/index.html)
 
 If the maze file cannot be opened, either because the path specified does not
 exist or because the default (whatever the source file was at compilation time)
@@ -846,11 +805,11 @@ file does not exist in the directory, this program will very likely crash.
 This is a feature, not a bug.
 
 
-## 1991 westley
+## <a name="1991_westley"></a>1991/westley
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1991/westley/westley.c](1991/westley/westley.c)
-### Information: [1991/westley/README.md](1991/westley/README.md)
+### Information: [1991/westley/index.html](1991/westley/index.html)
 
 There is a very simple way to always win. The program doesn't catch you and as
 someone called Cody's late grandmother said to him: 'it's not cheating unless
@@ -861,15 +820,15 @@ possibility. Can you find out how? There's also a way to make it so that even
 when you're cheating it ends up winning! Can you figure that out as well?
 
 
-# 1992
+# <a name="1992"></a>1992
 
 
-## 1992 adrian
+## <a name="1992_adrian"></a>1992/adrian
 
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1992/adrian/adrian.c](1992/adrian/adrian.c)
-### Information: [1992/adrian/README.md](1992/adrian/README.md)
+### Information: [1992/adrian/index.html](1992/adrian/index.html)
 
 The author stated that if the file cannot be opened then it will print a system
 error but this is not the case unless it's showing a fault. However this was
@@ -896,12 +855,12 @@ you did change it to fprintf, even if you have the right number of args, you'd
 have to remove the outer `()` pair.
 
 
-## 1992 albert
+## <a name="1992_albert"></a>1992/albert
 
 
 ### STATUS: known bug - please help us fix
 ### Source code: [1992/albert/albert.c](1992/albert/albert.c)
-### Information: [1992/albert/README.md](1992/albert/README.md)
+### Information: [1992/albert/index.html](1992/albert/index.html)
 
 Leo Broukhis, before he was an IOCCC judge, sent the IOCCC judges an email:
 
@@ -917,7 +876,7 @@ albert.c (even in its fixed form) still has a bug. Although I don't
 remember the number that exposed the bug (afair, resulting in coredump)
 in albert.orig.c that has been fixed in albert.c,
 
-I've found a number exposing another bug: 10000000001 (that's 9 0's).
+ 've found a number exposing another bug: 10000000001 (that's 9 0's).
 Both albert and albert.orig loop without printing anything, although
 the first factor is 101 and is usually found in an instant.
 ```
@@ -962,11 +921,11 @@ The alt version does fix the problem but it is not obfuscated and not like the
 entry itself. Can you fix the actual entry? You are welcome to try and do so.
 
 
-## 1992 gson
+## <a name="1992_gson"></a>1992/gson
 
 ### STATUS: uses gets() - change to fgets() if possible
 ### Source code: [1992/gson/gson.c](1992/gson/gson.c)
-### Information: [1992/gson/README.md])(1992/gson/README.md)
+### Information: [1992/gson/index.html])(1992/gson/index.html)
 
 Cody changed it so that the buffer size is `ARG_MAX+1` to try and get past the
 problem of `gets()` being used in a more complex way.
@@ -987,26 +946,26 @@ to be read (in case the `gets(3)` was not used in a loop).
 
 
 
-## 1992 kivinen
+## <a name="1992_kivinen"></a>1992/kivinen
 
 ### STATUS: known bug - please help us fix
 ### Source code: [1992/kivinen/kivinen.c](1992/kivinen/kivinen.c)
-### Information: [1992/kivinen/README.md](1992/kivinen/README.md)
+### Information: [1992/kivinen/index.html](1992/kivinen/index.html)
 
 When you start the program everything starts to move over to the right side and
-then ends.  [Yusuke Endoh](/authors.html#Yusuke_Endoh) pointed out that if you
+then ends.  [Yusuke Endoh](authors.html#Yusuke_Endoh) pointed out that if you
 click the mouse it takes it back towards the centre.
 
 If you want to try and fix this (mis)feature, you are welcome to try.
 
 
-## 1992 lush
+## <a name="1992_lush"></a>1992/lush
 
 ### STATUS: doesn't work with some compilers - please provide alternative code or fix for more compilers
 ### Source code: [1992/lush/lush.c](1992/lush/lush.c)
-### Information: [1992/lush/README.md](1992/lush/README.md)
+### Information: [1992/lush/index.html](1992/lush/index.html)
 
-We used a patch from [Yusuke Endoh](/authors.html#Yusuke_Endoh) to get this to
+We used a patch from [Yusuke Endoh](authors.html#Yusuke_Endoh) to get this to
 work but it only works with gcc. Cody removed the warnings of `gets()` and
 provided a script to run the entry properly.
 
@@ -1083,22 +1042,22 @@ Hello World.
 Can you help us?
 
 
-## 1992 vern
+## <a name="1992_vern"></a>1992/vern
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1992/vern/vern.c](1992/vern/vern.c)
-### Information: [1992/vern/README.md](1992/vern/README.md)
+### Information: [1992/vern/index.html](1992/vern/index.html)
 
 When your own checkmate is imminent it prints `"Har har"` but does not exit so
 it can 'rub your nose in defeat', as the author puts it. You will have to exit
 it yourself through ctrl-c or killing it in some other fashion.
 
 
-## 1992 westley
+## <a name="1992_westley"></a>1992/westley
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1992/westley/westley.c](1992/westley/westley.c)
-### Information: [1992/westley/README.md](1992/westley/README.md)
+### Information: [1992/westley/index.html](1992/westley/index.html)
 
 Cody improved the usability of this program by making it so that as long as the
 terminal columns is >= 80 it will display properly, rather than having to wrap
@@ -1131,12 +1090,12 @@ showed was correct when at 80-columns so it seems like this could be a bug if
 not a misunderstanding).
 
 
-# 1993
+# <a name="1993"></a>1993
 
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1993/ant/ant.c](1993/ant/ant.c)
-### Information: [1993/ant/README.md](1993/ant/README.md)
+### Information: [1993/ant/index.html](1993/ant/index.html)
 
 The author stated that:
 
@@ -1159,7 +1118,7 @@ not exist in the archive. Do you have it? Please provide it!
 
 ### STATUS: known bug - please help us fix
 ### Source code: [1993/cmills/cmills.c](1993/cmills/cmills.c)
-### Information: [1993/cmills/README.md](1993/cmills/README.md)
+### Information: [1993/cmills/index.html](1993/cmills/index.html)
 
 In multiple platforms, both macOS and also linux (in particular a RHEL 9.3
 system), this entry just shows a blank screen.
@@ -1167,22 +1126,24 @@ system), this entry just shows a blank screen.
 Can you fix it? We welcome your help.
 
 
-## 1993 lmfjyh
+## <a name="1993_lmfjyh"></a>1993/lmfjyh
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1993/lmfjyh/lmfjyh.c](1993/lmfjyh/lmfjyh.c)
-### Information: [1993/lmfjyh/README.md](1993/lmfjyh/README.md)
+### Information: [1993/lmfjyh/index.html](1993/lmfjyh/index.html)
 
 This entry relied on a bug in gcc that was fixed with gcc version 2.3.3. This
 cannot be fixed for modern systems as the bug is long gone.
 
 An alternate version that will work for modern systems, however, does exist. See
-the README.md file for details.
+the index.html file for details.
 
+
+## <a name="1993_rince"></a>1993/rince
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1993/rince/rince.c](1993/rince/rince.c)
-### Information: [1993/rince/README.md](1993/rince/README.md)
+### Information: [1993/rince/index.html](1993/rince/index.html)
 
 Although the code checks if the file can be opened or not, badly formatted files
 will cause problems. No other checks are performed either.
@@ -1191,9 +1152,11 @@ There is no end of game checking method so you will have to quit the game
 through ctrl-c or such.
 
 
+## <a name="1993_schnitzi"></a>1993/schnitzi
+
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1993/schnitzi/schnitzi.c](1993/schnitzi/schnitzi.c)
-### Information: [1993/schnitzi/README.md](1993/schnitzi/README.md)
+### Information: [1993/schnitzi/index.html](1993/schnitzi/index.html)
 
 If the file cannot be opened it will very likely segfault. This should not be
 fixed except for an exercise to yourself, should you wish to try.
@@ -1236,7 +1199,7 @@ it will work fine.
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1993/vanb/vanb.c](1993/vanb/vanb.c)
-### Information: [1993/vanb/README.md](1993/vanb/README.md)
+### Information: [1993/vanb/index.html](1993/vanb/index.html)
 
 No spaces are allowed in the expression.
 
@@ -1247,14 +1210,14 @@ The unary `-` is an operator so decimal `-46` should be entered as `-d46` and
 not `d-46`.
 
 
-# 1994
+# <a name="1994"></a>1994
 
 
-## 1994 dodsond2
+## <a name="1994_dodsond2"></a>1994/dodsond2
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1994/dodsond2/dodsond2.c](1994/dodsond2/dodsond2.c)
-### Information: [1994/dodsond2/README.md](1994/dodsond2/README.md)
+### Information: [1994/dodsond2/index.html](1994/dodsond2/index.html)
 
 When you initiate shooting via the `s` command you immediately lose an arrow
 _before you choose where to shoot_.
@@ -1263,14 +1226,14 @@ When you shoot it will move you to that room so if you end up shooting into a
 pit room you will end up dying even though you didn't explicitly move there.
 
 
-## 1994 ldb
+## <a name="1994_ldb"></a>1994/ldb
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1994/ldb/ldb.c](1994/ldb/ldb.c)
-### Information: [1994/ldb/README.md](1994/ldb/README.md)
+### Information: [1994/ldb/index.html](1994/ldb/index.html)
 
-[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) fixed this to compile
-with modern systems (see the [thanks](/thanks-for-help.md) file for
+[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed this to compile
+with modern systems (see the [thanks](thanks-for-help.html) file for
 what had to change) but the entry also used `gets()` which in some systems would
 print out a warning along with the output of the program. Naturally it could
 also overflow long lines.  Cody changed it to `fgets()` to prevent the display
@@ -1283,14 +1246,14 @@ might be tampering too much with the entry as it's not a real problem and as a
 one liner it's already quite long.
 
 
-## 1994 schnitzi
+## <a name="1994_schnitzi"></a>1994/schnitzi
 
 ### STATUS: uses gets() - change to fgets() if possible
 ### Source code: [1994/schnitzi/schnitzi.c](1994/schnitzi/schnitzi.c)
-### Information: [1994/schnitzi/README.md](1994/schnitzi/README.md)
+### Information: [1994/schnitzi/index.html](1994/schnitzi/index.html)
 
 NOTE: the generated code of all versions, when fed its own source, will differ
-even when it works. See the author's remarks in the README.md for details.
+even when it works. See the author's remarks in the index.html for details.
 Increasing the buffer size and having it, when fed its own source code,
 generate code that will compile with the same buffer size is difficult: it just
 uses the original size. Cody explains this further down.
@@ -1302,12 +1265,12 @@ In both cases, changing the buffer size and changing it to use `fgets(3)`, will
 cause compilation errors without other adjustments.
 
 See the below magic for details. Along with the author's remarks in the
-README.md file it might prove possible to get it to use `fgets(3)`. Cody,
+index.html file it might prove possible to get it to use `fgets(3)`. Cody,
 writing this on 02 November 2023, only just noticed the author's remarks and
 will later on look at this if nobody takes up the challenge. More important work
 like getting to a place that the next contest can run must be done first.
 
-[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) explains the magic of
+[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) explains the magic of
 how this entry works, which will be necessary if this entry is to be fixed,
 below.
 
@@ -1408,11 +1371,11 @@ can be compiled and the output of that new program when fed itself can also be
 compiled!
 
 
-## 1994 shapiro
+## <a name="1994_shapiro"></a>1994/shapiro
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1994/shapiro/shapiro.c](1994/shapiro/shapiro.c)
-### Information: [1994/shapiro/README.md](1994/shapiro/README.md)
+### Information: [1994/shapiro/index.html](1994/shapiro/index.html)
 
 This program will likely crash if the source code file (by the name of the file
 that's compiled) cannot be opened in the directory it is run from.
@@ -1420,8 +1383,8 @@ that's compiled) cannot be opened in the directory it is run from.
 
 ### STATUS: missing file - please provide it
 
-[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) noted that the
-README.md file refers to an alternative version of the code that is not
+[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) noted that the
+index.html file refers to an alternative version of the code that is not
 obfuscated but it is missing from the entry directory and the archive. Do you
 have this file?
 
@@ -1431,7 +1394,7 @@ we'll take care of it.
 
 ### Important reminder and a note about the `-1` value check for `getc()`:
 
-[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) fixed the code to not
+[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed the code to not
 use `-1` for the return value of `getc()`; this is important because `EOF` is
 **NOT** guaranteed to be `-1` but rather any negative value. On systems where
 `EOF != -1` the program would enter an infinite loop until the program crashed,
@@ -1451,11 +1414,11 @@ if it checked for `!= EOF`.
 Since it works there is no need to fix this except for a challenge to yourself.
 
 
-## 1994 tvr
+## <a name="1994_tvr"></a>1994/tvr
 
 ### STATUS: known bug - please help us fix
 ### Source code: [1994/tvr/tvr.c](1994/tvr/tvr.c)
-### Information: [1994/tvr/README.md](1994/tvr/README.md)
+### Information: [1994/tvr/index.html](1994/tvr/index.html)
 
 
 
@@ -1471,17 +1434,17 @@ You are welcome to try and fix it and open a pull request, providing that it
 doesn't break something else.
 
 
-# 1995
+# <a name="1995"></a>1995
 
 
-## 1995 cdua
+## <a name="1995_cdua"></a>1995/cdua
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1995/cdua/cdua.c](1995/cdua/cdua.c)
-### Information: [1995/cdua/README.md](1995/cdua/README.md)
+### Information: [1995/cdua/index.html](1995/cdua/index.html)
 
 This did not originally compile under macOS and after it did compile under
-macOS, it crashed. [Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson)
+macOS, it crashed. [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson)
 fixed these problems.
 
 It should be noted however that there is a condition where the program will
@@ -1491,11 +1454,11 @@ supposed to be printed again and one is supposed to press a key as at that point
 it calls `getchar()` via the pointer `m`. So this is a feature not a bug.
 
 
-## 1995 leo
+## <a name="1995_leo"></a>1995/leo
 
 ### STATUS: known bug - please help us fix
 ### Source code: [1995/leo/leo.c](1995/leo/leo.c)
-### Information: [1995/leo/README.md](1995/leo/README.md)
+### Information: [1995/leo/index.html](1995/leo/index.html)
 
 The judges suggested that the following commands should result in output:
 
@@ -1521,21 +1484,21 @@ It is not known if this is platform specific but this was observed in macOS and
 it would be good if it was fixed.
 
 
-## 1995 savastio
+## <a name="1995_savastio"></a>1995/savastio
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1995/savastio/savastio.c](1995/savastio/savastio.c)
-### Information: [1995/savastio/README.md](1995/savastio/README.md)
+### Information: [1995/savastio/index.html](1995/savastio/index.html)
 
 This program expects a POSITIVE number. If you specify a negative number it will
 not show any output, stuck in a loop.
 
 
-## 1995 vanschnitz
+## <a name="1995_vanschnitz"></a>1995/vanschnitz
 
 ### STATUS: missing file - please provide it
 ### Source code: [1995/vanschnitz/vanschnitz.c](1995/vanschnitz/vanschnitz.c)
-### Information: [1995/vanschnitz/README.md](1995/vanschnitz/README.md)
+### Information: [1995/vanschnitz/index.html](1995/vanschnitz/index.html)
 
 The authors stated that they included a version that allows people with just K&R
 compilers to use the program but this file is missing. Can you provide it?
@@ -1543,14 +1506,14 @@ compilers to use the program but this file is missing. Can you provide it?
 We would appreciate anyone who has it or even just knows the name! Thank you.
 
 
-# 1996
+# <a name="1996"></a>1996
 
 
-## 1996 gandalf
+## <a name="1996_gandalf"></a>1996/gandalf
 
 ### STATUS: missing or dead link - please provide them
 ### Source code: [1996/gandalf/gandalf.c](1996/gandalf/gandalf.c)
-### Information: [1996/gandalf/README.md](1996/gandalf/README.md)
+### Information: [1996/gandalf/index.html](1996/gandalf/index.html)
 
 The link was http://www.tc3.co.uk/~gandalf/G.HTML but this no longer exists as
 it was instead requiring a login / password.
@@ -1558,11 +1521,11 @@ it was instead requiring a login / password.
 Do you have an updated link? We welcome your help!
 
 
-## 1996 huffman
+## <a name="1996_huffman"></a>1996/huffman
 
 ### STATUS: uses gets() - change to fgets() if possible
 ### Source code: [1996/huffman/huffman.c](1996/huffman/huffman.c)
-### Information: [1996/huffman/README.md](1996/huffman/README.md)
+### Information: [1996/huffman/index.html](1996/huffman/index.html)
 
 The changing to using `fgets(3)` in this entry is a bit more complicated. It can
 almost be done except that some of the output of the
@@ -1599,11 +1562,11 @@ But since it does not for the time being it is advisable to just redirect
 `stderr` to `/dev/null` (`2>/dev/null`).
 
 
-## 1996 jonth
+## <a name="1996_jonth"></a>1996/jonth
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1996/jonth/jonth.c](1996/jonth/jonth.c)
-### Information: [1996/jonth/README.md](1996/jonth/README.md)
+### Information: [1996/jonth/index.html](1996/jonth/index.html)
 
 If X is not running this program will very likely crash or do something funny.
 This should NOT be fixed.
@@ -1619,41 +1582,41 @@ there's no archive on the Internet Wayback Machine. Do you know of a proper URL?
 We greatly appreciate your help here!
 
 
-# 1997
+# <a name="1997"></a>1997
 
 There was no IOCCC in 1997.
 
 
-# 1998
+# <a name="1998"></a>1998
 
 
-## 1998 dlowe
+## <a name="1998_dlowe"></a>1998/dlowe
 
 ### STATUS: missing or dead link - please provide them
 ### Source code: [1998/dlowe/dlowe.c](1998/dlowe/dlowe.c)
-### Information: [1998/dlowe/README.md](1998/dlowe/README.md)
+### Information: [1998/dlowe/index.html](1998/dlowe/index.html)
 
 The domain http://pootpoot.com no longer exists as it once did. The judges have
 given a script that can be used to make a similar page (**warning: not checked
 for security in modern days!**). Do you have a server with enough bandwidth and
-would like to set it up?  We'll gladly thank you in the README.md file and link
+would like to set it up?  We'll gladly thank you in the index.html file and link
 to the page as well!  You'll have IOCCC fame for reviving a pootifier! :-)
 
 
-## 1998 dloweneil
+## <a name="1998_dloweneil"></a>1998/dloweneil
 
 ### STATUS: missing or dead link - please provide them
 ### Source code: [1998/dloweneil/dloweneil.c](1998/dloweneil/dloweneil.c)
-### Information: [1998/dloweneil/README.md](1998/dloweneil/README.md)
+### Information: [1998/dloweneil/index.html](1998/dloweneil/index.html)
 
 See above entry [1998/dlowe](1998/dlowe/dlowe.c).
 
 
-## 1998 schnitzi
+## <a name="1998_schnitzi"></a>1998/schnitzi
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1998/schnitzi/schnitzi.c](1998/schnitzi/schnitzi.c)
-### Information: [1998/schnitzi/README.md](1998/schnitzi/README.md)
+### Information: [1998/schnitzi/index.html](1998/schnitzi/index.html)
 
 A point worth considering is that as the number passed into the program gets
 bigger the number of lines of output gets substantially larger. For instance:
@@ -1669,22 +1632,22 @@ be a problem including a segfault.
 
 If you use the generated program and do not give enough numbers in input
 something funny will happen, very possibly with different results per run. This
-is in the README.md file as something to try and ponder.
+is in the index.html file as something to try and ponder.
 
 
-# 1999
+# <a name="1999"></a>1999
 
 There was no IOCCC in 1999.
 
 
-# 2000
+# <a name="2000"></a>2000
 
 
-## 2000 dlowe
+## <a name="2000_dlowe"></a>2000/dlowe
 
 ### STATUS: doesn't work with some platforms - please help us fix
 ### Source code: [2000/dlowe/dlowe.c](2000/dlowe/dlowe.c)
-### Information: [2000/dlowe/README.md](2000/dlowe/README.md)
+### Information: [2000/dlowe/index.html](2000/dlowe/index.html)
 
 This **MIGHT** be better described as doesn't work with some versions of perl:
 the author states that in perl < 5.6.0 there is a bug with a core dump in what
@@ -1949,11 +1912,11 @@ which might (?) suggest that the `+` operator is unimplemented. Unfortunately it
 has been many years since I have used perl and I was never a guru either.
 
 
-## 2000 primenum
+## <a name="2000_primenum"></a>2000/primenum
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2000/primenum/primenum.c](2000/primenum/primenum.c)
-### Information: [2000/primenum/README.md](2000/primenum/README.md)
+### Information: [2000/primenum/index.html](2000/primenum/index.html)
 
 This program does not do what you might think it does! Running it like:
 
@@ -1962,7 +1925,7 @@ This program does not do what you might think it does! Running it like:
 ```
 
 will seemingly wait for input exactly because it is waiting for input. See the
-README.md file or look at the source.
+index.html file or look at the source.
 
 Although the name of the program suggests it prints prime numbers this is not
 the case. This is by design. See the author's comments for more details or
@@ -1975,27 +1938,27 @@ that it'll be worth your two second fix :-) ).  If you do fix it please do not
 make a pull request.
 
 
-## 2000 rince
+## <a name="2000_rince"></a>2000/rince
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2000/rince/rince.c](2000/rince/rince.c)
-### Information: [2000/rince/README.md](2000/rince/README.md)
+### Information: [2000/rince/index.html](2000/rince/index.html)
 
 If `DISPLAY` is not set the program will very likely crash, do something strange
 (or if you're very unlucky your computer might [halt and catch
 fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing))! :-) ).
 
 
-# 2001
+# <a name="2001"></a>2001
 
 
-## 2001 anonymous
+## <a name="2001_anonymous"></a>2001/anonymous
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2001/anonymous/anonymous.c](2001/anonymous/anonymous.c)
-### Information: [2001/anonymous/README.md](2001/anonymous/README.md)
+### Information: [2001/anonymous/index.html](2001/anonymous/index.html)
 
-[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) fixed this so that it
+[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed this so that it
 doesn't segfault and then also fixed the functionality of it (but see below).
 
 Cody also fixed the [anonymous.ten.c](2001/anonymous/anonymous.ten.c) program
@@ -2018,12 +1981,12 @@ this program will very likely crash or do something strange like slaughter the
 elves of Imladris :-(
 
 
-## 2001 bellard
+## <a name="2001_bellard"></a>2001/bellard
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### STATUS: doesn't work with some platforms - please help us fix
 ### Source code: [2001/bellard/bellard.c](2001/bellard/bellard.c)
-### Information: [2001/bellard/README.md](2001/bellard/README.md)
+### Information: [2001/bellard/index.html](2001/bellard/index.html)
 
 The two statuses might seem contradictory but that is a complicated question.
 The author stated that it only works with i386 linux so on the one hand the fact
@@ -2032,7 +1995,7 @@ the other hand it would be nice if there was an alternate version which worked
 for modern systems. This does seem quite unlikely but some fixes, described
 next, were made.
 
-[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) fixed an initial
+[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed an initial
 segfault (trying to open the file) and he also fixed the [supplementary program
 bellard.otccex.c](2001/bellard/bellard.otccex.c) but this still crashes in
 systems not i386 linux which is what the author stated.
@@ -2055,7 +2018,7 @@ explicitly stated that it requires i386 linux.
 
 There I found what should be a more portable version which is included as
 [otccelf.c](2001/bellard/otccelf.c) (after adding some `#include`s and the
-modification by Yusuke noted in the [thanks](/thanks-for-help.md)
+modification by Yusuke noted in the [thanks](thanks-for-help.html)
 file) but it appears this *also* requires i386 linux; indeed looking at the code
 it hard codes paths that are i386 specific to linux.
 
@@ -2082,20 +2045,20 @@ and it can be run by itself for fun in modern systems, which was not possible
 before the fixes there.
 
 
-## 2001 dgbeards
+## <a name="2001_dgbeards"></a>2001/dgbeards
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2001/dgbeards/dgbeards.c](2001/dgbeards/dgbeards.c)
-### Information: [2001/dgbeards/README.md](2001/dgbeards/README.md)
+### Information: [2001/dgbeards/index.html](2001/dgbeards/index.html)
 
 This program deliberately crashes if it loses (which is what it aims to do).
 
 
-## 2001 herrmann1
+## <a name="2001_herrmann1"></a>2001/herrmann1
 
 ### STATUS: missing files - please provide them
 ### Source code: [2001/herrmann1/herrmann1.c](2001/herrmann1/herrmann1.c)
-### Information: [2001/herrmann1/README.md](2001/herrmann1/README.md)
+### Information: [2001/herrmann1/index.html](2001/herrmann1/index.html)
 
 The author referred to the file `herrmann1.turing` but it does not exist not even
 in the archive. Do you have a copy? Please provide it!
@@ -2111,11 +2074,11 @@ appreciate your help!
 If you want to try and fix this (mis)feature, you are welcome to try.
 
 
-## 2001 kev
+## <a name="2001_kev"></a>2001/kev
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2001/kev/kev.c](2001/kev/kev.c)
-### Information: [2001/kev/README.md](2001/kev/README.md)
+### Information: [2001/kev/index.html](2001/kev/index.html)
 
 Sometimes when one player presses `q` it will result in broken pipe on the other
 end.
@@ -2136,23 +2099,23 @@ Although it is independent of endianness both systems need the same character
 set. In other words both have to be ASCII or EBCDIC - not one of each.
 
 
-## 2001 rosten
+## <a name="2001_rosten"></a>2001/rosten
 
 
 ### STATUS: missing files - please provide them
 ### Source code: [2001/rosten/rosten.c](2001/rosten/rosten.c)
-### Information: [2001/rosten/README.md](2001/rosten/README.md)
+### Information: [2001/rosten/index.html](2001/rosten/index.html)
 
 The author stated that there is a cat man page for this program in case one
 wanted to install it as a tool but this is missing.
 
 
-## 2001 schweikh
+## <a name="2001_schweikh"></a>2001/schweikh
 
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2001/schweikh/schweikh.c](2001/schweikh/schweikh.c)
-### Information: [2001/schweikh/README.md](2001/schweikh/README.md)
+### Information: [2001/schweikh/index.html](2001/schweikh/index.html)
 
 The glob pattern must match the whole string. See the author's comments for
 details and a workaround.
@@ -2160,12 +2123,12 @@ details and a workaround.
 There's also no way to escape meta characters.
 
 
-## 2001 westley
+## <a name="2001_westley"></a>2001/westley
 
 
 ### STATUS: uses gets() - change to fgets() if possible
 ### Source code: [2001/westley/westley.c](2001/westley/westley.c)
-### Information: [2001/westley/README.md](2001/westley/README.md)
+### Information: [2001/westley/index.html](2001/westley/index.html)
 
 This function uses `gets(3)` but it would be ideal if it used `fgets(3)`. This
 one is rather complicated and will be looked at later (some progress was made by
@@ -2180,7 +2143,7 @@ as simple as it might seem. Doing this breaks things. If memory serves changing
 it to two will, for instance, break the punch card code output. It might be that
 that is for `fgets(3)`, however, but the point remains: in order to test any
 fixes you must determine if the extra files generated (some from `sort(1)`) -
-see the README.md file - generate correct output as well as that the main entry
+see the index.html file - generate correct output as well as that the main entry
 does too. You might try running the `try.sh` script and redirect it to a file
 first so that you can compare the output. Make sure to recreate the extra files
 as described by the author if you do fix this. This might be looked at later if
@@ -2193,12 +2156,12 @@ The author referred to a file `card.gif` but this file is missing. Do you have
 it? Please provide it!
 
 
-## 2001 williams
+## <a name="2001_williams"></a>2001/williams
 
 
 ### STATUS: known bug - please help us fix
 ### Source code: [2001/williams/williams.c](2001/williams/williams.c)
-### Information: [2001/williams/README.md](2001/williams/README.md)
+### Information: [2001/williams/index.html](2001/williams/index.html)
 
 There seem to be a couple bugs at least in this entry. The first one is that
 when it does reach a certain point it crashes. This is in the function `J()` (or
@@ -2256,25 +2219,25 @@ sleeping in a loop does suggest that it's not stuck only showing those lines and
 sleeping.
 
 
-# 2002
+# <a name="2002"></a>2002
 
 There was no IOCCC in 2002.
 
 
-# 2003
+# <a name="2003"></a>2003
 
 There was no IOCCC in 2003.
 
 
-# 2004
+# <a name="2004"></a>2004
 
 
-## 2004 gavin
+## <a name="2004_gavin"></a>2004/gavin
 
 ### STATUS: compiled executable crashes - please help us fix
 ### STATUS: doesn't work with some platforms - please help us fix
 ### Source code: [2004/gavin/gavin.c](2004/gavin/gavin.c)
-### Information: [2004/gavin//README.md](2004/gavin//README.md)
+### Information: [2004/gavin//index.html](2004/gavin//index.html)
 
 Segmentation fault will occur in some systems. For instance on macOS with the
 arm64 chip:
@@ -2360,7 +2323,7 @@ gavin: gavin.c
         ${RM} -f vi
         ${CP} sh vi
         ${RM} -f fs.tar
-        ${TAR} -cvf fs.tar sh vi gavin.c README.md prim
+        ${TAR} -cvf fs.tar sh vi gavin.c index.html prim
 
 gavin_clean:
         ${RM} -f sh vi kernel gavin.o
@@ -2377,15 +2340,15 @@ fit into the current IOCCC build environment.
 
 ### STATUS: INABIAF - please **DO NOT** fix
 
-See [known features in the README.md](2004/gavin/README.md#known-features) for
+See [known features in the index.html](2004/gavin/index.html#known-features) for
 things that are not bugs but documented (mis)features.
 
 
-## 2004 jdalbec
+## <a name="2004_jdalbec"></a>2004/jdalbec
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2004/jdalbec/jdalbec.c](2004/jdalbec/jdalbec.c)
-### Information: [2004/jdalbec/README.md](2004/jdalbec/README.md)
+### Information: [2004/jdalbec/index.html](2004/jdalbec/index.html)
 
 The author stated that:
 
@@ -2411,29 +2374,29 @@ previous paragraph applies here also.
 ```
 
 
-## 2004 sds
+## <a name="2004_sds"></a>2004/sds
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2004/sds/sds.c](2004/sds/sds.c)
-### Information: [2004/sds/README.md](2004/sds/README.md)
+### Information: [2004/sds/index.html](2004/sds/index.html)
 
 The generated code will very likely segfault or do something not intended if not
-given the right args. See the README.md file for the correct syntax.
+given the right args. See the index.html file for the correct syntax.
 
 
-# 2005
+# <a name="2005"></a>2005
 
 
-## 2005 anon
+## <a name="2005_anon"></a>2005/anon
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2005/anon/anon.c](2005/anon/anon.c)
-### Information: [2005/anon/README.md](2005/anon/README.md)
+### Information: [2005/anon/index.html](2005/anon/index.html)
 
 This program sometimes will create unsolvable puzzles :-) just to hook you.
 As a protection against this - and to prevent you from spending too much time on
 such puzzles (or too big puzzles if you insist on doing this) - it deliberately
-destroys its runtime stack. See the [README.md](2005/anon/README.md) for more
+destroys its runtime stack. See the [index.html](2005/anon/index.html) for more
 details on this.
 
 If you specify more than three args the program might also crash or do something
@@ -2441,11 +2404,11 @@ strange. This might also happen if you specify excessively large board
 dimensions. Try `100 100 100` for instance and see what happens!
 
 
-## 2005 giljade
+## <a name="2005_giljade"></a>2005/giljade
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2005/giljade/giljade.c](2005/giljade/giljade.c)
-### Information: [2005/giljade/README.md](2005/giljade/README.md)
+### Information: [2005/giljade/index.html](2005/giljade/index.html)
 
 This entry will very likely segfault or do something strange if the source code
 does not exist.
@@ -2453,11 +2416,11 @@ does not exist.
 This entry requires that `sed` and `make` are in the path.
 
 
-## 2005 mikeash
+## <a name="2005_mikeash"></a>2005/mikeash
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2005/mikeash/mikeash.c](2005/mikeash/mikeash.c)
-### Information: [2005/mikeash/README.md](2005/mikeash/README.md)
+### Information: [2005/mikeash/index.html](2005/mikeash/index.html)
 
 The author states:
 
@@ -2498,13 +2461,13 @@ Basically, the [LISP][] interpreter is good for some basic math operations, and
 for running itself.
 
 
-## 2005 mynx
+## <a name="2005_mynx"></a>2005/mynx
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2005/mynx/mynx.c](2005/mynx/mynx.c)
-### Information: [2005/mynx/README.md](2005/mynx/README.md)
+### Information: [2005/mynx/index.html](2005/mynx/index.html)
 
-[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) notes that, though
+[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) notes that, though
 probably obvious, this entry will not work with https. He added an alt version
 that scans for https in case someone wants to set up a pipeline or other
 workaround (perhaps with stunnel) or even add additional code to it to make it
@@ -2514,11 +2477,11 @@ out as it won't work on as many websites as it used to including the [IOCCC
 website](https://www.ioccc.org) itself.
 
 
-## 2005 sykes
+## <a name="2005_sykes"></a>2005/sykes
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2005/sykes/sykes.c](2005/sykes/sykes.c)
-### Information: [2005/sykes/README.md](2005/sykes/README.md)
+### Information: [2005/sykes/index.html](2005/sykes/index.html)
 
 The author stated the below points of interest.
 
@@ -2546,14 +2509,14 @@ The
 used decimal mode, or any of the "undocumented" instructions.
 
 
-# 2006
+# <a name="2006"></a>2006
 
 
-## 2006 birken
+## <a name="2006_birken"></a>2006/birken
 
 ### STATUS: uses gets() - change to fgets() if possible
 ### Source code: [2006/birken/birken.c](2006/birken/birken.c)
-### Information: [2006/birken/README.md](2006/birken/README.md)
+### Information: [2006/birken/index.html](2006/birken/index.html)
 
 This entry uses `gets(3)` which is unsafe and provides annoying warnings, most
 obnoxious in macOS as it shows it at runtime (redirecting `stderr` to
@@ -2566,22 +2529,22 @@ with at least `computer.tofu` input file:
 ```
 
 
-## 2006 borsanyi
+## <a name="2006_borsanyi"></a>2006/borsanyi
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2006/borsanyi/borsanyi.c](2006/borsanyi/borsanyi.c)
-### Information: [2006/borsanyi/README.md](2006/borsanyi/README.md)
+### Information: [2006/borsanyi/index.html](2006/borsanyi/index.html)
 
 The string specified must be <= 42 characters and may only consist of the
 characters in the regex `a-z_A-Z0-9@.-`. Breaking these constraints will end up
 with possibly corrupt GIF files.
 
 
-## 2006 monge
+## <a name="2006_monge"></a>2006/monge
 
 ### STATUS: doesn't work with some platforms - please help us fix
 ### Source code: [2006/monge/monge.c](2006/monge/monge.c)
-### Information: [2006/monge/README.md](2006/monge/README.md)
+### Information: [2006/monge/index.html](2006/monge/index.html)
 
 This program requires x86 (with an x87 FPU) or x86_64 machine and it requires
 the SDL1 library.
@@ -2603,11 +2566,11 @@ welcome to try and fix it if you wish to!
 Incorrect formulas will ungracefully crash the program.
 
 
-## 2006 sykes1
+## <a name="2006_sykes1"></a>2006/sykes1
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2006/sykes1/sykes1.c](2006/sykes1/sykes1.c)
-### Information: [2006/sykes1/README.md](2006/sykes1/README.md)
+### Information: [2006/sykes1/index.html](2006/sykes1/index.html)
 
 The author stated:
 
@@ -2626,18 +2589,18 @@ return without outputting a solution.  If you can wait that long.
 
 
 
-## 2006 toledo2
+## <a name="2006_toledo2"></a>2006/toledo2
  
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2006/toledo2/toledo2.c](2006/toledo2/toledo2.c)
-### Information: [2006/toledo2/README.md](2006/toledo2/README.md)
+### Information: [2006/toledo2/index.html](2006/toledo2/index.html)
 
-[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) fixed this program to
+[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed this program to
 not crash in macOS (it appeared to work fine in fedora linux on an `x86_64`
 architecture but he does not know if it crashed in macOS Ventura due to the fact
 it is an `arm64` CPU - the Apple silicon chip). This fix, BTW, is a mix of a fix
-by [Yusuke Endoh](/authors.html#Yusuke_Endoh) and Cody's. Nevertheless there are
+by [Yusuke Endoh](authors.html#Yusuke_Endoh) and Cody's. Nevertheless there are
 two features that are not bugs. Later the author made some slight changes to
 make it not crash in x86_64 macOS.
 
@@ -2649,34 +2612,34 @@ You must type in caps (except in strings) and this program is indeed
 case-sensitive.
 
 
-# 2007
+# <a name="2007"></a>2007
 
 There was no IOCCC in 2007.
 
 
-# 2008
+# <a name="2008"></a>2008
 
 There was no IOCCC in 2008.
 
 
-# 2009
+# <a name="2009"></a>2009
 
 There was no IOCCC in 2009.
 
 
-# 2010
+# <a name="2010"></a>2010
 
 There was no IOCCC in 2010.
 
 
-# 2011
+# <a name="2011"></a>2011
 
 
-## 2011 borsanyi
+## <a name="2011_borsanyi"></a>2011/borsanyi
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2011/borsanyi/borsanyi.c](2011/borsanyi/borsanyi.c)
-### Information: [2011/borsanyi/README.md](2011/borsanyi/README.md)
+### Information: [2011/borsanyi/index.html](2011/borsanyi/index.html)
 
 For a great amount of data points the program will crash, depending on your
 available stack space.
@@ -2697,11 +2660,11 @@ Rounding errors might cause an omission in the highest bin. There might be empty
 bins at the edges.
 
 
-## 2011 dlowe
+## <a name="2011_dlowe"></a>2011/dlowe
 
 ### STATUS: missing or dead link - please provide them
 ### Source code: [2011/dlowe/dlowe.c](2011/dlowe/dlowe.c)
-### Information: [2011/dlowe/README.md](2011/dlowe/README.md)
+### Information: [2011/dlowe/index.html](2011/dlowe/index.html)
 
 The author's website, http://www.pootpoot.net, no longer exists as it once did,
 instead being something else entirely. The Internet Wayback Machine, although it
@@ -2725,23 +2688,23 @@ tends to result in empty output.
 If you want to try and fix this (mis)feature, you are welcome to try.
 
 
-## 2011 fredriksson
+## <a name="2011_fredriksson"></a>2011/fredriksson
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2011/fredriksson/fredriksson.c](2011/fredriksson/fredriksson.c)
-### Information: [2011/fredriksson/README.md](2011/fredriksson/README.md)
+### Information: [2011/fredriksson/index.html](2011/fredriksson/index.html)
 
 The author stated that there are a number of features and limitations. As the
 list is rather long see [other
-features](2011/fredriksson/README.md#other-features) and [limitations and
-remarks](2011/fredriksson/README.md#limitations-and-remarks) instead.
+features](2011/fredriksson/index.html#other-features) and [limitations and
+remarks](2011/fredriksson/index.html#limitations-and-remarks) instead.
 
 
-## 2011 richards
+## <a name="2011_richards"></a>2011/richards
 
 ### STATUS: doesn't work with some platforms - please help us fix
 ### Source code: [2011/richards/richards.c](2011/richards/richards.c)
-### Information: [2011/richards/README.md](2011/richards/README.md)
+### Information: [2011/richards/index.html](2011/richards/index.html)
 
 This does not appear to work with macOS, resulting in a segfault (and sometimes
 a bus error).
@@ -2751,7 +2714,7 @@ like it _might_ (see Apple resources below) be but it could also be a wider
 problem with macOS. It appears that Apple does not allow certain combinations of
 memory protections with the arm64 processor.
 
-[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) tried some of the
+[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) tried some of the
 workarounds but at this time he could not get it to work. He offers some earlier
 debugging sessions below as well as a resource from the author as well as some
 resources on Apple's website should anyone wish to take a crack at it. He might
@@ -2928,7 +2891,7 @@ case.
 
 ### Testing fixes
 
-It might be helpful to use the [try.alt.sh](/2011/richards/try.alt.sh) script to
+It might be helpful to use the [try.alt.sh](2011/richards/try.alt.sh) script to
 test that it does not crash and functions properly.
 
 
@@ -2958,25 +2921,25 @@ defined.
 Do you have a fix? We welcome it!
 
 
-## 2011 vik
+## <a name="2011_vik"></a>2011/vik
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2011/vik/vik.c](2011/vik/vik.c)
-### Information: [2011/vik/README.md](2011/vik/README.md)
+### Information: [2011/vik/index.html](2011/vik/index.html)
 
 The author stated that the program will crash if no argument is passed to the
 program though we note that your computer might also [halt and catch
 fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
 
 
-# 2012
+# <a name="2012"></a>2012
 
 
-## 2012 blakely
+## <a name="2012_blakely"></a>2012/blakely
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2012/blakely/blakely.c](2012/blakely/blakely.c)
-### Information: [2012/blakely/README.md](2012/blakely/README.md)
+### Information: [2012/blakely/index.html](2012/blakely/index.html)
 
 The author stated:
 
@@ -2986,11 +2949,11 @@ operation, then the results are undefined.
 ```
 
 
-## 2012 deckmyn
+## <a name="2012_deckmyn"></a>2012/deckmyn
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2012/deckmyn/deckmyn.c](2012/deckmyn/deckmyn.c)
-### Information: [2012/deckmyn/README.md](2012/deckmyn/README.md)
+### Information: [2012/deckmyn/index.html](2012/deckmyn/index.html)
 
 The author stated:
 
@@ -3004,7 +2967,7 @@ string.
 The code is quite sensitive. Errors in the input can lead to strange results.
 The code does not read beyond the end of the music input, but that is about the
 only error checking available. Any input that is not according to the rules in
-the deckmyn.md, may cause errors.
+the deckmyn.html, may cause errors.
 
 The program has no special hardware limitations or requirements, other than 8bit
 `char` (`signed` or `unsigned`) and two's complement negatives.
@@ -3024,14 +2987,14 @@ musical element of a line is only 2 characters!
 
 
 
-The manual referred to is [here](2012/deckmyn/deckmyn.md).
+The manual referred to is [here](2012/deckmyn/deckmyn.html).
 
 
-## 2012 dlowe
+## <a name="2012_dlowe"></a>2012/dlowe
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2012/dlowe/dlowe.c](2012/dlowe/dlowe.c)
-### Information: [2012/dlowe/README.md](2012/dlowe/README.md)
+### Information: [2012/dlowe/index.html](2012/dlowe/index.html)
 
 The author stated:
 
@@ -3042,11 +3005,11 @@ The author stated:
 * Cannot build or run without X11 (or an X11 compatibility layer).
 
 
-## 2012 tromp
+## <a name="2012_tromp"></a>2012/tromp
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2012/tromp/tromp.c](2012/tromp/tromp.c)
-### Information: [2012/tromp/README.md](2012/tromp/README.md)
+### Information: [2012/tromp/index.html](2012/tromp/index.html)
 
 The author stated:
 
@@ -3069,11 +3032,11 @@ will likely dump core.
 ```
 
 
-## 2012 vik
+## <a name="2012_vik"></a>2012/vik
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2012/vik/vik.c](2012/vik/vik.c)
-### Information: [2012/vik/README.md](2012/vik/README.md)
+### Information: [2012/vik/index.html](2012/vik/index.html)
 
 The author stated that the program will crash if no argument is passed to the
 program or if invalid arguments (e.g. file does not exist) or images of
@@ -3082,13 +3045,13 @@ might also [halt and catch
 fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
 
 
-# 2013
+# <a name="2013"></a>2013
 
-## 2013 cable2
+## <a name="2013_cable2"></a>2013/cable2
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2013/cable2/cable2.c](2013/cable2/cable2.c)
-### Information: [2013/cable2/README.md](2013/cable2/README.md)
+### Information: [2013/cable2/index.html](2013/cable2/index.html)
 
 The author stated:
 
@@ -3105,11 +3068,11 @@ antialiasing interferes with color detection in "color" mode.
 and endianness conversion would make the source too large for IOCCC rule 2).
 
 
-## 2013 dlowe
+## <a name="2013_dlowe"></a>2013/dlowe
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2013/dlowe/dlowe.c](2013/dlowe/dlowe.c)
-### Information: [2013/dlowe/README.md](2013/dlowe/README.md)
+### Information: [2013/dlowe/index.html](2013/dlowe/index.html)
 
 This program will possibly crash or draw something strange with 0 args. Then
 again it might not. :-) This is easy to fix but would add bytes and since the
@@ -3127,11 +3090,11 @@ The author also stated:
   used.
 
 
-## 2013 endoh1
+## <a name="2013_endoh1"></a>2013/endoh1
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2013/endoh1/endoh1.c](2013/endoh1/endoh1.c)
-### Information: [2013/endoh1/README.md](2013/endoh1/README.md)
+### Information: [2013/endoh1/index.html](2013/endoh1/index.html)
 
 From the author:
 
@@ -3146,16 +3109,16 @@ Also, it requires a space between identifiers.  In short, use `(S K)` instead of
 Huge memory may be required to compile the program (about 300 MB on my machine).
 
 In addition, there are some limitations (and workarounds) mentioned in [Spoiler
-section](2013/endoh1/README.md#spoiler).
+section](2013/endoh1/index.html#spoiler).
 
 --
 
 
-## 2013 endoh3
+## <a name="2013_endoh3"></a>2013/endoh3
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2013/endoh3/endoh3.c](2013/endoh3/endoh3.c)
-### Information: [2013/endoh3/README.md](2013/endoh3/README.md)
+### Information: [2013/endoh3/index.html](2013/endoh3/index.html)
 
 From the author:
 
@@ -3171,31 +3134,31 @@ A workaround is inserting a whitespace: `C2 E2`.
 --
 
 
-## 2013 endoh4
+## <a name="2013_endoh4"></a>2013/endoh4
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2013/endoh4/endoh4.c](2013/endoh4/endoh4.c)
-### Information: [2013/endoh4/README.md](2013/endoh4/README.md)
+### Information: [2013/endoh4/index.html](2013/endoh4/index.html)
 
 Invalid input files will very likely crash the program.
 
 
 
-## 2013 hou
+## <a name="2013_hou"></a>2013/hou
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2013/hou/hou.c](2013/hou/hou.c)
-### Information: [2013/hou/README.md](2013/hou/README.md)
+### Information: [2013/hou/index.html](2013/hou/index.html)
 
 This program will not terminate on its own; you must kill `hou` (but not Qiming
 Hou :-) ) yourself. This should not be fixed.
 
 
-## 2013 mills
+## <a name="2013_mills"></a>2013/mills
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2013/mills/mills.c](2013/mills/mills.c)
-### Information: [2013/mills/README.md](2013/mills/README.md)
+### Information: [2013/mills/index.html](2013/mills/index.html)
 
 The author reminds us that if you kill the program you will have to wait a short
 bit of time before you can start it again if you want it to be able to bind to
@@ -3205,14 +3168,14 @@ have experience with socket programming :-) ) fix. However as the author pointed
 it out as a known limitation it is not a bug but a feature.
 
 
-# 2014
+# <a name="2014"></a>2014
 
 
-## 2014 maffiodo1
+## <a name="2014_maffiodo1"></a>2014/maffiodo1
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2014/maffiodo1/prog.c](2014/maffiodo1/prog.c)
-### Information: [2014/maffiodo1/README.md](2014/maffiodo1/README.md)
+### Information: [2014/maffiodo1/index.html](2014/maffiodo1/index.html)
 
 The author noted that in macOS the colours might be wrong. They gave a solution.
 However Cody didn't see any problem with it and he beat the series many times.
@@ -3241,31 +3204,31 @@ player become bigger, stay away from blocks!
 but since it's documented it's considered a feature, not a bug to fix.
 
 
-## 2014 maffiodo2
+## <a name="2014_maffiodo2"></a>2014/maffiodo2
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2014/maffiodo2/prog.c](2014/maffiodo2/prog.c)
-### Information: [2014/maffiodo2/README.md](2014/maffiodo2/README.md)
+### Information: [2014/maffiodo2/index.html](2014/maffiodo2/index.html)
 
 This program will very likely crash if no arg is given.
 
 
-## 2014 vik
+## <a name="2014_vik"></a>2014/vik
 
 ### STATUS: known bug - please help us fix
 ### Source code: [2014/vik/prog.c](2014/vik/prog.c)
-### Information: [2014/vik/README.md](2014/vik/README.md)
+### Information: [2014/vik/index.html](2014/vik/index.html)
 
-[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) discovered a bug to do
+[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) discovered a bug to do
 with translating sound to text that shows itself in some cases (it works in
 others) when working on his winning [2020 Enigma machine](2020/ferguson2/prog.c)
-('Most enigmatic') entry. See his [README.md](2020/ferguson2/README.md) for
+('Most enigmatic') entry. See his [index.html](2020/ferguson2/index.html) for
 details (search for `vik` in the file). This one might be more of a limitation
 but this is not known.
 
 He provides a tip in testing the problem: it might help to use his Enigma
 machine to find problems as it will allow you to verify what is correct and what
-is not. Again see his README.md for details. However it is also possible to not
+is not. Again see his index.html for details. However it is also possible to not
 rely on the entry as the below shows. One should be able to do:
 
 
@@ -3302,14 +3265,14 @@ IOCCC
 ```
 
 
-# 2015
+# <a name="2015"></a>2015
 
 
-## 2015 hou
+## <a name="2015_hou"></a>2015/hou
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2015/hou/prog.c](2015/hou/prog.c)
-### Information: [2015/hou/README.md](2015/hou/README.md)
+### Information: [2015/hou/index.html](2015/hou/index.html)
 
 The author stated:
 
@@ -3336,11 +3299,11 @@ result. Error messages become garbled, though.
 --
 
 
-## 2015 mills2
+## <a name="2015_mills2"></a>2015/mills2
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2015/mills2/prog.c](2015/mills2/prog.c)
-### Information: [2015/mills2/README.md](2015/mills2/README.md)
+### Information: [2015/mills2/index.html](2015/mills2/index.html)
 
 The program doesn't look at the header of files so if it's passed something hat
 is not compressed data it's likely to crash.
@@ -3348,11 +3311,11 @@ is not compressed data it's likely to crash.
 The program depends on little endian systems.
 
 
-## 2015 schweikhardt
+## <a name="2015_schweikhardt"></a>2015/schweikhardt
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2015/schweikhardt/prog.c](2015/schweikhardt/prog.c)
-### Information: [2015/schweikhardt/README.md](2015/schweikhardt/README.md)
+### Information: [2015/schweikhardt/index.html](2015/schweikhardt/index.html)
 
 The program assumes that `EOF` is `-1`. This can be fixed but at this time it is
 uncertain if it should be.
@@ -3370,24 +3333,24 @@ use `8 * sizeof(typ)` bits per place. It does not work when `CHAR_BIT <= 7`.
 --
 
 
-# 2016
+# <a name="2016"></a>2016
 
 There was no IOCCC in 2016.
 
 
-# 2017
+# <a name="2017"></a>2017
 
 There was no IOCCC in 2017.
 
 
-# 2018
+# <a name="2018"></a>2018
 
 
-## 2018 algmyr
+## <a name="2018_algmyr"></a>2018/algmyr
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2018/algmyr/algmyr.c](2018/algmyr/algmyr.c)
-### Information: [2018/algmyr/README.md](2018/algmyr/README.md)
+### Information: [2018/algmyr/index.html](2018/algmyr/index.html)
 
 The author wrote:
 
@@ -3404,11 +3367,11 @@ loop printing whitespace.
 
 
 
-## 2018 hou
+## <a name="2018_hou"></a>2018/hou
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2018/hou/prog.c](2018/hou/prog.c)
-### Information: [2018/hou/README.md](2018/hou/README.md)
+### Information: [2018/hou/index.html](2018/hou/index.html)
 
 When you run it on a JSON file you will see something like:
 
@@ -3426,11 +3389,11 @@ infinitely increase the size of the output file. This can happen if you try
 fixing the syntax error in the generated `ioccc.json` file.
 
 
-## 2018 mills
+## <a name="2018_mills"></a>2018/mills
 
 ### STATUS: known bug - please help us fix
 ### Source code: [2018/mills/prog.c](2018/mills/prog.c)
-### Information: [2018/mills/README.md](2018/mills/README.md)
+### Information: [2018/mills/index.html](2018/mills/index.html)
 
 After exiting the program (with ctrl-e) if you try running it again you will
 likely see:
@@ -3463,11 +3426,11 @@ exiting the program or else the next time you run it the file will not exist (or
 in the case of compiled code it won't be executable).
 
 
-## 2018 vokes
+## <a name="2018_vokes"></a>2018/vokes
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2018/vokes/vokes.c](2018/vokes/vokes.c)
-### Information: [2018/vokes/README.md](2018/vokes/README.md)
+### Information: [2018/vokes/index.html](2018/vokes/index.html)
 
 The author wrote the following:
 
@@ -3516,36 +3479,36 @@ The author wrote the following:
   this program has nothing to do with a hand.
 
 
-# 2019
+# <a name="2019"></a>2019
 
 
-## 2019 adamovsky
+## <a name="2019_adamovsky"></a>2019/adamovsky
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2019/adamovsky/prog.c](/2019/adamovsky/prog.c)
-### Information: [2019/adamovsky/README.md](/2019/adamovsky/README.md)
+### Source code: [2019/adamovsky/prog.c](2019/adamovsky/prog.c)
+### Information: [2019/adamovsky/index.html](2019/adamovsky/index.html)
 
 Certain input can crash this program. The file
-[crash.unl](/2019/adamovsky/crash.unl) is an example file.
+[crash.unl](2019/adamovsky/crash.unl) is an example file.
 
 
-## 2019 burton
+## <a name="2019_burton"></a>2019/burton
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/burton/prog.c](2019/burton/prog.c)
-### Information: [2019/burton/README.md](2019/burton/README.md)
+### Information: [2019/burton/index.html](2019/burton/index.html)
 
 The author pointed out that some implementations of `wc(1)` show different
 values but his implementation matches that of macOS and FreeBSD.
 
 
-## 2019 ciura
+## <a name="2019_ciura"></a>2019/ciura
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/ciura/prog.c](2019/ciura/prog.c)
-### Information: [2019/ciura/README.md](2019/ciura/README.md)
+### Information: [2019/ciura/index.html](2019/ciura/index.html)
 
-[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) fixed the scripts so
+[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed the scripts so
 that they can work but it might end up that the scripts don't show any output
 anyway as they use the full alphabet. To test that it works one can have a
 script like:
@@ -3575,21 +3538,21 @@ in the de.sh/de.alt.sh scripts:
 # reason that so many words have them.
 ```
 
-## 2019 dogon
+## <a name="2019_dogon"></a>2019/dogon
 
 ### STATUS: uses gets() - change to fgets() if possible
 ### Source code: [2019/dogon/prog.c](2019/dogon/prog.c)
-### Information: [2019/dogon/README.md](2019/dogon/README.md)
+### Information: [2019/dogon/index.html](2019/dogon/index.html)
 
 The author does not it uses `gets()` and one will get warnings but it would be
 ideal if this was not the case.
 
 
-## 2019 duble
+## <a name="2019_duble"></a>2019/duble
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/duble/prog.c](2019/duble/prog.c)
-### Information: [2019/duble/README.md](2019/duble/README.md)
+### Information: [2019/duble/index.html](2019/duble/index.html)
 
 There are two things to be aware of with this entry.
 
@@ -3600,7 +3563,7 @@ beginning.
 
 This program will also very likely leave sockets lying about in the current
 working directory. For instance [Cody Boone
-Ferguson](/authors.html#Cody_Boone_Ferguson) showed us this:
+Ferguson](authors.html#Cody_Boone_Ferguson) showed us this:
 
 ```sh
 $ ls -al |grep '^s'
@@ -3631,21 +3594,21 @@ find . -exec file '{}' \;|grep socket|cut -f 1 -d: | xargs rm -f
 though one might want to check that the program is not currently running. :-)
 
 
-## 2019 endoh
+## <a name="2019_endoh"></a>2019/endoh
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/endoh/prog.c](2019/endoh/prog.c)
-### Information: [2019/endoh/README.md](2019/endoh/README.md)
+### Information: [2019/endoh/index.html](2019/endoh/index.html)
 
 As a backtrace quine this entry is **SUPPOSED to segfault** so this should not be
 touched either.
 
 
-## 2019 karns
+## <a name="2019_karns"></a>2019/karns
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/karns/prog.c](2019/karns/prog.c)
-### Information: [2019/karns/README.md](2019/karns/README.md)
+### Information: [2019/karns/index.html](2019/karns/index.html)
 
 The author stated the following:
 
@@ -3667,23 +3630,23 @@ not encountered this myself).
 - The program contains some unused code and data.
 
 
-## 2019 lynn
+## <a name="2019_lynn"></a>2019/lynn
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/lynn/prog.c](2019/lynn/prog.c)
-### Information: [2019/lynn/README.md](2019/lynn/README.md)
+### Information: [2019/lynn/index.html](2019/lynn/index.html)
 
 The author wrote that there are a number of differences from what one might
 expect. Rather than duplicate the information we refer you to the author's
-remarks in the sections [Syntax](/2019/lynn/README.md#syntax) and
-[Caveats](/2019/lynn/README.md#caveats).
+remarks in the sections [Syntax](2019/lynn/index.html#syntax) and
+[Caveats](2019/lynn/index.html#caveats).
 
 
-## 2019 mills
+## <a name="2019_mills"></a>2019/mills
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/mills/prog.c](2019/mills/prog.c)
-### Information: [2019/mills/README.md](2019/mills/README.md)
+### Information: [2019/mills/index.html](2019/mills/index.html)
 
 The author wrote that if you decide to change networks or use a different input
 file you should delete all the checkpoint files because the format depends on
@@ -3707,22 +3670,22 @@ the hard limit with `limit -h stacksize` and set it with
 ---
 
 
-## 2019 poikola
+## <a name="2019_poikola"></a>2019/poikola
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/poikola/prog.c](2019/poikola/prog.c)
-### Information: [2019/poikola/README.md](2019/poikola/README.md)
+### Information: [2019/poikola/index.html](2019/poikola/index.html)
 
 This program will not validate input so it might fail or get stuck if invoked
 erroneously.
 
 Also, the maximum file size is 1GB.
 
-## 2019 yang
+## <a name="2019_yang"></a>2019/yang
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/yang/prog.c](2019/yang/prog.c)
-### Information: [2019/yang/README.md](2019/yang/README.md)
+### Information: [2019/yang/index.html](2019/yang/index.html)
 
 The author noted that if the program runs out of memory it is likely to crash.
 
@@ -3733,14 +3696,14 @@ ignored except line feeds (preserved) and tabs (expanded to 8 spaces).'
 
 
 
-# 2020
+# <a name="2020"></a>2020
 
 
-## 2020 burton
+## <a name="2020_burton"></a>2020/burton
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2020/burton/prog.c](2020/burton/prog.c)
-### Information: [2020/burton/README.md](2020/burton/README.md)
+### Information: [2020/burton/index.html](2020/burton/index.html)
 
 This entry is known to crash if no arg is specified. Although easy to fix it is
 documented and should not be fixed (of course you may fix it to see if you can
@@ -3750,11 +3713,11 @@ It will also show funny output with more than one arg. This should not be fixed
 either. But can you figure out why this happens?
 
 
-## 2020 carlini
+## <a name="2020_carlini"></a>2020/carlini
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2020/carlini/prog.c](2020/carlini/prog.c)
-### Information: [2020/carlini/README.md](2020/carlini/README.md)
+### Information: [2020/carlini/index.html](2020/carlini/index.html)
 
 The author stated that bad things happen if the entered move is outside of the
 range [1..9]. We observed a crash but we also observed a tie and other things
@@ -3769,34 +3732,34 @@ move.
 If you have audible bells enabled the program will beep at every turn.
 
 
-## 2020 ferguson1
+## <a name="2020_ferguson1"></a>2020/ferguson1
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2020/ferguson1/prog.c](2020/ferguson1/prog.c)
-### Information: [2020/ferguson1/README.md](2020/ferguson1/README.md)
+### Information: [2020/ferguson1/index.html](2020/ferguson1/index.html)
 
 There are some things that might appear to be bugs but are actually features or
 things that are misinterpreted as bugs. See the
-[bugs.md](2020/ferguson1/bugs.md) and
-[troubleshooting.md](2020/ferguson1/troubleshooting.md) files for details.
+[bugs.html](2020/ferguson1/bugs.html) and
+[troubleshooting.html](2020/ferguson1/troubleshooting.html) files for details.
 
 
-## 2020 giles
+## <a name="2020_giles"></a>2020/giles
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2020/giles/prog.c](2020/giles/prog.c)
-### Information: [2020/giles/README.md](2020/giles/README.md)
+### Information: [2020/giles/index.html](2020/giles/index.html)
 
 The author noted that the program only supports WAV files that have
 exactly 16 bits per sample, but it allows any sample rate and any number of
 audio channels.
 
 
-## 2020 otterness
+## <a name="2020_otterness"></a>2020/otterness
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2020/otterness/prog.c](2020/otterness/prog.c)
-### Information: [2020/otterness/README.md](2020/otterness/README.md)
+### Information: [2020/otterness/index.html](2020/otterness/index.html)
 
 The author listed the following limitations:
 
@@ -3814,26 +3777,26 @@ correctly parse, but I have rarely seen this in practice.  The largest
 cause of program failures, in my experience, has been Limitation 2.
 
 See also the [Program error
-codes](/2020/otterness/README.md#program-error-codes) written by the author
+codes](2020/otterness/index.html#program-error-codes) written by the author
 which lists some other conditions which should be considered features, not bugs.
 
 
-# 2021
+# <a name="2021"></a>2021
 
 There was no IOCCC in 2021.
 
 
-# 2022
+# <a name="2022"></a>2022
 
 There was no IOCCC in 2022.
 
 
-# 2023
+# <a name="2023"></a>2023
 
 There was no IOCCC in 2023.
 
 
-# 2024
+# <a name="2024"></a>2024
 
 We hope to run the IOCCCMOCK this year, 2024, and hopefully the next IOCCC, but
 for now we wish everyone a happy new year!
@@ -3847,4 +3810,4 @@ so on. We also thank you for going through this  document and, if you propose an
 fixes] via a [GitHub pull
 request](https://github.com/ioccc-src/temp-test-ioccc/pulls) or otherwise, we
 thank you as well for the help! We will happily add you to the
-[thanks](/thanks-for-help.md) file as well.
+[thanks](thanks-for-help.html) file as well.

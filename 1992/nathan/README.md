@@ -53,7 +53,7 @@ The US International Traffic in Arms Regulations controls certain exportations
 going out of the United States.  The U.S.  Munitions List gives the specific
 categories of restricted exports.  Because this entry at one time appeared to
 fall under this restricted category, the judges originally were not able to
-distribute winners outside of the US.
+distribute some winning entries outside of the US.
 
 Nathan Sidwell stated that he was willing to distribute the winning source.  To
 read HIS instructions of how to obtain his winning program one was able to run:
@@ -66,7 +66,7 @@ make nathan
 to learn how to get a copy of the code.
 
 See the 1992/nathan.c file in the
-[archive/historic/archive-1992.tar.bz2](/archive/historic/archive-1992.tar.bz2)
+[archive/historic/archive-1992.tar.bz2](../../archive/historic/archive-1992.tar.bz2)
 tarball if you're interested in this file.
 
 
@@ -75,7 +75,7 @@ tarball if you're interested in this file.
 I think the situation showed just how ridiculous US crypto regulations really
 were/are.  Certain US federal officials can get away with shipping arms to
 certain nations in apparent violation of US laws, but I personally can't
-re-distribute a program contest winner to the network!
+re-distribute a program contest entry to the network!
 
 
 ## Author's remarks:

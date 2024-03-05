@@ -15,7 +15,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2012 tromp in bugs.md](/bugs.md#2012-tromp).
+For more detailed information see [2012 tromp bugs](../../bugs.html#2012_tromp).
 
 
 ## To use:
@@ -520,13 +520,13 @@ and 64 bits.
 
 ### How the program works
 
-See the file [how.md](how.md).
+See the file [how.html](how.html).
 
 
 ### Acknowledgements
 
 Christopher Hendrie, Bertram Felgenhauer, Alex Stangl, Seong-hoon Kang,
-and [Yusuke Endoh](/authors.html#Yusuke_Endoh) have contributed ideas and
+and [Yusuke Endoh](../../authors.html#Yusuke_Endoh) have contributed ideas and
 suggestions for improvement.
 
 

@@ -14,7 +14,7 @@ STATUS: known bug - please help us fix
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [1992 adrian in bugs.md](/bugs.md#1992-adrian).
+For more detailed information see [1992 adrian bugs](../../bugs.html#1992_adrian).
 
 
 ## Try:

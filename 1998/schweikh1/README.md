@@ -23,7 +23,7 @@ As noted above this entry will not work as it stands for macOS and there are
 some important notes as well as a description of how the fixed version works
 (the details of which are relevant to the original entry that no longer works as
 well as the fixed version but are described in the context of the macOS
-adjustments). For details of what had to change, see [macos.md](macos.md).
+adjustments). For details of what had to change, see [macos.html](macos.html).
 Unless you wish to figure it out yourself, we recommend that you read this even
 if you don't have a Mac as it has some interesting details about the entry.
 

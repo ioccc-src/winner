@@ -1,3 +1,22 @@
+# Try mastodon
+
+We plan to update our [IOCCC on Mastodon](https://fosstodon.org/@ioccc) feed
+a bit more open than this web page.  We recommend you check that feed
+for possibly newer news than what is posted here.  
+
+We tend to only post major news updates to this web page.
+
+There is [help with Mastodon](https://mastodon.help) available for
+those who might wish to [get started with Mastodon](https://fosstodon.org/deck/getting-started).
+
+While there are many fine Mastodon server instances out there, the [IOCCC judges](../judges.html)
+use [fosstodon.org](https://fosstodon.org/about) where lots of fun folk hang out,
+and topics like science, technology, [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software)
+have a good home.  The [fosstodon.oeg](https://fosstodon.org/@fosstodon) folk made the IOCCC feel welcome.
+And while using Mastodon is free, the [IOCCC judges](../judges.html) are pleased to
+[support the Fosstodon Hub](https://hub.fosstodon.org/support/).
+
+
 # 2024-02-29
 
 We continue to make good progress on web site.  In the [temp-test-ioccc GitHub repo](https://github.com/ioccc-src/temp-test-ioccc) we have made nearly 4600 changes to date!
@@ -18,7 +37,7 @@ Also be aware that the [temp-test-ioccc GitHub repo](https://github.com/ioccc-sr
 is undergoing rapid changes.  There are broken links and other things in mid-change.
 
 Once we are ready to update the [IOCCC winner repo](https://github.com/ioccc-src/winner)
-and its associated [www.ioccc.org](index.html) web site,
+and its associated web site,
 we will post a news article warning of the pending change that is about to arrive.
 ```
 
@@ -27,10 +46,10 @@ include diverse things such as:
 
 * Moving IOCCC entries into their own separate directories
 * Fixing lots and lots of typos
-* Fixing Makefiles and code to allow for nearly all winners to be compiled on modern systems
+* Fixing Makefiles and code to allow for nearly all winning IOCCC entries to be compiled on modern systems
 * Reworking the Makefiles to use a consistent set of rules
 * Reworking the Makefiles to compile under gcc and clang
-* Replacing the various hint files with a README.md markdown that is more consistent across IOCCC years
+* Replacing the various hint files with a index.html markdown that is more consistent across IOCCC years
 * Setting up a system whereby authors of IOCCC entries may update their own contact information via a GitHub pull request
 * Setting up to generate the top level [years.html](years.html) file via a tool
 * Setting up to generate the top level [authors.html](authors.html) file via a tool
@@ -47,11 +66,11 @@ We are working on an improved **IOCCC submit server**
 that will allow those who submit entires to be informed about the status of their submission.
 This **IOCCC submit server** will be beta tested in the **IOCCCMOCK**.
 
-We are working on a method to rapidly post the winners of an IOCCC.  No longer will winners
+We are working on a method to rapidly post the winning entries of an IOCCC.  No longer will entries
 be subject to a long delay between announcing that they have won and their code being made available.
 No longer will procrastination delay the public seeing the winning code.  Instead the
-**announcement of the winners of an IOCCC will be done by posting the winning code via a GitHub commit.**
-Any corrections, improvement, typo fixes and other fixes will be applied to the winners via GitHub pull requests:
+**announcement of the winning entries of an IOCCC will be done by posting the winning code via a GitHub commit.**
+Any corrections, improvement, typo fixes and other fixes will be applied to the winning entries via GitHub pull requests:
 by the authors and/or other interested 3rd parties.
 
 All the above represent one of the most significant (and useful) changes to the IOCCC since it started back in 1984.
@@ -198,7 +217,7 @@ will upload to the submit server (when the contest is open of course).
 
 # 2021-12-27
 
-[The Judges](/judges.html)
+[The Judges](judges.html)
 are continuing to work on re-tooling how we run the IOCCC.
 We are writing tools under various repositories our
 [IOCCC GitHub organization site](https://github.com/ioccc-src).
@@ -211,14 +230,14 @@ Stay tuned!
 
 # 2021-10-21
 
-[The Judges](/judges.html)
+[The Judges](judges.html)
 are re-tooling how we run the IOCCC.
 Our goal is to build a smoother, more rapid process centered around
 [GitHub](https://github.com/ioccc-src/winner).
 
-For example, when we announce the winners,
+For example, when we announce the winning entries of the IOCCC,
 we will do so by committing their code to the
-[Winning entries](/years.html)
+[Winning entries](years.html)
 of the IOCCC repo, so that people will be able immediately
 view the winning source.
 

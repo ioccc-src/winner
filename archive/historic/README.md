@@ -52,14 +52,14 @@ as modified by the IOCCC judges and winning authors
 as of [2020 Dec 28](https://web.archive.org/web/20201228005211/https://www.ioccc.org/).
 
 You might wish to note that the
-[archive/historic/archive-all.tar.bz2](/archive/historic/archive-all.tar.bz2) file
+[archive/historic/archive-all.tar.bz2](archive-all.tar.bz2) file
 found in this archive produces a somewhat newer version of the
 released IOCCC source for 1984, 1985, 1986 and 1987 in that the
-winners for those years were still found in single year directories.  Thus the
-[archive/historic/archive-1984.tar.bz2](/archive/historic/archive-1984.tar.bz2),
-[archive/historic/archive-1985.tar.bz2](/archive/historic/archive-1985.tar.bz2),
-[archive/historic/archive-1986.tar.bz2](/archive/historic/archive-1986.tar.bz2),
-[archive/historic/archive-1987.tar.bz2](/archive/historic/archive-1987.tar.bz2),
+winning entries for those years were still found in single year directories.  Thus the
+[archive/historic/archive-1984.tar.bz2](archive-1984.tar.bz2),
+[archive/historic/archive-1985.tar.bz2](archive-1985.tar.bz2),
+[archive/historic/archive-1986.tar.bz2](archive-1986.tar.bz2),
+[archive/historic/archive-1987.tar.bz2](archive-1987.tar.bz2),
 zip2 compressed tarballs represent a somewhat earlier form of the
 "_released_" IOCCC winning source for those years.
 This a somewhat earlier set of IOCCC winning source may

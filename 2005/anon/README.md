@@ -23,7 +23,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2005 anon in bugs.md](/bugs.md#2005-anon).
+For more detailed information see [2005 anon bugs](../../bugs.html#2005_anon).
 
 
 ## To use:

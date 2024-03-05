@@ -86,7 +86,7 @@ end.
 ### Background
 
 I was annoyed after the last IOCCC because I slaved away on a clever text
-based game only to find all of the game winners used X11. X11 isn't standard
+based game only to find all of the game entries used X11. X11 isn't standard
 C!
 
 So to one up them, I decided to use OpenGL. It's standard, and most Unix-like

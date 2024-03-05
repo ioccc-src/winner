@@ -65,8 +65,8 @@ stuffing data.
 
 One thing I tried to achieve is condition free programming.  Many
 have noted that conditions make the code harder to read and understand.
-A good example would be: [Brent Burley's 2004 IOCCC
-winner](/2004/burley/README.md).
+A good example would be: [Brent Burley](../../authors.html#Brent_Burley)'s
+winning [2004/burley](../../2004/burley/index.html) entry.
 
 That entry omits conditional statements such as `if` and `while`.
 His achievement in improving clarity by omitting conditions is

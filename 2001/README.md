@@ -3,13 +3,13 @@
 
 ## Standard IOCCC stuff
 
-Look at the README.md file for the given winning entry for information
+View the `index.html` web page for the given winning entry for information on how
 on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
 The IOCCC has a web site and now has a number of international mirrors.  The
-primary site can be found at <https://www.ioccc.org>.
+primary site can be found at [www.ioccc.org](https://www.ioccc.org).
 
 Use `make` to compile entries.  It is possible that on non-Unix / non-Linux
 systems the Makefile needs to be changed.  See the Makefile for details.
@@ -36,18 +36,18 @@ some very good entries lost because they:
 We hope the authors of some of those entries will fix and re-submit
 them for the next IOCCC.
 
-We believe you will be impressed with this year's winners.  The [Best of
-Show](ollinger/README.md) is a fine example of obfuscation.  But don't ignore
-the other winners!  There are games, programs that speak, ones that compile code
-and [one that might run binaries you already have](2001/anonymous/README.md).
+We believe you will be impressed with this year's winning entries  The [Best of
+Show](ollinger/index.html) is a fine example of obfuscation.  But don't ignore
+the other entries!  There are games, programs that speak, ones that compile code
+and [one that might run binaries you already have](2001/anonymous/index.html).
 
-The [Best/Worst Abuse of the Rules](bellard/README.md) is technically allowed by the
+The [Best/Worst Abuse of the Rules](bellard/index.html) is technically allowed by the
 [rules](rules.txt).  This year we awarded it again, but don't assume you can get
 away with using the same technique next time ... :-)
 
-This year there were several repeat winners.  This is understating the
+This year there were several repeat authors.  This is understating the
 achievement a little - [one
-person](https://www.ioccc.org/authors.html#Brian_Westley) has won 8 times
+person](../authors.html#Brian_Westley) has won 8 times
 before! (Please note that judging is done completely anonymously.)
 
 
@@ -71,9 +71,9 @@ questions@ioccc.org
 
 **IMPORTANT NOTE**: The email addresses found above are for historical
 purposes only, and should not be used today.  See
-[contact.html](/contact.html) for up to date contact details
+[contact.html](../contact.html) for up to date contact details
 as well as details on how to provide fixes to any of the entries.
-See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
+See also [the IOCCC FAQ](../faq.html) for addition information on the IOCCC.
 
 
 # Copyright and License
@@ -81,5 +81,5 @@ See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
 Copyright (c) 2001,2002,2023, Landon Curt Noll, Peter Seebach and Leonid A. Broukhis, All Rights Reserved.
 This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
-If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
-(but does not require) if you were to [send us a note about your use](/contact.html).
+If you do use this work in some form, the [IOCCC judges](../judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](../contact.html).

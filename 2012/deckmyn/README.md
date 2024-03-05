@@ -13,7 +13,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2012 deckmyn in bugs.md](/bugs.md#2012-deckmyn).
+For more detailed information see [2012 deckmyn bugs](../../bugs.html#2012_deckmyn).
 
 
 ## To use:
@@ -92,7 +92,7 @@ normally open an image.
 Every major C competition should have an entry capable of producing C major.
 This is a music notation program. It produces
 [bitmaps](https://en.wikipedia.org/wiki/Netpbm) (`.pbm`) of music based on ASCII
-input. A full manual is added as a [separate file](deckmyn.md). Some musical
+input. A full manual is added as a [separate file](deckmyn.html). Some musical
 examples are also included.
 
 The program is capable of printing notes, rests, (double) bar lines and
@@ -139,7 +139,7 @@ string.
 The code is quite sensitive. Errors in the input can lead to strange results.
 The code does not read beyond the end of the music input, but that is about the
 only error checking available. Any input that is not according to the rules in
-the [manual](deckmyn.md), may cause errors.
+the [manual](deckmyn.html), may cause errors.
 
 The program has no special hardware limitations or requirements, other than 8bit
 `char` (`signed` or `unsigned`) and two's complement negatives.

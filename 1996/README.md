@@ -3,12 +3,12 @@
 
 ## Standard IOCCC stuff
 
-Look at the README.md file for the given winning entry for information
+View the `index.html` web page for the given winning entry for information on how
 on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
-The IOCCC has an official home page: <https://www.ioccc.org>
+The IOCCC has an official home page: [www.ioccc.org](https://www.ioccc.org)
 
 containing previous winning entries, information about the judges,
 announcements and much more.
@@ -43,13 +43,13 @@ will be able deobfuscate the many legal obfuscations.  :-)
 ## Remarks on some of the entries
 
 This year, [Jens
-Schweikhardt](https://www.ioccc.org/authors.html#Jens_Schweikhardt) won 3 times
+Schweikhardt](../authors.html#Jens_Schweikhardt) won 3 times
 ... a new IOCCC record.  Meanwhile, [Brian
-Westley](https://www.ioccc.org/authors.html#Brian_Westley) came up with his 8th
+Westley](../authors.html#Brian_Westley) came up with his 8th
 winning entry, twice the number of the next highest count.  But with people like
 Schweikhardt around, this lead could fall fast.
 
-As we stated in the [guidelines](guidelines.txt), the names of the winners are
+As we stated in the [guidelines](guidelines.txt), the authors of the winning entries are
 as much news to us as they are to you because we keep authorship separate from
 rest of the entry.  Some people have it, we guess!
 
@@ -90,9 +90,9 @@ us a line.  We enjoy seeing who, where and how the contest is used.
 
 **IMPORTANT NOTE**: The email addresses found above are for historical
 purposes only, and should not be used today.  See
-[contact.html](/contact.html) for up to date contact details
+[contact.html](../contact.html) for up to date contact details
 as well as details on how to provide fixes to any of the entries.
-See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
+See also [the IOCCC FAQ](../faq.html) for addition information on the IOCCC.
 
 
 # Copyright and License
@@ -100,5 +100,5 @@ See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
 Copyright (c) 1997,2023, Landon Curt Noll and Sriram Srinivasan. All Rights Reserved.
 This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
-If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
-(but does not require) if you were to [send us a note about your use](/contact.html).
+If you do use this work in some form, the [IOCCC judges](../judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](../contact.html).

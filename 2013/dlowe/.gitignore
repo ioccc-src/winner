@@ -1,5 +1,5 @@
 #
-# sort with: ../../bin/sgi
+# sort with: ../../bin/sgi.sh
 1.txt
 *.dSYM
 2.txt

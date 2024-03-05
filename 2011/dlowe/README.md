@@ -14,7 +14,7 @@ STATUS: missing or dead link - please provide them
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2011 dlowe in bugs.md](/bugs.md#2011-dlowe).
+For more detailed information see [2011 dlowe bugs](../../bugs.html#2011_dlowe).
 
 
 ## To use:
@@ -72,11 +72,11 @@ where:
 
 - `ioccc_won_training/`
     1/2 of C code of the 20th IOCCC entries (except for [dlowe.c](dlowe.c) from 2011)
-    plus 1/2 of the C code winners from prior IOCCC contests
+    plus 1/2 of the C code winning entries from prior IOCCC contests
 
 - `ioccc_won_test/`
     1/2 of C code of the 20th IOCCC entries (except for [dlowe.c](dlowe.c) from 2011)
-    plus 1/2 of the C code winners from prior IOCCC contests
+    plus 1/2 of the C code winning entries from prior IOCCC contests
 
 - `ioccc_lost_training/`
     1/2 of C code from entries that that did not win
@@ -292,7 +292,7 @@ to within a tolerance of `<0.01`.
 ### Limitations
 
 The program can't tell you anything meaningful about files with less than two
-bytes in them (I'm looking at you, [smr.c](/1994/smr/smr.c)!)
+bytes in them (I'm looking at you, [smr.c](../../1994/smr/smr.c)!)
 
 You must include the trailing directory separator on training directories
 (this allows the program to be portable without wasting precious bytes on
@@ -337,7 +337,7 @@ shame to waste it.
 - Lots of magic numbers expressed in various ways.
 - Random abuse of random C trivia.
 - Some textual changes were made to maximize the classification of this program
-by a network trained to recognize [IOCCC entries](/authors.html) ;)
+by a network trained to recognize [IOCCC entries](../../authors.html) ;)
 
 ... but mostly zombies!
 

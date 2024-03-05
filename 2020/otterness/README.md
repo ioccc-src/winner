@@ -13,7 +13,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2020 otterness in bugs.md](/bugs.md#2020-otterness).
+For more detailed information see [2020 otterness bugs](../../bugs.html#2020_otterness).
 
 
 ## To use:

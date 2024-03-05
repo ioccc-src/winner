@@ -1,6 +1,6 @@
 
 #
-# sort with: ../../bin/sgi
+# sort with: ../../bin/sgi.sh
 *.dSYM
 *.wav
 audio_file.raw

@@ -76,7 +76,7 @@ There must be the following JSON members:
 - `"location_name"` value is the formal name corresponding to the `"location_code"`, in JSON encoded string form
 
 A `"sort_word"` that is used to determine the position within the `authors.html` file,
-an `author` and the `winners` they submitted are to be listed.
+an `author` and the entry they submitted are to be listed.
 
 A `sort_word` matches this regexp:
 
@@ -129,7 +129,7 @@ each of the IOCCC winning entries that the author is the author of.  :-)
 { "entry_id" : "YYYY_dirname" }
 ```
 
-The `"YYYY_dirname"` is a winner ID in JSON encoded string form.  
+The `"YYYY_dirname"` is a entry ID in JSON encoded string form.
 Here "YYYY" is the IOCCC year, and "dirname" is the directory name
 of the winning entry under the given year directory.
 

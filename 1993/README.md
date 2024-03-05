@@ -1,15 +1,15 @@
 # Tenth International Obfuscated C Code Contest
 
-Look at the README.md file for the given winning entry for information
+View the `index.html` web page for the given winning entry for information on how
 on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
 Use `make` to compile entries.  It is possible that on BSD or non-Unix
-systems the Makefile needs to be changed.  See the Makefiles and/or README.md
-files for details.
+systems the Makefile needs to be changed.  See the Makefiles and/or `README.md`
+(that are used to build the `index.html` web page) files for details.
 
-Read over the Makefile and/or README.md files for compile/build issues.  Your
+Read over the Makefile and/or `README.md` files for compile/build issues.  Your
 system may require certain changes (add or remove a library, add or remove a
 `#define` i.e. the `-D` flag).
 
@@ -20,7 +20,7 @@ judging for/against any person or group.
 This year was the first year that ANSI C was the default.  Use of
 classic K&R C was allowed so long as ANSI C compilers could still
 compile the entry.  If you do not have an ANSI C compiler, you may
-not be able to compile the winners, sorry!
+not be able to compile the entry, sorry!
 
 
 ## A few notes regarding future contests:
@@ -52,9 +52,9 @@ us a line.  We enjoy seeing who, where and how the contest is used.
 
 **IMPORTANT NOTE**: The email addresses found above are for historical
 purposes only, and should not be used today.  See
-[contact.html](/contact.html) for up to date contact details
+[contact.html](../contact.html) for up to date contact details
 as well as details on how to provide fixes to any of the entries.
-See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
+See also [the IOCCC FAQ](../faq.html) for addition information on the IOCCC.
 
 
 ### Credits:
@@ -69,5 +69,5 @@ to serve as official taste testers.  And as usual, the food was excellent.
 Copyright (c) 1993,2023, Landon Curt Noll and Larry Bassel. All Rights Reserved.
 This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
-If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
-(but does not require) if you were to [send us a note about your use](/contact.html).
+If you do use this work in some form, the [IOCCC judges](../judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](../contact.html).

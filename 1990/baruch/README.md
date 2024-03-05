@@ -16,7 +16,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [1990 baruch in bugs.md](/bugs.md#1990-baruch).
+For more detailed information see [1990 baruch bugs](../../bugs.html#1990_baruch).
 
 
 

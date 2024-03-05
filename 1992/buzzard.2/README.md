@@ -138,7 +138,8 @@ For more information on what you can do once you've piped [third](third) into
 first, type `help` and consult
 [FORTH](https://en.wikipedia.org/wiki/Forth_(programming_language)) manuals for
 further reference.  Six sample THIRD programs are included in the files
-demo[1-6].th.  [buzzard.2.README.md](buzzard.2.README.md) has more information.
+`demo1.th` through `demo6.th`.  See [buzzard.2.README.html](buzzard.2.README.html)
+for more information.
 
 Keep in mind that you are still running `first`, and are for the most part
 limited by `first`'s tokenizer (notably, unknown words will attempt to be parsed

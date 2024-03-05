@@ -89,11 +89,11 @@ written on an `iDevice`), but sanity prevailed.
 
 Printed in 8 pt Courier, it makes aesthetically pleasing 8.5 x 11 wall art.
 
-[1]: https://www.ioccc.org/2011/hou/hint.html "Hou Qiming"
+[1]: ../../2011/hou/hint.html "Hou Qiming"
 
 ### prog.c vs prog.alt.c
 
-[Dominik Muth](/authors.html#Dominik_Muth) observed a syntax error on `1+1`,
+[Dominik Muth](../../authors.html#Dominik_Muth) observed a syntax error on `1+1`,
 `1-1`, `1|1`, and `1^1` when using an ARM based computer, although `1*1` and
 others worked correctly.  This occurs because some platforms by default treat
 `char` as `unsigned char`.  The original code has this weakness, which can be
@@ -229,7 +229,7 @@ PATH=. eprog < test.in | diff - test.out
 
 ### Spoilers:
 
-If you do not want to puzzle out how it works, see [spoilers.md](spoilers.md).
+If you do not want to puzzle out how it works, see [spoilers.html](spoilers.html).
 
 
 ## Copyright and CC BY-SA 4.0 License:

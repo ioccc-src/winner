@@ -123,7 +123,8 @@ exit insert mode because K&R C had no escape constant for the escape-key.
 My goals for this project were to learn and experiment with the Buffer Gap
 Scheme [Fin80][net90], write a useful and *portable* program, and meet the
 requirements of the IOCCC.  I initially planned to have a mini `curses` built-in
-like the [IOCCC Tetris entry from a previous year](/1989/tromp/README.md),
+like [John Tromp](../../authors.html#John_Tromp)'s
+[1989/tromp](../../1989/tromp/index.html) Tetris entry,
 however this was not as portable as using a `curses` library with
 `TERMINFO`/`TERMCAP` support.
 

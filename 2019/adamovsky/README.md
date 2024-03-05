@@ -13,7 +13,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2019 adamovsky in bugs.md](/bugs.md#2019-adamovsky).
+For more detailed information see [2019 adamovsky bugs](../../bugs.html#2019_adamovsky).
 
 
 ## To use:
@@ -73,7 +73,7 @@ separator in the form of a single line followed by a section signifying the
 function of the program, a block with removed shape of lambda character. Even
 the official IOCCC size tool acknowledges this: When you call `./iocccsize -i
 <prog.c`, using the [2019 version of
-iocccsize](/2019/iocccsize.c), iocccsize returns **955**,
+iocccsize](../../2019/iocccsize.c), iocccsize returns **955**,
 which is the Unicode codepoint of the **&#955;** character.
 
 It might be a surprise for you that according to the IOCCC size tool the program is
@@ -257,7 +257,7 @@ the meaning of `f` and `r` prefixes.
 ### Identification spoiler:
 
 The alternative build path `make identify` output commemorates a [previous IOCCC
-winner][9] which uses similar methods to mess with the size tool.
+winning entry][9] which uses similar methods to mess with the size tool.
 
 
 ### Judges' spoilers:
@@ -291,7 +291,7 @@ be applied.
 [6]: https://en.wikipedia.org/wiki/Lambda_calculus           "Lambda Calculus on Wikipedia"
 [7]: https://en.wikipedia.org/wiki/Combinatory_logic         "Combinatory Logic on Wikipedia"
 [8]: https://inazz.jp/unlambda/                              "Online Unlambda interpreter"
-[9]: /2014/birken/README.md				     "Best use of port 1701"
+[9]: ../../2014/birken/index.html			     "Best use of port 1701"
 
 
 ## Copyright and CC BY-SA 4.0 License:

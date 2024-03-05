@@ -31,8 +31,8 @@ level   a value from -128 to 127
 A negative argument plays the patience puzzle.  An argument
 greater than 0 plays the Tower of Hanoi puzzle.  In either case
 the absolute value of the argument specifies the size of the
-respective puzzle.  Refer to the files [hanoi.md](hanoi.md) and
-[patience.md](patience.md) for more information on these puzzles.
+respective puzzle.  Refer to the web pages [hanoi.html](hanoi.html) and
+[patience.html](patience.html) for more information on these puzzles.
 
 Of course, you need a different kind of "patience" if you give
 the argument 127 to this program and want to see it finish!

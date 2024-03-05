@@ -23,7 +23,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [1995 cdua in bugs.md](/bugs.md#1995-cdua).
+For more detailed information see [1995 cdua bugs](../../bugs.html#1995_cdua).
 
 
 ## To use:

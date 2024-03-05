@@ -3,7 +3,7 @@
 
 ## Standard IOCCC stuff
 
-Look at the `README.md` file for the given winner for information
+View the `index.html` web page for the given winning entry for information on how
 on how to compile the entry and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
@@ -25,9 +25,9 @@ local compiler.
 
 ## Remarks on some of the entries
 
-We believe you will be impressed with this year's winners.  The [Best of
+We believe you will be impressed with this year's winning entries.  The [Best of
 Show](gavin/gavin.c) is a fine example of obfuscation.  But don't ignore the
-other winners!  There are games, utilities, programs that output images and a
+other entries!  There are games, utilities, programs that output images and a
 one-liner that is incredibly compact for what it can do.
 
 The [Best Abuse of the Guidelines](hibachi/hibachi.c) is technically allowed by
@@ -35,8 +35,8 @@ the rules.  This year we allowed it due to the functionality of the program.
 This entry is one of the easiest to read!  Don't assume you can win using
 similar techniques next time ... :-)
 
-This year a [single person](/authors.html#Daniel_Vik) won two awards!  We also
-had repeat winners with their 6th, 4th and 2nd winning entries this year!
+This year a [single person](../authors.html#Daniel_Vik) won two awards!  We also
+had repeat authors with their 6th, 4th and 2nd winning entries this year!
 (Please note that judging is done completely anonymously.  Be warned that we may
 disqualify entries that reveal the identity of the submitter.)
 
@@ -56,9 +56,9 @@ them for the next IOCCC.
 
 ## Final Comments
 
-**IMPORTANT NOTE**: See [contact.html](/contact.html) for up to date contact details
+**IMPORTANT NOTE**: See [contact.html](../contact.html) for up to date contact details
 as well as details on how to provide fixes to any of the entries.
-See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
+See also [the IOCCC FAQ](../faq.html) for addition information on the IOCCC.
 
 
 # Copyright and License
@@ -66,5 +66,5 @@ See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
 Copyright (c) 2001,2004,2023, Landon Curt Noll, Peter Seebach and Leonid A. Broukhis. All Rights Reserved.
 This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
-If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
-(but does not require) if you were to [send us a note about your use](/contact.html).
+If you do use this work in some form, the [IOCCC judges](../judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](../contact.html).

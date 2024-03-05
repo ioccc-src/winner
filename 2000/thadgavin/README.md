@@ -5,9 +5,9 @@ make alt
 ```
 
 NOTE: if you don't have curses or SDL1 installed both modes will fail to compile. In
-that case see the [FAQ 3.8 - How do I compile an IOCCC winner that requires SDL1
-or SDL2?](/faq.md#SDL) and [FAQ 3.9  - How do I compile an IOCCC winner that
-requires (n)curses?](/faq.md#faq3_9) for more information.
+that case see the [FAQ 3.8 - How do I compile an IOCCC entry that requires SDL1
+or SDL2?](../../faq.html#SDL) and [FAQ 3.9  - How do I compile an IOCCC entry that
+requires (n)curses?](../../faq.html#curses) for more information.
 
 We recommend that you use the alternate code so you can see what this entry
 looked like back in 2000 (with a configurable speed). See the

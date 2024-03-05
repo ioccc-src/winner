@@ -27,7 +27,7 @@ code](#alternate-code) below for details.
 
 An alternate version of this entry, [prog.alt.c](prog.alt.c), is provided.
 This alternate code does not contain improvements suggested by [Gil
-Dogon](/authors.html#Gil_Dogon); it is the author's original entry.
+Dogon](../../authors.html#Gil_Dogon); it is the author's original entry.
 
 
 ### Alternate build:
@@ -69,7 +69,7 @@ Inspired by [Animated Factorization
 Diagrams](http://www.datapointed.net/visualizations/math/factorization/animated-diagrams/).
 
 [prog.alt.c](prog.alt.c) is the original version that I submitted. [Gil
-Dogon](/authors.html#Gil_Dogon) kindly improved it during the review.  Thank
+Dogon](../../authors.html#Gil_Dogon) kindly improved it during the review.  Thank
 you!
 
 

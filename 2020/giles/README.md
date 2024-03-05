@@ -13,7 +13,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2020 giles in bugs.md](/bugs.md#2020-giles).
+For more detailed information see [2020 giles bugs](../../bugs.html#2020_giles).
 
 
 ## To use:
@@ -43,8 +43,8 @@ will be converted to the DTMF sound!
 ```
 
 If the script [try.sh](try.sh) did not play a WAV file, it means you do not have
-SoX installed; see [FAQ 3.10: How do I compile and use an IOCCC winner that
-requires sound?](/faq.md#faq3_10)). In this case install it and try it again or
+SoX installed; see [FAQ 3.10: How do I compile and use an IOCCC entry that
+requires sound?](../../faq.html#sox)). In this case install it and try it again or
 play the files `jenny.wav` and `ioccc28.wav` in a program that can play WAV
 files.
 

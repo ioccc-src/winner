@@ -3,7 +3,7 @@
 
 ## Standard IOCCC stuff
 
-Look at the README.md file for the given winning entry for information
+View the `index.html` web page for the given winning entry for information on how
 on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
@@ -43,19 +43,19 @@ that was not supplied with the entry.
 We hope the authors of some of those entries will fix and re-submit
 them for the next IOCCC.
 
-We believe you will be impressed with this year's winners.  The [Best of
-Show](jarijyrki/README.md) is a fine example of compact obfuscation. But don't
-ignore the shorter winners.  The [Best Small Program](natori/README.md), [Best
-Abuse of User](briddlebane/README.m) and [Most Complete Program](tomx/README.md)
+We believe you will be impressed with this year's winning entries.  The [Best of
+Show](jarijyrki/index.html) is a fine example of compact obfuscation. But don't
+ignore the shorter entries.  The [Best Small Program](natori/index.html), [Best
+Abuse of User](briddlebane/README.m) and [Most Complete Program](tomx/index.html)
 are well worth studying in detail.
 
-The [Worst Abuse of the Rules](dlowe/README.md) is technically allowed by the
+The [Worst Abuse of the Rules](dlowe/index.html) is technically allowed by the
 rules.  We gave it an award this year, but don't assume you can get away with
 using it next time ... :-)
 
 Speaking of time, be sure to check out the [Astronomically
-Obfuscated](rince/README.md) and the [Most Timely
-Output](schneiderwent/README.md).
+Obfuscated](rince/index.html) and the [Most Timely
+Output](schneiderwent/index.html).
 
 
 ## There was no 1999 contest
@@ -90,9 +90,9 @@ questions@ioccc.org
 
 **IMPORTANT NOTE**: The email addresses found above are for historical
 purposes only, and should not be used today.  See
-[contact.html](/contact.html) for up to date contact details
+[contact.html](../contact.html) for up to date contact details
 as well as details on how to provide fixes to any of the entries.
-See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
+See also [the IOCCC FAQ](../faq.html) for addition information on the IOCCC.
 
 
 # Copyright and License
@@ -100,5 +100,5 @@ See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
 Copyright (c) 2000,2023, Landon Curt Noll, Peter Seebach and Leonid A. Broukhis. All Rights Reserved.
 This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
-If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
-(but does not require) if you were to [send us a note about your use](/contact.html).
+If you do use this work in some form, the [IOCCC judges](../judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](../contact.html).

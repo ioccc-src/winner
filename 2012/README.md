@@ -3,15 +3,13 @@
 
 ## Standard IOCCC stuff
 
-Look at the README.md file for the given winning entry for information
+View the `index.html` web page for the given winning entry for information on how
 on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
 The IOCCC has a web site and now has a number of international mirrors.
-The primary site can be found at,
-
->	<https://www.ioccc.org/>
+The primary site can be found at [www.ioccc.org](https://www.ioccc.org).
 
 Use `make` to compile entries.  It is possible that on non-Unix / non-Linux
 systems the Makefile needs to be changed.  See the Makefile for details.
@@ -26,9 +24,9 @@ local compiler.
 
 ## Remarks on some of the entries
 
-We believe you will be impressed with this year's winners.  We had
-a very difficult time picking a single best from among the other winners
-because the overall quality of the winners were so high.
+We believe you will be impressed with this year's winning entries.  We had
+a very difficult time picking a single best from among the other entries
+because the overall quality of the submissions were so high.
 
 This year we selected the top 4 entries for particularly high honors:
 
@@ -54,15 +52,15 @@ This year we selected the top 4 entries for particularly high honors:
     When you see this program in action, you too will
     very likely say [wow](http://bit.ly/R6ALpK) as we did!
 
-But don't ignore the other winners!  There are games, utilities,
+But don't ignore the other winning entries!  There are games, utilities,
 eye candy, calculators and graphical tools to explore.
 
 This year, Yusuke Endoh won with two entries, one of which (endoh1)
 won the special Honorable mention award.  Eight of the winning entries
 were from people who won in previous years.
 
-This year we had a number of winners from Asia.  We saw our second
-winner from China and first from Korea.  We are pleased to see
+This year we had a number of authors from Asia.  We saw our second
+authors from China and first from Korea.  We are pleased to see
 outstanding entries from areas of the world that have not been
 active in past contests.  Will we see an upswing of entries
 from South America, Africa and Antarctica next year? :-)
@@ -86,7 +84,7 @@ some very good entries lost because they:
 
 + could only be run on a particular vendor's platform
 
-+ were very similar to previous winners
++ were very similar to previous winning entries
 
 + were based on an overused theme such as yet another
   fractal display program
@@ -97,17 +95,17 @@ We hope the authors of some of those entries will fix and re-submit
 them for the next IOCCC.
 
 There is a risk in submitting an entry that is similar to a well
-used theme by previous winners.  Previous winners set a very high
-bar.  A new winner must not only compete against other submissions
-form the current year, they must also excel over similar winners
+used theme by previous winning entries.  Previous entries set a very high
+bar.  A new winning entry must not only compete against other submissions
+form the current year, they must also excel over similar winning entry
 in some particularly impressive way.
 
 
 ## Final Comments
 
-**IMPORTANT NOTE**: See [contact.html](/contact.html) for up to date contact details
+**IMPORTANT NOTE**: See [contact.html](../contact.html) for up to date contact details
 as well as details on how to provide fixes to any of the entries.
-See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
+See also [the IOCCC FAQ](../faq.html) for addition information on the IOCCC.
 
 
 # Copyright and License
@@ -115,5 +113,5 @@ See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
 Copyright (c) 2012,2023, Landon Curt Noll and Leonid A. Broukhis. All Rights Reserved.
 This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
-If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
-(but does not require) if you were to [send us a note about your use](/contact.html).
+If you do use this work in some form, the [IOCCC judges](../judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](../contact.html).

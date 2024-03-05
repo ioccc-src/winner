@@ -3,9 +3,12 @@
 
 ## Standard IOCCC stuff
 
-The primary IOCCC web site can be found at,
+View the `index.html` web page for the given winning entry for information on how
+compile the entry and how to run the winning program.  Look at the winning
+source and try to figure how it does what it does!  You may then wish to look at
+the Author's remarks for even more details.
 
->	<https://www.ioccc.org/>
+The primary site can be found at [www.ioccc.org](https://www.ioccc.org).
 
 Use `make` to compile entries.  It is possible that on non-Unix / non-Linux
 systems the Makefile needs to be changed.  See the Makefile for details.
@@ -23,30 +26,31 @@ lacking, you may need to compile using clang or gcc instead of your local
 compiler.
 
 
-## Remarks on some of the winners
+## Remarks on some of the winning entries
 
-We believe you will again be impressed with this year's winners.
+We believe you will again be impressed with this year's winning entries.
 
-The "Best of show" (mills) is an amazing tribute to winners
+The "Best of show" (mills) is an amazing tribute to entrues
 from 1984 and 2015.
 
-Take a close look at the "Most likely to top the charts" (hou) winner.
+Take a close look at the "Most likely to top the charts" [2018/hou](hou/index.html)
 Observe that while it contains no variables and no operators, it
 remains functional in what it does.
 
 The "Best one-liner" (burton1), at 109 characters, is a short and sweet
-implementation of a classic utility and a nod to a winner from 1986.
+implementation of a classic utility and a nod to a winning entry from 1986.
 Sometimes it takes 20 ox years to do things the true IOCCC way.
 
 The color of the remarks text this year was inspired by one of the stars
-of the "Most stellar" winner (poikola).
+of the "Most stellar" [2018/poikola](poikola/index.html).
 
 The "Best use of python" (endoh2) is a not what you might think it is.
 It is something completely different.
 
 The "Most likely to be awarded" (ciura) has an amazing vocabulary!
 
-There are also nods to winners of the years 2000 (bellard), 1989 (yang), ...
+There are also nods to entries of the years [2000/bellard](2000/bellard/index.htmk),
+[1989/yang](1989/yang/index.html), ...
 
 ...We'll stop spouting spoilers now. Have fun exploring all the entries!
 
@@ -87,9 +91,9 @@ the idea was limited in scope.
 
 ## Final Comments
 
-**IMPORTANT NOTE**: See [contact.html](/contact.html) for up to date contact details
+**IMPORTANT NOTE**: See [contact.html](../contact.html) for up to date contact details
 as well as details on how to provide fixes to any of the entries.
-See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
+See also [the IOCCC FAQ](../faq.html) for addition information on the IOCCC.
 
 
 # Copyright and License
@@ -97,5 +101,5 @@ See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
 Copyright (C) 2018,2023, Landon Curt Noll and Leonid A. Broukhis. All Rights Reserved.
 This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
-If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
-(but does not require) if you were to [send us a note about your use](/contact.html).
+If you do use this work in some form, the [IOCCC judges](../judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](../contact.html).

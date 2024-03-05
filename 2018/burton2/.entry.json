@@ -434,20 +434,20 @@
 	    "entry_text" : "summarize the results of spotcheck"
 	},
 	{
-	    "file_path" : "2018_burton2.tar.bz2",
-	    "inventory_order" : 300,
-	    "OK_to_edit" : false,
-	    "display_as" : "tbz2",
-	    "display_via_github" : false,
-	    "entry_text" : "download entry source"
-	},
-	{
 	    "file_path" : "src.doc.txt",
 	    "inventory_order" : 300,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
 	    "entry_text" : "SPOILER WARNING hints about the source"
+	},
+	{
+	    "file_path" : "2018_burton2.tar.bz2",
+	    "inventory_order" : 100000,
+	    "OK_to_edit" : false,
+	    "display_as" : "tbz2",
+	    "display_via_github" : false,
+	    "entry_text" : "download entry source"
 	},
 	{
 	    "file_path" : "index.html",

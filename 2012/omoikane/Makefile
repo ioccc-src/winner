@@ -10,7 +10,7 @@
 # Bug fixes, corrections and typo fixes are VERY WELCOME.  If you see a problem,
 # first check this URL for a list of known bugs and (mis)features of IOCCC entries:
 #
-#	https://www.ioccc.org/bugs.md
+#	https://www.ioccc.org/bugs.html
 #
 # GitHub pull requests are welcome!  Please see the above URL for details.
 #
@@ -132,6 +132,9 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
+${PROG}.c: ${ENTRY}.c
+	${CP} -f -v $? $@
+
 # alternative executable
 #
 alt: data ${ALT_TARGET}
@@ -140,6 +143,8 @@ alt: data ${ALT_TARGET}
 ${PROG}.alt: ${PROG}.alt.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
+${PROG}.alt.c: ${ENTRY}.alt.c
+	${CP} -f -v $? $@
 
 alt2: data ${ALT_TARGET}2
 	@${TRUE}
@@ -147,6 +152,8 @@ alt2: data ${ALT_TARGET}2
 ${PROG}.alt2: ${PROG}.alt2.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
+${PROG}.alt2.c: ${ENTRY}.alt2.c
+	${CP} -f -v $? $@
 
 # data files
 #
@@ -214,6 +221,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -f ${PROG}.c ${PROG}.alt.c ${PROG}.alt2.c
 	${RM} -rf *.dSYM
 	${RM} -f output.c key.c data.c regenerated.bin data output output.2
 	@-if [ -e sandwich ]; then \

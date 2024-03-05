@@ -6,7 +6,7 @@ make
 
 NOTE: this program requires the tool `tcpserver` to use. If you do not have this
 program see [FAQ 3.14 - How do I compile and install tcpserver for entries that
-require it](/faq.md#tcpserver).
+require it](../../faq.html#tcpserver).
 
 
 ## To use:
@@ -56,8 +56,8 @@ cc -O3 -std=c99 \
 
 Then, run it with the `tcpserver` command in the
 [ucspi-tcp](http://cr.yp.to/ucspi-tcp.html) package, which was created by
-[Daniel J. Bernstein](/authors.html#Daniel_J._Bernstein), [IOCCC 1991 "Best of
-Show"](../../1991/brnstnd/brnstnd.c) ([README.md](../../1991/brnstnd/README.md)).
+[Daniel J. Bernstein](../../authors.html#Daniel_J_Bernstein)'s
+[1991/brndstd](../../1991/brnstnd/index.html) "Best of Show".
 
 ```sh
 tcpserver -v 127.0.0.1 10333 ./prog ioccc.txt

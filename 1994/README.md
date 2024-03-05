@@ -1,6 +1,6 @@
 # Eleventh International Obfuscated C Code Contest
 
-Look at the README.md file for the given winning entry for information
+View the `index.html` web page for the given winning entry for information on how
 on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
@@ -23,9 +23,9 @@ that the current ANSI standard considered them to be valid.  We were
 unable to find an ANSI C compiler that flagged such expressions as
 errors.
 
-Rule abuse was encouraged this year - two of this year's winners found
+Rule abuse was encouraged this year - two of this year's winning entries found
 new and interesting abuses of the rules. Next year's rules will change
-due to these ([smr](smr/README.md) and [dodsond2](dodsond2/README.md)) entries'
+due to these ([smr](smr/index.html) and [dodsond2](dodsond2/index.html)) entries'
 forms of abuse.
 
 
@@ -39,7 +39,7 @@ The ideal 3rd judge would have all of the following:
 
 * thorough knowledge of the C language (ANSI and K&R)
 * thorough knowledge of common C libs (libc, libm, curses, ...)
-* reasonable written communication skills (able to write README.md files)
+* reasonable written communication skills (able to write `README.md` files)
 * appreciation for well-written non-obfuscated code
 * willing to devote ~4 weekend days in January (starting Jan 96) for judging
 * located in the San Francisco (California, US) Bay Area, or
@@ -120,9 +120,9 @@ as well as details on how to provide fixes to any of the entries.
 
 **IMPORTANT NOTE**: The email addresses found above are for historical
 purposes only, and should not be used today.  See
-[contact.html](/contact.html) for up to date contact details
+[contact.html](../contact.html) for up to date contact details
 as well as details on how to provide fixes to any of the entries.
-See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
+See also [the IOCCC FAQ](../faq.html) for addition information on the IOCCC.
 
 
 ## Credits
@@ -146,5 +146,5 @@ Dessert: Homemade chocolate/pecan brownies, fruit
 Copyright (c) 1994,2023, Landon Curt Noll and Larry Bassel. All Rights Reserved.
 This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
-If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
-(but does not require) if you were to [send us a note about your use](/contact.html).
+If you do use this work in some form, the [IOCCC judges](../judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](../contact.html).

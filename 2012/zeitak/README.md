@@ -96,7 +96,7 @@ around it's position.
 printf(")");
 ```
 
-* Doesn't get confused by the [1984/anonymous](/1984/anonymous/anonymous.c) entry!
+* Doesn't get confused by the [1984/anonymous](../../1984/anonymous/index.html) entry!
 
 
 #### Mis-Features
@@ -110,7 +110,7 @@ printf("\"");
 
 #### Obfuscation
 
-[IOCCC entries](/years.html) already contain entries without digits, control-flow
+[IOCCC entries](../../years.html) already contain entries without digits, control-flow
 keywords and certain operators in their source. This entry has an
 even more limited source, that is:
 

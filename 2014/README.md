@@ -3,10 +3,13 @@
 
 ## Standard IOCCC stuff
 
-The IOCCC has a web site and now has a number of international mirrors.
-The primary site can be found at,
+View the `index.html` web page for the given winning entry for information on how
+compile the entry and how to run the winning program.  Look at the winning
+source and try to figure how it does what it does!  You may then wish to look at
+the Author's remarks for even more details.
 
-* [http://www.ioccc.org/](http://www.ioccc.org/)
+The IOCCC has a web site and now has a number of international mirrors.
+The primary site can be found at [www.ioccc.org](https://www.ioccc.org).
 
 Use make to compile entries.  It is possible that on non-Un\*x / non-Linux
 systems the makefile needs to be changed.  See the Makefile for details.
@@ -26,12 +29,12 @@ local compiler.
 
 ## Remarks on some of the entries
 
-We believe you will again be impressed with this year's winners.
+We believe you will again be impressed with this year's winning entries.
 
 This year, 2014:
 
 We, the judges, were very surprised by this as many of the multiple
-winners submitted very different styles of entries.
+authors submitted very different styles of entries.
 
 This year was the second time the IOCCC size tool was used. Rule 2
 required that when program source is fed as input to the current IOCCC size
@@ -58,24 +61,24 @@ We hope the authors of some of those entries will fix and re-submit
 them for the next IOCCC.
 
 There is a risk in submitting an entry that is similar to a well
-used theme by previous winners.  Previous winners set a very high
-bar.  A new winner must not only compete against submissions
-from the current year, they must also excel over any similar winners
+used theme by previous winning entries.  Previous authors set a very high
+bar.  A new winning entry must not only compete against submissions
+from the current year, they must also excel over any similar entries
 in some particularly impressive way.
 
 
-## On the delay in releasing the winners
+## On the delay in releasing the winning entries
 
-We apologize on the delay of sending the winners the tarball for them
+We apologize on the delay of sending the authors the tarball for them
 to review.  There were some unforeseen events, such as unplanned mandatory
 business travel, the death of a IOCCC judge mother, etc. that impacted
-our planned schedule for building the IOCCC winner tarball.
+our planned schedule for building the tarball of this year's winning entries.
 
 During some of these forced delays, we took the time to better automate
-some of the tools needed to package the source for the winners to review
-and to post the edited winners to the web site.  It is our intent that
-these changes made during those delays will make releasing future IOCCC
-winners a faster procedure.
+some of the tools needed to package the source for the winning entries to review
+and to post the edited entries to the web site.  It is our intent that
+these changes made during those delays will make releasing future winning IOCCC
+entries a faster procedure.
 
 p.s. The final advice given to Landon by his mom: "Have fun."
 We recommend following this advice were possible.
@@ -95,11 +98,11 @@ send us the fix (patch file or the entire changed file).
 
 For the latest information on how to contact the IOCCC Judges please visit
 
-* [http://www.ioccc.org/contact.html](http://www.ioccc.org/contact.html)
+* [contact.html](../contact.html)
 
 For news of the next contest watch:
 
-* [http://www.ioccc.org/](http://www.ioccc.org/)
+* [news.html](../news/html)
 
 
 # Copyright and License
@@ -107,5 +110,5 @@ For news of the next contest watch:
 Copyright (C) 2014,2024, Landon Curt Noll and Leonid A. Broukhis. All Rights Reserved.
 This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
-If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
-(but does not require) if you were to [send us a note about your use](/contact.html).
+If you do use this work in some form, the [IOCCC judges](../judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](../contact.html).

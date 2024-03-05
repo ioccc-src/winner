@@ -53,7 +53,7 @@ existing spreadsheet files unusable.
 This entry is one of those that makes you wonder why some commercial software
 needs tens to hundreds of <strike>megabytes</strike>gigabytes to install!  This
 entry does not simply do the basics, it includes graphing features.  All this
-program needs now is a [flight simulator](1998/banks/README.md)!
+program needs now is a [1998/banks](../../1998/banks/index.html) flight simulator!
 
 
 ## Author's remarks:

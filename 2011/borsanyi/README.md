@@ -13,7 +13,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2011 borsanyi in bugs.md](/bugs.md#2011-borsanyi).
+For more detailed information see [2011 borsanyi bugs](../../bugs.html#2011_borsanyi).
 
 
 ## To use:

@@ -24,7 +24,7 @@ or `evince hint.pdf`. With macOS you can do `open hint.pdf` which by default
 will open `Preview.app`. You may of course use your pdf viewer to open the file
 directly instead.
 
-One of the PDF files generated is this README.md file as a PDF, obfuscated, and
+One of the PDF files generated the README.md file as a PDF, obfuscated, and
 the PDF file will then be compiled as C (itself!) and executed so that it shows
 README.md!
 
@@ -57,7 +57,7 @@ rules `hint.pdf`, `hint`, `hello.pdf` and `hello` to do this.
 This entry treads into a new territory for IOCCC - generating PDF files.
 
 The originally submitted entry could have been thought of as a "Best abuse of
-Ghostscript" winner.  :-)
+Ghostscript" entry.  :-)
 
 The source code and rendered pages are obfuscated for humans (where
 is the font?), and the submitted entry created PDF files that left Ghostscript

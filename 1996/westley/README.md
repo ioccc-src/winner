@@ -48,7 +48,7 @@ make alt
 
 ## Judges' remarks:
 
-Time and time again, Brian Westley seems to come up with a winner!
+Time and time again, Brian Westley seems to come up with a winning entry!
 We are amazed at how much is being done with only one relatively
 short line.  We think you will as well if you take the time to
 understand it.

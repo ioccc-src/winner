@@ -16,7 +16,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2004 jdalbec in bugs.md](/bugs.md#2004-jdalbec).
+For more detailed information see [2004 jdalbec bugs](../../bugs.html#2004_jdalbec).
 
 
 ## To use:
@@ -125,7 +125,7 @@ Perl.)  The build file then compiles `jdalbec2.c]` and removes the
 I don't think I'm abusing the [Makefile](Makefile) since I'm only using
 147 characters including white space and the `#!` line and the
 commented-out `-Wall -pedantic` options.  The [rules for the
-16th IOCCC](/2004/rules.txt) specifically allowed build files up to 521
+16th IOCCC](../../2004/rules.txt) specifically allowed build files up to 521
 characters long so my build file would have been well within
 those limits.  (What typo?)
 
@@ -191,7 +191,7 @@ it if you run into this feature (e.g. `1 22` instead of `122`).
 Note: you may want to be sure you have a limit on stack size before trying this.
 I ran it on Debian GNU/Linux and discovered that I did not have a limit on stack
 size.  Fortunately the OS killed the process after a while.  This is consistent
-with the output of [1996/schweikh3](/1996/schweikh3/schweikh3.c) which reports
+with the output of [1996/schweikh3](../../1996/schweikh3/schweikh3.c) which reports
 `malloc lied!  Killed by SIGKILL`.
 
 Arguments matching `/(?:.){10,}/` will produce visually incorrect

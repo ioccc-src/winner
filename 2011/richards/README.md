@@ -12,7 +12,7 @@ The current status of this entry is:
 STATUS: doesn't work with some platforms - please help us fix
 ```
 
-For more detailed information see [2011 richards in bugs.md](/bugs.md#2011-richards).
+For more detailed information see [2011 richards bugs](../../bugs.html#2011_richards).
 
 
 ## To use:
@@ -33,7 +33,7 @@ echo expression | ./richards
 
 Oh no, yet another
 [dc](https://en.wikipedia.org/wiki/Dc_(computer_program))-style calculator? (see
-[2000/dlowe](/2000/dlowe) using an embedded Perl interpreter and deemed `Worst
+[2000/dlowe](../../2000/dlowe/index.html) using an embedded Perl interpreter and deemed `Worst
 Abuse of the Rules`).  Well, this one does it (expression calculation, that is,
 not the rule abuse) in a different way.  The author claims that his calculator
 does just-in-time compilation.  What would you do to prove or disprove his claim

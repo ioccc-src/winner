@@ -92,7 +92,7 @@ Only gcc was tested for compilers (4.0.3 and 3.3.3).
 
 ### Entry originality
 
-In looking through past winners, there seem to be only 2 (92 and 94) that
+In looking through past winning entries, there seem to be only 2 (92 and 94) that
 generated fractals.  Both of those were [Julia
 fractals](https://en.wikipedia.org/wiki/Julia_set) from the [Mandelbrot
 set](https://en.wikipedia.org/wiki/Mandelbrot_set). Those do make for some

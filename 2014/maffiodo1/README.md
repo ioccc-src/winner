@@ -1,6 +1,6 @@
 ## To build:
 
-This entry requires SDL to be installed. See [FAQ 3.8](/faq.md#faq3_8) if you
+This entry requires SDL to be installed. See [FAQ 3.8](../../faq.html#SDL) if you
 don't know how to do this for your system.
 
 
@@ -17,7 +17,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2014 maffiodo1 in bugs.md](/bugs.md#2014-maffiodo1).
+For more detailed information see [2014 maffiodo1 bugs](../../bugs.html#2014_maffiodo1).
 
 
 ## To use:

@@ -103,7 +103,7 @@ evolutionary relatives of the primate order in which us Homo sapiens hang
 from the phylogenetic tree of life.
 
 If you wish your computer to maintain one branch in the Cretaceous C code era,
-while using more Cenozoic minded code migration, read rpm.md.
+while using more Cenozoic minded code migration, read [rpm.html](rpm.html).
 
 If you find yourself in an evolutionary dead end, try:
 
@@ -178,7 +178,7 @@ but it must be >= the default 38), the number of maximum attempts before giving
 up and the number of offspring, respectively. I
 also give [example compiler invocations](#compiling), [portability
 notes](#portability), an [more portability notes](#bugs) and a [note on
-rpm.md](#rpm).
+rpm.html](rpm.html).
 
 On the subject of `S` and `N`: As the judges' suggested runs imply you
 can change the target string at runtime; `make test` runs a script
@@ -196,7 +196,7 @@ dedications and thanks. Here too I include a link to a website which will be
 dedicated to this entry beyond what will be published on the IOCCC website.
 
 [FILES]: FILES
-[rpm.md]: rpm.md
+[rpm.html]: rpm.html
 
 ## **1. <a name="what">What it is</a>**
 
@@ -337,7 +337,7 @@ assumption that **the user could in fact be a monkey called Eric** *although it
 isn't insolent enough to say the user is a monkey for certain!*
 
 [genetic algorithm]: https://web.archive.org/web/20180308131613/http://www.doc.ic.ac.uk/~nd/surprise_96/journal/vol1/hmw/article1.html
-[2018 guidelines]: http://ioccc.org/2018/guidelines.txt
+[2018 guidelines]: ../../2018/guidelines.txt
 
 
 ## **3. <a name="hints">Hints</a>**
@@ -1097,10 +1097,10 @@ however leaving it as it is because this is what won.
 Skip to [Final thoughts](#thoughts).
 
 I have included a RPM spec file for those with a Red Hat based Linux
-distribution; see [rpm.md][] for details (including why I implemented
+distribution; see [rpm.html](rpm.html) for details (including why I implemented
 this) if for some (strange or maybe even mad) reason you're interested.
 
-[rpm.md]: rpm.md
+[rpm.html]: rpm.html
 
 ## **6. <a name="thoughts">Final thoughts</a>**
 
@@ -1285,8 +1285,8 @@ Finally I would like to thank my mother for being the best mum anyone could ask
 for, who's always been here for me and whom I also inherit the keen analytical
 mind from. I love you all!
 
-I want to also thank [Dave Burton](/winners#Dave_Burton) for acknowledging me in
-his [README.md]((../burton2/README.md) for his [2018/burton2](../burton2/prog.c)
+I want to also thank [Dave Burton](../../authors#Dave_Burton) for acknowledging me in
+his [Dave Burton]((../../authors.html#Dave_Burton) for his [2018/burton2](../burton2/index.html)
 entry for as he put it 'being relentless with pursuit of bugs'. To think that it
 was circumstantial to my entry too makes it all the more unlikely but that
 doesn't take away the significance of it; for I am a very symbolic person and

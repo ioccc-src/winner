@@ -43,9 +43,8 @@ C programs by way of an obfuscated algorithm.
 
 ## Author's remarks:
 
-This program is a companion to the [DDS-BASIC interpreter
-program](/1990/dds/README.md) that was submitted to [the contest in
-1990](/years.html#1990).  This compiles BASIC programs into compilable C code
+This program is a companion to the [1990/dds](../../1990/dds/index.html)
+1990 DDS-BASIC interpreter program.  This compiles BASIC programs into compilable C code
 and then compiles it.  The input format is almost identical to the input format
 of the DDS-BASIC interpreter.  The program needs an executable C compiler called
 `cc` in your path in order to work.

@@ -16,7 +16,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2014 maffiodo2 in bugs.md](/bugs.md#2014-maffiodo2).
+For more detailed information see [2014 maffiodo2 bugs](../../bugs.html#2014_maffiodo2).
 
 
 ## To use:
@@ -56,7 +56,7 @@ cat image.rgb | ./prog.alt
 ## Judges' remarks:
 
 On the face of it :-) given what this program does one might wonder what makes
-this winner special.  But when you realize the source is small enough for posting
+this winning entry special.  But when you realize the source is small enough for posting
 to social media that has a small size limit.
 
 Who will be the first to tweet this source?  How many re-tweets will such tweet

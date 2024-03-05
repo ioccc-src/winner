@@ -1,5 +1,5 @@
 #
-# sort with: ../../bin/sgi
+# sort with: ../../bin/sgi.sh
 *.dSYM
 buzzard.2
 buzzard.2.alt

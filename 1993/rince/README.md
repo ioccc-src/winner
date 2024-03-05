@@ -17,7 +17,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [1993 rince in bugs.md](/bugs.md#1993-rince).
+For more detailed information see [bugs report with 1993/rince](../../bugs.html#1993_rince).
 
 
 ## To use:
@@ -77,8 +77,8 @@ The author has provided several CABBAGE files for your amusement:
 [Breakout](https://en.wikipedia.org/wiki/Breakout_(video_game).  Keys are `,`
 for left, `/` for right, and `.` for 'fire the ball'.
 
-- [rince.data2](rince.data2) plays the old [Rince](/1991/rince/rince.c)
-([README.md](/1991/rince/README.md) game from IOCCC 1991.
+- [rince.data2](rince.data2) plays the old [James Bonfield](../../authors.html#James_Bonfield)'s
+([1991/rince](../../1991/rince/index.html) game from IOCCC 1991.
 
 - [rince.data3](rince.data3) Sokoban screen 11. You are the `o` character.
 You must push the money `m` into the dotted region of the screen. The game is
@@ -86,7 +86,7 @@ considered finished when all the `m`s are then `M`s.
 
 - [rince.data4](rince.data4) Sokoban screen 13. Same rules as above.
 
-For a brief design description, see [design.md](design.md).
+For a brief design description, see [design.html](design.html).
 
 
 ### WARNING for SunOS 4.1.x:
@@ -172,7 +172,7 @@ portable between them than their `poll()` call.
 ### Obfuscation
 
 I have tried to use as many different obfuscation techniques, including
-some of which (such as `sizeof` confusion) I have not seen in any winners
+some of which (such as `sizeof` confusion) I have not seen in any entries
 (hmmm - perhaps there's a reason for that...) so far. Also, very poor
 structure (yes, I use `goto`'s) has led to apparently having an `fgets()` as
 the last line of main. Note that I have still tried to aim at least some

@@ -20,7 +20,7 @@ STATUS: missing files - please provide them
 STATUS: main() has only one arg - try and make it have 2 or 3
 ```
 
-For more detailed information see [2001 westley in bugs.md](/bugs.md#2001-westley).
+For more detailed information see [2001 westley bugs](../../bugs.html#2001_westley).
 
 
 ## To use:

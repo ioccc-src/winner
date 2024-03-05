@@ -47,7 +47,7 @@ character printed on the screen.
 ### Why did I write this ?
 
 
-Let's just quote the [FAQ](/faq.md):
+Let's just quote the [FAQ](../../faq.html):
 
 Q: Are there types of entries that are submitted so frequently that the
    judges get tired of them?
@@ -57,14 +57,14 @@ A: Yes, there are types of entries that show up over and over again.
 
 ```
 We tend to dislike programs that:
-are similar to previous winners
+are similar to previous winning entries
 
 We like variety. However too often we see (please look at the winning
 examples given to be aware of the level of the competition):
 
 (snip)
 
-generating small primes (below is the list of all prime related winners)
+generating small primes (below is the list of all prime related entries)
 
 	1985/august
 	1988/applin

@@ -21,7 +21,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2019 poikola in bugs.md](/bugs.md#2019-poikola).
+For more detailed information see [2019 poikola bugs](../../bugs.html#2019_poikola).
 
 
 ## To use:
@@ -54,7 +54,7 @@ If you don't have a few days, try:
 ./try.sh
 ```
 
-As the [bugs.md](/bugs.md#2019-poikola) says, this program will not validate
+As the [2019 poikola bugs](../../bugs.html#2019_poikola) says, this program will not validate
 input so it might get stuck or fail if invoked erroneously.
 
 
@@ -152,10 +152,10 @@ who passed away on fourth of February 2019.
 
 So, I followed the rules given by [Gandalf the
 White](https://www.glyphweb.com/arda/g/gandalf.html) and the [Judges of
-the IOCCC](/judges.html).
+the IOCCC](../../judges.html).
 
 Output of `iocccsize`, using the [2019 version of
-iocccsize](https://www.ioccc.org/2019/iocccsize.c), is carefully selected.  For
+iocccsize](../../2019/iocccsize.c), is carefully selected.  For
 the sake of clarity, I used single letter variables in the code. I also avoided
 unnecessary use of functions.  Like a
 [tripundra](https://en.wikipedia.org/wiki/Tripundra), this program has three
@@ -252,10 +252,10 @@ arrays, so I did it.
 
 ### Other stuff
 
-[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson): I really like that you enjoyed my
+[Cody Boone Ferguson](../../authors.html#Cody_Boone_Ferguson): I really like that you enjoyed my
 previous entry. I hope that you will like this entry too.  Because I did not
-want to give too many clues to [the Judges](/judges.html), I tried to write this
-entry in a different way than [Most Stellar](/2018/poikola/README.md), but in this
+want to give too many clues to [the Judges](../../judges.html), I tried to write this
+entry in a different way than [Most Stellar](../../2018/poikola/index.html), but in this
 code there is at least one recycled thing from it. By the way, the answers to
 the questions I posed: (1) 255. (2) Try to compare binary representations of
 those `float`s and binary representation of the string "`25th IOCCC!`". (3) I
@@ -271,8 +271,8 @@ checksum](https://en.wikipedia.org/wiki/Fletcher%27s_checksum#Fletcher-16) does
 not match anymore and `goto` jumps to the end of the code.
 
 I see that one of the [Volker
-Diels-Grabsch](/authors.html#Volker_Diels-Grabsch)'s winning entries is
-awarded the category [Most self-aware](/2019/diels-grabsch2/prog.c). In last
+Diels-Grabsch](../../authors.html#Volker_Diels-Grabsch)'s winning entries is
+awarded the category [Most self-aware](../../2019/diels-grabsch2/prog.c). In last
 year, my entry incorporates the [Fletcher's 16
 algorithm](https://en.wikipedia.org/wiki/Fletcher%27s_checksum#Fletcher-16) to
 ensure integrity of code. One of my first ideas for this year was to do the same

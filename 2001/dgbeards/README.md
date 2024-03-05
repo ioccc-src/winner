@@ -16,7 +16,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2001 dgbeards in bugs.md](/bugs.md#2001-dgbeards).
+For more detailed information see [2001 dgbeards bugs](../../bugs.html#2001_dgbeards).
 
 
 ## To use:
@@ -86,7 +86,7 @@ uses the same pieces.  Here is a list of the differences:
 moves.  This is usually accomplished by losing all of your pieces.
 Sometimes, the game can end when you still have some pawns on the board,
 but they are blocked and cannot move.  The general rule is if a player
-has no legal moves, the game is over.  The winner is the player with fewer
+has no legal moves, the game is over.  The entry is the player with fewer
 pieces on the board.  This is almost always the same player that had no
 moves, but not always.
 
@@ -141,7 +141,7 @@ they do happen, they usually do not change the outcome of the game.  As
 mentioned above, castling is not allowed either.
 
 It also does not detect the end of the game.  It can see sure wins or
-losses several moves ahead, but does not announce the end of a game or
+losses several moves ahead, but does not announce the end of a game nor
 the winner.  Given the existing code it is easy to do this, but it was
 deemed unnecessary fluff.
 

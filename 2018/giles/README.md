@@ -1,7 +1,7 @@
 ## To build:
 
 This entry requires SDL2 to be installed. See [FAQ 3.8: How do I compile an
-IOCCC winner that requires SDL1 or SDL2?](/faq.md#SDL) if you don't have it
+IOCCC entry that requires SDL1 or SDL2?](../../faq.html#SDL) if you don't have it
 installed and don't know how to do so.
 
 ```sh

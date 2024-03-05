@@ -16,7 +16,7 @@ make all
 
 ## Judges' remarks:
 
-For info on more examples, read the [sorta.README.md](sorta.README.md) file.
+For info on more examples, read the [sorta.README.html](sorta.README.html) web page.
 
 The author wished to win the "most useful program" award and documented this in
 the source code.  The judges were unmoved by this blatant attempt to influence
@@ -92,7 +92,7 @@ delimiters.
 - `>`: pop top two elements of `i` stack, compare, push back 1 or 0 as in C
 - `&`: pop top two elements of `i` stack, NAND, push back bitwise result
 	Note that NAND is sufficient to construct all bitwise operations, as
-	demonstrated by `icalc` in [sorta.README.md](sorta.README.md).
+	demonstrated by `icalc` in [sorta.README.html](sorta.README.html).
 
 ### System operations
 
@@ -156,7 +156,7 @@ that SORTA is a scripting language.
 
 Another nice feature is that the SORTA language itself encourages you to write
 not merely obfuscated but plain incomprehensible scripts (like the [examples in
-sorta.README.md](sorta.README.md) ---after working with the language for a
+sorta.README.html](sorta.README.html) ---after working with the language for a
 while, I guess I can read it pretty easily, but I also think FORTH is a
 beautiful language). The numbers running around everywhere will make people
 think of ASCII, even though the code is not ASCII-dependent.  What's your first

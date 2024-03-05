@@ -1,5 +1,5 @@
 #
-# sort with: ../../bin/sgi
+# sort with: ../../bin/sgi.sh
 *.dSYM
 alt.ver0
 alt.ver0.c

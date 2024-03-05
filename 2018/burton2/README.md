@@ -28,7 +28,7 @@ man ./tac.1
 ## Judges' remarks:
 
 They say size isn't everything, and in the case of IOCCC
-[iocccsize.c](https://www.ioccc.org/2018/iocccsize.c) that is saying something!
+[iocccsize.c](../../2018/iocccsize.c) that is saying something!
 What is this program weighing and how much does it weigh?
 
 
@@ -121,7 +121,7 @@ Fixing this properly hampers backwards compatibility in counting.  This requires
 eliding comments during the translation phases (ISO 5.1.1.2, phase 3), and yet still
 counting words correctly absent `-k`.
 
-[1]: /2014/birken/README.md "Best use of port 1701"
+[1]: ../../2014/birken/index.html "Best use of port 1701"
 
 
 ### Backwards Compatibility:
@@ -133,7 +133,7 @@ find ~/src/obc -type f -name \*.c | wc
 ```
 
 The discrepancies found are documented and explained in the file
-[discrepancies.md](discrepancies.md).
+[discrepancies.html](discrepancies.html).
 
 ```sh
 find ~/src/obc -type f -a -name "*.c" | xargs ./spotcheck.sh ./prog | ./spotdiff.sh |
@@ -143,7 +143,7 @@ find ~/src/obc -type f -a -name "*.c" | xargs ./spotcheck.sh ./prog | ./spotdiff
 In summary, there are only 6 unique entries out of 366 that have any variation
 in Rule 2 counts; in all cases, the differences are due to bugs within
 `iocccsize`, described in detail in the file
-[discrepancies.md](discrepancies.md).  There are only 40
+[discrepancies.html](discrepancies.html).  There are only 40
 files (40/366, ~11%, including originals and variations) that differ at all, 31
 only in word count; most word count differences appear related to comment block
 detection, weighted more towards recent entries (2011 and onward = 20/40 ~50%).
@@ -164,10 +164,10 @@ determine which tool was correct when there were differences.
 > Nevertheless, the more clearly written code remains a spoiler for this entry.
 
 NB: `iocccsize` gets a different answer from `tac` on its own
-([iocccsize.c](/2018/iocccsize.c)) source code;
+([iocccsize.c](../../2018/iocccsize.c)) source code;
 `tac` gets the correct answer.  This is due to the aforementioned bugs within `iocccsize`,
 proved by fixing
-[iocccsize.c](/2018/iocccsize.c) with the included patch, so `iocccsize` reports
+[iocccsize.c](../../2018/iocccsize.c) with the included patch, so `iocccsize` reports
 the correct answer for itself.
 
 ### But wait... There's More!
@@ -292,7 +292,7 @@ sed 's/^# .*$//' | sed 's/^#//' |
 * The code describes its function by careful arrangement of variables up front...
 * ...coupled with a description of the typical IOCCC contestant, or at least the author
 * Why shouldn't trigraph parsing be written in trigraph?
-* Where [iocccsize.c](/2018/iocccsize.c) mocks, this code flaunts:
+* Where [iocccsize.c](../../2018/iocccsize.c) mocks, this code flaunts:
   "_no matter how well you may think you understand this code, you don't, so don't mess with it. :-)_"
 * `O,0,l,1` are used to confusing effect, local names obscure global names.
 * Globals are used to pass information between routines: don't reorder "unrelated" statements....
@@ -337,7 +337,7 @@ The following reserved word files are included:
 * [ioccc.kw.freq](ioccc.kw.freq)    c11 + additional words, sorted on frequency of occurrence in IOCCC entries
 
 
-NB: The keyword file used in this code is derived from the list in [iocccsize.c](https://www.ioccc.org/2018/iocccsize.c),
+NB: The keyword file used in this code is derived from the list in [iocccsize.c](../../2018/iocccsize.c),
 which is neither complete (`#define`, `#ifndef`, `#undef` are missing
 -- yes, Virginia knows about `#define` omitted on purpose),
 nor correct (many more are added: `I`, `true`, `bool`, `compl`, ...):
@@ -389,7 +389,7 @@ cc -ansi -Wall -trigraphs -Wno-trigraphs -Wno-parentheses -Wno-empty-body -Wno-c
 
 ### Coda:
 
-[Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) was relentless in his pursuit of bugs.
+[Cody Boone Ferguson](../../authors.html#Cody_Boone_Ferguson) was relentless in his pursuit of bugs.
 Thanks to his reports, the version of [unob.sh](unob.sh) is stronger,
 `tac` groks digraphs, [tokenfix.sh](tokenfix.sh) corrects for missing digraphs
 in [prog.c](prog.c), and the program [manpage.sh](manpage.sh) was added to the corpus.

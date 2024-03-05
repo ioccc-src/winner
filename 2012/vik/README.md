@@ -18,7 +18,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2012 vik in bugs.md](/bugs.md#2012-vik).
+For more detailed information see [2012 vik bugs](../../bugs.html#2012_vik).
 
 
 ## To use:

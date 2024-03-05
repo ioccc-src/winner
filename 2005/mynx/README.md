@@ -16,7 +16,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2005 mynx in bugs.md](/bugs.md#2005-mynx).
+For more detailed information see [2005 mynx bugs](../../bugs.html#2005_mynx).
 
 
 ## To use:
@@ -80,7 +80,7 @@ won't work.
 
 This little `mynx` will give any [Fiery
 Fox](https://en.wikipedia.org/wiki/Firefox) a run for its money. A nice
-complement to last years winning [hibachi](/2004/hibachi/src/hibachi.c). The
+complement to last years winning [2004/hibachi](../../2004/hibachi/src/index.html). The
 judges double dare any eager Obfuscationalists to submit the missing pieces to
 get a functioning LAMP stack.
 
@@ -115,19 +115,6 @@ After which, the rest of the documentation can be read by saying:
 
 ```sh
 ./mynx ../manual.html
-```
-
-Manifest:
-
-```
-mynx.c
-makefile                pre-built generic Unix
-README.md
-manual.html
-makefile.in             makefile template
-entities.txt            ISO 8859-1 entites
-configure.in            configure script description
-configure               pre-built configure script
 ```
 
 

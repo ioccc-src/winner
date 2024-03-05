@@ -3,14 +3,12 @@
 
 ## Standard IOCCC stuff
 
-Look at the README.md file for the given winning entry for information
+View the `index.html` web page for the given winning entry for information on how
 on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
-The primary IOCCC web site can be found at,
-
->	<https://www.ioccc.org/>
+The primary site can be found at [www.ioccc.org](https://www.ioccc.org).
 
 Use `make` to compile entries.  It is possible that on non-Unix / non-Linux
 systems the Makefile needs to be changed.  See the Makefile for details.
@@ -23,15 +21,15 @@ lacking, you may need to compile using clang or gcc instead of your local
 compiler.
 
 
-## Remarks on some of the winners
+## Remarks on some of the winning entries
 
 This year's Best of Show (carlini) is such a novel way of obfuscation that it would be
 worth of a special mention in the (future) Best of IOCCC list!
 
-For some reason, this year's set of winners contains three nostalgic games,
+For some reason, this year's set of winning entries contains three nostalgic games,
 Asteroids (tsoj), Minesweeper (endoh1), and Snake (ferguson1).
 
-An entry (kurdyukov1) pays homage to a previous winner (2015/hou).
+An entry (kurdyukov1) pays homage to a previous entry [2015/hou](2015/hou/index.htm0).
 
 ...We'll stop spouting spoilers now. Have fun exploring all the entries!
 
@@ -63,9 +61,9 @@ perhaps re-submit them for the next IOCCC.
 
 ## Final Comments
 
-**IMPORTANT NOTE**: See [contact.html](/contact.html) for up to date contact details
+**IMPORTANT NOTE**: See [contact.html](../contact.html) for up to date contact details
 as well as details on how to provide fixes to any of the entries.
-See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
+See also [the IOCCC FAQ](../faq.html) for addition information on the IOCCC.
 
 
 # Copyright and License
@@ -73,5 +71,5 @@ See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
 Copyright (C) 2020,2023, Landon Curt Noll and Leonid A. Broukhis. All Rights Reserved.
 This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
-If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
-(but does not require) if you were to [send us a note about your use](/contact.html).
+If you do use this work in some form, the [IOCCC judges](../judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](../contact.html).

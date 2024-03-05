@@ -13,7 +13,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [1988 dale in bugs.md](/bugs.md#1988-dale).
+For more detailed information see [1988 dale bugs](../../bugs.html#1988_dale).
 
 
 ## Try:

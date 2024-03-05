@@ -87,8 +87,8 @@ To submit your code to the IOCCC, you **MUST** follow these steps:
 
 0. Verify that the IOCCC is open for submissions
 
-    Check the [status.json](/status.json) URL and
-    check the [IOCCC news](/news.html#news) to
+    Check the [status.json](status.json) URL and
+    check the [IOCCC news](news.html#news) to
     see of the IOCCC is open.
 
     You may only register for the IOCCC
@@ -96,10 +96,10 @@ To submit your code to the IOCCC, you **MUST** follow these steps:
 
 1. Read the latest IOCCC rules and review the IOCCC guidelines
 
-    Please pay close attention to the [official IOCCC rules](/rules.html).
+    Please pay close attention to the [official IOCCC rules](rules.html).
 
     You are also **highly encouraged** to review the
-    [official IOCCC guidelines](/guidelines.html) as they contain important
+    [official IOCCC guidelines](guidelines.html) as they contain important
     suggestions, useful hints, and IOCCC humor.  :-)
 
 2. Register for the IOCCC
@@ -149,12 +149,12 @@ To submit your code to the IOCCC, you **MUST** follow these steps:
     the tools from the top of the _mkiocccentry repo_ directory just fine.
 
     If `mkiocccentry` tool indicates that there is a problem with your entry,
-    especially if it identifies a [rule 2](/rules.html#2) related problem,
+    especially if it identifies a [rule 2](rules.html#2) related problem,
     you are **strongly** encouraged to revise and correct your entry and
     then re-run the `mkiocccentry` tool.
 
     If you choose to risk violating rules, be sure an explain your reason
-    for doing so in your _remarks.md_ file.
+    for doing so in your _remarks.md file.
 
 6. Upload your entry to the IOCCC submit server
 
@@ -172,53 +172,53 @@ __over-submitted__ types of entries, level of the competition from
 previous IOCCC entries make it more challenging to be successful.
 
 
-It is also important to note that the [guidelines](/guidelines.html) often
+It is also important to note that the [guidelines](guidelines.html) often
 state something along the lines of:
 
 > _We tend to dislike programs that: are similar to previous winning entries_
 
 
 #### maze generator
-- [1985/shapiro](/years.html#1985_shapiro)
+- [1985/shapiro](years.html#1985_shapiro)
 
-- [1991/buzzard](/years.html#1991_buzzard)
+- [1991/buzzard](years.html#1991_buzzard)
 
-- [1995/cdua](/years.html#1995_cdua)
+- [1995/cdua](years.html#1995_cdua)
 
 - [1995/dodsond2](years.html#1995_dodsond2)
 
-- [1998/bas1](/years.html#1998_bas1)
+- [1998/bas1](years.html#1998_bas1)
 
 
 #### tic-tac-toe/noughts and crosses/Xs and Os game
 
-- [1991/westley](/years.html#1991_westley)
+- [1991/westley](years.html#1991_westley)
 
-- [1996/jonth](/years.html#1996_jonth)
+- [1996/jonth](years.html#1996_jonth)
 
-- [2020/carlini](/years.html#2020_carlini)
+- [2020/carlini](years.html#2020_carlini)
 
 
 #### solitaire/Othello game
 
-- [1987/lievaart](/years.html#1987_lievaart)
+- [1987/lievaart](years.html#1987_lievaart)
 
-- [1994/dodsond1](/years.html#1994_dodsond1)
+- [1994/dodsond1](years.html#1994_dodsond1)
 
 
 #### generating small primes (below is the list of all prime related winning entries)
 
-- [1985/august](/years.html#1985_august)
+- [1985/august](years.html#1985_august)
 
-- [1988/applin](/years.html#1988_applin)
+- [1988/applin](years.html#1988_applin)
 
-- [1994/weisberg](/years.html#1994_weisberg)
+- [1994/weisberg](years.html#1994_weisberg)
 
-- [1995/makarios](/years.html#1995_makarios)
+- [1995/makarios](years.html#1995_makarios)
 
-- [1996/dalbec](/years.html#1996_dalbec)
+- [1996/dalbec](years.html#1996_dalbec)
 
-- [2000/bellard](/years.html#2000_bellard)
+- [2000/bellard](years.html#2000_bellard)
 
 _As you can see, just a list of primes (let alone small primes) does not cut it
 anymore._
@@ -226,63 +226,63 @@ anymore._
 
 #### self reproducing program
 
-- [1990/scjones](/years.html#1990_scjones)
+- [1990/scjones](years.html#1990_scjones)
 
-- [1994/smr](/years.html#1994_smr) - _do not claim your program is the smallest one without seeing this!
+- [1994/smr](years.html#1994_smr) - _do not claim your program is the smallest one without seeing this!
 
-- [2000/dhyang](/years.html#2000_dhyang) - _unless you beat this one, your chances are slim_
+- [2000/dhyang](years.html#2000_dhyang) - _unless you beat this one, your chances are slim_
 
 
 #### entries that just print "Hello, world!"
 
-- [1984/anonymous](/years.html#1984_anonymous)
+- [1984/anonymous](years.html#1984_anonymous)
 
-- [1985/applin](/years.html#1985_applin)
+- [1985/applin](years.html#1985_applin)
 
-- [1986/applin](/years.html#1986_applin)
+- [1986/applin](years.html#1986_applin)
 
-- [1986/holloway](/years.html#1986_holloway)
+- [1986/holloway](years.html#1986_holloway)
 
-- [1989/jar.1](/years.html#1989_jar.1)
+- [1989/jar.1](years.html#1989_jar.1)
 
-- [1992/lush](/years.html#1992_lush)
+- [1992/lush](years.html#1992_lush)
 
-- [2000/tomx](/years.html#2000_tomx)
+- [2000/tomx](years.html#2000_tomx)
 
 _**...it's so 20th century...**_
 
 
 #### entries that use some complex state machine/table to print something
 
-- [1988/isaak](/years.html#1988_isaak)
+- [1988/isaak](years.html#1988_isaak)
 
-- [1988/phillipps](/years.html#1988_phillipps)
+- [1988/phillipps](years.html#1988_phillipps)
 
-- [2018/ciura](/years.html#2018_ciura)
+- [2018/ciura](years.html#2018_ciura)
 
-- [2018/giles](/years.html#2018_giles)
+- [2018/giles](years.html#2018_giles)
 
 
 #### rot13
 
-- [1985/sicherman](/years.html#1985_sicherman)
+- [1985/sicherman](years.html#1985_sicherman)
 
-- [1989/westley](/years.html#1989_westley)
+- [1989/westley](years.html#1989_westley)
 
-- [1990/dg](/years.html#1990_dg)
+- [1990/dg](years.html#1990_dg)
 
-- [1991/fine](/years.html#1991_fine)
+- [1991/fine](years.html#1991_fine)
 
 
 #### **pi** or **e** computation
 
-- [1986/august](/years.html#1986_august)
+- [1986/august](years.html#1986_august)
 
-- [1988/robison](/years.html#1988_robison)
+- [1988/robison](years.html#1988_robison)
 
-- [1988/westley](/years.html#1988_westley)
+- [1988/westley](years.html#1988_westley)
 
-- [1989/roemer](/years.html#1989_roemer)
+- [1989/roemer](years.html#1989_roemer)
 
 
 #### Hints on overused themes
@@ -365,7 +365,7 @@ Your entry must compile with GCC and run under at least one flavor of UNIX (e.g.
 Linux or Solaris). To improve chances to win, it should work under both BSD and
 SysV style UNIX (think **stty cbreak**), and should not depend on "Endianness".
 If it can compile and run on Windows and/or Mac  (see
-[2000/thadgavin](/years.html#2000_thadgavin) for one example, amongst others),
+[2000/thadgavin](years.html#2000_thadgavin) for one example, amongst others),
 even better. Being able to compile with other compilers like clang is also a
 good thing.
 
@@ -373,7 +373,7 @@ good thing.
 ## <a name="faq1"></a>Section 1: History of the IOCCC
 
 
-### <a name="faq1_0"></a>FAQ 1.0: How did the IOCCC get started?
+### <a name="faq1_0"></a><a name="ioccc_start"></a>FAQ 1.0: How did the IOCCC get started?
 
 One day (1984 March 23 to be exact), Larry Bassel and I (Landon Curt
 Noll) were working for National Semiconductor's Genix porting group, we
@@ -407,7 +407,7 @@ Thus began the tradition of putting typos in the contest rules and guidelines
 BTW: This posting was made back in the days when AT&amp;T was the evil giant.
 Now, Microsoft makes AT&amp;T look mild and kind in comparison. :-( (IMHO) ).
 
-BTW: See the story about the '[Bill Gates](/1993/mills/README.md)' award. :-)
+BTW: See the story about the '[Bill Gates](1993/mills/index.html)' award. :-)
 
 OK, back to the story.
 
@@ -433,22 +433,22 @@ author's wish to remain anonymous.
 A few years ago, we asked the author if they still wanted to remain anonymous.
 They said: '_Yes, I want to keep my anonymity.  But you can tell them that I am well known for my connection to the
 C language_'. It was not until 2001 that another [anonymous
-entry](/years.html#2001_anonymous) received an award.
+entry](years.html#2001_anonymous) received an award.
 
-BTW: The [1984 winner](/years.html#1984_mullender) remains one of my (Landon Curt Noll) all time favorites.
+BTW: The [1984/mullender](years.html#1984_mullender) remains one of my (Landon Curt Noll) all time favorites.
 
-The name used in the posting of the [1st IOCCC
-winner](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=837%40nsc.UUCP&rnum=2&filter=0)
+The name used in the posting of the [1st winning IOCCC
+entry](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=837%40nsc.UUCP&rnum=2&filter=0)
 posting was **I**nternational **O**bfuscated **C** **C**ode **C**ontest or
 **IOCCC** for short.
 
-The posting said '_1st annual_', so in 1985 we held the [2nd IOCCC contest](/years.html#1985)
+The posting said '_1st annual_', so in 1985 we held the [2nd IOCCC contest](years.html#1985)
 and the tradition continues as the longest running contest on the Internet.
 
 P.S. Part of the inspiration for making the IOCCC a contest goes to the
 [Bulwer-Lytton fiction contest](http://www.bulwer-lytton.com/).
 
-P^2.S. See the [overall README](/all/README.md) for more details.
+P^2.S. See the [overall README](all/index.html) for more details.
 
 
 ### <a name="faq1_1"></a>FAQ 1.1: Why are some years missing IOCCC entries?
@@ -484,8 +484,8 @@ web site.
 
 Furthermore, a bzip2 compressed tarball containing the released
 IOCCC entry source code may be found under the
-[archive/historic](/archive/histroic) directory.  The file
-[archive-all.tar.bz2](/archive/historic/archive-all.tar.bz2) contains
+[archive/historic](archive/histroic) directory.  The file
+[archive-all.tar.bz2](archive/historic/archive-all.tar.bz2) contains
 all years and the individual years are in the form
 _archive/historic/archive-YYYY.tar.bz2_.
 
@@ -493,7 +493,7 @@ These files were obtained from the [Internet Wayback
 Machine](https://web.archive.org) from the [snapshot of the website
 on 2020 Dec
 28](https://web.archive.org/web/20201228005211/https://www.ioccc.org/).
-See [archive/historic/README.md](/archive/historic/README.md) for
+See [archive/historic/index.html](archive/historic/index.html) for
 details about these bzip2 compressed tarballs.
 
 **XXX**: Change the references to _temp-test-ioccc_ to _winners_
@@ -513,7 +513,7 @@ changes and important improvements such as:
 work on modern systems
 * Reworking the Makefiles to use a consistent set of rules
 * Reworking the Makefiles specific to the gcc and clang C compilers
-* Replacing the various hint files with a README.md markdown that is more consistent across IOCCC years
+* Replacing the various hint files with a index.html markdown that is more consistent across IOCCC years
 * Setting up a system whereby authors of IOCCC entries may update their own contact information via a GitHub pull request
 * Setting up to generate the top level years.html file via a tool
 * Setting up to generate the top level authors.html file via a tool
@@ -602,7 +602,7 @@ We highly recommend that you explain why you think your entry is
 well obfuscated.
 
 For those entries that win the IOCCC, we often use much of text from the
-`remarks.md` file in the _Author's remarks_ section of the `README.md` file.
+`remarks.md` file in the _Author's remarks_ section of the `index.html` file.
 For this reason, a well written `remarks.md` file is considered a plus.
 
 While not required, consider adding bit of humor to your `remarks.md`
@@ -628,7 +628,7 @@ appreciate the opportunity for a fun read as well as a chuckle or two.
 - admitting that your entry is not very obfuscated (you see, the contest is
 called the **IOCCC**, not the **INVOCCC** :-) ); but even if you do not admit
 it, not very obfuscated entries have a minuscule chance to win (although
-[2000/tomx](/years.html#2000_tomx) is a notable counterexample).
+[2000/tomx](years.html#2000_tomx) is a notable counterexample).
 
 - mentioning your name or any identifying information in the remark section (or
 in the C code for that matter) - we like to be unbiased during the judging
@@ -638,7 +638,7 @@ this is not clear!
 - leaving the remark section empty.
 
 
-### <a name="faq2_1"></a>FAQ 2.2: Why don't you publish entries that do not win?
+### <a name="faq2_2"></a>FAQ 2.2: Why don't you publish entries that do not win?
 
 Because the publication on the IOCCC site **_IS_** the award!
 Anyone is free to put their IOCCC hopefuls, lookalikes and/or
@@ -680,47 +680,47 @@ stands out among all of the other IOCCC entries received that year.
 For such an IOCCC entry, the IOCCC judges award a "Grand Prize"
 or "Best of Show award.
 
-In 1984-1987, the grand prize winners are:
+In 1984-1987, the grand prize winning entries are:
 
-- [1984/mullender](/years.html#1984_mullender)
+- [1984/mullender](years.html#1984_mullender)
 
-- [1985/shapiro](/years.html#1985_shapiro)
+- [1985/shapiro](years.html#1985_shapiro)
 
-- [1986/wall](/years.html#1986_wall)
+- [1986/wall](years.html#1986_wall)
 
-- [1987/lievaart](/years.html#1987_lievaart)
+- [1987/lievaart](years.html#1987_lievaart)
 
 Starting from 1988, the entry we liked the most in that year is called
 "Best of Show". Here are the "Best of Show" entries:
 
-- [1988/applin](/years.html#1988_applin)
+- [1988/applin](years.html#1988_applin)
 
-- [1989/jar.2](/years.html#1989_jar.2)
+- [1989/jar.2](years.html#1989_jar.2)
 
-- [1990/theorem](/years.html#1990_theorem)
+- [1990/theorem](years.html#1990_theorem)
 
-- [1991/brnstnd](/years.html#1991_brnstnd)
+- [1991/brnstnd](years.html#1991_brnstnd)
 
-- [1992/vern](/years.html#1992_vern)
+- [1992/vern](years.html#1992_vern)
 
-- [1996/august](/years.html#1996_august)
+- [1996/august](years.html#1996_august)
 
-- [1998/banks](/years.html#1998_banks)
+- [1998/banks](years.html#1998_banks)
 
-- [2000/jarijyrki](/years.html#2000_jarijyrki)
+- [2000/jarijyrki](years.html#2000_jarijyrki)
 
-- [2020/carlini](/years.html#2020_carlini)
+- [2020/carlini](years.html#2020_carlini)
 
 
 In 1993, 1994 and 1995 the judges were unable to select a clear overall
-winner. So to give a nod to the entry that had the highest approval ranking
+winning entry. So to give a nod to the entry that had the highest approval ranking
 from the judges, they used the following awards:
 
-- [1993/rince](/years.html#1993_rince) - Most Well Rounded
+- [1993/rince](years.html#1993_rince) - Most Well Rounded
 
-- [1994/shapiro](/years.html#1994_shapiro) - Most Well Rounded
+- [1994/shapiro](years.html#1994_shapiro) - Most Well Rounded
 
-- [1995/leo](/years.html#1995_leo) - Best Use of Obfuscation
+- [1995/leo](years.html#1995_leo) - Best Use of Obfuscation
 
 These could be considered the 'best entry' for those years with 1 or
 more other entries that came in close behind.
@@ -728,13 +728,13 @@ more other entries that came in close behind.
 
 ### <a name="faq2_6"></a>FAQ 2.6: How are IOCCC entries announced?
 
-Once the [IOCCC](https://www.ioccc.org/index.html#enter) closes, the judges
-will select the [winning entries](https://www.ioccc.org/years.html) announce them
+Once the [IOCCC](../index.html#enter) closes, the judges
+will select the [winning entries](../years.html) announce them
 on the [@IOCCC mastodon feed](https://fosstodon.org/@ioccc), notify the authors
 of entries that won the IOCCC via email using their previously registered email address,
-and upload the winning code to the [winner repo](https://github.com/ioccc-src/winner)
+and upload the winning code to the [IOCCC winner repo](https://github.com/ioccc-src/winner)
 which in turn will cause them to be displayed on the [IOCCC winning entries
-page](https://www.ioccc.org/years.html).
+page](../years.html).
 
 
 ## <a name="faq3"></a>Section 3: Compiling and running IOCCC entries
@@ -803,7 +803,7 @@ but are different/missing today.
 Please see the other FAQs in this section as they might offer helpful
 hints, especially in cases were something else needs to be installed.
 
-Please see the [bugs.md](/bugs.md) file for details about known problems with IOCCC entries.  In some cases you may be dealing with a problematic entry.  In a few fun cases, the IOCCC does not compile by design!
+Please see the [bugs.html](bugs.html) file for details about known problems with IOCCC entries.  In some cases you may be dealing with a problematic entry.  In a few fun cases, the IOCCC does not compile by design!
 
 If you have a fix that makes a minimal impact to the entry, then please consider submitting that change in the form of a pull request.  Please
 see FAQ 5.2 <a href="#fix_an_entry">"How may I submit a fix to an IOCCC entry"</a> for details.
@@ -811,7 +811,7 @@ see FAQ 5.2 <a href="#fix_an_entry">"How may I submit a fix to an IOCCC entry"</
 In some cases alternative code has been added that does compile on some or most systems.  Check the write up for the entry for "alt" code and possible ways to compile and run that code.  In some cases we replaced the original code (but not the `.orig.c` file!) with code
 that works for modern systems but one can view the original code in the
 `.orig.c` files (sometimes the original code is also in the directory as a
-`winner.alt.c` or `prog.alt.c`).
+`dirname.alt.c` or `prog.alt.c`).
 
 
 ### <a name="faq3_2"></a>FAQ 3.2: Why does a IOCCC entry fail on my 64-bit system?
@@ -820,21 +820,21 @@ Unfortunately some older entries are non-portable and require 32-bit support or
 32-bit binaries. A problem system here is macOS Catalina (10.15) as as of that
 version macOS no longer supports 32-bit binaries. If the entry acts on a certain
 type of binary, say ELF, then that will also be a problem depending on the
-entry. For example [2001/anonymous](/2001/anonymous/README.md) requires 32-bit
+entry. For example [2001/anonymous](2001/anonymous/index.html) requires 32-bit
 ELF binaries.
 
 There are numerous example entries that require 32-bit binaries. We have tried
-to note these in both the respective Makefiles and README.md files but it is
+to note these in both the respective Makefiles and index.html files but it is
 possible that some were missed. These entries are very likely in the
-[bugs.md](/bugs.md) file and we welcome any help in making an alternate version
+[bugs.html](bugs.html) file and we welcome any help in making an alternate version
 for 64-bit systems. Many were fixed to work with modern systems but some are
 supposed to only work with 32-bit systems so any updated version of these
 entries should be an alternate version.
 
-Other entries like [2001/herrmann2](/thanks-for-help.md#2001_herrmann2)
+Other entries like [2001/herrmann2](thanks-for-help.html#2001_herrmann2)
 now work with 32-bit AND 64-bit systems.
 
-Please see the [bugs.md](/bugs.md) file for the problematic entry in question to see if the problem is known, and if a fix is wanted, consider trying to port the code to a 64-bit system and submitting a pull request with that change.  Pull requests that fix such code while trying to minimize the impact of any changes and preserving the spirit of the original code are very welcome!
+Please see the [bugs.html](bugs.html) file for the problematic entry in question to see if the problem is known, and if a fix is wanted, consider trying to port the code to a 64-bit system and submitting a pull request with that change.  Pull requests that fix such code while trying to minimize the impact of any changes and preserving the spirit of the original code are very welcome!
 Please
 see FAQ 5.2 <a href="#fix_an_entry">"How may I submit a fix to an IOCCC entry"</a> for details.
 
@@ -848,7 +848,7 @@ actually clang, even `/usr/bin/gcc`.
 That being said many (if not most) of these entries have been fixed and some
 others will be looked at, when found.
 
-In some cases the [bugs.md](/bugs.md) file may note a known macOS problem with an entry.  Should you manage to port the entry, and assuming your changes also attempt to preserve the original intent of the IOCCC entry, we would encourage you to submit a pull request with your ported code.
+In some cases the [bugs.html](bugs.html) file may note a known macOS problem with an entry.  Should you manage to port the entry, and assuming your changes also attempt to preserve the original intent of the IOCCC entry, we would encourage you to submit a pull request with your ported code.
 Please
 see FAQ 5.2 <a href="#fix_an_entry">"How may I submit a fix to an IOCCC entry"</a> for details.
 
@@ -869,7 +869,7 @@ At the same time some entries are not designed to work with clang. There might
 be alternate code added at some point but as above this depends on free time and
 other things that have to be done plus remembering to do it.
 
-See if the problem is mentioned in [bugs.md](/bugs.md).  If you have a change that fixes the problem (even if it just a change to the `Makefile`) that doesn't negatively impact the entry too much, consider submitting that change in the form of a pull request.
+See if the problem is mentioned in [bugs.html](bugs.html).  If you have a change that fixes the problem (even if it just a change to the `Makefile`) that doesn't negatively impact the entry too much, consider submitting that change in the form of a pull request.
 Please
 see FAQ 5.2 <a href="#fix_an_entry">"How may I submit a fix to an IOCCC entry"</a> for details.
 
@@ -948,14 +948,14 @@ information.
 If your system uses **Wayland** and not X11, you might give the IOCCC entries
 that use X11 a try.  They might work but again we do not know.
 
-**IMPORTANT NOTE**: The [IOCCC judges](/judges.html) [do not support IOCCC entries](#no_support).
+**IMPORTANT NOTE**: The [IOCCC judges](judges.html) [do not support IOCCC entries](#no_support).
 So if an IOCCC entry that uses X11 fails under **Wayland**, and you wish to
 provide a fix to the IOCCC entry so that it will run under **Wayland**,
 then consider [submitting a fix](#fix_an_entry) so that it will run under **Wayland**.
 
 Basically: if you discover an entry does not work in Wayland you are welcome to
 provide **alternate code** that works for Wayland. We will happily credit you in
-the [thanks-for-help.md](/thanks-for-help.md) file.
+the [thanks-for-help.html](thanks-for-help.html) file.
 
 
 #### Red Hat based Linux
@@ -984,7 +984,7 @@ the [most recent XQuartz](https://www.xquartz.org) application
 and then run the IOCCC entry from the [Xterm window
 shell](https://en.wikipedia.org/wiki/Xterm).
 
-As an example we will use [1993/jonth](/1993/jonth/README.md) which works
+As an example we will use [1993/jonth](1993/jonth/index.html) which works
 with macOS 14.2.1 (macOS Sonoma).
 
 First of all you will need to install the [most recent
@@ -1007,7 +1007,7 @@ At this point you need to cd to the winning directory and compile it. For exampl
 
 <img alt="compiling an entry in xterm in macOS" src="png/xquartz-entry-compile.png">
 
-And then run the program as directed by the `README.md` file. For example with
+And then run the program as directed by the `index.html` file. For example with
 `1993/jonth`:
 
 <img alt="running 1993/jonth in macOS" src="png/xquartz-1993-jonth.png">
@@ -1127,7 +1127,7 @@ Then to install SDL and SDL2, execute the following command:
 
 ```sh
 brew install sdl2 sdl12-compat
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(opt/homebrew/bin/brew shellenv)"
 ```
 
 
@@ -1187,12 +1187,12 @@ We recommend trying a method suitable for your environment first, if possible.
 #### NOTE: there might be extra SDL packages required
 
 In the case that some entries do not work even with SDL1/SDL2 installed it might
-be that you need additional SDL libraries. See the entry's README.md for
+be that you need additional SDL libraries. See the entry's index.html for
 details. If something is not noted you're welcome to report it as an issue or
 fix it and make a new pull request.
 
 
-### <a name="faq3_9"></a>FAQ 3.9: How do I compile an IOCCC entry that requires (n)curses?
+### <a name="faq3_9"></a><a name="curses"></a>FAQ 3.9: How do I compile an IOCCC entry that requires (n)curses?
 
 This depends on your operating system but below are instructions for Linux and
 macOS with alternative methods for macOS and different package managers with Linux.
@@ -1281,7 +1281,7 @@ Then to install SoX, execute the following command:
 
 ```sh
 brew install sox
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(opt/homebrew/bin/brew shellenv)"
 ```
 
 
@@ -1298,7 +1298,7 @@ sudo port install sox
 
 #### Debian based Linux
 
-Usually the README.md file will explain how to use it under Debian so we do not
+Usually the index.html file will explain how to use it under Debian so we do not
 include this here, at least for now.
 
 
@@ -1309,11 +1309,11 @@ Not applicable, see above.
 
 #### Other Linux distributions
 
-Usually the README.md file will explain how to use it under Linux so we do not
+Usually the index.html file will explain how to use it under Linux so we do not
 include this here, at least for now.
 
 
-### <a name="faq3_11"></a>FAQ 3.10: Why do Makefiles use -Weverything with clang?
+### <a name="faq3_11"></a>FAQ 3.11: Why do Makefiles use -Weverything with clang?
 
 While we know that use of `-Weverything` is generally not recommended
 by `clang` C compiler developers, we do use the `-Weverything`
@@ -1390,8 +1390,8 @@ another function instead of doing it all in `main()` (another reason was that
 some entries that recursively called `main()` caused a crash or otherwise broke
 the entry in modern systems). Some entries do not work in `clang` (or at least do
 not work completely) due to these defects, for instance
-[1989/westley](/1989/westley/README.md); [Cody Boone
-Ferguson](https://www.ioccc.org/authors.html#Cody_Boone_Ferguson) was able to
+[1989/westley](1989/westley/index.html); [Cody Boone
+Ferguson](../authors.html#Cody_Boone_Ferguson) was able to
 get much of it to work and looking at that entry might be of value to your
 submissions, at least if you can figure the code out :-). To see the
 differences, try from `1989/westley`:
@@ -1471,7 +1471,7 @@ may not be present on your system.
 In some cases the IOCCC entry simply has bugs or (Mis)features.
 
 If you are having problems compiling or running an IOCCC entry,
-we recommend that you look in [bugs.md](/bugs.md) to see if
+we recommend that you look in [bugs.html](bugs.html) to see if
 there is a known bugs or (Mis)feature.  In some cases what you
 may think is a bug is actually an feature that was intentionally
 written by the authors.  In some cases the problem is well
@@ -1480,11 +1480,11 @@ known and we are looking for someone to attempt to fix it.
 In some cases there is an alternate version of the IOCCC entry
 that you may wish to try.
 
-It also possible that you may have discovered a bug in an IOCCC
-winner.  If so, you are invited to try an fix the IOCCC entry and
+It also possible that you may have discovered a bug in an winning IOCCC
+entry.  If so, you are invited to try an fix the IOCCC entry and
 submit that fix by way of a [GitHub pull
 request](https://github.com/ioccc-src/temp-test-ioccc/pulls).
-Please see [FAQ 5.2](#faq5_2) for how to submit a fix to an IOCCC entry.
+Please see [FAQ 5.2](#fix_an_entry) for how to submit a fix to an IOCCC entry.
 
 
 ### <a name="faq3_14"></a><a name="tcpserver"></a>FAQ 3.14 - How do I compile and install tcpserver for entries that require it?
@@ -1811,7 +1811,6 @@ for downloading, installing and using OpenGL.
 We recommend trying a method suitable for your environment first, if possible.
 
 
-
 ## <a name="faq4"></a>Section 4: Changes made to IOCCC entries
 
 
@@ -1819,27 +1818,11 @@ We recommend trying a method suitable for your environment first, if possible.
 
 It is very likely in this case that the code was fixed to work for modern
 systems as part of the reworking of the website. If you have this problem in
-some entries you should look at the original code as in `winner.orig.c` or
-`prog.orig.c`. `winner` is the directory name. For instance, one of Landon's
-favourite entries of all time is [1984/mullender](/1984/mullender/README.md) and
-the winner there would be `mullender`. Sometimes the original is in an alt
-version like `winner.alt.c` or `prog.alt.c`. In fact it is advisable to look at
-the original code when reading the author's (and sometimes authors') remarks.
-
-
-
-## <a name="faq4"></a>Section 4: Changes made to IOCCC entries
-
-
-### <a name="faq4_0"></a>FAQ 4.0: Why are some winning entry remarks incongruent with the winning IOCCC code?
-
-It is very likely in this case that the code was fixed to work for modern
-systems as part of the reworking of the website. If you have this problem in
-some entries you should look at the original code as in `winner.orig.c` or
-`prog.orig.c`. `winner` is the directory name. For instance, one of Landon's
-favourite entries of all time is [1984/mullender](/1984/mullender/README.md) and
-the winner there would be `mullender`. Sometimes the original is in an alt
-version like `winner.alt.c` or `prog.alt.c`. In fact it is advisable to look at
+some entries you should look at the original code as in `dirname.orig.c` or
+`prog.orig.c`. `dirname` is the directory name. For instance, one of Landon's
+favourite entries of all time is [1984/mullender](1984/mullender/index.html) and
+the entry's dirname there would be `mullender`. Sometimes the original is in an alt
+version like `dirname.alt.c` or `prog.alt.c`. In fact it is advisable to look at
 the original code when reading the author's (and sometimes authors') remarks.
 
 
@@ -1851,7 +1834,7 @@ A fine line indeed has to be drawn here but it was decided that it is worth it
 because of alarming warnings that can be displayed, in some systems at runtime
 interspersed with the output of the program.
 
-For instance in macOS the entry [1990/tbr](/1990/tbr/README.md) would output the
+For instance in macOS the entry [1990/tbr](1990/tbr/index.html) would output the
 warning in such a way that caused confusing output for the entry, looking like:
 
 ```sh
@@ -1871,7 +1854,7 @@ increased (which could be done for others that are not possible to change to
 `fgets()` though this has not been done).
 
 Some entries can be made to look almost identical to the original entry. For
-instance the fix to [1988/reddy](/1988/reddy/README.md) required only a single
+instance the fix to [1988/reddy](1988/reddy/index.html) required only a single
 `#define` be added.
 
 In the future we, the judges, would prefer that entries use `fgets()` to prevent
@@ -1893,10 +1876,10 @@ can look almost identical.
 
 
 
-### <a name="faq4_2"></a>FAQ 4.2: What was changed in an IOCCC entry source code?
+### <a name="faq4_2"></a><a name="what_changed"></a>FAQ 4.2: What was changed in an IOCCC entry source code?
 
-We have set up make rules to easily do see what was changed in the IOCCC
-winner source.  Using the `Makefile` in the winner directory, use
+We have set up make rules to easily do see what was changed in the winning IOCCC
+entry source.  Using the `Makefile` in the entry directory, use
 one of the following _make(1)_ rules:
 
 The following `make` rules exist to make a difference:
@@ -1922,7 +1905,7 @@ The following `make` rules exist to make a difference:
     `entry.c` to `entry.orig.c`).
 
 For instance one of Landon's all time favourite entries is
-[1984/mullender](/1984/mullender/README.md) so the file names would be:
+[1984/mullender](1984/mullender/index.html) so the file names would be:
 `mullender.orig.c`, `mullender.alt.c` and `mullender.c`. For later years, it
 would be instead `prog.orig.c`, `prog.alt.c` and `prog.c`.
 
@@ -1935,13 +1918,13 @@ make: [Makefile:170: diff_orig_prog] Error 1 (ignored)
 at the end of the output but this is completely normal if there are differences.
 
 If the alt code is the same as the original, say with
-[1984/anonymous](/1984/anonymous/README.md), then naturally there is no point in
+[1984/anonymous](1984/anonymous/index.html), then naturally there is no point in
 running the rule and the same applies for all the other rules but this system
 allows for easily seeing the diffs.
 
 As some examples we'll first look at one that has really long lines which
 will make it harder to see what is different,
-[2001/anonymous](/2001/anonymous/README.md). What you would do is `cd
+[2001/anonymous](2001/anonymous/index.html). What you would do is `cd
 2001/anonymous` and then do:
 
 ```sh
@@ -1950,7 +1933,7 @@ make diff_orig_prog
 
 and then be really confused! :-)
 
-But for an entry like [1991/dds](/1991/dds/README.md), you can see the
+But for an entry like [1991/dds](1991/dds/index.html), you can see the
 differences much more easily. `1991/dds` is a good example where it's very
 simple to see what is different as it's just a couple lines.
 
@@ -1958,7 +1941,7 @@ You might be quite surprised how little some entries had to be changed and at
 the same time how much other entries had to be changed, often with quite complex
 differences! In some cases if the line is rather long, like the above mentioned
 one, it will be harder to see what changed but in other cases like
-[1984/decot](/1984/decot/README.md) or [1986/wall](/1986/wall/README.md) it's a
+[1984/decot](1984/decot/index.html) or [1986/wall](1986/wall/index.html) it's a
 lot easier.
 
 Well, at least it's easier see the differences on a line-by-line basis but maybe
@@ -1966,7 +1949,7 @@ not what actually changed, especially since it's easier to know what was fixed
 when you have compiler errors :-) (though there are, as noted, some examples
 where it's quite easy to see the differences).
 
-[1991/dds](/1991/dds/README.md) is also a good example to see the alt difference
+[1991/dds](1991/dds/index.html) is also a good example to see the alt difference
 very easily. To do that `cd 1991/dds` and then do:
 
 ```sh
@@ -2001,14 +1984,14 @@ be there.
 This is why we recommend that when you read the remarks, sometimes the judges'
 remarks and always the author's or authors' remarks, you look at the original
 code. When the entry source code is called `prog.c` the original code is in
-`prog.orig.c`; otherwise it is `winner.orig.c`. For instance one of Landon's all
-time favourite entries is [1984/mullender](/1984/mullender/README.md) and the
-original code is in [mullender.orig.c](/1984/mullender/mullender.orig.c). In
+`prog.orig.c`; otherwise it is `dirname.orig.c`. For instance one of Landon's all
+time favourite entries is [1984/mullender](1984/mullender/index.html) and the
+original code is in [mullender.orig.c](1984/mullender/mullender.orig.c). In
 some cases, such as `1984/mullender`, the original code is the same as the code
 as no changes were made (there is an alt version for systems that are not
 VAX-11/PDP-11, however).
 
-See also [FAQ 4.2: What was changed in an IOCCC entry source code?](#faq4_2)
+See also [FAQ 4.2: What was changed in an IOCCC entry source code?](#what_changed)
 
 
 ### <a name="faq4_4"></a>FAQ 4.4: What is the meaning of the file ending in .orig.c in IOCCC entries?
@@ -2025,16 +2008,16 @@ we can find.
 
 ### We welcome your help in fixing IOCCC entries
 
-The [known bugs](/bugs.md) file, order by IOCCC years, contains a
+The [known bugs](bugs.html) file, order by IOCCC years, contains a
 list of known bugs & (mis)features.  If you are looking for an IOCCC entry
 to try and fix, this file is a good place to start.
 
-See [FAQ 5.2](#faq5_2) for information on how to submit a fix to
-an IOCCC entry.  Before you consider trying to fix an IOCCC winner,
-please check the [known bugs](/bugs.md) file for the IOCCC entry
+See [FAQ 5.2](#fix_an_entry) for information on how to submit a fix to
+an IOCCC entry.  Before you consider trying to fix an IOCCC winning entry,
+please check the [known bugs](bugs.html) file for the IOCCC entry
 in question.  Note that in several cases what you may have discovered,
 while a (mis)feature is not considered a bug and should **not be fixed**.
-In cases where the bug is known, the entry's [known bugs](/bugs.md) file
+In cases where the bug is known, the entry's [known bugs](bugs.html) file
 section may offer you important fixing clues.
 
 ### We welcome your help on fixing the IOCCC web site
@@ -2053,40 +2036,40 @@ Note that just because you have a fix does not mean it'll be accepted. This
 might be because the author objects or it doesn't fit in some way or another. Of
 course if the entry does not work we'll certainly be more inclined to accept the
 fix. If it is accepted we'll be happy to credit you in the
-[thanks](/thanks-for-help.md) file. If you're a previous winner we will happily
+[thanks](thanks-for-help.html) file. If you're a previous author of a winning IOCCC entry we will happily
 link to your entries; if you're not we can link to your website if you wish.
 
-See [FAQ 5.2](#faq5_2) for information on how to submit a fix to an IOCCC entry.
+See [FAQ 5.2](#fix_an_entry) for information on how to submit a fix to an IOCCC entry.
 
 
 ### <a name="faq5_2"></a><a name="fix_an_entry"></a>FAQ 5.2: How may I submit a fix to an IOCCC entry?
 
-If you see a problem with an IOCCC entry, first check the [known bugs](/bugs.md)
+If you see a problem with an IOCCC entry, first check the [known bugs](bugs.html)
 file.  In some cases what you might think of as a bug is instead a known
 feature.  In some cases the bug is known, but no fix has ever been submitted.
 In other cases you may have found a new problem.
 
-If you do have a fix, and the [known bugs](/bugs.md) file **does not recommend
+If you do have a fix, and the [known bugs](bugs.html) file **does not recommend
 against fixing it**, then please consider opening a [GitHub pull
 request](https://github.com/ioccc-src/winner/pulls) against the master
 [branch](https://github.com/ioccc-src/winner/branches) of the [ioccc-src/winner
 repo](https://github.com/ioccc-src/winner).
 
 BTW: A **problem** is not limited to the code itself.  Fixing typos in files
-such as "_README.md_" files, fixing issues in a "_Makefile_", or otherwise
+such as "_index.html_" files, fixing issues in a "_Makefile_", or otherwise
 correcting an IOCCC entry is **VERY MUCH WELCOME**!  Please use the same
 [GitHub pull request](https://github.com/ioccc-src/winner/pulls) process against
 the master [branch](https://github.com/ioccc-src/winner/branches) of the
 [ioccc-src/winner repo](https://github.com/ioccc-src/winner).
 
-NOTE: some of the issues in the [bugs.md](/bugs.md) file includes just missing
+NOTE: some of the issues in the [bugs.html](bugs.html) file includes just missing
 files and we welcome these too!
 
 **Please also help us fix typos and / or otherwise improve the write-up** of how
 IOCCC winning entries are presented!
 
 In any event we will happily add you to the
-[thanks](/thanks-for-help.md) file for your help!
+[thanks](thanks-for-help.html) file for your help!
 
 And of course, an IOCCC entry may update their own entries
 (metadata as well as source code and any extra files) by opening a
@@ -2101,14 +2084,14 @@ have the final say in the matter.
 ### <a name="faq5_3"></a><a name="report_web_problem"></a>FAQ 5.3: How may I report an IOCCC web site problem?
 
 If you discover a problem with the IOCCC web site that is related
-to a particular IOCCC entry, please see [FAQ 5.1](#faq5_1) for
+to a particular IOCCC entry, please see [FAQ 5.1](#report_bug) for
 information about reporting a bug in an IOCCC entry, and see [FAQ
-5.2](#faq5_2) for information on how to submit a fix to an IOCCC entry.
+5.2](#fix_an_entry) for information on how to submit a fix to an IOCCC entry.
 
 If you discover a problem with the IOCCC web site (such as a broken link, which
 may or may not be specific to a particular IOCCC entry) that is **not related
 to a particular IOCCC entry**, the best way you can help is to submit a fix to
-the IOCCC web site.  See [FAQ 5.4](#faq5_4) for information on submitting fixes
+the IOCCC web site.  See [FAQ 5.4](#fix_web_site) for information on submitting fixes
 to the IOCCC web site.
 
 If you do not have a IOCCC web site fix, and just wish to report a
@@ -2117,13 +2100,13 @@ general IOCCC web site problem, we ask that you first look at the
 if the problem has already been reported.  If it has been reported,
 feel free to add a comment to the issue.  If you do not find an it
 has been reported, then fee free to open a [new IOCCC
-issue](//github.com/ioccc-src/winner/issues).
+issue](https://github.com/ioccc-src/winner/issues).
 
 
 ### <a name="faq5_4"></a><a name="fix_web_site"></a>FAQ 5.4: How may I submit a fix to the IOCCC web site?
 
 For IOCCC web site problems that relate to a particular IOCCC entry, please
-see [FAQ 5.2](#faq5_2) for information on how submit a fix to an IOCCC entry.
+see [FAQ 5.2](#fix_an_entry) for information on how submit a fix to an IOCCC entry.
 
 You may open a [GitHub pull request](https://github.com/ioccc-src/winner/pulls)
 against the master [branch](https://github.com/ioccc-src/winner/branches)
@@ -2142,10 +2125,7 @@ If you see lines containing:
 !!! DO NOT MODIFY THIS FILE - This file is generated by a tool !!!
 ```
 
-This means that the file is generated by a tool from the
-[build-ioccc repo](https://github.com/ioccc-src/build-ioccc)
-using files found in the
-[ioccc-src/winner repo](https://github.com/ioccc-src/winner).
+This means that the file is generated by a tool from a [bin directory tool](bin/index.html).
 
 XXX - the text below for this FAQ entry needs to be updated - XXX
 XXX - the text needs to be synced with what tools be written will do - XXX
@@ -2170,7 +2150,7 @@ Those **content source:** comment lines will give you a clue to the content that
 is used by the tool to generate the **DO NOT MODIFY THIS FILE** HTML file.
 
 When in doubt, consider opening up an [IOCCC issue](https://github.com/ioccc-src/winner/issues).
-See [FAQ 5.3](#faq5_3) for information on opening up an IOCCC issue.
+See [FAQ 5.3](#report_web_problem) for information on opening up an IOCCC issue.
 
 
 ## <a name="faq5_5"></a><a name="fix_author"></a>FAQ 5.5: How may I correct or update IOCCC author information?
@@ -2181,11 +2161,11 @@ Authors of IOCCC winning entries are kept in JSON files of the form:
 author/author_handle.json
 ```
 
-where _author_handle_ is an author handle.  See [FAQ 6.5](#faq6_5) for more
+where _author_handle_ is an author handle.  See [FAQ 6.5](#author_handle) for more
 information about an author handles.
 
 The contents of these JSON files contain the best known information
-about authors of IOCCC entries.  See [FAQ 6.6](#faq6_6) for information
+about authors of IOCCC entries.  See [FAQ 6.6](#author_json) for information
 about the contents of these JSON file and how they are used.
 
 You may update IOCCC author information in a `author_handle.json` file
@@ -2199,7 +2179,7 @@ of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner).
 We would appreciate if you try to fix the broken (the link goes nowhere) or wrong
 (the link goes to something that clearly is not the original intent) web link.
 If wish to fix such links, you may open a GitHub pull request as described in
-[FAQ 5.4](#faq5_4). In the case of dead links or invalid links it doesn't matter
+[FAQ 5.4](#fix_web_site). In the case of dead links or invalid links it doesn't matter
 if it's a specific winner or not; the procedure is the same: open a pull request
 to fix the problem.
 
@@ -2224,7 +2204,7 @@ please consider submitting a change to replace the link accordingly.
 
 If there is no alternative that you can find you might want to remove the link
 instead by replacing the link with just phrase of text.  For example,
-if the text in some `README.md` file was:
+if the text in some `index.html` file was:
 
 ```
 See the [author's description of the program](https://example.com) for more information.
@@ -2238,7 +2218,7 @@ replace that text with:
 See the **author's description of the program** (sorry the content is no longer available) for more information.
 ```
 
-If you just wish to report the bad link issue, see [FAQ 5.3](#faq5_3).
+If you just wish to report the bad link issue, see [FAQ 5.3](#report_web_problem).
 
 
 ## <a name="faq6"></a>Section 6: Miscellaneous IOCCC
@@ -2252,7 +2232,7 @@ and/or number of rows have also changed.
 
 The `winner.orig.c` file contains the original source code that was
 subjected to rule 2 of the given IOCCC.  You may also wish to see
-the [/archive](/archive) directory where you can find all the
+the [/archive](archive) directory where you can find all the
 original winning entries as compressed tar files for a given year.
 
 In some cases the entry may have abused rule 2 and declared an
@@ -2262,7 +2242,7 @@ get around rule 2 size limits is discouraged).
 
 ### <a name="faq6_1"></a>FAQ 6.1: Is there a list of known bugs and misfeatures of IOCCC entries?
 
-Yes! Please see [bugs.md](/bugs.md) for a list of known bugs and/or issues of a
+Yes! Please see [bugs.html](bugs.html) for a list of known bugs and/or issues of a
 variety of kinds.
 
 Note that just because an entry is not in the bugs file does not mean there is
@@ -2278,10 +2258,10 @@ We are not accepting mirror requests at this time, sorry.  However you are free 
 ### <a name="faq6_3"></a>FAQ 6.3: May I use parts of the IOCCC in an article, book, newsletter, or instructional material?
 
 While IOCCC judges look favorably on most requests to use IOCCC material,
-we request that you ask the [IOCCC judges](/judges.html) first.
+we request that you ask the [IOCCC judges](judges.html) first.
 
 Please send your request using the instructions on the [contacting
-the IOCCC Judges](/contact.html) page.
+the IOCCC Judges](contact.html) page.
 
 
 ### <a name="faq6_4"></a>FAQ 6.4: Why do you sometimes use the first person plural?
@@ -2295,14 +2275,14 @@ Willard](https://en.wikipedia.org/wiki/F._D._C._Willard) as well
 as the [APS New Open Access
 Initiative](https://journals.aps.org/2014/04/01/aps-announces-a-new-open-access-initiative).
 
-The number of [IOCCC judges](https://www.ioccc.org/judges.html) has
+The number of [IOCCC judges](../judges.html) has
 always been "> 1" such that IOCCC judges often prefer to themselves
 in the plural, sometimes [in the common
 plural](https://en.wikipedia.org/wiki/Plural), sometimes in the
 [first person plural](https://en.wikipedia.org/wiki/Nosism), there
 may be some who reject such a practice.  Therefore please consider
 that when you believe that just one of the [IOCCC
-judges](https://www.ioccc.org/judges.html) is in action, you may
+judges](../judges.html) is in action, you may
 consider that [F. D. C.
 Willard](https://en.wikipedia.org/wiki/F._D._C._Willard) has been
 consulted, agreed, and has authorized the statement thus allowing
@@ -2318,7 +2298,7 @@ exaggeration](https://books.google.com/books?id=ms3tce7BgJsC&lpg=PA134&vq=%22the
 
 p.s. Here is an image of F. D. C. Willard:
 
-[F D C Willard](/png/F.D.C.Willard.png)
+[F D C Willard](png/F.D.C.Willard.png)
 
 
 ### <a name="faq6_5"></a><a name="author_handle"></a>FAQ 6.5: What is an author handle?
@@ -2332,7 +2312,7 @@ For each `author_handle`, there will be a JSON file of the form:
 author/author_handle.json
 ```
 
-See [FAQ 6.6](#faq6_6) for information about the contents of these JSON file and
+See [FAQ 6.6](#author_json) for information about the contents of these JSON file and
 how they are used.
 
 Because the `author_handle` is used to form a JSON filename, the string must be
@@ -2374,7 +2354,7 @@ The latter form is in case there are more than one anonymous author in a given
 year.
 
 NOTE: even if the directory name is not `anonymous` the above rules apply as in
-in the case of [2005/anon](/2005/anon/anon.c).
+in the case of [2005/anon](2005/anon/anon.c).
 
 Anonymous `author_handle`'s match this regexp:
 
@@ -2382,7 +2362,7 @@ Anonymous `author_handle`'s match this regexp:
 Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$
 ```
 
-See [FAQ 5.5](#faq5_5) for information about how to update
+See [FAQ 5.5](#fix_author) for information about how to update
 and/or correct IOCCC author information.
 
 
@@ -2392,16 +2372,14 @@ and/or correct IOCCC author information.
 information about authors of IOCCC entries and is used to help form
 HTML files as well to contact an author.
 
-The content of these JSON files are used by tools from the [build-ioccc
-repo](https://github.com/ioccc-src/build-ioccc) to help build HTML
-content for the [official IOCCC web site](https://www.ioccc.org).
+The content of these JSON files are used by tools from a [bin directory tool](bin/index.html)
+to help build HTML content for the [official IOCCC web site](https://www.ioccc.org).
 For example, the `index.html` file for each IOCCC entry contains
-selected information about the authors.  Tools from the [build-ioccc
-repo](https://github.com/ioccc-src/build-ioccc) use the content of
-these JSON files to generate the `index.html` files for each IOCCC
+selected information about the authors.  Tools from the [bin directory](bin/index.html)
+use the content of these JSON files to generate the `index.html` files for each IOCCC
 winning entry.
 
-Moreover, should the [IOCCC judges](/judges.html) need to
+Moreover, should the [IOCCC judges](judges.html) need to
 contact an authors of a IOCCC entry, they will consult the contents
 of the author's JSON file for ways to contact them.
 
@@ -2412,13 +2390,13 @@ of the form:
 author/author_handle.json
 ```
 
-where _author_handle_ is an author handle.  See [FAQ 6.5](#faq6_5) for more
+where _author_handle_ is an author handle.  See [FAQ 6.5](#author_handle) for more
 information about an author handles.
 
 #### author_handle.json JSON file contents
 
 The syntax of a `author_handle.json` follows the _So-called JSON spec_.
-See [json_README.md](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/json_README.md#so_called_json_spec)
+See [json_index.html](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/json_index.html#so_called_json_spec)
 for information on the _So-called JSON spec_.
 
 A good way to understand the JSON file contents of a `author_handle.json` file
@@ -2438,7 +2416,6 @@ As of _Thu Nov 30 23:51:12 UTC 2023_, the contents was as follows:
     "full_name" : "Yusuke Endoh",
     "sort_word" : "endoh",
     "location_code" : "JP",
-    "location_name" : "Japan",
     "email" : "mame@ruby-lang.org",
     "url" : "https://mametter.hatenablog.com",
     "alt_url" : null,
@@ -2505,8 +2482,7 @@ As of _Thu Nov 30 23:51:12 UTC 2023_, the _JSON value_ **MUST** be _"1.0 2023-06
 The _author_JSON_format_version_ would only changed when the overall format
 of the these files is modified: and then only those who maintain the
 [official IOCCC web site](https://www.ioccc.org) would be the one to do this
-in conjunction with changes to the [build-ioccc
-repo](https://github.com/ioccc-src/build-ioccc).
+in conjunction with changes to [bin directory tools](bin/index.html).
 
 
 ##### author_handle
@@ -2520,7 +2496,7 @@ This _JSON member_ holds the author handle of the author.
 There **MUST** be one and only one `author_handle` _JSON member_
 and the _JSON value_ **MUST** be a _JSON string_ that is also a value author handle.
 
-See [FAQ 6.5](#faq6_5) for more information about an author handles.
+See [FAQ 6.5](#author_handle) for more information about an author handles.
 
 Normally the _author_handle_ _JSON value_ should **NOT** be changed
 **unless there is a strong reason to do so**.  If the  _JSON value_
@@ -2595,43 +2571,6 @@ ISO 3166-1 alpha-2 codes belong to locations that are not technically
 a country, such as "Antarctica" or a User-assigned code.
 
 If the author wishes to not specify a location, they should select **XX**.
-
-
-##### location_name
-
-```json
-    "location_name" : "Japan",
-```
-
-This _JSON member_ holds the string that is the canonical location name as reported by the
-`soup/location` tool from the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry),
-when given the [location code](#location_code) as specified above.
-
-There **MUST** be one and only one `location_code` _JSON member_ and the _JSON value_ **MUST**
-be a _JSON string_.  Moreover the string **MUST** be what the `soup/location` tool prints
-when given the `location_code` as an argument.
-
-We use the term "location" (and not "country") because some of the
-ISO 3166-1 alpha-2 codes belong to locations that are not technically
-a country, such as "Antarctica" or a User-assigned code.
-
-Often a given location may have a long official name, and multiple common names.
-For names associated with the location **DE** might be:
-
-```
-Germany
-Federal Republic of Germany
-Bundesrepublik Deutschland
-Deutschland
-...
-```
-
-The "location_name" printed by the `soup/location` tool is often a
-short, common string that is sometimes called the formal location
-name for the given ISO 3166 code.  Thus in the above example for _DE_,
-the location name of _Germany_ is used.
-
-If the author wishes to not specify a location, they should select **Anonymous location**.
 
 
 ##### email
@@ -2895,14 +2834,14 @@ The `winning_entry_set` _JSON member_ holds _JSON array_ containing one or more 
 There **MUST** be one and only one `winning_entry_set` and the  _JSON value_ **MUST**
 be a non-empty _JSON array_.  Each value in that _JSON array_ **MUST** must contain
 a _JSON member_ whose _JSON name_ **MUST** be "_entry_id_" and those _JSON value_
-is a valid winner ID.
+is a valid entry ID.
 
 Due to the nature of the  _So-called JSON spec_, the last value of the `winning_entry_set`
 _JSON array_ cannot end in a comma (_,_).
 
-See [FAQ 6.7](#faq6_7) for information about winner ids.
+See [FAQ 6.7](#author_json) for information about entry ids.
 
-See [FAQ 5.5](#faq5_5) for information about how to update
+See [FAQ 5.5](#fix_author) for information about how to update
 and/or correct IOCCC author information.
 
 
@@ -2928,15 +2867,15 @@ The `entry_id` for that winning entry is:
 
 ### <a name="faq6_8"></a>FAQ 6.8: What is the purpose of the .top, .year and .path files?
 
-The [.top](/.top) file resides at the top directory.  This file contains the complete list
+The [.top](.top) file resides at the top directory.  This file contains the complete list
 of IOCCC years.
 
 Under each IOCCC year. one will find a `.year` file.  These files contain directory paths from the top directory,
-of the IOCCC entry directories for a given year.  For example, see the [1984/.year](/.1984/.year) file.
+of the IOCCC entry directories for a given year.  For example, see the [1984/.year](.1984/.year) file.
 
 Under each IOCCC entry directory, you will find a `.path` file.
 These files contain the directory path from the top directory.
-For example see [1984/anonymous/.path](/1984/anonymous/.path).
+For example see [1984/anonymous/.path](1984/anonymous/.path).
 
 The .top, .year and .path files are generated from the top level Makefile, by:
 
@@ -3090,7 +3029,7 @@ You're ready to make your changes now!
 
 Here you must use your wits, knowledge, creativity and whatever else you have.
 Let's say that Cody wants to update his file
-[/2020/ferguson1/play.sh](/2020/ferguson1/play.sh) script. He would open it in
+[/2020/ferguson1/play.sh](2020/ferguson1/play.sh) script. He would open it in
 his editor of choice (in his case vim) and make the changes. He would then make
 sure (as there is a last updated date) to update the last updated date. For
 instance he might add the following:
@@ -3140,7 +3079,7 @@ Now you'd be ready to make your commits.
 
 Before doing anything else, however, a new branch needs to be created.
 Continuing the example above for
-[2020/ferguson1/play.sh](/2020/ferguson1/play.sh), it might be that:
+[2020/ferguson1/play.sh](2020/ferguson1/play.sh), it might be that:
 
 
 ```sh

@@ -77,7 +77,7 @@ clang -o prog prog.c mullender.c
 ./prog
 ```
 
-You can enjoy the legendary winner of the first IOCCC, again.
+You can enjoy the legendary winning entry of the first IOCCC, again.
 
 
 ### Internal

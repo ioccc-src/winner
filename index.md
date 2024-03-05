@@ -46,8 +46,11 @@ The goals of the IOCCC:
 # The IOCCC is currently **CLOSED**.
 
 Right now, you **CANNOT register** as a contestant with the IOCCC,<BR>
-nor can you submit an entry because the **IOCCC** is yet **NOT open**.
+nor can you send us a submission, because the **IOCCC** is yet **NOT open**.
 <BR>
-Please see the watch the [IOCCC news](news.html#news) below for information on the next **IOCCC**.
+You may wish to follow [IOCCC on Mastodon](https://fosstodon.org/@ioccc) as we announce
+the start of an new IOCCC there.
+<BR>
+Speaking of IOCCC news, you may wish to visit [IOCCC news](news.html#news) for information on the next **IOCCC**.
 <BR>
 You may also check on the [status.json](status.json) for the current status of the **IOCCC**.

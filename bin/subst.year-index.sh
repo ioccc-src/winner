@@ -58,7 +58,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.1 2024-02-23"
+export VERSION="1.1 2024-03-02"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -460,7 +460,7 @@ echo "KEYWORDS=IOCCC, $YEAR_DIR, IOCCC $YEAR_DIR, IOCCC entry, The $ORDINAL IOCC
 echo "-s"
 echo "HEADER_2=$YEAR_DIR - The $ORDINAL IOCCC"
 
-# output topnav links
+# output topnav left hand side links
 #
 awk -v year_arg="$YEAR_DIR" -f "$YEAR_NAVBAR_AWK" "$TOP_FILE"
 status="$?"
@@ -468,6 +468,13 @@ if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: subst.year-navbar.awk failed, error: $status" 1>&2
     exit 1
 fi
+
+# output topnav right hand side links
+#
+echo "-s"
+echo "INVENTORY_LINK=#inventory"
+echo "-s"
+echo "INVENTORY_TEXT=Inventory"
 
 # All Done!!! -- Jessica Noll, Age 2
 #

@@ -3,13 +3,13 @@
 
 ## Standard IOCCC stuff
 
-Look at the README.md file for the given winning entry for information
+View the `index.html` web page for the given winning entry for information on how
 on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
 The IOCCC has its own domain.  The IOCCC has an official home page is now:
-<https://www.ioccc.org>.
+[www.ioccc.org](https://www.ioccc.org).
 
 Use `make` to compile entries.  It is possible that on BSD or non-Unix
 systems the Makefile needs to be changed.  See the Makefile for details.
@@ -35,9 +35,9 @@ Landon was unable to contact Sriram Srinivasan at the start of
 the 1998 IOCCC season.  Having not heard from Sriram, Landon put out
 a call for new IOCCC judges.  A number of excellent people applied.
 
-Landon selected Leonid A. Broukhis, a two time IOCCC winner, as a
+Landon selected Leonid A. Broukhis, a two time IOCCC author, as a
 co-judge.   Landon and Leo together selected Jeremy Horn and Peter
-Seebach.  The four judges (<https://www.ioccc.org/judges.html>) together worked
+Seebach.  The four judges (../judges.html) together worked
 thru-out the 1998 IOCCC season.
 
 
@@ -55,7 +55,7 @@ Bakker](https://www.ioccc.org/authors.html#Bas_de_Bakker) and [David
 Lowe](https://www.ioccc.org/authors.html#J_David_Lowe) won twice this year as
 well.
 
-As we stated in the [guidelines](guidelines.txt), the names of the winners are
+As we stated in the [guidelines](guidelines.txt), the authors of the winning entries are
 as much news to us as they are to you because we keep authorship separate from
 rest of the entry.  Some people have it, we guess!
 
@@ -64,8 +64,8 @@ for the fact that they didn't work.  If you didn't win, but think you
 had a chance: test your program, fix it and submit it next year!
 
 This year we awarded some outstanding entries.  We recommend that you
-look at all of the winners.  The list of winners is a bit too long to
-say something about every winner.  On the other hand a partial mention
+look at all of the winning enties.  The list of winning entries is a bit too long to
+say something about every entry.  On the other hand a partial mention
 of a few is in order:
 
 - Audiences were very impressed with the Best of Show entry.
@@ -76,9 +76,9 @@ of a few is in order:
   impressed with CPP code expansion liked the entry that translated
   lambda expressions into combinator expressions.
 - Logic minded folks will get somewhat twisted up while following the
-  flow of the [Best Flow Control entry](1998/schnitzi/README.md).
+  flow of the [Best Flow Control entry](1998/schnitzi/index.html).
 - Those who know the PostScript language will be 'bemused' by
-  the [Best Encapsulation entry](bas1/README.md).
+  the [Best Encapsulation entry](bas1/index.html).
 
 There were some outstanding entries that did not win.  Unfortunately
 some very good entries lost because they:
@@ -111,6 +111,12 @@ Send such email to:
 questions@ioccc.org
 ```
 
+**IMPORTANT NOTE**: The email addresses found above are for historical
+purposes only, and should not be used today.  See
+[contact.html](../contact.html) for up to date contact details
+as well as details on how to provide fixes to any of the entries.
+See also [the IOCCC FAQ](../faq.html) for addition information on the IOCCC.
+
 If you use, distribute or publish these entries in some way, please drop
 us a line.  We enjoy seeing who, where and how the contest is used.
 
@@ -118,18 +124,9 @@ You must include the words 'ioccc question' in the subject of your email
 message when sending email to the judges.
 
 The next IOCCC is planned to start towards the end of 1999.  Watch
-<https://www.ioccc.org>
+[www.ioccc.org](https://www.ioccc.org)
 
 for news of the next contest.
-
-
-## Final Comments
-
-**IMPORTANT NOTE**: The email addresses found above are for historical
-purposes only, and should not be used today.  See
-[contact.html](/contact.html) for up to date contact details
-as well as details on how to provide fixes to any of the entries.
-See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
 
 
 # Copyright and License
@@ -137,5 +134,5 @@ See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
 Copyright (c) 1999,2023, Landon Curt Noll, Jeremy Horn, Peter Seebach and Leonid A. Broukhis. All Rights Reserved.
 This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
-If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
-(but does not require) if you were to [send us a note about your use](/contact.html).
+If you do use this work in some form, the [IOCCC judges](../judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](../contact.html).

@@ -35,7 +35,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [1993 lmfjyh in bugs.md](/bugs.md#1993-lmfjyh).
+For more detailed information see [1993 lmfjyh bugs](../../bugs.html#1993_lmfjyh).
 
 
 ## To use:

@@ -3,7 +3,7 @@
 
 ## Standard IOCCC stuff
 
-Look at the `README.md` file for the given winner for information
+View the `index.html` web page for the given winning entry for information on how
 on how to compile the entry and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
@@ -15,7 +15,7 @@ Use `make(1)` to compile entries.  It is possible that on non-Unix / non-Linux
 systems the `Makefile` needs to be changed.  See the `Makefile` for details.
 
 This year we included most of the information included by the submitters
-in the `README.md` files.
+in the `README.md` files (that were used to build the `index.html` web pages).
 
 Read over the `Makefile` for compile/build issues.  Your system may require
 certain changes (add or remove a library, add or remove a `#define`).
@@ -27,7 +27,7 @@ local compiler.
 
 ## Remarks on some of the entries
 
-We believe you will be impressed with this year's winners.
+We believe you will be impressed with this year's winning entries.
 
 In particular:
 
@@ -53,17 +53,17 @@ whitespace in their source code and during execution.
 + The [Best 2D puzzle](giljade/giljade.c) takes editorial license with expressions as well as the
 with the [vi editor](https://en.wikipedia.org/wiki/Vi).
 
-+ The [Most ambiguous language](chia/chia.c) winner is really a C program.
++ The [Most ambiguous language](chia/chia.c) entry is really a C program.
 
-+ The [Most superfluous output](boutines/boutines.c) winner is simply
++ The [Most superfluous output](boutines/boutines.c) entry is simply
 [Voronoi](Voronoi)-lific!
 
 + Try not to have your sense of good coding offended by the [Most
-discourteous interpreter](timwi/timwi.c) winner.
+discourteous interpreter](timwi/timwi.c) entry.
 
 + The [Best use of the www](mynx/mynx.c) doesn't include those letters.
 
-+ You will be puzzled by the [Best 3D puzzle](anon/anon.c) winner; we are sure!
++ You will be puzzled by the [Best 3D puzzle](anon/anon.c) entry; we are sure!
 
 + The [Most ingenious puzzle solution](aidan/aidan.c) might puzzle you more while it
 puzzles out some puzzles: all in a puzzling way!  :-)
@@ -86,9 +86,9 @@ them for the next IOCCC.
 
 ## Final Comments
 
-**IMPORTANT NOTE**: See [contact.html](/contact.html) for up to date contact details
+**IMPORTANT NOTE**: See [contact.html](../contact.html) for up to date contact details
 as well as details on how to provide fixes to any of the entries.
-See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
+See also [the IOCCC FAQ](../faq.html) for addition information on the IOCCC.
 
 
 # Copyright and License
@@ -96,5 +96,5 @@ See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
 Copyright (c) 2005,2023, Landon Curt Noll and Leonid A. Broukhis. All Rights Reserved.
 This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
-If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
-(but does not require) if you were to [send us a note about your use](/contact.html).
+If you do use this work in some form, the [IOCCC judges](../judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](../contact.html).

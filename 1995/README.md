@@ -1,11 +1,11 @@
 # Twelfth International Obfuscated C Code Contest
 
-Look at the README.md file for the given winning entry for information
+View the `index.html` web page for the given winning entry for information on how
 on how to compile and run the winning program.  Look at the winning source and
 try to figure how it does what it does! You may then wish to look at the
 `Author's remarks` section for even more details.
 
-The IOCCC has an official home page, <https://www.ioccc.org>, which contains
+The IOCCC has an official home page, [www.ioccc.org](https://www.ioccc.org), which contains
 previous winning entries, information about the judges, announcements and much
 more.
 
@@ -21,14 +21,14 @@ This year [Sriram Srinivasan](http://www.malhar.net/sriram/) joined the judging.
 The moderator of
 [comp.unix.wizards](https://groups.google.com/g/comp.unix.wizards) did not feel
 that the IOCCC was "wizardly" enough to be posted to comp.unix.wizards so we will
-no longer post the winners to this newsgroup - we'll let you the reader decide
+no longer post the winning entries to this newsgroup - we'll let you the reader decide
 for yourself the wizardry of these entries.
 
 This year there were several people who won more than once and several [previous
-winners](/authors.html) as well. The judging was done without knowledge of the
-names of the submitters - multiple winners were a coincidence. Since we tend to
-discount entries that are similar to previous winners, these people had to come
-with original ideas to stay in the winners circle.
+winning entries](../authors.html) as well. The judging was done without knowledge of the
+names of the submitters - multiple winning entries were a coincidence. Since we tend to
+discount entries that are similar to previous entries, these people had to come
+with original ideas to stay in the winning entry circle.
 
 We wish to thank [CAIP at Rutgers
 University](https://catalogs.rutgers.edu/generated/nb-grad_0305/pg20199.html)
@@ -38,16 +38,16 @@ for the use of their machines.
 
 Due to changes in the [USENIX
 conference](https://www.usenix.org/conferences/all) calendar, the [1996
-contest](/years.html#1996) will be delayed.  Because there will be no Summer
+contest](../years.html#1996) will be delayed.  Because there will be no Summer
 1996 USENIX conference, the 1996 IOCCC entries will be announced at the Jan 1997
 USENIX conference.
 
 The 1996 contest will not open until sometime in October 1996, and will close
 sometime around the end of December 1996.  The [rules for the 1996
-contest](/1996/rules.txt) have not been formed at this time and are not expected
+contest](../1996/rules.txt) have not been formed at this time and are not expected
 to be ready for distribution until late September 1996.
 
-Be sure to wait until the [1996 rules](/1996/rules.txt) are posted before
+Be sure to wait until the [1996 rules](../1996/rules.txt) are posted before
 submitting entries.  Rules differ from year to year, sometimes in significant
 ways.
 
@@ -68,9 +68,9 @@ us a line.  We enjoy seeing who, where and how the contest is used.
 
 **IMPORTANT NOTE**: The email addresses found above are for historical
 purposes only, and should not be used today.  See
-[contact.html](/contact.html) for up to date contact details
+[contact.html](../contact.html) for up to date contact details
 as well as details on how to provide fixes to any of the entries.
-See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
+See also [the IOCCC FAQ](../faq.html) for addition information on the IOCCC.
 
 
 ## Credits
@@ -151,5 +151,5 @@ Dessert: Key lime pie
 Copyright (c) 1995,2023, Landon Curt Noll, Larry Bassel, Sriram Srinivasan. All Rights Reserved.
 This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
-If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
-(but does not require) if you were to [send us a note about your use](/contact.html).
+If you do use this work in some form, the [IOCCC judges](../judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](../contact.html).

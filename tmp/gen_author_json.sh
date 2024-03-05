@@ -8,7 +8,7 @@
 # XXX - This is a temporary utility that will be replaced when
 #	the .entry.json files are built.
 #
-# Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+# Copyright (c) 2023,2024 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -34,7 +34,7 @@
 
 # setup
 #
-export VERSION="1.0 2023-06-06"
+export VERSION="1.1 2024-03-04"
 NAME=$(basename "$0"); export NAME
 export JSTRENCODE="../../mkiocccentry/jparse/jstrencode"
 export LOCATION="../../mkiocccentry/soup/location"
@@ -489,11 +489,6 @@ grep -v '^#' "$AUTHOR_HANDLE_TXT" | while read -r AUTHOR_HANDLE; do
 		echo '    "location_code" : null,'
 	    else
 		echo '    "location_code" : "'"$LOCATION_CODE"'",'
-	    fi
-	    if [[ $LOCATION_NAME == null || -z $LOCATION_NAME ]]; then
-		echo '    "location_name" : null,'
-	    else
-		echo '    "location_name" : "'"$LOCATION_NAME"'",'
 	    fi
 	    if [[ $EMAIL == null || -z $EMAIL ]]; then
 		echo '    "email" : null,'

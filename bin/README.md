@@ -1,11 +1,11 @@
 # bin
 
-The directory holds [bin](README.md) directory
+The directory holds [bin](index.html) directory
 holds tools that build files, such as HTML content, for the
 [official IOCCC web site](https://www.ioccc.org).
 
-For HTML content, the [bin](README.md) directory tools
-makes use of HTML fragments from the [inc](../inc/README.md) directory
+For HTML content, the [bin](index.html) directory tools
+makes use of HTML fragments from the [inc](../inc/index.html) directory
 as well as various JSON files and other content from the
 [IOCCC GitHub repo](https://github.com/ioccc-src/temp-test-ioccc).
 
@@ -93,7 +93,7 @@ bin/gen-location.sh -v 1
 
 ### [gen-other-html.sh](gen-other-html.sh)
 
-Generate entry HTML files from markdown other than README.md to index.html HTML files.
+Generate entry HTML files from markdown other than index.html to index.html HTML files.
 
 Usage:
 
@@ -124,12 +124,18 @@ bin/gen-top-html.sh -v 1
 
 Examples of top level HTML pages built by this tool include:
 
-- [CODE_OF_CONDUCT.html](CODE_OF_CONDUCT.html)
-- [README.html](README.html)
-- [bugs.html](bugs.html)
-- [contact.html](contact.html)
-- [faq.html](faq.html)
-- [thanks-for-help.html](thanks-for-help.html)
+- [CODE_OF_CONDUCT.html](../CODE_OF_CONDUCT.html)
+- [archive/historic/index.html](../archive/historic/index.html)
+- [bin/index.html](../bin/index.html)
+- [bugs.html](../bugs.html)
+- [contact.html](../contact.html)
+- [faq.html](../faq.html)
+- [inc/index.html](../inc/index.html)
+- [index.html](../index.html)
+- [thanks-for-help.html](../thanks-for-help.html)
+- [judges.html](../judges.html)
+- [news.html](../news.html)
+- [thanks-for-help.html](../thanks-for-help.html)
 
 
 ### [gen-year-index.sh](gen-year-index.sh)
@@ -156,7 +162,7 @@ bin/gen-years.sh -v 1
 
 ### [ioccc-status.sh](ioccc-status)
 
-Updates the [status.json](/status.json) file.
+Updates the [status.json](../status.json) file.
 
 
 ### [manifest.entry.json.awk](manifest.entry.json.awk)
@@ -168,7 +174,7 @@ Output manifest table from a entry .entry.json file.
 
 This is the primary tool that forms IOCCC generated HTML content from
 markdown files (permanent markdown files or temporarily generated
-markdown files) and HTML fragments from the [inc](/inc) directory.
+markdown files) and HTML fragments from the [inc](../inc/index.html) directory.
 
 The [../inc/md2html.cfg](../inc/md2html.cfg) configuration file is
 used by [md2html.sh](md2html.sh) to drive the generation process.
@@ -198,11 +204,11 @@ Wrapper tool to run pandoc.
 
 Runs [readme2index.sh](readme2index.sh) if the entry directory
 does not have a non-empty `index.hmtl` file, or if either
-`.entry.json` or `README.md` is newer than the `index.hmtl` file.
+`.entry.json` or `index.html` is newer than the `index.hmtl` file.
 
 This is useful when only a few entries have been
 modified (resulting in an updated `.entry.json` file)
-or if the `README.md` of a few entries have been changed.
+or if the `index.html` of a few entries have been changed.
 
 While the [readme2index.sh](readme2index.sh) take a few
 seconds to run, when applied to 300+ entries,
@@ -218,7 +224,7 @@ bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1
 
 **NOTE**: This command assumes that the relative
 modification times for `index.hmtl`, .entry.json`,
-and `README.md` are correct.  If in doubt, use:
+and `index.html` are correct.  If in doubt, use:
 
 ```sh
 bin/all-run.sh -v 3 bin/readme2index.sh -v 1
@@ -227,7 +233,7 @@ bin/all-run.sh -v 3 bin/readme2index.sh -v 1
 
 ### [readme2index.sh](readme2index.sh)
 
-Convert a entry README.md into entry directory index.html.
+Convert a entry index.html into entry directory index.html.
 
 
 ### [sgi.sh](sgi.sh)
@@ -337,15 +343,15 @@ site](https://www.ioccc.org).
 
 Nearly all IOCCC related HTML pages are built from markdown files,
 from either permanent markdown files or temporary generated markdown files,
-as well as HTML fragments from the [inc](../inc/README.md) directory.
+as well as HTML fragments from the [inc](../inc/index.html) directory.
 
-Most HTML content is built from permanant markdown files, such as a `README.md`
+Most HTML content is built from permanant markdown files, such as a `index.html`
 markdown file found in each entry directory.  Some HTML content are generated
 from temporary markdown files.  These temporary markdown files are produced by
-tools in the [bin](README.md) directory and exist only while the tool is running.
+tools in the [bin](index.html) directory and exist only while the tool is running.
 
 In addition to converting markdown to HTML, the canonical way that HTML content is
-built uses, by default, files from the [inc](../inc/README.md) directory, of the form:
+built uses, by default, files from the [inc](../inc/index.html) directory, of the form:
 
 ```
 *.default.html
@@ -522,17 +528,17 @@ and except 'after tool' output), or command will exit non-zero, unless -S is giv
 only a warning about un-substituted tokens will be written to stderr.
 
 
-The command line of tools in the [bin](README.md) directory,
+The command line of tools in the [bin](index.html) directory,
 and perhaps modified via [md2html config file](../inc/md2html.cfg) file may change
 to using a different filename for a given phase.
 
-For example when forming the HTML from `2020/ferguson2/chocolate-cake.md`,
+For example when forming the HTML from `2020/ferguson2/chocolate-cake.html`,
 a different "topnav" navigation bar is needed.  So instead of the
 usual top navigation bar that normally directs people to the previous
 entry for the year, or go up to the year page, or to the next entry
 for the year, a top navigation bar to just go up to the entry's
 main page is needed.   A line in the [md2html config file](../inc/md2html.cfg) file
-that refers to `2020/ferguson1/chocolate-cake.md` may specify use
+that refers to `2020/ferguson1/chocolate-cake.html` may specify use
 of `topnav.up2index.html` instead of using the `topnav.default.html` default.
 
 The HTML phase may be skipped resulting in no HTML output during a given phase.
@@ -551,7 +557,7 @@ on the [official IOCCC web site](https://www.ioccc.org).
 These files are used to form **MOST** of the HTML content
 on the [experimental web site](https://ioccc-src.github.io/temp-test-ioccc/).
 
-... and in particular files under [inc](../inc/README.md) that are of the form (called default HTML files) ...:
+... and in particular files under [inc](../inc/index.html) that are of the form (called default HTML files) ...:
 
 ```
 *.default.html
@@ -567,7 +573,7 @@ not impact **MOST** of the HTML content.
 # Why do we do not use certain well-known HTML technologies
 
 You may wonder why we need these files in the first place.
-You may wonder why we even need the tools in the [bin](README.md) directory
+You may wonder why we even need the tools in the [bin](index.html) directory
 when there other solutions available to form web pages.
 
 
@@ -724,7 +730,7 @@ The latter form is in case there are more than one anonymous author in a given
 year.
 
 NOTE: even if the directory name is not `anonymous` the above rules apply as in
-in the case of [2005/anon](/2005/anon/anon.c).
+in the case of [2005/anon](../2005/anon/anon.c).
 
 Anonymous `author_handle`'s match this regexp:
 
@@ -775,7 +781,7 @@ Each `year` will have a file directory under it named:
 ```
 
 The contents of the `.year` file is the year string of the directory. For
-instance, [2020/.year](/2020/.year) has the string: `2020`.
+instance, [2020/.year](,,/2020/.year) has the string: `2020`.
 
 
 ## `dir`

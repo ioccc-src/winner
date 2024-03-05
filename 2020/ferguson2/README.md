@@ -116,13 +116,13 @@ man ./enigma.1
 ```
 
 
-* [recode.html][] (or [recode.md](recode.md) if reading on GitHub)
+* [recode.html][] (or [recode.html](recode.html) if reading on GitHub)
 	- Some useful information about [recode.c](recode.c)
 
 
-* [chocolate-cake.html][] (or [chocolate-cake.md](chocolate-cake.md) if reading on GitHub)
+* [chocolate-cake.html][] (or [chocolate-cake.html](chocolate-cake.html) if reading on GitHub)
 	- Because most of us could use some *Double-layered Chocolate Fudge Cake*!
-	- NOTE: see [recode.html][] (or [recode.md](recode.md) for details about how to decrypt this!
+	- NOTE: see [recode.html][] (or [recode.html](recode.html) for details about how to decrypt this!
 
 
 [recode.html]: recode.html
@@ -211,15 +211,15 @@ alphabet and then input it into their Enigma machine configured in the same way
 and thus have the original message.
 
 The [1998 ASCII / Morse code translator][] entry by [Franz van
-Dorsselaer](/authors.html#Frans_van_Dorsselaer) prints the Morse code of text;
+Dorsselaer](../../authors.html#Frans_van_Dorsselaer) prints the Morse code of text;
 and the [2014 Morse audio transcoder][] by [Daniel
-Vik](/authors.html#Daniel_Vik) can be used to allow for the actual sound of it.
+Vik](../../authors.html#Daniel_Vik) can be used to allow for the actual sound of it.
 With my entry we can complete the loop!
 
 
 ### <a name="nathan" href="#toc">The 1992 Nathan Sidwell entry</a>
 
-The author [Nathan Sidwell](/authors.html#Nathan_Sidwell) of the [1992 Worst
+The author [Nathan Sidwell](../../authors.html#Nathan_Sidwell) of the [1992 Worst
 Abuse of the Rules][] had this to say about his program:
 
 > This program is a hello world text encrypter/decrypter. It uses an
@@ -247,10 +247,10 @@ My entry should also work as a non-military grade Enigma; they had no
 [plugboard](https://www.cryptomuseum.com/crypto/enigma/i/sb.htm) and by
 default mine is empty. I explain how to set up the simulator later.
 
-[Yusuke Endoh](/authors.html#Yusuke_Endoh) asked the judges and me if the real
+[Yusuke Endoh](../../authors.html#Yusuke_Endoh) asked the judges and me if the real
 1992 entry source was available. Simon Cooper didn't have access to it because
 it was before his time in the IOCCC; but before the other judges could answer
-[Ilya Kurdyukov](/authors.html#Ilya_Kurdyukov) sent a link to the original 1992
+[Ilya Kurdyukov](../../authors.html#Ilya_Kurdyukov) sent a link to the original 1992
 code. As of 4 March 2023 the original before unseen code was published but I
 leave this in for historical purposes.
 
@@ -288,8 +288,8 @@ After that you can input the string and it'll go from there.
 
 BTW: There's a much more entertaining (and delicious) challenge or exercise in
 [recode.html][] (if you're reading this on GitHub check the
-[recode.md](recode.md) file instead); this involves [chocolate-cake.html][] (if
-on GitHub see [here](chocolate-cake.md)) though one might need a different kind
+[recode.html](recode.html) file instead); this involves [chocolate-cake.html][] (if
+on GitHub see [here](chocolate-cake.html)) though one might need a different kind
 of exercise after taking up the challenge! :-) These however show the general
 program as well as how to use the two winning entries of the [Morse
 code](https://en.wikipedia.org/wiki/Morse_code) that I referred to earlier:
@@ -406,7 +406,7 @@ Phew! The program redeemed itself after the test failure! :)
 is with some of the things I pasted in the other file and maybe others here
 too. Notice also how it showed the same output that my program gave it - `UUMMX`.)
 
-What about the other [Morse code entry](/1998/dorssel/dorssel.c)?
+What about the other [Morse code entry](../../1998/dorssel/dorssel.c)?
 
 ```sh
 $ echo IOCCC | ./prog | ./dorssel
@@ -443,7 +443,7 @@ as the ciphering goes but I thought this would make it much more interesting:
 make it more flexible by a wrapper program.
 
 For examples using it (and a delicious challenge) see [recode.html][] (or
-[recode.md](recode.md) if reading on GitHub). See also the [recode.1][] and
+[recode.html](recode.html) if reading on GitHub). See also the [recode.1][] and
 [enigma.1][] man pages.
 
 
@@ -494,7 +494,7 @@ by itself. However for the reflector I did `1A` but it only expects 1 char! So
 will that mean that the plugboard pairs are off? Yes it does seem to be so. This
 is buffering at play I believe but it's useful for allowing the `recode` program
 to easily configure the Enigma machine. In the [recode.html](recode.html) file
-(or [recode.md](recode.md) if reading on GitHub) file I give a hint as to how
+(or [recode.html](recode.html) if reading on GitHub) file I give a hint as to how
 this could be fixed but the caveat is it would necessitate a need for rewriting
 [recode.c](recode.c).
 
@@ -508,7 +508,7 @@ same applies: in C 0-1 but in human it's 1-2 (technically these were reflectors 
 the Enigma machine which I display by name in [recode.c](recode.c) just like
 with the rotors).
 
-For more information see [recode.html][] (or [recode.md](recode.md) if viewing on
+For more information see [recode.html][] (or [recode.html](recode.html) if viewing on
 GitHub).
 
 BTW: If you need a reminder to go to the gym just do your Enigma ABCs and it
@@ -577,12 +577,12 @@ To encipher:
 The file [obfuscation.key][] is the key to decipher/encipher
 [obfuscation.txt][].
 
-For the lazy [obfuscation.md][] has the deciphered version. I am afraid I'm not
+For the lazy [obfuscation.html](obfuscation.html) has the deciphered version. I am afraid I'm not
 so inclined to do that for the cake recipe: the idea there is to make it a fun
 exercise that when solved unlocks a wonderful double-layered chocolate fudge
 cake recipe. But given that my ['Don't tread on me'](../ferguson1) award entry
 also has the [recipe](../ferguson1/chocolate-cake.html)
-([ferguson1/chocolate-cake.md](../ferguson1/chocolate-cake.md) if reading on
+([ferguson1/chocolate-cake.html](../ferguson1/chocolate-cake.html) if reading on
 GitHub), not enciphered, one might just go there instead. Still it's a fun way
 to explore this entry.
 
@@ -607,7 +607,7 @@ choose from a set of rotors and there were no duplicates. This shouldn't be a
 problem here however except that it wouldn't be a possible configuration of the
 real Enigma machine. The `recode` program *however does validate this* (except
 when reading in settings via the `-R` option which I explain in the
-[recode.html][] file ([recode.md](recode.md) on GitHub).
+[recode.html][] file ([recode.html](recode.html) on GitHub).
 
 *   The way the [plugboard](https://www.cryptomuseum.com/crypto/enigma/i/sb.htm)
 \- for the machines that had them - is, if you connect A to B then no other
@@ -838,9 +838,9 @@ don't think there need be any addition to the recode program - at least not
 that.
 
 
-[1992 Worst Abuse of the Rules]: https://www.ioccc.org/1992/nathan/README.md
-[1998 ASCII / Morse code translator]: https://www.ioccc.org/1998/dorssel/README.md
-[2014 Morse audio transcoder]: https://www.ioccc.org/2014/vik/README.md
+[1992 Worst Abuse of the Rules]: ../../1992/nathan/index.html
+[1998 ASCII / Morse code translator]: ../../1998/dorssel/index.html
+[2014 Morse audio transcoder]: ../../2014/vik/index.html
 [Enigma Message Procedures]: https://web.archive.org/web/20200710094321/http://users.telenet.be/d.rijmenants/en/enigmaproc.htm
 [Interactive Enigma Machine]: http://enigmaco.de/enigma/enigma.html
 [enigma.1]: enigma.1
@@ -848,7 +848,7 @@ that.
 [recode.html]: recode.html
 [chocolate-cake.html]: chocolate-cake.html
 [recode.c]: recode.c
-[obfuscation.md]: obfuscation.md
+[obfuscation.html]: obfuscation.html
 [obfuscation.txt]: obfuscation.txt
 [obfuscation.key]: obfuscation.key
 [Tony Sale's pages on The Enigma cipher machine]: https://web.archive.org/web/20200621180323/http://www.codesandciphers.co.uk/enigma/index.htm
@@ -861,21 +861,21 @@ that.
 ### <a name="winning" href="#toc">Winning thoughts, dedications and thanks</a>
 
 Once again I'm honoured to win along with some of the other veterans who I have
-a huge amount of respect for; there's [Don Yang](/authors.html#Don_Yang), [Dave
-Burton](/authors.html#Dave_Burton), [Yusuke Endoh](/authors.html#Yusuke_Endoh)
-and [Edward Giles](/authors.html#Edward_Giles) all of whom are amazing
+a huge amount of respect for; there's [Don Yang](../../authors.html#Don_Yang), [Dave
+Burton](../../authors.html#Dave_Burton), [Yusuke Endoh](../../authors.html#Yusuke_Endoh)
+and [Edward Giles](../../authors.html#Edward_Giles) all of whom are amazing
 programmers. I'm especially proud to win besides Dave Burton and Yusuke Endoh
 but Don Yang and Edward Giles too.
 
 But there are some others who I don't remember like [Ilya
-Kurdyukov](/authors.html#https://en.wikipedia.org/wiki/Signals_intelligence#World_War_II)
+Kurdyukov](../../authors.html#https://en.wikipedia.org/wiki/Signals_intelligence#World_War_II)
 (who's offered a lot of interesting thoughts on [Snake](../ferguson1/prog.c) and
 who plans to have his own version after the entries are published), [Nathan
-Otterness](/authors.html#Nathan_Otterness), [Nicholas
-Carlini](/authors.html#Nicholas_Carlini) (your entry is an absolutely brilliant
+Otterness](../../authors.html#Nathan_Otterness), [Nicholas
+Carlini](../../authors.html#Nicholas_Carlini) (your entry is an absolutely brilliant
 abuse of `printf` - and I totally agree with the judges remarks that your entry
 is so novel that it'll be worth special mention in the future Best of IOCCC
-list!) and [tsoj](/authors.html#_tsoj) too.
+list!) and [tsoj](../../authors.html#_tsoj) too.
 
 Well done and congratulations to all of you again!  Thank you for submitting the
 wonderful entries and I'm honoured to have my two entries beside yours!

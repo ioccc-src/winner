@@ -5,7 +5,6 @@
     "full_name" : "First Middle Last",
     "sort_word" : "lowercaselast",
     "location_code" : "AU",
-    "location_name" : "Australia",
     "email" : "user0@example.com",
     "url" : "https:\/\/a.host0.example.com\/index.html",
     "alt_url" : "https:\/\/b.host0.example.com\/index.html",

@@ -6,7 +6,7 @@ make
 
 To use this entry requires, in some invocations, a sound processing program.
 This can be ALSA or SoX but we recommend the latter. See [FAQ 3.10 - How do I
-compile and use an IOCCC winner that requires sound?](/faq.md#sox).
+compile and use an IOCCC entry that requires sound?](../../faq.html#sox).
 
 
 ### Bugs and (Mis)features:
@@ -17,7 +17,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2018 algmyr in bugs.md](/bugs.md#2018-algmyr).
+For more detailed information see [2018 algmyr bugs](../../bugs.html#2018_algmyr).
 
 
 ## To use:

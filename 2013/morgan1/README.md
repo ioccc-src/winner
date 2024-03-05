@@ -67,10 +67,10 @@ The size is not proportional either.
 It also displays the position of 2 famous comets during their last approach:
 
 - The [first one](https://science.nasa.gov/solar-system/comets/1p-halley/)
-around the [third IOCCC](/years.html#1986).
+around the [third IOCCC](../../years.html#1986).
 - The [second
 one](https://science.nasa.gov/solar-system/comets/c-1995-o1-hale-bopp/) between
-the [thirteenth](/years.html#1996) and [fourteenth](/years.html#1998) IOCCC.
+the [thirteenth](../../years.html#1996) and [fourteenth](../../years.html#1998) IOCCC.
 
 
 ### Limitations

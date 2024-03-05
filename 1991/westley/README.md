@@ -16,7 +16,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [1991 westley in bugs.md](/bugs.md#1991-westley).
+For more detailed information see [1991 westley bugs](../../bugs.html#1991_westley).
 
 
 ## To use:
@@ -152,7 +152,7 @@ Why is win better than draw? Because everyone knows how to draw:
 > Jennifer: Because it's a boring game. It's always a tie.\
 > Falken: Exactly. There's no way to win. The game itself is pointless. But back
 at the [International Obfuscated C Code Contest judges'
-room](https://www.ioccc.org/https://www.ioccc.org/judges.html) they believe that
+room](../../judges.html) they believe that
 you can win tic-tac-toe, that there can be acceptable draws.
 
 This is supposed to happen.  As is written in the

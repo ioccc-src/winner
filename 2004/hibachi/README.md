@@ -20,7 +20,7 @@ this to work right.
 
 ## Judges' remarks:
 
-This entry violates the [guidelines](/2004/guidelines.txt) in so many ways!  We
+This entry violates the [guidelines](../../2004/guidelines.txt) in so many ways!  We
 are not exactly sure how many organisations will be upset with this entry, but
 we are considering starting an IOCCC standards body just to reign in the likes
 of Mr Howe.

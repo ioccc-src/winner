@@ -26,7 +26,7 @@ STATUS: known bug - please help us fix
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2018 mills in bugs.md](/bugs.md#2018-mills).
+For more detailed information see [2018 mills bugs](../../bugs.html#2018_mills).
 
 
 ## To use:
@@ -64,7 +64,7 @@ cc mullender.c
 a.out
 ```
 
-... and enjoy the classic [1984/mullender](/1984/mullender/README.md) entry as
+... and enjoy the classic [1984/mullender](../../1984/mullender/index.html) entry as
 it would have been in 1984 with a VAX-11/PDP-11! Once it reaches the end of the
 line, hit enter and see what happens again. When you're tired of it hit ctrl-c.
 
@@ -113,7 +113,7 @@ At the ":" prompt, type `rk(0,0)rkunix`.
 NOTE: To quit prog, press Control-E.
 
 This should now be very familiar and it is possible to compile and run one of
-the very first IOCCC entries [mullender.c](/1984/mullender/mullender.c), as
+the very first IOCCC entries [1984/mullender](../../1984/mullender/index.html), as
 shown earlier.
 
 But wait, there is even more!  Try:
@@ -232,7 +232,7 @@ Filesystem  Mounted on  kbytes    used    free  % used
 # ./a.out
 ```
 
-The program you've just run was the [winner of the first IOCCC contest from
+The program you've just run was the [winning entry of the first IOCCC contest from
 1984] [1]  (or was it 1894?), a personal favorite of mine.  It is rather
 tightly bound to running on either a PDP-11 or a VAX-11.  Now you have one.
 
@@ -522,10 +522,10 @@ contest scheduling, I chose not to wait for the actual 50th anniversary).
 I had thought of writing self-hosting compilers for a stripped-down version of
 C, or maybe even a version of the B language...  At the same time, I was
 obsessed with the idea of allowing [mullender.c from
-1984](/1984/mullender/README.md) to run.  Although
+1984](../../1984/mullender/index.html) to run.  Although
 that was still a possibility on an interpreted version of B or a stripped-down
 version of C, it felt cheap, as it would be
-[mullender.c](/1984/mullender/mullender.c) only in spirit.
+[mullender.c](../../1984/mullender/mullender.c) only in spirit.
 
 It was during this time that I discovered that in 2016, members of the Unix
 Heritage Society got access to [printouts of assembly-language source for the
@@ -789,7 +789,7 @@ time...
 
 -------------------------------------------------------------------------------
 
-[1]:  https://www.ioccc.org/1984/mullender/mullender.c            "mullender.c"
+[1]:  ../../1984/mullender/mullender.c            "mullender.c"
 [2]:  http://minnie.tuhs.org/cgi-bin/utree.pl?file=2.9BSD    "2.9 BSD"
 [3]:  https://www.bell-labs.com/usr/dmr/www/kbman.html       "B Language"
 [4]:  https://www.bell-labs.com/usr/dmr/www/hist.html        "UNIX history"

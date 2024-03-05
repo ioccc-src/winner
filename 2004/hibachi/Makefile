@@ -10,7 +10,7 @@
 # Bug fixes, corrections and typo fixes are VERY WELCOME.  If you see a problem,
 # first check this URL for a list of known bugs and (mis)features of IOCCC entries:
 #
-#	https://www.ioccc.org/bugs.md
+#	https://www.ioccc.org/bugs.html
 #
 # GitHub pull requests are welcome!  Please see the above URL for details.
 #
@@ -129,7 +129,7 @@ all: data ${TARGET}
 	clean clobber install love haste waste maker easter_egg \
 	sandwich supernova deep_magic magic charon pluto
 
-build/${PROG}: src
+build/${PROG}: src/hibachi.c src
 	${RM} -rf build
 	${CP} -v -r src build
 	@echo "This next step may take some time to complete:"
@@ -138,6 +138,9 @@ build/${PROG}: src
 	    CC="${CC}" \
 	    ${SHELL} ./configure
 	cd build; ${MAKE}
+
+src/hibachi.c: hibachi.c
+	${CP} -f -v $? $@
 
 # alternative executable
 #
@@ -210,6 +213,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -f src/hibachi.c
 	${RM} -rf *.dSYM
 	${RM} -rf build
 	@-if [ -e sandwich ]; then \

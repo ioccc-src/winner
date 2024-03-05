@@ -14,7 +14,7 @@ STATUS: INABIAF - please **DO NOT** fix
 STATUS: doesn't work with some platforms - please help us fix
 ```
 
-For more detailed information see [2001 bellard in bugs.md](/bugs.md#2001-bellard).
+For more detailed information see [2001 bellard bugs](../../bugs.html#2001_bellard).
 
 
 ## To use:

@@ -19,7 +19,7 @@ STATUS: INABIAF - please **DO NOT** fix
 STATUS: missing or dead link - please provide them
 ```
 
-For more detailed information see [1996 jonth in bugs.md](/bugs.md#1996-jonth).
+For more detailed information see [1996 jonth bugs](../../bugs.html#1996_jonth).
 
 
 ## To use:

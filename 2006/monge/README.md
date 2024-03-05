@@ -19,7 +19,7 @@ STATUS: doesn't work with some platforms - please help us fix
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2006 monge in bugs.md](/bugs.md#2006-monge).
+For more detailed information see [2006 monge bugs](../../bugs.html#2006_monge).
 
 
 ## To use:
@@ -90,9 +90,9 @@ Use `monge.alt` exactly as you would `monge` above.
 
 ## Judges' remarks:
 
-For those who are familiar with the previous [IOCCC entries](/authors.html),
-this program is best described as "[1994/tvr](/1994/tvr/tvr.c) meets
-[2001/bellard](/2001/bellard/bellard.c)". Here you have mouse-manipulated
+For those who are familiar with the previous [IOCCC entries](../../authors.html),
+this program is best described as "[1994/tvr](../../1994/tvr/index.html) meets
+[2001/bellard](../../2001/bellard/index.html)". Here you have mouse-manipulated
 fractals AND generated binary code, all in one package.
 
 A more appropriate award could have been "Best abuse of the

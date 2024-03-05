@@ -22,7 +22,7 @@ BEGIN {
 
     # setup
     #
-    VERSION="1.1 2024-01-29"
+    VERSION="1.2 2024-03-02"
     process_next_line = 0;	# 1 ==> we found our entry_path, now process the next line
     found_entry_path = 0;	# 1 ==> we found our entry_path
     prev_line = "";		# the previous YYYY/dir line
@@ -148,13 +148,6 @@ END {
 	print "210";		# use 210 to match length(entry_path) == 0 error in the BEGIN section
 	exit 210;		# use 210 to match length(entry_path) == 0 error in the BEGIN section
     }
-
-    # output inventory link information
-    #
-    print "-s";
-    print "INVENTORY_LINK=#inventory";
-    print "-s";
-    print "INVENTORY_TEXT=Inventory";
 
     # case: we did not find our entry_path
     #

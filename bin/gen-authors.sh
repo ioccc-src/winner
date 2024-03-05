@@ -49,7 +49,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1 2024-02-25"
+export VERSION="1.3 2024-03-04"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -813,23 +813,44 @@ EOF
 	    LOCATION_NAME=$("$LOCATION_TOOL" "$LOCATION_CODE" 2>/dev/null)
 	    status="$?"
 	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: cannot determine location name for location ISO 3166 code: $LOCATION_CODE" 1>&2
+		echo "$0: ERROR: cannot determine location name" \
+		     "for location ISO 3166 code: $LOCATION_CODE" 1>&2
 		exit 18
 	    fi
 	    if [[ -z $LOCATION_NAME ]]; then
-		echo "$0: ERROR: location name for location ISO 3166 code: $LOCATION_CODE is empty: $LOCATION_NAME" 1>&2
+		echo "$0: ERROR: location name" \
+		     "for location ISO 3166 code: $LOCATION_CODE is empty: $LOCATION_NAME" 1>&2
 		exit 19
+	    fi
+	    LOCATION_COMMON_NAME=$("$LOCATION_TOOL" -c "$LOCATION_CODE" 2>/dev/null)
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: cannot determine location common name" \
+		     "for location ISO 3166 code: $LOCATION_CODE" 1>&2
+		exit 20
+	    fi
+	    if [[ -z $LOCATION_COMMON_NAME ]]; then
+		echo "$0: ERROR: location common name" \
+		     "for location ISO 3166 code: $LOCATION_CODE is empty: $LOCATION_COMMON_NAME" 1>&2
+		exit 21
 	    fi
 	    AUTHOR_HANDLE=$(output_author_handle "$filename")
 	    if [[ -z $AUTHOR_HANDLE ]]; then
 		echo "$0: ERROR: author handle is empty in: $filename" 1>&2
-		exit 20
+		exit 22
 	    fi
 
 	    # output author information
 	    #
-	    echo "<p><a name=\"$AUTHOR_HANDLE\"></a>$FULL_NAME</br>"
-	    echo "Location: $LOCATION_CODE - $LOCATION_NAME</p>"
+	    echo "<p><a name=\"$AUTHOR_HANDLE\"></a>**$FULL_NAME**</br>"
+	    echo "author_handle: $AUTHOR_HANDLE</br>"
+	    if [[ $LOCATION_NAME == $LOCATION_COMMON_NAME ]]; then
+		echo "Location: [$LOCATION_CODE](location.html#$LOCATION_CODE) -" \
+		     "_${LOCATION_NAME}_</p>"
+	    else
+		echo "Location: [$LOCATION_CODE](location.html#$LOCATION_CODE) -" \
+		     "_${LOCATION_NAME}_ (_${LOCATION_COMMON_NAME}_)</p>"
+	    fi
 
 	    # output YYYY/dir set made bu this author
 	    #
@@ -843,12 +864,12 @@ EOF
 		    fi
 		else
 		    echo "$0: ERROR: entry_id is not in YYYY_dir formmat: $entry_id" 1>&2
-		    exit 21
+		    exit 23
 		fi
 		YYYY_DIR=$(echo "$ENTRY_ID" | tr _ /)
 		if [[ ! -d $YYYY_DIR ]]; then
 		    echo "$0: ERROR: YYYY/dir is not a directory" 1>&2
-		    exit 22
+		    exit 24
 		fi
 
 		# verify that the .entry.json file is a non-empty readable file
@@ -856,19 +877,19 @@ EOF
 		ENTRY_JSON="$YYYY_DIR/.entry.json"
 		if [[ ! -e $ENTRY_JSON ]]; then
 		    echo "$0: ERROR: .entry.json does not exist: $ENTRY_JSON" 1>&2
-		    exit 23
+		    exit 25
 		fi
 		if [[ ! -f $ENTRY_JSON ]]; then
 		    echo "$0: ERROR: .entry.json is not a file: $ENTRY_JSON" 1>&2
-		    exit 24
+		    exit 26
 		fi
 		if [[ ! -r $ENTRY_JSON ]]; then
 		    echo "$0: ERROR: .entry.json is not a readable file: $ENTRY_JSON" 1>&2
-		    exit 24
+		    exit 27
 		fi
 		if [[ ! -s $ENTRY_JSON ]]; then
 		    echo "$0: ERROR: .entry.json is not a non-empty readable file: $ENTRY_JSON" 1>&2
-		    exit 25
+		    exit 28
 		fi
 		if [[ $V_FLAG -ge 7 ]]; then
 		    echo "$0: debug[7]: .entry.json: $ENTRY_JSON" 1>&2
@@ -879,7 +900,7 @@ EOF
 		AWARD=$(output_award "$ENTRY_JSON")
 		if [[ -z $AWARD ]]; then
 		    echo "$0: ERROR: award not found in .entry.json: $ENTRY_JSON" 1>&2
-		    exit 27
+		    exit 29
 		fi
 
 		# output the YYYY/dir entry for this author

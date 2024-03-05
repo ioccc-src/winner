@@ -14,7 +14,7 @@ STATUS: missing file - please provide it
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [1994 shapiro in bugs.md](/bugs.md#1994-shapiro).
+For more detailed information see [1994 shapiro bugs](../../bugs.html#1994_shapiro).
 
 
 ## To use:
@@ -50,10 +50,10 @@ source file is self documenting.  :-)
 
 From time to time, run `ps(1)` and look at the new processes.
 
-See [shapiro.md](shapiro.md) for more information in the internals of this program.
+See [shapiro.html](shapiro.html) for more information in the internals of this program.
 The file [shapiro.alt.c](shapiro.alt.c) contains a non-obfuscated version of
 this program. Note that this alt file is currently missing. See
-[bugs.md](/bugs.md) for details.
+[1994 shapiro bugs](../../bugs.html#1994_shapiro) for details.
 
 
 ## Author's remarks:
@@ -80,7 +80,7 @@ Most of the surface obfuscation in the second program
 You should be able to see around this with `cb(1)` and some more intelligent
 variable names.  Once you get past this you will realize that the third level of
 obfuscation is a six member client/server hierarchy.  (See the
-[shapiro.md](shapiro.md) file for a detailed description of the algorithm.)
+[shapiro.html](shapiro.html) web page for a detailed description of the algorithm.)
 
 `lint` complains about: precedence confusion, `K` may be used before set,
 `main()` returns random value to invocation environment, value type used

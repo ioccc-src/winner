@@ -43,7 +43,7 @@ mealy-mouthed denials and obfuscations.
     late Middle English: from late Latin **obfuscatio(n-)**, from **obfuscare**
     'to darken or obscure' (see *obfuscate*).
 
-The official IOCCC web site is <https://www.ioccc.org>.
+The official IOCCC web site is [www.ioccc.org](https://www.ioccc.org).
 
 ## How it was started:
 
@@ -99,7 +99,7 @@ sed -e '/^#.*include/d' prog.c | cc -E
 This strips away comments and expands the program's macros without having things
 such as includes and macros cluttering up the output.  If the entry requires or
 suggests the use of compile line options (such as `-Dindex=strchr`) they should
-be added after the `-E` flag. See the entry README.md and/or Makefile. For the
+be added after the `-E` flag. See the entry index.html and/or Makefile. For the
 Makefiles look at the variable `CDEFINE`.
 
 The next stage towards understanding is to use a C beautifier or C indenting
@@ -124,13 +124,13 @@ compiler) or edit may be required due to differing semantics between operating
 systems. If you are able to successfully compile the program, experiment with it
 by giving it different arguments or input.  You may also use the Makefile
 provided to compile the program. Look at the `To build` and `Try` sections at
-the top of the README.md for each entry as well.  Keep in mind that C compilers
+the top of the index.html for each entry as well.  Keep in mind that C compilers
 often have bugs, or features which result the program failing to compile.  You
 may have to do some syntax changing as we did to get old programs to compile on
 strict ANSI C compilers.
 
 Last, read the judges' remarks/spoilers on the program.  Hints for `foo.c` are
-given in `README.md`.  Often they will contain suggested arguments or
+given in `index.html`.  Often they will contain suggested arguments or
 recommended data to use. Authors also sometimes give spoilers.
 
 If you do gain some understanding of how a program works, go back to the source
@@ -142,16 +142,15 @@ convince yourself of why the program does what it does.
 
 Each sub-directory contains all the entries for a single year.  Often the file
 names match one of the last names of the author.  Judges' hints are given in
-files of the form `README.md`.
+files of the form `index.html`.
 
 You may need to tweak the Makefile to get everything to compile correctly.  Read
-the README.md files for suggestions.
+the index.html files for suggestions.
 
 The rules for a given year are given in the file named `rules.txt`.  Each
 archive contains a copy of the rules for the upcoming contest.
 
-The following URL is the official archive of the winning entries:
-<https://www.ioccc.org/years.html>.
+The [years.html](years.html) web page the official archive of the winning entries.
 
 
 ## Regarding the distribution of sources:
@@ -163,7 +162,7 @@ You may share these files with others, but please do not prevent them of
 doing the same.  If some of these files and/or contest entries are
 published in printed form, or if you use them in a business or classroom
 setting, please let us know.  We ask that you drop a line to the
-judges' email box.  See <https://www.ioccc.org/contact.html> for instructions on
+judges' email box.  See [contact.html](contact.html) for instructions on
 how to send us a message.
 
 
@@ -189,7 +188,7 @@ details.
 You are strongly encouraged to read the new contest rules before sending any
 entries.  The rules, and sometimes the contest email address itself, change from
 time to time.  A valid entry one year may be rejected in a later year due to
-changes in the rules.  See <https://www.ioccc.org/index.html#enter> for up to
+changes in the rules.  See [news.html](news.html) for up to
 date information on how to enter.
 
 Last, PLEASE don't code in the style of these programs It is hoped that you will
@@ -206,9 +205,9 @@ The [official IOCCC entries GitHub repository](https://github.com/ioccc-src/winn
 official entries that won the **International Obfuscated C Code Contest (IOCCC)**, the
 Internet's oldest ongoing contest.
 
-**IMPORTANT NOTE**: See [contact.html](/contact.html) for up to date contact details
+**IMPORTANT NOTE**: See [contact.html](contact.html) for up to date contact details
 as well as details on how to provide fixes to any of the entries.
-See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
+See also [the IOCCC FAQ](faq.html) for addition information on the IOCCC.
 
 
 # Copyright and License
@@ -216,5 +215,5 @@ See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
 Copyright (C) 2020,2023,2024 Landon Curt Noll. All Rights Reserved.
 This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
-If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
-(but do not require) if you were to [send us a note about your use](/contact.html).
+If you do use this work in some form, the [IOCCC judges](judges.html) would appreciate
+(but do not require) if you were to [send us a note about your use](contact.html).

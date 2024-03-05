@@ -64,7 +64,7 @@ You may want to use a large display with a very small terminal font.
 
 ### Spoiler
 
-See [spoilers.md](spoilers.md).
+See [spoilers.html](spoilers.html).
 
 
 ## Copyright and CC BY-SA 4.0 License:

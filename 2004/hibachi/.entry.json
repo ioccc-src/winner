@@ -10,7 +10,7 @@
     ],
     "manifest" : [
 	{
-	    "file_path" : "src/hibachi.c",
+	    "file_path" : "hibachi.c",
 	    "inventory_order" : 20,
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
@@ -139,7 +139,7 @@
 	},
 	{
 	    "file_path" : "2004_hibachi.tar.bz2",
-	    "inventory_order" : 300,
+	    "inventory_order" : 100000,
 	    "OK_to_edit" : false,
 	    "display_as" : "tbz2",
 	    "display_via_github" : false,

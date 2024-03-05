@@ -16,7 +16,7 @@ The current status of this entry is:
 STATUS: uses gets() - change to fgets() if possible
 ```
 
-For more detailed information see [1992 gson in bugs.md](/bugs.md#1992-gson).
+For more detailed information see [1992 gson bugs](../../bugs.html#1992_gson).
 
 
 ## To use:

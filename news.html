@@ -59,6 +59,7 @@
       <a href="./index.html">IOCCC Home</a>
       <a href="./years.html">Winning Entries</a>
       <a href="./authors.html">People who have won</a>
+      <a href="./location.html">Location of authors</a>
     </div>
     <hr>
     <div class="sidenav">
@@ -102,6 +103,26 @@
 <!-- END: this line ends content from: inc/before-content.default.html -->
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
+<h1 id="try-mastodon">Try mastodon</h1>
+<p>We plan to update our <a href="https://fosstodon.org/@ioccc">IOCCC on
+Mastodon</a> feed a bit more open than this web page. We recommend you
+check that feed for possibly newer news than what is posted here.</p>
+<p>We tend to only post major news updates to this web page.</p>
+<p>There is <a href="https://mastodon.help">help with Mastodon</a>
+available for those who might wish to <a
+href="https://fosstodon.org/deck/getting-started">get started with
+Mastodon</a>.</p>
+<p>While there are many fine Mastodon server instances out there, the <a
+href="../judges.html">IOCCC judges</a> use <a
+href="https://fosstodon.org/about">fosstodon.org</a> where lots of fun
+folk hang out, and topics like science, technology, <a
+href="https://en.wikipedia.org/wiki/Free_and_open-source_software">free
+and open source</a> have a good home. The <a
+href="https://fosstodon.org/@fosstodon">fosstodon.oeg</a> folk made the
+IOCCC feel welcome. And while using Mastodon is free, the <a
+href="../judges.html">IOCCC judges</a> are pleased to <a
+href="https://hub.fosstodon.org/support/">support the Fosstodon
+Hub</a>.</p>
 <h1 id="section">2024-02-29</h1>
 <p>We continue to make good progress on web site. In the <a
 href="https://github.com/ioccc-src/temp-test-ioccc">temp-test-ioccc
@@ -122,7 +143,7 @@ Also be aware that the [temp-test-ioccc GitHub repo](https://github.com/ioccc-sr
 is undergoing rapid changes.  There are broken links and other things in mid-change.
 
 Once we are ready to update the [IOCCC winner repo](https://github.com/ioccc-src/winner)
-and its associated [www.ioccc.org](index.html) web site,
+and its associated web site,
 we will post a news article warning of the pending change that is about to arrive.</code></pre>
 <p>These 2645+ changes in the <a
 href="https://github.com/ioccc-src/temp-test-ioccc">temp-test-ioccc
@@ -130,11 +151,11 @@ GitHub repo</a> include diverse things such as:</p>
 <ul>
 <li>Moving IOCCC entries into their own separate directories</li>
 <li>Fixing lots and lots of typos</li>
-<li>Fixing Makefiles and code to allow for nearly all winners to be
-compiled on modern systems</li>
+<li>Fixing Makefiles and code to allow for nearly all winning IOCCC
+entries to be compiled on modern systems</li>
 <li>Reworking the Makefiles to use a consistent set of rules</li>
 <li>Reworking the Makefiles to compile under gcc and clang</li>
-<li>Replacing the various hint files with a README.md markdown that is
+<li>Replacing the various hint files with a index.html markdown that is
 more consistent across IOCCC years</li>
 <li>Setting up a system whereby authors of IOCCC entries may update
 their own contact information via a GitHub pull request</li>
@@ -156,15 +177,15 @@ a tool that will package submissions to the IOCCC.</p>
 that will allow those who submit entires to be informed about the status
 of their submission. This <strong>IOCCC submit server</strong> will be
 beta tested in the <strong>IOCCCMOCK</strong>.</p>
-<p>We are working on a method to rapidly post the winners of an IOCCC.
-No longer will winners be subject to a long delay between announcing
-that they have won and their code being made available. No longer will
-procrastination delay the public seeing the winning code. Instead the
-<strong>announcement of the winners of an IOCCC will be done by posting
-the winning code via a GitHub commit.</strong> Any corrections,
-improvement, typo fixes and other fixes will be applied to the winners
-via GitHub pull requests: by the authors and/or other interested 3rd
-parties.</p>
+<p>We are working on a method to rapidly post the winning entries of an
+IOCCC. No longer will entries be subject to a long delay between
+announcing that they have won and their code being made available. No
+longer will procrastination delay the public seeing the winning code.
+Instead the <strong>announcement of the winning entries of an IOCCC will
+be done by posting the winning code via a GitHub commit.</strong> Any
+corrections, improvement, typo fixes and other fixes will be applied to
+the winning entries via GitHub pull requests: by the authors and/or
+other interested 3rd parties.</p>
 <p>All the above represent one of the most significant (and useful)
 changes to the IOCCC since it started back in 1984. While we are doing
 lots of testing, we are sure that issues, mis-features and even bugs
@@ -286,7 +307,7 @@ a tool that is based on, and is containing, the official iocccsize tool,
 will form a compressed tarball that a registered IOCCC contestant will
 upload to the submit server (when the contest is open of course).</p>
 <h1 id="section-7">2021-12-27</h1>
-<p><a href="/judges.html">The Judges</a> are continuing to work on
+<p><a href="judges.html">The Judges</a> are continuing to work on
 re-tooling how we run the IOCCC. We are writing tools under various
 repositories our <a href="https://github.com/ioccc-src">IOCCC GitHub
 organization site</a>.</p>
@@ -294,13 +315,13 @@ organization site</a>.</p>
 delay, but we think you will appreciate the re-tooling when it is
 completed. Stay tuned!</p>
 <h1 id="section-8">2021-10-21</h1>
-<p><a href="/judges.html">The Judges</a> are re-tooling how we run the
+<p><a href="judges.html">The Judges</a> are re-tooling how we run the
 IOCCC. Our goal is to build a smoother, more rapid process centered
 around <a href="https://github.com/ioccc-src/winner">GitHub</a>.</p>
-<p>For example, when we announce the winners, we will do so by
-committing their code to the <a href="/years.html">Winning entries</a>
-of the IOCCC repo, so that people will be able immediately view the
-winning source.</p>
+<p>For example, when we announce the winning entries of the IOCCC, we
+will do so by committing their code to the <a href="years.html">Winning
+entries</a> of the IOCCC repo, so that people will be able immediately
+view the winning source.</p>
 <p>We plan to refactor and modernize the IOCCC web site. We also plan to
 build a new and improved way to submit entries the next IOCCC. As a
 result of all this work we need to do, <strong>we plan to hold IOCCC28

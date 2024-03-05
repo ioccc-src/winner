@@ -22,7 +22,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2001 anonymous in bugs.md](/bugs.md#2001-anonymous).
+For more detailed information see [2001 anonymous bugs](../../bugs.html#2001_anonymous).
 
 
 ## To use:
@@ -221,7 +221,7 @@ Despite all this, the translator is not exclusively limited to running the
 [anonymous.ten](anonymous.ten.c) program.  Other trivial **_x86_** programs may
 run on the translator \- and I have successfully run a wide range of "Hello
 World" programs, including one of last year's IOCCC entries,
-[tomx](/2000/tomx/tomx.c).
+[tomx](../../2000/tomx/tomx.c).
 
 
 ### Complete Program
@@ -231,9 +231,9 @@ it is not a complete program in its own right, as it relies on other programs.
 The call to `system(3)` is a call to ask gcc to recompile the translator with a
 new set of switches, and the call to `execv(3)` asks for the newly compiled
 program to be executed.  I would point out that almost every other entry to this
-competition also require a C compiler (well, the published winners at any rate,
+competition also require a C compiler (well, the published winning entries at any rate,
 and I recognize that a few don't).  There is little real difference between this
-program and one like last year's entry [dhyang](/2000/dhyang/dhyang.c); both are
+program and one like last year's entry [dhyang](../../2000/dhyang/dhyang.c); both are
 just C programs that generate C code as their output.
 
 Enjoy and thanks!

@@ -69,7 +69,7 @@ for my connection to the C language.
 
 The author, when told about this tattoo, said:
 
-> I feel honored that my entry will be the first IOCCC winner to become a
+> I feel honored that my entry will be the first IOCCC winning entry to become a
 tattoo. It is the first entry to become a tattoo isn't it?
 
 Landon Curt Noll, the one who told the author about the tattoo, wrote back:

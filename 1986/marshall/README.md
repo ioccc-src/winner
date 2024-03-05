@@ -5,14 +5,14 @@ make all
 ```
 
 NOTE: we FORCE disable the optimiser due to a funny problem with different
-compilers and systems. See below and [compilers.md](compilers.md) for details.
+compilers and systems. See below and [compilers.html](compilers.html) for details.
 
 There is an [alternate version](#alternate-code). The reason is a funny problem:
 in modern systems, depending on the platform, compiler and the optimiser, it
 would work with one compiler with the optimiser but it would not work with the
 other; and if the optimiser state is changed the previous problematic compiler
 might work but the other one would not. We describe this in more detail in
-[compilers.md](compilers.md) and we encourage you to read it for entertainment
+[compilers.html](compilers.html) and we encourage you to read it for entertainment
 if nothing else.
 
 
@@ -25,7 +25,7 @@ if nothing else.
 
 ## Alternate code:
 
-Due to the different [conflicting problems](compilers.md) with gcc and clang, we
+Due to the different [conflicting problems](compilers.html) with gcc and clang, we
 instead offer the problematic code as an alternate version whereas
 [marshall.c](marshall.c) has both the infinite loop and the complicated arg to
 `_exit()` commented out, changing the value passed into `_exit()` to `1`.

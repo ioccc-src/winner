@@ -3,10 +3,13 @@
 
 ## Standard IOCCC stuff
 
-The IOCCC has a web site and now has a number of international mirrors.
-The primary site can be found at,
+View the `index.html` web page for the given winning entry for information on how
+compile the entry and how to run the winning program.  Look at the winning
+source and try to figure how it does what it does!  You may then wish to look at
+the Author's remarks for even more details.
 
-* [http://www.ioccc.org/](http://www.ioccc.org/)
+The IOCCC has a web site and now has a number of international mirrors.
+The primary site can be found at [www.ioccc.org](https://www.ioccc.org).
 
 Use make to compile entries.  It is possible that on non-Un\*x / non-Linux
 systems the makefile needs to be changed.  See the Makefile for details.
@@ -24,9 +27,9 @@ yours is lacking, you may need to compile using gcc instead of your
 local compiler.
 
 
-## Remarks on some of the winners
+## Remarks on some of the winning entries
 
-We believe you will again be impressed with this year's winners.
+We believe you will again be impressed with this year's winning entries.
 
 The fraction of worthy entries was higher than usual.
 
@@ -103,11 +106,11 @@ send us the fix (patch file or the entire changed file).
 
 For the latest information on how to contact the IOCCC Judges please visit
 
-* [http://www.ioccc.org/contact.html](http://www.ioccc.org/contact.html)
+* [contact.html](../contact.html)
 
 For news of the next contest watch:
 
-* [http://www.ioccc.org/](http://www.ioccc.org/)
+* [news.html](../news.html)
 
 
 # Copyright and License
@@ -115,5 +118,5 @@ For news of the next contest watch:
 Copyright (C) 2015,2024, Landon Curt Noll and Leonid A. Broukhis. All Rights Reserved.
 This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
-If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
-(but does not require) if you were to [send us a note about your use](/contact.html).
+If you do use this work in some form, the [IOCCC judges](../judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](../contact.html).

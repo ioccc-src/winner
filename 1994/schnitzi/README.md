@@ -18,7 +18,7 @@ The current status of this entry is:
 STATUS: uses gets() - change to fgets() if possible
 ```
 
-For more detailed information see [1994 schnitzi in bugs.md](/bugs.md#1994-schnitzi).
+For more detailed information see [1994 schnitzi bugs](../../bugs.html#1994_schnitzi).
 
 
 ## To use:
@@ -44,7 +44,7 @@ compile. Other functionality works fine.
 The second version, `schnitzi.alt2.c`, has an increased buffer size but when fed
 its own source code it will generate code that can compile but with the original
 buffer size. This is due to a comment which is explained in more detail in
-[1994/schnitzi in bugs.md](/bugs.md#1994-schnitzi).
+[1994/schnitzi bugs](../../bugs.html#1994_schnitzi).
 
 
 ### Alternate build:

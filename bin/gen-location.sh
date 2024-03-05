@@ -49,7 +49,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.1 2024-02-23"
+export VERSION="1.1 2024-03-04"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -434,6 +434,16 @@ fi
 	    exit 12
 	fi
 
+	# use the location tool to obtain the location common name
+	#
+	LOCATION_COMMON_NAME=$("$LOCATION_TOOL" -c "$LOCATION_CODE" 2>/dev/null)
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: cannot determine location common name" \
+		 "for location ISO 3166 code: $LOCATION_CODE" 1>&2
+	    exit 13
+	fi
+
 	# found the number of authors at this location
 	#
 	AUTHOR_COUNT=$(find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' -print0 |
@@ -442,14 +452,18 @@ fi
 		       sed -e 's/[[:space:]]*//')
 	if [[ -z $AUTHOR_COUNT || $AUTHOR_COUNT -le 0 ]]; then
 	    echo "$0: ERROR: author count was zero for location: $LOCATION_CODE" 1>&2
-	    exit 13
+	    exit 14
 	fi
 
 	# output markdown entry for this location
 	#
-	echo "* <a name=$LOCATION_CODE></a>$LOCATION_CODE - $LOCATION_NAME"
+	if [[ $LOCATION_NAME == $LOCATION_COMMON_NAME ]]; then
+	    echo "* <a name=$LOCATION_CODE></a>**$LOCATION_CODE** - _${LOCATION_NAME}_"
+	else
+	    echo "* <a name=$LOCATION_CODE></a>**$LOCATION_CODE** - _${LOCATION_NAME}_ (_${LOCATION_COMMON_NAME}_)"
+	fi
 	echo
-	echo "  Author count: $AUTHOR_COUNT"
+	echo "  Author count: **$AUTHOR_COUNT**"
 	echo
 
 	# process each author_handle JSON files with this location in sort_word order

@@ -55,7 +55,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4.1 2024-02-23"
+export VERSION="1.5 2024-03-04"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -561,6 +561,20 @@ if [[ ! -x $PANDOC_WRAPPER ]]; then
     exit 5
 fi
 
+# find the location tool
+#
+LOCATION_TOOL=$(type -P location)
+if [[ -z $LOCATION_TOOL ]]; then
+    # guess we have a location tool in bin
+    #
+    LOCATION_TOOL="$BIN_DIR/location"
+fi
+if [[ ! -x $LOCATION_TOOL ]]; then
+    echo "$0: ERROR: cannot find the location executable" 1>&2
+    echo "$0: notice: location tool comes from this repo: https://github.com/ioccc-src/mkiocccentry" 1>&2
+    exit 5
+fi
+
 # parameter debugging
 #
 if [[ $V_FLAG -ge 3 ]]; then
@@ -590,6 +604,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: DOT_YEAR=$DOT_YEAR" 1>&2
     echo "$0: debug[3]: DOT_PATH=$DOT_PATH" 1>&2
     echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
+    echo "$0: debug[3]: LOCATION_TOOL=$LOCATION_TOOL" 1>&2
 fi
 
 # Set AUTHOR_HANDLE_SET with author handles from .entry.json
@@ -745,14 +760,39 @@ for author_handle in $AUTHOR_HANDLE_SET; do
 	exit 13
     fi
 
+    # use the location tool to obtain the location_name
+    #
+    LOCATION_NAME=$("$LOCATION_TOOL" "$LOCATION_CODE" 2>/dev/null)
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: cannot determine location name for location ISO 3166 code: $LOCATION_CODE" 1>&2
+	exit 14
+    fi
+
+    # use the location tool to obtain the location common name
+    #
+    LOCATION_COMMON_NAME=$("$LOCATION_TOOL" -c "$LOCATION_CODE" 2>/dev/null)
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: cannot determine location common name" \
+	     "for location ISO 3166 code: $LOCATION_CODE" 1>&2
+	exit 15
+    fi
+
     # write this author's information
     #
     {
 	echo "* Name: [$FULL_NAME](${DOCROOT_SLASH}authors.html#$author_handle)<br>"
 	if [[ $LOCATION_CODE == null ]]; then
-	    echo "Location: [unknown](${DOCROOT_SLASH}location.html#$LOCATION_CODE)"
+	    echo "Location: [unknown](${DOCROOT_SLASH}location.html#$LOCATION_CODE) - _${LOCATION_NAME}_"
 	else
-	    echo "Location: [$LOCATION_CODE](${DOCROOT_SLASH}location.html#$LOCATION_CODE)"
+	    if [[ $LOCATION_NAME == $LOCATION_COMMON_NAME ]]; then
+		echo "Location: [$LOCATION_CODE](${DOCROOT_SLASH}location.html#$LOCATION_CODE) -" \
+		     "_${LOCATION_NAME}_"
+	    else
+		echo "Location: [$LOCATION_CODE](${DOCROOT_SLASH}location.html#$LOCATION_CODE) -" \
+		     "_${LOCATION_NAME}_ (_${LOCATION_COMMON_NAME}_)"
+	    fi
 	fi
 	echo "<br><br>"
     } | if [[ -z $NOOP ]]; then

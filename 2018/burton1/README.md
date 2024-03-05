@@ -60,7 +60,7 @@ This code has been compiled and tested on:
 * X86-Linux, gcc 4.1.2 and 4.8.4, -O0 and -O3
 * ARM-QEMU, gcc 4.8.4, -O0 and -O3
 * X86-FreeBSD 10.3, clang 3.4.1, -O0 and -O3
-* TCC 0.9.26 (x86-64) (used as a proxy for [2001/bellard](/years.html#2001_bellard))
+* TCC 0.9.26 (x86-64) (used as a proxy for [2001/bellard](../../years.html#2001_bellard))
 * UNIX V7 pcc (Johnson's C compiler) on a [simulated PDP-11/45](http://simh.trailing-edge.com/)
   (see spoiler for further detail)
 
@@ -167,7 +167,7 @@ $
 ```
 
 An obfuscated hex dump has been done before:
-[1986/bright](/1986/bright/README.md) is similar in function,
+[1986/bright](../../1986/bright/index.html) is similar in function,
 but it uses more characters in just setting up its obfuscation than this entire
 solution!
 
@@ -200,8 +200,7 @@ bytes following `O`, addressed via `o`, and this code only needs 17. This is
 _undefined_ behavior, but as shown, it is widely available.
 
 The [1979 Seventh Edition UNIX][1] (v7) system pre-dates the IOCCC by several years,
-and the source code to `sh`(1) was a [significant inspiration for this
-contest](/all/README.md).
+and the source code to `sh`(1) was a [significant inspiration for this contest](../../faq.html#ioccc_start).
 There are two C compilers present: `cc` written by Dennis Ritchie, and `pcc` written by Steven Johnson.
 The nested conditional expressions in 116 and smaller are too complex for `cc` ("Illegal conditional")
 but `pcc` handles them correctly, and neither compiler accepts `char o[]` or

@@ -13,7 +13,7 @@ The current status of this entry is:
 STATUS: known bug - please help us fix
 ```
 
-For more detailed information see [1995 leo in bugs.md](/bugs.md#1995-leo).
+For more detailed information see [1995 leo bugs](../../bugs.html#1995_leo).
 
 
 

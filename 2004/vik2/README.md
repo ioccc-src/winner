@@ -108,7 +108,7 @@ The choice of application may be a bit unfortunate since we've already
 seen a winning entry calculating [prime
 numbers](https://en.wikipedia.org/wiki/Prime_number) in the
 [pre-processor](https://en.wikipedia.org/wiki/C_preprocessor).
-There is a big difference though. The [1988/applin](/1988/applin/README.md) entry uses pre-
+There is a big difference though. The [1988/applin](../../1988/applin/index.html) entry uses pre-
 processor arithmetic (in a very nice way though). This program only
 defines and undefines symbols in a well defined ;) way and doesn't do
 any pre-processor arithmetics.

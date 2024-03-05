@@ -20,7 +20,7 @@ STATUS: doesn't work with some platforms - please help us fix
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2004 gavin in bugs.md](/bugs.md#2004-gavin).
+For more detailed information see [2004 gavin bugs](../../bugs.html#2004_gavin).
 
 
 ## To use:
@@ -96,27 +96,27 @@ make alt
 The use is mostly the same as `gavin` except that one initially executes `gavin.alt`
 (which `make alt` will do) and one will have to use `QEMU` instead. The files
 generated are the same names. See [to use](#to-use) and [try](#try) above as
-well as the judges' remarks below plus [gavin.md](gavin.md).
+well as the judges' remarks below plus [gavin.html](gavin.html).
 
 
 ## Judges' remarks:
 
 Over the years, we've seen a program that immediately dumps core if executed on
-the "wrong" architectures ([1984/mullender](1984/mullender/README.md)) and a
-program that dumps core after a while ([2001/bellard](/2001/bellard/bellard.c)).
+the "wrong" architectures (e.g., [1984/mullender](../../1984/mullender/index.html)) and a
+program that dumps core after a while (e.g., [2001/bellard](../../2001/bellard/index.html)).
 This entry will happily compile and execute on most any architecture - the trick
 is that the result, to be useful, must be produced (and can only be enjoyed) on
 a particular architecture.  We have not decided yet whether to disallow this for
 future contests.
 
 If you do not want to mess with a floppy and you use GRUB, see
-[gavin.md](gavin.md).
+[gavin.html](gavin.html).
 
 You can put additional text files in `fs.tar` for browsing with vi.
 
 If you do not want to bother rebooting your computer at all, see
-<http://bellard.org> for QEMU ([Fabrice Bellard](/authors.html#Fabrice_Bellard)
-is an IOCCC 2001 winner), but your experience will be limited; use the
+<http://bellard.org> for QEMU ([Fabrice Bellard](../../authors.html#Fabrice_Bellard)
+is an IOCCC 2001 winning entry), but your experience will be limited; use the
 [alternate code](#alternate-code) instead. You'll have to move the mouse to
 trigger the initial screen update.
 
@@ -152,7 +152,7 @@ This involves rebuilding the program with different compiler flags,
 then building a tarball containing the resulting programs
 (the filesystem format supported by the OS is the tarball format).
 
-For further usage information see [gavin.md](gavin.md).
+For further usage information see [gavin.html](gavin.html).
 
 The filenames `vi` and `sh` are significant, and should not be changed.
 

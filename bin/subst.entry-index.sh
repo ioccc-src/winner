@@ -58,7 +58,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.2 2024-02-25"
+export VERSION="1.3 2024-03-02"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -477,7 +477,7 @@ echo "KEYWORDS=IOCCC, $YEAR_DIR, IOCCC $YEAR_DIR, IOCCC entry, $ENTRY_DIR, $AWAR
 echo "-s"
 echo "HEADER_2=$YYYY_DIR - $AWARD"
 
-# output topnav links
+# output topnav left hand side links
 #
 awk -v entry_path="$YYYY_DIR" -f "$ENTRY_NAVBAR_AWK" "$DOT_YEAR"
 status="$?"
@@ -485,6 +485,28 @@ if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: subst.entry-navbar.awk failed, error: $status" 1>&2
     exit 1
 fi
+
+# output topnav right hand side links
+#
+echo "-s"
+if [[ -f $YYYY_DIR/$ENTRY_DIR.c ]]; then
+    echo "PROG_LINK=$REPO_URL/$YYYY_DIR/$ENTRY_DIR.c"
+elif [[ -f $YYYY_DIR/prog.c ]]; then
+    echo "PROG_LINK=$REPO_URL/$YYYY_DIR/prog.c"
+else
+    echo "$0: ERROR: cannot determine source code file for: $YYYY_DIR" 1>&2
+    exit 7
+fi
+echo "-s"
+echo "PROG_TEXT=C code"
+echo "-s"
+echo "MAKEFILE_LINK=$REPO_URL/$YYYY_DIR/Makefile"
+echo "-s"
+echo "MAKEFILE_TEXT=Makefile"
+echo "-s"
+echo "INVENTORY_LINK=#inventory"
+echo "-s"
+echo "INVENTORY_TEXT=Inventory"
 
 # All Done!!! -- Jessica Noll, Age 2
 #

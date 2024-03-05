@@ -28,7 +28,7 @@ Two things inspired this entry. First, there were the C programs which were
 Unix](https://en.wikipedia.org/wiki/Version_7_Unix) (which reportedly was the
 motivation behind this contest!), the [VAL
 Linker](http://dunfield.classiccmp.org/dos/val_src.zip) by David Troendle, the
-[2000/primenum](/2000/primenum/primenum.c) IOCCC entry, ... Looking at these
+[2000/primenum](../../2000/primenum/index.html) IOCCC entry, ... Looking at these
 programs, I thought, "hmm... if it's possible to make C code look like some
 weird cross between Pascal, VB, and COBOL, then how about making C code look
 like some other language?"

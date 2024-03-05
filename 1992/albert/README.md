@@ -16,7 +16,7 @@ The current status of this entry is:
 STATUS: known bug - please help us fix
 ```
 
-For more detailed information see [1992 albert in bugs.md](/bugs.md#1992-albert).
+For more detailed information see [1992 albert bugs](../../bugs.html#1992_albert).
 
 
 ## To use:

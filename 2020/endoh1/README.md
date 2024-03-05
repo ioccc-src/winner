@@ -225,11 +225,11 @@ an example for such a case.
 Thus, I implemented an additional rule to flag all unprobed cells in such a case
 into the final version ([prog.c](prog.c)).
 
-[Ilya Kurdyukov](/authors.html#Ilya_Kurdyukov) also pointed out a warning
+[Ilya Kurdyukov](../../authors.html#Ilya_Kurdyukov) also pointed out a warning
 "ignoring return value of 'fscanf'" only when `-O3` is used.  So I changed the
 code a little to pretend to use the return value of `fscanf(3)`.
 
-[Don Yang](/authors.html#Don_Yang) (omoikane) contributed another example map
+[Don Yang](../../authors.html#Don_Yang) (omoikane) contributed another example map
 [megumin.txt](megumin.txt) which is the Explosion Arch-Wizard from KonoSuba.
 
 

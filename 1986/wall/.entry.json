@@ -35,7 +35,7 @@
 	},
 	{
 	    "file_path" : "1986_wall.tar.bz2",
-	    "inventory_order" : 300,
+	    "inventory_order" : 100000,
 	    "OK_to_edit" : false,
 	    "display_as" : "tbz2",
 	    "display_via_github" : false,

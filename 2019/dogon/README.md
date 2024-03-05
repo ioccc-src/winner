@@ -13,7 +13,7 @@ The current status of this entry is:
 STATUS: uses gets() - change to fgets() if possible
 ```
 
-For more detailed information see [2019 dogon in bugs.md](/bugs.md#2019-dogon).
+For more detailed information see [2019 dogon bugs](../../bugs.html#2019_dogon).
 
 
 ## To use:
@@ -35,8 +35,8 @@ the program and the script.
 
 ## Judges' remarks:
 
-[1991/davidguy](http://ioccc.org/years.html#1991_davidguy),
-[2011/blakely](http://ioccc.org/years.html#2011_blakely), ...
+[1991/davidguy](../../years.html#1991_davidguy),
+[2011/blakely](../../years.html#2011_blakely), ...
 
 ...This entry likely concludes the IOCCC category "Cellular automata simulators";
 it would be very hard to beat it on its field.
@@ -87,7 +87,7 @@ rather quick don't you think?
  * 1984: Bill Gosper invents the
  [Hashlife](https://en.wikipedia.org/wiki/Hashlife) algorithm. His
  implementation runs on Symbolics Lisp Machines. Unrelated to that, but in a
- cosmic coincidence the [first IOCCC](/years.html#1984) is run!
+ cosmic coincidence the [first IOCCC](../../years.html#1984) is run!
  * December 2000: Tom Rokicki has a breakthrough implementing
  [Hashlife](https://en.wikipedia.org/wiki/Hashlife) in C, efficient, stable and
  production ready for modern machines.

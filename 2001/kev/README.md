@@ -16,7 +16,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2001 kev in bugs.md](/bugs.md#2001-kev).
+For more detailed information see [2001 kev bugs](../../bugs.html#2001_kev).
 
 
 ## To use:

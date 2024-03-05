@@ -14,7 +14,7 @@ STATUS: missing files - please provide them
 STATUS: known bug - please help us fix
 ```
 
-For more detailed information see [2001 herrmann1 in bugs.md](/bugs.md#2001-herrmann1).
+For more detailed information see [2001 herrmann1 bugs](../../bugs.html#2001_herrmann1).
 
 
 ## To use:

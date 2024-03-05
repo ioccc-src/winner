@@ -363,7 +363,7 @@ sorts:
 
 The source is formatted to resemble the
 [Tetris](https://en.wikipedia.org/wiki/Tetris) play-field mid-game. It is also
-an homage to all the [past IOCCC entries](/years.html) formatted as a compact
+an homage to all the [past IOCCC entries](../../years.html) formatted as a compact
 block of text; the `T`, orientated appropriately to reflect its name and the
 first letter in the title of the game, is just a moment away from producing such
 a text block.

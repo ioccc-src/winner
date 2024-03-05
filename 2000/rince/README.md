@@ -13,7 +13,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2000 rince in bugs.md](/bugs.md#2000-rince).
+For more detailed information see [2000 rince bugs](../../bugs.html#2000_rince).
 
 
 ## To use:
@@ -232,7 +232,7 @@ run from the surface of [Mars](https://science.nasa.gov/mars/).
 
 In addition to the normal obfuscations, I feel that the code contains some less
 common tricks. Taken through the standard rounds listed in the
-[guidelines](/2000/guidelines.txt), the code attempts to pass these as follows:
+[guidelines](../../2000/guidelines.txt), the code attempts to pass these as follows:
 
 1. Look at the original source
 

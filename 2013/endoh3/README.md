@@ -13,7 +13,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2013 endoh3 in bugs.md](/bugs.md#2013-endoh3).
+For more detailed information see [2013 endoh3 bugs](../../bugs.html#2013_endoh3).
 
 
 ## To use:
@@ -23,7 +23,7 @@ For more detailed information see [2013 endoh3 in bugs.md](/bugs.md#2013-endoh3)
 ```
 
 This program plays sound. See [FAQ 3.10 - How do I compile and use an IOCCC
-winner that requires sound?](/faq.md#faq3_10) if you do not know how to set your
+entry that requires sound?](../../faq.html#sox) if you do not know how to set your
 system up for this or if you want to verify that everything is oky.
 
 

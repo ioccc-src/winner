@@ -96,7 +96,7 @@ in detail.
 I used many other tricks for short coding.
 
 I'm sorry that many ASCII-art-style winning entries of
-[IOCCC](https://www.ioccc.org/years.html) ignore [C preprocessor
+[IOCCC](../../years.html) ignore [C preprocessor
 directives](https://en.wikipedia.org/wiki/C_preprocessor).  In my program,
 `#include` is a part of ASCII-art with comments padded.
 

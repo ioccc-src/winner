@@ -1,8 +1,8 @@
 # tmp
 
 The tools under this directory are an alpha release.
-The [build-ioccc repo](https://github.com/ioccc-src/build-ioccc/tree/master)
-will hold the beta and formal release of tools that will
+The [bin directory](bin/index.html)
+holds the formal release of tools that will
 maintain the [official IOCCC web site](https://www.ioccc.org).
 
 Currently these tools maintain the [experimental web site](https://ioccc-src.github.io/temp-test-ioccc/)
@@ -427,9 +427,6 @@ Examples:
 
 This is a temporary location for potential tools that are used to
 build and maintain the www.ioccc.org web site.
-
-Eventually a separate [build-ioccc repo](https://github.com/ioccc-src/build-ioccc/tree/master)
-will hold these tools.
 
 
 ### [things-todo.md](things-todo.md)

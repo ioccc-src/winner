@@ -18,7 +18,7 @@
 	    "entry_text" : "entry Makefile"
 	},
 	{
-	    "file_path" : "nyaruko.alt.c",
+	    "file_path" : "omoikane.alt.c",
 	    "inventory_order" : 40,
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
@@ -26,7 +26,7 @@
 	    "entry_text" : "alternative source"
 	},
 	{
-	    "file_path" : "nyaruko.alt2.c",
+	    "file_path" : "omoikane.alt2.c",
 	    "inventory_order" : 40,
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
@@ -34,7 +34,7 @@
 	    "entry_text" : "alternate alternative source"
 	},
 	{
-	    "file_path" : "nyaruko.orig.c",
+	    "file_path" : "omoikane.orig.c",
 	    "inventory_order" : 50,
 	    "OK_to_edit" : false,
 	    "display_as" : "c",
@@ -42,7 +42,7 @@
 	    "entry_text" : "original source"
 	},
 	{
-	    "file_path" : "nyaruko.c",
+	    "file_path" : "omoikane.c",
 	    "inventory_order" : 100,
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
@@ -75,7 +75,7 @@
 	},
 	{
 	    "file_path" : "2012_omoikane.tar.bz2",
-	    "inventory_order" : 300,
+	    "inventory_order" : 100000,
 	    "OK_to_edit" : false,
 	    "display_as" : "tbz2",
 	    "display_via_github" : false,

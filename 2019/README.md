@@ -3,14 +3,12 @@
 
 ## Standard IOCCC stuff
 
-Look at the README.md file for the given winning entry for information
+View the `index.html` web page for the given winning entry for information on how
 on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
-The primary IOCCC web site can be found at,
-
->	<https://www.ioccc.org/>
+The primary site can be found at [www.ioccc.org](https://www.ioccc.org).
 
 Use `make` to compile entries.  It is possible that on non-Unix / non-Linux
 systems the Makefile needs to be changed.  See the Makefile for details.
@@ -23,26 +21,26 @@ lacking, you may need to compile using clang or gcc instead of your local
 compiler.
 
 
-## Remarks on some of the winners
+## Remarks on some of the winning entries
 
-This year's winners are impressive!
+This year's winning entries are impressive!
 
 The "Most in need of debugging" (endoh) is very inventive in a way it produces its own text!
 
 The "Most likely to be awarded" (ciura) has an amazing vocabulary!
 
-There are again nods to winners of the years:
+There are again nods to entries of the years:
 
-	[1991/davidguy](http://ioccc.org/years.html#1991_davidguy)
-	[2011/blakely](http://ioccc.org/years.html#2011_blakely)
+	[1991/davidguy](../years.html#1991_davidguy)
+	[2011/blakely](../years.html#2011_blakely)
 
 These nods to not run afoul of the guideline:
 
 	We tend to dislike programs that:
 	...
-	are rather similar to previous winners
+	are rather similar to previous entries
 
-because the entry (dogon) appropriately pays homage to past winners
+because the entry [2019/dogon](2019/dogon/index.html) appropriately pays homage to past entries
 without blatantly reusing their code.
 
 ...We'll stop spouting spoilers now. Have fun exploring all the entries!
@@ -70,9 +68,9 @@ the idea was limited in scope.
 
 ## Final Comments
 
-**IMPORTANT NOTE**: See [contact.html](/contact.html) for up to date contact details
+**IMPORTANT NOTE**: See [contact.html](../contact.html) for up to date contact details
 as well as details on how to provide fixes to any of the entries.
-See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
+See also [the IOCCC FAQ](../faq.html) for addition information on the IOCCC.
 
 
 # Copyright and License
@@ -80,5 +78,5 @@ See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
 Copyright (c) 2019,2023, Landon Curt Noll and Leonid A. Broukhis. All Rights Reserved.
 This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
-If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
-(but does not require) if you were to [send us a note about your use](/contact.html).
+If you do use this work in some form, the [IOCCC judges](../judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](../contact.html).

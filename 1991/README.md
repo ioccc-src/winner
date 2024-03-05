@@ -1,6 +1,6 @@
 # Eighth International Obfuscated C Code Contest
 
-Look at the README.md file for the given winning entry for information
+View the `index.html` web page for the given winning entry for information on how
 on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
@@ -12,18 +12,18 @@ This year, we did not single out an entry that was better than all of
 the rest.  We selected 3 entries that were, in our opinion, went beyond
 all of the other entries this year:
 
-- [Grand Prize](westley/README.md) by [Brian
-Westley](https://www.ioccc.org/authors.html#Brian_Westley)
-- [Most Well Rounded](dds/README.md) by [Diomidis
-Spinellis](https://www.ioccc.org/authors.html#Diomidis_Spinellis)
-- [Best Of Show](brnstnd/README.md) by [Daniel J.
-Bernstein](https://www.ioccc.org/authors.html#Daniel_J._Bernstein)
+- [Grand Prize](westley/index.html) by [Brian
+Westley](../authors.html#Brian_Westley)
+- [Most Well Rounded](dds/index.html) by [Diomidis
+Spinellis](../authors.html#Diomidis_Spinellis)
+- [Best Of Show](brnstnd/index.html) by [Daniel J.
+Bernstein](../authors.html#Daniel_J._Bernstein)
 
 Name and address information are separated from the actual program
 prior to judging.  This eliminates any chance that we would bias our
 judging for/against any person or group.  In the end, we are surprised
 as you are to see who has won.  Even so, it is worth noting that
-[Brian Westley](https://www.ioccc.org/authors.html#Brian_Westley) has submitted
+[Brian Westley](../authors.html#Brian_Westley) has submitted
 a winning entry for the past 5 years!
 
 ## A few notes regarding possible changes to the contest:
@@ -89,9 +89,9 @@ judges@toad.com
 
 **IMPORTANT NOTE**: The email addresses found above are for historical
 purposes only, and should not be used today.  See
-[contact.html](/contact.html) for up to date contact details
+[contact.html](../contact.html) for up to date contact details
 as well as details on how to provide fixes to any of the entries.
-See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
+See also [the IOCCC FAQ](../faq.html) for addition information on the IOCCC.
 
 
 ## Credits:
@@ -106,5 +106,5 @@ as assistant pizza chef.  Larry Bassel was official taste tester. Yummo!
 Copyright (c) 1991,2023 Landon Curt Noll and Larry Bassel. All Rights Reserved.
 This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
-If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
-(but does not require) if you were to [send us a note about your use](/contact.html).
+If you do use this work in some form, the [IOCCC judges](../judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](../contact.html).

@@ -17,7 +17,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [1984 decot in bugs.md](/bugs.md#1984-decot).
+For more detailed information see [1984 decot bugs](../../bugs.html#1984_decot).
 
 
 ## To use:
