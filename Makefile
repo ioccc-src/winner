@@ -436,35 +436,23 @@ www:
 
 # form all entry compressed tarballs
 #
-# XXX - We also use -W because some entry files don't yet exist - XXX
-# XXX - Remove -W when make verify_entry_files runs without err - XXX
-# XXX - We do not yet form year level and the top level tarball - XXX
-#
 form_entry_tarball: ${ALL_RUN} ${TAR_ENTRY}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	${ALL_RUN} -v 3 ${TAR_ENTRY} -v 1 -W
+	${ALL_RUN} -v 3 ${TAR_ENTRY} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # form all IOCCC year level compressed tarballs
 #
-# XXX - We also use -W because some entry files don't yet exist - XXX
-# XXX - Remove -W when make verify_entry_files runs without err - XXX
-# XXX - We do not yet form year level and the top level tarball - XXX
-#
 form_year_tarball: ${ALL_YEARS} ${TAR_YEAR}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	${ALL_YEARS} -v 3 ${TAR_YEAR} -v 1 -W
+	${ALL_YEARS} -v 3 ${TAR_YEAR} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # form compressed tarball for all of the IOCCC
 #
-# XXX - We also use -W because some entry files don't yet exist - XXX
-# XXX - Remove -W when make verify_entry_files runs without err - XXX
-# XXX - We do not yet form year level and the top level tarball - XXX
-#
 form_all_tarball: ${TAR_ALL}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	${TAR_ALL} -v 1 -W
+	${TAR_ALL} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # build all tarballs
