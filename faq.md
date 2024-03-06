@@ -469,7 +469,7 @@ make is much more likely for the IOCCC to be held in a yearly basis later on.
 The long history of the [official IOCCC web site](https://www.ioccc.org) can be
 viewed at the [Internet Wayback Machine Wayback Machine](https://web.archive.org).
 
-One can view several thousand snapshots showing how the [IOCCC web site has
+One can [view several thousand snapshots showing how the IOCCC web site has
 evolved](https://web.archive.org/web/20230000000000*/www.ioccc.org) going back
 as far as [1998 Dec 12
 www.ioccc.org](https://web.archive.org/web/19981212030016/https://www.ioccc.org/).
@@ -484,26 +484,28 @@ web site.
 
 Furthermore, a bzip2 compressed tarball containing the released
 IOCCC entry source code may be found under the
-[archive/historic](archive/histroic) directory.  The file
-[archive-all.tar.bz2](archive/historic/archive-all.tar.bz2) contains
+[archive/historic](/archive/histroic) directory.  The file
+[archive-all.tar.bz2](/archive/historic/archive-all.tar.bz2) contains
 all years and the individual years are in the form
-_archive/historic/archive-YYYY.tar.bz2_.
+`archive/historic/archive-YYYY.tar.bz2`.
 
 These files were obtained from the [Internet Wayback
 Machine](https://web.archive.org) from the [snapshot of the website
 on 2020 Dec
 28](https://web.archive.org/web/20201228005211/https://www.ioccc.org/).
-See [archive/historic/index.html](archive/historic/index.html) for
+See [/archive/historic/index.html](archive/historic/index.html) for
 details about these bzip2 compressed tarballs.
 
 **XXX**: Change the references to _temp-test-ioccc_ to _winners_
 when these fixes are merged.
+
 
 #### 2022 Dec 29 Official IOCCC winner repo
 
 The [Official IOCCC winner repo](https://github.com/ioccc-src/winner)
 was [created on 2020 Dec
 29](https://github.com/ioccc-src/winner/commit/28efc67f5dd692a3544708bf7fa26286adb82dfb).
+
 
 #### 2020 Dec 30 IOCCC content uploaded to GitHub
 
@@ -515,33 +517,35 @@ and then on **Wed Dec 30 16:57:03 2020 -0800** added a preview of
 1984-2019 via [commit
 c0663537cb88d39b74285a930ff1a668c6d5968b](https://github.com/ioccc-src/winner/commit/c0663537cb88d39b74285a930ff1a668c6d5968b).
 
-On [2020 Dec
-30](https://github.com/ioccc-src/winner/commit/c0663537cb88d39b74285a930ff1a668c6d5968b)
+On 2020 Dec 30, with [commit
+c0663537cb88d39b74285a930ff1a668c6d5968b](https://github.com/ioccc-src/winner/commit/c0663537cb88d39b74285a930ff1a668c6d5968b),
 the [official IOCCC web site of 2022 Dec
 29](https://web.archive.org/web/20221231001721/https://www.ioccc.org/) was
 uploaded into the [Official IOCCC winner
 repo](https://github.com/ioccc-src/winner).
 
+
 #### 2020 IOCCC winning entries released using git via GitHub
 
-The [winning entries of the 2020
-IOCCC](https://github.com/ioccc-src/winner/commit/9d61fc0fb4a3245afb1435458cfb597fad0e8e6a),
+The [winning
+entries](https://github.com/ioccc-src/winner/commit/9d61fc0fb4a3245afb1435458cfb597fad0e8e6a)
+of the [IOCCC 2020](https://www.ioccc.org/years.html#2020),
 after a far too long of a delay
-(due in part to a [former IOCCC judge who resignation was noted on
+(due in part to a [former IOCCC judge whose resignation was noted on
 2021 Jan 04](https://github.com/ioccc-src/winner/commit/c94fc84c35dc83e3eb9900720b95917a15c27afe))
 from their initial [2020 Jul 25
 announcement](https://web.archive.org/web/20200726232505/http://www.ioccc.org:80/index.html),
-the [2020 IOCCC winning entries](https://www.ioccc.org/years.html#2020)
 were added by an [IOCCC judge](https://www.ioccc.org/judges.html)
-to their local [git](https://git-scm.com) repository, then were
+to their local [git](https://git-scm.com) repository and then were
 merged into the [Official IOCCC winner repo on 2020 Dec
 31](https://github.com/ioccc-src/winner/commit/b1638ff0012964d79ab1c44aa815d3f824f35b6c).
 
 These [2020 IOCCC winning entries](https://www.ioccc.org/years.html#2020),
 as shown in the [Internet Wayback Machine](https://web.archive.org)
-[2021 Jan 02](https://web.archive.org/web/20210102042216/www.ioccc.org/years.html)
-snapshot, were the first IOCCC entries to have been released via
+[snapshot of 2021 Jan 02](https://web.archive.org/web/20210102042216/www.ioccc.org/years.html)
+were the first IOCCC entries to have been released via
 [git](https://git-scm.com) and [GitHub](https://github.com).
+
 
 #### 2020 Dec 30 thru 202y MMM DD - Work on the temp-test-ioccc GitHub repo
 
