@@ -948,9 +948,13 @@ entries should be an alternate version.
 Other entries like [2001/herrmann2](thanks-for-help.html#2001_herrmann2)
 now work with 32-bit AND 64-bit systems.
 
-Please see the [bugs.html](bugs.html) file for the problematic entry in question to see if the problem is known, and if a fix is wanted, consider trying to port the code to a 64-bit system and submitting a pull request with that change.  Pull requests that fix such code while trying to minimize the impact of any changes and preserving the spirit of the original code are very welcome!
-Please
-see FAQ 5.2 <a href="#fix_an_entry">"How may I submit a fix to an IOCCC entry"</a> for details.
+Please see the [bugs.html](bugs.html) file for the problematic entry in question
+to see if the problem is known, and if a fix is wanted, consider trying to port
+the code to a 64-bit system and submitting a pull request with that change.
+Pull requests that fix such code while trying to minimize the impact of any
+changes and preserving the spirit of the original code are very welcome!
+Please see FAQ 5.2 <a href="#fix_an_entry">"How may I submit a fix to an IOCCC
+entry"</a> for details.
 
 
 ### <a name="faq3_3"></a>FAQ 3.3: Why do some IOCCC entries fail to compile under macOS?
@@ -962,9 +966,12 @@ actually clang, even `/usr/bin/gcc`.
 That being said many (if not most) of these entries have been fixed and some
 others will be looked at, when found.
 
-In some cases the [bugs.html](bugs.html) file may note a known macOS problem with an entry.  Should you manage to port the entry, and assuming your changes also attempt to preserve the original intent of the IOCCC entry, we would encourage you to submit a pull request with your ported code.
-Please
-see FAQ 5.2 <a href="#fix_an_entry">"How may I submit a fix to an IOCCC entry"</a> for details.
+In some cases the [bugs.html](bugs.html) file may note a known macOS problem
+with an entry.  Should you manage to port the entry, and assuming your changes
+also attempt to preserve the original intent of the IOCCC entry, we would
+encourage you to submit a pull request with your ported code.
+Please see FAQ 5.2 <a href="#fix_an_entry">"How may I submit a fix to an IOCCC
+entry"</a> for details.
 
 
 ### <a name="faq3_4"></a>FAQ 3.4: Why does clang or gcc fail to compile an IOCCC entry?
@@ -983,9 +990,11 @@ At the same time some entries are not designed to work with clang. There might
 be alternate code added at some point but as above this depends on free time and
 other things that have to be done plus remembering to do it.
 
-See if the problem is mentioned in [bugs.html](bugs.html).  If you have a change that fixes the problem (even if it just a change to the `Makefile`) that doesn't negatively impact the entry too much, consider submitting that change in the form of a pull request.
-Please
-see FAQ 5.2 <a href="#fix_an_entry">"How may I submit a fix to an IOCCC entry"</a> for details.
+See if the problem is mentioned in [bugs.html](bugs.html).  If you have a change
+that fixes the problem (even if it just a change to the `Makefile`) that doesn't
+negatively impact the entry too much, consider submitting that change in the
+form of a pull request.  Please see FAQ 5.2 <a href="#fix_an_entry">"How may I
+submit a fix to an IOCCC entry"</a> for details.
 
 
 ### <a name="faq3_5"></a>FAQ 3.5: What is this cb tool that is mentioned in the IOCCC?
@@ -2185,7 +2194,7 @@ IOCCC winning entries are presented!
 In any event we will happily add you to the
 [thanks](thanks-for-help.html) file for your help!
 
-And of course, an IOCCC entry may update their own entries
+And of course, an IOCCC author may update their own entries
 (metadata as well as source code and any extra files) by opening a
 [GitHub pull request](https://github.com/ioccc-src/winner/pulls)
 against the master [branch](https://github.com/ioccc-src/winner/branches)
@@ -2375,7 +2384,7 @@ While IOCCC judges look favorably on most requests to use IOCCC material,
 we request that you ask the [IOCCC judges](judges.html) first.
 
 Please send your request using the instructions on the [contacting
-the IOCCC Judges](contact.html) page.
+the IOCCC Judges](/contact.html) page.
 
 
 ### <a name="faq6_4"></a>FAQ 6.4: Why do you sometimes use the first person plural?
@@ -2389,7 +2398,7 @@ Willard](https://en.wikipedia.org/wiki/F._D._C._Willard) as well
 as the [APS New Open Access
 Initiative](https://journals.aps.org/2014/04/01/aps-announces-a-new-open-access-initiative).
 
-The number of [IOCCC judges](../judges.html) has
+The number of [IOCCC judges](https://www.ioccc.org/judges.html) has
 always been "> 1" such that IOCCC judges often prefer to themselves
 in the plural, sometimes [in the common
 plural](https://en.wikipedia.org/wiki/Plural), sometimes in the
@@ -3285,6 +3294,11 @@ and then the text field that is labelled _Add a description_ would have:
 > script that discusses this and gives supposed examples.
 
 Once you've done this you should click on _Create pull request_.
+
+IMPORTANT NOTE: although the [Judges](https://www.ioccc.org/judges.html) will
+give more deference to the authors of edited entries the
+[Judges](https://www.ioccc.org/judges.html) also retain the final editorial say
+in the matter.
 
 
 #### What to do after a merge
