@@ -15,7 +15,7 @@ Use `make` to compile entries.  It is possible that on non-Unix / non-Linux
 systems the Makefile needs to be changed.  See the Makefile for details.
 
 Read over the Makefile for compile/build issues.  Your system may require
-certain changes (add or remove a library, add or remove a #define).
+certain changes (add or remove a library, add or remove a `#define`).
 
 Some ANSI C compilers are not quite as good as they should be.  If
 yours is lacking, you may need to compile using gcc instead of your
@@ -33,7 +33,7 @@ This year we selected the top 4 entries for particularly high honors:
 *   Gold award - Balanced use of obfuscation
 
     A very extremely subtle and twisted piece of source code!
-    Even if you start with the zeitak_deobfucate.c source,
+    Even if you start with the zeitak.alt.c source,
     you will still have a very challenging time to understand it!
 
 *   Silver award - Most elementary use of C
@@ -55,9 +55,9 @@ This year we selected the top 4 entries for particularly high honors:
 But don't ignore the other winning entries!  There are games, utilities,
 eye candy, calculators and graphical tools to explore.
 
-This year, Yusuke Endoh won with two entries, one of which (endoh1)
-won the special Honorable mention award.  Eight of the winning entries
-were from people who won in previous years.
+This year, Yusuke Endoh won with two entries, one of which
+([endoh1](endoh1/index.html)) won the special Honorable mention award.  Eight of
+the winning entries were from people who won in previous years.
 
 This year we had a number of authors from Asia.  We saw our second
 authors from China and first from Korea.  We are pleased to see

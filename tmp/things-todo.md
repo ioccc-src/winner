@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Thu 07 Mar 2024 16:59:49 UTC*
+*Last updated: Thu 07 Mar 2024 18:16:13 UTC*
 
 This document is for [Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) as
 he (that is I :-) ) wanted a way to keep track of things in a way that did not
@@ -14,15 +14,6 @@ Every so often this file is checked and updated to remove items and when
 something needs to be done is thought of it is also updated unless it can be
 done right then and there or it seems more appropriate to add to the issue (#3)
 todo list.
-
-- Typo fix ALL markdown files. For the README.md files the entries have all been
-done (along with format fixes) but the YYYY/README.md files have not been
-completed.
-    * Go through all year README.md files: that is 1984/README.md,
-    1985/README.md and so on. As of **Mon 16 Oct 11:22:52 UTC 2023** the
-    following years have had a first pass: 1984 through 2001. However there are
-    changes that might be required in those years too so a pass over all of them
-    will have to be done at the time the files are to be reviewed.
 
 - Check that the following todo tasks at:
     <https://github.com/ioccc-src/temp-test-ioccc/issues/3#issuecomment-1583833132>

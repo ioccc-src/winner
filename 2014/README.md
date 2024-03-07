@@ -11,16 +11,16 @@ the Author's remarks for even more details.
 The IOCCC has a web site and now has a number of international mirrors.
 The primary site can be found at [www.ioccc.org](https://www.ioccc.org).
 
-Use make to compile entries.  It is possible that on non-Un\*x / non-Linux
-systems the makefile needs to be changed.  See the Makefile for details.
+Use make to compile entries.  It is possible that on non-Unix / non-Linux
+systems the Makefile needs to be changed.  See the Makefile for details.
 
 Look at the source and try to figure out what the programs do, and run
 them with various inputs.  If you want to, look at the hints files for
 spoilers - this year we included most of the information included
 by the submitter.
 
-Read over the makefile for compile/build issues.  Your system may require
-certain changes (add or remove a library, add or remove a #define).
+Read over the README.md for compile/build issues.  Your system may require
+certain changes (add or remove a library, add or remove a `#define`).
 
 Some ANSI C compilers are not quite as good as they should be.  If
 yours is lacking, you may need to compile using gcc instead of your
@@ -38,14 +38,14 @@ authors submitted very different styles of entries.
 
 This year was the second time the IOCCC size tool was used. Rule 2
 required that when program source is fed as input to the current IOCCC size
-tool, and the IOCCC size tool -i command line option is used, the value
+tool, and the IOCCC size tool `-i` command line option is used, the value
 printed should be less than or equal to 2053.
 
-We were pleased to see that abuse of the rules was extended to abuse
-to the IOCCC size tool.  Matt Zucker, followed by a few users, were
-able to discover cleaver use of certain // comments to perplex the size tool.
-The abuse was so bad that the judges released a critical and mandatory
-patch to the IOCCC size tool on 2014-09-23.
+We were pleased to see that abuse of the rules was extended to abuse to the
+IOCCC size tool.  [Matt Zucker](../authors.html#Matt_Zucker), followed by a few
+users, were able to discover clever use of certain `//` comments to perplex the
+size tool.  The abuse was so bad that the judges released a critical and
+mandatory patch to the IOCCC size tool on 2014-09-23.
 
 There were some great entries that did not win.  Unfortunately
 some entries lost because they:
@@ -71,7 +71,7 @@ in some particularly impressive way.
 
 We apologize on the delay of sending the authors the tarball for them
 to review.  There were some unforeseen events, such as unplanned mandatory
-business travel, the death of a IOCCC judge mother, etc. that impacted
+business travel, the death of an IOCCC judge's mother, etc. that impacted
 our planned schedule for building the tarball of this year's winning entries.
 
 During some of these forced delays, we took the time to better automate
@@ -81,7 +81,7 @@ these changes made during those delays will make releasing future winning IOCCC
 entries a faster procedure.
 
 p.s. The final advice given to Landon by his mom: "Have fun."
-We recommend following this advice were possible.
+We recommend following this advice where possible.
 
 
 ## Final Comments

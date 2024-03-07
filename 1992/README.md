@@ -13,12 +13,15 @@ certain changes (add or remove a library, add or remove a `#define` i.e. the
 `-D` flag).  A number of compilers had problems optimizing certain entries.
 Some compilers do optimize, but the resulting program does not work.  By default
 we have left off `-O` from compile lines.  You might want to add `-O` back, or
-add it back for certain entries where performance is important.
+add it back for certain entries where performance is important. (This was
+updated to use `-O3` in 202n though sometimes an entry does not work if the
+compiler optimises the code and in this case it is disabled or explicitly set to
+level 0.)
 
 This year marked an all time high for number of entries as well as the
 quality of entries.  Nearly twice the usual number of entries made it
 to the final judging rounds.  Even when we raised the standards for
-winning, we still wound up giving out a few more awards than in other
+winning, we still wound up giving out a few more awards than in previous
 years.  The new size rules size probably contributed to the overall
 high quality.
 

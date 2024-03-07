@@ -60,7 +60,7 @@ See also [the IOCCC FAQ](../faq.html) for addition information on the IOCCC.
 ### Credits:
 
 We would like to thank Barbara Frezza for her role as official chef
-of the contest.  Landon Noll and Larry Bassel appreciated the opportunity
+of the contest.  Landon Curt Noll and Larry Bassel appreciated the opportunity
 to serve as official taste testers.  And as usual, the food was excellent.
 
 

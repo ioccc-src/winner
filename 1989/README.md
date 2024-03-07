@@ -11,15 +11,14 @@ System V or non-Unix systems the Makefile needs to be changed).
 This year, the Grand Prize was given to the most useful program.
 
 The ["Strangest abuse of the rules"](jar.1/indx.html) award was given this year
-to stress the fact that starting in 1990, compiling entries must result an
-executable regular file.
+to stress the fact that starting in 1990, compiling entries must result a
+regular executable file.
 
 The Makefile always uses the portable version of the ["Best
 self modifying program"](fubar/indx.html) because there is no loss of functionality in
 using it.  In the case of the ["Best game"](tromp/README) entry, however, some
 functionality is lost in the portable version and so the Makefile uses
-the original program. System V users may need to change the Makefile
-to use the s5 version. See the hint files or the Makefile for details.
+the original program.
 
 [Rules](rules.txt) and results were posted to comp.lang.c, comp.sources.unix, and
 alt.sources.  They have been made available on a wide number of USENET

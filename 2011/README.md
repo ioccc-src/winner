@@ -18,7 +18,7 @@ This year we included most of the information included by the submitters
 in the `README.md` files (that were used to build the `index.html` web pages).
 
 Read over the Makefile for compile/build issues.  Your system may require
-certain changes (add or remove a library, add or remove a #define).
+certain changes (add or remove a library, add or remove a `#define`).
 
 Some ANSI C compilers are not quite as good as they should be.  If
 yours is lacking, you may need to compile using gcc instead of your
@@ -41,7 +41,8 @@ them for the next IOCCC.
 
 We believe you will be impressed with this year's winning entries. The Best
 of Show is a fine example of character stitching.  But don't ignore the other
-entries!  There are games, puzzle solvers, utilities, eye candy, calculators and graphical and audio tools.
+entries!  There are games, puzzle solvers, utilities, eye candy, calculators and
+graphical and audio tools.
 
 This year all authors are different, and there is a authors from a new country -
 China!  Many authors won for the first time. (Please note that judging is done

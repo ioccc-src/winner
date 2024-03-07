@@ -13,7 +13,7 @@ systems the Makefile needs to be changed.  See the Makefile for details.
 
 Read over the Makefile for compile/build issues.  Your system may
 require certain changes (add or remove a library, add or remove a
-#define).
+`#define`).
 
 Some ANSI C compilers are not quite as good as they should be.  If
 yours is lacking, you may need to compile using gcc instead of your
@@ -24,10 +24,9 @@ local compiler.
 
 The judges were unable to contact Jeremy Horn for judging the 2000 contest.
 
-As a result, Simon Cooper: <http://www.sfik.com/>
-
-joined our team.  Simon is well known for being a co-author of the 2nd
-edition of the Building Internet Firewalls book.
+As a result, [Simon Cooper](http://www.sfik.com/) joined our team.  Simon is
+well known for being a co-author of the 2nd edition of the Building Internet
+Firewalls book.
 
 
 ## Remarks on some of the entries
@@ -55,7 +54,7 @@ using it next time ... :-)
 
 Speaking of time, be sure to check out the [Astronomically
 Obfuscated](rince/index.html) and the [Most Timely
-Output](schneiderwent/index.html).
+Output](schneiderwent/index.html) entries.
 
 
 ## There was no 1999 contest
