@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Tue 27 Feb 2024 16:16:25 UTC*
+*Last updated: Thu 07 Mar 2024 16:59:49 UTC*
 
 This document is for [Cody Boone Ferguson](/authors.html#Cody_Boone_Ferguson) as
 he (that is I :-) ) wanted a way to keep track of things in a way that did not
@@ -25,14 +25,9 @@ completed.
     will have to be done at the time the files are to be reviewed.
 
 - Check that the following todo tasks at:
-    <https://github.com/ioccc-src/temp-test-ioccc/issues/3#issuecomment-1583842154>,
-    <https://github.com/ioccc-src/temp-test-ioccc/issues/3#issuecomment-1583836962>,
-    <https://github.com/ioccc-src/temp-test-ioccc/issues/3#issuecomment-1583834979>,
-    <https://github.com/ioccc-src/temp-test-ioccc/issues/3#issuecomment-1583833132>,
-    <https://github.com/ioccc-src/temp-test-ioccc/issues/3#issuecomment-1583832622>,
-    <https://github.com/ioccc-src/temp-test-ioccc/issues/3#issuecomment-1583829356>
+    <https://github.com/ioccc-src/temp-test-ioccc/issues/3#issuecomment-1583833132>
     and
-    <https://github.com/ioccc-src/temp-test-ioccc/issues/3#issuecomment-1583828473>
+    <https://github.com/ioccc-src/temp-test-ioccc/issues/3#issuecomment-1583829356>
 
     have been finished. It is quite possible that some or all of these have been
     corrected by now but this has not yet been determined.
