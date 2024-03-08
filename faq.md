@@ -3065,7 +3065,7 @@ such as old rules and old guidelines, terms such as _entry_ may still be
 found.  Moreover, out of habit, the IOCCC judges sometimes use old
 names such as _entry_ when they should use _submission_.  Sorry (tm Canada)! :-)
 
-### <a name="faq6_10"></a>FAQ 6.10: How does someone make a change to a file and submit that change as a GitHub pull request?
+### <a name="faq6_10"></a><a name="pull_request"></a>FAQ 6.10: How does someone make a change to a file and submit that change as a GitHub pull request?
 
 First, if you do not already have a GitHub account or you have not installed an
 ssh key to your account you must do so. For this we will assume you do not have
