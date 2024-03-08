@@ -3007,7 +3007,7 @@ make genpath
 ```
 
 
-### <a name="faq6_9"></a>FAQ 6.9: What is the current meaning of the IOCCC terms Author, Entry, and Submission?
+### <a name="faq6_9"></a><a name"terms"></a>FAQ 6.9: What is the current meaning of the IOCCC terms Author, Entry, and Submission?
 
 The IOCCC is now attempting to use the following terms:
 
