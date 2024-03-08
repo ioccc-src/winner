@@ -18,7 +18,7 @@ This year we included most of the information included by the submitters
 in the `README.md` files (that were used to build the `index.html` web pages).
 
 Read over the Makefile for compile/build issues.  Your system may require
-certain changes (add or remove a library, add or remove a #define).
+certain changes (add or remove a library, add or remove a `#define`).
 
 Some ANSI C compilers are not quite as good as they should be.  If
 yours is lacking, you may need to compile using gcc instead of your

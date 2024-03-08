@@ -7,7 +7,7 @@ You may then wish to look at the Author's remarks for even more details.
 
 The maximum size of entries was raised from 1024 to 1536 bytes, however smaller
 entries were encouraged.  Due to the ["Best Abuse of the Rules" entry of
-1987](../1987/biggar/), a limit of 160 chars in the compile line was introduced.
+1987](/1987/biggar/index.html), a limit of 160 chars in the compile line was introduced.
 
 This year, the Grand Prize was given to the most unusual entry and best
 abuse of the C Preprocessor rather than the most well rounded entry.

@@ -39,7 +39,7 @@ The ideal 3rd judge would have all of the following:
 
 * thorough knowledge of the C language (ANSI and K&R)
 * thorough knowledge of common C libs (libc, libm, curses, ...)
-* reasonable written communication skills (able to write `README.md` files)
+* reasonable written communication skills (able to write `README.md` files, for example)
 * appreciation for well-written non-obfuscated code
 * willing to devote ~4 weekend days in January (starting Jan 96) for judging
 * located in the San Francisco (California, US) Bay Area, or
@@ -112,7 +112,7 @@ judges@toad.com
 ```
 
 If you use, distribute or publish these entries in some way, please drop
-us a line.  We enjoy seeing who, where and how the contest is used.
+us a line.  We enjoy seeing who, where and how the contest is used,
 as well as details on how to provide fixes to any of the entries.
 
 
@@ -128,7 +128,7 @@ See also [the IOCCC FAQ](../faq.html) for addition information on the IOCCC.
 ## Credits
 
 We would like to thank Barbara Frezza for her role as official chef
-of the contest.  Landon Noll and Larry Bassel appreciated the opportunity
+of the contest.  Landon Curt Noll and Larry Bassel appreciated the opportunity
 to serve as official taste testers.  And as usual, the food was excellent.
 The official menu of the 1994 Obfuscated C Contest dinner:
 

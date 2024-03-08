@@ -6,21 +6,20 @@
 View the `index.html` web page for the given winning entry for information on how
 compile the entry and how to run the winning program.  Look at the winning
 source and try to figure how it does what it does!  You may then wish to look at
-the Author's remarks for even more details.
+the Author's remarks for even more details. This year we included most of the
+information included by the submitter.
 
 The IOCCC has a web site and now has a number of international mirrors.
 The primary site can be found at [www.ioccc.org](https://www.ioccc.org).
 
-Use make to compile entries.  It is possible that on non-Un\*x / non-Linux
-systems the makefile needs to be changed.  See the Makefile for details.
+Use `make` to compile entries.  It is possible that on non-Unix / non-Linux
+systems the Makefile needs to be changed.  See the Makefile for details.
 
 Look at the source and try to figure out what the programs do, and run
-them with various inputs.  If you want to, look at the hints files for
-spoilers - this year we included most of the information included
-by the submitter.
+them with various inputs.
 
-Read over the makefile for compile/build issues.  Your system may require
-certain changes (add or remove a library, add or remove a #define).
+Read over the Makefile for compile/build issues.  Your system may require
+certain changes (add or remove a library, add or remove a `#define`).
 
 Some ANSI C compilers are not quite as good as they should be.  If
 yours is lacking, you may need to compile using gcc instead of your
@@ -33,28 +32,28 @@ We believe you will again be impressed with this year's winning entries.
 
 The fraction of worthy entries was higher than usual.
 
-We call to your attention, the _hou_ entry, that performs the MD5
-cryptographic hash.  Normally implemented with a set of integer and
-boolean operations, this code uses floating point variables inside
-a single while loop filled with unusual constants, cosine, square
-root, and exponent function calls. The number of lines of code
-is also smaller than the original algorithm.
+We call to your attention the [hou](hou/index.html) entry that performs the MD5
+cryptographic hash.  Normally implemented with a set of integer and boolean
+operations, this code uses floating point variables inside a single `while` loop
+filled with unusual constants, cosine, square root, and exponent function calls.
+The number of lines of code is also smaller than the original algorithm.
 
-The _mills2_ source code is a very compressed version of a decompression
-algorithm.  We think those who enjoy compression algorithms will
+The [mills2](mills2/index.html) source code is a very compressed version of a
+decompression algorithm.  We think those who enjoy compression algorithms will
 particularly enjoy this entry.
 
-We suggest that you attempt to completely understand the _endoh4_
-1-liner program: another impressive compact piece of C code.
+We suggest that you attempt to completely understand the
+[endoh4](endoh4/index.html) 1-liner program: another impressive compact piece of
+C code.
 
-And while you are at it, cat the _endoh2_ prog.c code.  Compile it
+And while you are at it, cat the [endoh2 prog.c](endoh2/prog.c) code.  Compile it
 and look at the source code again.
 
-In a "Back to the Future" moment, _endoh3_ gave us a twist on one of
-the all time best IOCCC entries from 1984.
+In a "Back to the Future" moment, [endoh3](endoh3/index.html) gave us a twist on
+one of the all time best IOCCC entries from 1984.
 
-We also suggest that you take a very good look at how the _muth_ code
-makes full use of the C Pre-Processor.
+We also suggest that you take a very good look at how the
+[muth](muth/index.html) code makes full use of the C Pre-Processor.
 
 ...We'll stop spouting spoilers now. Have fun exploring all the entries!
 
@@ -78,12 +77,14 @@ Rule 22, now known as **Catch 22** states:
 |      to be Peter Honeyman, will be grounds for disqualification of your entry.
 ```
 
-A number of other entries were based on iocccsize.c, making derivative works
-rather than original works.
+A number of other entries were based on [iocccsize.c](iocccsize.c), making
+derivative works rather than original works.
 
 Still other entries were too large, violating the first line of rule 2:
 
+```
 2) The size of your program source must be <= 4096 bytes in length.
+```
 
 While these entries might have passed under the 2053 limit for iocccsize,
 they were larger than <= 4096 bytes, sometimes by an order or magnitude.

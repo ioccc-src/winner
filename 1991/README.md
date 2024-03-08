@@ -9,7 +9,7 @@ Instructions for use: Run `make` to compile entries.  It is possible that
 on BSD or non-Unix systems the Makefile needs to be changed.
 
 This year, we did not single out an entry that was better than all of
-the rest.  We selected 3 entries that were, in our opinion, went beyond
+the rest.  We selected 3 entries that, in our opinion, went beyond
 all of the other entries this year:
 
 - [Grand Prize](westley/index.html) by [Brian

@@ -25,7 +25,7 @@ no longer post the winning entries to this newsgroup - we'll let you the reader 
 for yourself the wizardry of these entries.
 
 This year there were several people who won more than once and several [previous
-winning entries](../authors.html) as well. The judging was done without knowledge of the
+winning authors](../authors.html) as well. The judging was done without knowledge of the
 names of the submitters - multiple winning entries were a coincidence. Since we tend to
 discount entries that are similar to previous entries, these people had to come
 with original ideas to stay in the winning entry circle.

@@ -8,7 +8,7 @@ on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
-The IOCCC has its own domain.  The IOCCC has an official home page is now:
+The IOCCC has its own domain.  The IOCCC has an official home page:
 [www.ioccc.org](https://www.ioccc.org).
 
 Use `make` to compile entries.  It is possible that on BSD or non-Unix
@@ -35,9 +35,9 @@ Landon was unable to contact Sriram Srinivasan at the start of
 the 1998 IOCCC season.  Having not heard from Sriram, Landon put out
 a call for new IOCCC judges.  A number of excellent people applied.
 
-Landon selected Leonid A. Broukhis, a two time IOCCC author, as a
+Landon selected Leonid A. Broukhis, a two time IOCCC winning author, as a
 co-judge.   Landon and Leo together selected Jeremy Horn and Peter
-Seebach.  The four judges (../judges.html) together worked
+Seebach.  The four [judges](https://www.ioccc.org/judges.html) together worked
 thru-out the 1998 IOCCC season.
 
 
@@ -64,7 +64,7 @@ for the fact that they didn't work.  If you didn't win, but think you
 had a chance: test your program, fix it and submit it next year!
 
 This year we awarded some outstanding entries.  We recommend that you
-look at all of the winning enties.  The list of winning entries is a bit too long to
+look at all of the winning entries.  The list of winning entries is a bit too long to
 say something about every entry.  On the other hand a partial mention
 of a few is in order:
 
@@ -76,7 +76,7 @@ of a few is in order:
   impressed with CPP code expansion liked the entry that translated
   lambda expressions into combinator expressions.
 - Logic minded folks will get somewhat twisted up while following the
-  flow of the [Best Flow Control entry](1998/schnitzi/index.html).
+  flow of the [Best Flow Control entry](schnitzi/index.html).
 - Those who know the PostScript language will be 'bemused' by
   the [Best Encapsulation entry](bas1/index.html).
 
@@ -124,9 +124,7 @@ You must include the words 'ioccc question' in the subject of your email
 message when sending email to the judges.
 
 The next IOCCC is planned to start towards the end of 1999.  Watch
-[www.ioccc.org](https://www.ioccc.org)
-
-for news of the next contest.
+[www.ioccc.org](https://www.ioccc.org) for news of the next contest.
 
 
 # Copyright and License
