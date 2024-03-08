@@ -238,7 +238,7 @@ indent.c:
 #	   simple want to examine, run / test winning IOCCC entries.
 
 .PHONY: help genpath genfilelist verify_entry_files gen_authors gen_location gen_years \
-	entry_index gen_top_html gen_other_html quick_entry_index \
+	entry_index gen_top_html thanks gen_other_html quick_entry_index \
 	gen_year_index quick_www www gen_sitemap \
 	form_entry_tarball form_year_tarball form_all_tarball tar
 
@@ -355,6 +355,12 @@ gen_top_html: ${GEN_TOP_HTML}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${GEN_TOP_HTML} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+thanks: ${GEN_TOP_HTML} thanks-for-help.md
+	@echo "Thanks for all the help ..."
+	@${GEN_TOP_HTML}
+	@echo "... and thanks for all the fish :-)"
+
 
 # generate build entry HTML files from markdown other than README.md to index.html HTML files
 #
