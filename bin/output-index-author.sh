@@ -786,7 +786,7 @@ for author_handle in $AUTHOR_HANDLE_SET; do
 	if [[ $LOCATION_CODE == null ]]; then
 	    echo "Location: [unknown](${DOCROOT_SLASH}location.html#$LOCATION_CODE) - _${LOCATION_NAME}_"
 	else
-	    if [[ $LOCATION_NAME == $LOCATION_COMMON_NAME ]]; then
+	    if [[ $LOCATION_NAME == "$LOCATION_COMMON_NAME" ]]; then
 		echo "Location: [$LOCATION_CODE](${DOCROOT_SLASH}location.html#$LOCATION_CODE) -" \
 		     "_${LOCATION_NAME}_"
 	    else

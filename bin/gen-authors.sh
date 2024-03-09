@@ -844,7 +844,7 @@ EOF
 	    #
 	    echo "<p><a name=\"$AUTHOR_HANDLE\"></a>**$FULL_NAME**</br>"
 	    echo "author_handle: $AUTHOR_HANDLE</br>"
-	    if [[ $LOCATION_NAME == $LOCATION_COMMON_NAME ]]; then
+	    if [[ $LOCATION_NAME == "$LOCATION_COMMON_NAME" ]]; then
 		echo "Location: [$LOCATION_CODE](location.html#$LOCATION_CODE) -" \
 		     "_${LOCATION_NAME}_</p>"
 	    else

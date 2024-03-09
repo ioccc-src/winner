@@ -457,7 +457,7 @@ fi
 
 	# output markdown entry for this location
 	#
-	if [[ $LOCATION_NAME == $LOCATION_COMMON_NAME ]]; then
+	if [[ $LOCATION_NAME == "$LOCATION_COMMON_NAME" ]]; then
 	    echo "* <a name=$LOCATION_CODE></a>**$LOCATION_CODE** - _${LOCATION_NAME}_"
 	else
 	    echo "* <a name=$LOCATION_CODE></a>**$LOCATION_CODE** - _${LOCATION_NAME}_ (_${LOCATION_COMMON_NAME}_)"
