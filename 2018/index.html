@@ -11,6 +11,7 @@
 <!-- END: this line ends content from: inc/top.default.html -->
 <!-- -->
 <!-- The original markdown content was formed by the tool: unspecified -->
+<!-- The main part of the markdown content came from: 2018/README.md -->
 <!-- The HTML was converted from markdown by the tool: bin/md2html.sh -->
 <!-- -->
 <!-- START: this line starts content from: inc/head.default.html -->
@@ -120,19 +121,18 @@ Fifth International Obfuscated C Code Contest</h1>
 for information on how compile the entry and how to run the winning
 program. Look at the winning source and try to figure how it does what
 it does! You may then wish to look at the Author’s remarks for even more
-details.</p>
+details. This year we included most of the information included by the
+submitter.</p>
 <p>The primary site can be found at <a
 href="https://www.ioccc.org">www.ioccc.org</a>.</p>
 <p>Use <code>make</code> to compile entries. It is possible that on
 non-Unix / non-Linux systems the Makefile needs to be changed. See the
 Makefile for details.</p>
 <p>Look at the source and try to figure out what the programs do, and
-run them with various inputs. If you want to, look at the hints files
-for spoilers - this year we included most of the information included by
-the submitter.</p>
-<p>Read over the Makefile for compile/build issues. Your system may
-require certain changes (add or remove a library, add or remove a
-#define).</p>
+run them with various inputs.</p>
+<p>Read over the Makefile and index.html files for compile/build issues.
+Your system may require certain changes (add or remove a library, add or
+remove a <code>#define</code>).</p>
 <p>Some C compilers are not quite as good as they should be. If yours is
 lacking, you may need to compile using clang or gcc instead of your
 local compiler.</p>
@@ -140,22 +140,23 @@ local compiler.</p>
 winning entries</h2>
 <p>We believe you will again be impressed with this year’s winning
 entries.</p>
-<p>The “Best of show” (mills) is an amazing tribute to entrues from 1984
-and 2015.</p>
-<p>Take a close look at the “Most likely to top the charts” <a
-href="hou/index.html">2018/hou</a> Observe that while it contains no
-variables and no operators, it remains functional in what it does.</p>
-<p>The “Best one-liner” (burton1), at 109 characters, is a short and
-sweet implementation of a classic utility and a nod to a winning entry
-from 1986. Sometimes it takes 20 ox years to do things the true IOCCC
-way.</p>
+<p>The <a href="mills/index.html">“Best of show” (mills)</a> is an
+amazing tribute to entries from 1984 and 2015.</p>
+<p>Take a close look at the “<a href="hou/index.html">Most likely to top
+the charts” (hou)</a>. Observe that while it contains no variables and
+no operators, it remains functional in what it does.</p>
+<p>The <a href="burton1/index.html">“Best one-liner” (burton1)</a>, at
+109 characters, is a short and sweet implementation of a classic utility
+and a nod to a winning entry from 1986. Sometimes it takes 20 some years
+to do things the true IOCCC way.</p>
 <p>The color of the remarks text this year was inspired by one of the
-stars of the “Most stellar” <a
-href="poikola/index.html">2018/poikola</a>.</p>
-<p>The “Best use of python” (endoh2) is a not what you might think it
-is. It is something completely different.</p>
-<p>The “Most likely to be awarded” (ciura) has an amazing
-vocabulary!</p>
+stars of the <a href="poikola/index.html">“Most stellar”
+(poikola)</a>.</p>
+<p>The <a href="endoh2/index.html">“Best use of python” (endoh2)</a> is
+a not what you might think it is. It is something completely
+different.</p>
+<p>The <a href="ciura/index.html">“Most likely to be awarded”
+(ciura)</a> has an amazing vocabulary!</p>
 <p>There are also nods to entries of the years <a
 href="2000/bellard/index.htmk">2000/bellard</a>, <a
 href="1989/yang/index.html">1989/yang</a>, …</p>
@@ -175,11 +176,17 @@ and 22 (one third of 666).</p>
 |      Identifying yourself, in an obvious way in your code, data, remarks
 |      or program output, unless you are Peter Honeyman or pretending
 |      to be Peter Honeyman, will be grounds for disqualification of your entry.</code></pre>
-<p>A number of other entries were based on iocccsize.c, making
-derivative works rather than original works.</p>
+<p>A number of other entries were based on <a
+href="iocccsize.c">iocccsize.c</a>, making derivative works rather than
+original works.</p>
 <p>Still other entries were too large, violating the first line of rule
 2:</p>
-<pre><code>2) The size of your program source must be &lt;= 4096 bytes in length.</code></pre>
+<blockquote>
+<ol start="2" type="1">
+<li>The size of your program source must be &lt;= 4096 bytes in
+length.</li>
+</ol>
+</blockquote>
 <p>While these entries might have passed under the 2053 limit for
 iocccsize, they were larger than &lt;= 4096 bytes, sometimes by an order
 or magnitude.</p>

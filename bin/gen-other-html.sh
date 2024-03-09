@@ -49,7 +49,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0 2024-02-27"
+export VERSION="1.0.1 2024-03-08"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -595,16 +595,19 @@ for YYYY in $(< "$TOP_FILE"); do
 		if [[ $V_FLAG -ge 5 ]]; then
 		    echo "$0: debug[5]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]}" \
 			 "-s $DESCRIPTION -s $KEYWORDS -s $HEADER_2" \
-			 "-s $UP_LINK -s $UP_TEXT -D $D_OPTION -v $V_FLAG -- $MD_FILE $HTML_FLLE" 1>&2
+			 "-s $UP_LINK -s $UP_TEXT -D $D_OPTION -m $MD_FILE -v $V_FLAG --" \
+			 "$MD_FILE $HTML_FLLE" 1>&2
 		fi
 		"$MD2HTML_SH" "${TOOL_OPTION[@]}" \
 		    -s "$DESCRIPTION" -s "$KEYWORDS" -s "$HEADER_2" \
-		    -s "$UP_LINK" -s "$UP_TEXT" -D "$D_OPTION" -v "$V_FLAG" -- "$MD_FILE" "$HTML_FLLE"
+		    -s "$UP_LINK" -s "$UP_TEXT" -D "$D_OPTION" -m "$MD_FILE" -v "$V_FLAG" -- \
+		    "$MD_FILE" "$HTML_FLLE"
 		status="$?"
 		if [[ $status -ne 0 ]]; then
 		    echo "$0: ERROR: tool: $MD2HTML_SH ${TOOL_OPTION[*]}" \
 			 "-s $DESCRIPTION -s $KEYWORDS -s $HEADER_2" \
-			 "-s $UP_LINK -s $UP_TEXT -D $D_OPTION -v $V_FLAG -- $MD_FILE $HTML_FLLE failed, error: $status" 1>&2
+			 "-s $UP_LINK -s $UP_TEXT -D $D_OPTION -m $MD_FILE -v $V_FLAG --" \
+			 "$MD_FILE $HTML_FLLE failed, error: $status" 1>&2
 		    echo 1 > "$TMP_EXIT_CODE" # exit 1
 		    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 		    continue
@@ -615,7 +618,8 @@ for YYYY in $(< "$TOP_FILE"); do
 	    elif [[ $V_FLAG -ge 5 ]]; then
 		echo "$0: debug[5]: because of -n, did not run: $MD2HTML_SH ${TOOL_OPTION[*]}" \
 		     "-s $DESCRIPTION -s $KEYWORDS -s $HEADER_2" \
-		     "-s $UP_LINK -s $UP_TEXT -D $D_OPTION -v $V_FLAG -- $MD_FILE $HTML_FLLE" 1>&2
+		     "-s $UP_LINK -s $UP_TEXT -D $D_OPTION -m $MD_FILE -v $V_FLAG --" \
+		     "$MD_FILE $HTML_FLLE" 1>&2
 	    fi
 	done
     done

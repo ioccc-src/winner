@@ -51,7 +51,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.1 2024-02-23"
+export VERSION="1.0.2 2024-03-08"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -383,19 +383,23 @@ fi
 if [[ -z $NOOP ]]; then
 
     if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[1]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]} -- $YYYY/README.md $YYYY/index.html" 1>&2
+	echo "$0: debug[1]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]} -m $YYYY/README.md --" \
+	     "$YYYY/README.md $YYYY/index.html" 1>&2
     fi
-    "$MD2HTML_SH" "${TOOL_OPTION[@]}" -- "$YYYY/README.md" "$YYYY/index.html"
+    "$MD2HTML_SH" "${TOOL_OPTION[@]}" -m  "$YYYY/README.md" -- \
+        "$YYYY/README.md" "$YYYY/index.html"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: tool: $MD2HTML_SH ${TOOL_OPTION[*]} -- $YYYY/README.md $YYYY/index.html failed, error: $status" 1>&2
+	echo "$0: ERROR: tool: $MD2HTML_SH ${TOOL_OPTION[*]} -m $YYYY/README.md --" \
+	     "$YYYY/README.md $YYYY/index.html failed, error: $status" 1>&2
 	exit 1
     fi
 
 # report disabled by -n
 #
 elif [[ $V_FLAG -ge 5 ]]; then
-    echo "$0: debug[5]: because of -n, did not run: $MD2HTML_SH ${TOOL_OPTION[*]} -- $YYYY/README.md $YYYY/index.html" 1>&2
+    echo "$0: debug[5]: because of -n, did not run: $MD2HTML_SH ${TOOL_OPTION[*]} -m $YYYY/README.md --" \
+	 "$YYYY/README.md $YYYY/index.html" 1>&2
 fi
 
 # All Done!!! -- Jessica Noll, Age 2

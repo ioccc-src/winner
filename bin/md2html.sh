@@ -107,7 +107,7 @@ shopt -s lastpipe	# run last command of a pipeline not executed in the backgroun
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.1 2024-02-23"
+export VERSION="1.1 2024-03-08"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -135,7 +135,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	[-c md2html.cfg] [-H phase=name ..] [-t tagline]
 	[-b tool] [-p tool] [-a tool]
 	[-s token=value ..] [-S] [-o tool ..]
-	[-u repo_url] [-U url] [-w site_url] [-e string ..] [-E exitcode]
+	[-u repo_url] [-U url] [-w site_url] [-m mdtag] [-e string ..] [-E exitcode]
 	[match.md] input.md output.html
 
 	-h		print help message and exit
@@ -189,7 +189,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	-U url		URL of HTML being formed (def: $URL)
 			NOTE: The '-U url' is passed as leading options on -b tool, -a tool, and -o tool command lines.
 	-w site_url	Base URL of the web site (def: $SITE_URL)
-			NOTE: The '-w site_url' is passed as leading options on -b tool, -a tool, and -o tool command lines.
+	-m mdtag	string to write about the markdown file used to form HTML content (def: no markdown file is used)
 
 	-e string	output 'string', followed by newline, to stderr (def: do not)
 	-E exitcode	force exit with exitcode (def: exit based on success or failure of the action)
@@ -255,6 +255,7 @@ function global_variable_setup
     unset OUTPUT_TOOL
     declare -ag OUTPUT_TOOL
     export TAGLINE="unspecified"
+    export MDTAG=
     export MATCH_MD=
     export INPUT_MD=
     export OUTPUT_HTML=
@@ -368,7 +369,7 @@ function parse_command_line
 
     # parse command line
     #
-    while getopts :hv:VnNd:D:c:H:t:b:p:a:s:So:u:U:w:e:E: flag; do
+    while getopts :hv:VnNd:D:c:H:t:m:b:p:a:s:So:u:U:w:e:E: flag; do
       case "$flag" in
 	h) print_usage 1>&2
 	    exit 2
@@ -499,6 +500,8 @@ function parse_command_line
 	    HTML_PHASE_NAME[$NAME]="$VALUE"
 	    ;;
 	t) TAGLINE="$OPTARG"
+	    ;;
+	m) MDTAG="$OPTARG"
 	    ;;
 	b) # parse: -p tool
 	    if [[ $OPTARG == . ]]; then
@@ -687,6 +690,7 @@ function debug_parameters
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: MD2HTML_CFG=$MD2HTML_CFG" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: TAGLINE=$TAGLINE" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: MDTAG=$MDTAG" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: BEFORE_TOOL=$BEFORE_TOOL" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: AFTER_TOOL=$AFTER_TOOL" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: WORKING_DIR=$WORKING_DIR" 1>&2
@@ -1691,6 +1695,9 @@ if [[ -z $NOOP && ${HTML_PHASE_NAME[$CUR_PHASE_NAME]} != . ]]; then
     {
 	echo "<!-- -->"
 	echo "<!-- The original markdown content was formed by the tool: $TAGLINE -->"
+if [[ -n $MDTAG ]]; then
+	echo "<!-- The main part of the markdown content came from: $MDTAG -->"
+fi
 	echo "<!-- The HTML was converted from markdown by the tool: bin/$NAME -->"
 	echo "<!-- -->"
     } >> "$TMP_INDEX_HTML"

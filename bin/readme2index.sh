@@ -481,12 +481,15 @@ fi
 #
 if [[ -z $NOOP ]]; then
     if [[ $V_FLAG -ge 3 ]]; then
-	echo "$0: debug[3]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]} -- $README_PATH $INDEX_PATH" 1>&2
+	echo "$0: debug[3]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]} -m $README_PATH --" \
+	     "$README_PATH $INDEX_PATH" 1>&2
     fi
-    "$MD2HTML_SH" "${TOOL_OPTION[@]}" -- "$README_PATH" "$INDEX_PATH"
+    "$MD2HTML_SH" "${TOOL_OPTION[@]}" -m "$README_PATH" -- \
+        "$README_PATH" "$INDEX_PATH"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: Warning: md2html.sh: $MD2HTML_SH ${TOOL_OPTION[*]} -- $README_PATH $INDEX_PATH failed, error: $status" 1>&2
+	echo "$0: Warning: md2html.sh: $MD2HTML_SH ${TOOL_OPTION[*]} -m $README_PATH --" \
+	     "$README_PATH $INDEX_PATH failed, error: $status" 1>&2
 	EXIT_CODE="1"  # exit 1
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
     fi
@@ -497,7 +500,8 @@ if [[ -z $NOOP ]]; then
 # report disabled by -n
 #
 elif [[ $V_FLAG -ge 5 ]]; then
-    echo "$0: debug[5]: because of -n, did not run: $MD2HTML_SH ${TOOL_OPTION[*]} -- $README_PATH $INDEX_PATH" 1>&2
+    echo "$0: debug[5]: because of -n, did not run: $MD2HTML_SH ${TOOL_OPTION[*]} -m $README_PATH -- " \
+         "$README_PATH $INDEX_PATH" 1>&2
 fi
 
 # All Done!!! -- Jessica Noll, Age 2

@@ -11,6 +11,7 @@
 <!-- END: this line ends content from: inc/top.default.html -->
 <!-- -->
 <!-- The original markdown content was formed by the tool: unspecified -->
+<!-- The main part of the markdown content came from: 2019/README.md -->
 <!-- The HTML was converted from markdown by the tool: bin/md2html.sh -->
 <!-- -->
 <!-- START: this line starts content from: inc/head.default.html -->
@@ -126,19 +127,19 @@ href="https://www.ioccc.org">www.ioccc.org</a>.</p>
 <p>Use <code>make</code> to compile entries. It is possible that on
 non-Unix / non-Linux systems the Makefile needs to be changed. See the
 Makefile for details.</p>
-<p>Read over the Makefile for compile/build issues. Your system may
-require certain changes (add or remove a library, add or remove a
-#define).</p>
+<p>Read over the Makefile and index.html files for compile/build issues.
+Your system may require certain changes (add or remove a library, add or
+remove a <code>#define</code>).</p>
 <p>Some C compilers are not quite as good as they should be. If yours is
 lacking, you may need to compile using clang or gcc instead of your
 local compiler.</p>
 <h2 id="remarks-on-some-of-the-winning-entries">Remarks on some of the
 winning entries</h2>
 <p>This year’s winning entries are impressive!</p>
-<p>The “Most in need of debugging” (endoh) is very inventive in a way it
-produces its own text!</p>
-<p>The “Most likely to be awarded” (ciura) has an amazing
-vocabulary!</p>
+<p>The <a href="endoh/index.html">“Most in need of debugging”
+(endoh)</a> is very inventive in a way it produces its own text!</p>
+<p>The <a href="ciura/index.html">“Most likely to be awarded”
+(ciura)</a> has an amazing vocabulary!</p>
 <p>There are again nods to entries of the years:</p>
 <pre><code>[1991/davidguy](../years.html#1991_davidguy)
 [2011/blakely](../years.html#2011_blakely)</code></pre>
@@ -160,9 +161,9 @@ prog.c.</p>
 uninitialized locals and/or reading-writing below the stack. We advise
 running your entry through valgrind to make sure those mistakes are
 avoided.</p>
-<p>Using extra arguments to main, or arguments of wrong types as a quick
-and dirty way of declaring variables is now passé. Clang, for example,
-rejects them outright.</p>
+<p>Using extra arguments to <code>main</code>, or arguments of wrong
+types as a quick and dirty way of declaring variables is now passé.
+Clang, for example, rejects them outright.</p>
 <p>We hope the authors of some of those entries will fix and re-submit
 them for the next IOCCC.</p>
 <p>Some entries seemed to have a good idea, but the implementation of

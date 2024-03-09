@@ -11,6 +11,7 @@
 <!-- END: this line ends content from: inc/top.default.html -->
 <!-- -->
 <!-- The original markdown content was formed by the tool: unspecified -->
+<!-- The main part of the markdown content came from: 2015/README.md -->
 <!-- The HTML was converted from markdown by the tool: bin/md2html.sh -->
 <!-- -->
 <!-- START: this line starts content from: inc/head.default.html -->
@@ -120,20 +121,19 @@ Fourth International Obfuscated C Code Contest</h1>
 for information on how compile the entry and how to run the winning
 program. Look at the winning source and try to figure how it does what
 it does! You may then wish to look at the Author’s remarks for even more
-details.</p>
+details. This year we included most of the information included by the
+submitter.</p>
 <p>The IOCCC has a web site and now has a number of international
 mirrors. The primary site can be found at <a
 href="https://www.ioccc.org">www.ioccc.org</a>.</p>
-<p>Use make to compile entries. It is possible that on non-Un*x /
-non-Linux systems the makefile needs to be changed. See the Makefile for
-details.</p>
+<p>Use <code>make</code> to compile entries. It is possible that on
+non-Unix / non-Linux systems the Makefile needs to be changed. See the
+Makefile for details.</p>
 <p>Look at the source and try to figure out what the programs do, and
-run them with various inputs. If you want to, look at the hints files
-for spoilers - this year we included most of the information included by
-the submitter.</p>
-<p>Read over the makefile for compile/build issues. Your system may
+run them with various inputs.</p>
+<p>Read over the Makefile for compile/build issues. Your system may
 require certain changes (add or remove a library, add or remove a
-#define).</p>
+<code>#define</code>).</p>
 <p>Some ANSI C compilers are not quite as good as they should be. If
 yours is lacking, you may need to compile using gcc instead of your
 local compiler.</p>
@@ -142,24 +142,26 @@ winning entries</h2>
 <p>We believe you will again be impressed with this year’s winning
 entries.</p>
 <p>The fraction of worthy entries was higher than usual.</p>
-<p>We call to your attention, the <em>hou</em> entry, that performs the
-MD5 cryptographic hash. Normally implemented with a set of integer and
-boolean operations, this code uses floating point variables inside a
-single while loop filled with unusual constants, cosine, square root,
-and exponent function calls. The number of lines of code is also smaller
-than the original algorithm.</p>
-<p>The <em>mills2</em> source code is a very compressed version of a
-decompression algorithm. We think those who enjoy compression algorithms
-will particularly enjoy this entry.</p>
-<p>We suggest that you attempt to completely understand the
-<em>endoh4</em> 1-liner program: another impressive compact piece of C
-code.</p>
-<p>And while you are at it, cat the <em>endoh2</em> prog.c code. Compile
-it and look at the source code again.</p>
-<p>In a “Back to the Future” moment, <em>endoh3</em> gave us a twist on
-one of the all time best IOCCC entries from 1984.</p>
-<p>We also suggest that you take a very good look at how the
-<em>muth</em> code makes full use of the C Pre-Processor.</p>
+<p>We call to your attention the <a href="hou/index.html">hou</a> entry
+that performs the MD5 cryptographic hash. Normally implemented with a
+set of integer and boolean operations, this code uses floating point
+variables inside a single <code>while</code> loop filled with unusual
+constants, cosine, square root, and exponent function calls. The number
+of lines of code is also smaller than the original algorithm.</p>
+<p>The <a href="mills2/index.html">mills2</a> source code is a very
+compressed version of a decompression algorithm. We think those who
+enjoy compression algorithms will particularly enjoy this entry.</p>
+<p>We suggest that you attempt to completely understand the <a
+href="endoh4/index.html">endoh4</a> 1-liner program: another impressive
+compact piece of C code.</p>
+<p>And while you are at it, cat the <a href="endoh2/prog.c">endoh2
+prog.c</a> code. Compile it and look at the source code again.</p>
+<p>In a “Back to the Future” moment, <a
+href="endoh3/index.html">endoh3</a> gave us a twist on one of the all
+time best IOCCC entries from 1984.</p>
+<p>We also suggest that you take a very good look at how the <a
+href="muth/index.html">muth</a> code makes full use of the C
+Pre-Processor.</p>
 <p>…We’ll stop spouting spoilers now. Have fun exploring all the
 entries!</p>
 <h2 id="remarks-on-some-of-submissions-that-did-not-win">Remarks on some
@@ -176,14 +178,12 @@ and 22 (one third of 666).</p>
 |      Identifying yourself, in an obvious way in your code, data, remarks
 |      or program output, unless you are Peter Honeyman or pretending
 |      to be Peter Honeyman, will be grounds for disqualification of your entry.</code></pre>
-<p>A number of other entries were based on iocccsize.c, making
-derivative works rather than original works.</p>
+<p>A number of other entries were based on <a
+href="iocccsize.c">iocccsize.c</a>, making derivative works rather than
+original works.</p>
 <p>Still other entries were too large, violating the first line of rule
 2:</p>
-<ol start="2" type="1">
-<li>The size of your program source must be &lt;= 4096 bytes in
-length.</li>
-</ol>
+<pre><code>2) The size of your program source must be &lt;= 4096 bytes in length.</code></pre>
 <p>While these entries might have passed under the 2053 limit for
 iocccsize, they were larger than &lt;= 4096 bytes, sometimes by an order
 or magnitude.</p>
