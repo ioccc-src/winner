@@ -51,7 +51,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.2 2024-03-08"
+export VERSION="1.0.3 2024-03-09"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -170,8 +170,7 @@ while getopts :hv:Vd:D:nNt:T:u:w: flag; do
 	*) ;;
 	esac
 	TAGLINE="$OPTARG"
-	TOOL_OPTION+=("-t")
-	TOOL_OPTION+=("$TAGLINE")
+	# -t tagline is always added further down
 	;;
     T) MD2HTML_SH="$OPTARG"
 	TOOL_OPTION+=("-T")
@@ -205,8 +204,8 @@ done
 
 # parse the command line arguments
 #
-if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: debug level: $V_FLAG" 1>&2
+if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: debug level: $V_FLAG" 1>&2
 fi
 #
 shift $(( OPTIND - 1 ));
@@ -344,6 +343,11 @@ if [[ ! -x $MD2HTML_SH ]]; then
     echo  "$0: ERROR: md2html.sh is not an executable file: $MD2HTML_SH" 1>&2
     exit 5
 fi
+
+# always add -t tagline
+#
+TOOL_OPTION+=("-t")
+TOOL_OPTION+=("$TAGLINE")
 
 # parameter debugging
 #

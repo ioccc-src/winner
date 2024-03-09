@@ -107,7 +107,7 @@ shopt -s lastpipe	# run last command of a pipeline not executed in the backgroun
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1 2024-03-08"
+export VERSION="1.1.1 2024-03-09"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -1694,11 +1694,27 @@ fi
 if [[ -z $NOOP && ${HTML_PHASE_NAME[$CUR_PHASE_NAME]} != . ]]; then
     {
 	echo "<!-- -->"
-	echo "<!-- The original markdown content was formed by the tool: $TAGLINE -->"
+	echo "<!-- This web page was formed via the tool: $TAGLINE -->"
+	echo "<!-- -->"
 if [[ -n $MDTAG ]]; then
-	echo "<!-- The main part of the markdown content came from: $MDTAG -->"
+	echo "<!-- The content of main section of this web page came from: $MDTAG -->"
+else
+	echo "<!-- The main section of this web page came from JSON and other data files -->"
 fi
-	echo "<!-- The HTML was converted from markdown by the tool: bin/$NAME -->"
+	echo "<!-- -->"
+	echo "<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->"
+if [[ -n $MDTAG ]]; then
+	echo "<!-- !!! Do not modify this web page, instead modify the file: $MDTAG -->"
+	echo "<!-- !!! Do not modify this web page, instead modify the file: $MDTAG -->"
+	echo "<!-- !!! Do not modify this web page, instead modify the file: $MDTAG -->"
+else
+	echo "<!-- The main section of this web page was generated via the tool: $TAGLINE -->"
+	echo "<!-- The main section of this web page was generated via the tool: $TAGLINE -->"
+	echo "<!-- The main section of this web page was generated via the tool: $TAGLINE -->"
+fi
+	echo "<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->"
+	echo "<!-- -->"
+	echo "<!-- Markdown content was converted into HTML via the tool: bin/$NAME -->"
 	echo "<!-- -->"
     } >> "$TMP_INDEX_HTML"
 fi
