@@ -49,7 +49,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0 2024-03-09"
+export VERSION="1.1 2024-03-10"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -586,12 +586,33 @@ fi
 # XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 #
 if [[ -z $CONTEST_STATUS ]]; then
+
+    # obtain the contest_status from status.json
+    #
     CONTEST_STATUS=$(grep '"contest_status"\s*:\s*"[^"][^"]*"' "$STATUS_JSON" | sed -e 's/",\s*$//' -e 's/^.*"//')
     status="$?"
     if [[ $status -ne 0 || -z $CONTEST_STATUS ]]; then
 	echo "$0: ERROR: cannot determine contest_status from status.json: $STATUS_JSON" 1>&2
 	exit 1
     fi
+
+    # validate and normalize the contest_status cfrom status.json
+    #
+    case "$CONTEST_STATUS" in
+    p|pending) CONTEST_STATUS="pending"
+	;;
+    o|open) CONTEST_STATUS="open"
+	;;
+    j|judging) CONTEST_STATUS="judging"
+	;;
+    c|closed) CONTEST_STATUS="closed"
+	;;
+    *) echo "$0: ERROR: unexpected status from $status.json: $CONTEST_STATUS" 1>&2
+	echo 1>&2
+	echo "$USAGE" 1>&2
+	exit 1
+	;;
+    esac
 fi
 
 # -N stops early before any processing is performed
@@ -726,11 +747,10 @@ if [[ -z $NOOP ]]; then
       status.md "$STATUS_HTML"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: Warning: md2html.sh: $MD2HTML_SH ${TOOL_OPTION[*]} --" \
+	echo "$0: ERROR: md2html.sh: $MD2HTML_SH ${TOOL_OPTION[*]} --" \
 	     "status.md $STATUS_HTML" \
 	     "failed, error: $status" 1>&2
-	EXIT_CODE="1"  # exit 1
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	exit 20
     elif [[ $V_FLAG -ge 3 ]]; then
 	echo "$0: debug[3]: now up to date: $STATUS_HTML" 1>&2
     fi

@@ -114,7 +114,7 @@ Exit codes:
      5	       some internal tool is not found or not an executable file
      6	       problems found with or in the topdir or topdir/YYYY directory
      7	       problems found with or in the entry topdir/YYYY/dir directory
-     8	       error in author/author_handle.json file 
+     8	       error in author/author_handle.json file
  >= 10         internal error
 
 $NAME version: $VERSION"

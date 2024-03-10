@@ -46,6 +46,8 @@ scheduled opening date.
 
 The IOCCC is open for submissions.
 
+See the [IOCCC news](news.html) page for details on rules, guidelines, tools and deadlines.
+
 Be sure to review the official IOCCC rules, guidelines, and tools
 for any changes that may have been made while the IOCCC was "**pending**".
 

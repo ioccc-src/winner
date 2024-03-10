@@ -53,7 +53,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0 2024-03-09"
+export VERSION="1.1 2024-03-10"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -189,8 +189,8 @@ shift $(( OPTIND - 1 ));
 if [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: file argument count: $#" 1>&2
 fi
-if [[ $# -ne 1 ]]; then
-    echo "$0: ERROR: expected 1 arg, found: $#" 1>&2
+if [[ $# -ge 2 ]]; then
+    echo "$0: ERROR: expected 0 or 1 args, found: $#" 1>&2
     exit 3
 fi
 if [[ $V_FLAG -ge 5 ]]; then
@@ -336,9 +336,86 @@ elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary markdown file is not used: $TMP_FILE" 1>&2
 fi
 
+# obtain the contest_status from status.json
+#
+CONTEST_STATUS=$(grep '"contest_status"\s*:\s*"[^"][^"]*"' "$STATUS_JSON" | sed -e 's/",\s*$//' -e 's/^.*"//')
+status="$?"
+if [[ $status -ne 0 || -z $CONTEST_STATUS ]]; then
+    echo "$0: ERROR: cannot determine contest_status from status.json: $STATUS_JSON" 1>&2
+    exit 8
+fi
+
+# validate and normalize the contest_status cfrom status.json
+#
+case "$CONTEST_STATUS" in
+p|pending) CONTEST_STATUS="pending"
+    ;;
+o|open) CONTEST_STATUS="open"
+    ;;
+j|judging) CONTEST_STATUS="judging"
+    ;;
+c|closed) CONTEST_STATUS="closed"
+    ;;
+*) echo "$0: ERROR: unexpected status from $status.json: $CONTEST_STATUS" 1>&2
+    echo 1>&2
+    echo "$USAGE" 1>&2
+    exit 8
+    ;;
+esac
+
 # write temporary markdown file for status.json
 #
 {
+    # write status of the contest
+    #
+    case "$CONTEST_STATUS" in
+    pending) echo "# The IOCCC is not yet open"
+	echo
+        echo "While the IOCCC is not open now, there is a tentative opening date for the next IOCCC."
+        echo
+	echo "See the [IOCCC news](news.html) for details including the tentative" \
+	     "scheduled opening date."
+	echo
+	echo "A preliminary IOCCC rules, guidelines, and tools have been posted." \
+	     "Comments and suggestions on these preliminary items are welcome."
+	;;
+    open) echo "# The IOCCC open for submissions"
+	echo
+	echo "See the [IOCCC news](news.html) page for details on rules, guidelines, tools and deadlines."
+	echo
+	echo "See [How to enter the IOCCC](faq.html#submit) FAQ for additional information."
+	echo
+	echo "**IMPORTANT**: If you viewed the preliminary IOCCC rules, guidelines, and tools while the IOCCC status" \
+	     "was pending, be sure to review the official IOCCC rules, guidelines, and tools for any changes that may" \
+	     "have been recently made before submitting to the IOCCC."
+	;;
+    judging) echo "# The IOCCC is closed to new submissions"
+	echo
+	echo "The [IOCCC judges](judges.html) are in the process of judging the submissions they received" \
+	     "the IOCCC was open."
+	echo
+	echo "Watch the [@IOCCC mastodon feed](https://fosstodon.org/@ioccc), as well as the" \
+	     "[IOCCC news](news.html) page for updates."
+	;;
+    closed) echo "# The IOCCC is closed"
+        echo
+	echo "The IOCCC is **NOT** accepting new submissions at this time.  See the" \
+	     "[IOCCC winning entries page](years.html) for the entires that have won the IOCCC."
+	echo
+	echo "Watch both [the IOCCC status page](status.html) and the" \
+	     "[@IOCCC mastodon feed](https://fosstodon.org/@ioccc) for information about future IOCCC openings."
+	;;
+    *) echo "# The IOCCC status is unknown"
+        echo
+	echo "The IOCCC status is an unexpected status value: $CONTEST_STATUS"
+        echo
+        echo "This is a **BUG**, not a feature.  Feel free to report it!"
+	;;
+    esac
+    echo
+
+    # write status.json content
+    #
     echo '# <a name="content"></a>status.json'
     echo '```json'
     cat "$STATUS_JSON"
