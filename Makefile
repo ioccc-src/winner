@@ -55,6 +55,7 @@ GEN_YEARS= bin/gen-years.sh
 GEN_YEAR_INDEX= bin/gen-year-index.sh
 CHK_ENTRY= bin/chk-entry.sh
 GEN_TOP_HTML= bin/gen-top-html.sh
+GEN_STATUS= bin/gen-status.sh
 GEN_OTHER_HTML= bin/gen-other-html.sh
 README2INDEX= bin/readme2index.sh
 QUICK_README2INDEX= bin/quick-readme2index.sh
@@ -238,7 +239,7 @@ indent.c:
 #	   simple want to examine, run / test winning IOCCC entries.
 
 .PHONY: help genpath genfilelist verify_entry_files gen_authors gen_location gen_years \
-	entry_index gen_top_html thanks gen_other_html quick_entry_index \
+	entry_index gen_top_html gen_status thanks gen_other_html quick_entry_index \
 	gen_year_index quick_www www gen_sitemap \
 	form_entry_tarball form_year_tarball form_all_tarball tar
 
@@ -257,6 +258,7 @@ help:
 	@echo make gen_years
 	@echo make entry_index
 	@echo make gen_top_html
+	@echo make gen_status
 	@echo make gen_other_html
 	@echo make gen_year_index
 	@echo make quick_entry_index
@@ -356,11 +358,19 @@ gen_top_html: ${GEN_TOP_HTML}
 	${GEN_TOP_HTML} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
+# generate a status.json and status.html
+#
+gen_status: ${GEN_STATUS}
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${GEN_STATUS} -v 1
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# a fishy rule :-)
+#
 thanks: ${GEN_TOP_HTML} thanks-for-help.md
 	@echo "Thanks for all the help ..."
 	@${GEN_TOP_HTML}
 	@echo "... and thanks for all the fish :-)"
-
 
 # generate build entry HTML files from markdown other than README.md to index.html HTML files
 #
@@ -415,6 +425,7 @@ quick_www:
 	${MAKE} gen_years
 	${MAKE} gen_year_index
 	${MAKE} gen_top_html
+	${MAKE} gen_status
 	${MAKE} gen_other_html
 	${MAKE} quick_entry_index
 	${MAKE} gen_sitemap
@@ -435,6 +446,7 @@ www:
 	${MAKE} gen_years
 	${MAKE} gen_year_index
 	${MAKE} gen_top_html
+	${MAKE} gen_status
 	${MAKE} gen_other_html
 	${MAKE} entry_index
 	${MAKE} gen_sitemap

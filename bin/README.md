@@ -112,6 +112,26 @@ bin/gen-sitemap.sh -v 1
 ```
 
 
+### [gen-status.sh](gen-status.sh)
+
+Generate `status.json` according to the modification dates of `status.json`
+and `news.html`.
+
+Without argument, the _contest_status_ is unchanged.
+
+Usage:
+
+```sh
+bin/gen-status.sh -v 1
+```
+
+To force the  _contest_status_ to be closed:
+
+```sh
+bin/gen-status.sh -v 1 closed
+```
+
+
 ### [gen-top-html.sh](gen-top-html.sh)
 
 Generate a number of top level HTML pages for the IOCCC web sites.
@@ -158,16 +178,6 @@ Usage:
 ```sh
 bin/gen-years.sh -v 1
 ```
-
-
-### [ioccc-status.sh](ioccc-status)
-
-Updates the [status.json](../status.json) file.
-
-
-### [manifest.entry.json.awk](manifest.entry.json.awk)
-
-Output manifest table from a entry .entry.json file.
 
 
 ### [md2html.sh](md2html.sh)
@@ -234,6 +244,14 @@ bin/all-run.sh -v 3 bin/readme2index.sh -v 1
 ### [readme2index.sh](readme2index.sh)
 
 Convert a entry index.html into entry directory index.html.
+
+
+### [status2html.sh](status2html.sh)
+
+Convert `status.json` into HTML.
+
+This tool is a  'before tool' (-b tool) that is intended
+to be used by `bin/gen-status.sh`.
 
 
 ### [sgi.sh](sgi.sh)

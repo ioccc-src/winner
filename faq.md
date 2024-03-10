@@ -842,13 +842,24 @@ more other entries that came in close behind.
 
 ### <a name="faq2_6"></a>FAQ 2.6: How are IOCCC entries announced?
 
-Once the [IOCCC](../index.html#enter) closes, the judges
-will select the [winning entries](../years.html) announce them
-on the [@IOCCC mastodon feed](https://fosstodon.org/@ioccc), notify the authors
-of entries that won the IOCCC via email using their previously registered email address,
-and upload the winning code to the [IOCCC winner repo](https://github.com/ioccc-src/winner)
-which in turn will cause them to be displayed on the [IOCCC winning entries
-page](../years.html).
+Once the [IOCCC](../index.html) closes, the judges will:
+
+* Select the [winning entries](../years.html) announce them on the [@IOCCC
+mastodon feed](https://fosstodon.org/@ioccc).
+
+* Notify the authors of entries that won the IOCCC via email using their previously
+registered email address.
+
+* Announce who are authors of this year's winning IOCCC entries via the [@IOCCC mastodon
+feed](https://fosstodon.org/@ioccc).
+
+* Upload the winning code to the [Official IOCCC winner repo](https://github.com/ioccc-src/winner)
+
+* Update the [Official IOCCC web site](../index.html), and in particular
+display this year's winning IOCCC entries at the top of the [IOCCC
+winning entries page](../years.html).
+
+* Update the [IOCCC news](../news.html) page.
 
 
 ## <a name="faq3"></a>Section 3: Compiling and running IOCCC entries

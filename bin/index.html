@@ -73,6 +73,7 @@
     <hr>
     <div class="sidenav">
       <a href="../news.html">IOCCC News</a>
+      <a href="../status.html">Contest status</a>
       <a href="../faq.html#submit">How to enter the IOCCC</a>
       <a href="../faq.html">FAQ</a>
     </div>
@@ -165,13 +166,23 @@ index.html HTML files.</p>
 <p>Usage:</p>
 <div class="sourceCode" id="cb10"><pre
 class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-sitemap.sh</span> <span class="at">-v</span> 1</span></code></pre></div>
+<h3 id="gen-status.sh"><a href="gen-status.sh">gen-status.sh</a></h3>
+<p>Generate <code>status.json</code> according to the modification dates
+of <code>status.json</code> and <code>news.html</code>.</p>
+<p>Without argument, the <em>contest_status</em> is unchanged.</p>
+<p>Usage:</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-status.sh</span> <span class="at">-v</span> 1</span></code></pre></div>
+<p>To force the <em>contest_status</em> to be closed:</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-status.sh</span> <span class="at">-v</span> 1 closed</span></code></pre></div>
 <h3 id="gen-top-html.sh"><a
 href="gen-top-html.sh">gen-top-html.sh</a></h3>
 <p>Generate a number of top level HTML pages for the IOCCC web
 sites.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb11"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-top-html.sh</span> <span class="at">-v</span> 1</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-top-html.sh</span> <span class="at">-v</span> 1</span></code></pre></div>
 <p>Examples of top level HTML pages built by this tool include:</p>
 <ul>
 <li><a href="../CODE_OF_CONDUCT.html">CODE_OF_CONDUCT.html</a></li>
@@ -192,18 +203,13 @@ href="../archive/historic/index.html">archive/historic/index.html</a></li>
 href="gen-year-index.sh">gen-year-index.sh</a></h3>
 <p>Generate an <code>index.html</code> page for an given IOCCC year.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb12"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-year-index.sh</span> <span class="at">-v</span> 1 2020</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-year-index.sh</span> <span class="at">-v</span> 1 2020</span></code></pre></div>
 <h3 id="gen-years.sh"><a href="gen-years.sh">gen-years.sh</a></h3>
 <p>Generate the top level <code>/years.html</code> page.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb13"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-years.sh</span> <span class="at">-v</span> 1</span></code></pre></div>
-<h3 id="ioccc-status.sh"><a href="ioccc-status">ioccc-status.sh</a></h3>
-<p>Updates the <a href="../status.json">status.json</a> file.</p>
-<h3 id="manifest.entry.json.awk"><a
-href="manifest.entry.json.awk">manifest.entry.json.awk</a></h3>
-<p>Output manifest table from a entry .entry.json file.</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-years.sh</span> <span class="at">-v</span> 1</span></code></pre></div>
 <h3 id="md2html.sh"><a href="md2html.sh">md2html.sh</a></h3>
 <p>This is the primary tool that forms IOCCC generated HTML content from
 markdown files (permanent markdown files or temporarily generated
@@ -239,17 +245,21 @@ up.</p>
 <p>If only a few <code>index.hmtl</code> files need updating, then this
 command will only briefly pause while the slightly longer <a
 href="readme2index.sh">readme2index.sh</a> is run:</p>
-<div class="sourceCode" id="cb14"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> <span class="at">-v</span> 3 bin/quick-readme2index.sh <span class="at">-v</span> 1</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> <span class="at">-v</span> 3 bin/quick-readme2index.sh <span class="at">-v</span> 1</span></code></pre></div>
 <p><strong>NOTE</strong>: This command assumes that the relative
 modification times for <code>index.hmtl</code>,
 .entry.json<code>, and</code>index.html` are correct. If in doubt,
 use:</p>
-<div class="sourceCode" id="cb15"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> <span class="at">-v</span> 3 bin/readme2index.sh <span class="at">-v</span> 1</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> <span class="at">-v</span> 3 bin/readme2index.sh <span class="at">-v</span> 1</span></code></pre></div>
 <h3 id="readme2index.sh"><a
 href="readme2index.sh">readme2index.sh</a></h3>
 <p>Convert a entry index.html into entry directory index.html.</p>
+<h3 id="status2html.sh"><a href="status2html.sh">status2html.sh</a></h3>
+<p>Convert <code>status.json</code> into HTML.</p>
+<p>This tool is a ‘before tool’ (-b tool) that is intended to be used by
+<code>bin/gen-status.sh</code>.</p>
 <h3 id="sgi.sh"><a href="sgi.sh">sgi.sh</a></h3>
 <p>Sort .gitignore content from stdin to stdout.</p>
 <p>We sort with lines starting with # first. We sort with lines starting
@@ -261,11 +271,11 @@ href="sort.gitignore.sh">sort.gitignore.sh</a>.</p>
 href="sort.gitignore.sh">sort.gitignore.sh</a></h3>
 <p>Sort a .gitignore in a entry directory.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb16"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/sort.gitignore.sh</span> <span class="at">-v</span> 1 YYYY/dir</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/sort.gitignore.sh</span> <span class="at">-v</span> 1 YYYY/dir</span></code></pre></div>
 <p>Suggested usage:</p>
-<div class="sourceCode" id="cb17"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> bin/sort.gitignore.sh <span class="at">-v</span> 1</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> bin/sort.gitignore.sh <span class="at">-v</span> 1</span></code></pre></div>
 <h3 id="subst.default.sh"><a
 href="subst.default.sh">subst.default.sh</a></h3>
 <p>Print default substitutions.</p>
@@ -285,25 +295,25 @@ index.html.</p>
 <h2 id="tar-entry.sh"><a href="tar-entry.sh">tar-entry.sh</a></h2>
 <p>Form a compress tarball for an entry.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb18"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/tar-entry.sh</span> <span class="at">-v</span> 1 YYYY/dir</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/tar-entry.sh</span> <span class="at">-v</span> 1 YYYY/dir</span></code></pre></div>
 <p>Suggested usage:</p>
-<div class="sourceCode" id="cb19"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> <span class="at">-v</span> 3 bin/tar-entry.sh <span class="at">-v</span> 1 <span class="at">-W</span></span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> <span class="at">-v</span> 3 bin/tar-entry.sh <span class="at">-v</span> 1 <span class="at">-W</span></span></code></pre></div>
 <h2 id="tar-all.sh"><a href="tar-all.sh">tar-all.sh</a></h2>
 <p>Form the compressed tarball for all IOCCC years and all IOCCC
 entries.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb20"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/tar-all.sh</span> <span class="at">-v</span> 1</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/tar-all.sh</span> <span class="at">-v</span> 1</span></code></pre></div>
 <h2 id="tar-year.sh"><a href="tar-year.sh">tar-year.sh</a></h2>
 <p>Form a compress tarball for an IOCCC year.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb21"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/tar-year.sh</span> <span class="at">-v</span> 1 YYYY</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/tar-year.sh</span> <span class="at">-v</span> 1 YYYY</span></code></pre></div>
 <p>Suggested usage:</p>
-<div class="sourceCode" id="cb22"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-years.sh</span> <span class="at">-v</span> 3 bin/tar-year.sh <span class="at">-v</span> 1 <span class="at">-W</span></span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-years.sh</span> <span class="at">-v</span> 3 bin/tar-year.sh <span class="at">-v</span> 1 <span class="at">-W</span></span></code></pre></div>
 <h1 id="how-ioccc-html-content-is-built"><a name="how"></a>How IOCCC
 HTML content is built</h1>
 <p>The <a href="md2html.sh">md2html.sh</a> tool is the primary tool that
@@ -324,20 +334,20 @@ HTML content is built uses, by default, files from the <a
 href="../inc/index.html">inc</a> directory, of the form:</p>
 <pre><code>*.default.html</code></pre>
 <p>By using command line options of the form</p>
-<div class="sourceCode" id="cb24"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> phase=name</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> phase=name</span></code></pre></div>
 <p>where <code>phase</code> is the name of an HTML phase, a non-default
 file may be used. For example:</p>
-<div class="sourceCode" id="cb25"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> topnav=up2index</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> topnav=up2index</span></code></pre></div>
 <p>will cause <a
 href="../inc/topnav.up2index.html">inc/topnav.up2index.html</a> instead
 of <a href="../inc/topnav.default.html">inc/topnav.default.html</a> to
 be used during the <em>topnav</em> HTML phase.</p>
 <p>If <em>name</em> is dot (i.e., “.”), then the given HTML phase is
 skipped. For example:</p>
-<div class="sourceCode" id="cb26"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> footer=.</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> footer=.</span></code></pre></div>
 <p>will cause no HTML content to be produced during the <em>footer</em>
 HTML phase.</p>
 <h2 id="html-phases"><a name="html"></a>HTML phases</h2>
