@@ -934,8 +934,12 @@ hints, especially in cases were something else needs to be installed.
 
 Please see the [bugs.html](bugs.html) file for details about known problems with IOCCC entries.  In some cases you may be dealing with a problematic entry.  In a few fun cases, the IOCCC does not compile by design!
 
-If you have a fix that makes a minimal impact to the entry, then please consider submitting that change in the form of a pull request.  Please
-see FAQ 5.2 <a href="#fix_an_entry">"How may I submit a fix to an IOCCC entry"</a> for details.
+If you have a fix that makes a minimal impact to the entry, then
+please consider submitting that change in the form of a pull request.
+Please see [FAQ 5.2 How may I submit a fix to an IOCCC
+entry](#fix_an_entry).  See also the [FAQ 6.10 How does someone
+make a change to a file and submit that change as a GitHub pull
+request](#ull_request) for more information about pull requests.
 
 In some cases alternative code has been added that does compile on some or most systems.  Check the write up for the entry for "alt" code and possible ways to compile and run that code.  In some cases we replaced the original code (but not the `.orig.c` file!) with code
 that works for modern systems but one can view the original code in the
@@ -963,13 +967,16 @@ entries should be an alternate version.
 Other entries like [2001/herrmann2](thanks-for-help.html#2001_herrmann2)
 now work with 32-bit AND 64-bit systems.
 
-Please see the [bugs.html](bugs.html) file for the problematic entry in question
-to see if the problem is known, and if a fix is wanted, consider trying to port
-the code to a 64-bit system and submitting a pull request with that change.
-Pull requests that fix such code while trying to minimize the impact of any
-changes and preserving the spirit of the original code are very welcome!
-Please see FAQ 5.2 <a href="#fix_an_entry">"How may I submit a fix to an IOCCC
-entry"</a> for details.
+Please see the [bugs.html](bugs.html) file for the problematic entry
+in question to see if the problem is known, and if a fix is wanted,
+consider trying to port the code to a 64-bit system and submitting
+a pull request with that change.  Pull requests that fix such code
+while trying to minimize the impact of any changes and preserving
+the spirit of the original code are very welcome!  Please see [FAQ
+5.2 How may I submit a fix to an IOCCC entry](#fix_an_entry) for
+details.  See also the [FAQ 6.10 How does someone make a change to
+a file and submit that change as a GitHub pull request](#ull_request)
+for more information about pull requests.
 
 
 ### <a name="faq3_3"></a>FAQ 3.3: Why do some IOCCC entries fail to compile under macOS?
@@ -1008,8 +1015,10 @@ other things that have to be done plus remembering to do it.
 See if the problem is mentioned in [bugs.html](bugs.html).  If you have a change
 that fixes the problem (even if it just a change to the `Makefile`) that doesn't
 negatively impact the entry too much, consider submitting that change in the
-form of a pull request.  Please see FAQ 5.2 <a href="#fix_an_entry">"How may I
-submit a fix to an IOCCC entry"</a> for details.
+form of a pull request.  Please see [FAQ 5.2 How may I submit a fix to an IOCCC
+entry](#fix_an_entry).  See also the [FAQ 6.10 How does someone
+make a change to a file and submit that change as a GitHub pull
+request](#ull_request) for more information about pull requests.
 
 
 ### <a name="faq3_5"></a>FAQ 3.5: What is this cb tool that is mentioned in the IOCCC?
@@ -1328,6 +1337,9 @@ In the case that some entries do not work even with SDL1/SDL2 installed it might
 be that you need additional SDL libraries. See the entry's index.html for
 details. If something is not noted you're welcome to report it as an issue or
 fix it and make a new pull request.
+
+See the [FAQ 6.10 How does someone make a change to a file and submit that change
+as a GitHub pull request](#ull_request) for more information about pull requests.
 
 
 ### <a name="faq3_9"></a><a name="curses"></a>FAQ 3.9: How do I compile an IOCCC entry that requires (n)curses?
@@ -2177,7 +2189,11 @@ fix. If it is accepted we'll be happy to credit you in the
 [thanks](thanks-for-help.html) file. If you're a previous author of a winning IOCCC entry we will happily
 link to your entries; if you're not we can link to your website if you wish.
 
-See [FAQ 5.2](#fix_an_entry) for information on how to submit a fix to an IOCCC entry.
+Please see [FAQ 5.2 How may I submit a fix to an IOCCC
+entry](#fix_an_entry) for information on how to submit a fix to an
+IOCCC entry.  See also the [FAQ 6.10 How does someone make a change
+to a file and submit that change as a GitHub pull request](#ull_request)
+for more information about pull requests.
 
 
 ### <a name="faq5_2"></a><a name="fix_an_entry"></a>FAQ 5.2: How may I submit a fix to an IOCCC entry?
@@ -2215,6 +2231,11 @@ And of course, an IOCCC author may update their own entries
 against the master [branch](https://github.com/ioccc-src/winner/branches)
 of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner).
 
+Please see [FAQ 5.2 How may I submit a fix to an IOCCC
+entry](#fix_an_entry).  See also the [FAQ 6.10 How does someone
+make a change to a file and submit that change as a GitHub pull
+request](#ull_request) for more information about pull requests.
+
 Note that we're much more inclined to accept an author's fixes but the judges
 have the final say in the matter.
 
@@ -2251,6 +2272,11 @@ against the master [branch](https://github.com/ioccc-src/winner/branches)
 of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner)
 to submit a fix.
 
+Please see [FAQ 5.2 How may I submit a fix to an IOCCC
+entry](#fix_an_entry).  See also the [FAQ 6.10 How does someone
+make a change to a file and submit that change as a GitHub pull
+request](#ull_request) for more information about pull requests.
+
 #### Some HTML files should NOT be directly modified
 
 Nearly all HTML files on the [IOCCC web site](https://www.ioccc.org)
@@ -2281,6 +2307,11 @@ For example, in [contact.html](contact.html), one may read:
 
 This means that you could consider editing the referenced markdown file
 in your [IOCCC pull request](#pull_request).
+
+Please see [FAQ 5.2 How may I submit a fix to an IOCCC
+entry](#fix_an_entry).  See also the [FAQ 6.10 How does someone
+make a change to a file and submit that change as a GitHub pull
+request](#ull_request) for more information about pull requests.
 
 In some cases, the HTML file is **NOT** based on markdown content, but instead
 came from JSON and other data files.  So instead of the above reference to a
@@ -2323,6 +2354,11 @@ by opening a [GitHub pull request](https://github.com/ioccc-src/winner/pulls)
 against the master [branch](https://github.com/ioccc-src/winner/branches)
 of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner).
 
+Please see [FAQ 5.2 How may I submit a fix to an IOCCC
+entry](#fix_an_entry).  See also the [FAQ 6.10 How does someone
+make a change to a file and submit that change as a GitHub pull
+request](#ull_request) for more information about pull requests.
+
 
 ## <a name="faq5_6"></a><a name="fix_link"></a>FAQ 5.6: What should I do if I find a broken or wrong web link?
 
@@ -2331,7 +2367,9 @@ We would appreciate if you try to fix the broken (the link goes nowhere) or wron
 If wish to fix such links, you may open a GitHub pull request as described in
 [FAQ 5.4](#fix_web_site). In the case of dead links or invalid links it doesn't matter
 if it's a specific winner or not; the procedure is the same: open a pull request
-to fix the problem.
+to fix the problem.  See also the [FAQ 6.10 How does someone
+make a change to a file and submit that change as a GitHub pull
+request](#ull_request) for more information about pull requests.
 
 As far as how to find the updated link you can try using the [Internet Wayback
 Machine](https://web.archive.org) and see if you can find the last non 4xx non
