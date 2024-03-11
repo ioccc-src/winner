@@ -95,7 +95,7 @@ endif
 #
 ifeq "$(findstring $(GCC),${CC})" "$(GCC)"
 #
-CSILENCE+= -Wno-missing-parameter-type
+CSILENCE+= -Wno-missing-parameter-type -Wno-unknown-warning-option
 #
 #CWARN+=
 #

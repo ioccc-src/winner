@@ -94,7 +94,7 @@ CSILENCE+= -Wno-cast-align -Wno-comma -Wno-dollar-in-identifier-extension \
 	-Wno-implicit-int-conversion -Wno-missing-prototypes \
 	-Wno-missing-variable-declarations -Wno-padded -Wno-pedantic \
 	-Wno-poison-system-directories -Wno-shadow -Wno-sign-conversion \
-	-Wno-strict-prototypes
+	-Wno-strict-prototypes -Wno-shorten-64-to-32
 #
 CWARN+= -Weverything
 #

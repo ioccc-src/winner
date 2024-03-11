@@ -83,7 +83,9 @@ CC= cc
 #
 ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
 #
-CSILENCE+= -Wno-poison-system-directories
+CSILENCE+= -Wno-poison-system-directories -Wno-conditional-uninitialized \
+	   -Wno-implicit-int-conversion -Wno-missing-noreturn \
+	   -Wno-missing-variable-declarations -Wno-shorten-64-to-32
 #
 CWARN+= -Weverything
 #

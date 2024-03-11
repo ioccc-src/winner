@@ -39,7 +39,7 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-invalid-pp-token -Wno-trigraphs -Wno-deprecated-non-prototype \
-	-Wno-pedantic -Wno-strict-prototypes
+	-Wno-pedantic -Wno-strict-prototypes -Wno-implicit-int
 
 # Common C compiler warning flags
 #
