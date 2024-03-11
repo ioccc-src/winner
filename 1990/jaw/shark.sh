@@ -1,4 +1,5 @@
-for i in "${@?${usage?$0 file...}}";do<"$i"||exit;done
+#!/usr/bin/env bash
+for i in "${@?${usage?$0 file...}}";do true<"$i"||exit;done
 (cat&&tar cbf 1 unshark.tar "$@"|compress|./btoa&&echo w)<<\Z
 #!/bin/sh
 #
