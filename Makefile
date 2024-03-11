@@ -240,7 +240,7 @@ indent.c:
 
 .PHONY: help genpath genfilelist verify_entry_files gen_authors gen_location gen_years \
 	entry_index gen_top_html gen_status thanks gen_other_html quick_entry_index \
-	gen_year_index quick_www www gen_sitemap \
+	gen_year_index quick_www www gen_sitemap sitemap \
 	form_entry_tarball form_year_tarball form_all_tarball tar
 
 # Suggest rules in this section
@@ -401,7 +401,7 @@ quick_entry_index quick_readme2index: ${ALL_RUN} ${QUICK_README2INDEX}
 
 # generate the XML sitemap
 #
-gen_sitemap: ${GEN_SITEMAP}
+gen_sitemap sitemap: ${GEN_SITEMAP}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${GEN_SITEMAP} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
