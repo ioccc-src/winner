@@ -24,4 +24,4 @@ r==6 { r=0; if (/>/){print "}"; next}
 /^<$/  {r=5;next}	# digraph
 /^%$/  {r=6;next}	# digraph
 
-{ print $0 }' $*
+{ print $0 }' "$@"
