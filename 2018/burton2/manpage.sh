@@ -141,7 +141,8 @@ function searchfor {
 }
 
 width=0
-#sys=("$uname" -s)
+export sys
+sys=("$uname" -s)
 date=
 rel=
 vol=
