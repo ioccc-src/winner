@@ -32,7 +32,7 @@ echo 1>&2
 ./prog 512 ./prog
 echo 1>&2
 
-echo "$ TZ=UTC48 make CC="$CC" clobber prog" 1>&2
+echo "$ TZ=UTC48 make CC=$CC clobber prog" 1>&2
 TZ=UTC48 make CC="$CC" clobber prog || exit 1
 read -r -n 1 -p "Press any key to run: ./prog 512 ./prog: "
 echo 1>&2
