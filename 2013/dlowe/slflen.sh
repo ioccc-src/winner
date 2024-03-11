@@ -14,7 +14,7 @@ fi
 make CC="$CC" all >/dev/null || exit 1
 
 ln -sf dlowe sparkl
-ls -1 *
+find . -mindepth 1 -maxdepth 1 -print | sed -e 's;^\./;;'
 echo 1>&2
 echo -n "sparkline length of above files: "
 wc -c ./* | awk '{print $1}' | xargs ./sparkl
