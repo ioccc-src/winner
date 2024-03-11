@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 function usage {
 	cat <<'EoT'
@@ -55,10 +55,10 @@ DESCRIPTION
 	and by stars (*) is rendered as *boldface*.
 
   There are two sections handled specially:
-     NAME   
+     NAME
 	This is the name of the command or function, followed by a terse,
 	one-line summary of its primary use.
-     SYNOPSIS   
+     SYNOPSIS
 	This section is scanned for names, arguments, and flags.  Names found
 	in this area are remembered, and each occurance throughout the document
 	are presented in bold.  Arguments are similarly detected and remembered,
@@ -108,8 +108,8 @@ EoT
 }
 
 function getwidth {
-	echo $(stty -a 2>/dev/null) |
-	if test $(uname) == "Darwin"; then
+	stty -a 2>/dev/null |
+	if test "$(uname)" == "Darwin"; then
 		awk '/columns/{for(i=1;i<=NF;++i)if($i~/columns/)print$(i-1)+0}'
 	else
 		awk '/columns/{for(i=1;i<=NF;++i)if($i~/columns/)print$(i+1)+0}'
@@ -117,34 +117,40 @@ function getwidth {
 }
 
 function scan {
-	for dir in . $HOME/man $(echo $MANPATH | tr : '\n'); do
-		test -r $dir/$1 && { echo $dir/$1; break; }
+	MAN_PATH=${MANPATH:="/opt/homebrew/share/man:/usr/local/share/man:/usr/local/man:/usr/share/man:/opt/X11/share/man"}
+	MAN_SET=$(echo "$MAN_PATH" | tr : '\n')
+	for dir in . "$HOME/man" "$MAN_SET"; do
+		test -r "$dir/$1" && { echo "$dir/$1"; break; }
 	done
 }
 
 function searchfor {
 	# examine the current dir for name, name.man, or scan a searchpath for name.man
 	test "$1" || { echo ""; return; }
-	filename=$1
-	if ! test -r $filename || test -x $filename; then
-		expr "$filename" : .*.man >/dev/null 2>&1 || filename=$filename.man
-		result=$(scan $filename)
+	filename="$1"
+	if ! test -r "$filename" || test -x "$filename"; then
+		expr "$filename" : '.*.man' >/dev/null 2>&1 || filename="$filename.man"
+		result=$(scan "$filename")
 		if ! test "$result"; then
-			echo cannot find $filename in curdir, $HOME/man or MANPATH >&2
+			echo "cannot find $filename in curdir, $HOME/man or MANPATH" >&2
 			exit 1
 		fi
-		filename=$result
+		filename="$result"
 	fi
-	echo $filename
+	echo "$filename"
 }
 
 width=0
-sys=($uname -s)
-date= rel= vol= sect= title=
+#sys=("$uname" -s)
+date=
+rel=
+vol=
+sect=
+title=
 post=
 
 args="?hPRd:r:v:s:t:w:"
-while getopts $args opt
+while getopts "$args" opt
 do
     case $opt in
     d) date=$OPTARG;;
@@ -154,7 +160,7 @@ do
     t) title=$OPTARG;;
     w) width=$OPTARG;;
     P) post="groff -man -Tps";;
-    R) post=cat;;
+    R) post="cat";;
     \?) echo "usage: $0 [-$args] [filename]" >&2; exit 1;;
     h|*) usage; exit 1;;
     esac
@@ -164,22 +170,22 @@ shift $((OPTIND-1))
 date=${date:-$(date +'%d %B %Y')}
 
 # format and display the page now
-if test $width -eq 0 -a ! "$post" ; then
+if test "$width" -eq 0 -a ! "$post" ; then
     width=$(getwidth)
 fi
 
 # -is for pre-el-capitan
-: ${post:="groff -man -Tascii | ${PAGER:-less -R}"}
+: "${post:=groff -man -Tascii | ${PAGER:-less -R}}"
 
 # seek for it, perhaps without the .man extension
-filename=$(searchfor $1) || exit; shift;
+filename=$(searchfor "$1") || exit; shift;
 # echo $filename; exit
 
 # intuit the title, section and volume from the input file
 if ! test "$title" && test "$filename"; then
     title=${filename##*/}; title=${title%.man}
-    title=$(echo $title | tr a-z A-Z)
-    if sed '/DESCRIPTION/q' $filename | egrep -q "#include|.import"; then
+    title=$(echo "$title" | tr '[:lower:]' '[:upper:]')
+    if sed '/DESCRIPTION/q' "$filename" | grep -E -q "#include|.import"; then
 	sect=${sect:-3}
 	vol=${vol:-"$ORG Programmer's Manual"}
     else
@@ -191,8 +197,8 @@ fi
 # --------------------------------------------------
 # the formatting engine
 
-expand $filename |
-awk -v width=$width -v th="$title $sect \"$date\" \"$rel\" \"$vol\"" '
+expand "$filename" |
+awk -v width="$width" -v th="$title $sect \"$date\" \"$rel\" \"$vol\"" '
 BEGIN {
 	if (width+0 > 0) {
 		# adjust output to a specific width; useful as man(1) replacement
@@ -481,4 +487,4 @@ block > 0 {
 		if (br) print ".br"
 	}
 }
-' | eval $post
+' | eval "$post"
