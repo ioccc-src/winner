@@ -36,7 +36,10 @@ echo 1>&2
 echo "$ ./westley.sort < westley.c 2>/dev/null | diff -s - westley.c"
 read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
 echo 1>&2
+# There isn't a read and write problem.
+#
 # SC2094 (info): Make sure not to read and write the same file in the same pipeline.
+# https://www.shellcheck.net/wiki/SC2094
 # shellcheck disable=SC2094
 ./westley.sort < westley.c 2>/dev/null | diff -s - westley.c | less -rEXFK
 echo 1>&2

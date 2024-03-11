@@ -35,8 +35,8 @@ read -r -n 1 -p "Press any key to run: ./sicherman.alt < sicherman.alt.c | ./sic
 echo 1>&2
 # This warning from ShellCheck is incorrect:
 #
-#   SC2094 (info): Make sure not to read and write the same file in the same pipeline.
-#
+# SC2094 (info): Make sure not to read and write the same file in the same pipeline.
+# https://www.shellcheck.net/wiki/SC2094
 # shellcheck disable=SC2094
 ./sicherman.alt < sicherman.alt.c | ./sicherman.alt | diff -s - sicherman.alt.c
 echo "Now explain any differences." 1>&2

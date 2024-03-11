@@ -36,7 +36,10 @@ echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ls | ./sorter > ls.sorted.txt: "
 echo 1>&2
+# We do want to process the ls command output.
+#
 # SC2012 (info): Use find instead of ls to better handle non-alphanumeric filenames.
+# https://www.shellcheck.net/wiki/SC2012
 # shellcheck disable=SC2012
 ls | ./sorter > ls.sorted.txt
 

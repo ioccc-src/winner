@@ -6,7 +6,8 @@ if [[ "$#" -lt 2 ]]; then
 fi
 
 COUNT=$1; shift
-#     ^--^ SC2124 (warning): Assigning an array to a string! Assign as array, or use * instead of @ to concatenate.
+# SC2124 (warning): Assigning an array to a string! Assign as array, or use * instead of @ to concatenate.
+# https://www.shellcheck.net/wiki/SC2124
 # shellcheck disable=SC2124
 CMD="$@"
 
@@ -16,20 +17,27 @@ USER=0
 REAL=0
 
 while [[ $N -lt $COUNT ]]; do
-	# ^---^ SC2086 (info): Double quote to prevent globbing and word splitting.
 	# 'fixing' this will break the script so we disable it:
+	#
+	# SC2086 (info): Double quote to prevent globbing and word splitting.
+	# https://www.shellcheck.net/wiki/SC2086
 	# shellcheck disable=SC2086
  	TIME=$( { /usr/bin/time -l $CMD >/dev/null; } 2>&1 | head -n 1 )
-	# ^---^ SC2086 (info): Double quote to prevent globbing and word splitting.
 	# 'fixing' this will break the script so we disable it:
+	#
+	# SC2086 (info): Double quote to prevent globbing and word splitting.
+	# https://www.shellcheck.net/wiki/SC2086
 	# shellcheck disable=SC2086
 	REAL="$REAL + $(echo $TIME | cut -d' ' -f1)"
-	# ^---^ SC2086 (info): Double quote to prevent globbing and word splitting.
 	# 'fixing' this will break the script so we disable it:
+	#
+	# SC2086 (info): Double quote to prevent globbing and word splitting.
 	# shellcheck disable=SC2086
 	USER="$USER + $(echo $TIME | cut -d' ' -f3)"
-	# ^---^ SC2086 (info): Double quote to prevent globbing and word splitting.
 	# 'fixing' this will break the script so we disable it:
+	#
+	# SC2086 (info): Double quote to prevent globbing and word splitting.
+	# https://www.shellcheck.net/wiki/SC2086
 	# shellcheck disable=SC2086
 	SYS="$SYS + $(echo $TIME | cut -d' ' -f5)"
 	((N++))

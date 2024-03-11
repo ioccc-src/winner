@@ -37,9 +37,8 @@ done
 # it either.
 while :; do
     read -r -p "Enter a value (any non-digit = quit): "
-    # ^-- SC2143 (style): Use grep -q instead of comparing output with [ -n .. ].
-    # shellcheck disable=SC2143
-    if [[ $(echo "$REPLY" | grep -E '\<[0-9]+\>') ]]; then
+    GREP_REPLY=$(echo "$REPLY" | grep -E '\<[0-9]+\>')
+    if [[ -z $GREP_REPLY ]]; then
 	make clobber CC="$CC" SIZE="$REPLY" alt >/dev/null
 	./shapiro.alt
     else

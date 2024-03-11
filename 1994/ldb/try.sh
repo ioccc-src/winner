@@ -26,13 +26,11 @@ ldb_file()
 
 ldb_ioccc()
 {
-    # This warning from ShellCheck is incorrect:
+    # This warning from ShellCheck is incorrect because we deliberately have \\n to show
+    # that there will be a newline printed WITH printf(1). Thus this does show correct output.
     #
-    #   SC2028 (info): echo may not expand escape sequences. Use printf.
-    #
-    # because we deliberately have \\n to show that there will be a newline printed
-    # WITH printf(1). Thus this does show correct output.
-    #
+    # SC2028 (info): echo may not expand escape sequences. Use printf.
+    # https://www.shellcheck.net/wiki/SC2028
     # shellcheck disable=SC2028
     echo "$ printf \"The International Obfuscated C Code Contest\\nBest One-liner\\nby Laurion Burchall\" | ./ldb"
     read -r -n 1 -p "Press any key to continue: "
@@ -44,8 +42,8 @@ ldb_ioccc()
 # This warning from ShellCheck is irrelevant as we only use 'i' as an iterator
 # to do the commands a number of times:
 #
-#   SC2034 (warning): i appears unused. Verify use (or export if used externally).
-#
+# SC2034 (warning): i appears unused. Verify use (or export if used externally).
+# https://www.shellcheck.net/wiki/SC2034
 # shellcheck disable=SC2034
 for i in $(seq 1 5); do
     ldb_file /etc/passwd

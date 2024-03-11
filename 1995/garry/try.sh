@@ -15,12 +15,11 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-# This warning from ShellCheck is incorrect:
+# This warning from ShellCheck is incorrect because we don't want them to be expanded.
+# This does show correct output.
 #
-#   SC2028 (info): echo may not expand escape sequences. Use printf.
-#
-# because we don't want them to be expanded. This does show correct output.
-#
+# SC2028 (info): echo may not expand escape sequences. Use printf.
+# https://www.shellcheck.net/wiki/SC2028
 # shellcheck disable=SC2028
 echo "$ EXAMPLEON=\"\\33\133\61\73\67\155\"; EXAMPLEOFF=\"\33\133\155\"; DOLLAR=\"$\"" 1>&2
 EXAMPLEON="\33\133\61\73\67\155"

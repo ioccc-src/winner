@@ -163,6 +163,7 @@ else
 # For anything else, game in progress, do not do anything
 
 	# SC2006 (style): Use $(...) notation instead of legacy backticks `...`.
+	# https://www.shellcheck.net/wiki/SC2006
 	# shellcheck disable=SC2006
 	if [[ -n "`grep ':-(' ttt.alt_game.c`" ]]; then
 	    echo
@@ -172,6 +173,7 @@ else
 	    rm -f merlyn ttt.alt_game
 	else
 	    # SC2006 (style): Use $(...) notation instead of legacy backticks `...`.
+	    # https://www.shellcheck.net/wiki/SC2006
 	    # shellcheck disable=SC2006
 	    if [[ -n "`grep ':-)' ttt.alt_game.c`" ]]; then
 		echo
@@ -180,6 +182,7 @@ else
 		rm -f ttt.alt_game
 	    else
 		# SC2006 (style): Use $(...) notation instead of legacy backticks `...`.
+		# https://www.shellcheck.net/wiki/SC2006
 		# shellcheck disable=SC2006
 		if [[ -z "`grep 'X=-. ' ttt.alt_game.c`" && -z "`grep '^. ' ttt.alt_game.c`" ]]; then
 		    echo

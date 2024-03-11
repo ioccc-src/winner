@@ -18,24 +18,20 @@ clear
 read -r -n 1 -p "Press any key to run: echo '((\a(\b(\c(d)))) e)' | ./fanf: "
 echo 1>&2
 
-# This warning from ShellCheck is incorrect:
+# This warning from ShellCheck is incorrect because we don't want to expand escape sequences.
+# Thus this does show correct output.
 #
-#   SC2028 (info): echo may not expand escape sequences. Use printf.
-#
-# because we don't want to expand escape sequences. Thus this does show correct
-# output.
-#
+# SC2028 (info): echo may not expand escape sequences. Use printf.
+# https://www.shellcheck.net/wiki/SC2028
 # shellcheck disable=SC2028
 echo '((\a(\b(\c(d)))) e)' | ./fanf
 echo 1>&2
 
-# This warning from ShellCheck is incorrect:
+# This warning from ShellCheck is incorrect because we don't want to expand escape sequences.
+# Thus this does show correct output.
 #
-#   SC2028 (info): echo may not expand escape sequences. Use printf.
-#
-# because we don't want to expand escape sequences. Thus this does show correct
-# output.
-#
+# SC2028 (info): echo may not expand escape sequences. Use printf.
+# https://www.shellcheck.net/wiki/SC2028
 # shellcheck disable=SC2028
 echo "$ echo '
 (\f\g\x
@@ -46,13 +42,11 @@ echo "$ echo '
 read -r -n 1 -p "Press any key to continue: "
 echo 1>&2
 
-# This warning from ShellCheck is incorrect:
+# This warning from ShellCheck is incorrect because we don't want to expand escape sequences.
+# Thus this does show correct output.
 #
-#   SC2028 (info): echo may not expand escape sequences. Use printf.
-#
-# because we don't want to expand escape sequences. Thus this does show correct
-# output.
-#
+# SC2028 (info): echo may not expand escape sequences. Use printf.
+# https://www.shellcheck.net/wiki/SC2028
 # shellcheck disable=SC2028
 echo '
 (\f\g\x
@@ -62,35 +56,29 @@ echo '
 )'|./fanf
 echo 1>&2
 
-# This warning from ShellCheck is incorrect:
+# This warning from ShellCheck is incorrect because we don't want to expand escape sequences.
+# Thus this does show correct output.
 #
-#   SC2028 (info): echo may not expand escape sequences. Use printf.
-#
-# because we don't want to expand escape sequences. Thus this does show correct
-# output.
-#
+# SC2028 (info): echo may not expand escape sequences. Use printf.
+# https://www.shellcheck.net/wiki/SC2028
 # shellcheck disable=SC2028
 echo "$ echo '(\f(\f\g\x( (f((\a(g(b))) e)) (g x) ) K K z))' | ./fanf" 1>&2
 read -r -n 1 -p "Press any key to continue: "
 echo 1>&2
-# This warning from ShellCheck is incorrect:
+# This warning from ShellCheck is incorrect because we don't want to expand escape sequences.
+# Thus this does show correct output.
 #
-#   SC2028 (info): echo may not expand escape sequences. Use printf.
-#
-# because we don't want to expand escape sequences. Thus this does show correct
-# output.
-#
+# SC2028 (info): echo may not expand escape sequences. Use printf.
+# https://www.shellcheck.net/wiki/SC2028
 # shellcheck disable=SC2028
 echo '(\f(\f\g\x( (f((\a(g(b))) e)) (g x) ) K K z))' | ./fanf
 echo 1>&2
 
-# This warning from ShellCheck is incorrect:
+# This warning from ShellCheck is incorrect because we don't want to expand escape sequences.
+# Thus this does show correct output.
 #
-#   SC2028 (info): echo may not expand escape sequences. Use printf.
-#
-# because we don't want to expand escape sequences. Thus this does show correct
-# output.
-#
+# SC2028 (info): echo may not expand escape sequences. Use printf.
+# https://www.shellcheck.net/wiki/SC2028
 # shellcheck disable=SC2028
 echo "$ echo '
 (Y\f\n
@@ -102,13 +90,11 @@ echo "$ echo '
 read -r -n 1 -p "Press any key to continue: "
 echo 1>&2
 
-# This warning from ShellCheck is incorrect:
+# This warning from ShellCheck is incorrect because we don't want to expand escape sequences.
+# Thus this does show correct output.
 #
-#   SC2028 (info): echo may not expand escape sequences. Use printf.
-#
-# because we don't want to expand escape sequences. Thus this does show correct
-# output.
-#
+# SC2028 (info): echo may not expand escape sequences. Use printf.
+# https://www.shellcheck.net/wiki/SC2028
 # shellcheck disable=SC2028
 echo '(Y\f\n
   ((= n 0)
