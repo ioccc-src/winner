@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 cat <<'-EOT-'
 HTTP/1.0 200 OK
@@ -27,58 +27,61 @@ Hibachi/1.0 Shell Test 0 - Display Enviroment
 <caption><h3>Assertions</h3></caption>
 -EOT-
 
-if [ X"$PATH" = X'/usr/local/bin:/usr/bin:/bin' ]; then
+if [[ "$PATH" == '/usr/local/bin:/usr/bin:/bin' ]]; then
 
 	echo "<tr><td>[ OK  ] PATH</td></tr>"
 else
 	echo "<tr><td>[ BAD ] PATH</td></tr>"
 fi
 
-if [ X"$ENV" = X ]; then
+if [[ -z $ENV ]]; then
 	echo "<tr><td>[ OK  ] ENV</td></tr>"
 else
 	echo "<tr><td>[ BAD ] ENV</td></tr>"
 fi
 
-if [ X"$CDPATH" = X ]; then
+if [[ -z $CDPATH ]]; then
 	echo "<tr><td>[ OK  ] CDPATH</td></tr>"
 else
 	echo "<tr><td>[ BAD ] CDPATH</td></tr>"
 fi
 
-if [ X"$REQUEST_METHOD" = X'GET' ]; then
+if [[ -z $REQUEST_METHOD ]]; then REQUEST_METHOD=''; fi
+if [[ $REQUEST_METHOD == 'GET' ]]; then
 	echo "<tr><td>[ OK  ] REQUEST_METHOD</td></tr>"
 else
 	echo "<tr><td>[ BAD ] REQUEST_METHOD</td></tr>"
 fi
 
-if [ X"$DOCUMENT_ROOT" != X ]; then
+if [[ -z $DOCUMENT_ROOT ]]; then
 	echo "<tr><td>[ OK  ] DOCUMENT_ROOT</td></tr>"
 else
 	echo "<tr><td>[ BAD ] DOCUMENT_ROOT</td></tr>"
 fi
 
 # Test for existence only, since the location changes.
-if [ X"$SCRIPT_FILENAME" = X ]; then
+if [[ -z $SCRIPT_FILENAME ]]; then
 	echo "<tr><td>[ BAD ] SCRIPT_FILENAME</td></tr>"
 else
 	echo "<tr><td>[ OK  ] SCRIPT_FILENAME</td></tr>"
 fi
 
 # Test for existence only, since the default value might change.
-if [ X"$SERVER_PORT" = X ]; then
+if [[ -z $SERVER_PORT ]]; then
 	echo "<tr><td>[ BAD ] SERVER_PORT</td></tr>"
 else
 	echo "<tr><td>[ OK  ] SERVER_PORT</td></tr>"
 fi
 
-if [ X"$SERVER_SOFTWARE" = X'hibachi/1.0' ]; then
+if [[ -z $SERVER_SOFTWARE ]]; then SERVER_SOFTWARE=''; fi
+if [[ $SERVER_SOFTWARE == 'hibachi/1.0' ]]; then
 	echo "<tr><td>[ OK  ] SERVER_SOFTWARE</td></tr>"
 else
 	echo "<tr><td>[ BAD ] SERVER_SOFTWARE</td></tr>"
 fi
 
-if [ X"$GATEWAY_INTERFACE" = X'CGI/0.0' ]; then
+if [[ -z $GATEWAY_INTERFACE ]]; then GATEWAY_INTERFACE=''; fi
+if [[ $GATEWAY_INTERFACE == 'CGI/0.0' ]]; then
 	echo "<tr><td>[ OK  ] GATEWAY_INTERFACE</td></tr>"
 else
 	echo "<tr><td>[ BAD ] GATEWAY_INTERFACE</td></tr>"
@@ -86,7 +89,13 @@ fi
 
 echo "</table>"
 
-. "$DOCUMENT_ROOT/test/shell/dump.sh"
+if [[ -z $DOCUMENT_ROOT ]]; then DOCUMENT_ROOT='.'; fi
+# We want to source the file, but for SC1091 the file is not available at the time of this edit.
+#
+# SC1091 (info): Not following: ./test/shell/dump.sh was not specified as input (see shellcheck -x).
+# https://www.shellcheck.net/wiki/SC1091
+# shellcheck disable=SC1091
+source "$DOCUMENT_ROOT/test/shell/dump.sh"
 
 cat <<'-EOT-'
 <br>
