@@ -27,13 +27,13 @@
 IFS=' 	
 '
 
-SED=$(which sed)
+SED=$(command -v sed)
 
 #
 # Get a clean environment to work with. This works for all
 # Bourne like shells under Linux and Cygwin environments.
 #
-unset $(env | $SED -e 's/^\([^=]*\).*/\1/')
+unset "$(env | $SED -e 's/^\([^=]*\).*/\1/')"
 
 #
 # Path of safe executables.
@@ -54,15 +54,15 @@ unset CDPATH
 # Minimum required for serving static files.
 #######################################################################
 
-prefix=/usr/local
-exec_prefix=${prefix}
+export prefix=/usr/local
+export exec_prefix=${prefix}
 
-datadir=${prefix}/share
-sysconfdir=${prefix}/etc
-sharedstatedir=${prefix}/com
-localstatedir=/var
-sbindir=${exec_prefix}/sbin
-bindir=${exec_prefix}/bin
+export datadir=${prefix}/share
+export sysconfdir=${prefix}/etc
+export sharedstatedir=${prefix}/com
+export localstatedir=/var
+export sbindir=${exec_prefix}/sbin
+export bindir=${exec_prefix}/bin
 
 #
 # The port to be used by the Hibachi web server.
@@ -93,13 +93,14 @@ export SERVER_PORT=8008
 #		64.81.251.233 -> www.ioccc.org/
 #
 #export DOCUMENT_ROOT=${datadir}/hibachi
-export DOCUMENT_ROOT=$(pwd)
+export DOCUMENT_ROOT
+DOCUMENT_ROOT=$(pwd)
 
 #
 # The executable.
 #
 #hibachi=${sbindir}/hibachi
-hibachi=`dirname $0`/hibachi
+hibachi=$(dirname "$0")/hibachi
 
 #######################################################################
 # Required for most CGI scripts.
