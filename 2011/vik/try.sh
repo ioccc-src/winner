@@ -48,7 +48,7 @@ raw2wav()
 if [[ -z "$MPLAYER" && -z "$PERL" ]]; then
     echo "Neither mplayer(1) nor perl(1) installed. Please install one or" 1>&2
     echo "both of these and try again." 1>&2
-    echo 1>&
+    echo 1>&2
     exit 1
 fi
 
