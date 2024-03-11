@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 #
 # dgibson.sh - run the IOCCC entry 1993/dgibson
 #
@@ -7,23 +7,23 @@
 
 # parse args
 #
-if [ $# -eq 0 ]; then
+if [[ $# -eq 0 ]]; then
     DATA="./dgibson.data1"
 else
     DATA="$1"
 fi
-if [ ! -f "$DATA" ]; then
+if [[ ! -f "$DATA" ]]; then
     echo "$0: no data found in $DATA" 1>&2
     exit 1
 fi
 
 # for the initial data.name if needed
 #
-if [ ! -f "data.name" ]; then
+if [[ ! -f "data.name" ]]; then
     rm -f data.name
     echo "$DATA" > data.name
 fi
-if [ ! -f life.d ]; then
+if [[ ! -f life.d ]]; then
     # force a new life setup
     echo "/" > data.name
 fi
