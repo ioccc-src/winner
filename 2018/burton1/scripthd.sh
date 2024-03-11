@@ -2,7 +2,7 @@
 
 hd=${HD:=./prog}
 
-cat $* |
+cat "$@" |
 $hd |
 awk '
 BEGIN { nodup=1; group=1 }
