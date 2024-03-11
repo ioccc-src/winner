@@ -24,14 +24,14 @@ echo 1>&2
 ./prog.alt 512 ./prog.alt | less -rEXFK
 echo 1>&2
 
-echo "$ TZ=UTC24 make CC="$CC" clobber prog.alt" 1>&2
+echo "$ TZ=UTC24 make CC=$CC clobber prog.alt" 1>&2
 TZ=UTC24 make CC="$CC" clobber prog.alt || exit 1
 read -r -n 1 -p "Press any key to run: ./prog.alt 512 ./prog.alt (space = next page, q = quit): "
 echo 1>&2
 ./prog.alt 512 ./prog.alt | less -rEXFK
 echo 1>&2
 
-echo "$ TZ=UTC48 make CC="$CC" clobber prog.alt" 1>&2
+echo "$ TZ=UTC48 make CC=$CC clobber prog.alt" 1>&2
 TZ=UTC48 make CC="$CC" clobber prog.alt || exit 1
 read -r -n 1 -p "Press any key to run: ./prog.alt 512 ./prog.alt: "
 echo 1>&2
