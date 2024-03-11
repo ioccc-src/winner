@@ -40,7 +40,7 @@ ag()
 	return
     fi
 
-    echo "$ ./ag ${@:2} < $1" 1>&2
+    echo "$ ./ag ${*:2} < $1" 1>&2
     read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
     echo 1>&2
     ./ag "${@:2}" < "$1" 2>/dev/null | less -rEXF
