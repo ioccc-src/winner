@@ -50,22 +50,6 @@
 	    "entry_text" : "how to run"
 	},
 	{
-	    "file_path" : "westley.punch.c",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "Punch card code"
-	},
-	{
-	    "file_path" : "westley.sort.c",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "Sorted code"
-	},
-	{
 	    "file_path" : "2001_westley.tar.bz2",
 	    "inventory_order" : 100000,
 	    "OK_to_edit" : false,
