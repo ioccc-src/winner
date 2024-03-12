@@ -12,7 +12,13 @@ echo "YYYY/MM/DD" | ./morgan1
 ```
 
 where `YYYY` is the four digit year, `MM` is the two digit month and `DD` is two
-digit day of the month.
+digit day of the month. The arrow keys control the shifting of the date as
+follows:
+
+* Right : go forwards one day.
+* Left  : go backwards one day.
+* Up    : go forwards 20 days.
+* Down  : go backwards 20 days.
 
 
 ## Try:
@@ -21,7 +27,8 @@ digit day of the month.
 ./try.sh
 ```
 
-Try pressing the arrow keys when your focus is in the window.
+Use the same keys as described above to change the dates each time the program
+window is in focus.
 
 
 ## Judges' remarks:
