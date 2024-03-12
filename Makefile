@@ -301,7 +301,7 @@ genfilelist:
 	@-for i in ${YEARS}; do \
 	    rm -f "$$i/.genfilelist.tmp"; \
 	    find "$$i" -mindepth 1 -maxdepth 1 -type f ! -path "$$i/.genfilelist.tmp" ! -name .DS_Store | \
-	      sort -d -u > "$$i/.genfilelist.tmp"; \
+	      ${SORT} -f -d -u > "$$i/.genfilelist.tmp"; \
 	    if ${CMP} -s "$$i/.genfilelist.tmp" "$$i/.filelist"; then \
 		${RM} -f "$$i/.genfilelist.tmp"; \
 		echo "$$i/.filelist already up to date"; \
