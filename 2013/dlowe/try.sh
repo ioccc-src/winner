@@ -15,6 +15,9 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
+# NOTE: do NOT change this to prompt the user for each command as this will
+# break the script diff.sh.
+#
 echo "$ ./dlowe 0 1 2 3 4 5 6 7"
 ./dlowe 0 1 2 3 4 5 6 7
 echo
