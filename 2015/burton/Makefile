@@ -221,6 +221,7 @@ clean:
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
 	${RM} -rf *.dSYM calc ecalc
+	${RM} -f ecalc.alt
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \

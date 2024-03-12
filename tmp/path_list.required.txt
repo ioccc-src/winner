@@ -1302,8 +1302,6 @@
 2001/westley/westley.alt.c
 2001/westley/westley.c
 2001/westley/westley.orig.c
-2001/westley/westley.punch.c
-2001/westley/westley.sort.c
 2001/williams/.entry.json
 2001/williams/.gitignore
 2001/williams/Makefile

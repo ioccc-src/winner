@@ -221,7 +221,7 @@ clean:
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
 	${RM} -rf *.dSYM
-	${RM} -f clock.c clock
+	${RM} -f clock.c clock clock.alt.c
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
