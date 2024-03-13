@@ -38,11 +38,16 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-bitwise-op-parentheses -Wno-error -Wno-implicit-function-declaration \
-	-Wno-logical-op-parentheses -Wno-main-return-type -Wno-missing-braces \
-	-Wno-parentheses -Wno-return-type -Wno-tautological-bitwise-compare \
-	-Wno-unsequenced -Wno-deprecated-non-prototype -Wno-strict-prototypes \
-	-Wno-implicit-int
+CSILENCE= -Wno-bitwise-op-parentheses -Wno-error \
+	  -Wno-implicit-function-declaration -Wno-logical-op-parentheses \
+	  -Wno-main-return-type -Wno-missing-braces -Wno-parentheses \
+	  -Wno-return-type -Wno-tautological-bitwise-compare \
+	  -Wno-unsequenced -Wno-deprecated-non-prototype \
+	  -Wno-strict-prototypes -Wno-extra-semi-stmt \
+	  -Wno-misleading-indentation -Wno-reserved-identifier \
+	  -Wno-builtin-declaration-mismatch -Wno-sequence-point \
+	  -Wno-unused-value -Wno-unsafe-buffer-usage \
+	  -Wno-implicit-int
 
 # Common C compiler warning flags
 #
@@ -88,7 +93,9 @@ CC= cc
 ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
 #
 CSILENCE+= -Wno-comma -Wno-missing-prototypes -Wno-missing-variable-declarations \
-	-Wno-poison-system-directories -Wno-strict-prototypes -Wno-unreachable-code
+	   -Wno-poison-system-directories -Wno-strict-prototypes -Wno-unreachable-code \
+	   -Wno-builtin-declaration-mismatch -Wno-misleading-indentation \
+           -Wno-sequence-point -Wno-unused-value -Wno-unknown-warning-option
 #
 CWARN+= -Weverything
 #

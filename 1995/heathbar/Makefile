@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE=
+CSILENCE= -Wno-misleading-indentation -Wno-unused-value
 
 # Common C compiler warning flags
 #
@@ -83,7 +83,8 @@ CC= cc
 #
 ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
 #
-CSILENCE+= -Wno-missing-variable-declarations -Wno-poison-system-directories
+CSILENCE+= -Wno-missing-variable-declarations -Wno-poison-system-directories \
+	   -Wno-unsafe-buffer-usage
 #
 CWARN+= -Weverything
 #

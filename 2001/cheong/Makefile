@@ -84,7 +84,8 @@ CC= cc
 ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
 #
 CSILENCE+= -Wno-implicit-int-conversion -Wno-missing-variable-declarations \
-	-Wno-poison-system-directories -Wno-missing-prototypes
+	   -Wno-misleading-indentation -Wno-unsafe-buffer-usage \
+	   -Wno-poison-system-directories -Wno-missing-prototypes
 #
 CWARN+= -Weverything
 #

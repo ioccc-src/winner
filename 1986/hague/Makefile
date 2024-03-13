@@ -39,8 +39,9 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-implicit-int \
-	-Wno-incompatible-library-redeclaration -Wno-return-type \
-	-Wno-deprecated-declarations -Wno-deprecated-non-prototype
+	  -Wno-incompatible-library-redeclaration -Wno-return-type \
+	  -Wno-deprecated-declarations -Wno-deprecated-non-prototype \
+	  -Wno-builtin-declaration-mismatch -Wno-missing-parameter-type
 
 # Common C compiler warning flags
 #
@@ -86,7 +87,9 @@ CC= cc
 ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
 #
 CSILENCE+= -Wno-comma -Wno-missing-prototypes -Wno-missing-variable-declarations \
-	-Wno-pedantic -Wno-poison-system-directories -Wno-strict-prototypes
+	   -Wno-pedantic -Wno-poison-system-directories -Wno-strict-prototypes \
+	   -Wno-reserved-identifier -Wno-reserved-macro-identifier \
+           -Wno-unsafe-buffer-usage -Wno-unknown-warning-option
 #
 CWARN+= -Weverything
 #

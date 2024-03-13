@@ -39,7 +39,8 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-bool-operation -Wno-char-subscripts -Wno-format-security \
-	-Wno-logical-op-parentheses
+	  -Wno-logical-op-parentheses -Wno-format-overflow -Wno-parentheses \
+	  -Wno-restrict -Wno-unused-value
 
 # Common C compiler warning flags
 #
@@ -85,7 +86,8 @@ CC= cc
 ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
 #
 CSILENCE+= -Wno-comma -Wno-format-nonliteral -Wno-missing-variable-declarations \
-	-Wno-poison-system-directories -Wno-string-conversion -Wno-unreachable-code
+	   -Wno-poison-system-directories -Wno-string-conversion -Wno-unreachable-code \
+	   -Wno-unknown-warning-option -Wno-unsafe-buffer-usage
 #
 CWARN+= -Weverything
 #

@@ -39,11 +39,12 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-bitwise-op-parentheses -Wno-comment -Wno-deprecated-declarations \
-	-Wno-error -Wno-implicit-function-declaration -Wno-format-security \
-	-Wno-logical-op-parentheses -Wno-macro-redefined -Wno-parentheses \
-	-Wno-return-type -Wno-uninitialized -Wno-unused-value -Wno-unused-variable \
-	-Wno-unused-but-set-variable -Wno-unsequenced -Wno-unused-parameter \
-	-Wno-empty-translation-unit -Wno-implicit-int
+	  -Wno-error -Wno-implicit-function-declaration -Wno-format-security \
+	  -Wno-logical-op-parentheses -Wno-macro-redefined -Wno-parentheses \
+	  -Wno-return-type -Wno-uninitialized -Wno-unused-value -Wno-unused-variable \
+	  -Wno-unused-but-set-variable -Wno-unsequenced -Wno-unused-parameter \
+	  -Wno-empty-translation-unit -Wno-implicit-int \
+	  -Wno-builtin-declaration-mismatch -Wno-sequence-point
 
 # Common C compiler warning flags
 #
@@ -89,10 +90,11 @@ CC= cc
 ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
 #
 CSILENCE+= -Wno-comma -Wno-float-conversion -Wno-missing-noreturn \
-	-Wno-missing-prototypes -Wno-missing-variable-declarations -Wno-padded \
-	-Wno-poison-system-directories -Wno-shadow -Wno-unreachable-code \
-	-Wno-unused-macros -Wno-shorten-64-to-32 -Wno-sign-conversion \
-	-Wno-empty-translation-unit
+	   -Wno-missing-prototypes -Wno-missing-variable-declarations -Wno-padded \
+	   -Wno-poison-system-directories -Wno-shadow -Wno-unreachable-code \
+	   -Wno-unused-macros -Wno-shorten-64-to-32 -Wno-sign-conversion \
+	   -Wno-empty-translation-unit -Wno-extra-semi-stmt -Wno-misleading-indentation \
+	   -Wno-unsafe-buffer-usage -Wno-unknown-warning-option
 #
 CWARN+= -Weverything
 #

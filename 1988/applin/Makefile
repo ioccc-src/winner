@@ -39,8 +39,7 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-expansion-to-defined -Wno-implicit-int -Wno-strict-prototypes \
-	  -Wno-gnu-line-marker
-
+	  -Wno-gnu-line-marker -Wno-return-type
 
 # Common C compiler warning flags
 #

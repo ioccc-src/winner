@@ -39,8 +39,9 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-bitwise-op-parentheses -Wno-empty-body -Wno-format \
-	-Wno-format-security -Wno-gnu-zero-variadic-macro-arguments -Wno-main \
-	-Wno-parentheses -Wno-implicit-function-declaration -Wno-strict-prototypes
+	  -Wno-format-security -Wno-gnu-zero-variadic-macro-arguments -Wno-main \
+	  -Wno-parentheses -Wno-implicit-function-declaration \
+	  -Wno-strict-prototypes -Wno-misleading-indentation
 
 # Common C compiler warning flags
 #
@@ -87,7 +88,7 @@ ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
 #
 CSILENCE+= -Wno-comma -Wno-double-promotion -Wno-missing-prototypes \
 	-Wno-missing-variable-declarations -Wno-poison-system-directories \
-	-Wno-shadow -Wno-shorten-64-to-32
+	-Wno-shadow -Wno-shorten-64-to-32 -Wno-unsafe-buffer-usage
 #
 CWARN+= -Weverything
 #
@@ -169,7 +170,7 @@ hello: hello.pdf
 	@echo
 	${CC} ${CFLAGS} -xc hello.pdf -o $@
 	@echo
-	./hello | ${CC} ${CFLAGS} -xc - -o hello2 
+	./hello | ${CC} ${CFLAGS} -xc - -o hello2
 
 # alternative executable
 #

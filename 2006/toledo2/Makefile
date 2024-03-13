@@ -39,9 +39,10 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-bitwise-conditional-parentheses -Wno-bitwise-op-parentheses \
-	-Wno-conditional-type-mismatch -Wno-error \
-	-Wno-implicit-function-declaration -Wno-implicit-int -Wno-int-conversion \
-	-Wno-pointer-type-mismatch -Wno-unsequenced -Wno-deprecated-non-prototype
+	  -Wno-conditional-type-mismatch -Wno-error \
+	  -Wno-implicit-function-declaration -Wno-implicit-int \
+	  -Wno-int-conversion -Wno-pointer-type-mismatch -Wno-unsequenced \
+	  -Wno-deprecated-non-prototype -Wno-parentheses -Wno-unused-value
 
 # Common C compiler warning flags
 #
@@ -87,8 +88,8 @@ CC= cc
 ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
 #
 CSILENCE+= -Wno-implicit-int-conversion -Wno-missing-variable-declarations \
-	-Wno-pedantic -Wno-poison-system-directories -Wno-shorten-64-to-32 \
-	-Wno-strict-prototypes
+	   -Wno-pedantic -Wno-poison-system-directories -Wno-shorten-64-to-32 \
+	   -Wno-strict-prototypes -Wno-extra-semi-stmt -Wno-unsafe-buffer-usage
 #
 CWARN+= -Weverything
 #
@@ -154,8 +155,8 @@ ${PROG}.alt: ${PROG}.alt.c
 #
 data ${SUBDIR_SET}: ${DATA}
 	${RM} -rf ${SUBDIR_SET}
-	${UNZIP} ${ZIP_DATA} 
-	
+	${UNZIP} ${ZIP_DATA}
+
 # both all and alt
 #
 everything: all alt
