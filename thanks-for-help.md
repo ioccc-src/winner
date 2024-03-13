@@ -863,6 +863,20 @@ from the author and the `fib.lisp` comes from [Yusuke](#yusuke). Cody wrote the 
 offered us some chocolate cake :-) See index.html for details on how to use the
 script.
 
+Cody also fixed the Makefile where typing `make everything` or `make alt` would
+result in:
+
+```
+clang: error: no such file or directory: 'data'
+clang: error: no input files
+make: *** [Makefile:143: alt] Error 1
+
+shell returned 2
+```
+
+because the `alt` rule had what normally is in the `${PROG}.alt` rule.
+
+
 
 ## <a name="1989_ovdluhe"></a>[1989/ovdluhe](1989/ovdluhe/ovdluhe.c) ([index.html](1989/ovdluhe/index.html]))
 

@@ -140,7 +140,7 @@ ${PROG}: ${PROG}.c
 # alternative executable
 #
 alt: data ${ALT_TARGET}
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	@${TRUE}
 
 # data files
 #
