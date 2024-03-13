@@ -392,6 +392,43 @@ We encourage you to read the [compilers.html](1986/marshall/compilers.html) file
 see how odd this problem was and what Cody did to fix it, if nothing else but
 for entertainment!
 
+Also, after all warnings but one that could not be silenced were disabled,
+Cody changed the alt code (which was not the same as the original - see above
+for details or try `make diff_orig_alt` in the directory) slightly so that it
+was possible to silence it. In particular:
+
+```c
+  P  (    a  )   char a   ;  {    a  ;   while(    a  >      "  B   "
+```
+
+which gave:
+
+```
+marshall.alt.c:13:55: warning: ordered comparison between pointer and integer ('char' and 'char *')
+  P  (    a  )   char a   ;  {    a  ;   while(    a  >      "  B   "
+                                                   ~  ^      ~~~~~~~~
+1 warning generated.
+```
+
+was changed to:
+
+```c
+  P  (    a  )   char a   ;  {    a  ;   while((char *)a  >   "  B   "
+```
+
+which gave:
+
+```
+marshall.alt.c:13:48: warning: cast to 'char *' from smaller integer type 'char' [-Wint-to-pointer-cast]
+  P  (    a  )   char a   ;  {    a  ;   while((char *)a  >   "  B   "
+                                               ^~~~~~~~~
+1 warning generated.
+
+```
+
+which can be disabled. It results in the same behaviour but this way no warnings
+are produced.
+
 
 ## <a name="1986_pawka"></a>[1986/pawka](1986/pawka/pawka.c) ([index.html](1986/pawka/index.html))
 

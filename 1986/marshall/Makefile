@@ -44,7 +44,7 @@ CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-implicit-int \
 	  -Wno-deprecated-non-prototype -Wno-pointer-to-int-cast -Wno-return-type \
           -Wno-strict-prototypes -Wno-uninitialized -Wno-unused-parameter \
 	  -Wno-address -Wno-builtin-declaration-mismatch -Wno-sequence-point \
-	  -Wno-unknown-warning-option
+	  -Wno-unknown-warning-option -Wno-int-to-pointer-cast
 
 # Common C compiler warning flags
 #
