@@ -40,7 +40,7 @@ include ../../var.mk
 #
 CSILENCE= -Wno-unused-value -Wno-implicit-fallthrough -Wno-parentheses \
 	  -Wno-binding-in-condition -Wno-binding-in-condition \
-	  -Wno-misleading-indentation \Wno-unknown-warning-option \
+	  -Wno-misleading-indentation -Wno-unknown-warning-option \
 	  -Wno-comment -Wno-implicit-function-declaration \
           -Wno-misleading-indentation -Wno-unused-value
 
