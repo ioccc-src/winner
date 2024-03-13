@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-strict-prototypes -Wno-stringop-truncation
+CSILENCE= -Wno-strict-prototypes -Wno-stringop-truncation -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

@@ -88,7 +88,8 @@ CSILENCE+= -Wno-cast-align -Wno-comma -Wno-double-promotion -Wno-format-nonliter
 	   -Wno-missing-variable-declarations -Wno-poison-system-directories \
 	   -Wno-sign-conversion -Wno-strict-prototypes -Wno-declaration-after-statement \
 	   -Wno-incompatible-function-pointer-types-strict \
-           -Wno-misleading-indentation -Wno-unsafe-buffer-usage
+           -Wno-misleading-indentation -Wno-unsafe-buffer-usage \
+	   -Wno-unknown-warning-option
 #
 CWARN+= -Weverything
 #

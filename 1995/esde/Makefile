@@ -42,7 +42,8 @@ CSILENCE= -Wno-bitwise-op-parentheses -Wno-char-subscripts -Wno-error \
 	  -Wno-implicit-function-declaration -Wno-format-security \
 	  -Wno-return-type -Wno-sign-compare -Wno-uninitialized -Wno-unsequenced \
 	  -Wno-implicit-int -Wno-builtin-declaration-mismatch \
-	  -Wno-misleading-indentation -Wno-parentheses -Wno-sequence-point
+	  -Wno-misleading-indentation -Wno-parentheses -Wno-sequence-point \
+	  -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

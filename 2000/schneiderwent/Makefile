@@ -38,7 +38,8 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-trigraphs -Wno-aggressive-loop-optimizations -Wno-clobbered
+CSILENCE= -Wno-trigraphs -Wno-aggressive-loop-optimizations -Wno-clobbered \
+	  -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

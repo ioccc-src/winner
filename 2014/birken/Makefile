@@ -41,7 +41,8 @@ include ../../var.mk
 CSILENCE= -Wno-comment -Wno-dangling-else -Wno-error \
 	  -Wno-implicit-function-declaration -Wno-incompatible-pointer-types \
 	  -Wno-parentheses -Wno-trigraphs -Wno-newline-eof \
-	  -Wno-builtin-declaration-mismatch -Wno-sequence-point
+	  -Wno-builtin-declaration-mismatch -Wno-sequence-point \
+	  -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

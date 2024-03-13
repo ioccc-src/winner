@@ -97,7 +97,8 @@ CSILENCE+= -Wno-cast-align -Wno-comma -Wno-dollar-in-identifier-extension \
 	   -Wno-poison-system-directories -Wno-shadow -Wno-sign-conversion \
 	   -Wno-strict-prototypes -Wno-shorten-64-to-32 \
 	   -Wno-cast-function-type-strict -Wno-reserved-identifier \
-	   -Wno-reserved-macro-identifier -Wno-unsafe-buffer-usage
+	   -Wno-reserved-macro-identifier -Wno-unsafe-buffer-usage \
+	   -Wno-unknown-warning-option
 #
 CWARN+= -Weverything
 #

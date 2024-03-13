@@ -42,7 +42,8 @@ CSILENCE= -Wno-comment -Wno-deprecated-non-prototype -Wno-main -Wno-pedantic \
 	  -Wno-return-type -Wno-strict-prototypes -Wno-unused-parameter \
 	  -Wno-implicit-int -Wno-implicit-function-declaration -Wno-unused-value \
 	  -Wno-multichar -Wno-uninitialized -Wno-unused-but-set-parameter \
-	  -Wno-parentheses -Wno-int-conversion -Wno-missing-parameter-type
+	  -Wno-parentheses -Wno-int-conversion -Wno-missing-parameter-type \
+	  -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

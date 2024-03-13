@@ -96,7 +96,7 @@ CSILENCE+= -Wno-comma -Wno-documentation -Wno-extra-semi -Wno-implicit-int \
 	   -Wno-declaration-after-statement -Wno-implicit-int-conversion \
 	   -Wno-extra-semi-stmt -Wno-incompatible-function-pointer-types-strict \
 	   -Wno-reserved-identifier -Wno-reserved-macro-identifier \
-	   -Wno-unsafe-buffer-usage
+	   -Wno-unsafe-buffer-usage -Wno-unknown-warning-option
 #
 CWARN+= -Weverything
 #

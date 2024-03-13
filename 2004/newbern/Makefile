@@ -42,7 +42,7 @@ CSILENCE= -Wno-parentheses -Wno-pointer-sign -Wno-incompatible-pointer-types \
 	  -Wno-aggressive-loop-optimizations -Wno-array-bounds \
           -Wno-implicit-fallthrough -Wno-maybe-uninitialized \
           -Wno-misleading-indentation -Wno-unused-value \
-	  -Wno-strict-prototypes -Wno-stringop-overflow
+	  -Wno-strict-prototypes -Wno-stringop-overflow -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

@@ -39,7 +39,8 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-invalid-pp-token -Wno-strict-prototypes -Wno-implicit-int \
-	  -Wno-builtin-declaration-mismatch -Wno-parentheses -Wno-return-type
+	  -Wno-builtin-declaration-mismatch -Wno-parentheses -Wno-return-type \
+	  -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

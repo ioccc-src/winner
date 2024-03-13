@@ -47,7 +47,7 @@ CSILENCE= -Wno-bitwise-op-parentheses -Wno-error \
 	  -Wno-misleading-indentation -Wno-reserved-identifier \
 	  -Wno-builtin-declaration-mismatch -Wno-sequence-point \
 	  -Wno-unused-value -Wno-unsafe-buffer-usage \
-	  -Wno-implicit-int
+	  -Wno-implicit-int -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

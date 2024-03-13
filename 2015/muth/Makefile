@@ -38,7 +38,8 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-keyword-macro -Wno-strict-prototypes -Wno-builtin-declaration-mismatch
+CSILENCE= -Wno-keyword-macro -Wno-strict-prototypes -Wno-builtin-declaration-mismatch \
+	  -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

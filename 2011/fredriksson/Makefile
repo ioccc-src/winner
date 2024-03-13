@@ -40,7 +40,7 @@ include ../../var.mk
 #
 CSILENCE= -Wno-bool-operation -Wno-char-subscripts -Wno-format-security \
 	  -Wno-logical-op-parentheses -Wno-format-overflow -Wno-parentheses \
-	  -Wno-restrict -Wno-unused-value
+	  -Wno-restrict -Wno-unused-value -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

@@ -45,7 +45,7 @@ CSILENCE= -Wno-bitwise-conditional-parentheses -Wno-error \
 	  -Wno-bitwise-op-parentheses -Wno-format -Wno-format-extra-args \
 	  -Wno-int-conversion -Wno-unused-parameter -Wno-unsequenced \
 	  -Wno-deprecated-non-prototype -Wno-unused-value \
-	  -Wno-maybe-uninitialized -Wno-parentheses
+	  -Wno-maybe-uninitialized -Wno-parentheses -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

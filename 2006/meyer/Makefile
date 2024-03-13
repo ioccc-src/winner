@@ -86,7 +86,7 @@ ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
 CSILENCE+= -Wno-missing-prototypes -Wno-missing-variable-declarations \
 	   -Wno-poison-system-directories -Wno-sign-conversion \
 	   -Wno-strict-prototypes -Wno-cast-function-type-strict \
-	   -Wno-unsafe-buffer-usage
+	   -Wno-unsafe-buffer-usage -Wno-unknown-warning-option
 #
 CWARN+= -Weverything
 #

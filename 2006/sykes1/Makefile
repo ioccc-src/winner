@@ -40,7 +40,7 @@ include ../../var.mk
 #
 CSILENCE= -Wno-bitwise-op-parentheses -Wno-shift-op-parentheses \
 	  -Wno-maybe-uninitialized -Wno-misleading-indentation -Wno-parentheses \
-          -Wno-stringop-truncation
+          -Wno-stringop-truncation -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

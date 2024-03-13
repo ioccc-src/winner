@@ -43,7 +43,7 @@ CSILENCE= -Wno-builtin-requires-header -Wno-char-subscripts \
 	  -Wno-implicit-function-declaration -Wno-incompatible-library-redeclaration \
 	  -Wno-parentheses -Wno-implicit-int -Wno-deprecated-non-prototype \
 	  -Wno-return-type -Wno-strict-prototypes -Wno-builtin-declaration-mismatch \
-	  -Wno-misleading-indentation -Wno-unused-value
+	  -Wno-misleading-indentation -Wno-unused-value -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

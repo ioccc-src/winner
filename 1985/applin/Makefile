@@ -40,7 +40,8 @@ include ../../var.mk
 #
 CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-logical-op-parentheses \
 	  -Wno-deprecated-non-prototype -Wno-implicit-int -Wno-parentheses -Wno-return-type \
-	  -Wno-builtin-declaration-mismatch -Wno-format -Wno-missing-parameter-type
+	  -Wno-builtin-declaration-mismatch -Wno-format -Wno-missing-parameter-type \
+	  -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

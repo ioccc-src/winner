@@ -43,7 +43,7 @@ CSILENCE= -Wno-implicit-int -Wno-incompatible-pointer-types \
 	  -Wno-tautological-compare -Wno-unused-comparison -Wno-unused-value \
 	  -Wno-int-in-bool-context -Wno-pointer-bool-conversion -Wno-unsequenced \
 	  -Wno-deprecated-non-prototype -Wno-address -Wno-bool-compare \
-	  -Wno-sequence-point
+	  -Wno-sequence-point -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

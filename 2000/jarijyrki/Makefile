@@ -42,7 +42,7 @@ CSILENCE= -Wno-char-subscripts -Wno-empty-body -Wno-error \
 	  -Wno-implicit-function-declaration -Wno-implicit-int \
 	  -Wno-builtin-declaration-mismatch -Wno-int-in-bool-context \
           -Wno-misleading-indentation -Wno-unused-value \
-	  -Wno-deprecated-non-prototype
+	  -Wno-deprecated-non-prototype -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

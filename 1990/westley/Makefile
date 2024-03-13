@@ -42,7 +42,8 @@ CSILENCE= -Wno-char-subscripts -Wno-error -Wno-implicit-function-declaration \
 	  -Wno-unused-value -Wno-unused-variable -Wno-deprecated-non-prototype \
 	  -Wno-uninitialized -Wno-implicit-int -Wno-switch-unreachable \
 	  -Wno-builtin-declaration-mismatch -Wno-implicit-fallthrough \
-          -Wno-int-in-bool-context -Wno-overflow -Wno-parentheses -Wno-return-type
+          -Wno-int-in-bool-context -Wno-overflow -Wno-parentheses -Wno-return-type \
+	  -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

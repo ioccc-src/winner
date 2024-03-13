@@ -90,7 +90,7 @@ CSILENCE+= -Wno-bad-function-cast -Wno-comma -Wno-float-conversion \
 	   -Wno-missing-prototypes -Wno-missing-variable-declarations \
 	   -Wno-poison-system-directories -Wno-shadow -Wno-shorten-64-to-32 \
 	   -Wno-incompatible-function-pointer-types-strict -Wno-unsafe-buffer-usage \
-	   -Wno-strict-prototypes
+	   -Wno-strict-prototypes -Wno-unknown-warning-option
 #
 CWARN+= -Weverything
 #

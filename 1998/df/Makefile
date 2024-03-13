@@ -93,7 +93,8 @@ CSILENCE+= -Wno-array-bounds-pointer-arithmetic -Wno-implicit-int-conversion \
 	   -Wno-missing-variable-declarations -Wno-pedantic \
 	   -Wno-poison-system-directories -Wno-shadow -Wno-sign-conversion \
 	   -Wno-incompatible-function-pointer-types-strict -Wno-reserved-identifier \
-	   -Wno-unsafe-buffer-usage -Wno-strict-prototypes -Wno-cast-function-type
+	   -Wno-unsafe-buffer-usage -Wno-strict-prototypes -Wno-cast-function-type \
+	   -Wno-unknown-warning-option
 #
 CWARN+= -Weverything
 #

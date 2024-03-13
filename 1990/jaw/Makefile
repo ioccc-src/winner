@@ -42,7 +42,7 @@ CSILENCE= -Wno-bitwise-op-parentheses -Wno-error -Wno-implicit-function-declarat
 	  -Wno-logical-op-parentheses -Wno-parentheses -Wno-return-type \
 	  -Wno-shift-op-parentheses -Wno-deprecated-non-prototype -Wno-implicit-int \
 	  -Wno-misleading-indentation -Wno-missing-parameter-type \
-          -Wno-multistatement-macros -Wno-unused-value
+          -Wno-multistatement-macros -Wno-unused-value -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

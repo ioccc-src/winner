@@ -44,7 +44,8 @@ CSILENCE= -Wno-bitwise-op-parentheses -Wno-comment -Wno-deprecated-declarations 
 	  -Wno-return-type -Wno-uninitialized -Wno-unused-value -Wno-unused-variable \
 	  -Wno-unused-but-set-variable -Wno-unsequenced -Wno-unused-parameter \
 	  -Wno-empty-translation-unit -Wno-implicit-int \
-	  -Wno-builtin-declaration-mismatch -Wno-sequence-point
+	  -Wno-builtin-declaration-mismatch -Wno-sequence-point \
+	  -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

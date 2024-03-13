@@ -42,7 +42,7 @@ CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-format-security \
 	  -Wno-incompatible-library-redeclaration -Wno-int-to-pointer-cast \
 	  -Wno-pointer-to-int-cast -Wno-return-type -Wno-deprecated-non-prototype \
 	  -Wno-implicit-int -Wno-builtin-declaration-mismatch -Wno-misleading-indentation \
-          -Wno-missing-parameter-type -Wno-parentheses
+          -Wno-missing-parameter-type -Wno-parentheses -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

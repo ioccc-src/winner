@@ -42,7 +42,7 @@ CSILENCE= -Wno-pedantic -Wno-logical-not-parentheses -Wno-implicit-function-decl
 	  -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-pointer-to-int-cast \
 	  -Wno-pointer-integer-compare -Wno-compare-distinct-pointer-types \
 	  -Wno-deprecated-non-prototype -Wno-implicit-int -Wno-missing-parameter-type \
-	  -Wno-return-type
+	  -Wno-return-type -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

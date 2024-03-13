@@ -43,7 +43,7 @@ CSILENCE= -Wno-char-subscripts -Wno-error -Wno-implicit-function-declaration \
 	  -Wno-return-type -Wno-unknown-escape-sequence -Wno-unused-value \
 	  -Wno-deprecated-non-prototype -Wno-implicit-int \
 	  -Wno-builtin-declaration-mismatch -Wno-misleading-indentation \
-          -Wno-missing-parameter-type -Wno-parentheses
+          -Wno-missing-parameter-type -Wno-parentheses -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

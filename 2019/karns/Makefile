@@ -44,7 +44,8 @@ CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-implicit-int \
 	  -Wno-tautological-bitwise-compare -Wno-unused-label \
 	  -Wno-unused-variable -Wno-strict-prototypes \
 	  -Wno-builtin-declaration-mismatch -Wno-incompatible-pointer-types \
-          -Wno-misleading-indentation -Wno-parentheses -Wno-unused-value
+          -Wno-misleading-indentation -Wno-parentheses -Wno-unused-value \
+	  -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

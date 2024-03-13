@@ -41,7 +41,8 @@ include ../../var.mk
 CSILENCE= -Wno-invalid-pp-token -Wno-trigraphs -Wno-deprecated-non-prototype \
 	  -Wno-pedantic -Wno-strict-prototypes -Wno-implicit-int \
 	  -Wno-implicit-fallthrough -Wno-misleading-indentation \
-          -Wno-missing-parameter-type -Wno-return-type -Wno-unused-value
+          -Wno-missing-parameter-type -Wno-return-type -Wno-unused-value \
+	  -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

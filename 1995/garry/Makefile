@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-extra-semi -Wno-fortify-source -Wno-return-type \
 	  -Wno-strict-prototypes -Wno-array-bounds -Wno-misleading-indentation \
 	  -Wno-pedantic -Wno-unused-variable -Wno-implicit-int \
-	  -Wno-stringop-overflow
+	  -Wno-stringop-overflow -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

@@ -39,7 +39,8 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-trigraphs -Wno-deprecated-non-prototype -Wno-unused-parameter \
-	  -Wno-misleading-indentation -Wno-missing-parameter-type
+	  -Wno-misleading-indentation -Wno-missing-parameter-type \
+	  -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

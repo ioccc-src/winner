@@ -42,7 +42,7 @@ CSILENCE= -Wno-absolute-value -Wno-char-subscripts -Wno-dangling-else \
 	  -Wno-error -Wno-implicit-function-declaration -Wno-parentheses \
 	  -Wno-shift-op-parentheses -Wno-implicit-int -Wno-strict-prototypes \
 	  -Wno-builtin-declaration-mismatch -Wno-misleading-indentation \
-          -Wno-sign-compare -Wno-unused-value
+          -Wno-sign-compare -Wno-unused-value -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

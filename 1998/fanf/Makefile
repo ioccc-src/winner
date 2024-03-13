@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-pointer-bool-conversion -Wno-unused-parameter -Wno-main \
 	  -Wno-implicit-function-declaration -Wno-address \
 	  -Wno-builtin-declaration-mismatch -Wno-int-conversion \
-	  -Wno-gnu-line-marker
+	  -Wno-gnu-line-marker -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

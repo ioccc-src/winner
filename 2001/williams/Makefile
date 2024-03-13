@@ -43,7 +43,8 @@ CSILENCE= -Wno-empty-body -Wno-error -Wno-implicit-function-declaration \
 	  -Wno-missing-field-initializers -Wno-return-type \
 	  -Wno-shift-op-parentheses -Wno-builtin-declaration-mismatch \
 	  -Wno-misleading-indentation -Wno-parentheses -Wno-sequence-point \
-	  -Wno-unused-value -Wno-unsequenced -Wno-strict-prototypes
+	  -Wno-unused-value -Wno-unsequenced -Wno-strict-prototypes \
+	  -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #
