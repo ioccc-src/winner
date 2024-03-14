@@ -4818,6 +4818,10 @@ is <code>$(MAKE)</code>.</p>
 <code>PDFLATEX</code> to the <a href="var.mk">var.mk</a> file and
 removed another that was deemed problematic or undesired. Other variable
 names had typos in them.</p>
+<p>In at least one case (like the <a href="/Makefile">top level
+Makefile</a>) where raw commands (that are in <a
+href="/var.mk">var.mk</a>) were used, Cody updated them to use the
+variables.</p>
 <p>A comment was missing for the <code>diff_alt_orig</code> rule in all
 the Makefiles and this, along with many other fixes and changes to the
 Makefiles were made by Cody’s <a
@@ -4830,16 +4834,17 @@ improvements</h2>
 officer :-) (and a fine one at that, we think :-) ), made many, many
 typ0 (… :-) ) fixes throughout the index.html files, scripts, other data
 files, Makefiles (see above) etc.</p>
-<p>He also updated the formatting of the index.html files (after
-renaming the old files to index.html) to proper markdown.</p>
+<p>He also updated the formatting of the README.md, used to generate the
+index.html files, after renaming the old files to README.md, to proper
+markdown.</p>
 <p>Where possible he made the presentation of the entries much more
 consistent across the entries of all the years as well as other files.
 This is not possible for everything (the remarks of authors, for
 instance, cannot be and should not be made consistent but adding
 markdown where necessary in the remarks is).</p>
 <p>A lot of these fixes were done with his <a
-href="https://github.com/xexyl/sgit">sgit tool</a> as well but many were
-done manually too.</p>
+href="https://github.com/xexyl/sgit">sgit tool</a> as well but probably
+most were done manually.</p>
 <h2 id="thank-you-honor-roll"><a name="thank_you_honor_roll"></a>Thank
 you honor roll</h2>
 <p>There are a number of people who have contributed to several thousand

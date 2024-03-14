@@ -294,13 +294,13 @@ genpath:
 
 # generate YYYY level .filelist
 #
-# IMPORTANT: This file assumes that make clobber was previously done.
+# IMPORTANT: .filelist assumes that make clobber was previously done.
 #
 genfilelist:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
-	    rm -f "$$i/.genfilelist.tmp"; \
-	    find "$$i" -mindepth 1 -maxdepth 1 -type f ! -path "$$i/.genfilelist.tmp" ! -name .DS_Store | \
+	    ${RM} -f "$$i/.genfilelist.tmp"; \
+	    ${FIND} "$$i" -mindepth 1 -maxdepth 1 -type f ! -path "$$i/.genfilelist.tmp" ! -name .DS_Store | \
 	      ${SORT} -f -d -u > "$$i/.genfilelist.tmp"; \
 	    if ${CMP} -s "$$i/.genfilelist.tmp" "$$i/.filelist"; then \
 		${RM} -f "$$i/.genfilelist.tmp"; \
