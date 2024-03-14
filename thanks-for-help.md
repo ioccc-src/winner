@@ -5016,6 +5016,10 @@ Cody also added missing variables like `BASH` and `PDFLATEX` to the
 [var.mk](var.mk) file and removed another that was deemed problematic or
 undesired. Other variable names had typos in them.
 
+In at least one case (like the [top level Makefile](/Makefile)) where raw
+commands (that are in [var.mk](/var.mk)) were used, Cody updated them to use the
+variables.
+
 A comment was missing for the `diff_alt_orig` rule in all the Makefiles and
 this, along with many other fixes and changes to the Makefiles were made by
 Cody's [sgit tool](https://github.com/xexyl/sgit) but many other changes he did
@@ -5028,8 +5032,8 @@ manually.
 that, we think :-) ), made many, many typ0 (... :-) ) fixes throughout the
 index.html files, scripts, other data files, Makefiles (see above) etc.
 
-He also updated the formatting of the index.html files (after renaming the old
-files to index.html) to proper markdown.
+He also updated the formatting of the README.md, used to generate the index.html
+files, after renaming the old files to README.md, to proper markdown.
 
 Where possible he made the presentation of the entries much more consistent
 across the entries of all the years as well as other files. This is not possible
@@ -5037,7 +5041,7 @@ for everything (the remarks of authors, for instance, cannot be and should not
 be made consistent but adding markdown where necessary in the remarks is).
 
 A lot of these fixes were done with his [sgit
-tool](https://github.com/xexyl/sgit) as well but many were done manually too.
+tool](https://github.com/xexyl/sgit) as well but probably most were done manually.
 
 
 ## <a name="thank_you_honor_roll"></a>Thank you honor roll
