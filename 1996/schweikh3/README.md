@@ -129,7 +129,7 @@ returned by other exiting processes the system eventually enters a deadlock
 situation and effectively halts.
 
 I had the pleasure and pain to find all three behaviours on the
-platforms I use regularly. 
+platforms I use regularly.
 
 The file [schweikh3.info](schweikh3.info) has output for
 Solaris, FreeBSD and Linux. The Linux case is interesting in that

@@ -102,7 +102,7 @@ Otherwise:
 
 ```sh
 ./samefile
-``` 
+```
 
 #### DESCRIPTION
 

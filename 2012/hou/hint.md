@@ -1,10 +1,3 @@
-# Most useful obfuscation
-
-Qiming Hou  
-<hqm03ster@gmail.com>  
-<http://www.houqiming.net>  
-
-
 ## Judges' comments:
 
 ### To build:

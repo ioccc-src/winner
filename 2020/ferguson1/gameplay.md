@@ -557,11 +557,11 @@ for. But you can consider this mode drawing or practice mode.
 
 
 
-		   oooooooooo   ooooo    o  oo  ooooo  
-		   o     o  oo  o   oo   o ooo  o       
-		   oooo  o   oo ooooooo  oooo   ooooo  
-		      o  o    ooo     oo o ooo  o       
-		   oooo  o     oo      ooo  oooooooo>   
+		   oooooooooo   ooooo    o  oo  ooooo
+		   o     o  oo  o   oo   o ooo  o
+		   oooo  o   oo ooooooo  oooo   ooooo
+		      o  o    ooo     oo o ooo  o
+		   oooo  o     oo      ooo  oooooooo>
 
 
 

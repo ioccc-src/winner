@@ -43,7 +43,7 @@ what values may they be changed without altering the behavior?
 altering the behavior ?
 
 
-### Extra credit: 
+### Extra credit:
 
 Try doing what the last part of the last command in [try.sh](try.sh) suggests.
 As in, do the following:

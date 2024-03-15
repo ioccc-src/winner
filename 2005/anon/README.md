@@ -282,7 +282,7 @@ well. How does it achieve this incredible feat?
 
 ### SPOILER
 
-Read the following only if you give up figuring it out :-) 
+Read the following only if you give up figuring it out :-)
 
 #### The Evil Hack
 

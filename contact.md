@@ -33,7 +33,7 @@ You may wish to follow us [IOCCC on Mastodon](https://fosstodon.org/@ioccc)
 as we use that platform to announce things such as the opening of a new IOCCC
 as well as winning entries of the IOCCC.
 
-We no longer tweet (or whatever someone with poor impulse control calls 
+We no longer tweet (or whatever someone with poor impulse control calls
 posting messages on their platform), preferring to reside in the [fediverse](https://fediverse.info) instead.
 
 There is [help with Mastodon](https://mastodon.help) available for

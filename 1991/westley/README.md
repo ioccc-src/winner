@@ -188,7 +188,7 @@ longer loses games.
 If you want a program that never loses, simply replace the string
 `"9999999999  :-| "` with `"9883857753  :-| "`.
 
-### How it works 
+### How it works
 
 The vertical "bars" of the grid are identical functions, with the name of the
 function as `a()`, `b()`, or `c()`.  After each function is called, the global

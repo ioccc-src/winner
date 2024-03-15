@@ -7,7 +7,7 @@ make
 There is an alternate version that will read from the compiled file itself, in
 case you don't have a `/dev/urandom` file. There is also a version that should
 theoretically work with Windows which distinguishes binary and text. See
-[alternate code](#alternate-code) below. 
+[alternate code](#alternate-code) below.
 
 
 ## To use:

@@ -804,7 +804,7 @@ might end up failing to work even after changing it back. This was resolved by:
 @@ -7,13 +7,12 @@ if [[ $# -ne 1 ]]; then
      exit 1
  fi
- 
+
  # run/compile it
  rm -f ouroboros.c x1 x
 -ex - <<EOF
@@ -3836,7 +3836,7 @@ which the recipe file now links to.
 
 [Cody](#cody) added the [try.sh](2012/hamano/try.sh) script and the helper
 Makefile rules `hint.pdf`, `hint`, `hello.pdf` and `hello` to simplify the
-procedure for both `hint.pdf` and `hello.pdf` as well as compiling them as C. 
+procedure for both `hint.pdf` and `hello.pdf` as well as compiling them as C.
 
 
 ## <a name="2012_hou"></a>[2012/hou](2012/hou/hou.c) ([index.html](2012/hou/index.html]))

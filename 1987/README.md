@@ -13,7 +13,7 @@ The practice of posting a preliminary set of rules for the next year was started
 this year.
 
 [Rules](rules.txt) and results were posted to comp.lang.c and comp.unix.wizards
-with an announcement in news.announce.important.  
+with an announcement in news.announce.important.
 [Micro/Systems Journal](https://www.vintage-computer.com/publications.php?microsystemsjournal)
 published the 1987 winning entries.  [Mark R.
 Horton](https://www.amazon.com/stores/Mark-R.-Horton/author/B001HPGRB8) included

@@ -31,7 +31,7 @@ This is self-explanatory.
     [1=D1s>1Ds_+#T=-2/D=1]:1ld [ aux routine for :@ ]ld
     [1D=d2/1=1ddd1 ]:!ld
     ["0"Td]:0ld
-    [DD=!1_+=0]:@ld     [ input m, m assumed nonnegative, append 
+    [DD=!1_+=0]:@ld     [ input m, m assumed nonnegative, append
 			  binary representation of m to top of s stack ]ld
 
     ["-"T_]:+ld

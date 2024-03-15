@@ -241,29 +241,29 @@ not wanting to mess with anything that's unnecessary):
 More generally the following expressions and data types (with format specifiers)
 come to mind as information that might be of interest.
 
-	    DESCRIPTION		    EXPRESSION		TYPE	FORMAT SPECIFIER  
-  
-	    Snake size		    A			    size_t	%zu  
-  
-	    Y coordinate	    Y			    int		%d  
-	    of snake head  
-  
-	    X coordinate	    X			    int		%d  
-	    of snake head  
-  
-	    Max snake size	    g			    size_t	%zu  
-  
-	    Bugs eaten		    c			    size_t	%zu  
-  
-	    Bug line (Y)	    *U			    int		%d  
-  
-	    Bug column (X)	    *V			    int		%d  
-  
-	    Snake size		    A			    size_t	%zu  
-  
-	    Growth size (per	N			    size_t	%zu  
-	    bug)  
-  
+	    DESCRIPTION		    EXPRESSION		TYPE	FORMAT SPECIFIER
+
+	    Snake size		    A			    size_t	%zu
+
+	    Y coordinate	    Y			    int		%d
+	    of snake head
+
+	    X coordinate	    X			    int		%d
+	    of snake head
+
+	    Max snake size	    g			    size_t	%zu
+
+	    Bugs eaten		    c			    size_t	%zu
+
+	    Bug line (Y)	    *U			    int		%d
+
+	    Bug column (X)	    *V			    int		%d
+
+	    Snake size		    A			    size_t	%zu
+
+	    Growth size (per	N			    size_t	%zu
+	    bug)
+
 
 ## Make it so the snake starts at a random location
 

@@ -14,7 +14,7 @@ This is a very simple program:
  6. J=fopen(__FILE__,"r");
  7. for(;
  8.     (L=getc(J))>=0;
- 9.     L>='J'&&L<='J'+15 && 
+ 9.     L>='J'&&L<='J'+15 &&
 10.     ((M=!M)?K=L:putchar(K-'J'|(L-'J'<<4)))
 11.    );
 12. exit(0);}
@@ -29,10 +29,10 @@ read in as high and low nibbles of a byte and outputs them. In effect this is a
 very poor ASCII to binary decoder.  The last line is necessary so that make will
 not stop when it executes this program.
 
-The second program is encoded into this format and then included (mostly) 
+The second program is encoded into this format and then included (mostly)
 as a comment.
 
-Notice that it is impossible to write this program while leaving 16 
+Notice that it is impossible to write this program while leaving 16
 contiguous ASCII characters free for the encoding. Because of this the
 second program is mostly included as a comment. However, some of the
 characters of the encoded program are also source code for the decoder.
@@ -89,7 +89,7 @@ differentiate between the master and the slaves.
 Lines 19 to 22 are the slave code. Here we read in a line of text from
 `i` (down, line 19) and remove the newline char (line 20). On line
 21 if this message is for us (if the first character is our number, `f`,
-in ASCII) we do two things: 
+in ASCII) we do two things:
 
 1. We copy the text of the message to `*c` which is really `argv[0]`.  If you are
 on the correct flavor of Unix this will change the output of the `ps(1)` command
@@ -105,15 +105,15 @@ print the message,
 and return to where we started.
 ```
 
-Line 22 says if this message is not for us (the number is bigger than ours) 
+Line 22 says if this message is not for us (the number is bigger than ours)
 send it to `h` (up).
 
 Lines 24 to 27 are the master code. Here we get the time and convert it
 to an ASCII format (lines 24 and 25). Then on line 26 we build and send
 each of the messages for the slaves. The message uses a different control
 string for the different slaves. For the first and last slave the message
-text is just `"%c+------------+\n"` (slave number, text, newline.) For the 
+text is just `"%c+------------+\n"` (slave number, text, newline.) For the
 other slaves it is `"%c+%3d %-8s+\n"` (slave number, number, units, newline).
-The slave number is `v+'0'`. The number (if used) is `atoi(e+b[v])` and the 
+The slave number is `v+'0'`. The number (if used) is `atoi(e+b[v])` and the
 units are just the string in the slave number position.
 

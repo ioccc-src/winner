@@ -2,7 +2,7 @@
 
 We plan to update our [IOCCC on Mastodon](https://fosstodon.org/@ioccc) feed
 a bit more open than this web page.  We recommend you check that feed
-for possibly newer news than what is posted here.  
+for possibly newer news than what is posted here.
 
 We tend to only post major news updates to this web page.
 

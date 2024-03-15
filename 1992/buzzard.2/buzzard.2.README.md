@@ -3,7 +3,7 @@
 [third](third)				    implementation of THIRD in FIRST\
 [help.th](help.th)			    online listing of THIRD primitives\
 
-	
+
 # FIRST demos:
 
 Use  `./first < <demo>`.

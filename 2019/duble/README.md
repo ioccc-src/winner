@@ -85,7 +85,7 @@ in the beginning this will also happen. This is discussed in
 [2019 duble bugs](../../bugs.html#2019_duble).
 
 NOTE: this entry might leave sockets lying about in the current working
-directory which you'll have to delete manually. This is also discussed in 
+directory which you'll have to delete manually. This is also discussed in
 [2019 duble bugs](../../bugs.html#2019_duble).
 
 

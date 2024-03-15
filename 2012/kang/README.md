@@ -72,7 +72,7 @@ echo uno | ./kang.alt
 What does it get right? What does it get wrong? How does it compare to the
 original entry without the change of `f` to `v`?
 
-Finally why does it get wrong what it gets wrong? 
+Finally why does it get wrong what it gets wrong?
 
 
 ## Judges' remarks:

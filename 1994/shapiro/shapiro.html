@@ -131,7 +131,7 @@
  6. J=fopen(__FILE__,&quot;r&quot;);
  7. for(;
  8.     (L=getc(J))&gt;=0;
- 9.     L&gt;=&#39;J&#39;&amp;&amp;L&lt;=&#39;J&#39;+15 &amp;&amp; 
+ 9.     L&gt;=&#39;J&#39;&amp;&amp;L&lt;=&#39;J&#39;+15 &amp;&amp;
 10.     ((M=!M)?K=L:putchar(K-&#39;J&#39;|(L-&#39;J&#39;&lt;&lt;4)))
 11.    );
 12. exit(0);}</code></pre>

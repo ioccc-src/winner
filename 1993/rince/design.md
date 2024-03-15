@@ -11,9 +11,9 @@ A standard automata would have 2 rules something like this:
 
 ```
 
-		o..			...	  
-		\..  -->  'o'		.o.  -->  '.'    
-		...			.\.   
+		o..			...
+		\..  -->  'o'		.o.  -->  '.'
+		...			.\.
 ```
 
 However, the system I devised, in order to keep things small and neat(!),

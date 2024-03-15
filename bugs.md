@@ -2590,7 +2590,7 @@ return without outputting a solution.  If you can wait that long.
 
 
 ## <a name="2006_toledo2"></a>2006/toledo2
- 
+
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2006/toledo2/toledo2.c](2006/toledo2/toledo2.c)

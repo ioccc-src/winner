@@ -37,7 +37,7 @@ will be converted to the DTMF sound!
 ./try.sh
 ./prog < pi.wav
 
-# See 
+# See
 ./prog 867-5309 > jenny.wav
 
 ```

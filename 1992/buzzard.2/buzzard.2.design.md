@@ -250,7 +250,7 @@ different subject.)
 
 test
 
-( The result of running this program should be: 
+( The result of running this program should be:
 Hello
 )
 ```
@@ -377,7 +377,7 @@ terminate a compilation, and turn control over to the
 command-mode handler.  We don't have one, so all we want
 `;` to do for now is compile `exit` at the end of the
 current word.  To do this we'll need several other words.
-		
+
 Swap by writing out the top two elements into temps, and
 then reading them back in the other order.
 
@@ -429,7 +429,7 @@ at that memory location.
 
 ```
 
-`,` is a standard FORTH word.  It should write the top of 
+`,` is a standard FORTH word.  It should write the top of
 stack into the dictionary, and advance the pointer
 
 ```
@@ -541,7 +541,7 @@ top of the return stack.
 
 Now, we want to do `if`.  To do this, we need to convert
 values to boolean values.  The next few words set this
-up.	
+up.
 
 `minus` gives us unary negation.
 
@@ -793,7 +793,7 @@ exit.
 : <= 1 + < ;
 : >= swap <= ;
 
-: inci 
+: inci
   r @ 1 - 	( get the pointer to i )
   inc		( add one to it )
   r @ 1 - @ 	( find the value again )
@@ -892,7 +892,7 @@ fix-::
 : dump _dump ;
 
 : # . cr ;
-  
+
 : var <build , does> ;
 : constant <build , does> @ ;
 : array <build allot does> + ;

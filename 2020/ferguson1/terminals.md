@@ -91,8 +91,8 @@ terminal cols 155 (153 playable)
 snake size:  5776 (max size: 5776)
       bugs:  5771 (max size: 5771)
 
-at least 37 columns (currently 155) recommended for snake size 5776 
-at least 37 columns (currently 155) recommended for capped snake size 5776 
+at least 37 columns (currently 155) recommended for snake size 5776
+at least 37 columns (currently 155) recommended for capped snake size 5776
 
 No problems detected.
 ```

@@ -300,28 +300,28 @@ unnecessary):</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#define J Z</span><span class="op">(</span><span class="pp">SIZE</span><span class="op">:</span><span class="pp"> </span><span class="op">%</span><span class="pp">zu BUGS</span><span class="op">:</span><span class="pp"> </span><span class="op">%</span><span class="pp">zu\n</span><span class="op">),</span><span class="pp"> A</span><span class="op">,</span><span class="pp"> c</span><span class="op">);</span></span></code></pre></div>
 <p>More generally the following expressions and data types (with format
 specifiers) come to mind as information that might be of interest.</p>
-<pre><code>    DESCRIPTION         EXPRESSION      TYPE    FORMAT SPECIFIER  
+<pre><code>    DESCRIPTION         EXPRESSION      TYPE    FORMAT SPECIFIER
 
-    Snake size          A               size_t  %zu  
+    Snake size          A               size_t  %zu
 
-    Y coordinate        Y               int     %d  
-    of snake head  
+    Y coordinate        Y               int     %d
+    of snake head
 
-    X coordinate        X               int     %d  
-    of snake head  
+    X coordinate        X               int     %d
+    of snake head
 
-    Max snake size      g               size_t  %zu  
+    Max snake size      g               size_t  %zu
 
-    Bugs eaten          c               size_t  %zu  
+    Bugs eaten          c               size_t  %zu
 
-    Bug line (Y)        *U              int     %d  
+    Bug line (Y)        *U              int     %d
 
-    Bug column (X)      *V              int     %d  
+    Bug column (X)      *V              int     %d
 
-    Snake size          A               size_t  %zu  
+    Snake size          A               size_t  %zu
 
-    Growth size (per    N               size_t  %zu  
-    bug)  </code></pre>
+    Growth size (per    N               size_t  %zu
+    bug)</code></pre>
 <h2 id="make-it-so-the-snake-starts-at-a-random-location">Make it so the
 snake starts at a random location</h2>
 <p>Quite simply change:</p>

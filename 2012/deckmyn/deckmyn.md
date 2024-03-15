@@ -1,4 +1,4 @@
-# USER MANUAL 
+# USER MANUAL
 
 
 ## Calling the program
