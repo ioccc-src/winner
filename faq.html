@@ -2319,10 +2319,11 @@ form:</p>
 <p>See <a href="#author_json">FAQ 6.6</a> for information about the
 contents of these JSON file and how they are used.</p>
 <p>Because the <code>author_handle</code> is used to form a JSON
-filename, the string must be POSIX safe string. Furthermore, the
-<code>author_handle</code> must be an ASCII string that matches this
-regexp:</p>
-<pre class="re"><code>^[0-9A-Za-z][0-9A-Za-z_]*$</code></pre>
+filename, the string must be POSIX safe string plus the use of
+<code>+</code> (for technical reasons beyond this answer). In
+particular, the <code>author_handle</code> must be an ASCII string that
+matches this regexp:</p>
+<pre class="re"><code>^[0-9A-Za-z][0-9A-Za-z._+-]*$&quot;</code></pre>
 <p>Default <code>author_handle</code>’s do not have multiple consecutive
 <code>_</code> (underscore) characters. Nevertheless, multiple
 consecutive <code>_</code> (underscore) characters are allowed. Contest
@@ -2814,7 +2815,7 @@ not see who wrote the code.</p>
 IOCCC becomes an <em>entry</em>. Only then do the IOCCC judges look into
 the special JSON file to discover who the <em>author</em>(s) are.</p>
 <p><strong>An apology for being inconsistent</strong>: In the past, the
-IOCCC used the term <em>entry</em> to refer to what is now an
+IOCCC used the term <em>entry</em> to refer to what is now a
 <em>submission</em>. In a number of historical cases, such as old rules
 and old guidelines, terms such as <em>entry</em> may still be found.
 Moreover, out of habit, the IOCCC judges sometimes use old names such as
