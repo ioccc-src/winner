@@ -114,15 +114,15 @@
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h1 id="bin">bin</h1>
-<p>The directory holds <a href="index.html">bin</a> directory holds
-tools that build files, such as HTML content, for the <a
+<p>The <a href="index.html">bin directory</a> holds tools that build
+files, such as HTML content, for the <a
 href="https://www.ioccc.org">official IOCCC web site</a>.</p>
-<p>For HTML content, the <a href="index.html">bin</a> directory tools
-makes use of HTML fragments from the <a href="../inc/index.html">inc</a>
-directory as well as various JSON files and other content from the <a
-href="https://github.com/ioccc-src/temp-test-ioccc">IOCCC GitHub
+<p>For HTML content, the <a href="index.html">bin directory</a> tools
+make use of HTML fragments from the <a href="../inc/index.html">inc
+directory</a> as well as various JSON files and other content from the
+<a href="https://github.com/ioccc-src/temp-test-ioccc">IOCCC GitHub
 repo</a>.</p>
-<h2 id="bin-tools">bin tools</h2>
+<h2 id="bin-tools"><a href="index.html">bin/</a> tools</h2>
 <h3 id="all-run.sh"><a href="all-run.sh">all-run.sh</a></h3>
 <p>Run a command on all winning entries.</p>
 <p>For example:</p>
@@ -136,13 +136,13 @@ repo</a>.</p>
 <p>Or for example:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-years.sh</span> <span class="at">-v</span> 1 bin/chk-entry.sh</span></code></pre></div>
 <h3 id="chk-entry.sh"><a href="chk-entry.sh">chk-entry.sh</a></h3>
-<p>Check of files required by an entry matches the entry’s manifest as
+<p>Check that files required by an entry match the entry’s manifest as
 found in <code>.entry.json</code>.</p>
 <p>For example:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/chk-entry.sh</span> 2020/ferguson1</span></code></pre></div>
 <h3 id="filelist.entry.json.awk"><a
 href="filelist.entry.json.awk">filelist.entry.json.awk</a></h3>
-<p>Generate the list of files in the entry’s manifest
+<p>Generate the list of files in the entry’s manifest,
 <code>.entry.json</code>.</p>
 <p>For example:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="at">-f</span> bin/filelist.entry.json.awk 2020/ferguson1/.entry.json</span></code></pre></div>
@@ -157,8 +157,8 @@ href="gen-location.sh">gen-location.sh</a></h3>
 <div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-location.sh</span> <span class="at">-v</span> 1</span></code></pre></div>
 <h3 id="gen-other-html.sh"><a
 href="gen-other-html.sh">gen-other-html.sh</a></h3>
-<p>Generate entry HTML files from markdown other than index.html to
-index.html HTML files.</p>
+<p>Generate entry HTML files (other than README.md to index.html) from
+markdown files.</p>
 <p>Usage:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-other-html.sh</span> <span class="at">-v</span> 1</span></code></pre></div>
 <h3 id="gen-sitemap.sh"><a href="gen-sitemap.sh">gen-sitemap.sh</a></h3>
@@ -169,20 +169,26 @@ class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#
 <h3 id="gen-status.sh"><a href="gen-status.sh">gen-status.sh</a></h3>
 <p>Generate <code>status.json</code> according to the modification dates
 of <code>status.json</code> and <code>news.html</code>.</p>
-<p>Without argument, the <em>contest_status</em> is unchanged.</p>
+<p>Without argument, the <code>contest_status</code> is unchanged.</p>
 <p>Usage:</p>
 <div class="sourceCode" id="cb11"><pre
 class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-status.sh</span> <span class="at">-v</span> 1</span></code></pre></div>
-<p>To force the <em>contest_status</em> to be closed:</p>
+<p>To force the <code>contest_status</code> to be closed:</p>
 <div class="sourceCode" id="cb12"><pre
 class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-status.sh</span> <span class="at">-v</span> 1 closed</span></code></pre></div>
+<p>To force the <code>contest_status</code> to be open:</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-status.sh</span> <span class="at">-v</span> 1 open</span></code></pre></div>
+<p>To see other valid statuses:</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-status</span> <span class="at">-h</span></span></code></pre></div>
 <h3 id="gen-top-html.sh"><a
 href="gen-top-html.sh">gen-top-html.sh</a></h3>
 <p>Generate a number of top level HTML pages for the IOCCC web
 sites.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb13"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-top-html.sh</span> <span class="at">-v</span> 1</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-top-html.sh</span> <span class="at">-v</span> 1</span></code></pre></div>
 <p>Examples of top level HTML pages built by this tool include:</p>
 <ul>
 <li><a href="../CODE_OF_CONDUCT.html">CODE_OF_CONDUCT.html</a></li>
@@ -203,24 +209,25 @@ href="../archive/historic/index.html">archive/historic/index.html</a></li>
 href="gen-year-index.sh">gen-year-index.sh</a></h3>
 <p>Generate an <code>index.html</code> page for an given IOCCC year.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb14"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-year-index.sh</span> <span class="at">-v</span> 1 2020</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-year-index.sh</span> <span class="at">-v</span> 1 2020</span></code></pre></div>
 <h3 id="gen-years.sh"><a href="gen-years.sh">gen-years.sh</a></h3>
 <p>Generate the top level <code>/years.html</code> page.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb15"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-years.sh</span> <span class="at">-v</span> 1</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-years.sh</span> <span class="at">-v</span> 1</span></code></pre></div>
 <h3 id="md2html.sh"><a href="md2html.sh">md2html.sh</a></h3>
 <p>This is the primary tool that forms IOCCC generated HTML content from
 markdown files (permanent markdown files or temporarily generated
 markdown files) and HTML fragments from the <a
-href="../inc/index.html">inc</a> directory.</p>
+href="../inc/index.html">inc directory</a>.</p>
 <p>The <a href="../inc/md2html.cfg">../inc/md2html.cfg</a> configuration
 file is used by <a href="md2html.sh">md2html.sh</a> to drive the
 generation process.</p>
 <h3 id="output-index-author.sh"><a
 href="output-index-author.sh">output-index-author.sh</a></h3>
-<p>Output author(s) Related HTML for for an entry’s index.html page.</p>
+<p>Output author’s or authors’ related HTML details for an entry’s
+index.html page.</p>
 <h3 id="output-index-inventory.sh"><a
 href="output-index-inventory.sh">output-index-inventory.sh</a></h3>
 <p>Output the inventory in HTML form for an entry’s index.html page.</p>
@@ -238,53 +245,55 @@ either <code>.entry.json</code> or <code>index.html</code> is newer than
 the <code>index.hmtl</code> file.</p>
 <p>This is useful when only a few entries have been modified (resulting
 in an updated <code>.entry.json</code> file) or if the
-<code>index.html</code> of a few entries have been changed.</p>
+<code>index.html</code> of a few entries has been changed.</p>
 <p>While the <a href="readme2index.sh">readme2index.sh</a> take a few
 seconds to run, when applied to 300+ entries, the extra time can add
 up.</p>
 <p>If only a few <code>index.hmtl</code> files need updating, then this
 command will only briefly pause while the slightly longer <a
 href="readme2index.sh">readme2index.sh</a> is run:</p>
-<div class="sourceCode" id="cb16"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> <span class="at">-v</span> 3 bin/quick-readme2index.sh <span class="at">-v</span> 1</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> <span class="at">-v</span> 3 bin/quick-readme2index.sh <span class="at">-v</span> 1</span></code></pre></div>
 <p><strong>NOTE</strong>: This command assumes that the relative
 modification times for <code>index.hmtl</code>,
-.entry.json<code>, and</code>index.html` are correct. If in doubt,
-use:</p>
-<div class="sourceCode" id="cb17"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> <span class="at">-v</span> 3 bin/readme2index.sh <span class="at">-v</span> 1</span></code></pre></div>
+<code>.entry.json</code>, and <code>index.html</code> are correct. If in
+doubt, use:</p>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> <span class="at">-v</span> 3 bin/readme2index.sh <span class="at">-v</span> 1</span></code></pre></div>
 <h3 id="readme2index.sh"><a
 href="readme2index.sh">readme2index.sh</a></h3>
-<p>Convert a entry index.html into entry directory index.html.</p>
+<p>Convert an entry README.md into entry directory index.html.</p>
 <h3 id="status2html.sh"><a href="status2html.sh">status2html.sh</a></h3>
 <p>Convert <code>status.json</code> into HTML.</p>
 <p>This tool is a ‘before tool’ (-b tool) that is intended to be used by
 <code>bin/gen-status.sh</code>.</p>
 <h3 id="sgi.sh"><a href="sgi.sh">sgi.sh</a></h3>
-<p>Sort .gitignore content from stdin to stdout.</p>
-<p>We sort with lines starting with # first. We sort with lines starting
-with * second. We sort with lines that do not start with [#!*] third. We
-sort with lines starting with ! fourth.</p>
+<p>Sort .gitignore content from <code>stdin</code> to
+<code>stdout</code>.</p>
+<p>We sort with lines starting with <code>#</code> first. We sort with
+lines starting with <code>*</code> second. We sort with lines that do
+not start with <code>[#!*]</code> third. We sort with lines starting
+with <code>!</code> fourth.</p>
 <p>This tool is used by <a
 href="sort.gitignore.sh">sort.gitignore.sh</a>.</p>
 <h3 id="sort.gitignore.sh"><a
 href="sort.gitignore.sh">sort.gitignore.sh</a></h3>
 <p>Sort a .gitignore in a entry directory.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb18"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/sort.gitignore.sh</span> <span class="at">-v</span> 1 YYYY/dir</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/sort.gitignore.sh</span> <span class="at">-v</span> 1 YYYY/dir</span></code></pre></div>
 <p>Suggested usage:</p>
-<div class="sourceCode" id="cb19"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> bin/sort.gitignore.sh <span class="at">-v</span> 1</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> bin/sort.gitignore.sh <span class="at">-v</span> 1</span></code></pre></div>
 <h3 id="subst.default.sh"><a
 href="subst.default.sh">subst.default.sh</a></h3>
 <p>Print default substitutions.</p>
 <h3 id="subst.entry-index.sh"><a
 href="subst.entry-index.sh">subst.entry-index.sh</a></h3>
-<p>Print substitutions for a entry index.html.</p>
+<p>Print substitutions for an entry index.html.</p>
 <h3 id="subst.entry-navbar.awk"><a
 href="subst.entry-navbar.awk">subst.entry-navbar.awk</a></h3>
-<p>Output substitutions for navbar on behalf of a entry.</p>
+<p>Output substitutions for navbar on behalf of an entry.</p>
 <h3 id="subst.year-index.sh"><a
 href="subst.year-index.sh">subst.year-index.sh</a></h3>
 <p>Print substitutions for a year level index.html.</p>
@@ -293,27 +302,27 @@ href="subst.year-navbar.awk">subst.year-navbar.awk</a></h3>
 <p>Output substitutions for navbar on behalf of a year level
 index.html.</p>
 <h2 id="tar-entry.sh"><a href="tar-entry.sh">tar-entry.sh</a></h2>
-<p>Form a compress tarball for an entry.</p>
+<p>Form a compressed tarball for an entry.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb20"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/tar-entry.sh</span> <span class="at">-v</span> 1 YYYY/dir</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/tar-entry.sh</span> <span class="at">-v</span> 1 YYYY/dir</span></code></pre></div>
 <p>Suggested usage:</p>
-<div class="sourceCode" id="cb21"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> <span class="at">-v</span> 3 bin/tar-entry.sh <span class="at">-v</span> 1 <span class="at">-W</span></span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> <span class="at">-v</span> 3 bin/tar-entry.sh <span class="at">-v</span> 1 <span class="at">-W</span></span></code></pre></div>
 <h2 id="tar-all.sh"><a href="tar-all.sh">tar-all.sh</a></h2>
 <p>Form the compressed tarball for all IOCCC years and all IOCCC
 entries.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb22"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/tar-all.sh</span> <span class="at">-v</span> 1</span></code></pre></div>
-<h2 id="tar-year.sh"><a href="tar-year.sh">tar-year.sh</a></h2>
-<p>Form a compress tarball for an IOCCC year.</p>
-<p>Usage:</p>
-<div class="sourceCode" id="cb23"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/tar-year.sh</span> <span class="at">-v</span> 1 YYYY</span></code></pre></div>
-<p>Suggested usage:</p>
 <div class="sourceCode" id="cb24"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-years.sh</span> <span class="at">-v</span> 3 bin/tar-year.sh <span class="at">-v</span> 1 <span class="at">-W</span></span></code></pre></div>
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/tar-all.sh</span> <span class="at">-v</span> 1</span></code></pre></div>
+<h2 id="tar-year.sh"><a href="tar-year.sh">tar-year.sh</a></h2>
+<p>Form a compressed tarball for an IOCCC year.</p>
+<p>Usage:</p>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/tar-year.sh</span> <span class="at">-v</span> 1 YYYY</span></code></pre></div>
+<p>Suggested usage:</p>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-years.sh</span> <span class="at">-v</span> 3 bin/tar-year.sh <span class="at">-v</span> 1 <span class="at">-W</span></span></code></pre></div>
 <h1 id="how-ioccc-html-content-is-built"><a name="how"></a>How IOCCC
 HTML content is built</h1>
 <p>The <a href="md2html.sh">md2html.sh</a> tool is the primary tool that
@@ -322,34 +331,34 @@ href="https://www.ioccc.org">official IOCCC web site</a>.</p>
 <p>Nearly all IOCCC related HTML pages are built from markdown files,
 from either permanent markdown files or temporary generated markdown
 files, as well as HTML fragments from the <a
-href="../inc/index.html">inc</a> directory.</p>
-<p>Most HTML content is built from permanant markdown files, such as a
-<code>index.html</code> markdown file found in each entry directory.
-Some HTML content are generated from temporary markdown files. These
+href="../inc/index.html">inc directory</a>.</p>
+<p>Most HTML content is built from permanent markdown files, such as a
+<code>README.md</code> markdown file found in each entry directory. Some
+HTML content are generated from temporary markdown files. These
 temporary markdown files are produced by tools in the <a
-href="index.html">bin</a> directory and exist only while the tool is
+href="index.html">bin directory</a> and exist only while the tool is
 running.</p>
 <p>In addition to converting markdown to HTML, the canonical way that
 HTML content is built uses, by default, files from the <a
-href="../inc/index.html">inc</a> directory, of the form:</p>
+href="../inc/index.html">inc directory</a>, of the file name form:</p>
 <pre><code>*.default.html</code></pre>
-<p>By using command line options of the form</p>
-<div class="sourceCode" id="cb26"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> phase=name</span></code></pre></div>
+<p>By using command line options of the form:</p>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> phase=name</span></code></pre></div>
 <p>where <code>phase</code> is the name of an HTML phase, a non-default
 file may be used. For example:</p>
-<div class="sourceCode" id="cb27"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> topnav=up2index</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> topnav=up2index</span></code></pre></div>
 <p>will cause <a
 href="../inc/topnav.up2index.html">inc/topnav.up2index.html</a> instead
 of <a href="../inc/topnav.default.html">inc/topnav.default.html</a> to
 be used during the <em>topnav</em> HTML phase.</p>
-<p>If <em>name</em> is dot (i.e., “.”), then the given HTML phase is
-skipped. For example:</p>
-<div class="sourceCode" id="cb28"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> footer=.</span></code></pre></div>
-<p>will cause no HTML content to be produced during the <em>footer</em>
-HTML phase.</p>
+<p>If <code>name</code> is dot (i.e., <code>.</code>), then the given
+HTML phase is skipped. For example:</p>
+<div class="sourceCode" id="cb30"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> footer=.</span></code></pre></div>
+<p>will cause no HTML content to be produced during the
+<code>footer</code> HTML phase.</p>
 <h2 id="html-phases"><a name="html"></a>HTML phases</h2>
 <p>The following HTML phase files are used to build HTML content:</p>
 <ol start="0" type="1">
@@ -381,49 +390,61 @@ HTML phase.</p>
 </ol>
 <p>Phases 35-39 are reserved for future use.</p>
 <p>In the above HTML phase numbers, except during HTML phase numbers
-20-29, symbols of the form %%TOKEN%% are substituted. Any %%TOKEN%%
-printed by the ‘before tool’ (-b tool), the ‘pandoc wrapper tool’ (-p
-tool), and the ‘after tool’ (-a tool) are ignored (i.e., not
-substituted).</p>
+20-29, symbols of the form <code>%%TOKEN%%</code> are substituted.</p>
+<p>Any <code>%%TOKEN%%</code> printed by the ‘before tool’
+(<code>-b tool</code>), the ‘pandoc wrapper tool’
+(<code>-p tool</code>), and the ‘after tool’ (<code>-a tool</code>) are
+ignored (i.e., not substituted).</p>
 <p>See the tool <a href="readme2index.sh">readme2index.sh</a> for an
 example of how HTML phases are implemented.</p>
 <h2
-id="getopt-phase-processing-of-the-command-line"><a name="getopt"></a>Getopt
+id="getopt-phase-processing-of-the-command-line"><a name="`getopt`"></a><code>getopt</code>
 phase processing of the command line</h2>
-<p>The command options are evaluated in the following getopt phases:</p>
-<h3 id="getopt-phase-0">Getopt phase 0</h3>
-<p>In getopt phase 0 we parse command line options and save all
-arguments for the end of the final command line.</p>
+<p>The command options are evaluated in the following
+<code>getopt</code> phases:</p>
+<h3 id="getopt-phase-0"><code>getopt</code> phase 0</h3>
+<p>In <code>getopt</code> phase 0 we parse command line options and save
+all arguments for the end of the final command line.</p>
 <p>Depending on the program, the argument at the end is directory under
 topdir, or it is a file under topdir.</p>
-<p>In getopt phase 0 is the only getopt phase where “-d topdir” and “-c
-md2html.cfg” may be used.</p>
-<h3 id="getopt-phase-1">Getopt phase 1</h3>
-<p>In getopt phase 1 we execute each -o “output tool” from getopt phase
-0, parsing the output as a command line.</p>
-<p>The -o “output tool” may be given optstr from “-O tool=optstr”,
-followed by the phase 0 argument.</p>
-<p>The -o “output tool” is not allowed to output another “-o tool”, nor
-a “-O tool=optstr”. Instead an -o “output tool” may execute another -o
-“output tool” merge the output into its own.</p>
-<h3 id="getopt-phase-2">Getopt phase 2</h3>
-<p>In getopt phase 2 we parse the “cfg_options” from the first
-“md2html.cfg” line matched by saved argument.</p>
+<p><code>getopt</code> phase 0 is the only <code>getopt</code> phase
+where <code>-d topdir</code> and <code>-c md2html.cfg</code> may be
+used.</p>
+<h3 id="getopt-phase-1"><code>getopt</code> phase 1</h3>
+<p>In <code>getopt</code> phase 1 we execute each
+<code>-o "output tool"</code> from <code>getopt</code> phase 0, parsing
+the output as a command line.</p>
+<p>The <code>-o "output tool"</code> may be given <code>optstr</code>
+from <code>"-O tool=optstr"</code>, followed by the phase 0
+argument.</p>
+<p>The <code>-o "output tool"</code> is not allowed to output another
+<code>"-o tool"</code> or a <code>"-O tool=optstr"</code>. Instead a
+<code>-o "output tool"</code> may execute another
+<code>-o "output tool"</code> and merge the output into its own.</p>
+<h3 id="getopt-phase-2"><code>getopt</code> phase 2</h3>
+<p>In <code>getopt</code> phase 2 we parse the <code>cfg_options</code>
+from the first <code>md2html.cfg</code> line matched by a saved
+argument.</p>
 <p>The match is made with the (possibly modified) phase 0 argument.</p>
-<h3 id="getopt-phase-3">Getopt phase 3</h3>
-<p>In getopt phase 3 we execute each -o “output tool” from getopt phase
-2, parsing the output as a command line.</p>
-<p>The -o “output tool” may be given optstr from “-O tool=optstr”,
-followed by the phase 0 argument.</p>
-<p>The -o “output tool” is not allowed to output another “-o tool”, nor
-a “-O tool=optstr”. Instead an -o “output tool” may execute another -o
-“output tool” merge the output into its own.</p>
+<h3 id="getopt-phase-3"><code>getopt</code> phase 3</h3>
+<p>In <code>getopt</code> phase 3 we execute each
+<code>-o "output tool"</code> from <code>getopt</code> phase 2, parsing
+the output as a command line.</p>
+<p>The <code>-o "output tool"</code> may be given <code>optstr</code>
+from <code>"-O tool=optstr"</code>, followed by the phase 0
+argument.</p>
+<p>The <code>-o "output tool"</code> is not allowed to output another
+<code>"-o tool"</code> or a <code>"-O tool=optstr"</code>. Instead a
+<code>-o "output tool"</code> may execute another
+<code>-o "output tool"</code> and merge the output into its own.</p>
 <h3 id="command-line-option-order">Command line option order</h3>
 <p>Most command line options override earlier copies of the same option.
-However in the case of ‘-H phase=name’, later ‘-H phase=name’ only
-overrides an earlier use of ‘-H’ for the same ‘phase’ only. Also in the
-case of ‘-s token=value’, later ‘-s token=value’ only overrides an
-earlier use of ‘-s’ for the same ‘token’ only.</p>
+However in the case of <code>-H phase=name</code>, a later
+<code>-H phase=name</code> only overrides an earlier use of
+<code>-H</code> for the same <code>phase</code> <em>only</em>. Also in
+the case of <code>-s token=value</code>, a later
+<code>-s token=value</code> only overrides an earlier use of
+<code>-s</code> for the same <code>token</code> <em>only</em>.</p>
 <h3 id="output-tools">Output tools</h3>
 <p>An “output tool” may be used to add certain additional command line
 options to be processed.</p>
@@ -436,51 +457,61 @@ to convey:</p>
 TITLE=&#39;IOCCC entry locations&#39;
 -H
 topnav=top-of-site</code></pre>
-<p>The command line opions printed by an “output tool” are processed
+<p>The command line options printed by an “output tool” are processed
 after all command line options, and all options from a matching line
-from the md2html.cfg file, and before any filename arguments on the
-command line.</p>
-<p>For exmaple:</p>
+from the <code>md2html.cfg</code> file, and before any filename
+arguments on the command line.</p>
+<p>For example:</p>
 <pre><code>command [command_options ..] [cfg_options ..] [output_tool_options ..] [--] [filename_arg ..]</code></pre>
-<p>Here the ‘command’ first processes any command line options, then it
-processes ‘cfg_options’ obtained from this file from a 1st match of a
-given file_glob, then it processes ‘output tool’ (i.e., -o tool) options
-found in ‘command_options’, and ‘cfg_options’, then an optional – (end
-of all options), then zero of more ‘filename_arg’ filename
-arguments.</p>
-<p>The ‘-o tool’ must NOT output any ‘-o tool’ options as ‘-o tool’ is
-NOT RECURSIVE. A ‘-o tool’ is free, however, to execute other ‘-o tool’
-output tools and merge the output from those tools into its own.</p>
-<h3 id="special--e-exitcode-option">Special -E exitcode option</h3>
-<p>When ‘-E exitcode’ is evaluated, the application will exit with the
-‘exitcode’ value. If one wishes to also output a message to stderr, the
-‘-e string’ must come BEFORE any ‘-E exitcode’ in the command line.</p>
+<p>Here the <code>command</code> first processes any command line
+options, then it processes <code>cfg_options</code> obtained from this
+file from a first match of a given <code>file_glob</code>, then it
+processes <code>output tool</code> (i.e., <code>-o tool</code>) options
+found in <code>command_options</code>, and <code>cfg_options</code>,
+then an optional <code>--</code> (end of all options), then zero of more
+<code>filename_arg</code> filename arguments.</p>
+<p>The <code>-o tool</code> must NOT output any <code>-o tool</code>
+options as <code>-o tool</code> is NOT RECURSIVE. A <code>-o tool</code>
+is free, however, to execute other <code>-o tool</code> output tools and
+merge the output from those tools into its own.</p>
+<h3 id="special--e-exitcode-option">Special <code>-E exitcode</code>
+option</h3>
+<p>When <code>-E exitcode</code> is evaluated, the application will exit
+with the <code>exitcode</code> value. If one wishes to also output a
+message to <code>stderr</code>, the <code>-e string</code> must come
+<strong>BEFORE</strong> any <code>-E exitcode</code> in the command
+line.</p>
 <h3 id="substitution-tokens">Substitution tokens</h3>
-<p>All tokens (i.e., strings of the form ‘%%token%%’) MUST be
-substituted (by some -s token=value) in all HTML output, except during
-phase numbers 20-29 (i.e., except ‘before tool’ output, pandoc wrapper
-output, and except ‘after tool’ output), or command will exit non-zero,
-unless -S is given. If -S is given, only a warning about un-substituted
-tokens will be written to stderr.</p>
-<p>The command line of tools in the <a href="index.html">bin</a>
-directory, and perhaps modified via <a href="../inc/md2html.cfg">md2html
-config file</a> file may change to using a different filename for a
-given phase.</p>
-<p>For example when forming the HTML from
-<code>2020/ferguson2/chocolate-cake.html</code>, a different “topnav”
-navigation bar is needed. So instead of the usual top navigation bar
-that normally directs people to the previous entry for the year, or go
-up to the year page, or to the next entry for the year, a top navigation
-bar to just go up to the entry’s main page is needed. A line in the <a
-href="../inc/md2html.cfg">md2html config file</a> file that refers to
-<code>2020/ferguson1/chocolate-cake.html</code> may specify use of
-<code>topnav.up2index.html</code> instead of using the
-<code>topnav.default.html</code> default.</p>
+<p>All tokens (i.e., strings of the form <code>%%token%%</code>)
+<strong>MUST</strong> be substituted (by some
+<code>-s token=value</code>) in all HTML output, except during phase
+numbers 20-29 (i.e., except <code>before tool</code> output, pandoc
+wrapper output, and <code>after tool</code> output), or the command will
+exit non-zero, unless <code>-S</code> is given. If <code>-S</code> is
+given, only a warning about non-substituted tokens will be written to
+<code>stderr</code>.</p>
+<p>The command line of tools in the <a href="index.html">bin
+directory</a>, and perhaps modified via the <a
+href="../inc/md2html.cfg">md2html config file</a> may change to using a
+different filename for a given phase.</p>
+<p>For example when forming the HTML from <a
+href="/2020/ferguson1/chocolate-cake.md">2020/ferguson1/chocolate-cake.md</a>,
+a different <code>topnav</code> navigation bar is needed. So instead of
+the usual top navigation bar that normally directs people to the
+previous entry for the year, or go up to the year page, or to the next
+entry for the year, a top navigation bar to just go up to the entry’s
+main page is needed. A line in the <a href="../inc/md2html.cfg">md2html
+config file</a> that refers to <a
+href="/2020/ferguson1/chocolate-cake.md">2020/ferguson1/chocolate-cake.md</a>
+may specify use of <code>topnav.up2index.html</code> (as
+<code>topnav.up2index</code>)instead of using the
+<code>topnav.default.html</code> (<code>topnav.default.html</code>)
+default.</p>
 <p>The HTML phase may be skipped resulting in no HTML output during a
-given phase. Furthermore, forming HTML content from a given markdown
-file altogether.</p>
+given phase and furthermore, forming no HTML content from a given
+markdown file altogether.</p>
 <p>See comments in the <a href="../inc/md2html.cfg">md2html config
-file</a> file for details. See also, the tool <a
+file</a> for details. See also, the tool <a
 href="readme2index.sh">readme2index.sh</a> for an example of how such
 command lines are used.</p>
 <h1 id="use-caution-when-modifying-inc-files">Use CAUTION when modifying
@@ -502,8 +533,8 @@ web page, consider making a copy of the default file and modifying the
 <a href="md2html.cfg">md2html config file</a> to refer to the copy
 instead. That way your special case situation will not impact
 <strong>MOST</strong> of the HTML content.</p>
-<h1 id="why-do-we-do-not-use-certain-well-known-html-technologies">Why
-do we do not use certain well-known HTML technologies</h1>
+<h1 id="why-we-do-not-use-certain-well-known-html-technologies">Why we
+do not use certain well-known HTML technologies</h1>
 <p>You may wonder why we need these files in the first place. You may
 wonder why we even need the tools in the <a href="index.html">bin</a>
 directory when there other solutions available to form web pages.</p>
@@ -523,7 +554,7 @@ side include” is not available to the IOCCC.</p>
 href="https://pages.github.com">GitHub pages</a>.</p>
 <h2 id="we-cannot-use-a-back-end-database">We cannot use a back-end
 database</h2>
-<p>We use <a href="#static-only">static web pages</a>, so use of
+<p>We use <a href="#static-only">static web pages</a>, so use of a
 “back-end database” is not available to the IOCCC.</p>
 <h2
 id="we-cannot-use-non-github-web-servers"><a name="why-github"></a>We
@@ -545,41 +576,41 @@ it is possible that GitHub might someday suffer a similar fate, for the
 time being we are betting that GitHub will remain willing to host the
 IOCCC.</p>
 <p>The <a href="https://www.ioccc.org">official IOCCC web site</a> is,
-after all, primarily C source code with some supporting documentation.
-As such it is a natural fit for GitHub and <a
+after all, primarily C source code with some supporting documentation
+(sometimes :-) ). As such it is a natural fit for GitHub and <a
 href="https://pages.github.com">GitHub pages</a>.</p>
-<h2 id="we-cannot-use-the-html-object-tag">We cannot use the HTML object
-tag</h2>
-<p>The <em>&lt;</em> object <em>&gt;</em> HTML tag does not work for our
+<h2 id="we-cannot-use-the-html-object-element">We cannot use the HTML
+<code>&lt;object&gt;</code> element</h2>
+<p>The <code>&lt;object&gt;</code> HTML element does not work for our
 needs.</p>
 <p>The browser context relationship between the HTML content holds the
-HTML tag does not extend into the content that the tag includes. For
-example, menu bars will not operate as specified by the <a
-href="../ioccc.css">ioccc CSS</a>.</p>
-<h2 id="we-cannot-use-the-html-embed-tag">We cannot use the HTML embed
-tag</h2>
-<p>The <em>&lt;</em> embed <em>&gt;</em> HTML tag does not work for our
+HTML element does not extend into the content that the element includes.
+For example, menu bars will not operate as specified by the <a
+href="../ioccc.css">ioccc.css</a>.</p>
+<h2 id="we-cannot-use-the-html-embed-element">We cannot use the HTML
+<code>&lt;embed&gt;</code> element</h2>
+<p>The <code>&lt;embed&gt;</code> HTML element does not work for our
 needs.</p>
-<p>This tag wants one to specify the <em>width</em> and <em>height</em>
-in pixels. Use of a percentage is not officially supported even if some
-browsers might do so. Our Responsive Web Design on the <a
-href="../ioccc.css">ioccc CSS</a> needs to be responsive to small-sized
-cell phone-like screens, mid-sized table-like screens, as well as
-large-sized desktop-like screens. Specifying a <em>width</em> and
-<em>height</em> in pixels will not work well in all of those screen size
-contexts.</p>
-<h2 id="we-cannot-use-the-html-iframe-tag">We cannot use the HTML iframe
-tag</h2>
-<p>The <em>&lt;</em> iframe <em>&gt;</em> HTML tag does not work for our
+<p>This element wants one to specify the <code>width</code> and
+<code>height</code> in pixels. Use of a percentage is not officially
+supported even if some browsers might do so. Our Responsive Web Design
+in the <a href="../ioccc.css">ioccc.css</a> needs to be responsive to
+small-sized cell phone-like screens, mid-sized table-like screens, as
+well as large-sized desktop-like screens. Specifying a
+<code>width</code> and <code>height</code> in pixels will not work well
+in all of those screen size contexts.</p>
+<h2 id="we-cannot-use-the-html-iframe-element">We cannot use the HTML
+<code>&lt;iframe&gt;</code> element</h2>
+<p>The <code>&lt;iframe&gt;</code> HTML element does not work for our
 needs.</p>
-<p>This tag wants one to specify the <em>width</em> and <em>height</em>
-in pixels. Use of a percentage is not officially supported even if some
-browsers might do so. Our Responsive Web Design on the <a
-href="../ioccc.css">ioccc CSS</a> needs to be responsive to small-sized
-cell phone-like screens, mid-sized table-like screens, as well as
-large-sized desktop-like screens. Specifying a <em>width</em> and
-<em>height</em> in pixels will not work well in all of those screen size
-contexts.</p>
+<p>This element wants one to specify the <code>width</code> and
+<code>height</code> in pixels. Use of a percentage is not officially
+supported even if some browsers might do so. Our Responsive Web Design
+in the <a href="../ioccc.css">ioccc.css</a> needs to be responsive to
+small-sized cell phone-like screens, mid-sized table-like screens, as
+well as large-sized desktop-like screens. Specifying a
+<code>width</code> and <code>height</code> in pixels will not work well
+in all of those screen size contexts.</p>
 <h2 id="we-cannot-use-javascript-to-include-content">We cannot use
 JavaScript to include content</h2>
 <p>We do not use JavaScript to include HTML content.</p>
@@ -597,19 +628,23 @@ directory structure of this repo.</p>
 <p>An individual who was an <code>author</code> of at least one winning
 IOCCC entry.</p>
 <p>Some authors have submitted more than one IOCCC entry that won. Some
-winning IOCCC entries have more than one author.</p>
+winning IOCCC entries have more than one author. In that case we might
+use the word <code>authors</code>.</p>
 <h2 id="author_handle"><code>author_handle</code></h2>
 <p>An <code>author_handle</code> is string that refers to a given author
-and is unique to the IOCCC. Each author has exactly one
+and is unique to the IOCCC. Each author has <strong>EXACTLY ONE</strong>
 <code>author_handle</code>.</p>
-<p>For each <code>author_handle</code>, there will be a JSON file of the
-form:</p>
+<p>For each <code>author_handle</code>, there will be a JSON file
+located at:</p>
 <pre><code>author/author_handle.json</code></pre>
+<p>where <code>author_handle</code> is the author’s
+<code>author_handle</code>.</p>
 <p>Because the <code>author_handle</code> is used to form a JSON
-filename, the string must be lower case POSIX safe string. Furthermore,
-the <code>author_handle</code> must be an ASCII string that matches this
-regexp:</p>
-<pre class="re"><code>^[0-9a-z][0-9a-z_]*$</code></pre>
+filename, the string must be a POSIX safe string with the addition of
+<code>+</code> (for technical reasons beyond this document). In
+particular, the <code>author_handle</code> must be an ASCII string that
+matches this regexp:</p>
+<pre class="re"><code>^[0-9A-Za-z][0-9A-Za-z._+-]*$&quot;</code></pre>
 <p>Default <code>author_handle</code>’s do not have multiple consecutive
 <code>_</code> (underscore) characters. Nevertheless, multiple
 consecutive <code>_</code> (underscore) characters are allowed. Contest
@@ -637,40 +672,39 @@ href="../2005/anon/anon.c">2005/anon</a>.</p>
 <p>Anonymous <code>author_handle</code>’s match this regexp:</p>
 <pre class="re"><code>Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$</code></pre>
 <h2 id="entry"><code>entry</code></h2>
-<p>An IOCCC entry that won an award for given IOCCC.</p>
-<p>A <code>entry</code> has one more more <code>author</code>s.</p>
+<p>An IOCCC entry that won an award for a given IOCCC.</p>
+<p>An <code>entry</code> has one more more <code>author</code>s.</p>
 <p>Each <code>entry</code> is contained under its own directory. The
 parent of the entry directory is the year’s directory.</p>
-<p>While in most cases a <code>entry</code> consists of files under a
-entry’s directory, there are a few cases where a <code>entry</code>
+<p>While in most cases an <code>entry</code> consists of files under an
+entry’s directory, there are a few cases where an <code>entry</code>
 directory contains subdirectories.</p>
-<p>Use of subdirectories under a <code>entry</code> directory is
+<p>Use of subdirectories under an <code>entry</code> directory is
 discouraged and may be limited to previous <code>entry</code>s that used
 them.</p>
-<p>NOTE: In the past, the term <em>winner</em> was used in instead of
-today’s term of <em>entry</em>.</p>
+<p>NOTE: In the past, the term <code>winner</code> was used in instead
+of today’s term of <code>entry</code>.</p>
 <h2 id="year"><code>year</code></h2>
 <p>A <code>year</code> is a 4 character string. Most years are 4-digit
 strings that represent the year. Some special <code>year</code> strings
-are possible, such as <em><code>mock</code></em>. Non-numeric
-<code>year</code> strings are lower case.</p>
+are possible, such as <code>mock</code>. Non-numeric <code>year</code>
+strings are lower case.</p>
 <p>A <code>year</code> string matches this regexp:</p>
 <pre class="re"><code>[0-9a-z][0-9a-z][0-9a-z][0-9a-z]</code></pre>
 <p>The <code>year</code> directories reside directly below the top level
 directory.</p>
 <h2 id="year-1"><code>.year</code></h2>
-<p>Each <code>year</code> will have a file directory under it named:</p>
+<p>Each <code>year</code> directory will have a file under it named:</p>
 <pre><code>.year</code></pre>
 <p>The contents of the <code>.year</code> file is the year string of the
-directory. For instance, <a href=",,/2020/.year">2020/.year</a> has the
+directory. For instance, <a href="../2020/.year">2020/.year</a> has the
 string: <code>2020</code>.</p>
 <h2 id="dir"><code>dir</code></h2>
 <p>A <code>dir</code> is a POSIX safe string that holds an entry.</p>
 <p>A <code>dir</code> is a string that matches this regexp:</p>
 <pre class="re"><code>^[a-z][0-9a-z.-]*$</code></pre>
-<p>Each
-<code>_entry_ is under its own individual directory.  This directory is directly under a</code>year`
-directory.</p>
+<p>Each <code>entry</code> is under its own individual directory. This
+directory is directly under a <code>year</code> directory.</p>
 <h3 id="entry_id"><code>entry_id</code></h3>
 <p>A string that identifies the winning entry. The string is of the
 form:</p>
