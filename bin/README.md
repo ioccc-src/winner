@@ -1,16 +1,15 @@
 # bin
 
-The directory holds [bin](index.html) directory
-holds tools that build files, such as HTML content, for the
-[official IOCCC web site](https://www.ioccc.org).
+The [bin directory](index.html) holds tools that build files, such as HTML
+content, for the [official IOCCC web site](https://www.ioccc.org).
 
-For HTML content, the [bin](index.html) directory tools
-makes use of HTML fragments from the [inc](../inc/index.html) directory
-as well as various JSON files and other content from the
-[IOCCC GitHub repo](https://github.com/ioccc-src/temp-test-ioccc).
+For HTML content, the [bin directory](index.html) tools make use of HTML
+fragments from the [inc directory](../inc/index.html) as well as various JSON
+files and other content from the [IOCCC GitHub
+repo](https://github.com/ioccc-src/temp-test-ioccc).
 
 
-## bin tools
+## [bin/](index.html) tools
 
 
 ### [all-run.sh](all-run.sh)
@@ -49,7 +48,8 @@ bin/all-years.sh -v 1 bin/chk-entry.sh
 
 ### [chk-entry.sh](chk-entry.sh)
 
-Check of files required by an entry matches the entry's manifest as found in `.entry.json`.
+Check that files required by an entry match the entry's manifest as found in
+`.entry.json`.
 
 For example:
 
@@ -60,7 +60,7 @@ bin/chk-entry.sh 2020/ferguson1
 
 ### [filelist.entry.json.awk](filelist.entry.json.awk)
 
-Generate the list of files in the entry's manifest `.entry.json`.
+Generate the list of files in the entry's manifest, `.entry.json`.
 
 For example:
 
@@ -93,7 +93,8 @@ bin/gen-location.sh -v 1
 
 ### [gen-other-html.sh](gen-other-html.sh)
 
-Generate entry HTML files from markdown other than index.html to index.html HTML files.
+Generate entry HTML files (other than README.md to index.html) from markdown
+files.
 
 Usage:
 
@@ -117,7 +118,7 @@ bin/gen-sitemap.sh -v 1
 Generate `status.json` according to the modification dates of `status.json`
 and `news.html`.
 
-Without argument, the _contest_status_ is unchanged.
+Without argument, the `contest_status` is unchanged.
 
 Usage:
 
@@ -125,10 +126,22 @@ Usage:
 bin/gen-status.sh -v 1
 ```
 
-To force the  _contest_status_ to be closed:
+To force the  `contest_status` to be closed:
 
 ```sh
 bin/gen-status.sh -v 1 closed
+```
+
+To force the  `contest_status` to be open:
+
+```sh
+bin/gen-status.sh -v 1 open
+```
+
+To see other valid statuses:
+
+```sh
+bin/gen-status -h
 ```
 
 
@@ -184,7 +197,7 @@ bin/gen-years.sh -v 1
 
 This is the primary tool that forms IOCCC generated HTML content from
 markdown files (permanent markdown files or temporarily generated
-markdown files) and HTML fragments from the [inc](../inc/index.html) directory.
+markdown files) and HTML fragments from the [inc directory](../inc/index.html).
 
 The [../inc/md2html.cfg](../inc/md2html.cfg) configuration file is
 used by [md2html.sh](md2html.sh) to drive the generation process.
@@ -192,7 +205,8 @@ used by [md2html.sh](md2html.sh) to drive the generation process.
 
 ### [output-index-author.sh](output-index-author.sh)
 
-Output author(s) Related HTML for for an entry's index.html page.
+Output author's or authors' related HTML details for an entry's index.html
+page.
 
 
 ### [output-index-inventory.sh](output-index-inventory.sh)
@@ -218,7 +232,7 @@ does not have a non-empty `index.hmtl` file, or if either
 
 This is useful when only a few entries have been
 modified (resulting in an updated `.entry.json` file)
-or if the `index.html` of a few entries have been changed.
+or if the `index.html` of a few entries has been changed.
 
 While the [readme2index.sh](readme2index.sh) take a few
 seconds to run, when applied to 300+ entries,
@@ -233,7 +247,7 @@ bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1
 ```
 
 **NOTE**: This command assumes that the relative
-modification times for `index.hmtl`, .entry.json`,
+modification times for `index.hmtl`, `.entry.json`,
 and `index.html` are correct.  If in doubt, use:
 
 ```sh
@@ -243,7 +257,7 @@ bin/all-run.sh -v 3 bin/readme2index.sh -v 1
 
 ### [readme2index.sh](readme2index.sh)
 
-Convert a entry index.html into entry directory index.html.
+Convert an entry README.md into entry directory index.html.
 
 
 ### [status2html.sh](status2html.sh)
@@ -256,12 +270,12 @@ to be used by `bin/gen-status.sh`.
 
 ### [sgi.sh](sgi.sh)
 
-Sort .gitignore content from stdin to stdout.
+Sort .gitignore content from `stdin` to `stdout`.
 
-We sort with lines starting with # first.
-We sort with lines starting with * second.
-We sort with lines that do not start with [#!*] third.
-We sort with lines starting with ! fourth.
+We sort with lines starting with `#` first.
+We sort with lines starting with `*` second.
+We sort with lines that do not start with `[#!*]` third.
+We sort with lines starting with `!` fourth.
 
 This tool is used by [sort.gitignore.sh](sort.gitignore.sh).
 
@@ -290,12 +304,12 @@ Print default substitutions.
 
 ### [subst.entry-index.sh](subst.entry-index.sh)
 
-Print substitutions for a entry index.html.
+Print substitutions for an entry index.html.
 
 
 ### [subst.entry-navbar.awk](subst.entry-navbar.awk)
 
-Output substitutions for navbar on behalf of a entry.
+Output substitutions for navbar on behalf of an entry.
 
 
 ### [subst.year-index.sh](subst.year-index.sh)
@@ -310,7 +324,7 @@ Output substitutions for navbar on behalf of a year level index.html.
 
 ## [tar-entry.sh](tar-entry.sh)
 
-Form a compress tarball for an entry.
+Form a compressed tarball for an entry.
 
 Usage:
 
@@ -338,7 +352,7 @@ bin/tar-all.sh -v 1
 
 ## [tar-year.sh](tar-year.sh)
 
-Form a compress tarball for an IOCCC year.
+Form a compressed tarball for an IOCCC year.
 
 Usage:
 
@@ -361,21 +375,22 @@ site](https://www.ioccc.org).
 
 Nearly all IOCCC related HTML pages are built from markdown files,
 from either permanent markdown files or temporary generated markdown files,
-as well as HTML fragments from the [inc](../inc/index.html) directory.
+as well as HTML fragments from the [inc directory](../inc/index.html).
 
-Most HTML content is built from permanant markdown files, such as a `index.html`
+Most HTML content is built from permanent markdown files, such as a `README.md`
 markdown file found in each entry directory.  Some HTML content are generated
 from temporary markdown files.  These temporary markdown files are produced by
-tools in the [bin](index.html) directory and exist only while the tool is running.
+tools in the [bin directory](index.html) and exist only while the tool is running.
 
 In addition to converting markdown to HTML, the canonical way that HTML content is
-built uses, by default, files from the [inc](../inc/index.html) directory, of the form:
+built uses, by default, files from the [inc directory](../inc/index.html), of
+the file name form:
 
 ```
 *.default.html
 ```
 
-By using command line options of the form
+By using command line options of the form:
 
 ```sh
 -H phase=name
@@ -392,14 +407,14 @@ will cause [inc/topnav.up2index.html](../inc/topnav.up2index.html)
 instead of [inc/topnav.default.html](../inc/topnav.default.html) to be
 used during the _topnav_ HTML phase.
 
-If _name_ is dot (i.e., "."), then the given HTML phase is skipped.
+If `name` is dot (i.e., `.`), then the given HTML phase is skipped.
 For example:
 
 ```sh
 -H footer=.
 ```
 
-will cause no HTML content to be produced during the _footer_ HTML phase.
+will cause no HTML content to be produced during the `footer` HTML phase.
 
 
 
@@ -435,61 +450,75 @@ Phases 23-29 are reserved for future use.
 
 Phases 35-39 are reserved for future use.
 
-In the above HTML phase numbers, except during HTML phase numbers 20-29, symbols of the form %%TOKEN%% are substituted.
-Any %%TOKEN%% printed by the 'before tool' (-b tool), the 'pandoc wrapper tool' (-p tool), and the 'after tool' (-a tool)
-are ignored (i.e., not substituted).
+In the above HTML phase numbers, except during HTML phase numbers 20-29, symbols
+of the form `%%TOKEN%%` are substituted.
+
+Any `%%TOKEN%%` printed by the 'before tool' (`-b tool`), the 'pandoc wrapper
+tool' (`-p tool`), and the 'after tool' (`-a tool`) are ignored (i.e., not
+substituted).
 
 See the tool [readme2index.sh](readme2index.sh) for an example of
 how HTML phases are implemented.
 
 
-## <a name="getopt"></a>Getopt phase processing of the command line
+## <a name="`getopt`"></a>`getopt` phase processing of the command line
 
-The command options are evaluated in the following getopt phases:
-
-
-### Getopt phase 0
-
-In getopt phase 0 we parse command line options and save all arguments for the end of the final command line.
-
-Depending on the program, the argument at the end is directory under topdir, or it is a file under topdir.
-
-In getopt phase 0 is the only getopt phase where "-d topdir" and "-c md2html.cfg" may be used.
+The command options are evaluated in the following `getopt` phases:
 
 
-### Getopt phase 1
+### `getopt` phase 0
 
-In getopt phase 1 we execute each -o "output tool" from getopt phase 0, parsing the output as a command line.
+In `getopt` phase 0 we parse command line options and save all arguments for the
+end of the final command line.
 
-The -o "output tool" may be given optstr from "-O tool=optstr", followed by the phase 0 argument.
+Depending on the program, the argument at the end is directory under topdir, or
+it is a file under topdir.
 
-The -o "output tool" is not allowed to output another "-o tool", nor a "-O tool=optstr".
-Instead an -o "output tool" may execute another -o "output tool" merge the output into its own.
+`getopt` phase 0 is the only `getopt` phase where `-d topdir` and `-c
+md2html.cfg` may be used.
 
 
-### Getopt phase 2
+### `getopt` phase 1
 
-In getopt phase 2 we parse the "cfg_options" from the first "md2html.cfg" line matched by saved argument.
+In `getopt` phase 1 we execute each `-o "output tool"` from `getopt` phase 0,
+parsing the output as a command line.
+
+The `-o "output tool"` may be given `optstr` from `"-O tool=optstr"`, followed
+by the phase 0 argument.
+
+The `-o "output tool"` is not allowed to output another `"-o tool"` or a `"-O
+tool=optstr"`. Instead a `-o "output tool"` may execute another `-o "output
+tool"` and merge the output into its own.
+
+
+### `getopt` phase 2
+
+In `getopt` phase 2 we parse the `cfg_options` from the first `md2html.cfg` line
+matched by a saved argument.
 
 The match is made with the (possibly modified) phase 0 argument.
 
 
-### Getopt phase 3
+### `getopt` phase 3
 
-In getopt phase 3 we execute each -o "output tool" from getopt phase 2, parsing the output as a command line.
+In `getopt` phase 3 we execute each `-o "output tool"` from `getopt` phase 2,
+parsing the output as a command line.
 
-The -o "output tool" may be given optstr from "-O tool=optstr", followed by the phase 0 argument.
+The `-o "output tool"` may be given `optstr` from `"-O tool=optstr"`, followed
+by the phase 0 argument.
 
-The -o "output tool" is not allowed to output another "-o tool", nor a "-O tool=optstr".
-Instead an -o "output tool" may execute another -o "output tool" merge the output into its own.
+The `-o "output tool"` is not allowed to output another `"-o tool"` or a `"-O
+tool=optstr"`.  Instead a `-o "output tool"` may execute another `-o "output
+tool"` and merge the output into its own.
 
 
 ### Command line option order
 
-Most command line options override earlier copies of the same option.  However in the case of
-'-H phase=name', later '-H phase=name' only overrides an earlier use of '-H' for the same 'phase' only.
-Also in the case of '-s token=value', later '-s token=value' only overrides an earlier use of '-s'
-for the same 'token' only.
+Most command line options override earlier copies of the same option.  However
+in the case of `-H phase=name`, a later `-H phase=name` only overrides an
+earlier use of `-H` for the same `phase` _only_. Also in the case of `-s
+token=value`, a later `-s token=value` only overrides an earlier use of `-s` for
+the same `token` _only_.
 
 
 ### Output tools
@@ -512,57 +541,62 @@ TITLE='IOCCC entry locations'
 topnav=top-of-site
 ```
 
-The command line opions printed by an "output tool" are processed
+The command line options printed by an "output tool" are processed
 after all command line options, and all options from a matching
-line from the md2html.cfg file, and before any filename arguments
+line from the `md2html.cfg` file, and before any filename arguments
 on the command line.
 
-For exmaple:
+For example:
 
 ```
 command [command_options ..] [cfg_options ..] [output_tool_options ..] [--] [filename_arg ..]
 ```
 
-Here the 'command' first processes any command line options, then
-it processes 'cfg_options' obtained from this file from a 1st match of a given file_glob, then
-it processes 'output tool' (i.e., -o tool) options found in 'command_options', and 'cfg_options', then
-an optional -- (end of all options), then zero of more 'filename_arg' filename arguments.
+Here the `command` first processes any command line options, then it processes
+`cfg_options` obtained from this file from a first match of a given `file_glob`,
+then it processes `output tool` (i.e., `-o tool`) options found in
+`command_options`, and `cfg_options`, then an optional `--` (end of all
+options), then zero of more `filename_arg` filename arguments.
 
-The '-o tool' must NOT output any '-o tool' options as '-o tool' is NOT RECURSIVE.  A '-o tool' is free, however,
-to execute other '-o tool' output tools and merge the output from those tools into its own.
+The `-o tool` must NOT output any `-o tool` options as `-o tool` is NOT
+RECURSIVE.  A `-o tool` is free, however, to execute other `-o tool` output
+tools and merge the output from those tools into its own.
 
 
-### Special -E exitcode option
+### Special `-E exitcode` option
 
-When '-E exitcode' is evaluated, the application will exit with the 'exitcode' value.  If one wishes to also
-output a message to stderr, the '-e string' must come BEFORE any '-E exitcode' in the command line.
-
+When `-E exitcode` is evaluated, the application will exit with the `exitcode`
+value.  If one wishes to also output a message to `stderr`, the `-e string` must
+come **BEFORE** any `-E exitcode` in the command line.
 
 ### Substitution tokens
 
-All tokens (i.e., strings of the form '%%token%%') MUST be substituted (by some -s token=value)
-in all HTML output, except during phase numbers 20-29 (i.e., except 'before tool' output, pandoc wrapper output,
-and except 'after tool' output), or command will exit non-zero, unless -S is given.  If -S is given,
-only a warning about un-substituted tokens will be written to stderr.
+All tokens (i.e., strings of the form `%%token%%`) **MUST** be substituted (by
+some `-s token=value`) in all HTML output, except during phase numbers 20-29
+(i.e., except `before tool` output, pandoc wrapper output, and `after tool`
+output), or the command will exit non-zero, unless `-S` is given.  If `-S` is
+given, only a warning about non-substituted tokens will be written to `stderr`.
 
+The command line of tools in the [bin directory](index.html), and perhaps
+modified via the [md2html config file](../inc/md2html.cfg) may change to using a
+different filename for a given phase.
 
-The command line of tools in the [bin](index.html) directory,
-and perhaps modified via [md2html config file](../inc/md2html.cfg) file may change
-to using a different filename for a given phase.
-
-For example when forming the HTML from `2020/ferguson2/chocolate-cake.html`,
-a different "topnav" navigation bar is needed.  So instead of the
+For example when forming the HTML from
+[2020/ferguson1/chocolate-cake.md](/2020/ferguson1/chocolate-cake.md),
+a different `topnav` navigation bar is needed.  So instead of the
 usual top navigation bar that normally directs people to the previous
 entry for the year, or go up to the year page, or to the next entry
 for the year, a top navigation bar to just go up to the entry's
-main page is needed.   A line in the [md2html config file](../inc/md2html.cfg) file
-that refers to `2020/ferguson1/chocolate-cake.html` may specify use
-of `topnav.up2index.html` instead of using the `topnav.default.html` default.
+main page is needed.   A line in the [md2html config file](../inc/md2html.cfg)
+that refers to
+[2020/ferguson1/chocolate-cake.md](/2020/ferguson1/chocolate-cake.md) may
+specify use of `topnav.up2index.html` (as `topnav.up2index`)instead of using the
+`topnav.default.html` (`topnav.default.html`) default.
 
-The HTML phase may be skipped resulting in no HTML output during a given phase.
-Furthermore, forming HTML content from a given markdown file altogether.
+The HTML phase may be skipped resulting in no HTML output during a given phase
+and furthermore, forming no HTML content from a given markdown file altogether.
 
-See comments in the [md2html config file](../inc/md2html.cfg) file for details.
+See comments in the [md2html config file](../inc/md2html.cfg) for details.
 See also, the tool [readme2index.sh](readme2index.sh) for an example of
 how such command lines are used.
 
@@ -575,7 +609,8 @@ on the [official IOCCC web site](https://www.ioccc.org).
 These files are used to form **MOST** of the HTML content
 on the [experimental web site](https://ioccc-src.github.io/temp-test-ioccc/).
 
-... and in particular files under [inc](../inc/index.html) that are of the form (called default HTML files) ...:
+... and in particular files under [inc](../inc/index.html) that are of the form
+(called default HTML files) ...:
 
 ```
 *.default.html
@@ -584,15 +619,16 @@ on the [experimental web site](https://ioccc-src.github.io/temp-test-ioccc/).
 ... contain default content used to form IOCCC HTML / IOCCC web pages.
 
 Instead of editing the default HTML files in order to fix a special web page,
-consider making a copy of the default file and modifying the [md2html config file](md2html.cfg) to refer to the copy instead.  That way your special case situation will
-not impact **MOST** of the HTML content.
+consider making a copy of the default file and modifying the [md2html config
+file](md2html.cfg) to refer to the copy instead.  That way your special case
+situation will not impact **MOST** of the HTML content.
 
 
-# Why do we do not use certain well-known HTML technologies
+# Why we do not use certain well-known HTML technologies
 
-You may wonder why we need these files in the first place.
-You may wonder why we even need the tools in the [bin](index.html) directory
-when there other solutions available to form web pages.
+You may wonder why we need these files in the first place.  You may wonder why
+we even need the tools in the [bin](index.html) directory when there other
+solutions available to form web pages.
 
 
 ## <a name="static-only"></a>Static web pages only
@@ -600,20 +636,24 @@ when there other solutions available to form web pages.
 Here are some reasons why we are using these files and
 special tools to create HTML content / IOCCC web pages:
 
-We host [official IOCCC web site](https://www.ioccc.org) via [GitHub pages](https://pages.github.com).
-As of the time this file written, **only static web pages are supported**.
+We host [official IOCCC web site](https://www.ioccc.org) via [GitHub
+pages](https://pages.github.com).  As of the time this file written, **only
+static web pages are supported**.
 
 
 ## We cannot use server side include
 
-We use [static web pages](#static-only), so use of "server side include" is not available to the IOCCC.
+We use [static web pages](#static-only), so use of "server side include" is not
+available to the IOCCC.
 
-For example, Apache SSI "#include" does not work on [GitHub pages](https://pages.github.com).
+For example, Apache SSI "#include" does not work on [GitHub
+pages](https://pages.github.com).
 
 
 ## We cannot use a back-end database
 
-We use [static web pages](#static-only), so use of "back-end database" is not available to the IOCCC.
+We use [static web pages](#static-only), so use of a "back-end database" is not
+available to the IOCCC.
 
 
 ## <a name="why-github"></a>We cannot use non-GitHub web servers
@@ -632,43 +672,44 @@ by someone else who is not so generous.  While it is possible that GitHub might 
 suffer a similar fate, for the time being we are betting that GitHub will remain
 willing to host the IOCCC.
 
-The [official IOCCC web site](https://www.ioccc.org) is, after all, primarily C source code
-with some supporting documentation.  As such it is a natural fit for GitHub and
-[GitHub pages](https://pages.github.com).
+The [official IOCCC web site](https://www.ioccc.org) is, after all, primarily C
+source code with some supporting documentation (sometimes :-) ).  As such it is
+a natural fit for GitHub and [GitHub pages](https://pages.github.com).
 
 
-## We cannot use the HTML object tag
+## We cannot use the HTML `<object>` element
 
-The _<_ object _>_ HTML tag does not work for our needs.
+The `<object>` HTML element does not work for our needs.
 
 The browser context relationship between the HTML content holds the
-HTML tag does not extend into the content that the tag includes.
-For example, menu bars will not operate as specified by the [ioccc CSS](../ioccc.css).
+HTML element does not extend into the content that the element includes.
+For example, menu bars will not operate as specified by the
+[ioccc.css](../ioccc.css).
 
 
-## We cannot use the HTML embed tag
+## We cannot use the HTML `<embed>` element
 
-The _<_ embed _>_ HTML tag does not work for our needs.
+The `<embed>` HTML element does not work for our needs.
 
-This tag wants one to specify the _width_ and _height_ in pixels.
+This element wants one to specify the `width` and `height` in pixels.
 Use of a percentage is not officially supported even if some browsers
-might do so.  Our Responsive Web Design on the [ioccc CSS](../ioccc.css)
+might do so.  Our Responsive Web Design in the [ioccc.css](../ioccc.css)
 needs to be responsive to small-sized cell phone-like screens,
 mid-sized table-like screens, as well as large-sized desktop-like screens.
-Specifying a _width_ and _height_ in pixels will not work well in
+Specifying a `width` and `height` in pixels will not work well in
 all of those screen size contexts.
 
 
-## We cannot use the HTML iframe tag
+## We cannot use the HTML `<iframe>` element
 
-The _<_ iframe _>_ HTML tag does not work for our needs.
+The `<iframe>` HTML element does not work for our needs.
 
-This tag wants one to specify the _width_ and _height_ in pixels.
+This element wants one to specify the `width` and `height` in pixels.
 Use of a percentage is not officially supported even if some browsers
-might do so.  Our Responsive Web Design on the [ioccc CSS](../ioccc.css)
+might do so.  Our Responsive Web Design in the [ioccc.css](../ioccc.css)
 needs to be responsive to small-sized cell phone-like screens,
 mid-sized table-like screens, as well as large-sized desktop-like screens.
-Specifying a _width_ and _height_ in pixels will not work well in
+Specifying a `width` and `height` in pixels will not work well in
 all of those screen size contexts.
 
 
@@ -676,11 +717,13 @@ all of those screen size contexts.
 
 We do not use JavaScript to include HTML content.
 
-While the IOCCC may use JavaScript in the future to directly render things like C source code,
-we will do so in such a way that someone will be able to view [official IOCCC web site](https://www.ioccc.org)
-content with JavaScript disabled.
+While the IOCCC may use JavaScript in the future to directly render things like
+C source code, we will do so in such a way that someone will be able to view
+[official IOCCC web site](https://www.ioccc.org) content with JavaScript
+disabled.
 
-The IOCCC will **NOT MANDATE USE OF JavaScript** to view [official IOCCC web site](https://www.ioccc.org).
+The IOCCC will **NOT MANDATE USE OF JavaScript** to view [official IOCCC web
+site](https://www.ioccc.org).
 
 For this reason, we cannot use JavaScript include HTML content.
 
@@ -695,26 +738,30 @@ The following IOCCC terms apply to tools, JSON files, and the directory structur
 An individual who was an `author` of at least one winning IOCCC entry.
 
 Some authors have submitted more than one IOCCC entry that won.  Some winning
-IOCCC entries have more than one author.
+IOCCC entries have more than one author. In that case we might use the word
+`authors`.
 
 
 ## `author_handle`
 
 An `author_handle` is string that refers to a given author and is unique to the
-IOCCC.  Each author has exactly one `author_handle`.
+IOCCC.  Each author has **EXACTLY ONE** `author_handle`.
 
-For each `author_handle`, there will be a JSON file of the form:
+For each `author_handle`, there will be a JSON file located at:
 
 ```
 author/author_handle.json
 ```
 
+where `author_handle` is the author's `author_handle`.
+
 Because the `author_handle` is used to form a JSON filename, the string must be
-lower case POSIX safe string.  Furthermore, the `author_handle` must be an ASCII
+a POSIX safe string with the addition of `+` (for technical reasons beyond this
+document).  In particular, the `author_handle` must be an ASCII
 string that matches this regexp:
 
 ```re
-^[0-9a-z][0-9a-z_]*$
+^[0-9A-Za-z][0-9A-Za-z._+-]*$"
 ```
 
 Default `author_handle`'s do not have multiple consecutive `_` (underscore)
@@ -759,26 +806,27 @@ Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$
 
 ## `entry`
 
-An IOCCC entry that won an award for given IOCCC.
+An IOCCC entry that won an award for a given IOCCC.
 
-A `entry` has one more more `author`s.
+An `entry` has one more more `author`s.
 
-Each `entry` is contained under its own directory.  The parent of the entry directory
-is the year's directory.
+Each `entry` is contained under its own directory.  The parent of the entry
+directory is the year's directory.
 
-While in most cases a `entry` consists of files under a entry's directory,
-there are a few cases where a `entry` directory contains subdirectories.
+While in most cases an `entry` consists of files under an entry's directory,
+there are a few cases where an `entry` directory contains subdirectories.
 
-Use of subdirectories under a `entry` directory is discouraged and
+Use of subdirectories under an `entry` directory is discouraged and
 may be limited to previous `entry`s that used them.
 
-NOTE: In the past, the term _winner_ was used in instead of today's term of _entry_.
+NOTE: In the past, the term `winner` was used in instead of today's term of
+`entry`.
 
 
 ## `year`
 
 A `year` is a 4 character string.  Most years are 4-digit strings that
-represent the year.  Some special `year` strings are possible, such as _`mock`_.
+represent the year.  Some special `year` strings are possible, such as `mock`.
 Non-numeric `year` strings are lower case.
 
 A `year` string matches this regexp:
@@ -792,14 +840,14 @@ The `year` directories reside directly below the top level directory.
 
 ## `.year`
 
-Each `year` will have a file directory under it named:
+Each `year` directory will have a file under it named:
 
 ```
 .year
 ```
 
 The contents of the `.year` file is the year string of the directory. For
-instance, [2020/.year](,,/2020/.year) has the string: `2020`.
+instance, [2020/.year](../2020/.year) has the string: `2020`.
 
 
 ## `dir`
@@ -812,7 +860,7 @@ A `dir` is a string that matches this regexp:
 ^[a-z][0-9a-z.-]*$
 ```
 
-Each `_entry_ is under its own individual directory.  This directory
+Each `entry` is under its own individual directory.  This directory
 is directly under a `year` directory.
 
 
