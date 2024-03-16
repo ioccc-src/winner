@@ -209,7 +209,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -rf *.dSYM decoded code.c encoded.c
+	${RM} -rf *.dSYM decoded code.c encoded.c wrongcoded
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
