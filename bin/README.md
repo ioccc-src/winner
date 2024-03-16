@@ -681,10 +681,9 @@ a natural fit for GitHub and [GitHub pages](https://pages.github.com).
 
 The `<object>` HTML element does not work for our needs.
 
-The browser context relationship between the HTML content holds the
-HTML element does not extend into the content that the element includes.
-For example, menu bars will not operate as specified by the
-[ioccc.css](../ioccc.css).
+HTML elements do not extend into the content that they include.
+For example, menu bars [ioccc.css](../ioccc.css) will not operate
+under an HTML element.
 
 
 ## We cannot use the HTML `<embed>` element
