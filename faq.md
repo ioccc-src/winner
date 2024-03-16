@@ -2504,11 +2504,12 @@ See [FAQ 6.6](#author_json) for information about the contents of these JSON fil
 how they are used.
 
 Because the `author_handle` is used to form a JSON filename, the string must be
-POSIX safe string.  Furthermore, the `author_handle` must be an ASCII
-string that matches this regexp:
+POSIX safe string plus the use of `+` (for technical reasons beyond this
+answer).  In particular, the `author_handle` must be an ASCII string that
+matches this regexp:
 
 ```re
-^[0-9A-Za-z][0-9A-Za-z_]*$
+^[0-9A-Za-z][0-9A-Za-z._+-]*$"
 ```
 
 Default `author_handle`'s do not have multiple consecutive `_` (underscore)
@@ -3125,7 +3126,7 @@ becomes an _entry_.  Only then do the IOCCC judges look into
 the special JSON file to discover who the _author_(s) are.
 
 **An apology for being inconsistent**: In the past, the IOCCC used the term _entry_ to
-refer to what is now an _submission_.  In a number of historical cases,
+refer to what is now a _submission_.  In a number of historical cases,
 such as old rules and old guidelines, terms such as _entry_ may still be
 found.  Moreover, out of habit, the IOCCC judges sometimes use old
 names such as _entry_ when they should use _submission_.  Sorry (tm Canada)! :-)
