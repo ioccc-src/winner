@@ -68,6 +68,83 @@ export TOPDIR
 export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc"
 export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 export CAP_W_FLAG_FOUND=
+export MODTIME_METHOD=""
+
+
+# output_modtime - file modification time in W3C Datetime format:
+#
+#       https://www.w3.org/TR/NOTE-datetime
+#
+# for use in XML format for sitemaps:
+#
+#       https://www.sitemaps.org/protocol.html
+#
+# usage:
+#       output_modtime filename
+#
+function output_modtime
+{
+    local FILENAME;	# filename argument
+
+    # parse args
+    #
+    if [[ $# -ne 1 ]]; then
+        echo "$0: ERROR: in output_modtime: expected 1 arg, found $#" 1>&2
+        return 1
+    fi
+    FILENAME="$1"
+
+    # produce output given the MODTIME_METHOD
+    #
+    case "$MODTIME_METHOD" in
+
+    # macOS stat
+    #
+    macos_stat)
+	TZ=UTC stat -f '%Sm' -t '%FT%T+00:00' "$FILENAME"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: in output_modtime:" \
+		 "TZ=UTC stat -f '%Sm' -t '%FT%T+00:00' $FILENAME failed, error code: $status" 1>&2
+	    exit 1
+	fi
+	;;
+
+    # RHEL Linux stat
+    #
+    RHEL_stat)
+	TZ=UTC stat -c '%y' "$FILENAME" | sed -e 's/ /T/' -e 's/\.[0-9]* //' -e 's/\([0-9][0-9]\)$/:&/'
+	status0="${PIPESTATUS[0]}"
+	status1="${PIPESTATUS[1]}"
+	if [[ $status0 -ne 0 || $status1 -ne 0 ]]; then
+	    echo "$0: ERROR: in output_modtime:" \
+		 "TZ=UTC stat -c '%y' $FILENAME | sed .. failed, error codes: $status0 and $status1" 1>&2
+	    exit 1
+	fi
+	;;
+
+    ls_D)
+	# We want to look at the format of ls -D, not find
+	#
+	# SC2012 (info): Use find instead of ls to better handle non-alphanumeric filenames.
+	# https://www.shellcheck.net/wiki/SC2012
+	# shellcheck disable=SC2012
+	TZ=UTZ ls -D '%FT%T+00:00' -ld "$TOP_FILE" | awk '{print $6;}'
+	status0="${PIPESTATUS[0]}"
+	status1="${PIPESTATUS[1]}"
+	if [[ $status0 -ne 0 || $status1 -ne 0 ]]; then
+	    echo "$0: ERROR: in output_modtime:" \
+		 "TZ=UTZ ls -D '%FT%T+00:00' -ld $FILENAME | awk .. failed, error codes: $status0 and $status1" 1>&2
+	    exit 1
+	fi
+	;;
+
+    *) echo "0: in output_modtime: unknown MODTIME_METHOD value: $MODTIME_METHOD" 1>&2
+	exit 9
+	;;
+    esac
+    return 0
+}
 
 # set usage message
 #
@@ -101,6 +178,7 @@ Exit codes:
      6	       problems found with or in the topdir or topdir/YYYY directory
      7	       problems found with or in the entry topdir/YYYY/dir directory
      8	       some file is missing and -W was not given
+     9	       unable to determine a method to find the modification time of a file in W3C Datefile format
  >= 10         internal error
 
 $NAME version: $VERSION"
@@ -293,6 +371,69 @@ if [[ ! -s $TOP_FILE ]]; then
     exit 6
 fi
 
+# determine how we can determine the file modification time in W3C Datetime format:
+#
+#	https://www.w3.org/TR/NOTE-datetime
+#
+# for use in XML format for sitemaps:
+#
+#	https://www.sitemaps.org/protocol.html
+#
+# Unfortunately there is NO single widely available, but simple command produce a modification
+# time in W3C Datetime format.  At best we can try one of several methods in the hopes that
+# we can find a method for the system in question.
+#
+# We will attempt to find the modification time in W3C Datetime of the .top file.
+#
+# Try macOS stat:
+#
+#	TZ=UTC stat -f '%Sm' -t '%FT%T+00:00' filename
+#
+TZ=UTC stat -f '%Sm' -t '%FT%T+00:00' "$TOP_FILE" > /dev/null 2>&1
+status="$?"
+if [[ $status -eq 0 ]]; then
+    MODTIME_METHOD="macos_stat"
+    if [[ $V_FLAG -ge 5 ]]; then
+        echo "$0: debug[5]: TZ=UTC stat -f '%Sm' -t '%FT%T+00:00' works, MODTIME_METHOD: $MODTIME_METHOD" 1>&2
+    fi
+
+else
+
+    # Try RHEL Linux stat:
+    #
+    #	TZ=UTC stat -c '%y' faq.md | sed -e 's/ /T/' -e 's/\.[0-9]* //' -e 's/\([0-9][0-9]\)$/:&/'
+    #
+    # NOTE: We only need to test the stat command.
+    #
+    TZ=UTC stat -c '%y' "$TOP_FILE" > /dev/null 2>&1
+    status="$?"
+    if [[ $status -eq 0 ]]; then
+	MODTIME_METHOD="RHEL_stat"
+	if [[ $V_FLAG -ge 5 ]]; then
+	    echo "$0: debug[5]: TZ=UTC stat -c '%y' works, MODTIME_METHOD: $MODTIME_METHOD" 1>&2
+	fi
+
+    else
+
+	# Try ls -D:
+	#
+	#	TZ=UTZ ls -D '%FT%T+00:00' -ld
+	#
+	TZ=UTZ ls -D '%FT%T+00:00' -ld "$TOP_FILE" > /dev/null 2>&1
+	status="$?"
+	if [[ $status -eq 0 ]]; then
+	    MODTIME_METHOD="ls_D"
+	    if [[ $V_FLAG -ge 5 ]]; then
+		echo "$0: debug[5]: TZ=UTZ ls -D '%FT%T+00:00' -ld works, MODTIME_METHOD: $MODTIME_METHOD" 1>&2
+	    fi
+
+	else
+	    echo "$0: ERROR: we cannot determine how to form a file modification time in W3C Datetime formt" 1>&2
+	    exit 9
+	fi
+    fi
+fi
+
 # parameter debugging
 #
 if [[ $V_FLAG -ge 3 ]]; then
@@ -319,6 +460,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: SITEMAP=$SITEMAP" 1>&2
     echo "$0: debug[3]: FILELIST_ENTRY_JSON_AWK=$FILELIST_ENTRY_JSON_AWK" 1>&2
     echo "$0: debug[3]: FILELIST=$FILELIST" 1>&2
+    echo "$0: debug[3]: MODTIME_METHOD=$MODTIME_METHOD" 1>&2
 fi
 
 # If -N, time to exit
@@ -682,11 +824,10 @@ if [[ -z $NOOP ]]; then
     echo '<?xml version="1.0" encoding="UTF-8"?>' >> "$TMP_SITEMAP"
     echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> "$TMP_SITEMAP"
 
-    # output XML for each file in the manifest
+    # output XML for each file in the manifest, in sorted filepath order
     #
-    TZ=UTC xargs ls -D '%FT%T+00:00' -ld < "$TMP_MANIFEST_LIST" |
-      awk '{print $6, $7;}' |
-      while read -r LASTMOD FILE_PATH; do
+    sort -d -f -u -t / "$TMP_MANIFEST_LIST" | while read -r FILE_PATH; do
+	LASTMOD=$(output_modtime "$FILE_PATH")
 	echo '<url>'
 	echo "    <loc>$SITE_URL/$FILE_PATH</loc>"
 	echo "    <lastmod>$LASTMOD</lastmod>"
