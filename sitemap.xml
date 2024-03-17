@@ -19066,15 +19066,15 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/all-run.sh</loc>
-    <lastmod>2024-02-24T03:09:30+00:00</lastmod>
+    <lastmod>2024-03-17T18:08:58+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/all-years.sh</loc>
-    <lastmod>2024-02-24T03:09:38+00:00</lastmod>
+    <lastmod>2024-03-17T18:09:01+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/chk-entry.sh</loc>
-    <lastmod>2024-02-24T03:09:46+00:00</lastmod>
+    <lastmod>2024-03-17T18:09:03+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/filelist.entry.json.awk</loc>
@@ -19082,35 +19082,35 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/gen-authors.sh</loc>
-    <lastmod>2024-03-09T00:06:35+00:00</lastmod>
+    <lastmod>2024-03-17T18:09:05+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/gen-location.sh</loc>
-    <lastmod>2024-03-09T00:06:52+00:00</lastmod>
+    <lastmod>2024-03-17T18:09:08+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/gen-other-html.sh</loc>
-    <lastmod>2024-03-09T00:17:43+00:00</lastmod>
+    <lastmod>2024-03-17T18:09:11+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/gen-sitemap.sh</loc>
-    <lastmod>2024-03-17T06:32:44+00:00</lastmod>
+    <lastmod>2024-03-17T18:09:13+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/gen-status.sh</loc>
-    <lastmod>2024-03-10T20:23:09+00:00</lastmod>
+    <lastmod>2024-03-17T18:09:15+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/gen-top-html.sh</loc>
-    <lastmod>2024-03-09T06:15:32+00:00</lastmod>
+    <lastmod>2024-03-17T18:09:17+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/gen-year-index.sh</loc>
-    <lastmod>2024-03-09T17:12:50+00:00</lastmod>
+    <lastmod>2024-03-17T18:09:19+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/gen-years.sh</loc>
-    <lastmod>2024-02-24T03:10:15+00:00</lastmod>
+    <lastmod>2024-03-17T18:09:21+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/index.html</loc>
@@ -19122,31 +19122,31 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/md2html.sh</loc>
-    <lastmod>2024-03-09T17:16:31+00:00</lastmod>
+    <lastmod>2024-03-17T18:09:23+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/output-index-author.sh</loc>
-    <lastmod>2024-03-10T20:58:58+00:00</lastmod>
+    <lastmod>2024-03-17T18:09:25+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/output-index-inventory.sh</loc>
-    <lastmod>2024-02-28T06:35:22+00:00</lastmod>
+    <lastmod>2024-03-17T18:09:26+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/output-year-index.sh</loc>
-    <lastmod>2024-02-28T01:45:19+00:00</lastmod>
+    <lastmod>2024-03-17T18:09:28+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/pandoc-wrapper.sh</loc>
-    <lastmod>2024-02-24T03:11:04+00:00</lastmod>
+    <lastmod>2024-03-17T18:09:30+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/quick-readme2index.sh</loc>
-    <lastmod>2024-03-09T06:24:03+00:00</lastmod>
+    <lastmod>2024-03-17T18:09:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/readme2index.sh</loc>
-    <lastmod>2024-03-09T06:23:51+00:00</lastmod>
+    <lastmod>2024-03-17T18:09:34+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/README.md</loc>
@@ -19158,19 +19158,19 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/sort.gitignore.sh</loc>
-    <lastmod>2024-02-24T03:11:23+00:00</lastmod>
+    <lastmod>2024-03-17T18:09:36+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/status2html.sh</loc>
-    <lastmod>2024-03-10T20:59:43+00:00</lastmod>
+    <lastmod>2024-03-17T18:09:39+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/subst.default.sh</loc>
-    <lastmod>2024-02-24T03:11:31+00:00</lastmod>
+    <lastmod>2024-03-17T18:09:41+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/subst.entry-index.sh</loc>
-    <lastmod>2024-03-03T07:04:39+00:00</lastmod>
+    <lastmod>2024-03-17T18:09:44+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/subst.entry-navbar.awk</loc>
@@ -19178,7 +19178,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/subst.year-index.sh</loc>
-    <lastmod>2024-03-03T07:04:52+00:00</lastmod>
+    <lastmod>2024-03-17T18:09:51+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/subst.year-navbar.awk</loc>
@@ -19186,15 +19186,15 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/tar-all.sh</loc>
-    <lastmod>2024-02-28T07:00:13+00:00</lastmod>
+    <lastmod>2024-03-17T18:10:01+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/tar-entry.sh</loc>
-    <lastmod>2024-02-28T07:00:22+00:00</lastmod>
+    <lastmod>2024-03-17T18:10:03+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/tar-year.sh</loc>
-    <lastmod>2024-02-28T07:00:38+00:00</lastmod>
+    <lastmod>2024-03-17T18:10:06+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bugs.html</loc>
@@ -19418,6 +19418,6 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/years.html</loc>
-    <lastmod>2024-03-10T17:00:58+00:00</lastmod>
+    <lastmod>2024-03-17T17:51:16+00:00</lastmod>
 </url>
 </urlset>

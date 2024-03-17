@@ -42,7 +42,6 @@ fi
 shopt -s nullglob	# enable expanded to nothing rather than remaining unexpanded
 shopt -u failglob	# disable error message if no matches are found
 shopt -u dotglob	# disable matching files starting with .
-shopt -s globskipdots	# enable never matching . nor ..
 shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
