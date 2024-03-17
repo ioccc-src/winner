@@ -26,18 +26,51 @@
 #
 # Share and enjoy! :-)
 
-# firewall - must be bash with a version 4.2 or later
+# firewall - run only with a bash that is version 5.1.8 or later
 #
-# We must declare arrays with -ag or -Ag, and we need loops to "export" modified variables.
+# The "/usr/bin/env bash" command must result in using a bash that
+# is version 5.1.8 or later.
 #
-if [[ -z ${BASH_VERSINFO[0]} || ${BASH_VERSINFO[0]} -lt 4 || ${BASH_VERSINFO[0]} -eq 4 && ${BASH_VERSINFO[1]} -lt 2 ]]; then
-    echo "$0: ERROR: bash version must be >= 4.2: $BASH_VERSION" 1>&2
+# We could relax this version and insist on version 4.2 or later.  Versions
+# of bash between 4.2 and 5.1.7 might work.  However, to be safe, we will require
+# bash version 5.1.8 or later.
+#
+# WHY 5.1.8 and not 4.2?  This safely is done because macOS homebrew bash we
+# often use it "version 5.2.26(1)-release" or later, and the RHEL Linux bash we
+# use often use is "version 5.1.8(1)-release" or later.  These versions are what
+# we initially tested.  We recommend you either upgrade bash or install a newer
+# version of bash and adjust your $PATH so that "/usr/bin/env bash" finds a basj
+# that is version 5.1.8 or later.
+#
+# NOTE: The macOS shipped, as of 2024 March 15, a version of bash is something like
+#	bash "version 3.2.57(1)-release".  That macOS shipped version of bash
+#	will NOT work.  For users of macOS we recommend you install homebrew,
+#	(see https://brew.sh), and then install homebrew bash (/opt/homebrew/bin/bash),
+#	and then arrange your $PATH so that "/opt/homebrew/bin" is ahead of "/bin".
+#
+# NOTE: And while macports might work, we noticed a number of subtle differences
+#	with some of their ported tools to suggest you might be better off
+#	with installing homebrew (see https://brew.sh).  No disrespect is intended
+#	to the macports team as they do a commendable job.  Nevertheless we ran
+#	into enough differences with macports environments to suggest you
+#	might find a better experience with this tool under homebrew instead.
+#
+if [[ -z ${BASH_VERSINFO[0]} ||
+	 ${BASH_VERSINFO[0]} -lt 5 ||
+	 ${BASH_VERSINFO[0]} -eq 5 && ${BASH_VERSINFO[1]} -lt 1 ||
+	 ${BASH_VERSINFO[0]} -eq 5 && ${BASH_VERSINFO[1]} -eq 1 && ${BASH_VERSINFO[1]} -lt 8 ]]; then
+    echo "$0: ERROR: bash version needs to be >= 5.1.8: $BASH_VERSION" 1>&2
+    echo "$0: Warning: bash version >= 4.2 might work but 5.1.8 was the minimum we tested" 1>&2
+    echo "$0: Notice: For macOS users, install homebrew (see https://brew.sh)," \
+	 "then install homebrew bash (usually in /opt/homebrew/bin/bash)," \
+	 "and then arrange \$PATH so that /opt/homebrew/bin is ahead of /bin" 1>&2
     exit 4
 fi
 
 # setup bash file matching
 #
-# Requires bash with a version 4.2 or later
+# We must declare arrays with -ag or -Ag, and we need loops to "export" modified variables.
+# This requires a bash with a version 4.2 or later.  See the larger comment above about bash versions.
 #
 shopt -s nullglob	# enable expanded to nothing rather than remaining unexpanded
 shopt -u failglob	# disable error message if no matches are found
@@ -100,7 +133,7 @@ Exit codes:
      1	       some internal tool exited non-zero
      2         -h and help string printed or -V and version string printed
      3         command line error
-     4         bash version is < 4.2
+     4         bash version is too old
      5	       some internal tool is not found or not an executable file
      6	       problems found with or in the topdir or topdir/YYYY directory
      7	       problems found with or in the entry topdir/YYYY/dir directory
