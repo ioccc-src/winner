@@ -242,7 +242,7 @@ indent.c:
 	entry_index gen_top_html thanks gen_other_html quick_entry_index \
 	gen_year_index quick_www www \
 	form_entry_tarball form_year_tarball form_all_tarball tar \
-	gen_status gen_sitemap sitemap update
+	gen_status gen_sitemap sitemap timestamp update
 
 # Suggest rules in this section
 #
@@ -264,12 +264,16 @@ help:
 	@echo make quick_entry_index
 	@echo make quick_www
 	@echo make www
+	@echo
 	@echo make form_entry_tarball
 	@echo make form_year_tarball
 	@echo make form_all_tarball
 	@echo make tar
+	@echo
 	@echo make gen_status
 	@echo make gen_sitemap
+	@echo make timestamp
+	@echo
 	@echo make update
 
 # form the top level .top, YYYY level .year and winner level .path files
@@ -485,14 +489,21 @@ gen_sitemap sitemap: ${GEN_SITEMAP}
 	${GEN_SITEMAP} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
+# generate things with timestamps
+#
+timestamp:
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${MAKE} gen_status
+	${MAKE} gen_sitemap
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
 # update everything on the web site
 #
 update:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${MAKE} www
 	${MAKE} tar
-	${MAKE} gen_status
-	${MAKE} gen_sitemap
+	${MAKE} timestamp
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 ##################
