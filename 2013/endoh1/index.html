@@ -144,8 +144,7 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>STATUS: INABIAF - please **DO NOT** fix</code></pre>
-<p>For more detailed information see <a
-href="../../bugs.html#2013_endoh1">2013 endoh1 bugs</a>.</p>
+<p>For more detailed information see <a href="../../bugs.html#2013_endoh1">2013 endoh1 bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh1</span> <span class="pp">[</span><span class="ss">file.lazy</span><span class="pp">]</span></span></code></pre></div>
 <h2 id="try">Try:</h2>
@@ -153,12 +152,11 @@ href="../../bugs.html#2013_endoh1">2013 endoh1 bugs</a>.</p>
 <p>You might also enjoy running:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cc</span> <span class="at">-E</span> endoh1.c <span class="kw">|</span> <span class="fu">less</span></span></code></pre></div>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
-<p>We liked this entry because it can serve as a standalone program as
-well as an include file; and, as usual, because its input data is at
-least as obfuscated as the program itself.</p>
-<p>This entry can be considered an abuse of the GCC’s optimizer; it
-takes GCC about 4x longer to compile it with -O3 than without, compared
-to clang’s 2x.</p>
+<p>We liked this entry because it can serve as a standalone program as well as an
+include file; and, as usual, because its input data is at least as obfuscated as
+the program itself.</p>
+<p>This entry can be considered an abuse of the GCC’s optimizer; it takes GCC about
+4x longer to compile it with -O3 than without, compared to clang’s 2x.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="remarks">Remarks</h3>
 <div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">less</span> endoh1.c</span>
@@ -166,54 +164,42 @@ to clang’s 2x.</p>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh1</span></span></code></pre></div>
 <p>… Isn’t there any more to it?</p>
 <p>Yes, of course.</p>
-<p>This is a tool <em>for C programmers</em> to play the <a
-href="http://en.wikipedia.org/wiki/SKI_combinator_calculus">SKI
-combinator calculus</a>, especially, <a
-href="https://tromp.github.io/cl/lazy-k.html">Lazy K</a>.</p>
-<p>This program will shine when it is used as a library. For example, <a
-href="hello.lazy">hello.lazy</a> is a “Hello world” program written in
-Lazy K.</p>
+<p>This is a tool <em>for C programmers</em> to play the <a href="http://en.wikipedia.org/wiki/SKI_combinator_calculus">SKI combinator calculus</a>,
+especially, <a href="https://tromp.github.io/cl/lazy-k.html">Lazy K</a>.</p>
+<p>This program will shine when it is used as a library. For example,
+<a href="hello.lazy">hello.lazy</a> is a “Hello world” program written in Lazy K.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> lazy hello.lazy</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Hello,</span> world!</span></code></pre></div>
-<p>where <code>lazy</code> is <a href="https://github.com/irori/lazyk">a
-reference implementation of Lazy K</a>. At the same time, <a
-href="hello.lazy">hello.lazy</a> is <em>a valid C program</em> that uses
-<a href="endoh1.c">endoh1.c</a> as a library.</p>
+<p>where <code>lazy</code> is <a href="https://github.com/irori/lazyk">a reference implementation of Lazy K</a>. At the same time,
+<a href="hello.lazy">hello.lazy</a> is <em>a valid C program</em> that uses <a href="endoh1.c">endoh1.c</a>
+as a library.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gcc <span class="at">-o</span> hello <span class="at">-xc</span> hello.lazy</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./hello</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Hello,</span> world!</span></code></pre></div>
-<p>In other words, this program is a kind of <a
-href="http://en.wikipedia.org/wiki/Polyglot_%28computing%29">polyglot</a>.</p>
-<p>The usage is simple: you just have to wrap Lazy K program with
-<code>#include "endoh1.c"</code>. Note that <code>#</code> is a comment
-in Lazy K.</p>
+<p>In other words, this program is a kind of <a href="http://en.wikipedia.org/wiki/Polyglot_%28computing%29">polyglot</a>.</p>
+<p>The usage is simple: you just have to wrap Lazy K program with <code>#include "endoh1.c"</code>. Note that <code>#</code> is a comment in Lazy K.</p>
 <h3 id="obfuscation">Obfuscation</h3>
 <p>… is inherent in SKI combinator calculus :-)</p>
-<p>In addition, it uses various hacks to parse SKI code as C, and to
-satisfy IOCCC’s size rule.</p>
+<p>In addition, it uses various hacks to parse SKI code as C,
+and to satisfy IOCCC’s size rule.</p>
 <ul>
 <li>Abuse of function pointers.</li>
 <li>Code duplication by macros.</li>
 <li>Short coding.</li>
 </ul>
 <p>These led to the good obfuscation.</p>
-<p>See <a href="#spoiler">Spoiler section</a> in detail, if you
-need.</p>
+<p>See <a href="#spoiler">Spoiler section</a> in detail, if you need.</p>
 <h3 id="limitation">Limitation</h3>
-<p>This program supports only “Combinator-calculus style notation” of
-Lazy K. “Unlambda style” and “Iota and Jot” style are not supported.</p>
-<p>Also, it requires a space between identifiers. In short, use
-<code>(S K)</code> instead of <code>(SK)</code>, “`sk”,
-<code>**i*i*i*ii*i*i*ii</code>, or <code>11111100011100</code>.</p>
-<p>Huge memory may be required to compile the program (about 300 MB on
-my machine).</p>
-<p>In addition, there are some limitations (and workarounds) mentioned
-in <a href="#spoiler">Spoiler section</a>.</p>
-<p>But I think it would only matter when you run the attached
-programs.</p>
+<p>This program supports only “Combinator-calculus style notation” of Lazy K.
+“Unlambda style” and “Iota and Jot” style are not supported.</p>
+<p>Also, it requires a space between identifiers. In short, use <code>(S K)</code> instead of
+<code>(SK)</code>, “`sk”, <code>**i*i*i*ii*i*i*ii</code>, or <code>11111100011100</code>.</p>
+<p>Huge memory may be required to compile the program (about 300 MB on my machine).</p>
+<p>In addition, there are some limitations (and workarounds) mentioned in <a href="#spoiler">Spoiler
+section</a>.</p>
+<p>But I think it would only matter when you run the attached programs.</p>
 <h3 id="portability">Portability</h3>
-<p>I confirmed that the program successfully worked with the following
-compilers:</p>
+<p>I confirmed that the program successfully worked with the following compilers:</p>
 <ul>
 <li>gcc 4.6.3 [Linux, Mac OS X]</li>
 <li>clang 3.0 [Linux, Mac OS X]</li>
@@ -222,8 +208,7 @@ compilers:</p>
 <li>N.B. tcc 0.9.25 seems to have a bug and fails to run it.</li>
 </ul></li>
 </ul>
-<p>Recent compilers with <code>-Wall -W -Wextra -pedantic</code> say
-nothing.</p>
+<p>Recent compilers with <code>-Wall -W -Wextra -pedantic</code> say nothing.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="at">-Wall</span> <span class="at">-W</span> <span class="at">-Wextra</span> <span class="at">-pedantic</span> prog.c</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">clang</span> <span class="at">-Wall</span> <span class="at">-W</span> <span class="at">-Wextra</span> <span class="at">-pedantic</span> prog.c</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">tcc</span> <span class="at">-Wall</span> <span class="at">-W</span> <span class="at">-Wextra</span> <span class="at">-pedantic</span> prog.c</span></code></pre></div>
@@ -233,47 +218,40 @@ nothing.</p>
 <li>Mac OS X</li>
 <li>Raspberry PI</li>
 </ul>
-<p>To check whether the program is specified on the command line or
-included from another source file, the program uses a predefined macro
-<code>__INCLUDE_LEVEL__</code>. It is a gcc extension, and also
-supported by clang. If your compiler does not support it, you cannot use
-the program as a library. But you can compile and run it as a standalone
-program, at least. In fact, tcc does not support the macro, but does
-work.</p>
+<p>To check whether the program is specified on the command line or included from
+another source file, the program uses a predefined macro <code>__INCLUDE_LEVEL__</code>.
+It is a gcc extension, and also supported by clang. If your compiler does not
+support it, you cannot use the program as a library. But you can compile and
+run it as a standalone program, at least. In fact, tcc does not support the
+macro, but does work.</p>
 <h3 id="spoiler">Spoiler</h3>
-<p>The whole program is interpreted by macro expansion. For example,
-<code>S (K I)</code> is translated to a normal C code,
-<code>(s)((k)(i))</code>, or simply <code>s(k(i))</code>.</p>
-<p>This expression returns an abstract syntax tree, and <a
-href="endoh1.c">endoh1.c</a> evaluates it.</p>
-<p>This program uses a very simple “term rewriting” approach for
-evaluating SKI combinator calculus. The rewriting rules are shown in the
-shape of the code.</p>
+<p>The whole program is interpreted by macro expansion.
+For example, <code>S (K I)</code> is translated to a normal C code, <code>(s)((k)(i))</code>, or
+simply <code>s(k(i))</code>.</p>
+<p>This expression returns an abstract syntax tree, and <a href="endoh1.c">endoh1.c</a>
+evaluates it.</p>
+<p>This program uses a very simple “term rewriting” approach for evaluating SKI
+combinator calculus. The rewriting rules are shown in the shape of the code.</p>
 <h4 id="abuse-of-function-pointers">Abuse of function pointers</h4>
 <p>Consider a sequence of function applications in C:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>s<span class="op">(</span>x<span class="op">)(</span>x<span class="op">)(</span>x<span class="op">)(</span>x<span class="op">)...</span></span></code></pre></div>
-<p>What type should <code>s</code> have? Unfortunately, C does
-<em>not</em> provide a “recursive type”, such as
-<code>typedef f (*f)();</code>.</p>
+<p>What type should <code>s</code> have? Unfortunately, C does <em>not</em> provide a “recursive
+type”, such as <code>typedef f (*f)();</code>.</p>
 <p>So, I used a heavily nested function pointer type:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">typedef</span> <span class="dt">void</span> <span class="op">*(*(*(*...(*(</span>f<span class="op">))()...)())())</span></span></code></pre></div>
-<p>This limits how many arguments one function can be consecutively
-applied to. But you can increase the number by tweaking the definition
-of macro <code>p</code>.</p>
+<p>This limits how many arguments one function can be consecutively applied to.
+But you can increase the number by tweaking the definition of macro <code>p</code>.</p>
 <h4 id="code-duplication-by-macros">Code duplication by macros</h4>
-<p>Next, we need to encode “closures”. A closure is a function together
-with an environment which is a reference to non-local variable.</p>
-<p>In this case, we need something that meets all of the following
-criteria:</p>
+<p>Next, we need to encode “closures”. A closure is a function together with an
+environment which is a reference to non-local variable.</p>
+<p>In this case, we need something that meets all of the following criteria:</p>
 <ul>
 <li>Is callable itself.</li>
-<li>Internally possesses a reference to another closure as a non-local
-variable.</li>
+<li>Internally possesses a reference to another closure as a non-local variable.</li>
 <li>Applies the internal closure to an argument when it is called.</li>
 </ul>
-<p>However, no type in C is callable and has a reference at the same
-time. (It is feasible by dynamic code generation, but it is far from
-portable.)</p>
+<p>However, no type in C is callable and has a reference at the same time.
+(It is feasible by dynamic code generation, but it is far from portable.)</p>
 <p>So, I addressed this issue by generating many function definitions
 statically by (ab)using macros:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> <span class="op">*</span>x1<span class="op">;</span> <span class="dt">void</span> f1<span class="op">(</span><span class="dt">void</span> <span class="op">*</span>y<span class="op">)</span> <span class="op">{</span> <span class="cf">return</span> apply<span class="op">(</span>x1<span class="op">,</span> y<span class="op">);</span> <span class="op">}</span></span>
@@ -282,79 +260,47 @@ statically by (ab)using macros:</p>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> <span class="op">*(</span>h<span class="op">[])</span> <span class="op">=</span> <span class="op">{</span> f1<span class="op">,</span> f2<span class="op">,</span> f3<span class="op">,</span> <span class="op">...</span> <span class="op">}</span></span></code></pre></div>
 <p>and by allotting each of them when a closure is needed.</p>
-<p>This leads to another limitation: the number of pre-defined closures
-limits how many identifiers (<code>S</code> <code>K</code>
-<code>I</code>) one program can use.</p>
-<p>But you can increase this number by tweaking the definition of macro
-<code>A</code> <code>B</code> <code>C</code> and <code>D</code>. (Note
-that closures are allotted only when parsing; after the evaluation
-starts, “out of closure” cannot occur.)</p>
+<p>This leads to another limitation: the number of pre-defined closures limits how
+many identifiers (<code>S</code> <code>K</code> <code>I</code>) one program can use.</p>
+<p>But you can increase this number by tweaking the definition of macro <code>A</code> <code>B</code> <code>C</code>
+and <code>D</code>. (Note that closures are allotted only when parsing; after the
+evaluation starts, “out of closure” cannot occur.)</p>
 <h4 id="short-cording">Short cording</h4>
-<p>This margin is too narrow to contain a detailed explanation. Instead,
-I just ask you one question. Can you tell what
-<code>v s[]={0,0,s+6,s+2,s+4,s,s+3,s+5,s+1};</code> is? I found this by
-using an <a
-href="https://en.wikipedia.org/wiki/Satisfiability_modulo_theories">SMT
+<p>This margin is too narrow to contain a detailed explanation. Instead, I just
+ask you one question. Can you tell what <code>v s[]={0,0,s+6,s+2,s+4,s,s+3,s+5,s+1};</code> is? I found this by using an <a href="https://en.wikipedia.org/wiki/Satisfiability_modulo_theories">SMT
 solver</a>.</p>
-<h2 id="copyright-and-cc-by-sa-4.0-license">Copyright and CC BY-SA 4.0
-License:</h2>
-<p>This file is Copyright (c) 2023 by Landon Curt Noll. All Rights
-Reserved. You are free to share and adapt this file under the terms of
-this license:</p>
+<h2 id="copyright-and-cc-by-sa-4.0-license">Copyright and CC BY-SA 4.0 License:</h2>
+<p>This file is Copyright (c) 2023 by Landon Curt Noll. All Rights Reserved.
+You are free to share and adapt this file under the terms of this license:</p>
 <pre><code>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</code></pre>
-<p>For more information, see:
-https://creativecommons.org/licenses/by-sa/4.0/</p>
+<p>For more information, see: https://creativecommons.org/licenses/by-sa/4.0/</p>
 
 <!-- END: this line ends content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 <!-- START: this line starts content for HTML phase 22 by: bin/output-index-inventory.sh via bin/md2html.sh -->
 
 <!-- START: this line starts content generated by: bin/output-index-inventory.sh -->
 
-<h1 id="inventory-for-2013endoh1"><a name="inventory"></a>Inventory for
-2013/endoh1</h1>
+<h1 id="inventory-for-2013endoh1"><a name="inventory"></a>Inventory for 2013/endoh1</h1>
 <p><a href="#top">Jump to top</a></p>
 <h2 id="primary-files">Primary files</h2>
 <ul>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/endoh1.c">endoh1.c</a>
-- entry source</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/Makefile">Makefile</a>
-- entry Makefile</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/endoh1.orig.c">endoh1.orig.c</a>
-- original source</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/try.sh">try.sh</a>
-- how to run</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/echo.lazy">echo.lazy</a>
-- lazy input</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/hello.lazy">hello.lazy</a>
-- lazy input</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/rot13.ed">rot13.ed</a>
-- ed script</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/tac.lazy">tac.lazy</a>
-- lazy input</li>
-<li><a href="2013_endoh1.tar.bz2">2013_endoh1.tar.bz2</a> - download
-entry source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/endoh1.c">endoh1.c</a> - entry source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/endoh1.orig.c">endoh1.orig.c</a> - original source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/try.sh">try.sh</a> - how to run</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/echo.lazy">echo.lazy</a> - lazy input</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/hello.lazy">hello.lazy</a> - lazy input</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/rot13.ed">rot13.ed</a> - ed script</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/tac.lazy">tac.lazy</a> - lazy input</li>
+<li><a href="2013_endoh1.tar.bz2">2013_endoh1.tar.bz2</a> - download entry source</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="index.html">index.html</a> - entry home page</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/.entry.json">.entry.json</a>
-- description of entry in JSON</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/.gitignore">.gitignore</a>
-- list of files that should not be committed under git</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/.entry.json">.entry.json</a> - description of entry in JSON</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
 <li><a href=".path">.path</a> - directory path from top directory</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/README.md">README.md</a>
-- markdown source for index.html</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/README.md">README.md</a> - markdown source for index.html</li>
 </ul>
 
 <!-- END: next line ends content generated by: bin/output-index-inventory.sh -->

@@ -140,20 +140,18 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em>
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span></span></code></pre></div>
-<p>There are two alt versions that let you control the compile time
-variables that control the fluid behaviour and the added variables to
-speed up or slow down the fluid as well as setting a timeout (if not 0):
-one for the original black and white and one for the colour one added by
-the author (at the request of the judges at the time of the contest).
-Another version is the deobfuscated version provided by the author as
-well. See the <a href="#alternate-code">Alternate code</a> section below
-for more details.</p>
+<p>There are two alt versions that let you control the compile time variables that
+control the fluid behaviour and the added variables to speed up or slow down the
+fluid as well as setting a timeout (if not 0): one for the original black and
+white and one for the colour one added by the author (at the request of the
+judges at the time of the contest). Another version is the deobfuscated version
+provided by the author as well. See the <a href="#alternate-code">Alternate code</a>
+section below for more details.</p>
 <h2 id="to-use">To use:</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh1</span> <span class="op">&lt;</span> file</span></code></pre></div>
-<p>WARNING: if you’re sensitive to/don’t like flashing colours/text or
-just want to see what this looks like not going so fast then you might
-wish to try the <a href="#alternate-code">Alternate code</a>
-instead.</p>
+<p>WARNING: if you’re sensitive to/don’t like flashing colours/text or just want to
+see what this looks like not going so fast then you might wish to try the
+<a href="#alternate-code">Alternate code</a> instead.</p>
 <h2 id="try">Try:</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.bw.sh</span> endoh1.c</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.sh</span> endoh1.c</span>
@@ -164,91 +162,75 @@ instead.</p>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.bw.sh</span> fountain.txt</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.sh</span> fountain.txt</span></code></pre></div>
 <h2 id="alternate-code">Alternate code:</h2>
-<p>The files <a href="endoh1.alt.c">endoh1.alt.c</a> and <a
-href="endoh1_color.alt.c">endoh1_color.alt.c</a> correspond to <a
-href="endoh1.c">endoh1.c</a> and <a
-href="endoh1_color.c">endoh1_color.c</a> but which allow you to speed up
-or slow down the fluid and change the behaviour of the fluid. The file
-<a href="endoh1.alt.c">endoh1.alt2.c</a> is deobfuscated and was
-provided by the author.</p>
+<p>The files <a href="endoh1.alt.c">endoh1.alt.c</a> and
+<a href="endoh1_color.alt.c">endoh1_color.alt.c</a> correspond to <a href="endoh1.c">endoh1.c</a> and
+<a href="endoh1_color.c">endoh1_color.c</a> but which allow you to speed up or slow down
+the fluid and change the behaviour of the fluid. The file
+<a href="endoh1.alt.c">endoh1.alt2.c</a> is deobfuscated and was provided by the author.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <p>For the default values, try:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> alt</span></code></pre></div>
-<p>In the <code>alt</code> versions a default time of 10 seconds is set
-as an alarm so that one can more easily go through the list of files to
-see them all in succession, for fun. That is controlled by the variable
-<code>TIMER</code> at compilation. For instance if you wish to change
-the value to 5:</p>
+<p>In the <code>alt</code> versions a default time of 10 seconds is set as an alarm so that
+one can more easily go through the list of files to see them all in succession,
+for fun. That is controlled by the variable <code>TIMER</code> at compilation.
+For instance if you wish to change the value to 5:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber TIMER=5 alt</span></code></pre></div>
 <p>If you want to disable the alarm time, set it to 0:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber TIMER=0 alt</span></code></pre></div>
 <p>It cannot be &lt; 0 or &gt; 60 (arbitrarily selected).</p>
-<p>The <code>SLEEP</code> variable is to delay the time between updates
-to make it easier to see and to not flash too quickly. The code protects
-against a value &lt; 0 and defaults to 12321 but you can change it to.
-For instance to slow it down you could increase the sleep time from
-<code>12321</code> to <code>50000</code>:</p>
+<p>The <code>SLEEP</code> variable is to delay the time between updates to make it easier to
+see and to not flash too quickly. The code protects against a value &lt; 0 and
+defaults to 12321 but you can change it to. For instance to slow it down you
+could increase the sleep time from <code>12321</code> to <code>50000</code>:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber SLEEP=50000 alt</span></code></pre></div>
-<p>If you wish to speed it up you might decrease the sleep time from
-<code>12321</code> to <code>9999</code>:</p>
+<p>If you wish to speed it up you might decrease the sleep time from <code>12321</code> to
+<code>9999</code>:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber SLEEP=9999 alt</span></code></pre></div>
-<p>WARNING: the lower the value the faster it will flash so be careful
-if you’re sensitive to this.</p>
+<p>WARNING: the lower the value the faster it will flash so be careful if you’re
+sensitive to this.</p>
 <p>If you wish to change the gravity factor, pressure factor and/or
-viscosity factor, you should redefine the values <code>GRAVITY</code>,
-<code>PRESSURE</code> and/or <code>VISCOSITY</code> macros,
-respectively. For instance if you wish to change the viscosity and
-pressure factors but leave the other values alone:</p>
+viscosity factor, you should redefine the values <code>GRAVITY</code>, <code>PRESSURE</code> and/or
+<code>VISCOSITY</code> macros, respectively. For instance if you wish to change the
+viscosity and pressure factors but leave the other values alone:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber VISCOSITY=X PRESSURE=Y alt</span></code></pre></div>
-<p>where <code>X</code> and <code>Y</code> are numbers or the letter
-<code>I</code> and which are, respectively, the viscosity and pressure
-factors. There is no attempt to check the value or type because doing so
-prevents the macros from being defined to <code>I</code> which would
+<p>where <code>X</code> and <code>Y</code> are numbers or the letter <code>I</code> and which are, respectively, the
+viscosity and pressure factors. There is no attempt to check the value or type
+because doing so prevents the macros from being defined to <code>I</code> which would
 prevent the author’s remarks about it from being done.</p>
-<p>You might also wish to try redefining the macros <code>G</code>,
-<code>P</code> and/or <code>V</code>. For instance:</p>
-<div class="sourceCode" id="cb10"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber GRAVITY=5 PRESSURE=5 VISCOSITY=5 alt</span></code></pre></div>
+<p>You might also wish to try redefining the macros <code>G</code>, <code>P</code> and/or <code>V</code>. For
+instance:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber GRAVITY=5 PRESSURE=5 VISCOSITY=5 alt</span></code></pre></div>
 <p>You might try even:</p>
-<div class="sourceCode" id="cb11"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber GRAVITY=I alt</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber GRAVITY=I alt</span></code></pre></div>
 <p>See the author’s remarks for details on these macros where:</p>
 <pre><code>G = GRAVITY
 P = PRESSURE
 V = VISCOSITY</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
-<p>Use <code>endoh1.alt</code>, <code>endoh1_color.alt</code> and
-<code>endoh1.alt2</code> as you would <code>endoh1</code> and
-<code>endoh1_color</code> above.</p>
+<p>Use <code>endoh1.alt</code>, <code>endoh1_color.alt</code> and <code>endoh1.alt2</code> as you would <code>endoh1</code>
+and <code>endoh1_color</code> above.</p>
 <h3 id="alternate-try">Alternate try:</h3>
-<p>To see two different ways run on the source file and each of the text
-files, try:</p>
-<div class="sourceCode" id="cb13"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.alt.sh</span></span></code></pre></div>
-<p>The second run of each will be with the gravity factor set to
-<code>I</code>.</p>
-<p>To see the same thing but in the original uncoloured version,
+<p>To see two different ways run on the source file and each of the text files,
 try:</p>
-<div class="sourceCode" id="cb14"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.alt.bw.sh</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.alt.sh</span></span></code></pre></div>
+<p>The second run of each will be with the gravity factor set to <code>I</code>.</p>
+<p>To see the same thing but in the original uncoloured version, try:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.alt.bw.sh</span></span></code></pre></div>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
-<p>Let’s play <a
-href="https://en.wikipedia.org/wiki/Jeopardy!">Jeopardy!</a></p>
-<p>A: An obfuscated program that deals with complex numbers and produces
-animated ASCII graphics. Q: What is a Mandelbrot simulator?</p>
+<p>Let’s play <a href="https://en.wikipedia.org/wiki/Jeopardy!">Jeopardy!</a></p>
+<p>A: An obfuscated program that deals with complex numbers and produces animated ASCII graphics.
+Q: What is a Mandelbrot simulator?</p>
 <p>Bzzzt!</p>
-<p>Such heavily squeezed fluid simulation (this is parsed uniquely as
-fluids are not squeezable) has a few quirks that the judges were happy
-to experiment with.</p>
-<p>One configuration file was inspired by an <a
-href="https://web.archive.org/web/20230711134609/https://whatif.xkcd.com/6/">XKCD
-what if? entry</a>.</p>
+<p>Such heavily squeezed fluid simulation (this is parsed uniquely
+as fluids are not squeezable) has a few quirks that the judges were
+happy to experiment with.</p>
+<p>One configuration file was inspired by an <a href="https://web.archive.org/web/20230711134609/https://whatif.xkcd.com/6/">XKCD what if?
+entry</a>.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="synopsis">Synopsis</h3>
-<p><strong>DO NOT FORGET</strong> <code>-DG=1 -DP=4 -DV=8</code> and
-make your terminal window larger than 80 x 25.</p>
-<div class="sourceCode" id="cb15"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cc</span> endoh1.c <span class="at">-DG</span><span class="op">=</span>1 <span class="at">-DP</span><span class="op">=</span>4 <span class="at">-DV</span><span class="op">=</span>8 <span class="at">-D_BSD_SOURCE</span> <span class="at">-o</span> endoh1 <span class="at">-lm</span></span>
+<p><strong>DO NOT FORGET</strong> <code>-DG=1 -DP=4 -DV=8</code> and make your terminal window larger
+than 80 x 25.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cc</span> endoh1.c <span class="at">-DG</span><span class="op">=</span>1 <span class="at">-DP</span><span class="op">=</span>4 <span class="at">-DV</span><span class="op">=</span>8 <span class="at">-D_BSD_SOURCE</span> <span class="at">-o</span> endoh1 <span class="at">-lm</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh1</span> <span class="op">&lt;</span> endoh1.c</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh1</span> <span class="op">&lt;</span> logo.txt</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh1</span> <span class="op">&lt;</span> column.txt</span>
@@ -281,202 +263,119 @@ class="sourceCode sh"><code class="sourceCode bash"><span id="cb15-1"><a href="#
               `-&#39;`&#39;   `-&#39;`-&#39;  `-&#39;`-&#39;           `-&#39;`&#39;    `&#39;`&#39;  `&#39;`&#39; `&#39;`&#39;
 
 </code></pre>
-<p>This program is a fluid simulator using the <a
-href="http://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics">Smoothed-particle
-hydrodynamics (SPH)</a> method.</p>
-<p>The SPH particles represent the fluid flow. Particles have
-information about the position, density, and velocity. In every
-simulation step, they are changed by pressure force, viscosity force,
-and external force (i.e., gravity).</p>
-<p>This program reads a text from standard input, and uses it as an
-initial configuration of the particles. The character <code>#</code>
-represents a “wall particle” (a particle with a fixed position), and any
-other non-space characters represent free particles.</p>
-<p>The compilation options <code>-DG=1 -DP=4 -DV=8</code> represent,
-respectively, the factor of gravity, pressure, and viscosity. By
-changing their values, you can see different fluid behavior.</p>
-<p><a href="http://en.wikipedia.org/wiki/Marching_squares">Marching
-square</a>-like algorithm is used to render the particles.</p>
+<p>This program is a fluid simulator using the <a href="http://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics">Smoothed-particle hydrodynamics
+(SPH)</a> method.</p>
+<p>The SPH particles represent the fluid flow. Particles have information about
+the position, density, and velocity. In every simulation step, they are
+changed by pressure force, viscosity force, and external force (i.e., gravity).</p>
+<p>This program reads a text from standard input, and uses it as an initial
+configuration of the particles. The character <code>#</code> represents a “wall particle” (a
+particle with a fixed position), and any other non-space characters represent
+free particles.</p>
+<p>The compilation options <code>-DG=1 -DP=4 -DV=8</code> represent, respectively, the factor
+of gravity, pressure, and viscosity. By changing their values, you can see
+different fluid behavior.</p>
+<p><a href="http://en.wikipedia.org/wiki/Marching_squares">Marching square</a>-like algorithm
+is used to render the particles.</p>
 <h3 id="portability">Portability</h3>
-<p>The program requires a C99 compiler; it uses <code>complex</code>
-types and one-line comments. It also uses <code>usleep(3)</code>, which
-may require <code>-D_BSD_SOURCE</code> or so to build with no warning.
-Under these conditions, it should be portable. At least, recent
-compilers with <code>-std=c99 -Wall -W -Wextra -pedantic</code> say
+<p>The program requires a C99 compiler; it uses <code>complex</code> types and one-line
+comments. It also uses <code>usleep(3)</code>, which may require <code>-D_BSD_SOURCE</code> or so
+to build with no warning. Under these conditions, it should be portable.
+At least, recent compilers with <code>-std=c99 -Wall -W -Wextra -pedantic</code> say
 nothing.</p>
-<div class="sourceCode" id="cb17"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="at">-DG</span><span class="op">=</span>1 <span class="at">-DP</span><span class="op">=</span>4 <span class="at">-DV</span><span class="op">=</span>8 <span class="at">-D_BSD_SOURCE</span> <span class="at">-std</span><span class="op">=</span>c99 <span class="at">-Wall</span> <span class="at">-W</span> <span class="at">-Wextra</span> <span class="at">-pedantic</span> endoh1.c</span>
+<div class="sourceCode" id="cb17"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="at">-DG</span><span class="op">=</span>1 <span class="at">-DP</span><span class="op">=</span>4 <span class="at">-DV</span><span class="op">=</span>8 <span class="at">-D_BSD_SOURCE</span> <span class="at">-std</span><span class="op">=</span>c99 <span class="at">-Wall</span> <span class="at">-W</span> <span class="at">-Wextra</span> <span class="at">-pedantic</span> endoh1.c</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">clang</span> <span class="at">-DG</span><span class="op">=</span>1 <span class="at">-DP</span><span class="op">=</span>4 <span class="at">-DV</span><span class="op">=</span>8 <span class="at">-D_BSD_SOURCE</span> <span class="at">-std</span><span class="op">=</span>c99 <span class="at">-Wall</span> <span class="at">-W</span> <span class="at">-Wextra</span> <span class="at">-pedantic</span> endoh1.c</span></code></pre></div>
-<p>I expect it to work in any Unix-like environment. VTxxx/ANSI
-sequences are used to clear screen and move cursor to home.</p>
-<p>I’ve tested with gcc-4.6.3 and clang-3.0 on Linux (Ubuntu 12.04) and
-gcc-4.5.3 and clang-3.1 on Cygwin. On Cygwin, gcc and clang complain
-about a usage of <code>I</code> (complex’s imaginary unit), but I bet
-this is cygwin’s issue; it is surely a C99 feature.</p>
+<p>I expect it to work in any Unix-like environment. VTxxx/ANSI sequences are
+used to clear screen and move cursor to home.</p>
+<p>I’ve tested with gcc-4.6.3 and clang-3.0 on Linux (Ubuntu 12.04)
+and gcc-4.5.3 and clang-3.1 on Cygwin. On Cygwin, gcc and clang complain about
+a usage of <code>I</code> (complex’s imaginary unit), but I bet this is cygwin’s issue;
+it is surely a C99 feature.</p>
 <h3 id="obfuscation-w-spoiler">Obfuscation w/ Spoiler</h3>
-<p>First of all, the source code itself serves as an initial
-configuration. Preprocessing directives (such as
-<code>#include</code>)’s <code>#</code> serve as walls.</p>
-<p>This program uses <code>double complex</code> to represent any 2D
-vector. But, note that the <code>x-axis</code> and <code>y-axis</code>
-are swapped (real axis = y-axis, imaginary axis = x-axis). The purpose
-of swapping is not only obfuscation, but also short coding: for example,
-to add gravity to total force, <code>force += G</code> suffices, rather
-than <code>force += G*I</code>.</p>
-<p>(Incidentally, you can exert horizontal gravity by using for instance
-<code>-DG=I</code>)</p>
-<p>Every five entries of <code>double complex a[]</code> contain
-information of one particle: position, wall-flag, density, force, and
-velocity, in turn.</p>
-<p>You can use <code>G</code>, <code>P</code>, and <code>V</code> as a
-guide to find the calculation code of gravity, pressure, and viscosity
-forces.</p>
-<p>Though some assignments may look meaningless, they are actually
-meaningful; they extract “integer part of real part” from a complex
-value by assigning (and casting) it to an integer-type variable.</p>
+<p>First of all, the source code itself serves as an initial configuration.
+Preprocessing directives (such as <code>#include</code>)’s <code>#</code> serve as walls.</p>
+<p>This program uses <code>double complex</code> to represent any 2D vector. But, note that
+the <code>x-axis</code> and <code>y-axis</code> are swapped (real axis = y-axis, imaginary axis =
+x-axis). The purpose of swapping is not only obfuscation, but also short
+coding: for example, to add gravity to total force, <code>force += G</code> suffices,
+rather than <code>force += G*I</code>.</p>
+<p>(Incidentally, you can exert horizontal gravity by using for instance <code>-DG=I</code>)</p>
+<p>Every five entries of <code>double complex a[]</code> contain information of one particle:
+position, wall-flag, density, force, and velocity, in turn.</p>
+<p>You can use <code>G</code>, <code>P</code>, and <code>V</code> as a guide to find the calculation code of
+gravity, pressure, and viscosity forces.</p>
+<p>Though some assignments may look meaningless, they are actually meaningful; they
+extract “integer part of real part” from a complex value by assigning (and
+casting) it to an integer-type variable.</p>
 <h3 id="notes-about-additional-files">Notes about Additional Files</h3>
-<p><a href="logo.txt">logo.txt</a> is a source of the logo in this
-remark file.</p>
-<p><a href="column.txt">column.txt</a> is a water column collapse, which
-is a popular demo of SPH.</p>
+<p><a href="logo.txt">logo.txt</a> is a source of the logo in this remark file.</p>
+<p><a href="column.txt">column.txt</a> is a water column collapse, which is a popular demo of SPH.</p>
 <p><a href="pour-out.txt">pour-out.txt</a> pours you a cup of tea.</p>
-<p><a href="tanada.txt">tanada.txt</a> simulates “Terrace farming”.
-(“Tanada” means a “<a
-href="https://en.wikipedia.org/wiki/Terrace_(earthworks)">terraced rice
+<p><a href="tanada.txt">tanada.txt</a> simulates “Terrace farming”. (“Tanada” means a “<a href="https://en.wikipedia.org/wiki/Terrace_(earthworks)">terraced rice
 fields</a>” in Japanese.)</p>
-<p><a href="clock.txt">clock.txt</a> is a “water” clock created by
-HAMANO Tsukasa.</p>
+<p><a href="clock.txt">clock.txt</a> is a “water” clock created by HAMANO Tsukasa.</p>
 <p>Other <code>*.txt</code> files are from the judges.</p>
-<p><a href="endoh1_color.c">endoh1_color.c</a> is a variant that shows
-the density by using terminal 256 colors.</p>
+<p><a href="endoh1_color.c">endoh1_color.c</a> is a variant that shows the density by using terminal 256
+colors.</p>
 <h3 id="acknowledgments">Acknowledgments</h3>
-<p>I would like to thank my wife <span class="citation"
-data-cites="hirekoke">@hirekoke</span> for her teaching me the SPH
-method.</p>
-<p>The judges <strike>ordered</strike> suggested creating a color
-version after the contest.</p>
-<p>The judges and HAMANO Tsukasa (The silver medalist at this IOCCC)
-kindly provided many configuration files.</p>
-<h2 id="copyright-and-cc-by-sa-4.0-license">Copyright and CC BY-SA 4.0
-License:</h2>
-<p>This file is Copyright (c) 2023 by Landon Curt Noll. All Rights
-Reserved. You are free to share and adapt this file under the terms of
-this license:</p>
+<p>I would like to thank my wife <span class="citation" data-cites="hirekoke">@hirekoke</span> for her teaching me the SPH method.</p>
+<p>The judges <strike>ordered</strike> suggested creating a color version
+after the contest.</p>
+<p>The judges and HAMANO Tsukasa (The silver medalist at this IOCCC) kindly
+provided many configuration files.</p>
+<h2 id="copyright-and-cc-by-sa-4.0-license">Copyright and CC BY-SA 4.0 License:</h2>
+<p>This file is Copyright (c) 2023 by Landon Curt Noll. All Rights Reserved.
+You are free to share and adapt this file under the terms of this license:</p>
 <pre><code>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</code></pre>
-<p>For more information, see:
-https://creativecommons.org/licenses/by-sa/4.0/</p>
+<p>For more information, see: https://creativecommons.org/licenses/by-sa/4.0/</p>
 
 <!-- END: this line ends content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 <!-- START: this line starts content for HTML phase 22 by: bin/output-index-inventory.sh via bin/md2html.sh -->
 
 <!-- START: this line starts content generated by: bin/output-index-inventory.sh -->
 
-<h1 id="inventory-for-2012endoh1"><a name="inventory"></a>Inventory for
-2012/endoh1</h1>
+<h1 id="inventory-for-2012endoh1"><a name="inventory"></a>Inventory for 2012/endoh1</h1>
 <p><a href="#top">Jump to top</a></p>
 <h2 id="primary-files">Primary files</h2>
 <ul>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/endoh1.c">endoh1.c</a>
-- entry source</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/Makefile">Makefile</a>
-- entry Makefile</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/endoh1.alt.c">endoh1.alt.c</a>
-- alternative source</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/endoh1.alt2.c">endoh1.alt2.c</a>
-- alternate alternative source</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/endoh1_color.alt.c">endoh1_color.alt.c</a>
-- alternative source</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/endoh1.orig.c">endoh1.orig.c</a>
-- original source</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/clock.txt">clock.txt</a>
-- fluid initial state as text</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/column.txt">column.txt</a>
-- fluid initial state as text</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/column2.txt">column2.txt</a>
-- fluid initial state as text</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/column3.txt">column3.txt</a>
-- fluid initial state as text</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/corners.txt">corners.txt</a>
-- fluid initial state as text</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/dripping-pan.txt">dripping-pan.txt</a>
-- fluid initial state as text</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/evaporation.txt">evaporation.txt</a>
-- fluid initial state as text</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/flat.txt">flat.txt</a>
-- fluid initial state as text</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/fountain.txt">fountain.txt</a>
-- fluid initial state as text</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/funnel.txt">funnel.txt</a>
-- fluid initial state as text</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/funnel2.txt">funnel2.txt</a>
-- fluid initial state as text</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/funnel3.txt">funnel3.txt</a>
-- fluid initial state as text</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/glass-half-empty.txt">glass-half-empty.txt</a>
-- fluid initial state as text</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/leidenfrost.txt">leidenfrost.txt</a>
-- fluid initial state as text</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/logo.txt">logo.txt</a>
-- fluid initial state as text</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/pour-out.txt">pour-out.txt</a>
-- fluid initial state as text</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/tanada.txt">tanada.txt</a>
-- fluid initial state as text</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/try.alt.bw.sh">try.alt.bw.sh</a>
-- how to run alternate code in black and white</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/try.alt.sh">try.alt.sh</a>
-- how to run alternative code</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/try.bw.sh">try.bw.sh</a>
-- try.alt.bw.sh</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/try.sh">try.sh</a>
-- how to run in color</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/endoh1_color.c">endoh1_color.c</a>
-- alternative source using terminal 256 colors</li>
-<li><a href="2012_endoh1.tar.bz2">2012_endoh1.tar.bz2</a> - download
-entry source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/endoh1.c">endoh1.c</a> - entry source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/endoh1.alt.c">endoh1.alt.c</a> - alternative source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/endoh1.alt2.c">endoh1.alt2.c</a> - alternate alternative source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/endoh1_color.alt.c">endoh1_color.alt.c</a> - alternative source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/endoh1.orig.c">endoh1.orig.c</a> - original source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/clock.txt">clock.txt</a> - fluid initial state as text</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/column.txt">column.txt</a> - fluid initial state as text</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/column2.txt">column2.txt</a> - fluid initial state as text</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/column3.txt">column3.txt</a> - fluid initial state as text</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/corners.txt">corners.txt</a> - fluid initial state as text</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/dripping-pan.txt">dripping-pan.txt</a> - fluid initial state as text</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/evaporation.txt">evaporation.txt</a> - fluid initial state as text</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/flat.txt">flat.txt</a> - fluid initial state as text</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/fountain.txt">fountain.txt</a> - fluid initial state as text</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/funnel.txt">funnel.txt</a> - fluid initial state as text</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/funnel2.txt">funnel2.txt</a> - fluid initial state as text</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/funnel3.txt">funnel3.txt</a> - fluid initial state as text</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/glass-half-empty.txt">glass-half-empty.txt</a> - fluid initial state as text</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/leidenfrost.txt">leidenfrost.txt</a> - fluid initial state as text</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/logo.txt">logo.txt</a> - fluid initial state as text</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/pour-out.txt">pour-out.txt</a> - fluid initial state as text</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/tanada.txt">tanada.txt</a> - fluid initial state as text</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/try.alt.bw.sh">try.alt.bw.sh</a> - how to run alternate code in black and white</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/try.alt.sh">try.alt.sh</a> - how to run alternative code</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/try.bw.sh">try.bw.sh</a> - try.alt.bw.sh</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/try.sh">try.sh</a> - how to run in color</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/endoh1_color.c">endoh1_color.c</a> - alternative source using terminal 256 colors</li>
+<li><a href="2012_endoh1.tar.bz2">2012_endoh1.tar.bz2</a> - download entry source</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="index.html">index.html</a> - entry home page</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/.entry.json">.entry.json</a>
-- description of entry in JSON</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/.gitignore">.gitignore</a>
-- list of files that should not be committed under git</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/.entry.json">.entry.json</a> - description of entry in JSON</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
 <li><a href=".path">.path</a> - directory path from top directory</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/README.md">README.md</a>
-- markdown source for index.html</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/README.md">README.md</a> - markdown source for index.html</li>
 </ul>
 
 <!-- END: next line ends content generated by: bin/output-index-inventory.sh -->

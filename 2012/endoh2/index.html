@@ -153,80 +153,69 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em>
 <h2 id="try">Try:</h2>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.sh</span></span></code></pre></div>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
-<p>A <a href="https://en.wikipedia.org/wiki/Pi">pi</a>/<a
-href="https://en.wikipedia.org/wiki/E_(mathematical_constant)">e</a>
-printing quasi-[quine](https://en.wikipedia.org/wiki/Quine_(computing)
-in <a href="https://en.wikipedia.org/wiki/ASCII_art">ASCII art</a> with
-a compressed font in it; what else to wish for in this program? <a
-href="https://en.wikipedia.org/wiki/Virtual_machine">Virtual machine</a>
-emulation?</p>
+<p>A
+<a href="https://en.wikipedia.org/wiki/Pi">pi</a>/<a href="https://en.wikipedia.org/wiki/E_(mathematical_constant)">e</a>
+printing quasi-[quine](https://en.wikipedia.org/wiki/Quine_(computing) in <a href="https://en.wikipedia.org/wiki/ASCII_art">ASCII
+art</a> with a compressed font in it; what
+else to wish for in this program? <a href="https://en.wikipedia.org/wiki/Virtual_machine">Virtual
+machine</a> emulation?</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>Yeah, “Again”. Sorry. But I don’t feel guilty or uncomfortable.</p>
 <p>This entry is based on ‘over-used themes’ such as self reproducing
-program and <a href="https://en.wikipedia.org/wiki/Pi">pi</a> or <a
-href="https://en.wikipedia.org/wiki/E_(mathematical_constant)">e</a>)
-computation. I know you’re tired of them.</p>
+program and <a href="https://en.wikipedia.org/wiki/Pi">pi</a> or
+<a href="https://en.wikipedia.org/wiki/E_(mathematical_constant)">e</a>) computation. I
+know you’re tired of them.</p>
 <p>But have you ever seen them <strong>all-in-one</strong>?</p>
 <h3 id="what-it-is">What it is</h3>
 <p>This program generates a new program in the shape of the Greek letter
 <code>pi</code>. Then, the generated program:</p>
 <ul>
-<li>computes 3 digits of pi and prints it as an ASCII-art program
-that:</li>
-<li>computes 4 digits of pi and prints it as an ASCII-art program
-that:</li>
-<li>computes 5 digits of pi and prints it as an ASCII-art program
-that:</li>
-<li>computes 6 digits of pi and prints it as an ASCII-art program
-that:</li>
+<li>computes 3 digits of pi and prints it as an ASCII-art program that:</li>
+<li>computes 4 digits of pi and prints it as an ASCII-art program that:</li>
+<li>computes 5 digits of pi and prints it as an ASCII-art program that:</li>
+<li>computes 6 digits of pi and prints it as an ASCII-art program that:</li>
 <li>…</li>
 </ul>
-<p>One more thing… When you give a command line argument <code>e</code>
-to the first program, the generated one will compute <a
-href="https://en.wikipedia.org/wiki/E_(mathematical_constant)">Napier’s
-constant</a>) rather than pi.</p>
+<p>One more thing… When you give a command line argument <code>e</code> to the
+first program, the generated one will compute <a href="https://en.wikipedia.org/wiki/E_(mathematical_constant)">Napier’s
+constant</a>)
+rather than pi.</p>
 <h3 id="obfuscation">Obfuscation</h3>
-<p>This program itself is in the shape of a <a
-href="https://en.wikipedia.org/wiki/Tap_(valve)">spigot</a>. This is
-derived as an analogy with <a
-href="https://en.wikipedia.org/wiki/Spigot_algorithm">spigot
-algorithm</a> which infinitely computes the value of a mathematical
-constant such as <a href="https://en.wikipedia.org/wiki/Pi">pi</a> or <a
-href="https://en.wikipedia.org/wiki/E_(mathematical_constant)">e</a>.</p>
-<p>The two sets of programs, <code>314*.c</code> and
-<code>271*.c</code>, are almost the same except their shape and constant
-computational part. I tailored the common part to parse in both shapes
-(<code>3.14...</code> and <code>2.71...</code>), by tweaking the
-computational order and adding meaningless code fragments.</p>
-<p>On the other hand, to make it fit inside one screen (80 x 25), my
-program is shortened properly, more than it looks. (As you may know, <a
-href="https://en.wikipedia.org/wiki/Quine_(computing)">quines</a> need
-to make its program size doubled.) For example, this program involves
-3x5 bitmap font data of ten characters (<code>0</code> –
-<code>9</code>), as just 20 bytes: <code>G1%xJ{;Q7wunmuGuu%uu</code>. We
-can decode character <code>n</code> as
-<code>275*s[n+10] - 8*s[n] - 8</code>. I solved the system of <a
-href="https://en.wikipedia.org/wiki/B%C3%A9zout%27s_identity">Bézout’s
-identity</a> to find the magic string, with the aid of a brute force.
-See <code>find-font-table.rb</code> in detail.</p>
+<p>This program itself is in the shape of a
+<a href="https://en.wikipedia.org/wiki/Tap_(valve)">spigot</a>. This is derived as an
+analogy with <a href="https://en.wikipedia.org/wiki/Spigot_algorithm">spigot algorithm</a>
+which infinitely computes the value of a mathematical constant such as
+<a href="https://en.wikipedia.org/wiki/Pi">pi</a> or
+<a href="https://en.wikipedia.org/wiki/E_(mathematical_constant)">e</a>.</p>
+<p>The two sets of programs, <code>314*.c</code> and <code>271*.c</code>, are almost the same
+except their shape and constant computational part. I tailored the
+common part to parse in both shapes (<code>3.14...</code> and <code>2.71...</code>), by
+tweaking the computational order and adding meaningless code fragments.</p>
+<p>On the other hand, to make it fit inside one screen (80 x 25), my program is
+shortened properly, more than it looks. (As you may know,
+<a href="https://en.wikipedia.org/wiki/Quine_(computing)">quines</a> need to make its
+program size doubled.) For example, this program involves 3x5 bitmap font data
+of ten characters (<code>0</code> – <code>9</code>), as just 20 bytes: <code>G1%xJ{;Q7wunmuGuu%uu</code>. We
+can decode character <code>n</code> as <code>275*s[n+10] - 8*s[n] - 8</code>. I solved the system of
+<a href="https://en.wikipedia.org/wiki/B%C3%A9zout%27s_identity">Bézout’s identity</a> to
+find the magic string, with the aid of a brute force. See <code>find-font-table.rb</code>
+in detail.</p>
 <p>I used many other tricks for short coding.</p>
-<p>I’m sorry that many ASCII-art-style winning entries of <a
-href="../../years.html">IOCCC</a> ignore <a
-href="https://en.wikipedia.org/wiki/C_preprocessor">C preprocessor
-directives</a>. In my program, <code>#include</code> is a part of
-ASCII-art with comments padded.</p>
+<p>I’m sorry that many ASCII-art-style winning entries of
+<a href="../../years.html">IOCCC</a> ignore <a href="https://en.wikipedia.org/wiki/C_preprocessor">C preprocessor
+directives</a>. In my program,
+<code>#include</code> is a part of ASCII-art with comments padded.</p>
 <p>These design requirements made my program well-obfuscated
 willy-nilly.</p>
 <h3 id="portability">Portability</h3>
-<p>I expect it to work in any major environment and C compiler. To build
-with no warning, it requires two C99 features: allow string literal to
-be more than 509 characters and not requiring a return in
-<code>main()</code>. In fact, recent compilers with
-<code>-std=c99 -Wall -W -Wextra -pedantic</code> would say nothing.</p>
+<p>I expect it to work in any major environment and C compiler. To build with no
+warning, it requires two C99 features: allow string literal to be more than 509
+characters and not requiring a return in <code>main()</code>. In fact, recent compilers
+with <code>-std=c99 -Wall -W -Wextra -pedantic</code> would say nothing.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="at">-std</span><span class="op">=</span>c99 <span class="at">-Wall</span> <span class="at">-W</span> <span class="at">-Wextra</span> <span class="at">-pedantic</span> spigot.c</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">clang</span> <span class="at">-std</span><span class="op">=</span>c99 <span class="at">-Wall</span> <span class="at">-W</span> <span class="at">-Wextra</span> <span class="at">-pedantic</span> spigot.c</span></code></pre></div>
-<p>I’ve tested with gcc-4.6.3 and clang-3.0 on Linux (Ubuntu 12.04) and
-gcc-4.5.3 and clang-3.1 on Cygwin.</p>
+<p>I’ve tested with gcc-4.6.3 and clang-3.0 on Linux (Ubuntu 12.04)
+and gcc-4.5.3 and clang-3.1 on Cygwin.</p>
 <h3 id="synopsis">Synopsis</h3>
 <div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cc</span> endoh2.c <span class="at">-o</span> endoh2</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -249,60 +238,38 @@ gcc-4.5.3 and clang-3.1 on Cygwin.</p>
 <span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="fu">cc</span> 27182.c  <span class="at">-o</span> 27182  <span class="kw">;</span> <span class="ex">./27182</span>  <span class="op">&gt;</span> 271828.c  <span class="kw">;</span> <span class="fu">cat</span> 271828.c</span>
 <span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="fu">cc</span> 271828.c <span class="at">-o</span> 271828 <span class="kw">;</span> <span class="ex">./271828</span> <span class="op">&gt;</span> 2718281.c <span class="kw">;</span> <span class="fu">cat</span> 2718281.c</span>
 <span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="ex">etc...</span></span></code></pre></div>
-<p>You can do <code>make everything</code> for the process (with no
-<code>cat</code>).</p>
+<p>You can do <code>make everything</code> for the process (with no <code>cat</code>).</p>
 <p>Note: The executable may return a failure (non-zero) exit status
 unless <code>-std=c99</code> option is given.</p>
-<h2 id="copyright-and-cc-by-sa-4.0-license">Copyright and CC BY-SA 4.0
-License:</h2>
-<p>This file is Copyright (c) 2023 by Landon Curt Noll. All Rights
-Reserved. You are free to share and adapt this file under the terms of
-this license:</p>
+<h2 id="copyright-and-cc-by-sa-4.0-license">Copyright and CC BY-SA 4.0 License:</h2>
+<p>This file is Copyright (c) 2023 by Landon Curt Noll. All Rights Reserved.
+You are free to share and adapt this file under the terms of this license:</p>
 <pre><code>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</code></pre>
-<p>For more information, see:
-https://creativecommons.org/licenses/by-sa/4.0/</p>
+<p>For more information, see: https://creativecommons.org/licenses/by-sa/4.0/</p>
 
 <!-- END: this line ends content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 <!-- START: this line starts content for HTML phase 22 by: bin/output-index-inventory.sh via bin/md2html.sh -->
 
 <!-- START: this line starts content generated by: bin/output-index-inventory.sh -->
 
-<h1 id="inventory-for-2012endoh2"><a name="inventory"></a>Inventory for
-2012/endoh2</h1>
+<h1 id="inventory-for-2012endoh2"><a name="inventory"></a>Inventory for 2012/endoh2</h1>
 <p><a href="#top">Jump to top</a></p>
 <h2 id="primary-files">Primary files</h2>
 <ul>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh2/endoh2.c">endoh2.c</a>
-- entry source</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh2/Makefile">Makefile</a>
-- entry Makefile</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh2/endoh2.orig.c">endoh2.orig.c</a>
-- original source</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh2/try.sh">try.sh</a>
-- how to run</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh2/find-font-table.rb">find-font-table.rb</a>
-- tool used to find the magic string</li>
-<li><a href="2012_endoh2.tar.bz2">2012_endoh2.tar.bz2</a> - download
-entry source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh2/endoh2.c">endoh2.c</a> - entry source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh2/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh2/endoh2.orig.c">endoh2.orig.c</a> - original source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh2/try.sh">try.sh</a> - how to run</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh2/find-font-table.rb">find-font-table.rb</a> - tool used to find the magic string</li>
+<li><a href="2012_endoh2.tar.bz2">2012_endoh2.tar.bz2</a> - download entry source</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="index.html">index.html</a> - entry home page</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh2/.entry.json">.entry.json</a>
-- description of entry in JSON</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh2/.gitignore">.gitignore</a>
-- list of files that should not be committed under git</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh2/.entry.json">.entry.json</a> - description of entry in JSON</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh2/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
 <li><a href=".path">.path</a> - directory path from top directory</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh2/README.md">README.md</a>
-- markdown source for index.html</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh2/README.md">README.md</a> - markdown source for index.html</li>
 </ul>
 
 <!-- END: next line ends content generated by: bin/output-index-inventory.sh -->

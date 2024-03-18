@@ -88,7 +88,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4.2 2024-03-17"
+export VERSION="1.5 2024-03-18"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -115,6 +115,7 @@ PANDOC_OPTION+=("-f")
 PANDOC_OPTION+=("markdown")
 PANDOC_OPTION+=("-t")
 PANDOC_OPTION+=("html")
+PANDOC_OPTION+=("--wrap=preserve")
 PANDOC_OPTION+=("--fail-if-warnings")
 export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc"
 
@@ -152,7 +153,7 @@ Exit codes:
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is too old
-     5	       some internal tool is not found or not an executable file
+     5	       some internal tool is not found, version is too old, or not an executable file
      6	       problems found with or in the topdir or topdir/YYYY directory
  >= 10         internal error
 
@@ -248,6 +249,22 @@ if [[ ! -x $PANDOC_TOOL ]]; then
     echo "$0: ERROR: cannot find an executable pandoc tool: $PANDOC_TOOL" 1>&2
     exit 5
 fi
+PANDOC_TOOL_VERSION=$("$PANDOC_TOOL" --version | head -1 | awk '{print $2;}')
+export PANDOC_TOOL_VERSION
+
+# set the minimum pandoc version
+#
+# We have found that very old versions of pandoc, such as version 2.14.0.3,
+# produce rather different output due to rather different default settings,
+# and perhaps bugs that were fixed in more recent versions, and perhaps
+# new features that were added in more recent versions of pandoc.
+#
+# We know that pandoc version 2.14.0.3 does not work well for our purposes
+# and produces different enough output to pose a consistency problem.
+# It may be possible that versions > 2.14.0.3 and < 3.1.12.2 might work.
+# We tested pandoc version 3.1.12.2 and therefore set this as the minimum allowed.
+#
+export PANDOC_MIN_VERSION="3.1.12.2"
 
 # verify that we have a topdir directory
 #
@@ -332,6 +349,8 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: MARKDOWN_INPUT=$MARKDOWN_INPUT" 1>&2
     echo "$0: debug[3]: HTML_OUTPUT=$HTML_OUTPUT" 1>&2
+    echo "$0: debug[3]: PANDOC_TOOL_VERSION=$PANDOC_TOOL_VERSION" 1>&2
+    echo "$0: debug[3]: PANDOC_MIN_VERSION=$PANDOC_MIN_VERSION" 1>&2
     echo "$0: debug[3]: AUTHOR_PATH=$AUTHOR_PATH" 1>&2
     echo "$0: debug[3]: AUTHOR_DIR=$AUTHOR_DIR" 1>&2
     echo "$0: debug[3]: INC_PATH=$INC_PATH" 1>&2
@@ -347,6 +366,16 @@ if [[ -n $DO_NOT_PROCESS ]]; then
 	echo "$0: debug[1]: arguments parsed, -N given, exit 0" 1>&2
     fi
     exit 0
+fi
+
+# verify that the pandoc version is >= the minimum version
+#
+if [[ $(printf "%s\n%s" "$PANDOC_TOOL_VERSION" "$PANDOC_MIN_VERSION" | sort -V | head -1) != "$PANDOC_MIN_VERSION" ]]; then
+    echo "$0: ERROR: pandoc: $PANDOC_TOOL version: $PANDOC_TOOL_VERSION <=" \
+	 "minimum allowed: $PANDOC_MIN_VERSION" 1>&2
+    echo "$0: Warning: pandoc version must be >= $PANDOC_MIN_VERSION" 1>&2
+    echo "$0: Warning: install a more up to date pandoc and/or use -p pandoc_tool to refer an up to date pandoc" 1>&2
+    exit 5
 fi
 
 # execute pandoc

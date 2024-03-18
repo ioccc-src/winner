@@ -120,40 +120,34 @@
 <!-- END: this line ends content from: inc/before-content.default.html -->
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
-<p>This document describes how this was fixed to work with macOS as well
-as some of the magic in the entry. Even if you don’t have a Mac it might
-be worth your time reading especially as some of it details some
-important fixes and changes in the original entry as well.</p>
+<p>This document describes how this was fixed to work with macOS as well as some of
+the magic in the entry. Even if you don’t have a Mac it might be worth your time
+reading especially as some of it details some important fixes and changes in the
+original entry as well.</p>
 <h1 id="macos-changes">macOS changes</h1>
-<p>As an aside: if you have a Mac with the Apple chip, some of the
-header files will report an unsupported architecture and unsupported
-compiler (error, warning). This will not make the program abort,
-however, but even with an Intel CPU though, the original entry will not
-work in macOS as it stands because <code>/usr/include</code> is
-hard-coded in the code and macOS does not have it.</p>
-<p>Nevertheless, although some of it would not work in other systems
-where <code>/usr/include</code> exists, the <code>#define</code>s would
-still be found okay, at least until a file was not found (this
-limitation was removed in both versions in 2023). see</p>
-<p>However, as noted, macOS does <strong>not</strong> have
-<code>/usr/include</code> so this would never work for macOS without
-some changes, described next. For macOS you will need the command line
-tools installed which can be done like:</p>
+<p>As an aside: if you have a Mac with the Apple chip, some of the header files
+will report an unsupported architecture and unsupported compiler (error,
+warning). This will not make the program abort, however, but even with an Intel
+CPU though, the original entry will not work in macOS as it stands because
+<code>/usr/include</code> is hard-coded in the code and macOS does not have it.</p>
+<p>Nevertheless, although some of it would not work in other systems where
+<code>/usr/include</code> exists, the <code>#define</code>s would still be found okay, at least until
+a file was not found (this limitation was removed in both versions in 2023). see</p>
+<p>However, as noted, macOS does <strong>not</strong> have <code>/usr/include</code> so this would never
+work for macOS without some changes, described next. For macOS you will need the
+command line tools installed which can be done like:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> xcode-select <span class="at">--install</span></span></code></pre></div>
-<p>An important point is that the original version hard-coded
-<code>gcc</code> but just like the entry, the alternate version has also
-removed this limitation despite <code>gcc</code> existing (though it’s
-<code>clang</code>) in macOS.</p>
-<p>Now as far as how this works if you look at the code of <a
-href="schweikh1.c">schweikh1.c</a>, on line 55 you’ll see a funny
-command (this goes for the alternate version as well but a bit
-different).</p>
-<p>Now the key is two magic numbers, one (two times) on a different line
-shortly below the string and the other a couple lines further below.</p>
-<p>In the original the numbers are, respectively, <code>44</code> and
-<code>46</code>, but with the gcc limitation removed the numbers now are
-<code>43</code> and <code>45</code>. But how does this work? Well the
-command is:</p>
+<p>An important point is that the original version hard-coded <code>gcc</code> but just like
+the entry, the alternate version has also removed this limitation despite <code>gcc</code>
+existing (though it’s <code>clang</code>) in macOS.</p>
+<p>Now as far as how this works if you look at the code of
+<a href="schweikh1.c">schweikh1.c</a>, on line 55 you’ll see a funny command (this goes for
+the alternate version as well but a bit different).</p>
+<p>Now the key is two magic numbers, one (two times) on a different line shortly below the
+string and the other a couple lines further below.</p>
+<p>In the original the numbers are, respectively, <code>44</code> and <code>46</code>, but with the gcc
+limitation removed the numbers now are <code>43</code> and <code>45</code>. But how does this work? Well
+the command is:</p>
 <pre><code>&quot;0gcc -ansi -E -dM -undef %s /usr/include/%s&gt;r\0 (&quot;</code></pre>
 <p>which has been changed to be:</p>
 <pre><code>&quot;0cc -ansi -E -dM -undef %s /usr/include/%s&gt;r\0 (&quot;</code></pre>
@@ -161,21 +155,17 @@ command is:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">((</span>H <span class="op">=</span> fopen <span class="op">(</span>__FILE__<span class="op">+</span><span class="dv">43</span><span class="op">,</span> <span class="dv">43</span><span class="op">+</span>__FILE__<span class="op">)))</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="op">((</span>fgets <span class="op">(</span>L<span class="op">,</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span><span class="kw">sizeof</span> L<span class="op">,</span> H<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span> <span class="op">{</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    I<span class="op">[</span>strcspn <span class="op">(</span>I<span class="op">,</span> <span class="dv">45</span><span class="op">+</span>__FILE__<span class="op">)]</span> <span class="op">=</span> O <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span></code></pre></div>
-<p>The first number in the above C means the length starting from 0 up
-through the <code>&gt;</code>. The second number is the same starting
-point but up through the <code>\0</code> which is why it’s
-<code>+2</code>. But what happens if only the first number is updated
-(from the original)? Most of the output will be just
-<code>#define</code> by itself; in the cases where there was text after
-that it was macros that certainly were not defined. There might have
-been other errors as well.</p>
-<p>Changing this for macOS allows for opening the right files; the
-problem with macOS is <code>/usr/include</code> does not exist: instead
-it’s
-<code>/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include</code>
-which is why the different command line and the different numbers. The
-change of the numbers can be found in the alternate code and the
-explanation is the same.</p>
+<p>The first number in the above C means the length starting from 0 up through the
+<code>&gt;</code>. The second number is the same starting point but up through the <code>\0</code> which
+is why it’s <code>+2</code>. But what happens if only the first number is updated (from the
+original)? Most of the output will be just <code>#define</code> by itself; in the cases
+where there was text after that it was macros that certainly were not defined.
+There might have been other errors as well.</p>
+<p>Changing this for macOS allows for opening the right files; the problem with
+macOS is <code>/usr/include</code> does not exist: instead it’s
+<code>/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include</code> which is why
+the different command line and the different numbers. The change of the numbers
+can be found in the alternate code and the explanation is the same.</p>
 
 <!-- END: this line ends content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 <!-- START: this line starts content from: inc/after-content.default.html -->

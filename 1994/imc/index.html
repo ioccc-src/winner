@@ -130,8 +130,7 @@
 <h2 id="author"><a name="author"></a>Author:</h2>
 <ul>
 <li>Name: <a href="../../authors.html#Ian_Collier">Ian Collier</a><br>
-Location: <a href="../../location.html#GB">GB</a> - <em>United Kingdom
-of Great Britain and Northern Ireland</em> (<em>United Kingdom</em>)
+Location: <a href="../../location.html#GB">GB</a> - <em>United Kingdom of Great Britain and Northern Ireland</em> (<em>United Kingdom</em>)
 <br><br></li>
 </ul>
 
@@ -151,16 +150,14 @@ of Great Britain and Northern Ireland</em> (<em>United Kingdom</em>)
 <p>This entry’s algorithm is as magic as its output!</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>This program may be compiled with an ANSI or K&amp;R compiler. A few
-harmless warnings are displayed only if <code>gcc -Wall</code> is
-used.</p>
+harmless warnings are displayed only if <code>gcc -Wall</code> is used.</p>
 <p>This entry is really a set of library functions, but an example
-<code>main()</code> function has been added so that the library can be
-tested. If the program appears too large, consider that functions
-<code>o()</code> and <code>s()</code> can each be separated from the
-rest of the program (except for the short functions <code>p()</code> and
-<code>r()</code>, which they require) and used alone. However, the main
-part of the program is the function <code>e</code>, which does require
-all the other functions (apart from <code>main()</code>).</p>
+<code>main()</code> function has been added so that the library can be tested. If
+the program appears too large, consider that functions <code>o()</code> and <code>s()</code> can
+each be separated from the rest of the program (except for the short
+functions <code>p()</code> and <code>r()</code>, which they require) and used alone. However, the
+main part of the program is the function <code>e</code>, which does require all the
+other functions (apart from <code>main()</code>).</p>
 <p>The program should be supplied with an integer parameter. If no
 parameter or an invalid parameter is given, then 5 is assumed. The
 maximum parameter is determined only by the amount of CPU time, virtual
@@ -169,77 +166,54 @@ memory and display (or file) space available.</p>
 <p>OK, so you have probably seen magic square printers before. But what
 about one that deals with even sizes as well as odd ones, or one that
 prints out a different one each time (or attempts to, at any rate)?</p>
-<p>I have formatted the important functions <code>o()</code>,
-<code>s()</code> and <code>e()</code> to show how useful the word
-<code>for</code> is, and (in function <code>e()</code>) how useful the
-words <code>if</code> and <code>else</code> are. In fact, hardly
-anything happens that isn’t in one of these instructions. I did this in
-order to simplify the code - the algorithms used to make the random
-squares are quite complex without being shrouded in obfuscated code! :-)
-Incidentally, I was surprised to find out how useful the exclusive-or
-operator was while writing function <code>s()</code>.</p>
+<p>I have formatted the important functions <code>o()</code>, <code>s()</code> and <code>e()</code> to show how useful
+the word <code>for</code> is, and (in function <code>e()</code>) how useful the words <code>if</code> and
+<code>else</code> are. In fact, hardly anything happens that isn’t in one of these
+instructions. I did this in order to simplify the code - the algorithms
+used to make the random squares are quite complex without being shrouded
+in obfuscated code! :-) Incidentally, I was surprised to find out how
+useful the exclusive-or operator was while writing function <code>s()</code>.</p>
 <p>Here are the descriptions of the functions in the library:</p>
 <pre><code>o(n,a,q,d): makes a magic square of order n when n is odd and at least 3.
 s(n,a,q,d): makes a magic square of order n when n equals 4.
 e(n,a,q,d): makes a magic square of order n when n is even and at least 6.</code></pre>
-<p>In the above, <code>a</code> (of type <code>int *</code>) points to
-an area of memory in which the magic square will be stored and
-<code>q</code> (also of type <code>int *</code>) points to an area of
-memory of length at least <code>n*sizeof(int)</code> bytes which can be
-used as a work space. Both <code>a</code> and <code>q</code> must be
-allocated by the caller. The integer parameter <code>d</code>, usually
-zero, indicates the length of a gap which will be left between adjacent
-rows of the magic square.</p>
+<p>In the above, <code>a</code> (of type <code>int *</code>) points to an area of memory in which
+the magic square will be stored and <code>q</code> (also of type <code>int *</code>) points to
+an area of memory of length at least <code>n*sizeof(int)</code> bytes which can be
+used as a work space. Both <code>a</code> and <code>q</code> must be allocated by the caller.
+The integer parameter <code>d</code>, usually zero, indicates the length of a gap
+which will be left between adjacent rows of the magic square.</p>
 <p>The square which is returned will (or should) be a permutation of the
-numbers 1 to <code>n*n</code> in which all rows and columns and the two
-diagonals add up to <code>n*(n*n+1)/2</code>.</p>
-<h2 id="copyright-and-cc-by-sa-4.0-license">Copyright and CC BY-SA 4.0
-License:</h2>
-<p>This file is Copyright (c) 2023 by Landon Curt Noll. All Rights
-Reserved. You are free to share and adapt this file under the terms of
-this license:</p>
+numbers 1 to <code>n*n</code> in which all rows and columns and the two diagonals
+add up to <code>n*(n*n+1)/2</code>.</p>
+<h2 id="copyright-and-cc-by-sa-4.0-license">Copyright and CC BY-SA 4.0 License:</h2>
+<p>This file is Copyright (c) 2023 by Landon Curt Noll. All Rights Reserved.
+You are free to share and adapt this file under the terms of this license:</p>
 <pre><code>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</code></pre>
-<p>For more information, see:
-https://creativecommons.org/licenses/by-sa/4.0/</p>
+<p>For more information, see: https://creativecommons.org/licenses/by-sa/4.0/</p>
 
 <!-- END: this line ends content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 <!-- START: this line starts content for HTML phase 22 by: bin/output-index-inventory.sh via bin/md2html.sh -->
 
 <!-- START: this line starts content generated by: bin/output-index-inventory.sh -->
 
-<h1 id="inventory-for-1994imc"><a name="inventory"></a>Inventory for
-1994/imc</h1>
+<h1 id="inventory-for-1994imc"><a name="inventory"></a>Inventory for 1994/imc</h1>
 <p><a href="#top">Jump to top</a></p>
 <h2 id="primary-files">Primary files</h2>
 <ul>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/imc/imc.c">imc.c</a>
-- entry source</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/imc/Makefile">Makefile</a>
-- entry Makefile</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/imc/imc.orig.c">imc.orig.c</a>
-- original source</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/imc/try.sh">try.sh</a>
-- how to run</li>
-<li><a href="1994_imc.tar.bz2">1994_imc.tar.bz2</a> - download entry
-source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/imc/imc.c">imc.c</a> - entry source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/imc/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/imc/imc.orig.c">imc.orig.c</a> - original source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/imc/try.sh">try.sh</a> - how to run</li>
+<li><a href="1994_imc.tar.bz2">1994_imc.tar.bz2</a> - download entry source</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="index.html">index.html</a> - entry home page</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/imc/.entry.json">.entry.json</a>
-- description of entry in JSON</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/imc/.gitignore">.gitignore</a>
-- list of files that should not be committed under git</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/imc/.entry.json">.entry.json</a> - description of entry in JSON</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/imc/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
 <li><a href=".path">.path</a> - directory path from top directory</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/imc/README.md">README.md</a>
-- markdown source for index.html</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/imc/README.md">README.md</a> - markdown source for index.html</li>
 </ul>
 
 <!-- END: next line ends content generated by: bin/output-index-inventory.sh -->

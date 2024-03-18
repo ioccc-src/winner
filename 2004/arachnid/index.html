@@ -141,101 +141,76 @@ Location: <a href="../../location.html#NZ">NZ</a> - <em>New Zealand</em>
 
 <h2 id="to-build">To build:</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span></span></code></pre></div>
-<p>There is an alt version for rogue players, vi(m) users and Dvorak
-typist (i.e. those who need <code>hljk</code> for moving left, right,
-down and up. See <a href="#alternate-code">alternate code</a> below.</p>
+<p>There is an alt version for rogue players, vi(m) users and Dvorak typist (i.e.
+those who need <code>hljk</code> for moving left, right, down and up. See <a href="#alternate-code">alternate
+code</a> below.</p>
 <h2 id="to-use">To use:</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./arachnid</span> <span class="pp">[</span><span class="ss">mazefile</span><span class="pp">]</span></span></code></pre></div>
 <h2 id="try">Try:</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./arachnid</span> arachnid.txt</span></code></pre></div>
 <p>and then try:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./arachnid</span> arachnid.c</span></code></pre></div>
-<p>Navigation is through the use of the <code>wasd</code> inverted-T
-formation on QWERTY keyboards. Rogue players, vi users, and Dvorak
-typists are invited to get lost (or use the alt version)!</p>
+<p>Navigation is through the use of the <code>wasd</code> inverted-T formation on
+QWERTY keyboards. Rogue players, vi users, and Dvorak typists are
+invited to get lost (or use the alt version)!</p>
 <h2 id="alternate-code">Alternate code:</h2>
-<p>If you don’t like the <code>wasd</code> movement keys you can try the
-vi(m) movement keys instead.</p>
+<p>If you don’t like the <code>wasd</code> movement keys you can try the vi(m) movement keys
+instead.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> alt</span></code></pre></div>
 <h3 id="alternate-use">Alternate use:</h3>
-<p>Use <code>arachnid.alt</code> as you would <code>arachnid</code>
-above.</p>
+<p>Use <code>arachnid.alt</code> as you would <code>arachnid</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
-<p>The fun part comes when you realize that the maze scrolls. The
-overall visual effect is quite pleasing (at least on some displays),
-and, well, it’s a lot of fun.</p>
+<p>The fun part comes when you realize that the maze scrolls. The overall
+visual effect is quite pleasing (at least on some displays), and, well,
+it’s a lot of fun.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
-<p>This program accepts ASCII formatted mazes as input, and renders them
-on screen for the user to explore, complete with Line Of Sight - you
-cannot see parts of the maze your avatar (the <code>@</code>) could not
+<p>This program accepts ASCII formatted mazes as input, and renders
+them on screen for the user to explore, complete with Line Of Sight
+- you cannot see parts of the maze your avatar (the <code>@</code>) could not
 have seen.</p>
-<p>The maze files will be interpreted with spaces <code>' '</code> as
-gaps, tilde <code>~</code> symbols (if any) as exits (which get
-represented as a <a href="https://www.nethack.org">NetHack</a> style
-<code>&lt;</code> once loaded), and any other characters as walls.</p>
-<p>Feed the program its own source for a default maze. Running it with
-no command line parameters will do this. In a nice symmetry, the
-character constant <code>~</code> that recognises exits to input mazes
-itself forms the exit to the default maze. Another maze, <a
-href="arachnid.txt">arachnid.txt</a> has also been provided. This maze
-is 255x255, about the largest maze supported, for the particularly
-insane maze explorers out there.</p>
+<p>The maze files will be interpreted with spaces <code>' '</code> as gaps, tilde
+<code>~</code> symbols (if any) as exits (which get represented as a
+<a href="https://www.nethack.org">NetHack</a> style <code>&lt;</code> once loaded), and any other
+characters as walls.</p>
+<p>Feed the program its own source for a default maze. Running it with no command
+line parameters will do this. In a nice symmetry, the character constant <code>~</code>
+that recognises exits to input mazes itself forms the exit to the default maze.
+Another maze, <a href="arachnid.txt">arachnid.txt</a> has also been provided. This maze is
+255x255, about the largest maze supported, for the particularly insane maze
+explorers out there.</p>
 <h3 id="usage">Usage</h3>
 <div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./arachnid</span> <span class="pp">[</span><span class="ss">mazefile</span><span class="pp">]</span></span></code></pre></div>
-<p>You can explore the maze using the
-<code>w</code>,<code>a</code>,<code>s</code>, and <code>d</code>
-keys.</p>
-<h2 id="copyright-and-cc-by-sa-4.0-license">Copyright and CC BY-SA 4.0
-License:</h2>
-<p>This file is Copyright (c) 2023 by Landon Curt Noll. All Rights
-Reserved. You are free to share and adapt this file under the terms of
-this license:</p>
+<p>You can explore the maze using the <code>w</code>,<code>a</code>,<code>s</code>, and <code>d</code> keys.</p>
+<h2 id="copyright-and-cc-by-sa-4.0-license">Copyright and CC BY-SA 4.0 License:</h2>
+<p>This file is Copyright (c) 2023 by Landon Curt Noll. All Rights Reserved.
+You are free to share and adapt this file under the terms of this license:</p>
 <pre><code>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</code></pre>
-<p>For more information, see:
-https://creativecommons.org/licenses/by-sa/4.0/</p>
+<p>For more information, see: https://creativecommons.org/licenses/by-sa/4.0/</p>
 
 <!-- END: this line ends content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 <!-- START: this line starts content for HTML phase 22 by: bin/output-index-inventory.sh via bin/md2html.sh -->
 
 <!-- START: this line starts content generated by: bin/output-index-inventory.sh -->
 
-<h1 id="inventory-for-2004arachnid"><a name="inventory"></a>Inventory
-for 2004/arachnid</h1>
+<h1 id="inventory-for-2004arachnid"><a name="inventory"></a>Inventory for 2004/arachnid</h1>
 <p><a href="#top">Jump to top</a></p>
 <h2 id="primary-files">Primary files</h2>
 <ul>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/arachnid/arachnid.c">arachnid.c</a>
-- entry source</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/arachnid/Makefile">Makefile</a>
-- entry Makefile</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/arachnid/arachnid.alt.c">arachnid.alt.c</a>
-- alternative source</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/arachnid/arachnid.orig.c">arachnid.orig.c</a>
-- original source</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/arachnid/arachnid.txt">arachnid.txt</a>
-- an alternate maze</li>
-<li><a href="2004_arachnid.tar.bz2">2004_arachnid.tar.bz2</a> - download
-entry source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/arachnid/arachnid.c">arachnid.c</a> - entry source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/arachnid/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/arachnid/arachnid.alt.c">arachnid.alt.c</a> - alternative source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/arachnid/arachnid.orig.c">arachnid.orig.c</a> - original source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/arachnid/arachnid.txt">arachnid.txt</a> - an alternate maze</li>
+<li><a href="2004_arachnid.tar.bz2">2004_arachnid.tar.bz2</a> - download entry source</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="index.html">index.html</a> - entry home page</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/arachnid/.entry.json">.entry.json</a>
-- description of entry in JSON</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/arachnid/.gitignore">.gitignore</a>
-- list of files that should not be committed under git</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/arachnid/.entry.json">.entry.json</a> - description of entry in JSON</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/arachnid/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
 <li><a href=".path">.path</a> - directory path from top directory</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/arachnid/README.md">README.md</a>
-- markdown source for index.html</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/arachnid/README.md">README.md</a> - markdown source for index.html</li>
 </ul>
 
 <!-- END: next line ends content generated by: bin/output-index-inventory.sh -->

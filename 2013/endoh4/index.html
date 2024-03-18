@@ -141,24 +141,21 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em>
 
 <h2 id="to-build">To build:</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span></span></code></pre></div>
-<p>If you wish to change the size (see the <a
-href="#authors-remarks">Author’s remarks</a> below) you can do so with
-the <code>SIZE</code> variable. For instance you can do:</p>
+<p>If you wish to change the size (see the <a href="#authors-remarks">Author’s remarks</a>
+below) you can do so with the <code>SIZE</code> variable. For instance you can do:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber SIZE=50,50 all</span></code></pre></div>
-<p>but you can also do this directly with the <a
-href="endoh4.sh">endoh4.sh</a> script as described below.</p>
+<p>but you can also do this directly with the <a href="endoh4.sh">endoh4.sh</a> script as
+described below.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>STATUS: INABIAF - please **DO NOT** fix</code></pre>
-<p>For more detailed information see <a
-href="../../bugs.html#2013_endoh4">2013 endoh4 bugs</a>.</p>
+<p>For more detailed information see <a href="../../bugs.html#2013_endoh4">2013 endoh4 bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh4</span> <span class="op">&lt;</span> file</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh4.sh</span> file</span></code></pre></div>
-<p>The second form is preferable as it will temporarily make the cursor
-invisible as recommended by the author. If no file is specified in the
-<code>./endoh4.sh</code> command line it will feed to the program <a
-href="endoh4.c">endoh4.c</a>.</p>
+<p>The second form is preferable as it will temporarily make the cursor invisible
+as recommended by the author. If no file is specified in the <code>./endoh4.sh</code> command
+line it will feed to the program <a href="endoh4.c">endoh4.c</a>.</p>
 <h2 id="try">Try:</h2>
 <div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh4.sh</span> cube.txt</span></code></pre></div>
 <p>Hit ctrl-c to end the program.</p>
@@ -168,22 +165,18 @@ href="endoh4.c">endoh4.c</a>.</p>
 <p>You can provide more than one file:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh4.sh</span> solids/archimedian-solid/a11-truncated-icosahedron.txt cube.txt</span></code></pre></div>
 <p>Hit ctrl-c/intr to go to the next file.</p>
-<p>If you wish to change the size to <code>50,50</code> without passing
-any arg:</p>
+<p>If you wish to change the size to <code>50,50</code> without passing any arg:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="va">SIZE</span><span class="op">=</span>50,50 <span class="ex">./endoh4.sh</span></span></code></pre></div>
-<p>Not specifying a file feeds <a href="endoh4.c">endoh4.c</a> to the
-program.</p>
+<p>Not specifying a file feeds <a href="endoh4.c">endoh4.c</a> to the program.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
-<p>This program is formatted as the net for a tetrahedron (hint: try
-feeding the program it’s own source code like <code>./endoh4.sh</code>).
-When it runs there is an animation for the computation to work out the
-convex hull.</p>
+<p>This program is formatted as the net for a tetrahedron (hint: try feeding the
+program it’s own source code like <code>./endoh4.sh</code>). When it runs there is an
+animation for the computation to work out the convex hull.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="spec">Spec</h3>
 <p>This is a convex polyhedron viewer, which:</p>
 <ol type="1">
-<li>reads three-dimensional vertices (3N float values) from
-<code>stdin</code>,</li>
+<li>reads three-dimensional vertices (3N float values) from <code>stdin</code>,</li>
 <li>calculates a convex hull of them, and</li>
 <li>renders it.</li>
 </ol>
@@ -205,539 +198,211 @@ triangulated)</li>
 </ul>
 <p>(Note that this program does not use <code>math.h</code>.)</p>
 <h3 id="portability">Portability</h3>
-<p>I think it conforms with both C89 and C99. I confirmed that it worked
-on gcc, clang, and tcc. It should not trigger warnings with
-<code>-pedantic</code> and <code>-Wextra</code>.</p>
+<p>I think it conforms with both C89 and C99. I confirmed that it worked on gcc,
+clang, and tcc. It should not trigger warnings with <code>-pedantic</code> and <code>-Wextra</code>.</p>
 <h3 id="tips">Tips</h3>
-<p>You may want to use <code>tput</code> to hide the terminal
-cursor.</p>
+<p>You may want to use <code>tput</code> to hide the terminal cursor.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tput</span> civis</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh4</span> <span class="op">&lt;</span> cube.txt</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tput</span> cnorm</span></code></pre></div>
 <p>or</p>
-<div class="sourceCode" id="cb10"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh4.sh</span> cube.txt</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh4.sh</span> cube.txt</span></code></pre></div>
 <h3 id="bonuses">Bonuses</h3>
-<p>You can change the screen size. Let the aspect ratio be about
-3:1.</p>
-<div class="sourceCode" id="cb11"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cc</span> <span class="at">-DS</span><span class="op">=</span>120,40 <span class="at">-o</span> endoh4 endoh4.c</span></code></pre></div>
+<p>You can change the screen size. Let the aspect ratio be about 3:1.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cc</span> <span class="at">-DS</span><span class="op">=</span>120,40 <span class="at">-o</span> endoh4 endoh4.c</span></code></pre></div>
 <p>The shape of this code is the geometric net of a regular tetrahedron.
 So, try:</p>
-<div class="sourceCode" id="cb12"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh4</span> <span class="op">&lt;</span> endoh4.c <span class="co"># or ./endoh4.sh</span></span></code></pre></div>
-<p>The <a href="solids/">solids/</a> directory includes various solid
-data:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh4</span> <span class="op">&lt;</span> endoh4.c <span class="co"># or ./endoh4.sh</span></span></code></pre></div>
+<p>The <a href="solids/">solids/</a> directory includes various solid data:</p>
 <ul>
-<li><a href="http://en.wikipedia.org/wiki/Platonic_solid">Platonic
-solids</a></li>
-<li><a href="http://en.wikipedia.org/wiki/Archimedean_solid">Archimedean
-solids</a></li>
-<li><a
-href="http://en.wikipedia.org/wiki/Prism_%28geometry%29">Prisms</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Platonic_solid">Platonic solids</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Archimedean_solid">Archimedean solids</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Prism_%28geometry%29">Prisms</a></li>
 <li><a href="http://en.wikipedia.org/wiki/Antiprism">Antiprisms</a></li>
 <li><a href="http://en.wikipedia.org/wiki/Bipyramid">Bipyramids</a></li>
-<li><a
-href="http://en.wikipedia.org/wiki/Trapezohedron">Trapezohedrons</a></li>
-<li><a href="http://en.wikipedia.org/wiki/Johnson_solid">Johnson
-solids</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Trapezohedron">Trapezohedrons</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Johnson_solid">Johnson solids</a></li>
 </ul>
-<p>I created the files by using the POV-Ray scripts (<a
-href="http://en.wikipedia.org/wiki/File:Poly.pov">1</a> and <a
-href="http://en.wikipedia.org/wiki/User:AndrewKepert/poly.pov">2</a>) in
-Wikipedia. They are copyrighted in CC BY-SA 3.0 by “User:Cyp” and
-“User:AndrewKepert”.</p>
-<h2 id="copyright-and-cc-by-sa-4.0-license">Copyright and CC BY-SA 4.0
-License:</h2>
-<p>This file is Copyright (c) 2023 by Landon Curt Noll. All Rights
-Reserved. You are free to share and adapt this file under the terms of
-this license:</p>
+<p>I created the files by using the POV-Ray scripts
+(<a href="http://en.wikipedia.org/wiki/File:Poly.pov">1</a> and
+<a href="http://en.wikipedia.org/wiki/User:AndrewKepert/poly.pov">2</a>) in Wikipedia.
+They are copyrighted in CC BY-SA 3.0 by “User:Cyp” and “User:AndrewKepert”.</p>
+<h2 id="copyright-and-cc-by-sa-4.0-license">Copyright and CC BY-SA 4.0 License:</h2>
+<p>This file is Copyright (c) 2023 by Landon Curt Noll. All Rights Reserved.
+You are free to share and adapt this file under the terms of this license:</p>
 <pre><code>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</code></pre>
-<p>For more information, see:
-https://creativecommons.org/licenses/by-sa/4.0/</p>
+<p>For more information, see: https://creativecommons.org/licenses/by-sa/4.0/</p>
 
 <!-- END: this line ends content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 <!-- START: this line starts content for HTML phase 22 by: bin/output-index-inventory.sh via bin/md2html.sh -->
 
 <!-- START: this line starts content generated by: bin/output-index-inventory.sh -->
 
-<h1 id="inventory-for-2013endoh4"><a name="inventory"></a>Inventory for
-2013/endoh4</h1>
+<h1 id="inventory-for-2013endoh4"><a name="inventory"></a>Inventory for 2013/endoh4</h1>
 <p><a href="#top">Jump to top</a></p>
 <h2 id="primary-files">Primary files</h2>
 <ul>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/endoh4.c">endoh4.c</a>
-- entry source</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/Makefile">Makefile</a>
-- entry Makefile</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/endoh4.orig.c">endoh4.orig.c</a>
-- original source</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/cube.txt">cube.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/endoh4.sh">endoh4.sh</a>
-- how to run</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/antiprism/a04-square-antiprism.txt">solids/antiprism/a04-square-antiprism.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/antiprism/a05-pentagonal-antiprism.txt">solids/antiprism/a05-pentagonal-antiprism.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/antiprism/a06-hexagonal-antiprism.txt">solids/antiprism/a06-hexagonal-antiprism.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/antiprism/a07-heptagonal-antiprism.txt">solids/antiprism/a07-heptagonal-antiprism.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/antiprism/a08-octagonal-antiprism.txt">solids/antiprism/a08-octagonal-antiprism.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/antiprism/a09-enneagonal-antiprism.txt">solids/antiprism/a09-enneagonal-antiprism.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/antiprism/a10-decagonal-antiprism.txt">solids/antiprism/a10-decagonal-antiprism.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a01-cuboctahedron.txt">solids/archimedian-solid/a01-cuboctahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a02-great-rhombicosidodecahedron.txt">solids/archimedian-solid/a02-great-rhombicosidodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a03-great-rhombicuboctahedron.txt">solids/archimedian-solid/a03-great-rhombicuboctahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a04-icosidodecahedron.txt">solids/archimedian-solid/a04-icosidodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a05-small-rhombicosidodecahedron.txt">solids/archimedian-solid/a05-small-rhombicosidodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a06-small-rhombicuboctahedron.txt">solids/archimedian-solid/a06-small-rhombicuboctahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a07-snub-cube.txt">solids/archimedian-solid/a07-snub-cube.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a08-snub-dodecahedron.txt">solids/archimedian-solid/a08-snub-dodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a09-truncated-cube.txt">solids/archimedian-solid/a09-truncated-cube.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a10-truncated-dodecahedron.txt">solids/archimedian-solid/a10-truncated-dodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a11-truncated-icosahedron.txt">solids/archimedian-solid/a11-truncated-icosahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a12-truncated-octahedron.txt">solids/archimedian-solid/a12-truncated-octahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a13-truncated-tetrahedron.txt">solids/archimedian-solid/a13-truncated-tetrahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/bipyramid/b06-hexagonal-bipyramid.txt">solids/bipyramid/b06-hexagonal-bipyramid.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/bipyramid/b07-heptagonal-bipyramid.txt">solids/bipyramid/b07-heptagonal-bipyramid.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/bipyramid/b08-octagonal-bipyramid.txt">solids/bipyramid/b08-octagonal-bipyramid.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/bipyramid/b09-enneagonal-bipyramid.txt">solids/bipyramid/b09-enneagonal-bipyramid.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/bipyramid/b10-decagonal-bipyramid.txt">solids/bipyramid/b10-decagonal-bipyramid.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c01-rhombic-dodecahedron.txt">solids/catalan-solid/c01-rhombic-dodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c02-disdyakis-triacontahedron.txt">solids/catalan-solid/c02-disdyakis-triacontahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c03-disdyakis-dodecahedron.txt">solids/catalan-solid/c03-disdyakis-dodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c04-rhombic-triacontahedron.txt">solids/catalan-solid/c04-rhombic-triacontahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c05-deltoidal-hexecontahedron.txt">solids/catalan-solid/c05-deltoidal-hexecontahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c06-deltoidal-icositetrahedron.txt">solids/catalan-solid/c06-deltoidal-icositetrahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c07-pentagonal-icositetrahedron.txt">solids/catalan-solid/c07-pentagonal-icositetrahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c08-pentagonal-hexecontahedron.txt">solids/catalan-solid/c08-pentagonal-hexecontahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c09-small-triakis-octahedron.txt">solids/catalan-solid/c09-small-triakis-octahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c10-triakis-icosahedron.txt">solids/catalan-solid/c10-triakis-icosahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c11-pentakis-dodecahedron.txt">solids/catalan-solid/c11-pentakis-dodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c12-tetrakis-hexahedron.txt">solids/catalan-solid/c12-tetrakis-hexahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c13-triakis-tetrahedron.txt">solids/catalan-solid/c13-triakis-tetrahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j01-square-pyramid.txt">solids/johnson-solid/j01-square-pyramid.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j02-pentagonal-pyramid.txt">solids/johnson-solid/j02-pentagonal-pyramid.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j03-triangular-cupola.txt">solids/johnson-solid/j03-triangular-cupola.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j04-square-cupola.txt">solids/johnson-solid/j04-square-cupola.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j05-pentagonal-cupola.txt">solids/johnson-solid/j05-pentagonal-cupola.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j06-pentagonal-rotunda.txt">solids/johnson-solid/j06-pentagonal-rotunda.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j07-elongated-triangular-pyramid.txt">solids/johnson-solid/j07-elongated-triangular-pyramid.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j08-elongated-square-pyramid.txt">solids/johnson-solid/j08-elongated-square-pyramid.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j09-elongated-pentagonal-pyramid.txt">solids/johnson-solid/j09-elongated-pentagonal-pyramid.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j10-gyroelongated-square-pyramid.txt">solids/johnson-solid/j10-gyroelongated-square-pyramid.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j11-gyroelongated-pentagonal-pyramid.txt">solids/johnson-solid/j11-gyroelongated-pentagonal-pyramid.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j12-triangular-dipyramid.txt">solids/johnson-solid/j12-triangular-dipyramid.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j13-pentagonal-dipyramid.txt">solids/johnson-solid/j13-pentagonal-dipyramid.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j14-elongated-triangular-dipyramid.txt">solids/johnson-solid/j14-elongated-triangular-dipyramid.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j15-elongated-square-dipyramid.txt">solids/johnson-solid/j15-elongated-square-dipyramid.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j16-elongated-pentagonal-dipyramid.txt">solids/johnson-solid/j16-elongated-pentagonal-dipyramid.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j17-gyroelongated-square-dipyramid.txt">solids/johnson-solid/j17-gyroelongated-square-dipyramid.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j18-elongated-triangular-cupola.txt">solids/johnson-solid/j18-elongated-triangular-cupola.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j19-elongated-square-cupola.txt">solids/johnson-solid/j19-elongated-square-cupola.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j20-elongated-pentagonal-cupola.txt">solids/johnson-solid/j20-elongated-pentagonal-cupola.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j21-elongated-pentagonal-rotunda.txt">solids/johnson-solid/j21-elongated-pentagonal-rotunda.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j22-gyroelongated-triangular-cupola.txt">solids/johnson-solid/j22-gyroelongated-triangular-cupola.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j23-gyroelongated-square-cupola.txt">solids/johnson-solid/j23-gyroelongated-square-cupola.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j24-gyroelongated-pentagonal-cupola.txt">solids/johnson-solid/j24-gyroelongated-pentagonal-cupola.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j25-gyroelongated-pentagonal-rotunda.txt">solids/johnson-solid/j25-gyroelongated-pentagonal-rotunda.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j26-gyrobifastigium.txt">solids/johnson-solid/j26-gyrobifastigium.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j27-triangular-orthobicupola.txt">solids/johnson-solid/j27-triangular-orthobicupola.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j28-square-orthobicupola.txt">solids/johnson-solid/j28-square-orthobicupola.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j29-square-gyrobicupola.txt">solids/johnson-solid/j29-square-gyrobicupola.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j30-pentagonal-orthobicupola.txt">solids/johnson-solid/j30-pentagonal-orthobicupola.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j31-pentagonal-gyrobicupola.txt">solids/johnson-solid/j31-pentagonal-gyrobicupola.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j32-pentagonal-orthocupolarotunda.txt">solids/johnson-solid/j32-pentagonal-orthocupolarotunda.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j33-pentagonal-gyrocupolarotunda.txt">solids/johnson-solid/j33-pentagonal-gyrocupolarotunda.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j34-pentagonal-orthobirotunda.txt">solids/johnson-solid/j34-pentagonal-orthobirotunda.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j35-elongated-triangular-orthobicupola.txt">solids/johnson-solid/j35-elongated-triangular-orthobicupola.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j36-elongated-triangular-gyrobicupola.txt">solids/johnson-solid/j36-elongated-triangular-gyrobicupola.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j37-elongated-square-gyrobicupola.txt">solids/johnson-solid/j37-elongated-square-gyrobicupola.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j38-elongated-pentagonal-orthobicupola.txt">solids/johnson-solid/j38-elongated-pentagonal-orthobicupola.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j39-elongated-pentagonal-gyrobicupola.txt">solids/johnson-solid/j39-elongated-pentagonal-gyrobicupola.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j40-elongated-pentagonal-orthocupolarotunda.txt">solids/johnson-solid/j40-elongated-pentagonal-orthocupolarotunda.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j41-elongated-pentagonal-gyrocupolarotunda.txt">solids/johnson-solid/j41-elongated-pentagonal-gyrocupolarotunda.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j42-elongated-pentagonal-orthobirotunda.txt">solids/johnson-solid/j42-elongated-pentagonal-orthobirotunda.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j43-elongated-pentagonal-gyrobirotunda.txt">solids/johnson-solid/j43-elongated-pentagonal-gyrobirotunda.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j44-gyroelongated-triangular-bicupola.txt">solids/johnson-solid/j44-gyroelongated-triangular-bicupola.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j45-gyroelongated-square-bicupola.txt">solids/johnson-solid/j45-gyroelongated-square-bicupola.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j46-gyroelongated-pentagonal-bicupola.txt">solids/johnson-solid/j46-gyroelongated-pentagonal-bicupola.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j47-gyroelongated-pentagonal-cupolarotunda.txt">solids/johnson-solid/j47-gyroelongated-pentagonal-cupolarotunda.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j48-gyroelongated-pentagonal-birotunda.txt">solids/johnson-solid/j48-gyroelongated-pentagonal-birotunda.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j49-augmented-triangular-prism.txt">solids/johnson-solid/j49-augmented-triangular-prism.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j50-biaugmented-triangular-prism.txt">solids/johnson-solid/j50-biaugmented-triangular-prism.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j51-triaugmented-triangular-prism.txt">solids/johnson-solid/j51-triaugmented-triangular-prism.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j52-augmented-pentagonal-prism.txt">solids/johnson-solid/j52-augmented-pentagonal-prism.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j53-biaugmented-pentagonal-prism.txt">solids/johnson-solid/j53-biaugmented-pentagonal-prism.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j54-augmented-hexagonal-prism.txt">solids/johnson-solid/j54-augmented-hexagonal-prism.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j55-parabiaugmented-hexagonal-prism.txt">solids/johnson-solid/j55-parabiaugmented-hexagonal-prism.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j56-metabiaugmented-hexagonal-prism.txt">solids/johnson-solid/j56-metabiaugmented-hexagonal-prism.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j57-triaugmented-hexagonal-prism.txt">solids/johnson-solid/j57-triaugmented-hexagonal-prism.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j58-augmented-dodecahedron.txt">solids/johnson-solid/j58-augmented-dodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j59-parabiaugmented-dodecahedron.txt">solids/johnson-solid/j59-parabiaugmented-dodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j60-metabiaugmented-dodecahedron.txt">solids/johnson-solid/j60-metabiaugmented-dodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j61-triaugmented-dodecahedron.txt">solids/johnson-solid/j61-triaugmented-dodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j62-metabidiminished-icosahedron.txt">solids/johnson-solid/j62-metabidiminished-icosahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j63-tridiminished-icosahedron.txt">solids/johnson-solid/j63-tridiminished-icosahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j64-augmented-tridiminished-icosahedron.txt">solids/johnson-solid/j64-augmented-tridiminished-icosahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j65-augmented-truncated-tetrahedron.txt">solids/johnson-solid/j65-augmented-truncated-tetrahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j66-augmented-truncated-cube.txt">solids/johnson-solid/j66-augmented-truncated-cube.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j67-biaugmented-truncated-cube.txt">solids/johnson-solid/j67-biaugmented-truncated-cube.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j68-augmented-truncated-dodecahedron.txt">solids/johnson-solid/j68-augmented-truncated-dodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j69-parabiaugmented-truncated-dodecahedron.txt">solids/johnson-solid/j69-parabiaugmented-truncated-dodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j70-metabiaugmented-truncated-dodecahedron.txt">solids/johnson-solid/j70-metabiaugmented-truncated-dodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j71-triaugmented-truncated-dodecahedron.txt">solids/johnson-solid/j71-triaugmented-truncated-dodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j72-gyrate-rhombicosidodecahedron.txt">solids/johnson-solid/j72-gyrate-rhombicosidodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j73-parabigyrate-rhombicosidodecahedron.txt">solids/johnson-solid/j73-parabigyrate-rhombicosidodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j74-metabigyrate-rhombicosidodecahedron.txt">solids/johnson-solid/j74-metabigyrate-rhombicosidodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j75-trigyrate-rhombicosidodecahedron.txt">solids/johnson-solid/j75-trigyrate-rhombicosidodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j76-diminished-rhombicosidodecahedron.txt">solids/johnson-solid/j76-diminished-rhombicosidodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j77-paragyrate-diminished-rhombicosidodecahedron.txt">solids/johnson-solid/j77-paragyrate-diminished-rhombicosidodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j78-metagyrate-diminished-rhombicosidodecahedron.txt">solids/johnson-solid/j78-metagyrate-diminished-rhombicosidodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j79-bigyrate-diminished-rhombicosidodecahedron.txt">solids/johnson-solid/j79-bigyrate-diminished-rhombicosidodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j80-parabidiminished-rhombicosidodecahedron.txt">solids/johnson-solid/j80-parabidiminished-rhombicosidodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j81-metabidiminished-rhombicosidodecahedron.txt">solids/johnson-solid/j81-metabidiminished-rhombicosidodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j82-gyrate-bidiminished-rhombicosidodecahedron.txt">solids/johnson-solid/j82-gyrate-bidiminished-rhombicosidodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j83-tridiminished-rhombicosidodecahedron.txt">solids/johnson-solid/j83-tridiminished-rhombicosidodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j84-snub-disphenoid.txt">solids/johnson-solid/j84-snub-disphenoid.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j85-snub-square-antiprism.txt">solids/johnson-solid/j85-snub-square-antiprism.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j86-sphenocorona.txt">solids/johnson-solid/j86-sphenocorona.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j87-augmented-sphenocorona.txt">solids/johnson-solid/j87-augmented-sphenocorona.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j88-sphenomegacorona.txt">solids/johnson-solid/j88-sphenomegacorona.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j89-hebesphenomegacorona.txt">solids/johnson-solid/j89-hebesphenomegacorona.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j90-disphenocingulum.txt">solids/johnson-solid/j90-disphenocingulum.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j91-bilunabirotunda.txt">solids/johnson-solid/j91-bilunabirotunda.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j92-triangular-hebesphenorotunda.txt">solids/johnson-solid/j92-triangular-hebesphenorotunda.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/platonic-solid/p01-tetrahedron.txt">solids/platonic-solid/p01-tetrahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/platonic-solid/p02-cube.txt">solids/platonic-solid/p02-cube.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/platonic-solid/p03-octahedron.txt">solids/platonic-solid/p03-octahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/platonic-solid/p04-dodecahedron.txt">solids/platonic-solid/p04-dodecahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/platonic-solid/p05-icosahedron.txt">solids/platonic-solid/p05-icosahedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/prism/p03-triangular-prism.txt">solids/prism/p03-triangular-prism.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/prism/p05-pentagonal-prism.txt">solids/prism/p05-pentagonal-prism.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/prism/p06-hexagonal-prism.txt">solids/prism/p06-hexagonal-prism.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/prism/p07-heptagonal-prism.txt">solids/prism/p07-heptagonal-prism.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/prism/p08-octagonal-prism.txt">solids/prism/p08-octagonal-prism.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/prism/p09-enneagonal-prism.txt">solids/prism/p09-enneagonal-prism.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/prism/p10-decagonal-prism.txt">solids/prism/p10-decagonal-prism.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/trapezohedron/t04-tetragonal-trapezohedron.txt">solids/trapezohedron/t04-tetragonal-trapezohedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/trapezohedron/t05-pentagonal-trapezohedron.txt">solids/trapezohedron/t05-pentagonal-trapezohedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/trapezohedron/t06-hexagonal-trapezohedron.txt">solids/trapezohedron/t06-hexagonal-trapezohedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/trapezohedron/t08-octagonal-trapezohedron.txt">solids/trapezohedron/t08-octagonal-trapezohedron.txt</a>
-- 3D object coordinates</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/trapezohedron/t10-decagonal-trapezohedron.txt">solids/trapezohedron/t10-decagonal-trapezohedron.txt</a>
-- 3D object coordinates</li>
-<li><a href="2013_endoh4.tar.bz2">2013_endoh4.tar.bz2</a> - download
-entry source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/endoh4.c">endoh4.c</a> - entry source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/endoh4.orig.c">endoh4.orig.c</a> - original source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/cube.txt">cube.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/endoh4.sh">endoh4.sh</a> - how to run</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/antiprism/a04-square-antiprism.txt">solids/antiprism/a04-square-antiprism.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/antiprism/a05-pentagonal-antiprism.txt">solids/antiprism/a05-pentagonal-antiprism.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/antiprism/a06-hexagonal-antiprism.txt">solids/antiprism/a06-hexagonal-antiprism.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/antiprism/a07-heptagonal-antiprism.txt">solids/antiprism/a07-heptagonal-antiprism.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/antiprism/a08-octagonal-antiprism.txt">solids/antiprism/a08-octagonal-antiprism.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/antiprism/a09-enneagonal-antiprism.txt">solids/antiprism/a09-enneagonal-antiprism.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/antiprism/a10-decagonal-antiprism.txt">solids/antiprism/a10-decagonal-antiprism.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a01-cuboctahedron.txt">solids/archimedian-solid/a01-cuboctahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a02-great-rhombicosidodecahedron.txt">solids/archimedian-solid/a02-great-rhombicosidodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a03-great-rhombicuboctahedron.txt">solids/archimedian-solid/a03-great-rhombicuboctahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a04-icosidodecahedron.txt">solids/archimedian-solid/a04-icosidodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a05-small-rhombicosidodecahedron.txt">solids/archimedian-solid/a05-small-rhombicosidodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a06-small-rhombicuboctahedron.txt">solids/archimedian-solid/a06-small-rhombicuboctahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a07-snub-cube.txt">solids/archimedian-solid/a07-snub-cube.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a08-snub-dodecahedron.txt">solids/archimedian-solid/a08-snub-dodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a09-truncated-cube.txt">solids/archimedian-solid/a09-truncated-cube.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a10-truncated-dodecahedron.txt">solids/archimedian-solid/a10-truncated-dodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a11-truncated-icosahedron.txt">solids/archimedian-solid/a11-truncated-icosahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a12-truncated-octahedron.txt">solids/archimedian-solid/a12-truncated-octahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/archimedian-solid/a13-truncated-tetrahedron.txt">solids/archimedian-solid/a13-truncated-tetrahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/bipyramid/b06-hexagonal-bipyramid.txt">solids/bipyramid/b06-hexagonal-bipyramid.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/bipyramid/b07-heptagonal-bipyramid.txt">solids/bipyramid/b07-heptagonal-bipyramid.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/bipyramid/b08-octagonal-bipyramid.txt">solids/bipyramid/b08-octagonal-bipyramid.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/bipyramid/b09-enneagonal-bipyramid.txt">solids/bipyramid/b09-enneagonal-bipyramid.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/bipyramid/b10-decagonal-bipyramid.txt">solids/bipyramid/b10-decagonal-bipyramid.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c01-rhombic-dodecahedron.txt">solids/catalan-solid/c01-rhombic-dodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c02-disdyakis-triacontahedron.txt">solids/catalan-solid/c02-disdyakis-triacontahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c03-disdyakis-dodecahedron.txt">solids/catalan-solid/c03-disdyakis-dodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c04-rhombic-triacontahedron.txt">solids/catalan-solid/c04-rhombic-triacontahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c05-deltoidal-hexecontahedron.txt">solids/catalan-solid/c05-deltoidal-hexecontahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c06-deltoidal-icositetrahedron.txt">solids/catalan-solid/c06-deltoidal-icositetrahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c07-pentagonal-icositetrahedron.txt">solids/catalan-solid/c07-pentagonal-icositetrahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c08-pentagonal-hexecontahedron.txt">solids/catalan-solid/c08-pentagonal-hexecontahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c09-small-triakis-octahedron.txt">solids/catalan-solid/c09-small-triakis-octahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c10-triakis-icosahedron.txt">solids/catalan-solid/c10-triakis-icosahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c11-pentakis-dodecahedron.txt">solids/catalan-solid/c11-pentakis-dodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c12-tetrakis-hexahedron.txt">solids/catalan-solid/c12-tetrakis-hexahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/catalan-solid/c13-triakis-tetrahedron.txt">solids/catalan-solid/c13-triakis-tetrahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j01-square-pyramid.txt">solids/johnson-solid/j01-square-pyramid.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j02-pentagonal-pyramid.txt">solids/johnson-solid/j02-pentagonal-pyramid.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j03-triangular-cupola.txt">solids/johnson-solid/j03-triangular-cupola.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j04-square-cupola.txt">solids/johnson-solid/j04-square-cupola.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j05-pentagonal-cupola.txt">solids/johnson-solid/j05-pentagonal-cupola.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j06-pentagonal-rotunda.txt">solids/johnson-solid/j06-pentagonal-rotunda.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j07-elongated-triangular-pyramid.txt">solids/johnson-solid/j07-elongated-triangular-pyramid.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j08-elongated-square-pyramid.txt">solids/johnson-solid/j08-elongated-square-pyramid.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j09-elongated-pentagonal-pyramid.txt">solids/johnson-solid/j09-elongated-pentagonal-pyramid.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j10-gyroelongated-square-pyramid.txt">solids/johnson-solid/j10-gyroelongated-square-pyramid.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j11-gyroelongated-pentagonal-pyramid.txt">solids/johnson-solid/j11-gyroelongated-pentagonal-pyramid.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j12-triangular-dipyramid.txt">solids/johnson-solid/j12-triangular-dipyramid.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j13-pentagonal-dipyramid.txt">solids/johnson-solid/j13-pentagonal-dipyramid.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j14-elongated-triangular-dipyramid.txt">solids/johnson-solid/j14-elongated-triangular-dipyramid.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j15-elongated-square-dipyramid.txt">solids/johnson-solid/j15-elongated-square-dipyramid.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j16-elongated-pentagonal-dipyramid.txt">solids/johnson-solid/j16-elongated-pentagonal-dipyramid.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j17-gyroelongated-square-dipyramid.txt">solids/johnson-solid/j17-gyroelongated-square-dipyramid.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j18-elongated-triangular-cupola.txt">solids/johnson-solid/j18-elongated-triangular-cupola.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j19-elongated-square-cupola.txt">solids/johnson-solid/j19-elongated-square-cupola.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j20-elongated-pentagonal-cupola.txt">solids/johnson-solid/j20-elongated-pentagonal-cupola.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j21-elongated-pentagonal-rotunda.txt">solids/johnson-solid/j21-elongated-pentagonal-rotunda.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j22-gyroelongated-triangular-cupola.txt">solids/johnson-solid/j22-gyroelongated-triangular-cupola.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j23-gyroelongated-square-cupola.txt">solids/johnson-solid/j23-gyroelongated-square-cupola.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j24-gyroelongated-pentagonal-cupola.txt">solids/johnson-solid/j24-gyroelongated-pentagonal-cupola.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j25-gyroelongated-pentagonal-rotunda.txt">solids/johnson-solid/j25-gyroelongated-pentagonal-rotunda.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j26-gyrobifastigium.txt">solids/johnson-solid/j26-gyrobifastigium.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j27-triangular-orthobicupola.txt">solids/johnson-solid/j27-triangular-orthobicupola.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j28-square-orthobicupola.txt">solids/johnson-solid/j28-square-orthobicupola.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j29-square-gyrobicupola.txt">solids/johnson-solid/j29-square-gyrobicupola.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j30-pentagonal-orthobicupola.txt">solids/johnson-solid/j30-pentagonal-orthobicupola.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j31-pentagonal-gyrobicupola.txt">solids/johnson-solid/j31-pentagonal-gyrobicupola.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j32-pentagonal-orthocupolarotunda.txt">solids/johnson-solid/j32-pentagonal-orthocupolarotunda.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j33-pentagonal-gyrocupolarotunda.txt">solids/johnson-solid/j33-pentagonal-gyrocupolarotunda.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j34-pentagonal-orthobirotunda.txt">solids/johnson-solid/j34-pentagonal-orthobirotunda.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j35-elongated-triangular-orthobicupola.txt">solids/johnson-solid/j35-elongated-triangular-orthobicupola.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j36-elongated-triangular-gyrobicupola.txt">solids/johnson-solid/j36-elongated-triangular-gyrobicupola.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j37-elongated-square-gyrobicupola.txt">solids/johnson-solid/j37-elongated-square-gyrobicupola.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j38-elongated-pentagonal-orthobicupola.txt">solids/johnson-solid/j38-elongated-pentagonal-orthobicupola.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j39-elongated-pentagonal-gyrobicupola.txt">solids/johnson-solid/j39-elongated-pentagonal-gyrobicupola.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j40-elongated-pentagonal-orthocupolarotunda.txt">solids/johnson-solid/j40-elongated-pentagonal-orthocupolarotunda.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j41-elongated-pentagonal-gyrocupolarotunda.txt">solids/johnson-solid/j41-elongated-pentagonal-gyrocupolarotunda.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j42-elongated-pentagonal-orthobirotunda.txt">solids/johnson-solid/j42-elongated-pentagonal-orthobirotunda.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j43-elongated-pentagonal-gyrobirotunda.txt">solids/johnson-solid/j43-elongated-pentagonal-gyrobirotunda.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j44-gyroelongated-triangular-bicupola.txt">solids/johnson-solid/j44-gyroelongated-triangular-bicupola.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j45-gyroelongated-square-bicupola.txt">solids/johnson-solid/j45-gyroelongated-square-bicupola.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j46-gyroelongated-pentagonal-bicupola.txt">solids/johnson-solid/j46-gyroelongated-pentagonal-bicupola.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j47-gyroelongated-pentagonal-cupolarotunda.txt">solids/johnson-solid/j47-gyroelongated-pentagonal-cupolarotunda.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j48-gyroelongated-pentagonal-birotunda.txt">solids/johnson-solid/j48-gyroelongated-pentagonal-birotunda.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j49-augmented-triangular-prism.txt">solids/johnson-solid/j49-augmented-triangular-prism.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j50-biaugmented-triangular-prism.txt">solids/johnson-solid/j50-biaugmented-triangular-prism.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j51-triaugmented-triangular-prism.txt">solids/johnson-solid/j51-triaugmented-triangular-prism.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j52-augmented-pentagonal-prism.txt">solids/johnson-solid/j52-augmented-pentagonal-prism.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j53-biaugmented-pentagonal-prism.txt">solids/johnson-solid/j53-biaugmented-pentagonal-prism.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j54-augmented-hexagonal-prism.txt">solids/johnson-solid/j54-augmented-hexagonal-prism.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j55-parabiaugmented-hexagonal-prism.txt">solids/johnson-solid/j55-parabiaugmented-hexagonal-prism.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j56-metabiaugmented-hexagonal-prism.txt">solids/johnson-solid/j56-metabiaugmented-hexagonal-prism.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j57-triaugmented-hexagonal-prism.txt">solids/johnson-solid/j57-triaugmented-hexagonal-prism.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j58-augmented-dodecahedron.txt">solids/johnson-solid/j58-augmented-dodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j59-parabiaugmented-dodecahedron.txt">solids/johnson-solid/j59-parabiaugmented-dodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j60-metabiaugmented-dodecahedron.txt">solids/johnson-solid/j60-metabiaugmented-dodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j61-triaugmented-dodecahedron.txt">solids/johnson-solid/j61-triaugmented-dodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j62-metabidiminished-icosahedron.txt">solids/johnson-solid/j62-metabidiminished-icosahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j63-tridiminished-icosahedron.txt">solids/johnson-solid/j63-tridiminished-icosahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j64-augmented-tridiminished-icosahedron.txt">solids/johnson-solid/j64-augmented-tridiminished-icosahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j65-augmented-truncated-tetrahedron.txt">solids/johnson-solid/j65-augmented-truncated-tetrahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j66-augmented-truncated-cube.txt">solids/johnson-solid/j66-augmented-truncated-cube.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j67-biaugmented-truncated-cube.txt">solids/johnson-solid/j67-biaugmented-truncated-cube.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j68-augmented-truncated-dodecahedron.txt">solids/johnson-solid/j68-augmented-truncated-dodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j69-parabiaugmented-truncated-dodecahedron.txt">solids/johnson-solid/j69-parabiaugmented-truncated-dodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j70-metabiaugmented-truncated-dodecahedron.txt">solids/johnson-solid/j70-metabiaugmented-truncated-dodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j71-triaugmented-truncated-dodecahedron.txt">solids/johnson-solid/j71-triaugmented-truncated-dodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j72-gyrate-rhombicosidodecahedron.txt">solids/johnson-solid/j72-gyrate-rhombicosidodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j73-parabigyrate-rhombicosidodecahedron.txt">solids/johnson-solid/j73-parabigyrate-rhombicosidodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j74-metabigyrate-rhombicosidodecahedron.txt">solids/johnson-solid/j74-metabigyrate-rhombicosidodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j75-trigyrate-rhombicosidodecahedron.txt">solids/johnson-solid/j75-trigyrate-rhombicosidodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j76-diminished-rhombicosidodecahedron.txt">solids/johnson-solid/j76-diminished-rhombicosidodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j77-paragyrate-diminished-rhombicosidodecahedron.txt">solids/johnson-solid/j77-paragyrate-diminished-rhombicosidodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j78-metagyrate-diminished-rhombicosidodecahedron.txt">solids/johnson-solid/j78-metagyrate-diminished-rhombicosidodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j79-bigyrate-diminished-rhombicosidodecahedron.txt">solids/johnson-solid/j79-bigyrate-diminished-rhombicosidodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j80-parabidiminished-rhombicosidodecahedron.txt">solids/johnson-solid/j80-parabidiminished-rhombicosidodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j81-metabidiminished-rhombicosidodecahedron.txt">solids/johnson-solid/j81-metabidiminished-rhombicosidodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j82-gyrate-bidiminished-rhombicosidodecahedron.txt">solids/johnson-solid/j82-gyrate-bidiminished-rhombicosidodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j83-tridiminished-rhombicosidodecahedron.txt">solids/johnson-solid/j83-tridiminished-rhombicosidodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j84-snub-disphenoid.txt">solids/johnson-solid/j84-snub-disphenoid.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j85-snub-square-antiprism.txt">solids/johnson-solid/j85-snub-square-antiprism.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j86-sphenocorona.txt">solids/johnson-solid/j86-sphenocorona.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j87-augmented-sphenocorona.txt">solids/johnson-solid/j87-augmented-sphenocorona.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j88-sphenomegacorona.txt">solids/johnson-solid/j88-sphenomegacorona.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j89-hebesphenomegacorona.txt">solids/johnson-solid/j89-hebesphenomegacorona.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j90-disphenocingulum.txt">solids/johnson-solid/j90-disphenocingulum.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j91-bilunabirotunda.txt">solids/johnson-solid/j91-bilunabirotunda.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/johnson-solid/j92-triangular-hebesphenorotunda.txt">solids/johnson-solid/j92-triangular-hebesphenorotunda.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/platonic-solid/p01-tetrahedron.txt">solids/platonic-solid/p01-tetrahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/platonic-solid/p02-cube.txt">solids/platonic-solid/p02-cube.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/platonic-solid/p03-octahedron.txt">solids/platonic-solid/p03-octahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/platonic-solid/p04-dodecahedron.txt">solids/platonic-solid/p04-dodecahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/platonic-solid/p05-icosahedron.txt">solids/platonic-solid/p05-icosahedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/prism/p03-triangular-prism.txt">solids/prism/p03-triangular-prism.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/prism/p05-pentagonal-prism.txt">solids/prism/p05-pentagonal-prism.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/prism/p06-hexagonal-prism.txt">solids/prism/p06-hexagonal-prism.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/prism/p07-heptagonal-prism.txt">solids/prism/p07-heptagonal-prism.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/prism/p08-octagonal-prism.txt">solids/prism/p08-octagonal-prism.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/prism/p09-enneagonal-prism.txt">solids/prism/p09-enneagonal-prism.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/prism/p10-decagonal-prism.txt">solids/prism/p10-decagonal-prism.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/trapezohedron/t04-tetragonal-trapezohedron.txt">solids/trapezohedron/t04-tetragonal-trapezohedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/trapezohedron/t05-pentagonal-trapezohedron.txt">solids/trapezohedron/t05-pentagonal-trapezohedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/trapezohedron/t06-hexagonal-trapezohedron.txt">solids/trapezohedron/t06-hexagonal-trapezohedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/trapezohedron/t08-octagonal-trapezohedron.txt">solids/trapezohedron/t08-octagonal-trapezohedron.txt</a> - 3D object coordinates</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/trapezohedron/t10-decagonal-trapezohedron.txt">solids/trapezohedron/t10-decagonal-trapezohedron.txt</a> - 3D object coordinates</li>
+<li><a href="2013_endoh4.tar.bz2">2013_endoh4.tar.bz2</a> - download entry source</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="index.html">index.html</a> - entry home page</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/.entry.json">.entry.json</a>
-- description of entry in JSON</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/.gitignore">.gitignore</a>
-- list of files that should not be committed under git</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/.entry.json">.entry.json</a> - description of entry in JSON</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
 <li><a href=".path">.path</a> - directory path from top directory</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/README.md">README.md</a>
-- markdown source for index.html</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/README.md">README.md</a> - markdown source for index.html</li>
 </ul>
 
 <!-- END: next line ends content generated by: bin/output-index-inventory.sh -->

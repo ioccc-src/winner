@@ -120,76 +120,56 @@
 <!-- END: this line ends content from: inc/before-content.default.html -->
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
-<h1
-id="the-recode-configurator-documentation-and-a-fun-way-to-explore-my-2020-ioccc-enigma-simulator">The
-recode configurator documentation (and a fun way to explore my 2020
-IOCCC Enigma simulator)</h1>
-<p>N.B. At the end of this file I have given a fun exercise that can be
-used to explore my <a
-href="https://www.cryptomuseum.com/crypto/enigma/index.htm">Enigma
-machine</a> <a href="prog.c">simulator</a>. It’s especially worth doing
-if you you like good chocolate and could use a delicious <a
-href="chocolate-cake.html">Double-layered Chocolate Fudge Cake</a>.</p>
-<p>Alternatively if you just want the <a
-href="../ferguson1/chocolate-cake.md">recipe</a> you could look at my <a
-href="../ferguson1/prog.c">Snake entry ‘Don’t tread on me’ award</a>
-since it’s also there and not enciphered.</p>
+<h1 id="the-recode-configurator-documentation-and-a-fun-way-to-explore-my-2020-ioccc-enigma-simulator">The recode configurator documentation (and a fun way to explore my 2020 IOCCC Enigma simulator)</h1>
+<p>N.B. At the end of this file I have given a fun exercise that can be used to
+explore my <a href="https://www.cryptomuseum.com/crypto/enigma/index.htm">Enigma machine</a>
+<a href="prog.c">simulator</a>. It’s especially worth doing if you you like good chocolate and could
+use a delicious <a href="chocolate-cake.html">Double-layered Chocolate Fudge Cake</a>.</p>
+<p>Alternatively if you just want the <a href="../ferguson1/chocolate-cake.md">recipe</a>
+you could look at my <a href="../ferguson1/prog.c">Snake entry ‘Don’t tread on me’
+award</a> since it’s also there and not enciphered.</p>
 <p><a name="toc"></a></p>
 <ul>
-<li><p><a href="#recode">What is recode and why is it
-recommended?</a></p></li>
+<li><p><a href="#recode">What is recode and why is it recommended?</a></p></li>
 <li><p><a href="#options">Options</a></p>
 <ul>
-<li><p><a href="#samefile">Protecting against the same I/O
-file</a></p></li>
-<li><p><a href="#fileoptions">File options parser
-limitation</a></p></li>
-<li><p><a href="#validation"><code>-R</code> option
-validation?</a></p></li>
+<li><p><a href="#samefile">Protecting against the same I/O file</a></p></li>
+<li><p><a href="#fileoptions">File options parser limitation</a></p></li>
+<li><p><a href="#validation"><code>-R</code> option validation?</a></p></li>
 </ul></li>
 <li><p><a href="#pipingtorecode">Piping commands to recode</a></p></li>
-<li><p><a href="#pipingtoenigma">Piping recode to the Enigma
-simulator</a></p></li>
-<li><p><a href="#manuallytest">Manually test the recode program with the
-Enigma program</a></p></li>
+<li><p><a href="#pipingtoenigma">Piping recode to the Enigma simulator</a></p></li>
+<li><p><a href="#manuallytest">Manually test the recode program with the Enigma program</a></p></li>
 <li><p><a href="#onlyconfig">Only write config file</a></p></li>
 <li><p><a href="#reuseconfig">Reusing a configuration</a></p></li>
-<li><p><a href="#passtoenigma">Write config file, read data file and
-pass to Enigma simulator</a></p></li>
-<li><p><a href="#directlytoenigma">Piping directly to the Enigma code
-once (with randomised settings, saved)</a></p></li>
+<li><p><a href="#passtoenigma">Write config file, read data file and pass to Enigma simulator</a></p></li>
+<li><p><a href="#directlytoenigma">Piping directly to the Enigma code once (with randomised settings, saved)</a></p></li>
 <li><p><a href="#conclusion">Usage conclusion</a></p></li>
 <li><p><a href="#additions">Example additions</a></p></li>
 <li><p><a href="#exampleuses">Example uses</a></p></li>
-<li><p><a href="#cake">Deliciously Enigmatic: Double-layered Chocolate
-Fudge Cake</a></p></li>
+<li><p><a href="#cake">Deliciously Enigmatic: Double-layered Chocolate Fudge Cake</a></p></li>
 </ul>
-<h1
-id="what-is-recode-and-why-is-it-recommended"><a name="recode" href="#toc">What
-is recode and why is it recommended?</a></h1>
-<p>To demonstrate how to and why you should use the <a
-href="recode.c">recode</a> program with the <a href="prog.c">Enigma
-machine simulator</a> I have included some examples here as well as
-brief (‘brief?!’ I am sure many would think but it’s brief for me)
+<h1 id="what-is-recode-and-why-is-it-recommended"><a name="recode" href="#toc">What is recode and why is it recommended?</a></h1>
+<p>To demonstrate how to and why you should use the <a href="recode.c">recode</a> program with
+the <a href="prog.c">Enigma machine simulator</a> I have included some examples here as
+well as brief (‘brief?!’ I am sure many would think but it’s brief for me)
 commentary.</p>
-<p>It would not be possible to do all that the recode program does in my
-entry itself but I wanted to demonstrate the features of my entry and
-this seemed the best way to do that. It also enhances the use of the
-simulator to make it reusable etc.</p>
-<p>The recode name idea is that it recodes the input (validating first)
-to be input for the simulator itself. It can pseudo-randomly select all
-the settings, it can write the settings to a file, read from input file
-(e.g. for the text to encipher/decipher if piped to the simulator)
-etc.</p>
-<p>Basically it’s a configurator for the Enigma simulator that makes it
-easier to use the simulator as well as to reuse the configuration to
-decipher messages that have been enciphered by those settings. But it
-also tries to make it look more like the real thing in that it shows the
-actual rotors (e.g. labelling them with the Roman numeral, showing their
-actual orders etc.), the reflectors (labelling them with B, C and
-showing the actual strings) etc.</p>
-<p>In this file I will show an example of each feature and then get to
-the wonderful ‘challenge’ for everyone.</p>
+<p>It would not be possible to do all that the recode program does in my entry
+itself but I wanted to demonstrate the features of my entry and this seemed the
+best way to do that. It also enhances the use of the simulator to make it
+reusable etc.</p>
+<p>The recode name idea is that it recodes the input (validating first) to be input
+for the simulator itself. It can pseudo-randomly select all the settings, it can
+write the settings to a file, read from input file (e.g. for the text to
+encipher/decipher if piped to the simulator) etc.</p>
+<p>Basically it’s a configurator for the Enigma simulator that makes it easier to
+use the simulator as well as to reuse the configuration to decipher messages
+that have been enciphered by those settings. But it also tries to make it look
+more like the real thing in that it shows the actual rotors (e.g. labelling them
+with the Roman numeral, showing their actual orders etc.), the reflectors
+(labelling them with B, C and showing the actual strings) etc.</p>
+<p>In this file I will show an example of each feature and then get to the
+wonderful ‘challenge’ for everyone.</p>
 <h1 id="options"><a name="options" href="#toc">Options</a></h1>
 <div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./recode</span> <span class="at">-h</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">usage:</span> ./recode <span class="pp">[</span><span class="ss">options</span><span class="pp">]</span></span>
@@ -198,11 +178,9 @@ the wonderful ‘challenge’ for everyone.</p>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-f</span><span class="op">&lt;</span>input file<span class="op">&gt;</span>  read file for Enigma input</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-R</span><span class="op">&lt;</span>string<span class="kw">|</span><span class="fu">file</span><span class="op">&gt;</span> init settings from settings string or file</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">-o</span><span class="op">&lt;</span>output file<span class="op">&gt;</span> write settings to file</span></code></pre></div>
-<p><code>-r</code> randomises settings. It won’t prompt you for settings
-but it will for input if you don’t give the option to read in a file for
-input.</p>
-<p><code>-v</code> shows selected settings. For example combining
-<code>-r</code> and <code>-v</code>:</p>
+<p><code>-r</code> randomises settings. It won’t prompt you for settings but it will for input
+if you don’t give the option to read in a file for input.</p>
+<p><code>-v</code> shows selected settings. For example combining <code>-r</code> and <code>-v</code>:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo IOCCC <span class="kw">|</span> <span class="ex">./recode</span> <span class="at">-r</span> <span class="at">-v</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Ring</span> 1: <span class="er">(</span>  <span class="ex">I</span><span class="kw">)</span> <span class="ex">EKMFLGDQVZNTOWYHXUSPAIBRCJ</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Ring</span> 2: <span class="er">(</span>  <span class="ex">V</span><span class="kw">)</span> <span class="ex">VZBRGITYUPSDNHLXAWMJQOFECK</span></span>
@@ -221,70 +199,54 @@ input.</p>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="ex">Plugboard</span> pair <span class="co">#09: RU</span></span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="ex">Plugboard</span> pair <span class="co">#10: VG</span></span>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="ex">1WX5AK4RE1XEHJSAPYCIZBWDQNRUVGIOCCC</span></span></code></pre></div>
-<p>Though you won’t find some of those strings in <a
-href="recode.c">recode.c</a> or <a href="prog.c">prog.c</a>. Yes the
-<code>WAR</code> for the Ringstellung (Ring settings) is an amusing
-coincidence <em>but it really did happen!</em></p>
-<p>As for <code>-f</code> the contents would be output with the settings
-e.g. to pipe to <code>prog</code> itself (as if you redirected the file
-contents to the Enigma machine for encipherment/decipherment). If the
-file cannot be opened it sets back to stdin.</p>
-<p><code>-o</code> outputs the settings to the file. If the file cannot
-be opened for writing or is the same file name (see below) then only
-stdout will be used. Example of randomised output going to a file:</p>
+<p>Though you won’t find some of those strings in <a href="recode.c">recode.c</a> or
+<a href="prog.c">prog.c</a>. Yes the <code>WAR</code> for the Ringstellung (Ring settings) is an
+amusing coincidence <em>but it really did happen!</em></p>
+<p>As for <code>-f</code> the contents would be output with the settings e.g. to pipe to
+<code>prog</code> itself (as if you redirected the file contents to the Enigma machine for
+encipherment/decipherment). If the file cannot be opened it sets back to stdin.</p>
+<p><code>-o</code> outputs the settings to the file. If the file cannot be opened for writing
+or is the same file name (see below) then only stdout will be used. Example of
+randomised output going to a file:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./recode <span class="at">-r</span> <span class="at">-oconfig</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">IOCCC</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">3PP4UB5GG1ELGTKFCOPVBNUYXJAWSDIOCCC</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat config</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">3PP4UB5GG1ELGTKFCOPVBNUYXJAWSD$</span></span></code></pre></div>
-<p>Notice that a terminating newline isn’t added. Also note that it
-outputs to stdout so you can pipe it to the Enigma machine but at the
-same time have the settings saved for deciphering the text later (the
-configuration does not have the input but both the configuration and the
-input text is printed to stdout).</p>
-<p>If you want to initialise the settings from previously saved settings
-(as a string or an input file that has the same format) use the
-<code>-R&lt;settings&gt;</code> option. Again note that this does not
-validate input! Although it detects out of range for the arrays it
-doesn’t detect duplicates. This is because it wasn’t meant to be any
-given file or anything else other than the direct output of a previous
-run (thus validated). I’m not even guaranteeing that I got the array
-tests valid in <a href="recode.c">recode.c</a> <code>-R</code>
-option!</p>
-<h2
-id="protecting-against-the-same-io-file"><a name="samefile" href="#toc">Protecting
-against the same I/O file</a></h2>
+<p>Notice that a terminating newline isn’t added. Also note that it outputs to
+stdout so you can pipe it to the Enigma machine but at the same time have the
+settings saved for deciphering the text later (the configuration does not have
+the input but both the configuration and the input text is printed to stdout).</p>
+<p>If you want to initialise the settings from previously saved settings (as a
+string or an input file that has the same format) use the <code>-R&lt;settings&gt;</code> option.
+Again note that this does not validate input! Although it detects out of range
+for the arrays it doesn’t detect duplicates. This is because it wasn’t meant to
+be any given file or anything else other than the direct output of a previous
+run (thus validated). I’m not even guaranteeing that I got the array tests valid
+in <a href="recode.c">recode.c</a> <code>-R</code> option!</p>
+<h2 id="protecting-against-the-same-io-file"><a name="samefile" href="#toc">Protecting against the same I/O file</a></h2>
 <p>Because some file systems are case-insensitive I have implemented a
-case-insensitive <code>strcmp()</code>; if the input file name is the
-same as the output file name I won’t write to it. From a quick test this
-is important particularly if neither file exist because if both calls to
-<code>stat()</code> fail then the inodes will be the same (since what
-else could they be set to but the same initial value?). This might be
-overprotective but I believe it better to prevent user error where
-possible. Of course if neither file exists it might be argued that it’s
-not necessary to worry since you can’t read from a file that doesn’t
-exist. But then what about if one exists but the other does not?</p>
-<h2
-id="file-options-parser-limitation"><a name="fileoptions" href="#toc">File
-options parser limitation</a></h2>
-<p>Due to the way the parsing of options is done (no spaces between
-option char and argument) shell expansion will not work right so for
-example doing:</p>
+case-insensitive <code>strcmp()</code>; if the input file name is the same as the output file
+name I won’t write to it. From a quick test this is important particularly if
+neither file exist because if both calls to <code>stat()</code> fail then the inodes will be
+the same (since what else could they be set to but the same initial value?).
+This might be overprotective but I believe it better to prevent user error where
+possible. Of course if neither file exists it might be argued that it’s not
+necessary to worry since you can’t read from a file that doesn’t exist. But then
+what about if one exists but the other does not?</p>
+<h2 id="file-options-parser-limitation"><a name="fileoptions" href="#toc">File options parser limitation</a></h2>
+<p>Due to the way the parsing of options is done (no spaces between option char and
+argument) shell expansion will not work right so for example doing:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./recode <span class="at">-R~</span>/config</span></code></pre></div>
-<p>will <em>not</em> read the file ‘config’ in the home directory. I
-show another way to achieve this later.</p>
-<p>This limitation also applies to the <code>-f</code> and
-<code>-o</code> options!</p>
-<h2 id="r-option-validation"><a name="validation" href="#toc">-R option
-validation?</a></h2>
-<p>Again the <code>-R</code> option does not validate input. For
-validation you have to run the program interactively.</p>
-<h1
-id="piping-commands-to-recode"><a name="pipingtorecode" href="#toc">Piping
-commands to recode</a></h1>
-<p>If stdin is not a tty (<code>!isatty(0)</code>) and neither
-randomised mode nor reading in from a file is specified then you might
-just see something like:</p>
+<p>will <em>not</em> read the file ‘config’ in the home directory. I show another way to
+achieve this later.</p>
+<p>This limitation also applies to the <code>-f</code> and <code>-o</code> options!</p>
+<h2 id="r-option-validation"><a name="validation" href="#toc">-R option validation?</a></h2>
+<p>Again the <code>-R</code> option does not validate input. For validation you have to run
+the program interactively.</p>
+<h1 id="piping-commands-to-recode"><a name="pipingtorecode" href="#toc">Piping commands to recode</a></h1>
+<p>If stdin is not a tty (<code>!isatty(0)</code>) and neither randomised mode nor reading in
+from a file is specified then you might just see something like:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo testing test tests <span class="kw">|</span> <span class="ex">./recode</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">1AB2BB3CC1testing</span> test tests</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -296,28 +258,23 @@ just see something like:</p>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo testing test tests <span class="kw">|</span> <span class="ex">./recode</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="kw">|</span> <span class="ex">./recode</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="ex">testing</span> test tests</span></code></pre></div>
-<p>In other words just the defaults. This was to simplify the problems
-with prompting again for input if it’s invalid (though as you’ll see it
-does a good job at this anyway).</p>
-<h1
-id="piping-recode-to-the-enigma-simulator"><a name="pipingtoenigma" href="#toc">Piping
-recode to the Enigma simulator</a></h1>
-<p>If you’re using recode to recode the input so you don’t have to type
-in the input manually (if you randomise or read in from previously saved
-file no input need be done at all) then make sure to redirect stderr to
-/dev/null. If you don’t you might see something like:</p>
+<p>In other words just the defaults. This was to simplify the problems with
+prompting again for input if it’s invalid (though as you’ll see it does a good
+job at this anyway).</p>
+<h1 id="piping-recode-to-the-enigma-simulator"><a name="pipingtoenigma" href="#toc">Piping recode to the Enigma simulator</a></h1>
+<p>If you’re using recode to recode the input so you don’t have to type in the
+input manually (if you randomise or read in from previously saved file no input
+need be done at all) then make sure to redirect stderr to /dev/null. If you
+don’t you might see something like:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./recode <span class="at">-r</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Ring</span> 1: IOCCC</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Setting</span> 1: Position 1: Ring 2: Setting 2: Position 2: Ring 3: Setting 3: Position 3: Reflector: Plugboard pair 1: Plugboard pair 2: Plugboard pair 3: Plugboard pair 4: Plugboard pair 5: Plugboard pair 6: Plugboard pair 7: Plugboard pair 8: Plugboard pair 9: Plugboard pair 10: DEVIY</span></code></pre></div>
-<p>What happened is that <code>Ring 1:</code> is printed to stderr but
-since it’s not been redirected to <code>/dev/null</code> it prints this
-out; at this point however it prompts for input. Why or how it shows the
-first prompt instead of later on I do not know. Anyway at this point the
-simulator is already expecting input to en/decipher. That’s why after I
-sent EOF it printed out the remaining strings to stderr.</p>
-<h1
-id="manually-test-the-recode-program-with-the-enigma-program"><a name="manuallytest" href="#toc">Manually
-test the recode program with the Enigma program</a></h1>
+<p>What happened is that <code>Ring 1:</code> is printed to stderr but since it’s not been
+redirected to <code>/dev/null</code> it prints this out; at this point however it prompts for
+input. Why or how it shows the first prompt instead of later on I do not know.
+Anyway at this point the simulator is already expecting input to en/decipher.
+That’s why after I sent EOF it printed out the remaining strings to stderr.</p>
+<h1 id="manually-test-the-recode-program-with-the-enigma-program"><a name="manuallytest" href="#toc">Manually test the recode program with the Enigma program</a></h1>
 <div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat input</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">IOCCC</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -352,42 +309,35 @@ test the recode program with the Enigma program</a></h1>
 <span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="ex">Input</span> plugboard pair 9: OP</span>
 <span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="ex">Input</span> plugboard pair 10: QR</span>
 <span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="ex">1AA2AA3AA2ABCD..EFGHIJKLMNOPQRIOCCC</span></span></code></pre></div>
-<p>Notice that I skipped a <a
-href="https://www.cryptomuseum.com/crypto/enigma/i/sb.htm">plugboard
-pair</a>; this can be done in a number of ways but two dots is one.
-Notice also that it’s in a different order than the simulator: because
-with the size restrictions on my entry I saved bytes by using the same
-loop where I could. It just felt more natural to have them grouped
-together in a configurator for the <a href="prog.c">simulator</a>.</p>
+<p>Notice that I skipped a <a href="https://www.cryptomuseum.com/crypto/enigma/i/sb.htm">plugboard
+pair</a>; this can be done in
+a number of ways but two dots is one. Notice also that it’s in a different order
+than the simulator: because with the size restrictions on my entry I saved bytes
+by using the same loop where I could. It just felt more natural to have them
+grouped together in a configurator for the <a href="prog.c">simulator</a>.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRIOCCC <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">HQNVO</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRIOCCC  <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="kw">|</span> <span class="bu">echo</span> 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRHQNVO <span class="kw">|</span> <span class="ex">./prog</span>  <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ex">IOCCC</span></span></code></pre></div>
-<p>As you can see the <code>recode</code> program prompts for the
-settings and outputs the input for the Enigma program. I then
-copied/pasted that output to the program and got the result
-<code>HQNVO</code>.</p>
-<p>Following this I piped the original output (of <code>recode</code>)
-to the simulator and then piped that to the echo of the input settings
-(replacing the IOCCC with the Enigma enciphered output) and then got the
-result IOCCC: the original input! (This was before I implemented the
-<code>-R</code> option to greatly simplify things.)</p>
-<p>Of course the last command was redundant in that I didn’t need to
-show the first part again; I could have just done the latter part but I
-wanted to show the way the pipeline works with settings etc.</p>
-<p>What happens if the plugboard pairs are the same but in a different
-order? It’s the same output:</p>
+<p>As you can see the <code>recode</code> program prompts for the settings and outputs the
+input for the Enigma program. I then copied/pasted that output to the program
+and got the result <code>HQNVO</code>.</p>
+<p>Following this I piped the original output (of <code>recode</code>) to the simulator and then
+piped that to the echo of the input settings (replacing the IOCCC with the
+Enigma enciphered output) and then got the result IOCCC: the original input!
+(This was before I implemented the <code>-R</code> option to greatly simplify things.)</p>
+<p>Of course the last command was redundant in that I didn’t need to show the first
+part again; I could have just done the latter part but I wanted to show the way
+the pipeline works with settings etc.</p>
+<p>What happens if the plugboard pairs are the same but in a different order? It’s
+the same output:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 1AA2AA3AA2AB..CDEFGHIJKLMNOPQRIOCCC<span class="kw">|</span><span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">HQNVO</span></span></code></pre></div>
-<p>Also if you flip the order of the letters in the pair e.g. the AB as
-BA instead:</p>
-<div class="sourceCode" id="cb10"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 1AA2AA3AA2BA..CDEFGHIJKLMNOPQRIOCCC<span class="kw">|</span><span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
+<p>Also if you flip the order of the letters in the pair e.g. the AB as BA instead:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 1AA2AA3AA2BA..CDEFGHIJKLMNOPQRIOCCC<span class="kw">|</span><span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">HQNVO</span></span></code></pre></div>
-<h1 id="only-write-config-file"><a name="onlyconfig" href="#toc">Only
-write config file</a></h1>
-<div class="sourceCode" id="cb11"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./recode <span class="at">-v</span> <span class="at">-oconfig</span> <span class="at">-finput</span> <span class="op">&gt;</span>/dev/null</span>
+<h1 id="only-write-config-file"><a name="onlyconfig" href="#toc">Only write config file</a></h1>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./recode <span class="at">-v</span> <span class="at">-oconfig</span> <span class="at">-finput</span> <span class="op">&gt;</span>/dev/null</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Rotors:</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">1</span><span class="kw">)</span>   <span class="ex">I:</span> EKMFLGDQVZNTOWYHXUSPAIBRCJ</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">2</span><span class="kw">)</span>  <span class="ex">II:</span> AJDKSIRUXBLHWTMCQGZNPYFVOE</span>
@@ -433,17 +383,14 @@ class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#
 <span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a><span class="ex">Plugboard</span> pair <span class="co">#08: OP</span></span>
 <span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a><span class="ex">Plugboard</span> pair <span class="co">#09: QR</span></span>
 <span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a><span class="ex">Plugboard</span> pair <span class="co">#10: ST</span></span></code></pre></div>
-<p>Notice that I redirect stdout to /dev/null so that the config is only
-written to the file config. But also notice that for <a
-href="https://www.cryptomuseum.com/crypto/enigma/i/sb.htm">plugboard
-pair</a> 4 I typed in <code>GHIJ</code> and it didn’t report an error.
-Neither did it complain about <code>IJ</code> in the next pair. This is
-because it consumes input overflow.</p>
-<p>It shouldn’t be this way for the simulator though because that could
-cause inconsistent number of characters expected before the text to
-encipher.</p>
-<div class="sourceCode" id="cb12"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat config</span>
+<p>Notice that I redirect stdout to /dev/null so that the config is only written to
+the file config. But also notice that for <a href="https://www.cryptomuseum.com/crypto/enigma/i/sb.htm">plugboard
+pair</a> 4 I typed in <code>GHIJ</code>
+and it didn’t report an error. Neither did it complain about <code>IJ</code> in the next
+pair. This is because it consumes input overflow.</p>
+<p>It shouldn’t be this way for the simulator though because that could cause
+inconsistent number of characters expected before the text to encipher.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat config</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">1AB2CD3EF2ABCDEFGHIJKLMNOPQRST</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> <span class="er">(</span> <span class="fu">cat</span> config <span class="kw">;</span> <span class="fu">cat</span> input <span class="kw">)</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
@@ -451,31 +398,24 @@ class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> <span class="er">(</span> <span class="fu">cat</span> config <span class="kw">;</span> <span class="fu">cat</span> input <span class="kw">)</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="kw">|</span> <span class="kw">(</span> <span class="fu">cat</span> config <span class="kw">;</span> <span class="bu">echo</span> LRAVE <span class="kw">)</span> <span class="kw">|</span> <span class="ex">./prog</span>  <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="ex">IOCCC</span></span></code></pre></div>
-<p>What if you don’t want to worry about having to specify input but
-just have the settings written? You can do that too by either sending a
-newline or else directly type ctrl-d (or whatever you have EOF set to)
-or give it an empty file.</p>
-<p>The following are all equivalent in that they will write to a
-settings file (the first one will print a newline with the echo but that
-won’t matter):</p>
-<div class="sourceCode" id="cb13"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="kw">|</span> <span class="ex">./recode</span> <span class="at">-r</span> <span class="at">-osettings</span></span>
+<p>What if you don’t want to worry about having to specify input but just have the
+settings written? You can do that too by either sending a newline or else
+directly type ctrl-d (or whatever you have EOF set to) or give it an empty file.</p>
+<p>The following are all equivalent in that they will write to a settings file (the
+first one will print a newline with the echo but that won’t matter):</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="kw">|</span> <span class="ex">./recode</span> <span class="at">-r</span> <span class="at">-osettings</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="at">-n</span> <span class="kw">|</span> <span class="ex">./recode</span> <span class="at">-r</span> <span class="at">-osettings</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> <span class="op">&gt;</span> empty</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./recode <span class="at">-r</span> <span class="at">-osettings</span> <span class="op">&lt;</span> empty</span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat empty <span class="kw">|</span> <span class="ex">./recode</span> <span class="at">-r</span> <span class="at">-osettings</span></span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./recode <span class="at">-r</span> <span class="at">-osettings</span></span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="ex">^D</span></span></code></pre></div>
-<p>(Above ^D was not shown but I typed it.) The way it works: if nothing
-is read the buffer remains <code>NULL</code> and so I don’t print it but
-still do print the settings file. (Actually even if
-<code>getdelim()</code> fails you’re supposed to free the buffer so I
+<p>(Above ^D was not shown but I typed it.) The way it works: if nothing is read
+the buffer remains <code>NULL</code> and so I don’t print it but still do print the settings
+file. (Actually even if <code>getdelim()</code> fails you’re supposed to free the buffer so I
 set another variable to indicate if it should be printed.)</p>
-<h1
-id="reusing-a-configuration"><a name="reuseconfig" href="#toc">Reusing a
-configuration</a></h1>
-<div class="sourceCode" id="cb14"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="at">-n</span><span class="kw">|</span><span class="ex">./recode</span> <span class="at">-r</span> <span class="at">-oconfig</span></span>
+<h1 id="reusing-a-configuration"><a name="reuseconfig" href="#toc">Reusing a configuration</a></h1>
+<div class="sourceCode" id="cb14"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="at">-n</span><span class="kw">|</span><span class="ex">./recode</span> <span class="at">-r</span> <span class="at">-oconfig</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">4UH5II1RJ1SPIFEJLYGZWRTBHVCAMN$</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat input.txt</span>
@@ -495,15 +435,11 @@ class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#
 <span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> <span class="er">(</span> <span class="fu">cat</span> config <span class="kw">;</span> <span class="fu">cat</span> output <span class="kw">)</span> <span class="kw">|</span> <span class="ex">./prog</span>  <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="op">&gt;</span> io</span>
 <span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> diff io input.txt</span>
 <span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span></span></code></pre></div>
-<p>Alternatively you can just use the <code>-R</code> and
-<code>-f</code> options:</p>
-<div class="sourceCode" id="cb15"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./recode <span class="at">-finput.txt</span> <span class="at">-Rconfig</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="op">&gt;</span> output2</span>
+<p>Alternatively you can just use the <code>-R</code> and <code>-f</code> options:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./recode <span class="at">-finput.txt</span> <span class="at">-Rconfig</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="op">&gt;</span> output2</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> diff output output2</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span></span></code></pre></div>
-<h1
-id="write-config-file-read-data-file-and-pass-to-enigma-simulator"><a name="passtoenigma" href="#toc">Write
-config file, read data file and pass to Enigma simulator</a></h1>
+<h1 id="write-config-file-read-data-file-and-pass-to-enigma-simulator"><a name="passtoenigma" href="#toc">Write config file, read data file and pass to Enigma simulator</a></h1>
 <pre><code>$ ./recode -finput.txt -oconfig | ./prog - 2&gt;/dev/null &gt; output
 Rotors:
 (1)   I: EKMFLGDQVZNTOWYHXUSPAIBRCJ
@@ -537,12 +473,11 @@ Input plugboard pair 10: FI
 
 $ cat config
 2CE5OL3DO2TRSNOGMEXYWZUVABCDFI</code></pre>
-<p>Besides a famous book that I happen to love (who doesn’t? Ah, but
-what is it Cody?) there’s also a reference to code which I also love
-(just as all participants of the IOCCC do). Other things there don’t
-mean anything but what does is the output:</p>
-<div class="sourceCode" id="cb17"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat output</span>
+<p>Besides a famous book that I happen to love (who doesn’t? Ah, but what is it
+Cody?) there’s also a reference to code which I also love (just as all
+participants of the IOCCC do). Other things there don’t mean anything but what
+does is the output:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat output</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="ex">DBFAF</span> 2020 Ittejg ltblwriac uqdfqvr dhqh ghhf</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Jsjy</span> ce v pxdmullo.</span>
@@ -555,106 +490,86 @@ class="sourceCode sh"><code class="sourceCode bash"><span id="cb17-1"><a href="#
 <span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="ex">This</span> is a sentence.</span>
 <span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="ex">This</span> is another sentence.</span></code></pre></div>
-<h1
-id="piping-directly-to-the-enigma-code-once-with-randomised-settings-saved"><a name="directlytoenigma" href="#toc">Piping
-directly to the Enigma code once (with randomised settings,
-saved)</a></h1>
+<h1 id="piping-directly-to-the-enigma-code-once-with-randomised-settings-saved"><a name="directlytoenigma" href="#toc">Piping directly to the Enigma code once (with randomised settings, saved)</a></h1>
 <p>This is like the above only randomised:</p>
-<div class="sourceCode" id="cb18"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./recode <span class="at">-r</span> <span class="at">-oconfig</span><span class="kw">|</span><span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
+<div class="sourceCode" id="cb18"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./recode <span class="at">-r</span> <span class="at">-oconfig</span><span class="kw">|</span><span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">IOCCC</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="ex">UGEVP</span></span></code></pre></div>
-<p>Note that I typed in <code>IOCCC</code> and sent <code>EOF</code>
-(ctrl-d); the settings were written to the config file (for deciphering
-later) and then all of it was piped to the Enigma entry resulting in the
-line below IOCCC. But let’s verify it worked out okay:</p>
-<div class="sourceCode" id="cb19"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat config</span>
+<p>Note that I typed in <code>IOCCC</code> and sent <code>EOF</code> (ctrl-d); the settings were written to
+the config file (for deciphering later) and then all of it was piped to the
+Enigma entry resulting in the line below IOCCC. But let’s verify it worked out
+okay:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat config</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">2BM4GJ3HK1LNCBXWRMGKSYIAZUTPVJ</span></span></code></pre></div>
 <p>Without having to copy/paste intermediate results:</p>
-<div class="sourceCode" id="cb20"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo IOCCC <span class="kw">|</span> <span class="ex">./recode</span> <span class="at">-Rconfig</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="kw">|</span> <span class="ex">./recode</span> <span class="at">-Rconfig</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
+<div class="sourceCode" id="cb20"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo IOCCC <span class="kw">|</span> <span class="ex">./recode</span> <span class="at">-Rconfig</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="kw">|</span> <span class="ex">./recode</span> <span class="at">-Rconfig</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="ex">IOCCC</span></span></code></pre></div>
-<p>You can also use a string for the <code>-R</code> option. I’ll use
-command substitution and actual pasting to demonstrate:</p>
-<div class="sourceCode" id="cb21"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo IOCCC <span class="kw">|</span> <span class="ex">./recode</span> <span class="at">-R</span><span class="va">$(</span><span class="fu">cat</span> config<span class="va">)</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="kw">|</span> <span class="ex">./recode</span> <span class="at">-R2BM4GJ3HK1LNCBXWRMGKSYIAZUTPVJ</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
+<p>You can also use a string for the <code>-R</code> option. I’ll use command substitution and
+actual pasting to demonstrate:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo IOCCC <span class="kw">|</span> <span class="ex">./recode</span> <span class="at">-R</span><span class="va">$(</span><span class="fu">cat</span> config<span class="va">)</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="kw">|</span> <span class="ex">./recode</span> <span class="at">-R2BM4GJ3HK1LNCBXWRMGKSYIAZUTPVJ</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">IOCCC</span></span></code></pre></div>
-<h1 id="usage-conclusion"><a name="conclusion" href="#toc">Usage
-conclusion</a></h1>
-<p>That should give you an idea of how to use the <code>recode</code>
-program. I leave it as an exercise to the reader to implement additional
-features but here are some ideas of what could be done and how this
-entry might be used (including that delicious challenge).</p>
-<h1 id="example-additions"><a name="additions" href="#toc">Example
-additions</a></h1>
+<h1 id="usage-conclusion"><a name="conclusion" href="#toc">Usage conclusion</a></h1>
+<p>That should give you an idea of how to use the <code>recode</code> program. I leave it as
+an exercise to the reader to implement additional features but here are some
+ideas of what could be done and how this entry might be used (including that
+delicious challenge).</p>
+<h1 id="example-additions"><a name="additions" href="#toc">Example additions</a></h1>
 <ul>
-<li>Add code (to <a href="prog.c">prog.c</a>) that tries to determine
-possible decipherments based on a given crib (or set of cribs).</li>
+<li>Add code (to <a href="prog.c">prog.c</a>) that tries to determine possible decipherments based on
+a given crib (or set of cribs).</li>
 </ul>
-<h1 id="example-uses"><a name="exampleuses" href="#toc">Example
-uses</a></h1>
+<h1 id="example-uses"><a name="exampleuses" href="#toc">Example uses</a></h1>
 <ul>
-<li><p>Take an actual key sheet and message for that day and try and
-decipher the message (might help if you know German!). I haven’t
-actually done this for reasons I explained in the remarks (including
-that I cannot easily verify one particular as well as the fact that
-there were different procedures, different machines etc. - plus my
-vision is not good enough for the quality of the pictures).</p></li>
-<li><p>Try making sense of a politician’s speeches by putting them into
-the simulator. It might not make much sense but can it honestly be that
-much worse ? :) Actually yes it could be (and we don’t need the Enigma
-helping them either) and I can think of a whole host of other things
-more entertaining including watching dry paint stay dry on a wall but
-why not poke fun at politicians anyway?</p></li>
+<li><p>Take an actual key sheet and message for that day and try and decipher the
+message (might help if you know German!). I haven’t actually done this for
+reasons I explained in the remarks (including that I cannot easily verify one
+particular as well as the fact that there were different procedures, different
+machines etc. - plus my vision is not good enough for the quality of the
+pictures).</p></li>
+<li><p>Try making sense of a politician’s speeches by putting them into the
+simulator. It might not make much sense but can it honestly be that much worse ?
+:) Actually yes it could be (and we don’t need the Enigma helping them either)
+and I can think of a whole host of other things more entertaining including
+watching dry paint stay dry on a wall but why not poke fun at politicians
+anyway?</p></li>
 <li><p>Best idea: try the below experiment!</p></li>
 </ul>
-<h1
-id="deliciously-enigmatic-double-layered-chocolate-fudge-cake"><a name="cake" href="#toc">Deliciously
-Enigmatic: Double-layered Chocolate Fudge Cake</a></h1>
-<p>As I was making the above silly list something occurred to me. My <a
-href="/2020/ferguson1/prog.c">other entry</a> this year includes a
-recipe for a wonderful double-layered chocolate fudge cake but why would
-it not be included in this one too? But then if that’s the case why on
-Earth should it be unscrambled?</p>
-<p>So this is what I offer: if you take one of the settings below and
-run the simulator on the file <a
-href="chocolate-cake.html">chocolate-cake.html</a> you will have a
-wonderful chocolate cake recipe (that even my late stepmum who didn’t
-even like chocolate loved - it’s a speciality of my mum’s and they were
-the best of friends too). If you’re lazy (or just want some delicious
-double-layered chocolate fudge cake!) just go and look at the <a
-href="../ferguson1/chocolate-cake.html">recipe</a> (or <a
-href="../ferguson1/chocolate-cake.md">here</a> if on GitHub) in my other
-entry. Then again if you’re lazy you’re probably not reading this far!
-:)</p>
-<p>The settings is one of the below but a couple questions you might ask
-yourself:</p>
+<h1 id="deliciously-enigmatic-double-layered-chocolate-fudge-cake"><a name="cake" href="#toc">Deliciously Enigmatic: Double-layered Chocolate Fudge Cake</a></h1>
+<p>As I was making the above silly list something occurred to me. My <a href="/2020/ferguson1/prog.c">other
+entry</a> this year includes a recipe for a wonderful
+double-layered chocolate fudge cake but why would it not be included in this one
+too? But then if that’s the case why on Earth should it be unscrambled?</p>
+<p>So this is what I offer: if you take one of the settings below and run the
+simulator on the file <a href="chocolate-cake.html">chocolate-cake.html</a> you will have a wonderful
+chocolate cake recipe (that even my late stepmum who didn’t even like chocolate
+loved - it’s a speciality of my mum’s and they were the best of friends too). If
+you’re lazy (or just want some delicious double-layered chocolate fudge cake!)
+just go and look at the <a href="../ferguson1/chocolate-cake.html">recipe</a> (or
+<a href="../ferguson1/chocolate-cake.md">here</a> if on GitHub) in my other entry. Then
+again if you’re lazy you’re probably not reading this far! :)</p>
+<p>The settings is one of the below but a couple questions you might ask yourself:</p>
 <ol type="1">
 <li><p>Are any invalid input?</p></li>
 <li><p>Is there some other kind of trickery involved here?</p></li>
 </ol>
-<p>I can think of the best way to answer these and I think I need not
-even mention it. Have fun and enjoy!</p>
-<p>BTW: Depending on where you are in this world and how warm it is the
-icing can be a bit of an issue - I give some ideas in the file on what
-can be done for this. At worst though the icing won’t come out as good
-as it usually does. That’s assuming you follow in the instructions
-exactly as they are; it’s a very picky recipe.</p>
+<p>I can think of the best way to answer these and I think I need not even mention
+it. Have fun and enjoy!</p>
+<p>BTW: Depending on where you are in this world and how warm it is the icing can
+be a bit of an issue - I give some ideas in the file on what can be done for
+this. At worst though the icing won’t come out as good as it usually does.
+That’s assuming you follow in the instructions exactly as they are; it’s a very
+picky recipe.</p>
 <h2 id="hints">Hints:</h2>
 <ol type="1">
 <li><p>It’s not the middle one.</p></li>
-<li><p>Yes there are some things kind of spelt here. These include
-things about cake and chocolate. Some things spelt mean nothing whatever
-and can be considered coincidences. Some were randomised.</p></li>
-<li><p>There is an obscure thing about my entry that can help locate the
-proper key of the 16 given below! The questions are what is it and is is
-it worth going this way? (I think the second answer is ‘no’ but that’s
-me.)</p></li>
-<li><p>The above points might or might not be relevant. What is relevant
-is one will reveal a wonderful <a
-href="chocolate-cake.html">Double-layered Chocolate Fudge Cake</a>
-recipe:</p></li>
+<li><p>Yes there are some things kind of spelt here. These include things about
+cake and chocolate. Some things spelt mean nothing whatever and can be
+considered coincidences. Some were randomised.</p></li>
+<li><p>There is an obscure thing about my entry that can help locate the proper key
+of the 16 given below! The questions are what is it and is is it worth going
+this way? (I think the second answer is ‘no’ but that’s me.)</p></li>
+<li><p>The above points might or might not be relevant. What is relevant is one
+will reveal a wonderful <a href="chocolate-cake.html">Double-layered Chocolate Fudge Cake</a> recipe:</p></li>
 </ol>
 <pre><code>         142CHOCOLATESVCAKESTBJLKMUMVWX
          0EZ4PC1CC0PGTAQSOXWNMDRYKFUZEI
@@ -679,13 +594,12 @@ recipe:</p></li>
 </colgroup>
 <tbody>
 <tr class="odd">
-<td>(c) Copyright 1984-2020, [Leo Broukhis, Simon Cooper, Landon Curt
-Noll][judges] - All rights reserved This work is licensed under a
-[Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].</td>
+<td>(c) Copyright 1984-2020, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].</td>
 </tr>
 <tr class="even">
-<td>[judges]: https://www.ioccc.org/judges.html [cc]:
-http://creativecommons.org/licenses/by-sa/3.0/</td>
+<td>[judges]: https://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/</td>
 </tr>
 </tbody>
 </table>

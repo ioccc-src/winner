@@ -120,19 +120,15 @@
 <!-- END: this line ends content from: inc/before-content.default.html -->
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
-<p>The values below are the field-by-field difference
-<code>iocccsize - ioc</code>. (<code>&gt;0</code> means
-<code>iocccsize</code> counted more than <code>ioc</code>,
-<code>&lt;0</code> <code>ioc</code> counted more)</p>
+<p>The values below are the field-by-field difference <code>iocccsize - ioc</code>.
+(<code>&gt;0</code> means <code>iocccsize</code> counted more than <code>ioc</code>, <code>&lt;0</code> <code>ioc</code> counted more)</p>
 <pre><code>cl: lines, cw: words, cc: chars, ci: rule2, ts: saved, kw: keywords, ks: kw_saved
 
 cl 0   cw -4  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/1986/pawka.c
 cl -45 cw -55 cc -617 ci -463 ts -85 kw -26 ks -69 src/obc/1990/theorem/theorem.c</code></pre>
-<p><code>ioc</code> is correct; cl is correct even in compat (91) due to
-comments eating newlines <code>iocccsize</code> fails at
-<code>z;/*/</code>, eating everything until the following
-<code>/**/main(</code> looks to be due to mis-identification of a
-comment closing block as opening block</p>
+<p><code>ioc</code> is correct; cl is correct even in compat (91) due to comments eating newlines
+<code>iocccsize</code> fails at <code>z;/*/</code>, eating everything until the following <code>/**/main(</code>
+looks to be due to mis-identification of a comment closing block as opening block</p>
 <pre><code>cl 0   cw -2  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/1991/westley/westley.c
 cl 0   cw -3  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/1992/gmariano/gmariano.c
 cl 0   cw -3  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/1992/gmariano/gmariano.orig.c
@@ -140,40 +136,36 @@ cl 0   cw -1  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/1994/shapiro/shapiro.
 cl 0   cw -2  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/1996/gandalf/gandalf.c
 cl 0   cw -1  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/1996/schweikh1/schweikh1.c
 cl 0   cw -2  cc 0    ci -2   ts 0   kw 1   ks 2   src/obc/1998/df/df.c</code></pre>
-<p><code>iocccsize</code> counts as keyword <code>__##int##__</code>,
-and saving two characters but int is not a plausible keyword</p>
+<p><code>iocccsize</code> counts as keyword <code>__##int##__</code>, and saving two characters but int
+is not a plausible keyword</p>
 <pre><code>cl 0   cw -1  cc 3    ci 2    ts 1   kw 0   ks 0   src/obc/2001/herrmann1/herrmann1.c</code></pre>
 <p>the text:</p>
 <pre><code>        d M Y(O)/* state to */
         d</code></pre>
-<p>counts as cw 3 in iocccsize, but this is clearly 4 and the cc,ci,ts
-is due entirely to:</p>
+<p>counts as cw 3 in iocccsize, but this is clearly 4
+and the cc,ci,ts is due entirely to:</p>
 <pre><code>       /*/*/*/*/*/ /*/*/
       E E /*/*/*/*/*/,/) F</code></pre>
 <p>which reduces to:</p>
 <pre><code>       * E E * ,/) F</code></pre>
-<p>but iocccsize counts this as <code>* E E *,/) F</code>, whereas ANSI
-C says comments are replaced with a single space equivalent
-(non-portable token-paste with comments)</p>
+<p>but iocccsize counts this as <code>* E E *,/) F</code>, whereas ANSI C says comments are
+replaced with a single space equivalent (non-portable token-paste with comments)</p>
 <pre><code>cl 0   cw -2  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/2004/arachnid/arachnid.c
 cl 0   cw -2  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/2004/arachnid/arachnid.orig.c
 cl 0   cw 0   cc 0    ci -4   ts 0   kw 2   ks 4   src/obc/2004/hoyle/hoyle.c
 cl 0   cw 0   cc 0    ci -4   ts 0   kw 2   ks 4   src/obc/2004/hoyle/hoyle.orig.c</code></pre>
-<p><code>iocccsize</code> counts as two keywords the token-pasted
-<code>int##if</code>(e.g int1) thus the <code>kw 2</code>, and another
-bug in <code>iocccsize</code> counts <code>#if</code> as a keyword to 1
-thus saving 2 bytes on int, and 2 more on <code>#if</code>, when neither
-is a plausible keyword</p>
+<p><code>iocccsize</code> counts as two keywords the token-pasted <code>int##if</code>(e.g int1)
+thus the <code>kw 2</code>, and another bug in <code>iocccsize</code> counts <code>#if</code> as a keyword to 1
+thus saving 2 bytes on int, and 2 more on <code>#if</code>, when neither is a plausible keyword</p>
 <pre><code>cl 0   cw -1  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/2004/omoikane/omoikane.c
 cl 0   cw -1  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/2005/chia/chia.c
 cl 0   cw -1  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/2005/mikeash/mikeash.c
 cl 0   cw 0   cc 0    ci 1    ts 1   kw 0   ks 0   src/obc/2005/toledo/toledo.c
 cl 0   cw 0   cc 0    ci 1    ts 1   kw 0   ks 0   src/obc/2005/toledo/toledo2.c
 cl 0   cw 0   cc 0    ci 1    ts 1   kw 0   ks 0   src/obc/2005/toledo/toledo3.c</code></pre>
-<p>these three discrepancies are due to backslash-newline of
-<code>longjm\p</code> – at exactly the 521 byte line length boundary
-(which is arbitrary) <code>ioc</code> is correct, because it has no line
-length limit</p>
+<p>these three discrepancies are due to backslash-newline of <code>longjm\p</code> –
+at exactly the 521 byte line length boundary (which is arbitrary)
+<code>ioc</code> is correct, because it has no line length limit</p>
 <pre><code>cl 0   cw -4  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/2011/akari/akari.c
 cl 0   cw -7  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/2011/hamaji/hamaji.c
 cl 0   cw -4  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/2012/endoh1/endoh1.c
@@ -181,10 +173,9 @@ cl 0   cw -3  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/2012/endoh1/endoh1_co
 cl 0   cw -1  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/2012/endoh1/endoh1_deobfuscate.c
 cl 0   cw -2  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/2012/omoikane/nyaruko.c
 cl 0   cw 0   cc 0    ci -3   ts 0   kw 1   ks 3   src/obc/2013/cable2/cable2.c</code></pre>
-<p>this is due to token-pasting of <code>_##char</code>;
-<code>iocccsize</code> counts this as a keyword but it is a
-pre-processor token-pasted string of the arg to <code>Y()</code> and
-char rendering this not a keyword, even in disguise</p>
+<p>this is due to token-pasting of <code>_##char</code>; <code>iocccsize</code> counts this as a keyword
+but it is a pre-processor token-pasted string of the arg to <code>Y()</code> and char
+rendering this not a keyword, even in disguise</p>
 <pre><code>cl 0   cw -2  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/2013/endoh4/endoh4.c
 cl 0   cw -2  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/2013/misaka/misaka.c
 cl 0   cw -1  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/2014/endoh2/prog.c

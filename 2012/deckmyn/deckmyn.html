@@ -124,77 +124,70 @@
 <h2 id="calling-the-program">Calling the program</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./deckmyn</span> <span class="st">&quot;</span><span class="kw">`</span><span class="fu">cat</span> deckmyn.c<span class="kw">`</span><span class="st">&quot;</span> <span class="st">&quot;</span><span class="kw">`</span><span class="fu">cat</span> musicfile<span class="kw">`</span><span class="st">&quot;</span> <span class="op">&gt;</span> output.pbm</span></code></pre></div>
 <p>Then display <code>output.pbm</code>.</p>
-<p>This minimalistic music notator expects two command line arguments.
-The first is the font description embedded in the source code. Notice
-that you don’t pass the file name, but the actual content as one long
-character string! If you want to define your personal music font, you
-can of course do so. The file layout must be exactly the same as <a
-href="deckmyn.c">deckmyn.c</a> though, only the locations of space
-(<code>" "</code>) may differ.</p>
-<p>The second argument is the actual music. Again it is one long string,
-not a file name. But it is possible to save your music in a file, of
-course.</p>
-<p>Output should be redirected to a file. Afterwards, this file can be
-visualised with various viewers.</p>
+<p>This minimalistic music notator expects two command line arguments. The first is
+the font description embedded in the source code. Notice that you don’t pass the
+file name, but the actual content as one long character string! If you want to
+define your personal music font, you can of course do so. The file layout must
+be exactly the same as <a href="deckmyn.c">deckmyn.c</a> though, only the locations of
+space (<code>" "</code>) may differ.</p>
+<p>The second argument is the actual music. Again it is one long string, not a file
+name. But it is possible to save your music in a file, of course.</p>
+<p>Output should be redirected to a file. Afterwards, this file can be visualised
+with various viewers.</p>
 <h2 id="music-input">Music input</h2>
-<p>Every element in the music is given by a string of <em>exactly</em> 3
-characters. Any violation of this will result in the rest of the music
-being interpreted in some randomly wrong way. Notice that in a file, the
-newline is also a character! Therefore, when preparing music in a file,
-care should be taken that the last musical element of a line is only 2
-characters!</p>
+<p>Every element in the music is given by a string of <em>exactly</em> 3 characters. Any
+violation of this will result in the rest of the music being interpreted in some
+randomly wrong way. Notice that in a file, the newline is also a character!
+Therefore, when preparing music in a file, care should be taken that the last
+musical element of a line is only 2 characters!</p>
 <ol type="1">
-<li><p>Basic notes: A single note is input by a letter (in the range
-<code>[A-Ga-g]</code>) followed by a duration (1, 2, 4 or 8) and
-possibly a dot (<code>.</code>). The notes cover 2 octaves, from
-<code>C</code> (lowest) to <code>b</code> (highest). The possible
-durations are 1 (whole note), 2 (half note), 4 (quaver), 8
-(semi-quaver). So a dotted quaver <code>A</code> followed by a semi
-quaver <code>G</code> is input as <code>"A4.G8 "</code>.</p></li>
-<li><p>Rests: A rest is given by the letter <code>r</code> followed by a
-duration (1, 2, 4 or 8).</p></li>
-<li><p>Bar lines: There are three possible bar line types: single
-(<code>":  "</code>), double (<code>":: "</code>) and final
-(<code>":; "</code>).</p></li>
-<li><p>Accidentals: Chromatic changes (sharp, flat, natural) are entered
-separately from the note that follows them! They are a three-character
-sequence by themselves. The first character is the chromatic change
-[<code>+-=</code>]. The second is the pitch at which it should be drawn.
-Thus <code>"+G G4 "</code> will draw a G sharp quaver. Notice that these
-signs do not necessarily have to be followed by a note.
+<li><p>Basic notes:
+A single note is input by a letter (in the range <code>[A-Ga-g]</code>) followed by a
+duration (1, 2, 4 or 8) and possibly a dot (<code>.</code>). The notes cover 2 octaves,
+from <code>C</code> (lowest) to <code>b</code> (highest). The possible durations are 1 (whole
+note), 2 (half note), 4 (quaver), 8 (semi-quaver). So a dotted quaver <code>A</code>
+followed by a semi quaver <code>G</code> is input as <code>"A4.G8 "</code>.</p></li>
+<li><p>Rests:
+A rest is given by the letter <code>r</code> followed by a duration (1, 2, 4 or 8).</p></li>
+<li><p>Bar lines:
+There are three possible bar line types: single (<code>":  "</code>), double (<code>":: "</code>)
+and final (<code>":; "</code>).</p></li>
+<li><p>Accidentals:
+Chromatic changes (sharp, flat, natural) are entered separately from the
+note that follows them! They are a three-character sequence by themselves.
+The first character is the chromatic change [<code>+-=</code>]. The second is the pitch
+at which it should be drawn. Thus <code>"+G G4 "</code> will draw a G sharp quaver.
+Notice that these signs do not necessarily have to be followed by a note.
 <code>"+f +c +g B2 "</code> is perfectly legal.</p></li>
-<li><p>Space (formatting): To manually change the spacing of the music,
-you can add space between different musical elements. This is given by
-an <code>s</code> followed by the amount of space. <code>"s3 "</code> is
-the space taken by one note. This length is given in 1 character.
-However, to get a value larger than 9, you can just continue along the
-ASCII table. So <code>"sz "</code> gives you quite a lot of space on a
-staff. <code>"s0 "</code> is not only meaningless, it can cause nasty
-results.</p></li>
-<li><p>New staff: A token <code>"x  "</code> signifies to start a new
-staff of music. A music staff may never be empty! Even if you just put
-some blank space (<code>"s1 "</code>), you should always have an entry
-for every staff. <code>"x  x  "</code> may give nasty results.</p>
-<p>All staves in the output are extended to the length of the longest
-staff. To have nicely formatted music, though, you will probably have to
-add spaces manually.</p></li>
-<li><p>Time signatures: A time signature is given by
-<code>[m][234][234]</code>. For example, <code>"m24"</code> will give
+<li><p>Space (formatting):
+To manually change the spacing of the music, you can add space between
+different musical elements. This is given by an <code>s</code> followed by the amount
+of space. <code>"s3 "</code> is the space taken by one note. This length is given in 1
+character. However, to get a value larger than 9, you can just continue
+along the ASCII table. So <code>"sz "</code> gives you quite a lot of space on a staff.
+<code>"s0 "</code> is not only meaningless, it can cause nasty results.</p></li>
+<li><p>New staff:
+A token <code>"x  "</code> signifies to start a new staff of music. A music staff may
+never be empty! Even if you just put some blank space (<code>"s1 "</code>), you should
+always have an entry for every staff. <code>"x  x  "</code> may give nasty results.</p>
+<p>All staves in the output are extended to the length of the longest staff. To
+have nicely formatted music, though, you will probably have to add spaces
+manually.</p></li>
+<li><p>Time signatures:
+A time signature is given by <code>[m][234][234]</code>. For example, <code>"m24"</code> will give
 you a two fourth signature. Notice that there are only three available
 numbers. Especially “6” and “8” are dearly missed.</p></li>
-<li><p>Clef: The clef (<code>G</code> or <code>F</code>) can only be
-changed at the beginning of the music input. If the music starts with
-<code>"KF "</code>, the music will be written in a bass clef.
-<code>"K"</code> followed by any other letter will just default to a
-standard G clef.</p></li>
+<li><p>Clef:
+The clef (<code>G</code> or <code>F</code>) can only be changed at the beginning of the music
+input. If the music starts with <code>"KF "</code>, the music will be written in a bass
+clef. <code>"K"</code> followed by any other letter will just default to a standard G clef.</p></li>
 </ol>
 <h2 id="examples">Examples</h2>
 <p>Blank music paper (with G clef):</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./deckmyn</span> <span class="st">&quot;</span><span class="kw">`</span><span class="fu">cat</span> deckmyn.c<span class="kw">`</span><span class="st">&quot;</span> <span class="st">&quot;sz sa x  s1 x  s1 x  s1 x  s1 x  s1 &quot;</span><span class="op">&gt;</span> blank.pbm</span></code></pre></div>
 <p>With an F clef:</p>
 <pre><code>./deckmyn &quot;`cat deckmyn.c`&quot; &quot;KF sz sa x  s1 x  s1 x  s1 x  s1 x  s1 &quot;&gt; blank.pbm</code></pre>
-<p>Notice how only the first staff (or any staff) needs to have the full
-length.</p>
+<p>Notice how only the first staff (or any staff) needs to have the full length.</p>
 <p>Some files with well-known melodies are included as examples.</p>
 
 <!-- END: this line ends content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->

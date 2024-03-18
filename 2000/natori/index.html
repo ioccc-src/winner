@@ -141,109 +141,83 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em>
 
 <h2 id="to-build">To build:</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span></span></code></pre></div>
-<p>An alt version exists for those in the southern hemisphere (or those
-who want to see what it would be in the southern hemisphere). See <a
-href="#alternate-code">alternate version</a> below.</p>
+<p>An alt version exists for those in the southern hemisphere (or those who want to
+see what it would be in the southern hemisphere). See <a href="#alternate-code">alternate
+version</a> below.</p>
 <h2 id="to-use">To use:</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./natori</span></span></code></pre></div>
 <h2 id="try">Try:</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.sh</span></span></code></pre></div>
-<p>Try running this on different days, say a few days apart (even better
-if the Moon phase changes), and each time run it several times in a row
-(or several times in a day).</p>
-<p>Also try modifying the code so that it will show another Moon phase
-based on input or else just by the code itself. Bonus points if you can
-make it show all.</p>
+<p>Try running this on different days, say a few days apart (even better if the
+Moon phase changes), and each time run it several times in a row (or several
+times in a day).</p>
+<p>Also try modifying the code so that it will show another Moon phase based on
+input or else just by the code itself. Bonus points if you can make it show all.</p>
 <p>NOTE: if it’s a Full Moon the script won’t look as nice.</p>
 <h2 id="alternate-code">Alternate code:</h2>
-<p>The author noted that those in the southern hemisphere might want to
-change <code>acos(l/2)</code> into <code>acos(-l/2)</code> which we have
-done in the alternate version.</p>
+<p>The author noted that those in the southern hemisphere might want to change
+<code>acos(l/2)</code> into <code>acos(-l/2)</code> which we have done in the alternate version.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <p>To run the alternate code that supports the southern hemisphere:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> alt</span></code></pre></div>
 <h3 id="alternate-use">Alternate use:</h3>
 <div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./natori.alt</span></span></code></pre></div>
-<p>Try running this on different days, say a few days apart, and each
-time run it several times in a row (or several times in a day).</p>
+<p>Try running this on different days, say a few days apart, and each time run it
+several times in a row (or several times in a day).</p>
 <p>What happens if you run it in the northern hemisphere? Are there any
 differences?</p>
-<p>Can you identify any Moon phases that result in the same output of
-both versions? Or are there any?</p>
+<p>Can you identify any Moon phases that result in the same output of both
+versions? Or are there any?</p>
 <h3 id="alternate-try">Alternate try:</h3>
 <div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.alt.sh</span></span></code></pre></div>
-<p>Like with <a href="try.sh">try.sh</a>, try using this multiple times
-in a row or throughout the day on different days (if different phases of
-the Moon you’ll see more of a difference, of course).</p>
+<p>Like with <a href="try.sh">try.sh</a>, try using this multiple times in a row or throughout
+the day on different days (if different phases of the Moon you’ll see more of a
+difference, of course).</p>
 <p>NOTE: if it’s a Full Moon the script won’t look as nice.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
-<p>Here is a nice compact program that changes with the phase of the
-Moon. Can you figure out how it does it?</p>
-<p>The ANSI-C committee, among their multiple misdeeds, broke perfectly
-fun C programs by making it intractable for them to declare their own
-non-traditional prototype for <code>main()</code>. We have had to uglify
-this program in order to prevent C compilers from failing to compile it
-due to (the now changed) unusual arg types of the <code>main()</code>
-function.</p>
+<p>Here is a nice compact program that changes with the phase of the Moon.
+Can you figure out how it does it?</p>
+<p>The ANSI-C committee, among their multiple misdeeds, broke perfectly fun C
+programs by making it intractable for them to declare their own non-traditional
+prototype for <code>main()</code>. We have had to uglify this program in order to prevent
+C compilers from failing to compile it due to (the now changed) unusual arg
+types of the <code>main()</code> function.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>This program outputs a rough image of the moon in its current phase.
 The main obfuscation of this entry is its complicated double recursion
 (without any loop or conditional statement).</p>
-<p>People living in the southern hemisphere may want to change
-<code>acos(l/2)</code> into <code>acos(-l/2)</code>.</p>
-<h2 id="copyright-and-cc-by-sa-4.0-license">Copyright and CC BY-SA 4.0
-License:</h2>
-<p>This file is Copyright (c) 2023 by Landon Curt Noll. All Rights
-Reserved. You are free to share and adapt this file under the terms of
-this license:</p>
+<p>People living in the southern hemisphere may want to change <code>acos(l/2)</code>
+into <code>acos(-l/2)</code>.</p>
+<h2 id="copyright-and-cc-by-sa-4.0-license">Copyright and CC BY-SA 4.0 License:</h2>
+<p>This file is Copyright (c) 2023 by Landon Curt Noll. All Rights Reserved.
+You are free to share and adapt this file under the terms of this license:</p>
 <pre><code>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</code></pre>
-<p>For more information, see:
-https://creativecommons.org/licenses/by-sa/4.0/</p>
+<p>For more information, see: https://creativecommons.org/licenses/by-sa/4.0/</p>
 
 <!-- END: this line ends content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 <!-- START: this line starts content for HTML phase 22 by: bin/output-index-inventory.sh via bin/md2html.sh -->
 
 <!-- START: this line starts content generated by: bin/output-index-inventory.sh -->
 
-<h1 id="inventory-for-2000natori"><a name="inventory"></a>Inventory for
-2000/natori</h1>
+<h1 id="inventory-for-2000natori"><a name="inventory"></a>Inventory for 2000/natori</h1>
 <p><a href="#top">Jump to top</a></p>
 <h2 id="primary-files">Primary files</h2>
 <ul>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/natori/natori.c">natori.c</a>
-- entry source</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/natori/Makefile">Makefile</a>
-- entry Makefile</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/natori/natori.alt.c">natori.alt.c</a>
-- alternative source</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/natori/natori.orig.c">natori.orig.c</a>
-- original source</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/natori/try.alt.sh">try.alt.sh</a>
-- how to run alternative code</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/natori/try.sh">try.sh</a>
-- how to run</li>
-<li><a href="2000_natori.tar.bz2">2000_natori.tar.bz2</a> - download
-entry source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/natori/natori.c">natori.c</a> - entry source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/natori/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/natori/natori.alt.c">natori.alt.c</a> - alternative source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/natori/natori.orig.c">natori.orig.c</a> - original source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/natori/try.alt.sh">try.alt.sh</a> - how to run alternative code</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/natori/try.sh">try.sh</a> - how to run</li>
+<li><a href="2000_natori.tar.bz2">2000_natori.tar.bz2</a> - download entry source</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="index.html">index.html</a> - entry home page</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/natori/.entry.json">.entry.json</a>
-- description of entry in JSON</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/natori/.gitignore">.gitignore</a>
-- list of files that should not be committed under git</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/natori/.entry.json">.entry.json</a> - description of entry in JSON</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/natori/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
 <li><a href=".path">.path</a> - directory path from top directory</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/natori/README.md">README.md</a>
-- markdown source for index.html</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/natori/README.md">README.md</a> - markdown source for index.html</li>
 </ul>
 
 <!-- END: next line ends content generated by: bin/output-index-inventory.sh -->

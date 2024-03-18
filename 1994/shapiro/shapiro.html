@@ -135,25 +135,21 @@
 10.     ((M=!M)?K=L:putchar(K-&#39;J&#39;|(L-&#39;J&#39;&lt;&lt;4)))
 11.    );
 12. exit(0);}</code></pre>
-<p>Lines 1-5 are basic stuff. Line 6 opens the source code for input.
-Line 7 is the loop. Line 8 reads in each character in the file (placed
-in <code>L</code>) while not &gt;= 0. Line 9 is an <code>if</code>
-expression which filters out all characters not between <code>J</code>
-and <code>J + 15</code>. Line 10 uses <code>M</code> to execute two
-different paths; the first just stores the character in <code>K</code>
-and the second path combines the last two characters read in as high and
-low nibbles of a byte and outputs them. In effect this is a very poor
-ASCII to binary decoder. The last line is necessary so that make will
+<p>Lines 1-5 are basic stuff. Line 6 opens the source code for input. Line 7 is the
+loop. Line 8 reads in each character in the file (placed in <code>L</code>) while not &gt;= 0.
+Line 9 is an <code>if</code> expression which filters out all characters not between <code>J</code>
+and <code>J + 15</code>. Line 10 uses <code>M</code> to execute two different paths; the first just
+stores the character in <code>K</code> and the second path combines the last two characters
+read in as high and low nibbles of a byte and outputs them. In effect this is a
+very poor ASCII to binary decoder. The last line is necessary so that make will
 not stop when it executes this program.</p>
-<p>The second program is encoded into this format and then included
-(mostly) as a comment.</p>
+<p>The second program is encoded into this format and then included (mostly)
+as a comment.</p>
 <p>Notice that it is impossible to write this program while leaving 16
 contiguous ASCII characters free for the encoding. Because of this the
 second program is mostly included as a comment. However, some of the
-characters of the encoded program are also source code for the
-decoder.</p>
-<h3 id="for-the-second-program-with-time.h">For the second program (with
-time.h):</h3>
+characters of the encoded program are also source code for the decoder.</p>
+<h3 id="for-the-second-program-with-time.h">For the second program (with time.h):</h3>
 <pre><code> 1  #include &lt;stdio.h&gt;
  2  #include &lt;time.h&gt;
  3  #define o(j,k,m,n,l) {fprintf(j,a[k],m,n,a[l]);fflush(j);}
@@ -183,54 +179,45 @@ time.h):</h3>
 27        sleep(1);
 28    }}}
 </code></pre>
-<p>Lines 1 and 2 have to be there. Think of <code>o</code> in line 3 as
-send message with <code>j</code>,<code>k</code> and <code>m</code> as
-where, format and what. Lines 4 and 5 are all the text strings. Line 6
-is the offsets into the time string for the hours, minutes and seconds.
-Lines 7-13 are basic stuff. Line 14 is the crux of the biscuit. 14 forks
-off <code>f</code> (6) processes each of which is connected to the ones
-above and below it with a Unix pipe. It was too difficult to recover the
-actual FD numbers for the pipe ends in line 14 so I regenerate them and
-<code>fdopen()</code> them (for use with the standard C library
-functions) on lines 15 and 16. Now we have six almost identical
-processes each of which has two files open, <code>h</code> and
-<code>i</code> (up and down). The only difference in each process is the
-value of <code>f</code> (<code>0 &lt;= f &lt; 6</code>). The five
-processes where <code>f !=0</code> are the slave processes and
-<code>f == 0</code> is the master. Line 17 says we are going to do this
-forever. Lines 18 and 23 differentiate between the master and the
-slaves.</p>
-<p>Lines 19 to 22 are the slave code. Here we read in a line of text
-from <code>i</code> (down, line 19) and remove the newline char (line
-20). On line 21 if this message is for us (if the first character is our
-number, <code>f</code>, in ASCII) we do two things:</p>
+<p>Lines 1 and 2 have to be there. Think of <code>o</code> in line 3 as send message with
+<code>j</code>,<code>k</code> and <code>m</code> as where, format and what. Lines 4 and 5 are all the text
+strings. Line 6 is the offsets into the time string for the hours, minutes and
+seconds. Lines 7-13 are basic stuff. Line 14 is the crux of the biscuit. 14
+forks off <code>f</code> (6) processes each of which is connected to the ones above and
+below it with a Unix pipe. It was too difficult to recover the actual FD numbers
+for the pipe ends in line 14 so I regenerate them and <code>fdopen()</code> them (for use
+with the standard C library functions) on lines 15 and 16. Now we have six
+almost identical processes each of which has two files open, <code>h</code> and <code>i</code> (up and
+down). The only difference in each process is the value of <code>f</code> (<code>0 &lt;= f &lt; 6</code>).
+The five processes where <code>f !=0</code> are the slave processes and <code>f == 0</code> is the
+master. Line 17 says we are going to do this forever. Lines 18 and 23
+differentiate between the master and the slaves.</p>
+<p>Lines 19 to 22 are the slave code. Here we read in a line of text from
+<code>i</code> (down, line 19) and remove the newline char (line 20). On line
+21 if this message is for us (if the first character is our number, <code>f</code>,
+in ASCII) we do two things:</p>
 <ol type="1">
-<li>We copy the text of the message to <code>*c</code> which is really
-<code>argv[0]</code>. If you are on the correct flavor of Unix this will
-change the output of the <code>ps(1)</code> command to the string we
-just put there.</li>
-<li>We send the message (not including the number) to
-<code>stdout</code> with format number 6
-(<code>"\0337\033[%d;65;H%s\0338"</code>) If you can read VTxxx (and I
-read books printed as ANSI/VTxxx codes for fun :-) ) you know this is
-the sequence for:</li>
+<li>We copy the text of the message to <code>*c</code> which is really <code>argv[0]</code>. If you are
+on the correct flavor of Unix this will change the output of the <code>ps(1)</code> command
+to the string we just put there.</li>
+<li>We send the message (not including the number) to <code>stdout</code> with format number 6
+(<code>"\0337\033[%d;65;H%s\0338"</code>) If you can read VTxxx (and I read books printed
+as ANSI/VTxxx codes for fun :-) ) you know this is the sequence for:</li>
 </ol>
 <pre><code>remember where we are,
 go somewhere else,
 print the message,
 and return to where we started.</code></pre>
-<p>Line 22 says if this message is not for us (the number is bigger than
-ours) send it to <code>h</code> (up).</p>
-<p>Lines 24 to 27 are the master code. Here we get the time and convert
-it to an ASCII format (lines 24 and 25). Then on line 26 we build and
-send each of the messages for the slaves. The message uses a different
-control string for the different slaves. For the first and last slave
-the message text is just <code>"%c+------------+\n"</code> (slave
-number, text, newline.) For the other slaves it is
-<code>"%c+%3d %-8s+\n"</code> (slave number, number, units, newline).
-The slave number is <code>v+'0'</code>. The number (if used) is
-<code>atoi(e+b[v])</code> and the units are just the string in the slave
-number position.</p>
+<p>Line 22 says if this message is not for us (the number is bigger than ours)
+send it to <code>h</code> (up).</p>
+<p>Lines 24 to 27 are the master code. Here we get the time and convert it
+to an ASCII format (lines 24 and 25). Then on line 26 we build and send
+each of the messages for the slaves. The message uses a different control
+string for the different slaves. For the first and last slave the message
+text is just <code>"%c+------------+\n"</code> (slave number, text, newline.) For the
+other slaves it is <code>"%c+%3d %-8s+\n"</code> (slave number, number, units, newline).
+The slave number is <code>v+'0'</code>. The number (if used) is <code>atoi(e+b[v])</code> and the
+units are just the string in the slave number position.</p>
 
 <!-- END: this line ends content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 <!-- START: this line starts content from: inc/after-content.default.html -->

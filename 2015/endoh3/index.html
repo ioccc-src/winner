@@ -144,57 +144,52 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em>
 <h2 id="to-use">To use:</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prog</span></span></code></pre></div>
 <h2 id="try">Try:</h2>
-<p>To see the original <a href="mullender.c">mullender</a> in
-action:</p>
+<p>To see the original <a href="mullender.c">mullender</a> in action:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.sh</span></span></code></pre></div>
-<p>Observe what happens when you hit enter or another character! You
-might even try typing out, one character at a time,
-<code>1984/mullender</code>, and then see what it looks like at the end.
-Send INTR to end the program.</p>
+<p>Observe what happens when you hit enter or another character! You might even try
+typing out, one character at a time, <code>1984/mullender</code>, and then see what it looks
+like at the end. Send INTR to end the program.</p>
 <p>More generally use:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cc</span> <span class="at">-o</span> prog prog.c foo.c</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./prog</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">^C</span>  <span class="co"># if necessary, where ^C is ctrl-C, interrrupt</span></span></code></pre></div>
-<p>to compile and run <code>prog</code> as whatever foo.c is in the joke
-PDP-11 emulator.</p>
+<p>to compile and run <code>prog</code> as whatever foo.c is in the joke PDP-11 emulator.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
-<p>Like <a href="https://en.wikipedia.org/wiki/Marty_McFly">Marty</a>
-and <a href="https://en.wikipedia.org/wiki/Emmett_Brown">Doc</a>,
-something nostalgic from 1984 appears live in October of 2015!</p>
-<p>The author of this gem is a true <a
-href="https://en.wikipedia.org/wiki/DeLorean_time_machine">DeLorean</a>!</p>
-<p>A question for inquisitive readers: is the implemented subset of
-PDP-11 instructions <a
-href="https://en.wikipedia.org/wiki/Turing_completeness">Turing-complete</a>?
-(For a clue, see the end of the author’s remarks.) If in doubt, use <a
-href="https://github.com/DoctorWkt/Apout">APOUT</a>.</p>
+<p>Like <a href="https://en.wikipedia.org/wiki/Marty_McFly">Marty</a> and
+<a href="https://en.wikipedia.org/wiki/Emmett_Brown">Doc</a>, something nostalgic from 1984
+appears live in October of 2015!</p>
+<p>The author of this gem is a true
+<a href="https://en.wikipedia.org/wiki/DeLorean_time_machine">DeLorean</a>!</p>
+<p>A question for inquisitive readers: is the implemented subset of PDP-11
+instructions
+<a href="https://en.wikipedia.org/wiki/Turing_completeness">Turing-complete</a>? (For a
+clue, see the end of the author’s remarks.) If in doubt, use
+<a href="https://github.com/DoctorWkt/Apout">APOUT</a>.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="hint-compatibility">Hint / Compatibility</h3>
 <ul>
 <li>A little-endian system is required due to an external factor.</li>
-<li>Strictly speaking, this program does not comply with any C
-specification for the same reason. But I believe it is reasonably
-portable.</li>
+<li>Strictly speaking, this program does not comply with any C specification for
+the same reason. But I believe it is reasonably portable.</li>
 <li>It uses a GCC extension but works with clang.</li>
-<li>This is a kind of emulator. You may find its architecture name if
-you look at the source code from all angles..</li>
+<li>This is a kind of emulator. You may find its architecture name if you look at
+the source code from all angles..</li>
 <li>Find <code>main()</code> function.</li>
 </ul>
 <h3 id="spoiler">Spoiler</h3>
-<p>This program is a joke PDP-11 emulator. (“ll-dpd” is embedded in the
-code. Read it upside down.)</p>
+<p>This program is a joke PDP-11 emulator. (“ll-dpd” is embedded in the code.
+Read it upside down.)</p>
 <p>You got it? This program is supposed to be used in this way:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://www.ioccc.org/1984/mullender.c</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">clang</span> <span class="at">-o</span> prog prog.c mullender.c</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./prog</span></span></code></pre></div>
-<p>You can enjoy the legendary winning entry of the first IOCCC,
-again.</p>
+<p>You can enjoy the legendary winning entry of the first IOCCC, again.</p>
 <h3 id="internal">Internal</h3>
-<p>This program uses <code>__attribute__((constructor))</code>, which is
-a GCC extension, to hijack the <code>main()</code> function call. And
-then it interprets <code>main()</code> as an instruction sequence.</p>
-<p>It supports the minimal subset of instructions and addressing modes
-which are needed for <a href="mullender.c">mullender.c</a> to work:</p>
+<p>This program uses <code>__attribute__((constructor))</code>, which is a GCC extension, to
+hijack the <code>main()</code> function call. And then it interprets <code>main()</code> as an
+instruction sequence.</p>
+<p>It supports the minimal subset of instructions and addressing modes which are
+needed for <a href="mullender.c">mullender.c</a> to work:</p>
 <ul>
 <li>Instructions
 <ul>
@@ -215,10 +210,10 @@ which are needed for <a href="mullender.c">mullender.c</a> to work:</p>
 </ul></li>
 </ul>
 <h3 id="limitations">Limitations</h3>
-<p>Non-trivial combination of instruction and addressing mode may cause
-undefined behavior (unsequenced modification), such as attempting to
-auto-increment a destination register. Index addressing mode works well
-only for R7 (PC register).</p>
+<p>Non-trivial combination of instruction and addressing mode may cause undefined
+behavior (unsequenced modification), such as attempting to auto-increment a
+destination register. Index addressing mode works well only for R7 (PC
+register).</p>
 <h3 id="one-more-thing">One more thing</h3>
 <p>Note: this program writes a binary file to <code>stdout</code>:</p>
 <pre><code>short main[]={5568,1,-30460,12,2782,0,-29921,2056,-4864,6873,770,30054,11886,
@@ -334,59 +329,36 @@ only for R7 (PC register).</p>
 8203,-25556,13494,30352,29161,30898,1432,-5991,25411,1344,-4019,22299,15685,
 -16401,-23136,-28110,11874,-18945,1879,2,0,-32256,-20996,-18169,29220,12,0,0,0,
 335,-27277,-30776,20480,0};</code></pre>
-<h2 id="copyright-and-cc-by-sa-4.0-license">Copyright and CC BY-SA 4.0
-License:</h2>
-<p>This file is Copyright (c) 2023 by Landon Curt Noll. All Rights
-Reserved. You are free to share and adapt this file under the terms of
-this license:</p>
+<h2 id="copyright-and-cc-by-sa-4.0-license">Copyright and CC BY-SA 4.0 License:</h2>
+<p>This file is Copyright (c) 2023 by Landon Curt Noll. All Rights Reserved.
+You are free to share and adapt this file under the terms of this license:</p>
 <pre><code>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</code></pre>
-<p>For more information, see:
-https://creativecommons.org/licenses/by-sa/4.0/</p>
+<p>For more information, see: https://creativecommons.org/licenses/by-sa/4.0/</p>
 
 <!-- END: this line ends content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 <!-- START: this line starts content for HTML phase 22 by: bin/output-index-inventory.sh via bin/md2html.sh -->
 
 <!-- START: this line starts content generated by: bin/output-index-inventory.sh -->
 
-<h1 id="inventory-for-2015endoh3"><a name="inventory"></a>Inventory for
-2015/endoh3</h1>
+<h1 id="inventory-for-2015endoh3"><a name="inventory"></a>Inventory for 2015/endoh3</h1>
 <p><a href="#top">Jump to top</a></p>
 <h2 id="primary-files">Primary files</h2>
 <ul>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh3/prog.c">prog.c</a>
-- entry source</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh3/Makefile">Makefile</a>
-- entry Makefile</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh3/prog.orig.c">prog.orig.c</a>
-- original source</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh3/try.sh">try.sh</a>
-- how to run</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh3/ioccc.c">ioccc.c</a>
-- program as an array of shorts</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh3/mullender.c">mullender.c</a>
-- copy of 1984/mullender.c</li>
-<li><a href="2015_endoh3.tar.bz2">2015_endoh3.tar.bz2</a> - download
-entry source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh3/prog.c">prog.c</a> - entry source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh3/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh3/prog.orig.c">prog.orig.c</a> - original source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh3/try.sh">try.sh</a> - how to run</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh3/ioccc.c">ioccc.c</a> - program as an array of shorts</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh3/mullender.c">mullender.c</a> - copy of 1984/mullender.c</li>
+<li><a href="2015_endoh3.tar.bz2">2015_endoh3.tar.bz2</a> - download entry source</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="index.html">index.html</a> - entry home page</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh3/.entry.json">.entry.json</a>
-- description of entry in JSON</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh3/.gitignore">.gitignore</a>
-- list of files that should not be committed under git</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh3/.entry.json">.entry.json</a> - description of entry in JSON</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh3/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
 <li><a href=".path">.path</a> - directory path from top directory</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh3/README.md">README.md</a>
-- markdown source for index.html</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh3/README.md">README.md</a> - markdown source for index.html</li>
 </ul>
 
 <!-- END: next line ends content generated by: bin/output-index-inventory.sh -->

@@ -122,38 +122,32 @@
 
 <h1 id="quiner-code-generator">Q(uine)R code generator</h1>
 <h2 id="what-is-difficult">What is difficult?</h2>
-<p>As you may know, QR code (specification: ISO/IEC 18004) is quite
-complex. It requires a bit stream, Reed-Solomon codes, BCH codes, data
-relocation, big (and irregular!) numerical tables, human-oriented
-pattern arrangement (difficult to implement by a small program),
-etc.</p>
-<p>On the other hand, a quine has a big restriction: it needs to have
-two copies of the program!</p>
-<p>Do you think that it is possible to write QR code encoder in C within
-<em>1kB</em>?</p>
+<p>As you may know, QR code (specification: ISO/IEC 18004) is quite complex. It
+requires a bit stream, Reed-Solomon codes, BCH codes, data relocation, big (and
+irregular!) numerical tables, human-oriented pattern arrangement (difficult to
+implement by a small program), etc.</p>
+<p>On the other hand, a quine has a big restriction: it needs to have two copies of
+the program!</p>
+<p>Do you think that it is possible to write QR code encoder in C within <em>1kB</em>?</p>
 <h2 id="how-did-i-achieve-that">How did I achieve that?</h2>
-<p>It is known that we can mitigate the quine restriction by
-<code>eval</code>. For example, this is a quine written in Ruby:</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">eval</span> s<span class="kw">=</span><span class="st">&quot;print &#39;eval s=&#39;; p s&quot;</span></span></code></pre></div>
+<p>It is known that we can mitigate the quine restriction by <code>eval</code>.
+For example, this is a quine written in Ruby:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">eval</span> s<span class="kw">=</span><span class="st">&quot;print &#39;eval s=&#39;; p s&quot;</span></span></code></pre></div>
 <p>Note that <code>print</code> appears just once in the program.</p>
 <p>To emulate this approach in C, I adopted the following structure.</p>
 <pre><code>char s[]=&quot;&lt;main code&gt;int main() { &lt;VM code&gt; }&quot;;
 int main() { &lt;VM code&gt;; }</code></pre>
 <ul>
-<li><code>&lt;VM code&gt;</code> : An own VM implementation (written in
-C) that executes the main code.</li>
-<li><code>&lt;main code&gt;</code> : An object code of quine and QR code
-encoder (written in the assembly language of the VM).</li>
+<li><code>&lt;VM code&gt;</code> : An own VM implementation (written in C) that executes the main
+code.</li>
+<li><code>&lt;main code&gt;</code> : An object code of quine and QR code encoder (written in the
+assembly language of the VM).</li>
 </ul>
-<p><code>&lt;main code&gt;</code> (about 1100 bytes) appears once and
-<code>&lt;VM code&gt;</code> (about 450 bytes) appears twice. So the
-whole code is about 1100 + 450 * 2 = 2000 bytes. Hooray!</p>
+<p><code>&lt;main code&gt;</code> (about 1100 bytes) appears once and <code>&lt;VM code&gt;</code> (about 450 bytes)
+appears twice. So the whole code is about 1100 + 450 * 2 = 2000 bytes. Hooray!</p>
 <h2 id="what-sort-of-vm-is-that">What sort of VM is that?</h2>
-<p>The VM is a kind of stack machine which makes the object code
-compact. The instruction set is carefully selected to minimize the sizes
-of both <code>&lt;main code&gt;</code> and
-<code>&lt;VM code&gt;</code>.</p>
+<p>The VM is a kind of stack machine which makes the object code compact. The
+instruction set is carefully selected to minimize the sizes of both <code>&lt;main code&gt;</code> and <code>&lt;VM code&gt;</code>.</p>
 <ul>
 <li>21 integer registers access
 <ul>
@@ -178,22 +172,17 @@ of both <code>&lt;main code&gt;</code> and
 <li>putchar, exit</li>
 </ul></li>
 </ul>
-<p>The instructions have variable lengths, but many of them are
-represented as one printable character. (See <a
-href="machine.rb">machine.rb</a> and <a
-href="assemble.rb">assemble.rb</a> in detail.) The mapping between
-instructions and characters is also carefully designed to minimize
-<code>&lt;VM code&gt;</code>, which makes the resulted program
-non-human-readable.</p>
-<h2 id="how-did-i-create-the-main-code">How did I create the main
-code?</h2>
-<p>It is too tedious to write the machine language directly. So I wrote
-the source code in Ruby syntax and created a Ruby-to-VM compiler that
-involves alpha renaming and automatic register allocation only for this
-purpose.</p>
+<p>The instructions have variable lengths, but many of them are represented as one
+printable character. (See <a href="machine.rb">machine.rb</a> and
+<a href="assemble.rb">assemble.rb</a> in detail.) The mapping between instructions and
+characters is also carefully designed to minimize <code>&lt;VM code&gt;</code>, which makes the
+resulted program non-human-readable.</p>
+<h2 id="how-did-i-create-the-main-code">How did I create the main code?</h2>
+<p>It is too tedious to write the machine language directly. So I wrote the source
+code in Ruby syntax and created a Ruby-to-VM compiler that involves alpha
+renaming and automatic register allocation only for this purpose.</p>
 <ul>
-<li><a href="src.rb">src.rb</a>: the source code of QR code encoder
-written in Ruby syntax.</li>
+<li><a href="src.rb">src.rb</a>: the source code of QR code encoder written in Ruby syntax.</li>
 <li><a href="vm.c">vm.c</a>: the source code of the VM.</li>
 </ul>
 <p>The compiler tool chain is the following.</p>
@@ -230,39 +219,28 @@ raw.txt               |
       prog.c</code></pre>
 <ul>
 <li><a href="parse.rb">parse.rb</a> converts Ruby to AST.</li>
-<li><a href="serialize.rb">serialize.rb</a> converts AST to intermediate
-instruction sequence.</li>
-<li><a href="alpha.rb">alpha.rb</a> applies “alpha-renaming” to the
-instruction sequence.</li>
-<li><a href="register.rb">register.rb</a> applies “register
-allocation”.</li>
-<li><a href="assemble.rb">assemble.rb</a> converts the sequence to the
-final stack-machine instructions.</li>
+<li><a href="serialize.rb">serialize.rb</a> converts AST to intermediate instruction sequence.</li>
+<li><a href="alpha.rb">alpha.rb</a> applies “alpha-renaming” to the instruction sequence.</li>
+<li><a href="register.rb">register.rb</a> applies “register allocation”.</li>
+<li><a href="assemble.rb">assemble.rb</a> converts the sequence to the final stack-machine instructions.</li>
 <li><a href="interp.c">interp.c</a> is an implementation of the VM.</li>
-<li><a href="link.rb">link.rb</a> generates <code>main.c</code> by
-linking the instructions and interpreter source.</li>
-<li><a href="gen-prog.c">gen-prog.c</a> generates <a
-href="prog.c">prog.c</a> based on <code>main.c</code>.</li>
+<li><a href="link.rb">link.rb</a> generates <code>main.c</code> by linking the instructions and interpreter source.</li>
+<li><a href="gen-prog.c">gen-prog.c</a> generates <a href="prog.c">prog.c</a> based on <code>main.c</code>.</li>
 </ul>
-<p>You can run the process by <code>rake</code> command.
-<code>ruby-minisat</code> gem is needed.</p>
+<p>You can run the process by <code>rake</code> command. <code>ruby-minisat</code> gem is needed.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gem install ruby-minisat</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> rake</span></code></pre></div>
 <h2 id="tools">Tools</h2>
-<p>I checked that the following QR code readers can read the output of
-my program.</p>
+<p>I checked that the following QR code readers can read the output of my program.</p>
 <ul>
-<li>Linux: <a href="http://zbar.sourceforge.net/">ZBar bar code
-reader</a>.</li>
+<li>Linux: <a href="http://zbar.sourceforge.net/">ZBar bar code reader</a>.</li>
 </ul>
-<h3 id="a-note-from-the-judges-in-2023">A note from the judges in
-2023:</h3>
-<p>The author also tested an Android app called Barcode Scanner which
-used to be found at
+<h3 id="a-note-from-the-judges-in-2023">A note from the judges in 2023:</h3>
+<p>The author also tested an Android app called Barcode Scanner which used to be
+found at
 <code>https://play.google.com/store/apps/details?id=com.google.zxing.client.android</code>
 but it appears to no longer exist.</p>
-<p>You can use <a href="tool.rb">tool.rb</a> to convert the output to a
-png file.</p>
+<p>You can use <a href="tool.rb">tool.rb</a> to convert the output to a png file.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./main</span> Hello <span class="kw">|</span> <span class="ex">ruby</span> tool.rb <span class="op">&gt;</span> hello.png</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> zbarimg <span class="at">-q</span> hello.png</span>
@@ -273,8 +251,7 @@ png file.</p>
 <h2 id="limitations">Limitations</h2>
 <ul>
 <li>QR code error correction level is fixed to L (Low).</li>
-<li>It supports only byte mode (not numeric, alphanumeric, kanji
-mode…).</li>
+<li>It supports only byte mode (not numeric, alphanumeric, kanji mode…).</li>
 <li>The mask pattern is fixed to 4.</li>
 <li>The mask is not applied to the remained bits.</li>
 </ul>

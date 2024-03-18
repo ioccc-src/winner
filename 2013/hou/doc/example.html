@@ -122,8 +122,7 @@
 
 <h1 id="scene-format-documentation">Scene format documentation</h1>
 <p>The file must be encoded in UTF-8 as the BOF marker indicates.</p>
-<p>You can directly feed it to the renderer. If you’re wondering about
-what the following code block does, that’s why:)</p>
+<p>You can directly feed it to the renderer. If you’re wondering about what the following code block does, that’s why:)</p>
 <pre><code>@|?|?z#
 @|||?z&amp;
 &gt;?Sedvf
@@ -157,38 +156,31 @@ ZnY|{|e
 kkdr\{\{\%
 lkdr\{\{&gt;</code></pre>
 <h2 id="basic-structure">Basic structure</h2>
-<p>A scene file begins with arbitrary binary data, followed by several
-shader functions.</p>
-<p>Shader functions are declared using a one-character name followed by
-a <code>]</code> character. There are some special function names, which
-will be explained below.</p>
-<p>The language used to write shader functions is very simple.
-Basically, you write a sequence of assignment statements like this:</p>
+<p>A scene file begins with arbitrary binary data, followed by several shader
+functions.</p>
+<p>Shader functions are declared using a one-character name followed by a <code>]</code>
+character. There are some special function names, which will be explained below.</p>
+<p>The language used to write shader functions is very simple. Basically, you write
+a sequence of assignment statements like this:</p>
 <pre><code>A=A+D
 B=B+E</code></pre>
-<p>Namely, you write a one-character variable name, an equal sign
-(<code>=</code>), followed by an expression (made of operators and
-one-character variable names, of course).</p>
+<p>Namely, you write a one-character variable name, an equal sign (<code>=</code>), followed
+by an expression (made of operators and one-character variable names, of
+course).</p>
 <h2 id="expressions">Expressions</h2>
-<p>The shader language supports seven operators, listed highest priority
-first:</p>
+<p>The shader language supports seven operators, listed highest priority first:</p>
 <pre><code>*/+-&lt;#:</code></pre>
-<p><code>*/+-&lt;</code> each mean what they mean in C, but the priority
-part is a bit different. Basically, <code>*</code> has higher priority
-than <code>/</code>, so <code>A/4*4</code> actually computes
-<code>A/(4*4)</code>. And you can’t write <code>(A/4)*4</code> –
-brackets are not supported. As an advice, keep your expressions simple
-:) If you really needs to write something like <code>C=(A/4)*4</code>,
-write instead:</p>
+<p><code>*/+-&lt;</code> each mean what they mean in C, but the priority part is a bit different.
+Basically, <code>*</code> has higher priority than <code>/</code>, so <code>A/4*4</code> actually computes
+<code>A/(4*4)</code>. And you can’t write <code>(A/4)*4</code> – brackets are not supported. As an
+advice, keep your expressions simple :) If you really needs to write something
+like <code>C=(A/4)*4</code>, write instead:</p>
 <pre><code>B=A/4+
 C=B*4</code></pre>
-<p>The <code>#</code> operator acts somewhat like the C <code>?:</code>.
-It returns one of its two operands based on, what else, the value of
-variable <code>#</code>. When <code>#</code> is true, <code>#</code>
+<p>The <code>#</code> operator acts somewhat like the C <code>?:</code>. It returns one of its two
+operands based on, what else, the value of variable <code>#</code>. When <code>#</code> is true, <code>#</code>
 returns its second operand.</p>
-<p>The <code>:</code> operator calls built-in functions. The first
-operand is the function id and the second is the parameter. Here is a
-list of functions:</p>
+<p>The <code>:</code> operator calls built-in functions. The first operand is the function id and the second is the parameter. Here is a list of functions:</p>
 <pre><code>0:x = the x-th byte of the scene file
 1:x = sin(x*PI)
 2:x = atan2(x,#)/PI
@@ -197,43 +189,36 @@ list of functions:</p>
 5:x = the next number in the (allegedly random) number sequence, can&#39;t be called in volume shaders
 6:x = value of the variable (char)(120+x)
 7:x = write #&#39;s value to the variable (char)(120+x)</code></pre>
-<p>Contrary to popular belief, the language itself doesn’t support
-numerical constants. Any character sitting between operators is a
-variable. When you see 1/2, it’s in fact dividing the variable 1’s value
-by the variable 2’s value. For everyone’s convenience, though, in the
-beginning every variable is initialized to its ASCII code minus 48. As
-long as you don’t write something like <code>3=1+1</code>, you can use
-single digit numbers as, well, single digit numbers. If you need
-something like <code>1920</code> or <code>0.73</code>, you need to
-compute it yourself. And yes, all variables store floating point
-values.</p>
-<p>If a character appears as the first character of any
-<code>argv</code>, it goes to zero. This includes the scene filename. If
-you name your scene <code>1.scene</code>, well, good luck with
-<code>1=0</code>!</p>
-<p>You can terminate a statement using any character that isn’t an
-operator, be it <code>\n</code> or <code>;</code>. But you must put in
-one and only one character. Put in two (e.g. the Windows
-<code>\r\n</code>), and it terminates your function. Also, the first
-statement must begin immediately after <code>]</code>.</p>
-<p>When a function terminates, the interpreter calls the next function
-specified by variable <code>R</code>. If you want to call function
-<code>n</code>, just write somewhere:</p>
+<p>Contrary to popular belief, the language itself doesn’t support numerical
+constants. Any character sitting between operators is a variable. When you see
+1/2, it’s in fact dividing the variable 1’s value by the variable 2’s value. For
+everyone’s convenience, though, in the beginning every variable is initialized
+to its ASCII code minus 48. As long as you don’t write something like <code>3=1+1</code>,
+you can use single digit numbers as, well, single digit numbers. If you need
+something like <code>1920</code> or <code>0.73</code>, you need to compute it yourself. And yes, all
+variables store floating point values.</p>
+<p>If a character appears as the first character of any <code>argv</code>, it goes to zero.
+This includes the scene filename. If you name your scene <code>1.scene</code>, well, good
+luck with <code>1=0</code>!</p>
+<p>You can terminate a statement using any character that isn’t an operator, be it
+<code>\n</code> or <code>;</code>. But you must put in one and only one character. Put in two (e.g.
+the Windows <code>\r\n</code>), and it terminates your function. Also, the first statement
+must begin immediately after <code>]</code>.</p>
+<p>When a function terminates, the interpreter calls the next function specified by
+variable <code>R</code>. If you want to call function <code>n</code>, just write somewhere:</p>
 <pre><code>R=n</code></pre>
-<p>providing you have left <code>n</code> at its initial value. If you
-want to actually return to the renderer, put in <code>R=0</code>.</p>
-<p>As you may have noticed, you can put in all kinds of stuff between
-functions, like this comment.</p>
-<h2 id="how-the-____-do-i-render-an-image-with-shaders">How the ____ do
-I render an image with shaders?</h2>
-<p>Basically, you define a geometry using volume shaders, define a
-camera using a camera shader, and define light sources and surface
-reflectance properties using material shaders.</p>
+<p>providing you have left <code>n</code> at its initial value. If you want to actually return
+to the renderer, put in <code>R=0</code>.</p>
+<p>As you may have noticed, you can put in all kinds of stuff between functions,
+like this comment.</p>
+<h2 id="how-the-____-do-i-render-an-image-with-shaders">How the ____ do I render an image with shaders?</h2>
+<p>Basically, you define a geometry using volume shaders, define a camera using a
+camera shader, and define light sources and surface reflectance properties using
+material shaders.</p>
 <table>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Continue to the comments before function
-A</td>
+<td style="text-align: left;">Continue to the comments before function A</td>
 </tr>
 </tbody>
 </table>
@@ -259,43 +244,37 @@ R=0#n</code></pre>
 H -- Image height, in pixels
 I -- Perturbation probability
 J -- Camera ray stratification probability</code></pre>
-<p>If you have used a MLT renderer before, you probably know what
-<code>I</code> and <code>J</code> does. If you don’t, well, use the same
-value as the default scene. Everything converges just fine under
-suboptimal settings, just a little slower. Generally, use a higher value
-for <code>I</code> if your scene is primarily illuminated by some
+<p>If you have used a MLT renderer before, you probably know what <code>I</code> and <code>J</code> does.
+If you don’t, well, use the same value as the default scene. Everything
+converges just fine under suboptimal settings, just a little slower. Generally,
+use a higher value for <code>I</code> if your scene is primarily illuminated by some
 indirect source.</p>
-<p><code>A</code> also serves as the geometry shader for volume 0. The
-scene geometry is made of up to 32 volumes, each with 64x64x64 cells.
-The volume 0 is the ‘top level’ volume where the camera goes. Each cell
-of a volume can be empty, filled with a material, or another volume. The
-roundish characters in <a
-href="../old_default.scene">old_default.scene</a> and the carpet on the
-floor in this file are examples where a cell is defined to another
-volume. Materials will be explained later.</p>
-<p>The volume shader for the i-th volume is named as the (i+1)-th
-capital letter. Each volume shader is invoked once for each cell. The
-cell coordinates (0..63) are given as inputs in variable
-<code>x</code>,<code>y</code>,<code>z</code>, and you’re supposed to
-return the cell content in variable <code>C</code>. To fill it with
-material <code>i</code>, return <code>64+i</code> in <code>C</code>. To
-fill it with volume <code>i</code>, well, return <code>i</code>. To
-leave it empty, return <code>C=0</code>.</p>
-<p>Before starting to build a scene, it’s better to have a draft sketch
-handy first. Something like <img src="draft.png" alt="Draft sketch" />.
-Sometimes it’s hard to imagine where something should go without the
-sketch. And you don’t have to stick to your sketch :)</p>
-<p>What motivated my default scene: it was the full moon’s day (a
-national holiday) in China and my parents were planning to renovate
-their apartment. I rendered the image to tell my mom how ridiculous her
-starry-sky wall paper would look like if she used it on every single
-wall. She ends up using it on just one wall, the one facing my bed, to
-thank me for the effort.</p>
+<p><code>A</code> also serves as the geometry shader for volume 0. The scene geometry is made
+of up to 32 volumes, each with 64x64x64 cells. The volume 0 is the ‘top level’
+volume where the camera goes. Each cell of a volume can be empty, filled with a
+material, or another volume. The roundish characters in
+<a href="../old_default.scene">old_default.scene</a> and the carpet on the floor in this
+file are examples where a cell is defined to another volume. Materials will be
+explained later.</p>
+<p>The volume shader for the i-th volume is named as the (i+1)-th capital letter.
+Each volume shader is invoked once for each cell. The cell coordinates (0..63)
+are given as inputs in variable <code>x</code>,<code>y</code>,<code>z</code>, and you’re supposed to return the
+cell content in variable <code>C</code>. To fill it with material <code>i</code>, return <code>64+i</code> in
+<code>C</code>. To fill it with volume <code>i</code>, well, return <code>i</code>. To leave it empty, return
+<code>C=0</code>.</p>
+<p>Before starting to build a scene, it’s better to have a draft sketch handy
+first. Something like <img src="draft.png" alt="Draft sketch" />. Sometimes it’s hard to
+imagine where something should go without the sketch. And you don’t have to
+stick to your sketch :)</p>
+<p>What motivated my default scene: it was the full moon’s day (a national holiday)
+in China and my parents were planning to renovate their apartment. I rendered
+the image to tell my mom how ridiculous her starry-sky wall paper would look
+like if she used it on every single wall. She ends up using it on just one wall,
+the one facing my bed, to thank me for the effort.</p>
 <table>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Continue to the comments before function
-a</td>
+<td style="text-align: left;">Continue to the comments before function a</td>
 </tr>
 </tbody>
 </table>
@@ -311,39 +290,32 @@ J=1/2+
 C=p+1+
 U=w+w+w</code></pre>
 <hr />
-<p>The function <code>a</code> is the camera shader, which, well,
-generates the camera ray. It’s supposed to return the ray in variables
-<code>UVWXYZ</code> and <code>ABCDEF</code> (that may sound like a lot
-of variables, but it really isn’t that much).</p>
-<p>Here comes some subtlety of <code>PSSMLT</code> (Primary Sample Space
-Metropolis Light Transport, or Kelemen-style MLT). Basically, a
-<code>PSSMLT</code> renderer gives you an (allegedly random) number
-sequence, and you compute a color out of it. This is usually done by
-generating and tracing rays out of those random numbers. The renderer
-would assemble the colors into an image.</p>
-<p>Remember the function <code>5</code>? Here it comes. The first two
-“random” numbers have special meaning and must specify a point on the
-image plane <code>[0,1)x[0,1)</code>. You’re supposed to transform the
-image plane to the 3D space, choose a point for the camera, and shoot a
-ray from the camera point to the image plane point, see <img
-src="camera.png" alt="Camera convention" />. The camera point goes to
-<code>(U,V,W)</code>, and the ray direction vector (image plane point -
-camera point) is <code>(X,Y,Z)</code>. For the coordinate space, volume
-0 is scaled up 64x here to <code>(0,0,0)-(4096,4096,4096)</code>.</p>
-<p>For a basic camera shader example, check <a
-href="../otherroom.scene">otherroom.scene</a>.</p>
-<p>If any ray goes out of volume 0, the renderer crashes. Make sure it
-doesn’t happen. Wall up everything.</p>
-<p>Variables <code>ABCDEF</code> control the color returned from the
-ray. They will be explained in the material shaders part. For now, just
-put in:</p>
+<p>The function <code>a</code> is the camera shader, which, well, generates the camera ray.
+It’s supposed to return the ray in variables <code>UVWXYZ</code> and <code>ABCDEF</code> (that may
+sound like a lot of variables, but it really isn’t that much).</p>
+<p>Here comes some subtlety of <code>PSSMLT</code> (Primary Sample Space Metropolis Light
+Transport, or Kelemen-style MLT). Basically, a <code>PSSMLT</code> renderer gives you an
+(allegedly random) number sequence, and you compute a color out of it. This is
+usually done by generating and tracing rays out of those random numbers. The
+renderer would assemble the colors into an image.</p>
+<p>Remember the function <code>5</code>? Here it comes. The first two “random” numbers have
+special meaning and must specify a point on the image plane <code>[0,1)x[0,1)</code>.
+You’re supposed to transform the image plane to the 3D space, choose a point for
+the camera, and shoot a ray from the camera point to the image plane point, see
+<img src="camera.png" alt="Camera convention" />. The camera point goes to <code>(U,V,W)</code>, and the
+ray direction vector (image plane point - camera point) is <code>(X,Y,Z)</code>. For the
+coordinate space, volume 0 is scaled up 64x here to <code>(0,0,0)-(4096,4096,4096)</code>.</p>
+<p>For a basic camera shader example, check <a href="../otherroom.scene">otherroom.scene</a>.</p>
+<p>If any ray goes out of volume 0, the renderer crashes. Make sure it doesn’t
+happen. Wall up everything.</p>
+<p>Variables <code>ABCDEF</code> control the color returned from the ray. They will be
+explained in the material shaders part. For now, just put in:</p>
 <pre><code>A=0;B=0;C=0
 D=1;E=1;F=1</code></pre>
 <table>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Continue to the comments before function
-1</td>
+<td style="text-align: left;">Continue to the comments before function 1</td>
 </tr>
 </tbody>
 </table>
@@ -371,39 +343,32 @@ W=p*8+
 A=0;B=0;C=0+
 D=1;E=1;F=1</code></pre>
 <hr />
-<p>The numbered functions define materials, i.e., surface reflectance
-properties. As the name suggests, the shader simulates ray-surface
-interaction. It’s done by updating <code>UVWXYZABCDEF</code>, of
-course.</p>
-<p><code>ABCDEF</code> define colors. <code>(A,B,C)</code> is the RGB
-irradiance ultimately returned to the renderer, and <code>(D,E,F)</code>
-maintain the cumulative RGB reflectance of the current ray path. This
-may sound confusing, but basically, if the surface is a light source,
-you accumulate the current path reflectance <code>(D,E,F)</code>,
-multiplied by the light strength, to <code>(A,B,C)</code>. See shader 6
-for an example.</p>
-<p>If you want a colored surface, use its color to modulate
-<code>(D,E,F)</code>, i.e. <code>D=D*red;E=E*green;F=F*blue</code>, easy
-as that. To get some texturing, compute the color procedurally or look
-up a binary table.</p>
-<p>There’s something subtle about colors. To go along with the trend,
-the renderer follows the practice of linear rendering with a gamma of
-<code>2</code>. Stripping the fancy jargon, that basically means after
-picking a color in your favorite image editing program, you need to
-convert the RGB values from 0..255 to 0..1, and then put here its
-<em>square</em>. Only after squaring you get your real, lively color in
-the output image, as opposed to something dull and gray. You need to do
-the same if you use a RGB texture. And yes, that is the what the second
-<code>sqrt(3)</code> in <a href="../a.c">a.c</a> is for.</p>
-<p>Going beyond colors, to define a shiny or dull surface one needs more
-maths, and optics. The jargon for this is <code>BRDF</code>
-(Bidirectional Reflectance Distribution Function) importance sampling.
-Let’s continue to function <code>o</code>.</p>
+<p>The numbered functions define materials, i.e., surface reflectance properties.
+As the name suggests, the shader simulates ray-surface interaction. It’s done by
+updating <code>UVWXYZABCDEF</code>, of course.</p>
+<p><code>ABCDEF</code> define colors. <code>(A,B,C)</code> is the RGB irradiance ultimately returned to
+the renderer, and <code>(D,E,F)</code> maintain the cumulative RGB reflectance of the
+current ray path. This may sound confusing, but basically, if the surface is a
+light source, you accumulate the current path reflectance <code>(D,E,F)</code>, multiplied
+by the light strength, to <code>(A,B,C)</code>. See shader 6 for an example.</p>
+<p>If you want a colored surface, use its color to modulate <code>(D,E,F)</code>, i.e.
+<code>D=D*red;E=E*green;F=F*blue</code>, easy as that. To get some texturing, compute the
+color procedurally or look up a binary table.</p>
+<p>There’s something subtle about colors. To go along with the trend, the renderer
+follows the practice of linear rendering with a gamma of <code>2</code>. Stripping the
+fancy jargon, that basically means after picking a color in your favorite image
+editing program, you need to convert the RGB values from 0..255 to 0..1, and
+then put here its <em>square</em>. Only after squaring you get your real, lively color
+in the output image, as opposed to something dull and gray. You need to do the
+same if you use a RGB texture. And yes, that is the what the second <code>sqrt(3)</code> in
+<a href="../a.c">a.c</a> is for.</p>
+<p>Going beyond colors, to define a shiny or dull surface one needs more maths, and
+optics. The jargon for this is <code>BRDF</code> (Bidirectional Reflectance Distribution
+Function) importance sampling. Let’s continue to function <code>o</code>.</p>
 <table>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Continue to the comments before function
-o</td>
+<td style="text-align: left;">Continue to the comments before function o</td>
 </tr>
 </tbody>
 </table>
@@ -434,34 +399,28 @@ E=E*4/7+
 d=I#2/5+
 F=F*d</code></pre>
 <hr />
-<p>Function <code>o</code> defines a diffuse (that is, dull) surface. To
-define reflectance properties like this, one needs to sample an outgoing
-ray direction, based on the incoming direction and the surface normal.
-It’s called importance sampling, because here the probability of each
-outgoing direction has to be proportional to the reflected light
-strength (i.e., the <code>BRDF</code>) on that direction. For a diffuse
-surface, sample the upper hemisphere with a probability proportional to
-the cosine of the outgoing angle, see <img src="cosine.png"
-alt="Cosine sampling" />.</p>
-<p>The incoming direction is in <code>(X,Y,Z)</code> and the hit point
-is <code>(U,V,W)</code>. The outgoing direction is returned in, where
-else, <code>(X,Y,Z)</code>.</p>
-<p>The surface normal is provided in variables <code>S</code> and
-<code>T</code>. Since the geometry is defined as a bunch of cube-shaped
-cells, there are only 6 possible normals:
-<code>(±1,0,0) (0,±1,0) (0,0,±1)</code>. Here <code>S</code> is the sign
-and <code>T</code> is the dimension. If you get <code>S=-1</code> and
-<code>T=1</code>, the normal is <code>(0,-1,0)</code>.</p>
-<p>If you don’t want to redo all the math yourself… this file provides a
-few simple shader functions:</p>
+<p>Function <code>o</code> defines a diffuse (that is, dull) surface. To define reflectance
+properties like this, one needs to sample an outgoing ray direction, based on
+the incoming direction and the surface normal. It’s called importance sampling,
+because here the probability of each outgoing direction has to be proportional
+to the reflected light strength (i.e., the <code>BRDF</code>) on that direction. For a
+diffuse surface, sample the upper hemisphere with a probability proportional to
+the cosine of the outgoing angle, see <img src="cosine.png" alt="Cosine sampling" />.</p>
+<p>The incoming direction is in <code>(X,Y,Z)</code> and the hit point is <code>(U,V,W)</code>. The
+outgoing direction is returned in, where else, <code>(X,Y,Z)</code>.</p>
+<p>The surface normal is provided in variables <code>S</code> and <code>T</code>. Since the geometry is
+defined as a bunch of cube-shaped cells, there are only 6 possible normals:
+<code>(±1,0,0) (0,±1,0) (0,0,±1)</code>. Here <code>S</code> is the sign and <code>T</code> is the dimension. If
+you get <code>S=-1</code> and <code>T=1</code>, the normal is <code>(0,-1,0)</code>.</p>
+<p>If you don’t want to redo all the math yourself… this file provides a few simple shader functions:</p>
 <pre><code>o -- Diffuse surface. Do the color thing your self and call R=o
 5 -- Perfect mirror.
 f -- Surface with a Fresnel term. Basically, it resembles a polished surface made from a dielectric material.</code></pre>
-<p>For something more complex like a fluffy carpet, well, you could use
-a volume to directly model the <a
-href="https://en.wikipedia.org/wiki/Mesoscopic_physics">mesoscopic</a>
-detail. Shader <code>D</code> in this file produces a bunch of dense,
-tiny spikes to simulate a fluffy appearance.</p>
+<p>For something more complex like a fluffy carpet, well, you could use a volume to
+directly model the
+<a href="https://en.wikipedia.org/wiki/Mesoscopic_physics">mesoscopic</a> detail. Shader
+<code>D</code> in this file produces a bunch of dense, tiny spikes to simulate a fluffy
+appearance.</p>
 <table>
 <tbody>
 <tr class="odd">
@@ -567,8 +526,8 @@ y=4:#/7+
 #=#-y*7+
 C=7#C</code></pre>
 <hr />
-<p>The last line, well, is the output filename. Just remember to throw
-in two <code>]</code>s and don’t put a newline after it.</p>
+<p>The last line, well, is the output filename. Just remember to throw in two <code>]</code>s
+and don’t put a newline after it.</p>
 <pre><code>]]example.ppm</code></pre>
 
 <!-- END: this line ends content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->

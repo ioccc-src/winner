@@ -143,25 +143,24 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em>
 <div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span></span></code></pre></div>
 <h2 id="to-use">To use:</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> check</span></code></pre></div>
-<p>You’ll need to have both <a href="https://www.ruby-lang.org">Ruby</a>
-and <a href="https://imagemagick.org/">ImageMagick</a> installed to run
-all the automated checks.</p>
-<p>If you do not have both, however, you can still do the below in the
-<a href="#try">try</a> section to enjoy the entry. The <a
-href="Makefile">Makefile</a> <code>check</code> rule will check if you
-have both and if either is not found it will report it and tell you
-where to download one or both before exiting.</p>
+<p>You’ll need to have both <a href="https://www.ruby-lang.org">Ruby</a> and
+<a href="https://imagemagick.org/">ImageMagick</a> installed to run all the automated
+checks.</p>
+<p>If you do not have both, however, you can still do the below in the <a href="#try">try</a>
+section to enjoy the entry. The <a href="Makefile">Makefile</a> <code>check</code> rule will check if
+you have both and if either is not found it will report it and tell you where to
+download one or both before exiting.</p>
 <h2 id="try">Try:</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">less</span> jpeg.c</span></code></pre></div>
 <p>Next look at <code>jpeg.jpg</code> in an image viewer program.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
-<p>This is a program which, when fed its own source, generates a program
-that almost is its whitespace inverse, which, in its order, generates a
-JPEG file (speaking of file size abuse, that is about 16.4 times larger
-than a PBM file with the same image, but the source was also abusing the
-size counting program…)</p>
-<p>Don’t pay attention to the OCR <del>behind the ruby curtain</del> —
-it’s a straightforward bitmap comparison.</p>
+<p>This is a program which, when fed its own source, generates a program that
+almost is its whitespace inverse, which, in its order, generates a JPEG file
+(speaking of file size abuse, that is about 16.4 times larger than a PBM file
+with the same image, but the source was also abusing the size counting
+program…)</p>
+<p>Don’t pay attention to the OCR <del>behind the ruby curtain</del> — it’s a
+straightforward bitmap comparison.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="highlights">Highlights</h3>
 <ul>
@@ -174,20 +173,18 @@ it’s a straightforward bitmap comparison.</p>
 </ul></li>
 </ul>
 <h3 id="notes">Notes</h3>
-<p>I picked JPEG instead of PNG, GIF, or BMP because it is the most
-difficult to generate. I believe that the JPEG encoder is the world’s
-smallest ever.</p>
-<p>Nevertheless, the program was too big to meet the IOCCC’s size rule.
-So I created a smaller bootstrap program that generates the main
-program. <code>endoh2.c</code> contains fragments of the main program
-<em>as a comment</em> which <code>iocccsize -i</code> does <em>not</em>
-count. I gratefully thank the judges for spoiling the size rule this
+<p>I picked JPEG instead of PNG, GIF, or BMP
+because it is the most difficult to generate.
+I believe that the JPEG encoder is the world’s smallest ever.</p>
+<p>Nevertheless, the program was too big to meet the IOCCC’s size rule. So I
+created a smaller bootstrap program that generates the main program. <code>endoh2.c</code>
+contains fragments of the main program <em>as a comment</em> which <code>iocccsize -i</code> does
+<em>not</em> count. I gratefully thank the judges for spoiling the size rule this
 year.</p>
-<p>I think the program will work on any major platforms and
-compilers.</p>
+<p>I think the program will work on any major platforms and compilers.</p>
 <h3 id="legal">Legal</h3>
-<p>This program uses (a part of) Proggy Tiny Fonts which is distributed
-in MIT License:</p>
+<p>This program uses (a part of) Proggy Tiny Fonts
+which is distributed in MIT License:</p>
 <pre><code>Copyright (c) 2004, 2005 Tristan Grimmer
 
 Permission is hereby granted, free of charge, to any person obtaining a
@@ -207,53 +204,34 @@ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.</code></pre>
-<h2 id="copyright-and-cc-by-sa-4.0-license">Copyright and CC BY-SA 4.0
-License:</h2>
-<p>This file is Copyright (c) 2023 by Landon Curt Noll. All Rights
-Reserved. You are free to share and adapt this file under the terms of
-this license:</p>
+<h2 id="copyright-and-cc-by-sa-4.0-license">Copyright and CC BY-SA 4.0 License:</h2>
+<p>This file is Copyright (c) 2023 by Landon Curt Noll. All Rights Reserved.
+You are free to share and adapt this file under the terms of this license:</p>
 <pre><code>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</code></pre>
-<p>For more information, see:
-https://creativecommons.org/licenses/by-sa/4.0/</p>
+<p>For more information, see: https://creativecommons.org/licenses/by-sa/4.0/</p>
 
 <!-- END: this line ends content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 <!-- START: this line starts content for HTML phase 22 by: bin/output-index-inventory.sh via bin/md2html.sh -->
 
 <!-- START: this line starts content generated by: bin/output-index-inventory.sh -->
 
-<h1 id="inventory-for-2013endoh2"><a name="inventory"></a>Inventory for
-2013/endoh2</h1>
+<h1 id="inventory-for-2013endoh2"><a name="inventory"></a>Inventory for 2013/endoh2</h1>
 <p><a href="#top">Jump to top</a></p>
 <h2 id="primary-files">Primary files</h2>
 <ul>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh2/endoh2.c">endoh2.c</a>
-- entry source</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh2/Makefile">Makefile</a>
-- entry Makefile</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh2/endoh2.orig.c">endoh2.orig.c</a>
-- original source</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh2/ocr.rb">ocr.rb</a>
-- test suite support file</li>
-<li><a href="2013_endoh2.tar.bz2">2013_endoh2.tar.bz2</a> - download
-entry source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh2/endoh2.c">endoh2.c</a> - entry source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh2/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh2/endoh2.orig.c">endoh2.orig.c</a> - original source</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh2/ocr.rb">ocr.rb</a> - test suite support file</li>
+<li><a href="2013_endoh2.tar.bz2">2013_endoh2.tar.bz2</a> - download entry source</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="index.html">index.html</a> - entry home page</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh2/.entry.json">.entry.json</a>
-- description of entry in JSON</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh2/.gitignore">.gitignore</a>
-- list of files that should not be committed under git</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh2/.entry.json">.entry.json</a> - description of entry in JSON</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh2/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
 <li><a href=".path">.path</a> - directory path from top directory</li>
-<li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh2/README.md">README.md</a>
-- markdown source for index.html</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh2/README.md">README.md</a> - markdown source for index.html</li>
 </ul>
 
 <!-- END: next line ends content generated by: bin/output-index-inventory.sh -->
