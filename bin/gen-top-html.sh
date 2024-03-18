@@ -62,7 +62,7 @@
 if [[ -z ${BASH_VERSINFO[0]} ||
 	 ${BASH_VERSINFO[0]} -lt 5 ||
 	 ${BASH_VERSINFO[0]} -eq 5 && ${BASH_VERSINFO[1]} -lt 1 ||
-	 ${BASH_VERSINFO[0]} -eq 5 && ${BASH_VERSINFO[1]} -eq 1 && ${BASH_VERSINFO[1]} -lt 8 ]]; then
+	 ${BASH_VERSINFO[0]} -eq 5 && ${BASH_VERSINFO[1]} -eq 1 && ${BASH_VERSINFO[2]} -lt 8 ]]; then
     echo "$0: ERROR: bash version needs to be >= 5.1.8: $BASH_VERSION" 1>&2
     echo "$0: Warning: bash version >= 4.2 might work but 5.1.8 was the minimum we tested" 1>&2
     echo "$0: Notice: For macOS users: install homebrew (see https://brew.sh)," \
