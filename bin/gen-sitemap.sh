@@ -81,7 +81,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.1 2024-03-18"
+export VERSION="1.3.2 2024-03-18"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -161,7 +161,7 @@ function output_modtime
 	# SC2012 (info): Use find instead of ls to better handle non-alphanumeric filenames.
 	# https://www.shellcheck.net/wiki/SC2012
 	# shellcheck disable=SC2012
-	TZ=UTZ ls -D '%FT%T+00:00' -ld "$TOP_FILE" | awk '{print $6;}'
+	TZ=UTZ ls -D '%FT%T+00:00' -ld "$FILENAME" | awk '{print $6;}'
 	status0="${PIPESTATUS[0]}"
 	status1="${PIPESTATUS[1]}"
 	if [[ $status0 -ne 0 || $status1 -ne 0 ]]; then
