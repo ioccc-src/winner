@@ -81,7 +81,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1 2024-03-10"
+export VERSION="1.1.1 2024-03-18"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -118,101 +118,81 @@ export EXIT_CODE="0"
 #
 unset TOOL_OPTION
 declare -ag TOOL_OPTION
+export MODTIME_METHOD=""
 
-# usage
+# output_modtime - file modification time in W3C Datetime format:
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
-			[-t tagline] [-T md2html.sh] [-u repo_url]
-			[p | pending | o | open | j | judging | c | closed]
-
-	-h		print help message and exit
-	-v level	set verbosity level (def level: 0)
-	-V		print version string and exit
-
-	-d topdir	set topdir (def: $TOPDIR)
-			NOTE: The '-d topdir' is passed as leading options on tool command lines.
-	-D docroot/	set the document root path followed by slash (def: $DOCROOT_SLASH)
-			NOTE: The '-D docroot/' is passed as leading options on tool command lines.
-			NOTE: 'docroot' must end in a slash
-
-	-n		go thru the actions, but do not update any files (def: do the action)
-			NOTE: -n is passed to tool
-	-N		do not process anything, just parse arguments (def: process something)
-
-	-t tagline	string to write about the tool that formed the markdown content (def: $TAGLINE)
-			NOTE: 'tagline' may be enclosed within, but may NOT contain an internal single-quote, or double-quote.
-	-T md2html.sh	run 'markdown to html tool' to convert markdown into HTML (def: $MD2HTML_SH)
-
-	-u repo_url	Base level URL of target git repo (def: $REPO_URL)
-			NOTE: The '-u repo_url' is passed as leading options on tool command lines.
-	-w site_url	Base URL of the web site (def: $SITE_URL)
-			NOTE: The '-w site_url' is passed as leading options on tool command lines.
-
-	[p | pending]	Set the contest_status to pending
-	[o | open]	Set the contest_status to open
-	[j | judging]	Set the contest_status to judging
-	[c | closed]	Set the contest_status to closed
-			(def: do not change contest_status)
-
-NOTE: The '-v level' is passed as initial command line options to the 'markdown to html tool' (md2html.sh).
-      The 'tagline' is passed as '-t tagline' to the 'markdown to html tool' (md2html.sh), after the '-v level'.
-      Any '-T md2html.sh', '-p tool', '-P pandoc_opts', '-u repo_url', '-U top_url'
-      are passed to the 'markdown to html tool' (md2html.sh), and will be before any command line arguments.
-
-Exit codes:
-     0         all OK
-     1	       some file is not found, not a readable file or is malformed
-     2         -h and help string printed or -V and version string printed
-     3         command line error
-     4         bash version is too old
-     5	       some internal tool is not found or not an executable file
-     6	       problems found with or in the topdir or topdir/YYYY directory
- >= 10         internal error
-
-$NAME version: $VERSION"
-
-# output_mod_date
+#       https://www.w3.org/TR/NOTE-datetime
 #
-# output file modification date in UTC timezone in %FT%T+00:00 format
+# for use in XML format for sitemaps:
 #
-function output_mod_date
+#       https://www.sitemaps.org/protocol.html
+#
+# usage:
+#       output_modtime filename
+#
+function output_modtime
 {
-    local FILENAME;	# filename to obtain mod date
-    local LS_OUTPUT;	# output of the ls(1) command
+    local FILENAME;	# filename argument
 
     # parse args
     #
     if [[ $# -ne 1 ]]; then
-	echo "$0: ERROR: in output_mod_date expected 1 arg, found $#" 1>&2
-	return 1
+        echo "$0: ERROR: in output_modtime: expected 1 arg, found $#" 1>&2
+        return 1
     fi
     FILENAME="$1"
-    if [[ ! -e $FILENAME ]]; then
-	echo "$0: ERROR: in output_mod_date: filename arg does not exist: $FILENAME" 1>&2
-	return 3
-    fi
-    if [[ ! -r $FILENAME ]]; then
-	echo "$0: ERROR: in output_mod_date: filename arg is not a readable: $FILENAME" 1>&2
-	return 5
-    fi
 
-    # obtain ls output
+    # produce output given the MODTIME_METHOD
     #
-    LS_OUTPUT=$(TZ=UTC ls -D '%FT%T+00:00' -ld "$FILENAME" 2>/dev/null)
-    status="$?"
-    if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: in output_mod_date: TZ=UTC ls -D '%FT%T+00:00' -ld $FILENAME failed, error: $status" 1>&2
-	return 6
-    fi
-    if [[ -z $LS_OUTPUT ]]; then
-	echo "$0: ERROR: in output_mod_date: TZ=UTC ls -D '%FT%T+00:00' -ld $FILENAME output is empty" 1>&2
-	return 7
-    fi
+    case "$MODTIME_METHOD" in
 
-    # extract the date string and write it to standard output
+    # macOS stat
     #
-    awk '{print $6;}' <<< "$LS_OUTPUT"
-    return 0;
+    macos_stat)
+	TZ=UTC stat -f '%Sm' -t '%FT%T+00:00' "$FILENAME"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: in output_modtime:" \
+		 "TZ=UTC stat -f '%Sm' -t '%FT%T+00:00' $FILENAME failed, error code: $status" 1>&2
+	    exit 1
+	fi
+	;;
+
+    # RHEL Linux stat
+    #
+    RHEL_stat)
+	TZ=UTC stat -c '%y' "$FILENAME" | sed -e 's/ /T/' -e 's/\.[0-9]* //' -e 's/\([0-9][0-9]\)$/:&/'
+	status0="${PIPESTATUS[0]}"
+	status1="${PIPESTATUS[1]}"
+	if [[ $status0 -ne 0 || $status1 -ne 0 ]]; then
+	    echo "$0: ERROR: in output_modtime:" \
+		 "TZ=UTC stat -c '%y' $FILENAME | sed .. failed, error codes: $status0 and $status1" 1>&2
+	    exit 1
+	fi
+	;;
+
+    ls_D)
+	# We want to look at the format of ls -D, not find
+	#
+	# SC2012 (info): Use find instead of ls to better handle non-alphanumeric filenames.
+	# https://www.shellcheck.net/wiki/SC2012
+	# shellcheck disable=SC2012
+	TZ=UTZ ls -D '%FT%T+00:00' -ld "$FILENAME" | awk '{print $6;}'
+	status0="${PIPESTATUS[0]}"
+	status1="${PIPESTATUS[1]}"
+	if [[ $status0 -ne 0 || $status1 -ne 0 ]]; then
+	    echo "$0: ERROR: in output_modtime:" \
+		 "TZ=UTZ ls -D '%FT%T+00:00' -ld $FILENAME | awk .. failed, error codes: $status0 and $status1" 1>&2
+	    exit 1
+	fi
+	;;
+
+    *) echo "0: in output_modtime: unknown MODTIME_METHOD value: $MODTIME_METHOD" 1>&2
+	exit 9
+	;;
+    esac
+    return 0
 }
 
 # output_status_json
@@ -274,7 +254,7 @@ function output_status_json
 
     # obtain news.html file modification date
     #
-    NEWS_MOD_DATE=$(output_mod_date "$NEWS_PATH")
+    NEWS_MOD_DATE=$(output_modtime "$NEWS_PATH")
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: in output_status_json: modification date of $NEWS_PATH failed, error: $status" 1>&2
@@ -287,7 +267,7 @@ function output_status_json
 
     # obtain status.json file modification date
     #
-    STATUS_MOD_DATE=$(output_mod_date "$STATUS_PATH")
+    STATUS_MOD_DATE=$(output_modtime "$STATUS_PATH")
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: in output_status_json: modification date of $STATUS_PATH failed, error: $status" 1>&2
@@ -309,6 +289,58 @@ function output_status_json
     echo '}'
     return 0
 }
+
+# usage
+#
+export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
+			[-t tagline] [-T md2html.sh] [-u repo_url]
+			[p | pending | o | open | j | judging | c | closed]
+
+	-h		print help message and exit
+	-v level	set verbosity level (def level: 0)
+	-V		print version string and exit
+
+	-d topdir	set topdir (def: $TOPDIR)
+			NOTE: The '-d topdir' is passed as leading options on tool command lines.
+	-D docroot/	set the document root path followed by slash (def: $DOCROOT_SLASH)
+			NOTE: The '-D docroot/' is passed as leading options on tool command lines.
+			NOTE: 'docroot' must end in a slash
+
+	-n		go thru the actions, but do not update any files (def: do the action)
+			NOTE: -n is passed to tool
+	-N		do not process anything, just parse arguments (def: process something)
+
+	-t tagline	string to write about the tool that formed the markdown content (def: $TAGLINE)
+			NOTE: 'tagline' may be enclosed within, but may NOT contain an internal single-quote, or double-quote.
+	-T md2html.sh	run 'markdown to html tool' to convert markdown into HTML (def: $MD2HTML_SH)
+
+	-u repo_url	Base level URL of target git repo (def: $REPO_URL)
+			NOTE: The '-u repo_url' is passed as leading options on tool command lines.
+	-w site_url	Base URL of the web site (def: $SITE_URL)
+			NOTE: The '-w site_url' is passed as leading options on tool command lines.
+
+	[p | pending]	Set the contest_status to pending
+	[o | open]	Set the contest_status to open
+	[j | judging]	Set the contest_status to judging
+	[c | closed]	Set the contest_status to closed
+			(def: do not change contest_status)
+
+NOTE: The '-v level' is passed as initial command line options to the 'markdown to html tool' (md2html.sh).
+      The 'tagline' is passed as '-t tagline' to the 'markdown to html tool' (md2html.sh), after the '-v level'.
+      Any '-T md2html.sh', '-p tool', '-P pandoc_opts', '-u repo_url', '-U top_url'
+      are passed to the 'markdown to html tool' (md2html.sh), and will be before any command line arguments.
+
+Exit codes:
+     0         all OK
+     1	       some file is not found, not a readable file or is malformed
+     2         -h and help string printed or -V and version string printed
+     3         command line error
+     4         bash version is too old
+     5	       some internal tool is not found or not an executable file
+     6	       problems found with or in the topdir or topdir/YYYY directory
+ >= 10         internal error
+
+$NAME version: $VERSION"
 
 # parse command line
 #
@@ -570,6 +602,89 @@ fi
 #
 export STATUS_HTML="status.html"
 
+# verify we have a non-empty readable .top file
+#
+export TOP_FILE=".top"
+if [[ ! -e $TOP_FILE ]]; then
+    echo  "$0: ERROR: .top does not exist: $TOP_FILE" 1>&2
+    exit 6
+fi
+if [[ ! -f $TOP_FILE ]]; then
+    echo  "$0: ERROR: .top is not a regular file: $TOP_FILE" 1>&2
+    exit 6
+fi
+if [[ ! -r $TOP_FILE ]]; then
+    echo  "$0: ERROR: .top is not an readable file: $TOP_FILE" 1>&2
+    exit 6
+fi
+if [[ ! -s $TOP_FILE ]]; then
+    echo  "$0: ERROR: .top is not a non-empty readable file: $TOP_FILE" 1>&2
+    exit 6
+fi
+
+# determine how we can determine the file modification time in W3C Datetime format:
+#
+#	https://www.w3.org/TR/NOTE-datetime
+#
+# for use in XML format for sitemaps:
+#
+#	https://www.sitemaps.org/protocol.html
+#
+# Unfortunately there is NO single widely available, but simple command produce a modification
+# time in W3C Datetime format.  At best we can try one of several methods in the hopes that
+# we can find a method for the system in question.
+#
+# We will attempt to find the modification time in W3C Datetime of the .top file.
+#
+# Try macOS stat:
+#
+#	TZ=UTC stat -f '%Sm' -t '%FT%T+00:00' filename
+#
+TZ=UTC stat -f '%Sm' -t '%FT%T+00:00' "$TOP_FILE" > /dev/null 2>&1
+status="$?"
+if [[ $status -eq 0 ]]; then
+    MODTIME_METHOD="macos_stat"
+    if [[ $V_FLAG -ge 5 ]]; then
+        echo "$0: debug[5]: TZ=UTC stat -f '%Sm' -t '%FT%T+00:00' works, MODTIME_METHOD: $MODTIME_METHOD" 1>&2
+    fi
+
+else
+
+    # Try RHEL Linux stat:
+    #
+    #	TZ=UTC stat -c '%y' faq.md | sed -e 's/ /T/' -e 's/\.[0-9]* //' -e 's/\([0-9][0-9]\)$/:&/'
+    #
+    # NOTE: We only need to test the stat command.
+    #
+    TZ=UTC stat -c '%y' "$TOP_FILE" > /dev/null 2>&1
+    status="$?"
+    if [[ $status -eq 0 ]]; then
+	MODTIME_METHOD="RHEL_stat"
+	if [[ $V_FLAG -ge 5 ]]; then
+	    echo "$0: debug[5]: TZ=UTC stat -c '%y' works, MODTIME_METHOD: $MODTIME_METHOD" 1>&2
+	fi
+
+    else
+
+	# Try ls -D:
+	#
+	#	TZ=UTZ ls -D '%FT%T+00:00' -ld
+	#
+	TZ=UTZ ls -D '%FT%T+00:00' -ld "$TOP_FILE" > /dev/null 2>&1
+	status="$?"
+	if [[ $status -eq 0 ]]; then
+	    MODTIME_METHOD="ls_D"
+	    if [[ $V_FLAG -ge 5 ]]; then
+		echo "$0: debug[5]: TZ=UTZ ls -D '%FT%T+00:00' -ld works, MODTIME_METHOD: $MODTIME_METHOD" 1>&2
+	    fi
+
+	else
+	    echo "$0: ERROR: we cannot determine how to form a file modification time in W3C Datetime formt" 1>&2
+	    exit 9
+	fi
+    fi
+fi
+
 # print running info if verbose
 #
 # If -v 3 or higher, print exported variables in order that they were exported.
@@ -590,6 +705,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
+    echo "$0: debug[3]: MODTIME_METHOD=$MODTIME_METHOD" 1>&2
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
     for index in "${!TOOL_OPTION[@]}"; do
 	echo "$0: debug[3]: TOOL_OPTION[$index]=${TOOL_OPTION[$index]}" 1>&2
