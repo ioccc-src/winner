@@ -55,14 +55,14 @@ GEN_YEARS= bin/gen-years.sh
 GEN_YEAR_INDEX= bin/gen-year-index.sh
 CHK_ENTRY= bin/chk-entry.sh
 GEN_TOP_HTML= bin/gen-top-html.sh
-GEN_STATUS= bin/gen-status.sh
 GEN_OTHER_HTML= bin/gen-other-html.sh
 README2INDEX= bin/readme2index.sh
 QUICK_README2INDEX= bin/quick-readme2index.sh
-GEN_SITEMAP= bin/gen-sitemap.sh
 TAR_ENTRY= bin/tar-entry.sh
 TAR_YEAR= bin/tar-year.sh
 TAR_ALL= bin/tar-all.sh
+GEN_STATUS= bin/gen-status.sh
+GEN_SITEMAP= bin/gen-sitemap.sh
 
 
 #############
@@ -239,9 +239,10 @@ indent.c:
 #	   simple want to examine, run / test winning IOCCC entries.
 
 .PHONY: help genpath genfilelist verify_entry_files gen_authors gen_location gen_years \
-	entry_index gen_top_html gen_status thanks gen_other_html quick_entry_index \
-	gen_year_index quick_www www gen_sitemap sitemap \
-	form_entry_tarball form_year_tarball form_all_tarball tar
+	entry_index gen_top_html thanks gen_other_html quick_entry_index \
+	gen_year_index quick_www www \
+	form_entry_tarball form_year_tarball form_all_tarball tar \
+	gen_status gen_sitemap sitemap update
 
 # Suggest rules in this section
 #
@@ -258,17 +259,18 @@ help:
 	@echo make gen_years
 	@echo make entry_index
 	@echo make gen_top_html
-	@echo make gen_status
 	@echo make gen_other_html
 	@echo make gen_year_index
 	@echo make quick_entry_index
 	@echo make quick_www
 	@echo make www
-	@echo make gen_sitemap
 	@echo make form_entry_tarball
 	@echo make form_year_tarball
 	@echo make form_all_tarball
 	@echo make tar
+	@echo make gen_status
+	@echo make gen_sitemap
+	@echo make update
 
 # form the top level .top, YYYY level .year and winner level .path files
 #
@@ -359,13 +361,6 @@ gen_top_html: ${GEN_TOP_HTML}
 	${GEN_TOP_HTML} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-# generate a status.json and status.html
-#
-gen_status: ${GEN_STATUS}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	${GEN_STATUS} -v 1
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
-
 # a fishy rule :-)
 #
 thanks: ${GEN_TOP_HTML} thanks-for-help.md
@@ -400,13 +395,6 @@ quick_entry_index quick_readme2index: ${ALL_RUN} ${QUICK_README2INDEX}
 	${ALL_RUN} -v 3 ${QUICK_README2INDEX} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-# generate the XML sitemap
-#
-gen_sitemap sitemap: ${GEN_SITEMAP}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	${GEN_SITEMAP} -v 1
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
-
 # do work to build HTML content for the web site
 #
 # This rule uses quick_entry_index, not slow_entry_index, so
@@ -426,10 +414,8 @@ quick_www:
 	${MAKE} gen_years
 	${MAKE} gen_year_index
 	${MAKE} gen_top_html
-	${MAKE} gen_status
 	${MAKE} gen_other_html
 	${MAKE} quick_entry_index
-	${MAKE} gen_sitemap
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # do everything needed to build HTML content for the web site
@@ -447,10 +433,8 @@ www:
 	${MAKE} gen_years
 	${MAKE} gen_year_index
 	${MAKE} gen_top_html
-	${MAKE} gen_status
 	${MAKE} gen_other_html
 	${MAKE} entry_index
-	${MAKE} gen_sitemap
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # form all entry compressed tarballs
@@ -487,6 +471,29 @@ tar:
 	${MAKE} form_all_tarball
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
+# generate a status.json and status.html
+#
+gen_status: ${GEN_STATUS}
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${GEN_STATUS} -v 1
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# generate the XML sitemap
+#
+gen_sitemap sitemap: ${GEN_SITEMAP}
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${GEN_SITEMAP} -v 1
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# update everything on the web site
+#
+update:
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${MAKE} www
+	${MAKE} tar
+	${MAKE} gen_status
+	${MAKE} gen_sitemap
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 ##################
 # 133t hacker rulz
