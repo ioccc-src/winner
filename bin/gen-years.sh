@@ -81,7 +81,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.1 2024-02-23"
+export VERSION="1.0.2 2024-03-13"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -582,7 +582,7 @@ EOF
     #
     "$TAC_TOOL" "$TOP_FILE" |
       sed -e 's/^.*$/[&](#&)/' |
-      "$FMT_TOOL" -w 111 |
+      "$FMT_TOOL" -w 120 |
       sed -e 's/ / | /g' -e 's/$/<br><br>/' -e '$s/<br><br>//'
     echo
 
