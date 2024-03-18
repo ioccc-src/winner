@@ -81,7 +81,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3 2024-03-04"
+export VERSION="1.3.1 2024-03-18"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -754,10 +754,10 @@ done >> "$TMP_SORT_WORD"
 
 # sort the temporary sort word list file
 #
-sort -f -d "$TMP_SORT_WORD" -o "$TMP_SORT_WORD"
+LC_ALL=C sort -f -d "$TMP_SORT_WORD" -o "$TMP_SORT_WORD"
 status="$?"
 if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: sort -f -d $TMP_SORT_WORD -o $TMP_SORT_WORD failed, error: $status" 1>&2
+    echo "$0: ERROR: LC_ALL=C sort -f -d $TMP_SORT_WORD -o $TMP_SORT_WORD failed, error: $status" 1>&2
     exit 14
 fi
 

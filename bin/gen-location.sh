@@ -81,7 +81,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1 2024-03-04"
+export VERSION="1.1.1 2024-03-18"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -454,7 +454,7 @@ fi
     find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' -print0 |
 	  xargs -0 grep '"location_code".*:' |
 	  sed -e 's/^.*: "//' -e 's/",*$//' |
-	  sort -u |
+	  LC_ALL=C sort -u |
 	  while read -r LOCATION_CODE; do
 
 	# use the location tool to obtain the location_name
@@ -511,7 +511,7 @@ fi
 		echo -n "$AUTHOR_JSON "
 		grep '"sort_word".*:' "$AUTHOR_JSON" | sed -e 's/^.*: "//' -e 's/",*$//'
 	done |
-	sort -k 2d |
+	LC_ALL=C sort -k 2d |
 	while read -r AUTHOR_HANDLE_PATH SORT_WORD; do
 
 	    # The author_handle foo_bin is found in author/foo_bar.json

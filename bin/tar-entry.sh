@@ -81,7 +81,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1 2024-02-27"
+export VERSION="1.1.1 2024-03-18"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -542,10 +542,10 @@ if [[ -z $NOOP ]]; then
     fi
     echo "$IOCCC_CSS" >> "$TMP_MANIFEST_LIST"
     echo "$VAR_MK" >> "$TMP_MANIFEST_LIST"
-    sort -d -u "$TMP_MANIFEST_LIST" -o "$TMP_MANIFEST_LIST"
+    LC_ALL=C sort -d -u "$TMP_MANIFEST_LIST" -o "$TMP_MANIFEST_LIST"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: sort -d -u $TMP_MANIFEST_LIST -o $TMP_MANIFEST_LIST failed, error: $status" 1>&2
+	echo "$0: ERROR: LC_ALL=C sort -d -u $TMP_MANIFEST_LIST -o $TMP_MANIFEST_LIST failed, error: $status" 1>&2
 	exit 1
     fi
 elif [[ $V_FLAG -ge 3 ]]; then

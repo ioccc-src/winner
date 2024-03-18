@@ -88,7 +88,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.5 2024-03-18"
+export VERSION="1.5.1 2024-03-18"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -370,7 +370,8 @@ fi
 
 # verify that the pandoc version is >= the minimum version
 #
-if [[ $(printf "%s\n%s" "$PANDOC_TOOL_VERSION" "$PANDOC_MIN_VERSION" | sort -V | head -1) != "$PANDOC_MIN_VERSION" ]]; then
+FIRST_VERSION=$(printf "%s\n%s" "$PANDOC_TOOL_VERSION" "$PANDOC_MIN_VERSION" | LC_ALL=C sort -V | head -1)
+if [[ $FIRST_VERSION != "$PANDOC_MIN_VERSION" ]]; then
     echo "$0: ERROR: pandoc: $PANDOC_TOOL version: $PANDOC_TOOL_VERSION <=" \
 	 "minimum allowed: $PANDOC_MIN_VERSION" 1>&2
     echo "$0: Warning: pandoc version must be >= $PANDOC_MIN_VERSION" 1>&2

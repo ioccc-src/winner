@@ -47,5 +47,5 @@
 # Share and enjoy! :-)
 
 sed -e '/^#/s/.*/0 &/' -e '/^*/s/.*/1 &/' -e '/^[^01*!]/s/.*/2 &/' -e '/^!/s/.*/3 &/' |
-    sort -u -k 1n -k 2d |
+    LC_ALL=C sort -u -k 1n -k 2d |
     sed 's/[0123] //'

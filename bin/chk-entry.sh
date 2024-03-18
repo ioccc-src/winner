@@ -81,7 +81,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.2 2024-03-17"
+export VERSION="1.1.3 2024-03-18"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -432,10 +432,10 @@ if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: awk -f $FILELIST_ENTRY_JSON_AWK $ENTRY_JSON > $TMP_MANIFEST_LIST failed, error: $status" 1>&2
     exit 1
 fi
-sort -d -u "$TMP_MANIFEST_LIST" -o "$TMP_MANIFEST_LIST"
+LC_ALL=C sort -d -u "$TMP_MANIFEST_LIST" -o "$TMP_MANIFEST_LIST"
 status="$?"
 if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: sort -d -u $TMP_MANIFEST_LIST -o $TMP_MANIFEST_LIST failed, error: $status" 1>&2
+    echo "$0: ERROR: LC_ALL=C sort -d -u $TMP_MANIFEST_LIST -o $TMP_MANIFEST_LIST failed, error: $status" 1>&2
     exit 1
 fi
 
@@ -449,10 +449,10 @@ if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: find $ENTRY_PATH -type f -print > $TMP_FILE_LIST failed, error: $status" 1>&2
     exit 1
 fi
-sort -d -u "$TMP_FILE_LIST" -o "$TMP_FILE_LIST"
+LC_ALL=C sort -d -u "$TMP_FILE_LIST" -o "$TMP_FILE_LIST"
 status="$?"
 if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: sort -d -u $TMP_FILE_LIST -o $TMP_FILE_LIST failed, error: $status" 1>&2
+    echo "$0: ERROR: LC_ALL=C sort -d -u $TMP_FILE_LIST -o $TMP_FILE_LIST failed, error: $status" 1>&2
     exit 1
 fi
 
