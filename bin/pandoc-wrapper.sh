@@ -88,7 +88,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4.1 2024-02-23"
+export VERSION="1.4.2 2024-03-17"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -115,7 +115,7 @@ PANDOC_OPTION+=("-f")
 PANDOC_OPTION+=("markdown")
 PANDOC_OPTION+=("-t")
 PANDOC_OPTION+=("html")
-PANDOC_OPTION+=("--fail-if-warnings=true")
+PANDOC_OPTION+=("--fail-if-warnings")
 export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc"
 
 # set usage message

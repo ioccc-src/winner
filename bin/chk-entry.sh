@@ -81,7 +81,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.2 2024-02-23"
+export VERSION="1.1.2 2024-03-17"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
