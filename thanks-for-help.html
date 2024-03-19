@@ -2095,25 +2095,31 @@ use the original version)! :-)</p>
 file but a maze file. The extension <code>.maz</code> was not chosen to help with (some?)
 browsers knowing what to do with it.</p>
 <h2 id="burley-index.html"><a name="2004_burley"></a><a href="2004/burley/burley.c">2004/burley</a> (<a href="2004/burley/index.html%5D">index.html</a>)</h2>
-<p><a href="#cody">Cody</a> fixed this to compile with clang and also fixed it to work.</p>
+<p><a href="#cody">Cody</a> fixed this to compile with clang and to work with both gcc and
+clang (even after fixing it to compile with clang it did not work properly).</p>
 <p>For clang the problem was that <code>main()</code> had one arg, a <code>char *</code> and this is not
 allowed in any version of clang. In some versions it is allowed if the arg is an
 <code>int</code> but never if it’s anything else. To get it to work took numerous changes.</p>
 <p>First the inclusion of <code>setjmp.h</code> was necessary. Without this <code>longjmp(3)</code>
 implicitly returned <code>int</code> which was used for the purpose of binary expression but
-this no longer worked.</p>
+this no longer appeared to work (though it might be that if the extra function
+was added earlier on it would but this is unknown and the way it was changed is
+safer for the future).</p>
 <p>But by including <code>setjmp.h</code> it naturally made the binary expressions invalid (as
 it returns <code>void</code> which is not allowed in binary expressions) so the comma
 operator with <code>0</code> (<code>,0</code>) had to be used (<code>,1</code> was tried first but this did not
-work right).</p>
+work right so you can see that it had to be false in those places, though it is
+unknown by Cody if this is because it used to be allowed to have binary
+expression with <code>void</code> or if it is for some other reason).</p>
 <p><code>longjmp(3)</code> was being called with one arg which was an element
 of an <code>int[4][1000]</code> which had to be changed to a <code>jmp_buf p[4]</code> (this due to
 the prototype being included).</p>
 <p><code>main()</code> also called itself but this was a problem so it now calls another
 function <code>poke()</code> which calls itself instead (this is sometimes necessary
-nowadays).</p>
+nowadays and other entries had to have this same kind of change,
+<a href="/2001/anonymous/index.html">2001/anonymous</a> being a good example).</p>
 <p>Finally the optimiser cannot be enabled so the compiler flags were changed for
-this.</p>
+this, forcing <code>-O0</code>.</p>
 <h2 id="gavare-index.html"><a name="2004_gavare"></a><a href="2004/gavare/gavare.c">2004/gavare</a> (<a href="2004/gavare/index.html%5D">index.html</a>)</h2>
 <p><a href="#cody">Cody</a> added three different <a href="2004/gavare/index.html#alternate-code">alternate
 versions</a>:</p>
