@@ -1,8 +1,8 @@
 char a[80];
 int e[4],g[5],c=100,h,i,j,k,b,f,s,t;
 jmp_buf p[4];
-int poke(char *d){
-return poke((char*)((srand(time((time_t*)&h)),
+int pain(char *d){
+return pain((char*)((srand(time((time_t*)&h)),
 setjmp(p[2]),
 (k=atoi((fgets(a,sizeof a, stdin),
 a+strspn(a," -"))))
@@ -89,6 +89,5 @@ i+=i+1,
 longjmp(p[0],0)),0),
 longjmp(p[2],3)),0));
 }
-int main(int argc, char**d){
-(void)argc;
-return poke((char*)d); }
+int main(int argc,char**d){
+return pain((char*)d);}

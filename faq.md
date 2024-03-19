@@ -563,26 +563,27 @@ edits to the [Official IOCCC winner
 repo](https://github.com/ioccc-src/winner) began.
 
 The local [git](https://git-scm.com) repository of an [IOCCC
-judge](https://www.ioccc.org/judges.html) was edited starting [Wed
+judge](https://www.ioccc.org/judges.html) was [edited starting Wed
 Dec 30 16:57:03 2020
 -0800](https://github.com/ioccc-src/winner/commit/c0663537cb88d39b74285a930ff1a668c6d5968b)
 and was occasionally committed to the [Official IOCCC winner
 repo](https://github.com/ioccc-src/winner).
 
-The [first accepted pull request](https://github.com/ioccc-src/winner/pull/2)
-to the [Official IOCCC winner
-repo](https://github.com/ioccc-src/winner) was made by [Yusuke Endoh](https://github.com/mame)
-on [2021 Jan 5](https://github.com/ioccc-src/winner/commit/84c62c4cbf56ac1351ea91e5019f51103615fda2).
+The [first accepted pull request](https://github.com/ioccc-src/winner/pull/2) to
+the [Official IOCCC winner repo](https://github.com/ioccc-src/winner) was made
+by [Yusuke Endoh](https://www.ioccc.org/winners.html#Yusuke_Endoh)  on [2021 Jan
+5](https://github.com/ioccc-src/winner/commit/84c62c4cbf56ac1351ea91e5019f51103615fda2).
+
 
 Between [Wed Dec 30 16:57:03 2020
 -0800](https://github.com/ioccc-src/winner/commit/c0663537cb88d39b74285a930ff1a668c6d5968b)
 and [Sat Jan 29 21:56:53 2022
 -0800](https://github.com/ioccc-src/winner/commit/098a3e7e04d43e480ecc4b5482c83274e1434002),
 an [IOCCC judge](https://www.ioccc.org/judges.html) made edits to
-their local repository with occasional the [Official IOCCC winner
+their local repository with occasional pushes to the [Official IOCCC winner
 repo](https://github.com/ioccc-src/winner) and the [Official
 www.ioccc.org web site](https://www.ioccc.org/index.html).  After
-that time and until the **Great Fork Merge**, only a very few changes
+that time and until the **Great Fork Merge**, very few changes
 were made to the [Official IOCCC winner
 repo](https://github.com/ioccc-src/winner) and the [Official
 www.ioccc.org web site](https://www.ioccc.org/index.html) most of
@@ -593,27 +594,31 @@ repo](https://github.com/ioccc-src/temp-test-ioccc) has history
 going back to [2020 Dec
 29](https://github.com/ioccc-src/temp-test-ioccc/commit/28efc67f5dd692a3544708bf7fa26286adb82dfb),
 the repo was forked on **Sun Sep 18 17:30:00 2022 -0700**.  The
-first push into the temp-test-ioccc repo occurred on [Sun Sep 18 11:15:49 2022
--0700](https://github.com/ioccc-src/temp-test-ioccc/commit/edbc3089e1b755d85a020af7975bbc7df3737a5f).
-As this same time, the [temp-test-ioccc web site](https://ioccc-src.github.io/temp-test-ioccc/) went live.
+first [push into the temp-test-ioccc
+repo](https://github.com/ioccc-src/temp-test-ioccc/commit/edbc3089e1b755d85a020af7975bbc7df3737a5f)
+occurred on Sun Sep 18 11:15:49 2022 -0700.
+
+At this same time, the [temp-test-ioccc web site](https://ioccc-src.github.io/temp-test-ioccc/) went live.
 
 Edits were made by an [IOCCC judge](https://www.ioccc.org/judges.html)
-to their local [git](https://git-scm.com) repository,
-were pushed onto the [temp-test-ioccc
+to their local [git](https://git-scm.com) repository and [were pushed into the temp-test-ioccc
 repo](https://github.com/ioccc-src/temp-test-ioccc/commit/2f20ae8451ada03f4601ac727d10e1d8630861a8)
 and to the [temp-test-ioccc web site](https://ioccc-src.github.io/temp-test-ioccc/).
 
 The [first accepted pull request](https://github.com/ioccc-src/temp-test-ioccc/pull/15)
 made directly to the [temp-test-ioccc
 repo](https://github.com/ioccc-src/temp-test-ioccc) on
-[Wed Feb 22 05:44:55 2023 -0800](https://github.com/ioccc-src/temp-test-ioccc/commit/11bb36ac8ce790f32a9a3e5d2131ee12820fb8ec)
+[Wed Feb 22 05:44:55 2023 -0800 with commit
+11bb36ac8ce790f32a9a3e5d2131ee12820fb8ec](https://github.com/ioccc-src/temp-test-ioccc/commit/11bb36ac8ce790f32a9a3e5d2131ee12820fb8ec)
+by [Cody Boone
+Ferguson](https://www.ioccc.org/winners.html#Cody_Boone_Ferguson).
 
 A [decision was made by the
 IOCCC](https://github.com/ioccc-src/temp-test-ioccc/discussions/1918) to
 mostly use frequent commits to individual components of the IOCCC,
 rather than to use occasional site wide massive updates in order
 to improve the tractability of changes made to components of the
-IOCCC such as IOCCC entries.  Although occasionally site wide updated
+IOCCC such as IOCCC entries although occasionally site wide updates
 were performed in order to address an issue common to many IOCCC
 entries.  And while some people prefer infrequent updates to a repo
 the [IOCCC judges](https://www.ioccc.org/judges.html) believe
@@ -621,20 +626,28 @@ the ability to trace changes with commit messages is important.
 
 Changes to the IOCCC content included things such as:
 
-* Moving IOCCC entries into their own separate directories
-* Establishing a detailed manifest for an IOCCC winning entries
-* Fixing lots and lots of typos
-* Fixing Makefiles and code to allow for nearly all winning entries to be compiled modern systems
-* Fixing Makefiles and code to allow for nearly all winning entries to run modern systems
-* Reworking the Makefiles to use a consistent set of rules
-* Reworking the Makefiles specific to the gcc and clang C compilers
-* Replacing the various hint files with a index.html markdown that is more consistent across IOCCC years
-* Generating HTML content from markdown files and JSON data files via a set to tools and scripts
-* Setting up a system whereby authors of IOCCC entries may update their own contact information via a GitHub pull request
-* Setting up to generate the top level years.html file via a tool
-* Setting up to generate the top level authors.html file via a tool
-* Making use of an new and improved IOCCC CSS for web site consistency
-* etc.
+* Moving IOCCC entries into their own separate directories.
+* Establishing a detailed manifest for an IOCCC winning entries.
+* Fixing lots and lots of typos.
+* Fixing Makefiles and code to allow for nearly all winning entries to be
+compiled with/in modern systems.
+* Fixing Makefiles and code to allow for nearly all winning entries to run
+with/in modern systems.
+* Reworking the Makefiles to use a consistent set of rules.
+* Reworking the Makefiles specific to the gcc and clang C compilers.
+* Replacing the various hint files with a index.html markdown (from README.md
+files) that is more consistent across IOCCC years.
+* Generating HTML content from markdown files and JSON data files via a [set of
+tools and scripts](/bin/index.html).
+* Setting up a system whereby authors of IOCCC entries may update their own
+contact information via a [GitHub pull
+request](https://github.com/ioccc-src/temp-test-ioccc/pulls).
+* Setting up to generate the top level [years.html](/years.html) file via the
+[gen-years.sh](/bin/gen-years.sh) tool.
+* Setting up to generate the top level [authors.html file](/authors.html), renamed
+from `winners.html`, via the [gen-authors.sh](/bin/gen-authors.sh) tool.
+* Making use of a new and improved [IOCCC CSS](/ioccc.css) for web site consistency
+* Etc.
 
 #### 202y mm dd The Great Fork Merge <!-- XXX - Fill in the date when Great Fork Merge happens -->
 
@@ -644,7 +657,7 @@ there were [4513 commits ahead](https://github.com/ioccc-src/winner/compare/mast
 of the [IOCCC winner repo](https://github.com/ioccc-src/winner).
 
 On 202y mm dd, the temporary repo was merged back into the [IOCCC winner
-repo](https://github.com/ioccc-src/winner) resulting in substantial improvements
+repo](https://github.com/ioccc-src/winner) resulting in many, many substantial improvements
 to the [official IOCCC web site](https://www.ioccc.org).
 
 

@@ -3012,7 +3012,8 @@ browsers knowing what to do with it.
 
 ## <a name="2004_burley"></a>[2004/burley](2004/burley/burley.c) ([index.html](2004/burley/index.html]))
 
-[Cody](#cody) fixed this to compile with clang and also fixed it to work.
+[Cody](#cody) fixed this to compile with clang and to work with both gcc and
+clang (even after fixing it to compile with clang it did not work properly).
 
 For clang the problem was that `main()` had one arg, a `char *` and this is not
 allowed in any version of clang. In some versions it is allowed if the arg is an
@@ -3020,12 +3021,16 @@ allowed in any version of clang. In some versions it is allowed if the arg is an
 
 First the inclusion of `setjmp.h` was necessary. Without this `longjmp(3)`
 implicitly returned `int` which was used for the purpose of binary expression but
-this no longer worked.
+this no longer appeared to work (though it might be that if the extra function
+was added earlier on it would but this is unknown and the way it was changed is
+safer for the future).
 
 But by including `setjmp.h` it naturally made the binary expressions invalid (as
 it returns `void` which is not allowed in binary expressions) so the comma
 operator with `0` (`,0`) had to be used (`,1` was tried first but this did not
-work right).
+work right so you can see that it had to be false in those places, though it is
+unknown by Cody if this is because it used to be allowed to have binary
+expression with `void` or if it is for some other reason).
 
 `longjmp(3)` was being called with one arg which was an element
 of an `int[4][1000]` which had to be changed to a `jmp_buf p[4]` (this due to
@@ -3033,10 +3038,11 @@ the prototype being included).
 
 `main()` also called itself but this was a problem so it now calls another
 function `poke()` which calls itself instead (this is sometimes necessary
-nowadays).
+nowadays and other entries had to have this same kind of change,
+[2001/anonymous](/2001/anonymous/index.html) being a good example).
 
 Finally the optimiser cannot be enabled so the compiler flags were changed for
-this.
+this, forcing `-O0`.
 
 
 ## <a name="2004_gavare"></a>[2004/gavare](2004/gavare/gavare.c) ([index.html](2004/gavare/index.html]))

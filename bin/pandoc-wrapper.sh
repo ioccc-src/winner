@@ -42,8 +42,8 @@
 # of bash between 4.2 and 5.1.7 might work.  However, to be safe, we will require
 # bash version 5.1.8 or later.
 #
-# WHY 5.1.8 and not 4.2?  This safely is done because macOS homebrew bash we
-# often use it "version 5.2.26(1)-release" or later, and the RHEL Linux bash we
+# WHY 5.1.8 and not 4.2?  This safely is done because macOS Homebrew bash we
+# often use is "version 5.2.26(1)-release" or later, and the RHEL Linux bash we
 # use often use is "version 5.1.8(1)-release" or later.  These versions are what
 # we initially tested.  We recommend you either upgrade bash or install a newer
 # version of bash and adjust your $PATH so that "/usr/bin/env bash" finds a bash
@@ -51,27 +51,28 @@
 #
 # NOTE: The macOS shipped, as of 2024 March 15, a version of bash is something like
 #	bash "version 3.2.57(1)-release".  That macOS shipped version of bash
-#	will NOT work.  For users of macOS we recommend you install homebrew,
-#	(see https://brew.sh), and then install homebrew bash (/opt/homebrew/bin/bash),
-#	and then arrange your $PATH so that "/opt/homebrew/bin" is ahead of "/bin".
+#	will NOT work.  For users of macOS we recommend you install Homebrew,
+#	(see https://brew.sh), and then run "brew install bash" which will
+#	typically install it into /opt/homebrew/bin/bash, and then arrange your $PATH
+#	so that "/usr/bin/env bash" finds "/opt/homebrew/bin" (or whatever the
+#	Homebrew bash is).
 #
 # NOTE: And while MacPorts might work, we noticed a number of subtle differences
 #	with some of their ported tools to suggest you might be better off
-#	with installing homebrew (see https://brew.sh).  No disrespect is intended
+#	with installing Homebrew (see https://brew.sh).  No disrespect is intended
 #	to the MacPorts team as they do a commendable job.  Nevertheless we ran
 #	into enough differences with MacPorts environments to suggest you
-#	might find a better experience with this tool under homebrew instead.
+#	might find a better experience with this tool under Homebrew instead.
 #
 if [[ -z ${BASH_VERSINFO[0]} ||
 	 ${BASH_VERSINFO[0]} -lt 5 ||
 	 ${BASH_VERSINFO[0]} -eq 5 && ${BASH_VERSINFO[1]} -lt 1 ||
 	 ${BASH_VERSINFO[0]} -eq 5 && ${BASH_VERSINFO[1]} -eq 1 && ${BASH_VERSINFO[2]} -lt 8 ]]; then
-
     echo "$0: ERROR: bash version needs to be >= 5.1.8: $BASH_VERSION" 1>&2
     echo "$0: Warning: bash version >= 4.2 might work but 5.1.8 was the minimum we tested" 1>&2
-    echo "$0: Notice: For macOS users: install homebrew (see https://brew.sh)," \
-	 "then install homebrew bash (brew install bash), and then modify your \$PATH so that \"#!/usr/bin/env bash\"" \
-	 "finds the homebrew installed (usually /opt/homebrew/bin/bash) version of bash" 1>&2
+    echo "$0: Notice: For macOS users: install Homebrew (see https://brew.sh), then run" \
+	 ""brew install bash" and then modify your \$PATH so that \"#!/usr/bin/env bash\"" \
+	 "finds the Homebrew installed (usually /opt/homebrew/bin/bash) version of bash" 1>&2
     exit 4
 fi
 
