@@ -129,22 +129,22 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	@echo "NOTE: This will not compile when using modern compilers because"
-	@echo "it relies on a compiler bug which was fixed in gcc 2.3.3 (a very"
-	@echo "long time ago now). We will build the alt version as $@ in the very"
-	@echo "likely case this fails to compile. If however you wish to manually"
-	@echo "compile the alt version you should do:"
-	@echo
-	@echo "    make alt"
-	@echo
-	@echo "and then run ${ALT_TARGET}."
+	@echo "it relies on a compiler bug which was fixed in gcc 2.3.3 a very"
+	@echo "long time ago."
 	@echo
 	${RM} -f \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
 	${CP} lmfjyh.c \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
-	${CC} ${CFLAGS} \
+	@echo ${CC} ${CFLAGS} \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c -o $@ ${LDFLAGS}
+	@${CC} ${CFLAGS} \
 	    \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c -o $@ ${LDFLAGS} || \
-	   ${RM} -f \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
-	${RM} -f \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
-	${CC} ${CFLAGS} ${PROG}.alt.c -o $@ ${LDFLAGS}
+	    echo && \
+	    echo "Try compiling the alt version using:" && \
+	    echo && \
+	    echo "    make alt" && \
+	    echo && \
+	    echo "and then run the alternate program:" && \
+	    echo && \
+	    echo "    ./${ALT_TARGET}"
 
 # alternative executable
 #
