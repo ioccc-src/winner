@@ -43,7 +43,7 @@
 # often use it "version 5.2.26(1)-release" or later, and the RHEL Linux bash we
 # use often use is "version 5.1.8(1)-release" or later.  These versions are what
 # we initially tested.  We recommend you either upgrade bash or install a newer
-# version of bash and adjust your $PATH so that "/usr/bin/env bash" finds a basj
+# version of bash and adjust your $PATH so that "/usr/bin/env bash" finds a bash
 # that is version 5.1.8 or later.
 #
 # NOTE: The macOS shipped, as of 2024 March 15, a version of bash is something like
@@ -52,11 +52,11 @@
 #	(see https://brew.sh), and then install homebrew bash (/opt/homebrew/bin/bash),
 #	and then arrange your $PATH so that "/opt/homebrew/bin" is ahead of "/bin".
 #
-# NOTE: And while macports might work, we noticed a number of subtle differences
+# NOTE: And while MacPorts might work, we noticed a number of subtle differences
 #	with some of their ported tools to suggest you might be better off
 #	with installing homebrew (see https://brew.sh).  No disrespect is intended
-#	to the macports team as they do a commendable job.  Nevertheless we ran
-#	into enough differences with macports environments to suggest you
+#	to the MacPorts team as they do a commendable job.  Nevertheless we ran
+#	into enough differences with MacPorts environments to suggest you
 #	might find a better experience with this tool under homebrew instead.
 #
 if [[ -z ${BASH_VERSINFO[0]} ||
@@ -66,7 +66,7 @@ if [[ -z ${BASH_VERSINFO[0]} ||
     echo "$0: ERROR: bash version needs to be >= 5.1.8: $BASH_VERSION" 1>&2
     echo "$0: Warning: bash version >= 4.2 might work but 5.1.8 was the minimum we tested" 1>&2
     echo "$0: Notice: For macOS users: install homebrew (see https://brew.sh)," \
-	 "then install homebrew bash, and then modify your \$PATH so that \"#!/usr/bin/env bash\"" \
+	 "then install homebrew bash (brew install bash), and then modify your \$PATH so that \"#!/usr/bin/env bash\"" \
 	 "finds the homebrew installed (usually /opt/homebrew/bin/bash) version of bash" 1>&2
     exit 4
 fi
