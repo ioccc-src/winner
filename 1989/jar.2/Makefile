@@ -135,7 +135,6 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
-	@echo NOTE: invalid input will cause this entry to dump core. See README.md for details.
 
 # alternative executable
 #
