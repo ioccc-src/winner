@@ -138,7 +138,6 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
-	@echo "NOTE: this program prints out a string of garbage."
 
 # alternative executable
 #

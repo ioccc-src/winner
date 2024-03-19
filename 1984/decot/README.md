@@ -50,9 +50,10 @@ make alt
 
 ## Judges' remarks:
 
-This program prints out a string of garbage.
+This program prints out what looks like a fragment of C code.
 
-The judges also offer this one comment: understand remarks!
+Is this a **bug** or is this a **feature**?  To help choose
+the judges offer this one comment: understand remarks!
 
 
 ### Historical remarks:
