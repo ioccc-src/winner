@@ -131,7 +131,7 @@ all: data ${TARGET}
 	sandwich supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: This entry is likely to fail and/or dump core on any computer other"
+	@echo "Warning: this entry is likely to fail and/or dump core on any computer other"
 	@echo "than a Vax-11 or pdp-11."
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
