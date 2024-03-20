@@ -1202,89 +1202,47 @@ is in the index.html file as something to try and ponder.</p>
 <p>There was no IOCCC in 1999.</p>
 <h1 id="section-16"><a name="2000"></a>2000</h1>
 <h2 id="dlowe-1"><a name="2000_dlowe"></a>2000/dlowe</h2>
-<h3 id="status-doesnt-work-with-some-platforms---please-help-us-fix-1">STATUS: doesn’t work with some platforms - please help us fix</h3>
+<h3 id="status-known-bug---please-help-us-fix-11">STATUS: known bug - please help us fix</h3>
 <h3 id="source-code-2000dlowedlowe.c">Source code: <a href="2000/dlowe/dlowe.c">2000/dlowe/dlowe.c</a></h3>
 <h3 id="information-2000dloweindex.html">Information: <a href="2000/dlowe/index.html">2000/dlowe/index.html</a></h3>
-<p>This <strong>MIGHT</strong> be better described as doesn’t work with some versions of perl:
-the author states that in perl &lt; 5.6.0 there is a bug with a core dump in what
-they said is in <code>Perl_sv_upgrade</code>. This does not exist in the code, seemingly,
-but it might be that this is impossible to fix without getting a perl upgrade.
-In any event the below details a problem. Another bug that happens in linux also
-is below.</p>
-<p>In macOS this program crashes. A tip from Cody is that the code that crashes is:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>perl_eval_sv</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="op">(</span>newSVpv<span class="op">(</span><span class="st">&quot;_:$_=               &lt;&gt; ; defined               or exit; @ARGV&quot;</span></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;=split; __:$_=             shift;defined or             goto _; chomp &quot;</span></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;;(m*^</span><span class="sc">\\</span><span class="st">x70oO&quot;</span>              <span class="st">&quot;</span><span class="sc">\\</span><span class="st">x74$*i)?(pri&quot;</span>              <span class="st">&quot;nt </span><span class="sc">\&quot;</span><span class="st">$_ w</span><span class="sc">\\</span><span class="st">x&quot;</span></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;61s h</span><span class="sc">\\</span><span class="st">145r</span><span class="sc">\\</span><span class="st">x&quot;</span>            <span class="st">&quot;65!</span><span class="sc">\\</span><span class="st">n</span><span class="sc">\&quot;</span><span class="st">):((m*&quot;</span>            <span class="st">&quot;^</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">*(-?</span><span class="sc">\\</span><span class="st">d+&quot;</span></span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;(</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">d+)?)</span><span class="sc">\\</span><span class="st">s&quot;</span>            <span class="st">&quot;</span><span class="sc">\\</span><span class="st">*$*)?(push@SS            ,$1):(&amp;{chr(((o&quot;</span></span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;rd)%39)+3**4)x2             } )); goto __;             sub ff { @SS= (&quot;</span></span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;)} sub __{print            </span><span class="sc">\&quot;</span><span class="st">stack empty</span><span class="sc">\\</span><span class="st">&quot;</span>            <span class="st">&quot;n</span><span class="sc">\&quot;</span><span class="st">} sub ss{$#&quot;</span></span>
-<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;SS&lt;0 and goto &amp;            __; print $SS[$&quot;</span>            <span class="st">&quot;#SS].</span><span class="sc">\&quot;\\</span><span class="st">n</span><span class="sc">\&quot;</span><span class="st">} &quot;</span></span>
-<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;sub SS{ $#SS&lt;0              and goto &amp;__ ;              print pop @SS}&quot;</span></span>
-<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;sub _ { print              </span><span class="sc">\&quot;</span><span class="st">divide by zer&quot;</span>            <span class="st">&quot;o</span><span class="sc">\\</span><span class="st">n</span><span class="sc">\&quot;</span><span class="st">}sub ii{&quot;</span></span>
-<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;map{ print</span><span class="sc">\&quot;</span><span class="st">$_&quot;</span>            <span class="st">&quot;</span><span class="sc">\\</span><span class="st">n</span><span class="sc">\&quot;</span><span class="st"> } reverse            @SS} sub AUTOLO&quot;</span></span>
-<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;AD { print</span><span class="sc">\&quot;</span><span class="st">un&quot;</span>            <span class="st">&quot;implemented</span><span class="sc">\\</span><span class="st">n&quot;</span>            <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">} sub gg{ $#&quot;</span></span>
-<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;SS&lt;0 and goto              &amp;__;push@SS,$SS[            $#SS]} sub uu{ &quot;</span></span>
-<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;$#SS&lt;1 and goto            &amp;__;$SS[ $#SS]+=            $SS[$#SS-1];$SS&quot;</span></span>
-<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;[$#SS-1]=$SS[$&quot;</span>            <span class="st">&quot;#SS]-$SS[$#SS-&quot;</span>            <span class="st">&quot;1]; $SS[$#SS]-&quot;</span></span>
-<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;=$SS[$#SS-1]}                   &quot;</span><span class="op">,</span><span class="dv">0</span><span class="op">),</span><span class="dv">0</span>                   <span class="op">);</span></span></code></pre></div>
-<p>and in particular it appears that it is the perl itself. In other words if one
-changes it to be:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>perl_eval_sv<span class="op">(</span>newSVpv<span class="op">(</span><span class="st">&quot;&quot;</span><span class="op">,</span><span class="dv">0</span><span class="op">),</span><span class="dv">0</span><span class="op">);</span></span></code></pre></div>
-<p>it will not crash. But of course it won’t do anything either. So it’s more
-specifically that the call to <code>newSVpv()</code> crashes the code but <em>INSIDE</em>
-(key point!) the call to <code>perl_eval_sv()</code> that does it. Given what the author
-stated and that the version of perl is &lt; than 5.6.0 that might be exactly what
-is going on.</p>
-<p>The example command above <em>should</em> print:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">&quot;13 14 15 16 17 + - * / p&quot;</span> <span class="kw">|</span> <span class="ex">./dlowe</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="ex">-0.0515873015873016</span></span></code></pre></div>
-<p>and that’s what it shows in linux.</p>
-<p>Note that with different perl libraries in macOS (for instance from
-<a href="https://brew.sh">Homebrew</a> and <a href="https://www.macports.org">MacPorts</a> it will
-likely print different warnings when compiling. It was observed that with
-Homebrew it does not report any warnings but with MacPorts it results in a total
-of 92 warnings! Nonetheless neither works okay and both crash.</p>
-<h3 id="status-known-bug---please-help-us-fix-11">STATUS: known bug - please help us fix</h3>
 <p>The author gives an example command:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;7 P 6 d P P 8 p&quot;</span> <span class="kw">|</span> <span class="ex">./dlowe</span> <span class="kw">|</span> <span class="fu">tr</span> 876 tpo</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;7 P 6 d P P 8 p&quot;</span> <span class="kw">|</span> <span class="ex">./dlowe</span> <span class="kw">|</span> <span class="fu">tr</span> 876 tpo</span></code></pre></div>
 <p>which should print out <code>poot</code> but it doesn’t, not in linux and not in macOS.</p>
 <p>In linux it doesn’t crash but it doesn’t print anything out either.</p>
 <p>In macOS it crashes; it might appear to not crash in macOS but this is because
 of the pipeline. If you remove the <code>| tr 876 tpo</code> part of the command you will
 see that it does indeed crash!</p>
 <p>The reason for this not working is really strange.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">&quot;7 P 6 d P P 8 p&quot;</span> <span class="kw">|</span> <span class="ex">./dlowe</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="ex">7668</span></span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">&quot;7 P 6 d P P 8 p&quot;</span> <span class="kw">|</span> <span class="ex">./dlowe</span> <span class="kw">|</span> <span class="fu">grep</span> 7</span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span></span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">&quot;7 P 6 d P P 8 p&quot;</span> <span class="kw">|</span> <span class="ex">./dlowe</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="ex">7668</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">&quot;7 P 6 d P P 8 p&quot;</span> <span class="kw">|</span> <span class="ex">./dlowe</span> <span class="kw">|</span> <span class="fu">grep</span> 7</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span></span></code></pre></div>
 <p>Why? Is it writing to stdout? Let’s try some other things:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 7668 <span class="kw">|</span> <span class="fu">tr</span> 876 tpo</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="ex">poot</span></span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 7668 <span class="kw">|</span> <span class="fu">tr</span> 876 tpo</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="ex">poot</span></span></code></pre></div>
 <p>Okay so we know that it SHOULD work. But we also know something funny is going on with stdout and the entry. Another experiment:</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">&quot;7 P 6 d P P 8 p&quot;</span> <span class="kw">|</span> <span class="ex">./dlowe</span> <span class="dv">1</span><span class="op">&gt;&amp;</span><span class="dv">2</span> <span class="kw">|</span> <span class="fu">grep</span> 7</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="ex">7668</span></span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">&quot;7 P 6 d P P 8 p&quot;</span> <span class="kw">|</span> <span class="ex">./dlowe</span> <span class="dv">1</span><span class="op">&gt;&amp;</span><span class="dv">2</span> <span class="kw">|</span> <span class="fu">grep</span> 7</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="ex">7668</span></span></code></pre></div>
 <p>Okay so now it sees it, <code>grep</code>. But watch!</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">&quot;7 P 6 d P P 8 p&quot;</span> <span class="kw">|</span> <span class="ex">./dlowe</span> <span class="dv">2</span><span class="op">&gt;</span>foo <span class="dv">1</span><span class="op">&gt;&amp;</span><span class="dv">1</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="ex">7668</span></span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat foo</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">&quot;7 P 6 d P P 8 p&quot;</span> <span class="kw">|</span> <span class="ex">./dlowe</span> <span class="dv">2</span><span class="op">&gt;</span>foo <span class="dv">1</span><span class="op">&gt;&amp;</span><span class="dv">1</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="ex">7668</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat foo</span></code></pre></div>
 <p>.. so at this hour it does appear to be writing to stdout but yet somehow it doesn’t? But watch:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">&quot;7 P 6 d P P 8 p&quot;</span> <span class="kw">|</span> <span class="ex">./dlowe</span> <span class="dv">1</span><span class="op">&gt;</span>foo <span class="dv">1</span><span class="op">&gt;&amp;</span><span class="dv">1</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat foo</span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span></span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">&quot;7 P 6 d P P 8 p&quot;</span> <span class="kw">|</span> <span class="ex">./dlowe</span> <span class="dv">1</span><span class="op">&gt;</span>foo <span class="dv">1</span><span class="op">&gt;&amp;</span><span class="dv">1</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat foo</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span></span></code></pre></div>
 <p>Well this explains why the <code>tr</code> does not transliterate it to <code>poot</code> but why is
 this happening? Why can’t it be redirected to another file even?</p>
 <p>If it could be figured out why it’s not writing to stdout and yet at the same
 time is writing to stdout one bug could be fixed. Maybe it’s the perl messing
 with things but we don’t know.</p>
 <p>Other commands do work, however, and give the appropriate output, such as:</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 1 2 + p <span class="kw">|</span> <span class="ex">./dlowe</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="ex">3</span></span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 1 2 + p <span class="kw">|</span> <span class="ex">./dlowe</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="ex">3</span></span></code></pre></div>
 <p>so something is wrong with some commands/operators.</p>
 <p>Another feature that does work in linux is:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo poot <span class="kw">|</span> <span class="ex">./dlowe</span></span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="ex">poot</span> was here!</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo poot <span class="kw">|</span> <span class="ex">./dlowe</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="ex">poot</span> was here!</span></code></pre></div>
 <p>Can you help fix these problems?</p>
 <p>Cody provided the C code that creates an unformatted perl script that will just
 print ‘unimplemented’ for operators but it seems to work in some other ways (see
@@ -1292,29 +1250,29 @@ below for how to go further than unimplemented) which is the exact perl from the
 C program except that it has the <code>#!/usr/bin/env perl</code> and <code>use warnings;</code> as
 well. A note below might suggest that doing this creates incomplete perl.
 Anyway:</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">)</span></span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;#!/usr/bin/env perl</span><span class="sc">\n</span><span class="st">use warnings;_:$_=               &lt;&gt; ; defined               or exit; @ARGV&quot;</span></span>
-<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;=split; __:$_=             shift;defined or             goto _; chomp &quot;</span></span>
-<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;;(m*^</span><span class="sc">\\</span><span class="st">x70oO&quot;</span>              <span class="st">&quot;</span><span class="sc">\\</span><span class="st">x74$*i)?(pri&quot;</span>              <span class="st">&quot;nt </span><span class="sc">\&quot;</span><span class="st">$_ w</span><span class="sc">\\</span><span class="st">x&quot;</span></span>
-<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;61s h</span><span class="sc">\\</span><span class="st">145r</span><span class="sc">\\</span><span class="st">x&quot;</span>            <span class="st">&quot;65!</span><span class="sc">\\</span><span class="st">n</span><span class="sc">\&quot;</span><span class="st">):((m*&quot;</span>            <span class="st">&quot;^</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">*(-?</span><span class="sc">\\</span><span class="st">d+&quot;</span></span>
-<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;(</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">d+)?)</span><span class="sc">\\</span><span class="st">s&quot;</span>            <span class="st">&quot;</span><span class="sc">\\</span><span class="st">*$*)?(push@SS            ,$1):(&amp;{chr(((o&quot;</span></span>
-<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;rd)</span><span class="sc">%%</span><span class="st">39)+3**4)x2             } )); goto __;             sub ff { @SS= (&quot;</span></span>
-<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;)} sub __{print            </span><span class="sc">\&quot;</span><span class="st">stack empty</span><span class="sc">\\</span><span class="st">&quot;</span>            <span class="st">&quot;n</span><span class="sc">\&quot;</span><span class="st">} sub ss{$#&quot;</span></span>
-<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;SS&lt;0 and goto &amp;            __; print $SS[$&quot;</span>            <span class="st">&quot;#SS].</span><span class="sc">\&quot;\\</span><span class="st">n</span><span class="sc">\&quot;</span><span class="st">} &quot;</span></span>
-<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;sub SS{ $#SS&lt;0              and goto &amp;__ ;              print pop @SS}&quot;</span></span>
-<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;sub _ { print              </span><span class="sc">\&quot;</span><span class="st">divide by zer&quot;</span>            <span class="st">&quot;o</span><span class="sc">\\</span><span class="st">n</span><span class="sc">\&quot;</span><span class="st">}sub ii{&quot;</span></span>
-<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;map{ print</span><span class="sc">\&quot;</span><span class="st">$_&quot;</span>            <span class="st">&quot;</span><span class="sc">\\</span><span class="st">n</span><span class="sc">\&quot;</span><span class="st"> } reverse            @SS} sub AUTOLO&quot;</span></span>
-<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;AD { print</span><span class="sc">\&quot;</span><span class="st">un&quot;</span>            <span class="st">&quot;implemented</span><span class="sc">\\</span><span class="st">n&quot;</span>            <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">} sub gg{ $#&quot;</span></span>
-<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;SS&lt;0 and goto              &amp;__;push@SS,$SS[            $#SS]} sub uu{ &quot;</span></span>
-<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;$#SS&lt;1 and goto            &amp;__;$SS[ $#SS]+=            $SS[$#SS-1];$SS&quot;</span></span>
-<span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;[$#SS-1]=$SS[$&quot;</span>            <span class="st">&quot;#SS]-$SS[$#SS-&quot;</span>            <span class="st">&quot;1]; $SS[$#SS]-&quot;</span></span>
-<span id="cb49-19"><a href="#cb49-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;=$SS[$#SS-1]}&quot;</span><span class="op">);</span></span>
-<span id="cb49-20"><a href="#cb49-20" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">)</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;#!/usr/bin/env perl</span><span class="sc">\n</span><span class="st">use warnings;_:$_=               &lt;&gt; ; defined               or exit; @ARGV&quot;</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;=split; __:$_=             shift;defined or             goto _; chomp &quot;</span></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;;(m*^</span><span class="sc">\\</span><span class="st">x70oO&quot;</span>              <span class="st">&quot;</span><span class="sc">\\</span><span class="st">x74$*i)?(pri&quot;</span>              <span class="st">&quot;nt </span><span class="sc">\&quot;</span><span class="st">$_ w</span><span class="sc">\\</span><span class="st">x&quot;</span></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;61s h</span><span class="sc">\\</span><span class="st">145r</span><span class="sc">\\</span><span class="st">x&quot;</span>            <span class="st">&quot;65!</span><span class="sc">\\</span><span class="st">n</span><span class="sc">\&quot;</span><span class="st">):((m*&quot;</span>            <span class="st">&quot;^</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">*(-?</span><span class="sc">\\</span><span class="st">d+&quot;</span></span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;(</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">d+)?)</span><span class="sc">\\</span><span class="st">s&quot;</span>            <span class="st">&quot;</span><span class="sc">\\</span><span class="st">*$*)?(push@SS            ,$1):(&amp;{chr(((o&quot;</span></span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;rd)</span><span class="sc">%%</span><span class="st">39)+3**4)x2             } )); goto __;             sub ff { @SS= (&quot;</span></span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;)} sub __{print            </span><span class="sc">\&quot;</span><span class="st">stack empty</span><span class="sc">\\</span><span class="st">&quot;</span>            <span class="st">&quot;n</span><span class="sc">\&quot;</span><span class="st">} sub ss{$#&quot;</span></span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;SS&lt;0 and goto &amp;            __; print $SS[$&quot;</span>            <span class="st">&quot;#SS].</span><span class="sc">\&quot;\\</span><span class="st">n</span><span class="sc">\&quot;</span><span class="st">} &quot;</span></span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;sub SS{ $#SS&lt;0              and goto &amp;__ ;              print pop @SS}&quot;</span></span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;sub _ { print              </span><span class="sc">\&quot;</span><span class="st">divide by zer&quot;</span>            <span class="st">&quot;o</span><span class="sc">\\</span><span class="st">n</span><span class="sc">\&quot;</span><span class="st">}sub ii{&quot;</span></span>
+<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;map{ print</span><span class="sc">\&quot;</span><span class="st">$_&quot;</span>            <span class="st">&quot;</span><span class="sc">\\</span><span class="st">n</span><span class="sc">\&quot;</span><span class="st"> } reverse            @SS} sub AUTOLO&quot;</span></span>
+<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;AD { print</span><span class="sc">\&quot;</span><span class="st">un&quot;</span>            <span class="st">&quot;implemented</span><span class="sc">\\</span><span class="st">n&quot;</span>            <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">} sub gg{ $#&quot;</span></span>
+<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;SS&lt;0 and goto              &amp;__;push@SS,$SS[            $#SS]} sub uu{ &quot;</span></span>
+<span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;$#SS&lt;1 and goto            &amp;__;$SS[ $#SS]+=            $SS[$#SS-1];$SS&quot;</span></span>
+<span id="cb46-18"><a href="#cb46-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;[$#SS-1]=$SS[$&quot;</span>            <span class="st">&quot;#SS]-$SS[$#SS-&quot;</span>            <span class="st">&quot;1]; $SS[$#SS]-&quot;</span></span>
+<span id="cb46-19"><a href="#cb46-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;=$SS[$#SS-1]}&quot;</span><span class="op">);</span></span>
+<span id="cb46-20"><a href="#cb46-20" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Compiling this you can generate:</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode perl"><code class="sourceCode perl"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="kw">#!/usr/bin/env perl</span></span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">use</span> <span class="kw">warnings</span>;_:<span class="wa">$_</span>=               &lt;&gt; ; <span class="fu">defined</span>               <span class="ot">or</span> <span class="fu">exit</span>; <span class="wa">@ARGV</span>=<span class="fu">split</span>; __:<span class="wa">$_</span>=             <span class="fu">shift</span>;<span class="fu">defined</span> <span class="ot">or</span>             <span class="fu">goto</span> _; <span class="fu">chomp</span> ;(<span class="ot">m*</span><span class="ch">^</span><span class="wa">\x70</span><span class="ot">oO</span><span class="wa">\x74$*</span><span class="ot">i</span><span class="ch">)?(</span><span class="ot">print &quot;</span><span class="wa">$_</span><span class="ot"> w</span><span class="wa">\x61</span><span class="ot">s h</span><span class="wa">\145</span><span class="ot">r</span><span class="wa">\x65</span><span class="ot">!</span><span class="bn">\n</span><span class="ot">&quot;</span><span class="ch">)</span><span class="ot">:</span><span class="ch">((</span><span class="ot">m</span><span class="ch">*^</span><span class="bn">\s</span><span class="ot">\*</span><span class="ch">(</span><span class="ot">-</span><span class="ch">?</span><span class="bn">\d</span><span class="ch">+(</span><span class="ot">\.</span><span class="bn">\d</span><span class="ch">+)?)</span><span class="bn">\s</span><span class="ot">\*</span><span class="wa">$*</span><span class="ch">)?(</span><span class="ot">push</span><span class="dt">@SS</span><span class="ot">            ,</span><span class="wa">$1</span><span class="ch">)</span><span class="ot">:</span><span class="ch">(</span><span class="ot">&amp;{chr</span><span class="ch">(((</span><span class="ot">ord</span><span class="ch">)</span><span class="ot">%39</span><span class="ch">)+</span><span class="ot">3</span><span class="ch">**</span><span class="ot">4</span><span class="ch">)</span><span class="ot">x2             } </span><span class="ch">))</span><span class="ot">; goto __;             sub ff { </span><span class="dt">@SS</span><span class="ot">= </span><span class="ch">()</span><span class="ot">} sub __{print            &quot;stack empty</span><span class="bn">\n</span><span class="ot">&quot;} sub ss{</span><span class="dt">$#SS</span><span class="ot">&lt;0 and goto &amp;            __; print </span><span class="dt">$SS</span><span class="ch">[</span><span class="bn">$#SS</span><span class="ch">]</span><span class="ot">.&quot;</span><span class="bn">\n</span><span class="ot">&quot;} sub SS{ </span><span class="dt">$#SS</span><span class="ot">&lt;0              and goto &amp;__ ;              print pop </span><span class="dt">@SS</span><span class="ot">}sub _ { print              &quot;divide by zero</span><span class="bn">\n</span><span class="ot">&quot;}sub ii{map{ print&quot;</span><span class="wa">$_</span><span class="bn">\n</span><span class="ot">&quot; } reverse            </span><span class="dt">@SS</span><span class="ot">} sub AUTOLOAD { print&quot;unimplemented</span><span class="bn">\n</span><span class="ot">&quot;} sub gg{ </span><span class="dt">$#SS</span><span class="ot">&lt;0 and goto              &amp;__;push</span><span class="dt">@SS</span><span class="ot">,</span><span class="dt">$SS</span><span class="ch">[</span><span class="bn">            $#SS</span><span class="ch">]</span><span class="ot">} sub uu{ </span><span class="dt">$#SS</span><span class="ot">&lt;1 and goto            &amp;__;</span><span class="dt">$SS</span><span class="ch">[</span><span class="bn"> $#SS</span><span class="ch">]+</span><span class="ot">=            </span><span class="dt">$SS</span><span class="ch">[</span><span class="bn">$#SS-1</span><span class="ch">]</span><span class="ot">;</span><span class="dt">$SS</span><span class="ch">[</span><span class="bn">$#SS-1</span><span class="ch">]</span><span class="ot">=</span><span class="dt">$SS</span><span class="ch">[</span><span class="bn">$#SS</span><span class="ch">]</span><span class="ot">-</span><span class="dt">$SS</span><span class="ch">[</span><span class="bn">$#SS-1</span><span class="ch">]</span><span class="ot">; </span><span class="dt">$SS</span><span class="ch">[</span><span class="bn">$#SS</span><span class="ch">]</span><span class="ot">-=</span><span class="dt">$SS</span><span class="ch">[</span><span class="bn">$#SS-1</span><span class="ch">]</span><span class="ot">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode perl"><code class="sourceCode perl"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="kw">#!/usr/bin/env perl</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">use</span> <span class="kw">warnings</span>;_:<span class="wa">$_</span>=               &lt;&gt; ; <span class="fu">defined</span>               <span class="ot">or</span> <span class="fu">exit</span>; <span class="wa">@ARGV</span>=<span class="fu">split</span>; __:<span class="wa">$_</span>=             <span class="fu">shift</span>;<span class="fu">defined</span> <span class="ot">or</span>             <span class="fu">goto</span> _; <span class="fu">chomp</span> ;(<span class="ot">m*</span><span class="ch">^</span><span class="wa">\x70</span><span class="ot">oO</span><span class="wa">\x74$*</span><span class="ot">i</span><span class="ch">)?(</span><span class="ot">print &quot;</span><span class="wa">$_</span><span class="ot"> w</span><span class="wa">\x61</span><span class="ot">s h</span><span class="wa">\145</span><span class="ot">r</span><span class="wa">\x65</span><span class="ot">!</span><span class="bn">\n</span><span class="ot">&quot;</span><span class="ch">)</span><span class="ot">:</span><span class="ch">((</span><span class="ot">m</span><span class="ch">*^</span><span class="bn">\s</span><span class="ot">\*</span><span class="ch">(</span><span class="ot">-</span><span class="ch">?</span><span class="bn">\d</span><span class="ch">+(</span><span class="ot">\.</span><span class="bn">\d</span><span class="ch">+)?)</span><span class="bn">\s</span><span class="ot">\*</span><span class="wa">$*</span><span class="ch">)?(</span><span class="ot">push</span><span class="dt">@SS</span><span class="ot">            ,</span><span class="wa">$1</span><span class="ch">)</span><span class="ot">:</span><span class="ch">(</span><span class="ot">&amp;{chr</span><span class="ch">(((</span><span class="ot">ord</span><span class="ch">)</span><span class="ot">%39</span><span class="ch">)+</span><span class="ot">3</span><span class="ch">**</span><span class="ot">4</span><span class="ch">)</span><span class="ot">x2             } </span><span class="ch">))</span><span class="ot">; goto __;             sub ff { </span><span class="dt">@SS</span><span class="ot">= </span><span class="ch">()</span><span class="ot">} sub __{print            &quot;stack empty</span><span class="bn">\n</span><span class="ot">&quot;} sub ss{</span><span class="dt">$#SS</span><span class="ot">&lt;0 and goto &amp;            __; print </span><span class="dt">$SS</span><span class="ch">[</span><span class="bn">$#SS</span><span class="ch">]</span><span class="ot">.&quot;</span><span class="bn">\n</span><span class="ot">&quot;} sub SS{ </span><span class="dt">$#SS</span><span class="ot">&lt;0              and goto &amp;__ ;              print pop </span><span class="dt">@SS</span><span class="ot">}sub _ { print              &quot;divide by zero</span><span class="bn">\n</span><span class="ot">&quot;}sub ii{map{ print&quot;</span><span class="wa">$_</span><span class="bn">\n</span><span class="ot">&quot; } reverse            </span><span class="dt">@SS</span><span class="ot">} sub AUTOLOAD { print&quot;unimplemented</span><span class="bn">\n</span><span class="ot">&quot;} sub gg{ </span><span class="dt">$#SS</span><span class="ot">&lt;0 and goto              &amp;__;push</span><span class="dt">@SS</span><span class="ot">,</span><span class="dt">$SS</span><span class="ch">[</span><span class="bn">            $#SS</span><span class="ch">]</span><span class="ot">} sub uu{ </span><span class="dt">$#SS</span><span class="ot">&lt;1 and goto            &amp;__;</span><span class="dt">$SS</span><span class="ch">[</span><span class="bn"> $#SS</span><span class="ch">]+</span><span class="ot">=            </span><span class="dt">$SS</span><span class="ch">[</span><span class="bn">$#SS-1</span><span class="ch">]</span><span class="ot">;</span><span class="dt">$SS</span><span class="ch">[</span><span class="bn">$#SS-1</span><span class="ch">]</span><span class="ot">=</span><span class="dt">$SS</span><span class="ch">[</span><span class="bn">$#SS</span><span class="ch">]</span><span class="ot">-</span><span class="dt">$SS</span><span class="ch">[</span><span class="bn">$#SS-1</span><span class="ch">]</span><span class="ot">; </span><span class="dt">$SS</span><span class="ch">[</span><span class="bn">$#SS</span><span class="ch">]</span><span class="ot">-=</span><span class="dt">$SS</span><span class="ch">[</span><span class="bn">$#SS-1</span><span class="ch">]</span><span class="ot">}</span></span></code></pre></div>
 <p>Here is example input/output:</p>
 <pre><code>p
 stack empty
@@ -1331,32 +1289,32 @@ p
 how this does not happen in the C program in linux!) but if one uses ‘p’ by
 itself it will print what’s on the stack (for example).</p>
 <p>To not get ‘unimplemented’ you can remove from the perl:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode perl"><code class="sourceCode perl"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="kw">sub </span><span class="fu">AUTOLOAD</span> { print<span class="ot">&quot;</span><span class="st">unimplemented</span><span class="ch">\n</span><span class="ot">&quot;</span>}</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode perl"><code class="sourceCode perl"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">sub </span><span class="fu">AUTOLOAD</span> { print<span class="ot">&quot;</span><span class="st">unimplemented</span><span class="ch">\n</span><span class="ot">&quot;</span>}</span></code></pre></div>
 <p>(Note that the author stated this was used for exception handling so another
 possibility is that the C code doesn’t generate the correct perl and indeed even
 spaces is known to break the perl in at least one way, syntax errors, but maybe
 others too.)</p>
 <p>Here is an example run of several operations in the perl script after removing
 that subroutine:</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 5 5 p <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="ex">5</span></span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 5 5 + p <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="ex">5</span></span>
-<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Undefined</span> subroutine <span class="kw">&amp;</span><span class="ex">main::UU</span> called at ./pl.pl line 2, <span class="op">&lt;&gt;</span> line 1.</span>
-<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 5 5 <span class="pp">*</span> p <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
-<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a><span class="ex">5</span></span>
-<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Undefined</span> subroutine <span class="kw">&amp;</span><span class="ex">main::ww</span> called at ./pl.pl line 2, <span class="op">&lt;&gt;</span> line 1.</span>
-<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 5 5 <span class="at">-</span> p <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
-<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a><span class="ex">5</span></span>
-<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a><span class="ex">Undefined</span> subroutine <span class="kw">&amp;</span><span class="ex">main::WW</span> called at ./pl.pl line 2, <span class="op">&lt;&gt;</span> line 1.</span>
-<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 5 5 / p <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
-<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a><span class="ex">5</span></span>
-<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a><span class="ex">Undefined</span> subroutine <span class="kw">&amp;</span><span class="ex">main::YY</span> called at ./pl.pl line 2, <span class="op">&lt;&gt;</span> line 1.</span>
-<span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 5 P <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
-<span id="cb53-16"><a href="#cb53-16" aria-hidden="true" tabindex="-1"></a><span class="ex">5$</span> echo p <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
-<span id="cb53-17"><a href="#cb53-17" aria-hidden="true" tabindex="-1"></a><span class="ex">stack</span> empty</span>
-<span id="cb53-18"><a href="#cb53-18" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo P <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
-<span id="cb53-19"><a href="#cb53-19" aria-hidden="true" tabindex="-1"></a><span class="ex">stack</span> empty</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 5 5 p <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="ex">5</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 5 5 + p <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="ex">5</span></span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Undefined</span> subroutine <span class="kw">&amp;</span><span class="ex">main::UU</span> called at ./pl.pl line 2, <span class="op">&lt;&gt;</span> line 1.</span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 5 5 <span class="pp">*</span> p <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a><span class="ex">5</span></span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Undefined</span> subroutine <span class="kw">&amp;</span><span class="ex">main::ww</span> called at ./pl.pl line 2, <span class="op">&lt;&gt;</span> line 1.</span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 5 5 <span class="at">-</span> p <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a><span class="ex">5</span></span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a><span class="ex">Undefined</span> subroutine <span class="kw">&amp;</span><span class="ex">main::WW</span> called at ./pl.pl line 2, <span class="op">&lt;&gt;</span> line 1.</span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 5 5 / p <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
+<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a><span class="ex">5</span></span>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a><span class="ex">Undefined</span> subroutine <span class="kw">&amp;</span><span class="ex">main::YY</span> called at ./pl.pl line 2, <span class="op">&lt;&gt;</span> line 1.</span>
+<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 5 P <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
+<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a><span class="ex">5$</span> echo p <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
+<span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a><span class="ex">stack</span> empty</span>
+<span id="cb50-18"><a href="#cb50-18" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo P <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
+<span id="cb50-19"><a href="#cb50-19" aria-hidden="true" tabindex="-1"></a><span class="ex">stack</span> empty</span></code></pre></div>
 <p>Note the undefined subroutine error: that happens with commands that are not
 even in the program. Again the author used <code>AUTOLOAD</code> for exception handling so
 it seems likely that there is something missing (which the below shows as well).
@@ -1369,13 +1327,52 @@ works in the code, at least in some cases.</p>
 invalid input. But as can be seen by the input I (Cody) gave the input is not
 actually incorrect. It is also curious to note that it ends up printing what’s
 on the stack at that point:</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 5 5 + p <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="ex">unimplemented</span></span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="ex">5</span></span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 5 5 + p <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="ex">unimplemented</span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="ex">5</span></span></code></pre></div>
 <p>which might (?) suggest that the <code>+</code> operator is unimplemented. Unfortunately it
 has been many years since I have used perl and I was never a guru either.</p>
-<h2 id="primenum"><a name="2000_primenum"></a>2000/primenum</h2>
 <h3 id="status-inabiaf---please-do-not-fix-25">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<p>The author states that in perl &lt; 5.6.0 there is a bug with a core dump in what
+they said is in <code>Perl_sv_upgrade</code>. As this is documented it is not considered a
+bug to be fixed. For the curious this will crash in macOS. Cody notes that the
+code that crashes is:</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>perl_eval_sv</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="op">(</span>newSVpv<span class="op">(</span><span class="st">&quot;_:$_=               &lt;&gt; ; defined               or exit; @ARGV&quot;</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;=split; __:$_=             shift;defined or             goto _; chomp &quot;</span></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;;(m*^</span><span class="sc">\\</span><span class="st">x70oO&quot;</span>              <span class="st">&quot;</span><span class="sc">\\</span><span class="st">x74$*i)?(pri&quot;</span>              <span class="st">&quot;nt </span><span class="sc">\&quot;</span><span class="st">$_ w</span><span class="sc">\\</span><span class="st">x&quot;</span></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;61s h</span><span class="sc">\\</span><span class="st">145r</span><span class="sc">\\</span><span class="st">x&quot;</span>            <span class="st">&quot;65!</span><span class="sc">\\</span><span class="st">n</span><span class="sc">\&quot;</span><span class="st">):((m*&quot;</span>            <span class="st">&quot;^</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">*(-?</span><span class="sc">\\</span><span class="st">d+&quot;</span></span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;(</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">d+)?)</span><span class="sc">\\</span><span class="st">s&quot;</span>            <span class="st">&quot;</span><span class="sc">\\</span><span class="st">*$*)?(push@SS            ,$1):(&amp;{chr(((o&quot;</span></span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;rd)%39)+3**4)x2             } )); goto __;             sub ff { @SS= (&quot;</span></span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;)} sub __{print            </span><span class="sc">\&quot;</span><span class="st">stack empty</span><span class="sc">\\</span><span class="st">&quot;</span>            <span class="st">&quot;n</span><span class="sc">\&quot;</span><span class="st">} sub ss{$#&quot;</span></span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;SS&lt;0 and goto &amp;            __; print $SS[$&quot;</span>            <span class="st">&quot;#SS].</span><span class="sc">\&quot;\\</span><span class="st">n</span><span class="sc">\&quot;</span><span class="st">} &quot;</span></span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;sub SS{ $#SS&lt;0              and goto &amp;__ ;              print pop @SS}&quot;</span></span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;sub _ { print              </span><span class="sc">\&quot;</span><span class="st">divide by zer&quot;</span>            <span class="st">&quot;o</span><span class="sc">\\</span><span class="st">n</span><span class="sc">\&quot;</span><span class="st">}sub ii{&quot;</span></span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;map{ print</span><span class="sc">\&quot;</span><span class="st">$_&quot;</span>            <span class="st">&quot;</span><span class="sc">\\</span><span class="st">n</span><span class="sc">\&quot;</span><span class="st"> } reverse            @SS} sub AUTOLO&quot;</span></span>
+<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;AD { print</span><span class="sc">\&quot;</span><span class="st">un&quot;</span>            <span class="st">&quot;implemented</span><span class="sc">\\</span><span class="st">n&quot;</span>            <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">} sub gg{ $#&quot;</span></span>
+<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;SS&lt;0 and goto              &amp;__;push@SS,$SS[            $#SS]} sub uu{ &quot;</span></span>
+<span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;$#SS&lt;1 and goto            &amp;__;$SS[ $#SS]+=            $SS[$#SS-1];$SS&quot;</span></span>
+<span id="cb53-16"><a href="#cb53-16" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;[$#SS-1]=$SS[$&quot;</span>            <span class="st">&quot;#SS]-$SS[$#SS-&quot;</span>            <span class="st">&quot;1]; $SS[$#SS]-&quot;</span></span>
+<span id="cb53-17"><a href="#cb53-17" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;=$SS[$#SS-1]}                   &quot;</span><span class="op">,</span><span class="dv">0</span><span class="op">),</span><span class="dv">0</span>                   <span class="op">);</span></span></code></pre></div>
+<p>and in particular it appears that it is the perl itself. In other words if one
+changes it to be:</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>perl_eval_sv<span class="op">(</span>newSVpv<span class="op">(</span><span class="st">&quot;&quot;</span><span class="op">,</span><span class="dv">0</span><span class="op">),</span><span class="dv">0</span><span class="op">);</span></span></code></pre></div>
+<p>it will not crash. But of course it won’t do anything either. So it’s more
+specifically that the call to <code>newSVpv()</code> crashes the code but <em>INSIDE</em>
+(key point!) the call to <code>perl_eval_sv()</code> that does it. Given what the author
+stated and that the version of perl is &lt; than 5.6.0 which the author states can
+crash this makes sense.</p>
+<p>The example command above <em>should</em> print:</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">&quot;13 14 15 16 17 + - * / p&quot;</span> <span class="kw">|</span> <span class="ex">./dlowe</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="ex">-0.0515873015873016</span></span></code></pre></div>
+<p>and that’s what it shows in linux.</p>
+<p>Note that with different perl libraries in macOS (for instance from
+<a href="https://brew.sh">Homebrew</a> and <a href="https://www.macports.org">MacPorts</a> it will
+likely print different warnings when compiling. It was observed that with
+Homebrew it does not report any warnings but with MacPorts it results in a total
+of 92 warnings! Nonetheless neither works okay and both crash.</p>
+<h2 id="primenum"><a name="2000_primenum"></a>2000/primenum</h2>
+<h3 id="status-inabiaf---please-do-not-fix-26">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2000primenumprimenum.c">Source code: <a href="2000/primenum/primenum.c">2000/primenum/primenum.c</a></h3>
 <h3 id="information-2000primenumindex.html">Information: <a href="2000/primenum/index.html">2000/primenum/index.html</a></h3>
 <p>This program does not do what you might think it does! Running it like:</p>
@@ -1391,7 +1388,7 @@ try to fix the crashing of this code except to challenge yourself (if you think
 that it’ll be worth your two second fix :-) ). If you do fix it please do not
 make a pull request.</p>
 <h2 id="rince-1"><a name="2000_rince"></a>2000/rince</h2>
-<h3 id="status-inabiaf---please-do-not-fix-26">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-27">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2000rincerince.c">Source code: <a href="2000/rince/rince.c">2000/rince/rince.c</a></h3>
 <h3 id="information-2000rinceindex.html">Information: <a href="2000/rince/index.html">2000/rince/index.html</a></h3>
 <p>If <code>DISPLAY</code> is not set the program will very likely crash, do something strange
@@ -1399,7 +1396,7 @@ make a pull request.</p>
 fire</a>! :-) ).</p>
 <h1 id="section-17"><a name="2001"></a>2001</h1>
 <h2 id="anonymous"><a name="2001_anonymous"></a>2001/anonymous</h2>
-<h3 id="status-inabiaf---please-do-not-fix-27">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-28">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2001anonymousanonymous.c">Source code: <a href="2001/anonymous/anonymous.c">2001/anonymous/anonymous.c</a></h3>
 <h3 id="information-2001anonymousindex.html">Information: <a href="2001/anonymous/index.html">2001/anonymous/index.html</a></h3>
 <p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> fixed this so that it
@@ -1420,8 +1417,8 @@ can run ELF binaries but cannot compile 32-bit binaries.</p>
 this program will very likely crash or do something strange like slaughter the
 elves of Imladris :-(</p>
 <h2 id="bellard"><a name="2001_bellard"></a>2001/bellard</h2>
-<h3 id="status-inabiaf---please-do-not-fix-28">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="status-doesnt-work-with-some-platforms---please-help-us-fix-2">STATUS: doesn’t work with some platforms - please help us fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-29">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-doesnt-work-with-some-platforms---please-help-us-fix-1">STATUS: doesn’t work with some platforms - please help us fix</h3>
 <h3 id="source-code-2001bellardbellard.c">Source code: <a href="2001/bellard/bellard.c">2001/bellard/bellard.c</a></h3>
 <h3 id="information-2001bellardindex.html">Information: <a href="2001/bellard/index.html">2001/bellard/index.html</a></h3>
 <p>The two statuses might seem contradictory but that is a complicated question.
@@ -1469,7 +1466,7 @@ the compiler won’t work there.</p>
 and it can be run by itself for fun in modern systems, which was not possible
 before the fixes there.</p>
 <h2 id="dgbeards"><a name="2001_dgbeards"></a>2001/dgbeards</h2>
-<h3 id="status-inabiaf---please-do-not-fix-29">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-30">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2001dgbeardsdgbeards.c">Source code: <a href="2001/dgbeards/dgbeards.c">2001/dgbeards/dgbeards.c</a></h3>
 <h3 id="information-2001dgbeardsindex.html">Information: <a href="2001/dgbeards/index.html">2001/dgbeards/index.html</a></h3>
 <p>This program deliberately crashes if it loses (which is what it aims to do).</p>
@@ -1486,7 +1483,7 @@ that version 2.95 works but maybe others do as well. Do you have a fix? We would
 appreciate your help!</p>
 <p>If you want to try and fix this (mis)feature, you are welcome to try.</p>
 <h2 id="kev"><a name="2001_kev"></a>2001/kev</h2>
-<h3 id="status-inabiaf---please-do-not-fix-30">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-31">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2001kevkev.c">Source code: <a href="2001/kev/kev.c">2001/kev/kev.c</a></h3>
 <h3 id="information-2001kevindex.html">Information: <a href="2001/kev/index.html">2001/kev/index.html</a></h3>
 <p>Sometimes when one player presses <code>q</code> it will result in broken pipe on the other
@@ -1508,7 +1505,7 @@ set. In other words both have to be ASCII or EBCDIC - not one of each.</p>
 <p>The author stated that there is a cat man page for this program in case one
 wanted to install it as a tool but this is missing.</p>
 <h2 id="schweikh"><a name="2001_schweikh"></a>2001/schweikh</h2>
-<h3 id="status-inabiaf---please-do-not-fix-31">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-32">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2001schweikhschweikh.c">Source code: <a href="2001/schweikh/schweikh.c">2001/schweikh/schweikh.c</a></h3>
 <h3 id="information-2001schweikhindex.html">Information: <a href="2001/schweikh/index.html">2001/schweikh/index.html</a></h3>
 <p>The glob pattern must match the whole string. See the author’s comments for
@@ -1576,7 +1573,7 @@ sleeping.</p>
 <h1 id="section-20"><a name="2004"></a>2004</h1>
 <h2 id="gavin"><a name="2004_gavin"></a>2004/gavin</h2>
 <h3 id="status-compiled-executable-crashes---please-help-us-fix-1">STATUS: compiled executable crashes - please help us fix</h3>
-<h3 id="status-doesnt-work-with-some-platforms---please-help-us-fix-3">STATUS: doesn’t work with some platforms - please help us fix</h3>
+<h3 id="status-doesnt-work-with-some-platforms---please-help-us-fix-2">STATUS: doesn’t work with some platforms - please help us fix</h3>
 <h3 id="source-code-2004gavingavin.c">Source code: <a href="2004/gavin/gavin.c">2004/gavin/gavin.c</a></h3>
 <h3 id="information-2004gavinindex.html">Information: <a href="2004/gavin//index.html">2004/gavin//index.html</a></h3>
 <p>Segmentation fault will occur in some systems. For instance on macOS with the
@@ -1658,11 +1655,11 @@ gavin_clobber: gavin_clean
 gavin_files: boot.b lilo.conf prim gavin_install.txt</code></pre>
 <p>The current (<a href="2004/gavin/Makefile">Makefile</a> was modified to try and
 fit into the current IOCCC build environment.</p>
-<h3 id="status-inabiaf---please-do-not-fix-32">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-33">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <p>See <a href="2004/gavin/index.html#known-features">known features in the index.html</a> for
 things that are not bugs but documented (mis)features.</p>
 <h2 id="jdalbec"><a name="2004_jdalbec"></a>2004/jdalbec</h2>
-<h3 id="status-inabiaf---please-do-not-fix-33">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-34">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2004jdalbecjdalbec.c">Source code: <a href="2004/jdalbec/jdalbec.c">2004/jdalbec/jdalbec.c</a></h3>
 <h3 id="information-2004jdalbecindex.html">Information: <a href="2004/jdalbec/index.html">2004/jdalbec/index.html</a></h3>
 <p>The author stated that:</p>
@@ -1685,14 +1682,14 @@ incorrect results (e.g., generation 1 starting from a string
 of 257 `1`s will be calculated as `11`); the remark from the
 previous paragraph applies here also.</code></pre>
 <h2 id="sds"><a name="2004_sds"></a>2004/sds</h2>
-<h3 id="status-inabiaf---please-do-not-fix-34">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-35">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2004sdssds.c">Source code: <a href="2004/sds/sds.c">2004/sds/sds.c</a></h3>
 <h3 id="information-2004sdsindex.html">Information: <a href="2004/sds/index.html">2004/sds/index.html</a></h3>
 <p>The generated code will very likely segfault or do something not intended if not
 given the right args. See the index.html file for the correct syntax.</p>
 <h1 id="section-21"><a name="2005"></a>2005</h1>
 <h2 id="anon"><a name="2005_anon"></a>2005/anon</h2>
-<h3 id="status-inabiaf---please-do-not-fix-35">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-36">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2005anonanon.c">Source code: <a href="2005/anon/anon.c">2005/anon/anon.c</a></h3>
 <h3 id="information-2005anonindex.html">Information: <a href="2005/anon/index.html">2005/anon/index.html</a></h3>
 <p>This program sometimes will create unsolvable puzzles :-) just to hook you.
@@ -1704,14 +1701,14 @@ details on this.</p>
 strange. This might also happen if you specify excessively large board
 dimensions. Try <code>100 100 100</code> for instance and see what happens!</p>
 <h2 id="giljade"><a name="2005_giljade"></a>2005/giljade</h2>
-<h3 id="status-inabiaf---please-do-not-fix-36">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-37">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2005giljadegiljade.c">Source code: <a href="2005/giljade/giljade.c">2005/giljade/giljade.c</a></h3>
 <h3 id="information-2005giljadeindex.html">Information: <a href="2005/giljade/index.html">2005/giljade/index.html</a></h3>
 <p>This entry will very likely segfault or do something strange if the source code
 does not exist.</p>
 <p>This entry requires that <code>sed</code> and <code>make</code> are in the path.</p>
 <h2 id="mikeash"><a name="2005_mikeash"></a>2005/mikeash</h2>
-<h3 id="status-inabiaf---please-do-not-fix-37">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-38">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2005mikeashmikeash.c">Source code: <a href="2005/mikeash/mikeash.c">2005/mikeash/mikeash.c</a></h3>
 <h3 id="information-2005mikeashindex.html">Information: <a href="2005/mikeash/index.html">2005/mikeash/index.html</a></h3>
 <p>The author states:</p>
@@ -1743,7 +1740,7 @@ nowhere near
 <p>Basically, the [LISP][] interpreter is good for some basic math operations, and
 for running itself.</p>
 <h2 id="mynx"><a name="2005_mynx"></a>2005/mynx</h2>
-<h3 id="status-inabiaf---please-do-not-fix-38">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-39">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2005mynxmynx.c">Source code: <a href="2005/mynx/mynx.c">2005/mynx/mynx.c</a></h3>
 <h3 id="information-2005mynxindex.html">Information: <a href="2005/mynx/index.html">2005/mynx/index.html</a></h3>
 <p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> notes that, though
@@ -1755,7 +1752,7 @@ set up in order to give http commands. This is not a bug but it’s worth pointi
 out as it won’t work on as many websites as it used to including the <a href="https://www.ioccc.org">IOCCC
 website</a> itself.</p>
 <h2 id="sykes"><a name="2005_sykes"></a>2005/sykes</h2>
-<h3 id="status-inabiaf---please-do-not-fix-39">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-40">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2005sykessykes.c">Source code: <a href="2005/sykes/sykes.c">2005/sykes/sykes.c</a></h3>
 <h3 id="information-2005sykesindex.html">Information: <a href="2005/sykes/index.html">2005/sykes/index.html</a></h3>
 <p>The author stated the below points of interest.</p>
@@ -1788,14 +1785,14 @@ with at least <code>computer.tofu</code> input file:</p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode diff"><code class="sourceCode diff"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="dt">12a13</span></span>
 <span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>#define gets(c) fgets((c),PI,stdin)&amp;&amp;(((c)[strlen((c))-1]=&#39;\0&#39;),c!=NULL)</span></code></pre></div>
 <h2 id="borsanyi"><a name="2006_borsanyi"></a>2006/borsanyi</h2>
-<h3 id="status-inabiaf---please-do-not-fix-40">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-41">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2006borsanyiborsanyi.c">Source code: <a href="2006/borsanyi/borsanyi.c">2006/borsanyi/borsanyi.c</a></h3>
 <h3 id="information-2006borsanyiindex.html">Information: <a href="2006/borsanyi/index.html">2006/borsanyi/index.html</a></h3>
 <p>The string specified must be &lt;= 42 characters and may only consist of the
 characters in the regex <code>a-z_A-Z0-9@.-</code>. Breaking these constraints will end up
 with possibly corrupt GIF files.</p>
 <h2 id="monge"><a name="2006_monge"></a>2006/monge</h2>
-<h3 id="status-doesnt-work-with-some-platforms---please-help-us-fix-4">STATUS: doesn’t work with some platforms - please help us fix</h3>
+<h3 id="status-doesnt-work-with-some-platforms---please-help-us-fix-3">STATUS: doesn’t work with some platforms - please help us fix</h3>
 <h3 id="source-code-2006mongemonge.c">Source code: <a href="2006/monge/monge.c">2006/monge/monge.c</a></h3>
 <h3 id="information-2006mongeindex.html">Information: <a href="2006/monge/index.html">2006/monge/index.html</a></h3>
 <p>This program requires x86 (with an x87 FPU) or x86_64 machine and it requires
@@ -1807,10 +1804,10 @@ but you are welcome to try and fix it.</p>
 provide it as an additional alt version. Fixing this is very likely to be very
 challenging and in some systems it will not be possible to fix but you are
 welcome to try and fix it if you wish to!</p>
-<h3 id="status-inabiaf---please-do-not-fix-41">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-42">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <p>Incorrect formulas will ungracefully crash the program.</p>
 <h2 id="sykes1"><a name="2006_sykes1"></a>2006/sykes1</h2>
-<h3 id="status-inabiaf---please-do-not-fix-42">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-43">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2006sykes1sykes1.c">Source code: <a href="2006/sykes1/sykes1.c">2006/sykes1/sykes1.c</a></h3>
 <h3 id="information-2006sykes1index.html">Information: <a href="2006/sykes1/index.html">2006/sykes1/index.html</a></h3>
 <p>The author stated:</p>
@@ -1825,7 +1822,7 @@ unique solutions.
 If you pick a number higher than 460464 (24x19186) the program will
 return without outputting a solution.  If you can wait that long.</code></pre>
 <h2 id="toledo2"><a name="2006_toledo2"></a>2006/toledo2</h2>
-<h3 id="status-inabiaf---please-do-not-fix-43">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-44">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2006toledo2toledo2.c">Source code: <a href="2006/toledo2/toledo2.c">2006/toledo2/toledo2.c</a></h3>
 <h3 id="information-2006toledo2index.html">Information: <a href="2006/toledo2/index.html">2006/toledo2/index.html</a></h3>
 <p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> fixed this program to
@@ -1850,7 +1847,7 @@ case-sensitive.</p>
 <p>There was no IOCCC in 2010.</p>
 <h1 id="section-27"><a name="2011"></a>2011</h1>
 <h2 id="borsanyi-1"><a name="2011_borsanyi"></a>2011/borsanyi</h2>
-<h3 id="status-inabiaf---please-do-not-fix-44">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-45">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2011borsanyiborsanyi.c">Source code: <a href="2011/borsanyi/borsanyi.c">2011/borsanyi/borsanyi.c</a></h3>
 <h3 id="information-2011borsanyiindex.html">Information: <a href="2011/borsanyi/index.html">2011/borsanyi/index.html</a></h3>
 <p>For a great amount of data points the program will crash, depending on your
@@ -1871,7 +1868,7 @@ bins at the edges.</p>
 instead being something else entirely. The Internet Wayback Machine, although it
 archived it, did not load scripts. Do you know if the domain was moved? Do you
 have an archive or mirror? Please provide us it! Thank you.</p>
-<h3 id="status-inabiaf---please-do-not-fix-45">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-46">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <p>The author states the following:</p>
 <ul>
 <li><p>Bad input (e.g. nonexistent files, non-numeric number of iterations, etc.)
@@ -1882,7 +1879,7 @@ tends to result in empty output.</p></li>
 </ul>
 <p>If you want to try and fix this (mis)feature, you are welcome to try.</p>
 <h2 id="fredriksson"><a name="2011_fredriksson"></a>2011/fredriksson</h2>
-<h3 id="status-inabiaf---please-do-not-fix-46">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-47">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2011fredrikssonfredriksson.c">Source code: <a href="2011/fredriksson/fredriksson.c">2011/fredriksson/fredriksson.c</a></h3>
 <h3 id="information-2011fredrikssonindex.html">Information: <a href="2011/fredriksson/index.html">2011/fredriksson/index.html</a></h3>
 <p>The author stated that there are a number of features and limitations. As the
@@ -1890,7 +1887,7 @@ list is rather long see <a href="2011/fredriksson/index.html#other-features">oth
 features</a> and <a href="2011/fredriksson/index.html#limitations-and-remarks">limitations and
 remarks</a> instead.</p>
 <h2 id="richards"><a name="2011_richards"></a>2011/richards</h2>
-<h3 id="status-doesnt-work-with-some-platforms---please-help-us-fix-5">STATUS: doesn’t work with some platforms - please help us fix</h3>
+<h3 id="status-doesnt-work-with-some-platforms---please-help-us-fix-4">STATUS: doesn’t work with some platforms - please help us fix</h3>
 <h3 id="source-code-2011richardsrichards.c">Source code: <a href="2011/richards/richards.c">2011/richards/richards.c</a></h3>
 <h3 id="information-2011richardsindex.html">Information: <a href="2011/richards/index.html">2011/richards/index.html</a></h3>
 <p>This does not appear to work with macOS, resulting in a segfault (and sometimes
@@ -2051,7 +2048,7 @@ unconfirmed and it’s not known when <code>CONFIG_DYNAMIC_CODE_SIGNING</code> w
 defined.</p>
 <p>Do you have a fix? We welcome it!</p>
 <h2 id="vik"><a name="2011_vik"></a>2011/vik</h2>
-<h3 id="status-inabiaf---please-do-not-fix-47">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-48">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2011vikvik.c">Source code: <a href="2011/vik/vik.c">2011/vik/vik.c</a></h3>
 <h3 id="information-2011vikindex.html">Information: <a href="2011/vik/index.html">2011/vik/index.html</a></h3>
 <p>The author stated that the program will crash if no argument is passed to the
@@ -2059,14 +2056,14 @@ program though we note that your computer might also <a href="https://en.wikiped
 fire</a> :-)</p>
 <h1 id="section-28"><a name="2012"></a>2012</h1>
 <h2 id="blakely"><a name="2012_blakely"></a>2012/blakely</h2>
-<h3 id="status-inabiaf---please-do-not-fix-48">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-49">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2012blakelyblakely.c">Source code: <a href="2012/blakely/blakely.c">2012/blakely/blakely.c</a></h3>
 <h3 id="information-2012blakelyindex.html">Information: <a href="2012/blakely/index.html">2012/blakely/index.html</a></h3>
 <p>The author stated:</p>
 <pre><code>If there is a division by zero, square-root of a negative number, or similar
 operation, then the results are undefined.</code></pre>
 <h2 id="deckmyn"><a name="2012_deckmyn"></a>2012/deckmyn</h2>
-<h3 id="status-inabiaf---please-do-not-fix-49">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-50">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2012deckmyndeckmyn.c">Source code: <a href="2012/deckmyn/deckmyn.c">2012/deckmyn/deckmyn.c</a></h3>
 <h3 id="information-2012deckmynindex.html">Information: <a href="2012/deckmyn/index.html">2012/deckmyn/index.html</a></h3>
 <p>The author stated:</p>
@@ -2097,7 +2094,7 @@ Therefore, when preparing music in a file, care should be taken that the last
 musical element of a line is only 2 characters!</code></pre>
 <p>The manual referred to is <a href="2012/deckmyn/deckmyn.html">here</a>.</p>
 <h2 id="dlowe-3"><a name="2012_dlowe"></a>2012/dlowe</h2>
-<h3 id="status-inabiaf---please-do-not-fix-50">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-51">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2012dlowedlowe.c">Source code: <a href="2012/dlowe/dlowe.c">2012/dlowe/dlowe.c</a></h3>
 <h3 id="information-2012dloweindex.html">Information: <a href="2012/dlowe/index.html">2012/dlowe/index.html</a></h3>
 <p>The author stated:</p>
@@ -2109,7 +2106,7 @@ doesn’t make it possible to lock drawing to the display refresh rate.)</li>
 <li>Cannot build or run without X11 (or an X11 compatibility layer).</li>
 </ul>
 <h2 id="tromp"><a name="2012_tromp"></a>2012/tromp</h2>
-<h3 id="status-inabiaf---please-do-not-fix-51">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-52">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2012tromptromp.c">Source code: <a href="2012/tromp/tromp.c">2012/tromp/tromp.c</a></h3>
 <h3 id="information-2012trompindex.html">Information: <a href="2012/tromp/index.html">2012/tromp/index.html</a></h3>
 <p>The author stated:</p>
@@ -2129,7 +2126,7 @@ looking into a null-pointer environment:
 will likely dump core.
 </code></pre>
 <h2 id="vik-1"><a name="2012_vik"></a>2012/vik</h2>
-<h3 id="status-inabiaf---please-do-not-fix-52">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-53">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2012vikvik.c">Source code: <a href="2012/vik/vik.c">2012/vik/vik.c</a></h3>
 <h3 id="information-2012vikindex.html">Information: <a href="2012/vik/index.html">2012/vik/index.html</a></h3>
 <p>The author stated that the program will crash if no argument is passed to the
@@ -2139,7 +2136,7 @@ might also <a href="https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing
 fire</a> :-)</p>
 <h1 id="section-29"><a name="2013"></a>2013</h1>
 <h2 id="cable2"><a name="2013_cable2"></a>2013/cable2</h2>
-<h3 id="status-inabiaf---please-do-not-fix-53">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-54">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2013cable2cable2.c">Source code: <a href="2013/cable2/cable2.c">2013/cable2/cable2.c</a></h3>
 <h3 id="information-2013cable2index.html">Information: <a href="2013/cable2/index.html">2013/cable2/index.html</a></h3>
 <p>The author stated:</p>
@@ -2157,7 +2154,7 @@ antialiasing interferes with color detection in “color” mode.</li>
 and endianness conversion would make the source too large for IOCCC rule 2).</li>
 </ul>
 <h2 id="dlowe-4"><a name="2013_dlowe"></a>2013/dlowe</h2>
-<h3 id="status-inabiaf---please-do-not-fix-54">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-55">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2013dlowedlowe.c">Source code: <a href="2013/dlowe/dlowe.c">2013/dlowe/dlowe.c</a></h3>
 <h3 id="information-2013dloweindex.html">Information: <a href="2013/dlowe/index.html">2013/dlowe/index.html</a></h3>
 <p>This program will possibly crash or draw something strange with 0 args. Then
@@ -2174,7 +2171,7 @@ something funny (or will it? :-) ) and when will it just do nothing?</p>
 used.</li>
 </ul>
 <h2 id="endoh1"><a name="2013_endoh1"></a>2013/endoh1</h2>
-<h3 id="status-inabiaf---please-do-not-fix-55">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-56">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2013endoh1endoh1.c">Source code: <a href="2013/endoh1/endoh1.c">2013/endoh1/endoh1.c</a></h3>
 <h3 id="information-2013endoh1index.html">Information: <a href="2013/endoh1/index.html">2013/endoh1/index.html</a></h3>
 <p>From the author:</p>
@@ -2188,7 +2185,7 @@ used.</li>
 section</a>.</p>
 <p>–</p>
 <h2 id="endoh3"><a name="2013_endoh3"></a>2013/endoh3</h2>
-<h3 id="status-inabiaf---please-do-not-fix-56">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-57">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2013endoh3endoh3.c">Source code: <a href="2013/endoh3/endoh3.c">2013/endoh3/endoh3.c</a></h3>
 <h3 id="information-2013endoh3index.html">Information: <a href="2013/endoh3/index.html">2013/endoh3/index.html</a></h3>
 <p>From the author:</p>
@@ -2199,18 +2196,18 @@ such as <code>C2E2</code>.</p>
 <p>A workaround is inserting a whitespace: <code>C2 E2</code>.</p>
 <p>–</p>
 <h2 id="endoh4"><a name="2013_endoh4"></a>2013/endoh4</h2>
-<h3 id="status-inabiaf---please-do-not-fix-57">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-58">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2013endoh4endoh4.c">Source code: <a href="2013/endoh4/endoh4.c">2013/endoh4/endoh4.c</a></h3>
 <h3 id="information-2013endoh4index.html">Information: <a href="2013/endoh4/index.html">2013/endoh4/index.html</a></h3>
 <p>Invalid input files will very likely crash the program.</p>
 <h2 id="hou"><a name="2013_hou"></a>2013/hou</h2>
-<h3 id="status-inabiaf---please-do-not-fix-58">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-59">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2013houhou.c">Source code: <a href="2013/hou/hou.c">2013/hou/hou.c</a></h3>
 <h3 id="information-2013houindex.html">Information: <a href="2013/hou/index.html">2013/hou/index.html</a></h3>
 <p>This program will not terminate on its own; you must kill <code>hou</code> (but not Qiming
 Hou :-) ) yourself. This should not be fixed.</p>
 <h2 id="mills"><a name="2013_mills"></a>2013/mills</h2>
-<h3 id="status-inabiaf---please-do-not-fix-59">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-60">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2013millsmills.c">Source code: <a href="2013/mills/mills.c">2013/mills/mills.c</a></h3>
 <h3 id="information-2013millsindex.html">Information: <a href="2013/mills/index.html">2013/mills/index.html</a></h3>
 <p>The author reminds us that if you kill the program you will have to wait a short
@@ -2221,7 +2218,7 @@ have experience with socket programming :-) ) fix. However as the author pointed
 it out as a known limitation it is not a bug but a feature.</p>
 <h1 id="section-30"><a name="2014"></a>2014</h1>
 <h2 id="maffiodo1"><a name="2014_maffiodo1"></a>2014/maffiodo1</h2>
-<h3 id="status-inabiaf---please-do-not-fix-60">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-61">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2014maffiodo1prog.c">Source code: <a href="2014/maffiodo1/prog.c">2014/maffiodo1/prog.c</a></h3>
 <h3 id="information-2014maffiodo1index.html">Information: <a href="2014/maffiodo1/index.html">2014/maffiodo1/index.html</a></h3>
 <p>The author noted that in macOS the colours might be wrong. They gave a solution.
@@ -2243,7 +2240,7 @@ player become bigger, stay away from blocks!</p>
 <p>–</p>
 <p>but since it’s documented it’s considered a feature, not a bug to fix.</p>
 <h2 id="maffiodo2"><a name="2014_maffiodo2"></a>2014/maffiodo2</h2>
-<h3 id="status-inabiaf---please-do-not-fix-61">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-62">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2014maffiodo2prog.c">Source code: <a href="2014/maffiodo2/prog.c">2014/maffiodo2/prog.c</a></h3>
 <h3 id="information-2014maffiodo2index.html">Information: <a href="2014/maffiodo2/index.html">2014/maffiodo2/index.html</a></h3>
 <p>This program will very likely crash if no arg is given.</p>
@@ -2276,7 +2273,7 @@ rely on the entry as the below shows. One should be able to do:</p>
 <pre><code>IOCCC</code></pre>
 <h1 id="section-31"><a name="2015"></a>2015</h1>
 <h2 id="hou-1"><a name="2015_hou"></a>2015/hou</h2>
-<h3 id="status-inabiaf---please-do-not-fix-62">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-63">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2015houprog.c">Source code: <a href="2015/hou/prog.c">2015/hou/prog.c</a></h3>
 <h3 id="information-2015houindex.html">Information: <a href="2015/hou/index.html">2015/hou/index.html</a></h3>
 <p>The author stated:</p>
@@ -2299,14 +2296,14 @@ result. Error messages become garbled, though.</p></li>
 </ul>
 <p>–</p>
 <h2 id="mills2"><a name="2015_mills2"></a>2015/mills2</h2>
-<h3 id="status-inabiaf---please-do-not-fix-63">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-64">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2015mills2prog.c">Source code: <a href="2015/mills2/prog.c">2015/mills2/prog.c</a></h3>
 <h3 id="information-2015mills2index.html">Information: <a href="2015/mills2/index.html">2015/mills2/index.html</a></h3>
 <p>The program doesn’t look at the header of files so if it’s passed something hat
 is not compressed data it’s likely to crash.</p>
 <p>The program depends on little endian systems.</p>
 <h2 id="schweikhardt"><a name="2015_schweikhardt"></a>2015/schweikhardt</h2>
-<h3 id="status-inabiaf---please-do-not-fix-64">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-65">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2015schweikhardtprog.c">Source code: <a href="2015/schweikhardt/prog.c">2015/schweikhardt/prog.c</a></h3>
 <h3 id="information-2015schweikhardtindex.html">Information: <a href="2015/schweikhardt/index.html">2015/schweikhardt/index.html</a></h3>
 <p>The program assumes that <code>EOF</code> is <code>-1</code>. This can be fixed but at this time it is
@@ -2325,7 +2322,7 @@ use <code>8 * sizeof(typ)</code> bits per place. It does not work when <code>CHA
 <p>There was no IOCCC in 2017.</p>
 <h1 id="section-34"><a name="2018"></a>2018</h1>
 <h2 id="algmyr"><a name="2018_algmyr"></a>2018/algmyr</h2>
-<h3 id="status-inabiaf---please-do-not-fix-65">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-66">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2018algmyralgmyr.c">Source code: <a href="2018/algmyr/algmyr.c">2018/algmyr/algmyr.c</a></h3>
 <h3 id="information-2018algmyrindex.html">Information: <a href="2018/algmyr/index.html">2018/algmyr/index.html</a></h3>
 <p>The author wrote:</p>
@@ -2342,7 +2339,7 @@ channel id outside valid range). One argument in particular causes an infinite
 loop printing whitespace.</li>
 </ul>
 <h2 id="hou-2"><a name="2018_hou"></a>2018/hou</h2>
-<h3 id="status-inabiaf---please-do-not-fix-66">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-67">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2018houprog.c">Source code: <a href="2018/hou/prog.c">2018/hou/prog.c</a></h3>
 <h3 id="information-2018houindex.html">Information: <a href="2018/hou/index.html">2018/hou/index.html</a></h3>
 <p>When you run it on a JSON file you will see something like:</p>
@@ -2365,7 +2362,7 @@ likely see:</p>
 <p>where <code>[]</code> is the cursor. When this happens if you hit enter (this is necessary
 or else it’ll happen again) and then exit again (ctrl-e) and run <code>prog</code> again
 it’ll be okay.</p>
-<h3 id="status-inabiaf---please-do-not-fix-67">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-68">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <p>The author stated that if you make a typo it can happen that the boot loader can
 crash and halt. If this is the case type ctrl-e to quit the emulator and try
 again.</p>
@@ -2378,7 +2375,7 @@ referred to by the author but there was likely no typo involved.</p>
 exiting the program or else the next time you run it the file will not exist (or
 in the case of compiled code it won’t be executable).</p>
 <h2 id="vokes"><a name="2018_vokes"></a>2018/vokes</h2>
-<h3 id="status-inabiaf---please-do-not-fix-68">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-69">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2018vokesvokes.c">Source code: <a href="2018/vokes/vokes.c">2018/vokes/vokes.c</a></h3>
 <h3 id="information-2018vokesindex.html">Information: <a href="2018/vokes/index.html">2018/vokes/index.html</a></h3>
 <p>The author wrote the following:</p>
@@ -2422,19 +2419,19 @@ this program has nothing to do with a hand.</p></li>
 </ul>
 <h1 id="section-35"><a name="2019"></a>2019</h1>
 <h2 id="adamovsky"><a name="2019_adamovsky"></a>2019/adamovsky</h2>
-<h3 id="status-inabiaf---please-do-not-fix-69">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-70">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2019adamovskyprog.c">Source code: <a href="2019/adamovsky/prog.c">2019/adamovsky/prog.c</a></h3>
 <h3 id="information-2019adamovskyindex.html">Information: <a href="2019/adamovsky/index.html">2019/adamovsky/index.html</a></h3>
 <p>Certain input can crash this program. The file
 <a href="2019/adamovsky/crash.unl">crash.unl</a> is an example file.</p>
 <h2 id="burton"><a name="2019_burton"></a>2019/burton</h2>
-<h3 id="status-inabiaf---please-do-not-fix-70">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-71">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2019burtonprog.c">Source code: <a href="2019/burton/prog.c">2019/burton/prog.c</a></h3>
 <h3 id="information-2019burtonindex.html">Information: <a href="2019/burton/index.html">2019/burton/index.html</a></h3>
 <p>The author pointed out that some implementations of <code>wc(1)</code> show different
 values but his implementation matches that of macOS and FreeBSD.</p>
 <h2 id="ciura"><a name="2019_ciura"></a>2019/ciura</h2>
-<h3 id="status-inabiaf---please-do-not-fix-71">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-72">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2019ciuraprog.c">Source code: <a href="2019/ciura/prog.c">2019/ciura/prog.c</a></h3>
 <h3 id="information-2019ciuraindex.html">Information: <a href="2019/ciura/index.html">2019/ciura/index.html</a></h3>
 <p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> fixed the scripts so
@@ -2462,7 +2459,7 @@ in the de.sh/de.alt.sh scripts:</p>
 <p>The author does not it uses <code>gets()</code> and one will get warnings but it would be
 ideal if this was not the case.</p>
 <h2 id="duble"><a name="2019_duble"></a>2019/duble</h2>
-<h3 id="status-inabiaf---please-do-not-fix-72">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-73">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2019dubleprog.c">Source code: <a href="2019/duble/prog.c">2019/duble/prog.c</a></h3>
 <h3 id="information-2019dubleindex.html">Information: <a href="2019/duble/index.html">2019/duble/index.html</a></h3>
 <p>There are two things to be aware of with this entry.</p>
@@ -2489,13 +2486,13 @@ in the directory:</p>
 <div class="sourceCode" id="cb92"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> . <span class="at">-exec</span> file <span class="st">&#39;{}&#39;</span> <span class="dt">\;</span><span class="kw">|</span><span class="fu">grep</span> socket<span class="kw">|</span><span class="fu">cut</span> <span class="at">-f</span> 1 <span class="at">-d:</span> <span class="kw">|</span> <span class="fu">xargs</span> rm <span class="at">-f</span></span></code></pre></div>
 <p>though one might want to check that the program is not currently running. :-)</p>
 <h2 id="endoh"><a name="2019_endoh"></a>2019/endoh</h2>
-<h3 id="status-inabiaf---please-do-not-fix-73">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-74">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2019endohprog.c">Source code: <a href="2019/endoh/prog.c">2019/endoh/prog.c</a></h3>
 <h3 id="information-2019endohindex.html">Information: <a href="2019/endoh/index.html">2019/endoh/index.html</a></h3>
 <p>As a backtrace quine this entry is <strong>SUPPOSED to segfault</strong> so this should not be
 touched either.</p>
 <h2 id="karns"><a name="2019_karns"></a>2019/karns</h2>
-<h3 id="status-inabiaf---please-do-not-fix-74">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-75">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2019karnsprog.c">Source code: <a href="2019/karns/prog.c">2019/karns/prog.c</a></h3>
 <h3 id="information-2019karnsindex.html">Information: <a href="2019/karns/index.html">2019/karns/index.html</a></h3>
 <p>The author stated the following:</p>
@@ -2517,7 +2514,7 @@ not encountered this myself).</li>
 <li>The program contains some unused code and data.</li>
 </ul>
 <h2 id="lynn"><a name="2019_lynn"></a>2019/lynn</h2>
-<h3 id="status-inabiaf---please-do-not-fix-75">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-76">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2019lynnprog.c">Source code: <a href="2019/lynn/prog.c">2019/lynn/prog.c</a></h3>
 <h3 id="information-2019lynnindex.html">Information: <a href="2019/lynn/index.html">2019/lynn/index.html</a></h3>
 <p>The author wrote that there are a number of differences from what one might
@@ -2525,7 +2522,7 @@ expect. Rather than duplicate the information we refer you to the author’s
 remarks in the sections <a href="2019/lynn/index.html#syntax">Syntax</a> and
 <a href="2019/lynn/index.html#caveats">Caveats</a>.</p>
 <h2 id="mills-2"><a name="2019_mills"></a>2019/mills</h2>
-<h3 id="status-inabiaf---please-do-not-fix-76">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-77">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2019millsprog.c">Source code: <a href="2019/mills/prog.c">2019/mills/prog.c</a></h3>
 <h3 id="information-2019millsindex.html">Information: <a href="2019/mills/index.html">2019/mills/index.html</a></h3>
 <p>The author wrote that if you decide to change networks or use a different input
@@ -2545,14 +2542,14 @@ the hard limit with <code>limit -h stacksize</code> and set it with
 <code>limit stacksize 65532</code> (replacing <code>65532</code> with the actual hard limit).</p>
 <hr />
 <h2 id="poikola"><a name="2019_poikola"></a>2019/poikola</h2>
-<h3 id="status-inabiaf---please-do-not-fix-77">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-78">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2019poikolaprog.c">Source code: <a href="2019/poikola/prog.c">2019/poikola/prog.c</a></h3>
 <h3 id="information-2019poikolaindex.html">Information: <a href="2019/poikola/index.html">2019/poikola/index.html</a></h3>
 <p>This program will not validate input so it might fail or get stuck if invoked
 erroneously.</p>
 <p>Also, the maximum file size is 1GB.</p>
 <h2 id="yang"><a name="2019_yang"></a>2019/yang</h2>
-<h3 id="status-inabiaf---please-do-not-fix-78">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-79">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2019yangprog.c">Source code: <a href="2019/yang/prog.c">2019/yang/prog.c</a></h3>
 <h3 id="information-2019yangindex.html">Information: <a href="2019/yang/index.html">2019/yang/index.html</a></h3>
 <p>The author noted that if the program runs out of memory it is likely to crash.</p>
@@ -2561,7 +2558,7 @@ those <code>CR</code>s are silently dropped. In fact, most control codes are sil
 ignored except line feeds (preserved) and tabs (expanded to 8 spaces).’</p>
 <h1 id="section-36"><a name="2020"></a>2020</h1>
 <h2 id="burton-1"><a name="2020_burton"></a>2020/burton</h2>
-<h3 id="status-inabiaf---please-do-not-fix-79">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-80">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2020burtonprog.c">Source code: <a href="2020/burton/prog.c">2020/burton/prog.c</a></h3>
 <h3 id="information-2020burtonindex.html">Information: <a href="2020/burton/index.html">2020/burton/index.html</a></h3>
 <p>This entry is known to crash if no arg is specified. Although easy to fix it is
@@ -2570,7 +2567,7 @@ but it shouldn’t be made into a pull request).</p>
 <p>It will also show funny output with more than one arg. This should not be fixed
 either. But can you figure out why this happens?</p>
 <h2 id="carlini"><a name="2020_carlini"></a>2020/carlini</h2>
-<h3 id="status-inabiaf---please-do-not-fix-80">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-81">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2020carliniprog.c">Source code: <a href="2020/carlini/prog.c">2020/carlini/prog.c</a></h3>
 <h3 id="information-2020carliniindex.html">Information: <a href="2020/carlini/index.html">2020/carlini/index.html</a></h3>
 <p>The author stated that bad things happen if the entered move is outside of the
@@ -2582,7 +2579,7 @@ lose.</p>
 move.</p>
 <p>If you have audible bells enabled the program will beep at every turn.</p>
 <h2 id="ferguson1"><a name="2020_ferguson1"></a>2020/ferguson1</h2>
-<h3 id="status-inabiaf---please-do-not-fix-81">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-82">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2020ferguson1prog.c">Source code: <a href="2020/ferguson1/prog.c">2020/ferguson1/prog.c</a></h3>
 <h3 id="information-2020ferguson1index.html">Information: <a href="2020/ferguson1/index.html">2020/ferguson1/index.html</a></h3>
 <p>There are some things that might appear to be bugs but are actually features or
@@ -2590,14 +2587,14 @@ things that are misinterpreted as bugs. See the
 <a href="2020/ferguson1/bugs.html">bugs.html</a> and
 <a href="2020/ferguson1/troubleshooting.html">troubleshooting.html</a> files for details.</p>
 <h2 id="giles"><a name="2020_giles"></a>2020/giles</h2>
-<h3 id="status-inabiaf---please-do-not-fix-82">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-83">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2020gilesprog.c">Source code: <a href="2020/giles/prog.c">2020/giles/prog.c</a></h3>
 <h3 id="information-2020gilesindex.html">Information: <a href="2020/giles/index.html">2020/giles/index.html</a></h3>
 <p>The author noted that the program only supports WAV files that have
 exactly 16 bits per sample, but it allows any sample rate and any number of
 audio channels.</p>
 <h2 id="otterness"><a name="2020_otterness"></a>2020/otterness</h2>
-<h3 id="status-inabiaf---please-do-not-fix-83">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-84">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2020otternessprog.c">Source code: <a href="2020/otterness/prog.c">2020/otterness/prog.c</a></h3>
 <h3 id="information-2020otternessindex.html">Information: <a href="2020/otterness/index.html">2020/otterness/index.html</a></h3>
 <p>The author listed the following limitations:</p>
