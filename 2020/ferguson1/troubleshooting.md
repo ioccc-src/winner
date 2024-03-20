@@ -9,27 +9,16 @@ it as structured as possible/easiest to find.
 
 <a name="toc"></a>
 -   [The top wall isn't (all/some of the time) visible!](#topwall)
-
 -   [The snake isn't moving!](#notmoving)
-
 -   [I can't see the snake head (or other part of the snake)!](#invisiblehead)
-
 -   [I can't see the bug!](#invisiblebug)
-
 -   [The game froze!](#froze)
-
 -   [The game gets slower as the snake gets bigger!](#bigsnake)
-
 -   [I set SIZE=0 GROW=1, ate a bug but still only the head was visible!  Why?](#headonly)
-
 -   [I like black text on a white background but even with a white background terminal it ends up black!](#monochrome)
-
 -   [The text is hard to see (not bright enough)!](#toodark)
-
 -   [Can I move the snake faster temporarily without having to modify the wait time?](#movefaster)
-
 -   [On environmental variables more generally and string to int conversions](#envvars)
-
 -   [Errors and error reporting](#errors)
 
 

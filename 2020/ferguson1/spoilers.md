@@ -15,21 +15,13 @@ already knew that so no harm there, hey?
 <a name="toc"></a>
 
 -   [How does it work?](#works)
-
 -   [How does the snake movement work?](#movement)
-
 -   [Drawing (manual) and computer playing (automatic) modes](#manual-automatic)
-
 -   [Collision detection](#collision)
-
     *	[Cannibal collision detection](#cannibalcollision)
-
     *	[Collision detection when resizing the window of the game](#resizing)
-
 -   [Obfuscation](#obfuscation)
-
 -   [Skinning the snake (i.e. decreasing the iocccsize)](#skinning)
-
 -   [A few more interesting size optimisations](#size)
 
 
@@ -206,7 +198,6 @@ in real life increases in size like that so suddenly? :)
 
 # <a name="obfuscation" href="#toc">Obfuscation</a>
 
-
 - I make use of the C token pasting operator. Although this is well known it's
 probably less known and either way it's not as simple as just having the code
 that it translates to. For example why have:
@@ -223,7 +214,6 @@ that it translates to. For example why have:
     reading otherwise (depending on how you look at it maybe less?).
 
     It also helps save iocccsize bytes (but not as many as it used to!).
-
 
 - What is this block of code?
 
@@ -771,13 +761,9 @@ directives should also be centred in that way (that was my goal anyway).
 The following were intentional:
 
 *   53 lines.
-
 *   The number of lines per vertical block (3, 5, 3, 11, 7, 1, 1, 5, 7).
-
 *   Number of horizontal blocks (5)
-
 *   Number of vertical blocks (9)
-
 *   iocccsize 2053.
 
 The symmetry was even more important to my mind; observe that each vertical
@@ -955,7 +941,6 @@ after eating a bug) see the snake body char at 0,0. I'm not bothered about that
 though because the score line is meant to display something, it squeezes a few
 more bytes and having a space is hardly an imposition on usage (and for that
 matter having a 'o' at 0,0 isn't either).
-
 
 [gameplay.md]: gameplay.md
 [gameplay.html]: gameplay.html

@@ -8,28 +8,16 @@ sanity if it causes any problems) as well as colours (limitations etc.).
 <a name="toc"></a>
 
 -   [Capabilities support testing program](#termcaps)
-
 -   [Setting the game dimensions](#dimensions)
-
     *	[The LINES and COLUMNS environmental variables](#linescolumns)
-
     *	[Terminal insanity](#insanity)
-
     *	[Restoring the terminal](#restore)
-
     *	[Terminal size abuse](#abuse)
-
 -   [Terminal limitations](#termlimitations)
-
-
 -   [Terminal colours](#colours)
-
     *	[Curses background](#background)
-
     *   [Monochrome terminals](#monochrome)
-
     *   [Colour limitations](#colourlimitations)
-
     *   [Disabling colour](#disablecolour)
 
 

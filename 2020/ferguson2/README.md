@@ -161,28 +161,17 @@ I have more information on this entry like the testing procedure at
 
 <a name="toc"></a>
 -   [IOCCC: an Enigma?](#ioccc)
-
 -   [The 1992 Nathan Sidwell entry](#nathan)
-
 -   [Usage](#usage)
     *	[Example run](#example)
-
 -   [The recode.c configurator](#recode)
-
 -   [A parser subtlety that could cause confusion](#parsersubtlety)
-
 -   [On the source code layout](#layout)
-
 -   [Obfuscation](#obfuscation)
-
 -   [Bugs, limitations, differences from the real Enigma machines and general notes](#bugs)
-
 -   [Kriegsmarine support?](#kriegsmarine)
-
 -   [Portability](#portability)
-
 -   [Winning thoughts, dedications and thanks](#winning)
-
 -   [Resources](#resources)
 
 ### <a name="ioccc" href="#toc">IOCCC: an Enigma?</a>

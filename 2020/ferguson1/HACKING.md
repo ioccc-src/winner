@@ -30,38 +30,24 @@ snake's syllabary) for all snake and herpetologist programmers alike.
 
     - Modifying the colours
 	- Background colour
-
     - Modifying the characters for the wall, bug and snake
-
     - Modifying input keys
-
     - Modifying the status/score line
-
     - Make it so the snake starts at a random location
 
 * Additions
 
     - Health (and/or Lives)
-
     - Saving the game
-
     - Different types of walls
 	- Blockades
-
     - Diagonal movement
-
     - Special abilities
-
     - Obstacles
-
     - More than one bug
-
     - Power-ups
-
     - Snakeskin shedding (becoming an obstacle)
-
     - Snake moves faster over time
-
     - Max times the bug evades before game over
 
 # Modifications

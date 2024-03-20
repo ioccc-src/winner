@@ -7,59 +7,41 @@ for the input keys.
 
 1.  [Testing terminal environment/capabilities](#support)
 
-
 2.  [Input keys](#input)
 
-
 3.  [Gameplay](#gameplay)
+
     *   [The initial screen](#initial)
-
     *   [Playing the game](#playing)
-
     *   [Walls](#walls)
-
     *   [Cannibalism](#cannibalism)
-
     *   [Stretching (shedding)](#shedding)
-
     *   [Winning](#winning)
-
     *   [Quitting](#quitting)
 
 
 4.  [Gameplay modes](#modes)
+
     *   [**Photosensitive epilepsy/Stimulation overload trigger warnings**](#warning)
-
     *   [Drawing / Practice mode](#drawing)
-
     *   [Computer playing / Automatic mode (**Photosensitive epilepsy/Stimulation overload trigger**)](#auto)
-
 	    *	[Variations](#auto-variations)
-
     *   [Grow-Shrink (Positive/Negative Winning) mode](#grow-shrink)
-
     *   [Hypnotic / Sleepy mode (**Photosensitive epilepsy/Stimulation overload trigger**)](#hypnotic)
-
     *   [Stimulation / Calming mode](#stim)
-
     *   [Other ideas](#other-ideas)
-
 
 5.  [Scripts](#scripts)
 
     *	[Colours selection](#colours)
-
     *	[Automate the above gameplay modes](#preset)
 
 
 6.  [Other game variables](#variables)
 
     * [WAIT		    -	Snake speed](#wait)
-
     * [EVADE		    -	Bug evasion frequency](#evade)
-
     * [SIZE / MAXSIZE	    -	Initial snake / max sizes](#sizes)
-
     * [GROW / SHEDS	    -	Growth / Shedding sizes](#growth)
 
 
@@ -80,9 +62,7 @@ For troubleshooting other problems see [troubleshooting.html][]
 # 2. <a name="input" href="#toc">Input keys</a>
 
 -   Left, right, up and down **arrow keys**: move that direction.
-
 -   `q` (and `Q`): quit the game.
-
 -   Space: pause/resume the game (direction keys will also resume).
     Note that no other keys will resume the game; however if you press a key
     that `getch()` picks up on and the game is not paused then it will be as if

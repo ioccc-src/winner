@@ -13,35 +13,20 @@ award](../ferguson1/prog.c) since it's also there and not enciphered.
 <a name="toc"></a>
 
 -   [What is recode and why is it recommended?](#recode)
-
 -   [Options](#options)
-
     *	[Protecting against the same I/O file](#samefile)
-
     *	[File options parser limitation](#fileoptions)
-
     *	[`-R` option validation?](#validation)
-
 -   [Piping commands to recode](#pipingtorecode)
-
 -   [Piping recode to the Enigma simulator](#pipingtoenigma)
-
 -   [Manually test the recode program with the Enigma program](#manuallytest)
-
 -   [Only write config file](#onlyconfig)
-
 -   [Reusing a configuration](#reuseconfig)
-
 -   [Write config file, read data file and pass to Enigma simulator](#passtoenigma)
-
 -   [Piping directly to the Enigma code once (with randomised settings, saved)](#directlytoenigma)
-
 -   [Usage conclusion](#conclusion)
-
 -   [Example additions](#additions)
-
 -   [Example uses](#exampleuses)
-
 -   [Deliciously Enigmatic: Double-layered Chocolate Fudge Cake](#cake)
 
 

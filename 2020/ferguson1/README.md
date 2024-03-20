@@ -234,25 +234,15 @@ very important.
 <a name="toc"></a>
 
 *   ['Bugs'](#bugs)
-
 *   [NAQs/IAQs (Never/Infrequently Asked Questions)](#naqs)
-
     -	[Do I have any inspirations for this entry?](#inspirations)
-
     -	[Are there any features I thought of that I wanted to implement but did not get to for some reason or another?](#features)
-
     -	[Are there ways that one can make this game easier?](#easier)
-
     -	[Are there ways to make it harder?](#harder)
-
     -	[How do snakes grow in real life?](#moult)
-
     -	[Any other interesting things about snakes?](#other)
-
     -	[Why can you go the opposite direction and so immediately die when not cannibalising?](#opposite)
-
     -	[Do you have any **DELICIOUS CHOCOLATE CAKE** recipes?](#chocolatecake)
-
     -	[What are the files prog.alt.c, prog.2.c, prog-j.c and prog.alt.c ?](#alt)
 
 
@@ -345,7 +335,6 @@ who plays it enjoys it as much as I enjoyed writing/playing it.
 ####   <a name="easier" href="#toc">Are there ways that one can make this game easier?</a>
 
 I can think of at the least the following:
-
 
 -   Bigger screen will allow for freer movement (at least for more time?).
 -   Increasing the movement (key press) wait to give you more time to choose
