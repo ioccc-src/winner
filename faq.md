@@ -190,43 +190,33 @@ state something along the lines of:
 
 
 #### maze generator
+
 - [1985/shapiro](years.html#1985_shapiro)
-
 - [1991/buzzard](years.html#1991_buzzard)
-
 - [1995/cdua](years.html#1995_cdua)
-
 - [1995/dodsond2](years.html#1995_dodsond2)
-
 - [1998/bas1](years.html#1998_bas1)
 
 
 #### tic-tac-toe/noughts and crosses/Xs and Os game
 
 - [1991/westley](years.html#1991_westley)
-
 - [1996/jonth](years.html#1996_jonth)
-
 - [2020/carlini](years.html#2020_carlini)
 
 
 #### solitaire/Othello game
 
 - [1987/lievaart](years.html#1987_lievaart)
-
 - [1994/dodsond1](years.html#1994_dodsond1)
 
 
 #### generating small primes (below is the list of all prime related winning entries)
 
 - [1985/august](years.html#1985_august)
-
 - [1988/applin](years.html#1988_applin)
-
 - [1994/weisberg](years.html#1994_weisberg)
-
 - [1995/makarios](years.html#1995_makarios)
-
 - [1996/dalbec](years.html#1996_dalbec)
 
 - [2000/bellard](years.html#2000_bellard)
@@ -238,26 +228,18 @@ anymore._
 #### self reproducing program
 
 - [1990/scjones](years.html#1990_scjones)
-
 - [1994/smr](years.html#1994_smr) - _do not claim your program is the smallest one without seeing this!
-
 - [2000/dhyang](years.html#2000_dhyang) - _unless you beat this one, your chances are slim_
 
 
 #### entries that just print "Hello, world!"
 
 - [1984/anonymous](years.html#1984_anonymous)
-
 - [1985/applin](years.html#1985_applin)
-
 - [1986/applin](years.html#1986_applin)
-
 - [1986/holloway](years.html#1986_holloway)
-
 - [1989/jar.1](years.html#1989_jar.1)
-
 - [1992/lush](years.html#1992_lush)
-
 - [2000/tomx](years.html#2000_tomx)
 
 _**...it's so 20th century...**_
@@ -266,33 +248,24 @@ _**...it's so 20th century...**_
 #### entries that use some complex state machine/table to print something
 
 - [1988/isaak](years.html#1988_isaak)
-
 - [1988/phillipps](years.html#1988_phillipps)
-
 - [2018/ciura](years.html#2018_ciura)
-
 - [2018/giles](years.html#2018_giles)
 
 
 #### rot13
 
 - [1985/sicherman](years.html#1985_sicherman)
-
 - [1989/westley](years.html#1989_westley)
-
 - [1990/dg](years.html#1990_dg)
-
 - [1991/fine](years.html#1991_fine)
 
 
 #### **pi** or **e** computation
 
 - [1986/august](years.html#1986_august)
-
 - [1988/robison](years.html#1988_robison)
-
 - [1988/westley](years.html#1988_westley)
-
 - [1989/roemer](years.html#1989_roemer)
 
 
@@ -744,13 +717,9 @@ appreciate the opportunity for a fun read as well as a chuckle or two.
 #### What helps:
 
 - explaining what your entry does
-
 - how to entice it to do what it is supposed to do
-
 - what obfuscations are used
-
 - what are the limitations of your entry in respect of portability and/or input data
-
 - how it works (if you are really condescending)
 
 
@@ -760,12 +729,10 @@ appreciate the opportunity for a fun read as well as a chuckle or two.
 called the **IOCCC**, not the **INVOCCC** :-) ); but even if you do not admit
 it, not very obfuscated entries have a minuscule chance to win (although
 [2000/tomx](years.html#2000_tomx) is a notable counterexample).
-
 - mentioning your name or any identifying information in the remark section (or
 in the C code for that matter) - we like to be unbiased during the judging
 rounds; we look at the author name only if an entry wins. See the guidelines if
 this is not clear!
-
 - leaving the remark section empty.
 
 
@@ -814,32 +781,21 @@ or "Best of Show award.
 In 1984-1987, the grand prize winning entries are:
 
 - [1984/mullender](years.html#1984_mullender)
-
 - [1985/shapiro](years.html#1985_shapiro)
-
 - [1986/wall](years.html#1986_wall)
-
 - [1987/lievaart](years.html#1987_lievaart)
 
 Starting from 1988, the entry we liked the most in that year is called
 "Best of Show". Here are the "Best of Show" entries:
 
 - [1988/applin](years.html#1988_applin)
-
 - [1989/jar.2](years.html#1989_jar.2)
-
 - [1990/theorem](years.html#1990_theorem)
-
 - [1991/brnstnd](years.html#1991_brnstnd)
-
 - [1992/vern](years.html#1992_vern)
-
 - [1996/august](years.html#1996_august)
-
 - [1998/banks](years.html#1998_banks)
-
 - [2000/jarijyrki](years.html#2000_jarijyrki)
-
 - [2020/carlini](years.html#2020_carlini)
 
 
@@ -848,9 +804,7 @@ winning entry. So to give a nod to the entry that had the highest approval ranki
 from the judges, they used the following awards:
 
 - [1993/rince](years.html#1993_rince) - Most Well Rounded
-
 - [1994/shapiro](years.html#1994_shapiro) - Most Well Rounded
-
 - [1995/leo](years.html#1995_leo) - Best Use of Obfuscation
 
 These could be considered the 'best entry' for those years with 1 or
