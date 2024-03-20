@@ -1645,69 +1645,10 @@ There was no IOCCC in 1999.
 
 ## <a name="2000_dlowe"></a>2000/dlowe
 
-### STATUS: doesn't work with some platforms - please help us fix
-### Source code: [2000/dlowe/dlowe.c](2000/dlowe/dlowe.c)
-### Information: [2000/dlowe/index.html](2000/dlowe/index.html)
-
-This **MIGHT** be better described as doesn't work with some versions of perl:
-the author states that in perl < 5.6.0 there is a bug with a core dump in what
-they said is in `Perl_sv_upgrade`. This does not exist in the code, seemingly,
-but it might be that this is impossible to fix without getting a perl upgrade.
-In any event the below details a problem. Another bug that happens in linux also
-is below.
-
-In macOS this program crashes. A tip from Cody is that the code that crashes is:
-
-```c
-perl_eval_sv
-(newSVpv("_:$_=               <> ; defined               or exit; @ARGV"
-"=split; __:$_=             shift;defined or             goto _; chomp "
-";(m*^\\x70oO"              "\\x74$*i)?(pri"              "nt \"$_ w\\x"
-"61s h\\145r\\x"            "65!\\n\"):((m*"            "^\\s\\*(-?\\d+"
-"(\\.\\d+)?)\\s"            "\\*$*)?(push@SS            ,$1):(&{chr(((o"
-"rd)%39)+3**4)x2             } )); goto __;             sub ff { @SS= ("
-")} sub __{print            \"stack empty\\"            "n\"} sub ss{$#"
-"SS<0 and goto &            __; print $SS[$"            "#SS].\"\\n\"} "
-"sub SS{ $#SS<0              and goto &__ ;              print pop @SS}"
-"sub _ { print              \"divide by zer"            "o\\n\"}sub ii{"
-"map{ print\"$_"            "\\n\" } reverse            @SS} sub AUTOLO"
-"AD { print\"un"            "implemented\\n"            "\"} sub gg{ $#"
-"SS<0 and goto              &__;push@SS,$SS[            $#SS]} sub uu{ "
-"$#SS<1 and goto            &__;$SS[ $#SS]+=            $SS[$#SS-1];$SS"
-"[$#SS-1]=$SS[$"            "#SS]-$SS[$#SS-"            "1]; $SS[$#SS]-"
-"=$SS[$#SS-1]}                   ",0),0                   );
-```
-
-and in particular it appears that it is the perl itself. In other words if one
-changes it to be:
-
-```c
-perl_eval_sv(newSVpv("",0),0);
-```
-
-it will not crash. But of course it won't do anything either. So it's more
-specifically that the call to `newSVpv()` crashes the code but _INSIDE_
-(key point!) the call to `perl_eval_sv()` that does it. Given what the author
-stated and that the version of perl is < than 5.6.0 that might be exactly what
-is going on.
-
-The example command above _should_ print:
-
-```sh
-$ echo "13 14 15 16 17 + - * / p" | ./dlowe
--0.0515873015873016
-```
-
-and that's what it shows in linux.
-
-Note that with different perl libraries in macOS (for instance from
-[Homebrew](https://brew.sh) and [MacPorts](https://www.macports.org) it will
-likely print different warnings when compiling. It was observed that with
-Homebrew it does not report any warnings but with MacPorts it results in a total
-of 92 warnings! Nonetheless neither works okay and both crash.
-
 
 ### STATUS: known bug - please help us fix
+### Source code: [2000/dlowe/dlowe.c](2000/dlowe/dlowe.c)
+### Information: [2000/dlowe/index.html](2000/dlowe/index.html)
 
 The author gives an example command:
 
@@ -1910,6 +1851,63 @@ unimplemented
 
 which might (?) suggest that the `+` operator is unimplemented. Unfortunately it
 has been many years since I have used perl and I was never a guru either.
+
+
+### STATUS: INABIAF - please **DO NOT** fix
+
+The author states that in perl < 5.6.0 there is a bug with a core dump in what
+they said is in `Perl_sv_upgrade`. As this is documented it is not considered a
+bug to be fixed. For the curious this will crash in macOS. Cody notes that the
+code that crashes is:
+
+```c
+perl_eval_sv
+(newSVpv("_:$_=               <> ; defined               or exit; @ARGV"
+"=split; __:$_=             shift;defined or             goto _; chomp "
+";(m*^\\x70oO"              "\\x74$*i)?(pri"              "nt \"$_ w\\x"
+"61s h\\145r\\x"            "65!\\n\"):((m*"            "^\\s\\*(-?\\d+"
+"(\\.\\d+)?)\\s"            "\\*$*)?(push@SS            ,$1):(&{chr(((o"
+"rd)%39)+3**4)x2             } )); goto __;             sub ff { @SS= ("
+")} sub __{print            \"stack empty\\"            "n\"} sub ss{$#"
+"SS<0 and goto &            __; print $SS[$"            "#SS].\"\\n\"} "
+"sub SS{ $#SS<0              and goto &__ ;              print pop @SS}"
+"sub _ { print              \"divide by zer"            "o\\n\"}sub ii{"
+"map{ print\"$_"            "\\n\" } reverse            @SS} sub AUTOLO"
+"AD { print\"un"            "implemented\\n"            "\"} sub gg{ $#"
+"SS<0 and goto              &__;push@SS,$SS[            $#SS]} sub uu{ "
+"$#SS<1 and goto            &__;$SS[ $#SS]+=            $SS[$#SS-1];$SS"
+"[$#SS-1]=$SS[$"            "#SS]-$SS[$#SS-"            "1]; $SS[$#SS]-"
+"=$SS[$#SS-1]}                   ",0),0                   );
+```
+
+and in particular it appears that it is the perl itself. In other words if one
+changes it to be:
+
+```c
+perl_eval_sv(newSVpv("",0),0);
+```
+
+it will not crash. But of course it won't do anything either. So it's more
+specifically that the call to `newSVpv()` crashes the code but _INSIDE_
+(key point!) the call to `perl_eval_sv()` that does it. Given what the author
+stated and that the version of perl is < than 5.6.0 which the author states can
+crash this makes sense.
+
+The example command above _should_ print:
+
+```sh
+$ echo "13 14 15 16 17 + - * / p" | ./dlowe
+-0.0515873015873016
+```
+
+and that's what it shows in linux.
+
+Note that with different perl libraries in macOS (for instance from
+[Homebrew](https://brew.sh) and [MacPorts](https://www.macports.org) it will
+likely print different warnings when compiling. It was observed that with
+Homebrew it does not report any warnings but with MacPorts it results in a total
+of 92 warnings! Nonetheless neither works okay and both crash.
+
 
 
 ## <a name="2000_primenum"></a>2000/primenum

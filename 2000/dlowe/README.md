@@ -18,8 +18,8 @@ perl -MConfig -e 'print "$Config{archlibexp}/CORE\n"'
 The current status of this entry is:
 
 ```
-STATUS: doesn't work with some platforms - please help us fix
 STATUS: known bug - please help us fix
+STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2000 dlowe bugs](../../bugs.html#2000_dlowe).
