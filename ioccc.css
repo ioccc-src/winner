@@ -573,10 +573,15 @@ a:active {
   float: left;
   width: 80%;
   padding-left: 10px;
-  padding-bottom: 10px;
 }
 .rightcolumn p, code, pre, h1, h2, h3, h4, h5, h6 {
   color: black;
+}
+.rightcolumn p, code, pre {
+  padding-top: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 0;
 }
 
 /* Right column headings */
@@ -599,6 +604,12 @@ a:active {
   padding-right: 10px;
   border-style:  solid hidden hidden hidden;
   text-decoration: none;
+}
+.footer p, code, pre {
+  padding-top: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 0;
 }
 
 .footer a {
