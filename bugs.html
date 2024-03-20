@@ -283,8 +283,7 @@ the same issue.</p>
 clang</strong> despite the fact it might appear to be gcc: no symlink and both gcc and
 clang exist but the gcc is clang which you’ll see if you run <code>gcc --version</code>.</p>
 <p>A tip and some fix methods from Cody: in the older days args to main() not given
-a type were implicit ints but when they’re required to be <code>char **</code> this can
-cause a problem. In some cases Cody was able to use a <code>char *</code> inside <code>main()</code>
+a type were implicit ints but when they’re required to be <code>char ** this can cause a problem. In some cases Cody was able to use a</code>char *<code>inside</code>main()`
 (see <a href="1989/tromp/tromp.c">1989/tromp/tromp.c</a> and
 <a href="1986/holloway">1986/holloway/holloway.c</a> for two examples though done slightly
 differently). In other cases he was able to dereference the pointers to be used
@@ -2183,7 +2182,7 @@ used.</li>
 <p>This program supports only “Combinator-calculus style notation” of Lazy K.
 “Unlambda style” and “Iota and Jot” style are not supported.</p>
 <p>Also, it requires a space between identifiers. In short, use <code>(S K)</code> instead of
-<code>(SK)</code>, “`sk”, <code>**i*i*i*ii*i*i*ii</code>, or <code>11111100011100</code>.</p>
+<code>(SK)</code>, “`sk”, **i<em>i</em>i<em>ii</em>i<em>i</em>ii<code>, or</code>11111100011100`.</p>
 <p>Huge memory may be required to compile the program (about 300 MB on my machine).</p>
 <p>In addition, there are some limitations (and workarounds) mentioned in <a href="2013/endoh1/index.html#spoiler">Spoiler
 section</a>.</p>

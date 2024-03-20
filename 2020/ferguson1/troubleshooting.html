@@ -424,7 +424,7 @@ so that by setting the size to -1 it went to the max unsigned value):</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> MAXSIZE=-1 ./prog</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">memory</span> error</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ex">X:0/157</span> Y:0/42 S:3/18446744073709551614 B:0</span></code></pre></div>
-<p>BTW: There are two arrays that have to be <strong><code>MAXSIZE</code></strong> (technically + 1).</p>
+<p>BTW: There are two arrays that have to be <strong>MAXSIZE</strong> (technically + 1).</p>
 <p>Is it possible that some value specified by the user could mess this up? I do
 not know but what I do know is that because it’s unsigned it can’t be negative;
 if the max size is 0 then the array size will be 1 but it won’t matter because

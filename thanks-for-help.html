@@ -181,21 +181,14 @@ be kept in:</p>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span> x <span class="op">{</span><span class="kw">sizeof</span><span class="op">(</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>     <span class="dt">double</span><span class="op">(%</span>s<span class="op">,%</span>D<span class="op">)(*)())</span></span></code></pre></div>
 <p>This does mean that there cannot be a second arg to <code>main()</code>
-as clang requires that to be a <code>char **</code> and the <code>char</code> redefined would not
-allow this. Some versions of clang say that <code>main()</code> must have either 0, 2 or 3
-args but these versions do not object to 1 arg. However as the <code>char</code> macro
-seems more obscure and it is possible that a new version of clang will be even
-more strict the <code>int i</code> parameter in <code>main()</code> was moved to be inside <code>main()</code>,
-set to non-zero (setting <code>i</code> to 0 will not work). This way <code>main()</code> has zero
+as clang requires that to be a <code>char ** and the</code>char<code>redefined would not allow this. Some versions of clang say that</code>main()<code>must have either 0, 2 or 3 args but these versions do not object to 1 arg. However as the</code>char<code>macro seems more obscure and it is possible that a new version of clang will be even more strict the</code>int i<code>parameter in</code>main()<code>was moved to be inside</code>main()<code>, set to non-zero (setting</code>i<code>to 0 will not work). This way</code>main()` has zero
 args.</p>
 <p>Observe how on line 29 there is a call to <code>main()</code> which does pass in a
 parameter. It has never been observed to be an error to pass in too many
 parameters to a function (<code>main()</code> or otherwise - it warns with other functions
 but does not appear to with <code>main()</code>) but only that <code>main()</code> itself has a
 certain number of args (in some versions) and that the first arg is an <code>int</code> and
-the others are <code>char **</code>s. This is why the arg was removed and the call to
-<code>main()</code> was not updated beyond what had to be done to fix it for compilers that
-do not support <code>-traditional-cpp</code>.</p>
+the others are <code>char **s. This is why the arg was removed and the call to</code>main()<code>was not updated beyond what had to be done to fix it for compilers that do not support</code>-traditional-cpp`.</p>
 <p>If the ANSI C committee or a new version of clang messes this up (both of which
 seems possible) it is easy to fix but it is hoped that this won’t happen.</p>
 <p>Originally <a href="#yusuke">Yusuke</a> supplied a patch so that this entry would compile with gcc -
@@ -367,7 +360,7 @@ program the added <code>input.txt</code> file.</p>
 <h2 id="holloway-index.html"><a name="1986_holloway"></a><a href="1986/holloway/holloway.c">1986/holloway</a> (<a href="1986/holloway/index.html%5D">index.html</a>)</h2>
 <p><a href="#cody">Cody</a> fixed this to compile and work with clang (it already worked with gcc).
 The problem was that clang is more strict about the type of second arg to
-<code>main()</code>. However simply changing it to a <code>char **</code> and updating the <code>*s</code> to <code>**s</code>
+<code>main()</code>. However simply changing it to a <code>char ** and updating the</code>*s<code>to **s</code>
 caused a segfault. By adding a new variable, <code>char *t</code>, initialising it to <code>s</code>
 and then using <code>t</code> instead of <code>s</code> it compiles and runs successfully under clang
 and gcc.</p>
@@ -605,11 +598,11 @@ index.html file for more details.</p>
 publication, in the remarks, to help understand the entry, and for fun.</p>
 <h2 id="phillipps-index.html"><a name="1988_phillipps"></a><a href="1988/phillipps/phillipps.c">1988/phillipps</a> (<a href="1988/phillipps/index.html%5D">index.html</a>)</h2>
 <p><a href="#cody">Cody</a> fixed this for modern systems. It did not compile with clang because it
-requires the second and third args of <code>main()</code> to be <code>char **</code> but even before
+requires the second and third args of <code>main()</code> to be `char ** but even before
 that with gcc it printed garbage and then crashed.</p>
 <p>After fixing it for clang by changing the very <code>main()</code> (in fact it called
 itself up to 12 times!) to call the new function <code>pain()</code> (chosen because it’s a
-pain that clang requires these args to be <code>char **</code> :-), which is just as
+pain that clang requires these args to be `char ** :-), which is just as
 recursive, with the correct args it now works with both gcc and clang.</p>
 <p>Later Cody improved the fix to make it look a bit more like the original, using
 K&amp;R style functions, and trying to match the format as best as possible of what
@@ -771,25 +764,19 @@ might just not be possible.</p>
 <p>The way it was fixed might be hard to see and describe but this is an attempt.
 Because <code>main()</code>’s args were all <code>int</code>s, <code>main()</code> had to call a new function
 which is allowed to have args as <code>int</code> (instead of <code>main()</code>’s args being int and
-the rest being <code>char **</code>) but this is not as straight forward as it is for other
-entries (if you look at the code you might see what is meant; the function called
-is <code>pain()</code>).</p>
+the rest being <code>char **) but this is not as straight forward as it is for other entries (if you look at the code you might see what is meant; the function called is</code>pain()`).</p>
 <p>The args of <code>main()</code> had to be set to the right type but only three args, <strong>not
 four</strong>, even though the original program has four args. This is because not all
 versions of clang support four args and that is one of the issues with version 2
 and 3 as it generates <code>main()</code> to have four args and the wrong type, all <code>int</code>s.</p>
-<p>In the call to the new function, <code>pain()</code>, from <code>main()</code>, one of the <code>char **</code>s
-is used twice, once as <code>argc</code> with bitwise AND with 2, naturally first being
-cast to an <code>int</code> (<code>(int)ABBA&amp;2</code>), and once as a <code>char **</code>, the fourth arg to
+<p>In the call to the new function, <code>pain()</code>, from <code>main()</code>, one of the <code>char **s is used twice, once as</code>argc<code>with bitwise AND with 2, naturally first being cast to an</code>int<code>(</code>(int)ABBA&amp;2<code>), and once as a</code>char **, the fourth arg to
 <code>pain()</code> (yes even though <code>pain()</code> takes all <code>int</code>s).</p>
 <p>The argc,, meanwhile, <code>tang</code>, is used once and the second arg, <code>char **gnat</code> is
 used once (observe how <code>tang</code> is <code>gnat</code> spelt backwards as this is one of the
 things that makes this a masterpiece and very hard if not impossible to fix
 completely). Fortunately it is not actually necessary to use all four args (of
 <code>main()</code>) in the call which might or might not be surprising, especially as it
-uses one of the args, a <code>char **</code>, instead of an <code>int</code> (through casts), twice
-rather than just passing in for the fourth arg (the fourth arg passed in is the
-third arg to <code>main()</code>).</p>
+uses one of the args, a <code>char **, instead of an</code>int<code>(through casts), twice rather than just passing in for the fourth arg (the fourth arg passed in is the third arg to</code>main()`).</p>
 <p>This program heavily uses recursion and depending on the number of args it will
 print out output normally, ROT13 it, show it backwards or both. Along with the
 ROT13 and reversed output of the code, it is the <strong>comments that create the
@@ -1246,7 +1233,8 @@ new char arrays (always cleared in the beginning of the loop) and then using
 both numbers (using <code>"%o %o"</code> does not solve the problem).</p>
 <h2 id="westley-index.html-5"><a name="1992_westley"></a><a href="1992/westley/westley.c">1992/westley</a> (<a href="1992/westley/index.html%5D">index.html</a>)</h2>
 <p><a href="#cody">Cody</a> fixed this to work for clang by changing the third and fourth arg of
-<code>main()</code> to be <code>char **</code> inside <code>main()</code>; clang requires args 2 - 4 to be <code>char **</code> and some versions do not even allow a fourth arg.</p>
+<code>main()</code> to be <code>char ** inside</code>main()<code>; clang requires args 2 - 4 to be</code>char
+** and some versions do not even allow a fourth arg.</p>
 <p>He also added the alternate version that the author gave in the remarks that is
 specifically for the USA rather than the world. This had to be fixed for clang
 as well to make the args of <code>main()</code> be the correct type and by moving the body
@@ -1341,13 +1329,12 @@ compile time. See the index.html for details.</p>
 <p><a href="#cody">Cody</a> made this use <code>fgets(3)</code> not <code>gets(3)</code>.</p>
 <h2 id="vanb-index.html-1"><a name="1993_vanb"></a><a href="1993/vanb/vanb.c">1993/vanb</a> (<a href="1993/vanb/index.html%5D">index.html</a>)</h2>
 <p><a href="#cody">Cody</a> fixed this to work with clang. The problem was that the third arg to main()
-was not a <code>char **</code>. Instead <code>O5()</code> (which was <code>main()</code> via <code>-DO5=main</code>) is now
+was not a <code>char **. Instead</code>O5()<code>(which was</code>main()<code>via</code>-DO5=main`) is now
 its own function which main() calls with the right parameters.</p>
 <p>Later Cody fixed it again to look much more like the original where only a
 single line is added, that of <code>main()</code>, which calls <code>O5()</code>. This was done through
 <code>-include stdio.h</code> at the compiler (in the Makefile) and by removing the <code>O3</code>
-variable (an int) at the top of the file, instead making it a <code>char **</code> in
-<code>main()</code> (<code>O5()</code> had three args) but then passing in <code>0</code> to <code>O5()</code> for the third
+variable (an int) at the top of the file, instead making it a <code>char ** in</code>main()<code>(</code>O5()<code>had three args) but then passing in</code>0<code>to</code>O5()` for the third
 arg (as it was 0 at file scope already this is perfectly fine and it means
 there’s no need to cast it to an int in the function call though that would also
 work).</p>
@@ -1988,7 +1975,7 @@ compiler that does not support this would not work. Thus we use the modification
 by Yusuke.</p>
 <h2 id="cheong-index.html"><a name="2001_cheong"></a><a href="2001/cheong/cheong.c">2001/cheong</a> (<a href="2001/cheong/index.html%5D">index.html</a>)</h2>
 <p><a href="#cody">Cody</a> fixed this to work with clang by adding another function that is allowed to
-have a third arg as an int, not a <code>char **</code>. He chose <code>pain()</code> because it’s a four
+have a third arg as an int, not a <code>char **. He chose</code>pain()` because it’s a four
 letter word that would match the format and because it’s pain that clang forces
 this. :-) This fix makes a point of the author’s notes on portability no longer
 valid, BTW.</p>
@@ -2046,9 +2033,7 @@ SC2248 (style): Prefer double quoting even when variables don&#39;t contain spec
 <h2 id="herrmann2-index.html"><a name="2001_herrmann2"></a><a href="2001/herrmann2/herrmann2.c">2001/herrmann2</a> (<a href="2001/herrmann2/index.html%5D">index.html</a>)</h2>
 <p><a href="#cody">Cody</a> fixed this to work with both 64-bit and 32-bit compilers by changing most
 of the <code>int</code>s (all but that in <code>main(int ...)</code>) to <code>long</code>s. He also fixed it to
-compile with clang by changing the args of main to be <code>int</code> and <code>char **</code>,
-respectively, and changing specific references to the <code>argv</code> arg, casting to
-<code>long</code> (was <code>int</code> but the 64-bit fix requires <code>long</code>) which was its old type.</p>
+compile with clang by changing the args of main to be <code>int</code> and <code>char **, respectively, and changing specific references to the</code>argv<code>arg, casting to</code>long<code>(was</code>int<code>but the 64-bit fix requires</code>long`) which was its old type.</p>
 <p>Cody also added the <a href="2001/herrmann2/try.sh">try.sh</a> script which might be more
 useful than any other place as the command to try is quite long with C code.</p>
 <p>For some reason the original code was missing (presumingly because it had been
@@ -2442,7 +2427,7 @@ bugs.html</a>.</p>
 back for arrow keys in the <a href="2006/night/night.alt.c">alternate version</a>.</p>
 <h2 id="sloane-index.html"><a name="2006_sloane"></a><a href="2006/sloane/sloane.c">2006/sloane</a> (<a href="2006/sloane/index.html%5D">index.html</a>)</h2>
 <p><a href="#cody">Cody</a> fixed this entry to work with clang which has a defect with the args to
-<code>main()</code>: it requires specific types: <code>int</code> and <code>char **</code> for the first and
+<code>main()</code>: it requires specific types: <code>int</code> and `char ** for the first and
 latter args.</p>
 <p>Cody also provided the <a href="2006/sloane/sloane.alt.c">alternate version</a>, which
 allows one to see what is going on in modern systems, and which we recommend one
@@ -2618,9 +2603,9 @@ everything, filtered through less.</p>
 <a href="2012/endoh2/find-font-table.rb">find-font-table.rb</a>.</p>
 <h2 id="grothe-index.html-1"><a name="2012_grothe"></a><a href="2012/grothe/grothe.c">2012/grothe</a> (<a href="2012/grothe/index.html">index.html</a>)</h2>
 <p><a href="#cody">Cody</a> added the <a href="2012/grothe/try.sh">try.sh</a> script.</p>
-<p>Cody also changed <code>argv</code> to be not <code>const char **</code> but <code>char **</code>, mostly out of an
+<p>Cody also changed <code>argv</code> to be not <code>const char ** but</code>char <strong>, mostly out of an
 abundance of caution in case clang, which already imposes restrictions on the
-types of args to <code>main()</code> including to do with <code>char **</code>, decides to further
+types of args to <code>main()</code> including to do with `char </strong>, decides to further
 restrict them.</p>
 <p>Cody also restored the original code from the archive.</p>
 <p>And although the URL works for now (via redirect), Cody changed the website
