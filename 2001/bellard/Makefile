@@ -134,10 +134,9 @@ all: data ${TARGET}
 	sandwich supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "=-=-=-=-="
-	@echo "WARNING: ${PROG}.c must be compiled as a 32-bit binary and it must be used"
-	@echo "in i386 linux. If either of these cannot be done this entry will NOT work!"
-	@echo "=-=-=-=-="
+	@echo "WARNING: This must be compiled as a 32-bit binary and run" \
+	      "under i386 Linux in 32-bit mode, or this entry will not work!"
+	@echo
 	${CC} ${CFLAGS} -m32 $< -o $@ ${LDFLAGS}
 
 ${PROG}.otccex: ${PROG}.otccex.c
