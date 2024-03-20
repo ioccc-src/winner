@@ -54,3 +54,18 @@ the start of an new IOCCC there.
 Speaking of IOCCC news, you may wish to visit [IOCCC news](news.html#news) for information on the next **IOCCC**.
 <BR>
 You may also check on the [status.json](status.json) for the current status of the **IOCCC**.
+
+
+<!--
+
+    Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
+
+    You are free to share and adapt this file under the terms of this license:
+
+	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+    For more information, see:
+
+	https://creativecommons.org/licenses/by-sa/4.0/
+
+-->

@@ -117,12 +117,16 @@ the output.
 [1]: https://commons.wikimedia.org/wiki/File%3AFruits_oranges%2C_jardin_japonais_2.JPG
 [2]: https://commons.wikimedia.org/wiki/File%3ARed_Bull_Jungfrau_Stafette%2C_10th_stage_-_vintage_cars_%282%29.jpg
 
+<!--
 
-## Copyright and CC BY-SA 4.0 License:
+    Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
 
-This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
-You are free to share and adapt this file under the terms of this license:
+    You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
-For more information, see: https://creativecommons.org/licenses/by-sa/4.0/
+    For more information, see:
+
+	https://creativecommons.org/licenses/by-sa/4.0/
+
+-->

@@ -61,3 +61,18 @@ You **MUST** include the following two words (separated by a space) in the subje
     IOCCC YYYY
 
 **IMPORTANT:** The _YYYY_ in the above Email address **MUST** be changed to the current 4 digit year!
+
+
+<!--
+
+    Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
+
+    You are free to share and adapt this file under the terms of this license:
+
+	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+    For more information, see:
+
+	https://creativecommons.org/licenses/by-sa/4.0/
+
+-->

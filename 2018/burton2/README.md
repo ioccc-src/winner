@@ -415,12 +415,16 @@ Try:
 NOTE: in 2023 the `tac.man` was updated to proper man format and renamed
 [tac.1](tac.1).
 
+<!--
 
-## Copyright and CC BY-SA 4.0 License:
+    Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
 
-This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
-You are free to share and adapt this file under the terms of this license:
+    You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
-For more information, see: https://creativecommons.org/licenses/by-sa/4.0/
+    For more information, see:
+
+	https://creativecommons.org/licenses/by-sa/4.0/
+
+-->

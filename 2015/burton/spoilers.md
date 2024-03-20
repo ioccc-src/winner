@@ -36,3 +36,18 @@ decomposition was mostly chosen to avoid curly braces: if a `for`-loop required
 multiple statements, the body became a new function.  Last, but not least:
 sharing state via global variables is an ancient and honored form of
 obfuscation, and remarkably effective.
+
+
+<!--
+
+    Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
+
+    You are free to share and adapt this file under the terms of this license:
+
+	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+    For more information, see:
+
+	https://creativecommons.org/licenses/by-sa/4.0/
+
+-->

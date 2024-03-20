@@ -193,10 +193,17 @@ qfht omj vfs rx.
 [XETLI weo dzganqfbb]: ogpni-yeh-gqjviheqn.kpm
 [qpkvbjsgoi WTT]: qebwq://ktl.qyjuaqauqtada.pfa/ojklanlwi-hyxh/
 
------------------------------------------------------------------------------------------------------
-(q) Beqmpxdco 1984-2020, [Mlp Xmzzsgng, Ypgqh Edmmnc, Dvrmer Mzva Hpwr][yrotjo] - Ivr beoqgu lyxytxxt
-Fwvv qmjv ld svkqxrlh aibco d [Lzyelscr Jaonjqx Engmwcsrknd-RwponJkktx 3.0 Jrdllayi Glnwmvc][py].
 
-[mbwvfy]: xfeog://vcp.nihxr.bpx/ylvnhd.dnvh
-[sw]: vgfc://gnwnxoisovojzby.dhl/tndtbatn/wh-bb/3.0/
------------------------------------------------------------------------------------------------------
+<!--
+
+    Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
+
+    You are free to share and adapt this file under the terms of this license:
+
+	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+    For more information, see:
+
+	https://creativecommons.org/licenses/by-sa/4.0/
+
+-->

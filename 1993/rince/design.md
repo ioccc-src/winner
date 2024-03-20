@@ -93,3 +93,18 @@ the following (angle brackets denote an 'entity' to be defined):
 
 The `<X size>` should take into account the newline at the end of each line
 of map, and hence should also be one larger than expected.
+
+
+<!--
+
+    Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
+
+    You are free to share and adapt this file under the terms of this license:
+
+	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+    For more information, see:
+
+	https://creativecommons.org/licenses/by-sa/4.0/
+
+-->

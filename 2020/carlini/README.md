@@ -339,12 +339,16 @@ block before the first `printf(3)`, we initialize the `scanf(3)` format to the N
 string so that it returns right away without blocking. The first time the
 `printf(3)` call runs, it writes out `"%hhd"` to create the `scanf(3)` format string.
 
+<!--
 
-## Copyright and CC BY-SA 4.0 License:
+    Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
 
-This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
-You are free to share and adapt this file under the terms of this license:
+    You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
-For more information, see: https://creativecommons.org/licenses/by-sa/4.0/
+    For more information, see:
+
+	https://creativecommons.org/licenses/by-sa/4.0/
+
+-->

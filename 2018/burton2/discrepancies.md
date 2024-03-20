@@ -82,3 +82,18 @@ rendering this not a keyword, even in disguise
     cl 0   cw -4  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/2014/maffiodo1/prog.c
     cl 0   cw -4  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/2014/maffiodo1/prog.orig.c
     cl 0   cw -1  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/2014/sinon/prog.c
+
+
+<!--
+
+    Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
+
+    You are free to share and adapt this file under the terms of this license:
+
+	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+    For more information, see:
+
+	https://creativecommons.org/licenses/by-sa/4.0/
+
+-->

@@ -64,3 +64,17 @@ p	parses BLC-encoded lambda term using S(), stores results in term space and ret
 d	decrease reference counter, add record to free list on reaching zero
 ```
 
+
+<!--
+
+    Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
+
+    You are free to share and adapt this file under the terms of this license:
+
+	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+    For more information, see:
+
+	https://creativecommons.org/licenses/by-sa/4.0/
+
+-->

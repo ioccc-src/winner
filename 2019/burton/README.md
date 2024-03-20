@@ -106,12 +106,16 @@ cc -Wall -Wextra -Weverything -pedantic -include stdio.h -o prog.clean prog.clea
 The flags are not supported.  Although they could easily be added into `cow.sh`.
 This exercise left to the reader.
 
+<!--
 
-## Copyright and CC BY-SA 4.0 License:
+    Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
 
-This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
-You are free to share and adapt this file under the terms of this license:
+    You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
-For more information, see: https://creativecommons.org/licenses/by-sa/4.0/
+    For more information, see:
+
+	https://creativecommons.org/licenses/by-sa/4.0/
+
+-->

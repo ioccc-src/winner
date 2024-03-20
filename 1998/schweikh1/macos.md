@@ -68,3 +68,18 @@ macOS is `/usr/include` does not exist: instead it's
 `/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include` which is why
 the different command line and the different numbers. The change of the numbers
 can be found in the alternate code and the explanation is the same.
+
+
+<!--
+
+    Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
+
+    You are free to share and adapt this file under the terms of this license:
+
+	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+    For more information, see:
+
+	https://creativecommons.org/licenses/by-sa/4.0/
+
+-->

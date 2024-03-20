@@ -5129,3 +5129,18 @@ to add you to this [honor roll list](#thank_you_honor_roll).
 If you believe we incorporated one of your fixes to an IOCCC winning entry (that you
 are not the author of) for which we neglected to mention in this file, please
 [contact the IOCCC](contact.html) so that we may correct the record.
+
+
+<!--
+
+    Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
+
+    You are free to share and adapt this file under the terms of this license:
+
+	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+    For more information, see:
+
+	https://creativecommons.org/licenses/by-sa/4.0/
+
+-->

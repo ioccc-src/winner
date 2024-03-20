@@ -94,3 +94,18 @@ for year in 198{4,5,6,7,8,9} 199{0,1,2,3,4,5,6,8} 200{0,1,4,5,6} 201{1,2,3,4,5,8
     tar -jxvf "archive-$year.tar.bz2"
 done
 ```
+
+
+<!--
+
+    Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
+
+    You are free to share and adapt this file under the terms of this license:
+
+	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+    For more information, see:
+
+	https://creativecommons.org/licenses/by-sa/4.0/
+
+-->

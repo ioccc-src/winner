@@ -206,3 +206,18 @@ withheld are null:
 If you wish to update / modify information about yourself, you need to
 modify your `author_handle.json` file via a [GitHub pull
 request](https://github.com/ioccc-src/winner/pulls).
+
+
+<!--
+
+    Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
+
+    You are free to share and adapt this file under the terms of this license:
+
+	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+    For more information, see:
+
+	https://creativecommons.org/licenses/by-sa/4.0/
+
+-->
