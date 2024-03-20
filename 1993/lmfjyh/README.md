@@ -6,25 +6,31 @@ If you have gcc < 2.3.3 you can build this entry like:
 make all
 ```
 
-This will create a file called `";main(){puts("Hello World!");}char*C=".c` which
-would print `Hello World!` when compiled.
+This will try to create a file whose actual filename is literally:
+
+```
+";main(){puts("Hello World!");}char*C=".c
+```
+
+When that file is compiled, it will greet the world in the
+traditional fashion of C.
 
 For an explanation of why and how this works see the author's remarks. The gist
-of the entry itself, however, is the file name _itself **is** the code_.
+of the entry itself, however, is the file name _itself_ **is** _part of the code_.
 
-NOTE: we delete the temporary file whether or not the compilation succeeds
-because it is an unsafe filename and not doing so would cause problems for
-anyone running `make`.
+NOTE: We delete the temporary file as part of `make all` whether
+or not the compilation succeeds.  This is a Makefile **feature**
+that might **bug** anyone running the make command.  :-)
 
-This entry will not compile with gcc < 2.3.3 as it relies on a bug which was
-fixed in gcc 2.3.3 which was fixed a very long time ago now. There is an
-alternate version for [those of
-us](https://www.collinsdictionary.com/dictionary/english/everyone) with gcc >=
-2.3.3. See [Alternate code](#alternate-code) section below for more details.
+This entry will not compile with gcc version >= 2.3.3 as it relied
+on a bug which was later fixed in gcc 2.3.3, and that happened
+_a long time ago_ (.. _in a galaxy far, far away_?).
 
-However, there is an another version that will be compiled in the extremely
-likely case this fails.  This should happen automatically. See [Alternate
-code](#alternate-code) below for more details on it.
+If `make all` fails to compile, a suggestion of compiling and running
+the alternate version is printed.  This alternate version is a variant
+for [those of us](https://www.collinsdictionary.com/dictionary/english/everyone)
+with gcc >= 2.3.3 or using clang. See [Alternate code](#alternate-code)
+section below for more details.
 
 
 ### Bugs and (Mis)features:
@@ -51,8 +57,7 @@ If you have gcc < 2.3.3 (i.e. the entry can compile):
 
 This version does what the code did but in a way that will work with modern
 compilers. We'd like to say there's something special about it but there isn't.
-Nonetheless it will be compiled in case the original entry fails to compile
-(which will happen unless you have gcc < 2.3.3.
+Nonetheless it will be compiled in case the original entry fails to compile.
 
 
 ### Alternate build:
