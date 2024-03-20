@@ -13,7 +13,7 @@ for i in $(git ls-files '[0-9][0-9][0-9][0-9]/*README.md'); do
     perl -0777 -p -i -e 's/([^\n]\n)\n*##*[[:space:]]*(To build):?\n\n*([^\n])?/$1\n\n## $2:\n\n$3/' "$i"
     perl -0777 -p -i -e 's/([^\n]\n)\n*##*[[:space:]]*(Bugs and \(Mis\)features):?\n\n*([^\n])?/$1\n\n### $2:\n\n$3/' "$i"
     perl -0777 -p -i -e 's/([^\n]\n)\n*##*[[:space:]]*(To use):?\n\n*([^\n])?/$1\n\n## $2:\n\n$3/' "$i"
-    perl -0777 -p -i -e 's/([^\n]\n)\n*##*[[:space:]]*(Try):?\n\n*([^\n])?/$1\n\n### $2:\n\n$3/' "$i"
+    perl -0777 -p -i -e 's/([^\n]\n)\n*##*[[:space:]]*(Try):?\n\n*([^\n])?/$1\n\n## $2:\n\n$3/' "$i"
     perl -0777 -p -i -e 's/([^\n]\n)\n*##*[[:space:]]*(Original code):?\n\n*([^\n])?/$1\n\n## $2:\n\n$3/' "$i"
     perl -0777 -p -i -e 's/([^\n]\n)\n*##*[[:space:]]*(Original build):?\n\n*([^\n])?/$1\n\n### $2:\n\n$3/' "$i"
     perl -0777 -p -i -e 's/([^\n]\n)\n*##*[[:space:]]*(Original try):?\n\n*([^\n])?/$1\n\n### $2:\n\n$3/' "$i"

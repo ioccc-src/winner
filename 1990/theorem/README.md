@@ -40,8 +40,6 @@ y1 - initial value  (y(x1) == y1)
 ```
 
 
-
-
 ## Judges' remarks:
 
 The program's source implements four functions, all from the

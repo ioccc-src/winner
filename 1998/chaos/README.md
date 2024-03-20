@@ -23,7 +23,6 @@ make chaos_nohalf
 
 ## Try:
 
-
 ```sh
 ./try.sh
 ```

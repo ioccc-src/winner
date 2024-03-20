@@ -33,7 +33,6 @@ make clobber alt
 
 ### Alternate use:
 
-
 ```sh
 ./jar.1.alt
 ```

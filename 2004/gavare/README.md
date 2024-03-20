@@ -24,7 +24,7 @@ convert ioccc_ray.ppm ioccc_ray.jpg
 and then view `ioccc_ray.jpg` in a graphics viewer, editor or web browser.
 
 
-### Try:
+## Try:
 
 If you have `xv(1)` you can do:
 

@@ -15,7 +15,6 @@ see [Original code](#original-code) below.
 
 ## To use:
 
-
 ```sh
 ./westley.alt
 ```
@@ -35,7 +34,7 @@ get a better idea or see below in the [Try](#try) section for running the game
 from start to finish.
 
 
-### Try:
+## Try:
 
 For something more interesting try compiling it with different `cc -D` arguments
 and then run the program each time.  For example:
@@ -76,7 +75,7 @@ better idea or see below in the [Original try](#original-try) section for
 running the game from start to finish.
 
 
-## Original use:
+### Original use:
 
 There is no running of this program directly as it is supposed to fail to
 compile: the purpose of the game is to escape the dungeon but depending on the
@@ -91,7 +90,7 @@ you do not run this program as it will not compile: instead it will be compiler
 error messages; there is no running the program.
 
 
-## Original try:
+### Original try:
 
 For something more interesting try compiling it with different `cc -D`
 arguments:

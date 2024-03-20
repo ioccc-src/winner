@@ -41,7 +41,6 @@ This version is the original which has no sleep time in between updates.
 
 ### Original build:
 
-
 ```sh
 make all
 ```

@@ -78,7 +78,6 @@ What's the difference between this and `dlowe`?
 Did you spot the Easter egg there?
 
 
-
 ## Judges' remarks:
 
 Why could this this entry be considered a utility?  Well because it

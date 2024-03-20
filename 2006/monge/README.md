@@ -38,7 +38,6 @@ Incorrect formulas will ungracefully crash the program.
 ```
 
 
-
 ## Alternate code:
 
 This alternate code lets you specify the width and height of the image as well

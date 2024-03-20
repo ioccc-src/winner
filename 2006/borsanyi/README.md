@@ -34,7 +34,6 @@ We recommend you input for the filename `example.gif` and for the string
 a loop until you answer that you do not wish to make another.
 
 
-
 ## Judges' remarks:
 
 This entry uses a very user-friendly representation of the font

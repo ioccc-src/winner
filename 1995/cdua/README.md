@@ -35,7 +35,6 @@ For more detailed information see [1995 cdua bugs](../../bugs.html#1995_cdua).
 
 ## Try:
 
-
 ```sh
 make SLEEP=1500 clobber alt
 

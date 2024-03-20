@@ -59,7 +59,7 @@ where `altmode` `1` - `4` correspond to mode `0` - `3` in the original entry and
 `altmode 0` calculates Mandelbrot/Julian sets correctly.
 
 
-## Alternate try:
+### Alternate try:
 
 ```sh
 ./try.alt.color.sh			# for colour displays
