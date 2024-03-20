@@ -89,7 +89,7 @@ char x {sizeof(
 ```
 
 This does mean that there cannot be a second arg to `main()`
-as clang requires that to be a `char **` and the `char` redefined would not
+as clang requires that to be a `char ** and the `char` redefined would not
 allow this. Some versions of clang say that `main()` must have either 0, 2 or 3
 args but these versions do not object to 1 arg. However as the `char` macro
 seems more obscure and it is possible that a new version of clang will be even
@@ -102,7 +102,7 @@ parameter. It has never been observed to be an error to pass in too many
 parameters to a function (`main()` or otherwise - it warns with other functions
 but does not appear to with `main()`) but only that `main()` itself has a
 certain number of args (in some versions) and that the first arg is an `int` and
-the others are `char **`s. This is why the arg was removed and the call to
+the others are `char **s. This is why the arg was removed and the call to
 `main()` was not updated beyond what had to be done to fix it for compilers that
 do not support `-traditional-cpp`.
 
@@ -363,7 +363,7 @@ program the added `input.txt` file.
 
 [Cody](#cody) fixed this to compile and work with clang (it already worked with gcc).
 The problem was that clang is more strict about the type of second arg to
-`main()`. However simply changing it to a `char **` and updating the `*s` to `**s`
+`main()`. However simply changing it to a `char ** and updating the `*s` to **s`
 caused a segfault. By adding a new variable, `char *t`, initialising it to `s`
 and then using `t` instead of `s` it compiles and runs successfully under clang
 and gcc.
@@ -732,12 +732,12 @@ publication, in the remarks, to help understand the entry, and for fun.
 ## <a name="1988_phillipps"></a>[1988/phillipps](1988/phillipps/phillipps.c) ([index.html](1988/phillipps/index.html]))
 
 [Cody](#cody) fixed this for modern systems. It did not compile with clang because it
-requires the second and third args of `main()` to be `char **` but even before
+requires the second and third args of `main()` to be `char ** but even before
 that with gcc it printed garbage and then crashed.
 
 After fixing it for clang by changing the very `main()` (in fact it called
 itself up to 12 times!) to call the new function `pain()` (chosen because it's a
-pain that clang requires these args to be `char **` :-), which is just as
+pain that clang requires these args to be `char ** :-), which is just as
 recursive, with the correct args it now works with both gcc and clang.
 
 Later Cody improved the fix to make it look a bit more like the original, using
@@ -978,7 +978,7 @@ might just not be possible.
 The way it was fixed might be hard to see and describe but this is an attempt.
 Because `main()`'s args were all `int`s, `main()` had to call a new function
 which is allowed to have args as `int` (instead of `main()`'s args being int and
-the rest being `char **`) but this is not as straight forward as it is for other
+the rest being `char **) but this is not as straight forward as it is for other
 entries (if you look at the code you might see what is meant; the function called
 is `pain()`).
 
@@ -987,9 +987,9 @@ four**, even though the original program has four args. This is because not all
 versions of clang support four args and that is one of the issues with version 2
 and 3 as it generates `main()` to have four args and the wrong type, all `int`s.
 
-In the call to the new function, `pain()`, from `main()`, one of the `char **`s
+In the call to the new function, `pain()`, from `main()`, one of the `char **s
 is used twice, once as `argc` with bitwise AND with 2, naturally first being
-cast to an `int` (`(int)ABBA&2`), and once as a `char **`, the fourth arg to
+cast to an `int` (`(int)ABBA&2`), and once as a `char **, the fourth arg to
 `pain()` (yes even though `pain()` takes all `int`s).
 
 The argc,, meanwhile, `tang`, is used once and the second arg, `char **gnat` is
@@ -997,7 +997,7 @@ used once (observe how `tang` is `gnat` spelt backwards as this is one of the
 things that makes this a masterpiece and very hard if not impossible to fix
 completely). Fortunately it is not actually necessary to use all four args (of
 `main()`) in the call which might or might not be surprising, especially as it
-uses one of the args, a `char **`, instead of an `int` (through casts), twice
+uses one of the args, a `char **, instead of an `int` (through casts), twice
 rather than just passing in for the fourth arg (the fourth arg passed in is the
 third arg to `main()`).
 
@@ -1710,8 +1710,8 @@ both numbers (using `"%o %o"` does not solve the problem).
 ## <a name="1992_westley"></a>[1992/westley](1992/westley/westley.c) ([index.html](1992/westley/index.html]))
 
 [Cody](#cody) fixed this to work for clang by changing the third and fourth arg of
-`main()` to be `char **` inside `main()`; clang requires args 2 - 4 to be `char
-**` and some versions do not even allow a fourth arg.
+`main()` to be `char ** inside `main()`; clang requires args 2 - 4 to be `char
+** and some versions do not even allow a fourth arg.
 
 He also added the alternate version that the author gave in the remarks that is
 specifically for the USA rather than the world. This had to be fixed for clang
@@ -1856,13 +1856,13 @@ compile time. See the index.html for details.
 ## <a name="1993_vanb"></a>[1993/vanb](1993/vanb/vanb.c) ([index.html](1993/vanb/index.html]))
 
 [Cody](#cody) fixed this to work with clang. The problem was that the third arg to main()
-was not a `char **`. Instead `O5()` (which was `main()` via `-DO5=main`) is now
+was not a `char **. Instead `O5()` (which was `main()` via `-DO5=main`) is now
 its own function which main() calls with the right parameters.
 
 Later Cody fixed it again to look much more like the original where only a
 single line is added, that of `main()`, which calls `O5()`. This was done through
 `-include stdio.h` at the compiler (in the Makefile) and by removing the `O3`
-variable (an int) at the top of the file, instead making it a `char **` in
+variable (an int) at the top of the file, instead making it a `char ** in
 `main()` (`O5()` had three args) but then passing in `0` to `O5()` for the third
 arg (as it was 0 at file scope already this is perfectly fine and it means
 there's no need to cast it to an int in the function call though that would also
@@ -2838,7 +2838,7 @@ by Yusuke.
 ## <a name="2001_cheong"></a>[2001/cheong](2001/cheong/cheong.c) ([index.html](2001/cheong/index.html]))
 
 [Cody](#cody) fixed this to work with clang by adding another function that is allowed to
-have a third arg as an int, not a `char **`. He chose `pain()` because it's a four
+have a third arg as an int, not a `char **. He chose `pain()` because it's a four
 letter word that would match the format and because it's pain that clang forces
 this. :-) This fix makes a point of the author's notes on portability no longer
 valid, BTW.
@@ -2932,7 +2932,7 @@ Cody also added the [try.sh](2001/herrmann1/try.sh) script.
 
 [Cody](#cody) fixed this to work with both 64-bit and 32-bit compilers by changing most
 of the `int`s (all but that in `main(int ...)`) to `long`s. He also fixed it to
-compile with clang by changing the args of main to be `int` and `char **`,
+compile with clang by changing the args of main to be `int` and `char **,
 respectively, and changing specific references to the `argv` arg, casting to
 `long` (was `int` but the 64-bit fix requires `long`) which was its old type.
 
@@ -3537,7 +3537,7 @@ back for arrow keys in the [alternate version](2006/night/night.alt.c).
 ## <a name="2006_sloane"></a>[2006/sloane](2006/sloane/sloane.c) ([index.html](2006/sloane/index.html]))
 
 [Cody](#cody) fixed this entry to work with clang which has a defect with the args to
-`main()`: it requires specific types: `int` and `char **` for the first and
+`main()`: it requires specific types: `int` and `char ** for the first and
 latter args.
 
 Cody also provided the [alternate version](2006/sloane/sloane.alt.c), which
@@ -3823,9 +3823,9 @@ Cody also fixed a typo in the ruby script
 
 [Cody](#cody) added the [try.sh](2012/grothe/try.sh) script.
 
-Cody also changed `argv` to be not `const char **` but `char **`, mostly out of an
+Cody also changed `argv` to be not `const char ** but `char **, mostly out of an
 abundance of caution in case clang, which already imposes restrictions on the
-types of args to `main()` including to do with `char **`, decides to further
+types of args to `main()` including to do with `char **, decides to further
 restrict them.
 
 Cody also restored the original code from the archive.

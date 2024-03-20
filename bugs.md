@@ -245,7 +245,7 @@ clang** despite the fact it might appear to be gcc: no symlink and both gcc and
 clang exist but the gcc is clang which you'll see if you run `gcc --version`.
 
 A tip and some fix methods from Cody: in the older days args to main() not given
-a type were implicit ints but when they're required to be `char **` this can
+a type were implicit ints but when they're required to be `char ** this can
 cause a problem. In some cases Cody was able to use a `char *` inside `main()`
 (see [1989/tromp/tromp.c](1989/tromp/tromp.c) and
 [1986/holloway/holloway.c](1986/holloway) for two examples though done slightly
@@ -3104,7 +3104,7 @@ This program supports only "Combinator-calculus style notation" of Lazy K.
 "Unlambda style" and "Iota and Jot" style are not supported.
 
 Also, it requires a space between identifiers.  In short, use `(S K)` instead of
-`(SK)`, "\`sk", `**i*i*i*ii*i*i*ii`, or `11111100011100`.
+`(SK)`, "\`sk", **i*i*i*ii*i*i*ii`, or `11111100011100`.
 
 Huge memory may be required to compile the program (about 300 MB on my machine).
 

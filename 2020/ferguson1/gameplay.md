@@ -423,14 +423,14 @@ inside itself.
 
 # <a name="shedding" href="#toc">Gameplay: Shedding (stretching)</a>
 
-This feature will make you grow by the value of **`SHEDS`** for every **`SHED`**
+This feature will make you grow by the value of **SHEDS** for every **SHED**
 movements (the counter isn't incremented when you eat a bug). Basically growing
 without eating a bug (stretching would be better name here).
 
 
 # <a name="winning" href="#toc">Gameplay: Winning</a>
 
-If you ever get to the **`MAXSIZE`** the game is won. You can force a win by
+If you ever get to the **MAXSIZE** the game is won. You can force a win by
 setting the max size to a smaller value than the size you specify (or the
 default) or setting the size to higher than the default (or < 0 which will end
 up being > the max size though I suppose there might be some value that makes it
@@ -492,7 +492,7 @@ the modes below.
 ## <a name="warning" href="#toc">Photosensitive epilepsy/Stimulation overload trigger warnings</a>
 
 If you have **photosensitive epilepsy please be careful** especially with low values
-for both **`WAIT`** and **`EVADE`**. It appears that the [number of hertz (flashes)
+for both **WAIT** and **EVADE**. It appears that the [number of hertz (flashes)
 per second triggering seizures][] is wide but depending on the variables it
 easily can be in the range.
 
@@ -824,7 +824,7 @@ snake to move slower you have to increase the wait time!
 
 ## <a name="evade" href="#toc">EVADE: Bug evasion frequency</a>
 
-For every **`EVADE`** snake movements the bug will try and find a new place to
+For every **EVADE** snake movements the bug will try and find a new place to
 occupy. It might be very close to it and I do not ensure it's a new place at
 all.
 

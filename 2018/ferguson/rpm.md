@@ -28,7 +28,7 @@ requiring a fix.
 
 *   I am keeping the weasel.spec file in the entry as it was part of my
 submission but I do not explain here how to set up the build environment or how
-to build a RPM: if you know how to use **`rpmbuild`** then you should be able to
+to build a RPM: if you know how to use **rpmbuild** then you should be able to
 work it out. Again that's a crazy idea but again it was there and it was part of
 the judges' comments (which I liked a lot) which is yet another reason I kept
 it.

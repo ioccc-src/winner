@@ -7,9 +7,9 @@ to distinguish what is what.
 
 # Examples
 
-In the below game dumps I have replaced the bug with **`B`**, the head with
-**`H`** and where it is known, the tail with **`T`**, in order to help
-distinguish where they are. Since the head is replaced with **`H`** I have noted
+In the below game dumps I have replaced the bug with **B**, the head with
+**H** and where it is known, the tail with **T**, in order to help
+distinguish where they are. Since the head is replaced with **H** I have noted
 the direction it was moving above each dump as well as at the right of the line;
 each line with a bug, the head or tail is marked with upper case text at the
 right to make it easier to find.

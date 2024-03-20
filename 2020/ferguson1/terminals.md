@@ -75,8 +75,8 @@ will take to win the game. The max bugs in the `bugs` line is approximately
 `max_snake_size / growth_size` i.e. how many bugs it'll take to win at the
 maximum (capped) snake size.
 
-If I pass in any of the variables **`GROW`**, **`MAXSIZE`**, **`SIZE`** and/or
-**`LINES`** or **`COLUMNS`** it bases its calculations on those variables. For
+If I pass in any of the variables **GROW**, **MAXSIZE**, **SIZE** and/or
+**LINES** or **COLUMNS** it bases its calculations on those variables. For
 example:
 
 ```sh

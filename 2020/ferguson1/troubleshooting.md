@@ -432,7 +432,7 @@ X:0/157 Y:0/42 S:3/18446744073709551614 B:0
 ```
 
 
-BTW: There are two arrays that have to be **`MAXSIZE`** (technically + 1).
+BTW: There are two arrays that have to be **MAXSIZE** (technically + 1).
 
 Is it possible that some value specified by the user could mess this up? I do
 not know but what I do know is that because it's unsigned it can't be negative;
