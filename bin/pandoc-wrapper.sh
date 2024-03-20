@@ -2,10 +2,19 @@
 #
 # pandoc-wrapper.sh - wrapper tool to run pandoc
 #
-# This tool is intended to be used as a 'pandoc wrapper tool' during HTML phase number 21.
+# This tool is intended to be used as a 'pandoc wrapper tool' by bin/md2html.sh
+# during HTML phase number 21.
 #
-# This tool is intended to be invoked by a tool such as 'readme2index.sh"
-# and as such, the leading options will include "-p pandoc_wrapper" and -P "optstr",
+# This tool is also run by other bin tools such as:
+#
+#	bin/output-index-author.sh
+#	bin/output-index-inventory.sh
+#	bin/output-year-index.sh
+#	bin/quick-readme2index.sh
+#	bin/readme2index.sh
+#	bin/status2html.sh.
+#
+# The leading options will include "-p pandoc_wrapper" and -P "optstr",
 # the final arg will be in YYYY/dir form, and will be called from
 # the topdir directory under which the YYYY/dir entry directory must be found.
 #
@@ -90,7 +99,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.5.1 2024-03-18"
+export VERSION="1.5.2 2024-03-19"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0

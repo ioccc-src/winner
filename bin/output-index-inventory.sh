@@ -2,11 +2,23 @@
 #
 # output-index-inventory.sh - output the inventory in HTML form for an entry's index.html page
 #
-# This tool is intended to be used as a "before tool" during HTML phase number 22.
+# This tool is intended to be used as an "after tool" during HTML phase number 22.
+# In particular, lines in the inc/md2html.cfg configuration file of the form:
 #
-# This tool is intended to be invoked by a tool such as "readme2index.sh".
+#	-a
+#	bin/output-index-inventory.sh
+#
+# will cause tools such as bin/md2html.sh to execute this code.
+#
 # The final arg will be in YYYY/dir form, and will be called from
 # the topdir directory under which the YYYY/dir entry directory must be found.
+# Tools such as bin/readme2index.sh, when run via bin/all-run.sh:
+#
+#	bin/all-run.sh -v 3 bin/readme2index.sh -v 1
+#
+# will supply the YYYY/dir arg.  This may be more easily done via make:
+#
+#	make entry_index
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
@@ -89,7 +101,7 @@ shopt -s globstar	# enable '**' to match all files and zero or more directories 
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.1 2024-03-18"
+export VERSION="1.2.2 2024-03-19"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0

@@ -9,6 +9,24 @@
 #
 #	bin/output-year-index.sh
 #
+# This tool is intended to be used as an "after tool" during HTML phase number 22.
+# In particular, lines in the inc/md2html.cfg configuration file of the form:
+#
+#	-a
+#	bin/output-year-index.sh
+#
+# will cause tools such as bin/md2html.sh to execute this code.
+#
+# The final arg will be in YYYY form, and will be called from
+# the topdir directory under which the YYYY directory must be found.
+# Tools such as bin/gen-year-index.sh, when run via bin/all-run.sh:
+#
+#	bin/all-years.sh -v 1 bin/gen-year-index.sh -v 1
+#
+# will supply the YYYY arg.  This may be more easily done via make:
+#
+#	make gen_year_index
+#
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
@@ -90,7 +108,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1 2024-02-27"
+export VERSION="1.1.1 2024-03-19"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0

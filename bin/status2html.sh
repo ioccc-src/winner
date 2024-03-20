@@ -3,8 +3,20 @@
 # status2html.sh - output status.json HTML for the status.html page
 #
 # This tool is intended to be used as a "before tool" during HTML phase number 20.
+# In particular, lines in the inc/md2html.cfg configuration file of the form:
 #
-# This tool is intended to be invoked by a tool such as "bin/gen-status.sh"
+#	-b
+#	bin/status2html.sh
+#
+# will cause tools such as bin/gen-status.sh to execute this code.
+#
+# The usual way to run bin/gen-status.sh is via:
+#
+#	bin/gen-status.sh -v 1
+#
+# This may be more easily done via make:
+#
+#	make gen_status
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
@@ -87,7 +99,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1 2024-03-10"
+export VERSION="1.1.1 2024-03-19"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0

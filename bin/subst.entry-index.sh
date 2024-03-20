@@ -2,12 +2,23 @@
 #
 # subst.entry-index.sh - print substitutions for a entry's index.html
 #
-# This tool is used in conjunction with the inc/md2html.cfg configuration
-# file, and the tools that use that use that configuration file such as "bin/md2html.sh".
+# This tool is intended to be used as a "output tool" during getopt phases 1 and 3.
+# In particular, lines in the inc/md2html.cfg configuration file of the form:
 #
-# It is usually invoked by:
+#	-o
+#	bin/subst.entry-index.sh
 #
-#	-o bin/subst.entry-index.sh
+# will cause tools such as bin/md2html.sh to execute this code.
+#
+# The final arg will be in YYYY/dir form, and will be called from
+# the topdir directory under which the YYYY/dir entry directory must be found.
+# Tools such as bin/readme2index.sh, when run via bin/all-run.sh:
+#
+#	bin/all-run.sh -v 3 bin/readme2index.sh -v 1
+#
+# will supply the YYYY/dir arg.  This may be more easily done via make:
+#
+#	make entry_index
 #
 # IMPORTANT: Each command line option / argument MUST be printed on a separate line!
 #
@@ -92,7 +103,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3 2024-03-02"
+export VERSION="1.3.1 2024-03-19"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0

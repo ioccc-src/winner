@@ -2,12 +2,23 @@
 #
 # subst.year-index.sh - print substitutions for a year's index.html
 #
-# This tool is used in conjunction with the inc/md2html.cfg configuration
-# file, and the tools that use that use that configuration file such as "bin/md2html.sh".
+# This tool is intended to be used as a "output tool" during getopt phases 1 and 3.
+# In particular, lines in the inc/md2html.cfg configuration file of the form:
 #
-# It is usually invoked by:
+#	-o
+#	bin/subst.year-index.sh
 #
-#	-o bin/subst.year-index.sh
+# will cause tools such as gen-year-index.sh to execute this code.
+#
+# The final arg will be in YYYY form, and will be called from
+# the topdir directory under which the YYYY directory must be found.
+# Tools such as bin/gen-year-index.sh, when run via bin/all-run.sh:
+#
+#	bin/all-years.sh -v 1 bin/gen-year-index.sh -v 1
+#
+# will supply the YYYY arg.  This may be more easily done via make:
+#
+#	make gen_year_index
 #
 # IMPORTANT: Each command line option / argument MUST be printed on a separate line!
 #
@@ -92,7 +103,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1 2024-03-02"
+export VERSION="1.1.1 2024-03-19"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
