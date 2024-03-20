@@ -147,7 +147,7 @@ ${PROG}: ${PROG}.c
 
 
 ${PROG}.ten: ${PROG}.ten.c
-	@echo "WARNING: ${PROG}.ten.c must be compiled as a 32-bit ELF binary to use with"
+	@echo "Warning: ${PROG}.ten.c must be compiled as a 32-bit ELF binary to use with"
 	@echo "the entry itself; this is because the program works on 32-bit ELF binaries."
 	@echo "If you cannot use -m32 or it cannot compile for some other reason this will"
 	@echo "NOT work!"
@@ -165,16 +165,15 @@ ${PROG}.ten: ${PROG}.ten.c
 
 ${PROG}.ten.alt: ${PROG}.ten.c
 	@echo
-	@echo "-=-=-=-="
-	@echo "WARNING: the file created by this rule, ${PROG}.ten.alt, will NOT work with"
+	@echo "Warning: the file created by this rule, ${PROG}.ten.alt, will NOT work with"
 	@echo "the entry itself; this is because it works ONLY on 32-bit ELF binaries! This"
 	@echo "however at least lets you see the supplementary program in action:"
+	@echo
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
-	@echo "-=-=-=-="
 	@echo
 
 ${PROG}.bed: ${PROG}.bed.c
-	@echo "WARNING: ${PROG}.bed.c must be compiled as a 32-bit ELF binary to use with"
+	@echo "Warning: ${PROG}.bed.c must be compiled as a 32-bit ELF binary to use with"
 	@echo "the entry itself; this is because the program works on 32-bit ELF binaries."
 	@echo "If you cannot use -m32 or it cannot compile for some other reason this will"
 	@echo "NOT work!"
@@ -192,12 +191,11 @@ ${PROG}.bed: ${PROG}.bed.c
 
 ${PROG}.bed.alt: ${PROG}.bed.c
 	@echo
-	@echo "-=-=-=-="
-	@echo "WARNING: the file created by this rule, ${PROG}.bed.alt, will NOT work with"
+	@echo "Warning: the file created by this rule, ${PROG}.bed.alt, will NOT work with"
 	@echo "the entry itself; this is because it works ONLY on 32-bit ELF binaries! This"
 	@echo "however at least lets you see the supplementary program in action:"
+	@echo
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
-	@echo "-=-=-=-="
 	@echo
 
 
