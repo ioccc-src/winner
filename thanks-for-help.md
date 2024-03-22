@@ -1809,9 +1809,7 @@ files for functions.
 [Cody](#cody) added an [alternate
 version](1993/lmfjyh/index.html#alternate-code) which does what the program did
 with gcc < 2.3.3. See the index.html file for details and for why this was made
-the alternate version, not the actual entry. This alternate version will compile
-automatically (as `lmfjyh` itself) in the very likely case (if you don't have
-gcc < 2.3.3) that the entry fails to compile.
+the alternate version, not the actual entry.
 
 Cody also made the Makefile delete the very unsafe filename that is compiled (or
 would be compiled if gcc < 2.3.3) whether or not compilation succeeds (which is
