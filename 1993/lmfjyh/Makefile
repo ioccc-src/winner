@@ -132,7 +132,6 @@ ${PROG}: ${PROG}.c
 	@echo "it relies on a compiler bug which was fixed in gcc 2.3.3 a very"
 	@echo "long time ago."
 	@echo
-	${RM} -f \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
 	${CP} lmfjyh.c \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
 	@echo ${CC} ${CFLAGS} \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c -o $@ ${LDFLAGS}
 	@${CC} ${CFLAGS} \
@@ -145,6 +144,8 @@ ${PROG}: ${PROG}.c
 	    echo "and then run the alternate program:" && \
 	    echo && \
 	    echo "    ./${ALT_TARGET}"
+	@${RM} -f \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
+	    
 
 # alternative executable
 #
