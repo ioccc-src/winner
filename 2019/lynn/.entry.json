@@ -154,6 +154,14 @@
 	    "entry_text" : "directory path from top directory"
 	},
 	{
+	    "file_path" : ".tar.tstamp",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : false,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "timestamp of compressed tarball formation"
+	},
+	{
 	    "file_path" : "README.md",
 	    "inventory_order" : 4294967295,
 	    "OK_to_edit" : true,
