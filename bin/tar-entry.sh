@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.1 2024-03-18"
+export VERSION="1.2 2024-03-22"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -402,6 +402,94 @@ if [[ ! -s $VAR_MK ]]; then
     exit 6
 fi
 
+# verify we have a non-empty writable top level .tar.tstamp file
+#
+export TOP_TAR_TSTAMP=".tar.tstamp"
+if [[ ! -e $TOP_TAR_TSTAMP ]]; then
+    echo "$0: ERROR: topdir tar.tstamp does not exist: $TOP_TAR_TSTAMP" 1>&2
+    exit 6
+fi
+if [[ ! -f $TOP_TAR_TSTAMP ]]; then
+    echo "$0: ERROR: topdir .tar.tstamp is not a file: $TOP_TAR_TSTAMP" 1>&2
+    exit 6
+fi
+if [[ ! -w $TOP_TAR_TSTAMP ]]; then
+    echo "$0: ERROR: topdir .tar.tstamp is not a writable readable file: $TOP_TAR_TSTAMP" 1>&2
+    exit 6
+fi
+if [[ ! -s $TOP_TAR_TSTAMP ]]; then
+    echo "$0: ERROR: topdir .tar.tstamp is not a not a non-empty writable readable file: $TOP_TAR_TSTAMP" 1>&2
+    exit 6
+fi
+
+# verify we have a non-empty writable top level .tar.tstamp file
+#
+export YEAR_TAR_TSTAMP="$YEAR_DIR/.tar.tstamp"
+if [[ ! -e $YEAR_TAR_TSTAMP ]]; then
+    echo "$0: ERROR: year tar.tstamp does not exist: $YEAR_TAR_TSTAMP" 1>&2
+    exit 6
+fi
+if [[ ! -f $YEAR_TAR_TSTAMP ]]; then
+    echo "$0: ERROR: year .tar.tstamp is not a file: $YEAR_TAR_TSTAMP" 1>&2
+    exit 6
+fi
+if [[ ! -w $YEAR_TAR_TSTAMP ]]; then
+    echo "$0: ERROR: year .tar.tstamp is not a writable readable file: $YEAR_TAR_TSTAMP" 1>&2
+    exit 6
+fi
+if [[ ! -s $YEAR_TAR_TSTAMP ]]; then
+    echo "$0: ERROR: year .tar.tstamp is not a not a non-empty writable readable file: $YEAR_TAR_TSTAMP" 1>&2
+    exit 6
+fi
+
+# verify we have a non-empty writable .tar.tstamp file
+#
+export DOT_TAR_TSTAMP="$YYYY_DIR/.tar.tstamp"
+if [[ ! -e $DOT_TAR_TSTAMP ]]; then
+    echo "$0: ERROR: entry .tar.tstamp does not exist: $DOT_TAR_TSTAMP" 1>&2
+    exit 6
+fi
+if [[ ! -f $DOT_TAR_TSTAMP ]]; then
+    echo "$0: ERROR: entry .tar.tstamp is not a file: $DOT_TAR_TSTAMP" 1>&2
+    exit 6
+fi
+if [[ ! -w $DOT_TAR_TSTAMP ]]; then
+    echo "$0: ERROR: entry .tar.tstamp is not a writable readable file: $DOT_TAR_TSTAMP" 1>&2
+    exit 6
+fi
+if [[ ! -s $DOT_TAR_TSTAMP ]]; then
+    echo "$0: ERROR: entry .tar.tstamp is not a not a non-empty writable readable file: $DOT_TAR_TSTAMP" 1>&2
+    exit 6
+fi
+
+# verify that the last tar timestamp in the .tar.tstamp file is an integer > 0
+#
+export LAST_TAR_TSTAMP
+LAST_TAR_TSTAMP=$(< "$DOT_TAR_TSTAMP")
+if [[ $LAST_TAR_TSTAMP =~ ^-?[0-9]+$ ]]; then
+    if [[ $LAST_TAR_TSTAMP -le 0 ]]; then
+	echo "$0: ERROR: entry .tar.tstamp: $DOT_TAR_TSTAMP contents must be an integer > 0: $LAST_TAR_TSTAMP" 1>&2
+	exit 6
+    fi
+else
+    echo "$0: ERROR: entry .tar.tstamp: $DOT_TAR_TSTAMP contents is not an integer: $LAST_TAR_TSTAMP" 1>&2
+    exit 6
+fi
+
+# convert the last tar timestamp into a date string
+#
+export LAST_TAR_DATE
+LAST_TAR_DATE=$(TZ=UTC date -r "$LAST_TAR_TSTAMP")
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: TZ=UTC date -r $LAST_TAR_TSTAMP failed, error: $status" 1>&2
+    exit 6
+fi
+if [[ -z $LAST_TAR_DATE ]]; then
+    echo "$0: ERROR: TZ=UTC date -r $LAST_TAR_TSTAMP produced an empty string" 1>&2
+    exit 6
+fi
+
 # parameter debugging
 #
 if [[ $V_FLAG -ge 3 ]]; then
@@ -429,6 +517,11 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: FILELIST_ENTRY_JSON_AWK=$FILELIST_ENTRY_JSON_AWK" 1>&2
     echo "$0: debug[3]: IOCCC_CSS=$IOCCC_CSS" 1>&2
     echo "$0: debug[3]: VAR_MK=$VAR_MK" 1>&2
+    echo "$0: debug[3]: TOP_TAR_TSTAMP=$TOP_TAR_TSTAMP" 1>&2
+    echo "$0: debug[3]: YEAR_TAR_TSTAMP=$YEAR_TAR_TSTAMP" 1>&2
+    echo "$0: debug[3]: DOT_TAR_TSTAMP=$DOT_TAR_TSTAMP" 1>&2
+    echo "$0: debug[3]: LAST_TAR_TSTAMP=$LAST_TAR_TSTAMP" 1>&2
+    echo "$0: debug[3]: LAST_TAR_DATE=$LAST_TAR_DATE" 1>&2
 fi
 
 # If -N, time to exit
@@ -601,26 +694,26 @@ fi
 #
 if [[ -z $NOOP ]]; then
 
-    # case: form the tarball verbosely if -v 3 or more
+    # case: form the tarball verbosely if -v 5 or more
     #
-    if [[ $V_FLAG -gt 3 ]]; then
-	echo "$0: debug[3]: about to execute:" \
+    if [[ $V_FLAG -ge 5 ]]; then
+	echo "$0: debug[5]: about to execute:" \
 	    "$GTAR_TOOL --files-from=- --sparse --no-acls --no-xattrs --no-selinux --sort=name" \
 	    "--owner=501 --group=20 --numeric-owner --totals" \
-	    "--pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime" \
-	    "-jcvf $TMP_TARBALL < $TMP_TAR_LIST" 1>&2
+	    "--pax-option='exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime'" \
+	    "--mtime=$LAST_TAR_DATE -jcvf $TMP_TARBALL < $TMP_TAR_LIST" 1>&2
 	"$GTAR_TOOL" --files-from=- --sparse --no-acls --no-xattrs --no-selinux --sort=name \
 		     --owner=501 --group=20 --numeric-owner --totals \
-		     --pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime \
-		     -jcvf "$TMP_TARBALL" < "$TMP_TAR_LIST"
+		     --pax-option='exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime' \
+		     --mtime="$LAST_TAR_DATE" -jcvf "$TMP_TARBALL" < "$TMP_TAR_LIST"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR:" \
 		"$GTAR_TOOL --files-from=- --sparse --no-acls --no-xattrs --no-selinux --sort=name" \
 		"--owner=501 --group=20 --numeric-owner --totals" \
-		"--pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime" \
-		"-jcvf $TMP_TARBALL < $TMP_TAR_LIST failed, error: $status" 1>&2
-	    EXIT_CODE=8 # exit 8
+		"--pax-option='exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime'" \
+		"--mtime=$LAST_TAR_DATE -jcvf $TMP_TARBALL < $TMP_TAR_LIST failed, error: $status" 1>&2
+	    exit 8
 	fi
 
     # case: form the tarball silently
@@ -628,42 +721,37 @@ if [[ -z $NOOP ]]; then
     else
 	"$GTAR_TOOL" --files-from=- --sparse --no-acls --no-xattrs --no-selinux --sort=name \
 		     --owner=501 --group=20 --numeric-owner \
-		     --pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime \
-		     -jcf "$TMP_TARBALL" < "$TMP_TAR_LIST"
+		     --pax-option='exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime' \
+		     --mtime="$LAST_TAR_DATE" -jcf "$TMP_TARBALL" < "$TMP_TAR_LIST"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR:" \
 		"$GTAR_TOOL --files-from=- --sparse --no-acls --no-xattrs --no-selinux --sort=name" \
 		"--owner=501 --group=20 --numeric-owner" \
-		"--pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime" \
-		"-jcf $TMP_TARBALL < $TMP_TAR_LIST failed, error: $status" 1>&2
-	    EXIT_CODE=8 # exit 8
+		"--pax-option='exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime'" \
+		"--mtime=$LAST_TAR_DATE -jcf $TMP_TARBALL < $TMP_TAR_LIST failed, error: $status" 1>&2
+	    exit 8
 	fi
     fi
 
     # verify the tarball is not empty
     #
     if [[ ! -s $TMP_TARBALL ]]; then
-	echo "$0: ERROR: tarball is missing os empty: $TMP_TARBALL" 1>&2
-	EXIT_CODE=8 # exit 8
+	echo "$0: ERROR: tarball is missing is empty: $TMP_TARBALL" 1>&2
+	exit 8
     fi
 
 # case: -n
 #
-elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, did not execute:" \
+elif [[ $V_FLAG -ge 5 ]]; then
+    echo "$0: debug[6]: because of -n, did not execute:" \
 		"$GTAR_TOOL --files-from=- --sparse --no-acls --no-xattrs --no-selinux --sort=name" \
 		"--owner=501 --group=20 --numeric-owner --totals" \
-		"--pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime" \
-		"-jcvf $TMP_TARBALL < $TMP_TAR_LIST" 1>&2
-fi
-EXIT_CODE=$(< "$TMP_EXIT_CODE")
-if [[ -z $EXIT_CODE ]]; then
-    echo "$0: ERROR: temporary exit file has no contents: $TMP_EXIT_CODE" 1>&2
-    exit 19
+		"--pax-option='exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime'" \
+		"--mtime=$LAST_TAR_DATE -jcvf $TMP_TARBALL < $TMP_TAR_LIST" 1>&2
 fi
 
-# move the tarball in place only if different
+# update the tarball only if the tarball contents is different
 #
 if [[ -z $NOOP ]]; then
     if cmp -s "$TMP_TARBALL" "$TARBALL"; then
@@ -675,6 +763,101 @@ if [[ -z $NOOP ]]; then
 	fi
 
     else
+
+	# update .tar.tstamp with the timestamp of now
+	#
+	LAST_TAR_TSTAMP=$(TZ=UTZ date '+%s')
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: new TZ=UTC date +%s failed, error: $status" 1>&2
+	    exit 8
+	fi
+	if [[ $LAST_TAR_TSTAMP =~ ^-?[0-9]+$ ]]; then
+	    if [[ $LAST_TAR_TSTAMP -le 0 ]]; then
+		echo "$0: ERROR: new LAST_TAR_TSTAMP is not an integer > 0: $LAST_TAR_TSTAMP" 1>&2
+		exit 8
+	    fi
+	else
+	    echo "$0: ERROR: new LAST_TAR_TSTAMP is not an integer: $LAST_TAR_TSTAMP" 1>&2
+	    exit 8
+	fi
+
+	# report new timestamp
+	#
+	if [[ $V_FLAG -ge 1 ]]; then
+	    echo "$0: debug[1]: new LAST_TAR_TSTAMP=$LAST_TAR_TSTAMP" 1>&2
+	    echo "$0: debug[1]: new LAST_TAR_DATE=$LAST_TAR_DATE" 1>&2
+	    echo "$0: debug[1]: updating: $DOT_TAR_TSTAMP" 1>&2
+	fi
+	echo "$LAST_TAR_TSTAMP" > "$DOT_TAR_TSTAMP"
+	if [[ $V_FLAG -ge 1 ]]; then
+	    echo "$0: debug[1]: updating: $YEAR_TAR_TSTAMP" 1>&2
+	fi
+	echo "$LAST_TAR_TSTAMP" > "$YEAR_TAR_TSTAMP"
+	if [[ $V_FLAG -ge 1 ]]; then
+	    echo "$0: debug[1]: updating: $TOP_TAR_TSTAMP" 1>&2
+	fi
+	echo "$LAST_TAR_TSTAMP" > "$TOP_TAR_TSTAMP"
+
+	# convert the new LAST_TAR_TSTAMP into a date string
+	#
+	LAST_TAR_DATE=$(TZ=UTC date -r "$LAST_TAR_TSTAMP")
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: new date -r $LAST_TAR_TSTAMP failed, error: $status" 1>&2
+	    exit 8
+	fi
+	if [[ -z $LAST_TAR_DATE ]]; then
+	    echo "$0: ERROR: new date -r $LAST_TAR_TSTAMP produced an empty string" 1>&2
+	    exit 8
+	fi
+
+	# case: re-form the tarball verbosely if -v 3 or more
+	#
+	if [[ $V_FLAG -ge 3 ]]; then
+	    echo "$0: debug[3]: about to re-execute:" \
+		"$GTAR_TOOL --files-from=- --sparse --no-acls --no-xattrs --no-selinux --sort=name" \
+		"--owner=501 --group=20 --numeric-owner --totals" \
+		"--pax-option='exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime'" \
+		"--mtime=$LAST_TAR_DATE -jcvf $TMP_TARBALL < $TMP_TAR_LIST" 1>&2
+	    "$GTAR_TOOL" --files-from=- --sparse --no-acls --no-xattrs --no-selinux --sort=name \
+			 --owner=501 --group=20 --numeric-owner --totals \
+			 --pax-option='exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime' \
+			 --mtime="$LAST_TAR_DATE" -jcvf "$TMP_TARBALL" < "$TMP_TAR_LIST"
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: 2nd:" \
+		    "$GTAR_TOOL --files-from=- --sparse --no-acls --no-xattrs --no-selinux --sort=name" \
+		    "--owner=501 --group=20 --numeric-owner --totals" \
+		    "--pax-option='exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime'" \
+		    "--mtime=$LAST_TAR_DATE -jcvf $TMP_TARBALL < $TMP_TAR_LIST failed, error: $status" 1>&2
+		exit 8
+	    fi
+
+	# case: re-form the tarball silently
+	#
+	else
+	    "$GTAR_TOOL" --files-from=- --sparse --no-acls --no-xattrs --no-selinux --sort=name \
+			 --owner=501 --group=20 --numeric-owner \
+			 --pax-option='exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime' \
+			 --mtime="$LAST_TAR_DATE" -jcf "$TMP_TARBALL" < "$TMP_TAR_LIST"
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: 2nd:" \
+		    "$GTAR_TOOL --files-from=- --sparse --no-acls --no-xattrs --no-selinux --sort=name" \
+		    "--owner=501 --group=20 --numeric-owner" \
+		    "--pax-option='exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime'" \
+		    "--mtime=$LAST_TAR_DATE -jcf $TMP_TARBALL < $TMP_TAR_LIST failed, error: $status" 1>&2
+		exit 8
+	    fi
+	fi
+
+	# verify the tarball is not empty
+	#
+	if [[ ! -s $TMP_TARBALL ]]; then
+	    echo "$0: ERROR: updated tarball is missing is empty: $TMP_TARBALL" 1>&2
+	    exit 8
+	fi
 
 	# case: tarball changed, update the file
 	#
@@ -690,22 +873,17 @@ if [[ -z $NOOP ]]; then
 	fi
 	if [[ status -ne 0 ]]; then
 	    echo "$0: ERROR: mv -f -- $TMP_TARBALL $TARBALL filed, error code: $status" 1>&2
-	    EXIT_CODE=8 # exit 8
+	    exit 8
 	elif [[ $V_FLAG -ge 1 ]]; then
 	    echo "$0: debug[1]: built replaced HTML file: $TARBALL" 1>&2
 	fi
 	if [[ ! -s $TARBALL ]]; then
 	    echo "$0: ERROR: not a non-empty index HTML file: $TARBALL" 1>&2
-	    EXIT_CODE=8 # exit 8
+	    exit 8
 	fi
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, tarball was not touched: $TARBALL" 1>&2
-fi
-EXIT_CODE=$(< "$TMP_EXIT_CODE")
-if [[ -z $EXIT_CODE ]]; then
-    echo "$0: ERROR: temporary exit file has no contents: $TMP_EXIT_CODE" 1>&2
-    exit 20
 fi
 
 # All Done!!! -- Jessica Noll, Age 2
