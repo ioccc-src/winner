@@ -3166,6 +3166,10 @@ Cody also added the [try.sh](2004/schnitzi/try.sh) script.
 
 [Cody](#cody) added the [try.sh](2004/sds/try.sh) script.
 
+Also, after the README.md file had copyright changes, it broke the script so
+Cody made a copy of the older README.md file into `README_sds.txt` and added that
+to the repo for the script instead.
+
 
 ## <a name="2004_vik2"></a>[2004/vik2](2004/vik2/vik2.c) ([index.html](2004/vik2/index.html))
 

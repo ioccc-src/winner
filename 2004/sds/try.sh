@@ -30,10 +30,10 @@ echo 1>&2
 make encoder 2>/dev/null
 echo 1>&2
 
-echo "$ ./encoder README.md <sds.c | tee sds_msg.c" 1>&2
+echo "$ ./encoder README_sds.txt <sds.c | tee sds_msg.c" 1>&2
 read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
 echo 1>&2
-./encoder README.md <sds.c | tee sds_msg.c | less -rEXFK
+./encoder README_sds.txt <sds.c | tee sds_msg.c | less -rEXFK
 
 read -r -n 1 -p "Press any key to run: make sds_msg 2>/dev/null: "
 echo 1>&2
@@ -55,15 +55,15 @@ echo 1>&2
 echo 'Hello, World!' > message
 echo 1>&2
 
-echo "$ ./encoder message < README.md | tee remarks.md" 1>&2
+echo "$ ./encoder message < README_sds.txt | tee remarks.md" 1>&2
 read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
 echo 1>&2
-./encoder message < README.md | tee remarks.md | less -rEXFK
+./encoder message < README_sds.txt | tee remarks.md | less -rEXFK
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: diff remarks.md README.md (space = next page, q = quit): "
+read -r -n 1 -p "Press any key to run: diff remarks.md README_sds.txt (space = next page, q = quit): "
 echo 1>&2
-diff remarks.md README.md | less -rEXFK
+diff remarks.md README_sds.txt | less -rEXFK
 echo "Did you notice how similar they are?" 1>&2
 echo 1>&2
 
