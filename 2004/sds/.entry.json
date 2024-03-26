@@ -42,6 +42,14 @@
 	    "entry_text" : "how to run"
 	},
 	{
+	    "file_path" : "README_sds.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "test",
+	    "display_via_github" : true,
+	    "entry_text" : "sample data used by try.sh"
+	},
+	{
 	    "file_path" : "2004_sds.tar.bz2",
 	    "inventory_order" : 100000,
 	    "OK_to_edit" : false,

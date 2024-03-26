@@ -58,6 +58,9 @@ GEN_TOP_HTML= bin/gen-top-html.sh
 GEN_OTHER_HTML= bin/gen-other-html.sh
 README2INDEX= bin/readme2index.sh
 QUICK_README2INDEX= bin/quick-readme2index.sh
+UNTAR_ENTRY= bin/untar-entry.sh
+UNTAR_YEAR= bin/untar-year.sh
+UNTAR_ALL= bin/untar-all.sh
 TAR_ENTRY= bin/tar-entry.sh
 TAR_YEAR= bin/tar-year.sh
 TAR_ALL= bin/tar-all.sh
@@ -241,6 +244,7 @@ indent.c:
 .PHONY: help genpath genfilelist verify_entry_files gen_authors gen_location gen_years \
 	entry_index gen_top_html thanks gen_other_html quick_entry_index \
 	gen_year_index quick_www www \
+	untar_entry_tarball untar_year_tarball untar_all_tarball \
 	form_entry_tarball form_year_tarball form_all_tarball tar \
 	gen_status gen_sitemap sitemap timestamp update
 
@@ -264,6 +268,10 @@ help:
 	@echo make quick_entry_index
 	@echo make quick_www
 	@echo make www
+	@echo
+	@echo make untar_entry_tarball
+	@echo make untar_year_tarball
+	@echo make untar_all_tarball
 	@echo
 	@echo make form_entry_tarball
 	@echo make form_year_tarball
@@ -439,6 +447,30 @@ www:
 	${MAKE} gen_top_html
 	${MAKE} gen_other_html
 	${MAKE} entry_index
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# untar all entry tarballs
+#
+untar_entry_tarball: ${ALL_RUN}
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${ALL_RUN} -v 3 ${UNTAR_ENTRY} -v 1
+	${MAKE} verify_entry_files
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# untar all entry tarballs
+#
+untar_year_tarball: ${ALL_RUN}
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${ALL_YEARS} -v 3 ${UNTAR_YEAR} -v 1
+	${MAKE} verify_entry_files
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# untar all entry tarballs
+#
+untar_all_tarball: ${ALL_RUN}
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${UNTAR_ALL} -v 1
+	${MAKE} verify_entry_files
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # form all entry compressed tarballs

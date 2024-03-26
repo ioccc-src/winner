@@ -2184,6 +2184,7 @@
 2004/sds/2004_sds.tar.bz2
 2004/sds/Makefile
 2004/sds/README.md
+2004/sds/README_sds.txt
 2004/sds/index.html
 2004/sds/sds.c
 2004/sds/sds.orig.c

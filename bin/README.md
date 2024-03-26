@@ -367,6 +367,23 @@ bin/all-years.sh -v 3 bin/tar-year.sh -v 1 -W
 ```
 
 
+## [untar-entry.sh](untar-entry.sh)
+
+Untar an entry's a compressed tarball.
+
+Usage:
+
+```sh
+bin/untar-entry.sh -v 1 YYYY/dir
+```
+
+Suggested usage:
+
+```sh
+bin/all-run.sh -v 3 bin/untar-entry.sh -v 1
+```
+
+
 # <a name="how"></a>How IOCCC HTML content is built
 
 The [md2html.sh](md2html.sh) tool is the primary tool that

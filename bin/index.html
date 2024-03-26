@@ -276,6 +276,12 @@ We sort with lines starting with <code>!</code> fourth.</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/tar-year.sh</span> <span class="at">-v</span> 1 YYYY</span></code></pre></div>
 <p>Suggested usage:</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-years.sh</span> <span class="at">-v</span> 3 bin/tar-year.sh <span class="at">-v</span> 1 <span class="at">-W</span></span></code></pre></div>
+<h2 id="untar-entry.sh"><a href="untar-entry.sh">untar-entry.sh</a></h2>
+<p>Untar an entry’s a compressed tarball.</p>
+<p>Usage:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/untar-entry.sh</span> <span class="at">-v</span> 1 YYYY/dir</span></code></pre></div>
+<p>Suggested usage:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> <span class="at">-v</span> 3 bin/untar-entry.sh <span class="at">-v</span> 1</span></code></pre></div>
 <h1 id="how-ioccc-html-content-is-built"><a name="how"></a>How IOCCC HTML content is built</h1>
 <p>The <a href="md2html.sh">md2html.sh</a> tool is the primary tool that
 is used to form all IOCCC related HTML pages for the <a href="https://www.ioccc.org">official IOCCC web
@@ -292,16 +298,16 @@ built uses, by default, files from the <a href="../inc/index.html">inc directory
 the file name form:</p>
 <pre><code>*.default.html</code></pre>
 <p>By using command line options of the form:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> phase=name</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> phase=name</span></code></pre></div>
 <p>where <code>phase</code> is the name of an HTML phase,
 a non-default file may be used. For example:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> topnav=up2index</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> topnav=up2index</span></code></pre></div>
 <p>will cause <a href="../inc/topnav.up2index.html">inc/topnav.up2index.html</a>
 instead of <a href="../inc/topnav.default.html">inc/topnav.default.html</a> to be
 used during the <em>topnav</em> HTML phase.</p>
 <p>If <code>name</code> is dot (i.e., <code>.</code>), then the given HTML phase is skipped.
 For example:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> footer=.</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> footer=.</span></code></pre></div>
 <p>will cause no HTML content to be produced during the <code>footer</code> HTML phase.</p>
 <h2 id="html-phases"><a name="html"></a>HTML phases</h2>
 <p>The following HTML phase files are used to build HTML content:</p>

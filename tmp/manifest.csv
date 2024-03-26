@@ -2182,6 +2182,7 @@
 2004,sds,Makefile,30,true,makefile,true,entry Makefile
 2004,sds,sds.orig.c,50,true,c,true,original source
 2004,sds,try.sh,100,true,shellscript,true,how to run
+2004,sds,README_sds.txt,200,true,test,true,sample data used by try.sh
 2004,sds,2004_sds.tar.bz2,100000,false,tbz2,false,download entry source
 2004,sds,index.html,2000000000,false,html,false,entry home page
 2004,sds,README.md,4294967295,true,markdown,true,markdown source for index.html

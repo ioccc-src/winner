@@ -1,3 +1,11 @@
+# NOT AN OFFICIAL README
+
+NOTE: This is a copy of README.md as it was in 2024 Jan 15.
+
+For the official README see [README.md](README.md) or
+view [index.html](index.html).
+
+
 ## To build:
 
 ```sh

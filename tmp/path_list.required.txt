@@ -1462,6 +1462,7 @@
 2004/sds/.gitignore
 2004/sds/Makefile
 2004/sds/README.md
+2004/sds/README_sds.txt
 2004/sds/sds.c
 2004/sds/sds.orig.c
 2004/sds/try.sh
