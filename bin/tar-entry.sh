@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3 2024-03-25"
+export VERSION="1.3.1 2024-03-25"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -808,6 +808,21 @@ if [[ -n $REBUILD_TARBALL ]]; then
 	    exit 8
 	fi
 
+	# update tar timestamp
+	#
+	if [[ $V_FLAG -ge 3 ]]; then
+	    echo "$0: debug[3]: new TAR_TIMESTAMP=$TAR_TIMESTAMP" 1>&2
+	fi
+	echo "$TAR_TIMESTAMP" > "$DOT_TAR_TSTAMP"
+	if [[ $V_FLAG -ge 3 ]]; then
+	    echo "$0: debug[3]: updating: $YEAR_TAR_TSTAMP" 1>&2
+	fi
+	echo "$TAR_TIMESTAMP" > "$YEAR_TAR_TSTAMP"
+	if [[ $V_FLAG -ge 3 ]]; then
+	    echo "$0: debug[3]: updating: $TOP_TAR_TSTAMP" 1>&2
+	fi
+	echo "$TAR_TIMESTAMP" > "$TOP_TAR_TSTAMP"
+
 	# case: form the tarball verbosely if -v 5 or more
 	#
 	if [[ $V_FLAG -ge 5 ]]; then
@@ -877,21 +892,6 @@ if [[ -n $REBUILD_TARBALL ]]; then
 	    echo "$0: ERROR: not a non-empty index HTML file: $TARBALL" 1>&2
 	    exit 8
 	fi
-
-	# update tar timestamp
-	#
-	if [[ $V_FLAG -ge 3 ]]; then
-	    echo "$0: debug[3]: new TAR_TIMESTAMP=$TAR_TIMESTAMP" 1>&2
-	fi
-	echo "$TAR_TIMESTAMP" > "$DOT_TAR_TSTAMP"
-	if [[ $V_FLAG -ge 3 ]]; then
-	    echo "$0: debug[3]: updating: $YEAR_TAR_TSTAMP" 1>&2
-	fi
-	echo "$TAR_TIMESTAMP" > "$YEAR_TAR_TSTAMP"
-	if [[ $V_FLAG -ge 3 ]]; then
-	    echo "$0: debug[3]: updating: $TOP_TAR_TSTAMP" 1>&2
-	fi
-	echo "$TAR_TIMESTAMP" > "$TOP_TAR_TSTAMP"
 
     # case: -n
     #
