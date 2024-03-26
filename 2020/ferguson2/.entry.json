@@ -42,12 +42,12 @@
 	    "entry_text" : "original source"
 	},
 	{
-	    "file_path" : "chocolate-cake.html",
+	    "file_path" : "encrypted.html",
 	    "inventory_order" : 100,
 	    "OK_to_edit" : true,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "encrypted chocolate cake recipe"
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "secret message in a html file to decrypt"
 	},
 	{
 	    "file_path" : "input.txt",
@@ -200,30 +200,6 @@
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
 	    "entry_text" : "markdown source for index.html"
-	},
-	{
-	    "file_path" : "cake.jpg",
-	    "inventory_order" : 4294967295,
-	    "OK_to_edit" : true,
-	    "display_as" : "image",
-	    "display_via_github" : false,
-	    "entry_text" : "image for chocolate cake"
-	},
-	{
-	    "file_path" : "chocolate-cake.md",
-	    "inventory_order" : 4294967295,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for chocolate-cake.html"
-	},
-	{
-	    "file_path" : "ioccc-cake.jpg",
-	    "inventory_order" : 4294967295,
-	    "OK_to_edit" : true,
-	    "display_as" : "image",
-	    "display_via_github" : false,
-	    "entry_text" : "image for chocolate cake"
 	},
 	{
 	    "file_path" : "obfuscation.md",
