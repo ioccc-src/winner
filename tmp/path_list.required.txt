@@ -3199,12 +3199,9 @@
 2020/ferguson2/.gitignore
 2020/ferguson2/Makefile
 2020/ferguson2/README.md
-2020/ferguson2/cake.jpg
-2020/ferguson2/chocolate-cake.html
-2020/ferguson2/chocolate-cake.md
+2020/ferguson2/encrypted.html
 2020/ferguson2/enigma.1
 2020/ferguson2/input.txt
-2020/ferguson2/ioccc-cake.jpg
 2020/ferguson2/key.txt
 2020/ferguson2/obfuscation.html
 2020/ferguson2/obfuscation.key
