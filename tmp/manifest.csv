@@ -10,7 +10,6 @@
 1984,anonymous,.entry.json,4294967295,true,json,true,description of entry in JSON
 1984,anonymous,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1984,anonymous,.path,4294967295,false,text,false,directory path from top directory
-1984,anonymous,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1984,decot,decot.c,20,true,c,true,entry source
 1984,decot,Makefile,30,true,makefile,true,entry Makefile
 1984,decot,decot.alt.c,40,true,c,true,alternative source
@@ -21,7 +20,6 @@
 1984,decot,.entry.json,4294967295,true,json,true,description of entry in JSON
 1984,decot,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1984,decot,.path,4294967295,false,text,false,directory path from top directory
-1984,decot,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1984,laman,laman.c,20,true,c,true,entry source
 1984,laman,Makefile,30,true,makefile,true,entry Makefile
 1984,laman,laman.orig.c,50,false,c,true,original source
@@ -32,7 +30,6 @@
 1984,laman,.entry.json,4294967295,true,json,true,description of entry in JSON
 1984,laman,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1984,laman,.path,4294967295,false,text,false,directory path from top directory
-1984,laman,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1984,mullender,mullender.c,20,true,c,true,entry source
 1984,mullender,Makefile,30,true,makefile,true,entry Makefile
 1984,mullender,mullender.alt.c,40,true,c,true,alternative source
@@ -45,7 +42,6 @@
 1984,mullender,.entry.json,4294967295,true,json,true,description of entry in JSON
 1984,mullender,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1984,mullender,.path,4294967295,false,text,false,directory path from top directory
-1984,mullender,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1985,applin,applin.c,20,true,c,true,entry source
 1985,applin,Makefile,30,true,makefile,true,entry Makefile
 1985,applin,applin.orig.c,50,false,c,true,original source
@@ -55,7 +51,6 @@
 1985,applin,.entry.json,4294967295,true,json,true,description of entry in JSON
 1985,applin,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1985,applin,.path,4294967295,false,text,false,directory path from top directory
-1985,applin,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1985,august,august.c,20,true,c,true,entry source
 1985,august,Makefile,30,true,makefile,true,entry Makefile
 1985,august,august.orig.c,50,false,c,true,original source
@@ -67,7 +62,6 @@
 1985,august,.entry.json,4294967295,true,json,true,description of entry in JSON
 1985,august,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1985,august,.path,4294967295,false,text,false,directory path from top directory
-1985,august,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1985,lycklama,lycklama.c,20,true,c,true,entry source
 1985,lycklama,Makefile,30,true,makefile,true,entry Makefile
 1985,lycklama,lycklama.alt.c,40,true,c,true,alternative source
@@ -79,7 +73,6 @@
 1985,lycklama,.entry.json,4294967295,true,json,true,description of entry in JSON
 1985,lycklama,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1985,lycklama,.path,4294967295,false,text,false,directory path from top directory
-1985,lycklama,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1985,shapiro,shapiro.c,20,true,c,true,entry source
 1985,shapiro,Makefile,30,true,makefile,true,entry Makefile
 1985,shapiro,shapiro.alt.c,40,true,c,true,alternative source
@@ -91,7 +84,6 @@
 1985,shapiro,.entry.json,4294967295,true,json,true,description of entry in JSON
 1985,shapiro,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1985,shapiro,.path,4294967295,false,text,false,directory path from top directory
-1985,shapiro,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1985,sicherman,sicherman.c,20,true,c,true,entry source
 1985,sicherman,Makefile,30,true,makefile,true,entry Makefile
 1985,sicherman,sicherman.alt.c,40,true,c,true,alternative source
@@ -104,7 +96,6 @@
 1985,sicherman,.entry.json,4294967295,true,json,true,description of entry in JSON
 1985,sicherman,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1985,sicherman,.path,4294967295,false,text,false,directory path from top directory
-1985,sicherman,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1986,applin,applin.c,20,true,c,true,entry source
 1986,applin,Makefile,30,true,makefile,true,entry Makefile
 1986,applin,applin.orig.c,50,false,c,true,original source
@@ -114,7 +105,6 @@
 1986,applin,.entry.json,4294967295,true,json,true,description of entry in JSON
 1986,applin,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1986,applin,.path,4294967295,false,text,false,directory path from top directory
-1986,applin,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1986,august,august.c,20,true,c,true,entry source
 1986,august,Makefile,30,true,makefile,true,entry Makefile
 1986,august,august.orig.c,50,false,c,true,original source
@@ -124,7 +114,6 @@
 1986,august,.entry.json,4294967295,true,json,true,description of entry in JSON
 1986,august,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1986,august,.path,4294967295,false,text,false,directory path from top directory
-1986,august,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1986,bright,bright.c,20,true,c,true,entry source
 1986,bright,Makefile,30,true,makefile,true,entry Makefile
 1986,bright,bright.orig.c,50,false,c,true,original source
@@ -135,7 +124,6 @@
 1986,bright,.entry.json,4294967295,true,json,true,description of entry in JSON
 1986,bright,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1986,bright,.path,4294967295,false,text,false,directory path from top directory
-1986,bright,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1986,hague,hague.c,20,true,c,true,entry source
 1986,hague,Makefile,30,true,makefile,true,entry Makefile
 1986,hague,hague.orig.c,50,false,c,true,original source
@@ -147,7 +135,6 @@
 1986,hague,.entry.json,4294967295,true,json,true,description of entry in JSON
 1986,hague,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1986,hague,.path,4294967295,false,text,false,directory path from top directory
-1986,hague,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1986,holloway,holloway.c,20,true,c,true,entry source
 1986,holloway,Makefile,30,true,makefile,true,entry Makefile
 1986,holloway,holloway.orig.c,50,false,c,true,original source
@@ -157,7 +144,6 @@
 1986,holloway,.entry.json,4294967295,true,json,true,description of entry in JSON
 1986,holloway,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1986,holloway,.path,4294967295,false,text,false,directory path from top directory
-1986,holloway,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1986,marshall,marshall.c,20,true,c,true,entry source
 1986,marshall,Makefile,30,true,makefile,true,entry Makefile
 1986,marshall,marshall.alt.c,40,true,c,true,alternative source
@@ -170,7 +156,6 @@
 1986,marshall,.entry.json,4294967295,true,json,true,description of entry in JSON
 1986,marshall,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1986,marshall,.path,4294967295,false,text,false,directory path from top directory
-1986,marshall,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1986,pawka,pawka.c,20,true,c,true,entry source
 1986,pawka,Makefile,30,true,makefile,true,entry Makefile
 1986,pawka,pawka.orig.c,50,false,c,true,original source
@@ -180,7 +165,6 @@
 1986,pawka,.entry.json,4294967295,true,json,true,description of entry in JSON
 1986,pawka,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1986,pawka,.path,4294967295,false,text,false,directory path from top directory
-1986,pawka,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1986,stein,stein.c,20,true,c,true,entry source
 1986,stein,Makefile,30,true,makefile,true,entry Makefile
 1986,stein,stein.orig.c,50,true,c,true,original source
@@ -191,7 +175,6 @@
 1986,stein,.entry.json,4294967295,true,json,true,description of entry in JSON
 1986,stein,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1986,stein,.path,4294967295,false,text,false,directory path from top directory
-1986,stein,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1986,wall,wall.c,20,true,c,true,entry source
 1986,wall,Makefile,30,true,makefile,true,entry Makefile
 1986,wall,wall.orig.c,50,true,c,true,original source
@@ -201,7 +184,6 @@
 1986,wall,.entry.json,4294967295,true,json,true,description of entry in JSON
 1986,wall,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1986,wall,.path,4294967295,false,text,false,directory path from top directory
-1986,wall,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1987,biggar,biggar.c,20,true,c,true,entry source
 1987,biggar,Makefile,30,true,makefile,true,entry Makefile
 1987,biggar,biggar.orig.c,50,false,c,true,original source
@@ -212,7 +194,6 @@
 1987,biggar,.entry.json,4294967295,true,json,true,description of entry in JSON
 1987,biggar,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1987,biggar,.path,4294967295,false,text,false,directory path from top directory
-1987,biggar,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1987,heckbert,heckbert.c,20,true,c,true,entry source
 1987,heckbert,Makefile,30,true,makefile,true,entry Makefile
 1987,heckbert,heckbert.orig.c,50,false,c,true,original source
@@ -223,7 +204,6 @@
 1987,heckbert,.entry.json,4294967295,true,json,true,description of entry in JSON
 1987,heckbert,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1987,heckbert,.path,4294967295,false,text,false,directory path from top directory
-1987,heckbert,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1987,hines,hines.c,20,true,c,true,entry source
 1987,hines,Makefile,30,true,makefile,true,entry Makefile
 1987,hines,hines.orig.c,50,false,c,true,original source
@@ -236,7 +216,6 @@
 1987,hines,.entry.json,4294967295,true,json,true,description of entry in JSON
 1987,hines,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1987,hines,.path,4294967295,false,text,false,directory path from top directory
-1987,hines,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1987,korn,korn.c,20,true,c,true,entry source
 1987,korn,Makefile,30,true,makefile,true,entry Makefile
 1987,korn,korn.orig.c,50,false,c,true,original source
@@ -246,7 +225,6 @@
 1987,korn,.entry.json,4294967295,true,json,true,description of entry in JSON
 1987,korn,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1987,korn,.path,4294967295,false,text,false,directory path from top directory
-1987,korn,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1987,lievaart,lievaart.c,20,true,c,true,entry source
 1987,lievaart,Makefile,30,true,makefile,true,entry Makefile
 1987,lievaart,lievaart.orig.c,50,false,c,true,original source
@@ -257,7 +235,6 @@
 1987,lievaart,.entry.json,4294967295,true,json,true,description of entry in JSON
 1987,lievaart,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1987,lievaart,.path,4294967295,false,text,false,directory path from top directory
-1987,lievaart,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1987,wall,wall.c,20,true,c,true,entry source
 1987,wall,Makefile,30,true,makefile,true,entry Makefile
 1987,wall,wall.orig.c,50,true,c,true,original source
@@ -268,7 +245,6 @@
 1987,wall,.entry.json,4294967295,true,json,true,description of entry in JSON
 1987,wall,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1987,wall,.path,4294967295,false,text,false,directory path from top directory
-1987,wall,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1987,westley,westley.c,20,true,c,true,entry source
 1987,westley,Makefile,30,true,makefile,true,entry Makefile
 1987,westley,westley.orig.c,50,true,c,true,original source
@@ -278,7 +254,6 @@
 1987,westley,.entry.json,4294967295,true,json,true,description of entry in JSON
 1987,westley,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1987,westley,.path,4294967295,false,text,false,directory path from top directory
-1987,westley,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1988,applin,applin.c,20,true,c,true,entry source
 1988,applin,Makefile,30,true,makefile,true,entry Makefile
 1988,applin,applin.alt.c,40,true,c,true,alternative source
@@ -289,7 +264,6 @@
 1988,applin,.entry.json,4294967295,true,json,true,description of entry in JSON
 1988,applin,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1988,applin,.path,4294967295,false,text,false,directory path from top directory
-1988,applin,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1988,dale,dale.c,20,true,c,true,entry source
 1988,dale,Makefile,30,true,makefile,true,entry Makefile
 1988,dale,dale.orig.c,50,false,c,true,original source
@@ -300,7 +274,6 @@
 1988,dale,.entry.json,4294967295,true,json,true,description of entry in JSON
 1988,dale,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1988,dale,.path,4294967295,false,text,false,directory path from top directory
-1988,dale,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1988,isaak,isaak.c,20,true,c,true,entry source
 1988,isaak,Makefile,30,true,makefile,true,entry Makefile
 1988,isaak,isaak.alt.c,40,true,c,true,alternative source
@@ -312,7 +285,6 @@
 1988,isaak,.entry.json,4294967295,true,json,true,description of entry in JSON
 1988,isaak,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1988,isaak,.path,4294967295,false,text,false,directory path from top directory
-1988,isaak,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1988,litmaath,litmaath.c,20,true,c,true,entry source
 1988,litmaath,Makefile,30,true,makefile,true,entry Makefile
 1988,litmaath,litmaath.alt.c,40,true,c,true,alternative source
@@ -323,7 +295,6 @@
 1988,litmaath,.entry.json,4294967295,true,json,true,description of entry in JSON
 1988,litmaath,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1988,litmaath,.path,4294967295,false,text,false,directory path from top directory
-1988,litmaath,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1988,phillipps,phillipps.c,20,true,c,true,entry source
 1988,phillipps,Makefile,30,true,makefile,true,entry Makefile
 1988,phillipps,phillipps.orig.c,50,false,c,true,original source
@@ -333,7 +304,6 @@
 1988,phillipps,.entry.json,4294967295,true,json,true,description of entry in JSON
 1988,phillipps,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1988,phillipps,.path,4294967295,false,text,false,directory path from top directory
-1988,phillipps,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1988,reddy,reddy.c,20,true,c,true,entry source
 1988,reddy,Makefile,30,true,makefile,true,entry Makefile
 1988,reddy,reddy.orig.c,50,true,c,true,original source
@@ -343,7 +313,6 @@
 1988,reddy,.entry.json,4294967295,true,json,true,description of entry in JSON
 1988,reddy,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1988,reddy,.path,4294967295,false,text,false,directory path from top directory
-1988,reddy,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1988,robison,robison.c,20,true,c,true,entry source
 1988,robison,Makefile,30,true,makefile,true,entry Makefile
 1988,robison,robison.orig.c,50,true,c,true,original source
@@ -353,7 +322,6 @@
 1988,robison,.entry.json,4294967295,true,json,true,description of entry in JSON
 1988,robison,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1988,robison,.path,4294967295,false,text,false,directory path from top directory
-1988,robison,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1988,spinellis,spinellis.c,20,true,c,true,entry source
 1988,spinellis,Makefile,30,true,makefile,true,entry Makefile
 1988,spinellis,spinellis.alt.c,40,true,c,true,alternative source
@@ -366,7 +334,6 @@
 1988,spinellis,.entry.json,4294967295,true,json,true,description of entry in JSON
 1988,spinellis,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1988,spinellis,.path,4294967295,false,text,false,directory path from top directory
-1988,spinellis,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1988,westley,westley.c,20,true,c,true,entry source
 1988,westley,Makefile,30,true,makefile,true,entry Makefile
 1988,westley,westley.alt.c,40,true,c,true,alternative source
@@ -378,7 +345,6 @@
 1988,westley,.entry.json,4294967295,true,json,true,description of entry in JSON
 1988,westley,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1988,westley,.path,4294967295,false,text,false,directory path from top directory
-1988,westley,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1989,fubar,fubar.c,20,true,c,true,entry source
 1989,fubar,Makefile,30,true,makefile,true,entry Makefile
 1989,fubar,fubar.orig.c,50,false,c,true,original source
@@ -390,7 +356,6 @@
 1989,fubar,.entry.json,4294967295,true,json,true,description of entry in JSON
 1989,fubar,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1989,fubar,.path,4294967295,false,text,false,directory path from top directory
-1989,fubar,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1989,jar.1,jar.1.c,20,true,c,true,entry source
 1989,jar.1,Makefile,30,true,makefile,true,entry Makefile
 1989,jar.1,jar.1.alt.c,40,true,c,true,alternative source
@@ -403,7 +368,6 @@
 1989,jar.1,.entry.json,4294967295,true,json,true,description of entry in JSON
 1989,jar.1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1989,jar.1,.path,4294967295,false,text,false,directory path from top directory
-1989,jar.1,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1989,jar.2,jar.2.c,20,true,c,true,entry source
 1989,jar.2,Makefile,30,true,makefile,true,entry Makefile
 1989,jar.2,jar.2.orig.c,50,false,c,true,original source
@@ -417,7 +381,6 @@
 1989,jar.2,.entry.json,4294967295,true,json,true,description of entry in JSON
 1989,jar.2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1989,jar.2,.path,4294967295,false,text,false,directory path from top directory
-1989,jar.2,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1989,ovdluhe,ovdluhe.c,20,true,c,true,entry source
 1989,ovdluhe,Makefile,30,true,makefile,true,entry Makefile
 1989,ovdluhe,ovdluhe.alt.c,40,true,c,true,alternative source
@@ -430,7 +393,6 @@
 1989,ovdluhe,.entry.json,4294967295,true,json,true,description of entry in JSON
 1989,ovdluhe,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1989,ovdluhe,.path,4294967295,false,text,false,directory path from top directory
-1989,ovdluhe,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1989,paul,paul.c,20,true,c,true,entry source
 1989,paul,Makefile,30,true,makefile,true,entry Makefile
 1989,paul,paul.alt.c,40,true,c,true,alternative source
@@ -441,7 +403,6 @@
 1989,paul,.entry.json,4294967295,true,json,true,description of entry in JSON
 1989,paul,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1989,paul,.path,4294967295,false,text,false,directory path from top directory
-1989,paul,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1989,robison,robison.c,20,true,c,true,entry source
 1989,robison,Makefile,30,true,makefile,true,entry Makefile
 1989,robison,robison.orig.c,50,true,c,true,original source
@@ -452,7 +413,6 @@
 1989,robison,.entry.json,4294967295,true,json,true,description of entry in JSON
 1989,robison,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1989,robison,.path,4294967295,false,text,false,directory path from top directory
-1989,robison,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1989,roemer,roemer.c,20,true,c,true,entry source
 1989,roemer,Makefile,30,true,makefile,true,entry Makefile
 1989,roemer,roemer.orig.c,50,true,c,true,original source
@@ -462,7 +422,6 @@
 1989,roemer,.entry.json,4294967295,true,json,true,description of entry in JSON
 1989,roemer,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1989,roemer,.path,4294967295,false,text,false,directory path from top directory
-1989,roemer,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1989,tromp,tromp.c,20,true,c,true,entry source
 1989,tromp,Makefile,30,true,makefile,true,entry Makefile
 1989,tromp,tromp.alt.c,40,true,c,true,alternative source
@@ -473,7 +432,6 @@
 1989,tromp,.entry.json,4294967295,true,json,true,description of entry in JSON
 1989,tromp,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1989,tromp,.path,4294967295,false,text,false,directory path from top directory
-1989,tromp,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1989,vanb,vanb.c,20,true,c,true,entry source
 1989,vanb,Makefile,30,true,makefile,true,entry Makefile
 1989,vanb,vanb.orig.c,50,true,c,true,original source
@@ -484,7 +442,6 @@
 1989,vanb,.entry.json,4294967295,true,json,true,description of entry in JSON
 1989,vanb,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1989,vanb,.path,4294967295,false,text,false,directory path from top directory
-1989,vanb,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1989,westley,westley.c,20,true,c,true,entry source
 1989,westley,Makefile,30,true,makefile,true,entry Makefile
 1989,westley,westley.orig.c,50,true,c,true,original source
@@ -496,7 +453,6 @@
 1989,westley,.entry.json,4294967295,true,json,true,description of entry in JSON
 1989,westley,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1989,westley,.path,4294967295,false,text,false,directory path from top directory
-1989,westley,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1990,baruch,baruch.c,20,true,c,true,entry source
 1990,baruch,Makefile,30,true,makefile,true,entry Makefile
 1990,baruch,baruch.alt.c,40,true,c,true,alternative source
@@ -508,7 +464,6 @@
 1990,baruch,.entry.json,4294967295,true,json,true,description of entry in JSON
 1990,baruch,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1990,baruch,.path,4294967295,false,text,false,directory path from top directory
-1990,baruch,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1990,cmills,cmills.c,20,true,c,true,entry source
 1990,cmills,Makefile,30,true,makefile,true,entry Makefile
 1990,cmills,cmills.orig.c,50,false,c,true,original source
@@ -518,7 +473,6 @@
 1990,cmills,.entry.json,4294967295,true,json,true,description of entry in JSON
 1990,cmills,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1990,cmills,.path,4294967295,false,text,false,directory path from top directory
-1990,cmills,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1990,dds,dds.c,20,true,c,true,entry source
 1990,dds,Makefile,30,true,makefile,true,entry Makefile
 1990,dds,dds.orig.c,50,false,c,true,original source
@@ -529,7 +483,6 @@
 1990,dds,.entry.json,4294967295,true,json,true,description of entry in JSON
 1990,dds,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1990,dds,.path,4294967295,false,text,false,directory path from top directory
-1990,dds,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1990,dg,dg.c,20,true,c,true,entry source
 1990,dg,Makefile,30,true,makefile,true,entry Makefile
 1990,dg,dg.orig.c,50,false,c,true,original source
@@ -540,7 +493,6 @@
 1990,dg,.entry.json,4294967295,true,json,true,description of entry in JSON
 1990,dg,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1990,dg,.path,4294967295,false,text,false,directory path from top directory
-1990,dg,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1990,jaw,jaw.c,20,true,c,true,entry source
 1990,jaw,Makefile,30,true,makefile,true,entry Makefile
 1990,jaw,jaw.orig.c,50,false,c,true,original source
@@ -553,7 +505,6 @@
 1990,jaw,.entry.json,4294967295,true,json,true,description of entry in JSON
 1990,jaw,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1990,jaw,.path,4294967295,false,text,false,directory path from top directory
-1990,jaw,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1990,pjr,pjr.c,20,true,c,true,entry source
 1990,pjr,Makefile,30,true,makefile,true,entry Makefile
 1990,pjr,pjr.alt.c,40,true,c,true,alternative source
@@ -564,7 +515,6 @@
 1990,pjr,.entry.json,4294967295,true,json,true,description of entry in JSON
 1990,pjr,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1990,pjr,.path,4294967295,false,text,false,directory path from top directory
-1990,pjr,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1990,scjones,scjones.c,20,true,c,true,entry source
 1990,scjones,Makefile,30,true,makefile,true,entry Makefile
 1990,scjones,scjones.orig.c,50,true,c,true,original source
@@ -575,7 +525,6 @@
 1990,scjones,.entry.json,4294967295,true,json,true,description of entry in JSON
 1990,scjones,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1990,scjones,.path,4294967295,false,text,false,directory path from top directory
-1990,scjones,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1990,stig,stig.c,20,true,c,true,entry source
 1990,stig,Makefile,30,true,makefile,true,entry Makefile
 1990,stig,stig.orig.c,50,true,c,true,original source
@@ -586,7 +535,6 @@
 1990,stig,.entry.json,4294967295,true,json,true,description of entry in JSON
 1990,stig,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1990,stig,.path,4294967295,false,text,false,directory path from top directory
-1990,stig,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1990,tbr,tbr.c,20,true,c,true,entry source
 1990,tbr,Makefile,30,true,makefile,true,entry Makefile
 1990,tbr,tbr.alt.c,40,true,c,true,alternative source
@@ -597,7 +545,6 @@
 1990,tbr,.entry.json,4294967295,true,json,true,description of entry in JSON
 1990,tbr,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1990,tbr,.path,4294967295,false,text,false,directory path from top directory
-1990,tbr,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1990,theorem,theorem.c,20,true,c,true,entry source
 1990,theorem,Makefile,30,true,makefile,true,entry Makefile
 1990,theorem,theorem.orig.c,50,true,c,true,original source
@@ -608,7 +555,6 @@
 1990,theorem,.entry.json,4294967295,true,json,true,description of entry in JSON
 1990,theorem,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1990,theorem,.path,4294967295,false,text,false,directory path from top directory
-1990,theorem,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1990,westley,westley.c,20,true,c,true,entry source
 1990,westley,Makefile,30,true,makefile,true,entry Makefile
 1990,westley,westley.alt.c,40,true,c,true,alternative source
@@ -620,7 +566,6 @@
 1990,westley,.entry.json,4294967295,true,json,true,description of entry in JSON
 1990,westley,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1990,westley,.path,4294967295,false,text,false,directory path from top directory
-1990,westley,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1991,ant,ant.c,20,true,c,true,entry source
 1991,ant,Makefile,30,true,makefile,true,entry Makefile
 1991,ant,ant.alt.c,40,true,c,true,alternative source
@@ -631,7 +576,6 @@
 1991,ant,.entry.json,4294967295,true,json,true,description of entry in JSON
 1991,ant,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1991,ant,.path,4294967295,false,text,false,directory path from top directory
-1991,ant,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1991,brnstnd,brnstnd.c,20,true,c,true,entry source
 1991,brnstnd,Makefile,30,true,makefile,true,entry Makefile
 1991,brnstnd,brnstnd.orig.c,50,false,c,true,original source
@@ -658,7 +602,6 @@
 1991,brnstnd,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1991,brnstnd,.path,4294967295,false,text,false,directory path from top directory
 1991,brnstnd,sorta.README.md,4294967295,true,markdown,true,markdown source for sorta.README.html
-1991,brnstnd,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1991,buzzard,buzzard.c,20,true,c,true,entry source
 1991,buzzard,Makefile,30,true,makefile,true,entry Makefile
 1991,buzzard,buzzard.alt.c,40,true,c,true,alternative source
@@ -669,7 +612,6 @@
 1991,buzzard,.entry.json,4294967295,true,json,true,description of entry in JSON
 1991,buzzard,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1991,buzzard,.path,4294967295,false,text,false,directory path from top directory
-1991,buzzard,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1991,cdupont,cdupont.c,20,true,c,true,entry source
 1991,cdupont,Makefile,30,true,makefile,true,entry Makefile
 1991,cdupont,cdupont.orig.c,50,false,c,true,original source
@@ -679,7 +621,6 @@
 1991,cdupont,.entry.json,4294967295,true,json,true,description of entry in JSON
 1991,cdupont,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1991,cdupont,.path,4294967295,false,text,false,directory path from top directory
-1991,cdupont,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1991,davidguy,davidguy.c,20,true,c,true,entry source
 1991,davidguy,Makefile,30,true,makefile,true,entry Makefile
 1991,davidguy,davidguy.orig.c,50,false,c,true,original source
@@ -689,7 +630,6 @@
 1991,davidguy,.entry.json,4294967295,true,json,true,description of entry in JSON
 1991,davidguy,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1991,davidguy,.path,4294967295,false,text,false,directory path from top directory
-1991,davidguy,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1991,dds,dds.c,20,true,c,true,entry source
 1991,dds,Makefile,30,true,makefile,true,entry Makefile
 1991,dds,dds.orig.c,50,false,c,true,original source
@@ -700,7 +640,6 @@
 1991,dds,.entry.json,4294967295,true,json,true,description of entry in JSON
 1991,dds,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1991,dds,.path,4294967295,false,text,false,directory path from top directory
-1991,dds,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1991,fine,fine.c,20,true,c,true,entry source
 1991,fine,Makefile,30,true,makefile,true,entry Makefile
 1991,fine,fine.orig.c,50,false,c,true,original source
@@ -711,7 +650,6 @@
 1991,fine,.entry.json,4294967295,true,json,true,description of entry in JSON
 1991,fine,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1991,fine,.path,4294967295,false,text,false,directory path from top directory
-1991,fine,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1991,rince,rince.c,20,true,c,true,entry source
 1991,rince,Makefile,30,true,makefile,true,entry Makefile
 1991,rince,rince.alt2.c,40,true,c,true,alternate alternative source
@@ -723,7 +661,6 @@
 1991,rince,.entry.json,4294967295,true,json,true,description of entry in JSON
 1991,rince,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1991,rince,.path,4294967295,false,text,false,directory path from top directory
-1991,rince,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1991,westley,westley.c,20,true,c,true,entry source
 1991,westley,Makefile,30,true,makefile,true,entry Makefile
 1991,westley,westley.alt.c,40,true,c,true,alternative source
@@ -736,7 +673,6 @@
 1991,westley,.entry.json,4294967295,true,json,true,description of entry in JSON
 1991,westley,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1991,westley,.path,4294967295,false,text,false,directory path from top directory
-1991,westley,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1992,adrian,adrian.c,20,true,c,true,entry source
 1992,adrian,Makefile,30,true,makefile,true,entry Makefile
 1992,adrian,adrian.orig.c,50,false,c,true,original source
@@ -754,7 +690,6 @@
 1992,adrian,.entry.json,4294967295,true,json,true,description of entry in JSON
 1992,adrian,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1992,adrian,.path,4294967295,false,text,false,directory path from top directory
-1992,adrian,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1992,albert,albert.c,20,true,c,true,entry source
 1992,albert,Makefile,30,true,makefile,true,entry Makefile
 1992,albert,albert.alt.c,40,true,c,true,alternative source
@@ -767,7 +702,6 @@
 1992,albert,.entry.json,4294967295,true,json,true,description of entry in JSON
 1992,albert,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1992,albert,.path,4294967295,false,text,false,directory path from top directory
-1992,albert,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1992,ant,ant.c,20,true,c,true,entry source
 1992,ant,Makefile,30,true,makefile,true,entry Makefile
 1992,ant,ant.orig.c,50,false,c,true,original source
@@ -780,7 +714,6 @@
 1992,ant,.entry.json,4294967295,true,json,true,description of entry in JSON
 1992,ant,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1992,ant,.path,4294967295,false,text,false,directory path from top directory
-1992,ant,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1992,buzzard.1,buzzard.1.c,20,true,c,true,entry source
 1992,buzzard.1,Makefile,30,true,makefile,true,entry Makefile
 1992,buzzard.1,buzzard.1.orig.c,50,false,c,true,original source
@@ -791,7 +724,6 @@
 1992,buzzard.1,.entry.json,4294967295,true,json,true,description of entry in JSON
 1992,buzzard.1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1992,buzzard.1,.path,4294967295,false,text,false,directory path from top directory
-1992,buzzard.1,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1992,buzzard.2,buzzard.2.c,20,true,c,true,entry source
 1992,buzzard.2,Makefile,30,true,makefile,true,entry Makefile
 1992,buzzard.2,buzzard.2.alt.c,40,true,c,true,alternative source
@@ -817,7 +749,6 @@
 1992,buzzard.2,.entry.json,4294967295,true,json,true,description of entry in JSON
 1992,buzzard.2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1992,buzzard.2,.path,4294967295,false,text,false,directory path from top directory
-1992,buzzard.2,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1992,gson,gson.c,20,true,c,true,entry source
 1992,gson,Makefile,30,true,makefile,true,entry Makefile
 1992,gson,gson.orig.c,50,false,c,true,original source
@@ -829,7 +760,6 @@
 1992,gson,.entry.json,4294967295,true,json,true,description of entry in JSON
 1992,gson,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1992,gson,.path,4294967295,false,text,false,directory path from top directory
-1992,gson,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1992,imc,imc.c,20,true,c,true,entry source
 1992,imc,Makefile,30,true,makefile,true,entry Makefile
 1992,imc,imc.orig.c,50,false,c,true,original source
@@ -840,7 +770,6 @@
 1992,imc,.entry.json,4294967295,true,json,true,description of entry in JSON
 1992,imc,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1992,imc,.path,4294967295,false,text,false,directory path from top directory
-1992,imc,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1992,kivinen,kivinen.c,20,true,c,true,entry source
 1992,kivinen,Makefile,30,true,makefile,true,entry Makefile
 1992,kivinen,kivinen.alt.c,40,true,c,true,alternative source
@@ -851,7 +780,6 @@
 1992,kivinen,.entry.json,4294967295,true,json,true,description of entry in JSON
 1992,kivinen,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1992,kivinen,.path,4294967295,false,text,false,directory path from top directory
-1992,kivinen,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1992,lush,lush.c,20,true,c,true,entry source
 1992,lush,Makefile,30,true,makefile,true,entry Makefile
 1992,lush,lush.orig.c,50,false,c,true,original source
@@ -862,7 +790,6 @@
 1992,lush,.entry.json,4294967295,true,json,true,description of entry in JSON
 1992,lush,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1992,lush,.path,4294967295,false,text,false,directory path from top directory
-1992,lush,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1992,marangon,marangon.c,20,true,c,true,entry source
 1992,marangon,Makefile,30,true,makefile,true,entry Makefile
 1992,marangon,marangon.orig.c,50,false,c,true,original source
@@ -872,7 +799,6 @@
 1992,marangon,.entry.json,4294967295,true,json,true,description of entry in JSON
 1992,marangon,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1992,marangon,.path,4294967295,false,text,false,directory path from top directory
-1992,marangon,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1992,nathan,nathan.c,20,true,c,true,entry source
 1992,nathan,Makefile,30,true,makefile,true,entry Makefile
 1992,nathan,nathan.orig.c,50,false,c,true,original source
@@ -883,7 +809,6 @@
 1992,nathan,.entry.json,4294967295,true,json,true,description of entry in JSON
 1992,nathan,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1992,nathan,.path,4294967295,false,text,false,directory path from top directory
-1992,nathan,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1992,vern,vern.c,20,true,c,true,entry source
 1992,vern,Makefile,30,true,makefile,true,entry Makefile
 1992,vern,vern.orig.c,50,true,c,true,original source
@@ -893,7 +818,6 @@
 1992,vern,.entry.json,4294967295,true,json,true,description of entry in JSON
 1992,vern,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1992,vern,.path,4294967295,false,text,false,directory path from top directory
-1992,vern,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1992,westley,westley.c,20,true,c,true,entry source
 1992,westley,Makefile,30,true,makefile,true,entry Makefile
 1992,westley,westley.alt.c,40,true,c,true,alternative source
@@ -909,7 +833,6 @@
 1992,westley,.entry.json,4294967295,true,json,true,description of entry in JSON
 1992,westley,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1992,westley,.path,4294967295,false,text,false,directory path from top directory
-1992,westley,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1993,ant,ant.c,20,true,c,true,entry source
 1993,ant,Makefile,30,true,makefile,true,entry Makefile
 1993,ant,ant.orig.c,50,false,c,true,original source
@@ -923,7 +846,6 @@
 1993,ant,.entry.json,4294967295,true,json,true,description of entry in JSON
 1993,ant,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1993,ant,.path,4294967295,false,text,false,directory path from top directory
-1993,ant,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1993,cmills,cmills.c,20,true,c,true,entry source
 1993,cmills,Makefile,30,true,makefile,true,entry Makefile
 1993,cmills,cmills.alt.c,40,true,c,true,alternative source
@@ -934,7 +856,6 @@
 1993,cmills,.entry.json,4294967295,true,json,true,description of entry in JSON
 1993,cmills,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1993,cmills,.path,4294967295,false,text,false,directory path from top directory
-1993,cmills,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1993,dgibson,dgibson.c,20,true,c,true,entry source
 1993,dgibson,Makefile,30,true,makefile,true,entry Makefile
 1993,dgibson,dgibson.orig.c,50,false,c,true,original source
@@ -951,7 +872,6 @@
 1993,dgibson,.entry.json,4294967295,true,json,true,description of entry in JSON
 1993,dgibson,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1993,dgibson,.path,4294967295,false,text,false,directory path from top directory
-1993,dgibson,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1993,ejb,ejb.c,20,true,c,true,entry source
 1993,ejb,Makefile,30,true,makefile,true,entry Makefile
 1993,ejb,ejb.orig.c,50,false,c,true,original source
@@ -966,7 +886,6 @@
 1993,ejb,hanoi.md,4294967295,true,markdown,true,markdown source for hanoi.html
 1993,ejb,.path,4294967295,false,text,false,directory path from top directory
 1993,ejb,patience.md,4294967295,true,markdown,true,markdown source for patience.html
-1993,ejb,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1993,jonth,jonth.c,20,true,c,true,entry source
 1993,jonth,Makefile,30,true,makefile,true,entry Makefile
 1993,jonth,jonth.orig.c,50,false,c,true,original source
@@ -976,7 +895,6 @@
 1993,jonth,.entry.json,4294967295,true,json,true,description of entry in JSON
 1993,jonth,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1993,jonth,.path,4294967295,false,text,false,directory path from top directory
-1993,jonth,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1993,leo,leo.c,20,true,c,true,entry source
 1993,leo,Makefile,30,true,makefile,true,entry Makefile
 1993,leo,leo.orig.c,50,false,c,true,original source
@@ -986,7 +904,6 @@
 1993,leo,.entry.json,4294967295,true,json,true,description of entry in JSON
 1993,leo,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1993,leo,.path,4294967295,false,text,false,directory path from top directory
-1993,leo,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1993,lmfjyh,lmfjyh.c,20,true,c,true,entry source
 1993,lmfjyh,Makefile,30,true,makefile,true,entry Makefile
 1993,lmfjyh,lmfjyh.alt.c,40,true,c,true,alternative source
@@ -997,7 +914,6 @@
 1993,lmfjyh,.entry.json,4294967295,true,json,true,description of entry in JSON
 1993,lmfjyh,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1993,lmfjyh,.path,4294967295,false,text,false,directory path from top directory
-1993,lmfjyh,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1993,plummer,plummer.c,20,true,c,true,entry source
 1993,plummer,Makefile,30,true,makefile,true,entry Makefile
 1993,plummer,plummer.alt.c,40,true,c,true,alternative source
@@ -1010,7 +926,6 @@
 1993,plummer,.entry.json,4294967295,true,json,true,description of entry in JSON
 1993,plummer,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1993,plummer,.path,4294967295,false,text,false,directory path from top directory
-1993,plummer,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1993,rince,rince.c,20,true,c,true,entry source
 1993,rince,Makefile,30,true,makefile,true,entry Makefile
 1993,rince,rince.alt2.c,40,true,c,true,alternate alternative source
@@ -1028,7 +943,6 @@
 1993,rince,.entry.json,4294967295,true,json,true,description of entry in JSON
 1993,rince,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1993,rince,.path,4294967295,false,text,false,directory path from top directory
-1993,rince,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1993,schnitzi,schnitzi.c,20,true,c,true,entry source
 1993,schnitzi,Makefile,30,true,makefile,true,entry Makefile
 1993,schnitzi,schnitzi.orig.c,50,true,c,true,original source
@@ -1039,7 +953,6 @@
 1993,schnitzi,.entry.json,4294967295,true,json,true,description of entry in JSON
 1993,schnitzi,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1993,schnitzi,.path,4294967295,false,text,false,directory path from top directory
-1993,schnitzi,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1993,vanb,vanb.c,20,true,c,true,entry source
 1993,vanb,Makefile,30,true,makefile,true,entry Makefile
 1993,vanb,vanb.alt.c,40,true,c,true,alternative source
@@ -1051,7 +964,6 @@
 1993,vanb,.entry.json,4294967295,true,json,true,description of entry in JSON
 1993,vanb,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1993,vanb,.path,4294967295,false,text,false,directory path from top directory
-1993,vanb,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1994,dodsond1,dodsond1.c,20,true,c,true,entry source
 1994,dodsond1,Makefile,30,true,makefile,true,entry Makefile
 1994,dodsond1,dodsond1.orig.c,50,false,c,true,original source
@@ -1061,7 +973,6 @@
 1994,dodsond1,.entry.json,4294967295,true,json,true,description of entry in JSON
 1994,dodsond1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1994,dodsond1,.path,4294967295,false,text,false,directory path from top directory
-1994,dodsond1,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1994,dodsond2,dodsond2.c,20,true,c,true,entry source
 1994,dodsond2,Makefile,30,true,makefile,true,entry Makefile
 1994,dodsond2,dodsond2.alt.c,40,true,c,true,alternative source
@@ -1073,7 +984,6 @@
 1994,dodsond2,.entry.json,4294967295,true,json,true,description of entry in JSON
 1994,dodsond2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1994,dodsond2,.path,4294967295,false,text,false,directory path from top directory
-1994,dodsond2,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1994,horton,horton.c,20,true,c,true,entry source
 1994,horton,Makefile,30,true,makefile,true,entry Makefile
 1994,horton,horton.alt.c,40,true,c,true,alternative source
@@ -1089,7 +999,6 @@
 1994,horton,.entry.json,4294967295,true,json,true,description of entry in JSON
 1994,horton,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1994,horton,.path,4294967295,false,text,false,directory path from top directory
-1994,horton,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1994,imc,imc.c,20,true,c,true,entry source
 1994,imc,Makefile,30,true,makefile,true,entry Makefile
 1994,imc,imc.orig.c,50,false,c,true,original source
@@ -1100,7 +1009,6 @@
 1994,imc,.entry.json,4294967295,true,json,true,description of entry in JSON
 1994,imc,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1994,imc,.path,4294967295,false,text,false,directory path from top directory
-1994,imc,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1994,ldb,ldb.c,20,true,c,true,entry source
 1994,ldb,Makefile,30,true,makefile,true,entry Makefile
 1994,ldb,ldb.orig.c,50,false,c,true,original source
@@ -1111,7 +1019,6 @@
 1994,ldb,.entry.json,4294967295,true,json,true,description of entry in JSON
 1994,ldb,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1994,ldb,.path,4294967295,false,text,false,directory path from top directory
-1994,ldb,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1994,schnitzi,schnitzi.c,20,true,c,true,entry source
 1994,schnitzi,Makefile,30,true,makefile,true,entry Makefile
 1994,schnitzi,schnitzi.alt2.c,40,true,c,true,alternate alternative source
@@ -1126,7 +1033,6 @@
 1994,schnitzi,.entry.json,4294967295,true,json,true,description of entry in JSON
 1994,schnitzi,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1994,schnitzi,.path,4294967295,false,text,false,directory path from top directory
-1994,schnitzi,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1994,shapiro,shapiro.c,20,true,c,true,entry source
 1994,shapiro,Makefile,30,true,makefile,true,entry Makefile
 1994,shapiro,shapiro.orig.c,50,true,c,true,original source
@@ -1138,7 +1044,6 @@
 1994,shapiro,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1994,shapiro,.path,4294967295,false,text,false,directory path from top directory
 1994,shapiro,shapiro.md,4294967295,true,markdown,true,markdown source for shapiro.html
-1994,shapiro,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1994,smr,smr.c,20,true,c,true,entry source
 1994,smr,Makefile,30,true,makefile,true,entry Makefile
 1994,smr,smr.orig.c,50,true,c,true,original source
@@ -1149,7 +1054,6 @@
 1994,smr,.entry.json,4294967295,true,json,true,description of entry in JSON
 1994,smr,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1994,smr,.path,4294967295,false,text,false,directory path from top directory
-1994,smr,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1994,tvr,tvr.c,20,true,c,true,entry source
 1994,tvr,Makefile,30,true,makefile,true,entry Makefile
 1994,tvr,tvr.alt.c,40,true,c,true,alternative source
@@ -1166,7 +1070,6 @@
 1994,tvr,.entry.json,4294967295,true,json,true,description of entry in JSON
 1994,tvr,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1994,tvr,.path,4294967295,false,text,false,directory path from top directory
-1994,tvr,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1994,weisberg,weisberg.c,20,true,c,true,entry source
 1994,weisberg,Makefile,30,true,makefile,true,entry Makefile
 1994,weisberg,weisberg.orig.c,50,true,c,true,original source
@@ -1178,7 +1081,6 @@
 1994,weisberg,.entry.json,4294967295,true,json,true,description of entry in JSON
 1994,weisberg,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1994,weisberg,.path,4294967295,false,text,false,directory path from top directory
-1994,weisberg,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1994,westley,westley.c,20,true,c,true,entry source
 1994,westley,Makefile,30,true,makefile,true,entry Makefile
 1994,westley,westley.alt.c,40,true,c,true,alternative source
@@ -1191,7 +1093,6 @@
 1994,westley,.entry.json,4294967295,true,json,true,description of entry in JSON
 1994,westley,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1994,westley,.path,4294967295,false,text,false,directory path from top directory
-1994,westley,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1995,cdua,cdua.c,20,true,c,true,entry source
 1995,cdua,Makefile,30,true,makefile,true,entry Makefile
 1995,cdua,cdua.alt.c,40,true,c,true,alternative source
@@ -1202,7 +1103,6 @@
 1995,cdua,.entry.json,4294967295,true,json,true,description of entry in JSON
 1995,cdua,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1995,cdua,.path,4294967295,false,text,false,directory path from top directory
-1995,cdua,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1995,dodsond1,dodsond1.c,20,true,c,true,entry source
 1995,dodsond1,Makefile,30,true,makefile,true,entry Makefile
 1995,dodsond1,dodsond1.orig.c,50,false,c,true,original source
@@ -1214,7 +1114,6 @@
 1995,dodsond1,.entry.json,4294967295,true,json,true,description of entry in JSON
 1995,dodsond1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1995,dodsond1,.path,4294967295,false,text,false,directory path from top directory
-1995,dodsond1,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1995,dodsond2,dodsond2.c,20,true,c,true,entry source
 1995,dodsond2,Makefile,30,true,makefile,true,entry Makefile
 1995,dodsond2,dodsond2.orig.c,50,false,c,true,original source
@@ -1224,7 +1123,6 @@
 1995,dodsond2,.entry.json,4294967295,true,json,true,description of entry in JSON
 1995,dodsond2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1995,dodsond2,.path,4294967295,false,text,false,directory path from top directory
-1995,dodsond2,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1995,esde,esde.c,20,true,c,true,entry source
 1995,esde,Makefile,30,true,makefile,true,entry Makefile
 1995,esde,esde.orig.c,50,false,c,true,original source
@@ -1237,7 +1135,6 @@
 1995,esde,.entry.json,4294967295,true,json,true,description of entry in JSON
 1995,esde,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1995,esde,.path,4294967295,false,text,false,directory path from top directory
-1995,esde,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1995,garry,garry.c,20,true,c,true,entry source
 1995,garry,Makefile,30,true,makefile,true,entry Makefile
 1995,garry,garry.alt.c,40,true,c,true,alternative source
@@ -1252,7 +1149,6 @@
 1995,garry,.entry.json,4294967295,true,json,true,description of entry in JSON
 1995,garry,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1995,garry,.path,4294967295,false,text,false,directory path from top directory
-1995,garry,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1995,heathbar,heathbar.c,20,true,c,true,entry source
 1995,heathbar,Makefile,30,true,makefile,true,entry Makefile
 1995,heathbar,heathbar.orig.c,50,false,c,true,original source
@@ -1263,7 +1159,6 @@
 1995,heathbar,.entry.json,4294967295,true,json,true,description of entry in JSON
 1995,heathbar,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1995,heathbar,.path,4294967295,false,text,false,directory path from top directory
-1995,heathbar,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1995,leo,leo.c,20,true,c,true,entry source
 1995,leo,Makefile,30,true,makefile,true,entry Makefile
 1995,leo,leo.orig.c,50,false,c,true,original source
@@ -1276,7 +1171,6 @@
 1995,leo,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1995,leo,.path,4294967295,false,text,false,directory path from top directory
 1995,leo,spoiler1.md,4294967295,true,markdown,true,markdown source for spoiler1.html
-1995,leo,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1995,makarios,makarios.c,20,true,c,true,entry source
 1995,makarios,Makefile,30,true,makefile,true,entry Makefile
 1995,makarios,makarios.orig.c,50,false,c,true,original source
@@ -1286,7 +1180,6 @@
 1995,makarios,.entry.json,4294967295,true,json,true,description of entry in JSON
 1995,makarios,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1995,makarios,.path,4294967295,false,text,false,directory path from top directory
-1995,makarios,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1995,savastio,savastio.c,20,true,c,true,entry source
 1995,savastio,Makefile,30,true,makefile,true,entry Makefile
 1995,savastio,savastio.orig.c,50,true,c,true,original source
@@ -1297,7 +1190,6 @@
 1995,savastio,.entry.json,4294967295,true,json,true,description of entry in JSON
 1995,savastio,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1995,savastio,.path,4294967295,false,text,false,directory path from top directory
-1995,savastio,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1995,schnitzi,schnitzi.c,20,true,c,true,entry source
 1995,schnitzi,Makefile,30,true,makefile,true,entry Makefile
 1995,schnitzi,schnitzi.orig.c,50,true,c,true,original source
@@ -1308,7 +1200,6 @@
 1995,schnitzi,.entry.json,4294967295,true,json,true,description of entry in JSON
 1995,schnitzi,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1995,schnitzi,.path,4294967295,false,text,false,directory path from top directory
-1995,schnitzi,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1995,spinellis,spinellis.c,20,true,c,true,entry source
 1995,spinellis,Makefile,30,true,makefile,true,entry Makefile
 1995,spinellis,spinellis.orig.c,50,true,c,true,original source
@@ -1318,7 +1209,6 @@
 1995,spinellis,.entry.json,4294967295,true,json,true,description of entry in JSON
 1995,spinellis,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1995,spinellis,.path,4294967295,false,text,false,directory path from top directory
-1995,spinellis,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1995,vanschnitz,vanschnitz.c,20,true,c,true,entry source
 1995,vanschnitz,Makefile,30,true,makefile,true,entry Makefile
 1995,vanschnitz,vanschnitz.alt.c,40,true,c,true,alternative source
@@ -1330,7 +1220,6 @@
 1995,vanschnitz,.entry.json,4294967295,true,json,true,description of entry in JSON
 1995,vanschnitz,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1995,vanschnitz,.path,4294967295,false,text,false,directory path from top directory
-1995,vanschnitz,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1996,august,august.c,20,true,c,true,entry source
 1996,august,Makefile,30,true,makefile,true,entry Makefile
 1996,august,august.orig.c,50,false,c,true,original source
@@ -1344,7 +1233,6 @@
 1996,august,.entry.json,4294967295,true,json,true,description of entry in JSON
 1996,august,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1996,august,.path,4294967295,false,text,false,directory path from top directory
-1996,august,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1996,dalbec,dalbec.c,20,true,c,true,entry source
 1996,dalbec,Makefile,30,true,makefile,true,entry Makefile
 1996,dalbec,dalbec.orig.c,50,false,c,true,original source
@@ -1355,7 +1243,6 @@
 1996,dalbec,.entry.json,4294967295,true,json,true,description of entry in JSON
 1996,dalbec,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1996,dalbec,.path,4294967295,false,text,false,directory path from top directory
-1996,dalbec,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1996,eldby,eldby.c,20,true,c,true,entry source
 1996,eldby,Makefile,30,true,makefile,true,entry Makefile
 1996,eldby,eldby.alt.c,40,true,c,true,alternative source
@@ -1366,7 +1253,6 @@
 1996,eldby,.entry.json,4294967295,true,json,true,description of entry in JSON
 1996,eldby,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1996,eldby,.path,4294967295,false,text,false,directory path from top directory
-1996,eldby,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1996,gandalf,gandalf.c,20,true,c,true,entry source
 1996,gandalf,Makefile,30,true,makefile,true,entry Makefile
 1996,gandalf,gandalf.orig.c,50,false,c,true,original source
@@ -1377,7 +1263,6 @@
 1996,gandalf,.entry.json,4294967295,true,json,true,description of entry in JSON
 1996,gandalf,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1996,gandalf,.path,4294967295,false,text,false,directory path from top directory
-1996,gandalf,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1996,huffman,huffman.c,20,true,c,true,entry source
 1996,huffman,Makefile,30,true,makefile,true,entry Makefile
 1996,huffman,huffman.orig.c,50,false,c,true,original source
@@ -1388,7 +1273,6 @@
 1996,huffman,.entry.json,4294967295,true,json,true,description of entry in JSON
 1996,huffman,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1996,huffman,.path,4294967295,false,text,false,directory path from top directory
-1996,huffman,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1996,jonth,jonth.c,20,true,c,true,entry source
 1996,jonth,Makefile,30,true,makefile,true,entry Makefile
 1996,jonth,jonth.orig.c,50,false,c,true,original source
@@ -1398,7 +1282,6 @@
 1996,jonth,.entry.json,4294967295,true,json,true,description of entry in JSON
 1996,jonth,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1996,jonth,.path,4294967295,false,text,false,directory path from top directory
-1996,jonth,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1996,rcm,rcm.c,20,true,c,true,entry source
 1996,rcm,Makefile,30,true,makefile,true,entry Makefile
 1996,rcm,rcm.orig.c,50,true,c,true,original source
@@ -1411,7 +1294,6 @@
 1996,rcm,.path,4294967295,false,text,false,directory path from top directory
 1996,rcm,rfc1951.gz,4294967295,true,gzip,false,input data
 1996,rcm,rfc1952.gz,4294967295,true,gzip,false,input data
-1996,rcm,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1996,schweikh1,schweikh1.c,20,true,c,true,entry source
 1996,schweikh1,Makefile,30,true,makefile,true,entry Makefile
 1996,schweikh1,schweikh1.orig.c,50,true,c,true,original source
@@ -1423,7 +1305,6 @@
 1996,schweikh1,.entry.json,4294967295,true,json,true,description of entry in JSON
 1996,schweikh1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1996,schweikh1,.path,4294967295,false,text,false,directory path from top directory
-1996,schweikh1,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1996,schweikh2,schweikh2.c,20,true,c,true,entry source
 1996,schweikh2,Makefile,30,true,makefile,true,entry Makefile
 1996,schweikh2,schweikh2.orig.c,50,true,c,true,original source
@@ -1436,7 +1317,6 @@
 1996,schweikh2,.entry.json,4294967295,true,json,true,description of entry in JSON
 1996,schweikh2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1996,schweikh2,.path,4294967295,false,text,false,directory path from top directory
-1996,schweikh2,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1996,schweikh3,schweikh3.c,20,true,c,true,entry source
 1996,schweikh3,Makefile,30,true,makefile,true,entry Makefile
 1996,schweikh3,schweikh3.orig.c,50,true,c,true,original source
@@ -1447,7 +1327,6 @@
 1996,schweikh3,.entry.json,4294967295,true,json,true,description of entry in JSON
 1996,schweikh3,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1996,schweikh3,.path,4294967295,false,text,false,directory path from top directory
-1996,schweikh3,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1996,westley,westley.c,20,true,c,true,entry source
 1996,westley,Makefile,30,true,makefile,true,entry Makefile
 1996,westley,westley.alt.c,40,true,c,true,alternative source
@@ -1463,7 +1342,6 @@
 1996,westley,.entry.json,4294967295,true,json,true,description of entry in JSON
 1996,westley,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1996,westley,.path,4294967295,false,text,false,directory path from top directory
-1996,westley,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1998,banks,banks.c,20,true,c,true,entry source
 1998,banks,Makefile,30,true,makefile,true,entry Makefile
 1998,banks,banks.orig.c,50,false,c,true,original source
@@ -1480,7 +1358,6 @@
 1998,banks,.entry.json,4294967295,true,json,true,description of entry in JSON
 1998,banks,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1998,banks,.path,4294967295,false,text,false,directory path from top directory
-1998,banks,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1998,bas1,bas1.c,20,true,c,true,entry source
 1998,bas1,Makefile,30,true,makefile,true,entry Makefile
 1998,bas1,bas1.orig.c,50,false,c,true,original source
@@ -1491,7 +1368,6 @@
 1998,bas1,.entry.json,4294967295,true,json,true,description of entry in JSON
 1998,bas1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1998,bas1,.path,4294967295,false,text,false,directory path from top directory
-1998,bas1,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1998,bas2,bas2.c,20,true,c,true,entry source
 1998,bas2,Makefile,30,true,makefile,true,entry Makefile
 1998,bas2,bas2.orig.c,50,false,c,true,original source
@@ -1502,7 +1378,6 @@
 1998,bas2,.entry.json,4294967295,true,json,true,description of entry in JSON
 1998,bas2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1998,bas2,.path,4294967295,false,text,false,directory path from top directory
-1998,bas2,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1998,chaos,chaos.c,20,true,c,true,entry source
 1998,chaos,Makefile,30,true,makefile,true,entry Makefile
 1998,chaos,chaos.orig.c,50,false,c,true,original source
@@ -1518,7 +1393,6 @@
 1998,chaos,.entry.json,4294967295,true,json,true,description of entry in JSON
 1998,chaos,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1998,chaos,.path,4294967295,false,text,false,directory path from top directory
-1998,chaos,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1998,df,df.c,20,true,c,true,entry source
 1998,df,Makefile,30,true,makefile,true,entry Makefile
 1998,df,df.orig.c,50,false,c,true,original source
@@ -1529,7 +1403,6 @@
 1998,df,.entry.json,4294967295,true,json,true,description of entry in JSON
 1998,df,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1998,df,.path,4294967295,false,text,false,directory path from top directory
-1998,df,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1998,dlowe,dlowe.c,20,true,c,true,entry source
 1998,dlowe,Makefile,30,true,makefile,true,entry Makefile
 1998,dlowe,dlowe.alt.c,40,true,c,true,alternative source
@@ -1544,7 +1417,6 @@
 1998,dlowe,.entry.json,4294967295,true,json,true,description of entry in JSON
 1998,dlowe,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1998,dlowe,.path,4294967295,false,text,false,directory path from top directory
-1998,dlowe,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1998,dloweneil,dloweneil.c,20,true,c,true,entry source
 1998,dloweneil,Makefile,30,true,makefile,true,entry Makefile
 1998,dloweneil,dloweneil.alt.c,40,true,c,true,alternative source
@@ -1555,7 +1427,6 @@
 1998,dloweneil,.entry.json,4294967295,true,json,true,description of entry in JSON
 1998,dloweneil,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1998,dloweneil,.path,4294967295,false,text,false,directory path from top directory
-1998,dloweneil,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1998,dorssel,dorssel.c,20,true,c,true,entry source
 1998,dorssel,Makefile,30,true,makefile,true,entry Makefile
 1998,dorssel,dorssel.orig.c,50,false,c,true,original source
@@ -1568,7 +1439,6 @@
 1998,dorssel,.entry.json,4294967295,true,json,true,description of entry in JSON
 1998,dorssel,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1998,dorssel,.path,4294967295,false,text,false,directory path from top directory
-1998,dorssel,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1998,fanf,fanf.c,20,true,c,true,entry source
 1998,fanf,Makefile,30,true,makefile,true,entry Makefile
 1998,fanf,fanf.orig.c,50,false,c,true,original source
@@ -1580,7 +1450,6 @@
 1998,fanf,.entry.json,4294967295,true,json,true,description of entry in JSON
 1998,fanf,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1998,fanf,.path,4294967295,false,text,false,directory path from top directory
-1998,fanf,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1998,schnitzi,schnitzi.c,20,true,c,true,entry source
 1998,schnitzi,Makefile,30,true,makefile,true,entry Makefile
 1998,schnitzi,schnitzi.orig.c,50,true,c,true,original source
@@ -1591,7 +1460,6 @@
 1998,schnitzi,.entry.json,4294967295,true,json,true,description of entry in JSON
 1998,schnitzi,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1998,schnitzi,.path,4294967295,false,text,false,directory path from top directory
-1998,schnitzi,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1998,schweikh1,schweikh1.c,20,true,c,true,entry source
 1998,schweikh1,Makefile,30,true,makefile,true,entry Makefile
 1998,schweikh1,schweikh1.alt.c,40,true,c,true,alternative source
@@ -1606,7 +1474,6 @@
 1998,schweikh1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1998,schweikh1,macos.md,4294967295,true,markdown,true,markdown source for marcos.html
 1998,schweikh1,.path,4294967295,false,text,false,directory path from top directory
-1998,schweikh1,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1998,schweikh2,schweikh2.c,20,true,c,true,entry source
 1998,schweikh2,Makefile,30,true,makefile,true,entry Makefile
 1998,schweikh2,schweikh2.orig.c,50,true,c,true,original source
@@ -1617,7 +1484,6 @@
 1998,schweikh2,.entry.json,4294967295,true,json,true,description of entry in JSON
 1998,schweikh2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1998,schweikh2,.path,4294967295,false,text,false,directory path from top directory
-1998,schweikh2,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1998,schweikh3,schweikh3.c,20,true,c,true,entry source
 1998,schweikh3,Makefile,30,true,makefile,true,entry Makefile
 1998,schweikh3,schweikh3.alt.c,40,true,c,true,alternative source
@@ -1631,7 +1497,6 @@
 1998,schweikh3,.entry.json,4294967295,true,json,true,description of entry in JSON
 1998,schweikh3,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1998,schweikh3,.path,4294967295,false,text,false,directory path from top directory
-1998,schweikh3,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 1998,tomtorfs,tomtorfs.c,20,true,c,true,entry source
 1998,tomtorfs,Makefile,30,true,makefile,true,entry Makefile
 1998,tomtorfs,tomtorfs.orig.c,50,true,c,true,original source
@@ -1643,7 +1508,6 @@
 1998,tomtorfs,.entry.json,4294967295,true,json,true,description of entry in JSON
 1998,tomtorfs,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 1998,tomtorfs,.path,4294967295,false,text,false,directory path from top directory
-1998,tomtorfs,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2000,anderson,anderson.c,20,true,c,true,entry source
 2000,anderson,Makefile,30,true,makefile,true,entry Makefile
 2000,anderson,anderson.orig.c,50,false,c,true,original source
@@ -1654,7 +1518,6 @@
 2000,anderson,.entry.json,4294967295,true,json,true,description of entry in JSON
 2000,anderson,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2000,anderson,.path,4294967295,false,text,false,directory path from top directory
-2000,anderson,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2000,bellard,bellard.c,20,true,c,true,entry source
 2000,bellard,Makefile,30,true,makefile,true,entry Makefile
 2000,bellard,bellard.orig.c,50,false,c,true,original source
@@ -1664,7 +1527,6 @@
 2000,bellard,.entry.json,4294967295,true,json,true,description of entry in JSON
 2000,bellard,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2000,bellard,.path,4294967295,false,text,false,directory path from top directory
-2000,bellard,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2000,bmeyer,bmeyer.c,20,true,c,true,entry source
 2000,bmeyer,Makefile,30,true,makefile,true,entry Makefile
 2000,bmeyer,bmeyer.orig.c,50,false,c,true,original source
@@ -1678,7 +1540,6 @@
 2000,bmeyer,.entry.json,4294967295,true,json,true,description of entry in JSON
 2000,bmeyer,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2000,bmeyer,.path,4294967295,false,text,false,directory path from top directory
-2000,bmeyer,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2000,briddlebane,briddlebane.c,20,true,c,true,entry source
 2000,briddlebane,Makefile,30,true,makefile,true,entry Makefile
 2000,briddlebane,briddlebane.orig.c,50,false,c,true,original source
@@ -1689,7 +1550,6 @@
 2000,briddlebane,.entry.json,4294967295,true,json,true,description of entry in JSON
 2000,briddlebane,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2000,briddlebane,.path,4294967295,false,text,false,directory path from top directory
-2000,briddlebane,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2000,dhyang,dhyang.c,20,true,c,true,entry source
 2000,dhyang,Makefile,30,true,makefile,true,entry Makefile
 2000,dhyang,dhyang.orig.c,50,false,c,true,original source
@@ -1700,7 +1560,6 @@
 2000,dhyang,.entry.json,4294967295,true,json,true,description of entry in JSON
 2000,dhyang,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2000,dhyang,.path,4294967295,false,text,false,directory path from top directory
-2000,dhyang,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2000,dlowe,dlowe.c,20,true,c,true,entry source
 2000,dlowe,Makefile,30,true,makefile,true,entry Makefile
 2000,dlowe,dlowe.orig.c,50,false,c,true,original source
@@ -1711,7 +1570,6 @@
 2000,dlowe,.entry.json,4294967295,true,json,true,description of entry in JSON
 2000,dlowe,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2000,dlowe,.path,4294967295,false,text,false,directory path from top directory
-2000,dlowe,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2000,jarijyrki,jarijyrki.c,20,true,c,true,entry source
 2000,jarijyrki,Makefile,30,true,makefile,true,entry Makefile
 2000,jarijyrki,jarijyrki.orig.c,50,false,c,true,original source
@@ -1722,7 +1580,6 @@
 2000,jarijyrki,finance.sheet,4294967295,true,spreadsheet,false,spreadsheet
 2000,jarijyrki,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2000,jarijyrki,.path,4294967295,false,text,false,directory path from top directory
-2000,jarijyrki,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2000,natori,natori.c,20,true,c,true,entry source
 2000,natori,Makefile,30,true,makefile,true,entry Makefile
 2000,natori,natori.alt.c,40,true,c,true,alternative source
@@ -1735,7 +1592,6 @@
 2000,natori,.entry.json,4294967295,true,json,true,description of entry in JSON
 2000,natori,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2000,natori,.path,4294967295,false,text,false,directory path from top directory
-2000,natori,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2000,primenum,primenum.c,20,true,c,true,entry source
 2000,primenum,Makefile,30,true,makefile,true,entry Makefile
 2000,primenum,primenum.orig.c,50,false,c,true,original source
@@ -1746,7 +1602,6 @@
 2000,primenum,.entry.json,4294967295,true,json,true,description of entry in JSON
 2000,primenum,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2000,primenum,.path,4294967295,false,text,false,directory path from top directory
-2000,primenum,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2000,rince,rince.c,20,true,c,true,entry source
 2000,rince,Makefile,30,true,makefile,true,entry Makefile
 2000,rince,rince.orig.c,50,true,c,true,original source
@@ -1758,7 +1613,6 @@
 2000,rince,.entry.json,4294967295,true,json,true,description of entry in JSON
 2000,rince,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2000,rince,.path,4294967295,false,text,false,directory path from top directory
-2000,rince,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2000,robison,robison.c,20,true,c,true,entry source
 2000,robison,Makefile,30,true,makefile,true,entry Makefile
 2000,robison,robison.orig.c,50,true,c,true,original source
@@ -1768,7 +1622,6 @@
 2000,robison,.entry.json,4294967295,true,json,true,description of entry in JSON
 2000,robison,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2000,robison,.path,4294967295,false,text,false,directory path from top directory
-2000,robison,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2000,schneiderwent,schneiderwent.c,20,true,c,true,entry source
 2000,schneiderwent,Makefile,30,true,makefile,true,entry Makefile
 2000,schneiderwent,schneiderwent.orig.c,50,true,c,true,original source
@@ -1780,7 +1633,6 @@
 2000,schneiderwent,.entry.json,4294967295,true,json,true,description of entry in JSON
 2000,schneiderwent,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2000,schneiderwent,.path,4294967295,false,text,false,directory path from top directory
-2000,schneiderwent,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2000,thadgavin,thadgavin.c,20,true,c,true,entry source
 2000,thadgavin,Makefile,30,true,makefile,true,entry Makefile
 2000,thadgavin,thadgavin.alt.c,40,true,c,true,alternative source
@@ -1791,7 +1643,6 @@
 2000,thadgavin,.entry.json,4294967295,true,json,true,description of entry in JSON
 2000,thadgavin,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2000,thadgavin,.path,4294967295,false,text,false,directory path from top directory
-2000,thadgavin,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2000,tomx,tomx.c,20,true,c,true,entry source
 2000,tomx,Makefile,30,true,makefile,true,entry Makefile
 2000,tomx,tomx.alt.c,40,true,c,true,alternative source
@@ -1805,7 +1656,6 @@
 2000,tomx,.entry.json,4294967295,true,json,true,description of entry in JSON
 2000,tomx,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2000,tomx,.path,4294967295,false,text,false,directory path from top directory
-2000,tomx,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2001,anonymous,anonymous.c,20,true,c,true,entry source
 2001,anonymous,Makefile,30,true,makefile,true,entry Makefile
 2001,anonymous,anonymous.orig.c,50,false,c,true,original source
@@ -1818,7 +1668,6 @@
 2001,anonymous,.entry.json,4294967295,true,json,true,description of entry in JSON
 2001,anonymous,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2001,anonymous,.path,4294967295,false,text,false,directory path from top directory
-2001,anonymous,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2001,bellard,bellard.c,20,true,c,true,entry source
 2001,bellard,Makefile,30,true,makefile,true,entry Makefile
 2001,bellard,bellard.orig.c,50,false,c,true,original source
@@ -1830,7 +1679,6 @@
 2001,bellard,.entry.json,4294967295,true,json,true,description of entry in JSON
 2001,bellard,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2001,bellard,.path,4294967295,false,text,false,directory path from top directory
-2001,bellard,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2001,cheong,cheong.c,20,true,c,true,entry source
 2001,cheong,Makefile,30,true,makefile,true,entry Makefile
 2001,cheong,cheong.orig.c,50,false,c,true,original source
@@ -1841,7 +1689,6 @@
 2001,cheong,.entry.json,4294967295,true,json,true,description of entry in JSON
 2001,cheong,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2001,cheong,.path,4294967295,false,text,false,directory path from top directory
-2001,cheong,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2001,coupard,coupard.c,20,true,c,true,entry source
 2001,coupard,Makefile,30,true,makefile,true,entry Makefile
 2001,coupard,coupard.orig.c,50,false,c,true,original source
@@ -1852,7 +1699,6 @@
 2001,coupard,.entry.json,4294967295,true,json,true,description of entry in JSON
 2001,coupard,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2001,coupard,.path,4294967295,false,text,false,directory path from top directory
-2001,coupard,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2001,ctk,ctk.c,20,true,c,true,entry source
 2001,ctk,Makefile,30,true,makefile,true,entry Makefile
 2001,ctk,ctk.alt.c,40,true,c,true,alternative source
@@ -1863,7 +1709,6 @@
 2001,ctk,.entry.json,4294967295,true,json,true,description of entry in JSON
 2001,ctk,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2001,ctk,.path,4294967295,false,text,false,directory path from top directory
-2001,ctk,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2001,dgbeards,dgbeards.c,20,true,c,true,entry source
 2001,dgbeards,Makefile,30,true,makefile,true,entry Makefile
 2001,dgbeards,dgbeards.alt.c,40,true,c,true,alternative source
@@ -1874,7 +1719,6 @@
 2001,dgbeards,.entry.json,4294967295,true,json,true,description of entry in JSON
 2001,dgbeards,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2001,dgbeards,.path,4294967295,false,text,false,directory path from top directory
-2001,dgbeards,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2001,herrmann1,herrmann1.c,20,true,c,true,entry source
 2001,herrmann1,Makefile,30,true,makefile,true,entry Makefile
 2001,herrmann1,herrmann1.orig.c,50,false,c,true,original source
@@ -1889,7 +1733,6 @@
 2001,herrmann1,.entry.json,4294967295,true,json,true,description of entry in JSON
 2001,herrmann1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2001,herrmann1,.path,4294967295,false,text,false,directory path from top directory
-2001,herrmann1,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2001,herrmann2,herrmann2.c,20,true,c,true,entry source
 2001,herrmann2,Makefile,30,true,makefile,true,entry Makefile
 2001,herrmann2,herrmann2.alt.c,40,true,c,true,alternative source
@@ -1903,7 +1746,6 @@
 2001,herrmann2,.entry.json,4294967295,true,json,true,description of entry in JSON
 2001,herrmann2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2001,herrmann2,.path,4294967295,false,text,false,directory path from top directory
-2001,herrmann2,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2001,jason,jason.c,20,true,c,true,entry source
 2001,jason,Makefile,30,true,makefile,true,entry Makefile
 2001,jason,jason.orig.c,50,false,c,true,original source
@@ -1913,7 +1755,6 @@
 2001,jason,.entry.json,4294967295,true,json,true,description of entry in JSON
 2001,jason,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2001,jason,.path,4294967295,false,text,false,directory path from top directory
-2001,jason,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2001,kev,kev.c,20,true,c,true,entry source
 2001,kev,Makefile,30,true,makefile,true,entry Makefile
 2001,kev,kev.alt.c,40,true,c,true,alternative source
@@ -1924,7 +1765,6 @@
 2001,kev,.entry.json,4294967295,true,json,true,description of entry in JSON
 2001,kev,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2001,kev,.path,4294967295,false,text,false,directory path from top directory
-2001,kev,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2001,ollinger,ollinger.c,20,true,c,true,entry source
 2001,ollinger,Makefile,30,true,makefile,true,entry Makefile
 2001,ollinger,ollinger.orig.c,50,false,c,true,original source
@@ -1935,7 +1775,6 @@
 2001,ollinger,.entry.json,4294967295,true,json,true,description of entry in JSON
 2001,ollinger,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2001,ollinger,.path,4294967295,false,text,false,directory path from top directory
-2001,ollinger,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2001,rosten,rosten.c,20,true,c,true,entry source
 2001,rosten,Makefile,30,true,makefile,true,entry Makefile
 2001,rosten,rosten.orig.c,50,true,c,true,original source
@@ -1945,7 +1784,6 @@
 2001,rosten,.entry.json,4294967295,true,json,true,description of entry in JSON
 2001,rosten,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2001,rosten,.path,4294967295,false,text,false,directory path from top directory
-2001,rosten,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2001,schweikh,schweikh.c,20,true,c,true,entry source
 2001,schweikh,Makefile,30,true,makefile,true,entry Makefile
 2001,schweikh,schweikh.orig.c,50,true,c,true,original source
@@ -1956,7 +1794,6 @@
 2001,schweikh,.entry.json,4294967295,true,json,true,description of entry in JSON
 2001,schweikh,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2001,schweikh,.path,4294967295,false,text,false,directory path from top directory
-2001,schweikh,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2001,westley,westley.c,20,true,c,true,entry source
 2001,westley,Makefile,30,true,makefile,true,entry Makefile
 2001,westley,westley.alt.c,40,true,c,true,alternative source
@@ -1968,7 +1805,6 @@
 2001,westley,.entry.json,4294967295,true,json,true,description of entry in JSON
 2001,westley,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2001,westley,.path,4294967295,false,text,false,directory path from top directory
-2001,westley,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2001,williams,williams.c,20,true,c,true,entry source
 2001,williams,Makefile,30,true,makefile,true,entry Makefile
 2001,williams,williams.orig.c,50,true,c,true,original source
@@ -1978,7 +1814,6 @@
 2001,williams,.entry.json,4294967295,true,json,true,description of entry in JSON
 2001,williams,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2001,williams,.path,4294967295,false,text,false,directory path from top directory
-2001,williams,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2004,anonymous,anonymous.c,20,true,c,true,entry source
 2004,anonymous,Makefile,30,true,makefile,true,entry Makefile
 2004,anonymous,anonymous.orig.c,50,false,c,true,original source
@@ -1989,7 +1824,6 @@
 2004,anonymous,.entry.json,4294967295,true,json,true,description of entry in JSON
 2004,anonymous,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2004,anonymous,.path,4294967295,false,text,false,directory path from top directory
-2004,anonymous,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2004,arachnid,arachnid.c,20,true,c,true,entry source
 2004,arachnid,Makefile,30,true,makefile,true,entry Makefile
 2004,arachnid,arachnid.alt.c,40,true,c,true,alternative source
@@ -2001,7 +1835,6 @@
 2004,arachnid,.entry.json,4294967295,true,json,true,description of entry in JSON
 2004,arachnid,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2004,arachnid,.path,4294967295,false,text,false,directory path from top directory
-2004,arachnid,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2004,burley,burley.c,20,true,c,true,entry source
 2004,burley,Makefile,30,true,makefile,true,entry Makefile
 2004,burley,burley.orig.c,50,false,c,true,original source
@@ -2011,7 +1844,6 @@
 2004,burley,.entry.json,4294967295,true,json,true,description of entry in JSON
 2004,burley,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2004,burley,.path,4294967295,false,text,false,directory path from top directory
-2004,burley,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2004,gavare,gavare.c,20,true,c,true,entry source
 2004,gavare,Makefile,30,true,makefile,true,entry Makefile
 2004,gavare,gavare.alt2.c,40,true,c,true,alternate alternative source
@@ -2024,7 +1856,6 @@
 2004,gavare,.entry.json,4294967295,true,json,true,description of entry in JSON
 2004,gavare,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2004,gavare,.path,4294967295,false,text,false,directory path from top directory
-2004,gavare,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2004,gavin,gavin.c,20,true,c,true,entry source
 2004,gavin,Makefile,30,true,makefile,true,entry Makefile
 2004,gavin,gavin.alt.c,40,true,c,true,alternative source
@@ -2042,7 +1873,6 @@
 2004,gavin,gavin.md,4294967295,true,markdown,true,markdown source for gavin.html
 2004,gavin,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2004,gavin,.path,4294967295,false,text,false,directory path from top directory
-2004,gavin,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2004,hibachi,hibachi.c,20,true,c,true,entry source
 2004,hibachi,Makefile,30,true,makefile,true,entry Makefile
 2004,hibachi,hibachi.orig.c,50,false,c,true,original source
@@ -2090,7 +1920,6 @@
 2004,hibachi,src/localhost/test/shell/test1.sh,4294967295,true,shellscript,true,POSIX shell page support file
 2004,hibachi,src/localhost/test/shell/test2.sh,4294967295,true,shellscript,true,POSIX shell page support file
 2004,hibachi,src/makefile.in,4294967295,true,man,true,configure.in experiment that is not used
-2004,hibachi,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2004,hoyle,hoyle.c,20,true,c,true,entry source
 2004,hoyle,Makefile,30,true,makefile,true,entry Makefile
 2004,hoyle,hoyle.orig.c,50,false,c,true,original source
@@ -2101,7 +1930,6 @@
 2004,hoyle,.entry.json,4294967295,true,json,true,description of entry in JSON
 2004,hoyle,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2004,hoyle,.path,4294967295,false,text,false,directory path from top directory
-2004,hoyle,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2004,jdalbec,jdalbec.c,20,true,c,true,entry source
 2004,jdalbec,Makefile,30,true,makefile,true,entry Makefile
 2004,jdalbec,jdalbec.alt.c,40,true,c,true,alternative source
@@ -2114,7 +1942,6 @@
 2004,jdalbec,.entry.json,4294967295,true,json,true,description of entry in JSON
 2004,jdalbec,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2004,jdalbec,.path,4294967295,false,text,false,directory path from top directory
-2004,jdalbec,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2004,kopczynski,kopczynski.c,20,true,c,true,entry source
 2004,kopczynski,Makefile,30,true,makefile,true,entry Makefile
 2004,kopczynski,kopczynski.alt.c,40,true,c,true,alternative source
@@ -2140,7 +1967,6 @@
 2004,kopczynski,.entry.json,4294967295,true,json,true,description of entry in JSON
 2004,kopczynski,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2004,kopczynski,.path,4294967295,false,text,false,directory path from top directory
-2004,kopczynski,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2004,newbern,newbern.c,20,true,c,true,entry source
 2004,newbern,Makefile,30,true,makefile,true,entry Makefile
 2004,newbern,newbern.orig.c,50,false,c,true,original source
@@ -2152,7 +1978,6 @@
 2004,newbern,.entry.json,4294967295,true,json,true,description of entry in JSON
 2004,newbern,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2004,newbern,.path,4294967295,false,text,false,directory path from top directory
-2004,newbern,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2004,omoikane,omoikane.c,20,true,c,true,entry source
 2004,omoikane,Makefile,30,true,makefile,true,entry Makefile
 2004,omoikane,omoikane.orig.c,50,false,c,true,original source
@@ -2164,7 +1989,6 @@
 2004,omoikane,.entry.json,4294967295,true,json,true,description of entry in JSON
 2004,omoikane,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2004,omoikane,.path,4294967295,false,text,false,directory path from top directory
-2004,omoikane,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2004,schnitzi,schnitzi.c,20,true,c,true,entry source
 2004,schnitzi,Makefile,30,true,makefile,true,entry Makefile
 2004,schnitzi,schnitzi.orig.c,50,true,c,true,original source
@@ -2177,7 +2001,6 @@
 2004,schnitzi,.entry.json,4294967295,true,json,true,description of entry in JSON
 2004,schnitzi,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2004,schnitzi,.path,4294967295,false,text,false,directory path from top directory
-2004,schnitzi,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2004,sds,sds.c,20,true,c,true,entry source
 2004,sds,Makefile,30,true,makefile,true,entry Makefile
 2004,sds,sds.orig.c,50,true,c,true,original source
@@ -2189,7 +2012,6 @@
 2004,sds,.entry.json,4294967295,true,json,true,description of entry in JSON
 2004,sds,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2004,sds,.path,4294967295,false,text,false,directory path from top directory
-2004,sds,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2004,vik1,vik1.c,20,true,c,true,entry source
 2004,vik1,Makefile,30,true,makefile,true,entry Makefile
 2004,vik1,vik1.orig.c,50,true,c,true,original source
@@ -2199,7 +2021,6 @@
 2004,vik1,.entry.json,4294967295,true,json,true,description of entry in JSON
 2004,vik1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2004,vik1,.path,4294967295,false,text,false,directory path from top directory
-2004,vik1,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2004,vik2,vik2.c,20,true,c,true,entry source
 2004,vik2,Makefile,30,true,makefile,true,entry Makefile
 2004,vik2,vik2.orig.c,50,true,c,true,original source
@@ -2211,7 +2032,6 @@
 2004,vik2,.entry.json,4294967295,true,json,true,description of entry in JSON
 2004,vik2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2004,vik2,.path,4294967295,false,text,false,directory path from top directory
-2004,vik2,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2005,aidan,aidan.c,20,true,c,true,entry source
 2005,aidan,Makefile,30,true,makefile,true,entry Makefile
 2005,aidan,aidan.alt.c,40,true,c,true,alternative source
@@ -2233,7 +2053,6 @@
 2005,aidan,.entry.json,4294967295,true,json,true,description of entry in JSON
 2005,aidan,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2005,aidan,.path,4294967295,false,text,false,directory path from top directory
-2005,aidan,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2005,anon,anon.c,20,true,c,true,entry source
 2005,anon,Makefile,30,true,makefile,true,entry Makefile
 2005,anon,anon.alt.c,40,true,c,true,alternative source
@@ -2244,7 +2063,6 @@
 2005,anon,.entry.json,4294967295,true,json,true,description of entry in JSON
 2005,anon,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2005,anon,.path,4294967295,false,text,false,directory path from top directory
-2005,anon,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2005,boutines,boutines.c,20,true,c,true,entry source
 2005,boutines,Makefile,30,true,makefile,true,entry Makefile
 2005,boutines,boutines.orig.c,50,false,c,true,original source
@@ -2258,7 +2076,6 @@
 2005,boutines,.entry.json,4294967295,true,json,true,description of entry in JSON
 2005,boutines,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2005,boutines,.path,4294967295,false,text,false,directory path from top directory
-2005,boutines,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2005,chia,chia.c,20,true,c,true,entry source
 2005,chia,Makefile,30,true,makefile,true,entry Makefile
 2005,chia,chia.orig.c,50,false,c,true,original source
@@ -2268,7 +2085,6 @@
 2005,chia,.entry.json,4294967295,true,json,true,description of entry in JSON
 2005,chia,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2005,chia,.path,4294967295,false,text,false,directory path from top directory
-2005,chia,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2005,giljade,giljade.c,20,true,c,true,entry source
 2005,giljade,Makefile,30,true,makefile,true,entry Makefile
 2005,giljade,giljade.orig.c,50,false,c,true,original source
@@ -2280,7 +2096,6 @@
 2005,giljade,.entry.json,4294967295,true,json,true,description of entry in JSON
 2005,giljade,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2005,giljade,.path,4294967295,false,text,false,directory path from top directory
-2005,giljade,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2005,jetro,jetro.c,20,true,c,true,entry source
 2005,jetro,Makefile,30,true,makefile,true,entry Makefile
 2005,jetro,jetro.orig.c,50,false,c,true,original source
@@ -2290,7 +2105,6 @@
 2005,jetro,.entry.json,4294967295,true,json,true,description of entry in JSON
 2005,jetro,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2005,jetro,.path,4294967295,false,text,false,directory path from top directory
-2005,jetro,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2005,klausler,klausler.c,20,true,c,true,entry source
 2005,klausler,Makefile,30,true,makefile,true,entry Makefile
 2005,klausler,klausler.orig.c,50,false,c,true,original source
@@ -2301,7 +2115,6 @@
 2005,klausler,.entry.json,4294967295,true,json,true,description of entry in JSON
 2005,klausler,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2005,klausler,.path,4294967295,false,text,false,directory path from top directory
-2005,klausler,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2005,mikeash,mikeash.c,20,true,c,true,entry source
 2005,mikeash,Makefile,30,true,makefile,true,entry Makefile
 2005,mikeash,mikeash.orig.c,50,false,c,true,original source
@@ -2312,7 +2125,6 @@
 2005,mikeash,.entry.json,4294967295,true,json,true,description of entry in JSON
 2005,mikeash,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2005,mikeash,.path,4294967295,false,text,false,directory path from top directory
-2005,mikeash,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2005,mynx,mynx.c,20,true,c,true,entry source
 2005,mynx,Makefile,30,true,makefile,true,entry Makefile
 2005,mynx,mynx.alt.c,40,true,c,true,alternative source
@@ -2329,7 +2141,6 @@
 2005,mynx,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2005,mynx,.path,4294967295,false,text,false,directory path from top directory
 2005,mynx,source/mynx.c,4294967295,true,c,true,copy of the entry source
-2005,mynx,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2005,persano,persano.c,20,true,c,true,entry source
 2005,persano,Makefile,30,true,makefile,true,entry Makefile
 2005,persano,persano.alt.c,40,true,c,true,alternative source
@@ -2341,7 +2152,6 @@
 2005,persano,.entry.json,4294967295,true,json,true,description of entry in JSON
 2005,persano,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2005,persano,.path,4294967295,false,text,false,directory path from top directory
-2005,persano,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2005,sykes,sykes.c,20,true,c,true,entry source
 2005,sykes,Makefile,30,true,makefile,true,entry Makefile
 2005,sykes,sykes.orig.c,50,true,c,true,original source
@@ -2362,7 +2172,6 @@
 2005,sykes,kernel-2.901465-03.bin,4294967295,true,binary,false,Commodore PET kernel
 2005,sykes,nullfill.bin,4294967295,true,binary,false,block of binary zeros
 2005,sykes,.path,4294967295,false,text,false,directory path from top directory
-2005,sykes,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2005,timwi,timwi.c,20,true,c,true,entry source
 2005,timwi,Makefile,30,true,makefile,true,entry Makefile
 2005,timwi,timwi.orig.c,50,true,c,true,original source
@@ -2373,7 +2182,6 @@
 2005,timwi,.entry.json,4294967295,true,json,true,description of entry in JSON
 2005,timwi,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2005,timwi,.path,4294967295,false,text,false,directory path from top directory
-2005,timwi,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2005,toledo,toledo.c,20,true,c,true,entry source
 2005,toledo,Makefile,30,true,makefile,true,entry Makefile
 2005,toledo,toledo.orig.c,50,true,c,true,original source
@@ -2385,7 +2193,6 @@
 2005,toledo,.entry.json,4294967295,true,json,true,description of entry in JSON
 2005,toledo,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2005,toledo,.path,4294967295,false,text,false,directory path from top directory
-2005,toledo,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2005,vik,vik.c,20,true,c,true,entry source
 2005,vik,Makefile,30,true,makefile,true,entry Makefile
 2005,vik,vik.orig.c,50,true,c,true,original source
@@ -2399,7 +2206,6 @@
 2005,vik,.entry.json,4294967295,true,json,true,description of entry in JSON
 2005,vik,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2005,vik,.path,4294967295,false,text,false,directory path from top directory
-2005,vik,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2005,vince,vince.c,20,true,c,true,entry source
 2005,vince,Makefile,30,true,makefile,true,entry Makefile
 2005,vince,vince.alt.c,40,true,c,true,alternative source
@@ -2410,7 +2216,6 @@
 2005,vince,.entry.json,4294967295,true,json,true,description of entry in JSON
 2005,vince,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2005,vince,.path,4294967295,false,text,false,directory path from top directory
-2005,vince,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2006,birken,birken.c,20,true,c,true,entry source
 2006,birken,Makefile,30,true,makefile,true,entry Makefile
 2006,birken,birken.orig.c,50,false,c,true,original source
@@ -2435,7 +2240,6 @@
 2006,birken,.entry.json,4294967295,true,json,true,description of entry in JSON
 2006,birken,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2006,birken,.path,4294967295,false,text,false,directory path from top directory
-2006,birken,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2006,borsanyi,borsanyi.c,20,true,c,true,entry source
 2006,borsanyi,Makefile,30,true,makefile,true,entry Makefile
 2006,borsanyi,borsanyi.orig.c,50,false,c,true,original source
@@ -2446,7 +2250,6 @@
 2006,borsanyi,.entry.json,4294967295,true,json,true,description of entry in JSON
 2006,borsanyi,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2006,borsanyi,.path,4294967295,false,text,false,directory path from top directory
-2006,borsanyi,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2006,grothe,grothe.c,20,true,c,true,entry source
 2006,grothe,Makefile,30,true,makefile,true,entry Makefile
 2006,grothe,grothe.orig.c,50,false,c,true,original source
@@ -2461,7 +2264,6 @@
 2006,grothe,.entry.json,4294967295,true,json,true,description of entry in JSON
 2006,grothe,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2006,grothe,.path,4294967295,false,text,false,directory path from top directory
-2006,grothe,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2006,hamre,hamre.c,20,true,c,true,entry source
 2006,hamre,Makefile,30,true,makefile,true,entry Makefile
 2006,hamre,hamre.orig.c,50,false,c,true,original source
@@ -2472,7 +2274,6 @@
 2006,hamre,.entry.json,4294967295,true,json,true,description of entry in JSON
 2006,hamre,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2006,hamre,.path,4294967295,false,text,false,directory path from top directory
-2006,hamre,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2006,meyer,meyer.c,20,true,c,true,entry source
 2006,meyer,Makefile,30,true,makefile,true,entry Makefile
 2006,meyer,meyer.orig.c,50,false,c,true,original source
@@ -2482,7 +2283,6 @@
 2006,meyer,.entry.json,4294967295,true,json,true,description of entry in JSON
 2006,meyer,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2006,meyer,.path,4294967295,false,text,false,directory path from top directory
-2006,meyer,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2006,monge,monge.c,20,true,c,true,entry source
 2006,monge,Makefile,30,true,makefile,true,entry Makefile
 2006,monge,monge.alt.c,40,true,c,true,alternative source
@@ -2495,7 +2295,6 @@
 2006,monge,.entry.json,4294967295,true,json,true,description of entry in JSON
 2006,monge,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2006,monge,.path,4294967295,false,text,false,directory path from top directory
-2006,monge,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2006,night,night.c,20,true,c,true,entry source
 2006,night,Makefile,30,true,makefile,true,entry Makefile
 2006,night,night.alt.c,40,true,c,true,alternative source
@@ -2506,7 +2305,6 @@
 2006,night,.entry.json,4294967295,true,json,true,description of entry in JSON
 2006,night,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2006,night,.path,4294967295,false,text,false,directory path from top directory
-2006,night,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2006,sloane,sloane.c,20,true,c,true,entry source
 2006,sloane,Makefile,30,true,makefile,true,entry Makefile
 2006,sloane,sloane.alt.c,40,true,c,true,alternative source
@@ -2517,7 +2315,6 @@
 2006,sloane,.entry.json,4294967295,true,json,true,description of entry in JSON
 2006,sloane,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2006,sloane,.path,4294967295,false,text,false,directory path from top directory
-2006,sloane,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2006,stewart,stewart.c,20,true,c,true,entry source
 2006,stewart,Makefile,30,true,makefile,true,entry Makefile
 2006,stewart,stewart.orig.c,50,true,c,true,original source
@@ -2568,7 +2365,6 @@
 2006,stewart,.entry.json,4294967295,true,json,true,description of entry in JSON
 2006,stewart,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2006,stewart,.path,4294967295,false,text,false,directory path from top directory
-2006,stewart,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2006,sykes1,sykes1.c,20,true,c,true,entry source
 2006,sykes1,Makefile,30,true,makefile,true,entry Makefile
 2006,sykes1,sykes1.alt.c,40,true,c,true,alternative source
@@ -2582,7 +2378,6 @@
 2006,sykes1,.entry.json,4294967295,true,json,true,description of entry in JSON
 2006,sykes1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2006,sykes1,.path,4294967295,false,text,false,directory path from top directory
-2006,sykes1,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2006,sykes2,sykes2.c,20,true,c,true,entry source
 2006,sykes2,Makefile,30,true,makefile,true,entry Makefile
 2006,sykes2,sykes2.orig.c,50,true,c,true,original source
@@ -2593,7 +2388,6 @@
 2006,sykes2,.entry.json,4294967295,true,json,true,description of entry in JSON
 2006,sykes2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2006,sykes2,.path,4294967295,false,text,false,directory path from top directory
-2006,sykes2,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2006,toledo1,toledo1.c,20,true,c,true,entry source
 2006,toledo1,Makefile,30,true,makefile,true,entry Makefile
 2006,toledo1,toledo1.orig.c,50,true,c,true,original source
@@ -2604,7 +2398,6 @@
 2006,toledo1,.entry.json,4294967295,true,json,true,description of entry in JSON
 2006,toledo1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2006,toledo1,.path,4294967295,false,text,false,directory path from top directory
-2006,toledo1,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2006,toledo2,toledo2.c,20,true,c,true,entry source
 2006,toledo2,Makefile,30,true,makefile,true,entry Makefile
 2006,toledo2,toledo2.alt.c,40,true,c,true,alternative source
@@ -2620,7 +2413,6 @@
 2006,toledo2,.entry.json,4294967295,true,json,true,description of entry in JSON
 2006,toledo2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2006,toledo2,.path,4294967295,false,text,false,directory path from top directory
-2006,toledo2,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2006,toledo3,toledo3.c,20,true,c,true,entry source
 2006,toledo3,Makefile,30,true,makefile,true,entry Makefile
 2006,toledo3,toledo3.alt.c,40,true,c,true,alternative source
@@ -2634,7 +2426,6 @@
 2006,toledo3,.entry.json,4294967295,true,json,true,description of entry in JSON
 2006,toledo3,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2006,toledo3,.path,4294967295,false,text,false,directory path from top directory
-2006,toledo3,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2011,akari,akari.c,20,true,c,true,entry source
 2011,akari,Makefile,30,true,makefile,true,entry Makefile
 2011,akari,akari.orig.c,50,false,c,true,original source
@@ -2646,7 +2437,6 @@
 2011,akari,.entry.json,4294967295,true,json,true,description of entry in JSON
 2011,akari,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2011,akari,.path,4294967295,false,text,false,directory path from top directory
-2011,akari,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2011,blakely,blakely.c,20,true,c,true,entry source
 2011,blakely,Makefile,30,true,makefile,true,entry Makefile
 2011,blakely,blakely.orig.c,50,false,c,true,original source
@@ -2660,7 +2450,6 @@
 2011,blakely,.entry.json,4294967295,true,json,true,description of entry in JSON
 2011,blakely,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2011,blakely,.path,4294967295,false,text,false,directory path from top directory
-2011,blakely,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2011,borsanyi,borsanyi.c,20,true,c,true,entry source
 2011,borsanyi,Makefile,30,true,makefile,true,entry Makefile
 2011,borsanyi,borsanyi.orig.c,50,false,c,true,original source
@@ -2674,7 +2463,6 @@
 2011,borsanyi,.entry.json,4294967295,true,json,true,description of entry in JSON
 2011,borsanyi,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2011,borsanyi,.path,4294967295,false,text,false,directory path from top directory
-2011,borsanyi,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2011,dlowe,dlowe.c,20,true,c,true,entry source
 2011,dlowe,Makefile,30,true,makefile,true,entry Makefile
 2011,dlowe,dlowe.orig.c,50,false,c,true,original source
@@ -2733,7 +2521,6 @@
 2011,dlowe,.entry.json,4294967295,true,json,true,description of entry in JSON
 2011,dlowe,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2011,dlowe,.path,4294967295,false,text,false,directory path from top directory
-2011,dlowe,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2011,eastman,eastman.c,20,true,c,true,entry source
 2011,eastman,Makefile,30,true,makefile,true,entry Makefile
 2011,eastman,eastman.orig.c,50,false,c,true,original source
@@ -2744,7 +2531,6 @@
 2011,eastman,.entry.json,4294967295,true,json,true,description of entry in JSON
 2011,eastman,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2011,eastman,.path,4294967295,false,text,false,directory path from top directory
-2011,eastman,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2011,fredriksson,fredriksson.c,20,true,c,true,entry source
 2011,fredriksson,Makefile,30,true,makefile,true,entry Makefile
 2011,fredriksson,fredriksson.orig.c,50,false,c,true,original source
@@ -2755,7 +2541,6 @@
 2011,fredriksson,.entry.json,4294967295,true,json,true,description of entry in JSON
 2011,fredriksson,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2011,fredriksson,.path,4294967295,false,text,false,directory path from top directory
-2011,fredriksson,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2011,goren,goren.c,20,true,c,true,entry source
 2011,goren,Makefile,30,true,makefile,true,entry Makefile
 2011,goren,goren.orig.c,50,false,c,true,original source
@@ -2767,7 +2552,6 @@
 2011,goren,.entry.json,4294967295,true,json,true,description of entry in JSON
 2011,goren,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2011,goren,.path,4294967295,false,text,false,directory path from top directory
-2011,goren,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2011,hamaji,hamaji.c,20,true,c,true,entry source
 2011,hamaji,Makefile,30,true,makefile,true,entry Makefile
 2011,hamaji,hamaji.orig.c,50,false,c,true,original source
@@ -2791,7 +2575,6 @@
 2011,hamaji,.entry.json,4294967295,true,json,true,description of entry in JSON
 2011,hamaji,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2011,hamaji,.path,4294967295,false,text,false,directory path from top directory
-2011,hamaji,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2011,hou,hou.c,20,true,c,true,entry source
 2011,hou,Makefile,30,true,makefile,true,entry Makefile
 2011,hou,hou.orig.c,50,false,c,true,original source
@@ -2802,7 +2585,6 @@
 2011,hou,.entry.json,4294967295,true,json,true,description of entry in JSON
 2011,hou,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2011,hou,.path,4294967295,false,text,false,directory path from top directory
-2011,hou,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2011,konno,konno.c,20,true,c,true,entry source
 2011,konno,Makefile,30,true,makefile,true,entry Makefile
 2011,konno,konno.orig.c,50,false,c,true,original source
@@ -2813,7 +2595,6 @@
 2011,konno,.entry.json,4294967295,true,json,true,description of entry in JSON
 2011,konno,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2011,konno,.path,4294967295,false,text,false,directory path from top directory
-2011,konno,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2011,richards,richards.c,20,true,c,true,entry source
 2011,richards,Makefile,30,true,makefile,true,entry Makefile
 2011,richards,richards.alt.c,40,true,c,true,alternative source
@@ -2826,7 +2607,6 @@
 2011,richards,.entry.json,4294967295,true,json,true,description of entry in JSON
 2011,richards,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2011,richards,.path,4294967295,false,text,false,directory path from top directory
-2011,richards,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2011,toledo,toledo.c,20,true,c,true,entry source
 2011,toledo,Makefile,30,true,makefile,true,entry Makefile
 2011,toledo,toledo.alt2.c,40,true,c,true,alternate alternative source
@@ -2840,7 +2620,6 @@
 2011,toledo,.entry.json,4294967295,true,json,true,description of entry in JSON
 2011,toledo,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2011,toledo,.path,4294967295,false,text,false,directory path from top directory
-2011,toledo,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2011,vik,vik.c,20,true,c,true,entry source
 2011,vik,Makefile,30,true,makefile,true,entry Makefile
 2011,vik,vik.alt.c,40,true,c,true,alternative source
@@ -2855,7 +2634,6 @@
 2011,vik,.entry.json,4294967295,true,json,true,description of entry in JSON
 2011,vik,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2011,vik,.path,4294967295,false,text,false,directory path from top directory
-2011,vik,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2011,zucker,zucker.c,20,true,c,true,entry source
 2011,zucker,Makefile,30,true,makefile,true,entry Makefile
 2011,zucker,zucker.alt.c,40,true,c,true,alternative source
@@ -2868,7 +2646,6 @@
 2011,zucker,.entry.json,4294967295,true,json,true,description of entry in JSON
 2011,zucker,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2011,zucker,.path,4294967295,false,text,false,directory path from top directory
-2011,zucker,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2012,blakely,blakely.c,20,true,c,true,entry source
 2012,blakely,Makefile,30,true,makefile,true,entry Makefile
 2012,blakely,blakely.orig.c,50,false,c,true,original source
@@ -2879,7 +2656,6 @@
 2012,blakely,.entry.json,4294967295,true,json,true,description of entry in JSON
 2012,blakely,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2012,blakely,.path,4294967295,false,text,false,directory path from top directory
-2012,blakely,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2012,deckmyn,deckmyn.c,20,true,c,true,entry source
 2012,deckmyn,Makefile,30,true,makefile,true,entry Makefile
 2012,deckmyn,deckmyn.orig.c,50,false,c,true,original source
@@ -2894,7 +2670,6 @@
 2012,deckmyn,.entry.json,4294967295,true,json,true,description of entry in JSON
 2012,deckmyn,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2012,deckmyn,.path,4294967295,false,text,false,directory path from top directory
-2012,deckmyn,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2012,dlowe,dlowe.c,20,true,c,true,entry source
 2012,dlowe,Makefile,30,true,makefile,true,entry Makefile
 2012,dlowe,dlowe.orig.c,50,false,c,true,original source
@@ -2907,7 +2682,6 @@
 2012,dlowe,.path,4294967295,false,text,false,directory path from top directory
 2012,dlowe,splash.d,4294967295,true,binary,false,data file
 2012,dlowe,sprites.d,4294967295,true,binary,false,data file
-2012,dlowe,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2012,endoh1,endoh1.c,20,true,c,true,entry source
 2012,endoh1,Makefile,30,true,makefile,true,entry Makefile
 2012,endoh1,endoh1.alt2.c,40,true,c,true,alternate alternative source
@@ -2942,7 +2716,6 @@
 2012,endoh1,.entry.json,4294967295,true,json,true,description of entry in JSON
 2012,endoh1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2012,endoh1,.path,4294967295,false,text,false,directory path from top directory
-2012,endoh1,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2012,endoh2,endoh2.c,20,true,c,true,entry source
 2012,endoh2,Makefile,30,true,makefile,true,entry Makefile
 2012,endoh2,endoh2.orig.c,50,false,c,true,original source
@@ -2954,7 +2727,6 @@
 2012,endoh2,.entry.json,4294967295,true,json,true,description of entry in JSON
 2012,endoh2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2012,endoh2,.path,4294967295,false,text,false,directory path from top directory
-2012,endoh2,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2012,grothe,grothe.c,20,true,c,true,entry source
 2012,grothe,Makefile,30,true,makefile,true,entry Makefile
 2012,grothe,grothe.orig.c,50,false,c,true,original source
@@ -2971,7 +2743,6 @@
 2012,grothe,.entry.json,4294967295,true,json,true,description of entry in JSON
 2012,grothe,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2012,grothe,.path,4294967295,false,text,false,directory path from top directory
-2012,grothe,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2012,hamano,hamano.c,20,true,c,true,entry source
 2012,hamano,Makefile,30,true,makefile,true,entry Makefile
 2012,hamano,hamano.orig.c,50,false,c,true,original source
@@ -2982,7 +2753,6 @@
 2012,hamano,.entry.json,4294967295,true,json,true,description of entry in JSON
 2012,hamano,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2012,hamano,.path,4294967295,false,text,false,directory path from top directory
-2012,hamano,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2012,hou,hou.c,20,true,c,true,entry source
 2012,hou,Makefile,30,true,makefile,true,entry Makefile
 2012,hou,hou.orig.c,50,false,c,true,original source
@@ -3002,7 +2772,6 @@
 2012,hou,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2012,hou,hint.md,4294967295,true,markdown,true,markdown source for hint.html
 2012,hou,.path,4294967295,false,text,false,directory path from top directory
-2012,hou,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2012,kang,kang.c,20,true,c,true,entry source
 2012,kang,Makefile,30,true,makefile,true,entry Makefile
 2012,kang,kang.alt.c,40,true,c,true,alternative source
@@ -3019,7 +2788,6 @@
 2012,kang,.entry.json,4294967295,true,json,true,description of entry in JSON
 2012,kang,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2012,kang,.path,4294967295,false,text,false,directory path from top directory
-2012,kang,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2012,konno,konno.c,20,true,c,true,entry source
 2012,konno,Makefile,30,true,makefile,true,entry Makefile
 2012,konno,konno.alt.c,40,true,c,true,alternative source
@@ -3031,7 +2799,6 @@
 2012,konno,.entry.json,4294967295,true,json,true,description of entry in JSON
 2012,konno,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2012,konno,.path,4294967295,false,text,false,directory path from top directory
-2012,konno,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2012,omoikane,Makefile,30,true,makefile,true,entry Makefile
 2012,omoikane,omoikane.alt2.c,40,true,c,true,alternate alternative source
 2012,omoikane,omoikane.alt.c,40,true,c,true,alternative source
@@ -3046,7 +2813,6 @@
 2012,omoikane,.entry.json,4294967295,true,json,true,description of entry in JSON
 2012,omoikane,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2012,omoikane,.path,4294967295,false,text,false,directory path from top directory
-2012,omoikane,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2012,tromp,tromp.c,20,true,c,true,entry source
 2012,tromp,Makefile,30,true,makefile,true,entry Makefile
 2012,tromp,tromp.orig.c,50,true,c,true,original source
@@ -3069,7 +2835,6 @@
 2012,tromp,.path,4294967295,false,text,false,directory path from top directory
 2012,tromp,primes.blc,4294967295,true,binary,false,sample input
 2012,tromp,symbolic.Blc,4294967295,true,binary,false,sample input
-2012,tromp,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2012,tromp,uni8.Blc,4294967295,true,binary,false,sample input
 2012,tromp,uni.blc,4294967295,true,binary,false,sample input
 2012,vik,vik.c,20,true,c,true,entry source
@@ -3085,7 +2850,6 @@
 2012,vik,.entry.json,4294967295,true,json,true,description of entry in JSON
 2012,vik,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2012,vik,.path,4294967295,false,text,false,directory path from top directory
-2012,vik,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2012,zeitak,zeitak.c,20,true,c,true,entry source
 2012,zeitak,Makefile,30,true,makefile,true,entry Makefile
 2012,zeitak,anonymous.alt.c,40,true,c,true,alternative source
@@ -3109,7 +2873,6 @@
 2012,zeitak,.entry.json,4294967295,true,json,true,description of entry in JSON
 2012,zeitak,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2012,zeitak,.path,4294967295,false,text,false,directory path from top directory
-2012,zeitak,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2013,birken,birken.c,20,true,c,true,entry source
 2013,birken,Makefile,30,true,makefile,true,entry Makefile
 2013,birken,birken.alt.c,40,true,c,true,alternative source
@@ -3164,7 +2927,6 @@
 2013,birken,platform0.gif,4294967295,true,image,false,stages of 5 red squares above a row of 3 red squares
 2013,birken,platform1.gif,4294967295,true,image,false,stages of 5 red squares above a row of 3 red squares
 2013,birken,platform2.gif,4294967295,true,image,false,stages of 5 red squares above a row of 3 red squares
-2013,birken,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2013,birken,triple0.gif,4294967295,true,image,false,stages of constructed of rectangular regions
 2013,birken,triple1.gif,4294967295,true,image,false,stages of constructed of rectangular regions
 2013,cable1,cable1.c,20,true,c,true,entry source
@@ -3178,7 +2940,6 @@
 2013,cable1,.entry.json,4294967295,true,json,true,description of entry in JSON
 2013,cable1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2013,cable1,.path,4294967295,false,text,false,directory path from top directory
-2013,cable1,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2013,cable2,cable2.c,20,true,c,true,entry source
 2013,cable2,Makefile,30,true,makefile,true,entry Makefile
 2013,cable2,cable2.orig.c,50,false,c,true,original source
@@ -3195,7 +2956,6 @@
 2013,cable2,.entry.json,4294967295,true,json,true,description of entry in JSON
 2013,cable2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2013,cable2,.path,4294967295,false,text,false,directory path from top directory
-2013,cable2,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2013,cable3,cable3.c,20,true,c,true,entry source
 2013,cable3,Makefile,30,true,makefile,true,entry Makefile
 2013,cable3,cable3.alt.c,40,true,c,true,alternative source
@@ -3218,7 +2978,6 @@
 2013,cable3,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2013,cable3,hd.img,4294967295,true,binary,false,disk image
 2013,cable3,.path,4294967295,false,text,false,directory path from top directory
-2013,cable3,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2013,dlowe,dlowe.c,20,true,c,true,entry source
 2013,dlowe,Makefile,30,true,makefile,true,entry Makefile
 2013,dlowe,dlowe.orig.c,50,false,c,true,original source
@@ -3232,7 +2991,6 @@
 2013,dlowe,.entry.json,4294967295,true,json,true,description of entry in JSON
 2013,dlowe,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2013,dlowe,.path,4294967295,false,text,false,directory path from top directory
-2013,dlowe,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2013,endoh1,endoh1.c,20,true,c,true,entry source
 2013,endoh1,Makefile,30,true,makefile,true,entry Makefile
 2013,endoh1,endoh1.orig.c,50,false,c,true,original source
@@ -3247,7 +3005,6 @@
 2013,endoh1,.entry.json,4294967295,true,json,true,description of entry in JSON
 2013,endoh1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2013,endoh1,.path,4294967295,false,text,false,directory path from top directory
-2013,endoh1,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2013,endoh2,endoh2.c,20,true,c,true,entry source
 2013,endoh2,Makefile,30,true,makefile,true,entry Makefile
 2013,endoh2,endoh2.orig.c,50,false,c,true,original source
@@ -3258,7 +3015,6 @@
 2013,endoh2,.entry.json,4294967295,true,json,true,description of entry in JSON
 2013,endoh2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2013,endoh2,.path,4294967295,false,text,false,directory path from top directory
-2013,endoh2,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2013,endoh3,endoh3.c,20,true,c,true,entry source
 2013,endoh3,Makefile,30,true,makefile,true,entry Makefile
 2013,endoh3,endoh3.orig.c,50,false,c,true,original source
@@ -3275,7 +3031,6 @@
 2013,endoh3,.entry.json,4294967295,true,json,true,description of entry in JSON
 2013,endoh3,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2013,endoh3,.path,4294967295,false,text,false,directory path from top directory
-2013,endoh3,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2013,endoh4,endoh4.c,20,true,c,true,entry source
 2013,endoh4,Makefile,30,true,makefile,true,entry Makefile
 2013,endoh4,endoh4.orig.c,50,false,c,true,original source
@@ -3434,7 +3189,6 @@
 2013,endoh4,.entry.json,4294967295,true,json,true,description of entry in JSON
 2013,endoh4,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2013,endoh4,.path,4294967295,false,text,false,directory path from top directory
-2013,endoh4,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2013,hou,hou.c,20,true,c,true,entry source
 2013,hou,Makefile,30,true,makefile,true,entry Makefile
 2013,hou,hou.orig.c,50,false,c,true,original source
@@ -3455,7 +3209,6 @@
 2013,hou,.entry.json,4294967295,true,json,true,description of entry in JSON
 2013,hou,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2013,hou,.path,4294967295,false,text,false,directory path from top directory
-2013,hou,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2013,mills,mills.c,20,true,c,true,entry source
 2013,mills,Makefile,30,true,makefile,true,entry Makefile
 2013,mills,mills.orig.c,50,false,c,true,original source
@@ -3465,7 +3218,6 @@
 2013,mills,.entry.json,4294967295,true,json,true,description of entry in JSON
 2013,mills,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2013,mills,.path,4294967295,false,text,false,directory path from top directory
-2013,mills,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2013,misaka,misaka.c,20,true,c,true,entry source
 2013,misaka,Makefile,30,true,makefile,true,entry Makefile
 2013,misaka,misaka.orig.c,50,false,c,true,original source
@@ -3478,7 +3230,6 @@
 2013,misaka,.entry.json,4294967295,true,json,true,description of entry in JSON
 2013,misaka,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2013,misaka,.path,4294967295,false,text,false,directory path from top directory
-2013,misaka,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2013,morgan1,morgan1.c,20,true,c,true,entry source
 2013,morgan1,Makefile,30,true,makefile,true,entry Makefile
 2013,morgan1,morgan1.orig.c,50,false,c,true,original source
@@ -3489,7 +3240,6 @@
 2013,morgan1,.entry.json,4294967295,true,json,true,description of entry in JSON
 2013,morgan1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2013,morgan1,.path,4294967295,false,text,false,directory path from top directory
-2013,morgan1,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2013,morgan2,morgan2.c,20,true,c,true,entry source
 2013,morgan2,Makefile,30,true,makefile,true,entry Makefile
 2013,morgan2,morgan2.orig.c,50,false,c,true,original source
@@ -3499,7 +3249,6 @@
 2013,morgan2,.entry.json,4294967295,true,json,true,description of entry in JSON
 2013,morgan2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2013,morgan2,.path,4294967295,false,text,false,directory path from top directory
-2013,morgan2,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2013,robison,robison.c,20,true,c,true,entry source
 2013,robison,Makefile,30,true,makefile,true,entry Makefile
 2013,robison,robison.orig.c,50,true,c,true,original source
@@ -3510,7 +3259,6 @@
 2013,robison,.entry.json,4294967295,true,json,true,description of entry in JSON
 2013,robison,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2013,robison,.path,4294967295,false,text,false,directory path from top directory
-2013,robison,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2014,birken,prog.c,20,true,c,true,entry source
 2014,birken,Makefile,30,true,makefile,true,entry Makefile
 2014,birken,prog.alt.c,40,true,c,true,alternative source
@@ -3521,7 +3269,6 @@
 2014,birken,.entry.json,4294967295,true,json,true,description of entry in JSON
 2014,birken,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2014,birken,.path,4294967295,false,text,false,directory path from top directory
-2014,birken,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2014,deak,prog.c,20,true,c,true,entry source
 2014,deak,Makefile,30,true,makefile,true,entry Makefile
 2014,deak,prog.alt.c,40,true,c,true,alternative source
@@ -3533,7 +3280,6 @@
 2014,deak,.entry.json,4294967295,true,json,true,description of entry in JSON
 2014,deak,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2014,deak,.path,4294967295,false,text,false,directory path from top directory
-2014,deak,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2014,endoh1,prog.c,20,true,c,true,entry source
 2014,endoh1,Makefile,30,true,makefile,true,entry Makefile
 2014,endoh1,prog.orig.c,50,false,c,true,original source
@@ -3562,7 +3308,6 @@
 2014,endoh1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2014,endoh1,.path,4294967295,false,text,false,directory path from top directory
 2014,endoh1,spoilers.md,4294967295,true,markdown,true,markdown source for spoilers.html
-2014,endoh1,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2014,endoh2,prog.c,20,true,c,true,entry source
 2014,endoh2,Makefile,30,true,makefile,true,entry Makefile
 2014,endoh2,prog.orig.c,50,false,c,true,original source
@@ -3573,7 +3318,6 @@
 2014,endoh2,.entry.json,4294967295,true,json,true,description of entry in JSON
 2014,endoh2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2014,endoh2,.path,4294967295,false,text,false,directory path from top directory
-2014,endoh2,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2014,maffiodo1,prog.c,20,true,c,true,entry source
 2014,maffiodo1,Makefile,30,true,makefile,true,entry Makefile
 2014,maffiodo1,prog.orig.c,50,false,c,true,original source
@@ -3593,7 +3337,6 @@
 2014,maffiodo1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2014,maffiodo1,mario.rgba,4294967295,true,binary,false,raw RGBA image
 2014,maffiodo1,.path,4294967295,false,text,false,directory path from top directory
-2014,maffiodo1,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2014,maffiodo2,prog.c,20,true,c,true,entry source
 2014,maffiodo2,Makefile,30,true,makefile,true,entry Makefile
 2014,maffiodo2,prog.alt.c,40,true,c,true,alternative source
@@ -3606,7 +3349,6 @@
 2014,maffiodo2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2014,maffiodo2,image.rgb,4294967295,true,rgb,false,sample input in the form of a raw RGB image
 2014,maffiodo2,.path,4294967295,false,text,false,directory path from top directory
-2014,maffiodo2,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2014,morgan,prog.c,20,true,c,true,entry source
 2014,morgan,Makefile,30,true,makefile,true,entry Makefile
 2014,morgan,prog.orig.c,50,false,c,true,original source
@@ -3617,7 +3359,6 @@
 2014,morgan,.entry.json,4294967295,true,json,true,description of entry in JSON
 2014,morgan,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2014,morgan,.path,4294967295,false,text,false,directory path from top directory
-2014,morgan,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2014,sinon,prog.c,20,true,c,true,entry source
 2014,sinon,Makefile,30,true,makefile,true,entry Makefile
 2014,sinon,prog.orig.c,50,false,c,true,original source
@@ -3631,7 +3372,6 @@
 2014,sinon,.entry.json,4294967295,true,json,true,description of entry in JSON
 2014,sinon,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2014,sinon,.path,4294967295,false,text,false,directory path from top directory
-2014,sinon,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2014,skeggs,prog.c,20,true,c,true,entry source
 2014,skeggs,Makefile,30,true,makefile,true,entry Makefile
 2014,skeggs,prog.orig.c,50,false,c,true,original source
@@ -3641,7 +3381,6 @@
 2014,skeggs,.entry.json,4294967295,true,json,true,description of entry in JSON
 2014,skeggs,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2014,skeggs,.path,4294967295,false,text,false,directory path from top directory
-2014,skeggs,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2014,vik,prog.c,20,true,c,true,entry source
 2014,vik,Makefile,30,true,makefile,true,entry Makefile
 2014,vik,prog.alt.c,40,true,c,true,alternative source
@@ -3653,7 +3392,6 @@
 2014,vik,.entry.json,4294967295,true,json,true,description of entry in JSON
 2014,vik,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2014,vik,.path,4294967295,false,text,false,directory path from top directory
-2014,vik,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2014,wiedijk,prog.c,20,true,c,true,entry source
 2014,wiedijk,Makefile,30,true,makefile,true,entry Makefile
 2014,wiedijk,prog.orig.c,50,false,c,true,original source
@@ -3664,7 +3402,6 @@
 2014,wiedijk,.entry.json,4294967295,true,json,true,description of entry in JSON
 2014,wiedijk,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2014,wiedijk,.path,4294967295,false,text,false,directory path from top directory
-2014,wiedijk,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2015,burton,prog.c,20,true,c,true,entry source
 2015,burton,Makefile,30,true,makefile,true,entry Makefile
 2015,burton,prog.alt.c,40,true,c,true,alternative source
@@ -3687,7 +3424,6 @@
 2015,burton,.path,4294967295,false,text,false,directory path from top directory
 2015,burton,road.to.obscurity.md,4294967295,true,markdown,true,markdown source for road.to.obscurity.html
 2015,burton,spoilers.md,4294967295,true,markdown,true,markdown source for spoilers.html
-2015,burton,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2015,dogon,prog.c,20,true,c,true,entry source
 2015,dogon,Makefile,30,true,makefile,true,entry Makefile
 2015,dogon,prog.alt.c,40,true,c,true,alternative source
@@ -3698,7 +3434,6 @@
 2015,dogon,.entry.json,4294967295,true,json,true,description of entry in JSON
 2015,dogon,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2015,dogon,.path,4294967295,false,text,false,directory path from top directory
-2015,dogon,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2015,duble,prog.c,20,true,c,true,entry source
 2015,duble,Makefile,30,true,makefile,true,entry Makefile
 2015,duble,prog.alt.c,40,true,c,true,alternative source
@@ -3712,7 +3447,6 @@
 2015,duble,.entry.json,4294967295,true,json,true,description of entry in JSON
 2015,duble,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2015,duble,.path,4294967295,false,text,false,directory path from top directory
-2015,duble,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2015,endoh1,prog.c,20,true,c,true,entry source
 2015,endoh1,Makefile,30,true,makefile,true,entry Makefile
 2015,endoh1,prog.orig.c,50,false,c,true,original source
@@ -3725,7 +3459,6 @@
 2015,endoh1,.entry.json,4294967295,true,json,true,description of entry in JSON
 2015,endoh1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2015,endoh1,.path,4294967295,false,text,false,directory path from top directory
-2015,endoh1,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2015,endoh2,prog.c,20,true,c,true,entry source
 2015,endoh2,Makefile,30,true,makefile,true,entry Makefile
 2015,endoh2,prog.orig.c,50,false,c,true,original source
@@ -3736,7 +3469,6 @@
 2015,endoh2,.entry.json,4294967295,true,json,true,description of entry in JSON
 2015,endoh2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2015,endoh2,.path,4294967295,false,text,false,directory path from top directory
-2015,endoh2,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2015,endoh3,prog.c,20,true,c,true,entry source
 2015,endoh3,Makefile,30,true,makefile,true,entry Makefile
 2015,endoh3,prog.orig.c,50,false,c,true,original source
@@ -3749,7 +3481,6 @@
 2015,endoh3,.entry.json,4294967295,true,json,true,description of entry in JSON
 2015,endoh3,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2015,endoh3,.path,4294967295,false,text,false,directory path from top directory
-2015,endoh3,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2015,endoh4,prog.c,20,true,c,true,entry source
 2015,endoh4,Makefile,30,true,makefile,true,entry Makefile
 2015,endoh4,prog.alt.c,40,true,c,true,alternative source
@@ -3761,7 +3492,6 @@
 2015,endoh4,.entry.json,4294967295,true,json,true,description of entry in JSON
 2015,endoh4,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2015,endoh4,.path,4294967295,false,text,false,directory path from top directory
-2015,endoh4,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2015,hou,prog.c,20,true,c,true,entry source
 2015,hou,Makefile,30,true,makefile,true,entry Makefile
 2015,hou,prog.orig.c,50,false,c,true,original source
@@ -3774,7 +3504,6 @@
 2015,hou,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2015,hou,large,4294967295,true,binary,false,large input data
 2015,hou,.path,4294967295,false,text,false,directory path from top directory
-2015,hou,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2015,howe,prog.c,20,true,c,true,entry source
 2015,howe,Makefile,30,true,makefile,true,entry Makefile
 2015,howe,prog.alt.c,40,true,c,true,alternative source
@@ -3794,7 +3523,6 @@
 2015,howe,.entry.json,4294967295,true,json,true,description of entry in JSON
 2015,howe,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2015,howe,.path,4294967295,false,text,false,directory path from top directory
-2015,howe,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2015,mills1,prog.c,20,true,c,true,entry source
 2015,mills1,Makefile,30,true,makefile,true,entry Makefile
 2015,mills1,prog.orig.c,50,false,c,true,original source
@@ -3805,7 +3533,6 @@
 2015,mills1,.entry.json,4294967295,true,json,true,description of entry in JSON
 2015,mills1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2015,mills1,.path,4294967295,false,text,false,directory path from top directory
-2015,mills1,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2015,mills2,prog.c,20,true,c,true,entry source
 2015,mills2,Makefile,30,true,makefile,true,entry Makefile
 2015,mills2,prog.orig.c,50,false,c,true,original source
@@ -3818,7 +3545,6 @@
 2015,mills2,.entry.json,4294967295,true,json,true,description of entry in JSON
 2015,mills2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2015,mills2,.path,4294967295,false,text,false,directory path from top directory
-2015,mills2,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2015,muth,prog.c,20,true,c,true,entry source
 2015,muth,Makefile,30,true,makefile,true,entry Makefile
 2015,muth,prog.orig.c,50,false,c,true,original source
@@ -3844,7 +3570,6 @@
 2015,muth,.entry.json,4294967295,true,json,true,description of entry in JSON
 2015,muth,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2015,muth,.path,4294967295,false,text,false,directory path from top directory
-2015,muth,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2015,schweikhardt,prog.c,20,true,c,true,entry source
 2015,schweikhardt,Makefile,30,true,makefile,true,entry Makefile
 2015,schweikhardt,prog.orig.c,50,false,c,true,original source
@@ -3855,7 +3580,6 @@
 2015,schweikhardt,.entry.json,4294967295,true,json,true,description of entry in JSON
 2015,schweikhardt,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2015,schweikhardt,.path,4294967295,false,text,false,directory path from top directory
-2015,schweikhardt,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2015,yang,prog.c,20,true,c,true,entry source
 2015,yang,Makefile,30,true,makefile,true,entry Makefile
 2015,yang,prog.orig.c,50,false,c,true,original source
@@ -3867,7 +3591,6 @@
 2015,yang,.entry.json,4294967295,true,json,true,description of entry in JSON
 2015,yang,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2015,yang,.path,4294967295,false,text,false,directory path from top directory
-2015,yang,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2018,algmyr,prog.c,20,true,c,true,entry source
 2018,algmyr,Makefile,30,true,makefile,true,entry Makefile
 2018,algmyr,prog.orig.c,50,false,c,true,original source
@@ -3879,7 +3602,6 @@
 2018,algmyr,.entry.json,4294967295,true,json,true,description of entry in JSON
 2018,algmyr,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2018,algmyr,.path,4294967295,false,text,false,directory path from top directory
-2018,algmyr,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2018,anderson,prog.c,20,true,c,true,entry source
 2018,anderson,Makefile,30,true,makefile,true,entry Makefile
 2018,anderson,prog.alt.c,40,true,c,true,alternative source
@@ -3892,7 +3614,6 @@
 2018,anderson,.entry.json,4294967295,true,json,true,description of entry in JSON
 2018,anderson,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2018,anderson,.path,4294967295,false,text,false,directory path from top directory
-2018,anderson,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2018,bellard,prog.c,20,true,c,true,entry source
 2018,bellard,Makefile,30,true,makefile,true,entry Makefile
 2018,bellard,prog.alt.c,40,true,c,true,alternative source
@@ -3907,7 +3628,6 @@
 2018,bellard,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2018,bellard,lena512.bin,4294967295,true,binary,false,binary support file
 2018,bellard,.path,4294967295,false,text,false,directory path from top directory
-2018,bellard,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2018,bellard,vintage_cars.bin,4294967295,true,binary,false,binary support file
 2018,burton1,prog.c,20,true,c,true,entry source
 2018,burton1,Makefile,30,true,makefile,true,entry Makefile
@@ -3921,7 +3641,6 @@
 2018,burton1,.entry.json,4294967295,true,json,true,description of entry in JSON
 2018,burton1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2018,burton1,.path,4294967295,false,text,false,directory path from top directory
-2018,burton1,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2018,burton2,prog.c,20,true,c,true,entry source
 2018,burton2,Makefile,30,true,makefile,true,entry Makefile
 2018,burton2,prog.orig.c,50,false,c,true,original source
@@ -3983,7 +3702,6 @@
 2018,burton2,.entry.json,4294967295,true,json,true,description of entry in JSON
 2018,burton2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2018,burton2,.path,4294967295,false,text,false,directory path from top directory
-2018,burton2,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2018,ciura,prog.c,20,true,c,true,entry source
 2018,ciura,Makefile,30,true,makefile,true,entry Makefile
 2018,ciura,prog.alt.c,40,true,c,true,alternative source
@@ -3997,7 +3715,6 @@
 2018,ciura,.entry.json,4294967295,true,json,true,description of entry in JSON
 2018,ciura,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2018,ciura,.path,4294967295,false,text,false,directory path from top directory
-2018,ciura,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2018,endoh1,prog.c,20,true,c,true,entry source
 2018,endoh1,Makefile,30,true,makefile,true,entry Makefile
 2018,endoh1,prog.orig.c,50,false,c,true,original source
@@ -4011,7 +3728,6 @@
 2018,endoh1,.entry.json,4294967295,true,json,true,description of entry in JSON
 2018,endoh1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2018,endoh1,.path,4294967295,false,text,false,directory path from top directory
-2018,endoh1,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2018,endoh2,prog.c,20,true,c,true,entry source
 2018,endoh2,Makefile,30,true,makefile,true,entry Makefile
 2018,endoh2,prog.orig.c,50,false,c,true,original source
@@ -4025,7 +3741,6 @@
 2018,endoh2,.entry.json,4294967295,true,json,true,description of entry in JSON
 2018,endoh2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2018,endoh2,.path,4294967295,false,text,false,directory path from top directory
-2018,endoh2,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2018,ferguson,prog.c,20,true,c,true,entry source
 2018,ferguson,Makefile,30,true,makefile,true,entry Makefile
 2018,ferguson,prog.alt.c,40,true,c,true,alternative source
@@ -4049,7 +3764,6 @@
 2018,ferguson,hint.css,4294967295,true,css,false,CSS for hint page
 2018,ferguson,.path,4294967295,false,text,false,directory path from top directory
 2018,ferguson,rpm.md,4294967295,true,markdown,true,markdown source for rpm.html
-2018,ferguson,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2018,ferguson,test-strings.txt,4294967295,true,text,true,test.sh support file
 2018,giles,prog.c,20,true,c,true,entry source
 2018,giles,Makefile,30,true,makefile,true,entry Makefile
@@ -4063,7 +3777,6 @@
 2018,giles,.entry.json,4294967295,true,json,true,description of entry in JSON
 2018,giles,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2018,giles,.path,4294967295,false,text,false,directory path from top directory
-2018,giles,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2018,hou,prog.c,20,true,c,true,entry source
 2018,hou,Makefile,30,true,makefile,true,entry Makefile
 2018,hou,prog.orig.c,50,false,c,true,original source
@@ -4075,7 +3788,6 @@
 2018,hou,.entry.json,4294967295,true,json,true,description of entry in JSON
 2018,hou,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2018,hou,.path,4294967295,false,text,false,directory path from top directory
-2018,hou,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2018,mills,prog.c,20,true,c,true,entry source
 2018,mills,Makefile,30,true,makefile,true,entry Makefile
 2018,mills,prog.orig.c,50,false,c,true,original source
@@ -4087,7 +3799,6 @@
 2018,mills,.entry.json,4294967295,true,json,true,description of entry in JSON
 2018,mills,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2018,mills,.path,4294967295,false,text,false,directory path from top directory
-2018,mills,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2018,mills,v0.image.fs,4294967295,true,binary,false,filesystem image
 2018,mills,v6.tape.gz,4294967295,true,gzip,false,compressed filesystem image
 2018,poikola,prog.c,20,true,c,true,entry source
@@ -4102,7 +3813,6 @@
 2018,poikola,.entry.json,4294967295,true,json,true,description of entry in JSON
 2018,poikola,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2018,poikola,.path,4294967295,false,text,false,directory path from top directory
-2018,poikola,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2018,vokes,prog.c,20,true,c,true,entry source
 2018,vokes,Makefile,30,true,makefile,true,entry Makefile
 2018,vokes,prog.orig.c,50,false,c,true,original source
@@ -4117,7 +3827,6 @@
 2018,vokes,.entry.json,4294967295,true,json,true,description of entry in JSON
 2018,vokes,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2018,vokes,.path,4294967295,false,text,false,directory path from top directory
-2018,vokes,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2018,yang,prog.c,20,true,c,true,entry source
 2018,yang,Makefile,30,true,makefile,true,entry Makefile
 2018,yang,prog.orig.c,50,false,c,true,original source
@@ -4129,7 +3838,6 @@
 2018,yang,.entry.json,4294967295,true,json,true,description of entry in JSON
 2018,yang,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2018,yang,.path,4294967295,false,text,false,directory path from top directory
-2018,yang,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2019,adamovsky,prog.c,20,true,c,true,entry source
 2019,adamovsky,Makefile,30,true,makefile,true,entry Makefile
 2019,adamovsky,prog.orig.c,50,false,c,true,original source
@@ -4146,7 +3854,6 @@
 2019,adamovsky,.entry.json,4294967295,true,json,true,description of entry in JSON
 2019,adamovsky,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2019,adamovsky,.path,4294967295,false,text,false,directory path from top directory
-2019,adamovsky,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2019,burton,prog.c,20,true,c,true,entry source
 2019,burton,Makefile,30,true,makefile,true,entry Makefile
 2019,burton,prog.orig.c,50,false,c,true,original source
@@ -4163,7 +3870,6 @@
 2019,burton,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2019,burton,newlines,4294967295,true,text,true,more useful interface.
 2019,burton,.path,4294967295,false,text,false,directory path from top directory
-2019,burton,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2019,ciura,prog.c,20,true,c,true,entry source
 2019,ciura,Makefile,30,true,makefile,true,entry Makefile
 2019,ciura,prog.alt.c,40,true,c,true,alternative source
@@ -4191,7 +3897,6 @@
 2019,ciura,.entry.json,4294967295,true,json,true,description of entry in JSON
 2019,ciura,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2019,ciura,.path,4294967295,false,text,false,directory path from top directory
-2019,ciura,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2019,diels-grabsch1,prog.c,20,true,c,true,entry source
 2019,diels-grabsch1,Makefile,30,true,makefile,true,entry Makefile
 2019,diels-grabsch1,prog.orig.c,50,false,c,true,original source
@@ -4204,7 +3909,6 @@
 2019,diels-grabsch1,.entry.json,4294967295,true,json,true,description of entry in JSON
 2019,diels-grabsch1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2019,diels-grabsch1,.path,4294967295,false,text,false,directory path from top directory
-2019,diels-grabsch1,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2019,diels-grabsch2,prog.c,20,true,c,true,entry source
 2019,diels-grabsch2,Makefile,30,true,makefile,true,entry Makefile
 2019,diels-grabsch2,prog.orig.c,50,false,c,true,original source
@@ -4215,7 +3919,6 @@
 2019,diels-grabsch2,.entry.json,4294967295,true,json,true,description of entry in JSON
 2019,diels-grabsch2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2019,diels-grabsch2,.path,4294967295,false,text,false,directory path from top directory
-2019,diels-grabsch2,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2019,dogon,prog.c,20,true,c,true,entry source
 2019,dogon,Makefile,30,true,makefile,true,entry Makefile
 2019,dogon,prog.orig.c,50,false,c,true,original source
@@ -4239,7 +3942,6 @@
 2019,dogon,.entry.json,4294967295,true,json,true,description of entry in JSON
 2019,dogon,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2019,dogon,.path,4294967295,false,text,false,directory path from top directory
-2019,dogon,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2019,duble,prog.c,20,true,c,true,entry source
 2019,duble,Makefile,30,true,makefile,true,entry Makefile
 2019,duble,prog.alt.c,40,true,c,true,alternative source
@@ -4252,7 +3954,6 @@
 2019,duble,.entry.json,4294967295,true,json,true,description of entry in JSON
 2019,duble,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2019,duble,.path,4294967295,false,text,false,directory path from top directory
-2019,duble,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2019,endoh,prog.c,20,true,c,true,entry source
 2019,endoh,Makefile,30,true,makefile,true,entry Makefile
 2019,endoh,prog.orig.c,50,false,c,true,original source
@@ -4264,7 +3965,6 @@
 2019,endoh,.entry.json,4294967295,true,json,true,description of entry in JSON
 2019,endoh,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2019,endoh,.path,4294967295,false,text,false,directory path from top directory
-2019,endoh,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2019,giles,prog.c,20,true,c,true,entry source
 2019,giles,Makefile,30,true,makefile,true,entry Makefile
 2019,giles,prog.orig.c,50,false,c,true,original source
@@ -4277,7 +3977,6 @@
 2019,giles,.entry.json,4294967295,true,json,true,description of entry in JSON
 2019,giles,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2019,giles,.path,4294967295,false,text,false,directory path from top directory
-2019,giles,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2019,karns,prog.c,20,true,c,true,entry source
 2019,karns,Makefile,30,true,makefile,true,entry Makefile
 2019,karns,prog.orig.c,50,false,c,true,original source
@@ -4289,7 +3988,6 @@
 2019,karns,.entry.json,4294967295,true,json,true,description of entry in JSON
 2019,karns,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2019,karns,.path,4294967295,false,text,false,directory path from top directory
-2019,karns,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2019,lynn,prog.c,20,true,c,true,entry source
 2019,lynn,Makefile,30,true,makefile,true,entry Makefile
 2019,lynn,prog.orig.c,50,false,c,true,original source
@@ -4309,7 +4007,6 @@
 2019,lynn,.entry.json,4294967295,true,json,true,description of entry in JSON
 2019,lynn,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2019,lynn,.path,4294967295,false,text,false,directory path from top directory
-2019,lynn,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2019,mills,prog.c,20,true,c,true,entry source
 2019,mills,Makefile,30,true,makefile,true,entry Makefile
 2019,mills,prog.orig.c,50,false,c,true,original source
@@ -4328,7 +4025,6 @@
 2019,mills,.entry.json,4294967295,true,json,true,description of entry in JSON
 2019,mills,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2019,mills,.path,4294967295,false,text,false,directory path from top directory
-2019,mills,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2019,poikola,prog.c,20,true,c,true,entry source
 2019,poikola,Makefile,30,true,makefile,true,entry Makefile
 2019,poikola,prog.alt.c,40,true,c,true,alternative source
@@ -4342,7 +4038,6 @@
 2019,poikola,.entry.json,4294967295,true,json,true,description of entry in JSON
 2019,poikola,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2019,poikola,.path,4294967295,false,text,false,directory path from top directory
-2019,poikola,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2019,yang,prog.c,20,true,c,true,entry source
 2019,yang,Makefile,30,true,makefile,true,entry Makefile
 2019,yang,prog.orig.c,50,false,c,true,original source
@@ -4357,7 +4052,6 @@
 2019,yang,.entry.json,4294967295,true,json,true,description of entry in JSON
 2019,yang,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2019,yang,.path,4294967295,false,text,false,directory path from top directory
-2019,yang,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2020,burton,prog.c,20,true,c,true,entry source
 2020,burton,Makefile,30,true,makefile,true,entry Makefile
 2020,burton,prog.orig.c,50,false,c,true,original source
@@ -4371,7 +4065,6 @@
 2020,burton,.entry.json,4294967295,true,json,true,description of entry in JSON
 2020,burton,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2020,burton,.path,4294967295,false,text,false,directory path from top directory
-2020,burton,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2020,carlini,prog.c,20,true,c,true,entry source
 2020,carlini,Makefile,30,true,makefile,true,entry Makefile
 2020,carlini,prog.orig.c,50,false,c,true,original source
@@ -4382,7 +4075,6 @@
 2020,carlini,.entry.json,4294967295,true,json,true,description of entry in JSON
 2020,carlini,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2020,carlini,.path,4294967295,false,text,false,directory path from top directory
-2020,carlini,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2020,endoh1,prog.c,20,true,c,true,entry source
 2020,endoh1,Makefile,30,true,makefile,true,entry Makefile
 2020,endoh1,prog.alt.c,40,true,c,true,alternative source
@@ -4400,7 +4092,6 @@
 2020,endoh1,.entry.json,4294967295,true,json,true,description of entry in JSON
 2020,endoh1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2020,endoh1,.path,4294967295,false,text,false,directory path from top directory
-2020,endoh1,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2020,endoh2,prog.c,20,true,c,true,entry source
 2020,endoh2,Makefile,30,true,makefile,true,entry Makefile
 2020,endoh2,prog.orig.c,50,false,c,true,original source
@@ -4421,7 +4112,6 @@
 2020,endoh2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2020,endoh2,.path,4294967295,false,text,false,directory path from top directory
 2020,endoh2,spoiler/spoiler.md,4294967295,true,markdown,true,markdown source for spoiler/spoiler.html
-2020,endoh2,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2020,endoh3,prog.c,20,true,c,true,entry source
 2020,endoh3,Makefile,30,true,makefile,true,entry Makefile
 2020,endoh3,prog.alt.c,40,true,c,true,alternative source
@@ -4434,7 +4124,6 @@
 2020,endoh3,.entry.json,4294967295,true,json,true,description of entry in JSON
 2020,endoh3,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2020,endoh3,.path,4294967295,false,text,false,directory path from top directory
-2020,endoh3,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2020,ferguson1,prog.c,20,true,c,true,entry source
 2020,ferguson1,Makefile,30,true,makefile,true,entry Makefile
 2020,ferguson1,prog.alt.c,40,true,c,true,alternative source
@@ -4473,7 +4162,6 @@
 2020,ferguson1,ioccc-cake.jpg,4294967295,true,image,false,image for chocolate cake
 2020,ferguson1,.path,4294967295,false,text,false,directory path from top directory
 2020,ferguson1,spoilers.md,4294967295,true,markdown,true,markdown source for spoilers.html
-2020,ferguson1,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2020,ferguson1,terminals.md,4294967295,true,markdown,true,markdown source for terminals.html
 2020,ferguson1,troubleshooting.md,4294967295,true,markdown,true,markdown source for troubleshooting.html
 2020,ferguson2,prog.c,20,true,c,true,entry source
@@ -4501,7 +4189,6 @@
 2020,ferguson2,obfuscation.md,4294967295,true,markdown,true,markdown source for obfuscation.html
 2020,ferguson2,.path,4294967295,false,text,false,directory path from top directory
 2020,ferguson2,recode.md,4294967295,true,markdown,true,markdown source for recode.html
-2020,ferguson2,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2020,giles,prog.c,20,true,c,true,entry source
 2020,giles,Makefile,30,true,makefile,true,entry Makefile
 2020,giles,prog.orig.c,50,false,c,true,original source
@@ -4514,7 +4201,6 @@
 2020,giles,.entry.json,4294967295,true,json,true,description of entry in JSON
 2020,giles,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2020,giles,.path,4294967295,false,text,false,directory path from top directory
-2020,giles,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2020,kurdyukov1,prog.c,20,true,c,true,entry source
 2020,kurdyukov1,Makefile,30,true,makefile,true,entry Makefile
 2020,kurdyukov1,prog.alt.c,40,true,c,true,alternative source
@@ -4529,7 +4215,6 @@
 2020,kurdyukov1,.entry.json,4294967295,true,json,true,description of entry in JSON
 2020,kurdyukov1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2020,kurdyukov1,.path,4294967295,false,text,false,directory path from top directory
-2020,kurdyukov1,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2020,kurdyukov2,prog.c,20,true,c,true,entry source
 2020,kurdyukov2,Makefile,30,true,makefile,true,entry Makefile
 2020,kurdyukov2,prog.orig.c,50,false,c,true,original source
@@ -4544,7 +4229,6 @@
 2020,kurdyukov2,.entry.json,4294967295,true,json,true,description of entry in JSON
 2020,kurdyukov2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2020,kurdyukov2,.path,4294967295,false,text,false,directory path from top directory
-2020,kurdyukov2,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2020,kurdyukov3,prog.c,20,true,c,true,entry source
 2020,kurdyukov3,Makefile,30,true,makefile,true,entry Makefile
 2020,kurdyukov3,prog.alt.c,40,true,c,true,alternative source
@@ -4558,7 +4242,6 @@
 2020,kurdyukov3,.entry.json,4294967295,true,json,true,description of entry in JSON
 2020,kurdyukov3,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2020,kurdyukov3,.path,4294967295,false,text,false,directory path from top directory
-2020,kurdyukov3,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2020,kurdyukov4,prog.c,20,true,c,true,entry source
 2020,kurdyukov4,Makefile,30,true,makefile,true,entry Makefile
 2020,kurdyukov4,prog.orig.c,50,false,c,true,original source
@@ -4572,7 +4255,6 @@
 2020,kurdyukov4,.entry.json,4294967295,true,json,true,description of entry in JSON
 2020,kurdyukov4,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2020,kurdyukov4,.path,4294967295,false,text,false,directory path from top directory
-2020,kurdyukov4,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2020,otterness,prog.c,20,true,c,true,entry source
 2020,otterness,Makefile,30,true,makefile,true,entry Makefile
 2020,otterness,prog.orig.c,50,false,c,true,original source
@@ -4585,7 +4267,6 @@
 2020,otterness,.entry.json,4294967295,true,json,true,description of entry in JSON
 2020,otterness,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2020,otterness,.path,4294967295,false,text,false,directory path from top directory
-2020,otterness,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2020,tsoj,prog.c,20,true,c,true,entry source
 2020,tsoj,Makefile,30,true,makefile,true,entry Makefile
 2020,tsoj,prog.alt.c,40,true,c,true,alternative source
@@ -4596,7 +4277,6 @@
 2020,tsoj,.entry.json,4294967295,true,json,true,description of entry in JSON
 2020,tsoj,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2020,tsoj,.path,4294967295,false,text,false,directory path from top directory
-2020,tsoj,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation
 2020,yang,prog.c,20,true,c,true,entry source
 2020,yang,Makefile,30,true,makefile,true,entry Makefile
 2020,yang,prog.orig.c,50,false,c,true,original source
@@ -4609,4 +4289,3 @@
 2020,yang,.entry.json,4294967295,true,json,true,description of entry in JSON
 2020,yang,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
 2020,yang,.path,4294967295,false,text,false,directory path from top directory
-2020,yang,.tar.tstamp,4294967295,false,text,true,timestamp of compressed tarball formation

@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.3 2024-03-27"
+export VERSION="1.3.4 2024-03-27"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -399,66 +399,6 @@ if [[ ! -s $VAR_MK ]]; then
     exit 6
 fi
 
-# verify we have a non-empty writable top level .tar.tstamp file
-#
-export TOP_TAR_TSTAMP=".tar.tstamp"
-if [[ ! -e $TOP_TAR_TSTAMP ]]; then
-    echo "$0: ERROR: topdir tar.tstamp does not exist: $TOP_TAR_TSTAMP" 1>&2
-    exit 6
-fi
-if [[ ! -f $TOP_TAR_TSTAMP ]]; then
-    echo "$0: ERROR: topdir .tar.tstamp is not a file: $TOP_TAR_TSTAMP" 1>&2
-    exit 6
-fi
-if [[ ! -w $TOP_TAR_TSTAMP ]]; then
-    echo "$0: ERROR: topdir .tar.tstamp is not a writable readable file: $TOP_TAR_TSTAMP" 1>&2
-    exit 6
-fi
-if [[ ! -s $TOP_TAR_TSTAMP ]]; then
-    echo "$0: ERROR: topdir .tar.tstamp is not a not a non-empty writable readable file: $TOP_TAR_TSTAMP" 1>&2
-    exit 6
-fi
-
-# verify we have a non-empty writable top level .tar.tstamp file
-#
-export YEAR_TAR_TSTAMP="$YEAR_DIR/.tar.tstamp"
-if [[ ! -e $YEAR_TAR_TSTAMP ]]; then
-    echo "$0: ERROR: year tar.tstamp does not exist: $YEAR_TAR_TSTAMP" 1>&2
-    exit 6
-fi
-if [[ ! -f $YEAR_TAR_TSTAMP ]]; then
-    echo "$0: ERROR: year .tar.tstamp is not a file: $YEAR_TAR_TSTAMP" 1>&2
-    exit 6
-fi
-if [[ ! -w $YEAR_TAR_TSTAMP ]]; then
-    echo "$0: ERROR: year .tar.tstamp is not a writable readable file: $YEAR_TAR_TSTAMP" 1>&2
-    exit 6
-fi
-if [[ ! -s $YEAR_TAR_TSTAMP ]]; then
-    echo "$0: ERROR: year .tar.tstamp is not a not a non-empty writable readable file: $YEAR_TAR_TSTAMP" 1>&2
-    exit 6
-fi
-
-# verify we have a non-empty writable .tar.tstamp file
-#
-export DOT_TAR_TSTAMP="$YYYY_DIR/.tar.tstamp"
-if [[ ! -e $DOT_TAR_TSTAMP ]]; then
-    echo "$0: ERROR: entry .tar.tstamp does not exist: $DOT_TAR_TSTAMP" 1>&2
-    exit 6
-fi
-if [[ ! -f $DOT_TAR_TSTAMP ]]; then
-    echo "$0: ERROR: entry .tar.tstamp is not a file: $DOT_TAR_TSTAMP" 1>&2
-    exit 6
-fi
-if [[ ! -w $DOT_TAR_TSTAMP ]]; then
-    echo "$0: ERROR: entry .tar.tstamp is not a writable readable file: $DOT_TAR_TSTAMP" 1>&2
-    exit 6
-fi
-if [[ ! -s $DOT_TAR_TSTAMP ]]; then
-    echo "$0: ERROR: entry .tar.tstamp is not a not a non-empty writable readable file: $DOT_TAR_TSTAMP" 1>&2
-    exit 6
-fi
-
 # determine the name of our tarball
 #
 # TARBALL - the same of the compressed tarball to verify and if needed re-build
@@ -497,9 +437,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: FILELIST_ENTRY_JSON_AWK=$FILELIST_ENTRY_JSON_AWK" 1>&2
     echo "$0: debug[3]: IOCCC_CSS=$IOCCC_CSS" 1>&2
     echo "$0: debug[3]: VAR_MK=$VAR_MK" 1>&2
-    echo "$0: debug[3]: TOP_TAR_TSTAMP=$TOP_TAR_TSTAMP" 1>&2
-    echo "$0: debug[3]: YEAR_TAR_TSTAMP=$YEAR_TAR_TSTAMP" 1>&2
-    echo "$0: debug[3]: DOT_TAR_TSTAMP=$DOT_TAR_TSTAMP" 1>&2
     echo "$0: debug[3]: TARBALL=$TARBALL" 1>&2
     echo "$0: debug[3]: REBUILD_TARBALL=$REBUILD_TARBALL" 1>&2
 fi
@@ -570,22 +507,22 @@ fi
 #
 export TMP_FILES_TO_TAR=".$NAME.$$.tar.list"
 if [[ $V_FLAG -ge 3 ]]; then
-    echo  "$0: debug[3]: temporary of files to tar: $TMP_FILES_TO_TAR" 1>&2
+    echo  "$0: debug[3]: temporary list of files to tar: $TMP_FILES_TO_TAR" 1>&2
 fi
 if [[ -z $NOOP ]]; then
     trap 'rm -f $TMP_MANIFEST_LIST $TMP_FILES_TO_TAR; exit' 0 1 2 3 15
     rm -f "$TMP_FILES_TO_TAR"
     if [[ -e $TMP_FILES_TO_TAR ]]; then
-	echo "$0: ERROR: cannot remove temporary of files to tar: $TMP_FILES_TO_TAR" 1>&2
+	echo "$0: ERROR: cannot remove temporary list of files to tar: $TMP_FILES_TO_TAR" 1>&2
 	exit 12
     fi
     :> "$TMP_FILES_TO_TAR"
     if [[ ! -e $TMP_FILES_TO_TAR ]]; then
-	echo "$0: ERROR: cannot create temporary of files to tar: $TMP_FILES_TO_TAR" 1>&2
+	echo "$0: ERROR: cannot create temporary list of files to tar: $TMP_FILES_TO_TAR" 1>&2
 	exit 13
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, temporary of files to tar is not used: $TMP_FILES_TO_TAR" 1>&2
+    echo "$0: debug[3]: because of -n, temporary list of files to tar is not used: $TMP_FILES_TO_TAR" 1>&2
 fi
 
 # create a temporary exit code
@@ -664,7 +601,7 @@ if [[ -z $NOOP ]]; then
 	echo "$0: debug[7]: list of files to tar ends above" 1>&2
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, temporary of files to tar was not formed: $TMP_MANIFEST_LIST" 1>&2
+    echo "$0: debug[3]: because of -n, temporary list of files to tar was not formed: $TMP_MANIFEST_LIST" 1>&2
 fi
 if [[ ! -s "$TMP_FILES_TO_TAR" ]]; then
     echo "$0: ERROR: no files found to tar for: $ENTRY_JSON" 1>&2
@@ -673,7 +610,7 @@ fi
 EXIT_CODE=$(< "$TMP_EXIT_CODE")
 if [[ -z $EXIT_CODE ]]; then
     echo "$0: ERROR: temporary exit file is empty: $TMP_EXIT_CODE" 1>&2
-    exit 18
+    exit 16
 fi
 
 # create a temporary list of files found in the tarball
@@ -687,12 +624,12 @@ if [[ -z $NOOP ]]; then
     rm -f "$TMP_TARBALL_LIST"
     if [[ -e $TMP_TARBALL_LIST ]]; then
 	echo "$0: ERROR: cannot remove temporary of files in the tarball: $TARBALL: $TMP_TARBALL_LIST" 1>&2
-	exit 16
+	exit 17
     fi
     :> "$TMP_TARBALL_LIST"
     if [[ ! -e $TMP_TARBALL_LIST ]]; then
 	echo "$0: ERROR: cannot create temporary of files in the tarball: $TARBALL: $TMP_TARBALL_LIST" 1>&2
-	exit 17
+	exit 18
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary of files in the tarball: $TARBALL is not used: $TMP_TARBALL_LIST" 1>&2
@@ -709,12 +646,12 @@ if [[ -z $NOOP ]]; then
     rm -f "$TMP_TARBALL"
     if [[ -e $TMP_TARBALL ]]; then
 	echo "$0: ERROR: cannot remove temporary tarball: $TMP_TARBALL" 1>&2
-	exit 16
+	exit 19
     fi
     :> "$TMP_TARBALL"
     if [[ ! -e $TMP_TARBALL ]]; then
 	echo "$0: ERROR: cannot create temporary tarball: $TMP_TARBALL" 1>&2
-	exit 17
+	exit 20
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary tarball is not used: $TMP_TARBALL" 1>&2
@@ -768,7 +705,7 @@ if [[ -z $REBUILD_TARBALL ]]; then
 	     "grep -E -v ': (Uid|Gid|Mod time) differs$'" 1>&2
     fi
     TAR_CONTENTS_DIFFERS=$(TZ=UTC LC_ALL=C "$GTAR_TOOL" --compare --file="$TARBALL" -C . 2>&1 | \
-    			   grep -E -v ': (Uid|Gid|Mod time) differs$')
+			   grep -E -v ': (Uid|Gid|Mod time) differs$')
     export TAR_CONTENTS_DIFFERS
     if [[ -n $TAR_CONTENTS_DIFFERS ]]; then
 	REBUILD_TARBALL="true"
@@ -796,7 +733,7 @@ if [[ -n $REBUILD_TARBALL ]]; then
 
     if [[ -z $NOOP ]]; then
 
-	# update .tar.tstamp with the timestamp of now
+	# determine the timestamp of now
 	#
 	TAR_TIMESTAMP=$(TZ=UTZ date '+%s')
 	status="$?"
@@ -814,21 +751,6 @@ if [[ -n $REBUILD_TARBALL ]]; then
 	    echo "$0: ERROR: new TAR_TIMESTAMP is not an integer: $TAR_TIMESTAMP" 1>&2
 	    exit 8
 	fi
-
-	# update tar timestamp
-	#
-	if [[ $V_FLAG -ge 3 ]]; then
-	    echo "$0: debug[3]: new TAR_TIMESTAMP=$TAR_TIMESTAMP" 1>&2
-	fi
-	echo "$TAR_TIMESTAMP" > "$DOT_TAR_TSTAMP"
-	if [[ $V_FLAG -ge 3 ]]; then
-	    echo "$0: debug[3]: updating: $YEAR_TAR_TSTAMP" 1>&2
-	fi
-	echo "$TAR_TIMESTAMP" > "$YEAR_TAR_TSTAMP"
-	if [[ $V_FLAG -ge 3 ]]; then
-	    echo "$0: debug[3]: updating: $TOP_TAR_TSTAMP" 1>&2
-	fi
-	echo "$TAR_TIMESTAMP" > "$TOP_TAR_TSTAMP"
 
 	# case: form the tarball verbosely if -v 5 or more
 	#
@@ -904,13 +826,12 @@ if [[ -n $REBUILD_TARBALL ]]; then
     #
     elif [[ $V_FLAG -ge 5 ]]; then
 	echo "$0: debug[5]: because of -n, did not execute:" \
-		    "TZ=UTC LC_ALL=C $GTAR_TOOL --files-from=- --no-acls --no-xattrs --no-selinux --sort=name" \
-		    "--owner=501 --group=20 --numeric-owner" \
-		    "--pax-option='exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime'" \
-		    "--mtime=@${TAR_TIMESTAMP} --totals -jcvf $TMP_TARBALL < $TMP_FILES_TO_TAR" 1>&2
+	     "TZ=UTC LC_ALL=C $GTAR_TOOL --files-from=- --no-acls --no-xattrs --no-selinux --sort=name" \
+	     "--owner=501 --group=20 --numeric-owner" \
+	     "--pax-option='exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime'" \
+	     "--mtime=@${TAR_TIMESTAMP} --totals -jcvf $TMP_TARBALL < $TMP_FILES_TO_TAR" 1>&2
 	echo "$0: debug[5]: because of -n, did not move temporary tarball: $TMP_TARBALL" \
 	     "into the permanent tarball: $TARBALL" 1>&2
-	echo "$0: debug[5]: because of -n, did not update $DOT_TAR_TSTAMP nor $YEAR_TAR_TSTAMP nor $TOP_TAR_TSTAMP" 1>&2
     fi
 
 # case: tarball update not needed
@@ -925,6 +846,6 @@ if [[ -z $NOOP ]]; then
      rm -f "$TMP_MANIFEST_LIST" "$TMP_FILES_TO_TAR" "$TMP_EXIT_CODE" "$TMP_TARBALL_LIST" "$TMP_TARBALL"
 elif [[ $V_FLAG -ge 1 ]]; then
     echo  "$0: debug[1]: -n disabled execution of: rm -f $TMP_MANIFEST_LIST $TMP_FILES_TO_TAR" \
-    	  "$TMP_EXIT_CODE $TMP_TARBALL_LIST $TMP_TARBALL" 1>&2
+	  "$TMP_EXIT_CODE $TMP_TARBALL_LIST $TMP_TARBALL" 1>&2
 fi
 exit "$EXIT_CODE"

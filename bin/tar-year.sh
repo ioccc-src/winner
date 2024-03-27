@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.3 2024-03-27"
+export VERSION="1.2 2024-03-27"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -266,10 +266,6 @@ if [[ ! -d $BIN_PATH ]]; then
 fi
 export BIN_DIR="bin"
 
-# determine the name of our tarball
-#
-export TARBALL="$YYYY/$YYYY.tar.bz2"
-
 # verify we have our awk tool
 #
 export FILELIST_ENTRY_JSON_AWK="$BIN_DIR/filelist.entry.json.awk"
@@ -350,6 +346,14 @@ if [[ ! -s $FILELIST ]]; then
     exit 6
 fi
 
+# determine the name of our tarball
+#
+# TARBALL - the same of the compressed tarball to verify and if needed re-build
+# REBUILD_TARBALL - if non-empty, we need to re-build TARBALL and update tar timestamps
+#
+export TARBALL="$YYYY/$YYYY.tar.bz2"
+export REBUILD_TARBALL=
+
 # parameter debugging
 #
 if [[ $V_FLAG -ge 3 ]]; then
@@ -374,6 +378,8 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: IOCCC_CSS=$IOCCC_CSS" 1>&2
     echo "$0: debug[3]: VAR_MK=$VAR_MK" 1>&2
     echo "$0: debug[3]: FILELIST=$FILELIST" 1>&2
+    echo "$0: debug[3]: TARBALL=$TARBALL" 1>&2
+    echo "$0: debug[3]: REBUILD_TARBALL=$REBUILD_TARBALL" 1>&2
 fi
 
 # If -N, time to exit
@@ -383,6 +389,37 @@ if [[ -n $DO_NOT_PROCESS ]]; then
 	echo "$0: debug[1]: arguments parsed, -N given, exit 0" 1>&2
     fi
     exit 0
+fi
+
+# test - if needed - if the tarball is a non-empty writable file
+#
+if [[ -z $REBUILD_TARBALL && ! -e $TARBALL ]]; then
+    REBUILD_TARBALL="true"
+    if [[ $V_FLAG -ge 1 ]]; then
+	echo "$0: debug[1]: REBUILD_TARBALL set to: $REBUILD_TARBALL," \
+	     "tarball does not exist: $TARBALL" 1>&2
+    fi
+fi
+if [[ -z $REBUILD_TARBALL && ! -f $TARBALL ]]; then
+    REBUILD_TARBALL="true"
+    if [[ $V_FLAG -ge 1 ]]; then
+	echo "$0: debug[1]: REBUILD_TARBALL set to: $REBUILD_TARBALL," \
+	     "tarball is not a file: $TARBALL" 1>&2
+    fi
+fi
+if [[ -z $REBUILD_TARBALL && ! -w $TARBALL ]]; then
+    REBUILD_TARBALL="true"
+    if [[ $V_FLAG -ge 1 ]]; then
+	echo "$0: debug[1]: REBUILD_TARBALL set to: $REBUILD_TARBALL," \
+	     "tarball is not a writable file: $TARBALL" 1>&2
+    fi
+fi
+if [[ -z $REBUILD_TARBALL && ! -s $TARBALL ]]; then
+    REBUILD_TARBALL="true"
+    if [[ $V_FLAG -ge 1 ]]; then
+	echo "$0: debug[1]: REBUILD_TARBALL set to: $REBUILD_TARBALL," \
+	     "tarball is not a non-empty writable file: $TARBALL" 1>&2
+    fi
 fi
 
 # create a temporary file manifest list
@@ -409,24 +446,24 @@ fi
 
 # create a temporary sort list of files to tar
 #
-export TMP_TAR_LIST=".$NAME.$$.tar.list"
+export TMP_FILES_TO_TAR=".$NAME.$$.tar.list"
 if [[ $V_FLAG -ge 3 ]]; then
-    echo  "$0: debug[3]: temporary file tar list: $TMP_TAR_LIST" 1>&2
+    echo  "$0: debug[3]: temporary list of files to tar: $TMP_FILES_TO_TAR" 1>&2
 fi
 if [[ -z $NOOP ]]; then
-    trap 'rm -f $TMP_MANIFEST_LIST $TMP_TAR_LIST; exit' 0 1 2 3 15
-    rm -f "$TMP_TAR_LIST"
-    if [[ -e $TMP_TAR_LIST ]]; then
-	echo "$0: ERROR: cannot remove temporary file tar list: $TMP_TAR_LIST" 1>&2
+    trap 'rm -f $TMP_MANIFEST_LIST $TMP_FILES_TO_TAR; exit' 0 1 2 3 15
+    rm -f "$TMP_FILES_TO_TAR"
+    if [[ -e $TMP_FILES_TO_TAR ]]; then
+	echo "$0: ERROR: cannot remove temporary list of files to tar: $TMP_FILES_TO_TAR" 1>&2
 	exit 12
     fi
-    :> "$TMP_TAR_LIST"
-    if [[ ! -e $TMP_TAR_LIST ]]; then
-	echo "$0: ERROR: cannot create temporary file tar list: $TMP_TAR_LIST" 1>&2
+    :> "$TMP_FILES_TO_TAR"
+    if [[ ! -e $TMP_FILES_TO_TAR ]]; then
+	echo "$0: ERROR: cannot create temporary list of files to tar: $TMP_FILES_TO_TAR" 1>&2
 	exit 13
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, temporary file tar list is not used: $TMP_TAR_LIST" 1>&2
+    echo "$0: debug[3]: because of -n, temporary list of files to tar is not used: $TMP_FILES_TO_TAR" 1>&2
 fi
 
 # create a temporary exit code
@@ -439,7 +476,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary exit code: $TMP_EXIT_CODE" 1>&2
 fi
 if [[ -z $NOOP ]]; then
-    trap 'rm -f $TMP_MANIFEST_LIST $TMP_TAR_LIST $TMP_EXIT_CODE; exit' 0 1 2 3 15
+    trap 'rm -f $TMP_MANIFEST_LIST $TMP_FILES_TO_TAR $TMP_EXIT_CODE; exit' 0 1 2 3 15
     rm -f "$TMP_EXIT_CODE"
     if [[ -e $TMP_EXIT_CODE ]]; then
 	echo "$0: ERROR: cannot remove temporary exit code: $TMP_EXIT_CODE" 1>&2
@@ -452,28 +489,6 @@ if [[ -z $NOOP ]]; then
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary exit code is not used: $TMP_EXIT_CODE" 1>&2
-fi
-
-# create a temporary tarball
-#
-export TMP_TARBALL=".$NAME.$$.tar.bz2"
-if [[ $V_FLAG -ge 3 ]]; then
-    echo  "$0: debug[3]: temporary tarball: $TMP_TARBALL" 1>&2
-fi
-if [[ -z $NOOP ]]; then
-    trap 'rm -f $TMP_MANIFEST_LIST $TMP_TAR_LIST $TMP_EXIT_CODE $TMP_TARBALL; exit' 0 1 2 3 15
-    rm -f "$TMP_TARBALL"
-    if [[ -e $TMP_TARBALL ]]; then
-	echo "$0: ERROR: cannot remove temporary tarball: $TMP_TARBALL" 1>&2
-	exit 16
-    fi
-    :> "$TMP_TARBALL"
-    if [[ ! -e $TMP_TARBALL ]]; then
-	echo "$0: ERROR: cannot create temporary tarball: $TMP_TARBALL" 1>&2
-	exit 17
-    fi
-elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, temporary tarball is not used: $TMP_TARBALL" 1>&2
 fi
 
 # generate sorted list of entry files from the IOCCC years manifest
@@ -682,108 +697,212 @@ if [[ -z $NOOP ]]; then
 	else
 	    echo "$file"
 	fi
-    done > "$TMP_TAR_LIST"
+    done > "$TMP_FILES_TO_TAR"
     if [[ $V_FLAG -ge 7 ]]; then
 	echo "$0: debug[7]: list of files to tar start below" 1>&2
-	cat "$TMP_TAR_LIST" 1>&2
+	cat "$TMP_FILES_TO_TAR" 1>&2
 	echo "$0: debug[7]: list of files to tar ends above" 1>&2
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, temporary file tar list was not formed: $TMP_MANIFEST_LIST" 1>&2
+    echo "$0: debug[3]: because of -n, temporary list of files to tar was not formed: $TMP_MANIFEST_LIST" 1>&2
 fi
-if [[ ! -s "$TMP_TAR_LIST" ]]; then
+if [[ ! -s "$TMP_FILES_TO_TAR" ]]; then
     echo "$0: ERROR: no files found to tar for: $ENTRY_JSON" 1>&2
     exit 1
 fi
 EXIT_CODE=$(< "$TMP_EXIT_CODE")
 if [[ -z $EXIT_CODE ]]; then
     echo "$0: ERROR: temporary exit file is empty: $TMP_EXIT_CODE" 1>&2
-    exit 18
+    exit 16
 fi
 
-# form the tarball
+# create a temporary list of files found in the tarball
+#
+export TMP_TARBALL_LIST=".$NAME.$$.tarball.list"
+if [[ $V_FLAG -ge 3 ]]; then
+    echo  "$0: debug[3]: temporary of files in the tarball: $TARBALL: $TMP_TARBALL_LIST" 1>&2
+fi
+if [[ -z $NOOP ]]; then
+    trap 'rm -f $TMP_MANIFEST_LIST $TMP_FILES_TO_TAR $TMP_EXIT_CODE $TMP_TARBALL_LIST; exit' 0 1 2 3 15
+    rm -f "$TMP_TARBALL_LIST"
+    if [[ -e $TMP_TARBALL_LIST ]]; then
+	echo "$0: ERROR: cannot remove temporary of files in the tarball: $TARBALL: $TMP_TARBALL_LIST" 1>&2
+	exit 17
+    fi
+    :> "$TMP_TARBALL_LIST"
+    if [[ ! -e $TMP_TARBALL_LIST ]]; then
+	echo "$0: ERROR: cannot create temporary of files in the tarball: $TARBALL: $TMP_TARBALL_LIST" 1>&2
+	exit 18
+    fi
+elif [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: because of -n, temporary of files in the tarball: $TARBALL is not used: $TMP_TARBALL_LIST" 1>&2
+fi
+
+# create a temporary tarball
+#
+export TMP_TARBALL=".$NAME.$$.tar.bz2"
+if [[ $V_FLAG -ge 3 ]]; then
+    echo  "$0: debug[3]: temporary tarball: $TMP_TARBALL" 1>&2
+fi
+if [[ -z $NOOP ]]; then
+    trap 'rm -f $TMP_MANIFEST_LIST $TMP_FILES_TO_TAR $TMP_EXIT_CODE $TMP_TARBALL_LIST $TMP_TARBALL; exit' 0 1 2 3 15
+    rm -f "$TMP_TARBALL"
+    if [[ -e $TMP_TARBALL ]]; then
+	echo "$0: ERROR: cannot remove temporary tarball: $TMP_TARBALL" 1>&2
+	exit 19
+    fi
+    :> "$TMP_TARBALL"
+    if [[ ! -e $TMP_TARBALL ]]; then
+	echo "$0: ERROR: cannot create temporary tarball: $TMP_TARBALL" 1>&2
+	exit 20
+    fi
+elif [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: because of -n, temporary tarball is not used: $TMP_TARBALL" 1>&2
+fi
+
+# test - if needed - if the sorted list of files from the tarball matches the sorted list of found entry files
+#
+if [[ -z $REBUILD_TARBALL ]]; then
+
+    # form he sorted list of files in the tarball
+    #
+    if [[ $V_FLAG -ge 3 ]]; then
+	echo "$0: debug[3]: $GTAR_TOOL -jtf $TARBALL > $TMP_TARBALL_LIST" 1>&2
+    fi
+    "$GTAR_TOOL" -jtf "$TARBALL" > "$TMP_TARBALL_LIST"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	REBUILD_TARBALL="true"
+	if [[ $V_FLAG -ge 1 ]]; then
+	    echo "$0: debug[1]: REBUILD_TARBALL set to: $REBUILD_TARBALL," \
+	         "failed to list files in tarball: $TARBALL, error: $status" 1>&2
+	fi
+    fi
+    if [[ -z $REBUILD_TARBALL ]]; then
+	LC_ALL=C sort -d "$TMP_TARBALL_LIST" -o "$TMP_TARBALL_LIST"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    REBUILD_TARBALL="true"
+	    if [[ $V_FLAG -ge 1 ]]; then
+		echo "$0: debug[1]: REBUILD_TARBALL set to: $REBUILD_TARBALL," \
+		     "failed to sort list of files in tarball: $TARBALL, error: $status" 1>&2
+	    fi
+	else
+	    if ! cmp -s "$TMP_TARBALL_LIST" "$TMP_FILES_TO_TAR"; then
+		REBUILD_TARBALL="true"
+		if [[ $V_FLAG -ge 1 ]]; then
+		    echo "$0: debug[1]: REBUILD_TARBALL set to: $REBUILD_TARBALL," \
+			 "sorted list of files in tarball: $TMP_TARBALL_LIST" \
+			 "does not match sorted list of found entry files: $TMP_FILES_TO_TAR" 1>&2
+		fi
+	    fi
+	fi
+    fi
+fi
+
+# test - if needed - if the files in the tarball match the contents of the entry's files
+#
+if [[ -z $REBUILD_TARBALL ]]; then
+    if [[ $V_FLAG -ge 3 ]]; then
+	echo "$0: debug[3]: TZ=UTC LC_ALL=C $GTAR_TOOL --compare --file=$TARBALL -C . 2>&1 |" \
+	     "grep -E -v ': (Uid|Gid|Mod time) differs$'" 1>&2
+    fi
+    TAR_CONTENTS_DIFFERS=$(TZ=UTC LC_ALL=C "$GTAR_TOOL" --compare --file="$TARBALL" -C . 2>&1 | \
+			   grep -E -v ': (Uid|Gid|Mod time) differs$')
+    export TAR_CONTENTS_DIFFERS
+    if [[ -n $TAR_CONTENTS_DIFFERS ]]; then
+	REBUILD_TARBALL="true"
+	if [[ $V_FLAG -ge 1 ]]; then
+	    echo "$0: debug[1]: REBUILD_TARBALL set to: $REBUILD_TARBALL," \
+	         "contents of tarball: $TARBALL differs from contents of entry: $YYYY_DIR" 1>&2
+	fi
+	if [[ $V_FLAG -ge 3 ]]; then
+	    echo "$0: debug[3]: tar differences starts below" 1>&2
+	    echo "$TAR_CONTENTS_DIFFERS" 1>&2
+	    echo "$0: debug[3]: tar differences ends above" 1>&2
+	fi
+    fi
+fi
+
+# test - if needed - update the tarball
 #
 # We use gnu tar to form the bzip2 compressed tarball with careful arguments
-# so that the resulting tarball is the same, byte for byte.
+# so that the resulting tarball is consistent.  There are systems for which the
+# tarball won't be the same.  However we do not need that.  All of the tests
+# above are such that if $REBUILD_TARBALL is not empty, then the tarball needs
+# to updated regardless.
 #
-if [[ -z $NOOP ]]; then
+if [[ -n $REBUILD_TARBALL ]]; then
 
-    # case: form the tarball verbosely if -v 3 or more
-    #
-    if [[ $V_FLAG -gt 3 ]]; then
-	echo "$0: debug[3]: about to execute:" \
-	    "$GTAR_TOOL --files-from=- --sparse --no-acls --no-xattrs --no-selinux --sort=name" \
-	    "--owner=501 --group=20 --numeric-owner --totals" \
-	    "--pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime" \
-	    "-jcvf $TMP_TARBALL < $TMP_TAR_LIST" 1>&2
-	"$GTAR_TOOL" --files-from=- --sparse --no-acls --no-xattrs --no-selinux --sort=name \
-		     --owner=501 --group=20 --numeric-owner --totals \
-		     --pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime \
-		     -jcvf "$TMP_TARBALL" < "$TMP_TAR_LIST"
+    if [[ -z $NOOP ]]; then
+
+	# determine the timestamp of now
+	#
+	TAR_TIMESTAMP=$(TZ=UTZ date '+%s')
 	status="$?"
+	export TAR_TIMESTAMP
 	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR:" \
-		"$GTAR_TOOL --files-from=- --sparse --no-acls --no-xattrs --no-selinux --sort=name" \
-		"--owner=501 --group=20 --numeric-owner --totals" \
-		"--pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime" \
-		"-jcvf $TMP_TARBALL < $TMP_TAR_LIST failed, error: $status" 1>&2
-	    EXIT_CODE=8 # exit 8
+	    echo "$0: ERROR: new TZ=UTC date +%s failed, error: $status" 1>&2
+	    exit 8
+	fi
+	if [[ $TAR_TIMESTAMP =~ ^-?[0-9]+$ ]]; then
+	    if [[ $TAR_TIMESTAMP -le 0 ]]; then
+		echo "$0: ERROR: new TAR_TIMESTAMP is not an integer > 0: $TAR_TIMESTAMP" 1>&2
+		exit 8
+	    fi
+	else
+	    echo "$0: ERROR: new TAR_TIMESTAMP is not an integer: $TAR_TIMESTAMP" 1>&2
+	    exit 8
 	fi
 
-    # case: form the tarball silently
-    #
-    else
-	"$GTAR_TOOL" --files-from=- --sparse --no-acls --no-xattrs --no-selinux --sort=name \
-		     --owner=501 --group=20 --numeric-owner \
-		     --pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime \
-		     -jcf "$TMP_TARBALL" < "$TMP_TAR_LIST"
-	status="$?"
-	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR:" \
-		"$GTAR_TOOL --files-from=- --sparse --no-acls --no-xattrs --no-selinux --sort=name" \
-		"--owner=501 --group=20 --numeric-owner" \
-		"--pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime" \
-		"-jcf $TMP_TARBALL < $TMP_TAR_LIST failed, error: $status" 1>&2
-	    EXIT_CODE=8 # exit 8
-	fi
-    fi
-
-    # verify the tarball is not empty
-    #
-    if [[ ! -s $TMP_TARBALL ]]; then
-	echo "$0: ERROR: tarball is missing os empty: $TMP_TARBALL" 1>&2
-	EXIT_CODE=8 # exit 8
-    fi
-
-# case: -n
-#
-elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, did not execute:" \
-		"$GTAR_TOOL --files-from=- --sparse --no-acls --no-xattrs --no-selinux --sort=name" \
-		"--owner=501 --group=20 --numeric-owner --totals" \
-		"--pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime" \
-		"-jcvf $TMP_TARBALL < $TMP_TAR_LIST" 1>&2
-fi
-EXIT_CODE=$(< "$TMP_EXIT_CODE")
-if [[ -z $EXIT_CODE ]]; then
-    echo "$0: ERROR: temporary exit file has no contents: $TMP_EXIT_CODE" 1>&2
-    exit 19
-fi
-
-# move the tarball in place only if different
-#
-if [[ -z $NOOP ]]; then
-    if cmp -s "$TMP_TARBALL" "$TARBALL"; then
-
-	# case: tarball did not change
+	# case: form the tarball verbosely if -v 5 or more
 	#
 	if [[ $V_FLAG -ge 5 ]]; then
-	    echo "$0: debug[5]: file did not change: $TARBALL" 1>&2
+	    echo "$0: debug[5]: about to execute:" \
+		"TZ=UTC LC_ALL=C $GTAR_TOOL --files-from=- --no-acls --no-xattrs --no-selinux --sort=name" \
+		"--owner=501 --group=20 --numeric-owner --mtime=@${TAR_TIMESTAMP}" \
+		"--pax-option='exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime'" \
+		"--totals -jcvf $TMP_TARBALL < $TMP_FILES_TO_TAR" 1>&2
+	    TZ=UTC LC_ALL=C "$GTAR_TOOL" --files-from=- --no-acls --no-xattrs --no-selinux --sort=name \
+			 --owner=501 --group=20 --numeric-owner --mtime="@${TAR_TIMESTAMP}" \
+			 --pax-option='exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime' \
+			 --totals -jcvf "$TMP_TARBALL" < "$TMP_FILES_TO_TAR"
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR:" \
+		    "TZ=UTC LC_ALL=C $GTAR_TOOL --files-from=- --no-acls --no-xattrs --no-selinux --sort=name" \
+		    "--owner=501 --group=20 --numeric-owner --mtime=@${TAR_TIMESTAMP}" \
+		    "--pax-option='exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime'" \
+		    "--totals -jcvf $TMP_TARBALL < $TMP_FILES_TO_TAR failed, error: $status" 1>&2
+		exit 8
+	    fi
+
+	# case: form the tarball silently
+	#
+	else
+	    TZ=UTC LC_ALL=C "$GTAR_TOOL" --files-from=- --no-acls --no-xattrs --no-selinux --sort=name \
+			 --owner=501 --group=20 --numeric-owner \
+			 --pax-option='exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime' \
+			 --totals -jcf "$TMP_TARBALL" < "$TMP_FILES_TO_TAR"
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR:" \
+		    "TZ=UTC LC_ALL=C $GTAR_TOOL --files-from=- --no-acls --no-xattrs --no-selinux --sort=name" \
+		    "--owner=501 --group=20 --numeric-owner --mtime=@${TAR_TIMESTAMP}" \
+		    "--pax-option='exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime'" \
+		    "--totals -jcf $TMP_TARBALL < $TMP_FILES_TO_TAR failed, error: $status" 1>&2
+		exit 8
+	    fi
 	fi
 
-    else
+	# verify the tarball is not empty
+	#
+	if [[ ! -s $TMP_TARBALL ]]; then
+	    echo "$0: ERROR: tarball is missing is empty: $TMP_TARBALL" 1>&2
+	    exit 8
+	fi
 
-	# case: tarball changed, update the file
+	# move temporary tarball into the permanent tarball
 	#
 	if [[ $V_FLAG -ge 5 ]]; then
 	    echo "$0: debug[5]: mv -f -- $TMP_TARBALL $TARBALL" 1>&2
@@ -797,25 +916,39 @@ if [[ -z $NOOP ]]; then
 	fi
 	if [[ status -ne 0 ]]; then
 	    echo "$0: ERROR: mv -f -- $TMP_TARBALL $TARBALL filed, error code: $status" 1>&2
-	    EXIT_CODE=8 # exit 8
+	    exit 8
 	elif [[ $V_FLAG -ge 1 ]]; then
 	    echo "$0: debug[1]: built replaced HTML file: $TARBALL" 1>&2
 	fi
 	if [[ ! -s $TARBALL ]]; then
 	    echo "$0: ERROR: not a non-empty index HTML file: $TARBALL" 1>&2
-	    EXIT_CODE=8 # exit 8
+	    exit 8
 	fi
-     fi
 
+    # case: -n
+    #
+    elif [[ $V_FLAG -ge 5 ]]; then
+	echo "$0: debug[5]: because of -n, did not execute:" \
+	     "TZ=UTC LC_ALL=C $GTAR_TOOL --files-from=- --no-acls --no-xattrs --no-selinux --sort=name" \
+	     "--owner=501 --group=20 --numeric-owner" \
+	     "--pax-option='exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime'" \
+	     "--mtime=@${TAR_TIMESTAMP} --totals -jcvf $TMP_TARBALL < $TMP_FILES_TO_TAR" 1>&2
+	echo "$0: debug[5]: because of -n, did not move temporary tarball: $TMP_TARBALL" \
+	     "into the permanent tarball: $TARBALL" 1>&2
+    fi
+
+# case: tarball update not needed
+#
 elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, temporary file manifest list was not formed: $TMP_MANIFEST_LIST" 1>&2
+    echo "$0: debug[1]: no need to update $TARBALL" 1>&2
 fi
 
 # All Done!!! -- Jessica Noll, Age 2
 #
 if [[ -z $NOOP ]]; then
-    rm -f "$TMP_MANIFEST_LIST" "$TMP_TAR_LIST" "$TMP_EXIT_CODE" "$TMP_TARBALL"
+     rm -f "$TMP_MANIFEST_LIST" "$TMP_FILES_TO_TAR" "$TMP_EXIT_CODE" "$TMP_TARBALL_LIST" "$TMP_TARBALL"
 elif [[ $V_FLAG -ge 1 ]]; then
-    echo  "$0: debug[1]: -n disabled execution of: rm -f $TMP_MANIFEST_LIST $TMP_TAR_LIST $TMP_EXIT_CODE $TMP_TARBALL" 1>&2
+    echo  "$0: debug[1]: -n disabled execution of: rm -f $TMP_MANIFEST_LIST $TMP_FILES_TO_TAR" \
+	  "$TMP_EXIT_CODE $TMP_TARBALL_LIST $TMP_TARBALL" 1>&2
 fi
 exit "$EXIT_CODE"
