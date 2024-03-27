@@ -4480,7 +4480,7 @@
 2020,ferguson2,Makefile,30,true,makefile,true,entry Makefile
 2020,ferguson2,prog.alt.c,40,true,c,true,alternative source
 2020,ferguson2,prog.orig.c,50,false,c,true,original source
-2020,ferguson2,chocolate-cake.html,100,true,html,false,encrypted chocolate cake recipe
+2020,ferguson2,encrypted.html,100,true,text,true,secret message in a html file to decrypt
 2020,ferguson2,input.txt,100,true,text,true,sample input
 2020,ferguson2,obfuscation.html,100,true,html,false,about the obfuscation of this entry
 2020,ferguson2,obfuscation.txt,100,true,text,true,sample input
@@ -4496,11 +4496,8 @@
 2020,ferguson2,2020_ferguson2.tar.bz2,100000,false,tbz2,false,download entry source
 2020,ferguson2,index.html,2000000000,false,html,false,entry home page
 2020,ferguson2,README.md,4294967295,true,markdown,true,markdown source for index.html
-2020,ferguson2,cake.jpg,4294967295,true,image,false,image for chocolate cake
-2020,ferguson2,chocolate-cake.md,4294967295,true,markdown,true,markdown source for chocolate-cake.html
 2020,ferguson2,.entry.json,4294967295,true,json,true,description of entry in JSON
 2020,ferguson2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
-2020,ferguson2,ioccc-cake.jpg,4294967295,true,image,false,image for chocolate cake
 2020,ferguson2,obfuscation.md,4294967295,true,markdown,true,markdown source for obfuscation.html
 2020,ferguson2,.path,4294967295,false,text,false,directory path from top directory
 2020,ferguson2,recode.md,4294967295,true,markdown,true,markdown source for recode.html

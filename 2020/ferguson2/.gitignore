@@ -1,10 +1,12 @@
 #
 # sort with: ../../bin/sgi.sh
 *.dSYM
-cake.sh
 chocolate-cake.dat
 chocolate-cake.key
 config
+decrypted.html
+decrypted-source.html
+encrypt.sh
 indent
 indent.c
 indent.o

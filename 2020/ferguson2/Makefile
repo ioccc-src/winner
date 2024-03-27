@@ -112,9 +112,9 @@ ENTRY= ferguson2
 PROG= prog
 #
 OBJ= ${PROG}.o
-DATA= chocolate-cake.md enigma.1 input.txt obfuscation.key \
+DATA= enigma.1 input.txt obfuscation.key \
 	obfuscation.md obfuscation.txt recode.1 recode.md \
-	try.this.txt
+	try.this.txt encrypted.html
 TARGET= ${PROG} recode
 #
 ALT_OBJ= ${PROG}.alt.o
@@ -215,7 +215,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -rf *.dSYM
+	${RM} -rf *.dSYM decrypted.html
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \

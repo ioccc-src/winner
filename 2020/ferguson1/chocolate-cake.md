@@ -24,6 +24,11 @@ instructions as well and in bold. Also in bold are some of the special notes.
 Finally note that depending on where you are in the world this might not work in
 the warmer months of the year and for the icing in particular.
 
+Above all, **ENJOY**, and **I'D LOVE TO SEE PHOTOS AND HEAR WHAT YOU THINK** at
+[@xexyl@fosstodon.org](https://fosstodon.org/@xexyl). Questions also welcome
+there of course. Please make sure to mention me so I get a push notification as
+I don't check it very often. Thanks and again enjoy!
+
 
 ## Measurements
 

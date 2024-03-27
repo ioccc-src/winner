@@ -2,12 +2,8 @@
 
 N.B. At the end of this file I have given a fun exercise that can be used to
 explore my [Enigma machine](https://www.cryptomuseum.com/crypto/enigma/index.htm)
-[simulator](prog.c). It's especially worth doing if you you like good chocolate and could
-use a delicious [Double-layered Chocolate Fudge Cake][].
-
-Alternatively if you just want the [recipe](../ferguson1/chocolate-cake.md)
-you could look at my [Snake entry 'Don't tread on me'
-award](../ferguson1/prog.c) since it's also there and not enciphered.
+[simulator](prog.c). I really encourage you to do this but of course you don't
+have to if you don't wish to.
 
 
 <a name="toc"></a>
@@ -27,7 +23,7 @@ award](../ferguson1/prog.c) since it's also there and not enciphered.
 -   [Usage conclusion](#conclusion)
 -   [Example additions](#additions)
 -   [Example uses](#exampleuses)
--   [Deliciously Enigmatic: Double-layered Chocolate Fudge Cake](#cake)
+-   [A fun way to explore my Enigma machine, with a surprise](#fun)
 
 
 # <a name="recode" href="#toc">What is recode and why is it recommended?</a>
@@ -547,77 +543,84 @@ anyway?
 
 * Best idea: try the below experiment!
 
-# <a name="cake" href="#toc">Deliciously Enigmatic: Double-layered Chocolate Fudge Cake</a>
+
+# <a name="fun" href="#toc">A fun way to explore my Enigma machine, with a surprise</a>
 
 As I was making the above silly list something occurred to me. My [other
-entry](/2020/ferguson1/prog.c) this year includes a recipe for a wonderful
-double-layered chocolate fudge cake but why would it not be included in this one
-too? But then if that's the case why on Earth should it be unscrambled?
+entry](https://www.ioccc.org/2020/ferguson1/index.html) this year includes a
+[recipe for a wonderful double-layered chocolate fudge
+cake](https://www.ioccc.org/2020/ferguson1/chocolate-cake.html) but then
+shouldn't this entry include something that is fun too? But if that's the case
+why on Earth should it be unscrambled? It would be more fun and a great way to
+explore this entry if you have to use the Enigma machine to read the message!
 
 So this is what I offer: if you take one of the settings below and run the
-simulator on the file [chocolate-cake.html][] you will have a wonderful
-chocolate cake recipe (that even my late stepmum who didn't even like chocolate
-loved - it's a speciality of my mum's and they were the best of friends too). If
-you're lazy (or just want some delicious double-layered chocolate fudge cake!)
-just go and look at the [recipe](../ferguson1/chocolate-cake.html) (or
-[here](../ferguson1/chocolate-cake.md) if on GitHub) in my other entry. Then
-again if you're lazy you're probably not reading this far! :)
+Enigma machine simulator on the file [encrypted.html][encrypted.html] you will
+unlock a html file with something special in it. I recommend you decrypt it to
+`decrypted.html` and open it in a web browser.
 
-The settings is one of the below but a couple questions you might ask yourself:
+The correct settings is listed below but *you* must determine which one is the
+right line. Before you do this here are some things to ask yourself:
 
-1.  Are any invalid input?
+0.  Are any invalid input?
 
-2.  Is there some other kind of trickery involved here?
+1.  Is there some other kind of trickery involved here?
 
 I can think of the best way to answer these and I think I need not even mention
 it. Have fun and enjoy!
 
-BTW: Depending on where you are in this world and how warm it is the icing can
-be a bit of an issue - I give some ideas in the file on what can be done for
-this. At worst though the icing won't come out as good as it usually does.
-That's assuming you follow in the instructions exactly as they are; it's a very
-picky recipe.
-
 
 ## Hints:
 
-1.  It's not the middle one.
+0.  It's not the middle one.
 
-2.  Yes there are some things kind of spelt here. These include things about
-cake and chocolate. Some things spelt mean nothing whatever and can be
-considered coincidences. Some were randomised.
+1.  Yes there are some things kind of spelt here. Some things spelt mean nothing
+whatever and can be considered coincidences. Some were randomised.
 
-3.  There is an obscure thing about my entry that can help locate the proper key
+2.  There is an obscure thing about my entry that can help locate the proper key
 of the 16 given below! The questions are what is it and is is it worth going
-this way? (I think the second answer is 'no' but that's me.)
+this way? (I think the second answer is 'yes' but that's me.)
 
-4.  The above points might or might not be relevant. What is relevant is one
-will reveal a wonderful [Double-layered Chocolate Fudge Cake][] recipe:
+
+Of course, the above points might or might not be relevant. Didst you really
+think that I would give too much away? :)
+
 
 ```
-	     142CHOCOLATESVCAKESTBJLKMUMVWX
-	     0EZ4PC1CC0PGTAQSOXWNMDRYKFUZEI
-	     3UY0XF4QG1GTJQLARPKHBEMCOFVUIN
-	     0WE1HK4PL0RVSGXFDKENZYTPCMAHUW
-	     2LV0KC1IE0HTFPCLWOJDBQIRVMEAGN
-	     1SS4QX2RY1SRAQGKUYHCBLPFJDVTNZ
-	     3IW1QR0TZ0GQEDWIYJUPMFZBRAONHS
-	     3OP1KN4MO0HPFZCEAKYQIRXGVMOTUW
-	     4OC2CC0AK1CODELUVRSNGKIZBJPTMY
-	     4MU0MS1CA1KELUVRSXTABJNOCDMQFG
-	     0MU4MC2HO1CLATEFBJMONPQRVWXYZD
-	     125CHOCOLATESEXCAKESJADFNOPQRS
-	     0CH3OC1OL1ATEMBJNOCDLSIFWHRVXY
-	     4MU1MS3CA0KECHOLATBJSNPXVUFGZY
-	     4VW0SL1YB0IYJSLBECKTNAXGPUVHRF
-	     0MC4OH2CO1LATEUMBJCDFGHINOPRQS
+142CHOCOLATESVCAKESTBJLKMUMVWX
+0EZ4PC1CC0PGTAQSOXWNMDRYKFUZEI
+3UY0XF4QG1GTJQLARPKHBEMCOFVUIN
+0WE1HK4PL0RVSGXFDKENZYTPCMAHUW
+2LV0KC1IE0HTFPCLWOJDBQIRVMEAGN
+1SS4QX2RY1SRAQGKUYHCBLPFJDVTNZ
+3IW1QR0TZ0GQEDWIYJUPMFZBRAONHS
+3OP1KN4MO0HPFZCEAKYQIRXGVMOTUW
+4OC2CC0AK1CODELUVRSNGKIZBJPTMY
+4MU0MS1CA1KELUVRSXTABJNOCDMQFG
+0MU4MC2HO1CLATEFBJMONPQRVWXYZD
+125CHOCOLATESEXCAKESJADFNOPQRS
+0CH3OC1OL1ATEMBJNOCDLSIFWHRVXY
+4MU1MS3CA0KECHOLATBJSNPXVUFGZY
+4VW0SL1YB0IYJSLBECKTNAXGPUVHRF
+0MC4OH2CO1LATEUMBJCDFGHINOPRQS
 ```
 
-BTW: What's the middle of a list with even numbered items anyway?
+BTW: what's the middle of a list with even numbered items anyway?
 
-[chocolate-cake.html]: chocolate-cake.html
-[Double-layered Chocolate Fudge Cake]: chocolate-cake.html
+To help you out, though, this is how you might do the decrypting. Assuming that
+the key you wish to select is 
 
+```
+0EZ4PC1CC0PGTAQSOXWNMDRYKFUZEI
+```
+
+you can do:
+
+```sh
+./recode -R0EZ4PC1CC0PGTAQSOXWNMDRYKFUZEI -fencrypted.html | ./prog - 2>/dev/null > decrypted.html
+```
+
+Then open `decrypted.html` in your browser.
 
 <!--
 
