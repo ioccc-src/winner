@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.1 2024-03-18"
+export VERSION="1.3.2 2024-03-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -403,7 +403,8 @@ function output_location_code
 #
 function output_award
 {
-    local ENTRY_JSON_PATH;     # the .entry.json path
+    local ENTRY_JSON_PATH;	# the .entry.json path
+    local AWARD_STRING;		# winning entry award string
 
     # parse args
     #
@@ -427,12 +428,12 @@ function output_award
 
     # obtain the award string
     #
-    AWARD=$(grep -F '"award" : "'  "$ENTRY_JSON_PATH" | sed -e 's/^.*"award" : "//' -e 's/",//')
-    if [[ -z $AWARD ]]; then
+    AWARD_STRING=$(grep -F '"award" : "'  "$ENTRY_JSON_PATH" | sed -e 's/^.*"award" : "//' -e 's/",//')
+    if [[ -z $AWARD_STRING ]]; then
 	echo "$0: ERROR: in output_award: no award found in .entry.json file: $ENTRY_JSON_PATH" 1>&2
 	return 5
     fi
-    echo "$AWARD"
+    echo "$AWARD_STRING"
     return 0
 }
 
@@ -639,6 +640,7 @@ export BIN_DIR="bin"
 # find the location tool
 #
 LOCATION_TOOL=$(type -P location)
+export LOCATION_TOOL
 if [[ -z $LOCATION_TOOL ]]; then
     # guess we have a location tool in bin
     #
@@ -671,15 +673,22 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
-    echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
+    echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
-    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
+    for index in "${!IS_FOR[@]}"; do
+	echo "$0: debug[3]: IS_FOR[$index]=${IS_FOR[$index]}" 1>&2
+    done
     for index in "${!TOOL_OPTION[@]}"; do
 	echo "$0: debug[3]: TOOL_OPTION[$index]=${TOOL_OPTION[$index]}" 1>&2
     done
+    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
+    echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: AUTHOR_PATH=$AUTHOR_PATH" 1>&2
     echo "$0: debug[3]: AUTHOR_DIR=$AUTHOR_DIR" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
+    echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
+    echo "$0: debug[3]: LOCATION_TOOL=$LOCATION_TOOL" 1>&2
+    echo "$0: debug[3]: AUTHORS_HTML=$AUTHORS_HTML" 1>&2
 fi
 
 # -N stops early before any processing is performed
@@ -693,7 +702,7 @@ fi
 
 # create a temporary entry markdown file
 #
-TMP_AUTHORS_MD=".$NAME.$$.entry.md"
+export TMP_AUTHORS_MD=".$NAME.$$.entry.md"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary entry markdown file: $TMP_AUTHORS_MD" 1>&2
 fi
@@ -715,7 +724,7 @@ fi
 
 # create a temporary sort word list file
 #
-TMP_SORT_WORD=".$NAME.$$.sort.word"
+export TMP_SORT_WORD=".$NAME.$$.sort.word"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary sort word list file: $TMP_SORT_WORD" 1>&2
 fi
@@ -751,6 +760,7 @@ done > "$TMP_SORT_WORD"
 #
 find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' 2>/dev/null | while read -r json_file; do
     SORT_WORD=$(grep -F '"sort_word" : "' "$json_file" 2>/dev/null | sed -e 's/",//' -e 's/^.*"//')
+    export SORT_WORD
     echo "$SORT_WORD $json_file"
 done >> "$TMP_SORT_WORD"
 
@@ -835,17 +845,20 @@ EOF
 		exit 15
 	    fi
 	    FULL_NAME=$(output_full_name "$filename")
+	    export FULL_NAME
 	    if [[ -z $FULL_NAME ]]; then
 		echo "$0: ERROR: full name is empty in: $filename" 1>&2
 		exit 16
 	    fi
 	    LOCATION_CODE=$(output_location_code "$filename")
+	    export LOCATION_CODE
 	    if [[ -z $LOCATION_CODE ]]; then
 		echo "$0: ERROR: location code is empty in: $filename" 1>&2
 		exit 17
 	    fi
 	    LOCATION_NAME=$("$LOCATION_TOOL" "$LOCATION_CODE" 2>/dev/null)
 	    status="$?"
+	    export LOCATION_NAME
 	    if [[ $status -ne 0 ]]; then
 		echo "$0: ERROR: cannot determine location name" \
 		     "for location ISO 3166 code: $LOCATION_CODE" 1>&2
@@ -858,6 +871,7 @@ EOF
 	    fi
 	    LOCATION_COMMON_NAME=$("$LOCATION_TOOL" -c "$LOCATION_CODE" 2>/dev/null)
 	    status="$?"
+	    export LOCATION_COMMON_NAME
 	    if [[ $status -ne 0 ]]; then
 		echo "$0: ERROR: cannot determine location common name" \
 		     "for location ISO 3166 code: $LOCATION_CODE" 1>&2
@@ -869,6 +883,7 @@ EOF
 		exit 21
 	    fi
 	    AUTHOR_HANDLE=$(output_author_handle "$filename")
+	    export AUTHOR_HANDLE
 	    if [[ -z $AUTHOR_HANDLE ]]; then
 		echo "$0: ERROR: author handle is empty in: $filename" 1>&2
 		exit 22
@@ -901,6 +916,7 @@ EOF
 		    exit 23
 		fi
 		YYYY_DIR=$(echo "$ENTRY_ID" | tr _ /)
+		export YYYY_DIR
 		if [[ ! -d $YYYY_DIR ]]; then
 		    echo "$0: ERROR: YYYY/dir is not a directory" 1>&2
 		    exit 24
@@ -909,6 +925,7 @@ EOF
 		# verify that the .entry.json file is a non-empty readable file
 		#
 		ENTRY_JSON="$YYYY_DIR/.entry.json"
+		export ENTRY_JSON
 		if [[ ! -e $ENTRY_JSON ]]; then
 		    echo "$0: ERROR: .entry.json does not exist: $ENTRY_JSON" 1>&2
 		    exit 25
@@ -932,6 +949,7 @@ EOF
 		# collect the award for this entry id
 		#
 		AWARD=$(output_award "$ENTRY_JSON")
+		export AWARD
 		if [[ -z $AWARD ]]; then
 		    echo "$0: ERROR: award not found in .entry.json: $ENTRY_JSON" 1>&2
 		    exit 29

@@ -92,7 +92,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.1 2024-02-23"
+export VERSION="1.2.2 2024-02-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -227,6 +227,7 @@ fi
 # form Nu Html Checker doc url string
 #
 VALIDATOR_ENCODED_URL=$(echo "$URL" | sed -e 's;/;%2F;g' -e 's;:;%3A;')
+export VALIDATOR_ENCODED_URL
 
 # parameter debugging
 #
@@ -234,6 +235,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: VERSION=$VERSION" 1>&2
     echo "$0: debug[3]: NAME=$NAME" 1>&2
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
+    echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2

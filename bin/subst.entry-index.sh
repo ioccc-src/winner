@@ -103,7 +103,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.1 2024-03-19"
+export VERSION="1.3.2 2024-03-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -179,7 +179,8 @@ $NAME version: $VERSION"
 #
 function output_award
 {
-    local ENTRY_JSON_PATH;     # the .entry.json path
+    local ENTRY_JSON_PATH;	# the .entry.json path
+    local AWARD_STRING;		# winning entry award string
 
     # parse args
     #
@@ -203,12 +204,12 @@ function output_award
 
     # obtain the award string
     #
-    AWARD=$(grep -F '"award" : "'  "$ENTRY_JSON_PATH" | sed -e 's/^.*"award" : "//' -e 's/",//')
-    if [[ -z $AWARD ]]; then
+    AWARD_STRING=$(grep -F '"award" : "'  "$ENTRY_JSON_PATH" | sed -e 's/^.*"award" : "//' -e 's/",//')
+    if [[ -z $AWARD_STRING ]]; then
         echo "$0: ERROR: in output_award: no award found in .entry.json file: $ENTRY_JSON_PATH" 1>&2
         return 5
     fi
-    echo "$AWARD"
+    echo "$AWARD_STRING"
     return 0
 }
 
@@ -291,9 +292,6 @@ if [[ $# -ne 1 ]]; then
 fi
 #
 export ENTRY_PATH="$1"
-if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: ENTRY_PATH=$ENTRY_PATH" 1>&2
-fi
 
 # verify that we have a topdir directory
 #
@@ -419,6 +417,7 @@ if [[ ! -s $DOT_PATH ]]; then
     exit 7
 fi
 DOT_PATH_CONTENT=$(< "$DOT_PATH")
+export DOT_PATH_CONTENT
 if [[ $ENTRY_PATH != "$DOT_PATH_CONTENT" ]]; then
     echo "$0: ERROR: arg: $ENTRY_PATH does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
     exit 7
@@ -456,11 +455,11 @@ fi
 # determine award
 #
 AWARD=$(output_award "$ENTRY_JSON")
+export AWARD
 if [[ -z $AWARD ]]; then
     echo "$0: ERROR: cannot determine award for $YEAR_DIR from: $ENTRY_JSON" 1>&2
     exit 1
 fi
-export AWARD
 
 # parameter debugging
 #
@@ -468,15 +467,16 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: VERSION=$VERSION" 1>&2
     echo "$0: debug[3]: NAME=$NAME" 1>&2
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
+    echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
-    echo "$0: debug[3]: URL=$URL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: ENTRY_PATH=$ENTRY_PATH" 1>&2
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
+    echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: AUTHOR_PATH=$AUTHOR_PATH" 1>&2
     echo "$0: debug[3]: AUTHOR_DIR=$AUTHOR_DIR" 1>&2
     echo "$0: debug[3]: INC_PATH=$INC_PATH" 1>&2
@@ -489,8 +489,10 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: DOT_YEAR=$DOT_YEAR" 1>&2
     echo "$0: debug[3]: YYYY_DIR=$YYYY_DIR" 1>&2
     echo "$0: debug[3]: DOT_PATH=$DOT_PATH" 1>&2
+    echo "$0: debug[3]: DOT_PATH_CONTENT=$DOT_PATH_CONTENT" 1>&2
     echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
     echo "$0: debug[3]: ENTRY_NAVBAR_AWK=$ENTRY_NAVBAR_AWK" 1>&2
+    echo "$0: debug[3]: AWARD=$AWARD" 1>&2
 fi
 
 # If -N, time to exit

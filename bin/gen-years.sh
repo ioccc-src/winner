@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.2 2024-03-13"
+export VERSION="1.0.3 2024-03-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -195,7 +195,8 @@ $NAME version: $VERSION"
 #
 function output_award
 {
-    local ENTRY_JSON_PATH;     # the .entry.json path
+    local ENTRY_JSON_PATH;	# the .entry.json path
+    local AWARD_STRING;		# winning entry award string
 
     # parse args
     #
@@ -219,12 +220,12 @@ function output_award
 
     # obtain the award string
     #
-    AWARD=$(grep -F '"award" : "'  "$ENTRY_JSON_PATH" | sed -e 's/^.*"award" : "//' -e 's/",//')
-    if [[ -z $AWARD ]]; then
+    AWARD_STRING=$(grep -F '"award" : "'  "$ENTRY_JSON_PATH" | sed -e 's/^.*"award" : "//' -e 's/",//')
+    if [[ -z $AWARD_STRING ]]; then
 	echo "$0: ERROR: in output_award: no award found in .entry.json file: $ENTRY_JSON_PATH" 1>&2
 	return 5
     fi
-    echo "$AWARD"
+    echo "$AWARD_STRING"
     return 0
 }
 
@@ -516,6 +517,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: TAC_TOOL=$TAC_TOOL" 1>&2
     echo "$0: debug[3]: FMT_TOOL=$FMT_TOOL" 1>&2
+    echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: TAGLINE=$TAGLINE" 1>&2
     echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
     echo "$0: debug[3]: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
@@ -524,10 +526,11 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
-    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
     for index in "${!TOOL_OPTION[@]}"; do
 	echo "$0: debug[3]: TOOL_OPTION[$index]=${TOOL_OPTION[$index]}" 1>&2
     done
+    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
+    echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
     echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
@@ -545,7 +548,7 @@ fi
 
 # create a temporary years markdown file
 #
-TMP_YEARS_MD=".$NAME.$$.years.md"
+export TMP_YEARS_MD=".$NAME.$$.years.md"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary years markdown file: $TMP_YEARS_MD" 1>&2
 fi

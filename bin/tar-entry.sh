@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.1 2024-03-25"
+export VERSION="1.3.2 2024-03-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -320,6 +320,7 @@ if [[ ! -s $DOT_PATH ]]; then
     exit 5
 fi
 DOT_PATH_CONTENT=$(< "$DOT_PATH")
+export DOT_PATH_CONTENT
 if [[ $ENTRY_PATH != "$DOT_PATH_CONTENT" ]]; then
     echo "$0: ERROR: arg: $ENTRY_PATH does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
     exit 5
@@ -473,21 +474,25 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: NAME=$NAME" 1>&2
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
-    echo "$0: debug[3]: GTAR_TOOL=$GTAR_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
+    echo "$0: debug[3]: CAP_W_FLAG_FOUND=$CAP_W_FLAG_FOUND" 1>&2
+    echo "$0: debug[3]: GTAR_TOOL=$GTAR_TOOL" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
-    echo "$0: debug[3]: CAP_W_FLAG_FOUND=$CAP_W_FLAG_FOUND" 1>&2
-    echo "$0: debug[3]: ENTRY_PATH=$ENTRY_PATH" 1>&2
     echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
+    echo "$0: debug[3]: ENTRY_PATH=$ENTRY_PATH" 1>&2
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
+    echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
     echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_DIR=$ENTRY_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_ID=$ENTRY_ID" 1>&2
+    echo "$0: debug[3]: DOT_YEAR=$DOT_YEAR" 1>&2
+    echo "$0: debug[3]: YYYY_DIR=$YYYY_DIR" 1>&2
     echo "$0: debug[3]: DOT_PATH=$DOT_PATH" 1>&2
+    echo "$0: debug[3]: DOT_PATH_CONTENT=$DOT_PATH_CONTENT" 1>&2
     echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
     echo "$0: debug[3]: FILELIST_ENTRY_JSON_AWK=$FILELIST_ENTRY_JSON_AWK" 1>&2
     echo "$0: debug[3]: IOCCC_CSS=$IOCCC_CSS" 1>&2
@@ -695,7 +700,7 @@ fi
 
 # create a temporary tarball
 #
-TMP_TARBALL=".$NAME.$$.tar.bz2"
+export TMP_TARBALL=".$NAME.$$.tar.bz2"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary tarball: $TMP_TARBALL" 1>&2
 fi
@@ -764,6 +769,7 @@ if [[ -z $REBUILD_TARBALL ]]; then
     fi
     TAR_CONTENTS_DIFFERS=$(TZ=UTC LC_ALL=C "$GTAR_TOOL" --compare --file="$TARBALL" -C . 2>&1 | \
     			   grep -E -v ': (Uid|Gid|Mod time) differs$')
+    export TAR_CONTENTS_DIFFERS
     if [[ -n $TAR_CONTENTS_DIFFERS ]]; then
 	REBUILD_TARBALL="true"
 	if [[ $V_FLAG -ge 1 ]]; then
@@ -794,6 +800,7 @@ if [[ -n $REBUILD_TARBALL ]]; then
 	#
 	TAR_TIMESTAMP=$(TZ=UTZ date '+%s')
 	status="$?"
+	export TAR_TIMESTAMP
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: new TZ=UTC date +%s failed, error: $status" 1>&2
 	    exit 8

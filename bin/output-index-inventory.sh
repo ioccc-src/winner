@@ -101,7 +101,7 @@ shopt -s globstar	# enable '**' to match all files and zero or more directories 
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.2 2024-03-19"
+export VERSION="1.2.3 2024-03-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -244,9 +244,6 @@ if [[ $# -ne 1 ]]; then
 fi
 #
 export ENTRY_PATH="$1"
-if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: ENTRY_PATH=$ENTRY_PATH" 1>&2
-fi
 
 # verify that we have a topdir directory
 #
@@ -372,6 +369,7 @@ if [[ ! -s $DOT_PATH ]]; then
     exit 7
 fi
 DOT_PATH_CONTENT=$(< "$DOT_PATH")
+export DOT_PATH_CONTENT
 if [[ $ENTRY_PATH != "$DOT_PATH_CONTENT" ]]; then
     echo "$0: ERROR: arg: $ENTRY_PATH does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
     exit 7
@@ -438,6 +436,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: ENTRY_PATH=$ENTRY_PATH" 1>&2
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
+    echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: AUTHOR_PATH=$AUTHOR_PATH" 1>&2
     echo "$0: debug[3]: AUTHOR_DIR=$AUTHOR_DIR" 1>&2
     echo "$0: debug[3]: INC_PATH=$INC_PATH" 1>&2
@@ -450,6 +449,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: DOT_YEAR=$DOT_YEAR" 1>&2
     echo "$0: debug[3]: YYYY_DIR=$YYYY_DIR" 1>&2
     echo "$0: debug[3]: DOT_PATH=$DOT_PATH" 1>&2
+    echo "$0: debug[3]: DOT_PATH_CONTENT=$DOT_PATH_CONTENT" 1>&2
     echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
     echo "$0: debug[3]: MANIFEST_ENTRY_JSON_AWK=$MANIFEST_ENTRY_JSON_AWK" 1>&2
 fi
@@ -465,7 +465,7 @@ fi
 
 # create a temporary markdown for pandoc to process
 #
-TMP_FILE=".$NAME.$$.md"
+export TMP_FILE=".$NAME.$$.md"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary markdown file: $TMP_FILE" 1>&2
 fi
@@ -487,7 +487,7 @@ fi
 
 # create a temporary manifest file
 #
-TMP_MANIFEST=".$NAME.$$.manifest"
+export TMP_MANIFEST=".$NAME.$$.manifest"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary manifest file: $TMP_MANIFEST" 1>&2
 fi

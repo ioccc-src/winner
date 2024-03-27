@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.1 2024-03-18"
+export VERSION="1.1.2 2024-03-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -368,6 +368,7 @@ fi
 # find the location tool
 #
 LOCATION_TOOL=$(type -P location)
+export LOCATION_TOOL
 if [[ -z $LOCATION_TOOL ]]; then
     # guess we have a location tool in bin
     #
@@ -400,15 +401,18 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
-    echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
+    echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
-    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
     for index in "${!TOOL_OPTION[@]}"; do
 	echo "$0: debug[3]: TOOL_OPTION[$index]=${TOOL_OPTION[$index]}" 1>&2
     done
+    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
+    echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: AUTHOR_PATH=$AUTHOR_PATH" 1>&2
     echo "$0: debug[3]: AUTHOR_DIR=$AUTHOR_DIR" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
+    echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
+    echo "$0: debug[3]: LOCATION_TOOL=$LOCATION_TOOL" 1>&2
     echo "$0: debug[3]: LOCATION_HTML=$LOCATION_HTML" 1>&2
 fi
 
@@ -423,7 +427,7 @@ fi
 
 # create a temporary location markdown file
 #
-TMP_LOC_MD=".$NAME.$$.location.md"
+export TMP_LOC_MD=".$NAME.$$.location.md"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary location markdown file: $TMP_LOC_MD" 1>&2
 fi
@@ -464,6 +468,7 @@ fi
 	#
 	LOCATION_NAME=$("$LOCATION_TOOL" "$LOCATION_CODE" 2>/dev/null)
 	status="$?"
+	export LOCATION_NAME
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: cannot determine location name for location ISO 3166 code: $LOCATION_CODE" 1>&2
 	    exit 12
@@ -473,6 +478,7 @@ fi
 	#
 	LOCATION_COMMON_NAME=$("$LOCATION_TOOL" -c "$LOCATION_CODE" 2>/dev/null)
 	status="$?"
+	export LOCATION_COMMON_NAME
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: cannot determine location common name" \
 		 "for location ISO 3166 code: $LOCATION_CODE" 1>&2
@@ -485,6 +491,7 @@ fi
 		       xargs -0 grep -l '"location_code".*:.*"'"$LOCATION_CODE"'"' |
 		       wc -l |
 		       sed -e 's/[[:space:]]*//')
+	export AUTHOR_COUNT
 	if [[ -z $AUTHOR_COUNT || $AUTHOR_COUNT -le 0 ]]; then
 	    echo "$0: ERROR: author count was zero for location: $LOCATION_CODE" 1>&2
 	    exit 14
@@ -520,10 +527,12 @@ fi
 	    # The author_handle foo_bin is found in author/foo_bar.json
 	    #
 	    AUTHOR_HANDLE=$(basename "$AUTHOR_HANDLE_PATH" .json)
+	    export AUTHOR_HANDLE
 
 	    # fetch full_name
 	    #
 	    FULL_NAME=$(grep '"full_name".*:' "$AUTHOR_HANDLE_PATH" | sed -e 's/^.*: "//' -e 's/",*$//')
+	    export FULL_NAME
 
 	    # output the author from the location
 	    #

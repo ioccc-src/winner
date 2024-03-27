@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.1 2024-03-18"
+export VERSION="1.1.2 2024-03-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -701,22 +701,25 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: TAGLINE=$TAGLINE" 1>&2
     echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
-    echo "$0: debug[3]: CONTEST_STATUS=$CONTEST_STATUS" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
     echo "$0: debug[3]: JPARSE_TOOL=$JPARSE_TOOL" 1>&2
+    echo "$0: debug[3]: IOCCC_STATUS_VERSION=$IOCCC_STATUS_VERSION" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
-    echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
+    echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
-    echo "$0: debug[3]: MODTIME_METHOD=$MODTIME_METHOD" 1>&2
-    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
     for index in "${!TOOL_OPTION[@]}"; do
 	echo "$0: debug[3]: TOOL_OPTION[$index]=${TOOL_OPTION[$index]}" 1>&2
     done
+    echo "$0: debug[3]: MODTIME_METHOD=$MODTIME_METHOD" 1>&2
+    echo "$0: debug[3]: CONTEST_STATUS=$CONTEST_STATUS" 1>&2
+    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
+    echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: NEWS_HTML=$NEWS_HTML" 1>&2
     echo "$0: debug[3]: STATUS_JSON=$STATUS_JSON" 1>&2
     echo "$0: debug[3]: STATUS_MD=$STATUS_MD" 1>&2
     echo "$0: debug[3]: STATUS_HTML=$STATUS_HTML" 1>&2
+    echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
 fi
 
 # validate JSON in status.json
@@ -777,7 +780,7 @@ fi
 
 # create a temporary status.json file
 #
-TMP_STATUS_JSON=".$NAME.$$.entry.md"
+export TMP_STATUS_JSON=".$NAME.$$.entry.md"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary status.json file: $TMP_STATUS_JSON" 1>&2
 fi

@@ -85,7 +85,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.3 2024-03-09"
+export VERSION="1.0.4 2024-03-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -396,13 +396,14 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
+    for index in "${!TOOL_OPTION[@]}"; do
+	echo "$0: debug[3]: TOOL_OPTION[$index]=${TOOL_OPTION[$index]}" 1>&2
+    done
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: YYYY=$YYYY" 1>&2
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
-    for index in "${!TOOL_OPTION[@]}"; do
-	echo "$0: debug[3]: TOOL_OPTION[$index]=${TOOL_OPTION[$index]}" 1>&2
-    done
+    echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: YEAR_FILE=$YEAR_FILE" 1>&2
     echo "$0: debug[3]: README_FILE=$README_FILE" 1>&2
 fi

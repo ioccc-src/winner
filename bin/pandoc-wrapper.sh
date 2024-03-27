@@ -99,7 +99,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.5.2 2024-03-19"
+export VERSION="1.5.3 2024-03-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -117,6 +117,7 @@ if [[ $status -eq 0 ]]; then
 fi
 export TOPDIR
 PANDOC_TOOL=$(type -P pandoc)
+export PANDOC_TOOL
 if [[ -z $PANDOC_TOOL ]]; then
     PANDOC_TOOL="/opt/homebrew/bin/pandoc"
 fi
@@ -237,10 +238,6 @@ fi
 #
 export MARKDOWN_INPUT="$1"
 export HTML_OUTPUT="$2"
-if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: MARKDOWN_INPUT=$MARKDOWN_INPUT" 1>&2
-    echo "$0: debug[1]: HTML_OUTPUT=$HTML_OUTPUT" 1>&2
-fi
 
 # firewall - validate args
 #
@@ -280,6 +277,7 @@ export PANDOC_MIN_VERSION="3.1.12.2"
 # verify that we have a topdir directory
 #
 REPO_NAME=$(basename "$REPO_URL")
+export REPO_NAME
 if [[ -z $TOPDIR ]]; then
     echo "$0: ERROR: cannot find top of git repo directory" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
@@ -355,6 +353,10 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: PANDOC_TOOL=$PANDOC_TOOL" 1>&2
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
+    echo "$0: debug[3]: PANDOC_TOOL=$PANDOC_TOOL" 1>&2
+    for index in "${!PANDOC_OPTION[@]}"; do
+	echo "$0: debug[3]: PANDOC_OPTION[$index]=${PANDOC_OPTION[$index]}" 1>&2
+    done
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
@@ -362,6 +364,8 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: HTML_OUTPUT=$HTML_OUTPUT" 1>&2
     echo "$0: debug[3]: PANDOC_TOOL_VERSION=$PANDOC_TOOL_VERSION" 1>&2
     echo "$0: debug[3]: PANDOC_MIN_VERSION=$PANDOC_MIN_VERSION" 1>&2
+    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
+    echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: AUTHOR_PATH=$AUTHOR_PATH" 1>&2
     echo "$0: debug[3]: AUTHOR_DIR=$AUTHOR_DIR" 1>&2
     echo "$0: debug[3]: INC_PATH=$INC_PATH" 1>&2
@@ -382,6 +386,7 @@ fi
 # verify that the pandoc version is >= the minimum version
 #
 FIRST_VERSION=$(printf "%s\n%s" "$PANDOC_TOOL_VERSION" "$PANDOC_MIN_VERSION" | LC_ALL=C sort -V | head -1)
+export FIRST_VERSION
 if [[ $FIRST_VERSION != "$PANDOC_MIN_VERSION" ]]; then
     echo "$0: ERROR: pandoc: $PANDOC_TOOL version: $PANDOC_TOOL_VERSION <=" \
 	 "minimum allowed: $PANDOC_MIN_VERSION" 1>&2

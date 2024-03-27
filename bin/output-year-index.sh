@@ -108,7 +108,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.1 2024-03-19"
+export VERSION="1.1.2 2024-03-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -189,7 +189,8 @@ $NAME version: $VERSION"
 #
 function output_award
 {
-    local ENTRY_JSON_PATH;     # the .entry.json path
+    local ENTRY_JSON_PATH;	# the .entry.json path
+    local AWARD_STRING;		# winning entry award string
 
     # parse args
     #
@@ -213,12 +214,12 @@ function output_award
 
     # obtain the award string
     #
-    AWARD=$(grep -F '"award" : "'  "$ENTRY_JSON_PATH" | sed -e 's/^.*"award" : "//' -e 's/",//')
-    if [[ -z $AWARD ]]; then
+    AWARD_STRING=$(grep -F '"award" : "'  "$ENTRY_JSON_PATH" | sed -e 's/^.*"award" : "//' -e 's/",//')
+    if [[ -z $AWARD_STRING ]]; then
 	echo "$0: ERROR: in output_award: no award found in .entry.json file: $ENTRY_JSON_PATH" 1>&2
 	return 5
     fi
-    echo "$AWARD"
+    echo "$AWARD_STRING"
     return 0
 }
 
@@ -364,9 +365,6 @@ if [[ $# -ne 1 ]]; then
 fi
 #
 export YYYY="$1"
-if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: YYYY=$YYYY" 1>&2
-fi
 if [[ -z $YYYY ]]; then
     echo "$0: ERROR: YYYY arg is empty" 1>&2
     exit 3
@@ -484,6 +482,7 @@ fi
 # determine The N-th IOCCC string
 #
 LINE_NUM=$(sed -n "/$YYYY/=" "$TOP_FILE" | head -1)
+export LINE_NUM
 if [[ -z $LINE_NUM ]]; then
     echo  "$0: ERROR: cannot determine line number in $TOP_FILE for year: $YYYY" 1>&2
     exit 10
@@ -505,12 +504,12 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
-    echo "$0: debug[3]: URL=$URL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: YYYY=$YYYY" 1>&2
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
+    echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
     echo "$0: debug[3]: YEAR_FILE=$YEAR_FILE" 1>&2
     echo "$0: debug[3]: LINE_NUM=$LINE_NUM" 1>&2
@@ -528,7 +527,7 @@ fi
 
 # create a temporary markdown for pandoc to process
 #
-TMP_FILE=".$NAME.$$.md"
+export TMP_FILE=".$NAME.$$.md"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary markdown file: $TMP_FILE" 1>&2
 fi
@@ -612,6 +611,7 @@ for YYYY_DIR in $(< "$YEAR_FILE"); do
 	exit 7
     fi
     DOT_PATH_CONTENT=$(< "$DOT_PATH")
+    export DOT_PATH_CONTENT
     if [[ $YYYY_DIR != "$DOT_PATH_CONTENT" ]]; then
 	echo "$0: ERROR: arg: $YYYY_DIR does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
 	exit 7
@@ -633,6 +633,7 @@ for YYYY_DIR in $(< "$YEAR_FILE"); do
     # determine the award for this entry
     #
     AWARD=$(output_award "$ENTRY_JSON")
+    export AWARD
     if [[ -z $AWARD ]]; then
 	echo "$0: ERROR: cannot find award in .entry.json: $ENTRY_JSON" 1>&2
 	exit 7

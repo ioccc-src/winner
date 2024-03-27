@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.1 2024-03-08"
+export VERSION="1.0.2 2024-03-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -366,6 +366,7 @@ if [[ $V_FLAG -ge 3 ]]; then
 	echo "$0: debug[3]: TOOL_OPTION[$index]=${TOOL_OPTION[$index]}" 1>&2
     done
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
+    echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
 fi
 
@@ -383,7 +384,7 @@ fi
 # It is a pain to set the EXIT_CODE deep inside a loop, so we write the EXIT_CODE into a file
 # and read the file (setting EXIT_CODE again) after the loop.  A hack, but good enough for our needs.
 #
-TMP_EXIT_CODE=".$NAME.$$.exit.code"
+export TMP_EXIT_CODE=".$NAME.$$.exit.code"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary exit code: $TMP_EXIT_CODE" 1>&2
 fi
@@ -594,7 +595,7 @@ for YYYY in $(< "$TOP_FILE"); do
 
 	    # determine the number of levels in path of MD_FILE from topdir
 	    #
-	    NO_SLASH=${MD_FILE///}
+	    export NO_SLASH=${MD_FILE///}
 	    LEVEL_CNT=$((${#MD_FILE} - ${#NO_SLASH}))
 	    export LEVEL_CNT
 	    if [[ $LEVEL_CNT -lt 2 ]]; then

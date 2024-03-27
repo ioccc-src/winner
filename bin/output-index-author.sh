@@ -101,7 +101,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.5.1 2024-03-19"
+export VERSION="1.5.2 2024-03-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -446,9 +446,6 @@ if [[ $# -ne 1 ]]; then
 fi
 #
 export ENTRY_PATH="$1"
-if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: ENTRY_PATH=$ENTRY_PATH" 1>&2
-fi
 
 # verify that we have a topdir directory
 #
@@ -574,6 +571,7 @@ if [[ ! -s $DOT_PATH ]]; then
     exit 7
 fi
 DOT_PATH_CONTENT=$(< "$DOT_PATH")
+export DOT_PATH_CONTENT
 if [[ $ENTRY_PATH != "$DOT_PATH_CONTENT" ]]; then
     echo "$0: ERROR: arg: $ENTRY_PATH does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
     exit 7
@@ -610,6 +608,7 @@ fi
 # find the location tool
 #
 LOCATION_TOOL=$(type -P location)
+export LOCATION_TOOL
 if [[ -z $LOCATION_TOOL ]]; then
     # guess we have a location tool in bin
     #
@@ -638,6 +637,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: ENTRY_PATH=$ENTRY_PATH" 1>&2
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
+    echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: AUTHOR_PATH=$AUTHOR_PATH" 1>&2
     echo "$0: debug[3]: AUTHOR_DIR=$AUTHOR_DIR" 1>&2
     echo "$0: debug[3]: INC_PATH=$INC_PATH" 1>&2
@@ -648,16 +648,18 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: ENTRY_DIR=$ENTRY_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_ID=$ENTRY_ID" 1>&2
     echo "$0: debug[3]: DOT_YEAR=$DOT_YEAR" 1>&2
+    echo "$0: debug[3]: YYYY_DIR=$YYYY_DIR" 1>&2
     echo "$0: debug[3]: DOT_PATH=$DOT_PATH" 1>&2
+    echo "$0: debug[3]: DOT_PATH_CONTENT=$DOT_PATH_CONTENT" 1>&2
     echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
     echo "$0: debug[3]: LOCATION_TOOL=$LOCATION_TOOL" 1>&2
 fi
 
 # Set AUTHOR_HANDLE_SET with author handles from .entry.json
 #
-export AUTHOR_HANDLE_SET
 AUTHOR_HANDLE_SET=$(output_author_handles "$ENTRY_JSON")
 status="$?"
+export AUTHOR_HANDLE_SET
 if [[ $status -ne 0 || -z $AUTHOR_HANDLE_SET ]]; then
     echo "$0: ERROR: unable to obtain any author handles from: $ENTRY_JSON" 1>&2
     exit 7
@@ -674,7 +676,7 @@ for author_handle in $AUTHOR_HANDLE_SET; do
 
     # determine the author handle JSON path
     #
-    AUTHOR_HANDLE_JSON="$AUTHOR_DIR/$author_handle.json"
+    export AUTHOR_HANDLE_JSON="$AUTHOR_DIR/$author_handle.json"
 
     # verify that /author/author_handle.json exists as a readable file
     #
@@ -698,6 +700,7 @@ for author_handle in $AUTHOR_HANDLE_SET; do
     #
     ENTRY_ID_FOUND=$(output_entry_ids "$AUTHOR_HANDLE_JSON" | grep -F -- "$ENTRY_ID")
     status="$?"
+    export ENTRY_ID_FOUND
     if [[ $status -ne 0 || -z $ENTRY_ID_FOUND ]]; then
 	echo "$0: ERROR: entry id: $ENTRY_ID not found in author JSON file: $AUTHOR_HANDLE_JSON, status: $status" 1>&2
 	exit 8
@@ -710,6 +713,7 @@ for author_handle in $AUTHOR_HANDLE_SET; do
     #
     FULL_NAME=$(output_full_name "$AUTHOR_HANDLE_JSON")
     status="$?"
+    export FULL_NAME
     if [[ $status -ne 0 || -z $FULL_NAME ]]; then
 	echo "$0: ERROR: author JSON file: $AUTHOR_HANDLE_JSON as no FULL NAME, status: $status" 1>&2
 	exit 8
@@ -722,6 +726,7 @@ for author_handle in $AUTHOR_HANDLE_SET; do
     #
     LOCATION_CODE=$(output_location_code "$AUTHOR_HANDLE_JSON")
     status="$?"
+    export LOCATION_CODE
     if [[ $status -ne 0 || -z $LOCATION_CODE ]]; then
 	echo "$0: ERROR: author JSON file: $AUTHOR_HANDLE_JSON as no Location Code, status: $status" 1>&2
 	exit 8
@@ -742,7 +747,7 @@ fi
 
 # create a temporary markdown for pandoc to process
 #
-TMP_FILE=".$NAME.$$.md"
+export TMP_FILE=".$NAME.$$.md"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary markdown file: $TMP_FILE" 1>&2
 fi
@@ -766,6 +771,7 @@ fi
 #
 {
     AUTHOR_COUNT=$(echo "$AUTHOR_HANDLE_SET" | wc -l)
+    export AUTHOR_COUNT
     if [[ $AUTHOR_COUNT -gt 1 ]]; then
 	echo '## <a name="author"></a>Authors:'
     else
@@ -786,12 +792,13 @@ for author_handle in $AUTHOR_HANDLE_SET; do
 
     # determine the author handle JSON path
     #
-    AUTHOR_HANDLE_JSON="$AUTHOR_DIR/$author_handle.json"
+    export AUTHOR_HANDLE_JSON="$AUTHOR_DIR/$author_handle.json"
 
     # obtain the Full Name from the author handle JSON file
     #
     FULL_NAME=$(output_full_name "$AUTHOR_HANDLE_JSON")
     status="$?"
+    export FULL_NAME
     if [[ $status -ne 0 || -z $FULL_NAME ]]; then
 	echo "$0: ERROR: author JSON file: $AUTHOR_HANDLE_JSON as no FULL NAME, status: $status" 1>&2
 	exit 12
@@ -801,6 +808,7 @@ for author_handle in $AUTHOR_HANDLE_SET; do
     #
     LOCATION_CODE=$(output_location_code "$AUTHOR_HANDLE_JSON")
     status="$?"
+    export LOCATION_CODE
     if [[ $status -ne 0 || -z $LOCATION_CODE ]]; then
 	echo "$0: ERROR: author JSON file: $AUTHOR_HANDLE_JSON as no Location Code, status: $status" 1>&2
 	exit 13
@@ -810,6 +818,7 @@ for author_handle in $AUTHOR_HANDLE_SET; do
     #
     LOCATION_NAME=$("$LOCATION_TOOL" "$LOCATION_CODE" 2>/dev/null)
     status="$?"
+    export LOCATION_NAME
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: cannot determine location name for location ISO 3166 code: $LOCATION_CODE" 1>&2
 	exit 14
@@ -819,6 +828,7 @@ for author_handle in $AUTHOR_HANDLE_SET; do
     #
     LOCATION_COMMON_NAME=$("$LOCATION_TOOL" -c "$LOCATION_CODE" 2>/dev/null)
     status="$?"
+    export LOCATION_COMMON_NAME
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: cannot determine location common name" \
 	     "for location ISO 3166 code: $LOCATION_CODE" 1>&2

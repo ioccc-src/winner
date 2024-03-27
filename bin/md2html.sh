@@ -141,7 +141,7 @@ shopt -s lastpipe	# run last command of a pipeline not executed in the backgroun
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.1 2024-03-09"
+export VERSION="1.1.2 2024-03-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -720,38 +720,58 @@ function debug_parameters
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: SITE_URL=$SITE_URL" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: URL=$URL" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: USAGE=$USAGE" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: USAGE=$USAGE" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: USAGE=$USAGE" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: NOOP=$NOOP" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: TOPDIR=$TOPDIR" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: USAGE=$USAGE" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: MD2HTML_CFG=$MD2HTML_CFG" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: BEFORE_TOOL=$BEFORE_TOOL" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: USAGE=$USAGE" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: USAGE=$USAGE" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: USAGE=$USAGE" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: USAGE=$USAGE" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: P_FLAG_FOUND=$P_FLAG_FOUND" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: CAP_P_FLAG_FOUND=$CAP_P_FLAG_FOUND" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: USAGE=$USAGE" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: U_FLAG_FOUND=$U_FLAG_FOUND" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: USAGE=$USAGE" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: CAP_U_FLAG_FOUND=$CAP_U_FLAG_FOUND" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: AFTER_TOOL=$AFTER_TOOL" 1>&2
+    for index in "${!TOKEN[@]}"; do
+	echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: TOKEN[$index]=${TOKEN[$index]}" 1>&2
+    done
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: CAP_S_FLAG=$CAP_S_FLAG" 1>&2
+    for index in "${!OUTPUT_TOOL[@]}"; do
+	echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: OUTPUT_TOOL[$index]=${OUTPUT_TOOL[$index]}" 1>&2
+    done
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: TAGLINE=$TAGLINE" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: MDTAG=$MDTAG" 1>&2
-    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: BEFORE_TOOL=$BEFORE_TOOL" 1>&2
-    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: AFTER_TOOL=$AFTER_TOOL" 1>&2
-    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: WORKING_DIR=$WORKING_DIR" 1>&2
-    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: REPO_NAME=$REPO_NAME" 1>&2
-    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: INC_PATH=$INC_PATH" 1>&2
-    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: TOP=$TOP" 1>&2
-    for index in "${!PHASE_NAME[@]}"; do
-	echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: phase name $index: ${PHASE_NAME[$index]}"
-    done 1>&2
-    for index in "${!TOKEN[@]}"; do
-	echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: token $index to be replaced with: ${TOKEN[$index]}"
-    done 1>&2
-    for index in "${!OUTPUT_TOOL[@]}"; do
-	echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: OUTPUT_TOOL[$index]=${OUTPUT_TOOL[$index]}"
-    done 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: MATCH_MD=$MATCH_MD" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: INPUT_MD=$INPUT_MD" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: OUTPUT_HTML=$OUTPUT_HTML" 1>&2
     for index in "${!B_OPTION[@]}"; do
-	echo "$0: debug[3]: $DBG_PREFIX: B_OPTION[$index]=${B_OPTION[$index]}"
-    done 1>&2
+	echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: B_OPTION[$index]=${B_OPTION[$index]}" 1>&2
+    done
     for index in "${!P_OPTION[@]}"; do
-	echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: P_OPTION[$index]=${P_OPTION[$index]}"
-    done 1>&2
+	echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: P_OPTION[$index]=${P_OPTION[$index]}" 1>&2
+    done
     for index in "${!A_OPTION[@]}"; do
-	echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: A_OPTION[$index]=${A_OPTION[$index]}"
-    done 1>&2
+	echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: A_OPTION[$index]=${A_OPTION[$index]}" 1>&2
+    done
     for index in "${!O_OPTION[@]}"; do
-	echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: O_OPTION[$index]=${O_OPTION[$index]}"
-    done 1>&2
+	echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: O_OPTION[$index]=${O_OPTION[$index]}" 1>&2
+    done
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: GIT_TOOL=$GIT_TOOL" 1>&2
+    for index in "${!PHASE_NAME[@]}"; do
+	echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: PHASE_NAME[$index]=${PHASE_NAME[$index]}" 1>&2
+    done
+    for index in "${!HTML_PHASE_NAME[@]}"; do
+	echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: HTML_PHASE_NAME[$index]=${HTML_PHASE_NAME[$index]}" 1>&2
+    done
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: GETOPT_PHASE=$GETOPT_PHASE" 1>&2
     return 0
 }
 
@@ -914,6 +934,7 @@ function append_html_phase
     local SED_SCRIPT		# file contain sed commands
     local TMP_PHASE_FILE	# temp file used to write sed script results
     local TMP_APPEND		# growing temporary HTML file to append tmp_phase onto
+    local PHASE_FILE		# HTML filename for the given phase
 
     # parse args
     #
@@ -1084,8 +1105,8 @@ fi
 # In the case of a year level directory, this will be a YYYY working directory.
 # In the case of a top level directory, this will be just a . working directory.
 #
-export WORKING_DIR
 WORKING_DIR=$(dirname "$MATCH_MD")
+export WORKING_DIR
 
 # verify that we have a topdir directory
 #
@@ -1460,7 +1481,7 @@ fi
 #
 for n in "${PHASE_NAME[@]}"; do
     if [[ ${HTML_PHASE_NAME[$n]} != . ]]; then
-	HTML_PHASE_FILE="$INC_DIR/$n.${HTML_PHASE_NAME[$n]}.html"
+	export HTML_PHASE_FILE="$INC_DIR/$n.${HTML_PHASE_NAME[$n]}.html"
 	if [[ $V_FLAG -ge 9 ]]; then
 	    echo "$0: debug[9]: HTML phase $n: ${HTML_PHASE_NAME[$n]} file: $HTML_PHASE_FILE" 1>&2
 	fi
@@ -1572,7 +1593,7 @@ fi
 
 # create a temporary sed script
 #
-TMP_SED_SCRIPT=".$NAME.$$.sed"
+export TMP_SED_SCRIPT=".$NAME.$$.sed"
 if [[ $V_FLAG -ge 5 ]]; then
     echo  "$0: debug[5]: temporary sed script: $TMP_SED_SCRIPT" 1>&2
 fi
@@ -1615,7 +1636,7 @@ fi
 #
 # NOTE: This file, when we are finished building it, will be come the final index.html file.
 #
-TMP_PHASE=".$NAME.$$.html-phase.html"
+export TMP_PHASE=".$NAME.$$.html-phase.html"
 if [[ $V_FLAG -ge 5 ]]; then
     echo  "$0: debug[5]: temporary HTML file: $TMP_PHASE" 1>&2
 fi
@@ -1642,7 +1663,7 @@ fi
 #
 # NOTE: This file, when we are finished building it, will be come the final index.html file.
 #
-TMP_INDEX_HTML=".$NAME.$$.index.html"
+export TMP_INDEX_HTML=".$NAME.$$.index.html"
 if [[ $V_FLAG -ge 5 ]]; then
     echo  "$0: debug[5]: temporary index HTML file: $TMP_INDEX_HTML" 1>&2
 fi
@@ -1668,7 +1689,7 @@ fi
 # input.md is -, we will need to capture standard input into a new temporary file
 #
 if [[ $INPUT_MD == - ]]; then
-    TMP_INPUT_MD=".$NAME.$$.stdin.md"
+    export TMP_INPUT_MD=".$NAME.$$.stdin.md"
     if [[ $V_FLAG -ge 5 ]]; then
 	echo  "$0: debug[5]: temporary stdin file: $TMP_INPUT_MD" 1>&2
     fi

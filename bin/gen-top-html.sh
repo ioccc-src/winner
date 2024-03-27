@@ -88,7 +88,7 @@ TOP_MD_SET+=("faq")
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.1 2024-03-08"
+export VERSION="1.2.2 2024-03-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -112,6 +112,7 @@ export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc"
 export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 #
 unset TOP_MD_SET
+declare -ag TOP_MD_SET
 TOP_MD_SET+=("CODE_OF_CONDUCT")
 TOP_MD_SET+=("README")
 TOP_MD_SET+=("archive/historic/README")
@@ -421,15 +422,17 @@ if [[ $V_FLAG -ge 3 ]]; then
 	echo "$0: debug[3]: TOP_MD_SET[$index]=${TOP_MD_SET[$index]}" 1>&2
     done
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
-    echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
+    echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
-    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
     for index in "${!TOOL_OPTION[@]}"; do
 	echo "$0: debug[3]: TOOL_OPTION[$index]=${TOOL_OPTION[$index]}" 1>&2
     done
+    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
+    echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: AUTHOR_PATH=$AUTHOR_PATH" 1>&2
     echo "$0: debug[3]: AUTHOR_DIR=$AUTHOR_DIR" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
+    echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
     echo "$0: debug[3]: LOCATION_HTML=$LOCATION_HTML" 1>&2
 fi
 

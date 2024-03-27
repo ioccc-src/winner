@@ -99,7 +99,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.1 2024-03-19"
+export VERSION="1.1.2 2024-03-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -346,6 +346,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
+    echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
     echo "$0: debug[3]: STATUS_JSON=$STATUS_JSON" 1>&2
@@ -362,7 +363,7 @@ fi
 
 # create a temporary markdown for pandoc to process
 #
-TMP_FILE=".$NAME.$$.md"
+export TMP_FILE=".$NAME.$$.md"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary markdown file: $TMP_FILE" 1>&2
 fi
@@ -386,6 +387,7 @@ fi
 #
 CONTEST_STATUS=$(grep '"contest_status"\s*:\s*"[^"][^"]*"' "$STATUS_JSON" | sed -e 's/",\s*$//' -e 's/^.*"//')
 status="$?"
+export CONTEST_STATUS
 if [[ $status -ne 0 || -z $CONTEST_STATUS ]]; then
     echo "$0: ERROR: cannot determine contest_status from status.json: $STATUS_JSON" 1>&2
     exit 8

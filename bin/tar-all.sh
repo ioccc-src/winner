@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.1 2024-03-18"
+export VERSION="1.1.2 2024-03-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -353,22 +353,22 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: NAME=$NAME" 1>&2
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
-    echo "$0: debug[3]: GTAR_TOOL=$GTAR_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
+    echo "$0: debug[3]: CAP_W_FLAG_FOUND=$CAP_W_FLAG_FOUND" 1>&2
+    echo "$0: debug[3]: GTAR_TOOL=$GTAR_TOOL" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
-    echo "$0: debug[3]: CAP_W_FLAG_FOUND=$CAP_W_FLAG_FOUND" 1>&2
     echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
+    echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
-    echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
     echo "$0: debug[3]: TARBALL=$TARBALL" 1>&2
     echo "$0: debug[3]: FILELIST_ENTRY_JSON_AWK=$FILELIST_ENTRY_JSON_AWK" 1>&2
     echo "$0: debug[3]: IOCCC_CSS=$IOCCC_CSS" 1>&2
     echo "$0: debug[3]: VAR_MK=$VAR_MK" 1>&2
-    echo "$0: debug[3]: FILELIST=$FILELIST" 1>&2
+    echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
 fi
 
 # If -N, time to exit
@@ -382,7 +382,7 @@ fi
 
 # create a temporary file manifest list
 #
-TMP_MANIFEST_LIST=".$NAME.$$.manifest.list"
+export TMP_MANIFEST_LIST=".$NAME.$$.manifest.list"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary file manifest list: $TMP_MANIFEST_LIST" 1>&2
 fi
@@ -404,7 +404,7 @@ fi
 
 # create a temporary sort list of files to tar
 #
-TMP_TAR_LIST=".$NAME.$$.tar.list"
+export TMP_TAR_LIST=".$NAME.$$.tar.list"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary file tar list: $TMP_TAR_LIST" 1>&2
 fi
@@ -429,7 +429,7 @@ fi
 # It is a pain to set the EXIT_CODE deep inside a loop, so we write the EXIT_CODE into a file
 # and read the file (setting EXIT_CODE again) after the loop.  A hack, but good enough for our needs.
 #
-TMP_EXIT_CODE=".$NAME.$$.exit.code"
+export TMP_EXIT_CODE=".$NAME.$$.exit.code"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary exit code: $TMP_EXIT_CODE" 1>&2
 fi
@@ -451,7 +451,7 @@ fi
 
 # create a temporary tarball
 #
-TMP_TARBALL=".$NAME.$$.tar.bz2"
+export TMP_TARBALL=".$NAME.$$.tar.bz2"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary tarball: $TMP_TARBALL" 1>&2
 fi
