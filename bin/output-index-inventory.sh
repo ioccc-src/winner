@@ -101,7 +101,7 @@ shopt -s globstar	# enable '**' to match all files and zero or more directories 
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.3 2024-03-26"
+export VERSION="1.2.4 2024-03-27"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -528,11 +528,11 @@ if [[ -z $NOOP ]]; then
 	echo
 	echo '## Primary files'
 	echo
-	grep -E '^[0-9][0-9]{0,8} ' "$TMP_MANIFEST" | LC_ALL=C sort -u -k 1n -k 3.2d | sed -e 's/^[0-9][0-9]* //'
+	grep -E '^[0-9][0-9]{0,8} ' "$TMP_MANIFEST" | LC_ALL=C sort -k 1n -k 3.2d | sed -e 's/^[0-9][0-9]* //'
 	echo
 	echo '## Secondary files'
 	echo
-	grep -E '^[1-9][0-9]{9,} ' "$TMP_MANIFEST" | LC_ALL=C sort -u -k 1n -k 3.2d | sed -e 's/^[0-9][0-9]* //'
+	grep -E '^[1-9][0-9]{9,} ' "$TMP_MANIFEST" | LC_ALL=C sort -k 1n -k 3.2d | sed -e 's/^[0-9][0-9]* //'
 
     } >> "$TMP_FILE"
 elif [[ $V_FLAG -ge 3 ]]; then

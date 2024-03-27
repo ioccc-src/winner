@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.3 2024-03-26"
+export VERSION="1.3.4 2024-03-27"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -794,10 +794,10 @@ fi
 
 # sort the manifest list
 #
-LC_ALL=C sort -d -u "$TMP_MANIFEST_LIST" -o "$TMP_MANIFEST_LIST"
+LC_ALL=C sort -d "$TMP_MANIFEST_LIST" -o "$TMP_MANIFEST_LIST"
 status="$?"
 if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: LC_ALL=C sort -d -u $TMP_MANIFEST_LIST -o $TMP_MANIFEST_LIST failed, error: $status" 1>&2
+    echo "$0: ERROR: LC_ALL=C sort -d $TMP_MANIFEST_LIST -o $TMP_MANIFEST_LIST failed, error: $status" 1>&2
     exit 1
 fi
 
@@ -862,7 +862,7 @@ if [[ -z $NOOP ]]; then
 
     # output XML for each file in the manifest, in sorted filepath order
     #
-    LC_ALL=C sort -d -f -u -t / "$TMP_MANIFEST_LIST" | while read -r FILE_PATH; do
+    LC_ALL=C sort -d -f -t / "$TMP_MANIFEST_LIST" | while read -r FILE_PATH; do
 	LASTMOD=$(output_modtime "$FILE_PATH")
 	export LASTMOD
 	echo '<url>'

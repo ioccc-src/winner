@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.4 2024-03-26"
+export VERSION="1.1.5 2024-03-27"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -438,10 +438,10 @@ if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: awk -f $FILELIST_ENTRY_JSON_AWK $ENTRY_JSON > $TMP_MANIFEST_LIST failed, error: $status" 1>&2
     exit 1
 fi
-LC_ALL=C sort -d -u "$TMP_MANIFEST_LIST" -o "$TMP_MANIFEST_LIST"
+LC_ALL=C sort -d "$TMP_MANIFEST_LIST" -o "$TMP_MANIFEST_LIST"
 status="$?"
 if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: LC_ALL=C sort -d -u $TMP_MANIFEST_LIST -o $TMP_MANIFEST_LIST failed, error: $status" 1>&2
+    echo "$0: ERROR: LC_ALL=C sort -d $TMP_MANIFEST_LIST -o $TMP_MANIFEST_LIST failed, error: $status" 1>&2
     exit 1
 fi
 
@@ -455,15 +455,23 @@ if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: find $ENTRY_PATH -type f -print > $TMP_FILE_LIST failed, error: $status" 1>&2
     exit 1
 fi
-LC_ALL=C sort -d -u "$TMP_FILE_LIST" -o "$TMP_FILE_LIST"
+LC_ALL=C sort -d "$TMP_FILE_LIST" -o "$TMP_FILE_LIST"
 status="$?"
 if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: LC_ALL=C sort -d -u $TMP_FILE_LIST -o $TMP_FILE_LIST failed, error: $status" 1>&2
+    echo "$0: ERROR: LC_ALL=C sort -d $TMP_FILE_LIST -o $TMP_FILE_LIST failed, error: $status" 1>&2
     exit 1
 fi
 
 # note if the manifest does NOT match the file list
 #
+if [[ $V_FLAG -ge 5 ]]; then
+    echo "$0: debug[5] file manifest list starts below: $ENTRY_PATH" 1>&2
+    cat "$TMP_MANIFEST_LIST" 1>&2
+    echo "$0: debug[5] file manifest list ends above: $ENTRY_PATH" 1>&2
+    echo "$0: debug[5] find files list starts below: $ENTRY_PATH" 1>&2
+    cat "$TMP_FILE_LIST" 1>&2
+    echo "$0: debug[5] find files list ends above: $ENTRY_PATH" 1>&2
+fi
 if cmp -s "$TMP_MANIFEST_LIST" "$TMP_FILE_LIST"; then
     if [[ $V_FLAG -ge 1 ]]; then
 	echo  "$0: debug[1]: file list marches manifest for: $ENTRY_PATH" 1>&2
