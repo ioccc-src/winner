@@ -608,7 +608,7 @@ think that I would give too much away? :)
 BTW: what's the middle of a list with even numbered items anyway?
 
 To help you out, though, this is how you might do the decrypting. Assuming that
-the key you wish to select is 
+the key you wish to select is
 
 ```
 0EZ4PC1CC0PGTAQSOXWNMDRYKFUZEI
