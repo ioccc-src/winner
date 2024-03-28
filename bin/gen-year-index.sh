@@ -85,7 +85,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.4 2024-03-26"
+export VERSION="1.0.5 2024-03-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -312,8 +312,12 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
-# verify that YYYY is a entry directory
+# verify that YYYY is an IOCCC year directory
 #
+if [[ ! -e $YYYY ]]; then
+    echo "$0: ERROR: arg does not exist: $YYYY" 1>&2
+    exit 6
+fi
 if [[ ! -d $YYYY ]]; then
     echo "$0: ERROR: arg is not a directory: $YYYY" 1>&2
     exit 6
@@ -325,21 +329,21 @@ fi
 
 # verify that YYYY has a non-empty readable .year file
 #
-export YEAR_FILE="$YYYY/.year"
-if [[ ! -e $YEAR_FILE ]]; then
-    echo  "$0: ERROR: YYYY/.year does not exist: $YEAR_FILE" 1>&2
+export DOT_YEAR="$YYYY/.year"
+if [[ ! -e $DOT_YEAR ]]; then
+    echo  "$0: ERROR: YYYY/.year does not exist: $DOT_YEAR" 1>&2
     exit 6
 fi
-if [[ ! -f $YEAR_FILE ]]; then
-    echo  "$0: ERROR: YYYY/.year is not a regular file: $YEAR_FILE" 1>&2
+if [[ ! -f $DOT_YEAR ]]; then
+    echo  "$0: ERROR: YYYY/.year is not a regular file: $DOT_YEAR" 1>&2
     exit 6
 fi
-if [[ ! -r $YEAR_FILE ]]; then
-    echo  "$0: ERROR: YYYY/.year is not an readable file: $YEAR_FILE" 1>&2
+if [[ ! -r $DOT_YEAR ]]; then
+    echo  "$0: ERROR: YYYY/.year is not an readable file: $DOT_YEAR" 1>&2
     exit 6
 fi
-if [[ ! -s $YEAR_FILE ]]; then
-    echo  "$0: ERROR: YYYY/.year is not a non-empty readable file: $YEAR_FILE" 1>&2
+if [[ ! -s $DOT_YEAR ]]; then
+    echo  "$0: ERROR: YYYY/.year is not a non-empty readable file: $DOT_YEAR" 1>&2
     exit 6
 fi
 
@@ -404,7 +408,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: YYYY=$YYYY" 1>&2
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
     echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
-    echo "$0: debug[3]: YEAR_FILE=$YEAR_FILE" 1>&2
+    echo "$0: debug[3]: DOT_YEAR=$DOT_YEAR" 1>&2
     echo "$0: debug[3]: README_FILE=$README_FILE" 1>&2
 fi
 

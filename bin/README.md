@@ -45,6 +45,12 @@ Or for example:
 bin/all-years.sh -v 1 bin/chk-entry.sh
 ```
 
+We recommend that this tool be invoked via the top level `Makefile`:
+
+```sh
+make verify_entry_files
+```
+
 
 ### [chk-entry.sh](chk-entry.sh)
 
@@ -102,6 +108,7 @@ Usage:
 bin/gen-other-html.sh -v 1
 ```
 
+
 ### [gen-sitemap.sh](gen-sitemap.sh)
 
 Generate an XML sitemap for the IOCCC web site.
@@ -110,6 +117,12 @@ Usage:
 
 ```sh
 bin/gen-sitemap.sh -v 1
+```
+
+We recommend that this tool be invoked via the top level `Makefile`:
+
+```sh
+make gen_sitemap
 ```
 
 
@@ -144,6 +157,12 @@ To see other valid statuses:
 bin/gen-status -h
 ```
 
+We recommend that this tool be invoked via the top level `Makefile`:
+
+```sh
+make gen_status
+```
+
 
 ### [gen-top-html.sh](gen-top-html.sh)
 
@@ -170,6 +189,12 @@ Examples of top level HTML pages built by this tool include:
 - [news.html](../news.html)
 - [thanks-for-help.html](../thanks-for-help.html)
 
+We recommend that this tool be invoked via the top level `Makefile`:
+
+```sh
+make gen_top_html
+```
+
 
 ### [gen-year-index.sh](gen-year-index.sh)
 
@@ -181,6 +206,12 @@ Usage:
 bin/gen-year-index.sh -v 1 2020
 ```
 
+We recommend that this tool be invoked via the top level `Makefile`:
+
+```sh
+make gen_year_index
+```
+
 
 ### [gen-years.sh](gen-years.sh)
 
@@ -190,6 +221,12 @@ Usage:
 
 ```sh
 bin/gen-years.sh -v 1
+```
+
+We recommend that this tool be invoked via the top level `Makefile`:
+
+```sh
+make gen_years
 ```
 
 
@@ -226,7 +263,7 @@ Wrapper tool to run pandoc.
 
 ### [quick-readme2index.sh](quick-readme2index.sh)
 
-Runs [readme2index.sh](readme2index.sh) if the entry directory
+Builds an entry's `index.html` file if the entry directory
 does not have a non-empty `index.hmtl` file, or if either
 `.entry.json` or `index.html` is newer than the `index.hmtl` file.
 
@@ -250,14 +287,32 @@ bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1
 modification times for `index.hmtl`, `.entry.json`,
 and `index.html` are correct.  If in doubt, use:
 
+We recommend that this tool be invoked via the top level `Makefile`:
+
 ```sh
-bin/all-run.sh -v 3 bin/readme2index.sh -v 1
+make quick_entry_index
 ```
 
 
 ### [readme2index.sh](readme2index.sh)
 
 Convert an entry README.md into entry directory index.html.
+
+```sh
+bin/all-run.sh -v 3 bin/readme2index.sh -v 1
+```
+
+To build `index.html` files for all entries:
+
+```sh
+bin/all-run.sh -v 3 bin/readme2index.sh -v 1
+```
+
+We recommend that this tool be invoked via the top level `Makefile`:
+
+```sh
+make entry_index
+```
 
 
 ### [status2html.sh](status2html.sh)
@@ -294,6 +349,12 @@ Suggested usage:
 
 ```sh
 bin/all-run.sh bin/sort.gitignore.sh -v 1
+```
+
+We recommend that this tool be invoked via the top level `Makefile`:
+
+```sh
+make sort_gitignore
 ```
 
 
@@ -349,6 +410,12 @@ Usage:
 bin/tar-all.sh -v 1
 ```
 
+We recommend that this tool be invoked via the top level `Makefile`:
+
+```sh
+make form_entry_tarball
+```
+
 
 ## [tar-year.sh](tar-year.sh)
 
@@ -366,6 +433,12 @@ Suggested usage:
 bin/all-years.sh -v 3 bin/tar-year.sh -v 1 -W
 ```
 
+We recommend that this tool be invoked via the top level `Makefile`:
+
+```sh
+make form_year_tarball
+```
+
 
 ## [untar-entry.sh](untar-entry.sh)
 
@@ -381,6 +454,35 @@ Suggested usage:
 
 ```sh
 bin/all-run.sh -v 3 bin/untar-entry.sh -v 1
+```
+
+We recommend that this tool be invoked via the top level `Makefile`:
+
+```sh
+make untar_entry_tarball
+```
+
+
+## [untar-year.sh](untar-year.sh)
+
+Untar an IOCCC year's compressed tarball.
+
+Usage:
+
+```sh
+bin/untar-year.sh -v 1 YYYY
+```
+
+Suggested usage:
+
+```sh
+bin/all-years.sh -v 3 bin/untar-year.sh -v 1
+```
+
+We recommend that this tool be invoked via the top level `Makefile`:
+
+```sh
+make untar_year_tarball
 ```
 
 

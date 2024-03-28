@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2 2024-03-27"
+export VERSION="1.2.1 2024-03-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -645,26 +645,28 @@ if [[ -z $NOOP ]]; then
 
 	# use the entry's manifest to add files to the IOCCC year's manifest, excluding the entry's tarball file
 	#
-	awk -f "$FILELIST_ENTRY_JSON_AWK" "$ENTRY_JSON" >> "$TMP_MANIFEST_LIST"
-	status="$?"
-	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: awk -f $FILELIST_ENTRY_JSON_AWK $ENTRY_JSON >> $TMP_MANIFEST_LIST failed, error: $status" 1>&2
-	    exit 1
-	fi
-
-	# remove entry's tarball from the IOCCC year's manifest
+	# We do not include the entry's tarball from the IOCCC year's manifest
 	#
 	export ENTRY_ID="${YEAR_DIR}_${ENTRY_DIR}"
-	sed -i '' -e "/$ENTRY_ID\.tar\.bz2$/d" "$TMP_MANIFEST_LIST"
-	status="$?"
+	if [[ $V_FLAG -ge 5 ]]; then
+	    echo "$0: debug[5]: about to execute: awk -f $FILELIST_ENTRY_JSON_AWK $ENTRY_JSON |" \
+		 "grep -v \"/$ENTRY_ID\.tar\.bz2$\" >> $TMP_MANIFEST_LIST" 1>&2
+	fi
+	awk -f "$FILELIST_ENTRY_JSON_AWK" "$ENTRY_JSON" | \
+	  grep -v "/$ENTRY_ID\.tar\.bz2$" >> "$TMP_MANIFEST_LIST"
+	status="${PIPESTATUS[0]}"
 	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: sed -i '' -e '/$ENTRY_ID.tar.bz2/d' $TMP_MANIFEST_LIST failed, error: $status" 1>&2
+	    echo "$0: ERROR: awk -f $FILELIST_ENTRY_JSON_AWK $ENTRY_JSON |" \
+	         "grep -v -F \"/$ENTRY_ID\.tar\.bz2$\" >> $TMP_MANIFEST_LIST failed, error: $status" 1>&2
 	    exit 1
 	fi
     done
 
     # sort the manifest list
     #
+    if [[ $V_FLAG -ge 5 ]]; then
+	echo "$0: debug[5]: about to execute: LC_ALL=C sort -d $TMP_MANIFEST_LIST -o $TMP_MANIFEST_LIST" 1>&2
+    fi
     LC_ALL=C sort -d "$TMP_MANIFEST_LIST" -o "$TMP_MANIFEST_LIST"
     status="$?"
     if [[ $status -ne 0 ]]; then

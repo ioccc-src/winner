@@ -1,21 +1,6 @@
 #!/usr/bin/env bash
 #
-# sort.gitignore.sh - sort .gitignore file
-#
-# Usage:
-#
-#	sort.gitignore.sh YYYY/dir
-#
-# Recommended usage:
-#
-#	bin/all-run.sh bin/sort.gitignore.sh
-#
-# We use bin/sgi.sh to sort the content of a .gitignore file as follows:
-#
-# We sort with lines starting with # first.
-# We sort with lines starting with * second.
-# We sort with lines that do not start with [#!*] third.
-# We sort with lines starting with ! fourth.
+# untar-year.sh - untar files belonging to an IOCCC year
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
@@ -84,7 +69,6 @@ if [[ -z ${BASH_VERSINFO[0]} ||
     exit 4
 fi
 
-
 # setup bash file matching
 #
 # We must declare arrays with -ag or -Ag, and we need loops to "export" modified variables.
@@ -99,14 +83,14 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.4 2024-03-28"
+export VERSION="1.0 2024-03-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
 GIT_TOOL=$(type -P git)
 export GIT_TOOL
 if [[ -z "$GIT_TOOL" ]]; then
-    echo "$0: FATAL: git tool is not installed or not in PATH" 1>&2
+    echo "$0: FATAL: git tool is not installed or not in \$PATH" 1>&2
     exit 5
 fi
 "$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
@@ -116,24 +100,38 @@ if [[ $status -eq 0 ]]; then
 fi
 export TOPDIR
 export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc"
-export TOP_URL="https://ioccc-src.github.io/temp-test-ioccc"
-export SGI_TOOL="bin/sgi.sh"
+export CAP_W_FLAG_FOUND=
+GTAR_TOOL=$(type -P gtar)
+export GTAR_TOOL
+if [[ -z "$GIT_TOOL" ]]; then
+    echo "$0: FATAL: gtar (gnu tar) tool is not installed or not in \$PATH" 1>&2
+    exit 8
+fi
 
 # set usage message
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
-			YYYY/dir
+export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
+			[-p tool] [-u repo_url] [-w site_url] [-W]
+			YYYY
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
 	-V		print version string and exit
 
 	-d topdir	set topdir (def: $TOPDIR)
+	-D docroot/	This option is ignored
 
 	-n		go thru the actions, but do not update any files (def: do the action)
 	-N		do not process file, just parse arguments and ignore the file (def: process the file)
 
-	YYYY/dir	path from topdir to entry directory: must contain the files: README.md, .path and .entry.json
+	-p tool		This option is ignored
+
+	-u repo_url	This option is ignored
+	-w site_url	This option is ignored
+
+	-W		Warn if a file in the manifest is missing: (def: error if a file is missing)
+
+	YYYY		IOCCC year
 
 Exit codes:
      0         all OK
@@ -144,6 +142,7 @@ Exit codes:
      5	       some internal tool is not found or not an executable file
      6	       problems found with or in the topdir or topdir/YYYY directory
      7	       problems found with or in the entry topdir/YYYY/dir directory
+     8	       gnu tar is missing or execution failed or error in forming compressed tarball
  >= 10         internal error
 
 $NAME version: $VERSION"
@@ -155,7 +154,7 @@ export DO_NOT_PROCESS=
 
 # parse command line
 #
-while getopts :hv:Vd:nN flag; do
+while getopts :hv:Vd:D:nNp:u:U:w:W flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -167,9 +166,16 @@ while getopts :hv:Vd:nN flag; do
 	;;
     d) TOPDIR="$OPTARG"
 	;;
+    D)  ;;
     n) NOOP="-n"
 	;;
     N) DO_NOT_PROCESS="-N"
+	;;
+    p)  ;;
+    u)  ;;
+    U)  ;;
+    w)  ;;
+    W) CAP_W_FLAG_FOUND="true"
 	;;
     \?) echo "$0: ERROR: invalid option: -$OPTARG" 1>&2
 	echo 1>&2
@@ -191,8 +197,8 @@ done
 
 # parse the command line arguments
 #
-if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: debug level: $V_FLAG" 1>&2
+if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: debug level: $V_FLAG" 1>&2
 fi
 #
 shift $(( OPTIND - 1 ));
@@ -205,7 +211,7 @@ if [[ $# -ne 1 ]]; then
     exit 3
 fi
 #
-export ENTRY_PATH="$1"
+export YYYY="$1"
 
 # verify that we have a topdir directory
 #
@@ -213,6 +219,11 @@ REPO_NAME=$(basename "$REPO_URL")
 export REPO_NAME
 if [[ -z $TOPDIR ]]; then
     echo "$0: ERROR: cannot find top of git repo directory" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    exit 6
+fi
+if [[ ! -e $TOPDIR ]]; then
+    echo "$0: ERROR: TOPDIR does not exist: $TOPDIR" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
@@ -245,117 +256,65 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
-# verify that we have an bin subdirectory
+# verify that YYYY is an IOCCC year directory
 #
-export BIN_PATH="$TOPDIR/bin"
-if [[ ! -d $BIN_PATH ]]; then
-    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
+if [[ ! -e $YYYY ]]; then
+    echo "$0: ERROR: arg does not exist: $YYYY" 1>&2
     exit 6
 fi
-export BIN_DIR="bin"
-
-# verify we have an executable sgi.sh tool
-#
-if [[ ! -e $SGI_TOOL ]]; then
-    echo "$0: ERROR: sgi.sh tool does not exist: $SGI_TOOL" 1>&2
-    exit 5
+if [[ ! -d $YYYY ]]; then
+    echo "$0: ERROR: arg is not a directory: $YYYY" 1>&2
+    exit 6
 fi
-if [[ ! -f $SGI_TOOL ]]; then
-    echo "$0: ERROR: sgi.sh tool is not a file: $SGI_TOOL" 1>&2
-    exit 5
-fi
-if [[ ! -x $SGI_TOOL ]]; then
-    echo "$0: ERROR: sgi.sh tool is not an executable file: $SGI_TOOL" 1>&2
-    exit 5
+if [[ ! -r $YYYY ]]; then
+    echo "$0: ERROR: arg is not a writable directory: $YYYY" 1>&2
+    exit 6
 fi
 
-# verify that ENTRY_PATH is a entry directory
+# verify that YYYY has a non-empty readable .year file
 #
-if [[ ! -d $ENTRY_PATH ]]; then
-    echo "$0: ERROR: arg is not a directory: $ENTRY_PATH" 1>&2
-    exit 3
+export DOT_YEAR="$YYYY/.year"
+if [[ ! -e $DOT_YEAR ]]; then
+    echo  "$0: ERROR: YYYY/.year does not exist: $DOT_YEAR" 1>&2
+    exit 6
 fi
-if [[ ! -w $ENTRY_PATH ]]; then
-    echo "$0: ERROR: arg is not a writable directory: $ENTRY_PATH" 1>&2
-    exit 3
+if [[ ! -f $DOT_YEAR ]]; then
+    echo  "$0: ERROR: YYYY/.year is not a regular file: $DOT_YEAR" 1>&2
+    exit 6
 fi
-export YEAR_DIR=${ENTRY_PATH%%/*}
-if [[ -z $YEAR_DIR ]]; then
-    echo "$0: ERROR: arg not in YYYY/dir form: $ENTRY_PATH" 1>&2
-    exit 3
+if [[ ! -r $DOT_YEAR ]]; then
+    echo  "$0: ERROR: YYYY/.year is not an readable file: $DOT_YEAR" 1>&2
+    exit 6
 fi
-export ENTRY_DIR=${ENTRY_PATH#*/}
-if [[ -z $ENTRY_DIR ]]; then
-    echo "$0: ERROR: arg: $ENTRY_PATH not in $YEAR_DIR/dir form: $ENTRY_PATH" 1>&2
-    exit 3
-fi
-if [[ $ENTRY_DIR = */* ]]; then
-    echo "$0: ERROR: dir from arg: $ENTRY_PATH contains a /: $ENTRY_DIR" 1>&2
-    exit 3
-fi
-if [[ ! -d $YEAR_DIR ]]; then
-    echo "$0: ERROR: YYYY from arg: $ENTRY_PATH is not a directory: $YEAR_DIR" 1>&2
-    exit 3
-fi
-export ENTRY_ID="${YEAR_DIR}_${ENTRY_DIR}"
-export DOT_YEAR="$YEAR_DIR/.year"
 if [[ ! -s $DOT_YEAR ]]; then
-    echo "$0: ERROR: not a non-empty file: $DOT_YEAR" 1>&2
+    echo  "$0: ERROR: YYYY/.year is not a non-empty readable file: $DOT_YEAR" 1>&2
     exit 6
 fi
-# Now that we have moved to topdir, form and verify YYYY_DIR is a writable directory
-export YYYY_DIR="$YEAR_DIR/$ENTRY_DIR"
-if [[ ! -e $YYYY_DIR ]]; then
-    echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH does not exist: $YYYY_DIR" 1>&2
-    exit 7
-fi
-if [[ ! -d $YYYY_DIR ]]; then
-    echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH is not a directory: $YYYY_DIR" 1>&2
-    exit 7
-fi
-if [[ ! -w $YYYY_DIR ]]; then
-    echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH is not a writable directory: $YYYY_DIR" 1>&2
-    exit 7
-fi
-export DOT_PATH="$YYYY_DIR/.path"
-if [[ ! -s $DOT_PATH ]]; then
-    echo "$0: ERROR: not a non-empty file: $DOT_PATH" 1>&2
-    exit 7
-fi
-DOT_PATH_CONTENT=$(< "$DOT_PATH")
-export DOT_PATH_CONTENT
-if [[ $ENTRY_PATH != "$DOT_PATH_CONTENT" ]]; then
-    echo "$0: ERROR: arg: $ENTRY_PATH does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
-    exit 7
-fi
-export ENTRY_JSON="$YYYY_DIR/.entry.json"
-if [[ ! -e $ENTRY_JSON ]]; then
-    echo "$0: ERROR: .entry.json does not exist: $ENTRY_JSON" 1>&2
-    exit 7
-fi
-if [[ ! -f $ENTRY_JSON ]]; then
-    echo "$0: ERROR: .entry.json is not a file: $ENTRY_JSON" 1>&2
-    exit 7
-fi
-if [[ ! -r $ENTRY_JSON ]]; then
-    echo "$0: ERROR: .entry.json is not a readable file: $ENTRY_JSON" 1>&2
-    exit 7
-fi
 
-# verify .gitignore
+# determine the name of our tarball
 #
-export GITIGNORE="$YEAR_DIR/$ENTRY_DIR/.gitignore"
-if [[ ! -e $GITIGNORE ]]; then
-    echo "$0: ERROR: .entry.json does not exist: $GITIGNORE" 1>&2
-    exit 7
+# TARBALL - the same of the compressed tarball to verify and if needed re-build
+# REBUILD_TARBALL - if non-empty, we need to re-build TARBALL and update tar timestamps
+#
+export TARBALL="$YYYY/$YYYY.tar.bz2"
+
+# test - if needed - if the tarball is a non-empty writable file
+#
+if [[ ! -e $TARBALL ]]; then
+    echo "$0: ERROR: tarball does not exist: $TARBALL" 1>&2
+    exit 1
 fi
-if [[ ! -f $GITIGNORE ]]; then
-    echo "$0: ERROR: .entry.json is not a file: $GITIGNORE" 1>&2
-    exit 7
+if [[ ! -f $TARBALL ]]; then
+    echo "$0: ERROR: tarball is not a file: $TARBALL" 1>&2
+    exit 1
 fi
-if [[ ! -w $GITIGNORE ]]; then
-    echo "$0: ERROR: .entry.json is not a writable file: $GITIGNORE" 1>&2
-    exit 7
+if [[ ! -w $TARBALL ]]; then
+    echo "$0: ERROR: tarball is not a writable file: $TARBALL" 1>&2
+    exit 1
+fi
+if [[ ! -s $TARBALL ]]; then
+    echo "$0: ERROR: tarball is not a non-empty writable file: $TARBALL" 1>&2
+    exit 1
 fi
 
 # parameter debugging
@@ -367,24 +326,15 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
-    echo "$0: debug[3]: TOP_URL=$TOP_URL" 1>&2
-    echo "$0: debug[3]: SGI_TOOL=$SGI_TOOL" 1>&2
+    echo "$0: debug[3]: CAP_W_FLAG_FOUND=$CAP_W_FLAG_FOUND" 1>&2
+    echo "$0: debug[3]: GTAR_TOOL=$GTAR_TOOL" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
-    echo "$0: debug[3]: ENTRY_PATH=$ENTRY_PATH" 1>&2
+    echo "$0: debug[3]: YYYY=$YYYY" 1>&2
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
     echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
-    echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
-    echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
-    echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
-    echo "$0: debug[3]: ENTRY_DIR=$ENTRY_DIR" 1>&2
-    echo "$0: debug[3]: ENTRY_ID=$ENTRY_ID" 1>&2
     echo "$0: debug[3]: DOT_YEAR=$DOT_YEAR" 1>&2
-    echo "$0: debug[3]: YYYY_DIR=$YYYY_DIR" 1>&2
-    echo "$0: debug[3]: DOT_PATH=$DOT_PATH" 1>&2
-    echo "$0: debug[3]: DOT_PATH_CONTENT=$DOT_PATH_CONTENT" 1>&2
-    echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
-    echo "$0: debug[3]: GITIGNORE=$GITIGNORE" 1>&2
+    echo "$0: debug[3]: TARBALL=$TARBALL" 1>&2
 fi
 
 # If -N, time to exit
@@ -396,65 +346,42 @@ if [[ -n $DO_NOT_PROCESS ]]; then
     exit 0
 fi
 
-# create a temporary markdown for pandoc to process
+# untar entry compressed tarball
 #
-export TMP_FILE="$ENTRY_PATH/.$NAME.$$.sgi.sh"
-if [[ $V_FLAG -ge 3 ]]; then
-    echo  "$0: debug[3]: temporary markdown file: $TMP_FILE" 1>&2
-fi
 if [[ -z $NOOP ]]; then
-    trap 'rm -f $TMP_FILE; exit' 0 1 2 3 15
-    rm -f "$TMP_FILE"
-    if [[ -e $TMP_FILE ]]; then
-	echo "$0: ERROR: cannot remove temporary markdown file: $TMP_FILE" 1>&2
-	exit 10
-    fi
-    :> "$TMP_FILE"
-    if [[ ! -e $TMP_FILE ]]; then
-	echo "$0: ERROR: cannot create temporary markdown file: $TMP_FILE" 1>&2
-	exit 11
-    fi
-elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, temporary markdown file is not used: $TMP_FILE" 1>&2
-fi
 
-# convert temporary markdown file into HTML
-#
-if [[ -z $NOOP ]]; then
+    # case: form the tarball verbosely if -v 5 or more
+    #
     if [[ $V_FLAG -ge 1 ]]; then
-	echo  "$0: debug[1]: about to execute: $SGI_TOOL < $GITIGNORE > $TMP_FILE" 1>&2
-    fi
-    "$SGI_TOOL" < "$GITIGNORE" > "$TMP_FILE"
-    status="$?"
-    if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: sgi.sh failed, error: $status" 1>&2
-	exit 12
-    fi
-    if cmp -s "$TMP_FILE" "$GITIGNORE"; then
-	if [[ $V_FLAG -ge 1 ]]; then
-	    echo  "$0: debug[1]: $GITIGNORE is already sorted" 1>&2
-	fi
-    else
-	if [[ $V_FLAG -ge 1 ]]; then
-	    echo  "$0: debug[1]: about to execute: mv -f $TMP_FILE $GITIGNORE" 1>&2
-	fi
-	mv -f "$TMP_FILE" "$GITIGNORE"
+	echo "$0: debug[1]: about to execute:" \
+	    "$GTAR_TOOL --totals -jxvf $TARBALL" 1>&2
+	"$GTAR_TOOL" --totals -jxvf "$TARBALL"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: sgi.sh failed, error: $status" 1>&2
-	    exit 13
+	    echo "$0: ERROR:" \
+		"$GTAR_TOOL --totals -jxvf $TARBALL failed, error: $status" 1>&2
+	    exit 8
+	fi
+
+    # case: form the tarball silently
+    #
+    else
+	"$GTAR_TOOL" -jxf "$TARBALL"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR:" \
+		"$GTAR_TOOL -jxf $TARBALL failed, error: $status" 1>&2
+	    exit 8
 	fi
     fi
-elif [[ $V_FLAG -ge 1 ]]; then
-    echo  "$0: debug[1]: -n disabled execution of: $SGI_TOOL < $GITIGNORE > $TMP_FILE" 1>&2
-    echo  "$0: debug[1]: -n disabled execution of:  mv -f $TMP_FILE $GITIGNORE" 1>&2
+
+# case: -n
+#
+elif [[ $V_FLAG -ge 5 ]]; then
+    echo "$0: debug[5]: because of -n, did not execute:" \
+		"$GTAR_TOOL --totals -jxvf $TARBALL" 1>&2
 fi
 
 # All Done!!! -- Jessica Noll, Age 2
 #
-if [[ -z $NOOP ]]; then
-    rm -f "$TMP_FILE"
-elif [[ $V_FLAG -ge 1 ]]; then
-    echo  "$0: debug[1]: -n disabled execution of: rm -f $TMP_FILE" 1>&2
-fi
 exit 0

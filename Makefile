@@ -66,6 +66,7 @@ TAR_YEAR= bin/tar-year.sh
 TAR_ALL= bin/tar-all.sh
 GEN_STATUS= bin/gen-status.sh
 GEN_SITEMAP= bin/gen-sitemap.sh
+SORT_GITIGNORE= bin/sort.gitignore.sh
 
 
 #############
@@ -258,6 +259,7 @@ help:
 	@echo make genpath
 	@echo make genfilelist
 	@echo make verify_entry_files
+	@echo make sort_gitignore
 	@echo make gen_authors
 	@echo make gen_location
 	@echo make gen_years
@@ -332,6 +334,12 @@ genfilelist:
 verify_entry_files: ${ALL_RUN} ${CHK_ENTRY}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${ALL_RUN} -v 3 ${CHK_ENTRY}
+
+# check to be sure all files in all entries exist
+#
+sort_gitignore: ${ALL_RUN} ${SORT_GITIGNORE}
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${ALL_RUN} -v 3 ${SORT_GITIGNORE} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # generate the top level authors.html page using the
@@ -421,6 +429,7 @@ quick_www:
 	${MAKE} genpath
 	${MAKE} genfilelist
 	${MAKE} verify_entry_files
+	${MAKE} sort_gitignore
 	${MAKE} gen_authors
 	${MAKE} gen_location
 	${MAKE} gen_years
@@ -440,6 +449,7 @@ www:
 	${MAKE} genpath
 	${MAKE} genfilelist
 	${MAKE} verify_entry_files
+	${MAKE} sort_gitignore
 	${MAKE} gen_authors
 	${MAKE} gen_location
 	${MAKE} gen_years
