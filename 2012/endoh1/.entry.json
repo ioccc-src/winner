@@ -239,7 +239,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "tbz2",
 	    "display_via_github" : false,
-	    "entry_text" : "download entry source"
+	    "entry_text" : "download entry"
 	},
 	{
 	    "file_path" : "index.html",

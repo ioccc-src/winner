@@ -255,6 +255,10 @@ indent.c:
 # the tools needed to build the web site, but it does print out a friendly
 # reminder to those who understand it. For all else, there is "RTFS". :-)
 #
+# Note: there is one rule that should not be in this list. We want to make sure
+# to thank people for not adding it if they find it, perhaps with a hint right
+# here!
+#
 help:
 	@echo make genpath
 	@echo make genfilelist
