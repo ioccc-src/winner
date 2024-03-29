@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# run_all.sh - run a command for all entrys
+# run_all.sh - run a command for all entries
 #
 # XXX - This is a temporary utility that will be replaced when
 #	the .entry.json files are built
@@ -60,7 +60,7 @@ export USAGE="usage: $0 [-h] [-v level] [-D level]
 
 	-w entry_dir.txt
 
-	tool			the tool to run over all entrys
+	tool			the tool to run over all entries
 
 Exit codes:
      0	    all OK
