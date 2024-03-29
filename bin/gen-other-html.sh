@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.2 2024-03-26"
+export VERSION="1.0.3 2024-03-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -628,8 +628,8 @@ for YYYY in $(< "$TOP_FILE"); do
 	    #
 	    if [[ -z $NOOP ]]; then
 
-		if [[ $V_FLAG -ge 5 ]]; then
-		    echo "$0: debug[5]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]}" \
+		if [[ $V_FLAG -ge 3 ]]; then
+		    echo "$0: debug[3]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]}" \
 			 "-s $DESCRIPTION -s $KEYWORDS -s $HEADER_2" \
 			 "-s $UP_LINK -s $UP_TEXT -D $D_OPTION -m $MD_FILE -v $V_FLAG --" \
 			 "$MD_FILE $HTML_FLLE" 1>&2

@@ -141,7 +141,7 @@ shopt -s lastpipe	# run last command of a pipeline not executed in the backgroun
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.2 2024-03-26"
+export VERSION="1.1.3 2024-03-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -720,24 +720,14 @@ function debug_parameters
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: SITE_URL=$SITE_URL" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: URL=$URL" 1>&2
-    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: USAGE=$USAGE" 1>&2
-    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: USAGE=$USAGE" 1>&2
-    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: USAGE=$USAGE" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: NOOP=$NOOP" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: TOPDIR=$TOPDIR" 1>&2
-    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: USAGE=$USAGE" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: MD2HTML_CFG=$MD2HTML_CFG" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: BEFORE_TOOL=$BEFORE_TOOL" 1>&2
-    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: USAGE=$USAGE" 1>&2
-    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: USAGE=$USAGE" 1>&2
-    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: USAGE=$USAGE" 1>&2
-    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: USAGE=$USAGE" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: P_FLAG_FOUND=$P_FLAG_FOUND" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: CAP_P_FLAG_FOUND=$CAP_P_FLAG_FOUND" 1>&2
-    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: USAGE=$USAGE" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: U_FLAG_FOUND=$U_FLAG_FOUND" 1>&2
-    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: USAGE=$USAGE" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: CAP_U_FLAG_FOUND=$CAP_U_FLAG_FOUND" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: AFTER_TOOL=$AFTER_TOOL" 1>&2
     for index in "${!TOKEN[@]}"; do
