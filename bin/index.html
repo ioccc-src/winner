@@ -48,6 +48,13 @@
 </div>
 
 <!-- END: this line ends content from: inc/header.default.html -->
+<!-- START: this line starts content from: inc/topnav.default.html -->
+
+<div class="topnav">
+&nbsp;
+</div>
+
+<!-- END: this line ends content from: inc/topnav.default.html -->
 <!-- START: this line starts content from: inc/begin-row.default.html -->
 
 <div class="row">
@@ -286,36 +293,30 @@ We sort with lines starting with <code>!</code> fourth.</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/tar-entry.sh</span> <span class="at">-v</span> 1 YYYY/dir</span></code></pre></div>
 <p>Suggested usage:</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> <span class="at">-v</span> 3 bin/tar-entry.sh <span class="at">-v</span> 1 <span class="at">-W</span></span></code></pre></div>
-<h2 id="tar-all.sh"><a href="tar-all.sh">tar-all.sh</a></h2>
-<p>Form the compressed tarball for all IOCCC years and all IOCCC entries.</p>
-<p>Usage:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/tar-all.sh</span> <span class="at">-v</span> 1</span></code></pre></div>
-<p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> form_entry_tarball</span></code></pre></div>
 <h2 id="tar-year.sh"><a href="tar-year.sh">tar-year.sh</a></h2>
 <p>Form a compressed tarball for an IOCCC year.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/tar-year.sh</span> <span class="at">-v</span> 1 YYYY</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/tar-year.sh</span> <span class="at">-v</span> 1 YYYY</span></code></pre></div>
 <p>Suggested usage:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-years.sh</span> <span class="at">-v</span> 3 bin/tar-year.sh <span class="at">-v</span> 1 <span class="at">-W</span></span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-years.sh</span> <span class="at">-v</span> 3 bin/tar-year.sh <span class="at">-v</span> 1 <span class="at">-W</span></span></code></pre></div>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> form_year_tarball</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> form_year_tarball</span></code></pre></div>
 <h2 id="untar-entry.sh"><a href="untar-entry.sh">untar-entry.sh</a></h2>
 <p>Untar an entry’s a compressed tarball.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/untar-entry.sh</span> <span class="at">-v</span> 1 YYYY/dir</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/untar-entry.sh</span> <span class="at">-v</span> 1 YYYY/dir</span></code></pre></div>
 <p>Suggested usage:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> <span class="at">-v</span> 3 bin/untar-entry.sh <span class="at">-v</span> 1</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> <span class="at">-v</span> 3 bin/untar-entry.sh <span class="at">-v</span> 1</span></code></pre></div>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> untar_entry_tarball</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> untar_entry_tarball</span></code></pre></div>
 <h2 id="untar-year.sh"><a href="untar-year.sh">untar-year.sh</a></h2>
 <p>Untar an IOCCC year’s compressed tarball.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/untar-year.sh</span> <span class="at">-v</span> 1 YYYY</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/untar-year.sh</span> <span class="at">-v</span> 1 YYYY</span></code></pre></div>
 <p>Suggested usage:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-years.sh</span> <span class="at">-v</span> 3 bin/untar-year.sh <span class="at">-v</span> 1</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-years.sh</span> <span class="at">-v</span> 3 bin/untar-year.sh <span class="at">-v</span> 1</span></code></pre></div>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> untar_year_tarball</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> untar_year_tarball</span></code></pre></div>
 <h1 id="how-ioccc-html-content-is-built"><a name="how"></a>How IOCCC HTML content is built</h1>
 <p>The <a href="md2html.sh">md2html.sh</a> tool is the primary tool that
 is used to form all IOCCC related HTML pages for the <a href="https://www.ioccc.org">official IOCCC web
@@ -332,16 +333,16 @@ built uses, by default, files from the <a href="../inc/index.html">inc directory
 the file name form:</p>
 <pre><code>*.default.html</code></pre>
 <p>By using command line options of the form:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> phase=name</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> phase=name</span></code></pre></div>
 <p>where <code>phase</code> is the name of an HTML phase,
 a non-default file may be used. For example:</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> topnav=up2index</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> topnav=up2index</span></code></pre></div>
 <p>will cause <a href="../inc/topnav.up2index.html">inc/topnav.up2index.html</a>
 instead of <a href="../inc/topnav.default.html">inc/topnav.default.html</a> to be
 used during the <em>topnav</em> HTML phase.</p>
 <p>If <code>name</code> is dot (i.e., <code>.</code>), then the given HTML phase is skipped.
 For example:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> footer=.</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> footer=.</span></code></pre></div>
 <p>will cause no HTML content to be produced during the <code>footer</code> HTML phase.</p>
 <h2 id="html-phases"><a name="html"></a>HTML phases</h2>
 <p>The following HTML phase files are used to build HTML content:</p>

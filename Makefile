@@ -60,10 +60,8 @@ README2INDEX= bin/readme2index.sh
 QUICK_README2INDEX= bin/quick-readme2index.sh
 UNTAR_ENTRY= bin/untar-entry.sh
 UNTAR_YEAR= bin/untar-year.sh
-UNTAR_ALL= bin/untar-all.sh
 TAR_ENTRY= bin/tar-entry.sh
 TAR_YEAR= bin/tar-year.sh
-TAR_ALL= bin/tar-all.sh
 GEN_STATUS= bin/gen-status.sh
 GEN_SITEMAP= bin/gen-sitemap.sh
 SORT_GITIGNORE= bin/sort.gitignore.sh
@@ -245,8 +243,8 @@ indent.c:
 .PHONY: help genpath genfilelist verify_entry_files gen_authors gen_location gen_years \
 	entry_index gen_top_html thanks gen_other_html quick_entry_index \
 	gen_year_index quick_www www \
-	untar_entry_tarball untar_year_tarball untar_all_tarball \
-	form_entry_tarball form_year_tarball form_all_tarball tar \
+	untar_entry_tarball untar_year_tarball \
+	form_entry_tarball form_year_tarball tar \
 	gen_status gen_sitemap sitemap timestamp update
 
 # Suggest rules in this section
@@ -271,20 +269,18 @@ help:
 	@echo make gen_top_html
 	@echo make gen_other_html
 	@echo make gen_year_index
+	@echo make gen_status
 	@echo make quick_entry_index
 	@echo make quick_www
 	@echo make www
 	@echo
 	@echo make untar_entry_tarball
 	@echo make untar_year_tarball
-	@echo make untar_all_tarball
 	@echo
 	@echo make form_entry_tarball
 	@echo make form_year_tarball
-	@echo make form_all_tarball
 	@echo make tar
 	@echo
-	@echo make gen_status
 	@echo make gen_sitemap
 	@echo make timestamp
 	@echo
@@ -440,6 +436,7 @@ quick_www:
 	${MAKE} gen_year_index
 	${MAKE} gen_top_html
 	${MAKE} gen_other_html
+	${MAKE} gen_status
 	${MAKE} quick_entry_index
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
@@ -460,6 +457,7 @@ www:
 	${MAKE} gen_year_index
 	${MAKE} gen_top_html
 	${MAKE} gen_other_html
+	${MAKE} gen_status
 	${MAKE} entry_index
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
@@ -479,14 +477,6 @@ untar_year_tarball: ${ALL_RUN}
 	${MAKE} verify_entry_files
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-# untar all entry tarballs
-#
-untar_all_tarball: ${ALL_RUN}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	${UNTAR_ALL} -v 1
-	${MAKE} verify_entry_files
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
-
 # form all entry compressed tarballs
 #
 form_entry_tarball: ${ALL_RUN} ${TAR_ENTRY}
@@ -501,13 +491,6 @@ form_year_tarball: ${ALL_YEARS} ${TAR_YEAR}
 	${ALL_YEARS} -v 3 ${TAR_YEAR} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-# form compressed tarball for all of the IOCCC
-#
-form_all_tarball: ${TAR_ALL}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	${TAR_ALL} -v 1
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
-
 # build all tarballs
 #
 tar:
@@ -518,7 +501,6 @@ tar:
 	${MAKE} verify_entry_files
 	${MAKE} form_entry_tarball
 	${MAKE} form_year_tarball
-	${MAKE} form_all_tarball
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # generate a status.json and status.html

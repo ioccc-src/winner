@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.3 2024-03-26"
+export VERSION="1.1 2024-03-30"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -576,10 +576,6 @@ fi
     cat << EOF
 # IOCCC Winning Entries by Year
 
-## All IOCCC years
-
-**Download IOCCC** [all entry source](ioccc.tar.bz2)
-
 ### Jump to:
 EOF
 
@@ -590,6 +586,8 @@ EOF
       "$FMT_TOOL" -w 120 |
       sed -e 's/ / | /g' -e 's/$/<br><br>/' -e '$s/<br><br>//'
     echo
+    echo '**Jump to** the [year level tarballs](#year_level)'
+    echo
 
 } | if [[ -z $NOOP ]]; then
     cat >> "$TMP_YEARS_MD"
@@ -599,6 +597,7 @@ else
         echo "$0: debug[3]: because of -n, All IOCCC years markdown data NOT written into: $TMP_YEARS_MD" 1>&2
     fi
 fi
+
 
 # write markdown for each IOCCC year in reverse order
 #
@@ -668,7 +667,8 @@ for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
 	ORDINAL=$(output_ordinal "$YEAR_COUNT")
 	echo "## <a name=$YYYY></a>$YYYY - The $ORDINAL IOCCC"
 	echo
-	echo "**Download IOCCC** [$YYYY entry source]($YYYY/ioccc.$YYYY.tar.bz2)"
+	echo "**About** the [$ORDINAL IOCCC]($YYYY/index.html)<br>"
+	echo "**Download** all [$YYYY IOCCC entry source]($YYYY/$YYYY.tar.bz2)"
 	echo
     } | if [[ -z $NOOP ]]; then
 	cat >> "$TMP_YEARS_MD"
@@ -810,6 +810,7 @@ for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
 	echo
 	echo '&nbsp;**Jump to:** [top](#)'
 	echo
+
     } | if [[ -z $NOOP ]]; then
 	cat >> "$TMP_YEARS_MD"
     else
@@ -823,6 +824,27 @@ for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
     #
     ((--YEAR_COUNT))
 done
+
+# write year_level links to all the year level tarballs
+#
+{
+    echo '## <a name="year_level"></a><a name="inventory"></a>IOCCC Year level tarballs'
+    echo
+    for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
+	echo "* Download all [$YYYY IOCCC entry source]($YYYY/$YYYY.tar.bz2)<br>"
+    done
+    echo
+    echo '&nbsp;**Jump to:** [top](#)'
+    echo
+
+} | if [[ -z $NOOP ]]; then
+    cat >> "$TMP_YEARS_MD"
+else
+    cat > /dev/null
+    if [[ $V_FLAG -ge 3 ]]; then
+	echo "$0: debug[3]: because of -n, links to year level tarball markdown data is NOT written into: $TMP_YEARS_MD" 1>&2
+    fi
+fi
 
 # use the md2html.sh tool to form a location HTML file, unless -n
 #

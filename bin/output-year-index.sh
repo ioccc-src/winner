@@ -108,7 +108,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.2 2024-03-26"
+export VERSION="1.2 2024-03-30"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -552,7 +552,7 @@ fi
 {
     echo "# <a name=inventory></a><a name=$YYYY></a>Winning Entries of $YYYY - The $ORDINAL IOCCC"
     echo
-    echo "**Download IOCCC** [$YYYY entry source]($YYYY/ioccc.$YYYY.tar.bz2)"
+    echo "**Download** all [$YYYY IOCCC entry source]($YYYY/$YYYY.tar.bz2)"
     echo
 } | if [[ -z $NOOP ]]; then
     cat >> "$TMP_FILE"
