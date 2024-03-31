@@ -344,9 +344,9 @@ fi
 
 # fix other CSV files
 #
-# We will fix author.csv, author_wins.csv, and year_prize.csv
+# We will fix author_wins.csv, and year_prize.csv
 #
-for csv in author.csv author_wins.csv year_prize.csv; do
+for csv in author_wins.csv year_prize.csv; do
 
     # verify that a CSV file exists
     #

@@ -43,67 +43,6 @@ Some obsolete files and tools were moved under [OLD_manifest](OLD_manifest).
 This file.
 
 
-### [author.csv](author.csv)
-
-The [author.csv](author.csv) is a CSV file that was exported from the
-[author.numbers](author.numbers) file.
-
-In case of conflict, the data in [author.numbers](author.numbers) file is
-considered authoritative over the [author.csv](author.csv) file.
-
-The [author.csv](author.csv) is generated from the [author.numbers](author.numbers) file,
-via the [macOS](https://www.apple.com/macos/)
-[Numbers](https://www.apple.com/numbers/) spreadsheet app, as follows:
-
-0. open [author.csv](author.csv) in numbers: modify if/as needed
-
-1. File -> Export To -> CSV...
-    * 1a. `[ ]` Include table names (unset)
-    * 1b. Text Encoding: Unicode (UTF-8)
-    * 1c. Click ((Save..))
-
-2. Save As: author.csv
-    * 2a. Select the `tmp` directory
-
-3. Click ((Export))
-    * 3a. If needed click ((Replace))
-
-4. Execute ./[fix_csv.sh](fix_csv.sh)
-
-
-### [author.numbers](author.numbers)
-
-A [macOS](https://www.apple.com/macos) [Numbers](https://www.apple.com/numbers/)
-spreadsheet contains information about `author`s: one line per `author` with the
-following fields:
-
-1. This field is `sort_word` string.
-
-2. This field is the full name of the `author`.
-
-3. This field is the `author_handle` of the `author`.
-
-4. This field is the primary URL of `author` or the string `null` if none was
-   given.
-
-5. This field is the email address of `author` or the string `null` if none was
-   given.
-
-6. This field is the location ISO 3166 code of `author` or the string `null` is unknown.
-   An `author` who does not wish to specify a location ISO 3166 code is encouraged to
-   use the code `XX`.  The location ISO 3166 code consists of two UPPER CASE ASCII letters.
-
-7. This field is the twitter handle of the `author` or the string `null` if none
-   was given.  This field is kept for purely historic record purposes and is
-   otherwise not used.
-
-8. This field is the mastodon handle  of the `author` or the string `null` if
-   none was given.
-
-9. This field is the alternate URL of `author` or the string `null` if none
-   was given.
-
-
 ### [author_handle.txt](author_handle.txt)
 
 A text file containing `author_handle`s for each `author`: one `author_handle`
@@ -193,9 +132,6 @@ A text file containing `entry_id` strings: one `entry_id` per line.
 This is a JSON file containing an example `author/author_handle.json` for a
 fictitious `author`.
 
-An `author/author_handle.json` file will be derived from the contents of the
-[author.csv](author.csv) file and the [author_wins.csv](author_wins.csv) file.
-
 
 ### [example.dot_entry.json](example.dot_entry.json)
 
@@ -235,17 +171,6 @@ This tool also forms [path_list.built.txt](path_list.built.txt),
 ### [format-headers.sh](format-headers.sh)
 
 This tool helped format the `README.md` files for _YYYY/dir_ winning entries.
-
-
-### [gen_author_json.sh](gen_author_json.sh)
-
-Temporary tool used to generate the `author/author_handle.json` files.
-
-The following command, executed in this directory, created the `author/` directory:
-
-```sh
-rm -rf ../author ; ./gen_author_json.sh  author_handle.txt author.csv author_wins.csv ../author
-```
 
 
 ### [gen_entry_json.sh](gen_entry_json.sh)
