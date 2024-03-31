@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.2 2024-03-26"
+export VERSION="1.2 2024-03-30"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -203,7 +203,7 @@ function output_modtime
 # write an status.json file to standard output (stdout)
 #
 # usage:
-#	output_status_json contest_status news.html status.json
+#	output_status_json contest_status news.md status.json
 #
 # returns:
 #	0 ==> no errors detected, but output may be empty
@@ -211,11 +211,17 @@ function output_modtime
 #
 function output_status_json
 {
-    local IOCCC_STATUS;	# IOCCC contest_status arg
-    local NEWS_PATH;	# news.html file path
-    local STATUS_PATH;	# status.json file path
-    local NEWS_MOD_DATE;	# modification date of news.html
-    local STATUS_MOD_DATE;	# modification date of status.json
+    local NEWS_MD_PATH;		# news.md file path
+    local STATUS_PATH;		# status.json file path
+    #
+    local IOCCC_STATUS;		# IOCCC contest_status to set
+    local NEWS_MD_MOD_DATE;	# modification date of news.md to set
+    local STATUS_JSON_MOD_DATE;	# modification date of status.json to set
+    #
+    local OLD_CONTEST_STATUS;	# "contest_status" that was in status.json
+    local NEW_CONTEST_STATUS;	# contest_status are and a potential new "contest_status"
+    local OLD_STATUS_UPDATE;	# "status_update" that was in status.json
+    local NEW_STATUS_UPDATE;	# a potential "status_update" string for now
 
     # parse args
     #
@@ -223,62 +229,82 @@ function output_status_json
 	echo "$0: ERROR: in output_status_json: expected 3 args, found $#" 1>&2
 	return 1
     fi
-    IOCCC_STATUS="$1"
-    if [[ -z $IOCCC_STATUS ]]; then
+    NEW_CONTEST_STATUS="$1"
+    if [[ -z $NEW_CONTEST_STATUS ]]; then
 	echo "$0: ERROR: in output_status_json: contest_status arg is empty" 1>&2
 	return 2
     fi
-    NEWS_PATH="$2"
-    if [[ ! -e $NEWS_PATH ]]; then
-	echo "$0: ERROR: in output_status_json: news.html arg does not exist: $NEWS_PATH" 1>&2
+    NEWS_MD_PATH="$2"
+    if [[ ! -e $NEWS_MD_PATH ]]; then
+	echo "$0: ERROR: in output_status_json: news.md arg does not exist: $NEWS_MD_PATH" 1>&2
 	return 3
     fi
-    if [[ ! -f $NEWS_PATH ]]; then
-	echo "$0: ERROR: in output_status_json: news.html arg is not a file: $NEWS_PATH" 1>&2
+    if [[ ! -f $NEWS_MD_PATH ]]; then
+	echo "$0: ERROR: in output_status_json: news.md arg is not a file: $NEWS_MD_PATH" 1>&2
 	return 4
     fi
-    if [[ ! -r $NEWS_PATH ]]; then
-	echo "$0: ERROR: in output_status_json: news.html arg is not a readable file: $NEWS_PATH" 1>&2
+    if [[ ! -r $NEWS_MD_PATH ]]; then
+	echo "$0: ERROR: in output_status_json: news.md arg is not a readable file: $NEWS_MD_PATH" 1>&2
 	return 5
     fi
     STATUS_PATH="$3"
     if [[ ! -e $STATUS_PATH ]]; then
-	echo "$0: ERROR: in output_status_json: news.html arg does not exist: $STATUS_PATH" 1>&2
+	echo "$0: ERROR: in output_status_json: status.json.html arg does not exist: $STATUS_PATH" 1>&2
 	return 6
     fi
     if [[ ! -f $STATUS_PATH ]]; then
-	echo "$0: ERROR: in output_status_json: news.html arg is not a file: $STATUS_PATH" 1>&2
+	echo "$0: ERROR: in output_status_json: status.json.html arg is not a file: $STATUS_PATH" 1>&2
 	return 7
     fi
     if [[ ! -r $STATUS_PATH ]]; then
-	echo "$0: ERROR: in output_status_json: news.html arg is not a readable file: $STATUS_PATH" 1>&2
+	echo "$0: ERROR: in output_status_json: status.json.html arg is not a readable file: $STATUS_PATH" 1>&2
 	return 8
     fi
 
-    # obtain news.html file modification date
+    # obtain news.md.html file modification date
     #
-    NEWS_MOD_DATE=$(output_modtime "$NEWS_PATH")
+    NEWS_MD_MOD_DATE=$(output_modtime "$NEWS_MD_PATH")
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: in output_status_json: modification date of $NEWS_PATH failed, error: $status" 1>&2
+	echo "$0: ERROR: in output_status_json: modification date of $NEWS_MD_PATH failed, error: $status" 1>&2
 	return 9
     fi
-    if [[ -z $NEWS_MOD_DATE ]]; then
-	echo "$0: ERROR: in output_status_json: modification date of $NEWS_PATH is empty" 1>&2
+    if [[ -z $NEWS_MD_MOD_DATE ]]; then
+	echo "$0: ERROR: in output_status_json: modification date of $NEWS_MD_PATH is empty" 1>&2
 	return 10
     fi
 
-    # obtain status.json file modification date
+    # determine the "contest_status" that was in status.json
     #
-    STATUS_MOD_DATE=$(output_modtime "$STATUS_PATH")
+    OLD_CONTEST_STATUS=$(grep '"contest_status"[[:space:]]*:[[:space:]]*"' "$STATUS_PATH" |
+			 sed -e 's/^.*:[[:space:]]*"//' -e 's/",*//')
+
+    # determine the "status_update" that was in status.json
+    #
+    OLD_STATUS_UPDATE=$(grep '"status_update"[[:space:]]*:[[:space:]]*"' "$STATUS_PATH" |
+			sed -e 's/^.*:[[:space:]]*"//' -e 's/",*//')
+
+    # update the status.json file modification date if the "contest_status" changed
+    #
+    NEW_STATUS_UPDATE=$(output_modtime "$STATUS_PATH")
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: in output_status_json: modification date of $STATUS_PATH failed, error: $status" 1>&2
 	return 11
     fi
-    if [[ -z $STATUS_MOD_DATE ]]; then
+    if [[ -z $NEW_STATUS_UPDATE ]]; then
 	echo "$0: ERROR: in output_status_json: modification date of $STATUS_PATH is empty" 1>&2
 	return 12
+    fi
+
+    # only update the "status_update" If the "contest_status" changed
+    #
+    if [[ $OLD_CONTEST_STATUS == "$NEW_CONTEST_STATUS" ]]; then
+	IOCCC_STATUS="$OLD_CONTEST_STATUS"
+	STATUS_JSON_MOD_DATE="$OLD_STATUS_UPDATE"
+    else
+	IOCCC_STATUS="$NEW_CONTEST_STATUS"
+	STATUS_JSON_MOD_DATE="$NEW_STATUS_UPDATE"
     fi
 
     # output json
@@ -287,8 +313,8 @@ function output_status_json
     echo '    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",'
     echo "    \"IOCCC_status_version\" : \"$IOCCC_STATUS_VERSION\","
     echo "    \"contest_status\" : \"$IOCCC_STATUS\","
-    echo "    \"news_update\" : \"$NEWS_MOD_DATE\","
-    echo "    \"status_update\" : \"$STATUS_MOD_DATE\""
+    echo "    \"news_update\" : \"$NEWS_MD_MOD_DATE\","
+    echo "    \"status_update\" : \"$STATUS_JSON_MOD_DATE\""
     echo '}'
     return 0
 }
@@ -541,23 +567,23 @@ if [[ ! -x $MD2HTML_SH ]]; then
     exit 5
 fi
 
-# verify readable non-empty news.html file
+# verify readable non-empty news.md file
 #
-export NEWS_HTML="news.html"
-if [[ ! -e $NEWS_HTML ]]; then
-    echo  "$0: ERROR: news.html does not exist: $NEWS_HTML" 1>&2
+export NEWS_MD="news.md"
+if [[ ! -e $NEWS_MD ]]; then
+    echo  "$0: ERROR: news.md does not exist: $NEWS_MD" 1>&2
     exit 1
 fi
-if [[ ! -f $NEWS_HTML ]]; then
-    echo  "$0: ERROR: news.html is not a regular file: $NEWS_HTML" 1>&2
+if [[ ! -f $NEWS_MD ]]; then
+    echo  "$0: ERROR: news.md is not a regular file: $NEWS_MD" 1>&2
     exit 1
 fi
-if [[ ! -r $NEWS_HTML ]]; then
-    echo  "$0: ERROR: news.html is not an executable file: $NEWS_HTML" 1>&2
+if [[ ! -r $NEWS_MD ]]; then
+    echo  "$0: ERROR: news.md is not an executable file: $NEWS_MD" 1>&2
     exit 1
 fi
-if [[ ! -s $NEWS_HTML ]]; then
-    echo  "$0: ERROR: news.html is not an executable file: $NEWS_HTML" 1>&2
+if [[ ! -s $NEWS_MD ]]; then
+    echo  "$0: ERROR: news.md is not an executable file: $NEWS_MD" 1>&2
     exit 1
 fi
 
@@ -715,7 +741,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: CONTEST_STATUS=$CONTEST_STATUS" 1>&2
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
     echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
-    echo "$0: debug[3]: NEWS_HTML=$NEWS_HTML" 1>&2
+    echo "$0: debug[3]: NEWS_MD=$NEWS_MD" 1>&2
     echo "$0: debug[3]: STATUS_JSON=$STATUS_JSON" 1>&2
     echo "$0: debug[3]: STATUS_MD=$STATUS_MD" 1>&2
     echo "$0: debug[3]: STATUS_HTML=$STATUS_HTML" 1>&2
@@ -743,9 +769,9 @@ if [[ -z $CONTEST_STATUS ]]; then
 
     # obtain the contest_status from status.json
     #
-    CONTEST_STATUS=$(grep '"contest_status"\s*:\s*"[^"][^"]*"' "$STATUS_JSON" | sed -e 's/",\s*$//' -e 's/^.*"//')
-    status="$?"
-    if [[ $status -ne 0 || -z $CONTEST_STATUS ]]; then
+    CONTEST_STATUS=$(grep '"contest_status"[[:space:]]*:[[:space:]]*"' "$STATUS_JSON" |
+		     sed -e 's/^.*:[[:space:]]*"//' -e 's/",*//')
+    if [[ -z $CONTEST_STATUS ]]; then
 	echo "$0: ERROR: cannot determine contest_status from status.json: $STATUS_JSON" 1>&2
 	exit 1
     fi
@@ -806,9 +832,9 @@ fi
 #
 if [[ -z $NOOP ]]; then
 
-    # generate a temporary status.json file based on current status, news.html and status.json
+    # generate a temporary status.json file based on current status, news.md and status.json
     #
-    output_status_json "$CONTEST_STATUS" "$NEWS_HTML" "$STATUS_JSON" > "$TMP_STATUS_JSON"
+    output_status_json "$CONTEST_STATUS" "$NEWS_MD" "$STATUS_JSON" > "$TMP_STATUS_JSON"
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: failed to form temporary status.json file: $TMP_STATUS_JSON, error code: $status" 1>&2
@@ -846,7 +872,7 @@ if [[ -z $NOOP ]]; then
 	#
 	# Rebuild temporary status.json file with updated (touched) modification time
 	#
-	output_status_json "$CONTEST_STATUS" "$NEWS_HTML" "$STATUS_JSON" > "$TMP_STATUS_JSON"
+	output_status_json "$CONTEST_STATUS" "$NEWS_MD" "$STATUS_JSON" > "$TMP_STATUS_JSON"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: failed to reform temporary status.json file: $TMP_STATUS_JSON, error code: $status" 1>&2
