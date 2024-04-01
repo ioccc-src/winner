@@ -14,16 +14,6 @@ html {
     -webkit-text-size-adjust: 100%; /* 2 */
 }
 
-/*
- * Remove hyphenation in line endings in all browsers.
- */
-p {
-    -moz-hyphens: none;
-    -ms-hyphens: none;
-    -webkit-hyphens: none;
-    hyphens: manual;
-}
-
 /* Sections ========================================================================== */
 
 /*
@@ -397,10 +387,18 @@ body {
   background: whitesmoke;
 }
 
+/* Remove hyphenation in line endings from most well known browsers */
+p {
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    -webkit-hyphens: none;
+    hyphens: manual;
+}
+
 body {
   margin: 0 auto;
   padding: 10px;
-  hyphens: auto;
+  hyphens: manual;
   overflow-wrap: break-word;
   text-rendering: optimizeLegibility;
   font-kerning: normal;
