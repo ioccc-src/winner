@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./stein $(printf "\015\015"); echo
+    ./stein $(printf "\015\015"); echo
 ```
 
 
@@ -25,7 +25,7 @@ One some machines, a control-M control-N arg is needed
 to get the command to output cleanly:
 
 ```sh
-./stein $(printf "\014\015"); echo
+    ./stein $(printf "\014\015"); echo
 ```
 
 Your system may require another set of characters.

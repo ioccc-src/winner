@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is alternate code which fixes some German at the expense of other German.
@@ -11,18 +11,18 @@ See [Alternate code](#alternate-code) below for the (fun) rationale here.
 ## To use:
 
 ```sh
-echo "full spelling of an English cardinal numeral less than a quadrillion" | ./kang
+    echo "full spelling of an English cardinal numeral less than a quadrillion" | ./kang
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh # try various languages
+    ./try.sh # try various languages
 
-./en.sh # English 0 through 13
+    ./en.sh # English 0 through 13
 
-./de.sh # German 0 through 13 with both umlauts and without (additional 'e')
+    ./de.sh # German 0 through 13 with both umlauts and without (additional 'e')
 ```
 
 How does it have no `u` or `o` in a string in the source code and yet it gets
@@ -44,29 +44,29 @@ subtlety of this entry even more.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
 ### Alternate use:
 
 ```sh
-echo "full spelling of an English cardinal numeral less than a quadrillion" | ./kang.alt
+    echo "full spelling of an English cardinal numeral less than a quadrillion" | ./kang.alt
 
-echo vier | ./kang.alt
+    echo vier | ./kang.alt
 
-echo uno | ./kang.alt
+    echo uno | ./kang.alt
 ```
 
 
 ### Alternate try:
 
 ```sh
-./try.alt.sh # try various languages
+    ./try.alt.sh # try various languages
 
-./en.alt.sh # English 0 through 13
+    ./en.alt.sh # English 0 through 13
 
-./de.alt.sh # German 0 through 13 with both umlauts and without (additional 'e')
+    ./de.alt.sh # German 0 through 13 with both umlauts and without (additional 'e')
 ```
 
 What does it get right? What does it get wrong? How does it compare to the
@@ -89,13 +89,13 @@ We've added a linefeed to the print format for convenience.
 Can you explain why:
 
 ```sh
-echo f hundr|./kang
+    echo f hundr|./kang
 ```
 
 correctly reports 500 but:
 
 ```sh
-echo hundr|./kang
+    echo hundr|./kang
 ```
 
 does not report 100, instead printing 0?
@@ -184,19 +184,19 @@ But the most important obfuscation is the clever construction of lookup table.
 The program uses 11 different characters required for recognizing 22 lexemes:
 
 ```
-zero        one         tw-         th(i)r-     fo(u)r-     fi-         six-
-seven-      eigh-       nin-        ten         eleven      twelve
-hundred(s)  thousand(s) million(s)  billion(s)  trillion(s)
-a           and         -teen       -ty
+    zero        one         tw-         th(i)r-     fo(u)r-     fi-         six-
+    seven-      eigh-       nin-        ten         eleven      twelve
+    hundred(s)  thousand(s) million(s)  billion(s)  trillion(s)
+    a           and         -teen       -ty
 ```
 
 So that they are internally represented as like:
 
 ```
-r        n        tw-      tr-      fr-      f-       s-
-sn-      g-       nn-      tn       ln       twl
-nr(s)    tsan(s)  lln(s)   blln(s)  trlln(s)
-a        an       -tn      -ty
+    r        n        tw-      tr-      fr-      f-       s-
+    sn-      g-       nn-      tn       ln       twl
+    nr(s)    tsan(s)  lln(s)   blln(s)  trlln(s)
+    a        an       -tn      -ty
 ```
 
 The stemmer recognizes the longest matching prefix, so every lexeme can be

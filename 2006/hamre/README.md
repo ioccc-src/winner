@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./hamre math_expression_string
+    ./hamre math_expression_string
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -43,8 +43,8 @@ by supplying an expression as the first argument, and the normalized
 result will be written to `stdout`.
 
 ```sh
-./hamre '-1+4/3*(2+1/(3/2*(7/2-7/3+1/6)))/2'
-2/3
+    ./hamre '-1+4/3*(2+1/(3/2*(7/2-7/3+1/6)))/2'
+    2/3
 ```
 
 If you do not supply an argument, the calculator will crash.  Other

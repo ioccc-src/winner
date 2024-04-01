@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2015 schweikhardt bugs](../../bugs.html#2015_schweikhardt).
@@ -19,7 +19,7 @@ For more detailed information see [2015 schweikhardt bugs](../../bugs.html#2015_
 ## To use:
 
 ```sh
-./prog n
+    ./prog n
 ```
 
 where n is a base 16 number of any size.
@@ -31,7 +31,7 @@ doing something else. The author explains this in more details.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 After running it once to see what commands are run, you might wish to run it a
@@ -45,7 +45,7 @@ This code is clean.  When you compile with all warnings enabled,
 such as with clang:
 
 ```sh
-cc -Weverything -pedantic -std=c11 -Dtyp=uint64\_t -O3 prog.c -o prog
+    cc -Weverything -pedantic -std=c11 -Dtyp=uint64\_t -O3 prog.c -o prog
 ```
 
 The code compiles without warnings on the systems that we tested!
@@ -58,9 +58,9 @@ Bell](http://members.tip.net.au/~dbell/) once described
 as having one of the largest "yummo quotients" in number theory:
 
 ```
-		     complexity of the solution
-yummo quotient = -----------------------------------
-		 complexity of the problem statement
+			 complexity of the solution
+    yummo quotient = -----------------------------------
+		     complexity of the problem statement
 ```
 
 [Erdős](https://en.wikipedia.org/wiki/Paul_Erdős) privately told one of the IOCCC judges:
@@ -74,15 +74,15 @@ the [Collatz conjecture](https://en.wikipedia.org/wiki/Collatz_conjecture).
 You may explore this famous conjecture using this entry:
 
 ```sh
-./prog 2410
-./prog abfff
-./prog 27f8cebf
-./prog 246f8fddf
-./prog 2e95ab51ffea9de
-./prog e6a5c22fd7bde9f
-./prog 1b7dd73a937485bf
-./prog 7d3237680d190a77e53751b
-./prog 302ab3d052fb87c06228d249581be0e4
+    ./prog 2410
+    ./prog abfff
+    ./prog 27f8cebf
+    ./prog 246f8fddf
+    ./prog 2e95ab51ffea9de
+    ./prog e6a5c22fd7bde9f
+    ./prog 1b7dd73a937485bf
+    ./prog 7d3237680d190a77e53751b
+    ./prog 302ab3d052fb87c06228d249581be0e4
 ```
 
 NOTE: [try.sh](try.sh) runs these for you, filtered through `less(1)`.
@@ -142,13 +142,13 @@ Interesting factoid: if you allow *negative* start values, there are
 a few more cycles, each of different length:
 
 ```
-−1, −2, −1
+    −1, −2, −1
 
-−5, −14, −7, −20, −10, −5
+    −5, −14, −7, −20, −10, −5
 
-−17, −50, −25, −74, −37, −110, −55, −164,
-−82, −41, −122, −61, −182, −91, −272, −136,
-−68, −34, −17
+    −17, −50, −25, −74, −37, −110, −55, −164,
+    −82, −41, −122, −61, −182, −91, −272, −136,
+    −68, −34, −17
 ```
 
 
@@ -159,16 +159,16 @@ zero-padded hex and each iteration along with a line count in decimal.
 The example above looks like this (compiled with 64 bit word size):
 
 ```sh
-$ ./prog 6
-0000000000000006
-0000000000000003 1
-000000000000000A 2
-0000000000000005 3
-0000000000000010 4
-0000000000000008 5
-0000000000000004 6
-0000000000000002 7
-0000000000000001 8
+    $ ./prog 6
+    0000000000000006
+    0000000000000003 1
+    000000000000000A 2
+    0000000000000005 3
+    0000000000000010 4
+    0000000000000008 5
+    0000000000000004 6
+    0000000000000002 7
+    0000000000000001 8
 ```
 
 The size of `n` is only limited by the argument size limit of your
@@ -176,8 +176,8 @@ shell/OS (the program implements arbitrary size `bignum`s).
 To query this on your POSIX system, run
 
 ```sh
-$ getconf ARG_MAX
-262144
+    $ getconf ARG_MAX
+    262144
 ```
 
 which reports the limit in bytes, here 256KB. This allows to test
@@ -188,12 +188,12 @@ Fear not,
 to the rescue:
 
 ```sh
-$ printf 'obase=16;10^100\n' | bc
-1249AD2594C37CEB0B2784C4CE0BF38ACE408E211A7CAAB24308A82E8F1000000000\
-0000000000000000
-$ ./prog 1249AD2594C37CEB0B2784C4CE0BF38ACE408E211A7CAAB24308A82E8F10000000000000000000000000 \
-| less
-[...]
+    $ printf 'obase=16;10^100\n' | bc
+    1249AD2594C37CEB0B2784C4CE0BF38ACE408E211A7CAAB24308A82E8F1000000000\
+    0000000000000000
+    $ ./prog 1249AD2594C37CEB0B2784C4CE0BF38ACE408E211A7CAAB24308A82E8F10000000000000000000000000 \
+    | less
+    [...]
 ```
 
 Observe how the first 100 iterations melt the zeros to the right. Can you explain
@@ -293,10 +293,10 @@ the rule "[No original
 research](https://en.wikipedia.org/wiki/Wikipedia:No_original_research)"):
 
 ```
-and	Androgynine
-xor	Xenoricine
-not	Notanamine
-tla	Triletramine
+    and	Androgynine
+    xor	Xenoricine
+    not	Notanamine
+    tla	Triletramine
 ```
 
 Interestingly, the TLI are the perfect mnemonics for C language source.
@@ -334,24 +334,24 @@ Another identity operation. I've done it for you already. Use this
 `.indent.pro` with FreeBSD indent:
 
 ```sh
-$ cat .indent.pro
-    -bad   /* blank line after decls */
-    -bap   /* blank line after functions */
-    -br    /* braces on if line */
-    -i8    /* indent */
-    -l999  /* line length */
-    -npcs  /* no space after function call names */
-    -npsl  /* don't break procedure type */
-    -ut    /* use tabs */
-    -ce    /* cuddle else */
-    -nip   /* no parameter indentation */
-    -di1   /* declaration indent */
-    -Tand
-    -Tmet
-    -Tthr
-    -Tpro
-    -Tser
-    -Tala
+    $ cat .indent.pro
+	-bad   /* blank line after decls */
+	-bap   /* blank line after functions */
+	-br    /* braces on if line */
+	-i8    /* indent */
+	-l999  /* line length */
+	-npcs  /* no space after function call names */
+	-npsl  /* don't break procedure type */
+	-ut    /* use tabs */
+	-ce    /* cuddle else */
+	-nip   /* no parameter indentation */
+	-di1   /* declaration indent */
+	-Tand
+	-Tmet
+	-Tthr
+	-Tpro
+	-Tser
+	-Tala
 ```
 
 It looks like a perfect program should have:
@@ -384,31 +384,31 @@ Spoilers ahead. Duh!
 Pseudocode, with comments matching those in the C source:
 
 ```c
-/* run */
-if (non-NULL and nonempty argv[1]) {
-   n = convert(argv[1])
-   print n                       /* 2hx */
-   while (n != 1) {              /* one */
-      if (n is odd) {            /* odd */
-	 m = deep copy of n      /* cpy */
-	 n <<= 1                 /* shl */
-	 n += m                  /* add */
-	 increment n             /* inc */
-      } else {                   /* eve */
-	 n >>= 1                 /* shr */
+    /* run */
+    if (non-NULL and nonempty argv[1]) {
+       n = convert(argv[1])
+       print n                       /* 2hx */
+       while (n != 1) {              /* one */
+	  if (n is odd) {            /* odd */
+	     m = deep copy of n      /* cpy */
+	     n <<= 1                 /* shl */
+	     n += m                  /* add */
+	     increment n             /* inc */
+	  } else {                   /* eve */
+	     n >>= 1                 /* shr */
+	  }
+	  print n                    /* 2hx */
       }
-      print n                    /* 2hx */
-  }
-}
+    }
 ```
 
 `Bignum`s are represented as the two member `struct`s:
 
 ```c
-typedef struct {
-     size_t places;   /* number of places in base 2 to the power of (8*sizeof(type)) */
-     type  *number;   /* dynamically allocated memory for number */
-} bignum
+    typedef struct {
+	 size_t places;   /* number of places in base 2 to the power of (8*sizeof(type)) */
+	 type  *number;   /* dynamically allocated memory for number */
+    } bignum
 ```
 
 
@@ -439,9 +439,9 @@ crunching. Nothing stops you from executing
 
 
 ```sh
-./prog "$(cat prog.c)"            # Kind of quine?
-./prog "$(cat rules guidelines)"  # A jackpot? Maybe next year...
-./prog "$(cat /bin/ls)"           # Number cut short at first NUL byte.
+    ./prog "$(cat prog.c)"            # Kind of quine?
+    ./prog "$(cat rules guidelines)"  # A jackpot? Maybe next year...
+    ./prog "$(cat /bin/ls)"           # Number cut short at first NUL byte.
 ```
 
 In a certain way, the program is character set and encoding agnostic.
@@ -474,7 +474,7 @@ checks various problems with respect to style, performance, portability
 and general fishiness. To enable all checks, run
 
 ```sh
-cppcheck --enable=all --force -I/usr/include -Dtyp=uint32_t prog.c
+    cppcheck --enable=all --force -I/usr/include -Dtyp=uint32_t prog.c
 ```
 
 No issues found.
@@ -487,13 +487,13 @@ function arguments to known troublemaker functions and more. It doesn't need to
 pre-process code, so can be run without the `typ` macro being defined:
 
 ```sh
-$ flawfinder prog.c
-Flawfinder version 1.31, (C) 2001-2014 David A. Wheeler.
-Number of rules (primarily dangerous function names) in C/C++ ruleset: 169
-Examining prog.c
-FINAL RESULTS:
-ANALYSIS SUMMARY:
-No hits found.
+    $ flawfinder prog.c
+    Flawfinder version 1.31, (C) 2001-2014 David A. Wheeler.
+    Number of rules (primarily dangerous function names) in C/C++ ruleset: 169
+    Examining prog.c
+    FINAL RESULTS:
+    ANALYSIS SUMMARY:
+    No hits found.
 ```
 
 #### valgrind
@@ -505,31 +505,31 @@ execution paths, even when it must bail out, valgrind should be happy. An early
 version of my program however reported this:
 
 ```
-valgrind --leak-check=full --show-leak-kinds=all ./prog 6
-[...]
-==14615== HEAP SUMMARY:
-==14615==     in use at exit: 4,096 bytes in 1 blocks
-==14615==   total heap usage: 4 allocs, 3 frees, 4,108 bytes allocated
-==14615==
-==14615== 4,096 bytes in 1 blocks are still reachable in loss record 1 of 1
-==14615==    at 0x4C236C0: malloc (in /usr/local/lib/valgrind/vgpreload_memcheck-amd64-freebsd.so)
-==14615==    by 0x4F62175: ??? (in /lib/libc.so.7)
-==14615==    by 0x4F62073: ??? (in /lib/libc.so.7)
-==14615==    by 0x4F514EE: ??? (in /lib/libc.so.7)
-==14615==    by 0x4F51265: vfprintf_l (in /lib/libc.so.7)
-==14615==    by 0x4F3E001: printf (in /lib/libc.so.7)
-==14615==    by 0x40101E: phe (in ./prog)
-==14615==    by 0x400A9F: main (in ./prog)
-==14615==
-==14615== LEAK SUMMARY:
-==14615==    definitely lost: 0 bytes in 0 blocks
-==14615==    indirectly lost: 0 bytes in 0 blocks
-==14615==      possibly lost: 0 bytes in 0 blocks
-==14615==    still reachable: 4,096 bytes in 1 blocks
-==14615==         suppressed: 0 bytes in 0 blocks
-==14615==
-==14615== For counts of detected and suppressed errors, rerun with: -v
-==14615== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+    valgrind --leak-check=full --show-leak-kinds=all ./prog 6
+    [...]
+    ==14615== HEAP SUMMARY:
+    ==14615==     in use at exit: 4,096 bytes in 1 blocks
+    ==14615==   total heap usage: 4 allocs, 3 frees, 4,108 bytes allocated
+    ==14615==
+    ==14615== 4,096 bytes in 1 blocks are still reachable in loss record 1 of 1
+    ==14615==    at 0x4C236C0: malloc (in /usr/local/lib/valgrind/vgpreload_memcheck-amd64-freebsd.so)
+    ==14615==    by 0x4F62175: ??? (in /lib/libc.so.7)
+    ==14615==    by 0x4F62073: ??? (in /lib/libc.so.7)
+    ==14615==    by 0x4F514EE: ??? (in /lib/libc.so.7)
+    ==14615==    by 0x4F51265: vfprintf_l (in /lib/libc.so.7)
+    ==14615==    by 0x4F3E001: printf (in /lib/libc.so.7)
+    ==14615==    by 0x40101E: phe (in ./prog)
+    ==14615==    by 0x400A9F: main (in ./prog)
+    ==14615==
+    ==14615== LEAK SUMMARY:
+    ==14615==    definitely lost: 0 bytes in 0 blocks
+    ==14615==    indirectly lost: 0 bytes in 0 blocks
+    ==14615==      possibly lost: 0 bytes in 0 blocks
+    ==14615==    still reachable: 4,096 bytes in 1 blocks
+    ==14615==         suppressed: 0 bytes in 0 blocks
+    ==14615==
+    ==14615== For counts of detected and suppressed errors, rerun with: -v
+    ==14615== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```
 
 From which I concluded that `printf(3)` allocated a single 4K block for
@@ -546,30 +546,30 @@ of C99 7.19.5.1, "The fclose function", was encouraging:
 So I `fclose(stdout)` before returning and now:
 
 ```
-valgrind --leak-check=full --show-leak-kinds=all ./prog 6
-==14571== Memcheck, a memory error detector
-==14571== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
-==14571== Using Valgrind-3.10.0 and LibVEX; rerun with -h for copyright info
-==14571== Command: ./prog 6
-==14571==
-0000000000000006
-0000000000000003 1
-000000000000000A 2
-0000000000000005 3
-0000000000000010 4
-0000000000000008 5
-0000000000000004 6
-0000000000000002 7
-0000000000000001 8
-==14571==
-==14571== HEAP SUMMARY:
-==14571==     in use at exit: 0 bytes in 0 blocks
-==14571==   total heap usage: 4 allocs, 4 frees, 4,120 bytes allocated
-==14571==
-==14571== All heap blocks were freed -- no leaks are possible
-==14571==
-==14571== For counts of detected and suppressed errors, rerun with: -v
-==14571== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+    valgrind --leak-check=full --show-leak-kinds=all ./prog 6
+    ==14571== Memcheck, a memory error detector
+    ==14571== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+    ==14571== Using Valgrind-3.10.0 and LibVEX; rerun with -h for copyright info
+    ==14571== Command: ./prog 6
+    ==14571==
+    0000000000000006
+    0000000000000003 1
+    000000000000000A 2
+    0000000000000005 3
+    0000000000000010 4
+    0000000000000008 5
+    0000000000000004 6
+    0000000000000002 7
+    0000000000000001 8
+    ==14571==
+    ==14571== HEAP SUMMARY:
+    ==14571==     in use at exit: 0 bytes in 0 blocks
+    ==14571==   total heap usage: 4 allocs, 4 frees, 4,120 bytes allocated
+    ==14571==
+    ==14571== All heap blocks were freed -- no leaks are possible
+    ==14571==
+    ==14571== For counts of detected and suppressed errors, rerun with: -v
+    ==14571== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```
 
 A squeaky clean valgrind result!
@@ -706,7 +706,7 @@ that printing digits with `'0' + digit` is not allowed (even though
 `'0'` is technically an `int`!) so I am forced to output hex digits with
 
 ```c
-printf("%c", (met)tyr + 32 + 16 + ((8 + EOF) * ((met)tyr / (8 + 2))));
+    printf("%c", (met)tyr + 32 + 16 + ((8 + EOF) * ((met)tyr / (8 + 2))));
 ```
 
 because of the "no magic numbers other than powers of two" rule. How is this
@@ -731,8 +731,8 @@ all expressions involving more than one operator, especially those for which
 a cast is required, leading to hard to understand expressions such as
 
 ```c
-const ser glx = (ser)((asx > (ser)64u) ? (ser)((ser)asx + (ser)8u + (ser)1u) : (ser)asx);
-not.not[leu] = (and)((and)not.not[leu] | (and)(((and)glx % (and)16u) << (and)lys));
+    const ser glx = (ser)((asx > (ser)64u) ? (ser)((ser)asx + (ser)8u + (ser)1u) : (ser)asx);
+    not.not[leu] = (and)((and)not.not[leu] | (and)(((and)glx % (and)16u) << (and)lys));
 ```
 
 MISRA 14.7: "A function shall have a single point of exit at the end of
@@ -748,17 +748,17 @@ information shall be tested." A cast to `void` would draw a lint warning, so
 I use the `printf(3)` result in expressions,
 
 ```c
-lys -= 4 * printf("%c", (met)tyr + 32 + 16 + ((8 + EOF) * ((met)tyr / (8 + 2))));
-val += printf("\n") / ((__LINE__ * L_tmpnam) + TMP_MAX);
-val -= (printf(" %d\n", val) > BUFSIZ) ? FILENAME_MAX : EOF;
+    lys -= 4 * printf("%c", (met)tyr + 32 + 16 + ((8 + EOF) * ((met)tyr / (8 + 2))));
+    val += printf("\n") / ((__LINE__ * L_tmpnam) + TMP_MAX);
+    val -= (printf(" %d\n", val) > BUFSIZ) ? FILENAME_MAX : EOF;
 ```
 
 which are, in the absence of errors, equivalent to
 
 ```c
-lys -= 4;
-/*nop*/
-++val;
+    lys -= 4;
+    /*nop*/
+    ++val;
 ```
 
 
@@ -773,9 +773,9 @@ addressed object." in conjunction with lint's "Note 952: Parameter could
 be declared `const`" causes `const`-poisoning for all functions,
 
 ```c
-static void phe(const ala not);
-static void gly(ala *const not, const and his);
-met main(met val, const pro *const his[]);
+    static void phe(const ala not);
+    static void gly(ala *const not, const and his);
+    met main(met val, const pro *const his[]);
 ```
 
 and quite a number of automatic variables.
@@ -793,17 +793,17 @@ If your compiler supports a 128 bit wide type (e.g. clang, gcc) then
 you can use it via the `typ` macro:
 
 ```sh
-clang -Dtyp=__uint128_t -o prog prog.c
+    clang -Dtyp=__uint128_t -o prog prog.c
 ```
 
 Indeed, the program can use (and lints clean for) all of
 
 ```sh
-clang -Dtyp=uint8_t  -o prog8  prog.c
-clang -Dtyp=uint16_t -o prog16 prog.c
-clang -Dtyp=uint32_t -o prog32 prog.c
-clang -Dtyp=uint64_t -o prog64 prog.c
-clang -std=c89 -Dtyp="unsigned long" -o prog89 prog.c
+    clang -Dtyp=uint8_t  -o prog8  prog.c
+    clang -Dtyp=uint16_t -o prog16 prog.c
+    clang -Dtyp=uint32_t -o prog32 prog.c
+    clang -Dtyp=uint64_t -o prog64 prog.c
+    clang -std=c89 -Dtyp="unsigned long" -o prog89 prog.c
 ```
 
 This works because the program has no need for corresponding `SCN` or `PRI`

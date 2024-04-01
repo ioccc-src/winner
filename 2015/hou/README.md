@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2015 hou bugs](../../bugs.html#2015_hou).
@@ -19,15 +19,15 @@ For more detailed information see [2015 hou bugs](../../bugs.html#2015_hou).
 ## To use:
 
 ```sh
-echo something | ./prog
-./prog < file
+    echo something | ./prog
+    ./prog < file
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -43,8 +43,8 @@ the reference code!
 Some things that make you go, "huh?"
 
 ```sh
-./prog < prog.c | cut -c-5
-./prog < Makefile | cut -c-4
+    ./prog < prog.c | cut -c-5
+    ./prog < Makefile | cut -c-4
 ```
 
 How are those values magically returned?
@@ -52,7 +52,7 @@ How are those values magically returned?
 What happens with a large file? Something over 256K.
 
 ```sh
-./prog < large_file
+    ./prog < large_file
 ```
 
 Where does that message come from?

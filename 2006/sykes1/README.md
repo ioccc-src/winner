@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an alt version based on the author's remarks. The [try.sh](try.sh)
@@ -14,7 +14,7 @@ specifically see the [Alternate code](#alternate-code) section below.
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2006 sykes1 bugs](../../bugs.html#2006_sykes1).
@@ -23,7 +23,7 @@ For more detailed information see [2006 sykes1 bugs](../../bugs.html#2006_sykes1
 ## To use:
 
 ```sh
-./sykes1
+    ./sykes1
 ```
 
 Next point your browser to the file: `sykes1.html`.
@@ -32,7 +32,7 @@ Next point your browser to the file: `sykes1.html`.
 ## Try:
 
 ```sh
-./sykes1 10
+    ./sykes1 10
 ```
 
 Refresh your browser.
@@ -40,7 +40,7 @@ Refresh your browser.
 You might also try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 This will run both the original entry and the alt code to show some differences.
@@ -53,24 +53,24 @@ maximum:
 
 
 ```sh
-time ./sykes1 19186
+    time ./sykes1 19186
 ```
 
 This was done on a Rocky Linux 9.2 server with `Intel(R) Core(TM) i9-9900K CPU @
 3.60GHz` with 16 cores (via HyperThreading):
 
 ```
-real	6m35.524s
-user	6m35.159s
-sys	0m0.002s
+    real	6m35.524s
+    user	6m35.159s
+    sys		0m0.002s
 ```
 
 and done with macOS Sonoma with the Max M1 chip:
 
 ```
-real	7m10.786s
-user	7m8.322s
-sys	0m0.110s
+    real	7m10.786s
+    user	7m8.322s
+    sys		0m0.110s
 ```
 
 
@@ -82,7 +82,7 @@ This alternate code is based on the author's remarks.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -97,7 +97,7 @@ The [try.sh](try.sh) script will use both versions to show some differences. You
 can do so like:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -107,7 +107,7 @@ Read the [sykes1.html](sykes1.html) page source.
 Now then read the C source.  Confused?  :-) If it's not clear try:
 
 ```sh
-diff -s sykes1.c sykes1.html
+    diff -s sykes1.c sykes1.html
 ```
 
 For extra credit, understand what happens when you give this entry
@@ -139,7 +139,7 @@ need to be very lucky indeed to stumble across a solution.
 Compile the program, then test that it works:
 
 ```sh
-./sykes1
+    ./sykes1
 ```
 
 Shortly you should see the first solution pop out on your screen.  It
@@ -155,7 +155,7 @@ cube.  Rendered in glorious 3D color.
 Want to see another solution?  Try:
 
 ```sh
-./sykes1 some_number
+    ./sykes1 some_number
 ```
 
 The program will discard solutions up to the number, and output numbered
@@ -166,7 +166,7 @@ Try some more - there are exactly `19186` solutions to choose from.
 If you have a fast machine you might try the last solution:
 
 ```sh
-./sykes1 19186
+    ./sykes1 19186
 ```
 
 On my machine this takes about half an hour to run.
@@ -179,9 +179,9 @@ the pieces into the cube one by one.  The cube pieces are defined near
 the start of the program:
 
 ```c
-int s[ ] = { 186, 94, 1426, 3098
-	,1047 , 122 , 1082 , 3083 , 1039
-	, 569 , 527 , 1054 , 531  }  ;
+    int s[ ] = { 186, 94, 1426, 3098
+	    ,1047 , 122 , 1082 , 3083 , 1039
+	    , 569 , 527 , 1054 , 531  }  ;
 ```
 
 Each piece is a bitmap, and represents a 3x3x3 cube.
@@ -190,38 +190,38 @@ For instance the first piece is `186` - this is `010111010` in binary.
 Written out like this you can see that it is the cross shaped piece:
 
 ```
-010
-111
-010
+    010
+    111
+    010
 ```
 
 The other pieces are defined similarly. Most of the rest require more
 than one layer, such as piece 3 (`1426`):
 
 ```
-000
-000
-010
+    000
+    000
+    010
 
-110
-010
-010
+    110
+    010
+    010
 ```
 
 Imagine the two layers on top of each other, and you should see this
 shape:
 
 ```
-          +---------+
-         / +----+  /|
-        +-/    /| / |
-        |+----+ |/  +
-        ||    | +  /
-        +|    |   /
-         |    |  /
-         |    | /
-         |    |/
-         +----+
+      +---------+
+     / +----+  /|
+    +-/    /| / |
+    |+----+ |/  +
+    ||    | +  /
+    +|    |   /
+     |    |  /
+     |    | /
+     |    |/
+     +----+
 ```
 
 
@@ -234,7 +234,7 @@ For example, if you modify line 13 of the source like this, the program
 will solve for a different piece set:
 
 ```c
-int s[ ] = { 187, 94, 402, 3098
+    int s[ ] = { 187, 94, 402, 3098
 ```
 
 And of course you can make your own.

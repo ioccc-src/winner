@@ -1,22 +1,22 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## Try:
 
 ```sh
-./reddy
-char *(*(fun[16])();
-char *(*(*(*(*(*fun[32])))))();
+    ./reddy
+    char *(*(fun[16])();
+    char *(*(*(*(*(*fun[32])))))();
 ```
 
 What happens if you input, and what you do about it?
 
 ```c
-char *(*(*(*(*(*fun[32])))))());
+    char *(*(*(*(*(*fun[32])))))());
 ```
 
 

@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 If you wish to save state so that you can run the program and keep files changed
@@ -9,7 +9,7 @@ If you wish to save state so that you can run the program and keep files changed
 like:
 
 ```sh
-make clobber SAVE=1 all
+    make clobber SAVE=1 all
 ```
 
 Make sure that if you do add a file (including by compiling code) that before
@@ -22,8 +22,8 @@ will be corrupt if it does.
 The current status of this entry is:
 
 ```
-STATUS: known bug - please help us fix
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: known bug - please help us fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2018 mills bugs](../../bugs.html#2018_mills).
@@ -32,14 +32,14 @@ For more detailed information see [2018 mills bugs](../../bugs.html#2018_mills).
 ## To use:
 
 ```sh
-./prog
+    ./prog
 ```
 
 
 ## Try:
 
 ```sh
-./prog
+    ./prog
 ```
 
 At the `>boot` prompt, type return.
@@ -48,11 +48,11 @@ At the `:` prompt, type `rk(0,0)rkunix` and wait for it to initialise itself.
 Now try typing:
 
 ```sh
-cat > prog.c
-main(){ printf("Hello, world!\n"); }
-^D
-cc prog.c
-a.out
+    cat > prog.c
+    main(){ printf("Hello, world!\n"); }
+    ^D
+    cc prog.c
+    a.out
 ```
 
 where `^D` is EOF.
@@ -60,8 +60,8 @@ where `^D` is EOF.
 Next try:
 
 ```sh
-cc mullender.c
-a.out
+    cc mullender.c
+    a.out
 ```
 
 ... and enjoy the classic [1984/mullender](../../1984/mullender/index.html) entry as
@@ -82,7 +82,7 @@ This program can take you back to the start of everything, it is possible to
 run v0. Just type:
 
 ```sh
-./v0
+    ./v0
 ```
 
 NOTE: To quit v0, press Control-E.
@@ -92,7 +92,7 @@ password are "dmr" and "dmr". To make things more familiar you'll need to
 create '.' as it hasn't been invented yet on this image!
 
 ```sh
-@ ln dd dmr .
+    @ ln dd dmr .
 ```
 
 An `ls` will reveal that C hasn't been invented yet! IOBCC anyone? The
@@ -103,7 +103,7 @@ But wait, we said this was the start of it all! This program can also run a
 program that replaces an even larger machine that can run BSD 2.9. To start this,
 
 ```sh
-./prog
+    ./prog
 ```
 
 At the `>boot` prompt, type return.
@@ -119,7 +119,7 @@ shown earlier.
 But wait, there is even more!  Try:
 
 ```sh
-./v6
+    ./v6
 ```
 
 At the `@` prompt, type `rkunix`. You might want to type `stty -lcase` as
@@ -160,15 +160,15 @@ To run BSD 2.9, do `make` to build `prog` and then `./prog` to run it.
 You should see a prompt from the first-stage bootloader that looks like
 
 ```
->boot
+    >boot
 ```
 
 Hit enter/return at this point and you will get to the second-stage boot loader
 that looks like
 
 ```
-40Boot
-:
+    40Boot
+    :
 ```
 
 The 40 in the prompt indicates that the bootloader has correctly determined
@@ -179,32 +179,32 @@ the system to look at the first partition on the first `RK05` fixed disk, find
 the `rkunix` file and load it.  You should eventually see the following:
 
 ```
->boot
+    >boot
 
-40Boot
-: rk(0,0)rkunix
+    40Boot
+    : rk(0,0)rkunix
 
-Berkeley UNIX (Rev. 2.9.1) Sun Nov 20 14:55:50 PST 1983
-mem = 135872
+    Berkeley UNIX (Rev. 2.9.1) Sun Nov 20 14:55:50 PST 1983
+    mem = 135872
 
-CONFIGURE SYSTEM:
-xp ? csr 176700 vector 254 skipped:  No CSR
-rk 0 csr 177400 vector 220 attached
-hk ? csr 177440 vector 210 skipped:  No CSR
-rl ? csr 174400 vector 160 skipped:  No CSR
-rp ? csr 176700 vector 254 skipped:  No CSR
-ht 0 csr 172440 vector 224 skipped:  No CSR
-tm 0 csr 172520 vector 224 skipped:  No CSR
-ts 0 csr 172520 vector 224 skipped:  No CSR
-dh ? csr 160020 vector 370 skipped:  No CSR
-dm ? csr 170500 vector 360 skipped:  No autoconfig routines
-dz ? csr 160110 vector 320 skipped:  No CSR
-dz ? csr 160110 vector 320 skipped:  No CSR
-dn 0 csr 175200 vector 300 skipped:  No autoconfig routines
-vp ? csr 177500 vector 174 skipped:  No autoconfig routines
-lp ? csr 177514 vector 200 skipped:  No CSR
-Erase=^?, kill=^U, intr=^C
-#
+    CONFIGURE SYSTEM:
+    xp ? csr 176700 vector 254 skipped:  No CSR
+    rk 0 csr 177400 vector 220 attached
+    hk ? csr 177440 vector 210 skipped:  No CSR
+    rl ? csr 174400 vector 160 skipped:  No CSR
+    rp ? csr 176700 vector 254 skipped:  No CSR
+    ht 0 csr 172440 vector 224 skipped:  No CSR
+    tm 0 csr 172520 vector 224 skipped:  No CSR
+    ts 0 csr 172520 vector 224 skipped:  No CSR
+    dh ? csr 160020 vector 370 skipped:  No CSR
+    dm ? csr 170500 vector 360 skipped:  No autoconfig routines
+    dz ? csr 160110 vector 320 skipped:  No CSR
+    dz ? csr 160110 vector 320 skipped:  No CSR
+    dn 0 csr 175200 vector 300 skipped:  No autoconfig routines
+    vp ? csr 177500 vector 174 skipped:  No autoconfig routines
+    lp ? csr 177514 vector 200 skipped:  No CSR
+    Erase=^?, kill=^U, intr=^C
+    #
 ```
 
 Congratulations, you are running BSD UNIX 2.9 in single-user mode as root.
@@ -221,15 +221,15 @@ Let's try some:
 
 
 ```sh
-# ls
-.cshrc       .profile     boot         hkunix       mnt          tmp
-.login       2.9stamp     dev          lib          mullender.c  unix
-.msgsrc      bin          etc          lost+found   rkunix       usr
-# df
-Filesystem  Mounted on  kbytes    used    free  % used
-/dev/rk0    /             1958    1688     270     86%
-# bin/cc mullender.c
-# ./a.out
+    # ls
+    .cshrc       .profile     boot         hkunix       mnt          tmp
+    .login       2.9stamp     dev          lib          mullender.c  unix
+    .msgsrc      bin          etc          lost+found   rkunix       usr
+    # df
+    Filesystem  Mounted on  kbytes    used    free  % used
+    /dev/rk0    /             1958    1688     270     86%
+    # bin/cc mullender.c
+    # ./a.out
 ```
 
 The program you've just run was the [winning entry of the first IOCCC contest from
@@ -262,21 +262,21 @@ disk image.  Type `make v6` to build it, then type `./prog` to run it.
 You should see the boot loader prompt which is a single `@`:
 
 ```
-@
+    @
 ```
 
 At this point, you again must type a special incantation: `rkunix`.  After that
 you should see:
 
 ```
-@rkunix
-mem = 1035
-RESTRICTED RIGHTS
+    @rkunix
+    mem = 1035
+    RESTRICTED RIGHTS
 
-Use, duplication or disclosure is subject to
-restrictions stated in Contract with Western
-Electric Company, Inc.
-#
+    Use, duplication or disclosure is subject to
+    restrictions stated in Contract with Western
+    Electric Company, Inc.
+    #
 ```
 
 You are now running a single-user session of v6 UNIX.  You might want to start
@@ -288,35 +288,35 @@ may need to use Control-E to quit the emulation.
 Assuming you're more careful than that, we can try a few commands:
 
 ```
-@rkunix
-mem = 1035
-RESTRICTED RIGHTS
+    @rkunix
+    mem = 1035
+    RESTRICTED RIGHTS
 
-Use, duplication or disclosure is subject to
-restrictions stated in Contract with Western
-Electric Company, Inc.
-# STTY -LCASE
-# ls
-bin
-dev
-etc
-hpunix
-lib
-mnt
-rkunix
-rpunix
-tmp
-unix
-usr
-# cat > foo.c
-main()
-{
-    printf("Hello, World!\n");
-}
-^D
-# cc foo.c
-# ./a.out
-Hello, World!
+    Use, duplication or disclosure is subject to
+    restrictions stated in Contract with Western
+    Electric Company, Inc.
+    # STTY -LCASE
+    # ls
+    bin
+    dev
+    etc
+    hpunix
+    lib
+    mnt
+    rkunix
+    rpunix
+    tmp
+    unix
+    usr
+    # cat > foo.c
+    main()
+    {
+	printf("Hello, World!\n");
+    }
+    ^D
+    # cc foo.c
+    # ./a.out
+    Hello, World!
 ```
 
 Why is Version 6 interesting?  Well, it was the oldest version that I could
@@ -371,17 +371,17 @@ native PDP-7 emulation, it gets its own binary.  Type `./v0` to run it.  You
 should see the login prompt.
 
 ```
-login:
+    login:
 ```
 
 There are two user accounts `ken` and `dmr`, with the passwords `ken` and `dmr`
 respectively.  Let's try the Dennis Richie's `dmr` account:
 
 ```
-login: dmr
-password: dmr
-@ ls
-.       ?
+    login: dmr
+    password: dmr
+    @ ls
+    .       ?
 ```
 
 Even though this is not Ken's doing, I feel this gives me licence to
@@ -408,56 +408,56 @@ of the user home directories (this will eventually become `/`, the root
 path).  We can do
 
 ```
-@ ln dd dmr .
-```
+    @ ln dd dmr .
+    ```
 
-To make the new link (note that `ln` doesn't support paths either, so you have
+    To make the new link (note that `ln` doesn't support paths either, so you have
 to give it three arguments -- a directory in the current dir, a file in that
 directory, and the new name).
 
 Now `ls` will work, and we can try some other things while we are here:
 
 ```
-login: dmr
-password: dmr
-@ ln dd dmr .
-@ ls
-dd
-system
-as.s
-b_readme
-bi.s
-bl.s
-db.s
-hello.b
-ops.s
-.
-@ cat b_readme
-Here is how to compile and run hello.b:
+    login: dmr
+    password: dmr
+    @ ln dd dmr .
+    @ ls
+    dd
+    system
+    as.s
+    b_readme
+    bi.s
+    bl.s
+    db.s
+    hello.b
+    ops.s
+    .
+    @ cat b_readme
+    Here is how to compile and run hello.b:
 
-@ bc hello.b hello.s
-@ as ops.s bl.s hello.s bi.s
-I
-II
-ops.s
-bl.s
-hello.s
-bi.s
-@ a.out
-Hello, World!
+    @ bc hello.b hello.s
+    @ as ops.s bl.s hello.s bi.s
+    I
+    II
+    ops.s
+    bl.s
+    hello.s
+    bi.s
+    @ a.out
+    Hello, World!
 
 
-@ bc hello.b hello.s
-@ as ops.s bl.s hello.s bi.s
-I
-II
-ops.s
-bl.s
-hello.s
-bi.s
-@ a.out
-Hello, World!
-@
+    @ bc hello.b hello.s
+    @ as ops.s bl.s hello.s bi.s
+    I
+    II
+    ops.s
+    bl.s
+    hello.s
+    bi.s
+    @ a.out
+    Hello, World!
+    @
 ```
 
 The last command is invoking the compiler for an extremely early version of

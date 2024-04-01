@@ -1,24 +1,24 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./dorssel
-# input some text
+    ./dorssel
+    # input some text
 
-echo text | ./dorssel
+    echo text | ./dorssel
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -49,8 +49,8 @@ Try doing what the last part of the last command in [try.sh](try.sh) suggests.
 As in, do the following:
 
 ```sh
-echo ". -..- . .-. -.-. .. ... .
--.-. .... .- -. --. .  - .... .  .--. .-. --- --. .-. .- --  ... ---  .. -  -.. --- . ...  -. --- -  ... .... --- ..- -" | ./dorssel
+    echo ". -..- . .-. -.-. .. ... .
+    -.-. .... .- -. --. .  - .... .  .--. .-. --- --. .-. .- --  ... ---  .. -  -.. --- . ...  -. --- -  ... .... --- ..- -" | ./dorssel
 ```
 
 and make the necessary adjustments.
@@ -92,7 +92,7 @@ invoke undefined behavior.
 Try:
 
 ```sh
-./dorssel < dorssel.c | ./dorssel
+    ./dorssel < dorssel.c | ./dorssel
 ```
 
 to see what variables, numbers, and functions are used.  (Does a
@@ -102,20 +102,20 @@ better job than most C beautifiers).
 text that can be reversibly Morsified, i.e.
 
 ```sh
-./dorssel < dorssel.c | ./dorssel | ./dorssel | ./dorssel
+    ./dorssel < dorssel.c | ./dorssel | ./dorssel | ./dorssel
 ```
 
 is the same as
 
 ```sh
-./dorssel < dorssel.c | ./dorssel
+    ./dorssel < dorssel.c | ./dorssel
 ```
 
 - The file [dorssel.md](dorssel.md) contains all the information needed to
 understand this program.  For an obfuscated spoiler, try
 
 ```sh
-./dorssel < dorssel.md
+    ./dorssel < dorssel.md
 ```
 
 

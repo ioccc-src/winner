@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 There is an [alternate version](#alternate-code) that does something different
@@ -12,7 +12,7 @@ that can be used if your compiler is incapable of compiling `X=g()...` in
 ## To use:
 
 ```sh
-./pjr
+    ./pjr
 ```
 
 
@@ -23,7 +23,7 @@ Note that some compilers will be unable to compile the expression `X=g()...` in
 `main()` with:
 
 ```c
-main(){X=s().v().o().o().l().S().d().l().i().o().w().N();}
+    main(){X=s().v().o().o().l().S().d().l().i().o().w().N();}
 ```
 
 if this is a problem, which is what this alternate code is.
@@ -35,14 +35,14 @@ well.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
 ### Alternate use:
 
 ```sh
-./pjr.alt
+    ./pjr.alt
 ```
 
 
@@ -69,20 +69,20 @@ alphabetical character from a to z is printed out as its
 opposite:
 
 ```
-a->z b->y c->x etc
+    a->z b->y c->x etc
 ```
 
 To encode a new string input the string as it is meant to come out:
 
 ```c
-X=s().v().o().o().l().S().d().l().i().o().w().N();
+    X=s().v().o().o().l().S().d().l().i().o().w().N();
 ```
 
 Note: `S()` represents a space and `N()` a newline.  This will now
 produce...
 
 ```
-hello world
+    hello world
 ```
 
 By the way, there is actually a piece of code which is not used

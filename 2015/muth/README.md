@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-make -B [MACHINE=your_machine.h] [TAPE=your_tape.h] [X=[0|1|2|3|4|5|6|7|8|9]] [V=[0|1|2]] run
+    make -B [MACHINE=your_machine.h] [TAPE=your_tape.h] [X=[0|1|2|3|4|5|6|7|8|9]] [V=[0|1|2]] run
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -69,13 +69,13 @@ files for examples.
 Every symbol used (except `_`) must be explicitly declared using
 
 ```c
-#define sym_SYMBOL(sym, _SYMBOL) sym
+    #define sym_SYMBOL(sym, _SYMBOL) sym
 ```
 
 Example:
 
 ```c
-#define sym_1(sym, _1) sym
+    #define sym_1(sym, _1) sym
 ```
 
 
@@ -85,7 +85,7 @@ The initial content of the tape must be defined in the tape header using a
 triple like:
 
 ```c
-#define tape ((((,),...l2), l1), c, (r1, (r2..., (,))))
+    #define tape ((((,),...l2), l1), c, (r1, (r2..., (,))))
 ```
 
 - `l1`, `l2`, ... are the symbols to the left
@@ -101,7 +101,7 @@ underscore symbols (`_`). They are expanded on demand.
 All transitions are defined in the machine header using the syntax
 
 ```
-#define CURRENT_SCANNED (WRITE, MOVEMENT, NEXT)
+    #define CURRENT_SCANNED (WRITE, MOVEMENT, NEXT)
 ```
 
 where
@@ -120,7 +120,7 @@ machine.
 To halt the machine, use the keyword `break` as in
 
 ```c
-#define A_1 (2, break)
+    #define A_1 (2, break)
 ```
 
 <!--

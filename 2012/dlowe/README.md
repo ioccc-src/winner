@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2012 dlowe bugs](../../bugs.html#2012_dlowe).
@@ -19,14 +19,14 @@ For more detailed information see [2012 dlowe bugs](../../bugs.html#2012_dlowe).
 ## To use:
 
 ```sh
-./dlowe
+    ./dlowe
 ```
 
 
 ## Try:
 
 ```sh
-./dlowe
+    ./dlowe
 ```
 
 Watch for a while if you like, then press a key within the window.

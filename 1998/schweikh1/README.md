@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 There is an alternate version of this entry that will work with macOS. See the
@@ -13,7 +13,7 @@ includes some interesting details about the entry.
 ## To use:
 
 ```sh
-./schweikh1
+    ./schweikh1
 ```
 
 
@@ -31,7 +31,7 @@ if you don't have a Mac as it has some interesting details about the entry.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -88,15 +88,15 @@ the most likely result is no output and/or an exit status of 1.
 If Amendment One headers are missing you will see something like:
 
 ```
-<iso646.h>:
-gcc: /usr/include/iso646.h: No such file or directory
-gcc: No input files specified
-<wctype.h>:
-gcc: /usr/include/wctype.h: No such file or directory
-gcc: No input files specified
-<wchar.h>:
-gcc: /usr/include/wchar.h: No such file or directory
-gcc: No input files specified
+    <iso646.h>:
+    gcc: /usr/include/iso646.h: No such file or directory
+    gcc: No input files specified
+    <wctype.h>:
+    gcc: /usr/include/wctype.h: No such file or directory
+    gcc: No input files specified
+    <wchar.h>:
+    gcc: /usr/include/wchar.h: No such file or directory
+    gcc: No input files specified
 ```
 
 Bug your vendor for an upgrade.
@@ -127,17 +127,17 @@ programs that may fail to compile due to syntax errors: supposing that
 `<stdio.h>` defines `PIPE_BUF`, then the conforming
 
 ```c
-#include <assert.h>
-#include <stdio.h>    /*  <- or where the bogus macro is defined */
-#include <string.h>
-#define STR(x) #x
-#define XSTR(x) STR(x)
-int main (void)
-{
-   int PIPE_BUF = 0;
-   assert (strcmp ("PIPE_BUF", XSTR (PIPE_BUF)) == 0);
-   return 0;
-}
+    #include <assert.h>
+    #include <stdio.h>    /*  <- or where the bogus macro is defined */
+    #include <string.h>
+    #define STR(x) #x
+    #define XSTR(x) STR(x)
+    int main (void)
+    {
+       int PIPE_BUF = 0;
+       assert (strcmp ("PIPE_BUF", XSTR (PIPE_BUF)) == 0);
+       return 0;
+    }
 ```
 
 is expected to compile and meet the assertion. If it does not, your
@@ -155,18 +155,18 @@ C compilers.
    must resemble one of the canonical forms, `"foo.h"` or `<bar.h>`.
    This lets us write things like
 
- ```c
- #define HEADER "foo.h"
- #include HEADER
- ```
+```c
+    #define HEADER "foo.h"
+    #include HEADER
+```
 
    I could not find a compiler rejecting this. However, if we're
    torturing the preprocessor a little more, by using token pasting,
    at least one compiler falls over.
 
 ```c
-#define H(x) <st##x##.h>
-#include H(dio)              /* expands to <stdio.h> */
+    #define H(x) <st##x##.h>
+    #include H(dio)              /* expands to <stdio.h> */
 ```
 
    is rejected by tcc version 4.1.2, the TenDRA compiler:
@@ -188,19 +188,19 @@ C compilers.
    which may include octal escape sequences. Let's look at
 
 ```c
-#include <stdio.h>
-#line 42 "foo\0bar"
-int main (void) {
-   printf ("%s %d\n", __FILE__, (int)sizeof __FILE__);
-   return 0;
-}
+    #include <stdio.h>
+    #line 42 "foo\0bar"
+    int main (void) {
+       printf ("%s %d\n", __FILE__, (int)sizeof __FILE__);
+       return 0;
+    }
 ```
 
    This is supposed to output `'foo 8'`. Here's what happens in RL:
 
 ```
-foo 4        gcc 2.7.2.1, lcc
-foo\0bar 9   tcc 4.1.2, Sunsoft cc turn "\0" into "\\0", ugh!
+    foo 4        gcc 2.7.2.1, lcc
+    foo\0bar 9   tcc 4.1.2, Sunsoft cc turn "\0" into "\\0", ugh!
 ```
 
    (I have written a bug report for gcc. Newer versions and egcs are ok.)
@@ -215,8 +215,8 @@ foo\0bar 9   tcc 4.1.2, Sunsoft cc turn "\0" into "\\0", ugh!
     no chance to use Standardese weasel words as an escape: can I have
 
 ```c
-  case <some_token>:
-  case <some_token>:
+    case <some_token>:
+    case <some_token>:
 ```
 
     in the same switch? (Note that you need the [invisible] newline. You
@@ -256,19 +256,18 @@ The advantages of an independent clean room approach...
 
 
 ```perl
-#!/usr/bin/perl -w
-$/ = "\0";
-$_ = <>;
-s/[;{}][ \t\n]/\n/g;
-s/[ \t\n]+//g;
-print length ($_),"\n";
-
+    #!/usr/bin/perl -w
+    $/ = "\0";
+    $_ = <>;
+    s/[;{}][ \t\n]/\n/g;
+    s/[ \t\n]+//g;
+    print length ($_),"\n";
 ```
 
 To use, try:
 
 ```sh
-perl ./charcount.pl schweikh1.c
+    perl ./charcount.pl schweikh1.c
 ```
 
 

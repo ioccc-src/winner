@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./eastman
+    ./eastman
 ```
 
 NOTE: to restore your cursor in your shell, try `reset`.
@@ -20,7 +20,7 @@ Run the program. Quit it (ctrl-c/intr). Resize your terminal window. Run it
 again. Try doing this a number of times with different sizes each time.
 
 ```sh
-./eastman
+    ./eastman
 ```
 
 NOTE: to restore your cursor in your shell, try `reset`.
@@ -61,7 +61,7 @@ program is running, though.  It only checks the size once, when it starts up.
 To compile:
 
 ```sh
-cc -lm eastman.c
+    cc -lm eastman.c
 ```
 
 

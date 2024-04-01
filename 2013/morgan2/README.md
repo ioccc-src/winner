@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,13 +10,13 @@ make
 For the console version (ncurses):
 
 ```sh
-./morgan2
+    ./morgan2
 ```
 
 For the graphical version (X11):
 
 ```sh
-./morgan2 X
+    ./morgan2 X
 ```
 
 
@@ -133,13 +133,13 @@ simply press `q` when you have finished...
 With gcc 4.7.2 on Linux Ubuntu 12.10 :
 
 ```
-morgan2.c:46:65: warning: value computed is not used [-Wunused-value]
+    morgan2.c:46:65: warning: value computed is not used [-Wunused-value]
 ```
 
 With clang 3.1 on Linux Ubuntu 12.10 :
 
 ```
-morgan2.c:23:24: warning: adding 'int' to a string does not append to the string [-Wstring-plus-int]
+    morgan2.c:23:24: warning: adding 'int' to a string does not append to the string [-Wstring-plus-int]
 ```
 
 **!!!!! HAVE FUN !!!!!**

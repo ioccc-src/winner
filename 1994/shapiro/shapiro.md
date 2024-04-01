@@ -6,18 +6,18 @@ For the first program ([shapiro.c](shapiro.c)):
 This is a very simple program:
 
 ```
- 1. #include <stdio.h>
- 2. main()
- 3. {
- 4. int K,L,M=0;
- 5. FILE *J;
- 6. J=fopen(__FILE__,"r");
- 7. for(;
- 8.     (L=getc(J))>=0;
- 9.     L>='J'&&L<='J'+15 &&
-10.     ((M=!M)?K=L:putchar(K-'J'|(L-'J'<<4)))
-11.    );
-12. exit(0);}
+     1. #include <stdio.h>
+     2. main()
+     3. {
+     4. int K,L,M=0;
+     5. FILE *J;
+     6. J=fopen(__FILE__,"r");
+     7. for(;
+     8.     (L=getc(J))>=0;
+     9.     L>='J'&&L<='J'+15 &&
+    10.     ((M=!M)?K=L:putchar(K-'J'|(L-'J'<<4)))
+    11.    );
+    12. exit(0);}
 ```
 
 Lines 1-5 are basic stuff. Line 6 opens the source code for input. Line 7 is the
@@ -41,35 +41,34 @@ characters of the encoded program are also source code for the decoder.
 ### For the second program (with time.h):
 
 ```
- 1  #include <stdio.h>
- 2  #include <time.h>
- 3  #define o(j,k,m,n,l) {fprintf(j,a[k],m,n,a[l]);fflush(j);}
- 4  char *a[]={"%c+------------+\n","%c+%3d %-8s+\n","seconds","minutes",
- 5             "hours","%s\n","\0337\033[%d;65;H%s\0338"};
- 6  int b[]={0,0,17,14,11,0};
- 7  main(v,c)
- 8  int v;
- 9  char ** c;
-10  {
-11    char d[40],*e,f=6;
-12    time_t g;
-13    FILE *h,*i;
-14    while (--f && !pipe(d) && !fork());
-15    h=fdopen(6-f<<1,"a");
-16    i=fdopen((6-f<<1)+1,"r");
-17    for(;;){
-18      if(f){
-19        fgets(d,40,i);
-20        d[strlen(d)-1]='\0';
-21        if(*d=='0'+f){ sprintf(*c,"%s\n",d+1); o(stdout,6,6-f,d+1,0) }
-22        if(*d>'0'+f) o(h,5,d,0,0)
-23      }else{
-24        time(&g);
-25        e=asctime(localtime(&g));
-26        for(v=1;v<6;v++) o(h,v!=1&&v!=6-1,v+'0',atoi(e+b[v]),v)
-27        sleep(1);
-28    }}}
-
+     1  #include <stdio.h>
+     2  #include <time.h>
+     3  #define o(j,k,m,n,l) {fprintf(j,a[k],m,n,a[l]);fflush(j);}
+     4  char *a[]={"%c+------------+\n","%c+%3d %-8s+\n","seconds","minutes",
+     5             "hours","%s\n","\0337\033[%d;65;H%s\0338"};
+     6  int b[]={0,0,17,14,11,0};
+     7  main(v,c)
+     8  int v;
+     9  char ** c;
+    10  {
+    11    char d[40],*e,f=6;
+    12    time_t g;
+    13    FILE *h,*i;
+    14    while (--f && !pipe(d) && !fork());
+    15    h=fdopen(6-f<<1,"a");
+    16    i=fdopen((6-f<<1)+1,"r");
+    17    for(;;){
+    18      if(f){
+    19        fgets(d,40,i);
+    20        d[strlen(d)-1]='\0';
+    21        if(*d=='0'+f){ sprintf(*c,"%s\n",d+1); o(stdout,6,6-f,d+1,0) }
+    22        if(*d>'0'+f) o(h,5,d,0,0)
+    23      }else{
+    24        time(&g);
+    25        e=asctime(localtime(&g));
+    26        for(v=1;v<6;v++) o(h,v!=1&&v!=6-1,v+'0',atoi(e+b[v]),v)
+    27        sleep(1);
+    28    }}}
 ```
 
 Lines 1 and 2 have to be there. Think of `o` in line 3 as send message with
@@ -99,10 +98,10 @@ to the string we just put there.
 as ANSI/VTxxx codes for fun :-) ) you know this is the sequence for:
 
 ```
-remember where we are,
-go somewhere else,
-print the message,
-and return to where we started.
+    remember where we are,
+    go somewhere else,
+    print the message,
+    and return to where we started.
 ```
 
 Line 22 says if this message is not for us (the number is bigger than ours)

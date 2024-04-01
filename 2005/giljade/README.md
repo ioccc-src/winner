@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 NOTE: We FORCE the use of -O0 even if someone overrides it because this entry
@@ -13,7 +13,7 @@ will not work with it enabled.
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2005 giljade bugs](../../bugs.html#2005_giljade).
@@ -22,22 +22,22 @@ For more detailed information see [2005 giljade bugs](../../bugs.html#2005_gilja
 ## To use:
 
 ```sh
-./giljade
+    ./giljade
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
 ### Self-test feature to try:
 
 ```sh
-./giljade > out
-./giljade out
+    ./giljade > out
+    ./giljade out
 ```
 
 NOTE: [try.sh](try.sh) will ask you if you wish to do this.
@@ -53,7 +53,7 @@ Control-F.
 If you really understand expressions, then understand this:
 
 ```c
-s=s^(b=s&s-1^s)
+    s=s^(b=s&s-1^s)
 ```
 
 ... and understand why it is found in the source code.

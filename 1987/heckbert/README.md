@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 On System V systems, we had to compile with `-Dindex=strchr`.
@@ -11,7 +11,7 @@ To compile on a 16 bit machine, change 300000 to 30000.
 ## To use:
 
 ```sh
-./heckbert col < file
+    ./heckbert col < file
 ```
 
 where col is the number of columns to fold at and file is the file to fold.
@@ -20,7 +20,7 @@ where col is the number of columns to fold at and file is the file to fold.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -29,7 +29,7 @@ where col is the number of columns to fold at and file is the file to fold.
 Folding at the wrong length may be equivalent to a "Spindle or Mutilate" operation. For example:
 
 ```sh
-./heckbert 40 < heckbert.c > ph.c ; make ph ; ./ph 20 < heckbert.c > bar.c ; make bar
+    ./heckbert 40 < heckbert.c > ph.c ; make ph ; ./ph 20 < heckbert.c > bar.c ; make bar
 ```
 
 Try not to

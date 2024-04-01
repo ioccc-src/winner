@@ -1,27 +1,27 @@
 ## To build:
 
 ```sh
-make all
-```
+    make all
+    ```
 
-There is another version which is the original entry. See [alternate
-version](#alternate-code) for details as to how to use and why it was made the
-alt version.
+    There is another version which is the original entry. See [alternate
+    version](#alternate-code) for details as to how to use and why it was made the
+    alt version.
 
 
 ## To use:
 
 ```sh
-./clock1.sh
-./clock2.sh
-./clock3.sh
+    ./clock1.sh
+    ./clock2.sh
+    ./clock3.sh
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -35,14 +35,14 @@ provided, to show the differences.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
 ### Alternate try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 
@@ -82,7 +82,7 @@ larger.
 The code is simple; the arguments passed are:
 
 ```sh
-./westley minute_map hour_map hand_symbol clock_image
+    ./westley minute_map hour_map hand_symbol clock_image
 ```
 
 The program merely takes the minute (0-59) and the hour (0-23)

@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./heathbar num num
+    ./heathbar num num
 ```
 
 where num is a non-negative number.
@@ -17,7 +17,7 @@ where num is a non-negative number.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 

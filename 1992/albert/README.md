@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -13,7 +13,7 @@ An [alternate version](#alternate-code) exists that fixes a bug.
 The current status of this entry is:
 
 ```
-STATUS: known bug - please help us fix
+    STATUS: known bug - please help us fix
 ```
 
 For more detailed information see [1992 albert bugs](../../bugs.html#1992_albert).
@@ -22,14 +22,14 @@ For more detailed information see [1992 albert bugs](../../bugs.html#1992_albert
 ## To use:
 
 ```sh
-./albert number
+    ./albert number
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -40,20 +40,20 @@ Leo Broukhis, before he was an IOCCC judge, sent the IOCCC
 judges this Email message:
 
 ```
-From: leo _at_ zycad -dot- com (Leo Broukhis)
-Date: Tue, 30 Jan 96 17:37:51 PST
-To: judges _at_ toad -dot- com
-Subject: IOCCC 1992 - a bug
+    From: leo _at_ zycad -dot- com (Leo Broukhis)
+    Date: Tue, 30 Jan 96 17:37:51 PST
+    To: judges _at_ toad -dot- com
+    Subject: IOCCC 1992 - a bug
 
-Dear Judges,
+    Dear Judges,
 
-albert.c (even in its fixed form) still has a bug. Although I don't
-remember the number that exposed the bug (afair, resulting in coredump)
-in albert.orig.c that has been fixed in albert.c,
+    albert.c (even in its fixed form) still has a bug. Although I don't
+    remember the number that exposed the bug (afair, resulting in coredump)
+    in albert.orig.c that has been fixed in albert.c,
 
-I've found a number exposing another bug: 10000000001 (that's 9 0's).
-Both albert and albert.orig loop without printing anything, although
-the first factor is 101 and is usually found in an instant.
+    I've found a number exposing another bug: 10000000001 (that's 9 0's).
+    Both albert and albert.orig loop without printing anything, although
+    the first factor is 101 and is usually found in an instant.
 ```
 
 The [albert.alt.c](albert.c) file is the fixed file, whereas the
@@ -65,7 +65,7 @@ The [albert.alt.c](albert.c) file is the fixed file, whereas the
 To compile this alternate version:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -77,7 +77,7 @@ Use `albert.alt` as you would `albert` above.
 ### Alternate try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 
@@ -107,7 +107,7 @@ Or you may type `./albert <some-number>`
 A nice one is also (30 ones):
 
 ```sh
-./albert 111111111111111111111111111111
+    ./albert 111111111111111111111111111111
 ```
 
 Apart from the foregoing there are no special execution instructions.
@@ -115,7 +115,7 @@ Apart from the foregoing there are no special execution instructions.
 To customize the program into a factorizer of a fixed number, use
 
 ```sh
-cc albert.c -o 4294967297
+    cc albert.c -o 4294967297
 ```
 
 or some such.

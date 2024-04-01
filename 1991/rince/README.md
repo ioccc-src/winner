@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 There are two [alternate versions](#alternate-code) which allow one to not be
@@ -12,7 +12,7 @@ that's fewer than the original program.
 ## To use:
 
 ```sh
-./rince
+    ./rince
 ```
 
 
@@ -31,7 +31,7 @@ The author set the maximum number of moves to 484.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 This will build both alt versions where the first one, `rince.alt`, has no
@@ -42,7 +42,7 @@ configurable maximum number of moves allowed, defaulting to the entry's max,
 To reconfigure the maximum number of moves to 700:
 
 ```sh
-make clobber MAXMOVES=700 alt
+    make clobber MAXMOVES=700 alt
 ```
 
 
@@ -51,13 +51,13 @@ make clobber MAXMOVES=700 alt
 To run the first alt version:
 
 ```sh
-./rince.alt
+    ./rince.alt
 ```
 
 To run the second alt version:
 
 ```sh
-./rince.alt2
+    ./rince.alt2
 ```
 
 Can you figure out how to make the two alternate versions equivalent in
@@ -83,23 +83,23 @@ enjoyment high.
 Key to map:
 
 ```
-			|
- ######                 | | | /\   /--\  ==|    /\ | |  Directonal keys
- ######  Solid Wall     | ----||    \/     /\   ||----  (unlock doors of
- ######                 |     \/  ==|     \--/  \/       the same direction)
-			|\
-			|   <<                    >>    Doors. Unlocked by
-	 Blank space    |   <<   vvvvvv  ^^^^^^   >>    the above keys.
-			|   <<                    >>
-			|\
-   ___                  | o__O\   O__O   ^__^   /O__o\
-  /   \  'Crushable'    | \___/  /----\ /----\  \___/  The four sprites for
-  \___/    boulder      |  _/_\  _/  \_ _/  \_  /_\_   your character :-)
-			|\
-   ___   uncrushable    |   /\   Diamonds. They can either be found lying
-  /@@@\    boulder      |  <  >  around (if only!) or manufacture by pushing
-  \@@@/                 |   \/   two 'crushable' rocks together.
-			|
+			    |
+     ######                 | | | /\   /--\  ==|    /\ | |  Directonal keys
+     ######  Solid Wall     | ----||    \/     /\   ||----  (unlock doors of
+     ######                 |     \/  ==|     \--/  \/       the same direction)
+			    |\
+			    |   <<                    >>    Doors. Unlocked by
+	     Blank space    |   <<   vvvvvv  ^^^^^^   >>    the above keys.
+			    |   <<                    >>
+			    |\
+       ___                  | o__O\   O__O   ^__^   /O__o\
+      /   \  'Crushable'    | \___/  /----\ /----\  \___/  The four sprites for
+      \___/    boulder      |  _/_\  _/  \_ _/  \_  /_\_   your character :-)
+			    |\
+       ___   uncrushable    |   /\   Diamonds. They can either be found lying
+      /@@@\    boulder      |  <  >  around (if only!) or manufacture by pushing
+      \@@@/                 |   \/   two 'crushable' rocks together.
+			    |
 ```
 
 The general idea of the game is to collect all the diamonds. This must

@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./schnitzi <foo | vi -n
+    ./schnitzi <foo | vi -n
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -76,7 +76,7 @@ description of the input file format.
 The first line is specified thusly:
 
 ```
-[duration] [timefactor]
+    [duration] [timefactor]
 ```
 
 The first parameter, `duration`, defines how long the animation will run.  The
@@ -94,7 +94,7 @@ each successive frame.  Each sprite begins with a line of parameters
 of the following form:
 
 ```
-[start] [end] [x] [y] [dx] [dy] [cols] [rows] [viewcount]
+    [start] [end] [x] [y] [dx] [dy] [cols] [rows] [viewcount]
 ```
 
 where:
@@ -133,13 +133,13 @@ Try one of these methods to get the animation to run:
 1.  Redirect the output directly to vi, like this:
 
 ```sh
-./schnitzi < input.dat | vi
+    ./schnitzi < input.dat | vi
 ```
 
 2.  Redirect the output to a file, like this:
 
 ```sh
-./schnitzi < input.dat > output.dat
+    ./schnitzi < input.dat > output.dat
 ```
 
 Then, open the output file, select the text, and copy it

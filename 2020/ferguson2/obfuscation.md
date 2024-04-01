@@ -19,15 +19,19 @@ there is an aesthetic appeal to my eyes too).
 Y<:19:><:27:> but it's not the only example. Here the compound literal of 13
 ints:
 
+```c
 	    int *z=(int[13]) { 0 } , *e, *g;
+```
 
     Then in main:
 
+```c
 	    e = z + 10;
 	    g = e + 1;
 
 	    for (j=-3; j < 0; ++j)
 		e<:j:> = j+3;
+```
 
     Which I think is more confusing: when one is iterating an array you don't
     expect to start out with index < 0 but to then compare that that index < 0
@@ -35,11 +39,14 @@ ints:
     more confusing still. There are at least two other ways that are much easier
     to read that could accomplish the same thing. It continues on:
 
+```c
 	    /* ... */
 	    e<:i-3:> = (j < 1 ? 1 : (j > 5 ? 5 : j))-1;
+```
 
 *   Observe these two functions:
 
+```c
 	    void w(char *s, int k, int v)
 	    {
 		    for(e<:2:> = 0; s<:*P:>; ++e<:2:>)
@@ -58,7 +65,7 @@ ints:
 			    w(R[*g],*(e+e<:1:>-6)=q(Y<:8:>,*Y<:7:>),*g);
 		    }
 	    }
-
+```
 
     First of all: why do I set `e[2]` to 0 and increment it for each pass in the
     loop, but then the condition for the loop is `s[*P]`?
@@ -89,6 +96,7 @@ temporary variable instead of a regular int in the function (so make it global);
 and (2) I didn't want to risk changing all the offsets: thus I just made that
 address `e[1]`. Thus I also have:
 
+```c
 	    for (*g = 0 ; *g < 10; ++*g)
 	    {
 		r<:-2:> = Y<:14:><:*(e+1):>; r<:-3:> = Y<:15:><:1<:e:>:>;
@@ -97,6 +105,7 @@ address `e[1]`. Thus I also have:
 		if (r<:-2:> && r<:-3:> == r<:-1:>)
 		    return r<:-2:>;
 	    }
+```
 
     This `e[1]` of course is the same as `*g` as above and as you can see has
     multiple dimensions (that is the reference to Y does) too (and this is also
@@ -108,7 +117,9 @@ address `e[1]`. Thus I also have:
 *   The above function Z() takes a `char x` but you won't notice it being used
 at all. Why? In fact I call it like so:
 
+```c
 		k = Z(r<:-1:>=k);
+```
 
     The char is just used as a way to be able to call the function and assign to
     the proper variable at the same time: in the function Z I don't care about x
@@ -121,7 +132,9 @@ at all. Why? In fact I call it like so:
 refer to the same variable in more than one way (or in some cases maybe more
 correct to say 'same location'). In the Z() function for example:
 
+```c
 		r<:-2:> = Y<:14:><:*(e+1):>; r<:-3:> = Y<:15:><:1<:e:>:>;
+```
 
     I refer to e[1] as both: *(e+1) and 1[e].
 
@@ -140,7 +153,9 @@ index (sort of).
 *   Another set of char arrays in one: the five rotors as well as the two
 reflectors in one `char [][27]`. This makes for some fun code like:
 
+```c
 	    (Y<:e<:-10:>+5:><:k-'A':>) && (k = Y<:e<:-10:>+5:><:k-'A':>);
+```
 
     (Of course this also removes an if statement by joining with a &&).
 
@@ -179,8 +194,9 @@ enough because as they rightly point out they can just use the C preprocessor
 itself. But although I have quite a few cpp directives I am not using them for
 obfuscation but rather to save bytes. For examples:
 
-
+```c
 	    %:define J(x)		  do(*x)=getchar(); while((*x)=='\n')
+```
 
     Is used quite a number of times and although it could be a function that
     takes a pointer to an int it was more convenient this way (I believe it used
@@ -189,13 +205,17 @@ obfuscation but rather to save bytes. For examples:
     particular I want to bring up though because I think it's a curious one and
     it ties in to another point above:
 
+```c
 	    %:define A(y)				  *(&Y<:7:><:1:>+(y))
+```
 
     What is special about this one: Above I noted how I sort of refer directly
     to the notch settings (I think it was the notch settings anyway). Now I
     could have done say
 
+```c
 	    char a = Y[7][1], b = Y[7][3], c = Y[7][5];
+```
 
     But I felt that doing instead the pointer arithmetic was worth doing.
     However it used significantly more bytes even as a macro: 17 if I recall
@@ -203,7 +223,6 @@ obfuscation but rather to save bytes. For examples:
     it'd be many more. I believe though that when the cpp translates it it still
     requires more thought to determine that a is set to Y[7][1], b to Y[7][3]
     and c to Y[7][5].
-
 
 
 # Obfuscation wrt recode.c
@@ -229,9 +248,11 @@ variables in recode.c, move them to prog.c, compile and expect it to work right.
 
 * Also what is this about ?
 
+```c
 				/\
 		    /		This is	    *not* what you think:
 			    void D(char*x){ /* ... */ }
+```
 
 
     Is that valid and if so how does it function? Yes it's valid but I'll leave

@@ -34,7 +34,7 @@ I imagine that it works for 32-bit systems but I do not know for sure.
 You should be able to get the compiler with:
 
 ```sh
-sudo xcode-select --install
+    sudo xcode-select --install
 ```
 
 You don't need Xcode itself and it appears that the command line tools (as above
@@ -54,13 +54,13 @@ recent versions there's the `dnf` package manager but I cannot help with any of
 the GUI installers since I don't use them. Something like:
 
 ```sh
-sudo dnf install ncurses-devel ncurses make gcc
+    sudo dnf install ncurses-devel ncurses make gcc
 ```
 
 or
 
 ```sh
-# dnf install ncurses-devel ncurses make gcc
+    # dnf install ncurses-devel ncurses make gcc
 ```
 
 # Portability: CentOS
@@ -70,25 +70,25 @@ want to use the Makefile `make`). CentOS uses `yum` and CentOS 8 uses `dnf`.
 So:
 
 ```sh
-sudo yum install ncurses-devel ncurses make gcc
+    sudo yum install ncurses-devel ncurses make gcc
 ```
 
 or
 
 ```sh
-# yum install ncurses-devel ncurses make gcc
+    # yum install ncurses-devel ncurses make gcc
 ```
 
 or
 
 ```sh
-sudo dnf install ncurses-devel ncurses make gcc
+    sudo dnf install ncurses-devel ncurses make gcc
 ```
 
 or
 
 ```sh
-# dnf install ncurses-devel ncurses make gcc
+    # dnf install ncurses-devel ncurses make gcc
 ```
 
 You can also use clang to compile (which is what gcc actually is under macOS).

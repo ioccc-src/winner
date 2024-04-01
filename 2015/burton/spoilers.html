@@ -134,11 +134,11 @@ global pointer variable, and the integers from uninitialized global <code>int</c
 variables. If <code>x</code> is a global <code>int</code>, then <code>!x</code> is <code>1</code>, and the derivation
 proceeds from there, using some identities that are confusingly similar and
 interestingly combined (increasing obfuscation):</p>
-<pre><code>obc     clr
----     ---
--~x     x+1
-~-x     x-1
-y-~x    y+x+1</code></pre>
+<pre><code>    obc    clr
+    ---    ---
+    -~x    x+1
+    ~-x    x-1
+    y-~x   y+x+1</code></pre>
 <p>The derived constants are a compromise between simple expressions, maximum utility,
 and minimum number of variables used.</p>
 <p>Command line arguments are copied into the upper half of the input buffer,

@@ -1,16 +1,16 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 The author stated:
 
 ```
-In the remote event that the input has more than `8192` files with
-the same size (on systems where `sizeof (char *) == 4`, or `4096` when
-`sizeof (char *) == 8`), increase the manifest constant 32767 on line
-31.
+    In the remote event that the input has more than `8192` files with
+    the same size (on systems where `sizeof (char *) == 4`, or `4096` when
+    `sizeof (char *) == 8`), increase the manifest constant 32767 on line
+    31.
 ```
 
 An alternate version allows one to fix this; see [alternate
@@ -24,7 +24,7 @@ all your favorite pictures off the Internet or from
 `alt.binaries.pictures.*`, do
 
 ```sh
-find dir -type f -print | ./samefile
+    find dir -type f -print | ./samefile
 ```
 
 Maybe you will not need to buy another 10 GB disk to store them.  :-)
@@ -35,7 +35,7 @@ Maybe you will not need to buy another 10 GB disk to store them.  :-)
 If you're in this winning entry's directory:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 Notice that the tool finds some files that are duplicates.
@@ -54,7 +54,7 @@ If you wish to change the size to say, 55555:
 
 
 ```sh
-make clobber SIZE=55555 alt
+    make clobber SIZE=55555 alt
 ```
 
 or whatever you wish to redefine it to.
@@ -84,7 +84,7 @@ This is best explained in the man page. The troff source for this
 man page can be found in the file [samefile.1](samefile.1). To render try:
 
 ```sh
-`man ./samefile.1
+    `man ./samefile.1
 ```
 
 Otherwise:
@@ -101,7 +101,7 @@ Otherwise:
 #### SYNOPSIS
 
 ```sh
-./samefile
+    ./samefile
 ```
 
 #### DESCRIPTION
@@ -142,13 +142,13 @@ identical  files  of size 100 in an inode group consisting
 of the three inodes with numbers 10, 20 and 30:
 
 ```sh
-$ ls -i   # output edited for readability:
-  10 file1     20 file4     30 file6
-  10 file2     20 file5
-  10 file3
-$ ls | ./samefile
-100     file1   file4   =       3       2
-100     file1   file6   =       3       1
+    $ ls -i   # output edited for readability:
+      10 file1     20 file4     30 file6
+      10 file2     20 file5
+      10 file3
+    $ ls | ./samefile
+    100     file1   file4   =       3       2
+    100     file1   file6   =       3       1
 ```
 
 The sum of the sizes in the first column is the amount  of
@@ -178,7 +178,7 @@ For everybody:
 What are the duplicates under my home directory?
 
 ```sh
-find $HOME | ./samefile
+    find $HOME | ./samefile
 ```
 
 For the sysadmin folks:
@@ -186,14 +186,14 @@ For the sysadmin folks:
 Report all duplicate files under /usr larger than 16k:
 
 ```sh
-find /usr -size +16384c -a -type f | ./samefile
+    find /usr -size +16384c -a -type f | ./samefile
 ```
 
 For the ftp and WWW admins:
 How much space is wasted below our site's /pub directory?
 
 ```sh
-find /pub -type f | samefile | awk '{sum += $1} END {print sum}'
+    find /pub -type f | samefile | awk '{sum += $1} END {print sum}'
 ```
 
 

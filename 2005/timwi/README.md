@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./timwi < bf_program
+    ./timwi < bf_program
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 

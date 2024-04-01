@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -10,7 +10,7 @@ make all
 The current status of this entry is:
 
 ```
-STATUS: known bug - please help us fix
+    STATUS: known bug - please help us fix
 ```
 
 For more detailed information see [1989 westley bugs](../../bugs.html#1989_westley).
@@ -21,29 +21,29 @@ For more detailed information see [1989 westley bugs](../../bugs.html#1989_westl
 Try compiling and running the 4 resulting programs like:
 
 ```sh
-./compile.sh
+    ./compile.sh
 ```
 
 If you need to specify an alternate compiler path, say because your default
 compiler is clang (or in the case of macOS gcc is clang) you can do so like:
 
 ```sh
-CC=/opt/local/bin/gcc-mp-12 ./compile.sh
+    CC=/opt/local/bin/gcc-mp-12 ./compile.sh
 ```
 
 If you wish to delay the script or remove the delay you can do so like:
 
 ```sh
-DELAY=2 ./compile.sh
+    DELAY=2 ./compile.sh
 ```
 
 Finally try:
 
 ```sh
-./westley
-# input some lines of text, sending EOF (usually ctrl-d) to end
+    ./westley
+    # input some lines of text, sending EOF (usually ctrl-d) to end
 
-./try.sh # demo of some input
+    ./try.sh # demo of some input
 ```
 
 
@@ -71,7 +71,7 @@ When compiling these versions, one needs to define `trgpune`
 in the compile line (which the Makefile now has).  Example:
 
 ```sh
-cc -Dtrgpune=putchar ver3.c -o ver3
+    cc -Dtrgpune=putchar ver3.c -o ver3
 ```
 
 `trgpune` is the ROT13 of `getchar()`, so `getchar()` and `putchar()`
@@ -110,13 +110,13 @@ called `vs()` turns into a function called `if()` in the original,
 so it can't be done.  Therefore, I do:
 
 ```c
-expr1 && expr2 && (expr3=etc);
+    expr1 && expr2 && (expr3=etc);
 ```
 
 which is the same as:
 
 ```c
-if (expr1 && expr2) expr3=etc;
+    if (expr1 && expr2) expr3=etc;
 ```
 
 A/UX on the Macintosh doesn't get this right; it evaluates ALL
@@ -125,7 +125,7 @@ statement.  This might warrant a warning, since other compilers
 may do this.  I found MANY compilers botched:
 
 ```c
-expr1 && (expr2,expr3);
+    expr1 && (expr2,expr3);
 ```
 
 `expr2` was OFTEN evaluated even if `expr1` was false.  I removed
@@ -147,7 +147,7 @@ such statements to make it more portable.
 Normally (!), a reversible C program is done thus:
 
 ```c
-/**/ forward code /*/ edoc drawkcab /**/
+    /**/ forward code /*/ edoc drawkcab /**/
 ```
 
 If your compiler nests comments, it will get this wrong.
@@ -155,7 +155,7 @@ However, I have made some bits of the code palindromic,
 (or different, but reversible) so it is more like:
 
 ```c
-/**/forward/*//**/ palindromic /**//*/drawkcab/**/
+    /**/forward/*//**/ palindromic /**//*/drawkcab/**/
 ```
 
 The code can therefore be interlaced.  There are eight

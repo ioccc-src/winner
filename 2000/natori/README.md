@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 An alt version exists for those in the southern hemisphere (or those who want to
@@ -12,14 +12,14 @@ version](#alternate-code) below.
 ## To use:
 
 ```sh
-./natori
+    ./natori
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 Try running this on different days, say a few days apart (even better if the
@@ -43,14 +43,14 @@ The author noted that those in the southern hemisphere might want to change
 To run the alternate code that supports the southern hemisphere:
 
 ```sh
-make alt
+    make alt
 ```
 
 
 ### Alternate use:
 
 ```sh
-./natori.alt
+    ./natori.alt
 ```
 
 Try running this on different days, say a few days apart, and each time run it
@@ -66,7 +66,7 @@ versions? Or are there any?
 ### Alternate try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 Like with [try.sh](try.sh), try using this multiple times in a row or throughout

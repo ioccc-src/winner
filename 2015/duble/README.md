@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an alternate version of this entry, discussed in the author's remarks.
@@ -11,14 +11,14 @@ See [Alternate code](#alternate-code) below.
 ## To use:
 
 ```sh
-echo Some text | ./prog
+    echo Some text | ./prog
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 As the script says if you want to move to the next command at any point
@@ -35,7 +35,7 @@ author in the '[prog.c](prog.c) vs [prog.alt.c](prog.alt.c)' section of their re
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -85,13 +85,13 @@ been shortened in this file.
 If you have `clang`:
 
 ```sh
-CC=clang make -e
+    CC=clang make -e
 ```
 
 Otherwise (gcc):
 
 ```sh
-make
+    make
 ```
 
 (You will get a few warnings in this case.)
@@ -117,21 +117,21 @@ needed in this case).
 #### Basic mode:
 
 ```sh
-$ echo 'I am testing this thing.' | ./prog
-[... rendering ...]
+    $ echo 'I am testing this thing.' | ./prog
+    [... rendering ...]
 
-$ ./prog < lorem-ipsum.txt
-[... rendering ...]
+    $ ./prog < lorem-ipsum.txt
+    [... rendering ...]
 ```
 
 
 #### Interactive mode:
 
 ```sh
-$ ./prog
-> hello world!!!
-[... rendering ...]
->
+    $ ./prog
+    > hello world!!!
+    [... rendering ...]
+    >
 ```
 
 
@@ -174,7 +174,7 @@ In order to comply with the size rule, I encoded only a part of the visible ASCI
 chars:
 
 ```
-a-z, A-Z, '.' ':' ',' ';' '!' and '?'.
+    a-z, A-Z, '.' ':' ',' ';' '!' and '?'.
 ```
 
 Uppercase and lowercase chars are rendered the same. The program also
@@ -207,7 +207,7 @@ simple text documents.
 Thus, if you try for example:
 
 ```sh
-$ ./prog < prog.c
+    $ ./prog < prog.c
 ```
 
 You will not get something that looks like C code. (but you can still try, if
@@ -220,7 +220,7 @@ Defining an environment variable called `DRAFT` will enable the 'draft-mode'.
 Try for example:
 
 ```sh
-$ echo 'testing the draft mode' | DRAFT=1 ./prog
+    $ echo 'testing the draft mode' | DRAFT=1 ./prog
 ```
 
 The program will run much faster but the rendering will be less precise.

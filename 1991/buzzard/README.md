@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 There is an [alternate version](#alternate-code) which might feel more at home
@@ -13,7 +13,7 @@ for vi(m) users in navigation.
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [1991 buzzard bugs](../../bugs.html#1991_buzzard).
@@ -22,7 +22,7 @@ For more detailed information see [1991 buzzard bugs](../../bugs.html#1991_buzza
 ## To use:
 
 ```sh
-./buzzard
+    ./buzzard
 ```
 
 
@@ -38,14 +38,14 @@ code directly so the keys are not made a `-D` at the compiler.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
 ### Alternate use:
 
 ```sh
-./buzzard.alt
+    ./buzzard.alt
 ```
 
 
@@ -90,7 +90,7 @@ so make sure to convert tabs to spaces before using it.
 Usage:
 
 ```sh
-./buzzard [filename [escape-char [start-x start-yNNN
+    ./buzzard [filename [escape-char [start-x start-yNNN
 ```
 
 Filename is the name of the file containing the maze.  This

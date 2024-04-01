@@ -1,27 +1,27 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./meyer [SEED]
+    ./meyer [SEED]
 ```
 
 
 ## Try:
 
 ```sh
-./meyer [SEED]
+    ./meyer [SEED]
 ```
 
 For your first input try:
 
 ```
-a 0 1
+    a 0 1
 ```
 
 where `a` is the row (`a`-`i`), `0` is the column (`0`-`8`) and `1` is the
@@ -70,13 +70,13 @@ it is obvious, that object-oriented code isn't '`WYWIWID`' ('what
 you write is what it does'). It may be tempting to think that
 
 ```
-Object o;
+    Object o;
 ```
 
 might do something similar as
 
 ```c
-struct not_an_object o;
+    struct not_an_object o;
 ```
 
 But this program reveals that it doesn't. Even worse, this program only
@@ -101,7 +101,7 @@ implementation in a popular object-oriented programming language.
 ### Starting the game
 
 ```sh
-./meyer [SEED]
+    ./meyer [SEED]
 ```
 
 ### Gameplay
@@ -119,15 +119,15 @@ breaking the following rule. Any number must be unique in its:
 Expected input for your move:
 
 ```
-row column number
+    row column number
 ```
 
 where
 
 ```
-row:    [a-i]
-column: [0-8]
-number: [1-9].
+    row:    [a-i]
+    column: [0-8]
+    number: [1-9].
 ```
 
 The game can be aborted with `q`.

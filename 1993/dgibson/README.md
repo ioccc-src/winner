@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./dgibson.sh [datafile]
+    ./dgibson.sh [datafile]
 ```
 
 where:
@@ -19,7 +19,7 @@ where:
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 

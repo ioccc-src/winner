@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 There is an alternate version of this program. See [Alternate
@@ -14,29 +14,29 @@ First, you must make sure that `first` is made first (even though `make all`
 should make first first :-) ):
 
 ```sh
-make first
+    make first
 ```
 
 Second:
 
 ```sh
-# get help:
-echo help | cat third help.th - | ./first
+    # get help:
+    echo help | cat third help.th - | ./first
 
-# try out a demo:
-cat third demo5.th | ./first
+    # try out a demo:
+    cat third demo5.th | ./first
 ```
 
 Third:
 
 ```sh
-cat third help.th - | ./first
+    cat third help.th - | ./first
 ```
 
 NOTE: Wait until 'Ok' is printed and the type:
 
 ```
-2 3 + . cr
+    2 3 + . cr
 ```
 
 Yes you should really type the 2 letters: `cr`.
@@ -44,14 +44,14 @@ Yes you should really type the 2 letters: `cr`.
 Fourth:
 
 ```
-Sorry, this is third!
+    Sorry, this is third!
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -64,7 +64,7 @@ fix that the author notes in their remarks.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -76,7 +76,7 @@ Use `buzzard.2.alt` as you would `buzzard.2` above.
 ### Alternate try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 
@@ -126,7 +126,7 @@ To do something interesting, you need to feed `first` the file
 [third](third) first.  In unix, you can do
 
 ```sh
-cat third help.th - | ./first
+    cat third help.th - | ./first
 ```
 
 to do this.  Hopefully most operating systems will provide a way to do this.  It
@@ -227,7 +227,7 @@ you in a normal way.  It only prints `'Ok.'` after you define a word).
 
 
 ```sh
-2 3 + . cr
+    2 3 + . cr
 ```
 
 (which adds 2 and 3, and print the result and a newline.)
@@ -235,20 +235,20 @@ you in a normal way.  It only prints `'Ok.'` after you define a word).
 THIRD responds:
 
 ```
-5
+    5
 ```
 
 Now try:
 
 ```
-: test 11 1 do i . loop cr ;
-test
+    : test 11 1 do i . loop cr ;
+    test
 ```
 
 and THIRD responds
 
 ```
-1 2 3 4 5 6 7 8 9 10
+    1 2 3 4 5 6 7 8 9 10
 ```
 
 
@@ -256,7 +256,7 @@ When in `THIRD`, you can see how much space you're currently
 using by typing:
 
 ```
-here .
+    here .
 ```
 
 The number THIRD replies with is the number of machine words (`int`s) that the

@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2011 fredriksson bugs](../../bugs.html#2011_fredriksson).
@@ -19,14 +19,14 @@ For more detailed information see [2011 fredriksson bugs](../../bugs.html#2011_f
 ## To use:
 
 ```sh
-./fredriksson [-icvtnk#] regexp < file
+    ./fredriksson [-icvtnk#] regexp < file
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 NOTE: you need to be allowed to change your stack size or else the last command
@@ -56,7 +56,7 @@ Implements a variant of `grep`.
 To search regexp from file, do:
 
 ```sh
-./fredriksson [-icvtnk#] regexp < file
+    ./fredriksson [-icvtnk#] regexp < file
 ```
 
 Pipes might not work, see the section Limitations.
@@ -79,8 +79,8 @@ This version of `grep` recognizes two more options, not present in normal
 	[edit-distance](https://en.wikipedia.org/wiki/Edit_distance)). E.g.
 	"`obfuscated`" matches "`obfuscation`"
 	with one deletion and two mismatches. Likewise, "`obfuscate`" and
-	"`oversimplify`" match with 7 [edit
-	operations](https://en.wikipedia.org/wiki/Edit_distance#Formal_definition_and_properties).
+	"`oversimplify`" match with 7
+	[edit operations](https://en.wikipedia.org/wiki/Edit_distance#Formal_definition_and_properties).
 	The default is `-k0` (i.e. exact match).
 
 * `-t`	Add local transpositions to the set of allowed
@@ -124,13 +124,13 @@ Just say
 
 
 ```sh
-./fredriksson -k3 cat < file
+    ./fredriksson -k3 cat < file
 ```
 
 * Like with `cat`, you can append line numbers too:
 
 ```sh
-./fredriksson -nk3 cat < file
+    ./fredriksson -nk3 cat < file
 ```
 
 
@@ -173,7 +173,9 @@ Just say
 * Depending on the file, it might require a lot of stack space. If the
   program segfaults (because of this), say
 
-	ulimit -s unlimited
+```sh
+    ulimit -s unlimited
+```
 
   cross your fingers, hope it is enough, and try again.
 
@@ -185,14 +187,14 @@ Just say
   to be 'gcc', but any compiler would work, provided that it supports
   C99, or long lines as an extension. This code has been tested on:
 
-	- GNU/Linux FC4, i386, gcc
-	- GNU/Linux FC7, x86_64, gcc 4.1.2, tcc 0.9.24 and icc 10.0
-	- GNU/Linux FC9, x86_64, gcc 4.?.?
-	- GNU/Linux CentOS 5, gcc 4.1.2
-	- GNU/Linux Ubuntu 11.04, gcc 4.5.2
-	- SunOS 5.8, UltraSPARC IIIi, gcc 4.1.2
-	- SunOS 5.9, UltraSPARC IIIi, gcc 4.1.1 and Sun ONE Studio 8 CC
-	- AIX 5.3, IBM eServer p5-550, gcc 3.3.3 and AIX CC Version 6
+- GNU/Linux FC4, i386, gcc
+- GNU/Linux FC7, x86_64, gcc 4.1.2, tcc 0.9.24 and icc 10.0
+- GNU/Linux FC9, x86_64, gcc 4.?.?
+- GNU/Linux CentOS 5, gcc 4.1.2
+- GNU/Linux Ubuntu 11.04, gcc 4.5.2
+- SunOS 5.8, UltraSPARC IIIi, gcc 4.1.2
+- SunOS 5.9, UltraSPARC IIIi, gcc 4.1.1 and Sun ONE Studio 8 CC
+- AIX 5.3, IBM eServer p5-550, gcc 3.3.3 and AIX CC Version 6
 
   (Btw, tcc has its roots in IOCCC...)
 
@@ -205,7 +207,9 @@ Just say
   extracts and builds that, and then calls it. More precisely, the command
   to build is
 
-		gcc -O3 ag.c -o ag
+```sh
+    gcc -O3 ag.c -o ag
+```
 
   To change that you need to edit the char array `p[]` and (possibly) two
   specially encoded constants, `-~('('*'(')` and `'C'*' '-'-'`.
@@ -216,29 +220,29 @@ Just say
   from the submitted entry.)
 
 * The code demonstrates several useful programming paradigms, such as:
-	- recursion to remove all loops
-	- subroutines (`main()` contains several logical subroutines,
-	  selected by the first argument)
-	- function pointers
+    - recursion to remove all loops
+    - subroutines (`main()` contains several logical subroutines,
+      selected by the first argument)
+    - function pointers
 
 * Algorithmically, it incorporates the following:
-	- (inverse) Burrows-Wheeler transform (used also e.g. in `bzip2(1)`)
-	- data compression (really expansion :-), run-length-encoding,
-	  unary coding (this is why it is expansion rather than compression)
-	- approximate string matching
-	- dynamic programming to compute the edit distance
-	- parallel computation in sequential computers (by packing
-	  several objects into a single `long`, to speed up the dynamic
-	  programming)
-	- self extracting, compiling and running code
+    - (inverse) Burrows-Wheeler transform (used also e.g. in `bzip2(1)`)
+    - data compression (really expansion :-), run-length-encoding,
+      unary coding (this is why it is expansion rather than compression)
+    - approximate string matching
+    - dynamic programming to compute the edit distance
+    - parallel computation in sequential computers (by packing
+      several objects into a single `long`, to speed up the dynamic
+      programming)
+    - self extracting, compiling and running code
 
 * As a C program, it demonstrates that
-	- a C subset without reserved words is complete enough,
-	  excluding data type specific things (`int`, `char`, `void` ...)
-	- only letters are needed (i.e. the digits `0-9` are not)
-	- only one statement is enough to code any program (plus
-	  variable definitions)
-	- white space has other uses than just indenting the code
+    - a C subset without reserved words is complete enough,
+      excluding data type specific things (`int`, `char`, `void` ...)
+    - only letters are needed (i.e. the digits `0-9` are not)
+    - only one statement is enough to code any program (plus
+      variable definitions)
+    - white space has other uses than just indenting the code
 
 * It also shows the power of boolean logic and bitwise arithmetic.
 
@@ -256,12 +260,16 @@ Just say
 
 * No numerical values, other than in the initialized char array, try
 
-		./fredriksson -ck0 [0-9] < fredriksson.c
+```sh
+    ./fredriksson -ck0 [0-9] < fredriksson.c
+```
 
   This should print 1, as there is a number `3` in the char array (only).
   You can also try
 
-		./fredriksson -ck0 [0-9] < ag.c
+```sh
+    ./fredriksson -ck0 [0-9] < ag.c
+```
 
   after running `fredriksson` at least once (since this generates that
   `ag.c` file), and this should print 0.

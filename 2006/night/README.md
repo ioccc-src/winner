@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an alternate version that supports arrow keys. See the [alternate
@@ -11,7 +11,7 @@ code](#alternate-code) section below.
 ## To use:
 
 ```sh
-./night
+    ./night
 ```
 
 
@@ -24,7 +24,7 @@ keys.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -130,8 +130,8 @@ Keypad support was removed to save space. To restore, modify the
 following two macros to:
 
 ```c
-        #define ATG srand(time(0)); initscr(); cbreak(); noecho(); start_color(); keypad(stdscr,1);
-        #define AGG A&2?KEY_UP:KEY_DOWN:A&1?KEY_RIGHT:KEY_LEFT
+    #define ATG srand(time(0)); initscr(); cbreak(); noecho(); start_color(); keypad(stdscr,1);
+    #define AGG A&2?KEY_UP:KEY_DOWN:A&1?KEY_RIGHT:KEY_LEFT
 ```
 
 Code on!

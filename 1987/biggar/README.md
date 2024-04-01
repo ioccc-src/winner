@@ -1,23 +1,23 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-some_command | ./biggar | od -c
+    some_command | ./biggar | od -c
 
-./biggar < file | od -c
+    ./biggar < file | od -c
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 

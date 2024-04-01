@@ -1,30 +1,30 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./yarng
+    ./yarng
 ```
 
 or
 
 ```sh
-./yarng integer_number
+    ./yarng integer_number
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 
-./yarng
-# watch what it does
+    ./yarng
+    # watch what it does
 ```
 
 What is the difference between what is in the script and running `yarng` without
@@ -43,38 +43,37 @@ did not compile this entry correctly. Also at that time, some gcc and egcs
 implementations ran into a problem when building the entry. Doing:
 
 ```sh
-make schweikh2
+    make schweikh2
 ```
 
 often produced an error of the form:
 
 ```sh
-gcc -ansi schweikh2.alt.c -o schweikh2.alt
-as: Error: cca00NzV.s, line 58: Missing " at end of string
-     "
-as: Error: cca00NzV.s, line 58: malformed statement
-*** Error code 1 (bu21)
+    gcc -ansi schweikh2.alt.c -o schweikh2.alt
+    as: Error: cca00NzV.s, line 58: Missing " at end of string
+	 "
+    as: Error: cca00NzV.s, line 58: malformed statement
+    *** Error code 1 (bu21)
 ```
 
 because the line:
 
 ```c
-#line 10 ONE(O(1,1,2,6,0,6))
+    #line 10 ONE(O(1,1,2,6,0,6))
 ```
 
 turned into the line:
 
 ```c
-# 9 "01\012"
-
+    # 9 "01\012"
 ```
 
 (note, though, how that line is on line 11) which caused gcc to give to the
 assembler the following two lines:
 
 ```asm
-.stabs "schweikh2.c
-",132,0,0,Ltext1
+    .stabs "schweikh2.c
+    ",132,0,0,Ltext1
 ```
 
 and the lone `"` after the `#.file` line resulted in an assembly syntax error.
@@ -82,7 +81,7 @@ and the lone `"` after the `#.file` line resulted in an assembly syntax error.
 In some cases one had to compile using `gcc -g`:
 
 ```sh
-make schweikh2 CFLAGS=-g
+    make schweikh2 CFLAGS=-g
 ```
 
 to trigger this error.
@@ -107,7 +106,7 @@ still can :-) ).
 Because of this bug, the code was changed to be instead:
 
 ```c
-#line 10 "01\015"
+    #line 10 "01\015"
 ```
 
 However in 2023 it was observed that _it is gcc_ (at least some versions?) that
@@ -115,22 +114,22 @@ has a problem with the compilation of the _modified_ program, giving an internal
 compiler error:
 
 ```
-:10:16: warning: type defaults to 'int' in declaration of 'zero' [-Wimplicit-int]
-: In function 'main':
-:12:1: warning: missing terminating " character
-:12:19: internal compiler error: invalid built-in macro "__FILE__"
+    :10:16: warning: type defaults to 'int' in declaration of 'zero' [-Wimplicit-int]
+    : In function 'main':
+    :12:1: warning: missing terminating " character
+    :12:19: internal compiler error: invalid built-in macro "__FILE__"
 ```
 
 so the line:
 
 ```c
-#line 10 "01\015"
+    #line 10 "01\015"
 ```
 
 was changed to:
 
 ```c
-#line 10 ONE(O(1,1,2,6,0,6))
+    #line 10 ONE(O(1,1,2,6,0,6))
 ```
 
 and now it works with both clang and gcc.
@@ -160,10 +159,10 @@ different values? How long would you need for an empirical test?
 For example:
 
 ```sh
-$ ./yarng 32
-10111001010101110110010101001111
-$ ./yarng 5
-10011
+    $ ./yarng 32
+    10111001010101110110010101001111
+    $ ./yarng 5
+    10011
 ```
 
 ### Why I think this is obfuscated

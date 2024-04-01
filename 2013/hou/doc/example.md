@@ -1,43 +1,42 @@
-﻿
-# Scene format documentation
+﻿# Scene format documentation
 
 The file must be encoded in UTF-8 as the BOF marker indicates.
 
 You can directly feed it to the renderer. If you're wondering about what the following code block does, that's why:)
 
 ```
-@|?|?z#
-@|||?z&
->?Sedvf
-??Tdeu#
->>Tdeui
-??Tdmmf
-??[[euf
-?}?Oq}e
-?}?Oqqf
-v}?|q}e
-v}?|qqf
-?Sj|?{f
-?Tjk?{e
-FF?Oqq$
-RR?Oqq$
-^^?Oqq$
-jj?Oqq$
-vv?|qq$
-IOBMqqe
-U]BMqqe
-aiBMqqe
-muBMqqe
-EEEJpp%
-QQEJpp%
-]]EJpp%
-iiEJpp%
-uuEJpp%
-ZnY|{|e
-[mZ|\{\{#
-[mZ|||f
-kkdr\{\{\%
-lkdr\{\{>
+    @|?|?z#
+    @|||?z&
+    >?Sedvf
+    ??Tdeu#
+    >>Tdeui
+    ??Tdmmf
+    ??[[euf
+    ?}?Oq}e
+    ?}?Oqqf
+    v}?|q}e
+    v}?|qqf
+    ?Sj|?{f
+    ?Tjk?{e
+    FF?Oqq$
+    RR?Oqq$
+    ^^?Oqq$
+    jj?Oqq$
+    vv?|qq$
+    IOBMqqe
+    U]BMqqe
+    aiBMqqe
+    muBMqqe
+    EEEJpp%
+    QQEJpp%
+    ]]EJpp%
+    iiEJpp%
+    uuEJpp%
+    ZnY|{|e
+    [mZ|\{\{#
+    [mZ|||f
+    kkdr\{\{\%
+    lkdr\{\{>
 ```
 
 
@@ -53,8 +52,8 @@ The language used to write shader functions is very simple. Basically, you write
 a sequence of assignment statements like this:
 
 ```
-A=A+D
-B=B+E
+    A=A+D
+    B=B+E
 ```
 
 Namely, you write a one-character variable name, an equal sign (`=`), followed
@@ -67,7 +66,7 @@ course).
 The shader language supports seven operators, listed highest priority first:
 
 ```
-*/+-<#:
+    */+-<#:
 ```
 
 `*/+-<` each mean what they mean in C, but the priority part is a bit different.
@@ -77,8 +76,8 @@ advice, keep your expressions simple :) If you really needs to write something
 like `C=(A/4)*4`, write instead:
 
 ```
-B=A/4+
-C=B*4
+    B=A/4+
+    C=B*4
 ```
 
 The `#` operator acts somewhat like the C `?:`. It returns one of its two
@@ -88,14 +87,14 @@ returns its second operand.
 The `:` operator calls built-in functions. The first operand is the function id and the second is the parameter. Here is a list of functions:
 
 ```
-0:x = the x-th byte of the scene file
-1:x = sin(x*PI)
-2:x = atan2(x,#)/PI
-3:x = sqrt(max(x,0))
-4:x = floor(x)
-5:x = the next number in the (allegedly random) number sequence, can't be called in volume shaders
-6:x = value of the variable (char)(120+x)
-7:x = write #'s value to the variable (char)(120+x)
+    0:x = the x-th byte of the scene file
+    1:x = sin(x*PI)
+    2:x = atan2(x,#)/PI
+    3:x = sqrt(max(x,0))
+    4:x = floor(x)
+    5:x = the next number in the (allegedly random) number sequence, can't be called in volume shaders
+    6:x = value of the variable (char)(120+x)
+    7:x = write #'s value to the variable (char)(120+x)
 ```
 
 Contrary to popular belief, the language itself doesn't support numerical
@@ -120,14 +119,14 @@ When a function terminates, the interpreter calls the next function specified by
 variable `R`. If you want to call function `n`, just write somewhere:
 
 ```
-R=n
-```
+    R=n
+    ```
 
-providing you have left `n` at its initial value. If you want to actually return
-to the renderer, put in `R=0`.
+    providing you have left `n` at its initial value. If you want to actually return
+    to the renderer, put in `R=0`.
 
-As you may have noticed, you can put in all kinds of stuff between functions,
-like this comment.
+    As you may have noticed, you can put in all kinds of stuff between functions,
+    like this comment.
 
 
 ## How the ____ do I render an image with shaders?
@@ -143,22 +142,22 @@ Continue to the comments before function A
 
 
 ```
-//As an (optional) assignment, figure out what function 'n' does. And why there is a plus sign at every EOL except the last.
-n]#=1+
-x=X+1/2+
-d=0:U;d=d-n;U=U+1;A=d<x;#=#*A+
-d=0:U;d=d-n;U=U+1;A=x<d+1;#=#*A+
-x=Y+1/2+
-d=0:U;d=d-n;U=U+1;A=d<x;#=#*A+
-d=0:U;d=d-n;U=U+1;A=x<d+1;#=#*A+
-x=Z+1/2+
-d=0:U;d=d-n;U=U+1;A=d<x;#=#*A+
-d=0:U;d=d-n;U=U+1;A=x<d+1;#=#*A+
-d=0:U;d=d-n;U=U+1+
-U=U+2+
-C=C#d+3*9+
-#=d+
-R=0#n
+    //As an (optional) assignment, figure out what function 'n' does. And why there is a plus sign at every EOL except the last.
+    n]#=1+
+    x=X+1/2+
+    d=0:U;d=d-n;U=U+1;A=d<x;#=#*A+
+    d=0:U;d=d-n;U=U+1;A=x<d+1;#=#*A+
+    x=Y+1/2+
+    d=0:U;d=d-n;U=U+1;A=d<x;#=#*A+
+    d=0:U;d=d-n;U=U+1;A=x<d+1;#=#*A+
+    x=Z+1/2+
+    d=0:U;d=d-n;U=U+1;A=d<x;#=#*A+
+    d=0:U;d=d-n;U=U+1;A=x<d+1;#=#*A+
+    d=0:U;d=d-n;U=U+1+
+    U=U+2+
+    C=C#d+3*9+
+    #=d+
+    R=0#n
 ```
 
 -------------------------------------------
@@ -166,10 +165,10 @@ R=0#n
 The function `A` initializes global settings:
 
 ```
-G -- Image width, in pixels
-H -- Image height, in pixels
-I -- Perturbation probability
-J -- Camera ray stratification probability
+    G -- Image width, in pixels
+    H -- Image height, in pixels
+    I -- Perturbation probability
+    J -- Camera ray stratification probability
 ```
 
 If you have used a MLT renderer before, you probably know what `I` and `J` does.
@@ -210,17 +209,17 @@ Continue to the comments before function a
 -------------------------------------------
 
 ```
-//As a bonus, find out what the first line does
-A]#=#-#;"=7:0-p+^;#="+
-R=n+
-G=p*:+
-#=0<B+
-G=G*2#G+
-H=G*3/4+
-I=4/5+
-J=1/2+
-C=p+1+
-U=w+w+w
+    //As a bonus, find out what the first line does
+    A]#=#-#;"=7:0-p+^;#="+
+    R=n+
+    G=p*:+
+    #=0<B+
+    G=G*2#G+
+    H=G*3/4+
+    I=4/5+
+    J=1/2+
+    C=p+1+
+    U=w+w+w
 ```
 
 
@@ -253,8 +252,8 @@ Variables `ABCDEF` control the color returned from the ray. They will be
 explained in the material shaders part. For now, just put in:
 
 ```
-A=0;B=0;C=0
-D=1;E=1;F=1
+    A=0;B=0;C=0
+    D=1;E=1;F=1
 ```
 
 -------------------------------------------
@@ -262,29 +261,29 @@ Continue to the comments before function 1
 -------------------------------------------
 
 ```
-a]R=0+
-X=5:5+
-Y=5:5+
-X=X-1/2+
-Y=Y-1/2+
-x=5:5+
-y=5:5+
-x=x-1/2+
-y=y-1/2+
-x=x*8*7;y=y*8*7+
-X=X*G+
-Y=Y*H+
-Z=H*2/3+
-d=4*;+
-d=d*p/Z+
-X=x+X*d+
-Y=y+Y*d+
-Z=Z*d+
-U=p*p/2-p*2+x+
-V=p*p/2+p*1-y+
-W=p*8+
-A=0;B=0;C=0+
-D=1;E=1;F=1
+    a]R=0+
+    X=5:5+
+    Y=5:5+
+    X=X-1/2+
+    Y=Y-1/2+
+    x=5:5+
+    y=5:5+
+    x=x-1/2+
+    y=y-1/2+
+    x=x*8*7;y=y*8*7+
+    X=X*G+
+    Y=Y*H+
+    Z=H*2/3+
+    d=4*;+
+    d=d*p/Z+
+    X=x+X*d+
+    Y=y+Y*d+
+    Z=Z*d+
+    U=p*p/2-p*2+x+
+    V=p*p/2+p*1-y+
+    W=p*8+
+    A=0;B=0;C=0+
+    D=1;E=1;F=1
 ```
 
 
@@ -324,32 +323,32 @@ Continue to the comments before function o
 -------------------------------------------
 
 ```
-//This function computes the starred wallpaper
-//Original color: 0.36 0.714285 0.8
-1]R=o+
-d=p*6+
-x=U+W+
-x=4:x/d+
-z=4:V/d+
-#=3*x-4*z+
-y=4:#/5+
-#=#-y*5+
-y=1#0+
-x=x*d+d/2-U+W+
-z=z*d+d/2-V+
-r=3:x*x+z*z+
-#=z+
-u=2:x+
-d=1:u*5+
-d=d*d*d+3/2+
-d=d*p+
-#=r<d+
-#=#*y+
-d=2/5#I+
-D=D*d+
-E=E*4/7+
-d=I#2/5+
-F=F*d
+    //This function computes the starred wallpaper
+    //Original color: 0.36 0.714285 0.8
+    1]R=o+
+    d=p*6+
+    x=U+W+
+    x=4:x/d+
+    z=4:V/d+
+    #=3*x-4*z+
+    y=4:#/5+
+    #=#-y*5+
+    y=1#0+
+    x=x*d+d/2-U+W+
+    z=z*d+d/2-V+
+    r=3:x*x+z*z+
+    #=z+
+    u=2:x+
+    d=1:u*5+
+    d=d*d*d+3/2+
+    d=d*p+
+    #=r<d+
+    #=#*y+
+    d=2/5#I+
+    D=D*d+
+    E=E*4/7+
+    d=I#2/5+
+    F=F*d
 ```
 
 -------------------------------------------
@@ -373,9 +372,9 @@ you get `S=-1` and `T=1`, the normal is `(0,-1,0)`.
 If you don't want to redo all the math yourself... this file provides a few simple shader functions:
 
 ```
-o -- Diffuse surface. Do the color thing your self and call R=o
-5 -- Perfect mirror.
-f -- Surface with a Fresnel term. Basically, it resembles a polished surface made from a dielectric material.
+    o -- Diffuse surface. Do the color thing your self and call R=o
+    5 -- Perfect mirror.
+    f -- Surface with a Fresnel term. Basically, it resembles a polished surface made from a dielectric material.
 ```
 
 For something more complex like a fluffy carpet, well, you could use a volume to
@@ -391,103 +390,103 @@ Continue to the EOF
 -------------------------------------------
 
 ```
-//diffuse ray generation
-o]R=0+
-u=5:5+
-v=5:5+
-v=v*2+
-r=3:u+
-z=1:v+
-y=1:1/2+v+
-z=z*r+
-y=y*r+
-x=3:1-u+
-x=0-x*S+
-X=6:T+
-w=x;x=z;z=y;y=w+
-Y=6:T+
-w=x;x=z;z=y;y=w+
-Z=6:T
+    //diffuse ray generation
+    o]R=0+
+    u=5:5+
+    v=5:5+
+    v=v*2+
+    r=3:u+
+    z=1:v+
+    y=1:1/2+v+
+    z=z*r+
+    y=y*r+
+    x=3:1-u+
+    x=0-x*S+
+    X=6:T+
+    w=x;x=z;z=y;y=w+
+    Y=6:T+
+    w=x;x=z;z=y;y=w+
+    Z=6:T
 
-//reflector
-5]R=0+
-x=1;y=1;z=1+
-#=0-1+
-#=7:T+
-X=x*X;Y=y*Y;Z=z*Z
+    //reflector
+    5]R=0+
+    x=1;y=1;z=1+
+    #=0-1+
+    #=7:T+
+    X=x*X;Y=y*Y;Z=z*Z
 
-//approximate Fresnel, works better than the real thing when you don't want to tweak the IOR
-f]x=X;y=Y;z=Z+
-r=3:x*x+z*z+y*y+
-d=6:T+
-d=1-d*S/r+
-d=d*d*d+
-#=5:5+
-#=d<#+
-R=5#o+
-d=d#1-d+
-u=1#u+
-v=1#v+
-w=1#w+
-D=D*d*u+
-E=E*d*v+
-F=F*d*w
+    //approximate Fresnel, works better than the real thing when you don't want to tweak the IOR
+    f]x=X;y=Y;z=Z+
+    r=3:x*x+z*z+y*y+
+    d=6:T+
+    d=1-d*S/r+
+    d=d*d*d+
+    #=5:5+
+    #=d<#+
+    R=5#o+
+    d=d#1-d+
+    u=1#u+
+    v=1#v+
+    w=1#w+
+    D=D*d*u+
+    E=E*d*v+
+    F=F*d*w
 
-//the handles
-B]R=0+
-#=X<8*3+
-C=3#0
+    //the handles
+    B]R=0+
+    #=X<8*3+
+    C=3#0
 
-C]R=0+
-#=X<8*4+
-C=0#4
+    C]R=0+
+    #=X<8*4+
+    C=0#4
 
-//red-Fresnel
-2]R=f+
-u=1/2;v=1/9;w=v
+    //red-Fresnel
+    2]R=f+
+    u=1/2;v=1/9;w=v
 
-//white-Fresnel and the full moon
-3]R=f+
-u=7*9/p;v=u;w=v+
-x=3*:+8+
-z=U-x*p+p/2+
-x=V-x*p-p/2+
-r=3:x*x+z*z+
-#=4<r/p+
-D=D*I#D+
-E=E*4/7#E+
-F=F*2/5#F+
-d=1/5#0+
-A=A+D*d+
-B=B+E*d+
-C=C+F*d
+    //white-Fresnel and the full moon
+    3]R=f+
+    u=7*9/p;v=u;w=v+
+    x=3*:+8+
+    z=U-x*p+p/2+
+    x=V-x*p-p/2+
+    r=3:x*x+z*z+
+    #=4<r/p+
+    D=D*I#D+
+    E=E*4/7#E+
+    F=F*2/5#F+
+    d=1/5#0+
+    A=A+D*d+
+    B=B+E*d+
+    C=C+F*d
 
-//handle
-4]R=5+
-D=D*I;E=E*4/7;F=F*2/5
+    //handle
+    4]R=5+
+    D=D*I;E=E*4/7;F=F*2/5
 
-//light from the window
-6]R=0+
-#=P+
-d=2#8*2+
-A=A+D*d+
-B=B+E*d+
-C=C+F*d*I+
-P=9
+    //light from the window
+    6]R=0+
+    #=P+
+    d=2#8*2+
+    A=A+D*d+
+    B=B+E*d+
+    C=C+F*d*I+
+    P=9
 
-//carpet
-7]R=o+
-D=D/7+
-E=E/3+
-F=F/7
+    //carpet
+    7]R=o+
+    D=D/7+
+    E=E/3+
+    F=F/7
 
-D]R=0+
-#=8<Y+
-C=0#3+
-#=4:3*X-4*Z+
-y=4:#/7+
-#=#-y*7+
-C=7#C
+    D]R=0+
+    #=8<Y+
+    C=0#3+
+    #=4:3*X-4*Z+
+    y=4:#/7+
+    #=#-y*7+
+    C=7#C
 ```
 
 -------------------------------------------
@@ -496,7 +495,7 @@ The last line, well, is the output filename. Just remember to throw in two `]`s
 and don't put a newline after it.
 
 ```
-]]example.ppm
+    ]]example.ppm
 ```
 
 

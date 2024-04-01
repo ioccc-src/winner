@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2018 vokes bugs](../../bugs.html#2018_vokes).
@@ -19,14 +19,14 @@ For more detailed information see [2018 vokes bugs](../../bugs.html#2018_vokes).
 ## To use:
 
 ```sh
-./prog < file.txt
+    ./prog < file.txt
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -54,27 +54,27 @@ it produces a build order with any dependency cycles gathered.
 For example, the following input (provided as [example-1.txt](example-1.txt)):
 
 ```
-0 4 8
-1 0
-2 1 3
-3 2
-4 1
-5 4 6
-6 5 2
-7 3 6 7
+    0 4 8
+    1 0
+    2 1 3
+    3 2
+    4 1
+    5 4 6
+    6 5 2
+    7 3 6 7
 ```
 
 would be interpreted as:
 
 ```
-0 -> 4, 8
-1 -> 0
-2 -> 1, 3
-3 -> 2
-4 -> 1
-5 -> 4, 6
-6 -> 5, 2
-7 -> 3, 6, 7
+    0 -> 4, 8
+    1 -> 0
+    2 -> 1, 3
+    3 -> 2
+    4 -> 1
+    5 -> 4, 6
+    6 -> 5, 2
+    7 -> 3, 6, 7
 ```
 
 So, node 0 has edges to / depends on nodes 4 and 8, node 1 depends on
@@ -83,11 +83,11 @@ strongly connected components and prints them in reverse-topologically
 sorted order:
 
 ```
-0: 8
-1: 0 1 4
-2: 2 3
-3: 5 6
-4: 7
+    0: 8
+    1: 0 1 4
+    2: 2 3
+    3: 5 6
+    4: 7
 ```
 
 It uses [Tarjan's strongly connected components

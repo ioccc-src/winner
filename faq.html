@@ -379,24 +379,24 @@ command that is compatible with GNU Make version 3.81.</p>
 <h3 id="faq-0.3-may-i-use-a-different-source-or-compiled-filename-than-prog.c-or-prog"><a name="faq0_3"></a>FAQ 0.3: May I use a different source or compiled filename than prog.c or prog?</h3>
 <p>While your entry’s source filename, as submitted, must be <code>prog.c</code>, your entry’s <code>Makefile</code>
 may copy <code>prog.c</code> to a different filename as part of the compiling/building process. For example:</p>
-<pre class="make"><code>all: desired_name
+<pre class="make"><code>    all: desired_name
 
-desired_name: desired_name.c
-        cc desired_name.c -o $@
+    desired_name: desired_name.c
+            cc desired_name.c -o $@
 
-desired_name.c: prog.c
-        rm -f $@
-        cp -f prog.c $@
+    desired_name.c: prog.c
+            rm -f $@
+            cp -f prog.c $@
 
-clobber:
-        rm -f desired_name.c desired_name</code></pre>
+    clobber:
+            rm -f desired_name.c desired_name</code></pre>
 <p>We recommend that the <code>make clobber</code> rule remove files that your entry
 creates as part of the compiling/building process.</p>
 <p>You may also copy the compiled <code>prog</code> into a different file as part of compiling process.
 For example:</p>
-<pre class="make"><code>different_name: prog
-        rm -f $@
-        cp -f prog $@</code></pre>
+<pre class="make"><code>    different_name: prog
+            rm -f $@
+            cp -f prog $@</code></pre>
 <h3 id="faq-0.4-what-platform-should-i-assume-for-my-entry"><a name="faq0_4"></a>FAQ 0.4: What platform should I assume for my entry?</h3>
 <p>Your entry must compile with GCC and run under at least one flavor of UNIX (e.g.
 Linux or Solaris). To improve chances to win, it should work under both BSD and
@@ -779,19 +779,19 @@ winning entries page</a>.</p></li>
 <h2 id="section-3-compiling-and-running-ioccc-entries"><a name="faq3"></a>Section 3: Compiling and running IOCCC entries</h2>
 <h3 id="faq-3.0-what-makefile-rules-are-available-to-build-or-clean-up-ioccc-entries"><a name="faq3_0"></a>FAQ 3.0: What Makefile rules are available to build or clean up IOCCC entries?</h3>
 <p>In general the best way to compile everything in an entry directory is to run:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber all</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> clobber all</span></code></pre></div>
 <p>If you wish to compile every entry for every year you should go to the top level
 directory and run the same command as above, <code>make clobber all</code>.</p>
 <p>The <code>all</code> rule will build everything necessary except for the alternate
 versions. Every Makefile has an <code>alt</code> rule but it will only do something if an
 alternate version exists. To build all the entries along with any alternate code
 you can do from the top level directory:</p>
-<pre><code>make clobber everything</code></pre>
+<pre><code>    make clobber everything</code></pre>
 <p>If you wish to only build alternate code you can do:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber alt</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> clobber alt</span></code></pre></div>
 <p>If you wish to not remove the entry binaries and only compile the additional alt
 versions:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> alt</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
 <p>The following Makefile rules should be in all Makefiles:</p>
 <ul>
 <li>all: build the entry programs (main program and any supplementary program)</li>
@@ -948,7 +948,7 @@ the <a href="thanks-for-help.html">thanks-for-help.html</a> file.</p>
 <h4 id="red-hat-based-linux">Red Hat based Linux</h4>
 <p>First, see the above note on <a href="#X11_general">installing and starting Xorg</a>.</p>
 <p>Install Xorg and related packages:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dnf install <span class="at">--skip-broken</span> <span class="at">--best</span> <span class="at">--exclude</span> xorgxrdp <span class="at">--exclude</span> xorgxrdp-glamor <span class="st">&#39;*xorg*&#39;</span> <span class="st">&#39;libx*&#39;</span> <span class="st">&#39;libX*&#39;</span> <span class="st">&#39;fontconfig*&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> dnf install <span class="at">--skip-broken</span> <span class="at">--best</span> <span class="at">--exclude</span> xorgxrdp <span class="at">--exclude</span> xorgxrdp-glamor <span class="st">&#39;*xorg*&#39;</span> <span class="st">&#39;libx*&#39;</span> <span class="st">&#39;libX*&#39;</span> <span class="st">&#39;fontconfig*&#39;</span></span></code></pre></div>
 <p>See also:</p>
 <ul>
 <li><a href="https://www.wikihow.com/Configure-X11-in-Linux">How to Configure X11 in Linux</a></li>
@@ -968,7 +968,7 @@ XQuartz</a>, preferably on an <a href="https://support.apple.com/macos">Apple su
 macOS, preferably the most recent version</a>.
 After it is installed, open the “XQuartz” application (usually located in
 <code>/Applications/Utilities/XQuartz.app</code>) by typing at the command line:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> /Applications/Utilities/XQuartz.app</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">open</span> /Applications/Utilities/XQuartz.app</span></code></pre></div>
 <p>With the “XQuartz” application open you will get an <a href="https://www.x.org/wiki/">X Window System
 Manager</a> launched with an <a href="https://en.wikipedia.org/wiki/Xterm">Xterm window
 shell</a> started:</p>
@@ -987,7 +987,7 @@ See the above note for details.</p>
 <p>First, see the above note on <a href="#X11_general">installing and starting Xorg</a>.</p>
 <p>According to the <a href="https://wiki.debian.org/Xorg">Debian Xorg wiki</a>, installing
 X11 requires:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install xorg</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> apt install xorg</span></code></pre></div>
 <p><strong>IMPORTANT NOTE</strong>: The <a href="#Xorg_deprecated">X.org server has been deprecated</a>.
 See the above note for details.</p>
 <h4 id="other-linux-distributions">Other Linux distributions</h4>
@@ -1005,9 +1005,9 @@ may be helpful:</p>
 <li><a href="https://www.wikihow.com/Configure-X11-in-Linux">How to Configure X11 in Linux</a></li>
 </ul>
 <p>For systems that have the <code>dnf(1)</code> command:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dnf install <span class="at">--skip-broken</span> <span class="at">--best</span> <span class="at">--exclude</span> xorgxrdp <span class="at">--exclude</span> xorgxrdp-glamor <span class="st">&#39;*xorg*&#39;</span> <span class="st">&#39;libx*&#39;</span> <span class="st">&#39;libX*&#39;</span> <span class="st">&#39;fontconfig*&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> dnf install <span class="at">--skip-broken</span> <span class="at">--best</span> <span class="at">--exclude</span> xorgxrdp <span class="at">--exclude</span> xorgxrdp-glamor <span class="st">&#39;*xorg*&#39;</span> <span class="st">&#39;libx*&#39;</span> <span class="st">&#39;libX*&#39;</span> <span class="st">&#39;fontconfig*&#39;</span></span></code></pre></div>
 <p>For systems that have the <code>yum(1)</code> command:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> yum install <span class="at">--skip-broken</span> <span class="at">--best</span> <span class="at">--exclude</span> xorgxrdp <span class="at">--exclude</span> xorgxrdp-glamor <span class="st">&#39;*xorg*&#39;</span> <span class="st">&#39;libx*&#39;</span> <span class="st">&#39;libX*&#39;</span> <span class="st">&#39;fontconfig*&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> yum install <span class="at">--skip-broken</span> <span class="at">--best</span> <span class="at">--exclude</span> xorgxrdp <span class="at">--exclude</span> xorgxrdp-glamor <span class="st">&#39;*xorg*&#39;</span> <span class="st">&#39;libx*&#39;</span> <span class="st">&#39;libX*&#39;</span> <span class="st">&#39;fontconfig*&#39;</span></span></code></pre></div>
 <p><strong>IMPORTANT NOTE</strong>: The <a href="#Xorg_deprecated">X.org server has been deprecated</a>.
 See the above note for details.</p>
 <h4 id="package-website">package website</h4>
@@ -1020,13 +1020,13 @@ See the above note for details.</p>
 macOS with alternative methods for macOS and different package managers with Linux.</p>
 <h4 id="red-hat-based-linux-1">Red Hat based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dnf</span> install SDL2 SDL2-devel sdl12-compat sdl12-compat-devel</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">dnf</span> install SDL2 SDL2-devel sdl12-compat sdl12-compat-devel</span></code></pre></div>
 <p>Older RHEL distributions might have to use “yum” instead of “dnf”
 in the above command.</p>
 <p>In the past it was said that one might need to run <code>make</code> like:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> ... SDL2_INCLUDE_ROOT=/usr</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> ... SDL2_INCLUDE_ROOT=/usr</span></code></pre></div>
 <p>or set the following environment variable:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">SDL2_INCLUDE_ROOT</span><span class="op">=</span>/usr</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">SDL2_INCLUDE_ROOT</span><span class="op">=</span>/usr</span></code></pre></div>
 <p>but this might not be necessary in more modern days especially as we use
 <code>sdl-config</code> and <code>sdl2-config</code> which should find the proper paths.</p>
 <h4 id="macos-1">macOS</h4>
@@ -1038,20 +1038,20 @@ the package website.</p>
 <h5 id="macos-via-homebrew">macOS via Homebrew</h5>
 <p>If you have not already done so, install <a href="https://brew.sh">Homebrew</a>.</p>
 <p>Then to install SDL and SDL2, execute the following command:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install sdl2 sdl12-compat</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="st">&quot;</span><span class="va">$(</span><span class="ex">opt/homebrew/bin/brew</span> shellenv<span class="va">)</span><span class="st">&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">brew</span> install sdl2 sdl12-compat</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">eval</span> <span class="st">&quot;</span><span class="va">$(</span><span class="ex">opt/homebrew/bin/brew</span> shellenv<span class="va">)</span><span class="st">&quot;</span></span></code></pre></div>
 <h5 id="macos-via-macports">macos via MacPorts</h5>
 <p>If you haven’t already, install
 <a href="https://www.macports.org/install.php">MacPorts</a>. Then run:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> port install libsdl libsdl2</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> port install libsdl libsdl2</span></code></pre></div>
 <h4 id="debian-based-linux-1">Debian based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apt</span> install libsdl1.2debian libsdl1.2-dev libsdl2-dev</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">apt</span> install libsdl1.2debian libsdl1.2-dev libsdl2-dev</span></code></pre></div>
 <p>and then try <code>make all</code> again.</p>
 <p>In the past it was said that one might need to run <code>make</code> like:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> ... SDL2_INCLUDE_ROOT=/usr</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> ... SDL2_INCLUDE_ROOT=/usr</span></code></pre></div>
 <p>or set the following environment variable:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">SDL2_INCLUDE_ROOT</span><span class="op">=</span>/usr</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">SDL2_INCLUDE_ROOT</span><span class="op">=</span>/usr</span></code></pre></div>
 <p>but this might not be necessary in more modern days especially as we use
 <code>sdl-config</code> and <code>sdl2-config</code> which should find the proper paths.</p>
 <h4 id="other-linux-distributions-1">Other Linux distributions</h4>
@@ -1075,10 +1075,10 @@ as a GitHub pull request</a> for more information about pull requests.</p>
 macOS with alternative methods for macOS and different package managers with Linux.</p>
 <h4 id="red-hat-based-linux-2">Red Hat based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dnf</span> install ncurses ncurses-devel</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">dnf</span> install ncurses ncurses-devel</span></code></pre></div>
 <h4 id="macos-2">macOS</h4>
 <p>With macOS it should already be installed. If it is not you might have to do:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xcode-select</span> <span class="at">--install</span></span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">xcode-select</span> <span class="at">--install</span></span></code></pre></div>
 <p>and agree to the terms and conditions and proceed with the install.</p>
 <h5 id="macos-via-homebrew-1">macOS via Homebrew</h5>
 <p>Not applicable, see above.</p>
@@ -1086,7 +1086,7 @@ macOS with alternative methods for macOS and different package managers with Lin
 <p>Not applicable, see above.</p>
 <h4 id="debian-based-linux-2">Debian based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apt</span> install libncurses6</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">apt</span> install libncurses6</span></code></pre></div>
 <p>and then try <code>make all</code> again.</p>
 <h4 id="other-linux-distributions-2">Other Linux distributions</h4>
 <p>Use your package manager to install the appropriate packages. Try the search
@@ -1103,18 +1103,18 @@ processing programs, <a href="https://sox.sourceforge.net">SoX</a>, will work. H
 install depends on your OS.</p>
 <h4 id="red-hat-based-linux-3">Red Hat based Linux</h4>
 <p>As root or via sudo:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dnf</span> install <span class="at">-y</span> sox sox-devel</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">dnf</span> install <span class="at">-y</span> sox sox-devel</span></code></pre></div>
 <h4 id="macos-3">macOS</h4>
 <p>For macOS there are two well known options.</p>
 <h5 id="macos-via-homebrew-2">macOS via Homebrew</h5>
 <p>If you have not already done so, install <a href="https://brew.sh">Homebrew</a>.</p>
 <p>Then to install SoX, execute the following command:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install sox</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="st">&quot;</span><span class="va">$(</span><span class="ex">opt/homebrew/bin/brew</span> shellenv<span class="va">)</span><span class="st">&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">brew</span> install sox</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">eval</span> <span class="st">&quot;</span><span class="va">$(</span><span class="ex">opt/homebrew/bin/brew</span> shellenv<span class="va">)</span><span class="st">&quot;</span></span></code></pre></div>
 <h5 id="macos-via-macports-2">macOS via MacPorts</h5>
 <p>If you haven’t already, install
 <a href="https://www.macports.org/install.php">MacPorts</a>. Then run:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> port install sox</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> port install sox</span></code></pre></div>
 <h4 id="debian-based-linux-3">Debian based Linux</h4>
 <p>Usually the index.html file will explain how to use it under Debian so we do not
 include this here, at least for now.</p>
@@ -1135,13 +1135,13 @@ when they do, <code>-Weverything</code> is enabled with all of its challenges, p
 warnings, and sometimes warnings about things that do not matter, some of which
 are frankly frivolous and often downright dubious.</p>
 <p>To enable this feature:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber all CC=clang</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> clobber all CC=clang</span></code></pre></div>
 <p>or:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber all <span class="st">&#39;CWARN+= -Weverything&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> clobber all <span class="st">&#39;CWARN+= -Weverything&#39;</span></span></code></pre></div>
 <p>though it should be noted that if one tries <code>-Weverything</code> with compilers that
 are not <code>clang</code> they <em>might</em> see something like:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&#39;int main(void) {}&#39;</span> <span class="op">&gt;</span> foo.c <span class="kw">;</span> <span class="fu">cc</span> <span class="at">-Weverything</span> foo.c <span class="at">-o</span> foo</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="ex">cc:</span> error: unrecognized command-line option <span class="st">&#39;-Weverything&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&#39;int main(void) {}&#39;</span> <span class="op">&gt;</span> foo.c <span class="kw">;</span> <span class="fu">cc</span> <span class="at">-Weverything</span> foo.c <span class="at">-o</span> foo</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">cc:</span> error: unrecognized command-line option <span class="st">&#39;-Weverything&#39;</span></span></code></pre></div>
 <p>which means that it can’t even be compiled. Thus the proper way to do it is the
 first way, <code>make clobber all CC=clang</code>.</p>
 <p>IOCCC authors who have access to <code>clang</code> might wish to try their
@@ -1184,11 +1184,11 @@ Ferguson</a> was able to
 get much of it to work and looking at that entry might be of value to your
 submissions, at least if you can figure the code out :-). To see the
 differences, try from <code>1989/westley</code>:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> diff_orig_prog</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> diff_orig_prog</span></code></pre></div>
 <p>If you have <code>colordiff</code> try:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> DIFF=colordiff diff_orig_prog</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> DIFF=colordiff diff_orig_prog</span></code></pre></div>
 <p>Alternatively you can try:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..eb9e69fde657acc8c85a618a8a99af4c2f93b21d westley.c</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">git</span> diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..eb9e69fde657acc8c85a618a8a99af4c2f93b21d westley.c</span></code></pre></div>
 <p>As you can see, using <code>clang</code> has some additional problems to work out but if
 you can get your entry to work well in <code>clang</code> it might very well be considered
 better than other entries.</p>
@@ -1202,14 +1202,14 @@ special characters. There are typical defaults like (where <code>^</code> = ctrl
 </ul>
 <p>and various others. But if you don’t know this you can find out through the
 <code>stty(1)</code> command with the <code>-a</code> option. For instance with macOS you might see:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> stty <span class="at">-a</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="ex">speed</span> 9600 baud<span class="kw">;</span> <span class="ex">rows</span> 40<span class="kw">;</span> <span class="ex">columns</span> 155<span class="kw">;</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="ex">intr</span> = ^C<span class="kw">;</span> <span class="ex">quit</span> = ^<span class="dt">\;</span> erase = ^<span class="pp">?</span><span class="kw">;</span> <span class="bu">kill</span> = ^U<span class="kw">;</span> <span class="ex">eof</span> = ^D<span class="kw">;</span> <span class="ex">[..snip..]</span></span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> stty <span class="at">-a</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">speed</span> 9600 baud<span class="kw">;</span> <span class="ex">rows</span> 40<span class="kw">;</span> <span class="ex">columns</span> 155<span class="kw">;</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">intr</span> = ^C<span class="kw">;</span> <span class="ex">quit</span> = ^<span class="dt">\;</span> erase = ^<span class="pp">?</span><span class="kw">;</span> <span class="bu">kill</span> = ^U<span class="kw">;</span> <span class="ex">eof</span> = ^D<span class="kw">;</span> <span class="ex">[..snip..]</span></span></code></pre></div>
 <p>If you know the name you can use <code>grep</code> to find the correct line and if your
 implementation of <code>grep(1)</code> has the <code>-o</code> option you can filter it. For instance
 to find what the <code>intr</code> is set to:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> stty <span class="at">-a</span> <span class="kw">|</span><span class="fu">grep</span> <span class="at">-o</span> <span class="st">&#39;intr = ^[[:alpha:]]&#39;</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="ex">intr</span> = ^C</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> stty <span class="at">-a</span> <span class="kw">|</span><span class="fu">grep</span> <span class="at">-o</span> <span class="st">&#39;intr = ^[[:alpha:]]&#39;</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">intr</span> = ^C</span></code></pre></div>
 <p>… assuming of course that it’s a ctrl combination :-) If for some strange
 reason it’s not you might have to do something else including just piping it to
 just <code>grep intr</code> or whatever.</p>
@@ -1246,19 +1246,19 @@ Please see <a href="#fix_an_entry">FAQ 5.2</a> for how to submit a fix to an IOC
 <p>If your OS package manager does not have the package <code>tcpserver</code> you can
 download, making sure you’re in a temporary directory, and compile the source
 like:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> http://cr.yp.to/ucspi-tcp/ucspi-tcp-0.88.tar.gz</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> ucspi-tcp-0.88.tar.gz</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ucspi-tcp-0.88</span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span></span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">wget</span> http://cr.yp.to/ucspi-tcp/ucspi-tcp-0.88.tar.gz</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tar</span> ucspi-tcp-0.88.tar.gz</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">cd</span> ucspi-tcp-0.88</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
 <p>Then as root or via <code>sudo(1)</code> enter:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> setup check</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> setup check</span></code></pre></div>
 <p>That will install it to <code>/usr/local/bin</code>. Now you should be able to use the
 entry in question.</p>
 <h3 id="how-do-i-compile-and-install-netpbm-for-entries-that-require-it"><a name="faq3_15"></a><a name="netpbm"></a>3.15 - How do I compile and install netpbm for entries that require it?</h3>
 <p>This depends on your operating system for which we describe a couple below.</p>
 <h4 id="red-hat-based-linux-4">Red Hat based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dnf</span> install netpbm-progs netpbm</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">dnf</span> install netpbm-progs netpbm</span></code></pre></div>
 <p>Older RHEL distributions might have to use “yum” instead of “dnf”
 in the above command.</p>
 <h4 id="macos-4">macOS</h4>
@@ -1270,14 +1270,14 @@ the package website.</p>
 <h5 id="macos-via-homebrew-3">macOS via Homebrew</h5>
 <p>If you have not already done so, install <a href="https://brew.sh">Homebrew</a>.</p>
 <p>Then to install netpbm, execute the following command:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install netpbm</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">brew</span> install netpbm</span></code></pre></div>
 <h5 id="macos-via-macports-3">macos via MacPorts</h5>
 <p>If you haven’t already, install
 <a href="https://www.macports.org/install.php">MacPorts</a>. Then run:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> port install libnetpbm netpbm</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> port install libnetpbm netpbm</span></code></pre></div>
 <h4 id="debian-based-linux-4">Debian based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apt</span> install netpbm</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">apt</span> install netpbm</span></code></pre></div>
 <p>and then try <code>make all</code> again.</p>
 <h4 id="other-linux-distributions-4">Other Linux distributions</h4>
 <p>Use your package manager to install the appropriate packages. Try the search
@@ -1292,7 +1292,7 @@ for downloading, installing and using netpbm.</p>
 <p>This depends on your operating system for which we describe a couple below.</p>
 <h4 id="red-hat-based-linux-5">Red Hat based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dnf</span> install libjpeg-turbo-utils libjpeg-turbo-devel libjpeg-turbo</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">dnf</span> install libjpeg-turbo-utils libjpeg-turbo-devel libjpeg-turbo</span></code></pre></div>
 <p>Older RHEL distributions might have to use “yum” instead of “dnf”
 in the above command.</p>
 <h4 id="macos-5">macOS</h4>
@@ -1304,14 +1304,14 @@ the package website.</p>
 <h5 id="macos-via-homebrew-4">macOS via Homebrew</h5>
 <p>If you have not already done so, install <a href="https://brew.sh">Homebrew</a>.</p>
 <p>Then to install libjpeg-turbo, execute the following command:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install libjpeg-turbo</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">brew</span> install libjpeg-turbo</span></code></pre></div>
 <h5 id="macos-via-macports-4">macos via MacPorts</h5>
 <p>If you haven’t already, install
 <a href="https://www.macports.org/install.php">MacPorts</a>. Then run:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> port install libjpeg-turbo libjpeg-turbo-devel</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> port install libjpeg-turbo libjpeg-turbo-devel</span></code></pre></div>
 <h4 id="debian-based-linux-5">Debian based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apt</span> install libturbojpeg0 libturbojpeg0-dev</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">apt</span> install libturbojpeg0 libturbojpeg0-dev</span></code></pre></div>
 <p>and then try <code>make all</code> again.</p>
 <h4 id="other-linux-distributions-5">Other Linux distributions</h4>
 <p>Use your package manager to install the appropriate packages. Try the search
@@ -1326,7 +1326,7 @@ for downloading, installing and using libjpeg-turbo.</p>
 <p>This depends on your operating system for which we describe a couple below.</p>
 <h4 id="red-hat-based-linux-6">Red Hat based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dnf</span> install ImageMagick</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">dnf</span> install ImageMagick</span></code></pre></div>
 <p>Older RHEL distributions might have to use “yum” instead of “dnf”
 in the above command.</p>
 <h4 id="macos-6">macOS</h4>
@@ -1338,14 +1338,14 @@ the package website.</p>
 <h5 id="macos-via-homebrew-5">macOS via Homebrew</h5>
 <p>If you have not already done so, install <a href="https://brew.sh">Homebrew</a>.</p>
 <p>Then to install ImageMagick, execute the following command:</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install ImageMagick</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">brew</span> install ImageMagick</span></code></pre></div>
 <h5 id="macos-via-macports-5">macos via MacPorts</h5>
 <p>If you haven’t already, install
 <a href="https://www.macports.org/install.php">MacPorts</a>. Then run:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> port install ImageMagick</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> port install ImageMagick</span></code></pre></div>
 <h4 id="debian-based-linux-6">Debian based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apt</span> install imagemagick</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">apt</span> install imagemagick</span></code></pre></div>
 <p>and then try <code>make all</code> again.</p>
 <h4 id="other-linux-distributions-6">Other Linux distributions</h4>
 <p>Use your package manager to install the appropriate packages. Try the search
@@ -1363,19 +1363,12 @@ See <a href="#X11_general">FAQ 3.7: How do I run an IOCCC entry that requires X1
 general information about X11.</p>
 <p>Once X11 is install and the X Window Server is running, one needs to compile
 and link with the two libraries, <em>GL</em> and <em>GLU</em>:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cc</span> ... <span class="at">-lGL</span> <span class="at">-lGLU</span> <span class="at">-L</span> _location-where-X11-libs-are-installed_ <span class="at">-lX11</span></span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="kw">``</span></span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="ex">NOTE:</span> The OpenGL development effort is being manageed by <span class="pp">[</span><span class="ss">vulkan.org</span><span class="pp">]</span><span class="er">(</span><span class="ex">https://vulkan.org</span><span class="kw">)</span><span class="bu">.</span></span>
-<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="ex">We</span> suggest you check out their resource for further information on OpenGL.</span>
-<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a><span class="co">#### Red Hat based Linux</span></span>
-<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a><span class="ex">Execute</span> the following as root or via sudo:</span>
-<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a><span class="kw">```</span><span class="fu">sh</span></span>
-<span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dnf install glew-devel SDL2-devel SDL2_image-devel glm-devel freetype-devel</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> ... <span class="at">-lGL</span> <span class="at">-lGLU</span> <span class="at">-L</span> _location-where-X11-libs-are-installed_ <span class="at">-lX11</span></span></code></pre></div>
+<p>NOTE: The OpenGL development effort is being manageed by <a href="https://vulkan.org">vulkan.org</a>.
+We suggest you check out their resource for further information on OpenGL.</p>
+<h4 id="red-hat-based-linux-7">Red Hat based Linux</h4>
+<p>Execute the following as root or via sudo:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> dnf install glew-devel SDL2-devel SDL2_image-devel glm-devel freetype-devel</span></code></pre></div>
 <p>See <a href="https://en.wikibooks.org/wiki/OpenGL_Programming/Installation/Linux">OpenGL Programming/Installation/Linux</a> for details.</p>
 <p>Older RHEL distributions might have to use “yum” instead of “dnf”
 in the above command.</p>
@@ -1387,7 +1380,7 @@ should be able to go. However in Apple drops support for OpenGL later on,
 you might look to install OpenGL via Homebrew or MacPorts.</p>
 <h4 id="debian-based-linux-7">Debian based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install libglew-dev libsdl2-dev libsdl2-image-dev libglm-dev libfreetype6-dev</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> apt-get install libglew-dev libsdl2-dev libsdl2-image-dev libglm-dev libfreetype6-dev</span></code></pre></div>
 <p>and then try <code>make all</code> again.</p>
 <p>See <a href="https://en.wikibooks.org/wiki/OpenGL_Programming/Installation/Linux">OpenGL Programming/Installation/Linux</a> for details.</p>
 <h4 id="other-linux-distributions-7">Other Linux distributions</h4>
@@ -1416,9 +1409,9 @@ because of alarming warnings that can be displayed, in some systems at runtime
 interspersed with the output of the program.</p>
 <p>For instance in macOS the entry <a href="1990/tbr/index.html">1990/tbr</a> would output the
 warning in such a way that caused confusing output for the entry, looking like:</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./tbr</span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> warning: this program uses gets<span class="er">(</span><span class="kw">)</span><span class="ex">,</span> which is unsafe.</span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="co"># nothing here, what to do?</span></span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./tbr</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> warning: this program uses gets<span class="er">(</span><span class="kw">)</span><span class="ex">,</span> which is unsafe.</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># nothing here, what to do?</span></span></code></pre></div>
 <p>In some cases changing the code to use <code>fgets()</code> is not so easy to fix and in
 one case at least there is an alternate version that has the fix instead due to
 a problem it creates (correct output but segfaults after the output in one of
@@ -1434,10 +1427,10 @@ instance the fix to <a href="1988/reddy/index.html">1988/reddy</a> required only
 these problems.</p>
 <p>An annoying fact is that for ‘“compatibility” reasons’ <code>fgets()</code> retains the
 newline and <code>gets()</code> does not. As the Unix version 7 man page used to say:</p>
-<pre><code>BUGS
+<pre><code>    BUGS
 
-The fgets(3) function retains the newline while gets(3) does not, all in the
-name of backward compatibility.</code></pre>
+    The fgets(3) function retains the newline while gets(3) does not, all in the
+    name of backward compatibility.</code></pre>
 <p>We’re not sure how this is compatibility but either way it can cause a
 problem and it is this that has complicated most of the fixes though again some
 can look almost identical.</p>
@@ -1484,7 +1477,7 @@ stands (that is <code>entry.alt.c</code> to <code>entry.c</code>).</li>
 <code>mullender.orig.c</code>, <code>mullender.alt.c</code> and <code>mullender.c</code>. For later years, it
 would be instead <code>prog.orig.c</code>, <code>prog.alt.c</code> and <code>prog.c</code>.</p>
 <p>Note that you might see something like:</p>
-<pre><code>make: [Makefile:170: diff_orig_prog] Error 1 (ignored)</code></pre>
+<pre><code>    make: [Makefile:170: diff_orig_prog] Error 1 (ignored)</code></pre>
 <p>at the end of the output but this is completely normal if there are differences.</p>
 <p>If the alt code is the same as the original, say with
 <a href="1984/anonymous/index.html">1984/anonymous</a>, then naturally there is no point in
@@ -1493,7 +1486,7 @@ allows for easily seeing the diffs.</p>
 <p>As some examples we’ll first look at one that has really long lines which
 will make it harder to see what is different,
 <a href="2001/anonymous/index.html">2001/anonymous</a>. What you would do is <code>cd 2001/anonymous</code> and then do:</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> diff_orig_prog</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> diff_orig_prog</span></code></pre></div>
 <p>and then be really confused! :-)</p>
 <p>But for an entry like <a href="1991/dds/index.html">1991/dds</a>, you can see the
 differences much more easily. <code>1991/dds</code> is a good example where it’s very
@@ -1510,13 +1503,13 @@ when you have compiler errors :-) (though there are, as noted, some examples
 where it’s quite easy to see the differences).</p>
 <p><a href="1991/dds/index.html">1991/dds</a> is also a good example to see the alt difference
 very easily. To do that <code>cd 1991/dds</code> and then do:</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> diff_alt_prog</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> diff_alt_prog</span></code></pre></div>
 <p>and you’ll see a single line changed and very simply.</p>
 <h4 id="tip-if-you-have-colordiff-installed-its-a-lot-easier-to-see-the-differences">Tip: if you have <code>colordiff</code> installed it’s a lot easier to see the differences</h4>
 <p>To use these rules but provide a different <code>diff</code>, for instance <code>colordiff</code>,
 just do:</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> DIFF=colordiff diff_orig_prog <span class="co"># for orig to prog diff</span></span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> DIFF=colordiff diff_alt_prog <span class="co"># for alt to prog diff</span></span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> DIFF=colordiff diff_orig_prog <span class="co"># for orig to prog diff</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> DIFF=colordiff diff_alt_prog <span class="co"># for alt to prog diff</span></span></code></pre></div>
 <p>Obviously if you want to view the alt code or the orig code you can just open
 the files as described above.</p>
 <h3 id="faq-4.3---why-do-author-remarks-sometimes-not-match-the-source-andor-why-are-there-other-inconsistencies-with-the-original-entry"><a name="faq4_3"></a> FAQ 4.3 - Why do author remarks sometimes not match the source and/or why are there other inconsistencies with the original entry?</h3>
@@ -1635,20 +1628,20 @@ request</a> for more information about pull requests.</p>
 <p>Nearly all HTML files on the <a href="https://www.ioccc.org">IOCCC web site</a>
 are built from <a href="https://daringfireball.net/projects/markdown/">markdown</a> files.
 If you see lines containing:</p>
-<pre><code>&lt;!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --&gt;
-&lt;!-- !!! DO NOT MODIFY THIS FILE - This file is generated by a tool !!! --&gt;
-&lt;!-- !!! DO NOT MODIFY THIS FILE - This file is generated by a tool !!! --&gt;
-&lt;!-- !!! DO NOT MODIFY THIS FILE - This file is generated by a tool !!! --&gt;
-&lt;!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --&gt;</code></pre>
+<pre><code>    &lt;!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --&gt;
+    &lt;!-- !!! DO NOT MODIFY THIS FILE - This file is generated by a tool !!! --&gt;
+    &lt;!-- !!! DO NOT MODIFY THIS FILE - This file is generated by a tool !!! --&gt;
+    &lt;!-- !!! DO NOT MODIFY THIS FILE - This file is generated by a tool !!! --&gt;
+    &lt;!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --&gt;</code></pre>
 <p>This means that the file is generated by a tool from a <a href="bin/index.html">bin directory tool</a>.
 You should <strong>NOT</strong> attempt to modify the file.</p>
 <p>You may also find lines slightly below the above set that suggest another file to edit.
 For example, in <a href="contact.html">contact.html</a>, one may read:</p>
-<pre><code>&lt;!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --&gt;
-&lt;!-- !!! Do not modify this web page, instead modify the file: contact.md --&gt;
-&lt;!-- !!! Do not modify this web page, instead modify the file: contact.md --&gt;
-&lt;!-- !!! Do not modify this web page, instead modify the file: contact.md --&gt;
-&lt;!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --&gt;</code></pre>
+<pre><code>    &lt;!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --&gt;
+    &lt;!-- !!! Do not modify this web page, instead modify the file: contact.md --&gt;
+    &lt;!-- !!! Do not modify this web page, instead modify the file: contact.md --&gt;
+    &lt;!-- !!! Do not modify this web page, instead modify the file: contact.md --&gt;
+    &lt;!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --&gt;</code></pre>
 <p>This means that you could consider editing the referenced markdown file
 in your <a href="#pull_request">IOCCC pull request</a>.</p>
 <p>Please see <a href="#fix_an_entry">FAQ 5.2 How may I submit a fix to an IOCCC
@@ -1658,20 +1651,20 @@ request</a> for more information about pull requests.</p>
 <p>In some cases, the HTML file is <strong>NOT</strong> based on markdown content, but instead
 came from JSON and other data files. So instead of the above reference to a
 markdown file, you will read:</p>
-<pre><code>&lt;!-- The main section of this web page came from JSON and other data files --&gt;
-&lt;!-- --&gt;
-&lt;!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --&gt;
-&lt;!-- The main section of this web page was generated via the tool: bin/gen-years.sh --&gt;
-&lt;!-- The main section of this web page was generated via the tool: bin/gen-years.sh --&gt;
-&lt;!-- The main section of this web page was generated via the tool: bin/gen-years.sh --&gt;
-&lt;!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --&gt;</code></pre>
+<pre><code>    &lt;!-- The main section of this web page came from JSON and other data files --&gt;
+    &lt;!-- --&gt;
+    &lt;!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --&gt;
+    &lt;!-- The main section of this web page was generated via the tool: bin/gen-years.sh --&gt;
+    &lt;!-- The main section of this web page was generated via the tool: bin/gen-years.sh --&gt;
+    &lt;!-- The main section of this web page was generated via the tool: bin/gen-years.sh --&gt;
+    &lt;!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --&gt;</code></pre>
 <p>This means there is <strong>NOT even a markdown file to edit</strong>. Instead one must
 modify JSON files and/or change a <a href="bin/index.html">bin directory tool</a>.</p>
 <p>If this happens, consider opening up an <a href="https://github.com/ioccc-src/winner/issues">IOCCC issue</a>
 and ask for help. See <a href="#fix_an_entry">FAQ 5.3</a> for information on opening up an IOCCC issue.</p>
 <h2 id="faq-5.5-how-may-i-correct-or-update-ioccc-author-information"><a name="faq5_5"></a><a name="fix_author"></a>FAQ 5.5: How may I correct or update IOCCC author information?</h2>
 <p>Authors of IOCCC winning entries are kept in JSON files of the form:</p>
-<pre><code>author/author_handle.json</code></pre>
+<pre><code>    author/author_handle.json</code></pre>
 <p>where <em>author_handle</em> is an author handle. See <a href="#author_handle">FAQ 6.5</a> for more
 information about an author handles.</p>
 <p>The contents of these JSON files contain the best known information
@@ -1713,11 +1706,11 @@ please consider submitting a change to replace the link accordingly.</p>
 <p>If there is no alternative that you can find you might want to remove the link
 instead by replacing the link with just phrase of text. For example,
 if the text in some <code>index.html</code> file was:</p>
-<pre><code>See the [author&#39;s description of the program](https://example.com) for more information.</code></pre>
+<pre><code>    See the [author&#39;s description of the program](https://example.com) for more information.</code></pre>
 <p>Assuming that the author’s description cannot be found in the
 <a href="https://web.archive.org">Internet Wayback Machine</a> archive, then
 replace that text with:</p>
-<pre><code>See the **author&#39;s description of the program** (sorry the content is no longer available) for more information.</code></pre>
+<pre><code>    See the **author&#39;s description of the program** (sorry the content is no longer available) for more information.</code></pre>
 <p>If you just wish to report the bad link issue, see <a href="#report_web_problem">FAQ 5.3</a>.</p>
 <h2 id="section-6-miscellaneous-ioccc"><a name="faq6"></a>Section 6: Miscellaneous IOCCC</h2>
 <h3 id="faq-6.0-how-did-an-entry-that-breaks-the-size-rule-2-win-the-ioccc"><a name="faq6_0"></a>FAQ 6.0: How did an entry that breaks the size rule 2 win the IOCCC?</h3>
@@ -1778,14 +1771,14 @@ exaggeration</a>.</p>
 <p>An <code>author_handle</code> is string that refers to a given author and is unique to the
 IOCCC. Each author has exactly one <code>author_handle</code>.</p>
 <p>For each <code>author_handle</code>, there will be a JSON file of the form:</p>
-<pre><code>author/author_handle.json</code></pre>
+<pre><code>    author/author_handle.json</code></pre>
 <p>See <a href="#author_json">FAQ 6.6</a> for information about the contents of these JSON file and
 how they are used.</p>
 <p>Because the <code>author_handle</code> is used to form a JSON filename, the string must be
 POSIX safe string plus the use of <code>+</code> (for technical reasons beyond this
 answer). In particular, the <code>author_handle</code> must be an ASCII string that
 matches this regexp:</p>
-<pre class="re"><code>^[0-9A-Za-z][0-9A-Za-z._+-]*$&quot;</code></pre>
+<pre class="re"><code>    ^[0-9A-Za-z][0-9A-Za-z._+-]*$&quot;</code></pre>
 <p>Default <code>author_handle</code>’s do not have multiple consecutive <code>_</code> (underscore)
 characters. Nevertheless, multiple consecutive <code>_</code> (underscore) characters are
 allowed. Contest submitters who wish to override their default <code>author_handle</code> may do so.</p>
@@ -1798,15 +1791,15 @@ desire.</p>
 <code>author_handle</code> so that new winning entries can be associated with the same
 author.</p>
 <p>For an anonymous <code>author</code>, their handle is one of these forms:</p>
-<pre><code>Anonymous_year</code></pre>
+<pre><code>    Anonymous_year</code></pre>
 <p>or:</p>
-<pre><code>Anonymous_year.digits</code></pre>
+<pre><code>    Anonymous_year.digits</code></pre>
 <p>The latter form is in case there are more than one anonymous author in a given
 year.</p>
 <p>NOTE: even if the directory name is not <code>anonymous</code> the above rules apply as in
 in the case of <a href="2005/anon/anon.c">2005/anon</a>.</p>
 <p>Anonymous <code>author_handle</code>’s match this regexp:</p>
-<pre class="re"><code>Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$</code></pre>
+<pre class="re"><code>    Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$</code></pre>
 <p>See <a href="#fix_author">FAQ 5.5</a> for information about how to update
 and/or correct IOCCC author information.</p>
 <h3 id="faq-6.6-what-is-a-author_handle.json-file-and-how-are-they-used"><a name="faq6_6"></a><a name="author_json"></a>FAQ 6.6: What is a author_handle.json file and how are they used?</h3>
@@ -1824,7 +1817,7 @@ contact an authors of a IOCCC entry, they will consult the contents
 of the author’s JSON file for ways to contact them.</p>
 <p>Each author of an IOCCC winning entry has their own <code>author_handle.json</code> file
 of the form:</p>
-<pre><code>author/author_handle.json</code></pre>
+<pre><code>    author/author_handle.json</code></pre>
 <p>where <em>author_handle</em> is an author handle. See <a href="#author_handle">FAQ 6.5</a> for more
 information about an author handles.</p>
 <h4 id="author_handle.json-json-file-contents">author_handle.json JSON file contents</h4>
@@ -1833,54 +1826,54 @@ See <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/json_i
 for information on the <em>So-called JSON spec</em>.</p>
 <p>A good way to understand the JSON file contents of a <code>author_handle.json</code> file
 is to look at an example, the <code>author_handle.json</code> file for Yusuke Endoh:</p>
-<pre><code>author/Yusuke_Endoh.json</code></pre>
+<pre><code>    author/Yusuke_Endoh.json</code></pre>
 <p>As of <em>Thu Nov 30 23:51:12 UTC 2023</em>, the contents was as follows:</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;no_comment&quot;</span> <span class="fu">:</span> <span class="st">&quot;mandatory comment: because comments were removed from the original JSON spec&quot;</span><span class="fu">,</span></span>
-<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;author_JSON_format_version&quot;</span> <span class="fu">:</span> <span class="st">&quot;1.0 2023-06-10&quot;</span><span class="fu">,</span></span>
-<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;author_handle&quot;</span> <span class="fu">:</span> <span class="st">&quot;Yusuke_Endoh&quot;</span><span class="fu">,</span></span>
-<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;full_name&quot;</span> <span class="fu">:</span> <span class="st">&quot;Yusuke Endoh&quot;</span><span class="fu">,</span></span>
-<span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;sort_word&quot;</span> <span class="fu">:</span> <span class="st">&quot;endoh&quot;</span><span class="fu">,</span></span>
-<span id="cb69-7"><a href="#cb69-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;location_code&quot;</span> <span class="fu">:</span> <span class="st">&quot;JP&quot;</span><span class="fu">,</span></span>
-<span id="cb69-8"><a href="#cb69-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;email&quot;</span> <span class="fu">:</span> <span class="st">&quot;mame@ruby-lang.org&quot;</span><span class="fu">,</span></span>
-<span id="cb69-9"><a href="#cb69-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;url&quot;</span> <span class="fu">:</span> <span class="st">&quot;https://mametter.hatenablog.com&quot;</span><span class="fu">,</span></span>
-<span id="cb69-10"><a href="#cb69-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;alt_url&quot;</span> <span class="fu">:</span> <span class="kw">null</span><span class="fu">,</span></span>
-<span id="cb69-11"><a href="#cb69-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;deprecated_twitter_handle&quot;</span> <span class="fu">:</span> <span class="kw">null</span><span class="fu">,</span></span>
-<span id="cb69-12"><a href="#cb69-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;mastodon&quot;</span> <span class="fu">:</span> <span class="st">&quot;@mame@ruby.social&quot;</span><span class="fu">,</span></span>
-<span id="cb69-13"><a href="#cb69-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;mastodon_url&quot;</span> <span class="fu">:</span> <span class="st">&quot;https://ruby.social/@mame&quot;</span><span class="fu">,</span></span>
-<span id="cb69-14"><a href="#cb69-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;github&quot;</span> <span class="fu">:</span> <span class="st">&quot;@mame&quot;</span><span class="fu">,</span></span>
-<span id="cb69-15"><a href="#cb69-15" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;affiliation&quot;</span> <span class="fu">:</span> <span class="kw">null</span><span class="fu">,</span></span>
-<span id="cb69-16"><a href="#cb69-16" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;winning_entry_set&quot;</span> <span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb69-17"><a href="#cb69-17" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2012_endoh1&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb69-18"><a href="#cb69-18" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2012_endoh2&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb69-19"><a href="#cb69-19" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2013_endoh1&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb69-20"><a href="#cb69-20" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2013_endoh2&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb69-21"><a href="#cb69-21" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2013_endoh3&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb69-22"><a href="#cb69-22" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2013_endoh4&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb69-23"><a href="#cb69-23" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2014_endoh1&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb69-24"><a href="#cb69-24" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2014_endoh2&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb69-25"><a href="#cb69-25" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2015_endoh1&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb69-26"><a href="#cb69-26" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2015_endoh2&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb69-27"><a href="#cb69-27" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2015_endoh3&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb69-28"><a href="#cb69-28" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2015_endoh4&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb69-29"><a href="#cb69-29" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2018_endoh1&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb69-30"><a href="#cb69-30" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2018_endoh2&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb69-31"><a href="#cb69-31" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2019_endoh&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb69-32"><a href="#cb69-32" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2020_endoh1&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb69-33"><a href="#cb69-33" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2020_endoh2&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb69-34"><a href="#cb69-34" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2020_endoh3&quot;</span> <span class="fu">}</span></span>
-<span id="cb69-35"><a href="#cb69-35" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
-<span id="cb69-36"><a href="#cb69-36" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;no_comment&quot;</span> <span class="fu">:</span> <span class="st">&quot;mandatory comment: because comments were removed from the original JSON spec&quot;</span><span class="fu">,</span></span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;author_JSON_format_version&quot;</span> <span class="fu">:</span> <span class="st">&quot;1.0 2023-06-10&quot;</span><span class="fu">,</span></span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;author_handle&quot;</span> <span class="fu">:</span> <span class="st">&quot;Yusuke_Endoh&quot;</span><span class="fu">,</span></span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;full_name&quot;</span> <span class="fu">:</span> <span class="st">&quot;Yusuke Endoh&quot;</span><span class="fu">,</span></span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;sort_word&quot;</span> <span class="fu">:</span> <span class="st">&quot;endoh&quot;</span><span class="fu">,</span></span>
+<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;location_code&quot;</span> <span class="fu">:</span> <span class="st">&quot;JP&quot;</span><span class="fu">,</span></span>
+<span id="cb70-8"><a href="#cb70-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;email&quot;</span> <span class="fu">:</span> <span class="st">&quot;mame@ruby-lang.org&quot;</span><span class="fu">,</span></span>
+<span id="cb70-9"><a href="#cb70-9" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;url&quot;</span> <span class="fu">:</span> <span class="st">&quot;https://mametter.hatenablog.com&quot;</span><span class="fu">,</span></span>
+<span id="cb70-10"><a href="#cb70-10" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;alt_url&quot;</span> <span class="fu">:</span> <span class="kw">null</span><span class="fu">,</span></span>
+<span id="cb70-11"><a href="#cb70-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;deprecated_twitter_handle&quot;</span> <span class="fu">:</span> <span class="kw">null</span><span class="fu">,</span></span>
+<span id="cb70-12"><a href="#cb70-12" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;mastodon&quot;</span> <span class="fu">:</span> <span class="st">&quot;@mame@ruby.social&quot;</span><span class="fu">,</span></span>
+<span id="cb70-13"><a href="#cb70-13" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;mastodon_url&quot;</span> <span class="fu">:</span> <span class="st">&quot;https://ruby.social/@mame&quot;</span><span class="fu">,</span></span>
+<span id="cb70-14"><a href="#cb70-14" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;github&quot;</span> <span class="fu">:</span> <span class="st">&quot;@mame&quot;</span><span class="fu">,</span></span>
+<span id="cb70-15"><a href="#cb70-15" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;affiliation&quot;</span> <span class="fu">:</span> <span class="kw">null</span><span class="fu">,</span></span>
+<span id="cb70-16"><a href="#cb70-16" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;winning_entry_set&quot;</span> <span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb70-17"><a href="#cb70-17" aria-hidden="true" tabindex="-1"></a>            <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2012_endoh1&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb70-18"><a href="#cb70-18" aria-hidden="true" tabindex="-1"></a>            <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2012_endoh2&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb70-19"><a href="#cb70-19" aria-hidden="true" tabindex="-1"></a>            <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2013_endoh1&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb70-20"><a href="#cb70-20" aria-hidden="true" tabindex="-1"></a>            <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2013_endoh2&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb70-21"><a href="#cb70-21" aria-hidden="true" tabindex="-1"></a>            <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2013_endoh3&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb70-22"><a href="#cb70-22" aria-hidden="true" tabindex="-1"></a>            <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2013_endoh4&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb70-23"><a href="#cb70-23" aria-hidden="true" tabindex="-1"></a>            <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2014_endoh1&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb70-24"><a href="#cb70-24" aria-hidden="true" tabindex="-1"></a>            <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2014_endoh2&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb70-25"><a href="#cb70-25" aria-hidden="true" tabindex="-1"></a>            <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2015_endoh1&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb70-26"><a href="#cb70-26" aria-hidden="true" tabindex="-1"></a>            <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2015_endoh2&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb70-27"><a href="#cb70-27" aria-hidden="true" tabindex="-1"></a>            <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2015_endoh3&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb70-28"><a href="#cb70-28" aria-hidden="true" tabindex="-1"></a>            <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2015_endoh4&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb70-29"><a href="#cb70-29" aria-hidden="true" tabindex="-1"></a>            <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2018_endoh1&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb70-30"><a href="#cb70-30" aria-hidden="true" tabindex="-1"></a>            <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2018_endoh2&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb70-31"><a href="#cb70-31" aria-hidden="true" tabindex="-1"></a>            <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2019_endoh&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb70-32"><a href="#cb70-32" aria-hidden="true" tabindex="-1"></a>            <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2020_endoh1&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb70-33"><a href="#cb70-33" aria-hidden="true" tabindex="-1"></a>            <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2020_endoh2&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb70-34"><a href="#cb70-34" aria-hidden="true" tabindex="-1"></a>            <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2020_endoh3&quot;</span> <span class="fu">}</span></span>
+<span id="cb70-35"><a href="#cb70-35" aria-hidden="true" tabindex="-1"></a>        <span class="ot">]</span></span>
+<span id="cb70-36"><a href="#cb70-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span></code></pre></div>
 <p>We now will walk thru the above JSON document looking at various JSON members:</p>
 <h5 id="no_comment">no_comment</h5>
-<div class="sourceCode" id="cb70"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;no_comment&quot;</span> <span class="er">:</span> <span class="er">&quot;mandatory</span> <span class="er">comment:</span> <span class="er">because</span> <span class="er">comments</span> <span class="er">were</span> <span class="er">removed</span> <span class="er">from</span> <span class="er">the</span> <span class="er">original</span> <span class="er">JSON</span> <span class="er">spec&quot;,</span></span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;no_comment&quot;</span> <span class="er">:</span> <span class="er">&quot;mandatory</span> <span class="er">comment:</span> <span class="er">because</span> <span class="er">comments</span> <span class="er">were</span> <span class="er">removed</span> <span class="er">from</span> <span class="er">the</span> <span class="er">original</span> <span class="er">JSON</span> <span class="er">spec&quot;,</span></span></code></pre></div>
 <p>Because the authors of the so-called JSON spec removed the ability to use comments in JSON
 (for reason(s) that seem to be less than credible), the IOCCC mandates this <em>JSON member</em>
 be present in all IOCCC related JSON files.</p>
 <p>There <strong>MUST</strong> be one and only one <code>no_comment</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be the exact <em>JSON string</em> as shown above.</p>
 <h5 id="author_json_format_version">author_JSON_format_version</h5>
-<div class="sourceCode" id="cb71"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;author_JSON_format_version&quot;</span> <span class="er">:</span> <span class="er">&quot;1.0</span> <span class="er">2023-06-10&quot;,</span></span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;author_JSON_format_version&quot;</span> <span class="er">:</span> <span class="er">&quot;1.0</span> <span class="er">2023-06-10&quot;,</span></span></code></pre></div>
 <p>This <em>JSON member</em> holds the format version of the <code>author_handle.json</code> JSON file.</p>
 <p>There <strong>MUST</strong> be one and only one <code>author_JSON_format_version</code>
 <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong> be a <em>JSON string</em>.</p>
@@ -1892,7 +1885,7 @@ of the these files is modified: and then only those who maintain the
 <a href="https://www.ioccc.org">official IOCCC web site</a> would be the one to do this
 in conjunction with changes to <a href="bin/index.html">bin directory tools</a>.</p>
 <h5 id="author_handle">author_handle</h5>
-<div class="sourceCode" id="cb72"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;author_handle&quot;</span> <span class="er">:</span> <span class="er">&quot;Yusuke_Endoh&quot;,</span></span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;author_handle&quot;</span> <span class="er">:</span> <span class="er">&quot;Yusuke_Endoh&quot;,</span></span></code></pre></div>
 <p>This <em>JSON member</em> holds the author handle of the author.</p>
 <p>There <strong>MUST</strong> be one and only one <code>author_handle</code> <em>JSON member</em>
 and the <em>JSON value</em> <strong>MUST</strong> be a <em>JSON string</em> that is also a value author handle.</p>
@@ -1906,14 +1899,14 @@ without the trailing <code>.json</code>) of the <code>author_handle.json</code> 
 a change of <em>author_handle</em> <em>JSON value</em> would also require the
 <code>author_handle.json</code> file to also be renamed.</p>
 <h5 id="full_name">full_name</h5>
-<div class="sourceCode" id="cb73"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;full_name&quot;</span> <span class="er">:</span> <span class="er">&quot;Yusuke</span> <span class="er">Endoh&quot;,</span></span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;full_name&quot;</span> <span class="er">:</span> <span class="er">&quot;Yusuke</span> <span class="er">Endoh&quot;,</span></span></code></pre></div>
 <p>This <em>JSON member</em> holds the full name of the author.</p>
 <p>There <strong>MUST</strong> be one and only one <code>full_name</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em>.</p>
 <p>The full name of an author may use non-ASCII characters so long as the
 full name is properly encoded as a <em>JSON string</em>.</p>
 <h5 id="sort_word">sort_word</h5>
-<div class="sourceCode" id="cb74"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;sort_word&quot;</span> <span class="er">:</span> <span class="er">&quot;endoh&quot;,</span></span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;sort_word&quot;</span> <span class="er">:</span> <span class="er">&quot;endoh&quot;,</span></span></code></pre></div>
 <p>This <em>JSON member</em> holds the string that will be used to sort the author.</p>
 <p>There <strong>MUST</strong> be one and only one <code>sort_word</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em>. Moreover the string <strong>MUST</strong> be a lower case ASCII
@@ -1927,7 +1920,7 @@ wishes to be found in the <code>/authors.html</code> file under a different
 string, such as if they wish to be listed under their first name
 or their username, then they may change this accordingly.</p>
 <h5 id="location_code">location_code</h5>
-<div class="sourceCode" id="cb75"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;location_code&quot;</span> <span class="er">:</span> <span class="er">&quot;JP&quot;,</span></span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;location_code&quot;</span> <span class="er">:</span> <span class="er">&quot;JP&quot;,</span></span></code></pre></div>
 <p>This <em>JSON member</em> holds the string that is the
 <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Decoding_table">ISO 3166-1 alpha-2 code</a>
 of the author’s location or country.</p>
@@ -1944,38 +1937,38 @@ ISO 3166-1 alpha-2 codes belong to locations that are not technically
 a country, such as “Antarctica” or a User-assigned code.</p>
 <p>If the author wishes to not specify a location, they should select <strong>XX</strong>.</p>
 <h5 id="email">email</h5>
-<div class="sourceCode" id="cb76"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;email&quot;</span> <span class="er">:</span> <span class="er">&quot;mame@ruby-lang.org&quot;,</span></span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;email&quot;</span> <span class="er">:</span> <span class="er">&quot;mame@ruby-lang.org&quot;,</span></span></code></pre></div>
 <p>This <em>JSON member</em> holds the email address of the author, or is the value null.</p>
 <p>There <strong>MUST</strong> be one and only one <code>email</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>.</p>
 <p>If the author wishes to not specify an email address, or if the email address is
 unknown, they should use the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;email&quot;</span> <span class="er">:</span> <span class="er">null,</span></span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;email&quot;</span> <span class="er">:</span> <span class="er">null,</span></span></code></pre></div>
 <p>NOTE: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <h5 id="url">url</h5>
-<div class="sourceCode" id="cb78"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;url&quot;</span> <span class="er">:</span> <span class="er">&quot;https://mametter.hatenablog.com&quot;,</span></span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;url&quot;</span> <span class="er">:</span> <span class="er">&quot;https://mametter.hatenablog.com&quot;,</span></span></code></pre></div>
 <p>This <em>JSON member</em> holds the URL of the author’s home page.</p>
 <p>There <strong>MUST</strong> be one and only one <code>url</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>.</p>
 <p>If the author wishes to not specify an email address, or if the URL is
 unknown, they should use the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;url&quot;</span> <span class="er">:</span> <span class="er">null,</span></span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;url&quot;</span> <span class="er">:</span> <span class="er">null,</span></span></code></pre></div>
 <p>NOTE: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <h5 id="alt_url">alt_url</h5>
-<div class="sourceCode" id="cb80"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;alt_url&quot;</span> <span class="er">:</span> <span class="er">null,</span></span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;alt_url&quot;</span> <span class="er">:</span> <span class="er">null,</span></span></code></pre></div>
 <p>This <em>JSON member</em> holds an alternate or 2nd URL a home page for the author.</p>
 <p>There <strong>MUST</strong> be one and only one <code>url</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>.</p>
 <p>In some cases the author may wish to record a special URL for their IOCCC entry,
 or a 2nd URL such as a work or school or personal home page. For example,
 Cody as of <em>Thu Nov 30 23:51:12 UTC 2023</em> used:</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;alt_url&quot;</span> <span class="er">:</span> <span class="er">&quot;https://ioccc.xexyl.net&quot;,</span></span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;alt_url&quot;</span> <span class="er">:</span> <span class="er">&quot;https://ioccc.xexyl.net&quot;,</span></span></code></pre></div>
 <p>If the author wishes to not specify an email address, or if the alternate URL is
 unknown, they should use the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;url&quot;</span> <span class="er">:</span> <span class="er">null,</span></span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;url&quot;</span> <span class="er">:</span> <span class="er">null,</span></span></code></pre></div>
 <p>NOTE: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <h5 id="deprecated_twitter_handle">deprecated_twitter_handle</h5>
 <p>This <em>JSON member</em> used to hold the twitter handle of the author.</p>
@@ -1985,14 +1978,14 @@ be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>.</
 and so the <code>deprecated_twitter_handle</code> is <strong>no longer used</strong>. A <em>JSON value</em> that is
 not a <em>JSON null</em> is kept for only historic reasons. For example, Anthony C. Howe
 once used:</p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;deprecated_twitter_handle&quot;</span> <span class="er">:</span> <span class="er">&quot;@SirWumpus&quot;,</span></span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;deprecated_twitter_handle&quot;</span> <span class="er">:</span> <span class="er">&quot;@SirWumpus&quot;,</span></span></code></pre></div>
 <p>If the author wishes to not specify an twitter handle, or if the twitter handle is
 unknown, they should use the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;deprecated_twitter_handle&quot;</span> <span class="er">:</span> <span class="er">null,</span></span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;deprecated_twitter_handle&quot;</span> <span class="er">:</span> <span class="er">null,</span></span></code></pre></div>
 <p>NOTE: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <h5 id="mastodon">mastodon</h5>
-<div class="sourceCode" id="cb85"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;mastodon&quot;</span> <span class="er">:</span> <span class="er">&quot;@mame@ruby.social&quot;,</span></span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;mastodon&quot;</span> <span class="er">:</span> <span class="er">&quot;@mame@ruby.social&quot;,</span></span></code></pre></div>
 <p>This <em>JSON member</em> holds the
 <a href="https://en.wikipedia.org/wiki/Mastodon_(social_network)">Mastodon social network</a>
 handle of the author.</p>
@@ -2004,7 +1997,7 @@ used by the author.</p>
 <p>For more information in Mastodon, see the <a href="https://mastodon.help">Mastodon help</a> guide.
 See the “Mastodon Address” section of that page in particular.</p>
 <p>The IOCCC Mastodon handle is:</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="er">@ioccc@fosstodon.org</span></span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">@ioccc@fosstodon.org</span></span></code></pre></div>
 <p>The IOCCC uses the Mastodon social network for announcements such
 as the opening and closing of a new IOCCC, changes to the IOCCC web
 site, updates during the judging process, and when new IOCCC entries
@@ -2012,10 +2005,10 @@ are selected. We recommend you follow us on Mastodon.</p>
 <p>If the author wishes to not specify an Mastodon handle, or if the Mastodon handle is
 unknown, they should use the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;mastodon&quot;</span> <span class="er">:</span> <span class="er">null,</span></span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;mastodon&quot;</span> <span class="er">:</span> <span class="er">null,</span></span></code></pre></div>
 <p>NOTE: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <h5 id="mastodon_url">mastodon_url</h5>
-<div class="sourceCode" id="cb88"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;mastodon_url&quot;</span> <span class="er">:</span> <span class="er">&quot;https://ruby.social/@mame&quot;,</span></span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;mastodon_url&quot;</span> <span class="er">:</span> <span class="er">&quot;https://ruby.social/@mame&quot;,</span></span></code></pre></div>
 <p>This <em>JSON member</em> holds the URL of the author’s Mastodon page.</p>
 <p>There <strong>MUST</strong> be one and only one <code>mastodon_url</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>. The <em>JSON string</em> just be a valid URL.
@@ -2023,16 +2016,16 @@ If the <code>mastodon</code> handle is a <em>JSON null</em>, them the <code>mast
 If the <code>mastodon</code> handle is a <em>JSON string</em>, then the <code>mastodon_url</code> <strong>MUST</strong> be a <em>JSON string</em>.</p>
 <p>The <code>mastodon_url</code> is just a translation of the above mentioned <a href="#mastodon">mastodon</a> handle.
 For example, if the Mastodon handle is:</p>
-<pre><code>@user@server.domain</code></pre>
+<pre><code>    @user@server.domain</code></pre>
 <p>Then the <code>mastodon_url</code> would be:</p>
-<pre><code>https://server.domain/@user</code></pre>
+<pre><code>    https://server.domain/@user</code></pre>
 <p>If the author wishes to not specify an Mastodon URL, or if the Mastodon URL is
 unknown, they should use the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;mastodon_url&quot;</span> <span class="er">:</span> <span class="er">null,</span></span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;mastodon_url&quot;</span> <span class="er">:</span> <span class="er">null,</span></span></code></pre></div>
 <p>NOTE: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <h5 id="github">github</h5>
-<div class="sourceCode" id="cb92"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;github&quot;</span> <span class="er">:</span> <span class="er">&quot;@mame&quot;,</span></span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;github&quot;</span> <span class="er">:</span> <span class="er">&quot;@mame&quot;,</span></span></code></pre></div>
 <p>This <em>JSON member</em> holds the <a href="https://github.com">GitHub</a> handle of the author.</p>
 <p>There <strong>MUST</strong> be one and only one <code>github</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>. The <code>github</code> <em>JSON string</em> <strong>MUST</strong>
@@ -2040,37 +2033,37 @@ start with an at sign (_<span class="citation" data-cites="_">@_</span>) and <st
 <p>The IOCCC uses GitHub to hold the <a href="https://github.com/ioccc-src/winner">official winner repo of the IOCCC</a>,
 and hosts <a href="https://www.ioccc.org">official IOCCC web site</a> on GitHub pages.</p>
 <p>The IOCCC GitHub handle is:</p>
-<pre><code>@ioccc-src</code></pre>
+<pre><code>    @ioccc-src</code></pre>
 <p>If the author wishes to not specify an GitHub handle, or if the GitHub handle is
 unknown, they should use the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
-<div class="sourceCode" id="cb94"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;github&quot;</span> <span class="er">:</span> <span class="er">null,</span></span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;github&quot;</span> <span class="er">:</span> <span class="er">null,</span></span></code></pre></div>
 <p>NOTE: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <h5 id="affiliation">affiliation</h5>
-<div class="sourceCode" id="cb95"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;affiliation&quot;</span> <span class="er">:</span> <span class="er">null,</span></span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;affiliation&quot;</span> <span class="er">:</span> <span class="er">null,</span></span></code></pre></div>
 <p>This <em>JSON member</em> holds the affiliation of the author.</p>
 <p>There <strong>MUST</strong> be one and only one <code>affiliation</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>.</p>
 <p>An affiliation might be the name of a school, university, company, or organization.
 It is recommended that the affiliation <em>JSON string</em> be the formal affiliation name.
 For example, the affiliation for the IOCCC would be:</p>
-<pre><code>The International Obfuscared C Code Contest</code></pre>
+<pre><code>    The International Obfuscared C Code Contest</code></pre>
 <p>If the author wishes to not specify an affiliation, or if the affiliation is
 unknown, they should use the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
-<div class="sourceCode" id="cb97"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;affiliation&quot;</span> <span class="er">:</span> <span class="er">null,</span></span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;affiliation&quot;</span> <span class="er">:</span> <span class="er">null,</span></span></code></pre></div>
 <p>NOTE: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <h5 id="winning_entry_set">winning_entry_set</h5>
 <h5 id="entry_id">entry_id</h5>
-<div class="sourceCode" id="cb98"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;winning_entry_set&quot;</span> <span class="er">:</span> <span class="ot">[</span></span>
-<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2012_endoh1&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2012_endoh2&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb98-4"><a href="#cb98-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2013_endoh1&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb98-5"><a href="#cb98-5" aria-hidden="true" tabindex="-1"></a><span class="er">...</span></span>
-<span id="cb98-6"><a href="#cb98-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2020_endoh1&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb98-7"><a href="#cb98-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2020_endoh2&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb98-8"><a href="#cb98-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2020_endoh3&quot;</span> <span class="fu">}</span></span>
-<span id="cb98-9"><a href="#cb98-9" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;winning_entry_set&quot;</span> <span class="er">:</span> <span class="ot">[</span></span>
+<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2012_endoh1&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb99-3"><a href="#cb99-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2012_endoh2&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb99-4"><a href="#cb99-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2013_endoh1&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb99-5"><a href="#cb99-5" aria-hidden="true" tabindex="-1"></a>    <span class="er">...</span></span>
+<span id="cb99-6"><a href="#cb99-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2020_endoh1&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb99-7"><a href="#cb99-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2020_endoh2&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb99-8"><a href="#cb99-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span> <span class="dt">&quot;entry_id&quot;</span> <span class="fu">:</span> <span class="st">&quot;2020_endoh3&quot;</span> <span class="fu">}</span></span>
+<span id="cb99-9"><a href="#cb99-9" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span></code></pre></div>
 <p>The <code>winning_entry_set</code> <em>JSON member</em> holds <em>JSON array</em> containing one or more <code>entry_id</code> _JSON member_s.</p>
 <p>There <strong>MUST</strong> be one and only one <code>winning_entry_set</code> and the <em>JSON value</em> <strong>MUST</strong>
 be a non-empty <em>JSON array</em>. Each value in that <em>JSON array</em> <strong>MUST</strong> must contain
@@ -2086,9 +2079,9 @@ and/or correct IOCCC author information.</p>
 <p>A <code>entry_id</code> is a 4-digit year, followed by an underscore, followed by a directory name.</p>
 <p>For example, the <code>entry_id</code> associated with Cody Boone Ferguson’s 2nd winning IOCCC entry
 of 2020 is found under the following directory:</p>
-<pre><code>2020/ferguson2</code></pre>
+<pre><code>    2020/ferguson2</code></pre>
 <p>The <code>entry_id</code> for that winning entry is:</p>
-<pre><code>2020_ferguson2</code></pre>
+<pre><code>    2020_ferguson2</code></pre>
 <h3 id="faq-6.8-what-is-the-purpose-of-the-.top-.year-and-.path-files"><a name="faq6_8"></a>FAQ 6.8: What is the purpose of the .top, .year and .path files?</h3>
 <p>The <a href=".top">.top</a> file resides at the top directory. This file contains the complete list
 of IOCCC years.</p>
@@ -2098,7 +2091,7 @@ of the IOCCC entry directories for a given year. For example, see the <a href=".
 These files contain the directory path from the top directory.
 For example see <a href="1984/anonymous/.path">1984/anonymous/.path</a>.</p>
 <p>The .top, .year and .path files are generated from the top level Makefile, by:</p>
-<div class="sourceCode" id="cb101"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> genpath</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> genpath</span></code></pre></div>
 <h3 id="a-nametermsfaq-6.9-what-is-the-current-meaning-of-the-ioccc-terms-author-entry-and-submission"><a name="faq6_9"></a>&lt;a name”terms”&gt;</a>FAQ 6.9: What is the current meaning of the IOCCC terms Author, Entry, and Submission?</h3>
 <p>The IOCCC is now attempting to use the following terms:</p>
 <ul>
@@ -2170,7 +2163,7 @@ instructions. Once you’ve completed this task make sure you log in to GitHub.<
 <p>Assuming you do not have an ssh key you should go to the command prompt and
 type (if you already have one and are okay using it for GitHub you can use that
 one):</p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> rsa <span class="at">-b</span> 4096 <span class="at">-C</span> <span class="st">&quot;luser@example.com&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ssh-keygen</span> <span class="at">-t</span> rsa <span class="at">-b</span> 4096 <span class="at">-C</span> <span class="st">&quot;luser@example.com&quot;</span></span></code></pre></div>
 <p>where <code>luser@example.com</code> is the email you want associated with your key.
 Follow the instructions. It will tell you the key files.</p>
 <p>Once you have an ssh key you need to go to your <a href="https://github.com/settings/profile">account
@@ -2195,11 +2188,11 @@ instructions in forking the repo.</p>
 <h4 id="cloning-the-temp-test-ioccc-repo">Cloning the temp-test-ioccc repo</h4>
 <p>Once you have forked the repo you are ready to clone it to your system. For
 instance Cody Boone Ferguson has the GitHub handle <em>xexyl</em> so he would type in:</p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/xexyl/temp-test-ioccc <span class="pp">[</span><span class="ss">target_dir</span><span class="pp">]</span></span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">git</span> clone https://github.com/xexyl/temp-test-ioccc <span class="pp">[</span><span class="ss">target_dir</span><span class="pp">]</span></span></code></pre></div>
 <p>Once that is completed you will need to change to that directory. The default
 directory would be the name of the repo but if you specified a target directory
 it will be that. For instance using the above example you might do:</p>
-<div class="sourceCode" id="cb104"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> temp-test-ioccc</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">cd</span> temp-test-ioccc</span></code></pre></div>
 <p>You’re ready to make your changes now!</p>
 <h4 id="making-changes-fixes-etc.">Making changes, fixes etc.</h4>
 <p>Here you must use your wits, knowledge, creativity and whatever else you have.
@@ -2217,7 +2210,7 @@ or an exercise in sibilance!</p>
 starts with <code># Last updated:</code> to refer to <code>01 March 2024</code> rather than what it
 is now (at the time of writing this), <code>15 April 2023</code>.</p>
 <p>But what if he wanted to add a file? He’d create the file and then type:</p>
-<div class="sourceCode" id="cb105"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add foo</span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">git</span> add foo</span></code></pre></div>
 <p>where <em>foo</em> is the file to add.</p>
 <p>When he’s ready to make a commit he would need to create a new branch for the
 pull request.</p>
@@ -2225,61 +2218,61 @@ pull request.</p>
 <p>First, as an aside, if this is your first pull request (which we assume is if you’re
 reading this :-) ) you need to make sure that you can push changes to GitHub
 with your ssh key. To do this you need to do:</p>
-<div class="sourceCode" id="cb106"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-T</span> git@github.com</span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ssh</span> <span class="at">-T</span> git@github.com</span></code></pre></div>
 <p>Cody would see:</p>
 <blockquote>
 <p>Hi xexyl! You’ve successfully authenticated, but GitHub does not provide shell access.</p>
 </blockquote>
 <p>Now, assuming that the forked repo is
 <a href="https://github.com/xexyl/temp-test-ioccc" class="uri">https://github.com/xexyl/temp-test-ioccc</a>, you’d type:</p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote set-url origin git@github.com:xexyl/temp-test-ioccc.git</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">git</span> remote set-url origin git@github.com:xexyl/temp-test-ioccc.git</span></code></pre></div>
 <p>Now you’d be ready to make your commits.</p>
 <p>Before doing anything else, however, a new branch needs to be created.
 Continuing the example above for
 <a href="2020/ferguson1/play.sh">2020/ferguson1/play.sh</a>, it might be that:</p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-B</span> human-snakes</span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">git</span> checkout <span class="at">-B</span> human-snakes</span></code></pre></div>
 <p>This would change the branch to the newly created branch <code>human-snakes</code> branch.
 Now Cody could commit the changes:</p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit play.sh <span class="co"># if specifying specific files</span></span>
-<span id="cb109-2"><a href="#cb109-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-a</span> <span class="co"># if committing everything</span></span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">git</span> commit play.sh <span class="co"># if specifying specific files</span></span>
+<span id="cb110-2"><a href="#cb110-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">git</span> commit <span class="at">-a</span> <span class="co"># if committing everything</span></span></code></pre></div>
 <p>He could also have done:</p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add play.sh</span>
-<span id="cb110-2"><a href="#cb110-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit</span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">git</span> add play.sh</span>
+<span id="cb111-2"><a href="#cb111-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">git</span> commit</span></code></pre></div>
 <p>In any case this would open an editor (in his case vim) to write a commit log.
 It is recommended that the first line is &lt;=51 chars and the next line is blank.
 Then if necessary add a description for the log. For instance the above might
 warrant the log:</p>
-<pre><code>Add fun link to 2020/ferguson1/play.sh
+<pre><code>    Add fun link to 2020/ferguson1/play.sh
 
-Did you know some people believe in snake human hybrids? I added a link to the
-script that discusses this and gives supposed examples.</code></pre>
+    Did you know some people believe in snake human hybrids? I added a link to the
+    script that discusses this and gives supposed examples.</code></pre>
 <p>Now a pull request has to be opened.</p>
 <h4 id="opening-a-pull-request">Opening a pull request</h4>
 <p>To do this depends on the branch name. Assuming the branch from above,
 <code>human-snakes</code>, you would type:</p>
-<div class="sourceCode" id="cb112"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">--set-upstream</span> origin human-snakes</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">git</span> push <span class="at">--set-upstream</span> origin human-snakes</span></code></pre></div>
 <p>This might show:</p>
-<pre><code>Enumerating objects: 9, done.
-Counting objects: 100% (9/9), done.
-Delta compression using up to 10 threads
-Compressing objects: 100% (5/5), done.
-Writing objects: 100% (5/5), 739 bytes | 147.00 KiB/s, done.
-Total 5 (delta 4), reused 0 (delta 0), pack-reused 0
-remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
-remote:
-remote: Create a pull request for &#39;human-snakes&#39; on GitHub by visiting:
-remote:      https://github.com/xexyl/temp-test-ioccc/pull/new/human-snakes
-remote:
-To github.com:xexyl/temp-test-ioccc.git
- * [new branch]                                                                        human-snakes -&gt; human-snakes
-branch &#39;human-snakes&#39; set up to track &#39;origin/human-snakes&#39;.</code></pre>
+<pre><code>    Enumerating objects: 9, done.
+    Counting objects: 100% (9/9), done.
+    Delta compression using up to 10 threads
+    Compressing objects: 100% (5/5), done.
+    Writing objects: 100% (5/5), 739 bytes | 147.00 KiB/s, done.
+    Total 5 (delta 4), reused 0 (delta 0), pack-reused 0
+    remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+    remote:
+    remote: Create a pull request for &#39;human-snakes&#39; on GitHub by visiting:
+    remote:      https://github.com/xexyl/temp-test-ioccc/pull/new/human-snakes
+    remote:
+    To github.com:xexyl/temp-test-ioccc.git
+     * [new branch]     human-snakes -&gt; human-snakes
+    branch &#39;human-snakes&#39; set up to track &#39;origin/human-snakes&#39;.</code></pre>
 <p>The link referred to above would then be opened to open a pull request. Just
 follow the instructions at this point. If however it does not show a link it is
 likely because the branch already exists in your GitHub account (for the repo).
 In this case you can open the link:
 <a href="https://github.com/ioccc-src/temp-test-ioccc/pulls" class="uri">https://github.com/ioccc-src/temp-test-ioccc/pulls</a> which might show something
 like:</p>
-<pre><code>xexyl:human-snakes had recent pushes 1 minute ago</code></pre>
+<pre><code>    xexyl:human-snakes had recent pushes 1 minute ago</code></pre>
 <p>and to the right of it you would see a button that says <em>Compare &amp; pull request</em>
 which you could click on. Do that and follow the instructions.</p>
 <p>An important note is if you have more than one pull request opened it’ll only
@@ -2303,7 +2296,7 @@ in the matter.</p>
 <p>When the judges have merged the pull request you now need to make sure your fork
 has the merge. To do this from the command line, assuming the fork in the above
 example, you would type:</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout master <span class="kw">&amp;&amp;</span> <span class="fu">git</span> pull https://github.com/ioccc-src/temp-test-ioccc.git master <span class="kw">&amp;&amp;</span> <span class="fu">git</span> push origin master</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">git</span> checkout master <span class="kw">&amp;&amp;</span> <span class="fu">git</span> pull https://github.com/ioccc-src/temp-test-ioccc.git master <span class="kw">&amp;&amp;</span> <span class="fu">git</span> push origin master</span></code></pre></div>
 <p>This will merge your pull request to your fork.</p>
 <!--
 

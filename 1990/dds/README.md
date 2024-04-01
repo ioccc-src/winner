@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./dds
+    ./dds
 ```
 
 
@@ -17,8 +17,8 @@ make all
 Give the following lines as input:
 
 ```basic
-OLD LANDER.BAS
-RUN
+    OLD LANDER.BAS
+    RUN
 ```
 
 NOTE: this entry is probably one of the only times CAPS LOCK might be worth

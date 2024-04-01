@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2011 borsanyi bugs](../../bugs.html#2011_borsanyi).
@@ -19,14 +19,14 @@ For more detailed information see [2011 borsanyi bugs](../../bugs.html#2011_bors
 ## To use:
 
 ```sh
-./borsanyi < some_data_file
+    ./borsanyi < some_data_file
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 

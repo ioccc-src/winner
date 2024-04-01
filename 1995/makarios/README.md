@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./makarios
+    ./makarios
 ```
 
 
@@ -24,7 +24,7 @@ This program takes no arguments. It emits the base 8 representation
 of prime palindromes (palindromic in base 8, of course).
 
 ```
-^_^
+    ^_^
 ```
 
 

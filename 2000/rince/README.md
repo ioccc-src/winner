@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -10,7 +10,7 @@ make all
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2000 rince bugs](../../bugs.html#2000_rince).
@@ -19,7 +19,7 @@ For more detailed information see [2000 rince bugs](../../bugs.html#2000_rince).
 ## To use:
 
 ```sh
-./rince number number2
+    ./rince number number2
 ```
 
 If `DISPLAY` is not set the program will very likely crash or do something
@@ -29,7 +29,7 @@ different.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 This will run the program several times with different parameters to show
@@ -52,7 +52,7 @@ observation.
 The simplest way to run it is with no arguments. Just type:
 
 ```sh
-./rince
+    ./rince
 ```
 
 You will need to have access to X windows, although it doesn't require
@@ -66,7 +66,7 @@ which is used to ensure that we see the "live" pictures. Simply specify
 the fraction of a day to skip forward for each screen refresh. I suggest:
 
 ```sh
-./rince 0.01
+    ./rince 0.01
 ```
 
 To display the output (still guessing?) for a given date, specify two
@@ -74,8 +74,8 @@ arguments. The first argument is as before and the second argument is a
 Julian day number (given as a fractional component). E.g.:
 
 ```sh
-./rince 0 2441193.6
-./rince 0.01 2441193.6
+    ./rince 0 2441193.6
+    ./rince 0.01 2441193.6
 ```
 
 A Julian day is defined to be the number of days since January 1st in the year
@@ -98,10 +98,10 @@ The moons are labelled with Roman numerals from `I` to `IV`, `I` being the
 closest to the planet and `IV` being the furthest. They are:
 
 ```
-I     Io
-II    Europa
-III   Ganymede
-IV    Callisto
+    I     Io
+    II    Europa
+    III   Ganymede
+    IV    Callisto
 ```
 
 Amazingly, all it takes is a pair of binoculars to see the Galilean moons,
@@ -134,46 +134,46 @@ Galileo discovered the moons in January 1610.
 states the following:
 
 ```
-By early 1610, Galileo had further improved his telescope by
-double its power, so it now enlarged objects a thousand
-times. He began looking at the stars and couldn't believe how
-many more he could now see! The number seemed infinite. He was
-beginning to realize the fixed stars weren't a flat distant
-wall on a globe, but a three-dimensional expanse bigger than
-anyone had ever thought!
+    By early 1610, Galileo had further improved his telescope by
+    double its power, so it now enlarged objects a thousand
+    times. He began looking at the stars and couldn't believe how
+    many more he could now see! The number seemed infinite. He was
+    beginning to realize the fixed stars weren't a flat distant
+    wall on a globe, but a three-dimensional expanse bigger than
+    anyone had ever thought!
 
-Then, on January 7, about an hour after sunset, Jupiter rose
-in the east, and Galileo happened to turn his powerful scope
-on its bright disk. It wasn't the first time he had looked at
-Jupiter, but before it was with one of his lesser-powered
-telescopes. This time, though, he noticed three small but
-bright stars near the planet, two to one side and one to the
-other. He wondered at how bright the small stars were and how
-they were arranged in what seemed like a straight line. The
-next night he decided to look at Jupiter again, and to his
-surprise, the stars had moved. But not in such a way as he
-would expect. If Jupiter was moving as it normally should, the
-stars would be east of Jupiter. But all three were to the
-west! The next night was cloudy, but on January 10, Galileo
-was able to observe the planet again. One of the stars was
-gone, and the other two were now on the east side. As the
-stars moved around Jupiter on each succeeding night, and were
-finally joined by a fourth star, it dawned on Galileo that
-what he had found were moons orbiting Jupiter!  Almost at once
-he realized that this was proof that not all objects orbited
-the Earth. Here were four bodies that were orbiting
-Jupiter. One argument against the sun-centered theory was, if
-the Earth orbited the sun, wouldn't the moon get left behind?
-Here he could see for himself that somehow, a planet could
-orbit the sun, and not leave a moon behind!
+    Then, on January 7, about an hour after sunset, Jupiter rose
+    in the east, and Galileo happened to turn his powerful scope
+    on its bright disk. It wasn't the first time he had looked at
+    Jupiter, but before it was with one of his lesser-powered
+    telescopes. This time, though, he noticed three small but
+    bright stars near the planet, two to one side and one to the
+    other. He wondered at how bright the small stars were and how
+    they were arranged in what seemed like a straight line. The
+    next night he decided to look at Jupiter again, and to his
+    surprise, the stars had moved. But not in such a way as he
+    would expect. If Jupiter was moving as it normally should, the
+    stars would be east of Jupiter. But all three were to the
+    west! The next night was cloudy, but on January 10, Galileo
+    was able to observe the planet again. One of the stars was
+    gone, and the other two were now on the east side. As the
+    stars moved around Jupiter on each succeeding night, and were
+    finally joined by a fourth star, it dawned on Galileo that
+    what he had found were moons orbiting Jupiter!  Almost at once
+    he realized that this was proof that not all objects orbited
+    the Earth. Here were four bodies that were orbiting
+    Jupiter. One argument against the sun-centered theory was, if
+    the Earth orbited the sun, wouldn't the moon get left behind?
+    Here he could see for himself that somehow, a planet could
+    orbit the sun, and not leave a moon behind!
 ```
 
 Thus we can plot Galileo's discoveries using the following three plots:
 
 ```sh
-./rince 0 $(./dmy2jd  7.8 1 1610)
-./rince 0 $(./dmy2jd  8.8 1 1610)
-./rince 0 $(./dmy2jd 10.8 1 1610)
+    ./rince 0 $(./dmy2jd  7.8 1 1610)
+    ./rince 0 $(./dmy2jd  8.8 1 1610)
+    ./rince 0 $(./dmy2jd 10.8 1 1610)
 ```
 
 However we can go one better by seeing what Galileo would have seen if it
@@ -181,7 +181,7 @@ wasn't cloudy on the 9th. Try:
 
 
 ```sh
-./rince 0 $(./dmy2jd 9.85 1 1610)
+    ./rince 0 $(./dmy2jd 9.85 1 1610)
 ```
 
 to see what he was missing out on. I wonder what he'd have made of that!

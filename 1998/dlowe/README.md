@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 There is an alternate version available. See [Alternate code](#alternate-code)
@@ -11,9 +11,9 @@ below for more details.
 ## To use:
 
 ```sh
-./dlowe < file > pootfile
+    ./dlowe < file > pootfile
 
-./dlowe < file
+    ./dlowe < file
 ```
 
 
@@ -22,7 +22,7 @@ below for more details.
 The current status of this entry is:
 
 ```
-STATUS: missing or dead link - please provide them
+    STATUS: missing or dead link - please provide them
 ```
 
 For more detailed information see [1998 dlowe bugs](../../bugs.html#1998_dlowe).
@@ -31,9 +31,8 @@ For more detailed information see [1998 dlowe bugs](../../bugs.html#1998_dlowe).
 ## Try:
 
 ```sh
-./dlowe < README.md
-./dlowe < README.md > README.poot.md
-
+    ./dlowe < README.md
+    ./dlowe < README.md > README.poot.md
 ```
 
 Why is there different output?
@@ -41,7 +40,7 @@ Why is there different output?
 Also try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 Did you spot the Easter egg there?
@@ -56,14 +55,14 @@ that program.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
 ### Alternate use:
 
 ```
-./dlowe.alt < file > pootfile
+    ./dlowe.alt < file > pootfile
 ```
 
 What's the difference between this and `dlowe`?
@@ -72,7 +71,7 @@ What's the difference between this and `dlowe`?
 ### Alternate try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 Did you spot the Easter egg there?
@@ -95,27 +94,27 @@ more consistent level of quality.  :-)
 A CGI script such as:
 
 ```sh
-#!/bin/sh
-# pootify - a sample CGI pootifier
-#
-POOT="/usr/local/bin/dlowe"
-LYNX="/usr/local/bin/lynx"
-ECHO="/usr/bin/echo"
-EXPR="/usr/bin/expr"
-${ECHO} "Content-type: text/html"
-${ECHO}
-if [ -z "${QUERY_STRING}" ]; then
-    ${ECHO} "QUERY_STRING not found"
-else
-    URL=`${EXPR} "$QUERY_STRING" : '[Uu][Rr][Ll]=\(.*\)'`
-    if [ -z "${URL}" ]; then
-	${ECHO} "No URL given in QUERY_STRING"
-    elif [ X`${EXPR} "${URL}" : '[Ff][Ii][Ll][Ee]:'` != X0 ]; then
-	${ECHO} "file: based URLs are not allowed"
+    #!/bin/sh
+    # pootify - a sample CGI pootifier
+    #
+    POOT="/usr/local/bin/dlowe"
+    LYNX="/usr/local/bin/lynx"
+    ECHO="/usr/bin/echo"
+    EXPR="/usr/bin/expr"
+    ${ECHO} "Content-type: text/html"
+    ${ECHO}
+    if [ -z "${QUERY_STRING}" ]; then
+	${ECHO} "QUERY_STRING not found"
     else
-	${LYNX} -restrictions=all -source "${URL}" | ${POOT}
+	URL=`${EXPR} "$QUERY_STRING" : '[Uu][Rr][Ll]=\(.*\)'`
+	if [ -z "${URL}" ]; then
+	    ${ECHO} "No URL given in QUERY_STRING"
+	elif [ X`${EXPR} "${URL}" : '[Ff][Ii][Ll][Ee]:'` != X0 ]; then
+	    ${ECHO} "file: based URLs are not allowed"
+	else
+	    ${LYNX} -restrictions=all -source "${URL}" | ${POOT}
+	fi
     fi
-fi
 ```
 
 can be used to pootify web pages. This has been added as
@@ -133,9 +132,9 @@ should use the above one instead. You can use the script
 can look at locally in a browser or pipe through `less(1)`. For instance:
 
 ```sh
-./pootify.sh URL=https://microsoft.com | less
+    ./pootify.sh URL=https://microsoft.com | less
 
-./pootify.sh -r URL=https://microsoft.com > ms.html
+    ./pootify.sh -r URL=https://microsoft.com > ms.html
 ```
 
 where the first one would show the text as rendered but without links, images
@@ -145,7 +144,7 @@ it in a browser.
 For an old example of it working as a CGI script see:
 
 ```sh
-https://web.archive.org/web/20040326083431/http://www.pootpoot.com/poot/pootify/?URL=http%3A%2F%2Fwww.ioccc.org
+    https://web.archive.org/web/20040326083431/http://www.pootpoot.com/poot/pootify/?URL=http%3A%2F%2Fwww.ioccc.org
 ```
 
 

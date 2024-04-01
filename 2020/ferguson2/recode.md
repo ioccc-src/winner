@@ -56,13 +56,13 @@ wonderful 'challenge' for everyone.
 # <a name="options" href="#toc">Options</a>
 
 ```sh
-./recode -h
-usage: ./recode [options]
--v			display selected settings
--r			pseudo-randomly select settings
--f<input file>	read file for Enigma input
--R<string|file>	init settings from settings string or file
--o<output file>	write settings to file
+    ./recode -h
+    usage: ./recode [options]
+    -v			display selected settings
+    -r			pseudo-randomly select settings
+    -f<input file>	read file for Enigma input
+    -R<string|file>	init settings from settings string or file
+    -o<output file>	write settings to file
 ```
 
 
@@ -72,24 +72,24 @@ if you don't give the option to read in a file for input.
 `-v` shows selected settings. For example combining `-r` and `-v`:
 
 ```sh
-$ echo IOCCC | ./recode -r -v
-Ring 1: (  I) EKMFLGDQVZNTOWYHXUSPAIBRCJ
-Ring 2: (  V) VZBRGITYUPSDNHLXAWMJQOFECK
-Ring 3: ( IV) ESOVPZJAYQUIRHXLNFTGKDCMWB
-Ring  settings: WAR
-Ring positions: XKE
-Reflector: (B) YRUHQSLDPXNGOKMIEBFZCWVJAT
-Plugboard pair #01: XE
-Plugboard pair #02: HJ
-Plugboard pair #03: SA
-Plugboard pair #04: PY
-Plugboard pair #05: CI
-Plugboard pair #06: ZB
-Plugboard pair #07: WD
-Plugboard pair #08: QN
-Plugboard pair #09: RU
-Plugboard pair #10: VG
-1WX5AK4RE1XEHJSAPYCIZBWDQNRUVGIOCCC
+    $ echo IOCCC | ./recode -r -v
+    Ring 1: (  I) EKMFLGDQVZNTOWYHXUSPAIBRCJ
+    Ring 2: (  V) VZBRGITYUPSDNHLXAWMJQOFECK
+    Ring 3: ( IV) ESOVPZJAYQUIRHXLNFTGKDCMWB
+    Ring  settings: WAR
+    Ring positions: XKE
+    Reflector: (B) YRUHQSLDPXNGOKMIEBFZCWVJAT
+    Plugboard pair #01: XE
+    Plugboard pair #02: HJ
+    Plugboard pair #03: SA
+    Plugboard pair #04: PY
+    Plugboard pair #05: CI
+    Plugboard pair #06: ZB
+    Plugboard pair #07: WD
+    Plugboard pair #08: QN
+    Plugboard pair #09: RU
+    Plugboard pair #10: VG
+    1WX5AK4RE1XEHJSAPYCIZBWDQNRUVGIOCCC
 ```
 
 Though you won't find some of those strings in [recode.c](recode.c) or
@@ -105,11 +105,11 @@ or is the same file name (see below) then only stdout will be used.  Example of
 randomised output going to a file:
 
 ```sh
-$ ./recode -r -oconfig
-IOCCC
-3PP4UB5GG1ELGTKFCOPVBNUYXJAWSDIOCCC
-$ cat config
-3PP4UB5GG1ELGTKFCOPVBNUYXJAWSD$
+    $ ./recode -r -oconfig
+    IOCCC
+    3PP4UB5GG1ELGTKFCOPVBNUYXJAWSDIOCCC
+    $ cat config
+    3PP4UB5GG1ELGTKFCOPVBNUYXJAWSD$
 ```
 
 Notice that a terminating newline isn't added. Also note that it outputs to
@@ -144,7 +144,7 @@ Due to the way the parsing of options is done (no spaces between option char and
 argument) shell expansion will not work right so for example doing:
 
 ```sh
-$ ./recode -R~/config
+    $ ./recode -R~/config
 ```
 
 will _not_ read the file 'config' in the home directory. I show another way to
@@ -164,18 +164,17 @@ If stdin is not a tty (`!isatty(0)`) and neither randomised mode nor reading in
 from a file is specified then you might just see something like:
 
 ```sh
-$ echo testing test tests | ./recode
-1AB2BB3CC1testing test tests
+    $ echo testing test tests | ./recode
+    1AB2BB3CC1testing test tests
 
-$ echo testing test tests | ./recode | ./prog - 2>/dev/null
-mfrwxan lzng ofnlu
+    $ echo testing test tests | ./recode | ./prog - 2>/dev/null
+    mfrwxan lzng ofnlu
 
-$ echo testing test tests | ./recode | ./prog - 2>/dev/null | ./recode
-1AB2BB3CC1mfrwxan lzng ofnlu
+    $ echo testing test tests | ./recode | ./prog - 2>/dev/null | ./recode
+    1AB2BB3CC1mfrwxan lzng ofnlu
 
-$ echo testing test tests | ./recode | ./prog - 2>/dev/null | ./recode | ./prog - 2>/dev/null
-testing test tests
-
+    $ echo testing test tests | ./recode | ./prog - 2>/dev/null | ./recode | ./prog - 2>/dev/null
+    testing test tests
 ```
 
 In other words just the defaults. This was to simplify the problems with
@@ -191,9 +190,9 @@ need be done at all) then make sure to redirect stderr to /dev/null. If you
 don't you might see something like:
 
 ```sh
-$ ./recode -r | ./prog -
-Ring 1: IOCCC
-Setting 1: Position 1: Ring 2: Setting 2: Position 2: Ring 3: Setting 3: Position 3: Reflector: Plugboard pair 1: Plugboard pair 2: Plugboard pair 3: Plugboard pair 4: Plugboard pair 5: Plugboard pair 6: Plugboard pair 7: Plugboard pair 8: Plugboard pair 9: Plugboard pair 10: DEVIY
+    $ ./recode -r | ./prog -
+    Ring 1: IOCCC
+    Setting 1: Position 1: Ring 2: Setting 2: Position 2: Ring 3: Setting 3: Position 3: Reflector: Plugboard pair 1: Plugboard pair 2: Plugboard pair 3: Plugboard pair 4: Plugboard pair 5: Plugboard pair 6: Plugboard pair 7: Plugboard pair 8: Plugboard pair 9: Plugboard pair 10: DEVIY
 ```
 
 What happened is that `Ring 1: ` is printed to stderr but since it's not been
@@ -207,40 +206,40 @@ That's why after I sent EOF it printed out the remaining strings to stderr.
 # <a name="manuallytest" href="#toc">Manually test the recode program with the Enigma program</a>
 
 ```sh
-$ cat input
-IOCCC
+    $ cat input
+    IOCCC
 
-$ ./recode -finput
-Rotors:
-(1)   I: EKMFLGDQVZNTOWYHXUSPAIBRCJ
-(2)  II: AJDKSIRUXBLHWTMCQGZNPYFVOE
-(3) III: BDFHJLCPRTXVZNYEIWGAKMUSQO
-(4)  IV: ESOVPZJAYQUIRHXLNFTGKDCMWB
-(5)   V: VZBRGITYUPSDNHLXAWMJQOFECK
-Input rotor 1 (1 - 5): 1
-Input rotor 2 (1 - 5): 2
-Input rotor 3 (1 - 5): 3
-Input setting 1 (A - Z): A
-Input setting 2 (A - Z): A
-Input setting 3 (A - Z): A
-Input position 1 (A - Z): A
-Input position 2 (A - Z): A
-Input position 3 (A - Z): A
-Reflector:
-(1) (B) YRUHQSLDPXNGOKMIEBFZCWVJAT
-(2) (C) FVPJIAOYEDRZXWGCTKUQSBNMHL
-Input reflector (1 - 2): 2
-Input plugboard pair 1: AB
-Input plugboard pair 2: CD
-Input plugboard pair 3: ..
-Input plugboard pair 4: EF
-Input plugboard pair 5: GH
-Input plugboard pair 6: IJ
-Input plugboard pair 7: KL
-Input plugboard pair 8: MN
-Input plugboard pair 9: OP
-Input plugboard pair 10: QR
-1AA2AA3AA2ABCD..EFGHIJKLMNOPQRIOCCC
+    $ ./recode -finput
+    Rotors:
+    (1)   I: EKMFLGDQVZNTOWYHXUSPAIBRCJ
+    (2)  II: AJDKSIRUXBLHWTMCQGZNPYFVOE
+    (3) III: BDFHJLCPRTXVZNYEIWGAKMUSQO
+    (4)  IV: ESOVPZJAYQUIRHXLNFTGKDCMWB
+    (5)   V: VZBRGITYUPSDNHLXAWMJQOFECK
+    Input rotor 1 (1 - 5): 1
+    Input rotor 2 (1 - 5): 2
+    Input rotor 3 (1 - 5): 3
+    Input setting 1 (A - Z): A
+    Input setting 2 (A - Z): A
+    Input setting 3 (A - Z): A
+    Input position 1 (A - Z): A
+    Input position 2 (A - Z): A
+    Input position 3 (A - Z): A
+    Reflector:
+    (1) (B) YRUHQSLDPXNGOKMIEBFZCWVJAT
+    (2) (C) FVPJIAOYEDRZXWGCTKUQSBNMHL
+    Input reflector (1 - 2): 2
+    Input plugboard pair 1: AB
+    Input plugboard pair 2: CD
+    Input plugboard pair 3: ..
+    Input plugboard pair 4: EF
+    Input plugboard pair 5: GH
+    Input plugboard pair 6: IJ
+    Input plugboard pair 7: KL
+    Input plugboard pair 8: MN
+    Input plugboard pair 9: OP
+    Input plugboard pair 10: QR
+    1AA2AA3AA2ABCD..EFGHIJKLMNOPQRIOCCC
 ```
 
 Notice that I skipped a [plugboard
@@ -251,10 +250,10 @@ by using the same loop where I could. It just felt more natural to have them
 grouped together in a configurator for the [simulator](prog.c).
 
 ```sh
-$ echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRIOCCC | ./prog - 2>/dev/null
-HQNVO
-$ echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRIOCCC  | ./prog - 2>/dev/null | echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRHQNVO | ./prog  - 2>/dev/null
-IOCCC
+    $ echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRIOCCC | ./prog - 2>/dev/null
+    HQNVO
+    $ echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRIOCCC  | ./prog - 2>/dev/null | echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRHQNVO | ./prog  - 2>/dev/null
+    IOCCC
 ```
 
 As you can see the `recode` program prompts for the settings and outputs the
@@ -275,66 +274,66 @@ the same output:
 
 
 ```sh
-$ echo 1AA2AA3AA2AB..CDEFGHIJKLMNOPQRIOCCC|./prog - 2>/dev/null
-HQNVO
+    $ echo 1AA2AA3AA2AB..CDEFGHIJKLMNOPQRIOCCC|./prog - 2>/dev/null
+    HQNVO
 ```
 
 Also if you flip the order of the letters in the pair e.g. the AB as BA instead:
 
 ```sh
-$ echo 1AA2AA3AA2BA..CDEFGHIJKLMNOPQRIOCCC|./prog - 2>/dev/null
-HQNVO
+    $ echo 1AA2AA3AA2BA..CDEFGHIJKLMNOPQRIOCCC|./prog - 2>/dev/null
+    HQNVO
 ```
 
 # <a name="onlyconfig" href="#toc">Only write config file</a>
 
 ```sh
-$ ./recode -v -oconfig -finput >/dev/null
-Rotors:
-(1)   I: EKMFLGDQVZNTOWYHXUSPAIBRCJ
-(2)  II: AJDKSIRUXBLHWTMCQGZNPYFVOE
-(3) III: BDFHJLCPRTXVZNYEIWGAKMUSQO
-(4)  IV: ESOVPZJAYQUIRHXLNFTGKDCMWB
-(5)   V: VZBRGITYUPSDNHLXAWMJQOFECK
-Input rotor 1 (1 - 5): 1
-Input rotor 2 (1 - 5): 2
-Input rotor 3 (1 - 5): 3
-Input setting 1 (A - Z): A
-Input setting 2 (A - Z): C
-Input setting 3 (A - Z): E
-Input position 1 (A - Z): B
-Input position 2 (A - Z): D
-Input position 3 (A - Z): F
-Reflector:
-(1) (B) YRUHQSLDPXNGOKMIEBFZCWVJAT
-(2) (C) FVPJIAOYEDRZXWGCTKUQSBNMHL
-Input reflector (1 - 2): 2
-Input plugboard pair 1: AB
-Input plugboard pair 2: CD
-Input plugboard pair 3: EF
-Input plugboard pair 4: GHIJ
-Input plugboard pair 5: IJ
-Input plugboard pair 6: KL
-Input plugboard pair 7: MN
-Input plugboard pair 8: OP
-Input plugboard pair 9: QR
-Input plugboard pair 10: ST
-Ring 1: (  I) EKMFLGDQVZNTOWYHXUSPAIBRCJ
-Ring 2: ( II) AJDKSIRUXBLHWTMCQGZNPYFVOE
-Ring 3: (III) BDFHJLCPRTXVZNYEIWGAKMUSQO
-Ring  settings: ACE
-Ring positions: BDF
-Reflector: (C) FVPJIAOYEDRZXWGCTKUQSBNMHL
-Plugboard pair #01: AB
-Plugboard pair #02: CD
-Plugboard pair #03: EF
-Plugboard pair #04: GH
-Plugboard pair #05: IJ
-Plugboard pair #06: KL
-Plugboard pair #07: MN
-Plugboard pair #08: OP
-Plugboard pair #09: QR
-Plugboard pair #10: ST
+    $ ./recode -v -oconfig -finput >/dev/null
+    Rotors:
+    (1)   I: EKMFLGDQVZNTOWYHXUSPAIBRCJ
+    (2)  II: AJDKSIRUXBLHWTMCQGZNPYFVOE
+    (3) III: BDFHJLCPRTXVZNYEIWGAKMUSQO
+    (4)  IV: ESOVPZJAYQUIRHXLNFTGKDCMWB
+    (5)   V: VZBRGITYUPSDNHLXAWMJQOFECK
+    Input rotor 1 (1 - 5): 1
+    Input rotor 2 (1 - 5): 2
+    Input rotor 3 (1 - 5): 3
+    Input setting 1 (A - Z): A
+    Input setting 2 (A - Z): C
+    Input setting 3 (A - Z): E
+    Input position 1 (A - Z): B
+    Input position 2 (A - Z): D
+    Input position 3 (A - Z): F
+    Reflector:
+    (1) (B) YRUHQSLDPXNGOKMIEBFZCWVJAT
+    (2) (C) FVPJIAOYEDRZXWGCTKUQSBNMHL
+    Input reflector (1 - 2): 2
+    Input plugboard pair 1: AB
+    Input plugboard pair 2: CD
+    Input plugboard pair 3: EF
+    Input plugboard pair 4: GHIJ
+    Input plugboard pair 5: IJ
+    Input plugboard pair 6: KL
+    Input plugboard pair 7: MN
+    Input plugboard pair 8: OP
+    Input plugboard pair 9: QR
+    Input plugboard pair 10: ST
+    Ring 1: (  I) EKMFLGDQVZNTOWYHXUSPAIBRCJ
+    Ring 2: ( II) AJDKSIRUXBLHWTMCQGZNPYFVOE
+    Ring 3: (III) BDFHJLCPRTXVZNYEIWGAKMUSQO
+    Ring  settings: ACE
+    Ring positions: BDF
+    Reflector: (C) FVPJIAOYEDRZXWGCTKUQSBNMHL
+    Plugboard pair #01: AB
+    Plugboard pair #02: CD
+    Plugboard pair #03: EF
+    Plugboard pair #04: GH
+    Plugboard pair #05: IJ
+    Plugboard pair #06: KL
+    Plugboard pair #07: MN
+    Plugboard pair #08: OP
+    Plugboard pair #09: QR
+    Plugboard pair #10: ST
 ```
 
 Notice that I redirect stdout to /dev/null so that the config is only written to
@@ -347,15 +346,14 @@ It shouldn't be this way for the simulator though because that could cause
 inconsistent number of characters expected before the text to encipher.
 
 ```sh
-$ cat config
-1AB2CD3EF2ABCDEFGHIJKLMNOPQRST
+    $ cat config
+    1AB2CD3EF2ABCDEFGHIJKLMNOPQRST
 
-$ ( cat config ; cat input ) | ./prog - 2>/dev/null
-LRAVE
+    $ ( cat config ; cat input ) | ./prog - 2>/dev/null
+    LRAVE
 
-$ ( cat config ; cat input ) | ./prog - 2>/dev/null | ( cat config ; echo LRAVE ) | ./prog  - 2>/dev/null
-IOCCC
-
+    $ ( cat config ; cat input ) | ./prog - 2>/dev/null | ( cat config ; echo LRAVE ) | ./prog  - 2>/dev/null
+    IOCCC
 ```
 
 What if you don't want to worry about having to specify input but just have the
@@ -366,13 +364,13 @@ The following are all equivalent in that they will write to a settings file (the
 first one will print a newline with the echo but that won't matter):
 
 ```sh
-$ echo | ./recode -r -osettings
-$ echo -n | ./recode -r -osettings
-$ > empty
-$ ./recode -r -osettings < empty
-$ cat empty | ./recode -r -osettings
-$ ./recode -r -osettings
-^D
+    $ echo | ./recode -r -osettings
+    $ echo -n | ./recode -r -osettings
+    $ > empty
+    $ ./recode -r -osettings < empty
+    $ cat empty | ./recode -r -osettings
+    $ ./recode -r -osettings
+    ^D
 ```
 
 (Above ^D was not shown but I typed it.) The way it works: if nothing is read
@@ -383,73 +381,73 @@ set another variable to indicate if it should be printed.)
 # <a name="reuseconfig" href="#toc">Reusing a configuration</a>
 
 ```sh
-$ echo -n|./recode -r -oconfig
-4UH5II1RJ1SPIFEJLYGZWRTBHVCAMN$
+    $ echo -n|./recode -r -oconfig
+    4UH5II1RJ1SPIFEJLYGZWRTBHVCAMN$
 
-$ cat input.txt
-IOCCC 2020 Enigma simulator example text file
+    $ cat input.txt
+    IOCCC 2020 Enigma simulator example text file
 
-This is a sentence.
+    This is a sentence.
 
-This is another sentence.
+    This is another sentence.
 
-$ ( cat config ; cat input.txt  ) | ./prog - 2>/dev/null > output
-$ cat output
-AAPRT 2020 Dkemny tpgnjsjai xpovrgl jvgs wxra
+    $ ( cat config ; cat input.txt  ) | ./prog - 2>/dev/null > output
+    $ cat output
+    AAPRT 2020 Dkemny tpgnjsjai xpovrgl jvgs wxra
 
-Fytt ly m xyiilaqh.
+    Fytt ly m xyiilaqh.
 
-Ybbp ox dmuzerm oscwgytb.
-$ ( cat config ; cat output ) | ./prog  - 2>/dev/null > io
-$ diff io input.txt
-$
+    Ybbp ox dmuzerm oscwgytb.
+    $ ( cat config ; cat output ) | ./prog  - 2>/dev/null > io
+    $ diff io input.txt
+    $
 ```
 
 Alternatively you can just use the `-R` and `-f` options:
 
 ```sh
-$ ./recode -finput.txt -Rconfig | ./prog - 2>/dev/null > output2
-$ diff output output2
-$
+    $ ./recode -finput.txt -Rconfig | ./prog - 2>/dev/null > output2
+    $ diff output output2
+    $
 ```
 
 
 # <a name="passtoenigma" href="#toc">Write config file, read data file and pass to Enigma simulator</a>
 
 ```
-$ ./recode -finput.txt -oconfig | ./prog - 2>/dev/null > output
-Rotors:
-(1)   I: EKMFLGDQVZNTOWYHXUSPAIBRCJ
-(2)  II: AJDKSIRUXBLHWTMCQGZNPYFVOE
-(3) III: BDFHJLCPRTXVZNYEIWGAKMUSQO
-(4)  IV: ESOVPZJAYQUIRHXLNFTGKDCMWB
-(5)   V: VZBRGITYUPSDNHLXAWMJQOFECK
-Input rotor 1 (1 - 5): 2
-Input rotor 2 (1 - 5): 5
-Input rotor 3 (1 - 5): 3
-Input setting 1 (A - Z): C
-Input setting 2 (A - Z): O
-Input setting 3 (A - Z): D
-Input position 1 (A - Z): E
-Input position 2 (A - Z): L
-Input position 3 (A - Z): O
-Reflector:
-(1) (B) YRUHQSLDPXNGOKMIEBFZCWVJAT
-(2) (C) FVPJIAOYEDRZXWGCTKUQSBNMHL
-Input reflector (1 - 2): 2
-Input plugboard pair 1: TR
-Input plugboard pair 2: SN
-Input plugboard pair 3: OG
-Input plugboard pair 4: ME
-Input plugboard pair 5: XY
-Input plugboard pair 6: WZ
-Input plugboard pair 7: UV
-Input plugboard pair 8: AB
-Input plugboard pair 9: CD
-Input plugboard pair 10: FI
+    $ ./recode -finput.txt -oconfig | ./prog - 2>/dev/null > output
+    Rotors:
+    (1)   I: EKMFLGDQVZNTOWYHXUSPAIBRCJ
+    (2)  II: AJDKSIRUXBLHWTMCQGZNPYFVOE
+    (3) III: BDFHJLCPRTXVZNYEIWGAKMUSQO
+    (4)  IV: ESOVPZJAYQUIRHXLNFTGKDCMWB
+    (5)   V: VZBRGITYUPSDNHLXAWMJQOFECK
+    Input rotor 1 (1 - 5): 2
+    Input rotor 2 (1 - 5): 5
+    Input rotor 3 (1 - 5): 3
+    Input setting 1 (A - Z): C
+    Input setting 2 (A - Z): O
+    Input setting 3 (A - Z): D
+    Input position 1 (A - Z): E
+    Input position 2 (A - Z): L
+    Input position 3 (A - Z): O
+    Reflector:
+    (1) (B) YRUHQSLDPXNGOKMIEBFZCWVJAT
+    (2) (C) FVPJIAOYEDRZXWGCTKUQSBNMHL
+    Input reflector (1 - 2): 2
+    Input plugboard pair 1: TR
+    Input plugboard pair 2: SN
+    Input plugboard pair 3: OG
+    Input plugboard pair 4: ME
+    Input plugboard pair 5: XY
+    Input plugboard pair 6: WZ
+    Input plugboard pair 7: UV
+    Input plugboard pair 8: AB
+    Input plugboard pair 9: CD
+    Input plugboard pair 10: FI
 
-$ cat config
-2CE5OL3DO2TRSNOGMEXYWZUVABCDFI
+    $ cat config
+    2CE5OL3DO2TRSNOGMEXYWZUVABCDFI
 ```
 
 Besides a famous book that I happen to love (who doesn't? Ah, but what is it
@@ -459,20 +457,19 @@ does is the output:
 
 
 ```sh
-$ cat output
-DBFAF 2020 Ittejg ltblwriac uqdfqvr dhqh ghhf
+    $ cat output
+    DBFAF 2020 Ittejg ltblwriac uqdfqvr dhqh ghhf
 
-Jsjy ce v pxdmullo.
+    Jsjy ce v pxdmullo.
 
-Sara tj rtaayak uxfhjcti.
+    Sara tj rtaayak uxfhjcti.
 
-$ ./recode -Rconfig -foutput | ./prog - 2>/dev/null
-IOCCC 2020 Enigma simulator example text file
+    $ ./recode -Rconfig -foutput | ./prog - 2>/dev/null
+    IOCCC 2020 Enigma simulator example text file
 
-This is a sentence.
+    This is a sentence.
 
-This is another sentence.
-
+    This is another sentence.
 ```
 
 
@@ -481,9 +478,9 @@ This is another sentence.
 This is like the above only randomised:
 
 ```sh
-$ ./recode -r -oconfig|./prog - 2>/dev/null
-IOCCC
-UGEVP
+    $ ./recode -r -oconfig|./prog - 2>/dev/null
+    IOCCC
+    UGEVP
 ```
 
 
@@ -493,23 +490,23 @@ Enigma entry resulting in the line below IOCCC. But let's verify it worked out
 okay:
 
 ```sh
-$ cat config
-2BM4GJ3HK1LNCBXWRMGKSYIAZUTPVJ
+    $ cat config
+    2BM4GJ3HK1LNCBXWRMGKSYIAZUTPVJ
 ```
 
 Without having to copy/paste intermediate results:
 
 ```sh
-$ echo IOCCC | ./recode -Rconfig | ./prog - 2>/dev/null | ./recode -Rconfig | ./prog - 2>/dev/null
-IOCCC
+    $ echo IOCCC | ./recode -Rconfig | ./prog - 2>/dev/null | ./recode -Rconfig | ./prog - 2>/dev/null
+    IOCCC
 ```
 
 You can also use a string for the `-R` option. I'll use command substitution and
 actual pasting to demonstrate:
 
 ```sh
-$ echo IOCCC | ./recode -R$(cat config) | ./prog - 2>/dev/null | ./recode -R2BM4GJ3HK1LNCBXWRMGKSYIAZUTPVJ | ./prog - 2>/dev/null
-IOCCC
+    $ echo IOCCC | ./recode -R$(cat config) | ./prog - 2>/dev/null | ./recode -R2BM4GJ3HK1LNCBXWRMGKSYIAZUTPVJ | ./prog - 2>/dev/null
+    IOCCC
 ```
 
 
@@ -585,24 +582,23 @@ this way? (I think the second answer is 'yes' but that's me.)
 Of course, the above points might or might not be relevant. Didst you really
 think that I would give too much away? :)
 
-
 ```
-142CHOCOLATESVCAKESTBJLKMUMVWX
-0EZ4PC1CC0PGTAQSOXWNMDRYKFUZEI
-3UY0XF4QG1GTJQLARPKHBEMCOFVUIN
-0WE1HK4PL0RVSGXFDKENZYTPCMAHUW
-2LV0KC1IE0HTFPCLWOJDBQIRVMEAGN
-1SS4QX2RY1SRAQGKUYHCBLPFJDVTNZ
-3IW1QR0TZ0GQEDWIYJUPMFZBRAONHS
-3OP1KN4MO0HPFZCEAKYQIRXGVMOTUW
-4OC2CC0AK1CODELUVRSNGKIZBJPTMY
-4MU0MS1CA1KELUVRSXTABJNOCDMQFG
-0MU4MC2HO1CLATEFBJMONPQRVWXYZD
-125CHOCOLATESEXCAKESJADFNOPQRS
-0CH3OC1OL1ATEMBJNOCDLSIFWHRVXY
-4MU1MS3CA0KECHOLATBJSNPXVUFGZY
-4VW0SL1YB0IYJSLBECKTNAXGPUVHRF
-0MC4OH2CO1LATEUMBJCDFGHINOPRQS
+    142CHOCOLATESVCAKESTBJLKMUMVWX
+    0EZ4PC1CC0PGTAQSOXWNMDRYKFUZEI
+    3UY0XF4QG1GTJQLARPKHBEMCOFVUIN
+    0WE1HK4PL0RVSGXFDKENZYTPCMAHUW
+    2LV0KC1IE0HTFPCLWOJDBQIRVMEAGN
+    1SS4QX2RY1SRAQGKUYHCBLPFJDVTNZ
+    3IW1QR0TZ0GQEDWIYJUPMFZBRAONHS
+    3OP1KN4MO0HPFZCEAKYQIRXGVMOTUW
+    4OC2CC0AK1CODELUVRSNGKIZBJPTMY
+    4MU0MS1CA1KELUVRSXTABJNOCDMQFG
+    0MU4MC2HO1CLATEFBJMONPQRVWXYZD
+    125CHOCOLATESEXCAKESJADFNOPQRS
+    0CH3OC1OL1ATEMBJNOCDLSIFWHRVXY
+    4MU1MS3CA0KECHOLATBJSNPXVUFGZY
+    4VW0SL1YB0IYJSLBECKTNAXGPUVHRF
+    0MC4OH2CO1LATEUMBJCDFGHINOPRQS
 ```
 
 BTW: what's the middle of a list with even numbered items anyway?
@@ -611,16 +607,17 @@ To help you out, though, this is how you might do the decrypting. Assuming that
 the key you wish to select is
 
 ```
-0EZ4PC1CC0PGTAQSOXWNMDRYKFUZEI
+    0EZ4PC1CC0PGTAQSOXWNMDRYKFUZEI
 ```
 
 you can do:
 
 ```sh
-./recode -R0EZ4PC1CC0PGTAQSOXWNMDRYKFUZEI -fencrypted.html | ./prog - 2>/dev/null > decrypted.html
+    ./recode -R0EZ4PC1CC0PGTAQSOXWNMDRYKFUZEI -fencrypted.html | ./prog - 2>/dev/null > decrypted.html
 ```
 
 Then open `decrypted.html` in your browser.
+
 
 <!--
 

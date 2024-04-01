@@ -23,7 +23,7 @@ Let's say you want to verify that the evade mode is at the right count. How
 can you verify it without modifying the code? Try:
 
 ```sh
-SIZE=0 SHED=1 SHEDS=1 EVADE=10 ./prog
+    SIZE=0 SHED=1 SHEDS=1 EVADE=10 ./prog
 ```
 
 Since you start out at size 0 and you shed every movement then when you're
@@ -45,7 +45,7 @@ One way to show this is in full is to set the initial size and growth size to a
 high value; then try each one individually. For example:
 
 ```sh
-SIZE=100 ./prog
+    SIZE=100 ./prog
 ```
 
 In this case after you make the first move the snake will keep growing and
@@ -108,26 +108,26 @@ way negative size will force a win.
 Here's a fun output:
 
 ```
-< <<<+
+    < <<<+
 ```
 
 That's from:
 
 ```sh
-SHED=1 SHEDS=-1 ./prog
+    SHED=1 SHEDS=-1 ./prog
 ```
 
 And right after that you would see:
 
 ```
-YOU WIN!
-X:72/156 Y:20/41 S:997/997 B:0
+    YOU WIN!
+    X:72/156 Y:20/41 S:997/997 B:0
 ```
 
 Try this though:
 
 ```sh
-SHEDS=-1 SHED=25 ./prog
+    SHEDS=-1 SHED=25 ./prog
 ```
 
 And you'll see that you start to be the normal size but then you leave your
@@ -139,7 +139,7 @@ this is the basis of the grow/shrink mode of play that I talk about in the
 Here's another thing to be aware of. Let's say you do:
 
 ```sh
-SIZE=1 GROW=-1 ./prog
+    SIZE=1 GROW=-1 ./prog
 ```
 
 How many bugs will it take before you win? In fact it's two: you would see the
@@ -147,8 +147,8 @@ head twice: the second time once you 'shrink' down to size 0; it would then be
 that if you get another bug you will be at the 'max size':
 
 ```sh
-YOU WIN!
-X:81/156 Y:35/41 S:997/997 B:2
+    YOU WIN!
+    X:81/156 Y:35/41 S:997/997 B:2
 ```
 
 #  <a name="bitetail" href="#toc">'I was a few places behind my tail and I ran into it!'</a>
@@ -170,9 +170,9 @@ second pointing to where it happens and the third being what's left after the
 rest of the snake has gone through). Doing `SHED=100 SHEDS=-1`:
 
 ```
-ooooooooo>ooo>
-	 ^
-	 >
+    ooooooooo>ooo>
+	     ^
+	     >
 ```
 
 The `^` points to the part that's split from the snake and which will be
@@ -180,9 +180,9 @@ there on its own after the snake passes through it. Here's an example with
 it being `SHEDS=-3`:
 
 ```
-<ooo<ooooo
-    ^^^
-    <oo
+    <ooo<ooooo
+	^^^
+	<oo
 ```
 
 If you go through the part that has split (which for some might be difficult
@@ -207,7 +207,7 @@ through safely. But this also means that a bug can go there! So you might see
 something like:
 
 ```
-<*oooooooo
+    <*oooooooo
 ```
 
 This is because the snake is no longer there: in fact in this run the snake was
@@ -229,23 +229,23 @@ Now the default max snake size is 997 but when the terminal is too small it
 adjusts the max snake size. For 10 lines and 10 columns you would see:
 
 ```sh
-$ make test
-terminal supports cursor movement
-terminal supports making cursor invisible
-terminal supports bold
-terminal supports colours
+    $ make test
+    terminal supports cursor movement
+    terminal supports making cursor invisible
+    terminal supports bold
+    terminal supports colours
 
-terminal rows  10 (7   playable)
-terminal cols  10 (8   playable)
+    terminal rows  10 (7   playable)
+    terminal cols  10 (8   playable)
 
-snake size:    49 (max size: 49)
-      bugs:     9 (max size: 9)
+    snake size:    49 (max size: 49)
+	  bugs:     9 (max size: 9)
 
-at least 28 columns recommended for snake size 49    (is 10)
-at least 28 columns recommended for snake size 49    (is 10)
+    at least 28 columns recommended for snake size 49    (is 10)
+    at least 28 columns recommended for snake size 49    (is 10)
 
-1 problem detected (0 fatal).
-make: *** [test] Error 1
+    1 problem detected (0 fatal).
+    make: *** [test] Error 1
 ```
 
 First: what's the problem? It's just a warning that for the snake size of 49 the
@@ -308,7 +308,6 @@ Once again thank you mate for bringing this to my attention and also playing
 with it and providing the resources! Much appreciated! (And although you
 suggested it is bugging me I once again here say it's not at all bugging me
 but it is very much appreciated and it means a great deal to me. Cheers.)
-
 
 [crazy.log.md]: crazy.log.md
 [gameplay.md]: gameplay.md

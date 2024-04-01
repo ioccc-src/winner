@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./schweikh1
+    ./schweikh1
 ```
 
 
@@ -18,7 +18,7 @@ To find the day that Easter falls on in the current year and to show all Easter
 dates from 1582 to 2199:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -48,43 +48,42 @@ Calendar](https://en.wikipedia.org/wiki/Gregorian_calendar), that is, from ad 15
 to ad 2199:
 
 ```
-Let J be the year.
-If J is from 1582 to 1699, let M be 22, let N be 2
-If J is from 1700 to 1799, let M be 23, let N be 3
-If J is from 1800 to 1899, let M be 23, let N be 4
-If J is from 1900 to 2099, let M be 24, let N be 5
-If J is from 2100 to 2199, let M be 24, let N be 6
-Let a be the modulus of J divided by 19
-Let b be the modulus of J divided by 4
-Let c be the modulus of J divided by 7
-Let d be the modulus of (19a + M) divided by 30
-Let e be the modulus of (2b + 4c + 6d + N) divided by 7
-
+    Let J be the year.
+    If J is from 1582 to 1699, let M be 22, let N be 2
+    If J is from 1700 to 1799, let M be 23, let N be 3
+    If J is from 1800 to 1899, let M be 23, let N be 4
+    If J is from 1900 to 2099, let M be 24, let N be 5
+    If J is from 2100 to 2199, let M be 24, let N be 6
+    Let a be the modulus of J divided by 19
+    Let b be the modulus of J divided by 4
+    Let c be the modulus of J divided by 7
+    Let d be the modulus of (19a + M) divided by 30
+    Let e be the modulus of (2b + 4c + 6d + N) divided by 7
 ```
 
 The interesting Sunday is either:
 
 ```
-March 22 + d + e   or
-April d + e - 9    (only one of them is a valid date)
+    March 22 + d + e   or
+    April d + e - 9    (only one of them is a valid date)
 ```
 
 with the following exceptions:
 
 ```
-April 26 must always be changed to April 19
-April 25 must be changed to April 18 if d is 28 and a is greater than 10
+    April 26 must always be changed to April 19
+    April 25 must be changed to April 18 if d is 28 and a is greater than 10
 ```
 
 ### Example:
 
 ```
-J = 1962, M = 24, N = 5
-a = J % 19 == 5
-b = J %  4 == 2
-c = J %  7 == 2
-d = 119 % 30 == 29
-e = 191 % 7 == 2
+    J = 1962, M = 24, N = 5
+    a = J % 19 == 5
+    b = J %  4 == 2
+    c = J %  7 == 2
+    d = 119 % 30 == 29
+    e = 191 % 7 == 2
 ```
 
 March 53 is invalid, so the result is April 22 1962.
@@ -120,7 +119,7 @@ Try to be as precise as can be and no one will comprehend what you mean.
 
 
 ```
-comprehension = 1/(2**precision)
+    comprehension = 1/(2**precision)
 ```
 
 

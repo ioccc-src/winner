@@ -1,28 +1,28 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./hamaji < a_nonogram_file
+    ./hamaji < a_nonogram_file
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 If you have perl installed you should be able to reproduce
 [dragon.nono](dragon.nono) like:
 
 ```sh
-perl c2nono.pl hamaji.c | ./hamaji
+    perl c2nono.pl hamaji.c | ./hamaji
 ```
 
 
@@ -52,26 +52,25 @@ For example, for a simple problem which shows a glider of [Conway's
 Game of Life](http://en.wikipedia.org/wiki/Conway's_Game_of_Life):
 
 ```
-   1
-   .
-  112
+       1
+       .
+      112
 
-1  X
-1   X
-3 XXX
-
+    1  X
+    1   X
+    3 XXX
 ```
 
 the input should be
 
 ```
-1
-1
-3
--
-1
-1.1
-2
+    1
+    1
+    3
+    -
+    1
+    1.1
+    2
 ```
 
 The width and the height of an input puzzle should be less than or
@@ -82,9 +81,9 @@ This means the problem is indeed broken. For example, this happens for
 an input like
 
 ```
-2
--
-2
+    2
+    -
+    2
 ```
 
 When this solver cannot find a solution, it prints "`failed`". This
@@ -93,29 +92,29 @@ solver cannot solve the input problem. Here is an example input of the
 former:
 
 ```
-1
-1
--
-1
-1
+    1
+    1
+    -
+    1
+    1
 ```
 
 There are two solutions:
 
 ```
-  11
+      11
 
-1 X
-1  X
+    1 X
+    1  X
 ```
 
 and
 
 ```
-  11
+      11
 
-1  X
-1 X
+    1  X
+    1 X
 ```
 
 ### Detail
@@ -183,7 +182,7 @@ This program uses two C99 features. One line comments and `long long`.
 GCC's `-ansi -pedantic` check should pass:
 
 ```sh
-cc -ansi -pedantic -std=c99 hamaji.c
+    cc -ansi -pedantic -std=c99 hamaji.c
 ```
 
 I checked my program with gcc-4.6.2 on linux, llvm-gcc-4.2 on Mac, and
@@ -198,7 +197,7 @@ This program won't work if the size of `long long` literal is less than 8.
 By grepping the source code of gcc
 
 ```sh
-grep LONG_LONG_TYPE_SIZE gcc/config/*/*
+    grep LONG_LONG_TYPE_SIZE gcc/config/*/*
 ```
 
 I found long long may be 32bit integers only on AVR.
@@ -226,7 +225,7 @@ You can reproduce [dragon.nono](dragon.nono) from [hamaji.c](hamaji.c) using
 [c2nono.pl](c2nono.pl):
 
 ```sh
-perl c2nono.pl hamaji.c | ./hamaji
+    perl c2nono.pl hamaji.c | ./hamaji
 ```
 
 

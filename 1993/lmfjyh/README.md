@@ -3,13 +3,13 @@
 If you have gcc < 2.3.3 you can build this entry like:
 
 ```sh
-make all
+    make all
 ```
 
 This will try to create a file whose actual filename is literally:
 
 ```
-";main(){puts("Hello World!");}char*C=".c
+    ";main(){puts("Hello World!");}char*C=".c
 ```
 
 When that file is compiled, it will greet the world in the
@@ -38,7 +38,7 @@ section below for more details.
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [1993 lmfjyh bugs](../../bugs.html#1993_lmfjyh).
@@ -49,7 +49,7 @@ For more detailed information see [1993 lmfjyh bugs](../../bugs.html#1993_lmfjyh
 If you have gcc < 2.3.3 (i.e. the entry can compile):
 
 ```sh
-./lmfjyh
+    ./lmfjyh
 ```
 
 
@@ -65,7 +65,7 @@ Nonetheless it will be compiled in case the original entry fails to compile.
 Should you wish to build this version manually:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -100,10 +100,10 @@ that should be familiar to all C-programmers.
 
 
 ```c
-main()
-{
-  puts("Hello World!");
-}
+    main()
+    {
+      puts("Hello World!");
+    }
 ```
 
 
@@ -119,14 +119,14 @@ the file.
 #### Listing 2: Compressed "Hello world"
 
 ```c
-char*_=__FILE__;
+    char*_=__FILE__;
 ```
 
 
 #### Listing 3: Code embedded in the file name
 
 ```c
-";main(){puts("Hello World!");}char*C=".c
+    ";main(){puts("Hello World!");}char*C=".c
 ```
 
 

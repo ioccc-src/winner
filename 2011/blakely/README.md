@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,20 +10,20 @@ make
 Zoom out and make your terminal window 53 or more lines deep.
 
 ```sh
-./blakely < blakely.c | head -300
+    ./blakely < blakely.c | head -300
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 For those who have a lot of time, try:
 
 ```sh
-./blakely < t0_3.dat
+    ./blakely < t0_3.dat
 ```
 
 though one might or might not need to kill it, depending on your boredom
@@ -41,7 +41,7 @@ If you have enough time to spare, put the plan of your garden in a text file,
 and run:
 
 ```sh
-./blakely - < garden.txt
+    ./blakely - < garden.txt
 ```
 
 
@@ -55,7 +55,7 @@ over tabs.
 In order to see the main feature of the code, type:
 
 ```sh
-./blakely < blakely.c
+    ./blakely < blakely.c
 ```
 
 and wait for about four seconds before using Ctrl-C (or whatever) to end the program. The
@@ -73,7 +73,7 @@ the first 15 decimal places of pi after 4 time steps. This was setup using the
 other feature of the program which can be demonstrated as follows:
 
 ```sh
-./blakely - < 3.dat
+    ./blakely - < 3.dat
 ```
 
 The program will first display the grid given in [3.dat](3.dat), and then three
@@ -82,7 +82,7 @@ grids will take a substantial amount of time. The final grid has been put into
 [evolve_to_3.dat](evolve_to_3.dat), and if you type
 
 ```sh
-./blakely < evolve_to_3.dat
+    ./blakely < evolve_to_3.dat
 ```
 
 then the 3 will reappear after three time steps.
@@ -213,9 +213,9 @@ without expanding to collide with the digits' evolution.
 Groups of cells such as singletons, pairs, and larger groups like
 
 ```
-* * * * * * * * * *
- *****************
-* * * * * * * * * *
+    * * * * * * * * * *
+     *****************
+    * * * * * * * * * *
 ```
 
 were useful in this regard.

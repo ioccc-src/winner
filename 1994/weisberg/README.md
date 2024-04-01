@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 There is an alternate version that uses more memory. See [alternate
@@ -11,20 +11,20 @@ code](#alternate-code) below for more details.
 ## To use:
 
 ```sh
-./weisberg
+    ./weisberg
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 If you have `primes(1)` installed you might also wish to try:
 
 ```sh
-./primes.sh number
+    ./primes.sh number
 ```
 
 where `number` is a positive number, defaulting to 15. The [try.sh](try.sh)
@@ -41,14 +41,14 @@ something with you might try this version.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
 ### Alternate use:
 
 ```sh
-./weisberg.alt
+    ./weisberg.alt
 ```
 
 Lesser systems will find this alternative version a good way to create

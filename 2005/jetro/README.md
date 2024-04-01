@@ -7,14 +7,14 @@ haven't already.
 If you have SDL installed:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./jetro
+    ./jetro
 ```
 
 

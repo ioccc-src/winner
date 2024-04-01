@@ -1,6 +1,6 @@
 
 ```sh
-make
+    make
 ```
 
 There are two alt versions that let you control the compile time variables that
@@ -15,7 +15,7 @@ section below for more details.
 ## To use:
 
 ```sh
-./endoh1 < file
+    ./endoh1 < file
 ```
 
 WARNING: if you're sensitive to/don't like flashing colours/text or just want to
@@ -26,14 +26,14 @@ see what this looks like not going so fast then you might wish to try the
 ## Try:
 
 ```sh
-./try.bw.sh endoh1.c
-./try.sh endoh1.c
+    ./try.bw.sh endoh1.c
+    ./try.sh endoh1.c
 
-./try.bw.sh pour-out.txt
-./try.sh pour-out.txt
+    ./try.bw.sh pour-out.txt
+    ./try.sh pour-out.txt
 
-./try.bw.sh fountain.txt
-./try.sh fountain.txt
+    ./try.bw.sh fountain.txt
+    ./try.sh fountain.txt
 ```
 
 
@@ -51,7 +51,7 @@ the fluid and change the behaviour of the fluid. The file
 For the default values, try:
 
 ```sh
-make alt
+    make alt
 ```
 
 In the `alt` versions a default time of 10 seconds is set as an alarm so that
@@ -60,13 +60,13 @@ for fun. That is controlled by the variable `TIMER` at compilation.
 For instance if you wish to change the value to 5:
 
 ```sh
-make clobber TIMER=5 alt
+    make clobber TIMER=5 alt
 ```
 
 If you want to disable the alarm time, set it to 0:
 
 ```sh
-make clobber TIMER=0 alt
+    make clobber TIMER=0 alt
 ```
 
 It cannot be < 0 or > 60 (arbitrarily selected).
@@ -77,7 +77,7 @@ defaults to 12321 but you can change it to. For instance to slow it down you
 could increase the sleep time from `12321` to `50000`:
 
 ```sh
-make clobber SLEEP=50000 alt
+    make clobber SLEEP=50000 alt
 ```
 
 
@@ -85,7 +85,7 @@ If you wish to speed it up you might decrease the sleep time from `12321` to
 `9999`:
 
 ```sh
-make clobber SLEEP=9999 alt
+    make clobber SLEEP=9999 alt
 ```
 
 WARNING: the lower the value the faster it will flash so be careful if you're
@@ -98,7 +98,7 @@ viscosity factor, you should redefine the values `GRAVITY`, `PRESSURE` and/or
 viscosity and pressure factors but leave the other values alone:
 
 ```sh
-make clobber VISCOSITY=X PRESSURE=Y alt
+    make clobber VISCOSITY=X PRESSURE=Y alt
 ```
 
 where `X` and `Y` are numbers or the letter `I` and which are, respectively, the
@@ -112,21 +112,21 @@ instance:
 
 
 ```sh
-make clobber GRAVITY=5 PRESSURE=5 VISCOSITY=5 alt
+    make clobber GRAVITY=5 PRESSURE=5 VISCOSITY=5 alt
 ```
 
 You might try even:
 
 ```sh
-make clobber GRAVITY=I alt
+    make clobber GRAVITY=I alt
 ```
 
 See the author's remarks for details on these macros where:
 
 ```
-G = GRAVITY
-P = PRESSURE
-V = VISCOSITY
+    G = GRAVITY
+    P = PRESSURE
+    V = VISCOSITY
 ```
 
 
@@ -142,7 +142,7 @@ To see two different ways run on the source file and each of the text files,
 try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 The second run of each will be with the gravity factor set to `I`.
@@ -150,7 +150,7 @@ The second run of each will be with the gravity factor set to `I`.
 To see the same thing but in the original uncoloured version, try:
 
 ```sh
-./try.alt.bw.sh
+    ./try.alt.bw.sh
 ```
 
 
@@ -179,12 +179,12 @@ entry](https://web.archive.org/web/20230711134609/https://whatif.xkcd.com/6/).
 than 80 x 25.
 
 ```sh
-cc endoh1.c -DG=1 -DP=4 -DV=8 -D_BSD_SOURCE -o endoh1 -lm
-./endoh1 < endoh1.c
-./endoh1 < logo.txt
-./endoh1 < column.txt
-./endoh1 < pour-out.txt
-./endoh1 < tanada.txt
+    cc endoh1.c -DG=1 -DP=4 -DV=8 -D_BSD_SOURCE -o endoh1 -lm
+    ./endoh1 < endoh1.c
+    ./endoh1 < logo.txt
+    ./endoh1 < column.txt
+    ./endoh1 < pour-out.txt
+    ./endoh1 < tanada.txt
 ```
 
 ### What it is
@@ -247,9 +247,9 @@ At least, recent compilers with `-std=c99 -Wall -W -Wextra -pedantic` say
 nothing.
 
 ```sh
-gcc -DG=1 -DP=4 -DV=8 -D_BSD_SOURCE -std=c99 -Wall -W -Wextra -pedantic endoh1.c
+    gcc -DG=1 -DP=4 -DV=8 -D_BSD_SOURCE -std=c99 -Wall -W -Wextra -pedantic endoh1.c
 
-clang -DG=1 -DP=4 -DV=8 -D_BSD_SOURCE -std=c99 -Wall -W -Wextra -pedantic endoh1.c
+    clang -DG=1 -DP=4 -DV=8 -D_BSD_SOURCE -std=c99 -Wall -W -Wextra -pedantic endoh1.c
 ```
 
 I expect it to work in any Unix-like environment.  VTxxx/ANSI sequences are

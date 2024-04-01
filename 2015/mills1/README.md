@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./prog
+    ./prog
 ```
 
 
 ## Try:
 
 ```sh
-./prog
+    ./prog
 ```
 
 Press the up arrow and the down arrow at the right time.
@@ -28,52 +28,52 @@ Well you can adjust the Makefile parameters to make life a
 bit easier for you:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 which runs:
 
 ```sh
-make clobber all DW=199999 DW=22 DH=16 DA=50 DI=-150
-./prog
+    make clobber all DW=199999 DW=22 DH=16 DA=50 DI=-150
+    ./prog
 ```
 
 
 From the Makefile:
 
 ```
-# Game parameters
-#
-DU=99999        # Time between steps in microseconds.
-		# Make it larger if the game is too fast for you.
+    # Game parameters
+    #
+    DU=99999        # Time between steps in microseconds.
+		    # Make it larger if the game is too fast for you.
 
-DW=28           # Pipe-to-pipe spacing, in columns.
-		# Farther apart is easier.
+    DW=28           # Pipe-to-pipe spacing, in columns.
+		    # Farther apart is easier.
 
-DD=20           # Space between pipes.
-		# The difference between DD and DW is the width of a pipe.
-		# Narrow pipes are easier to fly though.
+    DD=20           # Space between pipes.
+		    # The difference between DD and DW is the width of a pipe.
+		    # Narrow pipes are easier to fly though.
 
-DH=8            # Height of gap in pipe.
-		# Make this larger to make the game easier.
+    DH=8            # Height of gap in pipe.
+		    # Make this larger to make the game easier.
 
-DA=100          # Acceleration due to gravity (scaled by 256).
-		# Smaller values make you glide slower.
+    DA=100          # Acceleration due to gravity (scaled by 256).
+		    # Smaller values make you glide slower.
 
-DI=-200         # Impulse velocity of a flap (scaled by 256).
-		# Make larger if you want a less intense tapping experience!
+    DI=-200         # Impulse velocity of a flap (scaled by 256).
+		    # Make larger if you want a less intense tapping experience!
 
-DB='"<o^="'     # Sprite for player when gliding.
-		# HINT: Try using various emojis.
-		# NOTE: The string MUST be enclosed inside double quotes.
+    DB='"<o^="'     # Sprite for player when gliding.
+		    # HINT: Try using various emojis.
+		    # NOTE: The string MUST be enclosed inside double quotes.
 
-DF='"<ov="'     # Sprite for player when flapping.
-		# HINT: Try using various emojis.
-		# NOTE: The string MUST be enclosed inside double quotes.
+    DF='"<ov="'     # Sprite for player when flapping.
+		    # HINT: Try using various emojis.
+		    # NOTE: The string MUST be enclosed inside double quotes.
 
-DG='"Tap to Flap!"'     # Instruction text.
-			# Change to your native tongue.
-		# NOTE: The string MUST be enclosed inside double quotes.
+    DG='"Tap to Flap!"'     # Instruction text.
+			    # Change to your native tongue.
+		    # NOTE: The string MUST be enclosed inside double quotes.
 ```
 
 WARNING: if you have good eye-hand coordination and too much time on your hands
@@ -84,8 +84,10 @@ already scored over 90.
 
 Enjoy!
 
+```
     TAP!! TAP!! TAP!!
     FLAP! FLAP! FLAP!
+```
 
 
 ## Author's remarks:
@@ -146,13 +148,13 @@ To help you get started, I've included some example substitutions for emojis
 sprites and instruction text; for example, type
 
 ```sh
-make EMOJI=beer LANGUAGE=spanish
+    make EMOJI=beer LANGUAGE=spanish
 ```
 
 or
 
 ```sh
-make EMOJI=globe
+    make EMOJI=globe
 ```
 
 for some examples (the full list of options is in the `Makefile`).  Don't forget

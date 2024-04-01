@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is another version which lets you use the arrow keys rather than the more
@@ -13,7 +13,7 @@ awkward `,` and `.` keys. See [alternate code](#alternate-code) below.
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2001 kev bugs](../../bugs.html#2001_kev).
@@ -22,9 +22,9 @@ For more detailed information see [2001 kev bugs](../../bugs.html#2001_kev).
 ## To use:
 
 ```sh
-./kev # in one terminal
+    ./kev # in one terminal
 
-./kev hostname # in another terminal
+    ./kev hostname # in another terminal
 ```
 
 NOTE: each player's paddle is at the bottom and the opponent at the top.
@@ -33,22 +33,22 @@ NOTE: each player's paddle is at the bottom and the opponent at the top.
 ## Try:
 
 ```sh
-./kev		    # in one terminal
+    ./kev		    # in one terminal
 
-./kev localhost	    # in another terminal on the same host
+    ./kev localhost	    # in another terminal on the same host
 ```
 
 If you need to change the speed you can reconfigure it like (say
 for over a network and not the same host):
 
 ```sh
-make clobber SPEED=50 all # original default value which is very fast
+    make clobber SPEED=50 all # original default value which is very fast
 ```
 
 If you wish to change the port you can do so like:
 
 ```sh
-make clobber PORT=3773 all
+    make clobber PORT=3773 all
 ```
 
 Of course if you want a port < 1024 you'll need to be root so don't do that.
@@ -59,19 +59,19 @@ course you can do more than one at the same time. For instance to change the
 speed and port:
 
 ```sh
-make clobber SPEED=512 PORT=3773 all
+    make clobber SPEED=512 PORT=3773 all
 ```
 
 If you have `xterm` try on one system:
 
 ```sh
-xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev &
+    xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev &
 ```
 
 and then the other, the client system:
 
 ```sh
-xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev localhost&
+    xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev localhost&
 ```
 
 This might look nicer than just the terminal itself.
@@ -86,7 +86,7 @@ awkward `,` and `.` keys to move your paddle.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 You can reconfigure the macros described above in the same way.
@@ -106,13 +106,13 @@ terminal?
 If you have `xterm` try on one system:
 
 ```sh
-xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev.alt &
+    xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev.alt &
 ```
 
 and then the other, the client system:
 
 ```sh
-xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev.alt localhost&
+    xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev.alt localhost&
 ```
 
 
@@ -152,14 +152,14 @@ getting the ball past your opponent's paddle.  It's pretty fun!  :)
 Run the server first without any command line arguments, i.e.
 
 ```sh
-./kev
+    ./kev
 ```
 
 Then run the client with a single command line argument which is
 the name of the machine running the server, e.g.
 
 ```sh
-./kev localhost
+    ./kev localhost
 ```
 
 Make sure that the terminals on both ends are the same size.  Also, the TCP port
@@ -170,8 +170,8 @@ Here's a good quick example to see it in action on your own
 machine, assuming you have `Xwindows`:
 
 ```sh
-xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev &
-xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev localhost&
+    xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev &
+    xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev localhost&
 ```
 
 

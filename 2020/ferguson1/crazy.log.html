@@ -123,99 +123,99 @@
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <p>The following are a few screen dumps of:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">SIZE</span><span class="op">=</span>100 <span class="va">SHEDS</span><span class="op">=</span>5 <span class="va">GROW</span><span class="op">=</span>-10 <span class="va">SHED</span><span class="op">=</span>50 <span class="va">MAXSIZE</span><span class="op">=</span>250 <span class="ex">./prog</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">SIZE</span><span class="op">=</span>100 <span class="va">SHEDS</span><span class="op">=</span>5 <span class="va">GROW</span><span class="op">=</span>-10 <span class="va">SHED</span><span class="op">=</span>50 <span class="va">MAXSIZE</span><span class="op">=</span>250 <span class="ex">./prog</span></span></code></pre></div>
 <p>As you will see it took 17 bugs to get down to below 0. Notice how I had to get
 down to 0 more than once: because I moved enough times before I got the last
 bug that I grew by 5 in size. I then however moved a bit more and ate a bug
 which brought me down to -5 therefore winning at the max size of 250. This then
 showed:</p>
-<pre><code>YOU WIN!
-X:62/89 Y:5/25 S:250/250 B:17</code></pre>
+<pre><code>    YOU WIN!
+    X:62/89 Y:5/25 S:250/250 B:17</code></pre>
 <p>Observe all the arrows on the screen; that’s where a bug was that I ate and
 then I split off losing 10 in size. The first dump I’m already at 15/250:</p>
-<pre><code>X:17/89 Y:15/25 S:15/250 B:13
-##########################################################################################
-#                         &lt;ooooooooo        o                &lt;ooooooooo*                 #
-#                                           o   o&gt;                                       #
-#                                           o ooo                        oooo            #
-#                                           o o         ooooooooo&gt;       o  v            #
-#                                           o o  oo                      o               #
-#                                           o o   o                      o               #
-#                                           o o   o                      o               #
-#                                         &lt;oo o   o                      o               #
-#                                                 o                                      #
-#                                                 o                 o                    #
-#                                                 o                 o                    #
-#                                                 o                 o          o         #
-#                                                   &lt;ooo            o          oooooooo&gt; #
-#                &lt;oooooooooooooo                       o            o                    #
-#                                                      o            o                    #
-#                                                      o            o                    #
-#             &lt; ooo                                    o            o                    #
-#                                                      o            o                    #
-#                                                      o            v                    #
-#                                           oooooo&gt;                                      #
-#                                                                o                       #
-#                                                                o    o&gt;                 #
-#                                                                oooooo                  #
-##########################################################################################</code></pre>
+<pre><code>    X:17/89 Y:15/25 S:15/250 B:13
+    ##########################################################################################
+    #                         &lt;ooooooooo        o                &lt;ooooooooo*                 #
+    #                                           o   o&gt;                                       #
+    #                                           o ooo                        oooo            #
+    #                                           o o         ooooooooo&gt;       o  v            #
+    #                                           o o  oo                      o               #
+    #                                           o o   o                      o               #
+    #                                           o o   o                      o               #
+    #                                         &lt;oo o   o                      o               #
+    #                                                 o                                      #
+    #                                                 o                 o                    #
+    #                                                 o                 o                    #
+    #                                                 o                 o          o         #
+    #                                                   &lt;ooo            o          oooooooo&gt; #
+    #                &lt;oooooooooooooo                       o            o                    #
+    #                                                      o            o                    #
+    #                                                      o            o                    #
+    #             &lt; ooo                                    o            o                    #
+    #                                                      o            o                    #
+    #                                                      o            v                    #
+    #                                           oooooo&gt;                                      #
+    #                                                                o                       #
+    #                                                                o    o&gt;                 #
+    #                                                                oooooo                  #
+    ##########################################################################################</code></pre>
 <p>But here now I’m at 0; the head is marked <code>H</code> and it’s moving left.</p>
-<pre><code>X:19/89 Y:12/25 S:0/250 B:16
-##########################################################################################
-#                         &lt;ooooooooo        o                &lt;oooooooo  &lt;ooooooo         #
-#                                           o   o&gt;                             oo        #
-#                                           o ooo                        oooo            #
-#                                           o o         oooooo*oo&gt;          v            #
-#                                           o o  oo                   o oo&gt;              #
-#                                           o o   o                   o oo               #
-#                                           o o   o                   oooo               #
-#                                         &lt;oo o   o                      o               #
-#                                                 o                                      #
-#                                                 o                 o                    #
-#                  H                              o                 o                    # &lt;- *HEAD, LEFT*
-#                                                 o                 o          o         #
-#                                                   &lt;ooo            o          oo ooooo&gt; #
-#                                                      o            o                    #
-#                                                      o            o                    #
-#                                                      o            o                    #
-#             &lt; ooo                                                 o                    #
-#                                                      o            o                    #
-#                      &lt;oooooooo                       o            v                    #
-#                                           oooooo&gt;                                      #
-#                                                                o                       #
-#                                                                o    o&gt;                 #
-#                                                                oooooo                  #
-##########################################################################################</code></pre>
+<pre><code>    X:19/89 Y:12/25 S:0/250 B:16
+    ##########################################################################################
+    #                         &lt;ooooooooo        o                &lt;oooooooo  &lt;ooooooo         #
+    #                                           o   o&gt;                             oo        #
+    #                                           o ooo                        oooo            #
+    #                                           o o         oooooo*oo&gt;          v            #
+    #                                           o o  oo                   o oo&gt;              #
+    #                                           o o   o                   o oo               #
+    #                                           o o   o                   oooo               #
+    #                                         &lt;oo o   o                      o               #
+    #                                                 o                                      #
+    #                                                 o                 o                    #
+    #                  H                              o                 o                    # &lt;- *HEAD, LEFT*
+    #                                                 o                 o          o         #
+    #                                                   &lt;ooo            o          oo ooooo&gt; #
+    #                                                      o            o                    #
+    #                                                      o            o                    #
+    #                                                      o            o                    #
+    #             &lt; ooo                                                 o                    #
+    #                                                      o            o                    #
+    #                      &lt;oooooooo                       o            v                    #
+    #                                           oooooo&gt;                                      #
+    #                                                                o                       #
+    #                                                                o    o&gt;                 #
+    #                                                                oooooo                  #
+    ##########################################################################################</code></pre>
 <p>I ended up moving enough times where my size went back up to 5.</p>
 <p>Below the snake is moving right and its head is indicated by a <code>H</code> with the line
 marked at the right; the bug is marked as <code>B</code> and is also marked at the right.
 Notice how it’s in the body of the snake (but see below)!</p>
-<pre><code>X:55/89 Y:4/25 S:5/250 B:16
-##########################################################################################
-#                         &lt;ooooooooo        o                &lt;oooooooo  &lt;ooooooo         #
-#                                           o   o&gt;                             oo        #
-#                                                  ooooH                 oooo            # &lt;- *HEAD, RIGHT*
-#                                           o o         ooooooBoo&gt;          v            # &lt;- *BUG*
-#                                           o o  oo                   o oo&gt;              #
-#                                           o o   o                   o oo               #
-#                                           o o   o                   oooo               #
-#                                         &lt;oo o   o                      o               #
-#                                                 o                                      #
-#                                                 o                 o                    #
-#                                                 o                 o                    #
-#                                                 o                 o          o         #
-#                                                   &lt;ooo            o          oo ooooo&gt; #
-#                                                      o            o                    #
-#                                                      o            o                    #
-#                                                      o            o                    #
-#             &lt; ooo                                                 o                    #
-#                                                      o            o                    #
-#                      &lt;oooooooo                       o            v                    #
-#                                           oooooo&gt;                                      #
-#                                                                o                       #
-#                                                                o    o&gt;                 #
-#                                                                oooooo                  #
-##########################################################################################</code></pre>
+<pre><code>    X:55/89 Y:4/25 S:5/250 B:16
+    ##########################################################################################
+    #                         &lt;ooooooooo        o                &lt;oooooooo  &lt;ooooooo         #
+    #                                           o   o&gt;                             oo        #
+    #                                                  ooooH                 oooo            # &lt;- *HEAD, RIGHT*
+    #                                           o o         ooooooBoo&gt;          v            # &lt;- *BUG*
+    #                                           o o  oo                   o oo&gt;              #
+    #                                           o o   o                   o oo               #
+    #                                           o o   o                   oooo               #
+    #                                         &lt;oo o   o                      o               #
+    #                                                 o                                      #
+    #                                                 o                 o                    #
+    #                                                 o                 o                    #
+    #                                                 o                 o          o         #
+    #                                                   &lt;ooo            o          oo ooooo&gt; #
+    #                                                      o            o                    #
+    #                                                      o            o                    #
+    #                                                      o            o                    #
+    #             &lt; ooo                                                 o                    #
+    #                                                      o            o                    #
+    #                      &lt;oooooooo                       o            v                    #
+    #                                           oooooo&gt;                                      #
+    #                                                                o                       #
+    #                                                                o    o&gt;                 #
+    #                                                                oooooo                  #
+    ##########################################################################################</code></pre>
 <p>But did you see anything strange? The bug is on the fourth line below the upper wall.
 However it appears to be inside the body of the snake! But actually that’s just where
 the snake split off at some point: the snake no longer occupies that place and indeed I

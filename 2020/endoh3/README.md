@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 An alternate version of this program exists. See [Alternate
@@ -11,15 +11,15 @@ code](#alternate-code) below.
 ## To use:
 
 ```sh
-./prog
+    ./prog
 ```
 
 
 ## Try:
 
 ```sh
-./run_clock
-# And watch closely for 15-20 seconds
+    ./run_clock
+    # And watch closely for 15-20 seconds
 ```
 
 
@@ -32,8 +32,8 @@ alternate code uses Unicode letters.
 ### Alternate build:
 
 ```sh
-make alt
-```
+    make alt
+    ```
 
 
 ### Alternate use:
@@ -44,8 +44,8 @@ Use `prog.alt` as you would `prog` above.
 ### Alternate try:
 
 ```sh
-./run_clock.alt
-# And watch closely for 15-20 seconds
+    ./run_clock.alt
+    # And watch closely for 15-20 seconds
 ```
 
 
@@ -64,7 +64,7 @@ time might depend on what time it is.
 Prepare a mirror!
 
 ```sh
-make clock
+    make clock
 ```
 
 Note: You need to recompile it each run.

@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 To get this to compile with a modern CPP, we had to replace `#D` with `#define`.
@@ -12,7 +12,7 @@ To get this to compile with a modern CPP, we had to replace `#D` with `#define`.
 Run the program this way:
 
 ```sh
-./ovdluhe < textfile
+    ./ovdluhe < textfile
 ```
 
 The program stops when it reaches the end of the template buffer
@@ -22,7 +22,7 @@ by chance or is killed.
 ## Try:
 
 ```sh
-./try.sh ; sleep 2 ; ./try.sh
+    ./try.sh ; sleep 2 ; ./try.sh
 ```
 
 
@@ -35,7 +35,7 @@ it's a `#define` it's easy to set up.
 ### Alternate build:
 
 ```sh
-make P=9 clobber alt
+    make P=9 clobber alt
 ```
 
 You do not have to define `P` but if you do you can replace the value with
@@ -47,16 +47,16 @@ program to fail and a negative value will cause a compilation error.
 ### Alternate use:
 
 ```sh
-./ovdluhe.alt
+    ./ovdluhe.alt
 ```
 
 
 ### Alternate try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 
-P=5 ./try.alt.sh
+    P=5 ./try.alt.sh
 ```
 
 NOTE: if you specify too high a value for `P` the program might fail. If you

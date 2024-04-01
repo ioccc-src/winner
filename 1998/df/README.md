@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./df
+    ./df
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 This will run the program in a loop until you exit (`q` when prompted or

@@ -4,14 +4,14 @@ Before building, make sure that you have the OpenGL development libraries
 installed.
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./vince
+    ./vince
 ```
 
 
@@ -32,7 +32,7 @@ also has the recursive `CPP` macro (which sneaked in accidentally) removed.
 To compile this alternate version:
 
 ```sh
-make alt
+    make alt
 ```
 
 

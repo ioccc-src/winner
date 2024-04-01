@@ -36,8 +36,8 @@ been eliminated, and will likely be considered in future years.
 A number of entries made use of the following C pre-processor feature:
 
 ```c
-#define X define
-#X foo bar
+    #define X define
+    #X foo bar
 ```
 
 This is not permitted under ANSI C.  Some ANSI C compilers do allow this.  In
@@ -61,10 +61,10 @@ In order to encourage more 'normal' looking C programs, we are considering
 the following change to the maximum size rule:
 
 ```
-Your source, not counting any <space>, <tab>, and a <newline> character,
-and not counting any ';', '{' and '}' character followed by a <newline>
-character, must be 1536 bytes or less.  The entire source, counting all
-characters, be 4096 bytes or less.
+    Your source, not counting any <space>, <tab>, and a <newline> character,
+    and not counting any ';', '{' and '}' character followed by a <newline>
+    character, must be 1536 bytes or less.  The entire source, counting all
+    characters, be 4096 bytes or less.
 ```
 
 Some thought has been given to adding some C++ categories, however this
@@ -80,8 +80,8 @@ Also include anything else that you would like to see in future contests.
 Send such email to:
 
 ```
-...!{sun,pacbell,uunet,pyramid}!hoptoad!judges
-judges@toad.com
+    ...!{sun,pacbell,uunet,pyramid}!hoptoad!judges
+    judges@toad.com
 ```
 
 

@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make alt
+    make alt
 ```
 
 We recommend that you try the alternate version first as the original entry
@@ -16,7 +16,7 @@ see [Original code](#original-code) below.
 ## To use:
 
 ```sh
-./westley.alt
+    ./westley.alt
 ```
 
 The purpose of the game is to escape the dungeon. Depending on the compiler line
@@ -40,14 +40,14 @@ For something more interesting try compiling it with different `cc -D` arguments
 and then run the program each time.  For example:
 
 ```sh
-cc -Describe -Door westley.alt.c -o westley.alt && ./westley.alt
-cc -Describe -Drain westley.alt.c -o westley.alt && ./westley.alt
+    cc -Describe -Door westley.alt.c -o westley.alt && ./westley.alt
+    cc -Describe -Drain westley.alt.c -o westley.alt && ./westley.alt
 ```
 
 To see the game from start to finish, try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 
@@ -66,7 +66,7 @@ reason that we recommend you try it first.
 ### Original build:
 
 ```sh
-make all
+    make all
 ```
 
 There are a variety of different `-D` flags you can give to `cc` that change the
@@ -96,14 +96,14 @@ For something more interesting try compiling it with different `cc -D`
 arguments:
 
 ```sh
-cc -Describe -Door westley.c
-cc -Describe -Drain westley.c
+    cc -Describe -Door westley.c
+    cc -Describe -Drain westley.c
 ```
 
 To see the game from start to complete, try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -116,7 +116,7 @@ For spoilers see the end of the notes from the author below.
 To use:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -132,7 +132,7 @@ error messages (for missing `#include` files) as output.  To begin,
 try to compile the program with no options:
 
 ```sh
-cc westley.c
+    cc westley.c
 ```
 
 This will fail, producing an error message for a missing `#include`
@@ -160,7 +160,7 @@ To "do" things, all words must start with `-D`.  For example, to
 look at the door, do:
 
 ```sh
-cc -Describe -Door prog.c
+    cc -Describe -Door prog.c
 ```
 
 ...and you will get another error message telling you about the door.
@@ -177,24 +177,24 @@ Here is a walk-through for the game, including a few dead-ends:
 ### SPOILER
 
 ```sh
-cc -Describe -Door westley.c
-cc -Describe -Drain westley.c
-cc -Describe -Dwarf westley.c
-cc -Describe -Debris westley.c # or -Dungeon
-cc -Describe -Desk westley.c
-cc -Describe -Dime westley.c
-cc -Describe -Directory westley.c
-cc -Dial -DUNgeon0614 westley.c
-cc -Drink -Daiquiri westley.c
-cc -Drop -Daiquiri westley.c
-cc -Drop -Dwarf -Daiquiri westley.c # or -Drop -Down -Daiquiri
-cc -Describe -Document westley.c
-cc -Depress -Dotted -Dog westley.c
-cc -Depress -Dalmatian westley.c # also accepts "Dalmation" [sic]
-cc -Deposit -Dime westley.c
-cc -Drop -Donut westley.c
-cc -Drop -Donut -Down -Drain westley.c # or -Drop -Dwarf -Donut
-# (at this point, you win!)
+    cc -Describe -Door westley.c
+    cc -Describe -Drain westley.c
+    cc -Describe -Dwarf westley.c
+    cc -Describe -Debris westley.c # or -Dungeon
+    cc -Describe -Desk westley.c
+    cc -Describe -Dime westley.c
+    cc -Describe -Directory westley.c
+    cc -Dial -DUNgeon0614 westley.c
+    cc -Drink -Daiquiri westley.c
+    cc -Drop -Daiquiri westley.c
+    cc -Drop -Dwarf -Daiquiri westley.c # or -Drop -Down -Daiquiri
+    cc -Describe -Document westley.c
+    cc -Depress -Dotted -Dog westley.c
+    cc -Depress -Dalmatian westley.c # also accepts "Dalmation" [sic]
+    cc -Deposit -Dime westley.c
+    cc -Drop -Donut westley.c
+    cc -Drop -Donut -Down -Drain westley.c # or -Drop -Dwarf -Donut
+    # (at this point, you win!)
 ```
 
 Note that the game has no real state information; you can type these

@@ -54,9 +54,6 @@ Here is an illustration of the three-ring case.  The bottom
 of the puzzle is on the left-hand side of the page.
 
 ```
-
-
-
                                //==\\
                               ||    ||
                               ||    ||

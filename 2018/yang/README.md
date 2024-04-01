@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -11,16 +11,16 @@ The author suggested that after compilation one should look at the generated
 files. For instance:
 
 ```sh
-less generated1.c
-less generated2.c
-less generated3.c
+    less generated1.c
+    less generated2.c
+    less generated3.c
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -45,7 +45,7 @@ of `./left`, `./right` and `./shift` and the additionally generated programs.
 The final message can be revealed using
 
 ```sh
-./msg9 < prog.c
+    ./msg9 < prog.c
 ```
 
 But what combinations will generate `./msg3`, `./msg4`, `./msg5`, `./msg6`,
@@ -60,8 +60,8 @@ But what combinations will generate `./msg3`, `./msg4`, `./msg5`, `./msg6`,
 same text to `stdout`, but rotated 90 degrees counterclockwise.
 
 ```sh
-cc prog.c -o left
-./left < input.txt > rotated_counterclockwise.txt
+    cc prog.c -o left
+    ./left < input.txt > rotated_counterclockwise.txt
 ```
 
 Due to static memory allocation, only the first 1K columns by 1K rows
@@ -69,9 +69,9 @@ are rotated, the rest are silently ignored.  But fear not, a separate
 tool with dynamic memory allocation is included:
 
 ```sh
-./left < prog.c > r1.c
-cc r1.c -o right
-./right < input.txt > rotated_clockwise.txt
+    ./left < prog.c > r1.c
+    cc r1.c -o right
+    ./right < input.txt > rotated_clockwise.txt
 ```
 
 For variety, this second tool rotates clockwise instead of
@@ -84,18 +84,18 @@ program outputs a single message to `stdout`, which is the name of the
 series that `Nuko` came from.
 
 ```sh
-./left < prog.c | ./left > r2.c
-cc r2.c -o msg0
-./msg0
+    ./left < prog.c | ./left > r2.c
+    cc r2.c -o msg0
+    ./msg0
 ```
 
 There is one final rotation, which produces a tool that removes
 leading whitespaces:
 
 ```sh
-./left < prog.c | ./left | ./left > r3.c
-cc r3.c -o shift
-./shift < input.txt > no_leading_space.txt
+    ./left < prog.c | ./left | ./left > r3.c
+    cc r3.c -o shift
+    ./shift < input.txt > no_leading_space.txt
 ```
 
 Where this might be useful, besides ruining the formatting of certain
@@ -113,8 +113,8 @@ program.  For example, here are two more messages that can be
 produced:
 
 ```sh
-./shift < prog.c | ./right > msg1.c && gcc msg1.c -o msg1 && ./msg1
-./shift < prog.c | ./left > msg2.c && gcc msg2.c -o msg2 && ./msg2
+    ./shift < prog.c | ./right > msg1.c && gcc msg1.c -o msg1 && ./msg1
+    ./shift < prog.c | ./left > msg2.c && gcc msg2.c -o msg2 && ./msg2
 ```
 
 In total, there are 9 embedded strings that can be produced via a

@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make alt
+    make alt
 ```
 
 We recommend the alt version so that you can see what this looked like back in 2006.
@@ -12,7 +12,7 @@ code](#original-code) below.
 ## To use:
 
 ```sh
-./slone.alt
+    ./slone.alt
 ```
 
 
@@ -25,16 +25,16 @@ value used in `usleep()`. The default is `75000` but you can easily change
 it. To do so try:
 
 ```sh
-make clobber SLEEP=70000 clobber alt
-./sloane.alt
+    make clobber SLEEP=70000 clobber alt
+    ./sloane.alt
 ```
 
 If you wish to make it like the original, as if the below [Original
 code](#original-code) was being used, you can do:
 
 ```sh
-make SLEEP=0 clobber alt
-./sloane.alt
+    make SLEEP=0 clobber alt
+    ./sloane.alt
 ```
 
 
@@ -47,14 +47,14 @@ Should you wish to see the original you may do so with the original code,
 ### Original build:
 
 ```sh
-make clobber all
+    make clobber all
 ```
 
 
 ### Original use:
 
 ```sh
-./sloane
+    ./sloane
 ```
 
 WARNING: if you are easily overstimulated with fast movement or have

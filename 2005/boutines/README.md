@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -16,20 +16,20 @@ Look here to find some [SVG Viewer
 Implementations](https://www.w3.org/Graphics/SVG/WG/wiki/Implementations).
 
 ```sh
-./boutines < input > output.svg
+    ./boutines < input > output.svg
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 If `ruby` is installed [try.sh](try.sh) will generate an SVG file by:
 
 ```sh
-ruby -e '20.times{puts "#{rand} #{rand}"}' | ./boutines > test.svg
+    ruby -e '20.times{puts "#{rand} #{rand}"}' | ./boutines > test.svg
 ```
 
 It will also create an SVG file with the file [input.txt](input.txt).
@@ -76,7 +76,7 @@ an [SVG](https://www.w3.org/TR/SVG11/expanded-toc.html) stream.
 This will possibly save a compressed SVG file and may be useful:
 
 ```sh
-./boutines | gzip > result.svg.gz
+    ./boutines | gzip > result.svg.gz
 ```
 
 Input consists of a list of floating points values separated by whitespaces
@@ -85,11 +85,11 @@ whitespace then the other coordinate (pointing downwards in the resulting
 graph) and a newline will just go fine:
 
 ```
-0  0
-0  1
-1  0
-1  1
-.5 .5
+    0  0
+    0  1
+    1  0
+    1  1
+    .5 .5
 ```
 
 Strictly speaking, you have to provide a **set** of points. If there are

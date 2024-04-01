@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 There is an alternate version available that has a key configuration that will
@@ -14,7 +14,7 @@ code](#alternate-code) below.
 The current status of this entry is:
 
 ```
-STATUS: missing or dead link - please provide them
+    STATUS: missing or dead link - please provide them
 ```
 
 For more detailed information see [1998 dloweneil bugs](../../bugs.html#1998_dloweneil).
@@ -23,8 +23,7 @@ For more detailed information see [1998 dloweneil bugs](../../bugs.html#1998_dlo
 ## To use:
 
 ```sh
-
-./pootris [X size of board] [Y size of board]
+    ./pootris [X size of board] [Y size of board]
 ```
 
 Pressing `a` moves the current letter position counterclockwise/anticlockwise
@@ -47,14 +46,14 @@ clockwise `l` does as well. Instead of using `d` to drop the letter you can do
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
 ### Alternate use:
 
 ```sh
-./pootris.alt [X size of board] [Y size of board]
+    ./pootris.alt [X size of board] [Y size of board]
 ```
 
 
@@ -64,9 +63,9 @@ Read the authors' remarks below to find out how to play.  We believe that your
 experience may mirror one of our experiences:
 
 ```
-Originally, I didn't appreciate the game.  Then I actually read the
-description of the controls.  I started playing.  I struggled.
-I spelled my first "poot".  I was hooked ...
+    Originally, I didn't appreciate the game.  Then I actually read the
+    description of the controls.  I started playing.  I struggled.
+    I spelled my first "poot".  I was hooked ...
 ```
 
 
@@ -75,7 +74,7 @@ I spelled my first "poot".  I was hooked ...
 ### Usage
 
 ```sh
-./pootris [X size of board] [Y size of board]
+    ./pootris [X size of board] [Y size of board]
 ```
 
 ### Synopsis

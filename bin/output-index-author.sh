@@ -101,7 +101,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.5.2 2024-03-26"
+export VERSION="1.6 2024-03-31"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -788,6 +788,7 @@ fi
 
 # write each author's information to temporary markdown file
 #
+export NOT_FIRST_AUTHOR
 for author_handle in $AUTHOR_HANDLE_SET; do
 
     # determine the author handle JSON path
@@ -838,6 +839,14 @@ for author_handle in $AUTHOR_HANDLE_SET; do
     # write this author's information
     #
     {
+	# If not the first author, add a line break
+	#
+	if [[ -n $NOT_FIRST_AUTHOR ]]; then
+	    echo "<br><br>"
+	fi
+
+	# Output this author's information
+	#
 	echo "* Name: [$FULL_NAME](${DOCROOT_SLASH}authors.html#$author_handle)<br>"
 	if [[ $LOCATION_CODE == null ]]; then
 	    echo "Location: [unknown](${DOCROOT_SLASH}location.html#$LOCATION_CODE) - _${LOCATION_NAME}_"
@@ -850,7 +859,6 @@ for author_handle in $AUTHOR_HANDLE_SET; do
 		     "_${LOCATION_NAME}_ (_${LOCATION_COMMON_NAME}_)"
 	    fi
 	fi
-	echo "<br><br>"
     } | if [[ -z $NOOP ]]; then
 	cat >> "$TMP_FILE"
     else
@@ -859,6 +867,7 @@ for author_handle in $AUTHOR_HANDLE_SET; do
 	    echo "$0: debug[3]: -n disabled write of author's information into: $TMP_FILE" 1>&2
 	fi
     fi
+    NOT_FIRST_AUTHOR="true"
 done
 
 # convert temporary markdown file into HTML

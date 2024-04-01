@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./prog [PIN] < input.txt > output.c
+    ./prog [PIN] < input.txt > output.c
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -23,7 +23,7 @@ The author provided the file [cppp.cc](cppp.cc) which can preprocess the
 generated output to make them more acceptable to typical compilers. To build:
 
 ```sh
-make cppp
+    make cppp
 ```
 
 See the author's remarks for more details.
@@ -45,9 +45,9 @@ spoiler](spoiler.html) that shows how this entry was written.
 ### Synopsis
 
 ```sh
-echo "Hello world" | ./prog 12345 > encoded.c
+    echo "Hello world" | ./prog 12345 > encoded.c
 
-gcc -DPIN=12345 encoded.c -o ./decoded && ./decoded
+    gcc -DPIN=12345 encoded.c -o ./decoded && ./decoded
 ```
 
 ### Details
@@ -55,23 +55,23 @@ gcc -DPIN=12345 encoded.c -o ./decoded && ./decoded
 Mile is a C code generator.  Run without arguments for the help message below:
 
 ```
-usage: [PIN] < input.txt > output.c
+    usage: [PIN] < input.txt > output.c
 
-where [PIN] is an integer in the range of 1..65535
+    where [PIN] is an integer in the range of 1..65535
 ```
 
 When run with an encoding PIN (first command line argument), Mile will
 read bytes from `stdin` and generate C code on `stdout`.  Example:
 
 ```sh
-echo "Hello, world!" | ./prog 56789 > encoded.c
+    echo "Hello, world!" | ./prog 56789 > encoded.c
 ```
 
 This generated code will reproduce the same input bytes on `stdout` when
 executed, if it was compiled with the same encoding PIN.
 
 ```sh
-gcc -DPIN=56789 encoded.c -o decoded
+    gcc -DPIN=56789 encoded.c -o decoded
 ```
 
 The generated code reconstructs all data at compile time by seeding a

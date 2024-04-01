@@ -1,23 +1,23 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./tromp [drops_per_sec  [cmd_string]]
+    ./tromp [drops_per_sec  [cmd_string]]
 ```
 
 
 ## Try:
 
 ```sh
-./tromp 5
+    ./tromp 5
 
-./tromp 10 "hkl jq"
+    ./tromp 10 "hkl jq"
 ```
 
 The second command, `./tromp 10 "hkl jq"`, will set up the keys kind of like
@@ -30,15 +30,14 @@ vim:
 - space	    - pause (space)
 - q	    - quit (:q)
 
-
 NOTE: after the game ends a file called `HI` will be in the directory with the
 high scores (up to 20 runs saved) so one can see who has the highest score. The
 file might look like:
 
 ```
-330 by luser
-136 by loser
-100 by winner
+    330 by luser
+    136 by loser
+    100 by winner
 ```
 
 ... or so, where in this case the [luser is the winner, the loser is in second
@@ -55,7 +54,7 @@ the judges' additional remarks in the author's remarks, for more details.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 

@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./litmaath some text
+    ./litmaath some text
 ```
 
 There is an alternate version provided. See the [Alternate
@@ -18,7 +18,7 @@ code](#alternate-code) section below.
 ## Try:
 
 ```sh
-./litmaath eschew obfuscation
+    ./litmaath eschew obfuscation
 ```
 
 
@@ -32,7 +32,7 @@ a file.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 Use `litmaath.alt` as you would `litmaath` above.
@@ -41,7 +41,7 @@ Use `litmaath.alt` as you would `litmaath` above.
 ### Alternate try:
 
 ```sh
-./litmaath.alt six was afraid of seven because seven eight nine
+    ./litmaath.alt six was afraid of seven because seven eight nine
 ```
 
 
@@ -51,8 +51,8 @@ Note the unusual structure:
 
 
 ```c
-while (<condition>)
-	 ;
+    while (<condition>)
+	     ;
 ```
 
 Did you notice that the body is empty?
@@ -67,10 +67,10 @@ variables like:
 
 
 ```c
-fprintf(stderr,
-     "argv=%lo *argv=%lo **argv=%c argv[1]=%lo *argv[1]=%c argc=%d\n",
-     (long) argv, (long) *argv, *argv && **argv ? **argv : '@',
-     (long) argv[1], argv[1] && *argv[1] ? *argv[1] : '@', argc);
+    fprintf(stderr,
+	 "argv=%lo *argv=%lo **argv=%c argv[1]=%lo *argv[1]=%c argc=%d\n",
+	 (long) argv, (long) *argv, *argv && **argv ? **argv : '@',
+	 (long) argv[1], argv[1] && *argv[1] ? *argv[1] : '@', argc);
 ```
 
 ... which is what the [alternate code](#alternate-code) is.

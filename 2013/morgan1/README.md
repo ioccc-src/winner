@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-echo "YYYY/MM/DD" | ./morgan1
+    echo "YYYY/MM/DD" | ./morgan1
 ```
 
 where `YYYY` is the four digit year, `MM` is the two digit month and `DD` is two
@@ -24,7 +24,7 @@ follows:
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 Use the same keys as described above to change the dates each time the program
@@ -107,20 +107,20 @@ degrees sometimes).
 With gcc 4.7.2 on Linux Ubuntu 12.10:
 
 ```
-morgan1.c:38:3: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
-morgan1.c:40:34: warning: value computed is not used [-Wunused-value]
-morgan1.c:56:6: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
-morgan1.c:58:50: warning: value computed is not used [-Wunused-value]
-morgan1.c:61:5: warning: suggest parentheses around ‘-’ inside ‘>>’ [-Wparentheses]
+    morgan1.c:38:3: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+    morgan1.c:40:34: warning: value computed is not used [-Wunused-value]
+    morgan1.c:56:6: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+    morgan1.c:58:50: warning: value computed is not used [-Wunused-value]
+    morgan1.c:61:5: warning: suggest parentheses around ‘-’ inside ‘>>’ [-Wparentheses]
 ```
 
 With clang 3.1 on Linux Ubuntu 12.10 :
 
 ```
-morgan1.c:38:49: warning: '&&' within '||' [-Wlogical-op-parentheses]
-morgan1.c:38:27: warning: '&&' within '||' [-Wlogical-op-parentheses]
-morgan1.c:55:13: warning: '&&' within '||' [-Wlogical-op-parentheses]
-morgan1.c:56:14: warning: '&&' within '||' [-Wlogical-op-parentheses]
+    morgan1.c:38:49: warning: '&&' within '||' [-Wlogical-op-parentheses]
+    morgan1.c:38:27: warning: '&&' within '||' [-Wlogical-op-parentheses]
+    morgan1.c:55:13: warning: '&&' within '||' [-Wlogical-op-parentheses]
+    morgan1.c:56:14: warning: '&&' within '||' [-Wlogical-op-parentheses]
 ```
 
 This is due to most of the parentheses and braces being removed when

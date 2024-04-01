@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./bmeyer
+    ./bmeyer
 ```
 
 
@@ -17,7 +17,7 @@ make
 In a video window (white text on black background):
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 The script will suggest you compare the output of the program with images,
@@ -32,8 +32,8 @@ dashed argument) for compression and decompression!  You've been warned.
 The author recommended on linux/x86, glibc 2.0, libc4/5:
 
 ```make
-bmeyer: bmeyer.c
-	CC -DY="__setfpucw(0x127f)" -O6 $? -o $@ -lm
+    bmeyer: bmeyer.c
+	    CC -DY="__setfpucw(0x127f)" -O6 $? -o $@ -lm
 ```
 
 However many compilers use `-O3` as the maximum level for `-O` optimization.
@@ -41,8 +41,8 @@ However many compilers use `-O3` as the maximum level for `-O` optimization.
 And on linux/x86, glibc 2.1:
 
 ```make
-bmeyer: bmeyer.c
-	gcc -DY='int x=0x127f; __asm__ ("fldcw %0" : : "m" (*&x))'  $? -o $@ -lm
+    bmeyer: bmeyer.c
+	    gcc -DY='int x=0x127f; __asm__ ("fldcw %0" : : "m" (*&x))'  $? -o $@ -lm
 ```
 
 Compile with the maximum possible optimization on your system.
@@ -81,13 +81,13 @@ ASCII .PGM, depending on what format it was compressed from. For
 example:
 
 ```sh
-./glicbawls < michael.pgm > michael.glic
+    ./glicbawls < michael.pgm > michael.glic
 ```
 
 and then
 
 ```sh
-./glicbawls < michael.glic > michael.decoded.pgm
+    ./glicbawls < michael.glic > michael.decoded.pgm
 ```
 
 As it turns out, `glicbawls` compresses greyscale images (or, more
@@ -105,7 +105,7 @@ more than 80 columns, and tell `glicbawls` about it by giving the
 number of columns as an argument. For example
 
 ```sh
-./glicbawls 260 <lavabus.pgm >lavabus.glic
+    ./glicbawls 260 <lavabus.pgm >lavabus.glic
 ```
 
 will allow `glicbawls` to use up to 260 columns, which makes things
@@ -123,21 +123,21 @@ give the maximum allowed error as an argument, with a dash (`-`)
 before it. For example:
 
 ```sh
-./glicbawls -2 < graph.pgm > graph.2.glic
+    ./glicbawls -2 < graph.pgm > graph.2.glic
 ```
 
 will compress in a way that allows decompression with a maximum
 error of two. You can combine both types of arguments, i.e.:
 
 ```sh
-./glicbawls -3 180 < graph.pgm >graph.3.glic
+    ./glicbawls -3 180 < graph.pgm >graph.3.glic
 ```
 
 will compress with a maximum error of 3, using a 180 column
 terminal for the progress display, and:
 
 ```sh
-./glicbawls -3 180 < graph.3.glic > graph.3maxerr.pgm
+    ./glicbawls -3 180 < graph.3.glic > graph.3maxerr.pgm
 ```
 
 will decompress the result on such a terminal.

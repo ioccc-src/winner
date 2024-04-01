@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2018 hou bugs](../../bugs.html#2018_hou).
@@ -19,7 +19,7 @@ For more detailed information see [2018 hou bugs](../../bugs.html#2018_hou).
 ## To use:
 
 ```sh
-./prog < input.json > output.html
+    ./prog < input.json > output.html
 ```
 
 View `output.html` in a browser.
@@ -28,7 +28,7 @@ View `output.html` in a browser.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 The script will generate a JSON file called `ioccc.json`, showing it via

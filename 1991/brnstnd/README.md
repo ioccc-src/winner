@@ -1,16 +1,16 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 
-./sorta < sorta.itailrec
+    ./sorta < sorta.itailrec
 ```
 
 

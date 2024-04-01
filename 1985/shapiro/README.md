@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 There is alternate code which allows one to change the size of the maze. See
@@ -11,7 +11,7 @@ There is alternate code which allows one to change the size of the maze. See
 ### To run:
 
 ```sh
-./shapiro
+    ./shapiro
 ```
 
 
@@ -24,7 +24,7 @@ of the maze. The alt code allows one to easily do this.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -33,7 +33,7 @@ make alt
 If you wish to change the value you can do it like:
 
 ```sh
-make clobber SIZE=5 alt
+    make clobber SIZE=5 alt
 ```
 
 Note that if it is not a number then obviously there will be a compilation
@@ -42,7 +42,7 @@ error. If it's <= 0 || >= 5000 then it is set to 39, the default.
 You might also wish to try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 This script will compile the program five times with a random value and then

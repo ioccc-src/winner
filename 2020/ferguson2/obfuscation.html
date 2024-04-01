@@ -138,40 +138,43 @@ there is an aesthetic appeal to my eyes too).</p></li>
 (including what was originally two arrays plus some additional ints).</p></li>
 <li><p>Negative pointer offsets. This include calculated offsets into the huge
 Y&lt;:19:&gt;&lt;:27:&gt; but it’s not the only example. Here the compound literal of 13
-ints:</p>
-<pre><code>int *z=(int[13]) { 0 } , *e, *g;</code></pre>
+ints:</p></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>            <span class="dt">int</span> <span class="op">*</span>z<span class="op">=(</span><span class="dt">int</span><span class="op">[</span><span class="dv">13</span><span class="op">])</span> <span class="op">{</span> <span class="dv">0</span> <span class="op">}</span> <span class="op">,</span> <span class="op">*</span>e<span class="op">,</span> <span class="op">*</span>g<span class="op">;</span></span></code></pre></div>
 <p>Then in main:</p>
-<pre><code>e = z + 10;
-g = e + 1;
-
-for (j=-3; j &lt; 0; ++j)
-    e&lt;:j:&gt; = j+3;</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>            e <span class="op">=</span> z <span class="op">+</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>            g <span class="op">=</span> e <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> <span class="op">(</span>j<span class="op">=-</span><span class="dv">3</span><span class="op">;</span> j <span class="op">&lt;</span> <span class="dv">0</span><span class="op">;</span> <span class="op">++</span>j<span class="op">)</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                e<span class="op">&lt;:</span>j<span class="op">:&gt;</span> <span class="op">=</span> j<span class="op">+</span><span class="dv">3</span><span class="op">;</span></span></code></pre></div>
 <p>Which I think is more confusing: when one is iterating an array you don’t
 expect to start out with index &lt; 0 but to then compare that that index &lt; 0
 and increment until 0 along with setting the value of the array to j + 3 is
 more confusing still. There are at least two other ways that are much easier
 to read that could accomplish the same thing. It continues on:</p>
-<pre><code>/* ... */
-e&lt;:i-3:&gt; = (j &lt; 1 ? 1 : (j &gt; 5 ? 5 : j))-1;</code></pre></li>
-<li><p>Observe these two functions:</p>
-<pre><code>void w(char *s, int k, int v)
-{
-        for(e&lt;:2:&gt; = 0; s&lt;:*P:&gt;; ++e&lt;:2:&gt;)
-        {
-                v = s&lt;:e&lt;:2:&gt;:&gt;;
-                if(v &gt; 64 &amp;&amp; v &lt; 91)
-                    s&lt;:e&lt;:2:&gt;:&gt; = (((v - 65 + k) % 26) + 65);
-        }
-}
-void Q(void)
-{
-        for(*g = 0; *g &lt; 3; ++*g)
-        {
-                *Y&lt;:16+e&lt;:1:&gt;:&gt;=S&lt;:e&lt;:e&lt;:1:&gt;-3:&gt;:&gt;;
-                R&lt;:e&lt;:1:&gt;:&gt;=Y&lt;:e&lt;:-3+e&lt;:1:&gt;:&gt;:&gt;;
-                w(R[*g],*(e+e&lt;:1:&gt;-6)=q(Y&lt;:8:&gt;,*Y&lt;:7:&gt;),*g);
-        }
-}</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* ... */</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>            e<span class="op">&lt;:</span>i<span class="op">-</span><span class="dv">3</span><span class="op">:&gt;</span> <span class="op">=</span> <span class="op">(</span>j <span class="op">&lt;</span> <span class="dv">1</span> <span class="op">?</span> <span class="dv">1</span> <span class="op">:</span> <span class="op">(</span>j <span class="op">&gt;</span> <span class="dv">5</span> <span class="op">?</span> <span class="dv">5</span> <span class="op">:</span> j<span class="op">))-</span><span class="dv">1</span><span class="op">;</span></span></code></pre></div>
+<ul>
+<li>Observe these two functions:</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>            <span class="dt">void</span> w<span class="op">(</span><span class="dt">char</span> <span class="op">*</span>s<span class="op">,</span> <span class="dt">int</span> k<span class="op">,</span> <span class="dt">int</span> v<span class="op">)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">for</span><span class="op">(</span>e<span class="op">&lt;:</span><span class="dv">2</span><span class="op">:&gt;</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> s<span class="op">&lt;:*</span>P<span class="op">:&gt;;</span> <span class="op">++</span>e<span class="op">&lt;:</span><span class="dv">2</span><span class="op">:&gt;)</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                    <span class="op">{</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                            v <span class="op">=</span> s<span class="op">&lt;:</span>e<span class="op">&lt;:</span><span class="dv">2</span><span class="op">:&gt;:&gt;;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                            <span class="cf">if</span><span class="op">(</span>v <span class="op">&gt;</span> <span class="dv">64</span> <span class="op">&amp;&amp;</span> v <span class="op">&lt;</span> <span class="dv">91</span><span class="op">)</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                                s<span class="op">&lt;:</span>e<span class="op">&lt;:</span><span class="dv">2</span><span class="op">:&gt;:&gt;</span> <span class="op">=</span> <span class="op">(((</span>v <span class="op">-</span> <span class="dv">65</span> <span class="op">+</span> k<span class="op">)</span> <span class="op">%</span> <span class="dv">26</span><span class="op">)</span> <span class="op">+</span> <span class="dv">65</span><span class="op">);</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>                    <span class="op">}</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>            <span class="dt">void</span> Q<span class="op">(</span><span class="dt">void</span><span class="op">)</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">for</span><span class="op">(*</span>g <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> <span class="op">*</span>g <span class="op">&lt;</span> <span class="dv">3</span><span class="op">;</span> <span class="op">++*</span>g<span class="op">)</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                    <span class="op">{</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>                            <span class="op">*</span>Y<span class="op">&lt;:</span><span class="dv">16</span><span class="op">+</span>e<span class="op">&lt;:</span><span class="dv">1</span><span class="op">:&gt;:&gt;=</span>S<span class="op">&lt;:</span>e<span class="op">&lt;:</span>e<span class="op">&lt;:</span><span class="dv">1</span><span class="op">:&gt;-</span><span class="dv">3</span><span class="op">:&gt;:&gt;;</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>                            R<span class="op">&lt;:</span>e<span class="op">&lt;:</span><span class="dv">1</span><span class="op">:&gt;:&gt;=</span>Y<span class="op">&lt;:</span>e<span class="op">&lt;:-</span><span class="dv">3</span><span class="op">+</span>e<span class="op">&lt;:</span><span class="dv">1</span><span class="op">:&gt;:&gt;:&gt;;</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>                            w<span class="op">(</span>R<span class="op">[*</span>g<span class="op">],*(</span>e<span class="op">+</span>e<span class="op">&lt;:</span><span class="dv">1</span><span class="op">:&gt;-</span><span class="dv">6</span><span class="op">)=</span>q<span class="op">(</span>Y<span class="op">&lt;:</span><span class="dv">8</span><span class="op">:&gt;,*</span>Y<span class="op">&lt;:</span><span class="dv">7</span><span class="op">:&gt;),*</span>g<span class="op">);</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>                    <span class="op">}</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span></code></pre></div>
 <p>First of all: why do I set <code>e[2]</code> to 0 and increment it for each pass in the
 loop, but then the condition for the loop is <code>s[*P]</code>?</p>
 <p>Second notice the many references to e[1] (as e[1] and <em>g). This variable (pointing
@@ -189,40 +192,47 @@ unspecified I changed it to what it is now. Anyway:</p>
 <p>You can also see that I use the value of e[1]-3 as the index of S[e] (so
 S[e[e[1]-3]]) (I think I said that right; I honestly don’t know now because
 there is such major array and offset abuse. The entire prog.c is riddled
-with offset abuses.).</p></li>
-<li><p>If you observe that above the compound literal <code>z</code> is of size 13 but I point
+with offset abuses.).</p>
+<ul>
+<li>If you observe that above the compound literal <code>z</code> is of size 13 but I point
 <code>e</code> to be <code>z + 10</code>. Why? Twofold: (1) I decided to make use of one of them as a
 temporary variable instead of a regular int in the function (so make it global);
 and (2) I didn’t want to risk changing all the offsets: thus I just made that
-address <code>e[1]</code>. Thus I also have:</p>
-<pre><code>for (*g = 0 ; *g &lt; 10; ++*g)
-{
-    r&lt;:-2:&gt; = Y&lt;:14:&gt;&lt;:*(e+1):&gt;; r&lt;:-3:&gt; = Y&lt;:15:&gt;&lt;:1&lt;:e:&gt;:&gt;;
-    if (r&lt;:-3:&gt; &amp;&amp; r&lt;:-2:&gt; == r&lt;:-1:&gt;)
-        return r&lt;:-3:&gt;;
-    if (r&lt;:-2:&gt; &amp;&amp; r&lt;:-3:&gt; == r&lt;:-1:&gt;)
-        return r&lt;:-2:&gt;;
-}</code></pre>
+address <code>e[1]</code>. Thus I also have:</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> <span class="op">(*</span>g <span class="op">=</span> <span class="dv">0</span> <span class="op">;</span> <span class="op">*</span>g <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> <span class="op">++*</span>g<span class="op">)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                r<span class="op">&lt;:-</span><span class="dv">2</span><span class="op">:&gt;</span> <span class="op">=</span> Y<span class="op">&lt;:</span><span class="dv">14</span><span class="op">:&gt;&lt;:*(</span>e<span class="op">+</span><span class="dv">1</span><span class="op">):&gt;;</span> r<span class="op">&lt;:-</span><span class="dv">3</span><span class="op">:&gt;</span> <span class="op">=</span> Y<span class="op">&lt;:</span><span class="dv">15</span><span class="op">:&gt;&lt;:</span><span class="dv">1</span><span class="op">&lt;:</span>e<span class="op">:&gt;:&gt;;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> <span class="op">(</span>r<span class="op">&lt;:-</span><span class="dv">3</span><span class="op">:&gt;</span> <span class="op">&amp;&amp;</span> r<span class="op">&lt;:-</span><span class="dv">2</span><span class="op">:&gt;</span> <span class="op">==</span> r<span class="op">&lt;:-</span><span class="dv">1</span><span class="op">:&gt;)</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">return</span> r<span class="op">&lt;:-</span><span class="dv">3</span><span class="op">:&gt;;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> <span class="op">(</span>r<span class="op">&lt;:-</span><span class="dv">2</span><span class="op">:&gt;</span> <span class="op">&amp;&amp;</span> r<span class="op">&lt;:-</span><span class="dv">3</span><span class="op">:&gt;</span> <span class="op">==</span> r<span class="op">&lt;:-</span><span class="dv">1</span><span class="op">:&gt;)</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">return</span> r<span class="op">&lt;:-</span><span class="dv">2</span><span class="op">:&gt;;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span></code></pre></div>
 <p>This <code>e[1]</code> of course is the same as <code>*g</code> as above and as you can see has
 multiple dimensions (that is the reference to Y does) too (and this is also
 strewn about the code). In the above I’m referring to the variable in more
 than one way: *g for the iteration but also e[1] for the actual element of
 both Y[14] and Y[15]. I also happen to use S (via r which points to S + 10)
-which I use as the two chars to compare (this is the plugboard function).</p></li>
-<li><p>The above function Z() takes a <code>char x</code> but you won’t notice it being used
-at all. Why? In fact I call it like so:</p>
-<pre><code>    k = Z(r&lt;:-1:&gt;=k);</code></pre>
+which I use as the two chars to compare (this is the plugboard function).</p>
+<ul>
+<li>The above function Z() takes a <code>char x</code> but you won’t notice it being used
+at all. Why? In fact I call it like so:</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>                k <span class="op">=</span> Z<span class="op">(</span>r<span class="op">&lt;:-</span><span class="dv">1</span><span class="op">:&gt;=</span>k<span class="op">);</span></span></code></pre></div>
 <p>The char is just used as a way to be able to call the function and assign to
 the proper variable at the same time: in the function Z I don’t care about x
 because it’s the same value as r[-1] (which I do care about). Why is it
 attached to S? Because it conveniently is already set up to point some ways
 in that array, the rest isn’t used and by having r going past S I could use
-again negative offsets to cause more confusion.</p></li>
-<li><p>Although this is clearly already shown in the above there are other ways I
+again negative offsets to cause more confusion.</p>
+<ul>
+<li>Although this is clearly already shown in the above there are other ways I
 refer to the same variable in more than one way (or in some cases maybe more
-correct to say ‘same location’). In the Z() function for example:</p>
-<pre><code>    r&lt;:-2:&gt; = Y&lt;:14:&gt;&lt;:*(e+1):&gt;; r&lt;:-3:&gt; = Y&lt;:15:&gt;&lt;:1&lt;:e:&gt;:&gt;;</code></pre>
-<p>I refer to e[1] as both: *(e+1) and 1[e].</p></li>
+correct to say ‘same location’). In the Z() function for example:</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>                r<span class="op">&lt;:-</span><span class="dv">2</span><span class="op">:&gt;</span> <span class="op">=</span> Y<span class="op">&lt;:</span><span class="dv">14</span><span class="op">:&gt;&lt;:*(</span>e<span class="op">+</span><span class="dv">1</span><span class="op">):&gt;;</span> r<span class="op">&lt;:-</span><span class="dv">3</span><span class="op">:&gt;</span> <span class="op">=</span> Y<span class="op">&lt;:</span><span class="dv">15</span><span class="op">:&gt;&lt;:</span><span class="dv">1</span><span class="op">&lt;:</span>e<span class="op">:&gt;:&gt;;</span></span></code></pre></div>
+<p>I refer to e[1] as both: *(e+1) and 1[e].</p>
+<ul>
 <li><p>Replacing a number of <code>if ..</code>s with <code>... &amp;&amp; (...)</code>s (in one case at least
 it’s nested further: <code>f &amp;&amp; (f = 0 &amp;&amp; (a = W(A,a)));</code>).</p></li>
 <li><p>Three different char arrays in one: the rotors settings, the positions and
@@ -233,9 +243,11 @@ arrays here require some index calculations like <code>i+i%3</code> and <code>i+
 on which ‘array’ is needed. At other points I refer to those elements by direct
 index (sort of).</p></li>
 <li><p>Another set of char arrays in one: the five rotors as well as the two
-reflectors in one <code>char [][27]</code>. This makes for some fun code like:</p>
-<pre><code>(Y&lt;:e&lt;:-10:&gt;+5:&gt;&lt;:k-&#39;A&#39;:&gt;) &amp;&amp; (k = Y&lt;:e&lt;:-10:&gt;+5:&gt;&lt;:k-&#39;A&#39;:&gt;);</code></pre>
-<p>(Of course this also removes an if statement by joining with a &amp;&amp;).</p></li>
+reflectors in one <code>char [][27]</code>. This makes for some fun code like:</p></li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>            <span class="op">(</span>Y<span class="op">&lt;:</span>e<span class="op">&lt;:-</span><span class="dv">10</span><span class="op">:&gt;+</span><span class="dv">5</span><span class="op">:&gt;&lt;:</span>k<span class="op">-</span><span class="ch">&#39;A&#39;</span><span class="op">:&gt;)</span> <span class="op">&amp;&amp;</span> <span class="op">(</span>k <span class="op">=</span> Y<span class="op">&lt;:</span>e<span class="op">&lt;:-</span><span class="dv">10</span><span class="op">:&gt;+</span><span class="dv">5</span><span class="op">:&gt;&lt;:</span>k<span class="op">-</span><span class="ch">&#39;A&#39;</span><span class="op">:&gt;);</span></span></code></pre></div>
+<p>(Of course this also removes an if statement by joining with a &amp;&amp;).</p>
+<ul>
 <li><p>In fact I decided that the above two arrays in arrays needed to be merged
 with the rest of the char arrays so that’s what I have done. They have
 different purposes and they’re referred to differently. I will cite next the
@@ -261,26 +273,26 @@ it to 9.</p></li>
 <li><p>The judges don’t like obfuscation through the C preprocessor. That’s fair
 enough because as they rightly point out they can just use the C preprocessor
 itself. But although I have quite a few cpp directives I am not using them for
-obfuscation but rather to save bytes. For examples:</p>
-<pre><code>%:define J(x)                 do(*x)=getchar(); while((*x)==&#39;\n&#39;)</code></pre>
+obfuscation but rather to save bytes. For examples:</p></li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>            <span class="pp">%:define J</span><span class="op">(</span><span class="pp">x</span><span class="op">)</span><span class="pp">                 </span><span class="cf">do</span><span class="op">(*</span><span class="pp">x</span><span class="op">)=</span><span class="pp">getchar</span><span class="op">();</span><span class="pp"> </span><span class="cf">while</span><span class="op">((*</span><span class="pp">x</span><span class="op">)==</span><span class="ch">&#39;</span><span class="sc">\n</span><span class="ch">&#39;</span><span class="op">)</span></span></code></pre></div>
 <p>Is used quite a number of times and although it could be a function that
 takes a pointer to an int it was more convenient this way (I believe it used
 more bytes but I no longer know that). There are many others and they all
 save bytes (or at least most of them do if not all). There is one in
 particular I want to bring up though because I think it’s a curious one and
 it ties in to another point above:</p>
-<pre><code>%:define A(y)                                 *(&amp;Y&lt;:7:&gt;&lt;:1:&gt;+(y))</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>            <span class="pp">%:define A</span><span class="op">(</span><span class="pp">y</span><span class="op">)</span><span class="pp">                                 </span><span class="op">*(&amp;</span><span class="pp">Y</span><span class="op">&lt;:</span><span class="dv">7</span><span class="op">:&gt;&lt;:</span><span class="dv">1</span><span class="op">:&gt;+(</span><span class="pp">y</span><span class="op">))</span></span></code></pre></div>
 <p>What is special about this one: Above I noted how I sort of refer directly
 to the notch settings (I think it was the notch settings anyway). Now I
 could have done say</p>
-<pre><code>char a = Y[7][1], b = Y[7][3], c = Y[7][5];</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>            <span class="dt">char</span> a <span class="op">=</span> Y<span class="op">[</span><span class="dv">7</span><span class="op">][</span><span class="dv">1</span><span class="op">],</span> b <span class="op">=</span> Y<span class="op">[</span><span class="dv">7</span><span class="op">][</span><span class="dv">3</span><span class="op">],</span> c <span class="op">=</span> Y<span class="op">[</span><span class="dv">7</span><span class="op">][</span><span class="dv">5</span><span class="op">];</span></span></code></pre></div>
 <p>But I felt that doing instead the pointer arithmetic was worth doing.
 However it used significantly more bytes even as a macro: 17 if I recall
 right. That’s with the macro. If I were to include it three times by itself
 it’d be many more. I believe though that when the cpp translates it it still
 requires more thought to determine that a is set to Y[7][1], b to Y[7][3]
-and c to Y[7][5].</p></li>
-</ul>
+and c to Y[7][5].</p>
 <h1 id="obfuscation-wrt-recode.c">Obfuscation wrt recode.c</h1>
 <ul>
 <li><p>To cause confusion I have used the same names of variables and functions
@@ -300,16 +312,16 @@ I don’t believe deciphering recode.c will explain how my entry works because
 recode.c doesn’t use the Enigma algorithm and even the strings are done very
 differently (and separated) so that one cannot easily replace the <code>char</code>
 variables in recode.c, move them to prog.c, compile and expect it to work right.</p></li>
-<li><p>Also what is this about ?</p>
-<pre><code>                      /\
-          /           This is     *not* what you think:
-                  void D(char*x){ /* ... */ }</code></pre>
+<li><p>Also what is this about ?</p></li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>                                <span class="op">/</span>\</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>                    <span class="op">/</span>           This is     <span class="op">*</span>not<span class="op">*</span> what you think<span class="op">:</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                            <span class="dt">void</span> D<span class="op">(</span><span class="dt">char</span><span class="op">*</span>x<span class="op">){</span> <span class="co">/* ... */</span> <span class="op">}</span></span></code></pre></div>
 <p>Is that valid and if so how does it function? Yes it’s valid but I’ll leave
 the other part of the question up to the reader to answer. Hint: you already
 know how it works (yes, really you do)! Another hint: This is and is not a
 misleading comment (conversely this makes this hint both misleading - and
-also not).</p></li>
-</ul>
+also not).</p>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

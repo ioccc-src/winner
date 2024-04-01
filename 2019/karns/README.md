@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 NOTE: we disable the optimiser because this program has problems with it
@@ -13,7 +13,7 @@ enabled.
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2019 karns bugs](../../bugs.html#2019_karns).
@@ -22,13 +22,13 @@ For more detailed information see [2019 karns bugs](../../bugs.html#2019_karns).
 ## To use:
 
 ```sh
-./prog < textfile_that_fits_on_the_screen
+    ./prog < textfile_that_fits_on_the_screen
 ```
 
 You might want to type:
 
 ```sh
-reset
+    reset
 ```
 
 after running the program to restore the terminal to its previous state.
@@ -37,13 +37,13 @@ after running the program to restore the terminal to its previous state.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 If you have more time you might want to try:
 
 ```sh
-./prog < README.md
+    ./prog < README.md
 ```
 
 
@@ -83,7 +83,7 @@ connected with anything.
 This program usually compiles under both GCC and clang. Build with:
 
 ```sh
-$(CC) -std=c99 -o tbfs prog.c
+    $(CC) -std=c99 -o tbfs prog.c
 ```
 
 where `$(CC)` is cc, gcc, clang, or some other C compiler.
@@ -91,14 +91,14 @@ where `$(CC)` is cc, gcc, clang, or some other C compiler.
 You can then run it with:
 
 ```sh
-cat <input file> | ./tbfs
+    cat <input file> | ./tbfs
 ```
 
 Examples:
 
 ```sh
-./tbfs < maze
-./tbfs < prog.c
+    ./tbfs < maze
+    ./tbfs < prog.c
 ```
 
 ### Issues

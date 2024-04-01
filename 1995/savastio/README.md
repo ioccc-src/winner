@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -10,7 +10,7 @@ make all
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [1995 savastio bugs](../../bugs.html#1995_savastio).
@@ -19,8 +19,8 @@ For more detailed information see [1995 savastio bugs](../../bugs.html#1995_sava
 ## To use:
 
 ```sh
-./savastio
-# enter a POSITIVE number such as 100
+    ./savastio
+    # enter a POSITIVE number such as 100
 ```
 
 NOTE: if you specify a negative number it will get stuck, showing no output. But
@@ -30,7 +30,7 @@ what happens if you give a non-number?
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -59,7 +59,7 @@ matters, the buckets are arranged backwards in the block.  For example,
 the number 8347108947139478934713847134 is represented as:
 
 ```
-7134 1384 9347 3947 9471 7108 834
+    7134 1384 9347 3947 9471 7108 834
 ```
 
 ### Platform limitations

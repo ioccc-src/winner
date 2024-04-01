@@ -13,10 +13,10 @@ calculus](https://en.wikipedia.org/wiki/Lambda_calculus) terms in the following
 format. 0 denotes some form of I/O; the only four occurrences are at:
 
 ```
-  C=13: recognizes end of a byte
-  C=20: recognize output of 0 bit
-  C=21: recognize output of 1 bit
-  C=end: input list, expanded lazily
+    C=13: recognizes end of a byte
+    C=20: recognize output of 0 bit
+    C=21: recognize output of 1 bit
+    C=end: input list, expanded lazily
 ```
 
 `1` denotes a variable, with the next entry its [de Bruijn
@@ -38,30 +38,30 @@ free list.
 Here's what each variable does:
 
 ```
-L	Lambda term space
-m	mode: 0 for bits and 7 for bytes
-b	bits remaining unread in I, -1 on EOF
-D	Desirable temporary
-c	continuation context
-a	active environment pointer
-C	Current term index
-U	Ultimate term pointer
-u	utility entry
-B	Born to be free-list of closures
-I	Input character
-O	Output character
-e	entry of current term
+    L	Lambda term space
+    m	mode: 0 for bits and 7 for bytes
+    b	bits remaining unread in I, -1 on EOF
+    D	Desirable temporary
+    c	continuation context
+    a	active environment pointer
+    C	Current term index
+    U	Ultimate term pointer
+    u	utility entry
+    B	Born to be free-list of closures
+    I	Input character
+    O	Output character
+    e	entry of current term
 ```
 
 Here's what each of the 6 auxiliary functions do:
 
 ```
-s	variable lookup in active environment with de Bruijn index u
-S	gets one bit of input, setting b to -1 on EOF or to remaining number of bits in current byte
-k	copy fragment from string literal holding lambda terms xor 46 into current end of term space
-x	expand input, adding 11 (resp. 99) entries to term space for bit (resp. byte) mode
-p	parses BLC-encoded lambda term using S(), stores results in term space and returns length
-d	decrease reference counter, add record to free list on reaching zero
+    s	variable lookup in active environment with de Bruijn index u
+    S	gets one bit of input, setting b to -1 on EOF or to remaining number of bits in current byte
+    k	copy fragment from string literal holding lambda terms xor 46 into current end of term space
+    x	expand input, adding 11 (resp. 99) entries to term space for bit (resp. byte) mode
+    p	parses BLC-encoded lambda term using S(), stores results in term space and returns length
+    d	decrease reference counter, add record to free list on reaching zero
 ```
 
 

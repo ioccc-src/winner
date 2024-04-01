@@ -1,27 +1,27 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./vik1 [arg]
+    ./vik1 [arg]
 ```
 
 
 ## Try:
 
 ```sh
-./vik1
+    ./vik1
 
-./vik1 a
+    ./vik1 a
 
-./vik1 d2
+    ./vik1 d2
 
-./vik1 ad3
+    ./vik1 ad3
 ```
 
 
@@ -83,24 +83,24 @@ The program takes three options which have to be typed in a specific
 order as described below.
 
 ```sh
-Usage: ./vik1 ['a']['d'][#]
+    Usage: ./vik1 ['a']['d'][#]
 
-a   - Advanced racing in a winter landscape
-d   - Racing in at night in the dark
+    a   - Advanced racing in a winter landscape
+    d   - Racing in at night in the dark
 #   - Race track selection 1-3 are valid numbers
 ```
 
 Here are a few examples:
 
 ```
-Command line:               Description:
+    Command line:               Description:
 
-$ ./vik1                    Run track 1 at daytime in the summer
-$ ./vik1 a                  Run track 1 at daytime in the winter
-$ ./vik1 d                  Run track 1 at night in the summer
-$ ./vik1 3                  Run track 3 at daytime in the summer
-$ ./vik1 d3                 Run track 3 at night in the summer
-$ ./vik1 ad2                Run track 2 at night in the winter
+    $ ./vik1                    Run track 1 at daytime in the summer
+    $ ./vik1 a                  Run track 1 at daytime in the winter
+    $ ./vik1 d                  Run track 1 at night in the summer
+    $ ./vik1 3                  Run track 3 at daytime in the summer
+    $ ./vik1 d3                 Run track 3 at night in the summer
+    $ ./vik1 ad2                Run track 2 at night in the winter
 ```
 
 Note that the order in which the argument characters are entered is

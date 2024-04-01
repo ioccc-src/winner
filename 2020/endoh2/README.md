@@ -1,27 +1,27 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./prog
+    ./prog
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 What happens if you do
 
 ```sh
-./prog prog.c
+    ./prog prog.c
 ```
 
 ?
@@ -42,11 +42,11 @@ render for a larger terminal window?  How about adding more glyphs?
 No!  Try not.  Do, or do not.  There is no try.
 
 ```sh
-cc -std=c99 prog.c
-./a.out
-./a.out hello.txt
-./a.out yoda.txt
-./a.out bear.txt
+    cc -std=c99 prog.c
+    ./a.out
+    ./a.out hello.txt
+    ./a.out yoda.txt
+    ./a.out bear.txt
 ```
 
 See spoiler.zip for the source code.

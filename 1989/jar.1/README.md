@@ -3,7 +3,7 @@
 NOTE: this will run the program itself.
 
 ```sh
-make clobber all
+    make clobber all
 ```
 
 There is an alternate version with a slight difference that you may wish to try.
@@ -13,7 +13,7 @@ See the [Alternate code](#alternate-code) section below for more details.
 ## To use:
 
 ```sh
-./jar.1
+    ./jar.1
 ```
 
 
@@ -27,14 +27,14 @@ This alternate code, which prints something slightly different, is provided as w
 NOTE: this will run the program itself.
 
 ```sh
-make clobber alt
+    make clobber alt
 ```
 
 
 ### Alternate use:
 
 ```sh
-./jar.1.alt
+    ./jar.1.alt
 ```
 
 
@@ -44,7 +44,7 @@ On many systems the compiler will not allow you to send the object file to
 `/dev/tty`.  The author suggested:
 
 ```sh
-cc -c -o /dev/tty jar.1.c
+    cc -c -o /dev/tty jar.1.c
 ```
 
 As a last resort the `jar.1.sh` script provided simulates

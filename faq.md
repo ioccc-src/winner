@@ -317,17 +317,17 @@ While your entry's source filename, as submitted, must be `prog.c`, your entry's
 may copy `prog.c` to a different filename as part of the compiling/building process.  For example:
 
 ```make
-all: desired_name
+    all: desired_name
 
-desired_name: desired_name.c
-	cc desired_name.c -o $@
+    desired_name: desired_name.c
+	    cc desired_name.c -o $@
 
-desired_name.c: prog.c
-	rm -f $@
-	cp -f prog.c $@
+    desired_name.c: prog.c
+	    rm -f $@
+	    cp -f prog.c $@
 
-clobber:
-	rm -f desired_name.c desired_name
+    clobber:
+	    rm -f desired_name.c desired_name
 ```
 
 We recommend that the `make clobber` rule remove files that your entry
@@ -337,9 +337,9 @@ You may also copy the compiled `prog` into a different file as part of compiling
 For example:
 
 ```make
-different_name: prog
-	rm -f $@
-	cp -f prog $@
+    different_name: prog
+	    rm -f $@
+	    cp -f prog $@
 ```
 
 
@@ -841,7 +841,7 @@ winning entries page](../years.html).
 In general the best way to compile everything in an entry directory is to run:
 
 ```sh
-make clobber all
+    make clobber all
 ```
 
 If you wish to compile every entry for every year you should go to the top level
@@ -853,20 +853,20 @@ alternate version exists. To build all the entries along with any alternate code
 you can do from the top level directory:
 
 ```
-make clobber everything
+    make clobber everything
 ```
 
 If you wish to only build alternate code you can do:
 
 ```sh
-make clobber alt
+    make clobber alt
 ```
 
 If you wish to not remove the entry binaries and only compile the additional alt
 versions:
 
 ```sh
-make alt
+    make alt
 ```
 
 The following Makefile rules should be in all Makefiles:
@@ -1079,7 +1079,7 @@ First, see the above note on [installing and starting Xorg](#X11_general).
 Install Xorg and related packages:
 
 ```sh
-sudo dnf install --skip-broken --best --exclude xorgxrdp --exclude xorgxrdp-glamor '*xorg*' 'libx*' 'libX*' 'fontconfig*'
+    sudo dnf install --skip-broken --best --exclude xorgxrdp --exclude xorgxrdp-glamor '*xorg*' 'libx*' 'libX*' 'fontconfig*'
 ```
 
 See also:
@@ -1108,7 +1108,7 @@ After it is installed, open the "XQuartz" application (usually located in
 `/Applications/Utilities/XQuartz.app`) by typing at the command line:
 
 ```sh
-open /Applications/Utilities/XQuartz.app
+    open /Applications/Utilities/XQuartz.app
 ```
 
 With the "XQuartz" application open you will get an [X Window System
@@ -1142,7 +1142,7 @@ According to the [Debian Xorg wiki](https://wiki.debian.org/Xorg), installing
 X11 requires:
 
 ```sh
-sudo apt install xorg
+    sudo apt install xorg
 ```
 
 **IMPORTANT NOTE**: The [X.org server has been deprecated](#Xorg_deprecated).
@@ -1168,13 +1168,13 @@ See also:
 For systems that have the `dnf(1)` command:
 
 ```sh
-sudo dnf install --skip-broken --best --exclude xorgxrdp --exclude xorgxrdp-glamor '*xorg*' 'libx*' 'libX*' 'fontconfig*'
+    sudo dnf install --skip-broken --best --exclude xorgxrdp --exclude xorgxrdp-glamor '*xorg*' 'libx*' 'libX*' 'fontconfig*'
 ```
 
 For systems that have the `yum(1)` command:
 
 ```sh
-sudo yum install --skip-broken --best --exclude xorgxrdp --exclude xorgxrdp-glamor '*xorg*' 'libx*' 'libX*' 'fontconfig*'
+    sudo yum install --skip-broken --best --exclude xorgxrdp --exclude xorgxrdp-glamor '*xorg*' 'libx*' 'libX*' 'fontconfig*'
 ```
 
 **IMPORTANT NOTE**: The [X.org server has been deprecated](#Xorg_deprecated).
@@ -1202,7 +1202,7 @@ macOS with alternative methods for macOS and different package managers with Lin
 Execute the following as root or via sudo:
 
 ```sh
-dnf install SDL2 SDL2-devel sdl12-compat sdl12-compat-devel
+    dnf install SDL2 SDL2-devel sdl12-compat sdl12-compat-devel
 ```
 
 Older RHEL distributions might have to use "yum" instead of "dnf"
@@ -1211,13 +1211,13 @@ in the above command.
 In the past it was said that one might need to run `make` like:
 
 ```sh
-make ... SDL2_INCLUDE_ROOT=/usr
+    make ... SDL2_INCLUDE_ROOT=/usr
 ```
 
 or set the following environment variable:
 
 ```sh
-export SDL2_INCLUDE_ROOT=/usr
+    export SDL2_INCLUDE_ROOT=/usr
 ```
 
 but this might not be necessary in more modern days especially as we use
@@ -1240,8 +1240,8 @@ If you have not already done so, install [Homebrew](https://brew.sh).
 Then to install SDL and SDL2, execute the following command:
 
 ```sh
-brew install sdl2 sdl12-compat
-eval "$(opt/homebrew/bin/brew shellenv)"
+    brew install sdl2 sdl12-compat
+    eval "$(opt/homebrew/bin/brew shellenv)"
 ```
 
 
@@ -1252,7 +1252,7 @@ If you haven't already, install
 
 
 ```sh
-sudo port install libsdl libsdl2
+    sudo port install libsdl libsdl2
 ```
 
 
@@ -1261,7 +1261,7 @@ sudo port install libsdl libsdl2
 Execute the following as root or via sudo:
 
 ```sh
-apt install libsdl1.2debian libsdl1.2-dev libsdl2-dev
+    apt install libsdl1.2debian libsdl1.2-dev libsdl2-dev
 ```
 
 and then try `make all` again.
@@ -1269,13 +1269,13 @@ and then try `make all` again.
 In the past it was said that one might need to run `make` like:
 
 ```sh
-make ... SDL2_INCLUDE_ROOT=/usr
+    make ... SDL2_INCLUDE_ROOT=/usr
 ```
 
 or set the following environment variable:
 
 ```sh
-export SDL2_INCLUDE_ROOT=/usr
+    export SDL2_INCLUDE_ROOT=/usr
 ```
 
 but this might not be necessary in more modern days especially as we use
@@ -1320,7 +1320,7 @@ macOS with alternative methods for macOS and different package managers with Lin
 Execute the following as root or via sudo:
 
 ```sh
-dnf install ncurses ncurses-devel
+    dnf install ncurses ncurses-devel
 ```
 
 
@@ -1329,7 +1329,7 @@ dnf install ncurses ncurses-devel
 With macOS it should already be installed. If it is not you might have to do:
 
 ```sh
-xcode-select --install
+    xcode-select --install
 ```
 
 and agree to the terms and conditions and proceed with the install.
@@ -1350,7 +1350,7 @@ Not applicable, see above.
 Execute the following as root or via sudo:
 
 ```sh
-apt install libncurses6
+    apt install libncurses6
 ```
 
 and then try `make all` again.
@@ -1383,7 +1383,7 @@ install depends on your OS.
 As root or via sudo:
 
 ```sh
-dnf install -y sox sox-devel
+    dnf install -y sox sox-devel
 ```
 
 #### macOS
@@ -1397,8 +1397,8 @@ If you have not already done so, install [Homebrew](https://brew.sh).
 Then to install SoX, execute the following command:
 
 ```sh
-brew install sox
-eval "$(opt/homebrew/bin/brew shellenv)"
+    brew install sox
+    eval "$(opt/homebrew/bin/brew shellenv)"
 ```
 
 
@@ -1409,7 +1409,7 @@ If you haven't already, install
 
 
 ```sh
-sudo port install sox
+    sudo port install sox
 ```
 
 
@@ -1448,21 +1448,21 @@ are frankly frivolous and often downright dubious.
 To enable this feature:
 
 ```sh
-make clobber all CC=clang
+    make clobber all CC=clang
 ```
 
 or:
 
 ```sh
-make clobber all 'CWARN+= -Weverything'
+    make clobber all 'CWARN+= -Weverything'
 ```
 
 though it should be noted that if one tries `-Weverything` with compilers that
 are not `clang` they _might_ see something like:
 
 ```sh
-echo 'int main(void) {}' > foo.c ; cc -Weverything foo.c -o foo
-cc: error: unrecognized command-line option '-Weverything'
+    echo 'int main(void) {}' > foo.c ; cc -Weverything foo.c -o foo
+    cc: error: unrecognized command-line option '-Weverything'
 ```
 
 which means that it can't even be compiled. Thus the proper way to do it is the
@@ -1514,19 +1514,19 @@ submissions, at least if you can figure the code out :-). To see the
 differences, try from `1989/westley`:
 
 ```sh
-make diff_orig_prog
+    make diff_orig_prog
 ```
 
 If you have `colordiff` try:
 
 ```sh
-make DIFF=colordiff diff_orig_prog
+    make DIFF=colordiff diff_orig_prog
 ```
 
 Alternatively you can try:
 
 ```sh
-git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..eb9e69fde657acc8c85a618a8a99af4c2f93b21d westley.c
+    git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..eb9e69fde657acc8c85a618a8a99af4c2f93b21d westley.c
 ```
 
 As you can see, using `clang` has some additional problems to work out but if
@@ -1547,9 +1547,9 @@ and various others. But if you don't know this you can find out through the
 `stty(1)` command with the `-a` option. For instance with macOS you might see:
 
 ```sh
-$ stty -a
-speed 9600 baud; rows 40; columns 155;
-intr = ^C; quit = ^\; erase = ^?; kill = ^U; eof = ^D; [..snip..]
+    $ stty -a
+    speed 9600 baud; rows 40; columns 155;
+    intr = ^C; quit = ^\; erase = ^?; kill = ^U; eof = ^D; [..snip..]
 ```
 
 If you know the name you can use `grep` to find the correct line and if your
@@ -1557,8 +1557,8 @@ implementation of `grep(1)` has the `-o` option you can filter it. For instance
 to find what the `intr` is set to:
 
 ```sh
-$ stty -a |grep -o 'intr = ^[[:alpha:]]'
-intr = ^C
+    $ stty -a |grep -o 'intr = ^[[:alpha:]]'
+    intr = ^C
 ```
 
 ... assuming of course that it's a ctrl combination :-) If for some strange
@@ -1611,16 +1611,16 @@ download, making sure you're in a temporary directory, and compile the source
 like:
 
 ```sh
-wget http://cr.yp.to/ucspi-tcp/ucspi-tcp-0.88.tar.gz
-tar ucspi-tcp-0.88.tar.gz
-cd ucspi-tcp-0.88
-make
+    wget http://cr.yp.to/ucspi-tcp/ucspi-tcp-0.88.tar.gz
+    tar ucspi-tcp-0.88.tar.gz
+    cd ucspi-tcp-0.88
+    make
 ```
 
 Then as root or via `sudo(1)` enter:
 
 ```sh
-make setup check
+    make setup check
 ```
 
 That will install it to `/usr/local/bin`. Now you should be able to use the
@@ -1637,7 +1637,7 @@ This depends on your operating system for which we describe a couple below.
 Execute the following as root or via sudo:
 
 ```sh
-dnf install netpbm-progs netpbm
+    dnf install netpbm-progs netpbm
 ```
 
 Older RHEL distributions might have to use "yum" instead of "dnf"
@@ -1661,7 +1661,7 @@ If you have not already done so, install [Homebrew](https://brew.sh).
 Then to install netpbm, execute the following command:
 
 ```sh
-brew install netpbm
+    brew install netpbm
 ```
 
 
@@ -1672,7 +1672,7 @@ If you haven't already, install
 
 
 ```sh
-sudo port install libnetpbm netpbm
+    sudo port install libnetpbm netpbm
 ```
 
 
@@ -1681,7 +1681,7 @@ sudo port install libnetpbm netpbm
 Execute the following as root or via sudo:
 
 ```sh
-apt install netpbm
+    apt install netpbm
 ```
 
 and then try `make all` again.
@@ -1714,7 +1714,7 @@ This depends on your operating system for which we describe a couple below.
 Execute the following as root or via sudo:
 
 ```sh
-dnf install libjpeg-turbo-utils libjpeg-turbo-devel libjpeg-turbo
+    dnf install libjpeg-turbo-utils libjpeg-turbo-devel libjpeg-turbo
 ```
 
 Older RHEL distributions might have to use "yum" instead of "dnf"
@@ -1738,7 +1738,7 @@ If you have not already done so, install [Homebrew](https://brew.sh).
 Then to install libjpeg-turbo, execute the following command:
 
 ```sh
-brew install libjpeg-turbo
+    brew install libjpeg-turbo
 ```
 
 
@@ -1749,7 +1749,7 @@ If you haven't already, install
 
 
 ```sh
-sudo port install libjpeg-turbo libjpeg-turbo-devel
+    sudo port install libjpeg-turbo libjpeg-turbo-devel
 ```
 
 
@@ -1759,7 +1759,7 @@ sudo port install libjpeg-turbo libjpeg-turbo-devel
 Execute the following as root or via sudo:
 
 ```sh
-apt install libturbojpeg0 libturbojpeg0-dev
+    apt install libturbojpeg0 libturbojpeg0-dev
 ```
 
 and then try `make all` again.
@@ -1791,7 +1791,7 @@ This depends on your operating system for which we describe a couple below.
 Execute the following as root or via sudo:
 
 ```sh
-dnf install ImageMagick
+    dnf install ImageMagick
 ```
 
 Older RHEL distributions might have to use "yum" instead of "dnf"
@@ -1814,7 +1814,7 @@ If you have not already done so, install [Homebrew](https://brew.sh).
 Then to install ImageMagick, execute the following command:
 
 ```sh
-brew install ImageMagick
+    brew install ImageMagick
 ```
 
 
@@ -1825,7 +1825,7 @@ If you haven't already, install
 
 
 ```sh
-sudo port install ImageMagick
+    sudo port install ImageMagick
 ```
 
 
@@ -1834,7 +1834,7 @@ sudo port install ImageMagick
 Execute the following as root or via sudo:
 
 ```sh
-apt install imagemagick
+    apt install imagemagick
 ```
 
 and then try `make all` again.
@@ -1868,8 +1868,8 @@ Once X11 is install and the X Window Server is running, one needs to compile
 and link with the two libraries, _GL_ and _GLU_:
 
 ```sh
-cc ... -lGL -lGLU -L _location-where-X11-libs-are-installed_ -lX11
-``
+    cc ... -lGL -lGLU -L _location-where-X11-libs-are-installed_ -lX11
+```
 
 NOTE: The OpenGL development effort is being manageed by [vulkan.org](https://vulkan.org).
 We suggest you check out their resource for further information on OpenGL.
@@ -1880,7 +1880,7 @@ We suggest you check out their resource for further information on OpenGL.
 Execute the following as root or via sudo:
 
 ```sh
-sudo dnf install glew-devel SDL2-devel SDL2_image-devel glm-devel freetype-devel
+    sudo dnf install glew-devel SDL2-devel SDL2_image-devel glm-devel freetype-devel
 ```
 
 See [OpenGL Programming/Installation/Linux](https://en.wikibooks.org/wiki/OpenGL_Programming/Installation/Linux) for details.
@@ -1904,7 +1904,7 @@ you might look to install OpenGL via Homebrew or MacPorts.
 Execute the following as root or via sudo:
 
 ```sh
-sudo apt-get install libglew-dev libsdl2-dev libsdl2-image-dev libglm-dev libfreetype6-dev
+    sudo apt-get install libglew-dev libsdl2-dev libsdl2-image-dev libglm-dev libfreetype6-dev
 ```
 
 and then try `make all` again.
@@ -1955,9 +1955,9 @@ For instance in macOS the entry [1990/tbr](1990/tbr/index.html) would output the
 warning in such a way that caused confusing output for the entry, looking like:
 
 ```sh
-$ ./tbr
-$ warning: this program uses gets(), which is unsafe.
-# nothing here, what to do?
+    $ ./tbr
+    $ warning: this program uses gets(), which is unsafe.
+    # nothing here, what to do?
 ```
 
 In some cases changing the code to use `fgets()` is not so easy to fix and in
@@ -1981,10 +1981,10 @@ An annoying fact is that for '"compatibility" reasons' `fgets()` retains the
 newline and `gets()` does not.  As the Unix version 7 man page used to say:
 
 ```
-BUGS
+    BUGS
 
-The fgets(3) function retains the newline while gets(3) does not, all in the
-name of backward compatibility.
+    The fgets(3) function retains the newline while gets(3) does not, all in the
+    name of backward compatibility.
 ```
 
 We're not sure how this is compatibility but either way it can cause a
@@ -2029,7 +2029,7 @@ would be instead `prog.orig.c`, `prog.alt.c` and `prog.c`.
 Note that you might see something like:
 
 ```
-make: [Makefile:170: diff_orig_prog] Error 1 (ignored)
+    make: [Makefile:170: diff_orig_prog] Error 1 (ignored)
 ```
 
 at the end of the output but this is completely normal if there are differences.
@@ -2045,7 +2045,7 @@ will make it harder to see what is different,
 2001/anonymous` and then do:
 
 ```sh
-make diff_orig_prog
+    make diff_orig_prog
 ```
 
 and then be really confused! :-)
@@ -2070,7 +2070,7 @@ where it's quite easy to see the differences).
 very easily. To do that `cd 1991/dds` and then do:
 
 ```sh
-make diff_alt_prog
+    make diff_alt_prog
 ```
 
 and you'll see a single line changed and very simply.
@@ -2082,8 +2082,8 @@ To use these rules but provide a different `diff`, for instance `colordiff`,
 just do:
 
 ```sh
-make DIFF=colordiff diff_orig_prog # for orig to prog diff
-make DIFF=colordiff diff_alt_prog # for alt to prog diff
+    make DIFF=colordiff diff_orig_prog # for orig to prog diff
+    make DIFF=colordiff diff_alt_prog # for alt to prog diff
 ```
 
 Obviously if you want to view the alt code or the orig code you can just open
@@ -2251,11 +2251,11 @@ are built from [markdown](https://daringfireball.net/projects/markdown/) files.
 If you see lines containing:
 
 ```
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!! DO NOT MODIFY THIS FILE - This file is generated by a tool !!! -->
-<!-- !!! DO NOT MODIFY THIS FILE - This file is generated by a tool !!! -->
-<!-- !!! DO NOT MODIFY THIS FILE - This file is generated by a tool !!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+    <!-- !!! DO NOT MODIFY THIS FILE - This file is generated by a tool !!! -->
+    <!-- !!! DO NOT MODIFY THIS FILE - This file is generated by a tool !!! -->
+    <!-- !!! DO NOT MODIFY THIS FILE - This file is generated by a tool !!! -->
+    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 ```
 
 This means that the file is generated by a tool from a [bin directory tool](bin/index.html).
@@ -2265,11 +2265,11 @@ You may also find lines slightly below the above set that suggest another file t
 For example, in [contact.html](contact.html), one may read:
 
 ```
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!! Do not modify this web page, instead modify the file: contact.md -->
-<!-- !!! Do not modify this web page, instead modify the file: contact.md -->
-<!-- !!! Do not modify this web page, instead modify the file: contact.md -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+    <!-- !!! Do not modify this web page, instead modify the file: contact.md -->
+    <!-- !!! Do not modify this web page, instead modify the file: contact.md -->
+    <!-- !!! Do not modify this web page, instead modify the file: contact.md -->
+    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 ```
 
 This means that you could consider editing the referenced markdown file
@@ -2285,13 +2285,13 @@ came from JSON and other data files.  So instead of the above reference to a
 markdown file, you will read:
 
 ```
-<!-- The main section of this web page came from JSON and other data files -->
-<!-- -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- The main section of this web page was generated via the tool: bin/gen-years.sh -->
-<!-- The main section of this web page was generated via the tool: bin/gen-years.sh -->
-<!-- The main section of this web page was generated via the tool: bin/gen-years.sh -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+    <!-- The main section of this web page came from JSON and other data files -->
+    <!-- -->
+    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+    <!-- The main section of this web page was generated via the tool: bin/gen-years.sh -->
+    <!-- The main section of this web page was generated via the tool: bin/gen-years.sh -->
+    <!-- The main section of this web page was generated via the tool: bin/gen-years.sh -->
+    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 ```
 
 This means there is **NOT even a markdown file to edit**.  Instead one must
@@ -2306,7 +2306,7 @@ and ask for help.  See [FAQ 5.3](#fix_an_entry) for information on opening up an
 Authors of IOCCC winning entries are kept in JSON files of the form:
 
 ```
-author/author_handle.json
+    author/author_handle.json
 ```
 
 where _author_handle_ is an author handle.  See [FAQ 6.5](#author_handle) for more
@@ -2362,7 +2362,7 @@ instead by replacing the link with just phrase of text.  For example,
 if the text in some `index.html` file was:
 
 ```
-See the [author's description of the program](https://example.com) for more information.
+    See the [author's description of the program](https://example.com) for more information.
 ```
 
 Assuming that the author's description cannot be found in the
@@ -2370,7 +2370,7 @@ Assuming that the author's description cannot be found in the
 replace that text with:
 
 ```
-See the **author's description of the program** (sorry the content is no longer available) for more information.
+    See the **author's description of the program** (sorry the content is no longer available) for more information.
 ```
 
 If you just wish to report the bad link issue, see [FAQ 5.3](#report_web_problem).
@@ -2464,7 +2464,7 @@ IOCCC.  Each author has exactly one `author_handle`.
 For each `author_handle`, there will be a JSON file of the form:
 
 ```
-author/author_handle.json
+    author/author_handle.json
 ```
 
 See [FAQ 6.6](#author_json) for information about the contents of these JSON file and
@@ -2476,7 +2476,7 @@ answer).  In particular, the `author_handle` must be an ASCII string that
 matches this regexp:
 
 ```re
-^[0-9A-Za-z][0-9A-Za-z._+-]*$"
+    ^[0-9A-Za-z][0-9A-Za-z._+-]*$"
 ```
 
 Default `author_handle`'s do not have multiple consecutive `_` (underscore)
@@ -2496,13 +2496,13 @@ author.
 For an anonymous `author`, their handle is one of these forms:
 
 ```
-Anonymous_year
+    Anonymous_year
 ```
 
 or:
 
 ```
-Anonymous_year.digits
+    Anonymous_year.digits
 ```
 
 
@@ -2515,7 +2515,7 @@ in the case of [2005/anon](2005/anon/anon.c).
 Anonymous `author_handle`'s match this regexp:
 
 ```re
-Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$
+    Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$
 ```
 
 See [FAQ 5.5](#fix_author) for information about how to update
@@ -2543,7 +2543,7 @@ Each author of an IOCCC winning entry has their own `author_handle.json` file
 of the form:
 
 ```
-author/author_handle.json
+    author/author_handle.json
 ```
 
 where _author_handle_ is an author handle.  See [FAQ 6.5](#author_handle) for more
@@ -2559,48 +2559,48 @@ A good way to understand the JSON file contents of a `author_handle.json` file
 is to look at an example, the `author_handle.json` file for Yusuke Endoh:
 
 ```
-author/Yusuke_Endoh.json
+    author/Yusuke_Endoh.json
 ```
 
 As of _Thu Nov 30 23:51:12 UTC 2023_, the contents was as follows:
 
 ```json
-{
-    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "author_JSON_format_version" : "1.0 2023-06-10",
-    "author_handle" : "Yusuke_Endoh",
-    "full_name" : "Yusuke Endoh",
-    "sort_word" : "endoh",
-    "location_code" : "JP",
-    "email" : "mame@ruby-lang.org",
-    "url" : "https://mametter.hatenablog.com",
-    "alt_url" : null,
-    "deprecated_twitter_handle" : null,
-    "mastodon" : "@mame@ruby.social",
-    "mastodon_url" : "https://ruby.social/@mame",
-    "github" : "@mame",
-    "affiliation" : null,
-    "winning_entry_set" : [
-	{ "entry_id" : "2012_endoh1" },
-	{ "entry_id" : "2012_endoh2" },
-	{ "entry_id" : "2013_endoh1" },
-	{ "entry_id" : "2013_endoh2" },
-	{ "entry_id" : "2013_endoh3" },
-	{ "entry_id" : "2013_endoh4" },
-	{ "entry_id" : "2014_endoh1" },
-	{ "entry_id" : "2014_endoh2" },
-	{ "entry_id" : "2015_endoh1" },
-	{ "entry_id" : "2015_endoh2" },
-	{ "entry_id" : "2015_endoh3" },
-	{ "entry_id" : "2015_endoh4" },
-	{ "entry_id" : "2018_endoh1" },
-	{ "entry_id" : "2018_endoh2" },
-	{ "entry_id" : "2019_endoh" },
-	{ "entry_id" : "2020_endoh1" },
-	{ "entry_id" : "2020_endoh2" },
-	{ "entry_id" : "2020_endoh3" }
-    ]
-}
+    {
+	"no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+	"author_JSON_format_version" : "1.0 2023-06-10",
+	"author_handle" : "Yusuke_Endoh",
+	"full_name" : "Yusuke Endoh",
+	"sort_word" : "endoh",
+	"location_code" : "JP",
+	"email" : "mame@ruby-lang.org",
+	"url" : "https://mametter.hatenablog.com",
+	"alt_url" : null,
+	"deprecated_twitter_handle" : null,
+	"mastodon" : "@mame@ruby.social",
+	"mastodon_url" : "https://ruby.social/@mame",
+	"github" : "@mame",
+	"affiliation" : null,
+	"winning_entry_set" : [
+	    { "entry_id" : "2012_endoh1" },
+	    { "entry_id" : "2012_endoh2" },
+	    { "entry_id" : "2013_endoh1" },
+	    { "entry_id" : "2013_endoh2" },
+	    { "entry_id" : "2013_endoh3" },
+	    { "entry_id" : "2013_endoh4" },
+	    { "entry_id" : "2014_endoh1" },
+	    { "entry_id" : "2014_endoh2" },
+	    { "entry_id" : "2015_endoh1" },
+	    { "entry_id" : "2015_endoh2" },
+	    { "entry_id" : "2015_endoh3" },
+	    { "entry_id" : "2015_endoh4" },
+	    { "entry_id" : "2018_endoh1" },
+	    { "entry_id" : "2018_endoh2" },
+	    { "entry_id" : "2019_endoh" },
+	    { "entry_id" : "2020_endoh1" },
+	    { "entry_id" : "2020_endoh2" },
+	    { "entry_id" : "2020_endoh3" }
+	]
+    }
 ```
 
 We now will walk thru the above JSON document looking at various JSON members:
@@ -2852,7 +2852,7 @@ See the "Mastodon Address" section of that page in particular.
 The IOCCC Mastodon handle is:
 
 ```json
-@ioccc@fosstodon.org
+    @ioccc@fosstodon.org
 ```
 
 The IOCCC uses the Mastodon social network for announcements such
@@ -2888,13 +2888,13 @@ The `mastodon_url` is just a translation of the above mentioned [mastodon](#mast
 For example, if the Mastodon handle is:
 
 ```
-@user@server.domain
+    @user@server.domain
 ```
 
 Then the `mastodon_url` would be:
 
 ```
-https://server.domain/@user
+    https://server.domain/@user
 ```
 
 If the author wishes to not specify an Mastodon URL, or if the Mastodon URL is
@@ -2926,7 +2926,7 @@ and hosts [official IOCCC web site](https://www.ioccc.org) on GitHub pages.
 The IOCCC GitHub handle is:
 
 ```
-@ioccc-src
+    @ioccc-src
 ```
 
 If the author wishes to not specify an GitHub handle, or if the GitHub handle is
@@ -2956,7 +2956,7 @@ It is recommended that the affiliation _JSON string_ be the formal affiliation n
 For example, the affiliation for the IOCCC would be:
 
 ```
-The International Obfuscared C Code Contest
+    The International Obfuscared C Code Contest
 ```
 
 If the author wishes to not specify an affiliation, or if the affiliation is
@@ -2978,7 +2978,7 @@ NOTE: The _JSON null_ is **NOT** enclosed in quotes!
         { "entry_id" : "2012_endoh1" },
         { "entry_id" : "2012_endoh2" },
 	{ "entry_id" : "2013_endoh1" },
-...
+    ...
 	{ "entry_id" : "2020_endoh1" },
         { "entry_id" : "2020_endoh2" },
         { "entry_id" : "2020_endoh3" }
@@ -3011,13 +3011,13 @@ For example, the `entry_id` associated with Cody Boone Ferguson's 2nd winning IO
 of 2020 is found under the following directory:
 
 ```
-2020/ferguson2
+    2020/ferguson2
 ```
 
 The `entry_id` for that winning entry is:
 
 ```
-2020_ferguson2
+    2020_ferguson2
 ```
 
 
@@ -3036,7 +3036,7 @@ For example see [1984/anonymous/.path](1984/anonymous/.path).
 The .top, .year and .path files are generated from the top level Makefile, by:
 
 ```sh
-make genpath
+    make genpath
 ```
 
 
@@ -3128,9 +3128,8 @@ Assuming you do not have an ssh key you should go to the command prompt and
 type (if you already have one and are okay using it for GitHub you can use that
 one):
 
-
 ```sh
-ssh-keygen -t rsa -b 4096 -C "luser@example.com"
+    ssh-keygen -t rsa -b 4096 -C "luser@example.com"
 ```
 
 where `luser@example.com` is the email you want associated with your key.
@@ -3167,7 +3166,7 @@ Once you have forked the repo you are ready to clone it to your system. For
 instance Cody Boone Ferguson has the GitHub handle _xexyl_ so he would type in:
 
 ```sh
-git clone https://github.com/xexyl/temp-test-ioccc [target_dir]
+    git clone https://github.com/xexyl/temp-test-ioccc [target_dir]
 ```
 
 Once that is completed you will need to change to that directory. The default
@@ -3175,7 +3174,7 @@ directory would be the name of the repo but if you specified a target directory
 it will be that. For instance using the above example you might do:
 
 ```sh
-cd temp-test-ioccc
+    cd temp-test-ioccc
 ```
 
 You're ready to make your changes now!
@@ -3201,7 +3200,7 @@ is now (at the time of writing this), `15 April 2023`.
 But what if he wanted to add a file? He'd create the file and then type:
 
 ```sh
-git add foo
+    git add foo
 ```
 
 where _foo_ is the file to add.
@@ -3216,7 +3215,7 @@ reading this :-) ) you need to make sure that you can push changes to GitHub
 with your ssh key. To do this you need to do:
 
 ```sh
-ssh -T git@github.com
+    ssh -T git@github.com
 ```
 
 Cody would see:
@@ -3228,7 +3227,7 @@ Now, assuming that the forked repo is
 
 
 ```sh
-git remote set-url origin git@github.com:xexyl/temp-test-ioccc.git
+    git remote set-url origin git@github.com:xexyl/temp-test-ioccc.git
 ```
 
 Now you'd be ready to make your commits.
@@ -3239,22 +3238,22 @@ Continuing the example above for
 
 
 ```sh
-git checkout -B human-snakes
+    git checkout -B human-snakes
 ```
 
 This would change the branch to the newly created branch `human-snakes` branch.
 Now Cody could commit the changes:
 
 ```sh
-git commit play.sh # if specifying specific files
-git commit -a # if committing everything
+    git commit play.sh # if specifying specific files
+    git commit -a # if committing everything
 ```
 
 He could also have done:
 
 ```sh
-git add play.sh
-git commit
+    git add play.sh
+    git commit
 ```
 
 In any case this would open an editor (in his case vim) to write a commit log.
@@ -3263,10 +3262,10 @@ Then if necessary add a description for the log. For instance the above might
 warrant the log:
 
 ```
-Add fun link to 2020/ferguson1/play.sh
+    Add fun link to 2020/ferguson1/play.sh
 
-Did you know some people believe in snake human hybrids? I added a link to the
-script that discusses this and gives supposed examples.
+    Did you know some people believe in snake human hybrids? I added a link to the
+    script that discusses this and gives supposed examples.
 ```
 
 Now a pull request has to be opened.
@@ -3278,26 +3277,26 @@ To do this depends on the branch name. Assuming the branch from above,
 `human-snakes`, you would type:
 
 ```sh
-git push --set-upstream origin human-snakes
+    git push --set-upstream origin human-snakes
 ```
 
 This might show:
 
 ```
-Enumerating objects: 9, done.
-Counting objects: 100% (9/9), done.
-Delta compression using up to 10 threads
-Compressing objects: 100% (5/5), done.
-Writing objects: 100% (5/5), 739 bytes | 147.00 KiB/s, done.
-Total 5 (delta 4), reused 0 (delta 0), pack-reused 0
-remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
-remote:
-remote: Create a pull request for 'human-snakes' on GitHub by visiting:
-remote:      https://github.com/xexyl/temp-test-ioccc/pull/new/human-snakes
-remote:
-To github.com:xexyl/temp-test-ioccc.git
- * [new branch]                                                                        human-snakes -> human-snakes
-branch 'human-snakes' set up to track 'origin/human-snakes'.
+    Enumerating objects: 9, done.
+    Counting objects: 100% (9/9), done.
+    Delta compression using up to 10 threads
+    Compressing objects: 100% (5/5), done.
+    Writing objects: 100% (5/5), 739 bytes | 147.00 KiB/s, done.
+    Total 5 (delta 4), reused 0 (delta 0), pack-reused 0
+    remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+    remote:
+    remote: Create a pull request for 'human-snakes' on GitHub by visiting:
+    remote:      https://github.com/xexyl/temp-test-ioccc/pull/new/human-snakes
+    remote:
+    To github.com:xexyl/temp-test-ioccc.git
+     * [new branch]	human-snakes -> human-snakes
+    branch 'human-snakes' set up to track 'origin/human-snakes'.
 ```
 
 The link referred to above would then be opened to open a pull request. Just
@@ -3308,7 +3307,7 @@ In this case you can open the link:
 like:
 
 ```
-xexyl:human-snakes had recent pushes 1 minute ago
+    xexyl:human-snakes had recent pushes 1 minute ago
 ```
 
 and to the right of it you would see a button that says _Compare & pull request_
@@ -3341,7 +3340,7 @@ has the merge. To do this from the command line, assuming the fork in the above
 example, you would type:
 
 ```sh
-git checkout master && git pull https://github.com/ioccc-src/temp-test-ioccc.git master && git push origin master
+    git checkout master && git pull https://github.com/ioccc-src/temp-test-ioccc.git master && git push origin master
 ```
 
 This will merge your pull request to your fork.

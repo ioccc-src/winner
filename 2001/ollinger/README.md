@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./ollinger integer
+    ./ollinger integer
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 Try the above command in a large window, say 200 chars wide and 100
@@ -56,34 +56,34 @@ A: Yes, there are types of entries that show up over and over again.
    The guidelines say:
 
 ```
-We tend to dislike programs that:
-are similar to previous winning entries
+    We tend to dislike programs that:
+    are similar to previous winning entries
 
-We like variety. However too often we see (please look at the winning
-examples given to be aware of the level of the competition):
+    We like variety. However too often we see (please look at the winning
+    examples given to be aware of the level of the competition):
 
-(snip)
+    (snip)
 
-generating small primes (below is the list of all prime related entries)
+    generating small primes (below is the list of all prime related entries)
 
-	1985/august
-	1988/applin
-	1994/weisberg
-	1995/makarios
-	1996/dalbec
-	2000/bellard
+	    1985/august
+	    1988/applin
+	    1994/weisberg
+	    1995/makarios
+	    1996/dalbec
+	    2000/bellard
 
-As you can see, just a list of primes (let alone small primes)
-does not cut it anymore.
+    As you can see, just a list of primes (let alone small primes)
+    does not cut it anymore.
 
-(snip)
+    (snip)
 
-entries that use some complex state machine/table to print something
+    entries that use some complex state machine/table to print something
 
-	  1988/isaak
-	  1988/phillipps
+	      1988/isaak
+	      1988/phillipps
 
-Unbeaten for 12 years and counting...
+    Unbeaten for 12 years and counting...
 ```
 
 I think this is enough motivation for trying to submit a program which uses

@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an alternate version that should work with Windows. See [Alternate
@@ -11,7 +11,7 @@ code](#alternate-code) below.
 ## To use:
 
 ```sh
-./prog > lena.ppm
+    ./prog > lena.ppm
 ```
 
 
@@ -22,7 +22,7 @@ running the above command (`./prog > lena.ppm`), open `lena.ppm` in your
 graphics viewer of choice.  After that try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 NOTE: the script uses the tools `pngtopam(1)` (or `pngtopnm(1)` for older
@@ -45,7 +45,7 @@ for Windows.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -100,9 +100,9 @@ it accepts to decompress image files from its standard
 input. Examples:
 
 ```sh
-./prog d < lena512.bin > lena512.ppm
-./prog d < fruits.bin > fruits.ppm
-./prog d < vintage_cars.bin > vintage_cars.ppm
+    ./prog d < lena512.bin > lena512.ppm
+    ./prog d < fruits.bin > fruits.ppm
+    ./prog d < vintage_cars.bin > vintage_cars.ppm
 ```
 
 The original images for [fruits][1] and [vintage cars][2] come from

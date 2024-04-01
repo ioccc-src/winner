@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./westley <number>
+    ./westley <number>
 ```
 
 The number should be greater than 0.
@@ -17,7 +17,7 @@ The number should be greater than 0.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -31,14 +31,14 @@ The alternate code is provided to show how C changed.
 If you have an old enough compiler try and to see how C has changed over the years:
 
 ```sh
-make alt
+    make alt
 ```
 
 
 ### Alternate use:
 
 ```sh
-./westley.alt <number>
+    ./westley.alt <number>
 ```
 
 
@@ -51,11 +51,11 @@ Read each block of code as if it were a piece of correspondence.
 For example, the first block of code would read:
 
 ```
-charlie,
-	doubletime me, OXFACE!
-	not interested, get out
-	mainly die, charly, *die*
-		signed charlotte
+    charlie,
+	    doubletime me, OXFACE!
+	    not interested, get out
+	    mainly die, charly, *die*
+		    signed charlotte
 ```
 
 The original source had control-L's after each code block.  To

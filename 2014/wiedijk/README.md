@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./prog
+    ./prog
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 By default that will use `indent(1)` found by the shell `type -P indent` and
@@ -23,7 +23,7 @@ By default that will use `indent(1)` found by the shell `type -P indent` and
 to try a different beautifier, you can do it like:
 
 ```sh
-INDENT=bcpp ./try.sh
+    INDENT=bcpp ./try.sh
 ```
 
 which would change it to use `bcpp(1)` instead of `indent(1)`. Do similar for
@@ -57,8 +57,8 @@ executable C functions.
 - The readable implementation of `Y` is on lines 29-30:
 
 ```
-W_f = \x.f(xx)
-Y = \f.W_f W_f
+    W_f = \x.f(xx)
+    Y = \f.W_f W_f
 ```
 
 - A mixture of strict and lazy evaluation, with a `_` force function

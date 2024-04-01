@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -10,7 +10,7 @@ make all
 The current status of this entry is:
 
 ```
-STATUS: doesn't work with some compilers - please provide alternative code or fix for more compilers
+    STATUS: doesn't work with some compilers - please provide alternative code or fix for more compilers
 ```
 
 For more detailed information see [1996 august bugs](../../bugs.html#1996_august).
@@ -19,8 +19,8 @@ For more detailed information see [1996 august bugs](../../bugs.html#1996_august
 ## To use:
 
 ```sh
-cat august.c test.oc | ./august > test.oo
-./august < test.oo
+    cat august.c test.oc | ./august > test.oo
+    ./august < test.oo
 ```
 
 
@@ -34,7 +34,7 @@ The above should print a `!` followed by a newline.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -44,33 +44,33 @@ This entry can feed on itself.  If you C pre-process the source,
 you can compile the interpreter:
 
 ```sh
-make august.oc
+    make august.oc
 ```
 
 We can now compile the interpreter as follows:
 
 ```sh
-cat august.c august.oc | ./august > august.oo
+    cat august.c august.oc | ./august > august.oo
 ```
 
 and use the compiled interpreter to execute some previously
 compiled code:
 
 ```sh
-cat august.oo test.oo | ./august
+    cat august.oo test.oo | ./august
 ```
 
 And we can have the compiled interpreter interpret itself which
 in turn compiles the test program:
 
 ```sh
-cat august.oo august.oo fac.oo | ./august
+    cat august.oo august.oo fac.oo | ./august
 ```
 
 And if you have lots of spare time, you can recurse one level deeper:
 
 ```sh
-cat august.oo august.oo august.oo fac.oo | ./august
+    cat august.oo august.oo august.oo fac.oo | ./august
 ```
 
 We (the judges) recommend that you spend some time studying this
@@ -108,25 +108,25 @@ Assume that the interpreter has been compiled (source in [august.c](august.c)
 and binary in august) and that we have this in a file named `test.oc`:
 
 ```c
-main() { putchar('!'); putchar('\n'); exit(0); }
+    main() { putchar('!'); putchar('\n'); exit(0); }
 ```
 
 We can then compile by
 
 ```sh
-cat august.c test.oc | ./august > test.oo
+    cat august.c test.oc | ./august > test.oo
 ```
 
 And run the compiled program by
 
 ```sh
-./august < test.oo
+    ./august < test.oo
 ```
 
 Or even simpler:
 
 ```sh
-cat august.c test.oc | ./august | ./august
+    cat august.c test.oc | ./august | ./august
 ```
 
 A larger example is included [fac.oc](fac.oc).
@@ -142,26 +142,26 @@ command from the Makefile, but add the `-E` flag and change 60000 to 40000,
 i.e.:
 
 ```sh
-cc -E -DZ=40000 .... august.c > august.oc
+    cc -E -DZ=40000 .... august.c > august.oc
 ```
 
 If `august.oc` contain some junk line starting with a `#` (most likely
 it does) then remove it like:
 
 ```sh
-sed -i'' '/^#/d' august.oc
+    sed -i'' '/^#/d' august.oc
 ```
 
 OK, we can now compile the interpreter:
 
 ```sh
-cat august.c august.oc | ./august > august.oo
+    cat august.c august.oc | ./august > august.oo
 ```
 
 And we can run it:
 
 ```sh
-cat august.oo test.oo | ./august
+    cat august.oo test.oo | ./august
 ```
 
 Here we have the interpreter interpreting another interpreter that runs
@@ -169,13 +169,13 @@ the program.  Did you think that was too fast?  Just throw in another
 level of interpretation:
 
 ```sh
-cat august.oo august.oo test.oo | ./august
+    cat august.oo august.oo test.oo | ./august
 ```
 
 And another...
 
 ```sh
-cat august.oo august.oo august.oo test.oo | ./august
+    cat august.oo august.oo august.oo test.oo | ./august
 ```
 
 ---
@@ -214,62 +214,61 @@ Below is a description of the OC grammar.
 Terminals are in quotes, `()` is used for bracketing.
 
 ```
-program:	decl*
+    program:	decl*
 
-decl:		vardecl
-		fundecl
+    decl:		vardecl
+		    fundecl
 
-vardecl:	type NAME ;
-		type NAME "[" INT "]" ;
+    vardecl:	type NAME ;
+		    type NAME "[" INT "]" ;
 
-fundecl:	type NAME "(" args ")" "{" body "}"
+    fundecl:	type NAME "(" args ")" "{" body "}"
 
-args:		/*empty*/
-		( arg "," )* arg
+    args:		/*empty*/
+		    ( arg "," )* arg
 
-arg:		type NAME
+    arg:		type NAME
 
-body:		vardecl* stmt*
+    body:		vardecl* stmt*
 
-stmt:		ifstmt
-		whilestmt
-		dowhilestmt
-		"return" expr ";"
-		expr ";"
-		"{" stmt* "}"
-		";"
+    stmt:		ifstmt
+		    whilestmt
+		    dowhilestmt
+		    "return" expr ";"
+		    expr ";"
+		    "{" stmt* "}"
+		    ";"
 
-ifstmt:		"if" "(" expr ")" stmt
-		"if" "(" expr ")" stmt "else" stmt
+    ifstmt:		"if" "(" expr ")" stmt
+		    "if" "(" expr ")" stmt "else" stmt
 
-whilestmt:	"while" "(" expr ")" stmt
+    whilestmt:	"while" "(" expr ")" stmt
 
-dowhilestmt:	"do" stmt "while" "(" expr ")" ";"
+    dowhilestmt:	"do" stmt "while" "(" expr ")" ";"
 
-expr:		expr binop expr
-		unop expr
-		expr "[" expr "]"
-		"(" expr ")"
-		expr "(" exprs ")"
-		NAME
-		INT
-		CHAR
-		STRING
+    expr:		expr binop expr
+		    unop expr
+		    expr "[" expr "]"
+		    "(" expr ")"
+		    expr "(" exprs ")"
+		    NAME
+		    INT
+		    CHAR
+		    STRING
 
-exprs:		/*empty*/
-		(expr ",")* expr
+    exprs:		/*empty*/
+		    (expr ",")* expr
 
-binop:		"+" | "-" | "*" | "/" | "%" |
-		"=" |
-		"<" | "==" | "!="
+    binop:		"+" | "-" | "*" | "/" | "%" |
+		    "=" |
+		    "<" | "==" | "!="
 
-unop:		"!" | "-" | "*"
+    unop:		"!" | "-" | "*"
 
-type:		"int" stars
-		"char" stars
+    type:		"int" stars
+		    "char" stars
 
-stars:		"*"*
-
+    stars:		"*"*
 ```
 
 ---

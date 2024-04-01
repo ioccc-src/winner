@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./akari [ input_file | - ] [ output_file | - ]  [even]
+    ./akari [ input_file | - ] [ output_file | - ]  [even]
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -57,10 +57,10 @@ keep odd pixels on odd [scanlines](https://en.wikipedia.org/wiki/Scan_line).
 ### Examples:
 
 ```sh
-gcc akari.c -o akari
-./akari < example.ppm > odd_output.ppm
-./akari - - even < example.ppm > even_output.ppm
-./akari example.ppm odd_output.ppm
+    gcc akari.c -o akari
+    ./akari < example.ppm > odd_output.ppm
+    ./akari - - even < example.ppm > even_output.ppm
+    ./akari example.ppm odd_output.ppm
 ```
 
 `Akari` accepts 3 input formats:
@@ -83,7 +83,7 @@ ASCII art.  Since the source code is formatted as ASCII art, it's only
 natural to try:
 
 ```sh
-./akari akari.c akari2.c
+    ./akari akari.c akari2.c
 ```
 
 `akari2.c` is also a valid C program, and accepts up to 1 argument.
@@ -92,29 +92,29 @@ expanded output to `stdout`.  If the extra argument is specified, the
 output text will also pass through a rot13 filter.
 
 ```sh
-gcc akari2.c -o akari2
-./akari2 < input.txt > expanded_output.txt
-./akari2 rot13 < input.txt > expanded_and_rot13_output.txt
+    gcc akari2.c -o akari2
+    ./akari2 < input.txt > expanded_output.txt
+    ./akari2 rot13 < input.txt > expanded_and_rot13_output.txt
 ```
 
 You can combine the two programs together to have just a regular rot13
 filter:
 
 ```sh
-./akari2 rot13 < input.txt | ./akari > rot13.txt
+    ./akari2 rot13 < input.txt | ./akari > rot13.txt
 ```
 
 Of course, we wouldn't stop with just 2 programs, you can downsample
 the source *again* and get yet another C program:
 
 ```sh
-./akari < akari.c | ./akari > akari3.c
+    ./akari < akari.c | ./akari > akari3.c
 ```
 
 We must go deeper:
 
 ```sh
-./akari < akari.c | ./akari | ./akari > akari4.c
+    ./akari < akari.c | ./akari | ./akari > akari4.c
 ```
 
 `akari3.c` and `akari4.c` are still (mostly valid) C programs.

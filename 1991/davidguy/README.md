@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./davidguy ip_address:server.screen
+    ./davidguy ip_address:server.screen
 ```
 
 where `ip_address` in an IP address of an X server.
@@ -17,7 +17,7 @@ where `ip_address` in an IP address of an X server.
 ## Try:
 
 ```sh
-./davidguy 127.0.0.1:0.0
+    ./davidguy 127.0.0.1:0.0
 ```
 
 Of course, you may need to supply a more reasonable address.  :-)
@@ -25,8 +25,8 @@ Of course, you may need to supply a more reasonable address.  :-)
 ## Also try:
 
 ```sh
-cp -f davidguy guydavid
-./guydavid 127.0.0.1:0.0
+    cp -f davidguy guydavid
+    ./guydavid 127.0.0.1:0.0
 ```
 
 Can you determine why this makes a difference?

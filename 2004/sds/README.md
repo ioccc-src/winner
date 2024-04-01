@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2004 sds bugs](../../bugs.html#2004_sds).
@@ -19,14 +19,14 @@ For more detailed information see [2004 sds bugs](../../bugs.html#2004_sds).
 ## To use:
 
 ```sh
-./sds
+    ./sds
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -64,13 +64,13 @@ decoder.
 Try it out.  Compile the program, then type
 
 ```sh
-./sds < sds.c
+    ./sds < sds.c
 ```
 
 You should see the encoder program displayed.  Now save it, like:
 
 ```sh
-./sds < sds.c > encoder.c
+    ./sds < sds.c > encoder.c
 ```
 
 Then compile `encoder.c`.  You now have the complete system ready.
@@ -83,15 +83,15 @@ standard input, and will output the results on the standard output.
 You can use it like this (assuming you have a file called remarks):
 
 ```sh
-echo 'Hello, World!' > message
-./encoder message < remarks > remarks_msg
+    echo 'Hello, World!' > message
+    ./encoder message < remarks > remarks_msg
 ```
 
 Then to decode:
 
 ```sh
-./sds < remarks_msg
-Hello, World!
+    ./sds < remarks_msg
+    Hello, World!
 ```
 
 C programs are mostly unaffected by adding steganographic content,

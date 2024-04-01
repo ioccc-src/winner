@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 There is an [alternate version](#alternate-code) that is supposed to win all the
@@ -13,7 +13,7 @@ time.
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [1991 westley bugs](../../bugs.html#1991_westley).
@@ -28,24 +28,24 @@ Make and then run as follows:
 
 
 ```sh
-./westley [move_location] | tee nextmove.c
+    ./westley [move_location] | tee nextmove.c
 ```
 
 where the `move_location` is a digit from 1 to 9 that represents
 a move on a tic-tac-toe board:
 
 ```
-1 2 3
-4 5 6
-7 8 9
+    1 2 3
+    4 5 6
+    7 8 9
 ```
 
 If you omit `move_location`, then the computer moves first.  For your
 next move, recompile `nextmove.c` and play it again:
 
 ```sh
-make nextmove
-./nextmove move_location | tee nextmove.c
+    make nextmove
+    ./nextmove move_location | tee nextmove.c
 ```
 
 
@@ -55,10 +55,9 @@ We have provided the shell script, [ttt](ttt.sh), to make it easier to play the
 game:
 
 ```sh
-make ttt
-./ttt [first_move]	# <- omit first arg to have it move first
-./ttt next_move
-
+    make ttt
+    ./ttt [first_move]	# <- omit first arg to have it move first
+    ./ttt next_move
 ```
 
 The shell script determines when the game is over, and automatically replaces
@@ -66,50 +65,50 @@ The shell script determines when the game is over, and automatically replaces
 loss).  The [ttt](ttt.sh) script has two other modes:
 
 ```sh
-./ttt quitgame	# cancel any game in progress, revert to merlyn.c
-./ttt clobber	# remove all game files, revert to original source
+    ./ttt quitgame	# cancel any game in progress, revert to merlyn.c
+    ./ttt clobber	# remove all game files, revert to original source
 ```
 
 For example here is a potentially losing game:
 
 ```sh
-./ttt 1
-./ttt 4
-./ttt 6
+    ./ttt 1
+    ./ttt 4
+    ./ttt 6
 ```
 
 The final might look like:
 
 
 ```c
-		a(X){/*/X=-		a(X){/*/X=-
-	X	-1;F;X=-	 	-1;F;X=-
-		-1;F;}/*/		-1;F;}/*/
-char z[][100]={"char z[][100]={","a(X){/*/X=-","-1;F;X=-","-1;F;}/*/","1999999999  :-) ",
-"int q,i,j,k,X,O=0,H;S(x)int*x;{X+=X;O+=O;*x+1?*x+2||X++:O++;*x=1;}L(n){for(*",
-"z[i=1]=n+97;i<4;i++)M(256),s(i),M(128),s(i),M(64),N;X*=8;O*=8;}s(R){char*r=z",
-"[R];for(q&&Q;*r;)P(*r++);q&&(Q,P(44));}M(m){P(9);i-2||P(X&m?88:O&m?48:32);P(",
-"9);}y(A){for(j=8;j;)~A&w[--j]||(q=0);}e(W,Z){for(i-=i*q;i<9&&q;)y(W|(1<<i++&",
-"~Z));}R(){for(k=J[*J-48]-40;k;)e(w[k--],X|O);}main(u,v)char**v;{a(q=1);b(1);",
-"c(1);*J=--u?O?*J:*v[1]:53;X|=u<<57-*v[u];y(X);K=40+q;q?e(O,X),q&&(K='|'),e(X",
-",O),R(),O|=1<<--i:J[*J-48+(X=O=0)]--;L(q=0);for(s(i=0);q=i<12;)s(i++),i>4&&N",
-";s(q=12);P(48);P('}');P(59);N;q=0;L(1);for(i=5;i<13;)s(i++),N;L(2);}",0};
-		b(X){/*/X=-		b(X){/*/X=-
-	X	-1;F;X=-	 	-1;F;X=-	X
-		-1;F;}/*/		-1;F;}/*/
-int q,i,j,k,X,O=0,H;S(x)int*x;{X+=X;O+=O;*x+1?*x+2||X++:O++;*x=1;}L(n){for(*
-z[i=1]=n+97;i<4;i++)M(256),s(i),M(128),s(i),M(64),N;X*=8;O*=8;}s(R){char*r=z
-[R];for(q&&Q;*r;)P(*r++);q&&(Q,P(44));}M(m){P(9);i-2||P(X&m?88:O&m?48:32);P(
-9);}y(A){for(j=8;j;)~A&w[--j]||(q=0);}e(W,Z){for(i-=i*q;i<9&&q;)y(W|(1<<i++&
-~Z));}R(){for(k=J[*J-48]-40;k;)e(w[k--],X|O);}main(u,v)char**v;{a(q=1);b(1);
-c(1);*J=--u?O?*J:*v[1]:53;X|=u<<57-*v[u];y(X);K=40+q;q?e(O,X),q&&(K='|'),e(X
-,O),R(),O|=1<<--i:J[*J-48+(X=O=0)]--;L(q=0);for(s(i=0);q=i<12;)s(i++),i>4&&N
-;s(q=12);P(48);P('}');P(59);N;q=0;L(1);for(i=5;i<13;)s(i++),N;L(2);}
-		c(X){/*/X=-		c(X){/*/X=-
-	0	-1;F;X=-	0	-1;F;X=-	0
-		-1;F;}/*/		-1;F;}/*/
+		    a(X){/*/X=-		a(X){/*/X=-
+	    X	-1;F;X=-	 	-1;F;X=-
+		    -1;F;}/*/		-1;F;}/*/
+    char z[][100]={"char z[][100]={","a(X){/*/X=-","-1;F;X=-","-1;F;}/*/","1999999999  :-) ",
+    "int q,i,j,k,X,O=0,H;S(x)int*x;{X+=X;O+=O;*x+1?*x+2||X++:O++;*x=1;}L(n){for(*",
+    "z[i=1]=n+97;i<4;i++)M(256),s(i),M(128),s(i),M(64),N;X*=8;O*=8;}s(R){char*r=z",
+    "[R];for(q&&Q;*r;)P(*r++);q&&(Q,P(44));}M(m){P(9);i-2||P(X&m?88:O&m?48:32);P(",
+    "9);}y(A){for(j=8;j;)~A&w[--j]||(q=0);}e(W,Z){for(i-=i*q;i<9&&q;)y(W|(1<<i++&",
+    "~Z));}R(){for(k=J[*J-48]-40;k;)e(w[k--],X|O);}main(u,v)char**v;{a(q=1);b(1);",
+    "c(1);*J=--u?O?*J:*v[1]:53;X|=u<<57-*v[u];y(X);K=40+q;q?e(O,X),q&&(K='|'),e(X",
+    ",O),R(),O|=1<<--i:J[*J-48+(X=O=0)]--;L(q=0);for(s(i=0);q=i<12;)s(i++),i>4&&N",
+    ";s(q=12);P(48);P('}');P(59);N;q=0;L(1);for(i=5;i<13;)s(i++),N;L(2);}",0};
+		    b(X){/*/X=-		b(X){/*/X=-
+	    X	-1;F;X=-	 	-1;F;X=-	X
+		    -1;F;}/*/		-1;F;}/*/
+    int q,i,j,k,X,O=0,H;S(x)int*x;{X+=X;O+=O;*x+1?*x+2||X++:O++;*x=1;}L(n){for(*
+    z[i=1]=n+97;i<4;i++)M(256),s(i),M(128),s(i),M(64),N;X*=8;O*=8;}s(R){char*r=z
+    [R];for(q&&Q;*r;)P(*r++);q&&(Q,P(44));}M(m){P(9);i-2||P(X&m?88:O&m?48:32);P(
+    9);}y(A){for(j=8;j;)~A&w[--j]||(q=0);}e(W,Z){for(i-=i*q;i<9&&q;)y(W|(1<<i++&
+    ~Z));}R(){for(k=J[*J-48]-40;k;)e(w[k--],X|O);}main(u,v)char**v;{a(q=1);b(1);
+    c(1);*J=--u?O?*J:*v[1]:53;X|=u<<57-*v[u];y(X);K=40+q;q?e(O,X),q&&(K='|'),e(X
+    ,O),R(),O|=1<<--i:J[*J-48+(X=O=0)]--;L(q=0);for(s(i=0);q=i<12;)s(i++),i>4&&N
+    ;s(q=12);P(48);P('}');P(59);N;q=0;L(1);for(i=5;i<13;)s(i++),N;L(2);}
+		    c(X){/*/X=-		c(X){/*/X=-
+	    0	-1;F;X=-	0	-1;F;X=-	0
+		    -1;F;}/*/		-1;F;}/*/
 
-ttt: I win!
+    ttt: I win!
 ```
 
 Redirects stderr to `/dev/null` by default. If you need errors or warnings use
@@ -125,7 +124,7 @@ can lose if you cheat. That's supposed to happen. Can you win any other time?
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -159,7 +158,7 @@ This is supposed to happen.  As is written in the
 [The Jargon File](http://catb.org/jargon/html/F/feature.html):
 
 ```
-That's not a bug, that's a feature.
+    That's not a bug, that's a feature.
 ```
 
 Try not to cheat (even though it's very easy :-) ), the computer has not learned
@@ -196,7 +195,7 @@ variables `X` and `O` contain bitmasks of where all the `X`s and `O`s are placed
 The statement:
 
 ```c
-X=-   <char>   -1;
+    X=-   <char>   -1;
 ```
 
 evaluates to `1`, `-1`, or `-2` when `X` is `1` and `<char>` is one of `"X"`,
@@ -234,9 +233,9 @@ possible moves by making the `e()` function return "winning" moves,
 e.g. the template:
 
 ```
-. . .
-O , O    (this is the value 40; 2^3+2^5)
-. . .    ("O"s are 1 bits, "." and "," are 0 bits)
+    . . .
+    O , O    (this is the value 40; 2^3+2^5)
+    . . .    ("O"s are 1 bits, "." and "," are 0 bits)
 ```
 
 ...will make the `e()` function return a center move, as this is the only move
@@ -254,45 +253,45 @@ changing the compile line.
 The templates are:
 
 ```
-O , O
-, , ,
-O , O
+    O , O
+    , , ,
+    O , O
 
-, . .
-. O .
-. . O
+    , . .
+    . O .
+    . . O
 
-. . .
-O , O
-. . .
+    . . .
+    O , O
+    . . .
 
-. . .
-O O ,
-. . .
+    . . .
+    O O ,
+    . . .
 
-. . .
-O , O
-. . .
+    . . .
+    O , O
+    . . .
 
-. , ,
-. O .
-O O ,
+    . , ,
+    . O .
+    O O ,
 
-O , O
-, , .
-O . .
+    O , O
+    , , .
+    O . .
 
-, . O
-O , O
-O . ,
+    , . O
+    O , O
+    O . ,
 
-O . ,
-O , O
-, . O
+    O . ,
+    O , O
+    , . O
 
-O , O
-, , ,
-O , O
+    O , O
+    , , ,
+    O , O
 ```
 
 A digit of `9` means start with the first template, `8` starts at

@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an alternate version based on the author's remarks. See [alternate
@@ -11,10 +11,9 @@ code](#alternate-code).
 ## To use:
 
 ```sh
-./aidan < puzzle
+    ./aidan < puzzle
 
-./aidan seed
-
+    ./aidan seed
 ```
 
 where `seed` is a number.
@@ -23,7 +22,7 @@ where `seed` is a number.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -36,7 +35,7 @@ which is slower, inelegant and not as obscure, as the author put it.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -48,7 +47,7 @@ Use `aidan.alt` as you would `aidan` above.
 ### Alternate try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 
@@ -141,14 +140,14 @@ Telegraph](https://www.telegraph.co.uk/), a UK newspaper.
 Now, with modern computers this **can** be solved using brute force, e.g.:
 
 ```c
-#include <stdio.h> /* sudoku-bfi.c */
-#define S(t) for(n=0;n<9;v[n++]=0);for(n=0;n<81;n++)if(i[n]){z=1<<i[n];if(v[t]\\
-&z)for(;;){if(p<0)goto d;if(i[p]++<9)goto f;i[p]=0;p=s[p];}v[t]|=z;}
-int i[82],s[81],v[9],n,p,z;int main(void){for(n=0;n<81;){p=getchar()^48;if(p==
-30)p=0;if(p<10)i[n++]=p;}i[81]=0;p=-1;f:S(n%9)S(n/9)S(n%9/3+n/27*3)if(p>80)goto
-d;for(n=p;i[++p];);s[p]=n;i[p]=1;goto f;d:z=p<81;printf("\n%s!\n\n",z?"Fail":
-"Success");for(n=0;n<81;){p=i[n];printf("%c %s",(p?p|48:'.'),(++n%3?"":n%9?"| "
-:n%27?"\n":n%81?"\n------+-------+------\n":"\n\n"));}return z;}
+    #include <stdio.h> /* sudoku-bfi.c */
+    #define S(t) for(n=0;n<9;v[n++]=0);for(n=0;n<81;n++)if(i[n]){z=1<<i[n];if(v[t]\\
+    &z)for(;;){if(p<0)goto d;if(i[p]++<9)goto f;i[p]=0;p=s[p];}v[t]|=z;}
+    int i[82],s[81],v[9],n,p,z;int main(void){for(n=0;n<81;){p=getchar()^48;if(p==
+    30)p=0;if(p<10)i[n++]=p;}i[81]=0;p=-1;f:S(n%9)S(n/9)S(n%9/3+n/27*3)if(p>80)goto
+    d;for(n=p;i[++p];);s[p]=n;i[p]=1;goto f;d:z=p<81;printf("\n%s!\n\n",z?"Fail":
+    "Success");for(n=0;n<81;){p=i[n];printf("%c %s",(p?p|48:'.'),(++n%3?"":n%9?"| "
+    :n%27?"\n":n%81?"\n------+-------+------\n":"\n\n"));}return z;}
 ```
 
 > Judges' note: this was added as [aidan.alt.c](aidan.alt.c).
@@ -163,18 +162,18 @@ Oh, and if you think that example sudoku is too easy, try this one (which my
 program generated):
 
 ```
---- insane1.sudoku --
-. . 4 | . . . | . 5 6
-5 . . | . 7 2 | . . .
-. . 1 | . . . | 8 . .
-------+-------+------
-. . . | . . . | . . .
-. . . | 6 9 3 | . . 5
-. . . | . . . | 7 3 4
-------+-------+------
-. 5 . | 2 . 1 | 4 . 8
-3 . . | . . . | . . .
-. . . | . . . | . 6 1
+    --- insane1.sudoku --
+    . . 4 | . . . | . 5 6
+    5 . . | . 7 2 | . . .
+    . . 1 | . . . | 8 . .
+    ------+-------+------
+    . . . | . . . | . . .
+    . . . | 6 9 3 | . . 5
+    . . . | . . . | 7 3 4
+    ------+-------+------
+    . 5 . | 2 . 1 | 4 . 8
+    3 . . | . . . | . . .
+    . . . | . . . | . 6 1
 ```
 
 Be warned - it's evil! (I certainly haven't been able to solve it by hand. The
@@ -188,20 +187,20 @@ reasons. That's the worst performance I've had from brute-force so far!)
 #### Building
 
 ```sh
-cc -o sudoku-sf sudoku-sf.c
+    cc -o sudoku-sf sudoku-sf.c
 ```
 
 or, if using gcc, try:
 
 ```sh
-gcc -O2 -Wall -Wextra -ansi -pedantic-errors -o sudoku-sf sudoku-sf.c
+    gcc -O2 -Wall -Wextra -ansi -pedantic-errors -o sudoku-sf sudoku-sf.c
 ```
 
 
 #### Testing (optional)
 
 ```sh
-perl ./test-su.perl
+    perl ./test-su.perl
 ```
 
 Note that this requires Perl 5 (I use 5.8.5, earlier versions untested) and is
@@ -213,7 +212,7 @@ really.
 #### Solving
 
 ```sh
-./aidan < somefile.txt
+    ./aidan < somefile.txt
 ```
 
 Input should be the numbers of each row in turn. Empty spaces can be
@@ -234,7 +233,7 @@ though slightly slower. See if you can figure out what it does.)
 #### Generating
 
 ```sh
-./sudoku <seed>
+    ./sudoku <seed>
 ```
 
 Output is a blank grid, then the solution, then the problem. There's no
@@ -294,8 +293,8 @@ least 32. (No, that isn't a typo - I did say 15, not 16).
 Also requires that `cpp` can properly handle something like:
 
 ```c
-#define foo(x,y) x y
-foo(bar,)
+    #define foo(x,y) x y
+    foo(bar,)
 ```
 
 Apparently, a few can't (ANSI C specifically doesn't require that this works,

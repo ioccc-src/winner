@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2019 yang bugs](../../bugs.html#2019_yang).
@@ -19,24 +19,24 @@ For more detailed information see [2019 yang bugs](../../bugs.html#2019_yang).
 ## To use:
 
 ```sh
-./prog sample_input.txt a b c d
+    ./prog sample_input.txt a b c d
 
-cat a
+    cat a
 
-cat b
+    cat b
 
-cat c
+    cat c
 
-cat d
+    cat d
 
-cat a b c d | ./prog
+    cat a b c d | ./prog
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -53,31 +53,31 @@ output again.
 Scramble/unscramble to single file:
 
 ```sh
-./prog original.txt > scrambled.txt
+    ./prog original.txt > scrambled.txt
 
-./prog < scrambled.txt > unscrambled.txt
+    ./prog < scrambled.txt > unscrambled.txt
 ```
 
 Scramble/unscramble to multiple files:
 
 ```sh
-./prog input.txt output1.txt output2.txt ...
+    ./prog input.txt output1.txt output2.txt ...
 
-cat output1.txt output2.txt ... | ./prog > unscrambled.txt
+    cat output1.txt output2.txt ... | ./prog > unscrambled.txt
 ```
 
 Re-scramble:
 
 ```sh
-./prog original.txt | ./prog - > scrambled1.txt
-./prog original.txt | ./prog - | ./prog - > scrambled2.txt
-./prog original.txt | ./prog - | ./prog - | ... > scrambled3.txt
+    ./prog original.txt | ./prog - > scrambled1.txt
+    ./prog original.txt | ./prog - | ./prog - > scrambled2.txt
+    ./prog original.txt | ./prog - | ./prog - | ... > scrambled3.txt
 ```
 
 Scramble slowly:
 
 ```sh
-./prog input.txt | ruby prog.c
+    ./prog input.txt | ruby prog.c
 ```
 
 Input must be in UTF-8 encoding.
@@ -88,14 +88,14 @@ This is a text scrambling utility.  To scramble text, specify input file name as
 the first argument:
 
 ```sh
-./prog input.txt > output.txt
+    ./prog input.txt > output.txt
 ```
 
 If original input file was small enough to fit in your terminal, you
 can simply use `cat` to unscramble the output text.
 
 ```sh
-cat output.txt
+    cat output.txt
 ```
 
 It might seem like nothing was scrambled, but you can try passing the output
@@ -107,7 +107,7 @@ printed.  For convenience, a utility is included in the source to output
 characters slowly:
 
 ```sh
-./prog input.txt | ruby prog.c
+    ./prog input.txt | ruby prog.c
 ```
 
 Scrambling order is deterministic, but you can reshuffle the output by
@@ -115,15 +115,15 @@ piping it through the same utility again, by specifying `-` as the
 first argument:
 
 ```sh
-./prog input.txt | ./prog - | ./prog - | ...
+    ./prog input.txt | ./prog - | ./prog - | ...
 ```
 
 You can also split the input to multiple files, each getting a subset
 of the original input characters:
 
 ```sh
-./prog input.txt output1.txt output2.txt ...
-cat output1.txt output2.txt ... > unscrambled.txt
+    ./prog input.txt output1.txt output2.txt ...
+    cat output1.txt output2.txt ... > unscrambled.txt
 ```
 
 You can only unscramble files with `cat` if the input fits in a single
@@ -139,7 +139,7 @@ unscrambling functionality.  If no argument is specified, input will
 be read through `stdin` and unscrambled to `stdout`:
 
 ```sh
-./prog < scrambled.txt > unscrambled.txt
+    ./prog < scrambled.txt > unscrambled.txt
 ```
 
 Where this is useful is that if you scramble the input to multiple
@@ -147,10 +147,10 @@ files and unscramble each output file individually, those output
 files can be printed on transparencies and distributed separately.
 
 ```sh
-./prog input.txt output1.txt output2.txt output3.txt
-./prog < output1.txt > layer1.txt
-./prog < output2.txt > layer2.txt
-./prog < output3.txt > layer3.txt
+    ./prog input.txt output1.txt output2.txt output3.txt
+    ./prog < output1.txt > layer1.txt
+    ./prog < output2.txt > layer2.txt
+    ./prog < output3.txt > layer3.txt
 ```
 
 In other words, this is a utility for facilitating
@@ -160,7 +160,7 @@ This utility can also be used just for removing trailing whitespaces
 and expanding tabs to 8 spaces.
 
 ```sh
-./prog input.txt | ./prog
+    ./prog input.txt | ./prog
 ```
 
 ### Features:

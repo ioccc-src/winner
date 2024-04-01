@@ -1,27 +1,27 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./prog [-tcksri] < file.c
+    ./prog [-tcksri] < file.c
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 If you get really stuck, try:
 
 ```sh
-man ./tac.1
+    man ./tac.1
 ```
 
 
@@ -114,7 +114,7 @@ There is one (known) remaining problem with detection:
 the following counts #include as two tokens, `#` and `include` (not as a reserved word):
 
 ```c
-#/*this will not be counted*/include/*correctly*/<stdio.h>
+    #/*this will not be counted*/include/*correctly*/<stdio.h>
 ```
 
 Fixing this properly hampers backwards compatibility in counting.  This requires
@@ -129,15 +129,15 @@ counting words correctly absent `-k`.
 `tac` was run over all 366 previous IOCCC winning entries:
 
 ```sh
-find ~/src/obc -type f -name \*.c | wc
+    find ~/src/obc -type f -name \*.c | wc
 ```
 
 The discrepancies found are documented and explained in the file
 [discrepancies.html](discrepancies.html).
 
 ```sh
-find ~/src/obc -type f -a -name "*.c" | xargs ./spotcheck.sh ./prog | ./spotdiff.sh |
-	grep -v keep | diff -bw - discrep* | grep "[<>] cl "
+    find ~/src/obc -type f -a -name "*.c" | xargs ./spotcheck.sh ./prog | ./spotdiff.sh |
+	    grep -v keep | diff -bw - discrep* | grep "[<>] cl "
 ```
 
 In summary, there are only 6 unique entries out of 366 that have any variation
@@ -182,18 +182,18 @@ frequency, or counting the references to identifiers, constants, or breadth of u
 language:
 
 ```sh
-#!/usr/bin/env bash
-cat $* | ./prog -t | sort | uniq -c | sort -k1nr
+    #!/usr/bin/env bash
+    cat $* | ./prog -t | sort | uniq -c | sort -k1nr
 ```
 
 And here is a C keyword frequency counter:
 
 ```sh
-#!/usr/bin/env bash
-function iskeyword {
-   awk 'BEGIN{f="c11";while(getline<f)k[$1]=0} {if($1 in k)k[$1]++}END{for(i in k)print k[i],i}'
-}
-cat $* | ./prog -t | iskeyword | sort -k1nr
+    #!/usr/bin/env bash
+    function iskeyword {
+       awk 'BEGIN{f="c11";while(getline<f)k[$1]=0} {if($1 in k)k[$1]++}END{for(i in k)print k[i],i}'
+    }
+    cat $* | ./prog -t | iskeyword | sort -k1nr
 ```
 
 This script was used to "optimize" the reserved word order so the most frequent IOCCC
@@ -203,13 +203,13 @@ An interesting aside: as might be expected, obfuscation has changed the frequenc
 keyword distribution over time.  The top five for the decades:
 
 ```
-1980s       1990s       2000s       2010s
------       -----       -----       -----
-94 if       532 char    375 if      254 int
-69 for      524 if      372 char    217 for
-59 while    417 int     332 int     198 if
-48 char     223 for     184 for     121 return
-43 int      223 void    165 return  104 char
+    1980s       1990s       2000s       2010s
+    -----       -----       -----       -----
+    94 if       532 char    375 if      254 int
+    69 for      524 if      372 char    217 for
+    59 while    417 int     332 int     198 if
+    48 char     223 for     184 for     121 return
+    43 int      223 void    165 return  104 char
 ```
 
 The keyword list is external to the program, and is easily changed, sorted, checked, verified.
@@ -223,47 +223,47 @@ language_.  It really is this easy with `tac`:
 
 
 ```sh
-#!/usr/bin/env bash
-script='
-BEGIN {
-	last=nl="\n";
-	f="c11"; while(getline <f > 0) kw[$0]++; close(f);
-}
+    #!/usr/bin/env bash
+    script='
+    BEGIN {
+	    last=nl="\n";
+	    f="c11"; while(getline <f > 0) kw[$0]++; close(f);
+    }
 
-function iskw(a)   { return a in kw }
-function indent(a) { return sprintf("%*s", n*3, " ") }
-function newline() { if (!infor && last != nl) printf last=nl; }
-function show(a) {
-	if (last==nl) printf "%s", indent()
-	printf "%s%s", space(), a
-	last=a
-}
-function space() {
-	return iskw(last) ||
-	  (last ~ /[A-Za-z0-9_+-\/%^[&\]\)=:<>;]$/ && $0 !~ /[:;()\[\],]/) ? " " : ""
-}
+    function iskw(a)   { return a in kw }
+    function indent(a) { return sprintf("%*s", n*3, " ") }
+    function newline() { if (!infor && last != nl) printf last=nl; }
+    function show(a) {
+	    if (last==nl) printf "%s", indent()
+	    printf "%s%s", space(), a
+	    last=a
+    }
+    function space() {
+	    return iskw(last) ||
+	      (last ~ /[A-Za-z0-9_+-\/%^[&\]\)=:<>;]$/ && $0 !~ /[:;()\[\],]/) ? " " : ""
+    }
 
-/^\(/	{ ++paren }
-/^\)/	{ --paren }
+    /^\(/	{ ++paren }
+    /^\)/	{ --paren }
 
-/^for/		    { newline(); infor=1 }
-infor && /^;/	    { ++infor; show($0 " "); next }
-infor==1 && /^:/    { ++infor }
-infor>1 && paren==0 { infor=0 }
+    /^for/		    { newline(); infor=1 }
+    infor && /^;/	    { ++infor; show($0 " "); next }
+    infor==1 && /^:/    { ++infor }
+    infor>1 && paren==0 { infor=0 }
 
-/^\?/		{ tern++; n++; newline(); show($0 " "); next }
-tern && /^:/	{ newline(); show($0); --tern; --n; next }
+    /^\?/		{ tern++; n++; newline(); show($0 " "); next }
+    tern && /^:/	{ newline(); show($0); --tern; --n; next }
 
-/^#/	{ newline(); show($0); newline(); next }
-/^;/	{ show($0); newline(); next }
-/^{/	{ show($0); ++n; newline(); next }
-/^}/	{ n--; newline(); show($0); newline(); next }
+    /^#/	{ newline(); show($0); newline(); next }
+    /^;/	{ show($0); newline(); next }
+    /^{/	{ show($0); ++n; newline(); next }
+    /^}/	{ n--; newline(); show($0); newline(); next }
 
-{ show($0) }
-'
-cat $* | sed 's/#include/##include/' | cpp -E -trigraphs |
-sed 's/^# .*$//' | sed 's/^#//' |
-./prog -t | awk "$script"
+    { show($0) }
+    '
+    cat $* | sed 's/#include/##include/' | cpp -E -trigraphs |
+    sed 's/^# .*$//' | sed 's/^#//' |
+    ./prog -t | awk "$script"
 ```
 
 ### On the question of obfuscation:
@@ -343,7 +343,7 @@ which is neither complete (`#define`, `#ifndef`, `#undef` are missing
 nor correct (many more are added: `I`, `true`, `bool`, `compl`, ...):
 
 ```sh
-(sed -n '1p' c11; sed -n '2,$p' ioccc.kw.freq | sort) | comm -3 - c11
+    (sed -n '1p' c11; sed -n '2,$p' ioccc.kw.freq | sort) | comm -3 - c11
 ```
 
 That is an obfuscated way to say "diff".  But it also more clearly shows the, um, diffs.
@@ -384,7 +384,7 @@ NB: This is *not* a portability concern, the one string holds only printable ASC
 Thus:
 
 ```sh
-cc -ansi -Wall -trigraphs -Wno-trigraphs -Wno-parentheses -Wno-empty-body -Wno-char-subscripts -Wno-pointer-sign -DU=O -DW=\"keywords\" -o prog prog.c
+    cc -ansi -Wall -trigraphs -Wno-trigraphs -Wno-parentheses -Wno-empty-body -Wno-char-subscripts -Wno-pointer-sign -DU=O -DW=\"keywords\" -o prog prog.c
 ```
 
 ### Coda:
@@ -404,12 +404,12 @@ are not recognised when written as `-rs` in prose).
 Try:
 
 ```sh
-./manpage.sh tac
+    ./manpage.sh tac
 
-./manpage.sh -h
-./manpage.sh -h | ./manpage.sh
-./manpage.sh -h | ./manpage.sh -R | less
-./manpage.sh -h | ./manpage.sh -P | lpr
+    ./manpage.sh -h
+    ./manpage.sh -h | ./manpage.sh
+    ./manpage.sh -h | ./manpage.sh -R | less
+    ./manpage.sh -h | ./manpage.sh -P | lpr
 ```
 
 NOTE: in 2023 the `tac.man` was updated to proper man format and renamed

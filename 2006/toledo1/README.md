@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./toledo1 [0-9][0-9]
+    ./toledo1 [0-9][0-9]
 ```
 
 where `[0-9][0-9]` is a two digit number.
@@ -17,7 +17,7 @@ where `[0-9][0-9]` is a two digit number.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -39,11 +39,11 @@ If not, this program does it, just run it with an argument
 giving initial position.
 
 ```sh
-./toledo1 11       # start is A8
-./toledo1 18       # start is H8
-./toledo1 81       # start is A1
-./toledo1 88       # start is H1
-./toledo1 44       # start is D5
+    ./toledo1 11       # start is A8
+    ./toledo1 18       # start is H8
+    ./toledo1 81       # start is A1
+    ./toledo1 88       # start is H1
+    ./toledo1 44       # start is D5
 ```
 
 It will print move order. The algorithm is so simple that you can read

@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 There is an [alternate version](#alternate-code) that might feel a bit more
@@ -11,7 +11,7 @@ familiar to vi(m) users.
 ## To use:
 
 ```sh
-./ant some_file
+    ./ant some_file
 ```
 
 NOTE: the file must already exist and not specifying any arg will make the
@@ -21,13 +21,13 @@ program exit without doing anything.
 ## Try:
 
 ```sh
-make hill
-./ant hill
+    make hill
+    ./ant hill
 ```
 
 ```sh
-make mole
-./ant mole
+    make mole
+    ./ant mole
 ```
 
 
@@ -47,7 +47,7 @@ rest was unchanged.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 

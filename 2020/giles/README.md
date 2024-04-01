@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2020 giles bugs](../../bugs.html#2020_giles).
@@ -19,9 +19,9 @@ For more detailed information see [2020 giles bugs](../../bugs.html#2020_giles).
 ## To use:
 
 ```sh
-./prog < dtmf.wav
+    ./prog < dtmf.wav
 
-./prog [digits] > digits.wav
+    ./prog [digits] > digits.wav
 ```
 
 where `dtmf.wav` is a WAV file of the dialling of a number being dialled with
@@ -34,12 +34,11 @@ will be converted to the DTMF sound!
 ## Try:
 
 ```sh
-./try.sh
-./prog < pi.wav
+    ./try.sh
+    ./prog < pi.wav
 
-# See
-./prog 867-5309 > jenny.wav
-
+    # See
+    ./prog 867-5309 > jenny.wav
 ```
 
 If the script [try.sh](try.sh) did not play a WAV file, it means you do not have
@@ -73,8 +72,8 @@ audio channels.
 
 
 ```sh
-$ ./prog < pi.wav
-31415926
+    $ ./prog < pi.wav
+    31415926
 ```
 
 If the program is executed with a command-line argument, it will generate the
@@ -82,7 +81,7 @@ tones corresponding to the specified characters, writing them to standard output
 as a WAV file.
 
 ```sh
-$ ./prog 867-5309 | aplay
+    $ ./prog 867-5309 | aplay
 ```
 
 ### Interesting Features
@@ -144,14 +143,13 @@ frequency determines which row the digit is in, and the higher frequency
 determines the column. There are 4 possible row frequencies and 4 possible
 column frequencies.
 
-
 ```
-|            | **1209 Hz** | **1336 Hz** | **1477 Hz** | **1633 Hz** |
-|------------|-------------|-------------|-------------|-------------|
-| **697 Hz** | 1           | 2 abc       | 3 def       | A           |
-| **770 Hz** | 4 ghi       | 5 jkl       | 6 mno       | B           |
-| **852 Hz** | 7 pqrs      | 8 tuv       | 9 wxyz      | C           |
-| **941 Hz** | *           | 0           | #           | D           |
+    |            | **1209 Hz** | **1336 Hz** | **1477 Hz** | **1633 Hz** |
+    |------------|-------------|-------------|-------------|-------------|
+    | **697 Hz** | 1           | 2 abc       | 3 def       | A           |
+    | **770 Hz** | 4 ghi       | 5 jkl       | 6 mno       | B           |
+    | **852 Hz** | 7 pqrs      | 8 tuv       | 9 wxyz      | C           |
+    | **941 Hz** | *           | 0           | #           | D           |
 ```
 
 This program determines which frequencies are present in the input by passing it

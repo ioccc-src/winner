@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./cmills [starting_cash]
+    ./cmills [starting_cash]
 ```
 
 
 ## Try:
 
 ```sh
-./cmills 5000
+    ./cmills 5000
 ```
 
 

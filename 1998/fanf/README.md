@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 NOTE: this may take a while.  Some systems may have problems building
@@ -11,7 +11,7 @@ this entry because of the system resources it requires.
 ## To use:
 
 ```sh
-./fanf
+    ./fanf
 ```
 
 
@@ -20,7 +20,7 @@ this entry because of the system resources it requires.
 Enter an expression on standard input.  To try some we have selected:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -48,7 +48,7 @@ can you begin to understand what it is doing?
 Look at the first stage of the C pre-processing which was done like:
 
 ```sh
-cc fanf.c -E > fanftmp1.c
+    cc fanf.c -E > fanftmp1.c
 ```
 
 Skip to the bottom of `fanftmp1.c` (after all of the C pre-processor header
@@ -122,9 +122,9 @@ expressions works as follows. There are three forms of lambda expression
 to consider: variables, applications, and abstractions.
 
 ```
-trans v 	-> v				(variable)
-trans a b	-> (trans a) (trans  b )	(application)
-trans \ab	-> abs a (trans b)		(abstraction)
+    trans v 	-> v				(variable)
+    trans a b	-> (trans a) (trans  b )	(application)
+    trans \ab	-> abs a (trans b)		(abstraction)
 ```
 
 There are a further three cases to consider for the body of lambda
@@ -132,33 +132,33 @@ expressions, where we need to do the magic that transforms away the
 variables.
 
 ```
-abs a f x	-> S (abs a f) (abs a x)
-abs a b 	-> K b	       (b != a)
-abs a a		-> I
+    abs a f x	-> S (abs a f) (abs a x)
+    abs a b 	-> K b	       (b != a)
+    abs a a		-> I
 ```
 
 E.g. suppose we had combinator expressions for `+` and `3` and we wanted
 to see what the combinator expression for doubling 3 looked like:
 
 ```
-    trans \x(+ x x) 3
-->	(trans \x(+ x x)) (trans 3)
-->	(abs x (trans + x x)) 3
-->	(abs x + x x) 3
-->	S (abs x + x) (abs x x) 3
-->	S (S (abs x +) (abs x x)) I 3
-->	S (S (K +) I) I 3
-->	S (S (K +) I) I 3
+	trans \x(+ x x) 3
+    ->	(trans \x(+ x x)) (trans 3)
+    ->	(abs x (trans + x x)) 3
+    ->	(abs x + x x) 3
+    ->	S (abs x + x) (abs x x) 3
+    ->	S (S (abs x +) (abs x x)) I 3
+    ->	S (S (K +) I) I 3
+    ->	S (S (K +) I) I 3
 ```
 
 We can then check that this evaluates to the expected result:
 
 ```
-    S (S (K +) I) I 3
-->	S (K +) I 3 (I 3)
-->	K + 3 (I 3) (I 3)
-->	+ (I 3) (I 3)
-->	+ 3 3
+	S (S (K +) I) I 3
+    ->	S (K +) I 3 (I 3)
+    ->	K + 3 (I 3) (I 3)
+    ->	+ (I 3) (I 3)
+    ->	+ 3 3
 ```
 
 It is possible to perform a slightly more compact translation with a
@@ -166,24 +166,24 @@ couple of simple optimisations. For example, note that `K (a b)` is the
 same as `S (K a) (K b)`, because
 
 ```
-    K (a b) x
-->	a b
+	K (a b) x
+    ->	a b
 ```
 
 and
 
 ```
-    S (K a) (K b) x
-->	K a x (K b x)
-->	a b
+	S (K a) (K b) x
+    ->	K a x (K b x)
+    ->	a b
 ```
 
 Also, `S (K a) I` is the same as just `a` because
 
 ```
-    S (K a) I x
-->	K a x (I x)
-->	a x
+	S (K a) I x
+    ->	K a x (I x)
+    ->	a x
 ```
 
 The program simply reads a lambda expression from the standard input,
@@ -245,7 +245,7 @@ writes that character on `stdout`, and finally it calls its second
 argument as a function with the argument `I`, i.e.
 
 ```
-P x f  ->  f I
+    P x f  ->  f I
 ```
 
 with a side-effect.
@@ -255,7 +255,7 @@ argument as a function with the appropriate `E` combinator as an
 argument, i.e.
 
 ```
-G f  ->  f E(c)
+    G f  ->  f E(c)
 ```
 
 with a side-effect.
@@ -274,7 +274,7 @@ The `Y` combinator is used for implementing recursive functions. It has
 the evaluation rule
 
 ```
-Y f  ->  f (Y f)
+    Y f  ->  f (Y f)
 ```
 
 so that it can be used to call a function with itself as an argument.
@@ -282,7 +282,7 @@ For example, if I had the appropriate arithmetic operators defined, I
 could write a factorial function in the lambda calculus like this:
 
 ```
-Y \f\n((= n 0) 1 (* n (f (- n 1))))
+    Y \f\n((= n 0) 1 (* n (f (- n 1))))
 ```
 
 `OFL` provides a facility for naming expressions so that they can be used
@@ -302,11 +302,11 @@ when translating an expression from the lambda calculus to combinators,
 and therefore more compact programs. Their evaluation rules are:
 
 ```
-B    f g x   ->      f    (g x)
-C    f g x   ->     (f x)  g
-BB c f g x   ->   c (f    (g x))
-CC c f g x   ->   c (f x)  g
-SS c f g x   ->   c (f x) (g x)
+    B    f g x   ->      f    (g x)
+    C    f g x   ->     (f x)  g
+    BB c f g x   ->   c (f    (g x))
+    CC c f g x   ->   c (f x)  g
+    SS c f g x   ->   c (f x) (g x)
 ```
 
 I used them to help fit my program into the required space; unfortunately
@@ -315,14 +315,14 @@ it reads into the required space. The complete optimisation rules
 including the ones it doesn't use are:
 
 ```
-S  (K p)       I      ->       p
-S  (K p)    (K r)     ->   K ( p   r )
-S  (K p)    (B r s)   ->   BB  p   r s
-S  (K p)       r      ->   B   p   r
-S  (B p q)  (K r)     ->   CC  p q r
-S     p     (K r)     ->   C   p   r
-S  (B p q)     r      ->   SS  p q r
-S     p        r      ->   S   p   r
+    S  (K p)       I      ->       p
+    S  (K p)    (K r)     ->   K ( p   r )
+    S  (K p)    (B r s)   ->   BB  p   r s
+    S  (K p)       r      ->   B   p   r
+    S  (B p q)  (K r)     ->   CC  p q r
+    S     p     (K r)     ->   C   p   r
+    S  (B p q)     r      ->   SS  p q r
+    S     p        r      ->   S   p   r
 ```
 
 ### The implementation of `OFL`

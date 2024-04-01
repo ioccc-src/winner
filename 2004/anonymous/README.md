@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./anonymous 'foo' > bar.pgm
+    ./anonymous 'foo' > bar.pgm
 ```
 
 Now open the output using your favourite
@@ -22,7 +22,7 @@ images.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 NOTE: technically the text is supposed to be in all lower case but the script
@@ -108,8 +108,8 @@ inscription](https://www.glyphweb.com/arda/r/ringinscription.html) to
 the file `ring.pgm`:
 
 ```sh
-./anonymous "ash nazg durhbatuluhk, ash nazg gimbatul, \
-    ash nazg thrakatuluhk, agh burzhumh-ishi krimpatul." >ring.pgm
+    ./anonymous "ash nazg durhbatuluhk, ash nazg gimbatul, \
+	ash nazg thrakatuluhk, agh burzhumh-ishi krimpatul." >ring.pgm
 ```
 
 The source code assumes the ASCII character set; also, due to space

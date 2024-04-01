@@ -138,7 +138,7 @@ a file was not found (this limitation was removed in both versions in 2023). see
 <p>However, as noted, macOS does <strong>not</strong> have <code>/usr/include</code> so this would never
 work for macOS without some changes, described next. For macOS you will need the
 command line tools installed which can be done like:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> xcode-select <span class="at">--install</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> xcode-select <span class="at">--install</span></span></code></pre></div>
 <p>An important point is that the original version hard-coded <code>gcc</code> but just like
 the entry, the alternate version has also removed this limitation despite <code>gcc</code>
 existing (though it’s <code>clang</code>) in macOS.</p>
@@ -150,13 +150,13 @@ string and the other a couple lines further below.</p>
 <p>In the original the numbers are, respectively, <code>44</code> and <code>46</code>, but with the gcc
 limitation removed the numbers now are <code>43</code> and <code>45</code>. But how does this work? Well
 the command is:</p>
-<pre><code>&quot;0gcc -ansi -E -dM -undef %s /usr/include/%s&gt;r\0 (&quot;</code></pre>
+<pre><code>    &quot;0gcc -ansi -E -dM -undef %s /usr/include/%s&gt;r\0 (&quot;</code></pre>
 <p>which has been changed to be:</p>
 <pre><code>&quot;0cc -ansi -E -dM -undef %s /usr/include/%s&gt;r\0 (&quot;</code></pre>
 <p>Shortly below that you will see, as noted above, the numbers:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">((</span>H <span class="op">=</span> fopen <span class="op">(</span>__FILE__<span class="op">+</span><span class="dv">43</span><span class="op">,</span> <span class="dv">43</span><span class="op">+</span>__FILE__<span class="op">)))</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="op">((</span>fgets <span class="op">(</span>L<span class="op">,</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span><span class="kw">sizeof</span> L<span class="op">,</span> H<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        I<span class="op">[</span>strcspn <span class="op">(</span>I<span class="op">,</span> <span class="dv">45</span><span class="op">+</span>__FILE__<span class="op">)]</span> <span class="op">=</span> O <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">((</span>H <span class="op">=</span> fopen <span class="op">(</span>__FILE__<span class="op">+</span><span class="dv">43</span><span class="op">,</span> <span class="dv">43</span><span class="op">+</span>__FILE__<span class="op">)))</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="op">((</span>fgets <span class="op">(</span>L<span class="op">,</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span><span class="kw">sizeof</span> L<span class="op">,</span> H<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>            I<span class="op">[</span>strcspn <span class="op">(</span>I<span class="op">,</span> <span class="dv">45</span><span class="op">+</span>__FILE__<span class="op">)]</span> <span class="op">=</span> O <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span></code></pre></div>
 <p>The first number in the above C means the length starting from 0 up through the
 <code>&gt;</code>. The second number is the same starting point but up through the <code>\0</code> which
 is why it’s <code>+2</code>. But what happens if only the first number is updated (from the

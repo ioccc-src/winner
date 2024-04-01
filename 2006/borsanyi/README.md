@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2006 borsanyi bugs](../../bugs.html#2006_borsanyi).
@@ -19,14 +19,14 @@ For more detailed information see [2006 borsanyi bugs](../../bugs.html#2006_bors
 ## To use:
 
 ```sh
-./borsanyi string > file.gif
+    ./borsanyi string > file.gif
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 We recommend you input for the filename `example.gif` and for the string
@@ -69,9 +69,9 @@ used. A typical email address is stored in less than 1-2 kilobytes.
 ### Usage:
 
 ```sh
-make all
-./borsanyi my@example.com > email.gif
-my_favourite_gif_viewer email.gif
+    make all
+    ./borsanyi my@example.com > email.gif
+    my_favourite_gif_viewer email.gif
 ```
 
 The address cannot be longer than 42 characters, and may consist of

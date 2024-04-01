@@ -819,13 +819,13 @@ One of these optimisations saved four bytes simply by taking advantage of the
 value of a loop iterator after the loop. The loop is:
 
 ```c
-for (I = 0; A && I < A - 1; ++I)
+    for (I = 0; A && I < A - 1; ++I)
 ```
 
 However after the loop I had this:
 
 ```c
-A > 1 && q(n[A - 1],e[A - 1], 'o');
+    A > 1 && q(n[A - 1],e[A - 1], 'o');
 ```
 
 When I was considering moving that line to before the loop it occurred to me
@@ -848,8 +848,8 @@ the problem.
 First, the function that turns on colours looked like:
 
 ```c
-if (h) attron(m(PAIR(L)));
-else attroff(m(PAIR(L)));
+    if (h) attron(m(PAIR(L)));
+    else attroff(m(PAIR(L)));
 ```
 
 But I thought is that else actually needed? If I were to switch the order so
@@ -858,15 +858,15 @@ therefore getting rid of the `else`! But then I thought why not do what I've
 done elsewhere? I had:
 
 ```c
-attroff(m(PAIR(L)));
-if (h) attron(m(PAIR(L)));
+    attroff(m(PAIR(L)));
+    if (h) attron(m(PAIR(L)));
 ```
 
 But I then saved an extra byte by making it:
 
 ```c
-attroff(m(PAIR(L)));
-h && attron(m(PAIR(L)));
+    attroff(m(PAIR(L)));
+    h && attron(m(PAIR(L)));
 ```
 
 That saved two bytes.
@@ -876,7 +876,7 @@ would save some bytes (I no longer know how many but a few at least possibly six
 or even more). I had the following code:
 
 ```c
-if (V && U && o) { S(N); b(1); }
+    if (V && U && o) { S(N); b(1); }
 ```
 
 This made sure that only if the snake has caught a bug should it grow by the
@@ -887,13 +887,13 @@ caught. That means I could remove the `V && U &&` part of the if! Thus it became
 instead:
 
 ```c
-if (o) { S(N); b(1); }
+    if (o) { S(N); b(1); }
 ```
 
 Then this
 
 ```c
-!o && V && U && q U,V,' ');
+    !o && V && U && q U,V,' ');
 ```
 
 ...is to make sure to only clear the spot the bug is (or was) at if
@@ -914,7 +914,7 @@ snake has moved at least once) what could I check? In fact that means the
 direction is not 0! So I could just replace it with:
 
 ```c
-!o && D && q *U,*V,' ');
+    !o && D && q *U,*V,' ');
 ```
 
 That reduced the count further. But then I wondered if even that much is needed.
@@ -931,7 +931,7 @@ the score line is made an empty string it doesn't matter because it'll appear as
 all spaces anyway. Thus I could save another three bytes by changing it to:
 
 ```c
-!o  && q *U,*V,' ');
+    !o  && q *U,*V,' ');
 ```
 
 Technically it would be a `" "` (see [HACKING.html][] or on GitHub

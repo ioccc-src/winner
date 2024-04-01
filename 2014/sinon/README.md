@@ -1,23 +1,23 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./hecate.sh
+    ./hecate.sh
 
-./glock.sh
+    ./glock.sh
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 This script will ask you if you wish to try again after each run. Type in any
@@ -42,10 +42,10 @@ To start, compile and run the program.  To resume, compile and run the
 output repeatedly until you have won/lost the game.  For example:
 
 ```sh
-cp prog.c run.c
-gcc -O0 run.c -o run && ./run | tee run.c
-gcc -O2 run.c -o run && ./run | tee run.c
-...
+    cp prog.c run.c
+    gcc -O0 run.c -o run && ./run | tee run.c
+    gcc -O2 run.c -o run && ./run | tee run.c
+    ...
 ```
 
 ### Details
@@ -107,7 +107,7 @@ that there are no files named "run" and "run.c" in current directory
 (they will be overwritten) and run:
 
 ```sh
-perl prog.c | bash
+    perl prog.c | bash
 ```
 
 File size and CRC32 of [prog.c](prog.c) are embedded in line 7.

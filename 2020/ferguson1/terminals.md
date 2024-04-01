@@ -31,28 +31,28 @@ It also tries to determine the minimum number of columns to play without the
 status line overflowing - even with the dynamic length. Try:
 
 ```sh
-$ make test
+    $ make test
 ```
 
 This compiles the program [termcaps.c](termcaps.c) and runs it; you should see something like:
 
 
 ```
-terminal supports cursor movement
-terminal supports making cursor invisible
-terminal supports bold
-terminal supports colours
+    terminal supports cursor movement
+    terminal supports making cursor invisible
+    terminal supports bold
+    terminal supports colours
 
-terminal rows  41 (38  playable)
-terminal cols 155 (153 playable)
+    terminal rows  41 (38  playable)
+    terminal cols 155 (153 playable)
 
-snake size:   997 (max size: 5776)
-      bugs:   199 (max size: 1155)
+    snake size:   997 (max size: 5776)
+	  bugs:   199 (max size: 1155)
 
-at least 34 columns (currently 155) recommended for snake size 997
-at least 37 columns (currently 155) recommended for capped snake size 5776
+    at least 34 columns (currently 155) recommended for snake size 997
+    at least 37 columns (currently 155) recommended for capped snake size 5776
 
-No problems detected.
+    No problems detected.
 ```
 
 Terminal rows and cols are the current values (the number of columns shown later
@@ -68,21 +68,21 @@ If I pass in any of the variables **GROW**, **MAXSIZE**, **SIZE** and/or
 example:
 
 ```sh
-terminal supports cursor movement
-terminal supports making cursor invisible
-terminal supports bold
-terminal supports colours
+    terminal supports cursor movement
+    terminal supports making cursor invisible
+    terminal supports bold
+    terminal supports colours
 
-terminal rows  41 (38  playable)
-terminal cols 155 (153 playable)
+    terminal rows  41 (38  playable)
+    terminal cols 155 (153 playable)
 
-snake size:  5776 (max size: 5776)
-      bugs:  5771 (max size: 5771)
+    snake size:  5776 (max size: 5776)
+	  bugs:  5771 (max size: 5771)
 
-at least 37 columns (currently 155) recommended for snake size 5776
-at least 37 columns (currently 155) recommended for capped snake size 5776
+    at least 37 columns (currently 155) recommended for snake size 5776
+    at least 37 columns (currently 155) recommended for capped snake size 5776
 
-No problems detected.
+    No problems detected.
 ```
 
 As you can see it tells you the max size (the 'capsized' snake) as well as the
@@ -129,15 +129,19 @@ To specify the lines/columns of curses program per instance use the `LINES` and
 
 For demonstration consider the following:
 
-	    $ echo $LINES $COLUMNS
-	    42 157
+```sh
+    $ echo $LINES $COLUMNS
+    42 157
+```
 
 Note: I subtract 1 from the max y/x and the max coords in the game output
 include the walls and score line but these values are for the terminal itself.
 
 Say you want 55 columns:
 
-	    $ COLUMNS=55 ./prog
+```sh
+    $ COLUMNS=55 ./prog
+```
 
 This will force curses to detect the max columns (X) of your terminal (for the
 game dimensions) - to be 55; it might look like this instead:
@@ -162,9 +166,10 @@ In my tests there is one thing that at least allows you to see the final score
 and that is by running `clear` before running the program. That's what the
 prog.alt version does. You might run it as one of:
 
-	    LINES=20 ./prog.alt
-	    LINES=20 ./snake.alt
-
+```sh
+    LINES=20 ./prog.alt
+    LINES=20 ./snake.alt
+```
 
 Even if the final score is visible though the terminal may very well still be
 messed up. There are numerous things you might try but probably the easiest is
@@ -174,17 +179,20 @@ even just the `reset` command.
 
 The Linux man page says:
 
+```
     You might have to run the `reset` tool like:
 
 		   <LF>reset<LF>
 
 	       (the line-feed character is normally control-J) to get the terminal
 	       to work, as carriage-return may no longer work in the abnormal state.
-
+```
 
 If you don't have the reset utility you can try:
 
-		echo -e \\033c
+```sh
+    echo -e \\033c
+```
 
 Otherwise try `clear; stty sane` (that will turn on echo also) or if all else
 fails log out and back in.
@@ -201,12 +209,16 @@ along and thinks he/she will be clever and mess with the dimensions a bit. Let's
 say they have a 13" monitor and they think it'd be funny to see how 997 lines
 would work; they might try something like:
 
-		LINES=997 ./prog
+```sh
+    LINES=997 ./prog
+```
 
 What then? Well expect trouble; curses will not know any better and the max
 number of lines will be 997. If they were to do:
 
-		COLUMNS=997 ./prog
+```sh
+    COLUMNS=997 ./prog
+```
 
 Then they will see a different effect. Again the same reason: the player trying
 to be funny.
@@ -253,7 +265,9 @@ According to my tests for monochrome terminals the screen has the white and
 black background; if terminal is configured to be black background white
 foreground that is the order it is too. You can try that like:
 
-		TERM=linux-m ./prog
+```sh
+    TERM=linux-m ./prog
+```
 
 But I do not specifically check if the terminal has colours. Is there a curses
 implementation that has a problem here? Below I explain what to comment out
@@ -265,74 +279,90 @@ support in the source code itself.
 
 According to X/Open Curses, Issue 7 (pg. 57):
 
-	With init_pair() and pair_content(), the value of pair must be in a range
-	from 0 to and including COLOR_PAIRS-1. (There may be an
-	implementation-specific upper limit on the valid value of pair, but any such
-	limit is at least 63.) Valid values for f and b are the range from 0 to and
-	including COLORS-1.
+```
+    With init_pair() and pair_content(), the value of pair must be in a range
+    from 0 to and including COLOR_PAIRS-1. (There may be an
+    implementation-specific upper limit on the valid value of pair, but any such
+    limit is at least 63.) Valid values for f and b are the range from 0 to and
+    including COLORS-1.
+```
 
 The manpage for `init_pair()` says this:
 
-	       These limits apply to color values and color pairs.  Values outside these limits are not legal, and may result in a runtime error:
+```
+    These limits apply to color values and color pairs.  Values outside these limits are not legal, and may result in a runtime error:
 
-	       [...]
+    [...]
 
-		    COLOR_PAIRS corresponds to the terminal database's max_pairs capability, (see terminfo(5)).
+	COLOR_PAIRS corresponds to the terminal database's max_pairs capability, (see terminfo(5)).
+```
 
 Based on the two as well as the fact that monochrome terminals (I've tried under
 both Linux and macOS) seem to work fine I believe I am fine here too. And to
 confirm this I wrote the following code with the output below:
 
-	    #include <curses.h>
+```c
+    #include <curses.h>
 
-	    int main()
-	    {
-		initscr();
-		start_color();
-		printw("COLORS: %d\nCOLOR_PAIRS: %d\n", COLORS, COLOR_PAIRS);
-		getch();
-		endwin();
-	    }
+    int main()
+    {
+	initscr();
+	start_color();
+	printw("COLORS: %d\nCOLOR_PAIRS: %d\n", COLORS, COLOR_PAIRS);
+	getch();
+	endwin();
+    }
+```
 
-	    TERM=linux-m ./colour_pairs
-	    COLORS: 0
-	    COLOR_PAIRS: 0
+```sh
+    TERM=linux-m ./colour_pairs
+    COLORS: 0
+    COLOR_PAIRS: 0
+```
 
 Without specifying the TERM I get:
 
-	    COLORS: 256
-	    COLOR_PAIRS: 32767
+```
+    COLORS: 256
+    COLOR_PAIRS: 32767
+```
 
 In the case that colour is supported the standard states that there will be more
 possible colour pairs than I have used so that's not a problem either. Perhaps
 even it would only be a runtime error if the colours are supported and the
 number is out of the range? To try and figure this out I did another test:
 
-	    int main()
-	    {
-		initscr();
-		start_color();
+```c
+    int main()
+    {
+	initscr();
+	start_color();
 
-		init_pair(COLOR_PAIRS+1, COLOR_WHITE, COLOR_GREEN);
-		bkgd(COLOR_PAIR(COLOR_PAIRS+1));
-		init_pair(1, COLOR_WHITE, COLOR_BLACK);
-		attron(COLOR_PAIR(1));
-		printw("COLORS: %d\nCOLOR_PAIRS: %d\n", COLORS, COLOR_PAIRS);
+	init_pair(COLOR_PAIRS+1, COLOR_WHITE, COLOR_GREEN);
+	bkgd(COLOR_PAIR(COLOR_PAIRS+1));
+	init_pair(1, COLOR_WHITE, COLOR_BLACK);
+	attron(COLOR_PAIR(1));
+	printw("COLORS: %d\nCOLOR_PAIRS: %d\n", COLORS, COLOR_PAIRS);
 
-		getch();
-		endwin();
-	    }
+	getch();
+	endwin();
+    }
+```
 
 Running it like
 
-	    TERM=linux-m ./colour_pairs
+```sh
+    TERM=linux-m ./colour_pairs
+```
 
 I got the output as if colours weren't used: 0 and 0. With coloured terminals
 however it was not visible. If I however comment out the call to `bkgd()` I get
 instead:
 
-	    COLORS: 256
-	    COLOR_PAIRS: 32767
+```
+    COLORS: 256
+    COLOR_PAIRS: 32767
+```
 
 Which leads me to believe that if you try using a value outside the range it
 won't work for a colour-capable terminal but it doesn't matter for monochrome
@@ -350,7 +380,6 @@ you can also comment out the `init_pair()` calls.
 
 Perhaps you only need to add the `return;` to `C()`. My guess is that's the case
 but I do not know for certain.
-
 
 [HACKING.md]: HACKING.md
 [HACKING.html]: HACKING.html

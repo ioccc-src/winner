@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2020 otterness bugs](../../bugs.html#2020_otterness).
@@ -19,14 +19,14 @@ For more detailed information see [2020 otterness bugs](../../bugs.html#2020_ott
 ## To use:
 
 ```sh
-./prog
+    ./prog
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 Now play `output.mid` and `output2.mid` in an audio player that can play MIDI
@@ -75,12 +75,13 @@ Compile the program using the following command (I tested this using both
 `clang` and `gcc`):
 
 ```sh
-cc -pedantic -Wall -Werror -Wextra -O3 -o prog prog.c
+    cc -pedantic -Wall -Werror -Wextra -O3 -o prog prog.c
 ```
 
 The program expects a MIDI on `stdin`, and writes a modified MIDI to `stdout`:
+
 ```
-./prog <input.mid >output.mid
+    ./prog <input.mid >output.mid
 ```
 
 If the program encounters an error, no output will generally be produced, and

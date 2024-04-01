@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 The author provided an alternate version which has a simpler keyboard for the
@@ -11,22 +11,22 @@ monkey Eric. See [Alternate code](#alternate-code) below.
 ## To use:
 
 ```sh
-./weasel
+    ./weasel
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 
-# For those who believe in '"intelligent" design' or want to see how easy it is
-# to prove evolution is a proven fact:
-./id.sh
+    # For those who believe in '"intelligent" design' or want to see how easy it is
+    # to prove evolution is a proven fact:
+    ./id.sh
 
-# For those who want to see if Eric the monkey can type the word 'words' before
-# falling asleep or giving up:
-./monkey-words.sh
+    # For those who want to see if Eric the monkey can type the word 'words' before
+    # falling asleep or giving up:
+    ./monkey-words.sh
 ```
 
 NOTE: the [try.sh](try.sh) script will run the other two scripts but if the
@@ -48,7 +48,7 @@ about this under the [keyboards](#keyboards) section, briefly referred to in the
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -60,15 +60,15 @@ Use `weasel.alt` as you would `weasel` above.
 ### Alternate try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 
-# For those who believe in '"intelligent" design' or want to see how easy it is
-# to prove evolution is a proven fact:
-./id.alt.sh
+    # For those who believe in '"intelligent" design' or want to see how easy it is
+    # to prove evolution is a proven fact:
+    ./id.alt.sh
 
-# For those who want to see if Eric the monkey can type the word 'words' before
-# falling asleep or giving up:
-./monkey-words.alt.sh
+    # For those who want to see if Eric the monkey can type the word 'words' before
+    # falling asleep or giving up:
+    ./monkey-words.alt.sh
 ```
 
 NOTE: the [try.alt.sh](try.alt.sh) script will run the other two scripts but if the
@@ -81,7 +81,7 @@ make use of some of these.
 
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 You can reconfigure certain values. These are described by the author in more
@@ -108,7 +108,7 @@ while using more Cenozoic minded code migration, read [rpm.html](rpm.html).
 If you find yourself in an evolutionary dead end, try:
 
 ```sh
-man ./weasel.1
+    man ./weasel.1
 ```
 
 
@@ -140,7 +140,7 @@ if you want a quick rundown of the entry try what they suggest and view the man
 page (it explains all the options and describes the program briefly):
 
 ```sh
-man ./weasel.man
+    man ./weasel.man
 ```
 
 If that isn't sufficient **I would recommend reading this section** *(and
@@ -378,8 +378,9 @@ the target string (see below).
 
 **Enable quiet output:**
 
-	    -q
-
+```
+    -q
+```
 
 This means don't print the generation and offspring output; only print (some) of
 the options set (this is always done but wouldn't usually be seen due to verbose
@@ -387,16 +388,20 @@ output) and the final answer.
 
 **Change the mutation rate to `<rate>`:**
 
-	    -r<num>
+```
+    -r<num>
+```
 
 Please note that there cannot be a space between the `-r` and the number.
 This is to simplify the parsing of options. As for combining options you can do
 any of the following (amongst others):
 
-	    -r5q
-	    -qr5
-	    -qr
-	    -q -r5
+```
+    -r5q
+    -qr5
+    -qr
+    -q -r5
+```
 
 The third invocation will set quiet output and have no valid value to parse for
 the mutation rate and `strtol()` in this case returns 0. `strtol()` can
@@ -412,14 +417,18 @@ following:
 
 1.  Enable quiet mode and set an invalid mutation range; for example specify:
 
-	    -qr101
+```
+    -qr101
+```
 
 2.  Take a look at the first few lines. Kill the program and try invoking it
 with the following options:
 
 
-	    -qr5
-\
+```
+    -qr5
+```
+
 3.  Look at the first few lines again and compare it to the output of step \#1.
 With the default string most modern systems shouldn't take much time to - given
 decent parameters - come to an answer here but if necessary kill the program.
@@ -436,25 +445,25 @@ specially by your shell e.g. parentheses. For instance if you just want to find
 `METHINKS` you could do one of:
 
 ```sh
-./weasel METHINKS
-./weasel "METHINKS"
-./weasel 'METHINKS'
+    ./weasel METHINKS
+    ./weasel "METHINKS"
+    ./weasel 'METHINKS'
 ```
 
 If you wanted `YOU ARE A MONKEY`:
 
 ```sh
-./weasel "YOU ARE A MONKEY"
-./weasel 'YOU ARE A MONKEY'
+    ./weasel "YOU ARE A MONKEY"
+    ./weasel 'YOU ARE A MONKEY'
 ```
 
 If you do one of:
 
 ```sh
-./weasel "METHINKS IT IS A" "MONKEY"
-./weasel METHINKS IT IS A MONKEY
+    ./weasel "METHINKS IT IS A" "MONKEY"
+    ./weasel METHINKS IT IS A MONKEY
 ```
-\
+
 It will search for `MONKEY` in both cases; in other words it's the last one.
 If the string is too long given the value of `S` (see\
 **[How to build](#build)**) it will be truncated.
@@ -464,15 +473,15 @@ disable further parsing of options by using the `-` option itself; for
 example if you were to do any of:
 
 ```sh
-./weasel -q- -- -test
-./weasel -q- -test
-./weasel -q -- -test
+    ./weasel -q- -- -test
+    ./weasel -q- -test
+    ./weasel -q -- -test
 ```
 
 The target string will be: `-TEST`. This means though that here:
 
 ```sh
-./weasel -q -- -test -r5
+    ./weasel -q -- -test -r5
 ```
 
 The string to be searched would actually be `-r5` and the mutation rate
@@ -482,13 +491,15 @@ command line. Because of the joining of arguments this means that the first two
 examples of the last set of three above are equivalent i.e. the following two
 are equivalent:
 
-	    -q-\
-	    -q --
-\
+```
+    -q-\
+    -q --
+```
+
 As for the caveat I referenced what does the following do?
 
 ```sh
-./weasel -qr 5
+    ./weasel -qr 5
 ```
 
 In fact it will set quiet output and set the target string to be '5'. So the
@@ -500,27 +511,27 @@ the other options are in the command line it might still parse the options. Thus
 you have:
 
 ```sh
-$ ./weasel -qr-r5
-quiet output
-mutation rate out of range
-target 'METHINKS IT IS LIKE A WEASEL'
-mutation rate 5
-Generation  440 Offspring 20: METHINKS IT IS LIKE A WEASEL
+    $ ./weasel -qr-r5
+    quiet output
+    mutation rate out of range
+    target 'METHINKS IT IS LIKE A WEASEL'
+    mutation rate 5
+    Generation  440 Offspring 20: METHINKS IT IS LIKE A WEASEL
 ```
 
 Similarly this would set quiet output, then an invalid mutation rate and then a
 mutation rate of 5:
 
 ```sh
-./weasel --qrr5
+    ./weasel --qrr5
 ```
 
 
 If you were instead to do one of (for example):
 
 ```sh
-./weasel -q -- -r
-./weasel -q -q- -r
+    ./weasel -q -- -r
+    ./weasel -q -q- -r
 ```
 
 Then it *would* set quiet output then see the `--` (the `-` option
@@ -558,15 +569,15 @@ requested?  There are at least two ways to go about it: I took the monkey safe
 it in the same invocation of `weasel`!
 
 ```sh
-$ ./weasel -qr101r5r101r1r test
-quiet output
-mutation rate out of range
-mutation rate out of range
-mutation rate out of range
-target 'test'
-mutation rate 0
-monkey at typewriter
-Generation 16844        Offspring 22: TEST
+    $ ./weasel -qr101r5r101r1r test
+    quiet output
+    mutation rate out of range
+    mutation rate out of range
+    mutation rate out of range
+    target 'test'
+    mutation rate 0
+    monkey at typewriter
+    Generation 16844        Offspring 22: TEST
 ```
 
 So in this case I joined the options in the following order:
@@ -623,12 +634,12 @@ in monkey mode.
 Another example:
 
 ```sh
-$ ./weasel -q -r101 test -r5
-quiet output
-mutation rate out of range
-target 'test'
-mutation rate 5
-Generation  109 Offspring 13: TEST
+    $ ./weasel -q -r101 test -r5
+    quiet output
+    mutation rate out of range
+    target 'test'
+    mutation rate 5
+    Generation  109 Offspring 13: TEST
 ```
 
 In this case I also enabled quiet mode but I didn't join the options; the
@@ -639,13 +650,13 @@ which means that it'll use the genetic algorithm.
 One more example of monkey mode:
 
 ```sh
-$ ./weasel -q -mr101 test -r5
-quiet output
-mutation rate out of range
-target 'test'
-mutation rate 5
-monkey at typewriter
-Generation 465298       Offspring 10: TEST
+    $ ./weasel -q -mr101 test -r5
+    quiet output
+    mutation rate out of range
+    target 'test'
+    mutation rate 5
+    monkey at typewriter
+    Generation 465298       Offspring 10: TEST
 ```
 
 Here I also requested quiet output and then *explicitly requested that Eric the
@@ -661,15 +672,19 @@ When the program prints out each iteration (I'll give an example next) it goes a
 lot slower; this makes sense because it's an expensive operation. Here are the
 times for the same but without quiet output enabled:
 
-	    real    0m17.065s
-	    user    0m1.245s
-	    sys     0m2.402s
+```
+    real    0m17.065s
+    user    0m1.245s
+    sys     0m2.402s
+```
 
 Whereas with quiet output:
 
-	    real    0m0.127s
-	    user    0m0.125s
-	    sys     0m0.001s
+```
+    real    0m0.127s
+    user    0m0.125s
+    sys     0m0.001s
+```
 
 Of course it isn't only down to the printing but the point is it slows it down
 significantly. Adding an option to print every X lines would go over the limit
@@ -679,29 +694,29 @@ Finally I'll show a default example in normal output (I omit many lines showing
 instead **[...]**). Note that the real/user/sys times are from the `time`
 bash shell built-in utility: that isn't output from my entry.
 
+```
+    target 'METHINKS IT IS LIKE A WEASEL'
+    mutation rate 1
+    Generation    0 Offspring  1: 4V YGY.GH/}_|>Q1M.R8;KD[=(05
+    Generation    0 Offspring  2: Y_^S0_HZ399^/|9,MP%^{817"XX#
+    Generation    0 Offspring  3: F%88H1&[V1P>QOI}- U]0[V-Y%*[
+    [...]
+    Generation    1 Offspring 23: AHA#.\=ZT'0>?~-S.;1A L|1<S:^ -> AHA#.\=ZT'0>?~-S.;1A L|1<S:| (mutation)
+    Generation    1 Offspring 24: AHA#.\=ZT'0>?~-S.;1A L|1<S:^ -> AHA#.\=ZT'0>?~-S.;1A L|1<S:^ (mutation)
+    Generation    1 Offspring 25: AHA#.\=ZT'0>?~-S.;1A L|1<S:^ -> AHA#1\=ZT'0>?~-S.;1A L|1<S:^ (mutation)
+    **
+    Generation    2 Offspring  1: AHA#.\=ZT'0>?~-S.;1A L|1<S:^ -> AHA#.\=ZT'0>?~-S.;1A L|1<S:^ (mutation)
+    Generation    2 Offspring  2: AHA#.\=ZT'0>?~-S.;1A L|1<S:^ -> AHA#.\=ZT'O>?~-S.;1A L|1<S:^ (mutation)
+    [...]
+    Generation  979 Offspring  1: METHINKS ITZIS LIKE A WEASEL -> METHINKS IT IS LIKE A WEASEL (mutation)
+    [...]
+    **
+    Generation  979 Offspring  1: METHINKS IT IS LIKE A WEASEL
 
-	    target 'METHINKS IT IS LIKE A WEASEL'
-	    mutation rate 1
-	    Generation    0 Offspring  1: 4V YGY.GH/}_|>Q1M.R8;KD[=(05
-	    Generation    0 Offspring  2: Y_^S0_HZ399^/|9,MP%^{817"XX#
-	    Generation    0 Offspring  3: F%88H1&[V1P>QOI}- U]0[V-Y%*[
-	    [...]
-	    Generation    1 Offspring 23: AHA#.\=ZT'0>?~-S.;1A L|1<S:^ -> AHA#.\=ZT'0>?~-S.;1A L|1<S:| (mutation)
-	    Generation    1 Offspring 24: AHA#.\=ZT'0>?~-S.;1A L|1<S:^ -> AHA#.\=ZT'0>?~-S.;1A L|1<S:^ (mutation)
-	    Generation    1 Offspring 25: AHA#.\=ZT'0>?~-S.;1A L|1<S:^ -> AHA#1\=ZT'0>?~-S.;1A L|1<S:^ (mutation)
-	    **
-	    Generation    2 Offspring  1: AHA#.\=ZT'0>?~-S.;1A L|1<S:^ -> AHA#.\=ZT'0>?~-S.;1A L|1<S:^ (mutation)
-	    Generation    2 Offspring  2: AHA#.\=ZT'0>?~-S.;1A L|1<S:^ -> AHA#.\=ZT'O>?~-S.;1A L|1<S:^ (mutation)
-	    [...]
-	    Generation  979 Offspring  1: METHINKS ITZIS LIKE A WEASEL -> METHINKS IT IS LIKE A WEASEL (mutation)
-	    [...]
-	    **
-	    Generation  979 Offspring  1: METHINKS IT IS LIKE A WEASEL
-
-	    real    0m0.074s
-	    user    0m0.040s
-	    sys     0m0.001s
-
+    real    0m0.074s
+    user    0m0.040s
+    sys     0m0.001s
+```
 
 Keep in mind the way I display the generations and the fact that generation 0
 has no parents; it is generation 1 that starts working towards the goal. You'll
@@ -716,12 +731,14 @@ One final thing to consider is that **the program doesn't directly read from a
 file**. This combined with the way the shell works could possibly confuse some
 people. Take the following invocations:
 
-	    (1) $ echo test > test
-	    (2) $ ./weasel test
-	    (3) $ ./weasel < test
-	    (4) $ cat test | ./weasel\
-	    (5) $ < test-strings.txt ./weasel
-	    (6) $ cat | ./weasel
+```
+    (1) $ echo test > test
+    (2) $ ./weasel test
+    (3) $ ./weasel < test
+    (4) $ cat test | ./weasel\
+    (5) $ < test-strings.txt ./weasel
+    (6) $ cat | ./weasel
+```
 
 Only the first invocation of `./weasel` will search for `TEST` because
 the string `test` was explicitly passed to the program (If the file `test`
@@ -752,18 +769,17 @@ file and pass each string to the program itself*. I've included a script
 `test.sh` and a file of sample input `test-strings.txt` that you can play
 with.
 
-
 Try:
 
 ```sh
-make test
+    make test
 ```
 
 This will essentially make sure the program is compiled and then do:
 
 ```sh
-chmod +x test.sh
-./test.sh
+    chmod +x test.sh
+    ./test.sh
 ```
 
 The script will first try compiling the program (if necessary) and if it fails
@@ -778,7 +794,7 @@ You can pass additional options directly to the script but remember that it
 stops when there are no more strings in the file - so if you try:
 
 ```sh
-./test.sh -q test
+    ./test.sh -q test
 ```
 
 The final string `test` won't be searched for; it will however run the program
@@ -810,11 +826,11 @@ keyboard doesn't have `'\n'` if you were to type a `'` and send a
 `'\n'` before the closing `'` you might see something like:
 
 ```sh
-$ ./weasel '!!
-> '
+    $ ./weasel '!!
+    > '
 
-'
-' not in keyboard " !"#$<%:>&'()*+,-./0123456789;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`{|}~"
+    '
+    ' not in keyboard " !"#$<%:>&'()*+,-./0123456789;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`{|}~"
 ```
 
 I showed that `'` is in the keyboard already; however the user sent a
@@ -843,9 +859,9 @@ as well as some C keywords.
 2.  The way `main()` is declared is:
 
 ```c
-/* Special C main() handler (encapsulation): */
-#define r(main) main
-r(k main(k a, E **V)) {
+    /* Special C main() handler (encapsulation): */
+    #define r(main) main
+    r(k main(k a, E **V)) {
 ```
 
     It appears to be recursively defined but is it? And is it truly
@@ -937,7 +953,7 @@ The Makefile simplifies how to reconfigure this value with the variable
 `MAX_SIZE`:
 
 ```sh
-make clobber MAX_SIZE=55 all
+    make clobber MAX_SIZE=55 all
 ```
 
 The next macro that can be reconfigured, `M` (or `MAX_ATTEMPTS` in the
@@ -950,7 +966,7 @@ The Makefile simplifies how to reconfigure this value with the variable
 `MAX_ATTEMPTS`:
 
 ```sh
-make clobber MAX_ATTEMPTS=100 all
+    make clobber MAX_ATTEMPTS=100 all
 ```
 
 The final macro, `N` (or `OFFSPRING` in the Makefile), is the number of offspring
@@ -967,7 +983,7 @@ The Makefile simplifies how to reconfigure this value with the variable
 `OFFSPRING`:
 
 ```sh
-make clobber OFFSPRING=55 all
+    make clobber OFFSPRING=55 all
 ```
 
 
@@ -978,7 +994,7 @@ Skip to [Portability](#portability).
 The following options **must always be passed to the compiler:**
 
 ```sh
--DQ='typedef' -D'g(o)'='goto o;' -D'w(x)'="x:" -D'H(main)'='r(main)'
+    -DQ='typedef' -D'g(o)'='goto o;' -D'w(x)'="x:" -D'H(main)'='r(main)'
 ```
 
 which running `make` will always do.
@@ -988,13 +1004,13 @@ If you want to increase the number of offspring to `50` (`N`) and the size of th
 chromosome to `75` (`S`) you would do:
 
 ```sh
-make clobber OFFSPRING=50 MAX_SIZE=75 everything
+    make clobber OFFSPRING=50 MAX_SIZE=75 everything
 ```
 
 If you wanted to change `N` to `3`:
 
 ```sh
-make clobber OFFSPRING=3 everything
+    make clobber OFFSPRING=3 everything
 ```
 
 Remember that it cannot be less than `3`; *more correctly if it's less than
@@ -1005,7 +1021,7 @@ result. Remember too that `S` (`MAX_SIZE`) cannot be less than `38`. Both `S` an
 If you wanted to change the maximum number attempts to 100 you could do:
 
 ```sh
-make clobber MAX_ATTEMPTS=100 everything
+    make clobber MAX_ATTEMPTS=100 everything
 ```
 
 
@@ -1023,40 +1039,40 @@ Originally I tested it on the below systems.
 #### Fedora 26:
 
 ```sh
-$ clang --version|head -n1
-clang version 4.0.1 (tags/RELEASE_401/final)
-$ gcc --version|head -n1
-gcc (GCC) 7.3.1 20180130 (Red Hat 7.3.1-2)
-$ /lib64/libc-2.25.so |head -n1|cut -d',' -f1-1
-GNU C Library (GNU libc) stable release version 2.25
-$ lscpu |grep Endian
-Byte Order:          Little Endian
+    $ clang --version|head -n1
+    clang version 4.0.1 (tags/RELEASE_401/final)
+    $ gcc --version|head -n1
+    gcc (GCC) 7.3.1 20180130 (Red Hat 7.3.1-2)
+    $ /lib64/libc-2.25.so |head -n1|cut -d',' -f1-1
+    GNU C Library (GNU libc) stable release version 2.25
+    $ lscpu |grep Endian
+    Byte Order:          Little Endian
 ```
 
 #### CentOS Linux release 7.4.1708 (Core)
 
 ```sh
-$ clang --version|head -n1
-clang version 3.4.2 (tags/RELEASE_34/dot2-final)
-$ gcc --version|head -n1
-gcc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-16)
-$ /lib64/libc-2.17.so |head -n1 |cut -d, -f1-1
-GNU C Library (GNU libc) stable release version 2.17
-$ lscpu |grep Endian
-Byte Order:            Little Endian
+    $ clang --version|head -n1
+    clang version 3.4.2 (tags/RELEASE_34/dot2-final)
+    $ gcc --version|head -n1
+    gcc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-16)
+    $ /lib64/libc-2.17.so |head -n1 |cut -d, -f1-1
+    GNU C Library (GNU libc) stable release version 2.17
+    $ lscpu |grep Endian
+    Byte Order:            Little Endian
 ```
 
 #### Fedora 27:
 
 ```sh
-$ clang --version|head -n1
-clang version 5.0.1 (tags/RELEASE_501/final)
-$ gcc --version|head -n1
-gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
-$ /lib64/libc-2.26.so |head -n1|cut -d, -f1-1
-GNU C Library (GNU libc) stable release version 2.26
-$ lscpu |grep Endian
-Byte Order:          Little Endian
+    $ clang --version|head -n1
+    clang version 5.0.1 (tags/RELEASE_501/final)
+    $ gcc --version|head -n1
+    gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
+    $ /lib64/libc-2.26.so |head -n1|cut -d, -f1-1
+    GNU C Library (GNU libc) stable release version 2.26
+    $ lscpu |grep Endian
+    Byte Order:          Little Endian
 ```
 
 #### macOS:
@@ -1065,14 +1081,14 @@ System Version: macOS 10.13.4 (17E199)
 Kernel Version: Darwin 17.5.0
 
 ```sh
-$ gcc -v
-Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
-Apple LLVM version 9.1.0 (clang-902.0.39.1)
-Target: x86_64-apple-darwin17.5.0
-Thread model: posix
-InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-$ uname -srmv
-Darwin 17.5.0 Darwin Kernel Version 17.5.0: Mon Mar  5 22:24:32 PST 2018; root:xnu-4570.51.1~1/RELEASE_X86_64 x86_64
+    $ gcc -v
+    Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+    Apple LLVM version 9.1.0 (clang-902.0.39.1)
+    Target: x86_64-apple-darwin17.5.0
+    Thread model: posix
+    InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+    $ uname -srmv
+    Darwin 17.5.0 Darwin Kernel Version 17.5.0: Mon Mar  5 22:24:32 PST 2018; root:xnu-4570.51.1~1/RELEASE_X86_64 x86_64
 ```
 
 #### <a name="bugs">An aside</a>
@@ -1194,8 +1210,8 @@ additional cryptic features and evolved into B, BCPL, and finally C. We stopped
 when we got a clean compile on the following syntax:
 
 ```c
-for(;P("\n"),R=;P("|"))for(e=C;e=P("_"+(*u++/
-8)%2))P("|"+(*u/4)%2);
+    for(;P("\n"),R=;P("|"))for(e=C;e=P("_"+(*u++/
+    8)%2))P("|"+(*u/4)%2);
 ```
 
 > "To think that modern programmers would try to use a language that allowed
@@ -1237,10 +1253,10 @@ it's a bad thing; **on the contrary it makes all of us C programmers even more
 talented! :)** I do wonder if he tested that bit of C code though:
 
 ```c
-for(;P("\n"),R=;P("|"))for(e=C;e=P("_"+(*u++/
-8)%2))P("|"+(*u/4)%2);
+    for(;P("\n"),R=;P("|"))for(e=C;e=P("_"+(*u++/
+    8)%2))P("|"+(*u/4)%2);
 ```
-\
+
 How is `R=;` valid? Since I don't have the context maybe there is something
 I'm missing but either way it's a funny piece. It could also be for irony itself
 (actually I had previously thought of somehow implementing something like that

@@ -4,9 +4,9 @@ Morse codes for letters and digits use sequences of 1 to 5 (inclusive)
 Morse symbols (denoted as `.` or `-`), e.g.
 
 ```
-E .
-Z --..
-3 ...--
+    E .
+    Z --..
+    3 ...--
 ```
 
 (BTW: digits always have 5 symbols, letters 1 to 4.  I didn't use this fact.)
@@ -23,9 +23,9 @@ The least significant bit contains the first symbol of a Morse code, so
 we have
 
 ```
-E > 0......1
-Z > 0...1100
-3 > 0..00111
+    E > 0......1
+    Z > 0...1100
+    3 > 0..00111
 ```
 
 The dots still have to be determined.  But we also need to encode the
@@ -33,9 +33,9 @@ length of the sequence.  Since there are only 4 different kind of lengths,
 two bits would suffice, e.g.
 
 ```
-E > 000....1
-Z > 010.1100
-3 > 01100111
+    E > 000....1
+    Z > 010.1100
+    3 > 01100111
 ```
 
 That means bits 6 and 5 set to 00 is length 1, set to 01 is length 2, etc.
@@ -43,30 +43,30 @@ But this would mean that we would have to extract the length into a
 counter before shifting out each symbol, such as
 
 ```c
-length = (encoding & 96) >> 5;
-do {
-	putchar(encoding & 1 ? '-' : '.');
-	encoding >>= 1;
-} while (length--);
+    length = (encoding & 96) >> 5;
+    do {
+	    putchar(encoding & 1 ? '-' : '.');
+	    encoding >>= 1;
+    } while (length--);
 ```
 
 We can also use the remaining bits to *include* the counter
 
 ```
-length 1: 00000.1x     E > 00000.11
-length 2: 0000.1xx
-length 3: 000.1xxx
-length 4: 00.1xxxx     Z > 00.11100
-length 5: 0.1xxxxx     3 > 0.100111
+    length 1: 00000.1x     E > 00000.11
+    length 2: 0000.1xx
+    length 3: 000.1xxx
+    length 4: 00.1xxxx     Z > 00.11100
+    length 5: 0.1xxxxx     3 > 0.100111
 ```
 
 with 1 bit still to be chosen freely (let's assume it is 0).  Now we can do
 
 ```c
-do {
-	putchar(encoding & 1 ? '-' : '.');
-	encoding >>= 1;
-while (encoding > 1);
+    do {
+	    putchar(encoding & 1 ? '-' : '.');
+	    encoding >>= 1;
+    while (encoding > 1);
 ```
 
 As you see, the encoded Morse sequence can be the counter itself. But
@@ -76,11 +76,11 @@ the initializing (encoding) string awkward.  Hence I came up with the
 following
 
 ```
-length 1: 0010010x     E > 00100101  (= '%')
-length 2: 001010xx
-length 3: 00110xxx
-length 4: 0100xxxx     Z > 01001100  (= 'L')
-length 5: 011xxxxx     3 > 01100111  (= 'g')
+    length 1: 0010010x     E > 00100101  (= '%')
+    length 2: 001010xx
+    length 3: 00110xxx
+    length 4: 0100xxxx     Z > 01001100  (= 'L')
+    length 5: 011xxxxx     3 > 01100111  (= 'g')
 ```
 
 Notice these encodings in the initialization string.  Only the coding for
@@ -88,10 +88,10 @@ Notice these encodings in the initialization string.  Only the coding for
 is encoded still allows the encoding to be its own counter:
 
 ```c
-do {
-	putchar(encoding & 1 ? '-' : '.');
-	encoding = (encoding + 32) >> 1;
-} while (encoding > 35);
+    do {
+	    putchar(encoding & 1 ? '-' : '.');
+	    encoding = (encoding + 32) >> 1;
+    } while (encoding > 35);
 ```
 
 The last shift will always result in `00100010`, hence the test for `>35`.
@@ -102,7 +102,7 @@ The character `'-'` (ASCII 45) and `'.'` (ASCII 46) are conveniently in
 sequence, so the putchar can simply be
 
 ```c
-putchar(45 + encoding % 2);
+    putchar(45 + encoding % 2);
 ```
 
 I used the modulo operator this time, because `+` takes precedence over `&`.
@@ -111,7 +111,7 @@ The assignment can be incorporated into the `while` control test, and a
 as a `while` loop with a comma operator in the test:
 
 ```c
-while(putchar(45 + encoding % 2), encoding = encoding + 32 >> 1);
+    while(putchar(45 + encoding % 2), encoding = encoding + 32 >> 1);
 ```
 
 Voila.
@@ -144,22 +144,22 @@ this way, I hope you'll forgive me.
 The outline of the program is roughly as follows
 
 ```
-while (more lines) {
-	if (line is in morse) {
-		while (more characters) {
-			skip next sequence
-			if (' ')
-				putchar(' ');
-			else
-				decode_sequence; /* backwards */
-		}
-	} else {
-		while (more characters) {
-			if (isalnum)
-				encode_character;
-			putchar(' ');
-		}
-	}
+    while (more lines) {
+	    if (line is in morse) {
+		    while (more characters) {
+			    skip next sequence
+			    if (' ')
+				    putchar(' ');
+			    else
+				    decode_sequence; /* backwards */
+		    }
+	    } else {
+		    while (more characters) {
+			    if (isalnum)
+				    encode_character;
+			    putchar(' ');
+		    }
+	    }
 ```
 
 Because of the *two* `while(more characters)` loops are the same, I've
@@ -179,13 +179,13 @@ mind ;-)
 Summary of the use of l[999]:
 
 ```
-l[0]            result of "is this line in morse" test
-l[0]            temporary shift during encoding
-l[0]  - l[33]   Morse codings (letters and digits, plus garbage)
-l[11] - l[14]   strspn argument
-l[12] - l[14]   strspn argument
-l[34]           terminator for backward decoding
-l[35] - l[998]  input line
+    l[0]            result of "is this line in morse" test
+    l[0]            temporary shift during encoding
+    l[0]  - l[33]   Morse codings (letters and digits, plus garbage)
+    l[11] - l[14]   strspn argument
+    l[12] - l[14]   strspn argument
+    l[34]           terminator for backward decoding
+    l[35] - l[998]  input line
 ```
 
 ---

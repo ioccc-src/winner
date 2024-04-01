@@ -1,22 +1,22 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./schneiderwent
+    ./schneiderwent
 ```
 
 
 ## Try:
 
 ```sh
-./schneiderwent schneiderwent.data
-./schneiderwent
+    ./schneiderwent schneiderwent.data
+    ./schneiderwent
 ```
 
 What's the difference?
@@ -25,7 +25,7 @@ If you have a long while to spare (and you're bored enough that you could watch
 paint dry :-) ) you might also try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 Alternatively, you can check on it later on, to see all the entry does. Or if
@@ -34,7 +34,7 @@ iterations and how many iterations it runs. For instance to make it sleep only
 30 seconds and run only twice:
 
 ```sh
-SLEEP=30 ITERATIONS=2 ./try.sh
+    SLEEP=30 ITERATIONS=2 ./try.sh
 ```
 
 

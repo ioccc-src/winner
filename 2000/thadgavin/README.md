@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make alt
+    make alt
 ```
 
 NOTE: if you don't have curses or SDL1 installed both modes will fail to compile. In
@@ -17,7 +17,7 @@ looked like back in 2000 (with a configurable speed). See the
 ## To use:
 
 ```sh
-./thadgavin.alt
+    ./thadgavin.alt
 ```
 
 You can press 'q' at any time to exit.
@@ -28,7 +28,7 @@ You can press 'q' at any time to exit.
 If you have SDL1 installed:
 
 ```sh
-./thadgavin_sdl
+    ./thadgavin_sdl
 ```
 
 Whereas the curses version has an early exit the SDL version does not. You will
@@ -44,13 +44,13 @@ microseconds) for the SDL version.
 To change the SDL one to something like `15000` you can do:
 
 ```sh
-make SDL_SLEEP=15000 clobber alt
+    make SDL_SLEEP=15000 clobber alt
 ```
 
 and to change the curses one to `40`:
 
 ```sh
-make SLEEP=40 clobber alt
+    make SLEEP=40 clobber alt
 ```
 
 Then use the program(s) in the same way.
@@ -76,14 +76,14 @@ is not a problem there.
 ### Original build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ### Original use:
 
 ```sh
-./thadgavin
+    ./thadgavin
 ```
 
 
@@ -92,7 +92,7 @@ make all
 If you have SDL1 installed:
 
 ```sh
-./thadgavin_sdl
+    ./thadgavin_sdl
 ```
 
 
@@ -111,14 +111,14 @@ less than dazzling. We could not test this entry in DOS mode.
 Compile using DJGPP as follows:
 
 ```sh
-gcc thadgavin.c -o thadgavin.exe -Wall -lm -O6 -mpentium -fomit-frame-pointer -ffast-math
+    gcc thadgavin.c -o thadgavin.exe -Wall -lm -O6 -mpentium -fomit-frame-pointer -ffast-math
 ```
 
 
 ### To use under Windows, X-Windows or macOS using the Simple DirectMedia Layer:
 
 ```sh
-gcc -O6 -lpthread -g -o thadgavin thadgavin.c -lSDL -DSDL -lm
+    gcc -O6 -lpthread -g -o thadgavin thadgavin.c -lSDL -DSDL -lm
 ```
 
 
@@ -126,7 +126,7 @@ gcc -O6 -lpthread -g -o thadgavin thadgavin.c -lSDL -DSDL -lm
 
 
 ```sh
-gcc -O6 -lpthread -g -o thadgavin thadgavin.c -lncurses -lm
+    gcc -O6 -lpthread -g -o thadgavin thadgavin.c -lncurses -lm
 ```
 
 
@@ -135,18 +135,17 @@ gcc -O6 -lpthread -g -o thadgavin thadgavin.c -lncurses -lm
 In gcc you might get the following warning:
 
 ```
-thadgavin.c.c:46: warning: passing arg 2 of `SDL_SetColors' from incompatible pointer type
+    thadgavin.c.c:46: warning: passing arg 2 of `SDL_SetColors' from incompatible pointer type
 ```
 
 In Microsoft Visual Studio you may get warnings as follows:
 
 ```
-thadgavin.c(46) : warning C4133: 'function' : incompatible types - from 'unsigned
-char *' to 'struct SDL_Color *'
-thadgavin.c(63) : warning C4026: function declared with formal parameter list
-thadgavin.c(77) : warning C4244: '=' : conversion from 'double ' to 'unsigned
-char ', possible loss of data
-
+    thadgavin.c(46) : warning C4133: 'function' : incompatible types - from 'unsigned
+    char *' to 'struct SDL_Color *'
+    thadgavin.c(63) : warning C4026: function declared with formal parameter list
+    thadgavin.c(77) : warning C4244: '=' : conversion from 'double ' to 'unsigned
+    char ', possible loss of data
 ```
 
 But don't worry, this is completely normal.

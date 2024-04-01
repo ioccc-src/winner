@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 There is an alternate version, the original, that can't be compiled in modern
@@ -12,7 +12,7 @@ code](#alternate-code) below.
 ## To use:
 
 ```sh
-./isaak
+    ./isaak
 ```
 
 
@@ -22,7 +22,7 @@ The original version of this code is in [isaak.alt.c](isaak.alt.c).
 The original entry starts with the line:
 
 ```c
-main(){};
+    main(){};
 ```
 
 This works on some systems.  Why?  Note that `#include <stdio.h>` is given on
@@ -38,7 +38,7 @@ compile.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 Use `isaak.alt` as you would `isaak` above.
@@ -65,8 +65,8 @@ due to the fact that BSD style systems have an `sprintf(3)` that returns a `char
 file: isaak.encode.  To read this file do.
 
 ```sh
-uudecode < isaak.encode
-cat isaak.output
+    uudecode < isaak.encode
+    cat isaak.output
 ```
 
 Since this was fixed, this file is not strictly necessary. See the

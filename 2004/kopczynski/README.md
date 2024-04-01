@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 NOTE: We FORCE the use of -O0 even if someone overrides it because this entry
@@ -11,14 +11,14 @@ will not work with it enabled.
 ## To use:
 
 ```sh
-./kopczynski < input_file
+    ./kopczynski < input_file
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 What happens if you feed the program source to the program? Can you figure out
@@ -35,15 +35,15 @@ does.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
 ### Alternate try:
 
 ```sh
-./kopczynski.alt < kopczynski-10
-echo $?
+    ./kopczynski.alt < kopczynski-10
+    echo $?
 ```
 
 
@@ -182,12 +182,12 @@ not the top left one.) The following messages will also work instead of `has
 dirtiest IF`:
 
 ```
-HighlandYachter
-TestDirtiestTen
-has lintiest IF
-TighterLaughter
-HustlerDaughter
-TighterDemoThen
+    HighlandYachter
+    TestDirtiestTen
+    has lintiest IF
+    TighterLaughter
+    HustlerDaughter
+    TighterDemoThen
 ```
 
 They can be mixed, of course!

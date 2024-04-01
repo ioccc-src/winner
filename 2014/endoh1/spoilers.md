@@ -19,7 +19,7 @@ It is known that we can mitigate the quine restriction by `eval`.
 For example, this is a quine written in Ruby:
 
 ```ruby
-eval s="print 'eval s='; p s"
+    eval s="print 'eval s='; p s"
 ```
 
 Note that `print` appears just once in the program.
@@ -27,8 +27,8 @@ Note that `print` appears just once in the program.
 To emulate this approach in C, I adopted the following structure.
 
 ```
-char s[]="<main code>int main() { <VM code> }";
-int main() { <VM code>; }
+    char s[]="<main code>int main() { <VM code> }";
+    int main() { <VM code>; }
 ```
 
 * `<VM code>` : An own VM implementation (written in C) that executes the main
@@ -78,37 +78,37 @@ renaming and automatic register allocation only for this purpose.
 The compiler tool chain is the following.
 
 ```
-src.rb              interp.c
-  |                   |
-  | [parse.rb]        |
-  V                   |
-ast.txt               |
-  |                   |
-  | [serialize.rb]    |
-  V                   |
-seq.txt               |
-  |                   |
-  | [alpha.rb]        |
-  V                   |
-alpha.txt             |
-  |                   |
-  | [register.rb]     |
-  V                   |
-reg.txt               |
-  |                   |
-  | [assemble.rb]     |
-  V                   |
-raw.txt               |
-  |                   |
-  +---------+---------+
-	    |
-	    | [link.rb]
-	    V
-	  main.c
-	    |
-	    | [gen-prog.c]
-	    V
-	  prog.c
+    src.rb              interp.c
+      |                   |
+      | [parse.rb]        |
+      V                   |
+    ast.txt               |
+      |                   |
+      | [serialize.rb]    |
+      V                   |
+    seq.txt               |
+      |                   |
+      | [alpha.rb]        |
+      V                   |
+    alpha.txt             |
+      |                   |
+      | [register.rb]     |
+      V                   |
+    reg.txt               |
+      |                   |
+      | [assemble.rb]     |
+      V                   |
+    raw.txt               |
+      |                   |
+      +---------+---------+
+		|
+		| [link.rb]
+		V
+	      main.c
+		|
+		| [gen-prog.c]
+		V
+	      prog.c
 ```
 
 * [parse.rb](parse.rb) converts Ruby to AST.
@@ -123,8 +123,8 @@ raw.txt               |
 You can run the process by `rake` command.  `ruby-minisat` gem is needed.
 
 ```sh
-$ gem install ruby-minisat
-$ rake
+    $ gem install ruby-minisat
+    $ rake
 ```
 
 ## Tools
@@ -146,13 +146,13 @@ but it appears to no longer exist.
 You can use [tool.rb](tool.rb) to convert the output to a png file.
 
 ```sh
-./main Hello | ruby tool.rb > hello.png
+    ./main Hello | ruby tool.rb > hello.png
 
-$ zbarimg -q hello.png
-QR-Code:Hello
+    $ zbarimg -q hello.png
+    QR-Code:Hello
 
-$ ruby tool.rb prog.c
-$ ruby tool.rb prog.c | ruby tool.rb
+    $ ruby tool.rb prog.c
+    $ ruby tool.rb prog.c | ruby tool.rb
 ```
 
 

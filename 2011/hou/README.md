@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./hou 'expression'
+    ./hou 'expression'
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 As the script asks you, what does the last one mean? Can you get it to report a
@@ -33,8 +33,8 @@ source code. What does it mean?
 The calculator obeys the precedence rules and allows parenthesis.
 
 ```sh
-./hou '1+2*3'
-./hou '(1+2)*3'
+    ./hou '1+2*3'
+    ./hou '(1+2)*3'
 ```
 
 What exactly does the text formatting do?
@@ -42,7 +42,7 @@ What exactly does the text formatting do?
 What does this evaluate to in C?
 
 ```c
-+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
+    +~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
 ```
 
 

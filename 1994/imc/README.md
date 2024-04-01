@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./imc [NUMBER]
+    ./imc [NUMBER]
 ```
 
 where `[NUMBER]` is an optional number. Default is 5.
@@ -17,7 +17,7 @@ where `[NUMBER]` is an optional number. Default is 5.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -61,9 +61,9 @@ useful the exclusive-or operator was while writing function `s()`.
 Here are the descriptions of the functions in the library:
 
 ```
-o(n,a,q,d): makes a magic square of order n when n is odd and at least 3.
-s(n,a,q,d): makes a magic square of order n when n equals 4.
-e(n,a,q,d): makes a magic square of order n when n is even and at least 6.
+    o(n,a,q,d): makes a magic square of order n when n is odd and at least 3.
+    s(n,a,q,d): makes a magic square of order n when n equals 4.
+    e(n,a,q,d): makes a magic square of order n when n is even and at least 6.
 ```
 
 In the above, `a` (of type `int *`) points to an area of memory in which

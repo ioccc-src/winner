@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -10,7 +10,7 @@ make all
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [1988 dale bugs](../../bugs.html#1988_dale).
@@ -19,15 +19,15 @@ For more detailed information see [1988 dale bugs](../../bugs.html#1988_dale).
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 Observe that three of the commands in the script are:
 
 ```sh
-./dale these files are in this directory: *
-./dale $(printf "the following files exist in this directory:\n%s\n" *)
-./dale "$(printf "the following files exist in this directory:\n%s\n" *)"
+    ./dale these files are in this directory: *
+    ./dale $(printf "the following files exist in this directory:\n%s\n" *)
+    ./dale "$(printf "the following files exist in this directory:\n%s\n" *)"
 ```
 
 As the script asks what do the last two do and why do they do it? Why do they

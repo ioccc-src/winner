@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./cable1 name group1 group2
+    ./cable1 name group1 group2
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -27,39 +27,39 @@ We need not limit ourselves to the two major political parties in the US today.
 Let us consider:
 
 ```sh
-./cable1 Cooper Mac PC
+    ./cable1 Cooper Mac PC
 ```
 
 Simon works for Apple, so you would expect Mac.  :-)
 Landon is a long time Mac user:
 
 ```sh
-./cable1 Noll Mac PC
+    ./cable1 Noll Mac PC
 ```
 
 That works too!  Now Leo brings PCs to the IOCCC judging for cross-platform
 testing:
 
 ```sh
-./cable1 Broukhis Mac PC
+    ./cable1 Broukhis Mac PC
 ```
 
 We can test other people.  The late Steve Jobs:
 
 ```sh
-./cable1 Jobs Mac PC
+    ./cable1 Jobs Mac PC
 ```
 
 That works!  How about Bill?
 
 ```sh
-./cable1 Gates Mac PC
+    ./cable1 Gates Mac PC
 ```
 
 A PC guy as expected.  What about that other Steve?
 
 ```sh
-./cable1 Ballmer Mac PC
+    ./cable1 Ballmer Mac PC
 ```
 
 Humm .. maybe there is a hidden reason he is leaving the late Micro$oft? :-)

@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2013 dlowe bugs](../../bugs.html#2013_dlowe).
@@ -19,7 +19,7 @@ For more detailed information see [2013 dlowe bugs](../../bugs.html#2013_dlowe).
 ## To use:
 
 ```sh
-./dlowe [number...]
+    ./dlowe [number...]
 ```
 
 where `[number...]` is one or more number, space separated.
@@ -28,15 +28,15 @@ where `[number...]` is one or more number, space separated.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 What is different about the above if you do something like:
 
 ```sh
-echo 'IOCCC winning entry 2013/dlowe' > ioccc.txt
-./try.sh
-rm -f ioccc.txt
+    echo 'IOCCC winning entry 2013/dlowe' > ioccc.txt
+    ./try.sh
+    rm -f ioccc.txt
 ```
 
 ?
@@ -44,7 +44,7 @@ rm -f ioccc.txt
 To make it simpler to see try showing just the different line like:
 
 ```sh
-./diff.sh
+    ./diff.sh
 ```
 
 
@@ -59,10 +59,10 @@ with one argument or when all arguments are equal?
 For extra fun, compile and run [fun.c](fun.c):
 
 ```c
-#include <stdio.h>
-int main() {
-    printf("%d %d %d\n", (int)(-1.0/0.0), (int)(0.0/0.0), (int)(1.0/0.0));
-}
+    #include <stdio.h>
+    int main() {
+	printf("%d %d %d\n", (int)(-1.0/0.0), (int)(0.0/0.0), (int)(1.0/0.0));
+    }
 ```
 
 with gcc and clang.
@@ -71,19 +71,19 @@ with gcc and clang.
 With GCC (4.7.2), we get
 
 ```
--2147483648 -2147483648 -2147483648
+    -2147483648 -2147483648 -2147483648
 ```
 
 and with clang (3.3), we get
 
 ```
--2147483648 0 2147483647
+    -2147483648 0 2147483647
 ```
 
 and with Apple clang version 15.0.0 (clang-1500.0.40.1) in 2023, we get:
 
 ```
-1840985120 -2033041452 35979112
+    1840985120 -2033041452 35979112
 ```
 
 Which one is correct? :)
@@ -92,7 +92,7 @@ NOTE: `make all` will compile [fun.c](fun.c) but to provide a different compiler
 you can do something like:
 
 ```sh
-make CC=clang fun
+    make CC=clang fun
 ```
 
 
@@ -106,17 +106,17 @@ A tiny implementation of command-line
 ### Synopsis
 
 ```sh
-$ ./sparkl 0 1 2 3 4 5 6 7
-▁▂▃▄▅▆▇▉
+    $ ./sparkl 0 1 2 3 4 5 6 7
+    ▁▂▃▄▅▆▇▉
 
-$ echo "sparkline of file lengths: $(wc -c * | awk '{print $1}' | xargs ./sparkl)"
-sparkline of file sizes: ▁▁▁▃▃▂▁▂▁▁▉
+    $ echo "sparkline of file lengths: $(wc -c * | awk '{print $1}' | xargs ./sparkl)"
+    sparkline of file sizes: ▁▁▁▃▃▂▁▂▁▁▉
 ```
 
 NOTE: this has been provided in [slflen.sh](slflen.sh) so you can try:
 
 ```sh
-./slflen.sh
+    ./slflen.sh
 ```
 
 instead (which [try.sh](try.sh) also uses).

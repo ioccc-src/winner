@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./cheong digits
+    ./cheong digits
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -37,11 +37,11 @@ Program will return the integer part of its square root (n-digits).
 For example,
 
 ```sh
-$ cc -o cheong cheong.c
-$ ./cheong 1234567890
-35136
-$ ./cheong 0200000000000000000000000000
-14142135623730
+    $ cc -o cheong cheong.c
+    $ ./cheong 1234567890
+    35136
+    $ ./cheong 0200000000000000000000000000
+    14142135623730
 ```
 
 Deviation from these instructions will cause undefined results. :-)
@@ -53,8 +53,8 @@ This program runs normally on any ANSI C compiler and is ASCII dependent.
 Strict compiling gives just one unavoidable warning:
 
 ```sh
-gcc -ansi -Wall cheong.c
-cheong.c:3: warning: third argument of `main' should probably be `char **'
+    gcc -ansi -Wall cheong.c
+    cheong.c:3: warning: third argument of `main' should probably be `char **'
 ```
 
 ### Obfuscation

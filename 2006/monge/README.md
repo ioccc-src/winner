@@ -3,7 +3,7 @@
 Make sure you have the SDL1 (not SDL2!) development environment installed.
 
 ```sh
-make
+    make
 ```
 
 There is alternate version that lets you redefine the width and height and number
@@ -15,8 +15,8 @@ of iterations to use. See [Alternate code](#alternate-code) below.
 The current status of this entry is:
 
 ```
-STATUS: doesn't work with some platforms - please help us fix
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: doesn't work with some platforms - please help us fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2006 monge bugs](../../bugs.html#2006_monge).
@@ -25,7 +25,7 @@ For more detailed information see [2006 monge bugs](../../bugs.html#2006_monge).
 ## To use:
 
 ```sh
-./monge expression ...
+    ./monge expression ...
 ```
 
 Incorrect formulas will ungracefully crash the program.
@@ -34,7 +34,7 @@ Incorrect formulas will ungracefully crash the program.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -50,7 +50,7 @@ To use the default values, the same as [monge.c](monge.c), just do:
 
 
 ```sh
-make alt
+    make alt
 ```
 
 But if you wish to actually make use of it you will want to redefine one or more
@@ -59,13 +59,13 @@ of the variables `W`, `H` and `I`. The defaults are (respectively) 400, 300 and
 the same then do:
 
 ```sh
-make clobber WIDTH=500 HEIGHT=500 alt
+    make clobber WIDTH=500 HEIGHT=500 alt
 ```
 
 If you wish to keep the dimensions the same but change the iterations to 512:
 
 ```sh
-make clobber ITERATIONS=512 alt
+    make clobber ITERATIONS=512 alt
 ```
 
 If you specify a value less than 1 for any of these it sets it back to the
@@ -83,7 +83,7 @@ Use `monge.alt` exactly as you would `monge` above.
 ### Alternate try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 
@@ -110,13 +110,13 @@ effort to work on both `i386` and `x86_64`. Portable it is! :)
 0. Compile using the Makefile, or just run:
 
 ```sh
-gcc monge.c -o monge -O3 `sdl-config --libs --cflags`
+    gcc monge.c -o monge -O3 `sdl-config --libs --cflags`
 ```
 
 1. Run:
 
 ```sh
-./monge "z = 0" "z = z*z + c; Abs2(z) < 4"
+    ./monge "z = 0" "z = z*z + c; Abs2(z) < 4"
 ```
 
 2. Keep clicking with left or right button to zoom in or out.
@@ -150,21 +150,21 @@ as you like (as understood by the C function `isspace()`).
 Supported operations and functions are:
 
 ```
-Operation | Description
-:-------- | :----------
- +,-,*,/    | Arithmetic operations, priority of  * , /  over  +,-  is
-	    | respected.
-	    |
- <,>        | Compares the real parts of two complex numbers (the imaginary part
-	    | is ignored). Any number of conditions is allowed, the iteration
-	    | will just stop as soon as one of them fails.
- Abs2       | Calculates the squared norm, i.e.: Abs2(a+b*i) is (a*a+b*b)+0*i.
- Re         | Extract the real part, i.e.: Re(a+b*i) is a+0*i.
- Im         | Extract the imaginary part, i.e.: Im(a+b*i) is b+0*i.
- Exp        | Calculates the complex exponential, i.e. Exp(a+b*i) is
-	    |   e^a*(cos(b)+sin(b)*i).
- Ln 	    | Calculates the principal value of the natural logarithm, i.e.
-	       Ln(a+b*i) is ln(a*a+b*b)/2 + atan(b/a)*i.
+    Operation | Description
+    :-------- | :----------
+     +,-,*,/    | Arithmetic operations, priority of  * , /  over  +,-  is
+		| respected.
+		|
+     <,>        | Compares the real parts of two complex numbers (the imaginary part
+		| is ignored). Any number of conditions is allowed, the iteration
+		| will just stop as soon as one of them fails.
+     Abs2       | Calculates the squared norm, i.e.: Abs2(a+b*i) is (a*a+b*b)+0*i.
+     Re         | Extract the real part, i.e.: Re(a+b*i) is a+0*i.
+     Im         | Extract the imaginary part, i.e.: Im(a+b*i) is b+0*i.
+     Exp        | Calculates the complex exponential, i.e. Exp(a+b*i) is
+		|   e^a*(cos(b)+sin(b)*i).
+     Ln 	    | Calculates the principal value of the natural logarithm, i.e.
+		   Ln(a+b*i) is ln(a*a+b*b)/2 + atan(b/a)*i.
 ```
 
 Here are a few examples of fractals you can draw:
@@ -172,49 +172,49 @@ Here are a few examples of fractals you can draw:
 - Mandelbrot:
 
 ```sh
-./monge "z=1" "z=z*z+c; Abs2(z)<4"
+    ./monge "z=1" "z=z*z+c; Abs2(z)<4"
 ```
 
 - Mandelbrot (return time variation):
 
 ```sh
-./monge "z=c" "z=z*z+c; Abs2(z-c)>0.0001"
+    ./monge "z=c" "z=z*z+c; Abs2(z-c)>0.0001"
 ```
 
 - Julia, for `c=0.31+i*0.5`:
 
 ```sh
-./monge "z=c; c=0.31+i*0.5" "z=z*z+c; Abs2(z)<4"
+    ./monge "z=c; c=0.31+i*0.5" "z=z*z+c; Abs2(z)<4"
 ```
 
 - Julia (return time variation), `for c=0.31+i*0.5`:
 
 ```sh
-./monge "z=c; c=0.31+i*0.5" "z=z*z+c; Abs2(z-c)>0.0001"
+    ./monge "z=c; c=0.31+i*0.5" "z=z*z+c; Abs2(z-c)>0.0001"
 ```
 
 - Newton, for `x^3-1`:
 
 ```sh
-./monge "z=c" "p=z; z=0.6666*z+0.3333/(z*z); Abs2(p-z) > 0.001"
+    ./monge "z=c" "p=z; z=0.6666*z+0.3333/(z*z); Abs2(p-z) > 0.001"
 ```
 
 - Newton-Mandelbrot:
 
 ```sh
-./monge "z=0" "p=z; z=z-(z*z*z + (c-1)*z - c)/(3*z*z+c-1); Abs2(p-z) > 0.001"
+    ./monge "z=0" "p=z; z=z-(z*z*z + (c-1)*z - c)/(3*z*z+c-1); Abs2(p-z) > 0.001"
 ```
 
 - Phoenix, Mandelbrot version:
 
 ```sh
-./monge "z=0; q=0" "t=z; z=z*z+Re(c)+Im(c)*q; q=t; Abs2(z)<4"
+    ./monge "z=0; q=0" "t=z; z=z*z+Re(c)+Im(c)*q; q=t; Abs2(z)<4"
 ```
 
 - Phoenix, Julia version for `c=0.56667-i*0.5`:
 
 ```sh
-./monge "z=c; c=0.56667-i*0.5; q=0" "t=z; z=z*z+Re(c)+Im(c)*q; q=t; Abs2(z)<4"
+    ./monge "z=c; c=0.56667-i*0.5; q=0" "t=z; z=z*z+Re(c)+Im(c)*q; q=t; Abs2(z)<4"
 ```
 
 

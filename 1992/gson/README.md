@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 NOTE: we DISABLE the optimiser because having it enabled causes some invocations
@@ -13,7 +13,7 @@ to crash in some systems.
 The current status of this entry is:
 
 ```
-STATUS: uses gets() - change to fgets() if possible
+    STATUS: uses gets() - change to fgets() if possible
 ```
 
 For more detailed information see [1992 gson bugs](../../bugs.html#1992_gson).
@@ -22,14 +22,14 @@ For more detailed information see [1992 gson bugs](../../bugs.html#1992_gson).
 ## To use:
 
 ```sh
-./ag word word2 word3 < /path/to/dictionary
+    ./ag word word2 word3 < /path/to/dictionary
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 This script will determine (or try and determine) where your system dictionary
@@ -37,22 +37,22 @@ is located and assuming that it can find one it'll use that. It checks the
 following locations though the last one is more ironic:
 
 ```
-/usr/share/dict/words
-/usr/share/lib/spell/words
-/usr/ucblib/dict/words
-/dev/null			# <-- for machines with nothing to say
+    /usr/share/dict/words
+    /usr/share/lib/spell/words
+    /usr/ucblib/dict/words
+    /dev/null			# <-- for machines with nothing to say
 ```
 
 Then using the proper dictionary file it does:
 
 ```sh
-./ag free software foundation	< /usr/share/dict/words
-./ag obfuscated c contest	< /usr/share/dict/words
-./ag unix international		< /usr/share/dict/words
-./ag george bush		< /usr/share/dict/words
-./ag bill clinton		< /usr/share/dict/words
-./ag ross perot			< /usr/share/dict/words
-./ag paul e tsongas		< /usr/share/dict/words
+    ./ag free software foundation	< /usr/share/dict/words
+    ./ag obfuscated c contest	< /usr/share/dict/words
+    ./ag unix international		< /usr/share/dict/words
+    ./ag george bush		< /usr/share/dict/words
+    ./ag bill clinton		< /usr/share/dict/words
+    ./ag ross perot			< /usr/share/dict/words
+    ./ag paul e tsongas		< /usr/share/dict/words
 ```
 
 where `/usr/share/dict/words` is the dictionary file.
@@ -74,7 +74,7 @@ The author provided an obfuscated script that can be used to construct
 dictionaries which has been put in as [mkdict.sh](mkdict.sh). To use try:
 
 ```sh
-cat README.md | ./mkdict.sh > words
+    cat README.md | ./mkdict.sh > words
 ```
 
 Then try using the program as shown above with the file `words`.
@@ -104,8 +104,8 @@ hundred of your favourite Usenet articles and piping them through the following
 obfuscated shell script:
 
 ```sh
-#!/bin/sh
-z=a-z];tr [A-Z\] \[$z|sed s/[\^$z[\^$z*/_/g|tr _ \\012|grep ..|sort -u
+    #!/bin/sh
+    z=a-z];tr [A-Z\] \[$z|sed s/[\^$z[\^$z*/_/g|tr _ \\012|grep ..|sort -u
 ```
 
 Using articles from alt.folklore.computers is likely to make
@@ -259,7 +259,7 @@ program prints all those 16-bit integers that contain zeroes in all
 even bit positions:
 
 ```c
-main(){int i=0,s=0xAAAA;do{printf("%04x\t",i);}while(i=((i|~s)+1)&s);}
+    main(){int i=0,s=0xAAAA;do{printf("%04x\t",i);}while(i=((i|~s)+1)&s);}
 ```
 
 AG uses a similar method but works in the opposite direction, finding

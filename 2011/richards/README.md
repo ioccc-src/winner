@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: doesn't work with some platforms - please help us fix
+    STATUS: doesn't work with some platforms - please help us fix
 ```
 
 For more detailed information see [2011 richards bugs](../../bugs.html#2011_richards).
@@ -19,14 +19,14 @@ For more detailed information see [2011 richards bugs](../../bugs.html#2011_rich
 ## To use:
 
 ```sh
-echo expression | ./richards
+    echo expression | ./richards
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 

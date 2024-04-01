@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an alternate version that the author provided but fixed in 2023 to
@@ -13,14 +13,14 @@ code](#alternate-code) below.
 ## To use:
 
 ```sh
-./prog
+    ./prog
 ```
 
 
 ## Try:
 
 ```sh
-./prog
+    ./prog
 ```
 
 Try changing bounding box coordinates in the source to explore
@@ -37,7 +37,7 @@ recognisable and also to let you reconfigure the coordinates.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 If you wish to redefine the coordinates you can do so by defining `X1`, `X2`,
@@ -46,7 +46,7 @@ For instance:
 
 
 ```sh
-make clobber X1=-3 X2=2 Y1=-2.3 Y2=2.3 alt
+    make clobber X1=-3 X2=2 Y1=-2.3 Y2=2.3 alt
 ```
 
 You may pick and choose which ones to redefine.
@@ -60,7 +60,7 @@ Use `prog.alt` as you would `prog`.
 ### Alternate try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 
@@ -95,25 +95,25 @@ application source code is intentionally kept to a bare minimum. If this phrase
 would not be true, the application would be the following:
 
 ```c
-double                                 _[]={-2
-,1,-1.3                ,1.3,  0,         0,0,0
-,0               ,0,50, 80,     0,0,0     ,255
-,               8,0};    int      main       (
-	       int j) {if (j==  1 ){ if(
-       _[12]      >_[10]  )_[17]=1 ;}  if
-   (_[13] >_[11     ] ||_[17]==1)  return 1
- ;_[6]   =  _ [13] / _[11]*(_[1]-_[   0])
-+_[  0];  _ [7]=_[12]/_[10]*(_[3]-_[2] )+_
-[2];_[8]=_[9]=_[14]=0;l2:_[4]=_[8] * _ [8]
-;_[  5]=  _ [9]*_[9];_[9]=2*_[8]*_[9]+ _[7
- ];_[8   ]  = _ [ 4 ]-_[5]+_[6];_[14   ]++
-   ;if((_ [14]<     _ [15])&&(_[4]+ _[ 5]
-       <_[16      ])) goto l2;  putchar(
-	       " #@*+   "[( int)  _[14]%
-5             ]);_ [13   ] ++ ;   main       (
-0)               ;_[12]++;      _[13]       =0
-;if(_                [17]    !=1)      putchar
-(0xa);                               main(1);}
+    double                                 _[]={-2
+    ,1,-1.3                ,1.3,  0,         0,0,0
+    ,0               ,0,50, 80,     0,0,0     ,255
+    ,               8,0};    int      main       (
+		   int j) {if (j==  1 ){ if(
+	   _[12]      >_[10]  )_[17]=1 ;}  if
+       (_[13] >_[11     ] ||_[17]==1)  return 1
+     ;_[6]   =  _ [13] / _[11]*(_[1]-_[   0])
+    +_[  0];  _ [7]=_[12]/_[10]*(_[3]-_[2] )+_
+    [2];_[8]=_[9]=_[14]=0;l2:_[4]=_[8] * _ [8]
+    ;_[  5]=  _ [9]*_[9];_[9]=2*_[8]*_[9]+ _[7
+     ];_[8   ]  = _ [ 4 ]-_[5]+_[6];_[14   ]++
+       ;if((_ [14]<     _ [15])&&(_[4]+ _[ 5]
+	   <_[16      ])) goto l2;  putchar(
+		   " #@*+   "[( int)  _[14]%
+    5             ]);_ [13   ] ++ ;   main       (
+    0)               ;_[12]++;      _[13]       =0
+    ;if(_                [17]    !=1)      putchar
+    (0xa);                               main(1);}
 ```
 
 The application expects no parameters, the only way you can change the behaviour

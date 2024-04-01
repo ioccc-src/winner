@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 NOTE: We FORCE the use of -O0 even if someone overrides it because this entry
@@ -11,7 +11,7 @@ will not work with it enabled.
 ## To use:
 
 ```sh
-./burley
+    ./burley
 ```
 
 NOTE: you need to input a number first. See judges' remarks below for
@@ -25,28 +25,28 @@ start with $100.  Input alternates between your bet and which cards to keep.
 Example:
 
 ```
-5		<== you enter a bet of $5 (defaults to $1)
-J Q J 9 5	<== your hand is Jack of Clubs, Queen of Hearts,
-C H D S C	    Jack of Diamonds, 9 of Spades, 5 of Clubs
-123		<== you enter which cards you want to keep
+    5		<== you enter a bet of $5 (defaults to $1)
+    J Q J 9 5	<== your hand is Jack of Clubs, Queen of Hearts,
+    C H D S C	    Jack of Diamonds, 9 of Spades, 5 of Clubs
+    123		<== you enter which cards you want to keep
 		    (enter 0 to 5 digits between 1 and 5)
-J Q J J Q	<== your new hand is Jack of Clubs, Queen of Hearts,
-C H D S C	    Jack of Diamonds, Jack of Spaces, Queen of clubs
-$145 (45)	<== Your new balance is now $145.  You had a Full House
+    J Q J J Q	<== your new hand is Jack of Clubs, Queen of Hearts,
+    C H D S C	    Jack of Diamonds, Jack of Spaces, Queen of clubs
+    $145 (45)	<== Your new balance is now $145.  You had a Full House
 		    so your payoff is 9 times your bet == 45
 ```
 
 The payout is according to "Vegas rules":
 
 ```
-Straight Flush     50 times your bet
-Four of a Kind     25 times your bet
-Full House          9 times your bet
-Flush               6 times your bet
-Straight            4 times your bet
-3 of a Kind         3 times your bet
-2 Pair              2 times your bet
-Jacks or Better     1 times your bet
+    Straight Flush     50 times your bet
+    Four of a Kind     25 times your bet
+    Full House          9 times your bet
+    Flush               6 times your bet
+    Straight            4 times your bet
+    3 of a Kind         3 times your bet
+    2 Pair              2 times your bet
+    Jacks or Better     1 times your bet
 ```
 
 The program allows you to go into debt.  However I'm sure you would never

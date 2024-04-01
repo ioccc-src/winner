@@ -5,7 +5,7 @@ this entry was like back in 1993. See the [original code](#original-code)
 section below to run the original.
 
 ```sh
-make alt
+    make alt
 ```
 
 NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
@@ -17,7 +17,7 @@ requires X11?](../../faq.html#X11macos).
 To configure how many microseconds to sleep before updates try:
 
 ```sh
-make clobber SLEEP=200 alt
+    make clobber SLEEP=200 alt
 ```
 
 
@@ -26,7 +26,7 @@ make clobber SLEEP=200 alt
 The current status of this entry is:
 
 ```
-STATUS: known bug - please help us fix
+    STATUS: known bug - please help us fix
 ```
 
 For more detailed information see [1993 cmills bugs](../../bugs.html#1993_cmills).
@@ -35,9 +35,9 @@ For more detailed information see [1993 cmills bugs](../../bugs.html#1993_cmills
 ## To use:
 
 ```sh
-DISPLAY="your_X_server_display"
-export DISPLAY
-./cmills.alt [speed]	# must be run on an X11 server
+    DISPLAY="your_X_server_display"
+    export DISPLAY
+    ./cmills.alt [speed]	# must be run on an X11 server
 ```
 
 where:
@@ -57,7 +57,7 @@ on but you can use the original without any delays if you wish.
 ### Original build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -71,16 +71,15 @@ Use `cmills` as you would `cmills.alt` above.
 From the San Jose Mercury News (May 15, 1993 page 20A "West Hackers
 trounce East in computer quiz game"):
 
-
 ```
-"Since 1984, a contest has been held on Usenet for the most
-unreadable, creative, bizarre but working C program", Gates
-said. "What is the name of this contest"
+    "Since 1984, a contest has been held on Usenet for the most
+    unreadable, creative, bizarre but working C program", Gates
+    said. "What is the name of this contest"
 
-"Windows," shot back Gassee, naming Microsoft's premier product
-- a product over which Apple sued Microsoft five years ago. Not
-the right answer - it's "The Obfuscated C Contest [sic]" - but
-it brought down the house of Apple partisans...
+    "Windows," shot back Gassee, naming Microsoft's premier product
+    - a product over which Apple sued Microsoft five years ago. Not
+    the right answer - it's "The Obfuscated C Contest [sic]" - but
+    it brought down the house of Apple partisans...
 ```
 
 [The expression on Bill Gates' face was a sight to behold, as reported

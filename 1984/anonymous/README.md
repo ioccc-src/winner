@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./anonymous
+    ./anonymous
 ```
 
 
@@ -23,7 +23,7 @@ as the alternate code. See below for the tattoo side-by-side with the code.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -32,7 +32,7 @@ make alt
 NOTE: this version might not work on some systems like macOS.
 
 ```sh
-./anonymous.alt
+    ./anonymous.alt
 ```
 
 

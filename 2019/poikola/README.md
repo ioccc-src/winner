@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an alternate version of this program which changes the way the output
@@ -18,7 +18,7 @@ forcing `-std=gnu11`.
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2019 poikola bugs](../../bugs.html#2019_poikola).
@@ -27,20 +27,19 @@ For more detailed information see [2019 poikola bugs](../../bugs.html#2019_poiko
 ## To use:
 
 ```sh
-./prog 512 ./prog
+    ./prog 512 ./prog
 
-sleep 86400; make clobber prog
-./prog 512 ./prog
+    sleep 86400; make clobber prog
+    ./prog 512 ./prog
 
-sleep 86400; make clobber prog
-./prog 512 ./prog
-
+    sleep 86400; make clobber prog
+    ./prog 512 ./prog
 ```
 
 If you wish for some documentation:
 
 ```sh
-make docs
+    make docs
 ```
 
 This will create the file `poikola.pdf` for your enjoyment.
@@ -51,7 +50,7 @@ This will create the file `poikola.pdf` for your enjoyment.
 If you don't have a few days, try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 As the [2019 poikola bugs](../../bugs.html#2019_poikola) says, this program will not validate
@@ -67,7 +66,7 @@ what can be done with the original entry.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -79,7 +78,7 @@ Use `prog.alt` as you would `prog` above.
 ### Alternate try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 
@@ -105,19 +104,19 @@ Nyk&auml;nen](https://en.wikipedia.org/wiki/Matti_Nyk%C3%A4nen).
 ### How to build:
 
 ```sh
-gcc -O0 -o prog prog.c
+    gcc -O0 -o prog prog.c
 ```
 
 or
 
 ```sh
-clang -O[0123s] -o prog prog.c
+    clang -O[0123s] -o prog prog.c
 ```
 
 e.g.:
 
 ```sh
-clang -O1 -o prog prog.c
+    clang -O1 -o prog prog.c
 ```
 
 
@@ -168,8 +167,7 @@ program is invoked in this way:
 
 
 ```sh
-./prog <integer> <file>
-
+    ./prog <integer> <file>
 ```
 
 where `<integer>` is 224, 256, 384, 512 or even 1024. Yes, I know 1024 is not a

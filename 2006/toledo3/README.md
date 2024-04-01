@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 The author provided two alternate versions, one which adds a status bar and
@@ -12,14 +12,14 @@ tested with Windows.  See [alternate code](#alternate-code) below.
 ## To use:
 
 ```sh
-./toledo3 [1 | 2 | 3 [b]]
+    ./toledo3 [1 | 2 | 3 [b]]
 ```
 
 
 ## Try:
 
 ```sh
-./toledo3 1
+    ./toledo3 1
 ```
 
 
@@ -63,13 +63,13 @@ Is An IOCCC Entry'). Pointing and clicking to move pieces is the only required
 action, and of course the command-line options:
 
 ```sh
-./toledo3        # Two-players mode (useful if you don't have a board at hand)
-./toledo3 1      # Human white - Computer black, level 1 (fast)
-./toledo3 2      # Human white - Computer black, level 2 (medium)
-./toledo3 3      # Human white - Computer black, level 3 (slow)
-./toledo3 1 b    # Human black - Computer white, level 1 (fast)
-./toledo3 2 b    # Human black - Computer white, level 2 (medium)
-./toledo3 3 b    # Human black - Computer white, level 3 (slow)
+    ./toledo3        # Two-players mode (useful if you don't have a board at hand)
+    ./toledo3 1      # Human white - Computer black, level 1 (fast)
+    ./toledo3 2      # Human white - Computer black, level 2 (medium)
+    ./toledo3 3      # Human white - Computer black, level 3 (slow)
+    ./toledo3 1 b    # Human black - Computer white, level 1 (fast)
+    ./toledo3 2 b    # Human black - Computer white, level 2 (medium)
+    ./toledo3 3 b    # Human black - Computer white, level 3 (slow)
 ```
 
 The computer will check that your moves are legal. Full legal
@@ -98,7 +98,7 @@ Because it is resource-hungry, I strongly recommend to compile it
 using maximum optimization. With GCC you can use:
 
 ```sh
-gcc -O3 -fexpensive-optimizations prog.c -o prog -lX11
+    gcc -O3 -fexpensive-optimizations prog.c -o prog -lX11
 ```
 
 ### KNOWN "FEATURES"

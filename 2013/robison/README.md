@@ -1,24 +1,24 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./robison
-# enter an expression
+    ./robison
+    # enter an expression
 
-echo expression | ./robison
+    echo expression | ./robison
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 

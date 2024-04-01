@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -10,7 +10,7 @@ make all
 The current status of this entry is:
 
 ```
-STATUS: known bug - please help us fix
+    STATUS: known bug - please help us fix
 ```
 
 For more detailed information see [1995 leo bugs](../../bugs.html#1995_leo).
@@ -19,7 +19,7 @@ For more detailed information see [1995 leo bugs](../../bugs.html#1995_leo).
 ## To use:
 
 ```sh
-./leo [ deep ] [ right ] [ Variable ] [ cycle [ freq ] ]
+    ./leo [ deep ] [ right ] [ Variable ] [ cycle [ freq ] ]
 ```
 
 See the author's information below on these details.
@@ -28,7 +28,7 @@ See the author's information below on these details.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -53,7 +53,7 @@ characters on the command line - anything that's not a number is a candidate.)
 The usage is:
 
 ```sh
-./leo [ deep ] [ right ] [ Variable ] [ cycle [ freq ] ]
+    ./leo [ deep ] [ right ] [ Variable ] [ cycle [ freq ] ]
 ```
 
 where the first three are literal words, `cycle` is a positive integer (0 is
@@ -69,7 +69,7 @@ to be present if you want to enter `freq` (and you usually do).
 Some options to try (besides the obvious):
 
 ```sh
-./leo 1 | cat - /dev/tty | gs -
+    ./leo 1 | cat - /dev/tty | gs -
 ```
 
 This draws the basic pattern I invented in high school:
@@ -192,19 +192,19 @@ the opening for step 1 is not a single line but a cross:
 To watch it repeatedly (as a screen saver), use:
 
 ```sh
-./leo 2 | cat - /dev/tty | gs -
+    ./leo 2 | cat - /dev/tty | gs -
 ```
 
 The command line:
 
 ```sh
-./leo Variable 1 | cat - /dev/tty | gs -
+    ./leo Variable 1 | cat - /dev/tty | gs -
 ```
 
 draws the same as above. Try:
 
 ```sh
-./leo Variable 1 1 | cat - /dev/tty | gs -
+    ./leo Variable 1 1 | cat - /dev/tty | gs -
 ```
 
 What happened to the picture? Increase `freq` and watch the changes.
@@ -217,11 +217,11 @@ if you want to pipe the output to a printer.
 `uudecode` the spoiler below if you really want to know.
 
 ```
-begin 664 spoiler1
-M*%1H92!C;VQO;B J:7,J('1H92!S96-R970@<W=I=&-H("T@=&AE('-P86-E
-=(&)E9F]R92!I="!I<R!N;W0@82!M:7-T86ME*0II
+    begin 664 spoiler1
+    M*%1H92!C;VQO;B J:7,J('1H92!S96-R970@<W=I=&-H("T@=&AE('-P86-E
+    =(&)E9F]R92!I="!I<R!N;W0@82!M:7-T86ME*0II
 
-end
+    end
 ```
 
 If `Variable` is used, the actual value of `cycle` doesn't matter,
@@ -229,7 +229,7 @@ as far as it is > 1. To figure out what difference
 `cycle` makes when `Variable` is not used, try
 
 ```sh
-./leo Variable 37 80 | cat - /dev/tty | gs -
+    ./leo Variable 37 80 | cat - /dev/tty | gs -
 ```
 
 and other values of `cycle`; smaller values usually require

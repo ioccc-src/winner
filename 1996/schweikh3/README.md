@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -13,7 +13,7 @@ or force you to reboot using the Big Red Button!  This is **NOT** a joke.
 You have been warned.
 
 ```sh
-./schweikh3
+    ./schweikh3
 ```
 
 
@@ -28,7 +28,7 @@ systems.
 But still it is a useful utility.  To use try:
 
 ```sh
-./schweikh3
+    ./schweikh3
 ```
 
 and thanks for the virtual memories!  :-)
@@ -58,26 +58,26 @@ compiler. The source fails to compile under a C++ compiler due to
 the `new' identifier which is a C++ reserved word:
 
 ```sh
-$ g++ schweikh3.c
-schweikh3.c:9: parse error before `new'
-schweikh3.c:16: parse error before `new'
-schweikh3.c:46: parse error before `void'
-schweikh3.c:65: parse error before `Lisp'
-schweikh3.c:68: parse error before `;'
-[...]
-schweikh3.c:91: confused by earlier errors, bailing out
+    $ g++ schweikh3.c
+    schweikh3.c:9: parse error before `new'
+    schweikh3.c:16: parse error before `new'
+    schweikh3.c:46: parse error before `void'
+    schweikh3.c:65: parse error before `Lisp'
+    schweikh3.c:68: parse error before `;'
+    [...]
+    schweikh3.c:91: confused by earlier errors, bailing out
 ```
 
 The source fails to compile on compilers that recognize the inline
 keyword by default, e.g. gcc:
 
 ```sh
-$ gcc schweikh3.c
-schweikh3.c:46: parse error before `void'
-schweikh3.c: In function `main':
-schweikh3.c:91: parse error before `inline'
-schweikh3.c: At top level:
-schweikh3.c:97: parse error before `void'
+    $ gcc schweikh3.c
+    schweikh3.c:46: parse error before `void'
+    schweikh3.c: In function `main':
+    schweikh3.c:91: parse error before `inline'
+    schweikh3.c: At top level:
+    schweikh3.c:97: parse error before `void'
 ```
 
 The `-ansi` option to gcc fixes this.

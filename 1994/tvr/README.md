@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -14,7 +14,7 @@ code](#alternate-code) below.
 The current status of this entry is:
 
 ```
-STATUS: known bug - please help us fix
+    STATUS: known bug - please help us fix
 ```
 
 For more detailed information see [1994 tvr bugs](../../bugs.html#1994_tvr).
@@ -23,7 +23,7 @@ For more detailed information see [1994 tvr bugs](../../bugs.html#1994_tvr).
 ## To use:
 
 ```sh
-./tvr mode screensize/2 < colormapfile
+    ./tvr mode screensize/2 < colormapfile
 ```
 
 Mode may be a value from 0 to 12.
@@ -32,8 +32,8 @@ Mode may be a value from 0 to 12.
 ## Try:
 
 ```sh
-./try.color.sh			# for colour displays
-./try.bw.sh			# for Black & White displays
+    ./try.color.sh			# for colour displays
+    ./try.bw.sh			# for Black & White displays
 ```
 
 
@@ -45,14 +45,14 @@ The author provided us a spoiler version that might be of interest to some.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
 ### Alternate use:
 
 ```sh
-./tvr.alt altmode screensize/2 < colormapfile
+    ./tvr.alt altmode screensize/2 < colormapfile
 ```
 
 where `altmode` `1` - `4` correspond to mode `0` - `3` in the original entry and
@@ -62,8 +62,8 @@ where `altmode` `1` - `4` correspond to mode `0` - `3` in the original entry and
 ### Alternate try:
 
 ```sh
-./try.alt.color.sh			# for colour displays
-./try.alt.bw.sh			# for Black & White displays
+    ./try.alt.color.sh			# for colour displays
+    ./try.alt.bw.sh			# for Black & White displays
 ```
 
 
@@ -124,7 +124,7 @@ the fourth is a variation of that with more nice effects.
 ### Usage:
 
 ```sh
-./tvr mode screensize/2 < colormapfile
+    ./tvr mode screensize/2 < colormapfile
 ```
 
 
@@ -169,15 +169,15 @@ compatible compiler (`gcc -ansi -pedantic` will do fine).
 This entry has been tested on wide variety of machines including:
 
 ```
-Machine			OS
--------			--
-Decstation 5000/240	Ultrix 4.3A
-DECAlpha 3000/300	OSF/1 v1.3 and v2.0
-IBM RS6000		AIX v3
-SPARCStation IPX	SunOS 4.1.3
-i486			Linux v1.1.8  (binarysize 3576 bytes
-				      using `gcc -O6 -s -N` ;)
-HP 9000/730		HP-UX
+    Machine			OS
+    -------			--
+    Decstation 5000/240	Ultrix 4.3A
+    DECAlpha 3000/300	OSF/1 v1.3 and v2.0
+    IBM RS6000		AIX v3
+    SPARCStation IPX	SunOS 4.1.3
+    i486			Linux v1.1.8  (binarysize 3576 bytes
+					  using `gcc -O6 -s -N` ;)
+    HP 9000/730		HP-UX
 ```
 
 Also, many of the X server and X library versions have been tested and the
@@ -205,20 +205,17 @@ Well, obfuscated or not, some of the effects are very nice ;)
 Mandelbrot set is calculated from the formula
 
 ```
-
-			     2
-		      Z   = Z  + Z
-		       n+1   n    0
+  	 2
+    Z   = Z  + Z
+     n+1   n    0
 ```
 
 and the Julia set is calculated from the formula
 
 ```
-
-			     2
-		      Z   = Z  + C
-		       n+1   n
-
+  	 2
+    Z   = Z  + C
+     n+1   n
 ```
 
 where `C` is the same throughout the picture.  Both calculation are finished

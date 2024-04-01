@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2005 mikeash bugs](../../bugs.html#2005_mikeash).
@@ -19,7 +19,7 @@ For more detailed information see [2005 mikeash bugs](../../bugs.html#2005_mikea
 ## To use:
 
 ```sh
-./mikeash
+    ./mikeash
 ```
 
 NOTE: the author stated that they tested this under i386 machines but this works
@@ -29,7 +29,7 @@ under 64-bit (x86_64, arm64) machines too.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -68,7 +68,7 @@ functions.
 Try:
 
 ```sh
-echo '(format t "~s" (+ 2 2 ))' | ./mikeash
+    echo '(format t "~s" (+ 2 2 ))' | ./mikeash
 ```
 
 You should see `4"` echoed on your command prompt. The `"` after the 4 and
@@ -77,7 +77,7 @@ the format function. More sophisticated arithmetic expressions may be
 used:
 
 ```sh
-echo '(format t "~s" (* (+ 2 2 ) (- 5 (/ 9 3 ))))' | ./mikeash
+    echo '(format t "~s" (* (+ 2 2 ) (- 5 (/ 9 3 ))))' | ./mikeash
 ```
 
 This evaluates the expression `(2+2) * (5 - 9/3)` giving the correct result,
@@ -131,8 +131,8 @@ Basically, the [LISP][] interpreter is good for some basic math operations, and
 for running itself. To do the latter, try this:
 
 ```sh
-./mikeash < mikeash.c > mikeash2.c
-diff mikeash.c mikeash2.c
+    ./mikeash < mikeash.c > mikeash2.c
+    diff mikeash.c mikeash2.c
 ```
 
 The program can also be run from an implementation of [common
@@ -140,7 +140,7 @@ lisp](https://en.wikipedia.org/wiki/Common_Lisp). To do
 this, run the common lisp compiler and then type the following command:
 
 ```
-(load "mikeash.c")
+    (load "mikeash.c")
 ```
 
 The source code of [mikeash.c](mikeash.c) will be printed.

@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -12,14 +12,14 @@ code](#alternate-code) below for details.
 ## To use:
 
 ```sh
-./prog <a number of arguments>
+    ./prog <a number of arguments>
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -33,7 +33,7 @@ Dogon](../../authors.html#Gil_Dogon); it is the author's original entry.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -55,14 +55,14 @@ experiment with numbers that have more or larger factors?
 Visual factorization 1-liner.  Try:
 
 ```sh
-gcc -o prog prog.c
-./prog @
-./prog @ @
-./prog @ @ @
-./prog @ @ @ @
-./prog @ @ @ @ @ @
-./prog @ @ @ @ @ @ @ @
-./prog @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
+    gcc -o prog prog.c
+    ./prog @
+    ./prog @ @
+    ./prog @ @ @
+    ./prog @ @ @ @
+    ./prog @ @ @ @ @ @
+    ./prog @ @ @ @ @ @ @ @
+    ./prog @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
 ```
 
 Inspired by [Animated Factorization

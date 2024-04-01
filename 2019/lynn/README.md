@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2019 lynn bugs](../../bugs.html#2019_lynn).
@@ -19,14 +19,14 @@ For more detailed information see [2019 lynn bugs](../../bugs.html#2019_lynn).
 ## To use:
 
 ```sh
-./prog
+    ./prog
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -63,7 +63,7 @@ typeclasses. Just pass dictionaries explicitly.
 Build the compiler:
 
 ```sh
-cc -o prog prog.c
+    cc -o prog prog.c
 ```
 
 ### Demos:
@@ -73,7 +73,7 @@ cc -o prog prog.c
 Test the compiler on [fib.hs](fib.hs):
 
 ```sh
-(./prog < fib.hs ; cat prog.c) > fib.c
+    (./prog < fib.hs ; cat prog.c) > fib.c
 ```
 
 Compiling the output produces a binary that prints the 30th Fibonacci number.
@@ -82,7 +82,7 @@ The file [ghcfib.hs](ghcfib.hs) includes [fib.hs](fib.hs) with some glue code,
 and shows GHC also accepts our subset of Haskell:
 
 ```sh
-ghc ghcfib.hs
+    ghc ghcfib.hs
 ```
 
 
@@ -94,9 +94,9 @@ compiler when run on itself. This intermediate output is hopefully difficult to
 understand, yet is accepted by our compiler:
 
 ```sh
-(./prog < hint.hs ; cat prog.c) > hint.c
-make hint
-./hint
+    (./prog < hint.hs ; cat prog.c) > hint.c
+    make hint
+    ./hint
 ```
 
 The output program behaves like the compiler itself.
@@ -117,15 +117,15 @@ showing the first entries of the length-ordered list of all strings consisting
 of the characters `a` and `b` that contain an even number of `a`s.
 
 ```sh
-(./prog < lol.hs ; cat prog.c) > lol.c
-make lol
-./lol
+    (./prog < lol.hs ; cat prog.c) > lol.c
+    make lol
+    ./lol
 ```
 
 A GHC wrapper is provided:
 
 ```sh
-ghc ghclol.hs
+    ghc ghclol.hs
 ```
 
 
@@ -136,16 +136,16 @@ way to print the strongly-connected components of a graph in reverse topological
 order.
 
 ```sh
-(./prog < scc.hs ; cat prog.c) > scc.c
+    (./prog < scc.hs ; cat prog.c) > scc.c
 ```
 
 It expects the input to be in a similar format as a previous entry
 (2018 vokes). For example:
 
 ```sh
-make scc
-./scc < example-1.txt
-./scc < example-2.txt
+    make scc
+    ./scc < example-1.txt
+    ./scc < example-2.txt
 ```
 
 The output should agree, though our program omits line numbers and does not
@@ -162,7 +162,7 @@ disabling layout-based rules, making every operator left-associative with same
 precedence, and only defining 6 primitive functions:
 
 ```
-: + - * / <=
+    : + - * / <=
 ```
 
 The arithmetic operations behave as they do in C on `unsigned int`s, and `(:)` is
@@ -195,7 +195,7 @@ function, and the result is printed to standard output.
 `Bool` must be defined as:
 
 ```
-data Bool = True | False;
+    data Bool = True | False;
 ```
 
 so that it matches the Scott-encoded booleans internally used by the primitive
@@ -205,17 +205,17 @@ The alternatives in a `case` expressions must list every data constructor in
 the order they are defined. For example, if we have:
 
 ```
-data Foo a b = Bar a | Baz | Qux Int [b]
+    data Foo a b = Bar a | Baz | Qux Int [b]
 ```
 
 then a `case` expression that examines a term of this type must have the form:
 
 ```
-case x of
-  { Bar a    -> ...
-  ; Baz      -> ...
-  ; Qux n bs -> ...
-  }
+    case x of
+      { Bar a    -> ...
+      ; Baz      -> ...
+      ; Qux n bs -> ...
+      }
 ```
 
 We stress braces and semicolons are required. Our fussy parser treats

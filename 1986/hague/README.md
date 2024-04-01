@@ -1,22 +1,22 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./hague 2>/dev/null
-# enter some text
+    ./hague 2>/dev/null
+    # enter some text
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 Note that you can run the program without feeding it anything and then type in a

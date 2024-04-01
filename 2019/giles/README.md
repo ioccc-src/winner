@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./prog infile.wav outfile.wav
+    ./prog infile.wav outfile.wav
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -63,8 +63,8 @@ Interesting fact: The size of the program from `./iocccsize -i` is 2019.
 #### How to use:
 
 ```sh
-./prog input [output [size [dry [wet [damping]]]]]
-prog.exe input [output [size [dry [wet [damping]]]]]
+    ./prog input [output [size [dry [wet [damping]]]]]
+    prog.exe input [output [size [dry [wet [damping]]]]]
 ```
 
 * `input`: The path to the input file. Required.
@@ -88,7 +88,7 @@ so it may be a good idea to adjust the ratio of "dry" to "wet", to give a more
 pleasant result:
 
 ```sh
-./prog in.wav out.wav 1.8 80% 15%
+    ./prog in.wav out.wav 1.8 80% 15%
 ```
 
 The program only supports WAV files, and only mostly. Other audio formats, such

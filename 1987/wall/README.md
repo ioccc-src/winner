@@ -1,42 +1,42 @@
 ## To build:
 
 ```sh
-make all
-```
+    make all
+    ```
 
 
 ## To use:
 
 ```sh
-./wall
-# enter some numbers
+    ./wall
+    # enter some numbers
 
-./wall | some_command
-# enter some strings or numbers, depending on command
+    ./wall | some_command
+    # enter some strings or numbers, depending on command
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 You may of course run the commands manually and enter text as you wish. For
 instance you might try one or both of:
 
 ```sh
-./wall | bc
+    ./wall | bc
 
-./wall | cat
+    ./wall | cat
 ```
 
 and enter some input like:
 
 ```
-x*x
-2^x
-quit # for the cat version
+    x*x
+    2^x
+    quit # for the cat version
 ```
 
 which the script does through a pipeline except that here you can enter more

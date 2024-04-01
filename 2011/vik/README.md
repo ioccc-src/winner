@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an alternate version that should work for Windows. See [alternate
@@ -13,7 +13,7 @@ code](#alternate-code) below.
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2011 vik bugs](../../bugs.html#2011_vik).
@@ -22,20 +22,20 @@ For more detailed information see [2011 vik bugs](../../bugs.html#2011_vik).
 ## To use:
 
 ```sh
-./vik file.mod > audio_file.raw
+    ./vik file.mod > audio_file.raw
 ```
 
 If you have `mplayer(1)`:
 
 
 ```sh
-./vik file.mod | mplayer -demuxer rawaudio -
+    ./vik file.mod | mplayer -demuxer rawaudio -
 ```
 
 Alternatively, you can convert the file to a WAV:
 
 ```sh
-./vik file.mod > file.raw; ./raw2wav file.raw > file.wav
+    ./vik file.mod > file.raw; ./raw2wav file.raw > file.wav
 ```
 
 and then play `file.wav` with a program that can play WAV files.
@@ -44,7 +44,7 @@ and then play `file.wav` with a program that can play WAV files.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 The script checks that you have `mplayer(1)` installed and if it is it will pipe
@@ -67,7 +67,7 @@ This version is based on the author's remarks and it should work for Windows.
 Assuming that `make` is similar enough try:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -88,7 +88,7 @@ initialization for?
 Does it take your system a long time to compile?  You may want to do:
 
 ```sh
-cc -S vik.c
+    cc -S vik.c
 ```
 
 and examine the resulting assembly file `vik.s`.  On some platforms
@@ -154,7 +154,7 @@ Bertilsson, also known as Deelite:
 Compiling for Unix systems (including cygwin) is straight forward:
 
 ```sh
-gcc -o vik vik.c
+    gcc -o vik vik.c
 ```
 
 ### Usage
@@ -163,13 +163,13 @@ gcc -o vik vik.c
 #### Convert MOD file to raw 44.1kHz stereo audio file
 
 ```sh
-./vik mad_world.mod > audio_file.raw
+    ./vik mad_world.mod > audio_file.raw
 ```
 
 #### Listen to the MOD file (streaming to mplayer)
 
 ```sh
-./vik randowan.mod | mplayer -demuxer rawaudio -
+    ./vik randowan.mod | mplayer -demuxer rawaudio -
 ```
 
 (Don't forget the last `-` as it makes mplayer read from `stdin`.)
@@ -211,7 +211,7 @@ the program with this platform, the following line can be added after
 the main declaration in order for the program to run correctly:
 
 ```c
-_setmode(_fileno(stdout), 0x8000);
+    _setmode(_fileno(stdout), 0x8000);
 ```
 
 NOTE: this is what the [alternate version](#alternate-code) is for.

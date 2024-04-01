@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make alt
+    make alt
 ```
 
 We recommend that you use the alt version first to see what this entry looked
@@ -12,7 +12,7 @@ version see the [original code](#original-code) section below.
 ## To use:
 
 ```sh
-./birken.alt < 17_columns_wide_paint_by_numbers_file
+    ./birken.alt < 17_columns_wide_paint_by_numbers_file
 ```
 
 NOTE: if your terminal is messed up after running this (perhaps from exiting
@@ -31,7 +31,7 @@ it should you wish (see below).
 To see the program run on each text file, try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 If you have perl installed it will also try a random run.
@@ -45,7 +45,7 @@ compile time. If you wish to speed it up by 100% you can instead do:
 
 
 ```sh
-make clobber SLEEP=7500 alt
+    make clobber SLEEP=7500 alt
 ```
 
 and then try `birken.alt` as above.
@@ -56,7 +56,7 @@ ctrl-c to terminate the program early but note that the terminal is likely to be
 messed up. In that case try:
 
 ```sh
-reset
+    reset
 ```
 
 to make it sane again (running to completion will do that for you).
@@ -71,7 +71,7 @@ hard to see the art of the entry but you may do so if you wish.
 ### Original build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -85,7 +85,7 @@ Use `birken` as you would `birken.alt` above.
 To use the demo script with the original code, try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 PLEASE be careful if you are sensitive to flashing colours!
@@ -320,16 +320,16 @@ This program demonstrates how to exploit a bug in IOCCC size tool version
 If that line is added to the top of any program, the tool will report a size of 8.
 
 ```sh
-$ ./iocccsize -i < prog.c
-8
+    $ ./iocccsize -i < prog.c
+    8
 ```
 
 When that line is deleted from this program, the tool properly reports the
 secondary size limit of the program as 2048.
 
 ```sh
-$ ./iocccsize -i < birken.c
-2048
+    $ ./iocccsize -i < birken.c
+    2048
 ```
 
 Although this bug provides an easy means of circumventing contest rule 2, as
@@ -358,7 +358,7 @@ Carefully selected variable names also yielded wonderful expressions like `l=0`,
 sorts:
 
 ```c
-[T][e][t]--; while(R+i) { s
+    [T][e][t]--; while(R+i) { s
 ```
 
 The source is formatted to resemble the

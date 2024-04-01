@@ -130,24 +130,23 @@ slightly cheaty, cellular automata system, with some of the transitions
 bound to key presses.</p>
 <p>For instance, assume you wish to make a boulder <code>o</code> roll off a hill <code>/</code>
 A standard automata would have 2 rules something like this:</p>
-<pre><code>
-                o..                     ...
-                \..  --&gt;  &#39;o&#39;           .o.  --&gt;  &#39;.&#39;
-                ...                     .\.</code></pre>
+<pre><code>    o..                 ...
+    \..  --&gt;  &#39;o&#39;               .o.  --&gt;  &#39;.&#39;
+    ...                 .\.</code></pre>
 <p>However, the system I devised, in order to keep things small and neat(!),
 was to define a 3x3 to 3x3 map (instead of the 3x3 to 1x1 shown above).
 Hence:</p>
-<pre><code>        .o.       ...
-        .\.  --&gt;  .\o
-        ...       ...</code></pre>
+<pre><code>    .o.   ...
+    .\.  --&gt;  .\o
+    ...   ...</code></pre>
 <p>This does of course have the odd problem with clashes. What if we want to roll
 two boulders down simultaneously towards the same square. I perform no
 buffering, and so this situation is just a ‘fight it out’ and let which ever
 transition has priority win. Such a case may produce the following change of
 maps (depending on which ‘roll’ transition is used first).</p>
-<pre><code>        o.o                     ..o         o..
-        \./     changes to      \o/  or to  \o/
-        ...                     ...         ...</code></pre>
+<pre><code>    o.o                 ..o         o..
+    \./   changes to    \o/  or to  \o/
+    ...                 ...         ...</code></pre>
 <p>I claim that it is possible to perform all of the 3x3 to 1x1 transitions in a
 3x3 to 3x3 based system. One other feature added in is a workaround for the ‘no
 buffering’ problem. If we define a space ship (as in the <a href="https://en.wikipedia.org/wiki/Space_Invaders">Space
@@ -166,24 +165,24 @@ some transitions are only valid when a certain key has been pressed.
 So for example, if we (an <code>@</code> symbol) wish to move right when the <code>l</code> key
 is hit we have a transition like:</p>
 <h2 id="key-l">Key: l</h2>
-<pre><code>        * * *           * * *
-        * @ .           * . @
-        * * *           * * *</code></pre>
+<pre><code>    * * *               * * *
+    * @ .               * . @
+    * * *               * * *</code></pre>
 <p>Here I also use wildcards. On the match side (left) of the transition, an
 asterisk will match against any character. On the update side (right), an
 asterisk means ‘keep whatever was here before’. So the above example
 simply means to swap the <code>@</code> and <code>.</code> around when <code>l</code> is pressed. For the
 purposes of space saving, this transition is shrunk to a single line.</p>
 <h2 id="key-k">Key: K</h2>
-<pre><code>        a b c           1 2 3
-        d e f           4 5 6
-        g h i           7 8 9</code></pre>
+<pre><code>    a b c               1 2 3
+    d e f               4 5 6
+    g h i               7 8 9</code></pre>
 <p>is written as: <code>eabcdfghi512346789K</code>.</p>
 <p>If there are no keys needed for this transition, the character <code>*1</code> should
 be used instead. Now the format of the game description file is now
 the following (angle brackets denote an ‘entity’ to be defined):</p>
-<pre><code>        &lt;top-bot transition&gt;*\n&lt;bot-top transition&gt;*\n&lt;X size&gt;[ \t]+&lt;Y size&gt;\n
-        &lt;map&gt;</code></pre>
+<pre><code>    &lt;top-bot transition&gt;*\n&lt;bot-top transition&gt;*\n&lt;X size&gt;[ \t]+&lt;Y size&gt;\n
+    &lt;map&gt;</code></pre>
 <p>The <code>&lt;X size&gt;</code> should take into account the newline at the end of each line
 of map, and hence should also be one larger than expected.</p>
 <!--

@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 NOTE: we FORCE disable the optimiser due to a funny problem with different
@@ -19,7 +19,7 @@ if nothing else.
 ## To use:
 
 ```sh
-./marshall
+    ./marshall
 ```
 
 
@@ -37,14 +37,14 @@ To see if your compiler has the problems noted:
 
 
 ```sh
-make alt
+    make alt
 ```
 
 
 ### Alternate use:
 
 ```sh
-./marshall.alt
+    ./marshall.alt
 ```
 
 Does it work in your system? That is does it not segfault, does it print it only

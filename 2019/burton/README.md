@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2019 burton bugs](../../bugs.html#2019_burton).
@@ -19,16 +19,16 @@ For more detailed information see [2019 burton bugs](../../bugs.html#2019_burton
 ## To use:
 
 ```sh
-./prog < file
+    ./prog < file
 
-./cow file
+    ./cow file
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -52,8 +52,8 @@ The output should look familiar.
 Compiles cleanly with:
 
 ```sh
-WARN="-Wno-implicit-int -Wno-missing-variable-declarations -Wno-parentheses"
-cc -Wall -Wextra -Weverything -pedantic $WARN -include stdio.h -o prog prog.c
+    WARN="-Wno-implicit-int -Wno-missing-variable-declarations -Wno-parentheses"
+    cc -Wall -Wextra -Weverything -pedantic $WARN -include stdio.h -o prog prog.c
 ```
 
 ### Description:
@@ -64,7 +64,7 @@ of checking correctness, the [check.sh](check.sh) script can simply output the
 results:   (The Makefile contains the spoiler):
 
 ```sh
-out=cat ./check.sh ./prog
+    out=cat ./check.sh ./prog
 ```
 
 Interestingly, and a spoiler here: macOS and FreeBSD implement the common
@@ -98,7 +98,7 @@ interface.
 Included is a version without compilation warnings:
 
 ```sh
-cc -Wall -Wextra -Weverything -pedantic -include stdio.h -o prog.clean prog.clean.c
+    cc -Wall -Wextra -Weverything -pedantic -include stdio.h -o prog.clean prog.clean.c
 ```
 
 ### Bugs

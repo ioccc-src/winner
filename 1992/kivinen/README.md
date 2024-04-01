@@ -3,7 +3,7 @@
 If your machine support the X Window System, Version 11:
 
 ```sh
-make alt
+    make alt
 ```
 
 We recommend that you try the alt version first so you can get a better idea of
@@ -16,7 +16,7 @@ original should you wish to see what we mean.
 The current status of this entry is:
 
 ```
-STATUS: known bug - please help us fix
+    STATUS: known bug - please help us fix
 ```
 
 For more detailed information see [1992 kivinen bugs](../../bugs.html#1992_kivinen).
@@ -25,11 +25,11 @@ For more detailed information see [1992 kivinen bugs](../../bugs.html#1992_kivin
 ## To use:
 
 ```sh
-./kivinen.alt
+    ./kivinen.alt
 
-./kivinen.alt a
+    ./kivinen.alt a
 
-./kivinen.alt a b
+    ./kivinen.alt a b
 ```
 
 See also the author's remarks for other variations.
@@ -42,9 +42,9 @@ change the `usleep(3)` value to `30000` from `20000`, try:
 
 
 ```sh
-make clobber SLEEP=30000 alt # make it slower
+    make clobber SLEEP=30000 alt # make it slower
 
-make clobber SLEEP=10000 alt # make it faster
+    make clobber SLEEP=10000 alt # make it faster
 ```
 
 Then use the same syntax as above and described by the author.
@@ -60,7 +60,7 @@ code.
 ### Original build:
 
 ```sh
-make all
+    make all
 ```
 
 

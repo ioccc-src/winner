@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./prog
+    ./prog
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -32,9 +32,9 @@ At this point you might be wondering, [WTF](http://acronyms.thefreedictionary.co
 How is this code obfuscated?  Well look again:
 
 ```sh
-less prog.c
+    less prog.c
 
-more prog.c
+    more prog.c
 ```
 
 Where did those underscores come from?  Well [RTFS](http://acronyms.thefreedictionary.com/RTFS)!\*\*
@@ -50,9 +50,9 @@ If you are still puzzled, look at [prog.c](prog.c) with your favorite text edito
 **Follow these instructions literally!**
 
 ```sh
-cat prog.c
-gcc -w -o prog prog.c
-./prog
+    cat prog.c
+    gcc -w -o prog prog.c
+    ./prog
 ```
 
 You will do a double take.

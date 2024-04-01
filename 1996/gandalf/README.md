@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -10,7 +10,7 @@ make all
 The current status of this entry is:
 
 ```
-STATUS: missing or dead link - please provide them
+    STATUS: missing or dead link - please provide them
 ```
 
 For more detailed information see [1996 gandalf bugs](../../bugs.html#1996_gandalf).
@@ -19,14 +19,14 @@ For more detailed information see [1996 gandalf bugs](../../bugs.html#1996_ganda
 ## To use:
 
 ```sh
-./gandalf
+    ./gandalf
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 As the script asks, care to guess why these execute differently?  Only the
@@ -42,7 +42,7 @@ BTW: it is perilous to 'try' the patience of
 For misleading C pre-processor output, try:
 
 ```sh
-cc -E gandalf.c
+    cc -E gandalf.c
 ```
 
 

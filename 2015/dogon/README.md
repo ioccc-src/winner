@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 To change the dimensions you can use the `WIDTH` and `HEIGHT` variables when
 compiling (default 1024 x 800):
 
 ```sh
-make clobber WIDTH=640 HEIGHT=480
+    make clobber WIDTH=640 HEIGHT=480
 ```
 
 to make the game 640 x 480. Obviously changing it to non numbers or negative
@@ -23,14 +23,14 @@ code](#alternate-code) below.
 ## To use:
 
 ```sh
-./prog
+    ./prog
 ```
 
 
 ## Try:
 
 ```sh
-./prog
+    ./prog
 ```
 
 Press and hold the Left Arrow key until you turn 90-degrees to the left.
@@ -67,9 +67,9 @@ The author suggested that one change `q` to `0x82000820000000` instead of
 `0x820008202625a0` to see a bug that they avoided, writing:
 
 ```
-To see this bug in action change the assignment above
-to q=0x82000820000000`, and look towards the negative
-direction of the main tunnel.
+    To see this bug in action change the assignment above
+    to q=0x82000820000000`, and look towards the negative
+    direction of the main tunnel.
 ```
 
 This alt version does this for you.
@@ -78,7 +78,7 @@ This alt version does this for you.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -175,7 +175,7 @@ size limit, and allows us to use such fun expression for arrow view control as
 the following:
 
 ```c
-*(a&1?&C:&B)-=(.05 -a/2%2*.1)*!(a-1&4092^3920)
+    *(a&1?&C:&B)-=(.05 -a/2%2*.1)*!(a-1&4092^3920)
 ```
 
 ### Precision issues:

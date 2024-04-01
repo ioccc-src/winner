@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./applin
+    ./applin
 ```
 
 
 ## Try:
 
 ```sh
-./applin.c
+    ./applin.c
 ```
 
 

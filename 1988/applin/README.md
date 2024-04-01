@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 A smaller version, originally called `zsmall.c` (and still exists as such, as
@@ -13,7 +13,7 @@ program.  See the [Alternate code](#alternate-code) section below for details.
 ## Try:
 
 ```sh
-./applin
+    ./applin
 ```
 
 
@@ -26,7 +26,7 @@ with this entry.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 Use `applin.alt` as you would `applin` above.

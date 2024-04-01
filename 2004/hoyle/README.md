@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./hoyle point ...
+    ./hoyle point ...
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -48,13 +48,13 @@ passed in.
 For example, to graph `y = x^2`:
 
 ```sh
-./hoyle 0 0 1
+    ./hoyle 0 0 1
 ```
 
 Note that:
 
 ```sh
-./hoyle 0 0 2
+    ./hoyle 0 0 2
 ```
 
 will produce the same graph, since the `y-axis` is auto scaling.

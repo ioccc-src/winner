@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./bellard
+    ./bellard
 ```
 
 
@@ -22,6 +22,7 @@ Can you modify this code to produce primes such as `23523*2^70000-1`,
 
 NOTE: as bigger primes are found as time goes by this program no longer prints
 the biggest prime once noted by the author below.
+
 
 ## Author's comments:
 

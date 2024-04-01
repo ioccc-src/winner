@@ -1,15 +1,15 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./lievaart
-# enter a level and start playing as described below
+    ./lievaart
+    # enter a level and start playing as described below
 ```
 
 
@@ -18,8 +18,8 @@ make all
 To see what it would have looked like without the size restrictions:
 
 ```sh
-./lievaart2
-# enter a level and start playing as described below
+    ./lievaart2
+    # enter a level and start playing as described below
 ```
 
 

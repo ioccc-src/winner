@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./jason
+    ./jason
 ```
 
 
@@ -38,13 +38,13 @@ TED Shroyer came up with the idea that made it possible to hide all
 the text.  Thanks, TED.  You won.  :)
 
 ```sh
-cc -o jason jason.c
-./jason
-you are in a maze of twisty little passages
-caves lead:  left forward back
-you see
-   a lamp
-> _
+    cc -o jason jason.c
+    ./jason
+    you are in a maze of twisty little passages
+    caves lead:  left forward back
+    you see
+       a lamp
+    > _
 ```
 
 This program is a rather nostalgic little labyrinth game.  Start
@@ -115,14 +115,6 @@ the game entertaining, see if you can find
 ```
 
 in the source code.)
-
-
-
-
-
-
-
-
 
 
 ### GAME STRATEGY SPOILER

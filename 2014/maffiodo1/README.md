@@ -3,9 +3,8 @@
 This entry requires SDL to be installed. See [FAQ 3.8](../../faq.html#SDL) if you
 don't know how to do this for your system.
 
-
 ```sh
-make
+    make
 ```
 
 
@@ -14,7 +13,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2014 maffiodo1 bugs](../../bugs.html#2014_maffiodo1).
@@ -23,7 +22,7 @@ For more detailed information see [2014 maffiodo1 bugs](../../bugs.html#2014_maf
 ## To use:
 
 ```sh
-cat game.level | ./prog 320 200 800 300 128 144 game.rgba game.wav 10343679
+    cat game.level | ./prog 320 200 800 300 128 144 game.rgba game.wav 10343679
 ```
 
 The parameters to the program are:
@@ -43,10 +42,9 @@ note on macOS.
 ## Try:
 
 ```sh
-./giana.sh
+    ./giana.sh
 
-./mario.sh
-
+    ./mario.sh
 ```
 
 If you end up telnetting to the server (feature of [mario.sh](mario.sh)) you can
@@ -54,19 +52,19 @@ try:
 
 
 ```
-ls # show files including games
-wumpus.bas # play Hunt the Wumpus
-advent.gam # you know what this is! :-)
-starwars # animated Star Wars 'film'
+    ls # show files including games
+    wumpus.bas # play Hunt the Wumpus
+    advent.gam # you know what this is! :-)
+    starwars # animated Star Wars 'film'
 ```
 
 If you wish to change the width and height, defaulting at 640 x 480, say to
 800 x 800, try:
 
 ```sh
-ROWS=800 COLS=800 ./mario.sh
+    ROWS=800 COLS=800 ./mario.sh
 
-ROWS=800 COLS=800 ./giana.sh
+    ROWS=800 COLS=800 ./giana.sh
 ```
 
 
@@ -79,7 +77,7 @@ NOTE: the author states to use `tabsize=4` to see the magic of the formatting of
 the code. In `vim` you can do:
 
 ```
-:set tabstop=4
+    :set tabstop=4
 ```
 
 in command mode to see this effect. You don't need to modify your `.vimrc` file!
@@ -95,14 +93,14 @@ immediately take effect.
 Use `tabsize=4` to see the magic.
 
 ```sh
-expand -t 4 prog.c
+    expand -t 4 prog.c
 ```
 
 The program returns 0 if the player wins or *non-zero* if the player loses so
 you can test it and make something useful (or not), like this:
 
 ```sh
-cat mario.level | ./prog 320 200 800 300 128 144 mario.rgba mario8.wav 10343679 && telnet telehack.com 23
+    cat mario.level | ./prog 320 200 800 300 128 144 mario.rgba mario8.wav 10343679 && telnet telehack.com 23
 ```
 
 and type in: `starwars`
@@ -184,7 +182,7 @@ must be a grid of 8xN sprites. The size of a single sprite must be square. The
 program calculates the size in this way:
 
 ```
-sprite_size = image_width / 8
+    sprite_size = image_width / 8
 ```
 
 Each sprite is identified by its position inside the grid, counting line by
@@ -194,27 +192,27 @@ grid, sprite 8 is the first sprite of the second row of the grid etc.).
 Some positions of the grid have a predefined purpose:
 
 ```
-Position          | Description
-:-----------------|:--------------
-0                 | Player standing right
-1                 | Player walking right frame 0
-2                 | Player walking right frame 1
-3                 | Player jumping right
-4                 | Player standing left
-5                 | Player walking left frame 0
-6                 | Player walking left frame 1
-7                 | Player jumping left
-8 *(second row)*  | Super player standing right
-9                 | Super player walking right frame 0
-10                | Super player walking right frame 1
-11                | Super player jumping right
-12                | Super player standing left
-13                | Super player walking left frame 0
-14                | Super player walking left frame 1
-15                | Super player jumping left
-24                | Player dead
-32                | Player won
-40                | Super player won
+    Position          | Description
+    :-----------------|:--------------
+    0                 | Player standing right
+    1                 | Player walking right frame 0
+    2                 | Player walking right frame 1
+    3                 | Player jumping right
+    4                 | Player standing left
+    5                 | Player walking left frame 0
+    6                 | Player walking left frame 1
+    7                 | Player jumping left
+    8 *(second row)*  | Super player standing right
+    9                 | Super player walking right frame 0
+    10                | Super player walking right frame 1
+    11                | Super player jumping right
+    12                | Super player standing left
+    13                | Super player walking left frame 0
+    14                | Super player walking left frame 1
+    15                | Super player jumping left
+    24                | Player dead
+    32                | Player won
+    40                | Super player won
 ```
 
 All the others sprites can be used as you want, depending on the game you want
@@ -231,7 +229,7 @@ handled by the program is 333. You can modify this value by editing the source
 here:
 
 ```c
-C[333*7],d=333;
+    C[333*7],d=333;
 ```
 
 Each row has six columns:

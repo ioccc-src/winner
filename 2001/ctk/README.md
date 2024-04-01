@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an alternate version with vi(m) key movements. See [alternate
@@ -11,7 +11,7 @@ code](#alternate code) below.
 ## To use:
 
 ```sh
-./ctk
+    ./ctk
 ```
 
 
@@ -24,14 +24,14 @@ This alternate version adds to the movement keys `l` for right, `h` for left and
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
 ### Alternate use:
 
 ```sh
-./ctk.alt
+    ./ctk.alt
 ```
 
 

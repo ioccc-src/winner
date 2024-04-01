@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an alternate version based on the author's remarks. See [alternate
@@ -13,7 +13,7 @@ code](#alternate-code) below for more details.
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2001 dgbeards bugs](../../bugs.html#2001_dgbeards).
@@ -22,7 +22,7 @@ For more detailed information see [2001 dgbeards bugs](../../bugs.html#2001_dgbe
 ## To use:
 
 ```sh
-./dgbeards
+    ./dgbeards
 ```
 
 
@@ -37,14 +37,14 @@ this you can look at the author's remarks and make the change.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
 ### Alternate use:
 
 ```sh
-./dgbeards.alt
+    ./dgbeards.alt
 ```
 
 
@@ -224,11 +224,11 @@ A: When compiled with `gcc -Wall`, the compiler generated the following
 warnings:
 
 ```
-suggest parentheses around + or - in operand of &
-array subscript has type 'char'
-return type defaults to 'int'
-control reaches end of non-void function
-value computed is not used
+    suggest parentheses around + or - in operand of &
+    array subscript has type 'char'
+    return type defaults to 'int'
+    control reaches end of non-void function
+    value computed is not used
 ```
 
 The `value computed is not used` warning happens because I use the `&&`

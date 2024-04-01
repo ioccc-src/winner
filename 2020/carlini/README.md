@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2020 carlini bugs](../../bugs.html#2020_carlini).
@@ -19,21 +19,21 @@ For more detailed information see [2020 carlini bugs](../../bugs.html#2020_carli
 ## To use:
 
 ```sh
-./prog
+    ./prog
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 Or if you actually want to play:
 
 ```sh
-# Play with a friend, real or imagined, P1 and P2, squares are numbered 1..9
-./prog
+    # Play with a friend, real or imagined, P1 and P2, squares are numbered 1..9
+    ./prog
 ```
 
 
@@ -52,18 +52,18 @@ HOW ABOUT A NICE GAME OF <strike>CHESS</strike>TIC-TAC-TOE?
 ### USAGE
 
 ```sh
-cc -o prog prog.c
-./prog
+    cc -o prog prog.c
+    ./prog
 ```
 
 Alternates between P1 and P2. Enter a digit [1-9] to move:
 
 ```
-1 | 2 | 3
----------
-4 | 5 | 6
----------
-7 | 8 | 9
+    1 | 2 | 3
+    ---------
+    4 | 5 | 6
+    ---------
+    7 | 8 | 9
 ```
 
 The game ends if:
@@ -93,7 +93,7 @@ compilers unhappy, and others slow. (For example, passing GCC the flags `-Wall
 Under some terminals the program may exit early. The following should always work:
 
 ```sh
-echo "1 2 3 4 5 6 7" | ./prog
+    echo "1 2 3 4 5 6 7" | ./prog
 ```
 
 ### OBFUSCATION
@@ -101,9 +101,9 @@ echo "1 2 3 4 5 6 7" | ./prog
 The entirety of the program consists of a single iterated call to `printf(3)`.
 
 ```c
-int main() {
-    while(*d) printf(fmt, arg);
-}
+    int main() {
+	while(*d) printf(fmt, arg);
+    }
 ```
 
 Here, `fmt` is a single string, and `arg` is a series of arguments to
@@ -145,13 +145,13 @@ Format specifiers can take extra "arguments".
 For example, the following expression
 
 ```c
-printf("%1$.*2$d%3$hhn", 5, 10, &x)
+    printf("%1$.*2$d%3$hhn", 5, 10, &x)
 ```
 
 will have the same effect as if we had written
 
 ```c
-x = 10;
+    x = 10;
 ```
 
 because it will print out `0000000005` (5 padded to size 10) and then write the
@@ -175,37 +175,37 @@ We can use format strings to compute the OR/NOT of arbitrary "bits".
 We'll start with the simplest, OR:
 
 ```c
-printf("%1$s%2$s%3$hhn", a, b, c)
+    printf("%1$s%2$s%3$hhn", a, b, c)
 ```
 
 will compute
 
 ```c
-*c = strlen(a) + strlen(b)
+    *c = strlen(a) + strlen(b)
 ```
 
 but given that `strlen(x)` is `1` for a 1-bit and `0` for a 0-bit, we have
 
 ```c
-*c = a | b
+    *c = a | b
 ```
 
 Computing the NOT of a single value is also easy:
 
 ```c
-printf("%1$255d%1$s%hhn", a, b)
+    printf("%1$255d%1$s%hhn", a, b)
 ```
 
 will compute
 
 ```c
-*b = (strlen(a)+255)%256 = strlen(a)-1
+    *b = (strlen(a)+255)%256 = strlen(a)-1
 ```
 
 and again, because `strlen(x)` is either `1` or `0` we have
 
 ```c
-*c = !b
+    *c = !b
 ```
 
 From here we can compute any binary circuit. Doing something efficient,
@@ -222,11 +222,11 @@ pointers to three squares in a row to test, and `D` be where to save if there is
 win or not.
 
 ```c
-"%A$s%B$s%C$s%1$253d%11$hhn" // r11 = !(*A & *B & *C)
-ZERO
-"%11$s%1$255d%11hhn" // r11 = !r11
-ZERO
-"%11$s%D$s%D$hhn" // *D = *D | r11
+    "%A$s%B$s%C$s%1$253d%11$hhn" // r11 = !(*A & *B & *C)
+    ZERO
+    "%11$s%1$255d%11hhn" // r11 = !r11
+    ZERO
+    "%11$s%D$s%D$hhn" // *D = *D | r11
 ```
 
 That is, we set `*D` to `1` if there is a three-in-a-row. We repeat this for all
@@ -236,7 +236,7 @@ The ZERO macro ensures that the number of bytes written out is 0 mod 256 with
 the following expression
 
 ```c
-"%1$hhn%1$s" (repeated 256 times)
+    "%1$hhn%1$s" (repeated 256 times)
 ```
 
 where argument 1 is a pointer to a temporary variable followed by a NUL byte.
@@ -255,13 +255,13 @@ in `1$` the pointer to player 1's square, and `2$` the pointer to player 2's, an
 in `3$` the pointer to the board string, we can compute
 
 ```c
-"%1$s" (repeated 47 times) "%2$s" (repeated 56 times) %1$32d%3$hhn"
+    "%1$s" (repeated 47 times) "%2$s" (repeated 56 times) %1$32d%3$hhn"
 ```
 
 which will, in effect, compute
 
 ```c
-*r3 = (*r1) * 47 + (*r2) * 56 + 32
+    *r3 = (*r1) * 47 + (*r2) * 56 + 32
 ```
 
 which will output `' '` if neither are true, `'X'` if `r1` is true, or `'O'` if
@@ -274,7 +274,7 @@ In order to be able to finally display the board, while still only using one
 `printf(3)` statement, we finish the statement with
 
 ```c
-"\n\033[2J\n%26$s"
+    "\n\033[2J\n%26$s"
 ```
 
 which is the escape sequence to clear the screen, and then prints argument 26.
@@ -285,12 +285,12 @@ tic-tac-toe board.
 After the board, we need to print one of the following strings:
 
 ```
-P1>_
-P2>_
-P1 WINS
-P2 WINS
-P1 TIES
-P2 TIES
+    P1>_
+    P2>_
+    P1 WINS
+    P2 WINS
+    P1 TIES
+    P2 TIES
 ```
 
 Depending on if it's P1 or P2's turn to move, the game is over and someone
@@ -300,7 +300,7 @@ This turns out not to be as hard as it might look. Using the same trick as
 before, we set byte four to be
 
 ```c
-*byte4 = is_win * 'W' + is_tie * 'T'
+    *byte4 = is_win * 'W' + is_tie * 'T'
 ```
 
 The byte `'I'` and `'S'` can always be the same, and we do the same for `'E'`/`'N'`.
@@ -314,10 +314,10 @@ ends. It should just exit.
 One option would be to implement the logic as
 
 ```c
-printf()
-while (*ok) {
-    scanf();
-    printf();
+    printf()
+    while (*ok) {
+	scanf();
+	printf();
 }
 ```
 
@@ -325,10 +325,10 @@ but this would DOUBLE the number of calls to `printf(3)` we require. So instead 
 implement it like this
 
 ```c
-while (*ok) {
-    scanf();
-    printf();
-}
+    while (*ok) {
+	scanf();
+	printf();
+    }
 ```
 
 (In reality we actually pass `scanf(3)` as an argument to avoid the extra

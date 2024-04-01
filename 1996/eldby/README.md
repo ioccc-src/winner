@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make alt
+    make alt
 ```
 
 We recommend that you use the alt version to see what the entry looked like back
@@ -12,7 +12,7 @@ section.
 ## To use:
 
 ```sh
-./eldby.alt
+    ./eldby.alt
 ```
 
 To quit send intr (typically ctrl-c).
@@ -29,8 +29,8 @@ value used in `usleep()`. The default is `35000` but you can easily change
 it. To do so try:
 
 ```sh
-make SLEEP=20000 clobber alt
-./eldby.alt
+    make SLEEP=20000 clobber alt
+    ./eldby.alt
 ```
 
 
@@ -42,7 +42,7 @@ This version is the original which has no sleep time in between updates.
 ### Original build:
 
 ```sh
-make all
+    make all
 ```
 
 

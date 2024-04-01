@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 If you wish to change the size (see the [Author's remarks](#authors-remarks)
@@ -9,7 +9,7 @@ below) you can do so with the `SIZE` variable. For instance you can do:
 
 
 ```sh
-make clobber SIZE=50,50 all
+    make clobber SIZE=50,50 all
 ```
 
 but you can also do this directly with the [endoh4.sh](endoh4.sh) script as
@@ -21,7 +21,7 @@ described below.
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2013 endoh4 bugs](../../bugs.html#2013_endoh4).
@@ -30,8 +30,8 @@ For more detailed information see [2013 endoh4 bugs](../../bugs.html#2013_endoh4
 ## To use:
 
 ```sh
-./endoh4 < file
-./endoh4.sh file
+    ./endoh4 < file
+    ./endoh4.sh file
 ```
 
 The second form is preferable as it will temporarily make the cursor invisible
@@ -42,7 +42,7 @@ line it will feed to the program [endoh4.c](endoh4.c).
 ## Try:
 
 ```sh
-./endoh4.sh cube.txt
+    ./endoh4.sh cube.txt
 ```
 
 Hit ctrl-c to end the program.
@@ -52,13 +52,13 @@ The author recommends the use of xterm.
 For an example, if you are a football/soccer fan, try:
 
 ```sh
-./endoh4.sh solids/archimedian-solid/a11-truncated-icosahedron.txt
+    ./endoh4.sh solids/archimedian-solid/a11-truncated-icosahedron.txt
 ```
 
 You can provide more than one file:
 
 ```sh
-./endoh4.sh solids/archimedian-solid/a11-truncated-icosahedron.txt cube.txt
+    ./endoh4.sh solids/archimedian-solid/a11-truncated-icosahedron.txt cube.txt
 ```
 
 Hit ctrl-c/intr to go to the next file.
@@ -67,7 +67,7 @@ If you wish to change the size to `50,50` without passing any arg:
 
 
 ```sh
-SIZE=50,50 ./endoh4.sh
+    SIZE=50,50 ./endoh4.sh
 ```
 
 Not specifying a file feeds [endoh4.c](endoh4.c) to the program.
@@ -116,15 +116,15 @@ clang, and tcc.  It should not trigger warnings with `-pedantic` and `-Wextra`.
 You may want to use `tput` to hide the terminal cursor.
 
 ```sh
-tput civis
-./endoh4 < cube.txt
-tput cnorm
+    tput civis
+    ./endoh4 < cube.txt
+    tput cnorm
 ```
 
 or
 
 ```sh
-./endoh4.sh cube.txt
+    ./endoh4.sh cube.txt
 ```
 
 ### Bonuses
@@ -132,14 +132,14 @@ or
 You can change the screen size.  Let the aspect ratio be about 3:1.
 
 ```sh
-cc -DS=120,40 -o endoh4 endoh4.c
+    cc -DS=120,40 -o endoh4 endoh4.c
 ```
 
 The shape of this code is the geometric net of a regular tetrahedron.
 So, try:
 
 ```sh
-./endoh4 < endoh4.c # or ./endoh4.sh
+    ./endoh4 < endoh4.c # or ./endoh4.sh
 ```
 
 The [solids/](solids/) directory includes various solid data:

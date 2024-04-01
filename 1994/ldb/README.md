@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -10,7 +10,7 @@ make all
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [1994 ldb bugs](../../bugs.html#1994_ldb).
@@ -19,16 +19,16 @@ For more detailed information see [1994 ldb bugs](../../bugs.html#1994_ldb).
 ## To use:
 
 ```sh
-./ldb < file
+    ./ldb < file
 
-some_command | ./ldb
+    some_command | ./ldb
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 

@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 The author provided alternate code that prints the output one character at a
@@ -12,35 +12,35 @@ at once. See [Alternate code](#alternate-code) below.
 ## To use:
 
 ```sh
-./prog
+    ./prog
 
-# get recode help:
-./recode -h
+    # get recode help:
+    ./recode -h
 
-# general syntax for recode passing to Enigma machine:
-./recode [options] | ./prog - 2>/dev/null
-# general syntax for recode without passing to Enigma machine:
-./recode [options]
+    # general syntax for recode passing to Enigma machine:
+    ./recode [options] | ./prog - 2>/dev/null
+    # general syntax for recode without passing to Enigma machine:
+    ./recode [options]
 
-# recode prompts for settings; pass to Enigma machine:
-./recode | ./prog - 2>/dev/null
+    # recode prompts for settings; pass to Enigma machine:
+    ./recode | ./prog - 2>/dev/null
 
-# recode reads from input file, prompts for settings; passed to Enigma machine:
-./recode -finput | ./prog - 2>/dev/null
+    # recode reads from input file, prompts for settings; passed to Enigma machine:
+    ./recode -finput | ./prog - 2>/dev/null
 
-# recode reads config from string or file; passed to Enigma machine after
-# prompting for input:
-./recode -R<string|file> | ./prog - 2>/dev/null
+    # recode reads config from string or file; passed to Enigma machine after
+    # prompting for input:
+    ./recode -R<string|file> | ./prog - 2>/dev/null
 
-# write config to output file; passed to Enigma machine after prompting for
-# input:
-./recode -o<config> | ./prog - 2>/dev/null
+    # write config to output file; passed to Enigma machine after prompting for
+    # input:
+    ./recode -o<config> | ./prog - 2>/dev/null
 
-# pseudo-randomly select settings
-./recode -r
+    # pseudo-randomly select settings
+    ./recode -r
 
-# show Enigma machine settings after selection / generation:
-./recode -v
+    # show Enigma machine settings after selection / generation:
+    ./recode -v
 ```
 
 **NOTE**: in [recode](recode.c) no spaces between options and option arguments
@@ -50,15 +50,14 @@ are allowed.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 What does:
 
 ```sh
-echo | ./recode
-echo | ./recode -v
-
+    echo | ./recode
+    echo | ./recode -v
 ```
 
 do?
@@ -74,14 +73,14 @@ and to make it a bit more like the real thing.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 The default time to sleep is 400000 microseconds but you can change this by
 doing:
 
 ```sh
-make clobber SLEEP=600000 alt
+    make clobber SLEEP=600000 alt
 ```
 
 to change it to 600000 microseconds. It guards against negative numbers.
@@ -95,7 +94,7 @@ Use `prog.alt` as you would `prog` above.
 ### Alternate try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 Notice how only the last part should use the `prog.alt`. Why? Try it and find
@@ -112,7 +111,7 @@ There is a good deal of useful documentation that is provided with this entry:
 
 
 ```sh
-man ./enigma.1
+    man ./enigma.1
 ```
 
 
@@ -253,7 +252,7 @@ the result (after finishing the enciphering).
 If you run it like:
 
 ```sh
-./prog -
+    ./prog -
 ```
 
 It will prompt you for the settings of the machine (example below).
@@ -285,30 +284,30 @@ code](https://en.wikipedia.org/wiki/Morse_code) that I referred to earlier:
 
 
 ```sh
-$ ./prog -
-Ring 1: 3
-Setting 1: I
-Position 1: O
-Ring 2: 1
-Setting 2: C
-Position 2: C
-Ring 3: 5
-Setting 3: C
-Position 3: Z
-Reflector: 2
-Plugboard pair 1: CO
-Plugboard pair 2: DE
-Plugboard pair 3: SN
-Plugboard pair 4: XY
-Plugboard pair 5: MS
-Plugboard pair 6: AT
-Plugboard pair 7: VF
-Plugboard pair 8: UR
-Plugboard pair 9: KL
-Plugboard pair 10: BJ
-IOCCC
-^D
-CFDRG
+    $ ./prog -
+    Ring 1: 3
+    Setting 1: I
+    Position 1: O
+    Ring 2: 1
+    Setting 2: C
+    Position 2: C
+    Ring 3: 5
+    Setting 3: C
+    Position 3: Z
+    Reflector: 2
+    Plugboard pair 1: CO
+    Plugboard pair 2: DE
+    Plugboard pair 3: SN
+    Plugboard pair 4: XY
+    Plugboard pair 5: MS
+    Plugboard pair 6: AT
+    Plugboard pair 7: VF
+    Plugboard pair 8: UR
+    Plugboard pair 9: KL
+    Plugboard pair 10: BJ
+    IOCCC
+    ^D
+    CFDRG
 ```
 
 Notice that all output except the deciphered/enciphered text is sent to stdout.
@@ -319,9 +318,9 @@ default settings; as the judges suggest this invocation I will not show it here.
 But you can also type it out like this:
 
 ```sh
-$ ./prog
-IOCCC
-UUMMX
+    $ ./prog
+    IOCCC
+    UUMMX
 ```
 
 The IOCCC comes from stdin; the `UUMMX` is written to stdout.
@@ -330,7 +329,7 @@ If I compile the 2014 entry and copy it to my local directory as
 `vik` I might do:
 
 ```sh
-$ echo TEST|./prog |./vik | mplayer -demuxer rawaudio -
+    $ echo TEST|./prog |./vik | mplayer -demuxer rawaudio -
 ```
 
 And you would hear [Morse code](https://en.wikipedia.org/wiki/Morse_code) of the
@@ -342,30 +341,30 @@ For example I can use the syntax provided in the winning remarks along with my
 entry to write it to a file. Say:
 
 ```sh
-$ echo TEST|./prog |./vik > test.raw
-$ ./vik e < test.raw | ./prog
-LEST
+    $ echo TEST|./prog |./vik > test.raw
+    $ ./vik e < test.raw | ./prog
+    LEST
 ```
 
 Why did that happen? This shows more details:
 
 ```sh
-$ ./vik e < test.raw
-SCWV
+    $ ./vik e < test.raw
+    SCWV
 ```
 
 However as can be seen the first char is wrong:
 
 ```sh
-$ echo TEST|./prog
-KCWV
+    $ echo TEST|./prog
+    KCWV
 ```
 
 And piping the original output to my entry itself you get the original input:
 
 ```sh
-$ echo TEST | ./prog  | ./prog
-TEST
+    $ echo TEST | ./prog  | ./prog
+    TEST
 ```
 
 I'm not sure what causes that or if there's a way to fix it but that's the
@@ -374,19 +373,19 @@ idea anyway. Neither do I know if the original transcoding is correct.
 What if I use the input string `LEST` instead? In that case it worked fine:
 
 ```sh
-$ echo LEST | ./prog | ./vik > lest.raw
-$ ./vik e < lest.raw | ./prog
-LEST
+    $ echo LEST | ./prog | ./vik > lest.raw
+    $ ./vik e < lest.raw | ./prog
+    LEST
 ```
 
 But there's one obvious question, right? Let's try the most important one:
 
 ```sh
-$ echo IOCCC | ./prog | ./vik > ioccc.raw
-$ ./vik e < ioccc.raw
-UUMMX
-$ ./vik e < ioccc.raw | ./prog
-IOCCC
+    $ echo IOCCC | ./prog | ./vik > ioccc.raw
+    $ ./vik e < ioccc.raw
+    UUMMX
+    $ ./vik e < ioccc.raw | ./prog
+    IOCCC
 ```
 
 Phew! The program redeemed itself after the test failure! :)
@@ -398,8 +397,8 @@ too. Notice also how it showed the same output that my program gave it - `UUMMX`
 What about the other [Morse code entry](../../1998/dorssel/dorssel.c)?
 
 ```sh
-$ echo IOCCC | ./prog | ./dorssel
-..- ..- -- -- -..-
+    $ echo IOCCC | ./prog | ./dorssel
+    ..- ..- -- -- -..-
 ```
 
 ### <a name="recode" href="#toc">The recode.c configurator</a>
@@ -443,26 +442,26 @@ automatic (e.g. via the [recode](recode.c) program) input. This does mean that
 something like the following can happen:
 
 ```sh
-$ ./prog -
-Ring 1: 1AB
-Setting 1: Position 1: Ring 2: 2CD
-Setting 2: Position 2: Ring 3: 3
-Setting 3: A
-Position 3: B
-Reflector: 1A
-Plugboard pair 1: BC
-Plugboard pair 2: ..
-Plugboard pair 3: ..
-Plugboard pair 4: DE
-Plugboard pair 5: FG
-Plugboard pair 6: HI
-Plugboard pair 7: JK
-Plugboard pair 8: LM
-Plugboard pair 9: NO
-Plugboard pair 10: PQ
-IOCCC
-WD
-SIRDK
+    $ ./prog -
+    Ring 1: 1AB
+    Setting 1: Position 1: Ring 2: 2CD
+    Setting 2: Position 2: Ring 3: 3
+    Setting 3: A
+    Position 3: B
+    Reflector: 1A
+    Plugboard pair 1: BC
+    Plugboard pair 2: ..
+    Plugboard pair 3: ..
+    Plugboard pair 4: DE
+    Plugboard pair 5: FG
+    Plugboard pair 6: HI
+    Plugboard pair 7: JK
+    Plugboard pair 8: LM
+    Plugboard pair 9: NO
+    Plugboard pair 10: PQ
+    IOCCC
+    WD
+    SIRDK
 ```
 
 First of all: what is that `WD`? I didn't type that but it showed up hitting
@@ -506,10 +505,10 @@ later on?). This might become even more useful after the challenge is accepted,
 accomplished and made use of! :)
 
 ```sh
-$ echo ABC | ./prog
-GYM
-$ echo ABC | ./prog | ./prog
-ABC
+    $ echo ABC | ./prog
+    GYM
+    $ echo ABC | ./prog | ./prog
+    ABC
 ```
 
 ### <a name="layout" href="#toc">On the source code layout</a>
@@ -554,13 +553,13 @@ that proof that it's obfuscated itself?! :) Silliness aside [obfuscation.txt][]
 has some of the ways I think this entry is obfuscated.  To decipher try:
 
 ```sh
-./recode -Robfuscation.key -fobfuscation.txt | ./prog - 2>/dev/null > obfuscation.md
+    ./recode -Robfuscation.key -fobfuscation.txt | ./prog - 2>/dev/null > obfuscation.md
 ```
 
 To encipher:
 
 ```sh
-./recode -Robfuscation.key -fobfuscation.md | ./prog - 2>/dev/null > obfuscation.txt
+    ./recode -Robfuscation.key -fobfuscation.md | ./prog - 2>/dev/null > obfuscation.txt
 ```
 
 The file [obfuscation.key][] is the key to decipher/encipher
@@ -579,8 +578,8 @@ As for the [obfuscation.key][] file if you observe the contents you'll find the
 word `OBFUSCATION`:
 
 ```
-2OB5FU1SC2ATIONCDEFGHJKLMPQRYZ
- OB FU SC ATION
+    2OB5FU1SC2ATIONCDEFGHJKLMPQRYZ
+     OB FU SC ATION
 ```
 
 ### <a name="bugs" href="#toc">Bugs, limitations, differences from the real Enigma machines and general notes</a>
@@ -763,8 +762,8 @@ I, II and III and the starting positions at B, B and C respectively (as in left,
 centre, right). To do this click the button at the top right that looks like:
 
 ```
-o->
-<-o
+    o->
+    <-o
 ```
 
 and then select the rotors.  Next click the button again at the left of the
@@ -786,7 +785,7 @@ Going back to the configuring the online simulator try inputting the text IOCCC
 and you'll see the resulting text being:
 
 ```
-UUMMX
+    UUMMX
 ```
 
 Which is exactly as my entry shows! So at least for the starting position `BBC`

@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 An alternate version that should compile in Windows/MS Visual Studio is
@@ -11,14 +11,14 @@ available. See the [Alternate code](#alternate-code) section below.
 ## To use:
 
 ```sh
-./cable3 bios-image-file floppy-image-file [harddisk-image-file]
+    ./cable3 bios-image-file floppy-image-file [harddisk-image-file]
 ```
 
 
 ## Try:
 
 ```sh
-./cable3.sh
+    ./cable3.sh
 ```
 
 NOTE: to quit the program type `QUITEMU`. You might have to be at the top level
@@ -47,7 +47,7 @@ Assuming `make` is available and will function:
 
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -174,7 +174,7 @@ Makefile definition of KB, use something slightly different - add the following
 entry to the Preprocessor Definitions list in the Project Properties page:
 
 ```c
-KB=(kb=H(8),kbhit())&&(r[1190]=getch(),H(7))
+    KB=(kb=H(8),kbhit())&&(r[1190]=getch(),H(7))
 ```
 
 NOTE: this is done in the [Alternate code](#alternate-code).
@@ -190,7 +190,7 @@ will need to explicitly declare these functions by adding the appropriate
 include to the top of the source:
 
 ```c
-#include <unistd.h>
+    #include <unistd.h>
 ```
 
 NOTE: this has been done in [cable3.c](cable3.c).
@@ -198,7 +198,7 @@ NOTE: this has been done in [cable3.c](cable3.c).
 ### Usage
 
 ```sh
-./cable3 bios-image-file floppy-image-file [harddisk-image-file]
+    ./cable3 bios-image-file floppy-image-file [harddisk-image-file]
 ```
 
 PLEASE NOTE that under Unices the keyboard must be in raw mode for the emulator
@@ -206,9 +206,9 @@ to work properly. Therefore the emulator is best run from a shell script that
 looks something like:
 
 ```sh
-stty cbreak raw -echo min 0
-./cable3 bios floppy.img harddisk.img
-stty cooked echo
+    stty cbreak raw -echo min 0
+    ./cable3 bios floppy.img harddisk.img
+    stty cooked echo
 ```
 
 See the [cable3.sh](cable3.sh) script.
@@ -224,9 +224,9 @@ cooked). So, run the emulator using something like this script (provided as
 [cable3.sh](cable3.sh)):
 
 ```sh
-stty cbreak raw -echo min 0
-./cable3 bios fd.img
-stty cooked echo
+    stty cbreak raw -echo min 0
+    ./cable3 bios fd.img
+    stty cooked echo
 ```
 
 ## To use the emulator - floppy + HD mode
@@ -238,9 +238,9 @@ For the more adventurous, you can start off with (for example) a blank 40MB
 image file called hd.img made using e.g. Makefile. Then use:
 
 ```sh
-stty cbreak raw -echo min 0
-./cable3 bios fd.img hd.img
-stty cooked echo
+    stty cbreak raw -echo min 0
+    ./cable3 bios fd.img hd.img
+    stty cooked echo
 ```
 
 Preparing the hard disk for use in the emulator is done just like a real PC.

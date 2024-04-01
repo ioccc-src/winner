@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./vik2
+    ./vik2
 ```
 
 
@@ -128,7 +128,7 @@ speed up the compilation, define the `STOP` symbol to anything from `_3` to
 time.) Prime numbers up to `2^STOP` will be calculated.
 
 ```sh
-cpp '-DSTOP=_5' '-DFNAME="tmp1.c"' prog.c tmp1.c
+    cpp '-DSTOP=_5' '-DFNAME="tmp1.c"' prog.c tmp1.c
 ```
 
 Then use `cpp` or any other
@@ -136,20 +136,20 @@ Then use `cpp` or any other
 work. This will take some time....
 
 ```sh
-cpp tmp1.c > tmp2.c
+    cpp tmp1.c > tmp2.c
 ```
 
 Finally compile the pre-processed file
 
 ```sh
-cc -O tmp2.c -o prog
+    cc -O tmp2.c -o prog
 ```
 
 Then run the program to reveal all prime numbers up to 32 (if you used
 `STOP=_5` as above):
 
 ```sh
-./vik2
+    ./vik2
 ```
 
 

@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
 ## To use:
 
 ```sh
-./lycklama.alt < some_file
+    ./lycklama.alt < some_file
 ```
 
 To see why we recommend the alternate version instead of the original version,
@@ -25,13 +25,13 @@ reconfigure it like:
 
 
 ```sh
-make SLEEP=700 clobber alt
+    make SLEEP=700 clobber alt
 ```
 
 which would set it at 700. Then, whether you use the default value or not, try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 
@@ -46,24 +46,24 @@ modern systems.
 ### Original build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ### Original use:
 
 ```sh
-./lycklama < some_file
+    ./lycklama < some_file
 ```
 
 
 ### Original try:
 
 ```sh
-./lycklama < lycklama.c
-./lycklama < lycklama.alt.c
-./lycklama < lycklama.orig.c
-./lycklama < Makefile
+    ./lycklama < lycklama.c
+    ./lycklama < lycklama.alt.c
+    ./lycklama < lycklama.orig.c
+    ./lycklama < Makefile
 ```
 
 

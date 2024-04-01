@@ -151,23 +151,23 @@ movement is required) I have provided a source file that can test your terminal
 for the capabilities I use in the entry.</p>
 <p>It also tries to determine the minimum number of columns to play without the
 status line overflowing - even with the dynamic length. Try:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> make test</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> make test</span></code></pre></div>
 <p>This compiles the program <a href="termcaps.c">termcaps.c</a> and runs it; you should see something like:</p>
-<pre><code>terminal supports cursor movement
-terminal supports making cursor invisible
-terminal supports bold
-terminal supports colours
+<pre><code>    terminal supports cursor movement
+    terminal supports making cursor invisible
+    terminal supports bold
+    terminal supports colours
 
-terminal rows  41 (38  playable)
-terminal cols 155 (153 playable)
+    terminal rows  41 (38  playable)
+    terminal cols 155 (153 playable)
 
-snake size:   997 (max size: 5776)
-      bugs:   199 (max size: 1155)
+    snake size:   997 (max size: 5776)
+          bugs:   199 (max size: 1155)
 
-at least 34 columns (currently 155) recommended for snake size 997
-at least 37 columns (currently 155) recommended for capped snake size 5776
+    at least 34 columns (currently 155) recommended for snake size 997
+    at least 37 columns (currently 155) recommended for capped snake size 5776
 
-No problems detected.</code></pre>
+    No problems detected.</code></pre>
 <p>Terminal rows and cols are the current values (the number of columns shown later
 as well). The snake size is the default size to win (based on the variables, see
 below). The <code>max size: 5776</code> is the capped size (or ‘capsize’). The 199 bugs is
@@ -178,21 +178,21 @@ maximum (capped) snake size.</p>
 <p>If I pass in any of the variables <strong>GROW</strong>, <strong>MAXSIZE</strong>, <strong>SIZE</strong> and/or
 <strong>LINES</strong> or <strong>COLUMNS</strong> it bases its calculations on those variables. For
 example:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">terminal</span> supports cursor movement</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">terminal</span> supports making cursor invisible</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">terminal</span> supports bold</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">terminal</span> supports colours</span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">terminal</span> supports cursor movement</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">terminal</span> supports making cursor invisible</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">terminal</span> supports bold</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">terminal</span> supports colours</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">terminal</span> rows  41 <span class="er">(</span><span class="ex">38</span>  playable<span class="kw">)</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">terminal</span> cols 155 <span class="er">(</span><span class="ex">153</span> playable<span class="kw">)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">terminal</span> rows  41 <span class="er">(</span><span class="ex">38</span>  playable<span class="kw">)</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">terminal</span> cols 155 <span class="er">(</span><span class="ex">153</span> playable<span class="kw">)</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="ex">snake</span> size:  5776 <span class="er">(</span><span class="ex">max</span> size: 5776<span class="kw">)</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>      <span class="ex">bugs:</span>  5771 <span class="er">(</span><span class="ex">max</span> size: 5771<span class="kw">)</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">snake</span> size:  5776 <span class="er">(</span><span class="ex">max</span> size: 5776<span class="kw">)</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>          <span class="ex">bugs:</span>  5771 <span class="er">(</span><span class="ex">max</span> size: 5771<span class="kw">)</span></span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="ex">at</span> least 37 columns <span class="er">(</span><span class="ex">currently</span> 155<span class="kw">)</span> <span class="ex">recommended</span> for snake size 5776</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="ex">at</span> least 37 columns <span class="er">(</span><span class="ex">currently</span> 155<span class="kw">)</span> <span class="ex">recommended</span> for capped snake size 5776</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">at</span> least 37 columns <span class="er">(</span><span class="ex">currently</span> 155<span class="kw">)</span> <span class="ex">recommended</span> for snake size 5776</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">at</span> least 37 columns <span class="er">(</span><span class="ex">currently</span> 155<span class="kw">)</span> <span class="ex">recommended</span> for capped snake size 5776</span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="ex">No</span> problems detected.</span></code></pre></div>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="ex">No</span> problems detected.</span></code></pre></div>
 <p>As you can see it tells you the max size (the ‘capsized’ snake) as well as the
 requested max size (if the requested size is bigger than the capped size then it
 will be set to that value instead) of the snake. The capped size is like in the
@@ -224,12 +224,12 @@ resize the window with first. But what if you want exacts?</p>
 <p>To specify the lines/columns of curses program per instance use the <code>LINES</code> and
 <code>COLUMNS</code> environmental variables.</p>
 <p>For demonstration consider the following:</p>
-<pre><code>    $ echo $LINES $COLUMNS
-    42 157</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo <span class="va">$LINES</span> <span class="va">$COLUMNS</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">42</span> 157</span></code></pre></div>
 <p>Note: I subtract 1 from the max y/x and the max coords in the game output
 include the walls and score line but these values are for the terminal itself.</p>
 <p>Say you want 55 columns:</p>
-<pre><code>    $ COLUMNS=55 ./prog</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> COLUMNS=55 ./prog</span></code></pre></div>
 <p>This will force curses to detect the max columns (X) of your terminal (for the
 game dimensions) - to be 55; it might look like this instead:</p>
 <pre><code>    X:27/54 Y:20/41 S:5/997 B:0</code></pre>
@@ -245,20 +245,21 @@ etc. For the game you might not see the final score.</p>
 <p>In my tests there is one thing that at least allows you to see the final score
 and that is by running <code>clear</code> before running the program. That’s what the
 prog.alt version does. You might run it as one of:</p>
-<pre><code>    LINES=20 ./prog.alt
-    LINES=20 ./snake.alt</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">LINES</span><span class="op">=</span>20 <span class="ex">./prog.alt</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="va">LINES</span><span class="op">=</span>20 <span class="ex">./snake.alt</span></span></code></pre></div>
 <p>Even if the final score is visible though the terminal may very well still be
 messed up. There are numerous things you might try but probably the easiest is
 to run the game again without modifying the dimensions (and then just quit) or
 even just the <code>reset</code> command.</p>
 <p>The Linux man page says:</p>
-<p>You might have to run the <code>reset</code> tool like:</p>
-<pre><code>           &lt;LF&gt;reset&lt;LF&gt;
+<pre><code>    You might have to run the `reset` tool like:
 
-       (the line-feed character is normally control-J) to get the terminal
-       to work, as carriage-return may no longer work in the abnormal state.</code></pre>
+                   &lt;LF&gt;reset&lt;LF&gt;
+
+               (the line-feed character is normally control-J) to get the terminal
+               to work, as carriage-return may no longer work in the abnormal state.</code></pre>
 <p>If you don’t have the reset utility you can try:</p>
-<pre><code>        echo -e \\033c</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="at">-e</span> <span class="dt">\\</span>033c</span></code></pre></div>
 <p>Otherwise try <code>clear; stty sane</code> (that will turn on echo also) or if all else
 fails log out and back in.</p>
 <p>For more information on this subject generally see the <a href="https://www.tldp.org/HOWTO/Keyboard-and-Console-HOWTO.html">Linux keyboard and
@@ -270,10 +271,10 @@ outside what’s actually possible with their screen. But then player 4 comes
 along and thinks he/she will be clever and mess with the dimensions a bit. Let’s
 say they have a 13” monitor and they think it’d be funny to see how 997 lines
 would work; they might try something like:</p>
-<pre><code>        LINES=997 ./prog</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">LINES</span><span class="op">=</span>997 <span class="ex">./prog</span></span></code></pre></div>
 <p>What then? Well expect trouble; curses will not know any better and the max
 number of lines will be 997. If they were to do:</p>
-<pre><code>        COLUMNS=997 ./prog</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">COLUMNS</span><span class="op">=</span>997 <span class="ex">./prog</span></span></code></pre></div>
 <p>Then they will see a different effect. Again the same reason: the player trying
 to be funny.</p>
 <p>The game will try and be funny in return and you can expect it to not function
@@ -305,7 +306,7 @@ GitHub) file).</p>
 <p>According to my tests for monochrome terminals the screen has the white and
 black background; if terminal is configured to be black background white
 foreground that is the order it is too. You can try that like:</p>
-<pre><code>        TERM=linux-m ./prog</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">TERM</span><span class="op">=</span>linux-m <span class="ex">./prog</span></span></code></pre></div>
 <p>But I do not specifically check if the terminal has colours. Is there a curses
 implementation that has a problem here? Below I explain what to comment out
 should you need colours to be disabled but I personally have not run into any
@@ -313,34 +314,33 @@ problems even with monochrome terminals. Later I say what to do to remove colour
 support in the source code itself.</p>
 <h2 id="colour-limitations"><a name="colourlimitations" href="#toc">Colour limitations</a></h2>
 <p>According to X/Open Curses, Issue 7 (pg. 57):</p>
-<pre><code>With init_pair() and pair_content(), the value of pair must be in a range
-from 0 to and including COLOR_PAIRS-1. (There may be an
-implementation-specific upper limit on the valid value of pair, but any such
-limit is at least 63.) Valid values for f and b are the range from 0 to and
-including COLORS-1.</code></pre>
+<pre><code>    With init_pair() and pair_content(), the value of pair must be in a range
+    from 0 to and including COLOR_PAIRS-1. (There may be an
+    implementation-specific upper limit on the valid value of pair, but any such
+    limit is at least 63.) Valid values for f and b are the range from 0 to and
+    including COLORS-1.</code></pre>
 <p>The manpage for <code>init_pair()</code> says this:</p>
-<pre><code>       These limits apply to color values and color pairs.  Values outside these limits are not legal, and may result in a runtime error:
+<pre><code>    These limits apply to color values and color pairs.  Values outside these limits are not legal, and may result in a runtime error:
 
-       [...]
+    [...]
 
-            COLOR_PAIRS corresponds to the terminal database&#39;s max_pairs capability, (see terminfo(5)).</code></pre>
+        COLOR_PAIRS corresponds to the terminal database&#39;s max_pairs capability, (see terminfo(5)).</code></pre>
 <p>Based on the two as well as the fact that monochrome terminals (I’ve tried under
 both Linux and macOS) seem to work fine I believe I am fine here too. And to
 confirm this I wrote the following code with the output below:</p>
-<pre><code>    #include &lt;curses.h&gt;
-
-    int main()
-    {
-        initscr();
-        start_color();
-        printw(&quot;COLORS: %d\nCOLOR_PAIRS: %d\n&quot;, COLORS, COLOR_PAIRS);
-        getch();
-        endwin();
-    }
-
-    TERM=linux-m ./colour_pairs
-    COLORS: 0
-    COLOR_PAIRS: 0</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#include </span><span class="im">&lt;curses.h&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        initscr<span class="op">();</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>        start_color<span class="op">();</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>        printw<span class="op">(</span><span class="st">&quot;COLORS: </span><span class="sc">%d\n</span><span class="st">COLOR_PAIRS: </span><span class="sc">%d\n</span><span class="st">&quot;</span><span class="op">,</span> COLORS<span class="op">,</span> COLOR_PAIRS<span class="op">);</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>        getch<span class="op">();</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>        endwin<span class="op">();</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">TERM</span><span class="op">=</span>linux-m <span class="ex">./colour_pairs</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">COLORS:</span> 0</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">COLOR_PAIRS:</span> 0</span></code></pre></div>
 <p>Without specifying the TERM I get:</p>
 <pre><code>    COLORS: 256
     COLOR_PAIRS: 32767</code></pre>
@@ -348,22 +348,22 @@ confirm this I wrote the following code with the output below:</p>
 possible colour pairs than I have used so that’s not a problem either. Perhaps
 even it would only be a runtime error if the colours are supported and the
 number is out of the range? To try and figure this out I did another test:</p>
-<pre><code>    int main()
-    {
-        initscr();
-        start_color();
-
-        init_pair(COLOR_PAIRS+1, COLOR_WHITE, COLOR_GREEN);
-        bkgd(COLOR_PAIR(COLOR_PAIRS+1));
-        init_pair(1, COLOR_WHITE, COLOR_BLACK);
-        attron(COLOR_PAIR(1));
-        printw(&quot;COLORS: %d\nCOLOR_PAIRS: %d\n&quot;, COLORS, COLOR_PAIRS);
-
-        getch();
-        endwin();
-    }</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>        initscr<span class="op">();</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        start_color<span class="op">();</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>        init_pair<span class="op">(</span>COLOR_PAIRS<span class="op">+</span><span class="dv">1</span><span class="op">,</span> COLOR_WHITE<span class="op">,</span> COLOR_GREEN<span class="op">);</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>        bkgd<span class="op">(</span>COLOR_PAIR<span class="op">(</span>COLOR_PAIRS<span class="op">+</span><span class="dv">1</span><span class="op">));</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>        init_pair<span class="op">(</span><span class="dv">1</span><span class="op">,</span> COLOR_WHITE<span class="op">,</span> COLOR_BLACK<span class="op">);</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>        attron<span class="op">(</span>COLOR_PAIR<span class="op">(</span><span class="dv">1</span><span class="op">));</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>        printw<span class="op">(</span><span class="st">&quot;COLORS: </span><span class="sc">%d\n</span><span class="st">COLOR_PAIRS: </span><span class="sc">%d\n</span><span class="st">&quot;</span><span class="op">,</span> COLORS<span class="op">,</span> COLOR_PAIRS<span class="op">);</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>        getch<span class="op">();</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>        endwin<span class="op">();</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
 <p>Running it like</p>
-<pre><code>    TERM=linux-m ./colour_pairs</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">TERM</span><span class="op">=</span>linux-m <span class="ex">./colour_pairs</span></span></code></pre></div>
 <p>I got the output as if colours weren’t used: 0 and 0. With coloured terminals
 however it was not visible. If I however comment out the call to <code>bkgd()</code> I get
 instead:</p>

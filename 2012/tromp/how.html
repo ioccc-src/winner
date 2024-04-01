@@ -133,10 +133,10 @@ continuations (see the 3rd reference for details).</p>
 <p>The term space holds <a href="https://en.wikipedia.org/wiki/Lambda_calculus">lambda
 calculus</a> terms in the following
 format. 0 denotes some form of I/O; the only four occurrences are at:</p>
-<pre><code>  C=13: recognizes end of a byte
-  C=20: recognize output of 0 bit
-  C=21: recognize output of 1 bit
-  C=end: input list, expanded lazily</code></pre>
+<pre><code>    C=13: recognizes end of a byte
+    C=20: recognize output of 0 bit
+    C=21: recognize output of 1 bit
+    C=end: input list, expanded lazily</code></pre>
 <p><code>1</code> denotes a variable, with the next entry its <a href="https://en.wikipedia.org/wiki/De_Bruijn_index">de Bruijn
 index</a>.</p>
 <p><code>2</code> denotes application with the next entry the size of the term being applied.</p>
@@ -150,26 +150,26 @@ free list.</li>
 <li>lambda term (index in term space).</li>
 </ol>
 <p>Here’s what each variable does:</p>
-<pre><code>L       Lambda term space
-m       mode: 0 for bits and 7 for bytes
-b       bits remaining unread in I, -1 on EOF
-D       Desirable temporary
-c       continuation context
-a       active environment pointer
-C       Current term index
-U       Ultimate term pointer
-u       utility entry
-B       Born to be free-list of closures
-I       Input character
-O       Output character
-e       entry of current term</code></pre>
+<pre><code>    L   Lambda term space
+    m   mode: 0 for bits and 7 for bytes
+    b   bits remaining unread in I, -1 on EOF
+    D   Desirable temporary
+    c   continuation context
+    a   active environment pointer
+    C   Current term index
+    U   Ultimate term pointer
+    u   utility entry
+    B   Born to be free-list of closures
+    I   Input character
+    O   Output character
+    e   entry of current term</code></pre>
 <p>Here’s what each of the 6 auxiliary functions do:</p>
-<pre><code>s       variable lookup in active environment with de Bruijn index u
-S       gets one bit of input, setting b to -1 on EOF or to remaining number of bits in current byte
-k       copy fragment from string literal holding lambda terms xor 46 into current end of term space
-x       expand input, adding 11 (resp. 99) entries to term space for bit (resp. byte) mode
-p       parses BLC-encoded lambda term using S(), stores results in term space and returns length
-d       decrease reference counter, add record to free list on reaching zero</code></pre>
+<pre><code>    s   variable lookup in active environment with de Bruijn index u
+    S   gets one bit of input, setting b to -1 on EOF or to remaining number of bits in current byte
+    k   copy fragment from string literal holding lambda terms xor 46 into current end of term space
+    x   expand input, adding 11 (resp. 99) entries to term space for bit (resp. byte) mode
+    p   parses BLC-encoded lambda term using S(), stores results in term space and returns length
+    d   decrease reference counter, add record to free list on reaching zero</code></pre>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

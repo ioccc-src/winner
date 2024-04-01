@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./grothe carrier_freq pixelclock horizontal_total < some_input.txt
+    ./grothe carrier_freq pixelclock horizontal_total < some_input.txt
 ```
 
 
@@ -17,7 +17,7 @@ make
 Put on your "electronic ears" and then try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 You may find using
@@ -42,22 +42,22 @@ To be able to run the program you need to determine the following
 parameters:
 
 ```
-carrier_freq     - base frequency used to host music
-pixelclock       - refresh rate of the monitor
-horizontal_total - total scan along the horizontal axis
+    carrier_freq     - base frequency used to host music
+    pixelclock       - refresh rate of the monitor
+    horizontal_total - total scan along the horizontal axis
 ```
 
 If you have `xvidtune` installed you can get the `pixelclock` and
 `horizontal_total` with the following command
 
 ```sh
-xvidtune -show | head -n 1 | awk '{ print "pixelclock " $2 * 1000000 " horizontal_total = " $6 }'
+    xvidtune -show | head -n 1 | awk '{ print "pixelclock " $2 * 1000000 " horizontal_total = " $6 }'
 ```
 
 Example from my laptops:
 
 ```sh
-./grothe 65000000 10000000 1344 < twinkle.txt
+    ./grothe 65000000 10000000 1344 < twinkle.txt
 ```
 
 Even if the user gets a setting off, the sound will usually be able to be
@@ -74,19 +74,19 @@ and [Timex Sinclair ZX-81](https://en.wikipedia.org/wiki/ZX81)s.
 Olympics Fanfare - from `antang@phakt.usc.edu` - Tony:
 
 ```
-4-9-91231,2222-321123123-9-91231,2222-32112321
+    4-9-91231,2222-321123123-9-91231,2222-32112321
 ```
 
 Twinkle Twinkle Little Star - from `fsufunkyb@aol.com` - Ben Schmidt:
 
 ```
-1199##9-6633221-9966332-9966332-1199#9-6633221-
+    1199##9-6633221-9966332-9966332-1199#9-6633221-
 ```
 
 Generic Arabian Tune - from `rdippold@qualcomm.com` - Ron "Asbestos" Dippold:
 
 ```
-453,54,4569564459,9#95458,8987453 54
+    453,54,4569564459,9#95458,8987453 54
 ```
 
 Others can be found by doing a search for "touch tone phone songs".

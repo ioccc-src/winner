@@ -125,18 +125,18 @@
 <h1 id="hints">HINTS</h1>
 <p>For the first program (<a href="shapiro.c">shapiro.c</a>):</p>
 <p>This is a very simple program:</p>
-<pre><code> 1. #include &lt;stdio.h&gt;
- 2. main()
- 3. {
- 4. int K,L,M=0;
- 5. FILE *J;
- 6. J=fopen(__FILE__,&quot;r&quot;);
- 7. for(;
- 8.     (L=getc(J))&gt;=0;
- 9.     L&gt;=&#39;J&#39;&amp;&amp;L&lt;=&#39;J&#39;+15 &amp;&amp;
-10.     ((M=!M)?K=L:putchar(K-&#39;J&#39;|(L-&#39;J&#39;&lt;&lt;4)))
-11.    );
-12. exit(0);}</code></pre>
+<pre><code>     1. #include &lt;stdio.h&gt;
+     2. main()
+     3. {
+     4. int K,L,M=0;
+     5. FILE *J;
+     6. J=fopen(__FILE__,&quot;r&quot;);
+     7. for(;
+     8.     (L=getc(J))&gt;=0;
+     9.     L&gt;=&#39;J&#39;&amp;&amp;L&lt;=&#39;J&#39;+15 &amp;&amp;
+    10.     ((M=!M)?K=L:putchar(K-&#39;J&#39;|(L-&#39;J&#39;&lt;&lt;4)))
+    11.    );
+    12. exit(0);}</code></pre>
 <p>Lines 1-5 are basic stuff. Line 6 opens the source code for input. Line 7 is the
 loop. Line 8 reads in each character in the file (placed in <code>L</code>) while not &gt;= 0.
 Line 9 is an <code>if</code> expression which filters out all characters not between <code>J</code>
@@ -152,35 +152,34 @@ contiguous ASCII characters free for the encoding. Because of this the
 second program is mostly included as a comment. However, some of the
 characters of the encoded program are also source code for the decoder.</p>
 <h3 id="for-the-second-program-with-time.h">For the second program (with time.h):</h3>
-<pre><code> 1  #include &lt;stdio.h&gt;
- 2  #include &lt;time.h&gt;
- 3  #define o(j,k,m,n,l) {fprintf(j,a[k],m,n,a[l]);fflush(j);}
- 4  char *a[]={&quot;%c+------------+\n&quot;,&quot;%c+%3d %-8s+\n&quot;,&quot;seconds&quot;,&quot;minutes&quot;,
- 5             &quot;hours&quot;,&quot;%s\n&quot;,&quot;\0337\033[%d;65;H%s\0338&quot;};
- 6  int b[]={0,0,17,14,11,0};
- 7  main(v,c)
- 8  int v;
- 9  char ** c;
-10  {
-11    char d[40],*e,f=6;
-12    time_t g;
-13    FILE *h,*i;
-14    while (--f &amp;&amp; !pipe(d) &amp;&amp; !fork());
-15    h=fdopen(6-f&lt;&lt;1,&quot;a&quot;);
-16    i=fdopen((6-f&lt;&lt;1)+1,&quot;r&quot;);
-17    for(;;){
-18      if(f){
-19        fgets(d,40,i);
-20        d[strlen(d)-1]=&#39;\0&#39;;
-21        if(*d==&#39;0&#39;+f){ sprintf(*c,&quot;%s\n&quot;,d+1); o(stdout,6,6-f,d+1,0) }
-22        if(*d&gt;&#39;0&#39;+f) o(h,5,d,0,0)
-23      }else{
-24        time(&amp;g);
-25        e=asctime(localtime(&amp;g));
-26        for(v=1;v&lt;6;v++) o(h,v!=1&amp;&amp;v!=6-1,v+&#39;0&#39;,atoi(e+b[v]),v)
-27        sleep(1);
-28    }}}
-</code></pre>
+<pre><code>     1  #include &lt;stdio.h&gt;
+     2  #include &lt;time.h&gt;
+     3  #define o(j,k,m,n,l) {fprintf(j,a[k],m,n,a[l]);fflush(j);}
+     4  char *a[]={&quot;%c+------------+\n&quot;,&quot;%c+%3d %-8s+\n&quot;,&quot;seconds&quot;,&quot;minutes&quot;,
+     5             &quot;hours&quot;,&quot;%s\n&quot;,&quot;\0337\033[%d;65;H%s\0338&quot;};
+     6  int b[]={0,0,17,14,11,0};
+     7  main(v,c)
+     8  int v;
+     9  char ** c;
+    10  {
+    11    char d[40],*e,f=6;
+    12    time_t g;
+    13    FILE *h,*i;
+    14    while (--f &amp;&amp; !pipe(d) &amp;&amp; !fork());
+    15    h=fdopen(6-f&lt;&lt;1,&quot;a&quot;);
+    16    i=fdopen((6-f&lt;&lt;1)+1,&quot;r&quot;);
+    17    for(;;){
+    18      if(f){
+    19        fgets(d,40,i);
+    20        d[strlen(d)-1]=&#39;\0&#39;;
+    21        if(*d==&#39;0&#39;+f){ sprintf(*c,&quot;%s\n&quot;,d+1); o(stdout,6,6-f,d+1,0) }
+    22        if(*d&gt;&#39;0&#39;+f) o(h,5,d,0,0)
+    23      }else{
+    24        time(&amp;g);
+    25        e=asctime(localtime(&amp;g));
+    26        for(v=1;v&lt;6;v++) o(h,v!=1&amp;&amp;v!=6-1,v+&#39;0&#39;,atoi(e+b[v]),v)
+    27        sleep(1);
+    28    }}}</code></pre>
 <p>Lines 1 and 2 have to be there. Think of <code>o</code> in line 3 as send message with
 <code>j</code>,<code>k</code> and <code>m</code> as where, format and what. Lines 4 and 5 are all the text
 strings. Line 6 is the offsets into the time string for the hours, minutes and
@@ -206,10 +205,10 @@ to the string we just put there.</li>
 (<code>"\0337\033[%d;65;H%s\0338"</code>) If you can read VTxxx (and I read books printed
 as ANSI/VTxxx codes for fun :-) ) you know this is the sequence for:</li>
 </ol>
-<pre><code>remember where we are,
-go somewhere else,
-print the message,
-and return to where we started.</code></pre>
+<pre><code>    remember where we are,
+    go somewhere else,
+    print the message,
+    and return to where we started.</code></pre>
 <p>Line 22 says if this message is not for us (the number is bigger than ours)
 send it to <code>h</code> (up).</p>
 <p>Lines 24 to 27 are the master code. Here we get the time and convert it

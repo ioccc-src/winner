@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is [alternate code](#alternate-code) that is based on the author's notes
@@ -14,7 +14,7 @@ that it should be fine, after the proper header files were added.
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2006 toledo2 bugs](../../bugs.html#2006_toledo2).
@@ -23,7 +23,7 @@ For more detailed information see [2006 toledo2 bugs](../../bugs.html#2006_toled
 ## To use:
 
 ```sh
-./toledo2
+    ./toledo2
 ```
 
 To end execution press `ctrl-z`. As mentioned in the author's remarks and in the
@@ -34,16 +34,15 @@ does not seem to happen in macOS or linux in 2023.
 ## Try:
 
 ```sh
-./toledo2
-
+    ./toledo2
 ```
 
 and then type in the following:
 
 ```
-10 PRINT "HELLO WORLD!"
-LIST
-RUN
+    10 PRINT "HELLO WORLD!"
+    LIST
+    RUN
 ```
 
 To end the program hit ctrl-z.
@@ -58,7 +57,7 @@ functions in place of `read(2)` and `write(2)`.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -114,21 +113,21 @@ Type using uppercase letters. Here are three example programs. Press Enter after
 each line:
 
 ```basic
-10 PRINT "Hello, world!"
-LIST
-RUN
+    10 PRINT "Hello, world!"
+    LIST
+    RUN
 
-10 FOR A=1 TO 10
-20 PRINT A\
-30 NEXT A\
-LIST\
-RUN
+    10 FOR A=1 TO 10
+    20 PRINT A\
+    30 NEXT A\
+    LIST\
+    RUN
 
-10 INPUT A
-20 INPUT B
-30 PRINT A+B
-LIST
-RUN
+    10 INPUT A
+    20 INPUT B
+    30 PRINT A+B
+    LIST
+    RUN
 ```
 
 Press Ctrl+Z to quit. By the way, the segmentation fault is
@@ -157,13 +156,13 @@ To import them, you must run the emulator with an argument, by
 example:
 
 ```sh
-./toledo2 DDT.COM
+    ./toledo2 DDT.COM
 ```
 
 When the `>` prompt appears, do:
 
 ```
-IMPORT DDT.COM
+    IMPORT DDT.COM
 ```
 
 When it ends, do `HALT`, so the file is closed, and you can start
@@ -197,9 +196,9 @@ It is easy if your platform has `getch()`/`kbhit()` and
 ANSI terminal:
 
 ```
-read    -->  Z=kbhit()?getch():0
-write   -->  putchar(7[o])
-system  -->  nothing
+    read    -->  Z=kbhit()?getch():0
+    write   -->  putchar(7[o])
+    system  -->  nothing
 ```
 
 
@@ -232,33 +231,33 @@ separates them in one of three common forms. A lot of ternary operators selects
 the instruction.
 
 ```
-o[0] = B register   o[1] = C register
-o[2] = D register   o[3] = E register
-o[4] = H register   o[5] = L register
-o[6] = Flags        o[7] = A or accumulator
+    o[0] = B register   o[1] = C register
+    o[2] = D register   o[3] = E register
+    o[4] = H register   o[5] = L register
+    o[6] = Flags        o[7] = A or accumulator
 ```
 
 The following instructions do peripheral operation:
 
 ```
-76           Quits emulator
-DB 00        Reads key pressed status
-DB 01        Reads key
-DB 02        Reads byte from file (Carry=EOF)
-D3 xx        Writes byte from acc. to console
-ED ED 02     Reads sector
-ED ED 03     Writes sector
+    76           Quits emulator
+    DB 00        Reads key pressed status
+    DB 01        Reads key
+    DB 02        Reads byte from file (Carry=EOF)
+    D3 xx        Writes byte from acc. to console
+    ED ED 02     Reads sector
+    ED ED 03     Writes sector
 ```
 
 Memory addresses:
 
 ```
-FBFA = Low source/target direction
-FBFB - High source/target direction
-FBFC - Sector
-FBFD - Low cylinder
-FBFE - High cylinder
-FBFF - Drive.
+    FBFA = Low source/target direction
+    FBFB - High source/target direction
+    FBFC - Sector
+    FBFD - Low cylinder
+    FBFE - High cylinder
+    FBFF - Drive.
 ```
 
 The BIOS is tailor made for this emulator, and helps to simplify it.

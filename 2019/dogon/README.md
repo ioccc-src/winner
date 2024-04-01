@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: uses gets() - change to fgets() if possible
+    STATUS: uses gets() - change to fgets() if possible
 ```
 
 For more detailed information see [2019 dogon bugs](../../bugs.html#2019_dogon).
@@ -19,14 +19,14 @@ For more detailed information see [2019 dogon bugs](../../bugs.html#2019_dogon).
 ## To use:
 
 ```sh
-./prog < pattern.mc
+    ./prog < pattern.mc
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 Make sure that you keep focus of windows in mind when going back and forth to
@@ -248,11 +248,11 @@ Tom has allowed me to show his code which is probably the most efficient yet
 most obfuscated way of calculating the GOL function on a 64 bits `8*8` leaf:
 
 ````c
-unsigned long life8x8(long a) { unsigned long aw = a << 1, ae = a >> 1, s0 = aw
-^ ae, s1 = aw & ae, hs0 = s0 ^ a, hs1 = (s0 & a) | s1, hs0w8 = hs0 >> 8, hs0e8 =
-hs0 << 8, hs1w8 = hs1 >> 8, hs1e8 = hs1 << 8, ts0 = hs0w8 ^ hs0e8, ts1 = (hs0w8
-& hs0e8) | (ts0 & s0); return (hs1w8 ^ hs1e8 ^ ts1 ^ s1) & ((hs1w8 | hs1e8) ^
-(ts1 | s1)) & ((ts0 ^ s0) | a); }
+    unsigned long life8x8(long a) { unsigned long aw = a << 1, ae = a >> 1, s0 = aw
+    ^ ae, s1 = aw & ae, hs0 = s0 ^ a, hs1 = (s0 & a) | s1, hs0w8 = hs0 >> 8, hs0e8 =
+    hs0 << 8, hs1w8 = hs1 >> 8, hs1e8 = hs1 << 8, ts0 = hs0w8 ^ hs0e8, ts1 = (hs0w8
+    & hs0e8) | (ts0 & s0); return (hs1w8 ^ hs1e8 ^ ts1 ^ s1) & ((hs1w8 | hs1e8) ^
+    (ts1 | s1)) & ((ts0 ^ s0) | a); }
 ````
 
 This uses only 19 bitwise operations and six shifts to calculate the inner 6x6

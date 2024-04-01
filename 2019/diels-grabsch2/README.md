@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./prog
+    ./prog
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -34,9 +34,9 @@ that you are dreaming? Or is it, wake up from the simulation?
 This program prints its own SHA-512 hash.  To verify, run:
 
 ```sh
-$ sha512sum prog.c; ./prog
-43bd0c4381a5078d2850fca9ae5e0647596bcc03cd67d8d973ad02ff35c316c728e7b347ca70abe6c74e745e63646cc7643cb0cffcd3d9a969cbf31a7ce5bf68  prog.c
-43bd0c4381a5078d2850fca9ae5e0647596bcc03cd67d8d973ad02ff35c316c728e7b347ca70abe6c74e745e63646cc7643cb0cffcd3d9a969cbf31a7ce5bf68
+    $ sha512sum prog.c; ./prog
+    43bd0c4381a5078d2850fca9ae5e0647596bcc03cd67d8d973ad02ff35c316c728e7b347ca70abe6c74e745e63646cc7643cb0cffcd3d9a969cbf31a7ce5bf68  prog.c
+    43bd0c4381a5078d2850fca9ae5e0647596bcc03cd67d8d973ad02ff35c316c728e7b347ca70abe6c74e745e63646cc7643cb0cffcd3d9a969cbf31a7ce5bf68
 ```
 
 It started as a complicated "hello world" program that prints some random hex
@@ -70,7 +70,7 @@ are step 1 and step 2 achieved then?
 Regarding step 1, note that the large string literal
 
 ```
-"`x{bh}ndbq..."
+    "`x{bh}ndbq..."
 ```
 
 in the last line doesn't look like C code.  Moreover, it is too short

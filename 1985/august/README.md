@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./august
+    ./august
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 If you have the `primes(6)` tool (sometimes part of [BSD
@@ -23,8 +23,8 @@ Games](https://github.com/vattam/BSDGames)) you can see
 what of the output in the first `N` (say `15` or `25`) lines are primes:
 
 ```sh
-./primes.sh # 15
-./primes.sh 25
+    ./primes.sh # 15
+    ./primes.sh 25
 ```
 
 Note that `try.sh` will run this script anyway, telling you where to get

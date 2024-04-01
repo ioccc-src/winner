@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There are two additional programs based on the author's remarks and the original
@@ -15,9 +15,9 @@ code](#alternate-code) below.
 The current status of this entry is:
 
 ```
-STATUS: uses gets() - change to fgets() if possible
-STATUS: missing files - please provide them
-STATUS: main() has only one arg - try and make it have 2 or 3
+    STATUS: uses gets() - change to fgets() if possible
+    STATUS: missing files - please provide them
+    STATUS: main() has only one arg - try and make it have 2 or 3
 ```
 
 For more detailed information see [2001 westley bugs](../../bugs.html#2001_westley).
@@ -26,19 +26,19 @@ For more detailed information see [2001 westley bugs](../../bugs.html#2001_westl
 ## To use:
 
 ```sh
-./westley 2>/dev/null
-# enter some input, terminate with EOF
+    ./westley 2>/dev/null
+    # enter some input, terminate with EOF
 
-echo foo | ./westley 2>/dev/null
+    echo foo | ./westley 2>/dev/null
 
-./westley < westley.c 2>/dev/null
+    ./westley < westley.c 2>/dev/null
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -61,7 +61,7 @@ everyone in the face! :-) This is also compiled by default.
 ### Punch card try:
 
 ```sh
-echo 'Brian Westley does it again!' | ./westley.punch 2>/dev/null
+    echo 'Brian Westley does it again!' | ./westley.punch 2>/dev/null
 ```
 
 
@@ -74,7 +74,7 @@ This alternate code might be less portable.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -109,10 +109,10 @@ to punch cards - C programs can be written to be "drop proof".
 Consider the following C program:
 
 ```c
-main(){a();b();c();}
-a(){printf("A");}
-b(){printf("B");}
-c(){printf("C");}
+    main(){a();b();c();}
+    a(){printf("A");}
+    b(){printf("B");}
+    c(){printf("C");}
 ```
 
 This program will compile and run no matter what order the
@@ -123,8 +123,8 @@ any particular order\*\*; it will always produce `ABC` as output.
 You can also use global variables:
 
 ```c
-char *greet = "Hello, world!";
-char *greet; main(){puts(greet);}
+    char *greet = "Hello, world!";
+    char *greet; main(){puts(greet);}
 ```
 
 It would be trivial to write an entire C program that is
@@ -133,9 +133,9 @@ possible to write a program that will always compile but
 behave differently depending on the line order:
 
 ```c
-test(a,b){return a;}
-#define test(a,b) test(b,a)
-main(){if (test(0,1)) printf("T"); else printf("F");}
+    test(a,b){return a;}
+    #define test(a,b) test(b,a)
+    main(){if (test(0,1)) printf("T"); else printf("F");}
 ```
 
 This program will print out `T` if the `#define` statement
@@ -145,13 +145,13 @@ you can use the same call to `test()` repeatedly in
 different lines to return different values:
 
 ```c
-#define test(x,y) test(y,x)
-main(){int i=0;a(&i);b(&i);c(&i);d(&i);printf("%d\n",i);}
-a(i)int*i;{if (test(0,1)) *i += 1;}
-b(i)int*i;{if (test(0,1)) *i += 2;}
-c(i)int*i;{if (test(0,1)) *i += 4;}
-d(i)int*i;{if (test(0,1)) *i += 8;}
-test(x,y){return x;}
+    #define test(x,y) test(y,x)
+    main(){int i=0;a(&i);b(&i);c(&i);d(&i);printf("%d\n",i);}
+    a(i)int*i;{if (test(0,1)) *i += 1;}
+    b(i)int*i;{if (test(0,1)) *i += 2;}
+    c(i)int*i;{if (test(0,1)) *i += 4;}
+    d(i)int*i;{if (test(0,1)) *i += 8;}
+    test(x,y){return x;}
 ```
 
 If you enter the above program on punch cards, throw them
@@ -200,7 +200,7 @@ by looking at `card.gif`.)
 For a nice test pattern, try
 
 ```
-&-0123456789ABCDEFGHIJKLMNOPQR/STUVWXYZ:#@'=".<(+|!$*);,%_>?abcmnoxyz^[]{}\
+    &-0123456789ABCDEFGHIJKLMNOPQR/STUVWXYZ:#@'=".<(+|!$*);,%_>?abcmnoxyz^[]{}\
 ```
 
 If you want to analyze the program, sorting the lines while
@@ -226,9 +226,9 @@ comment), there are technically `28!` different programs, or
 all legal C.
 
 ```
-* except in Florida voting machines
+    * except in Florida voting machines
 
-** all cards must be face down, nine-edge first, of course.
+    ** all cards must be face down, nine-edge first, of course.
 ```
 
 

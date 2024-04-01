@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an unobfuscated version of this entry. See [Alternate
@@ -11,17 +11,17 @@ code](#alternate-code) below.
 ## To use:
 
 ```sh
-./konno N
+    ./konno N
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 
-# you can also specify numbers to try before the random and preselected ones:
-./try.sh 111 222 333 444 555 666 777 888 999
+    # you can also specify numbers to try before the random and preselected ones:
+    ./try.sh 111 222 333 444 555 666 777 888 999
 ```
 
 Try running [try.sh](try.sh) a number of times as the first part randomly
@@ -37,7 +37,7 @@ This alternate code is an unobfuscated version of the winning code.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -65,11 +65,11 @@ patterns.
 Try:
 
 ```sh
-./konno 30
-./konno 90
-./konno 102
-./konno 109
-./konno 165
+    ./konno 30
+    ./konno 90
+    ./konno 102
+    ./konno 109
+    ./konno 165
 ```
 
 There are 256 (from 0 through 255) possible rules.
@@ -80,13 +80,13 @@ There are 256 (from 0 through 255) possible rules.
 This program uses bit operations. I think
 
 ```c
-7&O<<!o>>!o+29
+    7&O<<!o>>!o+29
 ```
 
 is an interesting operation. This isn't equal to
 
 ```c
-7&O>>29
+    7&O>>29
 ```
 
 operation. What is the operation doing?

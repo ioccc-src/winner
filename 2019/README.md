@@ -40,9 +40,9 @@ There are again nods to entries of the years:
 These nods to not run afoul of the guideline:
 
 ```
-We tend to dislike programs that:
-...
-are rather similar to previous entries
+    We tend to dislike programs that:
+    ...
+    are rather similar to previous entries
 ```
 
 because the entry [2019/dogon](2019/dogon/index.html) appropriately pays homage

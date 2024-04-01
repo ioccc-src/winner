@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an alt version for rogue players, vi(m) users and Dvorak typist (i.e.
@@ -12,20 +12,20 @@ code](#alternate-code) below.
 ## To use:
 
 ```sh
-./arachnid [mazefile]
+    ./arachnid [mazefile]
 ```
 
 
 ## Try:
 
 ```sh
-./arachnid arachnid.txt
+    ./arachnid arachnid.txt
 ```
 
 and then try:
 
 ```sh
-./arachnid arachnid.c
+    ./arachnid arachnid.c
 ```
 
 Navigation is through the use of the `wasd` inverted-T formation on
@@ -42,7 +42,7 @@ instead.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -81,7 +81,7 @@ explorers out there.
 ### Usage
 
 ```sh
-./arachnid [mazefile]
+    ./arachnid [mazefile]
 ```
 
 You can explore the maze using the `w`,`a`,`s`, and `d` keys.

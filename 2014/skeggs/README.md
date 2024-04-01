@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./prog
+    ./prog
 ```
 
 HINT: Try pressing the left and right arrow keys as needed.
@@ -220,8 +220,10 @@ I ran out of time to test it on more systems.
 * What's the length of this README file according to the
 [iocccsize](../iocccsize.c) tool?
 
-  $ ./iocccsize -i < README.md
-  6057
+```
+    $ ./iocccsize -i < README.md
+    6057
+```
 
 
 <!--

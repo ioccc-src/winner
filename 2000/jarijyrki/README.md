@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 You will need X11 header files and libraries installed to build this program.
@@ -10,7 +10,7 @@ You will need X11 header files and libraries installed to build this program.
 ## To use:
 
 ```sh
-./jarijyrki < infile.info > outfile.info
+    ./jarijyrki < infile.info > outfile.info
 ```
 
 You will need a system capable of displaying the results of X Window programs.
@@ -19,19 +19,19 @@ You will need a system capable of displaying the results of X Window programs.
 ## Try:
 
 ```sh
-./jarijyrki < finance.sheet > myedits.info
+    ./jarijyrki < finance.sheet > myedits.info
 ```
 
 Then click on cell `C3` and type in the following:
 
 ```
-C5 C6 C7 @
+    C5 C6 C7 @
 ```
 
 Click on cell `D4` and type in the following:
 
 ```
-C5 C6 C7 !
+    C5 C6 C7 !
 ```
 
 Hit `ESC`.
@@ -39,7 +39,7 @@ Hit `ESC`.
 Now try running:
 
 ```
-./jarijyrki < myedits.info
+    ./jarijyrki < myedits.info
 ```
 
 And observe that it matches what you had in the previous run!
@@ -89,7 +89,7 @@ supports are:
 ##### Starting
 
 ```sh
-./jarijyrki < finance.sheet > myedits.info
+    ./jarijyrki < finance.sheet > myedits.info
 ```
 
 
@@ -112,18 +112,18 @@ character at the end of the formula; press backspace to delete the last one.
 ##### Formulas
 
 ```
-123.45
-A1 A2 +
-B1 B2 -
-C1 C2 *
-D1 D2 /
+    123.45
+    A1 A2 +
+    B1 B2 -
+    C1 C2 *
+    D1 D2 /
 ```
 
 
 ##### Pie charts
 
 ```
-A1 A2 A3 ...
+    A1 A2 A3 ...
 ```
 
 Finish the formula with `@` to create the pie chart.
@@ -132,7 +132,7 @@ Finish the formula with `@` to create the pie chart.
 ##### Histograms
 
 ```
-A1 A2 A3 ...
+    A1 A2 A3 ...
 ```
 
 Finish the formula with `!` to create the histogram.
@@ -145,7 +145,7 @@ spreadsheet, for instance [finance.sheet](finance.sheet), use the following
 command line:
 
 ```sh
-./jarijyrki < finance.sheet
+    ./jarijyrki < finance.sheet
 ```
 
 The file [finance.sheet](finance.sheet) has been provided as an example.  This
@@ -157,7 +157,7 @@ supported by the program.
 To start the program with an empty sheet, use
 
 ```sh
-./jarijyrki < /dev/null
+    ./jarijyrki < /dev/null
 ```
 
 Alternatively, `/dev/zero` could be used but that may not exist on all systems.
@@ -172,7 +172,7 @@ changes, and you press the ESC key the program finishes. To save the results in
 a file, the following typical command line would be used:
 
 ```sh
-./jarijyrki < finance.sheet > myedits.info
+    ./jarijyrki < finance.sheet > myedits.info
 ```
 
 
@@ -217,29 +217,29 @@ Otherwise, the formula is interpreted as a string and shown as it is.
 An example of a simple formula, simply specifying a number is
 
 ```
-123.50
+    123.50
 ```
 
 Another simple formula refers to a cell:
 
 ```
-A1
+    A1
 ```
 
 This particular example formula referred to the first cell of the first row in
 the spreadsheet. Arithmetic operations require both arguments:
 
 ```
-A1 A2 +
-B1 B2 *
-C1 C2 -
-D1 D2 /
+    A1 A2 +
+    B1 B2 *
+    C1 C2 -
+    D1 D2 /
 ```
 
 More complex formulae can be constructed by combining these simple ones:
 
 ```
-A1 A2 + 2 *
+    A1 A2 + 2 *
 ```
 
 This example calculates the sum of the cells `A1` and `A2`, and then multiplies
@@ -260,7 +260,7 @@ slices, and is constructed by putting the pie amounts in stack and using the `@`
 operator. The program automatically computes the relative size of the slices.
 
 ```
-A1 A2 A3 A4 @
+    A1 A2 A3 A4 @
 ```
 
 This example would draw a pie chart of four cells, `A1` to `A4`.
@@ -269,7 +269,7 @@ The pie formula is shown above the pie for reference.
 The histograms are drawn in a similar manner, by using the `!` operator:
 
 ```
-A1 A2 A3 A3 !
+    A1 A2 A3 A3 !
 ```
 
 
@@ -296,12 +296,12 @@ compile time parameters:
 ---
 
 ```
--DC=XK_Up
--DL=XK_Down
--DO=XK_Left
--DV=XK_Right
--DR=XK_Escape
--D_=XK_BackSpace
+    -DC=XK_Up
+    -DL=XK_Down
+    -DO=XK_Left
+    -DV=XK_Right
+    -DR=XK_Escape
+    -D_=XK_BackSpace
 ```
 
 These definitions can be used to change the user interface of the program with
@@ -314,7 +314,7 @@ for the arrow keys.
 
 
 ```
--DU=40
+    -DU=40
 ```
 
 This parameter defines the maximum dimensions of the stored and handled
@@ -323,7 +323,7 @@ thinking about the consequences!).
 
 
 ```
--DT=98
+    -DT=98
 ```
 
 This parameter defines the maximum length of a formula in one cell. Note the
@@ -331,7 +331,7 @@ warning in section 4.4.
 
 
 ```
--Dz="(T+1)*U*U"
+    -Dz="(T+1)*U*U"
 ```
 
 Defines the number of bytes in a spreadsheet file. The number is automatically
@@ -340,8 +340,8 @@ section 4.4.
 
 
 ```
--DQ=80
--DS=20
+    -DQ=80
+    -DS=20
 ```
 
 These two parameters define the visual dimensions of a cell.  Changing these may
@@ -351,7 +351,7 @@ systems we've tested the program with. `S` also defines the size of the left
 
 
 ```
--DN=10
+    -DN=10
 ```
 
 This is the x-indentation of text inside a cell. Changing this may be necessary
@@ -359,7 +359,7 @@ to suit other font sizes and different X environments.
 
 
 ```
--DB=5
+    -DB=5
 ```
 
 This is the y-indentation of text inside a cell. Changing this may be necessary
@@ -367,14 +367,14 @@ to suit other font sizes and different X environments.
 
 
 ```
--DG=23
+    -DG=23
 ```
 
 This parameter is the number of cell rows visible at one time.
 
 
 ```
--Dp=7
+    -Dp=7
 ```
 
 This parameter is one smaller than the number of cells columns visible at one
@@ -383,8 +383,8 @@ time.
 
 
 ```
--DM="((p+1)*Q)+S"
--DH="(G*S)+S+S"
+    -DM="((p+1)*Q)+S"
+    -DH="(G*S)+S+S"
 ```
 
 These parameters are the window x and y sizes of the spreadsheet program window.

@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -15,7 +15,7 @@ code](#alternate-code) section below.
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [1994 dodsond2 bugs](../../bugs.html#1994_dodsond2).
@@ -24,7 +24,7 @@ For more detailed information see [1994 dodsond2 bugs](../../bugs.html#1994_dods
 ## To use:
 
 ```sh
-./dodsond2
+    ./dodsond2
 ```
 
 
@@ -40,21 +40,21 @@ from working in some cases.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 The default number of arrows in this version is 3 but if you want to change it,
 say to 5, try:
 
 ```sh
-make clobber ARROWS=5 alt
+    make clobber ARROWS=5 alt
 ```
 
 
 ### Alternate use:
 
 ```sh
-./dodsond2.alt
+    ./dodsond2.alt
 ```
 
 
@@ -72,16 +72,16 @@ The original source code was submitted as a GZIP compressed file
 that the _file(1)_ command reports as:
 
 ```
-dodsond2.gz: gzip compressed data, last modified: Mon Aug 29 21:54:39 1994, max compression, from Unix, original size modulo 2^32 2652
+    dodsond2.gz: gzip compressed data, last modified: Mon Aug 29 21:54:39 1994, max compression, from Unix, original size modulo 2^32 2652
 ```
 
 The [dodsond2.gz](dodsond2.gz) file was submitted as source
 in an effort to get around the 1994 version of Rule 2:
 
 ```
-2) Your entry must be <= 3217 bytes in length.  The number of characters
-   excluding whitespace (tab, space, newline), and excluding any ; { or }
-   followed by either whitespace or end of file, must be <= 1536.
+    2) Your entry must be <= 3217 bytes in length.  The number of characters
+       excluding whitespace (tab, space, newline), and excluding any ; { or }
+       followed by either whitespace or end of file, must be <= 1536.
 ```
 
 Indeed, when [dodsond2.gz](dodsond2.gz) is uncompressed, it is identical

@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an alternate version that allows one to control the number of numbers
@@ -13,7 +13,7 @@ to print on a line. See [alternate code](#alternate-code) below.
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2004 jdalbec bugs](../../bugs.html#2004_jdalbec).
@@ -22,14 +22,14 @@ For more detailed information see [2004 jdalbec bugs](../../bugs.html#2004_jdalb
 ## To use:
 
 ```sh
-./jdalbec number ...
+    ./jdalbec number ...
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -44,7 +44,7 @@ which line it is on.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 The macro `Ag` ([silver](https://en.wikipedia.org/wiki/Silver)) controls how
@@ -53,7 +53,7 @@ you wish to make it silver, 47 (a prime) protons, do:
 
 
 ```sh
-make clobber Ag=47 alt
+    make clobber Ag=47 alt
 ```
 
 though it might be odd to have 47 numbers on a line as it would defeat the
@@ -61,7 +61,7 @@ purpose. :-) Or if you prefer some prime, golden irony:
 
 
 ```sh
-make clobber Ag=79 alt
+    make clobber Ag=79 alt
 ```
 
 
@@ -73,7 +73,7 @@ Use `jdalbec.alt` as you would `jdalbec` above.
 ### Alternate try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 

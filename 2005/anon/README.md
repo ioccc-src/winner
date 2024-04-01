@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 NOTE: there is an alternate version for vi(m) like movements. See [alternate
@@ -9,7 +9,7 @@ version](#alternate-code) below. If your terminal has problems with the
 `stty(1)` commands try:
 
 ```sh
-make anon-no_stty
+    make anon-no_stty
 ```
 
 This will compile [anon.c](anon.c) as `anon` to not use `stty(1)`.
@@ -20,7 +20,7 @@ This will compile [anon.c](anon.c) as `anon` to not use `stty(1)`.
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2005 anon bugs](../../bugs.html#2005_anon).
@@ -29,16 +29,16 @@ For more detailed information see [2005 anon bugs](../../bugs.html#2005_anon).
 ## To use:
 
 ```sh
-./anon x y [z]
+    ./anon x y [z]
 ```
 
 
 ## Try:
 
 ```sh
-./anon 4 4
+    ./anon 4 4
 
-./anon 3 3 3
+    ./anon 3 3 3
 ```
 
 After a very large number of moves this program will deliberately force itself
@@ -49,13 +49,13 @@ hook you) and spending too much time playing. :-)
 If you want to see this in action you can easily do this:
 
 ```sh
-yes 'please crash on me :-)' | ./anon 4 4
+    yes 'please crash on me :-)' | ./anon 4 4
 ```
 
 What happens if you specify a larger board? For instance:
 
 ```sh
-yes 'please crash on me :-)' | ./anon 10 10 10
+    yes 'please crash on me :-)' | ./anon 10 10 10
 ```
 
 If you specify more than three args the program might also crash or do
@@ -71,13 +71,13 @@ The alternate version uses `vi(m)` like movement keys.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 To compile the version without `stty(1)`:
 
 ```sh
-make alt-no_stty
+    make alt-no_stty
 ```
 
 
@@ -86,12 +86,12 @@ make alt-no_stty
 Use `anon.alt` as you would `anon` with the change in movements:
 
 ```
-k | Move empty spot up
-h | Move empty spot left
-j | Move empty spot down
-l | Move empty spot right
-J | Move empty spot forwards
-K | Move empty spot backwards
+    k | Move empty spot up
+    h | Move empty spot left
+    j | Move empty spot down
+    l | Move empty spot right
+    J | Move empty spot forwards
+    K | Move empty spot backwards
 ```
 
 
@@ -122,13 +122,13 @@ The program takes 2 or 3 arguments, specifying the dimensions of the board.
 For example, to play the original version of the Fifteen Puzzle:
 
 ```sh
-./anon 4 4
+    ./anon 4 4
 ```
 
 To play with a 3D board, do something like this:
 
 ```sh
-./anon 3 3 3
+    ./anon 3 3 3
 ```
 
 **WARNING: do NOT run the program with more than 3 command-line arguments.
@@ -145,18 +145,18 @@ characters instead of digits. To slide the tiles around, use the following
 keys:
 
 ```
-i | Slide the tile above the current empty space downwards.
-j | Slide the tile to the left of the current empty space to the right.
-k | Slide the tile below the current empty space upwards.
-l | Slide the tile to the right of the current empty space to the left.
-o | Slide the tile behind the current empty space forwards.
-n | Slide the tile in front of the current empty space backwards.
+    i | Slide the tile above the current empty space downwards.
+    j | Slide the tile to the left of the current empty space to the right.
+    k | Slide the tile below the current empty space upwards.
+    l | Slide the tile to the right of the current empty space to the left.
+    o | Slide the tile behind the current empty space forwards.
+    n | Slide the tile in front of the current empty space backwards.
 ```
 
 To quit the game:
 
 ```
-q | Quit the game.
+    q | Quit the game.
 ```
 
 Note that, for example, sliding the tile above the current empty spot
@@ -165,12 +165,12 @@ the current empty spot was. Hence, you could think of the movement keys in
 terms of how they effectively "move" the empty spot:
 
 ```
-i | Move empty spot up
-j | Move empty spot left
-k | Move empty spot down
-l | Move empty spot right
-n | Move empty spot forwards
-o | Move empty spot backwards
+    i | Move empty spot up
+    j | Move empty spot left
+    k | Move empty spot down
+    l | Move empty spot right
+    n | Move empty spot forwards
+    o | Move empty spot backwards
 ```
 
 **NOTE:** as a measure of alleviating counter-productivity due to addiction to
@@ -378,7 +378,7 @@ stored in a well-known location in the `MASS`.
 `if(p,q,r,s)` is, in fact, an `if` statement. :-) It is equivalent to:
 
 ```c
-if (p) { q; r } else {s}
+    if (p) { q; r } else {s}
 ```
 
 Why are `q` and `r` split up? Because it's cleaner (in whatever twisted sense of
@@ -405,18 +405,18 @@ variable); `x` and `y-1` define the starting and ending values of `i`, and `z`
 is the loop body. `Z` is the post-loop code in the current state. For example:
 
 ```c
-for(s,i, 0, 10,
-some_code       ,
-other_code)
+    for(s,i, 0, 10,
+    some_code       ,
+    other_code)
 ```
 
 is equivalent to:
 
 ```c
-for (i=0; i&lt;10; i++) {
-	some_code;
-}
-other_code;
+    for (i=0; i&lt;10; i++) {
+	    some_code;
+    }
+    other_code;
 ```
 
 Note the "wrong" indentation in the former: the author prefers to write it
@@ -444,25 +444,25 @@ program, and what the various state numbers are meant to do:
 #### MASS usage map
 
 ```
-0  | Function return value
-1  | Function argument 1
-2  | Function argument 2
-3  | Function argument 3
-4  | Scratch register 1
-5  | Scratch register 2
-6  | Scratch register 3
-7  | Scratch register 4
-8  | Value of original argv :-)
-9  | Value of original argc :-)
-11 | Zero register (always set to 0)
-12 | Width of board
-13 | Length of board
-14 | Height of board
-15 | Current position of hole
-16 | Random seed for rand_r(3)
-18 | Scratch register used by state 18 :-)
-31 | field width for printing tiles
-32 | Start of board data
+    0  | Function return value
+    1  | Function argument 1
+    2  | Function argument 2
+    3  | Function argument 3
+    4  | Scratch register 1
+    5  | Scratch register 2
+    6  | Scratch register 3
+    7  | Scratch register 4
+    8  | Value of original argv :-)
+    9  | Value of original argc :-)
+    11 | Zero register (always set to 0)
+    12 | Width of board
+    13 | Length of board
+    14 | Height of board
+    15 | Current position of hole
+    16 | Random seed for rand_r(3)
+    18 | Scratch register used by state 18 :-)
+    31 | field width for printing tiles
+    32 | Start of board data
 ```
 
 (**CAVEAT:** not all of these mappings ended up in the final version of the
@@ -478,22 +478,22 @@ to be on all tested architectures.)
 #### State number assignments
 
 ```
-1  | showhelp
-2  | showhelp
-3  | is 2D: start init
-4  | is 3D: start init
-5  | find allocation type
-6  | MASS init, bottom-up
-7  | MASS init, top-down
-8  | main program
-9  | generate() outer loop
-13 | render()
-14 | render() loop
-15 | exit(0)
-16 | pick a tile that hasn't occurred yet
-17 | inner loop of 16.
-18 | main loop
-19 | checkwin() loop
+    1  | showhelp
+    2  | showhelp
+    3  | is 2D: start init
+    4  | is 3D: start init
+    5  | find allocation type
+    6  | MASS init, bottom-up
+    7  | MASS init, top-down
+    8  | main program
+    9  | generate() outer loop
+    13 | render()
+    14 | render() loop
+    15 | exit(0)
+    16 | pick a tile that hasn't occurred yet
+    17 | inner loop of 16.
+    18 | main loop
+    19 | checkwin() loop
 ```
 
 Note that some of the manually-implemented states (those not implemented by

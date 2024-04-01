@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 There is an alternate version with a trace routine that the author had commented
@@ -11,7 +11,7 @@ out. See [alternate code](#alternate-code) below for more details.
 ## Try:
 
 ```sh
-./paul
+    ./paul
 ```
 
 
@@ -29,14 +29,14 @@ could easily be added.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
 ### Alternate use:
 
 ```sh
-./paul.alt
+    ./paul.alt
 ```
 
 

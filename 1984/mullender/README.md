@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make alt
+    make alt
 ```
 
 NOTE: the original code will not work on any system other than
@@ -16,7 +16,7 @@ the original version.
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [1984 mullender bugs](../../bugs.html#1984_mullender).
@@ -25,7 +25,7 @@ For more detailed information see [1984 mullender bugs](../../bugs.html#1984_mul
 ## To use:
 
 ```sh
-./mullender.alt [microseconds]
+    ./mullender.alt [microseconds]
 ```
 
 Hit ctrl-c/intr to exit the program.
@@ -49,13 +49,13 @@ which is probably not as uncommon as you think :-).
 ## Try:
 
 ```sh
-./mullender.alt
+    ./mullender.alt
 
-./mullender.alt 5000	# wait for 5000 microseconds and see what happens
+    ./mullender.alt 5000	# wait for 5000 microseconds and see what happens
 
-./mullender.alt 20000	# wait for 20000 microseconds and see what happens
+    ./mullender.alt 20000	# wait for 20000 microseconds and see what happens
 
-./mullender.alt 100000	# wait for 100000 microseconds and see what happens
+    ./mullender.alt 100000	# wait for 100000 microseconds and see what happens
 ```
 
 What happens if you hit enter after it reaches the end of the line? Why? What
@@ -73,14 +73,14 @@ machine dependent code was discouraged.
 ### Original build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ### Original use:
 
 ```sh
-./mullender
+    ./mullender
 ```
 
 
@@ -138,19 +138,19 @@ Repo](https://github.com/dspinellis/unix-history-repo/tree/Research-Release).
 
 
 ```sh
-make gentab
+    make gentab
 ```
 
 ### gentab use:
 
 ```sh
-./gentab file
+    ./gentab file
 ```
 
 ### gentab try:
 
 ```sh
-./gentab gentab > g.c
+    ./gentab gentab > g.c
 ```
 
 NOTE: it is highly unlikely that you will be able to run the output of `gentab`
@@ -285,18 +285,18 @@ We both knew [PDP-11](https://en.wikipedia.org/wiki/PDP-11) assembly so that was
 no problem. The assembly code we came up with is as follows:
 
 ```asm
-pdp:
-    mov pc,r4
-    tst -(r4)
-    sub $9, r4
-    mov r4,0f
-    mov $1, r0
-    sys 4; 0:0; 9
-    mov $1000, r2
-1:
-    sys 55
-    sob r2,1b
-    br pdp
+    pdp:
+	mov pc,r4
+	tst -(r4)
+	sub $9, r4
+	mov r4,0f
+	mov $1, r0
+	sys 4; 0:0; 9
+	mov $1000, r2
+    1:
+	sys 55
+	sob r2,1b
+	br pdp
 ```
 
 This is not the code we originally wrote, but it is the code that we ultimately
@@ -332,26 +332,26 @@ program that we came up with is as follows:
 
 
 ```asm
-vax: .word 0400 + (pdp - vax) / 2 - 1
-1:
-    pushl $9
-    pushal str
-    pushl $1
-    calls $3, write
-    cvtwl $32767, r2
+    vax: .word 0400 + (pdp - vax) / 2 - 1
+    1:
+	pushl $9
+	pushal str
+	pushl $1
+	calls $3, write
+	cvtwl $32767, r2
 
-2:
-    decl r2
-    jneq 2b
-    jbr 1b
+    2:
+	decl r2
+	jneq 2b
+	jbr 1b
 
-write: .word 0
-    chmk $4
-    ret
+    write: .word 0
+	chmk $4
+	ret
 
-str: .ascii " :-)\b\b\b\b"
+    str: .ascii " :-)\b\b\b\b"
 
-pdp: .word 4548, 3044, 58820, 9, 4407, 6, 5568, 1, 35076, 0, 9, 5570, 512, 35117, 32386, 496
+    pdp: .word 4548, 3044, 58820, 9, 4407, 6, 5568, 1, 35076, 0, 9, 5570, 512, 35117, 32386, 496
 ```
 
 The first word (after the label `vax`) is the
@@ -390,60 +390,59 @@ extracted the machine code from the object file.
 compiled in modern systems.
 
 ```c
-\#include <stdio.h>
-\#include <a.out.h>
+    #include <stdio.h>
+    #include <a.out.h>
 
-main(argc, argv) char **argv;
-{
-    register FILE *fp;
-    register short pos = 0, c, n;
-    register char *fmt;
-    if (argc != 2) {
-	fprintf (stderr, "Usage: %s file\n", argv[0]);
-	exit (1);
-    }
-
-    if ((fp = fopen(argv[1], "r")) == NULL) {
-	fprintf(stderr, "%s: can't open %s\n", argv[0], argv[1]);
-	exit(2);
-    }
-
-    fseek (fp, (long) sizeof (struct exec), 0);
-    printf("/* portable between VAX and PDP11 */\n\n");
-    printf ("short main[] = {\n");
-    for (;;) {
-	if (pos == 0)
-	    printf("\t");
-
-	c=getc(fp) & 0377;
-	if (feof(fp)) break;
-	n = getc(fp) << 8|c;
-
-	switch (rand() % 5) {
-	    case 0:
-	    case 1:
-		fmt = "%d"; break;
-	    case 2:
-		fmt = "%u"; break;
-	    case 3:
-		fmt = "0%o"; break;
-	    case 4:
-		fmt = "0x%x"; break;
+    main(argc, argv) char **argv;
+    {
+	register FILE *fp;
+	register short pos = 0, c, n;
+	register char *fmt;
+	if (argc != 2) {
+	    fprintf (stderr, "Usage: %s file\n", argv[0]);
+	    exit (1);
 	}
 
-	if (32 <= n && n < 127 && (rand() % 4)) fmt = "'%c'";
-	printf(n < 8 ? "%d" : fmt, n);
-	printf(",");
-	if (pos++ == 8) {
-	    printf("\n");
-	    pos = 0;
+	if ((fp = fopen(argv[1], "r")) == NULL) {
+	    fprintf(stderr, "%s: can't open %s\n", argv[0], argv[1]);
+	    exit(2);
 	}
-	else printf(" ");
 
-	printf("};\n");
+	fseek (fp, (long) sizeof (struct exec), 0);
+	printf("/* portable between VAX and PDP11 */\n\n");
+	printf ("short main[] = {\n");
+	for (;;) {
+	    if (pos == 0)
+		printf("\t");
+
+	    c=getc(fp) & 0377;
+	    if (feof(fp)) break;
+	    n = getc(fp) << 8|c;
+
+	    switch (rand() % 5) {
+		case 0:
+		case 1:
+		    fmt = "%d"; break;
+		case 2:
+		    fmt = "%u"; break;
+		case 3:
+		    fmt = "0%o"; break;
+		case 4:
+		    fmt = "0x%x"; break;
+	    }
+
+	    if (32 <= n && n < 127 && (rand() % 4)) fmt = "'%c'";
+	    printf(n < 8 ? "%d" : fmt, n);
+	    printf(",");
+	    if (pos++ == 8) {
+		printf("\n");
+		pos = 0;
+	    }
+	    else printf(" ");
+
+	    printf("};\n");
+	}
     }
-}
-
 ```
 
 As can be seen, there is a slight preference for decimal, and also a character

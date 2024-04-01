@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-echo foo bar | ./dg
+    echo foo bar | ./dg
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -25,13 +25,13 @@ Some C preprocessors got confused about single quotes in certain cases.
 In particular, the following source line:
 
 ```c
-b12(ase(bco(acp(bi(acp(bcp(acp(bpl(aqu(bqu(A))))))))))))))))))))))))))))))
+    b12(ase(bco(acp(bi(acp(bcp(acp(bpl(aqu(bqu(A))))))))))))))))))))))))))))))
 ```
 
 sometimes has to be changed to:
 
 ```c
-b12(ase(bco(acp(bi(acp(bcp(acp(bpl('A'))))))))))))))))))))))))))))
+    b12(ase(bco(acp(bi(acp(bcp(acp(bpl('A'))))))))))))))))))))))))))))
 ```
 
 particularly if the C preprocessor botches single quotes in cpp expansions,
@@ -57,7 +57,7 @@ character is in the set `A-Za-z`. `l[]` is an array that gets filled
 with:
 
 ```c
-"nopqrstuvwxyzzzzabcdefghijklmmmmNOPQRSTUVWXYZZZZABCDEFGHIJKLMMMM"
+    "nopqrstuvwxyzzzzabcdefghijklmmmmNOPQRSTUVWXYZZZZABCDEFGHIJKLMMMM"
 ```
 
 If `index(3)` says the char is in the alphabet, then XOR the offset

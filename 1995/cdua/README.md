@@ -5,7 +5,7 @@ entry looked like back in 1995 (with a configurable speed).  See the [original
 code](#original-code) section below for the original entry.
 
 ```sh
-make alt
+    make alt
 ```
 
 The alternate version uses `usleep(3)` with `SLEEP` (defined in the Makefile,
@@ -20,7 +20,7 @@ making it 100000 (which is actually fun :-) ).
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [1995 cdua bugs](../../bugs.html#1995_cdua).
@@ -29,24 +29,24 @@ For more detailed information see [1995 cdua bugs](../../bugs.html#1995_cdua).
 ## To use:
 
 ```sh
-./cdua.alt
+    ./cdua.alt
 ```
 
 
 ## Try:
 
 ```sh
-make SLEEP=1500 clobber alt
+    make SLEEP=1500 clobber alt
 
-./cdua.alt # press enter and watch it go much faster!
+    ./cdua.alt # press enter and watch it go much faster!
 ```
 
 You might also like to try:
 
 ```sh
-make SLEEP=65000 clobber alt
+    make SLEEP=65000 clobber alt
 
-./cdua.alt # press enter and watch it go much slower!
+    ./cdua.alt # press enter and watch it go much slower!
 ```
 
 Do you see anything strange in this version when `SLEEP` is a high value like
@@ -67,14 +67,14 @@ fast your computer is :-) or use both to see the difference, you can do so.
 ### Original build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ### Original use:
 
 ```sh
-./cdua
+    ./cdua
 ```
 
 

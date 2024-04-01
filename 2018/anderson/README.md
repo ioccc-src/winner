@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an alternate version of this entry. See [Alternate
@@ -11,14 +11,14 @@ code](#alternate-code) below for more details.
 ## To use:
 
 ```sh
-./prog < textfile
+    ./prog < textfile
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -32,7 +32,7 @@ it was not the shape of the Roman V that we, or the compiler, didn't like.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -44,7 +44,7 @@ Use `prog.alt` as you would `prog` above.
 ### Alternate try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 
@@ -59,7 +59,7 @@ down](http://en.wikipedia.org/wiki/River_%28typography%29)!
 ### Compiling the program:
 
 ```sh
-cc -Wall -Wextra -Wpedantic -O3 -std=c11 prog.c -o prog
+    cc -Wall -Wextra -Wpedantic -O3 -std=c11 prog.c -o prog
 ```
 
 Also works with a standard of C99, but C90/C89 will not compile due to

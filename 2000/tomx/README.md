@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an alternate version that compiles [mkentry.c](mkentry.c). See
@@ -11,14 +11,14 @@ There is an alternate version that compiles [mkentry.c](mkentry.c). See
 ## To use:
 
 ```sh
-./tomx
+    ./tomx
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -33,14 +33,14 @@ using it as a Makefile and running the code ends up running `mkentry`.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
 ### Alternate try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 
@@ -101,9 +101,9 @@ source still acceptable to `make` and `sh`. The following modification to the
 last few lines will compile the IOCCC's famous [mkentry.c](mkentry.c).
 
 ```
-.PHONY: /* true clean */
-#undef   true
-#include "mkentry.c"
+    .PHONY: /* true clean */
+    #undef   true
+    #include "mkentry.c"
 ```
 
 Ain't that useful?

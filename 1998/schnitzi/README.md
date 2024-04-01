@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -10,7 +10,7 @@ make all
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [1998 schnitzi bugs](../../bugs.html#1998_schnitzi).
@@ -19,12 +19,12 @@ For more detailed information see [1998 schnitzi bugs](../../bugs.html#1998_schn
 ## To use:
 
 ```sh
-./schnitzi n > sort.c
-make sort
-./sort
-# enter three numbers, space separated
+    ./schnitzi n > sort.c
+    make sort
+    ./sort
+    # enter three numbers, space separated
 
-echo x y z | ./sort
+    echo x y z | ./sort
 ```
 
 where `n` and `x`, `y` and `z` are numbers.
@@ -33,18 +33,18 @@ where `n` and `x`, `y` and `z` are numbers.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 What happens if at the command line you don't specify `n` numbers that the
 program expects? For instance try:
 
 ```sh
-./schnitzi 5 > sort.c
-make sort
+    ./schnitzi 5 > sort.c
+    make sort
 
-# try running the next command four or five times:
-echo 2 5 3 1 | ./sort
+    # try running the next command four or five times:
+    echo 2 5 3 1 | ./sort
 ```
 
 Why does this happen?
@@ -100,7 +100,7 @@ So what does it do?  Give it an integer `(1 < n < 27)` on the command
 line, such as
 
 ```sh
-./schnitzi 5
+    ./schnitzi 5
 ```
 
 The output will itself be a lipographic program, one which expects input of
@@ -110,7 +110,7 @@ looping.  To see the resulting program run, redirect the output from
 `schnitzi` into another file, like this
 
 ```sh
-./schnitzi 4 > sort.c
+    ./schnitzi 4 > sort.c
 ```
 
 and then compile it.

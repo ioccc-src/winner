@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -10,7 +10,7 @@ make all
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2013 hou bugs](../../bugs.html#2013_hou).
@@ -19,7 +19,7 @@ For more detailed information see [2013 hou bugs](../../bugs.html#2013_hou).
 ## To use:
 
 ```sh
-./hou [scene-file-name] [options]
+    ./hou [scene-file-name] [options]
 ```
 
 Follow the instructions in `stdout`, preferably with an auto-refreshing PPM
@@ -30,7 +30,7 @@ effects should be more or less recognizable when you see 16.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 Try opening the file noted by the program then let the program run a while and
@@ -63,8 +63,8 @@ NOTE: the author refers to [a.c](a.c), placed in a gzipped file `a.c.gz`. We do 
 include it but it can be generated like:
 
 ```sh
-cc -Wall hou.c -o hou -lm
-./hou > a.c
+    cc -Wall hou.c -o hou -lm
+    ./hou > a.c
 ```
 
 but there is no need to do this as the Makefile takes care of it without even
@@ -79,7 +79,7 @@ This program is a programmable rendering engine with a built-in default scene.
 The standard command line is:
 
 ```sh
-./hou [scene-file-name] [options]
+    ./hou [scene-file-name] [options]
 ```
 
 As `hou` runs, it writes a progressively refining image to a ppm file specified
@@ -182,11 +182,11 @@ doesn't copy saved sessions across different endianness.
 ### Spoiler
 
 ```
- 3225  3225  3225  9  9    3225  3225
- 1     1  1  1  1  1  1    1     1  1
- 4225  1226  1  1  1  1    1222  1226
-    1  1     1  1  1  1    1     1 1
- 4226  1     4226  8  4222 4226  1  1
+    3225  3225  3225  9  9    3225  3225
+    1     1  1  1  1  1  1    1     1  1
+    4225  1226  1  1  1  1    1222  1226
+       1  1     1  1  1  1    1     1 1
+    4226  1     4226  8  4222 4226  1  1
 ```
 
 The program consists of a recursive-descent interpreter, a `3DDDA` (3D Discrete

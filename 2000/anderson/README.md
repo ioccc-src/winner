@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-echo something | ./anderson
+    echo something | ./anderson
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -53,17 +53,16 @@ characters (semaphore smileys, if you will).  For example, given the
 input "Hello, world!", the output will be:
 
 ```
-	      <>       <>       <>    <>                  <>     <>
-  _()       ()/      ()/      ()/     _\)       ()       (/_     _\)
-[] /^      |^^      /^^      /^^    [] ^^      |^^|      ^^ [] [] ^^
-  <>[      [][     <>][     <>][       ][      [][]      ][       ][
+		  <>       <>       <>    <>                  <>     <>
+      _()       ()/      ()/      ()/     _\)       ()       (/_     _\)
+    [] /^      |^^      /^^      /^^    [] ^^      |^^|      ^^ [] [] ^^
+      <>[      [][     <>][     <>][       ][      [][]      ][       ][
 
 
-	      <>    []
-  _()_      ()/     |()       ()
-[] ^^ []   /^^       ^^|     |^^|
-   ][     <>][       ][]     [][]
-
+		  <>    []
+      _()_      ()/     |()       ()
+    [] ^^ []   /^^       ^^|     |^^|
+       ][     <>][       ][]     [][]
 ```
 
 The program is obfuscated without the use of the preprocessor or any

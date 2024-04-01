@@ -1,22 +1,22 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./toledo [a ...]
+    ./toledo [a ...]
 ```
 
 
 ## Try:
 
 ```sh
-./toledo a
-./toledo a b
+    ./toledo a
+    ./toledo a b
 ```
 
 
@@ -31,7 +31,7 @@ Two alternate versions of this entry, [toledo2.c](toledo2.c) and
 To compile the alternate versions:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -64,7 +64,7 @@ two modes: two-players, and one player (always white) against the machine. To
 get the first mode, run the program without arguments:
 
 ```sh
-./toledo
+    ./toledo
 ```
 
 The other mode is accessible running the program with one argument
@@ -72,14 +72,14 @@ The other mode is accessible running the program with one argument
 analysis):
 
 ```sh
-./toledo a
+    ./toledo a
 ```
 
 Two arguments for 6-[ply](https://en.wikipedia.org/wiki/Ply_(game_theory))
 analysis:
 
 ```sh
-./toledo a b
+    ./toledo a b
 ```
 
 And each successive argument will analyze one

@@ -1,20 +1,20 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-make all
+    make all
 ```
 
 NOTE: that's not a typo or mistake but one can also do:
 
 ```sh
-./o
+    ./o
 ```
 
 

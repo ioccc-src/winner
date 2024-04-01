@@ -79,8 +79,8 @@ customisability) and then you use the bkgd() function with the colour pair.
 Something like this:
 
 ```c
-init_pair(5, COLOR_BLACK, COLOR_WHITE);
-bkgd(COLOR_PAIR(5));
+    init_pair(5, COLOR_BLACK, COLOR_WHITE);
+    bkgd(COLOR_PAIR(5));
 ```
 
 I played with this after winning and I came across some problems with colours
@@ -89,14 +89,14 @@ but that changes the background of the program anyway.
 The standard colour identifiers are:
 
 ```c
-COLOR_BLACK
-COLOR_RED
-COLOR_GREEN
-COLOR_YELLOW
-COLOR_BLUE
-COLOR_MAGENTA
-COLOR_CYAN
-COLOR_WHITE
+    COLOR_BLACK
+    COLOR_RED
+    COLOR_GREEN
+    COLOR_YELLOW
+    COLOR_BLUE
+    COLOR_MAGENTA
+    COLOR_CYAN
+    COLOR_WHITE
 ```
 
 
@@ -111,11 +111,11 @@ For the wall, bug and snake body characters you can replace the following in the
 source code (**include the single quotes!**) respectively:
 
 ```
-'#'
+    '#'
 
-'*'
+    '*'
 
-'o'
+    'o'
 ```
 
 ## Modifying input keys
@@ -125,16 +125,16 @@ you might want the keys `l`, `r`, `u` and `d` for the directions. Find the case
 statements:
 
 ```c
-case KEY_LEFT:
-case KEY_RIGHT:
-case KEY_UP:
-case KEY_DOWN:
+    case KEY_LEFT:
+    case KEY_RIGHT:
+    case KEY_UP:
+    case KEY_DOWN:
 ```
 
 Replace `KEY_LEFT` with:
 
 ```c
-'l'
+    'l'
 ```
 
 and do the same thing for the other directions too. If you want more than one
@@ -142,7 +142,7 @@ key e.g. the arrow keys and the letters just add another case statement e.g. for
 left it might be:
 
 ```c
-case KEY_LEFT: case 'l':
+    case KEY_LEFT: case 'l':
 ```
 
 Yes the single quotes matter. You can do similar for the other input keys.
@@ -167,13 +167,13 @@ must set it to the below at the very least; defining it without a value is not
 enough (it amounts to the parameters to a printf call):
 
 ```c
-#define J " " );
+    #define J " " );
 ```
 
 If you don't care about brief displays of 'o' at 0,0 you can just have:
 
 ```c
-#define J "");
+    #define J "");
 ```
 
 That's the bare minimum. Notice also that it's been a long while since I've
@@ -195,7 +195,7 @@ of which were added over time). Obviously this would take many bug sized bytes
 (bites) even once let alone twice! Thus I made it into a define:
 
 ```c
-#define J Z(X:%d/%d Y:%d/%d S:%zu/%zu B:%zu\n), Y, y[-2], X,*y,A,g, c);
+    #define J Z(X:%d/%d Y:%d/%d S:%zu/%zu B:%zu\n), Y, y[-2], X,*y,A,g, c);
 ```
 
 With the table below you can show a variety of other variables/statistics.
@@ -221,34 +221,36 @@ bugs eaten (I think I have this correct; I've made many changes to the point of
 not wanting to mess with anything that's unnecessary):
 
 ```c
-#define J Z(SIZE: %zu BUGS: %zu\n), A, c);
+    #define J Z(SIZE: %zu BUGS: %zu\n), A, c);
 ```
 
 More generally the following expressions and data types (with format specifiers)
 come to mind as information that might be of interest.
 
-	    DESCRIPTION		    EXPRESSION		TYPE	FORMAT SPECIFIER
+```
+    DESCRIPTION		    EXPRESSION		TYPE	FORMAT SPECIFIER
 
-	    Snake size		    A			    size_t	%zu
+    Snake size		    A			size_t		%zu
 
-	    Y coordinate	    Y			    int		%d
-	    of snake head
+    Y coordinate	    Y			int		%d
+    of snake head
 
-	    X coordinate	    X			    int		%d
-	    of snake head
+    X coordinate	    X			int		%d
+    of snake head
 
-	    Max snake size	    g			    size_t	%zu
+    Max snake size	    g			size_t		%zu
 
-	    Bugs eaten		    c			    size_t	%zu
+    Bugs eaten		    c			size_t		%zu
 
-	    Bug line (Y)	    *U			    int		%d
+    Bug line (Y)	    *U			int		%d
 
-	    Bug column (X)	    *V			    int		%d
+    Bug column (X)	    *V			int		%d
 
-	    Snake size		    A			    size_t	%zu
+    Snake size		    A			size_t		%zu
 
-	    Growth size (per	N			    size_t	%zu
-	    bug)
+    Growth size (per	    N			size_t		%zu
+    bug)
+```
 
 
 ## Make it so the snake starts at a random location
@@ -256,14 +258,14 @@ come to mind as information that might be of interest.
 Quite simply change:
 
 ```c
-X = H / 2; Y = *x / 2;
+    X = H / 2; Y = *x / 2;
 ```
 
 To be something like:
 
 ```c
-X = R(1,H-1);
-Y = R(2,*x-1);
+    X = R(1,H-1);
+    Y = R(2,*x-1);
 ```
 
 Or whatever you might want it to be... (question to answer: will this work at
@@ -394,13 +396,13 @@ If you look at the walls code you will see a ternary operator for both `X` and `
 coordinates. This of course is very different now but the idea remains the same:
 
 ```c
-if (p && !(*O>=O[1]||H>=M(1)))
-{
-    if (X<1||X>=H)
-	X = X<1?H-1:1;
-    if (Y<2||Y>=*O)
-	Y = Y<2?*O-1:2;
-}
+    if (p && !(*O>=O[1]||H>=M(1)))
+    {
+	if (X<1||X>=H)
+	    X = X<1?H-1:1;
+	if (Y<2||Y>=*O)
+	    Y = Y<2?*O-1:2;
+    }
 ```
 
 
@@ -413,9 +415,9 @@ If however you wanted the walls to act as a barrier you could do something like
 this instead (omitting the inner if statements here):
 
 ```c
-X=X<1?1:*H-1;
+    X=X<1?1:*H-1;
 
-Y=Y<2?2:*O-1;
+    Y=Y<2?2:*O-1;
 ```
 
 Again though that's just the idea; the code is dramatically different. The above

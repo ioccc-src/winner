@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an alternate version that lacks a useful bug fix. See [Alternate
@@ -12,14 +12,14 @@ below for more details.
 ## To use:
 
 ```sh
-./prog < text
+    ./prog < text
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -33,7 +33,7 @@ useful bug fix.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -45,7 +45,7 @@ Use `prog.alt` as you would `prog` above.
 ### Alternate try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 Do you spot the fix by running both [try.sh](try.sh) and

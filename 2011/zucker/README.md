@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an alternate version which should work for Windows which distinguishes
@@ -11,7 +11,7 @@ binary mode from text mode. See [alternate code](#alternate-code) below.
 ## To use:
 
 ```sh
-./zucker > image.ppm
+    ./zucker > image.ppm
 ```
 
 Now open `image.ppm` with your image viewer of choice.
@@ -20,7 +20,7 @@ Now open `image.ppm` with your image viewer of choice.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 After running `try.sh`, open the PPM images `ioccc.ppm`, `hello.ppm` and
@@ -37,7 +37,7 @@ that distinguish binary and text.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -69,7 +69,7 @@ This program makes pretty pictures.  To see the default output, try
 running
 
 ```sh
-./zucker > ioccc2011.ppm
+    ./zucker > ioccc2011.ppm
 ```
 
 On the author's 2.5 GHz MacBook Pro, this command takes approximately 1 minute
@@ -83,7 +83,7 @@ Netpbm files, and are available on multiple platforms.
 With macOS you can type at the command line:
 
 ```sh
-open ioccc2021.ppm
+    open ioccc2021.ppm
 ```
 
 and it will open image in the default application Preview.app.
@@ -91,7 +91,7 @@ and it will open image in the default application Preview.app.
 To use ImageMagick you might do something like:
 
 ```sh
-convert ioccc2011.ppm ioccc2011.png
+    convert ioccc2011.ppm ioccc2011.png
 ```
 
 and then open `ioccc2011.png` in your viewer of choice.
@@ -99,7 +99,7 @@ and then open `ioccc2011.png` in your viewer of choice.
 To use GraphicsMagick you might do something like:
 
 ```sh
-gm convert ioccc2011.ppm ioccc2011.png
+    gm convert ioccc2011.ppm ioccc2011.png
 ```
 
 and then open `ioccc2011.png` in your viewer of choice.
@@ -108,14 +108,14 @@ Aside from the default image, you may create your own by running the
 program as follows:
 
 ```sh
-./zucker "your text" > image.ppm
+    ./zucker "your text" > image.ppm
 ```
 
 To mitigate long runtime, the program can be invoked in a "preview"
 mode by appending `-preview` to the command line arguments, like so:
 
 ```sh
-./zucker faster\! -preview > image.ppm
+    ./zucker faster\! -preview > image.ppm
 ```
 
 If your platform distinguishes between binary and text streams, you may need to

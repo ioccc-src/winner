@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2012 deckmyn bugs](../../bugs.html#2012_deckmyn).
@@ -19,14 +19,14 @@ For more detailed information see [2012 deckmyn bugs](../../bugs.html#2012_deckm
 ## To use:
 
 ```sh
-./deckmyn "$(cat deckmyn.c)" "$(cat musicfile.txt)" > sheetmusic.pbm
+    ./deckmyn "$(cat deckmyn.c)" "$(cat musicfile.txt)" > sheetmusic.pbm
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -60,13 +60,13 @@ manual input as below) ready and a program capable of showing [.pbm bitmap
 format](https://en.wikipedia.org/wiki/Netpbm) images.
 
 ```sh
-./deckmyn "`cat deckmyn.c`" "`cat example_greensleeves`" > greensleeves.pbm
+    ./deckmyn "`cat deckmyn.c`" "`cat example_greensleeves`" > greensleeves.pbm
 ```
 
 If you have macOS you can open the image like:
 
 ```sh
-open greensleeves.pbm
+    open greensleeves.pbm
 ```
 
 ... otherwise, you'll have to open it in your viewer of choice how you would
@@ -74,13 +74,13 @@ normally open an image.
 
 
 ```sh
-./deckmyn "`cat deckmyn.c`" "KF m44c4 c4 g4 g4 :  a4 a4 g2 :; " > short_bass.pbm
+    ./deckmyn "`cat deckmyn.c`" "KF m44c4 c4 g4 g4 :  a4 a4 g2 :; " > short_bass.pbm
 ```
 
 If you have macOS you can open the image like:
 
 ```sh
-open short_bass.pbm
+    open short_bass.pbm
 ```
 
 ... otherwise, you'll have to open it in your viewer of choice how you would

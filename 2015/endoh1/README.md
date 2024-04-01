@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 NOTE: this program requires the tool `tcpserver` to use. If you do not have this
@@ -12,7 +12,7 @@ require it](../../faq.html#tcpserver).
 ## To use:
 
 ```sh
-tcpserver -v 127.0.0.1 10333 ./prog ioccc.txt
+    tcpserver -v 127.0.0.1 10333 ./prog ioccc.txt
 ```
 
 Then connect to http://localhost:10333 with your browser.
@@ -45,13 +45,13 @@ his work.
 Compile the program as follows:
 
 ```sh
-cc -O3 -std=c99 \
-        -Wall -Wextra -pedantic -o prog prog.c \
-        -Delta_u="Du*laplacian(u)-u*v*v+F*(1-u)" \
-        -Delta_v="Dv*laplacian(v)+u*v*v-v*(F+K)" \
-        -DF=0.040 -DK=0.060 -DDu=0.200 -DDv=0.100 \
-        -DUV_BACKGROUND=1,0 -DUV_DROP=-0.5,0.5 \
-        -DTIMESTEP=1.0 -DSPEED=2 -DRGB=255:128:192
+    cc -O3 -std=c99 \
+	   -Wall -Wextra -pedantic -o prog prog.c \
+	   -Delta_u="Du*laplacian(u)-u*v*v+F*(1-u)" \
+	   -Delta_v="Dv*laplacian(v)+u*v*v-v*(F+K)" \
+	   -DF=0.040 -DK=0.060 -DDu=0.200 -DDv=0.100 \
+	   -DUV_BACKGROUND=1,0 -DUV_DROP=-0.5,0.5 \
+	   -DTIMESTEP=1.0 -DSPEED=2 -DRGB=255:128:192
 ```
 
 Then, run it with the `tcpserver` command in the
@@ -60,7 +60,7 @@ Then, run it with the `tcpserver` command in the
 [1991/brndstd](../../1991/brnstnd/index.html) "Best of Show".
 
 ```sh
-tcpserver -v 127.0.0.1 10333 ./prog ioccc.txt
+    tcpserver -v 127.0.0.1 10333 ./prog ioccc.txt
 ```
 
 Finally, open `http://127.0.0.1:10333/` in a modern browser supporting HTML5.
@@ -81,8 +81,8 @@ form non-trivial patterns, such as spots, spiral, dappling, and labyrinths.
 The systems are generally formulated as follows:
 
 ```
-du/dt = F(u, v) + Du * laplacian(u)
-dv/dt = G(u, v) + Dv * laplacian(v)
+    du/dt = F(u, v) + Du * laplacian(u)
+    dv/dt = G(u, v) + Dv * laplacian(v)
 ```
 
 The functions `F(u, v)` and `G(u, v)` represent reactions of each substance, and
@@ -113,15 +113,15 @@ model](http://groups.csail.mit.edu/mac/projects/amorphous/GrayScott/) in TeX
 notation.
 
 ```
-\frac{\partial u}{\partial t} = D_u \Delta u - u v^2 + F (1 - u)
-\frac{\partial v}{\partial t} = D_v \Delta v + u v^2 - v (F + K)
+    \frac{\partial u}{\partial t} = D_u \Delta u - u v^2 + F (1 - u)
+    \frac{\partial v}{\partial t} = D_v \Delta v + u v^2 - v (F + K)
 ```
 
 You can specify this model as follows:
 
 ```
--Delta_u="Du*laplacian(u)-u*v*v+F*(1-u)" \
--Delta_v="Dv*laplacian(v)+u*v*v-v*(F+K)"
+    -Delta_u="Du*laplacian(u)-u*v*v+F*(1-u)" \
+    -Delta_v="Dv*laplacian(v)+u*v*v-v*(F+K)"
 ```
 
 `Du`, `Dv`, `F`, and `K` are parameters of that model.
@@ -159,15 +159,15 @@ Some interesting parameters are included in `Makefile`.  Do one of the following
 commands and open `http://127.0.0.1:10333`.
 
 ```
-make gray-scott-1 && tcpserver -v 127.0.0.1 10333 ./gray-scott-1 ioccc.txt
-make gray-scott-1 && tcpserver -v 127.0.0.1 10333 ./gray-scott-1 center.txt
-make gray-scott-1 && tcpserver -v 127.0.0.1 10333 ./gray-scott-1 line.txt
-make gray-scott-2 && tcpserver -v 127.0.0.1 10333 ./gray-scott-2 ioccc.txt
-make gray-scott-3 && tcpserver -v 127.0.0.1 10333 ./gray-scott-3 ioccc.txt
-make gray-scott-4 && tcpserver -v 127.0.0.1 10333 ./gray-scott-4 ioccc.txt
-make fitzhugh-nagumo-1 && tcpserver -v 127.0.0.1 10333 ./fitzhugh-nagumo-1 ioccc.txt
-make fitzhugh-nagumo-2 && tcpserver -v 127.0.0.1 10333 ./fitzhugh-nagumo-2 ioccc.txt
-make oregonator && tcpserver -v 127.0.0.1 10333 ./oregonator ioccc.txt
+    make gray-scott-1 && tcpserver -v 127.0.0.1 10333 ./gray-scott-1 ioccc.txt
+    make gray-scott-1 && tcpserver -v 127.0.0.1 10333 ./gray-scott-1 center.txt
+    make gray-scott-1 && tcpserver -v 127.0.0.1 10333 ./gray-scott-1 line.txt
+    make gray-scott-2 && tcpserver -v 127.0.0.1 10333 ./gray-scott-2 ioccc.txt
+    make gray-scott-3 && tcpserver -v 127.0.0.1 10333 ./gray-scott-3 ioccc.txt
+    make gray-scott-4 && tcpserver -v 127.0.0.1 10333 ./gray-scott-4 ioccc.txt
+    make fitzhugh-nagumo-1 && tcpserver -v 127.0.0.1 10333 ./fitzhugh-nagumo-1 ioccc.txt
+    make fitzhugh-nagumo-2 && tcpserver -v 127.0.0.1 10333 ./fitzhugh-nagumo-2 ioccc.txt
+    make oregonator && tcpserver -v 127.0.0.1 10333 ./oregonator ioccc.txt
 ```
 
 These examples are created by drawing (and modifying) the pattern files of
@@ -204,7 +204,7 @@ I think you may use `inetd` and `xinetd` instead of `tcpserver`.  Here is an
 example `inetd` configuration.
 
 ```
-10333 stream tcp nowait nobody /path/to/prog /path/to/prog /path/to/initial-pattern.txt
+    10333 stream tcp nowait nobody /path/to/prog /path/to/prog /path/to/initial-pattern.txt
 ```
 
 But note that I didn't test well.

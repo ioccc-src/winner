@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -12,16 +12,16 @@ to those familiar with vi. See [Alternate code](#alternate-code) below.
 ## To use:
 
 ```sh
-./prog
+    ./prog
 ```
 
 
 ## Try:
 
 ```sh
-# Make your terminal as large as possible, possibly reduce your font size
-# then...
-./prog
+    # Make your terminal as large as possible, possibly reduce your font size
+    # then...
+    ./prog
 ```
 
 
@@ -34,16 +34,16 @@ where instead of `w`, `a`, `s` and `d`, you can use `k`, `h`, `j` and `l`.
 ### Alternate build:
 
 ```sh
-make alt
-```
+    make alt
+    ```
 
 
 ### Alternate use:
 
 ```sh
-# Make your terminal as large as possible, possibly reduce your font size
-# then...
-./prog.alt
+    # Make your terminal as large as possible, possibly reduce your font size
+    # then...
+    ./prog.alt
 ```
 
 ..and maybe curse less than you might otherwise, but still probably curse (see
@@ -69,11 +69,11 @@ reverse indentation style.
 
 
 ```
-   /\
-  //\\
- /    \
-/______\
-  /\/\
+       /\
+      //\\
+     /    \
+    /______\
+      /\/\
 ```
 
 
@@ -81,8 +81,8 @@ reverse indentation style.
 
 #### Linux
 ```
-cc -std=c99 -O3 prog.c -o prog
-./prog
+    cc -std=c99 -O3 prog.c -o prog
+    ./prog
 ```
 
 #### Windows
@@ -91,8 +91,8 @@ The only way I found to make it work is to use [MSYS2](https://www.msys2.org).
 When using the MSYS2 shell you can install gcc via pacman.
 
 ```
-cc -std=c99 -O3 prog.c -o prog
-./prog.exe
+    cc -std=c99 -O3 prog.c -o prog
+    ./prog.exe
 ```
 
 #### Warnings

@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an alternate version of this entry. See [Alternate
@@ -11,14 +11,14 @@ code](#alternate-code) below.
 ## To use:
 
 ```sh
-./prog < any-file
+    ./prog < any-file
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -33,7 +33,7 @@ with `-Wno-` options.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -83,7 +83,7 @@ E.g:
 
 
 ```c
-main(){system("hd");}	// it's turtles all the way down!
+    main(){system("hd");}	// it's turtles all the way down!
 ```
 
 is not acceptable.
@@ -97,15 +97,15 @@ Here is the 157 character version in it's entirety:
 
 
 ```c
-char     O,o[  20];L(O){
-putchar  ( O+  48+39  *(9<
-O));}    I(O)  {L(~     15);
-O|| puts(o);}  main     (l){
-for(;~(l=getchar())     ;I(O
-&=15     ))o[  O++      ]=4<
-(4^l     >>5)  ?l:     46,L
-(l>>     4),L  (l&15);O&&
-I(o[     O]=0  );}//157c
+    char     O,o[  20];L(O){
+    putchar  ( O+  48+39  *(9<
+    O));}    I(O)  {L(~     15);
+    O|| puts(o);}  main     (l){
+    for(;~(l=getchar())     ;I(O
+    &=15     ))o[  O++      ]=4<
+    (4^l     >>5)  ?l:     46,L
+    (l>>     4),L  (l&15);O&&
+    I(o[     O]=0  );}//157c
 ```
 
 While thinking about this in the shower (you are not the only one that does this!)
@@ -116,22 +116,22 @@ and it is interesting that the same algorithm can be expressed so differently
 by slight rearrangement of its parts.
 
 ```c
-// 119
-char O,o[20];main(l){for(;~(l=getchar());O||puts(o))o[O++]=isprint(l)?l:46,O&=15,printf("%02x ",l);O[o]=0;O&&puts(o);}
-// 116
-char O,o[20];main(l){for(;O++[o]=~(l=getchar())?4<(4^l>>5)?l:46:0;(O&=15)||puts(o))printf("%02x ",l);O>1&&puts(o);}
-// 115
-char O,o[20];main(l){for(;O[o]=~(l=getchar())?4<(4^l>>5)?l:46:0;(O=-~O&15)||puts(o))printf("%02x ",l);O&&puts(o);}
-// 113
-char O,o[20];main(l){for(;~l;(O=~l?printf("%02x ",l),-~O&15:!O)||puts(o))O[o]=~(l=getchar())?4<(4^l>>5)?l:46:0;}
-// 112
-char O,o[20];main(l){for(;~l;(O=~l?-~O&printf("%02x ",l)*5:!O)||puts(o))O[o]=~(l=getchar())?4<(4^l>>5)?l:46:0;}
-// 111
-char O,o[20];main(l){for(;~l;O||puts(o))O=(O[o]=~(l=getchar())?4<(4^l>>5)?l:46:0)?-~O&printf("%02x ",l)*5:!O;}
-// 110
-char O,o[0];main(l){for(;~l;O||puts(o))O=(O[o]=~(l=getchar())?4<(4^l>>5)?l:46:0)?-~O&printf("%02x ",l)*5:!O;}
-// 109
-char O,o[];main(l){for(;~l;O||puts(o))O=(O[o]=~(l=getchar())?4<(4^l>>5)?l:46:0)?-~O&printf("%02x ",l)*5:!O;}
+    // 119
+    char O,o[20];main(l){for(;~(l=getchar());O||puts(o))o[O++]=isprint(l)?l:46,O&=15,printf("%02x ",l);O[o]=0;O&&puts(o);}
+    // 116
+    char O,o[20];main(l){for(;O++[o]=~(l=getchar())?4<(4^l>>5)?l:46:0;(O&=15)||puts(o))printf("%02x ",l);O>1&&puts(o);}
+    // 115
+    char O,o[20];main(l){for(;O[o]=~(l=getchar())?4<(4^l>>5)?l:46:0;(O=-~O&15)||puts(o))printf("%02x ",l);O&&puts(o);}
+    // 113
+    char O,o[20];main(l){for(;~l;(O=~l?printf("%02x ",l),-~O&15:!O)||puts(o))O[o]=~(l=getchar())?4<(4^l>>5)?l:46:0;}
+    // 112
+    char O,o[20];main(l){for(;~l;(O=~l?-~O&printf("%02x ",l)*5:!O)||puts(o))O[o]=~(l=getchar())?4<(4^l>>5)?l:46:0;}
+    // 111
+    char O,o[20];main(l){for(;~l;O||puts(o))O=(O[o]=~(l=getchar())?4<(4^l>>5)?l:46:0)?-~O&printf("%02x ",l)*5:!O;}
+    // 110
+    char O,o[0];main(l){for(;~l;O||puts(o))O=(O[o]=~(l=getchar())?4<(4^l>>5)?l:46:0)?-~O&printf("%02x ",l)*5:!O;}
+    // 109
+    char O,o[];main(l){for(;~l;O||puts(o))O=(O[o]=~(l=getchar())?4<(4^l>>5)?l:46:0)?-~O&printf("%02x ",l)*5:!O;}
 ```
 
 There are solutions without the ASCII sidebar that are significantly shorter.
@@ -140,16 +140,16 @@ They are derived from the solutions above, but are still fascinating as concise 
 so here is their progression, for the curious:
 
 ```c
-// 102
-I;O(O){putchar(O+48+39*(9<O));}main(l){for(;~(l=getchar());O(++I&15?~15:~37))O(l>>4),O(l&15);O(-38);}
-// 80
-O;main(l){while(~(l=getchar()))printf("%02x%c",l,++O&15?32:10);O&15&&puts("");}
-// 78
-O;main(l){for(;~l;(O=~(l=getchar())?printf("%02x ",l),-~O&15:!O)||puts(""));}
-// 77
-O;main(l){for(;~l;(O=~(l=getchar())?-~O&printf("%02x ",l)*5:!O)||puts(""));}
-// 76
-O;main(l){for(;~l;O||puts(&O))O=~(l=getchar())?-~O&printf("%02x ",l)*5:!O;}
+    // 102
+    I;O(O){putchar(O+48+39*(9<O));}main(l){for(;~(l=getchar());O(++I&15?~15:~37))O(l>>4),O(l&15);O(-38);}
+    // 80
+    O;main(l){while(~(l=getchar()))printf("%02x%c",l,++O&15?32:10);O&15&&puts("");}
+    // 78
+    O;main(l){for(;~l;(O=~(l=getchar())?printf("%02x ",l),-~O&15:!O)||puts(""));}
+    // 77
+    O;main(l){for(;~l;(O=~(l=getchar())?-~O&printf("%02x ",l)*5:!O)||puts(""));}
+    // 76
+    O;main(l){for(;~l;O||puts(&O))O=~(l=getchar())?-~O&printf("%02x ",l)*5:!O;}
 ```
 
 It is possible to reduce the size of each of these by one by eliding the trailing newline.
@@ -157,13 +157,13 @@ This was not reported above since the newline kept getting appended by processin
 and it is more interesting to remove characters by changing code than by filtering:
 
 ```sh
-$ tr -d '\012' < 109.c | wc -c
-108
-$ tr -d '\012' < 76.c | wc -c
-75
-$ tr -d '\012' < 109.c | cc -o 108 -xc -
-$ verify 108
-$
+    $ tr -d '\012' < 109.c | wc -c
+    108
+    $ tr -d '\012' < 76.c | wc -c
+    75
+    $ tr -d '\012' < 109.c | cc -o 108 -xc -
+    $ verify 108
+    $
 ```
 
 An obfuscated hex dump has been done before:
@@ -258,13 +258,13 @@ the expression within the ternary remains too complex.
 Try:
 
 ```sh
-cat prog.c prog.alt.c
+    cat prog.c prog.alt.c
 ```
 
 or
 
 ```sh
-cmp -b prog.c prog.alt.c
+    cmp -b prog.c prog.alt.c
 ```
 
 to compare the differences (`diff` is not helpful on a one-liner).

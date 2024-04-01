@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2012 blakely bugs](../../bugs.html#2012_blakely).
@@ -19,14 +19,14 @@ For more detailed information see [2012 blakely bugs](../../bugs.html#2012_blake
 ## To use:
 
 ```sh
-./blakely "RPN formula" resolution > output.gif
+    ./blakely "RPN formula" resolution > output.gif
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -60,7 +60,7 @@ output to `stdout`.
 The program should be run as:
 
 ```sh
-./blakely xy* 32 > pic.gif
+    ./blakely xy* 32 > pic.gif
 ```
 
 where the first parameter is a
@@ -73,15 +73,15 @@ Notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation) with the
 following characters recognised:
 
 ```
-+, -, *, /	    - usual arithmetic operations
-^		    - Exponentiation; valid for constant exponent only
-s		    - sin
-c		    - cos
-0-9		    - single digit integers
-d		    - duplicate number on stack
-t		    - transpose top two elements on stack
-x		    - x coordinate value
-y		    - y coordinate value
+    +, -, *, /	    - usual arithmetic operations
+    ^		    - Exponentiation; valid for constant exponent only
+    s		    - sin
+    c		    - cos
+    0-9		    - single digit integers
+    d		    - duplicate number on stack
+    t		    - transpose top two elements on stack
+    x		    - x coordinate value
+    y		    - y coordinate value
 ```
 
 NB: all arithmetic is done in double precision, so `23/` is two-thirds, rather
@@ -106,9 +106,9 @@ to 250 took ~35 minutes to render on an [i7
 processor](https://en.wikipedia.org/wiki/Intel_Core#Core_i7).
 
 ```sh
-./blakely xy* 32 > saddle.gif
+    ./blakely xy* 32 > saddle.gif
 
-./blakely xx*yy*1++d5*ct/ 64 > ripple.gif
+    ./blakely xx*yy*1++d5*ct/ 64 > ripple.gif
 ```
 
 

@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./horton A B C D
+    ./horton A B C D
 ```
 
 `A`, `B`, `C` and `D` are numeric arguments.
@@ -17,7 +17,7 @@ make all
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -30,14 +30,14 @@ version.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
 ### Alternate use:
 
 ```sh
-./horton.alt A B C D
+    ./horton.alt A B C D
 ```
 
 Where A, B, C and D are numbers like with `horton`.
@@ -46,7 +46,7 @@ Where A, B, C and D are numbers like with `horton`.
 ### Alternate try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 
@@ -81,8 +81,8 @@ It's easily modified to graph *any* 96x160 bitmap on a dumb terminal.
 See the [gtface](gtface.c) program for another example.  Try:
 
 ```sh
-make gtface
-./gtface < gtface.data
+    make gtface
+    ./gtface < gtface.data
 ```
 
 For more information, see my article
@@ -90,31 +90,30 @@ For more information, see my article
 [Using GraphTab; USENIX ;login: Sept/Oct 1992, pages 28-31](login_sept92-pp28-31.pdf).
 
 ```
-
-              MMMM,M,MM"MM,,,
-           ,,MMMMMMMMM"""""""",
-          ,MMMMM"""            ",
-         ,MMM"                   "
-         MMM                      M
-         MM
-         MM" "                     M
-          M " , ,,,,,     ,,,,,,,,,MM
-          "MMMM"M,MMMMM MMMM M M"MMM,
-         ,M"MMMM"MM"MMM""M""MMMM""M"M
-          , MM M M,M M"  "M",, M "M "
-          M ,M,"    ,M    "M, ,,,", M
-           M , M"MMM",,M,M,,""" , ,
-          ",," , " "MMMMMMMM "   , "
-           ,M , ""M,MMMMMMMM,M " ,,
-           ,MM, MMMMMMMMMMMMMM,", M,
-            M,M,MM"M"M" """M"MM,M M
-           ,MMMMMM M,MMMMM"M MM""M
-          M MMMMMM,M M"M"" M MMMM", ,
-           "M"MMMMMMMMMM"M ,MMMMM M  ,,
-         "" MMMMMMM,M,MM,M,,,MMM"M    ,
-       ," , "MMMMMMM"MM"M,,,,MMMMM ,   ,,
-       M  ," MMMMMM"MM""M ,MMMMM,M,    M
-      ,      MMMM,MMMM"M"M"M,MM,M,",    "
+  	  MMMM,M,MM"MM,,,
+         ,,MMMMMMMMM"""""""",
+        ,MMMMM"""            ",
+       ,MMM"                   "
+       MMM                      M
+       MM
+       MM" "                     M
+        M " , ,,,,,     ,,,,,,,,,MM
+        "MMMM"M,MMMMM MMMM M M"MMM,
+       ,M"MMMM"MM"MMM""M""MMMM""M"M
+        , MM M M,M M"  "M",, M "M "
+        M ,M,"    ,M    "M, ,,,", M
+         M , M"MMM",,M,M,,""" , ,
+        ",," , " "MMMMMMMM "   , "
+         ,M , ""M,MMMMMMMM,M " ,,
+         ,MM, MMMMMMMMMMMMMM,", M,
+  	M,M,MM"M"M" """M"MM,M M
+         ,MMMMMM M,MMMMM"M MM""M
+        M MMMMMM,M M"M"" M MMMM", ,
+         "M"MMMMMMMMMM"M ,MMMMM M  ,,
+       "" MMMMMMM,M,MM,M,,,MMM"M    ,
+     ," , "MMMMMMM"MM"M,,,,MMMMM ,   ,,
+     M  ," MMMMMM"MM""M ,MMMMM,M,    M
+    ,      MMMM,MMMM"M"M"M,MM,M,",    "
 ```
 
 

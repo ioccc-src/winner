@@ -329,7 +329,7 @@ hit a key every time to move because it is blocking.
 What happens if you do:
 
 ```sh
-WALLS= ./prog
+    WALLS= ./prog
 ```
 
 Can you run into the wall since you didn't specify a value and the default is 1?
@@ -343,20 +343,20 @@ If however you were to give valid input followed by invalid input the valid
 input would be parsed. For example:
 
 ```sh
-WALLS=1test ./prog
+    WALLS=1test ./prog
 ```
 
 would let you go through the walls. On the other hand
 
 ```sh
-WALLS=test1 ./prog
+    WALLS=test1 ./prog
 ```
 
 would not. Furthermore if you specify the same variable more than once it's the
 last one that counts. For example:
 
 ```sh
-WALLS=0 WALLS=1 CANNIBAL=1 CANNIBAL=0 ./prog
+    WALLS=0 WALLS=1 CANNIBAL=1 CANNIBAL=0 ./prog
 ```
 
 would allow you to go through walls but you could not cannibalise.
@@ -365,9 +365,9 @@ Also note that I specify base 0 which means that you can also have it in hex and
 octal. These are all the same:
 
 ```
-SIZE=0x3
-SIZE=3
-SIZE=03
+    SIZE=0x3
+    SIZE=3
+    SIZE=03
 ```
 
 The way the functions work is if 0x (or 0X) it's considered hex; if prefixed
@@ -376,10 +376,10 @@ with a 0 it's octal and otherwise it's decimal. If you specify invalid data
 example:
 
 ```
-SIZE=0
-SIZE=f
-SIZE=-
-SIZE=f1
+    SIZE=0
+    SIZE=f
+    SIZE=-
+    SIZE=f1
 ```
 
 are all equivalent.
@@ -387,7 +387,7 @@ are all equivalent.
 Observe that:
 
 ```
-SIZE=08
+    SIZE=08
 ```
 
 is invalid input because octal only has digits 0 - 7: the resulting size will be
@@ -415,9 +415,9 @@ was before I added proper - to make the perfect and obvious pun - capsizing
 so that by setting the size to -1 it went to the max unsigned value):
 
 ```sh
-$ MAXSIZE=-1 ./prog
-memory error
-X:0/157 Y:0/42 S:3/18446744073709551614 B:0
+    $ MAXSIZE=-1 ./prog
+    memory error
+    X:0/157 Y:0/42 S:3/18446744073709551614 B:0
 ```
 
 
@@ -429,9 +429,9 @@ if the max size is 0 then the array size will be 1 but it won't matter because
 the snake size will be >= that max anyway. But here's a curious output:
 
 ```sh
-SIZE=1 MAXSIZE=0 ./prog
-YOU WIN!
-X:78/156 Y:20/41 S:0/0 B:0
+    SIZE=1 MAXSIZE=0 ./prog
+    YOU WIN!
+    X:78/156 Y:20/41 S:0/0 B:0
 ```
 
 Why does it show snake size as 0 when I specified 1? It's because the max size

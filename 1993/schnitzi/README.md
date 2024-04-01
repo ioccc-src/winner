@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -10,7 +10,7 @@ make all
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [1993 schnitzi bugs](../../bugs.html#1993_schnitzi).
@@ -19,7 +19,7 @@ For more detailed information see [1993 schnitzi bugs](../../bugs.html#1993_schn
 ## To use:
 
 ```sh
-./schnitzi file
+    ./schnitzi file
 ```
 
 where
@@ -34,16 +34,16 @@ in [1993 schnitzi bugs](../../bugs.html#1993_schnitzi).
 ## Try:
 
 ```sh
-./schnitzi schnitzi.info
-# ask some questions suggested by the author, noted below
+    ./schnitzi schnitzi.info
+    # ask some questions suggested by the author, noted below
 ```
 
 We also suggest you ask the program the following questions:
 
 ```sh
-Who is Mark Schnitzus?
+    Who is Mark Schnitzus?
 
-Who was Jack the Ripper ?
+    Who was Jack the Ripper ?
 ```
 
 Notice how it still manages to answer the first question despite there being an
@@ -52,8 +52,8 @@ intentional spelling error there.
 Try feeding the program source to the program and ask both:
 
 ```sh
-What is cat ?
-What is cat?
+    What is cat ?
+    What is cat?
 ```
 
 What happens if you ask it other questions with and without a space before the

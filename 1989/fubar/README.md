@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -10,7 +10,7 @@ make all
 The current status of this entry is:
 
 ```
-STATUS: known bug - please help us fix
+    STATUS: known bug - please help us fix
 ```
 
 For more detailed information see [1989 fubar bugs](../../bugs.html#1989_fubar).
@@ -19,17 +19,17 @@ For more detailed information see [1989 fubar bugs](../../bugs.html#1989_fubar).
 ## To use:
 
 ```sh
-./fubar <number>
+    ./fubar <number>
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh # run on 1 - 7
+    ./try.sh # run on 1 - 7
 
-./fubar.sh 2 # run via script
-./fubar 2 # run directly
+    ./fubar.sh 2 # run via script
+    ./fubar 2 # run directly
 ```
 
 

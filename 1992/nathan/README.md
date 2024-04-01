@@ -1,15 +1,15 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./nathan
-# enter some text
+    ./nathan
+    # enter some text
 ```
 
 
@@ -18,7 +18,7 @@ make all
 To see some other fun uses:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -59,8 +59,8 @@ Nathan Sidwell stated that he was willing to distribute the winning source.  To
 read HIS instructions of how to obtain his winning program one was able to run:
 
 ```sh
-make nathan
-./nathan
+    make nathan
+    ./nathan
 ```
 
 to learn how to get a copy of the code.

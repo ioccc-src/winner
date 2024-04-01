@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-cd build; ./hibachi-start.sh &
+    cd build; ./hibachi-start.sh &
 ```
 
 Then use your web browser to visit `http://localhost:8008/`. When you're
@@ -43,8 +43,8 @@ extraction) that unpacks several support files and a subdirectory tree
 containing the documentation and examples. It can be viewed by:
 
 ```sh
-tar -zxf hibachi.tgz
-lynx hibachi/localhost/index.html
+    tar -zxf hibachi.tgz
+    lynx hibachi/localhost/index.html
 ```
 
 Or once `Hibachi` is running, use a web browser (preferably one that
@@ -59,19 +59,19 @@ To build just the executable:
 For Cygwin, FreeBSD, Linux (newer), Mac OS X:
 
 ```sh
-gcc -o hibachi hibachi.c
+    gcc -o hibachi hibachi.c
 ```
 
 For Linux (older):
 
 ```sh
-gcc -DSHUT_WR=1 -o hibachi hibachi.c
+    gcc -DSHUT_WR=1 -o hibachi hibachi.c
 ```
 
 For SunOS:
 
 ```sh
-gcc -o hibachi hibachi.c -lnsl -lsocket
+    gcc -o hibachi hibachi.c -lnsl -lsocket
 ```
 
 Since some systems place socket and network functions into other libraries, a
@@ -82,27 +82,27 @@ headers and functions are present, and setup the `#!` paths for the CGI
 examples. In which case the preferred build commands are:
 
 ```
-./configure [--enable-port=number]
-make
+    ./configure [--enable-port=number]
+    make
 ```
 
 To start the server on the default port (8008):
 
 ```sh
-cd build;
-./hibachi-start.sh &
+    cd build;
+    ./hibachi-start.sh &
 ```
 
 To test the server:
 
 ```sh
-lynx http://localhost:8008/
+    lynx http://localhost:8008/
 ```
 
 To stop the server:
 
 ```sh
-kill %1
+    kill %1
 ```
 
 ### Features

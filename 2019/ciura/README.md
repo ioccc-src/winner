@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -14,7 +14,7 @@ below.
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2019 ciura bugs](../../bugs.html#2019_ciura).
@@ -23,14 +23,14 @@ For more detailed information see [2019 ciura bugs](../../bugs.html#2019_ciura).
 ## To use:
 
 ```sh
-./getwords.sh en | grep .. | ./prog string
+    ./getwords.sh en | grep .. | ./prog string
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -43,7 +43,7 @@ newline.  See the Author's remarks for more information.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -55,7 +55,7 @@ Use `prog.alt` as you would `prog` above.
 ### Alternate try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 
@@ -84,23 +84,23 @@ of the alphabet exactly once.
 #### Example execution:
 
 ```sh
-$ grep .. /usr/share/dict/words | ./prog abcdefghijklmnopqrstuvwxyz
-qualm fjord wiz pyx vs beg kc nth
-quartz jinx vs fed kc womb glyph
-quid jamb fez vs pyx kc growl nth
-quiz fjord pyx vs bag kc mewl nth
-quiz fjord pyx vs gab kc mewl nth
-quiz fjord pyx vs gem bawl kc nth
-quiz fjord pyx vs meg bawl kc nth
-quiz fjord vex bawl kc gyp ms nth
-quiz jamb flex vs kc gyp word nth
-quiz jamb pyx vs kc flog drew nth
-quiz jamb pyx vs kc frog lewd nth
-quiz jamb pyx vs kc frog weld nth
-quiz jamb pyx vs kc golf drew nth
-quiz jamb pyx vs kc grew fold nth
-quiz jamb pyx vs kc grow nth fled
-quiz jamb pyx vs kc growl fed nth
+    $ grep .. /usr/share/dict/words | ./prog abcdefghijklmnopqrstuvwxyz
+    qualm fjord wiz pyx vs beg kc nth
+    quartz jinx vs fed kc womb glyph
+    quid jamb fez vs pyx kc growl nth
+    quiz fjord pyx vs bag kc mewl nth
+    quiz fjord pyx vs gab kc mewl nth
+    quiz fjord pyx vs gem bawl kc nth
+    quiz fjord pyx vs meg bawl kc nth
+    quiz fjord vex bawl kc gyp ms nth
+    quiz jamb flex vs kc gyp word nth
+    quiz jamb pyx vs kc flog drew nth
+    quiz jamb pyx vs kc frog lewd nth
+    quiz jamb pyx vs kc frog weld nth
+    quiz jamb pyx vs kc golf drew nth
+    quiz jamb pyx vs kc grew fold nth
+    quiz jamb pyx vs kc grow nth fled
+    quiz jamb pyx vs kc growl fed nth
 ```
 
 Rearranging the words into more or less meaningful expressions is the

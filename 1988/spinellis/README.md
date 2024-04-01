@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make clobber all
+    make clobber all
 ```
 
 and follow the instructions this will give you.
@@ -13,7 +13,7 @@ code](#alternate-code) section below.
 ## To use:
 
 ```sh
-./spinellis
+    ./spinellis
 ```
 
 Type in or copy paste some C code, perhaps from [input.txt](input.txt), and send
@@ -22,7 +22,7 @@ EOF (typically ctrl-d).
 Now run again:
 
 ```sh
-./spinellis
+    ./spinellis
 ```
 
 
@@ -34,7 +34,7 @@ For clang or compilers that won't read from `/dev/tty`, we provide this version.
 ### Alternate build:
 
 ```sh
-make clobber alt
+    make clobber alt
 ```
 
 and follow the instructions.
@@ -43,7 +43,7 @@ and follow the instructions.
 ### Alternate use:
 
 ```sh
-./spinellis.alt
+    ./spinellis.alt
 ```
 
 Type in or copy paste some C code, perhaps from [input.txt](input.txt), and send
@@ -52,7 +52,7 @@ EOF (typically ctrl-d).
 Now run again:
 
 ```sh
-./spinellis.alt
+    ./spinellis.alt
 ```
 
 

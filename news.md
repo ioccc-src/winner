@@ -29,16 +29,16 @@ All web pages, including this one, are now constructed from markdown files and/o
 We have been busy preparing for an important / significant update to this web site.  In the [temp-test-ioccc GitHub repo](https://github.com/ioccc-src/temp-test-ioccc) we have made nearly 2645 changes to date.
 
 ```
-While you are free to look at the [temp-test-ioccc GitHub repo](https://github.com/ioccc-src/temp-test-ioccc),
-please **do not link to it** as this repo and related web site will disappear once the main
-[IOCCC winner repo](https://github.com/ioccc-src/winner) has been updated.
+    While you are free to look at the [temp-test-ioccc GitHub repo](https://github.com/ioccc-src/temp-test-ioccc),
+    please **do not link to it** as this repo and related web site will disappear once the main
+    [IOCCC winner repo](https://github.com/ioccc-src/winner) has been updated.
 
-Also be aware that the [temp-test-ioccc GitHub repo](https://github.com/ioccc-src/temp-test-ioccc)
-is undergoing rapid changes.  There are broken links and other things in mid-change.
+    Also be aware that the [temp-test-ioccc GitHub repo](https://github.com/ioccc-src/temp-test-ioccc)
+    is undergoing rapid changes.  There are broken links and other things in mid-change.
 
-Once we are ready to update the [IOCCC winner repo](https://github.com/ioccc-src/winner)
-and its associated web site,
-we will post a news article warning of the pending change that is about to arrive.
+    Once we are ready to update the [IOCCC winner repo](https://github.com/ioccc-src/winner)
+    and its associated web site,
+    we will post a news article warning of the pending change that is about to arrive.
 ```
 
 These 2645+ changes in the [temp-test-ioccc GitHub repo](https://github.com/ioccc-src/temp-test-ioccc)
@@ -108,8 +108,8 @@ a _"latest_news"_ JSON member whose value is the date
 of the most recent news item.
 
 ```json
-"status_date" : "Mon Jan 30 02:28:44 PST 2023",
-"latest_news" : "Mon Jan 30 02:28:44 PST 2023"
+    "status_date" : "Mon Jan 30 02:28:44 PST 2023",
+    "latest_news" : "Mon Jan 30 02:28:44 PST 2023"
 ```
 
 
@@ -146,8 +146,8 @@ in favor of our new [IOCCC Mastodon](https://fosstodon.org/@ioccc) feed.
 Our Mastodon username is: **@ioccc@fosstodon.org**.
 
 ```
-Please note: As of the date of this posting, our account was just setup,
-so there isn't much to read there, yet.
+    Please note: As of the date of this posting, our account was just setup,
+    so there isn't much to read there, yet.
 ```
 
 In the future we plan to use Mastodon as our official announcement platform.
@@ -173,7 +173,7 @@ If you do not yet have a Mastodon account, you may obtain a **free mastodon acco
 If you do have / obtain a Mastodon account, **please do us a favor and follow the IOCCC at**:
 
 ```
-**@ioccc@fosstodon.org**
+    **@ioccc@fosstodon.org**
 ```
 
 The IOCCC wishes to thank the good folk running the

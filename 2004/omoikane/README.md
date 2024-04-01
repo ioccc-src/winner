@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./omoikane infile layout outfile
+    ./omoikane infile layout outfile
 ```
 
 
 ## Try:
 
 ```
-./try.sh
+    ./try.sh
 ```
 
 
@@ -44,7 +44,7 @@ insert a human-readable checksum string in the text itself!  `^_^`
 ### Usage
 
 ```sh
-./omoikane <infile> <layout> <outfile>
+    ./omoikane <infile> <layout> <outfile>
 ```
 
 All three arguments may reference the same file.  All files is
@@ -82,18 +82,18 @@ layout.
 Example file/layout:
 
 ```
-file:                layout:
-   crc = ########       ... . XXXXXXXX
-   patch = ######       ..... . XXXXXX
-   other text here      ..... .... ....
+    file:                layout:
+       crc = ########       ... . XXXXXXXX
+       patch = ######       ..... . XXXXXX
+       other text here      ..... .... ....
 ```
 
 And `Rinia` may generate a file similar to this:
 
 ```
-crc = 1bad73cf
-patch = #FR-QQ
-other text here
+    crc = 1bad73cf
+    patch = #FR-QQ
+    other text here
 ```
 
 Note that the original file by itself is a valid layout file, since
@@ -116,9 +116,8 @@ runs faster if the checksum is placed before the other marker
 characters rather than after, e.g.:
 
 ```
- a: X X XXX      b: XXXXXXXX     c: XXXXXXXX
-    XXXXXXXX        X X XXX         XXXXX
-
+    a: X X XXX      b: XXXXXXXX     c: XXXXXXXX
+       XXXXXXXX        X X XXX         XXXXX
 ```
 
 `a` usually takes the longest time, while `c` usually is the

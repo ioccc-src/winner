@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./prog > foo.c
+    ./prog > foo.c
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 The script will ask you if you wish to run `make rake` but this is not necessary
@@ -37,16 +37,16 @@ Big terminals with tiny fonts have their uses in certain cases.
 One of them is:
 
 ```sh
-make treacl
-./treacl
+    make treacl
+    ./treacl
 ```
 
 which is shorthand for:
 
 ```sh
-./prog < prog.c > treacle.c
-make treacle
-./treacle
+    ./prog < prog.c > treacle.c
+    make treacle
+    ./treacle
 ```
 
 

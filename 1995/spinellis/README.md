@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./spinellis < spinellis.c
+    ./spinellis < spinellis.c
 ```
 
 

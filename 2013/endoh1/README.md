@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2013 endoh1 bugs](../../bugs.html#2013_endoh1).
@@ -19,20 +19,20 @@ For more detailed information see [2013 endoh1 bugs](../../bugs.html#2013_endoh1
 ## To use:
 
 ```sh
-./endoh1 [file.lazy]
+    ./endoh1 [file.lazy]
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 You might also enjoy running:
 
 ```sh
-cc -E endoh1.c | less
+    cc -E endoh1.c | less
 ```
 
 
@@ -51,9 +51,9 @@ This entry can be considered an abuse of the GCC's optimizer; it takes GCC about
 ### Remarks
 
 ```sh
-less endoh1.c
-gcc -o endoh1 endoh1.c
-./endoh1
+    less endoh1.c
+    gcc -o endoh1 endoh1.c
+    ./endoh1
 ```
 
 ... Isn't there any more to it?
@@ -67,8 +67,8 @@ This program will shine when it is used as a library.  For example,
 [hello.lazy](hello.lazy) is a "Hello world" program written in Lazy K.
 
 ```sh
-$ lazy hello.lazy
-Hello, world!
+    $ lazy hello.lazy
+    Hello, world!
 ```
 
 where `lazy` is [a reference implementation of Lazy K][3].  At the same time,
@@ -76,9 +76,9 @@ where `lazy` is [a reference implementation of Lazy K][3].  At the same time,
 as a library.
 
 ```sh
-$ gcc -o hello -xc hello.lazy
-$ ./hello
-Hello, world!
+    $ gcc -o hello -xc hello.lazy
+    $ ./hello
+    Hello, world!
 ```
 
 In other words, this program is a kind of [polyglot][4].
@@ -137,9 +137,9 @@ I confirmed that the program successfully worked with the following compilers:
 Recent compilers with `-Wall -W -Wextra -pedantic` say nothing.
 
 ```sh
-gcc -Wall -W -Wextra -pedantic prog.c
-clang -Wall -W -Wextra -pedantic prog.c
-tcc -Wall -W -Wextra -pedantic prog.c
+    gcc -Wall -W -Wextra -pedantic prog.c
+    clang -Wall -W -Wextra -pedantic prog.c
+    tcc -Wall -W -Wextra -pedantic prog.c
 ```
 
 I think it will work on almost all platforms.  I confirmed:
@@ -174,7 +174,7 @@ combinator calculus.  The rewriting rules are shown in the shape of the code.
 Consider a sequence of function applications in C:
 
 ```c
-s(x)(x)(x)(x)...
+    s(x)(x)(x)(x)...
 ```
 
 What type should `s` have?  Unfortunately, C does *not* provide a "recursive
@@ -183,7 +183,7 @@ type", such as `typedef f (*f)();`.
 So, I used a heavily nested function pointer type:
 
 ```c
-typedef void *(*(*(*...(*(f))()...)())())
+    typedef void *(*(*(*...(*(f))()...)())())
 ```
 
 This limits how many arguments one function can be consecutively applied to.
@@ -208,11 +208,11 @@ So, I addressed this issue by generating many function definitions
 statically by (ab)using macros:
 
 ```c
-void *x1; void f1(void *y) { return apply(x1, y); }
-void *x2; void f2(void *y) { return apply(x2, y); }
-void *x3; void f3(void *y) { return apply(x3, y); }
-...
-void *(h[]) = { f1, f2, f3, ... }
+    void *x1; void f1(void *y) { return apply(x1, y); }
+    void *x2; void f2(void *y) { return apply(x2, y); }
+    void *x3; void f3(void *y) { return apply(x3, y); }
+    ...
+    void *(h[]) = { f1, f2, f3, ... }
 ```
 
 and by allotting each of them when a closure is needed.

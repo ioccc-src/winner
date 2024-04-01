@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,8 +10,8 @@ make
 The current status of this entry is:
 
 ```
-STATUS: missing files - please provide them
-STATUS: known bug - please help us fix
+    STATUS: missing files - please provide them
+    STATUS: known bug - please help us fix
 ```
 
 For more detailed information see [2001 herrmann1 bugs](../../bugs.html#2001_herrmann1).
@@ -20,7 +20,7 @@ For more detailed information see [2001 herrmann1 bugs](../../bugs.html#2001_her
 ## To use:
 
 ```sh
-./herrmann1.sh 'prg=file'
+    ./herrmann1.sh 'prg=file'
 ```
 
 NOTE: this entry seems to rely on older versions of gcc for the compilation
@@ -31,7 +31,7 @@ need an older compiler perhaps gcc 2.95.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -87,23 +87,23 @@ The info files `herrmann1.turing` and [herrmann1.gcd](herrmann1.gcd) are sample
 programs for the Turing machine. For example, type
 
 ```sh
-./herrmann1.sh 'prg=herrmann1.times2'
+    ./herrmann1.sh 'prg=herrmann1.times2'
 ```
 
 and watch the animated Turing machine multiply 8 by two (in
 unary representation). Here's a screen shot during compilation:
 
 ```
-/*
-*
-* State: st2.
-*
-* _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ _ _ _
-* ... O O I I I I I O I I I I I O O ...
-* ~ ~ ~ ~ ~ * ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
-*
-*
-*/
+    /*
+    *
+    * State: st2.
+    *
+    * _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ _ _ _
+    * ... O O I I I I I O I I I I I O O ...
+    * ~ ~ ~ ~ ~ * ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    *
+    *
+    */
 ```
 
 (As on real videos, you'll see a bit of "white noise" at the
@@ -113,9 +113,9 @@ type `./herrmann1` to see the final result. The output will be
 Final tape:
 
 ```
-		  *
-..OOIIIIIIIIIIIIIIIIOOOO..
-		  *
+		      *
+    ..OOIIIIIIIIIIIIIIIIOOOO..
+		      *
 ```
 
 (Note that the last frame of the animation is _not_ the final
@@ -127,8 +127,7 @@ tape of the program `times2.turing`. To provide your own tape, type
 (for example)
 
 ```sh
-./herrmann1 prg=times2.turing tape="O O O I I I O O O"
-
+    ./herrmann1 prg=times2.turing tape="O O O I I I O O O"
 ```
 
 (The `O`s and `I`s are letters, not digits.) You might prefer to
@@ -138,7 +137,7 @@ this case, the remainder of the tape is filled with `O`s. ;-)
 If you just type:
 
 ```
-./herrmann1
+    ./herrmann1
 ```
 
 and run the program, you'll get a usage message (and the return
@@ -157,12 +156,12 @@ expected, and one more I is appended to the row.) Let's call it
 `plus1.turing`. Here's what it could look like:
 
 ```c
-/* Search beginning of number. */
-#define start_O O, right, start
-/* Number found. Move one step to the left. */
-#define start_I I, left, st2
-/* Write a I and stop */
-#define st2_O   I, left, stop
+    /* Search beginning of number. */
+    #define start_O O, right, start
+    /* Number found. Move one step to the left. */
+    #define start_I I, left, st2
+    /* Write a I and stop */
+    #define st2_O   I, left, stop
 ```
 
 Some explanations:
@@ -179,7 +178,7 @@ line defining `st2_I` has been left out.)
 Now, the program can be used with
 
 ```sh
-./herrmann1.sh 'prg=plus1.turing' 'tape="I I I"'
+    ./herrmann1.sh 'prg=plus1.turing' 'tape="I I I"'
 ```
 
 But what happens if no tape is provided? Up to now, the Turing
@@ -189,7 +188,7 @@ the case for `plus1.turing`). So you might want to provide a
 default tape by adding a line like
 
 ```c
-#define tape O O O O O I I I I
+    #define tape O O O O O I I I I
 ```
 
 to your program.
@@ -202,13 +201,13 @@ to define a state or to misspell one. Let's assume you forgot the
 line
 
 ```c
-#define start_I I, left, st2
+    #define start_I I, left, st2
 ```
 
 Remove it and type
 
 ```sh
-./herrmann1 'prg=plus1.turing'
+    ./herrmann1 'prg=plus1.turing'
 ```
 
 The output will be
@@ -218,9 +217,9 @@ Undefined state start.
 Tape:
 
 ```
-	*
-..OOOOOOOOIIIIOO..
-	*
+	    *
+    ..OOOOOOOOIIIIOO..
+	    *
 ```
 
 and the return code will be 1. As you can see, the Turing machine

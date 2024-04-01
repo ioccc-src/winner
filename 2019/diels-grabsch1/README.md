@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./prog < file > file.Z
+    ./prog < file > file.Z
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -38,20 +38,20 @@ compresses differently? The judges know. :)
 #### Usage:
 
 ```sh
-./prog < input.txt > input.txt.Z
+    ./prog < input.txt > input.txt.Z
 ```
 
 #### Example:
 
 ```sh
-./prog < guidelines.txt > guidelines.txt.Z
+    ./prog < guidelines.txt > guidelines.txt.Z
 ```
 
 #### Check for correctness:
 
 ```sh
-zcat guidelines.txt.Z > guidelines2.txt
-diff -s guidelines.txt guidelines2.txt
+    zcat guidelines.txt.Z > guidelines2.txt
+    diff -s guidelines.txt guidelines2.txt
 ```
 
 Of course you can  also use [2015/mills2](../../2015/mills2/mills2.c) instead of

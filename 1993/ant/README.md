@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -10,7 +10,7 @@ make all
 The current status of this entry is:
 
 ```
-STATUS: missing file - please provide it
+    STATUS: missing file - please provide it
 ```
 
 For more detailed information see [1993 ant bugs](../../bugs.html#1993_ant).
@@ -19,14 +19,14 @@ For more detailed information see [1993 ant bugs](../../bugs.html#1993_ant).
 ## To use:
 
 ```sh
-./ant 'ERE' [file ...]
+    ./ant 'ERE' [file ...]
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 

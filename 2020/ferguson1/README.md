@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2020 ferguson1 bugs](../../bugs.html#2020_ferguson1).
@@ -19,8 +19,8 @@ For more detailed information see [2020 ferguson1 bugs](../../bugs.html#2020_fer
 ## To use:
 
 ```sh
-WAIT=N WALLS=[01] EVADE=N SIZE=N MAXSIZE=N GROW=N SHEDS=N SHED=N CANNIBAL=[01] ./prog
-# start pressing some arrow keys
+    WAIT=N WALLS=[01] EVADE=N SIZE=N MAXSIZE=N GROW=N SHEDS=N SHED=N CANNIBAL=[01] ./prog
+    # start pressing some arrow keys
 ```
 
 where `N` is a number and `[01]` is either `1` or `0` (or more correctly zero
@@ -88,25 +88,25 @@ and non-zero).
 ## Try:
 
 ```sh
-make test
+    make test
 
-WAIT=75 WALLS=1 CANNIBAL=1 ./prog
+    WAIT=75 WALLS=1 CANNIBAL=1 ./prog
 
-./prog
+    ./prog
 
-SIZE=-1 ./prog
+    SIZE=-1 ./prog
 
-CANNIBAL=1 WALLS=1 WAIT=50 EVADE=200 ./prog
+    CANNIBAL=1 WALLS=1 WAIT=50 EVADE=200 ./prog
 
-WAIT=75 GROW=-1 SIZE=5 CANNIBAL=1 ./prog
+    WAIT=75 GROW=-1 SIZE=5 CANNIBAL=1 ./prog
 
-CANNIBAL=1 WALLS=1 WAIT=0 EVADE=1 MAXSIZE=10 ./prog
+    CANNIBAL=1 WALLS=1 WAIT=0 EVADE=1 MAXSIZE=10 ./prog
 
-./play
-# allows you to configure colours and has various pre-configured gameplay modes
+    ./play
+    # allows you to configure colours and has various pre-configured gameplay modes
 
-./snake-colours
-# allows for configuring colours
+    ./snake-colours
+    # allows for configuring colours
 ```
 
 
@@ -212,7 +212,7 @@ Because all IOCCC entries should have a man page I have included one (even
 though much of it is what's also above). To render try:
 
 ```sh
-man ./snake.1
+    man ./snake.1
 ```
 
 The [COMPILING.html](COMPILING.html) file has a few portability

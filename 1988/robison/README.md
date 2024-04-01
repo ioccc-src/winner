@@ -1,22 +1,22 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## Try:
 
 ```sh
-./robison 80 10
-./robison 40 16
+    ./robison 80 10
+    ./robison 40 16
 ```
 
 The first and second parameters are optional.  You might also try:
 
 ```sh
-./robison 80 2   # <--- can you find the bug?
-./robison 80 -246
+    ./robison 80 2   # <--- can you find the bug?
+    ./robison 80 -246
 ```
 
 
@@ -25,8 +25,7 @@ The first and second parameters are optional.  You might also try:
 The following might make an interesting benchmark:
 
 ```sh
-./robison 100
-
+    ./robison 100
 ```
 
 [Amdahl 5890-300E with System V cc: 8.40 seconds]

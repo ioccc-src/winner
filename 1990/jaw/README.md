@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -10,7 +10,7 @@ make all
 To test the official C entry, one might try:
 
 ```sh
-echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
+    echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
 ```
 
 which should apply the identity transformation to a minimal holoalphabetic
@@ -20,7 +20,7 @@ sentence.
 #### Also try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -40,18 +40,18 @@ The sender must have `compress` and `btoa`. To send, try:
 
 
 ```sh
-./shark.sh jaw.* README.md > receive
+    ./shark.sh jaw.* README.md > receive
 ```
 
 The resulting file, `receive`, unpacks the input files
 even if the receiver lacks `uncompress` and `btoa`:
 
 ```sh
-mkdir -p test
-cd test
-sh ../receive
-cmp ../jaw.c jaw.c
-cmp ../README.md README.md
+    mkdir -p test
+    cd test
+    sh ../receive
+    cmp ../jaw.c jaw.c
+    cmp ../README.md README.md
 ```
 
 NOTE: a limitation is that the script should be in the parent directory of the
@@ -169,17 +169,17 @@ them. Here's a simple one, which could be extended to enable auto-reassembly
 with one shell cmd at the far end.
 
 ```sh
-#!/bin/sh
-m=$1; shift
-shark $* | split -800 - /tmp/shark$$
-n=`ls /tmp/shark$$* | wc -l | sed 's/ *//'`
-p=0
-for f in `ls /tmp/shark$$*`
-do
-     p=`expr $p + 1`
-     mail -s "bundle ($p of $n) from '`whoami`'" $m < $f
-done
-rm /tmp/shark$$*
+    #!/bin/sh
+    m=$1; shift
+    shark $* | split -800 - /tmp/shark$$
+    n=`ls /tmp/shark$$* | wc -l | sed 's/ *//'`
+    p=0
+    for f in `ls /tmp/shark$$*`
+    do
+	 p=`expr $p + 1`
+	 mail -s "bundle ($p of $n) from '`whoami`'" $m < $f
+    done
+    rm /tmp/shark$$*
 ```
 
 

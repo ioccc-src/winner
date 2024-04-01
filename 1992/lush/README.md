@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -10,7 +10,7 @@ make all
 The current status of this entry is:
 
 ```
-STATUS: doesn't work with some compilers - please provide alternative code or fix for more compilers
+    STATUS: doesn't work with some compilers - please provide alternative code or fix for more compilers
 ```
 
 For more detailed information see [1992 lush bugs](../../bugs.html#1992_lush).
@@ -19,7 +19,7 @@ For more detailed information see [1992 lush bugs](../../bugs.html#1992_lush).
 ## To use:
 
 ```sh
-./lush.sh
+    ./lush.sh
 ```
 
 

@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./esde data-file word
+    ./esde data-file word
 ```
 
 where data-file contains lines of < 255 chars in length.
@@ -17,7 +17,7 @@ where data-file contains lines of < 255 chars in length.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -51,13 +51,13 @@ three-digit code. This is the algorithm:
 These are the codes:
 
 ```
-0  =  A, E, H, I, O, U, W, Y
-1  =  B, P, F, V
-2  =  C, S, G, J, K, Q, X, Z
-3  =  D, T
-4  =  L
-5  =  M, N
-6  =  R
+    0  =  A, E, H, I, O, U, W, Y
+    1  =  B, P, F, V
+    2  =  C, S, G, J, K, Q, X, Z
+    3  =  D, T
+    4  =  L
+    5  =  M, N
+    6  =  R
 ```
 
 ### information about an info file:

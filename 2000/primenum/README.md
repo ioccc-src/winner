@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2000 primenum bugs](../../bugs.html#2000_primenum).
@@ -19,8 +19,7 @@ For more detailed information see [2000 primenum bugs](../../bugs.html#2000_prim
 ## To use:
 
 ```sh
-echo n | ./primenum n
-
+    echo n | ./primenum n
 ```
 
 NOTE: `n` is an integer.
@@ -29,7 +28,7 @@ NOTE: `n` is an integer.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -66,8 +65,8 @@ Instead, the program reads input from `stdin` and returns garbled text on
 running the program a second time.  Try:
 
 ```sh
-./primenum n < textfile | ./primenum n > textfile2
-diff textfile textfile2
+    ./primenum n < textfile | ./primenum n > textfile2
+    diff textfile textfile2
 ```
 
 where n is the same number (modulo 64).  So, the prime number generator

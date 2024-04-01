@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./garry <input_file >output_file
+    ./garry <input_file >output_file
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -30,21 +30,21 @@ left intact) looked very much like a rat "dropping core".  See
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
 ### Alternate use:
 
 ```sh
-./garry.alt <input_file >output_file
+    ./garry.alt <input_file >output_file
 ```
 
 
 ### Alternate try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 
@@ -64,13 +64,13 @@ The calling syntax is pretty simple, just use it with `stdio`-redirection
 or inside pipelines, e.g.:
 
 ```sh
-./garry <file_to_convert >converted_file
+    ./garry <file_to_convert >converted_file
 ```
 
 or
 
 ```sh
-cat all_my_files/* | ./garry | lp
+    cat all_my_files/* | ./garry | lp
 ```
 
 The syntax of the conversion of the input file is as follows: To include the
@@ -78,8 +78,8 @@ value of an environment variable in the output file, place the name of the
 variable between `$`-signs in the input, e.g.:
 
 ```
-My Home-Directory is: $HOME$
-I'm using the path: $PATH$
+    My Home-Directory is: $HOME$
+    I'm using the path: $PATH$
 ```
 
 Unknown Env-variables or malformed expressions are ignored and kept intact.
@@ -88,10 +88,10 @@ Additionally, the filter replaces escaped octal values in the environment
 variables by their binary representation, e.g.:
 
 ```sh
-$ TEST="\110\145\154\154\157"
-$ export TEST
-$ echo '$TEST$' | ./garry
-Hello
+    $ TEST="\110\145\154\154\157"
+    $ export TEST
+    $ echo '$TEST$' | ./garry
+    Hello
 ```
 
 

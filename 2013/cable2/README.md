@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2013 cable2 bugs](../../bugs.html#2013_cable2).
@@ -19,7 +19,7 @@ For more detailed information see [2013 cable2 bugs](../../bugs.html#2013_cable2
 ## To use:
 
 ```sh
-./cable2 file.bmp [color]
+    ./cable2 file.bmp [color]
 ```
 
 
@@ -28,7 +28,7 @@ For more detailed information see [2013 cable2 bugs](../../bugs.html#2013_cable2
 For different OCR examples:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 

@@ -1,22 +1,21 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./buzzard.1 num num
-
+    ./buzzard.1 num num
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -25,8 +24,8 @@ make all
 To see good C Preprocessor buzzard.1, try:
 
 ```sh
-make babble.cppcb
-cat babble.cppcb
+    make babble.cppcb
+    cat babble.cppcb
 ```
 
 Notice how many statements it takes to do anything useful?
@@ -56,19 +55,19 @@ short strings.
 arguments.
 
 ```sh
-./buzzard.1 0 <num>
+    ./buzzard.1 0 <num>
 ```
 
 will print out the factorial of `<num>`.
 
 ```sh
-./buzzard.1 <num1> <num2>
+    ./buzzard.1 <num1> <num2>
 ```
 
 will print out the largest common factor of `num1` and `num2`.
 
 ```sh
-./buzzard.1 1 <num2>
+    ./buzzard.1 1 <num2>
 ```
 
 will print out a factor of `num2` if it's composite, or else
@@ -127,37 +126,36 @@ place to site some references on the AE, but I don't have any.
 [Don't read this unless you're stumped!]
 
 ```
+    MACRO		FUNCTION				MNEMONIC
 
-MACRO		FUNCTION				MNEMONIC
+    V               begin variable declarations		Variable
+    C               begin program				Code
 
-V               begin variable declarations		Variable
-C               begin program				Code
+    Q(b,a)          let b = a				eQuals
+    A(c,a,b)        let c = a + b				Add
+    S(c,a,b)        let c = a - b				Subtract
+    D(c,a,b)        let c = a / b, where b is a *constant*  Divide
+    U(c,a,b)        let c = a / b, where b is anything      Unknown
+    M(c,a,b)        let c = a * b				Multiply
 
-Q(b,a)          let b = a				eQuals
-A(c,a,b)        let c = a + b				Add
-S(c,a,b)        let c = a - b				Subtract
-D(c,a,b)        let c = a / b, where b is a *constant*  Divide
-U(c,a,b)        let c = a / b, where b is anything      Unknown
-M(c,a,b)        let c = a * b				Multiply
+    O(c,a,b)        let c = a boolean-or b (a,b are 0 or 1) Or
+    B(b, a)         let b = boolean value of a		Boolean
+    P(b, a)         let b = 1 if a>0, else 0.		Positive
 
-O(c,a,b)        let c = a boolean-or b (a,b are 0 or 1) Or
-B(b, a)         let b = boolean value of a		Boolean
-P(b, a)         let b = 1 if a>0, else 0.		Positive
+    l               emit next sequential label		Label
+    J(x)            goto label #x				Jump
 
-l               emit next sequential label		Label
-J(x)            goto label #x				Jump
+    Z(a,d)          if a is 0 goto d    (a is 0 or 1)	Zero
+    E(a,d)          if a is 1 goto d    (a is 0 or 1)	Else
 
-Z(a,d)          if a is 0 goto d    (a is 0 or 1)	Zero
-E(a,d)          if a is 1 goto d    (a is 0 or 1)	Else
+    H               halt					Haly
 
-H               halt					Haly
+    K(x)            let x = number of cmd line arguments	Kount
+    G(x,y)          let x = the value if the yth argument   Get argument
 
-K(x)            let x = number of cmd line arguments	Kount
-G(x,y)          let x = the value if the yth argument   Get argument
-
-T               end of code; begin output section	Terminate
-X(y)            print out hexadecimal value of y	heXadecimal
-T               end of output section and program	Terminate
+    T               end of code; begin output section	Terminate
+    X(y)            print out hexadecimal value of y	heXadecimal
+    T               end of output section and program	Terminate
 ```
 
 You can figure out the other macros yourself.  In the sample program, I've
@@ -174,26 +172,26 @@ Since all you can do in the given operation output set is
 assignment, we implement "conditional assignment":
 
 ```c
-if (x) y = z;
+    if (x) y = z;
 ```
 
 To implement this, we constrain `x` to be either 0 or 1, and
 simply compute:
 
 ```c
-y = (z * x) + (y * (1-x));
+    y = (z * x) + (y * (1-x));
 ```
 
 This is more obscured by factoring out common terms and restricting
 ourselves to two operand operations:
 
 ```c
-temp = z;                       (temp == z)
-temp -= y;                      (temp == z-y)
-temp *= x;                      (temp == (z-y)*x)
-y += temp;                      (y    == (z-y)*x + y)
-				(     == z*x - y*x + y)
-				(     == z*x + y*(1-x))
+    temp = z;                       (temp == z)
+    temp -= y;                      (temp == z-y)
+    temp *= x;                      (temp == (z-y)*x)
+    y += temp;                      (y    == (z-y)*x + y)
+				    (     == z*x - y*x + y)
+				    (     == z*x + y*(1-x))
 ```
 
 Next we imagine we have a [pc](https://en.wikipedia.org/wiki/Program_counter).
@@ -202,7 +200,7 @@ we're not currently coming up on statement pc.  To handle this, we simply make
 every operation conditional on the pc having the correct value:
 
 ```c
-if (pc == some_constant) y = z;
+    if (pc == some_constant) y = z;
 ```
 
 To combine this with other operations, we simply multiply by our

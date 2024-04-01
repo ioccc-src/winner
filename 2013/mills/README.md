@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2013 mills bugs](../../bugs.html#2013_mills).
@@ -19,14 +19,14 @@ For more detailed information see [2013 mills bugs](../../bugs.html#2013_mills).
 ## To use:
 
 ```sh
-./mills
+    ./mills
 ```
 
 
 ## Try:
 
 ```sh
-./mills &
+    ./mills &
 ```
 
 While that is running, point your favorite browser at:
@@ -62,7 +62,7 @@ while you are there, click on an ad.  They could use the money.
 It would be possible to fix this by adding
 
 ```c
-n=1,setsockopt(s,SOL_SOCKET,SO_REUSEADDR,&n,sizeof n),
+    n=1,setsockopt(s,SOL_SOCKET,SO_REUSEADDR,&n,sizeof n),
 ```
 
 at an appropriate spot in the code (an exercise left to the reader).  However,

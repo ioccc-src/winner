@@ -11,7 +11,7 @@ than this comment.  :-)
 The JSON member value must be the following JSON quoted string:
 
 ```json
-"mandatory comment: because comments were removed from the original JSON spec"
+    "mandatory comment: because comments were removed from the original JSON spec"
 ```
 
 
@@ -101,7 +101,7 @@ The JSON member value is a JSON quoted string obtained from the date field
 of the following `ls(1)` command:
 
 ```ls
-TZ=UTC ls -D '%FT%T+00:00' -ld news.html
+    TZ=UTC ls -D '%FT%T+00:00' -ld news.html
 ```
 
 **NOTE**: The date and time are given with respect to **UTC** timezone.
@@ -119,7 +119,7 @@ The JSON member value is a JSON quoted string obtained from the date field
 of the following `ls(1)` command:
 
 ```ls
-TZ=UTC ls -D '%FT%T+00:00' -ld status.json
+    TZ=UTC ls -D '%FT%T+00:00' -ld status.json
 ```
 
 **NOTE**: The date and time are given with respect to **UTC** timezone.

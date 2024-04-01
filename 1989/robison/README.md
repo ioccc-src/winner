@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -10,7 +10,7 @@ make all
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [1989 robison bugs](../../bugs.html#1989_robison).
@@ -19,21 +19,21 @@ For more detailed information see [1989 robison bugs](../../bugs.html#1989_robis
 ## To use:
 
 ```sh
-./robison
-# enter valid expressions
+    ./robison
+    # enter valid expressions
 ```
 
 
 ## Try:
 
 ```sh
-./robison
-11x10
-# enter other expressions
+    ./robison
+    11x10
+    # enter other expressions
 
-./try.sh
+    ./try.sh
 
-echo 100 / 100 | ./robison # <-- what happens here ?
+    echo 100 / 100 | ./robison # <-- what happens here ?
 ```
 
 NOTE: This program will very likely crash or break into tiny bits :-) if you
@@ -64,13 +64,13 @@ numerals must be binary.  Parentheses may be used for
 grouping.  For example:
 
 ```
-101x111-100
+    101x111-100
 ```
 
 prints:
 
 ```
-1111
+    1111
 ```
 
 That is `5x(7-4)` is `15`.  (APL groups from right to left.)

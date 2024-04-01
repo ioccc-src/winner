@@ -58,9 +58,9 @@ were not correctly parsed by the tool.  The guidelines stated:
 
 
 ```
-In cases where the above summary and the algorithm implemented by
-the IOCCC size tool source code conflict, the algorithm implemented
-by the IOCCC size tool source code is preferred by the judges.
+    In cases where the above summary and the algorithm implemented by
+    the IOCCC size tool source code conflict, the algorithm implemented
+    by the IOCCC size tool source code is preferred by the judges.
 ```
 
 so this abuse was allowed (and encouraged).  The judges hope that

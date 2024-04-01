@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make alt
+    make alt
 ```
 
 We recommend that you try the alternate version first to get a better idea of
@@ -13,21 +13,21 @@ code](#original-code) below.
 If you wish to speed the entry up, say to 500 microseconds between writes, try:
 
 ```sh
-make clobber SLEEP=500 alt
+    make clobber SLEEP=500 alt
 ```
 
 Alternatively if you wish to slow it down, say to 1500 microseconds between
 writes, try:
 
 ```sh
-make clobber SLEEP=1500 alt
+    make clobber SLEEP=1500 alt
 ```
 
 
 ## To use:
 
 ```sh
-./plummer.alt number arg
+    ./plummer.alt number arg
 ```
 
 where:
@@ -43,21 +43,21 @@ bypass](https://hitchhikers.fandom.com/wiki/Bypass).
 ## Try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 
-./try.alt.sh 21701
+    ./try.alt.sh 21701
 
-SLEEP=500 ./try.alt.sh
+    SLEEP=500 ./try.alt.sh
 
-SLEEP=900 ./try.alt.sh 789789789789789
+    SLEEP=900 ./try.alt.sh 789789789789789
 
-./try.alt.sh 789789789
+    ./try.alt.sh 789789789
 
-SLEEP=400 ./try.alt.sh 42424242424242
+    SLEEP=400 ./try.alt.sh 42424242424242
 
-SLEEP=1000 ./try.alt.sh xyzzyzzyx
+    SLEEP=1000 ./try.alt.sh xyzzyzzyx
 
-SLEEP=1200 ./try.alt.sh xyzzyzzyx 5555
+    SLEEP=1200 ./try.alt.sh xyzzyzzyx 5555
 ```
 
 
@@ -71,7 +71,7 @@ course).
 ### Original build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -83,19 +83,19 @@ Use `plummer` as you would `plummer.alt` above.
 ### Original try:
 
 ```sh
-./try.sh
+    ./try.sh
 
-./try.sh 21701
+    ./try.sh 21701
 
-./try.sh 789789789789789
+    ./try.sh 789789789789789
 
-./try.sh 789789789
+    ./try.sh 789789789
 
-./try.sh 42424242424242
+    ./try.sh 42424242424242
 
-./try.sh xyzzyzzyx
+    ./try.sh xyzzyzzyx
 
-./try.sh xyzzyzzyx 5555
+    ./try.sh xyzzyzzyx 5555
 ```
 
 

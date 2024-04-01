@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,8 +10,8 @@ make
 The current status of this entry is:
 
 ```
-STATUS: missing or dead link - please provide them
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: missing or dead link - please provide them
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2011 dlowe bugs](../../bugs.html#2011_dlowe).
@@ -20,7 +20,7 @@ For more detailed information see [2011 dlowe bugs](../../bugs.html#2011_dlowe).
 ## To use:
 
 ```sh
-./dlowe -<n_iterations> corpus1/ [...] corpus0/ < start.net > trained.net
+    ./dlowe -<n_iterations> corpus1/ [...] corpus0/ < start.net > trained.net
 ```
 
 NOTE: In the above command, the directory args MUST end in a `/`.
@@ -28,7 +28,7 @@ NOTE: In the above command, the directory args MUST end in a `/`.
 Then to use `trained.net`:
 
 ```sh
-./dlowe file [file ...] < trained.net
+    ./dlowe file [file ...] < trained.net
 ```
 
 
@@ -37,7 +37,7 @@ Then to use `trained.net`:
 Try these pre-trained networks:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 NOTE: The `dlowe-aux-data/` directory, which [try.sh](try.sh) refers to, was
@@ -45,7 +45,7 @@ created by:
 
 
 ```sh
-tar -jxf dlowe-aux-data.tar.bz2
+    tar -jxf dlowe-aux-data.tar.bz2
 ```
 
 
@@ -64,8 +64,8 @@ The `ioccc-winlose-trained.net` was trained using the
 [earlystop.pl](earlystop.pl) tool:
 
 ```sh
-rm -f ioccc-winlose-trained.net
-./earlystop.pl ioccc-winlose-trained.net ioccc_won_training/ ioccc_lost_training/ ioccc_won_test/ ioccc_lost_test/
+    rm -f ioccc-winlose-trained.net
+    ./earlystop.pl ioccc-winlose-trained.net ioccc_won_training/ ioccc_lost_training/ ioccc_won_test/ ioccc_lost_test/
 ```
 
 where:
@@ -90,9 +90,9 @@ that did not win were flushed to `/dev/null`.
 The [earlystop.pl](earlystop.pl) tool wrote:
 
 ```
-training 1 to 1001...
-training 1001 to 2001...
-prior error = 56.746974766043; current error = 58.095691135305
+    training 1 to 1001...
+    training 1001 to 2001...
+    prior error = 56.746974766043; current error = 58.095691135305
 ```
 
 The resulting `ioccc-winlose-trained.net` file was included in the
@@ -102,7 +102,7 @@ The [dlowe.c](dlowe.c) was explicitly excluded from this trailing set, so this
 test is interesting:
 
 ```sh
-./dlowe dlowe.c < dlowe-aux-data/ioccc-winlose-trained.net
+    ./dlowe dlowe.c < dlowe-aux-data/ioccc-winlose-trained.net
 ```
 
 NOTE: this is done in [try.sh](try.sh).
@@ -111,7 +111,7 @@ NOTE: this is done in [try.sh](try.sh).
 The match of [dlowe.c](dlowe.c) to the lose/win trailed network was:
 
 ```
-dlowe.c 0.125108
+    dlowe.c 0.125108
 ```
 
 NOTE: The non-artificially intelligent decisions of the IOCCC judges include random
@@ -128,7 +128,7 @@ data sets on which to test:
 We created the [english-trained.net](dlowe-aux-data/english-trained.net) as follows:
 
 ```sh
-./dlowe -8000 dlowe-aux-data/english-1/ dlowe-aux-data/english-0/ < /dev/null > dlowe-aux-data/english-trained.net
+    ./dlowe -8000 dlowe-aux-data/english-1/ dlowe-aux-data/english-0/ < /dev/null > dlowe-aux-data/english-trained.net
 ```
 
 - [dlowe-aux-data/english-0/](dlowe-aux-data/english-0/)
@@ -140,7 +140,7 @@ We created the [english-trained.net](dlowe-aux-data/english-trained.net) as foll
 We created the [png-trained.net](dlowe-aux-data/png-trained.net) as follows:
 
 ```sh
-./dlowe -8000 png-1/ png-0/ < /dev/null > dlowe-aux-data/png-trained.net
+    ./dlowe -8000 png-1/ png-0/ < /dev/null > dlowe-aux-data/png-trained.net
 ```
 
 - [dlowe-aux-data/png-0/](dlowe-aux-data/png-0/)
@@ -152,7 +152,7 @@ We created the [png-trained.net](dlowe-aux-data/png-trained.net) as follows:
 We created the [xor-trained.net](dlowe-aux-data/xor-trained.net) as follows:
 
 ```sh
-./dlowe -8000 dlowe-aux-data/xor-1/ dlowe-aux-data/xor-0/ < /dev/null > dlowe-aux-data/xor-trained.net
+    ./dlowe -8000 dlowe-aux-data/xor-1/ dlowe-aux-data/xor-0/ < /dev/null > dlowe-aux-data/xor-trained.net
 ```
 
 - [dlowe-aux-data/xor-0](dlowe-aux-data/xor-0/)
@@ -190,7 +190,7 @@ The neurons' activation function is the logistic function `1 / (1 + e ^ -x)`.
 ### Classifying
 
 ```sh
-./dlowe file [file ...] < trained.net
+    ./dlowe file [file ...] < trained.net
 ```
 
 To classify files, one specifies a trained network (on `stdin`) and one or more
@@ -205,9 +205,8 @@ trained, but it's geared toward interpretation as a *probability* or a
 
 ### Training
 
-
 ```sh
-./dlowe -<n_iterations> corpus1/ [...] corpus0/ < start.net > end.net
+    ./dlowe -<n_iterations> corpus1/ [...] corpus0/ < start.net > end.net
 ```
 
 **NOTE**: The directory args **must end in a** `/` for them to work.

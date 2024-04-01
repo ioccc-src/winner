@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 NOTE: there is an [alternate version](#alternate-code) which will only work if
@@ -14,7 +14,7 @@ The original code was fixed in 2023 to not require this.
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [1984 decot bugs](../../bugs.html#1984_decot).
@@ -23,7 +23,7 @@ For more detailed information see [1984 decot bugs](../../bugs.html#1984_decot).
 ## To use:
 
 ```sh
-./decot
+    ./decot
 ```
 
 
@@ -37,14 +37,14 @@ can use this version.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
 ### Alternate use:
 
 ```sh
-./decot.alt
+    ./decot.alt
 ```
 
 
@@ -62,13 +62,13 @@ Some new (in 1984) compilers disliked line 15 of the original source, so we
 changed it from:
 
 ```c
-for(signal=0;*k * x * __FILE__ *i;) do {
+    for(signal=0;*k * x * __FILE__ *i;) do {
 ```
 
 to:
 
 ```c
-for(signal=0;*k *x * __FILE__ *i;) do {
+    for(signal=0;*k *x * __FILE__ *i;) do {
 ```
 
 To see what we mean look at the [original source file](decot.orig.c). The
@@ -76,7 +76,7 @@ To see what we mean look at the [original source file](decot.orig.c). The
 fixed version has instead:
 
 ```c
-for(signal=0;*k *= * __FILE__ *i;) do {
+    for(signal=0;*k *= * __FILE__ *i;) do {
 ```
 
 

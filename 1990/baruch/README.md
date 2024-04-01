@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 There is an alternate version for those using Turbo-C or MSC. See [alternate
@@ -13,7 +13,7 @@ code](#alternate-code) below for details.
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [1990 baruch bugs](../../bugs.html#1990_baruch).
@@ -22,15 +22,15 @@ For more detailed information see [1990 baruch bugs](../../bugs.html#1990_baruch
 ## To use:
 
 ```sh
-echo 4 | ./baruch
-echo 7 | ./baruch
+    echo 4 | ./baruch
+    echo 7 | ./baruch
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -48,7 +48,7 @@ question. YMMV.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 

@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./cdupont
+    ./cdupont
 ```
 
 
@@ -17,7 +17,7 @@ make all
 Why is the following label necessary?
 
 ```c
-sorryfor_this_unused_but_very_needed_label:
+    sorryfor_this_unused_but_very_needed_label:
 ```
 
 Notice that if you C beautify (cb) or pre-process this program, it

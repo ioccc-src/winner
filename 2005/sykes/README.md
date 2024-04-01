@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2005 sykes bugs](../../bugs.html#2005_sykes).
@@ -19,14 +19,14 @@ For more detailed information see [2005 sykes bugs](../../bugs.html#2005_sykes).
 ## To use:
 
 ```sh
-./sykes binary_file
+    ./sykes binary_file
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -45,16 +45,16 @@ the [emulator](https://en.wikipedia.org/wiki/Emulator) in
 [PET](https://en.wikipedia.org/wiki/Commodore_PET) mode as follows:
 
 ```sh
-wget http://www.zimmers.net/anonftp/pub/cbm/firmware/computers/pet/basic-2-c000.901465-01.bin
-wget http://www.zimmers.net/anonftp/pub/cbm/firmware/computers/pet/basic-2-d000.901465-02.bin
-wget http://www.zimmers.net/anonftp/pub/cbm/firmware/computers/pet/edit-2-n.901447-24.bin
-wget http://www.zimmers.net/anonftp/pub/cbm/firmware/computers/pet/kernal-2.901465-03.bin
+    wget http://www.zimmers.net/anonftp/pub/cbm/firmware/computers/pet/basic-2-c000.901465-01.bin
+    wget http://www.zimmers.net/anonftp/pub/cbm/firmware/computers/pet/basic-2-d000.901465-02.bin
+    wget http://www.zimmers.net/anonftp/pub/cbm/firmware/computers/pet/edit-2-n.901447-24.bin
+    wget http://www.zimmers.net/anonftp/pub/cbm/firmware/computers/pet/kernal-2.901465-03.bin
 ```
 
 We then created:
 
 ```sh
-dd bs=2k count=1 if=/dev/zero of=nullfill.bin
+    dd bs=2k count=1 if=/dev/zero of=nullfill.bin
 ```
 
 For your convenience, we have added the above mentioned files to this entry directory.
@@ -80,7 +80,7 @@ Compile the program, then test the
 [emulation](https://en.wikipedia.org/wiki/Emulator) like this:
 
 ```sh
-./sykes 6502test
+    ./sykes 6502test
 ```
 
 A basic test is done for each instruction and addressing mode, all tests
@@ -106,27 +106,27 @@ window](https://en.wikipedia.org/wiki/Terminal_emulator) of 40x25 chars or
 bigger, and then run the emulator like this:
 
 ```sh
-./sykes pet.rom
+    ./sykes pet.rom
 ```
 
 You should see the startup message. Try typing in some
 [BASIC](https://en.wikipedia.org/wiki/BASIC) - for instance:
 
 ```
-PRINT "HELLO, WORLD"
+    PRINT "HELLO, WORLD"
 ```
 
 There is an optional numeric parameter, which controls the speed. For a
 slower cursor blink, try
 
 ```sh
-./sykes pet.rom 6
+    ./sykes pet.rom 6
 ```
 
 and for faster
 
 ```sh
-./sykes pet.rom 2
+    ./sykes pet.rom 2
 ```
 
 The default is 4.
@@ -134,23 +134,23 @@ The default is 4.
 The control keys are as follows:
 
 ```
-^A HOME
-^L CLR
-^R RVS
-^E OFF
-^Y INST
-^X STOP (break)
-^F cursor forward
-^B cursor back
-^N cursor down
+    ^A HOME
+    ^L CLR
+    ^R RVS
+    ^E OFF
+    ^Y INST
+    ^X STOP (break)
+    ^F cursor forward
+    ^B cursor back
+    ^N cursor down
 ```
 
 Supplied also is a short demo program written in
 [BASIC](https://en.wikipedia.org/wiki/BASIC). Try typing
 
 ```
-LOAD "DEMO"
-RUN
+    LOAD "DEMO"
+    RUN
 ```
 
 Many other old programs will run in this emulator too. Files with a `.PRG`
@@ -162,19 +162,19 @@ The filenames must be upper case in order to be loaded by the emulator.
 You can save programs too - try
 
 ```
-10 PRINT "HELLO!"
-SAVE "HELLO"
-NEW
+    10 PRINT "HELLO!"
+    SAVE "HELLO"
+    NEW
 
-LOAD "HELLO"
-RUN
+    LOAD "HELLO"
+    RUN
 ```
 
 You also might try typing this to see an ancient [Easter egg][]:
 
 
 ```
-WAIT 6502,12
+    WAIT 6502,12
 ```
 
 [Easter egg]: https://en.wikipedia.org/wiki/Easter_egg_(media)#Software
@@ -192,7 +192,7 @@ compiled-for-[6502](https://en.wikipedia.org/wiki/MOS_Technology_6502#Technical_
 version a chess program (heh, I found a use for a previous losing entry :) ). Try:
 
 ```sh
-./sykes chess
+    ./sykes chess
 ```
 
 It works as you would expect (it plays very badly). There's no castling
@@ -307,7 +307,7 @@ from the Internet.  This is to avoid directly infringing any copyright.
 What does this do?
 
 ```sh
-./sykes pet.rom -1
+    ./sykes pet.rom -1
 ```
 
 Have fun!

@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,8 +10,8 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
-STATUS: doesn't work with some platforms - please help us fix
+    STATUS: INABIAF - please **DO NOT** fix
+    STATUS: doesn't work with some platforms - please help us fix
 ```
 
 For more detailed information see [2001 bellard bugs](../../bugs.html#2001_bellard).
@@ -20,14 +20,14 @@ For more detailed information see [2001 bellard bugs](../../bugs.html#2001_bella
 ## To use:
 
 ```sh
-./bellard file
+    ./bellard file
 ```
 
 
 ## Try:
 
 ```sh
-./bellard bellard.otccex.c
+    ./bellard bellard.otccex.c
 ```
 
 
@@ -48,7 +48,7 @@ program.
 You can use it by typing:
 
 ```sh
-./bellard bellard.c [args]...
+    ./bellard bellard.c [args]...
 ```
 
 or by giving the C source to its standard input.
@@ -62,19 +62,19 @@ or by giving the C source to its standard input.
 - Sample compilation and execution:
 
 ```sh
-./bellard bellard.otccex.c 10
+    ./bellard bellard.otccex.c 10
 ```
 
 - Self compilation:
 
 ```sh
-./bellard bellard.c bellard.otccex.c 10
+    ./bellard bellard.c bellard.otccex.c 10
 ```
 
 - Self compilation iterated...
 
 ```sh
-./bellard bellard.c bellard.c bellard.otccex.c 10
+    ./bellard bellard.c bellard.c bellard.otccex.c 10
 ```
 
 An alternate syntax is to use it as a script interpreter: you can

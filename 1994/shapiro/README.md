@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -10,8 +10,8 @@ make all
 The current status of this entry is:
 
 ```
-STATUS: missing file - please provide it
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: missing file - please provide it
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [1994 shapiro bugs](../../bugs.html#1994_shapiro).
@@ -20,7 +20,7 @@ For more detailed information see [1994 shapiro bugs](../../bugs.html#1994_shapi
 ## To use:
 
 ```sh
-./shapiro &
+    ./shapiro &
 ```
 
 Now find the clock in the same terminal window (or console if at the console).
@@ -29,14 +29,14 @@ Now find the clock in the same terminal window (or console if at the console).
 ## Try:
 
 ```sh
-./shapiro
-^Z
-bg
-ps x
-fg
-^C
+    ./shapiro
+    ^Z
+    bg
+    ps x
+    fg
+    ^C
 
-./shapiro_t1
+    ./shapiro_t1
 ```
 
 Notice what you see in the output of `ps`! Observe too what happens after you

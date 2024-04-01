@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./herrmann2
+    ./herrmann2
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 If you use vi(m) you can see a pattern in [herrmann2.cup](herrmann2.cup) and
@@ -23,27 +23,27 @@ If you use vi(m) you can see a pattern in [herrmann2.cup](herrmann2.cup) and
 
 
 ```
-/[pon]\
+    /[pon]\
 ```
 
 and
 
 ```
-/l
+    /l
 ```
 
 For additional fun in [herrmann2.cup](herrmann2.cup) try:
 
 
 ```
-/[po]
-/q
+    /[po]
+    /q
 ```
 
 and in [herrmann2.ioccc](herrmann2.ioccc) try:
 
 ```
-/n
+    /n
 ```
 
 
@@ -76,7 +76,7 @@ to about 9k.
 32 and 126). For example, type
 
 ```sh
-./herrmann2 < herrmann2.ioccc
+    ./herrmann2 < herrmann2.ioccc
 ```
 
 3. If you want to control the characters used in the output (for
@@ -87,9 +87,9 @@ argument. When it arrives at the end of the argument, it will
 start over at the beginning. Example:
 
 ```sh
-./herrmann2 "234 84 045 5 6765 7487 65190 84 656 254 12 43931 818 0 6542 \
-341 45 567 76967 7244 606 976567 895 81898 095 68678 1843 4650547 \
-565980691 389 04974" < herrmann2.ioccc
+    ./herrmann2 "234 84 045 5 6765 7487 65190 84 656 254 12 43931 818 0 6542 \
+    341 45 567 76967 7244 606 976567 895 81898 095 68678 1843 4650547 \
+    565980691 389 04974" < herrmann2.ioccc
 ```
 
 ### Some hints to get better results
@@ -123,15 +123,15 @@ the program itself on the right picture and with the right
 argument:
 
 ```sh
-./herrmann2 \
-'char*d,A[9876];e;b;*ad,a,c;  tw,ndr,T; wri; ;*h; _,ar  ;on;'\
-' ;l ;i(V)man,n    {-!har  ;   =Aadre(0,&e,o||n -- +,o4,=9,l=b=8,'\
-'!( te-*Aim)|(0~l),srand  (l),,!A,d=,b))&&+((A + te-A(&(*)=+ +95>'\
-'e?(*& c_*r=5,r+e-r +_:2-19<-+?|(d==d),!n ?*d| *( (char**)+V+), ('\
-'  +0,*d-7 ) -r+8)c:7:+++7+! r: and%9- 85! ()-(r+o):(+w,_+ A*(=er'\
-'i+(o)+b)),!write,(=_((-b+*h)(1,A+b,!!((((-+, a >T^l,( o-95=+))w?'\
-'++  &&r:b<<2+a +w) ((!main(n*n,V) , +-) ),l)),w= +T-->o +o+;{ &!'\
-'a;}return _+= ' < herrmann2.ioccc
+    ./herrmann2 \
+    'char*d,A[9876];e;b;*ad,a,c;  tw,ndr,T; wri; ;*h; _,ar  ;on;'\
+    ' ;l ;i(V)man,n    {-!har  ;   =Aadre(0,&e,o||n -- +,o4,=9,l=b=8,'\
+    '!( te-*Aim)|(0~l),srand  (l),,!A,d=,b))&&+((A + te-A(&(*)=+ +95>'\
+    'e?(*& c_*r=5,r+e-r +_:2-19<-+?|(d==d),!n ?*d| *( (char**)+V+), ('\
+    '  +0,*d-7 ) -r+8)c:7:+++7+! r: and%9- 85! ()-(r+o):(+w,_+ A*(=er'\
+    'i+(o)+b)),!write,(=_((-b+*h)(1,A+b,!!((((-+, a >T^l,( o-95=+))w?'\
+    '++  &&r:b<<2+a +w) ((!main(n*n,V) , +-) ),l)),w= +T-->o +o+;{ &!'\
+    'a;}return _+= ' < herrmann2.ioccc
 ```
 
 - If I had submitted the program last year, I would have said that
@@ -184,7 +184,7 @@ works.)
 - When still in doubt about how to judge this program, type
 
 ```sh
-./herrmann2 < herrmann2.cup
+    ./herrmann2 < herrmann2.cup
 ```
 
 and let the result inspire you. ;-)

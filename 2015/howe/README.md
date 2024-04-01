@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an alternate version provided. See [Alternate code](#alternate-code)
@@ -11,16 +11,16 @@ below.
 ## To use:
 
 ```sh
-./prog file1 file2
+    ./prog file1 file2
 
-./prog -d file1 file2
+    ./prog -d file1 file2
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -33,7 +33,7 @@ entry but was changed to be the alt version.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 

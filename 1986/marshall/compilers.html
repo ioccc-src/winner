@@ -162,7 +162,7 @@ because of the call to <code>_exit()</code> (see below).</p>
 enable the optimiser clang will generate code that prints the string twice and
 dumps core just like before! What about the call to <code>_exit()</code>?</p>
 <p>The call was:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>_exit<span class="op">(</span>argv<span class="op">[(</span><span class="dt">int</span><span class="op">)*</span>argc<span class="op">-</span><span class="dv">2</span><span class="op">/</span>cc<span class="op">[</span><span class="dv">1</span><span class="op">*(</span><span class="dt">int</span><span class="op">)*</span>argc<span class="op">]|-</span><span class="dv">1</span><span class="op">&lt;&lt;</span><span class="dv">4</span><span class="op">]);</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    _exit<span class="op">(</span>argv<span class="op">[(</span><span class="dt">int</span><span class="op">)*</span>argc<span class="op">-</span><span class="dv">2</span><span class="op">/</span>cc<span class="op">[</span><span class="dv">1</span><span class="op">*(</span><span class="dt">int</span><span class="op">)*</span>argc<span class="op">]|-</span><span class="dv">1</span><span class="op">&lt;&lt;</span><span class="dv">4</span><span class="op">]);</span></span></code></pre></div>
 <p>Changing it to not refer to these variables and just exit 1 and the problems
 disappear!</p>
 <h3 id="macos">macOS</h3>
@@ -172,9 +172,9 @@ it works fine but if it’s disabled it prints out the string and then enters an
 infinite loop!</p>
 <p>After we fix the infinite loop if we change the <code>_exit()</code> call in macOS and
 disable the optimiser we might get something like:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./marshall</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>      <span class="ex">choo</span> choo</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Segmentation</span> fault: 11</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./marshall</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>          <span class="ex">choo</span> choo</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Segmentation</span> fault: 11</span></code></pre></div>
 <p>Observe how it doesn’t print it twice. But of course it segfaults so it’s not
 right either.</p>
 <p>If the optimiser is enabled, however, we will see that it works fine before the

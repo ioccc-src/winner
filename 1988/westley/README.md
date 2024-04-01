@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 NOTE: this version is a fixed version for modern C compilers. See the [Alternate
@@ -12,13 +12,13 @@ might wish to do so.
 ## Try:
 
 ```sh
-./westley
+    ./westley
 ```
 
 Also try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 to show the code with followed by the result so you can truly see the magic.
@@ -32,7 +32,7 @@ This version is the original which might not work as you expect nowadays.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -42,7 +42,7 @@ To see if your compiler has the problem described in the Judges' remarks below,
 try:
 
 ```sh
-./westley.alt
+    ./westley.alt
 ```
 
 Does it show the same output as `westley`?
@@ -53,8 +53,8 @@ Does it show the same output as `westley`?
 Your compiler must parse
 
 ```c
-#define _ -a
--_
+    #define _ -a
+    -_
 ```
 
 as `--a` and not `-(-a)` or some other tokenized form.  Some strictly
@@ -63,7 +63,7 @@ compilers, you can elide the non-standard token-pasting requirement
 by changing the #define line to:
 
 ```c
-#define _ F-->00||F-OO--;
+    #define _ F-->00||F-OO--;
 ```
 
 This is what the modified code in [westley.c](westley.c) does whereas the alt
@@ -72,7 +72,7 @@ code is the original.
 You might enjoy looking at the output of:
 
 ```sh
-cc -E westley.alt.c
+    cc -E westley.alt.c
 ```
 
 

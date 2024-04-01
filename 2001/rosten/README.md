@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: missing files - please provide them
+    STATUS: missing files - please provide them
 ```
 
 For more detailed information see [2001 rosten bugs](../../bugs.html#2001_rosten).
@@ -19,7 +19,7 @@ For more detailed information see [2001 rosten bugs](../../bugs.html#2001_rosten
 ## To use:
 
 ```sh
-./rosten [number]
+    ./rosten [number]
 ```
 
 WARNING: this will mess with your mouse and can make it hard to quit the
@@ -31,14 +31,14 @@ NOTE: number is floating point.
 ## Try:
 
 ```sh
-./rosten 1.03
-./rosten 1.00
+    ./rosten 1.03
+    ./rosten 1.00
 ```
 
 For some abuse, try:
 
 ```sh
-./rosten 0.99
+    ./rosten 0.99
 ```
 
 
@@ -58,7 +58,7 @@ cursor) in the wrong way.  :-)
 ### SYNOPSIS
 
 ```sh
-./rosten [greasiness]
+    ./rosten [greasiness]
 ```
 
 
@@ -95,15 +95,15 @@ tested. It's a kind of shame that none of the compilers do anything
 like this:
 
 ```sh
-$ make greasymouse
-cc greasymouse.c -o greasymouse -lX11
-greasymouse.c:30: This macro should have more text and spaces in it
-greasymouse.c:32: This is a really stupid way to perform this operation
-greasymouse.c:42: This program would look better with a newline here
-greasymouse.c:48: That's a really silly thing to do
-greasymouse.c:55: So is that
-...
-greasymouse.c:58: This program is rubbish. I'm not going to link it.
+    $ make greasymouse
+    cc greasymouse.c -o greasymouse -lX11
+    greasymouse.c:30: This macro should have more text and spaces in it
+    greasymouse.c:32: This is a really stupid way to perform this operation
+    greasymouse.c:42: This program would look better with a newline here
+    greasymouse.c:48: That's a really silly thing to do
+    greasymouse.c:55: So is that
+    ...
+    greasymouse.c:58: This program is rubbish. I'm not going to link it.
 ```
 
 The code is best viewed with [tab stops](https://en.wikipedia.org/wiki/Tab_stop) every 8 spaces.
@@ -143,7 +143,7 @@ The MIPS compiler suggests an `==` instead of an `=` in expressions
 such as:
 
 ```c
-&&(a=b)
+    &&(a=b)
 ```
 
 but its suggestions would break my program.  It also reckons

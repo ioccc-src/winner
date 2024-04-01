@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an alternate version of this program. See [Alternate
@@ -11,14 +11,14 @@ code](#alternate-code) below.
 ## To use:
 
 ```sh
-./prog
+    ./prog
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -30,7 +30,7 @@ The alternate version, [prog.alt.c](prog.alt.c), has the main code as a macro.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -62,7 +62,7 @@ exactly what it says nonetheless.
 Compile and try this:
 
 ```sh
-cat input.txt | ./prog
+    cat input.txt | ./prog
 ```
 
 The program can work with letters that are not represented in English, as long

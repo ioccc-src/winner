@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./hamano < textfile > output.pdf
+    ./hamano < textfile > output.pdf
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 The script will generate a number of PDF files and it will suggest you look at
@@ -31,9 +31,9 @@ README.md!
 That procedure looks like:
 
 ```sh
-./hamano < README.md > hint.pdf
-cc -xc hint.pdf -o hint
-./hint
+    ./hamano < README.md > hint.pdf
+    cc -xc hint.pdf -o hint
+    ./hint
 ```
 
 Another PDF generated is an obfuscated `Hello World!` program (obfuscated inside
@@ -41,11 +41,11 @@ the PDF). Once this is done it will compile the PDF as if it was C (itself!). It
 will look like:
 
 ```sh
-echo 'int main(){puts("Hello World!");}' | ./hamano > hello.pdf
-cc -xc hello.pdf -o hello
-./hello | cc -Wno-implicit-function-declaration -xc - -o ./hello2
+    echo 'int main(){puts("Hello World!");}' | ./hamano > hello.pdf
+    cc -xc hello.pdf -o hello
+    ./hello | cc -Wno-implicit-function-declaration -xc - -o ./hello2
 
-./hello2
+    ./hello2
 ```
 
 although the `CFLAGS` will be what is in the Makefile as it uses the helper

@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an alternate version that will read from the compiled file itself, in
@@ -13,14 +13,14 @@ theoretically work with Windows which distinguishes binary and text. See
 ## To use:
 
 ```sh
-./nyaruko [seed.txt] < original.bin > output.c
-bash output.c > key.c
-perl output.c > data.c
+    ./nyaruko [seed.txt] < original.bin > output.c
+    bash output.c > key.c
+    perl output.c > data.c
 
-cat key.c data.c > output.c
+    cat key.c data.c > output.c
 
-cc output.c -o output
-./output > regenerated.bin
+    cc output.c -o output
+    ./output > regenerated.bin
 ```
 
 NOTE: if your OS does not have `/dev/urandom` then you should specify a seed
@@ -31,7 +31,7 @@ binary itself.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 The script [try.sh](try.sh) will check if you have perl before trying to use the
@@ -54,13 +54,13 @@ For the first version:
 
 
 ```sh
-make alt
+    make alt
 ```
 
 For the second version:
 
 ```sh
-make alt2
+    make alt2
 ```
 
 
@@ -74,7 +74,7 @@ Use `nyaruko.alt` or `nyaruko.alt2` as you would `nyaruko` above.
 For the first alternate version:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 We have no way to test the second version, sorry (tm Canada :-) )!
@@ -94,17 +94,17 @@ The judges have nothing to add that has not already been written about in the
 `Nyaruko` will produce C code that reproduces this input on `stdout`:
 
 ```sh
-./nyaruko < original.bin > output.c
-gcc output.c -o output
-./output > regenerated.bin
+    ./nyaruko < original.bin > output.c
+    gcc output.c -o output
+    ./output > regenerated.bin
 ```
 
 Output is encrypted, but both key and data are included in the output.
 To separate the key from the data, run these commands:
 
 ```sh
-bash output.c > key.c
-perl output.c > data.c
+    bash output.c > key.c
+    perl output.c > data.c
 ```
 
 The key-less `data.c` still compiles, but produces a different message
@@ -115,8 +115,8 @@ To combine the key and data, concatenate them together in either
 order:
 
 ```sh
-cat key.c data.c > output.c
-cat data.c key.c > output.c
+    cat key.c data.c > output.c
+    cat data.c key.c > output.c
 ```
 
 By default, `Nyaruko` generates a unique random key for every message,
@@ -124,7 +124,7 @@ using `/dev/urandom` as the seed.  If given an extra command line
 argument, `Nyaruko` will seed using that file instead of `/dev/urandom`:
 
 ```sh
-./nyaruko seed.txt < input.bin > output.c
+    ./nyaruko seed.txt < input.bin > output.c
 ```
 
 This makes the output key deterministic, allowing the same key to be shared

@@ -1,25 +1,25 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./stewart width_and_height iterations file > file.xbm
-convert file.xbm file.png
+    ./stewart width_and_height iterations file > file.xbm
+    convert file.xbm file.png
 ```
 
 where `file` is one of:
 
 ```
-altar box box2 box3 build carpet circles cross cross2 cross3
-crystal curve diamonds diamonds2 dragon dragon2 dragon3
-fern gasket gasket_mod gasket_mod2 ioccc maze octagon
-pentagon pentagons rings rings2 spirals spirals2 spirals3
-spirals4 squares stars stars2 tree tree2 tree3 tree4 triangle
+    altar box box2 box3 build carpet circles cross cross2 cross3
+    crystal curve diamonds diamonds2 dragon dragon2 dragon3
+    fern gasket gasket_mod gasket_mod2 ioccc maze octagon
+    pentagon pentagons rings rings2 spirals spirals2 spirals3
+    spirals4 squares stars stars2 tree tree2 tree3 tree4 triangle
 ```
 
 NOTE: you cannot specify a different width from height; it's one number.
@@ -30,7 +30,7 @@ NOTE: `convert(1)` belongs to [ImageMagick](https://imagemagick.org/index.php).
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 After running the program on a few files it will ask you if you wish to run it
@@ -59,16 +59,16 @@ a reasonably experienced user who can parse formats in their mind.  :-)
 The program should be run with the following
 
 ```sh
-./stewart <m> <n> <ifs>
+    ./stewart <m> <n> <ifs>
 ```
 
 where:
 
 ```
-m   = The size of the picture (picture will be m X m in size).
-n   = The number of iterations to run (More will make for a
-     clearer picture).
-ifs = The file to use as input.
+    m   = The size of the picture (picture will be m X m in size).
+    n   = The number of iterations to run (More will make for a
+	 clearer picture).
+    ifs = The file to use as input.
 ```
 
 The program will spit out an [XBM image](https://en.wikipedia.org/wiki/X_BitMap)
@@ -78,7 +78,7 @@ are 3.  Wrong arguments will cause the program to bomb out.
 #### Example:
 
 ```sh
-./stewart 1024 1000000 gasket > gasket.xbm
+    ./stewart 1024 1000000 gasket > gasket.xbm
 ```
 
 ### Compilation/Testing
@@ -109,13 +109,13 @@ another kind of fractal, those from the [Iterated Function System
 The format of the input file is as follows:
 
 ```
-<num ifs> <x min> <y min> <x max> <y max>
-<a> <b> <c> <d> <e> <f> <p>
-<a> <b> <c> <d> <e> <f> <p>
-<a> <b> <c> <d> <e> <f> <p>
-.
-.
-.
+    <num ifs> <x min> <y min> <x max> <y max>
+    <a> <b> <c> <d> <e> <f> <p>
+    <a> <b> <c> <d> <e> <f> <p>
+    <a> <b> <c> <d> <e> <f> <p>
+    .
+    .
+    .
 ```
 
 This file describe an IFS.
@@ -123,20 +123,20 @@ This file describe an IFS.
 One of the most well known would be the [Sierpinski Gasket](gasket):
 
 ```
-3 0 0 1 1
-.5 0 0 .5   0    0 .33
-.5 0 0 .5  .5    0 .33
-.5 0 0 .5 .25 .433 .34
+    3 0 0 1 1
+    .5 0 0 .5   0    0 .33
+    .5 0 0 .5  .5    0 .33
+    .5 0 0 .5 .25 .433 .34
 ```
 
 or the [fern](fern):
 
 ```
-4 -5.5 0 5.5 11
-0    0    0  .16   0    0  .01
-.85  .04 -.04  .85   0  1.6  .85
-.2 -.26  .23  .22   0  1.6  .07
--.15  .28  .26  .24   0  .44  .07
+    4 -5.5 0 5.5 11
+    0    0    0  .16   0    0  .01
+    .85  .04 -.04  .85   0  1.6  .85
+    .2 -.26  .23  .22   0  1.6  .07
+    -.15  .28  .26  .24   0  .44  .07
 ```
 
 etc...
@@ -158,8 +158,8 @@ The `a b c d e f` are used to iterative find points that lie in the IFS
 from the algorithm
 
 ```
-x = a * prevx + b * prevy + e;
-y = c * prevx + d * prevy + f;
+    x = a * prevx + b * prevy + e;
+    y = c * prevx + d * prevy + f;
 ```
 
 The `p` is for the probability that the equation will run.

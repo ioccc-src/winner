@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./briddlebane
+    ./briddlebane
 ```
 
 
@@ -20,9 +20,9 @@ equivalent file!
 You might also like to try:
 
 ```sh
-./try.sh
+    ./try.sh
 
-INSULTS=15 ./try.sh
+    INSULTS=15 ./try.sh
 ```
 
 

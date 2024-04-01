@@ -1,26 +1,26 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./prog
+    ./prog
 ```
 
 
 ## Try:
 
 ```sh
-# Take a selfie
-./prog 1000 selfie.jpg output.jpg
-# Admire your portrait in cubist style
+    # Take a selfie
+    ./prog 1000 selfie.jpg output.jpg
+    # Admire your portrait in cubist style
 
-# Also try:
-./try.sh
+    # Also try:
+    ./try.sh
 ```
 
 
@@ -42,7 +42,7 @@ process is content aware, so the algorithm tries to match most of the informatio
 However, it doesn't find the best theoretically possible layout.
 
 ```sh
-./prog 1000 input.jpg output.jpg
+    ./prog 1000 input.jpg output.jpg
 ```
 
 ### Building
@@ -57,20 +57,20 @@ specify the path to includes and the library.  For example using
 [libjpeg source](https://mac-dev-env.patrickbougie.com/libjpeg/) version 9c:
 
 ```sh
-make prog LIBJPEG="-Ijpeg-9c jpeg-9c/libjpeg.a"
+    make prog LIBJPEG="-Ijpeg-9c jpeg-9c/libjpeg.a"
 ```
 
 Use this command to build a PNG version (you need `libpng`):
 
 ```sh
-make prog_png LIBPNG="-lpng"
+    make prog_png LIBPNG="-lpng"
 ```
 
 And the PPM version (no additional dependencies, can read raw/ASCII PPM, writes
 raw PPM):
 
 ```
-make prog_ppm
+    make prog_ppm
 ```
 
 ### Building on macOS with MacPorts:
@@ -81,13 +81,13 @@ information!
 First, make sure you have the compiler tools installed e.g. by:
 
 ```sh
-sudo xcode-select --install
+    sudo xcode-select --install
 ```
 
 Make sure you install [MacPorts](https://www.macports.org/install.php). Then do:
 
 ```sh
-sudo port install jpeg libpng ImageMagick
+    sudo port install jpeg libpng ImageMagick
 ```
 
 The program itself doesn't need ImageMagick, install it only if you plan to make
@@ -96,7 +96,7 @@ GIFs from the results using `makegif.sh`.
 After that’s installed you need to run make with these options:
 
 ```sh
-make LDFLAGS="-I/opt/local/include -L/opt/local/lib"
+    make LDFLAGS="-I/opt/local/include -L/opt/local/lib"
 ```
 
 ### Building on macOS with Homebrew
@@ -104,7 +104,7 @@ make LDFLAGS="-I/opt/local/include -L/opt/local/lib"
 First, make sure you have the compiler tools installed e.g. by:
 
 ```sh
-sudo xcode-select --install
+    sudo xcode-select --install
 ```
 
 Make sure you install [Homebrew](https://brew.sh).
@@ -112,14 +112,14 @@ Make sure you install [Homebrew](https://brew.sh).
 Then:
 
 ```sh
-brew install libjpeg libpng
-eval "$(brew shellenv)"
+    brew install libjpeg libpng
+    eval "$(brew shellenv)"
 ```
 
 You are now ready to compile this entry:
 
 ```sh
-make clobber all
+    make clobber all
 ```
 
 
@@ -140,7 +140,7 @@ You can use this command to make a GIF from output images (uses ImageMagick).
 For instance after running the command suggested by the judges:
 
 ```sh
-convert -delay 10 -dither none -loop 0 $(find . -maxdepth 1 -type f -name '*jpg' | sort -V) $(find . -maxdepth 1 -type f -name '*jpg' | sort -rV) +map out.gif
+    convert -delay 10 -dither none -loop 0 $(find . -maxdepth 1 -type f -name '*jpg' | sort -V) $(find . -maxdepth 1 -type f -name '*jpg' | sort -rV) +map out.gif
 ```
 
 NOTE: the above is done in the [try.sh](try.sh) script.

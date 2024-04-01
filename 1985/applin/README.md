@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## Try:
 
 ```sh
-./applin
+    ./applin
 ```
 
 

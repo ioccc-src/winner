@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is alternate code that lets you redefine the port to bind to, in case
@@ -12,28 +12,28 @@ there is a firewall issue, and also lets you redefine the timing constant,
 ## To use:
 
 ```sh
-./prog < some_secret_or_something
+    ./prog < some_secret_or_something
 
-./prog http://host[:port]
+    ./prog http://host[:port]
 ```
 
 
 ## Try:
 
 ```sh
-./prog < README.md
+    ./prog < README.md
 ```
 
 or maybe:
 
 ```sh
-echo "IOCCC 2014!" | ./prog
+    echo "IOCCC 2014!" | ./prog
 ```
 
 Next, try in another terminal, as the above one is running:
 
 ```sh
-./prog http://127.0.0.1:1701
+    ./prog http://127.0.0.1:1701
 ```
 
 What happens if you specify instead of a regular file something like
@@ -56,13 +56,13 @@ described by the author. See [configuration](#configuration) below.
 To specify the port to say, 31337, try:
 
 ```sh
-make clobber PORT=31337 alt
+    make clobber PORT=31337 alt
 ```
 
 To change the timing constant, `STARDATE`, try:
 
 ```sh
-make clobber TIME=5000000 alt
+    make clobber TIME=5000000 alt
 ```
 
 You can combine them both of course.
@@ -102,26 +102,26 @@ the server.
 ## To use web server
 
 ```sh
-./prog < secret_file_to_be_downloaded
+    ./prog < secret_file_to_be_downloaded
 ```
 
 Try using the program's source code as the secret file:
 
 ```sh
-./prog < prog.c
+    ./prog < prog.c
 ```
 
 ## To use client-side downloader
 
 ```sh
-./prog http://host[:port]
+    ./prog http://host[:port]
 ```
 
 The optional port defaults to 1701.  If the web server instance is started on
 the same box, try:
 
 ```sh
-./prog http://127.0.0.1:1701
+    ./prog http://127.0.0.1:1701
 ```
 
 It will incrementally display the contents of the hidden file at a rate of
@@ -247,15 +247,15 @@ For space considerations, the following include statements were dropped
 resulting in compiler warnings:
 
 ```c
-#include <asm/byteorder.h>
-#include <ctype.h>
-#include <netinet/in.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/select.h>
-#include <sys/socket.h>
-#include <sys/types.h>
-#include <sys/unistd.h>
+    #include <asm/byteorder.h>
+    #include <ctype.h>
+    #include <netinet/in.h>
+    #include <stdlib.h>
+    #include <string.h>
+    #include <sys/select.h>
+    #include <sys/socket.h>
+    #include <sys/types.h>
+    #include <sys/unistd.h>
 ```
 
 It may be necessary to restore some of these under certain environments.

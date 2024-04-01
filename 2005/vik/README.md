@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./vik [file.map]
+    ./vik [file.map]
 ```
 
 
 ## Try:
 
 ```sh
-./vik maze.map
+    ./vik maze.map
 ```
 
 
@@ -61,14 +61,14 @@ libraries](https://en.wikipedia.org/wiki/Xlib) if necessary. The program takes
 three options which have to be typed in a specific order as described below.
 
 ```sh
-./vik [-w <width>] [mapfile]
+    ./vik [-w <width>] [mapfile]
 ```
 
 where:
 
 ```
-width   - Specifies the width of the window
-mapfile - Filename containing a map
+    width   - Specifies the width of the window
+    mapfile - Filename containing a map
 ```
 
 #### Examples
@@ -76,20 +76,20 @@ mapfile - Filename containing a map
 Start the engine using a built in labyrinth and texture bitmaps:
 
 ```sh
-./vik
+    ./vik
 ```
 
 Start the engine and loads the labyrinth defined in the file
 [maze.map](maze.map):
 
 ```sh
-./vik maze.map
+    ./vik maze.map
 ```
 
 Start the engine using [maze.map](maze.map) in a window that is 400 pixels wide:
 
 ```sh
-./vik -w 400 maze.map
+    ./vik -w 400 maze.map
 ```
 
 Note that the `mapfile` has to be the last argument and the `-w` option if present
@@ -107,12 +107,12 @@ engine what bitmap texture file to use. The `*` character lets the engine know
 where to position the user. The example below shows how a map file can look:
 
 ```
-aaaaaaaaaaaaa
-a           a
-a      *    a
-a    bbbb   cccccccc
-c                  c
-cccccccccccccccccccc
+    aaaaaaaaaaaaa
+    a           a
+    a      *    a
+    a    bbbb   cccccccc
+    c                  c
+    cccccccccccccccccccc
 ```
 
 The engine loads the map, and creates walls. When a character in the range `a-z`

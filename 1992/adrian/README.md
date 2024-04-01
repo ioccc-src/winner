@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -10,8 +10,8 @@ make all
 The current status of this entry is:
 
 ```
-STATUS: known bug - please help us fix
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: known bug - please help us fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [1992 adrian bugs](../../bugs.html#1992_adrian).
@@ -20,13 +20,13 @@ For more detailed information see [1992 adrian bugs](../../bugs.html#1992_adrian
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 For the slow minded, try:
 
 ```sh
-./adsleep 32767
+    ./adsleep 32767
 ```
 
 
@@ -59,7 +59,7 @@ The deterministic finite automaton is specified as a series of rules for
 each state:
 
 ```
-<state> chars1 <dest1> chars2 <dest2> ...
+    <state> chars1 <dest1> chars2 <dest2> ...
 ```
 
 `chars1` is a list of characters (_only the first 8_ are significant) which
@@ -72,10 +72,10 @@ significant to only eight characters like `chars1`.
 ### Example 1: matches `^abc$`
 
 ```
-<q0> a <q1>          The first state to appear is the start state
-<q1> b <q2>
-<q2> c [q3]
-[q3]
+    <q0> a <q1>          The first state to appear is the start state
+    <q1> b <q2>
+    <q2> c [q3]
+    [q3]
 ```
 
 Technically, a deterministic finite automaton should have a rule for each
@@ -88,54 +88,54 @@ character list.
 ### Example 2: `^abc`
 
 ```
-<q0> a <q1>
-<q1> b <q2>
-<q2> c [q3]
-[q3] . [q3]
+    <q0> a <q1>
+    <q1> b <q2>
+    <q2> c [q3]
+    [q3] . [q3]
 ```
 
 ### Example 3: `abc$`
 
 ```
-<q0> a <q1> . <q0>
-<q1> b <q2> a <q1> . <q0>
-<q2> c [q3] a <q1> . <q0>
-[q3] . <q1>
+    <q0> a <q1> . <q0>
+    <q1> b <q2> a <q1> . <q0>
+    <q2> c [q3] a <q1> . <q0>
+    [q3] . <q1>
 ```
 
 ### Example 4: `^(abc)*$`
 
 ```
-[q0] a <q1>
-<q1> b <q2>
-<q2> c [q0]
+    [q0] a <q1>
+    <q1> b <q2>
+    <q2> c [q0]
 ```
 
 ### Example 5: `^[ab][cd][ef]$`
 
 ```
-<q0> ab <q1>
-<q1> cd <q2>
-<q2> ef [q3]
-[q3]
+    <q0> ab <q1>
+    <q1> cd <q2>
+    <q2> ef [q3]
+    [q3]
 ```
 
 ### Example 6: `^(abc|efg)$`
 
 ```
-<q0> a <q1> e <q3>
-<q1> b <q2>
-<q2> c [q5]
-<q3> f <q4>
-<q4> g [q5]
-[q5]
+    <q0> a <q1> e <q3>
+    <q1> b <q2>
+    <q2> c [q5]
+    <q3> f <q4>
+    <q4> g [q5]
+    [q5]
 ```
 
 With the automaton specification in `filename`, invoke the program by
 typing
 
 ```sh
-./adrian filename
+    ./adrian filename
 ```
 
 
@@ -152,7 +152,7 @@ occurs if your automaton has more than 257 states.
 Running:
 
 ```sh
-./adrian from < your_mailbox
+    ./adrian from < your_mailbox
 ```
 
 will perform a function similar to that of the unix `from` command.
@@ -164,13 +164,13 @@ changed to `__FILE__`.)  In this case, the program will search for matches to
 the regular expression:
 
 ```
-^.[^|C][^w[Q]*(Q|[w[]c).*|^.[C|]$
+    ^.[^|C][^w[Q]*(Q|[w[]c).*|^.[C|]$
 ```
 
 I suggest using `adrian.c` as input, and storing the output in `adwc.c`:
 
 ```sh
-./adrian < adrian.c > adwc.c
+    ./adrian < adrian.c > adwc.c
 ```
 
 Compiling the new file, `adwc.c`, yields a clone of the unix `wc` command. It
@@ -182,19 +182,19 @@ Another possibly interesting automaton can be created by slightly
 adjusting the `adrian.c` file.  Change the first line to read
 
 ```c
-/* . echo| . */
+    /* . echo| . */
 ```
 
 and repeat the process above
 
 ```sh
-./adrian <adrian.c > adecho.c
+    ./adrian <adrian.c > adecho.c
 ```
 
 The new file now contains all lines which match
 
 ```
-^.[^5|m^]*[m^]([e=p,;]|[^e=+p,;].*)$
+    ^.[^5|m^]*[m^]([e=p,;]|[^e=+p,;].*)$
 ```
 
 Compile and run.  This is an `echo(1)` clone.  Note the efficient algorithm
@@ -205,13 +205,13 @@ Two other adjustments to the first line also yield useful results. By
 changing it to
 
 ```c
-/* . head; . */
+    /* . head; . */
 ```
 
 you can search for matches to
 
 ```
-^.[^W]*W..*$
+    ^.[^W]*W..*$
 ```
 
 By some freak happenstance, lines of `adrian.c` which match this regular
@@ -222,14 +222,14 @@ specified (again this was changed to `__FILE__`).
 By setting the first line to
 
 ```c
-/* . basename . */
+    /* . basename . */
 ```
 
 a clone of the unix `basename(1)` command can be unearthed. The automaton will
 search for
 
 ```
-^.[^j]*jr.*$
+    ^.[^j]*jr.*$
 ```
 
 on standard input.  And the program which results by running `adrian.c`
@@ -241,13 +241,13 @@ The resulting base name is printed to stdout.
 Lastly, by setting the first line to
 
 ```c
-/* . sleep . */
+    /* . sleep . */
 ```
 
 you can search for
 
 ```
-^.[^(~][^s]*sl.*$
+    ^.[^(~][^s]*sl.*$
 ```
 
 Filtering `adrian.c` through this search yields a clone of the `sleep(1)`

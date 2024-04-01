@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./schweikh2
+    ./schweikh2
 ```
 
 The program accepts up to 4 parameters:
@@ -25,19 +25,19 @@ The program accepts up to 4 parameters:
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 What happens if you pass only three parameters like the below?
 
 ```sh
-./schweikh2 15 1 0
+    ./schweikh2 15 1 0
 ```
 
 The author also suggests:
 
 ```sh
-while :; do grep -v '#' schweikh2.c; done
+    while :; do grep -v '#' schweikh2.c; done
 ```
 
 (and we do too) which works with `sh`, `bash`, `ksh` and `zsh` as well. Press
@@ -52,9 +52,9 @@ in [hunni.c](hunni.c). The perl script, [hunni.pl](hunni.pl), obfuscates it
 appropriately. Try:
 
 ```sh
-less hunni.c
+    less hunni.c
 
-perl ./hunni.pl < hunni.c
+    perl ./hunni.pl < hunni.c
 ```
 
 This entry was another crowd pleaser at the IOCCC BOF.
@@ -138,12 +138,12 @@ minutes (`gcc -O3`).
 ### Sample arguments:
 
 ```sh
-./schweikh2 6
-./schweikh2 7 0
-./schweikh2 7 7 0
-./schweikh2 8 9 -1 -67/21
-./schweikh2 8 2 2/5 -98/25
-./schweikh2 2 1/0 1 1/0
+    ./schweikh2 6
+    ./schweikh2 7 0
+    ./schweikh2 7 7 0
+    ./schweikh2 8 9 -1 -67/21
+    ./schweikh2 8 2 2/5 -98/25
+    ./schweikh2 2 1/0 1 1/0
 ```
 
 ### Miscellaneous
@@ -152,7 +152,7 @@ The diamond pattern can be continued without a break.
 For a nice printout try this on your Bourne compatible shell:
 
 ```sh
-while :; do grep -v '#' schweikh2.c; done
+    while :; do grep -v '#' schweikh2.c; done
 ```
 
 

@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2015 mills2 bugs](../../bugs.html#2015_mills2).
@@ -19,14 +19,14 @@ For more detailed information see [2015 mills2 bugs](../../bugs.html#2015_mills2
 ## To use:
 
 ```sh
-./prog compressed_file.Z
+    ./prog compressed_file.Z
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -40,7 +40,7 @@ for a `compress(1)`-like compressor using a similar idea.
 Why is the sad smiley on line 12 in that particular place?
 
 ```c
-  c=0)			    :( O
+    c=0)			    :( O
 ```
 
 
@@ -67,8 +67,8 @@ on your system, I've provided compressed copies of this year's IOCCC rules
 and guidelines files.  To print them, just do
 
 ```sh
-./prog ioccc_guidelines.txt.Z
-./prog ioccc_rules.txt.Z
+    ./prog ioccc_guidelines.txt.Z
+    ./prog ioccc_rules.txt.Z
 ```
 
 ### The Details

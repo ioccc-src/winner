@@ -125,38 +125,38 @@
 <h1 id="scene-format-documentation">Scene format documentation</h1>
 <p>The file must be encoded in UTF-8 as the BOF marker indicates.</p>
 <p>You can directly feed it to the renderer. If you’re wondering about what the following code block does, that’s why:)</p>
-<pre><code>@|?|?z#
-@|||?z&amp;
-&gt;?Sedvf
-??Tdeu#
-&gt;&gt;Tdeui
-??Tdmmf
-??[[euf
-?}?Oq}e
-?}?Oqqf
-v}?|q}e
-v}?|qqf
-?Sj|?{f
-?Tjk?{e
-FF?Oqq$
-RR?Oqq$
-^^?Oqq$
-jj?Oqq$
-vv?|qq$
-IOBMqqe
-U]BMqqe
-aiBMqqe
-muBMqqe
-EEEJpp%
-QQEJpp%
-]]EJpp%
-iiEJpp%
-uuEJpp%
-ZnY|{|e
-[mZ|\{\{#
-[mZ|||f
-kkdr\{\{\%
-lkdr\{\{&gt;</code></pre>
+<pre><code>    @|?|?z#
+    @|||?z&amp;
+    &gt;?Sedvf
+    ??Tdeu#
+    &gt;&gt;Tdeui
+    ??Tdmmf
+    ??[[euf
+    ?}?Oq}e
+    ?}?Oqqf
+    v}?|q}e
+    v}?|qqf
+    ?Sj|?{f
+    ?Tjk?{e
+    FF?Oqq$
+    RR?Oqq$
+    ^^?Oqq$
+    jj?Oqq$
+    vv?|qq$
+    IOBMqqe
+    U]BMqqe
+    aiBMqqe
+    muBMqqe
+    EEEJpp%
+    QQEJpp%
+    ]]EJpp%
+    iiEJpp%
+    uuEJpp%
+    ZnY|{|e
+    [mZ|\{\{#
+    [mZ|||f
+    kkdr\{\{\%
+    lkdr\{\{&gt;</code></pre>
 <h2 id="basic-structure">Basic structure</h2>
 <p>A scene file begins with arbitrary binary data, followed by several shader
 functions.</p>
@@ -164,33 +164,33 @@ functions.</p>
 character. There are some special function names, which will be explained below.</p>
 <p>The language used to write shader functions is very simple. Basically, you write
 a sequence of assignment statements like this:</p>
-<pre><code>A=A+D
-B=B+E</code></pre>
+<pre><code>    A=A+D
+    B=B+E</code></pre>
 <p>Namely, you write a one-character variable name, an equal sign (<code>=</code>), followed
 by an expression (made of operators and one-character variable names, of
 course).</p>
 <h2 id="expressions">Expressions</h2>
 <p>The shader language supports seven operators, listed highest priority first:</p>
-<pre><code>*/+-&lt;#:</code></pre>
+<pre><code>    */+-&lt;#:</code></pre>
 <p><code>*/+-&lt;</code> each mean what they mean in C, but the priority part is a bit different.
 Basically, <code>*</code> has higher priority than <code>/</code>, so <code>A/4*4</code> actually computes
 <code>A/(4*4)</code>. And you can’t write <code>(A/4)*4</code> – brackets are not supported. As an
 advice, keep your expressions simple :) If you really needs to write something
 like <code>C=(A/4)*4</code>, write instead:</p>
-<pre><code>B=A/4+
-C=B*4</code></pre>
+<pre><code>    B=A/4+
+    C=B*4</code></pre>
 <p>The <code>#</code> operator acts somewhat like the C <code>?:</code>. It returns one of its two
 operands based on, what else, the value of variable <code>#</code>. When <code>#</code> is true, <code>#</code>
 returns its second operand.</p>
 <p>The <code>:</code> operator calls built-in functions. The first operand is the function id and the second is the parameter. Here is a list of functions:</p>
-<pre><code>0:x = the x-th byte of the scene file
-1:x = sin(x*PI)
-2:x = atan2(x,#)/PI
-3:x = sqrt(max(x,0))
-4:x = floor(x)
-5:x = the next number in the (allegedly random) number sequence, can&#39;t be called in volume shaders
-6:x = value of the variable (char)(120+x)
-7:x = write #&#39;s value to the variable (char)(120+x)</code></pre>
+<pre><code>    0:x = the x-th byte of the scene file
+    1:x = sin(x*PI)
+    2:x = atan2(x,#)/PI
+    3:x = sqrt(max(x,0))
+    4:x = floor(x)
+    5:x = the next number in the (allegedly random) number sequence, can&#39;t be called in volume shaders
+    6:x = value of the variable (char)(120+x)
+    7:x = write #&#39;s value to the variable (char)(120+x)</code></pre>
 <p>Contrary to popular belief, the language itself doesn’t support numerical
 constants. Any character sitting between operators is a variable. When you see
 1/2, it’s in fact dividing the variable 1’s value by the variable 2’s value. For
@@ -208,7 +208,7 @@ the Windows <code>\r\n</code>), and it terminates your function. Also, the first
 must begin immediately after <code>]</code>.</p>
 <p>When a function terminates, the interpreter calls the next function specified by
 variable <code>R</code>. If you want to call function <code>n</code>, just write somewhere:</p>
-<pre><code>R=n</code></pre>
+<pre><code>    R=n</code></pre>
 <p>providing you have left <code>n</code> at its initial value. If you want to actually return
 to the renderer, put in <code>R=0</code>.</p>
 <p>As you may have noticed, you can put in all kinds of stuff between functions,
@@ -224,28 +224,28 @@ material shaders.</p>
 </tr>
 </tbody>
 </table>
-<pre><code>//As an (optional) assignment, figure out what function &#39;n&#39; does. And why there is a plus sign at every EOL except the last.
-n]#=1+
-x=X+1/2+
-d=0:U;d=d-n;U=U+1;A=d&lt;x;#=#*A+
-d=0:U;d=d-n;U=U+1;A=x&lt;d+1;#=#*A+
-x=Y+1/2+
-d=0:U;d=d-n;U=U+1;A=d&lt;x;#=#*A+
-d=0:U;d=d-n;U=U+1;A=x&lt;d+1;#=#*A+
-x=Z+1/2+
-d=0:U;d=d-n;U=U+1;A=d&lt;x;#=#*A+
-d=0:U;d=d-n;U=U+1;A=x&lt;d+1;#=#*A+
-d=0:U;d=d-n;U=U+1+
-U=U+2+
-C=C#d+3*9+
-#=d+
-R=0#n</code></pre>
+<pre><code>    //As an (optional) assignment, figure out what function &#39;n&#39; does. And why there is a plus sign at every EOL except the last.
+    n]#=1+
+    x=X+1/2+
+    d=0:U;d=d-n;U=U+1;A=d&lt;x;#=#*A+
+    d=0:U;d=d-n;U=U+1;A=x&lt;d+1;#=#*A+
+    x=Y+1/2+
+    d=0:U;d=d-n;U=U+1;A=d&lt;x;#=#*A+
+    d=0:U;d=d-n;U=U+1;A=x&lt;d+1;#=#*A+
+    x=Z+1/2+
+    d=0:U;d=d-n;U=U+1;A=d&lt;x;#=#*A+
+    d=0:U;d=d-n;U=U+1;A=x&lt;d+1;#=#*A+
+    d=0:U;d=d-n;U=U+1+
+    U=U+2+
+    C=C#d+3*9+
+    #=d+
+    R=0#n</code></pre>
 <hr />
 <p>The function <code>A</code> initializes global settings:</p>
-<pre><code>G -- Image width, in pixels
-H -- Image height, in pixels
-I -- Perturbation probability
-J -- Camera ray stratification probability</code></pre>
+<pre><code>    G -- Image width, in pixels
+    H -- Image height, in pixels
+    I -- Perturbation probability
+    J -- Camera ray stratification probability</code></pre>
 <p>If you have used a MLT renderer before, you probably know what <code>I</code> and <code>J</code> does.
 If you don’t, well, use the same value as the default scene. Everything
 converges just fine under suboptimal settings, just a little slower. Generally,
@@ -280,17 +280,17 @@ the one facing my bed, to thank me for the effort.</p>
 </tr>
 </tbody>
 </table>
-<pre><code>//As a bonus, find out what the first line does
-A]#=#-#;&quot;=7:0-p+^;#=&quot;+
-R=n+
-G=p*:+
-#=0&lt;B+
-G=G*2#G+
-H=G*3/4+
-I=4/5+
-J=1/2+
-C=p+1+
-U=w+w+w</code></pre>
+<pre><code>    //As a bonus, find out what the first line does
+    A]#=#-#;&quot;=7:0-p+^;#=&quot;+
+    R=n+
+    G=p*:+
+    #=0&lt;B+
+    G=G*2#G+
+    H=G*3/4+
+    I=4/5+
+    J=1/2+
+    C=p+1+
+    U=w+w+w</code></pre>
 <hr />
 <p>The function <code>a</code> is the camera shader, which, well, generates the camera ray.
 It’s supposed to return the ray in variables <code>UVWXYZ</code> and <code>ABCDEF</code> (that may
@@ -312,8 +312,8 @@ coordinate space, volume 0 is scaled up 64x here to <code>(0,0,0)-(4096,4096,409
 happen. Wall up everything.</p>
 <p>Variables <code>ABCDEF</code> control the color returned from the ray. They will be
 explained in the material shaders part. For now, just put in:</p>
-<pre><code>A=0;B=0;C=0
-D=1;E=1;F=1</code></pre>
+<pre><code>    A=0;B=0;C=0
+    D=1;E=1;F=1</code></pre>
 <table>
 <tbody>
 <tr class="odd">
@@ -321,29 +321,29 @@ D=1;E=1;F=1</code></pre>
 </tr>
 </tbody>
 </table>
-<pre><code>a]R=0+
-X=5:5+
-Y=5:5+
-X=X-1/2+
-Y=Y-1/2+
-x=5:5+
-y=5:5+
-x=x-1/2+
-y=y-1/2+
-x=x*8*7;y=y*8*7+
-X=X*G+
-Y=Y*H+
-Z=H*2/3+
-d=4*;+
-d=d*p/Z+
-X=x+X*d+
-Y=y+Y*d+
-Z=Z*d+
-U=p*p/2-p*2+x+
-V=p*p/2+p*1-y+
-W=p*8+
-A=0;B=0;C=0+
-D=1;E=1;F=1</code></pre>
+<pre><code>    a]R=0+
+    X=5:5+
+    Y=5:5+
+    X=X-1/2+
+    Y=Y-1/2+
+    x=5:5+
+    y=5:5+
+    x=x-1/2+
+    y=y-1/2+
+    x=x*8*7;y=y*8*7+
+    X=X*G+
+    Y=Y*H+
+    Z=H*2/3+
+    d=4*;+
+    d=d*p/Z+
+    X=x+X*d+
+    Y=y+Y*d+
+    Z=Z*d+
+    U=p*p/2-p*2+x+
+    V=p*p/2+p*1-y+
+    W=p*8+
+    A=0;B=0;C=0+
+    D=1;E=1;F=1</code></pre>
 <hr />
 <p>The numbered functions define materials, i.e., surface reflectance properties.
 As the name suggests, the shader simulates ray-surface interaction. It’s done by
@@ -374,32 +374,32 @@ Function) importance sampling. Let’s continue to function <code>o</code>.</p>
 </tr>
 </tbody>
 </table>
-<pre><code>//This function computes the starred wallpaper
-//Original color: 0.36 0.714285 0.8
-1]R=o+
-d=p*6+
-x=U+W+
-x=4:x/d+
-z=4:V/d+
-#=3*x-4*z+
-y=4:#/5+
-#=#-y*5+
-y=1#0+
-x=x*d+d/2-U+W+
-z=z*d+d/2-V+
-r=3:x*x+z*z+
-#=z+
-u=2:x+
-d=1:u*5+
-d=d*d*d+3/2+
-d=d*p+
-#=r&lt;d+
-#=#*y+
-d=2/5#I+
-D=D*d+
-E=E*4/7+
-d=I#2/5+
-F=F*d</code></pre>
+<pre><code>    //This function computes the starred wallpaper
+    //Original color: 0.36 0.714285 0.8
+    1]R=o+
+    d=p*6+
+    x=U+W+
+    x=4:x/d+
+    z=4:V/d+
+    #=3*x-4*z+
+    y=4:#/5+
+    #=#-y*5+
+    y=1#0+
+    x=x*d+d/2-U+W+
+    z=z*d+d/2-V+
+    r=3:x*x+z*z+
+    #=z+
+    u=2:x+
+    d=1:u*5+
+    d=d*d*d+3/2+
+    d=d*p+
+    #=r&lt;d+
+    #=#*y+
+    d=2/5#I+
+    D=D*d+
+    E=E*4/7+
+    d=I#2/5+
+    F=F*d</code></pre>
 <hr />
 <p>Function <code>o</code> defines a diffuse (that is, dull) surface. To define reflectance
 properties like this, one needs to sample an outgoing ray direction, based on
@@ -415,9 +415,9 @@ defined as a bunch of cube-shaped cells, there are only 6 possible normals:
 <code>(±1,0,0) (0,±1,0) (0,0,±1)</code>. Here <code>S</code> is the sign and <code>T</code> is the dimension. If
 you get <code>S=-1</code> and <code>T=1</code>, the normal is <code>(0,-1,0)</code>.</p>
 <p>If you don’t want to redo all the math yourself… this file provides a few simple shader functions:</p>
-<pre><code>o -- Diffuse surface. Do the color thing your self and call R=o
-5 -- Perfect mirror.
-f -- Surface with a Fresnel term. Basically, it resembles a polished surface made from a dielectric material.</code></pre>
+<pre><code>    o -- Diffuse surface. Do the color thing your self and call R=o
+    5 -- Perfect mirror.
+    f -- Surface with a Fresnel term. Basically, it resembles a polished surface made from a dielectric material.</code></pre>
 <p>For something more complex like a fluffy carpet, well, you could use a volume to
 directly model the
 <a href="https://en.wikipedia.org/wiki/Mesoscopic_physics">mesoscopic</a> detail. Shader
@@ -430,107 +430,107 @@ appearance.</p>
 </tr>
 </tbody>
 </table>
-<pre><code>//diffuse ray generation
-o]R=0+
-u=5:5+
-v=5:5+
-v=v*2+
-r=3:u+
-z=1:v+
-y=1:1/2+v+
-z=z*r+
-y=y*r+
-x=3:1-u+
-x=0-x*S+
-X=6:T+
-w=x;x=z;z=y;y=w+
-Y=6:T+
-w=x;x=z;z=y;y=w+
-Z=6:T
+<pre><code>    //diffuse ray generation
+    o]R=0+
+    u=5:5+
+    v=5:5+
+    v=v*2+
+    r=3:u+
+    z=1:v+
+    y=1:1/2+v+
+    z=z*r+
+    y=y*r+
+    x=3:1-u+
+    x=0-x*S+
+    X=6:T+
+    w=x;x=z;z=y;y=w+
+    Y=6:T+
+    w=x;x=z;z=y;y=w+
+    Z=6:T
 
-//reflector
-5]R=0+
-x=1;y=1;z=1+
-#=0-1+
-#=7:T+
-X=x*X;Y=y*Y;Z=z*Z
+    //reflector
+    5]R=0+
+    x=1;y=1;z=1+
+    #=0-1+
+    #=7:T+
+    X=x*X;Y=y*Y;Z=z*Z
 
-//approximate Fresnel, works better than the real thing when you don&#39;t want to tweak the IOR
-f]x=X;y=Y;z=Z+
-r=3:x*x+z*z+y*y+
-d=6:T+
-d=1-d*S/r+
-d=d*d*d+
-#=5:5+
-#=d&lt;#+
-R=5#o+
-d=d#1-d+
-u=1#u+
-v=1#v+
-w=1#w+
-D=D*d*u+
-E=E*d*v+
-F=F*d*w
+    //approximate Fresnel, works better than the real thing when you don&#39;t want to tweak the IOR
+    f]x=X;y=Y;z=Z+
+    r=3:x*x+z*z+y*y+
+    d=6:T+
+    d=1-d*S/r+
+    d=d*d*d+
+    #=5:5+
+    #=d&lt;#+
+    R=5#o+
+    d=d#1-d+
+    u=1#u+
+    v=1#v+
+    w=1#w+
+    D=D*d*u+
+    E=E*d*v+
+    F=F*d*w
 
-//the handles
-B]R=0+
-#=X&lt;8*3+
-C=3#0
+    //the handles
+    B]R=0+
+    #=X&lt;8*3+
+    C=3#0
 
-C]R=0+
-#=X&lt;8*4+
-C=0#4
+    C]R=0+
+    #=X&lt;8*4+
+    C=0#4
 
-//red-Fresnel
-2]R=f+
-u=1/2;v=1/9;w=v
+    //red-Fresnel
+    2]R=f+
+    u=1/2;v=1/9;w=v
 
-//white-Fresnel and the full moon
-3]R=f+
-u=7*9/p;v=u;w=v+
-x=3*:+8+
-z=U-x*p+p/2+
-x=V-x*p-p/2+
-r=3:x*x+z*z+
-#=4&lt;r/p+
-D=D*I#D+
-E=E*4/7#E+
-F=F*2/5#F+
-d=1/5#0+
-A=A+D*d+
-B=B+E*d+
-C=C+F*d
+    //white-Fresnel and the full moon
+    3]R=f+
+    u=7*9/p;v=u;w=v+
+    x=3*:+8+
+    z=U-x*p+p/2+
+    x=V-x*p-p/2+
+    r=3:x*x+z*z+
+    #=4&lt;r/p+
+    D=D*I#D+
+    E=E*4/7#E+
+    F=F*2/5#F+
+    d=1/5#0+
+    A=A+D*d+
+    B=B+E*d+
+    C=C+F*d
 
-//handle
-4]R=5+
-D=D*I;E=E*4/7;F=F*2/5
+    //handle
+    4]R=5+
+    D=D*I;E=E*4/7;F=F*2/5
 
-//light from the window
-6]R=0+
-#=P+
-d=2#8*2+
-A=A+D*d+
-B=B+E*d+
-C=C+F*d*I+
-P=9
+    //light from the window
+    6]R=0+
+    #=P+
+    d=2#8*2+
+    A=A+D*d+
+    B=B+E*d+
+    C=C+F*d*I+
+    P=9
 
-//carpet
-7]R=o+
-D=D/7+
-E=E/3+
-F=F/7
+    //carpet
+    7]R=o+
+    D=D/7+
+    E=E/3+
+    F=F/7
 
-D]R=0+
-#=8&lt;Y+
-C=0#3+
-#=4:3*X-4*Z+
-y=4:#/7+
-#=#-y*7+
-C=7#C</code></pre>
+    D]R=0+
+    #=8&lt;Y+
+    C=0#3+
+    #=4:3*X-4*Z+
+    y=4:#/7+
+    #=#-y*7+
+    C=7#C</code></pre>
 <hr />
 <p>The last line, well, is the output filename. Just remember to throw in two <code>]</code>s
 and don’t put a newline after it.</p>
-<pre><code>]]example.ppm</code></pre>
+<pre><code>    ]]example.ppm</code></pre>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

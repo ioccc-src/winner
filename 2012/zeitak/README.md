@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an alternate version that is slightly deobfuscated. See [alternate
@@ -11,7 +11,7 @@ code](#alternate-code) below.
 ## To use:
 
 ```sh
-./zeitak < file
+    ./zeitak < file
 ```
 
 where `file` is the file to be checked for nesting errors. For example, you may
@@ -22,7 +22,7 @@ text files that are not code.
 ## Try:
 
 ```sh
-make test
+    make test
 ```
 
 NOTE: the program prints an error and exits on the first nesting error so it
@@ -39,7 +39,7 @@ understand this extremely subtle entry.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -61,7 +61,7 @@ just to understand _18 key **characters**_ of this code.
 NOTE: if you use vim to view the code, make sure to do:
 
 ```
-:set tabstop=4
+    :set tabstop=4
 ```
 
 in command mode, before looking at the code, to see the correct layout.
@@ -93,7 +93,7 @@ around it's position.
   will be detected in the following line:
 
 ```c
-printf(")");
+    printf(")");
 ```
 
 * Doesn't get confused by the [1984/anonymous](../../1984/anonymous/index.html) entry!
@@ -105,7 +105,7 @@ printf(")");
   an error:
 
 ```c
-printf("\"");
+    printf("\"");
 ```
 
 #### Obfuscation

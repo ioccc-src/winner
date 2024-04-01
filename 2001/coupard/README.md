@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./coupard
+    ./coupard
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -53,7 +53,7 @@ that can do sound, as a lowest-denominator sound I/O interface.
 To listen to what the program says directly, invoke
 
 ```sh
-./coupard > /dev/audio
+    ./coupard > /dev/audio
 ```
 
 The program then speaks out something like
@@ -69,7 +69,7 @@ format, you can pipe it to [SoX](https://en.wikipedia.org/wiki/SoX) for example
 (`sox` is the Swiss army knife of Unix audio tools). The command:
 
 ```sh
-./coupard | sox -c1 -r8000 -tub - -c2 -r44100 -twav test.wav
+    ./coupard | sox -c1 -r8000 -tub - -c2 -r44100 -twav test.wav
 ```
 
 converts the output of the program into a 44.1KHz stereo .WAV

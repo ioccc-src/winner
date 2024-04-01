@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./rcm < file.gz
+    ./rcm < file.gz
 ```
 
 where `file.gz` is some gzipped file.
@@ -19,7 +19,7 @@ where `file.gz` is some gzipped file.
 For more information try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -28,7 +28,7 @@ For more information try:
 For a good no-op try:
 
 ```sh
-gzip -c < rcm.c | ./rcm
+    gzip -c < rcm.c | ./rcm
 ```
 
 NOTE: this is done in the [try.sh](try.sh) script as well, along with some other
@@ -71,7 +71,7 @@ from the GNU gzip source tree is 31,613 characters in length and uncompresses
 the emacs distribution file in slightly under 25 seconds.  Thus:
 
 ```
-3100 / 130 = 23.85       -vs-      31613 / 25 = 1264.52
+    3100 / 130 = 23.85       -vs-      31613 / 25 = 1264.52
 ```
 
 which represents a better than 530% improvement in the ratio of

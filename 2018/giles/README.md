@@ -5,27 +5,27 @@ IOCCC entry that requires SDL1 or SDL2?](../../faq.html#SDL) if you don't have i
 installed and don't know how to do so.
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./prog
+    ./prog
 ```
 
 
 ## Try:
 
 ```sh
-./prog ioccc.txt
+    ./prog ioccc.txt
 
-./prog prog.c
+    ./prog prog.c
 
-./prog sand.txt
+    ./prog sand.txt
 
-./prog sand.alt.txt
+    ./prog sand.alt.txt
 ```
 
 NOTE: these invocations will take quite some time to finish.

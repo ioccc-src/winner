@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -10,7 +10,7 @@ make all
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [1992 vern bugs](../../bugs.html#1992_vern).
@@ -19,7 +19,7 @@ For more detailed information see [1992 vern bugs](../../bugs.html#1992_vern).
 ## To use:
 
 ```sh
-./vern 3	# <-- default is 2
+    ./vern 3	# <-- default is 2
 ```
 
 
@@ -28,10 +28,10 @@ For more detailed information see [1992 vern bugs](../../bugs.html#1992_vern).
 You might start off by giving the following input:
 
 ```
-63 43
-76 55
-71 52
-67 57		# <-- this may take a while
+    63 43
+    76 55
+    71 52
+    67 57		# <-- this may take a while
 ```
 
 
@@ -43,10 +43,10 @@ suggested above.  :-)
 For a real quick game try:
 
 ```sh
-./vern
+    ./vern
 
-65 55
-66 46
+    65 55
+    66 46
 ```
 
 NOTE: Move values must be restricted to the range 00 to 77.
@@ -125,8 +125,8 @@ initial source is gloriously difficult to peruse. In particular, the Makefile
 does:
 
 ```sh
-sed <vern.c 's/{ /(/g;s/} /)/g;s/;       /#define /' | \
-    sed 's/}      /=/g;s/{        /i/g' >vern.tmp.c
+    sed <vern.c 's/{ /(/g;s/} /)/g;s/;       /#define /' | \
+	sed 's/}      /=/g;s/{        /i/g' >vern.tmp.c
 ```
 
 and compiles `vern.tmp.c`.

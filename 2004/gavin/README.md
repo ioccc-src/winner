@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -15,9 +15,9 @@ to reboot and rely on having a floppy drive (if you even remember what those are
 The current status of this entry is:
 
 ```
-STATUS: compiled executable crashes - please help us fix
-STATUS: doesn't work with some platforms - please help us fix
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: compiled executable crashes - please help us fix
+    STATUS: doesn't work with some platforms - please help us fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2004 gavin bugs](../../bugs.html#2004_gavin).
@@ -26,7 +26,7 @@ For more detailed information see [2004 gavin bugs](../../bugs.html#2004_gavin).
 ## To use:
 
 ```sh
-./gavin
+    ./gavin
 ```
 
 
@@ -37,14 +37,14 @@ those? We do!):
 
 
 ```sh
-su
+    su
 ```
 
 Make a floppy with an ext2 filesystem (`mke2fs /dev/fd0` replacing `fd0` with
 whatever the floppy device is!),  mount it under `/mnt/floppy` and then:
 
 ```sh
-cp kernel fs.tar lilo.conf boot.b /mnt/floppy
+    cp kernel fs.tar lilo.conf boot.b /mnt/floppy
 ```
 
 NOTE: If the version of your lilo is not 21.4, use the appropriate boot.b file.
@@ -52,27 +52,27 @@ NOTE: If the version of your lilo is not 21.4, use the appropriate boot.b file.
 NOTE: If your floppy drive is not `/dev/fd0`, edit lilo.conf appropriately.
 
 ```sh
-lilo -C /mnt/floppy/lilo.conf
+    lilo -C /mnt/floppy/lilo.conf
 ```
 
 Boot from the floppy on an x86 machine with a PS/2 keyboard and mouse.
 Move the window away from the corner.
 
 ```sh
-vi gavin.c
+    vi gavin.c
 ```
 
 Scroll up and down the file with up-arrow and down-arrow.
 
 ```sh
-sh
+    sh
 ```
 
 You can have several shell windows:
 
 ```sh
-vi README.md
-./prim
+    vi README.md
+    ./prim
 ```
 
 Press and hold any key.
@@ -87,7 +87,7 @@ you can use it with `QEMU`.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -198,7 +198,7 @@ so these may need updating as appropriate (`0x90200` is the address
 at which a Linux bootloader loads an x86 kernel image).
 
 ```
-\* ;-)
+    \* ;-)
 ```
 
 

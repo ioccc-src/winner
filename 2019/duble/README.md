@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an alternate version, the original, which does not work well in macOS.
@@ -13,7 +13,7 @@ See [Alternate code](#alternate-code) below if you are curious.
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2019 duble bugs](../../bugs.html#2019_duble).
@@ -22,20 +22,20 @@ For more detailed information see [2019 duble bugs](../../bugs.html#2019_duble).
 ## To use:
 
 ```sh
-./prog file
+    ./prog file
 ```
 
 
 ## Try:
 
 ```sh
-./prog /tmp/drawing
+    ./prog /tmp/drawing
 ```
 
 Open another window / terminal.
 
 ```sh
-./prog /tmp/drawing
+    ./prog /tmp/drawing
 ```
 
 Open more terminals and repeat...
@@ -43,13 +43,13 @@ Open more terminals and repeat...
 You might also wish to try a full screen size. For this try:
 
 ```sh
-make clobber fullscreen
+    make clobber fullscreen
 ```
 
 Alternatively, if you want to change the size, do something like:
 
 ```sh
-make clobber LINES=20 COLUMNS=20 all
+    make clobber LINES=20 COLUMNS=20 all
 ```
 
 The author provided us with the following table for use:
@@ -70,7 +70,7 @@ the editor.
 After editing the file and quitting, try:
 
 ```sh
-/tmp/drawing
+    /tmp/drawing
 ```
 
 i.e. execute the file.
@@ -98,7 +98,7 @@ alternate code might not work as well in macOS.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -133,7 +133,7 @@ To build, type `make` (assuming gcc) or `make CC=clang`.
 Then you can start the program. It expects a file path as its first argument:
 
 ```sh
-./prog /tmp/drawing
+    ./prog /tmp/drawing
 ```
 
 (If not started this way, with a file, `prog` will refuse to start.)
@@ -217,7 +217,7 @@ The default size is the one of my xterm (see top of Makefile).
 You may set it to the full size of your terminal window by typing:
 
 ```sh
-make clobber fullscreen
+    make clobber fullscreen
 ```
 
 IMPORTANT NOTES:

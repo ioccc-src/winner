@@ -1,26 +1,26 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./bas2 < file
-echo text | ./bas2
+    ./bas2 < file
+    echo text | ./bas2
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 
-./try.sh "foo bar" "baz" "IOCCC 1998/bas2" README.md
+    ./try.sh "foo bar" "baz" "IOCCC 1998/bas2" README.md
 
-./try.sh try.sh "bas2.c" bas2.orig.c
+    ./try.sh try.sh "bas2.c" bas2.orig.c
 ```
 
 

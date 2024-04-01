@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-echo text | ./fine
+    echo text | ./fine
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 Make sure that you read the last line backwards! Credit goes to [Merlyn LeRoy (Brian

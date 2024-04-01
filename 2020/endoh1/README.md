@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an alternate version provided by the author. See [Alternate
@@ -11,24 +11,24 @@ code](#alternate-code) below.
 ## To use:
 
 ```sh
-# IMPORTANT for macOS: run under Terminal.app
+    # IMPORTANT for macOS: run under Terminal.app
 
-./prog
+    ./prog
 ```
 
 
 ## Try:
 
 ```sh
-# IMPORTANT for macOS: run under Terminal.app
+    # IMPORTANT for macOS: run under Terminal.app
 
-# Try resizing the terminal window before the first click.
+    # Try resizing the terminal window before the first click.
 
-# Try resizing the terminal window after the first click.
+    # Try resizing the terminal window after the first click.
 
-./prog ioccc.txt
+    ./prog ioccc.txt
 
-./prog unwinnable.txt
+    ./prog unwinnable.txt
 ```
 
 
@@ -42,7 +42,7 @@ Author's remarks for more details.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -95,8 +95,8 @@ All you have to do is (0).  You can test if you are lucky or not.
 It uses ncurses:
 
 ```sh
-gcc -o prog prog.c -lncurses
-./prog
+    gcc -o prog prog.c -lncurses
+    ./prog
 ```
 
 You will see a terminal-wide field of a minesweeper.  Probe a cell by mouse
@@ -127,9 +127,9 @@ unprobed neighbors are probed.
 Example:
 
 ```
-? ? ?      . . .
-? 3 ?  =>  . 3 .
-! ! !      ! ! !
+    ? ? ?      . . .
+    ? 3 ?  =>  . 3 .
+    ! ! !      ! ! !
 ```
 
 Note that `?` is an unprobed cell (it is unknown whether the cell has a mine or
@@ -145,9 +145,9 @@ neighbors, all the unprobed neighbors are flagged.
 Example:
 
 ```
-. ? ?      . ! !
-. 4 ?  =>  . 4 !
-. 2 !      . 2 !
+    . ? ?      . ! !
+    . 4 ?  =>  . 4 !
+    . 2 !      . 2 !
 ```
 
 #### Rule 3:
@@ -159,10 +159,10 @@ neighbors, all `A`'s unprobed neighbors that are not `B`'s neighbors are probed.
 Example:
 
 ```
-? ? ?        . . .
-? 1 ? ?  =>  . 1 ? ?
-? ? 4 .      . ? 4 .
-  ? . !        ? . !
+    ? ? ?        . . .
+    ? 1 ? ?  =>  . 1 ? ?
+    ? ? 4 .      . ? 4 .
+      ? . !        ? . !
 ```
 
 `A` and `B` are probed cells whose numbers are, respectively, 1 and 4.  The
@@ -179,9 +179,9 @@ neighbors, all of `A`'s unprobed neighbors that are not `B`'s neighbors are
 flagged.
 
 ```
-? ? ? ?      ! ? ? ?
-? 3 1 2  =>  ! 3 1 2
-2 2 . .      2 2 . .
+    ? ? ? ?      ! ? ? ?
+    ? 3 1 2  =>  ! 3 1 2
+	2 2 . .      2 2 . .
 ```
 
 `A` and `B` are probed cells whose numbers are, respectively, 3 and 1.  The
@@ -201,13 +201,13 @@ Analyze the code.
 You can also play with a prepared map.
 
 ```sh
- ./prog ioccc.txt
- ```
+    ./prog ioccc.txt
+```
 
 The format of the text is:
 
 ```
-width height number-of-mines priorities-of-each-cell...
+    width height number-of-mines priorities-of-each-cell...
 ```
 
 There are mines in a cell whose "priorities-of-each-cell" is less than

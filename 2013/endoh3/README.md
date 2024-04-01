@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2013 endoh3 bugs](../../bugs.html#2013_endoh3).
@@ -19,7 +19,7 @@ For more detailed information see [2013 endoh3 bugs](../../bugs.html#2013_endoh3
 ## To use:
 
 ```sh
-./endoh3
+    ./endoh3
 ```
 
 This program plays sound. See [FAQ 3.10 - How do I compile and use an IOCCC
@@ -30,13 +30,13 @@ system up for this or if you want to verify that everything is oky.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 
-./try.sh ABC
+    ./try.sh ABC
 
-./try.sh test.abc yankee.abc
+    ./try.sh test.abc yankee.abc
 
-./try.sh *.abc
+    ./try.sh *.abc
 ```
 
 The script will check for SoX first and next `padsp` from `PulseAudio` and
@@ -76,28 +76,28 @@ notation](http://en.wikipedia.org/wiki/ABC_notation).
 Try:
 
 ```sh
-cc -o endoh3 endoh3.c
-echo "CDEFGABc" | ./endoh3 > /dev/dsp
+    cc -o endoh3 endoh3.c
+    echo "CDEFGABc" | ./endoh3 > /dev/dsp
 ```
 
 If `/dev/dsp` is not available on your system, use an OSS sound wrapper such
 as `padsp` or `aoss`:
 
 ```sh
-echo "CDEFGABc" | ./endoh3 | padsp tee /dev/dsp > /dev/null
+    echo "CDEFGABc" | ./endoh3 | padsp tee /dev/dsp > /dev/null
 ```
 
 If you are using Mac OS X, try [sox](http://sox.sourceforge.net/) like so:
 
 ```sh
-echo "CDEFGABc" | ./endoh3 | sox -q -traw -r8000 -b8 -e unsigned-integer - -tcoreaudio
+    echo "CDEFGABc" | ./endoh3 | sox -q -traw -r8000 -b8 -e unsigned-integer - -tcoreaudio
 ```
 
 If that does not work, use the attached script to convert the output into a wave
 file format:
 
 ```sh
-echo "CDEFGABc" | ./endoh3 | ruby wavify.rb > cde.wav
+    echo "CDEFGABc" | ./endoh3 | ruby wavify.rb > cde.wav
 ```
 
 and play `cde.wav`.
@@ -108,8 +108,8 @@ do so like:
 
 
 ```sh
-cat twinkle.abc | ./endoh3 > /dev/dsp
-cat menuet.abc | ./endoh3 > /dev/dsp
+    cat twinkle.abc | ./endoh3 > /dev/dsp
+    cat menuet.abc | ./endoh3 > /dev/dsp
 ```
 
 but you should be able to modify it a way to meet your system requirements as
@@ -186,37 +186,37 @@ You know, it is ["the famous song"](http://en.wikipedia.org/wiki/4%E2%80%B233%E2
 Here is a magical expression which I found by brute-force:
 
 ```c
-(c % 32 + 5) * 9 / 5 % 13 + n / 32 * 12 - 22
+    (c % 32 + 5) * 9 / 5 % 13 + n / 32 * 12 - 22
 ```
 
 Interestingly, it converts an ASCII number of ABC notes
 to the corresponding tone number.
 
 ```
-'C' (ASCII  67) =>  3
-'D' (ASCII  68) =>  5
-'E' (ASCII  69) =>  7
-'F' (ASCII  70) =>  9
-'G' (ASCII  71) => 10
-'A' (ASCII  65) => 12
-'B' (ASCII  66) => 14
-'c' (ASCII  99) => 15
-'d' (ASCII 100) => 17
-'e' (ASCII 101) => 19
-'f' (ASCII 102) => 20
-'g' (ASCII 103) => 22
-'a' (ASCII  97) => 24
-'b' (ASCII  98) => 26
+    'C' (ASCII  67) =>  3
+    'D' (ASCII  68) =>  5
+    'E' (ASCII  69) =>  7
+    'F' (ASCII  70) =>  9
+    'G' (ASCII  71) => 10
+    'A' (ASCII  65) => 12
+    'B' (ASCII  66) => 14
+    'c' (ASCII  99) => 15
+    'd' (ASCII 100) => 17
+    'e' (ASCII 101) => 19
+    'f' (ASCII 102) => 20
+    'g' (ASCII 103) => 22
+    'a' (ASCII  97) => 24
+    'b' (ASCII  98) => 26
 ```
 
 By the way, you can write a half-tone by the following characters.
 
 ```
-'K' =>  4 (= C#)
-'L' =>  6 (= D#)
-'U' =>  8 (= F#)
-'V' => 11 (= G#)
-'P' => 13 (= A#)
+    'K' =>  4 (= C#)
+    'L' =>  6 (= D#)
+    'U' =>  8 (= F#)
+    'V' => 11 (= G#)
+    'P' => 13 (= A#)
 ```
 
 Note that the tone numbers simply enumerate the semi-tone steps.  So we can
@@ -229,7 +229,7 @@ frequency by multiplying the value by `n` times.
 Finally, the following code generates a saw wave:
 
 ```c
-for(c = 0; c < len; c++) putchar(a = n * D);
+    for(c = 0; c < len; c++) putchar(a = n * D);
 ```
 
 where `D` is a frequency and `a` is a variable whose type is `char`.  By

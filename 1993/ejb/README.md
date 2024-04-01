@@ -1,27 +1,27 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./ejb level
+    ./ejb level
 ```
 
 where:
 
 ```sh
-level   a value from -128 to 127
+    level   a value from -128 to 127
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -46,7 +46,7 @@ We note that this also works under macOS just fine.
 #### Output solution to Towers of Hanoi for five rings:
 
 ```sh
-./ejb 5
+    ./ejb 5
 ```
 
 The format of the output for the Towers of Hanoi case is simply a
@@ -55,7 +55,7 @@ text description of how to solve the puzzle.
 #### Output solution to the Patience puzzle for six rings:
 
 ```sh
-./ejb -6
+    ./ejb -6
 ```
 
 

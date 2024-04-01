@@ -1,20 +1,20 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./prog "expression"
+    ./prog "expression"
 ```
 
 or:
 
 ```sh
-./prog
+    ./prog
 ```
 
 Type in expressions on standard input.
@@ -23,13 +23,13 @@ Type in expressions on standard input.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 Notice how the script reads in from a file. If you type just:
 
 ```sh
-./prog
+    ./prog
 ```
 
 it will prompt you in the same way. Send ctrl-c to exit.
@@ -38,7 +38,7 @@ it will prompt you in the same way. Send ctrl-c to exit.
 Finally, if you wish to read the man page:
 
 ```sh
-man ./calc.1
+    man ./calc.1
 ```
 
 
@@ -52,7 +52,7 @@ author's remarks below.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -110,7 +110,7 @@ However, unlike any other calculator source code the author is aware of,
 this one contains no digits.  At all.  Anywhere.  As in
 
 ```sh
-grep '[0-9]' prog.c || echo no digits!
+    grep '[0-9]' prog.c || echo no digits!
 ```
 
 Nor are the digits simply obfuscated.  There are no character constants.  There
@@ -192,8 +192,8 @@ long`.  Changing the two `long long` typedefs to `long`, and compiling with `gcc
 shifts mod 32:
 
 ```
-1<<48
-65536	0x00010000
+    1<<48
+    65536	0x00010000
 ```
 
 gcc 4.2.1 without arguments compiles cleanly (e.g. `cc prog.c -o prog`).
@@ -203,7 +203,7 @@ clang 3.6.0 lives up to its namesake, resounding on non-problems.
 To stifle these complaints:
 
 ```
--Wno-return-type -Wno-parentheses -Wno-empty-body
+    -Wno-return-type -Wno-parentheses -Wno-empty-body
 ```
 
 When invoked with `-ansi -pedantic`, there are two warnings, which can be ignored:
@@ -223,8 +223,8 @@ If the program name begins with an `e`, it echoes `stdin` to `stdout`.
 This allows for a convenient test suite:
 
 ```sh
-ln -sf prog eprog
-PATH=. eprog < test.in | diff - test.out
+    ln -sf prog eprog
+    PATH=. eprog < test.in | diff - test.out
 ```
 
 ### Spoilers:

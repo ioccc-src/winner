@@ -114,9 +114,9 @@ In rare cases they are valid. For instance Cody noticed in linux the following
 warning in [1985/applin](1985/applin/applin.c) with gcc:
 
 ```
-applin.c:1:78: warning: incompatible implicit declaration of built-in function 'execlp' [-Wbuiltin-declaration-mismatch]
-    1 | main(v,c)char**c;{for(v[c++]=strdup("Hello, world!\n");(!!c)[*c]&&(v--||--c&&execlp(*c,*c,c[!!c]+!!c,!c));**c=!c)write(!!*c,*c,!!**c);}
-      |                                                                              ^~~~~~
+    applin.c:1:78: warning: incompatible implicit declaration of built-in function 'execlp' [-Wbuiltin-declaration-mismatch]
+	1 | main(v,c)char**c;{for(v[c++]=strdup("Hello, world!\n");(!!c)[*c]&&(v--||--c&&execlp(*c,*c,c[!!c]+!!c,!c));**c=!c)write(!!*c,*c,!!**c);}
+	  |                                                                              ^~~~~~
 ```
 
 and this reminded him of his fix to
@@ -156,7 +156,7 @@ experienced this many times with vim so he tends to disable all format options
 when formatting code. In vim you should be able to do that with:
 
 ```
-:set formatoptions=
+    :set formatoptions=
 ```
 
 
@@ -422,9 +422,9 @@ The purpose of this program is to print out a string of rubbish. In particular
 you should see something like:
 
 ```sh
-$ ./decot
-'",x);	/*
-\
+    $ ./decot
+    '",x);	/*
+    \
 ```
 
 without a newline after the `\`. This is not a bug.
@@ -528,7 +528,7 @@ it does not. We don't believe this is because of the fix that lets some versions
 be compiled with clang. An example invocation is:
 
 ```sh
-./ver2 < westley.c
+    ./ver2 < westley.c
 ```
 
 ### A useful note on changing/fixing this program
@@ -547,12 +547,12 @@ The reason this is crashing is that the array `irk` is being accessed way out of
 bounds by the int `gnat`. For instance:
 
 ```
-Program terminated with signal SIGSEGV, Segmentation fault.
-#0  0x0000000000401335 in main (ABBA@entry=<optimized out>, tang@entry=<optimized out>, gnat@entry=<optimized out>, Near@entry=<optimized out>)
-    at ver2.c:23
-23	&&gnat!({)Near,noon,/*krelc*/)<0&&(Near= -  	irk[-gnat--]-2)))&&main(ABBA,
-(gdb) p gnat
-$1 = -518733305
+    Program terminated with signal SIGSEGV, Segmentation fault.
+    #0  0x0000000000401335 in main (ABBA@entry=<optimized out>, tang@entry=<optimized out>, gnat@entry=<optimized out>, Near@entry=<optimized out>)
+	at ver2.c:23
+    23	&&gnat!({)Near,noon,/*krelc*/)<0&&(Near= -  	irk[-gnat--]-2)))&&main(ABBA,
+    (gdb) p gnat
+    $1 = -518733305
 ```
 
 ### Magic of the entry:
@@ -576,7 +576,7 @@ becomes the first and the first line becomes the last! Now if you look at the
 code you'll see on the first line:
 
 ```c
-/**//*/};)/**/pain(*//**/tang 	  ,gnat/**//*/,ABBA~,0-0(avnz;)0-0,tang,raeN
+    /**//*/};)/**/pain(*//**/tang 	  ,gnat/**//*/,ABBA~,0-0(avnz;)0-0,tang,raeN
 ```
 
 In `ver0` it'll be the same but the others are more interesting.
@@ -584,13 +584,13 @@ In `ver0` it'll be the same but the others are more interesting.
 In `ver1` you'll see on the last line:
 
 ```c
-cnva((vag)NOON&2/*//*\\**/,gnat,tang	,NOON/**//*/(niam/**/);}/*//**/
+    cnva((vag)NOON&2/*//*\\**/,gnat,tang	,NOON/**//*/(niam/**/);}/*//**/
 ```
 
 and on the first line:
 
 ```c
-/**//*/};)/**/cnva(*//**/gnat 	  ,tang/**//*/,NOON~,0-0(niam;)0-0,gnat,enrA
+    /**//*/};)/**/cnva(*//**/gnat 	  ,tang/**//*/,NOON~,0-0(niam;)0-0,gnat,enrA
 ```
 
 Observe that the ROT13 of `pain` is `cnva` and the ROT13 of `main` is `znva`.
@@ -654,61 +654,61 @@ bigger the number of lines of output gets substantially larger and it takes much
 more time and resources to run as well. For instance:
 
 ```sh
-$ for n in $(seq 1 18); do echo "$n"; echo "$n" | time "./baruch" | wc -l | sed -E -e 's/[[:space:]]//g'; done
-1
-3
-./baruch  0.00s user 0.00s system 5% cpu 0.115 total
-2
-1
-./baruch  0.00s user 0.00s system 64% cpu 0.004 total
-3
-1
-./baruch  0.00s user 0.00s system 60% cpu 0.003 total
-4
-11
-./baruch  0.00s user 0.00s system 64% cpu 0.003 total
-5
-61
-./baruch  0.00s user 0.00s system 66% cpu 0.003 total
-6
-29
-./baruch  0.00s user 0.00s system 61% cpu 0.003 total
-7
-321
-./baruch  0.00s user 0.00s system 69% cpu 0.002 total
-8
-829
-./baruch  0.00s user 0.00s system 76% cpu 0.003 total
-9
-3521
-./baruch  0.00s user 0.00s system 87% cpu 0.005 total
-10
-7965
-./baruch  0.01s user 0.00s system 95% cpu 0.014 total
-11
-32161
-./baruch  0.05s user 0.00s system 98% cpu 0.053 total
-12
-184601
-./baruch  0.29s user 0.00s system 99% cpu 0.294 total
-13
-1031969
-./baruch  1.78s user 0.00s system 99% cpu 1.794 total
-14
-5483941
-./baruch  11.26s user 0.02s system 99% cpu 11.311 total
-15
-36466945
-./baruch  79.20s user 0.15s system 99% cpu 1:19.72 total
-16
-251132705
-./baruch  592.89s user 0.77s system 99% cpu 9:55.34 total
-17
-1724671873
-./baruch  4535.71s user 5.25s system 99% cpu 1:15:49.76 total
-18
-12655721857
-./baruch  37496.97s user 58.50s system 99% cpu 10:27:48.29 total
+    $ for n in $(seq 1 18); do echo "$n"; echo "$n" | time "./baruch" | wc -l | sed -E -e 's/[[:space:]]//g'; done
+    1
+    3
+    ./baruch  0.00s user 0.00s system 5% cpu 0.115 total
+    2
+    1
+    ./baruch  0.00s user 0.00s system 64% cpu 0.004 total
+    3
+    1
+    ./baruch  0.00s user 0.00s system 60% cpu 0.003 total
+    4
+    11
+    ./baruch  0.00s user 0.00s system 64% cpu 0.003 total
+    5
+    61
+    ./baruch  0.00s user 0.00s system 66% cpu 0.003 total
+    6
+    29
+    ./baruch  0.00s user 0.00s system 61% cpu 0.003 total
+    7
+    321
+    ./baruch  0.00s user 0.00s system 69% cpu 0.002 total
+    8
+    829
+    ./baruch  0.00s user 0.00s system 76% cpu 0.003 total
+    9
+    3521
+    ./baruch  0.00s user 0.00s system 87% cpu 0.005 total
+    10
+    7965
+    ./baruch  0.01s user 0.00s system 95% cpu 0.014 total
+    11
+    32161
+    ./baruch  0.05s user 0.00s system 98% cpu 0.053 total
+    12
+    184601
+    ./baruch  0.29s user 0.00s system 99% cpu 0.294 total
+    13
+    1031969
+    ./baruch  1.78s user 0.00s system 99% cpu 1.794 total
+    14
+    5483941
+    ./baruch  11.26s user 0.02s system 99% cpu 11.311 total
+    15
+    36466945
+    ./baruch  79.20s user 0.15s system 99% cpu 1:19.72 total
+    16
+    251132705
+    ./baruch  592.89s user 0.77s system 99% cpu 9:55.34 total
+    17
+    1724671873
+    ./baruch  4535.71s user 5.25s system 99% cpu 1:15:49.76 total
+    18
+    12655721857
+    ./baruch  37496.97s user 58.50s system 99% cpu 10:27:48.29 total
 ```
 
 
@@ -725,7 +725,7 @@ script but it appears there is a bug in this entry. The judges wrote that to
 test the entry one can do:
 
 ```sh
-echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
+    echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
 ```
 
 which should apply the identity transformation to a minimal holoalphabetic
@@ -734,12 +734,12 @@ sentence.
 But doing this shows instead:
 
 ```sh
-echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
-a얖?)V...?????777??hC??h??-?	)SSSSXXX????r?L=???*?-???ppp,,,?R
-?j
-111-)))? '..F@E
-               ???b111?
-..F..F.?n,,,,,L@E$
+    echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
+    a얖?)V...?????777??hC??h??-?	)SSSSXXX????r?L=???*?-???ppp,,,?R
+    ?j
+    111-)))? '..F@E
+		   ???b111?
+    ..F..F.?n,,,,,L@E$
 ```
 
 Notice how there's no newline at the end: that final `$` is the prompt.
@@ -747,13 +747,13 @@ Notice how there's no newline at the end: that final `$` is the prompt.
 If one does, however:
 
 ```sh
-echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw | ./jaw
+    echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw | ./jaw
 ```
 
 they will get just
 
 ```
-oops
+    oops
 ```
 
 which seems to be an error message (one of the fixes was to make it not use
@@ -843,7 +843,7 @@ that that is the error message.
 Another thing is that the code:
 
 ```c
-printf((W,Y));
+    printf((W,Y));
 ```
 
 appears to be wrong because `W` is a `FILE *` and `Y` is a `char[]` but if one
@@ -865,20 +865,20 @@ have to remove the outer `()` pair.
 Leo Broukhis, before he was an IOCCC judge, sent the IOCCC judges an email:
 
 ```
-From: leo _at_ zycad -dot- com (Leo Broukhis)
-Date: Tue, 30 Jan 96 17:37:51 PST
-To: judges _at_ toad -dot- com
-Subject: IOCCC 1992 - a bug
+    From: leo _at_ zycad -dot- com (Leo Broukhis)
+    Date: Tue, 30 Jan 96 17:37:51 PST
+    To: judges _at_ toad -dot- com
+    Subject: IOCCC 1992 - a bug
 
-Dear Judges,
+    Dear Judges,
 
-albert.c (even in its fixed form) still has a bug. Although I don't
-remember the number that exposed the bug (afair, resulting in coredump)
-in albert.orig.c that has been fixed in albert.c,
+    albert.c (even in its fixed form) still has a bug. Although I don't
+    remember the number that exposed the bug (afair, resulting in coredump)
+    in albert.orig.c that has been fixed in albert.c,
 
- 've found a number exposing another bug: 10000000001 (that's 9 0's).
-Both albert and albert.orig loop without printing anything, although
-the first factor is 101 and is usually found in an instant.
+     've found a number exposing another bug: 10000000001 (that's 9 0's).
+    Both albert and albert.orig loop without printing anything, although
+    the first factor is 101 and is usually found in an instant.
 ```
 
 
@@ -886,7 +886,7 @@ A quick debugging session from Cody suggests that the problem with this value
 is that:
 
 ```c
-if ( ppp->qq!=48 ) return;
+    if ( ppp->qq!=48 ) return;
 ```
 
 is never reached because the value is never 48 (it is in other cases but not for
@@ -894,13 +894,12 @@ the example input). It varies in value at this point. Observe that the next
 lines of code are:
 
 ```c
-while ( ppp->qq==48 )
-{
-    printf("%ld\n",qqq-45);
-    *pp = ppp;
-    ppp = ppp->p;
-}
-
+    while ( ppp->qq==48 )
+    {
+	printf("%ld\n",qqq-45);
+	*pp = ppp;
+	ppp = ppp->p;
+    }
 ```
 
 so it is expected that that value is 48, before printing the numbers, but if
@@ -911,7 +910,7 @@ for the `!= 48` is also required.
 Perhaps more useful to know is that at this point in the code the code:
 
 ```c
-if ((((( !(aa=setjmp(ppp->ppp))||aa==aaaaaa )))))
+    if ((((( !(aa=setjmp(ppp->ppp))||aa==aaaaaa )))))
 ```
 
 appears to be entered because of the return value of `setjmp()`, not the other
@@ -979,56 +978,56 @@ This entry relies on specific compiler warnings. With gcc it will look something
 like:
 
 ```
-[...]
-lush.c: In function 'main':
-lush.c:40: warning: "f" redefined
-   40 |           main
-      |
-lush.c:1: note: this is the location of the previous definition
-    1 | #define gets(_) fgets((_),999,stdin)
-      |
-lush.c:42: warning: "f" redefined
-   42 | #define f 001:
-      |
-lush.c:40: note: this is the location of the previous definition
-   40 |           main
-      |
-lush.c:44: warning: "f" redefined
-   44 | #define f 100:
-      |
-lush.c:42: note: this is the location of the previous definition
-   42 | #define f 001:
-      |
-lush.c:45: warning: "f" redefined
-   45 |          _[i--
-      |
-lush.c:44: note: this is the location of the previous definition
-   44 | #define f 100:
-      |
-lush.c:46: warning: "f" redefined
-   46 | #define f 126:
-      |
-lush.c:45: note: this is the location of the previous definition
-   45 |          _[i--
-      |
+    [...]
+    lush.c: In function 'main':
+    lush.c:40: warning: "f" redefined
+       40 |           main
+	  |
+    lush.c:1: note: this is the location of the previous definition
+	1 | #define gets(_) fgets((_),999,stdin)
+	  |
+    lush.c:42: warning: "f" redefined
+       42 | #define f 001:
+	  |
+    lush.c:40: note: this is the location of the previous definition
+       40 |           main
+	  |
+    lush.c:44: warning: "f" redefined
+       44 | #define f 100:
+	  |
+    lush.c:42: note: this is the location of the previous definition
+       42 | #define f 001:
+	  |
+    lush.c:45: warning: "f" redefined
+       45 |          _[i--
+	  |
+    lush.c:44: note: this is the location of the previous definition
+       44 | #define f 100:
+	  |
+    lush.c:46: warning: "f" redefined
+       46 | #define f 126:
+	  |
+    lush.c:45: note: this is the location of the previous definition
+       45 |          _[i--
+	  |
 ```
 
 Now one can use `sed` to get the `warning:` line correct but there is more to it
 than that. For instance this is what it looks like with clang:
 
 ```
-lush.c:40:9: warning: 'f' macro redefined [-Wmacro-redefined]
-#define f 001:
-        ^
-lush.c:1:9: note: previous definition is here
-#define f 000:
-        ^
-lush.c:42:9: warning: 'f' macro redefined [-Wmacro-redefined]
-#define f 100:
-        ^
-lush.c:40:9: note: previous definition is here
-#define f 001:
-        ^
+    lush.c:40:9: warning: 'f' macro redefined [-Wmacro-redefined]
+    #define f 001:
+	    ^
+    lush.c:1:9: note: previous definition is here
+    #define f 000:
+	    ^
+    lush.c:42:9: warning: 'f' macro redefined [-Wmacro-redefined]
+    #define f 100:
+	    ^
+    lush.c:40:9: note: previous definition is here
+    #define f 001:
+	    ^
 ```
 
 As you might see the part under the `warning:` line is different.
@@ -1036,7 +1035,7 @@ As you might see the part under the `warning:` line is different.
 The entry is supposed to show warnings and then print:
 
 ```
-Hello World.
+    Hello World.
 ```
 
 Can you help us?
@@ -1066,7 +1065,7 @@ in column width it will not display right.  To see the number of columns in your
 terminal try:
 
 ```sh
-echo $COLUMNS
+    echo $COLUMNS
 ```
 
 
@@ -1076,8 +1075,8 @@ The author suggested that the alternate version, which Cody added (but fixed for
 modern systems), should print
 
 ```c
-main(l,a,n,d)...
-[A M E R I C A]...
+    main(l,a,n,d)...
+    [A M E R I C A]...
 ```
 
 ...going down the left edge if your terminal auto-wraps at 80 characters.
@@ -1100,12 +1099,12 @@ not a misunderstanding).
 The author stated that:
 
 ```
-The expression `(a*)*` compiles but loops forever.
+    The expression `(a*)*` compiles but loops forever.
 
-There is no check for trailing backslash (`\`) in the pattern.
+    There is no check for trailing backslash (`\`) in the pattern.
 
-There is no check for unbalanced brackets.  Omitting a closing bracket
-will generate a "Pattern too long" error, which is not the real error.
+    There is no check for unbalanced brackets.  Omitting a closing bracket
+    will generate a "Pattern too long" error, which is not the real error.
 ```
 
 
@@ -1165,25 +1164,25 @@ This program uses `system(3)` so if you provide invalid characters in the
 question you might cause an error. For instance don't do this:
 
 ```sh
-$ ./schnitzi schnitzi.info
-This program answers questions about paragraphs
-of text posed to it in English.  It is written
-in C.  Mark Schnitzius is the author of this
-program.
+    $ ./schnitzi schnitzi.info
+    This program answers questions about paragraphs
+    of text posed to it in English.  It is written
+    in C.  Mark Schnitzius is the author of this
+    program.
 
-The Loch Ness monster has been captured.  Elvis
-is alive.  Hostler was a woman.  The NASA moon
-landings were clearly faked.
+    The Loch Ness monster has been captured.  Elvis
+    is alive.  Hostler was a woman.  The NASA moon
+    landings were clearly faked.
 
 
-? What is foo'?
+    ? What is foo'?
 ```
 
 because doing so will result in something like:
 
 ```
-sh: -c: line 0: unexpected EOF while looking for matching `''
-sh: -c: line 1: syntax error: unexpected end of file
+    sh: -c: line 0: unexpected EOF while looking for matching `''
+    sh: -c: line 1: syntax error: unexpected end of file
 ```
 
 with the program terminating. Other characters will also cause this problem.
@@ -1191,7 +1190,7 @@ with the program terminating. Other characters will also cause this problem.
 Of course if you do something like:
 
 ```
-What is 'foo'?
+    What is 'foo'?
 ```
 
 it will work fine.
@@ -1277,7 +1276,7 @@ below.
 You might wish to run the command:
 
 ```sh
-make diff_orig_prog
+    make diff_orig_prog
 ```
 
 to see what had to change for the buffer size, when looking at the below.
@@ -1285,7 +1284,7 @@ Furthermore you will want to look at:
 
 
 ```sh
-diff schnitzi.alt.c schnitzi.alt2.c
+    diff schnitzi.alt.c schnitzi.alt2.c
 ```
 
 as the `fgets()` version can compile it just can't generate compilable code (let
@@ -1364,7 +1363,7 @@ character, wrong character, lack of character or character in the wrong place
 can cause a compilation error! Make sure that the output of:
 
 ```sh
-./schnitzi < schnitzi.c
+    ./schnitzi < schnitzi.c
 ```
 
 can be compiled and the output of that new program when fed itself can also be
@@ -1425,9 +1424,9 @@ Since it works there is no need to fix this except for a challenge to yourself.
 The judges said the following in their remarks:
 
 ```
-The fractally minded may be able to detect that mode 0 does not calculate
-Mandelbrot/Julian sets correctly.  Can you find the bug?  Better still, can you
-fix it without breaking something else?
+    The fractally minded may be able to detect that mode 0 does not calculate
+    Mandelbrot/Julian sets correctly.  Can you find the bug?  Better still, can you
+    fix it without breaking something else?
 ```
 
 You are welcome to try and fix it and open a pull request, providing that it
@@ -1464,16 +1463,16 @@ The judges suggested that the following commands should result in output:
 
 
 ```sh
-./leo 1 | cat - /dev/tty | gs -
+    ./leo 1 | cat - /dev/tty | gs -
 
-./leo 37 80 | cat - /dev/tty | gs -
+    ./leo 37 80 | cat - /dev/tty | gs -
 ```
 
 The first one can work if one does instead:
 
 ```sh
-echo "" | ./leo 1 > foo.ps
-gs foo.ps
+    echo "" | ./leo 1 > foo.ps
+    gs foo.ps
 ```
 
 but it is supposed to work in the pipeline as is. The second one does not appear
@@ -1534,28 +1533,28 @@ almost be done except that some of the output of the
 This diff almost does it but not quite:
 
 ```diff
-diff --git i/1996/huffman/huffman.c w/1996/huffman/huffman.c
-index a5745bc7f4fa28b834c004f4cf19633e40ad9165..5e5e5334f33f9dbd95c70eddece3189d9bcff5e9 100644
---- i/1996/huffman/huffman.c
-+++ w/1996/huffman/huffman.c
-@@ -1,15 +1,16 @@
- #define x char
- #define z else
- #define w gets
-+#define gets(b) ((b)[0]='\0',(fgets((b), 100, stdin)))
- #define r if
- #define u int
- #define s main
- #define v putchar
- #define y while
- #define t " A?B?K?L?CIF?MSP?E?H?O?R?DJG?NTQ?????U?V?????X???????Z????W??Y??"
-- s (   )  {   x* c  ,  b[ 5  * 72   ]; u  a, e  ,  d   [  9
-+ s (   )  {   x* c  ,  b[ 5  * 72  ]; u  a, e  ,  d   [  9
- *9 *9 ]  ;    y  (w  ( b) ){            r  ( 0   [ b] -7 *
- 5        )    {  c  =     b    ;       y  (  (*    c  -  6
- * 7 )* *  c )c =  c+ 1  ;   r ((   -0 )  [ c  ] &&  w (  b   +
-   8 *  5*    3        ) && w          (b   +8      *5  * 6) )
-   { a       =  0; y     (                  a       [     b  ]
+    diff --git i/1996/huffman/huffman.c w/1996/huffman/huffman.c
+    index a5745bc7f4fa28b834c004f4cf19633e40ad9165..5e5e5334f33f9dbd95c70eddece3189d9bcff5e9 100644
+    --- i/1996/huffman/huffman.c
+    +++ w/1996/huffman/huffman.c
+    @@ -1,15 +1,16 @@
+     #define x char
+     #define z else
+     #define w gets
+    +#define gets(b) ((b)[0]='\0',(fgets((b), 100, stdin)))
+     #define r if
+     #define u int
+     #define s main
+     #define v putchar
+     #define y while
+     #define t " A?B?K?L?CIF?MSP?E?H?O?R?DJG?NTQ?????U?V?????X???????Z????W??Y??"
+    - s (   )  {   x* c  ,  b[ 5  * 72   ]; u  a, e  ,  d   [  9
+    + s (   )  {   x* c  ,  b[ 5  * 72  ]; u  a, e  ,  d   [  9
+     *9 *9 ]  ;    y  (w  ( b) ){            r  ( 0   [ b] -7 *
+     5        )    {  c  =     b    ;       y  (  (*    c  -  6
+     * 7 )* *  c )c =  c+ 1  ;   r ((   -0 )  [ c  ] &&  w (  b   +
+       8 *  5*    3        ) && w          (b   +8      *5  * 6) )
+       { a       =  0; y     (                  a       [     b  ]
 ```
 
 But since it does not for the time being it is advisable to just redirect
@@ -1622,8 +1621,8 @@ A point worth considering is that as the number passed into the program gets
 bigger the number of lines of output gets substantially larger. For instance:
 
 ```sh
-$ ./schnitzi 9|wc -l
-  771999
+    $ ./schnitzi 9|wc -l
+      771999
 ```
 
 The larger the number the bigger the file can become too, even becoming
@@ -1653,7 +1652,7 @@ There was no IOCCC in 1999.
 The author gives an example command:
 
 ```sh
-echo "7 P 6 d P P 8 p" | ./dlowe | tr 876 tpo
+    echo "7 P 6 d P P 8 p" | ./dlowe | tr 876 tpo
 ```
 
 which should print out `poot` but it doesn't, not in linux and not in macOS.
@@ -1667,41 +1666,40 @@ see that it does indeed crash!
 The reason for this not working is really strange.
 
 ```sh
-$ echo "7 P 6 d P P 8 p" | ./dlowe
-7668
-$ echo "7 P 6 d P P 8 p" | ./dlowe | grep 7
-$
+    $ echo "7 P 6 d P P 8 p" | ./dlowe
+    7668
+    $ echo "7 P 6 d P P 8 p" | ./dlowe | grep 7
+    $
 ```
 
 Why? Is it writing to stdout? Let's try some other things:
 
 ```sh
-$ echo 7668 | tr 876 tpo
-poot
+    $ echo 7668 | tr 876 tpo
+    poot
 ```
 
 Okay so we know that it SHOULD work. But we also know something funny is going on with stdout and the entry. Another experiment:
 
 ```sh
-$ echo "7 P 6 d P P 8 p" | ./dlowe 1>&2 | grep 7
-7668
+    $ echo "7 P 6 d P P 8 p" | ./dlowe 1>&2 | grep 7
+    7668
 ```
 
 Okay so now it sees it, `grep`. But watch!
 
 ```sh
-$ echo "7 P 6 d P P 8 p" | ./dlowe 2>foo 1>&1
-7668
-$ cat foo
-
+    $ echo "7 P 6 d P P 8 p" | ./dlowe 2>foo 1>&1
+    7668
+    $ cat foo
 ```
 
 .. so at this hour it does appear to be writing to stdout but yet somehow it doesn't? But watch:
 
 ```sh
-$ echo "7 P 6 d P P 8 p" | ./dlowe 1>foo 1>&1
-$ cat foo
-$
+    $ echo "7 P 6 d P P 8 p" | ./dlowe 1>foo 1>&1
+    $ cat foo
+    $
 ```
 
 Well this explains why the `tr` does not transliterate it to `poot` but why is
@@ -1715,8 +1713,8 @@ with things but we don't know.
 Other commands do work, however, and give the appropriate output, such as:
 
 ```sh
-$ echo 1 2 + p | ./dlowe
-3
+    $ echo 1 2 + p | ./dlowe
+    3
 ```
 
 so something is wrong with some commands/operators.
@@ -1724,8 +1722,8 @@ so something is wrong with some commands/operators.
 Another feature that does work in linux is:
 
 ```sh
-$ echo poot | ./dlowe
-poot was here!
+    $ echo poot | ./dlowe
+    poot was here!
 ```
 
 Can you help fix these problems?
@@ -1738,50 +1736,50 @@ well. A note below might suggest that doing this creates incomplete perl.
 Anyway:
 
 ```c
-#include <stdio.h>
-int main(void)
-{
-    printf("#!/usr/bin/env perl\nuse warnings;_:$_=               <> ; defined               or exit; @ARGV"
-	"=split; __:$_=             shift;defined or             goto _; chomp "
-	";(m*^\\x70oO"              "\\x74$*i)?(pri"              "nt \"$_ w\\x"
-	"61s h\\145r\\x"            "65!\\n\"):((m*"            "^\\s\\*(-?\\d+"
-	"(\\.\\d+)?)\\s"            "\\*$*)?(push@SS            ,$1):(&{chr(((o"
-	"rd)%%39)+3**4)x2             } )); goto __;             sub ff { @SS= ("
-	")} sub __{print            \"stack empty\\"            "n\"} sub ss{$#"
-	"SS<0 and goto &            __; print $SS[$"            "#SS].\"\\n\"} "
-	"sub SS{ $#SS<0              and goto &__ ;              print pop @SS}"
-	"sub _ { print              \"divide by zer"            "o\\n\"}sub ii{"
-	"map{ print\"$_"            "\\n\" } reverse            @SS} sub AUTOLO"
-	"AD { print\"un"            "implemented\\n"            "\"} sub gg{ $#"
-	"SS<0 and goto              &__;push@SS,$SS[            $#SS]} sub uu{ "
-	"$#SS<1 and goto            &__;$SS[ $#SS]+=            $SS[$#SS-1];$SS"
-	"[$#SS-1]=$SS[$"            "#SS]-$SS[$#SS-"            "1]; $SS[$#SS]-"
-	"=$SS[$#SS-1]}");
-}
+    #include <stdio.h>
+    int main(void)
+    {
+	printf("#!/usr/bin/env perl\nuse warnings;_:$_=               <> ; defined               or exit; @ARGV"
+	    "=split; __:$_=             shift;defined or             goto _; chomp "
+	    ";(m*^\\x70oO"              "\\x74$*i)?(pri"              "nt \"$_ w\\x"
+	    "61s h\\145r\\x"            "65!\\n\"):((m*"            "^\\s\\*(-?\\d+"
+	    "(\\.\\d+)?)\\s"            "\\*$*)?(push@SS            ,$1):(&{chr(((o"
+	    "rd)%%39)+3**4)x2             } )); goto __;             sub ff { @SS= ("
+	    ")} sub __{print            \"stack empty\\"            "n\"} sub ss{$#"
+	    "SS<0 and goto &            __; print $SS[$"            "#SS].\"\\n\"} "
+	    "sub SS{ $#SS<0              and goto &__ ;              print pop @SS}"
+	    "sub _ { print              \"divide by zer"            "o\\n\"}sub ii{"
+	    "map{ print\"$_"            "\\n\" } reverse            @SS} sub AUTOLO"
+	    "AD { print\"un"            "implemented\\n"            "\"} sub gg{ $#"
+	    "SS<0 and goto              &__;push@SS,$SS[            $#SS]} sub uu{ "
+	    "$#SS<1 and goto            &__;$SS[ $#SS]+=            $SS[$#SS-1];$SS"
+	    "[$#SS-1]=$SS[$"            "#SS]-$SS[$#SS-"            "1]; $SS[$#SS]-"
+	    "=$SS[$#SS-1]}");
+    }
 ```
 
 Compiling this you can generate:
 
 
 ```perl
-#!/usr/bin/env perl
-use warnings;_:$_=               <> ; defined               or exit; @ARGV=split; __:$_=             shift;defined or             goto _; chomp ;(m*^\x70oO\x74$*i)?(print "$_ w\x61s h\145r\x65!\n"):((m*^\s\*(-?\d+(\.\d+)?)\s\*$*)?(push@SS            ,$1):(&{chr(((ord)%39)+3**4)x2             } )); goto __;             sub ff { @SS= ()} sub __{print            "stack empty\n"} sub ss{$#SS<0 and goto &            __; print $SS[$#SS]."\n"} sub SS{ $#SS<0              and goto &__ ;              print pop @SS}sub _ { print              "divide by zero\n"}sub ii{map{ print"$_\n" } reverse            @SS} sub AUTOLOAD { print"unimplemented\n"} sub gg{ $#SS<0 and goto              &__;push@SS,$SS[            $#SS]} sub uu{ $#SS<1 and goto            &__;$SS[ $#SS]+=            $SS[$#SS-1];$SS[$#SS-1]=$SS[$#SS]-$SS[$#SS-1]; $SS[$#SS]-=$SS[$#SS-1]}
+    #!/usr/bin/env perl
+    use warnings;_:$_=               <> ; defined               or exit; @ARGV=split; __:$_=             shift;defined or             goto _; chomp ;(m*^\x70oO\x74$*i)?(print "$_ w\x61s h\145r\x65!\n"):((m*^\s\*(-?\d+(\.\d+)?)\s\*$*)?(push@SS            ,$1):(&{chr(((ord)%39)+3**4)x2             } )); goto __;             sub ff { @SS= ()} sub __{print            "stack empty\n"} sub ss{$#SS<0 and goto &            __; print $SS[$#SS]."\n"} sub SS{ $#SS<0              and goto &__ ;              print pop @SS}sub _ { print              "divide by zero\n"}sub ii{map{ print"$_\n" } reverse            @SS} sub AUTOLOAD { print"unimplemented\n"} sub gg{ $#SS<0 and goto              &__;push@SS,$SS[            $#SS]} sub uu{ $#SS<1 and goto            &__;$SS[ $#SS]+=            $SS[$#SS-1];$SS[$#SS-1]=$SS[$#SS]-$SS[$#SS-1]; $SS[$#SS]-=$SS[$#SS-1]}
 ```
 
 Here is example input/output:
 
 ```
-p
-stack empty
-5 p
-5
-5 + 5 p
-unimplemented
-5
-P
-5
-p
-5
+    p
+    stack empty
+    5 p
+    5
+    5 + 5 p
+    unimplemented
+    5
+    P
+    5
+    p
+    5
 ```
 
 So you can see that if one uses operators it just shows 'unimplemented' (observe
@@ -1792,7 +1790,7 @@ To not get 'unimplemented' you can remove from the perl:
 
 
 ```perl
-sub AUTOLOAD { print"unimplemented\n"}
+    sub AUTOLOAD { print"unimplemented\n"}
 ```
 
 (Note that the author stated this was used for exception handling so another
@@ -1804,25 +1802,25 @@ Here is an example run of several operations in the perl script after removing
 that subroutine:
 
 ```sh
-$ echo 5 5 p | ./dlowe.pl
-5
-$ echo 5 5 + p | ./dlowe.pl
-5
-Undefined subroutine &main::UU called at ./pl.pl line 2, <> line 1.
-$ echo 5 5 * p | ./dlowe.pl
-5
-Undefined subroutine &main::ww called at ./pl.pl line 2, <> line 1.
-$ echo 5 5 - p | ./dlowe.pl
-5
-Undefined subroutine &main::WW called at ./pl.pl line 2, <> line 1.
-$ echo 5 5 / p | ./dlowe.pl
-5
-Undefined subroutine &main::YY called at ./pl.pl line 2, <> line 1.
-$ echo 5 P | ./dlowe.pl
-5$ echo p | ./dlowe.pl
-stack empty
-$ echo P | ./dlowe.pl
-stack empty
+    $ echo 5 5 p | ./dlowe.pl
+    5
+    $ echo 5 5 + p | ./dlowe.pl
+    5
+    Undefined subroutine &main::UU called at ./pl.pl line 2, <> line 1.
+    $ echo 5 5 * p | ./dlowe.pl
+    5
+    Undefined subroutine &main::ww called at ./pl.pl line 2, <> line 1.
+    $ echo 5 5 - p | ./dlowe.pl
+    5
+    Undefined subroutine &main::WW called at ./pl.pl line 2, <> line 1.
+    $ echo 5 5 / p | ./dlowe.pl
+    5
+    Undefined subroutine &main::YY called at ./pl.pl line 2, <> line 1.
+    $ echo 5 P | ./dlowe.pl
+    5$ echo p | ./dlowe.pl
+    stack empty
+    $ echo P | ./dlowe.pl
+    stack empty
 ```
 
 Note the undefined subroutine error: that happens with commands that are not
@@ -1831,8 +1829,8 @@ it seems likely that there is something missing (which the below shows as well).
 For instance inputting `D` followed by `XX`:
 
 ```
-Undefined subroutine &main::nn called at ./pl.pl line 2, <> line 6.
-Undefined subroutine &main::[[ called at ./pl.pl line 2, <> line 1.
+    Undefined subroutine &main::nn called at ./pl.pl line 2, <> line 6.
+    Undefined subroutine &main::[[ called at ./pl.pl line 2, <> line 1.
 ```
 
 That means then that in linux despite the subroutines seemingly not existing it
@@ -1844,9 +1842,9 @@ actually incorrect. It is also curious to note that it ends up printing what's
 on the stack at that point:
 
 ```sh
-$ echo 5 5 + p | ./dlowe.pl
-unimplemented
-5
+    $ echo 5 5 + p | ./dlowe.pl
+    unimplemented
+    5
 ```
 
 which might (?) suggest that the `+` operator is unimplemented. Unfortunately it
@@ -1861,30 +1859,30 @@ bug to be fixed. For the curious this will crash in macOS. Cody notes that the
 code that crashes is:
 
 ```c
-perl_eval_sv
-(newSVpv("_:$_=               <> ; defined               or exit; @ARGV"
-"=split; __:$_=             shift;defined or             goto _; chomp "
-";(m*^\\x70oO"              "\\x74$*i)?(pri"              "nt \"$_ w\\x"
-"61s h\\145r\\x"            "65!\\n\"):((m*"            "^\\s\\*(-?\\d+"
-"(\\.\\d+)?)\\s"            "\\*$*)?(push@SS            ,$1):(&{chr(((o"
-"rd)%39)+3**4)x2             } )); goto __;             sub ff { @SS= ("
-")} sub __{print            \"stack empty\\"            "n\"} sub ss{$#"
-"SS<0 and goto &            __; print $SS[$"            "#SS].\"\\n\"} "
-"sub SS{ $#SS<0              and goto &__ ;              print pop @SS}"
-"sub _ { print              \"divide by zer"            "o\\n\"}sub ii{"
-"map{ print\"$_"            "\\n\" } reverse            @SS} sub AUTOLO"
-"AD { print\"un"            "implemented\\n"            "\"} sub gg{ $#"
-"SS<0 and goto              &__;push@SS,$SS[            $#SS]} sub uu{ "
-"$#SS<1 and goto            &__;$SS[ $#SS]+=            $SS[$#SS-1];$SS"
-"[$#SS-1]=$SS[$"            "#SS]-$SS[$#SS-"            "1]; $SS[$#SS]-"
-"=$SS[$#SS-1]}                   ",0),0                   );
+    perl_eval_sv
+    (newSVpv("_:$_=               <> ; defined               or exit; @ARGV"
+    "=split; __:$_=             shift;defined or             goto _; chomp "
+    ";(m*^\\x70oO"              "\\x74$*i)?(pri"              "nt \"$_ w\\x"
+    "61s h\\145r\\x"            "65!\\n\"):((m*"            "^\\s\\*(-?\\d+"
+    "(\\.\\d+)?)\\s"            "\\*$*)?(push@SS            ,$1):(&{chr(((o"
+    "rd)%39)+3**4)x2             } )); goto __;             sub ff { @SS= ("
+    ")} sub __{print            \"stack empty\\"            "n\"} sub ss{$#"
+    "SS<0 and goto &            __; print $SS[$"            "#SS].\"\\n\"} "
+    "sub SS{ $#SS<0              and goto &__ ;              print pop @SS}"
+    "sub _ { print              \"divide by zer"            "o\\n\"}sub ii{"
+    "map{ print\"$_"            "\\n\" } reverse            @SS} sub AUTOLO"
+    "AD { print\"un"            "implemented\\n"            "\"} sub gg{ $#"
+    "SS<0 and goto              &__;push@SS,$SS[            $#SS]} sub uu{ "
+    "$#SS<1 and goto            &__;$SS[ $#SS]+=            $SS[$#SS-1];$SS"
+    "[$#SS-1]=$SS[$"            "#SS]-$SS[$#SS-"            "1]; $SS[$#SS]-"
+    "=$SS[$#SS-1]}                   ",0),0                   );
 ```
 
 and in particular it appears that it is the perl itself. In other words if one
 changes it to be:
 
 ```c
-perl_eval_sv(newSVpv("",0),0);
+    perl_eval_sv(newSVpv("",0),0);
 ```
 
 it will not crash. But of course it won't do anything either. So it's more
@@ -1896,8 +1894,8 @@ crash this makes sense.
 The example command above _should_ print:
 
 ```sh
-$ echo "13 14 15 16 17 + - * / p" | ./dlowe
--0.0515873015873016
+    $ echo "13 14 15 16 17 + - * / p" | ./dlowe
+    -0.0515873015873016
 ```
 
 and that's what it shows in linux.
@@ -1919,7 +1917,7 @@ of 92 warnings! Nonetheless neither works okay and both crash.
 This program does not do what you might think it does! Running it like:
 
 ```sh
-./primenum 13
+    ./primenum 13
 ```
 
 will seemingly wait for input exactly because it is waiting for input. See the
@@ -2176,26 +2174,26 @@ It appears that the crash happens in more than one place. For instance it has
 happened at
 
 ```c
-XCheckMaskEvent(d, 4,&e)
+    XCheckMaskEvent(d, 4,&e)
 ```
 
 but it's also happened at
 
 ```c
-else XDrawPoint(d    ,w,g,(l.s+=l.a)>>9,    h=(l.c+=l.b)>>9)
+    else XDrawPoint(d    ,w,g,(l.s+=l.a)>>9,    h=(l.c+=l.b)>>9)
 ```
 
 In both cases the pointer `d` was corrupted:
 
 ```
-(lldb) p d
-(Display *) 0x0000000000000001
+    (lldb) p d
+    (Display *) 0x0000000000000001
 ```
 
 It is believed that it also happened at
 
 ```c
-XDrawString(d,w,g,W/3,H/2,m,B);
+    XDrawString(d,w,g,W/3,H/2,m,B);
 ```
 
 in `J()` and for the same reason.
@@ -2203,7 +2201,7 @@ in `J()` and for the same reason.
 The loop seems to be stuck in the call to `usleep(3)` like:
 
 ```c
-usleep(p*200);
+    usleep(p*200);
 ```
 
 which happens to be in a `while()` loop.
@@ -2241,17 +2239,17 @@ Segmentation fault will occur in some systems. For instance on macOS with the
 arm64 chip:
 
 ```sh
-./gavin > kernel
+    ./gavin > kernel
 ```
 
 When trying to link `gavin.o` to produce `sh`, the linker generates:
 
 ```
-Undefined symbols for architecture arm64:
-  "start", referenced from:
-     -u command line option
-     (maybe you meant: __start)
-ld: symbol(s) not found for architecture arm64
+    Undefined symbols for architecture arm64:
+      "start", referenced from:
+	 -u command line option
+	 (maybe you meant: __start)
+    ld: symbol(s) not found for architecture arm64
 ```
 
 We believe that this simply won't work with non x86 specific systems but perhaps
@@ -2263,73 +2261,73 @@ Although not related some recent changes were made to 2004/gavin to let it
 compile under clang. The following patch was applied:
 
 ```patch
-diff --git a/2004/gavin/gavin.c b/2004/gavin/gavin.c
-index c967b7e..2082b49 100644
---- a/2004/gavin/gavin.c
-+++ b/2004/gavin/gavin.c
-@@ -1,8 +1,9 @@
-+int main(int t, char **q, char **d) { return cain(t, (int)q, (int)d); }
- #define G(n) int n(int t, int q, int d)
- #define X(p,t,s) (p>=t&&p<(t+s)&&(p-(t)&1023)<(s&1023))
- #define U(m) *((signed char *)(m))
- #define F if(!--q){
--#define I(s) (int)main-(int)s
-+#define I(s) (int)cain-(int)s
- #define P(s,c,k) for(h=0; h>>14==0; h+=129)Y(16*c+h/1024+Y(V+36))&128>>(h&7)?U(s+(h&15367))=k:k
+    diff --git a/2004/gavin/gavin.c b/2004/gavin/gavin.c
+    index c967b7e..2082b49 100644
+    --- a/2004/gavin/gavin.c
+    +++ b/2004/gavin/gavin.c
+    @@ -1,8 +1,9 @@
+    +int main(int t, char **q, char **d) { return cain(t, (int)q, (int)d); }
+     #define G(n) int n(int t, int q, int d)
+     #define X(p,t,s) (p>=t&&p<(t+s)&&(p-(t)&1023)<(s&1023))
+     #define U(m) *((signed char *)(m))
+     #define F if(!--q){
+    -#define I(s) (int)main-(int)s
+    +#define I(s) (int)cain-(int)s
+     #define P(s,c,k) for(h=0; h>>14==0; h+=129)Y(16*c+h/1024+Y(V+36))&128>>(h&7)?U(s+(h&15367))=k:k
 
- G (B)
-@@ -52,7 +53,7 @@ else
+     G (B)
+    @@ -52,7 +53,7 @@ else
 
- G (_);
- G (o);
--G (main)
-+G (cain)
- {
-   Z, k = K;
-   if (!t)
+     G (_);
+     G (o);
+    -G (main)
+    +G (cain)
+     {
+       Z, k = K;
+       if (!t)
 ```
 
 The original Makefile from 2004 had the following to say about this entry:
 
 ```make
-# Special flags for the gavin entry
-#
-# FYI: Older versions of GCC have a bug in -O2 optimization, hence -O1
-#
-GAVIN_OPT= -O1
-GAVIN_FLAGS=\
-        '-DY(m)=*((int*)(m))'\
-        '-DE(f,a,b,c)=((G((*)))(f))(a,b,c)'\
-        '-DM=for(D=0;D<786432;D++)'\
-        '-DZ=int i=0,j=0,h,n,p=393728,s=26739,C,D'\
-        '-DV=0x90200'\
-        '-DK=0'\
-        '-DR=while((C=E(V-8,100,0,0))&3&&(D=E(V-8,96,0,0))|3){'\
-        '-DL(c,d)=E(V+8,100,c,0);R}E(V+8,96,d,0);R}'
+    # Special flags for the gavin entry
+    #
+    # FYI: Older versions of GCC have a bug in -O2 optimization, hence -O1
+    #
+    GAVIN_OPT= -O1
+    GAVIN_FLAGS=\
+	    '-DY(m)=*((int*)(m))'\
+	    '-DE(f,a,b,c)=((G((*)))(f))(a,b,c)'\
+	    '-DM=for(D=0;D<786432;D++)'\
+	    '-DZ=int i=0,j=0,h,n,p=393728,s=26739,C,D'\
+	    '-DV=0x90200'\
+	    '-DK=0'\
+	    '-DR=while((C=E(V-8,100,0,0))&3&&(D=E(V-8,96,0,0))|3){'\
+	    '-DL(c,d)=E(V+8,100,c,0);R}E(V+8,96,d,0);R}'
 
-# ...
+    # ...
 
-# Best of Show
-#
-gavin: gavin.c
-        ${CC} ${GAVIN_OPT} -o gavin ${GAVIN_FLAGS} gavin.c
-        ${RM} -f kernel
-        ./gavin > kernel
-        ${CC} ${GAVIN_OPT} -c ${GAVIN_FLAGS} -DB=_start '-Dputchar(a)=' gavin.c
-        ${RM} -f sh
-        ${LD} -s -o sh gavin.o
-        ${RM} -f vi
-        ${CP} sh vi
-        ${RM} -f fs.tar
-        ${TAR} -cvf fs.tar sh vi gavin.c index.html prim
+    # Best of Show
+    #
+    gavin: gavin.c
+	    ${CC} ${GAVIN_OPT} -o gavin ${GAVIN_FLAGS} gavin.c
+	    ${RM} -f kernel
+	    ./gavin > kernel
+	    ${CC} ${GAVIN_OPT} -c ${GAVIN_FLAGS} -DB=_start '-Dputchar(a)=' gavin.c
+	    ${RM} -f sh
+	    ${LD} -s -o sh gavin.o
+	    ${RM} -f vi
+	    ${CP} sh vi
+	    ${RM} -f fs.tar
+	    ${TAR} -cvf fs.tar sh vi gavin.c index.html prim
 
-gavin_clean:
-        ${RM} -f sh vi kernel gavin.o
+    gavin_clean:
+	    ${RM} -f sh vi kernel gavin.o
 
-gavin_clobber: gavin_clean
-        ${RM} -f gavin fs.tar
+    gavin_clobber: gavin_clean
+	    ${RM} -f gavin fs.tar
 
-gavin_files: boot.b lilo.conf prim gavin_install.txt
+    gavin_files: boot.b lilo.conf prim gavin_install.txt
 ```
 
 The current ([Makefile](2004/gavin/Makefile) was modified to try and
@@ -2351,24 +2349,24 @@ things that are not bugs but documented (mis)features.
 The author stated that:
 
 ```
-Arguments matching `/[^2]22$/` cause the program to segfault
-after rapidly exhausting the available stack space.  I could
-probably fix this by adding some special cases to the code,
-but [Blaine the Mono] it's quite a bit more exciting this way,
-don't you think?[/Blaine]  Since the trailing `22` will be
-its own atom anyway, you can just insert a space in front of
-it if you run into this feature (e.g. `1 22` instead of `122`).
+    Arguments matching `/[^2]22$/` cause the program to segfault
+    after rapidly exhausting the available stack space.  I could
+    probably fix this by adding some special cases to the code,
+    but [Blaine the Mono] it's quite a bit more exciting this way,
+    don't you think?[/Blaine]  Since the trailing `22` will be
+    its own atom anyway, you can just insert a space in front of
+    it if you run into this feature (e.g. `1 22` instead of `122`).
 
-Arguments matching `/(?:.){10,}/` will produce visually incorrect
-results (e.g., generation 1 starting from 1111111111 will
-print as `: 1`), but there's nothing interesting about these
-arguments that can't be modeled using shorter runs of the same
-symbol.
+    Arguments matching `/(?:.){10,}/` will produce visually incorrect
+    results (e.g., generation 1 starting from 1111111111 will
+    print as `: 1`), but there's nothing interesting about these
+    arguments that can't be modeled using shorter runs of the same
+    symbol.
 
-Arguments matching `/(?:.){257,}/` may produce mathematically
-incorrect results (e.g., generation 1 starting from a string
-of 257 `1`s will be calculated as `11`); the remark from the
-previous paragraph applies here also.
+    Arguments matching `/(?:.){257,}/` may produce mathematically
+    incorrect results (e.g., generation 1 starting from a string
+    of 257 `1`s will be calculated as `11`); the remark from the
+    previous paragraph applies here also.
 ```
 
 
@@ -2522,8 +2520,8 @@ obnoxious in macOS as it shows it at runtime (redirecting `stderr` to
 with at least `computer.tofu` input file:
 
 ```diff
-12a13
-#define gets(c) fgets((c),PI,stdin)&&(((c)[strlen((c))-1]='\0'),c!=NULL)
+    12a13
+    #define gets(c) fgets((c),PI,stdin)&&(((c)[strlen((c))-1]='\0'),c!=NULL)
 ```
 
 
@@ -2573,18 +2571,17 @@ Incorrect formulas will ungracefully crash the program.
 The author stated:
 
 ```
-If you pick a number higher than 19186, the program will return a
-solution but it will be a rotation of one of the first 19186.  This is
-because the cross shaped piece fits 48 ways in the 4x4 cube, but only
-2 of those ways are unique - you can rotate one of those to make any
-of the other 46.  The algorithm used always places the cross piece
-first, so the first two placings of that piece result in the 19186
-unique solutions.
+    If you pick a number higher than 19186, the program will return a
+    solution but it will be a rotation of one of the first 19186.  This is
+    because the cross shaped piece fits 48 ways in the 4x4 cube, but only
+    2 of those ways are unique - you can rotate one of those to make any
+    of the other 46.  The algorithm used always places the cross piece
+    first, so the first two placings of that piece result in the 19186
+    unique solutions.
 
-If you pick a number higher than 460464 (24x19186) the program will
-return without outputting a solution.  If you can wait that long.
+    If you pick a number higher than 460464 (24x19186) the program will
+    return without outputting a solution.  If you can wait that long.
 ```
-
 
 
 ## <a name="2006_toledo2"></a>2006/toledo2
@@ -2729,7 +2726,7 @@ macOS. A few things that were noticed depending on `asan` sanitisers specified.
 With `address` in linux:
 
 ```
-richards.c:101:9: runtime error: null pointer passed as argument 2, which is declared to never be null
+    richards.c:101:9: runtime error: null pointer passed as argument 2, which is declared to never be null
 ```
 
 but it actually works. This code is:
@@ -2744,13 +2741,13 @@ but it actually works. This code is:
 Okay but what about argument 2? Well `W` is defined as:
 
 ```c
-#define W(c) e=memmove(e,x[(u)c], y[(u)c])+y[(u)c];
+    #define W(c) e=memmove(e,x[(u)c], y[(u)c])+y[(u)c];
 ```
 
 so it would appear that
 
 ```c
-x[(u)c]
+    x[(u)c]
 ```
 
 (at least in my tired head?) is NULL. But why does it work then?
@@ -2760,25 +2757,25 @@ NOTE: `u` is `int`.
 Under macOS (with the arm64 chip) we get:
 
 ```
-UndefinedBehaviorSanitizer:DEADLYSIGNAL
-==10834==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0xffffffffffffffff (pc 0x00019f446748 bp 0x00016f353100 sp 0x00016f352b90 T139066)
-==10834==The signal is caused by a WRITE memory access.
-    #0 0x19f446748 in _platform_memmove+0xa8 (libsystem_platform.dylib:arm64e+0x3748) (BuildId: 756cd10d62a032839e57cbaa810c95ac32000000200000000100000000030d00)
-    #1 0x100c33c2c in main richards.c:202
-    #2 0x19f0bff24  (<unknown module>)
+    UndefinedBehaviorSanitizer:DEADLYSIGNAL
+    ==10834==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0xffffffffffffffff (pc 0x00019f446748 bp 0x00016f353100 sp 0x00016f352b90 T139066)
+    ==10834==The signal is caused by a WRITE memory access.
+	#0 0x19f446748 in _platform_memmove+0xa8 (libsystem_platform.dylib:arm64e+0x3748) (BuildId: 756cd10d62a032839e57cbaa810c95ac32000000200000000100000000030d00)
+	#1 0x100c33c2c in main richards.c:202
+	#2 0x19f0bff24  (<unknown module>)
 
-==10834==Register values:
- x[0] = 0xffffffffffffffff   x[1] = 0x0000000100ab18c1   x[2] = 0x00000000000000cf   x[3] = 0x0000000000000000
- x[4] = 0x0000000100ab18a1   x[5] = 0x0000000000000001   x[6] = 0x000000000000000a   x[7] = 0x0000000000000000
- x[8] = 0x00000001015972b8   x[9] = 0xffffffffffffffff  x[10] = 0x0000000000000001  x[11] = 0x00000000000001f0
-x[12] = 0x0000000000000001  x[13] = 0x00000000000003e0  x[14] = 0x0000000000000001  x[15] = 0x0000000000000084
-x[16] = 0x000000019f4466a0  x[17] = 0x00000001ff3ad908  x[18] = 0x0000000000000000  x[19] = 0x0000000100c32a80
-x[20] = 0x00000001017e0000  x[21] = 0x00000001017e1910  x[22] = 0x000000016f353530  x[23] = 0x000000019f13a366
-x[24] = 0x000000016f3534b0  x[25] = 0x0000000000000001  x[26] = 0x0000000000000000  x[27] = 0x0000000000000000
-x[28] = 0x0000000000000000     fp = 0x000000016f353100     lr = 0x0000000100aaf880     sp = 0x000000016f352b90
-UndefinedBehaviorSanitizer can not provide additional info.
-SUMMARY: UndefinedBehaviorSanitizer: SEGV (libsystem_platform.dylib:arm64e+0x3748) (BuildId: 756cd10d62a032839e57cbaa810c95ac32000000200000000100000000030d00) in _platform_memmove+0xa8
-==10834==ABORTING
+    ==10834==Register values:
+     x[0] = 0xffffffffffffffff   x[1] = 0x0000000100ab18c1   x[2] = 0x00000000000000cf   x[3] = 0x0000000000000000
+     x[4] = 0x0000000100ab18a1   x[5] = 0x0000000000000001   x[6] = 0x000000000000000a   x[7] = 0x0000000000000000
+     x[8] = 0x00000001015972b8   x[9] = 0xffffffffffffffff  x[10] = 0x0000000000000001  x[11] = 0x00000000000001f0
+    x[12] = 0x0000000000000001  x[13] = 0x00000000000003e0  x[14] = 0x0000000000000001  x[15] = 0x0000000000000084
+    x[16] = 0x000000019f4466a0  x[17] = 0x00000001ff3ad908  x[18] = 0x0000000000000000  x[19] = 0x0000000100c32a80
+    x[20] = 0x00000001017e0000  x[21] = 0x00000001017e1910  x[22] = 0x000000016f353530  x[23] = 0x000000019f13a366
+    x[24] = 0x000000016f3534b0  x[25] = 0x0000000000000001  x[26] = 0x0000000000000000  x[27] = 0x0000000000000000
+    x[28] = 0x0000000000000000     fp = 0x000000016f353100     lr = 0x0000000100aaf880     sp = 0x000000016f352b90
+    UndefinedBehaviorSanitizer can not provide additional info.
+    SUMMARY: UndefinedBehaviorSanitizer: SEGV (libsystem_platform.dylib:arm64e+0x3748) (BuildId: 756cd10d62a032839e57cbaa810c95ac32000000200000000100000000030d00) in _platform_memmove+0xa8
+    ==10834==ABORTING
 ```
 
 and naturally it does not work.
@@ -2790,68 +2787,67 @@ address allocated in macOS? Or is it?
 Now with `address` sanitiser both linux and macOS crash at:
 
 ```
-=================================================================
-==10983==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x00016f8d5e78 at pc 0x0001005dd910 bp 0x00016f8d5cd0 sp 0x00016f8d5cc8
-READ of size 8 at 0x00016f8d5e78 thread T0
-    #0 0x1005dd90c in rd richards.c:132
-    #1 0x1005ddf8c in re richards.c:149
-    #2 0x1005110a0 in t richards.c:108
-    #3 0x1005df72c in main richards.c:189
-    #4 0x19f0bff24  (<unknown module>)
+    =================================================================
+    ==10983==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x00016f8d5e78 at pc 0x0001005dd910 bp 0x00016f8d5cd0 sp 0x00016f8d5cc8
+    READ of size 8 at 0x00016f8d5e78 thread T0
+	#0 0x1005dd90c in rd richards.c:132
+	#1 0x1005ddf8c in re richards.c:149
+	#2 0x1005110a0 in t richards.c:108
+	#3 0x1005df72c in main richards.c:189
+	#4 0x19f0bff24  (<unknown module>)
 
-Address 0x00016f8d5e78 is located in stack of thread T0 at offset 56 in frame
-    #0 0x1005dd678 in rd richards.c:129
+    Address 0x00016f8d5e78 is located in stack of thread T0 at offset 56 in frame
+	#0 0x1005dd678 in rd richards.c:129
 
-  This frame has 2 object(s):
-    [32, 36) 'v.addr'
-    [48, 56) 'a' (line 130) <== Memory access at offset 56 overflows this variable
-HINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork
-      (longjmp and C++ exceptions *are* supported)
-SUMMARY: AddressSanitizer: stack-buffer-overflow richards.c:132 in rd
-Shadow bytes around the buggy address:
-  0x00702df3ab70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x00702df3ab80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x00702df3ab90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x00702df3aba0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x00702df3abb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-=>0x00702df3abc0: 00 00 00 00 00 00 00 00 f1 f1 f1 f1 04 f2 00[f3]
-  0x00702df3abd0: f3 f3 f3 f3 00 00 00 00 00 00 00 00 00 00 00 00
-  0x00702df3abe0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x00702df3abf0: 00 00 00 00 f1 f1 f1 f1 00 f3 f3 f3 00 00 00 00
-  0x00702df3ac00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x00702df3ac10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-Shadow byte legend (one shadow byte represents 8 application bytes):
-  Addressable:           00
-  Partially addressable: 01 02 03 04 05 06 07
-  Heap left redzone:       fa
-  Freed heap region:       fd
-  Stack left redzone:      f1
-  Stack mid redzone:       f2
-  Stack right redzone:     f3
-  Stack after return:      f5
-  Stack use after scope:   f8
-  Global redzone:          f9
-  Global init order:       f6
-  Poisoned by user:        f7
-  Container overflow:      fc
-  Array cookie:            ac
-  Intra object redzone:    bb
-  ASan internal:           fe
-  Left alloca redzone:     ca
-  Right alloca redzone:    cb
-==10983==ABORTING
-/bin/bash: line 1: 10983 Abort trap: 6           ./richards
+      This frame has 2 object(s):
+	[32, 36) 'v.addr'
+	[48, 56) 'a' (line 130) <== Memory access at offset 56 overflows this variable
+    HINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork
+	  (longjmp and C++ exceptions *are* supported)
+    SUMMARY: AddressSanitizer: stack-buffer-overflow richards.c:132 in rd
+    Shadow bytes around the buggy address:
+      0x00702df3ab70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      0x00702df3ab80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      0x00702df3ab90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      0x00702df3aba0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      0x00702df3abb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    =>0x00702df3abc0: 00 00 00 00 00 00 00 00 f1 f1 f1 f1 04 f2 00[f3]
+      0x00702df3abd0: f3 f3 f3 f3 00 00 00 00 00 00 00 00 00 00 00 00
+      0x00702df3abe0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      0x00702df3abf0: 00 00 00 00 f1 f1 f1 f1 00 f3 f3 f3 00 00 00 00
+      0x00702df3ac00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      0x00702df3ac10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    Shadow byte legend (one shadow byte represents 8 application bytes):
+      Addressable:           00
+      Partially addressable: 01 02 03 04 05 06 07
+      Heap left redzone:       fa
+      Freed heap region:       fd
+      Stack left redzone:      f1
+      Stack mid redzone:       f2
+      Stack right redzone:     f3
+      Stack after return:      f5
+      Stack use after scope:   f8
+      Global redzone:          f9
+      Global init order:       f6
+      Poisoned by user:        f7
+      Container overflow:      fc
+      Array cookie:            ac
+      Intra object redzone:    bb
+      ASan internal:           fe
+      Left alloca redzone:     ca
+      Right alloca redzone:    cb
+    ==10983==ABORTING
+    /bin/bash: line 1: 10983 Abort trap: 6           ./richards
 ```
 
 which corresponds to the code:
 
 ```c
-o rd(u v)
-{
-    o *a = 0, **b = &a, **c = b + 32;
-    x[v] = w;
-    for (; b < c && (*b < (o *)w || *b > (o *) T || *b == &v); b++); /* LINE 132 */
-
+    o rd(u v)
+    {
+	o *a = 0, **b = &a, **c = b + 32;
+	x[v] = w;
+	for (; b < c && (*b < (o *)w || *b > (o *) T || *b == &v); b++); /* LINE 132 */
 ```
 
 but this seems to not necessarily be relevant since without it it works in
@@ -2860,27 +2856,26 @@ linux.
 A warning of interest when compiling is:
 
 ```
+    richards.c:169:15: warning: incompatible pointer types initializing 'f *' (aka 'void (**)(volatile void *)') with an expression of type 'o ()' (aka 'void ()') [-Wincompatible-pointer-types]
+    f *lib1[] = { T, T, T, T, T } ;
 
-richards.c:169:15: warning: incompatible pointer types initializing 'f *' (aka 'void (**)(volatile void *)') with an expression of type 'o ()' (aka 'void ()') [-Wincompatible-pointer-types]
-f *lib1[] = { T, T, T, T, T } ;
+    ...
 
-...
-
-richards.c:170:15: warning: incompatible pointer types initializing 'f *' (aka 'void (**)(volatile void *)') with an expression of type 'o ()' (aka 'void ()') [-Wincompatible-pointer-types]
-f *lib2[] = { T, ld, lp, lx, l1 } ;
-              ^
-richards.c:170:18: warning: incompatible pointer types initializing 'f *' (aka 'void (**)(volatile void *)') with an expression of type 'void (volatile dt)' (aka 'void (struct (unnamed at richards.c:36:3) *volatile)') [-Wincompatible-pointer-types]
-f *lib2[] = { T, ld, lp, lx, l1 } ;
-                 ^~
-richards.c:170:22: warning: incompatible pointer types initializing 'f *' (aka 'void (**)(volatile void *)') with an expression of type 'void (volatile dt)' (aka 'void (struct (unnamed at richards.c:36:3) *volatile)') [-Wincompatible-pointer-types]
-f *lib2[] = { T, ld, lp, lx, l1 } ;
-                     ^~
-richards.c:170:26: warning: incompatible pointer types initializing 'f *' (aka 'void (**)(volatile void *)') with an expression of type 'void (volatile dt)' (aka 'void (struct (unnamed at richards.c:36:3) *volatile)') [-Wincompatible-pointer-types]
-f *lib2[] = { T, ld, lp, lx, l1 } ;
-                         ^~
-richards.c:170:30: warning: incompatible pointer types initializing 'f *' (aka 'void (**)(volatile void *)') with an expression of type 'void (volatile dt)' (aka 'void (struct (unnamed at richards.c:36:3) *volatile)') [-Wincompatible-pointer-types]
-f *lib2[] = { T, ld, lp, lx, l1 } ;
-                             ^~
+    richards.c:170:15: warning: incompatible pointer types initializing 'f *' (aka 'void (**)(volatile void *)') with an expression of type 'o ()' (aka 'void ()') [-Wincompatible-pointer-types]
+    f *lib2[] = { T, ld, lp, lx, l1 } ;
+		  ^
+    richards.c:170:18: warning: incompatible pointer types initializing 'f *' (aka 'void (**)(volatile void *)') with an expression of type 'void (volatile dt)' (aka 'void (struct (unnamed at richards.c:36:3) *volatile)') [-Wincompatible-pointer-types]
+    f *lib2[] = { T, ld, lp, lx, l1 } ;
+		     ^~
+    richards.c:170:22: warning: incompatible pointer types initializing 'f *' (aka 'void (**)(volatile void *)') with an expression of type 'void (volatile dt)' (aka 'void (struct (unnamed at richards.c:36:3) *volatile)') [-Wincompatible-pointer-types]
+    f *lib2[] = { T, ld, lp, lx, l1 } ;
+			 ^~
+    richards.c:170:26: warning: incompatible pointer types initializing 'f *' (aka 'void (**)(volatile void *)') with an expression of type 'void (volatile dt)' (aka 'void (struct (unnamed at richards.c:36:3) *volatile)') [-Wincompatible-pointer-types]
+    f *lib2[] = { T, ld, lp, lx, l1 } ;
+			     ^~
+    richards.c:170:30: warning: incompatible pointer types initializing 'f *' (aka 'void (**)(volatile void *)') with an expression of type 'void (volatile dt)' (aka 'void (struct (unnamed at richards.c:36:3) *volatile)') [-Wincompatible-pointer-types]
+    f *lib2[] = { T, ld, lp, lx, l1 } ;
+				 ^~
 ```
 
 This can be fixed easily enough however but it doesn't appear to matter in this
@@ -2942,8 +2937,8 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
 The author stated:
 
 ```
-If there is a division by zero, square-root of a negative number, or similar
-operation, then the results are undefined.
+    If there is a division by zero, square-root of a negative number, or similar
+    operation, then the results are undefined.
 ```
 
 
@@ -2956,31 +2951,31 @@ operation, then the results are undefined.
 The author stated:
 
 ```
-The memory locations of `argv` are used for various purposes. Therefore, the
-program name (default `deckmyn`) must be *at least 4 characters long*, including
-possibly the path. This, along with the ending `'\0'`, gives a minimum 5 bytes of
-useful memory space. Otherwise, the program may attempt to write outside the
-string.
+    The memory locations of `argv` are used for various purposes. Therefore, the
+    program name (default `deckmyn`) must be *at least 4 characters long*, including
+    possibly the path. This, along with the ending `'\0'`, gives a minimum 5 bytes of
+    useful memory space. Otherwise, the program may attempt to write outside the
+    string.
 
-The code is quite sensitive. Errors in the input can lead to strange results.
-The code does not read beyond the end of the music input, but that is about the
-only error checking available. Any input that is not according to the rules in
-the deckmyn.html, may cause errors.
+    The code is quite sensitive. Errors in the input can lead to strange results.
+    The code does not read beyond the end of the music input, but that is about the
+    only error checking available. Any input that is not according to the rules in
+    the deckmyn.html, may cause errors.
 
-The program has no special hardware limitations or requirements, other than 8bit
-`char` (`signed` or `unsigned`) and two's complement negatives.
+    The program has no special hardware limitations or requirements, other than 8bit
+    `char` (`signed` or `unsigned`) and two's complement negatives.
 
-The limitations of using `char` as counters for e.g. the number of music staves
-are minor. 127 staves to a page is rather a lot.
+    The limitations of using `char` as counters for e.g. the number of music staves
+    are minor. 127 staves to a page is rather a lot.
 
-The file layout must be exactly the same as deckmyn.c though, only the locations
-of space (`" "`) may differ.
+    The file layout must be exactly the same as deckmyn.c though, only the locations
+    of space (`" "`) may differ.
 
-Every element in the music is given by a string of *exactly* 3 characters. Any
-violation of this will result in the rest of the music being interpreted in some
-randomly wrong way. Notice that in a file, the newline is also a character!
-Therefore, when preparing music in a file, care should be taken that the last
-musical element of a line is only 2 characters!
+    Every element in the music is given by a string of *exactly* 3 characters. Any
+    violation of this will result in the rest of the music being interpreted in some
+    randomly wrong way. Notice that in a file, the newline is also a character!
+    Therefore, when preparing music in a file, care should be taken that the last
+    musical element of a line is only 2 characters!
 ```
 
 
@@ -3012,21 +3007,20 @@ The author stated:
 The author stated:
 
 ```
-If the input doesn't start with a valid program, that is,
-if the interpreter reaches end-of-file during program parsing,
-it will crash in some way. E.g. the following might dump core:
+    If the input doesn't start with a valid program, that is,
+    if the interpreter reaches end-of-file during program parsing,
+    it will crash in some way. E.g. the following might dump core:
 
-    echo -n "U" | ./tromp
+	echo -n "U" | ./tromp
 
-Furthermore, the interpreter requires the initial encoded lambda term to be closed,
-that is, variable n can only appear within at least 'n' enclosing lambdas.
-For instance, here the term '\ 5' is not closed, causing the interpreter to crash when
-looking into a null-pointer environment:
+    Furthermore, the interpreter requires the initial encoded lambda term to be closed,
+    that is, variable n can only appear within at least 'n' enclosing lambdas.
+    For instance, here the term '\ 5' is not closed, causing the interpreter to crash when
+    looking into a null-pointer environment:
 
-    echo ">Hello, world" | ./tromp
+	echo ">Hello, world" | ./tromp
 
-will likely dump core.
-
+    will likely dump core.
 ```
 
 
@@ -3231,7 +3225,7 @@ rely on the entry as the below shows. One should be able to do:
 
 
 ```sh
-echo 'No. I want chocolate!' | ./prog > chocolate.raw
+    echo 'No. I want chocolate!' | ./prog > chocolate.raw
 
 ./prog e < chocolate.raw
 ```
@@ -3239,27 +3233,27 @@ echo 'No. I want chocolate!' | ./prog > chocolate.raw
 and get:
 
 ```
-No. I want some chocolate!
+    No. I want some chocolate!
 ```
 
 but instead we get:
 
 ```
-IT FHOCOLITE!
+    IT FHOCOLITE!
 ```
 
 which is very wrong. If however one does:
 
 ```
-echo IOCCC | ./prog > ioccc.raw
+    echo IOCCC | ./prog > ioccc.raw
 
-./prog e < ioccc.raw
+    ./prog e < ioccc.raw
 ```
 
 they will properly get:
 
 ```
-IOCCC
+    IOCCC
 ```
 
 
@@ -3374,9 +3368,9 @@ loop printing whitespace.
 When you run it on a JSON file you will see something like:
 
 ```sh
-$ ./prog < ioccc.json > ioccc.html
-Assertion failed: (rulez), function C, file prog.c, line 124.
-Abort trap: 6
+    $ ./prog < ioccc.json > ioccc.html
+    Assertion failed: (rulez), function C, file prog.c, line 124.
+    Abort trap: 6
 ```
 
 (from say running `./try.sh) but this is expected and the file `ioccc.html` will
@@ -3397,8 +3391,8 @@ After exiting the program (with ctrl-e) if you try running it again you will
 likely see:
 
 ```
->bootT5pw
-         ]h_	8D3[]
+    >bootT5pw
+	     ]h_	8D3[]
 ```
 
 where `[]` is the cursor. When this happens if you hit enter (this is necessary
@@ -3512,13 +3506,13 @@ anyway as they use the full alphabet. To test that it works one can have a
 script like:
 
 ```sh
-LC_ALL=C  aäbcdefghijklmnoöpqrsßtuüvwxyz | LC_ALL=C grep .. | LC_ALL=de_DE.UTF-8 ./prog aäbcdefghijklmnoöpqrsßtuüvwxyz
+    LC_ALL=C  aäbcdefghijklmnoöpqrsßtuüvwxyz | LC_ALL=C grep .. | LC_ALL=de_DE.UTF-8 ./prog aäbcdefghijklmnoöpqrsßtuüvwxyz
 ```
 
 If you run this you should see:
 
 ```
-aäbcdefghijklmnoöpqrsßtuüvwxyz
+    aäbcdefghijklmnoöpqrsßtuüvwxyz
 ```
 
 which shows it works. However as the de.sh script refers to all letters it can't
@@ -3527,13 +3521,13 @@ letters or the Eszett are considered letters in the German alphabet, Cody noted
 in the de.sh/de.alt.sh scripts:
 
 ```
-# Are the umlauts ä, ö, ü and Eszett (ß) letters in the German alphabet? There
-# is more than one opinion on the subject but a lot of words do have an umlaut
-# (or Umlaut in German). In some (probably all) systems this script outputs
-# nothing probably because it's very hard to form a perfect pangram in German,
-# if it's not impossible. Nevertheless, we do include the other characters
-# whether or not they are in your view considered part of the alphabet for the
-# reason that so many words have them.
+    # Are the umlauts ä, ö, ü and Eszett (ß) letters in the German alphabet? There
+    # is more than one opinion on the subject but a lot of words do have an umlaut
+    # (or Umlaut in German). In some (probably all) systems this script outputs
+    # nothing probably because it's very hard to form a perfect pangram in German,
+    # if it's not impossible. Nevertheless, we do include the other characters
+    # whether or not they are in your view considered part of the alphabet for the
+    # reason that so many words have them.
 ```
 
 ## <a name="2019_dogon"></a>2019/dogon
@@ -3564,12 +3558,12 @@ working directory. For instance [Cody Boone
 Ferguson](authors.html#Cody_Boone_Ferguson) showed us this:
 
 ```sh
-$ ls -al |grep '^s'
-srwxr-xr-x   1 cody  staff     0 Apr  6 08:19 .BDHFHALG=
-srwxr-xr-x   1 cody  staff     0 Apr  6 08:15 .CGGHAMGC=
-srwxr-xr-x   1 cody  staff     0 Apr  6 08:16 .CMDGAELH=
-srwxr-xr-x   1 cody  staff     0 Apr  3 08:47 .CMLBCCDA=
-[...]
+    $ ls -al |grep '^s'
+    srwxr-xr-x   1 cody  staff     0 Apr  6 08:19 .BDHFHALG=
+    srwxr-xr-x   1 cody  staff     0 Apr  6 08:15 .CGGHAMGC=
+    srwxr-xr-x   1 cody  staff     0 Apr  6 08:16 .CMDGAELH=
+    srwxr-xr-x   1 cody  staff     0 Apr  3 08:47 .CMLBCCDA=
+    [...]
 ```
 
 This is NOT a bug and you'll have to (at least at this time?) delete the files
@@ -3580,13 +3574,13 @@ He provides the following tips on this situation. A simpler way to find sockets
 in the directory:
 
 ```sh
-file .*|grep socket|cut -f1 -d:
+    file .*|grep socket|cut -f1 -d:
 ```
 
 To delete them you can do:
 
 ```sh
-find . -exec file '{}' \;|grep socket|cut -f 1 -d: | xargs rm -f
+    find . -exec file '{}' \;|grep socket|cut -f 1 -d: | xargs rm -f
 ```
 
 though one might want to check that the program is not currently running. :-)

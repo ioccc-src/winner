@@ -3,7 +3,7 @@
 If you have X11 installed:
 
 ```sh
-make
+    make
 ```
 
 There are two alternate versions, [one that lets you reconfigure the
@@ -14,7 +14,7 @@ Windows](toledo.alt2.c). See [Alternate code](#alternate-code) below.
 ## To use:
 
 ```sh
-./toledo
+    ./toledo
 ```
 
 
@@ -36,13 +36,13 @@ have the right names you can define the macros `FIRE`, `FORWARD`, `BACKWARD`,
 `LEFT`, `RIGHT`, `WIDTH` and `HEIGHT`. Here are the defaults:
 
 ```
-FIRE= XK_BackSpace:XK_Tab
-FORWARD= XK_Up:XK_w
-BACKWARD= XK_Down:XK_s
-LEFT= XK_Left:XK_a
-RIGHT= XK_Right:XK_d
-WIDTH= 512
-HEIGHT= 288
+    FIRE= XK_BackSpace:XK_Tab
+    FORWARD= XK_Up:XK_w
+    BACKWARD= XK_Down:XK_s
+    LEFT= XK_Left:XK_a
+    RIGHT= XK_Right:XK_d
+    WIDTH= 512
+    HEIGHT= 288
 ```
 
 but you can change them about however you like, even with other keys. For
@@ -50,7 +50,7 @@ instance to swap `LEFT` and `RIGHT`:
 
 
 ```sh
-make clobber LEFT=XK_Right:XK_d RIGHT=XK_Left:XK_a alt
+    make clobber LEFT=XK_Right:XK_d RIGHT=XK_Left:XK_a alt
 ```
 
 but you can specify something completely else and you can pick and choose which
@@ -76,7 +76,7 @@ Like Oscar's previous winning X11 program for the 19th IOCCC, if
 you remove both the X11 include files and replace them with
 
 ```c
-#include "layer.c"
+    #include "layer.c"
 ```
 
 you ought to be able to compile and run this program on Windows.

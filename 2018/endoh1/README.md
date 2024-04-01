@@ -1,14 +1,14 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./prog < textfile > output.gif
+    ./prog < textfile > output.gif
 ```
 
 
@@ -17,7 +17,7 @@ make
 To see the input files and feed them to the program, redirecting to GIF files:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -41,8 +41,8 @@ least 2MiB of memory to run in.
 This program generates an animated GIF from a plain text.  Run:
 
 ```sh
-cc -o prog prog.c
-./prog < invisible.txt > invisible.gif
+    cc -o prog prog.c
+    ./prog < invisible.txt > invisible.gif
 ```
 
 Open `invisible.gif` with a GIF viewer that can show animated GIFs and then wait
@@ -52,14 +52,14 @@ letters that leave the mark and ones that do not?
 Other examples:
 
 ```sh
-./prog < golem.txt > golem.gif
-./prog < smily.txt > smily.gif
+    ./prog < golem.txt > golem.gif
+    ./prog < smily.txt > smily.gif
 ```
 
 The program itself has a hidden message.
 
 ```sh
-./prog < prog.c > prog.gif
+    ./prog < prog.c > prog.gif
 ```
 
 <!--

@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an alternate version that will theoretically work with Windows
@@ -14,7 +14,7 @@ code](#alternate-code) section below.
 The current status of this entry is:
 
 ```
-STATUS: known bug - please help us fix
+    STATUS: known bug - please help us fix
 ```
 
 For more detailed information see [2014 vik bugs](../../bugs.html#2014_vik).
@@ -23,16 +23,16 @@ For more detailed information see [2014 vik bugs](../../bugs.html#2014_vik).
 ## To use:
 
 ```sh
-echo foo | ./prog > audio_file.raw
+    echo foo | ./prog > audio_file.raw
 
-echo foo | ./prog | mplayer -demuxer rawaudio -
+    echo foo | ./prog | mplayer -demuxer rawaudio -
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -45,7 +45,7 @@ instructions on how to get it to work with Windows.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -60,14 +60,13 @@ This program sets a new tone for obfuscation. But do you understand
 what it says about obfuscation? Perhaps:
 
 ```sh
-./prog < prog.c > prog.raw
+    ./prog < prog.c > prog.raw
 ```
 
 might speak to your coding style? If not, then perhaps:
 
 ```sh
-./prog < README.md | mplayer -demuxer rawaudio -
-
+    ./prog < README.md | mplayer -demuxer rawaudio -
 ```
 
 might help? :-)
@@ -89,7 +88,7 @@ Don't forget the last '`-`' as it makes `mplayer(1)` read from `stdin`.
 ## Convert audio file with Morse signals to text
 
 ```sh
-./prog e < audio_file.raw
+    ./prog e < audio_file.raw
 ```
 
 or alternatively pass a .wav file as input.
@@ -108,7 +107,7 @@ program with this platform, the following line can be added to `main()` before
 any code in order for the program to run correctly:
 
 ```c
-_setmode(_fileno(stdout), 0x8000);
+    _setmode(_fileno(stdout), 0x8000);
 ```
 
 NOTE: see the [alternate code](prog.alt.c) for this.

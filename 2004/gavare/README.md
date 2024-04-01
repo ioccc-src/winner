@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There are three alternate versions; see [alternate code](#alternate-code) below
@@ -11,14 +11,14 @@ for more details.
 ## To use:
 
 ```sh
-./gavare > ioccc_ray.ppm
+    ./gavare > ioccc_ray.ppm
 ```
 
 Open `ioccc_ray.ppm` with a viewer capable of viewing PPM files. Alternatively,
 if you have ImageMagick installed, you can convert it to a jpeg:
 
 ```sh
-convert ioccc_ray.ppm ioccc_ray.jpg
+    convert ioccc_ray.ppm ioccc_ray.jpg
 ```
 
 and then view `ioccc_ray.jpg` in a graphics viewer, editor or web browser.
@@ -29,7 +29,7 @@ and then view `ioccc_ray.jpg` in a graphics viewer, editor or web browser.
 If you have `xv(1)` you can do:
 
 ```sh
-./gavare | xv -
+    ./gavare | xv -
 ```
 
 to not worry about writing it to a file and just viewing the image it creates.
@@ -54,19 +54,19 @@ on `stdout` which theoretically should work in Windows.
 To build the configurable and unobfuscated versions:
 
 ```sh
-make alt
+    make alt
 ```
 
 To change the default size from 1024x768 try:
 
 ```sh
-make clobber XX=640 YY=480 alt
+    make clobber XX=640 YY=480 alt
 ```
 
 You might also wish to change the anti-alias setting:
 
 ```sh
-make clobber AA=2 alt
+    make clobber AA=2 alt
 ```
 
 You may of course combine the above two commands and give any combination you
@@ -79,7 +79,7 @@ As the Windows version will not compile on most viewers' systems we do not build
 it with `make alt`; instead try:
 
 ```sh
-make alt2
+    make alt2
 ```
 
 

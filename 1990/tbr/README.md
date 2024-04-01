@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 The authors provided another version of this program. See the [alternate
@@ -13,7 +13,7 @@ version](#alternate-code) section below.
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [1990 tbr bugs](../../bugs.html#1990_tbr).
@@ -26,8 +26,8 @@ output due to a warning at runtime that was interspersed with the output of the
 program. For instance it would show:
 
 ```sh
-./tbr
-$ warning: this program uses gets(), which is unsafe.
+    ./tbr
+    $ warning: this program uses gets(), which is unsafe.
 ```
 
 which kind of hid the prompt. Thus the entry was changed to use `fgets(3)` which
@@ -41,8 +41,8 @@ below, in the [alternate version](#alternate-code) section.
 ## To use:
 
 ```sh
-./tbr
-$ enter some shell commands
+    ./tbr
+    $ enter some shell commands
 ```
 
 NOTE: globs do not work with this entry. Why?
@@ -55,16 +55,16 @@ just `exit` or `logout`? Hint: see the authors' remarks.
 ## Try:
 
 ```sh
-./tbr
-$ ls -l tbr tbr.c
+    ./tbr
+    $ ls -l tbr tbr.c
 
-# notice how the following does not work:
-ls tbr*
+    # notice how the following does not work:
+    ls tbr*
 
-# try figuring out how this entry works in an editor:
-vi tbr.c
+    # try figuring out how this entry works in an editor:
+    vi tbr.c
 
-# then figure out how to exit vi :-)
+    # then figure out how to exit vi :-)
 ```
 
 What happens if you try using `cd -` to return to previous directory? What about
@@ -80,16 +80,16 @@ The authors supplied us with a slightly smaller unformatted version
 of the program which we include below:
 
 ```c
-#define D ,close(
-char*c,q[512],m[256],*v[99],**u,*i[3];int f[2],p;main(){for(m[m[60]=m[62]=
-32]=m[*m=124[m]=9]=6;e(-8),gets(1+(c=q))||(exit(0),0);r(0,0))for(;*++c;);}
-r(t,o){*i=i[2]=0;for(u=v+98;m[*--c]^9;m[*c]&32?i[*c&2]=
-*u,u-v^98&&++u:3)if(!m[*c]){for(*++c=0;!m[*--c];);*--u=
-++c;}u-v^98?strcmp(*u,"cd")?*c?pipe(f),o=f[1]:1,(p=fork())?e(p),o?
-r(o,0)D o)D*f):4,wait(0):(o?dup2(*f,0)D*f)D o):*i?1 D
-0),e(open(*i,0)):5,t?dup2(t,1)D t):i[2]?9 D
-1),e(creat(i[2],438)):2,e(execvp(*u,u))):e(chdir(u[1])*2):6;}
-e(x){x<0?write(2,"?\n$ "-x/4,2),x+1||(exit(1),0):5;}
+    #define D ,close(
+    char*c,q[512],m[256],*v[99],**u,*i[3];int f[2],p;main(){for(m[m[60]=m[62]=
+    32]=m[*m=124[m]=9]=6;e(-8),gets(1+(c=q))||(exit(0),0);r(0,0))for(;*++c;);}
+    r(t,o){*i=i[2]=0;for(u=v+98;m[*--c]^9;m[*c]&32?i[*c&2]=
+    *u,u-v^98&&++u:3)if(!m[*c]){for(*++c=0;!m[*--c];);*--u=
+    ++c;}u-v^98?strcmp(*u,"cd")?*c?pipe(f),o=f[1]:1,(p=fork())?e(p),o?
+    r(o,0)D o)D*f):4,wait(0):(o?dup2(*f,0)D*f)D o):*i?1 D
+    0),e(open(*i,0)):5,t?dup2(t,1)D t):i[2]?9 D
+    1),e(creat(i[2],438)):2,e(execvp(*u,u))):e(chdir(u[1])*2):6;}
+    e(x){x<0?write(2,"?\n$ "-x/4,2),x+1||(exit(1),0):5;}
 ```
 
 and in the [alternate source](tbr.alt.c). It has the `exit()` returns `void` fix
@@ -100,14 +100,14 @@ equivalent like the authors intended.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
 ### Alternate use:
 
 ```sh
-./tbr.alt
+    ./tbr.alt
 ```
 
 
@@ -166,13 +166,13 @@ shell flags an error if no arguments are on the stack. Thus, for
 example:
 
 ```sh
-cat > foo > bar
+    cat > foo > bar
 ```
 
 cats to `foo`, since it was pushed last, but
 
 ```sh
-cat > > foo bar
+    cat > > foo bar
 ```
 
 cats to `bar`, since `bar` was pushed under `foo` (remember we're

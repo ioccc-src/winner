@@ -1,24 +1,24 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./endoh2 > pi.c
-gcc -o pi pi.c
-./pi > 314.c
+    ./endoh2 > pi.c
+    gcc -o pi pi.c
+    ./pi > 314.c
 ```
 
 and:
 
 ```sh
-./endoh2 e > e.c\
-gcc -o e e.c
-./e > 271.c
+    ./endoh2 e > e.c\
+    gcc -o e e.c
+    ./e > 271.c
 ```
 
 ...
@@ -27,7 +27,7 @@ gcc -o e e.c
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -113,8 +113,8 @@ with `-std=c99 -Wall -W -Wextra -pedantic` would say nothing.
 
 
 ```sh
-gcc -std=c99 -Wall -W -Wextra -pedantic spigot.c
-clang -std=c99 -Wall -W -Wextra -pedantic spigot.c
+    gcc -std=c99 -Wall -W -Wextra -pedantic spigot.c
+    clang -std=c99 -Wall -W -Wextra -pedantic spigot.c
 ```
 
 I've tested with gcc-4.6.3 and clang-3.0 on Linux (Ubuntu 12.04)
@@ -124,27 +124,27 @@ and gcc-4.5.3 and clang-3.1 on Cygwin.
 ### Synopsis
 
 ```sh
-cc endoh2.c -o endoh2
+    cc endoh2.c -o endoh2
 
-./endoh2 > pi.c
-cat pi.c
+    ./endoh2 > pi.c
+    cat pi.c
 
-cc pi.c     -o pi     ; ./pi     > 314.c     ; cat 314.c
-cc 314.c    -o 314    ; ./314    > 3141.c    ; cat 3141.c
-cc 3141.c   -o 3141   ; ./3141   > 31415.c   ; cat 31415.c
-cc 31415.c  -o 31415  ; ./31415  > 314159.c  ; cat 314159.c
-cc 314159.c -o 314159 ; ./314159 > 3141592.c ; cat 3141592.c
-etc...
+    cc pi.c     -o pi     ; ./pi     > 314.c     ; cat 314.c
+    cc 314.c    -o 314    ; ./314    > 3141.c    ; cat 3141.c
+    cc 3141.c   -o 3141   ; ./3141   > 31415.c   ; cat 31415.c
+    cc 31415.c  -o 31415  ; ./31415  > 314159.c  ; cat 314159.c
+    cc 314159.c -o 314159 ; ./314159 > 3141592.c ; cat 3141592.c
+    etc...
 
-./endoh2 e > e.c
-cat e.c
+    ./endoh2 e > e.c
+    cat e.c
 
-cc e.c      -o e      ; ./e      > 271.c     ; cat 271.c
-cc 271.c    -o 271    ; ./271    > 2718.c    ; cat 2718.c
-cc 2718.c   -o 2718   ; ./2718   > 27182.c   ; cat 27182.c
-cc 27182.c  -o 27182  ; ./27182  > 271828.c  ; cat 271828.c
-cc 271828.c -o 271828 ; ./271828 > 2718281.c ; cat 2718281.c
-etc...
+    cc e.c      -o e      ; ./e      > 271.c     ; cat 271.c
+    cc 271.c    -o 271    ; ./271    > 2718.c    ; cat 2718.c
+    cc 2718.c   -o 2718   ; ./2718   > 27182.c   ; cat 27182.c
+    cc 27182.c  -o 27182  ; ./27182  > 271828.c  ; cat 271828.c
+    cc 271828.c -o 271828 ; ./271828 > 2718281.c ; cat 2718281.c
+    etc...
 ```
 
 You can do `make everything` for the process (with no `cat`).

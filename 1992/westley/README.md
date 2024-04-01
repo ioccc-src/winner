@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -10,8 +10,8 @@ make all
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
-STATUS: known bug - please help us fix
+    STATUS: INABIAF - please **DO NOT** fix
+    STATUS: known bug - please help us fix
 ```
 
 For more detailed information see [1992 westley bugs](../../bugs.html#1992_westley).
@@ -23,7 +23,7 @@ If lost:
 
 
 ```sh
-./whereami.sh lat long
+    ./whereami.sh lat long
 ```
 
 Where `lat` and `long` correspond to your latitude and longitude.
@@ -37,7 +37,7 @@ should just use the `westley` and `westley.alt` programs directly.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -49,15 +49,14 @@ The author provided a version for the US which we added. To build:
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
 ### Alternate use:
 
 ```sh
-./whereami.alt.sh lat long
-
+    ./whereami.alt.sh lat long
 ```
 
 NOTE: this alternative version also needs a terminal with at least 80 columns.
@@ -69,7 +68,7 @@ The [try.sh](try.sh) script uses both the original entry and the alternate code
 so one can try the same script for both:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -78,10 +77,10 @@ so one can try the same script for both:
 To find the approximate place where this entry was judged, type:
 
 ```sh
-./whereami 37 -122	# NOTE: - means west of meridian
+    ./whereami 37 -122	# NOTE: - means west of meridian
 
-# or if you don't have curses installed:
-./westley 37 -122	# NOTE: - means west of meridian
+    # or if you don't have curses installed:
+    ./westley 37 -122	# NOTE: - means west of meridian
 ```
 
 
@@ -166,17 +165,17 @@ is reasonably accurate.
 For a domestic (US) version with higher resolution, try:
 
 ```c
-main(l,a,n,d)char**a;{for(d=atoi(a[1])/2*80-atoi(a[2])-2043;
-n="bnaBCOCXdBBHGYdAP[A M E R I C A].AqandkmavX|ELC}BOCd"
-[l++-3];)for(;n-->64;)putchar(!d+++33^l&1);}
+    main(l,a,n,d)char**a;{for(d=atoi(a[1])/2*80-atoi(a[2])-2043;
+    n="bnaBCOCXdBBHGYdAP[A M E R I C A].AqandkmavX|ELC}BOCd"
+    [l++-3];)for(;n-->64;)putchar(!d+++33^l&1);}
 ```
 
 The code will test the 80-column wrap and document itself if it is
 joined together as one 160-character line and listed.  You should see:
 
 ```c
-main(l,a,n,d)...
-[A M E R I C A]...
+    main(l,a,n,d)...
+    [A M E R I C A]...
 ```
 
 ...going down the left edge if your terminal auto-wraps at 80 characters.

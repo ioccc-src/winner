@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 There is another version that will be compiled in case the first fails. This
@@ -12,19 +12,19 @@ more details on it.
 ## To use:
 
 ```sh
-./sicherman < file
+    ./sicherman < file
 
-echo foo | ./sicherman
+    echo foo | ./sicherman
 
-./sicherman
-# type or paste some text, making sure to hit enter after each line typed
+    ./sicherman
+    # type or paste some text, making sure to hit enter after each line typed
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -44,7 +44,7 @@ Although this will be built if the original fails to compile you can do it
 manually like:
 
 ```sh
-make alt
+    make alt
 ```
 
 In this case it will be built as `sicherman.alt`.
@@ -53,14 +53,14 @@ In this case it will be built as `sicherman.alt`.
 ### Alternate use:
 
 ```sh
-./sicherman.alt < file
+    ./sicherman.alt < file
 ```
 
 
 ### Alternate try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 
@@ -81,7 +81,7 @@ from Richard Stallman: If you think you understand what this code
 does, then you don't, so read it again!  Explain why:
 
 ```sh
-./sicherman < sicherman.c | ./sicherman | diff - ./sicherman.c
+    ./sicherman < sicherman.c | ./sicherman | diff - ./sicherman.c
 ```
 
 results in diff reporting a difference on some machines.

@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 There is an alternate version of this entry which should work for Windows by
@@ -11,14 +11,14 @@ setting binary mode on `stdout`. See [alternate code](#alternate-code) below.
 ## To use:
 
 ```sh
-./persano p q [num frames]
+    ./persano p q [num frames]
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 Open the [GIF](https://en.wikipedia.org/wiki/GIF) files with a viewer capable of
@@ -38,7 +38,7 @@ let it work with Windows.
 ### Alternate build:
 
 ```
-make alt
+    make alt
 ```
 
 
@@ -50,7 +50,7 @@ Use `persano.alt` as you would `persano` above.
 ### Alternate try:
 
 ```sh
-./persano.alt 3 16 > knot3-16.gif
+    ./persano.alt 3 16 > knot3-16.gif
 ```
 
 Follow the same instructions, using different tools if necessary, as the above
@@ -81,7 +81,7 @@ knots](https://en.wikipedia.org/wiki/Torus_knot) to standard output.
 ### SYNOPSIS
 
 ```sh
-./persano p q [num frames]
+    ./persano p q [num frames]
 ```
 
 
@@ -99,14 +99,14 @@ cutting it [^1], until it ends up looking just like a circle embedded in R3 [^2]
 Sample usage:
 
 ```sh
-./persano 3 2 1 > foo.gif
+    ./persano 3 2 1 > foo.gif
 ```
 
 writes a non-animated GIF (a single frame) stream of a rendered trefoil
 knot to the file `foo.gif`.
 
 ```sh
-./persano 5 2
+    ./persano 5 2
 ```
 
 writes a GIF stream with a rendering of [Solomon's Seal

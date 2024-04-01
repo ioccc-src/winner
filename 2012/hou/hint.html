@@ -124,20 +124,23 @@
 
 <h2 id="judges-comments">Judges’ comments:</h2>
 <h3 id="to-build">To build:</h3>
-<p>make hou</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> hou</span></code></pre></div>
 <h3 id="to-run">To run:</h3>
-<p>./hou syntax-file file-to-process</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./hou</span> syntax-file file-to-process</span></code></pre></div>
 <h3 id="try-unix">Try (Unix):</h3>
 <p>The results are best viewed in a 80x25 console with ANSI colors.</p>
-<p>less hou.c</p>
-<p>./hou ansi.txt hou.c | less -r</p>
-<p>./hou chk.txt hou.c | wc</p>
-<p>./hou markdown.txt remarks.markdown &gt; remarks.htm
-your-browser remarks.htm</p>
+<pre><code>    less hou.c
+
+    ./hou ansi.txt hou.c | less -r
+
+    ./hou chk.txt hou.c | wc
+
+    ./hou markdown.txt remarks.markdown &gt; remarks.htm
+    your-browser remarks.htm</code></pre>
 <h3 id="try-windows">Try (Windows):</h3>
-<p>copy header.htm hou.htm /y
-hou html.txt hou.c &gt;&gt; hou.htm
-start hou.htm</p>
+<pre><code>    copy header.htm hou.htm /y
+    hou html.txt hou.c &gt;&gt; hou.htm
+    start hou.htm</code></pre>
 <h3 id="selected-judges-remarks">Selected Judges Remarks:</h3>
 <p>What a versatile entry! It can be used to check the size of IOCCC entries <em>and</em> to publish them as HTML.</p>
 <p>For extra credit: what is the meaning of the number 2321237?</p>
@@ -165,14 +168,14 @@ original text in the format string using “%s”. Other “%” characters in t
 format string must be escaped with another “%”. The space character can be used
 in the regular expression by escaping it with [] or ““.</p>
 <p>The following regular expression operators are supported:</p>
-<p>() [] * + ? | “”</p>
+<pre><code>    () [] * + ? | &quot;&quot;</code></pre>
 <p>For example, one can use the following expression to match a certain declaration statement in hou.c:</p>
-<p>“char”[ *]<em>[a-zA-Z_][0-9a-zA-Z_]</em>[ ]<em>((=[0-9a-zA-Z_ ]+)|([[0-9a-zA-Z_ ]</em>]))?[ ]<em>(,[ *]</em>[a-zA-Z_][0-9a-zA-Z_]<em>[ ]</em>((=[0-9a-zA-Z_ ]+)|([[0-9a-zA-Z_ ]<em>]))?[ ]</em>)*;</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;char&quot;</span><span class="op">[</span> <span class="op">*]*[</span>a<span class="op">-</span>zA<span class="op">-</span>Z_<span class="op">][</span><span class="dv">0</span><span class="op">-</span><span class="dv">9</span><span class="er">a</span><span class="op">-</span>zA<span class="op">-</span>Z_<span class="op">]*[</span> <span class="op">]*((=[</span><span class="dv">0</span><span class="op">-</span><span class="dv">9</span><span class="er">a</span><span class="op">-</span>zA<span class="op">-</span>Z_ <span class="op">]+)|(</span>\<span class="op">[[</span><span class="dv">0</span><span class="op">-</span><span class="dv">9</span><span class="er">a</span><span class="op">-</span><span class="at">zA</span><span class="op">-</span><span class="at">Z_ </span><span class="op">]*</span><span class="at">\</span><span class="op">]))?[</span><span class="at"> </span><span class="op">]*(,[</span><span class="at"> </span><span class="op">*]*[</span><span class="at">a</span><span class="op">-</span><span class="at">zA</span><span class="op">-</span><span class="at">Z_</span><span class="op">][</span><span class="dv">0</span><span class="op">-</span><span class="dv">9</span><span class="er">a</span><span class="op">-</span><span class="at">zA</span><span class="op">-</span><span class="at">Z_</span><span class="op">]*[</span><span class="at"> </span><span class="op">]*((=[</span><span class="dv">0</span><span class="op">-</span><span class="dv">9</span><span class="er">a</span><span class="op">-</span><span class="at">zA</span><span class="op">-</span><span class="at">Z_ </span><span class="op">]+)|(</span><span class="at">\</span><span class="op">[[</span><span class="dv">0</span><span class="op">-</span><span class="dv">9</span><span class="er">a</span><span class="op">-</span><span class="at">zA</span><span class="op">-</span><span class="at">Z_ </span><span class="op">]*</span><span class="at">\</span><span class="op">]))?[</span><span class="at"> </span><span class="op">]*)*;</span></span></code></pre></div>
 <p>The regex engine is also algorithmically efficient. To illustrate the point,
 ansi.txt contains a pathological expression [2] that guarantees a hang for the
 competing Perl engine while matching itself. Try to compare these two engines:</p>
-<p>./hou ansi.txt ansi.txt
-perl patho.pl &lt; ansi.txt</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./hou</span> ansi.txt ansi.txt</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">perl</span> patho.pl <span class="op">&lt;</span> ansi.txt</span></code></pre></div>
 <p>Finally, there are a few limitations…</p>
 <ul>
 <li>The only escape sequence supported is and it doesn’t work in [].</li>

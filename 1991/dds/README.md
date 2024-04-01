@@ -1,15 +1,15 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./dds basic_program
-./a.out 2>/dev/null
+    ./dds basic_program
+    ./a.out 2>/dev/null
 ```
 
 
@@ -18,8 +18,8 @@ make all
 The author suggests trying:
 
 ```sh
-./dds LANDER.BAS
-./a.out
+    ./dds LANDER.BAS
+    ./a.out
 ```
 
 Notice that a file `a.c` has been generated.  Can you tell how `a.c` was
@@ -28,7 +28,7 @@ produced?  How does `a.c` relate to [LANDER.BAS](LANDER.BAS)?
 What happens if you give the program a C program like itself? Try:
 
 ```sh
-./dds dds.c
+    ./dds dds.c
 ```
 
 You'll get errors yes but what does the generated file look like? What about

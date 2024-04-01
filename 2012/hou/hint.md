@@ -2,16 +2,21 @@
 
 ### To build:
 
+```sh
     make hou
+```
 
 ### To run:
 
+```sh
     ./hou syntax-file file-to-process
+```
 
 ### Try (Unix):
 
 The results are best viewed in a 80x25 console with ANSI colors.
 
+```
     less hou.c
 
     ./hou ansi.txt hou.c | less -r
@@ -20,12 +25,15 @@ The results are best viewed in a 80x25 console with ANSI colors.
 
     ./hou markdown.txt remarks.markdown > remarks.htm
     your-browser remarks.htm
+```
 
 ### Try (Windows):
 
+```
     copy header.htm hou.htm /y
     hou html.txt hou.c >> hou.htm
     start hou.htm
+```
 
 ### Selected Judges Remarks:
 
@@ -67,18 +75,24 @@ in the regular expression by escaping it with [] or "".
 
 The following regular expression operators are supported:
 
+```
     () [] * + ? | ""
+```
 
 For example, one can use the following expression to match a certain declaration statement in hou.c:
 
+```c
     "char"[ *]*[a-zA-Z_][0-9a-zA-Z_]*[ ]*((=[0-9a-zA-Z_ ]+)|(\[[0-9a-zA-Z_ ]*\]))?[ ]*(,[ *]*[a-zA-Z_][0-9a-zA-Z_]*[ ]*((=[0-9a-zA-Z_ ]+)|(\[[0-9a-zA-Z_ ]*\]))?[ ]*)*;
+```
 
 The regex engine is also algorithmically efficient. To illustrate the point,
 ansi.txt contains a pathological expression [2] that guarantees a hang for the
 competing Perl engine while matching itself. Try to compare these two engines:
 
+```sh
     ./hou ansi.txt ansi.txt
     perl patho.pl < ansi.txt
+```
 
 Finally, there are a few limitations...
 

@@ -1,9 +1,9 @@
 ## To build:
 
 ```sh
-make all		# On a 64-bit machine (default)
+    make all		# On a 64-bit machine (default)
 
-make tromp32		# On a 32-bit machine
+    make tromp32		# On a 32-bit machine
 ```
 
 
@@ -12,7 +12,7 @@ make tromp32		# On a 32-bit machine
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2012 tromp bugs](../../bugs.html#2012_tromp).
@@ -21,7 +21,7 @@ For more detailed information see [2012 tromp bugs](../../bugs.html#2012_tromp).
 ## To use:
 
 ```sh
-./tromp [-b]
+    ./tromp [-b]
 ```
 
 Use `./tromp32` as you would `./tromp` if on a 32-bit machine.
@@ -30,15 +30,15 @@ Use `./tromp32` as you would `./tromp` if on a 32-bit machine.
 ## To use:
 
 ```sh
-cat ascii-prog.blc data | ./tromp -b
-cat binary-prog.Blc data | ./tromp
+    cat ascii-prog.blc data | ./tromp -b
+    cat binary-prog.Blc data | ./tromp
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -96,10 +96,10 @@ bit of input, and using characters `0` and `1` for output.
 The program uses the following exit codes:
 
 ```
-0: OK; result is a finite list
-5: Out of term space
-6: Out of memory
-1,2,3,4,8,9: result not in list form
+    0: OK; result is a finite list
+    5: Out of term space
+    6: Out of memory
+    1,2,3,4,8,9: result not in list form
 ```
 
 The size of the term space is fixed at compile time with `-DA`.
@@ -114,8 +114,8 @@ it will simply copy the input to the output (well, not that simply, since each
 byte is smashed to bits and rebuilt from scratch). Voila: a half byte cat:
 
 ```sh
-$ echo " Hello, world" | ./tromp
-Hello, world
+    $ echo " Hello, world" | ./tromp
+    Hello, world
 ```
 
 Since the least significant 4 bits of the first byte are just arbitrary padding
@@ -123,8 +123,8 @@ that is ignored by the program, any character from ASCII 32 (space) through 47
 (`/`) will do, e.g.:
 
 ```sh
-$ echo "*Hello, world" | ./tromp
-Hello, world
+    $ echo "*Hello, world" | ./tromp
+    Hello, world
 ```
 
 
@@ -135,7 +135,7 @@ if the interpreter reaches end-of-file during program parsing,
 it will crash in some way. E.g. the following might dump core:
 
 ```sh
-echo -n "U" | ./tromp
+    echo -n "U" | ./tromp
 ```
 
 Furthermore, the interpreter requires the initial encoded lambda term to be
@@ -144,7 +144,7 @@ lambdas.  For instance, here the term `\ 5` is not closed, causing the
 interpreter to crash when looking into a null-pointer environment:
 
 ```sh
-echo ">Hello, world" | ./tromp
+    echo ">Hello, world" | ./tromp
 ```
 
 will likely dump core.
@@ -201,8 +201,8 @@ The byte oriented BLC8 version weighs in at 43 bytes (shown in hexadecimal).
 ```
 
 ```sh
-$ (cat uni8.Blc; echo " Ni hao") | ./tromp
-Ni hao
+    $ (cat uni8.Blc; echo " Ni hao") | ./tromp
+    Ni hao
 ```
 
 ### A prime number sieve
@@ -226,8 +226,8 @@ Even shorter than the self-interpreter is this prime number sieve in 167 bits
 The `n`th bit in the output indicates whether n is prime:
 
 ```sh
-$ cat primes.blc | ./tromp -b | head -c 70
-0011010100010100010100010000010100000100010100010000010000010100000100
+    $ cat primes.blc | ./tromp -b | head -c 70
+    0011010100010100010100010000010100000100010100010000010000010100000100
 ```
 
 For those who prefer to digest their primes in decimal, there is `oddindices.Blc`,
@@ -236,8 +236,8 @@ which will print the indices of all odd characters (with
 separated by a given character:
 
 ```
-$ (cat oddindices.Blc; echo -n " "; cat primes.blc | ./tromp -b) | ./tromp | head -c 70
-2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97
+    $ (cat oddindices.Blc; echo -n " "; cat primes.blc | ./tromp -b) | ./tromp | head -c 70
+    2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97
 ```
 
 ### A Space filling program
@@ -266,44 +266,43 @@ It expects `n` arbitrary characters of input, and draws a space filling [Hilbert
 curve](https://en.wikipedia.org/wiki/Hilbert_curve) of order `n`:
 
 ```sh
-$  (cat hilbert.Blc; echo -n "1") | ./tromp
- _
-| |
+    $  (cat hilbert.Blc; echo -n "1") | ./tromp
+     _
+    | |
 
-$ (cat hilbert.Blc; echo -n "12") | ./tromp
- _   _
-| |_| |
-|_   _|
- _| |_
+    $ (cat hilbert.Blc; echo -n "12") | ./tromp
+     _   _
+    | |_| |
+    |_   _|
+     _| |_
 
-$ (cat hilbert.Blc; echo -n "123") | ./tromp
- _   _   _   _
-| |_| | | |_| |
-|_   _| |_   _|
- _| |_____| |_
-|  ___   ___  |
-|_|  _| |_  |_|
- _  |_   _|  _
-| |___| |___| |
+    $ (cat hilbert.Blc; echo -n "123") | ./tromp
+     _   _   _   _
+    | |_| | | |_| |
+    |_   _| |_   _|
+     _| |_____| |_
+    |  ___   ___  |
+    |_|  _| |_  |_|
+     _  |_   _|  _
+    | |___| |___| |
 
-$ (cat hilbert.Blc; echo -n "1234") | ./tromp
- _   _   _   _   _   _   _   _
-| |_| | | |_| | | |_| | | |_| |
-|_   _| |_   _| |_   _| |_   _|
- _| |_____| |_   _| |_____| |_
-|  ___   ___  | |  ___   ___  |
-|_|  _| |_  |_| |_|  _| |_  |_|
- _  |_   _|  _   _  |_   _|  _
-| |___| |___| |_| |___| |___| |
-|_   ___   ___   ___   ___   _|
- _| |_  |_|  _| |_  |_|  _| |_
-|  _  |  _  |_   _|  _  |  _  |
-|_| |_| | |___| |___| | |_| |_|
- _   _  |  ___   ___  |  _   _
-| |_| | |_|  _| |_  |_| | |_| |
-|_   _|  _  |_   _|  _  |_   _|
- _| |___| |___| |___| |___| |_
-
+    $ (cat hilbert.Blc; echo -n "1234") | ./tromp
+     _   _   _   _   _   _   _   _
+    | |_| | | |_| | | |_| | | |_| |
+    |_   _| |_   _| |_   _| |_   _|
+     _| |_____| |_   _| |_____| |_
+    |  ___   ___  | |  ___   ___  |
+    |_|  _| |_  |_| |_|  _| |_  |_|
+     _  |_   _|  _   _  |_   _|  _
+    | |___| |___| |_| |___| |___| |
+    |_   ___   ___   ___   ___   _|
+     _| |_  |_|  _| |_  |_|  _| |_
+    |  _  |  _  |_   _|  _  |  _  |
+    |_| |_| | |___| |___| | |_| |_|
+     _   _  |  ___   ___  |  _   _
+    | |_| | |_|  _| |_  |_| | |_| |
+    |_   _|  _  |_   _|  _  |_   _|
+     _| |___| |___| |___| |___| |_
 ```
 
 ### A [Brainfuck](https://en.wikipedia.org/wiki/Brainfuck) interpreter
@@ -313,15 +312,15 @@ The smallest known BF interpreter is written in... you guessed it,
 coming in at 112 bytes (including 3 bits of padding):
 
 ```
-$ od -t x4 bf.Blc
-0000000          01a15144 02d55584               223070b7        00f032ff
-0000020          7f85f9bf        956fe15e        c0ee7d7f 006854e5
-0000040          fbfd5558        fd5745e0        b6f0fbeb 07d62ff0
-0000060          d7736fe1 c0bc14f1               1f2eff0b        17666fa1
-0000100          2fef5be8        ff13ffcf        2034cae1 0bd0c80a
-0000120          e51fee99        6a5a7fff        ff0fff1f d0049d87
-0000140          db0500ab 3bb74023               b0c0cc28 10740e6c
-0000160
+    $ od -t x4 bf.Blc
+    0000000          01a15144 02d55584               223070b7        00f032ff
+    0000020          7f85f9bf        956fe15e        c0ee7d7f 006854e5
+    0000040          fbfd5558        fd5745e0        b6f0fbeb 07d62ff0
+    0000060          d7736fe1 c0bc14f1               1f2eff0b        17666fa1
+    0000100          2fef5be8        ff13ffcf        2034cae1 0bd0c80a
+    0000120          e51fee99        6a5a7fff        ff0fff1f d0049d87
+    0000140          db0500ab 3bb74023               b0c0cc28 10740e6c
+    0000160
 ```
 
 It expects its input to consist of a
@@ -330,10 +329,10 @@ It expects its input to consist of a
 followed by a `]`, followed by the input for the Brainfuck program.
 
 ```
-$ more hw.bf
-++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>.]
-$ cat bf.Blc hw.bf | ./tromp
-Hello World!
+    $ more hw.bf
+    ++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>.]
+    $ cat bf.Blc hw.bf | ./tromp
+    Hello World!
 ```
 
 Curiously, the interpreter `bf.Blc` is the exact same size as `hw.bf`.
@@ -346,10 +345,9 @@ translates single-letter-variable lambda calculus into BLC:
 
 
 ```sh
-$ echo "\f\x f (f (f x))" > three
-$ cat parse.Blc three | ./tromp
-000001110011100111010
-
+    $ echo "\f\x f (f (f x))" > three
+    $ cat parse.Blc three | ./tromp
+    000001110011100111010
 ```
 
 ### Converting between bits and bytes
@@ -361,24 +359,24 @@ into BLC8:
 So we could assemble an input reversing program as
 
 ```sh
-echo "\a a ((\b b b) (\b \c \d \e d (b b) (\f f c e))) (\b \c c)" > reverse
-cat parse.Blc reverse | ./tromp > reverse.blc
+    echo "\a a ((\b b b) (\b \c \d \e d (b b) (\f f c e))) (\b \c c)" > reverse
+    cat parse.Blc reverse | ./tromp > reverse.blc
 ```
 
 and change it to BLC8 with
 
 ```sh
-$ cat deflate.Blc reverse.blc | ./tromp > rev.Blc
-$ wc rev.Blc
-    0 1 9 rev.Blc
+    $ cat deflate.Blc reverse.blc | ./tromp > rev.Blc
+    $ wc rev.Blc
+	0 1 9 rev.Blc
 ```
 and then try it out with:
 
 ```sh
-$ cat rev.Blc - | ./tromp
-Hello, world!
-^D
-!dlrow ,olleH
+    $ cat rev.Blc - | ./tromp
+    Hello, world!
+    ^D
+    !dlrow ,olleH
 ```
 
 ### Symbolic Lambda Calculus reduction
@@ -387,24 +385,24 @@ BLC8 program `symbolic.Blc` shows individual reduction steps on symbolic lambda 
 Here it is used to show the calculation of 2^3 in Church numerals:
 
 ```sh
-$ echo "(\f\x f (f (f x))) (\f\x f (f x))" > threetwo
-$ cat parse.Blc threetwo | ./tromp > threetwo.blc
-$ cat symbolic.Blc threetwo.blc | ./tromp
-(\a \b a (a (a b))) (\a \b a (a b))
-\a (\b \c b (b c)) ((\b \c b (b c)) ((\b \c b (b c)) a))
-\a \b (\c \d c (c d)) ((\c \d c (c d)) a) ((\c \d c (c d)) ((\c \d c (c d)) a) b)
-\a \b (\c (\d \e d (d e)) a ((\d \e d (d e)) a c)) ((\c \d c (c d)) ((\c \d c (c d)) a) b)
-\a \b (\c \d c (c d)) a ((\c \d c (c d)) a ((\c \d c (c d)) ((\c \d c (c d)) a) b))
-\a \b (\c a (a c)) ((\c \d c (c d)) a ((\c \d c (c d)) ((\c \d c (c d)) a) b))
-\a \b a (a ((\c \d c (c d)) a ((\c \d c (c d)) ((\c \d c (c d)) a) b)))
-\a \b a (a ((\c a (a c)) ((\c \d c (c d)) ((\c \d c (c d)) a) b)))
-\a \b a (a (a (a ((\c \d c (c d)) ((\c \d c (c d)) a) b))))
-\a \b a (a (a (a ((\c (\d \e d (d e)) a ((\d \e d (d e)) a c)) b))))
-\a \b a (a (a (a ((\c \d c (c d)) a ((\c \d c (c d)) a b)))))
-\a \b a (a (a (a ((\c a (a c)) ((\c \d c (c d)) a b)))))
-\a \b a (a (a (a (a (a ((\c \d c (c d)) a b))))))
-\a \b a (a (a (a (a (a ((\c a (a c)) b))))))
-\a \b a (a (a (a (a (a (a (a b)))))))
+    $ echo "(\f\x f (f (f x))) (\f\x f (f x))" > threetwo
+    $ cat parse.Blc threetwo | ./tromp > threetwo.blc
+    $ cat symbolic.Blc threetwo.blc | ./tromp
+    (\a \b a (a (a b))) (\a \b a (a b))
+    \a (\b \c b (b c)) ((\b \c b (b c)) ((\b \c b (b c)) a))
+    \a \b (\c \d c (c d)) ((\c \d c (c d)) a) ((\c \d c (c d)) ((\c \d c (c d)) a) b)
+    \a \b (\c (\d \e d (d e)) a ((\d \e d (d e)) a c)) ((\c \d c (c d)) ((\c \d c (c d)) a) b)
+    \a \b (\c \d c (c d)) a ((\c \d c (c d)) a ((\c \d c (c d)) ((\c \d c (c d)) a) b))
+    \a \b (\c a (a c)) ((\c \d c (c d)) a ((\c \d c (c d)) ((\c \d c (c d)) a) b))
+    \a \b a (a ((\c \d c (c d)) a ((\c \d c (c d)) ((\c \d c (c d)) a) b)))
+    \a \b a (a ((\c a (a c)) ((\c \d c (c d)) ((\c \d c (c d)) a) b)))
+    \a \b a (a (a (a ((\c \d c (c d)) ((\c \d c (c d)) a) b))))
+    \a \b a (a (a (a ((\c (\d \e d (d e)) a ((\d \e d (d e)) a c)) b))))
+    \a \b a (a (a (a ((\c \d c (c d)) a ((\c \d c (c d)) a b)))))
+    \a \b a (a (a (a ((\c a (a c)) ((\c \d c (c d)) a b)))))
+    \a \b a (a (a (a (a (a ((\c \d c (c d)) a b))))))
+    \a \b a (a (a (a (a (a ((\c a (a c)) b))))))
+    \a \b a (a (a (a (a (a (a (a b)))))))
 ```
 
 As expected, the resulting normal form is [Church
@@ -415,8 +413,8 @@ exact inverse of the above assembler. The prime number sieve disassembles as
 follows:
 
 ```sh
-$ cat symbolic.Blc primes.blc | ./tromp | head -1
-\a (\b b (b ((\c c c) (\c \d \e e (\f \g g) ((\f c c f ((\g g g) (\g f (g g)))) (\f \g \h \i i g (h (d f))))) (\c \d \e b (e c))))) (\b \c c (\d \e d) b)
+    $ cat symbolic.Blc primes.blc | ./tromp | head -1
+    \a (\b b (b ((\c c c) (\c \d \e e (\f \g g) ((\f c c f ((\g g g) (\g f (g g)))) (\f \g \h \i i g (h (d f))))) (\c \d \e b (e c))))) (\b \c c (\d \e d) b)
 ```
 
 Hardly any less obfuscated...
@@ -424,13 +422,13 @@ Hardly any less obfuscated...
 The last line of
 
 ```sh
-cat symbolic.Blc primes.blc | ./tromp | head -16
+    cat symbolic.Blc primes.blc | ./tromp | head -16
 ```
 
 starts out as
 
 ```
-\a \b b (\c \d c) (\c c (\d \e d) (\d d (\e \f f) (\e e (\f \g g) ((\f (\g \h \i
+    \a \b b (\c \d c) (\c c (\d \e d) (\d d (\e \f f) (\e e (\f \g g) ((\f (\g \h \i
 ```
 
 The `\a` is for ignoring the rest of the input (to which the universal machine
@@ -462,16 +460,16 @@ under the interpreter perform much worse than that same program written in Haske
 Our interpreter copes well with extra levels of interpretation:
 
 ```sh
-$ time cat primes.blc | ./tromp -b | head -c 210 > /dev/null
-real    0m0.043s
-$ time cat uni.blc primes.blc | ./tromp -b | head -c 210 > /dev/null
-real    0m0.191s
-$ time cat uni.blc uni.blc primes.blc | ./tromp -b | head -c 210 > /dev/null
-real    0m1.919s
-$ time cat uni.blc uni.blc uni.blc primes.blc | ./tromp -b | head -c 210 > /dev/null
-real    0m23.514s
-$ time cat uni.blc uni.blc uni.blc uni.blc primes.blc | ./tromp -b | head -c 210 > /dev/null
-real    4m52.700s
+    $ time cat primes.blc | ./tromp -b | head -c 210 > /dev/null
+    real    0m0.043s
+    $ time cat uni.blc primes.blc | ./tromp -b | head -c 210 > /dev/null
+    real    0m0.191s
+    $ time cat uni.blc uni.blc primes.blc | ./tromp -b | head -c 210 > /dev/null
+    real    0m1.919s
+    $ time cat uni.blc uni.blc uni.blc primes.blc | ./tromp -b | head -c 210 > /dev/null
+    real    0m23.514s
+    $ time cat uni.blc uni.blc uni.blc uni.blc primes.blc | ./tromp -b | head -c 210 > /dev/null
+    real    4m52.700s
 ```
 
 ### Obfuscation
@@ -495,15 +493,15 @@ The program freely (without casting) converts between `int` and `int *`, causing
 many warnings;
 
 ```
-  note: expected 'int *' but argument is of type 'int'
-  warning: assignment from incompatible pointer type
-  warning: assignment makes integer from pointer without a cast
-  warning: assignment makes pointer from integer without a cast
-  warning: incompatible implicit declaration of built-in function 'calloc'
-  warning: incompatible implicit declaration of built-in function 'exit'
-  warning: passing argument 1 of 'd' makes pointer from integer without a cast
-  warning: passing argument 1 of 'p' makes pointer from integer without a cast
-  warning: pointer/integer type mismatch in conditional expression
+    note: expected 'int *' but argument is of type 'int'
+    warning: assignment from incompatible pointer type
+    warning: assignment makes integer from pointer without a cast
+    warning: assignment makes pointer from integer without a cast
+    warning: incompatible implicit declaration of built-in function 'calloc'
+    warning: incompatible implicit declaration of built-in function 'exit'
+    warning: passing argument 1 of 'd' makes pointer from integer without a cast
+    warning: passing argument 1 of 'p' makes pointer from integer without a cast
+    warning: pointer/integer type mismatch in conditional expression
 ```
 
 Avoiding these would make the program substantially longer,

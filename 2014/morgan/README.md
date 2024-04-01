@@ -1,21 +1,21 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
 ## To use:
 
 ```sh
-./prog [arg ..]
+    ./prog [arg ..]
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -78,9 +78,9 @@ It will recursively use itself for sub-make (the `MAKE=` assignment inside
 With gcc 4.8.2 on Linux Ubuntu 14.04 64-bit :
 
 ```
-prog.c:22:15: warning: return makes integer from pointer without a cast [enabled by default]
-prog.c:23:72: warning: signed and unsigned type in conditional expression [-Wsign-compare]
-prog.c:12:11: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+    prog.c:22:15: warning: return makes integer from pointer without a cast [enabled by default]
+    prog.c:23:72: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+    prog.c:12:11: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
 ```
 
 <!--

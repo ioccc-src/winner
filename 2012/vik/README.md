@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 This entry requires [Zlib](https://www.zlib.net).
@@ -15,7 +15,7 @@ code](#alternate-code) section below.
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2012 vik bugs](../../bugs.html#2012_vik).
@@ -26,38 +26,38 @@ For more detailed information see [2012 vik bugs](../../bugs.html#2012_vik).
 To embed text (from file or command line):
 
 ```sh
-./vik e base.png filename > encodedimg.png
+    ./vik e base.png filename > encodedimg.png
 ```
 
 or
 
 ```sh
-./vik e base.png SomeRandomText > encodedimg.png
+    ./vik e base.png SomeRandomText > encodedimg.png
 ```
 
 To extract the embedded text:
 
 ```sh
-./vik d encodedimg.png
+    ./vik d encodedimg.png
 ```
 
 To embed a PNG into another:
 
 ```sh
-./vik e base.png source.png > encodedimg.png
+    ./vik e base.png source.png > encodedimg.png
 ```
 
 To extract the embedded PNG:
 
 ```sh
-./vik d encodedimg.png > restored.png
+    ./vik d encodedimg.png > restored.png
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -69,7 +69,7 @@ For those few who might use Windows this alternate code might work.
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -117,8 +117,8 @@ of the previous winning brainfuck interpreters, but I thought it would be easier
 to include an interpreter in the program to avoid the hassle:
 
 ```sh
-./vik e ioccc.png chocolate.png > encodedimg.png
-./vik b encodedimg.png
+    ./vik e ioccc.png chocolate.png > encodedimg.png
+    ./vik b encodedimg.png
 ```
 
 It is of course also possible to embed a
@@ -126,8 +126,8 @@ It is of course also possible to embed a
 (as explained above) and decode it, e.g.:
 
 ```sh
-./vik e ioccc.png .+[.+] > encodedimg.png
-./vik b encodedimg.png
+    ./vik e ioccc.png .+[.+] > encodedimg.png
+    ./vik b encodedimg.png
 ```
 
 ### Obfuscation
@@ -155,7 +155,7 @@ the variable declarations in the main declaration in order to run
 correctly:
 
 ```c
-_setmode(_fileno(stdout), 0x8000);
+    _setmode(_fileno(stdout), 0x8000);
 ```
 
 NOTE: this is what the [Alternate code](#alternate-code) does.

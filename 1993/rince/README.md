@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 NOTE: there are two alternate versions of this program, both allowing one to
@@ -14,7 +14,7 @@ See the [Alternate code](#alternate-code) section below.
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [bugs report with 1993/rince](../../bugs.html#1993_rince).
@@ -23,7 +23,7 @@ For more detailed information see [bugs report with 1993/rince](../../bugs.html#
 ## To use:
 
 ```sh
-./rince [cabbage]
+    ./rince [cabbage]
 ```
 
 where:
@@ -38,13 +38,13 @@ value 17 in the lines:
 
 
 ```c
-struct timeval v= {0,1<<17} ;
+    struct timeval v= {0,1<<17} ;
 ```
 
 and
 
 ```c
-refresh(),c=select(k,&y,0,0,(v.tv_usec=1<<17,&v))?getch():0;
+    refresh(),c=select(k,&y,0,0,(v.tv_usec=1<<17,&v))?getch():0;
 ```
 
 to another value like 18 or 19 which you can do with the alternate code.
@@ -58,7 +58,7 @@ changed).
 ### Alternate build:
 
 ```sh
-make SLEEP=18 clobber alt
+    make SLEEP=18 clobber alt
 ```
 
 Replace 18 with whatever number you wish.
@@ -108,7 +108,7 @@ used. It has been suggested that the following gcc command may help:
 
 
 ```sh
-gcc -fno-builtin -I/usr/include -o rince rince.c -lcurses -ltermcap
+    gcc -fno-builtin -I/usr/include -o rince rince.c -lcurses -ltermcap
 ```
 
 
@@ -145,13 +145,13 @@ The proper definition for usage would be: `./rince [data_filename]`
 I have compiled in on the following systems:
 
 ```
-System              OS              Compiler (and flags)
-DECstation 5000/240 Ultrix 4.2A     c89 -std
-SPARCstation 1+     SunOS 4.1       gcc -ansi -pedantic
-SPARCstation 10/31  Solaris 2.1     gcc -ansi -pedantic     (*)
-DECAlpha 3000/500   OSF/1 V1.2      c89 -std
-SGI Indigo (R4000)  IRIX 4.0.5F     cc -ansi
-Alliant FX2800      Conentrix 3.0.0 fxc
+    System              OS              Compiler (and flags)
+    DECstation 5000/240 Ultrix 4.2A     c89 -std
+    SPARCstation 1+     SunOS 4.1       gcc -ansi -pedantic
+    SPARCstation 10/31  Solaris 2.1     gcc -ansi -pedantic     (*)
+    DECAlpha 3000/500   OSF/1 V1.2      c89 -std
+    SGI Indigo (R4000)  IRIX 4.0.5F     cc -ansi
+    Alliant FX2800      Conentrix 3.0.0 fxc
 ```
 
 \* I never said it worked! The guidelines state that you dislike programs that

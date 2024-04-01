@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 To use this entry requires, in some invocations, a sound processing program.
@@ -14,7 +14,7 @@ compile and use an IOCCC entry that requires sound?](../../faq.html#sox).
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2018 algmyr bugs](../../bugs.html#2018_algmyr).
@@ -23,16 +23,16 @@ For more detailed information see [2018 algmyr bugs](../../bugs.html#2018_algmyr
 ## To use:
 
 ```sh
-./prog < prog.c			# Print garbage: might mess up your terminal
-./prog <file1> <file2> > out.raw
-./prog -d 2 0 out.raw		# Decode the first (0th) channel out of two
+    ./prog < prog.c			# Print garbage: might mess up your terminal
+    ./prog <file1> <file2> > out.raw
+    ./prog -d 2 0 out.raw		# Decode the first (0th) channel out of two
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -165,13 +165,13 @@ standards compliant). This is used to print the usage instructions.
 Compiling using
 
 ```sh
-gcc -Wall -Wextra -pedantic
+    gcc -Wall -Wextra -pedantic
 ```
 
 gives only `-Wmisleading-indentation` which is sensible considering the source code. While
 
 ```sh
-clang -Wall -Wextra -pedantic
+    clang -Wall -Wextra -pedantic
 ```
 
 is a bit more pessimistic and gives `-Wempty-body` (I like loops without
@@ -180,7 +180,7 @@ concatenation) and one of the weirder warnings I have seen from me splitting a
 negative constant with whitespace. Compiling using
 
 ```sh
-clang -Wall -Wextra -pedantic -Weverything
+    clang -Wall -Wextra -pedantic -Weverything
 ```
 
 produces a few page faults of warnings and makes me feel generally bad about

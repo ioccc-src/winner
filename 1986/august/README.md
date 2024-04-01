@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -10,7 +10,7 @@ make all
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [1986 august bugs](../../bugs.html#1986_august).
@@ -19,7 +19,7 @@ For more detailed information see [1986 august bugs](../../bugs.html#1986_august
 ## Try:
 
 ```sh
-./august
+    ./august
 ```
 
 

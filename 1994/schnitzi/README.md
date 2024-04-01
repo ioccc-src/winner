@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 There are two alternate versions, one that has an increased buffer size and one
@@ -15,7 +15,7 @@ code](#alternate-code) section for how to use.
 The current status of this entry is:
 
 ```
-STATUS: uses gets() - change to fgets() if possible
+    STATUS: uses gets() - change to fgets() if possible
 ```
 
 For more detailed information see [1994 schnitzi bugs](../../bugs.html#1994_schnitzi).
@@ -24,14 +24,14 @@ For more detailed information see [1994 schnitzi bugs](../../bugs.html#1994_schn
 ## To use:
 
 ```sh
-./schnitzi < textfile
+    ./schnitzi < textfile
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -50,7 +50,7 @@ buffer size. This is due to a comment which is explained in more detail in
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
@@ -63,7 +63,7 @@ feeding the source code to it will not work right.
 ### Alternate try:
 
 ```sh
-./try.alt.sh
+    ./try.alt.sh
 ```
 
 
@@ -72,7 +72,7 @@ feeding the source code to it will not work right.
 Try:
 
 ```sh
-./schnitzi < schnitzi.c
+    ./schnitzi < schnitzi.c
 ```
 
 Compare the output of the program with its source.  Sure the output
@@ -97,14 +97,14 @@ line; for instance, for the file 'info', the program
 would be run as follows:
 
 ```sh
-./schnitzi < info
+    ./schnitzi < info
 ```
 
 The program generates interesting results when its source file is
 used as input:
 
 ```sh
-./schnitzi < schnitzi.c
+    ./schnitzi < schnitzi.c
 ```
 
 The result of this command is a program which does the exact same

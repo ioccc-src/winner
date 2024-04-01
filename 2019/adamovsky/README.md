@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2019 adamovsky bugs](../../bugs.html#2019_adamovsky).
@@ -19,14 +19,14 @@ For more detailed information see [2019 adamovsky bugs](../../bugs.html#2019_ada
 ## To use:
 
 ```sh
-./prog file.unl
+    ./prog file.unl
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -40,7 +40,7 @@ better way to understand the entry but to fuzz it, we stumbled on a string of
 bytes which crashed it:
 
 ```
-````.0`.0`.0`c.0``sssss
+    ````.0`.0`.0`c.0``sssss
 ```
 
 Functional programming is not a panacea against core dumps, after all.
@@ -48,7 +48,7 @@ Functional programming is not a panacea against core dumps, after all.
 This can be demonstrated by:
 
 ```sh
-./prog crash.unl
+    ./prog crash.unl
 ```
 
 
@@ -85,7 +85,7 @@ by the sheer length of the dividing line and totally overlooks the rest of the p
 When built directly using
 
 ```sh
-make
+    make
 ```
 
 the program (`prog`) accepts a single parameter with the name of an Unlambda program. You can
@@ -93,7 +93,7 @@ download the [Colossal Cave Adventure][1] (the [advent.unl](advent.unl) file)
 and run it like this:
 
 ```sh
-./prog advent.unl
+    ./prog advent.unl
 ```
 
 > NOTE: the file was added to the entry so there is no need to download it.
@@ -106,7 +106,7 @@ There is an alternative build path that requires the 2018 IOCCC size tool to com
 source [iocccsize_2018.c](iocccsize_2018.c) in the project directory and call
 
 ```sh
-make identify
+    make identify
 ```
 
 It will build the tool and use it to build an alternative program `prog2`, which in turn will

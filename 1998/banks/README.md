@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 If you do not have a page up or page down key you might wish to see the
@@ -12,15 +12,15 @@ default value. The author provided the following table:
 
 
 ```
-Control         Description         Default Key
--------  -------------------------  -----------
- IT         Increase throttle      XK_Page_Up
- DT         Decrease throttle      XK_Page_Down
- FD         Move stick forward     XK_Up
- BK         Move stick back        XK_Down
- LT         Move stick left        XK_Left
- RT         Move stick right       XK_Right
- CS         Center stick           XK_Enter
+    Control         Description         Default Key
+    -------  -------------------------  -----------
+     IT         Increase throttle      XK_Page_Up
+     DT         Decrease throttle      XK_Page_Down
+     FD         Move stick forward     XK_Up
+     BK         Move stick back        XK_Down
+     LT         Move stick left        XK_Left
+     RT         Move stick right       XK_Right
+     CS         Center stick           XK_Enter
 ```
 
 There is another macro, `dt`, which is the time step. See some important points
@@ -35,15 +35,15 @@ the throttle up and down to `u` and `d`:
 
 
 ```sh
-make clobber IT=XK_u DT=XK_d all
+    make clobber IT=XK_u DT=XK_d all
 ```
 
 because in the header file you can see that `XK_u` corresponds to `u` and `XK_d`
 corresponds to `d`:
 
 ```c
-#define XK_d                             0x0064  /* U+0064 LATIN SMALL LETTER D */
-#define XK_u                             0x0075  /* U+0075 LATIN SMALL LETTER U */
+    #define XK_d                             0x0064  /* U+0064 LATIN SMALL LETTER D */
+    #define XK_u                             0x0075  /* U+0075 LATIN SMALL LETTER U */
 ```
 
 Note that the [keysym.h](keysym.h) file is not complete from X11; it's just the
@@ -64,7 +64,7 @@ preselected alternative keys.
 ## To use:
 
 ```sh
-cat horizon.sc pittsburgh.sc | ./banks
+    cat horizon.sc pittsburgh.sc | ./banks
 ```
 
 See the author's remarks in [scenery](#scenery) for more details on the scenery
@@ -107,7 +107,7 @@ the right side for movement. These are hard coded, as noted.
 To use the default settings for the alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 You may change the other keys as described in the build instructions, above, but
@@ -232,16 +232,16 @@ Here is a brief description of the scenery files:
 A few examples of how to input scenery:
 
 ```sh
-cat horizon.sc pittsburgh.sc | ./banks
-cat mountains.sc bb.sc | ./banks
-cat mountains.sc river.sc pyramids.sc | ./banks
+    cat horizon.sc pittsburgh.sc | ./banks
+    cat mountains.sc bb.sc | ./banks
+    cat mountains.sc river.sc pyramids.sc | ./banks
 ```
 
 You can simulate flying through a cloud bank as well:
 
 
 ```sh
-./banks < /dev/null
+    ./banks < /dev/null
 ```
 
 
@@ -272,15 +272,15 @@ compiler in the format `-Dcontrol=key` or if you use the Makefile you can do
 The possible controls you can map are described in the table below:
 
 ```
-Control         Description         Default Key
--------  -------------------------  -----------
- IT         Increase throttle      XK_Page_Up
- DT         Decrease throttle      XK_Page_Down
- FD         Move stick forward     XK_Up
- BK         Move stick back        XK_Down
- LT         Move stick left        XK_Left
- RT         Move stick right       XK_Right
- CS         Center stick           XK_Enter
+    Control         Description         Default Key
+    -------  -------------------------  -----------
+     IT         Increase throttle      XK_Page_Up
+     DT         Decrease throttle      XK_Page_Down
+     FD         Move stick forward     XK_Up
+     BK         Move stick back        XK_Down
+     LT         Move stick left        XK_Left
+     RT         Move stick right       XK_Right
+     CS         Center stick           XK_Enter
 ```
 
 Values for the possible keys can be found in the X Windows

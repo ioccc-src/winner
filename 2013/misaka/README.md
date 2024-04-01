@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 This will build a bunch of versions of the code. See the author's details for
@@ -11,8 +11,8 @@ information on all of these builds.
 ## To use:
 
 ```sh
-./horizontal_cat [files...] > [output]
-./vertical_cat [files...] > [output]
+    ./horizontal_cat [files...] > [output]
+    ./vertical_cat [files...] > [output]
 ```
 
 
@@ -21,19 +21,19 @@ information on all of these builds.
 To understand the various intermediate source files that are built, try:
 
 ```sh
-make understanding
+    make understanding
 ```
 
 Also try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 NOTE: Use - for standard input.  For example:
 
 ```sh
-./vertical_cat - -
+    ./vertical_cat - -
 ```
 
 
@@ -70,12 +70,12 @@ judging this entry.
 operation:
 
 ```sh
-cc misaka.c -o horizontal_cat
-./horizontal_cat [files...] > [output]
+    cc misaka.c -o horizontal_cat
+    ./horizontal_cat [files...] > [output]
 
-./horizontal_cat misaka.c misaka.c > misaka2.c
-cc misaka2.c -o vertical_cat
-./vertical_cat [files...] > [output]
+    ./horizontal_cat misaka.c misaka.c > misaka2.c
+    cc misaka2.c -o vertical_cat
+    ./vertical_cat [files...] > [output]
 ```
 
 Where `[files...]` is a list of text file names.  Use `-` to read from `stdin`.
@@ -95,8 +95,8 @@ I thought the lack of horizontal concatenation must have been an oversight,
 so I implemented this utility:
 
 ```sh
-cc misaka.c -o horizontal_cat
-./horizontal_cat files...
+    cc misaka.c -o horizontal_cat
+    ./horizontal_cat files...
 ```
 
 `horizontal_cat` concatenates files horizontally and write the output to
@@ -110,7 +110,7 @@ example, if you have `seq(1)` in your shell, you can add line numbers to both
 sides of [misaka.c](misaka.c) like this:
 
 ```sh
-seq -f '  %.0f  ' 45 | ./horizontal_cat - misaka.c -
+    seq -f '  %.0f  ' 45 | ./horizontal_cat - misaka.c -
 ```
 
 
@@ -127,16 +127,16 @@ mode with command line options would be no fun.  Instead, vertical mode is
 enabled by concatenating the source code horizontally:
 
 ```sh
-./horizontal_cat misaka.c misaka.c > misaka2.c
-gcc misaka2.c -o vertical_cat
-./vertical_cat files...
+    ./horizontal_cat misaka.c misaka.c > misaka2.c
+    gcc misaka2.c -o vertical_cat
+    ./vertical_cat files...
 ```
 
 `vertical_cat` works more or less like `cat`, except you can use
 `vertical_cat` to duplicate `stdin`:
 
 ```sh
-./vertical_cat - -
+    ./vertical_cat - -
 ```
 
 
@@ -148,9 +148,9 @@ one more mode, this one is enabled by concatenating [misaka.c](misaka.c)
 vertically:
 
 ```sh
-./vertical_cat misaka.c misaka.c > misaka3.c
-gcc misaka3.c -o long_cat
-./long_cat
+    ./vertical_cat misaka.c misaka.c > misaka3.c
+    gcc misaka3.c -o long_cat
+    ./long_cat
 ```
 
 `long_cat` outputs ASCII art of a cat to `stdout`.  You can make this cat
@@ -158,33 +158,33 @@ exponentially longer by concatenating more files vertically (up to 31 levels
 high, depending on `sizeof(int)` for your compiler):
 
 ```sh
-./vertical_cat misaka.c misaka.c misaka.c > misaka4.c
-gcc misaka4.c -o loong_cat
+    ./vertical_cat misaka.c misaka.c misaka.c > misaka4.c
+    gcc misaka4.c -o loong_cat
 
-./vertical_cat misaka.c misaka.c misaka.c misaka.c > misaka5.c
-gcc misaka5.c -o loooong_cat
+    ./vertical_cat misaka.c misaka.c misaka.c misaka.c > misaka5.c
+    gcc misaka5.c -o loooong_cat
 
-./vertical_cat misaka.c misaka.c misaka.c misaka.c misaka.c > misaka6.c
-gcc misaka6.c -o loooooooong_cat
+    ./vertical_cat misaka.c misaka.c misaka.c misaka.c misaka.c > misaka6.c
+    gcc misaka6.c -o loooooooong_cat
 ```
 
 If your terminal has really thin fonts, you can also make this output fatter
 by concatenating files horizontally:
 
 ```sh
-./vertical_cat misaka.c misaka.c | ./horizontal_cat - - > misaka7.c
-gcc misaka7.c -o long_fat_cat
+    ./vertical_cat misaka.c misaka.c | ./horizontal_cat - - > misaka7.c
+    gcc misaka7.c -o long_fat_cat
 
-./vertical_cat misaka.c misaka.c | ./horizontal_cat - - - > misaka8.c
-gcc misaka8.c -o long_faat_cat
+    ./vertical_cat misaka.c misaka.c | ./horizontal_cat - - - > misaka8.c
+    gcc misaka8.c -o long_faat_cat
 ```
 
 Output width is determined by the first level of stacked programs, so a
 triangle like the following will not have horizontally expanded output:
 
 ```sh
-./horizontal_cat misaka.c misaka.c | ./vertical_cat misaka.c - > misaka9.c
-gcc misaka9.c -o same_as_long_cat
+    ./horizontal_cat misaka.c misaka.c | ./vertical_cat misaka.c - > misaka9.c
+    gcc misaka9.c -o same_as_long_cat
 ```
 
 Finally, if you lost track of how many [misaka.c](misaka.c) you have stacked
@@ -193,14 +193,14 @@ together, you can feed the source to a
 overview of how the programs are stacked.  Example:
 
 ```sh
-perl bf.pl misaka9.c
+    perl bf.pl misaka9.c
 ```
 
 This outputs:
 
 ```
-MISAKA
-MISAKA MISAKA
+    MISAKA
+    MISAKA MISAKA
 ```
 
 

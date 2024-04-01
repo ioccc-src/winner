@@ -1,16 +1,16 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./ant Makefile
+    ./ant Makefile
 
-./ant Makefile rule
+    ./ant Makefile rule
 ```
 
 where `Makefile` is a Makefile to use and `rule` is an optional rule to use.
@@ -19,7 +19,7 @@ where `Makefile` is a Makefile to use and `rule` is an optional rule to use.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 

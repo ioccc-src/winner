@@ -4,7 +4,7 @@
 ## Calling the program
 
 ```sh
-./deckmyn "`cat deckmyn.c`" "`cat musicfile`" > output.pbm
+    ./deckmyn "`cat deckmyn.c`" "`cat musicfile`" > output.pbm
 ```
 
 Then display `output.pbm`.
@@ -86,13 +86,13 @@ musical element of a line is only 2 characters!
 Blank music paper (with G clef):
 
 ```sh
-./deckmyn "`cat deckmyn.c`" "sz sa x  s1 x  s1 x  s1 x  s1 x  s1 "> blank.pbm
+    ./deckmyn "`cat deckmyn.c`" "sz sa x  s1 x  s1 x  s1 x  s1 x  s1 "> blank.pbm
 ```
 
 With an F clef:
 
 ```
-./deckmyn "`cat deckmyn.c`" "KF sz sa x  s1 x  s1 x  s1 x  s1 x  s1 "> blank.pbm
+    ./deckmyn "`cat deckmyn.c`" "KF sz sa x  s1 x  s1 x  s1 x  s1 x  s1 "> blank.pbm
 ```
 
 Notice how only the first staff (or any staff) needs to have the full length.

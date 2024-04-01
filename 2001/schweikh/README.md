@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 
@@ -10,7 +10,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2001 schweikh bugs](../../bugs.html#2001_schweikh).
@@ -19,7 +19,7 @@ For more detailed information see [2001 schweikh bugs](../../bugs.html#2001_schw
 ## To use:
 
 ```sh
-./schweikh string string2
+    ./schweikh string string2
 ```
 
 This program will very likely crash or do something else if you do not give it
@@ -34,14 +34,14 @@ This is supposed to happen.  As is written in the
 [The Jargon File](http://catb.org/jargon/html/F/feature.html):
 
 ```
-That's not a bug, that's a feature.
+    That's not a bug, that's a feature.
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -65,11 +65,11 @@ You can use it for your shell scripting needs similar to a silent grep
 (and without `stdout` redirected to `/dev/null`):
 
 ```sh
-if prog "${VARIABLE}" '<glob>'; then
-    echo VARIABLE matches
-else
-    echo no match
-fi
+    if prog "${VARIABLE}" '<glob>'; then
+	echo VARIABLE matches
+    else
+	echo no match
+    fi
 ```
 
 ### Bugs

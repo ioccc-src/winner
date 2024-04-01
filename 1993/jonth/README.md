@@ -6,14 +6,14 @@ install [XQuartz](https://www.xquartz.org) in order to compile and run this
 entry.
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./jonth			# must be run on an X11 server
+    ./jonth	# must be run on an X11 server
 ```
 
 

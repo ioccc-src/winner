@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
@@ -10,7 +10,7 @@ make all
 The current status of this entry is:
 
 ```
-STATUS: uses gets() - change to fgets() if possible
+    STATUS: uses gets() - change to fgets() if possible
 ```
 
 For more detailed information see [1996 huffman bugs](../../bugs.html#1996_huffman).
@@ -19,14 +19,14 @@ For more detailed information see [1996 huffman bugs](../../bugs.html#1996_huffm
 ## To use:
 
 ```sh
-echo 'Huffman Decoding' | ./huffman
+    echo 'Huffman Decoding' | ./huffman
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 ```
 
 
@@ -40,7 +40,7 @@ And for a misleading hint, consider who won!  :-)
 And if you really can't see what is going on, here is an extra spoiler:
 
 ```sh
-./huffman < huffman.c 2>/dev/null
+    ./huffman < huffman.c 2>/dev/null
 ```
 
 This entry was very well received at the IOCCC BOF.

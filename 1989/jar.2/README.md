@@ -1,17 +1,17 @@
 ## To build:
 
 ```sh
-make all
+    make all
 ```
 
 
 ## To use:
 
 ```sh
-./jar.2
-[enter some lisp]
+    ./jar.2
+    [enter some lisp]
 
-./jar.2 < some_lisp_file
+    ./jar.2 < some_lisp_file
 ```
 
 NOTE: this entry will likely segfault on invalid input.
@@ -20,11 +20,11 @@ NOTE: this entry will likely segfault on invalid input.
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 
-./try.sh chocolate_cake.lisp
+    ./try.sh chocolate_cake.lisp
 
-./try.sh try.txt
+    ./try.sh try.txt
 ```
 
 
@@ -66,24 +66,24 @@ prints out the return values. End execution by typing an end-of-file
 character.
 
 ```lisp
-(+ 2.5 3.1)
-(defun fib (n)
-   (if (< n 2)
-       1
-       (+ (fib (- n 2)) (fib (- n 1)))))
-(fib 10)
-(defun ! (x) (if (equal x 0) 1 (* x (! (- x 1)))))
-(! 7)
-(defun fn1 (fn) (+ (fn 1 2) (fn 3 4)))
-(defun fn2 (a b) (+ a b))
-(fn1 (function +))
-(fn1 (function fn2))
-(fn1 (function (lambda (z1 z2) (+ z1 z2))))
-(quote a)
-(cons (quote (a b)) (quote (c d e)))
-(cons (quote (f)) ())
-(car (quote (a b c)))
-(cdr (cdr (quote (g h i))))
+    (+ 2.5 3.1)
+    (defun fib (n)
+       (if (< n 2)
+	   1
+	   (+ (fib (- n 2)) (fib (- n 1)))))
+    (fib 10)
+    (defun ! (x) (if (equal x 0) 1 (* x (! (- x 1)))))
+    (! 7)
+    (defun fn1 (fn) (+ (fn 1 2) (fn 3 4)))
+    (defun fn2 (a b) (+ a b))
+    (fn1 (function +))
+    (fn1 (function fn2))
+    (fn1 (function (lambda (z1 z2) (+ z1 z2))))
+    (quote a)
+    (cons (quote (a b)) (quote (c d e)))
+    (cons (quote (f)) ())
+    (car (quote (a b c)))
+    (cdr (cdr (quote (g h i))))
 ```
 
 

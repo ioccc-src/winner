@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+    make
 ```
 
 The programs that this program is supposed to act on,
@@ -19,7 +19,7 @@ whatever your system will compile them as).
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2001 anonymous bugs](../../bugs.html#2001_anonymous).
@@ -28,16 +28,16 @@ For more detailed information see [2001 anonymous bugs](../../bugs.html#2001_ano
 ## To use:
 
 ```sh
-./anonymous x86_program
+    ./anonymous x86_program
 ```
 
 
 ## Try:
 
 ```sh
-./try.sh
+    ./try.sh
 
-./anonymous anonymous.bed # if able to compile as a 32-bit (-m32) ELF binary
+    ./anonymous anonymous.bed # if able to compile as a 32-bit (-m32) ELF binary
 ```
 
 NOTE: if the 32-bit version cannot be compiled the script will at least compile
@@ -65,16 +65,16 @@ that :-(
 ### Alternate build:
 
 ```sh
-make alt
+    make alt
 ```
 
 
 ### Alternate use:
 
 ```sh
-./anonymous.ten.alt
+    ./anonymous.ten.alt
 
-./anonymous.bed.alt
+    ./anonymous.bed.alt
 ```
 
 

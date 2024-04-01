@@ -20,7 +20,7 @@ work for macOS without some changes, described next. For macOS you will need the
 command line tools installed which can be done like:
 
 ```sh
-sudo xcode-select --install
+    sudo xcode-select --install
 ```
 
 An important point is that the original version hard-coded `gcc` but just like
@@ -39,7 +39,7 @@ limitation removed the numbers now are `43` and `45`. But how does this work? We
 the command is:
 
 ```
-"0gcc -ansi -E -dM -undef %s /usr/include/%s>r\0 ("
+    "0gcc -ansi -E -dM -undef %s /usr/include/%s>r\0 ("
 ```
 
 which has been changed to be:
@@ -51,9 +51,9 @@ which has been changed to be:
 Shortly below that you will see, as noted above, the numbers:
 
 ```c
-if ((H = fopen (__FILE__+43, 43+__FILE__)))
-while ((fgets (L, (int)sizeof L, H)) != 0) {
-	I[strcspn (I, 45+__FILE__)] = O = 0;
+    if ((H = fopen (__FILE__+43, 43+__FILE__)))
+    while ((fgets (L, (int)sizeof L, H)) != 0) {
+	    I[strcspn (I, 45+__FILE__)] = O = 0;
 ```
 
 The first number in the above C means the length starting from 0 up through the

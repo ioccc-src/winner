@@ -55,7 +55,7 @@ The call was:
 
 
 ```c
-_exit(argv[(int)*argc-2/cc[1*(int)*argc]|-1<<4]);
+    _exit(argv[(int)*argc-2/cc[1*(int)*argc]|-1<<4]);
 ```
 
 Changing it to not refer to these variables and just exit 1 and the problems
@@ -73,9 +73,9 @@ After we fix the infinite loop if we change the `_exit()` call in macOS and
 disable the optimiser we might get something like:
 
 ```sh
-$ ./marshall
-      choo choo
-Segmentation fault: 11
+    $ ./marshall
+	  choo choo
+    Segmentation fault: 11
 ```
 
 Observe how it doesn't print it twice. But of course it segfaults so it's not
