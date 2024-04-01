@@ -156,7 +156,7 @@ the command is:</p>
 <p>Shortly below that you will see, as noted above, the numbers:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">((</span>H <span class="op">=</span> fopen <span class="op">(</span>__FILE__<span class="op">+</span><span class="dv">43</span><span class="op">,</span> <span class="dv">43</span><span class="op">+</span>__FILE__<span class="op">)))</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="op">((</span>fgets <span class="op">(</span>L<span class="op">,</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span><span class="kw">sizeof</span> L<span class="op">,</span> H<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    I<span class="op">[</span>strcspn <span class="op">(</span>I<span class="op">,</span> <span class="dv">45</span><span class="op">+</span>__FILE__<span class="op">)]</span> <span class="op">=</span> O <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span></code></pre></div>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        I<span class="op">[</span>strcspn <span class="op">(</span>I<span class="op">,</span> <span class="dv">45</span><span class="op">+</span>__FILE__<span class="op">)]</span> <span class="op">=</span> O <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span></code></pre></div>
 <p>The first number in the above C means the length starting from 0 up through the
 <code>&gt;</code>. The second number is the same starting point but up through the <code>\0</code> which
 is why it’s <code>+2</code>. But what happens if only the first number is updated (from the
@@ -174,11 +174,11 @@ can be found in the alternate code and the explanation is the same.</p>
 
     You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
     For more information, see:
 
-    https://creativecommons.org/licenses/by-sa/4.0/
+        https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
 
@@ -215,7 +215,7 @@ can be found in the alternate code and the explanation is the same.</p>
 <div class="footer">
   <h2>Copyright and CC BY-SA 4.0 License</h2>
   <p>This file and web page is:</p>
-  <blockquote><p><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></p></blockquote>
+  <blockquote><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></blockquote>
   <p>You are free to share and adapt this file under the terms of this license:</p>
   <blockquote><b>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</b></blockquote>
   <p>For more information, see:</p>

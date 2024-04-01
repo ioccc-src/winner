@@ -284,7 +284,7 @@ as well as its name and commands to build and run it, all
 -transformed, then run-length-encoded with unary coding. The main program
 extracts and builds that, and then calls it. More precisely, the command
 to build is</p>
-<pre><code>  gcc -O3 ag.c -o ag</code></pre>
+<pre><code>      gcc -O3 ag.c -o ag</code></pre>
 <p>To change that you need to edit the char array <code>p[]</code> and (possibly) two
 specially encoded constants, <code>-~('('*'(')</code> and <code>'C'*' '-'-'</code>.
 The extracted source (<code>ag.c</code>) is obfuscated as well.</p>
@@ -331,10 +331,10 @@ if-then-else constructs (also, no ternary <code>?:</code> constructs are present
 Two’s complement representation of integers is also abused. E.g. instead
 of writing <code>x++</code> or <code>x-1</code>, it is much better to write <code>x=-~x</code> and <code>~-x</code>.</p></li>
 <li><p>No numerical values, other than in the initialized char array, try</p>
-<pre><code>  ./fredriksson -ck0 [0-9] &lt; fredriksson.c</code></pre>
+<pre><code>      ./fredriksson -ck0 [0-9] &lt; fredriksson.c</code></pre>
 <p>This should print 1, as there is a number <code>3</code> in the char array (only).
 You can also try</p>
-<pre><code>  ./fredriksson -ck0 [0-9] &lt; ag.c</code></pre>
+<pre><code>      ./fredriksson -ck0 [0-9] &lt; ag.c</code></pre>
 <p>after running <code>fredriksson</code> at least once (since this generates that
 <code>ag.c</code> file), and this should print 0.</p></li>
 <li><p>The source code is best viewed with cat (or using the program itself),
@@ -367,11 +367,11 @@ apply to the generated source <code>ag.c</code>.)</p></li>
 
     You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
     For more information, see:
 
-    https://creativecommons.org/licenses/by-sa/4.0/
+        https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
 
@@ -434,7 +434,7 @@ apply to the generated source <code>ag.c</code>.)</p></li>
 <div class="footer">
   <h2>Copyright and CC BY-SA 4.0 License</h2>
   <p>This file and web page is:</p>
-  <blockquote><p><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></p></blockquote>
+  <blockquote><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></blockquote>
   <p>You are free to share and adapt this file under the terms of this license:</p>
   <blockquote><b>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</b></blockquote>
   <p>For more information, see:</p>

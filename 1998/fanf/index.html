@@ -218,44 +218,44 @@ since it is equivalent to <code>S K K</code>:</p>
 <p>The algorithm for translating lambda expressions into combinator
 expressions works as follows. There are three forms of lambda expression
 to consider: variables, applications, and abstractions.</p>
-<pre><code>trans v     -&gt; v                (variable)
-trans a b   -&gt; (trans a) (trans  b )    (application)
-trans \ab   -&gt; abs a (trans b)      (abstraction)</code></pre>
+<pre><code>trans v         -&gt; v                            (variable)
+trans a b       -&gt; (trans a) (trans  b )        (application)
+trans \ab       -&gt; abs a (trans b)              (abstraction)</code></pre>
 <p>There are a further three cases to consider for the body of lambda
 expressions, where we need to do the magic that transforms away the
 variables.</p>
-<pre><code>abs a f x   -&gt; S (abs a f) (abs a x)
-abs a b     -&gt; K b         (b != a)
-abs a a     -&gt; I</code></pre>
+<pre><code>abs a f x       -&gt; S (abs a f) (abs a x)
+abs a b         -&gt; K b         (b != a)
+abs a a         -&gt; I</code></pre>
 <p>E.g. suppose we had combinator expressions for <code>+</code> and <code>3</code> and we wanted
 to see what the combinator expression for doubling 3 looked like:</p>
 <pre><code>    trans \x(+ x x) 3
--&gt;  (trans \x(+ x x)) (trans 3)
--&gt;  (abs x (trans + x x)) 3
--&gt;  (abs x + x x) 3
--&gt;  S (abs x + x) (abs x x) 3
--&gt;  S (S (abs x +) (abs x x)) I 3
--&gt;  S (S (K +) I) I 3
--&gt;  S (S (K +) I) I 3</code></pre>
+-&gt;      (trans \x(+ x x)) (trans 3)
+-&gt;      (abs x (trans + x x)) 3
+-&gt;      (abs x + x x) 3
+-&gt;      S (abs x + x) (abs x x) 3
+-&gt;      S (S (abs x +) (abs x x)) I 3
+-&gt;      S (S (K +) I) I 3
+-&gt;      S (S (K +) I) I 3</code></pre>
 <p>We can then check that this evaluates to the expected result:</p>
 <pre><code>    S (S (K +) I) I 3
--&gt;  S (K +) I 3 (I 3)
--&gt;  K + 3 (I 3) (I 3)
--&gt;  + (I 3) (I 3)
--&gt;  + 3 3</code></pre>
+-&gt;      S (K +) I 3 (I 3)
+-&gt;      K + 3 (I 3) (I 3)
+-&gt;      + (I 3) (I 3)
+-&gt;      + 3 3</code></pre>
 <p>It is possible to perform a slightly more compact translation with a
 couple of simple optimisations. For example, note that <code>K (a b)</code> is the
 same as <code>S (K a) (K b)</code>, because</p>
 <pre><code>    K (a b) x
--&gt;  a b</code></pre>
+-&gt;      a b</code></pre>
 <p>and</p>
 <pre><code>    S (K a) (K b) x
--&gt;  K a x (K b x)
--&gt;  a b</code></pre>
+-&gt;      K a x (K b x)
+-&gt;      a b</code></pre>
 <p>Also, <code>S (K a) I</code> is the same as just <code>a</code> because</p>
 <pre><code>    S (K a) I x
--&gt;  K a x (I x)
--&gt;  a x</code></pre>
+-&gt;      K a x (I x)
+-&gt;      a x</code></pre>
 <p>The program simply reads a lambda expression from the standard input,
 translates it into a combinator expression using the transformation and
 optimisations described above, and prints out the result.</p>
@@ -430,11 +430,11 @@ International Logic Programming Symposium, 1995.</p>
 
     You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
     For more information, see:
 
-    https://creativecommons.org/licenses/by-sa/4.0/
+        https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
 
@@ -498,7 +498,7 @@ International Logic Programming Symposium, 1995.</p>
 <div class="footer">
   <h2>Copyright and CC BY-SA 4.0 License</h2>
   <p>This file and web page is:</p>
-  <blockquote><p><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></p></blockquote>
+  <blockquote><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></blockquote>
   <p>You are free to share and adapt this file under the terms of this license:</p>
   <blockquote><b>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</b></blockquote>
   <p>For more information, see:</p>

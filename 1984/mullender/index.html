@@ -314,8 +314,8 @@ separate.</p>
 <p>The <a href="https://en.wikipedia.org/wiki/Programmed_Data_Processor">PDP</a> and
 <a href="https://en.wikipedia.org/wiki/VAX">VAX</a> codes implement the same algorithm:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(;;)</span> <span class="op">{</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    write<span class="op">(</span><span class="dv">1</span><span class="op">,</span> <span class="st">&quot;  :-)</span><span class="sc">\b\b\b\b</span><span class="st">&quot;</span><span class="op">,</span> <span class="dv">9</span><span class="op">);</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    delay<span class="op">();</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>        write<span class="op">(</span><span class="dv">1</span><span class="op">,</span> <span class="st">&quot;  :-)</span><span class="sc">\b\b\b\b</span><span class="st">&quot;</span><span class="op">,</span> <span class="dv">9</span><span class="op">);</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        delay<span class="op">();</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
 <p>The result is that the symbols <code>:-)</code> move across the screen. <code>delay</code> is
 implemented differently on the
@@ -436,48 +436,48 @@ compiled in modern systems.</p>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">register</span> <span class="dt">short</span> pos <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> c<span class="op">,</span> n<span class="op">;</span></span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">register</span> <span class="dt">char</span> <span class="op">*</span>fmt<span class="op">;</span></span>
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>argc <span class="op">!=</span> <span class="dv">2</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    fprintf <span class="op">(</span>stderr<span class="op">,</span> <span class="st">&quot;Usage: </span><span class="sc">%s</span><span class="st"> file</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span> argv<span class="op">[</span><span class="dv">0</span><span class="op">]);</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    exit <span class="op">(</span><span class="dv">1</span><span class="op">);</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>        fprintf <span class="op">(</span>stderr<span class="op">,</span> <span class="st">&quot;Usage: </span><span class="sc">%s</span><span class="st"> file</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span> argv<span class="op">[</span><span class="dv">0</span><span class="op">]);</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>        exit <span class="op">(</span><span class="dv">1</span><span class="op">);</span></span>
 <span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">((</span>fp <span class="op">=</span> fopen<span class="op">(</span>argv<span class="op">[</span><span class="dv">1</span><span class="op">],</span> <span class="st">&quot;r&quot;</span><span class="op">))</span> <span class="op">==</span> NULL<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    fprintf<span class="op">(</span>stderr<span class="op">,</span> <span class="st">&quot;</span><span class="sc">%s</span><span class="st">: can&#39;t open </span><span class="sc">%s\n</span><span class="st">&quot;</span><span class="op">,</span> argv<span class="op">[</span><span class="dv">0</span><span class="op">],</span> argv<span class="op">[</span><span class="dv">1</span><span class="op">]);</span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    exit<span class="op">(</span><span class="dv">2</span><span class="op">);</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>        fprintf<span class="op">(</span>stderr<span class="op">,</span> <span class="st">&quot;</span><span class="sc">%s</span><span class="st">: can&#39;t open </span><span class="sc">%s\n</span><span class="st">&quot;</span><span class="op">,</span> argv<span class="op">[</span><span class="dv">0</span><span class="op">],</span> argv<span class="op">[</span><span class="dv">1</span><span class="op">]);</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>        exit<span class="op">(</span><span class="dv">2</span><span class="op">);</span></span>
 <span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    fseek <span class="op">(</span>fp<span class="op">,</span> <span class="op">(</span><span class="dt">long</span><span class="op">)</span> <span class="kw">sizeof</span> <span class="op">(</span><span class="kw">struct</span> exec<span class="op">),</span> <span class="dv">0</span><span class="op">);</span></span>
 <span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;/* portable between VAX and PDP11 */</span><span class="sc">\n\n</span><span class="st">&quot;</span><span class="op">);</span></span>
 <span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    printf <span class="op">(</span><span class="st">&quot;short main[] = {</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span>
 <span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(;;)</span> <span class="op">{</span></span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>pos <span class="op">==</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span><span class="op">);</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="op">(</span>pos <span class="op">==</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>            printf<span class="op">(</span><span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span><span class="op">);</span></span>
 <span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span>getc<span class="op">(</span>fp<span class="op">)</span> <span class="op">&amp;</span> <span class="bn">0377</span><span class="op">;</span></span>
-<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>feof<span class="op">(</span>fp<span class="op">))</span> <span class="cf">break</span><span class="op">;</span></span>
-<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> getc<span class="op">(</span>fp<span class="op">)</span> <span class="op">&lt;&lt;</span> <span class="dv">8</span><span class="op">|</span>c<span class="op">;</span></span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>        c<span class="op">=</span>getc<span class="op">(</span>fp<span class="op">)</span> <span class="op">&amp;</span> <span class="bn">0377</span><span class="op">;</span></span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="op">(</span>feof<span class="op">(</span>fp<span class="op">))</span> <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>        n <span class="op">=</span> getc<span class="op">(</span>fp<span class="op">)</span> <span class="op">&lt;&lt;</span> <span class="dv">8</span><span class="op">|</span>c<span class="op">;</span></span>
 <span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">switch</span> <span class="op">(</span>rand<span class="op">()</span> <span class="op">%</span> <span class="dv">5</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>        <span class="cf">case</span> <span class="dv">0</span><span class="op">:</span></span>
-<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">case</span> <span class="dv">1</span><span class="op">:</span></span>
-<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>        fmt <span class="op">=</span> <span class="st">&quot;</span><span class="sc">%d</span><span class="st">&quot;</span><span class="op">;</span> <span class="cf">break</span><span class="op">;</span></span>
-<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>        <span class="cf">case</span> <span class="dv">2</span><span class="op">:</span></span>
-<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a>        fmt <span class="op">=</span> <span class="st">&quot;</span><span class="sc">%u</span><span class="st">&quot;</span><span class="op">;</span> <span class="cf">break</span><span class="op">;</span></span>
-<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">case</span> <span class="dv">3</span><span class="op">:</span></span>
-<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a>        fmt <span class="op">=</span> <span class="st">&quot;0</span><span class="sc">%o</span><span class="st">&quot;</span><span class="op">;</span> <span class="cf">break</span><span class="op">;</span></span>
-<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a>        <span class="cf">case</span> <span class="dv">4</span><span class="op">:</span></span>
-<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a>        fmt <span class="op">=</span> <span class="st">&quot;0x</span><span class="sc">%x</span><span class="st">&quot;</span><span class="op">;</span> <span class="cf">break</span><span class="op">;</span></span>
-<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">switch</span> <span class="op">(</span>rand<span class="op">()</span> <span class="op">%</span> <span class="dv">5</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>            <span class="cf">case</span> <span class="dv">0</span><span class="op">:</span></span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>            <span class="cf">case</span> <span class="dv">1</span><span class="op">:</span></span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>                fmt <span class="op">=</span> <span class="st">&quot;</span><span class="sc">%d</span><span class="st">&quot;</span><span class="op">;</span> <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>            <span class="cf">case</span> <span class="dv">2</span><span class="op">:</span></span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a>                fmt <span class="op">=</span> <span class="st">&quot;</span><span class="sc">%u</span><span class="st">&quot;</span><span class="op">;</span> <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a>            <span class="cf">case</span> <span class="dv">3</span><span class="op">:</span></span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a>                fmt <span class="op">=</span> <span class="st">&quot;0</span><span class="sc">%o</span><span class="st">&quot;</span><span class="op">;</span> <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a>            <span class="cf">case</span> <span class="dv">4</span><span class="op">:</span></span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a>                fmt <span class="op">=</span> <span class="st">&quot;0x</span><span class="sc">%x</span><span class="st">&quot;</span><span class="op">;</span> <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
 <span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span><span class="dv">32</span> <span class="op">&lt;=</span> n <span class="op">&amp;&amp;</span> n <span class="op">&lt;</span> <span class="dv">127</span> <span class="op">&amp;&amp;</span> <span class="op">(</span>rand<span class="op">()</span> <span class="op">%</span> <span class="dv">4</span><span class="op">))</span> fmt <span class="op">=</span> <span class="st">&quot;&#39;</span><span class="sc">%c</span><span class="st">&#39;&quot;</span><span class="op">;</span></span>
-<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span>n <span class="op">&lt;</span> <span class="dv">8</span> <span class="op">?</span> <span class="st">&quot;</span><span class="sc">%d</span><span class="st">&quot;</span> <span class="op">:</span> fmt<span class="op">,</span> n<span class="op">);</span></span>
-<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;,&quot;</span><span class="op">);</span></span>
-<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>pos<span class="op">++</span> <span class="op">==</span> <span class="dv">8</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span>
-<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a>        pos <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> printf<span class="op">(</span><span class="st">&quot; &quot;</span><span class="op">);</span></span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="op">(</span><span class="dv">32</span> <span class="op">&lt;=</span> n <span class="op">&amp;&amp;</span> n <span class="op">&lt;</span> <span class="dv">127</span> <span class="op">&amp;&amp;</span> <span class="op">(</span>rand<span class="op">()</span> <span class="op">%</span> <span class="dv">4</span><span class="op">))</span> fmt <span class="op">=</span> <span class="st">&quot;&#39;</span><span class="sc">%c</span><span class="st">&#39;&quot;</span><span class="op">;</span></span>
+<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a>        printf<span class="op">(</span>n <span class="op">&lt;</span> <span class="dv">8</span> <span class="op">?</span> <span class="st">&quot;</span><span class="sc">%d</span><span class="st">&quot;</span> <span class="op">:</span> fmt<span class="op">,</span> n<span class="op">);</span></span>
+<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">&quot;,&quot;</span><span class="op">);</span></span>
+<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="op">(</span>pos<span class="op">++</span> <span class="op">==</span> <span class="dv">8</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a>            printf<span class="op">(</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span>
+<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a>            pos <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span> printf<span class="op">(</span><span class="st">&quot; &quot;</span><span class="op">);</span></span>
 <span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;};</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span>
+<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">&quot;};</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span>
 <span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>As can be seen, there is a slight preference for decimal, and also a character
@@ -498,11 +498,11 @@ So we changed the word <code>and</code> in the comment to <code>&amp;&amp;</code
 
     You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
     For more information, see:
 
-    https://creativecommons.org/licenses/by-sa/4.0/
+        https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
 
@@ -567,7 +567,7 @@ So we changed the word <code>and</code> in the comment to <code>&amp;&amp;</code
 <div class="footer">
   <h2>Copyright and CC BY-SA 4.0 License</h2>
   <p>This file and web page is:</p>
-  <blockquote><p><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></p></blockquote>
+  <blockquote><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></blockquote>
   <p>You are free to share and adapt this file under the terms of this license:</p>
   <blockquote><b>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</b></blockquote>
   <p>For more information, see:</p>

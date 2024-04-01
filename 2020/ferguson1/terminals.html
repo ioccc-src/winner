@@ -252,14 +252,13 @@ messed up. There are numerous things you might try but probably the easiest is
 to run the game again without modifying the dimensions (and then just quit) or
 even just the <code>reset</code> command.</p>
 <p>The Linux man page says:</p>
-<pre><code>You might have to run the `reset` tool like:
-
-       &lt;LF&gt;reset&lt;LF&gt;
+<p>You might have to run the <code>reset</code> tool like:</p>
+<pre><code>           &lt;LF&gt;reset&lt;LF&gt;
 
        (the line-feed character is normally control-J) to get the terminal
        to work, as carriage-return may no longer work in the abnormal state.</code></pre>
 <p>If you don’t have the reset utility you can try:</p>
-<pre><code>    echo -e \\033c</code></pre>
+<pre><code>        echo -e \\033c</code></pre>
 <p>Otherwise try <code>clear; stty sane</code> (that will turn on echo also) or if all else
 fails log out and back in.</p>
 <p>For more information on this subject generally see the <a href="https://www.tldp.org/HOWTO/Keyboard-and-Console-HOWTO.html">Linux keyboard and
@@ -271,10 +270,10 @@ outside what’s actually possible with their screen. But then player 4 comes
 along and thinks he/she will be clever and mess with the dimensions a bit. Let’s
 say they have a 13” monitor and they think it’d be funny to see how 997 lines
 would work; they might try something like:</p>
-<pre><code>    LINES=997 ./prog</code></pre>
+<pre><code>        LINES=997 ./prog</code></pre>
 <p>What then? Well expect trouble; curses will not know any better and the max
 number of lines will be 997. If they were to do:</p>
-<pre><code>    COLUMNS=997 ./prog</code></pre>
+<pre><code>        COLUMNS=997 ./prog</code></pre>
 <p>Then they will see a different effect. Again the same reason: the player trying
 to be funny.</p>
 <p>The game will try and be funny in return and you can expect it to not function
@@ -306,7 +305,7 @@ GitHub) file).</p>
 <p>According to my tests for monochrome terminals the screen has the white and
 black background; if terminal is configured to be black background white
 foreground that is the order it is too. You can try that like:</p>
-<pre><code>    TERM=linux-m ./prog</code></pre>
+<pre><code>        TERM=linux-m ./prog</code></pre>
 <p>But I do not specifically check if the terminal has colours. Is there a curses
 implementation that has a problem here? Below I explain what to comment out
 should you need colours to be disabled but I personally have not run into any
@@ -324,7 +323,7 @@ including COLORS-1.</code></pre>
 
        [...]
 
-        COLOR_PAIRS corresponds to the terminal database&#39;s max_pairs capability, (see terminfo(5)).</code></pre>
+            COLOR_PAIRS corresponds to the terminal database&#39;s max_pairs capability, (see terminfo(5)).</code></pre>
 <p>Based on the two as well as the fact that monochrome terminals (I’ve tried under
 both Linux and macOS) seem to work fine I believe I am fine here too. And to
 confirm this I wrote the following code with the output below:</p>
@@ -332,11 +331,11 @@ confirm this I wrote the following code with the output below:</p>
 
     int main()
     {
-    initscr();
-    start_color();
-    printw(&quot;COLORS: %d\nCOLOR_PAIRS: %d\n&quot;, COLORS, COLOR_PAIRS);
-    getch();
-    endwin();
+        initscr();
+        start_color();
+        printw(&quot;COLORS: %d\nCOLOR_PAIRS: %d\n&quot;, COLORS, COLOR_PAIRS);
+        getch();
+        endwin();
     }
 
     TERM=linux-m ./colour_pairs
@@ -351,17 +350,17 @@ even it would only be a runtime error if the colours are supported and the
 number is out of the range? To try and figure this out I did another test:</p>
 <pre><code>    int main()
     {
-    initscr();
-    start_color();
+        initscr();
+        start_color();
 
-    init_pair(COLOR_PAIRS+1, COLOR_WHITE, COLOR_GREEN);
-    bkgd(COLOR_PAIR(COLOR_PAIRS+1));
-    init_pair(1, COLOR_WHITE, COLOR_BLACK);
-    attron(COLOR_PAIR(1));
-    printw(&quot;COLORS: %d\nCOLOR_PAIRS: %d\n&quot;, COLORS, COLOR_PAIRS);
+        init_pair(COLOR_PAIRS+1, COLOR_WHITE, COLOR_GREEN);
+        bkgd(COLOR_PAIR(COLOR_PAIRS+1));
+        init_pair(1, COLOR_WHITE, COLOR_BLACK);
+        attron(COLOR_PAIR(1));
+        printw(&quot;COLORS: %d\nCOLOR_PAIRS: %d\n&quot;, COLORS, COLOR_PAIRS);
 
-    getch();
-    endwin();
+        getch();
+        endwin();
     }</code></pre>
 <p>Running it like</p>
 <pre><code>    TERM=linux-m ./colour_pairs</code></pre>
@@ -388,11 +387,11 @@ but I do not know for certain.</p>
 
     You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
     For more information, see:
 
-    https://creativecommons.org/licenses/by-sa/4.0/
+        https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
 
@@ -429,7 +428,7 @@ but I do not know for certain.</p>
 <div class="footer">
   <h2>Copyright and CC BY-SA 4.0 License</h2>
   <p>This file and web page is:</p>
-  <blockquote><p><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></p></blockquote>
+  <blockquote><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></blockquote>
   <p>You are free to share and adapt this file under the terms of this license:</p>
   <blockquote><b>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</b></blockquote>
   <p>For more information, see:</p>

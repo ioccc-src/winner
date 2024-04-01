@@ -152,8 +152,8 @@ But this would mean that we would have to extract the length into a
 counter before shifting out each symbol, such as</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>length <span class="op">=</span> <span class="op">(</span>encoding <span class="op">&amp;</span> <span class="dv">96</span><span class="op">)</span> <span class="op">&gt;&gt;</span> <span class="dv">5</span><span class="op">;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span> <span class="op">{</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    putchar<span class="op">(</span>encoding <span class="op">&amp;</span> <span class="dv">1</span> <span class="op">?</span> <span class="ch">&#39;-&#39;</span> <span class="op">:</span> <span class="ch">&#39;.&#39;</span><span class="op">);</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    encoding <span class="op">&gt;&gt;=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        putchar<span class="op">(</span>encoding <span class="op">&amp;</span> <span class="dv">1</span> <span class="op">?</span> <span class="ch">&#39;-&#39;</span> <span class="op">:</span> <span class="ch">&#39;.&#39;</span><span class="op">);</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        encoding <span class="op">&gt;&gt;=</span> <span class="dv">1</span><span class="op">;</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">while</span> <span class="op">(</span>length<span class="op">--);</span></span></code></pre></div>
 <p>We can also use the remaining bits to <em>include</em> the counter</p>
 <pre><code>length 1: 00000.1x     E &gt; 00000.11
@@ -163,8 +163,8 @@ length 4: 00.1xxxx     Z &gt; 00.11100
 length 5: 0.1xxxxx     3 &gt; 0.100111</code></pre>
 <p>with 1 bit still to be chosen freely (let’s assume it is 0). Now we can do</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span> <span class="op">{</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    putchar<span class="op">(</span>encoding <span class="op">&amp;</span> <span class="dv">1</span> <span class="op">?</span> <span class="ch">&#39;-&#39;</span> <span class="op">:</span> <span class="ch">&#39;.&#39;</span><span class="op">);</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    encoding <span class="op">&gt;&gt;=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>        putchar<span class="op">(</span>encoding <span class="op">&amp;</span> <span class="dv">1</span> <span class="op">?</span> <span class="ch">&#39;-&#39;</span> <span class="op">:</span> <span class="ch">&#39;.&#39;</span><span class="op">);</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        encoding <span class="op">&gt;&gt;=</span> <span class="dv">1</span><span class="op">;</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="op">(</span>encoding <span class="op">&gt;</span> <span class="dv">1</span><span class="op">);</span></span></code></pre></div>
 <p>As you see, the encoded Morse sequence can be the counter itself. But
 this is not very pleasant, as some Morse sequences will end up having
@@ -180,8 +180,8 @@ length 5: 011xxxxx     3 &gt; 01100111  (= &#39;g&#39;)</code></pre>
 <code>5</code> needs an escape (<code>5 = ..... &gt; 01111111 = '\177'</code>). The way the length
 is encoded still allows the encoding to be its own counter:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span> <span class="op">{</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    putchar<span class="op">(</span>encoding <span class="op">&amp;</span> <span class="dv">1</span> <span class="op">?</span> <span class="ch">&#39;-&#39;</span> <span class="op">:</span> <span class="ch">&#39;.&#39;</span><span class="op">);</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    encoding <span class="op">=</span> <span class="op">(</span>encoding <span class="op">+</span> <span class="dv">32</span><span class="op">)</span> <span class="op">&gt;&gt;</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>        putchar<span class="op">(</span>encoding <span class="op">&amp;</span> <span class="dv">1</span> <span class="op">?</span> <span class="ch">&#39;-&#39;</span> <span class="op">:</span> <span class="ch">&#39;.&#39;</span><span class="op">);</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        encoding <span class="op">=</span> <span class="op">(</span>encoding <span class="op">+</span> <span class="dv">32</span><span class="op">)</span> <span class="op">&gt;&gt;</span> <span class="dv">1</span><span class="op">;</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">while</span> <span class="op">(</span>encoding <span class="op">&gt;</span> <span class="dv">35</span><span class="op">);</span></span></code></pre></div>
 <p>The last shift will always result in <code>00100010</code>, hence the test for <code>&gt;35</code>.
 Note that the calculation for the next value of <code>encoding</code> is done at <code>int</code>
@@ -219,21 +219,21 @@ the decoding lookup because of this <code>'\0'</code>. Since it is far more obsc
 this way, I hope you’ll forgive me.</p>
 <p>The outline of the program is roughly as follows</p>
 <pre><code>while (more lines) {
-    if (line is in morse) {
-        while (more characters) {
-            skip next sequence
-            if (&#39; &#39;)
-                putchar(&#39; &#39;);
-            else
-                decode_sequence; /* backwards */
-        }
-    } else {
-        while (more characters) {
-            if (isalnum)
-                encode_character;
-            putchar(&#39; &#39;);
-        }
-    }</code></pre>
+        if (line is in morse) {
+                while (more characters) {
+                        skip next sequence
+                        if (&#39; &#39;)
+                                putchar(&#39; &#39;);
+                        else
+                                decode_sequence; /* backwards */
+                }
+        } else {
+                while (more characters) {
+                        if (isalnum)
+                                encode_character;
+                        putchar(&#39; &#39;);
+                }
+        }</code></pre>
 <p>Because of the <em>two</em> <code>while(more characters)</code> loops are the same, I’ve
 exchanged the <code>if(line is in morse)</code> and the two <code>while</code> loops (so there
 is <em>single</em> <code>while</code> loop). However, we must now store the <code>if(line is in morse)</code> test for efficiency (it would be stupid to test the entire line
@@ -275,11 +275,11 @@ not.</p>
 
     You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
     For more information, see:
 
-    https://creativecommons.org/licenses/by-sa/4.0/
+        https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
 
@@ -316,7 +316,7 @@ not.</p>
 <div class="footer">
   <h2>Copyright and CC BY-SA 4.0 License</h2>
   <p>This file and web page is:</p>
-  <blockquote><p><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></p></blockquote>
+  <blockquote><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></blockquote>
   <p>You are free to share and adapt this file under the terms of this license:</p>
   <blockquote><b>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</b></blockquote>
   <p>For more information, see:</p>

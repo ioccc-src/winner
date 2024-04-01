@@ -296,9 +296,9 @@ editor with syntax highlighting):</p>
 were actually not what they appear: the only arg that existed in <code>main()</code> was
 <code>Manual</code>. Thus it now looks like:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>main<span class="op">(</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">/*  C program. (If you don&#39;t</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"> *  understand it look it</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"> *  up.) (In the C*/</span> Manual<span class="op">)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">/*      C program. (If you don&#39;t</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"> *      understand it look it</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"> *      up.) (In the C*/</span> Manual<span class="op">)</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span></code></pre></div></li>
 <li><p>The macros <code>C</code> and <code>V</code> were changed to lower case. This is because it felt
 like the <code>C=" ..</code>’ part in <code>subr()</code> would be better to be upper case as it talks
@@ -1869,10 +1869,10 @@ This program had &#39;main()&#39; so the error message was:
     ^
     /opt/local/include/SDL/SDL_main.h:34:14: note: expanded from macro &#39;main&#39;
     #define main SDL_main
-         ^
+                 ^
     /opt/local/include/SDL/SDL_main.h:35:12: note: previous declaration is here
     extern int SDL_main(int argc, char *argv[]);
-           ^
+               ^
     1 warning and 1 error generated.
     make: *** [thadgavin_sdl] Error 1
 
@@ -2791,8 +2791,8 @@ real source of the program. So the source of the entry has to be compiled and
 then run, and the output has to be compiled to be <code>hou</code>. This allows the real
 program to be used. Thus the Makefile rule looks like:</p>
 <div class="sourceCode" id="cb75"><pre class="sourceCode makefile"><code class="sourceCode makefile"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="dv">${PROG}:</span><span class="dt"> </span><span class="ch">${</span><span class="dt">PROG</span><span class="ch">}</span><span class="dt">.c</span></span>
-<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="er">    </span><span class="ch">${</span><span class="dt">CC</span><span class="ch">}</span> <span class="ch">${</span><span class="dt">CFLAGS</span><span class="ch">}</span> <span class="ch">$&lt;</span> -o <span class="ch">$@</span> <span class="ch">${</span><span class="dt">LDFLAGS</span><span class="ch">}</span></span>
-<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>    ./<span class="ch">${</span><span class="dt">PROG</span><span class="ch">}</span> | <span class="ch">${</span><span class="dt">CC</span><span class="ch">}</span> <span class="ch">${</span><span class="dt">CFLAGS</span><span class="ch">}</span> -xc - -o <span class="ch">$@</span> <span class="ch">${</span><span class="dt">LDFLAGS</span><span class="ch">}</span></span></code></pre></div>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="er">        </span><span class="ch">${</span><span class="dt">CC</span><span class="ch">}</span> <span class="ch">${</span><span class="dt">CFLAGS</span><span class="ch">}</span> <span class="ch">$&lt;</span> -o <span class="ch">$@</span> <span class="ch">${</span><span class="dt">LDFLAGS</span><span class="ch">}</span></span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>        ./<span class="ch">${</span><span class="dt">PROG</span><span class="ch">}</span> | <span class="ch">${</span><span class="dt">CC</span><span class="ch">}</span> <span class="ch">${</span><span class="dt">CFLAGS</span><span class="ch">}</span> -xc - -o <span class="ch">$@</span> <span class="ch">${</span><span class="dt">LDFLAGS</span><span class="ch">}</span></span></code></pre></div>
 <p>which then compiles like:</p>
 <div class="sourceCode" id="cb76"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cc</span> <span class="at">-std</span><span class="op">=</span>gnu11 <span class="at">-Wall</span> <span class="at">-Wextra</span> <span class="at">-pedantic</span> <span class="at">-Wno-sign-compare</span> <span class="at">-Wno-strict-prototypes</span>    <span class="at">-O3</span> hou.c <span class="at">-o</span> hou <span class="at">-lm</span></span>
 <span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./hou</span> <span class="kw">|</span> <span class="fu">cc</span> <span class="at">-std</span><span class="op">=</span>gnu11 <span class="at">-Wall</span> <span class="at">-Wextra</span> <span class="at">-pedantic</span> <span class="at">-Wno-sign-compare</span> <span class="at">-Wno-strict-prototypes</span>    <span class="at">-O3</span> <span class="at">-xc</span> <span class="at">-</span> <span class="at">-o</span> hou <span class="at">-lm</span></span></code></pre></div>
@@ -3469,11 +3469,11 @@ are not the author of) for which we neglected to mention in this file, please
 
     You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
     For more information, see:
 
-    https://creativecommons.org/licenses/by-sa/4.0/
+        https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
 
@@ -3510,7 +3510,7 @@ are not the author of) for which we neglected to mention in this file, please
 <div class="footer">
   <h2>Copyright and CC BY-SA 4.0 License</h2>
   <p>This file and web page is:</p>
-  <blockquote><p><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></p></blockquote>
+  <blockquote><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></blockquote>
   <p>You are free to share and adapt this file under the terms of this license:</p>
   <blockquote><b>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</b></blockquote>
   <p>For more information, see:</p>

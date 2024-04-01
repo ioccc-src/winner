@@ -286,9 +286,9 @@ no chance to use Standardese weasel words as an escape: can I have</p></li>
 </ol>
 <div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>  <span class="cf">case</span> <span class="op">&lt;</span>some_token<span class="op">&gt;:</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">case</span> <span class="op">&lt;</span>some_token<span class="op">&gt;:</span></span></code></pre></div>
-<pre><code>in the same switch? (Note that you need the [invisible] newline. You
-can generously allow the additional constraint that no `#undef`s or
-`#define`s are allowed between the two cases.)</code></pre>
+<p>in the same switch? (Note that you need the [invisible] newline. You
+can generously allow the additional constraint that no <code>#undef</code>s or
+<code>#define</code>s are allowed between the two cases.)</p>
 <p>Lots of integer constants and string literals come into the source
 via <code>__LINE__</code> and <code>__FILE__</code> which are redefined at various places.
 Sometimes the <code>__FILE__</code> contains <code>\0</code> bytes; different strings or
@@ -316,14 +316,14 @@ I could have used a lot more <code>^K</code> and <code>^L</code> probably undete
 counter but decided to err on the side of safety. I use a perl
 script to compute the character count according to the rules.
 The advantages of an independent clean room approach…</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode perl"><code class="sourceCode perl"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">#!/usr/bin/perl -w</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="wa">$/</span> = <span class="ot">&quot;</span><span class="st">\0</span><span class="ot">&quot;</span>;</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="wa">$_</span> = &lt;&gt;;</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="ot">s/</span><span class="ch">[</span><span class="bn">;{}</span><span class="ch">][</span><span class="bn"> \t\n</span><span class="ch">]</span><span class="ot">/</span><span class="ch">\n</span><span class="ot">/g</span>;</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="ot">s/</span><span class="ch">[</span><span class="bn"> \t\n</span><span class="ch">]+</span><span class="ot">//g</span>;</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span> <span class="fu">length</span> (<span class="wa">$_</span>),<span class="ot">&quot;</span><span class="ch">\n</span><span class="ot">&quot;</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode perl"><code class="sourceCode perl"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">#!/usr/bin/perl -w</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="wa">$/</span> = <span class="ot">&quot;</span><span class="st">\0</span><span class="ot">&quot;</span>;</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="wa">$_</span> = &lt;&gt;;</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="ot">s/</span><span class="ch">[</span><span class="bn">;{}</span><span class="ch">][</span><span class="bn"> \t\n</span><span class="ch">]</span><span class="ot">/</span><span class="ch">\n</span><span class="ot">/g</span>;</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="ot">s/</span><span class="ch">[</span><span class="bn"> \t\n</span><span class="ch">]+</span><span class="ot">//g</span>;</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span> <span class="fu">length</span> (<span class="wa">$_</span>),<span class="ot">&quot;</span><span class="ch">\n</span><span class="ot">&quot;</span>;</span></code></pre></div>
 <p>To use, try:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">perl</span> ./charcount.pl schweikh1.c</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">perl</span> ./charcount.pl schweikh1.c</span></code></pre></div>
 <p>I have tried, as suggested in the guidelines, to let the code look
 like ordinary C code. Apart from a few long lines I think I left
 the indentation like I would in RL. You should however not try to
@@ -341,11 +341,11 @@ That describes exactly my modest attempts…</p>
 
     You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
     For more information, see:
 
-    https://creativecommons.org/licenses/by-sa/4.0/
+        https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
 
@@ -412,7 +412,7 @@ That describes exactly my modest attempts…</p>
 <div class="footer">
   <h2>Copyright and CC BY-SA 4.0 License</h2>
   <p>This file and web page is:</p>
-  <blockquote><p><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></p></blockquote>
+  <blockquote><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></blockquote>
   <p>You are free to share and adapt this file under the terms of this license:</p>
   <blockquote><b>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</b></blockquote>
   <p>For more information, see:</p>

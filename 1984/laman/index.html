@@ -157,11 +157,11 @@ like:</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Some new compilers (in 1984) dislike lines 6 and 10 of the source, so we changed
 them from:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">;++</span>f<span class="op">)</span>a<span class="op">[</span>     b<span class="op">&lt;&lt;</span><span class="dv">5</span><span class="op">|</span>c<span class="op">]</span>     <span class="op">=</span>d<span class="op">++,</span>b<span class="op">+</span>     <span class="op">=</span>e<span class="op">;</span><span class="cf">for</span><span class="op">(</span>     f<span class="op">=</span><span class="dv">0</span><span class="op">;</span>f<span class="op">&lt;</span>O</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;&lt;</span><span class="dv">5</span><span class="op">|</span>c<span class="op">]^</span>     <span class="op">=</span>a<span class="op">[</span>b<span class="op">&lt;&lt;</span><span class="dv">5</span>     <span class="op">|</span>c<span class="op">]^=</span>a<span class="op">[</span>     <span class="op">(</span>k<span class="op">-(</span>b<span class="op">+</span><span class="dv">1</span>     <span class="op">))&lt;&lt;</span><span class="dv">5</span><span class="op">|</span>c<span class="op">]</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">;++</span>f<span class="op">)</span>a<span class="op">[</span>         b<span class="op">&lt;&lt;</span><span class="dv">5</span><span class="op">|</span>c<span class="op">]</span>         <span class="op">=</span>d<span class="op">++,</span>b<span class="op">+</span>         <span class="op">=</span>e<span class="op">;</span><span class="cf">for</span><span class="op">(</span>         f<span class="op">=</span><span class="dv">0</span><span class="op">;</span>f<span class="op">&lt;</span>O</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;&lt;</span><span class="dv">5</span><span class="op">|</span>c<span class="op">]^</span>         <span class="op">=</span>a<span class="op">[</span>b<span class="op">&lt;&lt;</span><span class="dv">5</span>         <span class="op">|</span>c<span class="op">]^=</span>a<span class="op">[</span>         <span class="op">(</span>k<span class="op">-(</span>b<span class="op">+</span><span class="dv">1</span>         <span class="op">))&lt;&lt;</span><span class="dv">5</span><span class="op">|</span>c<span class="op">]</span></span></code></pre></div>
 <p>to:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">;++</span>f<span class="op">)</span>a<span class="op">[</span>     b<span class="op">&lt;&lt;</span><span class="dv">5</span><span class="op">|</span>c<span class="op">]</span>     <span class="op">=</span>d<span class="op">++,</span>b<span class="op">+=</span>    e<span class="op">;</span><span class="cf">for</span><span class="op">(</span>      f<span class="op">=</span><span class="dv">0</span><span class="op">;</span>f<span class="op">&lt;</span>O</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;&lt;</span><span class="dv">5</span><span class="op">|</span>c<span class="op">]^=</span>    a<span class="op">[</span>b<span class="op">&lt;&lt;</span><span class="dv">5</span>      <span class="op">|</span>c<span class="op">]^=</span>a<span class="op">[</span>     <span class="op">(</span>k<span class="op">-(</span>b<span class="op">+</span><span class="dv">1</span>     <span class="op">))&lt;&lt;</span><span class="dv">5</span><span class="op">|</span>c<span class="op">]</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">;++</span>f<span class="op">)</span>a<span class="op">[</span>         b<span class="op">&lt;&lt;</span><span class="dv">5</span><span class="op">|</span>c<span class="op">]</span>         <span class="op">=</span>d<span class="op">++,</span>b<span class="op">+=</span>        e<span class="op">;</span><span class="cf">for</span><span class="op">(</span>          f<span class="op">=</span><span class="dv">0</span><span class="op">;</span>f<span class="op">&lt;</span>O</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;&lt;</span><span class="dv">5</span><span class="op">|</span>c<span class="op">]^=</span>        a<span class="op">[</span>b<span class="op">&lt;&lt;</span><span class="dv">5</span>          <span class="op">|</span>c<span class="op">]^=</span>a<span class="op">[</span>         <span class="op">(</span>k<span class="op">-(</span>b<span class="op">+</span><span class="dv">1</span>         <span class="op">))&lt;&lt;</span><span class="dv">5</span><span class="op">|</span>c<span class="op">]</span></span></code></pre></div>
 <p>I hope you have a C beautifier!</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>No remarks were provided by the author.</p>
@@ -171,11 +171,11 @@ them from:</p>
 
     You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
     For more information, see:
 
-    https://creativecommons.org/licenses/by-sa/4.0/
+        https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
 
@@ -238,7 +238,7 @@ them from:</p>
 <div class="footer">
   <h2>Copyright and CC BY-SA 4.0 License</h2>
   <p>This file and web page is:</p>
-  <blockquote><p><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></p></blockquote>
+  <blockquote><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></blockquote>
   <p>You are free to share and adapt this file under the terms of this license:</p>
   <blockquote><b>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</b></blockquote>
   <p>For more information, see:</p>

@@ -204,13 +204,13 @@ not if you have a telescope or if you are in the southern hemisphere. In
 that case I suggest that to get the correct image you look at the screen
 from inside the monitor whilst standing on your head. In case of
 confusion, please consult the following chart (*):</p>
-<pre><code>           N
-           ^
-           |
-     E &lt;---+---&gt; W
-           |
-           v
-           S</code></pre>
+<pre><code>               N
+               ^
+               |
+         E &lt;---+---&gt; W
+               |
+               v
+               S</code></pre>
 <p>(*) Not to scale.</p>
 <h3 id="history">History</h3>
 <p>Galileo discovered the moons in January 1610.
@@ -349,7 +349,7 @@ supported on many systems. It may be implemented using <code>select()</code> or 
 required, or as a final solution you can change the <code>usleep(10000)</code> to
 <code>sleep(1)</code>. To compile on systems which do not have <code>usleep()</code>, but do have
 <code>select()</code>, the following may suffice as an additional compiler argument:</p>
-<pre><code>-Dusleep={time_t v[2]={0,10000};select(0,0,0,0,v);}</code></pre>
+<pre><code>    -Dusleep={time_t v[2]={0,10000};select(0,0,0,0,v);}</code></pre>
 <p><code>gcc</code> complains about “unreachable code at beginning of switch
 statement”, although removing some of this code will prevent
 the algorithm from working.</p>
@@ -385,11 +385,11 @@ in places where at first glance the code appears to be executed.</p></li>
 
     You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
     For more information, see:
 
-    https://creativecommons.org/licenses/by-sa/4.0/
+        https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
@@ -462,7 +462,7 @@ Jean Meeus. Published by Willmann-Bell Inc.<a href="#fnref2" class="footnote-bac
 <div class="footer">
   <h2>Copyright and CC BY-SA 4.0 License</h2>
   <p>This file and web page is:</p>
-  <blockquote><p><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></p></blockquote>
+  <blockquote><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></blockquote>
   <p>You are free to share and adapt this file under the terms of this license:</p>
   <blockquote><b>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</b></blockquote>
   <p>For more information, see:</p>

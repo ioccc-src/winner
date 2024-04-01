@@ -239,7 +239,7 @@ counting words correctly absent <code>-k</code>.</p>
 <p>The discrepancies found are documented and explained in the file
 <a href="discrepancies.html">discrepancies.html</a>.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> ~/src/obc <span class="at">-type</span> f <span class="at">-a</span> <span class="at">-name</span> <span class="st">&quot;*.c&quot;</span> <span class="kw">|</span> <span class="fu">xargs</span> ./spotcheck.sh ./prog <span class="kw">|</span> <span class="ex">./spotdiff.sh</span> <span class="kw">|</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">grep</span> <span class="at">-v</span> keep <span class="kw">|</span> <span class="fu">diff</span> <span class="at">-bw</span> <span class="at">-</span> discrep<span class="pp">*</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&quot;[&lt;&gt;] cl &quot;</span></span></code></pre></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">grep</span> <span class="at">-v</span> keep <span class="kw">|</span> <span class="fu">diff</span> <span class="at">-bw</span> <span class="at">-</span> discrep<span class="pp">*</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&quot;[&lt;&gt;] cl &quot;</span></span></code></pre></div>
 <p>In summary, there are only 6 unique entries out of 366 that have any variation
 in Rule 2 counts; in all cases, the differences are due to bugs within
 <code>iocccsize</code>, described in detail in the file
@@ -303,32 +303,32 @@ language</em>. It really is this easy with <code>tac</code>:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env bash</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="va">script</span><span class="op">=</span><span class="st">&#39;</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="st">BEGIN {</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="st">    last=nl=&quot;\n&quot;;</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="st">    f=&quot;c11&quot;; while(getline &lt;f &gt; 0) kw[$0]++; close(f);</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="st">        last=nl=&quot;\n&quot;;</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="st">        f=&quot;c11&quot;; while(getline &lt;f &gt; 0) kw[$0]++; close(f);</span></span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="st">}</span></span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="st">function iskw(a)   { return a in kw }</span></span>
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="st">function indent(a) { return sprintf(&quot;%*s&quot;, n*3, &quot; &quot;) }</span></span>
 <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="st">function newline() { if (!infor &amp;&amp; last != nl) printf last=nl; }</span></span>
 <span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="st">function show(a) {</span></span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="st">    if (last==nl) printf &quot;%s&quot;, indent()</span></span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="st">    printf &quot;%s%s&quot;, space(), a</span></span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="st">    last=a</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="st">        if (last==nl) printf &quot;%s&quot;, indent()</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="st">        printf &quot;%s%s&quot;, space(), a</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="st">        last=a</span></span>
 <span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="st">}</span></span>
 <span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="st">function space() {</span></span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="st">    return iskw(last) ||</span></span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="st">      (last ~ /[A-Za-z0-9_+-\/%^[&amp;\]\)=:&lt;&gt;;]$/ &amp;&amp; $0 !~ /[:;()\[\],]/) ? &quot; &quot; : &quot;&quot;</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="st">        return iskw(last) ||</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="st">          (last ~ /[A-Za-z0-9_+-\/%^[&amp;\]\)=:&lt;&gt;;]$/ &amp;&amp; $0 !~ /[:;()\[\],]/) ? &quot; &quot; : &quot;&quot;</span></span>
 <span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="st">}</span></span>
 <span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="st">/^\(/   { ++paren }</span></span>
 <span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="st">/^\)/   { --paren }</span></span>
 <span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="st">/^for/          { newline(); infor=1 }</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="st">/^for/              { newline(); infor=1 }</span></span>
 <span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="st">infor &amp;&amp; /^;/       { ++infor; show($0 &quot; &quot;); next }</span></span>
 <span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a><span class="st">infor==1 &amp;&amp; /^:/    { ++infor }</span></span>
 <span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a><span class="st">infor&gt;1 &amp;&amp; paren==0 { infor=0 }</span></span>
 <span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a><span class="st">/^\?/       { tern++; n++; newline(); show($0 &quot; &quot;); next }</span></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a><span class="st">/^\?/           { tern++; n++; newline(); show($0 &quot; &quot;); next }</span></span>
 <span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a><span class="st">tern &amp;&amp; /^:/    { newline(); show($0); --tern; --n; next }</span></span>
 <span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a><span class="st">/^#/    { newline(); show($0); newline(); next }</span></span>
@@ -359,7 +359,7 @@ Clang gets quite irate</em>.</p></li>
 … | wc</p></li>
 </ul>
 <p>Which numbers are most often used?</p>
-<pre><code>  ... | sort -k2nr | sed 5q</code></pre></li>
+<p>… | sort -k2nr | sed 5q</p></li>
 <li><p>The code describes its function by careful arrangement of variables up front…</p></li>
 <li><p>…coupled with a description of the typical IOCCC contestant, or at least the author</p></li>
 <li><p>Why shouldn’t trigraph parsing be written in trigraph?</p></li>
@@ -402,7 +402,7 @@ the IOJCC trash can.</p>
 which is neither complete (<code>#define</code>, <code>#ifndef</code>, <code>#undef</code> are missing
 – yes, Virginia knows about <code>#define</code> omitted on purpose),
 nor correct (many more are added: <code>I</code>, <code>true</code>, <code>bool</code>, <code>compl</code>, …):</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">sed</span> <span class="at">-n</span> <span class="st">&#39;1p&#39;</span> c11<span class="kw">;</span> <span class="fu">sed</span> <span class="at">-n</span> <span class="st">&#39;2,$p&#39;</span> ioccc.kw.freq <span class="kw">|</span> <span class="fu">sort</span><span class="kw">)</span> <span class="kw">|</span> <span class="fu">comm</span> <span class="at">-3</span> <span class="at">-</span> c11</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">sed</span> <span class="at">-n</span> <span class="st">&#39;1p&#39;</span> c11<span class="kw">;</span> <span class="fu">sed</span> <span class="at">-n</span> <span class="st">&#39;2,$p&#39;</span> ioccc.kw.freq <span class="kw">|</span> <span class="fu">sort</span><span class="kw">)</span> <span class="kw">|</span> <span class="fu">comm</span> <span class="at">-3</span> <span class="at">-</span> c11</span></code></pre></div>
 <p>That is an obfuscated way to say “diff”. But it also more clearly shows the, um, diffs.</p>
 <p>The usage string is similarly externalized, providing a better usability string than
 the limits would otherwise allow. If this is considered bending the rules too far,
@@ -430,7 +430,7 @@ for obfuscation. Thus <code>-trigraphs -Wno-trigraphs</code> (which is also humo
 <p>The code uses <code>unsigned char</code>s, but C strings are <code>signed</code>. Thus <code>-Wno-pointer-sign</code>.
 NB: This is <em>not</em> a portability concern, the one string holds only printable ASCII characters.</p>
 <p>Thus:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cc</span> <span class="at">-ansi</span> <span class="at">-Wall</span> <span class="at">-trigraphs</span> <span class="at">-Wno-trigraphs</span> <span class="at">-Wno-parentheses</span> <span class="at">-Wno-empty-body</span> <span class="at">-Wno-char-subscripts</span> <span class="at">-Wno-pointer-sign</span> <span class="at">-DU</span><span class="op">=</span>O <span class="at">-DW</span><span class="op">=</span><span class="dt">\&quot;</span>keywords<span class="dt">\&quot;</span> <span class="at">-o</span> prog prog.c</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cc</span> <span class="at">-ansi</span> <span class="at">-Wall</span> <span class="at">-trigraphs</span> <span class="at">-Wno-trigraphs</span> <span class="at">-Wno-parentheses</span> <span class="at">-Wno-empty-body</span> <span class="at">-Wno-char-subscripts</span> <span class="at">-Wno-pointer-sign</span> <span class="at">-DU</span><span class="op">=</span>O <span class="at">-DW</span><span class="op">=</span><span class="dt">\&quot;</span>keywords<span class="dt">\&quot;</span> <span class="at">-o</span> prog prog.c</span></code></pre></div>
 <h3 id="coda">Coda:</h3>
 <p><a href="../../authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> was relentless in his pursuit of bugs.
 Thanks to his reports, the version of <a href="unob.sh">unob.sh</a> is stronger,
@@ -443,12 +443,12 @@ works well on most inputs, but tends to need some raw nroff for more fancy
 constructions, such as combined arguments (e.g. the <code>-r</code> and <code>-s</code> arguments to tac
 are not recognised when written as <code>-rs</code> in prose).</p>
 <p>Try:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./manpage.sh</span> tac</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./manpage.sh</span> <span class="at">-h</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="ex">./manpage.sh</span> <span class="at">-h</span> <span class="kw">|</span> <span class="ex">./manpage.sh</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="ex">./manpage.sh</span> <span class="at">-h</span> <span class="kw">|</span> <span class="ex">./manpage.sh</span> <span class="at">-R</span> <span class="kw">|</span> <span class="fu">less</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="ex">./manpage.sh</span> <span class="at">-h</span> <span class="kw">|</span> <span class="ex">./manpage.sh</span> <span class="at">-P</span> <span class="kw">|</span> <span class="fu">lpr</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./manpage.sh</span> tac</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./manpage.sh</span> <span class="at">-h</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="ex">./manpage.sh</span> <span class="at">-h</span> <span class="kw">|</span> <span class="ex">./manpage.sh</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="ex">./manpage.sh</span> <span class="at">-h</span> <span class="kw">|</span> <span class="ex">./manpage.sh</span> <span class="at">-R</span> <span class="kw">|</span> <span class="fu">less</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="ex">./manpage.sh</span> <span class="at">-h</span> <span class="kw">|</span> <span class="ex">./manpage.sh</span> <span class="at">-P</span> <span class="kw">|</span> <span class="fu">lpr</span></span></code></pre></div>
 <p>NOTE: in 2023 the <code>tac.man</code> was updated to proper man format and renamed
 <a href="tac.1">tac.1</a>.</p>
 <!--
@@ -457,11 +457,11 @@ are not recognised when written as <code>-rs</code> in prose).</p>
 
     You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
     For more information, see:
 
-    https://creativecommons.org/licenses/by-sa/4.0/
+        https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
 
@@ -575,7 +575,7 @@ are not recognised when written as <code>-rs</code> in prose).</p>
 <div class="footer">
   <h2>Copyright and CC BY-SA 4.0 License</h2>
   <p>This file and web page is:</p>
-  <blockquote><p><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></p></blockquote>
+  <blockquote><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></blockquote>
   <p>You are free to share and adapt this file under the terms of this license:</p>
   <blockquote><b>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</b></blockquote>
   <p>For more information, see:</p>

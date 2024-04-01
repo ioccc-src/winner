@@ -160,43 +160,43 @@ bit easier for you:</p>
 <pre><code># Game parameters
 #
 DU=99999        # Time between steps in microseconds.
-        # Make it larger if the game is too fast for you.
+                # Make it larger if the game is too fast for you.
 
 DW=28           # Pipe-to-pipe spacing, in columns.
-        # Farther apart is easier.
+                # Farther apart is easier.
 
 DD=20           # Space between pipes.
-        # The difference between DD and DW is the width of a pipe.
-        # Narrow pipes are easier to fly though.
+                # The difference between DD and DW is the width of a pipe.
+                # Narrow pipes are easier to fly though.
 
 DH=8            # Height of gap in pipe.
-        # Make this larger to make the game easier.
+                # Make this larger to make the game easier.
 
 DA=100          # Acceleration due to gravity (scaled by 256).
-        # Smaller values make you glide slower.
+                # Smaller values make you glide slower.
 
 DI=-200         # Impulse velocity of a flap (scaled by 256).
-        # Make larger if you want a less intense tapping experience!
+                # Make larger if you want a less intense tapping experience!
 
 DB=&#39;&quot;&lt;o^=&quot;&#39;     # Sprite for player when gliding.
-        # HINT: Try using various emojis.
-        # NOTE: The string MUST be enclosed inside double quotes.
+                # HINT: Try using various emojis.
+                # NOTE: The string MUST be enclosed inside double quotes.
 
 DF=&#39;&quot;&lt;ov=&quot;&#39;     # Sprite for player when flapping.
-        # HINT: Try using various emojis.
-        # NOTE: The string MUST be enclosed inside double quotes.
+                # HINT: Try using various emojis.
+                # NOTE: The string MUST be enclosed inside double quotes.
 
 DG=&#39;&quot;Tap to Flap!&quot;&#39;     # Instruction text.
-            # Change to your native tongue.
-        # NOTE: The string MUST be enclosed inside double quotes.</code></pre>
+                        # Change to your native tongue.
+                # NOTE: The string MUST be enclosed inside double quotes.</code></pre>
 <p>WARNING: if you have good eye-hand coordination and too much time on your hands
 you might fall asleep while playing as you probably will never die in this mode.
 We only stopped when a reminder came through and we tried to mark it complete at
 the same time as playing and we almost managed to survive that. At that point we
 already scored over 90.</p>
 <p>Enjoy!</p>
-<pre><code>TAP!! TAP!! TAP!!
-FLAP! FLAP! FLAP!</code></pre>
+<p>TAP!! TAP!! TAP!!
+FLAP! FLAP! FLAP!</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="the-program">The Program</h3>
 <p>Better late than never to jump on the bandwagon of 2014’s most successful
@@ -241,9 +241,9 @@ characters (needed for UTF-8 support, which is needed for emojis), you may need
 to make some changes to the <code>Makefile</code> to get emojis to work on your system.
 To help you get started, I’ve included some example substitutions for emojis
 sprites and instruction text; for example, type</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> EMOJI=beer LANGUAGE=spanish</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> EMOJI=beer LANGUAGE=spanish</span></code></pre></div>
 <p>or</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> EMOJI=globe</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> EMOJI=globe</span></code></pre></div>
 <p>for some examples (the full list of options is in the <code>Makefile</code>). Don’t forget
 to <code>make clobber</code> first (or use <code>make -B</code>). If the output doesn’t look right,
 you may need to link with the “wide” version of <code>ncurses</code>. On MacOSX 10.11, it
@@ -262,11 +262,11 @@ live-streamed targeted video advertising.</p>
 
     You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
     For more information, see:
 
-    https://creativecommons.org/licenses/by-sa/4.0/
+        https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
 
@@ -329,7 +329,7 @@ live-streamed targeted video advertising.</p>
 <div class="footer">
   <h2>Copyright and CC BY-SA 4.0 License</h2>
   <p>This file and web page is:</p>
-  <blockquote><p><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></p></blockquote>
+  <blockquote><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></blockquote>
   <p>You are free to share and adapt this file under the terms of this license:</p>
   <blockquote><b>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</b></blockquote>
   <p>For more information, see:</p>

@@ -146,8 +146,10 @@ snake’s syllabary) for all snake and herpetologist programmers alike.</p>
 <ul>
 <li><p>Modifications</p>
 <ul>
-<li>Modifying the colours</li>
+<li>Modifying the colours
+<ul>
 <li>Background colour</li>
+</ul></li>
 <li>Modifying the characters for the wall, bug and snake</li>
 <li>Modifying input keys</li>
 <li>Modifying the status/score line</li>
@@ -157,8 +159,10 @@ snake’s syllabary) for all snake and herpetologist programmers alike.</p>
 <ul>
 <li>Health (and/or Lives)</li>
 <li>Saving the game</li>
-<li>Different types of walls</li>
+<li>Different types of walls
+<ul>
 <li>Blockades</li>
+</ul></li>
 <li>Diagonal movement</li>
 <li>Special abilities</li>
 <li>Obstacles</li>
@@ -279,27 +283,27 @@ not wanting to mess with anything that’s unnecessary):</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#define J Z</span><span class="op">(</span><span class="pp">SIZE</span><span class="op">:</span><span class="pp"> </span><span class="op">%</span><span class="pp">zu BUGS</span><span class="op">:</span><span class="pp"> </span><span class="op">%</span><span class="pp">zu\n</span><span class="op">),</span><span class="pp"> A</span><span class="op">,</span><span class="pp"> c</span><span class="op">);</span></span></code></pre></div>
 <p>More generally the following expressions and data types (with format specifiers)
 come to mind as information that might be of interest.</p>
-<pre><code>    DESCRIPTION         EXPRESSION      TYPE    FORMAT SPECIFIER
+<pre><code>    DESCRIPTION             EXPRESSION          TYPE    FORMAT SPECIFIER
 
-    Snake size          A               size_t  %zu
+    Snake size              A                       size_t      %zu
 
-    Y coordinate        Y               int     %d
+    Y coordinate            Y                       int         %d
     of snake head
 
-    X coordinate        X               int     %d
+    X coordinate            X                       int         %d
     of snake head
 
-    Max snake size      g               size_t  %zu
+    Max snake size          g                       size_t      %zu
 
-    Bugs eaten          c               size_t  %zu
+    Bugs eaten              c                       size_t      %zu
 
-    Bug line (Y)        *U              int     %d
+    Bug line (Y)            *U                      int         %d
 
-    Bug column (X)      *V              int     %d
+    Bug column (X)          *V                      int         %d
 
-    Snake size          A               size_t  %zu
+    Snake size              A                       size_t      %zu
 
-    Growth size (per    N               size_t  %zu
+    Growth size (per    N                           size_t      %zu
     bug)</code></pre>
 <h2 id="make-it-so-the-snake-starts-at-a-random-location">Make it so the snake starts at a random location</h2>
 <p>Quite simply change:</p>
@@ -406,9 +410,9 @@ coordinates. This of course is very different now but the idea remains the same:
 <div class="sourceCode" id="cb14"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>p <span class="op">&amp;&amp;</span> <span class="op">!(*</span>O<span class="op">&gt;=</span>O<span class="op">[</span><span class="dv">1</span><span class="op">]||</span>H<span class="op">&gt;=</span>M<span class="op">(</span><span class="dv">1</span><span class="op">)))</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>X<span class="op">&lt;</span><span class="dv">1</span><span class="op">||</span>X<span class="op">&gt;=</span>H<span class="op">)</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> X<span class="op">&lt;</span><span class="dv">1</span><span class="op">?</span>H<span class="op">-</span><span class="dv">1</span><span class="op">:</span><span class="dv">1</span><span class="op">;</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>        X <span class="op">=</span> X<span class="op">&lt;</span><span class="dv">1</span><span class="op">?</span>H<span class="op">-</span><span class="dv">1</span><span class="op">:</span><span class="dv">1</span><span class="op">;</span></span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>Y<span class="op">&lt;</span><span class="dv">2</span><span class="op">||</span>Y<span class="op">&gt;=*</span>O<span class="op">)</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    Y <span class="op">=</span> Y<span class="op">&lt;</span><span class="dv">2</span><span class="op">?*</span>O<span class="op">-</span><span class="dv">1</span><span class="op">:</span><span class="dv">2</span><span class="op">;</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>        Y <span class="op">=</span> Y<span class="op">&lt;</span><span class="dv">2</span><span class="op">?*</span>O<span class="op">-</span><span class="dv">1</span><span class="op">:</span><span class="dv">2</span><span class="op">;</span></span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>You can ignore the first if if you like; I’m not going to explain that part. The
 inner if statements however are testing if the new snake coordinates are beyond
@@ -501,11 +505,11 @@ no default limit on max moves.</p>
 
     You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
     For more information, see:
 
-    https://creativecommons.org/licenses/by-sa/4.0/
+        https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
 
@@ -542,7 +546,7 @@ no default limit on max moves.</p>
 <div class="footer">
   <h2>Copyright and CC BY-SA 4.0 License</h2>
   <p>This file and web page is:</p>
-  <blockquote><p><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></p></blockquote>
+  <blockquote><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></blockquote>
   <p>You are free to share and adapt this file under the terms of this license:</p>
   <blockquote><b>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</b></blockquote>
   <p>For more information, see:</p>

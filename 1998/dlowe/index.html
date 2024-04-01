@@ -194,11 +194,11 @@ more consistent level of quality. :-)</p>
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
 <span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="va">URL</span><span class="op">=</span><span class="kw">`</span><span class="va">${EXPR}</span> <span class="st">&quot;</span><span class="va">$QUERY_STRING</span><span class="st">&quot;</span> : <span class="st">&#39;[Uu][Rr][Ll]=\(.*\)&#39;</span><span class="kw">`</span></span>
 <span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">[</span> <span class="ot">-z</span> <span class="st">&quot;</span><span class="va">${URL}</span><span class="st">&quot;</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="va">${ECHO}</span> <span class="st">&quot;No URL given in QUERY_STRING&quot;</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>        <span class="va">${ECHO}</span> <span class="st">&quot;No URL given in QUERY_STRING&quot;</span></span>
 <span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="bu">[</span> X<span class="kw">`</span><span class="va">${EXPR}</span> <span class="st">&quot;</span><span class="va">${URL}</span><span class="st">&quot;</span> : <span class="st">&#39;[Ff][Ii][Ll][Ee]:&#39;</span><span class="kw">`</span> <span class="ot">!=</span> X0 <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    <span class="va">${ECHO}</span> <span class="st">&quot;file: based URLs are not allowed&quot;</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>        <span class="va">${ECHO}</span> <span class="st">&quot;file: based URLs are not allowed&quot;</span></span>
 <span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    <span class="va">${LYNX}</span> <span class="at">-restrictions</span><span class="op">=</span>all <span class="at">-source</span> <span class="st">&quot;</span><span class="va">${URL}</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="va">${POOT}</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>        <span class="va">${LYNX}</span> <span class="at">-restrictions</span><span class="op">=</span>all <span class="at">-source</span> <span class="st">&quot;</span><span class="va">${URL}</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="va">${POOT}</span></span>
 <span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">fi</span></span>
 <span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code></pre></div>
 <p>can be used to pootify web pages. This has been added as
@@ -238,11 +238,11 @@ run <code>perl4</code> programs after they’ve been run through it; “encrypt�
 
     You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
     For more information, see:
 
-    https://creativecommons.org/licenses/by-sa/4.0/
+        https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
 
@@ -309,7 +309,7 @@ run <code>perl4</code> programs after they’ve been run through it; “encrypt�
 <div class="footer">
   <h2>Copyright and CC BY-SA 4.0 License</h2>
   <p>This file and web page is:</p>
-  <blockquote><p><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></p></blockquote>
+  <blockquote><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></blockquote>
   <p>You are free to share and adapt this file under the terms of this license:</p>
   <blockquote><b>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</b></blockquote>
   <p>For more information, see:</p>

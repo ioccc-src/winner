@@ -155,11 +155,11 @@ prompting you to press any key to continue so that you may do so.</p>
 dashed argument) for compression and decompression! You’ve been warned.</p>
 <p>The author recommended on linux/x86, glibc 2.0, libc4/5:</p>
 <pre class="make"><code>bmeyer: bmeyer.c
-    CC -DY=&quot;__setfpucw(0x127f)&quot; -O6 $? -o $@ -lm</code></pre>
+        CC -DY=&quot;__setfpucw(0x127f)&quot; -O6 $? -o $@ -lm</code></pre>
 <p>However many compilers use <code>-O3</code> as the maximum level for <code>-O</code> optimization.</p>
 <p>And on linux/x86, glibc 2.1:</p>
 <pre class="make"><code>bmeyer: bmeyer.c
-    gcc -DY=&#39;int x=0x127f; __asm__ (&quot;fldcw %0&quot; : : &quot;m&quot; (*&amp;x))&#39;  $? -o $@ -lm</code></pre>
+        gcc -DY=&#39;int x=0x127f; __asm__ (&quot;fldcw %0&quot; : : &quot;m&quot; (*&amp;x))&#39;  $? -o $@ -lm</code></pre>
 <p>Compile with the maximum possible optimization on your system.
 If your system has 80-bit internal representation of floating
 point values (x86, some Motorola processors) and you want the
@@ -370,11 +370,11 @@ for image compression testing for so long, it was now a useful benchmark.
 
     You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
     For more information, see:
 
-    https://creativecommons.org/licenses/by-sa/4.0/
+        https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
@@ -468,7 +468,7 @@ guarantee decoding within the requested maximum error.<a href="#fnref5" class="f
 <div class="footer">
   <h2>Copyright and CC BY-SA 4.0 License</h2>
   <p>This file and web page is:</p>
-  <blockquote><p><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></p></blockquote>
+  <blockquote><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></blockquote>
   <p>You are free to share and adapt this file under the terms of this license:</p>
   <blockquote><b>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</b></blockquote>
   <p>For more information, see:</p>

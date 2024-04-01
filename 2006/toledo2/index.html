@@ -233,8 +233,8 @@ two files on A: drive, <code>HALT.COM</code> to stop the emulator (so it closes 
 by the provided C.BIOS.</p>
 <p>To get a complete <a href="https://en.wikipedia.org/wiki/CP/M">CP/M</a> system, you will need the following files
 from the <code>SOURCE</code> directory:</p>
-<pre><code>    ASM.COM  DDT.COM   DUMP.COM   ED.COM   LOAD.COM
-    PIP.COM  STAT.COM  SUBMIT.COM XSUB.COM</code></pre>
+<pre><code>ASM.COM  DDT.COM   DUMP.COM   ED.COM   LOAD.COM
+PIP.COM  STAT.COM  SUBMIT.COM XSUB.COM</code></pre>
 <p>To import them, you must run the emulator with an argument, by
 example:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./toledo2</span> DDT.COM</span></code></pre></div>
@@ -266,8 +266,8 @@ write   --&gt;  putchar(7[o])
 system  --&gt;  nothing</code></pre>
 <p>Notice that you’ll have to do <code>#include &lt;conio.h&gt;</code> as well.</p>
 <p>Also add the following to trap Ctrl-C:</p>
-<pre><code>    #include &lt;signal.h&gt;
-    signal(SIGINT, SIG_IGN);</code></pre>
+<pre><code>#include &lt;signal.h&gt;
+signal(SIGINT, SIG_IGN);</code></pre>
 <p>NOTE: this is what the <a href="#alternate-code">alternate code</a> is for!</p>
 <p>NOTE from the judges: in Unix like systems <code>getch()</code> is part of curses but this
 is not what is needed.</p>
@@ -326,11 +326,11 @@ only one function.</li>
 
     You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
     For more information, see:
 
-    https://creativecommons.org/licenses/by-sa/4.0/
+        https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
 
@@ -398,7 +398,7 @@ only one function.</li>
 <div class="footer">
   <h2>Copyright and CC BY-SA 4.0 License</h2>
   <p>This file and web page is:</p>
-  <blockquote><p><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></p></blockquote>
+  <blockquote><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></blockquote>
   <p>You are free to share and adapt this file under the terms of this license:</p>
   <blockquote><b>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</b></blockquote>
   <p>For more information, see:</p>

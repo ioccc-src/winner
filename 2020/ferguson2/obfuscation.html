@@ -145,7 +145,7 @@ ints:</p>
 g = e + 1;
 
 for (j=-3; j &lt; 0; ++j)
-e&lt;:j:&gt; = j+3;</code></pre>
+    e&lt;:j:&gt; = j+3;</code></pre>
 <p>Which I think is more confusing: when one is iterating an array you don’t
 expect to start out with index &lt; 0 but to then compare that that index &lt; 0
 and increment until 0 along with setting the value of the array to j + 3 is
@@ -156,21 +156,21 @@ e&lt;:i-3:&gt; = (j &lt; 1 ? 1 : (j &gt; 5 ? 5 : j))-1;</code></pre></li>
 <li><p>Observe these two functions:</p>
 <pre><code>void w(char *s, int k, int v)
 {
-    for(e&lt;:2:&gt; = 0; s&lt;:*P:&gt;; ++e&lt;:2:&gt;)
-    {
-        v = s&lt;:e&lt;:2:&gt;:&gt;;
-        if(v &gt; 64 &amp;&amp; v &lt; 91)
-        s&lt;:e&lt;:2:&gt;:&gt; = (((v - 65 + k) % 26) + 65);
-    }
+        for(e&lt;:2:&gt; = 0; s&lt;:*P:&gt;; ++e&lt;:2:&gt;)
+        {
+                v = s&lt;:e&lt;:2:&gt;:&gt;;
+                if(v &gt; 64 &amp;&amp; v &lt; 91)
+                    s&lt;:e&lt;:2:&gt;:&gt; = (((v - 65 + k) % 26) + 65);
+        }
 }
 void Q(void)
 {
-    for(*g = 0; *g &lt; 3; ++*g)
-    {
-        *Y&lt;:16+e&lt;:1:&gt;:&gt;=S&lt;:e&lt;:e&lt;:1:&gt;-3:&gt;:&gt;;
-        R&lt;:e&lt;:1:&gt;:&gt;=Y&lt;:e&lt;:-3+e&lt;:1:&gt;:&gt;:&gt;;
-        w(R[*g],*(e+e&lt;:1:&gt;-6)=q(Y&lt;:8:&gt;,*Y&lt;:7:&gt;),*g);
-    }
+        for(*g = 0; *g &lt; 3; ++*g)
+        {
+                *Y&lt;:16+e&lt;:1:&gt;:&gt;=S&lt;:e&lt;:e&lt;:1:&gt;-3:&gt;:&gt;;
+                R&lt;:e&lt;:1:&gt;:&gt;=Y&lt;:e&lt;:-3+e&lt;:1:&gt;:&gt;:&gt;;
+                w(R[*g],*(e+e&lt;:1:&gt;-6)=q(Y&lt;:8:&gt;,*Y&lt;:7:&gt;),*g);
+        }
 }</code></pre>
 <p>First of all: why do I set <code>e[2]</code> to 0 and increment it for each pass in the
 loop, but then the condition for the loop is <code>s[*P]</code>?</p>
@@ -197,11 +197,11 @@ and (2) I didn’t want to risk changing all the offsets: thus I just made that
 address <code>e[1]</code>. Thus I also have:</p>
 <pre><code>for (*g = 0 ; *g &lt; 10; ++*g)
 {
-r&lt;:-2:&gt; = Y&lt;:14:&gt;&lt;:*(e+1):&gt;; r&lt;:-3:&gt; = Y&lt;:15:&gt;&lt;:1&lt;:e:&gt;:&gt;;
-if (r&lt;:-3:&gt; &amp;&amp; r&lt;:-2:&gt; == r&lt;:-1:&gt;)
-    return r&lt;:-3:&gt;;
-if (r&lt;:-2:&gt; &amp;&amp; r&lt;:-3:&gt; == r&lt;:-1:&gt;)
-    return r&lt;:-2:&gt;;
+    r&lt;:-2:&gt; = Y&lt;:14:&gt;&lt;:*(e+1):&gt;; r&lt;:-3:&gt; = Y&lt;:15:&gt;&lt;:1&lt;:e:&gt;:&gt;;
+    if (r&lt;:-3:&gt; &amp;&amp; r&lt;:-2:&gt; == r&lt;:-1:&gt;)
+        return r&lt;:-3:&gt;;
+    if (r&lt;:-2:&gt; &amp;&amp; r&lt;:-3:&gt; == r&lt;:-1:&gt;)
+        return r&lt;:-2:&gt;;
 }</code></pre>
 <p>This <code>e[1]</code> of course is the same as <code>*g</code> as above and as you can see has
 multiple dimensions (that is the reference to Y does) too (and this is also
@@ -211,7 +211,7 @@ both Y[14] and Y[15]. I also happen to use S (via r which points to S + 10)
 which I use as the two chars to compare (this is the plugboard function).</p></li>
 <li><p>The above function Z() takes a <code>char x</code> but you won’t notice it being used
 at all. Why? In fact I call it like so:</p>
-<pre><code>k = Z(r&lt;:-1:&gt;=k);</code></pre>
+<pre><code>    k = Z(r&lt;:-1:&gt;=k);</code></pre>
 <p>The char is just used as a way to be able to call the function and assign to
 the proper variable at the same time: in the function Z I don’t care about x
 because it’s the same value as r[-1] (which I do care about). Why is it
@@ -221,7 +221,7 @@ again negative offsets to cause more confusion.</p></li>
 <li><p>Although this is clearly already shown in the above there are other ways I
 refer to the same variable in more than one way (or in some cases maybe more
 correct to say ‘same location’). In the Z() function for example:</p>
-<pre><code>r&lt;:-2:&gt; = Y&lt;:14:&gt;&lt;:*(e+1):&gt;; r&lt;:-3:&gt; = Y&lt;:15:&gt;&lt;:1&lt;:e:&gt;:&gt;;</code></pre>
+<pre><code>    r&lt;:-2:&gt; = Y&lt;:14:&gt;&lt;:*(e+1):&gt;; r&lt;:-3:&gt; = Y&lt;:15:&gt;&lt;:1&lt;:e:&gt;:&gt;;</code></pre>
 <p>I refer to e[1] as both: *(e+1) and 1[e].</p></li>
 <li><p>Replacing a number of <code>if ..</code>s with <code>... &amp;&amp; (...)</code>s (in one case at least
 it’s nested further: <code>f &amp;&amp; (f = 0 &amp;&amp; (a = W(A,a)));</code>).</p></li>
@@ -262,14 +262,14 @@ it to 9.</p></li>
 enough because as they rightly point out they can just use the C preprocessor
 itself. But although I have quite a few cpp directives I am not using them for
 obfuscation but rather to save bytes. For examples:</p>
-<pre><code>%:define J(x)         do(*x)=getchar(); while((*x)==&#39;\n&#39;)</code></pre>
+<pre><code>%:define J(x)                 do(*x)=getchar(); while((*x)==&#39;\n&#39;)</code></pre>
 <p>Is used quite a number of times and although it could be a function that
 takes a pointer to an int it was more convenient this way (I believe it used
 more bytes but I no longer know that). There are many others and they all
 save bytes (or at least most of them do if not all). There is one in
 particular I want to bring up though because I think it’s a curious one and
 it ties in to another point above:</p>
-<pre><code>%:define A(y)                 *(&amp;Y&lt;:7:&gt;&lt;:1:&gt;+(y))</code></pre>
+<pre><code>%:define A(y)                                 *(&amp;Y&lt;:7:&gt;&lt;:1:&gt;+(y))</code></pre>
 <p>What is special about this one: Above I noted how I sort of refer directly
 to the notch settings (I think it was the notch settings anyway). Now I
 could have done say</p>
@@ -301,9 +301,9 @@ recode.c doesn’t use the Enigma algorithm and even the strings are done very
 differently (and separated) so that one cannot easily replace the <code>char</code>
 variables in recode.c, move them to prog.c, compile and expect it to work right.</p></li>
 <li><p>Also what is this about ?</p>
-<pre><code>          /\
-      /       This is     *not* what you think:
-          void D(char*x){ /* ... */ }</code></pre>
+<pre><code>                      /\
+          /           This is     *not* what you think:
+                  void D(char*x){ /* ... */ }</code></pre>
 <p>Is that valid and if so how does it function? Yes it’s valid but I’ll leave
 the other part of the question up to the reader to answer. Hint: you already
 know how it works (yes, really you do)! Another hint: This is and is not a
@@ -316,11 +316,11 @@ also not).</p></li>
 
     You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
     For more information, see:
 
-    https://creativecommons.org/licenses/by-sa/4.0/
+        https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
 
@@ -357,7 +357,7 @@ also not).</p></li>
 <div class="footer">
   <h2>Copyright and CC BY-SA 4.0 License</h2>
   <p>This file and web page is:</p>
-  <blockquote><p><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></p></blockquote>
+  <blockquote><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></blockquote>
   <p>You are free to share and adapt this file under the terms of this license:</p>
   <blockquote><b>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</b></blockquote>
   <p>For more information, see:</p>

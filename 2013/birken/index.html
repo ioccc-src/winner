@@ -345,14 +345,14 @@ call to <code>fflush(3)</code> (N.B: see <a href="birken.alt.c">birken.alt.c</a>
 <h3 id="ioccc-size-tool-bug">IOCCC Size Tool Bug</h3>
 <p>This program demonstrates how to exploit a bug in IOCCC size tool version
 <code>2013-07-30-v17</code>. The first line of the program is reproduced below.</p>
-<pre><code>char*_ = &quot;&#39;&quot;&quot;/*&quot;;</code></pre>
+<p>char<em>_ = “’”“/</em>”;</p>
 <p>If that line is added to the top of any program, the tool will report a size of 8.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./iocccsize <span class="at">-i</span> <span class="op">&lt;</span> prog.c</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">8</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./iocccsize <span class="at">-i</span> <span class="op">&lt;</span> prog.c</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">8</span></span></code></pre></div>
 <p>When that line is deleted from this program, the tool properly reports the
 secondary size limit of the program as 2048.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./iocccsize <span class="at">-i</span> <span class="op">&lt;</span> birken.c</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">2048</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./iocccsize <span class="at">-i</span> <span class="op">&lt;</span> birken.c</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">2048</span></span></code></pre></div>
 <p>Although this bug provides an easy means of circumventing contest rule 2, as
 demonstrated from the size value, this entry is not necessarily striving for a
 ‘worst abuse of the rules’ award.</p>
@@ -372,7 +372,7 @@ Pajitnov</a>’s original 1984
 <p>Carefully selected variable names also yielded wonderful expressions like <code>l=0</code>,
 <code>O=0</code>, <code>O=1</code> and <code>while(O)</code>. <code>"Tetris"</code> also makes a second appearance of
 sorts:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>T<span class="op">][</span>e<span class="op">][</span>t<span class="op">]--;</span> <span class="cf">while</span><span class="op">(</span>R<span class="op">+</span>i<span class="op">)</span> <span class="op">{</span> s</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>T<span class="op">][</span>e<span class="op">][</span>t<span class="op">]--;</span> <span class="cf">while</span><span class="op">(</span>R<span class="op">+</span>i<span class="op">)</span> <span class="op">{</span> s</span></code></pre></div>
 <p>The source is formatted to resemble the
 <a href="https://en.wikipedia.org/wiki/Tetris">Tetris</a> play-field mid-game. It is also
 an homage to all the <a href="../../years.html">past IOCCC entries</a> formatted as a compact
@@ -529,11 +529,11 @@ Brothers 2, Nintendo, 1987.</p></li>
 
     You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
     For more information, see:
 
-    https://creativecommons.org/licenses/by-sa/4.0/
+        https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
 
@@ -642,7 +642,7 @@ Brothers 2, Nintendo, 1987.</p></li>
 <div class="footer">
   <h2>Copyright and CC BY-SA 4.0 License</h2>
   <p>This file and web page is:</p>
-  <blockquote><p><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></p></blockquote>
+  <blockquote><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></blockquote>
   <p>You are free to share and adapt this file under the terms of this license:</p>
   <blockquote><b>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</b></blockquote>
   <p>For more information, see:</p>

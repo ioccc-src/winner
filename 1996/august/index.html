@@ -251,61 +251,61 @@ defined. <code>getchar()</code> and <code>putchar()</code> are predefined functi
 <p>Below is a description of the OC grammar.</p>
 <h3 id="oc-grammar">OC grammar</h3>
 <p>Terminals are in quotes, <code>()</code> is used for bracketing.</p>
-<pre><code>program:    decl*
+<pre><code>program:        decl*
 
-decl:       vardecl
-        fundecl
+decl:           vardecl
+                fundecl
 
-vardecl:    type NAME ;
-        type NAME &quot;[&quot; INT &quot;]&quot; ;
+vardecl:        type NAME ;
+                type NAME &quot;[&quot; INT &quot;]&quot; ;
 
-fundecl:    type NAME &quot;(&quot; args &quot;)&quot; &quot;{&quot; body &quot;}&quot;
+fundecl:        type NAME &quot;(&quot; args &quot;)&quot; &quot;{&quot; body &quot;}&quot;
 
-args:       /*empty*/
-        ( arg &quot;,&quot; )* arg
+args:           /*empty*/
+                ( arg &quot;,&quot; )* arg
 
-arg:        type NAME
+arg:            type NAME
 
-body:       vardecl* stmt*
+body:           vardecl* stmt*
 
-stmt:       ifstmt
-        whilestmt
-        dowhilestmt
-        &quot;return&quot; expr &quot;;&quot;
-        expr &quot;;&quot;
-        &quot;{&quot; stmt* &quot;}&quot;
-        &quot;;&quot;
+stmt:           ifstmt
+                whilestmt
+                dowhilestmt
+                &quot;return&quot; expr &quot;;&quot;
+                expr &quot;;&quot;
+                &quot;{&quot; stmt* &quot;}&quot;
+                &quot;;&quot;
 
-ifstmt:     &quot;if&quot; &quot;(&quot; expr &quot;)&quot; stmt
-        &quot;if&quot; &quot;(&quot; expr &quot;)&quot; stmt &quot;else&quot; stmt
+ifstmt:         &quot;if&quot; &quot;(&quot; expr &quot;)&quot; stmt
+                &quot;if&quot; &quot;(&quot; expr &quot;)&quot; stmt &quot;else&quot; stmt
 
-whilestmt:  &quot;while&quot; &quot;(&quot; expr &quot;)&quot; stmt
+whilestmt:      &quot;while&quot; &quot;(&quot; expr &quot;)&quot; stmt
 
 dowhilestmt:    &quot;do&quot; stmt &quot;while&quot; &quot;(&quot; expr &quot;)&quot; &quot;;&quot;
 
-expr:       expr binop expr
-        unop expr
-        expr &quot;[&quot; expr &quot;]&quot;
-        &quot;(&quot; expr &quot;)&quot;
-        expr &quot;(&quot; exprs &quot;)&quot;
-        NAME
-        INT
-        CHAR
-        STRING
+expr:           expr binop expr
+                unop expr
+                expr &quot;[&quot; expr &quot;]&quot;
+                &quot;(&quot; expr &quot;)&quot;
+                expr &quot;(&quot; exprs &quot;)&quot;
+                NAME
+                INT
+                CHAR
+                STRING
 
-exprs:      /*empty*/
-        (expr &quot;,&quot;)* expr
+exprs:          /*empty*/
+                (expr &quot;,&quot;)* expr
 
-binop:      &quot;+&quot; | &quot;-&quot; | &quot;*&quot; | &quot;/&quot; | &quot;%&quot; |
-        &quot;=&quot; |
-        &quot;&lt;&quot; | &quot;==&quot; | &quot;!=&quot;
+binop:          &quot;+&quot; | &quot;-&quot; | &quot;*&quot; | &quot;/&quot; | &quot;%&quot; |
+                &quot;=&quot; |
+                &quot;&lt;&quot; | &quot;==&quot; | &quot;!=&quot;
 
-unop:       &quot;!&quot; | &quot;-&quot; | &quot;*&quot;
+unop:           &quot;!&quot; | &quot;-&quot; | &quot;*&quot;
 
-type:       &quot;int&quot; stars
-        &quot;char&quot; stars
+type:           &quot;int&quot; stars
+                &quot;char&quot; stars
 
-stars:      &quot;*&quot;*
+stars:          &quot;*&quot;*
 </code></pre>
 <hr />
 <p>Well, that is enough ranting for now.</p>
@@ -315,11 +315,11 @@ stars:      &quot;*&quot;*
 
     You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
     For more information, see:
 
-    https://creativecommons.org/licenses/by-sa/4.0/
+        https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
 
@@ -385,7 +385,7 @@ stars:      &quot;*&quot;*
 <div class="footer">
   <h2>Copyright and CC BY-SA 4.0 License</h2>
   <p>This file and web page is:</p>
-  <blockquote><p><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></p></blockquote>
+  <blockquote><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></blockquote>
   <p>You are free to share and adapt this file under the terms of this license:</p>
   <blockquote><b>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</b></blockquote>
   <p>For more information, see:</p>

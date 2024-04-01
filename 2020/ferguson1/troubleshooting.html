@@ -155,9 +155,9 @@ needed. This won’t work right if you change the score line!</p>
 small screen will make it harder to play esp without the cheat modes enabled
 (but they can still be fun with large screens).</p></li>
 <li><p>RESOLUTION #1: Open the <a href="prog.c">prog.c</a> and change the line</p>
-<pre><code>  #define J Z(X:%d/%d Y:%d/%d S:%zu/%zu B:%zu\n),Y,y[-2],X, *y, A, g, c );</code></pre>
+<pre><code>      #define J Z(X:%d/%d Y:%d/%d S:%zu/%zu B:%zu\n),Y,y[-2],X, *y, A, g, c );</code></pre>
 <p>To be something like:</p>
-<pre><code>  #define J Z(B:%zu\n), c);</code></pre>
+<pre><code>      #define J Z(B:%zu\n), c);</code></pre>
 <p>Recompile and try again. That will then show only the number of bugs eaten.
 See the <a href="HACKING.html">HACKING.html</a> (<a href="HACKING.md">HACKING.md</a> on GitHub) file for other data you
 can include (though there are some discrepancies here and there as you’ll
@@ -248,16 +248,16 @@ theoretically happen. If this happens you will have to kill the game by e.g.
 ctrl-c. Try increasing the screen size and/or decreasing the max size of the
 snake. See below for some tests.</p>
 <p>I removed caps in a test and then:</p>
-<pre><code>  GROW=1 COLUMNS=30 LINES=10 CANNIBAL=1 MAXSIZE=10000 ./prog</code></pre>
+<pre><code>      GROW=1 COLUMNS=30 LINES=10 CANNIBAL=1 MAXSIZE=10000 ./prog</code></pre>
 <p>It froze at this point:</p>
-<pre><code>  X:14/29 Y:5/9 S:323/10000 B:318</code></pre>
+<pre><code>      X:14/29 Y:5/9 S:323/10000 B:318</code></pre>
 <p>This is because there was only one place for the bug - where the snake head
 was to be. With these parameters the limit is actually 189! This could
 perhaps be increased but the calculation I have used is easy and although I
 certainly could make it so it’s one less than the max that takes more bytes
 and I don’t see it actually mattering.</p>
 <p>Another time I tried:</p>
-<pre><code>  LINES=6 COLUMNS=6</code></pre>
+<pre><code>      LINES=6 COLUMNS=6</code></pre>
 <p>And it also froze (as noted I impose a minimum of &gt;= 10 for both LINES and
 COLUMNS).</p>
 <p>Ultimately I had to kill the program due to the game being stuck in the bug
@@ -266,29 +266,29 @@ good would that do? It would use more bytes and what would it do anyway,
 win? Well that’s what the max size is for.</p></li>
 <li><p>TERMINAL SIZE TO MAX SNAKE SIZE CALCULATION ETC.</p>
 <p>For this information and more use the termcaps utility:</p>
-<pre><code>  make test</code></pre>
+<pre><code>      make test</code></pre>
 <p>An example:</p>
-<pre><code>  terminal supports cursor movement
-  terminal supports making cursor invisible
-  terminal supports bold
-  terminal supports colours
+<pre><code>      terminal supports cursor movement
+      terminal supports making cursor invisible
+      terminal supports bold
+      terminal supports colours
 
-  terminal rows  41 (38  playable)
-  terminal cols 154 (152 playable)
+      terminal rows  41 (38  playable)
+      terminal cols 154 (152 playable)
 
-  snake size:   997 (max size: 5738)
-        bugs:   199 (max size: 1147)
+      snake size:   997 (max size: 5738)
+            bugs:   199 (max size: 1147)
 
-  at least 34 columns (currently 154) recommended for snake size 997
-  at least 37 columns (currently 154) recommended for capped snake size 5738
+      at least 34 columns (currently 154) recommended for snake size 997
+      at least 37 columns (currently 154) recommended for capped snake size 5738
 
-  No problems detected.</code></pre>
+      No problems detected.</code></pre>
 <p>Why are there only 38 playable lines for 41 rows? The first row is the score
 line, the second is the top wall, the last is the bottom wall. For columns
 you have the left and rightmost columns for the walls.</p>
 <p>The calculation for max size takes place after decrementing the max y/x;
 then it’s <code>(maxy - 2) * (maxx - 2)</code>; above that would be:</p>
-<pre><code>  (41 - 2) * (156 - 2) == 6006</code></pre>
+<pre><code>      (41 - 2) * (156 - 2) == 6006</code></pre>
 <p>If for some reason the game were to stall for this purpose you would have to
 kill the game by e.g. ctrl-c since the bug placement is stuck in a loop.
 This shouldn’t happen though.</p></li>
@@ -313,7 +313,7 @@ Or is the system rather busy?</p></li>
 is 0? The head is the obvious choice so once you do get to size 1 you will still
 only have the head. When you get to size 2 you’ll have part of the body too.
 Try:</p>
-<pre><code>  SIZE=1 GROW=1</code></pre>
+<pre><code>      SIZE=1 GROW=1</code></pre>
 <p>And you will see that at one bug you’ll have size two and just as if you had
 two bugs with the previous invocation.</p>
 <p>BTW: When you are size 1 you can go back on yourself even if cannibalism is
@@ -336,7 +336,7 @@ terminal is under <code>/usr/share/terminfo/l/linux-m</code> and under macOS (Ca
 at least) it’s at <code>/usr/share/terminfo/6c/linux-m</code> (for macOS Ventura it’s
 <code>/usr/share/terminfo/6c/linux-m</code>).</p></li>
 <li><p>BOTTOM LINE: Try using a monochrome terminal for the game by e.g.:</p>
-<pre><code>  TERM=linux-m ./prog</code></pre>
+<pre><code>      TERM=linux-m ./prog</code></pre>
 <p>And then on your white background terminal the game should keep the
 background white and the foreground black. This will of course mean you have
 no colour but unfortunately changing the background colour of curses would
@@ -440,11 +440,11 @@ is 0 and I limit the size to be no bigger than the max size.</p>
 
     You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
     For more information, see:
 
-    https://creativecommons.org/licenses/by-sa/4.0/
+        https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
 
@@ -481,7 +481,7 @@ is 0 and I limit the size to be no bigger than the max size.</p>
 <div class="footer">
   <h2>Copyright and CC BY-SA 4.0 License</h2>
   <p>This file and web page is:</p>
-  <blockquote><p><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></p></blockquote>
+  <blockquote><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></blockquote>
   <p>You are free to share and adapt this file under the terms of this license:</p>
   <blockquote><b>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</b></blockquote>
   <p>For more information, see:</p>

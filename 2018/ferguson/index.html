@@ -741,8 +741,8 @@ as well as some C keywords.</p></li>
 <div class="sourceCode" id="cb37"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Special C main() handler (encapsulation): */</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#define r</span><span class="op">(</span><span class="pp">main</span><span class="op">)</span><span class="pp"> main</span></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>r<span class="op">(</span>k main<span class="op">(</span>k a<span class="op">,</span> E <span class="op">**</span>V<span class="op">))</span> <span class="op">{</span></span></code></pre></div>
-<pre><code>It appears to be recursively defined but is it? And is it truly</code></pre>
-<p>encapsulation? And is it executing code of any kind? It mightn’t seem like it
+<p>It appears to be recursively defined but is it? And is it truly
+encapsulation? And is it executing code of any kind? It mightn’t seem like it
 isn’t encapsulation and also isn’t executing code but assuming it’s
 encapsulation and executing code is it actually nothing? And if it’s nothing why
 is it there? If it is something what is it doing? Could it be both? Or maybe it
@@ -814,7 +814,7 @@ won’t spoil; yes this ironically and amusingly means I’ve left a rotten egg
 somewhere!).</p>
 <p>The Makefile simplifies how to reconfigure this value with the variable
 <code>MAX_SIZE</code>:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber MAX_SIZE=55 all</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber MAX_SIZE=55 all</span></code></pre></div>
 <p>The next macro that can be reconfigured, <code>M</code> (or <code>MAX_ATTEMPTS</code> in the
 Makefile), is the maximum attempts before giving up. This was added as another
 feature in 2024 but it was not made an alt version because there already is an
@@ -822,7 +822,7 @@ alt version. This macro allows for seeing what happens when reaching the maximum
 number attempts without waiting for a very long time.</p>
 <p>The Makefile simplifies how to reconfigure this value with the variable
 <code>MAX_ATTEMPTS</code>:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber MAX_ATTEMPTS=100 all</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber MAX_ATTEMPTS=100 all</span></code></pre></div>
 <p>The final macro, <code>N</code> (or <code>OFFSPRING</code> in the Makefile), is the number of offspring
 per generation.</p>
 <p>Anything less than 4 will be set to 3 (that’s not a typo!) and this is part of
@@ -832,23 +832,23 @@ both individually and together the program will use varying amounts of memory
 and the larger the values the more memory it’ll require.</p>
 <p>The Makefile simplifies how to reconfigure this value with the variable
 <code>OFFSPRING</code>:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber OFFSPRING=55 all</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber OFFSPRING=55 all</span></code></pre></div>
 <h3 id="compilation"><a name="compiling">Compilation</a></h3>
 <p>Skip to <a href="#portability">Portability</a>.</p>
 <p>The following options <strong>must always be passed to the compiler:</strong></p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-DQ=</span><span class="st">&#39;typedef&#39;</span> <span class="at">-D</span><span class="st">&#39;g(o)&#39;</span><span class="op">=</span><span class="st">&#39;goto o;&#39;</span> <span class="at">-D</span><span class="st">&#39;w(x)&#39;</span><span class="op">=</span><span class="st">&quot;x:&quot;</span> <span class="at">-D</span><span class="st">&#39;H(main)&#39;</span><span class="op">=</span><span class="st">&#39;r(main)&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-DQ=</span><span class="st">&#39;typedef&#39;</span> <span class="at">-D</span><span class="st">&#39;g(o)&#39;</span><span class="op">=</span><span class="st">&#39;goto o;&#39;</span> <span class="at">-D</span><span class="st">&#39;w(x)&#39;</span><span class="op">=</span><span class="st">&quot;x:&quot;</span> <span class="at">-D</span><span class="st">&#39;H(main)&#39;</span><span class="op">=</span><span class="st">&#39;r(main)&#39;</span></span></code></pre></div>
 <p>which running <code>make</code> will always do.</p>
 <p>If you want to increase the number of offspring to <code>50</code> (<code>N</code>) and the size of the
 chromosome to <code>75</code> (<code>S</code>) you would do:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber OFFSPRING=50 MAX_SIZE=75 everything</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber OFFSPRING=50 MAX_SIZE=75 everything</span></code></pre></div>
 <p>If you wanted to change <code>N</code> to <code>3</code>:</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber OFFSPRING=3 everything</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber OFFSPRING=3 everything</span></code></pre></div>
 <p>Remember that it cannot be less than <code>3</code>; <em>more correctly if it’s less than
 4 it’s redefined to 3</em> so you could have passed in <code>-DN=2</code> (or <code>MAX_SIZE=2</code>) and have the same
 result. Remember too that <code>S</code> (<code>MAX_SIZE</code>) cannot be less than <code>38</code>. Both <code>S</code> and
 <code>N</code> are capped at <code>SIZE_MAX - 1</code> or whatever <code>M</code> (<code>MAX_ATTEMPTS</code>) is set to.</p>
 <p>If you wanted to change the maximum number attempts to 100 you could do:</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber MAX_ATTEMPTS=100 everything</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber MAX_ATTEMPTS=100 everything</span></code></pre></div>
 <h3 id="portability"><a name="portability">Portability</a></h3>
 <p>Skip to <a href="#bugs">An aside on bugs</a>.</p>
 <p>This entry requires at least C99 even if you translate digraphs. The program
@@ -858,43 +858,43 @@ smaller and this I believe includes <code>SIZE_MAX</code>). I don’t think Wind
 ports would have many issues (if any) either but I have no way to test this.
 Originally I tested it on the below systems.</p>
 <h4 id="fedora-26">Fedora 26:</h4>
-<div class="sourceCode" id="cb46"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> clang <span class="at">--version</span><span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">clang</span> version 4.0.1 <span class="er">(</span><span class="ex">tags/RELEASE_401/final</span><span class="kw">)</span></span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gcc <span class="at">--version</span><span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span></span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="er">(</span><span class="ex">GCC</span><span class="kw">)</span> <span class="ex">7.3.1</span> 20180130 <span class="er">(</span><span class="ex">Red</span> Hat 7.3.1-2<span class="kw">)</span></span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> /lib64/libc-2.25.so <span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span><span class="kw">|</span><span class="fu">cut</span> <span class="at">-d</span><span class="st">&#39;,&#39;</span> <span class="at">-f1-1</span></span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="ex">GNU</span> C Library <span class="er">(</span><span class="ex">GNU</span> libc<span class="kw">)</span> <span class="ex">stable</span> release version 2.25</span>
-<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> lscpu <span class="kw">|</span><span class="fu">grep</span> Endian</span>
-<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Byte</span> Order:          Little Endian</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> clang <span class="at">--version</span><span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">clang</span> version 4.0.1 <span class="er">(</span><span class="ex">tags/RELEASE_401/final</span><span class="kw">)</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gcc <span class="at">--version</span><span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="er">(</span><span class="ex">GCC</span><span class="kw">)</span> <span class="ex">7.3.1</span> 20180130 <span class="er">(</span><span class="ex">Red</span> Hat 7.3.1-2<span class="kw">)</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> /lib64/libc-2.25.so <span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span><span class="kw">|</span><span class="fu">cut</span> <span class="at">-d</span><span class="st">&#39;,&#39;</span> <span class="at">-f1-1</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="ex">GNU</span> C Library <span class="er">(</span><span class="ex">GNU</span> libc<span class="kw">)</span> <span class="ex">stable</span> release version 2.25</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> lscpu <span class="kw">|</span><span class="fu">grep</span> Endian</span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Byte</span> Order:          Little Endian</span></code></pre></div>
 <h4 id="centos-linux-release-7.4.1708-core">CentOS Linux release 7.4.1708 (Core)</h4>
-<div class="sourceCode" id="cb47"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> clang <span class="at">--version</span><span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">clang</span> version 3.4.2 <span class="er">(</span><span class="ex">tags/RELEASE_34/dot2-final</span><span class="kw">)</span></span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gcc <span class="at">--version</span><span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span></span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="er">(</span><span class="ex">GCC</span><span class="kw">)</span> <span class="ex">4.8.5</span> 20150623 <span class="er">(</span><span class="ex">Red</span> Hat 4.8.5-16<span class="kw">)</span></span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> /lib64/libc-2.17.so <span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span> <span class="kw">|</span><span class="fu">cut</span> <span class="at">-d,</span> <span class="at">-f1-1</span></span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="ex">GNU</span> C Library <span class="er">(</span><span class="ex">GNU</span> libc<span class="kw">)</span> <span class="ex">stable</span> release version 2.17</span>
-<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> lscpu <span class="kw">|</span><span class="fu">grep</span> Endian</span>
-<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Byte</span> Order:            Little Endian</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> clang <span class="at">--version</span><span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">clang</span> version 3.4.2 <span class="er">(</span><span class="ex">tags/RELEASE_34/dot2-final</span><span class="kw">)</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gcc <span class="at">--version</span><span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="er">(</span><span class="ex">GCC</span><span class="kw">)</span> <span class="ex">4.8.5</span> 20150623 <span class="er">(</span><span class="ex">Red</span> Hat 4.8.5-16<span class="kw">)</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> /lib64/libc-2.17.so <span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span> <span class="kw">|</span><span class="fu">cut</span> <span class="at">-d,</span> <span class="at">-f1-1</span></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="ex">GNU</span> C Library <span class="er">(</span><span class="ex">GNU</span> libc<span class="kw">)</span> <span class="ex">stable</span> release version 2.17</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> lscpu <span class="kw">|</span><span class="fu">grep</span> Endian</span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Byte</span> Order:            Little Endian</span></code></pre></div>
 <h4 id="fedora-27">Fedora 27:</h4>
-<div class="sourceCode" id="cb48"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> clang <span class="at">--version</span><span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span></span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">clang</span> version 5.0.1 <span class="er">(</span><span class="ex">tags/RELEASE_501/final</span><span class="kw">)</span></span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gcc <span class="at">--version</span><span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span></span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="er">(</span><span class="ex">GCC</span><span class="kw">)</span> <span class="ex">7.3.1</span> 20180303 <span class="er">(</span><span class="ex">Red</span> Hat 7.3.1-5<span class="kw">)</span></span>
-<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> /lib64/libc-2.26.so <span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span><span class="kw">|</span><span class="fu">cut</span> <span class="at">-d,</span> <span class="at">-f1-1</span></span>
-<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a><span class="ex">GNU</span> C Library <span class="er">(</span><span class="ex">GNU</span> libc<span class="kw">)</span> <span class="ex">stable</span> release version 2.26</span>
-<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> lscpu <span class="kw">|</span><span class="fu">grep</span> Endian</span>
-<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Byte</span> Order:          Little Endian</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> clang <span class="at">--version</span><span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">clang</span> version 5.0.1 <span class="er">(</span><span class="ex">tags/RELEASE_501/final</span><span class="kw">)</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gcc <span class="at">--version</span><span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="er">(</span><span class="ex">GCC</span><span class="kw">)</span> <span class="ex">7.3.1</span> 20180303 <span class="er">(</span><span class="ex">Red</span> Hat 7.3.1-5<span class="kw">)</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> /lib64/libc-2.26.so <span class="kw">|</span><span class="fu">head</span> <span class="at">-n1</span><span class="kw">|</span><span class="fu">cut</span> <span class="at">-d,</span> <span class="at">-f1-1</span></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="ex">GNU</span> C Library <span class="er">(</span><span class="ex">GNU</span> libc<span class="kw">)</span> <span class="ex">stable</span> release version 2.26</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> lscpu <span class="kw">|</span><span class="fu">grep</span> Endian</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Byte</span> Order:          Little Endian</span></code></pre></div>
 <h4 id="macos">macOS:</h4>
 <p>System Version: macOS 10.13.4 (17E199)
 Kernel Version: Darwin 17.5.0</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gcc <span class="at">-v</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Configured</span> with: <span class="at">--prefix</span><span class="op">=</span>/Library/Developer/CommandLineTools/usr <span class="at">--with-gxx-include-dir</span><span class="op">=</span>/usr/include/c++/4.2.1</span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Apple</span> LLVM version 9.1.0 <span class="er">(</span><span class="ex">clang-902.0.39.1</span><span class="kw">)</span></span>
-<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Target:</span> x86_64-apple-darwin17.5.0</span>
-<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Thread</span> model: posix</span>
-<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="ex">InstalledDir:</span> /Library/Developer/CommandLineTools/usr/bin</span>
-<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> uname <span class="at">-srmv</span></span>
-<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Darwin</span> 17.5.0 Darwin Kernel Version 17.5.0: Mon Mar  5 22:24:32 PST 2018<span class="kw">;</span> <span class="ex">root:xnu-4570.51.1~1/RELEASE_X86_64</span> x86_64</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gcc <span class="at">-v</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Configured</span> with: <span class="at">--prefix</span><span class="op">=</span>/Library/Developer/CommandLineTools/usr <span class="at">--with-gxx-include-dir</span><span class="op">=</span>/usr/include/c++/4.2.1</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Apple</span> LLVM version 9.1.0 <span class="er">(</span><span class="ex">clang-902.0.39.1</span><span class="kw">)</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Target:</span> x86_64-apple-darwin17.5.0</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Thread</span> model: posix</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a><span class="ex">InstalledDir:</span> /Library/Developer/CommandLineTools/usr/bin</span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> uname <span class="at">-srmv</span></span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Darwin</span> 17.5.0 Darwin Kernel Version 17.5.0: Mon Mar  5 22:24:32 PST 2018<span class="kw">;</span> <span class="ex">root:xnu-4570.51.1~1/RELEASE_X86_64</span> x86_64</span></code></pre></div>
 <h4 id="an-aside"><a name="bugs">An aside</a></h4>
 <p>Skip to <a href="#rpm">Installing</a>.</p>
 <p>Any undocumented bugs are the result of insolent monkeys tampering with any
@@ -1013,8 +1013,8 @@ When we found others were actually trying to programs with A, we quickly added
 additional cryptic features and evolved into B, BCPL, and finally C. We stopped
 when we got a clean compile on the following syntax:</p>
 </blockquote>
-<div class="sourceCode" id="cb50"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span><span class="op">(;</span>P<span class="op">(</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">),</span>R<span class="op">=;</span>P<span class="op">(</span><span class="st">&quot;|&quot;</span><span class="op">))</span><span class="cf">for</span><span class="op">(</span>e<span class="op">=</span>C<span class="op">;</span>e<span class="op">=</span>P<span class="op">(</span><span class="st">&quot;_&quot;</span><span class="op">+(*</span>u<span class="op">++/</span></span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span><span class="op">)%</span><span class="dv">2</span><span class="op">))</span>P<span class="op">(</span><span class="st">&quot;|&quot;</span><span class="op">+(*</span>u<span class="op">/</span><span class="dv">4</span><span class="op">)%</span><span class="dv">2</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span><span class="op">(;</span>P<span class="op">(</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">),</span>R<span class="op">=;</span>P<span class="op">(</span><span class="st">&quot;|&quot;</span><span class="op">))</span><span class="cf">for</span><span class="op">(</span>e<span class="op">=</span>C<span class="op">;</span>e<span class="op">=</span>P<span class="op">(</span><span class="st">&quot;_&quot;</span><span class="op">+(*</span>u<span class="op">++/</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span><span class="op">)%</span><span class="dv">2</span><span class="op">))</span>P<span class="op">(</span><span class="st">&quot;|&quot;</span><span class="op">+(*</span>u<span class="op">/</span><span class="dv">4</span><span class="op">)%</span><span class="dv">2</span><span class="op">);</span></span></code></pre></div>
 <blockquote>
 <p>“To think that modern programmers would try to use a language that allowed
 such a statement was beyond our comprehension! We actually thought of selling
@@ -1055,8 +1055,8 @@ person to talk about it with is more than welcome!</em>). Ken suggested that the
 is a lack of common sense but since he was part of its creation I don’t think
 it’s a bad thing; <strong>on the contrary it makes all of us C programmers even more
 talented! :)</strong> I do wonder if he tested that bit of C code though:</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span><span class="op">(;</span>P<span class="op">(</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">),</span>R<span class="op">=;</span>P<span class="op">(</span><span class="st">&quot;|&quot;</span><span class="op">))</span><span class="cf">for</span><span class="op">(</span>e<span class="op">=</span>C<span class="op">;</span>e<span class="op">=</span>P<span class="op">(</span><span class="st">&quot;_&quot;</span><span class="op">+(*</span>u<span class="op">++/</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span><span class="op">)%</span><span class="dv">2</span><span class="op">))</span>P<span class="op">(</span><span class="st">&quot;|&quot;</span><span class="op">+(*</span>u<span class="op">/</span><span class="dv">4</span><span class="op">)%</span><span class="dv">2</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span><span class="op">(;</span>P<span class="op">(</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">),</span>R<span class="op">=;</span>P<span class="op">(</span><span class="st">&quot;|&quot;</span><span class="op">))</span><span class="cf">for</span><span class="op">(</span>e<span class="op">=</span>C<span class="op">;</span>e<span class="op">=</span>P<span class="op">(</span><span class="st">&quot;_&quot;</span><span class="op">+(*</span>u<span class="op">++/</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span><span class="op">)%</span><span class="dv">2</span><span class="op">))</span>P<span class="op">(</span><span class="st">&quot;|&quot;</span><span class="op">+(*</span>u<span class="op">/</span><span class="dv">4</span><span class="op">)%</span><span class="dv">2</span><span class="op">);</span></span></code></pre></div>
 <p><br />
 How is <code>R=;</code> valid? Since I don’t have the context maybe there is something
 I’m missing but either way it’s a funny piece. It could also be for irony itself
@@ -1124,11 +1124,11 @@ email but I’m more likely to respond to mastodon messages.</p>
 
     You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
     For more information, see:
 
-    https://creativecommons.org/licenses/by-sa/4.0/
+        https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
 
@@ -1205,7 +1205,7 @@ email but I’m more likely to respond to mastodon messages.</p>
 <div class="footer">
   <h2>Copyright and CC BY-SA 4.0 License</h2>
   <p>This file and web page is:</p>
-  <blockquote><p><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></p></blockquote>
+  <blockquote><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></blockquote>
   <p>You are free to share and adapt this file under the terms of this license:</p>
   <blockquote><b>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</b></blockquote>
   <p>For more information, see:</p>

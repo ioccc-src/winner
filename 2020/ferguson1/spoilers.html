@@ -278,21 +278,21 @@ in real life increases in size like that so suddenly? :)</p>
 <li><p>I make use of the C token pasting operator. Although this is well known it’s
 probably less known and either way it’s not as simple as just having the code
 that it translates to. For example why have:</p>
-<pre><code>      attroff(COLOR_PAIR(L));</code></pre>
+<pre><code>          attroff(COLOR_PAIR(L));</code></pre>
 <p>When you can have instead:</p>
-<pre><code>      attroff(m(PAIR(L)));</code></pre>
+<pre><code>          attroff(m(PAIR(L)));</code></pre>
 <p>It’s an extra layer of indirection. This used to be more used but when
 making it easier for users to change the colour pairs I no longer used it to
 set up colour pairs. It might not defeat <code>cpp</code> but it does make for more
 reading otherwise (depending on how you look at it maybe less?).</p>
 <p>It also helps save iocccsize bytes (but not as many as it used to!).</p></li>
 <li><p>What is this block of code?</p>
-<pre><code>      F(MAXSIZE)g d g = f((a)((*y-2)*(y[-2]-2)),g);
-      F(GROW)N d
-      F(SIZE)A d
-      F(WAIT)y[-3] = (int) strtol(z,NULL,0));
-      F(EVADE)W d
-      /* and so on */</code></pre>
+<pre><code>          F(MAXSIZE)g d g = f((a)((*y-2)*(y[-2]-2)),g);
+          F(GROW)N d
+          F(SIZE)A d
+          F(WAIT)y[-3] = (int) strtol(z,NULL,0));
+          F(EVADE)W d
+          /* and so on */</code></pre>
 <p>There are several things going on here but I’ll focus on the main one here and
 leave the others to their own: the <code>F</code> macro and the associated <code>d</code> macro are
 here important.</p>
@@ -303,7 +303,7 @@ the one that clearly shows strtol()).</p>
 <p>There are other things going on (below).</p>
 <p>Now it might not defeat the cpp but can you tell me what this is even with the
 cpp?</p>
-<pre><code>      f((a)((*y-2)*(y[-2]-2)),g);</code></pre>
+<pre><code>          f((a)((*y-2)*(y[-2]-2)),g);</code></pre>
 <p>The cpp might get it closer to what you might expect in a normal program but I
 refer to the array offsets (below also).</p></li>
 <li><p>Stringification: there isn’t a single <code>"</code> in the source code! The <code>F</code> macro
@@ -313,7 +313,7 @@ made it use it instead. If I remember rightly that uses extra bytes but somehow
 it felt better this way in my head. Then to save many bytes I made the macro do
 much more than that (that is the <code>F</code> macro).</p>
 <p>As for the Z() macro it means that I could remove <code>"</code>s; for example:</p>
-<pre><code>      #define J Z(X:%d/%d Y:%d/%d S:%zu/%zu B:%zu\n), Y, y[-2], X,*y,A,g, c);</code></pre>
+<pre><code>          #define J Z(X:%d/%d Y:%d/%d S:%zu/%zu B:%zu\n), Y, y[-2], X,*y,A,g, c);</code></pre>
 <p>Which as I have discussed elsewhere is the entire set of parameters to both
 <code>mvprintw()</code> and <code>printf()</code> plus the end of the function call (i.e. <code>);</code>.</p>
 <p>BTW: There’s another really cool benefit of stringification: because more than
@@ -321,7 +321,7 @@ one space is converted to a single space I can have it spread across columns on
 the format and even new lines if necessary. This fact along with the next
 technique causes some beautifiers problems too.</p></li>
 <li><p>Another use of the <code>Z</code> macro is this curious line:</p>
-<pre><code>      static  const char*s  =Z(   ; +&lt;&gt;^v);</code></pre>
+<pre><code>          static  const char*s  =Z(   ; +&lt;&gt;^v);</code></pre>
 <p>There are a number of curious parts. First is the Z() part makes it look
 like a function call. Of course that wouldn’t work as such because an array
 initialiser needs an initialiser list or a string literal. Whether that’s
@@ -340,7 +340,7 @@ only one copy is needed. Why I have it in the function is to move it further
 away from the definition of <code>Z()</code>. I will also be returning to this one
 again.</p>
 <p>Another example is using the <code>E()</code> function e.g.:</p>
-<pre><code>      E(Z(YOU WIN!));</code></pre>
+<pre><code>          E(Z(YOU WIN!));</code></pre>
 <p>Which happens to be in the same function the above char array is defined. Also
 it’s more like a string than anything but yet it’s not visibly a string.</p>
 <p>Some beautifiers didn’t like this at all.</p></li>
@@ -374,10 +374,10 @@ not the good kind!</p></li>
 <li><p>On the note of pausing there’s at least one instance of removing <code>if..else</code>
 (besides those in e.g. environmental variable processing) that’s curious: I
 converted this:</p>
-<pre><code>      if (!P) P = 1;
-      else P = 0;</code></pre>
+<pre><code>          if (!P) P = 1;
+          else P = 0;</code></pre>
 <p>To this:</p>
-<pre><code>      (!P &amp;&amp; (P = 1))||(P=0);</code></pre></li>
+<pre><code>          (!P &amp;&amp; (P = 1))||(P=0);</code></pre></li>
 <li><p>Makes use of the different namespaces to have variables and labels be the
 same identifier. For example in main() there’s a variable that also have the
 same name label for <code>goto</code> (there used to be two pairs in <code>main()</code>).</p></li>
@@ -390,30 +390,30 @@ to then <code>goto x</code>? Do I need to check <code>Q</code> at all? In fact I
 it might be easy to miss.</p></li>
 <li><p>Uses an unnamed array (compound literal) for several different game variables.
 The pointer to the first element is defined like <code>int *j</code>:</p>
-<pre><code>      static int Y,X,*j = (int[8]){231,0}, *U, *V, *e, *n, Q, P,x,*y,l=4,*D;</code></pre>
+<pre><code>          static int Y,X,*j = (int[8]){231,0}, *U, *V, *e, *n, Q, P,x,*y,l=4,*D;</code></pre>
 <p>Does the 231 seem familiar? It should: it’s the default key delay for the
 <code>timeout()</code> call (which I will return to again). The rest are 0 default. But
 what about <code>j</code>? Is it even used? Actually in main:</p>
-<pre><code>      y = j+3;</code></pre>
+<pre><code>          y = j+3;</code></pre>
 <p>But aside from that <code>j</code> is not used. However…</p></li>
 <li><p>Major abuse of negative pointer offsets along with confusing names. I’ll say
 this in two parts: the negative offsets and then the confusing names.</p>
 <p>Can you honestly tell me that this is easy to follow?</p>
-<pre><code>      if (Y &lt; 1 || Y &gt;= y[-2] || X &lt; 2 || X &gt;= *y || y[-2] &gt;= y[-1] || *y &gt;= 1[y])
-      {
-          if (*p &amp;&amp; !(*y&gt;=1[y]||y[-2]&gt;=y[-1]))
+<pre><code>          if (Y &lt; 1 || Y &gt;= y[-2] || X &lt; 2 || X &gt;= *y || y[-2] &gt;= y[-1] || *y &gt;= 1[y])
           {
-          if (Y&lt;1||Y&gt;=y[-2])
-              Y = Y&lt;1?y[-2]-1:1;
-          if (X&lt;2||X&gt;=*y)
-              X = X&lt;2?*y-1:2;
-          }
-          /* ... */
-      }</code></pre>
+                  if (*p &amp;&amp; !(*y&gt;=1[y]||y[-2]&gt;=y[-1]))
+                  {
+                      if (Y&lt;1||Y&gt;=y[-2])
+                          Y = Y&lt;1?y[-2]-1:1;
+                      if (X&lt;2||X&gt;=*y)
+                          X = X&lt;2?*y-1:2;
+                  }
+                  /* ... */
+          }</code></pre>
 <p>That’s not the only place negative offsets occur! Observe the ternary operators
 there too.</p>
 <p>I’ll go back to the <code>F()</code> macro and in particular what follows one of them:</p>
-<pre><code>      g d g = f((a)((*y-2)*(y[-2]-2)),g);</code></pre>
+<pre><code>          g d g = f((a)((*y-2)*(y[-2]-2)),g);</code></pre>
 <p>To parse that at the very least you have to know that <code>y</code> points to <code>j + 3</code>.
 Then you have to know that <code>j</code> points to the first element of an unnamed
 array (compound literal). But then you also have to know that that array has
@@ -422,17 +422,17 @@ then have to account for the offset that <code>y</code> is. Then once you have t
 figured out you need to consider the negative offsets to <code>y</code> (this also
 applies to the block above of course and maybe more so). Then you have to
 think of operator precedence etc. I mean what is:</p>
-<pre><code>      (*y-2) * (y[-2]-2])</code></pre>
+<pre><code>          (*y-2) * (y[-2]-2])</code></pre>
 <p>…about? An offset of <code>-2</code> and subtract <code>-2</code> from that. Multiply that by the <code>*y</code>
 (which is <code>j[3]</code>) <code>- 2</code>.</p>
 <p>But why is there a <code>g d g =</code> when the other lines only have the variable (or
 location) and a <code>d</code>? (Excepting the one that doesn’t refer to <code>d</code>.)</p></li>
 <li><p>On the confusing names etc.: the <code>getmaxyx()</code> function gets the maximum Y, X
 dimensions. Now in the first call in <code>main()</code> I have the code and tests following:</p>
-<pre><code>      getmaxyx(v, *y, y[-2]);
-      --*y; --y[-2];
-      if (y[-2] &lt; 9 || *y &lt; 9)
-          return E(Z(term too small));</code></pre>
+<pre><code>          getmaxyx(v, *y, y[-2]);
+          --*y; --y[-2];
+          if (y[-2] &lt; 9 || *y &lt; 9)
+                  return E(Z(term too small));</code></pre>
 <p>Clearly the <code>max x</code> must be stored in <code>*y</code> and the <code>max y</code> must be stored in ..
 <code>y[-2]</code>. After all anyone knows that the coordinates are in the order <code>(X,Y)</code>!
 In fact the output of my entry and my documentation demonstrates this
@@ -466,7 +466,7 @@ what it knows, and since <code>X</code> and <code>Y</code> are used for coordina
 of the brain is to assume <code>Y</code> is what is really <code>X</code> and <code>X</code> is what is really <code>Y</code>.</p></li>
 <li><p>More confusion with variable names: If you notice the <code>int *U, *V</code> they are
 also part of the compound literal: that is they point into it:</p>
-<pre><code>      U=y+2; V=U+1;</code></pre>
+<pre><code>          U=y+2; V=U+1;</code></pre>
 <p>Except that these two are done in two different places: away from the
 assignment of <code>y</code> to remove them further away from the contexts they are
 used in.</p>
@@ -477,13 +477,13 @@ location at <code>*U, *V</code> but then assign the new location differently. Th
 <code>main()</code> I draw it at <code>*U, *V</code> and also check for the bug being eaten there
 too.</p></li>
 <li><p>There’s another array that holds a variety of data.</p>
-<pre><code>      static k p[5]={1,0},W=300;</code></pre>
+<pre><code>          static k p[5]={1,0},W=300;</code></pre>
 <p>It holds the following information (but not necessarily in this order):</p>
-<pre><code>      WALLS
-      CANNIBAL
-      SHED
-      SHEDS
-      EVADE</code></pre>
+<pre><code>          WALLS
+          CANNIBAL
+          SHED
+          SHEDS
+          EVADE</code></pre>
 <p>But how will you know that just looking at the declaration? Many variables
 and they’re part of collections but the many layers of indirection cause
 confusion to the already unhelpful variable names (for those that even have
@@ -496,18 +496,18 @@ don’t know why.</p></li>
 <li><p>On arrays/pointers in general I also use e.g. <code>3[p]</code> and <code>p[3]</code> (there are
 many other examples that I have already shown).</p></li>
 <li><p>Expanding on referring to the same thing in more than one way take a look at:</p>
-<pre><code>      case KEY_LEFT:
-          V[1] = l-3;
-          break;
-      case KEY_RIGHT:
-          V[l/l] = l/2;
-          break;
-      case KEY_UP:
-          V[l-3] = l-1;
-          break;
-      case KEY_DOWN:
-          V[l/4] = l;
-          break;</code></pre>
+<pre><code>          case KEY_LEFT:
+                  V[1] = l-3;
+                  break;
+          case KEY_RIGHT:
+                  V[l/l] = l/2;
+                  break;
+          case KEY_UP:
+                  V[l-3] = l-1;
+                  break;
+          case KEY_DOWN:
+                  V[l/4] = l;
+                  break;</code></pre>
 <p>What’s going on there? First of all the letter ell looks very much like the
 digit one but above there are only two references to the digit <code>1</code>; the
 others are the letter <code>l</code>. If you’re tired though, don’t have the best
@@ -529,7 +529,7 @@ possible that I could have negative offsets here (and there’s nothing that
 would prevent negating a variable either in this case): I have done it many
 other places! But even after all of that you still need to do the
 calculations when I could simply have had:</p>
-<pre><code>      V[1] = 1; V[1] = 2; ...</code></pre>
+<pre><code>          V[1] = 1; V[1] = 2; ...</code></pre>
 <p>Etc.</p></li>
 <li><p>Variable reuse. For example in the function E() there’s a variable that keeps
 track of whether or not it’s been called; that variable is <code>h</code> and it says
@@ -556,20 +556,20 @@ is to make sure that they’re actually bigger? How does that work? Why not just
 check if it’s &gt; than the current?</p></li>
 <li><p>More confusion with the max x/y dimensions: Going back to max x/y dimensions
 and coordinates of the snake; I showed this code before:</p>
-<pre><code>      if (Y &lt; 1 || Y &gt;= y[-2] || X &lt; 2 || X &gt;= *y || y[-2] &gt;= y[-1] || *y &gt;= 1[y])
-      {
-          if (*p &amp;&amp; !(*y&gt;=1[y]||y[-2]&gt;=y[-1]))
+<pre><code>          if (Y &lt; 1 || Y &gt;= y[-2] || X &lt; 2 || X &gt;= *y || y[-2] &gt;= y[-1] || *y &gt;= 1[y])
           {
-          if (Y&lt;1||Y&gt;=y[-2])
-              Y = Y&lt;1?y[-2]-1:1;
-          if (X&lt;2||X&gt;=*y)
-              X = X&lt;2?*y-1:2;
-          }
-          else
-          {
-          /* ... */
-          }
-      }</code></pre>
+                  if (*p &amp;&amp; !(*y&gt;=1[y]||y[-2]&gt;=y[-1]))
+                  {
+                      if (Y&lt;1||Y&gt;=y[-2])
+                          Y = Y&lt;1?y[-2]-1:1;
+                      if (X&lt;2||X&gt;=*y)
+                          X = X&lt;2?*y-1:2;
+                  }
+                  else
+                  {
+                      /* ... */
+                  }
+          }</code></pre>
 <p>I asked if you could honestly figure that out easily. But here’s a bit more
 elaboration. I already talked about the negative offsets - and they should
 talk enough themselves - but look at the mess. Even if they weren’t negative
@@ -593,10 +593,10 @@ and not even in this part of the code).</p></li>
 <li><p>The function <code>B()</code> ends with a <code>goto</code>. Why? It’s also another place where
 there’s at least one negative offset.</p></li>
 <li><p>A note on the many <code>#define</code>s in my entry. You say you dislike them:</p>
-<pre><code>      Doing masses of #defines to obscure the source has become &#39;old&#39;.  We
-      tend to &#39;see thru&#39; masses of #defines due to our pre-processor tests
-      that we apply.  Simply abusing #defines or -Dfoo=bar won&#39;t go as far
-      as a program that is more well rounded in confusion.</code></pre>
+<pre><code>          Doing masses of #defines to obscure the source has become &#39;old&#39;.  We
+          tend to &#39;see thru&#39; masses of #defines due to our pre-processor tests
+          that we apply.  Simply abusing #defines or -Dfoo=bar won&#39;t go as far
+          as a program that is more well rounded in confusion.</code></pre>
 <p>As I have noted though many of these save quite a lot of bytes too. It’s
 true that they might aid (but barely) in obfuscation but I think that my
 entry is more rounded in confusion; certainly the other techniques I have
@@ -613,24 +613,24 @@ the way I have it now).</p></li>
 magical about the number 7 isn’t there? I do not refer to primes although
 certainly one could say that primes have a magic to them. No. I’m instead
 referring to another property: bitwise AND. For example consider the following:</p>
-<pre><code>      7 &amp; 0
-      7 &amp; 1
-      7 &amp; 2
-      7 &amp; 3
-      7 &amp; 4
-      7 &amp; 5
-      7 &amp; 6
-      7 &amp; 7</code></pre>
+<pre><code>          7 &amp; 0
+          7 &amp; 1
+          7 &amp; 2
+          7 &amp; 3
+          7 &amp; 4
+          7 &amp; 5
+          7 &amp; 6
+          7 &amp; 7</code></pre>
 <p>What is the result of each operation? Quite simply it’s the number itself!
 How does this relate to the <code>s</code> array though? Let me back up. Is there any
 place in the code that has the number 7 (by itself - 997 doesn’t count)? A
 quick check will answer that: no. But here’s a curious thing:</p>
-<pre><code>      q X, Y, s[*D+2&amp;(1&lt;&lt;3)-!Q]);</code></pre>
+<pre><code>          q X, Y, s[*D+2&amp;(1&lt;&lt;3)-!Q]);</code></pre>
 <p>We KNOW that at this place <code>Q</code> is 0 so the <code>!Q</code> has to be 1. Now <code>1 &lt;&lt; 3</code> is 8. Therefore</p>
-<pre><code>      (1 &lt;&lt; 3) - !Q == 7</code></pre>
+<pre><code>          (1 &lt;&lt; 3) - !Q == 7</code></pre>
 <p>But what’s <code>*D</code>? If the snake hasn’t moved once yet it’s 0; otherwise it’s the number
 of the direction the snake is currently facing. Thus</p>
-<pre><code>      *D&amp;(1&lt;&lt;3)-!Q</code></pre>
+<pre><code>          *D&amp;(1&lt;&lt;3)-!Q</code></pre>
 <p>…refers to <code>*D</code>. However if I were to have that be the element it wouldn’t
 work right: I wanted the semicolon in there but the space was needed to
 reduce the iocccsize down by one (ironic that adding a byte reduces it by
@@ -845,11 +845,11 @@ matter having a ‘o’ at 0,0 isn’t either).</p>
 
     You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
     For more information, see:
 
-    https://creativecommons.org/licenses/by-sa/4.0/
+        https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
 
@@ -886,7 +886,7 @@ matter having a ‘o’ at 0,0 isn’t either).</p>
 <div class="footer">
   <h2>Copyright and CC BY-SA 4.0 License</h2>
   <p>This file and web page is:</p>
-  <blockquote><p><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></p></blockquote>
+  <blockquote><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></blockquote>
   <p>You are free to share and adapt this file under the terms of this license:</p>
   <blockquote><b>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</b></blockquote>
   <p>For more information, see:</p>

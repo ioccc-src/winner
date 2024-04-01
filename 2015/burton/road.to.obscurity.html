@@ -135,49 +135,49 @@ did the basic four operations, but as a programmer, I needed more, so those
 were added over time.</p>
 <p><code>calc</code> is a useful, functioning utility. The operators before the obfuscation
 dance began (this is called foreshadowing):</p>
-<pre><code>()      forced precedence
-- ~ ?       unary minus, compl, byteswap
+<pre><code>()              forced precedence
+- ~ ?           unary minus, compl, byteswap
 * / % &amp; &lt;&lt; &gt;&gt;   mul, div, mod, bitand, shift: left, right
-+ - | ^     add, sub, bitor, xor
-NUM     0-9</code></pre>
++ - | ^         add, sub, bitor, xor
+NUM             0-9</code></pre>
 <p>This seemed like a reasonable candidate to experiment with obfuscation; perhaps
 it might yield good results.</p>
 <h2 id="principle-of-operation">Principle of operation</h2>
 <p>The algorithm was and is rather straightforward:</p>
 <pre><code>expr() {
-    n = term()
-    t = token()
-    if (t == ADD) return n += expr()
-    if (t == SUB) return n -= expr()
-    if (t == BOR) return n |= expr()
-    if (t == XOR) return n ^= expr()
-    ungettoken(t)
-    return n
+        n = term()
+        t = token()
+        if (t == ADD) return n += expr()
+        if (t == SUB) return n -= expr()
+        if (t == BOR) return n |= expr()
+        if (t == XOR) return n ^= expr()
+        ungettoken(t)
+        return n
 }
 term() {
-    n = factor()
-    t = token()
-    if (t == MUL) return n *= term()
-    if (t == DIV) return n /= term()
-    if (t == AND) return n &amp;= term()
-    if (t == RSH) return n &gt;&gt; term()
-    if (t == LSH) return n &lt;&lt; term()
-    ungettoken(t)
-    return n
+        n = factor()
+        t = token()
+        if (t == MUL) return n *= term()
+        if (t == DIV) return n /= term()
+        if (t == AND) return n &amp;= term()
+        if (t == RSH) return n &gt;&gt; term()
+        if (t == LSH) return n &lt;&lt; term()
+        ungettoken(t)
+        return n
 }
 factor() {
-    t = token()
-    if (t == LPAREN) {
-        n = expr()
-        if token() == RPAREN
-            return n
+        t = token()
+        if (t == LPAREN) {
+                n = expr()
+                if token() == RPAREN
+                        return n
+                error()
+        }
+        if (t == SUB) return -factor()
+        if (t == CMP) return ~factor()
+        if (t == QUE) return byteswap(factor())
+        if (t == DIG) return strtol()
         error()
-    }
-    if (t == SUB) return -factor()
-    if (t == CMP) return ~factor()
-    if (t == QUE) return byteswap(factor())
-    if (t == DIG) return strtol()
-    error()
 }</code></pre>
 <h2 id="obfuscation-is-a-process">Obfuscation is a process</h2>
 <p>Within the above algorithm, there are many details unmentioned, all ripe for
@@ -328,11 +328,11 @@ functionality. Now I think I have a good entry.</p>
 
     You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
     For more information, see:
 
-    https://creativecommons.org/licenses/by-sa/4.0/
+        https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
 
@@ -369,7 +369,7 @@ functionality. Now I think I have a good entry.</p>
 <div class="footer">
   <h2>Copyright and CC BY-SA 4.0 License</h2>
   <p>This file and web page is:</p>
-  <blockquote><p><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></p></blockquote>
+  <blockquote><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></blockquote>
   <p>You are free to share and adapt this file under the terms of this license:</p>
   <blockquote><b>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</b></blockquote>
   <p>For more information, see:</p>

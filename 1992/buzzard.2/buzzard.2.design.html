@@ -188,64 +188,64 @@ when they are used. Normal instructions compile a pointer to their
 executable part onto the end of the dictionary. As we will see, this
 means that by default FIRST simply compiles things.</p>
 <h4 id="integer-operations">Integer Operations</h4>
-<pre><code>SYMBOL  NAME        FUNCTION
+<pre><code>SYMBOL  NAME            FUNCTION
 
-  - binary minus    pop top 2 elements of stack, subtract, push
+  -     binary minus    pop top 2 elements of stack, subtract, push
 
-  * multiply    pop top 2 elements of stack, multiply, push
+  *     multiply        pop top 2 elements of stack, multiply, push
 
-  / divide      pop top 2 elements of stack, divide, push
+  /     divide          pop top 2 elements of stack, divide, push
 
-  &lt;0    less than 0 pop top element of stack, push 1 if &lt; 0 else 0</code></pre>
+  &lt;0    less than 0     pop top element of stack, push 1 if &lt; 0 else 0</code></pre>
 <p>Note that we can synthesize addition and negation from binary minus,
 but we cannot synthesize a time efficient divide or multiply from it.
 <code>&lt;0</code> is synthesize-able, but only in a non-portable way.</p>
 <h4 id="memory-operations">Memory Operations</h4>
-<pre><code>SYMBOL  NAME        FUNCTION
+<pre><code>SYMBOL  NAME            FUNCTION
 
-  @ fetch       pop top of stack, treat as address to push contents of
+  @     fetch           pop top of stack, treat as address to push contents of
 
-  ! store       top of stack is address, 2nd is value; store to memory
-            and pop both off the stack</code></pre>
+  !     store           top of stack is address, 2nd is value; store to memory
+                        and pop both off the stack</code></pre>
 <h4 id="inputoutput-operations">Input/Output Operations</h4>
-<pre><code>NAME            FUNCTION
+<pre><code>NAME                    FUNCTION
 
-echo            output top of stack through C&#39;s putchar()
+echo                    output top of stack through C&#39;s putchar()
 
-key         push C&#39;s getchar() onto top of stack
+key                     push C&#39;s getchar() onto top of stack
 
-_read           read a space-delimited word, find it in the
-            dictionary, and compile a pointer to
-            that word&#39;s code pointer onto the
-            current end of the dictionary</code></pre>
+_read                   read a space-delimited word, find it in the
+                        dictionary, and compile a pointer to
+                        that word&#39;s code pointer onto the
+                        current end of the dictionary</code></pre>
 <p>Although <code>_read</code> could be synthesized from key, we need <code>_read</code> to be able
 to compile words to be able to start any syntheses.</p>
 <h4 id="execution-operations">Execution Operations</h4>
-<pre><code>NAME            FUNCTION
+<pre><code>NAME                    FUNCTION
 
-exit            leave the current function: pop the return stack
-            into the program counter</code></pre>
+exit                    leave the current function: pop the return stack
+                        into the program counter</code></pre>
 <h4 id="immediate-compilation-operations">Immediate (compilation) Operations</h4>
-<pre><code>SYMBOL  NAME        FUNCTION
+<pre><code>SYMBOL  NAME            FUNCTION
 
-  : define      read in the next space-delimited word, add it to
-            the end of our string storage, and generate
-            a header for the new word so that when it
-            is typed it compiles a pointer to itself
-            so that it can be executed.
+  :     define          read in the next space-delimited word, add it to
+                        the end of our string storage, and generate
+                        a header for the new word so that when it
+                        is typed it compiles a pointer to itself
+                        so that it can be executed.
 
-immediate immediate when used immediately after a name following a &#39;:&#39;,
-            it makes the word being defined run whenever
-            it is typed.</code></pre>
+immediate immediate     when used immediately after a name following a &#39;:&#39;,
+                        it makes the word being defined run whenever
+                        it is typed.</code></pre>
 <p><code>:</code> cannot be synthesized, because we could not synthesize anything.
 <code>immediate</code> has to be an immediate operation, so it could not be
 synthesized unless by default operations were immediate; but that
 would preclude our being able to do any useful compilation.</p>
 <h4 id="stack-operations">Stack Operations</h4>
-<pre><code>NAME            FUNCTION
+<pre><code>NAME                    FUNCTION
 
-pick            pop top of stack, use as index into stack and copy up
-            that element</code></pre>
+pick                    pop top of stack, use as index into stack and copy up
+                        that element</code></pre>
 <p>If the data stack were stored in main memory, we could synthesize <code>pick</code>;
 but putting the stack and stack pointer in main memory would significantly
 increase the C source code size.</p>
@@ -264,16 +264,16 @@ word internally that it executes as its main loop. This word calls
 up a word on the return stack, so it will eventually trash things.
 This is discussed some more in section 2.</p>
 <p>Here’s a handy summary of all the FIRST words:</p>
-<pre><code>WORD        DESCRIPTION
+<pre><code>WORD            DESCRIPTION
 
-- * /       binary integer operations on the stack
-&lt;0      is top of stack less than 0?
-@ !     read from or write to memory
-echo key    output or input one character
-_read       read a word from input and compile a pointer to it
-exit        stop running the current function
-:       compile the header of a definition
-immediate   modify the header to create an immediate word</code></pre>
+- * /           binary integer operations on the stack
+&lt;0              is top of stack less than 0?
+@ !             read from or write to memory
+echo key        output or input one character
+_read           read a word from input and compile a pointer to it
+exit            stop running the current function
+:               compile the header of a definition
+immediate       modify the header to create an immediate word</code></pre>
 <p>Here is a sample FIRST program. I’m assuming you’re using
 the ASCII character set. FIRST does not depend upon ASCII, but
 since FIRST has no syntax for character constants, one normally has
@@ -286,26 +286,26 @@ differently if you wanted.</p>
 inside parentheses. FIRST programs cannot have FORTH comments; but I need
 some device to indicate what’s going on. (THIRD programs are an entirely
 different subject.)</p>
-<pre><code>    ( Our first line gives the symbols for the built-ins )
+<pre><code>        ( Our first line gives the symbols for the built-ins )
 : immediate _read @ ! - * / &lt;0 exit echo key _pick
 
-    ( now we define a simple word that will print out a couple characters )
+        ( now we define a simple word that will print out a couple characters )
 
-: L         ( define a word named &#39;L&#39; )
-  108 echo      ( output an ascii &#39;l&#39; )
+: L                     ( define a word named &#39;L&#39; )
+  108 echo              ( output an ascii &#39;l&#39; )
   exit
 
-: hello         ( define a word named &#39;hello&#39;)
-  72 echo       ( output an ascii &#39;H&#39; )
-  101 echo      ( output an ascii &#39;e&#39; )
-  111           ( push ascii &#39;o&#39; onto the stack )
-  L L           ( output two ascii &#39;l&#39;s )
-  echo          ( output the &#39;o&#39; we pushed on the stack before )
-  10 echo       ( print a newline )
-  exit          ( stop running this routine )
+: hello                 ( define a word named &#39;hello&#39;)
+  72 echo               ( output an ascii &#39;H&#39; )
+  101 echo              ( output an ascii &#39;e&#39; )
+  111                   ( push ascii &#39;o&#39; onto the stack )
+  L L                   ( output two ascii &#39;l&#39;s )
+  echo                  ( output the &#39;o&#39; we pushed on the stack before )
+  10 echo               ( print a newline )
+  exit                  ( stop running this routine )
 
-: test immediate    ( define a word named &#39;test&#39; that runs whenever typed )
-  hello         ( call hello )
+: test immediate        ( define a word named &#39;test&#39; that runs whenever typed )
+  hello                 ( call hello )
   exit
 
 test
@@ -362,11 +362,11 @@ word, from which you can never return. What it does is drops the top value off
 the return stack, calls <code>_read</code>, then calls itself. Because it kills the top of
 the return stack, it can recurse indefinitely.</p>
 <pre><code>: ]
-  r @           Get the value of the return stack pointer
-  1 -           Subtract one
-  r !           Store it back into the return stack pointer
-  _read         Read and compile one word
-  ]         Start over</code></pre>
+  r @                   Get the value of the return stack pointer
+  1 -                   Subtract one
+  r !                   Store it back into the return stack pointer
+  _read                 Read and compile one word
+  ]                     Start over</code></pre>
 <p>Notice that we don’t need to exit, since we never come back. Also, it’s
 possible that an immediate word may get run during <code>_read</code>, and that <code>_read</code>
 will never return!</p>
@@ -376,12 +376,12 @@ main</code></pre>
 <p>Next off, I’m going to do this the easy but non-portable way, and put some
 character constant definitions in. I wanted them at the top of the file, but
 that would have burned too much of the return stack.</p>
-<pre><code>: &#39;&quot;&#39;   34  exit
-: &#39;)&#39;   41  exit
-: &#39;\n&#39;  10  exit
+<pre><code>: &#39;&quot;&#39;   34      exit
+: &#39;)&#39;   41      exit
+: &#39;\n&#39;  10      exit
 : &#39;space&#39; 32    exit
-: &#39;0&#39;   48  exit
-: &#39;-&#39;   45  exit
+: &#39;0&#39;   48      exit
+: &#39;-&#39;   45      exit
 
 : cr &#39;\n&#39; echo exit</code></pre>
 <p>Next, we want to define some temporary variables for locations <code>3</code>, <code>4</code>, and
@@ -421,18 +421,18 @@ make a generic pointer-advancing function.
 Given a pointer to a memory location, increment the value
 at that memory location.</p>
 <pre><code>: inc
-  dup @         Get another copy of the address, and get the value
-            so now we have value, address on top of stack.
-  1 +           Add one to the value
-  swap          Swap to put the address on top of the stack
-  ! exit        Write it to memory
+  dup @                 Get another copy of the address, and get the value
+                        so now we have value, address on top of stack.
+  1 +                   Add one to the value
+  swap                  Swap to put the address on top of the stack
+  ! exit                Write it to memory
 </code></pre>
 <p><code>,</code> is a standard FORTH word. It should write the top of
 stack into the dictionary, and advance the pointer</p>
 <pre><code>: ,
-  h @           Get the value of the dictionary pointer
-  !         Write the top of stack there
-  h inc         And increment the dictionary pointer
+  h @                   Get the value of the dictionary pointer
+  !                     Write the top of stack there
+  h inc                 And increment the dictionary pointer
   exit</code></pre>
 <p><code>'</code> is a standard FORTH word. It should push the address
 of the word that follows it onto the stack. We could
@@ -443,25 +443,25 @@ stack will point into the instruction stream immediately
 after the <code>'</code>. We push the word there, and advance the
 return stack pointer so that we don’t execute it.</p>
 <pre><code>: &#39;
-  r @           Get the address of the top of return stack
-            We currently have a pointer to the top of return stack
-  @         Get the value from there
-            We currently have a pointer to the instruction stream
-  dup           Get another copy of it--the bottom copy will stick
-            around until the end of this word
-  1 +           Increment the pointer, pointing to the NEXT instruction
-  r @ !         Write it back onto the top of the return stack
-            We currently have our first copy of the old pointer
-            to the instruction stream
-  @         Get the value there--the address of the &quot;next word&quot;
+  r @                   Get the address of the top of return stack
+                        We currently have a pointer to the top of return stack
+  @                     Get the value from there
+                        We currently have a pointer to the instruction stream
+  dup                   Get another copy of it--the bottom copy will stick
+                        around until the end of this word
+  1 +                   Increment the pointer, pointing to the NEXT instruction
+  r @ !                 Write it back onto the top of the return stack
+                        We currently have our first copy of the old pointer
+                        to the instruction stream
+  @                     Get the value there--the address of the &quot;next word&quot;
   exit
 </code></pre>
 <p>Now we’re set. <code>;</code> should be an immediate word that pushes
 the address of <code>exit</code> onto the stack, then writes it out.</p>
 <pre><code>: ; immediate
-  &#39; exit        Get the address of exit
-  ,         Compile it
-  exit          And we should return</code></pre>
+  &#39; exit                Get the address of exit
+  ,                     Compile it
+  exit                  And we should return</code></pre>
 <p>Now let’s test out <code>;</code> by defining a useful word:</p>
 <pre><code>: drop 0 * + ;</code></pre>
 <p>Since we have <code>inc</code>, we ought to make <code>dec</code>:</p>
@@ -479,20 +479,20 @@ that off first… We better just bite the bullet and
 code it out–but we can’t really break it into smaller
 words, because that’ll trash the return stack.</p>
 <pre><code>: tor
-  r @ @         Get the value off the top of the return stack
-  swap          Bring the value to be pushed to the top of stack
-  r @ !         Write it over the current top of return stack
-  r @ 1 + r !       Increment the return stack pointer--but can&#39;t use inc
-  r @ !         Store our return address back on the return stack
+  r @ @                 Get the value off the top of the return stack
+  swap                  Bring the value to be pushed to the top of stack
+  r @ !                 Write it over the current top of return stack
+  r @ 1 + r !           Increment the return stack pointer--but can&#39;t use inc
+  r @ !                 Store our return address back on the return stack
 ;</code></pre>
 <p>Next we want the opposite routine, which pops the top
 of the return stack, and puts it on the normal stack.</p>
 <pre><code>: fromr
-  r @ @         Save old value
-  r @ 1 - r !       Decrement pointer
-  r @ @         Get value that we want off
-  swap          Bring return address to top
-  r @ !         Store it and return
+  r @ @                 Save old value
+  r @ 1 - r !           Decrement pointer
+  r @ @                 Get value that we want off
+  swap                  Bring return address to top
+  r @ !                 Store it and return
 ;</code></pre>
 <p>Now, if we have a routine that’s recursing, and we
 want to be polite about the return stack, right before
@@ -515,11 +515,11 @@ up.</p>
 <pre><code>: &lt; - &lt;0 ;</code></pre>
 <p><code>logical</code> turns the top of stack into either <code>0</code> or <code>1</code>.</p>
 <pre><code>: logical
-  dup           Get two copies of it
-  0 &lt;           1 if &lt; 0, 0 otherwise
-  swap minus        Swap number back up, and take negative
-  0 &lt;           1 if original was &gt; 0, 0 otherwise
-  +         Add them up--has to be 0 or 1!
+  dup                   Get two copies of it
+  0 &lt;                   1 if &lt; 0, 0 otherwise
+  swap minus            Swap number back up, and take negative
+  0 &lt;                   1 if original was &gt; 0, 0 otherwise
+  +                     Add them up--has to be 0 or 1!
 ;</code></pre>
 <p><code>not</code> returns 1 if top of stack is 0, and 0 otherwise</p>
 <pre><code>: not logical bnot ;</code></pre>
@@ -531,12 +531,12 @@ an integer constant with the offset of how far to branch.
 To branch, we use the return stack to read the offset, and
 add that on to the top of the return stack, and return.</p>
 <pre><code>: branch
-  r @           Address of top of return stack
-  @         Our return address
-  @         Value from there: the branch offset
-  r @ @         Our return address again
-  +         The address we want to execute at
-  r @ !         Store it back onto the return stack
+  r @                   Address of top of return stack
+  @                     Our return address
+  @                     Value from there: the branch offset
+  r @ @                 Our return address again
+  +                     The address we want to execute at
+  r @ !                 Store it back onto the return stack
 ;</code></pre>
 <p>For conditional branches, we want to branch by a certain
 amount if true, otherwise we want to skip over the branch
@@ -548,10 +548,10 @@ following computes the correct branch offset.</p>
 <p>Branch if the value on top of the stack is <code>0</code>.</p>
 <pre><code>: notbranch
   not
-  r @ @ @       Get the branch offset
-  computebranch     Adjust as necessary
-  r @ @ +       Calculate the new address
-  r @ !         Store it
+  r @ @ @               Get the branch offset
+  computebranch         Adjust as necessary
+  r @ @ +               Calculate the new address
+  r @ !                 Store it
 ;</code></pre>
 <p><code>here</code> is a standard FORTH word which returns a pointer to
 the current dictionary address–that is, the value of
@@ -564,27 +564,27 @@ we don’t know where the <code>then</code> will be. On the <em>stack</em>
 we leave the address where we compiled the dummy offset.
 <code>then</code> will calculate the offset and fill it in for us.</p>
 <pre><code>: if immediate
-  &#39; notbranch ,     Compile notbranch
-  here          Save the current dictionary address
-  0 ,           Compile a dummy value
+  &#39; notbranch ,         Compile notbranch
+  here                  Save the current dictionary address
+  0 ,                   Compile a dummy value
 ;</code></pre>
 <p><code>then</code> expects the address to <code>fixup</code> to be on the stack.</p>
 <pre><code>: then immediate
-  dup           Make another copy of the address
-  here          Find the current location, where to branch to
-  swap -        Calculate the difference between them
-  swap !        Bring the address to the top, and store it.
+  dup                   Make another copy of the address
+  here                  Find the current location, where to branch to
+  swap -                Calculate the difference between them
+  swap !                Bring the address to the top, and store it.
 ;</code></pre>
 <p>Now that we can do <code>if...then</code> statements, we can do
 some parsing! Let’s introduce real FORTH comments.
 <code>find-)</code> will scan the input until it finds a <code>)</code>, and
 exit.</p>
 <pre><code>: find-)
-  key           Read in a character
-  &#39;)&#39; =         Compare it to close parentheses
-  not if        If it&#39;s not equal
-    tail find-)     repeat (popping R stack)
-  then          Otherwise branch here and exit
+  key                   Read in a character
+  &#39;)&#39; =                 Compare it to close parentheses
+  not if                If it&#39;s not equal
+    tail find-)         repeat (popping R stack)
+  then                  Otherwise branch here and exit
 ;
 
 : ( immediate
@@ -598,35 +598,35 @@ exit.</p>
   nest parentheses... )
 
 : else immediate
-  &#39; branch ,        ( compile a definite branch )
-  here          ( push the backpatching address )
-  0 ,           ( compile a dummy offset for branch )
-  swap          ( bring old backpatch address to top )
-  dup here swap -   ( calculate the offset from old address )
-  swap !        ( put the address on top and store it )
+  &#39; branch ,            ( compile a definite branch )
+  here                  ( push the backpatching address )
+  0 ,                   ( compile a dummy offset for branch )
+  swap                  ( bring old backpatch address to top )
+  dup here swap -       ( calculate the offset from old address )
+  swap !                ( put the address on top and store it )
 ;
 
 : over _x! _y! _y _x _y ;
 
 : add
-  _x!           ( save the pointer in a temp variable )
-  _x @          ( get the value pointed to )
-  +         ( add the incremement from on top of the stack )
-  _x !          ( and save it )
+  _x!                   ( save the pointer in a temp variable )
+  _x @                  ( get the value pointed to )
+  +                     ( add the incremement from on top of the stack )
+  _x !                  ( and save it )
 ;
 
 : allot h add ;
 
 : maybebranch
-  logical       ( force the TOS to be 0 or 1 )
-  r @ @ @       ( load the branch offset )
-  computebranch     ( calculate the condition offset [either TOS or 1])
-  r @ @ +       ( add it to the return address )
-  r @ !         ( store it to our return address and return )
+  logical               ( force the TOS to be 0 or 1 )
+  r @ @ @               ( load the branch offset )
+  computebranch         ( calculate the condition offset [either TOS or 1])
+  r @ @ +               ( add it to the return address )
+  r @ !                 ( store it to our return address and return )
 ;
 
-: mod _x! _y!       ( get x then y off of stack )
-  _y _y _x / _x *   ( y - y / x * x )
+: mod _x! _y!           ( get x then y off of stack )
+  _y _y _x / _x *       ( y - y / x * x )
   -
 ;
 
@@ -694,10 +694,10 @@ exit.</p>
 ;
 
 : do immediate
-  &#39; swap ,      ( compile &#39;swap&#39; to swap the limit and start )
-  &#39; tor ,       ( compile to push the limit onto the return stack )
-  &#39; tor ,       ( compile to push the start on the return stack )
-  here          ( save this address so we can branch back to it )
+  &#39; swap ,              ( compile &#39;swap&#39; to swap the limit and start )
+  &#39; tor ,               ( compile to push the limit onto the return stack )
+  &#39; tor ,               ( compile to push the start on the return stack )
+  here                  ( save this address so we can branch back to it )
 ;
 
 : i r @ 1 - @ ;
@@ -708,13 +708,13 @@ exit.</p>
 : &gt;= swap &lt;= ;
 
 : inci
-  r @ 1 -   ( get the pointer to i )
-  inc       ( add one to it )
+  r @ 1 -       ( get the pointer to i )
+  inc           ( add one to it )
   r @ 1 - @     ( find the value again )
-  r @ 2 - @ ( find the limit value )
+  r @ 2 - @     ( find the limit value )
   &lt;=
   if
-    r @ @ @ r @ @ + r @ ! exit      ( branch )
+    r @ @ @ r @ @ + r @ ! exit          ( branch )
   then
   fromr 1 +
   fromr drop
@@ -726,10 +726,10 @@ exit.</p>
 
 : loopexit
 
-  fromr drop        ( pop off our return address )
-  fromr drop        ( pop off i )
-  fromr drop        ( pop off the limit of i )
-;           ( and return to the caller&#39;s caller routine )
+  fromr drop            ( pop off our return address )
+  fromr drop            ( pop off i )
+  fromr drop            ( pop off the limit of i )
+;                       ( and return to the caller&#39;s caller routine )
 
 : execute
   8 !
@@ -827,11 +827,11 @@ _welcome</code></pre>
 
     You are free to share and adapt this file under the terms of this license:
 
-    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
     For more information, see:
 
-    https://creativecommons.org/licenses/by-sa/4.0/
+        https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
 
@@ -868,7 +868,7 @@ _welcome</code></pre>
 <div class="footer">
   <h2>Copyright and CC BY-SA 4.0 License</h2>
   <p>This file and web page is:</p>
-  <blockquote><p><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></p></blockquote>
+  <blockquote><b>Copyright &copy; 1984-2024 by Landon Curt Noll. All Rights Reserved.</b></blockquote>
   <p>You are free to share and adapt this file under the terms of this license:</p>
   <blockquote><b>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</b></blockquote>
   <p>For more information, see:</p>
