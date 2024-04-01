@@ -14,6 +14,16 @@ html {
     -webkit-text-size-adjust: 100%; /* 2 */
 }
 
+/*
+ * Remove hyphenation in line endings in all browsers.
+ */
+p {
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    -webkit-hyphens: none;
+    hyphens: manual;
+}
+
 /* Sections ========================================================================== */
 
 /*
