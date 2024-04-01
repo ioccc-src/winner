@@ -3366,10 +3366,10 @@ to a temporary test. These would of course depend on the compiler invocation but
 since <code>LDFLAGS</code> is standard it is more likely to be used by default so no need
 to check the Makefiles.</p>
 <p>Sometimes there were bad characters or rules that caused the entry to fail to
-compile or not work in some way.</p>
+compile or not work in some way. These are noted above as well.</p>
 <p>Where useful he added some notes to the Makefiles during compilation to let one
 know of certain problems or features that matter for instance having to disable
-the optimiser or enabling (in one case) <code>-g</code>.</p>
+the optimiser or in one case enabling <code>-g</code>.</p>
 <p>Also, rather than check <code>$(CC)</code> for exact matches of <code>gcc</code> or <code>clang</code> it now is
 that if <code>$(CC)</code> contains <code>gcc</code> or contains <code>clang</code> then the specific actions
 related to the specific compiler will be done (priority is gcc then clang). This
@@ -3400,15 +3400,17 @@ manually.</p>
 <h2 id="consistency-improvements"><a name="consistency_improvements"></a>Consistency improvements</h2>
 <p><a href="#cody">Cody</a>, being the IOCCC’s resident corrections officer :-) (and a fine one at
 that, we think :-) ), made many, many typ0 (… :-) ) fixes throughout the
-index.html files, scripts, other data files, Makefiles (see above) etc.</p>
-<p>He also updated the formatting of the README.md, used to generate the index.html
-files, after renaming the old files to README.md, to proper markdown.</p>
+README.md files, scripts, other data files, Makefiles (see above) etc.</p>
+<p>He also updated the formatting of the README.md files, used to generate the
+index.html files, after renaming the old files to README.md, as well as changing
+some other files to markdown as well as format fixing them.</p>
 <p>Where possible he made the presentation of the entries much more consistent
 across the entries of all the years as well as other files. This is not possible
 for everything (the remarks of authors, for instance, cannot be and should not
 be made consistent but adding markdown where necessary in the remarks is).</p>
-<p>A lot of these fixes were done with his <a href="https://github.com/xexyl/sgit">sgit
-tool</a> as well but probably most were done manually.</p>
+<p>Some of these fixes were done with his <a href="https://github.com/xexyl/sgit">sgit
+tool</a> as well but the vast majority were done
+manually.</p>
 <h2 id="thank-you-honor-roll"><a name="thank_you_honor_roll"></a>Thank you honor roll</h2>
 <p>There are a number of people who have contributed to several thousand changes,
 fixes and important improvements and one who has literally (or numerically :-) )

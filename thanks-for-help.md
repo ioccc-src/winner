@@ -5013,11 +5013,11 @@ since `LDFLAGS` is standard it is more likely to be used by default so no need
 to check the Makefiles.
 
 Sometimes there were bad characters or rules that caused the entry to fail to
-compile or not work in some way.
+compile or not work in some way. These are noted above as well.
 
 Where useful he added some notes to the Makefiles during compilation to let one
 know of certain problems or features that matter for instance having to disable
-the optimiser or enabling (in one case) `-g`.
+the optimiser or in one case enabling `-g`.
 
 Also, rather than check `$(CC)` for exact matches of `gcc` or `clang` it now is
 that if `$(CC)` contains `gcc` or contains `clang` then the specific actions
@@ -5057,18 +5057,20 @@ manually.
 
 [Cody](#cody), being the IOCCC's resident corrections officer :-) (and a fine one at
 that, we think :-) ), made many, many typ0 (... :-) ) fixes throughout the
-index.html files, scripts, other data files, Makefiles (see above) etc.
+README.md files, scripts, other data files, Makefiles (see above) etc.
 
-He also updated the formatting of the README.md, used to generate the index.html
-files, after renaming the old files to README.md, to proper markdown.
+He also updated the formatting of the README.md files, used to generate the
+index.html files, after renaming the old files to README.md, as well as changing
+some other files to markdown as well as format fixing them.
 
 Where possible he made the presentation of the entries much more consistent
 across the entries of all the years as well as other files. This is not possible
 for everything (the remarks of authors, for instance, cannot be and should not
 be made consistent but adding markdown where necessary in the remarks is).
 
-A lot of these fixes were done with his [sgit
-tool](https://github.com/xexyl/sgit) as well but probably most were done manually.
+Some of these fixes were done with his [sgit
+tool](https://github.com/xexyl/sgit) as well but the vast majority were done
+manually.
 
 
 ## <a name="thank_you_honor_roll"></a>Thank you honor roll
