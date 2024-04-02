@@ -1901,7 +1901,7 @@ The example command above _should_ print:
 and that's what it shows in linux.
 
 Note that with different perl libraries in macOS (for instance from
-[Homebrew](https://brew.sh) and [MacPorts](https://www.macports.org) it will
+[Homebrew](https://brew.sh) and [MacPorts](https://www.macports.org)) it will
 likely print different warnings when compiling. It was observed that with
 Homebrew it does not report any warnings but with MacPorts it results in a total
 of 92 warnings! Nonetheless neither works okay and both crash.
