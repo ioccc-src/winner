@@ -8,7 +8,7 @@ You may then wish to look at the Author's remarks for even more details.
 Instructions for use: Run `make` to compile entries (it is possible that on
 System V or non-Unix systems the Makefile needs to be changed).
 
-This year, the Grand Prize was given to the most useful program.
+This year, the [Best of Show](jar.2/index.html) was given to the most useful program.
 
 The ["Strangest abuse of the rules"](jar.1/indx.html) award was given this year
 to stress the fact that starting in 1990, compiling entries must result a
@@ -20,7 +20,7 @@ using it.  In the case of the ["Best game"](tromp/README) entry, however, some
 functionality is lost in the portable version and so the Makefile uses
 the original program.
 
-[Rules](rules.txt) and results were posted to comp.lang.c, comp.sources.unix, and
+[Rules](rules.txt) and [results](../years.html#1989) were posted to comp.lang.c, comp.sources.unix, and
 alt.sources.  They have been made available on a wide number of USENET
 archive sites such as uunet.  The 1989 winning entries will be published in the
 [Micro/Systems

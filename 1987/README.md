@@ -15,13 +15,12 @@ this year.
 [Rules](rules.txt) and results were posted to comp.lang.c and comp.unix.wizards
 with an announcement in news.announce.important.
 [Micro/Systems Journal](https://www.vintage-computer.com/publications.php?microsystemsjournal)
-published the 1987 winning entries.  [Mark R.
-Horton](https://www.amazon.com/stores/Mark-R.-Horton/author/B001HPGRB8) included
-a version of the [1987 winning entries](../years.html#1987) in an appendix of his C book
-[Portable C Software International
+published the 1987 winning entries.  [Mary Ann Horton](../authors.html#Mary_Ann_Horton) included
+a version of the [1987 winning entries](../years.html#1987) in an appendix of
+her C book [Portable C Software International
 Edition](https://www.amazon.com/Portable-Software-Mark-R-Horton/dp/0138680507).
-The first announcement of winning entries at the Summer 87 USENIX was helped by a small
-fly that danced all over the foils.
+The first announcement of winning entries at the Summer 87 USENIX was helped by
+a small fly that danced all over the foils.
 
 
 ## Final Comments
