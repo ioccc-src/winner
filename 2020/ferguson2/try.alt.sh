@@ -118,7 +118,7 @@ read -r -n 1 -p "Press any key to show input file: "
 echo 1>&2
 cat input
 echo 1>&2
-read -r -n 1 -p "Press any key to show output file: "
+read -r -n 1 -p "Press any key to run: cat output: "
 echo 1>&2
 cat output
 echo 1>&2
@@ -127,10 +127,10 @@ read -r -n 1 -p "Press any key to decrypt the output from the above command: "
 echo 1>&2
 echo "$ ./recode -v -Rconf -foutput | ./prog - 2>/dev/null > output2" 1>&2
 ./recode -v -Rconf -foutput | ./prog - 2>/dev/null > output2
-read -r -n 1 -p "Press any key to show output2: "
+read -r -n 1 -p "Press any key to run: cat output2: "
 echo 1>&2
 cat output2
-read -r -n 1 -p "Press any key to show input again: "
+read -r -n 1 -p "Press any key to run: cat input: "
 echo 1>&2
 cat input
 echo 1>&2
