@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -10,14 +10,14 @@ See [Alternate code](#alternate-code) below for the (fun) rationale here.
 
 ## To use:
 
-```sh
+```<!---sh-->
     echo "full spelling of an English cardinal numeral less than a quadrillion" | ./kang
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh # try various languages
 
     ./en.sh # English 0 through 13
@@ -43,14 +43,14 @@ subtlety of this entry even more.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
 
 ### Alternate use:
 
-```sh
+```<!---sh-->
     echo "full spelling of an English cardinal numeral less than a quadrillion" | ./kang.alt
 
     echo vier | ./kang.alt
@@ -61,7 +61,7 @@ subtlety of this entry even more.
 
 ### Alternate try:
 
-```sh
+```<!---sh-->
     ./try.alt.sh # try various languages
 
     ./en.alt.sh # English 0 through 13
@@ -88,13 +88,13 @@ We've added a linefeed to the print format for convenience.
 
 Can you explain why:
 
-```sh
+```<!---sh-->
     echo f hundr|./kang
 ```
 
 correctly reports 500 but:
 
-```sh
+```<!---sh-->
     echo hundr|./kang
 ```
 

@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -10,14 +10,14 @@ code](#alternate-code) below.
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./prog < any-file
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -32,7 +32,7 @@ with `-Wno-` options.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -82,7 +82,7 @@ and without bypassing the solution using `execve(2)`, or functions built upon it
 E.g:
 
 
-```c
+```<!---c-->
     main(){system("hd");}	// it's turtles all the way down!
 ```
 
@@ -96,7 +96,7 @@ This solution is pleasing, but a true one-liner was the hoped-for goal.
 Here is the 157 character version in it's entirety:
 
 
-```c
+```<!---c-->
     char     O,o[  20];L(O){
     putchar  ( O+  48+39  *(9<
     O));}    I(O)  {L(~     15);
@@ -115,7 +115,7 @@ The progression to the present size is interesting,
 and it is interesting that the same algorithm can be expressed so differently
 by slight rearrangement of its parts.
 
-```c
+```<!---c-->
     // 119
     char O,o[20];main(l){for(;~(l=getchar());O||puts(o))o[O++]=isprint(l)?l:46,O&=15,printf("%02x ",l);O[o]=0;O&&puts(o);}
     // 116
@@ -139,7 +139,7 @@ These do not compete in the same category, since their output is materially diff
 They are derived from the solutions above, but are still fascinating as concise utilities,
 so here is their progression, for the curious:
 
-```c
+```<!---c-->
     // 102
     I;O(O){putchar(O+48+39*(9<O));}main(l){for(;~(l=getchar());O(++I&15?~15:~37))O(l>>4),O(l&15);O(-38);}
     // 80
@@ -156,7 +156,7 @@ It is possible to reduce the size of each of these by one by eliding the trailin
 This was not reported above since the newline kept getting appended by processing software,
 and it is more interesting to remove characters by changing code than by filtering:
 
-```sh
+```<!---sh-->
     $ tr -d '\012' < 109.c | wc -c
     108
     $ tr -d '\012' < 76.c | wc -c
@@ -257,13 +257,13 @@ the expression within the ternary remains too complex.
 
 Try:
 
-```sh
+```<!---sh-->
     cat prog.c prog.alt.c
 ```
 
 or
 
-```sh
+```<!---sh-->
     cmp -b prog.c prog.alt.c
 ```
 

@@ -55,7 +55,7 @@ wonderful 'challenge' for everyone.
 
 # <a name="options" href="#toc">Options</a>
 
-```sh
+```<!---sh-->
     ./recode -h
     usage: ./recode [options]
     -v			display selected settings
@@ -71,7 +71,7 @@ if you don't give the option to read in a file for input.
 
 `-v` shows selected settings. For example combining `-r` and `-v`:
 
-```sh
+```<!---sh-->
     $ echo IOCCC | ./recode -r -v
     Ring 1: (  I) EKMFLGDQVZNTOWYHXUSPAIBRCJ
     Ring 2: (  V) VZBRGITYUPSDNHLXAWMJQOFECK
@@ -104,7 +104,7 @@ encipherment/decipherment). If the file cannot be opened it sets back to stdin.
 or is the same file name (see below) then only stdout will be used.  Example of
 randomised output going to a file:
 
-```sh
+```<!---sh-->
     $ ./recode -r -oconfig
     IOCCC
     3PP4UB5GG1ELGTKFCOPVBNUYXJAWSDIOCCC
@@ -143,7 +143,7 @@ what about if one exists but the other does not?
 Due to the way the parsing of options is done (no spaces between option char and
 argument) shell expansion will not work right so for example doing:
 
-```sh
+```<!---sh-->
     $ ./recode -R~/config
 ```
 
@@ -163,7 +163,7 @@ the program interactively.
 If stdin is not a tty (`!isatty(0)`) and neither randomised mode nor reading in
 from a file is specified then you might just see something like:
 
-```sh
+```<!---sh-->
     $ echo testing test tests | ./recode
     1AB2BB3CC1testing test tests
 
@@ -189,7 +189,7 @@ input manually (if you randomise or read in from previously saved file no input
 need be done at all) then make sure to redirect stderr to /dev/null. If you
 don't you might see something like:
 
-```sh
+```<!---sh-->
     $ ./recode -r | ./prog -
     Ring 1: IOCCC
     Setting 1: Position 1: Ring 2: Setting 2: Position 2: Ring 3: Setting 3: Position 3: Reflector: Plugboard pair 1: Plugboard pair 2: Plugboard pair 3: Plugboard pair 4: Plugboard pair 5: Plugboard pair 6: Plugboard pair 7: Plugboard pair 8: Plugboard pair 9: Plugboard pair 10: DEVIY
@@ -205,7 +205,7 @@ That's why after I sent EOF it printed out the remaining strings to stderr.
 
 # <a name="manuallytest" href="#toc">Manually test the recode program with the Enigma program</a>
 
-```sh
+```<!---sh-->
     $ cat input
     IOCCC
 
@@ -249,7 +249,7 @@ than the simulator: because with the size restrictions on my entry I saved bytes
 by using the same loop where I could. It just felt more natural to have them
 grouped together in a configurator for the [simulator](prog.c).
 
-```sh
+```<!---sh-->
     $ echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRIOCCC | ./prog - 2>/dev/null
     HQNVO
     $ echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRIOCCC  | ./prog - 2>/dev/null | echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRHQNVO | ./prog  - 2>/dev/null
@@ -273,21 +273,21 @@ What happens if the plugboard pairs are the same but in a different order? It's
 the same output:
 
 
-```sh
+```<!---sh-->
     $ echo 1AA2AA3AA2AB..CDEFGHIJKLMNOPQRIOCCC|./prog - 2>/dev/null
     HQNVO
 ```
 
 Also if you flip the order of the letters in the pair e.g. the AB as BA instead:
 
-```sh
+```<!---sh-->
     $ echo 1AA2AA3AA2BA..CDEFGHIJKLMNOPQRIOCCC|./prog - 2>/dev/null
     HQNVO
 ```
 
 # <a name="onlyconfig" href="#toc">Only write config file</a>
 
-```sh
+```<!---sh-->
     $ ./recode -v -oconfig -finput >/dev/null
     Rotors:
     (1)   I: EKMFLGDQVZNTOWYHXUSPAIBRCJ
@@ -345,7 +345,7 @@ pair.  This is because it consumes input overflow.
 It shouldn't be this way for the simulator though because that could cause
 inconsistent number of characters expected before the text to encipher.
 
-```sh
+```<!---sh-->
     $ cat config
     1AB2CD3EF2ABCDEFGHIJKLMNOPQRST
 
@@ -363,7 +363,7 @@ directly type ctrl-d (or whatever you have EOF set to) or give it an empty file.
 The following are all equivalent in that they will write to a settings file (the
 first one will print a newline with the echo but that won't matter):
 
-```sh
+```<!---sh-->
     $ echo | ./recode -r -osettings
     $ echo -n | ./recode -r -osettings
     $ > empty
@@ -380,7 +380,7 @@ set another variable to indicate if it should be printed.)
 
 # <a name="reuseconfig" href="#toc">Reusing a configuration</a>
 
-```sh
+```<!---sh-->
     $ echo -n|./recode -r -oconfig
     4UH5II1RJ1SPIFEJLYGZWRTBHVCAMN$
 
@@ -405,7 +405,7 @@ set another variable to indicate if it should be printed.)
 
 Alternatively you can just use the `-R` and `-f` options:
 
-```sh
+```<!---sh-->
     $ ./recode -finput.txt -Rconfig | ./prog - 2>/dev/null > output2
     $ diff output output2
     $
@@ -456,7 +456,7 @@ participants of the IOCCC do). Other things there don't mean anything but what
 does is the output:
 
 
-```sh
+```<!---sh-->
     $ cat output
     DBFAF 2020 Ittejg ltblwriac uqdfqvr dhqh ghhf
 
@@ -477,7 +477,7 @@ does is the output:
 
 This is like the above only randomised:
 
-```sh
+```<!---sh-->
     $ ./recode -r -oconfig|./prog - 2>/dev/null
     IOCCC
     UGEVP
@@ -489,14 +489,14 @@ the config file (for deciphering later) and then all of it was piped to the
 Enigma entry resulting in the line below IOCCC. But let's verify it worked out
 okay:
 
-```sh
+```<!---sh-->
     $ cat config
     2BM4GJ3HK1LNCBXWRMGKSYIAZUTPVJ
 ```
 
 Without having to copy/paste intermediate results:
 
-```sh
+```<!---sh-->
     $ echo IOCCC | ./recode -Rconfig | ./prog - 2>/dev/null | ./recode -Rconfig | ./prog - 2>/dev/null
     IOCCC
 ```
@@ -504,7 +504,7 @@ Without having to copy/paste intermediate results:
 You can also use a string for the `-R` option. I'll use command substitution and
 actual pasting to demonstrate:
 
-```sh
+```<!---sh-->
     $ echo IOCCC | ./recode -R$(cat config) | ./prog - 2>/dev/null | ./recode -R2BM4GJ3HK1LNCBXWRMGKSYIAZUTPVJ | ./prog - 2>/dev/null
     IOCCC
 ```
@@ -612,7 +612,7 @@ the key you wish to select is
 
 you can do:
 
-```sh
+```<!---sh-->
     ./recode -R0EZ4PC1CC0PGTAQSOXWNMDRYKFUZEI -fencrypted.html | ./prog - 2>/dev/null > decrypted.html
 ```
 

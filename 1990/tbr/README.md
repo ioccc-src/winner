@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
@@ -25,7 +25,7 @@ In 2023 it was noticed that in some systems like macOS there was confusing
 output due to a warning at runtime that was interspersed with the output of the
 program. For instance it would show:
 
-```sh
+```<!---sh-->
     ./tbr
     $ warning: this program uses gets(), which is unsafe.
 ```
@@ -40,7 +40,7 @@ below, in the [alternate version](#alternate-code) section.
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./tbr
     $ enter some shell commands
 ```
@@ -54,7 +54,7 @@ just `exit` or `logout`? Hint: see the authors' remarks.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./tbr
     $ ls -l tbr tbr.c
 
@@ -79,7 +79,7 @@ documented, are not considered bugs as such in the context of the contest.
 The authors supplied us with a slightly smaller unformatted version
 of the program which we include below:
 
-```c
+```<!---c-->
     #define D ,close(
     char*c,q[512],m[256],*v[99],**u,*i[3];int f[2],p;main(){for(m[m[60]=m[62]=
     32]=m[*m=124[m]=9]=6;e(-8),gets(1+(c=q))||(exit(0),0);r(0,0))for(;*++c;);}
@@ -99,14 +99,14 @@ equivalent like the authors intended.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
 
 ### Alternate use:
 
-```sh
+```<!---sh-->
     ./tbr.alt
 ```
 
@@ -165,13 +165,13 @@ argument is stolen every time a `>` or `<` is encountered.  The
 shell flags an error if no arguments are on the stack. Thus, for
 example:
 
-```sh
+```<!---sh-->
     cat > foo > bar
 ```
 
 cats to `foo`, since it was pushed last, but
 
-```sh
+```<!---sh-->
     cat > > foo bar
 ```
 

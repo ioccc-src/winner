@@ -19,7 +19,7 @@ However, as noted, macOS does **not** have `/usr/include` so this would never
 work for macOS without some changes, described next. For macOS you will need the
 command line tools installed which can be done like:
 
-```sh
+```<!---sh-->
     sudo xcode-select --install
 ```
 
@@ -50,7 +50,7 @@ which has been changed to be:
 
 Shortly below that you will see, as noted above, the numbers:
 
-```c
+```<!---c-->
     if ((H = fopen (__FILE__+43, 43+__FILE__)))
     while ((fgets (L, (int)sizeof L, H)) != 0) {
 	    I[strcspn (I, 45+__FILE__)] = O = 0;

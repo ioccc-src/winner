@@ -1,20 +1,20 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./hou syntax-file file-to-process
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -80,7 +80,7 @@ The following regular expression operators are supported:
 For example, one can use the following expression to match a certain declaration
 statement in [hou.c](hou.c):
 
-```re
+```<!---re-->
 	"char"[ *]*[a-zA-Z_][0-9a-zA-Z_]*[ ]*((=[0-9a-zA-Z_ ]+)|(\[[0-9a-zA-Z_ ]*\]))?[ ]*(,[ *]*[a-zA-Z_][0-9a-zA-Z_]*[ ]*((=[0-9a-zA-Z_ ]+)|(\[[0-9a-zA-Z_ ]*\]))?[ ]*)*;
     ```
 
@@ -89,7 +89,7 @@ The regex engine is also algorithmically efficient. To illustrate the point,
 hang for the competing Perl engine while matching itself. Try to compare these
 two engines:
 
-```sh
+```<!---sh-->
     ./hou ansi.txt ansi.txt
     perl patho.pl < ansi.txt
 ```

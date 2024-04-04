@@ -141,24 +141,24 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em></li>
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2013_endoh3">2013 endoh3 bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./endoh3</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./endoh3</code></pre>
 <p>This program plays sound. See <a href="../../faq.html#sox">FAQ 3.10 - How do I compile and use an IOCCC
 entry that requires sound?</a> if you do not know how to set your
 system up for this or if you want to verify that everything is oky.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span> ABC</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span> test.abc yankee.abc</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span> <span class="pp">*</span>.abc</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh
+
+    ./try.sh ABC
+
+    ./try.sh test.abc yankee.abc
+
+    ./try.sh *.abc</code></pre>
 <p>The script will check for SoX first and next <code>padsp</code> from <code>PulseAudio</code> and
 finally if neither are found if you have <code>ruby(1)</code> installed it’ll use the
 included ruby script to convert it to a WAV file for you to play.</p>
@@ -180,21 +180,21 @@ will remain the same for historical purposes.</p>
 <p>This is a sound synthesizer for a subset of <a href="http://en.wikipedia.org/wiki/ABC_notation">ABC music
 notation</a>.</p>
 <p>Try:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> <span class="at">-o</span> endoh3 endoh3.c</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;CDEFGABc&quot;</span> <span class="kw">|</span> <span class="ex">./endoh3</span> <span class="op">&gt;</span> /dev/dsp</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cc -o endoh3 endoh3.c
+    echo &quot;CDEFGABc&quot; | ./endoh3 &gt; /dev/dsp</code></pre>
 <p>If <code>/dev/dsp</code> is not available on your system, use an OSS sound wrapper such
 as <code>padsp</code> or <code>aoss</code>:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;CDEFGABc&quot;</span> <span class="kw">|</span> <span class="ex">./endoh3</span> <span class="kw">|</span> <span class="ex">padsp</span> tee /dev/dsp <span class="op">&gt;</span> /dev/null</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    echo &quot;CDEFGABc&quot; | ./endoh3 | padsp tee /dev/dsp &gt; /dev/null</code></pre>
 <p>If you are using Mac OS X, try <a href="http://sox.sourceforge.net/">sox</a> like so:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;CDEFGABc&quot;</span> <span class="kw">|</span> <span class="ex">./endoh3</span> <span class="kw">|</span> <span class="fu">sox</span> <span class="at">-q</span> <span class="at">-traw</span> <span class="at">-r8000</span> <span class="at">-b8</span> <span class="at">-e</span> unsigned-integer <span class="at">-</span> <span class="at">-tcoreaudio</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    echo &quot;CDEFGABc&quot; | ./endoh3 | sox -q -traw -r8000 -b8 -e unsigned-integer - -tcoreaudio</code></pre>
 <p>If that does not work, use the attached script to convert the output into a wave
 file format:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;CDEFGABc&quot;</span> <span class="kw">|</span> <span class="ex">./endoh3</span> <span class="kw">|</span> <span class="ex">ruby</span> wavify.rb <span class="op">&gt;</span> cde.wav</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    echo &quot;CDEFGABc&quot; | ./endoh3 | ruby wavify.rb &gt; cde.wav</code></pre>
 <p>and play <code>cde.wav</code>.</p>
 <p>You can also enjoy some music scores that I attached. With <code>/dev/dsp</code> you can
 do so like:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span> twinkle.abc <span class="kw">|</span> <span class="ex">./endoh3</span> <span class="op">&gt;</span> /dev/dsp</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span> menuet.abc <span class="kw">|</span> <span class="ex">./endoh3</span> <span class="op">&gt;</span> /dev/dsp</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cat twinkle.abc | ./endoh3 &gt; /dev/dsp
+    cat menuet.abc | ./endoh3 &gt; /dev/dsp</code></pre>
 <p>but you should be able to modify it a way to meet your system requirements as
 described above.</p>
 <h3 id="obfuscation">Obfuscation</h3>
@@ -257,7 +257,7 @@ But I do not attach it to protect you from W****r.</p>
 You know, it is <a href="http://en.wikipedia.org/wiki/4%E2%80%B233%E2%80%B3">“the famous song”</a>.</p>
 <h3 id="spoiler">Spoiler</h3>
 <p>Here is a magical expression which I found by brute-force:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="op">(</span>c <span class="op">%</span> <span class="dv">32</span> <span class="op">+</span> <span class="dv">5</span><span class="op">)</span> <span class="op">*</span> <span class="dv">9</span> <span class="op">/</span> <span class="dv">5</span> <span class="op">%</span> <span class="dv">13</span> <span class="op">+</span> n <span class="op">/</span> <span class="dv">32</span> <span class="op">*</span> <span class="dv">12</span> <span class="op">-</span> <span class="dv">22</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    (c % 32 + 5) * 9 / 5 % 13 + n / 32 * 12 - 22</code></pre>
 <p>Interestingly, it converts an ASCII number of ABC notes
 to the corresponding tone number.</p>
 <pre><code>    &#39;C&#39; (ASCII  67) =&gt;  3
@@ -287,7 +287,7 @@ found this approximation by using the <a href="http://en.wikipedia.org/wiki/Ster
 tree</a>.) We can gain the
 frequency by multiplying the value by <code>n</code> times.</p>
 <p>Finally, the following code generates a saw wave:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span><span class="op">(</span>c <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> c <span class="op">&lt;</span> len<span class="op">;</span> c<span class="op">++)</span> putchar<span class="op">(</span>a <span class="op">=</span> n <span class="op">*</span> D<span class="op">);</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    for(c = 0; c &lt; len; c++) putchar(a = n * D);</code></pre>
 <p>where <code>D</code> is a frequency and <code>a</code> is a variable whose type is <code>char</code>. By
 assigning <code>float</code> to <code>char</code> variable, the implicit type conversion is performed
 from <code>float</code> to <code>char</code> (modulo 256).</p>

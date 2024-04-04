@@ -141,23 +141,23 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em></li>
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>There is an unobfuscated version of this entry. See <a href="#alternate-code">Alternate
 code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./konno</span> N</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./konno N</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># you can also specify numbers to try before the random and preselected ones:</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span> 111 222 333 444 555 666 777 888 999</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh
+
+    # you can also specify numbers to try before the random and preselected ones:
+    ./try.sh 111 222 333 444 555 666 777 888 999</code></pre>
 <p>Try running <a href="try.sh">try.sh</a> a number of times as the first part randomly
 selects ten numbers to try.</p>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>An alternate version of this entry, <a href="konno.alt.c">konno.alt.c</a>, is provided.
 This alternate code is an unobfuscated version of the winning code.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>konno.alt</code> as you would <code>konno</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -170,17 +170,17 @@ This alternate code is an unobfuscated version of the winning code.</p>
 automaton</a>
 patterns.</p>
 <p>Try:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./konno</span> 30</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./konno</span> 90</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./konno</span> 102</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./konno</span> 109</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./konno</span> 165</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./konno 30
+    ./konno 90
+    ./konno 102
+    ./konno 109
+    ./konno 165</code></pre>
 <p>There are 256 (from 0 through 255) possible rules.</p>
 <h3 id="obfuscation">Obfuscation</h3>
 <p>This program uses bit operations. I think</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="dv">7</span><span class="op">&amp;</span>O<span class="op">&lt;&lt;!</span>o<span class="op">&gt;&gt;!</span>o<span class="op">+</span><span class="dv">29</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    7&amp;O&lt;&lt;!o&gt;&gt;!o+29</code></pre>
 <p>is an interesting operation. This isn’t equal to</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="dv">7</span><span class="op">&amp;</span>O<span class="op">&gt;&gt;</span><span class="dv">29</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    7&amp;O&gt;&gt;29</code></pre>
 <p>operation. What is the operation doing?</p>
 <h3 id="limitation">Limitation</h3>
 <p>This program assumes that the size of <code>int</code> is 4.</p>

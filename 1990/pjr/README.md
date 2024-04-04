@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
@@ -11,7 +11,7 @@ that can be used if your compiler is incapable of compiling `X=g()...` in
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./pjr
 ```
 
@@ -22,7 +22,7 @@ Note that some compilers will be unable to compile the expression `X=g()...` in
 `main()` due to lack of temporary stack space.  One might want to try replacing
 `main()` with:
 
-```c
+```<!---c-->
     main(){X=s().v().o().o().l().S().d().l().i().o().w().N();}
 ```
 
@@ -34,14 +34,14 @@ well.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
 
 ### Alternate use:
 
-```sh
+```<!---sh-->
     ./pjr.alt
 ```
 
@@ -74,7 +74,7 @@ opposite:
 
 To encode a new string input the string as it is meant to come out:
 
-```c
+```<!---c-->
     X=s().v().o().o().l().S().d().l().i().o().w().N();
 ```
 

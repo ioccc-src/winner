@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -10,7 +10,7 @@ code](#alternate-code) below for more details.
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./prog
     # input some text
 
@@ -22,7 +22,7 @@ code](#alternate-code) below for more details.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -46,7 +46,7 @@ are the program in assembly for x86_64 linux and x86 linux respectively.
 
 To build [prog.alt.c](prog.alt.c):
 
-```sh
+```<!---sh-->
     make alt
 ```
 

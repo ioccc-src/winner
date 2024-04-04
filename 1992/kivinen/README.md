@@ -2,7 +2,7 @@
 
 If your machine support the X Window System, Version 11:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -24,7 +24,7 @@ For more detailed information see [1992 kivinen bugs](../../bugs.html#1992_kivin
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./kivinen.alt
 
     ./kivinen.alt a
@@ -41,7 +41,7 @@ Also try changing the speed that the game moves. For instance if you wish to
 change the `usleep(3)` value to `30000` from `20000`, try:
 
 
-```sh
+```<!---sh-->
     make clobber SLEEP=30000 alt # make it slower
 
     make clobber SLEEP=10000 alt # make it faster
@@ -59,7 +59,7 @@ code.
 
 ### Original build:
 
-```sh
+```<!---sh-->
     make all
 ```
 

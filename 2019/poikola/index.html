@@ -141,7 +141,7 @@ Location: <a href="../../location.html#FI">FI</a> - <em>Republic of Finland </em
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>There is an alternate version of this program which changes the way the output
 is displayed. See <a href="#alternate-code">Alternate code</a> below.</p>
 <p>NOTE: we disable the optimiser because the author stated that for GCC optimiser
@@ -153,30 +153,30 @@ forcing <code>-std=gnu11</code>.</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2019_poikola">2019 poikola bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> 512 ./prog</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sleep</span> 86400<span class="kw">;</span> <span class="fu">make</span> clobber prog</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> 512 ./prog</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sleep</span> 86400<span class="kw">;</span> <span class="fu">make</span> clobber prog</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> 512 ./prog</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog 512 ./prog
+
+    sleep 86400; make clobber prog
+    ./prog 512 ./prog
+
+    sleep 86400; make clobber prog
+    ./prog 512 ./prog</code></pre>
 <p>If you wish for some documentation:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> docs</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make docs</code></pre>
 <p>This will create the file <code>poikola.pdf</code> for your enjoyment.</p>
 <h2 id="try">Try:</h2>
 <p>If you don’t have a few days, try:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <p>As the <a href="../../bugs.html#2019_poikola">2019 poikola bugs</a> says, this program will not validate
 input so it might get stuck or fail if invoked erroneously.</p>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This version prints a newline after each number for parsing in other ways than
 what can be done with the original entry.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>prog.alt</code> as you would <code>prog</code> above.</p>
 <h3 id="alternate-try">Alternate try:</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.alt.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Do you have the time to see what this program does? Think again, come back and
 try again.</p>
@@ -191,11 +191,11 @@ accomplishments of <a href="https://en.wikipedia.org/wiki/Matti_Nyk%C3%A4nen">Ma
 Nykänen</a>.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="how-to-build">How to build:</h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gcc</span> <span class="at">-O0</span> <span class="at">-o</span> prog prog.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    gcc -O0 -o prog prog.c</code></pre>
 <p>or</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clang</span> <span class="at">-O</span><span class="pp">[</span><span class="ss">0123s</span><span class="pp">]</span> <span class="at">-o</span> prog prog.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    clang -O[0123s] -o prog prog.c</code></pre>
 <p>e.g.:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clang</span> <span class="at">-O1</span> <span class="at">-o</span> prog prog.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    clang -O1 -o prog prog.c</code></pre>
 <h3 id="poster">Poster:</h3>
 <p>You can generate an A3 sized poster by <code>make docs</code>. This command creates a pdf
 file <code>poikola.pdf</code>. This requires the
@@ -231,7 +231,7 @@ three consecutive days.</p>
 <p>As this is a contest for obfuscated code, the program does not perform
 unnecessary checks, but either fails or gets stuck if invoked erroneously. The
 program is invoked in this way:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> <span class="op">&lt;</span>integer<span class="op">&gt;</span> <span class="op">&lt;</span>file<span class="op">&gt;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt;integer&gt; &lt;file&gt;</code></pre>
 <p>where <code>&lt;integer&gt;</code> is 224, 256, 384, 512 or even 1024. Yes, I know 1024 is not a
 supported length of output, but as I said, the program does not validate its
 input in any way. These same parameters should be given in calculating a

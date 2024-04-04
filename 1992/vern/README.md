@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [1992 vern bugs](../../bugs.html#1992_vern).
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./vern 3	# <-- default is 2
 ```
 
@@ -42,7 +42,7 @@ suggested above.  :-)
 
 For a real quick game try:
 
-```sh
+```<!---sh-->
     ./vern
 
     65 55
@@ -124,7 +124,7 @@ wouldn't pass the character limit.  A nice side effect is that the
 initial source is gloriously difficult to peruse. In particular, the Makefile
 does:
 
-```sh
+```<!---sh-->
     sed <vern.c 's/{ /(/g;s/} /)/g;s/;       /#define /' | \
 	sed 's/}      /=/g;s/{        /i/g' >vern.tmp.c
 ```

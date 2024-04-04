@@ -141,7 +141,7 @@ like some of the other features this was not intentionally designed but is
 simply a fun consequence of the features I did implement.</p>
 <p>Let’s say you want to verify that the evade mode is at the right count. How
 can you verify it without modifying the code? Try:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">SIZE</span><span class="op">=</span>0 <span class="va">SHED</span><span class="op">=</span>1 <span class="va">SHEDS</span><span class="op">=</span>1 <span class="va">EVADE</span><span class="op">=</span>10 <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    SIZE=0 SHED=1 SHEDS=1 EVADE=10 ./prog</code></pre>
 <p>Since you start out at size 0 and you shed every movement then when you’re
 size 10 (as long as you don’t eat a bug of course!) the bug should evade.</p>
 <p>If you set it to <code>SIZE=10</code> there would be a difference of 10. Now every
@@ -154,7 +154,7 @@ don’t at this time remember any I might have done.</p>
 <h1 id="the-snake-doesnt-seem-to-be-moving"><a name="stillsnake" href="#toc">The snake doesn’t seem to be moving</a></h1>
 <p>One way to show this is in full is to set the initial size and growth size to a
 high value; then try each one individually. For example:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">SIZE</span><span class="op">=</span>100 <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    SIZE=100 ./prog</code></pre>
 <p>In this case after you make the first move the snake will keep growing and
 so the snake tail stays in the same spot until after it’s the ‘full size’.
 When it has reached the full size then the entire body of the snake will
@@ -201,24 +201,24 @@ way negative size will force a win.</p>
 <p>Here’s a fun output:</p>
 <pre><code>    &lt; &lt;&lt;&lt;+</code></pre>
 <p>That’s from:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">SHED</span><span class="op">=</span>1 <span class="va">SHEDS</span><span class="op">=</span>-1 <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    SHED=1 SHEDS=-1 ./prog</code></pre>
 <p>And right after that you would see:</p>
 <pre><code>    YOU WIN!
     X:72/156 Y:20/41 S:997/997 B:0</code></pre>
 <p>Try this though:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">SHEDS</span><span class="op">=</span>-1 <span class="va">SHED</span><span class="op">=</span>25 <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    SHEDS=-1 SHED=25 ./prog</code></pre>
 <p>And you’ll see that you start to be the normal size but then you leave your
 head several places until you end up getting to the max size (by way of it
 being unsigned). This isn’t a bug even if it might seem like one. In fact
 this is the basis of the grow/shrink mode of play that I talk about in the
 <a href="gameplay.html">gameplay.html</a> (<a href="gameplay.md">gameplay.md</a> on GitHub) file.</p>
 <p>Here’s another thing to be aware of. Let’s say you do:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">SIZE</span><span class="op">=</span>1 <span class="va">GROW</span><span class="op">=</span>-1 <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    SIZE=1 GROW=-1 ./prog</code></pre>
 <p>How many bugs will it take before you win? In fact it’s two: you would see the
 head twice: the second time once you ‘shrink’ down to size 0; it would then be
 that if you get another bug you will be at the ‘max size’:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">YOU</span> WIN!</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">X:81/156</span> Y:35/41 S:997/997 B:2</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    YOU WIN!
+    X:81/156 Y:35/41 S:997/997 B:2</code></pre>
 <h1 id="i-was-a-few-places-behind-my-tail-and-i-ran-into-it"><a name="bitetail" href="#toc">‘I was a few places behind my tail and I ran into it!’</a></h1>
 <p>I.e. what happens if you’re growing - for example after just eating a bug - and
 you’re racing towards your tail? If you’re behind it should be fine since you’re
@@ -271,23 +271,23 @@ how it’s done in Snake and works well). The minimum terminal size I require in
 the game is 10 x 10. This includes the walls and score line.</p>
 <p>Now the default max snake size is 997 but when the terminal is too small it
 adjusts the max snake size. For 10 lines and 10 columns you would see:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> make test</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">terminal</span> supports cursor movement</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">terminal</span> supports making cursor invisible</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">terminal</span> supports bold</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">terminal</span> supports colours</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">terminal</span> rows  10 <span class="er">(</span><span class="ex">7</span>   playable<span class="kw">)</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">terminal</span> cols  10 <span class="er">(</span><span class="ex">8</span>   playable<span class="kw">)</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">snake</span> size:    49 <span class="er">(</span><span class="ex">max</span> size: 49<span class="kw">)</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>          <span class="ex">bugs:</span>     9 <span class="er">(</span><span class="ex">max</span> size: 9<span class="kw">)</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">at</span> least 28 columns recommended for snake size 49    <span class="er">(</span><span class="ex">is</span> 10<span class="kw">)</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="ex">at</span> least 28 columns recommended for snake size 49    <span class="er">(</span><span class="ex">is</span> 10<span class="kw">)</span></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    <span class="ex">1</span> problem detected <span class="er">(</span><span class="ex">0</span> fatal<span class="kw">)</span><span class="bu">.</span></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    <span class="ex">make:</span> <span class="pp">***</span> <span class="pp">[</span><span class="ss">test</span><span class="pp">]</span> Error 1</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ make test
+    terminal supports cursor movement
+    terminal supports making cursor invisible
+    terminal supports bold
+    terminal supports colours
+
+    terminal rows  10 (7   playable)
+    terminal cols  10 (8   playable)
+
+    snake size:    49 (max size: 49)
+          bugs:     9 (max size: 9)
+
+    at least 28 columns recommended for snake size 49    (is 10)
+    at least 28 columns recommended for snake size 49    (is 10)
+
+    1 problem detected (0 fatal).
+    make: *** [test] Error 1</code></pre>
 <p>First: what’s the problem? It’s just a warning that for the snake size of 49 the
 recommended size of columns is 28. However this is just for the score text; with
 only 10 columns it will overflow and wrap to the next line(s). But if you observe

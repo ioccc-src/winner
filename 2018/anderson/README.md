@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -10,14 +10,14 @@ code](#alternate-code) below for more details.
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./prog < textfile
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -31,7 +31,7 @@ it was not the shape of the Roman V that we, or the compiler, didn't like.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -43,7 +43,7 @@ Use `prog.alt` as you would `prog` above.
 
 ### Alternate try:
 
-```sh
+```<!---sh-->
     ./try.alt.sh
 ```
 
@@ -58,7 +58,7 @@ down](http://en.wikipedia.org/wiki/River_%28typography%29)!
 
 ### Compiling the program:
 
-```sh
+```<!---sh-->
     cc -Wall -Wextra -Wpedantic -O3 -std=c11 prog.c -o prog
 ```
 

@@ -141,37 +141,37 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <p>NOTE: this version is a fixed version for modern C compilers. See the <a href="#alternate-code">Alternate
 code</a> section below for how to use the original and why one
 might wish to do so.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./westley</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./westley</code></pre>
 <p>Also try:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <p>to show the code with followed by the result so you can truly see the magic.</p>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This version is the original which might not work as you expect nowadays.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>To see if your compiler has the problem described in the Judges’ remarks below,
 try:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./westley.alt</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./westley.alt</code></pre>
 <p>Does it show the same output as <code>westley</code>?</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Your compiler must parse</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#define _ </span><span class="op">-</span><span class="pp">a</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span>_</span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    #define _ -a
+    -_</code></pre>
 <p>as <code>--a</code> and not <code>-(-a)</code> or some other tokenized form. Some strictly
 conforming ANSI C Preprocessors may object to this: for such
 compilers, you can elide the non-standard token-pasting requirement
 by changing the #define line to:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#define _ F</span><span class="op">--&gt;</span><span class="bn">00</span><span class="op">||</span><span class="pp">F</span><span class="op">-</span><span class="pp">OO</span><span class="op">--;</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    #define _ F--&gt;00||F-OO--;</code></pre>
 <p>This is what the modified code in <a href="westley.c">westley.c</a> does whereas the alt
 code is the original.</p>
 <p>You might enjoy looking at the output of:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> <span class="at">-E</span> westley.alt.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cc -E westley.alt.c</code></pre>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>No remarks were provided by the author.</p>
 <!--

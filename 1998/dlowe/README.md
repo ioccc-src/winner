@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
@@ -10,7 +10,7 @@ below for more details.
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./dlowe < file > pootfile
 
     ./dlowe < file
@@ -30,7 +30,7 @@ For more detailed information see [1998 dlowe bugs](../../bugs.html#1998_dlowe).
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./dlowe < README.md
     ./dlowe < README.md > README.poot.md
 ```
@@ -39,7 +39,7 @@ Why is there different output?
 
 Also try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -54,7 +54,7 @@ that program.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -70,7 +70,7 @@ What's the difference between this and `dlowe`?
 
 ### Alternate try:
 
-```sh
+```<!---sh-->
     ./try.alt.sh
 ```
 
@@ -93,7 +93,7 @@ more consistent level of quality.  :-)
 
 A CGI script such as:
 
-```sh
+```<!---sh-->
     #!/bin/sh
     # pootify - a sample CGI pootifier
     #
@@ -131,7 +131,7 @@ should use the above one instead. You can use the script
 [pootify.sh](pootify.sh), however, to download and generate html files that you
 can look at locally in a browser or pipe through `less(1)`. For instance:
 
-```sh
+```<!---sh-->
     ./pootify.sh URL=https://microsoft.com | less
 
     ./pootify.sh -r URL=https://microsoft.com > ms.html
@@ -143,7 +143,7 @@ it in a browser.
 
 For an old example of it working as a CGI script see:
 
-```sh
+```<!---sh-->
     https://web.archive.org/web/20040326083431/http://www.pootpoot.com/poot/pootify/?URL=http%3A%2F%2Fwww.ioccc.org
 ```
 

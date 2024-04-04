@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make chaos
 ```
 
@@ -8,21 +8,21 @@ NOTE: Some systems do not implement `halfdelay()` in their `libcurses`.
 You might try compiling with -lncurses if you have that library.
 Or you can build this entry without the `halfdelay()` call by:
 
-```sh
+```<!---sh-->
     make chaos_nohalf
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./chaos
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 

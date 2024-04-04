@@ -54,7 +54,7 @@ dumps core just like before!  What about the call to `_exit()`?
 The call was:
 
 
-```c
+```<!---c-->
     _exit(argv[(int)*argc-2/cc[1*(int)*argc]|-1<<4]);
 ```
 
@@ -72,7 +72,7 @@ infinite loop!
 After we fix the infinite loop if we change the `_exit()` call in macOS and
 disable the optimiser we might get something like:
 
-```sh
+```<!---sh-->
     $ ./marshall
 	  choo choo
     Segmentation fault: 11

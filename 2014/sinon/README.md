@@ -1,13 +1,13 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./hecate.sh
 
     ./glock.sh
@@ -16,7 +16,7 @@
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -41,7 +41,7 @@ under one minute.
 To start, compile and run the program.  To resume, compile and run the
 output repeatedly until you have won/lost the game.  For example:
 
-```sh
+```<!---sh-->
     cp prog.c run.c
     gcc -O0 run.c -o run && ./run | tee run.c
     gcc -O2 run.c -o run && ./run | tee run.c
@@ -106,7 +106,7 @@ a primary input.
 that there are no files named "run" and "run.c" in current directory
 (they will be overwritten) and run:
 
-```sh
+```<!---sh-->
     perl prog.c | bash
 ```
 

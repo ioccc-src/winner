@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [2001 rosten bugs](../../bugs.html#2001_rosten
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./rosten [number]
 ```
 
@@ -30,14 +30,14 @@ NOTE: number is floating point.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./rosten 1.03
     ./rosten 1.00
 ```
 
 For some abuse, try:
 
-```sh
+```<!---sh-->
     ./rosten 0.99
 ```
 
@@ -57,7 +57,7 @@ cursor) in the wrong way.  :-)
 
 ### SYNOPSIS
 
-```sh
+```<!---sh-->
     ./rosten [greasiness]
 ```
 
@@ -94,7 +94,7 @@ portable, but compile with almost no warnings on most of the compilers
 tested. It's a kind of shame that none of the compilers do anything
 like this:
 
-```sh
+```<!---sh-->
     $ make greasymouse
     cc greasymouse.c -o greasymouse -lX11
     greasymouse.c:30: This macro should have more text and spaces in it
@@ -142,7 +142,7 @@ the way it's used to.
 The MIPS compiler suggests an `==` instead of an `=` in expressions
 such as:
 
-```c
+```<!---c-->
     &&(a=b)
 ```
 

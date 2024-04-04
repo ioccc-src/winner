@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [2020 ferguson1 bugs](../../bugs.html#2020_fer
 
 ## To use:
 
-```sh
+```<!---sh-->
     WAIT=N WALLS=[01] EVADE=N SIZE=N MAXSIZE=N GROW=N SHEDS=N SHED=N CANNIBAL=[01] ./prog
     # start pressing some arrow keys
 ```
@@ -87,7 +87,7 @@ and non-zero).
 
 ## Try:
 
-```sh
+```<!---sh-->
     make test
 
     WAIT=75 WALLS=1 CANNIBAL=1 ./prog
@@ -211,7 +211,7 @@ features.
 Because all IOCCC entries should have a man page I have included one (even
 though much of it is what's also above). To render try:
 
-```sh
+```<!---sh-->
     man ./snake.1
 ```
 

@@ -141,17 +141,17 @@ Location: <a href="../../location.html#GB">GB</a> - <em>United Kingdom of Great 
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2000_rince">2000 rince bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./rince</span> number number2</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./rince number number2</code></pre>
 <p>If <code>DISPLAY</code> is not set the program will very likely crash or do something
 different.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <p>This will run the program several times with different parameters to show
 different types of things. See the author’s remarks for more details.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -162,7 +162,7 @@ observation.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="how-to-use-it">How to use it</h3>
 <p>The simplest way to run it is with no arguments. Just type:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./rince</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./rince</code></pre>
 <p>You will need to have access to X windows, although it doesn’t require
 desperately high resolution and there are no known limitations on colour
 depth.</p>
@@ -171,12 +171,12 @@ or more to be visible. For those that cannot wait that long the program
 has a built in time machine. Indeed the program knows the speed of light,
 which is used to ensure that we see the “live” pictures. Simply specify
 the fraction of a day to skip forward for each screen refresh. I suggest:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./rince</span> 0.01</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./rince 0.01</code></pre>
 <p>To display the output (still guessing?) for a given date, specify two
 arguments. The first argument is as before and the second argument is a
 Julian day number (given as a fractional component). E.g.:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./rince</span> 0 2441193.6</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./rince</span> 0.01 2441193.6</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./rince 0 2441193.6
+    ./rince 0.01 2441193.6</code></pre>
 <p>A Julian day is defined to be the number of days since January 1st in the year
 <code>-4712 (4713BC)</code>, starting at 12 noon GMT.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> To aid conversion from our time
 (GMT) to Julian day there is a supplementary program named:
@@ -248,12 +248,12 @@ states the following:</p>
     Here he could see for himself that somehow, a planet could
     orbit the sun, and not leave a moon behind!</code></pre>
 <p>Thus we can plot Galileo’s discoveries using the following three plots:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./rince</span> 0 <span class="va">$(</span><span class="ex">./dmy2jd</span>  7.8 1 1610<span class="va">)</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./rince</span> 0 <span class="va">$(</span><span class="ex">./dmy2jd</span>  8.8 1 1610<span class="va">)</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./rince</span> 0 <span class="va">$(</span><span class="ex">./dmy2jd</span> 10.8 1 1610<span class="va">)</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./rince 0 $(./dmy2jd  7.8 1 1610)
+    ./rince 0 $(./dmy2jd  8.8 1 1610)
+    ./rince 0 $(./dmy2jd 10.8 1 1610)</code></pre>
 <p>However we can go one better by seeing what Galileo would have seen if it
 wasn’t cloudy on the 9th. Try:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./rince</span> 0 <span class="va">$(</span><span class="ex">./dmy2jd</span> 9.85 1 1610<span class="va">)</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./rince 0 $(./dmy2jd 9.85 1 1610)</code></pre>
 <p>to see what he was missing out on. I wonder what he’d have made of that!</p>
 <p>Galileo discovered the fourth moon a few days later.</p>
 <p>I’ve tried typing these dates into two Java based Jovian moon plotters,

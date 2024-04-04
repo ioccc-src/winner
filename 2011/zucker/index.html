@@ -141,14 +141,14 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>There is an alternate version which should work for Windows which distinguishes
 binary mode from text mode. See <a href="#alternate-code">alternate code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./zucker</span> <span class="op">&gt;</span> image.ppm</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./zucker &gt; image.ppm</code></pre>
 <p>Now open <code>image.ppm</code> with your image viewer of choice.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <p>After running <code>try.sh</code>, open the PPM images <code>ioccc.ppm</code>, <code>hello.ppm</code> and
 <code>image2.ppm</code> with your image viewer of choice.</p>
 <h2 id="alternate-code">Alternate code:</h2>
@@ -156,7 +156,7 @@ binary mode from text mode. See <a href="#alternate-code">alternate code</a> bel
 binary mode on <code>stdout</code> which the author noted would be necessary for systems
 that distinguish binary and text.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>zucker.alt</code> as you would <code>zucker</code> above.</p>
 <h3 id="alternate-try">Alternate try:</h3>
@@ -170,7 +170,7 @@ The vector font is proportional.</p>
 <h4 id="what-it-does">What it does:</h4>
 <p>This program makes pretty pictures. To see the default output, try
 running</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./zucker</span> <span class="op">&gt;</span> ioccc2011.ppm</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./zucker &gt; ioccc2011.ppm</code></pre>
 <p>On the author’s 2.5 GHz MacBook Pro, this command takes approximately 1 minute
 and 18 seconds to run – your runtime may vary. You will need an image viewer
 capable of displaying <a href="https://en.wikipedia.org/wiki/Netpbm">Netpbm images</a> in
@@ -179,20 +179,20 @@ well; otherwise <a href="http://www.imagemagick.org/">ImageMagick</a> and/or
 <a href="http://www.graphicsmagick.org/">GraphicsMagick</a> are both capable of displaying
 Netpbm files, and are available on multiple platforms.</p>
 <p>With macOS you can type at the command line:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">open</span> ioccc2021.ppm</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    open ioccc2021.ppm</code></pre>
 <p>and it will open image in the default application Preview.app.</p>
 <p>To use ImageMagick you might do something like:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">convert</span> ioccc2011.ppm ioccc2011.png</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    convert ioccc2011.ppm ioccc2011.png</code></pre>
 <p>and then open <code>ioccc2011.png</code> in your viewer of choice.</p>
 <p>To use GraphicsMagick you might do something like:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">gm</span> convert ioccc2011.ppm ioccc2011.png</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    gm convert ioccc2011.ppm ioccc2011.png</code></pre>
 <p>and then open <code>ioccc2011.png</code> in your viewer of choice.</p>
 <p>Aside from the default image, you may create your own by running the
 program as follows:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./zucker</span> <span class="st">&quot;your text&quot;</span> <span class="op">&gt;</span> image.ppm</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./zucker &quot;your text&quot; &gt; image.ppm</code></pre>
 <p>To mitigate long runtime, the program can be invoked in a “preview”
 mode by appending <code>-preview</code> to the command line arguments, like so:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./zucker</span> faster<span class="dt">\!</span> <span class="at">-preview</span> <span class="op">&gt;</span> image.ppm</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./zucker faster\! -preview &gt; image.ppm</code></pre>
 <p>If your platform distinguishes between binary and text streams, you may need to
 insert some code to reopen standard output in binary mode at the start of
 <code>main()</code> (the provided <a href="#alternate-code">alternate version</a> will set binary mode

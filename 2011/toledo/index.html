@@ -142,12 +142,12 @@ Location: <a href="../../location.html#MX">MX</a> - <em>United Mexican States</e
 
 <h2 id="to-build">To build:</h2>
 <p>If you have X11 installed:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>There are two alternate versions, <a href="toledo.alt.c">one that lets you reconfigure the
 controls and size</a> and <a href="toledo.alt2.c">another that should work for
 Windows</a>. See <a href="#alternate-code">Alternate code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./toledo</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./toledo</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>The first alt version, <a href="toledo.alt.c">toledo.alt.c</a>, allows you to reconfigure
 the controls and the dimensions more easily.</p>
@@ -168,7 +168,7 @@ have the right names you can define the macros <code>FIRE</code>, <code>FORWARD<
     HEIGHT= 288</code></pre>
 <p>but you can change them about however you like, even with other keys. For
 instance to swap <code>LEFT</code> and <code>RIGHT</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> clobber LEFT=XK_Right:XK_d RIGHT=XK_Left:XK_a alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make clobber LEFT=XK_Right:XK_d RIGHT=XK_Left:XK_a alt</code></pre>
 <p>but you can specify something completely else and you can pick and choose which
 controls you wish to redefine. You might also wish to change the dimensions of
 the game, <code>WIDTH</code> and <code>HEIGHT</code> which have an arbitrarily selected lower limit as
@@ -184,7 +184,7 @@ the source early on, right before the code gets hard to follow, or using the
 <a href="#alternate-code">alternate version</a>.</p>
 <p>Like Oscar’s previous winning X11 program for the 19th IOCCC, if
 you remove both the X11 include files and replace them with</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#include </span><span class="im">&quot;layer.c&quot;</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    #include &quot;layer.c&quot;</code></pre>
 <p>you ought to be able to compile and run this program on Windows.
 NOTE: this is what <a href="toledo.alt2.c">toledo.alt2.c</a> is for.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>

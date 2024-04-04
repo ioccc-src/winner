@@ -141,62 +141,62 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>The author provided alternate code that prints the output one character at a
 time to make it a bit more like the real thing in that it isn’t dumped out all
 at once. See <a href="#alternate-code">Alternate code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># get recode help:</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./recode</span> <span class="at">-h</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># general syntax for recode passing to Enigma machine:</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./recode</span> <span class="pp">[</span><span class="ss">options</span><span class="pp">]</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># general syntax for recode without passing to Enigma machine:</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./recode</span> <span class="pp">[</span><span class="ss">options</span><span class="pp">]</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># recode prompts for settings; pass to Enigma machine:</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./recode</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># recode reads from input file, prompts for settings; passed to Enigma machine:</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./recode</span> <span class="at">-finput</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># recode reads config from string or file; passed to Enigma machine after</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># prompting for input:</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./recode</span> <span class="at">-R</span><span class="op">&lt;</span>string<span class="kw">|</span><span class="fu">file</span><span class="op">&gt;</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># write config to output file; passed to Enigma machine after prompting for</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># input:</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./recode</span> <span class="at">-o</span><span class="op">&lt;</span>config<span class="op">&gt;</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># pseudo-randomly select settings</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./recode</span> <span class="at">-r</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># show Enigma machine settings after selection / generation:</span></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./recode</span> <span class="at">-v</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog
+
+    # get recode help:
+    ./recode -h
+
+    # general syntax for recode passing to Enigma machine:
+    ./recode [options] | ./prog - 2&gt;/dev/null
+    # general syntax for recode without passing to Enigma machine:
+    ./recode [options]
+
+    # recode prompts for settings; pass to Enigma machine:
+    ./recode | ./prog - 2&gt;/dev/null
+
+    # recode reads from input file, prompts for settings; passed to Enigma machine:
+    ./recode -finput | ./prog - 2&gt;/dev/null
+
+    # recode reads config from string or file; passed to Enigma machine after
+    # prompting for input:
+    ./recode -R&lt;string|file&gt; | ./prog - 2&gt;/dev/null
+
+    # write config to output file; passed to Enigma machine after prompting for
+    # input:
+    ./recode -o&lt;config&gt; | ./prog - 2&gt;/dev/null
+
+    # pseudo-randomly select settings
+    ./recode -r
+
+    # show Enigma machine settings after selection / generation:
+    ./recode -v</code></pre>
 <p><strong>NOTE</strong>: in <a href="recode.c">recode</a> no spaces between options and option arguments
 are allowed.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <p>What does:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="kw">|</span> <span class="ex">./recode</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="kw">|</span> <span class="ex">./recode</span> <span class="at">-v</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    echo | ./recode
+    echo | ./recode -v</code></pre>
 <p>do?</p>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This version, <a href="prog.alt.c">prog.alt.c</a>, writes a character at a time, sleeping
 after each character, so that one can read it more easily (for longer output)
 and to make it a bit more like the real thing.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <p>The default time to sleep is 400000 microseconds but you can change this by
 doing:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> clobber SLEEP=600000 alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make clobber SLEEP=600000 alt</code></pre>
 <p>to change it to 600000 microseconds. It guards against negative numbers.</p>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>prog.alt</code> as you would <code>prog</code> above.</p>
 <h3 id="alternate-try">Alternate try:</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.alt.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh</code></pre>
 <p>Notice how only the last part should use the <code>prog.alt</code>. Why? Try it and find
 out! Can you figure out why this works this way?</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -205,7 +205,7 @@ out! Can you figure out why this works this way?</p>
 <ul>
 <li><a href="enigma.1">enigma.1</a> - A useful man page for this entry. To render, try:</li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">man</span> ./enigma.1</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    man ./enigma.1</code></pre>
 <ul>
 <li><a href="recode.html">recode.html</a> (or <a href="recode.html">recode.html</a> if reading on GitHub)
 <ul>
@@ -317,7 +317,7 @@ leave this in for historical purposes.</p>
 for input (end with EOF). At that point it’ll process the input string and print
 the result (after finishing the enciphering).</p>
 <p>If you run it like:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> <span class="at">-</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog -</code></pre>
 <p>It will prompt you for the settings of the machine (example below).</p>
 <p>The first group is in the order of
 <a href="https://www.ciphermachinesandcryptology.com/en/enigmatech.htm">rotor</a> (number),
@@ -338,78 +338,78 @@ on GitHub see <a href="chocolate-cake.html">here</a>) though one might need a di
 of exercise after taking up the challenge! :-) These however show the general
 program as well as how to use the two winning entries of the <a href="https://en.wikipedia.org/wiki/Morse_code">Morse
 code</a> that I referred to earlier:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./prog <span class="at">-</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Ring</span> 1: 3</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Setting</span> 1: I</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Position</span> 1: O</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Ring</span> 2: 1</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Setting</span> 2: C</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Position</span> 2: C</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Ring</span> 3: 5</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Setting</span> 3: C</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Position</span> 3: Z</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Reflector:</span> 2</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair 1: CO</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair 2: DE</span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair 3: SN</span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair 4: XY</span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair 5: MS</span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair 6: AT</span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair 7: VF</span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair 8: UR</span>
-<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair 9: KL</span>
-<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair 10: BJ</span>
-<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>    <span class="ex">IOCCC</span></span>
-<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>    <span class="ex">^D</span></span>
-<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>    <span class="ex">CFDRG</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ ./prog -
+    Ring 1: 3
+    Setting 1: I
+    Position 1: O
+    Ring 2: 1
+    Setting 2: C
+    Position 2: C
+    Ring 3: 5
+    Setting 3: C
+    Position 3: Z
+    Reflector: 2
+    Plugboard pair 1: CO
+    Plugboard pair 2: DE
+    Plugboard pair 3: SN
+    Plugboard pair 4: XY
+    Plugboard pair 5: MS
+    Plugboard pair 6: AT
+    Plugboard pair 7: VF
+    Plugboard pair 8: UR
+    Plugboard pair 9: KL
+    Plugboard pair 10: BJ
+    IOCCC
+    ^D
+    CFDRG</code></pre>
 <p>Notice that all output except the deciphered/enciphered text is sent to stdout.</p>
 <p>If I didn’t specify the <code>-</code> by e.g. <code>echo IOCCC | ./prog</code> then it will use the
 default settings; as the judges suggest this invocation I will not show it here.</p>
 <p>But you can also type it out like this:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./prog</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">IOCCC</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">UUMMX</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ ./prog
+    IOCCC
+    UUMMX</code></pre>
 <p>The IOCCC comes from stdin; the <code>UUMMX</code> is written to stdout.</p>
 <p>If I compile the 2014 entry and copy it to my local directory as
 <code>vik</code> I might do:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo TEST<span class="kw">|</span><span class="ex">./prog</span> <span class="kw">|</span><span class="ex">./vik</span> <span class="kw">|</span> <span class="ex">mplayer</span> <span class="at">-demuxer</span> rawaudio <span class="at">-</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo TEST|./prog |./vik | mplayer -demuxer rawaudio -</code></pre>
 <p>And you would hear <a href="https://en.wikipedia.org/wiki/Morse_code">Morse code</a> of the
 <a href="https://www.ciphermachinesandcryptology.com/en/enigmatech.htm">Enigma</a> output
 of ‘TEST’ (i.e. <code>KCWV</code>)! Or perhaps not in this case. I’m not sure: I discovered
 a bug in that entry (Fedora, CentOS and macOS all affected).</p>
 <p>For example I can use the syntax provided in the winning remarks along with my
 entry to write it to a file. Say:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo TEST<span class="kw">|</span><span class="ex">./prog</span> <span class="kw">|</span><span class="ex">./vik</span> <span class="op">&gt;</span> test.raw</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./vik e <span class="op">&lt;</span> test.raw <span class="kw">|</span> <span class="ex">./prog</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">LEST</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo TEST|./prog |./vik &gt; test.raw
+    $ ./vik e &lt; test.raw | ./prog
+    LEST</code></pre>
 <p>Why did that happen? This shows more details:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./vik e <span class="op">&lt;</span> test.raw</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">SCWV</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ ./vik e &lt; test.raw
+    SCWV</code></pre>
 <p>However as can be seen the first char is wrong:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo TEST<span class="kw">|</span><span class="ex">./prog</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">KCWV</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo TEST|./prog
+    KCWV</code></pre>
 <p>And piping the original output to my entry itself you get the original input:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo TEST <span class="kw">|</span> <span class="ex">./prog</span>  <span class="kw">|</span> <span class="ex">./prog</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">TEST</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo TEST | ./prog  | ./prog
+    TEST</code></pre>
 <p>I’m not sure what causes that or if there’s a way to fix it but that’s the
 idea anyway. Neither do I know if the original transcoding is correct.</p>
 <p>What if I use the input string <code>LEST</code> instead? In that case it worked fine:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo LEST <span class="kw">|</span> <span class="ex">./prog</span> <span class="kw">|</span> <span class="ex">./vik</span> <span class="op">&gt;</span> lest.raw</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./vik e <span class="op">&lt;</span> lest.raw <span class="kw">|</span> <span class="ex">./prog</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">LEST</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo LEST | ./prog | ./vik &gt; lest.raw
+    $ ./vik e &lt; lest.raw | ./prog
+    LEST</code></pre>
 <p>But there’s one obvious question, right? Let’s try the most important one:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo IOCCC <span class="kw">|</span> <span class="ex">./prog</span> <span class="kw">|</span> <span class="ex">./vik</span> <span class="op">&gt;</span> ioccc.raw</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./vik e <span class="op">&lt;</span> ioccc.raw</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">UUMMX</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./vik e <span class="op">&lt;</span> ioccc.raw <span class="kw">|</span> <span class="ex">./prog</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">IOCCC</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo IOCCC | ./prog | ./vik &gt; ioccc.raw
+    $ ./vik e &lt; ioccc.raw
+    UUMMX
+    $ ./vik e &lt; ioccc.raw | ./prog
+    IOCCC</code></pre>
 <p>Phew! The program redeemed itself after the test failure! :)</p>
 <p>(Technically above it didn’t print a newline after the output and this is how it
 is with some of the things I pasted in the other file and maybe others here
 too. Notice also how it showed the same output that my program gave it - <code>UUMMX</code>.)</p>
 <p>What about the other <a href="../../1998/dorssel/dorssel.c">Morse code entry</a>?</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo IOCCC <span class="kw">|</span> <span class="ex">./prog</span> <span class="kw">|</span> <span class="ex">./dorssel</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">..-</span> ..- <span class="at">--</span> <span class="at">--</span> <span class="at">-..-</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo IOCCC | ./prog | ./dorssel
+    ..- ..- -- -- -..-</code></pre>
 <h3 id="the-recode.c-configurator"><a name="recode" href="#toc">The recode.c configurator</a></h3>
 <p>I have included a supplementary program <a href="recode.c">recode.c</a> that can do a number of
 things which acts as a kind of wrapper and configurator to my entry. By default
@@ -440,26 +440,26 @@ make it more flexible by a wrapper program.</p>
 <p>The parser is in a sense rather rudimentary but allows for both interactive and
 automatic (e.g. via the <a href="recode.c">recode</a> program) input. This does mean that
 something like the following can happen:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./prog <span class="at">-</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Ring</span> 1: 1AB</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Setting</span> 1: Position 1: Ring 2: 2CD</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Setting</span> 2: Position 2: Ring 3: 3</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Setting</span> 3: A</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Position</span> 3: B</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Reflector:</span> 1A</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair 1: BC</span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair 2: ..</span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair 3: ..</span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair 4: DE</span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair 5: FG</span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair 6: HI</span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair 7: JK</span>
-<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair 8: LM</span>
-<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair 9: NO</span>
-<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair 10: PQ</span>
-<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>    <span class="ex">IOCCC</span></span>
-<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>    <span class="ex">WD</span></span>
-<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>    <span class="ex">SIRDK</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ ./prog -
+    Ring 1: 1AB
+    Setting 1: Position 1: Ring 2: 2CD
+    Setting 2: Position 2: Ring 3: 3
+    Setting 3: A
+    Position 3: B
+    Reflector: 1A
+    Plugboard pair 1: BC
+    Plugboard pair 2: ..
+    Plugboard pair 3: ..
+    Plugboard pair 4: DE
+    Plugboard pair 5: FG
+    Plugboard pair 6: HI
+    Plugboard pair 7: JK
+    Plugboard pair 8: LM
+    Plugboard pair 9: NO
+    Plugboard pair 10: PQ
+    IOCCC
+    WD
+    SIRDK</code></pre>
 <p>First of all: what is that <code>WD</code>? I didn’t type that but it showed up hitting
 <code>ctrl-d</code> to end input.</p>
 <p>If everything is input correctly it would show nothing except the actual
@@ -493,10 +493,10 @@ GitHub).</p>
 should help you remember (though not at this time in our world it might help you
 later on?). This might become even more useful after the challenge is accepted,
 accomplished and made use of! :)</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo ABC <span class="kw">|</span> <span class="ex">./prog</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">GYM</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo ABC <span class="kw">|</span> <span class="ex">./prog</span> <span class="kw">|</span> <span class="ex">./prog</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ABC</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo ABC | ./prog
+    GYM
+    $ echo ABC | ./prog | ./prog
+    ABC</code></pre>
 <h3 id="on-the-source-code-layout"><a name="layout" href="#toc">On the source code layout</a></h3>
 <p>The layout of <a href="recode.c">recode.c</a> isn’t too significant (but see below) but I want to
 mention <a href="prog.c">prog.c</a> especially:</p>
@@ -516,17 +516,17 @@ which was exactly 75 years from the day that the person responsible for the
 <a href="https://en.wikipedia.org/wiki/World_War_II">Second World War</a>, Adolf Hitler,
 ended his life. (I later made a bug fix but I consider this inconsequential).</p>
 <p>As for <a href="recode.c">recode.c</a> though I really love this:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>              <span class="op">/</span>\</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">/</span>          This is <span class="op">*</span>not<span class="op">*</span> what you think<span class="op">:</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>              /\
+    /          This is *not* what you think:</code></pre>
 <p>…because it seems so wrong in C code at first glance. Also what does the
 ‘this’ refer to?</p>
 <h3 id="obfuscation"><a name="obfuscation" href="#toc">Obfuscation</a></h3>
 <p>It’s an <a href="https://en.wikipedia.org/wiki/Enigma_machine">Enigma machine</a> simulator! Isn’t
 that proof that it’s obfuscated itself?! :) Silliness aside <a href="obfuscation.txt">obfuscation.txt</a>
 has some of the ways I think this entry is obfuscated. To decipher try:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./recode</span> <span class="at">-Robfuscation.key</span> <span class="at">-fobfuscation.txt</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="op">&gt;</span> obfuscation.md</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./recode -Robfuscation.key -fobfuscation.txt | ./prog - 2&gt;/dev/null &gt; obfuscation.md</code></pre>
 <p>To encipher:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./recode</span> <span class="at">-Robfuscation.key</span> <span class="at">-fobfuscation.md</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="op">&gt;</span> obfuscation.txt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./recode -Robfuscation.key -fobfuscation.md | ./prog - 2&gt;/dev/null &gt; obfuscation.txt</code></pre>
 <p>The file <a href="obfuscation.key">obfuscation.key</a> is the key to decipher/encipher
 <a href="obfuscation.txt">obfuscation.txt</a>.</p>
 <p>For the lazy <a href="obfuscation.html">obfuscation.html</a> has the deciphered version. I am afraid I’m not

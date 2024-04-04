@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -10,7 +10,7 @@ will not work with it enabled.
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./burley
 ```
 

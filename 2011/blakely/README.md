@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -9,20 +9,20 @@
 
 Zoom out and make your terminal window 53 or more lines deep.
 
-```sh
+```<!---sh-->
     ./blakely < blakely.c | head -300
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
 For those who have a lot of time, try:
 
-```sh
+```<!---sh-->
     ./blakely < t0_3.dat
 ```
 
@@ -40,7 +40,7 @@ is a [Garden of Eden](http://en.wikipedia.org/wiki/Garden_of_Eden_%28cellular_au
 If you have enough time to spare, put the plan of your garden in a text file,
 and run:
 
-```sh
+```<!---sh-->
     ./blakely - < garden.txt
 ```
 
@@ -54,7 +54,7 @@ over tabs.
 
 In order to see the main feature of the code, type:
 
-```sh
+```<!---sh-->
     ./blakely < blakely.c
 ```
 
@@ -72,7 +72,7 @@ layout of the source-code is such that it evolves to a digital representation of
 the first 15 decimal places of pi after 4 time steps. This was setup using the
 other feature of the program which can be demonstrated as follows:
 
-```sh
+```<!---sh-->
     ./blakely - < 3.dat
 ```
 
@@ -81,7 +81,7 @@ more grids (taking a few minutes to display the last). Waiting for any more
 grids will take a substantial amount of time. The final grid has been put into
 [evolve_to_3.dat](evolve_to_3.dat), and if you type
 
-```sh
+```<!---sh-->
     ./blakely < evolve_to_3.dat
 ```
 

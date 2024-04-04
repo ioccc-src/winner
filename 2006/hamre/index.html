@@ -141,11 +141,11 @@ Location: <a href="../../location.html#NO">NO</a> - <em>Kingdom of Norway</em> (
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./hamre</span> math_expression_string</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./hamre math_expression_string</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>An irrationally coded source presents rational things!</p>
 <p>A rational person might want to attempt the
@@ -162,8 +162,8 @@ an obfuscated one.</p>
 supported operators are: <code>+</code>, <code>-</code> (binary and unary), <code>*</code>, <code>/</code> and <code>()</code>. Run it
 by supplying an expression as the first argument, and the normalized
 result will be written to <code>stdout</code>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./hamre</span> <span class="st">&#39;-1+4/3*(2+1/(3/2*(7/2-7/3+1/6)))/2&#39;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">2/3</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./hamre &#39;-1+4/3*(2+1/(3/2*(7/2-7/3+1/6)))/2&#39;
+    2/3</code></pre>
 <p>If you do not supply an argument, the calculator will crash. Other
 arguments are ignored. Supplying more arguments may further limit the
 number of nested operators supported.</p>

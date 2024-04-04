@@ -141,15 +141,15 @@ Location: <a href="../../location.html#GB">GB</a> - <em>United Kingdom of Great 
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2012_blakely">2012 blakely bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./blakely</span> <span class="st">&quot;RPN formula&quot;</span> resolution <span class="op">&gt;</span> output.gif</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./blakely &quot;RPN formula&quot; resolution &gt; output.gif</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Several IOCCC themes (<a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">RPN
 calculator</a>, animated
@@ -169,7 +169,7 @@ resolution, and an animated GIF showing a fly-around of the resulting surface is
 output to <code>stdout</code>.</p>
 <h3 id="usage">Usage</h3>
 <p>The program should be run as:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./blakely</span> xy<span class="pp">*</span> 32 <span class="op">&gt;</span> pic.gif</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./blakely xy* 32 &gt; pic.gif</code></pre>
 <p>where the first parameter is a
 <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">RPN</a> expression, and the
 second is the width of the required <a href="https://en.wikipedia.org/wiki/GIF">GIF</a>, up
@@ -201,9 +201,9 @@ and more complex expressions take longer to compute. For example, increasing the
 resolution of <code>ripple.gif</code>
 to 250 took ~35 minutes to render on an <a href="https://en.wikipedia.org/wiki/Intel_Core#Core_i7">i7
 processor</a>.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./blakely</span> xy<span class="pp">*</span> 32 <span class="op">&gt;</span> saddle.gif</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./blakely</span> xx<span class="pp">*</span>yy<span class="pp">*</span>1++d5<span class="pp">*</span>ct/ 64 <span class="op">&gt;</span> ripple.gif</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./blakely xy* 32 &gt; saddle.gif
+
+    ./blakely xx*yy*1++d5*ct/ 64 &gt; ripple.gif</code></pre>
 <h3 id="algorithm">Algorithm</h3>
 <p>A generic root-finding algorithm to find the point of intersection between a ray
 and the surface is done using a simple forward search from the eye. In order to

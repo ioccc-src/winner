@@ -141,7 +141,7 @@ Location: <a href="../../location.html#IL">IL</a> - <em>State of Israel</em> (<e
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>NOTE: We FORCE the use of -O0 even if someone overrides it because this entry
 will not work with it enabled.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
@@ -149,12 +149,12 @@ will not work with it enabled.</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2005_giljade">2005 giljade bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./giljade</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./giljade</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <h3 id="self-test-feature-to-try">Self-test feature to try:</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./giljade</span> <span class="op">&gt;</span> out</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./giljade</span> out</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./giljade &gt; out
+    ./giljade out</code></pre>
 <p>NOTE: <a href="try.sh">try.sh</a> will ask you if you wish to do this.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This entry takes editorial in how it deals with its output. After using <code>vi(1)</code>
@@ -162,7 +162,7 @@ will not work with it enabled.</p>
 output. We especially recommend it on a 78 column xterm while leaning on
 Control-F.</p>
 <p>If you really understand expressions, then understand this:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    s<span class="op">=</span>s<span class="op">^(</span>b<span class="op">=</span>s<span class="op">&amp;</span>s<span class="op">-</span><span class="dv">1</span><span class="op">^</span>s<span class="op">)</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    s=s^(b=s&amp;s-1^s)</code></pre>
 <p>… and understand why it is found in the source code.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="so-what-do-we-have-here">So what do we have here ?</h3>

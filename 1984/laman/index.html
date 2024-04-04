@@ -141,26 +141,26 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./laman</span> <span class="op">&lt;</span>positive number<span class="op">&gt;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./laman &lt;positive number&gt;</code></pre>
 <h2 id="try">Try:</h2>
 <p>The program accepts ONE POSITIVE number. Seeing is believing, so try things
 like:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./laman</span> 4</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./laman</span> 9</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./laman</span> 16</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh
+
+    ./laman 4
+    ./laman 9
+    ./laman 16</code></pre>
 <p>This code should run you in circles.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Some new compilers (in 1984) dislike lines 6 and 10 of the source, so we changed
 them from:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="op">;++</span>f<span class="op">)</span>a<span class="op">[</span>             b<span class="op">&lt;&lt;</span><span class="dv">5</span><span class="op">|</span>c<span class="op">]</span>         <span class="op">=</span>d<span class="op">++,</span>b<span class="op">+</span>         <span class="op">=</span>e<span class="op">;</span><span class="cf">for</span><span class="op">(</span>         f<span class="op">=</span><span class="dv">0</span><span class="op">;</span>f<span class="op">&lt;</span>O</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;&lt;</span><span class="dv">5</span><span class="op">|</span>c<span class="op">]^</span>             <span class="op">=</span>a<span class="op">[</span>b<span class="op">&lt;&lt;</span><span class="dv">5</span>         <span class="op">|</span>c<span class="op">]^=</span>a<span class="op">[</span>         <span class="op">(</span>k<span class="op">-(</span>b<span class="op">+</span><span class="dv">1</span>         <span class="op">))&lt;&lt;</span><span class="dv">5</span><span class="op">|</span>c<span class="op">]</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    ;++f)a[             b&lt;&lt;5|c]         =d++,b+         =e;for(         f=0;f&lt;O
+    &lt;&lt;5|c]^             =a[b&lt;&lt;5         |c]^=a[         (k-(b+1         ))&lt;&lt;5|c]</code></pre>
 <p>to:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="op">;++</span>f<span class="op">)</span>a<span class="op">[</span>             b<span class="op">&lt;&lt;</span><span class="dv">5</span><span class="op">|</span>c<span class="op">]</span>         <span class="op">=</span>d<span class="op">++,</span>b<span class="op">+=</span>        e<span class="op">;</span><span class="cf">for</span><span class="op">(</span>          f<span class="op">=</span><span class="dv">0</span><span class="op">;</span>f<span class="op">&lt;</span>O</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;&lt;</span><span class="dv">5</span><span class="op">|</span>c<span class="op">]^=</span>    a<span class="op">[</span>b<span class="op">&lt;&lt;</span><span class="dv">5</span>          <span class="op">|</span>c<span class="op">]^=</span>a<span class="op">[</span>         <span class="op">(</span>k<span class="op">-(</span>b<span class="op">+</span><span class="dv">1</span>         <span class="op">))&lt;&lt;</span><span class="dv">5</span><span class="op">|</span>c<span class="op">]</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    ;++f)a[             b&lt;&lt;5|c]         =d++,b+=        e;for(          f=0;f&lt;O
+    &lt;&lt;5|c]^=    a[b&lt;&lt;5          |c]^=a[         (k-(b+1         ))&lt;&lt;5|c]</code></pre>
 <p>I hope you have a C beautifier!</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>No remarks were provided by the author.</p>

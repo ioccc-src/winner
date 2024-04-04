@@ -1,20 +1,20 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./coupard
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -52,7 +52,7 @@ that can do sound, as a lowest-denominator sound I/O interface.
 
 To listen to what the program says directly, invoke
 
-```sh
+```<!---sh-->
     ./coupard > /dev/audio
 ```
 
@@ -68,7 +68,7 @@ If you want to convert the audio output of the program into another audio
 format, you can pipe it to [SoX](https://en.wikipedia.org/wiki/SoX) for example
 (`sox` is the Swiss army knife of Unix audio tools). The command:
 
-```sh
+```<!---sh-->
     ./coupard | sox -c1 -r8000 -tub - -c2 -r44100 -twav test.wav
 ```
 

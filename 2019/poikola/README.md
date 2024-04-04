@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -26,7 +26,7 @@ For more detailed information see [2019 poikola bugs](../../bugs.html#2019_poiko
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./prog 512 ./prog
 
     sleep 86400; make clobber prog
@@ -38,7 +38,7 @@ For more detailed information see [2019 poikola bugs](../../bugs.html#2019_poiko
 
 If you wish for some documentation:
 
-```sh
+```<!---sh-->
     make docs
 ```
 
@@ -49,7 +49,7 @@ This will create the file `poikola.pdf` for your enjoyment.
 
 If you don't have a few days, try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -65,7 +65,7 @@ what can be done with the original entry.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -77,7 +77,7 @@ Use `prog.alt` as you would `prog` above.
 
 ### Alternate try:
 
-```sh
+```<!---sh-->
     ./try.alt.sh
 ```
 
@@ -103,19 +103,19 @@ Nyk&auml;nen](https://en.wikipedia.org/wiki/Matti_Nyk%C3%A4nen).
 
 ### How to build:
 
-```sh
+```<!---sh-->
     gcc -O0 -o prog prog.c
 ```
 
 or
 
-```sh
+```<!---sh-->
     clang -O[0123s] -o prog prog.c
 ```
 
 e.g.:
 
-```sh
+```<!---sh-->
     clang -O1 -o prog prog.c
 ```
 
@@ -166,7 +166,7 @@ unnecessary checks, but either fails or gets stuck if invoked erroneously. The
 program is invoked in this way:
 
 
-```sh
+```<!---sh-->
     ./prog <integer> <file>
 ```
 

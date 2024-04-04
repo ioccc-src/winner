@@ -1,13 +1,13 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./dgibson.sh [datafile]
 ```
 
@@ -18,7 +18,7 @@ where:
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 

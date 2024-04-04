@@ -1,13 +1,13 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./wall
 ```
 

@@ -170,34 +170,34 @@ with the Roman numeral, showing their actual orders etc.), the reflectors
 <p>In this file I will show an example of each feature and then get to the
 wonderful ‘challenge’ for everyone.</p>
 <h1 id="options"><a name="options" href="#toc">Options</a></h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./recode</span> <span class="at">-h</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">usage:</span> ./recode <span class="pp">[</span><span class="ss">options</span><span class="pp">]</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-v</span>                  display selected settings</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-r</span>                  pseudo-randomly select settings</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-f</span><span class="op">&lt;</span>input file<span class="op">&gt;</span>      read file for Enigma input</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-R</span><span class="op">&lt;</span>string<span class="kw">|</span><span class="fu">file</span><span class="op">&gt;</span>     init settings from settings string or file</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-o</span><span class="op">&lt;</span>output file<span class="op">&gt;</span>     write settings to file</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./recode -h
+    usage: ./recode [options]
+    -v                  display selected settings
+    -r                  pseudo-randomly select settings
+    -f&lt;input file&gt;      read file for Enigma input
+    -R&lt;string|file&gt;     init settings from settings string or file
+    -o&lt;output file&gt;     write settings to file</code></pre>
 <p><code>-r</code> randomises settings. It won’t prompt you for settings but it will for input
 if you don’t give the option to read in a file for input.</p>
 <p><code>-v</code> shows selected settings. For example combining <code>-r</code> and <code>-v</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo IOCCC <span class="kw">|</span> <span class="ex">./recode</span> <span class="at">-r</span> <span class="at">-v</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Ring</span> 1: <span class="er">(</span>  <span class="ex">I</span><span class="kw">)</span> <span class="ex">EKMFLGDQVZNTOWYHXUSPAIBRCJ</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Ring</span> 2: <span class="er">(</span>  <span class="ex">V</span><span class="kw">)</span> <span class="ex">VZBRGITYUPSDNHLXAWMJQOFECK</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Ring</span> 3: <span class="er">(</span> <span class="ex">IV</span><span class="kw">)</span> <span class="ex">ESOVPZJAYQUIRHXLNFTGKDCMWB</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Ring</span>  settings: WAR</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Ring</span> positions: XKE</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Reflector:</span> <span class="er">(</span><span class="ex">B</span><span class="kw">)</span> <span class="ex">YRUHQSLDPXNGOKMIEBFZCWVJAT</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair <span class="co">#01: XE</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair <span class="co">#02: HJ</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair <span class="co">#03: SA</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair <span class="co">#04: PY</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair <span class="co">#05: CI</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair <span class="co">#06: ZB</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair <span class="co">#07: WD</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair <span class="co">#08: QN</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair <span class="co">#09: RU</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair <span class="co">#10: VG</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="ex">1WX5AK4RE1XEHJSAPYCIZBWDQNRUVGIOCCC</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo IOCCC | ./recode -r -v
+    Ring 1: (  I) EKMFLGDQVZNTOWYHXUSPAIBRCJ
+    Ring 2: (  V) VZBRGITYUPSDNHLXAWMJQOFECK
+    Ring 3: ( IV) ESOVPZJAYQUIRHXLNFTGKDCMWB
+    Ring  settings: WAR
+    Ring positions: XKE
+    Reflector: (B) YRUHQSLDPXNGOKMIEBFZCWVJAT
+    Plugboard pair #01: XE
+    Plugboard pair #02: HJ
+    Plugboard pair #03: SA
+    Plugboard pair #04: PY
+    Plugboard pair #05: CI
+    Plugboard pair #06: ZB
+    Plugboard pair #07: WD
+    Plugboard pair #08: QN
+    Plugboard pair #09: RU
+    Plugboard pair #10: VG
+    1WX5AK4RE1XEHJSAPYCIZBWDQNRUVGIOCCC</code></pre>
 <p>Though you won’t find some of those strings in <a href="recode.c">recode.c</a> or
 <a href="prog.c">prog.c</a>. Yes the <code>WAR</code> for the Ringstellung (Ring settings) is an
 amusing coincidence <em>but it really did happen!</em></p>
@@ -207,11 +207,11 @@ encipherment/decipherment). If the file cannot be opened it sets back to stdin.<
 <p><code>-o</code> outputs the settings to the file. If the file cannot be opened for writing
 or is the same file name (see below) then only stdout will be used. Example of
 randomised output going to a file:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./recode <span class="at">-r</span> <span class="at">-oconfig</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">IOCCC</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">3PP4UB5GG1ELGTKFCOPVBNUYXJAWSDIOCCC</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> cat config</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">3PP4UB5GG1ELGTKFCOPVBNUYXJAWSD$</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ ./recode -r -oconfig
+    IOCCC
+    3PP4UB5GG1ELGTKFCOPVBNUYXJAWSDIOCCC
+    $ cat config
+    3PP4UB5GG1ELGTKFCOPVBNUYXJAWSD$</code></pre>
 <p>Notice that a terminating newline isn’t added. Also note that it outputs to
 stdout so you can pipe it to the Enigma machine but at the same time have the
 settings saved for deciphering the text later (the configuration does not have
@@ -236,7 +236,7 @@ what about if one exists but the other does not?</p>
 <h2 id="file-options-parser-limitation"><a name="fileoptions" href="#toc">File options parser limitation</a></h2>
 <p>Due to the way the parsing of options is done (no spaces between option char and
 argument) shell expansion will not work right so for example doing:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./recode <span class="at">-R~</span>/config</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ ./recode -R~/config</code></pre>
 <p>will <em>not</em> read the file ‘config’ in the home directory. I show another way to
 achieve this later.</p>
 <p>This limitation also applies to the <code>-f</code> and <code>-o</code> options!</p>
@@ -246,17 +246,17 @@ the program interactively.</p>
 <h1 id="piping-commands-to-recode"><a name="pipingtorecode" href="#toc">Piping commands to recode</a></h1>
 <p>If stdin is not a tty (<code>!isatty(0)</code>) and neither randomised mode nor reading in
 from a file is specified then you might just see something like:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo testing test tests <span class="kw">|</span> <span class="ex">./recode</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">1AB2BB3CC1testing</span> test tests</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo testing test tests <span class="kw">|</span> <span class="ex">./recode</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">mfrwxan</span> lzng ofnlu</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo testing test tests <span class="kw">|</span> <span class="ex">./recode</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="kw">|</span> <span class="ex">./recode</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">1AB2BB3CC1mfrwxan</span> lzng ofnlu</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo testing test tests <span class="kw">|</span> <span class="ex">./recode</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="kw">|</span> <span class="ex">./recode</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">testing</span> test tests</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo testing test tests | ./recode
+    1AB2BB3CC1testing test tests
+
+    $ echo testing test tests | ./recode | ./prog - 2&gt;/dev/null
+    mfrwxan lzng ofnlu
+
+    $ echo testing test tests | ./recode | ./prog - 2&gt;/dev/null | ./recode
+    1AB2BB3CC1mfrwxan lzng ofnlu
+
+    $ echo testing test tests | ./recode | ./prog - 2&gt;/dev/null | ./recode | ./prog - 2&gt;/dev/null
+    testing test tests</code></pre>
 <p>In other words just the defaults. This was to simplify the problems with
 prompting again for input if it’s invalid (though as you’ll see it does a good
 job at this anyway).</p>
@@ -265,59 +265,59 @@ job at this anyway).</p>
 input manually (if you randomise or read in from previously saved file no input
 need be done at all) then make sure to redirect stderr to /dev/null. If you
 don’t you might see something like:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./recode <span class="at">-r</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Ring</span> 1: IOCCC</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Setting</span> 1: Position 1: Ring 2: Setting 2: Position 2: Ring 3: Setting 3: Position 3: Reflector: Plugboard pair 1: Plugboard pair 2: Plugboard pair 3: Plugboard pair 4: Plugboard pair 5: Plugboard pair 6: Plugboard pair 7: Plugboard pair 8: Plugboard pair 9: Plugboard pair 10: DEVIY</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ ./recode -r | ./prog -
+    Ring 1: IOCCC
+    Setting 1: Position 1: Ring 2: Setting 2: Position 2: Ring 3: Setting 3: Position 3: Reflector: Plugboard pair 1: Plugboard pair 2: Plugboard pair 3: Plugboard pair 4: Plugboard pair 5: Plugboard pair 6: Plugboard pair 7: Plugboard pair 8: Plugboard pair 9: Plugboard pair 10: DEVIY</code></pre>
 <p>What happened is that <code>Ring 1:</code> is printed to stderr but since it’s not been
 redirected to <code>/dev/null</code> it prints this out; at this point however it prompts for
 input. Why or how it shows the first prompt instead of later on I do not know.
 Anyway at this point the simulator is already expecting input to en/decipher.
 That’s why after I sent EOF it printed out the remaining strings to stderr.</p>
 <h1 id="manually-test-the-recode-program-with-the-enigma-program"><a name="manuallytest" href="#toc">Manually test the recode program with the Enigma program</a></h1>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> cat input</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">IOCCC</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./recode <span class="at">-finput</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Rotors:</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">(</span><span class="ex">1</span><span class="kw">)</span>   <span class="ex">I:</span> EKMFLGDQVZNTOWYHXUSPAIBRCJ</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">(</span><span class="ex">2</span><span class="kw">)</span>  <span class="ex">II:</span> AJDKSIRUXBLHWTMCQGZNPYFVOE</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">(</span><span class="ex">3</span><span class="kw">)</span> <span class="ex">III:</span> BDFHJLCPRTXVZNYEIWGAKMUSQO</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">(</span><span class="ex">4</span><span class="kw">)</span>  <span class="ex">IV:</span> ESOVPZJAYQUIRHXLNFTGKDCMWB</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">(</span><span class="ex">5</span><span class="kw">)</span>   <span class="ex">V:</span> VZBRGITYUPSDNHLXAWMJQOFECK</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> rotor 1 <span class="er">(</span><span class="ex">1</span> <span class="at">-</span> 5<span class="kw">)</span><span class="bu">:</span> 1</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> rotor 2 <span class="er">(</span><span class="ex">1</span> <span class="at">-</span> 5<span class="kw">)</span><span class="bu">:</span> 2</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> rotor 3 <span class="er">(</span><span class="ex">1</span> <span class="at">-</span> 5<span class="kw">)</span><span class="bu">:</span> 3</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> setting 1 <span class="er">(</span><span class="ex">A</span> <span class="at">-</span> Z<span class="kw">)</span><span class="bu">:</span> A</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> setting 2 <span class="er">(</span><span class="ex">A</span> <span class="at">-</span> Z<span class="kw">)</span><span class="bu">:</span> A</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> setting 3 <span class="er">(</span><span class="ex">A</span> <span class="at">-</span> Z<span class="kw">)</span><span class="bu">:</span> A</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> position 1 <span class="er">(</span><span class="ex">A</span> <span class="at">-</span> Z<span class="kw">)</span><span class="bu">:</span> A</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> position 2 <span class="er">(</span><span class="ex">A</span> <span class="at">-</span> Z<span class="kw">)</span><span class="bu">:</span> A</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> position 3 <span class="er">(</span><span class="ex">A</span> <span class="at">-</span> Z<span class="kw">)</span><span class="bu">:</span> A</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Reflector:</span></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">(</span><span class="ex">1</span><span class="kw">)</span> <span class="kw">(</span><span class="ex">B</span><span class="kw">)</span> <span class="ex">YRUHQSLDPXNGOKMIEBFZCWVJAT</span></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">(</span><span class="ex">2</span><span class="kw">)</span> <span class="kw">(</span><span class="ex">C</span><span class="kw">)</span> <span class="ex">FVPJIAOYEDRZXWGCTKUQSBNMHL</span></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> reflector <span class="er">(</span><span class="ex">1</span> <span class="at">-</span> 2<span class="kw">)</span><span class="bu">:</span> 2</span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> plugboard pair 1: AB</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> plugboard pair 2: CD</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> plugboard pair 3: ..</span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> plugboard pair 4: EF</span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> plugboard pair 5: GH</span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> plugboard pair 6: IJ</span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> plugboard pair 7: KL</span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> plugboard pair 8: MN</span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> plugboard pair 9: OP</span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> plugboard pair 10: QR</span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>    <span class="ex">1AA2AA3AA2ABCD..EFGHIJKLMNOPQRIOCCC</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ cat input
+    IOCCC
+
+    $ ./recode -finput
+    Rotors:
+    (1)   I: EKMFLGDQVZNTOWYHXUSPAIBRCJ
+    (2)  II: AJDKSIRUXBLHWTMCQGZNPYFVOE
+    (3) III: BDFHJLCPRTXVZNYEIWGAKMUSQO
+    (4)  IV: ESOVPZJAYQUIRHXLNFTGKDCMWB
+    (5)   V: VZBRGITYUPSDNHLXAWMJQOFECK
+    Input rotor 1 (1 - 5): 1
+    Input rotor 2 (1 - 5): 2
+    Input rotor 3 (1 - 5): 3
+    Input setting 1 (A - Z): A
+    Input setting 2 (A - Z): A
+    Input setting 3 (A - Z): A
+    Input position 1 (A - Z): A
+    Input position 2 (A - Z): A
+    Input position 3 (A - Z): A
+    Reflector:
+    (1) (B) YRUHQSLDPXNGOKMIEBFZCWVJAT
+    (2) (C) FVPJIAOYEDRZXWGCTKUQSBNMHL
+    Input reflector (1 - 2): 2
+    Input plugboard pair 1: AB
+    Input plugboard pair 2: CD
+    Input plugboard pair 3: ..
+    Input plugboard pair 4: EF
+    Input plugboard pair 5: GH
+    Input plugboard pair 6: IJ
+    Input plugboard pair 7: KL
+    Input plugboard pair 8: MN
+    Input plugboard pair 9: OP
+    Input plugboard pair 10: QR
+    1AA2AA3AA2ABCD..EFGHIJKLMNOPQRIOCCC</code></pre>
 <p>Notice that I skipped a <a href="https://www.cryptomuseum.com/crypto/enigma/i/sb.htm">plugboard
 pair</a>; this can be done in
 a number of ways but two dots is one. Notice also that it’s in a different order
 than the simulator: because with the size restrictions on my entry I saved bytes
 by using the same loop where I could. It just felt more natural to have them
 grouped together in a configurator for the <a href="prog.c">simulator</a>.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRIOCCC <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">HQNVO</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRIOCCC  <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="kw">|</span> <span class="bu">echo</span> 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRHQNVO <span class="kw">|</span> <span class="ex">./prog</span>  <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">IOCCC</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRIOCCC | ./prog - 2&gt;/dev/null
+    HQNVO
+    $ echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRIOCCC  | ./prog - 2&gt;/dev/null | echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRHQNVO | ./prog  - 2&gt;/dev/null
+    IOCCC</code></pre>
 <p>As you can see the <code>recode</code> program prompts for the settings and outputs the
 input for the Enigma program. I then copied/pasted that output to the program
 and got the result <code>HQNVO</code>.</p>
@@ -330,58 +330,58 @@ part again; I could have just done the latter part but I wanted to show the way
 the pipeline works with settings etc.</p>
 <p>What happens if the plugboard pairs are the same but in a different order? It’s
 the same output:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo 1AA2AA3AA2AB..CDEFGHIJKLMNOPQRIOCCC<span class="kw">|</span><span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">HQNVO</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo 1AA2AA3AA2AB..CDEFGHIJKLMNOPQRIOCCC|./prog - 2&gt;/dev/null
+    HQNVO</code></pre>
 <p>Also if you flip the order of the letters in the pair e.g. the AB as BA instead:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo 1AA2AA3AA2BA..CDEFGHIJKLMNOPQRIOCCC<span class="kw">|</span><span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">HQNVO</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo 1AA2AA3AA2BA..CDEFGHIJKLMNOPQRIOCCC|./prog - 2&gt;/dev/null
+    HQNVO</code></pre>
 <h1 id="only-write-config-file"><a name="onlyconfig" href="#toc">Only write config file</a></h1>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./recode <span class="at">-v</span> <span class="at">-oconfig</span> <span class="at">-finput</span> <span class="op">&gt;</span>/dev/null</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Rotors:</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">(</span><span class="ex">1</span><span class="kw">)</span>   <span class="ex">I:</span> EKMFLGDQVZNTOWYHXUSPAIBRCJ</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">(</span><span class="ex">2</span><span class="kw">)</span>  <span class="ex">II:</span> AJDKSIRUXBLHWTMCQGZNPYFVOE</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">(</span><span class="ex">3</span><span class="kw">)</span> <span class="ex">III:</span> BDFHJLCPRTXVZNYEIWGAKMUSQO</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">(</span><span class="ex">4</span><span class="kw">)</span>  <span class="ex">IV:</span> ESOVPZJAYQUIRHXLNFTGKDCMWB</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">(</span><span class="ex">5</span><span class="kw">)</span>   <span class="ex">V:</span> VZBRGITYUPSDNHLXAWMJQOFECK</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> rotor 1 <span class="er">(</span><span class="ex">1</span> <span class="at">-</span> 5<span class="kw">)</span><span class="bu">:</span> 1</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> rotor 2 <span class="er">(</span><span class="ex">1</span> <span class="at">-</span> 5<span class="kw">)</span><span class="bu">:</span> 2</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> rotor 3 <span class="er">(</span><span class="ex">1</span> <span class="at">-</span> 5<span class="kw">)</span><span class="bu">:</span> 3</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> setting 1 <span class="er">(</span><span class="ex">A</span> <span class="at">-</span> Z<span class="kw">)</span><span class="bu">:</span> A</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> setting 2 <span class="er">(</span><span class="ex">A</span> <span class="at">-</span> Z<span class="kw">)</span><span class="bu">:</span> C</span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> setting 3 <span class="er">(</span><span class="ex">A</span> <span class="at">-</span> Z<span class="kw">)</span><span class="bu">:</span> E</span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> position 1 <span class="er">(</span><span class="ex">A</span> <span class="at">-</span> Z<span class="kw">)</span><span class="bu">:</span> B</span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> position 2 <span class="er">(</span><span class="ex">A</span> <span class="at">-</span> Z<span class="kw">)</span><span class="bu">:</span> D</span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> position 3 <span class="er">(</span><span class="ex">A</span> <span class="at">-</span> Z<span class="kw">)</span><span class="bu">:</span> F</span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Reflector:</span></span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">(</span><span class="ex">1</span><span class="kw">)</span> <span class="kw">(</span><span class="ex">B</span><span class="kw">)</span> <span class="ex">YRUHQSLDPXNGOKMIEBFZCWVJAT</span></span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">(</span><span class="ex">2</span><span class="kw">)</span> <span class="kw">(</span><span class="ex">C</span><span class="kw">)</span> <span class="ex">FVPJIAOYEDRZXWGCTKUQSBNMHL</span></span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> reflector <span class="er">(</span><span class="ex">1</span> <span class="at">-</span> 2<span class="kw">)</span><span class="bu">:</span> 2</span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> plugboard pair 1: AB</span>
-<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> plugboard pair 2: CD</span>
-<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> plugboard pair 3: EF</span>
-<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> plugboard pair 4: GHIJ</span>
-<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> plugboard pair 5: IJ</span>
-<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> plugboard pair 6: KL</span>
-<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> plugboard pair 7: MN</span>
-<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> plugboard pair 8: OP</span>
-<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> plugboard pair 9: QR</span>
-<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Input</span> plugboard pair 10: ST</span>
-<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Ring</span> 1: <span class="er">(</span>  <span class="ex">I</span><span class="kw">)</span> <span class="ex">EKMFLGDQVZNTOWYHXUSPAIBRCJ</span></span>
-<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Ring</span> 2: <span class="er">(</span> <span class="ex">II</span><span class="kw">)</span> <span class="ex">AJDKSIRUXBLHWTMCQGZNPYFVOE</span></span>
-<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Ring</span> 3: <span class="er">(</span><span class="ex">III</span><span class="kw">)</span> <span class="ex">BDFHJLCPRTXVZNYEIWGAKMUSQO</span></span>
-<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Ring</span>  settings: ACE</span>
-<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Ring</span> positions: BDF</span>
-<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Reflector:</span> <span class="er">(</span><span class="ex">C</span><span class="kw">)</span> <span class="ex">FVPJIAOYEDRZXWGCTKUQSBNMHL</span></span>
-<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair <span class="co">#01: AB</span></span>
-<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair <span class="co">#02: CD</span></span>
-<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair <span class="co">#03: EF</span></span>
-<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair <span class="co">#04: GH</span></span>
-<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair <span class="co">#05: IJ</span></span>
-<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair <span class="co">#06: KL</span></span>
-<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair <span class="co">#07: MN</span></span>
-<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair <span class="co">#08: OP</span></span>
-<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair <span class="co">#09: QR</span></span>
-<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Plugboard</span> pair <span class="co">#10: ST</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ ./recode -v -oconfig -finput &gt;/dev/null
+    Rotors:
+    (1)   I: EKMFLGDQVZNTOWYHXUSPAIBRCJ
+    (2)  II: AJDKSIRUXBLHWTMCQGZNPYFVOE
+    (3) III: BDFHJLCPRTXVZNYEIWGAKMUSQO
+    (4)  IV: ESOVPZJAYQUIRHXLNFTGKDCMWB
+    (5)   V: VZBRGITYUPSDNHLXAWMJQOFECK
+    Input rotor 1 (1 - 5): 1
+    Input rotor 2 (1 - 5): 2
+    Input rotor 3 (1 - 5): 3
+    Input setting 1 (A - Z): A
+    Input setting 2 (A - Z): C
+    Input setting 3 (A - Z): E
+    Input position 1 (A - Z): B
+    Input position 2 (A - Z): D
+    Input position 3 (A - Z): F
+    Reflector:
+    (1) (B) YRUHQSLDPXNGOKMIEBFZCWVJAT
+    (2) (C) FVPJIAOYEDRZXWGCTKUQSBNMHL
+    Input reflector (1 - 2): 2
+    Input plugboard pair 1: AB
+    Input plugboard pair 2: CD
+    Input plugboard pair 3: EF
+    Input plugboard pair 4: GHIJ
+    Input plugboard pair 5: IJ
+    Input plugboard pair 6: KL
+    Input plugboard pair 7: MN
+    Input plugboard pair 8: OP
+    Input plugboard pair 9: QR
+    Input plugboard pair 10: ST
+    Ring 1: (  I) EKMFLGDQVZNTOWYHXUSPAIBRCJ
+    Ring 2: ( II) AJDKSIRUXBLHWTMCQGZNPYFVOE
+    Ring 3: (III) BDFHJLCPRTXVZNYEIWGAKMUSQO
+    Ring  settings: ACE
+    Ring positions: BDF
+    Reflector: (C) FVPJIAOYEDRZXWGCTKUQSBNMHL
+    Plugboard pair #01: AB
+    Plugboard pair #02: CD
+    Plugboard pair #03: EF
+    Plugboard pair #04: GH
+    Plugboard pair #05: IJ
+    Plugboard pair #06: KL
+    Plugboard pair #07: MN
+    Plugboard pair #08: OP
+    Plugboard pair #09: QR
+    Plugboard pair #10: ST</code></pre>
 <p>Notice that I redirect stdout to /dev/null so that the config is only written to
 the file config. But also notice that for <a href="https://www.cryptomuseum.com/crypto/enigma/i/sb.htm">plugboard
 pair</a> 4 I typed in <code>GHIJ</code>
@@ -389,55 +389,55 @@ and it didn’t report an error. Neither did it complain about <code>IJ</code> i
 pair. This is because it consumes input overflow.</p>
 <p>It shouldn’t be this way for the simulator though because that could cause
 inconsistent number of characters expected before the text to encipher.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> cat config</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">1AB2CD3EF2ABCDEFGHIJKLMNOPQRST</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> <span class="er">(</span> <span class="fu">cat</span> config <span class="kw">;</span> <span class="fu">cat</span> input <span class="kw">)</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">LRAVE</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> <span class="er">(</span> <span class="fu">cat</span> config <span class="kw">;</span> <span class="fu">cat</span> input <span class="kw">)</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="kw">|</span> <span class="kw">(</span> <span class="fu">cat</span> config <span class="kw">;</span> <span class="bu">echo</span> LRAVE <span class="kw">)</span> <span class="kw">|</span> <span class="ex">./prog</span>  <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">IOCCC</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ cat config
+    1AB2CD3EF2ABCDEFGHIJKLMNOPQRST
+
+    $ ( cat config ; cat input ) | ./prog - 2&gt;/dev/null
+    LRAVE
+
+    $ ( cat config ; cat input ) | ./prog - 2&gt;/dev/null | ( cat config ; echo LRAVE ) | ./prog  - 2&gt;/dev/null
+    IOCCC</code></pre>
 <p>What if you don’t want to worry about having to specify input but just have the
 settings written? You can do that too by either sending a newline or else
 directly type ctrl-d (or whatever you have EOF set to) or give it an empty file.</p>
 <p>The following are all equivalent in that they will write to a settings file (the
 first one will print a newline with the echo but that won’t matter):</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo <span class="kw">|</span> <span class="ex">./recode</span> <span class="at">-r</span> <span class="at">-osettings</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo <span class="at">-n</span> <span class="kw">|</span> <span class="ex">./recode</span> <span class="at">-r</span> <span class="at">-osettings</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> <span class="op">&gt;</span> empty</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./recode <span class="at">-r</span> <span class="at">-osettings</span> <span class="op">&lt;</span> empty</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> cat empty <span class="kw">|</span> <span class="ex">./recode</span> <span class="at">-r</span> <span class="at">-osettings</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./recode <span class="at">-r</span> <span class="at">-osettings</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">^D</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo | ./recode -r -osettings
+    $ echo -n | ./recode -r -osettings
+    $ &gt; empty
+    $ ./recode -r -osettings &lt; empty
+    $ cat empty | ./recode -r -osettings
+    $ ./recode -r -osettings
+    ^D</code></pre>
 <p>(Above ^D was not shown but I typed it.) The way it works: if nothing is read
 the buffer remains <code>NULL</code> and so I don’t print it but still do print the settings
 file. (Actually even if <code>getdelim()</code> fails you’re supposed to free the buffer so I
 set another variable to indicate if it should be printed.)</p>
 <h1 id="reusing-a-configuration"><a name="reuseconfig" href="#toc">Reusing a configuration</a></h1>
-<div class="sourceCode" id="cb14"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo <span class="at">-n</span><span class="kw">|</span><span class="ex">./recode</span> <span class="at">-r</span> <span class="at">-oconfig</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">4UH5II1RJ1SPIFEJLYGZWRTBHVCAMN$</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> cat input.txt</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">IOCCC</span> 2020 Enigma simulator example text file</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">This</span> is a sentence.</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">This</span> is another sentence.</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> <span class="er">(</span> <span class="fu">cat</span> config <span class="kw">;</span> <span class="fu">cat</span> input.txt  <span class="kw">)</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="op">&gt;</span> output</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> cat output</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">AAPRT</span> 2020 Dkemny tpgnjsjai xpovrgl jvgs wxra</span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Fytt</span> ly m xyiilaqh.</span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Ybbp</span> ox dmuzerm oscwgytb.</span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> <span class="er">(</span> <span class="fu">cat</span> config <span class="kw">;</span> <span class="fu">cat</span> output <span class="kw">)</span> <span class="kw">|</span> <span class="ex">./prog</span>  <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="op">&gt;</span> io</span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> diff io input.txt</span>
-<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo -n|./recode -r -oconfig
+    4UH5II1RJ1SPIFEJLYGZWRTBHVCAMN$
+
+    $ cat input.txt
+    IOCCC 2020 Enigma simulator example text file
+
+    This is a sentence.
+
+    This is another sentence.
+
+    $ ( cat config ; cat input.txt  ) | ./prog - 2&gt;/dev/null &gt; output
+    $ cat output
+    AAPRT 2020 Dkemny tpgnjsjai xpovrgl jvgs wxra
+
+    Fytt ly m xyiilaqh.
+
+    Ybbp ox dmuzerm oscwgytb.
+    $ ( cat config ; cat output ) | ./prog  - 2&gt;/dev/null &gt; io
+    $ diff io input.txt
+    $</code></pre>
 <p>Alternatively you can just use the <code>-R</code> and <code>-f</code> options:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./recode <span class="at">-finput.txt</span> <span class="at">-Rconfig</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="op">&gt;</span> output2</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> diff output output2</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ ./recode -finput.txt -Rconfig | ./prog - 2&gt;/dev/null &gt; output2
+    $ diff output output2
+    $</code></pre>
 <h1 id="write-config-file-read-data-file-and-pass-to-enigma-simulator"><a name="passtoenigma" href="#toc">Write config file, read data file and pass to Enigma simulator</a></h1>
 <pre><code>    $ ./recode -finput.txt -oconfig | ./prog - 2&gt;/dev/null &gt; output
     Rotors:
@@ -476,37 +476,37 @@ set another variable to indicate if it should be printed.)</p>
 Cody?) there’s also a reference to code which I also love (just as all
 participants of the IOCCC do). Other things there don’t mean anything but what
 does is the output:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> cat output</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">DBFAF</span> 2020 Ittejg ltblwriac uqdfqvr dhqh ghhf</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Jsjy</span> ce v pxdmullo.</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Sara</span> tj rtaayak uxfhjcti.</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./recode <span class="at">-Rconfig</span> <span class="at">-foutput</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">IOCCC</span> 2020 Enigma simulator example text file</span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">This</span> is a sentence.</span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">This</span> is another sentence.</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ cat output
+    DBFAF 2020 Ittejg ltblwriac uqdfqvr dhqh ghhf
+
+    Jsjy ce v pxdmullo.
+
+    Sara tj rtaayak uxfhjcti.
+
+    $ ./recode -Rconfig -foutput | ./prog - 2&gt;/dev/null
+    IOCCC 2020 Enigma simulator example text file
+
+    This is a sentence.
+
+    This is another sentence.</code></pre>
 <h1 id="piping-directly-to-the-enigma-code-once-with-randomised-settings-saved"><a name="directlytoenigma" href="#toc">Piping directly to the Enigma code once (with randomised settings, saved)</a></h1>
 <p>This is like the above only randomised:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./recode <span class="at">-r</span> <span class="at">-oconfig</span><span class="kw">|</span><span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">IOCCC</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">UGEVP</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ ./recode -r -oconfig|./prog - 2&gt;/dev/null
+    IOCCC
+    UGEVP</code></pre>
 <p>Note that I typed in <code>IOCCC</code> and sent <code>EOF</code> (ctrl-d); the settings were written to
 the config file (for deciphering later) and then all of it was piped to the
 Enigma entry resulting in the line below IOCCC. But let’s verify it worked out
 okay:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> cat config</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">2BM4GJ3HK1LNCBXWRMGKSYIAZUTPVJ</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ cat config
+    2BM4GJ3HK1LNCBXWRMGKSYIAZUTPVJ</code></pre>
 <p>Without having to copy/paste intermediate results:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo IOCCC <span class="kw">|</span> <span class="ex">./recode</span> <span class="at">-Rconfig</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="kw">|</span> <span class="ex">./recode</span> <span class="at">-Rconfig</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">IOCCC</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo IOCCC | ./recode -Rconfig | ./prog - 2&gt;/dev/null | ./recode -Rconfig | ./prog - 2&gt;/dev/null
+    IOCCC</code></pre>
 <p>You can also use a string for the <code>-R</code> option. I’ll use command substitution and
 actual pasting to demonstrate:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo IOCCC <span class="kw">|</span> <span class="ex">./recode</span> <span class="at">-R</span><span class="va">$(</span><span class="fu">cat</span> config<span class="va">)</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="kw">|</span> <span class="ex">./recode</span> <span class="at">-R2BM4GJ3HK1LNCBXWRMGKSYIAZUTPVJ</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">IOCCC</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo IOCCC | ./recode -R$(cat config) | ./prog - 2&gt;/dev/null | ./recode -R2BM4GJ3HK1LNCBXWRMGKSYIAZUTPVJ | ./prog - 2&gt;/dev/null
+    IOCCC</code></pre>
 <h1 id="usage-conclusion"><a name="conclusion" href="#toc">Usage conclusion</a></h1>
 <p>That should give you an idea of how to use the <code>recode</code> program. I leave it as
 an exercise to the reader to implement additional features but here are some
@@ -585,7 +585,7 @@ think that I would give too much away? :)</p>
 the key you wish to select is</p>
 <pre><code>    0EZ4PC1CC0PGTAQSOXWNMDRYKFUZEI</code></pre>
 <p>you can do:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./recode</span> <span class="at">-R0EZ4PC1CC0PGTAQSOXWNMDRYKFUZEI</span> <span class="at">-fencrypted.html</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="at">-</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="op">&gt;</span> decrypted.html</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./recode -R0EZ4PC1CC0PGTAQSOXWNMDRYKFUZEI -fencrypted.html | ./prog - 2&gt;/dev/null &gt; decrypted.html</code></pre>
 <p>Then open <code>decrypted.html</code> in your browser.</p>
 <!--
 

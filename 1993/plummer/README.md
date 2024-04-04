@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -12,21 +12,21 @@ code](#original-code) below.
 
 If you wish to speed the entry up, say to 500 microseconds between writes, try:
 
-```sh
+```<!---sh-->
     make clobber SLEEP=500 alt
 ```
 
 Alternatively if you wish to slow it down, say to 1500 microseconds between
 writes, try:
 
-```sh
+```<!---sh-->
     make clobber SLEEP=1500 alt
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./plummer.alt number arg
 ```
 
@@ -42,7 +42,7 @@ bypass](https://hitchhikers.fandom.com/wiki/Bypass).
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.alt.sh
 
     ./try.alt.sh 21701
@@ -70,7 +70,7 @@ course).
 
 ### Original build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
@@ -82,7 +82,7 @@ Use `plummer` as you would `plummer.alt` above.
 
 ### Original try:
 
-```sh
+```<!---sh-->
     ./try.sh
 
     ./try.sh 21701

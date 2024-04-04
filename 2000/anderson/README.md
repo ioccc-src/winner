@@ -1,20 +1,20 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     echo something | ./anderson
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 

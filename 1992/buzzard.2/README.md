@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
@@ -13,13 +13,13 @@ code](#alternate-code) below for details.
 First, you must make sure that `first` is made first (even though `make all`
 should make first first :-) ):
 
-```sh
+```<!---sh-->
     make first
 ```
 
 Second:
 
-```sh
+```<!---sh-->
     # get help:
     echo help | cat third help.th - | ./first
 
@@ -29,7 +29,7 @@ Second:
 
 Third:
 
-```sh
+```<!---sh-->
     cat third help.th - | ./first
 ```
 
@@ -50,7 +50,7 @@ Fourth:
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -63,7 +63,7 @@ fix that the author notes in their remarks.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -75,7 +75,7 @@ Use `buzzard.2.alt` as you would `buzzard.2` above.
 
 ### Alternate try:
 
-```sh
+```<!---sh-->
     ./try.alt.sh
 ```
 
@@ -125,7 +125,7 @@ Do not expect to be able to do anything interesting with `first`.
 To do something interesting, you need to feed `first` the file
 [third](third) first.  In unix, you can do
 
-```sh
+```<!---sh-->
     cat third help.th - | ./first
 ```
 
@@ -226,7 +226,7 @@ When you get the `Ok.` message from `third`, try out some sample
 you in a normal way.  It only prints `'Ok.'` after you define a word).
 
 
-```sh
+```<!---sh-->
     2 3 + . cr
 ```
 

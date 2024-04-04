@@ -1,13 +1,13 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./imc [NUMBER]
 ```
 
@@ -16,7 +16,7 @@ where `[NUMBER]` is an optional number. Default is 5.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 

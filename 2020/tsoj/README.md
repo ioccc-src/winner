@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -11,14 +11,14 @@ to those familiar with vi. See [Alternate code](#alternate-code) below.
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./prog
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     # Make your terminal as large as possible, possibly reduce your font size
     # then...
     ./prog
@@ -33,14 +33,14 @@ where instead of `w`, `a`, `s` and `d`, you can use `k`, `h`, `j` and `l`.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
     ```
 
 
 ### Alternate use:
 
-```sh
+```<!---sh-->
     # Make your terminal as large as possible, possibly reduce your font size
     # then...
     ./prog.alt

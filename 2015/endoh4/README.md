@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -11,14 +11,14 @@ code](#alternate-code) below for details.
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./prog <a number of arguments>
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -32,7 +32,7 @@ Dogon](../../authors.html#Gil_Dogon); it is the author's original entry.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -54,7 +54,7 @@ experiment with numbers that have more or larger factors?
 
 Visual factorization 1-liner.  Try:
 
-```sh
+```<!---sh-->
     gcc -o prog prog.c
     ./prog @
     ./prog @ @

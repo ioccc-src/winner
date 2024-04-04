@@ -141,7 +141,7 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em></li>
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>NOTE: the use of the C compiler optimiser was disabled and <code>-g</code> was enabled for
 this entry because it is SUPPOSED to crash and it needs debugging symbols.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
@@ -149,32 +149,32 @@ this entry because it is SUPPOSED to crash and it needs debugging symbols.</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2019_endoh">2019 endoh bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog</code></pre>
 <h2 id="try">Try:</h2>
 <p>If you have <code>gdb(1)</code> installed:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <p>Note that in macOS installing <code>gdb(1)</code> takes multiple steps - it’s not just a
 matter of installing <code>gdb(1)</code> and that’s that. The <a href="try.sh">try.sh</a> script has
 only been tested with linux.</p>
 <p>You might also wish to try:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gdb</span> ./prog <span class="kw">||</span> <span class="ex">lldb</span> ./prog</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    gdb ./prog || lldb ./prog</code></pre>
 <p>and then type in <code>r</code> (to run program) and then <code>bt</code> (for backtrace).</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The purpose of this program is to crash. You’ll want to have memorized <code>man 7 ascii</code> when debugging it to reveal its purpose.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="backtrace-quine">backtrace quine:</h3>
 <p>Compile prog.c with no optimization.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> <span class="at">-g</span> <span class="at">-O0</span> <span class="at">-o</span> prog prog.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cc -g -O0 -o prog prog.c</code></pre>
 <p>Then, run it. You will see a segmentation fault.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./prog</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Segmentation</span> fault <span class="er">(</span><span class="ex">core</span> dumped<span class="kw">)</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ ./prog
+    Segmentation fault (core dumped)</code></pre>
 <p>Let’s debug. As usual, run it under gdb.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> gdb ./prog</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">(</span><span class="fu">gdb</span><span class="kw">)</span> <span class="ex">run</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Starting</span> program: /home/.../prog</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Program</span> received signal SIGSEGV, Segmentation fault.</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">0x0000000000000000</span> in <span class="pp">??</span> <span class="er">(</span><span class="kw">)</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ gdb ./prog
+    (gdb) run
+    Starting program: /home/.../prog
+
+    Program received signal SIGSEGV, Segmentation fault.
+    0x0000000000000000 in ?? ()</code></pre>
 <p>Okay, check the backtrace.</p>
 <pre><code>    (gdb) backtrace
     #0  0x0000000000000000 in ?? ()
@@ -212,8 +212,8 @@ only been tested with linux.</p>
     #7  0x0000555555555747 in x65 () at prog.c:101
     ...</code></pre>
 <p>By using this, you can confirm that it is actually a quine.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gdb</span> <span class="at">-q</span> <span class="at">-x</span> prog.c ./prog <span class="kw">|</span> <span class="fu">sed</span> <span class="at">-n</span> <span class="at">-r</span> <span class="st">&#39;s/#.*:([0-9]+)/\1/p&#39;</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{printf &quot;%c&quot;,$1}&#39;</span> <span class="op">&gt;</span> prog2.c</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">diff</span> prog.c prog2.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    gdb -q -x prog.c ./prog | sed -n -r &#39;s/#.*:([0-9]+)/\1/p&#39; | awk &#39;{printf &quot;%c&quot;,$1}&#39; &gt; prog2.c
+    diff prog.c prog2.c</code></pre>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

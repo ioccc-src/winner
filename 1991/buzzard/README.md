@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
@@ -21,7 +21,7 @@ For more detailed information see [1991 buzzard bugs](../../bugs.html#1991_buzza
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./buzzard
 ```
 
@@ -37,14 +37,14 @@ code directly so the keys are not made a `-D` at the compiler.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
 
 ### Alternate use:
 
-```sh
+```<!---sh-->
     ./buzzard.alt
 ```
 
@@ -89,7 +89,7 @@ so make sure to convert tabs to spaces before using it.
 
 Usage:
 
-```sh
+```<!---sh-->
     ./buzzard [filename [escape-char [start-x start-yNNN
 ```
 

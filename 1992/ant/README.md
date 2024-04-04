@@ -1,13 +1,13 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./ant Makefile
 
     ./ant Makefile rule
@@ -18,7 +18,7 @@ where `Makefile` is a Makefile to use and `rule` is an optional rule to use.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 

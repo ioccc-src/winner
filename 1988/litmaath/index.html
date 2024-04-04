@@ -141,26 +141,26 @@ Location: <a href="../../location.html#CH">CH</a> - <em>Swiss Confederation</em>
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./litmaath</span> some text</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./litmaath some text</code></pre>
 <p>There is an alternate version provided. See the <a href="#alternate-code">Alternate
 code</a> section below.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./litmaath</span> eschew obfuscation</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./litmaath eschew obfuscation</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This alternate code, added to help understand the entry and for fun, is code
 that we suggested at the time of the entry publication but which we never put in
 a file.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <p>Use <code>litmaath.alt</code> as you would <code>litmaath</code> above.</p>
 <h3 id="alternate-try">Alternate try:</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./litmaath.alt</span> six was afraid of seven because seven eight nine</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./litmaath.alt six was afraid of seven because seven eight nine</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Note the unusual structure:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="op">(&lt;</span>condition<span class="op">&gt;)</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>             <span class="op">;</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    while (&lt;condition&gt;)
+             ;</code></pre>
 <p>Did you notice that the body is empty?</p>
 <p>Furthermore, it’s interesting to note that only two variables are
 used to achieve everything.</p>
@@ -168,10 +168,10 @@ used to achieve everything.</p>
 two small strings as arguments, and follow the program closely. One
 could make the body of the <code>while</code> loop an <code>fprintf</code> with interesting
 variables like:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    fprintf<span class="op">(</span>stderr<span class="op">,</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>         <span class="st">&quot;argv=</span><span class="sc">%lo</span><span class="st"> *argv=</span><span class="sc">%lo</span><span class="st"> **argv=</span><span class="sc">%c</span><span class="st"> argv[1]=</span><span class="sc">%lo</span><span class="st"> *argv[1]=</span><span class="sc">%c</span><span class="st"> argc=</span><span class="sc">%d\n</span><span class="st">&quot;</span><span class="op">,</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>         <span class="op">(</span><span class="dt">long</span><span class="op">)</span> argv<span class="op">,</span> <span class="op">(</span><span class="dt">long</span><span class="op">)</span> <span class="op">*</span>argv<span class="op">,</span> <span class="op">*</span>argv <span class="op">&amp;&amp;</span> <span class="op">**</span>argv <span class="op">?</span> <span class="op">**</span>argv <span class="op">:</span> <span class="ch">&#39;@&#39;</span><span class="op">,</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>         <span class="op">(</span><span class="dt">long</span><span class="op">)</span> argv<span class="op">[</span><span class="dv">1</span><span class="op">],</span> argv<span class="op">[</span><span class="dv">1</span><span class="op">]</span> <span class="op">&amp;&amp;</span> <span class="op">*</span>argv<span class="op">[</span><span class="dv">1</span><span class="op">]</span> <span class="op">?</span> <span class="op">*</span>argv<span class="op">[</span><span class="dv">1</span><span class="op">]</span> <span class="op">:</span> <span class="ch">&#39;@&#39;</span><span class="op">,</span> argc<span class="op">);</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    fprintf(stderr,
+         &quot;argv=%lo *argv=%lo **argv=%c argv[1]=%lo *argv[1]=%c argc=%d\n&quot;,
+         (long) argv, (long) *argv, *argv &amp;&amp; **argv ? **argv : &#39;@&#39;,
+         (long) argv[1], argv[1] &amp;&amp; *argv[1] ? *argv[1] : &#39;@&#39;, argc);</code></pre>
 <p>… which is what the <a href="#alternate-code">alternate code</a> is.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>No remarks were provided by the author.</p>

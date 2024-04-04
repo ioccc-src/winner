@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
@@ -18,14 +18,14 @@ For more detailed information see [1996 gandalf bugs](../../bugs.html#1996_ganda
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./gandalf
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -41,7 +41,7 @@ BTW: it is perilous to 'try' the patience of
 
 For misleading C pre-processor output, try:
 
-```sh
+```<!---sh-->
     cc -E gandalf.c
 ```
 

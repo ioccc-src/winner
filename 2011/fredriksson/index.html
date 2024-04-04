@@ -141,15 +141,15 @@ Location: <a href="../../location.html#FI">FI</a> - <em>Republic of Finland </em
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2011_fredriksson">2011 fredriksson bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./fredriksson</span> <span class="pp">[-</span><span class="ss">icvtnk#</span><span class="pp">]</span> regexp <span class="op">&lt;</span> file</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./fredriksson [-icvtnk#] regexp &lt; file</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <p>NOTE: you need to be allowed to change your stack size or else the last command
 in the script would likely cause the program to dump core, which is why the
 script checks the exit code of <code>ulimit</code> first.</p>
@@ -165,7 +165,7 @@ program and calls it. As an exercise, try writing the compressor.</p>
 <p>Implements a variant of <code>grep</code>.</p>
 <h3 id="usage">Usage</h3>
 <p>To search regexp from file, do:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./fredriksson</span> <span class="pp">[-</span><span class="ss">icvtnk#</span><span class="pp">]</span> regexp <span class="op">&lt;</span> file</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./fredriksson [-icvtnk#] regexp &lt; file</code></pre>
 <p>Pipes might not work, see the section Limitations.
 The options <code>-i</code>, <code>-c</code>, <code>-v</code> and <code>-n</code> are the classic ones:</p>
 <ul>
@@ -220,11 +220,11 @@ expressions by putting <code>]</code> as the first character, and putting <code>
 <li>You can use this in place of <a href="https://en.wikipedia.org/wiki/Cat_(Unix)">cat</a>.
 Just say</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./fredriksson</span> <span class="at">-k3</span> cat <span class="op">&lt;</span> file</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./fredriksson -k3 cat &lt; file</code></pre>
 <ul>
 <li>Like with <code>cat</code>, you can append line numbers too:</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./fredriksson</span> <span class="at">-nk3</span> cat <span class="op">&lt;</span> file</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./fredriksson -nk3 cat &lt; file</code></pre>
 <h3 id="other-features">Other features</h3>
 <ul>
 <li><p>It is assumed that the user knows how to feed correct input to the
@@ -256,7 +256,7 @@ you can easily use <code>long long</code> instead,</p></li>
 <li><p>Depending on the file, it might require a lot of stack space. If the
 program segfaults (because of this), say</p></li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">ulimit</span> <span class="at">-s</span> unlimited</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ulimit -s unlimited</code></pre>
 <p>cross your fingers, hope it is enough, and try again.</p>
 <ul>
 <li><p>Assumes C99 standard, because of the one very long line. Most C compilers
@@ -284,7 +284,7 @@ as well as its name and commands to build and run it, all
 extracts and builds that, and then calls it. More precisely, the command
 to build is</li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gcc</span> <span class="at">-O3</span> ag.c <span class="at">-o</span> ag</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    gcc -O3 ag.c -o ag</code></pre>
 <p>To change that you need to edit the char array <code>p[]</code> and (possibly) two
 specially encoded constants, <code>-~('('*'(')</code> and <code>'C'*' '-'-'</code>.
 The extracted source (<code>ag.c</code>) is obfuscated as well.</p>
@@ -333,10 +333,10 @@ Two’s complement representation of integers is also abused. E.g. instead
 of writing <code>x++</code> or <code>x-1</code>, it is much better to write <code>x=-~x</code> and <code>~-x</code>.</p></li>
 <li><p>No numerical values, other than in the initialized char array, try</p></li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./fredriksson</span> <span class="at">-ck0</span> <span class="pp">[</span><span class="ss">0</span><span class="pp">-</span><span class="ss">9</span><span class="pp">]</span> <span class="op">&lt;</span> fredriksson.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./fredriksson -ck0 [0-9] &lt; fredriksson.c</code></pre>
 <p>This should print 1, as there is a number <code>3</code> in the char array (only).
 You can also try</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./fredriksson</span> <span class="at">-ck0</span> <span class="pp">[</span><span class="ss">0</span><span class="pp">-</span><span class="ss">9</span><span class="pp">]</span> <span class="op">&lt;</span> ag.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./fredriksson -ck0 [0-9] &lt; ag.c</code></pre>
 <p>after running <code>fredriksson</code> at least once (since this generates that
 <code>ag.c</code> file), and this should print 0.</p>
 <ul>

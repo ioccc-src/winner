@@ -141,11 +141,11 @@ Location: <a href="../../location.html#CN">CN</a> - <em>People’s Republic of C
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./hou</span> syntax-file file-to-process</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./hou syntax-file file-to-process</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <p>View the <code>remarks.htm</code> file in your web browser.</p>
 <p>The result is best viewed in a 80x25 console with ANSI colors.</p>
 <h2 id="try-windows">Try (Windows):</h2>
@@ -183,13 +183,13 @@ in the regular expression by escaping it with <code>[]</code> or <code>""</code>
 <pre><code>    () [] * + ? | &quot;&quot;</code></pre>
 <p>For example, one can use the following expression to match a certain declaration
 statement in <a href="hou.c">hou.c</a>:</p>
-<pre class="re"><code>        &quot;char&quot;[ *]*[a-zA-Z_][0-9a-zA-Z_]*[ ]*((=[0-9a-zA-Z_ ]+)|(\[[0-9a-zA-Z_ ]*\]))?[ ]*(,[ *]*[a-zA-Z_][0-9a-zA-Z_]*[ ]*((=[0-9a-zA-Z_ ]+)|(\[[0-9a-zA-Z_ ]*\]))?[ ]*)*;</code></pre>
+<pre class="&lt;!---re--&gt;"><code>        &quot;char&quot;[ *]*[a-zA-Z_][0-9a-zA-Z_]*[ ]*((=[0-9a-zA-Z_ ]+)|(\[[0-9a-zA-Z_ ]*\]))?[ ]*(,[ *]*[a-zA-Z_][0-9a-zA-Z_]*[ ]*((=[0-9a-zA-Z_ ]+)|(\[[0-9a-zA-Z_ ]*\]))?[ ]*)*;</code></pre>
 <p>The regex engine is also algorithmically efficient. To illustrate the point,
 <a href="ansi.txt">ansi.txt</a> contains a pathological expression <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> that guarantees a
 hang for the competing Perl engine while matching itself. Try to compare these
 two engines:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./hou</span> ansi.txt ansi.txt</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">perl</span> patho.pl <span class="op">&lt;</span> ansi.txt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./hou ansi.txt ansi.txt
+    perl patho.pl &lt; ansi.txt</code></pre>
 <h3 id="limitations">Limitations</h3>
 <p>Finally, there are a few limitations…</p>
 <ul>

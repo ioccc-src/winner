@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -18,14 +18,14 @@ For more detailed information see [2005 sykes bugs](../../bugs.html#2005_sykes).
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./sykes binary_file
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -44,7 +44,7 @@ We downloaded the [ROM](https://en.wikipedia.org/wiki/ROM_image) contents to use
 the [emulator](https://en.wikipedia.org/wiki/Emulator) in
 [PET](https://en.wikipedia.org/wiki/Commodore_PET) mode as follows:
 
-```sh
+```<!---sh-->
     wget http://www.zimmers.net/anonftp/pub/cbm/firmware/computers/pet/basic-2-c000.901465-01.bin
     wget http://www.zimmers.net/anonftp/pub/cbm/firmware/computers/pet/basic-2-d000.901465-02.bin
     wget http://www.zimmers.net/anonftp/pub/cbm/firmware/computers/pet/edit-2-n.901447-24.bin
@@ -53,7 +53,7 @@ the [emulator](https://en.wikipedia.org/wiki/Emulator) in
 
 We then created:
 
-```sh
+```<!---sh-->
     dd bs=2k count=1 if=/dev/zero of=nullfill.bin
 ```
 
@@ -79,7 +79,7 @@ Compile the program, then test the
 [6502](https://en.wikipedia.org/wiki/MOS_Technology_6502#Technical_description)
 [emulation](https://en.wikipedia.org/wiki/Emulator) like this:
 
-```sh
+```<!---sh-->
     ./sykes 6502test
 ```
 
@@ -105,7 +105,7 @@ Make sure you have a [terminal
 window](https://en.wikipedia.org/wiki/Terminal_emulator) of 40x25 chars or
 bigger, and then run the emulator like this:
 
-```sh
+```<!---sh-->
     ./sykes pet.rom
 ```
 
@@ -119,13 +119,13 @@ You should see the startup message. Try typing in some
 There is an optional numeric parameter, which controls the speed. For a
 slower cursor blink, try
 
-```sh
+```<!---sh-->
     ./sykes pet.rom 6
 ```
 
 and for faster
 
-```sh
+```<!---sh-->
     ./sykes pet.rom 2
 ```
 
@@ -191,7 +191,7 @@ Supplied as a demonstration is a
 compiled-for-[6502](https://en.wikipedia.org/wiki/MOS_Technology_6502#Technical_description)
 version a chess program (heh, I found a use for a previous losing entry :) ). Try:
 
-```sh
+```<!---sh-->
     ./sykes chess
 ```
 
@@ -306,7 +306,7 @@ from the Internet.  This is to avoid directly infringing any copyright.
 
 What does this do?
 
-```sh
+```<!---sh-->
     ./sykes pet.rom -1
 ```
 

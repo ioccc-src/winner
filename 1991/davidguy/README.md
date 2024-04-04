@@ -1,13 +1,13 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./davidguy ip_address:server.screen
 ```
 
@@ -16,7 +16,7 @@ where `ip_address` in an IP address of an X server.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./davidguy 127.0.0.1:0.0
 ```
 
@@ -24,7 +24,7 @@ Of course, you may need to supply a more reasonable address.  :-)
 
 ## Also try:
 
-```sh
+```<!---sh-->
     cp -f davidguy guydavid
     ./guydavid 127.0.0.1:0.0
 ```

@@ -141,29 +141,29 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em></li>
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>There is an alternate version provided by the author. See <a href="#alternate-code">Alternate
 code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># IMPORTANT for macOS: run under Terminal.app</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    # IMPORTANT for macOS: run under Terminal.app
+
+    ./prog</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># IMPORTANT for macOS: run under Terminal.app</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Try resizing the terminal window before the first click.</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Try resizing the terminal window after the first click.</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> ioccc.txt</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> unwinnable.txt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    # IMPORTANT for macOS: run under Terminal.app
+
+    # Try resizing the terminal window before the first click.
+
+    # Try resizing the terminal window after the first click.
+
+    ./prog ioccc.txt
+
+    ./prog unwinnable.txt</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>An alternate version of this entry, <a href="prog.alt.c">prog.alt.c</a>, is provided. This
 alternate code lacks the additional rule to flag all unprobed cells. See the
 Author’s remarks for more details.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>prog.alt</code> as you would <code>prog</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -194,8 +194,8 @@ such a boring task!</p>
 All you have to do is (0). You can test if you are lucky or not.</p>
 <h3 id="how-to-use">How to use:</h3>
 <p>It uses ncurses:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gcc</span> <span class="at">-o</span> prog prog.c <span class="at">-lncurses</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    gcc -o prog prog.c -lncurses
+    ./prog</code></pre>
 <p>You will see a terminal-wide field of a minesweeper. Probe a cell by mouse
 click.</p>
 <p>If a cell turns out to have a mine (or not), the program determines whether its
@@ -255,7 +255,7 @@ are flagged.</p>
 Analyze the code.</p>
 <h3 id="one-more-thing">One more thing</h3>
 <p>You can also play with a prepared map.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> ioccc.txt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog ioccc.txt</code></pre>
 <p>The format of the text is:</p>
 <pre><code>    width height number-of-mines priorities-of-each-cell...</code></pre>
 <p>There are mines in a cell whose “priorities-of-each-cell” is less than

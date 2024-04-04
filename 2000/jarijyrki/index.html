@@ -144,13 +144,13 @@ Location: <a href="../../location.html#FI">FI</a> - <em>Republic of Finland </em
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>You will need X11 header files and libraries installed to build this program.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./jarijyrki</span> <span class="op">&lt;</span> infile.info <span class="op">&gt;</span> outfile.info</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./jarijyrki &lt; infile.info &gt; outfile.info</code></pre>
 <p>You will need a system capable of displaying the results of X Window programs.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./jarijyrki</span> <span class="op">&lt;</span> finance.sheet <span class="op">&gt;</span> myedits.info</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./jarijyrki &lt; finance.sheet &gt; myedits.info</code></pre>
 <p>Then click on cell <code>C3</code> and type in the following:</p>
 <pre><code>    C5 C6 C7 @</code></pre>
 <p>Click on cell <code>D4</code> and type in the following:</p>
@@ -190,7 +190,7 @@ supports are:</p>
 <h3 id="usage-instructions">2. USAGE INSTRUCTIONS</h3>
 <h4 id="quick-guide">2.1. Quick Guide</h4>
 <h5 id="starting">Starting</h5>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./jarijyrki</span> <span class="op">&lt;</span> finance.sheet <span class="op">&gt;</span> myedits.info</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./jarijyrki &lt; finance.sheet &gt; myedits.info</code></pre>
 <h5 id="stopping">Stopping</h5>
 <p>Use the ESC key.</p>
 <h5 id="movement">Movement</h5>
@@ -214,14 +214,14 @@ character at the end of the formula; press backspace to delete the last one.</p>
 <p>To start the spreadsheet program with an existing
 spreadsheet, for instance <a href="finance.sheet">finance.sheet</a>, use the following
 command line:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./jarijyrki</span> <span class="op">&lt;</span> finance.sheet</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./jarijyrki &lt; finance.sheet</code></pre>
 <p>The file <a href="finance.sheet">finance.sheet</a> has been provided as an example. This
 file contains a set of financial numbers and two graphical entities - a pie
 chart and a histogram - based on them. We recommend starting the use of the
 program from this file, as a way to study and learn the formula language
 supported by the program.</p>
 <p>To start the program with an empty sheet, use</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./jarijyrki</span> <span class="op">&lt;</span> /dev/null</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./jarijyrki &lt; /dev/null</code></pre>
 <p>Alternatively, <code>/dev/zero</code> could be used but that may not exist on all systems.</p>
 <h4 id="exiting-and-saving-spreadsheets">2.3. Exiting and Saving Spreadsheets</h4>
 <p>Normally the user obviously wants to edit the spreadsheet. After the
@@ -229,7 +229,7 @@ spreadsheet program finishes, it outputs the edited spreadsheet to the standard
 output. Hence, when the spreadsheet window has come up, you’ve made your
 changes, and you press the ESC key the program finishes. To save the results in
 a file, the following typical command line would be used:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./jarijyrki</span> <span class="op">&lt;</span> finance.sheet <span class="op">&gt;</span> myedits.info</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./jarijyrki &lt; finance.sheet &gt; myedits.info</code></pre>
 <h4 id="visual-overview">2.4. Visual Overview</h4>
 <p>On top of the window the Formula Area shows the formula (or text) of the
 currently selected cell. The program starts with <code>A1</code> as being the current cell.

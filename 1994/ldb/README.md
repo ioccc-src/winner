@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [1994 ldb bugs](../../bugs.html#1994_ldb).
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./ldb < file
 
     some_command | ./ldb
@@ -27,7 +27,7 @@ For more detailed information see [1994 ldb bugs](../../bugs.html#1994_ldb).
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 

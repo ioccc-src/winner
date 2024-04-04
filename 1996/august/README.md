@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [1996 august bugs](../../bugs.html#1996_august
 
 ## To use:
 
-```sh
+```<!---sh-->
     cat august.c test.oc | ./august > test.oo
     ./august < test.oo
 ```
@@ -33,7 +33,7 @@ The above should print a `!` followed by a newline.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -43,33 +43,33 @@ The above should print a `!` followed by a newline.
 This entry can feed on itself.  If you C pre-process the source,
 you can compile the interpreter:
 
-```sh
+```<!---sh-->
     make august.oc
 ```
 
 We can now compile the interpreter as follows:
 
-```sh
+```<!---sh-->
     cat august.c august.oc | ./august > august.oo
 ```
 
 and use the compiled interpreter to execute some previously
 compiled code:
 
-```sh
+```<!---sh-->
     cat august.oo test.oo | ./august
 ```
 
 And we can have the compiled interpreter interpret itself which
 in turn compiles the test program:
 
-```sh
+```<!---sh-->
     cat august.oo august.oo fac.oo | ./august
 ```
 
 And if you have lots of spare time, you can recurse one level deeper:
 
-```sh
+```<!---sh-->
     cat august.oo august.oo august.oo fac.oo | ./august
 ```
 
@@ -107,25 +107,25 @@ can go wrong.  But this is what seasoned C programmers are used to.
 Assume that the interpreter has been compiled (source in [august.c](august.c)
 and binary in august) and that we have this in a file named `test.oc`:
 
-```c
+```<!---c-->
     main() { putchar('!'); putchar('\n'); exit(0); }
 ```
 
 We can then compile by
 
-```sh
+```<!---sh-->
     cat august.c test.oc | ./august > test.oo
 ```
 
 And run the compiled program by
 
-```sh
+```<!---sh-->
     ./august < test.oo
 ```
 
 Or even simpler:
 
-```sh
+```<!---sh-->
     cat august.c test.oc | ./august | ./august
 ```
 
@@ -141,26 +141,26 @@ need to use an external one.  To pre-process [august.c](august.c) use the
 command from the Makefile, but add the `-E` flag and change 60000 to 40000,
 i.e.:
 
-```sh
+```<!---sh-->
     cc -E -DZ=40000 .... august.c > august.oc
 ```
 
 If `august.oc` contain some junk line starting with a `#` (most likely
 it does) then remove it like:
 
-```sh
+```<!---sh-->
     sed -i'' '/^#/d' august.oc
 ```
 
 OK, we can now compile the interpreter:
 
-```sh
+```<!---sh-->
     cat august.c august.oc | ./august > august.oo
 ```
 
 And we can run it:
 
-```sh
+```<!---sh-->
     cat august.oo test.oo | ./august
 ```
 
@@ -168,13 +168,13 @@ Here we have the interpreter interpreting another interpreter that runs
 the program.  Did you think that was too fast?  Just throw in another
 level of interpretation:
 
-```sh
+```<!---sh-->
     cat august.oo august.oo test.oo | ./august
 ```
 
 And another...
 
-```sh
+```<!---sh-->
     cat august.oo august.oo august.oo test.oo | ./august
 ```
 

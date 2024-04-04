@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -10,7 +10,7 @@ code](#alternate-code) below.
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./prog > lena.ppm
 ```
 
@@ -21,7 +21,7 @@ First open [Lenna.png](Lenna.png) in your graphics viewer of choice. Next, after
 running the above command (`./prog > lena.ppm`), open `lena.ppm` in your
 graphics viewer of choice.  After that try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -44,7 +44,7 @@ for Windows.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -99,7 +99,7 @@ Although the program was optimized to decompress its built-in image,
 it accepts to decompress image files from its standard
 input. Examples:
 
-```sh
+```<!---sh-->
     ./prog d < lena512.bin > lena512.ppm
     ./prog d < fruits.bin > fruits.ppm
     ./prog d < vintage_cars.bin > vintage_cars.ppm

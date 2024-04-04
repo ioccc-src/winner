@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -10,7 +10,7 @@ binary mode from text mode. See [alternate code](#alternate-code) below.
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./zucker > image.ppm
 ```
 
@@ -19,7 +19,7 @@ Now open `image.ppm` with your image viewer of choice.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -36,7 +36,7 @@ that distinguish binary and text.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -68,7 +68,7 @@ This entry uses no local variables. None! At! All!
 This program makes pretty pictures.  To see the default output, try
 running
 
-```sh
+```<!---sh-->
     ./zucker > ioccc2011.ppm
 ```
 
@@ -82,7 +82,7 @@ Netpbm files, and are available on multiple platforms.
 
 With macOS you can type at the command line:
 
-```sh
+```<!---sh-->
     open ioccc2021.ppm
 ```
 
@@ -90,7 +90,7 @@ and it will open image in the default application Preview.app.
 
 To use ImageMagick you might do something like:
 
-```sh
+```<!---sh-->
     convert ioccc2011.ppm ioccc2011.png
 ```
 
@@ -98,7 +98,7 @@ and then open `ioccc2011.png` in your viewer of choice.
 
 To use GraphicsMagick you might do something like:
 
-```sh
+```<!---sh-->
     gm convert ioccc2011.ppm ioccc2011.png
 ```
 
@@ -107,14 +107,14 @@ and then open `ioccc2011.png` in your viewer of choice.
 Aside from the default image, you may create your own by running the
 program as follows:
 
-```sh
+```<!---sh-->
     ./zucker "your text" > image.ppm
 ```
 
 To mitigate long runtime, the program can be invoked in a "preview"
 mode by appending `-preview` to the command line arguments, like so:
 
-```sh
+```<!---sh-->
     ./zucker faster\! -preview > image.ppm
 ```
 

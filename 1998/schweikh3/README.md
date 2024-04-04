@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
@@ -23,7 +23,7 @@ If `dir` is the directory (or a directory tree) where you keep
 all your favorite pictures off the Internet or from
 `alt.binaries.pictures.*`, do
 
-```sh
+```<!---sh-->
     find dir -type f -print | ./samefile
 ```
 
@@ -34,7 +34,7 @@ Maybe you will not need to buy another 10 GB disk to store them.  :-)
 
 If you're in this winning entry's directory:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -53,7 +53,7 @@ which if (in the code) is unset will be set to the default, 32767.
 If you wish to change the size to say, 55555:
 
 
-```sh
+```<!---sh-->
     make clobber SIZE=55555 alt
 ```
 
@@ -83,7 +83,7 @@ Thank God the IEEE does not standardize a coding style...
 This is best explained in the man page. The troff source for this
 man page can be found in the file [samefile.1](samefile.1). To render try:
 
-```sh
+```<!---sh-->
     `man ./samefile.1
 ```
 
@@ -100,7 +100,7 @@ Otherwise:
 
 #### SYNOPSIS
 
-```sh
+```<!---sh-->
     ./samefile
 ```
 
@@ -141,7 +141,7 @@ inode numbers is also  minimized.  Suppose  you  have  six
 identical  files  of size 100 in an inode group consisting
 of the three inodes with numbers 10, 20 and 30:
 
-```sh
+```<!---sh-->
     $ ls -i   # output edited for readability:
       10 file1     20 file4     30 file6
       10 file2     20 file5
@@ -177,7 +177,7 @@ For everybody:
 
 What are the duplicates under my home directory?
 
-```sh
+```<!---sh-->
     find $HOME | ./samefile
 ```
 
@@ -185,14 +185,14 @@ For the sysadmin folks:
 
 Report all duplicate files under /usr larger than 16k:
 
-```sh
+```<!---sh-->
     find /usr -size +16384c -a -type f | ./samefile
 ```
 
 For the ftp and WWW admins:
 How much space is wasted below our site's /pub directory?
 
-```sh
+```<!---sh-->
     find /pub -type f | samefile | awk '{sum += $1} END {print sum}'
 ```
 

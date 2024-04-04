@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -18,14 +18,14 @@ For more detailed information see [2018 vokes bugs](../../bugs.html#2018_vokes).
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./prog < file.txt
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 

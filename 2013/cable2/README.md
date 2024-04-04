@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [2013 cable2 bugs](../../bugs.html#2013_cable2
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./cable2 file.bmp [color]
 ```
 
@@ -27,7 +27,7 @@ For more detailed information see [2013 cable2 bugs](../../bugs.html#2013_cable2
 
 For different OCR examples:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 

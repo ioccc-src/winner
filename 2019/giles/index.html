@@ -141,11 +141,11 @@ Location: <a href="../../location.html#AU">AU</a> - <em>Commonwealth of Australi
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> infile.wav outfile.wav</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog infile.wav outfile.wav</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <p>NOTE: <code>play</code>, which <a href="try.sh">try.sh</a> uses, comes from SoX, the Swiss Army Knife
 of sound processing programs. If you don’t have this installed, see <a href="../../faq.html#sox">FAQ 3.10:
 How do I compile and use an IOCCC entry that requires sound</a>.</p>
@@ -175,8 +175,8 @@ the latter reports warnings about loss of information when converting <code>floa
 and that <code>void (*)()</code> and <code>void (*)(void)</code> are not the same thing.</p>
 <p>Interesting fact: The size of the program from <code>./iocccsize -i</code> is 2019.</p>
 <h4 id="how-to-use">How to use:</h4>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> input [output [size [dry [wet <span class="pp">[</span><span class="ss">damping</span><span class="pp">]</span>]]]]</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">prog.exe</span> input [output [size [dry [wet <span class="pp">[</span><span class="ss">damping</span><span class="pp">]</span>]]]]</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog input [output [size [dry [wet [damping]]]]]
+    prog.exe input [output [size [dry [wet [damping]]]]]</code></pre>
 <ul>
 <li><code>input</code>: The path to the input file. Required.</li>
 <li><code>output</code>: The path to the output file. Optional, defaults to <code>out.wav</code>.</li>
@@ -196,7 +196,7 @@ decimal numbers (e.g. 0.35) or as percentages (e.g. 35%).</p>
 <p>The default settings are designed to make the effect obvious rather than subtle,
 so it may be a good idea to adjust the ratio of “dry” to “wet”, to give a more
 pleasant result:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> in.wav out.wav 1.8 80% 15%</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog in.wav out.wav 1.8 80% 15%</code></pre>
 <p>The program only supports WAV files, and only mostly. Other audio formats, such
 as MP3, are not supported because they are difficult to decode, but there are
 free programs such as <code>ffmpeg</code> that can perform the conversion. Some of the

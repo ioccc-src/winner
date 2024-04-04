@@ -141,16 +141,16 @@ Location: <a href="../../location.html#FR">FR</a> - <em>French Republic</em> (<e
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>There is an alternate version that should work with Windows. See <a href="#alternate-code">Alternate
 code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> <span class="op">&gt;</span> lena.ppm</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog &gt; lena.ppm</code></pre>
 <h2 id="try">Try:</h2>
 <p>First open <a href="Lenna.png">Lenna.png</a> in your graphics viewer of choice. Next, after
 running the above command (<code>./prog &gt; lena.ppm</code>), open <code>lena.ppm</code> in your
 graphics viewer of choice. After that try:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <p>NOTE: the script uses the tools <code>pngtopam(1)</code> (or <code>pngtopnm(1)</code> for older
 versions) and <code>pnmscale</code> come from the netpbm project and <code>cjpeg(1)</code> comes from
 <code>libjpeg-turbo</code>. If you don’t have these tools already see <a href="../../faq.html#netpbm">FAQ 3.15 - How do I
@@ -163,7 +163,7 @@ it?</a>.</p>
 <p>The <a href="prog.alt.c">prog.alt.c</a> is based on the author’s remarks and it should work
 for Windows.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>prog.alt</code> as you would <code>prog</code>.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -200,9 +200,9 @@ as the algorithms already have a significant complexity.</p>
 <p>Although the program was optimized to decompress its built-in image,
 it accepts to decompress image files from its standard
 input. Examples:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> d <span class="op">&lt;</span> lena512.bin <span class="op">&gt;</span> lena512.ppm</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> d <span class="op">&lt;</span> fruits.bin <span class="op">&gt;</span> fruits.ppm</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> d <span class="op">&lt;</span> vintage_cars.bin <span class="op">&gt;</span> vintage_cars.ppm</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog d &lt; lena512.bin &gt; lena512.ppm
+    ./prog d &lt; fruits.bin &gt; fruits.ppm
+    ./prog d &lt; vintage_cars.bin &gt; vintage_cars.ppm</code></pre>
 <p>The original images for <a href="https://commons.wikimedia.org/wiki/File%3AFruits_oranges%2C_jardin_japonais_2.JPG">fruits</a> and <a href="https://commons.wikimedia.org/wiki/File%3ARed_Bull_Jungfrau_Stafette%2C_10th_stage_-_vintage_cars_%282%29.jpg">vintage cars</a> come from
 Wikipedia and were resized to a width of 1024 pixels.</p>
 <p>The program should be portable on any Unix system. On Windows the line

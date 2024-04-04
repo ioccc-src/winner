@@ -141,7 +141,7 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <p>There are two alternate versions, one that has an increased buffer size and one
 that uses <code>fgets()</code>; neither are completely functional.
 See below section bugs and (mis)features for details and the <a href="#alternate-code">alternate
@@ -151,9 +151,9 @@ code</a> section for how to use.</p>
 <pre><code>    STATUS: uses gets() - change to fgets() if possible</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1994_schnitzi">1994 schnitzi bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./schnitzi</span> <span class="op">&lt;</span> textfile</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./schnitzi &lt; textfile</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>The first version, <code>schnitzi.alt.c</code>, uses <code>fgets(3)</code> but when fed its own code
 it will generate code that still uses <code>gets(3)</code>. What’s more is it will not
@@ -163,15 +163,15 @@ its own source code it will generate code that can compile but with the original
 buffer size. This is due to a comment which is explained in more detail in
 <a href="../../bugs.html#1994_schnitzi">1994/schnitzi bugs</a>.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>schnitzi.alt</code> and <code>schnitzi.alt2</code> as you would <code>schnitzi</code> above except that
 feeding the source code to it will not work right.</p>
 <h3 id="alternate-try">Alternate try:</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.alt.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Try:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./schnitzi</span> <span class="op">&lt;</span> schnitzi.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./schnitzi &lt; schnitzi.c</code></pre>
 <p>Compare the output of the program with its source. Sure the output
 is different, but there is more than meets the <code>diff</code>’s eye. Can you
 find out why?</p>
@@ -187,10 +187,10 @@ second row is written down the second column, etc. The program
 is run by redirecting a file into the executable on the command
 line; for instance, for the file ‘info’, the program
 would be run as follows:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./schnitzi</span> <span class="op">&lt;</span> info</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./schnitzi &lt; info</code></pre>
 <p>The program generates interesting results when its source file is
 used as input:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./schnitzi</span> <span class="op">&lt;</span> schnitzi.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./schnitzi &lt; schnitzi.c</code></pre>
 <p>The result of this command is a program which does the exact same
 thing – in other words, both the program and the “flipped”
 version of itself work identically (you’ll need to redirect the

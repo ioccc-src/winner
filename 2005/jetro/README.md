@@ -6,14 +6,14 @@ haven't already.
 
 If you have SDL installed:
 
-```sh
+```<!---sh-->
     make
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./jetro
 ```
 

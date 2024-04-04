@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -11,7 +11,7 @@ at once. See [Alternate code](#alternate-code) below.
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./prog
 
     # get recode help:
@@ -49,13 +49,13 @@ are allowed.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
 What does:
 
-```sh
+```<!---sh-->
     echo | ./recode
     echo | ./recode -v
 ```
@@ -72,14 +72,14 @@ and to make it a bit more like the real thing.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
 The default time to sleep is 400000 microseconds but you can change this by
 doing:
 
-```sh
+```<!---sh-->
     make clobber SLEEP=600000 alt
 ```
 
@@ -93,7 +93,7 @@ Use `prog.alt` as you would `prog` above.
 
 ### Alternate try:
 
-```sh
+```<!---sh-->
     ./try.alt.sh
 ```
 
@@ -110,7 +110,7 @@ There is a good deal of useful documentation that is provided with this entry:
 * [enigma.1](enigma.1)	-  A useful man page for this entry.  To render, try:
 
 
-```sh
+```<!---sh-->
     man ./enigma.1
 ```
 
@@ -251,7 +251,7 @@ the result (after finishing the enciphering).
 
 If you run it like:
 
-```sh
+```<!---sh-->
     ./prog -
 ```
 
@@ -283,7 +283,7 @@ program as well as how to use the two winning entries of the [Morse
 code](https://en.wikipedia.org/wiki/Morse_code) that I referred to earlier:
 
 
-```sh
+```<!---sh-->
     $ ./prog -
     Ring 1: 3
     Setting 1: I
@@ -317,7 +317,7 @@ default settings; as the judges suggest this invocation I will not show it here.
 
 But you can also type it out like this:
 
-```sh
+```<!---sh-->
     $ ./prog
     IOCCC
     UUMMX
@@ -328,7 +328,7 @@ The IOCCC comes from stdin; the `UUMMX` is written to stdout.
 If I compile the 2014 entry and copy it to my local directory as
 `vik` I might do:
 
-```sh
+```<!---sh-->
     $ echo TEST|./prog |./vik | mplayer -demuxer rawaudio -
 ```
 
@@ -340,7 +340,7 @@ a bug in that entry (Fedora, CentOS and macOS all affected).
 For example I can use the syntax provided in the winning remarks along with my
 entry to write it to a file. Say:
 
-```sh
+```<!---sh-->
     $ echo TEST|./prog |./vik > test.raw
     $ ./vik e < test.raw | ./prog
     LEST
@@ -348,21 +348,21 @@ entry to write it to a file. Say:
 
 Why did that happen? This shows more details:
 
-```sh
+```<!---sh-->
     $ ./vik e < test.raw
     SCWV
 ```
 
 However as can be seen the first char is wrong:
 
-```sh
+```<!---sh-->
     $ echo TEST|./prog
     KCWV
 ```
 
 And piping the original output to my entry itself you get the original input:
 
-```sh
+```<!---sh-->
     $ echo TEST | ./prog  | ./prog
     TEST
 ```
@@ -372,7 +372,7 @@ idea anyway. Neither do I know if the original transcoding is correct.
 
 What if I use the input string `LEST` instead? In that case it worked fine:
 
-```sh
+```<!---sh-->
     $ echo LEST | ./prog | ./vik > lest.raw
     $ ./vik e < lest.raw | ./prog
     LEST
@@ -380,7 +380,7 @@ What if I use the input string `LEST` instead? In that case it worked fine:
 
 But there's one obvious question, right? Let's try the most important one:
 
-```sh
+```<!---sh-->
     $ echo IOCCC | ./prog | ./vik > ioccc.raw
     $ ./vik e < ioccc.raw
     UUMMX
@@ -396,7 +396,7 @@ too. Notice also how it showed the same output that my program gave it - `UUMMX`
 
 What about the other [Morse code entry](../../1998/dorssel/dorssel.c)?
 
-```sh
+```<!---sh-->
     $ echo IOCCC | ./prog | ./dorssel
     ..- ..- -- -- -..-
 ```
@@ -441,7 +441,7 @@ The parser is in a sense rather rudimentary but allows for both interactive and
 automatic (e.g. via the [recode](recode.c) program) input. This does mean that
 something like the following can happen:
 
-```sh
+```<!---sh-->
     $ ./prog -
     Ring 1: 1AB
     Setting 1: Position 1: Ring 2: 2CD
@@ -504,7 +504,7 @@ should help you remember (though not at this time in our world it might help you
 later on?). This might become even more useful after the challenge is accepted,
 accomplished and made use of! :)
 
-```sh
+```<!---sh-->
     $ echo ABC | ./prog
     GYM
     $ echo ABC | ./prog | ./prog
@@ -536,7 +536,7 @@ ended his life. (I later made a bug fix but I consider this inconsequential).
 
 As for [recode.c][] though I really love this:
 
-```c
+```<!---c-->
 	      /\
     /	       This is *not* what you think:
 ```
@@ -552,13 +552,13 @@ It's an [Enigma machine](https://en.wikipedia.org/wiki/Enigma_machine) simulator
 that proof that it's obfuscated itself?! :) Silliness aside [obfuscation.txt][]
 has some of the ways I think this entry is obfuscated.  To decipher try:
 
-```sh
+```<!---sh-->
     ./recode -Robfuscation.key -fobfuscation.txt | ./prog - 2>/dev/null > obfuscation.md
 ```
 
 To encipher:
 
-```sh
+```<!---sh-->
     ./recode -Robfuscation.key -fobfuscation.md | ./prog - 2>/dev/null > obfuscation.txt
 ```
 

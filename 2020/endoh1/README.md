@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -10,7 +10,7 @@ code](#alternate-code) below.
 
 ## To use:
 
-```sh
+```<!---sh-->
     # IMPORTANT for macOS: run under Terminal.app
 
     ./prog
@@ -19,7 +19,7 @@ code](#alternate-code) below.
 
 ## Try:
 
-```sh
+```<!---sh-->
     # IMPORTANT for macOS: run under Terminal.app
 
     # Try resizing the terminal window before the first click.
@@ -41,7 +41,7 @@ Author's remarks for more details.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -94,7 +94,7 @@ All you have to do is (0).  You can test if you are lucky or not.
 
 It uses ncurses:
 
-```sh
+```<!---sh-->
     gcc -o prog prog.c -lncurses
     ./prog
 ```
@@ -200,7 +200,7 @@ Analyze the code.
 
 You can also play with a prepared map.
 
-```sh
+```<!---sh-->
     ./prog ioccc.txt
 ```
 

@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
@@ -21,14 +21,14 @@ For more detailed information see [1992 gson bugs](../../bugs.html#1992_gson).
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./ag word word2 word3 < /path/to/dictionary
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -45,7 +45,7 @@ following locations though the last one is more ironic:
 
 Then using the proper dictionary file it does:
 
-```sh
+```<!---sh-->
     ./ag free software foundation	< /usr/share/dict/words
     ./ag obfuscated c contest	< /usr/share/dict/words
     ./ag unix international		< /usr/share/dict/words
@@ -73,7 +73,7 @@ weren't allowed to print!
 The author provided an obfuscated script that can be used to construct
 dictionaries which has been put in as [mkdict.sh](mkdict.sh). To use try:
 
-```sh
+```<!---sh-->
     cat README.md | ./mkdict.sh > words
 ```
 
@@ -103,7 +103,7 @@ have one already, you can make your own dictionary by concatenating a few
 hundred of your favourite Usenet articles and piping them through the following
 obfuscated shell script:
 
-```sh
+```<!---sh-->
     #!/bin/sh
     z=a-z];tr [A-Z\] \[$z|sed s/[\^$z[\^$z*/_/g|tr _ \\012|grep ..|sort -u
 ```
@@ -258,7 +258,7 @@ those bits that should remain zero.  For example, the following
 program prints all those 16-bit integers that contain zeroes in all
 even bit positions:
 
-```c
+```<!---c-->
     main(){int i=0,s=0xAAAA;do{printf("%04x\t",i);}while(i=((i|~s)+1)&s);}
 ```
 

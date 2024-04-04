@@ -141,16 +141,16 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <p>There is an alternate version, the original, that can’t be compiled in modern
 systems but can be if you have an old enough compiler. See <a href="#alternate-code">Alternate
 code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./isaak</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./isaak</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>The original version of this code is in <a href="isaak.alt.c">isaak.alt.c</a>.
 The original entry starts with the line:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    main<span class="op">(){};</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    main(){};</code></pre>
 <p>This works on some systems. Why? Note that <code>#include &lt;stdio.h&gt;</code> is given on
 the last line. Why is this needed? Note the unusual calls to <code>sprintf(3)</code>.</p>
 <p>This version also relied on being able to define <code>#define</code> to something else and
@@ -158,7 +158,7 @@ using that macro for <code>#define</code>.</p>
 <p>This version will not likely work on modern systems if you can even get it to
 compile.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <p>Use <code>isaak.alt</code> as you would <code>isaak</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The program relies heavily on ASCII. Don’t even think of running it on
@@ -173,8 +173,8 @@ from a single macro (e.g., <code>"O/**/O"</code> creates either <code>++</code> 
 <p>NOTE: Most System V machines were not be able to execute this program correctly
 due to the fact that BSD style systems have an <code>sprintf(3)</code> that returns a <code>char *</code>. Due to the above problems, we placed the output of this program in the
 file: isaak.encode. To read this file do.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">uudecode</span> <span class="op">&lt;</span> isaak.encode</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span> isaak.output</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    uudecode &lt; isaak.encode
+    cat isaak.output</code></pre>
 <p>Since this was fixed, this file is not strictly necessary. See the
 <a href="isaak.alt.c">isaak.alt.c</a> for the original source.</p>
 <p>FYI: We are likely to be more strict about portability in the future.</p>

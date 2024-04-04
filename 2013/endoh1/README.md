@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -18,20 +18,20 @@ For more detailed information see [2013 endoh1 bugs](../../bugs.html#2013_endoh1
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./endoh1 [file.lazy]
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
 You might also enjoy running:
 
-```sh
+```<!---sh-->
     cc -E endoh1.c | less
 ```
 
@@ -50,7 +50,7 @@ This entry can be considered an abuse of the GCC's optimizer; it takes GCC about
 
 ### Remarks
 
-```sh
+```<!---sh-->
     less endoh1.c
     gcc -o endoh1 endoh1.c
     ./endoh1
@@ -66,7 +66,7 @@ especially, [Lazy K][2].
 This program will shine when it is used as a library.  For example,
 [hello.lazy](hello.lazy) is a "Hello world" program written in Lazy K.
 
-```sh
+```<!---sh-->
     $ lazy hello.lazy
     Hello, world!
 ```
@@ -75,7 +75,7 @@ where `lazy` is [a reference implementation of Lazy K][3].  At the same time,
 [hello.lazy](hello.lazy) is *a valid C program* that uses [endoh1.c](endoh1.c)
 as a library.
 
-```sh
+```<!---sh-->
     $ gcc -o hello -xc hello.lazy
     $ ./hello
     Hello, world!
@@ -136,7 +136,7 @@ I confirmed that the program successfully worked with the following compilers:
 
 Recent compilers with `-Wall -W -Wextra -pedantic` say nothing.
 
-```sh
+```<!---sh-->
     gcc -Wall -W -Wextra -pedantic prog.c
     clang -Wall -W -Wextra -pedantic prog.c
     tcc -Wall -W -Wextra -pedantic prog.c
@@ -173,7 +173,7 @@ combinator calculus.  The rewriting rules are shown in the shape of the code.
 
 Consider a sequence of function applications in C:
 
-```c
+```<!---c-->
     s(x)(x)(x)(x)...
 ```
 
@@ -182,7 +182,7 @@ type", such as `typedef f (*f)();`.
 
 So, I used a heavily nested function pointer type:
 
-```c
+```<!---c-->
     typedef void *(*(*(*...(*(f))()...)())())
 ```
 
@@ -207,7 +207,7 @@ However, no type in C is callable and has a reference at the same time.
 So, I addressed this issue by generating many function definitions
 statically by (ab)using macros:
 
-```c
+```<!---c-->
     void *x1; void f1(void *y) { return apply(x1, y); }
     void *x2; void f2(void *y) { return apply(x2, y); }
     void *x3; void f3(void *y) { return apply(x3, y); }

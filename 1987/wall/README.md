@@ -1,13 +1,13 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
     ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./wall
     # enter some numbers
 
@@ -18,14 +18,14 @@
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
 You may of course run the commands manually and enter text as you wish. For
 instance you might try one or both of:
 
-```sh
+```<!---sh-->
     ./wall | bc
 
     ./wall | cat

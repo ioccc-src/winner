@@ -2,7 +2,7 @@
 
 Make sure you have the SDL1 (not SDL2!) development environment installed.
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -24,7 +24,7 @@ For more detailed information see [2006 monge bugs](../../bugs.html#2006_monge).
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./monge expression ...
 ```
 
@@ -33,7 +33,7 @@ Incorrect formulas will ungracefully crash the program.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -49,7 +49,7 @@ as the number of iterations to perform.
 To use the default values, the same as [monge.c](monge.c), just do:
 
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -58,13 +58,13 @@ of the variables `W`, `H` and `I`. The defaults are (respectively) 400, 300 and
 \128. If you wish to change the image size to 500x500 but keep the iterations
 the same then do:
 
-```sh
+```<!---sh-->
     make clobber WIDTH=500 HEIGHT=500 alt
 ```
 
 If you wish to keep the dimensions the same but change the iterations to 512:
 
-```sh
+```<!---sh-->
     make clobber ITERATIONS=512 alt
 ```
 
@@ -82,7 +82,7 @@ Use `monge.alt` exactly as you would `monge` above.
 
 ### Alternate try:
 
-```sh
+```<!---sh-->
     ./try.alt.sh
 ```
 
@@ -109,13 +109,13 @@ effort to work on both `i386` and `x86_64`. Portable it is! :)
 
 0. Compile using the Makefile, or just run:
 
-```sh
+```<!---sh-->
     gcc monge.c -o monge -O3 `sdl-config --libs --cflags`
 ```
 
 1. Run:
 
-```sh
+```<!---sh-->
     ./monge "z = 0" "z = z*z + c; Abs2(z) < 4"
 ```
 
@@ -171,49 +171,49 @@ Here are a few examples of fractals you can draw:
 
 - Mandelbrot:
 
-```sh
+```<!---sh-->
     ./monge "z=1" "z=z*z+c; Abs2(z)<4"
 ```
 
 - Mandelbrot (return time variation):
 
-```sh
+```<!---sh-->
     ./monge "z=c" "z=z*z+c; Abs2(z-c)>0.0001"
 ```
 
 - Julia, for `c=0.31+i*0.5`:
 
-```sh
+```<!---sh-->
     ./monge "z=c; c=0.31+i*0.5" "z=z*z+c; Abs2(z)<4"
 ```
 
 - Julia (return time variation), `for c=0.31+i*0.5`:
 
-```sh
+```<!---sh-->
     ./monge "z=c; c=0.31+i*0.5" "z=z*z+c; Abs2(z-c)>0.0001"
 ```
 
 - Newton, for `x^3-1`:
 
-```sh
+```<!---sh-->
     ./monge "z=c" "p=z; z=0.6666*z+0.3333/(z*z); Abs2(p-z) > 0.001"
 ```
 
 - Newton-Mandelbrot:
 
-```sh
+```<!---sh-->
     ./monge "z=0" "p=z; z=z-(z*z*z + (c-1)*z - c)/(3*z*z+c-1); Abs2(p-z) > 0.001"
 ```
 
 - Phoenix, Mandelbrot version:
 
-```sh
+```<!---sh-->
     ./monge "z=0; q=0" "t=z; z=z*z+Re(c)+Im(c)*q; q=t; Abs2(z)<4"
 ```
 
 - Phoenix, Julia version for `c=0.56667-i*0.5`:
 
-```sh
+```<!---sh-->
     ./monge "z=c; c=0.56667-i*0.5; q=0" "t=z; z=z*z+Re(c)+Im(c)*q; q=t; Abs2(z)<4"
 ```
 

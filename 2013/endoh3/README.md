@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [2013 endoh3 bugs](../../bugs.html#2013_endoh3
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./endoh3
 ```
 
@@ -29,7 +29,7 @@ system up for this or if you want to verify that everything is oky.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 
     ./try.sh ABC
@@ -75,7 +75,7 @@ notation](http://en.wikipedia.org/wiki/ABC_notation).
 
 Try:
 
-```sh
+```<!---sh-->
     cc -o endoh3 endoh3.c
     echo "CDEFGABc" | ./endoh3 > /dev/dsp
 ```
@@ -83,20 +83,20 @@ Try:
 If `/dev/dsp` is not available on your system, use an OSS sound wrapper such
 as `padsp` or `aoss`:
 
-```sh
+```<!---sh-->
     echo "CDEFGABc" | ./endoh3 | padsp tee /dev/dsp > /dev/null
 ```
 
 If you are using Mac OS X, try [sox](http://sox.sourceforge.net/) like so:
 
-```sh
+```<!---sh-->
     echo "CDEFGABc" | ./endoh3 | sox -q -traw -r8000 -b8 -e unsigned-integer - -tcoreaudio
 ```
 
 If that does not work, use the attached script to convert the output into a wave
 file format:
 
-```sh
+```<!---sh-->
     echo "CDEFGABc" | ./endoh3 | ruby wavify.rb > cde.wav
 ```
 
@@ -107,7 +107,7 @@ You can also enjoy some music scores that I attached. With `/dev/dsp` you can
 do so like:
 
 
-```sh
+```<!---sh-->
     cat twinkle.abc | ./endoh3 > /dev/dsp
     cat menuet.abc | ./endoh3 > /dev/dsp
 ```
@@ -185,7 +185,7 @@ You know, it is ["the famous song"](http://en.wikipedia.org/wiki/4%E2%80%B233%E2
 
 Here is a magical expression which I found by brute-force:
 
-```c
+```<!---c-->
     (c % 32 + 5) * 9 / 5 % 13 + n / 32 * 12 - 22
 ```
 
@@ -228,7 +228,7 @@ frequency by multiplying the value by `n` times.
 
 Finally, the following code generates a saw wave:
 
-```c
+```<!---c-->
     for(c = 0; c < len; c++) putchar(a = n * D);
 ```
 

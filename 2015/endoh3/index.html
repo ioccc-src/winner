@@ -141,19 +141,19 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em></li>
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog</code></pre>
 <h2 id="try">Try:</h2>
 <p>To see the original <a href="mullender.c">mullender</a> in action:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <p>Observe what happens when you hit enter or another character! You might even try
 typing out, one character at a time, <code>1984/mullender</code>, and then see what it looks
 like at the end. Send INTR to end the program.</p>
 <p>More generally use:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> <span class="at">-o</span> prog prog.c foo.c</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">^C</span>  <span class="co"># if necessary, where ^C is ctrl-C, interrrupt</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cc -o prog prog.c foo.c
+    ./prog
+    ^C  # if necessary, where ^C is ctrl-C, interrrupt</code></pre>
 <p>to compile and run <code>prog</code> as whatever foo.c is in the joke PDP-11 emulator.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Like <a href="https://en.wikipedia.org/wiki/Marty_McFly">Marty</a> and
@@ -181,9 +181,9 @@ the source code from all angles..</li>
 <p>This program is a joke PDP-11 emulator. (“ll-dpd” is embedded in the code.
 Read it upside down.)</p>
 <p>You got it? This program is supposed to be used in this way:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">wget</span> https://www.ioccc.org/1984/mullender.c</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clang</span> <span class="at">-o</span> prog prog.c mullender.c</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    wget https://www.ioccc.org/1984/mullender.c
+    clang -o prog prog.c mullender.c
+    ./prog</code></pre>
 <p>You can enjoy the legendary winning entry of the first IOCCC, again.</p>
 <h3 id="internal">Internal</h3>
 <p>This program uses <code>__attribute__((constructor))</code>, which is a GCC extension, to

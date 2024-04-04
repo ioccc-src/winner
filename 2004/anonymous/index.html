@@ -141,9 +141,9 @@ Location: <a href="../../location.html#SG">SG</a> - <em>Republic of Singapore</e
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./anonymous</span> <span class="st">&#39;foo&#39;</span> <span class="op">&gt;</span> bar.pgm</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./anonymous &#39;foo&#39; &gt; bar.pgm</code></pre>
 <p>Now open the output using your favourite
 <a href="https://en.wikipedia.org/wiki/Netpbm#PGM_example">pgm</a> viewer. If you don’t
 have a <code>pgm</code> viewer then we suggest the <a href="https://netpbm.sourceforge.net">netpbm
@@ -151,7 +151,7 @@ toolkit</a> to convert the image to a graphics
 format that you can view. Most graphical web browsers can display PNG or JPEG
 images.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <p>NOTE: technically the text is supposed to be in all lower case but the script
 does use some upper case letters for demonstration purposes.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -220,8 +220,8 @@ in lower case.</p>
 <p>The following command thus writes a rendering of the <a href="https://www.glyphweb.com/arda/r/ringinscription.html">Ring
 inscription</a> to
 the file <code>ring.pgm</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./anonymous</span> <span class="st">&quot;ash nazg durhbatuluhk, ash nazg gimbatul, </span><span class="dt">\</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="st">        ash nazg thrakatuluhk, agh burzhumh-ishi krimpatul.&quot;</span> <span class="op">&gt;</span>ring.pgm</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./anonymous &quot;ash nazg durhbatuluhk, ash nazg gimbatul, \
+        ash nazg thrakatuluhk, agh burzhumh-ishi krimpatul.&quot; &gt;ring.pgm</code></pre>
 <p>The source code assumes the ASCII character set; also, due to space
 constraints, the program uses rather inefficient algorithms, so it may
 waste a lot of time and space even when rendering moderately long

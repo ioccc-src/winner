@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
@@ -22,7 +22,7 @@ For more detailed information see [1984 decot bugs](../../bugs.html#1984_decot).
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./decot
 ```
 
@@ -36,14 +36,14 @@ can use this version.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
 
 ### Alternate use:
 
-```sh
+```<!---sh-->
     ./decot.alt
 ```
 
@@ -61,13 +61,13 @@ the judges offer this one comment: understand remarks!
 Some new (in 1984) compilers disliked line 15 of the original source, so we
 changed it from:
 
-```c
+```<!---c-->
     for(signal=0;*k * x * __FILE__ *i;) do {
 ```
 
 to:
 
-```c
+```<!---c-->
     for(signal=0;*k *x * __FILE__ *i;) do {
 ```
 
@@ -75,7 +75,7 @@ To see what we mean look at the [original source file](decot.orig.c). The
 [alternate code](decot.alt.c) is the version that has this modification. The
 fixed version has instead:
 
-```c
+```<!---c-->
     for(signal=0;*k *= * __FILE__ *i;) do {
 ```
 

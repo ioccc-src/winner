@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [1989 robison bugs](../../bugs.html#1989_robis
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./robison
     # enter valid expressions
 ```
@@ -26,7 +26,7 @@ For more detailed information see [1989 robison bugs](../../bugs.html#1989_robis
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./robison
     11x10
     # enter other expressions

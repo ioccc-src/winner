@@ -1,20 +1,20 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./toledo [a ...]
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./toledo a
     ./toledo a b
 ```
@@ -30,7 +30,7 @@ Two alternate versions of this entry, [toledo2.c](toledo2.c) and
 
 To compile the alternate versions:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -63,7 +63,7 @@ This is a [chess](https://en.wikipedia.org/wiki/Chess) program, it can work in
 two modes: two-players, and one player (always white) against the machine. To
 get the first mode, run the program without arguments:
 
-```sh
+```<!---sh-->
     ./toledo
 ```
 
@@ -71,14 +71,14 @@ The other mode is accessible running the program with one argument
 (5-[ply](https://en.wikipedia.org/wiki/Ply_(game_theory))
 analysis):
 
-```sh
+```<!---sh-->
     ./toledo a
 ```
 
 Two arguments for 6-[ply](https://en.wikipedia.org/wiki/Ply_(game_theory))
 analysis:
 
-```sh
+```<!---sh-->
     ./toledo a b
 ```
 

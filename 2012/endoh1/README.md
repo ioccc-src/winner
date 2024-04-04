@@ -1,5 +1,5 @@
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -14,7 +14,7 @@ section below for more details.
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./endoh1 < file
 ```
 
@@ -25,7 +25,7 @@ see what this looks like not going so fast then you might wish to try the
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.bw.sh endoh1.c
     ./try.sh endoh1.c
 
@@ -50,7 +50,7 @@ the fluid and change the behaviour of the fluid. The file
 
 For the default values, try:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -59,13 +59,13 @@ one can more easily go through the list of files to see them all in succession,
 for fun. That is controlled by the variable `TIMER` at compilation.
 For instance if you wish to change the value to 5:
 
-```sh
+```<!---sh-->
     make clobber TIMER=5 alt
 ```
 
 If you want to disable the alarm time, set it to 0:
 
-```sh
+```<!---sh-->
     make clobber TIMER=0 alt
 ```
 
@@ -76,7 +76,7 @@ see and to not flash too quickly. The code protects against a value < 0 and
 defaults to 12321 but you can change it to. For instance to slow it down you
 could increase the sleep time from `12321` to `50000`:
 
-```sh
+```<!---sh-->
     make clobber SLEEP=50000 alt
 ```
 
@@ -84,7 +84,7 @@ could increase the sleep time from `12321` to `50000`:
 If you wish to speed it up you might decrease the sleep time from `12321` to
 `9999`:
 
-```sh
+```<!---sh-->
     make clobber SLEEP=9999 alt
 ```
 
@@ -97,7 +97,7 @@ viscosity factor, you should redefine the values `GRAVITY`, `PRESSURE` and/or
 `VISCOSITY` macros, respectively. For instance if you wish to change the
 viscosity and pressure factors but leave the other values alone:
 
-```sh
+```<!---sh-->
     make clobber VISCOSITY=X PRESSURE=Y alt
 ```
 
@@ -111,13 +111,13 @@ You might also wish to try redefining the macros `G`, `P` and/or `V`. For
 instance:
 
 
-```sh
+```<!---sh-->
     make clobber GRAVITY=5 PRESSURE=5 VISCOSITY=5 alt
 ```
 
 You might try even:
 
-```sh
+```<!---sh-->
     make clobber GRAVITY=I alt
 ```
 
@@ -141,7 +141,7 @@ and `endoh1_color` above.
 To see two different ways run on the source file and each of the text files,
 try:
 
-```sh
+```<!---sh-->
     ./try.alt.sh
 ```
 
@@ -149,7 +149,7 @@ The second run of each will be with the gravity factor set to `I`.
 
 To see the same thing but in the original uncoloured version, try:
 
-```sh
+```<!---sh-->
     ./try.alt.bw.sh
 ```
 
@@ -178,7 +178,7 @@ entry](https://web.archive.org/web/20230711134609/https://whatif.xkcd.com/6/).
 **DO NOT FORGET** `-DG=1 -DP=4 -DV=8` and make your terminal window larger
 than 80 x 25.
 
-```sh
+```<!---sh-->
     cc endoh1.c -DG=1 -DP=4 -DV=8 -D_BSD_SOURCE -o endoh1 -lm
     ./endoh1 < endoh1.c
     ./endoh1 < logo.txt
@@ -246,7 +246,7 @@ to build with no warning.  Under these conditions, it should be portable.
 At least, recent compilers with `-std=c99 -Wall -W -Wextra -pedantic` say
 nothing.
 
-```sh
+```<!---sh-->
     gcc -DG=1 -DP=4 -DV=8 -D_BSD_SOURCE -std=c99 -Wall -W -Wextra -pedantic endoh1.c
 
     clang -DG=1 -DP=4 -DV=8 -D_BSD_SOURCE -std=c99 -Wall -W -Wextra -pedantic endoh1.c

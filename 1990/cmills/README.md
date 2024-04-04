@@ -1,20 +1,20 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./cmills [starting_cash]
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./cmills 5000
 ```
 

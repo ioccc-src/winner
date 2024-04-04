@@ -1,26 +1,26 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./prog [-tcksri] < file.c
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
 If you get really stuck, try:
 
-```sh
+```<!---sh-->
     man ./tac.1
 ```
 
@@ -113,7 +113,7 @@ There is one (known) remaining problem with detection:
 * Comments between preprocessor hash and keyword are not replaced with whitespace;
 the following counts #include as two tokens, `#` and `include` (not as a reserved word):
 
-```c
+```<!---c-->
     #/*this will not be counted*/include/*correctly*/<stdio.h>
 ```
 
@@ -128,14 +128,14 @@ counting words correctly absent `-k`.
 
 `tac` was run over all 366 previous IOCCC winning entries:
 
-```sh
+```<!---sh-->
     find ~/src/obc -type f -name \*.c | wc
 ```
 
 The discrepancies found are documented and explained in the file
 [discrepancies.html](discrepancies.html).
 
-```sh
+```<!---sh-->
     find ~/src/obc -type f -a -name "*.c" | xargs ./spotcheck.sh ./prog | ./spotdiff.sh |
 	    grep -v keep | diff -bw - discrep* | grep "[<>] cl "
 ```
@@ -181,14 +181,14 @@ For instance, here is a simple token counter, useful in finding repeated long to
 frequency, or counting the references to identifiers, constants, or breadth of use of the
 language:
 
-```sh
+```<!---sh-->
     #!/usr/bin/env bash
     cat $* | ./prog -t | sort | uniq -c | sort -k1nr
 ```
 
 And here is a C keyword frequency counter:
 
-```sh
+```<!---sh-->
     #!/usr/bin/env bash
     function iskeyword {
        awk 'BEGIN{f="c11";while(getline<f)k[$1]=0} {if($1 in k)k[$1]++}END{for(i in k)print k[i],i}'
@@ -222,7 +222,7 @@ simple code below is a serviceable obfuscated C de-obfuscator in a _scripting
 language_.  It really is this easy with `tac`:
 
 
-```sh
+```<!---sh-->
     #!/usr/bin/env bash
     script='
     BEGIN {
@@ -342,7 +342,7 @@ which is neither complete (`#define`, `#ifndef`, `#undef` are missing
 -- yes, Virginia knows about `#define` omitted on purpose),
 nor correct (many more are added: `I`, `true`, `bool`, `compl`, ...):
 
-```sh
+```<!---sh-->
     (sed -n '1p' c11; sed -n '2,$p' ioccc.kw.freq | sort) | comm -3 - c11
 ```
 
@@ -383,7 +383,7 @@ NB: This is *not* a portability concern, the one string holds only printable ASC
 
 Thus:
 
-```sh
+```<!---sh-->
     cc -ansi -Wall -trigraphs -Wno-trigraphs -Wno-parentheses -Wno-empty-body -Wno-char-subscripts -Wno-pointer-sign -DU=O -DW=\"keywords\" -o prog prog.c
 ```
 
@@ -403,7 +403,7 @@ are not recognised when written as `-rs` in prose).
 
 Try:
 
-```sh
+```<!---sh-->
     ./manpage.sh tac
 
     ./manpage.sh -h

@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
@@ -22,7 +22,7 @@ For more detailed information see [1994 tvr bugs](../../bugs.html#1994_tvr).
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./tvr mode screensize/2 < colormapfile
 ```
 
@@ -31,7 +31,7 @@ Mode may be a value from 0 to 12.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.color.sh			# for colour displays
     ./try.bw.sh			# for Black & White displays
 ```
@@ -44,14 +44,14 @@ The author provided us a spoiler version that might be of interest to some.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
 
 ### Alternate use:
 
-```sh
+```<!---sh-->
     ./tvr.alt altmode screensize/2 < colormapfile
 ```
 
@@ -61,7 +61,7 @@ where `altmode` `1` - `4` correspond to mode `0` - `3` in the original entry and
 
 ### Alternate try:
 
-```sh
+```<!---sh-->
     ./try.alt.color.sh			# for colour displays
     ./try.alt.bw.sh			# for Black & White displays
 ```
@@ -123,7 +123,7 @@ the fourth is a variation of that with more nice effects.
 
 ### Usage:
 
-```sh
+```<!---sh-->
     ./tvr mode screensize/2 < colormapfile
 ```
 

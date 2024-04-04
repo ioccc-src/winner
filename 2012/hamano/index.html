@@ -141,11 +141,11 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em></li>
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./hamano</span> <span class="op">&lt;</span> textfile <span class="op">&gt;</span> output.pdf</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./hamano &lt; textfile &gt; output.pdf</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <p>The script will generate a number of PDF files and it will suggest you look at
 them as well. You can read <code>hint.pdf</code> with a PDF reader like <code>acroread hint.pdf</code>
 or <code>evince hint.pdf</code>. With macOS you can do <code>open hint.pdf</code> which by default
@@ -155,17 +155,17 @@ directly instead.</p>
 the PDF file will then be compiled as C (itself!) and executed so that it shows
 README.md!</p>
 <p>That procedure looks like:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./hamano</span> <span class="op">&lt;</span> README.md <span class="op">&gt;</span> hint.pdf</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> <span class="at">-xc</span> hint.pdf <span class="at">-o</span> hint</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./hint</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./hamano &lt; README.md &gt; hint.pdf
+    cc -xc hint.pdf -o hint
+    ./hint</code></pre>
 <p>Another PDF generated is an obfuscated <code>Hello World!</code> program (obfuscated inside
 the PDF). Once this is done it will compile the PDF as if it was C (itself!). It
 will look like:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&#39;int main(){puts(&quot;Hello World!&quot;);}&#39;</span> <span class="kw">|</span> <span class="ex">./hamano</span> <span class="op">&gt;</span> hello.pdf</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> <span class="at">-xc</span> hello.pdf <span class="at">-o</span> hello</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./hello</span> <span class="kw">|</span> <span class="fu">cc</span> <span class="at">-Wno-implicit-function-declaration</span> <span class="at">-xc</span> <span class="at">-</span> <span class="at">-o</span> ./hello2</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./hello2</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    echo &#39;int main(){puts(&quot;Hello World!&quot;);}&#39; | ./hamano &gt; hello.pdf
+    cc -xc hello.pdf -o hello
+    ./hello | cc -Wno-implicit-function-declaration -xc - -o ./hello2
+
+    ./hello2</code></pre>
 <p>although the <code>CFLAGS</code> will be what is in the Makefile as it uses the helper
 rules <code>hint.pdf</code>, <code>hint</code>, <code>hello.pdf</code> and <code>hello</code> to do this.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>

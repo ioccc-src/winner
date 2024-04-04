@@ -141,7 +141,7 @@ Location: <a href="../../location.html#IT">IT</a> - <em>Italian Republic</em> (<
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>There is a 121 byte version provided by the author. See <a href="#alternate-code">Alternate
 code</a> below.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
@@ -149,16 +149,16 @@ code</a> below.</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2014_maffiodo2">2014 maffiodo2 bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> arg</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog arg</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This shorter version is provided by the author. It has a fixed ramp and so not
 as fun but it’s 121 bytes instead of 140.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span> image.rgb <span class="kw">|</span> <span class="ex">./prog.alt</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cat image.rgb | ./prog.alt</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>On the face of it :-) given what this program does one might wonder what makes
 this winning entry special. But when you realize the source is small enough for posting
@@ -185,24 +185,24 @@ from <code>stdin</code> and print the ASCII ART to <code>stdout</code>.</p>
 <h3 id="screen-size">Screen size</h3>
 <p>If you have a terminal geometry than is different from the common 80x25 you can
 modify the <em>output width</em> by changing the value of the first variable:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    d<span class="op">=</span><span class="dv">80</span><span class="op">,</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    d=80,</code></pre>
 <h3 id="something-to-try">Something to try</h3>
 <p>Type this:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span> image.rgb <span class="kw">|</span> <span class="ex">./prog</span> <span class="st">&quot;  .:;Y0&quot;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cat image.rgb | ./prog &quot;  .:;Y0&quot;</code></pre>
 <p>You can use your own image. Convert the image to a raw RGB image. Using
 ImageMagick it’s very simple:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">convert</span> <span class="at">-geometry</span> 80x source.jpg image.rgb</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    convert -geometry 80x source.jpg image.rgb</code></pre>
 <p>This program require one parameter or it will crash. The parameter of the
 program is the <em>conversion ramp</em>. You can use different ramps or create your own
 (for example using some letters of your name).</p>
 <p>These are some ramps you can try:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> <span class="st">&quot; :1&quot;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> <span class="st">&quot;  .:;Y0&quot;</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> <span class="st">&quot; .:-=+*#%@&quot;</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> <span class="st">&quot;   .,:!-iots&amp;8%#@$&quot;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog &quot; :1&quot;
+    ./prog &quot;  .:;Y0&quot;
+    ./prog &quot; .:-=+*#%@&quot;
+    ./prog &quot;   .,:!-iots&amp;8%#@$&quot;</code></pre>
 <h3 id="byte-version">121 byte version</h3>
 <p>An alternative version of this program is only 121bytes long:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    d<span class="op">=</span><span class="dv">80</span><span class="op">,</span>e<span class="op">,</span>j<span class="op">;</span>g<span class="op">(){</span>j<span class="op">+=</span>getchar<span class="op">();}</span>main<span class="op">(){</span><span class="cf">for</span><span class="op">(;;){</span>j<span class="op">=</span><span class="dv">0</span><span class="op">;</span>g<span class="op">();</span><span class="cf">if</span><span class="op">(</span>j<span class="op">&lt;</span><span class="dv">0</span><span class="op">)</span><span class="cf">break</span><span class="op">;</span>g<span class="op">(</span>g<span class="op">());</span>putchar<span class="op">(</span><span class="st">&quot; .:#@&quot;</span><span class="op">[</span>j<span class="op">/</span><span class="dv">3</span><span class="op">*</span><span class="dv">5</span><span class="op">&gt;&gt;</span><span class="dv">8</span><span class="op">]);</span><span class="cf">if</span><span class="op">(!(++</span>e<span class="op">%</span>d<span class="op">))</span>puts<span class="op">(</span><span class="st">&quot;&quot;</span><span class="op">);}}</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    d=80,e,j;g(){j+=getchar();}main(){for(;;){j=0;g();if(j&lt;0)break;g(g());putchar(&quot; .:#@&quot;[j/3*5&gt;&gt;8]);if(!(++e%d))puts(&quot;&quot;);}}</code></pre>
 <p>This alternative version has a <strong>fixed ramp</strong>. It’s smaller but it’s not so fun to use…</p>
 <!--
 

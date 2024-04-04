@@ -42,7 +42,7 @@ That means bits 6 and 5 set to 00 is length 1, set to 01 is length 2, etc.
 But this would mean that we would have to extract the length into a
 counter before shifting out each symbol, such as
 
-```c
+```<!---c-->
     length = (encoding & 96) >> 5;
     do {
 	    putchar(encoding & 1 ? '-' : '.');
@@ -62,7 +62,7 @@ We can also use the remaining bits to *include* the counter
 
 with 1 bit still to be chosen freely (let's assume it is 0).  Now we can do
 
-```c
+```<!---c-->
     do {
 	    putchar(encoding & 1 ? '-' : '.');
 	    encoding >>= 1;
@@ -87,7 +87,7 @@ Notice these encodings in the initialization string.  Only the coding for
 `5` needs an escape (`5 = ..... > 01111111 = '\177'`).  The way the length
 is encoded still allows the encoding to be its own counter:
 
-```c
+```<!---c-->
     do {
 	    putchar(encoding & 1 ? '-' : '.');
 	    encoding = (encoding + 32) >> 1;
@@ -101,7 +101,7 @@ precision, so that the actual value of the `char` remains `<= 127`.
 The character `'-'` (ASCII 45) and `'.'` (ASCII 46) are conveniently in
 sequence, so the putchar can simply be
 
-```c
+```<!---c-->
     putchar(45 + encoding % 2);
 ```
 
@@ -110,7 +110,7 @@ The assignment can be incorporated into the `while` control test, and a
 `do-while` loop with a body of a single expression statement can be written
 as a `while` loop with a comma operator in the test:
 
-```c
+```<!---c-->
     while(putchar(45 + encoding % 2), encoding = encoding + 32 >> 1);
 ```
 

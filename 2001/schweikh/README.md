@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [2001 schweikh bugs](../../bugs.html#2001_schw
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./schweikh string string2
 ```
 
@@ -40,7 +40,7 @@ This is supposed to happen.  As is written in the
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -64,7 +64,7 @@ pattern if you are looking for something in the middle.
 You can use it for your shell scripting needs similar to a silent grep
 (and without `stdout` redirected to `/dev/null`):
 
-```sh
+```<!---sh-->
     if prog "${VARIABLE}" '<glob>'; then
 	echo VARIABLE matches
     else

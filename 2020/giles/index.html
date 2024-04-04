@@ -141,26 +141,26 @@ Location: <a href="../../location.html#AU">AU</a> - <em>Commonwealth of Australi
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2020_giles">2020 giles bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> <span class="op">&lt;</span> dtmf.wav</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> <span class="pp">[</span><span class="ss">digits</span><span class="pp">]</span> <span class="op">&gt;</span> digits.wav</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; dtmf.wav
+
+    ./prog [digits] &gt; digits.wav</code></pre>
 <p>where <code>dtmf.wav</code> is a WAV file of the dialling of a number being dialled with
 <a href="https://en.wikipedia.org/wiki/Dual-tone_multi-frequency_signaling">DTMF (Dual-tone multi
 frequency)</a>
 (more commonly known as Touch-Tone) and <code>[digits]</code> is a sequence of digits that
 will be converted to the DTMF sound!</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> <span class="op">&lt;</span> pi.wav</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># See</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> 867-5309 <span class="op">&gt;</span> jenny.wav</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh
+    ./prog &lt; pi.wav
+
+    # See
+    ./prog 867-5309 &gt; jenny.wav</code></pre>
 <p>If the script <a href="try.sh">try.sh</a> did not play a WAV file, it means you do not have
 SoX installed; see <a href="../../faq.html#sox">FAQ 3.10: How do I compile and use an IOCCC entry that
 requires sound?</a>). In this case install it and try it again or
@@ -180,12 +180,12 @@ standard input, decode the touch-tones in the file, and output the corresponding
 digits to standard output. This program only supports WAV files that have
 exactly 16 bits per sample, but it allows any sample rate and any number of
 audio channels.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./prog <span class="op">&lt;</span> pi.wav</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">31415926</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ ./prog &lt; pi.wav
+    31415926</code></pre>
 <p>If the program is executed with a command-line argument, it will generate the
 tones corresponding to the specified characters, writing them to standard output
 as a WAV file.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./prog 867-5309 <span class="kw">|</span> <span class="fu">aplay</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ ./prog 867-5309 | aplay</code></pre>
 <h3 id="interesting-features">Interesting Features</h3>
 <ul>
 <li>When compiled with <code>gcc -pedantic -Wall -Wextra</code> there are no compiler

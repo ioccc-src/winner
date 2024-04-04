@@ -141,13 +141,13 @@ Location: <a href="../../location.html#FR">FR</a> - <em>French Republic</em> (<e
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>There is an alternate version of this entry, discussed in the author’s remarks.
 See <a href="#alternate-code">Alternate code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> Some text <span class="kw">|</span> <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    echo Some text | ./prog</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <p>As the script says if you want to move to the next command at any point
 (lorem-ipsum.txt takes a while to print in particular) you may do so by hitting
 ctrl-c/sending intr.</p>
@@ -155,7 +155,7 @@ ctrl-c/sending intr.</p>
 <p>This alternate code, provided by the author, is discussed in more detail by the
 author in the ‘<a href="prog.c">prog.c</a> vs <a href="prog.alt.c">prog.alt.c</a>’ section of their remarks.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>prog.alt</code> as you would <code>prog</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -181,9 +181,9 @@ with other compilers or optimization levels). These have been fixed in
 been shortened in this file.</p>
 <h3 id="how-to-build">How to build</h3>
 <p>If you have <code>clang</code>:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">CC</span><span class="op">=</span>clang <span class="fu">make</span> <span class="at">-e</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    CC=clang make -e</code></pre>
 <p>Otherwise (gcc):</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>(You will get a few warnings in this case.)</p>
 <h3 id="how-to-use-it">How to use it</h3>
 <p>You need a terminal configured to handle a <em>UTF-8</em> encoding and a font including
@@ -196,16 +196,16 @@ configuration was needed.</p>
 <p>I also tested it on FreeBSD 9.3 32bits (font and encoding configuration was
 needed in this case).</p>
 <h4 id="basic-mode">Basic mode:</h4>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo <span class="st">&#39;I am testing this thing.&#39;</span> <span class="kw">|</span> <span class="ex">./prog</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">[...</span> rendering ...]</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./prog <span class="op">&lt;</span> lorem-ipsum.txt</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">[...</span> rendering ...]</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo &#39;I am testing this thing.&#39; | ./prog
+    [... rendering ...]
+
+    $ ./prog &lt; lorem-ipsum.txt
+    [... rendering ...]</code></pre>
 <h4 id="interactive-mode">Interactive mode:</h4>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./prog</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">&gt;</span> hello <span class="ex">world!!!</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">[...</span> rendering ...]</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">&gt;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ ./prog
+    &gt; hello world!!!
+    [... rendering ...]
+    &gt;</code></pre>
 <h3 id="obfuscation">Obfuscation:</h3>
 <p>This entry is obfuscated in various ways:</p>
 <ul>
@@ -255,13 +255,13 @@ could still happen in case of long words.</p>
 <p>Given the limited set of characters handled, the program is mostly limited to
 simple text documents.</p>
 <p>Thus, if you try for example:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./prog <span class="op">&lt;</span> prog.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ ./prog &lt; prog.c</code></pre>
 <p>You will not get something that looks like C code. (but you can still try, if
 you are curious. :)</p>
 <h4 id="a-draft-mode">A ‘draft’ mode</h4>
 <p>Defining an environment variable called <code>DRAFT</code> will enable the ‘draft-mode’.
 Try for example:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo <span class="st">&#39;testing the draft mode&#39;</span> <span class="kw">|</span> <span class="va">DRAFT</span><span class="op">=</span>1 <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo &#39;testing the draft mode&#39; | DRAFT=1 ./prog</code></pre>
 <p>The program will run much faster but the rendering will be less precise.</p>
 <h4 id="the-subtle-interactive-mode">The subtle interactive mode</h4>
 <p>I saved the best for last: usually, programs that handle an “interactive mode”

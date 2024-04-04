@@ -141,15 +141,15 @@ Location: <a href="../../location.html#IL">IL</a> - <em>State of Israel</em> (<e
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: uses gets() - change to fgets() if possible</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2019_dogon">2019 dogon bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> <span class="op">&lt;</span> pattern.mc</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; pattern.mc</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <p>Make sure that you keep focus of windows in mind when going back and forth to
 the program and the script.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -321,11 +321,7 @@ master, who reviewed some earlier versions of the entry and freely shared some
 of his vast knowledge regarding GOL programming and hashlife. As a free bonus,
 Tom has allowed me to show his code which is probably the most efficient yet
 most obfuscated way of calculating the GOL function on a 64 bits <code>8*8</code> leaf:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="dt">unsigned</span> <span class="dt">long</span> life8x8<span class="op">(</span><span class="dt">long</span> a<span class="op">)</span> <span class="op">{</span> <span class="dt">unsigned</span> <span class="dt">long</span> aw <span class="op">=</span> a <span class="op">&lt;&lt;</span> <span class="dv">1</span><span class="op">,</span> ae <span class="op">=</span> a <span class="op">&gt;&gt;</span> <span class="dv">1</span><span class="op">,</span> s0 <span class="op">=</span> aw</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">^</span> ae<span class="op">,</span> s1 <span class="op">=</span> aw <span class="op">&amp;</span> ae<span class="op">,</span> hs0 <span class="op">=</span> s0 <span class="op">^</span> a<span class="op">,</span> hs1 <span class="op">=</span> <span class="op">(</span>s0 <span class="op">&amp;</span> a<span class="op">)</span> <span class="op">|</span> s1<span class="op">,</span> hs0w8 <span class="op">=</span> hs0 <span class="op">&gt;&gt;</span> <span class="dv">8</span><span class="op">,</span> hs0e8 <span class="op">=</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    hs0 <span class="op">&lt;&lt;</span> <span class="dv">8</span><span class="op">,</span> hs1w8 <span class="op">=</span> hs1 <span class="op">&gt;&gt;</span> <span class="dv">8</span><span class="op">,</span> hs1e8 <span class="op">=</span> hs1 <span class="op">&lt;&lt;</span> <span class="dv">8</span><span class="op">,</span> ts0 <span class="op">=</span> hs0w8 <span class="op">^</span> hs0e8<span class="op">,</span> ts1 <span class="op">=</span> <span class="op">(</span>hs0w8</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">&amp;</span> hs0e8<span class="op">)</span> <span class="op">|</span> <span class="op">(</span>ts0 <span class="op">&amp;</span> s0<span class="op">);</span> <span class="cf">return</span> <span class="op">(</span>hs1w8 <span class="op">^</span> hs1e8 <span class="op">^</span> ts1 <span class="op">^</span> s1<span class="op">)</span> <span class="op">&amp;</span> <span class="op">((</span>hs1w8 <span class="op">|</span> hs1e8<span class="op">)</span> <span class="op">^</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">(</span>ts1 <span class="op">|</span> s1<span class="op">))</span> <span class="op">&amp;</span> <span class="op">((</span>ts0 <span class="op">^</span> s0<span class="op">)</span> <span class="op">|</span> a<span class="op">);</span> <span class="op">}</span></span></code></pre></div>
+<p><code>&lt;!---`c--&gt;     unsigned long life8x8(long a) { unsigned long aw = a &lt;&lt; 1, ae = a &gt;&gt; 1, s0 = aw     ^ ae, s1 = aw &amp; ae, hs0 = s0 ^ a, hs1 = (s0 &amp; a) | s1, hs0w8 = hs0 &gt;&gt; 8, hs0e8 =     hs0 &lt;&lt; 8, hs1w8 = hs1 &gt;&gt; 8, hs1e8 = hs1 &lt;&lt; 8, ts0 = hs0w8 ^ hs0e8, ts1 = (hs0w8     &amp; hs0e8) | (ts0 &amp; s0); return (hs1w8 ^ hs1e8 ^ ts1 ^ s1) &amp; ((hs1w8 | hs1e8) ^     (ts1 | s1)) &amp; ((ts0 ^ s0) | a); }</code><!---`--></p>
 <p>This uses only 19 bitwise operations and six shifts to calculate the inner 6x6
 next generation bits of the input 8x8 !</p>
 <!--

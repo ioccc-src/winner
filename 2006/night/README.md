@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -10,7 +10,7 @@ code](#alternate-code) section below.
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./night
 ```
 
@@ -23,7 +23,7 @@ keys.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -129,7 +129,7 @@ to deobfuscate.
 Keypad support was removed to save space. To restore, modify the
 following two macros to:
 
-```c
+```<!---c-->
     #define ATG srand(time(0)); initscr(); cbreak(); noecho(); start_color(); keypad(stdscr,1);
     #define AGG A&2?KEY_UP:KEY_DOWN:A&1?KEY_RIGHT:KEY_LEFT
 ```

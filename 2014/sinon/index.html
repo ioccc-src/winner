@@ -141,13 +141,13 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./hecate.sh</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./glock.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./hecate.sh
+
+    ./glock.sh</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <p>This script will ask you if you wish to try again after each run. Type in any
 character other than <code>y</code> or <code>Y</code> to exit at this point.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -160,10 +160,10 @@ or unspecified behavior?</p>
 under one minute.</p>
 <p>To start, compile and run the program. To resume, compile and run the
 output repeatedly until you have won/lost the game. For example:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cp</span> prog.c run.c</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gcc</span> <span class="at">-O0</span> run.c <span class="at">-o</span> run <span class="kw">&amp;&amp;</span> <span class="ex">./run</span> <span class="kw">|</span> <span class="fu">tee</span> run.c</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gcc</span> <span class="at">-O2</span> run.c <span class="at">-o</span> run <span class="kw">&amp;&amp;</span> <span class="ex">./run</span> <span class="kw">|</span> <span class="fu">tee</span> run.c</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">...</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cp prog.c run.c
+    gcc -O0 run.c -o run &amp;&amp; ./run | tee run.c
+    gcc -O2 run.c -o run &amp;&amp; ./run | tee run.c
+    ...</code></pre>
 <h3 id="details">Details</h3>
 <p><code>Sinon</code> is played by compiling and running the output repeatedly. Two
 factors determine what actions are taken:</p>
@@ -211,7 +211,7 @@ a primary input.</p>
 <p><code>Sinon</code> has a demo mode that plays the game automatically. Make sure
 that there are no files named “run” and “run.c” in current directory
 (they will be overwritten) and run:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">perl</span> prog.c <span class="kw">|</span> <span class="fu">bash</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    perl prog.c | bash</code></pre>
 <p>File size and CRC32 of <a href="prog.c">prog.c</a> are embedded in line 7.</p>
 <p>Process for making <code>Sinon</code> is included in <a href="spoiler.html">spoiler.html</a>.</p>
 <p>Layout of this code is based on Asada Shino, also known as “<code>Sinon</code>”,

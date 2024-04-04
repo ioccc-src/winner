@@ -4,7 +4,7 @@ We recommend that you try the alternate version first so you can see what this
 entry looked like back in 1995 (with a configurable speed).  See the [original
 code](#original-code) section below for the original entry.
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -28,14 +28,14 @@ For more detailed information see [1995 cdua bugs](../../bugs.html#1995_cdua).
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./cdua.alt
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     make SLEEP=1500 clobber alt
 
     ./cdua.alt # press enter and watch it go much faster!
@@ -43,7 +43,7 @@ For more detailed information see [1995 cdua bugs](../../bugs.html#1995_cdua).
 
 You might also like to try:
 
-```sh
+```<!---sh-->
     make SLEEP=65000 clobber alt
 
     ./cdua.alt # press enter and watch it go much slower!
@@ -66,14 +66,14 @@ fast your computer is :-) or use both to see the difference, you can do so.
 
 ### Original build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
 
 ### Original use:
 
-```sh
+```<!---sh-->
     ./cdua
 ```
 

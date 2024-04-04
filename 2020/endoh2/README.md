@@ -1,26 +1,26 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./prog
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
 What happens if you do
 
-```sh
+```<!---sh-->
     ./prog prog.c
 ```
 
@@ -41,7 +41,7 @@ render for a larger terminal window?  How about adding more glyphs?
 
 No!  Try not.  Do, or do not.  There is no try.
 
-```sh
+```<!---sh-->
     cc -std=c99 prog.c
     ./a.out
     ./a.out hello.txt

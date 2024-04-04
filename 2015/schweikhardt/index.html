@@ -141,25 +141,25 @@ Location: <a href="../../location.html#DE">DE</a> - <em>Federal Republic of Germ
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2015_schweikhardt">2015 schweikhardt bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> n</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog n</code></pre>
 <p>where n is a base 16 number of any size.</p>
 <p>NOTE: although it’s supposed to be a base 16 number nothing will stop you from
 doing something else. The author explains this in more details.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <p>After running it once to see what commands are run, you might wish to run it a
 second time and just hold down space to see a fun scroll of numbers especially
 where zeroes move to the right.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This code is clean. When you compile with all warnings enabled,
 such as with clang:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> <span class="at">-Weverything</span> <span class="at">-pedantic</span> <span class="at">-std</span><span class="op">=</span>c11 <span class="at">-Dtyp</span><span class="op">=</span>uint64<span class="dt">\_</span>t <span class="at">-O3</span> prog.c <span class="at">-o</span> prog</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cc -Weverything -pedantic -std=c11 -Dtyp=uint64\_t -O3 prog.c -o prog</code></pre>
 <p>The code compiles without warnings on the systems that we tested!</p>
 <p>Even more, the code was 100% clean when we ran it against various
 static source checkers.</p>
@@ -177,15 +177,15 @@ would be a good warm-up exercise for someone to get ready to begin to work on
 the <a href="https://en.wikipedia.org/wiki/Collatz_conjecture">Collatz conjecture</a>.</p>
 </blockquote>
 <p>You may explore this famous conjecture using this entry:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> 2410</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> abfff</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> 27f8cebf</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> 246f8fddf</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> 2e95ab51ffea9de</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> e6a5c22fd7bde9f</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> 1b7dd73a937485bf</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> 7d3237680d190a77e53751b</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> 302ab3d052fb87c06228d249581be0e4</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog 2410
+    ./prog abfff
+    ./prog 27f8cebf
+    ./prog 246f8fddf
+    ./prog 2e95ab51ffea9de
+    ./prog e6a5c22fd7bde9f
+    ./prog 1b7dd73a937485bf
+    ./prog 7d3237680d190a77e53751b
+    ./prog 302ab3d052fb87c06228d249581be0e4</code></pre>
 <p>NOTE: <a href="try.sh">try.sh</a> runs these for you, filtered through <code>less(1)</code>.</p>
 <p>When you first look at the source, the code looks fairly straightforward.
 But look again. Like the Collatz conjecture, simplicity is deceptive!
@@ -238,33 +238,33 @@ and stops at <code>1</code>. The number <code>n</code> is specified in hexadecim
 prefix) as the first argument. The program prints the given number in
 zero-padded hex and each iteration along with a line count in decimal.
 The example above looks like this (compiled with 64 bit word size):</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./prog 6</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">0000000000000006</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">0000000000000003</span> 1</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">000000000000000A</span> 2</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">0000000000000005</span> 3</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">0000000000000010</span> 4</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">0000000000000008</span> 5</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">0000000000000004</span> 6</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">0000000000000002</span> 7</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">0000000000000001</span> 8</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ ./prog 6
+    0000000000000006
+    0000000000000003 1
+    000000000000000A 2
+    0000000000000005 3
+    0000000000000010 4
+    0000000000000008 5
+    0000000000000004 6
+    0000000000000002 7
+    0000000000000001 8</code></pre>
 <p>The size of <code>n</code> is only limited by the argument size limit of your
 shell/OS (the program implements arbitrary size <code>bignum</code>s).
 To query this on your POSIX system, run</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> getconf ARG_MAX</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">262144</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ getconf ARG_MAX
+    262144</code></pre>
 <p>which reports the limit in bytes, here 256KB. This allows to test
 whether a <a href="https://en.wikipedia.org/wiki/Googol">Googol</a>, which is
 10<sup>100</sup>, satisfies the conjecture. But what is a googol in hex?
 Fear not,
 <a href="http://pubs.opengroup.org/onlinepubs/9699919799/utilities/bc.html">bc(1)</a>
 to the rescue:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> printf <span class="st">&#39;obase=16;10^100\n&#39;</span> <span class="kw">|</span> <span class="fu">bc</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">1249AD2594C37CEB0B2784C4CE0BF38ACE408E211A7CAAB24308A82E8F1000000000</span><span class="dt">\</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    0000000000000000</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./prog 1249AD2594C37CEB0B2784C4CE0BF38ACE408E211A7CAAB24308A82E8F10000000000000000000000000 <span class="dt">\</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">|</span> <span class="fu">less</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">[...]</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ printf &#39;obase=16;10^100\n&#39; | bc
+    1249AD2594C37CEB0B2784C4CE0BF38ACE408E211A7CAAB24308A82E8F1000000000\
+    0000000000000000
+    $ ./prog 1249AD2594C37CEB0B2784C4CE0BF38ACE408E211A7CAAB24308A82E8F10000000000000000000000000 \
+    | less
+    [...]</code></pre>
 <p>Observe how the first 100 iterations melt the zeros to the right. Can you explain
 why?</p>
 <p>For a given <code>n</code> the program behavior is one of the following 3:</p>
@@ -373,24 +373,24 @@ hard, I could use <code>__LINE__</code> and <code>stdio.h</code> macros <code>EO
 <h3 id="run-it-through-a-c-beautifier">Run it through a C beautifier</h3>
 <p>Another identity operation. I’ve done it for you already. Use this
 <code>.indent.pro</code> with FreeBSD indent:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> cat .indent.pro</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>        <span class="ex">-bad</span>   /<span class="pp">*</span> blank line after decls <span class="pp">*</span>/</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>        <span class="ex">-bap</span>   /<span class="pp">*</span> blank line after functions <span class="pp">*</span>/</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>        <span class="ex">-br</span>    /<span class="pp">*</span> braces on if line <span class="pp">*</span>/</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>        <span class="ex">-i8</span>    /<span class="pp">*</span> indent <span class="pp">*</span>/</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>        <span class="ex">-l999</span>  /<span class="pp">*</span> line length <span class="pp">*</span>/</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>        <span class="ex">-npcs</span>  /<span class="pp">*</span> no space after function call names <span class="pp">*</span>/</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>        <span class="ex">-npsl</span>  /<span class="pp">*</span> don<span class="st">&#39;t break procedure type */</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="st">        -ut    /* use tabs */</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="st">        -ce    /* cuddle else */</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="st">        -nip   /* no parameter indentation */</span></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="st">        -di1   /* declaration indent */</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="st">        -Tand</span></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="st">        -Tmet</span></span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="st">        -Tthr</span></span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="st">        -Tpro</span></span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="st">        -Tser</span></span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="st">        -Tala</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ cat .indent.pro
+        -bad   /* blank line after decls */
+        -bap   /* blank line after functions */
+        -br    /* braces on if line */
+        -i8    /* indent */
+        -l999  /* line length */
+        -npcs  /* no space after function call names */
+        -npsl  /* don&#39;t break procedure type */
+        -ut    /* use tabs */
+        -ce    /* cuddle else */
+        -nip   /* no parameter indentation */
+        -di1   /* declaration indent */
+        -Tand
+        -Tmet
+        -Tthr
+        -Tpro
+        -Tser
+        -Tala</code></pre>
 <p>It looks like a perfect program should have:</p>
 <ul>
 <li>two and a half <code>#include</code>s of non-suspicious standard headers</li>
@@ -415,27 +415,27 @@ to be.</p>
 <h3 id="examine-the-algorithm">Examine the algorithm</h3>
 <p>Spoilers ahead. Duh!</p>
 <p>Pseudocode, with comments matching those in the C source:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* run */</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>non<span class="op">-</span>NULL and nonempty argv<span class="op">[</span><span class="dv">1</span><span class="op">])</span> <span class="op">{</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>       n <span class="op">=</span> convert<span class="op">(</span>argv<span class="op">[</span><span class="dv">1</span><span class="op">])</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>       print n                       <span class="co">/* 2hx */</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>       <span class="cf">while</span> <span class="op">(</span>n <span class="op">!=</span> <span class="dv">1</span><span class="op">)</span> <span class="op">{</span>              <span class="co">/* one */</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>          <span class="cf">if</span> <span class="op">(</span>n is odd<span class="op">)</span> <span class="op">{</span>            <span class="co">/* odd */</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>             m <span class="op">=</span> deep copy of n      <span class="co">/* cpy */</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>             n <span class="op">&lt;&lt;=</span> <span class="dv">1</span>                 <span class="co">/* shl */</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>             n <span class="op">+=</span> m                  <span class="co">/* add */</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>             increment n             <span class="co">/* inc */</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>          <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span>                   <span class="co">/* eve */</span></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>             n <span class="op">&gt;&gt;=</span> <span class="dv">1</span>                 <span class="co">/* shr */</span></span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>          <span class="op">}</span></span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>          print n                    <span class="co">/* 2hx */</span></span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span></span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    /* run */
+    if (non-NULL and nonempty argv[1]) {
+       n = convert(argv[1])
+       print n                       /* 2hx */
+       while (n != 1) {              /* one */
+          if (n is odd) {            /* odd */
+             m = deep copy of n      /* cpy */
+             n &lt;&lt;= 1                 /* shl */
+             n += m                  /* add */
+             increment n             /* inc */
+          } else {                   /* eve */
+             n &gt;&gt;= 1                 /* shr */
+          }
+          print n                    /* 2hx */
+      }
+    }</code></pre>
 <p><code>Bignum</code>s are represented as the two member <code>struct</code>s:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typedef</span> <span class="kw">struct</span> <span class="op">{</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>         <span class="dt">size_t</span> places<span class="op">;</span>   <span class="co">/* number of places in base 2 to the power of (8*sizeof(type)) */</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>         type  <span class="op">*</span>number<span class="op">;</span>   <span class="co">/* dynamically allocated memory for number */</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> bignum</span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    typedef struct {
+         size_t places;   /* number of places in base 2 to the power of (8*sizeof(type)) */
+         type  *number;   /* dynamically allocated memory for number */
+    } bignum</code></pre>
 <h3 id="compile-it-with-flags-to-enable-all-warnings">Compile it (with flags to enable all warnings)</h3>
 <p>Here’s where the program shines brighter than a <a href="https://en.wikipedia.org/wiki/Gamma-ray_burst">gamma-ray
 burst</a>!</p>
@@ -452,9 +452,9 @@ expected.</p>
 <p>This means however, that the program accepts <strong>any string</strong>, turns it
 into a starting number (which is output as the first line), and starts
 crunching. Nothing stops you from executing</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> <span class="st">&quot;</span><span class="va">$(</span><span class="fu">cat</span> prog.c<span class="va">)</span><span class="st">&quot;</span>            <span class="co"># Kind of quine?</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> <span class="st">&quot;</span><span class="va">$(</span><span class="fu">cat</span> rules guidelines<span class="va">)</span><span class="st">&quot;</span>  <span class="co"># A jackpot? Maybe next year...</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> <span class="st">&quot;</span><span class="va">$(</span><span class="fu">cat</span> /bin/ls<span class="va">)</span><span class="st">&quot;</span>           <span class="co"># Number cut short at first NUL byte.</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog &quot;$(cat prog.c)&quot;            # Kind of quine?
+    ./prog &quot;$(cat rules guidelines)&quot;  # A jackpot? Maybe next year...
+    ./prog &quot;$(cat /bin/ls)&quot;           # Number cut short at first NUL byte.</code></pre>
 <p>In a certain way, the program is character set and encoding agnostic.</p>
 <h3 id="assumptions-made">Assumptions made</h3>
 <ul>
@@ -475,20 +475,20 @@ use <code>8 * sizeof(typ)</code> bits per place. It does not work when <code>CHA
 <p>The open source static checker <a href="http://cppcheck.sourceforge.net/">cppcheck</a>
 checks various problems with respect to style, performance, portability
 and general fishiness. To enable all checks, run</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">cppcheck</span> <span class="at">--enable</span><span class="op">=</span>all <span class="at">--force</span> <span class="at">-I</span>/usr/include <span class="at">-Dtyp</span><span class="op">=</span>uint32_t prog.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cppcheck --enable=all --force -I/usr/include -Dtyp=uint32_t prog.c</code></pre>
 <p>No issues found.</p>
 <h3 id="flawfinder">flawfinder</h3>
 <p>The open source static checker <a href="http://www.dwheeler.com/flawfinder/">flawfinder</a>
 checks various problems with respect to security like buffer overflows,
 function arguments to known troublemaker functions and more. It doesn’t need to
 pre-process code, so can be run without the <code>typ</code> macro being defined:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> flawfinder prog.c</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Flawfinder</span> version 1.31, <span class="er">(</span><span class="ex">C</span><span class="kw">)</span> <span class="ex">2001-2014</span> David A. Wheeler.</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Number</span> of rules <span class="er">(</span><span class="ex">primarily</span> dangerous function names<span class="kw">)</span> <span class="er">in</span> <span class="ex">C/C++</span> ruleset: 169</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Examining</span> prog.c</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">FINAL</span> RESULTS:</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ANALYSIS</span> SUMMARY:</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">No</span> hits found.</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ flawfinder prog.c
+    Flawfinder version 1.31, (C) 2001-2014 David A. Wheeler.
+    Number of rules (primarily dangerous function names) in C/C++ ruleset: 169
+    Examining prog.c
+    FINAL RESULTS:
+    ANALYSIS SUMMARY:
+    No hits found.</code></pre>
 <h4 id="valgrind">valgrind</h4>
 <p>The open source dynamic checker <a href="http://valgrind.org/">valgrind</a> runs an
 executable and verifies all memory accesses and (de)allocations for proper
@@ -572,18 +572,18 @@ demonstrator</a> you can
 use for checking your C programs and I highly recommend trying it. For a start,
 paste the well know first program in the form and press “Analyze Code”. Note
 the FlexeLint configuration options in comments (no space between <code>/*</code> and <code>lint</code>).</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">/*lint -w4            turn on everything */</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">/*lint +esym(534,*)   no demonstrator defaults */</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">/*lint -e966          indirectly included header file not used */</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">/*lint -esym(9058,_*) tag not used outside typedef */</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">/*lint -misra(2)      */</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">)</span></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">&quot;hello, world</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    /*lint -w4            turn on everything */
+    /*lint +esym(534,*)   no demonstrator defaults */
+    /*lint -e966          indirectly included header file not used */
+    /*lint -esym(9058,_*) tag not used outside typedef */
+    /*lint -misra(2)      */
+
+    #include &lt;stdio.h&gt;
+    int main(void)
+    {
+        printf(&quot;hello, world\n&quot;);
+        return 0;
+    }</code></pre>
 <p>Possible checks include those for MISRA 2004 compliance verification.
 The <a href="https://en.wikipedia.org/wiki/Motor_Industry_Software_Reliability_Association">Motor Industry Software Reliability
 Association</a>
@@ -675,7 +675,7 @@ use of character values.” This forbids using character constants in
 expressions other than assignments to <code>char</code> objects. A consequence is
 that printing digits with <code>'0' + digit</code> is not allowed (even though
 <code>'0'</code> is technically an <code>int</code>!) so I am forced to output hex digits with</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;</span><span class="sc">%c</span><span class="st">&quot;</span><span class="op">,</span> <span class="op">(</span>met<span class="op">)</span>tyr <span class="op">+</span> <span class="dv">32</span> <span class="op">+</span> <span class="dv">16</span> <span class="op">+</span> <span class="op">((</span><span class="dv">8</span> <span class="op">+</span> EOF<span class="op">)</span> <span class="op">*</span> <span class="op">((</span>met<span class="op">)</span>tyr <span class="op">/</span> <span class="op">(</span><span class="dv">8</span> <span class="op">+</span> <span class="dv">2</span><span class="op">))));</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    printf(&quot;%c&quot;, (met)tyr + 32 + 16 + ((8 + EOF) * ((met)tyr / (8 + 2))));</code></pre>
 <p>because of the “no magic numbers other than powers of two” rule. How is this
 an improvement over <code>printf("%c", '0' + tyr + 7 * (tyr / 10)</code>, MISRA?</p>
 <p>MISRA 6.3: “<code>typedef</code>s that indicate size and signedness should be used in
@@ -691,8 +691,8 @@ redundant casting ensues. It gets worse with the next rule…</p>
 precedence rules in expressions.” This requires parentheses for almost
 all expressions involving more than one operator, especially those for which
 a cast is required, leading to hard to understand expressions such as</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>    <span class="dt">const</span> ser glx <span class="op">=</span> <span class="op">(</span>ser<span class="op">)((</span>asx <span class="op">&gt;</span> <span class="op">(</span>ser<span class="op">)</span><span class="dv">64</span><span class="bu">u</span><span class="op">)</span> <span class="op">?</span> <span class="op">(</span>ser<span class="op">)((</span>ser<span class="op">)</span>asx <span class="op">+</span> <span class="op">(</span>ser<span class="op">)</span><span class="dv">8</span><span class="bu">u</span> <span class="op">+</span> <span class="op">(</span>ser<span class="op">)</span><span class="dv">1</span><span class="bu">u</span><span class="op">)</span> <span class="op">:</span> <span class="op">(</span>ser<span class="op">)</span>asx<span class="op">);</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    not<span class="op">.</span>not<span class="op">[</span>leu<span class="op">]</span> <span class="op">=</span> <span class="op">(</span>and<span class="op">)((</span>and<span class="op">)</span>not<span class="op">.</span>not<span class="op">[</span>leu<span class="op">]</span> <span class="op">|</span> <span class="op">(</span>and<span class="op">)(((</span>and<span class="op">)</span>glx <span class="op">%</span> <span class="op">(</span>and<span class="op">)</span><span class="dv">16</span><span class="bu">u</span><span class="op">)</span> <span class="op">&lt;&lt;</span> <span class="op">(</span>and<span class="op">)</span>lys<span class="op">));</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    const ser glx = (ser)((asx &gt; (ser)64u) ? (ser)((ser)asx + (ser)8u + (ser)1u) : (ser)asx);
+    not.not[leu] = (and)((and)not.not[leu] | (and)(((and)glx % (and)16u) &lt;&lt; (and)lys));</code></pre>
 <p>MISRA 14.7: “A function shall have a single point of exit at the end of
 the function.” Sigh. Since I must use eloquent prototypes (8.1, 16.3,
 16.4) and static functions (8.10, 8.11), I can only use a few functions.
@@ -703,22 +703,22 @@ too high for a sane function.</p>
 <p>MISRA 16.10: “If a function returns error information, then that error
 information shall be tested.” A cast to <code>void</code> would draw a lint warning, so
 I use the <code>printf(3)</code> result in expressions,</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>    lys <span class="op">-=</span> <span class="dv">4</span> <span class="op">*</span> printf<span class="op">(</span><span class="st">&quot;</span><span class="sc">%c</span><span class="st">&quot;</span><span class="op">,</span> <span class="op">(</span>met<span class="op">)</span>tyr <span class="op">+</span> <span class="dv">32</span> <span class="op">+</span> <span class="dv">16</span> <span class="op">+</span> <span class="op">((</span><span class="dv">8</span> <span class="op">+</span> EOF<span class="op">)</span> <span class="op">*</span> <span class="op">((</span>met<span class="op">)</span>tyr <span class="op">/</span> <span class="op">(</span><span class="dv">8</span> <span class="op">+</span> <span class="dv">2</span><span class="op">))));</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    val <span class="op">+=</span> printf<span class="op">(</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">)</span> <span class="op">/</span> <span class="op">((</span>__LINE__ <span class="op">*</span> L_tmpnam<span class="op">)</span> <span class="op">+</span> TMP_MAX<span class="op">);</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    val <span class="op">-=</span> <span class="op">(</span>printf<span class="op">(</span><span class="st">&quot; </span><span class="sc">%d\n</span><span class="st">&quot;</span><span class="op">,</span> val<span class="op">)</span> <span class="op">&gt;</span> BUFSIZ<span class="op">)</span> <span class="op">?</span> FILENAME_MAX <span class="op">:</span> EOF<span class="op">;</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    lys -= 4 * printf(&quot;%c&quot;, (met)tyr + 32 + 16 + ((8 + EOF) * ((met)tyr / (8 + 2))));
+    val += printf(&quot;\n&quot;) / ((__LINE__ * L_tmpnam) + TMP_MAX);
+    val -= (printf(&quot; %d\n&quot;, val) &gt; BUFSIZ) ? FILENAME_MAX : EOF;</code></pre>
 <p>which are, in the absence of errors, equivalent to</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>    lys <span class="op">-=</span> <span class="dv">4</span><span class="op">;</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">/*nop*/</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">++</span>val<span class="op">;</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    lys -= 4;
+    /*nop*/
+    ++val;</code></pre>
 <p>MISRA 13.1: “Assignment operators shall not be used in expressions that
 yield a Boolean value.” Forbids the idiomatic <code>if ((p = malloc(n)) == NULL)</code> and requires separate statements, in other words, bloat.</p>
 <p>MISRA 16.7: “A pointer parameter in a function prototype should be
 declared as pointer to <code>const</code> if the pointer is not used to modify the
 addressed object.” in conjunction with lint’s “Note 952: Parameter could
 be declared <code>const</code>” causes <code>const</code>-poisoning for all functions,</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>    <span class="dt">static</span> <span class="dt">void</span> phe<span class="op">(</span><span class="dt">const</span> ala not<span class="op">);</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">static</span> <span class="dt">void</span> gly<span class="op">(</span>ala <span class="op">*</span><span class="dt">const</span> not<span class="op">,</span> <span class="dt">const</span> and his<span class="op">);</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    met main<span class="op">(</span>met val<span class="op">,</span> <span class="dt">const</span> pro <span class="op">*</span><span class="dt">const</span> his<span class="op">[]);</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    static void phe(const ala not);
+    static void gly(ala *const not, const and his);
+    met main(met val, const pro *const his[]);</code></pre>
 <p>and quite a number of automatic variables.</p>
 <h3 id="why-the-laugh-and-throw-up-messages">Why the “laugh” and “throw up” messages?</h3>
 <p>The guidelines state “We like programs that: make us laugh and/or throw
@@ -726,13 +726,13 @@ up :-) (humor really helps!)”</p>
 <h3 id="if-you-have-a-128-bit-type">If you have a 128 bit type</h3>
 <p>If your compiler supports a 128 bit wide type (e.g. clang, gcc) then
 you can use it via the <code>typ</code> macro:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clang</span> <span class="at">-Dtyp</span><span class="op">=</span>__uint128_t <span class="at">-o</span> prog prog.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    clang -Dtyp=__uint128_t -o prog prog.c</code></pre>
 <p>Indeed, the program can use (and lints clean for) all of</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clang</span> <span class="at">-Dtyp</span><span class="op">=</span>uint8_t  <span class="at">-o</span> prog8  prog.c</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clang</span> <span class="at">-Dtyp</span><span class="op">=</span>uint16_t <span class="at">-o</span> prog16 prog.c</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clang</span> <span class="at">-Dtyp</span><span class="op">=</span>uint32_t <span class="at">-o</span> prog32 prog.c</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clang</span> <span class="at">-Dtyp</span><span class="op">=</span>uint64_t <span class="at">-o</span> prog64 prog.c</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clang</span> <span class="at">-std</span><span class="op">=</span>c89 <span class="at">-Dtyp</span><span class="op">=</span><span class="st">&quot;unsigned long&quot;</span> <span class="at">-o</span> prog89 prog.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    clang -Dtyp=uint8_t  -o prog8  prog.c
+    clang -Dtyp=uint16_t -o prog16 prog.c
+    clang -Dtyp=uint32_t -o prog32 prog.c
+    clang -Dtyp=uint64_t -o prog64 prog.c
+    clang -std=c89 -Dtyp=&quot;unsigned long&quot; -o prog89 prog.c</code></pre>
 <p>This works because the program has no need for corresponding <code>SCN</code> or <code>PRI</code>
 macros to do the scanning and printing of variables of these types. With a 128
 bit type the program can represent numbers up to

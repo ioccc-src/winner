@@ -141,27 +141,27 @@ Location: <a href="../../location.html#GR">GR</a> - <em>Hellenic Republic</em> (
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> clobber all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make clobber all</code></pre>
 <p>and follow the instructions this will give you.</p>
 <p>If your compiler will not read from <code>/dev/tty</code> see the <a href="#alternate-code">Alternate
 code</a> section below.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./spinellis</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./spinellis</code></pre>
 <p>Type in or copy paste some C code, perhaps from <a href="input.txt">input.txt</a>, and send
 EOF (typically ctrl-d).</p>
 <p>Now run again:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./spinellis</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./spinellis</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>For clang or compilers that won’t read from <code>/dev/tty</code>, we provide this version.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> clobber alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make clobber alt</code></pre>
 <p>and follow the instructions.</p>
 <h3 id="alternate-use">Alternate use:</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./spinellis.alt</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./spinellis.alt</code></pre>
 <p>Type in or copy paste some C code, perhaps from <a href="input.txt">input.txt</a>, and send
 EOF (typically ctrl-d).</p>
 <p>Now run again:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./spinellis.alt</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./spinellis.alt</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>We enjoyed this entry this year; however in the future programs must be able to
 be compiled from within a Makefile without the need of human intervention.</p>

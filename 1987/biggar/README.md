@@ -1,13 +1,13 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     some_command | ./biggar | od -c
 
     ./biggar < file | od -c
@@ -16,7 +16,7 @@
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 

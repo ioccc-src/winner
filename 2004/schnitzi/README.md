@@ -1,20 +1,20 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./schnitzi <foo | vi -n
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -132,13 +132,13 @@ Try one of these methods to get the animation to run:
 
 1.  Redirect the output directly to vi, like this:
 
-```sh
+```<!---sh-->
     ./schnitzi < input.dat | vi
 ```
 
 2.  Redirect the output to a file, like this:
 
-```sh
+```<!---sh-->
     ./schnitzi < input.dat > output.dat
 ```
 

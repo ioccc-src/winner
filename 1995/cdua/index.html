@@ -144,7 +144,7 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <p>We recommend that you try the alternate version first so you can see what this
 entry looked like back in 1995 (with a configurable speed). See the <a href="#original-code">original
 code</a> section below for the original entry.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <p>The alternate version uses <code>usleep(3)</code> with <code>SLEEP</code> (defined in the Makefile,
 default <code>3000</code>) microseconds to make it easier to see the maze being solved in
 real time. You can redefine <code>SLEEP</code> at compile time to reconfigure it in case
@@ -155,15 +155,15 @@ making it 100000 (which is actually fun :-) ).</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1995_cdua">1995 cdua bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./cdua.alt</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./cdua.alt</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> SLEEP=1500 clobber alt</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./cdua.alt</span> <span class="co"># press enter and watch it go much faster!</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make SLEEP=1500 clobber alt
+
+    ./cdua.alt # press enter and watch it go much faster!</code></pre>
 <p>You might also like to try:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> SLEEP=65000 clobber alt</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./cdua.alt</span> <span class="co"># press enter and watch it go much slower!</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make SLEEP=65000 clobber alt
+
+    ./cdua.alt # press enter and watch it go much slower!</code></pre>
 <p>Do you see anything strange in this version when <code>SLEEP</code> is a high value like
 <code>65000</code>? What happens if you use <code>100000</code>? Is this strange output still there?
 Why?</p>
@@ -174,9 +174,9 @@ actually see it being solved in real time rather than have it go by in a flash.<
 <p>If you wish to use the original version, for instance if you wish to see how
 fast your computer is :-) or use both to see the difference, you can do so.</p>
 <h3 id="original-build">Original build:</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <h3 id="original-use">Original use:</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./cdua</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./cdua</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This could be used as the basis of an a-maze-ing screen exerciser.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>

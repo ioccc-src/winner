@@ -141,7 +141,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <p>NOTE: we FORCE disable the optimiser due to a funny problem with different
 compilers and systems. See below and <a href="compilers.html">compilers.html</a> for details.</p>
 <p>There is an <a href="#alternate-code">alternate version</a>. The reason is a funny problem:
@@ -152,7 +152,7 @@ might work but the other one would not. We describe this in more detail in
 <a href="compilers.html">compilers.html</a> and we encourage you to read it for entertainment
 if nothing else.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./marshall</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./marshall</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>Due to the different <a href="compilers.html">conflicting problems</a> with gcc and clang, we
 instead offer the problematic code as an alternate version whereas
@@ -160,9 +160,9 @@ instead offer the problematic code as an alternate version whereas
 <code>_exit()</code> commented out, changing the value passed into <code>_exit()</code> to <code>1</code>.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <p>To see if your compiler has the problems noted:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./marshall.alt</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./marshall.alt</code></pre>
 <p>Does it work in your system? That is does it not segfault, does it print it only
 once and does it not enter an infinite loop? Or more generally does it print the
 text exactly once and then exit?</p>

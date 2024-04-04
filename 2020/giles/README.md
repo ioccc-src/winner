@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [2020 giles bugs](../../bugs.html#2020_giles).
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./prog < dtmf.wav
 
     ./prog [digits] > digits.wav
@@ -33,7 +33,7 @@ will be converted to the DTMF sound!
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
     ./prog < pi.wav
 
@@ -71,7 +71,7 @@ exactly 16 bits per sample, but it allows any sample rate and any number of
 audio channels.
 
 
-```sh
+```<!---sh-->
     $ ./prog < pi.wav
     31415926
 ```
@@ -80,7 +80,7 @@ If the program is executed with a command-line argument, it will generate the
 tones corresponding to the specified characters, writing them to standard output
 as a WAV file.
 
-```sh
+```<!---sh-->
     $ ./prog 867-5309 | aplay
 ```
 

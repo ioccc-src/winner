@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [1995 savastio bugs](../../bugs.html#1995_sava
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./savastio
     # enter a POSITIVE number such as 100
 ```
@@ -29,7 +29,7 @@ what happens if you give a non-number?
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 

@@ -141,9 +141,9 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>The following bit of perl may help determine the values you need:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">perl</span> <span class="at">-MConfig</span> <span class="at">-e</span> <span class="st">&#39;print &quot;$Config{archlibexp}/CORE\n&quot;&#39;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    perl -MConfig -e &#39;print &quot;$Config{archlibexp}/CORE\n&quot;&#39;</code></pre>
 <p>… just in case the Makefile does not figure this out for you.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
@@ -151,9 +151,9 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
     STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2000_dlowe">2000 dlowe bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./dlowe</span> [file ...]</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./dlowe [file ...]</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>When this entry was submitted the rules of the IOCCC did not prohibit
 the use of embedded language interpreters. The judges considered
@@ -213,20 +213,20 @@ or EOF is encountered.</p>
                         the results of an operation are really huge (&gt; 10^308)
                         This bug appears to be fixed in perl5.6.0</code></pre>
 <h3 id="examples">Examples:</h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo <span class="st">&#39;12 13 14 15 16 + + + + f&#39;</span> <span class="kw">|</span> <span class="ex">./dlowe</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">70</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo <span class="st">&#39;12 13 14 15 16 17 + - * / p&#39;</span> <span class="kw">|</span> <span class="ex">./dlowe</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-0.0515873015873016</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo <span class="st">&#39;+&#39;</span> <span class="kw">|</span> <span class="ex">./dlowe</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">stack</span> empty</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo <span class="st">&#39;999999999999999 1 + p&#39;</span> <span class="kw">|</span> <span class="ex">./dlowe</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">1e+15</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo <span class="st">&#39;99999999999999 1 + p&#39;</span> <span class="kw">|</span> <span class="ex">./dlowe</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">100000000000000</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo <span class="st">&#39;12.5 9 % 10 * 15 + f&#39;</span> <span class="kw">|</span> <span class="ex">./dlowe</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">50</span></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo <span class="st">&#39;7 P 6 d P P 8 p&#39;</span> <span class="kw">|</span> <span class="ex">./dlowe</span> <span class="kw">|</span> <span class="fu">tr</span> 876 tpo</span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="ex">poot</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo &#39;12 13 14 15 16 + + + + f&#39; | ./dlowe
+    70
+    $ echo &#39;12 13 14 15 16 17 + - * / p&#39; | ./dlowe
+    -0.0515873015873016
+    $ echo &#39;+&#39; | ./dlowe
+    stack empty
+    $ echo &#39;999999999999999 1 + p&#39; | ./dlowe
+    1e+15
+    $ echo &#39;99999999999999 1 + p&#39; | ./dlowe
+    100000000000000
+    $ echo &#39;12.5 9 % 10 * 15 + f&#39; | ./dlowe
+    50
+    $ echo &#39;7 P 6 d P P 8 p&#39; | ./dlowe | tr 876 tpo
+    poot</code></pre>
 <h3 id="code-concept">Code Concept:</h3>
 <p>We all know that Perl and other VHLLs (very high level languages)
 are particularly well-suited for (among other things) string

@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -18,14 +18,14 @@ For more detailed information see [2011 fredriksson bugs](../../bugs.html#2011_f
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./fredriksson [-icvtnk#] regexp < file
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -55,7 +55,7 @@ Implements a variant of `grep`.
 
 To search regexp from file, do:
 
-```sh
+```<!---sh-->
     ./fredriksson [-icvtnk#] regexp < file
 ```
 
@@ -123,13 +123,13 @@ expressions by putting `]` as the first character, and putting `-` last.
 Just say
 
 
-```sh
+```<!---sh-->
     ./fredriksson -k3 cat < file
 ```
 
 * Like with `cat`, you can append line numbers too:
 
-```sh
+```<!---sh-->
     ./fredriksson -nk3 cat < file
 ```
 
@@ -173,7 +173,7 @@ Just say
 * Depending on the file, it might require a lot of stack space. If the
   program segfaults (because of this), say
 
-```sh
+```<!---sh-->
     ulimit -s unlimited
 ```
 
@@ -207,7 +207,7 @@ Just say
   extracts and builds that, and then calls it. More precisely, the command
   to build is
 
-```sh
+```<!---sh-->
     gcc -O3 ag.c -o ag
 ```
 
@@ -260,14 +260,14 @@ Just say
 
 * No numerical values, other than in the initialized char array, try
 
-```sh
+```<!---sh-->
     ./fredriksson -ck0 [0-9] < fredriksson.c
 ```
 
   This should print 1, as there is a number `3` in the char array (only).
   You can also try
 
-```sh
+```<!---sh-->
     ./fredriksson -ck0 [0-9] < ag.c
 ```
 

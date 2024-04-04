@@ -1,13 +1,13 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./bmeyer
 ```
 
@@ -16,7 +16,7 @@
 
 In a video window (white text on black background):
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -31,7 +31,7 @@ dashed argument) for compression and decompression!  You've been warned.
 
 The author recommended on linux/x86, glibc 2.0, libc4/5:
 
-```make
+```<!---make-->
     bmeyer: bmeyer.c
 	    CC -DY="__setfpucw(0x127f)" -O6 $? -o $@ -lm
 ```
@@ -40,7 +40,7 @@ However many compilers use `-O3` as the maximum level for `-O` optimization.
 
 And on linux/x86, glibc 2.1:
 
-```make
+```<!---make-->
     bmeyer: bmeyer.c
 	    gcc -DY='int x=0x127f; __asm__ ("fldcw %0" : : "m" (*&x))'  $? -o $@ -lm
 ```
@@ -80,13 +80,13 @@ on stdin, and it will decompress it to stdout --- as either raw or
 ASCII .PGM, depending on what format it was compressed from. For
 example:
 
-```sh
+```<!---sh-->
     ./glicbawls < michael.pgm > michael.glic
 ```
 
 and then
 
-```sh
+```<!---sh-->
     ./glicbawls < michael.glic > michael.decoded.pgm
 ```
 
@@ -104,7 +104,7 @@ If you still have trouble, simply use a terminal or xterm with
 more than 80 columns, and tell `glicbawls` about it by giving the
 number of columns as an argument. For example
 
-```sh
+```<!---sh-->
     ./glicbawls 260 <lavabus.pgm >lavabus.glic
 ```
 
@@ -122,21 +122,21 @@ decoded as 35, 36, 37, 38 or 39. In order to use this mode, simply
 give the maximum allowed error as an argument, with a dash (`-`)
 before it. For example:
 
-```sh
+```<!---sh-->
     ./glicbawls -2 < graph.pgm > graph.2.glic
 ```
 
 will compress in a way that allows decompression with a maximum
 error of two. You can combine both types of arguments, i.e.:
 
-```sh
+```<!---sh-->
     ./glicbawls -3 180 < graph.pgm >graph.3.glic
 ```
 
 will compress with a maximum error of 3, using a 180 column
 terminal for the progress display, and:
 
-```sh
+```<!---sh-->
     ./glicbawls -3 180 < graph.3.glic > graph.3maxerr.pgm
 ```
 

@@ -141,17 +141,17 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1993_vanb">1993 vanb bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./vanb</span> <span class="st">&#39;exp&#39;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./vanb &#39;exp&#39;</code></pre>
 <p>where <code>exp</code> is an octal expression. See below for how it can also have
 hexadecimal and decimal numbers.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <p>What happens if you use something other than valid digits?</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The octal expression may contain:</p>
@@ -217,70 +217,70 @@ involving <code>**O7</code> and octal constants are looking for certain characte
 <p>Here’s a version of the program before it got formatted into the VIII,
 augmented with comments showing where each state begins. <code>N1</code> and <code>N2</code> are
 notes:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#define O5 main</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    O5<span class="op">(</span>O2<span class="op">,</span>O7<span class="op">,</span>O3<span class="op">)</span><span class="dt">char</span><span class="op">**</span>O7<span class="op">;</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>             <span class="cf">return</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* N1 */</span> <span class="op">!(</span>O2<span class="op">+=~</span><span class="bn">01</span><span class="op">+</span><span class="bn">01</span><span class="op">)</span> <span class="op">?</span>\</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>                  <span class="bn">00</span><span class="op">:</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* N2 */</span> <span class="op">!(</span>O2<span class="op">-=</span><span class="bn">02</span><span class="op">&gt;</span><span class="bn">01</span><span class="op">)</span> <span class="op">?</span>\</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>                  printf<span class="op">(</span><span class="st">&quot;</span><span class="sc">\045</span><span class="er">\1</span><span class="st">57</span><span class="sc">\012</span><span class="st">&quot;</span><span class="op">,</span>O5<span class="op">(</span><span class="bn">012</span><span class="op">,</span>O7<span class="op">+</span><span class="bn">01</span><span class="op">,</span><span class="bn">00</span><span class="op">)):</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* O  */</span> <span class="op">!(</span>O2<span class="op">-=</span><span class="bn">02</span><span class="op">&gt;&gt;</span><span class="bn">01</span><span class="op">)</span> <span class="op">?</span>\</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>                  <span class="op">(**</span>O7<span class="op">&lt;=</span><span class="bn">067</span> <span class="op">&amp;&amp;</span> <span class="op">**</span>O7<span class="op">&gt;</span><span class="bn">057</span> <span class="op">?</span> O5<span class="op">(</span><span class="bn">03</span><span class="op">,</span>O7<span class="op">,*(*</span>O7<span class="op">)++-</span><span class="bn">060</span><span class="op">+</span><span class="bn">010</span><span class="op">*</span>O3<span class="op">):</span>O3<span class="op">):</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* D  */</span> <span class="op">!(</span>O2<span class="op">-=-</span>O3<span class="op">-~</span>O3<span class="op">)</span> <span class="op">?</span>\</span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>                  <span class="op">(</span><span class="bn">072</span><span class="op">&gt;**</span>O7 <span class="op">&amp;&amp;</span> <span class="bn">060</span><span class="op">&lt;=**</span>O7 <span class="op">?</span> O5<span class="op">(</span><span class="bn">04</span><span class="op">,</span>O7<span class="op">,</span><span class="bn">012</span><span class="op">*</span>O3<span class="op">-</span><span class="bn">060</span><span class="op">+*(*</span>O7<span class="op">)++):</span>O3<span class="op">):</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* X  */</span> <span class="op">!(</span>O2<span class="op">-=!</span>O3<span class="op">+!!</span>O3<span class="op">)</span> <span class="op">?</span>\</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>                  <span class="op">(**</span>O7<span class="op">&gt;</span><span class="bn">057</span> <span class="op">&amp;&amp;</span> <span class="op">**</span>O7<span class="op">&lt;=</span><span class="bn">071</span> <span class="op">?</span> O5<span class="op">(</span><span class="bn">05</span><span class="op">,</span>O7<span class="op">,*(*</span>O7<span class="op">)+++</span>O3<span class="op">*</span><span class="bn">020</span><span class="op">-</span><span class="bn">060</span><span class="op">):</span></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>                  <span class="op">**</span>O7<span class="op">&lt;=</span><span class="bn">0106</span> <span class="op">&amp;&amp;</span> <span class="bn">0101</span><span class="op">&lt;=**</span>O7 <span class="op">?</span> O5<span class="op">(</span><span class="bn">05</span><span class="op">,</span>O7<span class="op">,</span><span class="bn">020</span><span class="op">*</span>O3<span class="op">+*(*</span>O7<span class="op">)++-</span><span class="bn">067</span><span class="op">):</span></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>                  <span class="bn">0140</span><span class="op">&lt;**</span>O7 <span class="op">&amp;&amp;</span> <span class="op">**</span>O7<span class="op">&lt;</span><span class="bn">0147</span> <span class="op">?</span> O5<span class="op">(</span><span class="bn">05</span><span class="op">,</span>O7<span class="op">,-</span><span class="bn">0127</span><span class="op">+*(*</span>O7<span class="op">)+++</span><span class="bn">020</span><span class="op">*</span>O3<span class="op">):</span>O3<span class="op">):</span></span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* F  */</span> <span class="op">!(</span>O2<span class="op">-=</span><span class="bn">02</span><span class="op">-</span><span class="bn">01</span><span class="op">)</span> <span class="op">?</span>\</span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>                  <span class="op">(**</span>O7<span class="op">==</span><span class="bn">050</span> <span class="op">?</span> <span class="bn">050</span><span class="op">**++*</span>O7<span class="op">,</span>O5<span class="op">(</span><span class="bn">013</span><span class="op">,</span>O7<span class="op">,</span>O5<span class="op">(</span><span class="bn">012</span><span class="op">,</span>O7<span class="op">,</span><span class="bn">00</span><span class="op">)):</span></span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>                  <span class="op">**</span>O7<span class="op">&lt;</span><span class="bn">056</span> <span class="op">&amp;&amp;</span> <span class="bn">054</span><span class="op">&lt;**</span>O7 <span class="op">?</span> <span class="bn">055</span><span class="op">**++*</span>O7<span class="op">,-</span>O5<span class="op">(</span><span class="bn">06</span><span class="op">,</span>O7<span class="op">,</span><span class="bn">00</span><span class="op">):</span></span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>                  <span class="bn">054</span><span class="op">&gt;**</span>O7 <span class="op">&amp;&amp;</span> <span class="bn">052</span><span class="op">&lt;**</span>O7 <span class="op">?</span> <span class="bn">050</span><span class="op">**(*</span>O7<span class="op">)++,</span>O5<span class="op">(</span><span class="bn">06</span><span class="op">,</span>O7<span class="op">,</span><span class="bn">00</span><span class="op">):</span></span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>                  <span class="op">!(**</span>O7<span class="op">^</span><span class="bn">0170</span><span class="op">)||!(</span><span class="bn">0130</span><span class="op">^**</span>O7<span class="op">)</span> <span class="op">?</span> <span class="op">*++*</span>O7<span class="op">,</span>O5<span class="op">(</span><span class="bn">05</span><span class="op">,</span>O7<span class="op">,</span><span class="bn">00</span><span class="op">):</span></span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>                  <span class="op">**</span>O7<span class="op">==</span><span class="bn">0144</span><span class="op">||**</span>O7<span class="op">==</span><span class="bn">0104</span> <span class="op">?</span> <span class="op">++*</span>O7<span class="op">,</span>O5<span class="op">(</span><span class="bn">04</span><span class="op">,</span>O7<span class="op">,</span><span class="bn">00</span><span class="op">):</span>O5<span class="op">(</span><span class="bn">03</span><span class="op">,</span>O7<span class="op">,</span><span class="bn">00</span><span class="op">)):</span></span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* T&#39; */</span> <span class="op">!--</span>O2 <span class="op">?</span>\</span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>                  <span class="op">(**</span>O7<span class="op">==</span><span class="bn">052</span> <span class="op">?</span> O5<span class="op">(</span><span class="bn">07</span><span class="op">,</span>O7<span class="op">,</span>O3<span class="op">*(*++*</span>O7<span class="op">,</span>O5<span class="op">(</span><span class="bn">06</span><span class="op">,</span>O7<span class="op">,</span><span class="bn">00</span><span class="op">))):</span></span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>                  <span class="op">!(</span><span class="bn">045</span><span class="op">-**</span>O7<span class="op">)</span> <span class="op">?</span> O5<span class="op">(</span><span class="bn">07</span><span class="op">,</span>O7<span class="op">,</span>O3<span class="op">%(</span><span class="bn">03</span><span class="op">+(*</span>O7<span class="op">)++,</span>O5<span class="op">(</span><span class="bn">06</span><span class="op">,</span>O7<span class="op">,</span><span class="bn">00</span><span class="op">))):</span></span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>                  <span class="op">!(**</span>O7<span class="op">^</span><span class="bn">057</span><span class="op">)</span> <span class="op">?</span> O5<span class="op">(</span><span class="bn">07</span><span class="op">,</span>O7<span class="op">,</span>O3<span class="op">/(</span><span class="bn">03</span><span class="op">-*++*</span>O7<span class="op">,</span>O5<span class="op">(</span><span class="bn">06</span><span class="op">,</span>O7<span class="op">,</span><span class="bn">00</span><span class="op">))):</span>O3<span class="op">):</span></span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* T  */</span> <span class="op">!(</span>O2<span class="op">+=</span><span class="bn">01</span><span class="op">-</span><span class="bn">02</span><span class="op">)</span> <span class="op">?</span>\</span>
-<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>                  O5<span class="op">(</span><span class="bn">07</span><span class="op">,</span>O7<span class="op">,</span>O5<span class="op">(</span><span class="bn">06</span><span class="op">,</span>O7<span class="op">,</span><span class="bn">00</span><span class="op">)):</span></span>
-<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* E&#39; */</span> <span class="op">!(</span>O2<span class="op">+=-</span><span class="bn">02</span><span class="op">/</span><span class="bn">02</span><span class="op">)</span> <span class="op">?</span>\</span>
-<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>                  <span class="op">(!(**</span>O7<span class="op">-</span><span class="bn">053</span><span class="op">)?</span>O5<span class="op">(</span><span class="bn">011</span><span class="op">,</span>O7<span class="op">,</span>O3<span class="op">+(++*</span>O7<span class="op">,</span>O5<span class="op">(</span><span class="bn">010</span><span class="op">,</span>O7<span class="op">,</span><span class="bn">00</span><span class="op">))):</span></span>
-<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>                  <span class="op">!(</span><span class="bn">055</span><span class="op">^**</span>O7<span class="op">)</span> <span class="op">?</span> O5<span class="op">(</span><span class="bn">011</span><span class="op">,</span>O7<span class="op">,</span>O3<span class="op">-(</span><span class="bn">03</span><span class="op">+*(*</span>O7<span class="op">)++,</span>O5<span class="op">(</span><span class="bn">010</span><span class="op">,</span>O7<span class="op">,</span><span class="bn">00</span><span class="op">))):</span>O3<span class="op">):</span></span>
-<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* E  */</span> <span class="op">!(</span>O2<span class="op">-=</span><span class="bn">0563</span><span class="op">&amp;</span><span class="bn">0215</span><span class="op">)</span> <span class="op">?</span>\</span>
-<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>                  O5<span class="op">(</span><span class="bn">011</span><span class="op">,</span>O7<span class="op">,</span>O5<span class="op">(</span><span class="bn">010</span><span class="op">,</span>O7<span class="op">,</span><span class="bn">00</span><span class="op">)):</span></span>
-<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* C  */</span> <span class="op">(++*</span>O7<span class="op">,</span>O3<span class="op">);</span></span>
-<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    #define O5 main
+    O5(O2,O7,O3)char**O7;
+    {
+             return
+    /* N1 */ !(O2+=~01+01) ?\
+                  00:
+    /* N2 */ !(O2-=02&gt;01) ?\
+                  printf(&quot;\045\157\012&quot;,O5(012,O7+01,00)):
+    /* O  */ !(O2-=02&gt;&gt;01) ?\
+                  (**O7&lt;=067 &amp;&amp; **O7&gt;057 ? O5(03,O7,*(*O7)++-060+010*O3):O3):
+    /* D  */ !(O2-=-O3-~O3) ?\
+                  (072&gt;**O7 &amp;&amp; 060&lt;=**O7 ? O5(04,O7,012*O3-060+*(*O7)++):O3):
+    /* X  */ !(O2-=!O3+!!O3) ?\
+                  (**O7&gt;057 &amp;&amp; **O7&lt;=071 ? O5(05,O7,*(*O7)+++O3*020-060):
+                  **O7&lt;=0106 &amp;&amp; 0101&lt;=**O7 ? O5(05,O7,020*O3+*(*O7)++-067):
+                  0140&lt;**O7 &amp;&amp; **O7&lt;0147 ? O5(05,O7,-0127+*(*O7)+++020*O3):O3):
+    /* F  */ !(O2-=02-01) ?\
+                  (**O7==050 ? 050**++*O7,O5(013,O7,O5(012,O7,00)):
+                  **O7&lt;056 &amp;&amp; 054&lt;**O7 ? 055**++*O7,-O5(06,O7,00):
+                  054&gt;**O7 &amp;&amp; 052&lt;**O7 ? 050**(*O7)++,O5(06,O7,00):
+                  !(**O7^0170)||!(0130^**O7) ? *++*O7,O5(05,O7,00):
+                  **O7==0144||**O7==0104 ? ++*O7,O5(04,O7,00):O5(03,O7,00)):
+    /* T&#39; */ !--O2 ?\
+                  (**O7==052 ? O5(07,O7,O3*(*++*O7,O5(06,O7,00))):
+                  !(045-**O7) ? O5(07,O7,O3%(03+(*O7)++,O5(06,O7,00))):
+                  !(**O7^057) ? O5(07,O7,O3/(03-*++*O7,O5(06,O7,00))):O3):
+    /* T  */ !(O2+=01-02) ?\
+                  O5(07,O7,O5(06,O7,00)):
+    /* E&#39; */ !(O2+=-02/02) ?\
+                  (!(**O7-053)?O5(011,O7,O3+(++*O7,O5(010,O7,00))):
+                  !(055^**O7) ? O5(011,O7,O3-(03+*(*O7)++,O5(010,O7,00))):O3):
+    /* E  */ !(O2-=0563&amp;0215) ?\
+                  O5(011,O7,O5(010,O7,00)):
+    /* C  */ (++*O7,O3);
+    }</code></pre>
 <p>Note <code>N1</code>: It should never enter this state, unless the user invokes the
 program with no parameters, in which case it just returns 0.</p>
 <p>Note <code>N2</code>: Since the program is properly invoked with 1 parameter, this is
 the first state it will go into. This state just invokes
 printf, and sends the parser to state <code>012</code> (which is <code>&lt;E&gt;</code>).</p>
 <p>The <code>E</code> and <code>T</code> states work like this:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> e<span class="op">(){</span> <span class="cf">return</span> eprime<span class="op">(</span> t<span class="op">()</span> <span class="op">);</span> <span class="op">}</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    int e(){ return eprime( t() ); }</code></pre>
 <p>The <code>E'</code> and <code>T'</code> states work like this:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> eprime<span class="op">(</span> <span class="dt">int</span> intermediate <span class="op">)</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span><span class="op">(</span> ch <span class="op">==</span> <span class="ch">&#39;+&#39;</span> <span class="op">)</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>            ch <span class="op">=</span> nextchar<span class="op">();</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> eprime<span class="op">(</span> intermediate <span class="op">+</span> t<span class="op">()</span> <span class="op">);</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span> <span class="cf">return</span> intermediate<span class="op">;</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    int eprime( int intermediate )
+    {
+        if( ch == &#39;+&#39; )
+        {
+            ch = nextchar();
+            return eprime( intermediate + t() );
+        }
+        else return intermediate;
+    }</code></pre>
 <p>The <code>D</code>, <code>X</code> and <code>O</code> states work like this (they assume that they’re initially
 called with <code>0</code>):</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> octal<span class="op">(</span> <span class="dt">int</span> intermediate <span class="op">)</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span><span class="op">(</span> ch<span class="op">&gt;=</span><span class="ch">&#39;0&#39;</span> <span class="op">&amp;&amp;</span> ch<span class="op">&lt;=</span><span class="ch">&#39;7&#39;</span> <span class="op">)</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>            intermediate <span class="op">=</span> intermediate <span class="op">*</span> <span class="dv">8</span> <span class="op">+</span> ch <span class="op">-</span> <span class="ch">&#39;0&#39;</span><span class="op">;</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>            ch <span class="op">=</span> nextchar<span class="op">();</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> octal<span class="op">(</span> intermediate <span class="op">);</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span> <span class="cf">return</span> intermediate<span class="op">;</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    int octal( int intermediate )
+    {
+        if( ch&gt;=&#39;0&#39; &amp;&amp; ch&lt;=&#39;7&#39; )
+        {
+            intermediate = intermediate * 8 + ch - &#39;0&#39;;
+            ch = nextchar();
+            return octal( intermediate );
+        }
+        else return intermediate;
+    }</code></pre>
 <p><code>F</code> and <code>C</code> work similarly.</p>
 <!--
 

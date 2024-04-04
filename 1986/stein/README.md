@@ -1,13 +1,13 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./stein $(printf "\015\015"); echo
 ```
 
@@ -24,7 +24,7 @@ The `\015` in the above `printf(1)` command produces a control-N.
 One some machines, a control-M control-N arg is needed
 to get the command to output cleanly:
 
-```sh
+```<!---sh-->
     ./stein $(printf "\014\015"); echo
 ```
 

@@ -141,9 +141,9 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./stein</span> <span class="va">$(</span><span class="bu">printf</span> <span class="st">&quot;\015\015&quot;</span><span class="va">)</span><span class="kw">;</span> <span class="bu">echo</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./stein $(printf &quot;\015\015&quot;); echo</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>NOTE: to avoid problems with news and mail, the single line was split
 into 3 lines. Join all lines into a single line to recreate
@@ -151,7 +151,7 @@ the original file.</p>
 <p>The <code>\015</code> in the above <code>printf(1)</code> command produces a control-N.</p>
 <p>One some machines, a control-M control-N arg is needed
 to get the command to output cleanly:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./stein</span> <span class="va">$(</span><span class="bu">printf</span> <span class="st">&quot;\014\015&quot;</span><span class="va">)</span><span class="kw">;</span> <span class="bu">echo</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./stein $(printf &quot;\014\015&quot;); echo</code></pre>
 <p>Your system may require another set of characters.
 In time, you will figure out what it does. :-)</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>

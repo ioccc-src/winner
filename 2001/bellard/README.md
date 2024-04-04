@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -19,14 +19,14 @@ For more detailed information see [2001 bellard bugs](../../bugs.html#2001_bella
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./bellard file
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./bellard bellard.otccex.c
 ```
 
@@ -47,7 +47,7 @@ program.
 
 You can use it by typing:
 
-```sh
+```<!---sh-->
     ./bellard bellard.c [args]...
 ```
 
@@ -61,19 +61,19 @@ or by giving the C source to its standard input.
 
 - Sample compilation and execution:
 
-```sh
+```<!---sh-->
     ./bellard bellard.otccex.c 10
 ```
 
 - Self compilation:
 
-```sh
+```<!---sh-->
     ./bellard bellard.c bellard.otccex.c 10
 ```
 
 - Self compilation iterated...
 
-```sh
+```<!---sh-->
     ./bellard bellard.c bellard.c bellard.otccex.c 10
 ```
 

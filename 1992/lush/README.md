@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [1992 lush bugs](../../bugs.html#1992_lush).
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./lush.sh
 ```
 

@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
@@ -21,14 +21,14 @@ For more detailed information see [1995 vanschnitz bugs](../../bugs.html#1995_va
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./vanschnitz
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -43,7 +43,7 @@ to first try and figure out the program without the spoiler.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -84,7 +84,7 @@ line.  For instance, to cause the compiler to solve the Towers
 of Hanoi problem with four disks, you would compile the program
 like this:
 
-```sh
+```<!---sh-->
     gcc hanoi.c -o hanoi -Dn=4
 ```
 
@@ -111,7 +111,7 @@ concatenated; a version that does not use this feature has been
 included for people who can only run K&R).  A good way to see
 the resulting program (on a Unix system) is to do the command
 
-```sh
+```<!---sh-->
     gcc hanoi.c -E -Dn=5 | grep -v \# | grep -v ^\$
 ```
 

@@ -141,30 +141,30 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <p>To get this to compile with a modern CPP, we had to replace <code>#D</code> with <code>#define</code>.</p>
 <h2 id="to-use">To use:</h2>
 <p>Run the program this way:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./ovdluhe</span> <span class="op">&lt;</span> textfile</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./ovdluhe &lt; textfile</code></pre>
 <p>The program stops when it reaches the end of the template buffer
 by chance or is killed.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span> <span class="kw">;</span> <span class="fu">sleep</span> 2 <span class="kw">;</span> <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh ; sleep 2 ; ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>The author suggested that one varies the definition of <code>P</code> from 2 through 10. As
 it’s a <code>#define</code> it’s easy to set up.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> P=9 clobber alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make P=9 clobber alt</code></pre>
 <p>You do not have to define <code>P</code> but if you do you can replace the value with
 whatever you wish, as long as it’s a positive <code>int</code> (or evaluates to a positive
 <code>int</code> like the default <code>(A&lt;&lt;AP)</code> does). Too high a value will likely cause the
 program to fail and a negative value will cause a compilation error.</p>
 <h3 id="alternate-use">Alternate use:</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./ovdluhe.alt</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./ovdluhe.alt</code></pre>
 <h3 id="alternate-try">Alternate try:</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.alt.sh</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="va">P</span><span class="op">=</span>5 <span class="ex">./try.alt.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh
+
+    P=5 ./try.alt.sh</code></pre>
 <p>NOTE: if you specify too high a value for <code>P</code> the program might fail. If you
 specify a value &lt; 0 it will fail to compile.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>

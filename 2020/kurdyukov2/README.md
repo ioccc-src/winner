@@ -1,20 +1,20 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./prog
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     # Take a selfie
     ./prog 1000 selfie.jpg output.jpg
     # Admire your portrait in cubist style
@@ -41,7 +41,7 @@ This program divides the image into a specified number of rectangles. This
 process is content aware, so the algorithm tries to match most of the information.
 However, it doesn't find the best theoretically possible layout.
 
-```sh
+```<!---sh-->
     ./prog 1000 input.jpg output.jpg
 ```
 
@@ -56,13 +56,13 @@ If you want to use `libjpeg` compiled from sources, then use the `LIBJPEG` defin
 specify the path to includes and the library.  For example using
 [libjpeg source](https://mac-dev-env.patrickbougie.com/libjpeg/) version 9c:
 
-```sh
+```<!---sh-->
     make prog LIBJPEG="-Ijpeg-9c jpeg-9c/libjpeg.a"
 ```
 
 Use this command to build a PNG version (you need `libpng`):
 
-```sh
+```<!---sh-->
     make prog_png LIBPNG="-lpng"
 ```
 
@@ -80,13 +80,13 @@ information!
 
 First, make sure you have the compiler tools installed e.g. by:
 
-```sh
+```<!---sh-->
     sudo xcode-select --install
 ```
 
 Make sure you install [MacPorts](https://www.macports.org/install.php). Then do:
 
-```sh
+```<!---sh-->
     sudo port install jpeg libpng ImageMagick
 ```
 
@@ -95,7 +95,7 @@ GIFs from the results using `makegif.sh`.
 
 After that’s installed you need to run make with these options:
 
-```sh
+```<!---sh-->
     make LDFLAGS="-I/opt/local/include -L/opt/local/lib"
 ```
 
@@ -103,7 +103,7 @@ After that’s installed you need to run make with these options:
 
 First, make sure you have the compiler tools installed e.g. by:
 
-```sh
+```<!---sh-->
     sudo xcode-select --install
 ```
 
@@ -111,14 +111,14 @@ Make sure you install [Homebrew](https://brew.sh).
 
 Then:
 
-```sh
+```<!---sh-->
     brew install libjpeg libpng
     eval "$(brew shellenv)"
 ```
 
 You are now ready to compile this entry:
 
-```sh
+```<!---sh-->
     make clobber all
 ```
 
@@ -139,7 +139,7 @@ vertically to get the minimum difference.
 You can use this command to make a GIF from output images (uses ImageMagick).
 For instance after running the command suggested by the judges:
 
-```sh
+```<!---sh-->
     convert -delay 10 -dither none -loop 0 $(find . -maxdepth 1 -type f -name '*jpg' | sort -V) $(find . -maxdepth 1 -type f -name '*jpg' | sort -rV) +map out.gif
 ```
 

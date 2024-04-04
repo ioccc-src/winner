@@ -141,17 +141,17 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2019_burton">2019 burton bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> <span class="op">&lt;</span> file</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./cow</span> file</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; file
+
+    ./cow file</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>A tiny, but punctually correct way of POSIX counting for text files. This one
 line, one word, 127 character beauty continues to expand the number of classic
@@ -163,14 +163,14 @@ interesting.</p>
 <p>Feed it anything on <code>stdin</code>.
 The output should look familiar.</p>
 <p>Compiles cleanly with:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">WARN</span><span class="op">=</span><span class="st">&quot;-Wno-implicit-int -Wno-missing-variable-declarations -Wno-parentheses&quot;</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> <span class="at">-Wall</span> <span class="at">-Wextra</span> <span class="at">-Weverything</span> <span class="at">-pedantic</span> <span class="va">$WARN</span> <span class="at">-include</span> stdio.h <span class="at">-o</span> prog prog.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    WARN=&quot;-Wno-implicit-int -Wno-missing-variable-declarations -Wno-parentheses&quot;
+    cc -Wall -Wextra -Weverything -pedantic $WARN -include stdio.h -o prog prog.c</code></pre>
 <h3 id="description">Description:</h3>
 <p>Included is a test script, useful for the corner cases. As in all good Unix
 programs, it is silent upon success; any output demonstrates an error. Instead
 of checking correctness, the <a href="check.sh">check.sh</a> script can simply output the
 results: (The Makefile contains the spoiler):</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">out</span><span class="op">=</span>cat <span class="ex">./check.sh</span> ./prog</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    out=cat ./check.sh ./prog</code></pre>
 <p>Interestingly, and a spoiler here: macOS and FreeBSD implement the common
 utility “correctly”. CentOS and Ubuntu both share a “flawed” utility that
 changes output format based upon input redirection or pipeline(!). As well, the
@@ -189,7 +189,7 @@ All your base belong to us, but the constants seem a bit … off?</p>
 <p>The script <a href="cow.sh">cow.sh</a> provides a closer analog, and perhaps a more useful
 interface.</p>
 <p>Included is a version without compilation warnings:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> <span class="at">-Wall</span> <span class="at">-Wextra</span> <span class="at">-Weverything</span> <span class="at">-pedantic</span> <span class="at">-include</span> stdio.h <span class="at">-o</span> prog.clean prog.clean.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cc -Wall -Wextra -Weverything -pedantic -include stdio.h -o prog.clean prog.clean.c</code></pre>
 <h3 id="bugs">Bugs</h3>
 <p>The flags are not supported. Although they could easily be added into <code>cow.sh</code>.
 This exercise left to the reader.</p>

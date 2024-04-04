@@ -141,20 +141,20 @@ Location: <a href="../../location.html#DE">DE</a> - <em>Federal Republic of Germ
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <h2 id="to-use">To use:</h2>
 <p><strong>WARNING: DO NOT RUN this program without reading this text down to the end!</strong>
 It may render your system unusable for a limited amount of time
 or force you to reboot using the Big Red Button! This is <strong>NOT</strong> a joke.
 You have been warned.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./schweikh3</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./schweikh3</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The source fails to compile on compilers that recognize the inline
 keyword by default. For gcc, you may need to use <code>-ansi</code>.</p>
 <p>See the file <a href="schweikh3.info">schweikh3.info</a> for example output from various
 systems.</p>
 <p>But still it is a useful utility. To use try:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./schweikh3</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./schweikh3</code></pre>
 <p>and thanks for the virtual memories! :-)</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="why-i-think-my-entry-is-obfuscated">Why I think my entry is obfuscated</h3>
@@ -171,22 +171,22 @@ COBOL, F77, awk etc.</p>
 <p>You have to select maximum ANSI C conformance of your
 compiler. The source fails to compile under a C++ compiler due to
 the `new’ identifier which is a C++ reserved word:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> g++ schweikh3.c</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">schweikh3.c:9:</span> parse error before <span class="kw">`</span><span class="ex">new</span><span class="st">&#39;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">    schweikh3.c:16: parse error before `new&#39;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">schweikh3.c:46:</span> parse error before <span class="kw">`</span>void<span class="st">&#39;</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="st">    schweikh3.c:65: parse error before `Lisp&#39;</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">schweikh3.c:68:</span> parse error before <span class="kw">`;</span><span class="st">&#39;</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="st">    [...]</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="st">    schweikh3.c:91: confused by earlier errors, bailing out</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ g++ schweikh3.c
+    schweikh3.c:9: parse error before `new&#39;
+    schweikh3.c:16: parse error before `new&#39;
+    schweikh3.c:46: parse error before `void&#39;
+    schweikh3.c:65: parse error before `Lisp&#39;
+    schweikh3.c:68: parse error before `;&#39;
+    [...]
+    schweikh3.c:91: confused by earlier errors, bailing out</code></pre>
 <p>The source fails to compile on compilers that recognize the inline
 keyword by default, e.g. gcc:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> gcc schweikh3.c</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">schweikh3.c:46:</span> parse error before <span class="kw">`</span><span class="ex">void</span><span class="st">&#39;</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="st">    schweikh3.c: In function `main&#39;</span><span class="ex">:</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">schweikh3.c:91:</span> parse error before <span class="kw">`</span>inline<span class="st">&#39;</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="st">    schweikh3.c: At top level:</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="st">    schweikh3.c:97: parse error before `void&#39;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ gcc schweikh3.c
+    schweikh3.c:46: parse error before `void&#39;
+    schweikh3.c: In function `main&#39;:
+    schweikh3.c:91: parse error before `inline&#39;
+    schweikh3.c: At top level:
+    schweikh3.c:97: parse error before `void&#39;</code></pre>
 <p>The <code>-ansi</code> option to gcc fixes this.</p>
 <p>The source fails to compile on obsolete systems with obsolete
 memory models due to the identifier <code>far</code> (to be honest: this is

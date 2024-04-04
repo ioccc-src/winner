@@ -1,20 +1,20 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     make -B [MACHINE=your_machine.h] [TAPE=your_tape.h] [X=[0|1|2|3|4|5|6|7|8|9]] [V=[0|1|2]] run
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -68,13 +68,13 @@ files for examples.
 
 Every symbol used (except `_`) must be explicitly declared using
 
-```c
+```<!---c-->
     #define sym_SYMBOL(sym, _SYMBOL) sym
 ```
 
 Example:
 
-```c
+```<!---c-->
     #define sym_1(sym, _1) sym
 ```
 
@@ -84,7 +84,7 @@ Example:
 The initial content of the tape must be defined in the tape header using a
 triple like:
 
-```c
+```<!---c-->
     #define tape ((((,),...l2), l1), c, (r1, (r2..., (,))))
 ```
 
@@ -119,7 +119,7 @@ machine.
 
 To halt the machine, use the keyword `break` as in
 
-```c
+```<!---c-->
     #define A_1 (2, break)
 ```
 

@@ -141,34 +141,34 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <p>There is an alternate version available. See <a href="#alternate-code">Alternate code</a>
 below for more details.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./dlowe</span> <span class="op">&lt;</span> file <span class="op">&gt;</span> pootfile</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./dlowe</span> <span class="op">&lt;</span> file</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./dlowe &lt; file &gt; pootfile
+
+    ./dlowe &lt; file</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: missing or dead link - please provide them</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1998_dlowe">1998 dlowe bugs</a>.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./dlowe</span> <span class="op">&lt;</span> README.md</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./dlowe</span> <span class="op">&lt;</span> README.md <span class="op">&gt;</span> README.poot.md</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./dlowe &lt; README.md
+    ./dlowe &lt; README.md &gt; README.poot.md</code></pre>
 <p>Why is there different output?</p>
 <p>Also try:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <p>Did you spot the Easter egg there?</p>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>The original entry was just a text based pootifier. This alternate version is
 that program.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <pre><code>    ./dlowe.alt &lt; file &gt; pootfile</code></pre>
 <p>What’s the difference between this and <code>dlowe</code>?</p>
 <h3 id="alternate-try">Alternate try:</h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.alt.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh</code></pre>
 <p>Did you spot the Easter egg there?</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Why could this this entry be considered a utility? Well because it
@@ -179,27 +179,27 @@ a CGI program: <a href="https://web.archive.org/web/20001025182142/http://pootpo
 more consistent level of quality. :-)</p>
 <h3 id="historical-remarks">Historical remarks:</h3>
 <p>A CGI script such as:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">#!/bin/sh</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># pootify - a sample CGI pootifier</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">#</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">POOT</span><span class="op">=</span><span class="st">&quot;/usr/local/bin/dlowe&quot;</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="va">LYNX</span><span class="op">=</span><span class="st">&quot;/usr/local/bin/lynx&quot;</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="va">ECHO</span><span class="op">=</span><span class="st">&quot;/usr/bin/echo&quot;</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="va">EXPR</span><span class="op">=</span><span class="st">&quot;/usr/bin/expr&quot;</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="va">${ECHO}</span> <span class="st">&quot;Content-type: text/html&quot;</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="va">${ECHO}</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">[</span> <span class="ot">-z</span> <span class="st">&quot;</span><span class="va">${QUERY_STRING}</span><span class="st">&quot;</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>        <span class="va">${ECHO}</span> <span class="st">&quot;QUERY_STRING not found&quot;</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>        <span class="va">URL</span><span class="op">=</span><span class="kw">`</span><span class="va">${EXPR}</span> <span class="st">&quot;</span><span class="va">$QUERY_STRING</span><span class="st">&quot;</span> : <span class="st">&#39;[Uu][Rr][Ll]=\(.*\)&#39;</span><span class="kw">`</span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">[</span> <span class="ot">-z</span> <span class="st">&quot;</span><span class="va">${URL}</span><span class="st">&quot;</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>            <span class="va">${ECHO}</span> <span class="st">&quot;No URL given in QUERY_STRING&quot;</span></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> <span class="bu">[</span> X<span class="kw">`</span><span class="va">${EXPR}</span> <span class="st">&quot;</span><span class="va">${URL}</span><span class="st">&quot;</span> : <span class="st">&#39;[Ff][Ii][Ll][Ee]:&#39;</span><span class="kw">`</span> <span class="ot">!=</span> X0 <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>            <span class="va">${ECHO}</span> <span class="st">&quot;file: based URLs are not allowed&quot;</span></span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span></span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>            <span class="va">${LYNX}</span> <span class="at">-restrictions</span><span class="op">=</span>all <span class="at">-source</span> <span class="st">&quot;</span><span class="va">${URL}</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="va">${POOT}</span></span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">fi</span></span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">fi</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    #!/bin/sh
+    # pootify - a sample CGI pootifier
+    #
+    POOT=&quot;/usr/local/bin/dlowe&quot;
+    LYNX=&quot;/usr/local/bin/lynx&quot;
+    ECHO=&quot;/usr/bin/echo&quot;
+    EXPR=&quot;/usr/bin/expr&quot;
+    ${ECHO} &quot;Content-type: text/html&quot;
+    ${ECHO}
+    if [ -z &quot;${QUERY_STRING}&quot; ]; then
+        ${ECHO} &quot;QUERY_STRING not found&quot;
+    else
+        URL=`${EXPR} &quot;$QUERY_STRING&quot; : &#39;[Uu][Rr][Ll]=\(.*\)&#39;`
+        if [ -z &quot;${URL}&quot; ]; then
+            ${ECHO} &quot;No URL given in QUERY_STRING&quot;
+        elif [ X`${EXPR} &quot;${URL}&quot; : &#39;[Ff][Ii][Ll][Ee]:&#39;` != X0 ]; then
+            ${ECHO} &quot;file: based URLs are not allowed&quot;
+        else
+            ${LYNX} -restrictions=all -source &quot;${URL}&quot; | ${POOT}
+        fi
+    fi</code></pre>
 <p>can be used to pootify web pages. This has been added as
 <a href="pootify.cgi.sh">pootify.cgi.sh</a> which forbids <code>file://</code> based URLs and which
 uses <code>lynx(1)</code> with the option referred to above. This will not, of course,
@@ -212,14 +212,14 @@ added bonus that one can use <code>file://</code> URLs. If one wants a CGI scrip
 should use the above one instead. You can use the script
 <a href="pootify.sh">pootify.sh</a>, however, to download and generate html files that you
 can look at locally in a browser or pipe through <code>less(1)</code>. For instance:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./pootify.sh</span> URL=https://microsoft.com <span class="kw">|</span> <span class="fu">less</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./pootify.sh</span> <span class="at">-r</span> URL=https://microsoft.com <span class="op">&gt;</span> ms.html</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./pootify.sh URL=https://microsoft.com | less
+
+    ./pootify.sh -r URL=https://microsoft.com &gt; ms.html</code></pre>
 <p>where the first one would show the text as rendered but without links, images
 etc. and the second one would write the html to <code>ms.html</code> so that you could open
 it in a browser.</p>
 <p>For an old example of it working as a CGI script see:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">https://web.archive.org/web/20040326083431/http://www.pootpoot.com/poot/pootify/?URL=http%3A%2F%2Fwww.ioccc.org</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    https://web.archive.org/web/20040326083431/http://www.pootpoot.com/poot/pootify/?URL=http%3A%2F%2Fwww.ioccc.org</code></pre>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>This program is a text filter, it reads <code>stdin</code> and outputs the
 “corrected” text to <code>stdout</code>.</p>

@@ -1,20 +1,20 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./vik [file.map]
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./vik maze.map
 ```
 
@@ -60,7 +60,7 @@ Compile the source code and link in [X
 libraries](https://en.wikipedia.org/wiki/Xlib) if necessary. The program takes
 three options which have to be typed in a specific order as described below.
 
-```sh
+```<!---sh-->
     ./vik [-w <width>] [mapfile]
 ```
 
@@ -75,20 +75,20 @@ where:
 
 Start the engine using a built in labyrinth and texture bitmaps:
 
-```sh
+```<!---sh-->
     ./vik
 ```
 
 Start the engine and loads the labyrinth defined in the file
 [maze.map](maze.map):
 
-```sh
+```<!---sh-->
     ./vik maze.map
 ```
 
 Start the engine using [maze.map](maze.map) in a window that is 400 pixels wide:
 
-```sh
+```<!---sh-->
     ./vik -w 400 maze.map
 ```
 

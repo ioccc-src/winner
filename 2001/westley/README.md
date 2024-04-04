@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -25,7 +25,7 @@ For more detailed information see [2001 westley bugs](../../bugs.html#2001_westl
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./westley 2>/dev/null
     # enter some input, terminate with EOF
 
@@ -37,7 +37,7 @@ For more detailed information see [2001 westley bugs](../../bugs.html#2001_westl
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -60,7 +60,7 @@ everyone in the face! :-) This is also compiled by default.
 
 ### Punch card try:
 
-```sh
+```<!---sh-->
     echo 'Brian Westley does it again!' | ./westley.punch 2>/dev/null
 ```
 
@@ -73,7 +73,7 @@ This alternate code might be less portable.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -108,7 +108,7 @@ to punch cards - C programs can be written to be "drop proof".
 
 Consider the following C program:
 
-```c
+```<!---c-->
     main(){a();b();c();}
     a(){printf("A");}
     b(){printf("B");}
@@ -122,7 +122,7 @@ any particular order\*\*; it will always produce `ABC` as output.
 
 You can also use global variables:
 
-```c
+```<!---c-->
     char *greet = "Hello, world!";
     char *greet; main(){puts(greet);}
 ```
@@ -132,7 +132,7 @@ It would be trivial to write an entire C program that is
 possible to write a program that will always compile but
 behave differently depending on the line order:
 
-```c
+```<!---c-->
     test(a,b){return a;}
     #define test(a,b) test(b,a)
     main(){if (test(0,1)) printf("T"); else printf("F");}
@@ -144,7 +144,7 @@ falls between the declaration of `test()` and its use in
 you can use the same call to `test()` repeatedly in
 different lines to return different values:
 
-```c
+```<!---c-->
     #define test(x,y) test(y,x)
     main(){int i=0;a(&i);b(&i);c(&i);d(&i);printf("%d\n",i);}
     a(i)int*i;{if (test(0,1)) *i += 1;}

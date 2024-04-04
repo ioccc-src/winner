@@ -141,7 +141,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix
@@ -149,31 +149,31 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <p>For more detailed information see <a href="../../bugs.html#1992_westley">1992 westley bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
 <p>If lost:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./whereami.sh</span> lat long</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./whereami.sh lat long</code></pre>
 <p>Where <code>lat</code> and <code>long</code> correspond to your latitude and longitude.</p>
 <p>NOTE: you <strong>MUST</strong> have a terminal that is at least 80 columns for this to show
 properly. The <code>whereami</code> and <code>whereami.alt</code> code checks this but it is not
 prohibitive if it cannot be compiled and linked (it uses curses); instead one
 should just use the <code>westley</code> and <code>westley.alt</code> programs directly.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>The author provided a version for the US which we added. To build:</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./whereami.alt.sh</span> lat long</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./whereami.alt.sh lat long</code></pre>
 <p>NOTE: this alternative version also needs a terminal with at least 80 columns.</p>
 <h3 id="alternate-try">Alternate try:</h3>
 <p>The <a href="try.sh">try.sh</a> script uses both the original entry and the alternate code
 so one can try the same script for both:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>To find the approximate place where this entry was judged, type:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./whereami</span> 37 <span class="at">-122</span>  <span class="co"># </span><span class="al">NOTE</span><span class="co">: - means west of meridian</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># or if you don&#39;t have curses installed:</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./westley</span> 37 <span class="at">-122</span>   <span class="co"># </span><span class="al">NOTE</span><span class="co">: - means west of meridian</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./whereami 37 -122  # NOTE: - means west of meridian
+
+    # or if you don&#39;t have curses installed:
+    ./westley 37 -122   # NOTE: - means west of meridian</code></pre>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>Run the program with your latitude &amp; longitude as integer
 arguments; it will produce a map made up of <code>'!'</code> with the given
@@ -243,13 +243,13 @@ is reasonably accurate.</p>
 <li>Tokyo 36 140</li>
 </ul>
 <p>For a domestic (US) version with higher resolution, try:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    main<span class="op">(</span>l<span class="op">,</span>a<span class="op">,</span>n<span class="op">,</span>d<span class="op">)</span><span class="dt">char</span><span class="op">**</span>a<span class="op">;{</span><span class="cf">for</span><span class="op">(</span>d<span class="op">=</span>atoi<span class="op">(</span>a<span class="op">[</span><span class="dv">1</span><span class="op">])/</span><span class="dv">2</span><span class="op">*</span><span class="dv">80</span><span class="op">-</span>atoi<span class="op">(</span>a<span class="op">[</span><span class="dv">2</span><span class="op">])-</span><span class="dv">2043</span><span class="op">;</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    n<span class="op">=</span><span class="st">&quot;bnaBCOCXdBBHGYdAP[A M E R I C A].AqandkmavX|ELC}BOCd&quot;</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>l<span class="op">++-</span><span class="dv">3</span><span class="op">];)</span><span class="cf">for</span><span class="op">(;</span>n<span class="op">--&gt;</span><span class="dv">64</span><span class="op">;)</span>putchar<span class="op">(!</span>d<span class="op">+++</span><span class="dv">33</span><span class="op">^</span>l<span class="op">&amp;</span><span class="dv">1</span><span class="op">);}</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    main(l,a,n,d)char**a;{for(d=atoi(a[1])/2*80-atoi(a[2])-2043;
+    n=&quot;bnaBCOCXdBBHGYdAP[A M E R I C A].AqandkmavX|ELC}BOCd&quot;
+    [l++-3];)for(;n--&gt;64;)putchar(!d+++33^l&amp;1);}</code></pre>
 <p>The code will test the 80-column wrap and document itself if it is
 joined together as one 160-character line and listed. You should see:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    main<span class="op">(</span>l<span class="op">,</span>a<span class="op">,</span>n<span class="op">,</span>d<span class="op">)...</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>A M E R I C A<span class="op">]...</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    main(l,a,n,d)...
+    [A M E R I C A]...</code></pre>
 <p>…going down the left edge if your terminal auto-wraps at 80 characters.</p>
 <!--
 

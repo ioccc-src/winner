@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
@@ -22,7 +22,7 @@ For more detailed information see [bugs report with 1993/rince](../../bugs.html#
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./rince [cabbage]
 ```
 
@@ -37,13 +37,13 @@ Some people may want to slow down the game by increasing the
 value 17 in the lines:
 
 
-```c
+```<!---c-->
     struct timeval v= {0,1<<17} ;
 ```
 
 and
 
-```c
+```<!---c-->
     refresh(),c=select(k,&y,0,0,(v.tv_usec=1<<17,&v))?getch():0;
 ```
 
@@ -57,7 +57,7 @@ changed).
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make SLEEP=18 clobber alt
 ```
 
@@ -107,7 +107,7 @@ with the curses library (typically `/lib/libcurses.a` for static libraries)
 used. It has been suggested that the following gcc command may help:
 
 
-```sh
+```<!---sh-->
     gcc -fno-builtin -I/usr/include -o rince rince.c -lcurses -ltermcap
 ```
 

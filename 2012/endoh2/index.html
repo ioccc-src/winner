@@ -141,18 +141,18 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em></li>
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./endoh2</span> <span class="op">&gt;</span> pi.c</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gcc</span> <span class="at">-o</span> pi pi.c</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./pi</span> <span class="op">&gt;</span> 314.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./endoh2 &gt; pi.c
+    gcc -o pi pi.c
+    ./pi &gt; 314.c</code></pre>
 <p>and:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./endoh2</span> e <span class="op">&gt;</span> e.c<span class="dt">\</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    gcc <span class="at">-o</span> e e.c</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./e</span> <span class="op">&gt;</span> 271.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./endoh2 e &gt; e.c\
+    gcc -o e e.c
+    ./e &gt; 271.c</code></pre>
 <p>…</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>A
 <a href="https://en.wikipedia.org/wiki/Pi">pi</a>/<a href="https://en.wikipedia.org/wiki/E_(mathematical_constant)">e</a>
@@ -213,32 +213,32 @@ willy-nilly.</p>
 warning, it requires two C99 features: allow string literal to be more than 509
 characters and not requiring a return in <code>main()</code>. In fact, recent compilers
 with <code>-std=c99 -Wall -W -Wextra -pedantic</code> would say nothing.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gcc</span> <span class="at">-std</span><span class="op">=</span>c99 <span class="at">-Wall</span> <span class="at">-W</span> <span class="at">-Wextra</span> <span class="at">-pedantic</span> spigot.c</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clang</span> <span class="at">-std</span><span class="op">=</span>c99 <span class="at">-Wall</span> <span class="at">-W</span> <span class="at">-Wextra</span> <span class="at">-pedantic</span> spigot.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    gcc -std=c99 -Wall -W -Wextra -pedantic spigot.c
+    clang -std=c99 -Wall -W -Wextra -pedantic spigot.c</code></pre>
 <p>I’ve tested with gcc-4.6.3 and clang-3.0 on Linux (Ubuntu 12.04)
 and gcc-4.5.3 and clang-3.1 on Cygwin.</p>
 <h3 id="synopsis">Synopsis</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> endoh2.c <span class="at">-o</span> endoh2</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./endoh2</span> <span class="op">&gt;</span> pi.c</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span> pi.c</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> pi.c     <span class="at">-o</span> pi     <span class="kw">;</span> <span class="ex">./pi</span>     <span class="op">&gt;</span> 314.c     <span class="kw">;</span> <span class="fu">cat</span> 314.c</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> 314.c    <span class="at">-o</span> 314    <span class="kw">;</span> <span class="ex">./314</span>    <span class="op">&gt;</span> 3141.c    <span class="kw">;</span> <span class="fu">cat</span> 3141.c</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> 3141.c   <span class="at">-o</span> 3141   <span class="kw">;</span> <span class="ex">./3141</span>   <span class="op">&gt;</span> 31415.c   <span class="kw">;</span> <span class="fu">cat</span> 31415.c</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> 31415.c  <span class="at">-o</span> 31415  <span class="kw">;</span> <span class="ex">./31415</span>  <span class="op">&gt;</span> 314159.c  <span class="kw">;</span> <span class="fu">cat</span> 314159.c</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> 314159.c <span class="at">-o</span> 314159 <span class="kw">;</span> <span class="ex">./314159</span> <span class="op">&gt;</span> 3141592.c <span class="kw">;</span> <span class="fu">cat</span> 3141592.c</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">etc...</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./endoh2</span> e <span class="op">&gt;</span> e.c</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span> e.c</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> e.c      <span class="at">-o</span> e      <span class="kw">;</span> <span class="ex">./e</span>      <span class="op">&gt;</span> 271.c     <span class="kw">;</span> <span class="fu">cat</span> 271.c</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> 271.c    <span class="at">-o</span> 271    <span class="kw">;</span> <span class="ex">./271</span>    <span class="op">&gt;</span> 2718.c    <span class="kw">;</span> <span class="fu">cat</span> 2718.c</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> 2718.c   <span class="at">-o</span> 2718   <span class="kw">;</span> <span class="ex">./2718</span>   <span class="op">&gt;</span> 27182.c   <span class="kw">;</span> <span class="fu">cat</span> 27182.c</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> 27182.c  <span class="at">-o</span> 27182  <span class="kw">;</span> <span class="ex">./27182</span>  <span class="op">&gt;</span> 271828.c  <span class="kw">;</span> <span class="fu">cat</span> 271828.c</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> 271828.c <span class="at">-o</span> 271828 <span class="kw">;</span> <span class="ex">./271828</span> <span class="op">&gt;</span> 2718281.c <span class="kw">;</span> <span class="fu">cat</span> 2718281.c</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    <span class="ex">etc...</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cc endoh2.c -o endoh2
+
+    ./endoh2 &gt; pi.c
+    cat pi.c
+
+    cc pi.c     -o pi     ; ./pi     &gt; 314.c     ; cat 314.c
+    cc 314.c    -o 314    ; ./314    &gt; 3141.c    ; cat 3141.c
+    cc 3141.c   -o 3141   ; ./3141   &gt; 31415.c   ; cat 31415.c
+    cc 31415.c  -o 31415  ; ./31415  &gt; 314159.c  ; cat 314159.c
+    cc 314159.c -o 314159 ; ./314159 &gt; 3141592.c ; cat 3141592.c
+    etc...
+
+    ./endoh2 e &gt; e.c
+    cat e.c
+
+    cc e.c      -o e      ; ./e      &gt; 271.c     ; cat 271.c
+    cc 271.c    -o 271    ; ./271    &gt; 2718.c    ; cat 2718.c
+    cc 2718.c   -o 2718   ; ./2718   &gt; 27182.c   ; cat 27182.c
+    cc 27182.c  -o 27182  ; ./27182  &gt; 271828.c  ; cat 271828.c
+    cc 271828.c -o 271828 ; ./271828 &gt; 2718281.c ; cat 2718281.c
+    etc...</code></pre>
 <p>You can do <code>make everything</code> for the process (with no <code>cat</code>).</p>
 <p>Note: The executable may return a failure (non-zero) exit status
 unless <code>-std=c99</code> option is given.</p>

@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -10,7 +10,7 @@ code](#alternate-code) below.
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./zeitak < file
 ```
 
@@ -21,7 +21,7 @@ text files that are not code.
 
 ## Try:
 
-```sh
+```<!---sh-->
     make test
 ```
 
@@ -38,7 +38,7 @@ understand this extremely subtle entry.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -92,7 +92,7 @@ around it's position.
 * Ignores parenthesis inside strings or character constants, so no errors
   will be detected in the following line:
 
-```c
+```<!---c-->
     printf(")");
 ```
 
@@ -104,7 +104,7 @@ around it's position.
 * Escapes (e.g. `\"`) are ignored, so the following line will produce
   an error:
 
-```c
+```<!---c-->
     printf("\"");
 ```
 

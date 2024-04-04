@@ -141,11 +141,11 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em></li>
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>At this point you might be wondering, <a href="http://acronyms.thefreedictionary.com/WTF">WTF</a>?*</p>
 <ul>
@@ -154,18 +154,18 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em></li>
 <li><p>What the Fish (python form)</p></li>
 </ul>
 <p>How is this code obfuscated? Well look again:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">less</span> prog.c</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">more</span> prog.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    less prog.c
+
+    more prog.c</code></pre>
 <p>Where did those underscores come from? Well <a href="http://acronyms.thefreedictionary.com/RTFS">RTFS</a>!**</p>
 <p>** Read the Freaking Source (polite form)
 ** Read The Freaking Screen (polite form)</p>
 <p>If you are still puzzled, look at <a href="prog.c">prog.c</a> with your favorite text editor.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p><strong>Follow these instructions literally!</strong></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span> prog.c</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gcc</span> <span class="at">-w</span> <span class="at">-o</span> prog prog.c</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cat prog.c
+    gcc -w -o prog prog.c
+    ./prog</code></pre>
 <p>You will do a double take.</p>
 <p>Hint 1: Do <code>less prog.c</code>. You will see an <strong>emphasized</strong> string if your
 terminal supports bold.</p>

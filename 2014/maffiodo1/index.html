@@ -143,13 +143,13 @@ Location: <a href="../../location.html#IT">IT</a> - <em>Italian Republic</em> (<
 <h2 id="to-build">To build:</h2>
 <p>This entry requires SDL to be installed. See <a href="../../faq.html#SDL">FAQ 3.8</a> if you
 don’t know how to do this for your system.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2014_maffiodo1">2014 maffiodo1 bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span> game.level <span class="kw">|</span> <span class="ex">./prog</span> 320 200 800 300 128 144 game.rgba game.wav 10343679</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cat game.level | ./prog 320 200 800 300 128 144 game.rgba game.wav 10343679</code></pre>
 <p>The parameters to the program are:</p>
 <ol type="1">
 <li>Window width.</li>
@@ -164,9 +164,9 @@ don’t know how to do this for your system.</p>
 note on macOS.</li>
 </ol>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./giana.sh</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./mario.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./giana.sh
+
+    ./mario.sh</code></pre>
 <p>If you end up telnetting to the server (feature of <a href="mario.sh">mario.sh</a>) you can
 try:</p>
 <pre><code>    ls # show files including games
@@ -175,9 +175,9 @@ try:</p>
     starwars # animated Star Wars &#39;film&#39;</code></pre>
 <p>If you wish to change the width and height, defaulting at 640 x 480, say to
 800 x 800, try:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">ROWS</span><span class="op">=</span>800 <span class="va">COLS</span><span class="op">=</span>800 <span class="ex">./mario.sh</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="va">ROWS</span><span class="op">=</span>800 <span class="va">COLS</span><span class="op">=</span>800 <span class="ex">./giana.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ROWS=800 COLS=800 ./mario.sh
+
+    ROWS=800 COLS=800 ./giana.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>A classic for a particular generation. Like all good programs, being data
 driven means you can do fun things in small spaces.</p>
@@ -191,10 +191,10 @@ immediately take effect.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="remarks">Remarks</h3>
 <p>Use <code>tabsize=4</code> to see the magic.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">expand</span> <span class="at">-t</span> 4 prog.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    expand -t 4 prog.c</code></pre>
 <p>The program returns 0 if the player wins or <em>non-zero</em> if the player loses so
 you can test it and make something useful (or not), like this:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span> mario.level <span class="kw">|</span> <span class="ex">./prog</span> 320 200 800 300 128 144 mario.rgba mario8.wav 10343679 <span class="kw">&amp;&amp;</span> <span class="ex">telnet</span> telehack.com 23</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cat mario.level | ./prog 320 200 800 300 128 144 mario.rgba mario8.wav 10343679 &amp;&amp; telnet telehack.com 23</code></pre>
 <p>and type in: <code>starwars</code></p>
 <p>This is an engine for <a href="https://en.wikipedia.org/wiki/Platform_game">platform
 game</a>. It can be used to create
@@ -288,7 +288,7 @@ to create.</p>
 You can input as many objects as you want but the maximum number of objects
 handled by the program is 333. You can modify this value by editing the source
 here:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    C<span class="op">[</span><span class="dv">333</span><span class="op">*</span><span class="dv">7</span><span class="op">],</span>d<span class="op">=</span><span class="dv">333</span><span class="op">;</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    C[333*7],d=333;</code></pre>
 <p>Each row has six columns:</p>
 <ol type="1">
 <li><code>Screen X</code> : <code>x</code> position of the object in the level.</li>

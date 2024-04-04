@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
@@ -24,7 +24,7 @@ For more detailed information see [1996 jonth bugs](../../bugs.html#1996_jonth).
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./jonth :0 :0
 ```
 
@@ -35,7 +35,7 @@ off the other so that you can properly play.
 NOTE: if there is no X service open this will crash. If this is the case you
 might try:
 
-```sh
+```<!---sh-->
     ./jonth
 ```
 
@@ -49,7 +49,7 @@ These are supposed to happen.  As is written in the
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./jonth host1:0 host2:0
 ```
 

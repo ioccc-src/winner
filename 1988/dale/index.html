@@ -141,17 +141,17 @@ Location: <a href="../../location.html#AU">AU</a> - <em>Commonwealth of Australi
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1988_dale">1988 dale bugs</a>.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <p>Observe that three of the commands in the script are:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./dale</span> these files are in this directory: <span class="pp">*</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./dale</span> <span class="va">$(</span><span class="bu">printf</span> <span class="st">&quot;the following files exist in this directory:\n%s\n&quot;</span> <span class="pp">*</span><span class="va">)</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./dale</span> <span class="st">&quot;</span><span class="va">$(</span><span class="bu">printf</span> <span class="st">&quot;the following files exist in this directory:\n%s\n&quot;</span> <span class="pp">*</span><span class="va">)</span><span class="st">&quot;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./dale these files are in this directory: *
+    ./dale $(printf &quot;the following files exist in this directory:\n%s\n&quot; *)
+    ./dale &quot;$(printf &quot;the following files exist in this directory:\n%s\n&quot; *)&quot;</code></pre>
 <p>As the script asks what do the last two do and why do they do it? Why do they
 differ in format from the first command? Finally how can you get the more likely
 desired behaviour?</p>

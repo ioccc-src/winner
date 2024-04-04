@@ -132,7 +132,7 @@
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;no_comment&quot;</span> <span class="fu">:</span> <span class="st">&quot;mandatory comment: because comments were removed from the original JSON spec&quot;</span><span class="fu">,</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;IOCCC_status_version&quot;</span> <span class="fu">:</span> <span class="st">&quot;1.0 2024-03-09&quot;</span><span class="fu">,</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;contest_status&quot;</span> <span class="fu">:</span> <span class="st">&quot;closed&quot;</span><span class="fu">,</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;news_update&quot;</span> <span class="fu">:</span> <span class="st">&quot;2024-04-01T09:56:43+00:00&quot;</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;news_update&quot;</span> <span class="fu">:</span> <span class="st">&quot;2024-04-04T21:27:31+00:00&quot;</span><span class="fu">,</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;status_update&quot;</span> <span class="fu">:</span> <span class="st">&quot;2024-03-31T05:02:06+00:00&quot;</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
 
@@ -147,7 +147,7 @@
 <p>This is a <strong>mandatory</strong> comment for which we offer no comment other
 than this comment. :-)</p>
 <p>The JSON member value must be the following JSON quoted string:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">&quot;mandatory</span> <span class="er">comment:</span> <span class="er">because</span> <span class="er">comments</span> <span class="er">were</span> <span class="er">removed</span> <span class="er">from</span> <span class="er">the</span> <span class="er">original</span> <span class="er">JSON</span> <span class="er">spec&quot;</span></span></code></pre></div>
+<pre class="&lt;!---json--&gt;"><code>    &quot;mandatory comment: because comments were removed from the original JSON spec&quot;</code></pre>
 <h2 id="ioccc_status_version">IOCCC_status_version</h2>
 <p>This is the version of format of the <a href="status.json">status.json</a> file.</p>
 <p>The JSON member value of is a JSON quoted string the form “<em>version YYYY-MM-DD</em>”.</p>
@@ -197,7 +197,7 @@ mastodon feed</a> for information about future IOCCC openings.</p>
 <p>This shows the latest modification date for the <a href="news.html">IOCCC news</a> page.</p>
 <p>The JSON member value is a JSON quoted string obtained from the date field
 of the following <code>ls(1)</code> command:</p>
-<pre class="ls"><code>    TZ=UTC ls -D &#39;%FT%T+00:00&#39; -ld news.html</code></pre>
+<pre class="&lt;!---ls--&gt;"><code>    TZ=UTC ls -D &#39;%FT%T+00:00&#39; -ld news.html</code></pre>
 <p><strong>NOTE</strong>: The date and time are given with respect to <strong>UTC</strong> timezone.</p>
 <p><strong>Sorry</strong>: It is possible that for some reason, the <a href="news.html">IOCCC news</a> page
 was modified without the content being changed. While we will try to minimize
@@ -206,7 +206,7 @@ the cases where this happen, we apologize in advance (Sorry tm Canada 🇨🇦) 
 <p>This shows the latest modification date <a href="status.json">status.json</a> file.</p>
 <p>The JSON member value is a JSON quoted string obtained from the date field
 of the following <code>ls(1)</code> command:</p>
-<pre class="ls"><code>    TZ=UTC ls -D &#39;%FT%T+00:00&#39; -ld status.json</code></pre>
+<pre class="&lt;!---ls--&gt;"><code>    TZ=UTC ls -D &#39;%FT%T+00:00&#39; -ld status.json</code></pre>
 <p><strong>NOTE</strong>: The date and time are given with respect to <strong>UTC</strong> timezone.</p>
 <p><strong>Sorry</strong>: It is possible that for some reason, the <a href="status.json">status.json</a> file
 was modified without the content being changed. While we will try to minimize

@@ -141,15 +141,15 @@ Location: <a href="../../location.html#GB">GB</a> - <em>United Kingdom of Great 
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># text mode</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./imc</span> <span class="at">-text</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./imc</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    # text mode
+    ./imc -text
+
+    ./imc</code></pre>
 <h2 id="try">Try:</h2>
 <p>To see a number of options and configurations:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The program is more interesting to run on workstations that can make use of a
 Sun raster file. Others can make use of the -text flag for character oriented
@@ -263,8 +263,8 @@ bits (e.g. 8).</p>
 standard error to indicate its progress (one dot per pixel line).</p>
 <h3 id="example-pictures-to-try">Example pictures to try</h3>
 <p>Here are a couple of good pictures to draw:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./imc</span> <span class="at">-s</span> 512,512 <span class="at">-f</span> 600000 <span class="at">-l</span> 512 <span class="at">-m</span> 16 <span class="at">-c.00805,.74274</span> <span class="op">&gt;</span> screen1.ras</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./imc</span> <span class="at">-s512,512</span> <span class="at">-j-.523,-.535</span> <span class="op">&gt;</span> screen2.ras</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./imc -s 512,512 -f 600000 -l 512 -m 16 -c.00805,.74274 &gt; screen1.ras
+    ./imc -s512,512 -j-.523,-.535 &gt; screen2.ras</code></pre>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

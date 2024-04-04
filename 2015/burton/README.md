@@ -1,19 +1,19 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./prog "expression"
 ```
 
 or:
 
-```sh
+```<!---sh-->
     ./prog
 ```
 
@@ -22,13 +22,13 @@ Type in expressions on standard input.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
 Notice how the script reads in from a file. If you type just:
 
-```sh
+```<!---sh-->
     ./prog
 ```
 
@@ -37,7 +37,7 @@ it will prompt you in the same way. Send ctrl-c to exit.
 
 Finally, if you wish to read the man page:
 
-```sh
+```<!---sh-->
     man ./calc.1
 ```
 
@@ -51,7 +51,7 @@ author's remarks below.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -109,7 +109,7 @@ Yes, this is another calculator program.
 However, unlike any other calculator source code the author is aware of,
 this one contains no digits.  At all.  Anywhere.  As in
 
-```sh
+```<!---sh-->
     grep '[0-9]' prog.c || echo no digits!
 ```
 
@@ -222,7 +222,7 @@ With `-Wall -std=c99`, both are quite noisy, and all can be ignored:
 If the program name begins with an `e`, it echoes `stdin` to `stdout`.
 This allows for a convenient test suite:
 
-```sh
+```<!---sh-->
     ln -sf prog eprog
     PATH=. eprog < test.in | diff - test.out
 ```

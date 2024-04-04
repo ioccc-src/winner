@@ -141,15 +141,15 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
 <p>The author suggested that after compilation one should look at the generated
 files. For instance:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">less</span> generated1.c</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">less</span> generated2.c</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">less</span> generated3.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    less generated1.c
+    less generated2.c
+    less generated3.c</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Code should be readable in any direction! This tool will help you rotate your
 code so you don’t have to stare at it sideways or even upside down. Rotating
@@ -164,21 +164,21 @@ reveal messages and one more tool that can be used to reveal the final message
 hidden in the original source. All of these can be created using combinations
 of <code>./left</code>, <code>./right</code> and <code>./shift</code> and the additionally generated programs.</p>
 <p>The final message can be revealed using</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./msg9</span> <span class="op">&lt;</span> prog.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./msg9 &lt; prog.c</code></pre>
 <p>But what combinations will generate <code>./msg3</code>, <code>./msg4</code>, <code>./msg5</code>, <code>./msg6</code>,
 <code>./msg7</code>, <code>./msg8</code> and finally <code>./msg9</code>?</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="tools-usage">Tools’ usage:</h3>
 <p><code>Nuko</code> is a text rotator: given some text in <code>stdin</code>, <code>Nuko</code> will write the
 same text to <code>stdout</code>, but rotated 90 degrees counterclockwise.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> prog.c <span class="at">-o</span> left</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./left</span> <span class="op">&lt;</span> input.txt <span class="op">&gt;</span> rotated_counterclockwise.txt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cc prog.c -o left
+    ./left &lt; input.txt &gt; rotated_counterclockwise.txt</code></pre>
 <p>Due to static memory allocation, only the first 1K columns by 1K rows
 are rotated, the rest are silently ignored. But fear not, a separate
 tool with dynamic memory allocation is included:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./left</span> <span class="op">&lt;</span> prog.c <span class="op">&gt;</span> r1.c</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> r1.c <span class="at">-o</span> right</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./right</span> <span class="op">&lt;</span> input.txt <span class="op">&gt;</span> rotated_clockwise.txt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./left &lt; prog.c &gt; r1.c
+    cc r1.c -o right
+    ./right &lt; input.txt &gt; rotated_clockwise.txt</code></pre>
 <p>For variety, this second tool rotates clockwise instead of
 counterclockwise. Also, it can handle files larger than 1024x1024,
 depending on how much memory you have.</p>
@@ -186,14 +186,14 @@ depending on how much memory you have.</p>
 rotate counterclockwise once more, we get another program. This
 program outputs a single message to <code>stdout</code>, which is the name of the
 series that <code>Nuko</code> came from.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./left</span> <span class="op">&lt;</span> prog.c <span class="kw">|</span> <span class="ex">./left</span> <span class="op">&gt;</span> r2.c</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> r2.c <span class="at">-o</span> msg0</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./msg0</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./left &lt; prog.c | ./left &gt; r2.c
+    cc r2.c -o msg0
+    ./msg0</code></pre>
 <p>There is one final rotation, which produces a tool that removes
 leading whitespaces:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./left</span> <span class="op">&lt;</span> prog.c <span class="kw">|</span> <span class="ex">./left</span> <span class="kw">|</span> <span class="ex">./left</span> <span class="op">&gt;</span> r3.c</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> r3.c <span class="at">-o</span> shift</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./shift</span> <span class="op">&lt;</span> input.txt <span class="op">&gt;</span> no_leading_space.txt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./left &lt; prog.c | ./left | ./left &gt; r3.c
+    cc r3.c -o shift
+    ./shift &lt; input.txt &gt; no_leading_space.txt</code></pre>
 <p>Where this might be useful, besides ruining the formatting of certain
 files, is that it completes the set of tools needed to solve the
 puzzle that is embedded in <a href="prog.c">prog.c</a>.</p>
@@ -204,8 +204,8 @@ toward one of those notches (and create a new notch on the other
 side). This shifted code behaves slightly different from the original
 program. For example, here are two more messages that can be
 produced:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./shift</span> <span class="op">&lt;</span> prog.c <span class="kw">|</span> <span class="ex">./right</span> <span class="op">&gt;</span> msg1.c <span class="kw">&amp;&amp;</span> <span class="fu">gcc</span> msg1.c <span class="at">-o</span> msg1 <span class="kw">&amp;&amp;</span> <span class="ex">./msg1</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./shift</span> <span class="op">&lt;</span> prog.c <span class="kw">|</span> <span class="ex">./left</span> <span class="op">&gt;</span> msg2.c <span class="kw">&amp;&amp;</span> <span class="fu">gcc</span> msg2.c <span class="at">-o</span> msg2 <span class="kw">&amp;&amp;</span> <span class="ex">./msg2</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./shift &lt; prog.c | ./right &gt; msg1.c &amp;&amp; gcc msg1.c -o msg1 &amp;&amp; ./msg1
+    ./shift &lt; prog.c | ./left &gt; msg2.c &amp;&amp; gcc msg2.c -o msg2 &amp;&amp; ./msg2</code></pre>
 <p>In total, there are 9 embedded strings that can be produced via a
 sequence of rotates and shifts, one of which can be used to extract
 the 10th final string from <a href="prog.c">prog.c</a>. The intent is to simulate those

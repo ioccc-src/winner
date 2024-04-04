@@ -141,25 +141,25 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>There is an alternate version that will read from the compiled file itself, in
 case you don’t have a <code>/dev/urandom</code> file. There is also a version that should
 theoretically work with Windows which distinguishes binary and text. See
 <a href="#alternate-code">alternate code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./nyaruko</span> <span class="pp">[</span><span class="ss">seed.txt</span><span class="pp">]</span> <span class="op">&lt;</span> original.bin <span class="op">&gt;</span> output.c</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bash</span> output.c <span class="op">&gt;</span> key.c</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">perl</span> output.c <span class="op">&gt;</span> data.c</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span> key.c data.c <span class="op">&gt;</span> output.c</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> output.c <span class="at">-o</span> output</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./output</span> <span class="op">&gt;</span> regenerated.bin</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./nyaruko [seed.txt] &lt; original.bin &gt; output.c
+    bash output.c &gt; key.c
+    perl output.c &gt; data.c
+
+    cat key.c data.c &gt; output.c
+
+    cc output.c -o output
+    ./output &gt; regenerated.bin</code></pre>
 <p>NOTE: if your OS does not have <code>/dev/urandom</code> then you should specify a seed
 file or use the <a href="#alternate-code">alternate version</a> which reads in the compiled
 binary itself.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <p>The script <a href="try.sh">try.sh</a> will check if you have perl before trying to use the
 perl parts of the script.</p>
 <h2 id="alternate-code">Alternate code:</h2>
@@ -171,14 +171,14 @@ is like the first except it also should theoretically work with Windows, setting
 binary mode on <code>stdin</code> and <code>stdout</code>.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <p>For the first version:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <p>For the second version:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt2</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt2</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>nyaruko.alt</code> or <code>nyaruko.alt2</code> as you would <code>nyaruko</code> above.</p>
 <h3 id="alternate-try">Alternate try:</h3>
 <p>For the first alternate version:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.alt.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh</code></pre>
 <p>We have no way to test the second version, sorry (tm Canada :-) )!</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The judges have nothing to add that has not already been written about in the
@@ -187,24 +187,24 @@ binary mode on <code>stdin</code> and <code>stdout</code>.</p>
 <h3 id="usage">Usage</h3>
 <p><code>Nyaruko</code> is a binary to text filter. Given some input on <code>stdin</code>,
 <code>Nyaruko</code> will produce C code that reproduces this input on <code>stdout</code>:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./nyaruko</span> <span class="op">&lt;</span> original.bin <span class="op">&gt;</span> output.c</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gcc</span> output.c <span class="at">-o</span> output</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./output</span> <span class="op">&gt;</span> regenerated.bin</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./nyaruko &lt; original.bin &gt; output.c
+    gcc output.c -o output
+    ./output &gt; regenerated.bin</code></pre>
 <p>Output is encrypted, but both key and data are included in the output.
 To separate the key from the data, run these commands:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bash</span> output.c <span class="op">&gt;</span> key.c</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">perl</span> output.c <span class="op">&gt;</span> data.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    bash output.c &gt; key.c
+    perl output.c &gt; data.c</code></pre>
 <p>The key-less <code>data.c</code> still compiles, but produces a different message
 on <code>stdout</code> instead of the original input. This message is a hint to
 why the code is formatted the way it is.</p>
 <p>To combine the key and data, concatenate them together in either
 order:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span> key.c data.c <span class="op">&gt;</span> output.c</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span> data.c key.c <span class="op">&gt;</span> output.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cat key.c data.c &gt; output.c
+    cat data.c key.c &gt; output.c</code></pre>
 <p>By default, <code>Nyaruko</code> generates a unique random key for every message,
 using <code>/dev/urandom</code> as the seed. If given an extra command line
 argument, <code>Nyaruko</code> will seed using that file instead of <code>/dev/urandom</code>:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./nyaruko</span> seed.txt <span class="op">&lt;</span> input.bin <span class="op">&gt;</span> output.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./nyaruko seed.txt &lt; input.bin &gt; output.c</code></pre>
 <p>This makes the output key deterministic, allowing the same key to be shared
 across different files. On operating systems that do not have <code>/dev/urandom</code>,
 users should always specify this extra seed argument to avoid indeterministic

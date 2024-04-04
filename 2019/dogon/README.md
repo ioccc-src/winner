@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -18,14 +18,14 @@ For more detailed information see [2019 dogon bugs](../../bugs.html#2019_dogon).
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./prog < pattern.mc
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -247,13 +247,13 @@ of his vast knowledge regarding GOL programming and hashlife. As a free bonus,
 Tom has allowed me to show his code which is probably the most efficient yet
 most obfuscated way of calculating the GOL function on a 64 bits `8*8` leaf:
 
-````c
+```<!---`c-->
     unsigned long life8x8(long a) { unsigned long aw = a << 1, ae = a >> 1, s0 = aw
     ^ ae, s1 = aw & ae, hs0 = s0 ^ a, hs1 = (s0 & a) | s1, hs0w8 = hs0 >> 8, hs0e8 =
     hs0 << 8, hs1w8 = hs1 >> 8, hs1e8 = hs1 << 8, ts0 = hs0w8 ^ hs0e8, ts1 = (hs0w8
     & hs0e8) | (ts0 & s0); return (hs1w8 ^ hs1e8 ^ ts1 ^ s1) & ((hs1w8 | hs1e8) ^
     (ts1 | s1)) & ((ts0 ^ s0) | a); }
-````
+```<!---`-->
 
 This uses only 19 bitwise operations and six shifts to calculate the inner 6x6
 next generation bits of the input 8x8 !

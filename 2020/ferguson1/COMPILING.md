@@ -33,7 +33,7 @@ I imagine that it works for 32-bit systems but I do not know for sure.
 
 You should be able to get the compiler with:
 
-```sh
+```<!---sh-->
     sudo xcode-select --install
 ```
 
@@ -53,13 +53,13 @@ you want to use the Makefile) to compile and link this entry. With Fedora more
 recent versions there's the `dnf` package manager but I cannot help with any of
 the GUI installers since I don't use them. Something like:
 
-```sh
+```<!---sh-->
     sudo dnf install ncurses-devel ncurses make gcc
 ```
 
 or
 
-```sh
+```<!---sh-->
     # dnf install ncurses-devel ncurses make gcc
 ```
 
@@ -69,25 +69,25 @@ Just like Fedora you will need `gcc`, `ncurses`, `ncurses-devel` (and if you
 want to use the Makefile `make`). CentOS uses `yum` and CentOS 8 uses `dnf`.
 So:
 
-```sh
+```<!---sh-->
     sudo yum install ncurses-devel ncurses make gcc
 ```
 
 or
 
-```sh
+```<!---sh-->
     # yum install ncurses-devel ncurses make gcc
 ```
 
 or
 
-```sh
+```<!---sh-->
     sudo dnf install ncurses-devel ncurses make gcc
 ```
 
 or
 
-```sh
+```<!---sh-->
     # dnf install ncurses-devel ncurses make gcc
 ```
 

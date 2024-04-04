@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -8,7 +8,7 @@ NOTE: there is an alternate version for vi(m) like movements. See [alternate
 version](#alternate-code) below. If your terminal has problems with the
 `stty(1)` commands try:
 
-```sh
+```<!---sh-->
     make anon-no_stty
 ```
 
@@ -28,14 +28,14 @@ For more detailed information see [2005 anon bugs](../../bugs.html#2005_anon).
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./anon x y [z]
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./anon 4 4
 
     ./anon 3 3 3
@@ -48,13 +48,13 @@ hook you) and spending too much time playing. :-)
 
 If you want to see this in action you can easily do this:
 
-```sh
+```<!---sh-->
     yes 'please crash on me :-)' | ./anon 4 4
 ```
 
 What happens if you specify a larger board? For instance:
 
-```sh
+```<!---sh-->
     yes 'please crash on me :-)' | ./anon 10 10 10
 ```
 
@@ -70,13 +70,13 @@ The alternate version uses `vi(m)` like movement keys.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
 To compile the version without `stty(1)`:
 
-```sh
+```<!---sh-->
     make alt-no_stty
 ```
 
@@ -121,13 +121,13 @@ sorted in the order they appear on the screen.
 The program takes 2 or 3 arguments, specifying the dimensions of the board.
 For example, to play the original version of the Fifteen Puzzle:
 
-```sh
+```<!---sh-->
     ./anon 4 4
 ```
 
 To play with a 3D board, do something like this:
 
-```sh
+```<!---sh-->
     ./anon 3 3 3
 ```
 
@@ -377,7 +377,7 @@ stored in a well-known location in the `MASS`.
 
 `if(p,q,r,s)` is, in fact, an `if` statement. :-) It is equivalent to:
 
-```c
+```<!---c-->
     if (p) { q; r } else {s}
 ```
 
@@ -404,7 +404,7 @@ closes the current state and opens a new one behind the programmer's back.
 variable); `x` and `y-1` define the starting and ending values of `i`, and `z`
 is the loop body. `Z` is the post-loop code in the current state. For example:
 
-```c
+```<!---c-->
     for(s,i, 0, 10,
     some_code       ,
     other_code)
@@ -412,7 +412,7 @@ is the loop body. `Z` is the post-loop code in the current state. For example:
 
 is equivalent to:
 
-```c
+```<!---c-->
     for (i=0; i&lt;10; i++) {
 	    some_code;
     }

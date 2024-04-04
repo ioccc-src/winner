@@ -1,13 +1,13 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./laman <positive number>
 ```
 
@@ -17,7 +17,7 @@
 The program accepts ONE POSITIVE number.  Seeing is believing, so try things
 like:
 
-```sh
+```<!---sh-->
     ./try.sh
 
     ./laman 4
@@ -33,14 +33,14 @@ This code should run you in circles.
 Some new compilers (in 1984) dislike lines 6 and 10 of the source, so we changed
 them from:
 
-```c
+```<!---c-->
     ;++f)a[		b<<5|c]		=d++,b+		=e;for(		f=0;f<O
     <<5|c]^		=a[b<<5		|c]^=a[		(k-(b+1		))<<5|c]
 ```
 
 to:
 
-```c
+```<!---c-->
     ;++f)a[		b<<5|c]		=d++,b+=	e;for(		f=0;f<O
     <<5|c]^=	a[b<<5		|c]^=a[		(k-(b+1		))<<5|c]
 ```

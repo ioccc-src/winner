@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -21,7 +21,7 @@ For more detailed information see [2001 kev bugs](../../bugs.html#2001_kev).
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./kev # in one terminal
 
     ./kev hostname # in another terminal
@@ -32,7 +32,7 @@ NOTE: each player's paddle is at the bottom and the opponent at the top.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./kev		    # in one terminal
 
     ./kev localhost	    # in another terminal on the same host
@@ -41,13 +41,13 @@ NOTE: each player's paddle is at the bottom and the opponent at the top.
 If you need to change the speed you can reconfigure it like (say
 for over a network and not the same host):
 
-```sh
+```<!---sh-->
     make clobber SPEED=50 all # original default value which is very fast
 ```
 
 If you wish to change the port you can do so like:
 
-```sh
+```<!---sh-->
     make clobber PORT=3773 all
 ```
 
@@ -58,19 +58,19 @@ syscall with the `l_` macro, changing the `L` variable like one would `PORT`. Of
 course you can do more than one at the same time. For instance to change the
 speed and port:
 
-```sh
+```<!---sh-->
     make clobber SPEED=512 PORT=3773 all
 ```
 
 If you have `xterm` try on one system:
 
-```sh
+```<!---sh-->
     xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev &
 ```
 
 and then the other, the client system:
 
-```sh
+```<!---sh-->
     xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev localhost&
 ```
 
@@ -85,7 +85,7 @@ awkward `,` and `.` keys to move your paddle.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -105,13 +105,13 @@ terminal?
 
 If you have `xterm` try on one system:
 
-```sh
+```<!---sh-->
     xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev.alt &
 ```
 
 and then the other, the client system:
 
-```sh
+```<!---sh-->
     xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev.alt localhost&
 ```
 
@@ -151,14 +151,14 @@ getting the ball past your opponent's paddle.  It's pretty fun!  :)
 
 Run the server first without any command line arguments, i.e.
 
-```sh
+```<!---sh-->
     ./kev
 ```
 
 Then run the client with a single command line argument which is
 the name of the machine running the server, e.g.
 
-```sh
+```<!---sh-->
     ./kev localhost
 ```
 
@@ -169,7 +169,7 @@ blocked by a firewall.
 Here's a good quick example to see it in action on your own
 machine, assuming you have `Xwindows`:
 
-```sh
+```<!---sh-->
     xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev &
     xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev localhost&
 ```

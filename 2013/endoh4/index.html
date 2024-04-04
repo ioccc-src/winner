@@ -141,10 +141,10 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em></li>
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>If you wish to change the size (see the <a href="#authors-remarks">Author’s remarks</a>
 below) you can do so with the <code>SIZE</code> variable. For instance you can do:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> clobber SIZE=50,50 all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make clobber SIZE=50,50 all</code></pre>
 <p>but you can also do this directly with the <a href="endoh4.sh">endoh4.sh</a> script as
 described below.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
@@ -152,22 +152,22 @@ described below.</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2013_endoh4">2013 endoh4 bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./endoh4</span> <span class="op">&lt;</span> file</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./endoh4.sh</span> file</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./endoh4 &lt; file
+    ./endoh4.sh file</code></pre>
 <p>The second form is preferable as it will temporarily make the cursor invisible
 as recommended by the author. If no file is specified in the <code>./endoh4.sh</code> command
 line it will feed to the program <a href="endoh4.c">endoh4.c</a>.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./endoh4.sh</span> cube.txt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./endoh4.sh cube.txt</code></pre>
 <p>Hit ctrl-c to end the program.</p>
 <p>The author recommends the use of xterm.</p>
 <p>For an example, if you are a football/soccer fan, try:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./endoh4.sh</span> solids/archimedian-solid/a11-truncated-icosahedron.txt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./endoh4.sh solids/archimedian-solid/a11-truncated-icosahedron.txt</code></pre>
 <p>You can provide more than one file:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./endoh4.sh</span> solids/archimedian-solid/a11-truncated-icosahedron.txt cube.txt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./endoh4.sh solids/archimedian-solid/a11-truncated-icosahedron.txt cube.txt</code></pre>
 <p>Hit ctrl-c/intr to go to the next file.</p>
 <p>If you wish to change the size to <code>50,50</code> without passing any arg:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">SIZE</span><span class="op">=</span>50,50 <span class="ex">./endoh4.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    SIZE=50,50 ./endoh4.sh</code></pre>
 <p>Not specifying a file feeds <a href="endoh4.c">endoh4.c</a> to the program.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This program is formatted as the net for a tetrahedron (hint: try feeding the
@@ -203,17 +203,17 @@ triangulated)</li>
 clang, and tcc. It should not trigger warnings with <code>-pedantic</code> and <code>-Wextra</code>.</p>
 <h3 id="tips">Tips</h3>
 <p>You may want to use <code>tput</code> to hide the terminal cursor.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tput</span> civis</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./endoh4</span> <span class="op">&lt;</span> cube.txt</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tput</span> cnorm</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    tput civis
+    ./endoh4 &lt; cube.txt
+    tput cnorm</code></pre>
 <p>or</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./endoh4.sh</span> cube.txt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./endoh4.sh cube.txt</code></pre>
 <h3 id="bonuses">Bonuses</h3>
 <p>You can change the screen size. Let the aspect ratio be about 3:1.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> <span class="at">-DS</span><span class="op">=</span>120,40 <span class="at">-o</span> endoh4 endoh4.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cc -DS=120,40 -o endoh4 endoh4.c</code></pre>
 <p>The shape of this code is the geometric net of a regular tetrahedron.
 So, try:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./endoh4</span> <span class="op">&lt;</span> endoh4.c <span class="co"># or ./endoh4.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./endoh4 &lt; endoh4.c # or ./endoh4.sh</code></pre>
 <p>The <a href="solids/">solids/</a> directory includes various solid data:</p>
 <ul>
 <li><a href="http://en.wikipedia.org/wiki/Platonic_solid">Platonic solids</a></li>

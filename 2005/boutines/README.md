@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -15,20 +15,20 @@ require it?](../../faq.html#imagemagick).
 Look here to find some [SVG Viewer
 Implementations](https://www.w3.org/Graphics/SVG/WG/wiki/Implementations).
 
-```sh
+```<!---sh-->
     ./boutines < input > output.svg
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
 If `ruby` is installed [try.sh](try.sh) will generate an SVG file by:
 
-```sh
+```<!---sh-->
     ruby -e '20.times{puts "#{rand} #{rand}"}' | ./boutines > test.svg
 ```
 
@@ -75,7 +75,7 @@ an [SVG](https://www.w3.org/TR/SVG11/expanded-toc.html) stream.
 
 This will possibly save a compressed SVG file and may be useful:
 
-```sh
+```<!---sh-->
     ./boutines | gzip > result.svg.gz
 ```
 

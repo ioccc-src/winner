@@ -1,13 +1,13 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./applin
 ```
 

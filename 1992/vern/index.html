@@ -141,13 +141,13 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1992_vern">1992 vern bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./vern</span> 3    <span class="co"># &lt;-- default is 2</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./vern 3    # &lt;-- default is 2</code></pre>
 <h2 id="try">Try:</h2>
 <p>You might start off by giving the following input:</p>
 <pre><code>    63 43
@@ -158,10 +158,10 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <p>The judges assume no responsibility for the obfuscated opening
 suggested above. :-)</p>
 <p>For a real quick game try:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./vern</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">65</span> 55</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">66</span> 46</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./vern
+
+    65 55
+    66 46</code></pre>
 <p>NOTE: Move values must be restricted to the range 00 to 77.</p>
 <p>NOTE: Because some mailers have problems with the original winning source,
 a slightly modified version with shorter lines has been provided.</p>
@@ -225,8 +225,8 @@ at build time into much-needed text. Without this hack the program
 wouldn’t pass the character limit. A nice side effect is that the
 initial source is gloriously difficult to peruse. In particular, the Makefile
 does:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sed</span> <span class="op">&lt;</span>vern.c <span class="st">&#39;s/{ /(/g;s/} /)/g;s/;       /#define /&#39;</span> <span class="kw">|</span> <span class="dt">\</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sed</span> <span class="st">&#39;s/}      /=/g;s/{        /i/g&#39;</span> <span class="op">&gt;</span>vern.tmp.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    sed &lt;vern.c &#39;s/{ /(/g;s/} /)/g;s/;       /#define /&#39; | \
+        sed &#39;s/}      /=/g;s/{        /i/g&#39; &gt;vern.tmp.c</code></pre>
 <p>and compiles <code>vern.tmp.c</code>.</p>
 <p>Second, the rather ho-hum step has been taking of naming each variable
 with a one or two letter identifier to render it meaningless (and save

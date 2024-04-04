@@ -142,7 +142,7 @@ Location: <a href="../../location.html#IT">IT</a> - <em>Italian Republic</em> (<
 
 <h2 id="to-build">To build:</h2>
 <p>Make sure you have the SDL1 (not SDL2!) development environment installed.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>There is alternate version that lets you redefine the width and height and number
 of iterations to use. See <a href="#alternate-code">Alternate code</a> below.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
@@ -151,23 +151,23 @@ of iterations to use. See <a href="#alternate-code">Alternate code</a> below.</p
     STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2006_monge">2006 monge bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./monge</span> expression ...</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./monge expression ...</code></pre>
 <p>Incorrect formulas will ungracefully crash the program.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This alternate code lets you specify the width and height of the image as well
 as the number of iterations to perform.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <p>To use the default values, the same as <a href="monge.c">monge.c</a>, just do:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <p>But if you wish to actually make use of it you will want to redefine one or more
 of the variables <code>W</code>, <code>H</code> and <code>I</code>. The defaults are (respectively) 400, 300 and
 \128. If you wish to change the image size to 500x500 but keep the iterations
 the same then do:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> clobber WIDTH=500 HEIGHT=500 alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make clobber WIDTH=500 HEIGHT=500 alt</code></pre>
 <p>If you wish to keep the dimensions the same but change the iterations to 512:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> clobber ITERATIONS=512 alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make clobber ITERATIONS=512 alt</code></pre>
 <p>If you specify a value less than 1 for any of these it sets it back to the
 default. The value 1 was selected arbitrarily and such a small number as 1 will
 not do anything useful but as long as it’s at least 1 it’ll not be redefined.
@@ -176,7 +176,7 @@ anyway.</p>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>monge.alt</code> exactly as you would <code>monge</code> above.</p>
 <h3 id="alternate-try">Alternate try:</h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.alt.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>For those who are familiar with the previous <a href="../../authors.html">IOCCC entries</a>,
 this program is best described as “<a href="../../1994/tvr/index.html">1994/tvr</a> meets
@@ -193,11 +193,11 @@ effort to work on both <code>i386</code> and <code>x86_64</code>. Portable it is
 <ol start="0" type="1">
 <li>Compile using the Makefile, or just run:</li>
 </ol>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gcc</span> monge.c <span class="at">-o</span> monge <span class="at">-O3</span> <span class="kw">`</span><span class="ex">sdl-config</span> <span class="at">--libs</span> <span class="at">--cflags</span><span class="kw">`</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    gcc monge.c -o monge -O3 `sdl-config --libs --cflags`</code></pre>
 <ol type="1">
 <li>Run:</li>
 </ol>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./monge</span> <span class="st">&quot;z = 0&quot;</span> <span class="st">&quot;z = z*z + c; Abs2(z) &lt; 4&quot;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./monge &quot;z = 0&quot; &quot;z = z*z + c; Abs2(z) &lt; 4&quot;</code></pre>
 <ol start="2" type="1">
 <li><p>Keep clicking with left or right button to zoom in or out.</p></li>
 <li><p>Use the number pad <code>+</code> and <code>-</code> to increase/decrease the iteration count when
@@ -240,35 +240,35 @@ as you like (as understood by the C function <code>isspace()</code>).</p>
 <ul>
 <li>Mandelbrot:</li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./monge</span> <span class="st">&quot;z=1&quot;</span> <span class="st">&quot;z=z*z+c; Abs2(z)&lt;4&quot;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./monge &quot;z=1&quot; &quot;z=z*z+c; Abs2(z)&lt;4&quot;</code></pre>
 <ul>
 <li>Mandelbrot (return time variation):</li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./monge</span> <span class="st">&quot;z=c&quot;</span> <span class="st">&quot;z=z*z+c; Abs2(z-c)&gt;0.0001&quot;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./monge &quot;z=c&quot; &quot;z=z*z+c; Abs2(z-c)&gt;0.0001&quot;</code></pre>
 <ul>
 <li>Julia, for <code>c=0.31+i*0.5</code>:</li>
 </ul>
-<div class="sourceCode" id="cb14"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./monge</span> <span class="st">&quot;z=c; c=0.31+i*0.5&quot;</span> <span class="st">&quot;z=z*z+c; Abs2(z)&lt;4&quot;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./monge &quot;z=c; c=0.31+i*0.5&quot; &quot;z=z*z+c; Abs2(z)&lt;4&quot;</code></pre>
 <ul>
 <li>Julia (return time variation), <code>for c=0.31+i*0.5</code>:</li>
 </ul>
-<div class="sourceCode" id="cb15"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./monge</span> <span class="st">&quot;z=c; c=0.31+i*0.5&quot;</span> <span class="st">&quot;z=z*z+c; Abs2(z-c)&gt;0.0001&quot;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./monge &quot;z=c; c=0.31+i*0.5&quot; &quot;z=z*z+c; Abs2(z-c)&gt;0.0001&quot;</code></pre>
 <ul>
 <li>Newton, for <code>x^3-1</code>:</li>
 </ul>
-<div class="sourceCode" id="cb16"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./monge</span> <span class="st">&quot;z=c&quot;</span> <span class="st">&quot;p=z; z=0.6666*z+0.3333/(z*z); Abs2(p-z) &gt; 0.001&quot;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./monge &quot;z=c&quot; &quot;p=z; z=0.6666*z+0.3333/(z*z); Abs2(p-z) &gt; 0.001&quot;</code></pre>
 <ul>
 <li>Newton-Mandelbrot:</li>
 </ul>
-<div class="sourceCode" id="cb17"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./monge</span> <span class="st">&quot;z=0&quot;</span> <span class="st">&quot;p=z; z=z-(z*z*z + (c-1)*z - c)/(3*z*z+c-1); Abs2(p-z) &gt; 0.001&quot;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./monge &quot;z=0&quot; &quot;p=z; z=z-(z*z*z + (c-1)*z - c)/(3*z*z+c-1); Abs2(p-z) &gt; 0.001&quot;</code></pre>
 <ul>
 <li>Phoenix, Mandelbrot version:</li>
 </ul>
-<div class="sourceCode" id="cb18"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./monge</span> <span class="st">&quot;z=0; q=0&quot;</span> <span class="st">&quot;t=z; z=z*z+Re(c)+Im(c)*q; q=t; Abs2(z)&lt;4&quot;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./monge &quot;z=0; q=0&quot; &quot;t=z; z=z*z+Re(c)+Im(c)*q; q=t; Abs2(z)&lt;4&quot;</code></pre>
 <ul>
 <li>Phoenix, Julia version for <code>c=0.56667-i*0.5</code>:</li>
 </ul>
-<div class="sourceCode" id="cb19"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./monge</span> <span class="st">&quot;z=c; c=0.56667-i*0.5; q=0&quot;</span> <span class="st">&quot;t=z; z=z*z+Re(c)+Im(c)*q; q=t; Abs2(z)&lt;4&quot;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./monge &quot;z=c; c=0.56667-i*0.5; q=0&quot; &quot;t=z; z=z*z+Re(c)+Im(c)*q; q=t; Abs2(z)&lt;4&quot;</code></pre>
 <h3 id="compilation-and-portability">Compilation and portability</h3>
 <p>This program will only work on x86 (with an x87 FPU) or x86_64 machines,
 but it requires the SDL library.</p>

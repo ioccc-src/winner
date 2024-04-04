@@ -1,20 +1,20 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./cable1 name group1 group2
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -26,39 +26,39 @@ We need not limit ourselves to the two major political parties in the US today.
 
 Let us consider:
 
-```sh
+```<!---sh-->
     ./cable1 Cooper Mac PC
 ```
 
 Simon works for Apple, so you would expect Mac.  :-)
 Landon is a long time Mac user:
 
-```sh
+```<!---sh-->
     ./cable1 Noll Mac PC
 ```
 
 That works too!  Now Leo brings PCs to the IOCCC judging for cross-platform
 testing:
 
-```sh
+```<!---sh-->
     ./cable1 Broukhis Mac PC
 ```
 
 We can test other people.  The late Steve Jobs:
 
-```sh
+```<!---sh-->
     ./cable1 Jobs Mac PC
 ```
 
 That works!  How about Bill?
 
-```sh
+```<!---sh-->
     ./cable1 Gates Mac PC
 ```
 
 A PC guy as expected.  What about that other Steve?
 
-```sh
+```<!---sh-->
     ./cable1 Ballmer Mac PC
 ```
 

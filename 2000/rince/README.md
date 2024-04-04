@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [2000 rince bugs](../../bugs.html#2000_rince).
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./rince number number2
 ```
 
@@ -28,7 +28,7 @@ different.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -51,7 +51,7 @@ observation.
 
 The simplest way to run it is with no arguments. Just type:
 
-```sh
+```<!---sh-->
     ./rince
 ```
 
@@ -65,7 +65,7 @@ has a built in time machine. Indeed the program knows the speed of light,
 which is used to ensure that we see the "live" pictures. Simply specify
 the fraction of a day to skip forward for each screen refresh. I suggest:
 
-```sh
+```<!---sh-->
     ./rince 0.01
 ```
 
@@ -73,7 +73,7 @@ To display the output (still guessing?) for a given date, specify two
 arguments. The first argument is as before and the second argument is a
 Julian day number (given as a fractional component). E.g.:
 
-```sh
+```<!---sh-->
     ./rince 0 2441193.6
     ./rince 0.01 2441193.6
 ```
@@ -170,7 +170,7 @@ states the following:
 
 Thus we can plot Galileo's discoveries using the following three plots:
 
-```sh
+```<!---sh-->
     ./rince 0 $(./dmy2jd  7.8 1 1610)
     ./rince 0 $(./dmy2jd  8.8 1 1610)
     ./rince 0 $(./dmy2jd 10.8 1 1610)
@@ -180,7 +180,7 @@ However we can go one better by seeing what Galileo would have seen if it
 wasn't cloudy on the 9th. Try:
 
 
-```sh
+```<!---sh-->
     ./rince 0 $(./dmy2jd 9.85 1 1610)
 ```
 

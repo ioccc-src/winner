@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [2013 dlowe bugs](../../bugs.html#2013_dlowe).
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./dlowe [number...]
 ```
 
@@ -27,13 +27,13 @@ where `[number...]` is one or more number, space separated.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
 What is different about the above if you do something like:
 
-```sh
+```<!---sh-->
     echo 'IOCCC winning entry 2013/dlowe' > ioccc.txt
     ./try.sh
     rm -f ioccc.txt
@@ -43,7 +43,7 @@ What is different about the above if you do something like:
 
 To make it simpler to see try showing just the different line like:
 
-```sh
+```<!---sh-->
     ./diff.sh
 ```
 
@@ -58,7 +58,7 @@ with one argument or when all arguments are equal?
 
 For extra fun, compile and run [fun.c](fun.c):
 
-```c
+```<!---c-->
     #include <stdio.h>
     int main() {
 	printf("%d %d %d\n", (int)(-1.0/0.0), (int)(0.0/0.0), (int)(1.0/0.0));
@@ -91,7 +91,7 @@ Which one is correct? :)
 NOTE: `make all` will compile [fun.c](fun.c) but to provide a different compiler
 you can do something like:
 
-```sh
+```<!---sh-->
     make CC=clang fun
 ```
 
@@ -105,7 +105,7 @@ A tiny implementation of command-line
 
 ### Synopsis
 
-```sh
+```<!---sh-->
     $ ./sparkl 0 1 2 3 4 5 6 7
     ▁▂▃▄▅▆▇▉
 
@@ -115,7 +115,7 @@ A tiny implementation of command-line
 
 NOTE: this has been provided in [slflen.sh](slflen.sh) so you can try:
 
-```sh
+```<!---sh-->
     ./slflen.sh
 ```
 

@@ -141,7 +141,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>There are two additional programs based on the author’s remarks and the original
 version, provided as alternate code as it might be less portable. See <a href="#sorted-code">sorted
 code</a>, <a href="#punch-card-code">punch card code</a> and <a href="#alternate-code">alternate
@@ -153,14 +153,14 @@ code</a> below.</p>
     STATUS: main() has only one arg - try and make it have 2 or 3</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2001_westley">2001 westley bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./westley</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># enter some input, terminate with EOF</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> foo <span class="kw">|</span> <span class="ex">./westley</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./westley</span> <span class="op">&lt;</span> westley.c <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./westley 2&gt;/dev/null
+    # enter some input, terminate with EOF
+
+    echo foo | ./westley 2&gt;/dev/null
+
+    ./westley &lt; westley.c 2&gt;/dev/null</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <h2 id="sorted-code">Sorted code:</h2>
 <p>The author stated that one can sort (ignoring leading blanks i.e. <code>sort -b</code>) the
 code by line and it will always sort the order of the input.</p>
@@ -171,12 +171,12 @@ code by line and it will always sort the order of the input.</p>
 <a href="westley.punch.c">westley.punch.c</a> code is specifically so that Westley can punch
 everyone in the face! :-) This is also compiled by default.</p>
 <h3 id="punch-card-try">Punch card try:</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&#39;Brian Westley does it again!&#39;</span> <span class="kw">|</span> <span class="ex">./westley.punch</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    echo &#39;Brian Westley does it again!&#39; | ./westley.punch 2&gt;/dev/null</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>An alternate version of this entry, <a href="westley.alt.c">westley.alt.c</a>, is provided.
 This alternate code might be less portable.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>westley.alt</code> as you would <code>westley</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -195,36 +195,36 @@ were becoming obsolete just as C was becoming more popular*; this is rather
 unfortunate, because C has an advantage over many other languages when it comes
 to punch cards - C programs can be written to be “drop proof”.</p>
 <p>Consider the following C program:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    main<span class="op">(){</span>a<span class="op">();</span>b<span class="op">();</span>c<span class="op">();}</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    a<span class="op">(){</span>printf<span class="op">(</span><span class="st">&quot;A&quot;</span><span class="op">);}</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    b<span class="op">(){</span>printf<span class="op">(</span><span class="st">&quot;B&quot;</span><span class="op">);}</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    c<span class="op">(){</span>printf<span class="op">(</span><span class="st">&quot;C&quot;</span><span class="op">);}</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    main(){a();b();c();}
+    a(){printf(&quot;A&quot;);}
+    b(){printf(&quot;B&quot;);}
+    c(){printf(&quot;C&quot;);}</code></pre>
 <p>This program will compile and run no matter what order the
 lines are in. If you punch it on cards (one line of code per
 card, naturally) and drop them, you don’t need to put them in
 any particular order**; it will always produce <code>ABC</code> as output.</p>
 <p>You can also use global variables:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="dt">char</span> <span class="op">*</span>greet <span class="op">=</span> <span class="st">&quot;Hello, world!&quot;</span><span class="op">;</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">char</span> <span class="op">*</span>greet<span class="op">;</span> main<span class="op">(){</span>puts<span class="op">(</span>greet<span class="op">);}</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    char *greet = &quot;Hello, world!&quot;;
+    char *greet; main(){puts(greet);}</code></pre>
 <p>It would be trivial to write an entire C program that is
 “drop proof” using the above techniques; surprisingly, it’s
 possible to write a program that will always compile but
 behave differently depending on the line order:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    test<span class="op">(</span>a<span class="op">,</span>b<span class="op">){</span><span class="cf">return</span> a<span class="op">;}</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#define test</span><span class="op">(</span><span class="pp">a</span><span class="op">,</span><span class="pp">b</span><span class="op">)</span><span class="pp"> test</span><span class="op">(</span><span class="pp">b</span><span class="op">,</span><span class="pp">a</span><span class="op">)</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    main<span class="op">(){</span><span class="cf">if</span> <span class="op">(</span>test<span class="op">(</span><span class="dv">0</span><span class="op">,</span><span class="dv">1</span><span class="op">))</span> printf<span class="op">(</span><span class="st">&quot;T&quot;</span><span class="op">);</span> <span class="cf">else</span> printf<span class="op">(</span><span class="st">&quot;F&quot;</span><span class="op">);}</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    test(a,b){return a;}
+    #define test(a,b) test(b,a)
+    main(){if (test(0,1)) printf(&quot;T&quot;); else printf(&quot;F&quot;);}</code></pre>
 <p>This program will print out <code>T</code> if the <code>#define</code> statement
 falls between the declaration of <code>test()</code> and its use in
 <code>main()</code>, otherwise it will print out <code>F</code>. Furthermore,
 you can use the same call to <code>test()</code> repeatedly in
 different lines to return different values:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#define test</span><span class="op">(</span><span class="pp">x</span><span class="op">,</span><span class="pp">y</span><span class="op">)</span><span class="pp"> test</span><span class="op">(</span><span class="pp">y</span><span class="op">,</span><span class="pp">x</span><span class="op">)</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    main<span class="op">(){</span><span class="dt">int</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>a<span class="op">(&amp;</span>i<span class="op">);</span>b<span class="op">(&amp;</span>i<span class="op">);</span>c<span class="op">(&amp;</span>i<span class="op">);</span>d<span class="op">(&amp;</span>i<span class="op">);</span>printf<span class="op">(</span><span class="st">&quot;</span><span class="sc">%d\n</span><span class="st">&quot;</span><span class="op">,</span>i<span class="op">);}</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    a<span class="op">(</span>i<span class="op">)</span><span class="dt">int</span><span class="op">*</span>i<span class="op">;{</span><span class="cf">if</span> <span class="op">(</span>test<span class="op">(</span><span class="dv">0</span><span class="op">,</span><span class="dv">1</span><span class="op">))</span> <span class="op">*</span>i <span class="op">+=</span> <span class="dv">1</span><span class="op">;}</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    b<span class="op">(</span>i<span class="op">)</span><span class="dt">int</span><span class="op">*</span>i<span class="op">;{</span><span class="cf">if</span> <span class="op">(</span>test<span class="op">(</span><span class="dv">0</span><span class="op">,</span><span class="dv">1</span><span class="op">))</span> <span class="op">*</span>i <span class="op">+=</span> <span class="dv">2</span><span class="op">;}</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    c<span class="op">(</span>i<span class="op">)</span><span class="dt">int</span><span class="op">*</span>i<span class="op">;{</span><span class="cf">if</span> <span class="op">(</span>test<span class="op">(</span><span class="dv">0</span><span class="op">,</span><span class="dv">1</span><span class="op">))</span> <span class="op">*</span>i <span class="op">+=</span> <span class="dv">4</span><span class="op">;}</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    d<span class="op">(</span>i<span class="op">)</span><span class="dt">int</span><span class="op">*</span>i<span class="op">;{</span><span class="cf">if</span> <span class="op">(</span>test<span class="op">(</span><span class="dv">0</span><span class="op">,</span><span class="dv">1</span><span class="op">))</span> <span class="op">*</span>i <span class="op">+=</span> <span class="dv">8</span><span class="op">;}</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    test<span class="op">(</span>x<span class="op">,</span>y<span class="op">){</span><span class="cf">return</span> x<span class="op">;}</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    #define test(x,y) test(y,x)
+    main(){int i=0;a(&amp;i);b(&amp;i);c(&amp;i);d(&amp;i);printf(&quot;%d\n&quot;,i);}
+    a(i)int*i;{if (test(0,1)) *i += 1;}
+    b(i)int*i;{if (test(0,1)) *i += 2;}
+    c(i)int*i;{if (test(0,1)) *i += 4;}
+    d(i)int*i;{if (test(0,1)) *i += 8;}
+    test(x,y){return x;}</code></pre>
 <p>If you enter the above program on punch cards, throw them
 up in the air, gather them up, and run it, you will get
 a number from 0 to 15 printed out. Now <em>that’s</em> a random

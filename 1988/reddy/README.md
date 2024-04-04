@@ -1,13 +1,13 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./reddy
     char *(*(fun[16])();
     char *(*(*(*(*(*fun[32])))))();
@@ -15,7 +15,7 @@
 
 What happens if you input, and what you do about it?
 
-```c
+```<!---c-->
     char *(*(*(*(*(*fun[32])))))());
 ```
 

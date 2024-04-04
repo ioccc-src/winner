@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
@@ -12,7 +12,7 @@ It may render your system unusable for a limited amount of time
 or force you to reboot using the Big Red Button!  This is **NOT** a joke.
 You have been warned.
 
-```sh
+```<!---sh-->
     ./schweikh3
 ```
 
@@ -27,7 +27,7 @@ systems.
 
 But still it is a useful utility.  To use try:
 
-```sh
+```<!---sh-->
     ./schweikh3
 ```
 
@@ -57,7 +57,7 @@ You have to select maximum ANSI C conformance of your
 compiler. The source fails to compile under a C++ compiler due to
 the `new' identifier which is a C++ reserved word:
 
-```sh
+```<!---sh-->
     $ g++ schweikh3.c
     schweikh3.c:9: parse error before `new'
     schweikh3.c:16: parse error before `new'
@@ -71,7 +71,7 @@ the `new' identifier which is a C++ reserved word:
 The source fails to compile on compilers that recognize the inline
 keyword by default, e.g. gcc:
 
-```sh
+```<!---sh-->
     $ gcc schweikh3.c
     schweikh3.c:46: parse error before `void'
     schweikh3.c: In function `main':

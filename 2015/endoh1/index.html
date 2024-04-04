@@ -144,12 +144,12 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em></li>
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>NOTE: this program requires the tool <code>tcpserver</code> to use. If you do not have this
 program see <a href="../../faq.html#tcpserver">FAQ 3.14 - How do I compile and install tcpserver for entries that
 require it</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">tcpserver</span> <span class="at">-v</span> 127.0.0.1 10333 ./prog ioccc.txt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    tcpserver -v 127.0.0.1 10333 ./prog ioccc.txt</code></pre>
 <p>Then connect to http://localhost:10333 with your browser.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p><a href="https://www.livescience.com/950-leopard-spots.html">How did the leopard get its
@@ -168,18 +168,18 @@ test</a>? This program is also based on
 his work.</p>
 <h3 id="whirlwind-tour">Whirlwind tour</h3>
 <p>Compile the program as follows:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> <span class="at">-O3</span> <span class="at">-std</span><span class="op">=</span>c99 <span class="dt">\</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">-Wall</span> <span class="at">-Wextra</span> <span class="at">-pedantic</span> <span class="at">-o</span> prog prog.c <span class="dt">\</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">-Delta_u</span><span class="op">=</span><span class="st">&quot;Du*laplacian(u)-u*v*v+F*(1-u)&quot;</span> <span class="dt">\</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">-Delta_v</span><span class="op">=</span><span class="st">&quot;Dv*laplacian(v)+u*v*v-v*(F+K)&quot;</span> <span class="dt">\</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">-DF</span><span class="op">=</span>0.040 <span class="at">-DK</span><span class="op">=</span>0.060 <span class="at">-DDu</span><span class="op">=</span>0.200 <span class="at">-DDv</span><span class="op">=</span>0.100 <span class="dt">\</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">-DUV_BACKGROUND</span><span class="op">=</span>1,0 <span class="at">-DUV_DROP</span><span class="op">=</span>-0.5,0.5 <span class="dt">\</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">-DTIMESTEP</span><span class="op">=</span>1.0 <span class="at">-DSPEED</span><span class="op">=</span>2 <span class="at">-DRGB</span><span class="op">=</span>255:128:192</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cc -O3 -std=c99 \
+           -Wall -Wextra -pedantic -o prog prog.c \
+           -Delta_u=&quot;Du*laplacian(u)-u*v*v+F*(1-u)&quot; \
+           -Delta_v=&quot;Dv*laplacian(v)+u*v*v-v*(F+K)&quot; \
+           -DF=0.040 -DK=0.060 -DDu=0.200 -DDv=0.100 \
+           -DUV_BACKGROUND=1,0 -DUV_DROP=-0.5,0.5 \
+           -DTIMESTEP=1.0 -DSPEED=2 -DRGB=255:128:192</code></pre>
 <p>Then, run it with the <code>tcpserver</code> command in the
 <a href="http://cr.yp.to/ucspi-tcp.html">ucspi-tcp</a> package, which was created by
 <a href="../../authors.html#Daniel_J_Bernstein">Daniel J. Bernstein</a>’s
 <a href="../../1991/brnstnd/index.html">1991/brndstd</a> “Best of Show”.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">tcpserver</span> <span class="at">-v</span> 127.0.0.1 10333 ./prog ioccc.txt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    tcpserver -v 127.0.0.1 10333 ./prog ioccc.txt</code></pre>
 <p>Finally, open <code>http://127.0.0.1:10333/</code> in a modern browser supporting HTML5.
 You can use the mouse cursor to place drops into the <a href="https://en.wikipedia.org/wiki/Petri_dish">Petri
 dish</a> interactively.</p>

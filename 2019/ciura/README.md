@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -22,14 +22,14 @@ For more detailed information see [2019 ciura bugs](../../bugs.html#2019_ciura).
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./getwords.sh en | grep .. | ./prog string
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -42,7 +42,7 @@ newline.  See the Author's remarks for more information.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -54,7 +54,7 @@ Use `prog.alt` as you would `prog` above.
 
 ### Alternate try:
 
-```sh
+```<!---sh-->
     ./try.alt.sh
 ```
 
@@ -83,7 +83,7 @@ of the alphabet exactly once.
 
 #### Example execution:
 
-```sh
+```<!---sh-->
     $ grep .. /usr/share/dict/words | ./prog abcdefghijklmnopqrstuvwxyz
     qualm fjord wiz pyx vs beg kc nth
     quartz jinx vs fed kc womb glyph

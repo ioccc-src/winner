@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -11,20 +11,20 @@ code](#alternate-code) below.
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./arachnid [mazefile]
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./arachnid arachnid.txt
 ```
 
 and then try:
 
-```sh
+```<!---sh-->
     ./arachnid arachnid.c
 ```
 
@@ -41,7 +41,7 @@ instead.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -80,7 +80,7 @@ explorers out there.
 
 ### Usage
 
-```sh
+```<!---sh-->
     ./arachnid [mazefile]
 ```
 

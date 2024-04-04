@@ -141,16 +141,16 @@ Location: <a href="../../location.html#FR">FR</a> - <em>French Republic</em> (<e
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix
     STATUS: doesn&#39;t work with some platforms - please help us fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2001_bellard">2001 bellard bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./bellard</span> file</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./bellard file</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./bellard</span> bellard.otccex.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./bellard bellard.otccex.c</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p><code>&lt;JUDGES_COMMENTS&gt;</code> :-)</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
@@ -161,7 +161,7 @@ compilable by a standard ANSI C compiler. <code>OTCC</code> compiles,
 assembles, links and runs C code without the need of any other
 program.</p>
 <p>You can use it by typing:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./bellard</span> bellard.c <span class="pp">[</span><span class="ss">args</span><span class="pp">]</span>...</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./bellard bellard.c [args]...</code></pre>
 <p>or by giving the C source to its standard input.</p>
 <p><code>args</code> are given to the <code>main()</code> function of <code>bellard.c</code> (<code>argv[0]</code> is
 <a href="bellard.c">bellard.c</a>).</p>
@@ -169,15 +169,15 @@ program.</p>
 <ul>
 <li>Sample compilation and execution:</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./bellard</span> bellard.otccex.c 10</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./bellard bellard.otccex.c 10</code></pre>
 <ul>
 <li>Self compilation:</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./bellard</span> bellard.c bellard.otccex.c 10</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./bellard bellard.c bellard.otccex.c 10</code></pre>
 <ul>
 <li>Self compilation iterated…</li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./bellard</span> bellard.c bellard.c bellard.otccex.c 10</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./bellard bellard.c bellard.c bellard.otccex.c 10</code></pre>
 <p>An alternate syntax is to use it as a script interpreter: you can
 put <code>#!/usr/local/bin/otcc</code> at the beginning of your C source if
 you installed <code>otcc</code> at this place.</p>

@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [2005 mikeash bugs](../../bugs.html#2005_mikea
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./mikeash
 ```
 
@@ -28,7 +28,7 @@ under 64-bit (x86_64, arm64) machines too.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -67,7 +67,7 @@ functions.
 
 Try:
 
-```sh
+```<!---sh-->
     echo '(format t "~s" (+ 2 2 ))' | ./mikeash
 ```
 
@@ -76,7 +76,7 @@ the lack of a newline are due to the somewhat broken implementation of
 the format function. More sophisticated arithmetic expressions may be
 used:
 
-```sh
+```<!---sh-->
     echo '(format t "~s" (* (+ 2 2 ) (- 5 (/ 9 3 ))))' | ./mikeash
 ```
 
@@ -130,7 +130,7 @@ nowhere near
 Basically, the [LISP][] interpreter is good for some basic math operations, and
 for running itself. To do the latter, try this:
 
-```sh
+```<!---sh-->
     ./mikeash < mikeash.c > mikeash2.c
     diff mikeash.c mikeash2.c
 ```

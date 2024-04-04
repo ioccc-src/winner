@@ -1,13 +1,13 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./prog
 ```
 
@@ -17,7 +17,7 @@
 On a terminal that supports 24 bit color, has black background, and size at
 least 125x38, try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -40,13 +40,13 @@ And those in the deep south might wish to go north for a better view.
 
 ### How to build:
 
-```sh
+```<!---sh-->
     cc -o prog -std=gnu11 -O3 prog.c
 ```
 
 or
 
-```sh
+```<!---sh-->
     make
 ```
 

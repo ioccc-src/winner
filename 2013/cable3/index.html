@@ -141,13 +141,13 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>An alternate version that should compile in Windows/MS Visual Studio is
 available. See the <a href="#alternate-code">Alternate code</a> section below.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./cable3</span> bios-image-file floppy-image-file <span class="pp">[</span><span class="ss">harddisk</span><span class="pp">-</span><span class="ss">image</span><span class="pp">-</span><span class="ss">file</span><span class="pp">]</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./cable3 bios-image-file floppy-image-file [harddisk-image-file]</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./cable3.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./cable3.sh</code></pre>
 <p>NOTE: to quit the program type <code>QUITEMU</code>. You might have to be at the top level
 directory of the drive, <code>A:</code> or <code>C:</code>.</p>
 <p>To send an <code>Alt+XXX</code> key combination, press (<code>^A</code> / <code>Ctrl+A</code>) then the key, so
@@ -162,7 +162,7 @@ combinations are left for the discovery of the user.</p>
 <p>An alternate version, which should compile in Windows, is provided.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <p>Assuming <code>make</code> is available and will function:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>cable3.alt</code> as you would <code>cable3</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -264,7 +264,7 @@ has no <code>stty</code>. Therefore the Makefile includes a <code>-D</code> opti
 non-UNIX platforms. For example, for Windows/MS Visual Studio, instead of the
 Makefile definition of KB, use something slightly different - add the following
 entry to the Preprocessor Definitions list in the Project Properties page:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    KB<span class="op">=(</span>kb<span class="op">=</span>H<span class="op">(</span><span class="dv">8</span><span class="op">),</span>kbhit<span class="op">())&amp;&amp;(</span>r<span class="op">[</span><span class="dv">1190</span><span class="op">]=</span>getch<span class="op">(),</span>H<span class="op">(</span><span class="dv">7</span><span class="op">))</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    KB=(kb=H(8),kbhit())&amp;&amp;(r[1190]=getch(),H(7))</code></pre>
 <p>NOTE: this is done in the <a href="#alternate-code">Alternate code</a>.</p>
 <h3 id="posix-portability-note">POSIX portability note</h3>
 <p>The code as supplied uses implicit function declarations for POSIX file I/O and
@@ -273,16 +273,16 @@ architecture. For some systems (e.g. 32-bit Mac OS X, which uses 64-bit file
 offsets) this is not the case, and to run successfully on these systems, you
 will need to explicitly declare these functions by adding the appropriate
 include to the top of the source:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#include </span><span class="im">&lt;unistd.h&gt;</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    #include &lt;unistd.h&gt;</code></pre>
 <p>NOTE: this has been done in <a href="cable3.c">cable3.c</a>.</p>
 <h3 id="usage">Usage</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./cable3</span> bios-image-file floppy-image-file <span class="pp">[</span><span class="ss">harddisk</span><span class="pp">-</span><span class="ss">image</span><span class="pp">-</span><span class="ss">file</span><span class="pp">]</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./cable3 bios-image-file floppy-image-file [harddisk-image-file]</code></pre>
 <p>PLEASE NOTE that under Unices the keyboard must be in raw mode for the emulator
 to work properly. Therefore the emulator is best run from a shell script that
 looks something like:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stty</span> cbreak raw <span class="at">-echo</span> min 0</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./cable3</span> bios floppy.img harddisk.img</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stty</span> cooked echo</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    stty cbreak raw -echo min 0
+    ./cable3 bios floppy.img harddisk.img
+    stty cooked echo</code></pre>
 <p>See the <a href="cable3.sh">cable3.sh</a> script.</p>
 <h2 id="to-use-the-emulator---floppy-mode-only">To use the emulator - floppy mode only</h2>
 <p>The simplest use of the emulator is with a single floppy boot disk image, like
@@ -291,17 +291,17 @@ the <code>fd.img</code> provided, which is a FreeDOS boot disk.</p>
 put the keyboard into raw mode (and afterwards it needs to be put back to
 cooked). So, run the emulator using something like this script (provided as
 <a href="cable3.sh">cable3.sh</a>):</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stty</span> cbreak raw <span class="at">-echo</span> min 0</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./cable3</span> bios fd.img</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stty</span> cooked echo</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    stty cbreak raw -echo min 0
+    ./cable3 bios fd.img
+    stty cooked echo</code></pre>
 <h2 id="to-use-the-emulator---floppy-hd-mode">To use the emulator - floppy + HD mode</h2>
 <p>Easiest to start with is to try a ready-made 40MB hard disk image containing a
 whole bunch of software which is in the included file <code>hd.img</code>.</p>
 <p>For the more adventurous, you can start off with (for example) a blank 40MB
 image file called hd.img made using e.g. Makefile. Then use:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stty</span> cbreak raw <span class="at">-echo</span> min 0</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./cable3</span> bios fd.img hd.img</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stty</span> cooked echo</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    stty cbreak raw -echo min 0
+    ./cable3 bios fd.img hd.img
+    stty cooked echo</code></pre>
 <p>Preparing the hard disk for use in the emulator is done just like a real PC.
 Boot the emulator, and use <code>FDISK</code> to partition the hard disk. When it’s done
 <code>FDISK</code> will reboot the emulator. Then you can use <code>FORMAT C:</code> and you are done. The

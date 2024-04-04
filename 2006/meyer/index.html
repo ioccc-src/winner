@@ -141,11 +141,11 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./meyer</span> <span class="pp">[</span><span class="ss">SEED</span><span class="pp">]</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./meyer [SEED]</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./meyer</span> <span class="pp">[</span><span class="ss">SEED</span><span class="pp">]</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./meyer [SEED]</code></pre>
 <p>For your first input try:</p>
 <pre><code>    a 0 1</code></pre>
 <p>where <code>a</code> is the row (<code>a</code>-<code>i</code>), <code>0</code> is the column (<code>0</code>-<code>8</code>) and <code>1</code> is the
@@ -183,7 +183,7 @@ it is obvious, that object-oriented code isn’t ‘<code>WYWIWID</code>’ (‘
 you write is what it does’). It may be tempting to think that</p>
 <pre><code>    Object o;</code></pre>
 <p>might do something similar as</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">struct</span> not_an_object o<span class="op">;</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    struct not_an_object o;</code></pre>
 <p>But this program reveals that it doesn’t. Even worse, this program only
 reveals the tip of the iceberg, what kind of black magic is involved in
 a simple declaration of an object.</p>
@@ -201,7 +201,7 @@ and <a href="https://en.wikipedia.org/wiki/Polymorphism_(computer_science)">poly
 <p>It is left as an exercise to the reader to find a corresponding
 implementation in a popular object-oriented programming language.</p>
 <h3 id="starting-the-game">Starting the game</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./meyer</span> <span class="pp">[</span><span class="ss">SEED</span><span class="pp">]</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./meyer [SEED]</code></pre>
 <h3 id="gameplay">Gameplay</h3>
 <p>It is a <a href="https://en.wikipedia.org/wiki/Sudoku">sudoku</a> based game. The goal of
 the game is to be able to do the last valid ‘move’.</p>

@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -10,7 +10,7 @@ code](#alternate-code).
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./aidan < puzzle
 
     ./aidan seed
@@ -21,7 +21,7 @@ where `seed` is a number.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -34,7 +34,7 @@ which is slower, inelegant and not as obscure, as the author put it.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -46,7 +46,7 @@ Use `aidan.alt` as you would `aidan` above.
 
 ### Alternate try:
 
-```sh
+```<!---sh-->
     ./try.alt.sh
 ```
 
@@ -139,7 +139,7 @@ Telegraph](https://www.telegraph.co.uk/), a UK newspaper.
 
 Now, with modern computers this **can** be solved using brute force, e.g.:
 
-```c
+```<!---c-->
     #include <stdio.h> /* sudoku-bfi.c */
     #define S(t) for(n=0;n<9;v[n++]=0);for(n=0;n<81;n++)if(i[n]){z=1<<i[n];if(v[t]\\
     &z)for(;;){if(p<0)goto d;if(i[p]++<9)goto f;i[p]=0;p=s[p];}v[t]|=z;}
@@ -186,20 +186,20 @@ reasons. That's the worst performance I've had from brute-force so far!)
 
 #### Building
 
-```sh
+```<!---sh-->
     cc -o sudoku-sf sudoku-sf.c
 ```
 
 or, if using gcc, try:
 
-```sh
+```<!---sh-->
     gcc -O2 -Wall -Wextra -ansi -pedantic-errors -o sudoku-sf sudoku-sf.c
 ```
 
 
 #### Testing (optional)
 
-```sh
+```<!---sh-->
     perl ./test-su.perl
 ```
 
@@ -211,7 +211,7 @@ really.
 
 #### Solving
 
-```sh
+```<!---sh-->
     ./aidan < somefile.txt
 ```
 
@@ -232,7 +232,7 @@ though slightly slower. See if you can figure out what it does.)
 
 #### Generating
 
-```sh
+```<!---sh-->
     ./sudoku <seed>
 ```
 
@@ -292,7 +292,7 @@ least 32. (No, that isn't a typo - I did say 15, not 16).
 
 Also requires that `cpp` can properly handle something like:
 
-```c
+```<!---c-->
     #define foo(x,y) x y
     foo(bar,)
 ```

@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -21,20 +21,20 @@ For more detailed information see [2011 vik bugs](../../bugs.html#2011_vik).
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./vik file.mod > audio_file.raw
 ```
 
 If you have `mplayer(1)`:
 
 
-```sh
+```<!---sh-->
     ./vik file.mod | mplayer -demuxer rawaudio -
 ```
 
 Alternatively, you can convert the file to a WAV:
 
-```sh
+```<!---sh-->
     ./vik file.mod > file.raw; ./raw2wav file.raw > file.wav
 ```
 
@@ -43,7 +43,7 @@ and then play `file.wav` with a program that can play WAV files.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -66,7 +66,7 @@ This version is based on the author's remarks and it should work for Windows.
 
 Assuming that `make` is similar enough try:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -87,7 +87,7 @@ initialization for?
 
 Does it take your system a long time to compile?  You may want to do:
 
-```sh
+```<!---sh-->
     cc -S vik.c
 ```
 
@@ -153,7 +153,7 @@ Bertilsson, also known as Deelite:
 
 Compiling for Unix systems (including cygwin) is straight forward:
 
-```sh
+```<!---sh-->
     gcc -o vik vik.c
 ```
 
@@ -162,13 +162,13 @@ Compiling for Unix systems (including cygwin) is straight forward:
 
 #### Convert MOD file to raw 44.1kHz stereo audio file
 
-```sh
+```<!---sh-->
     ./vik mad_world.mod > audio_file.raw
 ```
 
 #### Listen to the MOD file (streaming to mplayer)
 
-```sh
+```<!---sh-->
     ./vik randowan.mod | mplayer -demuxer rawaudio -
 ```
 
@@ -210,7 +210,7 @@ Microsoft compilers adds a carriage return to newlines, and to compile
 the program with this platform, the following line can be added after
 the main declaration in order for the program to run correctly:
 
-```c
+```<!---c-->
     _setmode(_fileno(stdout), 0x8000);
 ```
 

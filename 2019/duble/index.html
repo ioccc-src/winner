@@ -141,7 +141,7 @@ Location: <a href="../../location.html#FR">FR</a> - <em>French Republic</em> (<e
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>There is an alternate version, the original, which does not work well in macOS.
 See <a href="#alternate-code">Alternate code</a> below if you are curious.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
@@ -149,16 +149,16 @@ See <a href="#alternate-code">Alternate code</a> below if you are curious.</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2019_duble">2019 duble bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> file</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog file</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> /tmp/drawing</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog /tmp/drawing</code></pre>
 <p>Open another window / terminal.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> /tmp/drawing</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog /tmp/drawing</code></pre>
 <p>Open more terminals and repeat…</p>
 <p>You might also wish to try a full screen size. For this try:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> clobber fullscreen</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make clobber fullscreen</code></pre>
 <p>Alternatively, if you want to change the size, do something like:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> clobber LINES=20 COLUMNS=20 all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make clobber LINES=20 COLUMNS=20 all</code></pre>
 <p>The author provided us with the following table for use:</p>
 <hr />
 <ul>
@@ -173,7 +173,7 @@ to the <em>move</em> mode).</li>
 <p>The mode and current color is indicated at the bottom left corner of
 the editor.</p>
 <p>After editing the file and quitting, try:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">/tmp/drawing</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    /tmp/drawing</code></pre>
 <p>i.e. execute the file.</p>
 <hr />
 <p>WARNING: if the file is deleted it might lock any session still in use. These
@@ -188,7 +188,7 @@ directory which you’ll have to delete manually. This is also discussed in
 <p>An alternate version of this entry, <a href="prog.alt.c">prog.alt.c</a>, is provided. This
 alternate code might not work as well in macOS.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>prog.alt</code> as you would <code>prog</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -204,7 +204,7 @@ of someone else by just opening the same file!</p>
 See section <a href="#limits-portability">Limits, Portability</a> for more info.</p>
 <p>To build, type <code>make</code> (assuming gcc) or <code>make CC=clang</code>.</p>
 <p>Then you can start the program. It expects a file path as its first argument:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> /tmp/drawing</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog /tmp/drawing</code></pre>
 <p>(If not started this way, with a file, <code>prog</code> will refuse to start.)</p>
 <p>If the file does not exist, you will start with a blank drawing.</p>
 <p>If someone else (or another <em>instance of yourself</em>, maybe?) is already
@@ -264,7 +264,7 @@ inverse video mode, and movement escape codes, e.g. <code>xterm</code>, <code>g
 <h4 id="the-drawing-area-size-is-set-at-compilation-time">The drawing area size is set at compilation time:</h4>
 <p>The default size is the one of my xterm (see top of Makefile).
 You may set it to the full size of your terminal window by typing:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> clobber fullscreen</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make clobber fullscreen</code></pre>
 <p>IMPORTANT NOTES:</p>
 <ul>
 <li><strong>The program compiled with a given size will fail to reload a drawing file

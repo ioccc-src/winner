@@ -141,9 +141,9 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./lycklama.alt</span> <span class="op">&lt;</span> some_file</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./lycklama.alt &lt; some_file</code></pre>
 <p>To see why we recommend the alternate version instead of the original version,
 see below and the <a href="#original-code">Original code</a> section.</p>
 <h2 id="try">Try:</h2>
@@ -152,23 +152,23 @@ original, slows down the output so that you can see what it looked like back in 
 This will be more enjoyable. It is slowed down by the <code>usleep(3)</code> library
 call with a configurable time to sleep. The default is 500 microseconds but you can
 reconfigure it like:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> SLEEP=700 clobber alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make SLEEP=700 clobber alt</code></pre>
 <p>which would set it at 700. Then, whether you use the default value or not, try:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.alt.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh</code></pre>
 <h2 id="original-code">Original code:</h2>
 <p>As explained above, because modern systems run this entry way too fast to fully
 appreciate what it does, we encourage you to first try the alternate version.
 After this, however, you might wish to try the original version, fixed for
 modern systems.</p>
 <h3 id="original-build">Original build:</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <h3 id="original-use">Original use:</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./lycklama</span> <span class="op">&lt;</span> some_file</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./lycklama &lt; some_file</code></pre>
 <h3 id="original-try">Original try:</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./lycklama</span> <span class="op">&lt;</span> lycklama.c</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./lycklama</span> <span class="op">&lt;</span> lycklama.alt.c</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./lycklama</span> <span class="op">&lt;</span> lycklama.orig.c</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./lycklama</span> <span class="op">&lt;</span> Makefile</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./lycklama &lt; lycklama.c
+    ./lycklama &lt; lycklama.alt.c
+    ./lycklama &lt; lycklama.orig.c
+    ./lycklama &lt; Makefile</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Run the program, redirecting a file into it, and notice how it redisplays it.
 The program itself looks like tty noise.</p>

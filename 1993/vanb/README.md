@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [1993 vanb bugs](../../bugs.html#1993_vanb).
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./vanb 'exp'
 ```
 
@@ -28,7 +28,7 @@ hexadecimal and decimal numbers.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -133,7 +133,7 @@ Here's a version of the program before it got formatted into the VIII,
 augmented with comments showing where each state begins. `N1` and `N2` are
 notes:
 
-```c
+```<!---c-->
     #define O5 main
     O5(O2,O7,O3)char**O7;
     {
@@ -180,14 +180,14 @@ printf, and sends the parser to state `012` (which is `<E>`).
 
 The `E` and `T` states work like this:
 
-```c
+```<!---c-->
     int e(){ return eprime( t() ); }
 ```
 
 
 The `E'` and `T'` states work like this:
 
-```c
+```<!---c-->
     int eprime( int intermediate )
     {
 	if( ch == '+' )
@@ -202,7 +202,7 @@ The `E'` and `T'` states work like this:
 The `D`, `X` and `O` states work like this (they assume that they're initially
 called with `0`):
 
-```c
+```<!---c-->
     int octal( int intermediate )
     {
 	if( ch>='0' && ch<='7' )

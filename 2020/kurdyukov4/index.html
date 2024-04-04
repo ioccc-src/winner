@@ -141,13 +141,13 @@ Location: <a href="../../location.html#RU">RU</a> - <em>Russian Federation</em> 
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> text_file output_length context_length random_seed</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog text_file output_length context_length random_seed</code></pre>
 <h2 id="try">Try:</h2>
 <p>When running this, ask yourself why it gets progressively slower when the
 context length decreases:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <blockquote>
 <p>Performance depends on the number of same hashes found.
 Too many identical strings if the context length is small.
@@ -183,11 +183,11 @@ Middle-earth (HoMe)</a>.
 Now can you appreciate the award title a bit better?</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="building">Building:</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> prog.c <span class="at">-o</span> prog</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cc prog.c -o prog</code></pre>
 <h3 id="usage">Usage:</h3>
 <p>This program generates random text from the provided dictionary using a Markov
 chain, outputting to <code>stdout</code>.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> input.txt 2000 10 12345</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog input.txt 2000 10 12345</code></pre>
 <p>Parameters are:</p>
 <ol type="1">
 <li><p>dictionary filename
@@ -209,7 +209,7 @@ the output of this size in bytes exists somewhere in the dictionary.</p></li>
 <h3 id="example">Example</h3>
 <p>You can try this with the inputs provided with
 <a href="../../2019/mills/index.html">2019/mills</a> from the IOCCC entries.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./prog Shakespeare.txt 2001 10 12345</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ ./prog Shakespeare.txt 2001 10 12345</code></pre>
 <p>produces:</p>
 <pre><code>    r sons, wives for them, as the hope I had it. This is the way they be not too ra
     sh a trial of you only. Therefore will not out of door? Nurse: Marry, bachelor,

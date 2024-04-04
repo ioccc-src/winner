@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -10,14 +10,14 @@ code](#alternate-code) below.
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./prog
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./run_clock
     # And watch closely for 15-20 seconds
 ```
@@ -31,7 +31,7 @@ alternate code uses Unicode letters.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
     ```
 
@@ -43,7 +43,7 @@ Use `prog.alt` as you would `prog` above.
 
 ### Alternate try:
 
-```sh
+```<!---sh-->
     ./run_clock.alt
     # And watch closely for 15-20 seconds
 ```
@@ -63,7 +63,7 @@ time might depend on what time it is.
 
 Prepare a mirror!
 
-```sh
+```<!---sh-->
     make clock
 ```
 

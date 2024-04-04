@@ -818,13 +818,13 @@ returned. In either case curses is ended.
 One of these optimisations saved four bytes simply by taking advantage of the
 value of a loop iterator after the loop. The loop is:
 
-```c
+```<!---c-->
     for (I = 0; A && I < A - 1; ++I)
 ```
 
 However after the loop I had this:
 
-```c
+```<!---c-->
     A > 1 && q(n[A - 1],e[A - 1], 'o');
 ```
 
@@ -847,7 +847,7 @@ the problem.
 
 First, the function that turns on colours looked like:
 
-```c
+```<!---c-->
     if (h) attron(m(PAIR(L)));
     else attroff(m(PAIR(L)));
 ```
@@ -857,14 +857,14 @@ that the `attroff()` is called first then I could just do an `if (h)` -
 therefore getting rid of the `else`! But then I thought why not do what I've
 done elsewhere? I had:
 
-```c
+```<!---c-->
     attroff(m(PAIR(L)));
     if (h) attron(m(PAIR(L)));
 ```
 
 But I then saved an extra byte by making it:
 
-```c
+```<!---c-->
     attroff(m(PAIR(L)));
     h && attron(m(PAIR(L)));
 ```
@@ -875,7 +875,7 @@ Second let's look at the `B()` function: there were two things I thought of that
 would save some bytes (I no longer know how many but a few at least possibly six
 or even more). I had the following code:
 
-```c
+```<!---c-->
     if (V && U && o) { S(N); b(1); }
 ```
 
@@ -886,13 +886,13 @@ called with `1` (thus `o` is 1 so the if is true) was if the bug actually is
 caught. That means I could remove the `V && U &&` part of the if! Thus it became
 instead:
 
-```c
+```<!---c-->
     if (o) { S(N); b(1); }
 ```
 
 Then this
 
-```c
+```<!---c-->
     !o && V && U && q U,V,' ');
 ```
 
@@ -913,7 +913,7 @@ where the snake already is. So if I had to make sure the game had started (the
 snake has moved at least once) what could I check? In fact that means the
 direction is not 0! So I could just replace it with:
 
-```c
+```<!---c-->
     !o && D && q *U,*V,' ');
 ```
 
@@ -930,7 +930,7 @@ the score line is updated: so the empty space will be overwritten anyway. And if
 the score line is made an empty string it doesn't matter because it'll appear as
 all spaces anyway. Thus I could save another three bytes by changing it to:
 
-```c
+```<!---c-->
     !o  && q *U,*V,' ');
 ```
 

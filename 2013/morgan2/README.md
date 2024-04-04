@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -9,13 +9,13 @@
 
 For the console version (ncurses):
 
-```sh
+```<!---sh-->
     ./morgan2
 ```
 
 For the graphical version (X11):
 
-```sh
+```<!---sh-->
     ./morgan2 X
 ```
 

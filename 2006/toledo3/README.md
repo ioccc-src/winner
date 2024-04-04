@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -11,14 +11,14 @@ tested with Windows.  See [alternate code](#alternate-code) below.
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./toledo3 [1 | 2 | 3 [b]]
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./toledo3 1
 ```
 
@@ -62,7 +62,7 @@ So I managed to do a graphical X11 chess program ('`WYSIAIE`', or 'What You See
 Is An IOCCC Entry'). Pointing and clicking to move pieces is the only required
 action, and of course the command-line options:
 
-```sh
+```<!---sh-->
     ./toledo3        # Two-players mode (useful if you don't have a board at hand)
     ./toledo3 1      # Human white - Computer black, level 1 (fast)
     ./toledo3 2      # Human white - Computer black, level 2 (medium)
@@ -97,7 +97,7 @@ number generator.
 Because it is resource-hungry, I strongly recommend to compile it
 using maximum optimization. With GCC you can use:
 
-```sh
+```<!---sh-->
     gcc -O3 -fexpensive-optimizations prog.c -o prog -lX11
 ```
 

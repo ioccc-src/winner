@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -10,14 +10,14 @@ monkey Eric. See [Alternate code](#alternate-code) below.
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./weasel
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 
     # For those who believe in '"intelligent" design' or want to see how easy it is
@@ -47,7 +47,7 @@ about this under the [keyboards](#keyboards) section, briefly referred to in the
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -59,7 +59,7 @@ Use `weasel.alt` as you would `weasel` above.
 
 ### Alternate try:
 
-```sh
+```<!---sh-->
     ./try.alt.sh
 
     # For those who believe in '"intelligent" design' or want to see how easy it is
@@ -80,7 +80,7 @@ detail in the [S, M and N Constants](#constants) section. The script above will
 make use of some of these.
 
 
-```sh
+```<!---sh-->
     ./try.alt.sh
 ```
 
@@ -107,7 +107,7 @@ while using more Cenozoic minded code migration, read [rpm.html](rpm.html).
 
 If you find yourself in an evolutionary dead end, try:
 
-```sh
+```<!---sh-->
     man ./weasel.1
 ```
 
@@ -139,7 +139,7 @@ texts. To resolve this I think the best way is referencing the judges' remarks:
 if you want a quick rundown of the entry try what they suggest and view the man
 page (it explains all the options and describes the program briefly):
 
-```sh
+```<!---sh-->
     man ./weasel.man
 ```
 
@@ -444,7 +444,7 @@ has more than one word (that is it contains spaces) or anything else interpreted
 specially by your shell e.g. parentheses. For instance if you just want to find
 `METHINKS` you could do one of:
 
-```sh
+```<!---sh-->
     ./weasel METHINKS
     ./weasel "METHINKS"
     ./weasel 'METHINKS'
@@ -452,14 +452,14 @@ specially by your shell e.g. parentheses. For instance if you just want to find
 
 If you wanted `YOU ARE A MONKEY`:
 
-```sh
+```<!---sh-->
     ./weasel "YOU ARE A MONKEY"
     ./weasel 'YOU ARE A MONKEY'
 ```
 
 If you do one of:
 
-```sh
+```<!---sh-->
     ./weasel "METHINKS IT IS A" "MONKEY"
     ./weasel METHINKS IT IS A MONKEY
 ```
@@ -472,7 +472,7 @@ If you actually do want to search for a string starting with a `-` you must
 disable further parsing of options by using the `-` option itself; for
 example if you were to do any of:
 
-```sh
+```<!---sh-->
     ./weasel -q- -- -test
     ./weasel -q- -test
     ./weasel -q -- -test
@@ -480,7 +480,7 @@ example if you were to do any of:
 
 The target string will be: `-TEST`. This means though that here:
 
-```sh
+```<!---sh-->
     ./weasel -q -- -test -r5
 ```
 
@@ -498,7 +498,7 @@ are equivalent:
 
 As for the caveat I referenced what does the following do?
 
-```sh
+```<!---sh-->
     ./weasel -qr 5
 ```
 
@@ -510,7 +510,7 @@ note on the parsing of the `-` option; if the program is currently parsing
 the other options are in the command line it might still parse the options. Thus
 you have:
 
-```sh
+```<!---sh-->
     $ ./weasel -qr-r5
     quiet output
     mutation rate out of range
@@ -522,14 +522,14 @@ you have:
 Similarly this would set quiet output, then an invalid mutation rate and then a
 mutation rate of 5:
 
-```sh
+```<!---sh-->
     ./weasel --qrr5
 ```
 
 
 If you were instead to do one of (for example):
 
-```sh
+```<!---sh-->
     ./weasel -q -- -r
     ./weasel -q -q- -r
 ```
@@ -568,7 +568,7 @@ requested?  There are at least two ways to go about it: I took the monkey safe
 ('fool safe') method; *if you explicitly request monkey mode you cannot disable
 it in the same invocation of `weasel`!
 
-```sh
+```<!---sh-->
     $ ./weasel -qr101r5r101r1r test
     quiet output
     mutation rate out of range
@@ -633,7 +633,7 @@ in monkey mode.
 
 Another example:
 
-```sh
+```<!---sh-->
     $ ./weasel -q -r101 test -r5
     quiet output
     mutation rate out of range
@@ -649,7 +649,7 @@ which means that it'll use the genetic algorithm.
 
 One more example of monkey mode:
 
-```sh
+```<!---sh-->
     $ ./weasel -q -mr101 test -r5
     quiet output
     mutation rate out of range
@@ -771,13 +771,13 @@ with.
 
 Try:
 
-```sh
+```<!---sh-->
     make test
 ```
 
 This will essentially make sure the program is compiled and then do:
 
-```sh
+```<!---sh-->
     chmod +x test.sh
     ./test.sh
 ```
@@ -793,7 +793,7 @@ processed).
 You can pass additional options directly to the script but remember that it
 stops when there are no more strings in the file - so if you try:
 
-```sh
+```<!---sh-->
     ./test.sh -q test
 ```
 
@@ -825,7 +825,7 @@ program prints an error message and then exits (returning 1). But since the
 keyboard doesn't have `'\n'` if you were to type a `'` and send a
 `'\n'` before the closing `'` you might see something like:
 
-```sh
+```<!---sh-->
     $ ./weasel '!!
     > '
 
@@ -858,7 +858,7 @@ as well as some C keywords.
 
 2.  The way `main()` is declared is:
 
-```c
+```<!---c-->
     /* Special C main() handler (encapsulation): */
     #define r(main) main
     r(k main(k a, E **V)) {
@@ -952,7 +952,7 @@ somewhere!).
 The Makefile simplifies how to reconfigure this value with the variable
 `MAX_SIZE`:
 
-```sh
+```<!---sh-->
     make clobber MAX_SIZE=55 all
 ```
 
@@ -965,7 +965,7 @@ number attempts without waiting for a very long time.
 The Makefile simplifies how to reconfigure this value with the variable
 `MAX_ATTEMPTS`:
 
-```sh
+```<!---sh-->
     make clobber MAX_ATTEMPTS=100 all
 ```
 
@@ -982,7 +982,7 @@ and the larger the values the more memory it'll require.
 The Makefile simplifies how to reconfigure this value with the variable
 `OFFSPRING`:
 
-```sh
+```<!---sh-->
     make clobber OFFSPRING=55 all
 ```
 
@@ -993,7 +993,7 @@ Skip to [Portability](#portability).
 
 The following options **must always be passed to the compiler:**
 
-```sh
+```<!---sh-->
     -DQ='typedef' -D'g(o)'='goto o;' -D'w(x)'="x:" -D'H(main)'='r(main)'
 ```
 
@@ -1003,13 +1003,13 @@ which running `make` will always do.
 If you want to increase the number of offspring to `50` (`N`) and the size of the
 chromosome to `75` (`S`) you would do:
 
-```sh
+```<!---sh-->
     make clobber OFFSPRING=50 MAX_SIZE=75 everything
 ```
 
 If you wanted to change `N` to `3`:
 
-```sh
+```<!---sh-->
     make clobber OFFSPRING=3 everything
 ```
 
@@ -1020,7 +1020,7 @@ result. Remember too that `S` (`MAX_SIZE`) cannot be less than `38`. Both `S` an
 
 If you wanted to change the maximum number attempts to 100 you could do:
 
-```sh
+```<!---sh-->
     make clobber MAX_ATTEMPTS=100 everything
 ```
 
@@ -1038,7 +1038,7 @@ Originally I tested it on the below systems.
 
 #### Fedora 26:
 
-```sh
+```<!---sh-->
     $ clang --version|head -n1
     clang version 4.0.1 (tags/RELEASE_401/final)
     $ gcc --version|head -n1
@@ -1051,7 +1051,7 @@ Originally I tested it on the below systems.
 
 #### CentOS Linux release 7.4.1708 (Core)
 
-```sh
+```<!---sh-->
     $ clang --version|head -n1
     clang version 3.4.2 (tags/RELEASE_34/dot2-final)
     $ gcc --version|head -n1
@@ -1064,7 +1064,7 @@ Originally I tested it on the below systems.
 
 #### Fedora 27:
 
-```sh
+```<!---sh-->
     $ clang --version|head -n1
     clang version 5.0.1 (tags/RELEASE_501/final)
     $ gcc --version|head -n1
@@ -1080,7 +1080,7 @@ Originally I tested it on the below systems.
 System Version: macOS 10.13.4 (17E199)
 Kernel Version: Darwin 17.5.0
 
-```sh
+```<!---sh-->
     $ gcc -v
     Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
     Apple LLVM version 9.1.0 (clang-902.0.39.1)
@@ -1209,7 +1209,7 @@ When we found others were actually trying to programs with A, we quickly added
 additional cryptic features and evolved into B, BCPL, and finally C. We stopped
 when we got a clean compile on the following syntax:
 
-```c
+```<!---c-->
     for(;P("\n"),R=;P("|"))for(e=C;e=P("_"+(*u++/
     8)%2))P("|"+(*u/4)%2);
 ```
@@ -1252,7 +1252,7 @@ is a lack of common sense but since he was part of its creation I don't think
 it's a bad thing; **on the contrary it makes all of us C programmers even more
 talented! :)** I do wonder if he tested that bit of C code though:
 
-```c
+```<!---c-->
     for(;P("\n"),R=;P("|"))for(e=C;e=P("_"+(*u++/
     8)%2))P("|"+(*u/4)%2);
 ```

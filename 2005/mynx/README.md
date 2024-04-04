@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -21,7 +21,7 @@ For more detailed information see [2005 mynx bugs](../../bugs.html#2005_mynx).
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./mynx http://<domain>
 ```
 
@@ -31,7 +31,7 @@ the issue of https.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./mynx http://www.textfiles.com
 
     ./mynx manual.html
@@ -58,7 +58,7 @@ must just appreciate the entry for what it once was.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -68,7 +68,7 @@ must just appreciate the entry for what it once was.
 Use `mynx.alt` as you would `mynx`. You'd have to specify a port at the end of
 the URL like:
 
-```sh
+```<!---sh-->
     ./mynx.alt https://www.ioccc.org:443
 ```
 
@@ -92,13 +92,13 @@ it inspired me to try my hand at writing the client side complement.
 
 A typical build command would be:
 
-```sh
+```<!---sh-->
     cc -o mynx mynx.c
 ```
 
 While some others like to be a little different:
 
-```sh
+```<!---sh-->
     cc -o mynx mynx.c -lnsl -lsocket
 ```
 
@@ -107,13 +107,13 @@ example, which is kinda of useful when you consider how many OSes put
 all the network functions in a variety of places. So a simpler build
 command sequence would be:
 
-```sh
+```<!---sh-->
     cd source ; ./configure ; make
 ```
 
 After which, the rest of the documentation can be read by saying:
 
-```sh
+```<!---sh-->
     ./mynx ../manual.html
 ```
 

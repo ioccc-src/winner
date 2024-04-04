@@ -141,12 +141,12 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./grothe</span> carrier_freq pixelclock horizontal_total <span class="op">&lt;</span> some_input.txt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./grothe carrier_freq pixelclock horizontal_total &lt; some_input.txt</code></pre>
 <h2 id="try">Try:</h2>
 <p>Put on your “electronic ears” and then try:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <p>You may find using
 a tunable scanning electronic ear helps.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -165,9 +165,9 @@ parameters:</p>
     horizontal_total - total scan along the horizontal axis</code></pre>
 <p>If you have <code>xvidtune</code> installed you can get the <code>pixelclock</code> and
 <code>horizontal_total</code> with the following command</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">xvidtune</span> <span class="at">-show</span> <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n</span> 1 <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{ print &quot;pixelclock &quot; $2 * 1000000 &quot; horizontal_total = &quot; $6 }&#39;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    xvidtune -show | head -n 1 | awk &#39;{ print &quot;pixelclock &quot; $2 * 1000000 &quot; horizontal_total = &quot; $6 }&#39;</code></pre>
 <p>Example from my laptops:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./grothe</span> 65000000 10000000 1344 <span class="op">&lt;</span> twinkle.txt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./grothe 65000000 10000000 1344 &lt; twinkle.txt</code></pre>
 <p>Even if the user gets a setting off, the sound will usually be able to be
 heard on <a href="https://en.wikipedia.org/wiki/AM_broadcasting">AM</a> at a multiple of
 the original frequency.</p>

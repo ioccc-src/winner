@@ -141,15 +141,15 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>There is an alternate version that the author provided but fixed in 2023 to
 compile with modern systems and to allow one to reconfigure the constants <code>X1</code>,
 <code>X2</code>, <code>Y1</code> and <code>Y2</code> (which were magic numbers). See <a href="#alternate-code">Alternate
 code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog</code></pre>
 <p>Try changing bounding box coordinates in the source to explore
 various regions of the fractal.</p>
 <h2 id="alternate-code">Alternate code:</h2>
@@ -157,16 +157,16 @@ various regions of the fractal.</p>
 easily see the difference in what it might look like if the C was more
 recognisable and also to let you reconfigure the coordinates.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <p>If you wish to redefine the coordinates you can do so by defining <code>X1</code>, <code>X2</code>,
 <code>Y1</code> and/or <code>Y2</code>, which default to: <code>-2</code>, <code>1</code>, <code>-1.3</code> and <code>1.3</code> respectively.
 For instance:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> clobber X1=-3 X2=2 Y1=-2.3 Y2=2.3 alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make clobber X1=-3 X2=2 Y1=-2.3 Y2=2.3 alt</code></pre>
 <p>You may pick and choose which ones to redefine.</p>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>prog.alt</code> as you would <code>prog</code>.</p>
 <h3 id="alternate-try">Alternate try:</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.alt.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>We consider this entry a tribute to all “Abuse of the C preprocessor”
 and Mandelbrot fractal drawing entries we’ve seen over the years.</p>
@@ -186,25 +186,25 @@ drawer. There are tools much better suited for drawing fractals.</p>
 <p>The usage of recognizable elements from the C programming language in the
 application source code is intentionally kept to a bare minimum. If this phrase
 would not be true, the application would be the following:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="dt">double</span>                                 _<span class="op">[]={-</span><span class="dv">2</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">,</span><span class="dv">1</span><span class="op">,-</span><span class="fl">1.3</span>                <span class="op">,</span><span class="fl">1.3</span><span class="op">,</span>  <span class="dv">0</span><span class="op">,</span>         <span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">,</span><span class="dv">0</span>               <span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">50</span><span class="op">,</span> <span class="dv">80</span><span class="op">,</span>     <span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span>     <span class="op">,</span><span class="dv">255</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">,</span>               <span class="dv">8</span><span class="op">,</span><span class="dv">0</span><span class="op">};</span>    <span class="dt">int</span>      main       <span class="op">(</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                   <span class="dt">int</span> j<span class="op">)</span> <span class="op">{</span><span class="cf">if</span> <span class="op">(</span>j<span class="op">==</span>  <span class="dv">1</span> <span class="op">){</span> <span class="cf">if</span><span class="op">(</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>           _<span class="op">[</span><span class="dv">12</span><span class="op">]</span>      <span class="op">&gt;</span>_<span class="op">[</span><span class="dv">10</span><span class="op">]</span>  <span class="op">)</span>_<span class="op">[</span><span class="dv">17</span><span class="op">]=</span><span class="dv">1</span> <span class="op">;}</span>  <span class="cf">if</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>       <span class="op">(</span>_<span class="op">[</span><span class="dv">13</span><span class="op">]</span> <span class="op">&gt;</span>_<span class="op">[</span><span class="dv">11</span>     <span class="op">]</span> <span class="op">||</span>_<span class="op">[</span><span class="dv">17</span><span class="op">]==</span><span class="dv">1</span><span class="op">)</span>  <span class="cf">return</span> <span class="dv">1</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>     <span class="op">;</span>_<span class="op">[</span><span class="dv">6</span><span class="op">]</span>   <span class="op">=</span>  _ <span class="op">[</span><span class="dv">13</span><span class="op">]</span> <span class="op">/</span> _<span class="op">[</span><span class="dv">11</span><span class="op">]*(</span>_<span class="op">[</span><span class="dv">1</span><span class="op">]-</span>_<span class="op">[</span>   <span class="dv">0</span><span class="op">])</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span>_<span class="op">[</span>  <span class="dv">0</span><span class="op">];</span>  _ <span class="op">[</span><span class="dv">7</span><span class="op">]=</span>_<span class="op">[</span><span class="dv">12</span><span class="op">]/</span>_<span class="op">[</span><span class="dv">10</span><span class="op">]*(</span>_<span class="op">[</span><span class="dv">3</span><span class="op">]-</span>_<span class="op">[</span><span class="dv">2</span><span class="op">]</span> <span class="op">)+</span>_</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span><span class="dv">2</span><span class="op">];</span>_<span class="op">[</span><span class="dv">8</span><span class="op">]=</span>_<span class="op">[</span><span class="dv">9</span><span class="op">]=</span>_<span class="op">[</span><span class="dv">14</span><span class="op">]=</span><span class="dv">0</span><span class="op">;</span>l2<span class="op">:</span>_<span class="op">[</span><span class="dv">4</span><span class="op">]=</span>_<span class="op">[</span><span class="dv">8</span><span class="op">]</span> <span class="op">*</span> _ <span class="op">[</span><span class="dv">8</span><span class="op">]</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">;</span>_<span class="op">[</span>  <span class="dv">5</span><span class="op">]=</span>  _ <span class="op">[</span><span class="dv">9</span><span class="op">]*</span>_<span class="op">[</span><span class="dv">9</span><span class="op">];</span>_<span class="op">[</span><span class="dv">9</span><span class="op">]=</span><span class="dv">2</span><span class="op">*</span>_<span class="op">[</span><span class="dv">8</span><span class="op">]*</span>_<span class="op">[</span><span class="dv">9</span><span class="op">]+</span> _<span class="op">[</span><span class="dv">7</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>     <span class="op">];</span>_<span class="op">[</span><span class="dv">8</span>   <span class="op">]</span>  <span class="op">=</span> _ <span class="op">[</span> <span class="dv">4</span> <span class="op">]-</span>_<span class="op">[</span><span class="dv">5</span><span class="op">]+</span>_<span class="op">[</span><span class="dv">6</span><span class="op">];</span>_<span class="op">[</span><span class="dv">14</span>   <span class="op">]++</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>       <span class="op">;</span><span class="cf">if</span><span class="op">((</span>_ <span class="op">[</span><span class="dv">14</span><span class="op">]&lt;</span>     _ <span class="op">[</span><span class="dv">15</span><span class="op">])&amp;&amp;(</span>_<span class="op">[</span><span class="dv">4</span><span class="op">]+</span> _<span class="op">[</span> <span class="dv">5</span><span class="op">]</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>           <span class="op">&lt;</span>_<span class="op">[</span><span class="dv">16</span>      <span class="op">]))</span> <span class="cf">goto</span> l2<span class="op">;</span>  putchar<span class="op">(</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>                   <span class="st">&quot; #@*+   &quot;</span><span class="op">[(</span> <span class="dt">int</span><span class="op">)</span>  _<span class="op">[</span><span class="dv">14</span><span class="op">]%</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="dv">5</span>             <span class="op">]);</span>_ <span class="op">[</span><span class="dv">13</span>   <span class="op">]</span> <span class="op">++</span> <span class="op">;</span>   main       <span class="op">(</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="dv">0</span><span class="op">)</span>               <span class="op">;</span>_<span class="op">[</span><span class="dv">12</span><span class="op">]++;</span>      _<span class="op">[</span><span class="dv">13</span><span class="op">]</span>       <span class="op">=</span><span class="dv">0</span></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">;</span><span class="cf">if</span><span class="op">(</span>_                <span class="op">[</span><span class="dv">17</span><span class="op">]</span>    <span class="op">!=</span><span class="dv">1</span><span class="op">)</span>      putchar</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="op">(</span><span class="bn">0xa</span><span class="op">);</span>                               main<span class="op">(</span><span class="dv">1</span><span class="op">);}</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    double                                 _[]={-2
+    ,1,-1.3                ,1.3,  0,         0,0,0
+    ,0               ,0,50, 80,     0,0,0     ,255
+    ,               8,0};    int      main       (
+                   int j) {if (j==  1 ){ if(
+           _[12]      &gt;_[10]  )_[17]=1 ;}  if
+       (_[13] &gt;_[11     ] ||_[17]==1)  return 1
+     ;_[6]   =  _ [13] / _[11]*(_[1]-_[   0])
+    +_[  0];  _ [7]=_[12]/_[10]*(_[3]-_[2] )+_
+    [2];_[8]=_[9]=_[14]=0;l2:_[4]=_[8] * _ [8]
+    ;_[  5]=  _ [9]*_[9];_[9]=2*_[8]*_[9]+ _[7
+     ];_[8   ]  = _ [ 4 ]-_[5]+_[6];_[14   ]++
+       ;if((_ [14]&lt;     _ [15])&amp;&amp;(_[4]+ _[ 5]
+           &lt;_[16      ])) goto l2;  putchar(
+                   &quot; #@*+   &quot;[( int)  _[14]%
+    5             ]);_ [13   ] ++ ;   main       (
+    0)               ;_[12]++;      _[13]       =0
+    ;if(_                [17]    !=1)      putchar
+    (0xa);                               main(1);}</code></pre>
 <p>The application expects no parameters, the only way you can change the behaviour
 is to modify the source code at the indicated location: the line
 <code>/* &lt;-- Configure here: X1, X2, Y1, Y2 */</code> is intentionally not obfuscated so

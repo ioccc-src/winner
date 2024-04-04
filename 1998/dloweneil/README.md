@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
@@ -22,7 +22,7 @@ For more detailed information see [1998 dloweneil bugs](../../bugs.html#1998_dlo
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./pootris [X size of board] [Y size of board]
 ```
 
@@ -45,14 +45,14 @@ clockwise `l` does as well. Instead of using `d` to drop the letter you can do
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
 
 ### Alternate use:
 
-```sh
+```<!---sh-->
     ./pootris.alt [X size of board] [Y size of board]
 ```
 
@@ -73,7 +73,7 @@ experience may mirror one of our experiences:
 
 ### Usage
 
-```sh
+```<!---sh-->
     ./pootris [X size of board] [Y size of board]
 ```
 

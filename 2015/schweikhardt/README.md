@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [2015 schweikhardt bugs](../../bugs.html#2015_
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./prog n
 ```
 
@@ -30,7 +30,7 @@ doing something else. The author explains this in more details.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -44,7 +44,7 @@ where zeroes move to the right.
 This code is clean.  When you compile with all warnings enabled,
 such as with clang:
 
-```sh
+```<!---sh-->
     cc -Weverything -pedantic -std=c11 -Dtyp=uint64\_t -O3 prog.c -o prog
 ```
 
@@ -73,7 +73,7 @@ the [Collatz conjecture](https://en.wikipedia.org/wiki/Collatz_conjecture).
 
 You may explore this famous conjecture using this entry:
 
-```sh
+```<!---sh-->
     ./prog 2410
     ./prog abfff
     ./prog 27f8cebf
@@ -158,7 +158,7 @@ prefix) as the first argument. The program prints the given number in
 zero-padded hex and each iteration along with a line count in decimal.
 The example above looks like this (compiled with 64 bit word size):
 
-```sh
+```<!---sh-->
     $ ./prog 6
     0000000000000006
     0000000000000003 1
@@ -175,7 +175,7 @@ The size of `n` is only limited by the argument size limit of your
 shell/OS (the program implements arbitrary size `bignum`s).
 To query this on your POSIX system, run
 
-```sh
+```<!---sh-->
     $ getconf ARG_MAX
     262144
 ```
@@ -187,7 +187,7 @@ Fear not,
 [bc(1)](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/bc.html)
 to the rescue:
 
-```sh
+```<!---sh-->
     $ printf 'obase=16;10^100\n' | bc
     1249AD2594C37CEB0B2784C4CE0BF38ACE408E211A7CAAB24308A82E8F1000000000\
     0000000000000000
@@ -333,7 +333,7 @@ hard, I could use `__LINE__` and `stdio.h` macros `EOF`, `L_tmpnam`,
 Another identity operation. I've done it for you already. Use this
 `.indent.pro` with FreeBSD indent:
 
-```sh
+```<!---sh-->
     $ cat .indent.pro
 	-bad   /* blank line after decls */
 	-bap   /* blank line after functions */
@@ -383,7 +383,7 @@ Spoilers ahead. Duh!
 
 Pseudocode, with comments matching those in the C source:
 
-```c
+```<!---c-->
     /* run */
     if (non-NULL and nonempty argv[1]) {
        n = convert(argv[1])
@@ -404,7 +404,7 @@ Pseudocode, with comments matching those in the C source:
 
 `Bignum`s are represented as the two member `struct`s:
 
-```c
+```<!---c-->
     typedef struct {
 	 size_t places;   /* number of places in base 2 to the power of (8*sizeof(type)) */
 	 type  *number;   /* dynamically allocated memory for number */
@@ -438,7 +438,7 @@ into a starting number (which is output as the first line), and starts
 crunching. Nothing stops you from executing
 
 
-```sh
+```<!---sh-->
     ./prog "$(cat prog.c)"            # Kind of quine?
     ./prog "$(cat rules guidelines)"  # A jackpot? Maybe next year...
     ./prog "$(cat /bin/ls)"           # Number cut short at first NUL byte.
@@ -473,7 +473,7 @@ The open source static checker [cppcheck](http://cppcheck.sourceforge.net/)
 checks various problems with respect to style, performance, portability
 and general fishiness. To enable all checks, run
 
-```sh
+```<!---sh-->
     cppcheck --enable=all --force -I/usr/include -Dtyp=uint32_t prog.c
 ```
 
@@ -486,7 +486,7 @@ checks various problems with respect to security like buffer overflows,
 function arguments to known troublemaker functions and more. It doesn't need to
 pre-process code, so can be run without the `typ` macro being defined:
 
-```sh
+```<!---sh-->
     $ flawfinder prog.c
     Flawfinder version 1.31, (C) 2001-2014 David A. Wheeler.
     Number of rules (primarily dangerous function names) in C/C++ ruleset: 169
@@ -592,7 +592,7 @@ use for checking your C programs and I highly recommend trying it. For a start,
 paste the well know first program in the form and press "Analyze Code". Note
 the FlexeLint configuration options in comments (no space between `/*` and `lint`).
 
-```c
+```<!---c-->
     /*lint -w4            turn on everything */
     /*lint +esym(534,*)   no demonstrator defaults */
     /*lint -e966          indirectly included header file not used */
@@ -705,7 +705,7 @@ expressions other than assignments to `char` objects. A consequence is
 that printing digits with `'0' + digit` is not allowed (even though
 `'0'` is technically an `int`!) so I am forced to output hex digits with
 
-```c
+```<!---c-->
     printf("%c", (met)tyr + 32 + 16 + ((8 + EOF) * ((met)tyr / (8 + 2))));
 ```
 
@@ -730,7 +730,7 @@ precedence rules in expressions." This requires parentheses for almost
 all expressions involving more than one operator, especially those for which
 a cast is required, leading to hard to understand expressions such as
 
-```c
+```<!---c-->
     const ser glx = (ser)((asx > (ser)64u) ? (ser)((ser)asx + (ser)8u + (ser)1u) : (ser)asx);
     not.not[leu] = (and)((and)not.not[leu] | (and)(((and)glx % (and)16u) << (and)lys));
 ```
@@ -747,7 +747,7 @@ MISRA 16.10: "If a function returns error information, then that error
 information shall be tested." A cast to `void` would draw a lint warning, so
 I use the `printf(3)` result in expressions,
 
-```c
+```<!---c-->
     lys -= 4 * printf("%c", (met)tyr + 32 + 16 + ((8 + EOF) * ((met)tyr / (8 + 2))));
     val += printf("\n") / ((__LINE__ * L_tmpnam) + TMP_MAX);
     val -= (printf(" %d\n", val) > BUFSIZ) ? FILENAME_MAX : EOF;
@@ -755,7 +755,7 @@ I use the `printf(3)` result in expressions,
 
 which are, in the absence of errors, equivalent to
 
-```c
+```<!---c-->
     lys -= 4;
     /*nop*/
     ++val;
@@ -772,7 +772,7 @@ declared as pointer to `const` if the pointer is not used to modify the
 addressed object." in conjunction with lint's "Note 952: Parameter could
 be declared `const`" causes `const`-poisoning for all functions,
 
-```c
+```<!---c-->
     static void phe(const ala not);
     static void gly(ala *const not, const and his);
     met main(met val, const pro *const his[]);
@@ -792,13 +792,13 @@ up :-) (humor really helps!)"
 If your compiler supports a 128 bit wide type (e.g. clang, gcc) then
 you can use it via the `typ` macro:
 
-```sh
+```<!---sh-->
     clang -Dtyp=__uint128_t -o prog prog.c
 ```
 
 Indeed, the program can use (and lints clean for) all of
 
-```sh
+```<!---sh-->
     clang -Dtyp=uint8_t  -o prog8  prog.c
     clang -Dtyp=uint16_t -o prog16 prog.c
     clang -Dtyp=uint32_t -o prog32 prog.c

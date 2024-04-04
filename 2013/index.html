@@ -155,10 +155,10 @@ authors submitted very different styles of entries.</p>
 had to print a value 2053 or less when the <code>-i</code> flag was used.</p>
 <p>Several people discovered an undocumented feature in that
 certain comments such as:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>        <span class="co">///*</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>        ///*</code></pre>
 <p>or:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>        <span class="op">*</span>\</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>        <span class="op">/</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>        *\
+        /</code></pre>
 <p>were not correctly parsed by the tool. The guidelines stated:</p>
 <pre><code>    In cases where the above summary and the algorithm implemented by
     the IOCCC size tool source code conflict, the algorithm implemented

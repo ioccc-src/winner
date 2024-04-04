@@ -22,7 +22,7 @@ simply a fun consequence of the features I did implement.
 Let's say you want to verify that the evade mode is at the right count. How
 can you verify it without modifying the code? Try:
 
-```sh
+```<!---sh-->
     SIZE=0 SHED=1 SHEDS=1 EVADE=10 ./prog
 ```
 
@@ -44,7 +44,7 @@ don't at this time remember any I might have done.
 One way to show this is in full is to set the initial size and growth size to a
 high value; then try each one individually. For example:
 
-```sh
+```<!---sh-->
     SIZE=100 ./prog
 ```
 
@@ -113,7 +113,7 @@ Here's a fun output:
 
 That's from:
 
-```sh
+```<!---sh-->
     SHED=1 SHEDS=-1 ./prog
 ```
 
@@ -126,7 +126,7 @@ And right after that you would see:
 
 Try this though:
 
-```sh
+```<!---sh-->
     SHEDS=-1 SHED=25 ./prog
 ```
 
@@ -138,7 +138,7 @@ this is the basis of the grow/shrink mode of play that I talk about in the
 
 Here's another thing to be aware of. Let's say you do:
 
-```sh
+```<!---sh-->
     SIZE=1 GROW=-1 ./prog
 ```
 
@@ -146,7 +146,7 @@ How many bugs will it take before you win? In fact it's two: you would see the
 head twice: the second time once you 'shrink' down to size 0; it would then be
 that if you get another bug you will be at the 'max size':
 
-```sh
+```<!---sh-->
     YOU WIN!
     X:81/156 Y:35/41 S:997/997 B:2
 ```
@@ -228,7 +228,7 @@ the game is 10 x 10. This includes the walls and score line.
 Now the default max snake size is 997 but when the terminal is too small it
 adjusts the max snake size. For 10 lines and 10 columns you would see:
 
-```sh
+```<!---sh-->
     $ make test
     terminal supports cursor movement
     terminal supports making cursor invisible

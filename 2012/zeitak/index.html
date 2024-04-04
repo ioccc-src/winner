@@ -141,16 +141,16 @@ Location: <a href="../../location.html#IL">IL</a> - <em>State of Israel</em> (<e
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>There is an alternate version that is slightly deobfuscated. See <a href="#alternate-code">alternate
 code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./zeitak</span> <span class="op">&lt;</span> file</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./zeitak &lt; file</code></pre>
 <p>where <code>file</code> is the file to be checked for nesting errors. For example, you may
 try <a href="incorrect.c">incorrect.c</a> and the program itself. You may also run it on
 text files that are not code.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> test</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make test</code></pre>
 <p>NOTE: the program prints an error and exits on the first nesting error so it
 will not detect multiple issues.</p>
 <h2 id="alternate-code">Alternate code:</h2>
@@ -158,7 +158,7 @@ will not detect multiple issues.</p>
 deobfuscated by the author. You may find reading it helpful in your attempt to
 understand this extremely subtle entry.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>zeitak.alt</code> as you would <code>zeitak</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -188,7 +188,7 @@ around it’s position.</p>
 <li>Ignores parenthesis inside strings or character constants, so no errors
 will be detected in the following line:</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;)&quot;</span><span class="op">);</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    printf(&quot;)&quot;);</code></pre>
 <ul>
 <li>Doesn’t get confused by the <a href="../../1984/anonymous/index.html">1984/anonymous</a> entry!</li>
 </ul>
@@ -197,7 +197,7 @@ will be detected in the following line:</li>
 <li>Escapes (e.g. <code>\"</code>) are ignored, so the following line will produce
 an error:</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span><span class="op">);</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    printf(&quot;\&quot;&quot;);</code></pre>
 <h4 id="obfuscation">Obfuscation</h4>
 <p><a href="../../years.html">IOCCC entries</a> already contain entries without digits, control-flow
 keywords and certain operators in their source. This entry has an

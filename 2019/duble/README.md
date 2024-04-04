@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -21,20 +21,20 @@ For more detailed information see [2019 duble bugs](../../bugs.html#2019_duble).
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./prog file
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./prog /tmp/drawing
 ```
 
 Open another window / terminal.
 
-```sh
+```<!---sh-->
     ./prog /tmp/drawing
 ```
 
@@ -42,13 +42,13 @@ Open more terminals and repeat...
 
 You might also wish to try a full screen size. For this try:
 
-```sh
+```<!---sh-->
     make clobber fullscreen
 ```
 
 Alternatively, if you want to change the size, do something like:
 
-```sh
+```<!---sh-->
     make clobber LINES=20 COLUMNS=20 all
 ```
 
@@ -69,7 +69,7 @@ the editor.
 
 After editing the file and quitting, try:
 
-```sh
+```<!---sh-->
     /tmp/drawing
 ```
 
@@ -97,7 +97,7 @@ alternate code might not work as well in macOS.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -132,7 +132,7 @@ To build, type `make` (assuming gcc) or `make CC=clang`.
 
 Then you can start the program. It expects a file path as its first argument:
 
-```sh
+```<!---sh-->
     ./prog /tmp/drawing
 ```
 
@@ -216,7 +216,7 @@ Note: the drawing files `prog` generates are probably even more portable than
 The default size is the one of my xterm (see top of Makefile).
 You may set it to the full size of your terminal window by typing:
 
-```sh
+```<!---sh-->
     make clobber fullscreen
 ```
 

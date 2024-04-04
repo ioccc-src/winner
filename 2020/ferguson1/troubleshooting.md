@@ -328,7 +328,7 @@ hit a key every time to move because it is blocking.
 
 What happens if you do:
 
-```sh
+```<!---sh-->
     WALLS= ./prog
 ```
 
@@ -342,20 +342,20 @@ for a number could have a better value than 0.
 If however you were to give valid input followed by invalid input the valid
 input would be parsed. For example:
 
-```sh
+```<!---sh-->
     WALLS=1test ./prog
 ```
 
 would let you go through the walls. On the other hand
 
-```sh
+```<!---sh-->
     WALLS=test1 ./prog
 ```
 
 would not. Furthermore if you specify the same variable more than once it's the
 last one that counts. For example:
 
-```sh
+```<!---sh-->
     WALLS=0 WALLS=1 CANNIBAL=1 CANNIBAL=0 ./prog
 ```
 
@@ -414,7 +414,7 @@ If `calloc()` fails to obtain the needed memory you'll see something like (here 
 was before I added proper - to make the perfect and obvious pun - capsizing
 so that by setting the size to -1 it went to the max unsigned value):
 
-```sh
+```<!---sh-->
     $ MAXSIZE=-1 ./prog
     memory error
     X:0/157 Y:0/42 S:3/18446744073709551614 B:0
@@ -428,7 +428,7 @@ not know but what I do know is that because it's unsigned it can't be negative;
 if the max size is 0 then the array size will be 1 but it won't matter because
 the snake size will be >= that max anyway. But here's a curious output:
 
-```sh
+```<!---sh-->
     SIZE=1 MAXSIZE=0 ./prog
     YOU WIN!
     X:78/156 Y:20/41 S:0/0 B:0

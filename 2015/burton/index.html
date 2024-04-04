@@ -141,25 +141,25 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> <span class="st">&quot;expression&quot;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog &quot;expression&quot;</code></pre>
 <p>or:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog</code></pre>
 <p>Type in expressions on standard input.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <p>Notice how the script reads in from a file. If you type just:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog</code></pre>
 <p>it will prompt you in the same way. Send ctrl-c to exit.</p>
 <p>Finally, if you wish to read the man page:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">man</span> ./calc.1</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    man ./calc.1</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>An alternate version of this entry, <a href="prog.alt.c">prog.alt.c</a>, is provided.
 This alternate code is discussed in the “prog.c vs prog.alt.c” section of the
 author’s remarks below.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>prog.alt</code> as you would <code>prog</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -189,7 +189,7 @@ corrected by adding <code>-fsigned-char</code> to the compile line.</p>
 <p>Yes, this is another calculator program.</p>
 <p>However, unlike any other calculator source code the author is aware of,
 this one contains no digits. At all. Anywhere. As in</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">grep</span> <span class="st">&#39;[0-9]&#39;</span> prog.c <span class="kw">||</span> <span class="bu">echo</span> no digits!</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    grep &#39;[0-9]&#39; prog.c || echo no digits!</code></pre>
 <p>Nor are the digits simply obfuscated. There are no character constants. There
 is only one single, short string, and it does not contain any obfuscated digits.
 And yet the output is in decimal and hexadecimal, and it accepts octal, decimal,
@@ -265,8 +265,8 @@ To stifle these complaints:</p>
 <h3 id="test-suite">Test Suite:</h3>
 <p>If the program name begins with an <code>e</code>, it echoes <code>stdin</code> to <code>stdout</code>.
 This allows for a convenient test suite:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ln</span> <span class="at">-sf</span> prog eprog</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="va">PATH</span><span class="op">=</span>. <span class="ex">eprog</span> <span class="op">&lt;</span> test.in <span class="kw">|</span> <span class="fu">diff</span> <span class="at">-</span> test.out</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ln -sf prog eprog
+    PATH=. eprog &lt; test.in | diff - test.out</code></pre>
 <h3 id="spoilers">Spoilers:</h3>
 <p>If you do not want to puzzle out how it works, see <a href="spoilers.html">spoilers.html</a>.</p>
 <!--

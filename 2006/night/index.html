@@ -141,16 +141,16 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>There is an alternate version that supports arrow keys. See the <a href="#alternate-code">alternate
 code</a> section below.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./night</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./night</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This version allows you to use arrow keys instead of the more awkward <code>wasd</code>
 keys.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>night.alt</code> as you would <code>night</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -217,8 +217,8 @@ preprocessed code is over 80KB in length, hindering the preprocessor’s ability
 to deobfuscate.</p>
 <p>Keypad support was removed to save space. To restore, modify the
 following two macros to:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#define ATG srand</span><span class="op">(</span><span class="pp">time</span><span class="op">(</span><span class="dv">0</span><span class="op">));</span><span class="pp"> initscr</span><span class="op">();</span><span class="pp"> cbreak</span><span class="op">();</span><span class="pp"> noecho</span><span class="op">();</span><span class="pp"> start_color</span><span class="op">();</span><span class="pp"> keypad</span><span class="op">(</span><span class="pp">stdscr</span><span class="op">,</span><span class="dv">1</span><span class="op">);</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#define AGG A</span><span class="op">&amp;</span><span class="dv">2</span><span class="op">?</span><span class="pp">KEY_UP</span><span class="op">:</span><span class="pp">KEY_DOWN</span><span class="op">:</span><span class="pp">A</span><span class="op">&amp;</span><span class="dv">1</span><span class="op">?</span><span class="pp">KEY_RIGHT</span><span class="op">:</span><span class="pp">KEY_LEFT</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    #define ATG srand(time(0)); initscr(); cbreak(); noecho(); start_color(); keypad(stdscr,1);
+    #define AGG A&amp;2?KEY_UP:KEY_DOWN:A&amp;1?KEY_RIGHT:KEY_LEFT</code></pre>
 <p>Code on!</p>
 <!--
 

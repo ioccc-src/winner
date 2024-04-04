@@ -1,13 +1,13 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./jar.2
     [enter some lisp]
 
@@ -19,7 +19,7 @@ NOTE: this entry will likely segfault on invalid input.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 
     ./try.sh chocolate_cake.lisp
@@ -65,7 +65,7 @@ lisp expressions (followed by CR), the program evaluates them and
 prints out the return values. End execution by typing an end-of-file
 character.
 
-```lisp
+```<!---lisp-->
     (+ 2.5 3.1)
     (defun fib (n)
        (if (< n 2)

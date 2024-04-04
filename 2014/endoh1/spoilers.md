@@ -18,7 +18,7 @@ Do you think that it is possible to write QR code encoder in C within *1kB*?
 It is known that we can mitigate the quine restriction by `eval`.
 For example, this is a quine written in Ruby:
 
-```ruby
+```<!---ruby-->
     eval s="print 'eval s='; p s"
 ```
 
@@ -122,7 +122,7 @@ The compiler tool chain is the following.
 
 You can run the process by `rake` command.  `ruby-minisat` gem is needed.
 
-```sh
+```<!---sh-->
     $ gem install ruby-minisat
     $ rake
 ```
@@ -145,7 +145,7 @@ but it appears to no longer exist.
 
 You can use [tool.rb](tool.rb) to convert the output to a png file.
 
-```sh
+```<!---sh-->
     ./main Hello | ruby tool.rb > hello.png
 
     $ zbarimg -q hello.png

@@ -1,20 +1,20 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./prog
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./prog
 ```
 
@@ -27,13 +27,13 @@ Did you find that mobile application game a bit frustrating?
 Well you can adjust the Makefile parameters to make life a
 bit easier for you:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
 which runs:
 
-```sh
+```<!---sh-->
     make clobber all DW=199999 DW=22 DH=16 DA=50 DI=-150
     ./prog
 ```
@@ -147,13 +147,13 @@ to make some changes to the `Makefile` to get emojis to work on your system.
 To help you get started, I've included some example substitutions for emojis
 sprites and instruction text; for example, type
 
-```sh
+```<!---sh-->
     make EMOJI=beer LANGUAGE=spanish
 ```
 
 or
 
-```sh
+```<!---sh-->
     make EMOJI=globe
 ```
 

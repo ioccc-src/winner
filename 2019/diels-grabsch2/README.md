@@ -1,20 +1,20 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./prog
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -33,7 +33,7 @@ that you are dreaming? Or is it, wake up from the simulation?
 
 This program prints its own SHA-512 hash.  To verify, run:
 
-```sh
+```<!---sh-->
     $ sha512sum prog.c; ./prog
     43bd0c4381a5078d2850fca9ae5e0647596bcc03cd67d8d973ad02ff35c316c728e7b347ca70abe6c74e745e63646cc7643cb0cffcd3d9a969cbf31a7ce5bf68  prog.c
     43bd0c4381a5078d2850fca9ae5e0647596bcc03cd67d8d973ad02ff35c316c728e7b347ca70abe6c74e745e63646cc7643cb0cffcd3d9a969cbf31a7ce5bf68

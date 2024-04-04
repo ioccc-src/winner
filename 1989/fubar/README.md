@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
@@ -18,14 +18,14 @@ For more detailed information see [1989 fubar bugs](../../bugs.html#1989_fubar).
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./fubar <number>
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh # run on 1 - 7
 
     ./fubar.sh 2 # run via script

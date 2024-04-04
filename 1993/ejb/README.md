@@ -1,26 +1,26 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./ejb level
 ```
 
 where:
 
-```sh
+```<!---sh-->
     level   a value from -128 to 127
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -45,7 +45,7 @@ We note that this also works under macOS just fine.
 
 #### Output solution to Towers of Hanoi for five rings:
 
-```sh
+```<!---sh-->
     ./ejb 5
 ```
 
@@ -54,7 +54,7 @@ text description of how to solve the puzzle.
 
 #### Output solution to the Patience puzzle for six rings:
 
-```sh
+```<!---sh-->
     ./ejb -6
 ```
 

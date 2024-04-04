@@ -1,13 +1,13 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./rcm < file.gz
 ```
 
@@ -18,7 +18,7 @@ where `file.gz` is some gzipped file.
 
 For more information try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -27,7 +27,7 @@ For more information try:
 
 For a good no-op try:
 
-```sh
+```<!---sh-->
     gzip -c < rcm.c | ./rcm
 ```
 

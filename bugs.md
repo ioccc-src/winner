@@ -421,7 +421,7 @@ own fix or suggest that they're fixed!
 The purpose of this program is to print out a string of rubbish. In particular
 you should see something like:
 
-```sh
+```<!---sh-->
     $ ./decot
     '",x);	/*
     \
@@ -527,7 +527,7 @@ With version 2 it sometimes segfaults even with the same input where other times
 it does not. We don't believe this is because of the fix that lets some versions
 be compiled with clang. An example invocation is:
 
-```sh
+```<!---sh-->
     ./ver2 < westley.c
 ```
 
@@ -575,7 +575,7 @@ The comments are processed too. Furthermore it happens that the last line
 becomes the first and the first line becomes the last! Now if you look at the
 code you'll see on the first line:
 
-```c
+```<!---c-->
     /**//*/};)/**/pain(*//**/tang 	  ,gnat/**//*/,ABBA~,0-0(avnz;)0-0,tang,raeN
 ```
 
@@ -583,13 +583,13 @@ In `ver0` it'll be the same but the others are more interesting.
 
 In `ver1` you'll see on the last line:
 
-```c
+```<!---c-->
     cnva((vag)NOON&2/*//*\\**/,gnat,tang	,NOON/**//*/(niam/**/);}/*//**/
 ```
 
 and on the first line:
 
-```c
+```<!---c-->
     /**//*/};)/**/cnva(*//**/gnat 	  ,tang/**//*/,NOON~,0-0(niam;)0-0,gnat,enrA
 ```
 
@@ -653,7 +653,7 @@ A point worth considering is that as the number passed into the program gets
 bigger the number of lines of output gets substantially larger and it takes much
 more time and resources to run as well. For instance:
 
-```sh
+```<!---sh-->
     $ for n in $(seq 1 18); do echo "$n"; echo "$n" | time "./baruch" | wc -l | sed -E -e 's/[[:space:]]//g'; done
     1
     3
@@ -724,7 +724,7 @@ Endoh](../authors.html#Yusuke_Endoh) provided the `btoa`
 script but it appears there is a bug in this entry. The judges wrote that to
 test the entry one can do:
 
-```sh
+```<!---sh-->
     echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
 ```
 
@@ -733,7 +733,7 @@ sentence.
 
 But doing this shows instead:
 
-```sh
+```<!---sh-->
     echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
     a얖?)V...?????777??hC??h??-?	)SSSSXXX????r?L=???*?-???ppp,,,?R
     ?j
@@ -746,7 +746,7 @@ Notice how there's no newline at the end: that final `$` is the prompt.
 
 If one does, however:
 
-```sh
+```<!---sh-->
     echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw | ./jaw
 ```
 
@@ -842,7 +842,7 @@ that that is the error message.
 
 Another thing is that the code:
 
-```c
+```<!---c-->
     printf((W,Y));
 ```
 
@@ -885,7 +885,7 @@ Leo Broukhis, before he was an IOCCC judge, sent the IOCCC judges an email:
 A quick debugging session from Cody suggests that the problem with this value
 is that:
 
-```c
+```<!---c-->
     if ( ppp->qq!=48 ) return;
 ```
 
@@ -893,7 +893,7 @@ is never reached because the value is never 48 (it is in other cases but not for
 the example input). It varies in value at this point. Observe that the next
 lines of code are:
 
-```c
+```<!---c-->
     while ( ppp->qq==48 )
     {
 	printf("%ld\n",qqq-45);
@@ -909,7 +909,7 @@ for the `!= 48` is also required.
 
 Perhaps more useful to know is that at this point in the code the code:
 
-```c
+```<!---c-->
     if ((((( !(aa=setjmp(ppp->ppp))||aa==aaaaaa )))))
 ```
 
@@ -1064,7 +1064,7 @@ at 80 columns. However due to the nature of the program if the terminal is < 80
 in column width it will not display right.  To see the number of columns in your
 terminal try:
 
-```sh
+```<!---sh-->
     echo $COLUMNS
 ```
 
@@ -1074,7 +1074,7 @@ terminal try:
 The author suggested that the alternate version, which Cody added (but fixed for
 modern systems), should print
 
-```c
+```<!---c-->
     main(l,a,n,d)...
     [A M E R I C A]...
 ```
@@ -1163,7 +1163,7 @@ fixed except for an exercise to yourself, should you wish to try.
 This program uses `system(3)` so if you provide invalid characters in the
 question you might cause an error. For instance don't do this:
 
-```sh
+```<!---sh-->
     $ ./schnitzi schnitzi.info
     This program answers questions about paragraphs
     of text posed to it in English.  It is written
@@ -1275,7 +1275,7 @@ below.
 
 You might wish to run the command:
 
-```sh
+```<!---sh-->
     make diff_orig_prog
 ```
 
@@ -1283,7 +1283,7 @@ to see what had to change for the buffer size, when looking at the below.
 Furthermore you will want to look at:
 
 
-```sh
+```<!---sh-->
     diff schnitzi.alt.c schnitzi.alt2.c
 ```
 
@@ -1335,7 +1335,7 @@ h
 If you join the lines you end up with:
 
 
-```c
+```<!---c-->
 #include <stdio.h>
 ```
 
@@ -1362,7 +1362,7 @@ To say just how sensitive this entry is: even a space, lack of space or a
 character, wrong character, lack of character or character in the wrong place
 can cause a compilation error! Make sure that the output of:
 
-```sh
+```<!---sh-->
     ./schnitzi < schnitzi.c
 ```
 
@@ -1462,7 +1462,7 @@ it calls `getchar()` via the pointer `m`. So this is a feature not a bug.
 The judges suggested that the following commands should result in output:
 
 
-```sh
+```<!---sh-->
     ./leo 1 | cat - /dev/tty | gs -
 
     ./leo 37 80 | cat - /dev/tty | gs -
@@ -1470,7 +1470,7 @@ The judges suggested that the following commands should result in output:
 
 The first one can work if one does instead:
 
-```sh
+```<!---sh-->
     echo "" | ./leo 1 > foo.ps
     gs foo.ps
 ```
@@ -1532,7 +1532,7 @@ almost be done except that some of the output of the
 
 This diff almost does it but not quite:
 
-```diff
+```<!---diff-->
     diff --git i/1996/huffman/huffman.c w/1996/huffman/huffman.c
     index a5745bc7f4fa28b834c004f4cf19633e40ad9165..5e5e5334f33f9dbd95c70eddece3189d9bcff5e9 100644
     --- i/1996/huffman/huffman.c
@@ -1620,7 +1620,7 @@ See above entry [1998/dlowe](1998/dlowe/dlowe.c).
 A point worth considering is that as the number passed into the program gets
 bigger the number of lines of output gets substantially larger. For instance:
 
-```sh
+```<!---sh-->
     $ ./schnitzi 9|wc -l
       771999
 ```
@@ -1651,7 +1651,7 @@ There was no IOCCC in 1999.
 
 The author gives an example command:
 
-```sh
+```<!---sh-->
     echo "7 P 6 d P P 8 p" | ./dlowe | tr 876 tpo
 ```
 
@@ -1665,7 +1665,7 @@ see that it does indeed crash!
 
 The reason for this not working is really strange.
 
-```sh
+```<!---sh-->
     $ echo "7 P 6 d P P 8 p" | ./dlowe
     7668
     $ echo "7 P 6 d P P 8 p" | ./dlowe | grep 7
@@ -1674,21 +1674,21 @@ The reason for this not working is really strange.
 
 Why? Is it writing to stdout? Let's try some other things:
 
-```sh
+```<!---sh-->
     $ echo 7668 | tr 876 tpo
     poot
 ```
 
 Okay so we know that it SHOULD work. But we also know something funny is going on with stdout and the entry. Another experiment:
 
-```sh
+```<!---sh-->
     $ echo "7 P 6 d P P 8 p" | ./dlowe 1>&2 | grep 7
     7668
 ```
 
 Okay so now it sees it, `grep`. But watch!
 
-```sh
+```<!---sh-->
     $ echo "7 P 6 d P P 8 p" | ./dlowe 2>foo 1>&1
     7668
     $ cat foo
@@ -1696,7 +1696,7 @@ Okay so now it sees it, `grep`. But watch!
 
 .. so at this hour it does appear to be writing to stdout but yet somehow it doesn't? But watch:
 
-```sh
+```<!---sh-->
     $ echo "7 P 6 d P P 8 p" | ./dlowe 1>foo 1>&1
     $ cat foo
     $
@@ -1712,7 +1712,7 @@ with things but we don't know.
 
 Other commands do work, however, and give the appropriate output, such as:
 
-```sh
+```<!---sh-->
     $ echo 1 2 + p | ./dlowe
     3
 ```
@@ -1721,7 +1721,7 @@ so something is wrong with some commands/operators.
 
 Another feature that does work in linux is:
 
-```sh
+```<!---sh-->
     $ echo poot | ./dlowe
     poot was here!
 ```
@@ -1735,7 +1735,7 @@ C program except that it has the `#!/usr/bin/env perl` and `use warnings;` as
 well. A note below might suggest that doing this creates incomplete perl.
 Anyway:
 
-```c
+```<!---c-->
     #include <stdio.h>
     int main(void)
     {
@@ -1761,7 +1761,7 @@ Anyway:
 Compiling this you can generate:
 
 
-```perl
+```<!---perl-->
     #!/usr/bin/env perl
     use warnings;_:$_=               <> ; defined               or exit; @ARGV=split; __:$_=             shift;defined or             goto _; chomp ;(m*^\x70oO\x74$*i)?(print "$_ w\x61s h\145r\x65!\n"):((m*^\s\*(-?\d+(\.\d+)?)\s\*$*)?(push@SS            ,$1):(&{chr(((ord)%39)+3**4)x2             } )); goto __;             sub ff { @SS= ()} sub __{print            "stack empty\n"} sub ss{$#SS<0 and goto &            __; print $SS[$#SS]."\n"} sub SS{ $#SS<0              and goto &__ ;              print pop @SS}sub _ { print              "divide by zero\n"}sub ii{map{ print"$_\n" } reverse            @SS} sub AUTOLOAD { print"unimplemented\n"} sub gg{ $#SS<0 and goto              &__;push@SS,$SS[            $#SS]} sub uu{ $#SS<1 and goto            &__;$SS[ $#SS]+=            $SS[$#SS-1];$SS[$#SS-1]=$SS[$#SS]-$SS[$#SS-1]; $SS[$#SS]-=$SS[$#SS-1]}
 ```
@@ -1789,7 +1789,7 @@ itself it will print what's on the stack (for example).
 To not get 'unimplemented' you can remove from the perl:
 
 
-```perl
+```<!---perl-->
     sub AUTOLOAD { print"unimplemented\n"}
 ```
 
@@ -1801,7 +1801,7 @@ others too.)
 Here is an example run of several operations in the perl script after removing
 that subroutine:
 
-```sh
+```<!---sh-->
     $ echo 5 5 p | ./dlowe.pl
     5
     $ echo 5 5 + p | ./dlowe.pl
@@ -1841,7 +1841,7 @@ invalid input. But as can be seen by the input I (Cody) gave the input is not
 actually incorrect. It is also curious to note that it ends up printing what's
 on the stack at that point:
 
-```sh
+```<!---sh-->
     $ echo 5 5 + p | ./dlowe.pl
     unimplemented
     5
@@ -1858,7 +1858,7 @@ they said is in `Perl_sv_upgrade`. As this is documented it is not considered a
 bug to be fixed. For the curious this will crash in macOS. Cody notes that the
 code that crashes is:
 
-```c
+```<!---c-->
     perl_eval_sv
     (newSVpv("_:$_=               <> ; defined               or exit; @ARGV"
     "=split; __:$_=             shift;defined or             goto _; chomp "
@@ -1881,7 +1881,7 @@ code that crashes is:
 and in particular it appears that it is the perl itself. In other words if one
 changes it to be:
 
-```c
+```<!---c-->
     perl_eval_sv(newSVpv("",0),0);
 ```
 
@@ -1893,7 +1893,7 @@ crash this makes sense.
 
 The example command above _should_ print:
 
-```sh
+```<!---sh-->
     $ echo "13 14 15 16 17 + - * / p" | ./dlowe
     -0.0515873015873016
 ```
@@ -1916,7 +1916,7 @@ of 92 warnings! Nonetheless neither works okay and both crash.
 
 This program does not do what you might think it does! Running it like:
 
-```sh
+```<!---sh-->
     ./primenum 13
 ```
 
@@ -2173,13 +2173,13 @@ Since the game never ends properly the score is not printed either.
 It appears that the crash happens in more than one place. For instance it has
 happened at
 
-```c
+```<!---c-->
     XCheckMaskEvent(d, 4,&e)
 ```
 
 but it's also happened at
 
-```c
+```<!---c-->
     else XDrawPoint(d    ,w,g,(l.s+=l.a)>>9,    h=(l.c+=l.b)>>9)
 ```
 
@@ -2192,7 +2192,7 @@ In both cases the pointer `d` was corrupted:
 
 It is believed that it also happened at
 
-```c
+```<!---c-->
     XDrawString(d,w,g,W/3,H/2,m,B);
 ```
 
@@ -2200,7 +2200,7 @@ in `J()` and for the same reason.
 
 The loop seems to be stuck in the call to `usleep(3)` like:
 
-```c
+```<!---c-->
     usleep(p*200);
 ```
 
@@ -2238,7 +2238,7 @@ There was no IOCCC in 2003.
 Segmentation fault will occur in some systems. For instance on macOS with the
 arm64 chip:
 
-```sh
+```<!---sh-->
     ./gavin > kernel
 ```
 
@@ -2260,7 +2260,7 @@ you have a fix? We welcome your help!
 Although not related some recent changes were made to 2004/gavin to let it
 compile under clang. The following patch was applied:
 
-```patch
+```<!---patch-->
     diff --git a/2004/gavin/gavin.c b/2004/gavin/gavin.c
     index c967b7e..2082b49 100644
     --- a/2004/gavin/gavin.c
@@ -2289,7 +2289,7 @@ compile under clang. The following patch was applied:
 
 The original Makefile from 2004 had the following to say about this entry:
 
-```make
+```<!---make-->
     # Special flags for the gavin entry
     #
     # FYI: Older versions of GCC have a bug in -O2 optimization, hence -O1
@@ -2519,7 +2519,7 @@ obnoxious in macOS as it shows it at runtime (redirecting `stderr` to
 `/dev/null` will silence it). The following diff will almost work but it crashes
 with at least `computer.tofu` input file:
 
-```diff
+```<!---diff-->
     12a13
     #define gets(c) fgets((c),PI,stdin)&&(((c)[strlen((c))-1]='\0'),c!=NULL)
 ```
@@ -2731,7 +2731,7 @@ With `address` in linux:
 
 but it actually works. This code is:
 
-```c
+```<!---c-->
     } else
                 p++;
         W(c)} /* LINE 101 */
@@ -2740,13 +2740,13 @@ but it actually works. This code is:
 
 Okay but what about argument 2? Well `W` is defined as:
 
-```c
+```<!---c-->
     #define W(c) e=memmove(e,x[(u)c], y[(u)c])+y[(u)c];
 ```
 
 so it would appear that
 
-```c
+```<!---c-->
     x[(u)c]
 ```
 
@@ -2842,7 +2842,7 @@ Now with `address` sanitiser both linux and macOS crash at:
 
 which corresponds to the code:
 
-```c
+```<!---c-->
     o rd(u v)
     {
 	o *a = 0, **b = &a, **c = b + 32;
@@ -3224,7 +3224,7 @@ is not. Again see his index.html for details. However it is also possible to not
 rely on the entry as the below shows. One should be able to do:
 
 
-```sh
+```<!---sh-->
     echo 'No. I want chocolate!' | ./prog > chocolate.raw
 
 ./prog e < chocolate.raw
@@ -3367,7 +3367,7 @@ loop printing whitespace.
 
 When you run it on a JSON file you will see something like:
 
-```sh
+```<!---sh-->
     $ ./prog < ioccc.json > ioccc.html
     Assertion failed: (rulez), function C, file prog.c, line 124.
     Abort trap: 6
@@ -3505,7 +3505,7 @@ that they can work but it might end up that the scripts don't show any output
 anyway as they use the full alphabet. To test that it works one can have a
 script like:
 
-```sh
+```<!---sh-->
     LC_ALL=C  aäbcdefghijklmnoöpqrsßtuüvwxyz | LC_ALL=C grep .. | LC_ALL=de_DE.UTF-8 ./prog aäbcdefghijklmnoöpqrsßtuüvwxyz
 ```
 
@@ -3557,7 +3557,7 @@ This program will also very likely leave sockets lying about in the current
 working directory. For instance [Cody Boone
 Ferguson](authors.html#Cody_Boone_Ferguson) showed us this:
 
-```sh
+```<!---sh-->
     $ ls -al |grep '^s'
     srwxr-xr-x   1 cody  staff     0 Apr  6 08:19 .BDHFHALG=
     srwxr-xr-x   1 cody  staff     0 Apr  6 08:15 .CGGHAMGC=
@@ -3573,13 +3573,13 @@ to ignore sockets (it did at least in macOS).
 He provides the following tips on this situation. A simpler way to find sockets
 in the directory:
 
-```sh
+```<!---sh-->
     file .*|grep socket|cut -f1 -d:
 ```
 
 To delete them you can do:
 
-```sh
+```<!---sh-->
     find . -exec file '{}' \;|grep socket|cut -f 1 -d: | xargs rm -f
 ```
 

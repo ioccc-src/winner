@@ -147,14 +147,14 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <h2 id="try">Try:</h2>
 <p>To test the official C entry, one might try:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;Quartz glyph jocks vend, fix, BMW.&quot;</span> <span class="kw">|</span> <span class="ex">compress</span> <span class="kw">|</span> <span class="ex">./btoa</span> <span class="kw">|</span> <span class="ex">./jaw</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    echo &quot;Quartz glyph jocks vend, fix, BMW.&quot; | compress | ./btoa | ./jaw</code></pre>
 <p>which should apply the identity transformation to a minimal holoalphabetic
 sentence.</p>
 <h4 id="also-try">Also try:</h4>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The program, in its base form, implements two useful utilities:</p>
 <ul>
@@ -165,14 +165,14 @@ sentence.</p>
 it to 1530 bytes) which implements the complete shark utility. The script,
 <a href="shark.sh">shark.sh</a>, contains a <code>jaw.c</code> embedded within it!</p>
 <p>The sender must have <code>compress</code> and <code>btoa</code>. To send, try:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./shark.sh</span> jaw.<span class="pp">*</span> README.md <span class="op">&gt;</span> receive</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./shark.sh jaw.* README.md &gt; receive</code></pre>
 <p>The resulting file, <code>receive</code>, unpacks the input files
 even if the receiver lacks <code>uncompress</code> and <code>btoa</code>:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mkdir</span> <span class="at">-p</span> test</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">cd</span> test</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sh</span> ../receive</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cmp</span> ../jaw.c jaw.c</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cmp</span> ../README.md README.md</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    mkdir -p test
+    cd test
+    sh ../receive
+    cmp ../jaw.c jaw.c
+    cmp ../README.md README.md</code></pre>
 <p>NOTE: a limitation is that the script should be in the parent directory of the
 directory it is run from.</p>
 <h2 id="authors-remarks">Authors’ remarks:</h2>
@@ -262,17 +262,17 @@ left, and source-to-source transformations galore.</p></li>
 <p>Construct <code>sharkmail</code>, to auto-split <code>sharkives</code> into mailable segments and mail
 them. Here’s a simple one, which could be extended to enable auto-reassembly
 with one shell cmd at the far end.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">#!/bin/sh</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="va">m</span><span class="op">=</span><span class="va">$1</span><span class="kw">;</span> <span class="bu">shift</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">shark</span> <span class="va">$*</span> <span class="kw">|</span> <span class="fu">split</span> <span class="at">-800</span> <span class="at">-</span> /tmp/shark<span class="va">$$</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">n</span><span class="op">=</span><span class="kw">`</span><span class="fu">ls</span> /tmp/shark<span class="va">$$</span><span class="pp">*</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span> <span class="kw">|</span> <span class="fu">sed</span> <span class="st">&#39;s/ *//&#39;</span><span class="kw">`</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="va">p</span><span class="op">=</span>0</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> f <span class="kw">in</span> <span class="kw">`</span><span class="fu">ls</span> /tmp/shark<span class="va">$$</span><span class="pp">*</span><span class="kw">`</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">do</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>         <span class="va">p</span><span class="op">=</span><span class="kw">`</span><span class="fu">expr</span> <span class="va">$p</span> + 1<span class="kw">`</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>         <span class="ex">mail</span> <span class="at">-s</span> <span class="st">&quot;bundle (</span><span class="va">$p</span><span class="st"> of </span><span class="va">$n</span><span class="st">) from &#39;</span><span class="kw">`</span><span class="fu">whoami</span><span class="kw">`</span><span class="st">&#39;&quot;</span> <span class="va">$m</span> <span class="op">&lt;</span> <span class="va">$f</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">done</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rm</span> /tmp/shark<span class="va">$$</span><span class="pp">*</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    #!/bin/sh
+    m=$1; shift
+    shark $* | split -800 - /tmp/shark$$
+    n=`ls /tmp/shark$$* | wc -l | sed &#39;s/ *//&#39;`
+    p=0
+    for f in `ls /tmp/shark$$*`
+    do
+         p=`expr $p + 1`
+         mail -s &quot;bundle ($p of $n) from &#39;`whoami`&#39;&quot; $m &lt; $f
+    done
+    rm /tmp/shark$$*</code></pre>
 <h3 id="shark-history">Shark history:</h3>
 <ul>
 <li><p>May 1987: Karl Fox introduces 1023-byte <code>zcat.c</code> to USENET.

@@ -141,11 +141,11 @@ Location: <a href="../../location.html#DE">DE</a> - <em>Federal Republic of Germ
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> <span class="at">-B</span> <span class="pp">[</span><span class="ss">MACHINE=your_machine.h</span><span class="pp">]</span> <span class="pp">[</span><span class="ss">TAPE=your_tape.h</span><span class="pp">]</span> [X=[0<span class="kw">|</span><span class="ex">1</span><span class="kw">|</span><span class="ex">2</span><span class="kw">|</span><span class="ex">3</span><span class="kw">|</span><span class="ex">4</span><span class="kw">|</span><span class="ex">5</span><span class="kw">|</span><span class="ex">6</span><span class="kw">|</span><span class="ex">7</span><span class="kw">|</span><span class="ex">8</span><span class="kw">|</span><span class="ex">9]]</span> [V=[0<span class="kw">|</span><span class="ex">1</span><span class="kw">|</span><span class="ex">2]]</span> run</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make -B [MACHINE=your_machine.h] [TAPE=your_tape.h] [X=[0|1|2|3|4|5|6|7|8|9]] [V=[0|1|2]] run</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This is something we were fearing all along: that the C preprocessor is Turing-complete
 even without conditionals and recursive file inclusion as some kind of a
@@ -179,13 +179,13 @@ macros in the output.</p>
 files for examples.</p>
 <h4 id="tape-symbols">Tape Symbols</h4>
 <p>Every symbol used (except <code>_</code>) must be explicitly declared using</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#define sym_SYMBOL</span><span class="op">(</span><span class="pp">sym</span><span class="op">,</span><span class="pp"> _SYMBOL</span><span class="op">)</span><span class="pp"> sym</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    #define sym_SYMBOL(sym, _SYMBOL) sym</code></pre>
 <p>Example:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#define sym_1</span><span class="op">(</span><span class="pp">sym</span><span class="op">,</span><span class="pp"> _1</span><span class="op">)</span><span class="pp"> sym</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    #define sym_1(sym, _1) sym</code></pre>
 <h4 id="tape">Tape</h4>
 <p>The initial content of the tape must be defined in the tape header using a
 triple like:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#define tape </span><span class="op">((((,),...</span><span class="pp">l2</span><span class="op">),</span><span class="pp"> l1</span><span class="op">),</span><span class="pp"> c</span><span class="op">,</span><span class="pp"> </span><span class="op">(</span><span class="pp">r1</span><span class="op">,</span><span class="pp"> </span><span class="op">(</span><span class="pp">r2</span><span class="op">...,</span><span class="pp"> </span><span class="op">(,))))</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    #define tape ((((,),...l2), l1), c, (r1, (r2..., (,))))</code></pre>
 <ul>
 <li><code>l1</code>, <code>l2</code>, … are the symbols to the left</li>
 <li><code>c</code> is the symbol at the current position</li>
@@ -209,7 +209,7 @@ want no movement.</li>
 <p>There must be a state <code>A</code> defined, which becomes the initial state of the
 machine.</p>
 <p>To halt the machine, use the keyword <code>break</code> as in</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#define A_1 </span><span class="op">(</span><span class="dv">2</span><span class="op">,</span><span class="pp"> </span><span class="cf">break</span><span class="op">)</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    #define A_1 (2, break)</code></pre>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

@@ -1,13 +1,13 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     echo "YYYY/MM/DD" | ./morgan1
 ```
 
@@ -23,7 +23,7 @@ follows:
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 

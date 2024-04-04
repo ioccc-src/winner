@@ -18,13 +18,13 @@ Run a command on all winning entries.
 
 For example:
 
-```sh
+```<!---sh-->
 bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1
 ```
 
 Or for example:
 
-```sh
+```<!---sh-->
 bin/all-run.sh -v 3 bin/readme2index.sh -v 1
 ```
 
@@ -35,19 +35,19 @@ Run a command on all IOCCC years.
 
 For example:
 
-```sh
+```<!---sh-->
 bin/all-years.sh -v 1 bin/gen-year-index.sh -v 1
 ```
 
 Or for example:
 
-```sh
+```<!---sh-->
 bin/all-years.sh -v 1 bin/chk-entry.sh
 ```
 
 We recommend that this tool be invoked via the top level `Makefile`:
 
-```sh
+```<!---sh-->
 make verify_entry_files
 ```
 
@@ -59,7 +59,7 @@ Check that files required by an entry match the entry's manifest as found in
 
 For example:
 
-```sh
+```<!---sh-->
 bin/chk-entry.sh 2020/ferguson1
 ```
 
@@ -70,7 +70,7 @@ Generate the list of files in the entry's manifest, `.entry.json`.
 
 For example:
 
-```sh
+```<!---sh-->
 awk -f bin/filelist.entry.json.awk 2020/ferguson1/.entry.json
 ```
 
@@ -81,7 +81,7 @@ Generate the top level `/authors.html` page.
 
 Usage:
 
-```sh
+```<!---sh-->
 bin/gen-authors.sh -v 1
 ```
 
@@ -92,7 +92,7 @@ Generate the top level `/location.html` page.
 
 Usage:
 
-```sh
+```<!---sh-->
 bin/gen-location.sh -v 1
 ```
 
@@ -104,7 +104,7 @@ files.
 
 Usage:
 
-```sh
+```<!---sh-->
 bin/gen-other-html.sh -v 1
 ```
 
@@ -115,13 +115,13 @@ Generate an XML sitemap for the IOCCC web site.
 
 Usage:
 
-```sh
+```<!---sh-->
 bin/gen-sitemap.sh -v 1
 ```
 
 We recommend that this tool be invoked via the top level `Makefile`:
 
-```sh
+```<!---sh-->
 make gen_sitemap
 ```
 
@@ -135,31 +135,31 @@ Without argument, the `contest_status` is unchanged.
 
 Usage:
 
-```sh
+```<!---sh-->
 bin/gen-status.sh -v 1
 ```
 
 To force the  `contest_status` to be closed:
 
-```sh
+```<!---sh-->
 bin/gen-status.sh -v 1 closed
 ```
 
 To force the  `contest_status` to be open:
 
-```sh
+```<!---sh-->
 bin/gen-status.sh -v 1 open
 ```
 
 To see other valid statuses:
 
-```sh
+```<!---sh-->
 bin/gen-status -h
 ```
 
 We recommend that this tool be invoked via the top level `Makefile`:
 
-```sh
+```<!---sh-->
 make gen_status
 ```
 
@@ -170,7 +170,7 @@ Generate a number of top level HTML pages for the IOCCC web sites.
 
 Usage:
 
-```sh
+```<!---sh-->
 bin/gen-top-html.sh -v 1
 ```
 
@@ -191,7 +191,7 @@ Examples of top level HTML pages built by this tool include:
 
 We recommend that this tool be invoked via the top level `Makefile`:
 
-```sh
+```<!---sh-->
 make gen_top_html
 ```
 
@@ -202,13 +202,13 @@ Generate an `index.html` page for an given IOCCC year.
 
 Usage:
 
-```sh
+```<!---sh-->
 bin/gen-year-index.sh -v 1 2020
 ```
 
 We recommend that this tool be invoked via the top level `Makefile`:
 
-```sh
+```<!---sh-->
 make gen_year_index
 ```
 
@@ -219,13 +219,13 @@ Generate the top level `/years.html` page.
 
 Usage:
 
-```sh
+```<!---sh-->
 bin/gen-years.sh -v 1
 ```
 
 We recommend that this tool be invoked via the top level `Makefile`:
 
-```sh
+```<!---sh-->
 make gen_years
 ```
 
@@ -279,7 +279,7 @@ If only a few `index.hmtl` files need updating, then
 this command will only briefly pause while the
 slightly longer [readme2index.sh](readme2index.sh) is run:
 
-```sh
+```<!---sh-->
 bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1
 ```
 
@@ -289,7 +289,7 @@ and `index.html` are correct.  If in doubt, use:
 
 We recommend that this tool be invoked via the top level `Makefile`:
 
-```sh
+```<!---sh-->
 make quick_entry_index
 ```
 
@@ -298,19 +298,19 @@ make quick_entry_index
 
 Convert an entry README.md into entry directory index.html.
 
-```sh
+```<!---sh-->
 bin/all-run.sh -v 3 bin/readme2index.sh -v 1
 ```
 
 To build `index.html` files for all entries:
 
-```sh
+```<!---sh-->
 bin/all-run.sh -v 3 bin/readme2index.sh -v 1
 ```
 
 We recommend that this tool be invoked via the top level `Makefile`:
 
-```sh
+```<!---sh-->
 make entry_index
 ```
 
@@ -341,19 +341,19 @@ Sort a .gitignore in a entry directory.
 
 Usage:
 
-```sh
+```<!---sh-->
 bin/sort.gitignore.sh -v 1 YYYY/dir
 ```
 
 Suggested usage:
 
-```sh
+```<!---sh-->
 bin/all-run.sh bin/sort.gitignore.sh -v 1
 ```
 
 We recommend that this tool be invoked via the top level `Makefile`:
 
-```sh
+```<!---sh-->
 make sort_gitignore
 ```
 
@@ -389,13 +389,13 @@ Form a compressed tarball for an entry.
 
 Usage:
 
-```sh
+```<!---sh-->
 bin/tar-entry.sh -v 1 YYYY/dir
 ```
 
 Suggested usage:
 
-```sh
+```<!---sh-->
 bin/all-run.sh -v 3 bin/tar-entry.sh -v 1 -W
 ```
 
@@ -406,19 +406,19 @@ Form a compressed tarball for an IOCCC year.
 
 Usage:
 
-```sh
+```<!---sh-->
 bin/tar-year.sh -v 1 YYYY
 ```
 
 Suggested usage:
 
-```sh
+```<!---sh-->
 bin/all-years.sh -v 3 bin/tar-year.sh -v 1 -W
 ```
 
 We recommend that this tool be invoked via the top level `Makefile`:
 
-```sh
+```<!---sh-->
 make form_year_tarball
 ```
 
@@ -429,19 +429,19 @@ Untar an entry's a compressed tarball.
 
 Usage:
 
-```sh
+```<!---sh-->
 bin/untar-entry.sh -v 1 YYYY/dir
 ```
 
 Suggested usage:
 
-```sh
+```<!---sh-->
 bin/all-run.sh -v 3 bin/untar-entry.sh -v 1
 ```
 
 We recommend that this tool be invoked via the top level `Makefile`:
 
-```sh
+```<!---sh-->
 make untar_entry_tarball
 ```
 
@@ -452,19 +452,19 @@ Untar an IOCCC year's compressed tarball.
 
 Usage:
 
-```sh
+```<!---sh-->
 bin/untar-year.sh -v 1 YYYY
 ```
 
 Suggested usage:
 
-```sh
+```<!---sh-->
 bin/all-years.sh -v 3 bin/untar-year.sh -v 1
 ```
 
 We recommend that this tool be invoked via the top level `Makefile`:
 
-```sh
+```<!---sh-->
 make untar_year_tarball
 ```
 
@@ -494,14 +494,14 @@ the file name form:
 
 By using command line options of the form:
 
-```sh
+```<!---sh-->
 -H phase=name
 ```
 
 where `phase` is the name of an HTML phase,
 a non-default file may be used.  For example:
 
-```sh
+```<!---sh-->
 -H topnav=up2index
 ```
 
@@ -512,7 +512,7 @@ used during the _topnav_ HTML phase.
 If `name` is dot (i.e., `.`), then the given HTML phase is skipped.
 For example:
 
-```sh
+```<!---sh-->
 -H footer=.
 ```
 
@@ -861,7 +861,7 @@ a POSIX safe string with the addition of `+` (for technical reasons beyond this
 document).  In particular, the `author_handle` must be an ASCII
 string that matches this regexp:
 
-```re
+```<!---re-->
 ^[0-9A-Za-z][0-9A-Za-z._+-]*$"
 ```
 
@@ -900,7 +900,7 @@ in the case of [2005/anon](../2005/anon/anon.c).
 
 Anonymous `author_handle`'s match this regexp:
 
-```re
+```<!---re-->
 Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$
 ```
 
@@ -932,7 +932,7 @@ Non-numeric `year` strings are lower case.
 
 A `year` string matches this regexp:
 
-```re
+```<!---re-->
 [0-9a-z][0-9a-z][0-9a-z][0-9a-z]
 ```
 
@@ -957,7 +957,7 @@ A `dir` is a POSIX safe string that holds an entry.
 
 A `dir` is a string that matches this regexp:
 
-```re
+```<!---re-->
 ^[a-z][0-9a-z.-]*$
 ```
 

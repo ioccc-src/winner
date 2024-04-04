@@ -141,7 +141,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <p>There is an <a href="#alternate-code">alternate version</a> that is supposed to win all the
 time.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
@@ -152,7 +152,7 @@ time.</p>
 <p>NOTE: we have provided a script to perform the below procedure which we include
 for the interested. See the <a href="#try">try</a> section if you just want to play.</p>
 <p>Make and then run as follows:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./westley</span> <span class="pp">[</span><span class="ss">move_location</span><span class="pp">]</span> <span class="kw">|</span> <span class="fu">tee</span> nextmove.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./westley [move_location] | tee nextmove.c</code></pre>
 <p>where the <code>move_location</code> is a digit from 1 to 9 that represents
 a move on a tic-tac-toe board:</p>
 <pre><code>    1 2 3
@@ -160,59 +160,59 @@ a move on a tic-tac-toe board:</p>
     7 8 9</code></pre>
 <p>If you omit <code>move_location</code>, then the computer moves first. For your
 next move, recompile <code>nextmove.c</code> and play it again:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> nextmove</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./nextmove</span> move_location <span class="kw">|</span> <span class="fu">tee</span> nextmove.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make nextmove
+    ./nextmove move_location | tee nextmove.c</code></pre>
 <h2 id="try">Try:</h2>
 <p>We have provided the shell script, <a href="ttt.sh">ttt</a>, to make it easier to play the
 game:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> ttt</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./ttt</span> <span class="pp">[</span><span class="ss">first_move</span><span class="pp">]</span>  <span class="co"># &lt;- omit first arg to have it move first</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./ttt</span> next_move</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make ttt
+    ./ttt [first_move]  # &lt;- omit first arg to have it move first
+    ./ttt next_move</code></pre>
 <p>The shell script determines when the game is over, and automatically replaces
 <code>merlyn.c</code> (copied from <a href="westley.c">westley.c</a> with an improved version after a
 loss). The <a href="ttt.sh">ttt</a> script has two other modes:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./ttt</span> quitgame      <span class="co"># cancel any game in progress, revert to merlyn.c</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./ttt</span> clobber       <span class="co"># remove all game files, revert to original source</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./ttt quitgame      # cancel any game in progress, revert to merlyn.c
+    ./ttt clobber       # remove all game files, revert to original source</code></pre>
 <p>For example here is a potentially losing game:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./ttt</span> 1</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./ttt</span> 4</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./ttt</span> 6</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./ttt 1
+    ./ttt 4
+    ./ttt 6</code></pre>
 <p>The final might look like:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>                    a<span class="op">(</span>X<span class="op">){</span><span class="co">/*/X=-         a(X){/*/</span>X<span class="op">=-</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>            X   <span class="op">-</span><span class="dv">1</span><span class="op">;</span>F<span class="op">;</span>X<span class="op">=-</span>                <span class="op">-</span><span class="dv">1</span><span class="op">;</span>F<span class="op">;</span>X<span class="op">=-</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                    <span class="op">-</span><span class="dv">1</span><span class="op">;</span>F<span class="op">;}</span><span class="co">/*/           -1;F;}/*/</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">char</span> z<span class="op">[][</span><span class="dv">100</span><span class="op">]={</span><span class="st">&quot;char z[][100]={&quot;</span><span class="op">,</span><span class="st">&quot;a(X){/*/X=-&quot;</span><span class="op">,</span><span class="st">&quot;-1;F;X=-&quot;</span><span class="op">,</span><span class="st">&quot;-1;F;}/*/&quot;</span><span class="op">,</span><span class="st">&quot;1999999999  :-) &quot;</span><span class="op">,</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;int q,i,j,k,X,O=0,H;S(x)int*x;{X+=X;O+=O;*x+1?*x+2||X++:O++;*x=1;}L(n){for(*&quot;</span><span class="op">,</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;z[i=1]=n+97;i&lt;4;i++)M(256),s(i),M(128),s(i),M(64),N;X*=8;O*=8;}s(R){char*r=z&quot;</span><span class="op">,</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;[R];for(q&amp;&amp;Q;*r;)P(*r++);q&amp;&amp;(Q,P(44));}M(m){P(9);i-2||P(X&amp;m?88:O&amp;m?48:32);P(&quot;</span><span class="op">,</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;9);}y(A){for(j=8;j;)~A&amp;w[--j]||(q=0);}e(W,Z){for(i-=i*q;i&lt;9&amp;&amp;q;)y(W|(1&lt;&lt;i++&amp;&quot;</span><span class="op">,</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;~Z));}R(){for(k=J[*J-48]-40;k;)e(w[k--],X|O);}main(u,v)char**v;{a(q=1);b(1);&quot;</span><span class="op">,</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;c(1);*J=--u?O?*J:*v[1]:53;X|=u&lt;&lt;57-*v[u];y(X);K=40+q;q?e(O,X),q&amp;&amp;(K=&#39;|&#39;),e(X&quot;</span><span class="op">,</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;,O),R(),O|=1&lt;&lt;--i:J[*J-48+(X=O=0)]--;L(q=0);for(s(i=0);q=i&lt;12;)s(i++),i&gt;4&amp;&amp;N&quot;</span><span class="op">,</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;;s(q=12);P(48);P(&#39;}&#39;);P(59);N;q=0;L(1);for(i=5;i&lt;13;)s(i++),N;L(2);}&quot;</span><span class="op">,</span><span class="dv">0</span><span class="op">};</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>                    b<span class="op">(</span>X<span class="op">){</span><span class="co">/*/X=-         b(X){/*/</span>X<span class="op">=-</span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>            X   <span class="op">-</span><span class="dv">1</span><span class="op">;</span>F<span class="op">;</span>X<span class="op">=-</span>                <span class="op">-</span><span class="dv">1</span><span class="op">;</span>F<span class="op">;</span>X<span class="op">=-</span>        X</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>                    <span class="op">-</span><span class="dv">1</span><span class="op">;</span>F<span class="op">;}</span><span class="co">/*/           -1;F;}/*/</span></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> q<span class="op">,</span>i<span class="op">,</span>j<span class="op">,</span>k<span class="op">,</span>X<span class="op">,</span>O<span class="op">=</span><span class="dv">0</span><span class="op">,</span>H<span class="op">;</span>S<span class="op">(</span>x<span class="op">)</span><span class="dt">int</span><span class="op">*</span>x<span class="op">;{</span>X<span class="op">+=</span>X<span class="op">;</span>O<span class="op">+=</span>O<span class="op">;*</span>x<span class="op">+</span><span class="dv">1</span><span class="op">?*</span>x<span class="op">+</span><span class="dv">2</span><span class="op">||</span>X<span class="op">++:</span>O<span class="op">++;*</span>x<span class="op">=</span><span class="dv">1</span><span class="op">;}</span>L<span class="op">(</span>n<span class="op">){</span><span class="cf">for</span><span class="op">(*</span></span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    z<span class="op">[</span>i<span class="op">=</span><span class="dv">1</span><span class="op">]=</span>n<span class="op">+</span><span class="dv">97</span><span class="op">;</span>i<span class="op">&lt;</span><span class="dv">4</span><span class="op">;</span>i<span class="op">++)</span>M<span class="op">(</span><span class="dv">256</span><span class="op">),</span>s<span class="op">(</span>i<span class="op">),</span>M<span class="op">(</span><span class="dv">128</span><span class="op">),</span>s<span class="op">(</span>i<span class="op">),</span>M<span class="op">(</span><span class="dv">64</span><span class="op">),</span>N<span class="op">;</span>X<span class="op">*=</span><span class="dv">8</span><span class="op">;</span>O<span class="op">*=</span><span class="dv">8</span><span class="op">;}</span>s<span class="op">(</span>R<span class="op">){</span><span class="dt">char</span><span class="op">*</span>r<span class="op">=</span>z</span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>R<span class="op">];</span><span class="cf">for</span><span class="op">(</span>q<span class="op">&amp;&amp;</span>Q<span class="op">;*</span>r<span class="op">;)</span>P<span class="op">(*</span>r<span class="op">++);</span>q<span class="op">&amp;&amp;(</span>Q<span class="op">,</span>P<span class="op">(</span><span class="dv">44</span><span class="op">));}</span>M<span class="op">(</span>m<span class="op">){</span>P<span class="op">(</span><span class="dv">9</span><span class="op">);</span>i<span class="op">-</span><span class="dv">2</span><span class="op">||</span>P<span class="op">(</span>X<span class="op">&amp;</span>m<span class="op">?</span><span class="dv">88</span><span class="op">:</span>O<span class="op">&amp;</span>m<span class="op">?</span><span class="dv">48</span><span class="op">:</span><span class="dv">32</span><span class="op">);</span>P<span class="op">(</span></span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    <span class="dv">9</span><span class="op">);}</span>y<span class="op">(</span>A<span class="op">){</span><span class="cf">for</span><span class="op">(</span>j<span class="op">=</span><span class="dv">8</span><span class="op">;</span>j<span class="op">;)~</span>A<span class="op">&amp;</span>w<span class="op">[--</span>j<span class="op">]||(</span>q<span class="op">=</span><span class="dv">0</span><span class="op">);}</span>e<span class="op">(</span>W<span class="op">,</span>Z<span class="op">){</span><span class="cf">for</span><span class="op">(</span>i<span class="op">-=</span>i<span class="op">*</span>q<span class="op">;</span>i<span class="op">&lt;</span><span class="dv">9</span><span class="op">&amp;&amp;</span>q<span class="op">;)</span>y<span class="op">(</span>W<span class="op">|(</span><span class="dv">1</span><span class="op">&lt;&lt;</span>i<span class="op">++&amp;</span></span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    <span class="op">~</span>Z<span class="op">));}</span>R<span class="op">(){</span><span class="cf">for</span><span class="op">(</span>k<span class="op">=</span>J<span class="op">[*</span>J<span class="op">-</span><span class="dv">48</span><span class="op">]-</span><span class="dv">40</span><span class="op">;</span>k<span class="op">;)</span>e<span class="op">(</span>w<span class="op">[</span>k<span class="op">--],</span>X<span class="op">|</span>O<span class="op">);}</span>main<span class="op">(</span>u<span class="op">,</span>v<span class="op">)</span><span class="dt">char</span><span class="op">**</span>v<span class="op">;{</span>a<span class="op">(</span>q<span class="op">=</span><span class="dv">1</span><span class="op">);</span>b<span class="op">(</span><span class="dv">1</span><span class="op">);</span></span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    c<span class="op">(</span><span class="dv">1</span><span class="op">);*</span>J<span class="op">=--</span>u<span class="op">?</span>O<span class="op">?*</span>J<span class="op">:*</span>v<span class="op">[</span><span class="dv">1</span><span class="op">]:</span><span class="dv">53</span><span class="op">;</span>X<span class="op">|=</span>u<span class="op">&lt;&lt;</span><span class="dv">57</span><span class="op">-*</span>v<span class="op">[</span>u<span class="op">];</span>y<span class="op">(</span>X<span class="op">);</span>K<span class="op">=</span><span class="dv">40</span><span class="op">+</span>q<span class="op">;</span>q<span class="op">?</span>e<span class="op">(</span>O<span class="op">,</span>X<span class="op">),</span>q<span class="op">&amp;&amp;(</span>K<span class="op">=</span><span class="ch">&#39;|&#39;</span><span class="op">),</span>e<span class="op">(</span>X</span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>    <span class="op">,</span>O<span class="op">),</span>R<span class="op">(),</span>O<span class="op">|=</span><span class="dv">1</span><span class="op">&lt;&lt;--</span>i<span class="op">:</span>J<span class="op">[*</span>J<span class="op">-</span><span class="dv">48</span><span class="op">+(</span>X<span class="op">=</span>O<span class="op">=</span><span class="dv">0</span><span class="op">)]--;</span>L<span class="op">(</span>q<span class="op">=</span><span class="dv">0</span><span class="op">);</span><span class="cf">for</span><span class="op">(</span>s<span class="op">(</span>i<span class="op">=</span><span class="dv">0</span><span class="op">);</span>q<span class="op">=</span>i<span class="op">&lt;</span><span class="dv">12</span><span class="op">;)</span>s<span class="op">(</span>i<span class="op">++),</span>i<span class="op">&gt;</span><span class="dv">4</span><span class="op">&amp;&amp;</span>N</span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    <span class="op">;</span>s<span class="op">(</span>q<span class="op">=</span><span class="dv">12</span><span class="op">);</span>P<span class="op">(</span><span class="dv">48</span><span class="op">);</span>P<span class="op">(</span><span class="ch">&#39;}&#39;</span><span class="op">);</span>P<span class="op">(</span><span class="dv">59</span><span class="op">);</span>N<span class="op">;</span>q<span class="op">=</span><span class="dv">0</span><span class="op">;</span>L<span class="op">(</span><span class="dv">1</span><span class="op">);</span><span class="cf">for</span><span class="op">(</span>i<span class="op">=</span><span class="dv">5</span><span class="op">;</span>i<span class="op">&lt;</span><span class="dv">13</span><span class="op">;)</span>s<span class="op">(</span>i<span class="op">++),</span>N<span class="op">;</span>L<span class="op">(</span><span class="dv">2</span><span class="op">);}</span></span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>                    c<span class="op">(</span>X<span class="op">){</span><span class="co">/*/X=-         c(X){/*/</span>X<span class="op">=-</span></span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>            <span class="dv">0</span>   <span class="op">-</span><span class="dv">1</span><span class="op">;</span>F<span class="op">;</span>X<span class="op">=-</span>        <span class="dv">0</span>       <span class="op">-</span><span class="dv">1</span><span class="op">;</span>F<span class="op">;</span>X<span class="op">=-</span>        <span class="dv">0</span></span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>                    <span class="op">-</span><span class="dv">1</span><span class="op">;</span>F<span class="op">;}</span><span class="co">/*/           -1;F;}/*/</span></span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>    ttt<span class="op">:</span> I win<span class="op">!</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>                    a(X){/*/X=-         a(X){/*/X=-
+            X   -1;F;X=-                -1;F;X=-
+                    -1;F;}/*/           -1;F;}/*/
+    char z[][100]={&quot;char z[][100]={&quot;,&quot;a(X){/*/X=-&quot;,&quot;-1;F;X=-&quot;,&quot;-1;F;}/*/&quot;,&quot;1999999999  :-) &quot;,
+    &quot;int q,i,j,k,X,O=0,H;S(x)int*x;{X+=X;O+=O;*x+1?*x+2||X++:O++;*x=1;}L(n){for(*&quot;,
+    &quot;z[i=1]=n+97;i&lt;4;i++)M(256),s(i),M(128),s(i),M(64),N;X*=8;O*=8;}s(R){char*r=z&quot;,
+    &quot;[R];for(q&amp;&amp;Q;*r;)P(*r++);q&amp;&amp;(Q,P(44));}M(m){P(9);i-2||P(X&amp;m?88:O&amp;m?48:32);P(&quot;,
+    &quot;9);}y(A){for(j=8;j;)~A&amp;w[--j]||(q=0);}e(W,Z){for(i-=i*q;i&lt;9&amp;&amp;q;)y(W|(1&lt;&lt;i++&amp;&quot;,
+    &quot;~Z));}R(){for(k=J[*J-48]-40;k;)e(w[k--],X|O);}main(u,v)char**v;{a(q=1);b(1);&quot;,
+    &quot;c(1);*J=--u?O?*J:*v[1]:53;X|=u&lt;&lt;57-*v[u];y(X);K=40+q;q?e(O,X),q&amp;&amp;(K=&#39;|&#39;),e(X&quot;,
+    &quot;,O),R(),O|=1&lt;&lt;--i:J[*J-48+(X=O=0)]--;L(q=0);for(s(i=0);q=i&lt;12;)s(i++),i&gt;4&amp;&amp;N&quot;,
+    &quot;;s(q=12);P(48);P(&#39;}&#39;);P(59);N;q=0;L(1);for(i=5;i&lt;13;)s(i++),N;L(2);}&quot;,0};
+                    b(X){/*/X=-         b(X){/*/X=-
+            X   -1;F;X=-                -1;F;X=-        X
+                    -1;F;}/*/           -1;F;}/*/
+    int q,i,j,k,X,O=0,H;S(x)int*x;{X+=X;O+=O;*x+1?*x+2||X++:O++;*x=1;}L(n){for(*
+    z[i=1]=n+97;i&lt;4;i++)M(256),s(i),M(128),s(i),M(64),N;X*=8;O*=8;}s(R){char*r=z
+    [R];for(q&amp;&amp;Q;*r;)P(*r++);q&amp;&amp;(Q,P(44));}M(m){P(9);i-2||P(X&amp;m?88:O&amp;m?48:32);P(
+    9);}y(A){for(j=8;j;)~A&amp;w[--j]||(q=0);}e(W,Z){for(i-=i*q;i&lt;9&amp;&amp;q;)y(W|(1&lt;&lt;i++&amp;
+    ~Z));}R(){for(k=J[*J-48]-40;k;)e(w[k--],X|O);}main(u,v)char**v;{a(q=1);b(1);
+    c(1);*J=--u?O?*J:*v[1]:53;X|=u&lt;&lt;57-*v[u];y(X);K=40+q;q?e(O,X),q&amp;&amp;(K=&#39;|&#39;),e(X
+    ,O),R(),O|=1&lt;&lt;--i:J[*J-48+(X=O=0)]--;L(q=0);for(s(i=0);q=i&lt;12;)s(i++),i&gt;4&amp;&amp;N
+    ;s(q=12);P(48);P(&#39;}&#39;);P(59);N;q=0;L(1);for(i=5;i&lt;13;)s(i++),N;L(2);}
+                    c(X){/*/X=-         c(X){/*/X=-
+            0   -1;F;X=-        0       -1;F;X=-        0
+                    -1;F;}/*/           -1;F;}/*/
+
+    ttt: I win!</code></pre>
 <p>Redirects stderr to <code>/dev/null</code> by default. If you need errors or warnings use
 <code>-e</code>.</p>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This version is based on the author’s remarks. It is not supposed to lose but it
 can lose if you cheat. That’s supposed to happen. Can you win any other time?</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Rather than use <code>ttt</code> try the script <code>ttt.alt</code> instead.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -259,7 +259,7 @@ longer loses games.</p>
 function as <code>a()</code>, <code>b()</code>, or <code>c()</code>. After each function is called, the global
 variables <code>X</code> and <code>O</code> contain bitmasks of where all the <code>X</code>s and <code>O</code>s are placed.
 The statement:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    X<span class="op">=-</span>   <span class="op">&lt;</span><span class="dt">char</span><span class="op">&gt;</span>   <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    X=-   &lt;char&gt;   -1;</code></pre>
 <p>evaluates to <code>1</code>, <code>-1</code>, or <code>-2</code> when <code>X</code> is <code>1</code> and <code>&lt;char&gt;</code> is one of <code>"X"</code>,
 <code>"0"</code>, or <code>" "</code>. The function <code>S(&amp;X)</code> sets the appropriate bits in (global
 vars) <code>X</code> and <code>O</code> and resets the value of <code>&amp;X</code> to <code>1</code>. This is how the current

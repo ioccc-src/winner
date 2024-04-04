@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -22,7 +22,7 @@ For more detailed information see [2018 algmyr bugs](../../bugs.html#2018_algmyr
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./prog < prog.c			# Print garbage: might mess up your terminal
     ./prog <file1> <file2> > out.raw
     ./prog -d 2 0 out.raw		# Decode the first (0th) channel out of two
@@ -31,7 +31,7 @@ For more detailed information see [2018 algmyr bugs](../../bugs.html#2018_algmyr
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -164,13 +164,13 @@ standards compliant). This is used to print the usage instructions.
 
 Compiling using
 
-```sh
+```<!---sh-->
     gcc -Wall -Wextra -pedantic
 ```
 
 gives only `-Wmisleading-indentation` which is sensible considering the source code. While
 
-```sh
+```<!---sh-->
     clang -Wall -Wextra -pedantic
 ```
 
@@ -179,7 +179,7 @@ bodies), `-Wstring-plus-int` (since apparently some people think string+`int` is
 concatenation) and one of the weirder warnings I have seen from me splitting a
 negative constant with whitespace. Compiling using
 
-```sh
+```<!---sh-->
     clang -Wall -Wextra -pedantic -Weverything
 ```
 

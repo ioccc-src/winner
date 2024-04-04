@@ -1,20 +1,20 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./herrmann2
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -75,7 +75,7 @@ to about 9k.
 3D picture, constructed of random characters (with ASCII code between
 32 and 126). For example, type
 
-```sh
+```<!---sh-->
     ./herrmann2 < herrmann2.ioccc
 ```
 
@@ -86,7 +86,7 @@ new random character, it will take the next one from the
 argument. When it arrives at the end of the argument, it will
 start over at the beginning. Example:
 
-```sh
+```<!---sh-->
     ./herrmann2 "234 84 045 5 6765 7487 65190 84 656 254 12 43931 818 0 6542 \
     341 45 567 76967 7244 606 976567 895 81898 095 68678 1843 4650547 \
     565980691 389 04974" < herrmann2.ioccc
@@ -122,7 +122,7 @@ get it (if you lost it or if you don't have it already) is to use
 the program itself on the right picture and with the right
 argument:
 
-```sh
+```<!---sh-->
     ./herrmann2 \
     'char*d,A[9876];e;b;*ad,a,c;  tw,ndr,T; wri; ;*h; _,ar  ;on;'\
     ' ;l ;i(V)man,n    {-!har  ;   =Aadre(0,&e,o||n -- +,o4,=9,l=b=8,'\
@@ -183,7 +183,7 @@ works.)
 
 - When still in doubt about how to judge this program, type
 
-```sh
+```<!---sh-->
     ./herrmann2 < herrmann2.cup
 ```
 

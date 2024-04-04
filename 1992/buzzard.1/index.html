@@ -141,15 +141,15 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./buzzard.1</span> num num</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./buzzard.1 num num</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>To see good C Preprocessor buzzard.1, try:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> babble.cppcb</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span> babble.cppcb</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make babble.cppcb
+    cat babble.cppcb</code></pre>
 <p>Notice how many statements it takes to do anything useful?</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>What you shouldn’t think about <code>buzzard.1</code>:</p>
@@ -162,11 +162,11 @@ short strings.</p>
 <h3 id="what-it-does">What it does</h3>
 <p><code>buzzard.1</code> is a simple mathematical program. It expects two numeric
 arguments.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./buzzard.1</span> 0 <span class="op">&lt;</span>num<span class="op">&gt;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./buzzard.1 0 &lt;num&gt;</code></pre>
 <p>will print out the factorial of <code>&lt;num&gt;</code>.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./buzzard.1</span> <span class="op">&lt;</span>num1<span class="op">&gt;</span> <span class="op">&lt;</span>num2<span class="op">&gt;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./buzzard.1 &lt;num1&gt; &lt;num2&gt;</code></pre>
 <p>will print out the largest common factor of <code>num1</code> and <code>num2</code>.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./buzzard.1</span> 1 <span class="op">&lt;</span>num2<span class="op">&gt;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./buzzard.1 1 &lt;num2&gt;</code></pre>
 <p>will print out a factor of <code>num2</code> if it’s composite, or else
 it will print a string informing you that <code>num2</code> is prime.</p>
 <p>If the first argument is less than 0, it prints out an
@@ -244,23 +244,23 @@ BCD, so it can be output by the hexadecimal output statement.</p>
 programs is the conditional (given that we have loops).
 Since all you can do in the given operation output set is
 assignment, we implement “conditional assignment”:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>x<span class="op">)</span> y <span class="op">=</span> z<span class="op">;</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    if (x) y = z;</code></pre>
 <p>To implement this, we constrain <code>x</code> to be either 0 or 1, and
 simply compute:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> <span class="op">(</span>z <span class="op">*</span> x<span class="op">)</span> <span class="op">+</span> <span class="op">(</span>y <span class="op">*</span> <span class="op">(</span><span class="dv">1</span><span class="op">-</span>x<span class="op">));</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    y = (z * x) + (y * (1-x));</code></pre>
 <p>This is more obscured by factoring out common terms and restricting
 ourselves to two operand operations:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    temp <span class="op">=</span> z<span class="op">;</span>                       <span class="op">(</span>temp <span class="op">==</span> z<span class="op">)</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    temp <span class="op">-=</span> y<span class="op">;</span>                      <span class="op">(</span>temp <span class="op">==</span> z<span class="op">-</span>y<span class="op">)</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    temp <span class="op">*=</span> x<span class="op">;</span>                      <span class="op">(</span>temp <span class="op">==</span> <span class="op">(</span>z<span class="op">-</span>y<span class="op">)*</span>x<span class="op">)</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    y <span class="op">+=</span> temp<span class="op">;</span>                      <span class="op">(</span>y    <span class="op">==</span> <span class="op">(</span>z<span class="op">-</span>y<span class="op">)*</span>x <span class="op">+</span> y<span class="op">)</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>                                    <span class="op">(</span>     <span class="op">==</span> z<span class="op">*</span>x <span class="op">-</span> y<span class="op">*</span>x <span class="op">+</span> y<span class="op">)</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>                                    <span class="op">(</span>     <span class="op">==</span> z<span class="op">*</span>x <span class="op">+</span> y<span class="op">*(</span><span class="dv">1</span><span class="op">-</span>x<span class="op">))</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    temp = z;                       (temp == z)
+    temp -= y;                      (temp == z-y)
+    temp *= x;                      (temp == (z-y)*x)
+    y += temp;                      (y    == (z-y)*x + y)
+                                    (     == z*x - y*x + y)
+                                    (     == z*x + y*(1-x))</code></pre>
 <p>Next we imagine we have a <a href="https://en.wikipedia.org/wiki/Program_counter">pc</a>.
 “I’m supposed to execute statement pc next”, says our emulator. But suppose
 we’re not currently coming up on statement pc. To handle this, we simply make
 every operation conditional on the pc having the correct value:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>pc <span class="op">==</span> some_constant<span class="op">)</span> y <span class="op">=</span> z<span class="op">;</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    if (pc == some_constant) y = z;</code></pre>
 <p>To combine this with other operations, we simply multiply by our
 (<code>pc == some_constant</code>) flag right after the above <code>temp *= x</code>.</p>
 <p>To evaluate <code>pc == some_constant</code> requires one more trick. We assume that

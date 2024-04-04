@@ -141,11 +141,11 @@ Location: <a href="../../location.html#DE">DE</a> - <em>Federal Republic of Germ
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./herrmann2</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./herrmann2</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <p>If you use vi(m) you can see a pattern in <a href="herrmann2.cup">herrmann2.cup</a> and
 [herrmann2.ioccc][(herrmann2.ioccc]) by say:</p>
 <pre><code>    /[pon]\</code></pre>
@@ -177,7 +177,7 @@ to about 9k.</p></li>
 3D picture, constructed of random characters (with ASCII code between
 32 and 126). For example, type</p></li>
 </ol>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./herrmann2</span> <span class="op">&lt;</span> herrmann2.ioccc</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./herrmann2 &lt; herrmann2.ioccc</code></pre>
 <ol start="3" type="1">
 <li>If you want to control the characters used in the output (for
 example if your picture is to consist only of digits), pass them
@@ -186,9 +186,9 @@ new random character, it will take the next one from the
 argument. When it arrives at the end of the argument, it will
 start over at the beginning. Example:</li>
 </ol>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./herrmann2</span> <span class="st">&quot;234 84 045 5 6765 7487 65190 84 656 254 12 43931 818 0 6542 </span><span class="dt">\</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="st">    341 45 567 76967 7244 606 976567 895 81898 095 68678 1843 4650547 </span><span class="dt">\</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="st">    565980691 389 04974&quot;</span> <span class="op">&lt;</span> herrmann2.ioccc</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./herrmann2 &quot;234 84 045 5 6765 7487 65190 84 656 254 12 43931 818 0 6542 \
+    341 45 567 76967 7244 606 976567 895 81898 095 68678 1843 4650547 \
+    565980691 389 04974&quot; &lt; herrmann2.ioccc</code></pre>
 <h3 id="some-hints-to-get-better-results">Some hints to get better results</h3>
 <ul>
 <li><p>Due to the way these 3D pictures work, the left part of the
@@ -216,15 +216,15 @@ get it (if you lost it or if you don’t have it already) is to use
 the program itself on the right picture and with the right
 argument:</p></li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./herrmann2</span> <span class="dt">\</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;char*d,A[9876];e;b;*ad,a,c;  tw,ndr,T; wri; ;*h; _,ar  ;on;&#39;</span><span class="dt">\</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39; ;l ;i(V)man,n    {-!har  ;   =Aadre(0,&amp;e,o||n -- +,o4,=9,l=b=8,&#39;</span><span class="dt">\</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;!( te-*Aim)|(0~l),srand  (l),,!A,d=,b))&amp;&amp;+((A + te-A(&amp;(*)=+ +95&gt;&#39;</span><span class="dt">\</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;e?(*&amp; c_*r=5,r+e-r +_:2-19&lt;-+?|(d==d),!n ?*d| *( (char**)+V+), (&#39;</span><span class="dt">\</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;  +0,*d-7 ) -r+8)c:7:+++7+! r: and%9- 85! ()-(r+o):(+w,_+ A*(=er&#39;</span><span class="dt">\</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;i+(o)+b)),!write,(=_((-b+*h)(1,A+b,!!((((-+, a &gt;T^l,( o-95=+))w?&#39;</span><span class="dt">\</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;++  &amp;&amp;r:b&lt;&lt;2+a +w) ((!main(n*n,V) , +-) ),l)),w= +T--&gt;o +o+;{ &amp;!&#39;</span><span class="dt">\</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;a;}return _+= &#39;</span> <span class="op">&lt;</span> herrmann2.ioccc</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./herrmann2 \
+    &#39;char*d,A[9876];e;b;*ad,a,c;  tw,ndr,T; wri; ;*h; _,ar  ;on;&#39;\
+    &#39; ;l ;i(V)man,n    {-!har  ;   =Aadre(0,&amp;e,o||n -- +,o4,=9,l=b=8,&#39;\
+    &#39;!( te-*Aim)|(0~l),srand  (l),,!A,d=,b))&amp;&amp;+((A + te-A(&amp;(*)=+ +95&gt;&#39;\
+    &#39;e?(*&amp; c_*r=5,r+e-r +_:2-19&lt;-+?|(d==d),!n ?*d| *( (char**)+V+), (&#39;\
+    &#39;  +0,*d-7 ) -r+8)c:7:+++7+! r: and%9- 85! ()-(r+o):(+w,_+ A*(=er&#39;\
+    &#39;i+(o)+b)),!write,(=_((-b+*h)(1,A+b,!!((((-+, a &gt;T^l,( o-95=+))w?&#39;\
+    &#39;++  &amp;&amp;r:b&lt;&lt;2+a +w) ((!main(n*n,V) , +-) ),l)),w= +T--&gt;o +o+;{ &amp;!&#39;\
+    &#39;a;}return _+= &#39; &lt; herrmann2.ioccc</code></pre>
 <ul>
 <li><p>If I had submitted the program last year, I would have said that
 it has exactly the maximum allowed length: 1536 characters. Now
@@ -267,7 +267,7 @@ only needs a logarithmic recursion depth! (Find out how this
 works.)</p></li>
 <li><p>When still in doubt about how to judge this program, type</p></li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./herrmann2</span> <span class="op">&lt;</span> herrmann2.cup</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./herrmann2 &lt; herrmann2.cup</code></pre>
 <p>and let the result inspire you. ;-)</p>
 <h3 id="requirements-to-the-compiler-compatibility">Requirements to the compiler / Compatibility</h3>
 <ul>

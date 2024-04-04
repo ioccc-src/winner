@@ -141,7 +141,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>There is an alternate version that will theoretically work with Windows
 compilers (if anything in Windows works :-) ). See the <a href="#alternate-code">Alternate
 code</a> section below.</p>
@@ -150,24 +150,24 @@ code</a> section below.</p>
 <pre><code>    STATUS: known bug - please help us fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2014_vik">2014 vik bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> foo <span class="kw">|</span> <span class="ex">./prog</span> <span class="op">&gt;</span> audio_file.raw</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> foo <span class="kw">|</span> <span class="ex">./prog</span> <span class="kw">|</span> <span class="ex">mplayer</span> <span class="at">-demuxer</span> rawaudio <span class="at">-</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    echo foo | ./prog &gt; audio_file.raw
+
+    echo foo | ./prog | mplayer -demuxer rawaudio -</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>The alternate code, <a href="prog.alt.c">prog.alt.c</a>, is based on the author’s
 instructions on how to get it to work with Windows.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>prog.alt</code> as you would <code>prog</code> above as well as below.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This program sets a new tone for obfuscation. But do you understand
 what it says about obfuscation? Perhaps:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> <span class="op">&lt;</span> prog.c <span class="op">&gt;</span> prog.raw</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; prog.c &gt; prog.raw</code></pre>
 <p>might speak to your coding style? If not, then perhaps:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> <span class="op">&lt;</span> README.md <span class="kw">|</span> <span class="ex">mplayer</span> <span class="at">-demuxer</span> rawaudio <span class="at">-</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; README.md | mplayer -demuxer rawaudio -</code></pre>
 <p>might help? :-)</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="remarks">Remarks</h3>
@@ -177,7 +177,7 @@ I can tell, there are at least six chocolate references in this program.</p>
 Via streaming to <code>mplayer(1)</code>, you can listen to the Morse audio.</p>
 <p>Don’t forget the last ‘<code>-</code>’ as it makes <code>mplayer(1)</code> read from <code>stdin</code>.</p>
 <h2 id="convert-audio-file-with-morse-signals-to-text">Convert audio file with Morse signals to text</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> e <span class="op">&lt;</span> audio_file.raw</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog e &lt; audio_file.raw</code></pre>
 <p>or alternatively pass a .wav file as input.</p>
 <p>The preferred input format 44.1kHz stereo, but it does a decent job on mono
 input and different frequencies as well.</p>
@@ -187,7 +187,7 @@ the program relies on writing binary data to <code>stdout</code>.</p>
 <p>Microsoft compilers add a carriage return to newlines, and to compile the
 program with this platform, the following line can be added to <code>main()</code> before
 any code in order for the program to run correctly:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    _setmode<span class="op">(</span>_fileno<span class="op">(</span>stdout<span class="op">),</span> <span class="bn">0x8000</span><span class="op">);</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    _setmode(_fileno(stdout), 0x8000);</code></pre>
 <p>NOTE: see the <a href="prog.alt.c">alternate code</a> for this.</p>
 <h3 id="known-issues">Known Issues</h3>
 <p>The program uses a quite simple algorithm for detecting tone on and off events

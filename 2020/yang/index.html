@@ -141,14 +141,14 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---&lt;!---sh--&gt;--&gt;"><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> <span class="pp">[</span><span class="ss">PIN</span><span class="pp">]</span> <span class="op">&lt;</span> input.txt <span class="op">&gt;</span> output.c</span></code></pre></div>
+<pre class="&lt;!---&lt;!---sh--&gt;--&gt;"><code>    ./prog [PIN] &lt; input.txt &gt; output.c</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---&lt;!---sh--&gt;--&gt;"><code>    ./try.sh</code></pre>
 <p>The author provided the file <a href="cppp.cc">cppp.cc</a> which can preprocess the
 generated output to make them more acceptable to typical compilers. To build:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> cppp</span></code></pre></div>
+<pre class="&lt;!---&lt;!---sh--&gt;--&gt;"><code>    make cppp</code></pre>
 <p>See the author’s remarks for more details.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>You might think of this entry as code obfuscater with a code.
@@ -159,9 +159,9 @@ What is compiling this entry about?
 spoiler</a> that shows how this entry was written.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="synopsis">Synopsis</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;Hello world&quot;</span> <span class="kw">|</span> <span class="ex">./prog</span> 12345 <span class="op">&gt;</span> encoded.c</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gcc</span> <span class="at">-DPIN</span><span class="op">=</span>12345 encoded.c <span class="at">-o</span> ./decoded <span class="kw">&amp;&amp;</span> <span class="ex">./decoded</span></span></code></pre></div>
+<pre class="&lt;!---&lt;!---sh--&gt;--&gt;"><code>    echo &quot;Hello world&quot; | ./prog 12345 &gt; encoded.c
+
+    gcc -DPIN=12345 encoded.c -o ./decoded &amp;&amp; ./decoded</code></pre>
 <h3 id="details">Details</h3>
 <p>Mile is a C code generator. Run without arguments for the help message below:</p>
 <pre><code>    usage: [PIN] &lt; input.txt &gt; output.c
@@ -169,10 +169,10 @@ spoiler</a> that shows how this entry was written.</p>
     where [PIN] is an integer in the range of 1..65535</code></pre>
 <p>When run with an encoding PIN (first command line argument), Mile will
 read bytes from <code>stdin</code> and generate C code on <code>stdout</code>. Example:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;Hello, world!&quot;</span> <span class="kw">|</span> <span class="ex">./prog</span> 56789 <span class="op">&gt;</span> encoded.c</span></code></pre></div>
+<pre class="&lt;!---&lt;!---sh--&gt;--&gt;"><code>    echo &quot;Hello, world!&quot; | ./prog 56789 &gt; encoded.c</code></pre>
 <p>This generated code will reproduce the same input bytes on <code>stdout</code> when
 executed, if it was compiled with the same encoding PIN.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gcc</span> <span class="at">-DPIN</span><span class="op">=</span>56789 encoded.c <span class="at">-o</span> decoded</span></code></pre></div>
+<pre class="&lt;!---&lt;!---sh--&gt;--&gt;"><code>    gcc -DPIN=56789 encoded.c -o decoded</code></pre>
 <p>The generated code reconstructs all data at compile time by seeding a
 random number generator with the given PIN to reproduce the input bytes,
 and simply does one <code>fwrite(3)</code> call at run time to print those bytes. Not

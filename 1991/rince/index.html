@@ -141,12 +141,12 @@ Location: <a href="../../location.html#GB">GB</a> - <em>United Kingdom of Great 
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <p>There are two <a href="#alternate-code">alternate versions</a> which allow one to not be
 restricted in movements or to change the maximum number of movements, even if
 that’s fewer than the original program.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./rince</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./rince</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>The first alternate version, <a href="rince.alt.c">rince.alt.c</a>, disables a maximum move
 count so that anyone with enough patience and time can complete the puzzle,
@@ -156,18 +156,18 @@ reconfigure at compilation the maximum number of moves, even if that is lowering
 the count.</p>
 <p>The author set the maximum number of moves to 484.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <p>This will build both alt versions where the first one, <code>rince.alt</code>, has no
 restrictions in the number of movements and the second one, <code>rince.alt2</code>, has a
 configurable maximum number of moves allowed, defaulting to the entry’s max,
 484.</p>
 <p>To reconfigure the maximum number of moves to 700:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> clobber MAXMOVES=700 alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make clobber MAXMOVES=700 alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>To run the first alt version:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./rince.alt</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./rince.alt</code></pre>
 <p>To run the second alt version:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./rince.alt2</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./rince.alt2</code></pre>
 <p>Can you figure out how to make the two alternate versions equivalent in
 functionality without modifying the code? That is can you make the second alt
 version end up allowing any number of movements?</p>

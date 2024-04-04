@@ -1,13 +1,13 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./briddlebane
 ```
 
@@ -19,7 +19,7 @@ equivalent file!
 
 You might also like to try:
 
-```sh
+```<!---sh-->
     ./try.sh
 
     INSULTS=15 ./try.sh

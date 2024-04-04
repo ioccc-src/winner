@@ -37,7 +37,7 @@ Because the `author_handle` is used to form a JSON filename, the string must be
 lower case POSIX safe string.  Furthermore, the `author_handle` must be an ASCII
 string that matches this regexp:
 
-```re
+```<!---re-->
 ^[0-9a-z][0-9a-z_]*$
 ```
 
@@ -76,7 +76,7 @@ in the case of [2005/anon](/2005/anon/anon.c).
 
 Anonymous `author_handle`'s match this regexp:
 
-```re
+```<!---re-->
 Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$
 ```
 
@@ -105,7 +105,7 @@ Non-numeric `year` strings are lower case.
 
 A `year` string matches this regexp:
 
-```re
+```<!---re-->
 [0-9a-z][0-9a-z][0-9a-z][0-9a-z]
 ```
 
@@ -130,7 +130,7 @@ A `dir` is a POSIX safe string that holds an winner.
 
 A `dir` is a string that matches this regexp:
 
-```re
+```<!---re-->
 ^[a-z][0-9a-z.-]*$
 ```
 
@@ -164,7 +164,7 @@ an `author` and the `winners` they submitted are to be listed.
 
 A `sort_word` match this regexp:
 
-```re
+```<!---re-->
 ^[a-z][0-9a-z]*
 ```
 
@@ -281,7 +281,7 @@ Run the script from the top level directory.  The output should end in ":1".
 
 For example, this command should not produce any output.
 
-```sh
+```<!---sh-->
 tmp/awards_check.sh | grep -v ':1$'
 ```
 
@@ -419,7 +419,7 @@ Temporary tool used to generate the `author/author_handle.json` files.
 
 The following command, executed in this directory, created the `author/` directory:
 
-```sh
+```<!---sh-->
 rm -rf ../author ; ./gen_author_json.sh  author_handle.txt author.csv author_wins.csv ../author
 ```
 

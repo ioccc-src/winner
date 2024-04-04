@@ -415,7 +415,7 @@ default) or setting the size to higher than the default (or < 0 which will end
 up being > the max size though I suppose there might be some value that makes it
 less than again - I'm not going to try and figure that out however). Anyway:
 
-```sh
+```<!---sh-->
     SIZE=-1 ./prog
     YOU WIN!
     X:24/49 Y:8/16 S:658/658 B:0
@@ -487,7 +487,7 @@ If you want to draw the snake wherever you like on the screen you can do this by
 modifying the wait time (for input) to -1 (or any value < 0): then the snake
 does not move until you press a movement key. For example:
 
-```sh
+```<!---sh-->
     WAIT=-1 ./prog
 ```
 
@@ -495,7 +495,7 @@ does not move until you press a movement key. For example:
 When you eat a bug the snake will grow and you can draw more. If you want to
 make it so you can go through yourself:
 
-```sh
+```<!---sh-->
     WAIT=-1 CANNIBAL=1 ./prog
 ```
 
@@ -503,7 +503,7 @@ If you don't want to start out so small (i.e. you want to be able to draw more
 quickly) you can just set the size to a bigger number (and you could do the same
 with growth and moult/shed):
 
-```sh
+```<!---sh-->
     SIZE=50 CANNIBAL=1 WAIT=-1 ./prog
 ```
 
@@ -513,14 +513,14 @@ time.
 Okay but then if you get too many bugs the drawing will be over. If this proves
 to be a problem simply do:
 
-```sh
+```<!---sh-->
     SIZE=100 CANNIBAL=1 WAIT=-1 GROW=0 ./prog
 ```
 
 Or something like that (maybe make the size bigger but that's up to you). You
 could also set the max size to be the highest possible by saying
 
-```sh
+```<!---sh-->
     MAXSIZE=-1
 ```
 
@@ -556,7 +556,7 @@ too.
 
 If you're still here you can create this effect like:
 
-```sh
+```<!---sh-->
     WAIT=0 WALLS=1 CANNIBAL=1 ./prog
 ```
 
@@ -582,7 +582,7 @@ so with fewer available it has a harder time finding a place in that one line.
 
 Here's how to make the bug move every time the snake moves:
 
-```sh
+```<!---sh-->
     CANNIBAL=1 WALLS=1 WAIT=0 EVADE=1 ./prog
 ```
 
@@ -591,7 +591,7 @@ Here's how to make the bug move every time the snake moves:
 
 If you want to see the game 'win' try something like:
 
-```sh
+```<!---sh-->
     CANNIBAL=1 WALLS=1 WAIT=0 EVADE=1 MAXSIZE=10 ./prog
 ```
 
@@ -601,7 +601,7 @@ If you want to see the game 'win' try something like:
 Here's a fun one I just thought of (a long time after these other modes were
 thought of):
 
-```sh
+```<!---sh-->
     WAIT=0 EVADE=1 GROW=-1 SIZE=9 MAXSIZE=10 CANNIBAL=1 ./prog
 ```
 
@@ -616,7 +616,7 @@ then the head again (i.e. 1 then 0 in size) and then win! This is also in the
 
 Of course you can also do something like:
 
-```sh
+```<!---sh-->
     WAIT=5 WALLS=1 CANNIBAL=1 ./prog
 ```
 
@@ -635,7 +635,7 @@ of success in catching bugs? Obviously the dimensions will affect this value.
 
 How long will it take for the snake to run into itself? For instance by doing:
 
-```sh
+```<!---sh-->
     WAIT=0 ./prog
 ```
 
@@ -660,7 +660,7 @@ You have a negative shedding growth and a positive growth size: negative and
 positive winning. Depending on the parameters specified it might go one way over
 the other. Try:
 
-```sh
+```<!---sh-->
     SIZE=150 SHEDS=-5 GROW=10 SHED=50 MAXSIZE=250 ./prog
 ```
 
@@ -683,7 +683,7 @@ You could also have it so that eating a bug makes you shrink and moving so many
 moves you grow. I tried this and for me it was far more fun. The [play.sh][]
 also has this mode:
 
-```sh
+```<!---sh-->
     SIZE=100 SHEDS=5 GROW=-10 SHED=50 MAXSIZE=250 ./prog
 ```
 
@@ -705,7 +705,7 @@ snake moving too.
 
 Anyway this might sound absurd but it can be somewhat hypnotic by doing:
 
-```sh
+```<!---sh-->
     EVADE=1 CANNIBAL=1 ./prog
 ```
 
@@ -721,7 +721,7 @@ the growth size to 0 and then just move the snake round and round eating bugs
 until you want to quit. You can enable cannibalism so that you don't have to
 worry about even running into yourself and losing:
 
-```sh
+```<!---sh-->
     GROW=0 CANNIBAL=1 ./prog
 ```
 
@@ -752,13 +752,13 @@ this file discusses as well as allowing to easily change the colours.
 
 To do this use the [snake-colours][] script like so:
 
-```sh
+```<!---sh-->
     ./snake-colours
 ```
 
 If you want to pass in specific variables you can do that too e.g.:
 
-```sh
+```<!---sh-->
     CANNIBAL=1 ./snake-colours
 ```
 
@@ -777,13 +777,13 @@ you choose uses then the script will override what you pass in.
 
 To use you can do something like:
 
-```sh
+```<!---sh-->
     ./play.sh
 ```
 
 Or to make it so walls are an obstacle:
 
-```sh
+```<!---sh-->
     WALLS=0 ./play.sh
 ```
 

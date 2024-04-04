@@ -141,7 +141,7 @@ Location: <a href="../../location.html#GB">GB</a> - <em>United Kingdom of Great 
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <p>NOTE: there are two alternate versions of this program, both allowing one to
 slow down the game and the second one with movements more familiar to vi users.
 See the <a href="#alternate-code">Alternate code</a> section below.</p>
@@ -150,22 +150,22 @@ See the <a href="#alternate-code">Alternate code</a> section below.</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1993_rince">bugs report with 1993/rince</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./rince</span> <span class="pp">[</span><span class="ss">cabbage</span><span class="pp">]</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./rince [cabbage]</code></pre>
 <p>where:</p>
 <p><code>[cabbage]</code> is a CABBAGE description file (default: <code>rince.c</code>)</p>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>Some people may want to slow down the game by increasing the
 value 17 in the lines:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">struct</span> timeval v<span class="op">=</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span><span class="dv">1</span><span class="op">&lt;&lt;</span><span class="dv">17</span><span class="op">}</span> <span class="op">;</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    struct timeval v= {0,1&lt;&lt;17} ;</code></pre>
 <p>and</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    refresh<span class="op">(),</span>c<span class="op">=</span>select<span class="op">(</span>k<span class="op">,&amp;</span>y<span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,(</span>v<span class="op">.</span>tv_usec<span class="op">=</span><span class="dv">1</span><span class="op">&lt;&lt;</span><span class="dv">17</span><span class="op">,&amp;</span>v<span class="op">))?</span>getch<span class="op">():</span><span class="dv">0</span><span class="op">;</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    refresh(),c=select(k,&amp;y,0,0,(v.tv_usec=1&lt;&lt;17,&amp;v))?getch():0;</code></pre>
 <p>to another value like 18 or 19 which you can do with the alternate code.</p>
 <p>In the case of <a href="rince.alt2.c">rince.alt2.c</a> the movement keys for the default
 game are slightly different and will feel more familiar to vi users: <code>h</code> for
 left, <code>l</code> for right (that was not changed) and <code>k</code> for fire (that was also not
 changed).</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> SLEEP=18 clobber alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make SLEEP=18 clobber alt</code></pre>
 <p>Replace 18 with whatever number you wish.</p>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>rince.alt</code> or <code>rince.alt2</code> as you would <code>rince</code> above.</p>
@@ -194,7 +194,7 @@ with it.</p>
 <code>/usr/local/include/curses.h</code> if not <code>/usr/include/curses.h</code>) is not compatible
 with the curses library (typically <code>/lib/libcurses.a</code> for static libraries)
 used. It has been suggested that the following gcc command may help:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gcc</span> <span class="at">-fno-builtin</span> <span class="at">-I</span>/usr/include <span class="at">-o</span> rince rince.c <span class="at">-lcurses</span> <span class="at">-ltermcap</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    gcc -fno-builtin -I/usr/include -o rince rince.c -lcurses -ltermcap</code></pre>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>This is a Cellular Automata Based, Beautifully Abysmal Game Environment (or
 CABBAGE for short). To execute the program simply type <code>./rince gamefile</code>,

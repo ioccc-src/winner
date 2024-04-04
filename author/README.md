@@ -15,7 +15,7 @@ where `author_handle` is defined below.
 Each author of a winning IOCCC entry has an assigned `author_handle`,
 an IOCCC unique string that matches this regex:
 
-```re
+```<!---re-->
 ^[0-9a-z][0-9a-z_]*$
 ```
 
@@ -48,7 +48,7 @@ anonymous author in a given year.
 
 Anonymous author_handle's match this regexp:
 
-```re
+```<!---re-->
 Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$
 ```
 
@@ -56,14 +56,14 @@ Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$
 
 The `author_handle.json` must have the following JSON members:
 
-```json
+```<!---json-->
 "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
 "author_JSON_format_version" : "0.1 2023-05-22",
 ```
 
 There must be the following JSON members:
 
-```json
+```<!---json-->
 "full_name" : "Your Full Name",
 "sort_word" : "lowercaselast",
 "location_code" : "XX",
@@ -80,13 +80,13 @@ an `author` and the entry they submitted are to be listed.
 
 A `sort_word` matches this regexp:
 
-```re
+```<!---re-->
 ^[a-z][0-9a-z]*
 ```
 
 And there must be the following JSON members:
 
-```json
+```<!---json-->
 "email" : "user0@example.com",
 "url" : "https://a.host0.example.com/index.html",
 "alt_url" : "https://b.host0.example.com/index.html",
@@ -109,7 +109,7 @@ And there must be the following JSON members:
 If an author does not have one of the previous set of values, or wishes to not disclose it / keep it anonymous,
 then the JSON value can be `null`. For example:
 
-```json
+```<!---json-->
 "email" : null,
 "url" : null,
 "alt_url" : null,
@@ -125,7 +125,7 @@ NOTE: The JSON value of `null` is NOT enclosed in double quotes.
 The `"winning_entry_set"` is an array of JSON members that indicate
 each of the IOCCC winning entries that the author is the author of.  :-)
 
-```json
+```<!---json-->
 { "entry_id" : "YYYY_dirname" }
 ```
 
@@ -136,7 +136,7 @@ of the winning entry under the given year directory.
 NOTE: Due to mis-features in the JSON spec, the final JSON member must NOT be followed by a comma.
 For example:
 
-```json
+```<!---json-->
 "winning_entry_set" : [
     { "entry_id" : "1987_somedir" },
     { "entry_id" : "2020_entrydir" },
@@ -148,7 +148,7 @@ For example:
 
 Here is a fictitious author_handle.json example:
 
-```json
+```<!---json-->
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
     "author_JSON_format_version" : "1.0 2023-06-10",
@@ -176,7 +176,7 @@ Here is a fictitious author_handle.json example:
 Here is fictitious author_handle.json example where all entries that may be
 withheld are null:
 
-```json
+```<!---json-->
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
     "author_JSON_format_version" : "1.0 2023-06-10",

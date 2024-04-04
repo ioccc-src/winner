@@ -141,9 +141,9 @@ Location: <a href="../../location.html#CA">CA</a> - <em>Canada</em></li>
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">cd</span> build<span class="kw">;</span> <span class="ex">./hibachi-start.sh</span> <span class="kw">&amp;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cd build; ./hibachi-start.sh &amp;</code></pre>
 <p>Then use your web browser to visit <code>http://localhost:8008/</code>. When you’re
 finished make sure to kill <code>hibachi</code>.</p>
 <p>NOTE: you must be in the <code>build</code> directory when running <code>hibachi-start.sh</code> for
@@ -163,19 +163,19 @@ so the file does not exist here.</p>
 <p>There is a <code>hibachi.tgz</code> file (NOTE: this file was removed by the judges after
 extraction) that unpacks several support files and a subdirectory tree
 containing the documentation and examples. It can be viewed by:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tar</span> <span class="at">-zxf</span> hibachi.tgz</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">lynx</span> hibachi/localhost/index.html</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    tar -zxf hibachi.tgz
+    lynx hibachi/localhost/index.html</code></pre>
 <p>Or once <code>Hibachi</code> is running, use a web browser (preferably one that
 supports images and JavaScript, to view the documentation and try
 some of the CGI examples) to visit: <code>http://localhost:8008/</code>.</p>
 <h3 id="building">Building</h3>
 <p>To build just the executable:</p>
 <p>For Cygwin, FreeBSD, Linux (newer), Mac OS X:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gcc</span> <span class="at">-o</span> hibachi hibachi.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    gcc -o hibachi hibachi.c</code></pre>
 <p>For Linux (older):</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gcc</span> <span class="at">-DSHUT_WR</span><span class="op">=</span>1 <span class="at">-o</span> hibachi hibachi.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    gcc -DSHUT_WR=1 -o hibachi hibachi.c</code></pre>
 <p>For SunOS:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gcc</span> <span class="at">-o</span> hibachi hibachi.c <span class="at">-lnsl</span> <span class="at">-lsocket</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    gcc -o hibachi hibachi.c -lnsl -lsocket</code></pre>
 <p>Since some systems place socket and network functions into other libraries, a
 <a href="https://en.wikipedia.org/wiki/Autoconf">GNU autoconf</a>
 <a href="https://en.wikipedia.org/wiki/Configure_script">configure</a> script has been
@@ -185,12 +185,12 @@ examples. In which case the preferred build commands are:</p>
 <pre><code>    ./configure [--enable-port=number]
     make</code></pre>
 <p>To start the server on the default port (8008):</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">cd</span> build<span class="kw">;</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./hibachi-start.sh</span> <span class="kw">&amp;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cd build;
+    ./hibachi-start.sh &amp;</code></pre>
 <p>To test the server:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">lynx</span> http://localhost:8008/</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    lynx http://localhost:8008/</code></pre>
 <p>To stop the server:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">kill</span> %1</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    kill %1</code></pre>
 <h3 id="features">Features</h3>
 <ul>
 <li><p>Supports virtual hosts.</p></li>

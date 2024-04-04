@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -18,14 +18,14 @@ For more detailed information see [2006 borsanyi bugs](../../bugs.html#2006_bors
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./borsanyi string > file.gif
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -68,7 +68,7 @@ used. A typical email address is stored in less than 1-2 kilobytes.
 
 ### Usage:
 
-```sh
+```<!---sh-->
     make all
     ./borsanyi my@example.com > email.gif
     my_favourite_gif_viewer email.gif

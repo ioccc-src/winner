@@ -1,12 +1,12 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
 The following bit of perl may help determine the values you need:
 
-```sh
+```<!---sh-->
     perl -MConfig -e 'print "$Config{archlibexp}/CORE\n"'
 ```
 
@@ -27,14 +27,14 @@ For more detailed information see [2000 dlowe bugs](../../bugs.html#2000_dlowe).
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./dlowe [file ...]
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -126,7 +126,7 @@ or EOF is encountered.
 
 ### Examples:
 
-```sh
+```<!---sh-->
     $ echo '12 13 14 15 16 + + + + f' | ./dlowe
     70
     $ echo '12 13 14 15 16 17 + - * / p' | ./dlowe

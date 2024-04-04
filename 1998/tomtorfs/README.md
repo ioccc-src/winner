@@ -1,13 +1,13 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./tomtorfs filename bitwidth polynom reflected init xor
 ```
 
@@ -25,7 +25,7 @@ where:
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -56,7 +56,7 @@ archiver that uses the CRC-32 algorithm.
 
 #### CRC-16:
 
-```sh
+```<!---sh-->
     ./tomtorfs filename 16 1021 0 FFFF 0000
 ```
 
@@ -64,21 +64,21 @@ archiver that uses the CRC-32 algorithm.
 #### CRC-32:
 
 
-```sh
+```<!---sh-->
     ./tomtorfs filename 32 04C11DB7 1 FFFFFFFF FFFFFFFF
 ```
 
 
 #### XMODEM:
 
-```sh
+```<!---sh-->
     ./tomtorfs filename 16 8408 1 0000 0000
 ```
 
 
 #### ARC:
 
-```sh
+```<!---sh-->
     ./tomtorfs filename 16 8005 1 0000 0000
 ```
 

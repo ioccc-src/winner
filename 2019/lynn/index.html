@@ -141,15 +141,15 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2019_lynn">2019 lynn bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>A fully functional compiler. The example prints out the 30th <a href="https://en.wikipedia.org/wiki/Fibonacci_sequence">Fibonacci
 number</a>.</p>
@@ -171,23 +171,23 @@ trace of those scary <code>unsafeThisAndThat</code> functions. All functions mus
 </ul>
 <h3 id="building">Building:</h3>
 <p>Build the compiler:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> <span class="at">-o</span> prog prog.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cc -o prog prog.c</code></pre>
 <h3 id="demos">Demos:</h3>
 <h4 id="fibonacci-numbers">Fibonacci numbers:</h4>
 <p>Test the compiler on <a href="fib.hs">fib.hs</a>:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">(</span><span class="ex">./prog</span> <span class="op">&lt;</span> fib.hs <span class="kw">;</span> <span class="fu">cat</span> prog.c<span class="kw">)</span> <span class="op">&gt;</span> fib.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    (./prog &lt; fib.hs ; cat prog.c) &gt; fib.c</code></pre>
 <p>Compiling the output produces a binary that prints the 30th Fibonacci number.</p>
 <p>The file <a href="ghcfib.hs">ghcfib.hs</a> includes <a href="fib.hs">fib.hs</a> with some glue code,
 and shows GHC also accepts our subset of Haskell:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ghc</span> ghcfib.hs</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ghc ghcfib.hs</code></pre>
 <h4 id="self-hosting-compiler">Self-hosting compiler:</h4>
 <p>To avoid spoiling this entry by revealing the original Haskell source, we
 instead provide <a href="hint.hs">hint.hs</a>, the output of a certain stage of the
 compiler when run on itself. This intermediate output is hopefully difficult to
 understand, yet is accepted by our compiler:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">(</span><span class="ex">./prog</span> <span class="op">&lt;</span> hint.hs <span class="kw">;</span> <span class="fu">cat</span> prog.c<span class="kw">)</span> <span class="op">&gt;</span> hint.c</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> hint</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./hint</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    (./prog &lt; hint.hs ; cat prog.c) &gt; hint.c
+    make hint
+    ./hint</code></pre>
 <p>The output program behaves like the compiler itself.</p>
 <p>Unlike the original source from which it is derived, GHC fails to compile
 <a href="hint.hs">hint.hs</a>. This is because values have been replaced with their <a href="https://en.wikipedia.org/wiki/Mogensen-Scott_encoding">Scott
@@ -200,21 +200,21 @@ it to work.</p>
 languages”</a>. We exercise it by
 showing the first entries of the length-ordered list of all strings consisting
 of the characters <code>a</code> and <code>b</code> that contain an even number of <code>a</code>s.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">(</span><span class="ex">./prog</span> <span class="op">&lt;</span> lol.hs <span class="kw">;</span> <span class="fu">cat</span> prog.c<span class="kw">)</span> <span class="op">&gt;</span> lol.c</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> lol</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./lol</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    (./prog &lt; lol.hs ; cat prog.c) &gt; lol.c
+    make lol
+    ./lol</code></pre>
 <p>A GHC wrapper is provided:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ghc</span> ghclol.hs</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ghc ghclol.hs</code></pre>
 <h3 id="strongly-connected-components">Strongly-connected components:</h3>
 <p>See <a href="scc.hs">scc.hs</a> (and its GHC wrapper <a href="ghcscc.hs">ghcscc.hs</a>) for an elegant
 way to print the strongly-connected components of a graph in reverse topological
 order.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">(</span><span class="ex">./prog</span> <span class="op">&lt;</span> scc.hs <span class="kw">;</span> <span class="fu">cat</span> prog.c<span class="kw">)</span> <span class="op">&gt;</span> scc.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    (./prog &lt; scc.hs ; cat prog.c) &gt; scc.c</code></pre>
 <p>It expects the input to be in a similar format as a previous entry
 (2018 vokes). For example:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> scc</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./scc</span> <span class="op">&lt;</span> example-1.txt</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./scc</span> <span class="op">&lt;</span> example-2.txt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make scc
+    ./scc &lt; example-1.txt
+    ./scc &lt; example-2.txt</code></pre>
 <p>The output should agree, though our program omits line numbers and does not
 sort entries within a line. (Also, our program only treats spaces as
 whitespace, and supports any non-space character in a vertex name.)</p>

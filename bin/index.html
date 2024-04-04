@@ -133,63 +133,63 @@ repo</a>.</p>
 <h3 id="all-run.sh"><a href="all-run.sh">all-run.sh</a></h3>
 <p>Run a command on all winning entries.</p>
 <p>For example:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> <span class="at">-v</span> 3 bin/quick-readme2index.sh <span class="at">-v</span> 1</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1</code></pre>
 <p>Or for example:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> <span class="at">-v</span> 3 bin/readme2index.sh <span class="at">-v</span> 1</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/all-run.sh -v 3 bin/readme2index.sh -v 1</code></pre>
 <h3 id="all-years.sh"><a href="all-years.sh">all-years.sh</a></h3>
 <p>Run a command on all IOCCC years.</p>
 <p>For example:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-years.sh</span> <span class="at">-v</span> 1 bin/gen-year-index.sh <span class="at">-v</span> 1</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/all-years.sh -v 1 bin/gen-year-index.sh -v 1</code></pre>
 <p>Or for example:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-years.sh</span> <span class="at">-v</span> 1 bin/chk-entry.sh</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/all-years.sh -v 1 bin/chk-entry.sh</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> verify_entry_files</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>make verify_entry_files</code></pre>
 <h3 id="chk-entry.sh"><a href="chk-entry.sh">chk-entry.sh</a></h3>
 <p>Check that files required by an entry match the entry’s manifest as found in
 <code>.entry.json</code>.</p>
 <p>For example:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/chk-entry.sh</span> 2020/ferguson1</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/chk-entry.sh 2020/ferguson1</code></pre>
 <h3 id="filelist.entry.json.awk"><a href="filelist.entry.json.awk">filelist.entry.json.awk</a></h3>
 <p>Generate the list of files in the entry’s manifest, <code>.entry.json</code>.</p>
 <p>For example:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="at">-f</span> bin/filelist.entry.json.awk 2020/ferguson1/.entry.json</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>awk -f bin/filelist.entry.json.awk 2020/ferguson1/.entry.json</code></pre>
 <h3 id="gen-authors.sh"><a href="gen-authors.sh">gen-authors.sh</a></h3>
 <p>Generate the top level <code>/authors.html</code> page.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-authors.sh</span> <span class="at">-v</span> 1</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/gen-authors.sh -v 1</code></pre>
 <h3 id="gen-location.sh"><a href="gen-location.sh">gen-location.sh</a></h3>
 <p>Generate the top level <code>/location.html</code> page.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-location.sh</span> <span class="at">-v</span> 1</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/gen-location.sh -v 1</code></pre>
 <h3 id="gen-other-html.sh"><a href="gen-other-html.sh">gen-other-html.sh</a></h3>
 <p>Generate entry HTML files (other than README.md to index.html) from markdown
 files.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-other-html.sh</span> <span class="at">-v</span> 1</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/gen-other-html.sh -v 1</code></pre>
 <h3 id="gen-sitemap.sh"><a href="gen-sitemap.sh">gen-sitemap.sh</a></h3>
 <p>Generate an XML sitemap for the IOCCC web site.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-sitemap.sh</span> <span class="at">-v</span> 1</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/gen-sitemap.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> gen_sitemap</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>make gen_sitemap</code></pre>
 <h3 id="gen-status.sh"><a href="gen-status.sh">gen-status.sh</a></h3>
 <p>Generate <code>status.json</code> according to the modification dates of <code>status.json</code>
 and <code>news.html</code>.</p>
 <p>Without argument, the <code>contest_status</code> is unchanged.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-status.sh</span> <span class="at">-v</span> 1</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/gen-status.sh -v 1</code></pre>
 <p>To force the <code>contest_status</code> to be closed:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-status.sh</span> <span class="at">-v</span> 1 closed</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/gen-status.sh -v 1 closed</code></pre>
 <p>To force the <code>contest_status</code> to be open:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-status.sh</span> <span class="at">-v</span> 1 open</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/gen-status.sh -v 1 open</code></pre>
 <p>To see other valid statuses:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-status</span> <span class="at">-h</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/gen-status -h</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> gen_status</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>make gen_status</code></pre>
 <h3 id="gen-top-html.sh"><a href="gen-top-html.sh">gen-top-html.sh</a></h3>
 <p>Generate a number of top level HTML pages for the IOCCC web sites.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-top-html.sh</span> <span class="at">-v</span> 1</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/gen-top-html.sh -v 1</code></pre>
 <p>Examples of top level HTML pages built by this tool include:</p>
 <ul>
 <li><a href="../CODE_OF_CONDUCT.html">CODE_OF_CONDUCT.html</a></li>
@@ -206,19 +206,19 @@ and <code>news.html</code>.</p>
 <li><a href="../thanks-for-help.html">thanks-for-help.html</a></li>
 </ul>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> gen_top_html</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>make gen_top_html</code></pre>
 <h3 id="gen-year-index.sh"><a href="gen-year-index.sh">gen-year-index.sh</a></h3>
 <p>Generate an <code>index.html</code> page for an given IOCCC year.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-year-index.sh</span> <span class="at">-v</span> 1 2020</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/gen-year-index.sh -v 1 2020</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> gen_year_index</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>make gen_year_index</code></pre>
 <h3 id="gen-years.sh"><a href="gen-years.sh">gen-years.sh</a></h3>
 <p>Generate the top level <code>/years.html</code> page.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/gen-years.sh</span> <span class="at">-v</span> 1</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/gen-years.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> gen_years</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>make gen_years</code></pre>
 <h3 id="md2html.sh"><a href="md2html.sh">md2html.sh</a></h3>
 <p>This is the primary tool that forms IOCCC generated HTML content from
 markdown files (permanent markdown files or temporarily generated
@@ -247,19 +247,19 @@ the extra time can add up.</p>
 <p>If only a few <code>index.hmtl</code> files need updating, then
 this command will only briefly pause while the
 slightly longer <a href="readme2index.sh">readme2index.sh</a> is run:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> <span class="at">-v</span> 3 bin/quick-readme2index.sh <span class="at">-v</span> 1</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1</code></pre>
 <p><strong>NOTE</strong>: This command assumes that the relative
 modification times for <code>index.hmtl</code>, <code>.entry.json</code>,
 and <code>index.html</code> are correct. If in doubt, use:</p>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> quick_entry_index</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>make quick_entry_index</code></pre>
 <h3 id="readme2index.sh"><a href="readme2index.sh">readme2index.sh</a></h3>
 <p>Convert an entry README.md into entry directory index.html.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> <span class="at">-v</span> 3 bin/readme2index.sh <span class="at">-v</span> 1</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/all-run.sh -v 3 bin/readme2index.sh -v 1</code></pre>
 <p>To build <code>index.html</code> files for all entries:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> <span class="at">-v</span> 3 bin/readme2index.sh <span class="at">-v</span> 1</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/all-run.sh -v 3 bin/readme2index.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> entry_index</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>make entry_index</code></pre>
 <h3 id="status2html.sh"><a href="status2html.sh">status2html.sh</a></h3>
 <p>Convert <code>status.json</code> into HTML.</p>
 <p>This tool is a ‘before tool’ (-b tool) that is intended
@@ -274,11 +274,11 @@ We sort with lines starting with <code>!</code> fourth.</p>
 <h3 id="sort.gitignore.sh"><a href="sort.gitignore.sh">sort.gitignore.sh</a></h3>
 <p>Sort a .gitignore in a entry directory.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/sort.gitignore.sh</span> <span class="at">-v</span> 1 YYYY/dir</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/sort.gitignore.sh -v 1 YYYY/dir</code></pre>
 <p>Suggested usage:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> bin/sort.gitignore.sh <span class="at">-v</span> 1</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/all-run.sh bin/sort.gitignore.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> sort_gitignore</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>make sort_gitignore</code></pre>
 <h3 id="subst.default.sh"><a href="subst.default.sh">subst.default.sh</a></h3>
 <p>Print default substitutions.</p>
 <h3 id="subst.entry-index.sh"><a href="subst.entry-index.sh">subst.entry-index.sh</a></h3>
@@ -292,33 +292,33 @@ We sort with lines starting with <code>!</code> fourth.</p>
 <h2 id="tar-entry.sh"><a href="tar-entry.sh">tar-entry.sh</a></h2>
 <p>Form a compressed tarball for an entry.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/tar-entry.sh</span> <span class="at">-v</span> 1 YYYY/dir</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/tar-entry.sh -v 1 YYYY/dir</code></pre>
 <p>Suggested usage:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> <span class="at">-v</span> 3 bin/tar-entry.sh <span class="at">-v</span> 1 <span class="at">-W</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/all-run.sh -v 3 bin/tar-entry.sh -v 1 -W</code></pre>
 <h2 id="tar-year.sh"><a href="tar-year.sh">tar-year.sh</a></h2>
 <p>Form a compressed tarball for an IOCCC year.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/tar-year.sh</span> <span class="at">-v</span> 1 YYYY</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/tar-year.sh -v 1 YYYY</code></pre>
 <p>Suggested usage:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-years.sh</span> <span class="at">-v</span> 3 bin/tar-year.sh <span class="at">-v</span> 1 <span class="at">-W</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/all-years.sh -v 3 bin/tar-year.sh -v 1 -W</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> form_year_tarball</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>make form_year_tarball</code></pre>
 <h2 id="untar-entry.sh"><a href="untar-entry.sh">untar-entry.sh</a></h2>
 <p>Untar an entry’s a compressed tarball.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/untar-entry.sh</span> <span class="at">-v</span> 1 YYYY/dir</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/untar-entry.sh -v 1 YYYY/dir</code></pre>
 <p>Suggested usage:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-run.sh</span> <span class="at">-v</span> 3 bin/untar-entry.sh <span class="at">-v</span> 1</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/all-run.sh -v 3 bin/untar-entry.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> untar_entry_tarball</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>make untar_entry_tarball</code></pre>
 <h2 id="untar-year.sh"><a href="untar-year.sh">untar-year.sh</a></h2>
 <p>Untar an IOCCC year’s compressed tarball.</p>
 <p>Usage:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/untar-year.sh</span> <span class="at">-v</span> 1 YYYY</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/untar-year.sh -v 1 YYYY</code></pre>
 <p>Suggested usage:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bin/all-years.sh</span> <span class="at">-v</span> 3 bin/untar-year.sh <span class="at">-v</span> 1</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>bin/all-years.sh -v 3 bin/untar-year.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> untar_year_tarball</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>make untar_year_tarball</code></pre>
 <h1 id="how-ioccc-html-content-is-built"><a name="how"></a>How IOCCC HTML content is built</h1>
 <p>The <a href="md2html.sh">md2html.sh</a> tool is the primary tool that
 is used to form all IOCCC related HTML pages for the <a href="https://www.ioccc.org">official IOCCC web
@@ -335,16 +335,16 @@ built uses, by default, files from the <a href="../inc/index.html">inc directory
 the file name form:</p>
 <pre><code>*.default.html</code></pre>
 <p>By using command line options of the form:</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> phase=name</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>-H phase=name</code></pre>
 <p>where <code>phase</code> is the name of an HTML phase,
 a non-default file may be used. For example:</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> topnav=up2index</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>-H topnav=up2index</code></pre>
 <p>will cause <a href="../inc/topnav.up2index.html">inc/topnav.up2index.html</a>
 instead of <a href="../inc/topnav.default.html">inc/topnav.default.html</a> to be
 used during the <em>topnav</em> HTML phase.</p>
 <p>If <code>name</code> is dot (i.e., <code>.</code>), then the given HTML phase is skipped.
 For example:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-H</span> footer=.</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>-H footer=.</code></pre>
 <p>will cause no HTML content to be produced during the <code>footer</code> HTML phase.</p>
 <h2 id="html-phases"><a name="html"></a>HTML phases</h2>
 <p>The following HTML phase files are used to build HTML content:</p>
@@ -560,7 +560,7 @@ IOCCC. Each author has <strong>EXACTLY ONE</strong> <code>author_handle</code>.<
 a POSIX safe string with the addition of <code>+</code> (for technical reasons beyond this
 document). In particular, the <code>author_handle</code> must be an ASCII
 string that matches this regexp:</p>
-<pre class="re"><code>^[0-9A-Za-z][0-9A-Za-z._+-]*$&quot;</code></pre>
+<pre class="&lt;!---re--&gt;"><code>^[0-9A-Za-z][0-9A-Za-z._+-]*$&quot;</code></pre>
 <p>Default <code>author_handle</code>’s do not have multiple consecutive <code>_</code> (underscore)
 characters. Nevertheless, multiple consecutive <code>_</code> (underscore) characters are
 allowed. Contest submitters who wish to override the <code>author_handle</code> may do so.</p>
@@ -581,7 +581,7 @@ year.</p>
 <p>NOTE: even if the directory name is not <code>anonymous</code> the above rules apply as in
 in the case of <a href="../2005/anon/anon.c">2005/anon</a>.</p>
 <p>Anonymous <code>author_handle</code>’s match this regexp:</p>
-<pre class="re"><code>Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$</code></pre>
+<pre class="&lt;!---re--&gt;"><code>Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$</code></pre>
 <h2 id="entry"><code>entry</code></h2>
 <p>An IOCCC entry that won an award for a given IOCCC.</p>
 <p>An <code>entry</code> has one more more <code>author</code>s.</p>
@@ -598,7 +598,7 @@ may be limited to previous <code>entry</code>s that used them.</p>
 represent the year. Some special <code>year</code> strings are possible, such as <code>mock</code>.
 Non-numeric <code>year</code> strings are lower case.</p>
 <p>A <code>year</code> string matches this regexp:</p>
-<pre class="re"><code>[0-9a-z][0-9a-z][0-9a-z][0-9a-z]</code></pre>
+<pre class="&lt;!---re--&gt;"><code>[0-9a-z][0-9a-z][0-9a-z][0-9a-z]</code></pre>
 <p>The <code>year</code> directories reside directly below the top level directory.</p>
 <h2 id="year-1"><code>.year</code></h2>
 <p>Each <code>year</code> directory will have a file under it named:</p>
@@ -608,7 +608,7 @@ instance, <a href="../2020/.year">2020/.year</a> has the string: <code>2020</cod
 <h2 id="dir"><code>dir</code></h2>
 <p>A <code>dir</code> is a POSIX safe string that holds an entry.</p>
 <p>A <code>dir</code> is a string that matches this regexp:</p>
-<pre class="re"><code>^[a-z][0-9a-z.-]*$</code></pre>
+<pre class="&lt;!---re--&gt;"><code>^[a-z][0-9a-z.-]*$</code></pre>
 <p>Each <code>entry</code> is under its own individual directory. This directory
 is directly under a <code>year</code> directory.</p>
 <h3 id="entry_id"><code>entry_id</code></h3>

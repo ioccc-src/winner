@@ -141,11 +141,11 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>If you wish to save state so that you can run the program and keep files changed
 (for instance you don’t want to compile <code>mullender.c</code> again) you can compile it
 like:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> clobber SAVE=1 all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make clobber SAVE=1 all</code></pre>
 <p>Make sure that if you do add a file (including by compiling code) that before
 you exit (ctrl-e) you type in <code>sync</code>! Otherwise the file might not exist or it
 will be corrupt if it does.</p>
@@ -155,21 +155,21 @@ will be corrupt if it does.</p>
     STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2018_mills">2018 mills bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog</code></pre>
 <p>At the <code>&gt;boot</code> prompt, type return.</p>
 <p>At the <code>:</code> prompt, type <code>rk(0,0)rkunix</code> and wait for it to initialise itself.
 Now try typing:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span> <span class="op">&gt;</span> prog.c</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">main()</span><span class="kw">{</span> <span class="bu">printf</span><span class="er">(</span><span class="st">&quot;Hello, world!\n&quot;</span><span class="kw">);</span> <span class="kw">}</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">^D</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> prog.c</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">a.out</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cat &gt; prog.c
+    main(){ printf(&quot;Hello, world!\n&quot;); }
+    ^D
+    cc prog.c
+    a.out</code></pre>
 <p>where <code>^D</code> is EOF.</p>
 <p>Next try:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> mullender.c</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">a.out</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cc mullender.c
+    a.out</code></pre>
 <p>… and enjoy the classic <a href="../../1984/mullender/index.html">1984/mullender</a> entry as
 it would have been in 1984 with a VAX-11/PDP-11! Once it reaches the end of the
 line, hit enter and see what happens again. When you’re tired of it hit ctrl-c.</p>
@@ -180,18 +180,18 @@ line, hit enter and see what happens again. When you’re tired of it hit ctrl-c
 3636 bytes, which is considerably lighter than the original machine it can replace.</p>
 <p>This program can take you back to the start of everything, it is possible to
 run v0. Just type:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./v0</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./v0</code></pre>
 <p>NOTE: To quit v0, press Control-E.</p>
 <p>You will be greeted with a familiar prompt of “login”. The username and
 password are “dmr” and “dmr”. To make things more familiar you’ll need to
 create ‘.’ as it hasn’t been invented yet on this image!</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">@</span> ln dd dmr .</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    @ ln dd dmr .</code></pre>
 <p>An <code>ls</code> will reveal that C hasn’t been invented yet! IOBCC anyone? The
 compiler is <code>bc</code>. It produces assembly, which will then need to be assembled
 together like <code>ops.s bl.s hello.s bi.s</code> (in that order) to produce a.out!</p>
 <p>But wait, we said this was the start of it all! This program can also run a
 program that replaces an even larger machine that can run BSD 2.9. To start this,</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog</code></pre>
 <p>At the <code>&gt;boot</code> prompt, type return.</p>
 <p>At the “:” prompt, type <code>rk(0,0)rkunix</code>.</p>
 <p>NOTE: To quit prog, press Control-E.</p>
@@ -199,7 +199,7 @@ program that replaces an even larger machine that can run BSD 2.9. To start this
 the very first IOCCC entries <a href="../../1984/mullender/index.html">1984/mullender</a>, as
 shown earlier.</p>
 <p>But wait, there is even more! Try:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./v6</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./v6</code></pre>
 <p>At the <code>@</code> prompt, type <code>rkunix</code>. You might want to type <code>stty -lcase</code> as
 otherwise the output will be in all caps.</p>
 <p>NOTE: To quit v6, press Control-E.</p>
@@ -269,15 +269,15 @@ If so, consider a <code>make clean</code> to start from scratch.</p>
 root prompt. Most of the commands you are familiar with work here (this was
 only a quarter of a century ago – how much could things have changed?).
 Let’s try some:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ls</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">.cshrc</span>       .profile     boot         hkunix       mnt          tmp</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">.login</span>       2.9stamp     dev          lib          mullender.c  unix</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">.msgsrc</span>      bin          etc          lost+found   rkunix       usr</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># df</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Filesystem</span>  Mounted on  kbytes    used    free  % used</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">/dev/rk0</span>    /             1958    1688     270     86%</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># bin/cc mullender.c</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ./a.out</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    # ls
+    .cshrc       .profile     boot         hkunix       mnt          tmp
+    .login       2.9stamp     dev          lib          mullender.c  unix
+    .msgsrc      bin          etc          lost+found   rkunix       usr
+    # df
+    Filesystem  Mounted on  kbytes    used    free  % used
+    /dev/rk0    /             1958    1688     270     86%
+    # bin/cc mullender.c
+    # ./a.out</code></pre>
 <p>The program you’ve just run was the [winning entry of the first IOCCC contest from
 1984] <a href="../../1984/mullender/mullender.c" title="mullender.c">1</a> (or was it 1894?), a personal favorite of mine. It is rather
 tightly bound to running on either a PDP-11 or a VAX-11. Now you have one.</p>

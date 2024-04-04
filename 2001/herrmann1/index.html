@@ -141,19 +141,19 @@ Location: <a href="../../location.html#DE">DE</a> - <em>Federal Republic of Germ
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: missing files - please provide them
     STATUS: known bug - please help us fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2001_herrmann1">2001 herrmann1 bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./herrmann1.sh</span> <span class="st">&#39;prg=file&#39;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./herrmann1.sh &#39;prg=file&#39;</code></pre>
 <p>NOTE: this entry seems to rely on older versions of gcc for the compilation
 stage and as such if you wish to see that part like it was designed you will
 need an older compiler perhaps gcc 2.95.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>There are some clear hints in the source code as to the
 purpose of this program. Perhaps the only way to figure out what is
@@ -192,7 +192,7 @@ terminal!</p></li>
 <h4 id="for-the-impatient">For the impatient</h4>
 <p>The info files <code>herrmann1.turing</code> and <a href="herrmann1.gcd">herrmann1.gcd</a> are sample
 programs for the Turing machine. For example, type</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./herrmann1.sh</span> <span class="st">&#39;prg=herrmann1.times2&#39;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./herrmann1.sh &#39;prg=herrmann1.times2&#39;</code></pre>
 <p>and watch the animated Turing machine multiply 8 by two (in
 unary representation). Here’s a screen shot during compilation:</p>
 <pre><code>    /*
@@ -217,7 +217,7 @@ result.)</p>
 <p>In the previous example, the Turing machine started on the default
 tape of the program <code>times2.turing</code>. To provide your own tape, type
 (for example)</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./herrmann1</span> prg=times2.turing tape=<span class="st">&quot;O O O I I I O O O&quot;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./herrmann1 prg=times2.turing tape=&quot;O O O I I I O O O&quot;</code></pre>
 <p>(The <code>O</code>s and <code>I</code>s are letters, not digits.) You might prefer to
 provide only a finite portion of the tape, like I did above. In
 this case, the remainder of the tape is filled with <code>O</code>s. ;-)</p>
@@ -234,12 +234,12 @@ better. Simply try some out.</p>
 number in unary representation. (That is, a row of I’s is
 expected, and one more I is appended to the row.) Let’s call it
 <code>plus1.turing</code>. Here’s what it could look like:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* Search beginning of number. */</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#define start_O O</span><span class="op">,</span><span class="pp"> right</span><span class="op">,</span><span class="pp"> start</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* Number found. Move one step to the left. */</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#define start_I I</span><span class="op">,</span><span class="pp"> left</span><span class="op">,</span><span class="pp"> st2</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* Write a I and stop */</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#define st2_O   I</span><span class="op">,</span><span class="pp"> left</span><span class="op">,</span><span class="pp"> stop</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    /* Search beginning of number. */
+    #define start_O O, right, start
+    /* Number found. Move one step to the left. */
+    #define start_I I, left, st2
+    /* Write a I and stop */
+    #define st2_O   I, left, stop</code></pre>
 <p>Some explanations:
 - The tape alphabet is always O and I.
 - The states can be anything starting with “st”. “start” and
@@ -251,21 +251,21 @@ line defining <code>st2_I</code> has been left out.)
 - The order of the lines is irrelevant.
 - You may use C-style comments. (Would you have guessed it?)</p>
 <p>Now, the program can be used with</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./herrmann1.sh</span> <span class="st">&#39;prg=plus1.turing&#39;</span> <span class="st">&#39;tape=&quot;I I I&quot;&#39;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./herrmann1.sh &#39;prg=plus1.turing&#39; &#39;tape=&quot;I I I&quot;&#39;</code></pre>
 <p>But what happens if no tape is provided? Up to now, the Turing
 machine would start on an empty tape (that is, a tape filled with
 <code>O</code>s). For many programs, this doesn’t make much sense (as is
 the case for <code>plus1.turing</code>). So you might want to provide a
 default tape by adding a line like</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#define tape O O O O O I I I I</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    #define tape O O O O O I I I I</code></pre>
 <p>to your program.</p>
 <h3 id="debugging">Debugging</h3>
 <p>When writing long programs, the most common errors are to forget
 to define a state or to misspell one. Let’s assume you forgot the
 line</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#define start_I I</span><span class="op">,</span><span class="pp"> left</span><span class="op">,</span><span class="pp"> st2</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    #define start_I I, left, st2</code></pre>
 <p>Remove it and type</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./herrmann1</span> <span class="st">&#39;prg=plus1.turing&#39;</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./herrmann1 &#39;prg=plus1.turing&#39;</code></pre>
 <p>The output will be</p>
 <p>Undefined state start.</p>
 <p>Tape:</p>

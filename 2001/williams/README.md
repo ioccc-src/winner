@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [2001 williams bugs](../../bugs.html#2001_will
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./williams
 ```
 

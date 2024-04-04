@@ -141,7 +141,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <p>There is an alternate version that allows you to cheat, giving you configurable
 amount of arrows at the start of the game. See the <a href="#alternate-code">Alternate
 code</a> section below.</p>
@@ -150,19 +150,19 @@ code</a> section below.</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1994_dodsond2">1994 dodsond2 bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./dodsond2</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./dodsond2</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This version allows you to choose how many arrows to start with, instead of the
 default 0. If one tries specifying a value &lt; 0 it will set it to 0.</p>
 <p>Fun fact: this version helped uncover and fix a bug that prevented the entry
 from working in some cases.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <p>The default number of arrows in this version is 3 but if you want to change it,
 say to 5, try:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> clobber ARROWS=5 alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make clobber ARROWS=5 alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./dodsond2.alt</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./dodsond2.alt</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Each year people find new ways to squeeze more and more out of the
 contest rules. Next year, entries that use compression utilities

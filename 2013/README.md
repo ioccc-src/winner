@@ -43,13 +43,13 @@ had to print a value 2053 or less when the `-i` flag was used.
 Several people discovered an undocumented feature in that
 certain comments such as:
 
-```c
+```<!---c-->
 	///*
 ```
 
 or:
 
-```c
+```<!---c-->
 	*\
 	/
 ```

@@ -141,7 +141,7 @@ Location: <a href="../../location.html#FI">FI</a> - <em>Republic of Finland </em
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <p>The author provided a spoiler version as alt code. See <a href="#alternate-code">Alternate
 code</a> below.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
@@ -149,22 +149,22 @@ code</a> below.</p>
 <pre><code>    STATUS: known bug - please help us fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1994_tvr">1994 tvr bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./tvr</span> mode screensize/2 <span class="op">&lt;</span> colormapfile</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./tvr mode screensize/2 &lt; colormapfile</code></pre>
 <p>Mode may be a value from 0 to 12.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.color.sh</span>                      <span class="co"># for colour displays</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.bw.sh</span>                 <span class="co"># for Black &amp; White displays</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.color.sh                      # for colour displays
+    ./try.bw.sh                 # for Black &amp; White displays</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>The author provided us a spoiler version that might be of interest to some.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./tvr.alt</span> altmode screensize/2 <span class="op">&lt;</span> colormapfile</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./tvr.alt altmode screensize/2 &lt; colormapfile</code></pre>
 <p>where <code>altmode</code> <code>1</code> - <code>4</code> correspond to mode <code>0</code> - <code>3</code> in the original entry and
 <code>altmode 0</code> calculates Mandelbrot/Julian sets correctly.</p>
 <h3 id="alternate-try">Alternate try:</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.alt.color.sh</span>                  <span class="co"># for colour displays</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.alt.bw.sh</span>                     <span class="co"># for Black &amp; White displays</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.color.sh                  # for colour displays
+    ./try.alt.bw.sh                     # for Black &amp; White displays</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This entry requires the use of X11. It will form two windows (hopefully your
 window manager will ask you where to place these in your display) which you
@@ -208,7 +208,7 @@ noise.</p>
 second is a variation of that. The third makes nice 3D-look-a-like effects and
 the fourth is a variation of that with more nice effects.</p>
 <h3 id="usage">Usage:</h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./tvr</span> mode screensize/2 <span class="op">&lt;</span> colormapfile</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./tvr mode screensize/2 &lt; colormapfile</code></pre>
 <p>The first parameter is the operating-mode of the program. There are 4 fractal
 pairs and 3 display modes, making total of 12 modes. <code>screensize</code> is half of the
 actual <code>screenlength/width</code>. I.e. if you use 128 as a second parameter, you will

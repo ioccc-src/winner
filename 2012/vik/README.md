@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -25,38 +25,38 @@ For more detailed information see [2012 vik bugs](../../bugs.html#2012_vik).
 
 To embed text (from file or command line):
 
-```sh
+```<!---sh-->
     ./vik e base.png filename > encodedimg.png
 ```
 
 or
 
-```sh
+```<!---sh-->
     ./vik e base.png SomeRandomText > encodedimg.png
 ```
 
 To extract the embedded text:
 
-```sh
+```<!---sh-->
     ./vik d encodedimg.png
 ```
 
 To embed a PNG into another:
 
-```sh
+```<!---sh-->
     ./vik e base.png source.png > encodedimg.png
 ```
 
 To extract the embedded PNG:
 
-```sh
+```<!---sh-->
     ./vik d encodedimg.png > restored.png
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -68,7 +68,7 @@ For those few who might use Windows this alternate code might work.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -116,7 +116,7 @@ possible to get the bitmap data from the extracted image, and run it through any
 of the previous winning brainfuck interpreters, but I thought it would be easier
 to include an interpreter in the program to avoid the hassle:
 
-```sh
+```<!---sh-->
     ./vik e ioccc.png chocolate.png > encodedimg.png
     ./vik b encodedimg.png
 ```
@@ -125,7 +125,7 @@ It is of course also possible to embed a
 [brainfuck](https://en.wikipedia.org/wiki/Brainfuck) program as a text file
 (as explained above) and decode it, e.g.:
 
-```sh
+```<!---sh-->
     ./vik e ioccc.png .+[.+] > encodedimg.png
     ./vik b encodedimg.png
 ```
@@ -154,7 +154,7 @@ compile the program on this platform, the following line can be added after
 the variable declarations in the main declaration in order to run
 correctly:
 
-```c
+```<!---c-->
     _setmode(_fileno(stdout), 0x8000);
 ```
 

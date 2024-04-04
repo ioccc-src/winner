@@ -156,7 +156,7 @@ returns and appending a newline if it was missing.
 
 Fixing involves these actions:
 
-```sh
+```<!---sh-->
 tr -d '\015' < input.csv > tmp.csv
 echo >> tmp.csv
 mv -f tmp.csv input.csv
@@ -342,7 +342,7 @@ A tool to run another tool over all _YYYY/dir_ entry directories.
 
 Examples:
 
-```sh
+```<!---sh-->
 ./run_all.sh -v 3 ./fake.gen_index.sh
 ./run_all.sh -v 1 ./gen_entry_json.sh
 ```

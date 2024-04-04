@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -10,7 +10,7 @@ information on all of these builds.
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./horizontal_cat [files...] > [output]
     ./vertical_cat [files...] > [output]
 ```
@@ -20,19 +20,19 @@ information on all of these builds.
 
 To understand the various intermediate source files that are built, try:
 
-```sh
+```<!---sh-->
     make understanding
 ```
 
 Also try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
 NOTE: Use - for standard input.  For example:
 
-```sh
+```<!---sh-->
     ./vertical_cat - -
 ```
 
@@ -69,7 +69,7 @@ judging this entry.
 `Misaka` is a file concatenation utility, with at least two modes of
 operation:
 
-```sh
+```<!---sh-->
     cc misaka.c -o horizontal_cat
     ./horizontal_cat [files...] > [output]
 
@@ -94,7 +94,7 @@ files vertically.
 I thought the lack of horizontal concatenation must have been an oversight,
 so I implemented this utility:
 
-```sh
+```<!---sh-->
     cc misaka.c -o horizontal_cat
     ./horizontal_cat files...
 ```
@@ -109,7 +109,7 @@ can specify `-` multiple times to get `stdin` multiplied horizontally.  For
 example, if you have `seq(1)` in your shell, you can add line numbers to both
 sides of [misaka.c](misaka.c) like this:
 
-```sh
+```<!---sh-->
     seq -f '  %.0f  ' 45 | ./horizontal_cat - misaka.c -
 ```
 
@@ -126,7 +126,7 @@ files vertically, so I included a vertical mode.  But supporting vertical
 mode with command line options would be no fun.  Instead, vertical mode is
 enabled by concatenating the source code horizontally:
 
-```sh
+```<!---sh-->
     ./horizontal_cat misaka.c misaka.c > misaka2.c
     gcc misaka2.c -o vertical_cat
     ./vertical_cat files...
@@ -135,7 +135,7 @@ enabled by concatenating the source code horizontally:
 `vertical_cat` works more or less like `cat`, except you can use
 `vertical_cat` to duplicate `stdin`:
 
-```sh
+```<!---sh-->
     ./vertical_cat - -
 ```
 
@@ -147,7 +147,7 @@ was just more [cats](https://rationalwiki.org/wiki/Fun:Cat).  So I implemented
 one more mode, this one is enabled by concatenating [misaka.c](misaka.c)
 vertically:
 
-```sh
+```<!---sh-->
     ./vertical_cat misaka.c misaka.c > misaka3.c
     gcc misaka3.c -o long_cat
     ./long_cat
@@ -157,7 +157,7 @@ vertically:
 exponentially longer by concatenating more files vertically (up to 31 levels
 high, depending on `sizeof(int)` for your compiler):
 
-```sh
+```<!---sh-->
     ./vertical_cat misaka.c misaka.c misaka.c > misaka4.c
     gcc misaka4.c -o loong_cat
 
@@ -171,7 +171,7 @@ high, depending on `sizeof(int)` for your compiler):
 If your terminal has really thin fonts, you can also make this output fatter
 by concatenating files horizontally:
 
-```sh
+```<!---sh-->
     ./vertical_cat misaka.c misaka.c | ./horizontal_cat - - > misaka7.c
     gcc misaka7.c -o long_fat_cat
 
@@ -182,7 +182,7 @@ by concatenating files horizontally:
 Output width is determined by the first level of stacked programs, so a
 triangle like the following will not have horizontally expanded output:
 
-```sh
+```<!---sh-->
     ./horizontal_cat misaka.c misaka.c | ./vertical_cat misaka.c - > misaka9.c
     gcc misaka9.c -o same_as_long_cat
 ```
@@ -192,7 +192,7 @@ together, you can feed the source to a
 [brainfuck](https://en.wikipedia.org/wiki/Brainfuck) interpreter to get an
 overview of how the programs are stacked.  Example:
 
-```sh
+```<!---sh-->
     perl bf.pl misaka9.c
 ```
 

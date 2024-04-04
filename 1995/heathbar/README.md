@@ -1,13 +1,13 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./heathbar num num
 ```
 
@@ -16,7 +16,7 @@ where num is a non-negative number.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 

@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -18,14 +18,14 @@ For more detailed information see [2012 blakely bugs](../../bugs.html#2012_blake
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./blakely "RPN formula" resolution > output.gif
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -59,7 +59,7 @@ output to `stdout`.
 
 The program should be run as:
 
-```sh
+```<!---sh-->
     ./blakely xy* 32 > pic.gif
 ```
 
@@ -105,7 +105,7 @@ resolution of `ripple.gif`
 to 250 took ~35 minutes to render on an [i7
 processor](https://en.wikipedia.org/wiki/Intel_Core#Core_i7).
 
-```sh
+```<!---sh-->
     ./blakely xy* 32 > saddle.gif
 
     ./blakely xx*yy*1++d5*ct/ 64 > ripple.gif

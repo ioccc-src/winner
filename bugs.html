@@ -417,9 +417,9 @@ own fix or suggest that they’re fixed!</p>
 <h3 id="information-1984decotindex.html">Information: <a href="1984/decot/index.html">1984/decot/index.html</a></h3>
 <p>The purpose of this program is to print out a string of rubbish. In particular
 you should see something like:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./decot</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;&quot;,x);      /*</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="st">    \</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ ./decot
+    &#39;&quot;,x);      /*
+    \</code></pre>
 <p>without a newline after the <code>\</code>. This is not a bug.</p>
 <h2 id="mullender"><a name="1984_mullender"></a>1984/mullender</h2>
 <h3 id="status-inabiaf---please-do-not-fix-2">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
@@ -479,7 +479,7 @@ operators like <code>/</code>. To see what operators are supported check the sou
 <p>With version 2 it sometimes segfaults even with the same input where other times
 it does not. We don’t believe this is because of the fix that lets some versions
 be compiled with clang. An example invocation is:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./ver2</span> <span class="op">&lt;</span> westley.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./ver2 &lt; westley.c</code></pre>
 <h3 id="a-useful-note-on-changingfixing-this-program">A useful note on changing/fixing this program</h3>
 <p>It should be noted that in additional to rot13 names there is code that is the
 reverse of other code (also wrt names). See the source file and the index.html
@@ -511,12 +511,12 @@ the code. But it’s trickier than that as one might expect.</p>
 <p>The comments are processed too. Furthermore it happens that the last line
 becomes the first and the first line becomes the last! Now if you look at the
 code you’ll see on the first line:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">/**//*/};)/**/</span>pain<span class="op">(*</span><span class="co">//**/tang         ,gnat/**//*/,ABBA~,0-0(avnz;)0-0,tang,raeN</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    /**//*/};)/**/pain(*//**/tang         ,gnat/**//*/,ABBA~,0-0(avnz;)0-0,tang,raeN</code></pre>
 <p>In <code>ver0</code> it’ll be the same but the others are more interesting.</p>
 <p>In <code>ver1</code> you’ll see on the last line:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    cnva<span class="op">((</span>vag<span class="op">)</span>NOON<span class="op">&amp;</span><span class="dv">2</span><span class="co">/*//*\\**/</span><span class="op">,</span>gnat<span class="op">,</span>tang        <span class="op">,</span>NOON<span class="co">/**//*/(niam/**/</span><span class="op">);}</span><span class="co">/*//**/</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    cnva((vag)NOON&amp;2/*//*\\**/,gnat,tang        ,NOON/**//*/(niam/**/);}/*//**/</code></pre>
 <p>and on the first line:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">/**//*/};)/**/</span>cnva<span class="op">(*</span><span class="co">//**/gnat         ,tang/**//*/,NOON~,0-0(niam;)0-0,gnat,enrA</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    /**//*/};)/**/cnva(*//**/gnat         ,tang/**//*/,NOON~,0-0(niam;)0-0,gnat,enrA</code></pre>
 <p>Observe that the ROT13 of <code>pain</code> is <code>cnva</code> and the ROT13 of <code>main</code> is <code>znva</code>.
 The ROT13 of <code>NOON</code> is <code>ABBA</code>. <code>vag</code> is ROT13 of <code>int</code>, <code>gnat</code> and <code>tang</code> are
 ROT13 of each other as well which is the reverse of the original (this is not
@@ -563,61 +563,61 @@ Enjoy! :-)</p>
 <p>A point worth considering is that as the number passed into the program gets
 bigger the number of lines of output gets substantially larger and it takes much
 more time and resources to run as well. For instance:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> for n in <span class="va">$(</span><span class="fu">seq</span> 1 18<span class="va">)</span><span class="kw">;</span> <span class="cf">do</span> <span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$n</span><span class="st">&quot;</span><span class="kw">;</span> <span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$n</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="bu">time</span> <span class="st">&quot;./baruch&quot;</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span> <span class="kw">|</span> <span class="fu">sed</span> <span class="at">-E</span> <span class="at">-e</span> <span class="st">&#39;s/[[:space:]]//g&#39;</span><span class="kw">;</span> <span class="cf">done</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">1</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">3</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./baruch</span>  0.00s user 0.00s system 5% cpu 0.115 total</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">2</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">1</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./baruch</span>  0.00s user 0.00s system 64% cpu 0.004 total</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">3</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">1</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./baruch</span>  0.00s user 0.00s system 60% cpu 0.003 total</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">4</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">11</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./baruch</span>  0.00s user 0.00s system 64% cpu 0.003 total</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="ex">5</span></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="ex">61</span></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./baruch</span>  0.00s user 0.00s system 66% cpu 0.003 total</span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    <span class="ex">6</span></span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    <span class="ex">29</span></span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./baruch</span>  0.00s user 0.00s system 61% cpu 0.003 total</span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    <span class="ex">7</span></span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    <span class="ex">321</span></span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./baruch</span>  0.00s user 0.00s system 69% cpu 0.002 total</span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    <span class="ex">8</span></span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>    <span class="ex">829</span></span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./baruch</span>  0.00s user 0.00s system 76% cpu 0.003 total</span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>    <span class="ex">9</span></span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    <span class="ex">3521</span></span>
-<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./baruch</span>  0.00s user 0.00s system 87% cpu 0.005 total</span>
-<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>    <span class="ex">10</span></span>
-<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>    <span class="ex">7965</span></span>
-<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./baruch</span>  0.01s user 0.00s system 95% cpu 0.014 total</span>
-<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>    <span class="ex">11</span></span>
-<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>    <span class="ex">32161</span></span>
-<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./baruch</span>  0.05s user 0.00s system 98% cpu 0.053 total</span>
-<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>    <span class="ex">12</span></span>
-<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>    <span class="ex">184601</span></span>
-<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./baruch</span>  0.29s user 0.00s system 99% cpu 0.294 total</span>
-<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>    <span class="ex">13</span></span>
-<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>    <span class="ex">1031969</span></span>
-<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./baruch</span>  1.78s user 0.00s system 99% cpu 1.794 total</span>
-<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>    <span class="ex">14</span></span>
-<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>    <span class="ex">5483941</span></span>
-<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./baruch</span>  11.26s user 0.02s system 99% cpu 11.311 total</span>
-<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>    <span class="ex">15</span></span>
-<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>    <span class="ex">36466945</span></span>
-<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./baruch</span>  79.20s user 0.15s system 99% cpu 1:19.72 total</span>
-<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>    <span class="ex">16</span></span>
-<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>    <span class="ex">251132705</span></span>
-<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./baruch</span>  592.89s user 0.77s system 99% cpu 9:55.34 total</span>
-<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>    <span class="ex">17</span></span>
-<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a>    <span class="ex">1724671873</span></span>
-<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./baruch</span>  4535.71s user 5.25s system 99% cpu 1:15:49.76 total</span>
-<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>    <span class="ex">18</span></span>
-<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>    <span class="ex">12655721857</span></span>
-<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./baruch</span>  37496.97s user 58.50s system 99% cpu 10:27:48.29 total</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ for n in $(seq 1 18); do echo &quot;$n&quot;; echo &quot;$n&quot; | time &quot;./baruch&quot; | wc -l | sed -E -e &#39;s/[[:space:]]//g&#39;; done
+    1
+    3
+    ./baruch  0.00s user 0.00s system 5% cpu 0.115 total
+    2
+    1
+    ./baruch  0.00s user 0.00s system 64% cpu 0.004 total
+    3
+    1
+    ./baruch  0.00s user 0.00s system 60% cpu 0.003 total
+    4
+    11
+    ./baruch  0.00s user 0.00s system 64% cpu 0.003 total
+    5
+    61
+    ./baruch  0.00s user 0.00s system 66% cpu 0.003 total
+    6
+    29
+    ./baruch  0.00s user 0.00s system 61% cpu 0.003 total
+    7
+    321
+    ./baruch  0.00s user 0.00s system 69% cpu 0.002 total
+    8
+    829
+    ./baruch  0.00s user 0.00s system 76% cpu 0.003 total
+    9
+    3521
+    ./baruch  0.00s user 0.00s system 87% cpu 0.005 total
+    10
+    7965
+    ./baruch  0.01s user 0.00s system 95% cpu 0.014 total
+    11
+    32161
+    ./baruch  0.05s user 0.00s system 98% cpu 0.053 total
+    12
+    184601
+    ./baruch  0.29s user 0.00s system 99% cpu 0.294 total
+    13
+    1031969
+    ./baruch  1.78s user 0.00s system 99% cpu 1.794 total
+    14
+    5483941
+    ./baruch  11.26s user 0.02s system 99% cpu 11.311 total
+    15
+    36466945
+    ./baruch  79.20s user 0.15s system 99% cpu 1:19.72 total
+    16
+    251132705
+    ./baruch  592.89s user 0.77s system 99% cpu 9:55.34 total
+    17
+    1724671873
+    ./baruch  4535.71s user 5.25s system 99% cpu 1:15:49.76 total
+    18
+    12655721857
+    ./baruch  37496.97s user 58.50s system 99% cpu 10:27:48.29 total</code></pre>
 <h2 id="jaw"><a name="1990_jaw"></a>1990/jaw</h2>
 <h3 id="status-known-bug---please-help-us-fix-4">STATUS: known bug - please help us fix</h3>
 <h3 id="source-code-1990jawjaw.c">Source code: <a href="1990/jaw/jaw.c">1990/jaw/jaw.c</a></h3>
@@ -627,19 +627,19 @@ fixed some issues in this program and <a href="../authors.html#Yusuke_Endoh">Yus
 Endoh</a> provided the <code>btoa</code>
 script but it appears there is a bug in this entry. The judges wrote that to
 test the entry one can do:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;Quartz glyph jocks vend, fix, BMW.&quot;</span> <span class="kw">|</span> <span class="ex">compress</span> <span class="kw">|</span> <span class="ex">./btoa</span> <span class="kw">|</span> <span class="ex">./jaw</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    echo &quot;Quartz glyph jocks vend, fix, BMW.&quot; | compress | ./btoa | ./jaw</code></pre>
 <p>which should apply the identity transformation to a minimal holoalphabetic
 sentence.</p>
 <p>But doing this shows instead:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;Quartz glyph jocks vend, fix, BMW.&quot;</span> <span class="kw">|</span> <span class="ex">compress</span> <span class="kw">|</span> <span class="ex">./btoa</span> <span class="kw">|</span> <span class="ex">./jaw</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">a얖?</span><span class="er">)</span><span class="ex">V...?????777??hC??h??-?</span> <span class="er">)</span><span class="ex">SSSSXXX????r?L=???*?-???ppp,,,?R</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">?j</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">111-</span><span class="er">)))</span><span class="ex">?</span> <span class="st">&#39;..F@E</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="st">                   ???b111?</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="st">    ..F..F.?n,,,,,L@E$</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    echo &quot;Quartz glyph jocks vend, fix, BMW.&quot; | compress | ./btoa | ./jaw
+    a얖?)V...?????777??hC??h??-? )SSSSXXX????r?L=???*?-???ppp,,,?R
+    ?j
+    111-)))? &#39;..F@E
+                   ???b111?
+    ..F..F.?n,,,,,L@E$</code></pre>
 <p>Notice how there’s no newline at the end: that final <code>$</code> is the prompt.</p>
 <p>If one does, however:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;Quartz glyph jocks vend, fix, BMW.&quot;</span> <span class="kw">|</span> <span class="ex">compress</span> <span class="kw">|</span> <span class="ex">./btoa</span> <span class="kw">|</span> <span class="ex">./jaw</span> <span class="kw">|</span> <span class="ex">./jaw</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    echo &quot;Quartz glyph jocks vend, fix, BMW.&quot; | compress | ./btoa | ./jaw | ./jaw</code></pre>
 <p>they will get just</p>
 <pre><code>    oops</code></pre>
 <p>which seems to be an error message (one of the fixes was to make it not use
@@ -697,7 +697,7 @@ or do something funny. For instance <code>adsleep</code> and <code>adbasename</c
 simple to fix but the author explicitly noted that this will segfault and it is
 that that is the error message.</p>
 <p>Another thing is that the code:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">((</span>W<span class="op">,</span>Y<span class="op">));</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    printf((W,Y));</code></pre>
 <p>appears to be wrong because <code>W</code> is a <code>FILE *</code> and <code>Y</code> is a <code>char[]</code> but if one
 changes it to use <code>fprintf()</code> on the file (which, incidentally, is opened in
 read only mode which is another reason) with the <code>%s</code> specifier it will make
@@ -726,22 +726,22 @@ have to remove the outer <code>()</code> pair.</p>
     the first factor is 101 and is usually found in an instant.</code></pre>
 <p>A quick debugging session from Cody suggests that the problem with this value
 is that:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span> ppp<span class="op">-&gt;</span>qq<span class="op">!=</span><span class="dv">48</span> <span class="op">)</span> <span class="cf">return</span><span class="op">;</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    if ( ppp-&gt;qq!=48 ) return;</code></pre>
 <p>is never reached because the value is never 48 (it is in other cases but not for
 the example input). It varies in value at this point. Observe that the next
 lines of code are:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="op">(</span> ppp<span class="op">-&gt;</span>qq<span class="op">==</span><span class="dv">48</span> <span class="op">)</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">&quot;</span><span class="sc">%ld\n</span><span class="st">&quot;</span><span class="op">,</span>qqq<span class="op">-</span><span class="dv">45</span><span class="op">);</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>        <span class="op">*</span>pp <span class="op">=</span> ppp<span class="op">;</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>        ppp <span class="op">=</span> ppp<span class="op">-&gt;</span>p<span class="op">;</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    while ( ppp-&gt;qq==48 )
+    {
+        printf(&quot;%ld\n&quot;,qqq-45);
+        *pp = ppp;
+        ppp = ppp-&gt;p;
+    }</code></pre>
 <p>so it is expected that that value is 48, before printing the numbers, but if
 it’s not it should not proceed at all, not even to go past that loop. In other
 words that loop should always be entered for at least one iteration. The check
 for the <code>!= 48</code> is also required.</p>
 <p>Perhaps more useful to know is that at this point in the code the code:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(((((</span> <span class="op">!(</span>aa<span class="op">=</span>setjmp<span class="op">(</span>ppp<span class="op">-&gt;</span>ppp<span class="op">))||</span>aa<span class="op">==</span>aaaaaa <span class="op">)))))</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    if ((((( !(aa=setjmp(ppp-&gt;ppp))||aa==aaaaaa )))))</code></pre>
 <p>appears to be entered because of the return value of <code>setjmp()</code>, not the other
 condition.</p>
 <p>The alt version does fix the problem but it is not obfuscated and not like the
@@ -851,12 +851,12 @@ terminal columns is &gt;= 80 it will display properly, rather than having to wra
 at 80 columns. However due to the nature of the program if the terminal is &lt; 80
 in column width it will not display right. To see the number of columns in your
 terminal try:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">$COLUMNS</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    echo $COLUMNS</code></pre>
 <h3 id="status-known-bug---please-help-us-fix-7">STATUS: known bug - please help us fix</h3>
 <p>The author suggested that the alternate version, which Cody added (but fixed for
 modern systems), should print</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>    main<span class="op">(</span>l<span class="op">,</span>a<span class="op">,</span>n<span class="op">,</span>d<span class="op">)...</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>A M E R I C A<span class="op">]...</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    main(l,a,n,d)...
+    [A M E R I C A]...</code></pre>
 <p>…going down the left edge if your terminal auto-wraps at 80 characters.</p>
 <p>This however does not seem to work. It does not appear to be because of the fix
 for modern systems as it doesn’t work for gcc either, even before any changes.
@@ -909,18 +909,18 @@ through ctrl-c or such.</p>
 fixed except for an exercise to yourself, should you wish to try.</p>
 <p>This program uses <code>system(3)</code> so if you provide invalid characters in the
 question you might cause an error. For instance don’t do this:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./schnitzi schnitzi.info</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">This</span> program answers questions about paragraphs</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">of</span> text posed to it in English.  It is written</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="er">in</span> <span class="ex">C.</span>  Mark Schnitzius is the author of this</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">program.</span></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">The</span> Loch Ness monster has been captured.  Elvis</span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">is</span> alive.  Hostler was a woman.  The NASA moon</span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">landings</span> were clearly faked.</span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">?</span> What is foo<span class="st">&#39;?</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ ./schnitzi schnitzi.info
+    This program answers questions about paragraphs
+    of text posed to it in English.  It is written
+    in C.  Mark Schnitzius is the author of this
+    program.
+
+    The Loch Ness monster has been captured.  Elvis
+    is alive.  Hostler was a woman.  The NASA moon
+    landings were clearly faked.
+
+
+    ? What is foo&#39;?</code></pre>
 <p>because doing so will result in something like:</p>
 <pre><code>    sh: -c: line 0: unexpected EOF while looking for matching `&#39;&#39;
     sh: -c: line 1: syntax error: unexpected end of file</code></pre>
@@ -982,10 +982,10 @@ like getting to a place that the next contest can run must be done first.</p>
 how this entry works, which will be necessary if this entry is to be fixed,
 below.</p>
 <p>You might wish to run the command:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> diff_orig_prog</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make diff_orig_prog</code></pre>
 <p>to see what had to change for the buffer size, when looking at the below.
 Furthermore you will want to look at:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">diff</span> schnitzi.alt.c schnitzi.alt2.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    diff schnitzi.alt.c schnitzi.alt2.c</code></pre>
 <p>as the <code>fgets()</code> version can compile it just can’t generate compilable code (let
 alone using <code>fgets()</code>) when fed itself (to reiterate, just changing the call to
 <code>fgets(3)</code> does not mean it can compile and there’s a further problem in that
@@ -1022,7 +1022,7 @@ o
 h
 &gt;</code></pre>
 <p>If you join the lines you end up with:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>#include &lt;stdio.h&gt;</code></pre>
 <p>If you look at column 25 which is the end of the word ‘mh111’ and you go down to
 the next row you’ll see a 0 and if you go one row down another 0. This is the
 buffer size, 100, for <code>u</code>! The column to the left is the same for the <code>t</code>
@@ -1041,7 +1041,7 @@ size but that only works on the original source.</p>
 <p>To say just how sensitive this entry is: even a space, lack of space or a
 character, wrong character, lack of character or character in the wrong place
 can cause a compilation error! Make sure that the output of:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./schnitzi</span> <span class="op">&lt;</span> schnitzi.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./schnitzi &lt; schnitzi.c</code></pre>
 <p>can be compiled and the output of that new program when fed itself can also be
 compiled!</p>
 <h2 id="shapiro"><a name="1994_shapiro"></a>1994/shapiro</h2>
@@ -1100,12 +1100,12 @@ it calls <code>getchar()</code> via the pointer <code>m</code>. So this is a fea
 <h3 id="source-code-1995leoleo.c">Source code: <a href="1995/leo/leo.c">1995/leo/leo.c</a></h3>
 <h3 id="information-1995leoindex.html">Information: <a href="1995/leo/index.html">1995/leo/index.html</a></h3>
 <p>The judges suggested that the following commands should result in output:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./leo</span> 1 <span class="kw">|</span> <span class="fu">cat</span> <span class="at">-</span> /dev/tty <span class="kw">|</span> <span class="fu">gs</span> <span class="at">-</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./leo</span> 37 80 <span class="kw">|</span> <span class="fu">cat</span> <span class="at">-</span> /dev/tty <span class="kw">|</span> <span class="fu">gs</span> <span class="at">-</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./leo 1 | cat - /dev/tty | gs -
+
+    ./leo 37 80 | cat - /dev/tty | gs -</code></pre>
 <p>The first one can work if one does instead:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;&quot;</span> <span class="kw">|</span> <span class="ex">./leo</span> 1 <span class="op">&gt;</span> foo.ps</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gs</span> foo.ps</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    echo &quot;&quot; | ./leo 1 &gt; foo.ps
+    gs foo.ps</code></pre>
 <p>but it is supposed to work in the pipeline as is. The second one does not appear
 to work at all even if one redirects to a file (like the workaround for the
 first) as it appears to just block.</p>
@@ -1140,28 +1140,28 @@ it was instead requiring a login / password.</p>
 almost be done except that some of the output of the
 <a href="1996/huffman/try.sh">try.sh</a> is wrong, especially the last one.</p>
 <p>This diff almost does it but not quite:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode diff"><code class="sourceCode diff"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>    diff --git i/1996/huffman/huffman.c w/1996/huffman/huffman.c</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    index a5745bc7f4fa28b834c004f4cf19633e40ad9165..5e5e5334f33f9dbd95c70eddece3189d9bcff5e9 100644</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    --- i/1996/huffman/huffman.c</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    +++ w/1996/huffman/huffman.c</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    @@ -1,15 +1,16 @@</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>     #define x char</span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>     #define z else</span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>     #define w gets</span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>    +#define gets(b) ((b)[0]=&#39;\0&#39;,(fgets((b), 100, stdin)))</span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>     #define r if</span>
-<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>     #define u int</span>
-<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>     #define s main</span>
-<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>     #define v putchar</span>
-<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>     #define y while</span>
-<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a>     #define t &quot; A?B?K?L?CIF?MSP?E?H?O?R?DJG?NTQ?????U?V?????X???????Z????W??Y??&quot;</span>
-<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a>    - s (   )  {   x* c  ,  b[ 5  * 72   ]; u  a, e  ,  d   [  9</span>
-<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a>    + s (   )  {   x* c  ,  b[ 5  * 72  ]; u  a, e  ,  d   [  9</span>
-<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a>     *9 *9 ]  ;    y  (w  ( b) ){            r  ( 0   [ b] -7 *</span>
-<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a>     5        )    {  c  =     b    ;       y  (  (*    c  -  6</span>
-<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a>     * 7 )* *  c )c =  c+ 1  ;   r ((   -0 )  [ c  ] &amp;&amp;  w (  b   +</span>
-<span id="cb36-21"><a href="#cb36-21" aria-hidden="true" tabindex="-1"></a>       8 *  5*    3        ) &amp;&amp; w          (b   +8      *5  * 6) )</span>
-<span id="cb36-22"><a href="#cb36-22" aria-hidden="true" tabindex="-1"></a>       { a       =  0; y     (                  a       [     b  ]</span></code></pre></div>
+<pre class="&lt;!---diff--&gt;"><code>    diff --git i/1996/huffman/huffman.c w/1996/huffman/huffman.c
+    index a5745bc7f4fa28b834c004f4cf19633e40ad9165..5e5e5334f33f9dbd95c70eddece3189d9bcff5e9 100644
+    --- i/1996/huffman/huffman.c
+    +++ w/1996/huffman/huffman.c
+    @@ -1,15 +1,16 @@
+     #define x char
+     #define z else
+     #define w gets
+    +#define gets(b) ((b)[0]=&#39;\0&#39;,(fgets((b), 100, stdin)))
+     #define r if
+     #define u int
+     #define s main
+     #define v putchar
+     #define y while
+     #define t &quot; A?B?K?L?CIF?MSP?E?H?O?R?DJG?NTQ?????U?V?????X???????Z????W??Y??&quot;
+    - s (   )  {   x* c  ,  b[ 5  * 72   ]; u  a, e  ,  d   [  9
+    + s (   )  {   x* c  ,  b[ 5  * 72  ]; u  a, e  ,  d   [  9
+     *9 *9 ]  ;    y  (w  ( b) ){            r  ( 0   [ b] -7 *
+     5        )    {  c  =     b    ;       y  (  (*    c  -  6
+     * 7 )* *  c )c =  c+ 1  ;   r ((   -0 )  [ c  ] &amp;&amp;  w (  b   +
+       8 *  5*    3        ) &amp;&amp; w          (b   +8      *5  * 6) )
+       { a       =  0; y     (                  a       [     b  ]</code></pre>
 <p>But since it does not for the time being it is advisable to just redirect
 <code>stderr</code> to <code>/dev/null</code> (<code>2&gt;/dev/null</code>).</p>
 <h2 id="jonth"><a name="1996_jonth"></a>1996/jonth</h2>
@@ -1199,8 +1199,8 @@ to the page as well! You’ll have IOCCC fame for reviving a pootifier! :-)</p>
 <h3 id="information-1998schnitziindex.html">Information: <a href="1998/schnitzi/index.html">1998/schnitzi/index.html</a></h3>
 <p>A point worth considering is that as the number passed into the program gets
 bigger the number of lines of output gets substantially larger. For instance:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./schnitzi 9<span class="kw">|</span><span class="fu">wc</span> <span class="at">-l</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>      <span class="ex">771999</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ ./schnitzi 9|wc -l
+      771999</code></pre>
 <p>The larger the number the bigger the file can become too, even becoming
 gigabytes in size. The range is checked for <code>&gt;0 &amp;&amp; &lt;27</code> as not having this can
 be a problem including a segfault.</p>
@@ -1215,43 +1215,43 @@ is in the index.html file as something to try and ponder.</p>
 <h3 id="source-code-2000dlowedlowe.c">Source code: <a href="2000/dlowe/dlowe.c">2000/dlowe/dlowe.c</a></h3>
 <h3 id="information-2000dloweindex.html">Information: <a href="2000/dlowe/index.html">2000/dlowe/index.html</a></h3>
 <p>The author gives an example command:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;7 P 6 d P P 8 p&quot;</span> <span class="kw">|</span> <span class="ex">./dlowe</span> <span class="kw">|</span> <span class="fu">tr</span> 876 tpo</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    echo &quot;7 P 6 d P P 8 p&quot; | ./dlowe | tr 876 tpo</code></pre>
 <p>which should print out <code>poot</code> but it doesn’t, not in linux and not in macOS.</p>
 <p>In linux it doesn’t crash but it doesn’t print anything out either.</p>
 <p>In macOS it crashes; it might appear to not crash in macOS but this is because
 of the pipeline. If you remove the <code>| tr 876 tpo</code> part of the command you will
 see that it does indeed crash!</p>
 <p>The reason for this not working is really strange.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo <span class="st">&quot;7 P 6 d P P 8 p&quot;</span> <span class="kw">|</span> <span class="ex">./dlowe</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">7668</span></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo <span class="st">&quot;7 P 6 d P P 8 p&quot;</span> <span class="kw">|</span> <span class="ex">./dlowe</span> <span class="kw">|</span> <span class="fu">grep</span> 7</span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo &quot;7 P 6 d P P 8 p&quot; | ./dlowe
+    7668
+    $ echo &quot;7 P 6 d P P 8 p&quot; | ./dlowe | grep 7
+    $</code></pre>
 <p>Why? Is it writing to stdout? Let’s try some other things:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo 7668 <span class="kw">|</span> <span class="fu">tr</span> 876 tpo</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">poot</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo 7668 | tr 876 tpo
+    poot</code></pre>
 <p>Okay so we know that it SHOULD work. But we also know something funny is going on with stdout and the entry. Another experiment:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo <span class="st">&quot;7 P 6 d P P 8 p&quot;</span> <span class="kw">|</span> <span class="ex">./dlowe</span> <span class="dv">1</span><span class="op">&gt;&amp;</span><span class="dv">2</span> <span class="kw">|</span> <span class="fu">grep</span> 7</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">7668</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo &quot;7 P 6 d P P 8 p&quot; | ./dlowe 1&gt;&amp;2 | grep 7
+    7668</code></pre>
 <p>Okay so now it sees it, <code>grep</code>. But watch!</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo <span class="st">&quot;7 P 6 d P P 8 p&quot;</span> <span class="kw">|</span> <span class="ex">./dlowe</span> <span class="dv">2</span><span class="op">&gt;</span>foo <span class="dv">1</span><span class="op">&gt;&amp;</span><span class="dv">1</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">7668</span></span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> cat foo</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo &quot;7 P 6 d P P 8 p&quot; | ./dlowe 2&gt;foo 1&gt;&amp;1
+    7668
+    $ cat foo</code></pre>
 <p>.. so at this hour it does appear to be writing to stdout but yet somehow it doesn’t? But watch:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo <span class="st">&quot;7 P 6 d P P 8 p&quot;</span> <span class="kw">|</span> <span class="ex">./dlowe</span> <span class="dv">1</span><span class="op">&gt;</span>foo <span class="dv">1</span><span class="op">&gt;&amp;</span><span class="dv">1</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> cat foo</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo &quot;7 P 6 d P P 8 p&quot; | ./dlowe 1&gt;foo 1&gt;&amp;1
+    $ cat foo
+    $</code></pre>
 <p>Well this explains why the <code>tr</code> does not transliterate it to <code>poot</code> but why is
 this happening? Why can’t it be redirected to another file even?</p>
 <p>If it could be figured out why it’s not writing to stdout and yet at the same
 time is writing to stdout one bug could be fixed. Maybe it’s the perl messing
 with things but we don’t know.</p>
 <p>Other commands do work, however, and give the appropriate output, such as:</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo 1 2 + p <span class="kw">|</span> <span class="ex">./dlowe</span></span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">3</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo 1 2 + p | ./dlowe
+    3</code></pre>
 <p>so something is wrong with some commands/operators.</p>
 <p>Another feature that does work in linux is:</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo poot <span class="kw">|</span> <span class="ex">./dlowe</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">poot</span> was here!</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo poot | ./dlowe
+    poot was here!</code></pre>
 <p>Can you help fix these problems?</p>
 <p>Cody provided the C code that creates an unformatted perl script that will just
 print ‘unimplemented’ for operators but it seems to work in some other ways (see
@@ -1259,29 +1259,29 @@ below for how to go further than unimplemented) which is the exact perl from the
 C program except that it has the <code>#!/usr/bin/env perl</code> and <code>use warnings;</code> as
 well. A note below might suggest that doing this creates incomplete perl.
 Anyway:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">)</span></span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">&quot;#!/usr/bin/env perl</span><span class="sc">\n</span><span class="st">use warnings;_:$_=               &lt;&gt; ; defined               or exit; @ARGV&quot;</span></span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;=split; __:$_=             shift;defined or             goto _; chomp &quot;</span></span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;;(m*^</span><span class="sc">\\</span><span class="st">x70oO&quot;</span>              <span class="st">&quot;</span><span class="sc">\\</span><span class="st">x74$*i)?(pri&quot;</span>              <span class="st">&quot;nt </span><span class="sc">\&quot;</span><span class="st">$_ w</span><span class="sc">\\</span><span class="st">x&quot;</span></span>
-<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;61s h</span><span class="sc">\\</span><span class="st">145r</span><span class="sc">\\</span><span class="st">x&quot;</span>            <span class="st">&quot;65!</span><span class="sc">\\</span><span class="st">n</span><span class="sc">\&quot;</span><span class="st">):((m*&quot;</span>            <span class="st">&quot;^</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">*(-?</span><span class="sc">\\</span><span class="st">d+&quot;</span></span>
-<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;(</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">d+)?)</span><span class="sc">\\</span><span class="st">s&quot;</span>            <span class="st">&quot;</span><span class="sc">\\</span><span class="st">*$*)?(push@SS            ,$1):(&amp;{chr(((o&quot;</span></span>
-<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;rd)</span><span class="sc">%%</span><span class="st">39)+3**4)x2             } )); goto __;             sub ff { @SS= (&quot;</span></span>
-<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;)} sub __{print            </span><span class="sc">\&quot;</span><span class="st">stack empty</span><span class="sc">\\</span><span class="st">&quot;</span>            <span class="st">&quot;n</span><span class="sc">\&quot;</span><span class="st">} sub ss{$#&quot;</span></span>
-<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;SS&lt;0 and goto &amp;            __; print $SS[$&quot;</span>            <span class="st">&quot;#SS].</span><span class="sc">\&quot;\\</span><span class="st">n</span><span class="sc">\&quot;</span><span class="st">} &quot;</span></span>
-<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;sub SS{ $#SS&lt;0              and goto &amp;__ ;              print pop @SS}&quot;</span></span>
-<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;sub _ { print              </span><span class="sc">\&quot;</span><span class="st">divide by zer&quot;</span>            <span class="st">&quot;o</span><span class="sc">\\</span><span class="st">n</span><span class="sc">\&quot;</span><span class="st">}sub ii{&quot;</span></span>
-<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;map{ print</span><span class="sc">\&quot;</span><span class="st">$_&quot;</span>            <span class="st">&quot;</span><span class="sc">\\</span><span class="st">n</span><span class="sc">\&quot;</span><span class="st"> } reverse            @SS} sub AUTOLO&quot;</span></span>
-<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;AD { print</span><span class="sc">\&quot;</span><span class="st">un&quot;</span>            <span class="st">&quot;implemented</span><span class="sc">\\</span><span class="st">n&quot;</span>            <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">} sub gg{ $#&quot;</span></span>
-<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;SS&lt;0 and goto              &amp;__;push@SS,$SS[            $#SS]} sub uu{ &quot;</span></span>
-<span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;$#SS&lt;1 and goto            &amp;__;$SS[ $#SS]+=            $SS[$#SS-1];$SS&quot;</span></span>
-<span id="cb46-18"><a href="#cb46-18" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;[$#SS-1]=$SS[$&quot;</span>            <span class="st">&quot;#SS]-$SS[$#SS-&quot;</span>            <span class="st">&quot;1]; $SS[$#SS]-&quot;</span></span>
-<span id="cb46-19"><a href="#cb46-19" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;=$SS[$#SS-1]}&quot;</span><span class="op">);</span></span>
-<span id="cb46-20"><a href="#cb46-20" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    #include &lt;stdio.h&gt;
+    int main(void)
+    {
+        printf(&quot;#!/usr/bin/env perl\nuse warnings;_:$_=               &lt;&gt; ; defined               or exit; @ARGV&quot;
+            &quot;=split; __:$_=             shift;defined or             goto _; chomp &quot;
+            &quot;;(m*^\\x70oO&quot;              &quot;\\x74$*i)?(pri&quot;              &quot;nt \&quot;$_ w\\x&quot;
+            &quot;61s h\\145r\\x&quot;            &quot;65!\\n\&quot;):((m*&quot;            &quot;^\\s\\*(-?\\d+&quot;
+            &quot;(\\.\\d+)?)\\s&quot;            &quot;\\*$*)?(push@SS            ,$1):(&amp;{chr(((o&quot;
+            &quot;rd)%%39)+3**4)x2             } )); goto __;             sub ff { @SS= (&quot;
+            &quot;)} sub __{print            \&quot;stack empty\\&quot;            &quot;n\&quot;} sub ss{$#&quot;
+            &quot;SS&lt;0 and goto &amp;            __; print $SS[$&quot;            &quot;#SS].\&quot;\\n\&quot;} &quot;
+            &quot;sub SS{ $#SS&lt;0              and goto &amp;__ ;              print pop @SS}&quot;
+            &quot;sub _ { print              \&quot;divide by zer&quot;            &quot;o\\n\&quot;}sub ii{&quot;
+            &quot;map{ print\&quot;$_&quot;            &quot;\\n\&quot; } reverse            @SS} sub AUTOLO&quot;
+            &quot;AD { print\&quot;un&quot;            &quot;implemented\\n&quot;            &quot;\&quot;} sub gg{ $#&quot;
+            &quot;SS&lt;0 and goto              &amp;__;push@SS,$SS[            $#SS]} sub uu{ &quot;
+            &quot;$#SS&lt;1 and goto            &amp;__;$SS[ $#SS]+=            $SS[$#SS-1];$SS&quot;
+            &quot;[$#SS-1]=$SS[$&quot;            &quot;#SS]-$SS[$#SS-&quot;            &quot;1]; $SS[$#SS]-&quot;
+            &quot;=$SS[$#SS-1]}&quot;);
+    }</code></pre>
 <p>Compiling this you can generate:</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode perl"><code class="sourceCode perl"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">#!/usr/bin/env perl</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">use</span> <span class="kw">warnings</span>;_:<span class="wa">$_</span>=               &lt;&gt; ; <span class="fu">defined</span>               <span class="ot">or</span> <span class="fu">exit</span>; <span class="wa">@ARGV</span>=<span class="fu">split</span>; __:<span class="wa">$_</span>=             <span class="fu">shift</span>;<span class="fu">defined</span> <span class="ot">or</span>             <span class="fu">goto</span> _; <span class="fu">chomp</span> ;(<span class="ot">m*</span><span class="ch">^</span><span class="wa">\x70</span><span class="ot">oO</span><span class="wa">\x74$*</span><span class="ot">i</span><span class="ch">)?(</span><span class="ot">print &quot;</span><span class="wa">$_</span><span class="ot"> w</span><span class="wa">\x61</span><span class="ot">s h</span><span class="wa">\145</span><span class="ot">r</span><span class="wa">\x65</span><span class="ot">!</span><span class="bn">\n</span><span class="ot">&quot;</span><span class="ch">)</span><span class="ot">:</span><span class="ch">((</span><span class="ot">m</span><span class="ch">*^</span><span class="bn">\s</span><span class="ot">\*</span><span class="ch">(</span><span class="ot">-</span><span class="ch">?</span><span class="bn">\d</span><span class="ch">+(</span><span class="ot">\.</span><span class="bn">\d</span><span class="ch">+)?)</span><span class="bn">\s</span><span class="ot">\*</span><span class="wa">$*</span><span class="ch">)?(</span><span class="ot">push</span><span class="dt">@SS</span><span class="ot">            ,</span><span class="wa">$1</span><span class="ch">)</span><span class="ot">:</span><span class="ch">(</span><span class="ot">&amp;{chr</span><span class="ch">(((</span><span class="ot">ord</span><span class="ch">)</span><span class="ot">%39</span><span class="ch">)+</span><span class="ot">3</span><span class="ch">**</span><span class="ot">4</span><span class="ch">)</span><span class="ot">x2             } </span><span class="ch">))</span><span class="ot">; goto __;             sub ff { </span><span class="dt">@SS</span><span class="ot">= </span><span class="ch">()</span><span class="ot">} sub __{print            &quot;stack empty</span><span class="bn">\n</span><span class="ot">&quot;} sub ss{</span><span class="dt">$#SS</span><span class="ot">&lt;0 and goto &amp;            __; print </span><span class="dt">$SS</span><span class="ch">[</span><span class="bn">$#SS</span><span class="ch">]</span><span class="ot">.&quot;</span><span class="bn">\n</span><span class="ot">&quot;} sub SS{ </span><span class="dt">$#SS</span><span class="ot">&lt;0              and goto &amp;__ ;              print pop </span><span class="dt">@SS</span><span class="ot">}sub _ { print              &quot;divide by zero</span><span class="bn">\n</span><span class="ot">&quot;}sub ii{map{ print&quot;</span><span class="wa">$_</span><span class="bn">\n</span><span class="ot">&quot; } reverse            </span><span class="dt">@SS</span><span class="ot">} sub AUTOLOAD { print&quot;unimplemented</span><span class="bn">\n</span><span class="ot">&quot;} sub gg{ </span><span class="dt">$#SS</span><span class="ot">&lt;0 and goto              &amp;__;push</span><span class="dt">@SS</span><span class="ot">,</span><span class="dt">$SS</span><span class="ch">[</span><span class="bn">            $#SS</span><span class="ch">]</span><span class="ot">} sub uu{ </span><span class="dt">$#SS</span><span class="ot">&lt;1 and goto            &amp;__;</span><span class="dt">$SS</span><span class="ch">[</span><span class="bn"> $#SS</span><span class="ch">]+</span><span class="ot">=            </span><span class="dt">$SS</span><span class="ch">[</span><span class="bn">$#SS-1</span><span class="ch">]</span><span class="ot">;</span><span class="dt">$SS</span><span class="ch">[</span><span class="bn">$#SS-1</span><span class="ch">]</span><span class="ot">=</span><span class="dt">$SS</span><span class="ch">[</span><span class="bn">$#SS</span><span class="ch">]</span><span class="ot">-</span><span class="dt">$SS</span><span class="ch">[</span><span class="bn">$#SS-1</span><span class="ch">]</span><span class="ot">; </span><span class="dt">$SS</span><span class="ch">[</span><span class="bn">$#SS</span><span class="ch">]</span><span class="ot">-=</span><span class="dt">$SS</span><span class="ch">[</span><span class="bn">$#SS-1</span><span class="ch">]</span><span class="ot">}</span></span></code></pre></div>
+<pre class="&lt;!---perl--&gt;"><code>    #!/usr/bin/env perl
+    use warnings;_:$_=               &lt;&gt; ; defined               or exit; @ARGV=split; __:$_=             shift;defined or             goto _; chomp ;(m*^\x70oO\x74$*i)?(print &quot;$_ w\x61s h\145r\x65!\n&quot;):((m*^\s\*(-?\d+(\.\d+)?)\s\*$*)?(push@SS            ,$1):(&amp;{chr(((ord)%39)+3**4)x2             } )); goto __;             sub ff { @SS= ()} sub __{print            &quot;stack empty\n&quot;} sub ss{$#SS&lt;0 and goto &amp;            __; print $SS[$#SS].&quot;\n&quot;} sub SS{ $#SS&lt;0              and goto &amp;__ ;              print pop @SS}sub _ { print              &quot;divide by zero\n&quot;}sub ii{map{ print&quot;$_\n&quot; } reverse            @SS} sub AUTOLOAD { print&quot;unimplemented\n&quot;} sub gg{ $#SS&lt;0 and goto              &amp;__;push@SS,$SS[            $#SS]} sub uu{ $#SS&lt;1 and goto            &amp;__;$SS[ $#SS]+=            $SS[$#SS-1];$SS[$#SS-1]=$SS[$#SS]-$SS[$#SS-1]; $SS[$#SS]-=$SS[$#SS-1]}</code></pre>
 <p>Here is example input/output:</p>
 <pre><code>    p
     stack empty
@@ -1298,32 +1298,32 @@ Anyway:</p>
 how this does not happen in the C program in linux!) but if one uses ‘p’ by
 itself it will print what’s on the stack (for example).</p>
 <p>To not get ‘unimplemented’ you can remove from the perl:</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode perl"><code class="sourceCode perl"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">sub </span><span class="fu">AUTOLOAD</span> { print<span class="ot">&quot;</span><span class="st">unimplemented</span><span class="ch">\n</span><span class="ot">&quot;</span>}</span></code></pre></div>
+<pre class="&lt;!---perl--&gt;"><code>    sub AUTOLOAD { print&quot;unimplemented\n&quot;}</code></pre>
 <p>(Note that the author stated this was used for exception handling so another
 possibility is that the C code doesn’t generate the correct perl and indeed even
 spaces is known to break the perl in at least one way, syntax errors, but maybe
 others too.)</p>
 <p>Here is an example run of several operations in the perl script after removing
 that subroutine:</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo 5 5 p <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">5</span></span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo 5 5 + p <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
-<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">5</span></span>
-<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Undefined</span> subroutine <span class="kw">&amp;</span><span class="ex">main::UU</span> called at ./pl.pl line 2, <span class="op">&lt;&gt;</span> line 1.</span>
-<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo 5 5 <span class="pp">*</span> p <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
-<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">5</span></span>
-<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Undefined</span> subroutine <span class="kw">&amp;</span><span class="ex">main::ww</span> called at ./pl.pl line 2, <span class="op">&lt;&gt;</span> line 1.</span>
-<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo 5 5 <span class="at">-</span> p <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
-<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">5</span></span>
-<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Undefined</span> subroutine <span class="kw">&amp;</span><span class="ex">main::WW</span> called at ./pl.pl line 2, <span class="op">&lt;&gt;</span> line 1.</span>
-<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo 5 5 / p <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
-<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">5</span></span>
-<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Undefined</span> subroutine <span class="kw">&amp;</span><span class="ex">main::YY</span> called at ./pl.pl line 2, <span class="op">&lt;&gt;</span> line 1.</span>
-<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo 5 P <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
-<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a>    <span class="ex">5$</span> echo p <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
-<span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a>    <span class="ex">stack</span> empty</span>
-<span id="cb50-18"><a href="#cb50-18" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo P <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
-<span id="cb50-19"><a href="#cb50-19" aria-hidden="true" tabindex="-1"></a>    <span class="ex">stack</span> empty</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo 5 5 p | ./dlowe.pl
+    5
+    $ echo 5 5 + p | ./dlowe.pl
+    5
+    Undefined subroutine &amp;main::UU called at ./pl.pl line 2, &lt;&gt; line 1.
+    $ echo 5 5 * p | ./dlowe.pl
+    5
+    Undefined subroutine &amp;main::ww called at ./pl.pl line 2, &lt;&gt; line 1.
+    $ echo 5 5 - p | ./dlowe.pl
+    5
+    Undefined subroutine &amp;main::WW called at ./pl.pl line 2, &lt;&gt; line 1.
+    $ echo 5 5 / p | ./dlowe.pl
+    5
+    Undefined subroutine &amp;main::YY called at ./pl.pl line 2, &lt;&gt; line 1.
+    $ echo 5 P | ./dlowe.pl
+    5$ echo p | ./dlowe.pl
+    stack empty
+    $ echo P | ./dlowe.pl
+    stack empty</code></pre>
 <p>Note the undefined subroutine error: that happens with commands that are not
 even in the program. Again the author used <code>AUTOLOAD</code> for exception handling so
 it seems likely that there is something missing (which the below shows as well).
@@ -1336,9 +1336,9 @@ works in the code, at least in some cases.</p>
 invalid input. But as can be seen by the input I (Cody) gave the input is not
 actually incorrect. It is also curious to note that it ends up printing what’s
 on the stack at that point:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo 5 5 + p <span class="kw">|</span> <span class="ex">./dlowe.pl</span></span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">unimplemented</span></span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">5</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo 5 5 + p | ./dlowe.pl
+    unimplemented
+    5</code></pre>
 <p>which might (?) suggest that the <code>+</code> operator is unimplemented. Unfortunately it
 has been many years since I have used perl and I was never a guru either.</p>
 <h3 id="status-inabiaf---please-do-not-fix-25">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
@@ -1346,34 +1346,34 @@ has been many years since I have used perl and I was never a guru either.</p>
 they said is in <code>Perl_sv_upgrade</code>. As this is documented it is not considered a
 bug to be fixed. For the curious this will crash in macOS. Cody notes that the
 code that crashes is:</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>    perl_eval_sv</span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">(</span>newSVpv<span class="op">(</span><span class="st">&quot;_:$_=               &lt;&gt; ; defined               or exit; @ARGV&quot;</span></span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;=split; __:$_=             shift;defined or             goto _; chomp &quot;</span></span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;;(m*^</span><span class="sc">\\</span><span class="st">x70oO&quot;</span>              <span class="st">&quot;</span><span class="sc">\\</span><span class="st">x74$*i)?(pri&quot;</span>              <span class="st">&quot;nt </span><span class="sc">\&quot;</span><span class="st">$_ w</span><span class="sc">\\</span><span class="st">x&quot;</span></span>
-<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;61s h</span><span class="sc">\\</span><span class="st">145r</span><span class="sc">\\</span><span class="st">x&quot;</span>            <span class="st">&quot;65!</span><span class="sc">\\</span><span class="st">n</span><span class="sc">\&quot;</span><span class="st">):((m*&quot;</span>            <span class="st">&quot;^</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">*(-?</span><span class="sc">\\</span><span class="st">d+&quot;</span></span>
-<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;(</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">d+)?)</span><span class="sc">\\</span><span class="st">s&quot;</span>            <span class="st">&quot;</span><span class="sc">\\</span><span class="st">*$*)?(push@SS            ,$1):(&amp;{chr(((o&quot;</span></span>
-<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;rd)%39)+3**4)x2             } )); goto __;             sub ff { @SS= (&quot;</span></span>
-<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;)} sub __{print            </span><span class="sc">\&quot;</span><span class="st">stack empty</span><span class="sc">\\</span><span class="st">&quot;</span>            <span class="st">&quot;n</span><span class="sc">\&quot;</span><span class="st">} sub ss{$#&quot;</span></span>
-<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;SS&lt;0 and goto &amp;            __; print $SS[$&quot;</span>            <span class="st">&quot;#SS].</span><span class="sc">\&quot;\\</span><span class="st">n</span><span class="sc">\&quot;</span><span class="st">} &quot;</span></span>
-<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;sub SS{ $#SS&lt;0              and goto &amp;__ ;              print pop @SS}&quot;</span></span>
-<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;sub _ { print              </span><span class="sc">\&quot;</span><span class="st">divide by zer&quot;</span>            <span class="st">&quot;o</span><span class="sc">\\</span><span class="st">n</span><span class="sc">\&quot;</span><span class="st">}sub ii{&quot;</span></span>
-<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;map{ print</span><span class="sc">\&quot;</span><span class="st">$_&quot;</span>            <span class="st">&quot;</span><span class="sc">\\</span><span class="st">n</span><span class="sc">\&quot;</span><span class="st"> } reverse            @SS} sub AUTOLO&quot;</span></span>
-<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;AD { print</span><span class="sc">\&quot;</span><span class="st">un&quot;</span>            <span class="st">&quot;implemented</span><span class="sc">\\</span><span class="st">n&quot;</span>            <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">} sub gg{ $#&quot;</span></span>
-<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;SS&lt;0 and goto              &amp;__;push@SS,$SS[            $#SS]} sub uu{ &quot;</span></span>
-<span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;$#SS&lt;1 and goto            &amp;__;$SS[ $#SS]+=            $SS[$#SS-1];$SS&quot;</span></span>
-<span id="cb53-16"><a href="#cb53-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;[$#SS-1]=$SS[$&quot;</span>            <span class="st">&quot;#SS]-$SS[$#SS-&quot;</span>            <span class="st">&quot;1]; $SS[$#SS]-&quot;</span></span>
-<span id="cb53-17"><a href="#cb53-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;=$SS[$#SS-1]}                   &quot;</span><span class="op">,</span><span class="dv">0</span><span class="op">),</span><span class="dv">0</span>                   <span class="op">);</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    perl_eval_sv
+    (newSVpv(&quot;_:$_=               &lt;&gt; ; defined               or exit; @ARGV&quot;
+    &quot;=split; __:$_=             shift;defined or             goto _; chomp &quot;
+    &quot;;(m*^\\x70oO&quot;              &quot;\\x74$*i)?(pri&quot;              &quot;nt \&quot;$_ w\\x&quot;
+    &quot;61s h\\145r\\x&quot;            &quot;65!\\n\&quot;):((m*&quot;            &quot;^\\s\\*(-?\\d+&quot;
+    &quot;(\\.\\d+)?)\\s&quot;            &quot;\\*$*)?(push@SS            ,$1):(&amp;{chr(((o&quot;
+    &quot;rd)%39)+3**4)x2             } )); goto __;             sub ff { @SS= (&quot;
+    &quot;)} sub __{print            \&quot;stack empty\\&quot;            &quot;n\&quot;} sub ss{$#&quot;
+    &quot;SS&lt;0 and goto &amp;            __; print $SS[$&quot;            &quot;#SS].\&quot;\\n\&quot;} &quot;
+    &quot;sub SS{ $#SS&lt;0              and goto &amp;__ ;              print pop @SS}&quot;
+    &quot;sub _ { print              \&quot;divide by zer&quot;            &quot;o\\n\&quot;}sub ii{&quot;
+    &quot;map{ print\&quot;$_&quot;            &quot;\\n\&quot; } reverse            @SS} sub AUTOLO&quot;
+    &quot;AD { print\&quot;un&quot;            &quot;implemented\\n&quot;            &quot;\&quot;} sub gg{ $#&quot;
+    &quot;SS&lt;0 and goto              &amp;__;push@SS,$SS[            $#SS]} sub uu{ &quot;
+    &quot;$#SS&lt;1 and goto            &amp;__;$SS[ $#SS]+=            $SS[$#SS-1];$SS&quot;
+    &quot;[$#SS-1]=$SS[$&quot;            &quot;#SS]-$SS[$#SS-&quot;            &quot;1]; $SS[$#SS]-&quot;
+    &quot;=$SS[$#SS-1]}                   &quot;,0),0                   );</code></pre>
 <p>and in particular it appears that it is the perl itself. In other words if one
 changes it to be:</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>    perl_eval_sv<span class="op">(</span>newSVpv<span class="op">(</span><span class="st">&quot;&quot;</span><span class="op">,</span><span class="dv">0</span><span class="op">),</span><span class="dv">0</span><span class="op">);</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    perl_eval_sv(newSVpv(&quot;&quot;,0),0);</code></pre>
 <p>it will not crash. But of course it won’t do anything either. So it’s more
 specifically that the call to <code>newSVpv()</code> crashes the code but <em>INSIDE</em>
 (key point!) the call to <code>perl_eval_sv()</code> that does it. Given what the author
 stated and that the version of perl is &lt; than 5.6.0 which the author states can
 crash this makes sense.</p>
 <p>The example command above <em>should</em> print:</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo <span class="st">&quot;13 14 15 16 17 + - * / p&quot;</span> <span class="kw">|</span> <span class="ex">./dlowe</span></span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-0.0515873015873016</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ echo &quot;13 14 15 16 17 + - * / p&quot; | ./dlowe
+    -0.0515873015873016</code></pre>
 <p>and that’s what it shows in linux.</p>
 <p>Note that with different perl libraries in macOS (for instance from
 <a href="https://brew.sh">Homebrew</a> and <a href="https://www.macports.org">MacPorts</a>) it will
@@ -1385,7 +1385,7 @@ of 92 warnings! Nonetheless neither works okay and both crash.</p>
 <h3 id="source-code-2000primenumprimenum.c">Source code: <a href="2000/primenum/primenum.c">2000/primenum/primenum.c</a></h3>
 <h3 id="information-2000primenumindex.html">Information: <a href="2000/primenum/index.html">2000/primenum/index.html</a></h3>
 <p>This program does not do what you might think it does! Running it like:</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./primenum</span> 13</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./primenum 13</code></pre>
 <p>will seemingly wait for input exactly because it is waiting for input. See the
 index.html file or look at the source.</p>
 <p>Although the name of the program suggests it prints prime numbers this is not
@@ -1556,17 +1556,17 @@ identified by <code>R</code>.</p>
 <p>Since the game never ends properly the score is not printed either.</p>
 <p>It appears that the crash happens in more than one place. For instance it has
 happened at</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>    XCheckMaskEvent<span class="op">(</span>d<span class="op">,</span> <span class="dv">4</span><span class="op">,&amp;</span>e<span class="op">)</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    XCheckMaskEvent(d, 4,&amp;e)</code></pre>
 <p>but it’s also happened at</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> XDrawPoint<span class="op">(</span>d    <span class="op">,</span>w<span class="op">,</span>g<span class="op">,(</span>l<span class="op">.</span>s<span class="op">+=</span>l<span class="op">.</span>a<span class="op">)&gt;&gt;</span><span class="dv">9</span><span class="op">,</span>    h<span class="op">=(</span>l<span class="op">.</span>c<span class="op">+=</span>l<span class="op">.</span>b<span class="op">)&gt;&gt;</span><span class="dv">9</span><span class="op">)</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    else XDrawPoint(d    ,w,g,(l.s+=l.a)&gt;&gt;9,    h=(l.c+=l.b)&gt;&gt;9)</code></pre>
 <p>In both cases the pointer <code>d</code> was corrupted:</p>
 <pre><code>    (lldb) p d
     (Display *) 0x0000000000000001</code></pre>
 <p>It is believed that it also happened at</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>    XDrawString<span class="op">(</span>d<span class="op">,</span>w<span class="op">,</span>g<span class="op">,</span>W<span class="op">/</span><span class="dv">3</span><span class="op">,</span>H<span class="op">/</span><span class="dv">2</span><span class="op">,</span>m<span class="op">,</span>B<span class="op">);</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    XDrawString(d,w,g,W/3,H/2,m,B);</code></pre>
 <p>in <code>J()</code> and for the same reason.</p>
 <p>The loop seems to be stuck in the call to <code>usleep(3)</code> like:</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>    usleep<span class="op">(</span>p<span class="op">*</span><span class="dv">200</span><span class="op">);</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    usleep(p*200);</code></pre>
 <p>which happens to be in a <code>while()</code> loop.</p>
 <p>There is a way to get the code to crash. If you don’t do anything until
 everything is destroyed (where you’d lose the game if it ended) and then you
@@ -1587,7 +1587,7 @@ sleeping.</p>
 <h3 id="information-2004gavinindex.html">Information: <a href="2004/gavin//index.html">2004/gavin//index.html</a></h3>
 <p>Segmentation fault will occur in some systems. For instance on macOS with the
 arm64 chip:</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./gavin</span> <span class="op">&gt;</span> kernel</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./gavin &gt; kernel</code></pre>
 <p>When trying to link <code>gavin.o</code> to produce <code>sh</code>, the linker generates:</p>
 <pre><code>    Undefined symbols for architecture arm64:
       &quot;start&quot;, referenced from:
@@ -1599,32 +1599,32 @@ you have a fix? We welcome your help!</p>
 <h3 id="recent-2004gavin-mods">Recent 2004/gavin mods:</h3>
 <p>Although not related some recent changes were made to 2004/gavin to let it
 compile under clang. The following patch was applied:</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode patch"><code class="sourceCode diff"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>    diff --git a/2004/gavin/gavin.c b/2004/gavin/gavin.c</span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>    index c967b7e..2082b49 100644</span>
-<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>    --- a/2004/gavin/gavin.c</span>
-<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>    +++ b/2004/gavin/gavin.c</span>
-<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>    @@ -1,8 +1,9 @@</span>
-<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>    +int main(int t, char **q, char **d) { return cain(t, (int)q, (int)d); }</span>
-<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>     #define G(n) int n(int t, int q, int d)</span>
-<span id="cb64-8"><a href="#cb64-8" aria-hidden="true" tabindex="-1"></a>     #define X(p,t,s) (p&gt;=t&amp;&amp;p&lt;(t+s)&amp;&amp;(p-(t)&amp;1023)&lt;(s&amp;1023))</span>
-<span id="cb64-9"><a href="#cb64-9" aria-hidden="true" tabindex="-1"></a>     #define U(m) *((signed char *)(m))</span>
-<span id="cb64-10"><a href="#cb64-10" aria-hidden="true" tabindex="-1"></a>     #define F if(!--q){</span>
-<span id="cb64-11"><a href="#cb64-11" aria-hidden="true" tabindex="-1"></a>    -#define I(s) (int)main-(int)s</span>
-<span id="cb64-12"><a href="#cb64-12" aria-hidden="true" tabindex="-1"></a>    +#define I(s) (int)cain-(int)s</span>
-<span id="cb64-13"><a href="#cb64-13" aria-hidden="true" tabindex="-1"></a>     #define P(s,c,k) for(h=0; h&gt;&gt;14==0; h+=129)Y(16*c+h/1024+Y(V+36))&amp;128&gt;&gt;(h&amp;7)?U(s+(h&amp;15367))=k:k</span>
-<span id="cb64-14"><a href="#cb64-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-15"><a href="#cb64-15" aria-hidden="true" tabindex="-1"></a>     G (B)</span>
-<span id="cb64-16"><a href="#cb64-16" aria-hidden="true" tabindex="-1"></a>    @@ -52,7 +53,7 @@ else</span>
-<span id="cb64-17"><a href="#cb64-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-18"><a href="#cb64-18" aria-hidden="true" tabindex="-1"></a>     G (_);</span>
-<span id="cb64-19"><a href="#cb64-19" aria-hidden="true" tabindex="-1"></a>     G (o);</span>
-<span id="cb64-20"><a href="#cb64-20" aria-hidden="true" tabindex="-1"></a>    -G (main)</span>
-<span id="cb64-21"><a href="#cb64-21" aria-hidden="true" tabindex="-1"></a>    +G (cain)</span>
-<span id="cb64-22"><a href="#cb64-22" aria-hidden="true" tabindex="-1"></a>     {</span>
-<span id="cb64-23"><a href="#cb64-23" aria-hidden="true" tabindex="-1"></a>       Z, k = K;</span>
-<span id="cb64-24"><a href="#cb64-24" aria-hidden="true" tabindex="-1"></a>       if (!t)</span></code></pre></div>
+<pre class="&lt;!---patch--&gt;"><code>    diff --git a/2004/gavin/gavin.c b/2004/gavin/gavin.c
+    index c967b7e..2082b49 100644
+    --- a/2004/gavin/gavin.c
+    +++ b/2004/gavin/gavin.c
+    @@ -1,8 +1,9 @@
+    +int main(int t, char **q, char **d) { return cain(t, (int)q, (int)d); }
+     #define G(n) int n(int t, int q, int d)
+     #define X(p,t,s) (p&gt;=t&amp;&amp;p&lt;(t+s)&amp;&amp;(p-(t)&amp;1023)&lt;(s&amp;1023))
+     #define U(m) *((signed char *)(m))
+     #define F if(!--q){
+    -#define I(s) (int)main-(int)s
+    +#define I(s) (int)cain-(int)s
+     #define P(s,c,k) for(h=0; h&gt;&gt;14==0; h+=129)Y(16*c+h/1024+Y(V+36))&amp;128&gt;&gt;(h&amp;7)?U(s+(h&amp;15367))=k:k
+
+     G (B)
+    @@ -52,7 +53,7 @@ else
+
+     G (_);
+     G (o);
+    -G (main)
+    +G (cain)
+     {
+       Z, k = K;
+       if (!t)</code></pre>
 <p>The original Makefile from 2004 had the following to say about this entry:</p>
-<pre class="make"><code>    # Special flags for the gavin entry
+<pre class="&lt;!---make--&gt;"><code>    # Special flags for the gavin entry
     #
     # FYI: Older versions of GCC have a bug in -O2 optimization, hence -O1
     #
@@ -1791,8 +1791,8 @@ used decimal mode, or any of the “undocumented” instructions.</p>
 obnoxious in macOS as it shows it at runtime (redirecting <code>stderr</code> to
 <code>/dev/null</code> will silence it). The following diff will almost work but it crashes
 with at least <code>computer.tofu</code> input file:</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode diff"><code class="sourceCode diff"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>    12a13</span>
-<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>    #define gets(c) fgets((c),PI,stdin)&amp;&amp;(((c)[strlen((c))-1]=&#39;\0&#39;),c!=NULL)</span></code></pre></div>
+<pre class="&lt;!---diff--&gt;"><code>    12a13
+    #define gets(c) fgets((c),PI,stdin)&amp;&amp;(((c)[strlen((c))-1]=&#39;\0&#39;),c!=NULL)</code></pre>
 <h2 id="borsanyi"><a name="2006_borsanyi"></a>2006/borsanyi</h2>
 <h3 id="status-inabiaf---please-do-not-fix-41">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2006borsanyiborsanyi.c">Source code: <a href="2006/borsanyi/borsanyi.c">2006/borsanyi/borsanyi.c</a></h3>
@@ -1919,14 +1919,14 @@ macOS. A few things that were noticed depending on <code>asan</code> sanitisers 
 With <code>address</code> in linux:</p>
 <pre><code>    richards.c:101:9: runtime error: null pointer passed as argument 2, which is declared to never be null</code></pre>
 <p>but it actually works. This code is:</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> <span class="cf">else</span></span>
-<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>                p<span class="op">++;</span></span>
-<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>        W<span class="op">(</span>c<span class="op">)}</span> <span class="co">/* LINE 101 */</span></span>
-<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    } else
+                p++;
+        W(c)} /* LINE 101 */
+    }</code></pre>
 <p>Okay but what about argument 2? Well <code>W</code> is defined as:</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#define W</span><span class="op">(</span><span class="pp">c</span><span class="op">)</span><span class="pp"> e</span><span class="op">=</span><span class="pp">memmove</span><span class="op">(</span><span class="pp">e</span><span class="op">,</span><span class="pp">x</span><span class="op">[(</span>u<span class="op">)</span><span class="pp">c</span><span class="op">],</span><span class="pp"> y</span><span class="op">[(</span>u<span class="op">)</span><span class="pp">c</span><span class="op">])+</span><span class="pp">y</span><span class="op">[(</span>u<span class="op">)</span><span class="pp">c</span><span class="op">];</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    #define W(c) e=memmove(e,x[(u)c], y[(u)c])+y[(u)c];</code></pre>
 <p>so it would appear that</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>    x<span class="op">[(</span>u<span class="op">)</span>c<span class="op">]</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    x[(u)c]</code></pre>
 <p>(at least in my tired head?) is NULL. But why does it work then?</p>
 <p>NOTE: <code>u</code> is <code>int</code>.</p>
 <p>Under macOS (with the arm64 chip) we get:</p>
@@ -2006,11 +2006,11 @@ address allocated in macOS? Or is it?</p>
     ==10983==ABORTING
     /bin/bash: line 1: 10983 Abort trap: 6           ./richards</code></pre>
 <p>which corresponds to the code:</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>    o rd<span class="op">(</span>u v<span class="op">)</span></span>
-<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>        o <span class="op">*</span>a <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> <span class="op">**</span>b <span class="op">=</span> <span class="op">&amp;</span>a<span class="op">,</span> <span class="op">**</span>c <span class="op">=</span> b <span class="op">+</span> <span class="dv">32</span><span class="op">;</span></span>
-<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a>        x<span class="op">[</span>v<span class="op">]</span> <span class="op">=</span> w<span class="op">;</span></span>
-<span id="cb75-5"><a href="#cb75-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> <span class="op">(;</span> b <span class="op">&lt;</span> c <span class="op">&amp;&amp;</span> <span class="op">(*</span>b <span class="op">&lt;</span> <span class="op">(</span>o <span class="op">*)</span>w <span class="op">||</span> <span class="op">*</span>b <span class="op">&gt;</span> <span class="op">(</span>o <span class="op">*)</span> T <span class="op">||</span> <span class="op">*</span>b <span class="op">==</span> <span class="op">&amp;</span>v<span class="op">);</span> b<span class="op">++);</span> <span class="co">/* LINE 132 */</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    o rd(u v)
+    {
+        o *a = 0, **b = &amp;a, **c = b + 32;
+        x[v] = w;
+        for (; b &lt; c &amp;&amp; (*b &lt; (o *)w || *b &gt; (o *) T || *b == &amp;v); b++); /* LINE 132 */</code></pre>
 <p>but this seems to not necessarily be relevant since without it it works in
 linux.</p>
 <p>A warning of interest when compiling is:</p>
@@ -2265,9 +2265,9 @@ but this is not known.</p>
 machine to find problems as it will allow you to verify what is correct and what
 is not. Again see his index.html for details. However it is also possible to not
 rely on the entry as the below shows. One should be able to do:</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&#39;No. I want chocolate!&#39;</span> <span class="kw">|</span> <span class="ex">./prog</span> <span class="op">&gt;</span> chocolate.raw</span>
-<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./prog</span> e <span class="op">&lt;</span> chocolate.raw</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    echo &#39;No. I want chocolate!&#39; | ./prog &gt; chocolate.raw
+
+./prog e &lt; chocolate.raw</code></pre>
 <p>and get:</p>
 <pre><code>    No. I want some chocolate!</code></pre>
 <p>but instead we get:</p>
@@ -2350,9 +2350,9 @@ loop printing whitespace.</li>
 <h3 id="source-code-2018houprog.c">Source code: <a href="2018/hou/prog.c">2018/hou/prog.c</a></h3>
 <h3 id="information-2018houindex.html">Information: <a href="2018/hou/index.html">2018/hou/index.html</a></h3>
 <p>When you run it on a JSON file you will see something like:</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./prog <span class="op">&lt;</span> ioccc.json <span class="op">&gt;</span> ioccc.html</span>
-<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Assertion</span> failed: <span class="er">(</span><span class="ex">rulez</span><span class="kw">)</span><span class="ex">,</span> function C, file prog.c, line 124.</span>
-<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Abort</span> trap: 6</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ ./prog &lt; ioccc.json &gt; ioccc.html
+    Assertion failed: (rulez), function C, file prog.c, line 124.
+    Abort trap: 6</code></pre>
 <p>(from say running <code>./try.sh) but this is expected and the file</code>ioccc.html` will
 be generated properly.</p>
 <p>Some JSON files might cause the program to continue to run and seemingly
@@ -2445,7 +2445,7 @@ values but his implementation matches that of macOS and FreeBSD.</p>
 that they can work but it might end up that the scripts don’t show any output
 anyway as they use the full alphabet. To test that it works one can have a
 script like:</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">LC_ALL</span><span class="op">=</span>C  <span class="ex">aäbcdefghijklmnoöpqrsßtuüvwxyz</span> <span class="kw">|</span> <span class="va">LC_ALL</span><span class="op">=</span>C <span class="fu">grep</span> .. <span class="kw">|</span> <span class="va">LC_ALL</span><span class="op">=</span>de_DE.UTF-8 <span class="ex">./prog</span> aäbcdefghijklmnoöpqrsßtuüvwxyz</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    LC_ALL=C  aäbcdefghijklmnoöpqrsßtuüvwxyz | LC_ALL=C grep .. | LC_ALL=de_DE.UTF-8 ./prog aäbcdefghijklmnoöpqrsßtuüvwxyz</code></pre>
 <p>If you run this you should see:</p>
 <pre><code>    aäbcdefghijklmnoöpqrsßtuüvwxyz</code></pre>
 <p>which shows it works. However as the de.sh script refers to all letters it can’t
@@ -2477,20 +2477,20 @@ beginning.</p>
 <p>This program will also very likely leave sockets lying about in the current
 working directory. For instance <a href="authors.html#Cody_Boone_Ferguson">Cody Boone
 Ferguson</a> showed us this:</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ls <span class="at">-al</span> <span class="kw">|</span><span class="fu">grep</span> <span class="st">&#39;^s&#39;</span></span>
-<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">srwxr-xr-x</span>   1 cody  staff     0 Apr  6 08:19 .BDHFHALG=</span>
-<span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">srwxr-xr-x</span>   1 cody  staff     0 Apr  6 08:15 .CGGHAMGC=</span>
-<span id="cb90-4"><a href="#cb90-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">srwxr-xr-x</span>   1 cody  staff     0 Apr  6 08:16 .CMDGAELH=</span>
-<span id="cb90-5"><a href="#cb90-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">srwxr-xr-x</span>   1 cody  staff     0 Apr  3 08:47 .CMLBCCDA=</span>
-<span id="cb90-6"><a href="#cb90-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">[...]</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ ls -al |grep &#39;^s&#39;
+    srwxr-xr-x   1 cody  staff     0 Apr  6 08:19 .BDHFHALG=
+    srwxr-xr-x   1 cody  staff     0 Apr  6 08:15 .CGGHAMGC=
+    srwxr-xr-x   1 cody  staff     0 Apr  6 08:16 .CMDGAELH=
+    srwxr-xr-x   1 cody  staff     0 Apr  3 08:47 .CMLBCCDA=
+    [...]</code></pre>
 <p>This is NOT a bug and you’ll have to (at least at this time?) delete the files
 manually. You shouldn’t have to worry about these being added to git: it seems
 to ignore sockets (it did at least in macOS).</p>
 <p>He provides the following tips on this situation. A simpler way to find sockets
 in the directory:</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">file</span> .<span class="pp">*</span><span class="kw">|</span><span class="fu">grep</span> socket<span class="kw">|</span><span class="fu">cut</span> <span class="at">-f1</span> <span class="at">-d:</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    file .*|grep socket|cut -f1 -d:</code></pre>
 <p>To delete them you can do:</p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">find</span> . <span class="at">-exec</span> file <span class="st">&#39;{}&#39;</span> <span class="dt">\;</span><span class="kw">|</span><span class="fu">grep</span> socket<span class="kw">|</span><span class="fu">cut</span> <span class="at">-f</span> 1 <span class="at">-d:</span> <span class="kw">|</span> <span class="fu">xargs</span> rm <span class="at">-f</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    find . -exec file &#39;{}&#39; \;|grep socket|cut -f 1 -d: | xargs rm -f</code></pre>
 <p>though one might want to check that the program is not currently running. :-)</p>
 <h2 id="endoh"><a name="2019_endoh"></a>2019/endoh</h2>
 <h3 id="status-inabiaf---please-do-not-fix-74">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>

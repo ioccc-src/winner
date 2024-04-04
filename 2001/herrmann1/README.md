@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -19,7 +19,7 @@ For more detailed information see [2001 herrmann1 bugs](../../bugs.html#2001_her
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./herrmann1.sh 'prg=file'
 ```
 
@@ -30,7 +30,7 @@ need an older compiler perhaps gcc 2.95.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -86,7 +86,7 @@ terminal!
 The info files `herrmann1.turing` and [herrmann1.gcd](herrmann1.gcd) are sample
 programs for the Turing machine. For example, type
 
-```sh
+```<!---sh-->
     ./herrmann1.sh 'prg=herrmann1.times2'
 ```
 
@@ -126,7 +126,7 @@ In the previous example, the Turing machine started on the default
 tape of the program `times2.turing`. To provide your own tape, type
 (for example)
 
-```sh
+```<!---sh-->
     ./herrmann1 prg=times2.turing tape="O O O I I I O O O"
 ```
 
@@ -155,7 +155,7 @@ number in unary representation. (That is, a row of I's is
 expected, and one more I is appended to the row.) Let's call it
 `plus1.turing`. Here's what it could look like:
 
-```c
+```<!---c-->
     /* Search beginning of number. */
     #define start_O O, right, start
     /* Number found. Move one step to the left. */
@@ -177,7 +177,7 @@ line defining `st2_I` has been left out.)
 
 Now, the program can be used with
 
-```sh
+```<!---sh-->
     ./herrmann1.sh 'prg=plus1.turing' 'tape="I I I"'
 ```
 
@@ -187,7 +187,7 @@ machine would start on an empty tape (that is, a tape filled with
 the case for `plus1.turing`). So you might want to provide a
 default tape by adding a line like
 
-```c
+```<!---c-->
     #define tape O O O O O I I I I
 ```
 
@@ -200,13 +200,13 @@ When writing long programs, the most common errors are to forget
 to define a state or to misspell one. Let's assume you forgot the
 line
 
-```c
+```<!---c-->
     #define start_I I, left, st2
 ```
 
 Remove it and type
 
-```sh
+```<!---sh-->
     ./herrmann1 'prg=plus1.turing'
 ```
 

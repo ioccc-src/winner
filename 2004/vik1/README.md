@@ -1,20 +1,20 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./vik1 [arg]
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./vik1
 
     ./vik1 a
@@ -82,7 +82,7 @@ Compile the source code and link X libraries if necessary.
 The program takes three options which have to be typed in a specific
 order as described below.
 
-```sh
+```<!---sh-->
     Usage: ./vik1 ['a']['d'][#]
 
     a   - Advanced racing in a winter landscape

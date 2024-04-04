@@ -1,20 +1,20 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./dodsond1 < text_file
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./dodsond1 < README.md
 ```
 
@@ -32,7 +32,7 @@ You might consider giving the following input:
 
 ... which can be done like:
 
-```c
+```<!---c-->
     ./try.sh
 ```
 

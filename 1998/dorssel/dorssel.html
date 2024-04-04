@@ -150,11 +150,11 @@ two bits would suffice, e.g.</p>
 <p>That means bits 6 and 5 set to 00 is length 1, set to 01 is length 2, etc.
 But this would mean that we would have to extract the length into a
 counter before shifting out each symbol, such as</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    length <span class="op">=</span> <span class="op">(</span>encoding <span class="op">&amp;</span> <span class="dv">96</span><span class="op">)</span> <span class="op">&gt;&gt;</span> <span class="dv">5</span><span class="op">;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">do</span> <span class="op">{</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>            putchar<span class="op">(</span>encoding <span class="op">&amp;</span> <span class="dv">1</span> <span class="op">?</span> <span class="ch">&#39;-&#39;</span> <span class="op">:</span> <span class="ch">&#39;.&#39;</span><span class="op">);</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>            encoding <span class="op">&gt;&gt;=</span> <span class="dv">1</span><span class="op">;</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> <span class="cf">while</span> <span class="op">(</span>length<span class="op">--);</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    length = (encoding &amp; 96) &gt;&gt; 5;
+    do {
+            putchar(encoding &amp; 1 ? &#39;-&#39; : &#39;.&#39;);
+            encoding &gt;&gt;= 1;
+    } while (length--);</code></pre>
 <p>We can also use the remaining bits to <em>include</em> the counter</p>
 <pre><code>    length 1: 00000.1x     E &gt; 00000.11
     length 2: 0000.1xx
@@ -162,10 +162,10 @@ counter before shifting out each symbol, such as</p>
     length 4: 00.1xxxx     Z &gt; 00.11100
     length 5: 0.1xxxxx     3 &gt; 0.100111</code></pre>
 <p>with 1 bit still to be chosen freely (let’s assume it is 0). Now we can do</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">do</span> <span class="op">{</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>            putchar<span class="op">(</span>encoding <span class="op">&amp;</span> <span class="dv">1</span> <span class="op">?</span> <span class="ch">&#39;-&#39;</span> <span class="op">:</span> <span class="ch">&#39;.&#39;</span><span class="op">);</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>            encoding <span class="op">&gt;&gt;=</span> <span class="dv">1</span><span class="op">;</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="op">(</span>encoding <span class="op">&gt;</span> <span class="dv">1</span><span class="op">);</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    do {
+            putchar(encoding &amp; 1 ? &#39;-&#39; : &#39;.&#39;);
+            encoding &gt;&gt;= 1;
+    while (encoding &gt; 1);</code></pre>
 <p>As you see, the encoded Morse sequence can be the counter itself. But
 this is not very pleasant, as some Morse sequences will end up having
 an ASCII value &lt; 32, i.e. they will be control codes. This would make
@@ -179,21 +179,21 @@ following</p>
 <p>Notice these encodings in the initialization string. Only the coding for
 <code>5</code> needs an escape (<code>5 = ..... &gt; 01111111 = '\177'</code>). The way the length
 is encoded still allows the encoding to be its own counter:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">do</span> <span class="op">{</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>            putchar<span class="op">(</span>encoding <span class="op">&amp;</span> <span class="dv">1</span> <span class="op">?</span> <span class="ch">&#39;-&#39;</span> <span class="op">:</span> <span class="ch">&#39;.&#39;</span><span class="op">);</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>            encoding <span class="op">=</span> <span class="op">(</span>encoding <span class="op">+</span> <span class="dv">32</span><span class="op">)</span> <span class="op">&gt;&gt;</span> <span class="dv">1</span><span class="op">;</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> <span class="cf">while</span> <span class="op">(</span>encoding <span class="op">&gt;</span> <span class="dv">35</span><span class="op">);</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    do {
+            putchar(encoding &amp; 1 ? &#39;-&#39; : &#39;.&#39;);
+            encoding = (encoding + 32) &gt;&gt; 1;
+    } while (encoding &gt; 35);</code></pre>
 <p>The last shift will always result in <code>00100010</code>, hence the test for <code>&gt;35</code>.
 Note that the calculation for the next value of <code>encoding</code> is done at <code>int</code>
 precision, so that the actual value of the <code>char</code> remains <code>&lt;= 127</code>.</p>
 <p>The character <code>'-'</code> (ASCII 45) and <code>'.'</code> (ASCII 46) are conveniently in
 sequence, so the putchar can simply be</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    putchar<span class="op">(</span><span class="dv">45</span> <span class="op">+</span> encoding <span class="op">%</span> <span class="dv">2</span><span class="op">);</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    putchar(45 + encoding % 2);</code></pre>
 <p>I used the modulo operator this time, because <code>+</code> takes precedence over <code>&amp;</code>.
 The assignment can be incorporated into the <code>while</code> control test, and a
 <code>do-while</code> loop with a body of a single expression statement can be written
 as a <code>while</code> loop with a comma operator in the test:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span><span class="op">(</span>putchar<span class="op">(</span><span class="dv">45</span> <span class="op">+</span> encoding <span class="op">%</span> <span class="dv">2</span><span class="op">),</span> encoding <span class="op">=</span> encoding <span class="op">+</span> <span class="dv">32</span> <span class="op">&gt;&gt;</span> <span class="dv">1</span><span class="op">);</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    while(putchar(45 + encoding % 2), encoding = encoding + 32 &gt;&gt; 1);</code></pre>
 <p>Voila.</p>
 <p>Now, the decoding of Morse codes is just the reverse. We shift in <code>0</code>s
 and <code>1</code>s as we scan the line. But: we have to scan from back to front

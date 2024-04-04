@@ -194,7 +194,7 @@ you encounter should give you more appreciation for the entry.</p>
 <p>If you have the energy to type in the text, or if you have access to a machine
 readable version of these programs, you should next consider some preprocessing
 such as:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sed</span> <span class="at">-e</span> <span class="st">&#39;/^#.*include/d&#39;</span> prog.c <span class="kw">|</span> <span class="fu">cc</span> <span class="at">-E</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>sed -e &#39;/^#.*include/d&#39; prog.c | cc -E</code></pre>
 <p>This strips away comments and expands the program’s macros without having things
 such as includes and macros cluttering up the output. If the entry requires or
 suggests the use of compile line options (such as <code>-Dindex=strchr</code>) they should

@@ -141,21 +141,21 @@ Location: <a href="../../location.html#GB">GB</a> - <em>United Kingdom of Great 
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: missing files - please provide them</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2001_rosten">2001 rosten bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./rosten</span> <span class="pp">[</span><span class="ss">number</span><span class="pp">]</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./rosten [number]</code></pre>
 <p>WARNING: this will mess with your mouse and can make it hard to quit the
 program. Use at your own risk.</p>
 <p>NOTE: number is floating point.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./rosten</span> 1.03</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./rosten</span> 1.00</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./rosten 1.03
+    ./rosten 1.00</code></pre>
 <p>For some abuse, try:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./rosten</span> 0.99</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./rosten 0.99</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Friction can be your friend if it does not rub you (or your mouse
 cursor) in the wrong way. :-)</p>
@@ -163,7 +163,7 @@ cursor) in the wrong way. :-)</p>
 <h3 id="name">NAME</h3>
 <p><code>rosten</code> - make the mouse act as if it has been greased</p>
 <h3 id="synopsis">SYNOPSIS</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./rosten</span> <span class="pp">[</span><span class="ss">greasiness</span><span class="pp">]</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./rosten [greasiness]</code></pre>
 <h3 id="description">DESCRIPTION</h3>
 <p>This program is designed primarily to make your X windows interface more
 obfuscated. Try doing something mouse driven (such as using a mouse
@@ -183,15 +183,15 @@ required is a large desk and some good grease.</p>
 portable, but compile with almost no warnings on most of the compilers
 tested. It’s a kind of shame that none of the compilers do anything
 like this:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> make greasymouse</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> greasymouse.c <span class="at">-o</span> greasymouse <span class="at">-lX11</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">greasymouse.c:30:</span> This macro should have more text and spaces in it</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">greasymouse.c:32:</span> This is a really stupid way to perform this operation</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">greasymouse.c:42:</span> This program would look better with a newline here</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">greasymouse.c:48:</span> That<span class="st">&#39;s a really silly thing to do</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="st">    greasymouse.c:55: So is that</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="st">    ...</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="st">    greasymouse.c:58: This program is rubbish. I&#39;</span>m not going to link it.</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    $ make greasymouse
+    cc greasymouse.c -o greasymouse -lX11
+    greasymouse.c:30: This macro should have more text and spaces in it
+    greasymouse.c:32: This is a really stupid way to perform this operation
+    greasymouse.c:42: This program would look better with a newline here
+    greasymouse.c:48: That&#39;s a really silly thing to do
+    greasymouse.c:55: So is that
+    ...
+    greasymouse.c:58: This program is rubbish. I&#39;m not going to link it.</code></pre>
 <p>The code is best viewed with <a href="https://en.wikipedia.org/wiki/Tab_stop">tab stops</a> every 8 spaces.</p>
 <h3 id="bugs">BUGS</h3>
 <p>The mouse gets stuck completely if you give it an option of less
@@ -213,7 +213,7 @@ would never do a thing like that: I just haven’t used them in
 the way it’s used to.</p>
 <p>The MIPS compiler suggests an <code>==</code> instead of an <code>=</code> in expressions
 such as:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="op">&amp;&amp;(</span>a<span class="op">=</span>b<span class="op">)</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    &amp;&amp;(a=b)</code></pre>
 <p>but its suggestions would break my program. It also reckons
 that <code>r()</code> has no prototype.</p>
 <p>Giving the <code>-pedantic</code> option to the MIPS compiler causes it to generate

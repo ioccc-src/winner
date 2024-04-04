@@ -141,14 +141,14 @@ Location: <a href="../../location.html#GB">GB</a> - <em>United Kingdom of Great 
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <p>NOTE: this may take a while. Some systems may have problems building
 this entry because of the system resources it requires.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./fanf</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./fanf</code></pre>
 <h2 id="try">Try:</h2>
 <p>Enter an expression on standard input. To try some we have selected:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <h3 id="historical-aside">Historical aside:</h3>
 <p>At a time the code in <a href="fanf.c">fanf.c</a> was that of <a href="fanf.orig.c">fanf.orig.c</a>
@@ -165,7 +165,7 @@ source.</p>
 <code>fanftmp2.c</code> C program. Take a look at that final C program again,
 can you begin to understand what it is doing?</p>
 <p>Look at the first stage of the C pre-processing which was done like:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cc</span> fanf.c <span class="at">-E</span> <span class="op">&gt;</span> fanftmp1.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    cc fanf.c -E &gt; fanftmp1.c</code></pre>
 <p>Skip to the bottom of <code>fanftmp1.c</code> (after all of the C pre-processor header
 stuff … look for a line of the form: <code># 38 "fanf.c"</code> near the bottom)
 and look at the resulting code. This code, when C pre-processed

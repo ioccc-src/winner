@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -10,7 +10,7 @@ below.
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./prog file1 file2
 
     ./prog -d file1 file2
@@ -19,7 +19,7 @@ below.
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -32,7 +32,7 @@ entry but was changed to be the alt version.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 

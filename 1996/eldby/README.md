@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -11,7 +11,7 @@ section.
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./eldby.alt
 ```
 
@@ -28,7 +28,7 @@ problematic for some people, can be configured to different speeds by way of the
 value used in `usleep()`. The default is `35000` but you can easily change
 it. To do so try:
 
-```sh
+```<!---sh-->
     make SLEEP=20000 clobber alt
     ./eldby.alt
 ```
@@ -41,7 +41,7 @@ This version is the original which has no sleep time in between updates.
 
 ### Original build:
 
-```sh
+```<!---sh-->
     make all
 ```
 

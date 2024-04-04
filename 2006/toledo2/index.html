@@ -141,7 +141,7 @@ Location: <a href="../../location.html#MX">MX</a> - <em>United Mexican States</e
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>There is <a href="#alternate-code">alternate code</a> that is based on the author’s notes
 for DOS/Windows. This cannot be tested by us, not even to compile, but it appears
 that it should be fine, after the proper header files were added.</p>
@@ -150,12 +150,12 @@ that it should be fine, after the proper header files were added.</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2006_toledo2">2006 toledo2 bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./toledo2</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./toledo2</code></pre>
 <p>To end execution press <code>ctrl-z</code>. As mentioned in the author’s remarks and in the
 below section, it is supposed to crash on termination though some noted this
 does not seem to happen in macOS or linux in 2023.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./toledo2</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./toledo2</code></pre>
 <p>and then type in the following:</p>
 <pre><code>    10 PRINT &quot;HELLO WORLD!&quot;
     LIST
@@ -165,7 +165,7 @@ does not seem to happen in macOS or linux in 2023.</p>
 <p>This version, as noted, should work for DOS/Windows. It uses non-standard
 functions in place of <code>read(2)</code> and <code>write(2)</code>.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>The author noted that for PC/DOS you will have to add <code>ANSI.SYS</code> to your
 <code>CONFIG.SYS</code> but this is also something we can’t test.</p>
@@ -203,7 +203,7 @@ the very first volume of <a href="https://en.wikipedia.org/wiki/Dr._Dobb%27s_Jou
 Journal</a>.</p>
 <p>Type using uppercase letters. Here are three example programs. Press Enter after
 each line:</p>
-<pre class="basic"><code>    10 PRINT &quot;Hello, world!&quot;
+<pre class="&lt;!---basic--&gt;"><code>    10 PRINT &quot;Hello, world!&quot;
     LIST
     RUN
 
@@ -236,7 +236,7 @@ from the <code>SOURCE</code> directory:</p>
 PIP.COM  STAT.COM  SUBMIT.COM XSUB.COM</code></pre>
 <p>To import them, you must run the emulator with an argument, by
 example:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./toledo2</span> DDT.COM</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./toledo2 DDT.COM</code></pre>
 <p>When the <code>&gt;</code> prompt appears, do:</p>
 <pre><code>    IMPORT DDT.COM</code></pre>
 <p>When it ends, do <code>HALT</code>, so the file is closed, and you can start

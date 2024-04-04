@@ -144,20 +144,20 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>There is alternate code that lets you redefine the port to bind to, in case
 there is a firewall issue, and also lets you redefine the timing constant,
 <code>STARDATE</code>. See <a href="#alternate%20code">Alternate code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> <span class="op">&lt;</span> some_secret_or_something</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> http://host<span class="pp">[</span><span class="ss">:port</span><span class="pp">]</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; some_secret_or_something
+
+    ./prog http://host[:port]</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> <span class="op">&lt;</span> README.md</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; README.md</code></pre>
 <p>or maybe:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;IOCCC 2014!&quot;</span> <span class="kw">|</span> <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    echo &quot;IOCCC 2014!&quot; | ./prog</code></pre>
 <p>Next, try in another terminal, as the above one is running:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> http://127.0.0.1:1701</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog http://127.0.0.1:1701</code></pre>
 <p>What happens if you specify instead of a regular file something like
 <code>/dev/null</code> ?</p>
 <p>But there’s more! Try opening in a browser the same address and then see what
@@ -168,9 +168,9 @@ problem for some reason, and it also allows you to change the timing as
 described by the author. See <a href="#configuration">configuration</a> below.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <p>To specify the port to say, 31337, try:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> clobber PORT=31337 alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make clobber PORT=31337 alt</code></pre>
 <p>To change the timing constant, <code>STARDATE</code>, try:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> clobber TIME=5000000 alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make clobber TIME=5000000 alt</code></pre>
 <p>You can combine them both of course.</p>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>prog.alt</code> as you would <code>prog</code> above. Remember that ports &lt; 1024 are
@@ -194,14 +194,14 @@ a client-side downloader. The hidden transmitted data cannot be reconstructed
 or even detected from the binary content of the traffic between the client and
 the server.</p>
 <h2 id="to-use-web-server">To use web server</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> <span class="op">&lt;</span> secret_file_to_be_downloaded</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; secret_file_to_be_downloaded</code></pre>
 <p>Try using the program’s source code as the secret file:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> <span class="op">&lt;</span> prog.c</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; prog.c</code></pre>
 <h2 id="to-use-client-side-downloader">To use client-side downloader</h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> http://host<span class="pp">[</span><span class="ss">:port</span><span class="pp">]</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog http://host[:port]</code></pre>
 <p>The optional port defaults to 1701. If the web server instance is started on
 the same box, try:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span> http://127.0.0.1:1701</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog http://127.0.0.1:1701</code></pre>
 <p>It will incrementally display the contents of the hidden file at a rate of
 approximately 1 baud.</p>
 <p>The client-side downloader will automatically terminate if the web server is
@@ -296,15 +296,15 @@ numerical values.</li>
 <h3 id="compiler-warnings">Compiler warnings</h3>
 <p>For space considerations, the following include statements were dropped
 resulting in compiler warnings:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#include </span><span class="im">&lt;asm/byteorder.h&gt;</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#include </span><span class="im">&lt;ctype.h&gt;</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#include </span><span class="im">&lt;netinet/in.h&gt;</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#include </span><span class="im">&lt;stdlib.h&gt;</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#include </span><span class="im">&lt;string.h&gt;</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#include </span><span class="im">&lt;sys/select.h&gt;</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#include </span><span class="im">&lt;sys/socket.h&gt;</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#include </span><span class="im">&lt;sys/types.h&gt;</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#include </span><span class="im">&lt;sys/unistd.h&gt;</span></span></code></pre></div>
+<pre class="&lt;!---c--&gt;"><code>    #include &lt;asm/byteorder.h&gt;
+    #include &lt;ctype.h&gt;
+    #include &lt;netinet/in.h&gt;
+    #include &lt;stdlib.h&gt;
+    #include &lt;string.h&gt;
+    #include &lt;sys/select.h&gt;
+    #include &lt;sys/socket.h&gt;
+    #include &lt;sys/types.h&gt;
+    #include &lt;sys/unistd.h&gt;</code></pre>
 <p>It may be necessary to restore some of these under certain environments.</p>
 <!--
 

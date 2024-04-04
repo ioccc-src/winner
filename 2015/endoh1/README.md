@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -11,7 +11,7 @@ require it](../../faq.html#tcpserver).
 
 ## To use:
 
-```sh
+```<!---sh-->
     tcpserver -v 127.0.0.1 10333 ./prog ioccc.txt
 ```
 
@@ -44,7 +44,7 @@ his work.
 
 Compile the program as follows:
 
-```sh
+```<!---sh-->
     cc -O3 -std=c99 \
 	   -Wall -Wextra -pedantic -o prog prog.c \
 	   -Delta_u="Du*laplacian(u)-u*v*v+F*(1-u)" \
@@ -59,7 +59,7 @@ Then, run it with the `tcpserver` command in the
 [Daniel J. Bernstein](../../authors.html#Daniel_J_Bernstein)'s
 [1991/brndstd](../../1991/brnstnd/index.html) "Best of Show".
 
-```sh
+```<!---sh-->
     tcpserver -v 127.0.0.1 10333 ./prog ioccc.txt
 ```
 

@@ -144,21 +144,21 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <p>We recommend you try the alt version first so you can get a better idea of what
 this entry was like back in 1993. See the <a href="#original-code">original code</a>
 section below to run the original.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <p>NOTE: this entry requires the <code>X11/Xlib.h</code> header file and the X11 library to
 compile. If you’re under macOS and do not know how to install and use X11
 programs see <a href="../../faq.html#X11macos">FAQ 3.7 - How do I compile and use on macOS, an IOCCC entry that
 requires X11?</a>.</p>
 <p>To configure how many microseconds to sleep before updates try:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> clobber SLEEP=200 alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make clobber SLEEP=200 alt</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: known bug - please help us fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1993_cmills">1993 cmills bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">DISPLAY</span><span class="op">=</span><span class="st">&quot;your_X_server_display&quot;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">DISPLAY</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./cmills.alt</span> <span class="pp">[</span><span class="ss">speed</span><span class="pp">]</span>        <span class="co"># must be run on an X11 server</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    DISPLAY=&quot;your_X_server_display&quot;
+    export DISPLAY
+    ./cmills.alt [speed]        # must be run on an X11 server</code></pre>
 <p>where:</p>
 <p><code>speed</code> is update speed from 1 to 9 (default is 9).</p>
 <p>NOTE: in most cases <code>DISPLAY</code> should already be set.</p>
@@ -166,7 +166,7 @@ requires X11?</a>.</p>
 <p>We recommend the version that uses <code>usleep(3)</code> to more easily see what is going
 on but you can use the original without any delays if you wish.</p>
 <h3 id="original-build">Original build:</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <h3 id="original-use">Original use:</h3>
 <p>Use <code>cmills</code> as you would <code>cmills.alt</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>

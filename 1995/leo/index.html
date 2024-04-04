@@ -141,16 +141,16 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> all</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: known bug - please help us fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1995_leo">1995 leo bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./leo</span> [ deep ] [ right ] [ Variable ] [ cycle [ freq ] ]</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./leo [ deep ] [ right ] [ Variable ] [ cycle [ freq ] ]</code></pre>
 <p>See the author’s information below on these details.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Press return after each image is drawn.</p>
 <p>The variable names are element-ary. If you find this confusing,
@@ -163,7 +163,7 @@ the secret switches that the author doesn’t divulge ! (All switches are single
 characters on the command line - anything that’s not a number is a candidate.)</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>The usage is:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./leo</span> [ deep ] [ right ] [ Variable ] [ cycle [ freq ] ]</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./leo [ deep ] [ right ] [ Variable ] [ cycle [ freq ] ]</code></pre>
 <p>where the first three are literal words, <code>cycle</code> is a positive integer (0 is
 ignored), and <code>freq</code> is an integer (default = 0) that’s supposed to be in the
 range <code>0..100</code> (bigger values are allowed, however). Invalid parameters and
@@ -173,7 +173,7 @@ equivalent to <code>./leo 0 0 0 1 Variable 70 right</code>, etc.</p>
 <p>If <code>Variable</code> is used, <code>cycle</code> is almost ignored (see below) but has
 to be present if you want to enter <code>freq</code> (and you usually do).</p>
 <p>Some options to try (besides the obvious):</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./leo</span> 1 <span class="kw">|</span> <span class="fu">cat</span> <span class="at">-</span> /dev/tty <span class="kw">|</span> <span class="fu">gs</span> <span class="at">-</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./leo 1 | cat - /dev/tty | gs -</code></pre>
 <p>This draws the basic pattern I invented in high school:</p>
 <p>You take a big sheet of “arithmetic” paper and draw a line
 of length 1 (between 2 crossings) at the center of the sheet:</p>
@@ -253,11 +253,11 @@ the opening for step 1 is not a single line but a cross:</p>
 <pre><code>                                \./
                                 / \</code></pre>
 <p>To watch it repeatedly (as a screen saver), use:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./leo</span> 2 <span class="kw">|</span> <span class="fu">cat</span> <span class="at">-</span> /dev/tty <span class="kw">|</span> <span class="fu">gs</span> <span class="at">-</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./leo 2 | cat - /dev/tty | gs -</code></pre>
 <p>The command line:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./leo</span> Variable 1 <span class="kw">|</span> <span class="fu">cat</span> <span class="at">-</span> /dev/tty <span class="kw">|</span> <span class="fu">gs</span> <span class="at">-</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./leo Variable 1 | cat - /dev/tty | gs -</code></pre>
 <p>draws the same as above. Try:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./leo</span> Variable 1 1 <span class="kw">|</span> <span class="fu">cat</span> <span class="at">-</span> /dev/tty <span class="kw">|</span> <span class="fu">gs</span> <span class="at">-</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./leo Variable 1 1 | cat - /dev/tty | gs -</code></pre>
 <p>What happened to the picture? Increase <code>freq</code> and watch the changes.</p>
 <p>If <code>cycle</code> is more than 1, the program loops, allowing the user to
 enjoy randomly changing patterns (the delay is 3 seconds),
@@ -272,7 +272,7 @@ if you want to pipe the output to a printer.</p>
 <p>If <code>Variable</code> is used, the actual value of <code>cycle</code> doesn’t matter,
 as far as it is &gt; 1. To figure out what difference
 <code>cycle</code> makes when <code>Variable</code> is not used, try</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./leo</span> Variable 37 80 <span class="kw">|</span> <span class="fu">cat</span> <span class="at">-</span> /dev/tty <span class="kw">|</span> <span class="fu">gs</span> <span class="at">-</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./leo Variable 37 80 | cat - /dev/tty | gs -</code></pre>
 <p>and other values of <code>cycle</code>; smaller values usually require
 smaller values of <code>freq</code> for the patterns to be non-trivial.</p>
 <p>The options <code>deep</code> and <code>right</code> make the patterns to be drawn in different

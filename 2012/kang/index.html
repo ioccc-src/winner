@@ -141,17 +141,17 @@ Location: <a href="../../location.html#KR">KR</a> - <em>Republic of Korea</em> (
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <p>There is alternate code which fixes some German at the expense of other German.
 See <a href="#alternate-code">Alternate code</a> below for the (fun) rationale here.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;full spelling of an English cardinal numeral less than a quadrillion&quot;</span> <span class="kw">|</span> <span class="ex">./kang</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    echo &quot;full spelling of an English cardinal numeral less than a quadrillion&quot; | ./kang</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span> <span class="co"># try various languages</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./en.sh</span> <span class="co"># English 0 through 13</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./de.sh</span> <span class="co"># German 0 through 13 with both umlauts and without (additional &#39;e&#39;)</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh # try various languages
+
+    ./en.sh # English 0 through 13
+
+    ./de.sh # German 0 through 13 with both umlauts and without (additional &#39;e&#39;)</code></pre>
 <p>How does it have no <code>u</code> or <code>o</code> in a string in the source code and yet it gets
 <code>uno</code> right?</p>
 <h2 id="alternate-code">Alternate code:</h2>
@@ -164,19 +164,19 @@ deal with it :-) It also breaks other words too and this happens only for one
 letter change. With this one should hopefully be able to really appreciate the
 subtlety of this entry even more.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> alt</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;full spelling of an English cardinal numeral less than a quadrillion&quot;</span> <span class="kw">|</span> <span class="ex">./kang.alt</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> vier <span class="kw">|</span> <span class="ex">./kang.alt</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> uno <span class="kw">|</span> <span class="ex">./kang.alt</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    echo &quot;full spelling of an English cardinal numeral less than a quadrillion&quot; | ./kang.alt
+
+    echo vier | ./kang.alt
+
+    echo uno | ./kang.alt</code></pre>
 <h3 id="alternate-try">Alternate try:</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.alt.sh</span> <span class="co"># try various languages</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./en.alt.sh</span> <span class="co"># English 0 through 13</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./de.alt.sh</span> <span class="co"># German 0 through 13 with both umlauts and without (additional &#39;e&#39;)</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh # try various languages
+
+    ./en.alt.sh # English 0 through 13
+
+    ./de.alt.sh # German 0 through 13 with both umlauts and without (additional &#39;e&#39;)</code></pre>
 <p>What does it get right? What does it get wrong? How does it compare to the
 original entry without the change of <code>f</code> to <code>v</code>?</p>
 <p>Finally why does it get wrong what it gets wrong?</p>
@@ -188,9 +188,9 @@ German, Italian, Russian, and Spanish numerals.</p>
 colloquial year numbers of the last millennium.</p>
 <p>We’ve added a linefeed to the print format for convenience.</p>
 <p>Can you explain why:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> f hundr<span class="kw">|</span><span class="ex">./kang</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    echo f hundr|./kang</code></pre>
 <p>correctly reports 500 but:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> hundr<span class="kw">|</span><span class="ex">./kang</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    echo hundr|./kang</code></pre>
 <p>does not report 100, instead printing 0?</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="synopsis">Synopsis</h3>

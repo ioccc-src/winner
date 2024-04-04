@@ -141,20 +141,20 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./prog</code></pre>
 <p>Press the up arrow and the down arrow at the right time.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Did you find that mobile application game a bit frustrating?
 Well you can adjust the Makefile parameters to make life a
 bit easier for you:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./try.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
 <p>which runs:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> clobber all DW=199999 DW=22 DH=16 DA=50 DI=-150</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make clobber all DW=199999 DW=22 DH=16 DA=50 DI=-150
+    ./prog</code></pre>
 <p>From the Makefile:</p>
 <pre><code>    # Game parameters
     #
@@ -240,9 +240,9 @@ characters (needed for UTF-8 support, which is needed for emojis), you may need
 to make some changes to the <code>Makefile</code> to get emojis to work on your system.
 To help you get started, I’ve included some example substitutions for emojis
 sprites and instruction text; for example, type</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> EMOJI=beer LANGUAGE=spanish</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make EMOJI=beer LANGUAGE=spanish</code></pre>
 <p>or</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> EMOJI=globe</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    make EMOJI=globe</code></pre>
 <p>for some examples (the full list of options is in the <code>Makefile</code>). Don’t forget
 to <code>make clobber</code> first (or use <code>make -B</code>). If the output doesn’t look right,
 you may need to link with the “wide” version of <code>ncurses</code>. On MacOSX 10.11, it

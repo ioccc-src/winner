@@ -1,6 +1,6 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
@@ -10,14 +10,14 @@ code](#alternate-code) below.
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./prog
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -29,7 +29,7 @@ The alternate version, [prog.alt.c](prog.alt.c), has the main code as a macro.
 
 ### Alternate build:
 
-```sh
+```<!---sh-->
     make alt
 ```
 
@@ -61,7 +61,7 @@ exactly what it says nonetheless.
 
 Compile and try this:
 
-```sh
+```<!---sh-->
     cat input.txt | ./prog
 ```
 

@@ -1,20 +1,20 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./schneiderwent
 ```
 
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./schneiderwent schneiderwent.data
     ./schneiderwent
 ```
@@ -24,7 +24,7 @@ What's the difference?
 If you have a long while to spare (and you're bored enough that you could watch
 paint dry :-) ) you might also try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -33,7 +33,7 @@ you wish to make it run faster, you can override how long it sleeps per
 iterations and how many iterations it runs. For instance to make it sleep only
 30 seconds and run only twice:
 
-```sh
+```<!---sh-->
     SLEEP=30 ITERATIONS=2 ./try.sh
 ```
 

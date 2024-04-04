@@ -451,9 +451,9 @@ setting the max size to a smaller value than the size you specify (or the
 default) or setting the size to higher than the default (or &lt; 0 which will end
 up being &gt; the max size though I suppose there might be some value that makes it
 less than again - I’m not going to try and figure that out however). Anyway:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">SIZE</span><span class="op">=</span>-1 <span class="ex">./prog</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">YOU</span> WIN!</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">X:24/49</span> Y:8/16 S:658/658 B:0</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    SIZE=-1 ./prog
+    YOU WIN!
+    X:24/49 Y:8/16 S:658/658 B:0</code></pre>
 <p>Observe that the size isn’t the default 997: because the screen size is too
 small for that value (see <a href="terminals.md">terminals.md</a>).</p>
 <p>The reason I chose 997 is that it leaves a bit of a challenge for some (maybe
@@ -499,22 +499,22 @@ you have any form of epilepsy. Thank you.</strong></p>
 <p>If you want to draw the snake wherever you like on the screen you can do this by
 modifying the wait time (for input) to -1 (or any value &lt; 0): then the snake
 does not move until you press a movement key. For example:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">WAIT</span><span class="op">=</span>-1 <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    WAIT=-1 ./prog</code></pre>
 <p>When you eat a bug the snake will grow and you can draw more. If you want to
 make it so you can go through yourself:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">WAIT</span><span class="op">=</span>-1 <span class="va">CANNIBAL</span><span class="op">=</span>1 <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    WAIT=-1 CANNIBAL=1 ./prog</code></pre>
 <p>If you don’t want to start out so small (i.e. you want to be able to draw more
 quickly) you can just set the size to a bigger number (and you could do the same
 with growth and moult/shed):</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">SIZE</span><span class="op">=</span>50 <span class="va">CANNIBAL</span><span class="op">=</span>1 <span class="va">WAIT</span><span class="op">=</span>-1 <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    SIZE=50 CANNIBAL=1 WAIT=-1 ./prog</code></pre>
 <p>Do note that although you’re a bigger size you still grow one movement at a
 time.</p>
 <p>Okay but then if you get too many bugs the drawing will be over. If this proves
 to be a problem simply do:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">SIZE</span><span class="op">=</span>100 <span class="va">CANNIBAL</span><span class="op">=</span>1 <span class="va">WAIT</span><span class="op">=</span>-1 <span class="va">GROW</span><span class="op">=</span>0 <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    SIZE=100 CANNIBAL=1 WAIT=-1 GROW=0 ./prog</code></pre>
 <p>Or something like that (maybe make the size bigger but that’s up to you). You
 could also set the max size to be the highest possible by saying</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">MAXSIZE</span><span class="op">=</span>-1</span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    MAXSIZE=-1</code></pre>
 <p>Which I’ve done in the <a href="play.sh">play.sh</a> script.</p>
 <p>I discuss how this mode works in [spoilers.markdown][].</p>
 <p>Here’s an example run where I spelt ‘SNAKE’. As you can see it’s far from
@@ -536,7 +536,7 @@ different colours and depending on the exact parameters you specify it could
 easily be in the trigger range for epilepsy but potentially stimulation overload
 too.</p>
 <p>If you’re still here you can create this effect like:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">WAIT</span><span class="op">=</span>0 <span class="va">WALLS</span><span class="op">=</span>1 <span class="va">CANNIBAL</span><span class="op">=</span>1 <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    WAIT=0 WALLS=1 CANNIBAL=1 ./prog</code></pre>
 <p>As long as the bug evades you’ll find that the snake is growing because it’s
 actually eating bugs; the computer is actually playing the game by itself! You
 can still move the snake though it won’t seem like you have much control over
@@ -553,14 +553,14 @@ happen because the bug has to find a X and Y coordinate that’s not occupied an
 so with fewer available it has a harder time finding a place in that one line.</p>
 <h3 id="computer-player-variations"><a name="auto-variations" href="#toc">Computer player variations</a></h3>
 <p>Here’s how to make the bug move every time the snake moves:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">CANNIBAL</span><span class="op">=</span>1 <span class="va">WALLS</span><span class="op">=</span>1 <span class="va">WAIT</span><span class="op">=</span>0 <span class="va">EVADE</span><span class="op">=</span>1 <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    CANNIBAL=1 WALLS=1 WAIT=0 EVADE=1 ./prog</code></pre>
 <h4 id="help-the-computer-win-fairly-quickly">Help the computer win fairly quickly</h4>
 <p>If you want to see the game ‘win’ try something like:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">CANNIBAL</span><span class="op">=</span>1 <span class="va">WALLS</span><span class="op">=</span>1 <span class="va">WAIT</span><span class="op">=</span>0 <span class="va">EVADE</span><span class="op">=</span>1 <span class="va">MAXSIZE</span><span class="op">=</span>10 <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    CANNIBAL=1 WALLS=1 WAIT=0 EVADE=1 MAXSIZE=10 ./prog</code></pre>
 <h4 id="negative-growth-shrink-automatic-mode">Negative growth (Shrink) Automatic mode</h4>
 <p>Here’s a fun one I just thought of (a long time after these other modes were
 thought of):</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">WAIT</span><span class="op">=</span>0 <span class="va">EVADE</span><span class="op">=</span>1 <span class="va">GROW</span><span class="op">=</span>-1 <span class="va">SIZE</span><span class="op">=</span>9 <span class="va">MAXSIZE</span><span class="op">=</span>10 <span class="va">CANNIBAL</span><span class="op">=</span>1 <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    WAIT=0 EVADE=1 GROW=-1 SIZE=9 MAXSIZE=10 CANNIBAL=1 ./prog</code></pre>
 <p>What you’ll see is that first the snake will get to the size of 9 - whether it
 shows to be 10 characters depends on whether or not it gets a bug before it can
 get to that length - and then it’ll start shrinking until it’s just the head
@@ -568,7 +568,7 @@ then the head again (i.e. 1 then 0 in size) and then win! This is also in the
 <a href="play.sh">play.sh</a> script.</p>
 <h4 id="adjusting-the-timespeed">Adjusting the time/speed</h4>
 <p>Of course you can also do something like:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">WAIT</span><span class="op">=</span>5 <span class="va">WALLS</span><span class="op">=</span>1 <span class="va">CANNIBAL</span><span class="op">=</span>1 <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    WAIT=5 WALLS=1 CANNIBAL=1 ./prog</code></pre>
 <p>Which although might not seem like it is significantly slower.</p>
 <h4 id="moving-the-snake-about-to-create-patterns">Moving the snake about to create patterns</h4>
 <p>If you press different direction keys in some pattern you will see a pattern
@@ -578,7 +578,7 @@ suppose also how much the bug moves and the chance of being eaten also).</p>
 <p>Here’s an idea: how many moves is needed to make it possible to have some sort
 of success in catching bugs? Obviously the dimensions will affect this value.</p>
 <p>How long will it take for the snake to run into itself? For instance by doing:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">WAIT</span><span class="op">=</span>0 <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    WAIT=0 ./prog</code></pre>
 <p>On my 13” MacBook Pro (replaced later by a 16”) at the default settings going
 horizontally the snake ran into itself at:</p>
 <pre><code>    OW!
@@ -592,7 +592,7 @@ or growing to the full size directly. This is how it works:</p>
 <p>You have a negative shedding growth and a positive growth size: negative and
 positive winning. Depending on the parameters specified it might go one way over
 the other. Try:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">SIZE</span><span class="op">=</span>150 <span class="va">SHEDS</span><span class="op">=</span>-5 <span class="va">GROW</span><span class="op">=</span>10 <span class="va">SHED</span><span class="op">=</span>50 <span class="va">MAXSIZE</span><span class="op">=</span>250 <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    SIZE=150 SHEDS=-5 GROW=10 SHED=50 MAXSIZE=250 ./prog</code></pre>
 <p>What this does is set the size to 150 (to make it not go down so quickly) and
 then for each bug you eat it adds 5 to the size; for every 50 moves (that you
 don’t get the bug) you shrink by 5. You will find that at times you might only
@@ -608,7 +608,7 @@ dumps with this idea.</p>
 <p>You could also have it so that eating a bug makes you shrink and moving so many
 moves you grow. I tried this and for me it was far more fun. The <a href="play.sh">play.sh</a>
 also has this mode:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">SIZE</span><span class="op">=</span>100 <span class="va">SHEDS</span><span class="op">=</span>5 <span class="va">GROW</span><span class="op">=</span>-10 <span class="va">SHED</span><span class="op">=</span>50 <span class="va">MAXSIZE</span><span class="op">=</span>250 <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    SIZE=100 SHEDS=5 GROW=-10 SHED=50 MAXSIZE=250 ./prog</code></pre>
 <p>Obviously there are many other variations. The <a href="play.sh">play.sh</a> script has some
 of them (the above is option 5; others are 4, 15 and 16 but only options 4 and 5
 are called Grow / Shrink).</p>
@@ -622,7 +622,7 @@ typical range of seizures is 3 to 30 flashes per seconds (but can be higher) and
 that means that at <strong>EVADE=1</strong> every 231ms there will be a flash in addition to the
 snake moving too.</p>
 <p>Anyway this might sound absurd but it can be somewhat hypnotic by doing:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">EVADE</span><span class="op">=</span>1 <span class="va">CANNIBAL</span><span class="op">=</span>1 <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    EVADE=1 CANNIBAL=1 ./prog</code></pre>
 <p>And just moving the snake about not trying to catch any bugs - just let whatever
 happens happen.</p>
 <h2 id="gameplay-mode-stimulation-calming-mode"><a name="stim" href="#toc">Gameplay mode: Stimulation / Calming mode</a></h2>
@@ -631,7 +631,7 @@ want to play a game without having to worry about winning or losing you can set
 the growth size to 0 and then just move the snake round and round eating bugs
 until you want to quit. You can enable cannibalism so that you don’t have to
 worry about even running into yourself and losing:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">GROW</span><span class="op">=</span>0 <span class="va">CANNIBAL</span><span class="op">=</span>1 <span class="ex">./prog</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    GROW=0 CANNIBAL=1 ./prog</code></pre>
 <h2 id="gameplay-mode-expansibility"><a name="expansibility" href="#toc">Gameplay mode: Expansibility</a></h2>
 <p>As I was writing this document and the game modes I have thought of other game
 modes (they were added) and I have come back to this document to add more modes.
@@ -650,9 +650,9 @@ reason as well as I simply enjoy it and thinking up new modes.</p>
 this file discusses as well as allowing to easily change the colours.</p>
 <h2 id="colours-selection-snake-colours"><a name="colours" href="#toc">Colours selection: snake-colours</a></h2>
 <p>To do this use the <a href="snake-colours">snake-colours</a> script like so:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./snake-colours</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./snake-colours</code></pre>
 <p>If you want to pass in specific variables you can do that too e.g.:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">CANNIBAL</span><span class="op">=</span>1 <span class="ex">./snake-colours</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    CANNIBAL=1 ./snake-colours</code></pre>
 <p>The script will prompt you for the colour of the walls, snake head, body and the
 bug.</p>
 <h2 id="automate-the-above-gameplay-modes"><a name="preset" href="#toc">Automate the above gameplay modes</a></h2>
@@ -664,9 +664,9 @@ snake-colours above) and then gives you a list of game modes to play. You can
 pass in the game variables but note that if you pass in a variable that the mode
 you choose uses then the script will override what you pass in.</p>
 <p>To use you can do something like:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./play.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    ./play.sh</code></pre>
 <p>Or to make it so walls are an obstacle:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">WALLS</span><span class="op">=</span>0 <span class="ex">./play.sh</span></span></code></pre></div>
+<pre class="&lt;!---sh--&gt;"><code>    WALLS=0 ./play.sh</code></pre>
 <h1 id="notes-about-some-of-the-game-variables">6. <a name="variables" href="#toc">Notes about some of the game variables</a></h1>
 <p>The game variables can be used for a variety of things including different
 gameplay modes (as shown above) but here are some general notes about a few of them.</p>

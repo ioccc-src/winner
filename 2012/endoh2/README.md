@@ -1,13 +1,13 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     ./endoh2 > pi.c
     gcc -o pi pi.c
     ./pi > 314.c
@@ -15,7 +15,7 @@
 
 and:
 
-```sh
+```<!---sh-->
     ./endoh2 e > e.c\
     gcc -o e e.c
     ./e > 271.c
@@ -26,7 +26,7 @@ and:
 
 ## Try:
 
-```sh
+```<!---sh-->
     ./try.sh
 ```
 
@@ -112,7 +112,7 @@ characters and not requiring a return in `main()`.  In fact, recent compilers
 with `-std=c99 -Wall -W -Wextra -pedantic` would say nothing.
 
 
-```sh
+```<!---sh-->
     gcc -std=c99 -Wall -W -Wextra -pedantic spigot.c
     clang -std=c99 -Wall -W -Wextra -pedantic spigot.c
 ```
@@ -123,7 +123,7 @@ and gcc-4.5.3 and clang-3.1 on Cygwin.
 
 ### Synopsis
 
-```sh
+```<!---sh-->
     cc endoh2.c -o endoh2
 
     ./endoh2 > pi.c

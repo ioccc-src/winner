@@ -1,19 +1,19 @@
 ## To build:
 
-```sh
+```<!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```sh
+```<!---sh-->
     make all
 ```
 
 NOTE: that's not a typo or mistake but one can also do:
 
-```sh
+```<!---sh-->
     ./o
 ```
 
