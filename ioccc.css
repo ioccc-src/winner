@@ -587,8 +587,6 @@ a:active {
 }
 .rightcolumn p, code, pre {
   padding-top: 0;
-  padding-left: 10px;
-  padding-right: 10px;
   padding-bottom: 0;
 }
 
@@ -615,8 +613,6 @@ a:active {
 }
 .footer p, code, pre {
   padding-top: 0;
-  padding-left: 10px;
-  padding-right: 10px;
   padding-bottom: 0;
   color: black;
 }
