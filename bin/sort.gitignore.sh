@@ -99,7 +99,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.4 2024-03-28"
+export VERSION="1.1.5 2024-04-04"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -191,8 +191,8 @@ done
 
 # parse the command line arguments
 #
-if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: debug level: $V_FLAG" 1>&2
+if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: debug level: $V_FLAG" 1>&2
 fi
 #
 shift $(( OPTIND - 1 ));
@@ -421,8 +421,8 @@ fi
 # convert temporary markdown file into HTML
 #
 if [[ -z $NOOP ]]; then
-    if [[ $V_FLAG -ge 1 ]]; then
-	echo  "$0: debug[1]: about to execute: $SGI_TOOL < $GITIGNORE > $TMP_FILE" 1>&2
+    if [[ $V_FLAG -ge 3 ]]; then
+	echo  "$0: debug[3]: about to execute: $SGI_TOOL < $GITIGNORE > $TMP_FILE" 1>&2
     fi
     "$SGI_TOOL" < "$GITIGNORE" > "$TMP_FILE"
     status="$?"
@@ -431,8 +431,8 @@ if [[ -z $NOOP ]]; then
 	exit 12
     fi
     if cmp -s "$TMP_FILE" "$GITIGNORE"; then
-	if [[ $V_FLAG -ge 1 ]]; then
-	    echo  "$0: debug[1]: $GITIGNORE is already sorted" 1>&2
+	if [[ $V_FLAG -ge 3 ]]; then
+	    echo  "$0: debug[3]: $GITIGNORE is already sorted" 1>&2
 	fi
     else
 	if [[ $V_FLAG -ge 1 ]]; then

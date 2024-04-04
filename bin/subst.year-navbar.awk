@@ -21,7 +21,7 @@ BEGIN {
 
     # setup
     #
-    VERSION="1.1 2024-03-02"
+    VERSION="1.2 2024-04-04"
     process_next_line = 0;	# 1 ==> we found our year_arg, now process the next line
     found_year_arg = 0;		# 1 ==> we found our year_arg
     prev_line = "";		# the previous YYYY line
@@ -84,7 +84,7 @@ BEGIN {
 	#
 	# report up link top year index.html
 	print "-s";
-	print "UP_LINK=../index.html";
+	print "UP_LINK=../years.html";
 	print "-s";
 	print "UP_TEXT=top";
 	process_next_line = 1;
