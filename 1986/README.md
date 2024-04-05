@@ -16,14 +16,12 @@ Shell](https://en.wikipedia.org/wiki/Bourne_shell) (`/bin/sh`) won for both
 systems.  The BSD [finger](https://en.wikipedia.org/wiki/Finger_(protocol))
 program took third place.
 
-[Rules](rules.txt) and [results](../years.html#1986) were posted to
-[net.lang.c](https://groups.google.com/g/net.lang.c) and
-[net.unix-wizards](https://groups.google.com/g/net.unix-wizards).
-[Micro/Systems
+[Rules](rules.txt) and [results](../years.html#1986) were posted to _net.lang.c_
+and _net.unix-wizards_.  [Micro/Systems
 Journal](https://www.vintage-computer.com/publications.php?microsystemsjournal)
 started regular publishing of the winning entries.  The practice of making first
-announcement of the winning entries at the Summer USENIX BOF (Birds of a Feather)
-started this year.  A notice was posted to net.announce.
+announcement of the winning entries at the Summer USENIX BOF (Birds of a
+Feather) started this year.  A notice was posted to net.announce.
 
 
 ## Final Comments

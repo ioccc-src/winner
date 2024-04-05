@@ -10,10 +10,8 @@ remarks from two authors but these came years later.
 
 Restrictions against machine dependent code were not in the [rules](rules.txt)
 in 1984. The source file size restriction was only 512 bytes.
-[Rules](rules.txt) and [results](../years.html#1984) were posted to
-[net.lang.c](https://groups.google.com/g/net.lang.c) and
-[net.unix-wizards](https://groups.google.com/g/net.unix-wizards). The contest
-was announced in a [net.lang.c
+[Rules](rules.txt) and [results](../years.html#1984) were posted to _net.lang.c_
+and _net.unix-wizards_. The contest was announced in a [net.lang.c
 post](https://groups.google.com/g/net.lang.c/c/lx-TAuEyeRI/m/HdOOnNx6LC0J).
 
 
