@@ -56,7 +56,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "author tool to create constants"
+	    "entry_text" : "author tool to generate code"
 	},
 	{
 	    "file_path" : "1984_mullender.tar.bz2",
@@ -72,7 +72,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "entry home page"
+	    "entry_text" : "this web page"
 	},
 	{
 	    "file_path" : ".entry.json",
