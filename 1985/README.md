@@ -7,11 +7,10 @@ Author's remarks for even more details.
 
 Hints against machine dependent code were added to the [rules](rules.txt) to
 avoid another 1984 style entry ([1984/mullender](../1984/mullender/index.html)).
-[Rules](rules.txt) and [results](../years.html#1985) were posted to
-[net.lang.c](https://groups.google.com/g/net.lang.c) and
-[net.unix-wizards](https://groups.google.com/g/net.unix-wizards).  Larry Bassel
-was invited to help in the judging.  Awards were given to 5 classes of programs
-since we were unable to select only the best 4.
+[Rules](rules.txt) and [results](../years.html#1985) were posted to _net.lang.c_
+and _net.unix-wizards_.  Larry Bassel was invited to help in the judging.
+Awards were given to 5 classes of programs since we were unable to select only
+the best 4.
 
 
 ## Final Comments

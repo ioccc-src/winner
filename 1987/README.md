@@ -18,7 +18,8 @@ with an announcement in news.announce.important.
 published the 1987 winning entries.  [Mary Ann Horton](../authors.html#Mary_Ann_Horton) included
 a version of the [1987 winning entries](../years.html#1987) in an appendix of
 her C book [Portable C Software International
-Edition](https://www.amazon.com/Portable-Software-Mark-R-Horton/dp/0138680507).
+Edition](https://www.amazon.com/Portable-Software-Mark-R-Horton/dp/0138680507)
+(published under the name _Mark R Horton_).
 The first announcement of winning entries at the Summer 87 USENIX was helped by
 a small fly that danced all over the foils.
 
