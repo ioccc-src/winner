@@ -247,7 +247,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "entry home page"
+	    "entry_text" : "this web page"
 	},
 	{
 	    "file_path" : ".entry.json",
