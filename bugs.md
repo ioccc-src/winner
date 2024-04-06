@@ -645,7 +645,7 @@ Enjoy! :-)
 
 ## <a name="1990_baruch"></a>1990/baruch
 
-### STATUS: known bug - please help us fix
+### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1990/baruch/baruch.c](1990/baruch/baruch.c)
 ### Information: [1990/baruch/index.html](1990/baruch/index.html)
 
@@ -710,6 +710,8 @@ more time and resources to run as well. For instance:
     12655721857
     ./baruch  37496.97s user 58.50s system 99% cpu 10:27:48.29 total
 ```
+
+This is not considered a bug, however.
 
 
 ## <a name="1990_jaw"></a>1990/jaw
