@@ -229,7 +229,7 @@ with the original (might need you to press a key though this is not known for
 sure).</p>
 <p>Cody also added the <a href="1984/mullender/gentab.c">gentab.c</a> file, fixed to compile
 (and work, though see <a href="#1984mullender-readmemd">bugs.html</a>) with modern systems
-and so that it would create the proper array (it had unbalanced ’}’s), which the
+and so that it would create the proper array (it had unbalanced <code>}</code>s), which the
 author noted in their remarks (which Cody also found). As this file uses the old
 header file <code>a.out.h</code> that is not available in all modern systems, Cody found a
 copy of it as to what it should have been at the time, in the fabulous <a href="https://github.com/dspinellis/unix-history-repo/tree/Research-Release">Unix
@@ -252,7 +252,7 @@ Ironically this fix was discovered through Linux!</p>
 <p>NOTE: originally this entry did not print a newline prior to returning to the
 shell, after the output (despite having <code>\n</code> in the string - can you figure out
 why?) but to make it more friendly to users Cody made it print a <code>\n</code> prior to
-returning to the shell. The original version does not have this change.</p>
+returning to the shell. The original code does not have this change.</p>
 <h2 id="august-index.html"><a name="1985_august"></a><a href="1985/august/august.c">1985/august</a> (<a href="1985/august/index.html">index.html</a>)</h2>
 <p><a href="#cody">Cody</a>, out of abundance of caution, added a second arg to <code>main()</code> because some
 versions of clang object to the number of args of <code>main()</code>, saying that it must
@@ -260,13 +260,13 @@ be 0, 2 or 3. The version this has been observed in does not actually object to
 1 arg but it is entirely possible that this changes so a second arg (that’s not
 needed and is unused) has been added just in case.</p>
 <p>Cody also added the script <a href="1985/august/primes.sh">primes.sh</a> which allows one
-to check the output for the first N prime numbers of the output, where N is
-either the default or user specified. The inspiration was the previous ‘try’
+to check the output for the first <code>N</code> prime numbers of the output, where <code>N</code> is
+either the default or user specified. The inspiration was the previous <code>try</code>
 command he gave to have fun with finding primes that might seem unusual in a
 way.</p>
-<p>Cody also added the <a href="1985/august/try.sh">try.sh</a> script (which calls
-<code>primes.sh</code> whether <code>primes(6)</code> is installed or not but it only does it once
-with the default value).</p>
+<p>Cody also added the <a href="1985/august/try.sh">try.sh</a> script (which calls <code>primes.sh</code>
+whether <code>primes(6)</code> is installed or not, but it only does it once with the
+default value).</p>
 <h2 id="lycklama-index.html"><a name="1985_lycklama"></a><a href="1985/lycklama/lycklama.c">1985/lycklama</a> (<a href="1985/lycklama/index.html%5D">index.html</a>)</h2>
 <p><a href="#cody">Cody</a> fixed this to compile with modern compilers. In the past one could get away
 with defining some macro to <code>#define</code> and then use <code>#foo</code> to have the same

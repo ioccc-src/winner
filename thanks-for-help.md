@@ -143,7 +143,7 @@ sure).
 
 Cody also added the [gentab.c](1984/mullender/gentab.c) file, fixed to compile
 (and work, though see [bugs.html](#1984mullender-readmemd)) with modern systems
-and so that it would create the proper array (it had unbalanced '}'s), which the
+and so that it would create the proper array (it had unbalanced `}`s), which the
 author noted in their remarks (which Cody also found). As this file uses the old
 header file `a.out.h` that is not available in all modern systems, Cody found a
 copy of it as to what it should have been at the time, in the fabulous [Unix
@@ -175,7 +175,7 @@ Ironically this fix was discovered through Linux!
 NOTE: originally this entry did not print a newline prior to returning to the
 shell, after the output (despite having `\n` in the string - can you figure out
 why?) but to make it more friendly to users Cody made it print a `\n` prior to
-returning to the shell. The original version does not have this change.
+returning to the shell. The original code does not have this change.
 
 
 ## <a name="1985_august"></a>[1985/august](1985/august/august.c) ([index.html](1985/august/index.html))
@@ -187,14 +187,14 @@ be 0, 2 or 3. The version this has been observed in does not actually object to
 needed and is unused) has been added just in case.
 
 Cody also added the script [primes.sh](1985/august/primes.sh) which allows one
-to check the output for the first N prime numbers of the output, where N is
-either the default or user specified. The inspiration was the previous 'try'
+to check the output for the first `N` prime numbers of the output, where `N` is
+either the default or user specified. The inspiration was the previous `try`
 command he gave to have fun with finding primes that might seem unusual in a
 way.
 
-Cody also added the [try.sh](1985/august/try.sh) script (which calls
-`primes.sh` whether `primes(6)` is installed or not but it only does it once
-with the default value).
+Cody also added the [try.sh](1985/august/try.sh) script (which calls `primes.sh`
+whether `primes(6)` is installed or not, but it only does it once with the
+default value).
 
 
 ## <a name="1985_lycklama"></a>[1985/lycklama](1985/lycklama/lycklama.c) ([index.html](1985/lycklama/index.html]))
