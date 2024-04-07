@@ -190,16 +190,23 @@ be kept in:</p>
     char x {sizeof(
          double(%s,%D)(*)())</code></pre>
 <p>This does mean that there cannot be a second arg to <code>main()</code>
-as clang requires that to be a <code>char ** and the</code>char<code>redefined would not allow this. Some versions of clang say that</code>main()<code>must have either 0, 2 or 3 args but these versions do not object to 1 arg. However as the</code>char<code>macro seems more obscure and it is possible that a new version of clang will be even more strict the</code>int i<code>parameter in</code>main()<code>was moved to be inside</code>main()<code>, set to non-zero (setting</code>i<code>to 0 will not work). This way</code>main()` has zero
+as clang requires that to be a <code>char **</code> and the <code>char</code> redefined would not
+allow this. Some versions of clang say that <code>main()</code> must have either 0, 2 or 3
+args but these versions do not object to 1 arg. However as the <code>char</code> macro
+seems more obscure and it is possible that a new version of clang will be even
+more strict the <code>int i</code> parameter in <code>main()</code> was moved to be inside <code>main()</code>,
+set to non-zero (setting <code>i</code> to 0 will not work). This is way <code>main()</code> has zero
 args.</p>
 <p>Observe how on line 29 there is a call to <code>main()</code> which does pass in a
 parameter. It has never been observed to be an error to pass in too many
 parameters to a function (<code>main()</code> or otherwise - it warns with other functions
 but does not appear to with <code>main()</code>) but only that <code>main()</code> itself has a
 certain number of args (in some versions) and that the first arg is an <code>int</code> and
-the others are <code>char **s. This is why the arg was removed and the call to</code>main()<code>was not updated beyond what had to be done to fix it for compilers that do not support</code>-traditional-cpp`.</p>
+the others are <code>char **</code>s. This is why the arg was removed and the call to
+<code>main()</code> was not updated beyond what had to be done to fix it for compilers that
+do not support <code>-traditional-cpp</code>.</p>
 <p>If the ANSI C committee or a new version of clang messes this up (both of which
-seems possible) it is easy to fix but it is hoped that this won’t happen.</p>
+seem possible) it is easy to fix but it is hoped that this won’t happen.</p>
 <p>Originally <a href="#yusuke">Yusuke</a> supplied a patch so that this entry would compile with gcc -
 but not clang - or at least some versions.</p>
 <p>To see the difference from start to fixed:</p>

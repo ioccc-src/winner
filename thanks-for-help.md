@@ -89,12 +89,12 @@ be kept in:
 ```
 
 This does mean that there cannot be a second arg to `main()`
-as clang requires that to be a `char ** and the `char` redefined would not
+as clang requires that to be a `char **` and the `char` redefined would not
 allow this. Some versions of clang say that `main()` must have either 0, 2 or 3
 args but these versions do not object to 1 arg. However as the `char` macro
 seems more obscure and it is possible that a new version of clang will be even
 more strict the `int i` parameter in `main()` was moved to be inside `main()`,
-set to non-zero (setting `i` to 0 will not work). This way `main()` has zero
+set to non-zero (setting `i` to 0 will not work). This is way `main()` has zero
 args.
 
 Observe how on line 29 there is a call to `main()` which does pass in a
@@ -102,12 +102,12 @@ parameter. It has never been observed to be an error to pass in too many
 parameters to a function (`main()` or otherwise - it warns with other functions
 but does not appear to with `main()`) but only that `main()` itself has a
 certain number of args (in some versions) and that the first arg is an `int` and
-the others are `char **s. This is why the arg was removed and the call to
+the others are `char **`s. This is why the arg was removed and the call to
 `main()` was not updated beyond what had to be done to fix it for compilers that
 do not support `-traditional-cpp`.
 
 If the ANSI C committee or a new version of clang messes this up (both of which
-seems possible) it is easy to fix but it is hoped that this won't happen.
+seem possible) it is easy to fix but it is hoped that this won't happen.
 
 Originally [Yusuke](#yusuke) supplied a patch so that this entry would compile with gcc -
 but not clang - or at least some versions.
