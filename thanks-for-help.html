@@ -243,8 +243,8 @@ to work with macOS.</p>
 <code>strdup()</code> it’s safe.</p>
 <p>The problem with macOS is that although it didn’t crash, it printed <code>H????</code> in a
 seemingly infinite loop, each time printing another <code>?</code>, and it probably would
-have until it runs out of memory.</p>
-<p>The fix for macOS is that there was no prototype for <code>execlp()</code> and macOS has
+have until it ran out of memory.</p>
+<p>The fix for macOS is that there was no prototype for <code>execlp(3)</code> and macOS has
 problems with missing prototypes for some functions (this was also seen when
 Cody fixed <a href="1984/anonymous/anonymous.c">1984/anonymous</a> for macOS as well). As
 this is a one-liner the include of <code>unistd.h</code> was done in the Makefile.

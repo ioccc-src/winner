@@ -164,9 +164,9 @@ The crash was because it destructively rewrites string literals. However with
 
 The problem with macOS is that although it didn't crash, it printed `H????` in a
 seemingly infinite loop, each time printing another `?`, and it probably would
-have until it runs out of memory.
+have until it ran out of memory.
 
-The fix for macOS is that there was no prototype for `execlp()` and macOS has
+The fix for macOS is that there was no prototype for `execlp(3)` and macOS has
 problems with missing prototypes for some functions (this was also seen when
 Cody fixed [1984/anonymous](1984/anonymous/anonymous.c) for macOS as well). As
 this is a one-liner the include of `unistd.h` was done in the Makefile.
