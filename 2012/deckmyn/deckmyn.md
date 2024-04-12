@@ -3,7 +3,7 @@
 
 ## Calling the program
 
-```<!---sh-->
+``` <!---sh-->
     ./deckmyn "`cat deckmyn.c`" "`cat musicfile`" > output.pbm
 ```
 
@@ -85,7 +85,7 @@ musical element of a line is only 2 characters!
 
 Blank music paper (with G clef):
 
-```<!---sh-->
+``` <!---sh-->
     ./deckmyn "`cat deckmyn.c`" "sz sa x  s1 x  s1 x  s1 x  s1 x  s1 "> blank.pbm
 ```
 

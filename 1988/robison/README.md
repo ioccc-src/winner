@@ -1,20 +1,20 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./robison 80 10
     ./robison 40 16
 ```
 
 The first and second parameters are optional.  You might also try:
 
-```<!---sh-->
+``` <!---sh-->
     ./robison 80 2   # <--- can you find the bug?
     ./robison 80 -246
 ```
@@ -24,7 +24,7 @@ The first and second parameters are optional.  You might also try:
 
 The following might make an interesting benchmark:
 
-```<!---sh-->
+``` <!---sh-->
     ./robison 100
 ```
 

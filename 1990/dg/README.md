@@ -1,20 +1,20 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     echo foo bar | ./dg
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -24,13 +24,13 @@
 Some C preprocessors got confused about single quotes in certain cases.
 In particular, the following source line:
 
-```<!---c-->
+``` <!---c-->
     b12(ase(bco(acp(bi(acp(bcp(acp(bpl(aqu(bqu(A))))))))))))))))))))))))))))))
 ```
 
 sometimes has to be changed to:
 
-```<!---c-->
+``` <!---c-->
     b12(ase(bco(acp(bi(acp(bcp(acp(bpl('A'))))))))))))))))))))))))))))
 ```
 
@@ -56,7 +56,7 @@ As for the rot13 algorithm, it relies on `index(3)` to find if the
 character is in the set `A-Za-z`. `l[]` is an array that gets filled
 with:
 
-```<!---c-->
+``` <!---c-->
     "nopqrstuvwxyzzzzabcdefghijklmmmmNOPQRSTUVWXYZZZZABCDEFGHIJKLMMMM"
 ```
 

@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [2019 mills bugs](../../bugs.html#2019_mills).
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     make cpclean
     # Let this run for about about an hour and then kill it:
     ./prog Shakespeare.txt
@@ -27,7 +27,7 @@ For more detailed information see [2019 mills bugs](../../bugs.html#2019_mills).
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -92,19 +92,19 @@ OMLET has three operating modes:
 For your first OMLET experiment, we will try training a simple single-level
 RNN to write some [Shakespeare][5] plays.  Start by typing
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 After it builds, train it using
 
-```<!---sh-->
+``` <!---sh-->
     ./prog Shakespere.txt
 ```
 
 This will immediately start outputting gibberish to the output, e.g.
 
-```<!---sh-->
+``` <!---sh-->
     ./prog Shakespere.txt
 ```
 
@@ -259,7 +259,7 @@ doing `Control-C`.
 You can continue training from a previous checkpoint by providing the
 checkpoint file name as the second parameter, for example:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog Shakespeare.txt cp01_1.970
 ```
 
@@ -275,7 +275,7 @@ parameters to generate data.  Inference mode takes the checkpoint file as
 *standard input* (not on the command line) and hence must be run with a
 command like
 
-```<!---sh-->
+``` <!---sh-->
     ./prog < cp55_1.807
 ```
 
@@ -294,7 +294,7 @@ The default network for OMLET (the one you get if you type `make` with the
 executable name `prog`) is the simplest recurrent neural network.  It looks
 like
 
-```<!---c-->
+``` <!---c-->
     h = tanh(Wxh * x + Whh * h' + Bh)
     y = Why * h + By
 ```
@@ -317,26 +317,26 @@ It is the presence of the hidden state vector that allows the RNN to
 "remember" the past.  We can see what would happen if we removed this hidden
 state.  If you type
 
-```<!---sh-->
+``` <!---sh-->
     make lin1
 ```
 
 OMLET will create an [ADALINE][10] network that does
 
-```<!---c-->
+``` <!---c-->
     y = Wxy * x + By
 ```
 
 This is a simple [linear][11] [feed-forward network][12].  You can run it with
 
-```<!---sh-->
+``` <!---sh-->
     ./lin1 Shakespeare.txt
 ```
 
 The linear network won't be able to get past the gibberish stage, because it
 lacks history:
 
-```<!---sh-->
+``` <!---sh-->
     ./lin1 Shakespeare.txt
 ```
 
@@ -388,7 +388,7 @@ the language but `per` with the digit 1).
 We can try to improve the RNN's performance by stacking RNN modules atop each
 other:
 
-```<!---c-->
+``` <!---c-->
     h1 = RNN(h1', x)
     h2 = RNN(h2', h1)
     y = Why * h2 + By
@@ -414,13 +414,13 @@ the hard limit with `limit -h stacksize` and set it with
 
 You can try the deeper network by doing
 
-```<!---sh-->
+``` <!---sh-->
     make rnn2
 ```
 
 (or even `make rnn3` if you want a three-layer RNN) and train it with
 
-```<!---sh-->
+``` <!---sh-->
     ./rnn2 Shakespeare.txt
 ```
 
@@ -444,13 +444,13 @@ gradient, worsening the exploding and vanishing gradient problem.
 solve this problem.  Christopher Olah gives a good description of them
 at his [blog posting][20].  You can build a two-level LSTM by doing
 
-```<!---sh-->
+``` <!---sh-->
     make lstm2
 ```
 
 and train with it with
 
-```<!---sh-->
+``` <!---sh-->
     ./lstm2 Shakespeare.txt
 ```
 
@@ -464,7 +464,7 @@ its hidden state via "gates".  These gates are called
 
 The basic LSTM equations are
 
-```<!---c-->
+``` <!---c-->
     f = sigmoid(Wxf * x + Whf * h' + Bf)
     i = sigmoid(Wxi * x + Whi * h' + Bi)
     o = sigmoid(Wxo * x + Who * h' + Bo)
@@ -496,7 +496,7 @@ simplified versions of an LSTM which combine the gates together, meaning they
 require fewer learned parameters.  This allows them to train faster than a
 generic LSTM.  You can build a two-layer GRU with
 
-```<!---sh-->
+``` <!---sh-->
     make gru2
 ```
 
@@ -510,7 +510,7 @@ compiler's command-line by using `-D` directives.  The network is defined by
 a `-DNW='...'` command which consists of a series of comma-separated
 assignments.  For example, the simple one-layer RNN could be defined like
 
-```<!---make-->
+``` <!---make-->
     -DNW=' x  = I(n), hp = I(128),                  \
 	   h  = C(hp, T(A(L(128, x), L(128, hp)))), \
 	   y  = L(n, h)'
@@ -555,7 +555,7 @@ training mode, this is used to generate the loss which is backpropagated.
 As an example of a more complicated network, we can look at a two-layer
 GRU network:
 
-```<!---make-->
+``` <!---make-->
     -DHS=128,                                 \
     -DNW=' x  = I(n),                         \
 	   y  = L(n, MD(MD(x)))'              \

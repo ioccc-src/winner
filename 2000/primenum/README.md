@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [2000 primenum bugs](../../bugs.html#2000_prim
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     echo n | ./primenum n
 ```
 
@@ -27,7 +27,7 @@ NOTE: `n` is an integer.
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -64,7 +64,7 @@ Instead, the program reads input from `stdin` and returns garbled text on
 `stdout`.  Fortunately, you can recover the original message simply by
 running the program a second time.  Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./primenum n < textfile | ./primenum n > textfile2
     diff textfile textfile2
 ```

@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -16,7 +16,7 @@ looked like back in 2000 (with a configurable speed). See the
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./thadgavin.alt
 ```
 
@@ -27,7 +27,7 @@ You can press 'q' at any time to exit.
 
 If you have SDL1 installed:
 
-```<!---sh-->
+``` <!---sh-->
     ./thadgavin_sdl
 ```
 
@@ -43,13 +43,13 @@ microseconds) for the SDL version.
 
 To change the SDL one to something like `15000` you can do:
 
-```<!---sh-->
+``` <!---sh-->
     make SDL_SLEEP=15000 clobber alt
 ```
 
 and to change the curses one to `40`:
 
-```<!---sh-->
+``` <!---sh-->
     make SLEEP=40 clobber alt
 ```
 
@@ -75,14 +75,14 @@ is not a problem there.
 
 ### Original build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ### Original use:
 
-```<!---sh-->
+``` <!---sh-->
     ./thadgavin
 ```
 
@@ -91,7 +91,7 @@ is not a problem there.
 
 If you have SDL1 installed:
 
-```<!---sh-->
+``` <!---sh-->
     ./thadgavin_sdl
 ```
 
@@ -110,14 +110,14 @@ less than dazzling. We could not test this entry in DOS mode.
 
 Compile using DJGPP as follows:
 
-```<!---sh-->
+``` <!---sh-->
     gcc thadgavin.c -o thadgavin.exe -Wall -lm -O6 -mpentium -fomit-frame-pointer -ffast-math
 ```
 
 
 ### To use under Windows, X-Windows or macOS using the Simple DirectMedia Layer:
 
-```<!---sh-->
+``` <!---sh-->
     gcc -O6 -lpthread -g -o thadgavin thadgavin.c -lSDL -DSDL -lm
 ```
 
@@ -125,7 +125,7 @@ Compile using DJGPP as follows:
 ### To use curses:
 
 
-```<!---sh-->
+``` <!---sh-->
     gcc -O6 -lpthread -g -o thadgavin thadgavin.c -lncurses -lm
 ```
 

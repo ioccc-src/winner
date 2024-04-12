@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -18,20 +18,20 @@ For more detailed information see [2020 carlini bugs](../../bugs.html#2020_carli
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
 Or if you actually want to play:
 
-```<!---sh-->
+``` <!---sh-->
     # Play with a friend, real or imagined, P1 and P2, squares are numbered 1..9
     ./prog
 ```
@@ -51,7 +51,7 @@ HOW ABOUT A NICE GAME OF <strike>CHESS</strike>TIC-TAC-TOE?
 
 ### USAGE
 
-```<!---sh-->
+``` <!---sh-->
     cc -o prog prog.c
     ./prog
 ```
@@ -92,7 +92,7 @@ compilers unhappy, and others slow. (For example, passing GCC the flags `-Wall
 
 Under some terminals the program may exit early. The following should always work:
 
-```<!---sh-->
+``` <!---sh-->
     echo "1 2 3 4 5 6 7" | ./prog
 ```
 
@@ -100,7 +100,7 @@ Under some terminals the program may exit early. The following should always wor
 
 The entirety of the program consists of a single iterated call to `printf(3)`.
 
-```<!---c-->
+``` <!---c-->
     int main() {
 	while(*d) printf(fmt, arg);
     }
@@ -144,13 +144,13 @@ Format specifiers can take extra "arguments".
 
 For example, the following expression
 
-```<!---c-->
+``` <!---c-->
     printf("%1$.*2$d%3$hhn", 5, 10, &x)
 ```
 
 will have the same effect as if we had written
 
-```<!---c-->
+``` <!---c-->
     x = 10;
 ```
 
@@ -174,37 +174,37 @@ We can use format strings to compute the OR/NOT of arbitrary "bits".
 
 We'll start with the simplest, OR:
 
-```<!---c-->
+``` <!---c-->
     printf("%1$s%2$s%3$hhn", a, b, c)
 ```
 
 will compute
 
-```<!---c-->
+``` <!---c-->
     *c = strlen(a) + strlen(b)
 ```
 
 but given that `strlen(x)` is `1` for a 1-bit and `0` for a 0-bit, we have
 
-```<!---c-->
+``` <!---c-->
     *c = a | b
 ```
 
 Computing the NOT of a single value is also easy:
 
-```<!---c-->
+``` <!---c-->
     printf("%1$255d%1$s%hhn", a, b)
 ```
 
 will compute
 
-```<!---c-->
+``` <!---c-->
     *b = (strlen(a)+255)%256 = strlen(a)-1
 ```
 
 and again, because `strlen(x)` is either `1` or `0` we have
 
-```<!---c-->
+``` <!---c-->
     *c = !b
 ```
 
@@ -221,7 +221,7 @@ To detect who has won, we implement the following logic. Let `A`, `B`, and `C` b
 pointers to three squares in a row to test, and `D` be where to save if there is a
 win or not.
 
-```<!---c-->
+``` <!---c-->
     "%A$s%B$s%C$s%1$253d%11$hhn" // r11 = !(*A & *B & *C)
     ZERO
     "%11$s%1$255d%11hhn" // r11 = !r11
@@ -235,7 +235,7 @@ possible three-in-a-row configurations, for both players.
 The ZERO macro ensures that the number of bytes written out is 0 mod 256 with
 the following expression
 
-```<!---c-->
+``` <!---c-->
     "%1$hhn%1$s" (repeated 256 times)
 ```
 
@@ -254,13 +254,13 @@ bits to Xs and Os to print out. This is actually rather straightforward. Given
 in `1$` the pointer to player 1's square, and `2$` the pointer to player 2's, and
 in `3$` the pointer to the board string, we can compute
 
-```<!---c-->
+``` <!---c-->
     "%1$s" (repeated 47 times) "%2$s" (repeated 56 times) %1$32d%3$hhn"
 ```
 
 which will, in effect, compute
 
-```<!---c-->
+``` <!---c-->
     *r3 = (*r1) * 47 + (*r2) * 56 + 32
 ```
 
@@ -273,7 +273,7 @@ which will output `' '` if neither are true, `'X'` if `r1` is true, or `'O'` if
 In order to be able to finally display the board, while still only using one
 `printf(3)` statement, we finish the statement with
 
-```<!---c-->
+``` <!---c-->
     "\n\033[2J\n%26$s"
 ```
 
@@ -299,7 +299,7 @@ won, or the game is over and it is a draw.
 This turns out not to be as hard as it might look. Using the same trick as
 before, we set byte four to be
 
-```<!---c-->
+``` <!---c-->
     *byte4 = is_win * 'W' + is_tie * 'T'
 ```
 
@@ -313,7 +313,7 @@ ends. It should just exit.
 
 One option would be to implement the logic as
 
-```<!---c-->
+``` <!---c-->
     printf()
     while (*ok) {
 	scanf();
@@ -324,7 +324,7 @@ One option would be to implement the logic as
 but this would DOUBLE the number of calls to `printf(3)` we require. So instead we
 implement it like this
 
-```<!---c-->
+``` <!---c-->
     while (*ok) {
 	scanf();
 	printf();

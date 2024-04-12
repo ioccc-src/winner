@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./anonymous 'foo' > bar.pgm
 ```
 
@@ -21,7 +21,7 @@ images.
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -107,7 +107,7 @@ The following command thus writes a rendering of the [Ring
 inscription](https://www.glyphweb.com/arda/r/ringinscription.html) to
 the file `ring.pgm`:
 
-```<!---sh-->
+``` <!---sh-->
     ./anonymous "ash nazg durhbatuluhk, ash nazg gimbatul, \
 	ash nazg thrakatuluhk, agh burzhumh-ishi krimpatul." >ring.pgm
 ```

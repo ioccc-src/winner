@@ -10,7 +10,7 @@ than this comment.  :-)
 
 The JSON member value must be the following JSON quoted string:
 
-```<!---json-->
+``` <!---json-->
     "mandatory comment: because comments were removed from the original JSON spec"
 ```
 
@@ -100,7 +100,7 @@ This shows the latest modification date for the [IOCCC news](news.html) page.
 The JSON member value is a JSON quoted string obtained from the date field
 of the following `ls(1)` command:
 
-```<!---ls-->
+``` <!---ls-->
     TZ=UTC ls -D '%FT%T+00:00' -ld news.html
 ```
 
@@ -118,7 +118,7 @@ This shows the latest modification date [status.json](status.json) file.
 The JSON member value is a JSON quoted string obtained from the date field
 of the following `ls(1)` command:
 
-```<!---ls-->
+``` <!---ls-->
     TZ=UTC ls -D '%FT%T+00:00' -ld status.json
 ```
 

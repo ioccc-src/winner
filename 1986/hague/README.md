@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./hague 2>/dev/null
     # enter some text
 ```
@@ -15,7 +15,7 @@
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 

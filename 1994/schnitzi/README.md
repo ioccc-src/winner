@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -23,14 +23,14 @@ For more detailed information see [1994 schnitzi bugs](../../bugs.html#1994_schn
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./schnitzi < textfile
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -49,7 +49,7 @@ buffer size. This is due to a comment which is explained in more detail in
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -62,7 +62,7 @@ feeding the source code to it will not work right.
 
 ### Alternate try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.alt.sh
 ```
 
@@ -71,7 +71,7 @@ feeding the source code to it will not work right.
 
 Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./schnitzi < schnitzi.c
 ```
 
@@ -96,14 +96,14 @@ is run by redirecting a file into the executable on the command
 line; for instance, for the file 'info', the program
 would be run as follows:
 
-```<!---sh-->
+``` <!---sh-->
     ./schnitzi < info
 ```
 
 The program generates interesting results when its source file is
 used as input:
 
-```<!---sh-->
+``` <!---sh-->
     ./schnitzi < schnitzi.c
 ```
 

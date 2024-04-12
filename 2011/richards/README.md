@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -18,14 +18,14 @@ For more detailed information see [2011 richards bugs](../../bugs.html#2011_rich
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     echo expression | ./richards
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 

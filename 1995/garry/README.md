@@ -1,20 +1,20 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./garry <input_file >output_file
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -29,21 +29,21 @@ left intact) looked very much like a rat "dropping core".  See
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
 
 ### Alternate use:
 
-```<!---sh-->
+``` <!---sh-->
     ./garry.alt <input_file >output_file
 ```
 
 
 ### Alternate try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.alt.sh
 ```
 
@@ -63,13 +63,13 @@ environment variables.
 The calling syntax is pretty simple, just use it with `stdio`-redirection
 or inside pipelines, e.g.:
 
-```<!---sh-->
+``` <!---sh-->
     ./garry <file_to_convert >converted_file
 ```
 
 or
 
-```<!---sh-->
+``` <!---sh-->
     cat all_my_files/* | ./garry | lp
 ```
 
@@ -87,7 +87,7 @@ Unknown Env-variables or malformed expressions are ignored and kept intact.
 Additionally, the filter replaces escaped octal values in the environment
 variables by their binary representation, e.g.:
 
-```<!---sh-->
+``` <!---sh-->
     $ TEST="\110\145\154\154\157"
     $ export TEST
     $ echo '$TEST$' | ./garry

@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -22,7 +22,7 @@ For more detailed information see [2006 toledo2 bugs](../../bugs.html#2006_toled
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./toledo2
 ```
 
@@ -33,7 +33,7 @@ does not seem to happen in macOS or linux in 2023.
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./toledo2
 ```
 
@@ -56,7 +56,7 @@ functions in place of `read(2)` and `write(2)`.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -112,7 +112,7 @@ Journal](https://en.wikipedia.org/wiki/Dr._Dobb%27s_Journal).
 Type using uppercase letters. Here are three example programs. Press Enter after
 each line:
 
-```<!---basic-->
+``` <!---basic-->
     10 PRINT "Hello, world!"
     LIST
     RUN
@@ -155,7 +155,7 @@ from the `SOURCE` directory:
 To import them, you must run the emulator with an argument, by
 example:
 
-```<!---sh-->
+``` <!---sh-->
     ./toledo2 DDT.COM
 ```
 

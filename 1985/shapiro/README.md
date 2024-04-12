@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -10,7 +10,7 @@ There is alternate code which allows one to change the size of the maze. See
 
 ### To run:
 
-```<!---sh-->
+``` <!---sh-->
     ./shapiro
 ```
 
@@ -23,7 +23,7 @@ of the maze. The alt code allows one to easily do this.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -32,7 +32,7 @@ of the maze. The alt code allows one to easily do this.
 
 If you wish to change the value you can do it like:
 
-```<!---sh-->
+``` <!---sh-->
     make clobber SIZE=5 alt
 ```
 
@@ -41,7 +41,7 @@ error. If it's <= 0 || >= 5000 then it is set to 39, the default.
 
 You might also wish to try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.alt.sh
 ```
 

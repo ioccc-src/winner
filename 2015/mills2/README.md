@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -18,14 +18,14 @@ For more detailed information see [2015 mills2 bugs](../../bugs.html#2015_mills2
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog compressed_file.Z
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -39,7 +39,7 @@ for a `compress(1)`-like compressor using a similar idea.
 
 Why is the sad smiley on line 12 in that particular place?
 
-```<!---c-->
+``` <!---c-->
     c=0)			    :( O
 ```
 
@@ -66,7 +66,7 @@ on the command line.  On the odd chance you don't have `compress(1)` hanging abo
 on your system, I've provided compressed copies of this year's IOCCC rules
 and guidelines files.  To print them, just do
 
-```<!---sh-->
+``` <!---sh-->
     ./prog ioccc_guidelines.txt.Z
     ./prog ioccc_rules.txt.Z
 ```

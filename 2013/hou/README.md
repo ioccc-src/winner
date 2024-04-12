@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [2013 hou bugs](../../bugs.html#2013_hou).
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./hou [scene-file-name] [options]
 ```
 
@@ -29,7 +29,7 @@ effects should be more or less recognizable when you see 16.
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -62,7 +62,7 @@ This program will loop infinitely while progressively refining a
 NOTE: the author refers to [a.c](a.c), placed in a gzipped file `a.c.gz`. We do not
 include it but it can be generated like:
 
-```<!---sh-->
+``` <!---sh-->
     cc -Wall hou.c -o hou -lm
     ./hou > a.c
 ```
@@ -78,7 +78,7 @@ needing to create a temporary file.
 This program is a programmable rendering engine with a built-in default scene.
 The standard command line is:
 
-```<!---sh-->
+``` <!---sh-->
     ./hou [scene-file-name] [options]
 ```
 

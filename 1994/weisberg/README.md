@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -10,20 +10,20 @@ code](#alternate-code) below for more details.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./weisberg
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
 If you have `primes(1)` installed you might also wish to try:
 
-```<!---sh-->
+``` <!---sh-->
     ./primes.sh number
 ```
 
@@ -40,14 +40,14 @@ something with you might try this version.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
 
 ### Alternate use:
 
-```<!---sh-->
+``` <!---sh-->
     ./weisberg.alt
 ```
 

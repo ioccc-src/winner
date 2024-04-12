@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -9,7 +9,7 @@ You will need X11 header files and libraries installed to build this program.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./jarijyrki < infile.info > outfile.info
 ```
 
@@ -18,7 +18,7 @@ You will need a system capable of displaying the results of X Window programs.
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./jarijyrki < finance.sheet > myedits.info
 ```
 
@@ -88,7 +88,7 @@ supports are:
 
 ##### Starting
 
-```<!---sh-->
+``` <!---sh-->
     ./jarijyrki < finance.sheet > myedits.info
 ```
 
@@ -144,7 +144,7 @@ To start the spreadsheet program with an existing
 spreadsheet, for instance [finance.sheet](finance.sheet), use the following
 command line:
 
-```<!---sh-->
+``` <!---sh-->
     ./jarijyrki < finance.sheet
 ```
 
@@ -156,7 +156,7 @@ supported by the program.
 
 To start the program with an empty sheet, use
 
-```<!---sh-->
+``` <!---sh-->
     ./jarijyrki < /dev/null
 ```
 
@@ -171,7 +171,7 @@ output. Hence, when the spreadsheet window has come up, you've made your
 changes, and you press the ESC key the program finishes. To save the results in
 a file, the following typical command line would be used:
 
-```<!---sh-->
+``` <!---sh-->
     ./jarijyrki < finance.sheet > myedits.info
 ```
 

@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./toledo1 [0-9][0-9]
 ```
 
@@ -16,7 +16,7 @@ where `[0-9][0-9]` is a two digit number.
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -38,7 +38,7 @@ visit the 64 squares without repeating them?
 If not, this program does it, just run it with an argument
 giving initial position.
 
-```<!---sh-->
+``` <!---sh-->
     ./toledo1 11       # start is A8
     ./toledo1 18       # start is H8
     ./toledo1 81       # start is A1

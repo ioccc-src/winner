@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -10,14 +10,14 @@ There is an alternate version that compiles [mkentry.c](mkentry.c). See
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./tomx
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -32,14 +32,14 @@ using it as a Makefile and running the code ends up running `mkentry`.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
 
 ### Alternate try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.alt.sh
 ```
 

@@ -1,20 +1,20 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog > foo.c
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -36,14 +36,14 @@ What is the difference between running `./prog` and `main`?
 Big terminals with tiny fonts have their uses in certain cases.
 One of them is:
 
-```<!---sh-->
+``` <!---sh-->
     make treacl
     ./treacl
 ```
 
 which is shorthand for:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog < prog.c > treacle.c
     make treacle
     ./treacle

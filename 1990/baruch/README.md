@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -21,7 +21,7 @@ For more detailed information see [1990 baruch bugs](../../bugs.html#1990_baruch
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     echo 4 | ./baruch
     echo 7 | ./baruch
 ```
@@ -29,7 +29,7 @@ For more detailed information see [1990 baruch bugs](../../bugs.html#1990_baruch
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -47,7 +47,7 @@ question. YMMV.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 

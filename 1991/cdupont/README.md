@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./cdupont
 ```
 
@@ -16,7 +16,7 @@
 
 Why is the following label necessary?
 
-```<!---c-->
+``` <!---c-->
     sorryfor_this_unused_but_very_needed_label:
 ```
 

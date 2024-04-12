@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -19,7 +19,7 @@ For more detailed information see [1994 shapiro bugs](../../bugs.html#1994_shapi
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./shapiro &
 ```
 
@@ -28,7 +28,7 @@ Now find the clock in the same terminal window (or console if at the console).
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./shapiro
     ^Z
     bg

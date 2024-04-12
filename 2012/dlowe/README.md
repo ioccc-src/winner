@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -18,14 +18,14 @@ For more detailed information see [2012 dlowe bugs](../../bugs.html#2012_dlowe).
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./dlowe
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./dlowe
 ```
 

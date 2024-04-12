@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -21,21 +21,21 @@ For more detailed information see [2005 giljade bugs](../../bugs.html#2005_gilja
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./giljade
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
 
 ### Self-test feature to try:
 
-```<!---sh-->
+``` <!---sh-->
     ./giljade > out
     ./giljade out
 ```
@@ -52,7 +52,7 @@ Control-F.
 
 If you really understand expressions, then understand this:
 
-```<!---c-->
+``` <!---c-->
     s=s^(b=s&s-1^s)
 ```
 

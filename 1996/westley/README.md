@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
     ```
 
@@ -11,7 +11,7 @@
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./clock1.sh
     ./clock2.sh
     ./clock3.sh
@@ -20,7 +20,7 @@
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -34,14 +34,14 @@ provided, to show the differences.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
 
 ### Alternate try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.alt.sh
 ```
 
@@ -81,7 +81,7 @@ larger.
 
 The code is simple; the arguments passed are:
 
-```<!---sh-->
+``` <!---sh-->
     ./westley minute_map hour_map hand_symbol clock_image
 ```
 

@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -10,7 +10,7 @@ out. See [alternate code](#alternate-code) below for more details.
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./paul
 ```
 
@@ -28,14 +28,14 @@ could easily be added.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
 
 ### Alternate use:
 
-```<!---sh-->
+``` <!---sh-->
     ./paul.alt
 ```
 

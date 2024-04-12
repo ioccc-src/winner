@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [1993 schnitzi bugs](../../bugs.html#1993_schn
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./schnitzi file
 ```
 
@@ -33,14 +33,14 @@ in [1993 schnitzi bugs](../../bugs.html#1993_schnitzi).
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./schnitzi schnitzi.info
     # ask some questions suggested by the author, noted below
 ```
 
 We also suggest you ask the program the following questions:
 
-```<!---sh-->
+``` <!---sh-->
     Who is Mark Schnitzus?
 
     Who was Jack the Ripper ?
@@ -51,7 +51,7 @@ intentional spelling error there.
 
 Try feeding the program source to the program and ask both:
 
-```<!---sh-->
+``` <!---sh-->
     What is cat ?
     What is cat?
 ```

@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     make check
 ```
 
@@ -23,7 +23,7 @@ download one or both before exiting.
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     less jpeg.c
 ```
 

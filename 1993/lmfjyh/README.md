@@ -2,7 +2,7 @@
 
 If you have gcc < 2.3.3 you can build this entry like:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -48,7 +48,7 @@ For more detailed information see [1993 lmfjyh bugs](../../bugs.html#1993_lmfjyh
 
 If you have gcc < 2.3.3 (i.e. the entry can compile):
 
-```<!---sh-->
+``` <!---sh-->
     ./lmfjyh
 ```
 
@@ -64,7 +64,7 @@ Nonetheless it will be compiled in case the original entry fails to compile.
 
 Should you wish to build this version manually:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -99,7 +99,7 @@ that should be familiar to all C-programmers.
 #### Listing 1: A simple "Hello World" program
 
 
-```<!---c-->
+``` <!---c-->
     main()
     {
       puts("Hello World!");
@@ -118,14 +118,14 @@ the file.
 
 #### Listing 2: Compressed "Hello world"
 
-```<!---c-->
+``` <!---c-->
     char*_=__FILE__;
 ```
 
 
 #### Listing 3: Code embedded in the file name
 
-```<!---c-->
+``` <!---c-->
     ";main(){puts("Hello World!");}char*C=".c
 ```
 

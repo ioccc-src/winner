@@ -1,20 +1,20 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./timwi < bf_program
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 

@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [1998 schnitzi bugs](../../bugs.html#1998_schn
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./schnitzi n > sort.c
     make sort
     ./sort
@@ -32,14 +32,14 @@ where `n` and `x`, `y` and `z` are numbers.
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
 What happens if at the command line you don't specify `n` numbers that the
 program expects? For instance try:
 
-```<!---sh-->
+``` <!---sh-->
     ./schnitzi 5 > sort.c
     make sort
 
@@ -99,7 +99,7 @@ a depth of one.
 So what does it do?  Give it an integer `(1 < n < 27)` on the command
 line, such as
 
-```<!---sh-->
+``` <!---sh-->
     ./schnitzi 5
 ```
 
@@ -109,7 +109,7 @@ them, however, using only `if/else` statements, without arrays or
 looping.  To see the resulting program run, redirect the output from
 `schnitzi` into another file, like this
 
-```<!---sh-->
+``` <!---sh-->
     ./schnitzi 4 > sort.c
 ```
 

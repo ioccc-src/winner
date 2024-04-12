@@ -3,14 +3,14 @@
 Before building, make sure that you have the OpenGL development libraries
 installed.
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./vince
 ```
 
@@ -31,7 +31,7 @@ also has the recursive `CPP` macro (which sneaked in accidentally) removed.
 
 To compile this alternate version:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 

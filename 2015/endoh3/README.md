@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog
 ```
 
@@ -16,7 +16,7 @@
 
 To see the original [mullender](mullender.c) in action:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -26,7 +26,7 @@ like at the end. Send INTR to end the program.
 
 More generally use:
 
-```<!---sh-->
+``` <!---sh-->
     cc -o prog prog.c foo.c
     ./prog
     ^C	# if necessary, where ^C is ctrl-C, interrrupt
@@ -71,7 +71,7 @@ Read it upside down.)
 
 You got it?  This program is supposed to be used in this way:
 
-```<!---sh-->
+``` <!---sh-->
     wget https://www.ioccc.org/1984/mullender.c
     clang -o prog prog.c mullender.c
     ./prog

@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -11,7 +11,7 @@ there is a firewall issue, and also lets you redefine the timing constant,
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog < some_secret_or_something
 
     ./prog http://host[:port]
@@ -20,19 +20,19 @@ there is a firewall issue, and also lets you redefine the timing constant,
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog < README.md
 ```
 
 or maybe:
 
-```<!---sh-->
+``` <!---sh-->
     echo "IOCCC 2014!" | ./prog
 ```
 
 Next, try in another terminal, as the above one is running:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog http://127.0.0.1:1701
 ```
 
@@ -55,13 +55,13 @@ described by the author. See [configuration](#configuration) below.
 
 To specify the port to say, 31337, try:
 
-```<!---sh-->
+``` <!---sh-->
     make clobber PORT=31337 alt
 ```
 
 To change the timing constant, `STARDATE`, try:
 
-```<!---sh-->
+``` <!---sh-->
     make clobber TIME=5000000 alt
 ```
 
@@ -101,26 +101,26 @@ the server.
 
 ## To use web server
 
-```<!---sh-->
+``` <!---sh-->
     ./prog < secret_file_to_be_downloaded
 ```
 
 Try using the program's source code as the secret file:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog < prog.c
 ```
 
 ## To use client-side downloader
 
-```<!---sh-->
+``` <!---sh-->
     ./prog http://host[:port]
 ```
 
 The optional port defaults to 1701.  If the web server instance is started on
 the same box, try:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog http://127.0.0.1:1701
 ```
 
@@ -246,7 +246,7 @@ numerical values.
 For space considerations, the following include statements were dropped
 resulting in compiler warnings:
 
-```<!---c-->
+``` <!---c-->
     #include <asm/byteorder.h>
     #include <ctype.h>
     #include <netinet/in.h>

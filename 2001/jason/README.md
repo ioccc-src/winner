@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./jason
 ```
 
@@ -37,7 +37,7 @@ cause problems. Go ahead, try it! :-)
 TED Shroyer came up with the idea that made it possible to hide all
 the text.  Thanks, TED.  You won.  :)
 
-```<!---sh-->
+``` <!---sh-->
     cc -o jason jason.c
     ./jason
     you are in a maze of twisty little passages

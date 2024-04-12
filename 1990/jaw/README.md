@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -9,7 +9,7 @@
 
 To test the official C entry, one might try:
 
-```<!---sh-->
+``` <!---sh-->
     echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
 ```
 
@@ -19,7 +19,7 @@ sentence.
 
 #### Also try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -39,14 +39,14 @@ it to 1530 bytes) which implements the complete shark utility. The script,
 The sender must have `compress` and `btoa`. To send, try:
 
 
-```<!---sh-->
+``` <!---sh-->
     ./shark.sh jaw.* README.md > receive
 ```
 
 The resulting file, `receive`, unpacks the input files
 even if the receiver lacks `uncompress` and `btoa`:
 
-```<!---sh-->
+``` <!---sh-->
     mkdir -p test
     cd test
     sh ../receive
@@ -168,7 +168,7 @@ Construct `sharkmail`, to auto-split `sharkives` into mailable segments and mail
 them. Here's a simple one, which could be extended to enable auto-reassembly
 with one shell cmd at the far end.
 
-```<!---sh-->
+``` <!---sh-->
     #!/bin/sh
     m=$1; shift
     shark $* | split -800 - /tmp/shark$$

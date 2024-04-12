@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -10,7 +10,7 @@ familiar to vi(m) users.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./ant some_file
 ```
 
@@ -20,12 +20,12 @@ program exit without doing anything.
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     make hill
     ./ant hill
 ```
 
-```<!---sh-->
+``` <!---sh-->
     make mole
     ./ant mole
 ```
@@ -46,7 +46,7 @@ rest was unchanged.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 

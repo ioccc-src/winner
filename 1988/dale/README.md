@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -18,13 +18,13 @@ For more detailed information see [1988 dale bugs](../../bugs.html#1988_dale).
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
 Observe that three of the commands in the script are:
 
-```<!---sh-->
+``` <!---sh-->
     ./dale these files are in this directory: *
     ./dale $(printf "the following files exist in this directory:\n%s\n" *)
     ./dale "$(printf "the following files exist in this directory:\n%s\n" *)"

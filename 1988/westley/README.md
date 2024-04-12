@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -11,13 +11,13 @@ might wish to do so.
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./westley
 ```
 
 Also try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -31,7 +31,7 @@ This version is the original which might not work as you expect nowadays.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -41,7 +41,7 @@ This version is the original which might not work as you expect nowadays.
 To see if your compiler has the problem described in the Judges' remarks below,
 try:
 
-```<!---sh-->
+``` <!---sh-->
     ./westley.alt
 ```
 
@@ -52,7 +52,7 @@ Does it show the same output as `westley`?
 
 Your compiler must parse
 
-```<!---c-->
+``` <!---c-->
     #define _ -a
     -_
 ```
@@ -62,7 +62,7 @@ conforming ANSI C Preprocessors may object to this: for such
 compilers, you can elide the non-standard token-pasting requirement
 by changing the #define line to:
 
-```<!---c-->
+``` <!---c-->
     #define _ F-->00||F-OO--;
 ```
 
@@ -71,7 +71,7 @@ code is the original.
 
 You might enjoy looking at the output of:
 
-```<!---sh-->
+``` <!---sh-->
     cc -E westley.alt.c
 ```
 

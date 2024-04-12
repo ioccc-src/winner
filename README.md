@@ -92,7 +92,7 @@ If you have the energy to type in the text, or if you have access to a machine
 readable version of these programs, you should next consider some preprocessing
 such as:
 
-```<!---sh-->
+``` <!---sh-->
 sed -e '/^#.*include/d' prog.c | cc -E
 ```
 

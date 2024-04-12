@@ -1,27 +1,27 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./hamaji < a_nonogram_file
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
 If you have perl installed you should be able to reproduce
 [dragon.nono](dragon.nono) like:
 
-```<!---sh-->
+``` <!---sh-->
     perl c2nono.pl hamaji.c | ./hamaji
 ```
 
@@ -181,7 +181,7 @@ with the well obfuscated code.
 This program uses two C99 features. One line comments and `long long`.
 GCC's `-ansi -pedantic` check should pass:
 
-```<!---sh-->
+``` <!---sh-->
     cc -ansi -pedantic -std=c99 hamaji.c
 ```
 
@@ -196,7 +196,7 @@ memory layout, undefined evaluation order (e.g., `a[i++]=i`), etc.
 This program won't work if the size of `long long` literal is less than 8.
 By grepping the source code of gcc
 
-```<!---sh-->
+``` <!---sh-->
     grep LONG_LONG_TYPE_SIZE gcc/config/*/*
 ```
 
@@ -224,7 +224,7 @@ was randomly generated. The [codegolf.nono](codegolf.nono) and
 You can reproduce [dragon.nono](dragon.nono) from [hamaji.c](hamaji.c) using
 [c2nono.pl](c2nono.pl):
 
-```<!---sh-->
+``` <!---sh-->
     perl c2nono.pl hamaji.c | ./hamaji
 ```
 

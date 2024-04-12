@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -18,14 +18,14 @@ For more detailed information see [2006 birken bugs](../../bugs.html#2006_birken
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./birken < file.tofu
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 

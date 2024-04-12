@@ -1,20 +1,20 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog infile.wav outfile.wav
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -62,7 +62,7 @@ Interesting fact: The size of the program from `./iocccsize -i` is 2019.
 
 #### How to use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog input [output [size [dry [wet [damping]]]]]
     prog.exe input [output [size [dry [wet [damping]]]]]
 ```
@@ -87,7 +87,7 @@ The default settings are designed to make the effect obvious rather than subtle,
 so it may be a good idea to adjust the ratio of "dry" to "wet", to give a more
 pleasant result:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog in.wav out.wav 1.8 80% 15%
 ```
 

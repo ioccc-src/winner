@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -18,7 +18,7 @@ if nothing else.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./marshall
 ```
 
@@ -36,14 +36,14 @@ instead offer the problematic code as an alternate version whereas
 To see if your compiler has the problems noted:
 
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
 
 ### Alternate use:
 
-```<!---sh-->
+``` <!---sh-->
     ./marshall.alt
 ```
 

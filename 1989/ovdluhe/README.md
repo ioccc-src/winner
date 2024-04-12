@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -11,7 +11,7 @@ To get this to compile with a modern CPP, we had to replace `#D` with `#define`.
 
 Run the program this way:
 
-```<!---sh-->
+``` <!---sh-->
     ./ovdluhe < textfile
 ```
 
@@ -21,7 +21,7 @@ by chance or is killed.
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh ; sleep 2 ; ./try.sh
 ```
 
@@ -34,7 +34,7 @@ it's a `#define` it's easy to set up.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make P=9 clobber alt
 ```
 
@@ -46,14 +46,14 @@ program to fail and a negative value will cause a compilation error.
 
 ### Alternate use:
 
-```<!---sh-->
+``` <!---sh-->
     ./ovdluhe.alt
 ```
 
 
 ### Alternate try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.alt.sh
 
     P=5 ./try.alt.sh

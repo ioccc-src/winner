@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -10,14 +10,14 @@ code](#alternate-code) below.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./konno N
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 
     # you can also specify numbers to try before the random and preselected ones:
@@ -36,7 +36,7 @@ This alternate code is an unobfuscated version of the winning code.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -64,7 +64,7 @@ patterns.
 
 Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./konno 30
     ./konno 90
     ./konno 102
@@ -79,13 +79,13 @@ There are 256 (from 0 through 255) possible rules.
 
 This program uses bit operations. I think
 
-```<!---c-->
+``` <!---c-->
     7&O<<!o>>!o+29
 ```
 
 is an interesting operation. This isn't equal to
 
-```<!---c-->
+``` <!---c-->
     7&O>>29
 ```
 

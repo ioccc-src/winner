@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./dorssel
     # input some text
 
@@ -17,7 +17,7 @@
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -48,7 +48,7 @@ altering the behavior ?
 Try doing what the last part of the last command in [try.sh](try.sh) suggests.
 As in, do the following:
 
-```<!---sh-->
+``` <!---sh-->
     echo ". -..- . .-. -.-. .. ... .
     -.-. .... .- -. --. .  - .... .  .--. .-. --- --. .-. .- --  ... ---  .. -  -.. --- . ...  -. --- -  ... .... --- ..- -" | ./dorssel
 ```
@@ -91,7 +91,7 @@ invoke undefined behavior.
 
 Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./dorssel < dorssel.c | ./dorssel
 ```
 
@@ -101,20 +101,20 @@ better job than most C beautifiers).
 - Filter your text twice (as in the previous sample) to obtain a version of your
 text that can be reversibly Morsified, i.e.
 
-```<!---sh-->
+``` <!---sh-->
     ./dorssel < dorssel.c | ./dorssel | ./dorssel | ./dorssel
 ```
 
 is the same as
 
-```<!---sh-->
+``` <!---sh-->
     ./dorssel < dorssel.c | ./dorssel
 ```
 
 - The file [dorssel.md](dorssel.md) contains all the information needed to
 understand this program.  For an obfuscated spoiler, try
 
-```<!---sh-->
+``` <!---sh-->
     ./dorssel < dorssel.md
 ```
 

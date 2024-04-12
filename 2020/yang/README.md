@@ -1,20 +1,20 @@
 ## To build:
 
-```<!---<!---sh-->-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---<!---sh-->-->
+``` <!---sh-->
     ./prog [PIN] < input.txt > output.c
 ```
 
 
 ## Try:
 
-```<!---<!---sh-->-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -22,7 +22,7 @@
 The author provided the file [cppp.cc](cppp.cc) which can preprocess the
 generated output to make them more acceptable to typical compilers. To build:
 
-```<!---<!---sh-->-->
+``` <!---sh-->
     make cppp
 ```
 
@@ -44,7 +44,7 @@ spoiler](spoiler.html) that shows how this entry was written.
 
 ### Synopsis
 
-```<!---<!---sh-->-->
+``` <!---sh-->
     echo "Hello world" | ./prog 12345 > encoded.c
 
     gcc -DPIN=12345 encoded.c -o ./decoded && ./decoded
@@ -63,14 +63,14 @@ Mile is a C code generator.  Run without arguments for the help message below:
 When run with an encoding PIN (first command line argument), Mile will
 read bytes from `stdin` and generate C code on `stdout`.  Example:
 
-```<!---<!---sh-->-->
+``` <!---sh-->
     echo "Hello, world!" | ./prog 56789 > encoded.c
 ```
 
 This generated code will reproduce the same input bytes on `stdout` when
 executed, if it was compiled with the same encoding PIN.
 
-```<!---<!---sh-->-->
+``` <!---sh-->
     gcc -DPIN=56789 encoded.c -o decoded
 ```
 

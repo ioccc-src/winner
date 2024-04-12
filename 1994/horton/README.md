@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./horton A B C D
 ```
 
@@ -16,7 +16,7 @@
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -29,14 +29,14 @@ version.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
 
 ### Alternate use:
 
-```<!---sh-->
+``` <!---sh-->
     ./horton.alt A B C D
 ```
 
@@ -45,7 +45,7 @@ Where A, B, C and D are numbers like with `horton`.
 
 ### Alternate try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.alt.sh
 ```
 
@@ -80,7 +80,7 @@ It's easily modified to graph *any* 96x160 bitmap on a dumb terminal.
 
 See the [gtface](gtface.c) program for another example.  Try:
 
-```<!---sh-->
+``` <!---sh-->
     make gtface
     ./gtface < gtface.data
 ```

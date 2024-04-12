@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -24,7 +24,7 @@ For more detailed information see [1984 mullender bugs](../../bugs.html#1984_mul
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./mullender.alt [microseconds]
 ```
 
@@ -48,7 +48,7 @@ which is probably not as uncommon as you think :-).
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./mullender.alt
 
     ./mullender.alt 5000	# wait for 5000 microseconds and see what happens
@@ -72,14 +72,14 @@ machine dependent code was discouraged.
 
 ### Original build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ### Original use:
 
-```<!---sh-->
+``` <!---sh-->
     ./mullender
 ```
 
@@ -137,19 +137,19 @@ Repo](https://github.com/dspinellis/unix-history-repo/tree/Research-Release).
 `gentab.c` can be built like:
 
 
-```<!---sh-->
+``` <!---sh-->
     make gentab
 ```
 
 ### gentab use:
 
-```<!---sh-->
+``` <!---sh-->
     ./gentab file
 ```
 
 ### gentab try:
 
-```<!---sh-->
+``` <!---sh-->
     ./gentab gentab > g.c
 ```
 
@@ -256,7 +256,7 @@ separate.
 The [PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor) and
 [VAX](https://en.wikipedia.org/wiki/VAX) codes implement the same algorithm:
 
-```<!---c-->
+``` <!---c-->
     for (;;) {
 	write(1, "  :-)\b\b\b\b", 9);
 	delay();
@@ -284,7 +284,7 @@ We started with writing the
 We both knew [PDP-11](https://en.wikipedia.org/wiki/PDP-11) assembly so that was
 no problem. The assembly code we came up with is as follows:
 
-```<!---asm-->
+``` <!---asm-->
     pdp:
 	mov pc,r4
 	tst -(r4)
@@ -331,7 +331,7 @@ VAX code in C and massaged the
 program that we came up with is as follows:
 
 
-```<!---asm-->
+``` <!---asm-->
     vax: .word 0400 + (pdp - vax) / 2 - 1
     1:
 	pushl $9
@@ -389,7 +389,7 @@ extracted the machine code from the object file.
 > NOTE from judges: see [gentab.c](gentab.c) for a copy of this file that can be
 compiled in modern systems.
 
-```<!---c-->
+``` <!---c-->
     #include <stdio.h>
     #include <a.out.h>
 

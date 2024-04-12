@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -18,14 +18,14 @@ For more detailed information see [2020 burton bugs](../../bugs.html#2020_burton
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog arg ...
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -67,7 +67,7 @@ result?
 
 This code may be tested by:
 
-```<!---sh-->
+``` <!---sh-->
     make test
 ```
 
@@ -107,19 +107,19 @@ Compiles cleanly under `clang -Wall -Weverything -pedantic`, but you need to add
 
 On a little-endian machine:
 
-```<!---sh-->
+``` <!---sh-->
     clang -include stdio.h -include stdlib.h -Wall -Weverything -pedantic -DB=6945503773712347754LL -DI=5859838231191962459LL -DT=0 -DS=7 -o prog prog.c
 ```
 
 On a big-endian machine:
 
-```<!---sh-->
+``` <!---sh-->
     clang -include stdio.h -include stdlib.h -Wall -Weverything -pedantic -DB=7091606191627001958LL -DI=6006468689561538903LL -DT=1 -DS=0 -o prog_be prog.c
 ```
 
 You might be interested to compile it both ways on the same host, and try:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog 1; ./prog_be 1
 ```
 

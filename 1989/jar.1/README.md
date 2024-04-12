@@ -2,7 +2,7 @@
 
 NOTE: this will run the program itself.
 
-```<!---sh-->
+``` <!---sh-->
     make clobber all
 ```
 
@@ -12,7 +12,7 @@ See the [Alternate code](#alternate-code) section below for more details.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./jar.1
 ```
 
@@ -26,14 +26,14 @@ This alternate code, which prints something slightly different, is provided as w
 
 NOTE: this will run the program itself.
 
-```<!---sh-->
+``` <!---sh-->
     make clobber alt
 ```
 
 
 ### Alternate use:
 
-```<!---sh-->
+``` <!---sh-->
     ./jar.1.alt
 ```
 
@@ -43,7 +43,7 @@ NOTE: this will run the program itself.
 On many systems the compiler will not allow you to send the object file to
 `/dev/tty`.  The author suggested:
 
-```<!---sh-->
+``` <!---sh-->
     cc -c -o /dev/tty jar.1.c
 ```
 

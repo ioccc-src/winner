@@ -30,7 +30,7 @@ for the capabilities I use in the entry.
 It also tries to determine the minimum number of columns to play without the
 status line overflowing - even with the dynamic length. Try:
 
-```<!---sh-->
+``` <!---sh-->
     $ make test
 ```
 
@@ -67,7 +67,7 @@ If I pass in any of the variables **GROW**, **MAXSIZE**, **SIZE** and/or
 **LINES** or **COLUMNS** it bases its calculations on those variables. For
 example:
 
-```<!---sh-->
+``` <!---sh-->
     terminal supports cursor movement
     terminal supports making cursor invisible
     terminal supports bold
@@ -129,7 +129,7 @@ To specify the lines/columns of curses program per instance use the `LINES` and
 
 For demonstration consider the following:
 
-```<!---sh-->
+``` <!---sh-->
     $ echo $LINES $COLUMNS
     42 157
 ```
@@ -139,7 +139,7 @@ include the walls and score line but these values are for the terminal itself.
 
 Say you want 55 columns:
 
-```<!---sh-->
+``` <!---sh-->
     $ COLUMNS=55 ./prog
 ```
 
@@ -166,7 +166,7 @@ In my tests there is one thing that at least allows you to see the final score
 and that is by running `clear` before running the program. That's what the
 prog.alt version does. You might run it as one of:
 
-```<!---sh-->
+``` <!---sh-->
     LINES=20 ./prog.alt
     LINES=20 ./snake.alt
 ```
@@ -190,7 +190,7 @@ The Linux man page says:
 
 If you don't have the reset utility you can try:
 
-```<!---sh-->
+``` <!---sh-->
     echo -e \\033c
 ```
 
@@ -209,14 +209,14 @@ along and thinks he/she will be clever and mess with the dimensions a bit. Let's
 say they have a 13" monitor and they think it'd be funny to see how 997 lines
 would work; they might try something like:
 
-```<!---sh-->
+``` <!---sh-->
     LINES=997 ./prog
 ```
 
 What then? Well expect trouble; curses will not know any better and the max
 number of lines will be 997. If they were to do:
 
-```<!---sh-->
+``` <!---sh-->
     COLUMNS=997 ./prog
 ```
 
@@ -265,7 +265,7 @@ According to my tests for monochrome terminals the screen has the white and
 black background; if terminal is configured to be black background white
 foreground that is the order it is too. You can try that like:
 
-```<!---sh-->
+``` <!---sh-->
     TERM=linux-m ./prog
 ```
 
@@ -301,7 +301,7 @@ Based on the two as well as the fact that monochrome terminals (I've tried under
 both Linux and macOS) seem to work fine I believe I am fine here too. And to
 confirm this I wrote the following code with the output below:
 
-```<!---c-->
+``` <!---c-->
     #include <curses.h>
 
     int main()
@@ -314,7 +314,7 @@ confirm this I wrote the following code with the output below:
     }
 ```
 
-```<!---sh-->
+``` <!---sh-->
     TERM=linux-m ./colour_pairs
     COLORS: 0
     COLOR_PAIRS: 0
@@ -332,7 +332,7 @@ possible colour pairs than I have used so that's not a problem either. Perhaps
 even it would only be a runtime error if the colours are supported and the
 number is out of the range? To try and figure this out I did another test:
 
-```<!---c-->
+``` <!---c-->
     int main()
     {
 	initscr();
@@ -351,7 +351,7 @@ number is out of the range? To try and figure this out I did another test:
 
 Running it like
 
-```<!---sh-->
+``` <!---sh-->
     TERM=linux-m ./colour_pairs
 ```
 

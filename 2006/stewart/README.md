@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./stewart width_and_height iterations file > file.xbm
     convert file.xbm file.png
 ```
@@ -29,7 +29,7 @@ NOTE: `convert(1)` belongs to [ImageMagick](https://imagemagick.org/index.php).
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -58,7 +58,7 @@ a reasonably experienced user who can parse formats in their mind.  :-)
 
 The program should be run with the following
 
-```<!---sh-->
+``` <!---sh-->
     ./stewart <m> <n> <ifs>
 ```
 
@@ -77,7 +77,7 @@ are 3.  Wrong arguments will cause the program to bomb out.
 
 #### Example:
 
-```<!---sh-->
+``` <!---sh-->
     ./stewart 1024 1000000 gasket > gasket.xbm
 ```
 

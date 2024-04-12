@@ -1,26 +1,26 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./yarng
 ```
 
 or
 
-```<!---sh-->
+``` <!---sh-->
     ./yarng integer_number
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 
     ./yarng
@@ -42,13 +42,13 @@ At the time of judging, some non-gcc compilers that were not fully ANSI standard
 did not compile this entry correctly. Also at that time, some gcc and egcs
 implementations ran into a problem when building the entry. Doing:
 
-```<!---sh-->
+``` <!---sh-->
     make schweikh2
 ```
 
 often produced an error of the form:
 
-```<!---sh-->
+``` <!---sh-->
     gcc -ansi schweikh2.alt.c -o schweikh2.alt
     as: Error: cca00NzV.s, line 58: Missing " at end of string
 	 "
@@ -58,20 +58,20 @@ often produced an error of the form:
 
 because the line:
 
-```<!---c-->
+``` <!---c-->
     #line 10 ONE(O(1,1,2,6,0,6))
 ```
 
 turned into the line:
 
-```<!---c-->
+``` <!---c-->
     # 9 "01\012"
 ```
 
 (note, though, how that line is on line 11) which caused gcc to give to the
 assembler the following two lines:
 
-```<!---asm-->
+``` <!---asm-->
     .stabs "schweikh2.c
     ",132,0,0,Ltext1
 ```
@@ -80,7 +80,7 @@ and the lone `"` after the `#.file` line resulted in an assembly syntax error.
 
 In some cases one had to compile using `gcc -g`:
 
-```<!---sh-->
+``` <!---sh-->
     make schweikh2 CFLAGS=-g
 ```
 
@@ -105,7 +105,7 @@ still can :-) ).
 
 Because of this bug, the code was changed to be instead:
 
-```<!---c-->
+``` <!---c-->
     #line 10 "01\015"
 ```
 
@@ -122,13 +122,13 @@ compiler error:
 
 so the line:
 
-```<!---c-->
+``` <!---c-->
     #line 10 "01\015"
 ```
 
 was changed to:
 
-```<!---c-->
+``` <!---c-->
     #line 10 ONE(O(1,1,2,6,0,6))
 ```
 
@@ -158,7 +158,7 @@ different values? How long would you need for an empirical test?
 
 For example:
 
-```<!---sh-->
+``` <!---sh-->
     $ ./yarng 32
     10111001010101110110010101001111
     $ ./yarng 5

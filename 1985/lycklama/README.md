@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./lycklama.alt < some_file
 ```
 
@@ -24,13 +24,13 @@ call with a configurable time to sleep. The default is 500 microseconds but you 
 reconfigure it like:
 
 
-```<!---sh-->
+``` <!---sh-->
     make SLEEP=700 clobber alt
 ```
 
 which would set it at 700. Then, whether you use the default value or not, try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.alt.sh
 ```
 
@@ -45,21 +45,21 @@ modern systems.
 
 ### Original build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ### Original use:
 
-```<!---sh-->
+``` <!---sh-->
     ./lycklama < some_file
 ```
 
 
 ### Original try:
 
-```<!---sh-->
+``` <!---sh-->
     ./lycklama < lycklama.c
     ./lycklama < lycklama.alt.c
     ./lycklama < lycklama.orig.c

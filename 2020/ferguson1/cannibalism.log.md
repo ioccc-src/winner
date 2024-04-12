@@ -184,7 +184,7 @@ most of them.
 Another example invocation where the snake head is in the snake and where the snake
 hadn't yet moved (that is it was still growing):
 
-```<!---sh-->
+``` <!---sh-->
     CANNIBAL=1 SIZE=1500 GROW=2 MAXSIZE=1600 ./prog
 ```
 

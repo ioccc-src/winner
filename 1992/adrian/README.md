@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -19,13 +19,13 @@ For more detailed information see [1992 adrian bugs](../../bugs.html#1992_adrian
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
 For the slow minded, try:
 
-```<!---sh-->
+``` <!---sh-->
     ./adsleep 32767
 ```
 
@@ -134,7 +134,7 @@ character list.
 With the automaton specification in `filename`, invoke the program by
 typing
 
-```<!---sh-->
+``` <!---sh-->
     ./adrian filename
 ```
 
@@ -151,7 +151,7 @@ occurs if your automaton has more than 257 states.
 
 Running:
 
-```<!---sh-->
+``` <!---sh-->
     ./adrian from < your_mailbox
 ```
 
@@ -169,7 +169,7 @@ the regular expression:
 
 I suggest using `adrian.c` as input, and storing the output in `adwc.c`:
 
-```<!---sh-->
+``` <!---sh-->
     ./adrian < adrian.c > adwc.c
 ```
 
@@ -181,13 +181,13 @@ in the input file.
 Another possibly interesting automaton can be created by slightly
 adjusting the `adrian.c` file.  Change the first line to read
 
-```<!---c-->
+``` <!---c-->
     /* . echo| . */
 ```
 
 and repeat the process above
 
-```<!---sh-->
+``` <!---sh-->
     ./adrian <adrian.c > adecho.c
 ```
 
@@ -204,7 +204,7 @@ employed.
 Two other adjustments to the first line also yield useful results. By
 changing it to
 
-```<!---c-->
+``` <!---c-->
     /* . head; . */
 ```
 
@@ -221,7 +221,7 @@ specified (again this was changed to `__FILE__`).
 
 By setting the first line to
 
-```<!---c-->
+``` <!---c-->
     /* . basename . */
 ```
 
@@ -240,7 +240,7 @@ The resulting base name is printed to stdout.
 
 Lastly, by setting the first line to
 
-```<!---c-->
+``` <!---c-->
     /* . sleep . */
 ```
 

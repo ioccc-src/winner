@@ -3,7 +3,7 @@
 This entry requires SDL to be installed. See [FAQ 3.8](../../faq.html#SDL) if you
 don't know how to do this for your system.
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -21,7 +21,7 @@ For more detailed information see [2014 maffiodo1 bugs](../../bugs.html#2014_maf
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     cat game.level | ./prog 320 200 800 300 128 144 game.rgba game.wav 10343679
 ```
 
@@ -41,7 +41,7 @@ note on macOS.
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./giana.sh
 
     ./mario.sh
@@ -61,7 +61,7 @@ try:
 If you wish to change the width and height, defaulting at 640 x 480, say to
 800 x 800, try:
 
-```<!---sh-->
+``` <!---sh-->
     ROWS=800 COLS=800 ./mario.sh
 
     ROWS=800 COLS=800 ./giana.sh
@@ -92,14 +92,14 @@ immediately take effect.
 
 Use `tabsize=4` to see the magic.
 
-```<!---sh-->
+``` <!---sh-->
     expand -t 4 prog.c
 ```
 
 The program returns 0 if the player wins or *non-zero* if the player loses so
 you can test it and make something useful (or not), like this:
 
-```<!---sh-->
+``` <!---sh-->
     cat mario.level | ./prog 320 200 800 300 128 144 mario.rgba mario8.wav 10343679 && telnet telehack.com 23
 ```
 
@@ -228,7 +228,7 @@ You can input as many objects as you want but the maximum number of objects
 handled by the program is 333. You can modify this value by editing the source
 here:
 
-```<!---c-->
+``` <!---c-->
     C[333*7],d=333;
 ```
 

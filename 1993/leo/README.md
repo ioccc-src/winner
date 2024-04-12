@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -9,13 +9,13 @@
 
 To have the computer guess:
 
-```<!---sh-->
+``` <!---sh-->
     ./leo [colors]
 ```
 
 To guess the computer's number:
 
-```<!---sh-->
+``` <!---sh-->
     ./mind [colors]
 ```
 

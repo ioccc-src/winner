@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -22,7 +22,7 @@ For more detailed information see [1992 westley bugs](../../bugs.html#1992_westl
 If lost:
 
 
-```<!---sh-->
+``` <!---sh-->
     ./whereami.sh lat long
 ```
 
@@ -36,7 +36,7 @@ should just use the `westley` and `westley.alt` programs directly.
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -48,14 +48,14 @@ The author provided a version for the US which we added. To build:
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
 
 ### Alternate use:
 
-```<!---sh-->
+``` <!---sh-->
     ./whereami.alt.sh lat long
 ```
 
@@ -67,7 +67,7 @@ NOTE: this alternative version also needs a terminal with at least 80 columns.
 The [try.sh](try.sh) script uses both the original entry and the alternate code
 so one can try the same script for both:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -76,7 +76,7 @@ so one can try the same script for both:
 
 To find the approximate place where this entry was judged, type:
 
-```<!---sh-->
+``` <!---sh-->
     ./whereami 37 -122	# NOTE: - means west of meridian
 
     # or if you don't have curses installed:
@@ -164,7 +164,7 @@ is reasonably accurate.
 
 For a domestic (US) version with higher resolution, try:
 
-```<!---c-->
+``` <!---c-->
     main(l,a,n,d)char**a;{for(d=atoi(a[1])/2*80-atoi(a[2])-2043;
     n="bnaBCOCXdBBHGYdAP[A M E R I C A].AqandkmavX|ELC}BOCd"
     [l++-3];)for(;n-->64;)putchar(!d+++33^l&1);}
@@ -173,7 +173,7 @@ For a domestic (US) version with higher resolution, try:
 The code will test the 80-column wrap and document itself if it is
 joined together as one 160-character line and listed.  You should see:
 
-```<!---c-->
+``` <!---c-->
     main(l,a,n,d)...
     [A M E R I C A]...
 ```

@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -10,7 +10,7 @@ To compile on a 16 bit machine, change 300000 to 30000.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./heckbert col < file
 ```
 
@@ -19,7 +19,7 @@ where col is the number of columns to fold at and file is the file to fold.
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -28,7 +28,7 @@ where col is the number of columns to fold at and file is the file to fold.
 
 Folding at the wrong length may be equivalent to a "Spindle or Mutilate" operation. For example:
 
-```<!---sh-->
+``` <!---sh-->
     ./heckbert 40 < heckbert.c > ph.c ; make ph ; ./ph 20 < heckbert.c > bar.c ; make bar
 ```
 

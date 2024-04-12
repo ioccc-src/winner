@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -20,26 +20,26 @@ For more detailed information see [1989 westley bugs](../../bugs.html#1989_westl
 
 Try compiling and running the 4 resulting programs like:
 
-```<!---sh-->
+``` <!---sh-->
     ./compile.sh
 ```
 
 If you need to specify an alternate compiler path, say because your default
 compiler is clang (or in the case of macOS gcc is clang) you can do so like:
 
-```<!---sh-->
+``` <!---sh-->
     CC=/opt/local/bin/gcc-mp-12 ./compile.sh
 ```
 
 If you wish to delay the script or remove the delay you can do so like:
 
-```<!---sh-->
+``` <!---sh-->
     DELAY=2 ./compile.sh
 ```
 
 Finally try:
 
-```<!---sh-->
+``` <!---sh-->
     ./westley
     # input some lines of text, sending EOF (usually ctrl-d) to end
 
@@ -70,7 +70,7 @@ different algorithm for each version (hereafter referred to as
 When compiling these versions, one needs to define `trgpune`
 in the compile line (which the Makefile now has).  Example:
 
-```<!---sh-->
+``` <!---sh-->
     cc -Dtrgpune=putchar ver3.c -o ver3
 ```
 
@@ -109,13 +109,13 @@ function `vs()` to define in the ROT13 version.  But a function
 called `vs()` turns into a function called `if()` in the original,
 so it can't be done.  Therefore, I do:
 
-```<!---c-->
+``` <!---c-->
     expr1 && expr2 && (expr3=etc);
 ```
 
 which is the same as:
 
-```<!---c-->
+``` <!---c-->
     if (expr1 && expr2) expr3=etc;
 ```
 
@@ -124,7 +124,7 @@ expressions if they aren't in an assignment or conditional
 statement.  This might warrant a warning, since other compilers
 may do this.  I found MANY compilers botched:
 
-```<!---c-->
+``` <!---c-->
     expr1 && (expr2,expr3);
 ```
 
@@ -146,7 +146,7 @@ such statements to make it more portable.
 
 Normally (!), a reversible C program is done thus:
 
-```<!---c-->
+``` <!---c-->
     /**/ forward code /*/ edoc drawkcab /**/
 ```
 
@@ -154,7 +154,7 @@ If your compiler nests comments, it will get this wrong.
 However, I have made some bits of the code palindromic,
 (or different, but reversible) so it is more like:
 
-```<!---c-->
+``` <!---c-->
     /**/forward/*//**/ palindromic /**//*/drawkcab/**/
 ```
 

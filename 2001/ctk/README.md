@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -10,7 +10,7 @@ code](#alternate code) below.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./ctk
 ```
 
@@ -23,14 +23,14 @@ This alternate version adds to the movement keys `l` for right, `h` for left and
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
 
 ### Alternate use:
 
-```<!---sh-->
+``` <!---sh-->
     ./ctk.alt
 ```
 

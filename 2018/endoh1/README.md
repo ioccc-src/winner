@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog < textfile > output.gif
 ```
 
@@ -16,7 +16,7 @@
 
 To see the input files and feed them to the program, redirecting to GIF files:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -40,7 +40,7 @@ least 2MiB of memory to run in.
 
 This program generates an animated GIF from a plain text.  Run:
 
-```<!---sh-->
+``` <!---sh-->
     cc -o prog prog.c
     ./prog < invisible.txt > invisible.gif
 ```
@@ -51,14 +51,14 @@ letters that leave the mark and ones that do not?
 
 Other examples:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog < golem.txt > golem.gif
     ./prog < smily.txt > smily.gif
 ```
 
 The program itself has a hidden message.
 
-```<!---sh-->
+``` <!---sh-->
     ./prog < prog.c > prog.gif
 ```
 

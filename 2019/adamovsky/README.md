@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -18,14 +18,14 @@ For more detailed information see [2019 adamovsky bugs](../../bugs.html#2019_ada
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog file.unl
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -47,7 +47,7 @@ Functional programming is not a panacea against core dumps, after all.
 
 This can be demonstrated by:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog crash.unl
 ```
 
@@ -84,7 +84,7 @@ by the sheer length of the dividing line and totally overlooks the rest of the p
 
 When built directly using
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -92,7 +92,7 @@ the program (`prog`) accepts a single parameter with the name of an Unlambda pro
 download the [Colossal Cave Adventure][1] (the [advent.unl](advent.unl) file)
 and run it like this:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog advent.unl
 ```
 
@@ -105,7 +105,7 @@ entries from [quine contest][4].
 There is an alternative build path that requires the 2018 IOCCC size tool to complete. Put the tool
 source [iocccsize_2018.c](iocccsize_2018.c) in the project directory and call
 
-```<!---sh-->
+``` <!---sh-->
     make identify
 ```
 

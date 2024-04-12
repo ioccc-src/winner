@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     # text mode
     ./imc -text
 
@@ -19,7 +19,7 @@
 
 To see a number of options and configurations:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -164,7 +164,7 @@ standard error to indicate its progress (one dot per pixel line).
 
 Here are a couple of good pictures to draw:
 
-```<!---sh-->
+``` <!---sh-->
     ./imc -s 512,512 -f 600000 -l 512 -m 16 -c.00805,.74274 > screen1.ras
     ./imc -s512,512 -j-.523,-.535 > screen2.ras
 ```

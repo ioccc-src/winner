@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -19,7 +19,7 @@ For more detailed information see [2011 dlowe bugs](../../bugs.html#2011_dlowe).
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./dlowe -<n_iterations> corpus1/ [...] corpus0/ < start.net > trained.net
 ```
 
@@ -27,7 +27,7 @@ NOTE: In the above command, the directory args MUST end in a `/`.
 
 Then to use `trained.net`:
 
-```<!---sh-->
+``` <!---sh-->
     ./dlowe file [file ...] < trained.net
 ```
 
@@ -36,7 +36,7 @@ Then to use `trained.net`:
 
 Try these pre-trained networks:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -44,7 +44,7 @@ NOTE: The `dlowe-aux-data/` directory, which [try.sh](try.sh) refers to, was
 created by:
 
 
-```<!---sh-->
+``` <!---sh-->
     tar -jxf dlowe-aux-data.tar.bz2
 ```
 
@@ -63,7 +63,7 @@ on the C code of entries that were supplied to the 20Th IOCCC.
 The `ioccc-winlose-trained.net` was trained using the
 [earlystop.pl](earlystop.pl) tool:
 
-```<!---sh-->
+``` <!---sh-->
     rm -f ioccc-winlose-trained.net
     ./earlystop.pl ioccc-winlose-trained.net ioccc_won_training/ ioccc_lost_training/ ioccc_won_test/ ioccc_lost_test/
 ```
@@ -101,7 +101,7 @@ The resulting `ioccc-winlose-trained.net` file was included in the
 The [dlowe.c](dlowe.c) was explicitly excluded from this trailing set, so this
 test is interesting:
 
-```<!---sh-->
+``` <!---sh-->
     ./dlowe dlowe.c < dlowe-aux-data/ioccc-winlose-trained.net
 ```
 
@@ -127,7 +127,7 @@ data sets on which to test:
 
 We created the [english-trained.net](dlowe-aux-data/english-trained.net) as follows:
 
-```<!---sh-->
+``` <!---sh-->
     ./dlowe -8000 dlowe-aux-data/english-1/ dlowe-aux-data/english-0/ < /dev/null > dlowe-aux-data/english-trained.net
 ```
 
@@ -139,7 +139,7 @@ We created the [english-trained.net](dlowe-aux-data/english-trained.net) as foll
 
 We created the [png-trained.net](dlowe-aux-data/png-trained.net) as follows:
 
-```<!---sh-->
+``` <!---sh-->
     ./dlowe -8000 png-1/ png-0/ < /dev/null > dlowe-aux-data/png-trained.net
 ```
 
@@ -151,7 +151,7 @@ We created the [png-trained.net](dlowe-aux-data/png-trained.net) as follows:
 
 We created the [xor-trained.net](dlowe-aux-data/xor-trained.net) as follows:
 
-```<!---sh-->
+``` <!---sh-->
     ./dlowe -8000 dlowe-aux-data/xor-1/ dlowe-aux-data/xor-0/ < /dev/null > dlowe-aux-data/xor-trained.net
 ```
 
@@ -189,7 +189,7 @@ The neurons' activation function is the logistic function `1 / (1 + e ^ -x)`.
 
 ### Classifying
 
-```<!---sh-->
+``` <!---sh-->
     ./dlowe file [file ...] < trained.net
 ```
 
@@ -205,7 +205,7 @@ trained, but it's geared toward interpretation as a *probability* or a
 
 ### Training
 
-```<!---sh-->
+``` <!---sh-->
     ./dlowe -<n_iterations> corpus1/ [...] corpus0/ < start.net > end.net
 ```
 

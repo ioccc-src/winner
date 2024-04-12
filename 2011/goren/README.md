@@ -1,20 +1,20 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     echo "some text" | ./goren
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -27,13 +27,13 @@ In the words of [René François Ghislain Magritte Magritte](http://en.wikipedia
 
 One may ask the surrealist question:
 
-```<!---sh-->
+``` <!---sh-->
     echo 'If | is just a representation of a pipe, then how can data stuff it?' | ./goren
 ```
 
 However if one takes a firm stand and declares:
 
-```<!---sh-->
+``` <!---sh-->
     echo '| is just a representation of a pipe because I say so! So stuff it!' | ./goren
 ```
 

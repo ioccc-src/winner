@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./lievaart
     # enter a level and start playing as described below
 ```
@@ -17,7 +17,7 @@
 
 To see what it would have looked like without the size restrictions:
 
-```<!---sh-->
+``` <!---sh-->
     ./lievaart2
     # enter a level and start playing as described below
 ```

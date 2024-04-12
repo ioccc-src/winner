@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -21,14 +21,14 @@ For more detailed information see [1992 albert bugs](../../bugs.html#1992_albert
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./albert number
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -64,7 +64,7 @@ The [albert.alt.c](albert.c) file is the fixed file, whereas the
 
 To compile this alternate version:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -76,7 +76,7 @@ Use `albert.alt` as you would `albert` above.
 
 ### Alternate try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.alt.sh
 ```
 
@@ -106,7 +106,7 @@ if you want to factor Fermat's 4th number. Then just run it.
 Or you may type `./albert <some-number>`
 A nice one is also (30 ones):
 
-```<!---sh-->
+``` <!---sh-->
     ./albert 111111111111111111111111111111
 ```
 
@@ -114,7 +114,7 @@ Apart from the foregoing there are no special execution instructions.
 
 To customize the program into a factorizer of a fixed number, use
 
-```<!---sh-->
+``` <!---sh-->
     cc albert.c -o 4294967297
 ```
 

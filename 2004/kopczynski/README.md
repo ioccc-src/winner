@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -10,14 +10,14 @@ will not work with it enabled.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./kopczynski < input_file
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -34,14 +34,14 @@ does.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
 
 ### Alternate try:
 
-```<!---sh-->
+``` <!---sh-->
     ./kopczynski.alt < kopczynski-10
     echo $?
 ```

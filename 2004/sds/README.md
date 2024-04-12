@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -18,14 +18,14 @@ For more detailed information see [2004 sds bugs](../../bugs.html#2004_sds).
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./sds
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -63,13 +63,13 @@ decoder.
 
 Try it out.  Compile the program, then type
 
-```<!---sh-->
+``` <!---sh-->
     ./sds < sds.c
 ```
 
 You should see the encoder program displayed.  Now save it, like:
 
-```<!---sh-->
+``` <!---sh-->
     ./sds < sds.c > encoder.c
 ```
 
@@ -82,14 +82,14 @@ standard input, and will output the results on the standard output.
 
 You can use it like this (assuming you have a file called remarks):
 
-```<!---sh-->
+``` <!---sh-->
     echo 'Hello, World!' > message
     ./encoder message < remarks > remarks_msg
 ```
 
 Then to decode:
 
-```<!---sh-->
+``` <!---sh-->
     ./sds < remarks_msg
     Hello, World!
 ```

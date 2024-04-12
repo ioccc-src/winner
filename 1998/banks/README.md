@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -34,14 +34,14 @@ macros to, depending on what controls you wish to redefine. For instance, to set
 the throttle up and down to `u` and `d`:
 
 
-```<!---sh-->
+``` <!---sh-->
     make clobber IT=XK_u DT=XK_d all
 ```
 
 because in the header file you can see that `XK_u` corresponds to `u` and `XK_d`
 corresponds to `d`:
 
-```<!---c-->
+``` <!---c-->
     #define XK_d                             0x0064  /* U+0064 LATIN SMALL LETTER D */
     #define XK_u                             0x0075  /* U+0075 LATIN SMALL LETTER U */
 ```
@@ -63,7 +63,7 @@ preselected alternative keys.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     cat horizon.sc pittsburgh.sc | ./banks
 ```
 
@@ -106,7 +106,7 @@ the right side for movement. These are hard coded, as noted.
 
 To use the default settings for the alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -231,7 +231,7 @@ Here is a brief description of the scenery files:
 
 A few examples of how to input scenery:
 
-```<!---sh-->
+``` <!---sh-->
     cat horizon.sc pittsburgh.sc | ./banks
     cat mountains.sc bb.sc | ./banks
     cat mountains.sc river.sc pyramids.sc | ./banks
@@ -240,7 +240,7 @@ A few examples of how to input scenery:
 You can simulate flying through a cloud bank as well:
 
 
-```<!---sh-->
+``` <!---sh-->
     ./banks < /dev/null
 ```
 

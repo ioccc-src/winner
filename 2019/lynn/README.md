@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -18,14 +18,14 @@ For more detailed information see [2019 lynn bugs](../../bugs.html#2019_lynn).
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -62,7 +62,7 @@ typeclasses. Just pass dictionaries explicitly.
 
 Build the compiler:
 
-```<!---sh-->
+``` <!---sh-->
     cc -o prog prog.c
 ```
 
@@ -72,7 +72,7 @@ Build the compiler:
 
 Test the compiler on [fib.hs](fib.hs):
 
-```<!---sh-->
+``` <!---sh-->
     (./prog < fib.hs ; cat prog.c) > fib.c
 ```
 
@@ -81,7 +81,7 @@ Compiling the output produces a binary that prints the 30th Fibonacci number.
 The file [ghcfib.hs](ghcfib.hs) includes [fib.hs](fib.hs) with some glue code,
 and shows GHC also accepts our subset of Haskell:
 
-```<!---sh-->
+``` <!---sh-->
     ghc ghcfib.hs
 ```
 
@@ -93,7 +93,7 @@ instead provide [hint.hs](hint.hs), the output of a certain stage of the
 compiler when run on itself. This intermediate output is hopefully difficult to
 understand, yet is accepted by our compiler:
 
-```<!---sh-->
+``` <!---sh-->
     (./prog < hint.hs ; cat prog.c) > hint.c
     make hint
     ./hint
@@ -116,7 +116,7 @@ languages"](https://www.cs.dartmouth.edu/~doug/nfa.pdf). We exercise it by
 showing the first entries of the length-ordered list of all strings consisting
 of the characters `a` and `b` that contain an even number of `a`s.
 
-```<!---sh-->
+``` <!---sh-->
     (./prog < lol.hs ; cat prog.c) > lol.c
     make lol
     ./lol
@@ -124,7 +124,7 @@ of the characters `a` and `b` that contain an even number of `a`s.
 
 A GHC wrapper is provided:
 
-```<!---sh-->
+``` <!---sh-->
     ghc ghclol.hs
 ```
 
@@ -135,14 +135,14 @@ See [scc.hs](scc.hs) (and its GHC wrapper [ghcscc.hs](ghcscc.hs)) for an elegant
 way to print the strongly-connected components of a graph in reverse topological
 order.
 
-```<!---sh-->
+``` <!---sh-->
     (./prog < scc.hs ; cat prog.c) > scc.c
 ```
 
 It expects the input to be in a similar format as a previous entry
 (2018 vokes). For example:
 
-```<!---sh-->
+``` <!---sh-->
     make scc
     ./scc < example-1.txt
     ./scc < example-2.txt

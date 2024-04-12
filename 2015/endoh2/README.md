@@ -1,20 +1,20 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -31,7 +31,7 @@ At this point you might be wondering, [WTF](http://acronyms.thefreedictionary.co
 
 How is this code obfuscated?  Well look again:
 
-```<!---sh-->
+``` <!---sh-->
     less prog.c
 
     more prog.c
@@ -49,7 +49,7 @@ If you are still puzzled, look at [prog.c](prog.c) with your favorite text edito
 
 **Follow these instructions literally!**
 
-```<!---sh-->
+``` <!---sh-->
     cat prog.c
     gcc -w -o prog prog.c
     ./prog

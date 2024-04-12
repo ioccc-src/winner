@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./dds
 ```
 
@@ -16,7 +16,7 @@
 
 Give the following lines as input:
 
-```<!---basic-->
+``` <!---basic-->
     OLD LANDER.BAS
     RUN
 ```

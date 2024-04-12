@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [2018 hou bugs](../../bugs.html#2018_hou).
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog < input.json > output.html
 ```
 
@@ -27,7 +27,7 @@ View `output.html` in a browser.
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 

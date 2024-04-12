@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -12,14 +12,14 @@ code](#alternate-code) below.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog
 ```
 
@@ -36,7 +36,7 @@ recognisable and also to let you reconfigure the coordinates.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -45,7 +45,7 @@ If you wish to redefine the coordinates you can do so by defining `X1`, `X2`,
 For instance:
 
 
-```<!---sh-->
+``` <!---sh-->
     make clobber X1=-3 X2=2 Y1=-2.3 Y2=2.3 alt
 ```
 
@@ -59,7 +59,7 @@ Use `prog.alt` as you would `prog`.
 
 ### Alternate try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.alt.sh
 ```
 
@@ -94,7 +94,7 @@ The usage of recognizable elements from the C programming language in the
 application source code is intentionally kept to a bare minimum. If this phrase
 would not be true, the application would be the following:
 
-```<!---c-->
+``` <!---c-->
     double                                 _[]={-2
     ,1,-1.3                ,1.3,  0,         0,0,0
     ,0               ,0,50, 80,     0,0,0     ,255

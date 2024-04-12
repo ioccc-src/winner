@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -12,7 +12,7 @@ includes some interesting details about the entry.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./schweikh1
 ```
 
@@ -30,7 +30,7 @@ if you don't have a Mac as it has some interesting details about the entry.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -126,7 +126,7 @@ macros can be defined, because you could write strictly conforming
 programs that may fail to compile due to syntax errors: supposing that
 `<stdio.h>` defines `PIPE_BUF`, then the conforming
 
-```<!---c-->
+``` <!---c-->
     #include <assert.h>
     #include <stdio.h>    /*  <- or where the bogus macro is defined */
     #include <string.h>
@@ -155,7 +155,7 @@ C compilers.
    must resemble one of the canonical forms, `"foo.h"` or `<bar.h>`.
    This lets us write things like
 
-```<!---c-->
+``` <!---c-->
     #define HEADER "foo.h"
     #include HEADER
 ```
@@ -164,7 +164,7 @@ C compilers.
    torturing the preprocessor a little more, by using token pasting,
    at least one compiler falls over.
 
-```<!---c-->
+``` <!---c-->
     #define H(x) <st##x##.h>
     #include H(dio)              /* expands to <stdio.h> */
 ```
@@ -187,7 +187,7 @@ C compilers.
    ISO 6.8.4. ISO 6.1.4 defines string literals as s-char-sequences,
    which may include octal escape sequences. Let's look at
 
-```<!---c-->
+``` <!---c-->
     #include <stdio.h>
     #line 42 "foo\0bar"
     int main (void) {
@@ -214,7 +214,7 @@ C compilers.
     under his/her nose. Easy money from a bet! Make sure your guru has
     no chance to use Standardese weasel words as an escape: can I have
 
-```<!---c-->
+``` <!---c-->
     case <some_token>:
     case <some_token>:
 ```
@@ -255,7 +255,7 @@ script to compute the character count according to the rules.
 The advantages of an independent clean room approach...
 
 
-```<!---perl-->
+``` <!---perl-->
     #!/usr/bin/perl -w
     $/ = "\0";
     $_ = <>;
@@ -266,7 +266,7 @@ The advantages of an independent clean room approach...
 
 To use, try:
 
-```<!---sh-->
+``` <!---sh-->
     perl ./charcount.pl schweikh1.c
 ```
 

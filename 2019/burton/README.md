@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [2019 burton bugs](../../bugs.html#2019_burton
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog < file
 
     ./cow file
@@ -27,7 +27,7 @@ For more detailed information see [2019 burton bugs](../../bugs.html#2019_burton
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -51,7 +51,7 @@ The output should look familiar.
 
 Compiles cleanly with:
 
-```<!---sh-->
+``` <!---sh-->
     WARN="-Wno-implicit-int -Wno-missing-variable-declarations -Wno-parentheses"
     cc -Wall -Wextra -Weverything -pedantic $WARN -include stdio.h -o prog prog.c
 ```
@@ -63,7 +63,7 @@ programs, it is silent upon success; any output demonstrates an error.  Instead
 of checking correctness, the [check.sh](check.sh) script can simply output the
 results:   (The Makefile contains the spoiler):
 
-```<!---sh-->
+``` <!---sh-->
     out=cat ./check.sh ./prog
 ```
 
@@ -97,7 +97,7 @@ interface.
 
 Included is a version without compilation warnings:
 
-```<!---sh-->
+``` <!---sh-->
     cc -Wall -Wextra -Weverything -pedantic -include stdio.h -o prog.clean prog.clean.c
 ```
 

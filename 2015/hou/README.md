@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [2015 hou bugs](../../bugs.html#2015_hou).
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     echo something | ./prog
     ./prog < file
 ```
@@ -26,7 +26,7 @@ For more detailed information see [2015 hou bugs](../../bugs.html#2015_hou).
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -42,7 +42,7 @@ the reference code!
 
 Some things that make you go, "huh?"
 
-```<!---sh-->
+``` <!---sh-->
     ./prog < prog.c | cut -c-5
     ./prog < Makefile | cut -c-4
 ```
@@ -51,7 +51,7 @@ How are those values magically returned?
 
 What happens with a large file? Something over 256K.
 
-```<!---sh-->
+``` <!---sh-->
     ./prog < large_file
 ```
 

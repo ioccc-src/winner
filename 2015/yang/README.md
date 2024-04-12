@@ -1,20 +1,20 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     echo Some text | ./prog
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -37,7 +37,7 @@ so you need not worry about this.
 `Fuuko` is a [sea star](https://en.wikipedia.org/wiki/Starfish) generator.  Feed
 her some input through `stdin` to get lots of sea star patterns on `stdout`.
 
-```<!---sh-->
+``` <!---sh-->
     cc -O3 -std=c90 fuuko.c -lm -o fuuko_c90
     echo IOCCC | ./fuuko_c90 > output_c90.c
 ```
@@ -45,7 +45,7 @@ her some input through `stdin` to get lots of sea star patterns on `stdout`.
 If you compile with a C99 compiler instead of C90, the sea stars will
 have eyes.
 
-```<!---sh-->
+``` <!---sh-->
     cc -O3 -std=c99 fuuko.c -lm -o fuuko_c99
     echo IOCCC | ./fuuko_c99 > output_c99.c
 ```
@@ -53,7 +53,7 @@ have eyes.
 Don't like [sea stars](https://en.wikipedia.org/wiki/Starfish)?  Use a C++98
 compiler to get a [dango](https://en.wikipedia.org/wiki/Dango) instead.
 
-```<!---sh-->
+``` <!---sh-->
     g++ -O3 -std=c++98 fuuko.c -lm -o fuuko_cpp98
     echo IOCCC | ./fuuko_cpp98 > output_cpp98.c
 ```
@@ -63,7 +63,7 @@ compiler to get just [circles](https://en.wikipedia.org/wiki/Circle) (or [Swiss
 cheese](https://en.wikipedia.org/wiki/Swiss_cheeses_and_dairy_products), if you
 prefer that).
 
-```<!---sh-->
+``` <!---sh-->
     g++ -O3 -std=c++11 fuuko.c -lm -o fuuko_cpp11
     echo IOCCC | ./fuuko_cpp11 > output_cpp11.c
 ```
@@ -71,7 +71,7 @@ prefer that).
 Don't like any of these patterns?  Use a C11 compiler and there will be
 no extra pattern.
 
-```<!---sh-->
+``` <!---sh-->
     cc -O3 -std=c11 fuuko.c -lm -o fuuko_c11
     echo IOCCC | ./fuuko_c11 > output_c11.c
 ```

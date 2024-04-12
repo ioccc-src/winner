@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./schweikh1
 ```
 
@@ -17,7 +17,7 @@
 To find the day that Easter falls on in the current year and to show all Easter
 dates from 1582 to 2199:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 

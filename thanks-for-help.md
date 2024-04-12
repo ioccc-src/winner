@@ -82,7 +82,7 @@ that it is i.e. `extern double floor(double);` instead of `extern int floor;`)
 and also bringing back `double (x1, y1) b;` and even this funny code that could
 be kept in:
 
-```<!---c-->
+``` <!---c-->
     #define char k['a']
     char x {sizeof(
 	 double(%s,%D)(*)())
@@ -114,7 +114,7 @@ but not clang - or at least some versions.
 
 To see the difference from start to fixed:
 
-```<!---sh-->
+``` <!---sh-->
     cd 1984/decot ; make diff_orig_prog
 ```
 
@@ -237,7 +237,7 @@ To get this to all work the following changes were made. If you really want to
 understand this Cody provides the following. First run the following command
 from the directory:
 
-```<!---sh-->
+``` <!---sh-->
     make diff_orig_prog
 ```
 
@@ -248,7 +248,7 @@ editor with syntax highlighting):
 were actually not what they appear: the only arg that existed in `main()` was
 `Manual`. Thus it now looks like:
 
-```<!---c-->
+``` <!---c-->
     main(
     /*	C program. (If you don't
      *	understand it look it
@@ -273,7 +273,7 @@ case as `c`.
 
 - The code:
 
-```<!---c-->
+``` <!---c-->
     C="Lint says "argument Manual isn't used."  What's that
     mean?"; while (write((read(C_C('"'-'/*"'/*"*/))?__:__-_+
     '\b'b'\b'|((_-52)%('\b'b'\b'+C_C_('\t'b'\n'))+1),1),&_,1));
@@ -281,7 +281,7 @@ case as `c`.
 
     had to be changed to:
 
-```<!---c-->
+``` <!---c-->
     C="Lint says \"argument Manual isn't used.\" What's that\
     mean?"; while (write((read(('"'-'/*"'))?__:__-_+
     '\b'b'\b'|((_-52)%('\b'b'\b'+C_C_('\t'b'\n'))+1),1),&_,1));
@@ -305,14 +305,14 @@ case as `c`.
 
 - The code in `main()` is where there are significant changes, changing from:
 
-```<!---c-->
+``` <!---c-->
     while (read(0,&__,1) & write((_=(_=C_C_(__),C)),
     _C_,1)) _=C-V+subr(&V);
 ```
 
     to:
 
-```<!---c-->
+``` <!---c-->
     while (read(0,&__,1) & write((_=(_=C_C_(__),
     V))?__:__-_+'\b'b'\b'|((_-52)%('\b'b'\b'+~
     ' '&'\t'b'\n')+1),1),&_,1))_=c-v+subr(&v));
@@ -397,7 +397,7 @@ Cody changed the alt code (which was not the same as the original - see above
 for details or try `make diff_orig_alt` in the directory) slightly so that it
 was possible to silence it. In particular:
 
-```<!---c-->
+``` <!---c-->
       P  (    a  )   char a   ;  {    a  ;   while(    a  >      "  B   "
 ```
 
@@ -412,7 +412,7 @@ which gave:
 
 was changed to:
 
-```<!---c-->
+``` <!---c-->
       P  (    a  )   char a   ;  {    a  ;   while((char *)a  >   "  B   "
 ```
 
@@ -461,7 +461,7 @@ work with gcc but it still required `-traditional-cpp`.
 If you'd like to see the difference between the version that requires
 `-traditional-cpp` and the fixed version, try:
 
-```<!---sh-->
+``` <!---sh-->
     cd 1986/wall ; make diff_orig_prog
 ```
 
@@ -469,7 +469,7 @@ Some of the changes required:
 
 - Instead of using the `c_`, defined as `c_(cc)c cc=`, like:
 
-```<!---c-->
+``` <!---c-->
     c_(+)o
 
     /* ... */
@@ -480,7 +480,7 @@ Some of the changes required:
 
     use:
 
-```<!---c-->
+``` <!---c-->
     :c +=o[c&__LINE__-007];
 
     /* ... */
@@ -491,13 +491,13 @@ Some of the changes required:
 
     Observe however that this macro is still used in the code like:
 
-```<!---c-->
+``` <!---c-->
     main(;c_(=(*cc);*cc++)c,for);
 ```
 
 - Instead of code like:
 
-```<!---c-->
+``` <!---c-->
     main(0xb+(c>>5),C_(s))
     _'\v'
     :__ _'\f':
@@ -506,7 +506,7 @@ Some of the changes required:
 
     use instead:
 
-```<!---c-->
+``` <!---c-->
     main(;c_(=(*cc);*cc++)c,for);
     #define _O(s)s
     switch(0xb+(c>>5)){
@@ -517,37 +517,37 @@ Some of the changes required:
 
 - The macro:
 
-```<!---c-->
+``` <!---c-->
     #define C_(sand)_O(sand)witch
 ```
 
     could not be used like:
 
-```<!---c-->
+``` <!---c-->
     C_(s));_
 ```
 
     to create:
 
-```<!---c-->
+``` <!---c-->
     switch);_
 ```
 
     and neither could the macro:
 
-```<!---c-->
+``` <!---c-->
     #define O_(O)_O(O)stem(ccc(
 ```
 
     be used like:
 
-```<!---c-->
+``` <!---c-->
     :O_(sy)";kkt -oa, dijszdijs QQ"))_C
 ```
 
     to create:
 
-```<!---c-->
+``` <!---c-->
     :system(ccc(";kkt -oa, dijszdijs QQ"));return
 ```
 
@@ -668,7 +668,7 @@ First of all, as noted above, the entry required `-traditional-cpp` (which
 <strike>not all compilers support</strike> `clang` does not support). It needed
 that option in modern systems because of two things it did:
 
-```<!---c-->
+``` <!---c-->
     #define a(x)get/***/x/***/id())
 
     /* ... */
@@ -685,7 +685,7 @@ this no longer works.  The code still uses the macro `a` to form the names but
 it's done differently, using the C token paste operator `##`. It's done like
 thus:
 
-```<!---diff-->
+``` <!---diff-->
     --- i/1988/dale/dale.c
     +++ w/1988/dale/dale.c
     @@ -9,18 +9,18 @@
@@ -700,7 +700,7 @@ thus:
 
 The second is that
 
-```<!---c-->
+``` <!---c-->
     for/*/(;;);/*/k()){O/*/*/c);
 ```
 
@@ -710,7 +710,7 @@ macro it was simply changed to be `fork()`, rather than adding a new macro.
 The other problem that could not be resolved by the `-traditional-cpp` was that
 modern compilers do not allow directives like:
 
-```<!---c-->
+``` <!---c-->
     #define _ define
     #_ P char
     #_ p int
@@ -720,7 +720,7 @@ modern compilers do not allow directives like:
 
 so Cody changed the lines to be in the form of:
 
-```<!---c-->
+``` <!---c-->
     #define P char
     #define p int
     #define O close(
@@ -819,7 +819,7 @@ not strictly necessary but nonetheless more correct, even if not warned against.
 A strange problem occurred where if one made modifications to the C file it
 might end up failing to work even after changing it back. This was resolved by:
 
-```<!---diff-->
+``` <!---diff-->
     --- i/1989/fubar/fubar.sh
     +++ w/1989/fubar/fubar.sh
     @@ -7,13 +7,12 @@ if [[ $# -ne 1 ]]; then
@@ -865,7 +865,7 @@ entry and the alt code) anyway, it works out well.
 [Cody](#cody) fixed this to work with modern compilers. Modern compilers do not allow
 code like:
 
-```<!---c-->
+``` <!---c-->
     #define D define
     #define a include
 
@@ -936,7 +936,7 @@ index.html for details.
 made, try:
 
 
-```<!---sh-->
+``` <!---sh-->
     cd 1989/robison ; make diff_orig_prog
 ```
 
@@ -1103,7 +1103,7 @@ Cody also made this use `fgets(3)`.
 
 One can no longer do:
 
-```<!---c-->
+``` <!---c-->
     #define d define
 
     #d b12(x) 12 x
@@ -1188,7 +1188,7 @@ but as he was testing the `fibonacci.c` bug he ended up changing it anyway).
 
 BTW: why can't the fix:
 
-```<!---c-->
+``` <!---c-->
     if (a[1]==NULL||a[2]==NULL||a[3]==NULL||a[4]==NULL||a[5]==NULL) return 1;
 ```
 
@@ -1325,14 +1325,14 @@ changed from `char*s` to `char s[]`):
 ```
 and then the call to `system()` had to be changed to:
 
-```<!---c-->
+``` <!---c-->
     system(q-69);
 ```
 
 An important point is that the placement of this string in the `s` array does
 matter. This is because of the code:
 
-```<!---c-->
+``` <!---c-->
     *o=fopen(q-3,"w");
 ```
 
@@ -1347,7 +1347,7 @@ But then there is the matter of getting the C to use `fgets(3)`. As can be seen
 above it's not as simple as changing `gets(3)` to `fgets(3)`. This was more magic
 characters that had to be updated and some added. The C code:
 
-```<!---c-->
+``` <!---c-->
     atoi(gets(b))
 ```
 
@@ -1359,7 +1359,7 @@ is in the string:
 
 which was changed to be (in C):
 
-```<!---c-->
+``` <!---c-->
     atoi(fgets(b,99,stdin))
 ```
 
@@ -1395,7 +1395,7 @@ But then to prevent the need for disabling a warning and to be more correct
 code, the generated code was changed to `return 1;` rather than just `return;`.
 Thus in full the string became:
 
-```<!---c-->
+``` <!---c-->
     char s[]="Qjou!s\\311^-g\\311^-n\\311^-c\\::^-q-ma%mO1JBHm%BQ-aP1J[O1HB%[Q<n\
     bjo)*|gps)<<*txjudi)m*|aQdbtf!::::;sfuvso!2<aQefgbvmu;aQ<m,,a%CQ<csfbla%bQ<a\
     N2!Q\ndbtf!aP2Q;m>aP2Q<a%!D12J!JGJHJOJQJFJSJJJMHS%HD12D12N3!N4\nJUJT%UQm>aP4\
@@ -1506,13 +1506,13 @@ problem is that `adgrep.c` was an incorrect reference that never existed and it
 was never fixed in any of the files, not the code or the documentation, and thus
 was entirely incorrect code. A fun fact is that one can do:
 
-```<!---c-->
+``` <!---c-->
     W= fopen(wc>= 2 ? V[1] : __FILE__,"rt");if(!W)exit(1);
 ```
 
 but one _CANNOT_ do:
 
-```<!---c-->
+``` <!---c-->
     W= fopen(wc>= 2 ? V[1] : __FILE__,"rt");if(!W)exit(1);
     if (W==NULL)exit(1);
 ```
@@ -1523,7 +1523,7 @@ true of another change as further below.
 
 Cody also restored a slightly more obscure line of code that had been changed:
 
-```<!---diff-->
+``` <!---diff-->
     -   putc("}|uutsrq`_^bji`[Zkediml[PO]a_M__]ISOYIRGTNR"[i]+i-9,stderr);
     +   putc(i["}|uutsrq`_^bji`[Zkediml[PO]a_M__]ISOYIRGTNR"]+i-9,stderr);
 ```
@@ -1552,7 +1552,7 @@ might be expected from the above, caused compilation errors with another
 generated file (`adwc.c`)! Thus after the `gets(3)` call in the line that looks
 like:
 
-```<!---c-->
+``` <!---c-->
     while( gets(Y) ){ Y[strlen(Y)-1]='\0'; if(A(Y)) puts(Y); }
 ```
 
@@ -1809,7 +1809,7 @@ Both [Cody](#cody) and [Yusuke](#yusuke) fixed this so that it will work with mo
 provided some fixes of the X code and Cody fixed the C pre-processor directives
 so that it would compile. It used to be that you could get away with code like:
 
-```<!---c-->
+``` <!---c-->
     G        int i,j
     K        case
 ```
@@ -2421,7 +2421,7 @@ doesn't crash. At this point since the author stated it has no `while`,
 `do...while`, `for`, `if/else`, `switch`, `?:` Cody removed the if statement by
 doing:
 
-```<!---c-->
+``` <!---c-->
     ((V[1]&&((atoi(V[1])>0&&atoi(V[1])<27))||(exit(1),1)));
 ```
 
@@ -2456,7 +2456,7 @@ not exist, it would dereference a NULL pointer and very likely crash or halt and
 catch fire :-), preventing the entry from working. Notice how `H` is a funny
 macro defined as:
 
-```<!---c-->
+``` <!---c-->
     %:define H(x) <st%:%:x##.h>
 ```
 
@@ -2757,13 +2757,13 @@ matter_!
 
 To get this to compile with clang, `main()` had to change from:
 
-```<!---c-->
+``` <!---c-->
     main (char *ck, char **k)
 ```
 
 to:
 
-```<!---c-->
+``` <!---c-->
     main (int cka, char **k) { char *ck = (char *)cka; /* ... */ }
 ```
 
@@ -2778,7 +2778,7 @@ macOS and Linux).
 NOTE: there might be educational value to see the progress of this fix; if you
 wish to see, try the following commands from the `2001/anonymous` directory:
 
-```<!---sh-->
+``` <!---sh-->
     git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..93aa8d79f208dcccc3c5a2370a727b5cf64e9c53 anonymous.c
     git diff 93aa8d79f208dcccc3c5a2370a727b5cf64e9c53..c48629017117379a52b1a512ef8f2593ca9569c8 anonymous.c
     git diff c48629017117379a52b1a512ef8f2593ca9569c8..efdee208a2bc650256637b9357ddfd0de82d2f41 anonymous.c
@@ -2789,13 +2789,13 @@ wish to see, try the following commands from the `2001/anonymous` directory:
 
 Finally to see from start to finish:
 
-```<!---sh-->
+``` <!---sh-->
     git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..4bc03de321612869aebf855850c6500df95cb6ef anonymous.c
 ```
 
 or to not use `git`:
 
-```<!---sh-->
+``` <!---sh-->
     make diff_orig_prog
 ```
 
@@ -2874,7 +2874,7 @@ He also fixed it to check the number of args.
 Cody fixed this to compile with clang in Linux. The problem was C99 does not
 support implicit int:
 
-```<!---c-->
+``` <!---c-->
     coupard.c:31:10: error: parameter 'h' was not declared, defaults to 'int'; ISO C99 and later do not support implicit int [-Wimplicit-int]
     void e(n,h){
 	     ^
@@ -3113,7 +3113,7 @@ cpp being unable to parse the generated code (see the index.html for details) an
 this ended up with a number of errors like:
 
 
-```<!---c-->
+``` <!---c-->
     jdalbec.c:64:5: error: stray '##' in program
        64 | B N##B (I) ; \
 	  |     ^~
@@ -3196,7 +3196,7 @@ to the repo for the script instead.
 [Cody](#cody) fixed this to compile in Linux. Although it compiled cleanly in macOS (and
 BSD?) the code failed to compile at all in Linux due to:
 
-```<!---c-->
+``` <!---c-->
     cc -E vik2_1.c > vik2_2.c
     In file included from vik2.c:945,
 		     from vik2.c:959,
@@ -3310,7 +3310,7 @@ Linux (32-bit, 64-bit) and macOS (arm64).
 
 To get the self-test feature to work it was required to remove from the code:
 
-```<!---c-->
+``` <!---c-->
     O-b-f-u -s-c-a-t-e;
 ```
 
@@ -3326,7 +3326,7 @@ portable and caused other problems.  This was a complicated fix as it's in the
 comments but in a funny way; the final result to get the test feature to work
 is:
 
-```<!---c-->
+``` <!---c-->
     ;; /*echo/Line/%d;sed/-n/-e/ %d,%dp/%s/|sed*/
     /*-e/'s,intZ,int/ Z,g'>c.c;make/c;/ rm/-f/c*/
     ;;
@@ -3334,7 +3334,7 @@ is:
 
 changed from:
 
-```<!---c-->
+``` <!---c-->
     ;; /*echo/Line/%d;sed/-n/-e/ %d,%dp/%s>*/
     /*c.c;cc/c.c /-c*/;;
 ```
@@ -3342,7 +3342,7 @@ changed from:
 or as a diff:
 
 
-```<!---diff-->
+``` <!---diff-->
     -(t(m),(0));; /*echo/Line/%d;sed/-n/-e/ %d,%dp/%s>*/
     -/*c.c;cc/c.c /-c*/;;char*A=0,*_,*R,*Q, D[9999],*r,l
     -[9999],T=42, M,V=32;long*E,k[9999],B[1 <<+21],*N=B+
@@ -3380,7 +3380,7 @@ not do it implicitly (like macOS does).
 [Cody](#cody) fixed this to work in Linux. The problem was an unknown escape sequence,
 `\N`, which caused a funny compiler error:
 
-```<!---c-->
+``` <!---c-->
     };n b[2048];int i
     mikeash.c: In function 'R':
     mikeash.c:7:1: error: '\N' not followed by '{'
@@ -3433,7 +3433,7 @@ Cody also added the [try.sh](2005/persano/try.sh) script.
 
 [Cody](#cody) added the saved (with the `SAVE` command) BASIC program `PET` which was:
 
-```<!---basic-->
+``` <!---basic-->
     10 PRINT "2005'S IOCCC BEST EMULATOR"
     20 PRINT "BY STEPHEN SYKES!"
 ```
@@ -4107,7 +4107,7 @@ real source of the program. So the source of the entry has to be compiled and
 then run, and the output has to be compiled to be `hou`. This allows the real
 program to be used. Thus the Makefile rule looks like:
 
-```<!---makefile-->
+``` <!---makefile-->
     ${PROG}: ${PROG}.c
 	    ${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 	./${PROG} | ${CC} ${CFLAGS} -xc - -o $@ ${LDFLAGS}
@@ -4117,7 +4117,7 @@ program to be used. Thus the Makefile rule looks like:
 
 which then compiles like:
 
-```<!---sh-->
+``` <!---sh-->
     cc -std=gnu11 -Wall -Wextra -pedantic -Wno-sign-compare -Wno-strict-prototypes    -O3 hou.c -o hou -lm
     ./hou | cc -std=gnu11 -Wall -Wextra -pedantic -Wno-sign-compare -Wno-strict-prototypes    -O3 -xc - -o hou -lm
 ```
@@ -4311,7 +4311,7 @@ output.
 first character of the filename starts with `e`. The only way it would work
 before that is if one did something like:
 
-```<!---sh-->
+``` <!---sh-->
     ln -sf prog eprog
     PATH=$PATH:. ; eprog '...'
 ```
@@ -4320,7 +4320,7 @@ since otherwise the first character would not be `e` but rather a dot
 (`./eprog`). This was done by adding to the Makefile `-include libgen.h` and
 adding to `main()` after the variable declaration (`V*A;`) the code:
 
-```<!---c-->
+``` <!---c-->
     *K=basename(*K);
 ```
 
@@ -4820,7 +4820,7 @@ He also added the [try.sh](2020/endoh2/try.sh) script.
 [Cody](#cody) fixed the script [run_clock.sh](2020/endoh3/run_clock.sh) which gave a
 funny error when running it:
 
-```<!---sh-->
+``` <!---sh-->
     $ ./run_clock.sh
     -bash: ./run_clock.sh: cannot execute: required file not found
 ```

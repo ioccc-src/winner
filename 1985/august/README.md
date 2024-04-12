@@ -1,20 +1,20 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./august
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -22,7 +22,7 @@ If you have the `primes(6)` tool (sometimes part of [BSD
 Games](https://github.com/vattam/BSDGames)) you can see
 what of the output in the first `N` (say `15` or `25`) lines are primes:
 
-```<!---sh-->
+``` <!---sh-->
     ./primes.sh # 15
     ./primes.sh 25
 ```

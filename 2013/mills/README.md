@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -18,14 +18,14 @@ For more detailed information see [2013 mills bugs](../../bugs.html#2013_mills).
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./mills
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./mills &
 ```
 
@@ -61,7 +61,7 @@ while you are there, click on an ad.  They could use the money.
 
 It would be possible to fix this by adding
 
-```<!---c-->
+``` <!---c-->
     n=1,setsockopt(s,SOL_SOCKET,SO_REUSEADDR,&n,sizeof n),
 ```
 

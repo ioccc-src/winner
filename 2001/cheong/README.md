@@ -1,20 +1,20 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./cheong digits
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -36,7 +36,7 @@ Compile normally and run with one argument, an integer with 2n digits.
 Program will return the integer part of its square root (n-digits).
 For example,
 
-```<!---sh-->
+``` <!---sh-->
     $ cc -o cheong cheong.c
     $ ./cheong 1234567890
     35136
@@ -52,7 +52,7 @@ This program runs normally on any ANSI C compiler and is ASCII dependent.
 
 Strict compiling gives just one unavoidable warning:
 
-```<!---sh-->
+``` <!---sh-->
     gcc -ansi -Wall cheong.c
     cheong.c:3: warning: third argument of `main' should probably be `char **'
 ```

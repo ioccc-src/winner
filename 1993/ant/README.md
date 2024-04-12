@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -18,14 +18,14 @@ For more detailed information see [1993 ant bugs](../../bugs.html#1993_ant).
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./ant 'ERE' [file ...]
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 

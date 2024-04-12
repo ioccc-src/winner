@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./nathan
     # enter some text
 ```
@@ -17,7 +17,7 @@
 
 To see some other fun uses:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -58,7 +58,7 @@ distribute some winning entries outside of the US.
 Nathan Sidwell stated that he was willing to distribute the winning source.  To
 read HIS instructions of how to obtain his winning program one was able to run:
 
-```<!---sh-->
+``` <!---sh-->
     make nathan
     ./nathan
 ```

@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -11,7 +11,7 @@ more details on it.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./sicherman < file
 
     echo foo | ./sicherman
@@ -23,7 +23,7 @@ more details on it.
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -43,7 +43,7 @@ audience.
 Although this will be built if the original fails to compile you can do it
 manually like:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -52,14 +52,14 @@ In this case it will be built as `sicherman.alt`.
 
 ### Alternate use:
 
-```<!---sh-->
+``` <!---sh-->
     ./sicherman.alt < file
 ```
 
 
 ### Alternate try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.alt.sh
 ```
 
@@ -80,7 +80,7 @@ on a line.  Now enter the letters 'n' through 'z'.  But to borrow a quote
 from Richard Stallman: If you think you understand what this code
 does, then you don't, so read it again!  Explain why:
 
-```<!---sh-->
+``` <!---sh-->
     ./sicherman < sicherman.c | ./sicherman | diff - ./sicherman.c
 ```
 

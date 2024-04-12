@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -10,7 +10,7 @@ this entry because of the system resources it requires.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./fanf
 ```
 
@@ -19,7 +19,7 @@ this entry because of the system resources it requires.
 
 Enter an expression on standard input.  To try some we have selected:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -47,7 +47,7 @@ can you begin to understand what it is doing?
 
 Look at the first stage of the C pre-processing which was done like:
 
-```<!---sh-->
+``` <!---sh-->
     cc fanf.c -E > fanftmp1.c
 ```
 

@@ -35,7 +35,7 @@ been eliminated, and will likely be considered in future years.
 
 A number of entries made use of the following C pre-processor feature:
 
-```<!---c-->
+``` <!---c-->
     #define X define
     #X foo bar
 ```

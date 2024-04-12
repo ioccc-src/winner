@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -21,7 +21,7 @@ For more detailed information see [2001 dgbeards bugs](../../bugs.html#2001_dgbe
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./dgbeards
 ```
 
@@ -36,14 +36,14 @@ this you can look at the author's remarks and make the change.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
 
 ### Alternate use:
 
-```<!---sh-->
+``` <!---sh-->
     ./dgbeards.alt
 ```
 

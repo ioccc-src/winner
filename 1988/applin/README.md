@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -12,7 +12,7 @@ program.  See the [Alternate code](#alternate-code) section below for details.
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./applin
 ```
 
@@ -25,7 +25,7 @@ with this entry.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 

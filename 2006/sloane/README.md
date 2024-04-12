@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -11,7 +11,7 @@ code](#original-code) below.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./slone.alt
 ```
 
@@ -24,7 +24,7 @@ problematic for some people, can be configured to different speeds by way of the
 value used in `usleep()`. The default is `75000` but you can easily change
 it. To do so try:
 
-```<!---sh-->
+``` <!---sh-->
     make clobber SLEEP=70000 clobber alt
     ./sloane.alt
 ```
@@ -32,7 +32,7 @@ it. To do so try:
 If you wish to make it like the original, as if the below [Original
 code](#original-code) was being used, you can do:
 
-```<!---sh-->
+``` <!---sh-->
     make SLEEP=0 clobber alt
     ./sloane.alt
 ```
@@ -46,14 +46,14 @@ Should you wish to see the original you may do so with the original code,
 
 ### Original build:
 
-```<!---sh-->
+``` <!---sh-->
     make clobber all
 ```
 
 
 ### Original use:
 
-```<!---sh-->
+``` <!---sh-->
     ./sloane
 ```
 

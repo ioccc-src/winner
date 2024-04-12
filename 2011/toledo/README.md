@@ -2,7 +2,7 @@
 
 If you have X11 installed:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -13,7 +13,7 @@ Windows](toledo.alt2.c). See [Alternate code](#alternate-code) below.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./toledo
 ```
 
@@ -49,7 +49,7 @@ but you can change them about however you like, even with other keys. For
 instance to swap `LEFT` and `RIGHT`:
 
 
-```<!---sh-->
+``` <!---sh-->
     make clobber LEFT=XK_Right:XK_d RIGHT=XK_Left:XK_a alt
 ```
 
@@ -75,7 +75,7 @@ the source early on, right before the code gets hard to follow, or using the
 Like Oscar's previous winning X11 program for the 19th IOCCC, if
 you remove both the X11 include files and replace them with
 
-```<!---c-->
+``` <!---c-->
     #include "layer.c"
 ```
 

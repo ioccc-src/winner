@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -15,7 +15,7 @@ see [Original code](#original-code) below.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./westley.alt
 ```
 
@@ -39,14 +39,14 @@ from start to finish.
 For something more interesting try compiling it with different `cc -D` arguments
 and then run the program each time.  For example:
 
-```<!---sh-->
+``` <!---sh-->
     cc -Describe -Door westley.alt.c -o westley.alt && ./westley.alt
     cc -Describe -Drain westley.alt.c -o westley.alt && ./westley.alt
 ```
 
 To see the game from start to finish, try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.alt.sh
 ```
 
@@ -65,7 +65,7 @@ reason that we recommend you try it first.
 
 ### Original build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -95,14 +95,14 @@ error messages; there is no running the program.
 For something more interesting try compiling it with different `cc -D`
 arguments:
 
-```<!---sh-->
+``` <!---sh-->
     cc -Describe -Door westley.c
     cc -Describe -Drain westley.c
 ```
 
 To see the game from start to complete, try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -115,7 +115,7 @@ For spoilers see the end of the notes from the author below.
 
 To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -131,7 +131,7 @@ This program is a simple adventure game which uses only C preprocessor
 error messages (for missing `#include` files) as output.  To begin,
 try to compile the program with no options:
 
-```<!---sh-->
+``` <!---sh-->
     cc westley.c
 ```
 
@@ -159,7 +159,7 @@ missing include file name, which functions as the game text.
 To "do" things, all words must start with `-D`.  For example, to
 look at the door, do:
 
-```<!---sh-->
+``` <!---sh-->
     cc -Describe -Door prog.c
 ```
 
@@ -176,7 +176,7 @@ Here is a walk-through for the game, including a few dead-ends:
 
 ### SPOILER
 
-```<!---sh-->
+``` <!---sh-->
     cc -Describe -Door westley.c
     cc -Describe -Drain westley.c
     cc -Describe -Dwarf westley.c

@@ -1,20 +1,20 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./hou 'expression'
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -32,7 +32,7 @@ source code. What does it mean?
 
 The calculator obeys the precedence rules and allows parenthesis.
 
-```<!---sh-->
+``` <!---sh-->
     ./hou '1+2*3'
     ./hou '(1+2)*3'
 ```
@@ -41,7 +41,7 @@ What exactly does the text formatting do?
 
 What does this evaluate to in C?
 
-```<!---c-->
+``` <!---c-->
     +~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
 ```
 

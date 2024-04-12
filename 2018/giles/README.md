@@ -4,21 +4,21 @@ This entry requires SDL2 to be installed. See [FAQ 3.8: How do I compile an
 IOCCC entry that requires SDL1 or SDL2?](../../faq.html#SDL) if you don't have it
 installed and don't know how to do so.
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog ioccc.txt
 
     ./prog prog.c

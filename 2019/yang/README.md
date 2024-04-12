@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [2019 yang bugs](../../bugs.html#2019_yang).
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog sample_input.txt a b c d
 
     cat a
@@ -35,7 +35,7 @@ For more detailed information see [2019 yang bugs](../../bugs.html#2019_yang).
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -52,7 +52,7 @@ output again.
 
 Scramble/unscramble to single file:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog original.txt > scrambled.txt
 
     ./prog < scrambled.txt > unscrambled.txt
@@ -60,7 +60,7 @@ Scramble/unscramble to single file:
 
 Scramble/unscramble to multiple files:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog input.txt output1.txt output2.txt ...
 
     cat output1.txt output2.txt ... | ./prog > unscrambled.txt
@@ -68,7 +68,7 @@ Scramble/unscramble to multiple files:
 
 Re-scramble:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog original.txt | ./prog - > scrambled1.txt
     ./prog original.txt | ./prog - | ./prog - > scrambled2.txt
     ./prog original.txt | ./prog - | ./prog - | ... > scrambled3.txt
@@ -76,7 +76,7 @@ Re-scramble:
 
 Scramble slowly:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog input.txt | ruby prog.c
 ```
 
@@ -87,14 +87,14 @@ Input must be in UTF-8 encoding.
 This is a text scrambling utility.  To scramble text, specify input file name as
 the first argument:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog input.txt > output.txt
 ```
 
 If original input file was small enough to fit in your terminal, you
 can simply use `cat` to unscramble the output text.
 
-```<!---sh-->
+``` <!---sh-->
     cat output.txt
 ```
 
@@ -106,7 +106,7 @@ order.  This effect is more visible if there is a delay after each character is
 printed.  For convenience, a utility is included in the source to output
 characters slowly:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog input.txt | ruby prog.c
 ```
 
@@ -114,14 +114,14 @@ Scrambling order is deterministic, but you can reshuffle the output by
 piping it through the same utility again, by specifying `-` as the
 first argument:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog input.txt | ./prog - | ./prog - | ...
 ```
 
 You can also split the input to multiple files, each getting a subset
 of the original input characters:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog input.txt output1.txt output2.txt ...
     cat output1.txt output2.txt ... > unscrambled.txt
 ```
@@ -138,7 +138,7 @@ positions to be misaligned.  But fear not, this utility also includes
 unscrambling functionality.  If no argument is specified, input will
 be read through `stdin` and unscrambled to `stdout`:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog < scrambled.txt > unscrambled.txt
 ```
 
@@ -146,7 +146,7 @@ Where this is useful is that if you scramble the input to multiple
 files and unscramble each output file individually, those output
 files can be printed on transparencies and distributed separately.
 
-```<!---sh-->
+``` <!---sh-->
     ./prog input.txt output1.txt output2.txt output3.txt
     ./prog < output1.txt > layer1.txt
     ./prog < output2.txt > layer2.txt
@@ -159,7 +159,7 @@ In other words, this is a utility for facilitating
 This utility can also be used just for removing trailing whitespaces
 and expanding tabs to 8 spaces.
 
-```<!---sh-->
+``` <!---sh-->
     ./prog input.txt | ./prog
 ```
 

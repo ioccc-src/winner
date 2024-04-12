@@ -1,20 +1,20 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog < file > file.Z
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -37,19 +37,19 @@ compresses differently? The judges know. :)
 
 #### Usage:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog < input.txt > input.txt.Z
 ```
 
 #### Example:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog < guidelines.txt > guidelines.txt.Z
 ```
 
 #### Check for correctness:
 
-```<!---sh-->
+``` <!---sh-->
     zcat guidelines.txt.Z > guidelines2.txt
     diff -s guidelines.txt guidelines2.txt
 ```

@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -11,14 +11,14 @@ version](#alternate-code) below.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./natori
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -42,14 +42,14 @@ The author noted that those in the southern hemisphere might want to change
 
 To run the alternate code that supports the southern hemisphere:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
 
 ### Alternate use:
 
-```<!---sh-->
+``` <!---sh-->
     ./natori.alt
 ```
 
@@ -65,7 +65,7 @@ versions? Or are there any?
 
 ### Alternate try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.alt.sh
 ```
 

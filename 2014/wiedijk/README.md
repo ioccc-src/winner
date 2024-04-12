@@ -1,20 +1,20 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -22,7 +22,7 @@ By default that will use `indent(1)` found by the shell `type -P indent` and
 `sed(1)` found by the shell `type -P sed` but if you want to change these, say
 to try a different beautifier, you can do it like:
 
-```<!---sh-->
+``` <!---sh-->
     INDENT=bcpp ./try.sh
 ```
 

@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -10,14 +10,14 @@ See [Alternate code](#alternate-code) below.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     echo Some text | ./prog
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -34,7 +34,7 @@ author in the '[prog.c](prog.c) vs [prog.alt.c](prog.alt.c)' section of their re
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -84,13 +84,13 @@ been shortened in this file.
 
 If you have `clang`:
 
-```<!---sh-->
+``` <!---sh-->
     CC=clang make -e
 ```
 
 Otherwise (gcc):
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -116,7 +116,7 @@ needed in this case).
 
 #### Basic mode:
 
-```<!---sh-->
+``` <!---sh-->
     $ echo 'I am testing this thing.' | ./prog
     [... rendering ...]
 
@@ -127,7 +127,7 @@ needed in this case).
 
 #### Interactive mode:
 
-```<!---sh-->
+``` <!---sh-->
     $ ./prog
     > hello world!!!
     [... rendering ...]
@@ -206,7 +206,7 @@ simple text documents.
 
 Thus, if you try for example:
 
-```<!---sh-->
+``` <!---sh-->
     $ ./prog < prog.c
 ```
 
@@ -219,7 +219,7 @@ you are curious. :)
 Defining an environment variable called `DRAFT` will enable the 'draft-mode'.
 Try for example:
 
-```<!---sh-->
+``` <!---sh-->
     $ echo 'testing the draft mode' | DRAFT=1 ./prog
 ```
 

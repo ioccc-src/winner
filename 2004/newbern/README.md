@@ -1,20 +1,20 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./newbern [file.dat arg]
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -34,14 +34,14 @@ This is a configurable `banner(1)`-like program.
 
 - To convert a character glyph into a data file:
 
-```<!---sh-->
+``` <!---sh-->
     ./newbern char < some_nicely_shaped_text >> data_file
 ```
 
 
 - To print a string using glyphs from a data file:
 
-```<!---sh-->
+``` <!---sh-->
     ./newbern data_file a_string
 ```
 

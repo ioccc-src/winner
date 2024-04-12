@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -21,14 +21,14 @@ For more detailed information see [2014 maffiodo2 bugs](../../bugs.html#2014_maf
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog arg
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -41,14 +41,14 @@ as fun but it's 121 bytes instead of 140.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
 
 ### Alternate use:
 
-```<!---sh-->
+``` <!---sh-->
     cat image.rgb | ./prog.alt
 ```
 
@@ -91,7 +91,7 @@ The program will crash if run without parameters.
 If you have a terminal geometry than is different from the common 80x25 you can
 modify the *output width* by changing the value of the first variable:
 
-```<!---c-->
+``` <!---c-->
     d=80,
 ```
 
@@ -99,14 +99,14 @@ modify the *output width* by changing the value of the first variable:
 
 Type this:
 
-```<!---sh-->
+``` <!---sh-->
     cat image.rgb | ./prog "  .:;Y0"
 ```
 
 You can use your own image. Convert the image to a raw RGB image. Using
 ImageMagick it's very simple:
 
-```<!---sh-->
+``` <!---sh-->
     convert -geometry 80x source.jpg image.rgb
 ```
 
@@ -116,7 +116,7 @@ program is the *conversion ramp*. You can use different ramps or create your own
 
 These are some ramps you can try:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog " :1"
     ./prog "  .:;Y0"
     ./prog " .:-=+*#%@"
@@ -127,7 +127,7 @@ These are some ramps you can try:
 
 An alternative version of this program is only 121bytes long:
 
-```<!---c-->
+``` <!---c-->
     d=80,e,j;g(){j+=getchar();}main(){for(;;){j=0;g();if(j<0)break;g(g());putchar(" .:#@"[j/3*5>>8]);if(!(++e%d))puts("");}}
 ```
 

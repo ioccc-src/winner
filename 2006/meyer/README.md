@@ -1,20 +1,20 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./meyer [SEED]
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./meyer [SEED]
 ```
 
@@ -75,7 +75,7 @@ you write is what it does'). It may be tempting to think that
 
 might do something similar as
 
-```<!---c-->
+``` <!---c-->
     struct not_an_object o;
 ```
 
@@ -100,7 +100,7 @@ implementation in a popular object-oriented programming language.
 
 ### Starting the game
 
-```<!---sh-->
+``` <!---sh-->
     ./meyer [SEED]
 ```
 

@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -21,14 +21,14 @@ For more detailed information see [2004 jdalbec bugs](../../bugs.html#2004_jdalb
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./jdalbec number ...
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -43,7 +43,7 @@ which line it is on.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -52,7 +52,7 @@ many number of lines to print on a line. Set at default to 11 protons, salt, if
 you wish to make it silver, 47 (a prime) protons, do:
 
 
-```<!---sh-->
+``` <!---sh-->
     make clobber Ag=47 alt
 ```
 
@@ -60,7 +60,7 @@ though it might be odd to have 47 numbers on a line as it would defeat the
 purpose. :-) Or if you prefer some prime, golden irony:
 
 
-```<!---sh-->
+``` <!---sh-->
     make clobber Ag=79 alt
 ```
 
@@ -72,7 +72,7 @@ Use `jdalbec.alt` as you would `jdalbec` above.
 
 ### Alternate try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.alt.sh
 ```
 

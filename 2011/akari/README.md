@@ -1,20 +1,20 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./akari [ input_file | - ] [ output_file | - ]  [even]
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -56,7 +56,7 @@ keep odd pixels on odd [scanlines](https://en.wikipedia.org/wiki/Scan_line).
 
 ### Examples:
 
-```<!---sh-->
+``` <!---sh-->
     gcc akari.c -o akari
     ./akari < example.ppm > odd_output.ppm
     ./akari - - even < example.ppm > even_output.ppm
@@ -82,7 +82,7 @@ Anything that is not parsable as `PGM` or `PPM` will be downsampled as
 ASCII art.  Since the source code is formatted as ASCII art, it's only
 natural to try:
 
-```<!---sh-->
+``` <!---sh-->
     ./akari akari.c akari2.c
 ```
 
@@ -91,7 +91,7 @@ By default, this second program reads text from `stdin` and writes
 expanded output to `stdout`.  If the extra argument is specified, the
 output text will also pass through a rot13 filter.
 
-```<!---sh-->
+``` <!---sh-->
     gcc akari2.c -o akari2
     ./akari2 < input.txt > expanded_output.txt
     ./akari2 rot13 < input.txt > expanded_and_rot13_output.txt
@@ -100,20 +100,20 @@ output text will also pass through a rot13 filter.
 You can combine the two programs together to have just a regular rot13
 filter:
 
-```<!---sh-->
+``` <!---sh-->
     ./akari2 rot13 < input.txt | ./akari > rot13.txt
 ```
 
 Of course, we wouldn't stop with just 2 programs, you can downsample
 the source *again* and get yet another C program:
 
-```<!---sh-->
+``` <!---sh-->
     ./akari < akari.c | ./akari > akari3.c
 ```
 
 We must go deeper:
 
-```<!---sh-->
+``` <!---sh-->
     ./akari < akari.c | ./akari | ./akari > akari4.c
 ```
 

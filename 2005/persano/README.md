@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -10,14 +10,14 @@ setting binary mode on `stdout`. See [alternate code](#alternate-code) below.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./persano p q [num frames]
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -49,7 +49,7 @@ Use `persano.alt` as you would `persano` above.
 
 ### Alternate try:
 
-```<!---sh-->
+``` <!---sh-->
     ./persano.alt 3 16 > knot3-16.gif
 ```
 
@@ -80,7 +80,7 @@ knots](https://en.wikipedia.org/wiki/Torus_knot) to standard output.
 
 ### SYNOPSIS
 
-```<!---sh-->
+``` <!---sh-->
     ./persano p q [num frames]
 ```
 
@@ -98,14 +98,14 @@ cutting it [^1], until it ends up looking just like a circle embedded in R3 [^2]
 
 Sample usage:
 
-```<!---sh-->
+``` <!---sh-->
     ./persano 3 2 1 > foo.gif
 ```
 
 writes a non-animated GIF (a single frame) stream of a rendered trefoil
 knot to the file `foo.gif`.
 
-```<!---sh-->
+``` <!---sh-->
     ./persano 5 2
 ```
 

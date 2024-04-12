@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -22,7 +22,7 @@ For more detailed information see [2006 sykes1 bugs](../../bugs.html#2006_sykes1
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./sykes1
 ```
 
@@ -31,7 +31,7 @@ Next point your browser to the file: `sykes1.html`.
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./sykes1 10
 ```
 
@@ -39,7 +39,7 @@ Refresh your browser.
 
 You might also try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -52,7 +52,7 @@ If you have all day :-) and wish to find out how fast your machine can solve the
 maximum:
 
 
-```<!---sh-->
+``` <!---sh-->
     time ./sykes1 19186
 ```
 
@@ -81,7 +81,7 @@ This alternate code is based on the author's remarks.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -96,7 +96,7 @@ Use `sykes1.alt` as you would `sykes1` above.
 The [try.sh](try.sh) script will use both versions to show some differences. You
 can do so like:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -106,7 +106,7 @@ can do so like:
 Read the [sykes1.html](sykes1.html) page source.
 Now then read the C source.  Confused?  :-) If it's not clear try:
 
-```<!---sh-->
+``` <!---sh-->
     diff -s sykes1.c sykes1.html
 ```
 
@@ -138,7 +138,7 @@ need to be very lucky indeed to stumble across a solution.
 
 Compile the program, then test that it works:
 
-```<!---sh-->
+``` <!---sh-->
     ./sykes1
 ```
 
@@ -154,7 +154,7 @@ cube.  Rendered in glorious 3D color.
 
 Want to see another solution?  Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./sykes1 some_number
 ```
 
@@ -165,7 +165,7 @@ Try some more - there are exactly `19186` solutions to choose from.
 
 If you have a fast machine you might try the last solution:
 
-```<!---sh-->
+``` <!---sh-->
     ./sykes1 19186
 ```
 
@@ -178,7 +178,7 @@ The implementation is an optimized recursive algorithm that tries to fit
 the pieces into the cube one by one.  The cube pieces are defined near
 the start of the program:
 
-```<!---c-->
+``` <!---c-->
     int s[ ] = { 186, 94, 1426, 3098
 	    ,1047 , 122 , 1082 , 3083 , 1039
 	    , 569 , 527 , 1054 , 531  }  ;
@@ -233,7 +233,7 @@ the pieces, and provided that a solution is possible, it will be found.
 For example, if you modify line 13 of the source like this, the program
 will solve for a different piece set:
 
-```<!---c-->
+``` <!---c-->
     int s[ ] = { 187, 94, 402, 3098
 ```
 

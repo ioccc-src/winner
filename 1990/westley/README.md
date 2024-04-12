@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./westley <number>
 ```
 
@@ -16,7 +16,7 @@ The number should be greater than 0.
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -30,14 +30,14 @@ The alternate code is provided to show how C changed.
 
 If you have an old enough compiler try and to see how C has changed over the years:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
 
 ### Alternate use:
 
-```<!---sh-->
+``` <!---sh-->
     ./westley.alt <number>
 ```
 

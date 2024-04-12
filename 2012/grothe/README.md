@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -9,7 +9,7 @@
 
 To create a shared secret shared among `M` people with `N+1` needed to reconstruct:
 
-```<!---sh-->
+``` <!---sh-->
     ./grothe -secret 1-/dev/urandom 2-/dev/urandom ... \
 	N-/dev/urandom 1+shared1 2+shared2 ... M+sharedM
 ```
@@ -17,14 +17,14 @@ To create a shared secret shared among `M` people with `N+1` needed to reconstru
 To reconstruct the original (an arbitrary combination of `N+1` or
 more shared files with their proper numbers):
 
-```<!---sh-->
+``` <!---sh-->
     ./grothe I-sharedI J-sharedJ K-sharedK ... +reconstructed
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -75,7 +75,7 @@ To share a secret. For example:
 To split a secret into 4 pieces of which at least 3 will be needed to get it (in
 this case the cookie recipe) back:
 
-```<!---sh-->
+``` <!---sh-->
     ./grothe \
 	-cookie_recipe.txt\
 	1-/dev/urandom 2-/dev/urandom\
@@ -84,7 +84,7 @@ this case the cookie recipe) back:
 
 To put the recipe back together using the first, second and fourth pieces:
 
-```<!---sh-->
+``` <!---sh-->
     ./grothe \
 	1-cookie_piece1.dat 2-cookie_piece2.dat 4-cookie_piece4.dat
 	+cookie_recipe_restore.txt

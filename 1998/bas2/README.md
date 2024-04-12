@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./bas2 < file
     echo text | ./bas2
 ```
@@ -15,7 +15,7 @@
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 
     ./try.sh "foo bar" "baz" "IOCCC 1998/bas2" README.md

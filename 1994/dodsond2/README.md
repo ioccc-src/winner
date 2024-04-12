@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -23,7 +23,7 @@ For more detailed information see [1994 dodsond2 bugs](../../bugs.html#1994_dods
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./dodsond2
 ```
 
@@ -39,21 +39,21 @@ from working in some cases.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
 The default number of arrows in this version is 3 but if you want to change it,
 say to 5, try:
 
-```<!---sh-->
+``` <!---sh-->
     make clobber ARROWS=5 alt
 ```
 
 
 ### Alternate use:
 
-```<!---sh-->
+``` <!---sh-->
     ./dodsond2.alt
 ```
 

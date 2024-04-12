@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./eastman
 ```
 
@@ -19,7 +19,7 @@ NOTE: to restore your cursor in your shell, try `reset`.
 Run the program. Quit it (ctrl-c/intr). Resize your terminal window. Run it
 again. Try doing this a number of times with different sizes each time.
 
-```<!---sh-->
+``` <!---sh-->
     ./eastman
 ```
 
@@ -60,7 +60,7 @@ program is running, though.  It only checks the size once, when it starts up.
 
 To compile:
 
-```<!---sh-->
+``` <!---sh-->
     cc -lm eastman.c
 ```
 

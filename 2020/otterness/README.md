@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -18,14 +18,14 @@ For more detailed information see [2020 otterness bugs](../../bugs.html#2020_ott
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -74,7 +74,7 @@ for most of my testing (see [cvikl.mid](cvikl.mid)).
 Compile the program using the following command (I tested this using both
 `clang` and `gcc`):
 
-```<!---sh-->
+``` <!---sh-->
     cc -pedantic -Wall -Werror -Wextra -O3 -o prog prog.c
 ```
 

@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -18,14 +18,14 @@ For more detailed information see [1996 huffman bugs](../../bugs.html#1996_huffm
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     echo 'Huffman Decoding' | ./huffman
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -39,7 +39,7 @@ And for a misleading hint, consider who won!  :-)
 
 And if you really can't see what is going on, here is an extra spoiler:
 
-```<!---sh-->
+``` <!---sh-->
     ./huffman < huffman.c 2>/dev/null
 ```
 

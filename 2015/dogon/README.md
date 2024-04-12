@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 To change the dimensions you can use the `WIDTH` and `HEIGHT` variables when
 compiling (default 1024 x 800):
 
-```<!---sh-->
+``` <!---sh-->
     make clobber WIDTH=640 HEIGHT=480
 ```
 
@@ -22,14 +22,14 @@ code](#alternate-code) below.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog
 ```
 
@@ -77,7 +77,7 @@ This alt version does this for you.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -174,7 +174,7 @@ important support of up to 32 function keys keyboards without spilling over the
 size limit, and allows us to use such fun expression for arrow view control as
 the following:
 
-```<!---c-->
+``` <!---c-->
     *(a&1?&C:&B)-=(.05 -a/2%2*.1)*!(a-1&4092^3920)
 ```
 

@@ -5,14 +5,14 @@ compile. macOS users running Mountain Lion and later will need to download and
 install [XQuartz](https://www.xquartz.org) in order to compile and run this
 entry.
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./jonth	# must be run on an X11 server
 ```
 

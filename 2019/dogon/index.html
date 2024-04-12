@@ -321,7 +321,11 @@ master, who reviewed some earlier versions of the entry and freely shared some
 of his vast knowledge regarding GOL programming and hashlife. As a free bonus,
 Tom has allowed me to show his code which is probably the most efficient yet
 most obfuscated way of calculating the GOL function on a 64 bits <code>8*8</code> leaf:</p>
-<p><code>&lt;!---`c--&gt;     unsigned long life8x8(long a) { unsigned long aw = a &lt;&lt; 1, ae = a &gt;&gt; 1, s0 = aw     ^ ae, s1 = aw &amp; ae, hs0 = s0 ^ a, hs1 = (s0 &amp; a) | s1, hs0w8 = hs0 &gt;&gt; 8, hs0e8 =     hs0 &lt;&lt; 8, hs1w8 = hs1 &gt;&gt; 8, hs1e8 = hs1 &lt;&lt; 8, ts0 = hs0w8 ^ hs0e8, ts1 = (hs0w8     &amp; hs0e8) | (ts0 &amp; s0); return (hs1w8 ^ hs1e8 ^ ts1 ^ s1) &amp; ((hs1w8 | hs1e8) ^     (ts1 | s1)) &amp; ((ts0 ^ s0) | a); }</code><!---`--></p>
+<pre class="&lt;!---c--&gt;"><code>    unsigned long life8x8(long a) { unsigned long aw = a &lt;&lt; 1, ae = a &gt;&gt; 1, s0 = aw
+    ^ ae, s1 = aw &amp; ae, hs0 = s0 ^ a, hs1 = (s0 &amp; a) | s1, hs0w8 = hs0 &gt;&gt; 8, hs0e8 =
+    hs0 &lt;&lt; 8, hs1w8 = hs1 &gt;&gt; 8, hs1e8 = hs1 &lt;&lt; 8, ts0 = hs0w8 ^ hs0e8, ts1 = (hs0w8
+    &amp; hs0e8) | (ts0 &amp; s0); return (hs1w8 ^ hs1e8 ^ ts1 ^ s1) &amp; ((hs1w8 | hs1e8) ^
+    (ts1 | s1)) &amp; ((ts0 ^ s0) | a); }</code></pre>
 <p>This uses only 19 bitwise operations and six shifts to calculate the inner 6x6
 next generation bits of the input 8x8 !</p>
 <!--

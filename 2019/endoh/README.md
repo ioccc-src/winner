@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -21,7 +21,7 @@ For more detailed information see [2019 endoh bugs](../../bugs.html#2019_endoh).
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog
 ```
 
@@ -30,7 +30,7 @@ For more detailed information see [2019 endoh bugs](../../bugs.html#2019_endoh).
 
 If you have `gdb(1)` installed:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -40,7 +40,7 @@ only been tested with linux.
 
 You might also wish to try:
 
-```<!---sh-->
+``` <!---sh-->
     gdb ./prog || lldb ./prog
 ```
 
@@ -59,20 +59,20 @@ ascii` when debugging it to reveal its purpose.
 
 Compile prog.c with no optimization.
 
-```<!---sh-->
+``` <!---sh-->
     cc -g -O0 -o prog prog.c
 ```
 
 Then, run it.  You will see a segmentation fault.
 
-```<!---sh-->
+``` <!---sh-->
     $ ./prog
     Segmentation fault (core dumped)
 ```
 
 Let's debug.  As usual, run it under gdb.
 
-```<!---sh-->
+``` <!---sh-->
     $ gdb ./prog
     (gdb) run
     Starting program: /home/.../prog
@@ -132,7 +132,7 @@ The original program can be used as a GDB command file.
 
 By using this, you can confirm that it is actually a quine.
 
-```<!---sh-->
+``` <!---sh-->
     gdb -q -x prog.c ./prog | sed -n -r 's/#.*:([0-9]+)/\1/p' | awk '{printf "%c",$1}' > prog2.c
     diff prog.c prog2.c
 ```

@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -8,7 +8,7 @@ If you wish to save state so that you can run the program and keep files changed
 (for instance you don't want to compile `mullender.c` again) you can compile it
 like:
 
-```<!---sh-->
+``` <!---sh-->
     make clobber SAVE=1 all
 ```
 
@@ -31,14 +31,14 @@ For more detailed information see [2018 mills bugs](../../bugs.html#2018_mills).
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog
 ```
 
@@ -47,7 +47,7 @@ At the `>boot` prompt, type return.
 At the `:` prompt, type `rk(0,0)rkunix` and wait for it to initialise itself.
 Now try typing:
 
-```<!---sh-->
+``` <!---sh-->
     cat > prog.c
     main(){ printf("Hello, world!\n"); }
     ^D
@@ -59,7 +59,7 @@ where `^D` is EOF.
 
 Next try:
 
-```<!---sh-->
+``` <!---sh-->
     cc mullender.c
     a.out
 ```
@@ -81,7 +81,7 @@ Do small machines only need small programs?  This program weighs in at just
 This program can take you back to the start of everything, it is possible to
 run v0. Just type:
 
-```<!---sh-->
+``` <!---sh-->
     ./v0
 ```
 
@@ -91,7 +91,7 @@ You will be greeted with a familiar prompt of "login". The username and
 password are "dmr" and "dmr". To make things more familiar you'll need to
 create '.' as it hasn't been invented yet on this image!
 
-```<!---sh-->
+``` <!---sh-->
     @ ln dd dmr .
 ```
 
@@ -102,7 +102,7 @@ together like `ops.s bl.s hello.s bi.s` (in that order) to produce a.out!
 But wait, we said this was the start of it all! This program can also run a
 program that replaces an even larger machine that can run BSD 2.9. To start this,
 
-```<!---sh-->
+``` <!---sh-->
     ./prog
 ```
 
@@ -118,7 +118,7 @@ shown earlier.
 
 But wait, there is even more!  Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./v6
 ```
 
@@ -220,7 +220,7 @@ only a quarter of a century ago -- how much could things have changed?).
 Let's try some:
 
 
-```<!---sh-->
+``` <!---sh-->
     # ls
     .cshrc       .profile     boot         hkunix       mnt          tmp
     .login       2.9stamp     dev          lib          mullender.c  unix

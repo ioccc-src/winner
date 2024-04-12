@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./omoikane infile layout outfile
 ```
 
@@ -43,7 +43,7 @@ insert a human-readable checksum string in the text itself!  `^_^`
 
 ### Usage
 
-```<!---sh-->
+``` <!---sh-->
     ./omoikane <infile> <layout> <outfile>
 ```
 

@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./grothe carrier_freq pixelclock horizontal_total < some_input.txt
 ```
 
@@ -16,7 +16,7 @@
 
 Put on your "electronic ears" and then try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -50,13 +50,13 @@ parameters:
 If you have `xvidtune` installed you can get the `pixelclock` and
 `horizontal_total` with the following command
 
-```<!---sh-->
+``` <!---sh-->
     xvidtune -show | head -n 1 | awk '{ print "pixelclock " $2 * 1000000 " horizontal_total = " $6 }'
 ```
 
 Example from my laptops:
 
-```<!---sh-->
+``` <!---sh-->
     ./grothe 65000000 10000000 1344 < twinkle.txt
 ```
 

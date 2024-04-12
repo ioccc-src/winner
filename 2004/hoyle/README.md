@@ -1,20 +1,20 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./hoyle point ...
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -47,13 +47,13 @@ passed in.
 
 For example, to graph `y = x^2`:
 
-```<!---sh-->
+``` <!---sh-->
     ./hoyle 0 0 1
 ```
 
 Note that:
 
-```<!---sh-->
+``` <!---sh-->
     ./hoyle 0 0 2
 ```
 

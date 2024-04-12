@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./dds basic_program
     ./a.out 2>/dev/null
 ```
@@ -17,7 +17,7 @@
 
 The author suggests trying:
 
-```<!---sh-->
+``` <!---sh-->
     ./dds LANDER.BAS
     ./a.out
 ```
@@ -27,7 +27,7 @@ produced?  How does `a.c` relate to [LANDER.BAS](LANDER.BAS)?
 
 What happens if you give the program a C program like itself? Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./dds dds.c
 ```
 

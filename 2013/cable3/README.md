@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -10,14 +10,14 @@ available. See the [Alternate code](#alternate-code) section below.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./cable3 bios-image-file floppy-image-file [harddisk-image-file]
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./cable3.sh
 ```
 
@@ -46,7 +46,7 @@ An alternate version, which should compile in Windows, is provided.
 Assuming `make` is available and will function:
 
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -173,7 +173,7 @@ non-UNIX platforms. For example, for Windows/MS Visual Studio, instead of the
 Makefile definition of KB, use something slightly different - add the following
 entry to the Preprocessor Definitions list in the Project Properties page:
 
-```<!---c-->
+``` <!---c-->
     KB=(kb=H(8),kbhit())&&(r[1190]=getch(),H(7))
 ```
 
@@ -189,7 +189,7 @@ offsets) this is not the case, and to run successfully on these systems, you
 will need to explicitly declare these functions by adding the appropriate
 include to the top of the source:
 
-```<!---c-->
+``` <!---c-->
     #include <unistd.h>
 ```
 
@@ -197,7 +197,7 @@ NOTE: this has been done in [cable3.c](cable3.c).
 
 ### Usage
 
-```<!---sh-->
+``` <!---sh-->
     ./cable3 bios-image-file floppy-image-file [harddisk-image-file]
 ```
 
@@ -205,7 +205,7 @@ PLEASE NOTE that under Unices the keyboard must be in raw mode for the emulator
 to work properly. Therefore the emulator is best run from a shell script that
 looks something like:
 
-```<!---sh-->
+``` <!---sh-->
     stty cbreak raw -echo min 0
     ./cable3 bios floppy.img harddisk.img
     stty cooked echo
@@ -223,7 +223,7 @@ put the keyboard into raw mode (and afterwards it needs to be put back to
 cooked). So, run the emulator using something like this script (provided as
 [cable3.sh](cable3.sh)):
 
-```<!---sh-->
+``` <!---sh-->
     stty cbreak raw -echo min 0
     ./cable3 bios fd.img
     stty cooked echo
@@ -237,7 +237,7 @@ whole bunch of software which is in the included file `hd.img`.
 For the more adventurous, you can start off with (for example) a blank 40MB
 image file called hd.img made using e.g. Makefile. Then use:
 
-```<!---sh-->
+``` <!---sh-->
     stty cbreak raw -echo min 0
     ./cable3 bios fd.img hd.img
     stty cooked echo

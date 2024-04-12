@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -21,13 +21,13 @@ For more detailed information see [2019 karns bugs](../../bugs.html#2019_karns).
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog < textfile_that_fits_on_the_screen
 ```
 
 You might want to type:
 
-```<!---sh-->
+``` <!---sh-->
     reset
 ```
 
@@ -36,13 +36,13 @@ after running the program to restore the terminal to its previous state.
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
 If you have more time you might want to try:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog < README.md
 ```
 
@@ -82,7 +82,7 @@ connected with anything.
 
 This program usually compiles under both GCC and clang. Build with:
 
-```<!---sh-->
+``` <!---sh-->
     $(CC) -std=c99 -o tbfs prog.c
 ```
 
@@ -90,13 +90,13 @@ where `$(CC)` is cc, gcc, clang, or some other C compiler.
 
 You can then run it with:
 
-```<!---sh-->
+``` <!---sh-->
     cat <input file> | ./tbfs
 ```
 
 Examples:
 
-```<!---sh-->
+``` <!---sh-->
     ./tbfs < maze
     ./tbfs < prog.c
 ```

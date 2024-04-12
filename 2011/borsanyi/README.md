@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -18,14 +18,14 @@ For more detailed information see [2011 borsanyi bugs](../../bugs.html#2011_bors
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./borsanyi < some_data_file
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 

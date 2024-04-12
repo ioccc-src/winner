@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -27,7 +27,7 @@ for the interested. See the [try](#try) section if you just want to play.
 Make and then run as follows:
 
 
-```<!---sh-->
+``` <!---sh-->
     ./westley [move_location] | tee nextmove.c
 ```
 
@@ -43,7 +43,7 @@ a move on a tic-tac-toe board:
 If you omit `move_location`, then the computer moves first.  For your
 next move, recompile `nextmove.c` and play it again:
 
-```<!---sh-->
+``` <!---sh-->
     make nextmove
     ./nextmove move_location | tee nextmove.c
 ```
@@ -54,7 +54,7 @@ next move, recompile `nextmove.c` and play it again:
 We have provided the shell script, [ttt](ttt.sh), to make it easier to play the
 game:
 
-```<!---sh-->
+``` <!---sh-->
     make ttt
     ./ttt [first_move]	# <- omit first arg to have it move first
     ./ttt next_move
@@ -64,14 +64,14 @@ The shell script determines when the game is over, and automatically replaces
 `merlyn.c` (copied from [westley.c](westley.c) with an improved version after a
 loss).  The [ttt](ttt.sh) script has two other modes:
 
-```<!---sh-->
+``` <!---sh-->
     ./ttt quitgame	# cancel any game in progress, revert to merlyn.c
     ./ttt clobber	# remove all game files, revert to original source
 ```
 
 For example here is a potentially losing game:
 
-```<!---sh-->
+``` <!---sh-->
     ./ttt 1
     ./ttt 4
     ./ttt 6
@@ -80,7 +80,7 @@ For example here is a potentially losing game:
 The final might look like:
 
 
-```<!---c-->
+``` <!---c-->
 		    a(X){/*/X=-		a(X){/*/X=-
 	    X	-1;F;X=-	 	-1;F;X=-
 		    -1;F;}/*/		-1;F;}/*/
@@ -123,7 +123,7 @@ can lose if you cheat. That's supposed to happen. Can you win any other time?
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -194,7 +194,7 @@ function as `a()`, `b()`, or `c()`.  After each function is called, the global
 variables `X` and `O` contain bitmasks of where all the `X`s and `O`s are placed.
 The statement:
 
-```<!---c-->
+``` <!---c-->
     X=-   <char>   -1;
 ```
 

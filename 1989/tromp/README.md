@@ -1,20 +1,20 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./tromp [drops_per_sec  [cmd_string]]
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./tromp 5
 
     ./tromp 10 "hkl jq"
@@ -53,7 +53,7 @@ the judges' additional remarks in the author's remarks, for more details.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -138,7 +138,7 @@ at the start and `-raw` at the end. This further reduces the size of
 the program, but has the possible disadvantage that the program
 can only by stopped by 'q' or by the `kill -9' command.
 
-```<!---c-->
+``` <!---c-->
     long h[4];t(){h[3]-=h[3]/3000;setitimer(0,h,0);}c,d,l,v[]={(int)t,0,2},w,s,I,K
     =0,i=276,j,k,q[276],Q[276],*n=q,*m,x=17,f[]={7,-13,-12,1,8,-11,-12,-1,9,-1,1,
     12,3,-13,-12,-1,12,-1,11,1,15,-1,13,1,18,-1,1,2,0,-12,-1,11,1,-12,1,13,10,-12,

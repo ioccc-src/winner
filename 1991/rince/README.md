@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -11,7 +11,7 @@ that's fewer than the original program.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./rince
 ```
 
@@ -30,7 +30,7 @@ The author set the maximum number of moves to 484.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -41,7 +41,7 @@ configurable maximum number of moves allowed, defaulting to the entry's max,
 
 To reconfigure the maximum number of moves to 700:
 
-```<!---sh-->
+``` <!---sh-->
     make clobber MAXMOVES=700 alt
 ```
 
@@ -50,13 +50,13 @@ To reconfigure the maximum number of moves to 700:
 
 To run the first alt version:
 
-```<!---sh-->
+``` <!---sh-->
     ./rince.alt
 ```
 
 To run the second alt version:
 
-```<!---sh-->
+``` <!---sh-->
     ./rince.alt2
 ```
 

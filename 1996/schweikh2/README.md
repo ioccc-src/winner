@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./schweikh2
 ```
 
@@ -24,19 +24,19 @@ The program accepts up to 4 parameters:
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
 What happens if you pass only three parameters like the below?
 
-```<!---sh-->
+``` <!---sh-->
     ./schweikh2 15 1 0
 ```
 
 The author also suggests:
 
-```<!---sh-->
+``` <!---sh-->
     while :; do grep -v '#' schweikh2.c; done
 ```
 
@@ -51,7 +51,7 @@ The original program, with only slight obfuscations, may be found
 in [hunni.c](hunni.c). The perl script, [hunni.pl](hunni.pl), obfuscates it
 appropriately. Try:
 
-```<!---sh-->
+``` <!---sh-->
     less hunni.c
 
     perl ./hunni.pl < hunni.c
@@ -137,7 +137,7 @@ minutes (`gcc -O3`).
 
 ### Sample arguments:
 
-```<!---sh-->
+``` <!---sh-->
     ./schweikh2 6
     ./schweikh2 7 0
     ./schweikh2 7 7 0
@@ -151,7 +151,7 @@ minutes (`gcc -O3`).
 The diamond pattern can be continued without a break.
 For a nice printout try this on your Bourne compatible shell:
 
-```<!---sh-->
+``` <!---sh-->
     while :; do grep -v '#' schweikh2.c; done
 ```
 

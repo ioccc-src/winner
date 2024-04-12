@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./korn
 ```
 
@@ -29,14 +29,14 @@ Several points are important to understand this program:
 2. What is the value of the symbol `"have"`?  (hint: the value is NOT 4
 characters, or `'h'`, or a string)  Consider the fact that:
 
-```<!---c-->
+``` <!---c-->
     char *x;
 ```
 
 defines a pointer to a `char` (i.e. an address), and that the `=` assigns
 things of compatible types.  Since:
 
-```<!---c-->
+``` <!---c-->
     x = "have";
 ```
 
@@ -44,13 +44,13 @@ is legal C, what type of value is `"have"`?
 
 3. Note that the following expressions yield the same value:
 
-```<!---c-->
+``` <!---c-->
     x[3]	*(x+3)	  *(3+x)
 ```
 
 since addition is commutative.  What can be said about this value?
 
-```<!---c-->
+``` <!---c-->
     3[x]
 ```
 

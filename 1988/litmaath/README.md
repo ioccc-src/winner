@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./litmaath some text
 ```
 
@@ -17,7 +17,7 @@ code](#alternate-code) section below.
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./litmaath eschew obfuscation
 ```
 
@@ -31,7 +31,7 @@ a file.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -40,7 +40,7 @@ Use `litmaath.alt` as you would `litmaath` above.
 
 ### Alternate try:
 
-```<!---sh-->
+``` <!---sh-->
     ./litmaath.alt six was afraid of seven because seven eight nine
 ```
 
@@ -50,7 +50,7 @@ Use `litmaath.alt` as you would `litmaath` above.
 Note the unusual structure:
 
 
-```<!---c-->
+``` <!---c-->
     while (<condition>)
 	     ;
 ```
@@ -66,7 +66,7 @@ could make the body of the `while` loop an `fprintf` with interesting
 variables like:
 
 
-```<!---c-->
+``` <!---c-->
     fprintf(stderr,
 	 "argv=%lo *argv=%lo **argv=%c argv[1]=%lo *argv[1]=%c argc=%d\n",
 	 (long) argv, (long) *argv, *argv && **argv ? **argv : '@',

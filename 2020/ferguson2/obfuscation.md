@@ -19,13 +19,13 @@ there is an aesthetic appeal to my eyes too).
 Y<:19:><:27:> but it's not the only example. Here the compound literal of 13
 ints:
 
-```<!---c-->
+``` <!---c-->
 	    int *z=(int[13]) { 0 } , *e, *g;
 ```
 
     Then in main:
 
-```<!---c-->
+``` <!---c-->
 	    e = z + 10;
 	    g = e + 1;
 
@@ -39,14 +39,14 @@ ints:
     more confusing still. There are at least two other ways that are much easier
     to read that could accomplish the same thing. It continues on:
 
-```<!---c-->
+``` <!---c-->
 	    /* ... */
 	    e<:i-3:> = (j < 1 ? 1 : (j > 5 ? 5 : j))-1;
 ```
 
 *   Observe these two functions:
 
-```<!---c-->
+``` <!---c-->
 	    void w(char *s, int k, int v)
 	    {
 		    for(e<:2:> = 0; s<:*P:>; ++e<:2:>)
@@ -96,7 +96,7 @@ temporary variable instead of a regular int in the function (so make it global);
 and (2) I didn't want to risk changing all the offsets: thus I just made that
 address `e[1]`. Thus I also have:
 
-```<!---c-->
+``` <!---c-->
 	    for (*g = 0 ; *g < 10; ++*g)
 	    {
 		r<:-2:> = Y<:14:><:*(e+1):>; r<:-3:> = Y<:15:><:1<:e:>:>;
@@ -117,7 +117,7 @@ address `e[1]`. Thus I also have:
 *   The above function Z() takes a `char x` but you won't notice it being used
 at all. Why? In fact I call it like so:
 
-```<!---c-->
+``` <!---c-->
 		k = Z(r<:-1:>=k);
 ```
 
@@ -132,7 +132,7 @@ at all. Why? In fact I call it like so:
 refer to the same variable in more than one way (or in some cases maybe more
 correct to say 'same location'). In the Z() function for example:
 
-```<!---c-->
+``` <!---c-->
 		r<:-2:> = Y<:14:><:*(e+1):>; r<:-3:> = Y<:15:><:1<:e:>:>;
 ```
 
@@ -153,7 +153,7 @@ index (sort of).
 *   Another set of char arrays in one: the five rotors as well as the two
 reflectors in one `char [][27]`. This makes for some fun code like:
 
-```<!---c-->
+``` <!---c-->
 	    (Y<:e<:-10:>+5:><:k-'A':>) && (k = Y<:e<:-10:>+5:><:k-'A':>);
 ```
 
@@ -194,7 +194,7 @@ enough because as they rightly point out they can just use the C preprocessor
 itself. But although I have quite a few cpp directives I am not using them for
 obfuscation but rather to save bytes. For examples:
 
-```<!---c-->
+``` <!---c-->
 	    %:define J(x)		  do(*x)=getchar(); while((*x)=='\n')
 ```
 
@@ -205,7 +205,7 @@ obfuscation but rather to save bytes. For examples:
     particular I want to bring up though because I think it's a curious one and
     it ties in to another point above:
 
-```<!---c-->
+``` <!---c-->
 	    %:define A(y)				  *(&Y<:7:><:1:>+(y))
 ```
 
@@ -213,7 +213,7 @@ obfuscation but rather to save bytes. For examples:
     to the notch settings (I think it was the notch settings anyway). Now I
     could have done say
 
-```<!---c-->
+``` <!---c-->
 	    char a = Y[7][1], b = Y[7][3], c = Y[7][5];
 ```
 
@@ -248,7 +248,7 @@ variables in recode.c, move them to prog.c, compile and expect it to work right.
 
 * Also what is this about ?
 
-```<!---c-->
+``` <!---c-->
 				/\
 		    /		This is	    *not* what you think:
 			    void D(char*x){ /* ... */ }

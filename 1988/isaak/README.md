@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -11,7 +11,7 @@ code](#alternate-code) below.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./isaak
 ```
 
@@ -21,7 +21,7 @@ code](#alternate-code) below.
 The original version of this code is in [isaak.alt.c](isaak.alt.c).
 The original entry starts with the line:
 
-```<!---c-->
+``` <!---c-->
     main(){};
 ```
 
@@ -37,7 +37,7 @@ compile.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -64,7 +64,7 @@ due to the fact that BSD style systems have an `sprintf(3)` that returns a `char
 *`.  Due to the above problems, we placed the output of this program in the
 file: isaak.encode.  To read this file do.
 
-```<!---sh-->
+``` <!---sh-->
     uudecode < isaak.encode
     cat isaak.output
 ```

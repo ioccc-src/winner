@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -10,7 +10,7 @@
 The author suggested that after compilation one should look at the generated
 files. For instance:
 
-```<!---sh-->
+``` <!---sh-->
     less generated1.c
     less generated2.c
     less generated3.c
@@ -19,7 +19,7 @@ files. For instance:
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -44,7 +44,7 @@ of `./left`, `./right` and `./shift` and the additionally generated programs.
 
 The final message can be revealed using
 
-```<!---sh-->
+``` <!---sh-->
     ./msg9 < prog.c
 ```
 
@@ -59,7 +59,7 @@ But what combinations will generate `./msg3`, `./msg4`, `./msg5`, `./msg6`,
 `Nuko` is a text rotator: given some text in `stdin`, `Nuko` will write the
 same text to `stdout`, but rotated 90 degrees counterclockwise.
 
-```<!---sh-->
+``` <!---sh-->
     cc prog.c -o left
     ./left < input.txt > rotated_counterclockwise.txt
 ```
@@ -68,7 +68,7 @@ Due to static memory allocation, only the first 1K columns by 1K rows
 are rotated, the rest are silently ignored.  But fear not, a separate
 tool with dynamic memory allocation is included:
 
-```<!---sh-->
+``` <!---sh-->
     ./left < prog.c > r1.c
     cc r1.c -o right
     ./right < input.txt > rotated_clockwise.txt
@@ -83,7 +83,7 @@ rotate counterclockwise once more, we get another program.  This
 program outputs a single message to `stdout`, which is the name of the
 series that `Nuko` came from.
 
-```<!---sh-->
+``` <!---sh-->
     ./left < prog.c | ./left > r2.c
     cc r2.c -o msg0
     ./msg0
@@ -92,7 +92,7 @@ series that `Nuko` came from.
 There is one final rotation, which produces a tool that removes
 leading whitespaces:
 
-```<!---sh-->
+``` <!---sh-->
     ./left < prog.c | ./left | ./left > r3.c
     cc r3.c -o shift
     ./shift < input.txt > no_leading_space.txt
@@ -112,7 +112,7 @@ side).  This shifted code behaves slightly different from the original
 program.  For example, here are two more messages that can be
 produced:
 
-```<!---sh-->
+``` <!---sh-->
     ./shift < prog.c | ./right > msg1.c && gcc msg1.c -o msg1 && ./msg1
     ./shift < prog.c | ./left > msg2.c && gcc msg2.c -o msg2 && ./msg2
 ```

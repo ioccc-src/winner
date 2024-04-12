@@ -1,20 +1,20 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./buzzard.1 num num
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -23,7 +23,7 @@
 
 To see good C Preprocessor buzzard.1, try:
 
-```<!---sh-->
+``` <!---sh-->
     make babble.cppcb
     cat babble.cppcb
 ```
@@ -54,19 +54,19 @@ short strings.
 `buzzard.1` is a simple mathematical program. It expects two numeric
 arguments.
 
-```<!---sh-->
+``` <!---sh-->
     ./buzzard.1 0 <num>
 ```
 
 will print out the factorial of `<num>`.
 
-```<!---sh-->
+``` <!---sh-->
     ./buzzard.1 <num1> <num2>
 ```
 
 will print out the largest common factor of `num1` and `num2`.
 
-```<!---sh-->
+``` <!---sh-->
     ./buzzard.1 1 <num2>
 ```
 
@@ -171,21 +171,21 @@ programs is the conditional (given that we have loops).
 Since all you can do in the given operation output set is
 assignment, we implement "conditional assignment":
 
-```<!---c-->
+``` <!---c-->
     if (x) y = z;
 ```
 
 To implement this, we constrain `x` to be either 0 or 1, and
 simply compute:
 
-```<!---c-->
+``` <!---c-->
     y = (z * x) + (y * (1-x));
 ```
 
 This is more obscured by factoring out common terms and restricting
 ourselves to two operand operations:
 
-```<!---c-->
+``` <!---c-->
     temp = z;                       (temp == z)
     temp -= y;                      (temp == z-y)
     temp *= x;                      (temp == (z-y)*x)
@@ -199,7 +199,7 @@ Next we imagine we have a [pc](https://en.wikipedia.org/wiki/Program_counter).
 we're not currently coming up on statement pc.  To handle this, we simply make
 every operation conditional on the pc having the correct value:
 
-```<!---c-->
+``` <!---c-->
     if (pc == some_constant) y = z;
 ```
 

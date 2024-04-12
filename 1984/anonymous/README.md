@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./anonymous
 ```
 
@@ -22,7 +22,7 @@ as the alternate code. See below for the tattoo side-by-side with the code.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -31,7 +31,7 @@ as the alternate code. See below for the tattoo side-by-side with the code.
 
 NOTE: this version might not work on some systems like macOS.
 
-```<!---sh-->
+``` <!---sh-->
     ./anonymous.alt
 ```
 

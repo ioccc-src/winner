@@ -78,7 +78,7 @@ initialise a pair (make it 5 so as to not interfere with the script
 customisability) and then you use the bkgd() function with the colour pair.
 Something like this:
 
-```<!---c-->
+``` <!---c-->
     init_pair(5, COLOR_BLACK, COLOR_WHITE);
     bkgd(COLOR_PAIR(5));
 ```
@@ -88,7 +88,7 @@ but that changes the background of the program anyway.
 
 The standard colour identifiers are:
 
-```<!---c-->
+``` <!---c-->
     COLOR_BLACK
     COLOR_RED
     COLOR_GREEN
@@ -124,7 +124,7 @@ Let's say you don't want to use arrow keys or you don't have arrow keys. Instead
 you might want the keys `l`, `r`, `u` and `d` for the directions. Find the case
 statements:
 
-```<!---c-->
+``` <!---c-->
     case KEY_LEFT:
     case KEY_RIGHT:
     case KEY_UP:
@@ -133,7 +133,7 @@ statements:
 
 Replace `KEY_LEFT` with:
 
-```<!---c-->
+``` <!---c-->
     'l'
 ```
 
@@ -141,7 +141,7 @@ and do the same thing for the other directions too. If you want more than one
 key e.g. the arrow keys and the letters just add another case statement e.g. for
 left it might be:
 
-```<!---c-->
+``` <!---c-->
     case KEY_LEFT: case 'l':
 ```
 
@@ -166,13 +166,13 @@ different sets. Please also be aware that if you don't want any information you
 must set it to the below at the very least; defining it without a value is not
 enough (it amounts to the parameters to a printf call):
 
-```<!---c-->
+``` <!---c-->
     #define J " " );
 ```
 
 If you don't care about brief displays of 'o' at 0,0 you can just have:
 
-```<!---c-->
+``` <!---c-->
     #define J "");
 ```
 
@@ -194,7 +194,7 @@ coordinates of where the snake is plus the other things that are there (a number
 of which were added over time). Obviously this would take many bug sized bytes
 (bites) even once let alone twice! Thus I made it into a define:
 
-```<!---c-->
+``` <!---c-->
     #define J Z(X:%d/%d Y:%d/%d S:%zu/%zu B:%zu\n), Y, y[-2], X,*y,A,g, c);
 ```
 
@@ -220,7 +220,7 @@ For an example this would only include the size of the snake and the number of
 bugs eaten (I think I have this correct; I've made many changes to the point of
 not wanting to mess with anything that's unnecessary):
 
-```<!---c-->
+``` <!---c-->
     #define J Z(SIZE: %zu BUGS: %zu\n), A, c);
 ```
 
@@ -257,13 +257,13 @@ come to mind as information that might be of interest.
 
 Quite simply change:
 
-```<!---c-->
+``` <!---c-->
     X = H / 2; Y = *x / 2;
 ```
 
 To be something like:
 
-```<!---c-->
+``` <!---c-->
     X = R(1,H-1);
     Y = R(2,*x-1);
 ```
@@ -395,7 +395,7 @@ street!).
 If you look at the walls code you will see a ternary operator for both `X` and `Y`
 coordinates. This of course is very different now but the idea remains the same:
 
-```<!---c-->
+``` <!---c-->
     if (p && !(*O>=O[1]||H>=M(1)))
     {
 	if (X<1||X>=H)
@@ -414,7 +414,7 @@ coordinates to the correct new location.
 If however you wanted the walls to act as a barrier you could do something like
 this instead (omitting the inner if statements here):
 
-```<!---c-->
+``` <!---c-->
     X=X<1?1:*H-1;
 
     Y=Y<2?2:*O-1;

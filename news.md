@@ -107,7 +107,7 @@ We also added to the
 a _"latest_news"_ JSON member whose value is the date
 of the most recent news item.
 
-```<!---json-->
+``` <!---json-->
     "status_date" : "Mon Jan 30 02:28:44 PST 2023",
     "latest_news" : "Mon Jan 30 02:28:44 PST 2023"
 ```

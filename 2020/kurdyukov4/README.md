@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog text_file output_length context_length random_seed
 ```
 
@@ -17,7 +17,7 @@
 When running this, ask yourself why it gets progressively slower when the
 context length decreases:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -70,7 +70,7 @@ Now can you appreciate the award title a bit better?
 
 ### Building:
 
-```<!---sh-->
+``` <!---sh-->
     cc prog.c -o prog
 ```
 
@@ -79,7 +79,7 @@ Now can you appreciate the award title a bit better?
 This program generates random text from the provided dictionary using a Markov
 chain, outputting to `stdout`.
 
-```<!---sh-->
+``` <!---sh-->
     ./prog input.txt 2000 10 12345
 ```
 
@@ -110,7 +110,7 @@ You can try this with the inputs provided with
 [2019/mills](../../2019/mills/index.html) from the IOCCC entries.
 
 
-```<!---sh-->
+``` <!---sh-->
     $ ./prog Shakespeare.txt 2001 10 12345
 ```
 

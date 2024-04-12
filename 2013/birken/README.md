@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -11,7 +11,7 @@ version see the [original code](#original-code) section below.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./birken.alt < 17_columns_wide_paint_by_numbers_file
 ```
 
@@ -30,7 +30,7 @@ it should you wish (see below).
 
 To see the program run on each text file, try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.alt.sh
 ```
 
@@ -44,7 +44,7 @@ other entries where this was made an alternate version it is configurable at
 compile time. If you wish to speed it up by 100% you can instead do:
 
 
-```<!---sh-->
+``` <!---sh-->
     make clobber SLEEP=7500 alt
 ```
 
@@ -55,7 +55,7 @@ If you wish to speed that up 200% (300% total) you can use instead try
 ctrl-c to terminate the program early but note that the terminal is likely to be
 messed up. In that case try:
 
-```<!---sh-->
+``` <!---sh-->
     reset
 ```
 
@@ -70,7 +70,7 @@ hard to see the art of the entry but you may do so if you wish.
 
 ### Original build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -84,7 +84,7 @@ Use `birken` as you would `birken.alt` above.
 
 To use the demo script with the original code, try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -96,7 +96,7 @@ PLEASE be careful if you are sensitive to flashing colours!
 This program also wins the "Most amusing abuse of the iocccsize tool" award;
 although not the absolute best: it is possible to achieve 0 by writing:
 
-```<!---c-->
+``` <!---c-->
     /* *\
     /....
 ```
@@ -319,7 +319,7 @@ This program demonstrates how to exploit a bug in IOCCC size tool version
 
 If that line is added to the top of any program, the tool will report a size of 8.
 
-```<!---sh-->
+``` <!---sh-->
     $ ./iocccsize -i < prog.c
     8
 ```
@@ -327,7 +327,7 @@ If that line is added to the top of any program, the tool will report a size of 
 When that line is deleted from this program, the tool properly reports the
 secondary size limit of the program as 2048.
 
-```<!---sh-->
+``` <!---sh-->
     $ ./iocccsize -i < birken.c
     2048
 ```
@@ -357,7 +357,7 @@ Carefully selected variable names also yielded wonderful expressions like `l=0`,
 `O=0`, `O=1` and `while(O)`.  `"Tetris"` also makes a second appearance of
 sorts:
 
-```<!---c-->
+``` <!---c-->
     [T][e][t]--; while(R+i) { s
 ```
 

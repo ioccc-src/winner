@@ -1,6 +1,6 @@
 The following are a few screen dumps of:
 
-```<!---sh-->
+``` <!---sh-->
     SIZE=100 SHEDS=5 GROW=-10 SHED=50 MAXSIZE=250 ./prog
 ```
 

@@ -4,7 +4,7 @@ We recommend you try the alt version first so you can get a better idea of what
 this entry was like back in 1993. See the [original code](#original-code)
 section below to run the original.
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -16,7 +16,7 @@ requires X11?](../../faq.html#X11macos).
 
 To configure how many microseconds to sleep before updates try:
 
-```<!---sh-->
+``` <!---sh-->
     make clobber SLEEP=200 alt
 ```
 
@@ -34,7 +34,7 @@ For more detailed information see [1993 cmills bugs](../../bugs.html#1993_cmills
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     DISPLAY="your_X_server_display"
     export DISPLAY
     ./cmills.alt [speed]	# must be run on an X11 server
@@ -56,7 +56,7 @@ on but you can use the original without any delays if you wish.
 
 ### Original build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 

@@ -317,7 +317,7 @@ command that is compatible with GNU Make version 3.81.
 While your entry's source filename, as submitted, must be `prog.c`, your entry's `Makefile`
 may copy `prog.c` to a different filename as part of the compiling/building process.  For example:
 
-```<!---make-->
+``` <!---make-->
     all: desired_name
 
     desired_name: desired_name.c
@@ -337,7 +337,7 @@ creates as part of the compiling/building process.
 You may also copy the compiled `prog` into a different file as part of compiling process.
 For example:
 
-```<!---make-->
+``` <!---make-->
     different_name: prog
 	    rm -f $@
 	    cp -f prog $@
@@ -867,7 +867,7 @@ winning entries page](../years.html).
 
 In general the best way to compile everything in an entry directory is to run:
 
-```<!---sh-->
+``` <!---sh-->
     make clobber all
 ```
 
@@ -885,14 +885,14 @@ you can do from the top level directory:
 
 If you wish to only build alternate code you can do:
 
-```<!---sh-->
+``` <!---sh-->
     make clobber alt
 ```
 
 If you wish to not remove the entry binaries and only compile the additional alt
 versions:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -1105,7 +1105,7 @@ First, see the above note on [installing and starting Xorg](#X11_general).
 
 Install Xorg and related packages:
 
-```<!---sh-->
+``` <!---sh-->
     sudo dnf install --skip-broken --best --exclude xorgxrdp --exclude xorgxrdp-glamor '*xorg*' 'libx*' 'libX*' 'fontconfig*'
 ```
 
@@ -1134,7 +1134,7 @@ macOS, preferably the most recent version](https://support.apple.com/macos).
 After it is installed, open the "XQuartz" application (usually located in
 `/Applications/Utilities/XQuartz.app`) by typing at the command line:
 
-```<!---sh-->
+``` <!---sh-->
     open /Applications/Utilities/XQuartz.app
 ```
 
@@ -1168,7 +1168,7 @@ First, see the above note on [installing and starting Xorg](#X11_general).
 According to the [Debian Xorg wiki](https://wiki.debian.org/Xorg), installing
 X11 requires:
 
-```<!---sh-->
+``` <!---sh-->
     sudo apt install xorg
 ```
 
@@ -1194,13 +1194,13 @@ See also:
 
 For systems that have the `dnf(1)` command:
 
-```<!---sh-->
+``` <!---sh-->
     sudo dnf install --skip-broken --best --exclude xorgxrdp --exclude xorgxrdp-glamor '*xorg*' 'libx*' 'libX*' 'fontconfig*'
 ```
 
 For systems that have the `yum(1)` command:
 
-```<!---sh-->
+``` <!---sh-->
     sudo yum install --skip-broken --best --exclude xorgxrdp --exclude xorgxrdp-glamor '*xorg*' 'libx*' 'libX*' 'fontconfig*'
 ```
 
@@ -1228,7 +1228,7 @@ macOS with alternative methods for macOS and different package managers with Lin
 
 Execute the following as root or via sudo:
 
-```<!---sh-->
+``` <!---sh-->
     dnf install SDL2 SDL2-devel sdl12-compat sdl12-compat-devel
 ```
 
@@ -1237,13 +1237,13 @@ in the above command.
 
 In the past it was said that one might need to run `make` like:
 
-```<!---sh-->
+``` <!---sh-->
     make ... SDL2_INCLUDE_ROOT=/usr
 ```
 
 or set the following environment variable:
 
-```<!---sh-->
+``` <!---sh-->
     export SDL2_INCLUDE_ROOT=/usr
 ```
 
@@ -1266,7 +1266,7 @@ If you have not already done so, install [Homebrew](https://brew.sh).
 
 Then to install SDL and SDL2, execute the following command:
 
-```<!---sh-->
+``` <!---sh-->
     brew install sdl2 sdl12-compat
     eval "$(opt/homebrew/bin/brew shellenv)"
 ```
@@ -1278,7 +1278,7 @@ If you haven't already, install
 [MacPorts](https://www.macports.org/install.php). Then run:
 
 
-```<!---sh-->
+``` <!---sh-->
     sudo port install libsdl libsdl2
 ```
 
@@ -1287,7 +1287,7 @@ If you haven't already, install
 
 Execute the following as root or via sudo:
 
-```<!---sh-->
+``` <!---sh-->
     apt install libsdl1.2debian libsdl1.2-dev libsdl2-dev
 ```
 
@@ -1295,13 +1295,13 @@ and then try `make all` again.
 
 In the past it was said that one might need to run `make` like:
 
-```<!---sh-->
+``` <!---sh-->
     make ... SDL2_INCLUDE_ROOT=/usr
 ```
 
 or set the following environment variable:
 
-```<!---sh-->
+``` <!---sh-->
     export SDL2_INCLUDE_ROOT=/usr
 ```
 
@@ -1346,7 +1346,7 @@ macOS with alternative methods for macOS and different package managers with Lin
 
 Execute the following as root or via sudo:
 
-```<!---sh-->
+``` <!---sh-->
     dnf install ncurses ncurses-devel
 ```
 
@@ -1355,7 +1355,7 @@ Execute the following as root or via sudo:
 
 With macOS it should already be installed. If it is not you might have to do:
 
-```<!---sh-->
+``` <!---sh-->
     xcode-select --install
 ```
 
@@ -1376,7 +1376,7 @@ Not applicable, see above.
 
 Execute the following as root or via sudo:
 
-```<!---sh-->
+``` <!---sh-->
     apt install libncurses6
 ```
 
@@ -1409,7 +1409,7 @@ install depends on your OS.
 
 As root or via sudo:
 
-```<!---sh-->
+``` <!---sh-->
     dnf install -y sox sox-devel
 ```
 
@@ -1423,7 +1423,7 @@ If you have not already done so, install [Homebrew](https://brew.sh).
 
 Then to install SoX, execute the following command:
 
-```<!---sh-->
+``` <!---sh-->
     brew install sox
     eval "$(opt/homebrew/bin/brew shellenv)"
 ```
@@ -1435,7 +1435,7 @@ If you haven't already, install
 [MacPorts](https://www.macports.org/install.php). Then run:
 
 
-```<!---sh-->
+``` <!---sh-->
     sudo port install sox
 ```
 
@@ -1474,20 +1474,20 @@ are frankly frivolous and often downright dubious.
 
 To enable this feature:
 
-```<!---sh-->
+``` <!---sh-->
     make clobber all CC=clang
 ```
 
 or:
 
-```<!---sh-->
+``` <!---sh-->
     make clobber all 'CWARN+= -Weverything'
 ```
 
 though it should be noted that if one tries `-Weverything` with compilers that
 are not `clang` they _might_ see something like:
 
-```<!---sh-->
+``` <!---sh-->
     echo 'int main(void) {}' > foo.c ; cc -Weverything foo.c -o foo
     cc: error: unrecognized command-line option '-Weverything'
 ```
@@ -1540,19 +1540,19 @@ get much of it to work and looking at that entry might be of value to your
 submissions, at least if you can figure the code out :-). To see the
 differences, try from `1989/westley`:
 
-```<!---sh-->
+``` <!---sh-->
     make diff_orig_prog
 ```
 
 If you have `colordiff` try:
 
-```<!---sh-->
+``` <!---sh-->
     make DIFF=colordiff diff_orig_prog
 ```
 
 Alternatively you can try:
 
-```<!---sh-->
+``` <!---sh-->
     git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..eb9e69fde657acc8c85a618a8a99af4c2f93b21d westley.c
 ```
 
@@ -1573,7 +1573,7 @@ special characters. There are typical defaults like (where `^` = ctrl):
 and various others. But if you don't know this you can find out through the
 `stty(1)` command with the `-a` option. For instance with macOS you might see:
 
-```<!---sh-->
+``` <!---sh-->
     $ stty -a
     speed 9600 baud; rows 40; columns 155;
     intr = ^C; quit = ^\; erase = ^?; kill = ^U; eof = ^D; [..snip..]
@@ -1583,7 +1583,7 @@ If you know the name you can use `grep` to find the correct line and if your
 implementation of `grep(1)` has the `-o` option you can filter it. For instance
 to find what the `intr` is set to:
 
-```<!---sh-->
+``` <!---sh-->
     $ stty -a |grep -o 'intr = ^[[:alpha:]]'
     intr = ^C
 ```
@@ -1637,7 +1637,7 @@ If your OS package manager does not have the package `tcpserver` you can
 download, making sure you're in a temporary directory, and compile the source
 like:
 
-```<!---sh-->
+``` <!---sh-->
     wget http://cr.yp.to/ucspi-tcp/ucspi-tcp-0.88.tar.gz
     tar ucspi-tcp-0.88.tar.gz
     cd ucspi-tcp-0.88
@@ -1646,7 +1646,7 @@ like:
 
 Then as root or via `sudo(1)` enter:
 
-```<!---sh-->
+``` <!---sh-->
     make setup check
 ```
 
@@ -1663,7 +1663,7 @@ This depends on your operating system for which we describe a couple below.
 
 Execute the following as root or via sudo:
 
-```<!---sh-->
+``` <!---sh-->
     dnf install netpbm-progs netpbm
 ```
 
@@ -1687,7 +1687,7 @@ If you have not already done so, install [Homebrew](https://brew.sh).
 
 Then to install netpbm, execute the following command:
 
-```<!---sh-->
+``` <!---sh-->
     brew install netpbm
 ```
 
@@ -1698,7 +1698,7 @@ If you haven't already, install
 [MacPorts](https://www.macports.org/install.php). Then run:
 
 
-```<!---sh-->
+``` <!---sh-->
     sudo port install libnetpbm netpbm
 ```
 
@@ -1707,7 +1707,7 @@ If you haven't already, install
 
 Execute the following as root or via sudo:
 
-```<!---sh-->
+``` <!---sh-->
     apt install netpbm
 ```
 
@@ -1740,7 +1740,7 @@ This depends on your operating system for which we describe a couple below.
 
 Execute the following as root or via sudo:
 
-```<!---sh-->
+``` <!---sh-->
     dnf install libjpeg-turbo-utils libjpeg-turbo-devel libjpeg-turbo
 ```
 
@@ -1764,7 +1764,7 @@ If you have not already done so, install [Homebrew](https://brew.sh).
 
 Then to install libjpeg-turbo, execute the following command:
 
-```<!---sh-->
+``` <!---sh-->
     brew install libjpeg-turbo
 ```
 
@@ -1775,7 +1775,7 @@ If you haven't already, install
 [MacPorts](https://www.macports.org/install.php). Then run:
 
 
-```<!---sh-->
+``` <!---sh-->
     sudo port install libjpeg-turbo libjpeg-turbo-devel
 ```
 
@@ -1785,7 +1785,7 @@ If you haven't already, install
 
 Execute the following as root or via sudo:
 
-```<!---sh-->
+``` <!---sh-->
     apt install libturbojpeg0 libturbojpeg0-dev
 ```
 
@@ -1817,7 +1817,7 @@ This depends on your operating system for which we describe a couple below.
 
 Execute the following as root or via sudo:
 
-```<!---sh-->
+``` <!---sh-->
     dnf install ImageMagick
 ```
 
@@ -1840,7 +1840,7 @@ If you have not already done so, install [Homebrew](https://brew.sh).
 
 Then to install ImageMagick, execute the following command:
 
-```<!---sh-->
+``` <!---sh-->
     brew install ImageMagick
 ```
 
@@ -1851,7 +1851,7 @@ If you haven't already, install
 [MacPorts](https://www.macports.org/install.php). Then run:
 
 
-```<!---sh-->
+``` <!---sh-->
     sudo port install ImageMagick
 ```
 
@@ -1860,7 +1860,7 @@ If you haven't already, install
 
 Execute the following as root or via sudo:
 
-```<!---sh-->
+``` <!---sh-->
     apt install imagemagick
 ```
 
@@ -1894,7 +1894,7 @@ general information about X11.
 Once X11 is install and the X Window Server is running, one needs to compile
 and link with the two libraries, _GL_ and _GLU_:
 
-```<!---sh-->
+``` <!---sh-->
     cc ... -lGL -lGLU -L _location-where-X11-libs-are-installed_ -lX11
 ```
 
@@ -1906,7 +1906,7 @@ We suggest you check out their resource for further information on OpenGL.
 
 Execute the following as root or via sudo:
 
-```<!---sh-->
+``` <!---sh-->
     sudo dnf install glew-devel SDL2-devel SDL2_image-devel glm-devel freetype-devel
 ```
 
@@ -1930,7 +1930,7 @@ you might look to install OpenGL via Homebrew or MacPorts.
 
 Execute the following as root or via sudo:
 
-```<!---sh-->
+``` <!---sh-->
     sudo apt-get install libglew-dev libsdl2-dev libsdl2-image-dev libglm-dev libfreetype6-dev
 ```
 
@@ -1981,7 +1981,7 @@ interspersed with the output of the program.
 For instance in macOS the entry [1990/tbr](1990/tbr/index.html) would output the
 warning in such a way that caused confusing output for the entry, looking like:
 
-```<!---sh-->
+``` <!---sh-->
     $ ./tbr
     $ warning: this program uses gets(), which is unsafe.
     # nothing here, what to do?
@@ -2071,7 +2071,7 @@ will make it harder to see what is different,
 [2001/anonymous](2001/anonymous/index.html). What you would do is `cd
 2001/anonymous` and then do:
 
-```<!---sh-->
+``` <!---sh-->
     make diff_orig_prog
 ```
 
@@ -2096,7 +2096,7 @@ where it's quite easy to see the differences).
 [1991/dds](1991/dds/index.html) is also a good example to see the alt difference
 very easily. To do that `cd 1991/dds` and then do:
 
-```<!---sh-->
+``` <!---sh-->
     make diff_alt_prog
 ```
 
@@ -2108,7 +2108,7 @@ and you'll see a single line changed and very simply.
 To use these rules but provide a different `diff`, for instance `colordiff`,
 just do:
 
-```<!---sh-->
+``` <!---sh-->
     make DIFF=colordiff diff_orig_prog # for orig to prog diff
     make DIFF=colordiff diff_alt_prog # for alt to prog diff
 ```
@@ -2502,7 +2502,7 @@ POSIX safe string plus the use of `+` (for technical reasons beyond this
 answer).  In particular, the `author_handle` must be an ASCII string that
 matches this regexp:
 
-```<!---re-->
+``` <!---re-->
     ^[0-9A-Za-z][0-9A-Za-z._+-]*$"
 ```
 
@@ -2541,7 +2541,7 @@ in the case of [2005/anon](2005/anon/anon.c).
 
 Anonymous `author_handle`'s match this regexp:
 
-```<!---re-->
+``` <!---re-->
     Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$
 ```
 
@@ -2591,7 +2591,7 @@ is to look at an example, the `author_handle.json` file for Yusuke Endoh:
 
 As of _Thu Nov 30 23:51:12 UTC 2023_, the contents was as follows:
 
-```<!---json-->
+``` <!---json-->
     {
 	"no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
 	"author_JSON_format_version" : "1.0 2023-06-10",
@@ -2635,7 +2635,7 @@ We now will walk thru the above JSON document looking at various JSON members:
 
 ##### no_comment
 
-```<!--- json-->
+``` <!--- json-->
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
 ```
 
@@ -2649,7 +2649,7 @@ be the exact _JSON string_ as shown above.
 
 ##### author_JSON_format_version
 
-```<!---json-->
+``` <!---json-->
     "author_JSON_format_version" : "1.0 2023-06-10",
 ```
 
@@ -2670,7 +2670,7 @@ in conjunction with changes to [bin directory tools](bin/index.html).
 
 ##### author_handle
 
-```<!---json-->
+``` <!---json-->
     "author_handle" : "Yusuke_Endoh",
 ```
 
@@ -2693,7 +2693,7 @@ a change of _author_handle_ _JSON value_ would also require the
 
 ##### full_name
 
-```<!---json-->
+``` <!---json-->
     "full_name" : "Yusuke Endoh",
 ```
 
@@ -2708,7 +2708,7 @@ full name is properly encoded as a _JSON string_.
 
 ##### sort_word
 
-```<!---json-->
+``` <!---json-->
     "sort_word" : "endoh",
 ```
 
@@ -2731,7 +2731,7 @@ or their username, then they may change this accordingly.
 
 ##### location_code
 
-```<!---json-->
+``` <!---json-->
     "location_code" : "JP",
 ```
 
@@ -2758,7 +2758,7 @@ If the author wishes to not specify a location, they should select **XX**.
 
 ##### email
 
-```<!---json-->
+``` <!---json-->
     "email" : "mame@ruby-lang.org",
 ```
 
@@ -2771,7 +2771,7 @@ If the author wishes to not specify an email address, or if the email address is
 unknown, they should use the _JSON null_ as the _JSON value_ of this _JSON member_.
 For example:
 
-```<!---json-->
+``` <!---json-->
     "email" : null,
 ```
 
@@ -2780,7 +2780,7 @@ NOTE: The _JSON null_ is **NOT** enclosed in quotes!
 
 ##### url
 
-```<!---json-->
+``` <!---json-->
     "url" : "https://mametter.hatenablog.com",
 ```
 
@@ -2793,7 +2793,7 @@ If the author wishes to not specify an email address, or if the URL is
 unknown, they should use the _JSON null_ as the _JSON value_ of this _JSON member_.
 For example:
 
-```<!---json-->
+``` <!---json-->
     "url" : null,
 ```
 
@@ -2802,7 +2802,7 @@ NOTE: The _JSON null_ is **NOT** enclosed in quotes!
 
 ##### alt_url
 
-```<!---json-->
+``` <!---json-->
     "alt_url" : null,
 ```
 
@@ -2815,7 +2815,7 @@ In some cases the author may wish to record a special URL for their IOCCC entry,
 or a 2nd URL such as a work or school or personal home page.  For example,
 Cody as of  _Thu Nov 30 23:51:12 UTC 2023_ used:
 
-```<!---json-->
+``` <!---json-->
     "alt_url" : "https://ioccc.xexyl.net",
 ```
 
@@ -2823,7 +2823,7 @@ If the author wishes to not specify an email address, or if the alternate URL is
 unknown, they should use the _JSON null_ as the _JSON value_ of this _JSON member_.
 For example:
 
-```<!---json-->
+``` <!---json-->
     "url" : null,
 ```
 
@@ -2842,7 +2842,7 @@ and so the `deprecated_twitter_handle` is **no longer used**.  A _JSON value_ th
 not a _JSON null_ is kept for only historic reasons.  For example, Anthony C. Howe
 once used:
 
-```<!---json-->
+``` <!---json-->
     "deprecated_twitter_handle" : "@SirWumpus",
 ```
 
@@ -2850,7 +2850,7 @@ If the author wishes to not specify an twitter handle, or if the twitter handle 
 unknown, they should use the _JSON null_ as the _JSON value_ of this _JSON member_.
 For example:
 
-```<!---json-->
+``` <!---json-->
     "deprecated_twitter_handle" : null,
 ```
 
@@ -2859,7 +2859,7 @@ NOTE: The _JSON null_ is **NOT** enclosed in quotes!
 
 ##### mastodon
 
-```<!---json-->
+``` <!---json-->
     "mastodon" : "@mame@ruby.social",
 ```
 
@@ -2878,7 +2878,7 @@ See the "Mastodon Address" section of that page in particular.
 
 The IOCCC Mastodon handle is:
 
-```<!---json-->
+``` <!---json-->
     @ioccc@fosstodon.org
 ```
 
@@ -2891,7 +2891,7 @@ If the author wishes to not specify an Mastodon handle, or if the Mastodon handl
 unknown, they should use the _JSON null_ as the _JSON value_ of this _JSON member_.
 For example:
 
-```<!---json-->
+``` <!---json-->
     "mastodon" : null,
 ```
 
@@ -2900,7 +2900,7 @@ NOTE: The _JSON null_ is **NOT** enclosed in quotes!
 
 ##### mastodon_url
 
-```<!---json-->
+``` <!---json-->
     "mastodon_url" : "https://ruby.social/@mame",
 ```
 
@@ -2928,7 +2928,7 @@ If the author wishes to not specify an Mastodon URL, or if the Mastodon URL is
 unknown, they should use the _JSON null_ as the _JSON value_ of this _JSON member_.
 For example:
 
-```<!---json-->
+``` <!---json-->
     "mastodon_url" : null,
 ```
 
@@ -2937,7 +2937,7 @@ NOTE: The _JSON null_ is **NOT** enclosed in quotes!
 
 ##### github
 
-```<!---json-->
+``` <!---json-->
     "github" : "@mame",
 ```
 
@@ -2960,7 +2960,7 @@ If the author wishes to not specify an GitHub handle, or if the GitHub handle is
 unknown, they should use the _JSON null_ as the _JSON value_ of this _JSON member_.
 For example:
 
-```<!---json-->
+``` <!---json-->
     "github" : null,
 ```
 
@@ -2969,7 +2969,7 @@ NOTE: The _JSON null_ is **NOT** enclosed in quotes!
 
 ##### affiliation
 
-```<!---json-->
+``` <!---json-->
     "affiliation" : null,
 ```
 
@@ -2990,7 +2990,7 @@ If the author wishes to not specify an affiliation, or if the affiliation is
 unknown, they should use the _JSON null_ as the _JSON value_ of this _JSON member_.
 For example:
 
-```<!---json-->
+``` <!---json-->
     "affiliation" : null,
 ```
 
@@ -3000,7 +3000,7 @@ NOTE: The _JSON null_ is **NOT** enclosed in quotes!
 ##### winning_entry_set
 ##### entry_id
 
-```<!---json-->
+``` <!---json-->
     "winning_entry_set" : [
         { "entry_id" : "2012_endoh1" },
         { "entry_id" : "2012_endoh2" },
@@ -3062,7 +3062,7 @@ For example see [1984/anonymous/.path](1984/anonymous/.path).
 
 The .top, .year and .path files are generated from the top level Makefile, by:
 
-```<!---sh-->
+``` <!---sh-->
     make genpath
 ```
 
@@ -3155,7 +3155,7 @@ Assuming you do not have an ssh key you should go to the command prompt and
 type (if you already have one and are okay using it for GitHub you can use that
 one):
 
-```<!---sh-->
+``` <!---sh-->
     ssh-keygen -t rsa -b 4096 -C "luser@example.com"
 ```
 
@@ -3192,7 +3192,7 @@ instructions in forking the repo.
 Once you have forked the repo you are ready to clone it to your system. For
 instance Cody Boone Ferguson has the GitHub handle _xexyl_ so he would type in:
 
-```<!---sh-->
+``` <!---sh-->
     git clone https://github.com/xexyl/temp-test-ioccc [target_dir]
 ```
 
@@ -3200,7 +3200,7 @@ Once that is completed you will need to change to that directory. The default
 directory would be the name of the repo but if you specified a target directory
 it will be that. For instance using the above example you might do:
 
-```<!---sh-->
+``` <!---sh-->
     cd temp-test-ioccc
 ```
 
@@ -3226,7 +3226,7 @@ is now (at the time of writing this), `15 April 2023`.
 
 But what if he wanted to add a file? He'd create the file and then type:
 
-```<!---sh-->
+``` <!---sh-->
     git add foo
 ```
 
@@ -3241,7 +3241,7 @@ First, as an aside, if this is your first pull request (which we assume is if yo
 reading this :-) ) you need to make sure that you can push changes to GitHub
 with your ssh key. To do this you need to do:
 
-```<!---sh-->
+``` <!---sh-->
     ssh -T git@github.com
 ```
 
@@ -3253,7 +3253,7 @@ Now, assuming that the forked repo is
 <https://github.com/xexyl/temp-test-ioccc>, you'd type:
 
 
-```<!---sh-->
+``` <!---sh-->
     git remote set-url origin git@github.com:xexyl/temp-test-ioccc.git
 ```
 
@@ -3264,21 +3264,21 @@ Continuing the example above for
 [2020/ferguson1/play.sh](2020/ferguson1/play.sh), it might be that:
 
 
-```<!---sh-->
+``` <!---sh-->
     git checkout -B human-snakes
 ```
 
 This would change the branch to the newly created branch `human-snakes` branch.
 Now Cody could commit the changes:
 
-```<!---sh-->
+``` <!---sh-->
     git commit play.sh # if specifying specific files
     git commit -a # if committing everything
 ```
 
 He could also have done:
 
-```<!---sh-->
+``` <!---sh-->
     git add play.sh
     git commit
 ```
@@ -3303,7 +3303,7 @@ Now a pull request has to be opened.
 To do this depends on the branch name. Assuming the branch from above,
 `human-snakes`, you would type:
 
-```<!---sh-->
+``` <!---sh-->
     git push --set-upstream origin human-snakes
 ```
 
@@ -3366,7 +3366,7 @@ When the judges have merged the pull request you now need to make sure your fork
 has the merge. To do this from the command line, assuming the fork in the above
 example, you would type:
 
-```<!---sh-->
+``` <!---sh-->
     git checkout master && git pull https://github.com/ioccc-src/temp-test-ioccc.git master && git push origin master
 ```
 

@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make clobber all
 ```
 
@@ -12,7 +12,7 @@ code](#alternate-code) section below.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./spinellis
 ```
 
@@ -21,7 +21,7 @@ EOF (typically ctrl-d).
 
 Now run again:
 
-```<!---sh-->
+``` <!---sh-->
     ./spinellis
 ```
 
@@ -33,7 +33,7 @@ For clang or compilers that won't read from `/dev/tty`, we provide this version.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make clobber alt
 ```
 
@@ -42,7 +42,7 @@ and follow the instructions.
 
 ### Alternate use:
 
-```<!---sh-->
+``` <!---sh-->
     ./spinellis.alt
 ```
 
@@ -51,7 +51,7 @@ EOF (typically ctrl-d).
 
 Now run again:
 
-```<!---sh-->
+``` <!---sh-->
     ./spinellis.alt
 ```
 

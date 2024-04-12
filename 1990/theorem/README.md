@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [1990 theorem bugs](../../bugs.html#1990_theor
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./theorem expression x1 x2 h y1
 ```
 
@@ -35,7 +35,7 @@ where:
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -62,7 +62,7 @@ left to right.  (i.e., parenthesis aren't supported).
 
 Try running the program with the following args:
 
-```<!---sh-->
+``` <!---sh-->
     ./theorem y 0 1 0.1 1
     ./theorem 1/x 1 2 0.1 0
     ./theorem 'x^2/y+x' 0 1 0.1 6
@@ -71,14 +71,14 @@ Try running the program with the following args:
 But wait, there is more!  You also get, free of charge, a
 reversing filter!  Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./theorem -r 0 0 0 0 < theorem.c > sorter.c
 ```
 
 Still not impressed?  The author throws in for free, a
 sort program! Try:
 
-```<!---sh-->
+``` <!---sh-->
     make sorter
     ls | ./sorter
 ```
@@ -87,14 +87,14 @@ This program is safe for home use as well.  The author has
 included a safety feature in case you misplace the original
 program source:
 
-```<!---sh-->
+``` <!---sh-->
     ./sorter -r 0 0 0 0 < sorter.c > theorem_bkp.c
 ```
 
 And finally, as a special offer to users of this entry,
 the author provides a Fibonacci sequence generator!  Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./sorter 0 0 0 0 < theorem.c > fibonacci.c
     make fibonacci
     ./fibonacci 1 1

@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -27,14 +27,14 @@ For more detailed information see [2001 anonymous bugs](../../bugs.html#2001_ano
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./anonymous x86_program
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 
     ./anonymous anonymous.bed # if able to compile as a 32-bit (-m32) ELF binary
@@ -64,14 +64,14 @@ that :-(
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
 
 ### Alternate use:
 
-```<!---sh-->
+``` <!---sh-->
     ./anonymous.ten.alt
 
     ./anonymous.bed.alt

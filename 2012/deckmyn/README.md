@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -18,14 +18,14 @@ For more detailed information see [2012 deckmyn bugs](../../bugs.html#2012_deckm
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./deckmyn "$(cat deckmyn.c)" "$(cat musicfile.txt)" > sheetmusic.pbm
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -59,13 +59,13 @@ You need the source code and example input (either one of the example files, or
 manual input as below) ready and a program capable of showing [.pbm bitmap
 format](https://en.wikipedia.org/wiki/Netpbm) images.
 
-```<!---sh-->
+``` <!---sh-->
     ./deckmyn "`cat deckmyn.c`" "`cat example_greensleeves`" > greensleeves.pbm
 ```
 
 If you have macOS you can open the image like:
 
-```<!---sh-->
+``` <!---sh-->
     open greensleeves.pbm
 ```
 
@@ -73,13 +73,13 @@ If you have macOS you can open the image like:
 normally open an image.
 
 
-```<!---sh-->
+``` <!---sh-->
     ./deckmyn "`cat deckmyn.c`" "KF m44c4 c4 g4 g4 :  a4 a4 g2 :; " > short_bass.pbm
 ```
 
 If you have macOS you can open the image like:
 
-```<!---sh-->
+``` <!---sh-->
     open short_bass.pbm
 ```
 

@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -22,7 +22,7 @@ For more detailed information see [2014 vik bugs](../../bugs.html#2014_vik).
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     echo foo | ./prog > audio_file.raw
 
     echo foo | ./prog | mplayer -demuxer rawaudio -
@@ -31,7 +31,7 @@ For more detailed information see [2014 vik bugs](../../bugs.html#2014_vik).
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -44,7 +44,7 @@ instructions on how to get it to work with Windows.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
@@ -59,13 +59,13 @@ Use `prog.alt` as you would `prog` above as well as below.
 This program sets a new tone for obfuscation. But do you understand
 what it says about obfuscation? Perhaps:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog < prog.c > prog.raw
 ```
 
 might speak to your coding style? If not, then perhaps:
 
-```<!---sh-->
+``` <!---sh-->
     ./prog < README.md | mplayer -demuxer rawaudio -
 ```
 
@@ -87,7 +87,7 @@ Don't forget the last '`-`' as it makes `mplayer(1)` read from `stdin`.
 
 ## Convert audio file with Morse signals to text
 
-```<!---sh-->
+``` <!---sh-->
     ./prog e < audio_file.raw
 ```
 
@@ -106,7 +106,7 @@ Microsoft compilers add a carriage return to newlines, and to compile the
 program with this platform, the following line can be added to `main()` before
 any code in order for the program to run correctly:
 
-```<!---c-->
+``` <!---c-->
     _setmode(_fileno(stdout), 0x8000);
 ```
 

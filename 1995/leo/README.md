@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all
 ```
 
@@ -18,7 +18,7 @@ For more detailed information see [1995 leo bugs](../../bugs.html#1995_leo).
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./leo [ deep ] [ right ] [ Variable ] [ cycle [ freq ] ]
 ```
 
@@ -27,7 +27,7 @@ See the author's information below on these details.
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -52,7 +52,7 @@ characters on the command line - anything that's not a number is a candidate.)
 
 The usage is:
 
-```<!---sh-->
+``` <!---sh-->
     ./leo [ deep ] [ right ] [ Variable ] [ cycle [ freq ] ]
 ```
 
@@ -68,7 +68,7 @@ to be present if you want to enter `freq` (and you usually do).
 
 Some options to try (besides the obvious):
 
-```<!---sh-->
+``` <!---sh-->
     ./leo 1 | cat - /dev/tty | gs -
 ```
 
@@ -191,19 +191,19 @@ the opening for step 1 is not a single line but a cross:
 
 To watch it repeatedly (as a screen saver), use:
 
-```<!---sh-->
+``` <!---sh-->
     ./leo 2 | cat - /dev/tty | gs -
 ```
 
 The command line:
 
-```<!---sh-->
+``` <!---sh-->
     ./leo Variable 1 | cat - /dev/tty | gs -
 ```
 
 draws the same as above. Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./leo Variable 1 1 | cat - /dev/tty | gs -
 ```
 
@@ -228,7 +228,7 @@ If `Variable` is used, the actual value of `cycle` doesn't matter,
 as far as it is > 1. To figure out what difference
 `cycle` makes when `Variable` is not used, try
 
-```<!---sh-->
+``` <!---sh-->
     ./leo Variable 37 80 | cat - /dev/tty | gs -
 ```
 

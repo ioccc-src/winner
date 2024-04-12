@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make all		# On a 64-bit machine (default)
 
     make tromp32		# On a 32-bit machine
@@ -20,7 +20,7 @@ For more detailed information see [2012 tromp bugs](../../bugs.html#2012_tromp).
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./tromp [-b]
 ```
 
@@ -29,7 +29,7 @@ Use `./tromp32` as you would `./tromp` if on a 32-bit machine.
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     cat ascii-prog.blc data | ./tromp -b
     cat binary-prog.Blc data | ./tromp
 ```
@@ -37,7 +37,7 @@ Use `./tromp32` as you would `./tromp` if on a 32-bit machine.
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -113,7 +113,7 @@ identity function. When its encoding `0010` is fed into the universal machine,
 it will simply copy the input to the output (well, not that simply, since each
 byte is smashed to bits and rebuilt from scratch). Voila: a half byte cat:
 
-```<!---sh-->
+``` <!---sh-->
     $ echo " Hello, world" | ./tromp
     Hello, world
 ```
@@ -122,7 +122,7 @@ Since the least significant 4 bits of the first byte are just arbitrary padding
 that is ignored by the program, any character from ASCII 32 (space) through 47
 (`/`) will do, e.g.:
 
-```<!---sh-->
+``` <!---sh-->
     $ echo "*Hello, world" | ./tromp
     Hello, world
 ```
@@ -134,7 +134,7 @@ If the input doesn't start with a valid program, that is,
 if the interpreter reaches end-of-file during program parsing,
 it will crash in some way. E.g. the following might dump core:
 
-```<!---sh-->
+``` <!---sh-->
     echo -n "U" | ./tromp
 ```
 
@@ -143,7 +143,7 @@ closed, that is, variable `n` can only appear within at least `n` enclosing
 lambdas.  For instance, here the term `\ 5` is not closed, causing the
 interpreter to crash when looking into a null-pointer environment:
 
-```<!---sh-->
+``` <!---sh-->
     echo ">Hello, world" | ./tromp
 ```
 
@@ -200,7 +200,7 @@ The byte oriented BLC8 version weighs in at 43 bytes (shown in hexadecimal).
 
 ```
 
-```<!---sh-->
+``` <!---sh-->
     $ (cat uni8.Blc; echo " Ni hao") | ./tromp
     Ni hao
 ```
@@ -225,7 +225,7 @@ Even shorter than the self-interpreter is this prime number sieve in 167 bits
 
 The `n`th bit in the output indicates whether n is prime:
 
-```<!---sh-->
+``` <!---sh-->
     $ cat primes.blc | ./tromp -b | head -c 70
     0011010100010100010100010000010100000100010100010000010000010100000100
 ```
@@ -265,7 +265,7 @@ The program `hilbert.Blc`, at 143 bytes, is a very twisty "one-liner" (shown in 
 It expects `n` arbitrary characters of input, and draws a space filling [Hilbert
 curve](https://en.wikipedia.org/wiki/Hilbert_curve) of order `n`:
 
-```<!---sh-->
+``` <!---sh-->
     $  (cat hilbert.Blc; echo -n "1") | ./tromp
      _
     | |
@@ -344,7 +344,7 @@ Writing BLC programs can be made slightly less painful with this parser that
 translates single-letter-variable lambda calculus into BLC:
 
 
-```<!---sh-->
+``` <!---sh-->
     $ echo "\f\x f (f (f x))" > three
     $ cat parse.Blc three | ./tromp
     000001110011100111010
@@ -358,21 +358,21 @@ into BLC8:
 
 So we could assemble an input reversing program as
 
-```<!---sh-->
+``` <!---sh-->
     echo "\a a ((\b b b) (\b \c \d \e d (b b) (\f f c e))) (\b \c c)" > reverse
     cat parse.Blc reverse | ./tromp > reverse.blc
 ```
 
 and change it to BLC8 with
 
-```<!---sh-->
+``` <!---sh-->
     $ cat deflate.Blc reverse.blc | ./tromp > rev.Blc
     $ wc rev.Blc
 	0 1 9 rev.Blc
 ```
 and then try it out with:
 
-```<!---sh-->
+``` <!---sh-->
     $ cat rev.Blc - | ./tromp
     Hello, world!
     ^D
@@ -384,7 +384,7 @@ and then try it out with:
 BLC8 program `symbolic.Blc` shows individual reduction steps on symbolic lambda terms.
 Here it is used to show the calculation of 2^3 in Church numerals:
 
-```<!---sh-->
+``` <!---sh-->
     $ echo "(\f\x f (f (f x))) (\f\x f (f x))" > threetwo
     $ cat parse.Blc threetwo | ./tromp > threetwo.blc
     $ cat symbolic.Blc threetwo.blc | ./tromp
@@ -412,7 +412,7 @@ Taking only the first line of output gives us a sort of BLC disassembler, an
 exact inverse of the above assembler. The prime number sieve disassembles as
 follows:
 
-```<!---sh-->
+``` <!---sh-->
     $ cat symbolic.Blc primes.blc | ./tromp | head -1
     \a (\b b (b ((\c c c) (\c \d \e e (\f \g g) ((\f c c f ((\g g g) (\g f (g g)))) (\f \g \h \i i g (h (d f))))) (\c \d \e b (e c))))) (\b \c c (\d \e d) b)
 ```
@@ -421,7 +421,7 @@ Hardly any less obfuscated...
 
 The last line of
 
-```<!---sh-->
+``` <!---sh-->
     cat symbolic.Blc primes.blc | ./tromp | head -16
 ```
 
@@ -459,7 +459,7 @@ under the interpreter perform much worse than that same program written in Haske
 
 Our interpreter copes well with extra levels of interpretation:
 
-```<!---sh-->
+``` <!---sh-->
     $ time cat primes.blc | ./tromp -b | head -c 210 > /dev/null
     real    0m0.043s
     $ time cat uni.blc primes.blc | ./tromp -b | head -c 210 > /dev/null

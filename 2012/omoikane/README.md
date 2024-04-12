@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -12,7 +12,7 @@ theoretically work with Windows which distinguishes binary and text. See
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./nyaruko [seed.txt] < original.bin > output.c
     bash output.c > key.c
     perl output.c > data.c
@@ -30,7 +30,7 @@ binary itself.
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -53,13 +53,13 @@ binary mode on `stdin` and `stdout`.
 For the first version:
 
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
 For the second version:
 
-```<!---sh-->
+``` <!---sh-->
     make alt2
 ```
 
@@ -73,7 +73,7 @@ Use `nyaruko.alt` or `nyaruko.alt2` as you would `nyaruko` above.
 
 For the first alternate version:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.alt.sh
 ```
 
@@ -93,7 +93,7 @@ The judges have nothing to add that has not already been written about in the
 `Nyaruko` is a binary to text filter.  Given some input on `stdin`,
 `Nyaruko` will produce C code that reproduces this input on `stdout`:
 
-```<!---sh-->
+``` <!---sh-->
     ./nyaruko < original.bin > output.c
     gcc output.c -o output
     ./output > regenerated.bin
@@ -102,7 +102,7 @@ The judges have nothing to add that has not already been written about in the
 Output is encrypted, but both key and data are included in the output.
 To separate the key from the data, run these commands:
 
-```<!---sh-->
+``` <!---sh-->
     bash output.c > key.c
     perl output.c > data.c
 ```
@@ -114,7 +114,7 @@ why the code is formatted the way it is.
 To combine the key and data, concatenate them together in either
 order:
 
-```<!---sh-->
+``` <!---sh-->
     cat key.c data.c > output.c
     cat data.c key.c > output.c
 ```
@@ -123,7 +123,7 @@ By default, `Nyaruko` generates a unique random key for every message,
 using `/dev/urandom` as the seed.  If given an extra command line
 argument, `Nyaruko` will seed using that file instead of `/dev/urandom`:
 
-```<!---sh-->
+``` <!---sh-->
     ./nyaruko seed.txt < input.bin > output.c
 ```
 

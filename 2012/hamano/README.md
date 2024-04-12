@@ -1,20 +1,20 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./hamano < textfile > output.pdf
 ```
 
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./try.sh
 ```
 
@@ -30,7 +30,7 @@ README.md!
 
 That procedure looks like:
 
-```<!---sh-->
+``` <!---sh-->
     ./hamano < README.md > hint.pdf
     cc -xc hint.pdf -o hint
     ./hint
@@ -40,7 +40,7 @@ Another PDF generated is an obfuscated `Hello World!` program (obfuscated inside
 the PDF). Once this is done it will compile the PDF as if it was C (itself!). It
 will look like:
 
-```<!---sh-->
+``` <!---sh-->
     echo 'int main(){puts("Hello World!");}' | ./hamano > hello.pdf
     cc -xc hello.pdf -o hello
     ./hello | cc -Wno-implicit-function-declaration -xc - -o ./hello2

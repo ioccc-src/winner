@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -8,7 +8,7 @@ If you wish to change the size (see the [Author's remarks](#authors-remarks)
 below) you can do so with the `SIZE` variable. For instance you can do:
 
 
-```<!---sh-->
+``` <!---sh-->
     make clobber SIZE=50,50 all
 ```
 
@@ -29,7 +29,7 @@ For more detailed information see [2013 endoh4 bugs](../../bugs.html#2013_endoh4
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./endoh4 < file
     ./endoh4.sh file
 ```
@@ -41,7 +41,7 @@ line it will feed to the program [endoh4.c](endoh4.c).
 
 ## Try:
 
-```<!---sh-->
+``` <!---sh-->
     ./endoh4.sh cube.txt
 ```
 
@@ -51,13 +51,13 @@ The author recommends the use of xterm.
 
 For an example, if you are a football/soccer fan, try:
 
-```<!---sh-->
+``` <!---sh-->
     ./endoh4.sh solids/archimedian-solid/a11-truncated-icosahedron.txt
 ```
 
 You can provide more than one file:
 
-```<!---sh-->
+``` <!---sh-->
     ./endoh4.sh solids/archimedian-solid/a11-truncated-icosahedron.txt cube.txt
 ```
 
@@ -66,7 +66,7 @@ Hit ctrl-c/intr to go to the next file.
 If you wish to change the size to `50,50` without passing any arg:
 
 
-```<!---sh-->
+``` <!---sh-->
     SIZE=50,50 ./endoh4.sh
 ```
 
@@ -115,7 +115,7 @@ clang, and tcc.  It should not trigger warnings with `-pedantic` and `-Wextra`.
 
 You may want to use `tput` to hide the terminal cursor.
 
-```<!---sh-->
+``` <!---sh-->
     tput civis
     ./endoh4 < cube.txt
     tput cnorm
@@ -123,7 +123,7 @@ You may want to use `tput` to hide the terminal cursor.
 
 or
 
-```<!---sh-->
+``` <!---sh-->
     ./endoh4.sh cube.txt
 ```
 
@@ -131,14 +131,14 @@ or
 
 You can change the screen size.  Let the aspect ratio be about 3:1.
 
-```<!---sh-->
+``` <!---sh-->
     cc -DS=120,40 -o endoh4 endoh4.c
 ```
 
 The shape of this code is the geometric net of a regular tetrahedron.
 So, try:
 
-```<!---sh-->
+``` <!---sh-->
     ./endoh4 < endoh4.c # or ./endoh4.sh
 ```
 

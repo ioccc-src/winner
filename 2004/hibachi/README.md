@@ -1,13 +1,13 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     cd build; ./hibachi-start.sh &
 ```
 
@@ -42,7 +42,7 @@ There is a `hibachi.tgz` file (NOTE: this file was removed by the judges after
 extraction) that unpacks several support files and a subdirectory tree
 containing the documentation and examples. It can be viewed by:
 
-```<!---sh-->
+``` <!---sh-->
     tar -zxf hibachi.tgz
     lynx hibachi/localhost/index.html
 ```
@@ -58,19 +58,19 @@ To build just the executable:
 
 For Cygwin, FreeBSD, Linux (newer), Mac OS X:
 
-```<!---sh-->
+``` <!---sh-->
     gcc -o hibachi hibachi.c
 ```
 
 For Linux (older):
 
-```<!---sh-->
+``` <!---sh-->
     gcc -DSHUT_WR=1 -o hibachi hibachi.c
 ```
 
 For SunOS:
 
-```<!---sh-->
+``` <!---sh-->
     gcc -o hibachi hibachi.c -lnsl -lsocket
 ```
 
@@ -88,20 +88,20 @@ examples. In which case the preferred build commands are:
 
 To start the server on the default port (8008):
 
-```<!---sh-->
+``` <!---sh-->
     cd build;
     ./hibachi-start.sh &
 ```
 
 To test the server:
 
-```<!---sh-->
+``` <!---sh-->
     lynx http://localhost:8008/
 ```
 
 To stop the server:
 
-```<!---sh-->
+``` <!---sh-->
     kill %1
 ```
 

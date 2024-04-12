@@ -1,6 +1,6 @@
 ## To build:
 
-```<!---sh-->
+``` <!---sh-->
     make
 ```
 
@@ -25,7 +25,7 @@ For more detailed information see [2004 gavin bugs](../../bugs.html#2004_gavin).
 
 ## To use:
 
-```<!---sh-->
+``` <!---sh-->
     ./gavin
 ```
 
@@ -36,14 +36,14 @@ To enjoy the results (on a Linux/x86 machine) with a floppy drive (remember
 those? We do!):
 
 
-```<!---sh-->
+``` <!---sh-->
     su
 ```
 
 Make a floppy with an ext2 filesystem (`mke2fs /dev/fd0` replacing `fd0` with
 whatever the floppy device is!),  mount it under `/mnt/floppy` and then:
 
-```<!---sh-->
+``` <!---sh-->
     cp kernel fs.tar lilo.conf boot.b /mnt/floppy
 ```
 
@@ -51,26 +51,26 @@ NOTE: If the version of your lilo is not 21.4, use the appropriate boot.b file.
 
 NOTE: If your floppy drive is not `/dev/fd0`, edit lilo.conf appropriately.
 
-```<!---sh-->
+``` <!---sh-->
     lilo -C /mnt/floppy/lilo.conf
 ```
 
 Boot from the floppy on an x86 machine with a PS/2 keyboard and mouse.
 Move the window away from the corner.
 
-```<!---sh-->
+``` <!---sh-->
     vi gavin.c
 ```
 
 Scroll up and down the file with up-arrow and down-arrow.
 
-```<!---sh-->
+``` <!---sh-->
     sh
 ```
 
 You can have several shell windows:
 
-```<!---sh-->
+``` <!---sh-->
     vi README.md
     ./prim
 ```
@@ -86,7 +86,7 @@ you can use it with `QEMU`.
 
 ### Alternate build:
 
-```<!---sh-->
+``` <!---sh-->
     make alt
 ```
 
