@@ -99,7 +99,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.2 2024-03-26"
+export VERSION="1.1.3 2024-04-12"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -424,12 +424,15 @@ esac
 	echo "See the [IOCCC news](news.html) for details including the tentative" \
 	     "scheduled opening date."
 	echo
-	echo "A preliminary IOCCC rules, guidelines, and tools have been posted." \
-	     "Comments and suggestions on these preliminary items are welcome."
+	echo "A preliminary [IOCCC rules](next/rules.html], preliminary [IOCCC guidelines](next/guidelines.html)," \
+	     "and preliminary [mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry) have been posted."
+	echo
+	echo "Comments and suggestions on these preliminary items are welcome, see [FAQ 0.5](faq.html#feedback)" \
+	     "for information on how."
 	;;
     open) echo "# The IOCCC open for submissions"
 	echo
-	echo "See the [IOCCC news](news.html) page for details on rules, guidelines, tools and deadlines."
+	echo "See the [IOCCC news](news.html) page for possible updates to rules, guidelines, tools and deadlines."
 	echo
 	echo "See [How to enter the IOCCC](faq.html#submit) FAQ for additional information."
 	echo

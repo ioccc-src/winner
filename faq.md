@@ -6,6 +6,7 @@
 - [0.2  - What should I put in my entry's Makefile?](#faq0_2)
 - [0.3  - May I use a different source or compiled filename than prog.c or prog?](#faq0_3)
 - [0.4  - What platform should I assume for my entry?](#faq0_4)
+- [0.5  - How may I comment or make a suggestion on IOCCC rules, guidelines and tools?](#faq0_5)
 
 ## Section  1 - [History of the IOCCC](#faq1)
 - [1.0  - How did the IOCCC get started?](#faq1_0)
@@ -352,6 +353,32 @@ If it can compile and run on Windows and/or Mac  (see
 [2000/thadgavin](years.html#2000_thadgavin) for one example, amongst others),
 even better. Being able to compile with other compilers like clang is also a
 good thing.
+
+
+### <a name="faq0_5"></a><a name="feedback"></a>FAQ 0.5: How may I comment or make a suggestion on IOCCC rules, guidelines and tools?
+
+The [IOCCC judges](judges.html) to welcome feedback on the [IOCCC
+rules](next/rules.html), [IOCCC guidelines](next/guidelines.html)
+and on the [IOCCC mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry).
+
+To comment on the [IOCCC rules](next/rules.html) or the
+[IOCCC guidelines](next/guidelines.html) please view the
+[GitHub discussions for this repo](https://github.com/ioccc-src/temp-test-ioccc/discussions).
+If there is an on-going discussion that seems relevant to what you
+have to say, consider adding comments to that particular discussion.
+Otherwise consider opening a [new IOCCC repo
+discussion](https://github.com/ioccc-src/temp-test-ioccc/discussions/new/choose).
+
+To comment on [IOCCC mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry),
+please view the [mkiocccentry repo discussions](https://github.com/ioccc-src/mkiocccentry/discussions).
+If there is an on-going discussion that seems relevant to what you
+have to say, consider adding comments to that particular discussion.
+Otherwise consider opening a [new mkiocccentry
+discussion](https://github.com/ioccc-src/mkiocccentry/discussions/new/choose).
+
+As a very last resort and/or if you feel the need to engage in a private
+discussion with the [IOCCC judges](judges.html), then see
+[How to contact the IOCCC](contact.html).
 
 
 ## <a name="faq1"></a>Section 1: History of the IOCCC

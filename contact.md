@@ -24,10 +24,19 @@ free to add a comment to the issue.  If you do not find an it has
 been reported, then fee free to open a [new IOCCC
 issue](https://github.com/ioccc-src/winner/issues).
 
+If you are trying to:
+
+* Comment or make a suggestion on IOCCC rules - (see [FAQ 0.5](faq.html#feedback))
+* Comment or make a suggestion on IOCCC guidelines - (see [FAQ 0.5](faq.html#feedback))
+* Comment or make a suggestion on IOCCC tools - (see [FAQ 0.5](faq.html#feedback))
+
+Those FAQ entries will help guide you on how to make public comments
+and suggestion in the relevant places.
+
 See the above FAQ entries for more details.
 
 
-# Try mastodon
+# <a name="mastodon"></a>Try mastodon
 
 You may wish to follow us [IOCCC on Mastodon](https://fosstodon.org/@ioccc)
 as we use that platform to announce things such as the opening of a new IOCCC
