@@ -190,16 +190,23 @@ be kept in:</p>
     char x {sizeof(
          double(%s,%D)(*)())</code></pre>
 <p>This does mean that there cannot be a second arg to <code>main()</code>
-as clang requires that to be a <code>char ** and the</code>char<code>redefined would not allow this. Some versions of clang say that</code>main()<code>must have either 0, 2 or 3 args but these versions do not object to 1 arg. However as the</code>char<code>macro seems more obscure and it is possible that a new version of clang will be even more strict the</code>int i<code>parameter in</code>main()<code>was moved to be inside</code>main()<code>, set to non-zero (setting</code>i<code>to 0 will not work). This way</code>main()` has zero
+as clang requires that to be a <code>char **</code> and the <code>char</code> redefined would not
+allow this. Some versions of clang say that <code>main()</code> must have either 0, 2 or 3
+args but these versions do not object to 1 arg. However as the <code>char</code> macro
+seems more obscure and it is possible that a new version of clang will be even
+more strict the <code>int i</code> parameter in <code>main()</code> was moved to be inside <code>main()</code>,
+set to non-zero (setting <code>i</code> to 0 will not work). This is way <code>main()</code> has zero
 args.</p>
 <p>Observe how on line 29 there is a call to <code>main()</code> which does pass in a
 parameter. It has never been observed to be an error to pass in too many
 parameters to a function (<code>main()</code> or otherwise - it warns with other functions
 but does not appear to with <code>main()</code>) but only that <code>main()</code> itself has a
 certain number of args (in some versions) and that the first arg is an <code>int</code> and
-the others are <code>char **s. This is why the arg was removed and the call to</code>main()<code>was not updated beyond what had to be done to fix it for compilers that do not support</code>-traditional-cpp`.</p>
+the others are <code>char **</code>s. This is why the arg was removed and the call to
+<code>main()</code> was not updated beyond what had to be done to fix it for compilers that
+do not support <code>-traditional-cpp</code>.</p>
 <p>If the ANSI C committee or a new version of clang messes this up (both of which
-seems possible) it is easy to fix but it is hoped that this won’t happen.</p>
+seem possible) it is easy to fix but it is hoped that this won’t happen.</p>
 <p>Originally <a href="#yusuke">Yusuke</a> supplied a patch so that this entry would compile with gcc -
 but not clang - or at least some versions.</p>
 <p>To see the difference from start to fixed:</p>
@@ -222,7 +229,7 @@ with the original (might need you to press a key though this is not known for
 sure).</p>
 <p>Cody also added the <a href="1984/mullender/gentab.c">gentab.c</a> file, fixed to compile
 (and work, though see <a href="#1984mullender-readmemd">bugs.html</a>) with modern systems
-and so that it would create the proper array (it had unbalanced ’}’s), which the
+and so that it would create the proper array (it had unbalanced <code>}</code>s), which the
 author noted in their remarks (which Cody also found). As this file uses the old
 header file <code>a.out.h</code> that is not available in all modern systems, Cody found a
 copy of it as to what it should have been at the time, in the fabulous <a href="https://github.com/dspinellis/unix-history-repo/tree/Research-Release">Unix
@@ -236,8 +243,8 @@ to work with macOS.</p>
 <code>strdup()</code> it’s safe.</p>
 <p>The problem with macOS is that although it didn’t crash, it printed <code>H????</code> in a
 seemingly infinite loop, each time printing another <code>?</code>, and it probably would
-have until it runs out of memory.</p>
-<p>The fix for macOS is that there was no prototype for <code>execlp()</code> and macOS has
+have until it ran out of memory.</p>
+<p>The fix for macOS is that there was no prototype for <code>execlp(3)</code> and macOS has
 problems with missing prototypes for some functions (this was also seen when
 Cody fixed <a href="1984/anonymous/anonymous.c">1984/anonymous</a> for macOS as well). As
 this is a one-liner the include of <code>unistd.h</code> was done in the Makefile.
@@ -245,7 +252,7 @@ Ironically this fix was discovered through Linux!</p>
 <p>NOTE: originally this entry did not print a newline prior to returning to the
 shell, after the output (despite having <code>\n</code> in the string - can you figure out
 why?) but to make it more friendly to users Cody made it print a <code>\n</code> prior to
-returning to the shell. The original version does not have this change.</p>
+returning to the shell. The original code does not have this change.</p>
 <h2 id="august-index.html"><a name="1985_august"></a><a href="1985/august/august.c">1985/august</a> (<a href="1985/august/index.html">index.html</a>)</h2>
 <p><a href="#cody">Cody</a>, out of abundance of caution, added a second arg to <code>main()</code> because some
 versions of clang object to the number of args of <code>main()</code>, saying that it must
@@ -253,13 +260,13 @@ be 0, 2 or 3. The version this has been observed in does not actually object to
 1 arg but it is entirely possible that this changes so a second arg (that’s not
 needed and is unused) has been added just in case.</p>
 <p>Cody also added the script <a href="1985/august/primes.sh">primes.sh</a> which allows one
-to check the output for the first N prime numbers of the output, where N is
-either the default or user specified. The inspiration was the previous ‘try’
+to check the output for the first <code>N</code> prime numbers of the output, where <code>N</code> is
+either the default or user specified. The inspiration was the previous <code>try</code>
 command he gave to have fun with finding primes that might seem unusual in a
 way.</p>
-<p>Cody also added the <a href="1985/august/try.sh">try.sh</a> script (which calls
-<code>primes.sh</code> whether <code>primes(6)</code> is installed or not but it only does it once
-with the default value).</p>
+<p>Cody also added the <a href="1985/august/try.sh">try.sh</a> script (which calls <code>primes.sh</code>
+whether <code>primes(6)</code> is installed or not, but it only does it once with the
+default value).</p>
 <h2 id="lycklama-index.html"><a name="1985_lycklama"></a><a href="1985/lycklama/lycklama.c">1985/lycklama</a> (<a href="1985/lycklama/index.html%5D">index.html</a>)</h2>
 <p><a href="#cody">Cody</a> fixed this to compile with modern compilers. In the past one could get away
 with defining some macro to <code>#define</code> and then use <code>#foo</code> to have the same

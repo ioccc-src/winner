@@ -89,12 +89,12 @@ be kept in:
 ```
 
 This does mean that there cannot be a second arg to `main()`
-as clang requires that to be a `char ** and the `char` redefined would not
+as clang requires that to be a `char **` and the `char` redefined would not
 allow this. Some versions of clang say that `main()` must have either 0, 2 or 3
 args but these versions do not object to 1 arg. However as the `char` macro
 seems more obscure and it is possible that a new version of clang will be even
 more strict the `int i` parameter in `main()` was moved to be inside `main()`,
-set to non-zero (setting `i` to 0 will not work). This way `main()` has zero
+set to non-zero (setting `i` to 0 will not work). This is way `main()` has zero
 args.
 
 Observe how on line 29 there is a call to `main()` which does pass in a
@@ -102,12 +102,12 @@ parameter. It has never been observed to be an error to pass in too many
 parameters to a function (`main()` or otherwise - it warns with other functions
 but does not appear to with `main()`) but only that `main()` itself has a
 certain number of args (in some versions) and that the first arg is an `int` and
-the others are `char **s. This is why the arg was removed and the call to
+the others are `char **`s. This is why the arg was removed and the call to
 `main()` was not updated beyond what had to be done to fix it for compilers that
 do not support `-traditional-cpp`.
 
 If the ANSI C committee or a new version of clang messes this up (both of which
-seems possible) it is easy to fix but it is hoped that this won't happen.
+seem possible) it is easy to fix but it is hoped that this won't happen.
 
 Originally [Yusuke](#yusuke) supplied a patch so that this entry would compile with gcc -
 but not clang - or at least some versions.
@@ -143,7 +143,7 @@ sure).
 
 Cody also added the [gentab.c](1984/mullender/gentab.c) file, fixed to compile
 (and work, though see [bugs.html](#1984mullender-readmemd)) with modern systems
-and so that it would create the proper array (it had unbalanced '}'s), which the
+and so that it would create the proper array (it had unbalanced `}`s), which the
 author noted in their remarks (which Cody also found). As this file uses the old
 header file `a.out.h` that is not available in all modern systems, Cody found a
 copy of it as to what it should have been at the time, in the fabulous [Unix
@@ -164,9 +164,9 @@ The crash was because it destructively rewrites string literals. However with
 
 The problem with macOS is that although it didn't crash, it printed `H????` in a
 seemingly infinite loop, each time printing another `?`, and it probably would
-have until it runs out of memory.
+have until it ran out of memory.
 
-The fix for macOS is that there was no prototype for `execlp()` and macOS has
+The fix for macOS is that there was no prototype for `execlp(3)` and macOS has
 problems with missing prototypes for some functions (this was also seen when
 Cody fixed [1984/anonymous](1984/anonymous/anonymous.c) for macOS as well). As
 this is a one-liner the include of `unistd.h` was done in the Makefile.
@@ -175,7 +175,7 @@ Ironically this fix was discovered through Linux!
 NOTE: originally this entry did not print a newline prior to returning to the
 shell, after the output (despite having `\n` in the string - can you figure out
 why?) but to make it more friendly to users Cody made it print a `\n` prior to
-returning to the shell. The original version does not have this change.
+returning to the shell. The original code does not have this change.
 
 
 ## <a name="1985_august"></a>[1985/august](1985/august/august.c) ([index.html](1985/august/index.html))
@@ -187,14 +187,14 @@ be 0, 2 or 3. The version this has been observed in does not actually object to
 needed and is unused) has been added just in case.
 
 Cody also added the script [primes.sh](1985/august/primes.sh) which allows one
-to check the output for the first N prime numbers of the output, where N is
-either the default or user specified. The inspiration was the previous 'try'
+to check the output for the first `N` prime numbers of the output, where `N` is
+either the default or user specified. The inspiration was the previous `try`
 command he gave to have fun with finding primes that might seem unusual in a
 way.
 
-Cody also added the [try.sh](1985/august/try.sh) script (which calls
-`primes.sh` whether `primes(6)` is installed or not but it only does it once
-with the default value).
+Cody also added the [try.sh](1985/august/try.sh) script (which calls `primes.sh`
+whether `primes(6)` is installed or not, but it only does it once with the
+default value).
 
 
 ## <a name="1985_lycklama"></a>[1985/lycklama](1985/lycklama/lycklama.c) ([index.html](1985/lycklama/index.html]))
