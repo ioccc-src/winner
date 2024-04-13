@@ -170,6 +170,7 @@
 <li><a href="#faq3_16">3.16 - How do I compile and install libjpeg-turbo for entries that require it?</a></li>
 <li><a href="#faq3_17">3.17 - How do I compile and install ImageMagick for entries that require it?</a></li>
 <li><a href="#faq3_18">3.18 - How do I compile and install OpenGL for entries that require it?</a></li>
+<li><a href="#faq3_19">3.19 - What kind of make(1) compatibility does the IOCCC support and will it support other kinds?</a></li>
 </ul>
 <h2 id="section-4---changes-made-to-ioccc-entries">Section 4 - <a href="#faq4">Changes made to IOCCC entries</a></h2>
 <ul>
@@ -1413,6 +1414,24 @@ packages: one for compiling and one for linking / running.</p>
 <p>Go to the <a href="https://vulkan.org">Vulkan website</a> and follow their instructions
 for downloading, installing and using OpenGL.</p>
 <p>We recommend trying a method suitable for your environment first, if possible.</p>
+<h3 id="what-kind-of-make1-compatibility-does-the-ioccc-support-and-will-it-support-other-kinds"><a name="faq3_19"></a><a name="make_compatibility"></a>3.19 - What kind of make(1) compatibility does the IOCCC support and will it support other kinds?</h3>
+<p>For the <a href="https://www.ioccc.org">IOCCC</a> <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry submission
+toolkit</a> and the <a href="years.html">winning IOCCC
+entries</a> we support <em>ONLY</em> GNU Makefile syntax. This means that if
+you only have Cygwin or a BSD <code>make(1)</code> (often <code>bmake(1)</code>) or some other
+<code>make(1)</code> utility the Makefiles we use will not be compatible.</p>
+<p>We do not intend on supporting anything but the GNU <code>make(1)</code> utility so if you
+do not currently have it installed you will have to do that in order to compile
+entries for the IOCCC. If you are submitting an entry this will also be
+necessary.</p>
+<p>If you do not have GNU <code>make(1)</code> you might look for <code>gmake</code> as that is what it
+often is packaged as. Then you can use <code>gmake</code> instead. For instance if you go
+to the top level directory of the winner repo you can do:</p>
+<pre class="&lt;!---sh--&gt;"><code>    gmake</code></pre>
+<p>In the case that the Makefile uses the <code>MAKE</code> variable you will have to override
+it like:</p>
+<pre class="&lt;!---sh--&gt;"><code>    gmake MAKE=gmake</code></pre>
+<p>though of course for both you may specify a rule or rules to run.</p>
 <h2 id="section-4-changes-made-to-ioccc-entries"><a name="faq4"></a>Section 4: Changes made to IOCCC entries</h2>
 <h3 id="faq-4.0-why-are-some-winning-entry-remarks-incongruent-with-the-winning-ioccc-code"><a name="faq4_0"></a>FAQ 4.0: Why are some winning entry remarks incongruent with the winning IOCCC code?</h3>
 <p>It is very likely in this case that the code was fixed to work for modern

@@ -43,6 +43,7 @@
 - [3.16 - How do I compile and install libjpeg-turbo for entries that require it?](#faq3_16)
 - [3.17 - How do I compile and install ImageMagick for entries that require it?](#faq3_17)
 - [3.18 - How do I compile and install OpenGL for entries that require it?](#faq3_18)
+- [3.19 - What kind of make(1) compatibility does the IOCCC support and will it support other kinds?](#faq3_19)
 
 
 ## Section  4 - [Changes made to IOCCC entries](#faq4)
@@ -1953,6 +1954,37 @@ Go to the [Vulkan website](https://vulkan.org) and follow their instructions
 for downloading, installing and using OpenGL.
 
 We recommend trying a method suitable for your environment first, if possible.
+
+
+### <a name="faq3_19"></a><a name="make_compatibility"></a>3.19 - What kind of make(1) compatibility does the IOCCC support and will it support other kinds?
+
+For the [IOCCC](https://www.ioccc.org) [mkiocccentry submission
+toolkit](https://github.com/ioccc-src/mkiocccentry) and the [winning IOCCC
+entries](years.html) we support *ONLY* GNU Makefile syntax. This means that if
+you only have Cygwin or a BSD `make(1)` (often `bmake(1)`) or some other
+`make(1)` utility the Makefiles we use will not be compatible.
+
+We do not intend on supporting anything but the GNU `make(1)` utility so if you
+do not currently have it installed you will have to do that in order to compile
+entries for the IOCCC. If you are submitting an entry this will also be
+necessary.
+
+If you do not have GNU `make(1)` you might look for `gmake` as that is what it
+often is packaged as. Then you can use `gmake` instead. For instance if you go
+to the top level directory of the winner repo you can do:
+
+``` <!---sh-->
+    gmake
+```
+
+In the case that the Makefile uses the `MAKE` variable you will have to override
+it like:
+
+``` <!---sh-->
+    gmake MAKE=gmake
+```
+
+though of course for both you may specify a rule or rules to run.
 
 
 ## <a name="faq4"></a>Section 4: Changes made to IOCCC entries
