@@ -1,5 +1,6 @@
 # FAQ Table of Contents <!-- XXX - Change the references from _temp-test-ioccc_ to _winners_ when these fixes are merged. -->
 
+
 ## Section  0 - [Submitting entries to a new IOCCC](#faq0)
 - [0.0  - How may I submit to the IOCCC?](#faq0_0)
 - [0.1  - What types of entries have been over-submitted to the IOCCC?](#faq0_1)
@@ -8,11 +9,13 @@
 - [0.4  - What platform should I assume for my entry?](#faq0_4)
 - [0.5  - How may I comment or make a suggestion on IOCCC rules, guidelines and tools?](#faq0_5)
 
+
 ## Section  1 - [History of the IOCCC](#faq1)
 - [1.0  - How did the IOCCC get started?](#faq1_0)
 - [1.1  - Why are some years missing IOCCC entries?](#faq1_1)
 - [1.2  - What is the history of the IOCCC web site?](#faq1_2)
 - [1.3  - How has the IOCCC size limit rule changed over the years?](#faq1_3)
+
 
 ## Section  2 - [IOCCC Judging process](#faq2)
 - [2.0  - How many entries do the judges receive for a given IOCCC?](#faq2_0)
@@ -22,6 +25,7 @@
 - [2.4  - How many judging rounds do you have?](#faq2_4)
 - [2.5  - Why do some IOCCC entries receive the Grand Prize or Best of Show award?](#faq2_5)
 - [2.6  - How are IOCCC entries announced?](#faq2_6)
+
 
 ## Section  3 - [Compiling and running IOCCC entries](#faq3)
 - [3.0  - What Makefile rules are available to build or clean up IOCCC entries?](#faq3_0)
@@ -53,6 +57,7 @@
 other inconsistencies with the original entry?](#faq4_3)
 - [4.4  - What is the meaning of the file ending in .orig.c in IOCCC entries?](#faq4_4)
 
+
 ## Section  5 - [Helping the IOCCC](#faq5)
 - [5.0  - How may I help the IOCCC?](#faq5_0)
 - [5.1  - How do I report a bug in an IOCCC entry?](#faq5_1)
@@ -61,6 +66,7 @@ other inconsistencies with the original entry?](#faq4_3)
 - [5.4  - How may I submit a fix to the IOCCC web site?](#faq5_4)
 - [5.5  - How may I correct or update IOCCC author information?](#faq5_5)
 - [5.6  - What should I do if I find a broken or wrong web link?](#faq5_6)
+
 
 ## Section  6 - [Miscellaneous IOCCC](#faq6)
 - [6.0  - How did an entry that breaks the size rule 2 win the IOCCC?](#faq6_0)
@@ -74,6 +80,7 @@ other inconsistencies with the original entry?](#faq4_3)
 - [6.8 -  What is the purpose of the .top, .year and .path files?](#faq6_8)
 - [6.9 -  What is the current meaning of the IOCCC terms Author, Entry, and Submission?](#faq6_9)
 - [6.10 - How does someone make a change to a file and submit that change as a GitHub pull request?](#faq6_10)
+- [6.11 - Am I allowed to use IOCCC content?](#faq6_11)
 
 
 # The IOCCC FAQ
@@ -2445,6 +2452,12 @@ we request that you ask the [IOCCC judges](judges.html) first.
 Please send your request using the instructions on the [contacting
 the IOCCC Judges](/contact.html) page.
 
+Please note that the content of the IOCCC is [Copyrighted and is under
+the CC BY-SA 4.0 License](#copyright).
+
+See [FAQ 6.11](#license) for additional information on the
+[Copyright and CC BY-SA 4.0 License](license.html).
+
 
 ### <a name="faq6_4"></a>FAQ 6.4: Why do you sometimes use the first person plural?
 
@@ -3371,6 +3384,37 @@ example, you would type:
 ```
 
 This will merge your pull request to your fork.
+
+
+### <a name="faq6_11"></a><a name="license"></a>FAQ 6.11: Am I allowed to use IOCCC content?
+
+**Disclaimer**: This FAQ is **not a license**, has **no legal
+value**, and only highlights some of the key features and terms of
+the actual [CC BY-SA 4.0
+license](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en).
+
+The content of the IOCCC is [Copyrighted and is under the CC BY-SA 4.0 License](#copyright).
+
+As long as you abide by the terms of the [CC BY-SA 4.0
+License](https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1)
+you may copy and redistribute the material in any medium or format
+for any purpose, even commercially.
+
+As long as you abide by the terms of the [CC BY-SA 4.0
+License](https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1)
+you may remix, transform, and build upon the material for any
+purpose, even commercially.
+
+This FAQ is an incomplete summary of how you may use IOCCC content.
+You should review the [highlights of some of the key features and terms](license.html)
+and this may help clarify some aspects of the
+[CC BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1).
+
+The [Copyright and CC BY-SA 4.0 License](#copyright) applies to all
+IOCCC content.  We use this to help ensure that we can all
+enjoy hat those working on the IOCCC have proper Attribution
+including, of course, the IOCCC winners themselves!  It is designed
+to help ensure that everyone may enjoy the IOCCC.
 
 
 <!--
