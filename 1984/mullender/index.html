@@ -241,8 +241,8 @@ article for the quote! For a more detailed analysis, taken from the book Obfusca
 and Other Mysteries, see below. We hope that this is okay with the author of the
 book. Considering that the analysis is entirely the authors’ comments we don’t
 think this will be a problem. Unfortunately the excerpt was PDF and it did not
-copy paste well. We had to go back and forth to type so it’s possible he made a
-typo though he also fixed some typos found in the extract. As for the other
+copy paste well. We had to go back and forth to type so it’s possible we made a
+typo though we also fixed some typos found in the extract. As for the other
 comments:</p>
 <h3 id="remarks-from-the-author">Remarks from the author:</h3>
 <p>I have never known a lot about the <a href="https://en.wikipedia.org/wiki/VAX">VAX</a>
@@ -263,7 +263,7 @@ channel. This channel was simulated with a pair of
 <a href="https://en.wikipedia.org/wiki/Obfuscation_(software)">obfuscated</a> set of
 programs, only for the
 <a href="https://en.wikipedia.org/wiki/Programmed_Data_Processor">PDP</a>, to do this, but
-circumventing the channel (i.e. cheating, hence the needed obfuscation.). Our
+circumventing the channel (i.e. cheating, hence the needed obfuscation). Our
 programs worked and we handed them in.</p>
 <p>Of course, the teacher had a good laugh and then rejected our submission. (We
 knew him well, so we could get away with this.)</p>
@@ -273,11 +273,11 @@ where we read a bunch of newsgroups. I’m sure it was <a href="https://groups.g
 there</a> and we saw
 it.</p>
 <p>Since we had just recently created these <a href="https://en.wikipedia.org/wiki/Obfuscation_(software)">obfuscated
-programs</a>) we decided we could
+programs</a> we decided we could
 use the same technique for an obfuscated C program. We upped the ante a bit by
 making it “portable”.</p>
 <p>To add to the
-<a href="https://en.wikipedia.org/wiki/Obfuscation_(software)">obfuscation</a>), we used
+<a href="https://en.wikipedia.org/wiki/Obfuscation_(software)">obfuscation</a>, we used
 different formats for the integers in the array: some in decimal, some in octal,
 some in hexadecimal, and when the value would fit, some as an ASCII character.</p>
 <p>The rest is history.</p>
@@ -357,11 +357,11 @@ program counter points at the second
 <a href="https://en.wikipedia.org/wiki/Instruction_set_architecture#Instructions">instruction</a>,
 we subtract 2 from the scratch register in the second instruction. Then we
 subtract the length of the string and store the result in the location with
-label 0. This has to do with the calling sequence of <a href="https://en.wikipedia.org/wiki/System_call">system
+label <code>0</code>. This has to do with the calling sequence of <a href="https://en.wikipedia.org/wiki/System_call">system
 calls</a> on the
 <a href="https://en.wikipedia.org/wiki/Programmed_Data_Processor">PDP</a>. Following the
 <code>sys</code> instruction is the system call number (4 for <code>write()</code>), the address of
-the buffer (pointed to by label 0), and the length of the buffer (9). The <a href="https://en.wikipedia.org/wiki/File_descriptor">file
+the buffer (pointed to by label <code>0</code>), and the length of the buffer (9). The <a href="https://en.wikipedia.org/wiki/File_descriptor">file
 descriptor</a> is in register <code>r0</code>.
 The rest of the code implements a delay loop. In each iteration, a non-existing
 system call (55) slows things down.</p>
@@ -397,17 +397,17 @@ program that we came up with is as follows:</p>
 <a href="https://en.wikipedia.org/wiki/Programmed_Data_Processor">PDP</a> <a href="https://en.wikipedia.org/wiki/Branch_(computer_science)">branch
 instruction</a>.
 <a href="https://en.wikipedia.org/wiki/Programmed_Data_Processor">PDP</a> branch
-instructions are octal <code>400+</code> the distance divided by 2. The string that both
+instructions are octal <code>400</code> + the distance divided by <code>2</code>. The string that both
 the <a href="https://en.wikipedia.org/wiki/Programmed_Data_Processor">PDP</a> and
 <a href="https://en.wikipedia.org/wiki/VAX">VAX</a>
 programs use is after the <code>str</code> label, and the
 <a href="https://en.wikipedia.org/wiki/Programmed_Data_Processor">PDP</a> code is after the
-pdp label.</p>
+<code>pdp</code> label.</p>
 <p>On the <a href="https://en.wikipedia.org/wiki/VAX">VAX</a>, the program
 <a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)">pushes</a> 9 (the length
 of the string), the address of the string and 1 (the <a href="https://en.wikipedia.org/wiki/File_descriptor">file
 descriptor</a> on the
-<a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)">stack</a> and calls
+<a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)">stack</a>) and calls
 <code>write(2)</code>. Since we didn’t know the exact calling sequence for <a href="https://en.wikipedia.org/wiki/System_call">system
 calls</a>, we just copied the source for
 the <code>write(2)</code> system call stub into our program. After <code>write(2)</code> finishes, the
@@ -479,7 +479,8 @@ compiled in modern systems.</p>
             printf(&quot;};\n&quot;);
         }
     }</code></pre>
-<p>As can be seen, there is a slight preference for decimal, and also a character
+<p>As can be seen, there is a slight preference for
+<a href="https://en.wikipedia.org/wiki/Decimal">decimal</a>, and also a character
 format is sometimes used, but only if the data is a printable ASCII character.</p>
 <p>When we ran this program, we were almost completely satisfied with the result.
 The only problem we had was that the program had chosen an
@@ -488,9 +489,10 @@ Since everybody knows what a <a href="https://en.wikipedia.org/wiki/PDP-11">PDP-
 branch instruction looks like (everyone knows that the traditional magic word
 for an executable, <code>0407</code>, is a <a href="https://en.wikipedia.org/wiki/PDP-11">PDP-11</a>
 <a href="https://en.wikipedia.org/wiki/Branch_(computer_science)">branch</a>), we changed
-that to decimal. After checking the size of the resulting program we saw that it
-was one byte too long. The limit was 512 bytes, and our program was 513 bytes.
-So we changed the word <code>and</code> in the comment to <code>&amp;&amp;</code>.</p>
+that to <a href="https://en.wikipedia.org/wiki/Decimal">decimal</a>. After checking the
+size of the resulting program we saw that it was one byte too long. The limit
+was 512 bytes, and our program was 513 bytes. So we changed the word <code>and</code> in
+the comment to <code>&amp;&amp;</code>.</p>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
@@ -518,14 +520,14 @@ So we changed the word <code>and</code> in the comment to <code>&amp;&amp;</code
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/mullender.alt.c">mullender.alt.c</a> - alternative source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/mullender.orig.c">mullender.orig.c</a> - original source</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/a.out.h">a.out.h</a> - header file for gentab.c for compatibility with 1984 systems</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/gentab.c">gentab.c</a> - author tool to generate code</li>
-<li><a href="1984_mullender.tar.bz2">1984_mullender.tar.bz2</a> - download entry</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/a.out.h">a.out.h</a> - header file for gentab.c for compatibility with 1984 systems</li>
+<li><a href="1984_mullender.tar.bz2">1984_mullender.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="index.html">index.html</a> - this web page</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/README.md">README.md</a> - markdown source for index.html</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/.entry.json">.entry.json</a> - description of entry in JSON</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
 <li><a href=".path">.path</a> - directory path from top directory</li>

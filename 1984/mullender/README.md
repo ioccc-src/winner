@@ -168,8 +168,8 @@ article for the quote! For a more detailed analysis, taken from the book Obfusca
 and Other Mysteries, see below. We hope that this is okay with the author of the
 book. Considering that the analysis is entirely the authors' comments we don't
 think this will be a problem. Unfortunately the excerpt was PDF and it did not
-copy paste well. We had to go back and forth to type so it's possible he made a
-typo though he also fixed some typos found in the extract. As for the other
+copy paste well. We had to go back and forth to type so it's possible we made a
+typo though we also fixed some typos found in the extract. As for the other
 comments:
 
 ### Remarks from the author:
@@ -194,7 +194,7 @@ We decided for fun to create an
 [obfuscated](https://en.wikipedia.org/wiki/Obfuscation_(software)) set of
 programs, only for the
 [PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor), to do this, but
-circumventing the channel (i.e. cheating, hence the needed obfuscation.). Our
+circumventing the channel (i.e. cheating, hence the needed obfuscation). Our
 programs worked and we handed them in.
 
 Of course, the teacher had a good laugh and then rejected our submission. (We
@@ -207,12 +207,12 @@ there](https://groups.google.com/g/net.lang.c/c/lx-TAuEyeRI/m/HdOOnNx6LC0J) and 
 it.
 
 Since we had just recently created these [obfuscated
-programs](https://en.wikipedia.org/wiki/Obfuscation_(software))) we decided we could
+programs](https://en.wikipedia.org/wiki/Obfuscation_(software)) we decided we could
 use the same technique for an obfuscated C program. We upped the ante a bit by
 making it "portable".
 
 To add to the
-[obfuscation](https://en.wikipedia.org/wiki/Obfuscation_(software))), we used
+[obfuscation](https://en.wikipedia.org/wiki/Obfuscation_(software)), we used
 different formats for the integers in the array: some in decimal, some in octal,
 some in hexadecimal, and when the value would fit, some as an ASCII character.
 
@@ -312,11 +312,11 @@ program counter points at the second
 [instruction](https://en.wikipedia.org/wiki/Instruction_set_architecture#Instructions),
 we subtract 2 from the scratch register in the second instruction. Then we
 subtract the length of the string and store the result in the location with
-label 0. This has to do with the calling sequence of [system
+label `0`. This has to do with the calling sequence of [system
 calls](https://en.wikipedia.org/wiki/System_call) on the
 [PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor). Following the
 `sys` instruction is the system call number (4 for `write()`), the address of
-the buffer (pointed to by label 0), and the length of the buffer (9). The [file
+the buffer (pointed to by label `0`), and the length of the buffer (9). The [file
 descriptor](https://en.wikipedia.org/wiki/File_descriptor) is in register `r0`.
 The rest of the code implements a delay loop. In each iteration, a non-existing
 system call (55) slows things down.
@@ -358,18 +358,18 @@ The first word (after the label `vax`) is the
 [PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor) [branch
 instruction](https://en.wikipedia.org/wiki/Branch_(computer_science)).
 [PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor) branch
-instructions are octal `400+` the distance divided by 2.  The string that both
+instructions are octal `400` + the distance divided by `2`.  The string that both
 the [PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor) and
 [VAX](https://en.wikipedia.org/wiki/VAX)
 programs use is after the `str` label, and the
 [PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor) code is after the
-pdp label.
+`pdp` label.
 
 On the [VAX](https://en.wikipedia.org/wiki/VAX), the program
 [pushes](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)) 9 (the length
 of the string), the address of the string and 1 (the [file
 descriptor](https://en.wikipedia.org/wiki/File_descriptor) on the
-[stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)) and calls
+[stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))) and calls
 `write(2)`. Since we didn't know the exact calling sequence for [system
 calls](https://en.wikipedia.org/wiki/System_call), we just copied the source for
 the `write(2)` system call stub into our program. After `write(2)` finishes, the
@@ -445,7 +445,8 @@ compiled in modern systems.
     }
 ```
 
-As can be seen, there is a slight preference for decimal, and also a character
+As can be seen, there is a slight preference for
+[decimal](https://en.wikipedia.org/wiki/Decimal), and also a character
 format is sometimes used, but only if the data is a printable ASCII character.
 
 When we ran this program, we were almost completely satisfied with the result.
@@ -455,9 +456,10 @@ Since everybody knows what a [PDP-11](https://en.wikipedia.org/wiki/PDP-11)
 branch instruction looks like (everyone knows that the traditional magic word
 for an executable, `0407`, is a [PDP-11](https://en.wikipedia.org/wiki/PDP-11)
 [branch](https://en.wikipedia.org/wiki/Branch_(computer_science))), we changed
-that to decimal. After checking the size of the resulting program we saw that it
-was one byte too long. The limit was 512 bytes, and our program was 513 bytes.
-So we changed the word `and` in the comment to `&&`.
+that to [decimal](https://en.wikipedia.org/wiki/Decimal). After checking the
+size of the resulting program we saw that it was one byte too long. The limit
+was 512 bytes, and our program was 513 bytes.  So we changed the word `and` in
+the comment to `&&`.
 
 
 <!--
