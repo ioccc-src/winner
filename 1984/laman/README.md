@@ -19,10 +19,6 @@ like:
 
 ``` <!---sh-->
     ./try.sh
-
-    ./laman 4
-    ./laman 9
-    ./laman 16
 ```
 
 This code should run you in circles.
