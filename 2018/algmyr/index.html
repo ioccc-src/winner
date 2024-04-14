@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ Location: <a href="../../location.html#SE">SE</a> - <em>Kingdom of Sweden</em> (
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>To use this entry requires, in some invocations, a sound processing program.
 This can be ALSA or SoX but we recommend the latter. See <a href="../../faq.html#sox">FAQ 3.10 - How do I
 compile and use an IOCCC entry that requires sound?</a>.</p>
@@ -150,11 +151,11 @@ compile and use an IOCCC entry that requires sound?</a>.</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2018_algmyr">2018 algmyr bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; prog.c                     # Print garbage: might mess up your terminal
+<pre><code>    ./prog &lt; prog.c                     # Print garbage: might mess up your terminal
     ./prog &lt;file1&gt; &lt;file2&gt; &gt; out.raw
     ./prog -d 2 0 out.raw               # Decode the first (0th) channel out of two</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Be warned, this is not your garden variety text-to-speech program! Earplugs are advised,
 or at least a handy and well-tested volume knob.</p>
@@ -242,14 +243,14 @@ additional logic? Answer: <code>ungetc(3)</code> into <code>stdin</code>, one <c
 standards compliant). This is used to print the usage instructions.</p>
 <h3 id="compilation-warnings">Compilation warnings</h3>
 <p>Compiling using</p>
-<pre class="&lt;!---sh--&gt;"><code>    gcc -Wall -Wextra -pedantic</code></pre>
+<pre><code>    gcc -Wall -Wextra -pedantic</code></pre>
 <p>gives only <code>-Wmisleading-indentation</code> which is sensible considering the source code. While</p>
-<pre class="&lt;!---sh--&gt;"><code>    clang -Wall -Wextra -pedantic</code></pre>
+<pre><code>    clang -Wall -Wextra -pedantic</code></pre>
 <p>is a bit more pessimistic and gives <code>-Wempty-body</code> (I like loops without
 bodies), <code>-Wstring-plus-int</code> (since apparently some people think string+<code>int</code> is a
 concatenation) and one of the weirder warnings I have seen from me splitting a
 negative constant with whitespace. Compiling using</p>
-<pre class="&lt;!---sh--&gt;"><code>    clang -Wall -Wextra -pedantic -Weverything</code></pre>
+<pre><code>    clang -Wall -Wextra -pedantic -Weverything</code></pre>
 <p>produces a few page faults of warnings and makes me feel generally bad about
 myself. :(</p>
 <h3 id="misc">Misc</h3>
@@ -283,10 +284,10 @@ myself. :(</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/algmyr/prog.orig.c">prog.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/algmyr/try.sh">try.sh</a> - how to run</li>
 <li><a href="spoiler.png">spoiler.png</a> - SPOILER WARNING</li>
-<li><a href="2018_algmyr.tar.bz2">2018_algmyr.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2018_algmyr.tar.bz2">2018_algmyr.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/algmyr/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/algmyr/.entry.json">.entry.json</a> - description of entry in JSON</li>

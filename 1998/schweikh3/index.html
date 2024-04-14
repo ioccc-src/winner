@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ Location: <a href="../../location.html#DE">DE</a> - <em>Federal Republic of Germ
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <p>The author stated:</p>
 <pre><code>    In the remote event that the input has more than `8192` files with
     the same size (on systems where `sizeof (char *) == 4`, or `4096` when
@@ -153,11 +154,11 @@ code</a> below.</p>
 <p>If <code>dir</code> is the directory (or a directory tree) where you keep
 all your favorite pictures off the Internet or from
 <code>alt.binaries.pictures.*</code>, do</p>
-<pre class="&lt;!---sh--&gt;"><code>    find dir -type f -print | ./samefile</code></pre>
+<pre><code>    find dir -type f -print | ./samefile</code></pre>
 <p>Maybe you will not need to buy another 10 GB disk to store them. :-)</p>
 <h2 id="try">Try:</h2>
 <p>If you’re in this winning entry’s directory:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>Notice that the tool finds some files that are duplicates.</p>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>If you run into the problem that the author described (above) you can redefine
@@ -165,7 +166,7 @@ the size as described; this was done with the <code>SZ</code> macro defined in t
 which if (in the code) is unset will be set to the default, 32767.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <p>If you wish to change the size to say, 55555:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber SIZE=55555 alt</code></pre>
+<pre><code>    make clobber SIZE=55555 alt</code></pre>
 <p>or whatever you wish to redefine it to.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This program is not as smart as to detect identity of JPEG files with the same
@@ -181,13 +182,13 @@ Thank God the IEEE does not standardize a coding style…</p>
 <h3 id="what-this-program-does">What this program does</h3>
 <p>This is best explained in the man page. The troff source for this
 man page can be found in the file <a href="samefile.1">samefile.1</a>. To render try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    `man ./samefile.1</code></pre>
+<pre><code>    `man ./samefile.1</code></pre>
 <p>Otherwise:</p>
 <h3 id="samefile1-user-manuals-samefile1">SAMEFILE(1) User Manuals SAMEFILE(1)</h3>
 <h4 id="name">NAME</h4>
 <p><code>samefile</code> - find identical files</p>
 <h4 id="synopsis">SYNOPSIS</h4>
-<pre class="&lt;!---sh--&gt;"><code>    ./samefile</code></pre>
+<pre><code>    ./samefile</code></pre>
 <h4 id="description">DESCRIPTION</h4>
 <p><code>samefile</code> reads a list of file names (one file name per
 line) from <code>stdin</code>. For each file name pair with identical
@@ -219,7 +220,7 @@ the output for a group of identical files with different
 inode numbers is also minimized. Suppose you have six
 identical files of size 100 in an inode group consisting
 of the three inodes with numbers 10, 20 and 30:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ ls -i   # output edited for readability:
+<pre><code>    $ ls -i   # output edited for readability:
       10 file1     20 file4     30 file6
       10 file2     20 file5
       10 file3
@@ -245,13 +246,13 @@ more than a couple dozen files of the same size.</p>
 <h4 id="examples">EXAMPLES</h4>
 <p>For everybody:</p>
 <p>What are the duplicates under my home directory?</p>
-<pre class="&lt;!---sh--&gt;"><code>    find $HOME | ./samefile</code></pre>
+<pre><code>    find $HOME | ./samefile</code></pre>
 <p>For the sysadmin folks:</p>
 <p>Report all duplicate files under /usr larger than 16k:</p>
-<pre class="&lt;!---sh--&gt;"><code>    find /usr -size +16384c -a -type f | ./samefile</code></pre>
+<pre><code>    find /usr -size +16384c -a -type f | ./samefile</code></pre>
 <p>For the ftp and WWW admins:
 How much space is wasted below our site’s /pub directory?</p>
-<pre class="&lt;!---sh--&gt;"><code>    find /pub -type f | samefile | awk &#39;{sum += $1} END {print sum}&#39;</code></pre>
+<pre><code>    find /pub -type f | samefile | awk &#39;{sum += $1} END {print sum}&#39;</code></pre>
 <h4 id="exit-status">EXIT STATUS</h4>
 <p>If <code>samefile</code> runs out of memory the exit status is 1, zero
 otherwise.</p>
@@ -323,10 +324,10 @@ the same size (on systems where <code>sizeof (char *) == 4</code>, or <code>4096
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh3/samefile.1.dupe">samefile.1.dupe</a> - samefile man page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh3/samefile.1">samefile.1</a> - samefile man page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh3/try.sh">try.sh</a> - how to run</li>
-<li><a href="1998_schweikh3.tar.bz2">1998_schweikh3.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1998_schweikh3.tar.bz2">1998_schweikh3.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh3/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh3/.entry.json">.entry.json</a> - description of entry in JSON</li>

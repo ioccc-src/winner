@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,9 +142,9 @@ Location: <a href="../../location.html#CA">CA</a> - <em>Canada</em></li>
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    cd build; ./hibachi-start.sh &amp;</code></pre>
+<pre><code>    cd build; ./hibachi-start.sh &amp;</code></pre>
 <p>Then use your web browser to visit <code>http://localhost:8008/</code>. When you’re
 finished make sure to kill <code>hibachi</code>.</p>
 <p>NOTE: you must be in the <code>build</code> directory when running <code>hibachi-start.sh</code> for
@@ -163,7 +164,7 @@ so the file does not exist here.</p>
 <p>There is a <code>hibachi.tgz</code> file (NOTE: this file was removed by the judges after
 extraction) that unpacks several support files and a subdirectory tree
 containing the documentation and examples. It can be viewed by:</p>
-<pre class="&lt;!---sh--&gt;"><code>    tar -zxf hibachi.tgz
+<pre><code>    tar -zxf hibachi.tgz
     lynx hibachi/localhost/index.html</code></pre>
 <p>Or once <code>Hibachi</code> is running, use a web browser (preferably one that
 supports images and JavaScript, to view the documentation and try
@@ -171,11 +172,11 @@ some of the CGI examples) to visit: <code>http://localhost:8008/</code>.</p>
 <h3 id="building">Building</h3>
 <p>To build just the executable:</p>
 <p>For Cygwin, FreeBSD, Linux (newer), Mac OS X:</p>
-<pre class="&lt;!---sh--&gt;"><code>    gcc -o hibachi hibachi.c</code></pre>
+<pre><code>    gcc -o hibachi hibachi.c</code></pre>
 <p>For Linux (older):</p>
-<pre class="&lt;!---sh--&gt;"><code>    gcc -DSHUT_WR=1 -o hibachi hibachi.c</code></pre>
+<pre><code>    gcc -DSHUT_WR=1 -o hibachi hibachi.c</code></pre>
 <p>For SunOS:</p>
-<pre class="&lt;!---sh--&gt;"><code>    gcc -o hibachi hibachi.c -lnsl -lsocket</code></pre>
+<pre><code>    gcc -o hibachi hibachi.c -lnsl -lsocket</code></pre>
 <p>Since some systems place socket and network functions into other libraries, a
 <a href="https://en.wikipedia.org/wiki/Autoconf">GNU autoconf</a>
 <a href="https://en.wikipedia.org/wiki/Configure_script">configure</a> script has been
@@ -185,12 +186,12 @@ examples. In which case the preferred build commands are:</p>
 <pre><code>    ./configure [--enable-port=number]
     make</code></pre>
 <p>To start the server on the default port (8008):</p>
-<pre class="&lt;!---sh--&gt;"><code>    cd build;
+<pre><code>    cd build;
     ./hibachi-start.sh &amp;</code></pre>
 <p>To test the server:</p>
-<pre class="&lt;!---sh--&gt;"><code>    lynx http://localhost:8008/</code></pre>
+<pre><code>    lynx http://localhost:8008/</code></pre>
 <p>To stop the server:</p>
-<pre class="&lt;!---sh--&gt;"><code>    kill %1</code></pre>
+<pre><code>    kill %1</code></pre>
 <h3 id="features">Features</h3>
 <ul>
 <li><p>Supports virtual hosts.</p></li>
@@ -282,10 +283,10 @@ paragraph 3 sentence 2, and so fails to display responses from
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src/configure.in">src/configure.in</a> - authconf declarations</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src/hibachi-start.sh.in">src/hibachi-start.sh.in</a> - hibachi-start.sh declarations</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src/localhost/CHANGES-SPOILER.TXT">src/localhost/CHANGES-SPOILER.TXT</a> - Spoiler change log</li>
-<li><a href="2004_hibachi.tar.bz2">2004_hibachi.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2004_hibachi.tar.bz2">2004_hibachi.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/.entry.json">.entry.json</a> - description of entry in JSON</li>

@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>There are two additional programs based on the author’s remarks and the original
 version, provided as alternate code as it might be less portable. See <a href="#sorted-code">sorted
 code</a>, <a href="#punch-card-code">punch card code</a> and <a href="#alternate-code">alternate
@@ -153,14 +154,14 @@ code</a> below.</p>
     STATUS: main() has only one arg - try and make it have 2 or 3</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2001_westley">2001 westley bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./westley 2&gt;/dev/null
+<pre><code>    ./westley 2&gt;/dev/null
     # enter some input, terminate with EOF
 
     echo foo | ./westley 2&gt;/dev/null
 
     ./westley &lt; westley.c 2&gt;/dev/null</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="sorted-code">Sorted code:</h2>
 <p>The author stated that one can sort (ignoring leading blanks i.e. <code>sort -b</code>) the
 code by line and it will always sort the order of the input.</p>
@@ -171,12 +172,12 @@ code by line and it will always sort the order of the input.</p>
 <a href="westley.punch.c">westley.punch.c</a> code is specifically so that Westley can punch
 everyone in the face! :-) This is also compiled by default.</p>
 <h3 id="punch-card-try">Punch card try:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    echo &#39;Brian Westley does it again!&#39; | ./westley.punch 2&gt;/dev/null</code></pre>
+<pre><code>    echo &#39;Brian Westley does it again!&#39; | ./westley.punch 2&gt;/dev/null</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>An alternate version of this entry, <a href="westley.alt.c">westley.alt.c</a>, is provided.
 This alternate code might be less portable.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>westley.alt</code> as you would <code>westley</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -195,7 +196,7 @@ were becoming obsolete just as C was becoming more popular*; this is rather
 unfortunate, because C has an advantage over many other languages when it comes
 to punch cards - C programs can be written to be “drop proof”.</p>
 <p>Consider the following C program:</p>
-<pre class="&lt;!---c--&gt;"><code>    main(){a();b();c();}
+<pre><code>    main(){a();b();c();}
     a(){printf(&quot;A&quot;);}
     b(){printf(&quot;B&quot;);}
     c(){printf(&quot;C&quot;);}</code></pre>
@@ -204,13 +205,13 @@ lines are in. If you punch it on cards (one line of code per
 card, naturally) and drop them, you don’t need to put them in
 any particular order**; it will always produce <code>ABC</code> as output.</p>
 <p>You can also use global variables:</p>
-<pre class="&lt;!---c--&gt;"><code>    char *greet = &quot;Hello, world!&quot;;
+<pre><code>    char *greet = &quot;Hello, world!&quot;;
     char *greet; main(){puts(greet);}</code></pre>
 <p>It would be trivial to write an entire C program that is
 “drop proof” using the above techniques; surprisingly, it’s
 possible to write a program that will always compile but
 behave differently depending on the line order:</p>
-<pre class="&lt;!---c--&gt;"><code>    test(a,b){return a;}
+<pre><code>    test(a,b){return a;}
     #define test(a,b) test(b,a)
     main(){if (test(0,1)) printf(&quot;T&quot;); else printf(&quot;F&quot;);}</code></pre>
 <p>This program will print out <code>T</code> if the <code>#define</code> statement
@@ -218,7 +219,7 @@ falls between the declaration of <code>test()</code> and its use in
 <code>main()</code>, otherwise it will print out <code>F</code>. Furthermore,
 you can use the same call to <code>test()</code> repeatedly in
 different lines to return different values:</p>
-<pre class="&lt;!---c--&gt;"><code>    #define test(x,y) test(y,x)
+<pre><code>    #define test(x,y) test(y,x)
     main(){int i=0;a(&amp;i);b(&amp;i);c(&amp;i);d(&amp;i);printf(&quot;%d\n&quot;,i);}
     a(i)int*i;{if (test(0,1)) *i += 1;}
     b(i)int*i;{if (test(0,1)) *i += 2;}
@@ -314,10 +315,10 @@ all legal C.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/westley/westley.alt.c">westley.alt.c</a> - alternative source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/westley/westley.orig.c">westley.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/westley/try.sh">try.sh</a> - how to run</li>
-<li><a href="2001_westley.tar.bz2">2001_westley.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2001_westley.tar.bz2">2001_westley.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/westley/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/westley/.entry.json">.entry.json</a> - description of entry in JSON</li>

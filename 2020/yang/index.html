@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,14 +142,14 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog [PIN] &lt; input.txt &gt; output.c</code></pre>
+<pre><code>    ./prog [PIN] &lt; input.txt &gt; output.c</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>The author provided the file <a href="cppp.cc">cppp.cc</a> which can preprocess the
 generated output to make them more acceptable to typical compilers. To build:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make cppp</code></pre>
+<pre><code>    make cppp</code></pre>
 <p>See the author’s remarks for more details.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>You might think of this entry as code obfuscater with a code.
@@ -159,7 +160,7 @@ What is compiling this entry about?
 spoiler</a> that shows how this entry was written.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="synopsis">Synopsis</h3>
-<pre class="&lt;!---sh--&gt;"><code>    echo &quot;Hello world&quot; | ./prog 12345 &gt; encoded.c
+<pre><code>    echo &quot;Hello world&quot; | ./prog 12345 &gt; encoded.c
 
     gcc -DPIN=12345 encoded.c -o ./decoded &amp;&amp; ./decoded</code></pre>
 <h3 id="details">Details</h3>
@@ -169,10 +170,10 @@ spoiler</a> that shows how this entry was written.</p>
     where [PIN] is an integer in the range of 1..65535</code></pre>
 <p>When run with an encoding PIN (first command line argument), Mile will
 read bytes from <code>stdin</code> and generate C code on <code>stdout</code>. Example:</p>
-<pre class="&lt;!---sh--&gt;"><code>    echo &quot;Hello, world!&quot; | ./prog 56789 &gt; encoded.c</code></pre>
+<pre><code>    echo &quot;Hello, world!&quot; | ./prog 56789 &gt; encoded.c</code></pre>
 <p>This generated code will reproduce the same input bytes on <code>stdout</code> when
 executed, if it was compiled with the same encoding PIN.</p>
-<pre class="&lt;!---sh--&gt;"><code>    gcc -DPIN=56789 encoded.c -o decoded</code></pre>
+<pre><code>    gcc -DPIN=56789 encoded.c -o decoded</code></pre>
 <p>The generated code reconstructs all data at compile time by seeding a
 random number generator with the given PIN to reproduce the input bytes,
 and simply does one <code>fwrite(3)</code> call at run time to print those bytes. Not
@@ -260,10 +261,10 @@ then compile it with a c++ compiler of your choice.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/yang/try.sh">try.sh</a> - how to run</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/yang/cppp.cc">cppp.cc</a> - encode large file C Pre-PreProcessor source</li>
 <li><a href="spoiler.html">spoiler.html</a> - SPOILER WARNING</li>
-<li><a href="2020_yang.tar.bz2">2020_yang.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2020_yang.tar.bz2">2020_yang.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/yang/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/yang/.entry.json">.entry.json</a> - description of entry in JSON</li>

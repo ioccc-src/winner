@@ -83,6 +83,7 @@
     <div class="sidenav">
       <a href="./news.html">IOCCC News</a>
       <a href="./status.html">Contest status</a>
+      <a href="./next/index.html">Rules and Guidelines</a>
       <a href="./faq.html#submit">How to enter the IOCCC</a>
       <a href="./faq.html">FAQ</a>
     </div>
@@ -382,7 +383,7 @@ command that is compatible with GNU Make version 3.81.</p>
 <h3 id="faq-0.3-may-i-use-a-different-source-or-compiled-filename-than-prog.c-or-prog"><a name="faq0_3"></a>FAQ 0.3: May I use a different source or compiled filename than prog.c or prog?</h3>
 <p>While your entry’s source filename, as submitted, must be <code>prog.c</code>, your entry’s <code>Makefile</code>
 may copy <code>prog.c</code> to a different filename as part of the compiling/building process. For example:</p>
-<pre class="&lt;!---make--&gt;"><code>    all: desired_name
+<pre><code>    all: desired_name
 
     desired_name: desired_name.c
             cc desired_name.c -o $@
@@ -397,7 +398,7 @@ may copy <code>prog.c</code> to a different filename as part of the compiling/bu
 creates as part of the compiling/building process.</p>
 <p>You may also copy the compiled <code>prog</code> into a different file as part of compiling process.
 For example:</p>
-<pre class="&lt;!---make--&gt;"><code>    different_name: prog
+<pre><code>    different_name: prog
             rm -f $@
             cp -f prog $@</code></pre>
 <h3 id="faq-0.4-what-platform-should-i-assume-for-my-entry"><a name="faq0_4"></a>FAQ 0.4: What platform should I assume for my entry?</h3>
@@ -802,7 +803,7 @@ winning entries page</a>.</p></li>
 <h2 id="section-3-compiling-and-running-ioccc-entries"><a name="faq3"></a>Section 3: Compiling and running IOCCC entries</h2>
 <h3 id="faq-3.0-what-makefile-rules-are-available-to-build-or-clean-up-ioccc-entries"><a name="faq3_0"></a>FAQ 3.0: What Makefile rules are available to build or clean up IOCCC entries?</h3>
 <p>In general the best way to compile everything in an entry directory is to run:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber all</code></pre>
+<pre><code>    make clobber all</code></pre>
 <p>If you wish to compile every entry for every year you should go to the top level
 directory and run the same command as above, <code>make clobber all</code>.</p>
 <p>The <code>all</code> rule will build everything necessary except for the alternate
@@ -811,10 +812,10 @@ alternate version exists. To build all the entries along with any alternate code
 you can do from the top level directory:</p>
 <pre><code>    make clobber everything</code></pre>
 <p>If you wish to only build alternate code you can do:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber alt</code></pre>
+<pre><code>    make clobber alt</code></pre>
 <p>If you wish to not remove the entry binaries and only compile the additional alt
 versions:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <p>The following Makefile rules should be in all Makefiles:</p>
 <ul>
 <li>all: build the entry programs (main program and any supplementary program)</li>
@@ -971,7 +972,7 @@ the <a href="thanks-for-help.html">thanks-for-help.html</a> file.</p>
 <h4 id="red-hat-based-linux">Red Hat based Linux</h4>
 <p>First, see the above note on <a href="#X11_general">installing and starting Xorg</a>.</p>
 <p>Install Xorg and related packages:</p>
-<pre class="&lt;!---sh--&gt;"><code>    sudo dnf install --skip-broken --best --exclude xorgxrdp --exclude xorgxrdp-glamor &#39;*xorg*&#39; &#39;libx*&#39; &#39;libX*&#39; &#39;fontconfig*&#39;</code></pre>
+<pre><code>    sudo dnf install --skip-broken --best --exclude xorgxrdp --exclude xorgxrdp-glamor &#39;*xorg*&#39; &#39;libx*&#39; &#39;libX*&#39; &#39;fontconfig*&#39;</code></pre>
 <p>See also:</p>
 <ul>
 <li><a href="https://www.wikihow.com/Configure-X11-in-Linux">How to Configure X11 in Linux</a></li>
@@ -991,7 +992,7 @@ XQuartz</a>, preferably on an <a href="https://support.apple.com/macOS">Apple su
 macOS, preferably the most recent version</a>.
 After it is installed, open the “XQuartz” application (usually located in
 <code>/Applications/Utilities/XQuartz.app</code>) by typing at the command line:</p>
-<pre class="&lt;!---sh--&gt;"><code>    open /Applications/Utilities/XQuartz.app</code></pre>
+<pre><code>    open /Applications/Utilities/XQuartz.app</code></pre>
 <p>With the “XQuartz” application open you will get an <a href="https://www.x.org/wiki/">X Window System
 Manager</a> launched with an <a href="https://en.wikipedia.org/wiki/Xterm">Xterm window
 shell</a> started:</p>
@@ -1010,7 +1011,7 @@ See the above note for details.</p>
 <p>First, see the above note on <a href="#X11_general">installing and starting Xorg</a>.</p>
 <p>According to the <a href="https://wiki.debian.org/Xorg">Debian Xorg wiki</a>, installing
 X11 requires:</p>
-<pre class="&lt;!---sh--&gt;"><code>    sudo apt install xorg</code></pre>
+<pre><code>    sudo apt install xorg</code></pre>
 <p><strong>IMPORTANT NOTE</strong>: The <a href="#Xorg_deprecated">X.org server has been deprecated</a>.
 See the above note for details.</p>
 <h4 id="other-linux-distributions">Other Linux distributions</h4>
@@ -1028,9 +1029,9 @@ may be helpful:</p>
 <li><a href="https://www.wikihow.com/Configure-X11-in-Linux">How to Configure X11 in Linux</a></li>
 </ul>
 <p>For systems that have the <code>dnf(1)</code> command:</p>
-<pre class="&lt;!---sh--&gt;"><code>    sudo dnf install --skip-broken --best --exclude xorgxrdp --exclude xorgxrdp-glamor &#39;*xorg*&#39; &#39;libx*&#39; &#39;libX*&#39; &#39;fontconfig*&#39;</code></pre>
+<pre><code>    sudo dnf install --skip-broken --best --exclude xorgxrdp --exclude xorgxrdp-glamor &#39;*xorg*&#39; &#39;libx*&#39; &#39;libX*&#39; &#39;fontconfig*&#39;</code></pre>
 <p>For systems that have the <code>yum(1)</code> command:</p>
-<pre class="&lt;!---sh--&gt;"><code>    sudo yum install --skip-broken --best --exclude xorgxrdp --exclude xorgxrdp-glamor &#39;*xorg*&#39; &#39;libx*&#39; &#39;libX*&#39; &#39;fontconfig*&#39;</code></pre>
+<pre><code>    sudo yum install --skip-broken --best --exclude xorgxrdp --exclude xorgxrdp-glamor &#39;*xorg*&#39; &#39;libx*&#39; &#39;libX*&#39; &#39;fontconfig*&#39;</code></pre>
 <p><strong>IMPORTANT NOTE</strong>: The <a href="#Xorg_deprecated">X.org server has been deprecated</a>.
 See the above note for details.</p>
 <h4 id="package-website">Package website</h4>
@@ -1043,13 +1044,13 @@ See the above note for details.</p>
 macOS with alternative methods for macOS and different package managers with Linux.</p>
 <h4 id="red-hat-based-linux-1">Red Hat based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
-<pre class="&lt;!---sh--&gt;"><code>    dnf install SDL2 SDL2-devel sdl12-compat sdl12-compat-devel</code></pre>
+<pre><code>    dnf install SDL2 SDL2-devel sdl12-compat sdl12-compat-devel</code></pre>
 <p>Older RHEL distributions might have to use “yum” instead of “dnf”
 in the above command.</p>
 <p>In the past it was said that one might need to run <code>make</code> like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make ... SDL2_INCLUDE_ROOT=/usr</code></pre>
+<pre><code>    make ... SDL2_INCLUDE_ROOT=/usr</code></pre>
 <p>or set the following environment variable:</p>
-<pre class="&lt;!---sh--&gt;"><code>    export SDL2_INCLUDE_ROOT=/usr</code></pre>
+<pre><code>    export SDL2_INCLUDE_ROOT=/usr</code></pre>
 <p>but this might not be necessary in more modern days especially as we use
 <code>sdl-config</code> and <code>sdl2-config</code> which should find the proper paths.</p>
 <h4 id="macos-1">macOS</h4>
@@ -1061,20 +1062,20 @@ the package website.</p>
 <h5 id="macos-via-homebrew">macOS via Homebrew</h5>
 <p>If you have not already done so, install <a href="https://brew.sh">Homebrew</a>.</p>
 <p>Then to install SDL and SDL2, execute the following command:</p>
-<pre class="&lt;!---sh--&gt;"><code>    brew install sdl2 sdl12-compat
+<pre><code>    brew install sdl2 sdl12-compat
     eval &quot;$(opt/homebrew/bin/brew shellenv)&quot;</code></pre>
 <h5 id="macos-via-macports">macOS via MacPorts</h5>
 <p>If you haven’t already, install
 <a href="https://www.macports.org/install.php">MacPorts</a>. Then run:</p>
-<pre class="&lt;!---sh--&gt;"><code>    sudo port install libsdl libsdl2</code></pre>
+<pre><code>    sudo port install libsdl libsdl2</code></pre>
 <h4 id="debian-based-linux-1">Debian based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
-<pre class="&lt;!---sh--&gt;"><code>    apt install libsdl1.2debian libsdl1.2-dev libsdl2-dev</code></pre>
+<pre><code>    apt install libsdl1.2debian libsdl1.2-dev libsdl2-dev</code></pre>
 <p>and then try <code>make all</code> again.</p>
 <p>In the past it was said that one might need to run <code>make</code> like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make ... SDL2_INCLUDE_ROOT=/usr</code></pre>
+<pre><code>    make ... SDL2_INCLUDE_ROOT=/usr</code></pre>
 <p>or set the following environment variable:</p>
-<pre class="&lt;!---sh--&gt;"><code>    export SDL2_INCLUDE_ROOT=/usr</code></pre>
+<pre><code>    export SDL2_INCLUDE_ROOT=/usr</code></pre>
 <p>but this might not be necessary in more modern days especially as we use
 <code>sdl-config</code> and <code>sdl2-config</code> which should find the proper paths.</p>
 <h4 id="other-linux-distributions-1">Other Linux distributions</h4>
@@ -1098,10 +1099,10 @@ as a GitHub pull request</a> for more information about pull requests.</p>
 macOS with alternative methods for macOS and different package managers with Linux.</p>
 <h4 id="red-hat-based-linux-2">Red Hat based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
-<pre class="&lt;!---sh--&gt;"><code>    dnf install ncurses ncurses-devel</code></pre>
+<pre><code>    dnf install ncurses ncurses-devel</code></pre>
 <h4 id="macos-2">macOS</h4>
 <p>With macOS it should already be installed. If it is not you might have to do:</p>
-<pre class="&lt;!---sh--&gt;"><code>    xcode-select --install</code></pre>
+<pre><code>    xcode-select --install</code></pre>
 <p>and agree to the terms and conditions and proceed with the install.</p>
 <h5 id="macos-via-homebrew-1">macOS via Homebrew</h5>
 <p>Not applicable, see above.</p>
@@ -1109,7 +1110,7 @@ macOS with alternative methods for macOS and different package managers with Lin
 <p>Not applicable, see above.</p>
 <h4 id="debian-based-linux-2">Debian based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
-<pre class="&lt;!---sh--&gt;"><code>    apt install libncurses6</code></pre>
+<pre><code>    apt install libncurses6</code></pre>
 <p>and then try <code>make all</code> again.</p>
 <h4 id="other-linux-distributions-2">Other Linux distributions</h4>
 <p>Use your package manager to install the appropriate packages. Try the search
@@ -1126,18 +1127,18 @@ processing programs, <a href="https://sox.sourceforge.net">SoX</a>, will work. H
 install depends on your OS.</p>
 <h4 id="red-hat-based-linux-3">Red Hat based Linux</h4>
 <p>As root or via sudo:</p>
-<pre class="&lt;!---sh--&gt;"><code>    dnf install -y sox sox-devel</code></pre>
+<pre><code>    dnf install -y sox sox-devel</code></pre>
 <h4 id="macos-3">macOS</h4>
 <p>For macOS there are two well known options.</p>
 <h5 id="macos-via-homebrew-2">macOS via Homebrew</h5>
 <p>If you have not already done so, install <a href="https://brew.sh">Homebrew</a>.</p>
 <p>Then to install SoX, execute the following command:</p>
-<pre class="&lt;!---sh--&gt;"><code>    brew install sox
+<pre><code>    brew install sox
     eval &quot;$(opt/homebrew/bin/brew shellenv)&quot;</code></pre>
 <h5 id="macos-via-macports-2">macOS via MacPorts</h5>
 <p>If you haven’t already, install
 <a href="https://www.macports.org/install.php">MacPorts</a>. Then run:</p>
-<pre class="&lt;!---sh--&gt;"><code>    sudo port install sox</code></pre>
+<pre><code>    sudo port install sox</code></pre>
 <h4 id="debian-based-linux-3">Debian based Linux</h4>
 <p>Usually the index.html file will explain how to use it under Debian so we do not
 include this here, at least for now.</p>
@@ -1158,12 +1159,12 @@ when they do, <code>-Weverything</code> is enabled with all of its challenges, p
 warnings, and sometimes warnings about things that do not matter, some of which
 are frankly frivolous and often downright dubious.</p>
 <p>To enable this feature:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber all CC=clang</code></pre>
+<pre><code>    make clobber all CC=clang</code></pre>
 <p>or:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber all &#39;CWARN+= -Weverything&#39;</code></pre>
+<pre><code>    make clobber all &#39;CWARN+= -Weverything&#39;</code></pre>
 <p>though it should be noted that if one tries <code>-Weverything</code> with compilers that
 are not <code>clang</code> they <em>might</em> see something like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    echo &#39;int main(void) {}&#39; &gt; foo.c ; cc -Weverything foo.c -o foo
+<pre><code>    echo &#39;int main(void) {}&#39; &gt; foo.c ; cc -Weverything foo.c -o foo
     cc: error: unrecognized command-line option &#39;-Weverything&#39;</code></pre>
 <p>which means that it can’t even be compiled. Thus the proper way to do it is the
 first way, <code>make clobber all CC=clang</code>.</p>
@@ -1207,11 +1208,11 @@ Ferguson</a> was able to
 get much of it to work and looking at that entry might be of value to your
 submissions, at least if you can figure the code out :-). To see the
 differences, try from <code>1989/westley</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make diff_orig_prog</code></pre>
+<pre><code>    make diff_orig_prog</code></pre>
 <p>If you have <code>colordiff</code> try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make DIFF=colordiff diff_orig_prog</code></pre>
+<pre><code>    make DIFF=colordiff diff_orig_prog</code></pre>
 <p>Alternatively you can try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..eb9e69fde657acc8c85a618a8a99af4c2f93b21d westley.c</code></pre>
+<pre><code>    git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..eb9e69fde657acc8c85a618a8a99af4c2f93b21d westley.c</code></pre>
 <p>As you can see, using <code>clang</code> has some additional problems to work out but if
 you can get your entry to work well in <code>clang</code> it might very well be considered
 better than other entries.</p>
@@ -1225,13 +1226,13 @@ special characters. There are typical defaults like (where <code>^</code> = ctrl
 </ul>
 <p>and various others. But if you don’t know this you can find out through the
 <code>stty(1)</code> command with the <code>-a</code> option. For instance with macOS you might see:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ stty -a
+<pre><code>    $ stty -a
     speed 9600 baud; rows 40; columns 155;
     intr = ^C; quit = ^\; erase = ^?; kill = ^U; eof = ^D; [..snip..]</code></pre>
 <p>If you know the name you can use <code>grep</code> to find the correct line and if your
 implementation of <code>grep(1)</code> has the <code>-o</code> option you can filter it. For instance
 to find what the <code>intr</code> is set to:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ stty -a |grep -o &#39;intr = ^[[:alpha:]]&#39;
+<pre><code>    $ stty -a |grep -o &#39;intr = ^[[:alpha:]]&#39;
     intr = ^C</code></pre>
 <p>… assuming of course that it’s a ctrl combination :-) If for some strange
 reason it’s not you might have to do something else including just piping it to
@@ -1269,19 +1270,19 @@ Please see <a href="#fix_an_entry">FAQ 5.2</a> for how to submit a fix to an IOC
 <p>If your OS package manager does not have the package <code>tcpserver</code> you can
 download, making sure you’re in a temporary directory, and compile the source
 like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    wget http://cr.yp.to/ucspi-tcp/ucspi-tcp-0.88.tar.gz
+<pre><code>    wget http://cr.yp.to/ucspi-tcp/ucspi-tcp-0.88.tar.gz
     tar ucspi-tcp-0.88.tar.gz
     cd ucspi-tcp-0.88
     make</code></pre>
 <p>Then as root or via <code>sudo(1)</code> enter:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make setup check</code></pre>
+<pre><code>    make setup check</code></pre>
 <p>That will install it to <code>/usr/local/bin</code>. Now you should be able to use the
 entry in question.</p>
 <h3 id="how-do-i-compile-and-install-netpbm-for-entries-that-require-it"><a name="faq3_15"></a><a name="netpbm"></a>3.15 - How do I compile and install netpbm for entries that require it?</h3>
 <p>This depends on your operating system for which we describe a couple below.</p>
 <h4 id="red-hat-based-linux-4">Red Hat based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
-<pre class="&lt;!---sh--&gt;"><code>    dnf install netpbm-progs netpbm</code></pre>
+<pre><code>    dnf install netpbm-progs netpbm</code></pre>
 <p>Older RHEL distributions might have to use “yum” instead of “dnf”
 in the above command.</p>
 <h4 id="macos-4">macOS</h4>
@@ -1293,14 +1294,14 @@ the package website.</p>
 <h5 id="macos-via-homebrew-3">macOS via Homebrew</h5>
 <p>If you have not already done so, install <a href="https://brew.sh">Homebrew</a>.</p>
 <p>Then to install netpbm, execute the following command:</p>
-<pre class="&lt;!---sh--&gt;"><code>    brew install netpbm</code></pre>
+<pre><code>    brew install netpbm</code></pre>
 <h5 id="macos-via-macports-3">macOS via MacPorts</h5>
 <p>If you haven’t already, install
 <a href="https://www.macports.org/install.php">MacPorts</a>. Then run:</p>
-<pre class="&lt;!---sh--&gt;"><code>    sudo port install libnetpbm netpbm</code></pre>
+<pre><code>    sudo port install libnetpbm netpbm</code></pre>
 <h4 id="debian-based-linux-4">Debian based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
-<pre class="&lt;!---sh--&gt;"><code>    apt install netpbm</code></pre>
+<pre><code>    apt install netpbm</code></pre>
 <p>and then try <code>make all</code> again.</p>
 <h4 id="other-linux-distributions-4">Other Linux distributions</h4>
 <p>Use your package manager to install the appropriate packages. Try the search
@@ -1315,7 +1316,7 @@ for downloading, installing and using netpbm.</p>
 <p>This depends on your operating system for which we describe a couple below.</p>
 <h4 id="red-hat-based-linux-5">Red Hat based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
-<pre class="&lt;!---sh--&gt;"><code>    dnf install libjpeg-turbo-utils libjpeg-turbo-devel libjpeg-turbo</code></pre>
+<pre><code>    dnf install libjpeg-turbo-utils libjpeg-turbo-devel libjpeg-turbo</code></pre>
 <p>Older RHEL distributions might have to use “yum” instead of “dnf”
 in the above command.</p>
 <h4 id="macos-5">macOS</h4>
@@ -1327,14 +1328,14 @@ the package website.</p>
 <h5 id="macos-via-homebrew-4">macOS via Homebrew</h5>
 <p>If you have not already done so, install <a href="https://brew.sh">Homebrew</a>.</p>
 <p>Then to install libjpeg-turbo, execute the following command:</p>
-<pre class="&lt;!---sh--&gt;"><code>    brew install libjpeg-turbo</code></pre>
+<pre><code>    brew install libjpeg-turbo</code></pre>
 <h5 id="macos-via-macports-4">macOS via MacPorts</h5>
 <p>If you haven’t already, install
 <a href="https://www.macports.org/install.php">MacPorts</a>. Then run:</p>
-<pre class="&lt;!---sh--&gt;"><code>    sudo port install libjpeg-turbo libjpeg-turbo-devel</code></pre>
+<pre><code>    sudo port install libjpeg-turbo libjpeg-turbo-devel</code></pre>
 <h4 id="debian-based-linux-5">Debian based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
-<pre class="&lt;!---sh--&gt;"><code>    apt install libturbojpeg0 libturbojpeg0-dev</code></pre>
+<pre><code>    apt install libturbojpeg0 libturbojpeg0-dev</code></pre>
 <p>and then try <code>make all</code> again.</p>
 <h4 id="other-linux-distributions-5">Other Linux distributions</h4>
 <p>Use your package manager to install the appropriate packages. Try the search
@@ -1349,7 +1350,7 @@ for downloading, installing and using libjpeg-turbo.</p>
 <p>This depends on your operating system for which we describe a couple below.</p>
 <h4 id="red-hat-based-linux-6">Red Hat based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
-<pre class="&lt;!---sh--&gt;"><code>    dnf install ImageMagick</code></pre>
+<pre><code>    dnf install ImageMagick</code></pre>
 <p>Older RHEL distributions might have to use “yum” instead of “dnf”
 in the above command.</p>
 <h4 id="macos-6">macOS</h4>
@@ -1361,14 +1362,14 @@ the package website.</p>
 <h5 id="macos-via-homebrew-5">macOS via Homebrew</h5>
 <p>If you have not already done so, install <a href="https://brew.sh">Homebrew</a>.</p>
 <p>Then to install ImageMagick, execute the following command:</p>
-<pre class="&lt;!---sh--&gt;"><code>    brew install ImageMagick</code></pre>
+<pre><code>    brew install ImageMagick</code></pre>
 <h5 id="macos-via-macports-5">macOS via MacPorts</h5>
 <p>If you haven’t already, install
 <a href="https://www.macports.org/install.php">MacPorts</a>. Then run:</p>
-<pre class="&lt;!---sh--&gt;"><code>    sudo port install ImageMagick</code></pre>
+<pre><code>    sudo port install ImageMagick</code></pre>
 <h4 id="debian-based-linux-6">Debian based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
-<pre class="&lt;!---sh--&gt;"><code>    apt install imagemagick</code></pre>
+<pre><code>    apt install imagemagick</code></pre>
 <p>and then try <code>make all</code> again.</p>
 <h4 id="other-linux-distributions-6">Other Linux distributions</h4>
 <p>Use your package manager to install the appropriate packages. Try the search
@@ -1386,12 +1387,12 @@ See <a href="#X11_general">FAQ 3.7: How do I run an IOCCC entry that requires X1
 general information about X11.</p>
 <p>Once X11 is install and the X Window Server is running, one needs to compile
 and link with the two libraries, <em>GL</em> and <em>GLU</em>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc ... -lGL -lGLU -L _location-where-X11-libs-are-installed_ -lX11</code></pre>
+<pre><code>    cc ... -lGL -lGLU -L _location-where-X11-libs-are-installed_ -lX11</code></pre>
 <p>NOTE: The OpenGL development effort is being manageed by <a href="https://vulkan.org">vulkan.org</a>.
 We suggest you check out their resource for further information on OpenGL.</p>
 <h4 id="red-hat-based-linux-7">Red Hat based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
-<pre class="&lt;!---sh--&gt;"><code>    sudo dnf install glew-devel SDL2-devel SDL2_image-devel glm-devel freetype-devel</code></pre>
+<pre><code>    sudo dnf install glew-devel SDL2-devel SDL2_image-devel glm-devel freetype-devel</code></pre>
 <p>See <a href="https://en.wikibooks.org/wiki/OpenGL_Programming/Installation/Linux">OpenGL Programming/Installation/Linux</a> for details.</p>
 <p>Older RHEL distributions might have to use “yum” instead of “dnf”
 in the above command.</p>
@@ -1403,7 +1404,7 @@ should be able to go. However in Apple drops support for OpenGL later on,
 you might look to install OpenGL via Homebrew or MacPorts.</p>
 <h4 id="debian-based-linux-7">Debian based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
-<pre class="&lt;!---sh--&gt;"><code>    sudo apt-get install libglew-dev libsdl2-dev libsdl2-image-dev libglm-dev libfreetype6-dev</code></pre>
+<pre><code>    sudo apt-get install libglew-dev libsdl2-dev libsdl2-image-dev libglm-dev libfreetype6-dev</code></pre>
 <p>and then try <code>make all</code> again.</p>
 <p>See <a href="https://en.wikibooks.org/wiki/OpenGL_Programming/Installation/Linux">OpenGL Programming/Installation/Linux</a> for details.</p>
 <h4 id="other-linux-distributions-7">Other Linux distributions</h4>
@@ -1428,10 +1429,10 @@ necessary.</p>
 <p>If you do not have GNU <code>make(1)</code> you might look for <code>gmake</code> as that is what it
 often is packaged as. Then you can use <code>gmake</code> instead. For instance if you go
 to the top level directory of the winner repo you can do:</p>
-<pre class="&lt;!---sh--&gt;"><code>    gmake</code></pre>
+<pre><code>    gmake</code></pre>
 <p>In the case that the Makefile uses the <code>MAKE</code> variable you will have to override
 it like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    gmake MAKE=gmake</code></pre>
+<pre><code>    gmake MAKE=gmake</code></pre>
 <p>though of course for both you may specify a rule or rules to run.</p>
 <h2 id="section-4-changes-made-to-ioccc-entries"><a name="faq4"></a>Section 4: Changes made to IOCCC entries</h2>
 <h3 id="faq-4.0-why-are-some-winning-entry-remarks-incongruent-with-the-winning-ioccc-code"><a name="faq4_0"></a>FAQ 4.0: Why are some winning entry remarks incongruent with the winning IOCCC code?</h3>
@@ -1450,7 +1451,7 @@ because of alarming warnings that can be displayed, in some systems at runtime
 interspersed with the output of the program.</p>
 <p>For instance in macOS the entry <a href="1990/tbr/index.html">1990/tbr</a> would output the
 warning in such a way that caused confusing output for the entry, looking like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ ./tbr
+<pre><code>    $ ./tbr
     $ warning: this program uses gets(), which is unsafe.
     # nothing here, what to do?</code></pre>
 <p>In some cases changing the code to use <code>fgets()</code> is not so easy to fix and in
@@ -1527,7 +1528,7 @@ allows for easily seeing the diffs.</p>
 <p>As some examples we’ll first look at one that has really long lines which
 will make it harder to see what is different,
 <a href="2001/anonymous/index.html">2001/anonymous</a>. What you would do is <code>cd 2001/anonymous</code> and then do:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make diff_orig_prog</code></pre>
+<pre><code>    make diff_orig_prog</code></pre>
 <p>and then be really confused! :-)</p>
 <p>But for an entry like <a href="1991/dds/index.html">1991/dds</a>, you can see the
 differences much more easily. <code>1991/dds</code> is a good example where it’s very
@@ -1544,12 +1545,12 @@ when you have compiler errors :-) (though there are, as noted, some examples
 where it’s quite easy to see the differences).</p>
 <p><a href="1991/dds/index.html">1991/dds</a> is also a good example to see the alt difference
 very easily. To do that <code>cd 1991/dds</code> and then do:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make diff_alt_prog</code></pre>
+<pre><code>    make diff_alt_prog</code></pre>
 <p>and you’ll see a single line changed and very simply.</p>
 <h4 id="tip-if-you-have-colordiff-installed-its-a-lot-easier-to-see-the-differences">Tip: if you have <code>colordiff</code> installed it’s a lot easier to see the differences</h4>
 <p>To use these rules but provide a different <code>diff</code>, for instance <code>colordiff</code>,
 just do:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make DIFF=colordiff diff_orig_prog # for orig to prog diff
+<pre><code>    make DIFF=colordiff diff_orig_prog # for orig to prog diff
     make DIFF=colordiff diff_alt_prog # for alt to prog diff</code></pre>
 <p>Obviously if you want to view the alt code or the orig code you can just open
 the files as described above.</p>
@@ -1823,7 +1824,7 @@ how they are used.</p>
 POSIX safe string plus the use of <code>+</code> (for technical reasons beyond this
 answer). In particular, the <code>author_handle</code> must be an ASCII string that
 matches this regexp:</p>
-<pre class="&lt;!---re--&gt;"><code>    ^[0-9A-Za-z][0-9A-Za-z._+-]*$&quot;</code></pre>
+<pre><code>    ^[0-9A-Za-z][0-9A-Za-z._+-]*$&quot;</code></pre>
 <p>Default <code>author_handle</code>’s do not have multiple consecutive <code>_</code> (underscore)
 characters. Nevertheless, multiple consecutive <code>_</code> (underscore) characters are
 allowed. Contest submitters who wish to override their default <code>author_handle</code> may do so.</p>
@@ -1844,7 +1845,7 @@ year.</p>
 <p>NOTE: even if the directory name is not <code>anonymous</code> the above rules apply as in
 in the case of <a href="2005/anon/anon.c">2005/anon</a>.</p>
 <p>Anonymous <code>author_handle</code>’s match this regexp:</p>
-<pre class="&lt;!---re--&gt;"><code>    Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$</code></pre>
+<pre><code>    Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$</code></pre>
 <p>See <a href="#fix_author">FAQ 5.5</a> for information about how to update
 and/or correct IOCCC author information.</p>
 <h3 id="faq-6.6-what-is-a-author_handle.json-file-and-how-are-they-used"><a name="faq6_6"></a><a name="author_json"></a>FAQ 6.6: What is a author_handle.json file and how are they used?</h3>
@@ -1873,7 +1874,7 @@ for information on the <em>So-called JSON spec</em>.</p>
 is to look at an example, the <code>author_handle.json</code> file for Yusuke Endoh:</p>
 <pre><code>    author/Yusuke_Endoh.json</code></pre>
 <p>As of <em>Thu Nov 30 23:51:12 UTC 2023</em>, the contents was as follows:</p>
-<pre class="&lt;!---json--&gt;"><code>    {
+<pre><code>    {
         &quot;no_comment&quot; : &quot;mandatory comment: because comments were removed from the original JSON spec&quot;,
         &quot;author_JSON_format_version&quot; : &quot;1.0 2023-06-10&quot;,
         &quot;author_handle&quot; : &quot;Yusuke_Endoh&quot;,
@@ -1911,14 +1912,14 @@ is to look at an example, the <code>author_handle.json</code> file for Yusuke En
     }</code></pre>
 <p>We now will walk thru the above JSON document looking at various JSON members:</p>
 <h5 id="no_comment">no_comment</h5>
-<p><code>&lt;!--- json--&gt;     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",</code></p>
+<pre><code>    &quot;no_comment&quot; : &quot;mandatory comment: because comments were removed from the original JSON spec&quot;,</code></pre>
 <p>Because the authors of the so-called JSON spec removed the ability to use comments in JSON
 (for reason(s) that seem to be less than credible), the IOCCC mandates this <em>JSON member</em>
 be present in all IOCCC related JSON files.</p>
 <p>There <strong>MUST</strong> be one and only one <code>no_comment</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be the exact <em>JSON string</em> as shown above.</p>
 <h5 id="author_json_format_version">author_JSON_format_version</h5>
-<pre class="&lt;!---json--&gt;"><code>    &quot;author_JSON_format_version&quot; : &quot;1.0 2023-06-10&quot;,</code></pre>
+<pre><code>    &quot;author_JSON_format_version&quot; : &quot;1.0 2023-06-10&quot;,</code></pre>
 <p>This <em>JSON member</em> holds the format version of the <code>author_handle.json</code> JSON file.</p>
 <p>There <strong>MUST</strong> be one and only one <code>author_JSON_format_version</code>
 <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong> be a <em>JSON string</em>.</p>
@@ -1930,7 +1931,7 @@ of the these files is modified: and then only those who maintain the
 <a href="https://www.ioccc.org">official IOCCC web site</a> would be the one to do this
 in conjunction with changes to <a href="bin/index.html">bin directory tools</a>.</p>
 <h5 id="author_handle">author_handle</h5>
-<pre class="&lt;!---json--&gt;"><code>    &quot;author_handle&quot; : &quot;Yusuke_Endoh&quot;,</code></pre>
+<pre><code>    &quot;author_handle&quot; : &quot;Yusuke_Endoh&quot;,</code></pre>
 <p>This <em>JSON member</em> holds the author handle of the author.</p>
 <p>There <strong>MUST</strong> be one and only one <code>author_handle</code> <em>JSON member</em>
 and the <em>JSON value</em> <strong>MUST</strong> be a <em>JSON string</em> that is also a value author handle.</p>
@@ -1944,14 +1945,14 @@ without the trailing <code>.json</code>) of the <code>author_handle.json</code> 
 a change of <em>author_handle</em> <em>JSON value</em> would also require the
 <code>author_handle.json</code> file to also be renamed.</p>
 <h5 id="full_name">full_name</h5>
-<pre class="&lt;!---json--&gt;"><code>    &quot;full_name&quot; : &quot;Yusuke Endoh&quot;,</code></pre>
+<pre><code>    &quot;full_name&quot; : &quot;Yusuke Endoh&quot;,</code></pre>
 <p>This <em>JSON member</em> holds the full name of the author.</p>
 <p>There <strong>MUST</strong> be one and only one <code>full_name</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em>.</p>
 <p>The full name of an author may use non-ASCII characters so long as the
 full name is properly encoded as a <em>JSON string</em>.</p>
 <h5 id="sort_word">sort_word</h5>
-<pre class="&lt;!---json--&gt;"><code>    &quot;sort_word&quot; : &quot;endoh&quot;,</code></pre>
+<pre><code>    &quot;sort_word&quot; : &quot;endoh&quot;,</code></pre>
 <p>This <em>JSON member</em> holds the string that will be used to sort the author.</p>
 <p>There <strong>MUST</strong> be one and only one <code>sort_word</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em>. Moreover the string <strong>MUST</strong> be a lower case ASCII
@@ -1965,7 +1966,7 @@ wishes to be found in the <code>/authors.html</code> file under a different
 string, such as if they wish to be listed under their first name
 or their username, then they may change this accordingly.</p>
 <h5 id="location_code">location_code</h5>
-<pre class="&lt;!---json--&gt;"><code>    &quot;location_code&quot; : &quot;JP&quot;,</code></pre>
+<pre><code>    &quot;location_code&quot; : &quot;JP&quot;,</code></pre>
 <p>This <em>JSON member</em> holds the string that is the
 <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Decoding_table">ISO 3166-1 alpha-2 code</a>
 of the author’s location or country.</p>
@@ -1982,38 +1983,38 @@ ISO 3166-1 alpha-2 codes belong to locations that are not technically
 a country, such as “Antarctica” or a User-assigned code.</p>
 <p>If the author wishes to not specify a location, they should select <strong>XX</strong>.</p>
 <h5 id="email">email</h5>
-<pre class="&lt;!---json--&gt;"><code>    &quot;email&quot; : &quot;mame@ruby-lang.org&quot;,</code></pre>
+<pre><code>    &quot;email&quot; : &quot;mame@ruby-lang.org&quot;,</code></pre>
 <p>This <em>JSON member</em> holds the email address of the author, or is the value null.</p>
 <p>There <strong>MUST</strong> be one and only one <code>email</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>.</p>
 <p>If the author wishes to not specify an email address, or if the email address is
 unknown, they should use the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
-<pre class="&lt;!---json--&gt;"><code>    &quot;email&quot; : null,</code></pre>
+<pre><code>    &quot;email&quot; : null,</code></pre>
 <p>NOTE: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <h5 id="url">url</h5>
-<pre class="&lt;!---json--&gt;"><code>    &quot;url&quot; : &quot;https://mametter.hatenablog.com&quot;,</code></pre>
+<pre><code>    &quot;url&quot; : &quot;https://mametter.hatenablog.com&quot;,</code></pre>
 <p>This <em>JSON member</em> holds the URL of the author’s home page.</p>
 <p>There <strong>MUST</strong> be one and only one <code>url</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>.</p>
 <p>If the author wishes to not specify an email address, or if the URL is
 unknown, they should use the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
-<pre class="&lt;!---json--&gt;"><code>    &quot;url&quot; : null,</code></pre>
+<pre><code>    &quot;url&quot; : null,</code></pre>
 <p>NOTE: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <h5 id="alt_url">alt_url</h5>
-<pre class="&lt;!---json--&gt;"><code>    &quot;alt_url&quot; : null,</code></pre>
+<pre><code>    &quot;alt_url&quot; : null,</code></pre>
 <p>This <em>JSON member</em> holds an alternate or 2nd URL a home page for the author.</p>
 <p>There <strong>MUST</strong> be one and only one <code>url</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>.</p>
 <p>In some cases the author may wish to record a special URL for their IOCCC entry,
 or a 2nd URL such as a work or school or personal home page. For example,
 Cody as of <em>Thu Nov 30 23:51:12 UTC 2023</em> used:</p>
-<pre class="&lt;!---json--&gt;"><code>    &quot;alt_url&quot; : &quot;https://ioccc.xexyl.net&quot;,</code></pre>
+<pre><code>    &quot;alt_url&quot; : &quot;https://ioccc.xexyl.net&quot;,</code></pre>
 <p>If the author wishes to not specify an email address, or if the alternate URL is
 unknown, they should use the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
-<pre class="&lt;!---json--&gt;"><code>    &quot;url&quot; : null,</code></pre>
+<pre><code>    &quot;url&quot; : null,</code></pre>
 <p>NOTE: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <h5 id="deprecated_twitter_handle">deprecated_twitter_handle</h5>
 <p>This <em>JSON member</em> used to hold the twitter handle of the author.</p>
@@ -2023,14 +2024,14 @@ be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>.</
 and so the <code>deprecated_twitter_handle</code> is <strong>no longer used</strong>. A <em>JSON value</em> that is
 not a <em>JSON null</em> is kept for only historic reasons. For example, Anthony C. Howe
 once used:</p>
-<pre class="&lt;!---json--&gt;"><code>    &quot;deprecated_twitter_handle&quot; : &quot;@SirWumpus&quot;,</code></pre>
+<pre><code>    &quot;deprecated_twitter_handle&quot; : &quot;@SirWumpus&quot;,</code></pre>
 <p>If the author wishes to not specify an twitter handle, or if the twitter handle is
 unknown, they should use the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
-<pre class="&lt;!---json--&gt;"><code>    &quot;deprecated_twitter_handle&quot; : null,</code></pre>
+<pre><code>    &quot;deprecated_twitter_handle&quot; : null,</code></pre>
 <p>NOTE: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <h5 id="mastodon">mastodon</h5>
-<pre class="&lt;!---json--&gt;"><code>    &quot;mastodon&quot; : &quot;@mame@ruby.social&quot;,</code></pre>
+<pre><code>    &quot;mastodon&quot; : &quot;@mame@ruby.social&quot;,</code></pre>
 <p>This <em>JSON member</em> holds the
 <a href="https://en.wikipedia.org/wiki/Mastodon_(social_network)">Mastodon social network</a>
 handle of the author.</p>
@@ -2042,7 +2043,7 @@ used by the author.</p>
 <p>For more information in Mastodon, see the <a href="https://mastodon.help">Mastodon help</a> guide.
 See the “Mastodon Address” section of that page in particular.</p>
 <p>The IOCCC Mastodon handle is:</p>
-<pre class="&lt;!---json--&gt;"><code>    @ioccc@fosstodon.org</code></pre>
+<pre><code>    @ioccc@fosstodon.org</code></pre>
 <p>The IOCCC uses the Mastodon social network for announcements such
 as the opening and closing of a new IOCCC, changes to the IOCCC web
 site, updates during the judging process, and when new IOCCC entries
@@ -2050,10 +2051,10 @@ are selected. We recommend you follow us on Mastodon.</p>
 <p>If the author wishes to not specify an Mastodon handle, or if the Mastodon handle is
 unknown, they should use the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
-<pre class="&lt;!---json--&gt;"><code>    &quot;mastodon&quot; : null,</code></pre>
+<pre><code>    &quot;mastodon&quot; : null,</code></pre>
 <p>NOTE: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <h5 id="mastodon_url">mastodon_url</h5>
-<pre class="&lt;!---json--&gt;"><code>    &quot;mastodon_url&quot; : &quot;https://ruby.social/@mame&quot;,</code></pre>
+<pre><code>    &quot;mastodon_url&quot; : &quot;https://ruby.social/@mame&quot;,</code></pre>
 <p>This <em>JSON member</em> holds the URL of the author’s Mastodon page.</p>
 <p>There <strong>MUST</strong> be one and only one <code>mastodon_url</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>. The <em>JSON string</em> just be a valid URL.
@@ -2067,10 +2068,10 @@ For example, if the Mastodon handle is:</p>
 <p>If the author wishes to not specify an Mastodon URL, or if the Mastodon URL is
 unknown, they should use the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
-<pre class="&lt;!---json--&gt;"><code>    &quot;mastodon_url&quot; : null,</code></pre>
+<pre><code>    &quot;mastodon_url&quot; : null,</code></pre>
 <p>NOTE: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <h5 id="github">github</h5>
-<pre class="&lt;!---json--&gt;"><code>    &quot;github&quot; : &quot;@mame&quot;,</code></pre>
+<pre><code>    &quot;github&quot; : &quot;@mame&quot;,</code></pre>
 <p>This <em>JSON member</em> holds the <a href="https://github.com">GitHub</a> handle of the author.</p>
 <p>There <strong>MUST</strong> be one and only one <code>github</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>. The <code>github</code> <em>JSON string</em> <strong>MUST</strong>
@@ -2082,10 +2083,10 @@ and hosts <a href="https://www.ioccc.org">official IOCCC web site</a> on GitHub 
 <p>If the author wishes to not specify an GitHub handle, or if the GitHub handle is
 unknown, they should use the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
-<pre class="&lt;!---json--&gt;"><code>    &quot;github&quot; : null,</code></pre>
+<pre><code>    &quot;github&quot; : null,</code></pre>
 <p>NOTE: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <h5 id="affiliation">affiliation</h5>
-<pre class="&lt;!---json--&gt;"><code>    &quot;affiliation&quot; : null,</code></pre>
+<pre><code>    &quot;affiliation&quot; : null,</code></pre>
 <p>This <em>JSON member</em> holds the affiliation of the author.</p>
 <p>There <strong>MUST</strong> be one and only one <code>affiliation</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>.</p>
@@ -2096,11 +2097,11 @@ For example, the affiliation for the IOCCC would be:</p>
 <p>If the author wishes to not specify an affiliation, or if the affiliation is
 unknown, they should use the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
-<pre class="&lt;!---json--&gt;"><code>    &quot;affiliation&quot; : null,</code></pre>
+<pre><code>    &quot;affiliation&quot; : null,</code></pre>
 <p>NOTE: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <h5 id="winning_entry_set">winning_entry_set</h5>
 <h5 id="entry_id">entry_id</h5>
-<pre class="&lt;!---json--&gt;"><code>    &quot;winning_entry_set&quot; : [
+<pre><code>    &quot;winning_entry_set&quot; : [
         { &quot;entry_id&quot; : &quot;2012_endoh1&quot; },
         { &quot;entry_id&quot; : &quot;2012_endoh2&quot; },
         { &quot;entry_id&quot; : &quot;2013_endoh1&quot; },
@@ -2136,7 +2137,7 @@ of the IOCCC entry directories for a given year. For example, see the <a href=".
 These files contain the directory path from the top directory.
 For example see <a href="1984/anonymous/.path">1984/anonymous/.path</a>.</p>
 <p>The .top, .year and .path files are generated from the top level Makefile, by:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make genpath</code></pre>
+<pre><code>    make genpath</code></pre>
 <h3 id="a-nametermsfaq-6.9-what-is-the-current-meaning-of-the-ioccc-terms-author-entry-and-submission"><a name="faq6_9"></a>&lt;a name”terms”&gt;</a>FAQ 6.9: What is the current meaning of the IOCCC terms Author, Entry, and Submission?</h3>
 <p>The IOCCC is now attempting to use the following terms:</p>
 <ul>
@@ -2208,7 +2209,7 @@ instructions. Once you’ve completed this task make sure you log in to GitHub.<
 <p>Assuming you do not have an ssh key you should go to the command prompt and
 type (if you already have one and are okay using it for GitHub you can use that
 one):</p>
-<pre class="&lt;!---sh--&gt;"><code>    ssh-keygen -t rsa -b 4096 -C &quot;luser@example.com&quot;</code></pre>
+<pre><code>    ssh-keygen -t rsa -b 4096 -C &quot;luser@example.com&quot;</code></pre>
 <p>where <code>luser@example.com</code> is the email you want associated with your key.
 Follow the instructions. It will tell you the key files.</p>
 <p>Once you have an ssh key you need to go to your <a href="https://github.com/settings/profile">account
@@ -2233,11 +2234,11 @@ instructions in forking the repo.</p>
 <h4 id="cloning-the-temp-test-ioccc-repo">Cloning the temp-test-ioccc repo</h4>
 <p>Once you have forked the repo you are ready to clone it to your system. For
 instance Cody Boone Ferguson has the GitHub handle <em>xexyl</em> so he would type in:</p>
-<pre class="&lt;!---sh--&gt;"><code>    git clone https://github.com/xexyl/temp-test-ioccc [target_dir]</code></pre>
+<pre><code>    git clone https://github.com/xexyl/temp-test-ioccc [target_dir]</code></pre>
 <p>Once that is completed you will need to change to that directory. The default
 directory would be the name of the repo but if you specified a target directory
 it will be that. For instance using the above example you might do:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cd temp-test-ioccc</code></pre>
+<pre><code>    cd temp-test-ioccc</code></pre>
 <p>You’re ready to make your changes now!</p>
 <h4 id="making-changes-fixes-etc.">Making changes, fixes etc.</h4>
 <p>Here you must use your wits, knowledge, creativity and whatever else you have.
@@ -2255,7 +2256,7 @@ or an exercise in sibilance!</p>
 starts with <code># Last updated:</code> to refer to <code>01 March 2024</code> rather than what it
 is now (at the time of writing this), <code>15 April 2023</code>.</p>
 <p>But what if he wanted to add a file? He’d create the file and then type:</p>
-<pre class="&lt;!---sh--&gt;"><code>    git add foo</code></pre>
+<pre><code>    git add foo</code></pre>
 <p>where <em>foo</em> is the file to add.</p>
 <p>When he’s ready to make a commit he would need to create a new branch for the
 pull request.</p>
@@ -2263,25 +2264,25 @@ pull request.</p>
 <p>First, as an aside, if this is your first pull request (which we assume is if you’re
 reading this :-) ) you need to make sure that you can push changes to GitHub
 with your ssh key. To do this you need to do:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ssh -T git@github.com</code></pre>
+<pre><code>    ssh -T git@github.com</code></pre>
 <p>Cody would see:</p>
 <blockquote>
 <p>Hi xexyl! You’ve successfully authenticated, but GitHub does not provide shell access.</p>
 </blockquote>
 <p>Now, assuming that the forked repo is
 <a href="https://github.com/xexyl/temp-test-ioccc" class="uri">https://github.com/xexyl/temp-test-ioccc</a>, you’d type:</p>
-<pre class="&lt;!---sh--&gt;"><code>    git remote set-url origin git@github.com:xexyl/temp-test-ioccc.git</code></pre>
+<pre><code>    git remote set-url origin git@github.com:xexyl/temp-test-ioccc.git</code></pre>
 <p>Now you’d be ready to make your commits.</p>
 <p>Before doing anything else, however, a new branch needs to be created.
 Continuing the example above for
 <a href="2020/ferguson1/play.sh">2020/ferguson1/play.sh</a>, it might be that:</p>
-<pre class="&lt;!---sh--&gt;"><code>    git checkout -B human-snakes</code></pre>
+<pre><code>    git checkout -B human-snakes</code></pre>
 <p>This would change the branch to the newly created branch <code>human-snakes</code> branch.
 Now Cody could commit the changes:</p>
-<pre class="&lt;!---sh--&gt;"><code>    git commit play.sh # if specifying specific files
+<pre><code>    git commit play.sh # if specifying specific files
     git commit -a # if committing everything</code></pre>
 <p>He could also have done:</p>
-<pre class="&lt;!---sh--&gt;"><code>    git add play.sh
+<pre><code>    git add play.sh
     git commit</code></pre>
 <p>In any case this would open an editor (in his case vim) to write a commit log.
 It is recommended that the first line is &lt;=51 chars and the next line is blank.
@@ -2295,7 +2296,7 @@ warrant the log:</p>
 <h4 id="opening-a-pull-request">Opening a pull request</h4>
 <p>To do this depends on the branch name. Assuming the branch from above,
 <code>human-snakes</code>, you would type:</p>
-<pre class="&lt;!---sh--&gt;"><code>    git push --set-upstream origin human-snakes</code></pre>
+<pre><code>    git push --set-upstream origin human-snakes</code></pre>
 <p>This might show:</p>
 <pre><code>    Enumerating objects: 9, done.
     Counting objects: 100% (9/9), done.
@@ -2341,7 +2342,7 @@ in the matter.</p>
 <p>When the judges have merged the pull request you now need to make sure your fork
 has the merge. To do this from the command line, assuming the fork in the above
 example, you would type:</p>
-<pre class="&lt;!---sh--&gt;"><code>    git checkout master &amp;&amp; git pull https://github.com/ioccc-src/temp-test-ioccc.git master &amp;&amp; git push origin master</code></pre>
+<pre><code>    git checkout master &amp;&amp; git pull https://github.com/ioccc-src/temp-test-ioccc.git master &amp;&amp; git push origin master</code></pre>
 <p>This will merge your pull request to your fork.</p>
 <h3 id="faq-6.11-am-i-allowed-to-use-ioccc-content"><a name="faq6_11"></a><a name="license"></a>FAQ 6.11: Am I allowed to use IOCCC content?</h3>
 <p><strong>Disclaimer</strong>: This FAQ is <strong>not a license</strong>, has <strong>no legal

@@ -83,6 +83,7 @@
     <div class="sidenav">
       <a href="./news.html">IOCCC News</a>
       <a href="./status.html">Contest status</a>
+      <a href="./next/index.html">Rules and Guidelines</a>
       <a href="./faq.html#submit">How to enter the IOCCC</a>
       <a href="./faq.html">FAQ</a>
     </div>
@@ -186,7 +187,7 @@ bringing back an extern declaration (slightly changing it to match the symbol
 that it is i.e. <code>extern double floor(double);</code> instead of <code>extern int floor;</code>)
 and also bringing back <code>double (x1, y1) b;</code> and even this funny code that could
 be kept in:</p>
-<pre class="&lt;!---c--&gt;"><code>    #define char k[&#39;a&#39;]
+<pre><code>    #define char k[&#39;a&#39;]
     char x {sizeof(
          double(%s,%D)(*)())</code></pre>
 <p>This does mean that there cannot be a second arg to <code>main()</code>
@@ -210,7 +211,7 @@ seem possible) it is easy to fix but it is hoped that this won’t happen.</p>
 <p>Originally <a href="#yusuke">Yusuke</a> supplied a patch so that this entry would compile with gcc -
 but not clang - or at least some versions.</p>
 <p>To see the difference from start to fixed:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cd 1984/decot ; make diff_orig_prog</code></pre>
+<pre><code>    cd 1984/decot ; make diff_orig_prog</code></pre>
 <h2 id="laman-index.html"><a name="1984_laman"></a><a href="1984/laman/laman.c">1984/laman</a> (<a href="1984/laman/index.html%5D">index.html</a>)</h2>
 <p><a href="#cody">Cody</a> added the <a href="1984/laman/try.sh">try.sh</a> script.</p>
 <p>Cody also fixed this to not crash when no arg is specified. Note that if the arg
@@ -295,7 +296,7 @@ as close to the original as one can get without causing compiler errors.</p>
 <p>To get this to all work the following changes were made. If you really want to
 understand this Cody provides the following. First run the following command
 from the directory:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make diff_orig_prog</code></pre>
+<pre><code>    make diff_orig_prog</code></pre>
 <p>and then read the following (you might also wish to look at the code in an
 editor with syntax highlighting):</p>
 <ul>
@@ -303,7 +304,7 @@ editor with syntax highlighting):</p>
 were actually not what they appear: the only arg that existed in <code>main()</code> was
 <code>Manual</code>. Thus it now looks like:</li>
 </ul>
-<pre class="&lt;!---c--&gt;"><code>    main(
+<pre><code>    main(
     /*  C program. (If you don&#39;t
      *  understand it look it
      *  up.) (In the C*/ Manual)
@@ -325,11 +326,11 @@ in case the first does not. Originally the macros were kept the same and the
 case as <code>c</code>.</p></li>
 <li><p>The code:</p></li>
 </ul>
-<pre class="&lt;!---c--&gt;"><code>    C=&quot;Lint says &quot;argument Manual isn&#39;t used.&quot;  What&#39;s that
+<pre><code>    C=&quot;Lint says &quot;argument Manual isn&#39;t used.&quot;  What&#39;s that
     mean?&quot;; while (write((read(C_C(&#39;&quot;&#39;-&#39;/*&quot;&#39;/*&quot;*/))?__:__-_+
     &#39;\b&#39;b&#39;\b&#39;|((_-52)%(&#39;\b&#39;b&#39;\b&#39;+C_C_(&#39;\t&#39;b&#39;\n&#39;))+1),1),&amp;_,1));</code></pre>
 <p>had to be changed to:</p>
-<pre class="&lt;!---c--&gt;"><code>    C=&quot;Lint says \&quot;argument Manual isn&#39;t used.\&quot; What&#39;s that\
+<pre><code>    C=&quot;Lint says \&quot;argument Manual isn&#39;t used.\&quot; What&#39;s that\
     mean?&quot;; while (write((read((&#39;&quot;&#39;-&#39;/*&quot;&#39;))?__:__-_+
     &#39;\b&#39;b&#39;\b&#39;|((_-52)%(&#39;\b&#39;b&#39;\b&#39;+C_C_(&#39;\t&#39;b&#39;\n&#39;))+1),1),&amp;_,1));</code></pre>
 <p>because of the missing <code>"</code> at the end of the line and because <code>_|_</code> is not a
@@ -347,10 +348,10 @@ rename to <code>c</code>.</p>
 <ul>
 <li>The code in <code>main()</code> is where there are significant changes, changing from:</li>
 </ul>
-<pre class="&lt;!---c--&gt;"><code>    while (read(0,&amp;__,1) &amp; write((_=(_=C_C_(__),C)),
+<pre><code>    while (read(0,&amp;__,1) &amp; write((_=(_=C_C_(__),C)),
     _C_,1)) _=C-V+subr(&amp;V);</code></pre>
 <p>to:</p>
-<pre class="&lt;!---c--&gt;"><code>    while (read(0,&amp;__,1) &amp; write((_=(_=C_C_(__),
+<pre><code>    while (read(0,&amp;__,1) &amp; write((_=(_=C_C_(__),
     V))?__:__-_+&#39;\b&#39;b&#39;\b&#39;|((_-52)%(&#39;\b&#39;b&#39;\b&#39;+~
     &#39; &#39;&amp;&#39;\t&#39;b&#39;\n&#39;)+1),1),&amp;_,1))_=c-v+subr(&amp;v));</code></pre>
 <p>Note how numerous of the macros (though two changed in case) can still be
@@ -406,14 +407,14 @@ for entertainment!</p>
 Cody changed the alt code (which was not the same as the original - see above
 for details or try <code>make diff_orig_alt</code> in the directory) slightly so that it
 was possible to silence it. In particular:</p>
-<pre class="&lt;!---c--&gt;"><code>      P  (    a  )   char a   ;  {    a  ;   while(    a  &gt;      &quot;  B   &quot;</code></pre>
+<pre><code>      P  (    a  )   char a   ;  {    a  ;   while(    a  &gt;      &quot;  B   &quot;</code></pre>
 <p>which gave:</p>
 <pre><code>    marshall.alt.c:13:55: warning: ordered comparison between pointer and integer (&#39;char&#39; and &#39;char *&#39;)
       P  (    a  )   char a   ;  {    a  ;   while(    a  &gt;      &quot;  B   &quot;
                                                        ~  ^      ~~~~~~~~
     1 warning generated.</code></pre>
 <p>was changed to:</p>
-<pre class="&lt;!---c--&gt;"><code>      P  (    a  )   char a   ;  {    a  ;   while((char *)a  &gt;   &quot;  B   &quot;</code></pre>
+<pre><code>      P  (    a  )   char a   ;  {    a  ;   while((char *)a  &gt;   &quot;  B   &quot;</code></pre>
 <p>which gave:</p>
 <pre><code>    marshall.alt.c:13:48: warning: cast to &#39;char *&#39; from smaller integer type &#39;char&#39; [-Wint-to-pointer-cast]
       P  (    a  )   char a   ;  {    a  ;   while((char *)a  &gt;   &quot;  B   &quot;
@@ -442,35 +443,35 @@ below.</p>
 work with gcc but it still required <code>-traditional-cpp</code>.</p>
 <p>If you’d like to see the difference between the version that requires
 <code>-traditional-cpp</code> and the fixed version, try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cd 1986/wall ; make diff_orig_prog</code></pre>
+<pre><code>    cd 1986/wall ; make diff_orig_prog</code></pre>
 <p>Some of the changes required:</p>
 <ul>
 <li>Instead of using the <code>c_</code>, defined as <code>c_(cc)c cc=</code>, like:</li>
 </ul>
-<pre class="&lt;!---c--&gt;"><code>    c_(+)o
+<pre><code>    c_(+)o
 
     /* ... */
 
     :c_(+)&#39; &#39;-1;
     }}c_(&amp;)&#39;z&#39;+5;</code></pre>
 <p>use:</p>
-<pre class="&lt;!---c--&gt;"><code>    :c +=o[c&amp;__LINE__-007];
+<pre><code>    :c +=o[c&amp;__LINE__-007];
 
     /* ... */
 
     :c+=&#39; &#39;-1;
     }}c&amp;=&#39;z&#39;+5;</code></pre>
 <p>Observe however that this macro is still used in the code like:</p>
-<pre class="&lt;!---c--&gt;"><code>    main(;c_(=(*cc);*cc++)c,for);</code></pre>
+<pre><code>    main(;c_(=(*cc);*cc++)c,for);</code></pre>
 <ul>
 <li>Instead of code like:</li>
 </ul>
-<pre class="&lt;!---c--&gt;"><code>    main(0xb+(c&gt;&gt;5),C_(s))
+<pre><code>    main(0xb+(c&gt;&gt;5),C_(s))
     _&#39;\v&#39;
     :__ _&#39;\f&#39;:
     main(c,C_(s));</code></pre>
 <p>use instead:</p>
-<pre class="&lt;!---c--&gt;"><code>    main(;c_(=(*cc);*cc++)c,for);
+<pre><code>    main(;c_(=(*cc);*cc++)c,for);
     #define _O(s)s
     switch(0xb+(c&gt;&gt;5)){
     _&#39;\v&#39;
@@ -479,17 +480,17 @@ work with gcc but it still required <code>-traditional-cpp</code>.</p>
 <ul>
 <li>The macro:</li>
 </ul>
-<pre class="&lt;!---c--&gt;"><code>    #define C_(sand)_O(sand)witch</code></pre>
+<pre><code>    #define C_(sand)_O(sand)witch</code></pre>
 <p>could not be used like:</p>
-<pre class="&lt;!---c--&gt;"><code>    C_(s));_</code></pre>
+<pre><code>    C_(s));_</code></pre>
 <p>to create:</p>
-<pre class="&lt;!---c--&gt;"><code>    switch);_</code></pre>
+<pre><code>    switch);_</code></pre>
 <p>and neither could the macro:</p>
-<pre class="&lt;!---c--&gt;"><code>    #define O_(O)_O(O)stem(ccc(</code></pre>
+<pre><code>    #define O_(O)_O(O)stem(ccc(</code></pre>
 <p>be used like:</p>
-<pre class="&lt;!---c--&gt;"><code>    :O_(sy)&quot;;kkt -oa, dijszdijs QQ&quot;))_C</code></pre>
+<pre><code>    :O_(sy)&quot;;kkt -oa, dijszdijs QQ&quot;))_C</code></pre>
 <p>to create:</p>
-<pre class="&lt;!---c--&gt;"><code>    :system(ccc(&quot;;kkt -oa, dijszdijs QQ&quot;));return</code></pre>
+<pre><code>    :system(ccc(&quot;;kkt -oa, dijszdijs QQ&quot;));return</code></pre>
 <ul>
 <li>And of course as noted two strings had to be <code>strdup()</code>d.</li>
 </ul>
@@ -569,7 +570,7 @@ as well, however.</p>
 <p>First of all, as noted above, the entry required <code>-traditional-cpp</code> (which
 <strike>not all compilers support</strike> <code>clang</code> does not support). It needed
 that option in modern systems because of two things it did:</p>
-<pre class="&lt;!---c--&gt;"><code>    #define a(x)get/***/x/***/id())
+<pre><code>    #define a(x)get/***/x/***/id())
 
     /* ... */
 
@@ -582,7 +583,7 @@ that option in modern systems because of two things it did:</p>
 this no longer works. The code still uses the macro <code>a</code> to form the names but
 it’s done differently, using the C token paste operator <code>##</code>. It’s done like
 thus:</p>
-<pre class="&lt;!---diff--&gt;"><code>    --- i/1988/dale/dale.c
+<pre><code>    --- i/1988/dale/dale.c
     +++ w/1988/dale/dale.c
     @@ -9,18 +9,18 @@
      #define L if
@@ -593,18 +594,18 @@ thus:</p>
     -#define a(x)get/***/x/***/id())
     +#define a(x)get##x##id())</code></pre>
 <p>The second is that</p>
-<pre class="&lt;!---c--&gt;"><code>    for/*/(;;);/*/k()){O/*/*/c);</code></pre>
+<pre><code>    for/*/(;;);/*/k()){O/*/*/c);</code></pre>
 <p>cannot form <code>fork())</code> in modern C compilers. Since it was not done through a
 macro it was simply changed to be <code>fork()</code>, rather than adding a new macro.</p>
 <p>The other problem that could not be resolved by the <code>-traditional-cpp</code> was that
 modern compilers do not allow directives like:</p>
-<pre class="&lt;!---c--&gt;"><code>    #define _ define
+<pre><code>    #define _ define
     #_ P char
     #_ p int
     #_ O close(
     /* ... */</code></pre>
 <p>so Cody changed the lines to be in the form of:</p>
-<pre class="&lt;!---c--&gt;"><code>    #define P char
+<pre><code>    #define P char
     #define p int
     #define O close(
     /* ... */</code></pre>
@@ -665,7 +666,7 @@ not strictly necessary but nonetheless more correct, even if not warned against.
 <a href="1989/fubar/fubar.sh">fubar.sh</a>.</p>
 <p>A strange problem occurred where if one made modifications to the C file it
 might end up failing to work even after changing it back. This was resolved by:</p>
-<pre class="&lt;!---diff--&gt;"><code>    --- i/1989/fubar/fubar.sh
+<pre><code>    --- i/1989/fubar/fubar.sh
     +++ w/1989/fubar/fubar.sh
     @@ -7,13 +7,12 @@ if [[ $# -ne 1 ]]; then
          exit 1
@@ -699,7 +700,7 @@ entry and the alt code) anyway, it works out well.</p>
 <h2 id="jar.2-index.html"><a name="1989_jar.2"></a><a href="1989/jar.2/jar.2.c">1989/jar.2</a> (<a href="1989/jar.2/index.html%5D">index.html</a>)</h2>
 <p><a href="#cody">Cody</a> fixed this to work with modern compilers. Modern compilers do not allow
 code like:</p>
-<pre class="&lt;!---c--&gt;"><code>    #define D define
+<pre><code>    #define D define
     #define a include
 
     #D foo bar
@@ -746,7 +747,7 @@ index.html for details.</p>
 <h2 id="robison-index.html"><a name="1989_robison"></a><a href="1989/robison/robison.c">1989/robison</a> (<a href="1989/robison/index.html%5D">index.html</a>)</h2>
 <p><a href="#yusuke">Yusuke Endoh</a> fixed this to compile under modern systems. To see the changes
 made, try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cd 1989/robison ; make diff_orig_prog</code></pre>
+<pre><code>    cd 1989/robison ; make diff_orig_prog</code></pre>
 <p>(It adds the C token pasting operator <code>##</code> instead of <code>/**/</code>.)</p>
 <p>Cody also added the <a href="1989/robison/try.sh">try.sh</a> script.</p>
 <h2 id="tromp-index.html"><a name="1989_tromp"></a><a href="1989/tromp/tromp.c">1989/tromp</a> (<a href="1989/tromp/index.html%5D">index.html</a>)</h2>
@@ -855,7 +856,7 @@ operator itself.</p>
 <h2 id="dg-index.html"><a name="1990_dg"></a><a href="1990/dg/dg.c">1990/dg</a> (<a href="1990/dg/index.html%5D">index.html</a>)</h2>
 <p><a href="#cody">Cody</a> fixed this for modern systems. There were two problems to be resolved.</p>
 <p>One can no longer do:</p>
-<pre class="&lt;!---c--&gt;"><code>    #define d define
+<pre><code>    #define d define
 
     #d b12(x) 12 x
 
@@ -911,7 +912,7 @@ again (since it did not work anyway a segfault prevention was added here). He
 also fixed some array addressing (some of which might not be strictly necessary
 but as he was testing the <code>fibonacci.c</code> bug he ended up changing it anyway).</p>
 <p>BTW: why can’t the fix:</p>
-<pre class="&lt;!---c--&gt;"><code>    if (a[1]==NULL||a[2]==NULL||a[3]==NULL||a[4]==NULL||a[5]==NULL) return 1;</code></pre>
+<pre><code>    if (a[1]==NULL||a[2]==NULL||a[3]==NULL||a[4]==NULL||a[5]==NULL) return 1;</code></pre>
 <p>be changed to just test the value of <code>A</code> when <code>a</code> is argv and <code>A</code> is argc?</p>
 <p>Cody also changed the code to use <code>fgets(3)</code>.</p>
 <p>Since this program is so incredible the extra fixes were deemed worth having and
@@ -1000,21 +1001,21 @@ making the generated code return a value from <code>main()</code> rather than ju
 changed from <code>char*s</code> to <code>char s[]</code>):</p>
 <pre><code>    !.Xop.fssps!.Xop.sfuvso.uzqf!.Xop.jnqmjdju.gvodujpo.efdmbsbujpo</code></pre>
 <p>and then the call to <code>system()</code> had to be changed to:</p>
-<pre class="&lt;!---c--&gt;"><code>    system(q-69);</code></pre>
+<pre><code>    system(q-69);</code></pre>
 <p>An important point is that the placement of this string in the <code>s</code> array does
 matter. This is because of the code:</p>
-<pre class="&lt;!---c--&gt;"><code>    *o=fopen(q-3,&quot;w&quot;);</code></pre>
+<pre><code>    *o=fopen(q-3,&quot;w&quot;);</code></pre>
 <p>which means the file name that translates to <code>a.c</code> has to be at the end of the
 string. Thus the end of the string actually looks like:</p>
 <pre><code>    !.Xop.fssps!.Xop.sfuvso.uzqf!.Xop.jnqmjdju.gvodujpo.efdmbsbujpo!b/d</code></pre>
 <p>But then there is the matter of getting the C to use <code>fgets(3)</code>. As can be seen
 above it’s not as simple as changing <code>gets(3)</code> to <code>fgets(3)</code>. This was more magic
 characters that had to be updated and some added. The C code:</p>
-<pre class="&lt;!---c--&gt;"><code>    atoi(gets(b))</code></pre>
+<pre><code>    atoi(gets(b))</code></pre>
 <p>is in the string:</p>
 <pre><code>    bupj)hfut)c**</code></pre>
 <p>which was changed to be (in C):</p>
-<pre class="&lt;!---c--&gt;"><code>    atoi(fgets(b,99,stdin))</code></pre>
+<pre><code>    atoi(fgets(b,99,stdin))</code></pre>
 <p>which in the program is:</p>
 <pre><code>    bupj)ghfut)c-::-tuejo**</code></pre>
 <p>That’s fine and well but since the code does not include <code>stdio.h</code> there
@@ -1031,7 +1032,7 @@ the <code>system(q-86)</code> had to be changed to <code>system(q-104)</code>.</
 <p>But then to prevent the need for disabling a warning and to be more correct
 code, the generated code was changed to <code>return 1;</code> rather than just <code>return;</code>.
 Thus in full the string became:</p>
-<pre class="&lt;!---c--&gt;"><code>    char s[]=&quot;Qjou!s\\311^-g\\311^-n\\311^-c\\::^-q-ma%mO1JBHm%BQ-aP1J[O1HB%[Q&lt;n\
+<pre><code>    char s[]=&quot;Qjou!s\\311^-g\\311^-n\\311^-c\\::^-q-ma%mO1JBHm%BQ-aP1J[O1HB%[Q&lt;n\
     bjo)*|gps)&lt;&lt;*txjudi)m*|aQdbtf!::::;sfuvso!2&lt;aQefgbvmu;aQ&lt;m,,a%CQ&lt;csfbla%bQ&lt;a\
     N2!Q\ndbtf!aP2Q;m&gt;aP2Q&lt;a%!D12J!JGJHJOJQJFJSJJJMHS%HD12D12N3!N4\nJUJT%UQm&gt;aP4\
     HC%TQs\\q,,^&gt;m,2&lt;m&gt;aP4HC%SD12N1\nJNQm&gt;s\\..q^aHC%NHb%GN1!D32P3%RN1UP1D12JPQU\
@@ -1111,15 +1112,15 @@ the change to check for a <code>NULL</code> file was added. Then it was noticed 
 problem is that <code>adgrep.c</code> was an incorrect reference that never existed and it
 was never fixed in any of the files, not the code or the documentation, and thus
 was entirely incorrect code. A fun fact is that one can do:</p>
-<pre class="&lt;!---c--&gt;"><code>    W= fopen(wc&gt;= 2 ? V[1] : __FILE__,&quot;rt&quot;);if(!W)exit(1);</code></pre>
+<pre><code>    W= fopen(wc&gt;= 2 ? V[1] : __FILE__,&quot;rt&quot;);if(!W)exit(1);</code></pre>
 <p>but one <em>CANNOT</em> do:</p>
-<pre class="&lt;!---c--&gt;"><code>    W= fopen(wc&gt;= 2 ? V[1] : __FILE__,&quot;rt&quot;);if(!W)exit(1);
+<pre><code>    W= fopen(wc&gt;= 2 ? V[1] : __FILE__,&quot;rt&quot;);if(!W)exit(1);
     if (W==NULL)exit(1);</code></pre>
 <p>because <code>adwc.c</code> will be empty! The difference is it is on a newline, the check.
 This is an example of how a simple change in code can break it and this is also
 true of another change as further below.</p>
 <p>Cody also restored a slightly more obscure line of code that had been changed:</p>
-<pre class="&lt;!---diff--&gt;"><code>    -   putc(&quot;}|uutsrq`_^bji`[Zkediml[PO]a_M__]ISOYIRGTNR&quot;[i]+i-9,stderr);
+<pre><code>    -   putc(&quot;}|uutsrq`_^bji`[Zkediml[PO]a_M__]ISOYIRGTNR&quot;[i]+i-9,stderr);
     +   putc(i[&quot;}|uutsrq`_^bji`[Zkediml[PO]a_M__]ISOYIRGTNR&quot;]+i-9,stderr);</code></pre>
 <p>though it’s questionable how much more (if at all) obscure that is :-)</p>
 <p>Cody also changed the location that it used <code>gets()</code> to be <code>fgets(3)</code>.
@@ -1140,7 +1141,7 @@ removal of the extra line (as in with a comma operator or a <code>&amp;&amp;</co
 might be expected from the above, caused compilation errors with another
 generated file (<code>adwc.c</code>)! Thus after the <code>gets(3)</code> call in the line that looks
 like:</p>
-<pre class="&lt;!---c--&gt;"><code>    while( gets(Y) ){ Y[strlen(Y)-1]=&#39;\0&#39;; if(A(Y)) puts(Y); }</code></pre>
+<pre><code>    while( gets(Y) ){ Y[strlen(Y)-1]=&#39;\0&#39;; if(A(Y)) puts(Y); }</code></pre>
 <p>one must keep the <code>Y[strlen(Y)-1]='\0';</code> part and keep it there.</p>
 <p>These fixes are complex changes due to the way the program and Makefile generate
 the additional tools.</p>
@@ -1312,7 +1313,7 @@ mentioned script on all the data files.</p>
 <p>Both <a href="#cody">Cody</a> and <a href="#yusuke">Yusuke</a> fixed this so that it will work with modern systems. Yusuke
 provided some fixes of the X code and Cody fixed the C pre-processor directives
 so that it would compile. It used to be that you could get away with code like:</p>
-<pre class="&lt;!---c--&gt;"><code>    G        int i,j
+<pre><code>    G        int i,j
     K        case</code></pre>
 <p>and expect <code>G;</code> to equate to <code>int i, j;</code> (though it’s now a long) and <code>K</code> to mean
 <code>case</code> but that’s no longer the case so the offending lines had <code>#define</code>
@@ -1715,7 +1716,7 @@ larger the resulting program becomes. It can be gigabytes in length if it
 doesn’t crash. At this point since the author stated it has no <code>while</code>,
 <code>do...while</code>, <code>for</code>, <code>if/else</code>, <code>switch</code>, <code>?:</code> Cody removed the if statement by
 doing:</p>
-<pre class="&lt;!---c--&gt;"><code>    ((V[1]&amp;&amp;((atoi(V[1])&gt;0&amp;&amp;atoi(V[1])&lt;27))||(exit(1),1)));</code></pre>
+<pre><code>    ((V[1]&amp;&amp;((atoi(V[1])&gt;0&amp;&amp;atoi(V[1])&lt;27))||(exit(1),1)));</code></pre>
 <p>Cody also added the <a href="1998/schnitzi/try.sh">try.sh</a> script to help users try the
 commands that we recommended as well as some added by him.</p>
 <h2 id="schweikh1-index.html-1"><a name="1998_schweikh1"></a><a href="1998/schweikh1/schweikh1.c">1998/schweikh1</a> (<a href="1998/schweikh1/index.html%5D">index.html</a>)</h2>
@@ -1739,7 +1740,7 @@ was changed back to the original.)</p>
 not exist, it would dereference a NULL pointer and very likely crash or halt and
 catch fire :-), preventing the entry from working. Notice how <code>H</code> is a funny
 macro defined as:</p>
-<pre class="&lt;!---c--&gt;"><code>    %:define H(x) &lt;st%:%:x##.h&gt;</code></pre>
+<pre><code>    %:define H(x) &lt;st%:%:x##.h&gt;</code></pre>
 <p>and yet the <code>FILE *</code> can be called <code>H</code>! This might or might not make sense to
 you but if it doesn’t can you figure out why?</p>
 <p>Another fix is that previously the program would <code>return 1</code> if a file failed to
@@ -1935,9 +1936,9 @@ was supposed to do; instead it reported text file busy error.</p>
 <p>Notice that the location of <code>munmap()</code> and <code>close()</code> followed by <code>execv()</code> <em>does
 matter</em>!</p>
 <p>To get this to compile with clang, <code>main()</code> had to change from:</p>
-<pre class="&lt;!---c--&gt;"><code>    main (char *ck, char **k)</code></pre>
+<pre><code>    main (char *ck, char **k)</code></pre>
 <p>to:</p>
-<pre class="&lt;!---c--&gt;"><code>    main (int cka, char **k) { char *ck = (char *)cka; /* ... */ }</code></pre>
+<pre><code>    main (int cka, char **k) { char *ck = (char *)cka; /* ... */ }</code></pre>
 <p>The following change was also made to be more portable, in case the constants
 <code>PROT_READ</code> and/or <code>PROT_WRITE</code> are not standardised or some platform does not
 follow it:</p>
@@ -1946,16 +1947,16 @@ follow it:</p>
 macOS and Linux).</p>
 <p>NOTE: there might be educational value to see the progress of this fix; if you
 wish to see, try the following commands from the <code>2001/anonymous</code> directory:</p>
-<pre class="&lt;!---sh--&gt;"><code>    git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..93aa8d79f208dcccc3c5a2370a727b5cf64e9c53 anonymous.c
+<pre><code>    git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..93aa8d79f208dcccc3c5a2370a727b5cf64e9c53 anonymous.c
     git diff 93aa8d79f208dcccc3c5a2370a727b5cf64e9c53..c48629017117379a52b1a512ef8f2593ca9569c8 anonymous.c
     git diff c48629017117379a52b1a512ef8f2593ca9569c8..efdee208a2bc650256637b9357ddfd0de82d2f41 anonymous.c
     git diff efdee208a2bc650256637b9357ddfd0de82d2f41..e9a3f77ea3b209e63ac3f9c06bb84ad86e5ea706 anonymous.c
     git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..2159caec4677e0f25ad704a74e04c8196fd6c343 anonymous.c
     git diff 2159caec4677e0f25ad704a74e04c8196fd6c343..4bc03de321612869aebf855850c6500df95cb6ef anonymous.c</code></pre>
 <p>Finally to see from start to finish:</p>
-<pre class="&lt;!---sh--&gt;"><code>    git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..4bc03de321612869aebf855850c6500df95cb6ef anonymous.c</code></pre>
+<pre><code>    git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..4bc03de321612869aebf855850c6500df95cb6ef anonymous.c</code></pre>
 <p>or to not use <code>git</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make diff_orig_prog</code></pre>
+<pre><code>    make diff_orig_prog</code></pre>
 <p>Cody also added a <a href="anonymous.bed.c">program</a> like <a href="anonymous.ten.c">anonymous.ten.c</a>
 <a href="https://en.wikipedia.org/wiki/Ten_Green_Bottles">Ten Green Bottles</a> but which
 sings <a href="https://allnurseryrhymes.com/ten-in-the-bed/">Ten in the Bed</a> instead.</p>
@@ -2008,7 +2009,7 @@ valid, BTW.</p>
 <p><a href="#cody">Cody</a> added a value to <code>return</code> in <code>main()</code> to make it more portable.</p>
 <p>Cody fixed this to compile with clang in Linux. The problem was C99 does not
 support implicit int:</p>
-<pre class="&lt;!---c--&gt;"><code>    coupard.c:31:10: error: parameter &#39;h&#39; was not declared, defaults to &#39;int&#39;; ISO C99 and later do not support implicit int [-Wimplicit-int]
+<pre><code>    coupard.c:31:10: error: parameter &#39;h&#39; was not declared, defaults to &#39;int&#39;; ISO C99 and later do not support implicit int [-Wimplicit-int]
     void e(n,h){
              ^
     coupard.c:31:8: error: parameter &#39;n&#39; was not declared, defaults to &#39;int&#39;; ISO C99 and later do not support implicit int [-Wimplicit-int]
@@ -2163,7 +2164,7 @@ Wayback Machine.</p>
 <p><a href="#cody">Cody</a> fixed this to compile with gcc (it worked with clang). The problem was the
 cpp being unable to parse the generated code (see the index.html for details) and
 this ended up with a number of errors like:</p>
-<pre class="&lt;!---c--&gt;"><code>    jdalbec.c:64:5: error: stray &#39;##&#39; in program
+<pre><code>    jdalbec.c:64:5: error: stray &#39;##&#39; in program
        64 | B N##B (I) ; \
           |     ^~
 
@@ -2216,7 +2217,7 @@ to the repo for the script instead.</p>
 <h2 id="vik2-index.html"><a name="2004_vik2"></a><a href="2004/vik2/vik2.c">2004/vik2</a> (<a href="2004/vik2/index.html">index.html</a>)</h2>
 <p><a href="#cody">Cody</a> fixed this to compile in Linux. Although it compiled cleanly in macOS (and
 BSD?) the code failed to compile at all in Linux due to:</p>
-<pre class="&lt;!---c--&gt;"><code>    cc -E vik2_1.c &gt; vik2_2.c
+<pre><code>    cc -E vik2_1.c &gt; vik2_2.c
     In file included from vik2.c:945,
                      from vik2.c:959,
                      from vik2.c:972,
@@ -2301,7 +2302,7 @@ and 64-bit. The solution has to do with the size difference between <code>int</c
 <code>long</code> so that the <code>long*E</code> is now <code>int*E</code>. This solves a specific problem for
 Linux (32-bit, 64-bit) and macOS (arm64).</p>
 <p>To get the self-test feature to work it was required to remove from the code:</p>
-<pre class="&lt;!---c--&gt;"><code>    O-b-f-u -s-c-a-t-e;</code></pre>
+<pre><code>    O-b-f-u -s-c-a-t-e;</code></pre>
 <p>as it caused a compilation error in some of the generated code but served no
 purpose, didn’t affect the output of the puzzle and since the ‘string’ is
 already in the code there is no problem omitting it.</p>
@@ -2312,14 +2313,14 @@ also not have been necessary if using different flags to <code>cc</code> but thi
 portable and caused other problems. This was a complicated fix as it’s in the
 comments but in a funny way; the final result to get the test feature to work
 is:</p>
-<pre class="&lt;!---c--&gt;"><code>    ;; /*echo/Line/%d;sed/-n/-e/ %d,%dp/%s/|sed*/
+<pre><code>    ;; /*echo/Line/%d;sed/-n/-e/ %d,%dp/%s/|sed*/
     /*-e/&#39;s,intZ,int/ Z,g&#39;&gt;c.c;make/c;/ rm/-f/c*/
     ;;</code></pre>
 <p>changed from:</p>
-<pre class="&lt;!---c--&gt;"><code>    ;; /*echo/Line/%d;sed/-n/-e/ %d,%dp/%s&gt;*/
+<pre><code>    ;; /*echo/Line/%d;sed/-n/-e/ %d,%dp/%s&gt;*/
     /*c.c;cc/c.c /-c*/;;</code></pre>
 <p>or as a diff:</p>
-<pre class="&lt;!---diff--&gt;"><code>    -(t(m),(0));; /*echo/Line/%d;sed/-n/-e/ %d,%dp/%s&gt;*/
+<pre><code>    -(t(m),(0));; /*echo/Line/%d;sed/-n/-e/ %d,%dp/%s&gt;*/
     -/*c.c;cc/c.c /-c*/;;char*A=0,*_,*R,*Q, D[9999],*r,l
     -[9999],T=42, M,V=32;long*E,k[9999],B[1 &lt;&lt;+21],*N=B+
     +(t(m),(0));; /*echo/Line/%d;sed/-n/-e/ %d,%dp/%s/|sed*/
@@ -2342,7 +2343,7 @@ not do it implicitly (like macOS does).</p>
 <h2 id="mikeash-index.html"><a name="2005_mikeash"></a><a href="2005/mikeash/mikeash.c">2005/mikeash</a> (<a href="2005/mikeash/index.html">index.html</a>)</h2>
 <p><a href="#cody">Cody</a> fixed this to work in Linux. The problem was an unknown escape sequence,
 <code>\N</code>, which caused a funny compiler error:</p>
-<pre class="&lt;!---c--&gt;"><code>    };n b[2048];int i
+<pre><code>    };n b[2048];int i
     mikeash.c: In function &#39;R&#39;:
     mikeash.c:7:1: error: &#39;\N&#39; not followed by &#39;{&#39;
         7 | ;C!=&#39;\n&#39;;A()
@@ -2377,7 +2378,7 @@ test it on.</p>
 <p>Cody also added the <a href="2005/persano/try.sh">try.sh</a> script.</p>
 <h2 id="sykes-index.html"><a name="2005_sykes"></a><a href="2005/sykes/sykes.c">2005/sykes</a> (<a href="2005/sykes/index.html%5D">index.html</a>)</h2>
 <p><a href="#cody">Cody</a> added the saved (with the <code>SAVE</code> command) BASIC program <code>PET</code> which was:</p>
-<pre class="&lt;!---basic--&gt;"><code>    10 PRINT &quot;2005&#39;S IOCCC BEST EMULATOR&quot;
+<pre><code>    10 PRINT &quot;2005&#39;S IOCCC BEST EMULATOR&quot;
     20 PRINT &quot;BY STEPHEN SYKES!&quot;</code></pre>
 <p>followed by the commands:</p>
 <pre><code>    SAVE &quot;PET&quot;
@@ -2806,11 +2807,11 @@ might violate rule 2: the program is really just a decompressor to generate the
 real source of the program. So the source of the entry has to be compiled and
 then run, and the output has to be compiled to be <code>hou</code>. This allows the real
 program to be used. Thus the Makefile rule looks like:</p>
-<pre class="&lt;!---makefile--&gt;"><code>    ${PROG}: ${PROG}.c
+<pre><code>    ${PROG}: ${PROG}.c
             ${CC} ${CFLAGS} $&lt; -o $@ ${LDFLAGS}
         ./${PROG} | ${CC} ${CFLAGS} -xc - -o $@ ${LDFLAGS}</code></pre>
 <p>which then compiles like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -std=gnu11 -Wall -Wextra -pedantic -Wno-sign-compare -Wno-strict-prototypes    -O3 hou.c -o hou -lm
+<pre><code>    cc -std=gnu11 -Wall -Wextra -pedantic -Wno-sign-compare -Wno-strict-prototypes    -O3 hou.c -o hou -lm
     ./hou | cc -std=gnu11 -Wall -Wextra -pedantic -Wno-sign-compare -Wno-strict-prototypes    -O3 -xc - -o hou -lm</code></pre>
 <p>The <code>LDFLAGS</code> were updated to have <code>-lm</code> as the author suggested it uses the
 <code>math.h</code> library which not all systems link in by default (Linux for instance
@@ -2932,12 +2933,12 @@ output.</p>
 <p><a href="#cody">Cody</a> fixed the code so one can make use of the echo feature, where the
 first character of the filename starts with <code>e</code>. The only way it would work
 before that is if one did something like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ln -sf prog eprog
+<pre><code>    ln -sf prog eprog
     PATH=$PATH:. ; eprog &#39;...&#39;</code></pre>
 <p>since otherwise the first character would not be <code>e</code> but rather a dot
 (<code>./eprog</code>). This was done by adding to the Makefile <code>-include libgen.h</code> and
 adding to <code>main()</code> after the variable declaration (<code>V*A;</code>) the code:</p>
-<pre class="&lt;!---c--&gt;"><code>    *K=basename(*K);</code></pre>
+<pre><code>    *K=basename(*K);</code></pre>
 <p>This was done for both the <a href="2015/burton/prog.c">prog.c</a> and
 <a href="2015/burton/prog.alt.c">prog.alt.c</a>. The Makefile was also updated to build
 <code>eprog</code> and <code>eprog.alt</code> to make use of the feature more easily. Each is a new
@@ -3248,7 +3249,7 @@ longer known.</p>
 <h2 id="endoh3-index.html-6"><a name="2020_endoh3"></a><a href="2020/endoh3/prog.c">2020/endoh3</a> (<a href="2020/endoh3/index.html">index.html</a>)</h2>
 <p><a href="#cody">Cody</a> fixed the script <a href="2020/endoh3/run_clock.sh">run_clock.sh</a> which gave a
 funny error when running it:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ ./run_clock.sh
+<pre><code>    $ ./run_clock.sh
     -bash: ./run_clock.sh: cannot execute: required file not found</code></pre>
 <p>If run from within vim a different error message occurred:</p>
 <pre><code>    /bin/bash: ./run_clock.sh: /usr/bin/end: bad interpreter: No such file or directory</code></pre>

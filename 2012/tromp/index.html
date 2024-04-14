@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all            # On a 64-bit machine (default)
+<pre><code>    make all            # On a 64-bit machine (default)
 
     make tromp32                # On a 32-bit machine</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
@@ -149,13 +150,13 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2012_tromp">2012 tromp bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./tromp [-b]</code></pre>
+<pre><code>    ./tromp [-b]</code></pre>
 <p>Use <code>./tromp32</code> as you would <code>./tromp</code> if on a 32-bit machine.</p>
 <h2 id="to-use-1">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    cat ascii-prog.blc data | ./tromp -b
+<pre><code>    cat ascii-prog.blc data | ./tromp -b
     cat binary-prog.Blc data | ./tromp</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The judges dare to say that the data files this entry is processing
 are more obfuscated than the entry itself.</p>
@@ -206,23 +207,23 @@ notation</a>) which is the
 identity function. When its encoding <code>0010</code> is fed into the universal machine,
 it will simply copy the input to the output (well, not that simply, since each
 byte is smashed to bits and rebuilt from scratch). Voila: a half byte cat:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ echo &quot; Hello, world&quot; | ./tromp
+<pre><code>    $ echo &quot; Hello, world&quot; | ./tromp
     Hello, world</code></pre>
 <p>Since the least significant 4 bits of the first byte are just arbitrary padding
 that is ignored by the program, any character from ASCII 32 (space) through 47
 (<code>/</code>) will do, e.g.:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ echo &quot;*Hello, world&quot; | ./tromp
+<pre><code>    $ echo &quot;*Hello, world&quot; | ./tromp
     Hello, world</code></pre>
 <h3 id="bad-programs">Bad programs</h3>
 <p>If the input doesn’t start with a valid program, that is,
 if the interpreter reaches end-of-file during program parsing,
 it will crash in some way. E.g. the following might dump core:</p>
-<pre class="&lt;!---sh--&gt;"><code>    echo -n &quot;U&quot; | ./tromp</code></pre>
+<pre><code>    echo -n &quot;U&quot; | ./tromp</code></pre>
 <p>Furthermore, the interpreter requires the initial encoded lambda term to be
 closed, that is, variable <code>n</code> can only appear within at least <code>n</code> enclosing
 lambdas. For instance, here the term <code>\ 5</code> is not closed, causing the
 interpreter to crash when looking into a null-pointer environment:</p>
-<pre class="&lt;!---sh--&gt;"><code>    echo &quot;&gt;Hello, world&quot; | ./tromp</code></pre>
+<pre><code>    echo &quot;&gt;Hello, world&quot; | ./tromp</code></pre>
 <p>will likely dump core.</p>
 <p>Since these properties can be checked when creating
 <a href="https://tromp.github.io/cl/Binary_lambda_calculus.html">BLC</a> programs,
@@ -265,7 +266,7 @@ as a self interpreter in BLC it is downright minuscule at 232 bits (29 bytes):</
      0b7fb     00cf6
     7bb03       91a1a
 </code></pre>
-<pre class="&lt;!---sh--&gt;"><code>    $ (cat uni8.Blc; echo &quot; Ni hao&quot;) | ./tromp
+<pre><code>    $ (cat uni8.Blc; echo &quot; Ni hao&quot;) | ./tromp
     Ni hao</code></pre>
 <h3 id="a-prime-number-sieve">A prime number sieve</h3>
 <p>Even shorter than the self-interpreter is this prime number sieve in 167 bits
@@ -281,7 +282,7 @@ as a self interpreter in BLC it is downright minuscule at 232 bits (29 bytes):</
     0000110110
 </code></pre>
 <p>The <code>n</code>th bit in the output indicates whether n is prime:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ cat primes.blc | ./tromp -b | head -c 70
+<pre><code>    $ cat primes.blc | ./tromp -b | head -c 70
     0011010100010100010100010000010100000100010100010000010000010100000100</code></pre>
 <p>For those who prefer to digest their primes in decimal, there is <code>oddindices.Blc</code>,
 which will print the indices of all odd characters (with
@@ -308,7 +309,7 @@ separated by a given character:</p>
     60   8191a00167fb   cbcfdf65f7c0  a20</code></pre>
 <p>It expects <code>n</code> arbitrary characters of input, and draws a space filling <a href="https://en.wikipedia.org/wiki/Hilbert_curve">Hilbert
 curve</a> of order <code>n</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $  (cat hilbert.Blc; echo -n &quot;1&quot;) | ./tromp
+<pre><code>    $  (cat hilbert.Blc; echo -n &quot;1&quot;) | ./tromp
      _
     | |
 
@@ -370,7 +371,7 @@ followed by a <code>]</code>, followed by the input for the Brainfuck program.</
 <h3 id="a-blc-assembler">A BLC assembler</h3>
 <p>Writing BLC programs can be made slightly less painful with this parser that
 translates single-letter-variable lambda calculus into BLC:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ echo &quot;\f\x f (f (f x))&quot; &gt; three
+<pre><code>    $ echo &quot;\f\x f (f (f x))&quot; &gt; three
     $ cat parse.Blc three | ./tromp
     000001110011100111010</code></pre>
 <h3 id="converting-between-bits-and-bytes">Converting between bits and bytes</h3>
@@ -378,21 +379,21 @@ translates single-letter-variable lambda calculus into BLC:</p>
 BLC and BLC8. If you assemble a byte oriented program, you’ll need to compact it
 into BLC8:</p>
 <p>So we could assemble an input reversing program as</p>
-<pre class="&lt;!---sh--&gt;"><code>    echo &quot;\a a ((\b b b) (\b \c \d \e d (b b) (\f f c e))) (\b \c c)&quot; &gt; reverse
+<pre><code>    echo &quot;\a a ((\b b b) (\b \c \d \e d (b b) (\f f c e))) (\b \c c)&quot; &gt; reverse
     cat parse.Blc reverse | ./tromp &gt; reverse.blc</code></pre>
 <p>and change it to BLC8 with</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ cat deflate.Blc reverse.blc | ./tromp &gt; rev.Blc
+<pre><code>    $ cat deflate.Blc reverse.blc | ./tromp &gt; rev.Blc
     $ wc rev.Blc
         0 1 9 rev.Blc</code></pre>
 <p>and then try it out with:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ cat rev.Blc - | ./tromp
+<pre><code>    $ cat rev.Blc - | ./tromp
     Hello, world!
     ^D
     !dlrow ,olleH</code></pre>
 <h3 id="symbolic-lambda-calculus-reduction">Symbolic Lambda Calculus reduction</h3>
 <p>BLC8 program <code>symbolic.Blc</code> shows individual reduction steps on symbolic lambda terms.
 Here it is used to show the calculation of 2^3 in Church numerals:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ echo &quot;(\f\x f (f (f x))) (\f\x f (f x))&quot; &gt; threetwo
+<pre><code>    $ echo &quot;(\f\x f (f (f x))) (\f\x f (f x))&quot; &gt; threetwo
     $ cat parse.Blc threetwo | ./tromp &gt; threetwo.blc
     $ cat symbolic.Blc threetwo.blc | ./tromp
     (\a \b a (a (a b))) (\a \b a (a b))
@@ -415,11 +416,11 @@ numeral</a> 8.</p>
 <p>Taking only the first line of output gives us a sort of BLC disassembler, an
 exact inverse of the above assembler. The prime number sieve disassembles as
 follows:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ cat symbolic.Blc primes.blc | ./tromp | head -1
+<pre><code>    $ cat symbolic.Blc primes.blc | ./tromp | head -1
     \a (\b b (b ((\c c c) (\c \d \e e (\f \g g) ((\f c c f ((\g g g) (\g f (g g)))) (\f \g \h \i i g (h (d f))))) (\c \d \e b (e c))))) (\b \c c (\d \e d) b)</code></pre>
 <p>Hardly any less obfuscated…</p>
 <p>The last line of</p>
-<pre class="&lt;!---sh--&gt;"><code>    cat symbolic.Blc primes.blc | ./tromp | head -16</code></pre>
+<pre><code>    cat symbolic.Blc primes.blc | ./tromp | head -16</code></pre>
 <p>starts out as</p>
 <pre><code>    \a \b b (\c \d c) (\c c (\d \e d) (\d d (\e \f f) (\e e (\f \g g) ((\f (\g \h \i</code></pre>
 <p>The <code>\a</code> is for ignoring the rest of the input (to which the universal machine
@@ -444,7 +445,7 @@ Syntax</a> which relies on the highly optimized
 Haskell runtime system for evaluation. Of course individual BLC programs running
 under the interpreter perform much worse than that same program written in Haskell.</p>
 <p>Our interpreter copes well with extra levels of interpretation:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ time cat primes.blc | ./tromp -b | head -c 210 &gt; /dev/null
+<pre><code>    $ time cat primes.blc | ./tromp -b | head -c 210 &gt; /dev/null
     real    0m0.043s
     $ time cat uni.blc primes.blc | ./tromp -b | head -c 210 &gt; /dev/null
     real    0m0.191s
@@ -527,10 +528,10 @@ Higher Order Symbol. Comput. 20, 3 (September 2007), 199-207.
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/tromp/primes.pl">primes.pl</a> - post process tromp output to print primes</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/tromp/try.sh">try.sh</a> - how to run</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/tromp/hw.bf">hw.bf</a> - bf source code</li>
-<li><a href="2012_tromp.tar.bz2">2012_tromp.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2012_tromp.tar.bz2">2012_tromp.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/tromp/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="bf.Blc">bf.Blc</a> - sample input</li>

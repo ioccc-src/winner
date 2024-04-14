@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,24 +142,24 @@ Location: <a href="../../location.html#GB">GB</a> - <em>United Kingdom of Great 
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <p>There is an <a href="#alternate-code">alternate version</a> that does something different
 that can be used if your compiler is incapable of compiling <code>X=g()...</code> in
 <code>main()</code>. It can be used for another purpose too.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./pjr</code></pre>
+<pre><code>    ./pjr</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>Note that some compilers will be unable to compile the expression <code>X=g()...</code> in
 <code>main()</code> due to lack of temporary stack space. One might want to try replacing
 <code>main()</code> with:</p>
-<pre class="&lt;!---c--&gt;"><code>    main(){X=s().v().o().o().l().S().d().l().i().o().w().N();}</code></pre>
+<pre><code>    main(){X=s().v().o().o().l().S().d().l().i().o().w().N();}</code></pre>
 <p>if this is a problem, which is what this alternate code is.</p>
 <p>NOTE: it prints something else and it is what the author suggested one try as
 well.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./pjr.alt</code></pre>
+<pre><code>    ./pjr.alt</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This program prints out a string. Can you figure out how
 it is done?</p>
@@ -175,7 +176,7 @@ alphabetical character from a to z is printed out as its
 opposite:</p>
 <pre><code>    a-&gt;z b-&gt;y c-&gt;x etc</code></pre>
 <p>To encode a new string input the string as it is meant to come out:</p>
-<pre class="&lt;!---c--&gt;"><code>    X=s().v().o().o().l().S().d().l().i().o().w().N();</code></pre>
+<pre><code>    X=s().v().o().o().l().S().d().l().i().o().w().N();</code></pre>
 <p>Note: <code>S()</code> represents a space and <code>N()</code> a newline. This will now
 produce…</p>
 <pre><code>    hello world</code></pre>
@@ -209,10 +210,10 @@ to the reader to find out what it is.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/pjr/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/pjr/pjr.alt.c">pjr.alt.c</a> - alternative source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/pjr/pjr.orig.c">pjr.orig.c</a> - original source</li>
-<li><a href="1990_pjr.tar.bz2">1990_pjr.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1990_pjr.tar.bz2">1990_pjr.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/pjr/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/pjr/.entry.json">.entry.json</a> - description of entry in JSON</li>

@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,23 +142,23 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <p>There is alternate code which allows one to change the size of the maze. See
 <a href="#alternate-code">Alternate code</a> below.</p>
 <h3 id="to-run">To run:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./shapiro</code></pre>
+<pre><code>    ./shapiro</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>The code has a define <code>C</code> set to 39 but this can be modified to change the size
 of the maze. The alt code allows one to easily do this.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-try">Alternate try:</h3>
 <p>If you wish to change the value you can do it like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber SIZE=5 alt</code></pre>
+<pre><code>    make clobber SIZE=5 alt</code></pre>
 <p>Note that if it is not a number then obviously there will be a compilation
 error. If it’s &lt;= 0 || &gt;= 5000 then it is set to 39, the default.</p>
 <p>You might also wish to try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh</code></pre>
+<pre><code>    ./try.alt.sh</code></pre>
 <p>This script will compile the program five times with a random value and then
 prompt you in an infinite loop for values to try, exiting only if non-digits are
 in the input.</p>
@@ -199,10 +200,10 @@ arguments and notice the output.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/shapiro/shapiro.alt.c">shapiro.alt.c</a> - alternative source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/shapiro/shapiro.orig.c">shapiro.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/shapiro/try.alt.sh">try.alt.sh</a> - how to run alternative code</li>
-<li><a href="1985_shapiro.tar.bz2">1985_shapiro.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1985_shapiro.tar.bz2">1985_shapiro.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/shapiro/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/shapiro/.entry.json">.entry.json</a> - description of entry in JSON</li>

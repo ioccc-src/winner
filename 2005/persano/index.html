@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,13 +142,13 @@ Location: <a href="../../location.html#BR">BR</a> - <em>Federative Republic of B
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>There is an alternate version of this entry which should work for Windows by
 setting binary mode on <code>stdout</code>. See <a href="#alternate-code">alternate code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./persano p q [num frames]</code></pre>
+<pre><code>    ./persano p q [num frames]</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>Open the <a href="https://en.wikipedia.org/wiki/GIF">GIF</a> files with a viewer capable of
 displaying animated GIFs and watch closely at the bottom of the picture (you may
 need to use <a href="https://www.lcdf.org/gifsicle/">gifsicle</a> - a great tool to
@@ -162,7 +163,7 @@ let it work with Windows.</p>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>persano.alt</code> as you would <code>persano</code> above.</p>
 <h3 id="alternate-try">Alternate try:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./persano.alt 3 16 &gt; knot3-16.gif</code></pre>
+<pre><code>    ./persano.alt 3 16 &gt; knot3-16.gif</code></pre>
 <p>Follow the same instructions, using different tools if necessary, as the above
 try section.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -179,7 +180,7 @@ linker option).</p>
 <p><strong>knot</strong> writes animated GIF images of rendered <a href="https://en.wikipedia.org/wiki/Torus_knot">torus
 knots</a> to standard output.</p>
 <h3 id="synopsis">SYNOPSIS</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./persano p q [num frames]</code></pre>
+<pre><code>    ./persano p q [num frames]</code></pre>
 <h3 id="description">DESCRIPTION</h3>
 <p>A <code>(p,q)</code>-<a href="https://en.wikipedia.org/wiki/Torus_knot">torus knot</a> is a closed,
 non-intersecting curve on the surface of a
@@ -190,10 +191,10 @@ resulting curve will <em>not</em> be a knot (that is, imagining the resulting cu
 a loop of rubber, there will be a way to bend, twist and stretch it, without
 cutting it <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, until it ends up looking just like a circle embedded in R3 <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>).</p>
 <p>Sample usage:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./persano 3 2 1 &gt; foo.gif</code></pre>
+<pre><code>    ./persano 3 2 1 &gt; foo.gif</code></pre>
 <p>writes a non-animated GIF (a single frame) stream of a rendered trefoil
 knot to the file <code>foo.gif</code>.</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./persano 5 2</code></pre>
+<pre><code>    ./persano 5 2</code></pre>
 <p>writes a GIF stream with a rendering of <a href="https://en.wikipedia.org/wiki/Solomon%27s_knot">Solomon’s Seal
 knot</a> to standard
 output; since the number of frames is not specified, an animation with
@@ -265,10 +266,10 @@ was not implemented in order to avoid the Unisys patent can no longer be used.<a
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/persano/persano.alt.c">persano.alt.c</a> - alternative source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/persano/persano.orig.c">persano.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/persano/try.sh">try.sh</a> - how to run</li>
-<li><a href="2005_persano.tar.bz2">2005_persano.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2005_persano.tar.bz2">2005_persano.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/persano/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/persano/.entry.json">.entry.json</a> - description of entry in JSON</li>

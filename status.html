@@ -83,6 +83,7 @@
     <div class="sidenav">
       <a href="./news.html">IOCCC News</a>
       <a href="./status.html">Contest status</a>
+      <a href="./next/index.html">Rules and Guidelines</a>
       <a href="./faq.html#submit">How to enter the IOCCC</a>
       <a href="./faq.html">FAQ</a>
     </div>
@@ -147,7 +148,7 @@
 <p>This is a <strong>mandatory</strong> comment for which we offer no comment other
 than this comment. :-)</p>
 <p>The JSON member value must be the following JSON quoted string:</p>
-<pre class="&lt;!---json--&gt;"><code>    &quot;mandatory comment: because comments were removed from the original JSON spec&quot;</code></pre>
+<pre><code>    &quot;mandatory comment: because comments were removed from the original JSON spec&quot;</code></pre>
 <h2 id="ioccc_status_version">IOCCC_status_version</h2>
 <p>This is the version of format of the <a href="status.json">status.json</a> file.</p>
 <p>The JSON member value of is a JSON quoted string the form “<em>version YYYY-MM-DD</em>”.</p>
@@ -197,7 +198,7 @@ mastodon feed</a> for information about future IOCCC openings.</p>
 <p>This shows the latest modification date for the <a href="news.html">IOCCC news</a> page.</p>
 <p>The JSON member value is a JSON quoted string obtained from the date field
 of the following <code>ls(1)</code> command:</p>
-<pre class="&lt;!---ls--&gt;"><code>    TZ=UTC ls -D &#39;%FT%T+00:00&#39; -ld news.html</code></pre>
+<pre><code>    TZ=UTC ls -D &#39;%FT%T+00:00&#39; -ld news.html</code></pre>
 <p><strong>NOTE</strong>: The date and time are given with respect to <strong>UTC</strong> timezone.</p>
 <p><strong>Sorry</strong>: It is possible that for some reason, the <a href="news.html">IOCCC news</a> page
 was modified without the content being changed. While we will try to minimize
@@ -206,7 +207,7 @@ the cases where this happen, we apologize in advance (Sorry tm Canada 🇨🇦) 
 <p>This shows the latest modification date <a href="status.json">status.json</a> file.</p>
 <p>The JSON member value is a JSON quoted string obtained from the date field
 of the following <code>ls(1)</code> command:</p>
-<pre class="&lt;!---ls--&gt;"><code>    TZ=UTC ls -D &#39;%FT%T+00:00&#39; -ld status.json</code></pre>
+<pre><code>    TZ=UTC ls -D &#39;%FT%T+00:00&#39; -ld status.json</code></pre>
 <p><strong>NOTE</strong>: The date and time are given with respect to <strong>UTC</strong> timezone.</p>
 <p><strong>Sorry</strong>: It is possible that for some reason, the <a href="status.json">status.json</a> file
 was modified without the content being changed. While we will try to minimize

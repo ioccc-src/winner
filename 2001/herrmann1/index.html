@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,19 +142,19 @@ Location: <a href="../../location.html#DE">DE</a> - <em>Federal Republic of Germ
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: missing files - please provide them
     STATUS: known bug - please help us fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2001_herrmann1">2001 herrmann1 bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./herrmann1.sh &#39;prg=file&#39;</code></pre>
+<pre><code>    ./herrmann1.sh &#39;prg=file&#39;</code></pre>
 <p>NOTE: this entry seems to rely on older versions of gcc for the compilation
 stage and as such if you wish to see that part like it was designed you will
 need an older compiler perhaps gcc 2.95.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>There are some clear hints in the source code as to the
 purpose of this program. Perhaps the only way to figure out what is
@@ -192,7 +193,7 @@ terminal!</p></li>
 <h4 id="for-the-impatient">For the impatient</h4>
 <p>The info files <code>herrmann1.turing</code> and <a href="herrmann1.gcd">herrmann1.gcd</a> are sample
 programs for the Turing machine. For example, type</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./herrmann1.sh &#39;prg=herrmann1.times2&#39;</code></pre>
+<pre><code>    ./herrmann1.sh &#39;prg=herrmann1.times2&#39;</code></pre>
 <p>and watch the animated Turing machine multiply 8 by two (in
 unary representation). Here’s a screen shot during compilation:</p>
 <pre><code>    /*
@@ -217,7 +218,7 @@ result.)</p>
 <p>In the previous example, the Turing machine started on the default
 tape of the program <code>times2.turing</code>. To provide your own tape, type
 (for example)</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./herrmann1 prg=times2.turing tape=&quot;O O O I I I O O O&quot;</code></pre>
+<pre><code>    ./herrmann1 prg=times2.turing tape=&quot;O O O I I I O O O&quot;</code></pre>
 <p>(The <code>O</code>s and <code>I</code>s are letters, not digits.) You might prefer to
 provide only a finite portion of the tape, like I did above. In
 this case, the remainder of the tape is filled with <code>O</code>s. ;-)</p>
@@ -234,7 +235,7 @@ better. Simply try some out.</p>
 number in unary representation. (That is, a row of I’s is
 expected, and one more I is appended to the row.) Let’s call it
 <code>plus1.turing</code>. Here’s what it could look like:</p>
-<pre class="&lt;!---c--&gt;"><code>    /* Search beginning of number. */
+<pre><code>    /* Search beginning of number. */
     #define start_O O, right, start
     /* Number found. Move one step to the left. */
     #define start_I I, left, st2
@@ -251,21 +252,21 @@ line defining <code>st2_I</code> has been left out.)
 - The order of the lines is irrelevant.
 - You may use C-style comments. (Would you have guessed it?)</p>
 <p>Now, the program can be used with</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./herrmann1.sh &#39;prg=plus1.turing&#39; &#39;tape=&quot;I I I&quot;&#39;</code></pre>
+<pre><code>    ./herrmann1.sh &#39;prg=plus1.turing&#39; &#39;tape=&quot;I I I&quot;&#39;</code></pre>
 <p>But what happens if no tape is provided? Up to now, the Turing
 machine would start on an empty tape (that is, a tape filled with
 <code>O</code>s). For many programs, this doesn’t make much sense (as is
 the case for <code>plus1.turing</code>). So you might want to provide a
 default tape by adding a line like</p>
-<pre class="&lt;!---c--&gt;"><code>    #define tape O O O O O I I I I</code></pre>
+<pre><code>    #define tape O O O O O I I I I</code></pre>
 <p>to your program.</p>
 <h3 id="debugging">Debugging</h3>
 <p>When writing long programs, the most common errors are to forget
 to define a state or to misspell one. Let’s assume you forgot the
 line</p>
-<pre class="&lt;!---c--&gt;"><code>    #define start_I I, left, st2</code></pre>
+<pre><code>    #define start_I I, left, st2</code></pre>
 <p>Remove it and type</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./herrmann1 &#39;prg=plus1.turing&#39;</code></pre>
+<pre><code>    ./herrmann1 &#39;prg=plus1.turing&#39;</code></pre>
 <p>The output will be</p>
 <p>Undefined state start.</p>
 <p>Tape:</p>
@@ -432,10 +433,10 @@ script.</p></li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/herrmann1/herrmann1.times2">herrmann1.times2</a> - turning program as c defines</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/herrmann1/plus1.turing">plus1.turing</a> - turning program as c defines</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/herrmann1/try.sh">try.sh</a> - how to run</li>
-<li><a href="2001_herrmann1.tar.bz2">2001_herrmann1.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2001_herrmann1.tar.bz2">2001_herrmann1.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/herrmann1/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/herrmann1/.entry.json">.entry.json</a> - description of entry in JSON</li>

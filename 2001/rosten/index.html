@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,21 +142,21 @@ Location: <a href="../../location.html#GB">GB</a> - <em>United Kingdom of Great 
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: missing files - please provide them</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2001_rosten">2001 rosten bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./rosten [number]</code></pre>
+<pre><code>    ./rosten [number]</code></pre>
 <p>WARNING: this will mess with your mouse and can make it hard to quit the
 program. Use at your own risk.</p>
 <p>NOTE: number is floating point.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./rosten 1.03
+<pre><code>    ./rosten 1.03
     ./rosten 1.00</code></pre>
 <p>For some abuse, try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./rosten 0.99</code></pre>
+<pre><code>    ./rosten 0.99</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Friction can be your friend if it does not rub you (or your mouse
 cursor) in the wrong way. :-)</p>
@@ -163,7 +164,7 @@ cursor) in the wrong way. :-)</p>
 <h3 id="name">NAME</h3>
 <p><code>rosten</code> - make the mouse act as if it has been greased</p>
 <h3 id="synopsis">SYNOPSIS</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./rosten [greasiness]</code></pre>
+<pre><code>    ./rosten [greasiness]</code></pre>
 <h3 id="description">DESCRIPTION</h3>
 <p>This program is designed primarily to make your X windows interface more
 obfuscated. Try doing something mouse driven (such as using a mouse
@@ -183,7 +184,7 @@ required is a large desk and some good grease.</p>
 portable, but compile with almost no warnings on most of the compilers
 tested. It’s a kind of shame that none of the compilers do anything
 like this:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ make greasymouse
+<pre><code>    $ make greasymouse
     cc greasymouse.c -o greasymouse -lX11
     greasymouse.c:30: This macro should have more text and spaces in it
     greasymouse.c:32: This is a really stupid way to perform this operation
@@ -213,7 +214,7 @@ would never do a thing like that: I just haven’t used them in
 the way it’s used to.</p>
 <p>The MIPS compiler suggests an <code>==</code> instead of an <code>=</code> in expressions
 such as:</p>
-<pre class="&lt;!---c--&gt;"><code>    &amp;&amp;(a=b)</code></pre>
+<pre><code>    &amp;&amp;(a=b)</code></pre>
 <p>but its suggestions would break my program. It also reckons
 that <code>r()</code> has no prototype.</p>
 <p>Giving the <code>-pedantic</code> option to the MIPS compiler causes it to generate
@@ -251,10 +252,10 @@ beginning of the line wrecks the layout but makes it compile.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/rosten/rosten.c">rosten.c</a> - entry source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/rosten/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/rosten/rosten.orig.c">rosten.orig.c</a> - original source</li>
-<li><a href="2001_rosten.tar.bz2">2001_rosten.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2001_rosten.tar.bz2">2001_rosten.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/rosten/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/rosten/.entry.json">.entry.json</a> - description of entry in JSON</li>

@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,22 +142,22 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2015_mills2">2015 mills2 bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog compressed_file.Z</code></pre>
+<pre><code>    ./prog compressed_file.Z</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Without ASCII art, the source code of this entry would have been exactly 256
 bytes. Compared to <a href="../../years.html#1990_jaw">1990/jaw</a>, it is very
 impressive, even taking into account the missing <code>atob</code> functionality. Now we wish
 for a <code>compress(1)</code>-like compressor using a similar idea.</p>
 <p>Why is the sad smiley on line 12 in that particular place?</p>
-<pre class="&lt;!---c--&gt;"><code>    c=0)                            :( O</code></pre>
+<pre><code>    c=0)                            :( O</code></pre>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="the-program">The Program</h3>
 <p>This program is an implementation of the unix <code>zcat(1)</code> command for printing
@@ -174,7 +175,7 @@ single function and a few <code>int</code>s.</p>
 on the command line. On the odd chance you don’t have <code>compress(1)</code> hanging about
 on your system, I’ve provided compressed copies of this year’s IOCCC rules
 and guidelines files. To print them, just do</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog ioccc_guidelines.txt.Z
+<pre><code>    ./prog ioccc_guidelines.txt.Z
     ./prog ioccc_rules.txt.Z</code></pre>
 <h3 id="the-details">The Details</h3>
 <p>The basic cleverness here comes from realizing that the compressed data is
@@ -260,10 +261,10 @@ you might want to compile this for.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/mills2/try.sh">try.sh</a> - how to run</li>
 <li><a href="ioccc_guidelines.txt.Z">ioccc_guidelines.txt.Z</a> - compressed IOCCC 2015 guidelines</li>
 <li><a href="ioccc_rules.txt.Z">ioccc_rules.txt.Z</a> - compressed IOCCC 2015 rules</li>
-<li><a href="2015_mills2.tar.bz2">2015_mills2.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2015_mills2.tar.bz2">2015_mills2.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/mills2/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/mills2/.entry.json">.entry.json</a> - description of entry in JSON</li>

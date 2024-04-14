@@ -83,6 +83,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -192,12 +193,12 @@ defaults if you don’t want to change the colour.</p>
 initialise a pair (make it 5 so as to not interfere with the script
 customisability) and then you use the bkgd() function with the colour pair.
 Something like this:</p>
-<pre class="&lt;!---c--&gt;"><code>    init_pair(5, COLOR_BLACK, COLOR_WHITE);
+<pre><code>    init_pair(5, COLOR_BLACK, COLOR_WHITE);
     bkgd(COLOR_PAIR(5));</code></pre>
 <p>I played with this after winning and I came across some problems with colours
 but that changes the background of the program anyway.</p>
 <p>The standard colour identifiers are:</p>
-<pre class="&lt;!---c--&gt;"><code>    COLOR_BLACK
+<pre><code>    COLOR_BLACK
     COLOR_RED
     COLOR_GREEN
     COLOR_YELLOW
@@ -220,16 +221,16 @@ source code (<strong>include the single quotes!</strong>) respectively:</p>
 <p>Let’s say you don’t want to use arrow keys or you don’t have arrow keys. Instead
 you might want the keys <code>l</code>, <code>r</code>, <code>u</code> and <code>d</code> for the directions. Find the case
 statements:</p>
-<pre class="&lt;!---c--&gt;"><code>    case KEY_LEFT:
+<pre><code>    case KEY_LEFT:
     case KEY_RIGHT:
     case KEY_UP:
     case KEY_DOWN:</code></pre>
 <p>Replace <code>KEY_LEFT</code> with:</p>
-<pre class="&lt;!---c--&gt;"><code>    &#39;l&#39;</code></pre>
+<pre><code>    &#39;l&#39;</code></pre>
 <p>and do the same thing for the other directions too. If you want more than one
 key e.g. the arrow keys and the letters just add another case statement e.g. for
 left it might be:</p>
-<pre class="&lt;!---c--&gt;"><code>    case KEY_LEFT: case &#39;l&#39;:</code></pre>
+<pre><code>    case KEY_LEFT: case &#39;l&#39;:</code></pre>
 <p>Yes the single quotes matter. You can do similar for the other input keys.
 Please note that modifier keys like ctrl aren’t detectable or at least I’m
 unaware of how to do so.</p>
@@ -245,9 +246,9 @@ end of the game; I leave that as an exercise to the reader to implement two
 different sets. Please also be aware that if you don’t want any information you
 must set it to the below at the very least; defining it without a value is not
 enough (it amounts to the parameters to a printf call):</p>
-<pre class="&lt;!---c--&gt;"><code>    #define J &quot; &quot; );</code></pre>
+<pre><code>    #define J &quot; &quot; );</code></pre>
 <p>If you don’t care about brief displays of ‘o’ at 0,0 you can just have:</p>
-<pre class="&lt;!---c--&gt;"><code>    #define J &quot;&quot;);</code></pre>
+<pre><code>    #define J &quot;&quot;);</code></pre>
 <p>That’s the bare minimum. Notice also that it’s been a long while since I’ve
 tested this part but I think this is right.</p>
 <p>Anyway as I said the score line has basic statistics that’s relatively easy to
@@ -262,7 +263,7 @@ bug. This however was something I didn’t quite like: I like having the
 coordinates of where the snake is plus the other things that are there (a number
 of which were added over time). Obviously this would take many bug sized bytes
 (bites) even once let alone twice! Thus I made it into a define:</p>
-<pre class="&lt;!---c--&gt;"><code>    #define J Z(X:%d/%d Y:%d/%d S:%zu/%zu B:%zu\n), Y, y[-2], X,*y,A,g, c);</code></pre>
+<pre><code>    #define J Z(X:%d/%d Y:%d/%d S:%zu/%zu B:%zu\n), Y, y[-2], X,*y,A,g, c);</code></pre>
 <p>With the table below you can show a variety of other variables/statistics.</p>
 <p>There’s another reason for changing this line though: depending on the terminal
 width the line could cover the top wall; this can even happen only part of the
@@ -280,7 +281,7 @@ so if this line wasn’t there it would require changes to make it work right.</
 <p>For an example this would only include the size of the snake and the number of
 bugs eaten (I think I have this correct; I’ve made many changes to the point of
 not wanting to mess with anything that’s unnecessary):</p>
-<pre class="&lt;!---c--&gt;"><code>    #define J Z(SIZE: %zu BUGS: %zu\n), A, c);</code></pre>
+<pre><code>    #define J Z(SIZE: %zu BUGS: %zu\n), A, c);</code></pre>
 <p>More generally the following expressions and data types (with format specifiers)
 come to mind as information that might be of interest.</p>
 <pre><code>    DESCRIPTION             EXPRESSION          TYPE    FORMAT SPECIFIER
@@ -307,9 +308,9 @@ come to mind as information that might be of interest.</p>
     bug)</code></pre>
 <h2 id="make-it-so-the-snake-starts-at-a-random-location">Make it so the snake starts at a random location</h2>
 <p>Quite simply change:</p>
-<pre class="&lt;!---c--&gt;"><code>    X = H / 2; Y = *x / 2;</code></pre>
+<pre><code>    X = H / 2; Y = *x / 2;</code></pre>
 <p>To be something like:</p>
-<pre class="&lt;!---c--&gt;"><code>    X = R(1,H-1);
+<pre><code>    X = R(1,H-1);
     Y = R(2,*x-1);</code></pre>
 <p>Or whatever you might want it to be… (question to answer: will this work at
 all? You decide!)</p>
@@ -407,7 +408,7 @@ their ruddy phone instead of where they’re walking (even when crossing a busy
 street!).</p>
 <p>If you look at the walls code you will see a ternary operator for both <code>X</code> and <code>Y</code>
 coordinates. This of course is very different now but the idea remains the same:</p>
-<pre class="&lt;!---c--&gt;"><code>    if (p &amp;&amp; !(*O&gt;=O[1]||H&gt;=M(1)))
+<pre><code>    if (p &amp;&amp; !(*O&gt;=O[1]||H&gt;=M(1)))
     {
         if (X&lt;1||X&gt;=H)
             X = X&lt;1?H-1:1;
@@ -420,7 +421,7 @@ the walls (off screen). Depending on where the snake is it will set the
 coordinates to the correct new location.</p>
 <p>If however you wanted the walls to act as a barrier you could do something like
 this instead (omitting the inner if statements here):</p>
-<pre class="&lt;!---c--&gt;"><code>    X=X&lt;1?1:*H-1;
+<pre><code>    X=X&lt;1?1:*H-1;
 
     Y=Y&lt;2?2:*O-1;</code></pre>
 <p>Again though that’s just the idea; the code is dramatically different. The above

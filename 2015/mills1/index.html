@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,19 +142,19 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog</code></pre>
+<pre><code>    ./prog</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog</code></pre>
+<pre><code>    ./prog</code></pre>
 <p>Press the up arrow and the down arrow at the right time.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Did you find that mobile application game a bit frustrating?
 Well you can adjust the Makefile parameters to make life a
 bit easier for you:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>which runs:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber all DW=199999 DW=22 DH=16 DA=50 DI=-150
+<pre><code>    make clobber all DW=199999 DW=22 DH=16 DA=50 DI=-150
     ./prog</code></pre>
 <p>From the Makefile:</p>
 <pre><code>    # Game parameters
@@ -240,9 +241,9 @@ characters (needed for UTF-8 support, which is needed for emojis), you may need
 to make some changes to the <code>Makefile</code> to get emojis to work on your system.
 To help you get started, I’ve included some example substitutions for emojis
 sprites and instruction text; for example, type</p>
-<pre class="&lt;!---sh--&gt;"><code>    make EMOJI=beer LANGUAGE=spanish</code></pre>
+<pre><code>    make EMOJI=beer LANGUAGE=spanish</code></pre>
 <p>or</p>
-<pre class="&lt;!---sh--&gt;"><code>    make EMOJI=globe</code></pre>
+<pre><code>    make EMOJI=globe</code></pre>
 <p>for some examples (the full list of options is in the <code>Makefile</code>). Don’t forget
 to <code>make clobber</code> first (or use <code>make -B</code>). If the output doesn’t look right,
 you may need to link with the “wide” version of <code>ncurses</code>. On MacOSX 10.11, it
@@ -282,10 +283,10 @@ live-streamed targeted video advertising.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/mills1/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/mills1/prog.orig.c">prog.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/mills1/try.sh">try.sh</a> - how to run</li>
-<li><a href="2015_mills1.tar.bz2">2015_mills1.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2015_mills1.tar.bz2">2015_mills1.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/mills1/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/mills1/.entry.json">.entry.json</a> - description of entry in JSON</li>

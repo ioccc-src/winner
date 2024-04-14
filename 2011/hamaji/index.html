@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -144,14 +145,14 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em></li>
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./hamaji &lt; a_nonogram_file</code></pre>
+<pre><code>    ./hamaji &lt; a_nonogram_file</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>If you have perl installed you should be able to reproduce
 <a href="dragon.nono">dragon.nono</a> like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    perl c2nono.pl hamaji.c | ./hamaji</code></pre>
+<pre><code>    perl c2nono.pl hamaji.c | ./hamaji</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This program solves <a href="http://en.wikipedia.org/wiki/Nonogram">Nonograms</a> which is
 also known as “Paint by Numbers”.</p>
@@ -260,7 +261,7 @@ with the well obfuscated code.</p>
 <h3 id="portability">Portability</h3>
 <p>This program uses two C99 features. One line comments and <code>long long</code>.
 GCC’s <code>-ansi -pedantic</code> check should pass:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -ansi -pedantic -std=c99 hamaji.c</code></pre>
+<pre><code>    cc -ansi -pedantic -std=c99 hamaji.c</code></pre>
 <p>I checked my program with gcc-4.6.2 on linux, llvm-gcc-4.2 on Mac, and
 clang-3.0 on Mac.</p>
 <p>Note that the behavior of <code>scanf(3)</code> differs on linux and mac, but this
@@ -269,7 +270,7 @@ program supports both semantics.</p>
 memory layout, undefined evaluation order (e.g., <code>a[i++]=i</code>), etc.
 This program won’t work if the size of <code>long long</code> literal is less than 8.
 By grepping the source code of gcc</p>
-<pre class="&lt;!---sh--&gt;"><code>    grep LONG_LONG_TYPE_SIZE gcc/config/*/*</code></pre>
+<pre><code>    grep LONG_LONG_TYPE_SIZE gcc/config/*/*</code></pre>
 <p>I found long long may be 32bit integers only on AVR.</p>
 <h3 id="a-few-more-things">A few more things</h3>
 <p>This code is considered as a <a href="http://en.wikipedia.org/wiki/Japanese_New_Year#Postcards">new year’s postcard in
@@ -287,7 +288,7 @@ was randomly generated. The <a href="codegolf.nono">codegolf.nono</a> and
 <a href="https://web.archive.org/web/20130218055139/http://codegolf.com/paint-by-numbers" class="uri">https://web.archive.org/web/20130218055139/http://codegolf.com/paint-by-numbers</a>.</p>
 <p>You can reproduce <a href="dragon.nono">dragon.nono</a> from <a href="hamaji.c">hamaji.c</a> using
 <a href="c2nono.pl">c2nono.pl</a>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    perl c2nono.pl hamaji.c | ./hamaji</code></pre>
+<pre><code>    perl c2nono.pl hamaji.c | ./hamaji</code></pre>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
@@ -328,10 +329,10 @@ was randomly generated. The <a href="codegolf.nono">codegolf.nono</a> and
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/hamaji/smiley.nono">smiley.nono</a> - nonogram input data</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/hamaji/soccer.nono">soccer.nono</a> - nonogram input data</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/hamaji/try.sh">try.sh</a> - how to run</li>
-<li><a href="2011_hamaji.tar.bz2">2011_hamaji.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2011_hamaji.tar.bz2">2011_hamaji.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/hamaji/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/hamaji/.entry.json">.entry.json</a> - description of entry in JSON</li>

@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,15 +142,15 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make chaos</code></pre>
+<pre><code>    make chaos</code></pre>
 <p>NOTE: Some systems do not implement <code>halfdelay()</code> in their <code>libcurses</code>.
 You might try compiling with -lncurses if you have that library.
 Or you can build this entry without the <code>halfdelay()</code> call by:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make chaos_nohalf</code></pre>
+<pre><code>    make chaos_nohalf</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./chaos</code></pre>
+<pre><code>    ./chaos</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>This script will run the program on each data file. To quit the program hit <code>q</code>.
 If not all files have been used it will go to the next one; otherwise the script
 will be finished. To end the script early send intr/ctrl-c.</p>
@@ -222,10 +223,10 @@ happier.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/chaos/ioccc.data">ioccc.data</a> - data file</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/chaos/pyramid.data">pyramid.data</a> - data file</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/chaos/xwing.data">xwing.data</a> - data file</li>
-<li><a href="1998_chaos.tar.bz2">1998_chaos.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1998_chaos.tar.bz2">1998_chaos.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/chaos/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/chaos/.entry.json">.entry.json</a> - description of entry in JSON</li>

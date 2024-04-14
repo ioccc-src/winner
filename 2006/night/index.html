@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,16 +142,16 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>There is an alternate version that supports arrow keys. See the <a href="#alternate-code">alternate
 code</a> section below.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./night</code></pre>
+<pre><code>    ./night</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This version allows you to use arrow keys instead of the more awkward <code>wasd</code>
 keys.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>night.alt</code> as you would <code>night</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -217,7 +218,7 @@ preprocessed code is over 80KB in length, hindering the preprocessor’s ability
 to deobfuscate.</p>
 <p>Keypad support was removed to save space. To restore, modify the
 following two macros to:</p>
-<pre class="&lt;!---c--&gt;"><code>    #define ATG srand(time(0)); initscr(); cbreak(); noecho(); start_color(); keypad(stdscr,1);
+<pre><code>    #define ATG srand(time(0)); initscr(); cbreak(); noecho(); start_color(); keypad(stdscr,1);
     #define AGG A&amp;2?KEY_UP:KEY_DOWN:A&amp;1?KEY_RIGHT:KEY_LEFT</code></pre>
 <p>Code on!</p>
 <!--
@@ -247,10 +248,10 @@ following two macros to:</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/night/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/night/night.alt.c">night.alt.c</a> - alternative source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/night/night.orig.c">night.orig.c</a> - original source</li>
-<li><a href="2006_night.tar.bz2">2006_night.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2006_night.tar.bz2">2006_night.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/night/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/night/.entry.json">.entry.json</a> - description of entry in JSON</li>

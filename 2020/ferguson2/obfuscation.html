@@ -83,6 +83,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -140,9 +141,9 @@ there is an aesthetic appeal to my eyes too).</p></li>
 Y&lt;:19:&gt;&lt;:27:&gt; but it’s not the only example. Here the compound literal of 13
 ints:</p></li>
 </ul>
-<pre class="&lt;!---c--&gt;"><code>            int *z=(int[13]) { 0 } , *e, *g;</code></pre>
+<pre><code>            int *z=(int[13]) { 0 } , *e, *g;</code></pre>
 <p>Then in main:</p>
-<pre class="&lt;!---c--&gt;"><code>            e = z + 10;
+<pre><code>            e = z + 10;
             g = e + 1;
 
             for (j=-3; j &lt; 0; ++j)
@@ -152,12 +153,12 @@ expect to start out with index &lt; 0 but to then compare that that index &lt; 0
 and increment until 0 along with setting the value of the array to j + 3 is
 more confusing still. There are at least two other ways that are much easier
 to read that could accomplish the same thing. It continues on:</p>
-<pre class="&lt;!---c--&gt;"><code>            /* ... */
+<pre><code>            /* ... */
             e&lt;:i-3:&gt; = (j &lt; 1 ? 1 : (j &gt; 5 ? 5 : j))-1;</code></pre>
 <ul>
 <li>Observe these two functions:</li>
 </ul>
-<pre class="&lt;!---c--&gt;"><code>            void w(char *s, int k, int v)
+<pre><code>            void w(char *s, int k, int v)
             {
                     for(e&lt;:2:&gt; = 0; s&lt;:*P:&gt;; ++e&lt;:2:&gt;)
                     {
@@ -200,7 +201,7 @@ temporary variable instead of a regular int in the function (so make it global);
 and (2) I didn’t want to risk changing all the offsets: thus I just made that
 address <code>e[1]</code>. Thus I also have:</li>
 </ul>
-<pre class="&lt;!---c--&gt;"><code>            for (*g = 0 ; *g &lt; 10; ++*g)
+<pre><code>            for (*g = 0 ; *g &lt; 10; ++*g)
             {
                 r&lt;:-2:&gt; = Y&lt;:14:&gt;&lt;:*(e+1):&gt;; r&lt;:-3:&gt; = Y&lt;:15:&gt;&lt;:1&lt;:e:&gt;:&gt;;
                 if (r&lt;:-3:&gt; &amp;&amp; r&lt;:-2:&gt; == r&lt;:-1:&gt;)
@@ -218,7 +219,7 @@ which I use as the two chars to compare (this is the plugboard function).</p>
 <li>The above function Z() takes a <code>char x</code> but you won’t notice it being used
 at all. Why? In fact I call it like so:</li>
 </ul>
-<pre class="&lt;!---c--&gt;"><code>                k = Z(r&lt;:-1:&gt;=k);</code></pre>
+<pre><code>                k = Z(r&lt;:-1:&gt;=k);</code></pre>
 <p>The char is just used as a way to be able to call the function and assign to
 the proper variable at the same time: in the function Z I don’t care about x
 because it’s the same value as r[-1] (which I do care about). Why is it
@@ -230,7 +231,7 @@ again negative offsets to cause more confusion.</p>
 refer to the same variable in more than one way (or in some cases maybe more
 correct to say ‘same location’). In the Z() function for example:</li>
 </ul>
-<pre class="&lt;!---c--&gt;"><code>                r&lt;:-2:&gt; = Y&lt;:14:&gt;&lt;:*(e+1):&gt;; r&lt;:-3:&gt; = Y&lt;:15:&gt;&lt;:1&lt;:e:&gt;:&gt;;</code></pre>
+<pre><code>                r&lt;:-2:&gt; = Y&lt;:14:&gt;&lt;:*(e+1):&gt;; r&lt;:-3:&gt; = Y&lt;:15:&gt;&lt;:1&lt;:e:&gt;:&gt;;</code></pre>
 <p>I refer to e[1] as both: *(e+1) and 1[e].</p>
 <ul>
 <li><p>Replacing a number of <code>if ..</code>s with <code>... &amp;&amp; (...)</code>s (in one case at least
@@ -245,7 +246,7 @@ index (sort of).</p></li>
 <li><p>Another set of char arrays in one: the five rotors as well as the two
 reflectors in one <code>char [][27]</code>. This makes for some fun code like:</p></li>
 </ul>
-<pre class="&lt;!---c--&gt;"><code>            (Y&lt;:e&lt;:-10:&gt;+5:&gt;&lt;:k-&#39;A&#39;:&gt;) &amp;&amp; (k = Y&lt;:e&lt;:-10:&gt;+5:&gt;&lt;:k-&#39;A&#39;:&gt;);</code></pre>
+<pre><code>            (Y&lt;:e&lt;:-10:&gt;+5:&gt;&lt;:k-&#39;A&#39;:&gt;) &amp;&amp; (k = Y&lt;:e&lt;:-10:&gt;+5:&gt;&lt;:k-&#39;A&#39;:&gt;);</code></pre>
 <p>(Of course this also removes an if statement by joining with a &amp;&amp;).</p>
 <ul>
 <li><p>In fact I decided that the above two arrays in arrays needed to be merged
@@ -275,18 +276,18 @@ enough because as they rightly point out they can just use the C preprocessor
 itself. But although I have quite a few cpp directives I am not using them for
 obfuscation but rather to save bytes. For examples:</p></li>
 </ul>
-<pre class="&lt;!---c--&gt;"><code>            %:define J(x)                 do(*x)=getchar(); while((*x)==&#39;\n&#39;)</code></pre>
+<pre><code>            %:define J(x)                 do(*x)=getchar(); while((*x)==&#39;\n&#39;)</code></pre>
 <p>Is used quite a number of times and although it could be a function that
 takes a pointer to an int it was more convenient this way (I believe it used
 more bytes but I no longer know that). There are many others and they all
 save bytes (or at least most of them do if not all). There is one in
 particular I want to bring up though because I think it’s a curious one and
 it ties in to another point above:</p>
-<pre class="&lt;!---c--&gt;"><code>            %:define A(y)                                 *(&amp;Y&lt;:7:&gt;&lt;:1:&gt;+(y))</code></pre>
+<pre><code>            %:define A(y)                                 *(&amp;Y&lt;:7:&gt;&lt;:1:&gt;+(y))</code></pre>
 <p>What is special about this one: Above I noted how I sort of refer directly
 to the notch settings (I think it was the notch settings anyway). Now I
 could have done say</p>
-<pre class="&lt;!---c--&gt;"><code>            char a = Y[7][1], b = Y[7][3], c = Y[7][5];</code></pre>
+<pre><code>            char a = Y[7][1], b = Y[7][3], c = Y[7][5];</code></pre>
 <p>But I felt that doing instead the pointer arithmetic was worth doing.
 However it used significantly more bytes even as a macro: 17 if I recall
 right. That’s with the macro. If I were to include it three times by itself
@@ -314,7 +315,7 @@ differently (and separated) so that one cannot easily replace the <code>char</co
 variables in recode.c, move them to prog.c, compile and expect it to work right.</p></li>
 <li><p>Also what is this about ?</p></li>
 </ul>
-<pre class="&lt;!---c--&gt;"><code>                                /\
+<pre><code>                                /\
                     /           This is     *not* what you think:
                             void D(char*x){ /* ... */ }</code></pre>
 <p>Is that valid and if so how does it function? Yes it’s valid but I’ll leave

@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,22 +142,22 @@ Location: <a href="../../location.html#DE">DE</a> - <em>Federal Republic of Germ
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./garry &lt;input_file &gt;output_file</code></pre>
+<pre><code>    ./garry &lt;input_file &gt;output_file</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>While it may not have been the intention of the author, the
 judges noted that the C pre-processed version (with the <code>#include</code>s
 left intact) looked very much like a rat “dropping core”. See
 <a href="garry.alt.c">garry.alt.c</a> and judge for yourself!</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./garry.alt &lt;input_file &gt;output_file</code></pre>
+<pre><code>    ./garry.alt &lt;input_file &gt;output_file</code></pre>
 <h3 id="alternate-try">Alternate try:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh</code></pre>
+<pre><code>    ./try.alt.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The author was kind enough to provide a less obfuscated version of
 the source called <a href="garry.fmt.c">garry.fmt.c</a>.</p>
@@ -166,9 +167,9 @@ incorporating the ability to create binary from escaped data in the
 environment variables.</p>
 <p>The calling syntax is pretty simple, just use it with <code>stdio</code>-redirection
 or inside pipelines, e.g.:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./garry &lt;file_to_convert &gt;converted_file</code></pre>
+<pre><code>    ./garry &lt;file_to_convert &gt;converted_file</code></pre>
 <p>or</p>
-<pre class="&lt;!---sh--&gt;"><code>    cat all_my_files/* | ./garry | lp</code></pre>
+<pre><code>    cat all_my_files/* | ./garry | lp</code></pre>
 <p>The syntax of the conversion of the input file is as follows: To include the
 value of an environment variable in the output file, place the name of the
 variable between <code>$</code>-signs in the input, e.g.:</p>
@@ -177,7 +178,7 @@ variable between <code>$</code>-signs in the input, e.g.:</p>
 <p>Unknown Env-variables or malformed expressions are ignored and kept intact.</p>
 <p>Additionally, the filter replaces escaped octal values in the environment
 variables by their binary representation, e.g.:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ TEST=&quot;\110\145\154\154\157&quot;
+<pre><code>    $ TEST=&quot;\110\145\154\154\157&quot;
     $ export TEST
     $ echo &#39;$TEST$&#39; | ./garry
     Hello</code></pre>
@@ -212,10 +213,10 @@ variables by their binary representation, e.g.:</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/garry/try.alt.sh">try.alt.sh</a> - how to run alternative code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/garry/try.sh">try.sh</a> - how to run</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/garry/garry.fmt.c">garry.fmt.c</a> - defocused source code</li>
-<li><a href="1995_garry.tar.bz2">1995_garry.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1995_garry.tar.bz2">1995_garry.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/garry/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/garry/.entry.json">.entry.json</a> - description of entry in JSON</li>

@@ -83,6 +83,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ like some of the other features this was not intentionally designed but is
 simply a fun consequence of the features I did implement.</p>
 <p>Let’s say you want to verify that the evade mode is at the right count. How
 can you verify it without modifying the code? Try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    SIZE=0 SHED=1 SHEDS=1 EVADE=10 ./prog</code></pre>
+<pre><code>    SIZE=0 SHED=1 SHEDS=1 EVADE=10 ./prog</code></pre>
 <p>Since you start out at size 0 and you shed every movement then when you’re
 size 10 (as long as you don’t eat a bug of course!) the bug should evade.</p>
 <p>If you set it to <code>SIZE=10</code> there would be a difference of 10. Now every
@@ -154,7 +155,7 @@ don’t at this time remember any I might have done.</p>
 <h1 id="the-snake-doesnt-seem-to-be-moving"><a name="stillsnake" href="#toc">The snake doesn’t seem to be moving</a></h1>
 <p>One way to show this is in full is to set the initial size and growth size to a
 high value; then try each one individually. For example:</p>
-<pre class="&lt;!---sh--&gt;"><code>    SIZE=100 ./prog</code></pre>
+<pre><code>    SIZE=100 ./prog</code></pre>
 <p>In this case after you make the first move the snake will keep growing and
 so the snake tail stays in the same spot until after it’s the ‘full size’.
 When it has reached the full size then the entire body of the snake will
@@ -201,23 +202,23 @@ way negative size will force a win.</p>
 <p>Here’s a fun output:</p>
 <pre><code>    &lt; &lt;&lt;&lt;+</code></pre>
 <p>That’s from:</p>
-<pre class="&lt;!---sh--&gt;"><code>    SHED=1 SHEDS=-1 ./prog</code></pre>
+<pre><code>    SHED=1 SHEDS=-1 ./prog</code></pre>
 <p>And right after that you would see:</p>
 <pre><code>    YOU WIN!
     X:72/156 Y:20/41 S:997/997 B:0</code></pre>
 <p>Try this though:</p>
-<pre class="&lt;!---sh--&gt;"><code>    SHEDS=-1 SHED=25 ./prog</code></pre>
+<pre><code>    SHEDS=-1 SHED=25 ./prog</code></pre>
 <p>And you’ll see that you start to be the normal size but then you leave your
 head several places until you end up getting to the max size (by way of it
 being unsigned). This isn’t a bug even if it might seem like one. In fact
 this is the basis of the grow/shrink mode of play that I talk about in the
 <a href="gameplay.html">gameplay.html</a> (<a href="gameplay.md">gameplay.md</a> on GitHub) file.</p>
 <p>Here’s another thing to be aware of. Let’s say you do:</p>
-<pre class="&lt;!---sh--&gt;"><code>    SIZE=1 GROW=-1 ./prog</code></pre>
+<pre><code>    SIZE=1 GROW=-1 ./prog</code></pre>
 <p>How many bugs will it take before you win? In fact it’s two: you would see the
 head twice: the second time once you ‘shrink’ down to size 0; it would then be
 that if you get another bug you will be at the ‘max size’:</p>
-<pre class="&lt;!---sh--&gt;"><code>    YOU WIN!
+<pre><code>    YOU WIN!
     X:81/156 Y:35/41 S:997/997 B:2</code></pre>
 <h1 id="i-was-a-few-places-behind-my-tail-and-i-ran-into-it"><a name="bitetail" href="#toc">‘I was a few places behind my tail and I ran into it!’</a></h1>
 <p>I.e. what happens if you’re growing - for example after just eating a bug - and
@@ -271,7 +272,7 @@ how it’s done in Snake and works well). The minimum terminal size I require in
 the game is 10 x 10. This includes the walls and score line.</p>
 <p>Now the default max snake size is 997 but when the terminal is too small it
 adjusts the max snake size. For 10 lines and 10 columns you would see:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ make test
+<pre><code>    $ make test
     terminal supports cursor movement
     terminal supports making cursor invisible
     terminal supports bold

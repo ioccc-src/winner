@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -144,7 +145,7 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <p>The authors provided another version of this program. See the <a href="#alternate-code">alternate
 version</a> section below.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
@@ -155,7 +156,7 @@ version</a> section below.</p>
 <p>In 2023 it was noticed that in some systems like macOS there was confusing
 output due to a warning at runtime that was interspersed with the output of the
 program. For instance it would show:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./tbr
+<pre><code>    ./tbr
     $ warning: this program uses gets(), which is unsafe.</code></pre>
 <p>which kind of hid the prompt. Thus the entry was changed to use <code>fgets(3)</code> which
 is referred to later in this file.</p>
@@ -163,14 +164,14 @@ is referred to later in this file.</p>
 this entry would not compile in modern systems. This fix is also referred to
 below, in the <a href="#alternate-code">alternate version</a> section.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./tbr
+<pre><code>    ./tbr
     $ enter some shell commands</code></pre>
 <p>NOTE: globs do not work with this entry. Why?</p>
 <p>NOTE: <code>exit</code> does not work and neither does <code>logout</code>. To exit try sending ctrl-d
 or ctrl-c (or kill it from another terminal :-) ). But why does it not work with
 just <code>exit</code> or <code>logout</code>? Hint: see the authors’ remarks.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./tbr
+<pre><code>    ./tbr
     $ ls -l tbr tbr.c
 
     # notice how the following does not work:
@@ -187,7 +188,7 @@ documented, are not considered bugs as such in the context of the contest.</p>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>The authors supplied us with a slightly smaller unformatted version
 of the program which we include below:</p>
-<pre class="&lt;!---c--&gt;"><code>    #define D ,close(
+<pre><code>    #define D ,close(
     char*c,q[512],m[256],*v[99],**u,*i[3];int f[2],p;main(){for(m[m[60]=m[62]=
     32]=m[*m=124[m]=9]=6;e(-8),gets(1+(c=q))||(exit(0),0);r(0,0))for(;*++c;);}
     r(t,o){*i=i[2]=0;for(u=v+98;m[*--c]^9;m[*c]&amp;32?i[*c&amp;2]=
@@ -201,9 +202,9 @@ of the program which we include below:</p>
 as well as the <code>gets()</code> to <code>fgets()</code> fix applied to it to make it functionally
 equivalent like the authors intended.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./tbr.alt</code></pre>
+<pre><code>    ./tbr.alt</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This program touches on a well known Unix utility, the 6th edition Bourne Shell
 (<code>/bin/sh</code>), whose original source was considered to be extremely obfuscated by
@@ -245,9 +246,9 @@ is parsed; a pointer to the stack of arguments is assigned and an
 argument is stolen every time a <code>&gt;</code> or <code>&lt;</code> is encountered. The
 shell flags an error if no arguments are on the stack. Thus, for
 example:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cat &gt; foo &gt; bar</code></pre>
+<pre><code>    cat &gt; foo &gt; bar</code></pre>
 <p>cats to <code>foo</code>, since it was pushed last, but</p>
-<pre class="&lt;!---sh--&gt;"><code>    cat &gt; &gt; foo bar</code></pre>
+<pre><code>    cat &gt; &gt; foo bar</code></pre>
 <p>cats to <code>bar</code>, since <code>bar</code> was pushed under <code>foo</code> (remember we’re
 parsing right-left).</p>
 <p>Depending on your flavor of Unix, <code>cd</code> without an argument will
@@ -281,10 +282,10 @@ all <code>ed(1)</code> does too.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/tbr/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/tbr/tbr.alt.c">tbr.alt.c</a> - alternative source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/tbr/tbr.orig.c">tbr.orig.c</a> - original source</li>
-<li><a href="1990_tbr.tar.bz2">1990_tbr.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1990_tbr.tar.bz2">1990_tbr.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/tbr/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/tbr/.entry.json">.entry.json</a> - description of entry in JSON</li>

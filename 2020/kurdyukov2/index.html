@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,11 +142,11 @@ Location: <a href="../../location.html#RU">RU</a> - <em>Russian Federation</em> 
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog</code></pre>
+<pre><code>    ./prog</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    # Take a selfie
+<pre><code>    # Take a selfie
     ./prog 1000 selfie.jpg output.jpg
     # Admire your portrait in cubist style
 
@@ -161,7 +162,7 @@ rectangles. What is the complexity? Is it obvious from the source code?</p>
 <p>This program divides the image into a specified number of rectangles. This
 process is content aware, so the algorithm tries to match most of the information.
 However, it doesn’t find the best theoretically possible layout.</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog 1000 input.jpg output.jpg</code></pre>
+<pre><code>    ./prog 1000 input.jpg output.jpg</code></pre>
 <h3 id="building">Building</h3>
 <p>You can build three versions, depending on the image format.</p>
 <p>Default is JPEG version; if you have the <code>libjpeg</code> development package installed
@@ -169,9 +170,9 @@ in your system, then <code>make</code> without arguments should do the right thi
 <p>If you want to use <code>libjpeg</code> compiled from sources, then use the <code>LIBJPEG</code> define to
 specify the path to includes and the library. For example using
 <a href="https://mac-dev-env.patrickbougie.com/libjpeg/">libjpeg source</a> version 9c:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make prog LIBJPEG=&quot;-Ijpeg-9c jpeg-9c/libjpeg.a&quot;</code></pre>
+<pre><code>    make prog LIBJPEG=&quot;-Ijpeg-9c jpeg-9c/libjpeg.a&quot;</code></pre>
 <p>Use this command to build a PNG version (you need <code>libpng</code>):</p>
-<pre class="&lt;!---sh--&gt;"><code>    make prog_png LIBPNG=&quot;-lpng&quot;</code></pre>
+<pre><code>    make prog_png LIBPNG=&quot;-lpng&quot;</code></pre>
 <p>And the PPM version (no additional dependencies, can read raw/ASCII PPM, writes
 raw PPM):</p>
 <pre><code>    make prog_ppm</code></pre>
@@ -179,22 +180,22 @@ raw PPM):</p>
 <p>Thanks to <a href="../../authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> for this
 information!</p>
 <p>First, make sure you have the compiler tools installed e.g. by:</p>
-<pre class="&lt;!---sh--&gt;"><code>    sudo xcode-select --install</code></pre>
+<pre><code>    sudo xcode-select --install</code></pre>
 <p>Make sure you install <a href="https://www.macports.org/install.php">MacPorts</a>. Then do:</p>
-<pre class="&lt;!---sh--&gt;"><code>    sudo port install jpeg libpng ImageMagick</code></pre>
+<pre><code>    sudo port install jpeg libpng ImageMagick</code></pre>
 <p>The program itself doesn’t need ImageMagick, install it only if you plan to make
 GIFs from the results using <code>makegif.sh</code>.</p>
 <p>After that’s installed you need to run make with these options:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make LDFLAGS=&quot;-I/opt/local/include -L/opt/local/lib&quot;</code></pre>
+<pre><code>    make LDFLAGS=&quot;-I/opt/local/include -L/opt/local/lib&quot;</code></pre>
 <h3 id="building-on-macos-with-homebrew">Building on macOS with Homebrew</h3>
 <p>First, make sure you have the compiler tools installed e.g. by:</p>
-<pre class="&lt;!---sh--&gt;"><code>    sudo xcode-select --install</code></pre>
+<pre><code>    sudo xcode-select --install</code></pre>
 <p>Make sure you install <a href="https://brew.sh">Homebrew</a>.</p>
 <p>Then:</p>
-<pre class="&lt;!---sh--&gt;"><code>    brew install libjpeg libpng
+<pre><code>    brew install libjpeg libpng
     eval &quot;$(brew shellenv)&quot;</code></pre>
 <p>You are now ready to compile this entry:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber all</code></pre>
+<pre><code>    make clobber all</code></pre>
 <h3 id="notes">Notes</h3>
 <p>Made this thing while experimenting with the idea of representing an image with
 rectangles (lossy compression). It’s not very good in that sense, but the
@@ -206,7 +207,7 @@ the picture data is split (halves may have different size) horizontally or
 vertically to get the minimum difference.</p>
 <p>You can use this command to make a GIF from output images (uses ImageMagick).
 For instance after running the command suggested by the judges:</p>
-<pre class="&lt;!---sh--&gt;"><code>    convert -delay 10 -dither none -loop 0 $(find . -maxdepth 1 -type f -name &#39;*jpg&#39; | sort -V) $(find . -maxdepth 1 -type f -name &#39;*jpg&#39; | sort -rV) +map out.gif</code></pre>
+<pre><code>    convert -delay 10 -dither none -loop 0 $(find . -maxdepth 1 -type f -name &#39;*jpg&#39; | sort -V) $(find . -maxdepth 1 -type f -name &#39;*jpg&#39; | sort -rV) +map out.gif</code></pre>
 <p>NOTE: the above is done in the <a href="try.sh">try.sh</a> script.</p>
 <p>Also provided <code>makegif.sh</code> to aid with GIF creation.</p>
 <!--
@@ -240,10 +241,10 @@ For instance after running the command suggested by the judges:</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/kurdyukov2/prog.png.c">prog.png.c</a> - build a PNG version</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/kurdyukov2/prog.ppm.c">prog.ppm.c</a> - build a PPM version</li>
 <li><a href="sample.jpg">sample.jpg</a> - sample image data</li>
-<li><a href="2020_kurdyukov2.tar.bz2">2020_kurdyukov2.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2020_kurdyukov2.tar.bz2">2020_kurdyukov2.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/kurdyukov2/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/kurdyukov2/.entry.json">.entry.json</a> - description of entry in JSON</li>

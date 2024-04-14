@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ Location: <a href="../../location.html#NO">NO</a> - <em>Kingdom of Norway</em> (
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <p>NOTE: this entry requires <code>X11/Xlib.h</code> header file and the X11 library to
 compile. macOS users running Mountain Lion and later will need to download and
 install <a href="https://www.xquartz.org">XQuartz</a> in order to compile and run this
@@ -152,17 +153,17 @@ entry.</p>
     STATUS: missing or dead link - please provide them</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1996_jonth">1996 jonth bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./jonth :0 :0</code></pre>
+<pre><code>    ./jonth :0 :0</code></pre>
 <p>NOTE: the two boards will be on top of each other so you will have to drag one
 off the other so that you can properly play.</p>
 <p>NOTE: if there is no X service open this will crash. If this is the case you
 might try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./jonth</code></pre>
+<pre><code>    ./jonth</code></pre>
 <p>These are supposed to happen. As is written in the
 <a href="http://catb.org/jargon/html/F/feature.html">The Jargon File</a>:</p>
 <pre><code>    That&#39;s not a bug, that&#39;s a feature.</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./jonth host1:0 host2:0</code></pre>
+<pre><code>    ./jonth host1:0 host2:0</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>For extra credit, figure out how you can cheat by taking over a square already
 occupied by an opponent.</p>
@@ -201,10 +202,10 @@ give two display arguments (<code>./jonth host:0 host:0</code>).</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/jonth/jonth.c">jonth.c</a> - entry source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/jonth/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/jonth/jonth.orig.c">jonth.orig.c</a> - original source</li>
-<li><a href="1996_jonth.tar.bz2">1996_jonth.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1996_jonth.tar.bz2">1996_jonth.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/jonth/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/jonth/.entry.json">.entry.json</a> - description of entry in JSON</li>

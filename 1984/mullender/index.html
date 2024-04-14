@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -144,7 +145,7 @@ Location: <a href="../../location.html#NL">NL</a> - <em>Kingdom of the Netherlan
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <p>NOTE: the original code will not work on any system other than
 <a href="https://en.wikipedia.org/wiki/VAX-11">VAX-11</a> and
 <a href="https://en.wikipedia.org/wiki/PDP-11">PDP-11</a> and this is why we encourage you
@@ -155,7 +156,7 @@ the original version.</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1984_mullender">1984 mullender bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./mullender.alt [microseconds]</code></pre>
+<pre><code>    ./mullender.alt [microseconds]</code></pre>
 <p>Hit ctrl-c/intr to exit the program.</p>
 <p>The default microseconds is 190000 as this is approximately how long it slept in
 the original entry but it can be no lower than 5000 as any lower doesn’t work
@@ -169,7 +170,7 @@ overflow!</p>
 <p>BTW: is there such a thing as too fast a CPU ? :-) Actually yes for certain code
 which is probably not as uncommon as you think :-).</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./mullender.alt
+<pre><code>    ./mullender.alt
 
     ./mullender.alt 5000        # wait for 5000 microseconds and see what happens
 
@@ -184,9 +185,9 @@ happens after some time of waiting?</p>
 <a href="https://en.wikipedia.org/wiki/PDP-11">PDP-11</a>. In the following years, 1985 on,
 machine dependent code was discouraged.</p>
 <h3 id="original-build">Original build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <h3 id="original-use">Original use:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./mullender</code></pre>
+<pre><code>    ./mullender</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Without question, this C program is the one of the most obfuscated C program
 that has ever been received! Like all great contest entries, it resulted in a
@@ -225,11 +226,11 @@ in the <em>fabulous</em> <a href="https://github.com/dspinellis/unix-history-rep
 Repo</a>.</p>
 <h3 id="gentab-build">gentab build:</h3>
 <p><code>gentab.c</code> can be built like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make gentab</code></pre>
+<pre><code>    make gentab</code></pre>
 <h3 id="gentab-use">gentab use:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./gentab file</code></pre>
+<pre><code>    ./gentab file</code></pre>
 <h3 id="gentab-try">gentab try:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./gentab gentab &gt; g.c</code></pre>
+<pre><code>    ./gentab gentab &gt; g.c</code></pre>
 <p>NOTE: it is highly unlikely that you will be able to run the output of <code>gentab</code>
 but it should at least compile.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
@@ -312,7 +313,7 @@ that branches over the VAX code. The PDP and VAX codes are thus completely
 separate.</p>
 <p>The <a href="https://en.wikipedia.org/wiki/Programmed_Data_Processor">PDP</a> and
 <a href="https://en.wikipedia.org/wiki/VAX">VAX</a> codes implement the same algorithm:</p>
-<pre class="&lt;!---c--&gt;"><code>    for (;;) {
+<pre><code>    for (;;) {
         write(1, &quot;  :-)\b\b\b\b&quot;, 9);
         delay();
     }</code></pre>
@@ -333,7 +334,7 @@ simple.</p>
 <a href="https://en.wikipedia.org/wiki/Programmed_Data_Processor">PDP</a> code in assembly.
 We both knew <a href="https://en.wikipedia.org/wiki/PDP-11">PDP-11</a> assembly so that was
 no problem. The assembly code we came up with is as follows:</p>
-<pre class="&lt;!---asm--&gt;"><code>    pdp:
+<pre><code>    pdp:
         mov pc,r4
         tst -(r4)
         sub $9, r4
@@ -373,7 +374,7 @@ VAX <a href="https://en.wikipedia.org/wiki/Assembly_language">assembly</a>, we w
 VAX code in C and massaged the
 <a href="https://en.wikipedia.org/wiki/Compiler">compiler</a> output. The VAX assembly
 program that we came up with is as follows:</p>
-<pre class="&lt;!---asm--&gt;"><code>    vax: .word 0400 + (pdp - vax) / 2 - 1
+<pre><code>    vax: .word 0400 + (pdp - vax) / 2 - 1
     1:
         pushl $9
         pushal str
@@ -426,7 +427,7 @@ extracted the machine code from the object file.</p>
 <p>NOTE from judges: see <a href="gentab.c">gentab.c</a> for a copy of this file that can be
 compiled in modern systems.</p>
 </blockquote>
-<pre class="&lt;!---c--&gt;"><code>    #include &lt;stdio.h&gt;
+<pre><code>    #include &lt;stdio.h&gt;
     #include &lt;a.out.h&gt;
 
     main(argc, argv) char **argv;
@@ -522,10 +523,10 @@ the comment to <code>&amp;&amp;</code>.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/mullender.orig.c">mullender.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/gentab.c">gentab.c</a> - author tool to generate code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/a.out.h">a.out.h</a> - header file for gentab.c for compatibility with 1984 systems</li>
-<li><a href="1984_mullender.tar.bz2">1984_mullender.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1984_mullender.tar.bz2">1984_mullender.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/.entry.json">.entry.json</a> - description of entry in JSON</li>

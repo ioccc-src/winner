@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,14 +142,14 @@ Location: <a href="../../location.html#MX">MX</a> - <em>United Mexican States</e
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>The author provided two alternate versions, one which adds a status bar and
 another that makes it text only. The author also provided a version that they
 tested with Windows. See <a href="#alternate-code">alternate code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./toledo3 [1 | 2 | 3 [b]]</code></pre>
+<pre><code>    ./toledo3 [1 | 2 | 3 [b]]</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./toledo3 1</code></pre>
+<pre><code>    ./toledo3 1</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>The author provided two additional versions, <a href="toledo3-sbar.c">toledo3-sbar.c</a>
 and <a href="toledo3-txt.c">toledo3-txt.c</a>. Respectively these create a status bar and
@@ -172,7 +173,7 @@ the code for Deep Blue.</p>
 <p>So I managed to do a graphical X11 chess program (‘<code>WYSIAIE</code>’, or ‘What You See
 Is An IOCCC Entry’). Pointing and clicking to move pieces is the only required
 action, and of course the command-line options:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./toledo3        # Two-players mode (useful if you don&#39;t have a board at hand)
+<pre><code>    ./toledo3        # Two-players mode (useful if you don&#39;t have a board at hand)
     ./toledo3 1      # Human white - Computer black, level 1 (fast)
     ./toledo3 2      # Human white - Computer black, level 2 (medium)
     ./toledo3 3      # Human white - Computer black, level 3 (slow)
@@ -196,7 +197,7 @@ optimizations use valuable IOCCC characters.</p>
 number generator.</p>
 <p>Because it is resource-hungry, I strongly recommend to compile it
 using maximum optimization. With GCC you can use:</p>
-<pre class="&lt;!---sh--&gt;"><code>    gcc -O3 -fexpensive-optimizations prog.c -o prog -lX11</code></pre>
+<pre><code>    gcc -O3 -fexpensive-optimizations prog.c -o prog -lX11</code></pre>
 <h3 id="known-features">KNOWN “FEATURES”</h3>
 <ol type="1">
 <li><p>Because this is my second X11 program (the first was
@@ -254,10 +255,10 @@ rules) creates a status display about gameplay on the window title bar.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/toledo3/toledo3-sbar.c">toledo3-sbar.c</a> - source to create a status bar</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/toledo3/toledo3-txt.c">toledo3-txt.c</a> - source to make the game text</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/toledo3/layer.c">layer.c</a> - windows portability source</li>
-<li><a href="2006_toledo3.tar.bz2">2006_toledo3.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2006_toledo3.tar.bz2">2006_toledo3.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/toledo3/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/toledo3/.entry.json">.entry.json</a> - description of entry in JSON</li>

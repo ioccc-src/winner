@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -144,19 +145,19 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <p>We recommend you try the alt version first so you can get a better idea of what
 this entry was like back in 1993. See the <a href="#original-code">original code</a>
 section below to run the original.</p>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <p>NOTE: this entry requires the <code>X11/Xlib.h</code> header file and the X11 library to
 compile. If you’re under macOS and do not know how to install and use X11
 programs see <a href="../../faq.html#X11macos">FAQ 3.7 - How do I compile and use on macOS, an IOCCC entry that
 requires X11?</a>.</p>
 <p>To configure how many microseconds to sleep before updates try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber SLEEP=200 alt</code></pre>
+<pre><code>    make clobber SLEEP=200 alt</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: known bug - please help us fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1993_cmills">1993 cmills bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    DISPLAY=&quot;your_X_server_display&quot;
+<pre><code>    DISPLAY=&quot;your_X_server_display&quot;
     export DISPLAY
     ./cmills.alt [speed]        # must be run on an X11 server</code></pre>
 <p>where:</p>
@@ -166,7 +167,7 @@ requires X11?</a>.</p>
 <p>We recommend the version that uses <code>usleep(3)</code> to more easily see what is going
 on but you can use the original without any delays if you wish.</p>
 <h3 id="original-build">Original build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <h3 id="original-use">Original use:</h3>
 <p>Use <code>cmills</code> as you would <code>cmills.alt</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -227,10 +228,10 @@ which in turn is based on it’s area and speed. How silly!</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/cmills/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/cmills/cmills.alt.c">cmills.alt.c</a> - alternative source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/cmills/cmills.orig.c">cmills.orig.c</a> - original source</li>
-<li><a href="1993_cmills.tar.bz2">1993_cmills.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1993_cmills.tar.bz2">1993_cmills.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/cmills/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/cmills/.entry.json">.entry.json</a> - description of entry in JSON</li>

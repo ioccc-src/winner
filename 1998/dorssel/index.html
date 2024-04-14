@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,14 +142,14 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./dorssel
+<pre><code>    ./dorssel
     # input some text
 
     echo text | ./dorssel</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>How does the program decide which way to convert?</p>
 <p>What obsolescent feature are we talking about? (No, it’s not a
@@ -166,7 +167,7 @@ altering the behavior ?</p></li>
 <h3 id="extra-credit">Extra credit:</h3>
 <p>Try doing what the last part of the last command in <a href="try.sh">try.sh</a> suggests.
 As in, do the following:</p>
-<pre class="&lt;!---sh--&gt;"><code>    echo &quot;. -..- . .-. -.-. .. ... .
+<pre><code>    echo &quot;. -..- . .-. -.-. .. ... .
     -.-. .... .- -. --. .  - .... .  .--. .-. --- --. .-. .- --  ... ---  .. -  -.. --- . ...  -. --- -  ... .... --- ..- -&quot; | ./dorssel</code></pre>
 <p>and make the necessary adjustments.</p>
 <p>You might also want to read the <a href="dorssel.html">dorssel.html</a> file.</p>
@@ -195,21 +196,21 @@ ASCII. As far as I can tell, the program is conforming and does not
 invoke undefined behavior.</p>
 <h3 id="hints">Hints</h3>
 <p>Try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./dorssel &lt; dorssel.c | ./dorssel</code></pre>
+<pre><code>    ./dorssel &lt; dorssel.c | ./dorssel</code></pre>
 <p>to see what variables, numbers, and functions are used. (Does a
 better job than most C beautifiers).</p>
 <ul>
 <li>Filter your text twice (as in the previous sample) to obtain a version of your
 text that can be reversibly Morsified, i.e.</li>
 </ul>
-<pre class="&lt;!---sh--&gt;"><code>    ./dorssel &lt; dorssel.c | ./dorssel | ./dorssel | ./dorssel</code></pre>
+<pre><code>    ./dorssel &lt; dorssel.c | ./dorssel | ./dorssel | ./dorssel</code></pre>
 <p>is the same as</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./dorssel &lt; dorssel.c | ./dorssel</code></pre>
+<pre><code>    ./dorssel &lt; dorssel.c | ./dorssel</code></pre>
 <ul>
 <li>The file <a href="dorssel.md">dorssel.md</a> contains all the information needed to
 understand this program. For an obfuscated spoiler, try</li>
 </ul>
-<pre class="&lt;!---sh--&gt;"><code>    ./dorssel &lt; dorssel.md</code></pre>
+<pre><code>    ./dorssel &lt; dorssel.md</code></pre>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
@@ -238,10 +239,10 @@ understand this program. For an obfuscated spoiler, try</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/dorssel/dorssel.orig.c">dorssel.orig.c</a> - original source</li>
 <li><a href="dorssel.html">dorssel.html</a> - author description of entry</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/dorssel/try.sh">try.sh</a> - how to run</li>
-<li><a href="1998_dorssel.tar.bz2">1998_dorssel.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1998_dorssel.tar.bz2">1998_dorssel.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/dorssel/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/dorssel/dorssel.md">dorssel.md</a> - markdown source for dorssel.html</li>

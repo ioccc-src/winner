@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,11 +142,11 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./coupard</code></pre>
+<pre><code>    ./coupard</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>You may need to run this a few times to understand exactly what is
 being said. You might even need to look somewhere on your desktop,
@@ -170,7 +171,7 @@ fixed-format audio interface that is supported by the majority of Unices
 that can do sound, as a lowest-denominator sound I/O interface.</p>
 <h3 id="program-usage">Program usage</h3>
 <p>To listen to what the program says directly, invoke</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./coupard &gt; /dev/audio</code></pre>
+<pre><code>    ./coupard &gt; /dev/audio</code></pre>
 <p>The program then speaks out something like</p>
 <blockquote>
 <p>The time is HH hours MM minutes SS seconds</p>
@@ -181,7 +182,7 @@ the speakers connected … :-)</p>
 <p>If you want to convert the audio output of the program into another audio
 format, you can pipe it to <a href="https://en.wikipedia.org/wiki/SoX">SoX</a> for example
 (<code>sox</code> is the Swiss army knife of Unix audio tools). The command:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./coupard | sox -c1 -r8000 -tub - -c2 -r44100 -twav test.wav</code></pre>
+<pre><code>    ./coupard | sox -c1 -r8000 -tub - -c2 -r44100 -twav test.wav</code></pre>
 <p>converts the output of the program into a 44.1KHz stereo .WAV
 file and saves it into <code>test.wav</code>.</p>
 <p>The output format of the program is 8KHz, unsigned 8-bit samples.</p>
@@ -265,10 +266,10 @@ the size of the source code.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/coupard/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/coupard/coupard.orig.c">coupard.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/coupard/try.sh">try.sh</a> - how to run</li>
-<li><a href="2001_coupard.tar.bz2">2001_coupard.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2001_coupard.tar.bz2">2001_coupard.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/coupard/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/coupard/.entry.json">.entry.json</a> - description of entry in JSON</li>

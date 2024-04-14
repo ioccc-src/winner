@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,12 +142,12 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>The author provided alternate code that prints the output one character at a
 time to make it a bit more like the real thing in that it isn’t dumped out all
 at once. See <a href="#alternate-code">Alternate code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog
+<pre><code>    ./prog
 
     # get recode help:
     ./recode -h
@@ -178,9 +179,9 @@ at once. See <a href="#alternate-code">Alternate code</a> below.</p>
 <p><strong>NOTE</strong>: in <a href="recode.c">recode</a> no spaces between options and option arguments
 are allowed.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>What does:</p>
-<pre class="&lt;!---sh--&gt;"><code>    echo | ./recode
+<pre><code>    echo | ./recode
     echo | ./recode -v</code></pre>
 <p>do?</p>
 <h2 id="alternate-code">Alternate code:</h2>
@@ -188,15 +189,15 @@ are allowed.</p>
 after each character, so that one can read it more easily (for longer output)
 and to make it a bit more like the real thing.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <p>The default time to sleep is 400000 microseconds but you can change this by
 doing:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber SLEEP=600000 alt</code></pre>
+<pre><code>    make clobber SLEEP=600000 alt</code></pre>
 <p>to change it to 600000 microseconds. It guards against negative numbers.</p>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>prog.alt</code> as you would <code>prog</code> above.</p>
 <h3 id="alternate-try">Alternate try:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh</code></pre>
+<pre><code>    ./try.alt.sh</code></pre>
 <p>Notice how only the last part should use the <code>prog.alt</code>. Why? Try it and find
 out! Can you figure out why this works this way?</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -205,7 +206,7 @@ out! Can you figure out why this works this way?</p>
 <ul>
 <li><a href="enigma.1">enigma.1</a> - A useful man page for this entry. To render, try:</li>
 </ul>
-<pre class="&lt;!---sh--&gt;"><code>    man ./enigma.1</code></pre>
+<pre><code>    man ./enigma.1</code></pre>
 <ul>
 <li><a href="recode.html">recode.html</a> (or <a href="recode.html">recode.html</a> if reading on GitHub)
 <ul>
@@ -317,7 +318,7 @@ leave this in for historical purposes.</p>
 for input (end with EOF). At that point it’ll process the input string and print
 the result (after finishing the enciphering).</p>
 <p>If you run it like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog -</code></pre>
+<pre><code>    ./prog -</code></pre>
 <p>It will prompt you for the settings of the machine (example below).</p>
 <p>The first group is in the order of
 <a href="https://www.ciphermachinesandcryptology.com/en/enigmatech.htm">rotor</a> (number),
@@ -338,7 +339,7 @@ on GitHub see <a href="chocolate-cake.html">here</a>) though one might need a di
 of exercise after taking up the challenge! :-) These however show the general
 program as well as how to use the two winning entries of the <a href="https://en.wikipedia.org/wiki/Morse_code">Morse
 code</a> that I referred to earlier:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ ./prog -
+<pre><code>    $ ./prog -
     Ring 1: 3
     Setting 1: I
     Position 1: O
@@ -366,39 +367,39 @@ code</a> that I referred to earlier:</p>
 <p>If I didn’t specify the <code>-</code> by e.g. <code>echo IOCCC | ./prog</code> then it will use the
 default settings; as the judges suggest this invocation I will not show it here.</p>
 <p>But you can also type it out like this:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ ./prog
+<pre><code>    $ ./prog
     IOCCC
     UUMMX</code></pre>
 <p>The IOCCC comes from stdin; the <code>UUMMX</code> is written to stdout.</p>
 <p>If I compile the 2014 entry and copy it to my local directory as
 <code>vik</code> I might do:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ echo TEST|./prog |./vik | mplayer -demuxer rawaudio -</code></pre>
+<pre><code>    $ echo TEST|./prog |./vik | mplayer -demuxer rawaudio -</code></pre>
 <p>And you would hear <a href="https://en.wikipedia.org/wiki/Morse_code">Morse code</a> of the
 <a href="https://www.ciphermachinesandcryptology.com/en/enigmatech.htm">Enigma</a> output
 of ‘TEST’ (i.e. <code>KCWV</code>)! Or perhaps not in this case. I’m not sure: I discovered
 a bug in that entry (Fedora, CentOS and macOS all affected).</p>
 <p>For example I can use the syntax provided in the winning remarks along with my
 entry to write it to a file. Say:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ echo TEST|./prog |./vik &gt; test.raw
+<pre><code>    $ echo TEST|./prog |./vik &gt; test.raw
     $ ./vik e &lt; test.raw | ./prog
     LEST</code></pre>
 <p>Why did that happen? This shows more details:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ ./vik e &lt; test.raw
+<pre><code>    $ ./vik e &lt; test.raw
     SCWV</code></pre>
 <p>However as can be seen the first char is wrong:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ echo TEST|./prog
+<pre><code>    $ echo TEST|./prog
     KCWV</code></pre>
 <p>And piping the original output to my entry itself you get the original input:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ echo TEST | ./prog  | ./prog
+<pre><code>    $ echo TEST | ./prog  | ./prog
     TEST</code></pre>
 <p>I’m not sure what causes that or if there’s a way to fix it but that’s the
 idea anyway. Neither do I know if the original transcoding is correct.</p>
 <p>What if I use the input string <code>LEST</code> instead? In that case it worked fine:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ echo LEST | ./prog | ./vik &gt; lest.raw
+<pre><code>    $ echo LEST | ./prog | ./vik &gt; lest.raw
     $ ./vik e &lt; lest.raw | ./prog
     LEST</code></pre>
 <p>But there’s one obvious question, right? Let’s try the most important one:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ echo IOCCC | ./prog | ./vik &gt; ioccc.raw
+<pre><code>    $ echo IOCCC | ./prog | ./vik &gt; ioccc.raw
     $ ./vik e &lt; ioccc.raw
     UUMMX
     $ ./vik e &lt; ioccc.raw | ./prog
@@ -408,7 +409,7 @@ idea anyway. Neither do I know if the original transcoding is correct.</p>
 is with some of the things I pasted in the other file and maybe others here
 too. Notice also how it showed the same output that my program gave it - <code>UUMMX</code>.)</p>
 <p>What about the other <a href="../../1998/dorssel/dorssel.c">Morse code entry</a>?</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ echo IOCCC | ./prog | ./dorssel
+<pre><code>    $ echo IOCCC | ./prog | ./dorssel
     ..- ..- -- -- -..-</code></pre>
 <h3 id="the-recode.c-configurator"><a name="recode" href="#toc">The recode.c configurator</a></h3>
 <p>I have included a supplementary program <a href="recode.c">recode.c</a> that can do a number of
@@ -440,7 +441,7 @@ make it more flexible by a wrapper program.</p>
 <p>The parser is in a sense rather rudimentary but allows for both interactive and
 automatic (e.g. via the <a href="recode.c">recode</a> program) input. This does mean that
 something like the following can happen:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ ./prog -
+<pre><code>    $ ./prog -
     Ring 1: 1AB
     Setting 1: Position 1: Ring 2: 2CD
     Setting 2: Position 2: Ring 3: 3
@@ -493,7 +494,7 @@ GitHub).</p>
 should help you remember (though not at this time in our world it might help you
 later on?). This might become even more useful after the challenge is accepted,
 accomplished and made use of! :)</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ echo ABC | ./prog
+<pre><code>    $ echo ABC | ./prog
     GYM
     $ echo ABC | ./prog | ./prog
     ABC</code></pre>
@@ -516,7 +517,7 @@ which was exactly 75 years from the day that the person responsible for the
 <a href="https://en.wikipedia.org/wiki/World_War_II">Second World War</a>, Adolf Hitler,
 ended his life. (I later made a bug fix but I consider this inconsequential).</p>
 <p>As for <a href="recode.c">recode.c</a> though I really love this:</p>
-<pre class="&lt;!---c--&gt;"><code>              /\
+<pre><code>              /\
     /          This is *not* what you think:</code></pre>
 <p>…because it seems so wrong in C code at first glance. Also what does the
 ‘this’ refer to?</p>
@@ -524,9 +525,9 @@ ended his life. (I later made a bug fix but I consider this inconsequential).</p
 <p>It’s an <a href="https://en.wikipedia.org/wiki/Enigma_machine">Enigma machine</a> simulator! Isn’t
 that proof that it’s obfuscated itself?! :) Silliness aside <a href="obfuscation.txt">obfuscation.txt</a>
 has some of the ways I think this entry is obfuscated. To decipher try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./recode -Robfuscation.key -fobfuscation.txt | ./prog - 2&gt;/dev/null &gt; obfuscation.md</code></pre>
+<pre><code>    ./recode -Robfuscation.key -fobfuscation.txt | ./prog - 2&gt;/dev/null &gt; obfuscation.md</code></pre>
 <p>To encipher:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./recode -Robfuscation.key -fobfuscation.md | ./prog - 2&gt;/dev/null &gt; obfuscation.txt</code></pre>
+<pre><code>    ./recode -Robfuscation.key -fobfuscation.md | ./prog - 2&gt;/dev/null &gt; obfuscation.txt</code></pre>
 <p>The file <a href="obfuscation.key">obfuscation.key</a> is the key to decipher/encipher
 <a href="obfuscation.txt">obfuscation.txt</a>.</p>
 <p>For the lazy <a href="obfuscation.html">obfuscation.html</a> has the deciphered version. I am afraid I’m not
@@ -832,10 +833,10 @@ email but I’m more likely to respond to mastodon messages.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson2/key.txt">key.txt</a> - key to decipher or encipher IOCCC</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson2/obfuscation.key">obfuscation.key</a> - key to decipher or encipher obfuscation.txt</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson2/recode.1">recode.1</a> - configuration tool man page</li>
-<li><a href="2020_ferguson2.tar.bz2">2020_ferguson2.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2020_ferguson2.tar.bz2">2020_ferguson2.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson2/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson2/.entry.json">.entry.json</a> - description of entry in JSON</li>

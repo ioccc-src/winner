@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,12 +142,12 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <p>We recommend that you use the alt version to see what the entry looked like back
 in 1996. For the original version see the <a href="#original-code">original code</a>
 section.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./eldby.alt</code></pre>
+<pre><code>    ./eldby.alt</code></pre>
 <p>To quit send intr (typically ctrl-c).</p>
 <p>NOTE: to reset the sanity of your terminal after this program ends try <code>reset</code>.</p>
 <h2 id="try">Try:</h2>
@@ -155,12 +156,12 @@ happening with modern systems, and to not flash too quickly, which can be
 problematic for some people, can be configured to different speeds by way of the
 value used in <code>usleep()</code>. The default is <code>35000</code> but you can easily change
 it. To do so try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make SLEEP=20000 clobber alt
+<pre><code>    make SLEEP=20000 clobber alt
     ./eldby.alt</code></pre>
 <h2 id="original-code">Original code:</h2>
 <p>This version is the original which has no sleep time in between updates.</p>
 <h3 id="original-build">Original build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <h3 id="original-use">Original use:</h3>
 <p>Use <code>./eldby</code> as you would <code>./eldby.alt</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -197,10 +198,10 @@ must be VT100 or better with 80 columns and 24 rows or more.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/eldby/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/eldby/eldby.alt.c">eldby.alt.c</a> - alternative source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/eldby/eldby.orig.c">eldby.orig.c</a> - original source</li>
-<li><a href="1996_eldby.tar.bz2">1996_eldby.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1996_eldby.tar.bz2">1996_eldby.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/eldby/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/eldby/.entry.json">.entry.json</a> - description of entry in JSON</li>

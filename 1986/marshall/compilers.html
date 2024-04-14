@@ -83,6 +83,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -162,7 +163,7 @@ because of the call to <code>_exit()</code> (see below).</p>
 enable the optimiser clang will generate code that prints the string twice and
 dumps core just like before! What about the call to <code>_exit()</code>?</p>
 <p>The call was:</p>
-<pre class="&lt;!---c--&gt;"><code>    _exit(argv[(int)*argc-2/cc[1*(int)*argc]|-1&lt;&lt;4]);</code></pre>
+<pre><code>    _exit(argv[(int)*argc-2/cc[1*(int)*argc]|-1&lt;&lt;4]);</code></pre>
 <p>Changing it to not refer to these variables and just exit 1 and the problems
 disappear!</p>
 <h3 id="macos">macOS</h3>
@@ -172,7 +173,7 @@ it works fine but if it’s disabled it prints out the string and then enters an
 infinite loop!</p>
 <p>After we fix the infinite loop if we change the <code>_exit()</code> call in macOS and
 disable the optimiser we might get something like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ ./marshall
+<pre><code>    $ ./marshall
           choo choo
     Segmentation fault: 11</code></pre>
 <p>Observe how it doesn’t print it twice. But of course it segfaults so it’s not

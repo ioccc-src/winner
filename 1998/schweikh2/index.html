@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,13 +142,13 @@ Location: <a href="../../location.html#DE">DE</a> - <em>Federal Republic of Germ
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./yarng</code></pre>
+<pre><code>    ./yarng</code></pre>
 <p>or</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./yarng integer_number</code></pre>
+<pre><code>    ./yarng integer_number</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh
+<pre><code>    ./try.sh
 
     ./yarng
     # watch what it does</code></pre>
@@ -160,24 +161,24 @@ results different? Why?</p>
 <p>At the time of judging, some non-gcc compilers that were not fully ANSI standard
 did not compile this entry correctly. Also at that time, some gcc and egcs
 implementations ran into a problem when building the entry. Doing:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make schweikh2</code></pre>
+<pre><code>    make schweikh2</code></pre>
 <p>often produced an error of the form:</p>
-<pre class="&lt;!---sh--&gt;"><code>    gcc -ansi schweikh2.alt.c -o schweikh2.alt
+<pre><code>    gcc -ansi schweikh2.alt.c -o schweikh2.alt
     as: Error: cca00NzV.s, line 58: Missing &quot; at end of string
          &quot;
     as: Error: cca00NzV.s, line 58: malformed statement
     *** Error code 1 (bu21)</code></pre>
 <p>because the line:</p>
-<pre class="&lt;!---c--&gt;"><code>    #line 10 ONE(O(1,1,2,6,0,6))</code></pre>
+<pre><code>    #line 10 ONE(O(1,1,2,6,0,6))</code></pre>
 <p>turned into the line:</p>
-<pre class="&lt;!---c--&gt;"><code>    # 9 &quot;01\012&quot;</code></pre>
+<pre><code>    # 9 &quot;01\012&quot;</code></pre>
 <p>(note, though, how that line is on line 11) which caused gcc to give to the
 assembler the following two lines:</p>
-<pre class="&lt;!---asm--&gt;"><code>    .stabs &quot;schweikh2.c
+<pre><code>    .stabs &quot;schweikh2.c
     &quot;,132,0,0,Ltext1</code></pre>
 <p>and the lone <code>"</code> after the <code>#.file</code> line resulted in an assembly syntax error.</p>
 <p>In some cases one had to compile using <code>gcc -g</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make schweikh2 CFLAGS=-g</code></pre>
+<pre><code>    make schweikh2 CFLAGS=-g</code></pre>
 <p>to trigger this error.</p>
 <p>With the proper text beyond the <code>\012</code>, it was even possible to have all kinds
 of fun adding inline assembly via <code>#line</code> directives. :-)</p>
@@ -191,7 +192,7 @@ for that matter :-) ).</p>
 you could have emailed the author for a free pat on the back (and maybe you
 still can :-) ).</p>
 <p>Because of this bug, the code was changed to be instead:</p>
-<pre class="&lt;!---c--&gt;"><code>    #line 10 &quot;01\015&quot;</code></pre>
+<pre><code>    #line 10 &quot;01\015&quot;</code></pre>
 <p>However in 2023 it was observed that <em>it is gcc</em> (at least some versions?) that
 has a problem with the compilation of the <em>modified</em> program, giving an internal
 compiler error:</p>
@@ -200,9 +201,9 @@ compiler error:</p>
     :12:1: warning: missing terminating &quot; character
     :12:19: internal compiler error: invalid built-in macro &quot;__FILE__&quot;</code></pre>
 <p>so the line:</p>
-<pre class="&lt;!---c--&gt;"><code>    #line 10 &quot;01\015&quot;</code></pre>
+<pre><code>    #line 10 &quot;01\015&quot;</code></pre>
 <p>was changed to:</p>
-<pre class="&lt;!---c--&gt;"><code>    #line 10 ONE(O(1,1,2,6,0,6))</code></pre>
+<pre><code>    #line 10 ONE(O(1,1,2,6,0,6))</code></pre>
 <p>and now it works with both clang and gcc.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="what-this-program-does">What this program does</h3>
@@ -223,7 +224,7 @@ bits may be specified by an argument and defaults either to <code>UINT_MAX</code
 (least likely) or <code>UINT_MAX+1</code> (most likely). Extra credit: why the
 different values? How long would you need for an empirical test?</p>
 <p>For example:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ ./yarng 32
+<pre><code>    $ ./yarng 32
     10111001010101110110010101001111
     $ ./yarng 5
     10011</code></pre>
@@ -316,10 +317,10 @@ Type <code>yarng</code> and watch Him roll.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh2/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh2/schweikh2.orig.c">schweikh2.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh2/try.sh">try.sh</a> - how to run</li>
-<li><a href="1998_schweikh2.tar.bz2">1998_schweikh2.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1998_schweikh2.tar.bz2">1998_schweikh2.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh2/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh2/.entry.json">.entry.json</a> - description of entry in JSON</li>

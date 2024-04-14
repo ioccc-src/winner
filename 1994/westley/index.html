@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <p>We recommend that you try the alternate version first as the original entry
 requires (for better display) 80 columns and 8 character tabs with wraparound.</p>
 <p>The alt code uses the same logic as the original code except that the original
@@ -149,7 +150,7 @@ code used <code>#include</code>s of files that do not exist to generate the mess
 compiler errors) whereas the alt code uses <code>printf(3)</code>. For the original entry
 see <a href="#original-code">Original code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./westley.alt</code></pre>
+<pre><code>    ./westley.alt</code></pre>
 <p>The purpose of the game is to escape the dungeon. Depending on the compiler line
 you will get a different message when you run the program. One compiler line
 will make you win the game (escape the dungeon) and others will show something
@@ -164,10 +165,10 @@ from start to finish.</p>
 <h2 id="try">Try:</h2>
 <p>For something more interesting try compiling it with different <code>cc -D</code> arguments
 and then run the program each time. For example:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -Describe -Door westley.alt.c -o westley.alt &amp;&amp; ./westley.alt
+<pre><code>    cc -Describe -Door westley.alt.c -o westley.alt &amp;&amp; ./westley.alt
     cc -Describe -Drain westley.alt.c -o westley.alt &amp;&amp; ./westley.alt</code></pre>
 <p>To see the game from start to finish, try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh</code></pre>
+<pre><code>    ./try.alt.sh</code></pre>
 <h2 id="original-code">Original code:</h2>
 <p>The purpose of the game is to escape the dungeon <strong>via the compiler line
 where you get <em>messages as compiler errors</em></strong>. Depending on the compiler line you
@@ -177,7 +178,7 @@ game!</p>
 wraparound. The alternate code does not have this limitation and it is for this
 reason that we recommend you try it first.</p>
 <h3 id="original-build">Original build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <p>There are a variety of different <code>-D</code> flags you can give to <code>cc</code> that change the
 message you get. You might wish to look at the <a href="westley.c">source code</a> to get a
 better idea or see below in the <a href="#original-try">Original try</a> section for
@@ -196,15 +197,15 @@ error messages; there is no running the program.</p>
 <h3 id="original-try">Original try:</h3>
 <p>For something more interesting try compiling it with different <code>cc -D</code>
 arguments:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -Describe -Door westley.c
+<pre><code>    cc -Describe -Door westley.c
     cc -Describe -Drain westley.c</code></pre>
 <p>To see the game from start to complete, try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Not all compiler errors are bad.</p>
 <p>For spoilers see the end of the notes from the author below.</p>
 <p>To use:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>This program, in accordance with the rules, compiles into a legal
 C program without human intervention. However, it simply compiles
@@ -213,7 +214,7 @@ to actually compile the program.</p>
 <p>This program is a simple adventure game which uses only C preprocessor
 error messages (for missing <code>#include</code> files) as output. To begin,
 try to compile the program with no options:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc westley.c</code></pre>
+<pre><code>    cc westley.c</code></pre>
 <p>This will fail, producing an error message for a missing <code>#include</code>
 file as the opening description. Your terminal should be set for
 80 columns, 8 character tabs, and wraparound, as there is no way
@@ -232,7 +233,7 @@ to reliably output newlines. You should see something like this
 missing include file name, which functions as the game text.</p>
 <p>To “do” things, all words must start with <code>-D</code>. For example, to
 look at the door, do:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -Describe -Door prog.c</code></pre>
+<pre><code>    cc -Describe -Door prog.c</code></pre>
 <p>…and you will get another error message telling you about the door.
 (note: some compilers will stop after the first missing include file,
 while others will continue to try compiling; the latter will repeat
@@ -241,7 +242,7 @@ with “verbose” turned on).</p>
 <p>The goal of the game is to escape the dungeon.</p>
 <p>Here is a walk-through for the game, including a few dead-ends:</p>
 <h3 id="spoiler">SPOILER</h3>
-<pre class="&lt;!---sh--&gt;"><code>    cc -Describe -Door westley.c
+<pre><code>    cc -Describe -Door westley.c
     cc -Describe -Drain westley.c
     cc -Describe -Dwarf westley.c
     cc -Describe -Debris westley.c # or -Dungeon
@@ -291,10 +292,10 @@ unimportant.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/westley/westley.orig.c">westley.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/westley/try.alt.sh">try.alt.sh</a> - how to run alternative code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/westley/try.sh">try.sh</a> - how to run</li>
-<li><a href="1994_westley.tar.bz2">1994_westley.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1994_westley.tar.bz2">1994_westley.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/westley/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/westley/.entry.json">.entry.json</a> - description of entry in JSON</li>

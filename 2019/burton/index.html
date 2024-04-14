@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,17 +142,17 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2019_burton">2019 burton bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; file
+<pre><code>    ./prog &lt; file
 
     ./cow file</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>A tiny, but punctually correct way of POSIX counting for text files. This one
 line, one word, 127 character beauty continues to expand the number of classic
@@ -163,14 +164,14 @@ interesting.</p>
 <p>Feed it anything on <code>stdin</code>.
 The output should look familiar.</p>
 <p>Compiles cleanly with:</p>
-<pre class="&lt;!---sh--&gt;"><code>    WARN=&quot;-Wno-implicit-int -Wno-missing-variable-declarations -Wno-parentheses&quot;
+<pre><code>    WARN=&quot;-Wno-implicit-int -Wno-missing-variable-declarations -Wno-parentheses&quot;
     cc -Wall -Wextra -Weverything -pedantic $WARN -include stdio.h -o prog prog.c</code></pre>
 <h3 id="description">Description:</h3>
 <p>Included is a test script, useful for the corner cases. As in all good Unix
 programs, it is silent upon success; any output demonstrates an error. Instead
 of checking correctness, the <a href="check.sh">check.sh</a> script can simply output the
 results: (The Makefile contains the spoiler):</p>
-<pre class="&lt;!---sh--&gt;"><code>    out=cat ./check.sh ./prog</code></pre>
+<pre><code>    out=cat ./check.sh ./prog</code></pre>
 <p>Interestingly, and a spoiler here: macOS and FreeBSD implement the common
 utility “correctly”. CentOS and Ubuntu both share a “flawed” utility that
 changes output format based upon input redirection or pipeline(!). As well, the
@@ -189,7 +190,7 @@ All your base belong to us, but the constants seem a bit … off?</p>
 <p>The script <a href="cow.sh">cow.sh</a> provides a closer analog, and perhaps a more useful
 interface.</p>
 <p>Included is a version without compilation warnings:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -Wall -Wextra -Weverything -pedantic -include stdio.h -o prog.clean prog.clean.c</code></pre>
+<pre><code>    cc -Wall -Wextra -Weverything -pedantic -include stdio.h -o prog.clean prog.clean.c</code></pre>
 <h3 id="bugs">Bugs</h3>
 <p>The flags are not supported. Although they could easily be added into <code>cow.sh</code>.
 This exercise left to the reader.</p>
@@ -224,10 +225,10 @@ This exercise left to the reader.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/burton/on.one.liners.txt">on.one.liners.txt</a> - on writing an IOCCC one-liner</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/burton/try.sh">try.sh</a> - how to run</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/burton/prog.clean.c">prog.clean.c</a> - version of source without compilation warnings</li>
-<li><a href="2019_burton.tar.bz2">2019_burton.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2019_burton.tar.bz2">2019_burton.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="256">256</a> - test suite data</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/burton/README.md">README.md</a> - markdown source for this web page</li>

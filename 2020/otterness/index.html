@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,15 +142,15 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2020_otterness">2020 otterness bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog</code></pre>
+<pre><code>    ./prog</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>Now play <code>output.mid</code> and <code>output2.mid</code> in an audio player that can play MIDI
 files.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -179,7 +180,7 @@ for most of my testing (see <a href="cvikl.mid">cvikl.mid</a>).</p>
 <h3 id="usage">Usage</h3>
 <p>Compile the program using the following command (I tested this using both
 <code>clang</code> and <code>gcc</code>):</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -pedantic -Wall -Werror -Wextra -O3 -o prog prog.c</code></pre>
+<pre><code>    cc -pedantic -Wall -Werror -Wextra -O3 -o prog prog.c</code></pre>
 <p>The program expects a MIDI on <code>stdin</code>, and writes a modified MIDI to <code>stdout</code>:</p>
 <pre><code>    ./prog &lt;input.mid &gt;output.mid</code></pre>
 <p>If the program encounters an error, no output will generally be produced, and
@@ -271,10 +272,10 @@ very thoroughly).</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/otterness/try.sh">try.sh</a> - how to run</li>
 <li><a href="cvikl.mid">cvikl.mid</a> - sample input sound</li>
 <li><a href="entertainer.mid">entertainer.mid</a> - sample input sound</li>
-<li><a href="2020_otterness.tar.bz2">2020_otterness.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2020_otterness.tar.bz2">2020_otterness.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/otterness/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/otterness/.entry.json">.entry.json</a> - description of entry in JSON</li>

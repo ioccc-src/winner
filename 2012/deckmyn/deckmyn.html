@@ -83,6 +83,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -124,7 +125,7 @@
 
 <h1 id="user-manual">USER MANUAL</h1>
 <h2 id="calling-the-program">Calling the program</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./deckmyn &quot;`cat deckmyn.c`&quot; &quot;`cat musicfile`&quot; &gt; output.pbm</code></pre>
+<pre><code>    ./deckmyn &quot;`cat deckmyn.c`&quot; &quot;`cat musicfile`&quot; &gt; output.pbm</code></pre>
 <p>Then display <code>output.pbm</code>.</p>
 <p>This minimalistic music notator expects two command line arguments. The first is
 the font description embedded in the source code. Notice that you don’t pass the
@@ -186,7 +187,7 @@ clef. <code>"K"</code> followed by any other letter will just default to a stand
 </ol>
 <h2 id="examples">Examples</h2>
 <p>Blank music paper (with G clef):</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./deckmyn &quot;`cat deckmyn.c`&quot; &quot;sz sa x  s1 x  s1 x  s1 x  s1 x  s1 &quot;&gt; blank.pbm</code></pre>
+<pre><code>    ./deckmyn &quot;`cat deckmyn.c`&quot; &quot;sz sa x  s1 x  s1 x  s1 x  s1 x  s1 &quot;&gt; blank.pbm</code></pre>
 <p>With an F clef:</p>
 <pre><code>    ./deckmyn &quot;`cat deckmyn.c`&quot; &quot;KF sz sa x  s1 x  s1 x  s1 x  s1 x  s1 &quot;&gt; blank.pbm</code></pre>
 <p>Notice how only the first staff (or any staff) needs to have the full length.</p>

@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>There is an alternate version for those who wish to use QEMU rather than having
 to reboot and rely on having a floppy drive (if you even remember what those are
 :-) ) etc. See <a href="#alternate-code">alternate code</a> below.</p>
@@ -152,31 +153,31 @@ to reboot and rely on having a floppy drive (if you even remember what those are
     STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2004_gavin">2004 gavin bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./gavin</code></pre>
+<pre><code>    ./gavin</code></pre>
 <h2 id="try">Try:</h2>
 <p>To enjoy the results (on a Linux/x86 machine) with a floppy drive (remember
 those? We do!):</p>
-<pre class="&lt;!---sh--&gt;"><code>    su</code></pre>
+<pre><code>    su</code></pre>
 <p>Make a floppy with an ext2 filesystem (<code>mke2fs /dev/fd0</code> replacing <code>fd0</code> with
 whatever the floppy device is!), mount it under <code>/mnt/floppy</code> and then:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cp kernel fs.tar lilo.conf boot.b /mnt/floppy</code></pre>
+<pre><code>    cp kernel fs.tar lilo.conf boot.b /mnt/floppy</code></pre>
 <p>NOTE: If the version of your lilo is not 21.4, use the appropriate boot.b file.</p>
 <p>NOTE: If your floppy drive is not <code>/dev/fd0</code>, edit lilo.conf appropriately.</p>
-<pre class="&lt;!---sh--&gt;"><code>    lilo -C /mnt/floppy/lilo.conf</code></pre>
+<pre><code>    lilo -C /mnt/floppy/lilo.conf</code></pre>
 <p>Boot from the floppy on an x86 machine with a PS/2 keyboard and mouse.
 Move the window away from the corner.</p>
-<pre class="&lt;!---sh--&gt;"><code>    vi gavin.c</code></pre>
+<pre><code>    vi gavin.c</code></pre>
 <p>Scroll up and down the file with up-arrow and down-arrow.</p>
-<pre class="&lt;!---sh--&gt;"><code>    sh</code></pre>
+<pre><code>    sh</code></pre>
 <p>You can have several shell windows:</p>
-<pre class="&lt;!---sh--&gt;"><code>    vi README.md
+<pre><code>    vi README.md
     ./prim</code></pre>
 <p>Press and hold any key.</p>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This version’s main difference is that the macro <code>K</code> is redefined to <code>1</code> so that
 you can use it with <code>QEMU</code>.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>The use is mostly the same as <code>gavin</code> except that one initially executes <code>gavin.alt</code>
 (which <code>make alt</code> will do) and one will have to use <code>QEMU</code> instead. The files
@@ -290,10 +291,10 @@ at which a Linux bootloader loads an x86 kernel image).</p>
 <li><a href="img/fs.tar">img/fs.tar</a> - tar of root file system</li>
 <li><a href="img/kernel">img/kernel</a> - Linux kernel x86 boot executable zImage</li>
 <li><a href="prim">prim</a> - prime number printing program</li>
-<li><a href="2004_gavin.tar.bz2">2004_gavin.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2004_gavin.tar.bz2">2004_gavin.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/gavin/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/gavin/.entry.json">.entry.json</a> - description of entry in JSON</li>

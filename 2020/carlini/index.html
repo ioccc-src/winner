@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,17 +142,17 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2020_carlini">2020 carlini bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog</code></pre>
+<pre><code>    ./prog</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>Or if you actually want to play:</p>
-<pre class="&lt;!---sh--&gt;"><code>    # Play with a friend, real or imagined, P1 and P2, squares are numbered 1..9
+<pre><code>    # Play with a friend, real or imagined, P1 and P2, squares are numbered 1..9
     ./prog</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This program consists of a single <code>printf(3)</code> statement wrapped in a <code>while</code>
@@ -161,7 +162,7 @@ ASCII art of the program source.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>HOW ABOUT A NICE GAME OF <strike>CHESS</strike>TIC-TAC-TOE?</p>
 <h3 id="usage">USAGE</h3>
-<pre class="&lt;!---sh--&gt;"><code>    cc -o prog prog.c
+<pre><code>    cc -o prog prog.c
     ./prog</code></pre>
 <p>Alternates between P1 and P2. Enter a digit [1-9] to move:</p>
 <pre><code>    1 | 2 | 3
@@ -187,10 +188,10 @@ patient.</p>
 <p>After macro expansion the format string is roughly 100K. This makes some
 compilers unhappy, and others slow. (For example, passing GCC the flags <code>-Wall -Wextra -pedantic</code> will result in a warning about oversized strings.)</p>
 <p>Under some terminals the program may exit early. The following should always work:</p>
-<pre class="&lt;!---sh--&gt;"><code>    echo &quot;1 2 3 4 5 6 7&quot; | ./prog</code></pre>
+<pre><code>    echo &quot;1 2 3 4 5 6 7&quot; | ./prog</code></pre>
 <h3 id="obfuscation">OBFUSCATION</h3>
 <p>The entirety of the program consists of a single iterated call to <code>printf(3)</code>.</p>
-<pre class="&lt;!---c--&gt;"><code>    int main() {
+<pre><code>    int main() {
         while(*d) printf(fmt, arg);
     }</code></pre>
 <p>Here, <code>fmt</code> is a single string, and <code>arg</code> is a series of arguments to
@@ -218,9 +219,9 @@ this one <code>printf(3)</code> call (and a call to <code>scanf(3)</code> to rea
 <li><p><code>"%3$.*4$d"</code>: print argument 3 to <code>printf(3)</code> with as many zeros as in argument 4.</p></li>
 </ul>
 <p>For example, the following expression</p>
-<pre class="&lt;!---c--&gt;"><code>    printf(&quot;%1$.*2$d%3$hhn&quot;, 5, 10, &amp;x)</code></pre>
+<pre><code>    printf(&quot;%1$.*2$d%3$hhn&quot;, 5, 10, &amp;x)</code></pre>
 <p>will have the same effect as if we had written</p>
-<pre class="&lt;!---c--&gt;"><code>    x = 10;</code></pre>
+<pre><code>    x = 10;</code></pre>
 <p>because it will print out <code>0000000005</code> (5 padded to size 10) and then write the
 number of bytes written to <code>x</code>.</p>
 <h4 id="printf3-oriented-programming"><code>printf(3)</code> Oriented Programming</h4>
@@ -233,17 +234,17 @@ array–one bit per pair of bytes:</p>
 </ul>
 <p>We can use format strings to compute the OR/NOT of arbitrary “bits”.</p>
 <p>We’ll start with the simplest, OR:</p>
-<pre class="&lt;!---c--&gt;"><code>    printf(&quot;%1$s%2$s%3$hhn&quot;, a, b, c)</code></pre>
+<pre><code>    printf(&quot;%1$s%2$s%3$hhn&quot;, a, b, c)</code></pre>
 <p>will compute</p>
-<pre class="&lt;!---c--&gt;"><code>    *c = strlen(a) + strlen(b)</code></pre>
+<pre><code>    *c = strlen(a) + strlen(b)</code></pre>
 <p>but given that <code>strlen(x)</code> is <code>1</code> for a 1-bit and <code>0</code> for a 0-bit, we have</p>
-<pre class="&lt;!---c--&gt;"><code>    *c = a | b</code></pre>
+<pre><code>    *c = a | b</code></pre>
 <p>Computing the NOT of a single value is also easy:</p>
-<pre class="&lt;!---c--&gt;"><code>    printf(&quot;%1$255d%1$s%hhn&quot;, a, b)</code></pre>
+<pre><code>    printf(&quot;%1$255d%1$s%hhn&quot;, a, b)</code></pre>
 <p>will compute</p>
-<pre class="&lt;!---c--&gt;"><code>    *b = (strlen(a)+255)%256 = strlen(a)-1</code></pre>
+<pre><code>    *b = (strlen(a)+255)%256 = strlen(a)-1</code></pre>
 <p>and again, because <code>strlen(x)</code> is either <code>1</code> or <code>0</code> we have</p>
-<pre class="&lt;!---c--&gt;"><code>    *c = !b</code></pre>
+<pre><code>    *c = !b</code></pre>
 <p>From here we can compute any binary circuit. Doing something efficient,
 though, still takes work.</p>
 <h4 id="tic-tac-toe">Tic-Tac-Toe</h4>
@@ -252,7 +253,7 @@ with a turn counter that alternates between player 1 and player 2.</p>
 <p>To detect who has won, we implement the following logic. Let <code>A</code>, <code>B</code>, and <code>C</code> be
 pointers to three squares in a row to test, and <code>D</code> be where to save if there is a
 win or not.</p>
-<pre class="&lt;!---c--&gt;"><code>    &quot;%A$s%B$s%C$s%1$253d%11$hhn&quot; // r11 = !(*A &amp; *B &amp; *C)
+<pre><code>    &quot;%A$s%B$s%C$s%1$253d%11$hhn&quot; // r11 = !(*A &amp; *B &amp; *C)
     ZERO
     &quot;%11$s%1$255d%11hhn&quot; // r11 = !r11
     ZERO
@@ -261,7 +262,7 @@ win or not.</p>
 possible three-in-a-row configurations, for both players.</p>
 <p>The ZERO macro ensures that the number of bytes written out is 0 mod 256 with
 the following expression</p>
-<pre class="&lt;!---c--&gt;"><code>    &quot;%1$hhn%1$s&quot; (repeated 256 times)</code></pre>
+<pre><code>    &quot;%1$hhn%1$s&quot; (repeated 256 times)</code></pre>
 <p>where argument 1 is a pointer to a temporary variable followed by a NUL byte.</p>
 <p>This works because if the current count is 0 mod 256, then <code>"%1$hhn"</code> will write
 zero to argument 1 and then <code>"%1$s"</code> will never emit any text. If, on the other
@@ -273,15 +274,15 @@ times we’re eventually going to reach 0 mod 256.</p>
 bits to Xs and Os to print out. This is actually rather straightforward. Given
 in <code>1$</code> the pointer to player 1’s square, and <code>2$</code> the pointer to player 2’s, and
 in <code>3$</code> the pointer to the board string, we can compute</p>
-<pre class="&lt;!---c--&gt;"><code>    &quot;%1$s&quot; (repeated 47 times) &quot;%2$s&quot; (repeated 56 times) %1$32d%3$hhn&quot;</code></pre>
+<pre><code>    &quot;%1$s&quot; (repeated 47 times) &quot;%2$s&quot; (repeated 56 times) %1$32d%3$hhn&quot;</code></pre>
 <p>which will, in effect, compute</p>
-<pre class="&lt;!---c--&gt;"><code>    *r3 = (*r1) * 47 + (*r2) * 56 + 32</code></pre>
+<pre><code>    *r3 = (*r1) * 47 + (*r2) * 56 + 32</code></pre>
 <p>which will output <code>' '</code> if neither are true, <code>'X'</code> if <code>r1</code> is true, or <code>'O'</code> if
 <code>r2</code> is true.</p>
 <h4 id="further-obfuscations">Further Obfuscations</h4>
 <p>In order to be able to finally display the board, while still only using one
 <code>printf(3)</code> statement, we finish the statement with</p>
-<pre class="&lt;!---c--&gt;"><code>    &quot;\n\033[2J\n%26$s&quot;</code></pre>
+<pre><code>    &quot;\n\033[2J\n%26$s&quot;</code></pre>
 <p>which is the escape sequence to clear the screen, and then prints argument 26.
 Argument 26 is a pointer to a <code>char*</code> in memory, that initially is undefined,
 but within the <code>printf(3)</code> statement we will construct this string to look like a
@@ -297,7 +298,7 @@ tic-tac-toe board.</p>
 won, or the game is over and it is a draw.</p>
 <p>This turns out not to be as hard as it might look. Using the same trick as
 before, we set byte four to be</p>
-<pre class="&lt;!---c--&gt;"><code>    *byte4 = is_win * &#39;W&#39; + is_tie * &#39;T&#39;</code></pre>
+<pre><code>    *byte4 = is_win * &#39;W&#39; + is_tie * &#39;T&#39;</code></pre>
 <p>The byte <code>'I'</code> and <code>'S'</code> can always be the same, and we do the same for <code>'E'</code>/<code>'N'</code>.</p>
 <p>We do this same on-the-fly creation of the <code>scanf(3)</code> format string, but for a
 different reason. We first want to run <code>printf(3)</code> to show the first board, and
@@ -305,14 +306,14 @@ then alternate between runs to <code>scanf(3)</code> and <code>printf(3)</code> 
 displaying moves. Importantly, we <em>do not</em> want a final <code>scanf(3)</code> when the game
 ends. It should just exit.</p>
 <p>One option would be to implement the logic as</p>
-<pre class="&lt;!---c--&gt;"><code>    printf()
+<pre><code>    printf()
     while (*ok) {
         scanf();
         printf();
 }</code></pre>
 <p>but this would DOUBLE the number of calls to <code>printf(3)</code> we require. So instead we
 implement it like this</p>
-<pre class="&lt;!---c--&gt;"><code>    while (*ok) {
+<pre><code>    while (*ok) {
         scanf();
         printf();
     }</code></pre>
@@ -349,10 +350,10 @@ string so that it returns right away without blocking. The first time the
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/carlini/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/carlini/prog.orig.c">prog.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/carlini/try.sh">try.sh</a> - how to run</li>
-<li><a href="2020_carlini.tar.bz2">2020_carlini.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2020_carlini.tar.bz2">2020_carlini.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/carlini/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/carlini/.entry.json">.entry.json</a> - description of entry in JSON</li>

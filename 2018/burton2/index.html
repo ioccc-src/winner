@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,13 +142,13 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog [-tcksri] &lt; file.c</code></pre>
+<pre><code>    ./prog [-tcksri] &lt; file.c</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>If you get really stuck, try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    man ./tac.1</code></pre>
+<pre><code>    man ./tac.1</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>They say size isn’t everything, and in the case of IOCCC
 <a href="../../2018/iocccsize.c">iocccsize.c</a> that is saying something!
@@ -228,16 +229,16 @@ quote consumes everything until the next quote</li>
 <li>Comments between preprocessor hash and keyword are not replaced with whitespace;
 the following counts #include as two tokens, <code>#</code> and <code>include</code> (not as a reserved word):</li>
 </ul>
-<pre class="&lt;!---c--&gt;"><code>    #/*this will not be counted*/include/*correctly*/&lt;stdio.h&gt;</code></pre>
+<pre><code>    #/*this will not be counted*/include/*correctly*/&lt;stdio.h&gt;</code></pre>
 <p>Fixing this properly hampers backwards compatibility in counting. This requires
 eliding comments during the translation phases (ISO 5.1.1.2, phase 3), and yet still
 counting words correctly absent <code>-k</code>.</p>
 <h3 id="backwards-compatibility">Backwards Compatibility:</h3>
 <p><code>tac</code> was run over all 366 previous IOCCC winning entries:</p>
-<pre class="&lt;!---sh--&gt;"><code>    find ~/src/obc -type f -name \*.c | wc</code></pre>
+<pre><code>    find ~/src/obc -type f -name \*.c | wc</code></pre>
 <p>The discrepancies found are documented and explained in the file
 <a href="discrepancies.html">discrepancies.html</a>.</p>
-<pre class="&lt;!---sh--&gt;"><code>    find ~/src/obc -type f -a -name &quot;*.c&quot; | xargs ./spotcheck.sh ./prog | ./spotdiff.sh |
+<pre><code>    find ~/src/obc -type f -a -name &quot;*.c&quot; | xargs ./spotcheck.sh ./prog | ./spotdiff.sh |
             grep -v keep | diff -bw - discrep* | grep &quot;[&lt;&gt;] cl &quot;</code></pre>
 <p>In summary, there are only 6 unique entries out of 366 that have any variation
 in Rule 2 counts; in all cases, the differences are due to bugs within
@@ -273,10 +274,10 @@ This feature enables interesting analyses of C (and C++) code that’s hard to g
 <p>For instance, here is a simple token counter, useful in finding repeated long tokens, or operator
 frequency, or counting the references to identifiers, constants, or breadth of use of the
 language:</p>
-<pre class="&lt;!---sh--&gt;"><code>    #!/usr/bin/env bash
+<pre><code>    #!/usr/bin/env bash
     cat $* | ./prog -t | sort | uniq -c | sort -k1nr</code></pre>
 <p>And here is a C keyword frequency counter:</p>
-<pre class="&lt;!---sh--&gt;"><code>    #!/usr/bin/env bash
+<pre><code>    #!/usr/bin/env bash
     function iskeyword {
        awk &#39;BEGIN{f=&quot;c11&quot;;while(getline&lt;f)k[$1]=0} {if($1 in k)k[$1]++}END{for(i in k)print k[i],i}&#39;
     }
@@ -299,7 +300,7 @@ handful of simple rules (and another use of the external keyword file). A more
 refined version of this is included in the file <a href="unob.sh">unob.sh</a>, but the
 simple code below is a serviceable obfuscated C de-obfuscator in a <em>scripting
 language</em>. It really is this easy with <code>tac</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    #!/usr/bin/env bash
+<pre><code>    #!/usr/bin/env bash
     script=&#39;
     BEGIN {
             last=nl=&quot;\n&quot;;
@@ -401,7 +402,7 @@ the IOJCC trash can.</p>
 which is neither complete (<code>#define</code>, <code>#ifndef</code>, <code>#undef</code> are missing
 – yes, Virginia knows about <code>#define</code> omitted on purpose),
 nor correct (many more are added: <code>I</code>, <code>true</code>, <code>bool</code>, <code>compl</code>, …):</p>
-<pre class="&lt;!---sh--&gt;"><code>    (sed -n &#39;1p&#39; c11; sed -n &#39;2,$p&#39; ioccc.kw.freq | sort) | comm -3 - c11</code></pre>
+<pre><code>    (sed -n &#39;1p&#39; c11; sed -n &#39;2,$p&#39; ioccc.kw.freq | sort) | comm -3 - c11</code></pre>
 <p>That is an obfuscated way to say “diff”. But it also more clearly shows the, um, diffs.</p>
 <p>The usage string is similarly externalized, providing a better usability string than
 the limits would otherwise allow. If this is considered bending the rules too far,
@@ -429,7 +430,7 @@ for obfuscation. Thus <code>-trigraphs -Wno-trigraphs</code> (which is also humo
 <p>The code uses <code>unsigned char</code>s, but C strings are <code>signed</code>. Thus <code>-Wno-pointer-sign</code>.
 NB: This is <em>not</em> a portability concern, the one string holds only printable ASCII characters.</p>
 <p>Thus:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -ansi -Wall -trigraphs -Wno-trigraphs -Wno-parentheses -Wno-empty-body -Wno-char-subscripts -Wno-pointer-sign -DU=O -DW=\&quot;keywords\&quot; -o prog prog.c</code></pre>
+<pre><code>    cc -ansi -Wall -trigraphs -Wno-trigraphs -Wno-parentheses -Wno-empty-body -Wno-char-subscripts -Wno-pointer-sign -DU=O -DW=\&quot;keywords\&quot; -o prog prog.c</code></pre>
 <h3 id="coda">Coda:</h3>
 <p><a href="../../authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> was relentless in his pursuit of bugs.
 Thanks to his reports, the version of <a href="unob.sh">unob.sh</a> is stronger,
@@ -442,7 +443,7 @@ works well on most inputs, but tends to need some raw nroff for more fancy
 constructions, such as combined arguments (e.g. the <code>-r</code> and <code>-s</code> arguments to tac
 are not recognised when written as <code>-rs</code> in prose).</p>
 <p>Try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./manpage.sh tac
+<pre><code>    ./manpage.sh tac
 
     ./manpage.sh -h
     ./manpage.sh -h | ./manpage.sh
@@ -527,10 +528,10 @@ are not recognised when written as <code>-rs</code> in prose).</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/v7unix">v7unix</a> - reserved words for a given C standard</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/spotdiff.sh">spotdiff.sh</a> - summarize the results of spotcheck</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/src.doc.txt">src.doc.txt</a> - SPOILER WARNING hints about the source</li>
-<li><a href="2018_burton2.tar.bz2">2018_burton2.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2018_burton2.tar.bz2">2018_burton2.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/discrepancies.md">discrepancies.md</a> - markdown source for discrepancies.html</li>

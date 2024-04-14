@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ Location: <a href="../../location.html#PL">PL</a> - <em>Republic of Poland</em> 
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>There is an alternate version available. See <a href="#alternate-code">Alternate code</a>
 below.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
@@ -149,18 +150,18 @@ below.</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2019_ciura">2019 ciura bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./getwords.sh en | grep .. | ./prog string</code></pre>
+<pre><code>    ./getwords.sh en | grep .. | ./prog string</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>There is an alternate version of this code that flushes <code>stdout</code> after writing a
 newline. See the Author’s remarks for more information.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>prog.alt</code> as you would <code>prog</code> above.</p>
 <h3 id="alternate-try">Alternate try:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh</code></pre>
+<pre><code>    ./try.alt.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>A few letters, one at a time, with no repeats. How many different ways can this
 be done?</p>
@@ -176,7 +177,7 @@ written with an alphabet and outputs perfect pangrams composed of these
 words. A perfect pangram is a series of words that contains every letter
 of the alphabet exactly once.</p>
 <h4 id="example-execution">Example execution:</h4>
-<pre class="&lt;!---sh--&gt;"><code>    $ grep .. /usr/share/dict/words | ./prog abcdefghijklmnopqrstuvwxyz
+<pre><code>    $ grep .. /usr/share/dict/words | ./prog abcdefghijklmnopqrstuvwxyz
     qualm fjord wiz pyx vs beg kc nth
     quartz jinx vs fed kc womb glyph
     quid jamb fez vs pyx kc growl nth
@@ -313,10 +314,10 @@ compilation with <code>gcc -std=c90</code>, add <code>-Wno-format</code> to
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/pl.sh">pl.sh</a> - run with Polish data</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/ru.sh">ru.sh</a> - run with Russian data</li>
 <li><a href="fasc5c.pdf">fasc5c.pdf</a> - The Art of Computer Programming vol 4 draft</li>
-<li><a href="2019_ciura.tar.bz2">2019_ciura.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2019_ciura.tar.bz2">2019_ciura.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/.entry.json">.entry.json</a> - description of entry in JSON</li>

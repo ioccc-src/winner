@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,37 +142,37 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <p>There is an alternate version of this program. See <a href="#alternate-code">Alternate
 code</a> below for details.</p>
 <h2 id="to-use">To use:</h2>
 <p>First, you must make sure that <code>first</code> is made first (even though <code>make all</code>
 should make first first :-) ):</p>
-<pre class="&lt;!---sh--&gt;"><code>    make first</code></pre>
+<pre><code>    make first</code></pre>
 <p>Second:</p>
-<pre class="&lt;!---sh--&gt;"><code>    # get help:
+<pre><code>    # get help:
     echo help | cat third help.th - | ./first
 
     # try out a demo:
     cat third demo5.th | ./first</code></pre>
 <p>Third:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cat third help.th - | ./first</code></pre>
+<pre><code>    cat third help.th - | ./first</code></pre>
 <p>NOTE: Wait until ‘Ok’ is printed and the type:</p>
 <pre><code>    2 3 + . cr</code></pre>
 <p>Yes you should really type the 2 letters: <code>cr</code>.</p>
 <p>Fourth:</p>
 <pre><code>    Sorry, this is third!</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This alternate version, <a href="buzzard.2.alt.c">buzzard.2.alt.c</a>, does not contain a
 fix that the author notes in their remarks.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>buzzard.2.alt</code> as you would <code>buzzard.2</code> above.</p>
 <h3 id="alternate-try">Alternate try:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh</code></pre>
+<pre><code>    ./try.alt.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Have fun!</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
@@ -204,7 +205,7 @@ included, but it only works on ASCII systems.</p>
 <p>Do not expect to be able to do anything interesting with <code>first</code>.</p>
 <p>To do something interesting, you need to feed <code>first</code> the file
 <a href="third">third</a> first. In unix, you can do</p>
-<pre class="&lt;!---sh--&gt;"><code>    cat third help.th - | ./first</code></pre>
+<pre><code>    cat third help.th - | ./first</code></pre>
 <p>to do this. Hopefully most operating systems will provide a way to do this. It
 may take some time for this to complete (I seem to remember it taking several
 minutes on an 8086 PC); <code>THIRD</code> will prompt you when it is finished. The file
@@ -283,7 +284,7 @@ take a significant amount of time in THIRD.</p>
 <a href="https://en.wikipedia.org/wiki/Forth_(programming_language)">FORTH</a> code
 (<code>first</code> has no way of knowing if keyboard input is waiting, so it can’t actually prompt
 you in a normal way. It only prints <code>'Ok.'</code> after you define a word).</p>
-<pre class="&lt;!---sh--&gt;"><code>    2 3 + . cr</code></pre>
+<pre><code>    2 3 + . cr</code></pre>
 <p>(which adds 2 and 3, and print the result and a newline.)</p>
 <p>THIRD responds:</p>
 <pre><code>    5</code></pre>
@@ -349,10 +350,10 @@ and thus indirectly inspiring me to write this program.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/buzzard.2/demo6.th">demo6.th</a> - FORTH source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/buzzard.2/help.th">help.th</a> - FORTH source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/buzzard.2/third">third</a> - the third source</li>
-<li><a href="1992_buzzard.2.tar.bz2">1992_buzzard.2.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1992_buzzard.2.tar.bz2">1992_buzzard.2.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/buzzard.2/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/buzzard.2/buzzard.2.README.md">buzzard.2.README.md</a> - markdown source for buzzard.2.README.html</li>

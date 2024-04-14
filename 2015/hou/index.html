@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,16 +142,16 @@ Location: <a href="../../location.html#CN">CN</a> - <em>People’s Republic of C
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2015_hou">2015 hou bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    echo something | ./prog
+<pre><code>    echo something | ./prog
     ./prog &lt; file</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>A good start for understanding this entry might be
 <a href="rfc1321.txt">rfc1321.txt</a>. How does it compute this using only a
@@ -159,11 +160,11 @@ algorithm is about 355 lines of code, yet this entry is only 199 lines with
 one statement per line and it isn’t using lots of macro expansion tricks like
 the reference code!</p>
 <p>Some things that make you go, “huh?”</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; prog.c | cut -c-5
+<pre><code>    ./prog &lt; prog.c | cut -c-5
     ./prog &lt; Makefile | cut -c-4</code></pre>
 <p>How are those values magically returned?</p>
 <p>What happens with a large file? Something over 256K.</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; large_file</code></pre>
+<pre><code>    ./prog &lt; large_file</code></pre>
 <p>Where does that message come from?</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>This looks like a normal C program.</p>
@@ -240,10 +241,10 @@ result. Error messages become garbled, though.</p></li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/hou/prog.orig.c">prog.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/hou/try.sh">try.sh</a> - how to run</li>
 <li><a href="rfc1321.txt">rfc1321.txt</a> - RFC 1321 - MD5 Message-Digest Algorithm</li>
-<li><a href="2015_hou.tar.bz2">2015_hou.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2015_hou.tar.bz2">2015_hou.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/hou/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/hou/.entry.json">.entry.json</a> - description of entry in JSON</li>

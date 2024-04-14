@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,15 +142,15 @@ Location: <a href="../../location.html#GB">GB</a> - <em>United Kingdom of Great 
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2012_blakely">2012 blakely bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./blakely &quot;RPN formula&quot; resolution &gt; output.gif</code></pre>
+<pre><code>    ./blakely &quot;RPN formula&quot; resolution &gt; output.gif</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Several IOCCC themes (<a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">RPN
 calculator</a>, animated
@@ -169,7 +170,7 @@ resolution, and an animated GIF showing a fly-around of the resulting surface is
 output to <code>stdout</code>.</p>
 <h3 id="usage">Usage</h3>
 <p>The program should be run as:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./blakely xy* 32 &gt; pic.gif</code></pre>
+<pre><code>    ./blakely xy* 32 &gt; pic.gif</code></pre>
 <p>where the first parameter is a
 <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">RPN</a> expression, and the
 second is the width of the required <a href="https://en.wikipedia.org/wiki/GIF">GIF</a>, up
@@ -201,7 +202,7 @@ and more complex expressions take longer to compute. For example, increasing the
 resolution of <code>ripple.gif</code>
 to 250 took ~35 minutes to render on an <a href="https://en.wikipedia.org/wiki/Intel_Core#Core_i7">i7
 processor</a>.</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./blakely xy* 32 &gt; saddle.gif
+<pre><code>    ./blakely xy* 32 &gt; saddle.gif
 
     ./blakely xx*yy*1++d5*ct/ 64 &gt; ripple.gif</code></pre>
 <h3 id="algorithm">Algorithm</h3>
@@ -263,10 +264,10 @@ questions.)</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/blakely/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/blakely/blakely.orig.c">blakely.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/blakely/try.sh">try.sh</a> - how to run</li>
-<li><a href="2012_blakely.tar.bz2">2012_blakely.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2012_blakely.tar.bz2">2012_blakely.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/blakely/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/blakely/.entry.json">.entry.json</a> - description of entry in JSON</li>

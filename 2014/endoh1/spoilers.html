@@ -83,6 +83,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -134,7 +135,7 @@ the program!</p>
 <h2 id="how-did-i-achieve-that">How did I achieve that?</h2>
 <p>It is known that we can mitigate the quine restriction by <code>eval</code>.
 For example, this is a quine written in Ruby:</p>
-<pre class="&lt;!---ruby--&gt;"><code>    eval s=&quot;print &#39;eval s=&#39;; p s&quot;</code></pre>
+<pre><code>    eval s=&quot;print &#39;eval s=&#39;; p s&quot;</code></pre>
 <p>Note that <code>print</code> appears just once in the program.</p>
 <p>To emulate this approach in C, I adopted the following structure.</p>
 <pre><code>    char s[]=&quot;&lt;main code&gt;int main() { &lt;VM code&gt; }&quot;;
@@ -230,7 +231,7 @@ renaming and automatic register allocation only for this purpose.</p>
 <li><a href="gen-prog.c">gen-prog.c</a> generates <a href="prog.c">prog.c</a> based on <code>main.c</code>.</li>
 </ul>
 <p>You can run the process by <code>rake</code> command. <code>ruby-minisat</code> gem is needed.</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ gem install ruby-minisat
+<pre><code>    $ gem install ruby-minisat
     $ rake</code></pre>
 <h2 id="tools">Tools</h2>
 <p>I checked that the following QR code readers can read the output of my program.</p>
@@ -243,7 +244,7 @@ found at
 <code>https://play.google.com/store/apps/details?id=com.google.zxing.client.android</code>
 but it appears to no longer exist.</p>
 <p>You can use <a href="tool.rb">tool.rb</a> to convert the output to a png file.</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./main Hello | ruby tool.rb &gt; hello.png
+<pre><code>    ./main Hello | ruby tool.rb &gt; hello.png
 
     $ zbarimg -q hello.png
     QR-Code:Hello

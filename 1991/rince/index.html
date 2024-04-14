@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,12 +142,12 @@ Location: <a href="../../location.html#GB">GB</a> - <em>United Kingdom of Great 
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <p>There are two <a href="#alternate-code">alternate versions</a> which allow one to not be
 restricted in movements or to change the maximum number of movements, even if
 that’s fewer than the original program.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./rince</code></pre>
+<pre><code>    ./rince</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>The first alternate version, <a href="rince.alt.c">rince.alt.c</a>, disables a maximum move
 count so that anyone with enough patience and time can complete the puzzle,
@@ -156,18 +157,18 @@ reconfigure at compilation the maximum number of moves, even if that is lowering
 the count.</p>
 <p>The author set the maximum number of moves to 484.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <p>This will build both alt versions where the first one, <code>rince.alt</code>, has no
 restrictions in the number of movements and the second one, <code>rince.alt2</code>, has a
 configurable maximum number of moves allowed, defaulting to the entry’s max,
 484.</p>
 <p>To reconfigure the maximum number of moves to 700:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber MAXMOVES=700 alt</code></pre>
+<pre><code>    make clobber MAXMOVES=700 alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>To run the first alt version:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./rince.alt</code></pre>
+<pre><code>    ./rince.alt</code></pre>
 <p>To run the second alt version:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./rince.alt2</code></pre>
+<pre><code>    ./rince.alt2</code></pre>
 <p>Can you figure out how to make the two alternate versions equivalent in
 functionality without modifying the code? That is can you make the second alt
 version end up allowing any number of movements?</p>
@@ -237,10 +238,10 @@ Take care that it’s facing in the correct direction.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/rince/rince.alt2.c">rince.alt2.c</a> - alternate alternative source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/rince/rince.alt.c">rince.alt.c</a> - alternative source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/rince/rince.orig.c">rince.orig.c</a> - original source</li>
-<li><a href="1991_rince.tar.bz2">1991_rince.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1991_rince.tar.bz2">1991_rince.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/rince/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/rince/.entry.json">.entry.json</a> - description of entry in JSON</li>

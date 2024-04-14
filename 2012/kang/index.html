@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,13 +142,13 @@ Location: <a href="../../location.html#KR">KR</a> - <em>Republic of Korea</em> (
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>There is alternate code which fixes some German at the expense of other German.
 See <a href="#alternate-code">Alternate code</a> below for the (fun) rationale here.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    echo &quot;full spelling of an English cardinal numeral less than a quadrillion&quot; | ./kang</code></pre>
+<pre><code>    echo &quot;full spelling of an English cardinal numeral less than a quadrillion&quot; | ./kang</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh # try various languages
+<pre><code>    ./try.sh # try various languages
 
     ./en.sh # English 0 through 13
 
@@ -164,15 +165,15 @@ deal with it :-) It also breaks other words too and this happens only for one
 letter change. With this one should hopefully be able to really appreciate the
 subtlety of this entry even more.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    echo &quot;full spelling of an English cardinal numeral less than a quadrillion&quot; | ./kang.alt
+<pre><code>    echo &quot;full spelling of an English cardinal numeral less than a quadrillion&quot; | ./kang.alt
 
     echo vier | ./kang.alt
 
     echo uno | ./kang.alt</code></pre>
 <h3 id="alternate-try">Alternate try:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh # try various languages
+<pre><code>    ./try.alt.sh # try various languages
 
     ./en.alt.sh # English 0 through 13
 
@@ -188,9 +189,9 @@ German, Italian, Russian, and Spanish numerals.</p>
 colloquial year numbers of the last millennium.</p>
 <p>We’ve added a linefeed to the print format for convenience.</p>
 <p>Can you explain why:</p>
-<pre class="&lt;!---sh--&gt;"><code>    echo f hundr|./kang</code></pre>
+<pre><code>    echo f hundr|./kang</code></pre>
 <p>correctly reports 500 but:</p>
-<pre class="&lt;!---sh--&gt;"><code>    echo hundr|./kang</code></pre>
+<pre><code>    echo hundr|./kang</code></pre>
 <p>does not report 100, instead printing 0?</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="synopsis">Synopsis</h3>
@@ -325,10 +326,10 @@ proof-reading remarks.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/en.sh">en.sh</a> - English words for 1 through 13</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/try.alt.sh">try.alt.sh</a> - how to run alternate code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/try.sh">try.sh</a> - how to run</li>
-<li><a href="2012_kang.tar.bz2">2012_kang.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2012_kang.tar.bz2">2012_kang.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/.entry.json">.entry.json</a> - description of entry in JSON</li>

@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,13 +142,13 @@ Location: <a href="../../location.html#DE">DE</a> - <em>Federal Republic of Germ
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <p>There is an alternate version of this entry that will work with macOS. See the
 <a href="#alternate-code">Alternate code</a> section below. We recommend you look at it
 even if you don’t have a Mac, unless you want to figure it out yourself, as it
 includes some interesting details about the entry.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./schweikh1</code></pre>
+<pre><code>    ./schweikh1</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>As noted above this entry will not work as it stands for macOS and there are
 some important notes as well as a description of how the fixed version works
@@ -157,7 +158,7 @@ adjustments). For details of what had to change, see <a href="macos.html">macos.
 Unless you wish to figure it out yourself, we recommend that you read this even
 if you don’t have a Mac as it has some interesting details about the entry.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-build-1">Alternate build:</h3>
 <p>Use <code>schweikh1.alt</code> as you would <code>schweikh1</code> above.</p>
 <h3 id="alternate-try">Alternate try:</h3>
@@ -220,7 +221,7 @@ macros are explicitly enumerated. In a compliant implementation no other
 macros can be defined, because you could write strictly conforming
 programs that may fail to compile due to syntax errors: supposing that
 <code>&lt;stdio.h&gt;</code> defines <code>PIPE_BUF</code>, then the conforming</p>
-<pre class="&lt;!---c--&gt;"><code>    #include &lt;assert.h&gt;
+<pre><code>    #include &lt;assert.h&gt;
     #include &lt;stdio.h&gt;    /*  &lt;- or where the bogus macro is defined */
     #include &lt;string.h&gt;
     #define STR(x) #x
@@ -243,12 +244,12 @@ C compilers.</p>
 must resemble one of the canonical forms, <code>"foo.h"</code> or <code>&lt;bar.h&gt;</code>.
 This lets us write things like</li>
 </ol>
-<pre class="&lt;!---c--&gt;"><code>    #define HEADER &quot;foo.h&quot;
+<pre><code>    #define HEADER &quot;foo.h&quot;
     #include HEADER</code></pre>
 <p>I could not find a compiler rejecting this. However, if we’re
 torturing the preprocessor a little more, by using token pasting,
 at least one compiler falls over.</p>
-<pre class="&lt;!---c--&gt;"><code>    #define H(x) &lt;st##x##.h&gt;
+<pre><code>    #define H(x) &lt;st##x##.h&gt;
     #include H(dio)              /* expands to &lt;stdio.h&gt; */</code></pre>
 <p>is rejected by tcc version 4.1.2, the TenDRA compiler:
 <code>"t.c", line 3: Error:\    [ISO 6.8.3.3]: Invalid result for '##' operator in macro 'H'.</code></p>
@@ -264,7 +265,7 @@ allows: in <code>#line num "file"</code> the <code>"file"</code> is an s-char-se
 ISO 6.8.4. ISO 6.1.4 defines string literals as s-char-sequences,
 which may include octal escape sequences. Let’s look at</li>
 </ol>
-<pre class="&lt;!---c--&gt;"><code>    #include &lt;stdio.h&gt;
+<pre><code>    #include &lt;stdio.h&gt;
     #line 42 &quot;foo\0bar&quot;
     int main (void) {
        printf (&quot;%s %d\n&quot;, __FILE__, (int)sizeof __FILE__);
@@ -283,7 +284,7 @@ ISO 6.6.4.2. Then make fun of the guru’s answer by waving <code>case __LINE__:
 under his/her nose. Easy money from a bet! Make sure your guru has
 no chance to use Standardese weasel words as an escape: can I have</p></li>
 </ol>
-<pre class="&lt;!---c--&gt;"><code>    case &lt;some_token&gt;:
+<pre><code>    case &lt;some_token&gt;:
     case &lt;some_token&gt;:</code></pre>
 <p>in the same switch? (Note that you need the [invisible] newline. You
 can generously allow the additional constraint that no <code>#undef</code>s or
@@ -315,14 +316,14 @@ I could have used a lot more <code>^K</code> and <code>^L</code> probably undete
 counter but decided to err on the side of safety. I use a perl
 script to compute the character count according to the rules.
 The advantages of an independent clean room approach…</p>
-<pre class="&lt;!---perl--&gt;"><code>    #!/usr/bin/perl -w
+<pre><code>    #!/usr/bin/perl -w
     $/ = &quot;\0&quot;;
     $_ = &lt;&gt;;
     s/[;{}][ \t\n]/\n/g;
     s/[ \t\n]+//g;
     print length ($_),&quot;\n&quot;;</code></pre>
 <p>To use, try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    perl ./charcount.pl schweikh1.c</code></pre>
+<pre><code>    perl ./charcount.pl schweikh1.c</code></pre>
 <p>I have tried, as suggested in the guidelines, to let the code look
 like ordinary C code. Apart from a few long lines I think I left
 the indentation like I would in RL. You should however not try to
@@ -364,10 +365,10 @@ That describes exactly my modest attempts…</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh1/charcount.pl">charcount.pl</a> - character counter</li>
 <li><a href="macos.html">macos.html</a> - work with macOS</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh1/info">info</a> - standards compliance</li>
-<li><a href="1998_schweikh1.tar.bz2">1998_schweikh1.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1998_schweikh1.tar.bz2">1998_schweikh1.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh1/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh1/.entry.json">.entry.json</a> - description of entry in JSON</li>

@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,13 +142,13 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./ejb level</code></pre>
+<pre><code>    ./ejb level</code></pre>
 <p>where:</p>
-<pre class="&lt;!---sh--&gt;"><code>    level   a value from -128 to 127</code></pre>
+<pre><code>    level   a value from -128 to 127</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>A negative argument plays the patience puzzle. An argument
 greater than 0 plays the Tower of Hanoi puzzle. In either case
@@ -160,11 +161,11 @@ the argument 127 to this program and want to see it finish!</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="what-this-program-does">What this program does</h3>
 <h4 id="output-solution-to-towers-of-hanoi-for-five-rings">Output solution to Towers of Hanoi for five rings:</h4>
-<pre class="&lt;!---sh--&gt;"><code>    ./ejb 5</code></pre>
+<pre><code>    ./ejb 5</code></pre>
 <p>The format of the output for the Towers of Hanoi case is simply a
 text description of how to solve the puzzle.</p>
 <h4 id="output-solution-to-the-patience-puzzle-for-six-rings">Output solution to the Patience puzzle for six rings:</h4>
-<pre class="&lt;!---sh--&gt;"><code>    ./ejb -6</code></pre>
+<pre><code>    ./ejb -6</code></pre>
 <p>For the patience puzzle, the output is a sequence binary codes representing
 successive states of the puzzle. The rightmost digit represents the first ring.
 A <code>1</code> means the ring is on the <code>U</code>; a <code>0</code> means it is off the <code>U</code>. The program
@@ -224,10 +225,10 @@ compiler since it uses <code>signed char</code> and ANSI-style function declarat
 <li><a href="hanoi.html">hanoi.html</a> - about the Towers of Hanoi puzzle</li>
 <li><a href="patience.html">patience.html</a> - about the Patience puzzle</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/ejb/try.sh">try.sh</a> - how to run</li>
-<li><a href="1993_ejb.tar.bz2">1993_ejb.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1993_ejb.tar.bz2">1993_ejb.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/ejb/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/ejb/.entry.json">.entry.json</a> - description of entry in JSON</li>

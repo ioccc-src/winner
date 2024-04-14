@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,37 +142,37 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <p>NOTE: this version is a fixed version for modern C compilers. See the <a href="#alternate-code">Alternate
 code</a> section below for how to use the original and why one
 might wish to do so.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./westley</code></pre>
+<pre><code>    ./westley</code></pre>
 <p>Also try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>to show the code with followed by the result so you can truly see the magic.</p>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This version is the original which might not work as you expect nowadays.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>To see if your compiler has the problem described in the Judges’ remarks below,
 try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./westley.alt</code></pre>
+<pre><code>    ./westley.alt</code></pre>
 <p>Does it show the same output as <code>westley</code>?</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Your compiler must parse</p>
-<pre class="&lt;!---c--&gt;"><code>    #define _ -a
+<pre><code>    #define _ -a
     -_</code></pre>
 <p>as <code>--a</code> and not <code>-(-a)</code> or some other tokenized form. Some strictly
 conforming ANSI C Preprocessors may object to this: for such
 compilers, you can elide the non-standard token-pasting requirement
 by changing the #define line to:</p>
-<pre class="&lt;!---c--&gt;"><code>    #define _ F--&gt;00||F-OO--;</code></pre>
+<pre><code>    #define _ F--&gt;00||F-OO--;</code></pre>
 <p>This is what the modified code in <a href="westley.c">westley.c</a> does whereas the alt
 code is the original.</p>
 <p>You might enjoy looking at the output of:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -E westley.alt.c</code></pre>
+<pre><code>    cc -E westley.alt.c</code></pre>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>No remarks were provided by the author.</p>
 <!--
@@ -202,10 +203,10 @@ code is the original.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/westley/westley.alt.c">westley.alt.c</a> - alternative source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/westley/westley.orig.c">westley.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/westley/try.sh">try.sh</a> - how to run</li>
-<li><a href="1988_westley.tar.bz2">1988_westley.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1988_westley.tar.bz2">1988_westley.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/westley/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/westley/.entry.json">.entry.json</a> - description of entry in JSON</li>

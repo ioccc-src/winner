@@ -141,7 +141,7 @@ shopt -s lastpipe	# run last command of a pipeline not executed in the backgroun
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.1 2024-04-13"
+export VERSION="1.3 2024-04-14"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -1678,42 +1678,87 @@ fi
 
 # input.md is -, we will need to capture standard input into a new temporary file
 #
-if [[ $INPUT_MD == - ]]; then
-    export TMP_INPUT_MD=".$NAME.$$.stdin.md"
+if [[ -z $NOOP ]]; then
+    if [[ $INPUT_MD == - ]]; then
+	export TMP_INPUT_MD=".$NAME.$$.stdin.md"
+	if [[ $V_FLAG -ge 5 ]]; then
+	    echo  "$0: debug[5]: temporary stdin file: $TMP_INPUT_MD" 1>&2
+	fi
+	trap 'rm -f $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML $TMP_INPUT_MD; exit' 0 1 2 3 15
+	rm -f "$TMP_INPUT_MD"
+	if [[ -e $TMP_INPUT_MD ]]; then
+	    echo "$0: ERROR: cannot remove temporary stdin file: $TMP_INPUT_MD" 1>&2
+	    exit 20
+	fi
+	:> "$TMP_INPUT_MD"
+	if [[ ! -e $TMP_INPUT_MD ]]; then
+	    echo "$0: ERROR: cannot create temporary stdin file: $TMP_INPUT_MD" 1>&2
+	    exit 21
+	fi
+
+	# capture standard input into the temporary stdin file
+	#
+	if [[ $V_FLAG -ge 5 ]]; then
+	     echo "$0: debug[5]: about to capture stdin into: $TMP_INPUT_MD" 1>&2
+	fi
+	cat > "$TMP_INPUT_MD"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: cat into stdin file: $TMP_INPUT_MD failed, error code: $status" 1>&2
+	    exit 22
+	fi
+
+	# replace 'input.md' of - with temporary stdin file
+	#
+	if [[ $V_FLAG -ge 5 ]]; then
+	     echo "$0: debug[5]: input.md arg was - is now: $TMP_INPUT_MD" 1>&2
+	fi
+	INPUT_MD="$TMP_INPUT_MD"
+    fi
+elif [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: because of -n, temporary stdin file is not formed: $TMP_INPUT_MD" 1>&2
+fi
+
+# strip commented language after markdown code block
+#
+if [[ -z $NOOP ]]; then
+
+    export TMP_STRIPPED_MD=".$NAME.$$.stripped.md"
     if [[ $V_FLAG -ge 5 ]]; then
-	echo  "$0: debug[5]: temporary stdin file: $TMP_INPUT_MD" 1>&2
+	echo  "$0: debug[5]: temporary stripped markdown file: $TMP_STRIPPED_MD" 1>&2
     fi
-    trap 'rm -f $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML $TMP_INPUT_MD; exit' 0 1 2 3 15
-    rm -f "$TMP_INPUT_MD"
-    if [[ -e $TMP_INPUT_MD ]]; then
-	echo "$0: ERROR: cannot remove temporary stdin file: $TMP_INPUT_MD" 1>&2
-	exit 20
+    trap 'rm -f $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML $TMP_INPUT_MD $TMP_STRIPPED_MD; exit' 0 1 2 3 15
+    rm -f "$TMP_STRIPPED_MD"
+    if [[ -e $TMP_STRIPPED_MD ]]; then
+	echo "$0: ERROR: cannot remove temporary stripped markdown file: $TMP_STRIPPED_MD" 1>&2
+	exit 23
     fi
-    :> "$TMP_INPUT_MD"
-    if [[ ! -e $TMP_INPUT_MD ]]; then
-	echo "$0: ERROR: cannot create temporary stdin file: $TMP_INPUT_MD" 1>&2
-	exit 21
+    :> "$TMP_STRIPPED_MD"
+    if [[ ! -e $TMP_STRIPPED_MD ]]; then
+	echo "$0: ERROR: cannot create temporary stripped markdown file: $TMP_STRIPPED_MD" 1>&2
+	exit 24
     fi
 
-    # capture standard input into the temporary stdin file
+    # strip commented language after markdown code block
     #
-    if [[ $V_FLAG -ge 5 ]]; then
-	 echo "$0: debug[5]: about to capture stdin into: $TMP_INPUT_MD" 1>&2
-    fi
-    cat > "$TMP_INPUT_MD"
+    # We do not want the sed extended regular expression to be expanded, so
+    # we put it inside single quotes.
+    #
+    # SC2016 (info): Expressions don't expand in single quotes, use double quotes for that.
+    # https://www.shellcheck.net/wiki/SC2016
+    # shellcheck disable=SC2016
+    sed -E -e 's/^```[[:space:]]<!---[^-][^-]*-->/```/' "$INPUT_MD" > "$TMP_STRIPPED_MD"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: cat into stdin file: $TMP_INPUT_MD failed, error code: $status" 1>&2
-	exit 22
+	echo "$0: ERROR: strip commented language after markdown code block from $INPUT_MD into file:" \
+	     "$TMP_INPUT_MD failed, error code: $status" 1>&2
+	exit 25
     fi
 
-    # replace 'input.md' of - with temporary stdin file
-    #
-    if [[ $V_FLAG -ge 5 ]]; then
-	 echo "$0: debug[5]: input.md arg was - is now: $TMP_INPUT_MD" 1>&2
-    fi
-    INPUT_MD="$TMP_INPUT_MD"
+elif [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: because of -n, temporary stripped markdown file is not formed: $TMP_INPUT_MD" 1>&2
 fi
+
 
 #######################################
 # HTML phase 0: inc/top.__name__.html #
@@ -2045,13 +2090,13 @@ if [[ -n $PANDOC_WRAPPER ]]; then
 	#
 	if [[ $V_FLAG -ge 5 ]]; then
 	    echo "$0: debug[5]: about to execute:" \
-		 "$PANDOC_WRAPPER ${P_OPTION[*]} -- $INPUT_MD - >> $TMP_INDEX_HTML" 1>&2
+		 "$PANDOC_WRAPPER ${P_OPTION[*]} -- $TMP_STRIPPED_MD - >> $TMP_INDEX_HTML" 1>&2
 	fi
-	"$PANDOC_WRAPPER" "${P_OPTION[@]}" -- "$INPUT_MD" - >> "$TMP_INDEX_HTML"
+	"$PANDOC_WRAPPER" "${P_OPTION[@]}" -- "$TMP_STRIPPED_MD" - >> "$TMP_INDEX_HTML"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: pandoc wrapper tool:" \
-		 "$PANDOC_WRAPPER ${P_OPTION[*]} -- $INPUT_MD - failed," \
+		 "$PANDOC_WRAPPER ${P_OPTION[*]} -- $TMP_STRIPPED_MD - failed," \
 	         "error code: $status" 1>&2
 	    exit 100
 	fi
@@ -2319,9 +2364,10 @@ fi
 # file cleanup
 #
 if [[ -z $NOOP ]]; then
-    rm -f -- "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML" "$TMP_INPUT_MD"
+    rm -f -- "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML" "$TMP_INPUT_MD" "$TMP_STRIPPED_MD"
 elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, disabled: rm -f -- $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML $TMP_INPUT_MD" 1>&2
+    echo "$0: debug[3]: because of -n, disabled: rm -f --" \
+	 "$TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML $TMP_INPUT_MD $TMP_STRIPPED_MD" 1>&2
 fi
 
 # All Done!!! -- Jessica Noll, Age 2

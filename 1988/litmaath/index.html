@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,25 +142,25 @@ Location: <a href="../../location.html#CH">CH</a> - <em>Swiss Confederation</em>
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./litmaath some text</code></pre>
+<pre><code>    ./litmaath some text</code></pre>
 <p>There is an alternate version provided. See the <a href="#alternate-code">Alternate
 code</a> section below.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./litmaath eschew obfuscation</code></pre>
+<pre><code>    ./litmaath eschew obfuscation</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This alternate code, added to help understand the entry and for fun, is code
 that we suggested at the time of the entry publication but which we never put in
 a file.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <p>Use <code>litmaath.alt</code> as you would <code>litmaath</code> above.</p>
 <h3 id="alternate-try">Alternate try:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./litmaath.alt six was afraid of seven because seven eight nine</code></pre>
+<pre><code>    ./litmaath.alt six was afraid of seven because seven eight nine</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Note the unusual structure:</p>
-<pre class="&lt;!---c--&gt;"><code>    while (&lt;condition&gt;)
+<pre><code>    while (&lt;condition&gt;)
              ;</code></pre>
 <p>Did you notice that the body is empty?</p>
 <p>Furthermore, it’s interesting to note that only two variables are
@@ -168,7 +169,7 @@ used to achieve everything.</p>
 two small strings as arguments, and follow the program closely. One
 could make the body of the <code>while</code> loop an <code>fprintf</code> with interesting
 variables like:</p>
-<pre class="&lt;!---c--&gt;"><code>    fprintf(stderr,
+<pre><code>    fprintf(stderr,
          &quot;argv=%lo *argv=%lo **argv=%c argv[1]=%lo *argv[1]=%c argc=%d\n&quot;,
          (long) argv, (long) *argv, *argv &amp;&amp; **argv ? **argv : &#39;@&#39;,
          (long) argv[1], argv[1] &amp;&amp; *argv[1] ? *argv[1] : &#39;@&#39;, argc);</code></pre>
@@ -202,10 +203,10 @@ variables like:</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/litmaath/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/litmaath/litmaath.alt.c">litmaath.alt.c</a> - alternative source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/litmaath/litmaath.orig.c">litmaath.orig.c</a> - original source</li>
-<li><a href="1988_litmaath.tar.bz2">1988_litmaath.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1988_litmaath.tar.bz2">1988_litmaath.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/litmaath/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/litmaath/.entry.json">.entry.json</a> - description of entry in JSON</li>

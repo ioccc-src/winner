@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,9 +142,9 @@ Location: <a href="../../location.html#DE">DE</a> - <em>Federal Republic of Germ
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./schweikh2</code></pre>
+<pre><code>    ./schweikh2</code></pre>
 <p>The program accepts up to 4 parameters:</p>
 <ol start="0" type="1">
 <li><p>The number of operators in the expression [default: 9]</p></li>
@@ -152,11 +153,11 @@ Location: <a href="../../location.html#DE">DE</a> - <em>Federal Republic of Germ
 <li><p>The goal value or 0/0 [default: 42]</p></li>
 </ol>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>What happens if you pass only three parameters like the below?</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./schweikh2 15 1 0</code></pre>
+<pre><code>    ./schweikh2 15 1 0</code></pre>
 <p>The author also suggests:</p>
-<pre class="&lt;!---sh--&gt;"><code>    while :; do grep -v &#39;#&#39; schweikh2.c; done</code></pre>
+<pre><code>    while :; do grep -v &#39;#&#39; schweikh2.c; done</code></pre>
 <p>(and we do too) which works with <code>sh</code>, <code>bash</code>, <code>ksh</code> and <code>zsh</code> as well. Press
 ctrl-c to stop it. Observe how the <a href="try.sh">try.sh</a> script does this once to
 make it easier to see what is happening.</p>
@@ -164,7 +165,7 @@ make it easier to see what is happening.</p>
 <p>The original program, with only slight obfuscations, may be found
 in <a href="hunni.c">hunni.c</a>. The perl script, <a href="hunni.pl">hunni.pl</a>, obfuscates it
 appropriately. Try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    less hunni.c
+<pre><code>    less hunni.c
 
     perl ./hunni.pl &lt; hunni.c</code></pre>
 <p>This entry was another crowd pleaser at the IOCCC BOF.</p>
@@ -230,7 +231,7 @@ operators but you will probably wait quite some time for every of the
 on a 50 MHz SPARC, <code>4^11</code> expressions are evaluated in about 3 cpu
 minutes (<code>gcc -O3</code>).</p>
 <h3 id="sample-arguments">Sample arguments:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./schweikh2 6
+<pre><code>    ./schweikh2 6
     ./schweikh2 7 0
     ./schweikh2 7 7 0
     ./schweikh2 8 9 -1 -67/21
@@ -239,7 +240,7 @@ minutes (<code>gcc -O3</code>).</p>
 <h3 id="miscellaneous">Miscellaneous</h3>
 <p>The diamond pattern can be continued without a break.
 For a nice printout try this on your Bourne compatible shell:</p>
-<pre class="&lt;!---sh--&gt;"><code>    while :; do grep -v &#39;#&#39; schweikh2.c; done</code></pre>
+<pre><code>    while :; do grep -v &#39;#&#39; schweikh2.c; done</code></pre>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
@@ -269,10 +270,10 @@ For a nice printout try this on your Bourne compatible shell:</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/schweikh2/hunni.c">hunni.c</a> - original slightly obfuscated source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/schweikh2/hunni.pl">hunni.pl</a> - perl script to obfuscate c</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/schweikh2/try.sh">try.sh</a> - how to run</li>
-<li><a href="1996_schweikh2.tar.bz2">1996_schweikh2.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1996_schweikh2.tar.bz2">1996_schweikh2.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/schweikh2/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/schweikh2/.entry.json">.entry.json</a> - description of entry in JSON</li>

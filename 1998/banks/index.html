@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <p>If you do not have a page up or page down key you might wish to see the
 <a href="#alternate-code">Alternate code</a> section below. You may redefine all the keys
 and the time step with predefined macros, however, so one lacking page up / page
@@ -164,10 +165,10 @@ Instructions</a> section.</p>
 to use. The name of the macro in the header file is what you need to set the
 macros to, depending on what controls you wish to redefine. For instance, to set
 the throttle up and down to <code>u</code> and <code>d</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber IT=XK_u DT=XK_d all</code></pre>
+<pre><code>    make clobber IT=XK_u DT=XK_d all</code></pre>
 <p>because in the header file you can see that <code>XK_u</code> corresponds to <code>u</code> and <code>XK_d</code>
 corresponds to <code>d</code>:</p>
-<pre class="&lt;!---c--&gt;"><code>    #define XK_d                             0x0064  /* U+0064 LATIN SMALL LETTER D */
+<pre><code>    #define XK_d                             0x0064  /* U+0064 LATIN SMALL LETTER D */
     #define XK_u                             0x0075  /* U+0075 LATIN SMALL LETTER U */</code></pre>
 <p>Note that the <a href="keysym.h">keysym.h</a> file is not complete from X11; it’s just the
 more likely candidates (and some that are probably unlikely :-) ).</p>
@@ -181,7 +182,7 @@ instructions. Since you can use the original entry to redefine these this is not
 a problem and is purely a convenience .. if only for those who are okay with the
 preselected alternative keys.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    cat horizon.sc pittsburgh.sc | ./banks</code></pre>
+<pre><code>    cat horizon.sc pittsburgh.sc | ./banks</code></pre>
 <p>See the author’s remarks in <a href="#scenery">scenery</a> for more details on the scenery
 files.</p>
 <h2 id="try">Try:</h2>
@@ -208,7 +209,7 @@ you should use the original entry as described in the to build section above.</p
 letters on the left side of the keyboard which is easier to use if one is using
 the right side for movement. These are hard coded, as noted.</p>
 <p>To use the default settings for the alternate build:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <p>You may change the other keys as described in the build instructions, above, but
 this alt code can be seen as an alternative for those who don’t have or don’t
 want to use page up and page down.</p>
@@ -289,11 +290,11 @@ landscape.</p></li>
 <p>Follow a flowing river from the sky.</p></li>
 </ul>
 <p>A few examples of how to input scenery:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cat horizon.sc pittsburgh.sc | ./banks
+<pre><code>    cat horizon.sc pittsburgh.sc | ./banks
     cat mountains.sc bb.sc | ./banks
     cat mountains.sc river.sc pyramids.sc | ./banks</code></pre>
 <p>You can simulate flying through a cloud bank as well:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./banks &lt; /dev/null</code></pre>
+<pre><code>    ./banks &lt; /dev/null</code></pre>
 <p>You will usually want at least a horizon, though.</p>
 <p>The format of scenery files is simple, by the way. They’re just
 a list of 3D coordinates, and the simulator simply draws line
@@ -371,10 +372,10 @@ flicker.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/banks/pittsburgh.sc">pittsburgh.sc</a> - scenery file</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/banks/pyramids.sc">pyramids.sc</a> - scenery file</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/banks/river.sc">river.sc</a> - scenery file</li>
-<li><a href="1998_banks.tar.bz2">1998_banks.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1998_banks.tar.bz2">1998_banks.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/banks/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/banks/.entry.json">.entry.json</a> - description of entry in JSON</li>

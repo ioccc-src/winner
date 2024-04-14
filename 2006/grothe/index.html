@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,12 +142,12 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./grothe carrier_freq pixelclock horizontal_total &lt; some_input.txt</code></pre>
+<pre><code>    ./grothe carrier_freq pixelclock horizontal_total &lt; some_input.txt</code></pre>
 <h2 id="try">Try:</h2>
 <p>Put on your “electronic ears” and then try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>You may find using
 a tunable scanning electronic ear helps.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -165,9 +166,9 @@ parameters:</p>
     horizontal_total - total scan along the horizontal axis</code></pre>
 <p>If you have <code>xvidtune</code> installed you can get the <code>pixelclock</code> and
 <code>horizontal_total</code> with the following command</p>
-<pre class="&lt;!---sh--&gt;"><code>    xvidtune -show | head -n 1 | awk &#39;{ print &quot;pixelclock &quot; $2 * 1000000 &quot; horizontal_total = &quot; $6 }&#39;</code></pre>
+<pre><code>    xvidtune -show | head -n 1 | awk &#39;{ print &quot;pixelclock &quot; $2 * 1000000 &quot; horizontal_total = &quot; $6 }&#39;</code></pre>
 <p>Example from my laptops:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./grothe 65000000 10000000 1344 &lt; twinkle.txt</code></pre>
+<pre><code>    ./grothe 65000000 10000000 1344 &lt; twinkle.txt</code></pre>
 <p>Even if the user gets a setting off, the sound will usually be able to be
 heard on <a href="https://en.wikipedia.org/wiki/AM_broadcasting">AM</a> at a multiple of
 the original frequency.</p>
@@ -250,10 +251,10 @@ Kuhn’s and Ross J. Anderson’s.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/grothe/test.txt">test.txt</a> - sample input</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/grothe/try.sh">try.sh</a> - how to run</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/grothe/twinkle.txt">twinkle.txt</a> - sample input</li>
-<li><a href="2006_grothe.tar.bz2">2006_grothe.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2006_grothe.tar.bz2">2006_grothe.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/grothe/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/grothe/.entry.json">.entry.json</a> - description of entry in JSON</li>

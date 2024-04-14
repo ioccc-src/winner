@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -143,13 +144,13 @@ Location: <a href="../../location.html#IT">IT</a> - <em>Italian Republic</em> (<
 <h2 id="to-build">To build:</h2>
 <p>This entry requires SDL to be installed. See <a href="../../faq.html#SDL">FAQ 3.8</a> if you
 don’t know how to do this for your system.</p>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2014_maffiodo1">2014 maffiodo1 bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    cat game.level | ./prog 320 200 800 300 128 144 game.rgba game.wav 10343679</code></pre>
+<pre><code>    cat game.level | ./prog 320 200 800 300 128 144 game.rgba game.wav 10343679</code></pre>
 <p>The parameters to the program are:</p>
 <ol type="1">
 <li>Window width.</li>
@@ -164,7 +165,7 @@ don’t know how to do this for your system.</p>
 note on macOS.</li>
 </ol>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./giana.sh
+<pre><code>    ./giana.sh
 
     ./mario.sh</code></pre>
 <p>If you end up telnetting to the server (feature of <a href="mario.sh">mario.sh</a>) you can
@@ -175,7 +176,7 @@ try:</p>
     starwars # animated Star Wars &#39;film&#39;</code></pre>
 <p>If you wish to change the width and height, defaulting at 640 x 480, say to
 800 x 800, try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ROWS=800 COLS=800 ./mario.sh
+<pre><code>    ROWS=800 COLS=800 ./mario.sh
 
     ROWS=800 COLS=800 ./giana.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -191,10 +192,10 @@ immediately take effect.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="remarks">Remarks</h3>
 <p>Use <code>tabsize=4</code> to see the magic.</p>
-<pre class="&lt;!---sh--&gt;"><code>    expand -t 4 prog.c</code></pre>
+<pre><code>    expand -t 4 prog.c</code></pre>
 <p>The program returns 0 if the player wins or <em>non-zero</em> if the player loses so
 you can test it and make something useful (or not), like this:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cat mario.level | ./prog 320 200 800 300 128 144 mario.rgba mario8.wav 10343679 &amp;&amp; telnet telehack.com 23</code></pre>
+<pre><code>    cat mario.level | ./prog 320 200 800 300 128 144 mario.rgba mario8.wav 10343679 &amp;&amp; telnet telehack.com 23</code></pre>
 <p>and type in: <code>starwars</code></p>
 <p>This is an engine for <a href="https://en.wikipedia.org/wiki/Platform_game">platform
 game</a>. It can be used to create
@@ -288,7 +289,7 @@ to create.</p>
 You can input as many objects as you want but the maximum number of objects
 handled by the program is 333. You can modify this value by editing the source
 here:</p>
-<pre class="&lt;!---c--&gt;"><code>    C[333*7],d=333;</code></pre>
+<pre><code>    C[333*7],d=333;</code></pre>
 <p>Each row has six columns:</p>
 <ol type="1">
 <li><code>Screen X</code> : <code>x</code> position of the object in the level.</li>
@@ -403,10 +404,10 @@ Sisters</a> !! :)</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/maffiodo1/giana.level">giana.level</a> - game level data</li>
 <li><a href="mario8.wav">mario8.wav</a> - sound file for game</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/maffiodo1/mario.level">mario.level</a> - game level data</li>
-<li><a href="2014_maffiodo1.tar.bz2">2014_maffiodo1.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2014_maffiodo1.tar.bz2">2014_maffiodo1.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/maffiodo1/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/maffiodo1/.entry.json">.entry.json</a> - description of entry in JSON</li>

@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,13 +142,13 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em></li>
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>There is an unobfuscated version of this entry. See <a href="#alternate-code">Alternate
 code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./konno N</code></pre>
+<pre><code>    ./konno N</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh
+<pre><code>    ./try.sh
 
     # you can also specify numbers to try before the random and preselected ones:
     ./try.sh 111 222 333 444 555 666 777 888 999</code></pre>
@@ -157,7 +158,7 @@ selects ten numbers to try.</p>
 <p>An alternate version of this entry, <a href="konno.alt.c">konno.alt.c</a>, is provided.
 This alternate code is an unobfuscated version of the winning code.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>konno.alt</code> as you would <code>konno</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -170,7 +171,7 @@ This alternate code is an unobfuscated version of the winning code.</p>
 automaton</a>
 patterns.</p>
 <p>Try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./konno 30
+<pre><code>    ./konno 30
     ./konno 90
     ./konno 102
     ./konno 109
@@ -178,9 +179,9 @@ patterns.</p>
 <p>There are 256 (from 0 through 255) possible rules.</p>
 <h3 id="obfuscation">Obfuscation</h3>
 <p>This program uses bit operations. I think</p>
-<pre class="&lt;!---c--&gt;"><code>    7&amp;O&lt;&lt;!o&gt;&gt;!o+29</code></pre>
+<pre><code>    7&amp;O&lt;&lt;!o&gt;&gt;!o+29</code></pre>
 <p>is an interesting operation. This isn’t equal to</p>
-<pre class="&lt;!---c--&gt;"><code>    7&amp;O&gt;&gt;29</code></pre>
+<pre><code>    7&amp;O&gt;&gt;29</code></pre>
 <p>operation. What is the operation doing?</p>
 <h3 id="limitation">Limitation</h3>
 <p>This program assumes that the size of <code>int</code> is 4.</p>
@@ -212,10 +213,10 @@ patterns.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/konno/konno.alt.c">konno.alt.c</a> - alternative source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/konno/konno.orig.c">konno.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/konno/try.sh">try.sh</a> - how to run</li>
-<li><a href="2012_konno.tar.bz2">2012_konno.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2012_konno.tar.bz2">2012_konno.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/konno/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/konno/.entry.json">.entry.json</a> - description of entry in JSON</li>

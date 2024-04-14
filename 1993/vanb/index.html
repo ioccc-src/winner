@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,17 +142,17 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1993_vanb">1993 vanb bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./vanb &#39;exp&#39;</code></pre>
+<pre><code>    ./vanb &#39;exp&#39;</code></pre>
 <p>where <code>exp</code> is an octal expression. See below for how it can also have
 hexadecimal and decimal numbers.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>What happens if you use something other than valid digits?</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The octal expression may contain:</p>
@@ -217,7 +218,7 @@ involving <code>**O7</code> and octal constants are looking for certain characte
 <p>Here’s a version of the program before it got formatted into the VIII,
 augmented with comments showing where each state begins. <code>N1</code> and <code>N2</code> are
 notes:</p>
-<pre class="&lt;!---c--&gt;"><code>    #define O5 main
+<pre><code>    #define O5 main
     O5(O2,O7,O3)char**O7;
     {
              return
@@ -258,9 +259,9 @@ program with no parameters, in which case it just returns 0.</p>
 the first state it will go into. This state just invokes
 printf, and sends the parser to state <code>012</code> (which is <code>&lt;E&gt;</code>).</p>
 <p>The <code>E</code> and <code>T</code> states work like this:</p>
-<pre class="&lt;!---c--&gt;"><code>    int e(){ return eprime( t() ); }</code></pre>
+<pre><code>    int e(){ return eprime( t() ); }</code></pre>
 <p>The <code>E'</code> and <code>T'</code> states work like this:</p>
-<pre class="&lt;!---c--&gt;"><code>    int eprime( int intermediate )
+<pre><code>    int eprime( int intermediate )
     {
         if( ch == &#39;+&#39; )
         {
@@ -271,7 +272,7 @@ printf, and sends the parser to state <code>012</code> (which is <code>&lt;E&gt;
     }</code></pre>
 <p>The <code>D</code>, <code>X</code> and <code>O</code> states work like this (they assume that they’re initially
 called with <code>0</code>):</p>
-<pre class="&lt;!---c--&gt;"><code>    int octal( int intermediate )
+<pre><code>    int octal( int intermediate )
     {
         if( ch&gt;=&#39;0&#39; &amp;&amp; ch&lt;=&#39;7&#39; )
         {
@@ -310,10 +311,10 @@ called with <code>0</code>):</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/vanb/vanb.alt.c">vanb.alt.c</a> - alternative source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/vanb/vanb.orig.c">vanb.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/vanb/try.sh">try.sh</a> - how to run</li>
-<li><a href="1993_vanb.tar.bz2">1993_vanb.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1993_vanb.tar.bz2">1993_vanb.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/vanb/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/vanb/.entry.json">.entry.json</a> - description of entry in JSON</li>

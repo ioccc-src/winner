@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,11 +142,11 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>If you wish to save state so that you can run the program and keep files changed
 (for instance you don’t want to compile <code>mullender.c</code> again) you can compile it
 like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber SAVE=1 all</code></pre>
+<pre><code>    make clobber SAVE=1 all</code></pre>
 <p>Make sure that if you do add a file (including by compiling code) that before
 you exit (ctrl-e) you type in <code>sync</code>! Otherwise the file might not exist or it
 will be corrupt if it does.</p>
@@ -155,20 +156,20 @@ will be corrupt if it does.</p>
     STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2018_mills">2018 mills bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog</code></pre>
+<pre><code>    ./prog</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog</code></pre>
+<pre><code>    ./prog</code></pre>
 <p>At the <code>&gt;boot</code> prompt, type return.</p>
 <p>At the <code>:</code> prompt, type <code>rk(0,0)rkunix</code> and wait for it to initialise itself.
 Now try typing:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cat &gt; prog.c
+<pre><code>    cat &gt; prog.c
     main(){ printf(&quot;Hello, world!\n&quot;); }
     ^D
     cc prog.c
     a.out</code></pre>
 <p>where <code>^D</code> is EOF.</p>
 <p>Next try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc mullender.c
+<pre><code>    cc mullender.c
     a.out</code></pre>
 <p>… and enjoy the classic <a href="../../1984/mullender/index.html">1984/mullender</a> entry as
 it would have been in 1984 with a VAX-11/PDP-11! Once it reaches the end of the
@@ -180,18 +181,18 @@ line, hit enter and see what happens again. When you’re tired of it hit ctrl-c
 3636 bytes, which is considerably lighter than the original machine it can replace.</p>
 <p>This program can take you back to the start of everything, it is possible to
 run v0. Just type:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./v0</code></pre>
+<pre><code>    ./v0</code></pre>
 <p>NOTE: To quit v0, press Control-E.</p>
 <p>You will be greeted with a familiar prompt of “login”. The username and
 password are “dmr” and “dmr”. To make things more familiar you’ll need to
 create ‘.’ as it hasn’t been invented yet on this image!</p>
-<pre class="&lt;!---sh--&gt;"><code>    @ ln dd dmr .</code></pre>
+<pre><code>    @ ln dd dmr .</code></pre>
 <p>An <code>ls</code> will reveal that C hasn’t been invented yet! IOBCC anyone? The
 compiler is <code>bc</code>. It produces assembly, which will then need to be assembled
 together like <code>ops.s bl.s hello.s bi.s</code> (in that order) to produce a.out!</p>
 <p>But wait, we said this was the start of it all! This program can also run a
 program that replaces an even larger machine that can run BSD 2.9. To start this,</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog</code></pre>
+<pre><code>    ./prog</code></pre>
 <p>At the <code>&gt;boot</code> prompt, type return.</p>
 <p>At the “:” prompt, type <code>rk(0,0)rkunix</code>.</p>
 <p>NOTE: To quit prog, press Control-E.</p>
@@ -199,7 +200,7 @@ program that replaces an even larger machine that can run BSD 2.9. To start this
 the very first IOCCC entries <a href="../../1984/mullender/index.html">1984/mullender</a>, as
 shown earlier.</p>
 <p>But wait, there is even more! Try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./v6</code></pre>
+<pre><code>    ./v6</code></pre>
 <p>At the <code>@</code> prompt, type <code>rkunix</code>. You might want to type <code>stty -lcase</code> as
 otherwise the output will be in all caps.</p>
 <p>NOTE: To quit v6, press Control-E.</p>
@@ -269,7 +270,7 @@ If so, consider a <code>make clean</code> to start from scratch.</p>
 root prompt. Most of the commands you are familiar with work here (this was
 only a quarter of a century ago – how much could things have changed?).
 Let’s try some:</p>
-<pre class="&lt;!---sh--&gt;"><code>    # ls
+<pre><code>    # ls
     .cshrc       .profile     boot         hkunix       mnt          tmp
     .login       2.9stamp     dev          lib          mullender.c  unix
     .msgsrc      bin          etc          lost+found   rkunix       usr
@@ -778,10 +779,10 @@ time…</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/mills/prog.c">prog.c</a> - entry source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/mills/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/mills/prog.orig.c">prog.orig.c</a> - original source</li>
-<li><a href="2018_mills.tar.bz2">2018_mills.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2018_mills.tar.bz2">2018_mills.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/mills/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="boot.dat">boot.dat</a> - binary support file</li>

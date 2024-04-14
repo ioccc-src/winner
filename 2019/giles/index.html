@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,11 +142,11 @@ Location: <a href="../../location.html#AU">AU</a> - <em>Commonwealth of Australi
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog infile.wav outfile.wav</code></pre>
+<pre><code>    ./prog infile.wav outfile.wav</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>NOTE: <code>play</code>, which <a href="try.sh">try.sh</a> uses, comes from SoX, the Swiss Army Knife
 of sound processing programs. If you don’t have this installed, see <a href="../../faq.html#sox">FAQ 3.10:
 How do I compile and use an IOCCC entry that requires sound</a>.</p>
@@ -175,7 +176,7 @@ the latter reports warnings about loss of information when converting <code>floa
 and that <code>void (*)()</code> and <code>void (*)(void)</code> are not the same thing.</p>
 <p>Interesting fact: The size of the program from <code>./iocccsize -i</code> is 2019.</p>
 <h4 id="how-to-use">How to use:</h4>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog input [output [size [dry [wet [damping]]]]]
+<pre><code>    ./prog input [output [size [dry [wet [damping]]]]]
     prog.exe input [output [size [dry [wet [damping]]]]]</code></pre>
 <ul>
 <li><code>input</code>: The path to the input file. Required.</li>
@@ -196,7 +197,7 @@ decimal numbers (e.g. 0.35) or as percentages (e.g. 35%).</p>
 <p>The default settings are designed to make the effect obvious rather than subtle,
 so it may be a good idea to adjust the ratio of “dry” to “wet”, to give a more
 pleasant result:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog in.wav out.wav 1.8 80% 15%</code></pre>
+<pre><code>    ./prog in.wav out.wav 1.8 80% 15%</code></pre>
 <p>The program only supports WAV files, and only mostly. Other audio formats, such
 as MP3, are not supported because they are difficult to decode, but there are
 free programs such as <code>ffmpeg</code> that can perform the conversion. Some of the
@@ -356,10 +357,10 @@ where the data ends up. For example:</p>
 <li><a href="BlockDiagram.png">BlockDiagram.png</a> - reverb algorithm block-diagram of internal structure</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/giles/try.sh">try.sh</a> - how to run</li>
 <li><a href="MonodyVocals.wav">MonodyVocals.wav</a> - Monody by TheFatRat featuring Laura Brehm</li>
-<li><a href="2019_giles.tar.bz2">2019_giles.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2019_giles.tar.bz2">2019_giles.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/giles/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/giles/.entry.json">.entry.json</a> - description of entry in JSON</li>

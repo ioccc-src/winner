@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -144,7 +145,7 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <p>The authors provided a spoiler version, originally uuencoded but uudecoded by us
 in 2023. See <a href="#alternate-code">Alternate code</a> below.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
@@ -152,16 +153,16 @@ in 2023. See <a href="#alternate-code">Alternate code</a> below.</p>
 <pre><code>    STATUS: missing file - please provide it</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1995_vanschnitz">1995 vanschnitz bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./vanschnitz</code></pre>
+<pre><code>    ./vanschnitz</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>The authors provided a spoiler version of the program. Originally uuencoded we
 have decoded it for the wider audience in <a href="vanschnitz.alt.c">vanschnitz.alt.c</a>. The
 <code>uuencode</code>d blob is still available in their remarks below. They encourage you
 to first try and figure out the program without the spoiler.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>vanschnitz.alt</code> as you would <code>vanschnitz</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -187,7 +188,7 @@ for. This is done by defining the symbol <code>n</code> on the compile
 line. For instance, to cause the compiler to solve the Towers
 of Hanoi problem with four disks, you would compile the program
 like this:</p>
-<pre class="&lt;!---sh--&gt;"><code>    gcc hanoi.c -o hanoi -Dn=4</code></pre>
+<pre><code>    gcc hanoi.c -o hanoi -Dn=4</code></pre>
 <p>A default value of <code>5</code> will be used for <code>n</code> if you do not define
 it on the command line. The value of <code>n</code> cannot be greater than
 fifteen (the compiler we used to test has a limit on the <code>#include</code>
@@ -208,7 +209,7 @@ ANSI C feature in which adjacent character strings are
 concatenated; a version that does not use this feature has been
 included for people who can only run K&amp;R). A good way to see
 the resulting program (on a Unix system) is to do the command</p>
-<pre class="&lt;!---sh--&gt;"><code>    gcc hanoi.c -E -Dn=5 | grep -v \# | grep -v ^\$</code></pre>
+<pre><code>    gcc hanoi.c -E -Dn=5 | grep -v \# | grep -v ^\$</code></pre>
 <p>For an odd number of disks, the program will provide a
 solution wherein the disks end up on peg 2; for an even
 number of disks, they will end on peg 3. This should
@@ -321,10 +322,10 @@ to try to decipher the program without it…</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/vanschnitz/vanschnitz.alt.c">vanschnitz.alt.c</a> - alternative source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/vanschnitz/vanschnitz.orig.c">vanschnitz.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/vanschnitz/try.sh">try.sh</a> - how to run</li>
-<li><a href="1995_vanschnitz.tar.bz2">1995_vanschnitz.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1995_vanschnitz.tar.bz2">1995_vanschnitz.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/vanschnitz/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/vanschnitz/.entry.json">.entry.json</a> - description of entry in JSON</li>

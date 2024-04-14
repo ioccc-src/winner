@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,14 +142,14 @@ Location: <a href="../../location.html#GB">GB</a> - <em>United Kingdom of Great 
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
 <p>Zoom out and make your terminal window 53 or more lines deep.</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./blakely &lt; blakely.c | head -300</code></pre>
+<pre><code>    ./blakely &lt; blakely.c | head -300</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>For those who have a lot of time, try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./blakely &lt; t0_3.dat</code></pre>
+<pre><code>    ./blakely &lt; t0_3.dat</code></pre>
 <p>though one might or might not need to kill it, depending on your boredom
 threshold.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -158,14 +159,14 @@ if given its own source as input, and allows to check if your garden
 is a <a href="http://en.wikipedia.org/wiki/Garden_of_Eden_%28cellular_automaton%29">Garden of Eden</a>, all in one source.</p>
 <p>If you have enough time to spare, put the plan of your garden in a text file,
 and run:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./blakely - &lt; garden.txt</code></pre>
+<pre><code>    ./blakely - &lt; garden.txt</code></pre>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>This program uses a well-known algorithm in order to display pi to fifteen
 decimal places. The source-layout itself demonstrates the importance of using
 the correct amount of whitespace in code and the clear superiority of spaces
 over tabs.</p>
 <p>In order to see the main feature of the code, type:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./blakely &lt; blakely.c</code></pre>
+<pre><code>    ./blakely &lt; blakely.c</code></pre>
 <p>and wait for about four seconds before using Ctrl-C (or whatever) to end the program. The
 results are best viewed in a terminal window at least 60 characters
 high and wide. Alternatively, redirect the output to a separate file
@@ -176,12 +177,12 @@ Life</a>”, using standard input as a starting grid. The
 layout of the source-code is such that it evolves to a digital representation of
 the first 15 decimal places of pi after 4 time steps. This was setup using the
 other feature of the program which can be demonstrated as follows:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./blakely - &lt; 3.dat</code></pre>
+<pre><code>    ./blakely - &lt; 3.dat</code></pre>
 <p>The program will first display the grid given in <a href="3.dat">3.dat</a>, and then three
 more grids (taking a few minutes to display the last). Waiting for any more
 grids will take a substantial amount of time. The final grid has been put into
 <a href="evolve_to_3.dat">evolve_to_3.dat</a>, and if you type</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./blakely &lt; evolve_to_3.dat</code></pre>
+<pre><code>    ./blakely &lt; evolve_to_3.dat</code></pre>
 <p>then the 3 will reappear after three time steps.</p>
 <p>As should now be clear, this use of the program will attempt to evolve a given setup
 backwards in time according to the Life rules. The resulting grid is clearly not
@@ -329,10 +330,10 @@ universe.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/blakely/evolve_to_3.dat">evolve_to_3.dat</a> - input data</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/blakely/t0_3.dat">t0_3.dat</a> - input data</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/blakely/try.sh">try.sh</a> - how to run</li>
-<li><a href="2011_blakely.tar.bz2">2011_blakely.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2011_blakely.tar.bz2">2011_blakely.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/blakely/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/blakely/.entry.json">.entry.json</a> - description of entry in JSON</li>

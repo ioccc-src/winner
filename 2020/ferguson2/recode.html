@@ -83,6 +83,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -170,7 +171,7 @@ with the Roman numeral, showing their actual orders etc.), the reflectors
 <p>In this file I will show an example of each feature and then get to the
 wonderful ‘challenge’ for everyone.</p>
 <h1 id="options"><a name="options" href="#toc">Options</a></h1>
-<pre class="&lt;!---sh--&gt;"><code>    ./recode -h
+<pre><code>    ./recode -h
     usage: ./recode [options]
     -v                  display selected settings
     -r                  pseudo-randomly select settings
@@ -180,7 +181,7 @@ wonderful ‘challenge’ for everyone.</p>
 <p><code>-r</code> randomises settings. It won’t prompt you for settings but it will for input
 if you don’t give the option to read in a file for input.</p>
 <p><code>-v</code> shows selected settings. For example combining <code>-r</code> and <code>-v</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ echo IOCCC | ./recode -r -v
+<pre><code>    $ echo IOCCC | ./recode -r -v
     Ring 1: (  I) EKMFLGDQVZNTOWYHXUSPAIBRCJ
     Ring 2: (  V) VZBRGITYUPSDNHLXAWMJQOFECK
     Ring 3: ( IV) ESOVPZJAYQUIRHXLNFTGKDCMWB
@@ -207,7 +208,7 @@ encipherment/decipherment). If the file cannot be opened it sets back to stdin.<
 <p><code>-o</code> outputs the settings to the file. If the file cannot be opened for writing
 or is the same file name (see below) then only stdout will be used. Example of
 randomised output going to a file:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ ./recode -r -oconfig
+<pre><code>    $ ./recode -r -oconfig
     IOCCC
     3PP4UB5GG1ELGTKFCOPVBNUYXJAWSDIOCCC
     $ cat config
@@ -236,7 +237,7 @@ what about if one exists but the other does not?</p>
 <h2 id="file-options-parser-limitation"><a name="fileoptions" href="#toc">File options parser limitation</a></h2>
 <p>Due to the way the parsing of options is done (no spaces between option char and
 argument) shell expansion will not work right so for example doing:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ ./recode -R~/config</code></pre>
+<pre><code>    $ ./recode -R~/config</code></pre>
 <p>will <em>not</em> read the file ‘config’ in the home directory. I show another way to
 achieve this later.</p>
 <p>This limitation also applies to the <code>-f</code> and <code>-o</code> options!</p>
@@ -246,7 +247,7 @@ the program interactively.</p>
 <h1 id="piping-commands-to-recode"><a name="pipingtorecode" href="#toc">Piping commands to recode</a></h1>
 <p>If stdin is not a tty (<code>!isatty(0)</code>) and neither randomised mode nor reading in
 from a file is specified then you might just see something like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ echo testing test tests | ./recode
+<pre><code>    $ echo testing test tests | ./recode
     1AB2BB3CC1testing test tests
 
     $ echo testing test tests | ./recode | ./prog - 2&gt;/dev/null
@@ -265,7 +266,7 @@ job at this anyway).</p>
 input manually (if you randomise or read in from previously saved file no input
 need be done at all) then make sure to redirect stderr to /dev/null. If you
 don’t you might see something like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ ./recode -r | ./prog -
+<pre><code>    $ ./recode -r | ./prog -
     Ring 1: IOCCC
     Setting 1: Position 1: Ring 2: Setting 2: Position 2: Ring 3: Setting 3: Position 3: Reflector: Plugboard pair 1: Plugboard pair 2: Plugboard pair 3: Plugboard pair 4: Plugboard pair 5: Plugboard pair 6: Plugboard pair 7: Plugboard pair 8: Plugboard pair 9: Plugboard pair 10: DEVIY</code></pre>
 <p>What happened is that <code>Ring 1:</code> is printed to stderr but since it’s not been
@@ -274,7 +275,7 @@ input. Why or how it shows the first prompt instead of later on I do not know.
 Anyway at this point the simulator is already expecting input to en/decipher.
 That’s why after I sent EOF it printed out the remaining strings to stderr.</p>
 <h1 id="manually-test-the-recode-program-with-the-enigma-program"><a name="manuallytest" href="#toc">Manually test the recode program with the Enigma program</a></h1>
-<pre class="&lt;!---sh--&gt;"><code>    $ cat input
+<pre><code>    $ cat input
     IOCCC
 
     $ ./recode -finput
@@ -314,7 +315,7 @@ a number of ways but two dots is one. Notice also that it’s in a different ord
 than the simulator: because with the size restrictions on my entry I saved bytes
 by using the same loop where I could. It just felt more natural to have them
 grouped together in a configurator for the <a href="prog.c">simulator</a>.</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRIOCCC | ./prog - 2&gt;/dev/null
+<pre><code>    $ echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRIOCCC | ./prog - 2&gt;/dev/null
     HQNVO
     $ echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRIOCCC  | ./prog - 2&gt;/dev/null | echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRHQNVO | ./prog  - 2&gt;/dev/null
     IOCCC</code></pre>
@@ -330,13 +331,13 @@ part again; I could have just done the latter part but I wanted to show the way
 the pipeline works with settings etc.</p>
 <p>What happens if the plugboard pairs are the same but in a different order? It’s
 the same output:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ echo 1AA2AA3AA2AB..CDEFGHIJKLMNOPQRIOCCC|./prog - 2&gt;/dev/null
+<pre><code>    $ echo 1AA2AA3AA2AB..CDEFGHIJKLMNOPQRIOCCC|./prog - 2&gt;/dev/null
     HQNVO</code></pre>
 <p>Also if you flip the order of the letters in the pair e.g. the AB as BA instead:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ echo 1AA2AA3AA2BA..CDEFGHIJKLMNOPQRIOCCC|./prog - 2&gt;/dev/null
+<pre><code>    $ echo 1AA2AA3AA2BA..CDEFGHIJKLMNOPQRIOCCC|./prog - 2&gt;/dev/null
     HQNVO</code></pre>
 <h1 id="only-write-config-file"><a name="onlyconfig" href="#toc">Only write config file</a></h1>
-<pre class="&lt;!---sh--&gt;"><code>    $ ./recode -v -oconfig -finput &gt;/dev/null
+<pre><code>    $ ./recode -v -oconfig -finput &gt;/dev/null
     Rotors:
     (1)   I: EKMFLGDQVZNTOWYHXUSPAIBRCJ
     (2)  II: AJDKSIRUXBLHWTMCQGZNPYFVOE
@@ -389,7 +390,7 @@ and it didn’t report an error. Neither did it complain about <code>IJ</code> i
 pair. This is because it consumes input overflow.</p>
 <p>It shouldn’t be this way for the simulator though because that could cause
 inconsistent number of characters expected before the text to encipher.</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ cat config
+<pre><code>    $ cat config
     1AB2CD3EF2ABCDEFGHIJKLMNOPQRST
 
     $ ( cat config ; cat input ) | ./prog - 2&gt;/dev/null
@@ -402,7 +403,7 @@ settings written? You can do that too by either sending a newline or else
 directly type ctrl-d (or whatever you have EOF set to) or give it an empty file.</p>
 <p>The following are all equivalent in that they will write to a settings file (the
 first one will print a newline with the echo but that won’t matter):</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ echo | ./recode -r -osettings
+<pre><code>    $ echo | ./recode -r -osettings
     $ echo -n | ./recode -r -osettings
     $ &gt; empty
     $ ./recode -r -osettings &lt; empty
@@ -414,7 +415,7 @@ the buffer remains <code>NULL</code> and so I don’t print it but still do prin
 file. (Actually even if <code>getdelim()</code> fails you’re supposed to free the buffer so I
 set another variable to indicate if it should be printed.)</p>
 <h1 id="reusing-a-configuration"><a name="reuseconfig" href="#toc">Reusing a configuration</a></h1>
-<pre class="&lt;!---sh--&gt;"><code>    $ echo -n|./recode -r -oconfig
+<pre><code>    $ echo -n|./recode -r -oconfig
     4UH5II1RJ1SPIFEJLYGZWRTBHVCAMN$
 
     $ cat input.txt
@@ -435,7 +436,7 @@ set another variable to indicate if it should be printed.)</p>
     $ diff io input.txt
     $</code></pre>
 <p>Alternatively you can just use the <code>-R</code> and <code>-f</code> options:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ ./recode -finput.txt -Rconfig | ./prog - 2&gt;/dev/null &gt; output2
+<pre><code>    $ ./recode -finput.txt -Rconfig | ./prog - 2&gt;/dev/null &gt; output2
     $ diff output output2
     $</code></pre>
 <h1 id="write-config-file-read-data-file-and-pass-to-enigma-simulator"><a name="passtoenigma" href="#toc">Write config file, read data file and pass to Enigma simulator</a></h1>
@@ -476,7 +477,7 @@ set another variable to indicate if it should be printed.)</p>
 Cody?) there’s also a reference to code which I also love (just as all
 participants of the IOCCC do). Other things there don’t mean anything but what
 does is the output:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ cat output
+<pre><code>    $ cat output
     DBFAF 2020 Ittejg ltblwriac uqdfqvr dhqh ghhf
 
     Jsjy ce v pxdmullo.
@@ -491,21 +492,21 @@ does is the output:</p>
     This is another sentence.</code></pre>
 <h1 id="piping-directly-to-the-enigma-code-once-with-randomised-settings-saved"><a name="directlytoenigma" href="#toc">Piping directly to the Enigma code once (with randomised settings, saved)</a></h1>
 <p>This is like the above only randomised:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ ./recode -r -oconfig|./prog - 2&gt;/dev/null
+<pre><code>    $ ./recode -r -oconfig|./prog - 2&gt;/dev/null
     IOCCC
     UGEVP</code></pre>
 <p>Note that I typed in <code>IOCCC</code> and sent <code>EOF</code> (ctrl-d); the settings were written to
 the config file (for deciphering later) and then all of it was piped to the
 Enigma entry resulting in the line below IOCCC. But let’s verify it worked out
 okay:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ cat config
+<pre><code>    $ cat config
     2BM4GJ3HK1LNCBXWRMGKSYIAZUTPVJ</code></pre>
 <p>Without having to copy/paste intermediate results:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ echo IOCCC | ./recode -Rconfig | ./prog - 2&gt;/dev/null | ./recode -Rconfig | ./prog - 2&gt;/dev/null
+<pre><code>    $ echo IOCCC | ./recode -Rconfig | ./prog - 2&gt;/dev/null | ./recode -Rconfig | ./prog - 2&gt;/dev/null
     IOCCC</code></pre>
 <p>You can also use a string for the <code>-R</code> option. I’ll use command substitution and
 actual pasting to demonstrate:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ echo IOCCC | ./recode -R$(cat config) | ./prog - 2&gt;/dev/null | ./recode -R2BM4GJ3HK1LNCBXWRMGKSYIAZUTPVJ | ./prog - 2&gt;/dev/null
+<pre><code>    $ echo IOCCC | ./recode -R$(cat config) | ./prog - 2&gt;/dev/null | ./recode -R2BM4GJ3HK1LNCBXWRMGKSYIAZUTPVJ | ./prog - 2&gt;/dev/null
     IOCCC</code></pre>
 <h1 id="usage-conclusion"><a name="conclusion" href="#toc">Usage conclusion</a></h1>
 <p>That should give you an idea of how to use the <code>recode</code> program. I leave it as
@@ -585,7 +586,7 @@ think that I would give too much away? :)</p>
 the key you wish to select is</p>
 <pre><code>    0EZ4PC1CC0PGTAQSOXWNMDRYKFUZEI</code></pre>
 <p>you can do:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./recode -R0EZ4PC1CC0PGTAQSOXWNMDRYKFUZEI -fencrypted.html | ./prog - 2&gt;/dev/null &gt; decrypted.html</code></pre>
+<pre><code>    ./recode -R0EZ4PC1CC0PGTAQSOXWNMDRYKFUZEI -fencrypted.html | ./prog - 2&gt;/dev/null &gt; decrypted.html</code></pre>
 <p>Then open <code>decrypted.html</code> in your browser.</p>
 <!--
 

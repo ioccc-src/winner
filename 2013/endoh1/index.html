@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,17 +142,17 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em></li>
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2013_endoh1">2013 endoh1 bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./endoh1 [file.lazy]</code></pre>
+<pre><code>    ./endoh1 [file.lazy]</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>You might also enjoy running:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -E endoh1.c | less</code></pre>
+<pre><code>    cc -E endoh1.c | less</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>We liked this entry because it can serve as a standalone program as well as an
 include file; and, as usual, because its input data is at least as obfuscated as
@@ -160,7 +161,7 @@ the program itself.</p>
 4x longer to compile it with -O3 than without, compared to clang’s 2x.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="remarks">Remarks</h3>
-<pre class="&lt;!---sh--&gt;"><code>    less endoh1.c
+<pre><code>    less endoh1.c
     gcc -o endoh1 endoh1.c
     ./endoh1</code></pre>
 <p>… Isn’t there any more to it?</p>
@@ -169,12 +170,12 @@ the program itself.</p>
 especially, <a href="https://tromp.github.io/cl/lazy-k.html">Lazy K</a>.</p>
 <p>This program will shine when it is used as a library. For example,
 <a href="hello.lazy">hello.lazy</a> is a “Hello world” program written in Lazy K.</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ lazy hello.lazy
+<pre><code>    $ lazy hello.lazy
     Hello, world!</code></pre>
 <p>where <code>lazy</code> is <a href="https://github.com/irori/lazyk">a reference implementation of Lazy K</a>. At the same time,
 <a href="hello.lazy">hello.lazy</a> is <em>a valid C program</em> that uses <a href="endoh1.c">endoh1.c</a>
 as a library.</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ gcc -o hello -xc hello.lazy
+<pre><code>    $ gcc -o hello -xc hello.lazy
     $ ./hello
     Hello, world!</code></pre>
 <p>In other words, this program is a kind of <a href="http://en.wikipedia.org/wiki/Polyglot_%28computing%29">polyglot</a>.</p>
@@ -210,7 +211,7 @@ section</a>.</p>
 </ul></li>
 </ul>
 <p>Recent compilers with <code>-Wall -W -Wextra -pedantic</code> say nothing.</p>
-<pre class="&lt;!---sh--&gt;"><code>    gcc -Wall -W -Wextra -pedantic prog.c
+<pre><code>    gcc -Wall -W -Wextra -pedantic prog.c
     clang -Wall -W -Wextra -pedantic prog.c
     tcc -Wall -W -Wextra -pedantic prog.c</code></pre>
 <p>I think it will work on almost all platforms. I confirmed:</p>
@@ -235,11 +236,11 @@ evaluates it.</p>
 combinator calculus. The rewriting rules are shown in the shape of the code.</p>
 <h4 id="abuse-of-function-pointers">Abuse of function pointers</h4>
 <p>Consider a sequence of function applications in C:</p>
-<pre class="&lt;!---c--&gt;"><code>    s(x)(x)(x)(x)...</code></pre>
+<pre><code>    s(x)(x)(x)(x)...</code></pre>
 <p>What type should <code>s</code> have? Unfortunately, C does <em>not</em> provide a “recursive
 type”, such as <code>typedef f (*f)();</code>.</p>
 <p>So, I used a heavily nested function pointer type:</p>
-<pre class="&lt;!---c--&gt;"><code>    typedef void *(*(*(*...(*(f))()...)())())</code></pre>
+<pre><code>    typedef void *(*(*(*...(*(f))()...)())())</code></pre>
 <p>This limits how many arguments one function can be consecutively applied to.
 But you can increase the number by tweaking the definition of macro <code>p</code>.</p>
 <h4 id="code-duplication-by-macros">Code duplication by macros</h4>
@@ -255,7 +256,7 @@ environment which is a reference to non-local variable.</p>
 (It is feasible by dynamic code generation, but it is far from portable.)</p>
 <p>So, I addressed this issue by generating many function definitions
 statically by (ab)using macros:</p>
-<pre class="&lt;!---c--&gt;"><code>    void *x1; void f1(void *y) { return apply(x1, y); }
+<pre><code>    void *x1; void f1(void *y) { return apply(x1, y); }
     void *x2; void f2(void *y) { return apply(x2, y); }
     void *x3; void f3(void *y) { return apply(x3, y); }
     ...
@@ -301,10 +302,10 @@ solver</a>.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/hello.lazy">hello.lazy</a> - lazy input</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/rot13.ed">rot13.ed</a> - ed script</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/tac.lazy">tac.lazy</a> - lazy input</li>
-<li><a href="2013_endoh1.tar.bz2">2013_endoh1.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2013_endoh1.tar.bz2">2013_endoh1.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/.entry.json">.entry.json</a> - description of entry in JSON</li>

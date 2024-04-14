@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,30 +142,30 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2013_dlowe">2013 dlowe bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./dlowe [number...]</code></pre>
+<pre><code>    ./dlowe [number...]</code></pre>
 <p>where <code>[number...]</code> is one or more number, space separated.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>What is different about the above if you do something like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    echo &#39;IOCCC winning entry 2013/dlowe&#39; &gt; ioccc.txt
+<pre><code>    echo &#39;IOCCC winning entry 2013/dlowe&#39; &gt; ioccc.txt
     ./try.sh
     rm -f ioccc.txt</code></pre>
 <p>?</p>
 <p>To make it simpler to see try showing just the different line like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./diff.sh</code></pre>
+<pre><code>    ./diff.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>We liked how this entry used Unicode, specifically UTF-8, in a somewhat
 obfuscated way.</p>
 <p>Also, why doesn’t it crash but instead produces a correct output when called
 with one argument or when all arguments are equal?</p>
 <p>For extra fun, compile and run <a href="fun.c">fun.c</a>:</p>
-<pre class="&lt;!---c--&gt;"><code>    #include &lt;stdio.h&gt;
+<pre><code>    #include &lt;stdio.h&gt;
     int main() {
         printf(&quot;%d %d %d\n&quot;, (int)(-1.0/0.0), (int)(0.0/0.0), (int)(1.0/0.0));
     }</code></pre>
@@ -178,19 +179,19 @@ with one argument or when all arguments are equal?</p>
 <p>Which one is correct? :)</p>
 <p>NOTE: <code>make all</code> will compile <a href="fun.c">fun.c</a> but to provide a different compiler
 you can do something like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make CC=clang fun</code></pre>
+<pre><code>    make CC=clang fun</code></pre>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="sparkl">sparkl</h3>
 <p>A tiny implementation of command-line
 <a href="https://en.wikipedia.org/wiki/Sparkline">sparkline</a> data visualization.</p>
 <h3 id="synopsis">Synopsis</h3>
-<pre class="&lt;!---sh--&gt;"><code>    $ ./sparkl 0 1 2 3 4 5 6 7
+<pre><code>    $ ./sparkl 0 1 2 3 4 5 6 7
     ▁▂▃▄▅▆▇▉
 
     $ echo &quot;sparkline of file lengths: $(wc -c * | awk &#39;{print $1}&#39; | xargs ./sparkl)&quot;
     sparkline of file sizes: ▁▁▁▃▃▂▁▂▁▁▉</code></pre>
 <p>NOTE: this has been provided in <a href="slflen.sh">slflen.sh</a> so you can try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./slflen.sh</code></pre>
+<pre><code>    ./slflen.sh</code></pre>
 <p>instead (which <a href="try.sh">try.sh</a> also uses).</p>
 <h3 id="description">Description</h3>
 <p>This is a handy little tool for visualizing numeric series from the
@@ -249,10 +250,10 @@ implementation is completely independent.)</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/dlowe/fun.c">fun.c</a> - compile and run for extra run</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/dlowe/slflen.sh">slflen.sh</a> - generate sparkline of file lengths</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/dlowe/try.sh">try.sh</a> - how to run</li>
-<li><a href="2013_dlowe.tar.bz2">2013_dlowe.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2013_dlowe.tar.bz2">2013_dlowe.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/dlowe/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/dlowe/.entry.json">.entry.json</a> - description of entry in JSON</li>

@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ Location: <a href="../../location.html#MX">MX</a> - <em>United Mexican States</e
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>There is <a href="#alternate-code">alternate code</a> that is based on the author’s notes
 for DOS/Windows. This cannot be tested by us, not even to compile, but it appears
 that it should be fine, after the proper header files were added.</p>
@@ -150,12 +151,12 @@ that it should be fine, after the proper header files were added.</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2006_toledo2">2006 toledo2 bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./toledo2</code></pre>
+<pre><code>    ./toledo2</code></pre>
 <p>To end execution press <code>ctrl-z</code>. As mentioned in the author’s remarks and in the
 below section, it is supposed to crash on termination though some noted this
 does not seem to happen in macOS or linux in 2023.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./toledo2</code></pre>
+<pre><code>    ./toledo2</code></pre>
 <p>and then type in the following:</p>
 <pre><code>    10 PRINT &quot;HELLO WORLD!&quot;
     LIST
@@ -165,7 +166,7 @@ does not seem to happen in macOS or linux in 2023.</p>
 <p>This version, as noted, should work for DOS/Windows. It uses non-standard
 functions in place of <code>read(2)</code> and <code>write(2)</code>.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>The author noted that for PC/DOS you will have to add <code>ANSI.SYS</code> to your
 <code>CONFIG.SYS</code> but this is also something we can’t test.</p>
@@ -203,7 +204,7 @@ the very first volume of <a href="https://en.wikipedia.org/wiki/Dr._Dobb%27s_Jou
 Journal</a>.</p>
 <p>Type using uppercase letters. Here are three example programs. Press Enter after
 each line:</p>
-<pre class="&lt;!---basic--&gt;"><code>    10 PRINT &quot;Hello, world!&quot;
+<pre><code>    10 PRINT &quot;Hello, world!&quot;
     LIST
     RUN
 
@@ -236,7 +237,7 @@ from the <code>SOURCE</code> directory:</p>
 PIP.COM  STAT.COM  SUBMIT.COM XSUB.COM</code></pre>
 <p>To import them, you must run the emulator with an argument, by
 example:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./toledo2 DDT.COM</code></pre>
+<pre><code>    ./toledo2 DDT.COM</code></pre>
 <p>When the <code>&gt;</code> prompt appears, do:</p>
 <pre><code>    IMPORT DDT.COM</code></pre>
 <p>When it ends, do <code>HALT</code>, so the file is closed, and you can start
@@ -347,10 +348,10 @@ only one function.</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/toledo2/toledo2.alt.c">toledo2.alt.c</a> - alternative source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/toledo2/toledo2.orig.c">toledo2.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/toledo2/KAYPROII.ZIP">KAYPROII.ZIP</a> - zip file of CPM related files</li>
-<li><a href="2006_toledo2.tar.bz2">2006_toledo2.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2006_toledo2.tar.bz2">2006_toledo2.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="A">A</a> - binary support file</li>
 <li><a href="B">B</a> - binary support file</li>

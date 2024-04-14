@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,15 +142,15 @@ Location: <a href="../../location.html#IL">IL</a> - <em>State of Israel</em> (<e
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: uses gets() - change to fgets() if possible</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2019_dogon">2019 dogon bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; pattern.mc</code></pre>
+<pre><code>    ./prog &lt; pattern.mc</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>Make sure that you keep focus of windows in mind when going back and forth to
 the program and the script.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -321,7 +322,7 @@ master, who reviewed some earlier versions of the entry and freely shared some
 of his vast knowledge regarding GOL programming and hashlife. As a free bonus,
 Tom has allowed me to show his code which is probably the most efficient yet
 most obfuscated way of calculating the GOL function on a 64 bits <code>8*8</code> leaf:</p>
-<pre class="&lt;!---c--&gt;"><code>    unsigned long life8x8(long a) { unsigned long aw = a &lt;&lt; 1, ae = a &gt;&gt; 1, s0 = aw
+<pre><code>    unsigned long life8x8(long a) { unsigned long aw = a &lt;&lt; 1, ae = a &gt;&gt; 1, s0 = aw
     ^ ae, s1 = aw &amp; ae, hs0 = s0 ^ a, hs1 = (s0 &amp; a) | s1, hs0w8 = hs0 &gt;&gt; 8, hs0e8 =
     hs0 &lt;&lt; 8, hs1w8 = hs1 &gt;&gt; 8, hs1e8 = hs1 &lt;&lt; 8, ts0 = hs0w8 ^ hs0e8, ts1 = (hs0w8
     &amp; hs0e8) | (ts0 &amp; s0); return (hs1w8 ^ hs1e8 ^ ts1 ^ s1) &amp; ((hs1w8 | hs1e8) ^
@@ -368,10 +369,10 @@ next generation bits of the input 8x8 !</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/dogon/try.sh">try.sh</a> - how to run</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/dogon/unlimited-novelty.mc">unlimited-novelty.mc</a> - Golly macrocell input file</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/dogon/apholife.c">apholife.c</a> - partially obfuscated source</li>
-<li><a href="2019_dogon.tar.bz2">2019_dogon.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2019_dogon.tar.bz2">2019_dogon.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/dogon/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/dogon/.entry.json">.entry.json</a> - description of entry in JSON</li>

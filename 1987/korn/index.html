@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,9 +142,9 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./korn</code></pre>
+<pre><code>    ./korn</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The Judges believe that this is the best one line entry ever received.
 Compile on a UNIX system, or at least one using a C implementation that
@@ -158,17 +159,17 @@ section right now and see if you are one of the few people who can.</p>
 <li><p>What is the value of the symbol <code>"have"</code>? (hint: the value is NOT 4
 characters, or <code>'h'</code>, or a string) Consider the fact that:</p></li>
 </ol>
-<pre class="&lt;!---c--&gt;"><code>    char *x;</code></pre>
+<pre><code>    char *x;</code></pre>
 <p>defines a pointer to a <code>char</code> (i.e. an address), and that the <code>=</code> assigns
 things of compatible types. Since:</p>
-<pre class="&lt;!---c--&gt;"><code>    x = &quot;have&quot;;</code></pre>
+<pre><code>    x = &quot;have&quot;;</code></pre>
 <p>is legal C, what type of value is <code>"have"</code>?</p>
 <ol start="3" type="1">
 <li>Note that the following expressions yield the same value:</li>
 </ol>
-<pre class="&lt;!---c--&gt;"><code>    x[3]        *(x+3)    *(3+x)</code></pre>
+<pre><code>    x[3]        *(x+3)    *(3+x)</code></pre>
 <p>since addition is commutative. What can be said about this value?</p>
-<pre class="&lt;!---c--&gt;"><code>    3[x]</code></pre>
+<pre><code>    3[x]</code></pre>
 <p><a href="https://news.slashdot.org/story/01/02/06/2030205/david-korn-tells-all">David
 Korn</a>’s
 <a href="https://en.wikipedia.org/wiki/KornShell">/bin/ksh</a> provides us with a greatly
@@ -203,10 +204,10 @@ greatly inspired this contest.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1987/korn/korn.c">korn.c</a> - entry source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1987/korn/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1987/korn/korn.orig.c">korn.orig.c</a> - original source</li>
-<li><a href="1987_korn.tar.bz2">1987_korn.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1987_korn.tar.bz2">1987_korn.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1987/korn/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1987/korn/.entry.json">.entry.json</a> - description of entry in JSON</li>

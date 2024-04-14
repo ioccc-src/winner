@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ Location: <a href="../../location.html#IT">IT</a> - <em>Italian Republic</em> (<
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>There is a 121 byte version provided by the author. See <a href="#alternate-code">Alternate
 code</a> below.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
@@ -149,16 +150,16 @@ code</a> below.</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2014_maffiodo2">2014 maffiodo2 bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog arg</code></pre>
+<pre><code>    ./prog arg</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This shorter version is provided by the author. It has a fixed ramp and so not
 as fun but it’s 121 bytes instead of 140.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    cat image.rgb | ./prog.alt</code></pre>
+<pre><code>    cat image.rgb | ./prog.alt</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>On the face of it :-) given what this program does one might wonder what makes
 this winning entry special. But when you realize the source is small enough for posting
@@ -185,24 +186,24 @@ from <code>stdin</code> and print the ASCII ART to <code>stdout</code>.</p>
 <h3 id="screen-size">Screen size</h3>
 <p>If you have a terminal geometry than is different from the common 80x25 you can
 modify the <em>output width</em> by changing the value of the first variable:</p>
-<pre class="&lt;!---c--&gt;"><code>    d=80,</code></pre>
+<pre><code>    d=80,</code></pre>
 <h3 id="something-to-try">Something to try</h3>
 <p>Type this:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cat image.rgb | ./prog &quot;  .:;Y0&quot;</code></pre>
+<pre><code>    cat image.rgb | ./prog &quot;  .:;Y0&quot;</code></pre>
 <p>You can use your own image. Convert the image to a raw RGB image. Using
 ImageMagick it’s very simple:</p>
-<pre class="&lt;!---sh--&gt;"><code>    convert -geometry 80x source.jpg image.rgb</code></pre>
+<pre><code>    convert -geometry 80x source.jpg image.rgb</code></pre>
 <p>This program require one parameter or it will crash. The parameter of the
 program is the <em>conversion ramp</em>. You can use different ramps or create your own
 (for example using some letters of your name).</p>
 <p>These are some ramps you can try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog &quot; :1&quot;
+<pre><code>    ./prog &quot; :1&quot;
     ./prog &quot;  .:;Y0&quot;
     ./prog &quot; .:-=+*#%@&quot;
     ./prog &quot;   .,:!-iots&amp;8%#@$&quot;</code></pre>
 <h3 id="byte-version">121 byte version</h3>
 <p>An alternative version of this program is only 121bytes long:</p>
-<pre class="&lt;!---c--&gt;"><code>    d=80,e,j;g(){j+=getchar();}main(){for(;;){j=0;g();if(j&lt;0)break;g(g());putchar(&quot; .:#@&quot;[j/3*5&gt;&gt;8]);if(!(++e%d))puts(&quot;&quot;);}}</code></pre>
+<pre><code>    d=80,e,j;g(){j+=getchar();}main(){for(;;){j=0;g();if(j&lt;0)break;g(g());putchar(&quot; .:#@&quot;[j/3*5&gt;&gt;8]);if(!(++e%d))puts(&quot;&quot;);}}</code></pre>
 <p>This alternative version has a <strong>fixed ramp</strong>. It’s smaller but it’s not so fun to use…</p>
 <!--
 
@@ -232,10 +233,10 @@ program is the <em>conversion ramp</em>. You can use different ramps or create y
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/maffiodo2/prog.alt.c">prog.alt.c</a> - alternative source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/maffiodo2/prog.orig.c">prog.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/maffiodo2/try.sh">try.sh</a> - how to run</li>
-<li><a href="2014_maffiodo2.tar.bz2">2014_maffiodo2.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2014_maffiodo2.tar.bz2">2014_maffiodo2.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/maffiodo2/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/maffiodo2/.entry.json">.entry.json</a> - description of entry in JSON</li>

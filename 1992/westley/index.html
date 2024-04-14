@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix
@@ -149,28 +150,28 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <p>For more detailed information see <a href="../../bugs.html#1992_westley">1992 westley bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
 <p>If lost:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./whereami.sh lat long</code></pre>
+<pre><code>    ./whereami.sh lat long</code></pre>
 <p>Where <code>lat</code> and <code>long</code> correspond to your latitude and longitude.</p>
 <p>NOTE: you <strong>MUST</strong> have a terminal that is at least 80 columns for this to show
 properly. The <code>whereami</code> and <code>whereami.alt</code> code checks this but it is not
 prohibitive if it cannot be compiled and linked (it uses curses); instead one
 should just use the <code>westley</code> and <code>westley.alt</code> programs directly.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>The author provided a version for the US which we added. To build:</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./whereami.alt.sh lat long</code></pre>
+<pre><code>    ./whereami.alt.sh lat long</code></pre>
 <p>NOTE: this alternative version also needs a terminal with at least 80 columns.</p>
 <h3 id="alternate-try">Alternate try:</h3>
 <p>The <a href="try.sh">try.sh</a> script uses both the original entry and the alternate code
 so one can try the same script for both:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>To find the approximate place where this entry was judged, type:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./whereami 37 -122  # NOTE: - means west of meridian
+<pre><code>    ./whereami 37 -122  # NOTE: - means west of meridian
 
     # or if you don&#39;t have curses installed:
     ./westley 37 -122   # NOTE: - means west of meridian</code></pre>
@@ -243,12 +244,12 @@ is reasonably accurate.</p>
 <li>Tokyo 36 140</li>
 </ul>
 <p>For a domestic (US) version with higher resolution, try:</p>
-<pre class="&lt;!---c--&gt;"><code>    main(l,a,n,d)char**a;{for(d=atoi(a[1])/2*80-atoi(a[2])-2043;
+<pre><code>    main(l,a,n,d)char**a;{for(d=atoi(a[1])/2*80-atoi(a[2])-2043;
     n=&quot;bnaBCOCXdBBHGYdAP[A M E R I C A].AqandkmavX|ELC}BOCd&quot;
     [l++-3];)for(;n--&gt;64;)putchar(!d+++33^l&amp;1);}</code></pre>
 <p>The code will test the 80-column wrap and document itself if it is
 joined together as one 160-character line and listed. You should see:</p>
-<pre class="&lt;!---c--&gt;"><code>    main(l,a,n,d)...
+<pre><code>    main(l,a,n,d)...
     [A M E R I C A]...</code></pre>
 <p>…going down the left edge if your terminal auto-wraps at 80 characters.</p>
 <!--
@@ -283,10 +284,10 @@ joined together as one 160-character line and listed. You should see:</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/westley/whereami.alt.sh">whereami.alt.sh</a> - alternative whereami tool</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/westley/whereami.c">whereami.c</a> - tool to find your location on the map</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/westley/whereami.sh">whereami.sh</a> - whereami tool</li>
-<li><a href="1992_westley.tar.bz2">1992_westley.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1992_westley.tar.bz2">1992_westley.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/westley/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/westley/.entry.json">.entry.json</a> - description of entry in JSON</li>

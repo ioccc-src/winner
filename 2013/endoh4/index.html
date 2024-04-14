@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,10 +142,10 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em></li>
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>If you wish to change the size (see the <a href="#authors-remarks">Author’s remarks</a>
 below) you can do so with the <code>SIZE</code> variable. For instance you can do:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber SIZE=50,50 all</code></pre>
+<pre><code>    make clobber SIZE=50,50 all</code></pre>
 <p>but you can also do this directly with the <a href="endoh4.sh">endoh4.sh</a> script as
 described below.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
@@ -152,22 +153,22 @@ described below.</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2013_endoh4">2013 endoh4 bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./endoh4 &lt; file
+<pre><code>    ./endoh4 &lt; file
     ./endoh4.sh file</code></pre>
 <p>The second form is preferable as it will temporarily make the cursor invisible
 as recommended by the author. If no file is specified in the <code>./endoh4.sh</code> command
 line it will feed to the program <a href="endoh4.c">endoh4.c</a>.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./endoh4.sh cube.txt</code></pre>
+<pre><code>    ./endoh4.sh cube.txt</code></pre>
 <p>Hit ctrl-c to end the program.</p>
 <p>The author recommends the use of xterm.</p>
 <p>For an example, if you are a football/soccer fan, try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./endoh4.sh solids/archimedian-solid/a11-truncated-icosahedron.txt</code></pre>
+<pre><code>    ./endoh4.sh solids/archimedian-solid/a11-truncated-icosahedron.txt</code></pre>
 <p>You can provide more than one file:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./endoh4.sh solids/archimedian-solid/a11-truncated-icosahedron.txt cube.txt</code></pre>
+<pre><code>    ./endoh4.sh solids/archimedian-solid/a11-truncated-icosahedron.txt cube.txt</code></pre>
 <p>Hit ctrl-c/intr to go to the next file.</p>
 <p>If you wish to change the size to <code>50,50</code> without passing any arg:</p>
-<pre class="&lt;!---sh--&gt;"><code>    SIZE=50,50 ./endoh4.sh</code></pre>
+<pre><code>    SIZE=50,50 ./endoh4.sh</code></pre>
 <p>Not specifying a file feeds <a href="endoh4.c">endoh4.c</a> to the program.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This program is formatted as the net for a tetrahedron (hint: try feeding the
@@ -203,17 +204,17 @@ triangulated)</li>
 clang, and tcc. It should not trigger warnings with <code>-pedantic</code> and <code>-Wextra</code>.</p>
 <h3 id="tips">Tips</h3>
 <p>You may want to use <code>tput</code> to hide the terminal cursor.</p>
-<pre class="&lt;!---sh--&gt;"><code>    tput civis
+<pre><code>    tput civis
     ./endoh4 &lt; cube.txt
     tput cnorm</code></pre>
 <p>or</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./endoh4.sh cube.txt</code></pre>
+<pre><code>    ./endoh4.sh cube.txt</code></pre>
 <h3 id="bonuses">Bonuses</h3>
 <p>You can change the screen size. Let the aspect ratio be about 3:1.</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -DS=120,40 -o endoh4 endoh4.c</code></pre>
+<pre><code>    cc -DS=120,40 -o endoh4 endoh4.c</code></pre>
 <p>The shape of this code is the geometric net of a regular tetrahedron.
 So, try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./endoh4 &lt; endoh4.c # or ./endoh4.sh</code></pre>
+<pre><code>    ./endoh4 &lt; endoh4.c # or ./endoh4.sh</code></pre>
 <p>The <a href="solids/">solids/</a> directory includes various solid data:</p>
 <ul>
 <li><a href="http://en.wikipedia.org/wiki/Platonic_solid">Platonic solids</a></li>
@@ -403,10 +404,10 @@ They are copyrighted in CC BY-SA 3.0 by “User:Cyp” and “User:AndrewKepert�
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/trapezohedron/t06-hexagonal-trapezohedron.txt">solids/trapezohedron/t06-hexagonal-trapezohedron.txt</a> - 3D object coordinates</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/trapezohedron/t08-octagonal-trapezohedron.txt">solids/trapezohedron/t08-octagonal-trapezohedron.txt</a> - 3D object coordinates</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/solids/trapezohedron/t10-decagonal-trapezohedron.txt">solids/trapezohedron/t10-decagonal-trapezohedron.txt</a> - 3D object coordinates</li>
-<li><a href="2013_endoh4.tar.bz2">2013_endoh4.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2013_endoh4.tar.bz2">2013_endoh4.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/.entry.json">.entry.json</a> - description of entry in JSON</li>

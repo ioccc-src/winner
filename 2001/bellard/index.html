@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,16 +142,16 @@ Location: <a href="../../location.html#FR">FR</a> - <em>French Republic</em> (<e
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix
     STATUS: doesn&#39;t work with some platforms - please help us fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2001_bellard">2001 bellard bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./bellard file</code></pre>
+<pre><code>    ./bellard file</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./bellard bellard.otccex.c</code></pre>
+<pre><code>    ./bellard bellard.otccex.c</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p><code>&lt;JUDGES_COMMENTS&gt;</code> :-)</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
@@ -161,7 +162,7 @@ compilable by a standard ANSI C compiler. <code>OTCC</code> compiles,
 assembles, links and runs C code without the need of any other
 program.</p>
 <p>You can use it by typing:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./bellard bellard.c [args]...</code></pre>
+<pre><code>    ./bellard bellard.c [args]...</code></pre>
 <p>or by giving the C source to its standard input.</p>
 <p><code>args</code> are given to the <code>main()</code> function of <code>bellard.c</code> (<code>argv[0]</code> is
 <a href="bellard.c">bellard.c</a>).</p>
@@ -169,15 +170,15 @@ program.</p>
 <ul>
 <li>Sample compilation and execution:</li>
 </ul>
-<pre class="&lt;!---sh--&gt;"><code>    ./bellard bellard.otccex.c 10</code></pre>
+<pre><code>    ./bellard bellard.otccex.c 10</code></pre>
 <ul>
 <li>Self compilation:</li>
 </ul>
-<pre class="&lt;!---sh--&gt;"><code>    ./bellard bellard.c bellard.otccex.c 10</code></pre>
+<pre><code>    ./bellard bellard.c bellard.otccex.c 10</code></pre>
 <ul>
 <li>Self compilation iterated…</li>
 </ul>
-<pre class="&lt;!---sh--&gt;"><code>    ./bellard bellard.c bellard.c bellard.otccex.c 10</code></pre>
+<pre><code>    ./bellard bellard.c bellard.c bellard.otccex.c 10</code></pre>
 <p>An alternate syntax is to use it as a script interpreter: you can
 put <code>#!/usr/local/bin/otcc</code> at the beginning of your C source if
 you installed <code>otcc</code> at this place.</p>
@@ -271,10 +272,10 @@ be used when you compile and link it.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/bellard/bellard.orig.c">bellard.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/bellard/bellard.otccex.c">bellard.otccex.c</a> - example otcc source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/bellard/otccelf.c">otccelf.c</a> - another example otcc source</li>
-<li><a href="2001_bellard.tar.bz2">2001_bellard.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2001_bellard.tar.bz2">2001_bellard.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/bellard/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/bellard/.entry.json">.entry.json</a> - description of entry in JSON</li>

@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -147,15 +148,15 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./jar.2
+<pre><code>    ./jar.2
     [enter some lisp]
 
     ./jar.2 &lt; some_lisp_file</code></pre>
 <p>NOTE: this entry will likely segfault on invalid input.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh
+<pre><code>    ./try.sh
 
     ./try.sh chocolate_cake.lisp
 
@@ -192,7 +193,7 @@ The program implements a conventional lisp listener, i.e. you type in
 lisp expressions (followed by CR), the program evaluates them and
 prints out the return values. End execution by typing an end-of-file
 character.</p>
-<pre class="&lt;!---lisp--&gt;"><code>    (+ 2.5 3.1)
+<pre><code>    (+ 2.5 3.1)
     (defun fib (n)
        (if (&lt; n 2)
            1
@@ -252,10 +253,10 @@ poor performance!</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/jar.2/fib.lisp">fib.lisp</a> - input file</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/jar.2/try.sh">try.sh</a> - how to run</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/jar.2/try.txt">try.txt</a> - input file</li>
-<li><a href="1989_jar.2.tar.bz2">1989_jar.2.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1989_jar.2.tar.bz2">1989_jar.2.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/jar.2/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/jar.2/.entry.json">.entry.json</a> - description of entry in JSON</li>

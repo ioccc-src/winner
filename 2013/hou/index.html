@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,18 +142,18 @@ Location: <a href="../../location.html#CN">CN</a> - <em>People’s Republic of C
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2013_hou">2013 hou bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./hou [scene-file-name] [options]</code></pre>
+<pre><code>    ./hou [scene-file-name] [options]</code></pre>
 <p>Follow the instructions in <code>stdout</code>, preferably with an auto-refreshing PPM
 image viewer ready. Refresh the image every time the output refreshes, all
 effects should be more or less recognizable when you see 16.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>Try opening the file noted by the program then let the program run a while and
 every so often reopen the file, to see how it changes. The author suggests that
 you leave the program running overnight to see what happens. If however you do
@@ -181,7 +182,7 @@ program.</p>
 <a href="https://en.wikipedia.org/wiki/Ray_tracing_(graphics)">raytraced</a> image.</p>
 <p>NOTE: the author refers to <a href="a.c">a.c</a>, placed in a gzipped file <code>a.c.gz</code>. We do not
 include it but it can be generated like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -Wall hou.c -o hou -lm
+<pre><code>    cc -Wall hou.c -o hou -lm
     ./hou &gt; a.c</code></pre>
 <p>but there is no need to do this as the Makefile takes care of it without even
 needing to create a temporary file.</p>
@@ -189,7 +190,7 @@ needing to create a temporary file.</p>
 <h3 id="using-hou">Using hou</h3>
 <p>This program is a programmable rendering engine with a built-in default scene.
 The standard command line is:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./hou [scene-file-name] [options]</code></pre>
+<pre><code>    ./hou [scene-file-name] [options]</code></pre>
 <p>As <code>hou</code> runs, it writes a progressively refining image to a ppm file specified
 in the scene. The initialization may take a while, but once it’s done, a rough
 preview should be available in seconds. Leave <code>hou</code> running for the night, and you
@@ -363,10 +364,10 @@ frequently found in other <code>PPM</code> implementations.</p></li>
 <li><a href="luna.jpg">luna.jpg</a> - sample image data</li>
 <li><a href="old_default.jpg">old_default.jpg</a> - sample image data</li>
 <li><a href="otherroom.jpg">otherroom.jpg</a> - sample image data</li>
-<li><a href="2013_hou.tar.bz2">2013_hou.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2013_hou.tar.bz2">2013_hou.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="doc/camera.png">doc/camera.png</a> - documentation support image</li>

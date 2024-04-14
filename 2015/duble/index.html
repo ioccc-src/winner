@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,13 +142,13 @@ Location: <a href="../../location.html#FR">FR</a> - <em>French Republic</em> (<e
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>There is an alternate version of this entry, discussed in the author’s remarks.
 See <a href="#alternate-code">Alternate code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    echo Some text | ./prog</code></pre>
+<pre><code>    echo Some text | ./prog</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>As the script says if you want to move to the next command at any point
 (lorem-ipsum.txt takes a while to print in particular) you may do so by hitting
 ctrl-c/sending intr.</p>
@@ -155,7 +156,7 @@ ctrl-c/sending intr.</p>
 <p>This alternate code, provided by the author, is discussed in more detail by the
 author in the ‘<a href="prog.c">prog.c</a> vs <a href="prog.alt.c">prog.alt.c</a>’ section of their remarks.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>prog.alt</code> as you would <code>prog</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -181,9 +182,9 @@ with other compilers or optimization levels). These have been fixed in
 been shortened in this file.</p>
 <h3 id="how-to-build">How to build</h3>
 <p>If you have <code>clang</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    CC=clang make -e</code></pre>
+<pre><code>    CC=clang make -e</code></pre>
 <p>Otherwise (gcc):</p>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>(You will get a few warnings in this case.)</p>
 <h3 id="how-to-use-it">How to use it</h3>
 <p>You need a terminal configured to handle a <em>UTF-8</em> encoding and a font including
@@ -196,13 +197,13 @@ configuration was needed.</p>
 <p>I also tested it on FreeBSD 9.3 32bits (font and encoding configuration was
 needed in this case).</p>
 <h4 id="basic-mode">Basic mode:</h4>
-<pre class="&lt;!---sh--&gt;"><code>    $ echo &#39;I am testing this thing.&#39; | ./prog
+<pre><code>    $ echo &#39;I am testing this thing.&#39; | ./prog
     [... rendering ...]
 
     $ ./prog &lt; lorem-ipsum.txt
     [... rendering ...]</code></pre>
 <h4 id="interactive-mode">Interactive mode:</h4>
-<pre class="&lt;!---sh--&gt;"><code>    $ ./prog
+<pre><code>    $ ./prog
     &gt; hello world!!!
     [... rendering ...]
     &gt;</code></pre>
@@ -255,13 +256,13 @@ could still happen in case of long words.</p>
 <p>Given the limited set of characters handled, the program is mostly limited to
 simple text documents.</p>
 <p>Thus, if you try for example:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ ./prog &lt; prog.c</code></pre>
+<pre><code>    $ ./prog &lt; prog.c</code></pre>
 <p>You will not get something that looks like C code. (but you can still try, if
 you are curious. :)</p>
 <h4 id="a-draft-mode">A ‘draft’ mode</h4>
 <p>Defining an environment variable called <code>DRAFT</code> will enable the ‘draft-mode’.
 Try for example:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ echo &#39;testing the draft mode&#39; | DRAFT=1 ./prog</code></pre>
+<pre><code>    $ echo &#39;testing the draft mode&#39; | DRAFT=1 ./prog</code></pre>
 <p>The program will run much faster but the rendering will be less precise.</p>
 <h4 id="the-subtle-interactive-mode">The subtle interactive mode</h4>
 <p>I saved the best for last: usually, programs that handle an “interactive mode”
@@ -298,10 +299,10 @@ detection, but still behaves (or seems to behave) appropriately?</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/duble/codes.txt">codes.txt</a> - show how each character is drawn</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/duble/lorem-ipsum.txt">lorem-ipsum.txt</a> - sample input</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/duble/try.sh">try.sh</a> - how to run</li>
-<li><a href="2015_duble.tar.bz2">2015_duble.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2015_duble.tar.bz2">2015_duble.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/duble/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/duble/.entry.json">.entry.json</a> - description of entry in JSON</li>

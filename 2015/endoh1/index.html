@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -144,12 +145,12 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em></li>
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>NOTE: this program requires the tool <code>tcpserver</code> to use. If you do not have this
 program see <a href="../../faq.html#tcpserver">FAQ 3.14 - How do I compile and install tcpserver for entries that
 require it</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    tcpserver -v 127.0.0.1 10333 ./prog ioccc.txt</code></pre>
+<pre><code>    tcpserver -v 127.0.0.1 10333 ./prog ioccc.txt</code></pre>
 <p>Then connect to http://localhost:10333 with your browser.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p><a href="https://www.livescience.com/950-leopard-spots.html">How did the leopard get its
@@ -168,7 +169,7 @@ test</a>? This program is also based on
 his work.</p>
 <h3 id="whirlwind-tour">Whirlwind tour</h3>
 <p>Compile the program as follows:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -O3 -std=c99 \
+<pre><code>    cc -O3 -std=c99 \
            -Wall -Wextra -pedantic -o prog prog.c \
            -Delta_u=&quot;Du*laplacian(u)-u*v*v+F*(1-u)&quot; \
            -Delta_v=&quot;Dv*laplacian(v)+u*v*v-v*(F+K)&quot; \
@@ -179,7 +180,7 @@ his work.</p>
 <a href="http://cr.yp.to/ucspi-tcp.html">ucspi-tcp</a> package, which was created by
 <a href="../../authors.html#Daniel_J_Bernstein">Daniel J. Bernstein</a>’s
 <a href="../../1991/brnstnd/index.html">1991/brndstd</a> “Best of Show”.</p>
-<pre class="&lt;!---sh--&gt;"><code>    tcpserver -v 127.0.0.1 10333 ./prog ioccc.txt</code></pre>
+<pre><code>    tcpserver -v 127.0.0.1 10333 ./prog ioccc.txt</code></pre>
 <p>Finally, open <code>http://127.0.0.1:10333/</code> in a modern browser supporting HTML5.
 You can use the mouse cursor to place drops into the <a href="https://en.wikipedia.org/wiki/Petri_dish">Petri
 dish</a> interactively.</p>
@@ -323,10 +324,10 @@ field data to the browser on each frame.</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh1/center.txt">center.txt</a> - sample input</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh1/ioccc.txt">ioccc.txt</a> - sample input</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh1/line.txt">line.txt</a> - sample input</li>
-<li><a href="2015_endoh1.tar.bz2">2015_endoh1.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2015_endoh1.tar.bz2">2015_endoh1.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh1/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh1/.entry.json">.entry.json</a> - description of entry in JSON</li>

@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,13 +142,13 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1990_theorem">1990 theorem bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./theorem expression x1 x2 h y1</code></pre>
+<pre><code>    ./theorem expression x1 x2 h y1</code></pre>
 <p>where:</p>
 <pre><code>    expression - function f(x,y)  (see below)
     x1 - start of interval
@@ -155,7 +156,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
     h - step size
     y1 - initial value  (y(x1) == y1)</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The program’s source implements four functions, all from the
 same source file!</p>
@@ -169,23 +170,23 @@ operators:</p>
 integer powers. Also note that all expressions are evaluated strictly
 left to right. (i.e., parenthesis aren’t supported).</p>
 <p>Try running the program with the following args:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./theorem y 0 1 0.1 1
+<pre><code>    ./theorem y 0 1 0.1 1
     ./theorem 1/x 1 2 0.1 0
     ./theorem &#39;x^2/y+x&#39; 0 1 0.1 6</code></pre>
 <p>But wait, there is more! You also get, free of charge, a
 reversing filter! Try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./theorem -r 0 0 0 0 &lt; theorem.c &gt; sorter.c</code></pre>
+<pre><code>    ./theorem -r 0 0 0 0 &lt; theorem.c &gt; sorter.c</code></pre>
 <p>Still not impressed? The author throws in for free, a
 sort program! Try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make sorter
+<pre><code>    make sorter
     ls | ./sorter</code></pre>
 <p>This program is safe for home use as well. The author has
 included a safety feature in case you misplace the original
 program source:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./sorter -r 0 0 0 0 &lt; sorter.c &gt; theorem_bkp.c</code></pre>
+<pre><code>    ./sorter -r 0 0 0 0 &lt; sorter.c &gt; theorem_bkp.c</code></pre>
 <p>And finally, as a special offer to users of this entry,
 the author provides a Fibonacci sequence generator! Try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./sorter 0 0 0 0 &lt; theorem.c &gt; fibonacci.c
+<pre><code>    ./sorter 0 0 0 0 &lt; theorem.c &gt; fibonacci.c
     make fibonacci
     ./fibonacci 1 1
     ./fibonacci 2 1</code></pre>
@@ -233,10 +234,10 @@ lines, each less than 99 characters long.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/theorem/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/theorem/theorem.orig.c">theorem.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/theorem/try.sh">try.sh</a> - how to run</li>
-<li><a href="1990_theorem.tar.bz2">1990_theorem.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1990_theorem.tar.bz2">1990_theorem.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/theorem/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/theorem/.entry.json">.entry.json</a> - description of entry in JSON</li>

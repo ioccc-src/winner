@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ Location: <a href="../../location.html#AU">AU</a> - <em>Commonwealth of Australi
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>There is another version which lets you use the arrow keys rather than the more
 awkward <code>,</code> and <code>.</code> keys. See <a href="#alternate-code">alternate code</a> below.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
@@ -149,35 +150,35 @@ awkward <code>,</code> and <code>.</code> keys. See <a href="#alternate-code">al
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2001_kev">2001 kev bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./kev # in one terminal
+<pre><code>    ./kev # in one terminal
 
     ./kev hostname # in another terminal</code></pre>
 <p>NOTE: each player’s paddle is at the bottom and the opponent at the top.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./kev                   # in one terminal
+<pre><code>    ./kev                   # in one terminal
 
     ./kev localhost         # in another terminal on the same host</code></pre>
 <p>If you need to change the speed you can reconfigure it like (say
 for over a network and not the same host):</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber SPEED=50 all # original default value which is very fast</code></pre>
+<pre><code>    make clobber SPEED=50 all # original default value which is very fast</code></pre>
 <p>If you wish to change the port you can do so like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber PORT=3773 all</code></pre>
+<pre><code>    make clobber PORT=3773 all</code></pre>
 <p>Of course if you want a port &lt; 1024 you’ll need to be root so don’t do that.</p>
 <p>And if you know what you’re doing you can redefine the call to the <code>socket(2)</code>
 syscall with the <code>l_</code> macro, changing the <code>L</code> variable like one would <code>PORT</code>. Of
 course you can do more than one at the same time. For instance to change the
 speed and port:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber SPEED=512 PORT=3773 all</code></pre>
+<pre><code>    make clobber SPEED=512 PORT=3773 all</code></pre>
 <p>If you have <code>xterm</code> try on one system:</p>
-<pre class="&lt;!---sh--&gt;"><code>    xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev &amp;</code></pre>
+<pre><code>    xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev &amp;</code></pre>
 <p>and then the other, the client system:</p>
-<pre class="&lt;!---sh--&gt;"><code>    xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev localhost&amp;</code></pre>
+<pre><code>    xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev localhost&amp;</code></pre>
 <p>This might look nicer than just the terminal itself.</p>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This version allows you to use arrow keys on the keyboard rather than the more
 awkward <code>,</code> and <code>.</code> keys to move your paddle.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <p>You can reconfigure the macros described above in the same way.</p>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>kev.alt</code> as you would <code>kev</code>.</p>
@@ -185,9 +186,9 @@ awkward <code>,</code> and <code>.</code> keys to move your paddle.</p>
 terminal?</p>
 <h3 id="alternate-try">Alternate try:</h3>
 <p>If you have <code>xterm</code> try on one system:</p>
-<pre class="&lt;!---sh--&gt;"><code>    xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev.alt &amp;</code></pre>
+<pre><code>    xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev.alt &amp;</code></pre>
 <p>and then the other, the client system:</p>
-<pre class="&lt;!---sh--&gt;"><code>    xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev.alt localhost&amp;</code></pre>
+<pre><code>    xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev.alt localhost&amp;</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Continuing with this year’s “retro game” theme, this is another old game;
 arguably, one of the oldest. Requires a functioning network, and curses.</p>
@@ -212,16 +213,16 @@ speeds. Each player has a paddle to hit the ball, and you get points for
 getting the ball past your opponent’s paddle. It’s pretty fun! :)</p>
 <h3 id="running">RUNNING</h3>
 <p>Run the server first without any command line arguments, i.e.</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./kev</code></pre>
+<pre><code>    ./kev</code></pre>
 <p>Then run the client with a single command line argument which is
 the name of the machine running the server, e.g.</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./kev localhost</code></pre>
+<pre><code>    ./kev localhost</code></pre>
 <p>Make sure that the terminals on both ends are the same size. Also, the TCP port
 number (by default 5455) specified in the <a href="Makefile">Makefile</a> mustn’t be
 blocked by a firewall.</p>
 <p>Here’s a good quick example to see it in action on your own
 machine, assuming you have <code>Xwindows</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev &amp;
+<pre><code>    xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev &amp;
     xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev localhost&amp;</code></pre>
 <h3 id="playing">PLAYING</h3>
 <p>Your paddle is the one at the bottom of the screen, your opponent
@@ -326,10 +327,10 @@ though.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/kev/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/kev/kev.alt.c">kev.alt.c</a> - alternative source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/kev/kev.orig.c">kev.orig.c</a> - original source</li>
-<li><a href="2001_kev.tar.bz2">2001_kev.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2001_kev.tar.bz2">2001_kev.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/kev/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/kev/.entry.json">.entry.json</a> - description of entry in JSON</li>

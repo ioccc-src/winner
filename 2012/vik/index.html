@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>This entry requires <a href="https://www.zlib.net">Zlib</a>.</p>
 <p>There is an alternate version which might work for Windows. See <a href="#alternate-code">Alternate
 code</a> section below.</p>
@@ -151,21 +152,21 @@ code</a> section below.</p>
 <p>For more detailed information see <a href="../../bugs.html#2012_vik">2012 vik bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
 <p>To embed text (from file or command line):</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./vik e base.png filename &gt; encodedimg.png</code></pre>
+<pre><code>    ./vik e base.png filename &gt; encodedimg.png</code></pre>
 <p>or</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./vik e base.png SomeRandomText &gt; encodedimg.png</code></pre>
+<pre><code>    ./vik e base.png SomeRandomText &gt; encodedimg.png</code></pre>
 <p>To extract the embedded text:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./vik d encodedimg.png</code></pre>
+<pre><code>    ./vik d encodedimg.png</code></pre>
 <p>To embed a PNG into another:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./vik e base.png source.png &gt; encodedimg.png</code></pre>
+<pre><code>    ./vik e base.png source.png &gt; encodedimg.png</code></pre>
 <p>To extract the embedded PNG:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./vik d encodedimg.png &gt; restored.png</code></pre>
+<pre><code>    ./vik d encodedimg.png &gt; restored.png</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>For those few who might use Windows this alternate code might work.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>vik.alt</code> as you would <code>vik</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -196,12 +197,12 @@ into another image and extracted, the bitmap data is also a valid
 possible to get the bitmap data from the extracted image, and run it through any
 of the previous winning brainfuck interpreters, but I thought it would be easier
 to include an interpreter in the program to avoid the hassle:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./vik e ioccc.png chocolate.png &gt; encodedimg.png
+<pre><code>    ./vik e ioccc.png chocolate.png &gt; encodedimg.png
     ./vik b encodedimg.png</code></pre>
 <p>It is of course also possible to embed a
 <a href="https://en.wikipedia.org/wiki/Brainfuck">brainfuck</a> program as a text file
 (as explained above) and decode it, e.g.:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./vik e ioccc.png .+[.+] &gt; encodedimg.png
+<pre><code>    ./vik e ioccc.png .+[.+] &gt; encodedimg.png
     ./vik b encodedimg.png</code></pre>
 <h3 id="obfuscation">Obfuscation</h3>
 <p>I really wanted to keep the program simple, so instead of adding multiple macros
@@ -221,7 +222,7 @@ binary data to <code>stdout</code>.</p>
 compile the program on this platform, the following line can be added after
 the variable declarations in the main declaration in order to run
 correctly:</p>
-<pre class="&lt;!---c--&gt;"><code>    _setmode(_fileno(stdout), 0x8000);</code></pre>
+<pre><code>    _setmode(_fileno(stdout), 0x8000);</code></pre>
 <p>NOTE: this is what the <a href="#alternate-code">Alternate code</a> does.</p>
 <h3 id="limitations">Limitations</h3>
 <p>The program doesn’t have many error checks so passing in invalid arguments
@@ -275,10 +276,10 @@ pretty good) design of the code.</p>
 <li><a href="chocolate.png">chocolate.png</a> - encoding image</li>
 <li><a href="ioccc.png">ioccc.png</a> - encoding image</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/vik/try.sh">try.sh</a> - how to run</li>
-<li><a href="2012_vik.tar.bz2">2012_vik.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2012_vik.tar.bz2">2012_vik.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/vik/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/vik/.entry.json">.entry.json</a> - description of entry in JSON</li>

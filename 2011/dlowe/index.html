@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,23 +142,23 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: missing or dead link - please provide them
     STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2011_dlowe">2011 dlowe bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./dlowe -&lt;n_iterations&gt; corpus1/ [...] corpus0/ &lt; start.net &gt; trained.net</code></pre>
+<pre><code>    ./dlowe -&lt;n_iterations&gt; corpus1/ [...] corpus0/ &lt; start.net &gt; trained.net</code></pre>
 <p>NOTE: In the above command, the directory args MUST end in a <code>/</code>.</p>
 <p>Then to use <code>trained.net</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./dlowe file [file ...] &lt; trained.net</code></pre>
+<pre><code>    ./dlowe file [file ...] &lt; trained.net</code></pre>
 <h2 id="try">Try:</h2>
 <p>Try these pre-trained networks:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>NOTE: The <code>dlowe-aux-data/</code> directory, which <a href="try.sh">try.sh</a> refers to, was
 created by:</p>
-<pre class="&lt;!---sh--&gt;"><code>    tar -jxf dlowe-aux-data.tar.bz2</code></pre>
+<pre><code>    tar -jxf dlowe-aux-data.tar.bz2</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This entry is a ghoulish example of a brain (dead?) neural network classifier.
 It comes with a set of corpora for you to try.</p>
@@ -166,7 +167,7 @@ It comes with a set of corpora for you to try.</p>
 on the C code of entries that were supplied to the 20Th IOCCC.</p>
 <p>The <code>ioccc-winlose-trained.net</code> was trained using the
 <a href="earlystop.pl">earlystop.pl</a> tool:</p>
-<pre class="&lt;!---sh--&gt;"><code>    rm -f ioccc-winlose-trained.net
+<pre><code>    rm -f ioccc-winlose-trained.net
     ./earlystop.pl ioccc-winlose-trained.net ioccc_won_training/ ioccc_lost_training/ ioccc_won_test/ ioccc_lost_test/</code></pre>
 <p>where:</p>
 <ul>
@@ -191,7 +192,7 @@ that did not win were flushed to <code>/dev/null</code>.</p>
 <a href="dlowe-aux-data.tar.bz2">dlowe-aux-data.tar.bz2</a> tarball.</p>
 <p>The <a href="dlowe.c">dlowe.c</a> was explicitly excluded from this trailing set, so this
 test is interesting:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./dlowe dlowe.c &lt; dlowe-aux-data/ioccc-winlose-trained.net</code></pre>
+<pre><code>    ./dlowe dlowe.c &lt; dlowe-aux-data/ioccc-winlose-trained.net</code></pre>
 <p>NOTE: this is done in <a href="try.sh">try.sh</a>.</p>
 <p>The match of <a href="dlowe.c">dlowe.c</a> to the lose/win trailed network was:</p>
 <pre><code>    dlowe.c 0.125108</code></pre>
@@ -203,7 +204,7 @@ mean it will win or lose a future IOCCC. On the other hand … it just might!</p
 <p>While we cannot supply you with the losing IOCCC source code, the author did supply a number
 data sets on which to test:</p>
 <p>We created the <a href="dlowe-aux-data/english-trained.net">english-trained.net</a> as follows:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./dlowe -8000 dlowe-aux-data/english-1/ dlowe-aux-data/english-0/ &lt; /dev/null &gt; dlowe-aux-data/english-trained.net</code></pre>
+<pre><code>    ./dlowe -8000 dlowe-aux-data/english-1/ dlowe-aux-data/english-0/ &lt; /dev/null &gt; dlowe-aux-data/english-trained.net</code></pre>
 <ul>
 <li><p><a href="dlowe-aux-data/english-0/">dlowe-aux-data/english-0/</a>
 Non-English (French) text</p></li>
@@ -211,7 +212,7 @@ Non-English (French) text</p></li>
 English (non-French) text</p></li>
 </ul>
 <p>We created the <a href="dlowe-aux-data/png-trained.net">png-trained.net</a> as follows:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./dlowe -8000 png-1/ png-0/ &lt; /dev/null &gt; dlowe-aux-data/png-trained.net</code></pre>
+<pre><code>    ./dlowe -8000 png-1/ png-0/ &lt; /dev/null &gt; dlowe-aux-data/png-trained.net</code></pre>
 <ul>
 <li><p><a href="dlowe-aux-data/png-0/">dlowe-aux-data/png-0/</a>
 Non-png (gif) images</p></li>
@@ -219,7 +220,7 @@ Non-png (gif) images</p></li>
 png (non-gif) images</p></li>
 </ul>
 <p>We created the <a href="dlowe-aux-data/xor-trained.net">xor-trained.net</a> as follows:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./dlowe -8000 dlowe-aux-data/xor-1/ dlowe-aux-data/xor-0/ &lt; /dev/null &gt; dlowe-aux-data/xor-trained.net</code></pre>
+<pre><code>    ./dlowe -8000 dlowe-aux-data/xor-1/ dlowe-aux-data/xor-0/ &lt; /dev/null &gt; dlowe-aux-data/xor-trained.net</code></pre>
 <ul>
 <li><p><a href="dlowe-aux-data/xor-0/">dlowe-aux-data/xor-0</a>
 Data that XORs to 0</p></li>
@@ -242,7 +243,7 @@ which can be trained, using on-line
 neuron.</p>
 <p>The neurons’ activation function is the logistic function <code>1 / (1 + e ^ -x)</code>.</p>
 <h3 id="classifying">Classifying</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./dlowe file [file ...] &lt; trained.net</code></pre>
+<pre><code>    ./dlowe file [file ...] &lt; trained.net</code></pre>
 <p>To classify files, one specifies a trained network (on <code>stdin</code>) and one or more
 files to classify. The program will output one line per successfully-classified
 file to <code>stderr</code>, with the filename and the classification: a number between 0
@@ -251,7 +252,7 @@ and 1.</p>
 trained, but it’s geared toward interpretation as a <em>probability</em> or a
 <em>confidence</em>.</p>
 <h3 id="training">Training</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./dlowe -&lt;n_iterations&gt; corpus1/ [...] corpus0/ &lt; start.net &gt; end.net</code></pre>
+<pre><code>    ./dlowe -&lt;n_iterations&gt; corpus1/ [...] corpus0/ &lt; start.net &gt; end.net</code></pre>
 <p><strong>NOTE</strong>: The directory args <strong>must end in a</strong> <code>/</code> for them to work.</p>
 <p>To train a network, one specifies a starting network (on <code>stdin</code>), two or more
 corpora (directories containing training data), and the number of training
@@ -415,10 +416,10 @@ by a network trained to recognize <a href="../../authors.html">IOCCC entries</a>
 <li><a href="dlowe-aux-data/png-1/obfuscate4e.png">dlowe-aux-data/png-1/obfuscate4e.png</a> - training image for neural networks</li>
 <li><a href="dlowe-aux-data/png-1/obfuscation-decoder.png">dlowe-aux-data/png-1/obfuscation-decoder.png</a> - training image for neural networks</li>
 <li><a href="dlowe-aux-data/png-1/obfuscation_methods.png">dlowe-aux-data/png-1/obfuscation_methods.png</a> - training image for neural networks</li>
-<li><a href="2011_dlowe.tar.bz2">2011_dlowe.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2011_dlowe.tar.bz2">2011_dlowe.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="dlowe-aux-data/english-trained.net">dlowe-aux-data/english-trained.net</a> - trained neural network for English text</li>

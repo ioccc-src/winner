@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ Location: <a href="../../location.html#CA">CA</a> - <em>Canada</em></li>
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>There is an alternate version that scans for (<em>ONLY</em> scans) the string <code>https</code>
 as a starting point. See <a href="#alternate-code">alternate code</a> below.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
@@ -149,11 +150,11 @@ as a starting point. See <a href="#alternate-code">alternate code</a> below.</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2005_mynx">2005 mynx bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./mynx http://&lt;domain&gt;</code></pre>
+<pre><code>    ./mynx http://&lt;domain&gt;</code></pre>
 <p>You can specify a port by appending to the domain <code>:port</code>. See notes below on
 the issue of https.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./mynx http://www.textfiles.com
+<pre><code>    ./mynx http://www.textfiles.com
 
     ./mynx manual.html</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
@@ -171,11 +172,11 @@ to either come up with a pipeline (or some other command line) that allows it to
 work with https or to update the code to support https they may. Otherwise you
 must just appreciate the entry for what it once was.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>mynx.alt</code> as you would <code>mynx</code>. You’d have to specify a port at the end of
 the URL like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./mynx.alt https://www.ioccc.org:443</code></pre>
+<pre><code>    ./mynx.alt https://www.ioccc.org:443</code></pre>
 <p>but again unless you have a clever workaround or hack to the problem, this sadly
 won’t work.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -188,16 +189,16 @@ get a functioning LAMP stack.</p>
 <p>I was rather impressed by last year’s mini webserver. So much so that
 it inspired me to try my hand at writing the client side complement.</p>
 <p>A typical build command would be:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -o mynx mynx.c</code></pre>
+<pre><code>    cc -o mynx mynx.c</code></pre>
 <p>While some others like to be a little different:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -o mynx mynx.c -lnsl -lsocket</code></pre>
+<pre><code>    cc -o mynx mynx.c -lnsl -lsocket</code></pre>
 <p>I even managed to figure out a basic configure script, given last year’s
 example, which is kinda of useful when you consider how many OSes put
 all the network functions in a variety of places. So a simpler build
 command sequence would be:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cd source ; ./configure ; make</code></pre>
+<pre><code>    cd source ; ./configure ; make</code></pre>
 <p>After which, the rest of the documentation can be read by saying:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./mynx ../manual.html</code></pre>
+<pre><code>    ./mynx ../manual.html</code></pre>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
@@ -230,10 +231,10 @@ command sequence would be:</p>
 <li><a href="source/configure.in">source/configure.in</a> - configure script description</li>
 <li><a href="source/configure">source/configure</a> - pre-built configure script</li>
 <li><a href="source/makefile.in">source/makefile.in</a> - makefile template</li>
-<li><a href="2005_mynx.tar.bz2">2005_mynx.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2005_mynx.tar.bz2">2005_mynx.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/.entry.json">.entry.json</a> - description of entry in JSON</li>

@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em></li>
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>NOTE: the use of the C compiler optimiser was disabled and <code>-g</code> was enabled for
 this entry because it is SUPPOSED to crash and it needs debugging symbols.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
@@ -149,27 +150,27 @@ this entry because it is SUPPOSED to crash and it needs debugging symbols.</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2019_endoh">2019 endoh bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog</code></pre>
+<pre><code>    ./prog</code></pre>
 <h2 id="try">Try:</h2>
 <p>If you have <code>gdb(1)</code> installed:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>Note that in macOS installing <code>gdb(1)</code> takes multiple steps - it’s not just a
 matter of installing <code>gdb(1)</code> and that’s that. The <a href="try.sh">try.sh</a> script has
 only been tested with linux.</p>
 <p>You might also wish to try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    gdb ./prog || lldb ./prog</code></pre>
+<pre><code>    gdb ./prog || lldb ./prog</code></pre>
 <p>and then type in <code>r</code> (to run program) and then <code>bt</code> (for backtrace).</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The purpose of this program is to crash. You’ll want to have memorized <code>man 7 ascii</code> when debugging it to reveal its purpose.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="backtrace-quine">backtrace quine:</h3>
 <p>Compile prog.c with no optimization.</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -g -O0 -o prog prog.c</code></pre>
+<pre><code>    cc -g -O0 -o prog prog.c</code></pre>
 <p>Then, run it. You will see a segmentation fault.</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ ./prog
+<pre><code>    $ ./prog
     Segmentation fault (core dumped)</code></pre>
 <p>Let’s debug. As usual, run it under gdb.</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ gdb ./prog
+<pre><code>    $ gdb ./prog
     (gdb) run
     Starting program: /home/.../prog
 
@@ -212,7 +213,7 @@ only been tested with linux.</p>
     #7  0x0000555555555747 in x65 () at prog.c:101
     ...</code></pre>
 <p>By using this, you can confirm that it is actually a quine.</p>
-<pre class="&lt;!---sh--&gt;"><code>    gdb -q -x prog.c ./prog | sed -n -r &#39;s/#.*:([0-9]+)/\1/p&#39; | awk &#39;{printf &quot;%c&quot;,$1}&#39; &gt; prog2.c
+<pre><code>    gdb -q -x prog.c ./prog | sed -n -r &#39;s/#.*:([0-9]+)/\1/p&#39; | awk &#39;{printf &quot;%c&quot;,$1}&#39; &gt; prog2.c
     diff prog.c prog2.c</code></pre>
 <!--
 
@@ -242,10 +243,10 @@ only been tested with linux.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/endoh/prog.orig.c">prog.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/endoh/try.sh">try.sh</a> - how to run</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/endoh/ascii.c">ascii.c</a> - shows character value of ASCII</li>
-<li><a href="2019_endoh.tar.bz2">2019_endoh.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2019_endoh.tar.bz2">2019_endoh.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/endoh/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/endoh/.entry.json">.entry.json</a> - description of entry in JSON</li>

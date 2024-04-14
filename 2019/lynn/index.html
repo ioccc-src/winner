@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,15 +142,15 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2019_lynn">2019 lynn bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog</code></pre>
+<pre><code>    ./prog</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>A fully functional compiler. The example prints out the 30th <a href="https://en.wikipedia.org/wiki/Fibonacci_sequence">Fibonacci
 number</a>.</p>
@@ -171,21 +172,21 @@ trace of those scary <code>unsafeThisAndThat</code> functions. All functions mus
 </ul>
 <h3 id="building">Building:</h3>
 <p>Build the compiler:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -o prog prog.c</code></pre>
+<pre><code>    cc -o prog prog.c</code></pre>
 <h3 id="demos">Demos:</h3>
 <h4 id="fibonacci-numbers">Fibonacci numbers:</h4>
 <p>Test the compiler on <a href="fib.hs">fib.hs</a>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    (./prog &lt; fib.hs ; cat prog.c) &gt; fib.c</code></pre>
+<pre><code>    (./prog &lt; fib.hs ; cat prog.c) &gt; fib.c</code></pre>
 <p>Compiling the output produces a binary that prints the 30th Fibonacci number.</p>
 <p>The file <a href="ghcfib.hs">ghcfib.hs</a> includes <a href="fib.hs">fib.hs</a> with some glue code,
 and shows GHC also accepts our subset of Haskell:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ghc ghcfib.hs</code></pre>
+<pre><code>    ghc ghcfib.hs</code></pre>
 <h4 id="self-hosting-compiler">Self-hosting compiler:</h4>
 <p>To avoid spoiling this entry by revealing the original Haskell source, we
 instead provide <a href="hint.hs">hint.hs</a>, the output of a certain stage of the
 compiler when run on itself. This intermediate output is hopefully difficult to
 understand, yet is accepted by our compiler:</p>
-<pre class="&lt;!---sh--&gt;"><code>    (./prog &lt; hint.hs ; cat prog.c) &gt; hint.c
+<pre><code>    (./prog &lt; hint.hs ; cat prog.c) &gt; hint.c
     make hint
     ./hint</code></pre>
 <p>The output program behaves like the compiler itself.</p>
@@ -200,19 +201,19 @@ it to work.</p>
 languages”</a>. We exercise it by
 showing the first entries of the length-ordered list of all strings consisting
 of the characters <code>a</code> and <code>b</code> that contain an even number of <code>a</code>s.</p>
-<pre class="&lt;!---sh--&gt;"><code>    (./prog &lt; lol.hs ; cat prog.c) &gt; lol.c
+<pre><code>    (./prog &lt; lol.hs ; cat prog.c) &gt; lol.c
     make lol
     ./lol</code></pre>
 <p>A GHC wrapper is provided:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ghc ghclol.hs</code></pre>
+<pre><code>    ghc ghclol.hs</code></pre>
 <h3 id="strongly-connected-components">Strongly-connected components:</h3>
 <p>See <a href="scc.hs">scc.hs</a> (and its GHC wrapper <a href="ghcscc.hs">ghcscc.hs</a>) for an elegant
 way to print the strongly-connected components of a graph in reverse topological
 order.</p>
-<pre class="&lt;!---sh--&gt;"><code>    (./prog &lt; scc.hs ; cat prog.c) &gt; scc.c</code></pre>
+<pre><code>    (./prog &lt; scc.hs ; cat prog.c) &gt; scc.c</code></pre>
 <p>It expects the input to be in a similar format as a previous entry
 (2018 vokes). For example:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make scc
+<pre><code>    make scc
     ./scc &lt; example-1.txt
     ./scc &lt; example-2.txt</code></pre>
 <p>The output should agree, though our program omits line numbers and does not
@@ -372,10 +373,10 @@ works</a>.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/lol.hs">lol.hs</a> - compiler macros</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/scc.hs">scc.hs</a> - compiler macros</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/hint.hs">hint.hs</a> - spoiler for compiler macros</li>
-<li><a href="2019_lynn.tar.bz2">2019_lynn.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2019_lynn.tar.bz2">2019_lynn.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/.entry.json">.entry.json</a> - description of entry in JSON</li>

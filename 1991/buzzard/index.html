@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <p>There is an <a href="#alternate-code">alternate version</a> which might feel more at home
 for vi(m) users in navigation.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
@@ -149,7 +150,7 @@ for vi(m) users in navigation.</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1991_buzzard">1991 buzzard bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./buzzard</code></pre>
+<pre><code>    ./buzzard</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This version changes the keys <code>f</code> for forward, <code>l</code> for left and <code>r</code> for right by
 default to <code>k</code> for forward, <code>l</code> for right and <code>h</code> for left, which is more
@@ -157,9 +158,9 @@ natural for those who use vi(m). Also one can just hit <code>q</code> followed b
 quit the maze. It is problematic to reconfigure the keys except by modifying the
 code directly so the keys are not made a <code>-D</code> at the compiler.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./buzzard.alt</code></pre>
+<pre><code>    ./buzzard.alt</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>You will be A-mazed.</p>
 <p>You are invited to try to cheat, … if you can figure out how! :-)</p>
@@ -186,7 +187,7 @@ separate physical rows in the maze; a space indicates a corridor,
 and any other character is a wall. Tabs are also considered walls,
 so make sure to convert tabs to spaces before using it.</p>
 <p>Usage:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./buzzard [filename [escape-char [start-x start-yNNN</code></pre>
+<pre><code>    ./buzzard [filename [escape-char [start-x start-yNNN</code></pre>
 <p>Filename is the name of the file containing the maze. This
 defaults to <code>buzzard.c</code> or rather <code>__FILE__</code>.</p>
 <p>Escape-char is the character in the maze that represents the exit.
@@ -236,10 +237,10 @@ to reach into arbitrary parcels of memory.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/buzzard/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/buzzard/buzzard.alt.c">buzzard.alt.c</a> - alternative source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/buzzard/buzzard.orig.c">buzzard.orig.c</a> - original source</li>
-<li><a href="1991_buzzard.tar.bz2">1991_buzzard.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1991_buzzard.tar.bz2">1991_buzzard.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/buzzard/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/buzzard/.entry.json">.entry.json</a> - description of entry in JSON</li>

@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,14 +142,14 @@ Location: <a href="../../location.html#GB">GB</a> - <em>United Kingdom of Great 
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <p>NOTE: this may take a while. Some systems may have problems building
 this entry because of the system resources it requires.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./fanf</code></pre>
+<pre><code>    ./fanf</code></pre>
 <h2 id="try">Try:</h2>
 <p>Enter an expression on standard input. To try some we have selected:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <h3 id="historical-aside">Historical aside:</h3>
 <p>At a time the code in <a href="fanf.c">fanf.c</a> was that of <a href="fanf.orig.c">fanf.orig.c</a>
@@ -165,7 +166,7 @@ source.</p>
 <code>fanftmp2.c</code> C program. Take a look at that final C program again,
 can you begin to understand what it is doing?</p>
 <p>Look at the first stage of the C pre-processing which was done like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc fanf.c -E &gt; fanftmp1.c</code></pre>
+<pre><code>    cc fanf.c -E &gt; fanftmp1.c</code></pre>
 <p>Skip to the bottom of <code>fanftmp1.c</code> (after all of the C pre-processor header
 stuff … look for a line of the form: <code># 38 "fanf.c"</code> near the bottom)
 and look at the resulting code. This code, when C pre-processed
@@ -451,10 +452,10 @@ International Logic Programming Symposium, 1995.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/fanf/fanf.orig.c">fanf.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/fanf/try.sh">try.sh</a> - how to run</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/fanf/fanf.lambda">fanf.lambda</a> - lambda expressions</li>
-<li><a href="1998_fanf.tar.bz2">1998_fanf.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1998_fanf.tar.bz2">1998_fanf.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/fanf/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/fanf/.entry.json">.entry.json</a> - description of entry in JSON</li>

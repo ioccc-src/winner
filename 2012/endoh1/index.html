@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -140,7 +141,7 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em></li>
 <!-- END: this line ends content for HTML phase 20 by: bin/output-index-author.sh via bin/md2html.sh -->
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>There are two alt versions that let you control the compile time variables that
 control the fluid behaviour and the added variables to speed up or slow down the
 fluid as well as setting a timeout (if not 0): one for the original black and
@@ -149,12 +150,12 @@ judges at the time of the contest). Another version is the deobfuscated version
 provided by the author as well. See the <a href="#alternate-code">Alternate code</a>
 section below for more details.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./endoh1 &lt; file</code></pre>
+<pre><code>    ./endoh1 &lt; file</code></pre>
 <p>WARNING: if you’re sensitive to/don’t like flashing colours/text or just want to
 see what this looks like not going so fast then you might wish to try the
 <a href="#alternate-code">Alternate code</a> instead.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.bw.sh endoh1.c
+<pre><code>    ./try.bw.sh endoh1.c
     ./try.sh endoh1.c
 
     ./try.bw.sh pour-out.txt
@@ -170,39 +171,39 @@ the fluid and change the behaviour of the fluid. The file
 <a href="endoh1.alt.c">endoh1.alt2.c</a> is deobfuscated and was provided by the author.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <p>For the default values, try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <p>In the <code>alt</code> versions a default time of 10 seconds is set as an alarm so that
 one can more easily go through the list of files to see them all in succession,
 for fun. That is controlled by the variable <code>TIMER</code> at compilation.
 For instance if you wish to change the value to 5:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber TIMER=5 alt</code></pre>
+<pre><code>    make clobber TIMER=5 alt</code></pre>
 <p>If you want to disable the alarm time, set it to 0:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber TIMER=0 alt</code></pre>
+<pre><code>    make clobber TIMER=0 alt</code></pre>
 <p>It cannot be &lt; 0 or &gt; 60 (arbitrarily selected).</p>
 <p>The <code>SLEEP</code> variable is to delay the time between updates to make it easier to
 see and to not flash too quickly. The code protects against a value &lt; 0 and
 defaults to 12321 but you can change it to. For instance to slow it down you
 could increase the sleep time from <code>12321</code> to <code>50000</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber SLEEP=50000 alt</code></pre>
+<pre><code>    make clobber SLEEP=50000 alt</code></pre>
 <p>If you wish to speed it up you might decrease the sleep time from <code>12321</code> to
 <code>9999</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber SLEEP=9999 alt</code></pre>
+<pre><code>    make clobber SLEEP=9999 alt</code></pre>
 <p>WARNING: the lower the value the faster it will flash so be careful if you’re
 sensitive to this.</p>
 <p>If you wish to change the gravity factor, pressure factor and/or
 viscosity factor, you should redefine the values <code>GRAVITY</code>, <code>PRESSURE</code> and/or
 <code>VISCOSITY</code> macros, respectively. For instance if you wish to change the
 viscosity and pressure factors but leave the other values alone:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber VISCOSITY=X PRESSURE=Y alt</code></pre>
+<pre><code>    make clobber VISCOSITY=X PRESSURE=Y alt</code></pre>
 <p>where <code>X</code> and <code>Y</code> are numbers or the letter <code>I</code> and which are, respectively, the
 viscosity and pressure factors. There is no attempt to check the value or type
 because doing so prevents the macros from being defined to <code>I</code> which would
 prevent the author’s remarks about it from being done.</p>
 <p>You might also wish to try redefining the macros <code>G</code>, <code>P</code> and/or <code>V</code>. For
 instance:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber GRAVITY=5 PRESSURE=5 VISCOSITY=5 alt</code></pre>
+<pre><code>    make clobber GRAVITY=5 PRESSURE=5 VISCOSITY=5 alt</code></pre>
 <p>You might try even:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber GRAVITY=I alt</code></pre>
+<pre><code>    make clobber GRAVITY=I alt</code></pre>
 <p>See the author’s remarks for details on these macros where:</p>
 <pre><code>    G = GRAVITY
     P = PRESSURE
@@ -213,10 +214,10 @@ and <code>endoh1_color</code> above.</p>
 <h3 id="alternate-try">Alternate try:</h3>
 <p>To see two different ways run on the source file and each of the text files,
 try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh</code></pre>
+<pre><code>    ./try.alt.sh</code></pre>
 <p>The second run of each will be with the gravity factor set to <code>I</code>.</p>
 <p>To see the same thing but in the original uncoloured version, try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.bw.sh</code></pre>
+<pre><code>    ./try.alt.bw.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Let’s play <a href="https://en.wikipedia.org/wiki/Jeopardy!">Jeopardy!</a></p>
 <p>A: An obfuscated program that deals with complex numbers and produces animated ASCII graphics.
@@ -231,7 +232,7 @@ entry</a>.</p>
 <h3 id="synopsis">Synopsis</h3>
 <p><strong>DO NOT FORGET</strong> <code>-DG=1 -DP=4 -DV=8</code> and make your terminal window larger
 than 80 x 25.</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc endoh1.c -DG=1 -DP=4 -DV=8 -D_BSD_SOURCE -o endoh1 -lm
+<pre><code>    cc endoh1.c -DG=1 -DP=4 -DV=8 -D_BSD_SOURCE -o endoh1 -lm
     ./endoh1 &lt; endoh1.c
     ./endoh1 &lt; logo.txt
     ./endoh1 &lt; column.txt
@@ -284,7 +285,7 @@ comments. It also uses <code>usleep(3)</code>, which may require <code>-D_BSD_SO
 to build with no warning. Under these conditions, it should be portable.
 At least, recent compilers with <code>-std=c99 -Wall -W -Wextra -pedantic</code> say
 nothing.</p>
-<pre class="&lt;!---sh--&gt;"><code>    gcc -DG=1 -DP=4 -DV=8 -D_BSD_SOURCE -std=c99 -Wall -W -Wextra -pedantic endoh1.c
+<pre><code>    gcc -DG=1 -DP=4 -DV=8 -D_BSD_SOURCE -std=c99 -Wall -W -Wextra -pedantic endoh1.c
 
     clang -DG=1 -DP=4 -DV=8 -D_BSD_SOURCE -std=c99 -Wall -W -Wextra -pedantic endoh1.c</code></pre>
 <p>I expect it to work in any Unix-like environment. VTxxx/ANSI sequences are
@@ -376,10 +377,10 @@ provided many configuration files.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/try.bw.sh">try.bw.sh</a> - try.alt.bw.sh</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/try.sh">try.sh</a> - how to run in color</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/endoh1_color.c">endoh1_color.c</a> - alternative source using terminal 256 colors</li>
-<li><a href="2012_endoh1.tar.bz2">2012_endoh1.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2012_endoh1.tar.bz2">2012_endoh1.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/.entry.json">.entry.json</a> - description of entry in JSON</li>

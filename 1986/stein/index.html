@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,9 +142,9 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./stein $(printf &quot;\015\015&quot;); echo</code></pre>
+<pre><code>    ./stein $(printf &quot;\015\015&quot;); echo</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>NOTE: to avoid problems with news and mail, the single line was split
 into 3 lines. Join all lines into a single line to recreate
@@ -151,7 +152,7 @@ the original file.</p>
 <p>The <code>\015</code> in the above <code>printf(1)</code> command produces a control-N.</p>
 <p>One some machines, a control-M control-N arg is needed
 to get the command to output cleanly:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./stein $(printf &quot;\014\015&quot;); echo</code></pre>
+<pre><code>    ./stein $(printf &quot;\014\015&quot;); echo</code></pre>
 <p>Your system may require another set of characters.
 In time, you will figure out what it does. :-)</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
@@ -183,10 +184,10 @@ In time, you will figure out what it does. :-)</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/stein/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/stein/stein.orig.c">stein.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/stein/stein.sh">stein.sh</a> - demonstrate this IOCCC entry</li>
-<li><a href="1986_stein.tar.bz2">1986_stein.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1986_stein.tar.bz2">1986_stein.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/stein/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/stein/.entry.json">.entry.json</a> - description of entry in JSON</li>

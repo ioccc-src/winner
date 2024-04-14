@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,19 +142,19 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>This will build a bunch of versions of the code. See the author’s details for
 information on all of these builds.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./horizontal_cat [files...] &gt; [output]
+<pre><code>    ./horizontal_cat [files...] &gt; [output]
     ./vertical_cat [files...] &gt; [output]</code></pre>
 <h2 id="try">Try:</h2>
 <p>To understand the various intermediate source files that are built, try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make understanding</code></pre>
+<pre><code>    make understanding</code></pre>
 <p>Also try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>NOTE: Use - for standard input. For example:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./vertical_cat - -</code></pre>
+<pre><code>    ./vertical_cat - -</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>There is more to cat than <a href="http://cheezburger.com/1680494336">mere cats</a>. Be
 they tall, fat, long or squat, this source code is sure to amuse.</p>
@@ -176,7 +177,7 @@ judging this entry.</p>
 <h3 id="overview">Overview</h3>
 <p><code>Misaka</code> is a file concatenation utility, with at least two modes of
 operation:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc misaka.c -o horizontal_cat
+<pre><code>    cc misaka.c -o horizontal_cat
     ./horizontal_cat [files...] &gt; [output]
 
     ./horizontal_cat misaka.c misaka.c &gt; misaka2.c
@@ -192,7 +193,7 @@ concatenating files, that function only seem to work if I wanted to concatenate
 files vertically.</p>
 <p>I thought the lack of horizontal concatenation must have been an oversight,
 so I implemented this utility:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc misaka.c -o horizontal_cat
+<pre><code>    cc misaka.c -o horizontal_cat
     ./horizontal_cat files...</code></pre>
 <p><code>horizontal_cat</code> concatenates files horizontally and write the output to
 <code>stdout</code>. Each input file is padded with spaces on the right so that the
@@ -202,7 +203,7 @@ Unlike <code>cat</code>, <code>horizontal_cat</code> loads all input to memory f
 can specify <code>-</code> multiple times to get <code>stdin</code> multiplied horizontally. For
 example, if you have <code>seq(1)</code> in your shell, you can add line numbers to both
 sides of <a href="misaka.c">misaka.c</a> like this:</p>
-<pre class="&lt;!---sh--&gt;"><code>    seq -f &#39;  %.0f  &#39; 45 | ./horizontal_cat - misaka.c -</code></pre>
+<pre><code>    seq -f &#39;  %.0f  &#39; 45 | ./horizontal_cat - misaka.c -</code></pre>
 <h3 id="vertical-cat">Vertical cat</h3>
 <p>Because <code>horizontal_cat</code> must know the maximum width of all files before
 writing any output, all files must be processed at least twice. To support
@@ -212,24 +213,24 @@ writing any output, all files must be processed at least twice. To support
 files vertically, so I included a vertical mode. But supporting vertical
 mode with command line options would be no fun. Instead, vertical mode is
 enabled by concatenating the source code horizontally:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./horizontal_cat misaka.c misaka.c &gt; misaka2.c
+<pre><code>    ./horizontal_cat misaka.c misaka.c &gt; misaka2.c
     gcc misaka2.c -o vertical_cat
     ./vertical_cat files...</code></pre>
 <p><code>vertical_cat</code> works more or less like <code>cat</code>, except you can use
 <code>vertical_cat</code> to duplicate <code>stdin</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./vertical_cat - -</code></pre>
+<pre><code>    ./vertical_cat - -</code></pre>
 <h3 id="long-cat">Long cat</h3>
 <p>After <code>horizontal_cat</code> and <code>vertical_cat</code>, I thought, maybe all I really wanted
 was just more <a href="https://rationalwiki.org/wiki/Fun:Cat">cats</a>. So I implemented
 one more mode, this one is enabled by concatenating <a href="misaka.c">misaka.c</a>
 vertically:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./vertical_cat misaka.c misaka.c &gt; misaka3.c
+<pre><code>    ./vertical_cat misaka.c misaka.c &gt; misaka3.c
     gcc misaka3.c -o long_cat
     ./long_cat</code></pre>
 <p><code>long_cat</code> outputs ASCII art of a cat to <code>stdout</code>. You can make this cat
 exponentially longer by concatenating more files vertically (up to 31 levels
 high, depending on <code>sizeof(int)</code> for your compiler):</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./vertical_cat misaka.c misaka.c misaka.c &gt; misaka4.c
+<pre><code>    ./vertical_cat misaka.c misaka.c misaka.c &gt; misaka4.c
     gcc misaka4.c -o loong_cat
 
     ./vertical_cat misaka.c misaka.c misaka.c misaka.c &gt; misaka5.c
@@ -239,20 +240,20 @@ high, depending on <code>sizeof(int)</code> for your compiler):</p>
     gcc misaka6.c -o loooooooong_cat</code></pre>
 <p>If your terminal has really thin fonts, you can also make this output fatter
 by concatenating files horizontally:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./vertical_cat misaka.c misaka.c | ./horizontal_cat - - &gt; misaka7.c
+<pre><code>    ./vertical_cat misaka.c misaka.c | ./horizontal_cat - - &gt; misaka7.c
     gcc misaka7.c -o long_fat_cat
 
     ./vertical_cat misaka.c misaka.c | ./horizontal_cat - - - &gt; misaka8.c
     gcc misaka8.c -o long_faat_cat</code></pre>
 <p>Output width is determined by the first level of stacked programs, so a
 triangle like the following will not have horizontally expanded output:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./horizontal_cat misaka.c misaka.c | ./vertical_cat misaka.c - &gt; misaka9.c
+<pre><code>    ./horizontal_cat misaka.c misaka.c | ./vertical_cat misaka.c - &gt; misaka9.c
     gcc misaka9.c -o same_as_long_cat</code></pre>
 <p>Finally, if you lost track of how many <a href="misaka.c">misaka.c</a> you have stacked
 together, you can feed the source to a
 <a href="https://en.wikipedia.org/wiki/Brainfuck">brainfuck</a> interpreter to get an
 overview of how the programs are stacked. Example:</p>
-<pre class="&lt;!---sh--&gt;"><code>    perl bf.pl misaka9.c</code></pre>
+<pre><code>    perl bf.pl misaka9.c</code></pre>
 <p>This outputs:</p>
 <pre><code>    MISAKA
     MISAKA MISAKA</code></pre>
@@ -339,10 +340,10 @@ stackable figure:</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/misaka/bf.pl">bf.pl</a> - BF interpreter</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/misaka/try.sh">try.sh</a> - how to run</li>
 <li><a href="spoiler.html">spoiler.html</a> - SPOILER WARNING</li>
-<li><a href="2013_misaka.tar.bz2">2013_misaka.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2013_misaka.tar.bz2">2013_misaka.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/misaka/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/misaka/.entry.json">.entry.json</a> - description of entry in JSON</li>

@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>NOTE: we disable the optimiser because this program has problems with it
 enabled.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
@@ -149,14 +150,14 @@ enabled.</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2019_karns">2019 karns bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; textfile_that_fits_on_the_screen</code></pre>
+<pre><code>    ./prog &lt; textfile_that_fits_on_the_screen</code></pre>
 <p>You might want to type:</p>
-<pre class="&lt;!---sh--&gt;"><code>    reset</code></pre>
+<pre><code>    reset</code></pre>
 <p>after running the program to restore the terminal to its previous state.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>If you have more time you might want to try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; README.md</code></pre>
+<pre><code>    ./prog &lt; README.md</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>If you typically get lost in mazes, watching this program run might – or might
 not, YMMV – teach you how to find your way in a maze. The algorithm is
@@ -179,12 +180,12 @@ adjacent nodes that are also spaces. Nodes that aren’t spaces are not
 connected with anything.</p>
 <h3 id="compiling-and-running">Compiling and Running:</h3>
 <p>This program usually compiles under both GCC and clang. Build with:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $(CC) -std=c99 -o tbfs prog.c</code></pre>
+<pre><code>    $(CC) -std=c99 -o tbfs prog.c</code></pre>
 <p>where <code>$(CC)</code> is cc, gcc, clang, or some other C compiler.</p>
 <p>You can then run it with:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cat &lt;input file&gt; | ./tbfs</code></pre>
+<pre><code>    cat &lt;input file&gt; | ./tbfs</code></pre>
 <p>Examples:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./tbfs &lt; maze
+<pre><code>    ./tbfs &lt; maze
     ./tbfs &lt; prog.c</code></pre>
 <h3 id="issues">Issues</h3>
 <ul>
@@ -231,10 +232,10 @@ not encountered this myself).</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/karns/prog.orig.c">prog.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/karns/maze">maze</a> - input maze map</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/karns/try.sh">try.sh</a> - how to run</li>
-<li><a href="2019_karns.tar.bz2">2019_karns.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2019_karns.tar.bz2">2019_karns.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/karns/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/karns/.entry.json">.entry.json</a> - description of entry in JSON</li>

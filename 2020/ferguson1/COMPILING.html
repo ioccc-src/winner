@@ -83,6 +83,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -146,7 +147,7 @@ matters; I only have Intel CPUs and arm64 (MacBook Pro M1).</p>
 <p>I imagine that it works for 32-bit systems but I do not know for sure.</p>
 <h1 id="portability-macos">Portability: macOS</h1>
 <p>You should be able to get the compiler with:</p>
-<pre class="&lt;!---sh--&gt;"><code>    sudo xcode-select --install</code></pre>
+<pre><code>    sudo xcode-select --install</code></pre>
 <p>You don’t need Xcode itself and it appears that the command line tools (as above
 should install) already has ncurses so there shouldn’t be anything else that
 needs to be done. But I’m not actually sure of this - I’m seeing conflicting
@@ -159,20 +160,20 @@ so that you don’t need sudo because … Well never mind.</p>
 you want to use the Makefile) to compile and link this entry. With Fedora more
 recent versions there’s the <code>dnf</code> package manager but I cannot help with any of
 the GUI installers since I don’t use them. Something like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    sudo dnf install ncurses-devel ncurses make gcc</code></pre>
+<pre><code>    sudo dnf install ncurses-devel ncurses make gcc</code></pre>
 <p>or</p>
-<pre class="&lt;!---sh--&gt;"><code>    # dnf install ncurses-devel ncurses make gcc</code></pre>
+<pre><code>    # dnf install ncurses-devel ncurses make gcc</code></pre>
 <h1 id="portability-centos">Portability: CentOS</h1>
 <p>Just like Fedora you will need <code>gcc</code>, <code>ncurses</code>, <code>ncurses-devel</code> (and if you
 want to use the Makefile <code>make</code>). CentOS uses <code>yum</code> and CentOS 8 uses <code>dnf</code>.
 So:</p>
-<pre class="&lt;!---sh--&gt;"><code>    sudo yum install ncurses-devel ncurses make gcc</code></pre>
+<pre><code>    sudo yum install ncurses-devel ncurses make gcc</code></pre>
 <p>or</p>
-<pre class="&lt;!---sh--&gt;"><code>    # yum install ncurses-devel ncurses make gcc</code></pre>
+<pre><code>    # yum install ncurses-devel ncurses make gcc</code></pre>
 <p>or</p>
-<pre class="&lt;!---sh--&gt;"><code>    sudo dnf install ncurses-devel ncurses make gcc</code></pre>
+<pre><code>    sudo dnf install ncurses-devel ncurses make gcc</code></pre>
 <p>or</p>
-<pre class="&lt;!---sh--&gt;"><code>    # dnf install ncurses-devel ncurses make gcc</code></pre>
+<pre><code>    # dnf install ncurses-devel ncurses make gcc</code></pre>
 <p>You can also use clang to compile (which is what gcc actually is under macOS).</p>
 <h1 id="compilation-notes">Compilation notes</h1>
 <p>As long as you have the dependencies above the only thing that comes to mind is

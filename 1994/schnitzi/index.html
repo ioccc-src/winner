@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <p>There are two alternate versions, one that has an increased buffer size and one
 that uses <code>fgets()</code>; neither are completely functional.
 See below section bugs and (mis)features for details and the <a href="#alternate-code">alternate
@@ -151,9 +152,9 @@ code</a> section for how to use.</p>
 <pre><code>    STATUS: uses gets() - change to fgets() if possible</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1994_schnitzi">1994 schnitzi bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./schnitzi &lt; textfile</code></pre>
+<pre><code>    ./schnitzi &lt; textfile</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>The first version, <code>schnitzi.alt.c</code>, uses <code>fgets(3)</code> but when fed its own code
 it will generate code that still uses <code>gets(3)</code>. What’s more is it will not
@@ -163,15 +164,15 @@ its own source code it will generate code that can compile but with the original
 buffer size. This is due to a comment which is explained in more detail in
 <a href="../../bugs.html#1994_schnitzi">1994/schnitzi bugs</a>.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>schnitzi.alt</code> and <code>schnitzi.alt2</code> as you would <code>schnitzi</code> above except that
 feeding the source code to it will not work right.</p>
 <h3 id="alternate-try">Alternate try:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh</code></pre>
+<pre><code>    ./try.alt.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./schnitzi &lt; schnitzi.c</code></pre>
+<pre><code>    ./schnitzi &lt; schnitzi.c</code></pre>
 <p>Compare the output of the program with its source. Sure the output
 is different, but there is more than meets the <code>diff</code>’s eye. Can you
 find out why?</p>
@@ -187,10 +188,10 @@ second row is written down the second column, etc. The program
 is run by redirecting a file into the executable on the command
 line; for instance, for the file ‘info’, the program
 would be run as follows:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./schnitzi &lt; info</code></pre>
+<pre><code>    ./schnitzi &lt; info</code></pre>
 <p>The program generates interesting results when its source file is
 used as input:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./schnitzi &lt; schnitzi.c</code></pre>
+<pre><code>    ./schnitzi &lt; schnitzi.c</code></pre>
 <p>The result of this command is a program which does the exact same
 thing – in other words, both the program and the “flipped”
 version of itself work identically (you’ll need to redirect the
@@ -245,10 +246,10 @@ needed to pad it put it over the limit – it nearly filled a 79 by
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/schnitzi/try.alt.sh">try.alt.sh</a> - how to run alternative code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/schnitzi/try.sh">try.sh</a> - how to run</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/schnitzi/try.txt">try.txt</a> - input data for try.sh</li>
-<li><a href="1994_schnitzi.tar.bz2">1994_schnitzi.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1994_schnitzi.tar.bz2">1994_schnitzi.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/schnitzi/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/schnitzi/.entry.json">.entry.json</a> - description of entry in JSON</li>

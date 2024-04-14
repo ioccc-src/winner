@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,21 +142,21 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: known bug - please help us fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1989_westley">1989 westley bugs</a>.</p>
 <h2 id="try">Try:</h2>
 <p>Try compiling and running the 4 resulting programs like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./compile.sh</code></pre>
+<pre><code>    ./compile.sh</code></pre>
 <p>If you need to specify an alternate compiler path, say because your default
 compiler is clang (or in the case of macOS gcc is clang) you can do so like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    CC=/opt/local/bin/gcc-mp-12 ./compile.sh</code></pre>
+<pre><code>    CC=/opt/local/bin/gcc-mp-12 ./compile.sh</code></pre>
 <p>If you wish to delay the script or remove the delay you can do so like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    DELAY=2 ./compile.sh</code></pre>
+<pre><code>    DELAY=2 ./compile.sh</code></pre>
 <p>Finally try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./westley
+<pre><code>    ./westley
     # input some lines of text, sending EOF (usually ctrl-d) to end
 
     ./try.sh # demo of some input</code></pre>
@@ -175,7 +176,7 @@ different algorithm for each version (hereafter referred to as
 (ROT13 and reversed)).</p>
 <p>When compiling these versions, one needs to define <code>trgpune</code>
 in the compile line (which the Makefile now has). Example:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -Dtrgpune=putchar ver3.c -o ver3</code></pre>
+<pre><code>    cc -Dtrgpune=putchar ver3.c -o ver3</code></pre>
 <p><code>trgpune</code> is the ROT13 of <code>getchar()</code>, so <code>getchar()</code> and <code>putchar()</code>
 are exchanged in the ROT13 counterpart. It is easy to see that
 this is unavoidable. I must have a <code>#define</code> for a library
@@ -207,14 +208,14 @@ first argument (argc) must be at least one).</p>
 function <code>vs()</code> to define in the ROT13 version. But a function
 called <code>vs()</code> turns into a function called <code>if()</code> in the original,
 so it can’t be done. Therefore, I do:</p>
-<pre class="&lt;!---c--&gt;"><code>    expr1 &amp;&amp; expr2 &amp;&amp; (expr3=etc);</code></pre>
+<pre><code>    expr1 &amp;&amp; expr2 &amp;&amp; (expr3=etc);</code></pre>
 <p>which is the same as:</p>
-<pre class="&lt;!---c--&gt;"><code>    if (expr1 &amp;&amp; expr2) expr3=etc;</code></pre>
+<pre><code>    if (expr1 &amp;&amp; expr2) expr3=etc;</code></pre>
 <p>A/UX on the Macintosh doesn’t get this right; it evaluates ALL
 expressions if they aren’t in an assignment or conditional
 statement. This might warrant a warning, since other compilers
 may do this. I found MANY compilers botched:</p>
-<pre class="&lt;!---c--&gt;"><code>    expr1 &amp;&amp; (expr2,expr3);</code></pre>
+<pre><code>    expr1 &amp;&amp; (expr2,expr3);</code></pre>
 <p><code>expr2</code> was OFTEN evaluated even if <code>expr1</code> was false. I removed
 such statements to make it more portable.</p>
 <h3 id="variable-names-worth-noting">Variable names worth noting</h3>
@@ -224,11 +225,11 @@ such statements to make it more portable.</p>
 <p><code>tang</code> and <code>gnat</code> are both ROT13 and palindrome pairs!</p>
 <p>–</p>
 <p>Normally (!), a reversible C program is done thus:</p>
-<pre class="&lt;!---c--&gt;"><code>    /**/ forward code /*/ edoc drawkcab /**/</code></pre>
+<pre><code>    /**/ forward code /*/ edoc drawkcab /**/</code></pre>
 <p>If your compiler nests comments, it will get this wrong.
 However, I have made some bits of the code palindromic,
 (or different, but reversible) so it is more like:</p>
-<pre class="&lt;!---c--&gt;"><code>    /**/forward/*//**/ palindromic /**//*/drawkcab/**/</code></pre>
+<pre><code>    /**/forward/*//**/ palindromic /**//*/drawkcab/**/</code></pre>
 <p>The code can therefore be interlaced. There are eight
 such palindromic bits. You can find them within the
 <code>/*//**/   /**//*/</code> pairs.</p>
@@ -266,10 +267,10 @@ will lack a terminating newline.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/westley/westley.orig.c">westley.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/westley/compile.sh">compile.sh</a> - generate and compile versions</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/westley/try.sh">try.sh</a> - how to run</li>
-<li><a href="1989_westley.tar.bz2">1989_westley.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1989_westley.tar.bz2">1989_westley.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/westley/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/westley/.entry.json">.entry.json</a> - description of entry in JSON</li>

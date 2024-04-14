@@ -83,6 +83,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -762,9 +763,9 @@ returning <code>E()</code> I am returning 1 but if the end of main() is reached 
 returned. In either case curses is ended.</p>
 <p>One of these optimisations saved four bytes simply by taking advantage of the
 value of a loop iterator after the loop. The loop is:</p>
-<pre class="&lt;!---c--&gt;"><code>    for (I = 0; A &amp;&amp; I &lt; A - 1; ++I)</code></pre>
+<pre><code>    for (I = 0; A &amp;&amp; I &lt; A - 1; ++I)</code></pre>
 <p>However after the loop I had this:</p>
-<pre class="&lt;!---c--&gt;"><code>    A &gt; 1 &amp;&amp; q(n[A - 1],e[A - 1], &#39;o&#39;);</code></pre>
+<pre><code>    A &gt; 1 &amp;&amp; q(n[A - 1],e[A - 1], &#39;o&#39;);</code></pre>
 <p>When I was considering moving that line to before the loop it occurred to me
 that as long as <code>A &gt; 0</code> then <code>A - 1 == I</code> after the loop. I still had to check
 for <code>A &gt; 1</code> but I could refer to just <code>I</code> instead of <code>A - 1</code>!</p>
@@ -779,31 +780,31 @@ place at this point) I was looking at the code to see if I could figure out how
 to save even more bytes. Here are some that I found interesting ways to go about
 the problem.</p>
 <p>First, the function that turns on colours looked like:</p>
-<pre class="&lt;!---c--&gt;"><code>    if (h) attron(m(PAIR(L)));
+<pre><code>    if (h) attron(m(PAIR(L)));
     else attroff(m(PAIR(L)));</code></pre>
 <p>But I thought is that else actually needed? If I were to switch the order so
 that the <code>attroff()</code> is called first then I could just do an <code>if (h)</code> -
 therefore getting rid of the <code>else</code>! But then I thought why not do what I’ve
 done elsewhere? I had:</p>
-<pre class="&lt;!---c--&gt;"><code>    attroff(m(PAIR(L)));
+<pre><code>    attroff(m(PAIR(L)));
     if (h) attron(m(PAIR(L)));</code></pre>
 <p>But I then saved an extra byte by making it:</p>
-<pre class="&lt;!---c--&gt;"><code>    attroff(m(PAIR(L)));
+<pre><code>    attroff(m(PAIR(L)));
     h &amp;&amp; attron(m(PAIR(L)));</code></pre>
 <p>That saved two bytes.</p>
 <p>Second let’s look at the <code>B()</code> function: there were two things I thought of that
 would save some bytes (I no longer know how many but a few at least possibly six
 or even more). I had the following code:</p>
-<pre class="&lt;!---c--&gt;"><code>    if (V &amp;&amp; U &amp;&amp; o) { S(N); b(1); }</code></pre>
+<pre><code>    if (V &amp;&amp; U &amp;&amp; o) { S(N); b(1); }</code></pre>
 <p>This made sure that only if the snake has caught a bug should it grow by the
 growth size and increase the bug count. But was checking for the <code>V</code> or <code>U</code>
 necessary? I gave it a look over and it occurred to me: the only time <code>B()</code> is
 called with <code>1</code> (thus <code>o</code> is 1 so the if is true) was if the bug actually is
 caught. That means I could remove the <code>V &amp;&amp; U &amp;&amp;</code> part of the if! Thus it became
 instead:</p>
-<pre class="&lt;!---c--&gt;"><code>    if (o) { S(N); b(1); }</code></pre>
+<pre><code>    if (o) { S(N); b(1); }</code></pre>
 <p>Then this</p>
-<pre class="&lt;!---c--&gt;"><code>    !o &amp;&amp; V &amp;&amp; U &amp;&amp; q U,V,&#39; &#39;);</code></pre>
+<pre><code>    !o &amp;&amp; V &amp;&amp; U &amp;&amp; q U,V,&#39; &#39;);</code></pre>
 <p>…is to make sure to only clear the spot the bug is (or was) at if
 the bug was NOT eaten. Why not eaten? Because if it was eaten it means the
 snake’s head will be there!</p>
@@ -818,7 +819,7 @@ unfortunately the snake has to be placed first since the bug cannot be placed
 where the snake already is. So if I had to make sure the game had started (the
 snake has moved at least once) what could I check? In fact that means the
 direction is not 0! So I could just replace it with:</p>
-<pre class="&lt;!---c--&gt;"><code>    !o &amp;&amp; D &amp;&amp; q *U,*V,&#39; &#39;);</code></pre>
+<pre><code>    !o &amp;&amp; D &amp;&amp; q *U,*V,&#39; &#39;);</code></pre>
 <p>That reduced the count further. But then I wondered if even that much is needed.
 The condition is that the bug has evaded which means the snake has moved already
 (so game started). What calls to this function happen before the game starts
@@ -831,7 +832,7 @@ to check for is that <code>!o</code>: because after this call before the game ev
 the score line is updated: so the empty space will be overwritten anyway. And if
 the score line is made an empty string it doesn’t matter because it’ll appear as
 all spaces anyway. Thus I could save another three bytes by changing it to:</p>
-<pre class="&lt;!---c--&gt;"><code>    !o  &amp;&amp; q *U,*V,&#39; &#39;);</code></pre>
+<pre><code>    !o  &amp;&amp; q *U,*V,&#39; &#39;);</code></pre>
 <p>Technically it would be a <code>" "</code> (see <a href="HACKING.html">HACKING.html</a> or on GitHub
 <a href="HACKING.md">HACKING.md</a>) else for N (not referring to the variable though it might very
 well matter here too) movements (i.e. due to sizes) you will at times (e.g.

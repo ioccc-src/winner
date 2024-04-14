@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,11 +142,11 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    echo Some text | ./prog</code></pre>
+<pre><code>    echo Some text | ./prog</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Before analysing the code in detail we were able to guess two out of four tests
 this entry uses to tell the 5 languages/flavors apart. Can you find all four?</p>
@@ -157,25 +158,25 @@ so you need not worry about this.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p><code>Fuuko</code> is a <a href="https://en.wikipedia.org/wiki/Starfish">sea star</a> generator. Feed
 her some input through <code>stdin</code> to get lots of sea star patterns on <code>stdout</code>.</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -O3 -std=c90 fuuko.c -lm -o fuuko_c90
+<pre><code>    cc -O3 -std=c90 fuuko.c -lm -o fuuko_c90
     echo IOCCC | ./fuuko_c90 &gt; output_c90.c</code></pre>
 <p>If you compile with a C99 compiler instead of C90, the sea stars will
 have eyes.</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -O3 -std=c99 fuuko.c -lm -o fuuko_c99
+<pre><code>    cc -O3 -std=c99 fuuko.c -lm -o fuuko_c99
     echo IOCCC | ./fuuko_c99 &gt; output_c99.c</code></pre>
 <p>Don’t like <a href="https://en.wikipedia.org/wiki/Starfish">sea stars</a>? Use a C++98
 compiler to get a <a href="https://en.wikipedia.org/wiki/Dango">dango</a> instead.</p>
-<pre class="&lt;!---sh--&gt;"><code>    g++ -O3 -std=c++98 fuuko.c -lm -o fuuko_cpp98
+<pre><code>    g++ -O3 -std=c++98 fuuko.c -lm -o fuuko_cpp98
     echo IOCCC | ./fuuko_cpp98 &gt; output_cpp98.c</code></pre>
 <p>Don’t like <a href="https://en.wikipedia.org/wiki/Dango">dango</a> either? Use a C++11
 compiler to get just <a href="https://en.wikipedia.org/wiki/Circle">circles</a> (or <a href="https://en.wikipedia.org/wiki/Swiss_cheeses_and_dairy_products">Swiss
 cheese</a>, if you
 prefer that).</p>
-<pre class="&lt;!---sh--&gt;"><code>    g++ -O3 -std=c++11 fuuko.c -lm -o fuuko_cpp11
+<pre><code>    g++ -O3 -std=c++11 fuuko.c -lm -o fuuko_cpp11
     echo IOCCC | ./fuuko_cpp11 &gt; output_cpp11.c</code></pre>
 <p>Don’t like any of these patterns? Use a C11 compiler and there will be
 no extra pattern.</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -O3 -std=c11 fuuko.c -lm -o fuuko_c11
+<pre><code>    cc -O3 -std=c11 fuuko.c -lm -o fuuko_c11
     echo IOCCC | ./fuuko_c11 &gt; output_c11.c</code></pre>
 <p>Regardless of which of these C/C++ dialects you choose, the output
 will all be valid C90 code that reproduces original input on <code>stdout</code>,
@@ -245,10 +246,10 @@ Fuuko</a>, for her love of sea stars.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/yang/prog.orig.c">prog.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/yang/try.sh">try.sh</a> - how to run</li>
 <li><a href="spoiler.html">spoiler.html</a> - SPOILER WARNING</li>
-<li><a href="2015_yang.tar.bz2">2015_yang.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2015_yang.tar.bz2">2015_yang.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/yang/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/yang/.entry.json">.entry.json</a> - description of entry in JSON</li>

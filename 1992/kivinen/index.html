@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -142,7 +143,7 @@ Location: <a href="../../location.html#FI">FI</a> - <em>Republic of Finland </em
 
 <h2 id="to-build">To build:</h2>
 <p>If your machine support the X Window System, Version 11:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <p>We recommend that you try the alt version first so you can get a better idea of
 what this looked like back in 1992. See <a href="#original-code">original code</a> for the
 original should you wish to see what we mean.</p>
@@ -151,7 +152,7 @@ original should you wish to see what we mean.</p>
 <pre><code>    STATUS: known bug - please help us fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1992_kivinen">1992 kivinen bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./kivinen.alt
+<pre><code>    ./kivinen.alt
 
     ./kivinen.alt a
 
@@ -160,7 +161,7 @@ original should you wish to see what we mean.</p>
 <h2 id="try">Try:</h2>
 <p>Also try changing the speed that the game moves. For instance if you wish to
 change the <code>usleep(3)</code> value to <code>30000</code> from <code>20000</code>, try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber SLEEP=30000 alt # make it slower
+<pre><code>    make clobber SLEEP=30000 alt # make it slower
 
     make clobber SLEEP=10000 alt # make it faster</code></pre>
 <p>Then use the same syntax as above and described by the author.</p>
@@ -169,7 +170,7 @@ change the <code>usleep(3)</code> value to <code>30000</code> from <code>20000</
 modern systems. If you wish to see the original you may do so with the original
 code.</p>
 <h3 id="original-build">Original build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <h3 id="original-use">Original use:</h3>
 <p>Use <code>kivinen</code> as you would <code>kivinen.alt</code>.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -260,10 +261,10 @@ event loop at the end of program. It is not a bug, it’s a feature!</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/kivinen/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/kivinen/kivinen.alt.c">kivinen.alt.c</a> - alternative source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/kivinen/kivinen.orig.c">kivinen.orig.c</a> - original source</li>
-<li><a href="1992_kivinen.tar.bz2">1992_kivinen.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1992_kivinen.tar.bz2">1992_kivinen.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/kivinen/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/kivinen/.entry.json">.entry.json</a> - description of entry in JSON</li>

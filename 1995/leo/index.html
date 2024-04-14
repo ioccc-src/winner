@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,16 +142,16 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: known bug - please help us fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1995_leo">1995 leo bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./leo [ deep ] [ right ] [ Variable ] [ cycle [ freq ] ]</code></pre>
+<pre><code>    ./leo [ deep ] [ right ] [ Variable ] [ cycle [ freq ] ]</code></pre>
 <p>See the author’s information below on these details.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Press return after each image is drawn.</p>
 <p>The variable names are element-ary. If you find this confusing,
@@ -163,7 +164,7 @@ the secret switches that the author doesn’t divulge ! (All switches are single
 characters on the command line - anything that’s not a number is a candidate.)</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>The usage is:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./leo [ deep ] [ right ] [ Variable ] [ cycle [ freq ] ]</code></pre>
+<pre><code>    ./leo [ deep ] [ right ] [ Variable ] [ cycle [ freq ] ]</code></pre>
 <p>where the first three are literal words, <code>cycle</code> is a positive integer (0 is
 ignored), and <code>freq</code> is an integer (default = 0) that’s supposed to be in the
 range <code>0..100</code> (bigger values are allowed, however). Invalid parameters and
@@ -173,7 +174,7 @@ equivalent to <code>./leo 0 0 0 1 Variable 70 right</code>, etc.</p>
 <p>If <code>Variable</code> is used, <code>cycle</code> is almost ignored (see below) but has
 to be present if you want to enter <code>freq</code> (and you usually do).</p>
 <p>Some options to try (besides the obvious):</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./leo 1 | cat - /dev/tty | gs -</code></pre>
+<pre><code>    ./leo 1 | cat - /dev/tty | gs -</code></pre>
 <p>This draws the basic pattern I invented in high school:</p>
 <p>You take a big sheet of “arithmetic” paper and draw a line
 of length 1 (between 2 crossings) at the center of the sheet:</p>
@@ -253,11 +254,11 @@ the opening for step 1 is not a single line but a cross:</p>
 <pre><code>                                \./
                                 / \</code></pre>
 <p>To watch it repeatedly (as a screen saver), use:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./leo 2 | cat - /dev/tty | gs -</code></pre>
+<pre><code>    ./leo 2 | cat - /dev/tty | gs -</code></pre>
 <p>The command line:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./leo Variable 1 | cat - /dev/tty | gs -</code></pre>
+<pre><code>    ./leo Variable 1 | cat - /dev/tty | gs -</code></pre>
 <p>draws the same as above. Try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./leo Variable 1 1 | cat - /dev/tty | gs -</code></pre>
+<pre><code>    ./leo Variable 1 1 | cat - /dev/tty | gs -</code></pre>
 <p>What happened to the picture? Increase <code>freq</code> and watch the changes.</p>
 <p>If <code>cycle</code> is more than 1, the program loops, allowing the user to
 enjoy randomly changing patterns (the delay is 3 seconds),
@@ -272,7 +273,7 @@ if you want to pipe the output to a printer.</p>
 <p>If <code>Variable</code> is used, the actual value of <code>cycle</code> doesn’t matter,
 as far as it is &gt; 1. To figure out what difference
 <code>cycle</code> makes when <code>Variable</code> is not used, try</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./leo Variable 37 80 | cat - /dev/tty | gs -</code></pre>
+<pre><code>    ./leo Variable 37 80 | cat - /dev/tty | gs -</code></pre>
 <p>and other values of <code>cycle</code>; smaller values usually require
 smaller values of <code>freq</code> for the patterns to be non-trivial.</p>
 <p>The options <code>deep</code> and <code>right</code> make the patterns to be drawn in different
@@ -323,10 +324,10 @@ even want to explain what it does. You’ve been warned!</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/leo/leo.orig.c">leo.orig.c</a> - original source</li>
 <li><a href="spoiler1.html">spoiler1.html</a> - spoiler document</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/leo/try.sh">try.sh</a> - how to run</li>
-<li><a href="1995_leo.tar.bz2">1995_leo.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1995_leo.tar.bz2">1995_leo.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/leo/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/leo/.entry.json">.entry.json</a> - description of entry in JSON</li>

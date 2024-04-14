@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,17 +142,17 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    echo foo bar | ./dg</code></pre>
+<pre><code>    echo foo bar | ./dg</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Some C preprocessors got confused about single quotes in certain cases.
 In particular, the following source line:</p>
-<pre class="&lt;!---c--&gt;"><code>    b12(ase(bco(acp(bi(acp(bcp(acp(bpl(aqu(bqu(A))))))))))))))))))))))))))))))</code></pre>
+<pre><code>    b12(ase(bco(acp(bi(acp(bcp(acp(bpl(aqu(bqu(A))))))))))))))))))))))))))))))</code></pre>
 <p>sometimes has to be changed to:</p>
-<pre class="&lt;!---c--&gt;"><code>    b12(ase(bco(acp(bi(acp(bcp(acp(bpl(&#39;A&#39;))))))))))))))))))))))))))))</code></pre>
+<pre><code>    b12(ase(bco(acp(bi(acp(bcp(acp(bpl(&#39;A&#39;))))))))))))))))))))))))))))</code></pre>
 <p>particularly if the C preprocessor botches single quotes in cpp expansions,
 which we have done for the wider audience.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
@@ -167,7 +168,7 @@ source. The <code>axx()</code> <code>#define</code>s do the same, but add tokens
 <p>As for the rot13 algorithm, it relies on <code>index(3)</code> to find if the
 character is in the set <code>A-Za-z</code>. <code>l[]</code> is an array that gets filled
 with:</p>
-<pre class="&lt;!---c--&gt;"><code>    &quot;nopqrstuvwxyzzzzabcdefghijklmmmmNOPQRSTUVWXYZZZZABCDEFGHIJKLMMMM&quot;</code></pre>
+<pre><code>    &quot;nopqrstuvwxyzzzzabcdefghijklmmmmNOPQRSTUVWXYZZZZABCDEFGHIJKLMMMM&quot;</code></pre>
 <p>If <code>index(3)</code> says the char is in the alphabet, then XOR the offset
 with <code>16</code> to translate, and output, otherwise pass it unchanged.</p>
 <!--
@@ -197,10 +198,10 @@ with <code>16</code> to translate, and output, otherwise pass it unchanged.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/dg/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/dg/dg.orig.c">dg.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/dg/try.sh">try.sh</a> - how to run</li>
-<li><a href="1990_dg.tar.bz2">1990_dg.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1990_dg.tar.bz2">1990_dg.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/dg/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/dg/.entry.json">.entry.json</a> - description of entry in JSON</li>

@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ Location: <a href="../../location.html#FI">FI</a> - <em>Republic of Finland </em
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>There is an alternate version of this program which changes the way the output
 is displayed. See <a href="#alternate-code">Alternate code</a> below.</p>
 <p>NOTE: we disable the optimiser because the author stated that for GCC optimiser
@@ -153,7 +154,7 @@ forcing <code>-std=gnu11</code>.</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2019_poikola">2019 poikola bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog 512 ./prog
+<pre><code>    ./prog 512 ./prog
 
     sleep 86400; make clobber prog
     ./prog 512 ./prog
@@ -161,22 +162,22 @@ forcing <code>-std=gnu11</code>.</p>
     sleep 86400; make clobber prog
     ./prog 512 ./prog</code></pre>
 <p>If you wish for some documentation:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make docs</code></pre>
+<pre><code>    make docs</code></pre>
 <p>This will create the file <code>poikola.pdf</code> for your enjoyment.</p>
 <h2 id="try">Try:</h2>
 <p>If you don’t have a few days, try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>As the <a href="../../bugs.html#2019_poikola">2019 poikola bugs</a> says, this program will not validate
 input so it might get stuck or fail if invoked erroneously.</p>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This version prints a newline after each number for parsing in other ways than
 what can be done with the original entry.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>prog.alt</code> as you would <code>prog</code> above.</p>
 <h3 id="alternate-try">Alternate try:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh</code></pre>
+<pre><code>    ./try.alt.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Do you have the time to see what this program does? Think again, come back and
 try again.</p>
@@ -191,11 +192,11 @@ accomplishments of <a href="https://en.wikipedia.org/wiki/Matti_Nyk%C3%A4nen">Ma
 Nykänen</a>.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="how-to-build">How to build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    gcc -O0 -o prog prog.c</code></pre>
+<pre><code>    gcc -O0 -o prog prog.c</code></pre>
 <p>or</p>
-<pre class="&lt;!---sh--&gt;"><code>    clang -O[0123s] -o prog prog.c</code></pre>
+<pre><code>    clang -O[0123s] -o prog prog.c</code></pre>
 <p>e.g.:</p>
-<pre class="&lt;!---sh--&gt;"><code>    clang -O1 -o prog prog.c</code></pre>
+<pre><code>    clang -O1 -o prog prog.c</code></pre>
 <h3 id="poster">Poster:</h3>
 <p>You can generate an A3 sized poster by <code>make docs</code>. This command creates a pdf
 file <code>poikola.pdf</code>. This requires the
@@ -231,7 +232,7 @@ three consecutive days.</p>
 <p>As this is a contest for obfuscated code, the program does not perform
 unnecessary checks, but either fails or gets stuck if invoked erroneously. The
 program is invoked in this way:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt;integer&gt; &lt;file&gt;</code></pre>
+<pre><code>    ./prog &lt;integer&gt; &lt;file&gt;</code></pre>
 <p>where <code>&lt;integer&gt;</code> is 224, 256, 384, 512 or even 1024. Yes, I know 1024 is not a
 supported length of output, but as I said, the program does not validate its
 input in any way. These same parameters should be given in calculating a
@@ -345,10 +346,10 @@ interruptions during the coding phase.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/poikola/poikola.tex">poikola.tex</a> - supplied documentation</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/poikola/try.alt.sh">try.alt.sh</a> - how to run alternative code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/poikola/try.sh">try.sh</a> - how to run</li>
-<li><a href="2019_poikola.tar.bz2">2019_poikola.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2019_poikola.tar.bz2">2019_poikola.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/poikola/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/poikola/.entry.json">.entry.json</a> - description of entry in JSON</li>

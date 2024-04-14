@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ Location: <a href="../../location.html#GB">GB</a> - <em>United Kingdom of Great 
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <p>NOTE: there are two alternate versions of this program, both allowing one to
 slow down the game and the second one with movements more familiar to vi users.
 See the <a href="#alternate-code">Alternate code</a> section below.</p>
@@ -150,22 +151,22 @@ See the <a href="#alternate-code">Alternate code</a> section below.</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1993_rince">bugs report with 1993/rince</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./rince [cabbage]</code></pre>
+<pre><code>    ./rince [cabbage]</code></pre>
 <p>where:</p>
 <p><code>[cabbage]</code> is a CABBAGE description file (default: <code>rince.c</code>)</p>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>Some people may want to slow down the game by increasing the
 value 17 in the lines:</p>
-<pre class="&lt;!---c--&gt;"><code>    struct timeval v= {0,1&lt;&lt;17} ;</code></pre>
+<pre><code>    struct timeval v= {0,1&lt;&lt;17} ;</code></pre>
 <p>and</p>
-<pre class="&lt;!---c--&gt;"><code>    refresh(),c=select(k,&amp;y,0,0,(v.tv_usec=1&lt;&lt;17,&amp;v))?getch():0;</code></pre>
+<pre><code>    refresh(),c=select(k,&amp;y,0,0,(v.tv_usec=1&lt;&lt;17,&amp;v))?getch():0;</code></pre>
 <p>to another value like 18 or 19 which you can do with the alternate code.</p>
 <p>In the case of <a href="rince.alt2.c">rince.alt2.c</a> the movement keys for the default
 game are slightly different and will feel more familiar to vi users: <code>h</code> for
 left, <code>l</code> for right (that was not changed) and <code>k</code> for fire (that was also not
 changed).</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make SLEEP=18 clobber alt</code></pre>
+<pre><code>    make SLEEP=18 clobber alt</code></pre>
 <p>Replace 18 with whatever number you wish.</p>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>rince.alt</code> or <code>rince.alt2</code> as you would <code>rince</code> above.</p>
@@ -194,7 +195,7 @@ with it.</p>
 <code>/usr/local/include/curses.h</code> if not <code>/usr/include/curses.h</code>) is not compatible
 with the curses library (typically <code>/lib/libcurses.a</code> for static libraries)
 used. It has been suggested that the following gcc command may help:</p>
-<pre class="&lt;!---sh--&gt;"><code>    gcc -fno-builtin -I/usr/include -o rince rince.c -lcurses -ltermcap</code></pre>
+<pre><code>    gcc -fno-builtin -I/usr/include -o rince rince.c -lcurses -ltermcap</code></pre>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>This is a Cellular Automata Based, Beautifully Abysmal Game Environment (or
 CABBAGE for short). To execute the program simply type <code>./rince gamefile</code>,
@@ -301,10 +302,10 @@ mechanism other than control-c.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/rince/rince.data2">rince.data2</a> - CABBAGE data file</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/rince/rince.data3">rince.data3</a> - CABBAGE data file</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/rince/rince.data4">rince.data4</a> - CABBAGE data file</li>
-<li><a href="1993_rince.tar.bz2">1993_rince.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1993_rince.tar.bz2">1993_rince.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/rince/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/rince/design.md">design.md</a> - markdown source for design.html</li>

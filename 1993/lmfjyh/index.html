@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -142,7 +143,7 @@ Location: <a href="../../location.html#FI">FI</a> - <em>Republic of Finland </em
 
 <h2 id="to-build">To build:</h2>
 <p>If you have gcc &lt; 2.3.3 you can build this entry like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <p>This will try to create a file whose actual filename is literally:</p>
 <pre><code>    &quot;;main(){puts(&quot;Hello World!&quot;);}char*C=&quot;.c</code></pre>
 <p>When that file is compiled, it will greet the world in the
@@ -166,14 +167,14 @@ section below for more details.</p>
 <p>For more detailed information see <a href="../../bugs.html#1993_lmfjyh">1993 lmfjyh bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
 <p>If you have gcc &lt; 2.3.3 (i.e. the entry can compile):</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./lmfjyh</code></pre>
+<pre><code>    ./lmfjyh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This version does what the code did but in a way that will work with modern
 compilers. We’d like to say there’s something special about it but there isn’t.
 Nonetheless it will be compiled in case the original entry fails to compile.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <p>Should you wish to build this version manually:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>lmfjyh.alt</code> as you would <code>lmfjyh</code> above. Note that other code could also be
 done with the bug that the entry abuses but that would have to be manually
@@ -189,7 +190,7 @@ best with C-source code.</p>
 <p>As an example, I have taken a simple “Hello world!” program
 that should be familiar to all C-programmers.</p>
 <h4 id="listing-1-a-simple-hello-world-program">Listing 1: A simple “Hello World” program</h4>
-<pre class="&lt;!---c--&gt;"><code>    main()
+<pre><code>    main()
     {
       puts(&quot;Hello World!&quot;);
     }</code></pre>
@@ -200,9 +201,9 @@ PROGRAM</strong>. There is no need to waste valuable disk space to store source 
 The program is embedded in the file name, only a minor portion of it is inside
 the file.</p>
 <h4 id="listing-2-compressed-hello-world">Listing 2: Compressed “Hello world”</h4>
-<pre class="&lt;!---c--&gt;"><code>    char*_=__FILE__;</code></pre>
+<pre><code>    char*_=__FILE__;</code></pre>
 <h4 id="listing-3-code-embedded-in-the-file-name">Listing 3: Code embedded in the file name</h4>
-<pre class="&lt;!---c--&gt;"><code>    &quot;;main(){puts(&quot;Hello World!&quot;);}char*C=&quot;.c</code></pre>
+<pre><code>    &quot;;main(){puts(&quot;Hello World!&quot;);}char*C=&quot;.c</code></pre>
 <p>The sample program in listing 1 is 36 bytes long. By using the new
 compression method, the example program may be squeezed to sixteen
 bytes. In the example the compression ratio is 2:1. It is evident
@@ -303,10 +304,10 @@ be new standard.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/lmfjyh/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/lmfjyh/lmfjyh.alt.c">lmfjyh.alt.c</a> - alternative source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/lmfjyh/lmfjyh.orig.c">lmfjyh.orig.c</a> - original source</li>
-<li><a href="1993_lmfjyh.tar.bz2">1993_lmfjyh.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1993_lmfjyh.tar.bz2">1993_lmfjyh.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/lmfjyh/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/lmfjyh/.entry.json">.entry.json</a> - description of entry in JSON</li>

@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,15 +142,15 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2020_burton">2020 burton bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog arg ...</code></pre>
+<pre><code>    ./prog arg ...</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>By default, the program works for Little Endian machines. This alternate build
 is for Big Endian machines (that works whether you have LE or BE).</p>
@@ -170,7 +171,7 @@ value that results when the two magic constants are <code>XOR</code>ed.</p>
 choosing new constants, but using the same computation generate a reversed
 result?</p>
 <p>This code may be tested by:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make test</code></pre>
+<pre><code>    make test</code></pre>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>Invoke this with a single non-negative integer less than 256, and a useful
 transformation occurs.</p>
@@ -189,11 +190,11 @@ display strange results with more than one argument.</p>
 <p>Compiles cleanly under <code>clang -Wall -Weverything -pedantic</code>, but you need to add
 <code>--include stdio.h --include stdlib.h</code> for the <code>printf(3)</code> and <code>atoi(3)</code>.</p>
 <p>On a little-endian machine:</p>
-<pre class="&lt;!---sh--&gt;"><code>    clang -include stdio.h -include stdlib.h -Wall -Weverything -pedantic -DB=6945503773712347754LL -DI=5859838231191962459LL -DT=0 -DS=7 -o prog prog.c</code></pre>
+<pre><code>    clang -include stdio.h -include stdlib.h -Wall -Weverything -pedantic -DB=6945503773712347754LL -DI=5859838231191962459LL -DT=0 -DS=7 -o prog prog.c</code></pre>
 <p>On a big-endian machine:</p>
-<pre class="&lt;!---sh--&gt;"><code>    clang -include stdio.h -include stdlib.h -Wall -Weverything -pedantic -DB=7091606191627001958LL -DI=6006468689561538903LL -DT=1 -DS=0 -o prog_be prog.c</code></pre>
+<pre><code>    clang -include stdio.h -include stdlib.h -Wall -Weverything -pedantic -DB=7091606191627001958LL -DI=6006468689561538903LL -DT=1 -DS=0 -o prog_be prog.c</code></pre>
 <p>You might be interested to compile it both ways on the same host, and try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog 1; ./prog_be 1</code></pre>
+<pre><code>    ./prog 1; ./prog_be 1</code></pre>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
@@ -224,10 +225,10 @@ display strange results with more than one argument.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/burton/check_be.sh">check_be.sh</a> - test suite support file</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/burton/check_le.sh">check_le.sh</a> - test suite support file</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/burton/correct">correct</a> - test suite comparison data</li>
-<li><a href="2020_burton.tar.bz2">2020_burton.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2020_burton.tar.bz2">2020_burton.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/burton/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/burton/.entry.json">.entry.json</a> - description of entry in JSON</li>

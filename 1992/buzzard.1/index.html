@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,14 +142,14 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./buzzard.1 num num</code></pre>
+<pre><code>    ./buzzard.1 num num</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>To see good C Preprocessor buzzard.1, try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make babble.cppcb
+<pre><code>    make babble.cppcb
     cat babble.cppcb</code></pre>
 <p>Notice how many statements it takes to do anything useful?</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
@@ -162,11 +163,11 @@ short strings.</p>
 <h3 id="what-it-does">What it does</h3>
 <p><code>buzzard.1</code> is a simple mathematical program. It expects two numeric
 arguments.</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./buzzard.1 0 &lt;num&gt;</code></pre>
+<pre><code>    ./buzzard.1 0 &lt;num&gt;</code></pre>
 <p>will print out the factorial of <code>&lt;num&gt;</code>.</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./buzzard.1 &lt;num1&gt; &lt;num2&gt;</code></pre>
+<pre><code>    ./buzzard.1 &lt;num1&gt; &lt;num2&gt;</code></pre>
 <p>will print out the largest common factor of <code>num1</code> and <code>num2</code>.</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./buzzard.1 1 &lt;num2&gt;</code></pre>
+<pre><code>    ./buzzard.1 1 &lt;num2&gt;</code></pre>
 <p>will print out a factor of <code>num2</code> if it’s composite, or else
 it will print a string informing you that <code>num2</code> is prime.</p>
 <p>If the first argument is less than 0, it prints out an
@@ -244,13 +245,13 @@ BCD, so it can be output by the hexadecimal output statement.</p>
 programs is the conditional (given that we have loops).
 Since all you can do in the given operation output set is
 assignment, we implement “conditional assignment”:</p>
-<pre class="&lt;!---c--&gt;"><code>    if (x) y = z;</code></pre>
+<pre><code>    if (x) y = z;</code></pre>
 <p>To implement this, we constrain <code>x</code> to be either 0 or 1, and
 simply compute:</p>
-<pre class="&lt;!---c--&gt;"><code>    y = (z * x) + (y * (1-x));</code></pre>
+<pre><code>    y = (z * x) + (y * (1-x));</code></pre>
 <p>This is more obscured by factoring out common terms and restricting
 ourselves to two operand operations:</p>
-<pre class="&lt;!---c--&gt;"><code>    temp = z;                       (temp == z)
+<pre><code>    temp = z;                       (temp == z)
     temp -= y;                      (temp == z-y)
     temp *= x;                      (temp == (z-y)*x)
     y += temp;                      (y    == (z-y)*x + y)
@@ -260,7 +261,7 @@ ourselves to two operand operations:</p>
 “I’m supposed to execute statement pc next”, says our emulator. But suppose
 we’re not currently coming up on statement pc. To handle this, we simply make
 every operation conditional on the pc having the correct value:</p>
-<pre class="&lt;!---c--&gt;"><code>    if (pc == some_constant) y = z;</code></pre>
+<pre><code>    if (pc == some_constant) y = z;</code></pre>
 <p>To combine this with other operations, we simply multiply by our
 (<code>pc == some_constant</code>) flag right after the above <code>temp *= x</code>.</p>
 <p>To evaluate <code>pc == some_constant</code> requires one more trick. We assume that
@@ -310,10 +311,10 @@ dedicated to the memory of Charles Barrett.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/buzzard.1/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/buzzard.1/buzzard.1.orig.c">buzzard.1.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/buzzard.1/try.sh">try.sh</a> - how to run</li>
-<li><a href="1992_buzzard.1.tar.bz2">1992_buzzard.1.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1992_buzzard.1.tar.bz2">1992_buzzard.1.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/buzzard.1/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/buzzard.1/.entry.json">.entry.json</a> - description of entry in JSON</li>

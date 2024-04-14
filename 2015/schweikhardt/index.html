@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,25 +142,25 @@ Location: <a href="../../location.html#DE">DE</a> - <em>Federal Republic of Germ
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2015_schweikhardt">2015 schweikhardt bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog n</code></pre>
+<pre><code>    ./prog n</code></pre>
 <p>where n is a base 16 number of any size.</p>
 <p>NOTE: although it’s supposed to be a base 16 number nothing will stop you from
 doing something else. The author explains this in more details.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>After running it once to see what commands are run, you might wish to run it a
 second time and just hold down space to see a fun scroll of numbers especially
 where zeroes move to the right.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This code is clean. When you compile with all warnings enabled,
 such as with clang:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -Weverything -pedantic -std=c11 -Dtyp=uint64\_t -O3 prog.c -o prog</code></pre>
+<pre><code>    cc -Weverything -pedantic -std=c11 -Dtyp=uint64\_t -O3 prog.c -o prog</code></pre>
 <p>The code compiles without warnings on the systems that we tested!</p>
 <p>Even more, the code was 100% clean when we ran it against various
 static source checkers.</p>
@@ -177,7 +178,7 @@ would be a good warm-up exercise for someone to get ready to begin to work on
 the <a href="https://en.wikipedia.org/wiki/Collatz_conjecture">Collatz conjecture</a>.</p>
 </blockquote>
 <p>You may explore this famous conjecture using this entry:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog 2410
+<pre><code>    ./prog 2410
     ./prog abfff
     ./prog 27f8cebf
     ./prog 246f8fddf
@@ -238,7 +239,7 @@ and stops at <code>1</code>. The number <code>n</code> is specified in hexadecim
 prefix) as the first argument. The program prints the given number in
 zero-padded hex and each iteration along with a line count in decimal.
 The example above looks like this (compiled with 64 bit word size):</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ ./prog 6
+<pre><code>    $ ./prog 6
     0000000000000006
     0000000000000003 1
     000000000000000A 2
@@ -251,7 +252,7 @@ The example above looks like this (compiled with 64 bit word size):</p>
 <p>The size of <code>n</code> is only limited by the argument size limit of your
 shell/OS (the program implements arbitrary size <code>bignum</code>s).
 To query this on your POSIX system, run</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ getconf ARG_MAX
+<pre><code>    $ getconf ARG_MAX
     262144</code></pre>
 <p>which reports the limit in bytes, here 256KB. This allows to test
 whether a <a href="https://en.wikipedia.org/wiki/Googol">Googol</a>, which is
@@ -259,7 +260,7 @@ whether a <a href="https://en.wikipedia.org/wiki/Googol">Googol</a>, which is
 Fear not,
 <a href="http://pubs.opengroup.org/onlinepubs/9699919799/utilities/bc.html">bc(1)</a>
 to the rescue:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ printf &#39;obase=16;10^100\n&#39; | bc
+<pre><code>    $ printf &#39;obase=16;10^100\n&#39; | bc
     1249AD2594C37CEB0B2784C4CE0BF38ACE408E211A7CAAB24308A82E8F1000000000\
     0000000000000000
     $ ./prog 1249AD2594C37CEB0B2784C4CE0BF38ACE408E211A7CAAB24308A82E8F10000000000000000000000000 \
@@ -373,7 +374,7 @@ hard, I could use <code>__LINE__</code> and <code>stdio.h</code> macros <code>EO
 <h3 id="run-it-through-a-c-beautifier">Run it through a C beautifier</h3>
 <p>Another identity operation. I’ve done it for you already. Use this
 <code>.indent.pro</code> with FreeBSD indent:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ cat .indent.pro
+<pre><code>    $ cat .indent.pro
         -bad   /* blank line after decls */
         -bap   /* blank line after functions */
         -br    /* braces on if line */
@@ -415,7 +416,7 @@ to be.</p>
 <h3 id="examine-the-algorithm">Examine the algorithm</h3>
 <p>Spoilers ahead. Duh!</p>
 <p>Pseudocode, with comments matching those in the C source:</p>
-<pre class="&lt;!---c--&gt;"><code>    /* run */
+<pre><code>    /* run */
     if (non-NULL and nonempty argv[1]) {
        n = convert(argv[1])
        print n                       /* 2hx */
@@ -432,7 +433,7 @@ to be.</p>
       }
     }</code></pre>
 <p><code>Bignum</code>s are represented as the two member <code>struct</code>s:</p>
-<pre class="&lt;!---c--&gt;"><code>    typedef struct {
+<pre><code>    typedef struct {
          size_t places;   /* number of places in base 2 to the power of (8*sizeof(type)) */
          type  *number;   /* dynamically allocated memory for number */
     } bignum</code></pre>
@@ -452,7 +453,7 @@ expected.</p>
 <p>This means however, that the program accepts <strong>any string</strong>, turns it
 into a starting number (which is output as the first line), and starts
 crunching. Nothing stops you from executing</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog &quot;$(cat prog.c)&quot;            # Kind of quine?
+<pre><code>    ./prog &quot;$(cat prog.c)&quot;            # Kind of quine?
     ./prog &quot;$(cat rules guidelines)&quot;  # A jackpot? Maybe next year...
     ./prog &quot;$(cat /bin/ls)&quot;           # Number cut short at first NUL byte.</code></pre>
 <p>In a certain way, the program is character set and encoding agnostic.</p>
@@ -475,14 +476,14 @@ use <code>8 * sizeof(typ)</code> bits per place. It does not work when <code>CHA
 <p>The open source static checker <a href="http://cppcheck.sourceforge.net/">cppcheck</a>
 checks various problems with respect to style, performance, portability
 and general fishiness. To enable all checks, run</p>
-<pre class="&lt;!---sh--&gt;"><code>    cppcheck --enable=all --force -I/usr/include -Dtyp=uint32_t prog.c</code></pre>
+<pre><code>    cppcheck --enable=all --force -I/usr/include -Dtyp=uint32_t prog.c</code></pre>
 <p>No issues found.</p>
 <h3 id="flawfinder">flawfinder</h3>
 <p>The open source static checker <a href="http://www.dwheeler.com/flawfinder/">flawfinder</a>
 checks various problems with respect to security like buffer overflows,
 function arguments to known troublemaker functions and more. It doesn’t need to
 pre-process code, so can be run without the <code>typ</code> macro being defined:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ flawfinder prog.c
+<pre><code>    $ flawfinder prog.c
     Flawfinder version 1.31, (C) 2001-2014 David A. Wheeler.
     Number of rules (primarily dangerous function names) in C/C++ ruleset: 169
     Examining prog.c
@@ -572,7 +573,7 @@ demonstrator</a> you can
 use for checking your C programs and I highly recommend trying it. For a start,
 paste the well know first program in the form and press “Analyze Code”. Note
 the FlexeLint configuration options in comments (no space between <code>/*</code> and <code>lint</code>).</p>
-<pre class="&lt;!---c--&gt;"><code>    /*lint -w4            turn on everything */
+<pre><code>    /*lint -w4            turn on everything */
     /*lint +esym(534,*)   no demonstrator defaults */
     /*lint -e966          indirectly included header file not used */
     /*lint -esym(9058,_*) tag not used outside typedef */
@@ -675,7 +676,7 @@ use of character values.” This forbids using character constants in
 expressions other than assignments to <code>char</code> objects. A consequence is
 that printing digits with <code>'0' + digit</code> is not allowed (even though
 <code>'0'</code> is technically an <code>int</code>!) so I am forced to output hex digits with</p>
-<pre class="&lt;!---c--&gt;"><code>    printf(&quot;%c&quot;, (met)tyr + 32 + 16 + ((8 + EOF) * ((met)tyr / (8 + 2))));</code></pre>
+<pre><code>    printf(&quot;%c&quot;, (met)tyr + 32 + 16 + ((8 + EOF) * ((met)tyr / (8 + 2))));</code></pre>
 <p>because of the “no magic numbers other than powers of two” rule. How is this
 an improvement over <code>printf("%c", '0' + tyr + 7 * (tyr / 10)</code>, MISRA?</p>
 <p>MISRA 6.3: “<code>typedef</code>s that indicate size and signedness should be used in
@@ -691,7 +692,7 @@ redundant casting ensues. It gets worse with the next rule…</p>
 precedence rules in expressions.” This requires parentheses for almost
 all expressions involving more than one operator, especially those for which
 a cast is required, leading to hard to understand expressions such as</p>
-<pre class="&lt;!---c--&gt;"><code>    const ser glx = (ser)((asx &gt; (ser)64u) ? (ser)((ser)asx + (ser)8u + (ser)1u) : (ser)asx);
+<pre><code>    const ser glx = (ser)((asx &gt; (ser)64u) ? (ser)((ser)asx + (ser)8u + (ser)1u) : (ser)asx);
     not.not[leu] = (and)((and)not.not[leu] | (and)(((and)glx % (and)16u) &lt;&lt; (and)lys));</code></pre>
 <p>MISRA 14.7: “A function shall have a single point of exit at the end of
 the function.” Sigh. Since I must use eloquent prototypes (8.1, 16.3,
@@ -703,11 +704,11 @@ too high for a sane function.</p>
 <p>MISRA 16.10: “If a function returns error information, then that error
 information shall be tested.” A cast to <code>void</code> would draw a lint warning, so
 I use the <code>printf(3)</code> result in expressions,</p>
-<pre class="&lt;!---c--&gt;"><code>    lys -= 4 * printf(&quot;%c&quot;, (met)tyr + 32 + 16 + ((8 + EOF) * ((met)tyr / (8 + 2))));
+<pre><code>    lys -= 4 * printf(&quot;%c&quot;, (met)tyr + 32 + 16 + ((8 + EOF) * ((met)tyr / (8 + 2))));
     val += printf(&quot;\n&quot;) / ((__LINE__ * L_tmpnam) + TMP_MAX);
     val -= (printf(&quot; %d\n&quot;, val) &gt; BUFSIZ) ? FILENAME_MAX : EOF;</code></pre>
 <p>which are, in the absence of errors, equivalent to</p>
-<pre class="&lt;!---c--&gt;"><code>    lys -= 4;
+<pre><code>    lys -= 4;
     /*nop*/
     ++val;</code></pre>
 <p>MISRA 13.1: “Assignment operators shall not be used in expressions that
@@ -716,7 +717,7 @@ yield a Boolean value.” Forbids the idiomatic <code>if ((p = malloc(n)) == NUL
 declared as pointer to <code>const</code> if the pointer is not used to modify the
 addressed object.” in conjunction with lint’s “Note 952: Parameter could
 be declared <code>const</code>” causes <code>const</code>-poisoning for all functions,</p>
-<pre class="&lt;!---c--&gt;"><code>    static void phe(const ala not);
+<pre><code>    static void phe(const ala not);
     static void gly(ala *const not, const and his);
     met main(met val, const pro *const his[]);</code></pre>
 <p>and quite a number of automatic variables.</p>
@@ -726,9 +727,9 @@ up :-) (humor really helps!)”</p>
 <h3 id="if-you-have-a-128-bit-type">If you have a 128 bit type</h3>
 <p>If your compiler supports a 128 bit wide type (e.g. clang, gcc) then
 you can use it via the <code>typ</code> macro:</p>
-<pre class="&lt;!---sh--&gt;"><code>    clang -Dtyp=__uint128_t -o prog prog.c</code></pre>
+<pre><code>    clang -Dtyp=__uint128_t -o prog prog.c</code></pre>
 <p>Indeed, the program can use (and lints clean for) all of</p>
-<pre class="&lt;!---sh--&gt;"><code>    clang -Dtyp=uint8_t  -o prog8  prog.c
+<pre><code>    clang -Dtyp=uint8_t  -o prog8  prog.c
     clang -Dtyp=uint16_t -o prog16 prog.c
     clang -Dtyp=uint32_t -o prog32 prog.c
     clang -Dtyp=uint64_t -o prog64 prog.c
@@ -785,10 +786,10 @@ memory resources with the <code>ulimit(1)</code> built-in of your shell.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/schweikhardt/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/schweikhardt/prog.orig.c">prog.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/schweikhardt/try.sh">try.sh</a> - how to run</li>
-<li><a href="2015_schweikhardt.tar.bz2">2015_schweikhardt.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2015_schweikhardt.tar.bz2">2015_schweikhardt.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/schweikhardt/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/schweikhardt/.entry.json">.entry.json</a> - description of entry in JSON</li>

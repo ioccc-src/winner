@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,18 +142,18 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em></li>
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2013_endoh3">2013 endoh3 bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./endoh3</code></pre>
+<pre><code>    ./endoh3</code></pre>
 <p>This program plays sound. See <a href="../../faq.html#sox">FAQ 3.10 - How do I compile and use an IOCCC
 entry that requires sound?</a> if you do not know how to set your
 system up for this or if you want to verify that everything is oky.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh
+<pre><code>    ./try.sh
 
     ./try.sh ABC
 
@@ -180,20 +181,20 @@ will remain the same for historical purposes.</p>
 <p>This is a sound synthesizer for a subset of <a href="http://en.wikipedia.org/wiki/ABC_notation">ABC music
 notation</a>.</p>
 <p>Try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -o endoh3 endoh3.c
+<pre><code>    cc -o endoh3 endoh3.c
     echo &quot;CDEFGABc&quot; | ./endoh3 &gt; /dev/dsp</code></pre>
 <p>If <code>/dev/dsp</code> is not available on your system, use an OSS sound wrapper such
 as <code>padsp</code> or <code>aoss</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    echo &quot;CDEFGABc&quot; | ./endoh3 | padsp tee /dev/dsp &gt; /dev/null</code></pre>
+<pre><code>    echo &quot;CDEFGABc&quot; | ./endoh3 | padsp tee /dev/dsp &gt; /dev/null</code></pre>
 <p>If you are using Mac OS X, try <a href="http://sox.sourceforge.net/">sox</a> like so:</p>
-<pre class="&lt;!---sh--&gt;"><code>    echo &quot;CDEFGABc&quot; | ./endoh3 | sox -q -traw -r8000 -b8 -e unsigned-integer - -tcoreaudio</code></pre>
+<pre><code>    echo &quot;CDEFGABc&quot; | ./endoh3 | sox -q -traw -r8000 -b8 -e unsigned-integer - -tcoreaudio</code></pre>
 <p>If that does not work, use the attached script to convert the output into a wave
 file format:</p>
-<pre class="&lt;!---sh--&gt;"><code>    echo &quot;CDEFGABc&quot; | ./endoh3 | ruby wavify.rb &gt; cde.wav</code></pre>
+<pre><code>    echo &quot;CDEFGABc&quot; | ./endoh3 | ruby wavify.rb &gt; cde.wav</code></pre>
 <p>and play <code>cde.wav</code>.</p>
 <p>You can also enjoy some music scores that I attached. With <code>/dev/dsp</code> you can
 do so like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cat twinkle.abc | ./endoh3 &gt; /dev/dsp
+<pre><code>    cat twinkle.abc | ./endoh3 &gt; /dev/dsp
     cat menuet.abc | ./endoh3 &gt; /dev/dsp</code></pre>
 <p>but you should be able to modify it a way to meet your system requirements as
 described above.</p>
@@ -257,7 +258,7 @@ But I do not attach it to protect you from W****r.</p>
 You know, it is <a href="http://en.wikipedia.org/wiki/4%E2%80%B233%E2%80%B3">“the famous song”</a>.</p>
 <h3 id="spoiler">Spoiler</h3>
 <p>Here is a magical expression which I found by brute-force:</p>
-<pre class="&lt;!---c--&gt;"><code>    (c % 32 + 5) * 9 / 5 % 13 + n / 32 * 12 - 22</code></pre>
+<pre><code>    (c % 32 + 5) * 9 / 5 % 13 + n / 32 * 12 - 22</code></pre>
 <p>Interestingly, it converts an ASCII number of ABC notes
 to the corresponding tone number.</p>
 <pre><code>    &#39;C&#39; (ASCII  67) =&gt;  3
@@ -287,7 +288,7 @@ found this approximation by using the <a href="http://en.wikipedia.org/wiki/Ster
 tree</a>.) We can gain the
 frequency by multiplying the value by <code>n</code> times.</p>
 <p>Finally, the following code generates a saw wave:</p>
-<pre class="&lt;!---c--&gt;"><code>    for(c = 0; c &lt; len; c++) putchar(a = n * D);</code></pre>
+<pre><code>    for(c = 0; c &lt; len; c++) putchar(a = n * D);</code></pre>
 <p>where <code>D</code> is a frequency and <code>a</code> is a variable whose type is <code>char</code>. By
 assigning <code>float</code> to <code>char</code> variable, the implicit type conversion is performed
 from <code>float</code> to <code>char</code> (modulo 256).</p>
@@ -328,10 +329,10 @@ squashing them into just one <code>for</code>-loop.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh3/twinkle.abc">twinkle.abc</a> - sample input</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh3/wavify.rb">wavify.rb</a> - post process output to form a WAV sound file</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh3/yankee.abc">yankee.abc</a> - sample input</li>
-<li><a href="2013_endoh3.tar.bz2">2013_endoh3.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2013_endoh3.tar.bz2">2013_endoh3.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh3/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh3/.entry.json">.entry.json</a> - description of entry in JSON</li>

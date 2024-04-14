@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,15 +142,15 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em></li>
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>There is an alternate version provided by the author. See <a href="#alternate-code">Alternate
 code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    # IMPORTANT for macOS: run under Terminal.app
+<pre><code>    # IMPORTANT for macOS: run under Terminal.app
 
     ./prog</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    # IMPORTANT for macOS: run under Terminal.app
+<pre><code>    # IMPORTANT for macOS: run under Terminal.app
 
     # Try resizing the terminal window before the first click.
 
@@ -163,7 +164,7 @@ code</a> below.</p>
 alternate code lacks the additional rule to flag all unprobed cells. See the
 Author’s remarks for more details.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>prog.alt</code> as you would <code>prog</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -194,7 +195,7 @@ such a boring task!</p>
 All you have to do is (0). You can test if you are lucky or not.</p>
 <h3 id="how-to-use">How to use:</h3>
 <p>It uses ncurses:</p>
-<pre class="&lt;!---sh--&gt;"><code>    gcc -o prog prog.c -lncurses
+<pre><code>    gcc -o prog prog.c -lncurses
     ./prog</code></pre>
 <p>You will see a terminal-wide field of a minesweeper. Probe a cell by mouse
 click.</p>
@@ -255,7 +256,7 @@ are flagged.</p>
 Analyze the code.</p>
 <h3 id="one-more-thing">One more thing</h3>
 <p>You can also play with a prepared map.</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog ioccc.txt</code></pre>
+<pre><code>    ./prog ioccc.txt</code></pre>
 <p>The format of the text is:</p>
 <pre><code>    width height number-of-mines priorities-of-each-cell...</code></pre>
 <p>There are mines in a cell whose “priorities-of-each-cell” is less than
@@ -307,10 +308,10 @@ code a little to pretend to use the return value of <code>fscanf(3)</code>.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/endoh1/ioccc.txt">ioccc.txt</a> - gameplay map</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/endoh1/megumin.txt">megumin.txt</a> - gameplay map</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/endoh1/unwinnable.txt">unwinnable.txt</a> - gameplay map</li>
-<li><a href="2020_endoh1.tar.bz2">2020_endoh1.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2020_endoh1.tar.bz2">2020_endoh1.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/endoh1/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/endoh1/.entry.json">.entry.json</a> - description of entry in JSON</li>

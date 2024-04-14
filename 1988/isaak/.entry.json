@@ -51,7 +51,7 @@
 	},
 	{
 	    "file_path" : "1988_isaak.tar.bz2",
-	    "inventory_order" : 100000,
+	    "inventory_order" : 1415926535,
 	    "OK_to_edit" : false,
 	    "display_as" : "tbz2",
 	    "display_via_github" : false,

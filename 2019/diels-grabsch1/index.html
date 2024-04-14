@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,11 +142,11 @@ Location: <a href="../../location.html#DE">DE</a> - <em>Federal Republic of Germ
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; file &gt; file.Z</code></pre>
+<pre><code>    ./prog &lt; file &gt; file.Z</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Finally, IOCCC now has its own text compression program, and it is short enough
 to qualify for the Best Short Program award! That said, can you compress it down
@@ -157,11 +158,11 @@ compresses differently? The judges know. :)</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="a-tiny-compress-tool">A tiny “compress” tool:</h3>
 <h4 id="usage">Usage:</h4>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; input.txt &gt; input.txt.Z</code></pre>
+<pre><code>    ./prog &lt; input.txt &gt; input.txt.Z</code></pre>
 <h4 id="example">Example:</h4>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; guidelines.txt &gt; guidelines.txt.Z</code></pre>
+<pre><code>    ./prog &lt; guidelines.txt &gt; guidelines.txt.Z</code></pre>
 <h4 id="check-for-correctness">Check for correctness:</h4>
-<pre class="&lt;!---sh--&gt;"><code>    zcat guidelines.txt.Z &gt; guidelines2.txt
+<pre><code>    zcat guidelines.txt.Z &gt; guidelines2.txt
     diff -s guidelines.txt guidelines2.txt</code></pre>
 <p>Of course you can also use <a href="../../2015/mills2/mills2.c">2015/mills2</a> instead of
 <code>zcat</code> to verify the output file. The achieved compression ratio roughly matches
@@ -203,10 +204,10 @@ goes.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/diels-grabsch1/guidelines.txt">guidelines.txt</a> - input data from 2018 IOCCC guidelines</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/diels-grabsch1/try.sh">try.sh</a> - how to run</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/diels-grabsch1/Shakespeare.txt">Shakespeare.txt</a> - Coriolanus by Shakespeare</li>
-<li><a href="2019_diels-grabsch1.tar.bz2">2019_diels-grabsch1.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2019_diels-grabsch1.tar.bz2">2019_diels-grabsch1.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/diels-grabsch1/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/diels-grabsch1/.entry.json">.entry.json</a> - description of entry in JSON</li>

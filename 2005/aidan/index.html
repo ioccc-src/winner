@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,25 +142,25 @@ Location: <a href="../../location.html#GB">GB</a> - <em>United Kingdom of Great 
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>There is an alternate version based on the author’s remarks. See <a href="#alternate-code">alternate
 code</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./aidan &lt; puzzle
+<pre><code>    ./aidan &lt; puzzle
 
     ./aidan seed</code></pre>
 <p>where <code>seed</code> is a number.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This code is formatted differently and is not the approach used by the author
 which is slower, inelegant and not as obscure, as the author put it.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>aidan.alt</code> as you would <code>aidan</code> above.</p>
 <h3 id="alternate-try">Alternate try:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh</code></pre>
+<pre><code>    ./try.alt.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Are you puzzled about puzzles? This entry might puzzle you
 more while it puzzles out some puzzles: all in a puzzling way!</p>
@@ -223,7 +224,7 @@ figure out how to solve them, but there’s a useful tutorial on
 <a href="http://www.sudoku.org.uk/" class="uri">http://www.sudoku.org.uk/</a>, which is roughly affiliated with the <a href="https://www.telegraph.co.uk/">Daily
 Telegraph</a>, a UK newspaper.</p>
 <p>Now, with modern computers this <strong>can</strong> be solved using brute force, e.g.:</p>
-<pre class="&lt;!---c--&gt;"><code>    #include &lt;stdio.h&gt; /* sudoku-bfi.c */
+<pre><code>    #include &lt;stdio.h&gt; /* sudoku-bfi.c */
     #define S(t) for(n=0;n&lt;9;v[n++]=0);for(n=0;n&lt;81;n++)if(i[n]){z=1&lt;&lt;i[n];if(v[t]\\
     &amp;z)for(;;){if(p&lt;0)goto d;if(i[p]++&lt;9)goto f;i[p]=0;p=s[p];}v[t]|=z;}
     int i[82],s[81],v[9],n,p,z;int main(void){for(n=0;n&lt;81;){p=getchar()^48;if(p==
@@ -259,17 +260,17 @@ also has trouble - it took 66 seconds to solve it - but probably for different
 reasons. That’s the worst performance I’ve had from brute-force so far!)</p>
 <h3 id="usage">Usage</h3>
 <h4 id="building">Building</h4>
-<pre class="&lt;!---sh--&gt;"><code>    cc -o sudoku-sf sudoku-sf.c</code></pre>
+<pre><code>    cc -o sudoku-sf sudoku-sf.c</code></pre>
 <p>or, if using gcc, try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    gcc -O2 -Wall -Wextra -ansi -pedantic-errors -o sudoku-sf sudoku-sf.c</code></pre>
+<pre><code>    gcc -O2 -Wall -Wextra -ansi -pedantic-errors -o sudoku-sf sudoku-sf.c</code></pre>
 <h4 id="testing-optional">Testing (optional)</h4>
-<pre class="&lt;!---sh--&gt;"><code>    perl ./test-su.perl</code></pre>
+<pre><code>    perl ./test-su.perl</code></pre>
 <p>Note that this requires Perl 5 (I use 5.8.5, earlier versions untested) and is
 somewhat slow (should take under a minute on a fairly modern PC - try
 appending <code>-n 0</code> if you’re in a hurry). I wrote it mostly for my own benefit,
 really.</p>
 <h4 id="solving">Solving</h4>
-<pre class="&lt;!---sh--&gt;"><code>    ./aidan &lt; somefile.txt</code></pre>
+<pre><code>    ./aidan &lt; somefile.txt</code></pre>
 <p>Input should be the numbers of each row in turn. Empty spaces can be
 represented as a full stop (<code>.</code>) or zero (<code>0</code>). Other characters are ignored, so you
 can cut-and-paste either example sudoku puzzle from above into a file and feed that
@@ -282,7 +283,7 @@ an extra 15 bytes of (very simple) code to add, so it doesn’t really matter to
 me. (It’s the same as the normal mode for most input you’re likely to feed it,
 though slightly slower. See if you can figure out what it does.)</p>
 <h4 id="generating">Generating</h4>
-<pre class="&lt;!---sh--&gt;"><code>    ./sudoku &lt;seed&gt;</code></pre>
+<pre><code>    ./sudoku &lt;seed&gt;</code></pre>
 <p>Output is a blank grid, then the solution, then the problem. There’s no
 control over the difficulty. Sorry. However, all generated sudokus should have
 exactly one solution - if one doesn’t, that’s a bug.</p>
@@ -321,7 +322,7 @@ can’t help you figure out where the mistake is, sadly.</p></li>
 <p>Dependant on ASCII, requires that an <code>int</code> is at least 15 bits and a <code>long</code> at
 least 32. (No, that isn’t a typo - I did say 15, not 16).</p>
 <p>Also requires that <code>cpp</code> can properly handle something like:</p>
-<pre class="&lt;!---c--&gt;"><code>    #define foo(x,y) x y
+<pre><code>    #define foo(x,y) x y
     foo(bar,)</code></pre>
 <p>Apparently, a few can’t (ANSI C specifically doesn’t require that this works,
 though it usually does). Unfortunately, I didn’t discover this issue until too
@@ -397,10 +398,10 @@ that way somehow…</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/aidan/try.sh">try.sh</a> - how to run</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/aidan/wp.sudoku">wp.sudoku</a> - Wikipedia sudoku puzzle</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/aidan/test-su.perl">test-su.perl</a> - test suite</li>
-<li><a href="2005_aidan.tar.bz2">2005_aidan.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2005_aidan.tar.bz2">2005_aidan.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/aidan/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/aidan/.entry.json">.entry.json</a> - description of entry in JSON</li>

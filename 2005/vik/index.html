@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,11 +142,11 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./vik [file.map]</code></pre>
+<pre><code>    ./vik [file.map]</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./vik maze.map</code></pre>
+<pre><code>    ./vik maze.map</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>An amazing use of the X libraries with twisty code passages, all different. One
 risks running in code path circles as <code>main()</code> is called again and again. Be
@@ -177,18 +178,18 @@ backward).</li>
 <p>Compile the source code and link in <a href="https://en.wikipedia.org/wiki/Xlib">X
 libraries</a> if necessary. The program takes
 three options which have to be typed in a specific order as described below.</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./vik [-w &lt;width&gt;] [mapfile]</code></pre>
+<pre><code>    ./vik [-w &lt;width&gt;] [mapfile]</code></pre>
 <p>where:</p>
 <pre><code>    width   - Specifies the width of the window
     mapfile - Filename containing a map</code></pre>
 <h4 id="examples">Examples</h4>
 <p>Start the engine using a built in labyrinth and texture bitmaps:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./vik</code></pre>
+<pre><code>    ./vik</code></pre>
 <p>Start the engine and loads the labyrinth defined in the file
 <a href="maze.map">maze.map</a>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./vik maze.map</code></pre>
+<pre><code>    ./vik maze.map</code></pre>
 <p>Start the engine using <a href="maze.map">maze.map</a> in a window that is 400 pixels wide:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./vik -w 400 maze.map</code></pre>
+<pre><code>    ./vik -w 400 maze.map</code></pre>
 <p>Note that the <code>mapfile</code> has to be the last argument and the <code>-w</code> option if present
 has to be the first. The map definition files and the bitmap files should be
 located in the current directory.</p>
@@ -262,10 +263,10 @@ application a little bit.</p>
 <li><a href="a.bmp">a.bmp</a> - texture bitmap</li>
 <li><a href="b.bmp">b.bmp</a> - texture bitmap</li>
 <li><a href="c.bmp">c.bmp</a> - texture bitmap</li>
-<li><a href="2005_vik.tar.bz2">2005_vik.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2005_vik.tar.bz2">2005_vik.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/vik/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/vik/.entry.json">.entry.json</a> - description of entry in JSON</li>

@@ -83,6 +83,7 @@
     <div class="sidenav">
       <a href="../news.html">IOCCC News</a>
       <a href="../status.html">Contest status</a>
+      <a href="../next/index.html">Rules and Guidelines</a>
       <a href="../faq.html#submit">How to enter the IOCCC</a>
       <a href="../faq.html">FAQ</a>
     </div>
@@ -133,63 +134,63 @@ repo</a>.</p>
 <h3 id="all-run.sh"><a href="all-run.sh">all-run.sh</a></h3>
 <p>Run a command on all winning entries.</p>
 <p>For example:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1</code></pre>
+<pre><code>bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1</code></pre>
 <p>Or for example:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/all-run.sh -v 3 bin/readme2index.sh -v 1</code></pre>
+<pre><code>bin/all-run.sh -v 3 bin/readme2index.sh -v 1</code></pre>
 <h3 id="all-years.sh"><a href="all-years.sh">all-years.sh</a></h3>
 <p>Run a command on all IOCCC years.</p>
 <p>For example:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/all-years.sh -v 1 bin/gen-year-index.sh -v 1</code></pre>
+<pre><code>bin/all-years.sh -v 1 bin/gen-year-index.sh -v 1</code></pre>
 <p>Or for example:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/all-years.sh -v 1 bin/chk-entry.sh</code></pre>
+<pre><code>bin/all-years.sh -v 1 bin/chk-entry.sh</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>make verify_entry_files</code></pre>
+<pre><code>make verify_entry_files</code></pre>
 <h3 id="chk-entry.sh"><a href="chk-entry.sh">chk-entry.sh</a></h3>
 <p>Check that files required by an entry match the entry’s manifest as found in
 <code>.entry.json</code>.</p>
 <p>For example:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/chk-entry.sh 2020/ferguson1</code></pre>
+<pre><code>bin/chk-entry.sh 2020/ferguson1</code></pre>
 <h3 id="filelist.entry.json.awk"><a href="filelist.entry.json.awk">filelist.entry.json.awk</a></h3>
 <p>Generate the list of files in the entry’s manifest, <code>.entry.json</code>.</p>
 <p>For example:</p>
-<pre class="&lt;!---sh--&gt;"><code>awk -f bin/filelist.entry.json.awk 2020/ferguson1/.entry.json</code></pre>
+<pre><code>awk -f bin/filelist.entry.json.awk 2020/ferguson1/.entry.json</code></pre>
 <h3 id="gen-authors.sh"><a href="gen-authors.sh">gen-authors.sh</a></h3>
 <p>Generate the top level <code>/authors.html</code> page.</p>
 <p>Usage:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/gen-authors.sh -v 1</code></pre>
+<pre><code>bin/gen-authors.sh -v 1</code></pre>
 <h3 id="gen-location.sh"><a href="gen-location.sh">gen-location.sh</a></h3>
 <p>Generate the top level <code>/location.html</code> page.</p>
 <p>Usage:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/gen-location.sh -v 1</code></pre>
+<pre><code>bin/gen-location.sh -v 1</code></pre>
 <h3 id="gen-other-html.sh"><a href="gen-other-html.sh">gen-other-html.sh</a></h3>
 <p>Generate entry HTML files (other than README.md to index.html) from markdown
 files.</p>
 <p>Usage:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/gen-other-html.sh -v 1</code></pre>
+<pre><code>bin/gen-other-html.sh -v 1</code></pre>
 <h3 id="gen-sitemap.sh"><a href="gen-sitemap.sh">gen-sitemap.sh</a></h3>
 <p>Generate an XML sitemap for the IOCCC web site.</p>
 <p>Usage:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/gen-sitemap.sh -v 1</code></pre>
+<pre><code>bin/gen-sitemap.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>make gen_sitemap</code></pre>
+<pre><code>make gen_sitemap</code></pre>
 <h3 id="gen-status.sh"><a href="gen-status.sh">gen-status.sh</a></h3>
 <p>Generate <code>status.json</code> according to the modification dates of <code>status.json</code>
 and <code>news.html</code>.</p>
 <p>Without argument, the <code>contest_status</code> is unchanged.</p>
 <p>Usage:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/gen-status.sh -v 1</code></pre>
+<pre><code>bin/gen-status.sh -v 1</code></pre>
 <p>To force the <code>contest_status</code> to be closed:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/gen-status.sh -v 1 closed</code></pre>
+<pre><code>bin/gen-status.sh -v 1 closed</code></pre>
 <p>To force the <code>contest_status</code> to be open:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/gen-status.sh -v 1 open</code></pre>
+<pre><code>bin/gen-status.sh -v 1 open</code></pre>
 <p>To see other valid statuses:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/gen-status -h</code></pre>
+<pre><code>bin/gen-status -h</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>make gen_status</code></pre>
+<pre><code>make gen_status</code></pre>
 <h3 id="gen-top-html.sh"><a href="gen-top-html.sh">gen-top-html.sh</a></h3>
 <p>Generate a number of top level HTML pages for the IOCCC web sites.</p>
 <p>Usage:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/gen-top-html.sh -v 1</code></pre>
+<pre><code>bin/gen-top-html.sh -v 1</code></pre>
 <p>Examples of top level HTML pages built by this tool include:</p>
 <ul>
 <li><a href="../CODE_OF_CONDUCT.html">CODE_OF_CONDUCT.html</a></li>
@@ -206,19 +207,19 @@ and <code>news.html</code>.</p>
 <li><a href="../thanks-for-help.html">thanks-for-help.html</a></li>
 </ul>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>make gen_top_html</code></pre>
+<pre><code>make gen_top_html</code></pre>
 <h3 id="gen-year-index.sh"><a href="gen-year-index.sh">gen-year-index.sh</a></h3>
 <p>Generate an <code>index.html</code> page for an given IOCCC year.</p>
 <p>Usage:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/gen-year-index.sh -v 1 2020</code></pre>
+<pre><code>bin/gen-year-index.sh -v 1 2020</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>make gen_year_index</code></pre>
+<pre><code>make gen_year_index</code></pre>
 <h3 id="gen-years.sh"><a href="gen-years.sh">gen-years.sh</a></h3>
 <p>Generate the top level <code>/years.html</code> page.</p>
 <p>Usage:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/gen-years.sh -v 1</code></pre>
+<pre><code>bin/gen-years.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>make gen_years</code></pre>
+<pre><code>make gen_years</code></pre>
 <h3 id="md2html.sh"><a href="md2html.sh">md2html.sh</a></h3>
 <p>This is the primary tool that forms IOCCC generated HTML content from
 markdown files (permanent markdown files or temporarily generated
@@ -247,19 +248,19 @@ the extra time can add up.</p>
 <p>If only a few <code>index.hmtl</code> files need updating, then
 this command will only briefly pause while the
 slightly longer <a href="readme2index.sh">readme2index.sh</a> is run:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1</code></pre>
+<pre><code>bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1</code></pre>
 <p><strong>NOTE</strong>: This command assumes that the relative
 modification times for <code>index.hmtl</code>, <code>.entry.json</code>,
 and <code>index.html</code> are correct. If in doubt, use:</p>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>make quick_entry_index</code></pre>
+<pre><code>make quick_entry_index</code></pre>
 <h3 id="readme2index.sh"><a href="readme2index.sh">readme2index.sh</a></h3>
 <p>Convert an entry README.md into entry directory index.html.</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/all-run.sh -v 3 bin/readme2index.sh -v 1</code></pre>
+<pre><code>bin/all-run.sh -v 3 bin/readme2index.sh -v 1</code></pre>
 <p>To build <code>index.html</code> files for all entries:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/all-run.sh -v 3 bin/readme2index.sh -v 1</code></pre>
+<pre><code>bin/all-run.sh -v 3 bin/readme2index.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>make entry_index</code></pre>
+<pre><code>make entry_index</code></pre>
 <h3 id="status2html.sh"><a href="status2html.sh">status2html.sh</a></h3>
 <p>Convert <code>status.json</code> into HTML.</p>
 <p>This tool is a ‘before tool’ (-b tool) that is intended
@@ -274,11 +275,11 @@ We sort with lines starting with <code>!</code> fourth.</p>
 <h3 id="sort.gitignore.sh"><a href="sort.gitignore.sh">sort.gitignore.sh</a></h3>
 <p>Sort a .gitignore in a entry directory.</p>
 <p>Usage:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/sort.gitignore.sh -v 1 YYYY/dir</code></pre>
+<pre><code>bin/sort.gitignore.sh -v 1 YYYY/dir</code></pre>
 <p>Suggested usage:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/all-run.sh bin/sort.gitignore.sh -v 1</code></pre>
+<pre><code>bin/all-run.sh bin/sort.gitignore.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>make sort_gitignore</code></pre>
+<pre><code>make sort_gitignore</code></pre>
 <h3 id="subst.default.sh"><a href="subst.default.sh">subst.default.sh</a></h3>
 <p>Print default substitutions.</p>
 <h3 id="subst.entry-index.sh"><a href="subst.entry-index.sh">subst.entry-index.sh</a></h3>
@@ -292,33 +293,33 @@ We sort with lines starting with <code>!</code> fourth.</p>
 <h2 id="tar-entry.sh"><a href="tar-entry.sh">tar-entry.sh</a></h2>
 <p>Form a compressed tarball for an entry.</p>
 <p>Usage:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/tar-entry.sh -v 1 YYYY/dir</code></pre>
+<pre><code>bin/tar-entry.sh -v 1 YYYY/dir</code></pre>
 <p>Suggested usage:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/all-run.sh -v 3 bin/tar-entry.sh -v 1 -W</code></pre>
+<pre><code>bin/all-run.sh -v 3 bin/tar-entry.sh -v 1 -W</code></pre>
 <h2 id="tar-year.sh"><a href="tar-year.sh">tar-year.sh</a></h2>
 <p>Form a compressed tarball for an IOCCC year.</p>
 <p>Usage:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/tar-year.sh -v 1 YYYY</code></pre>
+<pre><code>bin/tar-year.sh -v 1 YYYY</code></pre>
 <p>Suggested usage:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/all-years.sh -v 3 bin/tar-year.sh -v 1 -W</code></pre>
+<pre><code>bin/all-years.sh -v 3 bin/tar-year.sh -v 1 -W</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>make form_year_tarball</code></pre>
+<pre><code>make form_year_tarball</code></pre>
 <h2 id="untar-entry.sh"><a href="untar-entry.sh">untar-entry.sh</a></h2>
 <p>Untar an entry’s a compressed tarball.</p>
 <p>Usage:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/untar-entry.sh -v 1 YYYY/dir</code></pre>
+<pre><code>bin/untar-entry.sh -v 1 YYYY/dir</code></pre>
 <p>Suggested usage:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/all-run.sh -v 3 bin/untar-entry.sh -v 1</code></pre>
+<pre><code>bin/all-run.sh -v 3 bin/untar-entry.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>make untar_entry_tarball</code></pre>
+<pre><code>make untar_entry_tarball</code></pre>
 <h2 id="untar-year.sh"><a href="untar-year.sh">untar-year.sh</a></h2>
 <p>Untar an IOCCC year’s compressed tarball.</p>
 <p>Usage:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/untar-year.sh -v 1 YYYY</code></pre>
+<pre><code>bin/untar-year.sh -v 1 YYYY</code></pre>
 <p>Suggested usage:</p>
-<pre class="&lt;!---sh--&gt;"><code>bin/all-years.sh -v 3 bin/untar-year.sh -v 1</code></pre>
+<pre><code>bin/all-years.sh -v 3 bin/untar-year.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>make untar_year_tarball</code></pre>
+<pre><code>make untar_year_tarball</code></pre>
 <h1 id="how-ioccc-html-content-is-built"><a name="how"></a>How IOCCC HTML content is built</h1>
 <p>The <a href="md2html.sh">md2html.sh</a> tool is the primary tool that
 is used to form all IOCCC related HTML pages for the <a href="https://www.ioccc.org">official IOCCC web
@@ -335,16 +336,16 @@ built uses, by default, files from the <a href="../inc/index.html">inc directory
 the file name form:</p>
 <pre><code>*.default.html</code></pre>
 <p>By using command line options of the form:</p>
-<pre class="&lt;!---sh--&gt;"><code>-H phase=name</code></pre>
+<pre><code>-H phase=name</code></pre>
 <p>where <code>phase</code> is the name of an HTML phase,
 a non-default file may be used. For example:</p>
-<pre class="&lt;!---sh--&gt;"><code>-H topnav=up2index</code></pre>
+<pre><code>-H topnav=up2index</code></pre>
 <p>will cause <a href="../inc/topnav.up2index.html">inc/topnav.up2index.html</a>
 instead of <a href="../inc/topnav.default.html">inc/topnav.default.html</a> to be
 used during the <em>topnav</em> HTML phase.</p>
 <p>If <code>name</code> is dot (i.e., <code>.</code>), then the given HTML phase is skipped.
 For example:</p>
-<pre class="&lt;!---sh--&gt;"><code>-H footer=.</code></pre>
+<pre><code>-H footer=.</code></pre>
 <p>will cause no HTML content to be produced during the <code>footer</code> HTML phase.</p>
 <h2 id="html-phases"><a name="html"></a>HTML phases</h2>
 <p>The following HTML phase files are used to build HTML content:</p>
@@ -560,7 +561,7 @@ IOCCC. Each author has <strong>EXACTLY ONE</strong> <code>author_handle</code>.<
 a POSIX safe string with the addition of <code>+</code> (for technical reasons beyond this
 document). In particular, the <code>author_handle</code> must be an ASCII
 string that matches this regexp:</p>
-<pre class="&lt;!---re--&gt;"><code>^[0-9A-Za-z][0-9A-Za-z._+-]*$&quot;</code></pre>
+<pre><code>^[0-9A-Za-z][0-9A-Za-z._+-]*$&quot;</code></pre>
 <p>Default <code>author_handle</code>’s do not have multiple consecutive <code>_</code> (underscore)
 characters. Nevertheless, multiple consecutive <code>_</code> (underscore) characters are
 allowed. Contest submitters who wish to override the <code>author_handle</code> may do so.</p>
@@ -581,7 +582,7 @@ year.</p>
 <p>NOTE: even if the directory name is not <code>anonymous</code> the above rules apply as in
 in the case of <a href="../2005/anon/anon.c">2005/anon</a>.</p>
 <p>Anonymous <code>author_handle</code>’s match this regexp:</p>
-<pre class="&lt;!---re--&gt;"><code>Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$</code></pre>
+<pre><code>Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$</code></pre>
 <h2 id="entry"><code>entry</code></h2>
 <p>An IOCCC entry that won an award for a given IOCCC.</p>
 <p>An <code>entry</code> has one more more <code>author</code>s.</p>
@@ -598,7 +599,7 @@ may be limited to previous <code>entry</code>s that used them.</p>
 represent the year. Some special <code>year</code> strings are possible, such as <code>mock</code>.
 Non-numeric <code>year</code> strings are lower case.</p>
 <p>A <code>year</code> string matches this regexp:</p>
-<pre class="&lt;!---re--&gt;"><code>[0-9a-z][0-9a-z][0-9a-z][0-9a-z]</code></pre>
+<pre><code>[0-9a-z][0-9a-z][0-9a-z][0-9a-z]</code></pre>
 <p>The <code>year</code> directories reside directly below the top level directory.</p>
 <h2 id="year-1"><code>.year</code></h2>
 <p>Each <code>year</code> directory will have a file under it named:</p>
@@ -608,7 +609,7 @@ instance, <a href="../2020/.year">2020/.year</a> has the string: <code>2020</cod
 <h2 id="dir"><code>dir</code></h2>
 <p>A <code>dir</code> is a POSIX safe string that holds an entry.</p>
 <p>A <code>dir</code> is a string that matches this regexp:</p>
-<pre class="&lt;!---re--&gt;"><code>^[a-z][0-9a-z.-]*$</code></pre>
+<pre><code>^[a-z][0-9a-z.-]*$</code></pre>
 <p>Each <code>entry</code> is under its own individual directory. This directory
 is directly under a <code>year</code> directory.</p>
 <h3 id="entry_id"><code>entry_id</code></h3>

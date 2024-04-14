@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -144,20 +145,20 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>There is alternate code that lets you redefine the port to bind to, in case
 there is a firewall issue, and also lets you redefine the timing constant,
 <code>STARDATE</code>. See <a href="#alternate%20code">Alternate code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; some_secret_or_something
+<pre><code>    ./prog &lt; some_secret_or_something
 
     ./prog http://host[:port]</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; README.md</code></pre>
+<pre><code>    ./prog &lt; README.md</code></pre>
 <p>or maybe:</p>
-<pre class="&lt;!---sh--&gt;"><code>    echo &quot;IOCCC 2014!&quot; | ./prog</code></pre>
+<pre><code>    echo &quot;IOCCC 2014!&quot; | ./prog</code></pre>
 <p>Next, try in another terminal, as the above one is running:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog http://127.0.0.1:1701</code></pre>
+<pre><code>    ./prog http://127.0.0.1:1701</code></pre>
 <p>What happens if you specify instead of a regular file something like
 <code>/dev/null</code> ?</p>
 <p>But there’s more! Try opening in a browser the same address and then see what
@@ -168,9 +169,9 @@ problem for some reason, and it also allows you to change the timing as
 described by the author. See <a href="#configuration">configuration</a> below.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <p>To specify the port to say, 31337, try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber PORT=31337 alt</code></pre>
+<pre><code>    make clobber PORT=31337 alt</code></pre>
 <p>To change the timing constant, <code>STARDATE</code>, try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber TIME=5000000 alt</code></pre>
+<pre><code>    make clobber TIME=5000000 alt</code></pre>
 <p>You can combine them both of course.</p>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>prog.alt</code> as you would <code>prog</code> above. Remember that ports &lt; 1024 are
@@ -194,14 +195,14 @@ a client-side downloader. The hidden transmitted data cannot be reconstructed
 or even detected from the binary content of the traffic between the client and
 the server.</p>
 <h2 id="to-use-web-server">To use web server</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; secret_file_to_be_downloaded</code></pre>
+<pre><code>    ./prog &lt; secret_file_to_be_downloaded</code></pre>
 <p>Try using the program’s source code as the secret file:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; prog.c</code></pre>
+<pre><code>    ./prog &lt; prog.c</code></pre>
 <h2 id="to-use-client-side-downloader">To use client-side downloader</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog http://host[:port]</code></pre>
+<pre><code>    ./prog http://host[:port]</code></pre>
 <p>The optional port defaults to 1701. If the web server instance is started on
 the same box, try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog http://127.0.0.1:1701</code></pre>
+<pre><code>    ./prog http://127.0.0.1:1701</code></pre>
 <p>It will incrementally display the contents of the hidden file at a rate of
 approximately 1 baud.</p>
 <p>The client-side downloader will automatically terminate if the web server is
@@ -296,7 +297,7 @@ numerical values.</li>
 <h3 id="compiler-warnings">Compiler warnings</h3>
 <p>For space considerations, the following include statements were dropped
 resulting in compiler warnings:</p>
-<pre class="&lt;!---c--&gt;"><code>    #include &lt;asm/byteorder.h&gt;
+<pre><code>    #include &lt;asm/byteorder.h&gt;
     #include &lt;ctype.h&gt;
     #include &lt;netinet/in.h&gt;
     #include &lt;stdlib.h&gt;
@@ -333,10 +334,10 @@ resulting in compiler warnings:</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/birken/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/birken/prog.alt.c">prog.alt.c</a> - alternative source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/birken/prog.orig.c">prog.orig.c</a> - original source</li>
-<li><a href="2014_birken.tar.bz2">2014_birken.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2014_birken.tar.bz2">2014_birken.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/birken/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/birken/.entry.json">.entry.json</a> - description of entry in JSON</li>

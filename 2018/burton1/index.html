@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,20 +142,20 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>There is an alternate version of this entry. See <a href="#alternate-code">Alternate
 code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; any-file</code></pre>
+<pre><code>    ./prog &lt; any-file</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>An alternate version of this entry, <a href="prog.alt.c">prog.alt.c</a>, is provided
 This alternate code was supposed to compile without warnings, however
 with modern compilers this is no longer the case so it will only cleanly compile
 with <code>-Wno-</code> options.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>prog.alt</code> as you would <code>prog</code>.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -187,14 +188,14 @@ and without bypassing the solution using <code>execve(2)</code>, or functions bu
 (<code>system(3)</code>, <code>popen(3)</code>, etc).</li>
 </ul>
 <p>E.g:</p>
-<pre class="&lt;!---c--&gt;"><code>    main(){system(&quot;hd&quot;);}       // it&#39;s turtles all the way down!</code></pre>
+<pre><code>    main(){system(&quot;hd&quot;);}       // it&#39;s turtles all the way down!</code></pre>
 <p>is not acceptable.</p>
 <p>And, “output correctly” is the output format of this entry. QED.</p>
 <p>Early attempts ended up at a reasonably short 157 characters.
 This was too long for a one-liner, so it had to be formatted as something more interesting.
 This solution is pleasing, but a true one-liner was the hoped-for goal.
 Here is the 157 character version in it’s entirety:</p>
-<pre class="&lt;!---c--&gt;"><code>    char     O,o[  20];L(O){
+<pre><code>    char     O,o[  20];L(O){
     putchar  ( O+  48+39  *(9&lt;
     O));}    I(O)  {L(~     15);
     O|| puts(o);}  main     (l){
@@ -209,7 +210,7 @@ This dramatic reduction started to feel close to minimal, and the hunt resumed.
 The progression to the present size is interesting,
 and it is interesting that the same algorithm can be expressed so differently
 by slight rearrangement of its parts.</p>
-<pre class="&lt;!---c--&gt;"><code>    // 119
+<pre><code>    // 119
     char O,o[20];main(l){for(;~(l=getchar());O||puts(o))o[O++]=isprint(l)?l:46,O&amp;=15,printf(&quot;%02x &quot;,l);O[o]=0;O&amp;&amp;puts(o);}
     // 116
     char O,o[20];main(l){for(;O++[o]=~(l=getchar())?4&lt;(4^l&gt;&gt;5)?l:46:0;(O&amp;=15)||puts(o))printf(&quot;%02x &quot;,l);O&gt;1&amp;&amp;puts(o);}
@@ -229,7 +230,7 @@ by slight rearrangement of its parts.</p>
 These do not compete in the same category, since their output is materially different.
 They are derived from the solutions above, but are still fascinating as concise utilities,
 so here is their progression, for the curious:</p>
-<pre class="&lt;!---c--&gt;"><code>    // 102
+<pre><code>    // 102
     I;O(O){putchar(O+48+39*(9&lt;O));}main(l){for(;~(l=getchar());O(++I&amp;15?~15:~37))O(l&gt;&gt;4),O(l&amp;15);O(-38);}
     // 80
     O;main(l){while(~(l=getchar()))printf(&quot;%02x%c&quot;,l,++O&amp;15?32:10);O&amp;15&amp;&amp;puts(&quot;&quot;);}
@@ -242,7 +243,7 @@ so here is their progression, for the curious:</p>
 <p>It is possible to reduce the size of each of these by one by eliding the trailing newline.
 This was not reported above since the newline kept getting appended by processing software,
 and it is more interesting to remove characters by changing code than by filtering:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ tr -d &#39;\012&#39; &lt; 109.c | wc -c
+<pre><code>    $ tr -d &#39;\012&#39; &lt; 109.c | wc -c
     108
     $ tr -d &#39;\012&#39; &lt; 76.c | wc -c
     75
@@ -321,9 +322,9 @@ perhaps – the smallest, clean-compiling version using <code>clang</code> or <c
 attempt, it will <em>not</em> work with the original Ritchie PDP-11 C compiler, since
 the expression within the ternary remains too complex.</p>
 <p>Try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cat prog.c prog.alt.c</code></pre>
+<pre><code>    cat prog.c prog.alt.c</code></pre>
 <p>or</p>
-<pre class="&lt;!---sh--&gt;"><code>    cmp -b prog.c prog.alt.c</code></pre>
+<pre><code>    cmp -b prog.c prog.alt.c</code></pre>
 <p>to compare the differences (<code>diff</code> is not helpful on a one-liner).</p>
 <!--
 
@@ -354,10 +355,10 @@ the expression within the ternary remains too complex.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton1/prog.orig.c">prog.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton1/scripthd.sh">scripthd.sh</a> - driver program - adds several nice-to-have features</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton1/try.sh">try.sh</a> - how to run</li>
-<li><a href="2018_burton1.tar.bz2">2018_burton1.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2018_burton1.tar.bz2">2018_burton1.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton1/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton1/.entry.json">.entry.json</a> - description of entry in JSON</li>

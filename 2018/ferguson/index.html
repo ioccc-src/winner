@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,13 +142,13 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>The author provided an alternate version which has a simpler keyboard for the
 monkey Eric. See <a href="#alternate-code">Alternate code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./weasel</code></pre>
+<pre><code>    ./weasel</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh
+<pre><code>    ./try.sh
 
     # For those who believe in &#39;&quot;intelligent&quot; design&#39; or want to see how easy it is
     # to prove evolution is a proven fact:
@@ -167,11 +168,11 @@ make use of some of these.</p>
 about this under the <a href="#keyboards">keyboards</a> section, briefly referred to in the
 <a href="#what">what it is</a> section.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>weasel.alt</code> as you would <code>weasel</code> above.</p>
 <h3 id="alternate-try">Alternate try:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh
+<pre><code>    ./try.alt.sh
 
     # For those who believe in &#39;&quot;intelligent&quot; design&#39; or want to see how easy it is
     # to prove evolution is a proven fact:
@@ -186,7 +187,7 @@ first one, <a href="id.alt.sh">id.alt.sh</a> is terminated early in the try scri
 <p>You can reconfigure certain values. These are described by the author in more
 detail in the <a href="#constants">S, M and N Constants</a> section. The script above will
 make use of some of these.</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh</code></pre>
+<pre><code>    ./try.alt.sh</code></pre>
 <p>You can reconfigure certain values. These are described by the author in more
 detail in the <a href="#constants">S, M and N Constants</a> section. The script above will
 make use of some of these.</p>
@@ -203,7 +204,7 @@ from the phylogenetic tree of life.</p>
 <p>If you wish your computer to maintain one branch in the Cretaceous C code era,
 while using more Cenozoic minded code migration, read <a href="rpm.html">rpm.html</a>.</p>
 <p>If you find yourself in an evolutionary dead end, try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    man ./weasel.1</code></pre>
+<pre><code>    man ./weasel.1</code></pre>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <ol start="0" type="1">
 <li>Preface</li>
@@ -228,7 +229,7 @@ didn’t want to reveal as much publicly and many people don’t like to read lo
 texts. To resolve this I think the best way is referencing the judges’ remarks:
 if you want a quick rundown of the entry try what they suggest and view the man
 page (it explains all the options and describes the program briefly):</p>
-<pre class="&lt;!---sh--&gt;"><code>    man ./weasel.man</code></pre>
+<pre><code>    man ./weasel.man</code></pre>
 <p>If that isn’t sufficient <strong>I would recommend reading this section</strong> <em>(and
 possibly the next)</em> where I attempt to give a brief explanation of the sections
 to make reading it easier and faster. In addition I want to point out a few
@@ -461,14 +462,14 @@ it must be a single parameter which means you’ll need to quote the string if i
 has more than one word (that is it contains spaces) or anything else interpreted
 specially by your shell e.g. parentheses. For instance if you just want to find
 <code>METHINKS</code> you could do one of:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./weasel METHINKS
+<pre><code>    ./weasel METHINKS
     ./weasel &quot;METHINKS&quot;
     ./weasel &#39;METHINKS&#39;</code></pre>
 <p>If you wanted <code>YOU ARE A MONKEY</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./weasel &quot;YOU ARE A MONKEY&quot;
+<pre><code>    ./weasel &quot;YOU ARE A MONKEY&quot;
     ./weasel &#39;YOU ARE A MONKEY&#39;</code></pre>
 <p>If you do one of:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./weasel &quot;METHINKS IT IS A&quot; &quot;MONKEY&quot;
+<pre><code>    ./weasel &quot;METHINKS IT IS A&quot; &quot;MONKEY&quot;
     ./weasel METHINKS IT IS A MONKEY</code></pre>
 <p>It will search for <code>MONKEY</code> in both cases; in other words it’s the last one.
 If the string is too long given the value of <code>S</code> (see<br />
@@ -476,11 +477,11 @@ If the string is too long given the value of <code>S</code> (see<br />
 <p>If you actually do want to search for a string starting with a <code>-</code> you must
 disable further parsing of options by using the <code>-</code> option itself; for
 example if you were to do any of:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./weasel -q- -- -test
+<pre><code>    ./weasel -q- -- -test
     ./weasel -q- -test
     ./weasel -q -- -test</code></pre>
 <p>The target string will be: <code>-TEST</code>. This means though that here:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./weasel -q -- -test -r5</code></pre>
+<pre><code>    ./weasel -q -- -test -r5</code></pre>
 <p>The string to be searched would actually be <code>-r5</code> and the mutation rate
 will remain the default because after the <code>-</code> option is seen it will no
 longer parse additional options: only target strings if anything left on the
@@ -490,7 +491,7 @@ are equivalent:</p>
 <pre><code>    -q-\
     -q --</code></pre>
 <p>As for the caveat I referenced what does the following do?</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./weasel -qr 5</code></pre>
+<pre><code>    ./weasel -qr 5</code></pre>
 <p>In fact it will set quiet output and set the target string to be ‘5’. So the
 mutation rate will be out of range, thus enabling that Easter egg, but it will
 likely come to an answer fairly quickly because it’s just a single character. A
@@ -498,7 +499,7 @@ note on the parsing of the <code>-</code> option; if the program is currently pa
 <code>argv[N]</code>, for example, and it encounters a <code>--</code> then depending on where
 the other options are in the command line it might still parse the options. Thus
 you have:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ ./weasel -qr-r5
+<pre><code>    $ ./weasel -qr-r5
     quiet output
     mutation rate out of range
     target &#39;METHINKS IT IS LIKE A WEASEL&#39;
@@ -506,9 +507,9 @@ you have:</p>
     Generation  440 Offspring 20: METHINKS IT IS LIKE A WEASEL</code></pre>
 <p>Similarly this would set quiet output, then an invalid mutation rate and then a
 mutation rate of 5:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./weasel --qrr5</code></pre>
+<pre><code>    ./weasel --qrr5</code></pre>
 <p>If you were instead to do one of (for example):</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./weasel -q -- -r
+<pre><code>    ./weasel -q -- -r
     ./weasel -q -q- -r</code></pre>
 <p>Then it <em>would</em> set quiet output then see the <code>--</code> (the <code>-</code> option
 itself) and then the target string would <em>literally</em> be set to <code>-r</code> because
@@ -536,7 +537,7 @@ monkey mode be disabled? If yes how do we know if monkey mode was specially
 requested? There are at least two ways to go about it: I took the monkey safe
 (‘fool safe’) method; *if you explicitly request monkey mode you cannot disable
 it in the same invocation of <code>weasel</code>!</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ ./weasel -qr101r5r101r1r test
+<pre><code>    $ ./weasel -qr101r5r101r1r test
     quiet output
     mutation rate out of range
     mutation rate out of range
@@ -575,7 +576,7 @@ matter</em> because of truncation but I do in any case specifically check for <c
 <p>Given that it was a short string it did find the answer relatively quickly, even
 in monkey mode.</p>
 <p>Another example:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ ./weasel -q -r101 test -r5
+<pre><code>    $ ./weasel -q -r101 test -r5
     quiet output
     mutation rate out of range
     target &#39;test&#39;
@@ -586,7 +587,7 @@ in monkey mode.</p>
 the target string and then set a valid mutation rate. This disabled monkey mode
 which means that it’ll use the genetic algorithm.</p>
 <p>One more example of monkey mode:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ ./weasel -q -mr101 test -r5
+<pre><code>    $ ./weasel -q -mr101 test -r5
     quiet output
     mutation rate out of range
     target &#39;test&#39;
@@ -676,9 +677,9 @@ file and pass each string to the program itself</em>. I’ve included a script
 <code>test.sh</code> and a file of sample input <code>test-strings.txt</code> that you can play
 with.</p>
 <p>Try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make test</code></pre>
+<pre><code>    make test</code></pre>
 <p>This will essentially make sure the program is compiled and then do:</p>
-<pre class="&lt;!---sh--&gt;"><code>    chmod +x test.sh
+<pre><code>    chmod +x test.sh
     ./test.sh</code></pre>
 <p>The script will first try compiling the program (if necessary) and if it fails
 for any reason it will exit; else it will read each line in the file
@@ -689,7 +690,7 @@ string it’ll sleep approximately 2 seconds and then read the next string
 processed).</p>
 <p>You can pass additional options directly to the script but remember that it
 stops when there are no more strings in the file - so if you try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./test.sh -q test</code></pre>
+<pre><code>    ./test.sh -q test</code></pre>
 <p>The final string <code>test</code> won’t be searched for; it will however run the program
 in all invocations with quiet output enabled. The following are some notes about
 how the shell and the program interact with each other:</p>
@@ -713,7 +714,7 @@ and the fact the program does not accept spaces other than a literal space<br />
 program prints an error message and then exits (returning 1). But since the
 keyboard doesn’t have <code>'\n'</code> if you were to type a <code>'</code> and send a
 <code>'\n'</code> before the closing <code>'</code> you might see something like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ ./weasel &#39;!!
+<pre><code>    $ ./weasel &#39;!!
     &gt; &#39;
 
     &#39;
@@ -737,7 +738,7 @@ rather confusing and hard to read.</p>
 as well as some C keywords.</p></li>
 <li><p>The way <code>main()</code> is declared is:</p></li>
 </ol>
-<pre class="&lt;!---c--&gt;"><code>    /* Special C main() handler (encapsulation): */
+<pre><code>    /* Special C main() handler (encapsulation): */
     #define r(main) main
     r(k main(k a, E **V)) {</code></pre>
 <p>It appears to be recursively defined but is it? And is it truly
@@ -813,7 +814,7 @@ won’t spoil; yes this ironically and amusingly means I’ve left a rotten egg
 somewhere!).</p>
 <p>The Makefile simplifies how to reconfigure this value with the variable
 <code>MAX_SIZE</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber MAX_SIZE=55 all</code></pre>
+<pre><code>    make clobber MAX_SIZE=55 all</code></pre>
 <p>The next macro that can be reconfigured, <code>M</code> (or <code>MAX_ATTEMPTS</code> in the
 Makefile), is the maximum attempts before giving up. This was added as another
 feature in 2024 but it was not made an alt version because there already is an
@@ -821,7 +822,7 @@ alt version. This macro allows for seeing what happens when reaching the maximum
 number attempts without waiting for a very long time.</p>
 <p>The Makefile simplifies how to reconfigure this value with the variable
 <code>MAX_ATTEMPTS</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber MAX_ATTEMPTS=100 all</code></pre>
+<pre><code>    make clobber MAX_ATTEMPTS=100 all</code></pre>
 <p>The final macro, <code>N</code> (or <code>OFFSPRING</code> in the Makefile), is the number of offspring
 per generation.</p>
 <p>Anything less than 4 will be set to 3 (that’s not a typo!) and this is part of
@@ -831,23 +832,23 @@ both individually and together the program will use varying amounts of memory
 and the larger the values the more memory it’ll require.</p>
 <p>The Makefile simplifies how to reconfigure this value with the variable
 <code>OFFSPRING</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber OFFSPRING=55 all</code></pre>
+<pre><code>    make clobber OFFSPRING=55 all</code></pre>
 <h3 id="compilation"><a name="compiling">Compilation</a></h3>
 <p>Skip to <a href="#portability">Portability</a>.</p>
 <p>The following options <strong>must always be passed to the compiler:</strong></p>
-<pre class="&lt;!---sh--&gt;"><code>    -DQ=&#39;typedef&#39; -D&#39;g(o)&#39;=&#39;goto o;&#39; -D&#39;w(x)&#39;=&quot;x:&quot; -D&#39;H(main)&#39;=&#39;r(main)&#39;</code></pre>
+<pre><code>    -DQ=&#39;typedef&#39; -D&#39;g(o)&#39;=&#39;goto o;&#39; -D&#39;w(x)&#39;=&quot;x:&quot; -D&#39;H(main)&#39;=&#39;r(main)&#39;</code></pre>
 <p>which running <code>make</code> will always do.</p>
 <p>If you want to increase the number of offspring to <code>50</code> (<code>N</code>) and the size of the
 chromosome to <code>75</code> (<code>S</code>) you would do:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber OFFSPRING=50 MAX_SIZE=75 everything</code></pre>
+<pre><code>    make clobber OFFSPRING=50 MAX_SIZE=75 everything</code></pre>
 <p>If you wanted to change <code>N</code> to <code>3</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber OFFSPRING=3 everything</code></pre>
+<pre><code>    make clobber OFFSPRING=3 everything</code></pre>
 <p>Remember that it cannot be less than <code>3</code>; <em>more correctly if it’s less than
 4 it’s redefined to 3</em> so you could have passed in <code>-DN=2</code> (or <code>MAX_SIZE=2</code>) and have the same
 result. Remember too that <code>S</code> (<code>MAX_SIZE</code>) cannot be less than <code>38</code>. Both <code>S</code> and
 <code>N</code> are capped at <code>SIZE_MAX - 1</code> or whatever <code>M</code> (<code>MAX_ATTEMPTS</code>) is set to.</p>
 <p>If you wanted to change the maximum number attempts to 100 you could do:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber MAX_ATTEMPTS=100 everything</code></pre>
+<pre><code>    make clobber MAX_ATTEMPTS=100 everything</code></pre>
 <h3 id="portability"><a name="portability">Portability</a></h3>
 <p>Skip to <a href="#bugs">An aside on bugs</a>.</p>
 <p>This entry requires at least C99 even if you translate digraphs. The program
@@ -857,7 +858,7 @@ smaller and this I believe includes <code>SIZE_MAX</code>). I don’t think Wind
 ports would have many issues (if any) either but I have no way to test this.
 Originally I tested it on the below systems.</p>
 <h4 id="fedora-26">Fedora 26:</h4>
-<pre class="&lt;!---sh--&gt;"><code>    $ clang --version|head -n1
+<pre><code>    $ clang --version|head -n1
     clang version 4.0.1 (tags/RELEASE_401/final)
     $ gcc --version|head -n1
     gcc (GCC) 7.3.1 20180130 (Red Hat 7.3.1-2)
@@ -866,7 +867,7 @@ Originally I tested it on the below systems.</p>
     $ lscpu |grep Endian
     Byte Order:          Little Endian</code></pre>
 <h4 id="centos-linux-release-7.4.1708-core">CentOS Linux release 7.4.1708 (Core)</h4>
-<pre class="&lt;!---sh--&gt;"><code>    $ clang --version|head -n1
+<pre><code>    $ clang --version|head -n1
     clang version 3.4.2 (tags/RELEASE_34/dot2-final)
     $ gcc --version|head -n1
     gcc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-16)
@@ -875,7 +876,7 @@ Originally I tested it on the below systems.</p>
     $ lscpu |grep Endian
     Byte Order:            Little Endian</code></pre>
 <h4 id="fedora-27">Fedora 27:</h4>
-<pre class="&lt;!---sh--&gt;"><code>    $ clang --version|head -n1
+<pre><code>    $ clang --version|head -n1
     clang version 5.0.1 (tags/RELEASE_501/final)
     $ gcc --version|head -n1
     gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
@@ -886,7 +887,7 @@ Originally I tested it on the below systems.</p>
 <h4 id="macos">macOS:</h4>
 <p>System Version: macOS 10.13.4 (17E199)
 Kernel Version: Darwin 17.5.0</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ gcc -v
+<pre><code>    $ gcc -v
     Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
     Apple LLVM version 9.1.0 (clang-902.0.39.1)
     Target: x86_64-apple-darwin17.5.0
@@ -1012,7 +1013,7 @@ When we found others were actually trying to programs with A, we quickly added
 additional cryptic features and evolved into B, BCPL, and finally C. We stopped
 when we got a clean compile on the following syntax:</p>
 </blockquote>
-<pre class="&lt;!---c--&gt;"><code>    for(;P(&quot;\n&quot;),R=;P(&quot;|&quot;))for(e=C;e=P(&quot;_&quot;+(*u++/
+<pre><code>    for(;P(&quot;\n&quot;),R=;P(&quot;|&quot;))for(e=C;e=P(&quot;_&quot;+(*u++/
     8)%2))P(&quot;|&quot;+(*u/4)%2);</code></pre>
 <blockquote>
 <p>“To think that modern programmers would try to use a language that allowed
@@ -1054,7 +1055,7 @@ person to talk about it with is more than welcome!</em>). Ken suggested that the
 is a lack of common sense but since he was part of its creation I don’t think
 it’s a bad thing; <strong>on the contrary it makes all of us C programmers even more
 talented! :)</strong> I do wonder if he tested that bit of C code though:</p>
-<pre class="&lt;!---c--&gt;"><code>    for(;P(&quot;\n&quot;),R=;P(&quot;|&quot;))for(e=C;e=P(&quot;_&quot;+(*u++/
+<pre><code>    for(;P(&quot;\n&quot;),R=;P(&quot;|&quot;))for(e=C;e=P(&quot;_&quot;+(*u++/
     8)%2))P(&quot;|&quot;+(*u/4)%2);</code></pre>
 <p>How is <code>R=;</code> valid? Since I don’t have the context maybe there is something
 I’m missing but either way it’s a funny piece. It could also be for irony itself
@@ -1154,10 +1155,10 @@ email but I’m more likely to respond to mastodon messages.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/ferguson/try.sh">try.sh</a> - how to run</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/ferguson/weasel.1">weasel.1</a> - weasel program man page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/ferguson/weasel.spec">weasel.spec</a> - RPM spec file</li>
-<li><a href="2018_ferguson.tar.bz2">2018_ferguson.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2018_ferguson.tar.bz2">2018_ferguson.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/ferguson/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/ferguson/.entry.json">.entry.json</a> - description of entry in JSON</li>

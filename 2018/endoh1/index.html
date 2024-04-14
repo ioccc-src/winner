@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,12 +142,12 @@ Location: <a href="../../location.html#JP">JP</a> - <em>Japan</em></li>
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; textfile &gt; output.gif</code></pre>
+<pre><code>    ./prog &lt; textfile &gt; output.gif</code></pre>
 <h2 id="try">Try:</h2>
 <p>To see the input files and feed them to the program, redirecting to GIF files:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>To get the best experience, use a GIF viewer that can handle animated GIFs.
 With macOS you can use Safari using <code>open -a Safari smily.gif</code>.</p>
@@ -158,16 +159,16 @@ how does it know which characters are closed?</p>
 least 2MiB of memory to run in.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>This program generates an animated GIF from a plain text. Run:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -o prog prog.c
+<pre><code>    cc -o prog prog.c
     ./prog &lt; invisible.txt &gt; invisible.gif</code></pre>
 <p>Open <code>invisible.gif</code> with a GIF viewer that can show animated GIFs and then wait
 a minute. You will see a hidden message. Can you tell the difference between
 letters that leave the mark and ones that do not?</p>
 <p>Other examples:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; golem.txt &gt; golem.gif
+<pre><code>    ./prog &lt; golem.txt &gt; golem.gif
     ./prog &lt; smily.txt &gt; smily.gif</code></pre>
 <p>The program itself has a hidden message.</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; prog.c &gt; prog.gif</code></pre>
+<pre><code>    ./prog &lt; prog.c &gt; prog.gif</code></pre>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
@@ -198,10 +199,10 @@ letters that leave the mark and ones that do not?</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/endoh1/invisible.txt">invisible.txt</a> - input data</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/endoh1/smily.txt">smily.txt</a> - input data</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/endoh1/try.sh">try.sh</a> - how to run</li>
-<li><a href="2018_endoh1.tar.bz2">2018_endoh1.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2018_endoh1.tar.bz2">2018_endoh1.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/endoh1/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/endoh1/.entry.json">.entry.json</a> - description of entry in JSON</li>

@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,20 +142,20 @@ Location: <a href="../../location.html#DE">DE</a> - <em>Federal Republic of Germ
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <h2 id="to-use">To use:</h2>
 <p><strong>WARNING: DO NOT RUN this program without reading this text down to the end!</strong>
 It may render your system unusable for a limited amount of time
 or force you to reboot using the Big Red Button! This is <strong>NOT</strong> a joke.
 You have been warned.</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./schweikh3</code></pre>
+<pre><code>    ./schweikh3</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The source fails to compile on compilers that recognize the inline
 keyword by default. For gcc, you may need to use <code>-ansi</code>.</p>
 <p>See the file <a href="schweikh3.info">schweikh3.info</a> for example output from various
 systems.</p>
 <p>But still it is a useful utility. To use try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./schweikh3</code></pre>
+<pre><code>    ./schweikh3</code></pre>
 <p>and thanks for the virtual memories! :-)</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="why-i-think-my-entry-is-obfuscated">Why I think my entry is obfuscated</h3>
@@ -171,7 +172,7 @@ COBOL, F77, awk etc.</p>
 <p>You have to select maximum ANSI C conformance of your
 compiler. The source fails to compile under a C++ compiler due to
 the `new’ identifier which is a C++ reserved word:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ g++ schweikh3.c
+<pre><code>    $ g++ schweikh3.c
     schweikh3.c:9: parse error before `new&#39;
     schweikh3.c:16: parse error before `new&#39;
     schweikh3.c:46: parse error before `void&#39;
@@ -181,7 +182,7 @@ the `new’ identifier which is a C++ reserved word:</p>
     schweikh3.c:91: confused by earlier errors, bailing out</code></pre>
 <p>The source fails to compile on compilers that recognize the inline
 keyword by default, e.g. gcc:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ gcc schweikh3.c
+<pre><code>    $ gcc schweikh3.c
     schweikh3.c:46: parse error before `void&#39;
     schweikh3.c: In function `main&#39;:
     schweikh3.c:91: parse error before `inline&#39;
@@ -275,10 +276,10 @@ minute or so.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/schweikh3/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/schweikh3/schweikh3.orig.c">schweikh3.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/schweikh3/schweikh3.info">schweikh3.info</a> - example output from various systems</li>
-<li><a href="1996_schweikh3.tar.bz2">1996_schweikh3.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1996_schweikh3.tar.bz2">1996_schweikh3.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/schweikh3/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/schweikh3/.entry.json">.entry.json</a> - description of entry in JSON</li>

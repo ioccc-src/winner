@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ Location: <a href="../../location.html#FI">FI</a> - <em>Republic of Finland </em
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>There is an alt version based on the author’s remarks. The <a href="try.sh">try.sh</a>
 script will compile and use both but if you wish to see the alternate version
 specifically see the <a href="#alternate-code">Alternate code</a> section below.</p>
@@ -150,18 +151,18 @@ specifically see the <a href="#alternate-code">Alternate code</a> section below.
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2006_sykes1">2006 sykes1 bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./sykes1</code></pre>
+<pre><code>    ./sykes1</code></pre>
 <p>Next point your browser to the file: <code>sykes1.html</code>.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./sykes1 10</code></pre>
+<pre><code>    ./sykes1 10</code></pre>
 <p>Refresh your browser.</p>
 <p>You might also try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>This will run both the original entry and the alt code to show some differences.</p>
 <h3 id="also-try">Also try:</h3>
 <p>If you have all day :-) and wish to find out how fast your machine can solve the
 maximum:</p>
-<pre class="&lt;!---sh--&gt;"><code>    time ./sykes1 19186</code></pre>
+<pre><code>    time ./sykes1 19186</code></pre>
 <p>This was done on a Rocky Linux 9.2 server with <code>Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz</code> with 16 cores (via HyperThreading):</p>
 <pre><code>    real        6m35.524s
     user        6m35.159s
@@ -173,17 +174,17 @@ maximum:</p>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This alternate code is based on the author’s remarks.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>sykes1.alt</code> as you would <code>sykes1</code> above.</p>
 <h3 id="alternate-try">Alternate try:</h3>
 <p>The <a href="try.sh">try.sh</a> script will use both versions to show some differences. You
 can do so like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Read the <a href="sykes1.html">sykes1.html</a> page source.
 Now then read the C source. Confused? :-) If it’s not clear try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    diff -s sykes1.c sykes1.html</code></pre>
+<pre><code>    diff -s sykes1.c sykes1.html</code></pre>
 <p>For extra credit, understand what happens when you give this entry
 an negative number argument, and why.</p>
 <p>See the author’s remarks for how to make your own shapes as well.</p>
@@ -200,7 +201,7 @@ together. I have not known anyone to solve it in this way - you would
 need to be very lucky indeed to stumble across a solution.</p>
 <h3 id="instructions">Instructions</h3>
 <p>Compile the program, then test that it works:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./sykes1</code></pre>
+<pre><code>    ./sykes1</code></pre>
 <p>Shortly you should see the first solution pop out on your screen. It
 shows you how to build the cube piece by piece, rendered in glorious
 3D ASCII.</p>
@@ -210,18 +211,18 @@ open the file <a href="sykes1.html">sykes1.html</a>. This html file is just a co
 the browser display for you a nice animated GIF, showing you how to build the
 cube. Rendered in glorious 3D color.</p>
 <p>Want to see another solution? Try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./sykes1 some_number</code></pre>
+<pre><code>    ./sykes1 some_number</code></pre>
 <p>The program will discard solutions up to the number, and output numbered
 solution. Refresh your browser window to see the new solution.</p>
 <p>Try some more - there are exactly <code>19186</code> solutions to choose from.</p>
 <p>If you have a fast machine you might try the last solution:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./sykes1 19186</code></pre>
+<pre><code>    ./sykes1 19186</code></pre>
 <p>On my machine this takes about half an hour to run.</p>
 <h3 id="implementation">Implementation</h3>
 <p>The implementation is an optimized recursive algorithm that tries to fit
 the pieces into the cube one by one. The cube pieces are defined near
 the start of the program:</p>
-<pre class="&lt;!---c--&gt;"><code>    int s[ ] = { 186, 94, 1426, 3098
+<pre><code>    int s[ ] = { 186, 94, 1426, 3098
             ,1047 , 122 , 1082 , 3083 , 1039
             , 569 , 527 , 1054 , 531  }  ;</code></pre>
 <p>Each piece is a bitmap, and represents a 3x3x3 cube.</p>
@@ -256,7 +257,7 @@ shape:</p>
 the pieces, and provided that a solution is possible, it will be found.</p>
 <p>For example, if you modify line 13 of the source like this, the program
 will solve for a different piece set:</p>
-<pre class="&lt;!---c--&gt;"><code>    int s[ ] = { 187, 94, 402, 3098</code></pre>
+<pre><code>    int s[ ] = { 187, 94, 402, 3098</code></pre>
 <p>And of course you can make your own.</p>
 <p>After the pieces are defined, the first thing the program does it to
 fit them into a 4x4 cube. It collects every possible placing of each
@@ -334,10 +335,10 @@ advantage - at least I don’t violate any of those old Unisys patents!</p>
 <li><a href="bedlam-cubes.pdf">bedlam-cubes.pdf</a> - instructions on how to make your own cube</li>
 <li><a href="solving-bedlam-cube.mp4">solving-bedlam-cube.mp4</a> - spoiler movie showing the solution</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/sykes1/try.sh">try.sh</a> - how to run</li>
-<li><a href="2006_sykes1.tar.bz2">2006_sykes1.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2006_sykes1.tar.bz2">2006_sykes1.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/sykes1/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/sykes1/.entry.json">.entry.json</a> - description of entry in JSON</li>

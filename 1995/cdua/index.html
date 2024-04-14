@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -144,7 +145,7 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <p>We recommend that you try the alternate version first so you can see what this
 entry looked like back in 1995 (with a configurable speed). See the <a href="#original-code">original
 code</a> section below for the original entry.</p>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <p>The alternate version uses <code>usleep(3)</code> with <code>SLEEP</code> (defined in the Makefile,
 default <code>3000</code>) microseconds to make it easier to see the maze being solved in
 real time. You can redefine <code>SLEEP</code> at compile time to reconfigure it in case
@@ -155,13 +156,13 @@ making it 100000 (which is actually fun :-) ).</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1995_cdua">1995 cdua bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./cdua.alt</code></pre>
+<pre><code>    ./cdua.alt</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make SLEEP=1500 clobber alt
+<pre><code>    make SLEEP=1500 clobber alt
 
     ./cdua.alt # press enter and watch it go much faster!</code></pre>
 <p>You might also like to try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make SLEEP=65000 clobber alt
+<pre><code>    make SLEEP=65000 clobber alt
 
     ./cdua.alt # press enter and watch it go much slower!</code></pre>
 <p>Do you see anything strange in this version when <code>SLEEP</code> is a high value like
@@ -174,9 +175,9 @@ actually see it being solved in real time rather than have it go by in a flash.<
 <p>If you wish to use the original version, for instance if you wish to see how
 fast your computer is :-) or use both to see the difference, you can do so.</p>
 <h3 id="original-build">Original build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <h3 id="original-use">Original use:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./cdua</code></pre>
+<pre><code>    ./cdua</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This could be used as the basis of an a-maze-ing screen exerciser.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
@@ -211,10 +212,10 @@ statement to solve the maze.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/cdua/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/cdua/cdua.alt.c">cdua.alt.c</a> - alternative source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/cdua/cdua.orig.c">cdua.orig.c</a> - original source</li>
-<li><a href="1995_cdua.tar.bz2">1995_cdua.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1995_cdua.tar.bz2">1995_cdua.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/cdua/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/cdua/.entry.json">.entry.json</a> - description of entry in JSON</li>

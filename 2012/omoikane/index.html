@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,13 +142,13 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>There is an alternate version that will read from the compiled file itself, in
 case you don’t have a <code>/dev/urandom</code> file. There is also a version that should
 theoretically work with Windows which distinguishes binary and text. See
 <a href="#alternate-code">alternate code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./nyaruko [seed.txt] &lt; original.bin &gt; output.c
+<pre><code>    ./nyaruko [seed.txt] &lt; original.bin &gt; output.c
     bash output.c &gt; key.c
     perl output.c &gt; data.c
 
@@ -159,7 +160,7 @@ theoretically work with Windows which distinguishes binary and text. See
 file or use the <a href="#alternate-code">alternate version</a> which reads in the compiled
 binary itself.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>The script <a href="try.sh">try.sh</a> will check if you have perl before trying to use the
 perl parts of the script.</p>
 <h2 id="alternate-code">Alternate code:</h2>
@@ -171,14 +172,14 @@ is like the first except it also should theoretically work with Windows, setting
 binary mode on <code>stdin</code> and <code>stdout</code>.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <p>For the first version:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <p>For the second version:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make alt2</code></pre>
+<pre><code>    make alt2</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>nyaruko.alt</code> or <code>nyaruko.alt2</code> as you would <code>nyaruko</code> above.</p>
 <h3 id="alternate-try">Alternate try:</h3>
 <p>For the first alternate version:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh</code></pre>
+<pre><code>    ./try.alt.sh</code></pre>
 <p>We have no way to test the second version, sorry (tm Canada :-) )!</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The judges have nothing to add that has not already been written about in the
@@ -187,24 +188,24 @@ binary mode on <code>stdin</code> and <code>stdout</code>.</p>
 <h3 id="usage">Usage</h3>
 <p><code>Nyaruko</code> is a binary to text filter. Given some input on <code>stdin</code>,
 <code>Nyaruko</code> will produce C code that reproduces this input on <code>stdout</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./nyaruko &lt; original.bin &gt; output.c
+<pre><code>    ./nyaruko &lt; original.bin &gt; output.c
     gcc output.c -o output
     ./output &gt; regenerated.bin</code></pre>
 <p>Output is encrypted, but both key and data are included in the output.
 To separate the key from the data, run these commands:</p>
-<pre class="&lt;!---sh--&gt;"><code>    bash output.c &gt; key.c
+<pre><code>    bash output.c &gt; key.c
     perl output.c &gt; data.c</code></pre>
 <p>The key-less <code>data.c</code> still compiles, but produces a different message
 on <code>stdout</code> instead of the original input. This message is a hint to
 why the code is formatted the way it is.</p>
 <p>To combine the key and data, concatenate them together in either
 order:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cat key.c data.c &gt; output.c
+<pre><code>    cat key.c data.c &gt; output.c
     cat data.c key.c &gt; output.c</code></pre>
 <p>By default, <code>Nyaruko</code> generates a unique random key for every message,
 using <code>/dev/urandom</code> as the seed. If given an extra command line
 argument, <code>Nyaruko</code> will seed using that file instead of <code>/dev/urandom</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./nyaruko seed.txt &lt; input.bin &gt; output.c</code></pre>
+<pre><code>    ./nyaruko seed.txt &lt; input.bin &gt; output.c</code></pre>
 <p>This makes the output key deterministic, allowing the same key to be shared
 across different files. On operating systems that do not have <code>/dev/urandom</code>,
 users should always specify this extra seed argument to avoid indeterministic
@@ -297,10 +298,10 @@ JavaScript.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/omoikane/try.alt.sh">try.alt.sh</a> - how to run alternative code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/omoikane/try.sh">try.sh</a> - how to run</li>
 <li><a href="spoiler.html">spoiler.html</a> - SPOILER WARNING</li>
-<li><a href="2012_omoikane.tar.bz2">2012_omoikane.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2012_omoikane.tar.bz2">2012_omoikane.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/omoikane/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/omoikane/.entry.json">.entry.json</a> - description of entry in JSON</li>

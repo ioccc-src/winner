@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>There is an alternate version that allows one to control the number of numbers
 to print on a line. See <a href="#alternate-code">alternate code</a> below.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
@@ -149,27 +150,27 @@ to print on a line. See <a href="#alternate-code">alternate code</a> below.</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2004_jdalbec">2004 jdalbec bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./jdalbec number ...</code></pre>
+<pre><code>    ./jdalbec number ...</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This version lets you control how many numbers to show on a line before adding a
 newline as it can be harder to see when there are a lot of numbers. For lines
 that don’t end up having too many line breaks it also makes it easier to see
 which line it is on.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <p>The macro <code>Ag</code> (<a href="https://en.wikipedia.org/wiki/Silver">silver</a>) controls how
 many number of lines to print on a line. Set at default to 11 protons, salt, if
 you wish to make it silver, 47 (a prime) protons, do:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber Ag=47 alt</code></pre>
+<pre><code>    make clobber Ag=47 alt</code></pre>
 <p>though it might be odd to have 47 numbers on a line as it would defeat the
 purpose. :-) Or if you prefer some prime, golden irony:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber Ag=79 alt</code></pre>
+<pre><code>    make clobber Ag=79 alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>jdalbec.alt</code> as you would <code>jdalbec</code> above.</p>
 <h3 id="alternate-try">Alternate try:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh</code></pre>
+<pre><code>    ./try.alt.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>We still aren’t sure whether or not this is a useful program, but
 it’s the first atomic fission we’ve seen in the IOCCC.</p>
@@ -325,10 +326,10 @@ type, a structure, a structure member, a macro parameter, and a variable.).</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/jdalbec/jdalbec.orig.c">jdalbec.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/jdalbec/try.alt.sh">try.alt.sh</a> - how to run alternative code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/jdalbec/try.sh">try.sh</a> - how to run</li>
-<li><a href="2004_jdalbec.tar.bz2">2004_jdalbec.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2004_jdalbec.tar.bz2">2004_jdalbec.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/jdalbec/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/jdalbec/.entry.json">.entry.json</a> - description of entry in JSON</li>

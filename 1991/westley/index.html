@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <p>There is an <a href="#alternate-code">alternate version</a> that is supposed to win all the
 time.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
@@ -152,7 +153,7 @@ time.</p>
 <p>NOTE: we have provided a script to perform the below procedure which we include
 for the interested. See the <a href="#try">try</a> section if you just want to play.</p>
 <p>Make and then run as follows:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./westley [move_location] | tee nextmove.c</code></pre>
+<pre><code>    ./westley [move_location] | tee nextmove.c</code></pre>
 <p>where the <code>move_location</code> is a digit from 1 to 9 that represents
 a move on a tic-tac-toe board:</p>
 <pre><code>    1 2 3
@@ -160,25 +161,25 @@ a move on a tic-tac-toe board:</p>
     7 8 9</code></pre>
 <p>If you omit <code>move_location</code>, then the computer moves first. For your
 next move, recompile <code>nextmove.c</code> and play it again:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make nextmove
+<pre><code>    make nextmove
     ./nextmove move_location | tee nextmove.c</code></pre>
 <h2 id="try">Try:</h2>
 <p>We have provided the shell script, <a href="ttt.sh">ttt</a>, to make it easier to play the
 game:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make ttt
+<pre><code>    make ttt
     ./ttt [first_move]  # &lt;- omit first arg to have it move first
     ./ttt next_move</code></pre>
 <p>The shell script determines when the game is over, and automatically replaces
 <code>merlyn.c</code> (copied from <a href="westley.c">westley.c</a> with an improved version after a
 loss). The <a href="ttt.sh">ttt</a> script has two other modes:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./ttt quitgame      # cancel any game in progress, revert to merlyn.c
+<pre><code>    ./ttt quitgame      # cancel any game in progress, revert to merlyn.c
     ./ttt clobber       # remove all game files, revert to original source</code></pre>
 <p>For example here is a potentially losing game:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./ttt 1
+<pre><code>    ./ttt 1
     ./ttt 4
     ./ttt 6</code></pre>
 <p>The final might look like:</p>
-<pre class="&lt;!---c--&gt;"><code>                    a(X){/*/X=-         a(X){/*/X=-
+<pre><code>                    a(X){/*/X=-         a(X){/*/X=-
             X   -1;F;X=-                -1;F;X=-
                     -1;F;}/*/           -1;F;}/*/
     char z[][100]={&quot;char z[][100]={&quot;,&quot;a(X){/*/X=-&quot;,&quot;-1;F;X=-&quot;,&quot;-1;F;}/*/&quot;,&quot;1999999999  :-) &quot;,
@@ -212,7 +213,7 @@ loss). The <a href="ttt.sh">ttt</a> script has two other modes:</p>
 <p>This version is based on the author’s remarks. It is not supposed to lose but it
 can lose if you cheat. That’s supposed to happen. Can you win any other time?</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Rather than use <code>ttt</code> try the script <code>ttt.alt</code> instead.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -259,7 +260,7 @@ longer loses games.</p>
 function as <code>a()</code>, <code>b()</code>, or <code>c()</code>. After each function is called, the global
 variables <code>X</code> and <code>O</code> contain bitmasks of where all the <code>X</code>s and <code>O</code>s are placed.
 The statement:</p>
-<pre class="&lt;!---c--&gt;"><code>    X=-   &lt;char&gt;   -1;</code></pre>
+<pre><code>    X=-   &lt;char&gt;   -1;</code></pre>
 <p>evaluates to <code>1</code>, <code>-1</code>, or <code>-2</code> when <code>X</code> is <code>1</code> and <code>&lt;char&gt;</code> is one of <code>"X"</code>,
 <code>"0"</code>, or <code>" "</code>. The function <code>S(&amp;X)</code> sets the appropriate bits in (global
 vars) <code>X</code> and <code>O</code> and resets the value of <code>&amp;X</code> to <code>1</code>. This is how the current
@@ -372,10 +373,10 @@ found. A template is scanned from bottom to top, right to left
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/westley/westley.orig.c">westley.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/westley/ttt.alt.sh">ttt.alt.sh</a> - how to run the alternative code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/westley/ttt.sh">ttt.sh</a> - play tic-tac-toe</li>
-<li><a href="1991_westley.tar.bz2">1991_westley.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1991_westley.tar.bz2">1991_westley.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/westley/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/westley/.entry.json">.entry.json</a> - description of entry in JSON</li>

@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,14 +142,14 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>There is an alternate version which should work for Windows which distinguishes
 binary mode from text mode. See <a href="#alternate-code">alternate code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./zucker &gt; image.ppm</code></pre>
+<pre><code>    ./zucker &gt; image.ppm</code></pre>
 <p>Now open <code>image.ppm</code> with your image viewer of choice.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>After running <code>try.sh</code>, open the PPM images <code>ioccc.ppm</code>, <code>hello.ppm</code> and
 <code>image2.ppm</code> with your image viewer of choice.</p>
 <h2 id="alternate-code">Alternate code:</h2>
@@ -156,7 +157,7 @@ binary mode from text mode. See <a href="#alternate-code">alternate code</a> bel
 binary mode on <code>stdout</code> which the author noted would be necessary for systems
 that distinguish binary and text.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>zucker.alt</code> as you would <code>zucker</code> above.</p>
 <h3 id="alternate-try">Alternate try:</h3>
@@ -170,7 +171,7 @@ The vector font is proportional.</p>
 <h4 id="what-it-does">What it does:</h4>
 <p>This program makes pretty pictures. To see the default output, try
 running</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./zucker &gt; ioccc2011.ppm</code></pre>
+<pre><code>    ./zucker &gt; ioccc2011.ppm</code></pre>
 <p>On the author’s 2.5 GHz MacBook Pro, this command takes approximately 1 minute
 and 18 seconds to run – your runtime may vary. You will need an image viewer
 capable of displaying <a href="https://en.wikipedia.org/wiki/Netpbm">Netpbm images</a> in
@@ -179,20 +180,20 @@ well; otherwise <a href="http://www.imagemagick.org/">ImageMagick</a> and/or
 <a href="http://www.graphicsmagick.org/">GraphicsMagick</a> are both capable of displaying
 Netpbm files, and are available on multiple platforms.</p>
 <p>With macOS you can type at the command line:</p>
-<pre class="&lt;!---sh--&gt;"><code>    open ioccc2021.ppm</code></pre>
+<pre><code>    open ioccc2021.ppm</code></pre>
 <p>and it will open image in the default application Preview.app.</p>
 <p>To use ImageMagick you might do something like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    convert ioccc2011.ppm ioccc2011.png</code></pre>
+<pre><code>    convert ioccc2011.ppm ioccc2011.png</code></pre>
 <p>and then open <code>ioccc2011.png</code> in your viewer of choice.</p>
 <p>To use GraphicsMagick you might do something like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    gm convert ioccc2011.ppm ioccc2011.png</code></pre>
+<pre><code>    gm convert ioccc2011.ppm ioccc2011.png</code></pre>
 <p>and then open <code>ioccc2011.png</code> in your viewer of choice.</p>
 <p>Aside from the default image, you may create your own by running the
 program as follows:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./zucker &quot;your text&quot; &gt; image.ppm</code></pre>
+<pre><code>    ./zucker &quot;your text&quot; &gt; image.ppm</code></pre>
 <p>To mitigate long runtime, the program can be invoked in a “preview”
 mode by appending <code>-preview</code> to the command line arguments, like so:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./zucker faster\! -preview &gt; image.ppm</code></pre>
+<pre><code>    ./zucker faster\! -preview &gt; image.ppm</code></pre>
 <p>If your platform distinguishes between binary and text streams, you may need to
 insert some code to reopen standard output in binary mode at the start of
 <code>main()</code> (the provided <a href="#alternate-code">alternate version</a> will set binary mode
@@ -306,10 +307,10 @@ Python, respectively).</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/zucker/zucker.orig.c">zucker.orig.c</a> - original source</li>
 <li><a href="sphere-tracing.pdf">sphere-tracing.pdf</a> - research paper on antialiased ray tracing</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/zucker/try.sh">try.sh</a> - how to run</li>
-<li><a href="2011_zucker.tar.bz2">2011_zucker.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2011_zucker.tar.bz2">2011_zucker.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/zucker/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/zucker/.entry.json">.entry.json</a> - description of entry in JSON</li>

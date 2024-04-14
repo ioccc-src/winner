@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,11 +142,11 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <p>There is an alternate version available. See <a href="#alternate-code">Alternate code</a>
 below for more details.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./dlowe &lt; file &gt; pootfile
+<pre><code>    ./dlowe &lt; file &gt; pootfile
 
     ./dlowe &lt; file</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
@@ -153,22 +154,22 @@ below for more details.</p>
 <pre><code>    STATUS: missing or dead link - please provide them</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1998_dlowe">1998 dlowe bugs</a>.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./dlowe &lt; README.md
+<pre><code>    ./dlowe &lt; README.md
     ./dlowe &lt; README.md &gt; README.poot.md</code></pre>
 <p>Why is there different output?</p>
 <p>Also try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>Did you spot the Easter egg there?</p>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>The original entry was just a text based pootifier. This alternate version is
 that program.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <pre><code>    ./dlowe.alt &lt; file &gt; pootfile</code></pre>
 <p>What’s the difference between this and <code>dlowe</code>?</p>
 <h3 id="alternate-try">Alternate try:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh</code></pre>
+<pre><code>    ./try.alt.sh</code></pre>
 <p>Did you spot the Easter egg there?</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Why could this this entry be considered a utility? Well because it
@@ -179,7 +180,7 @@ a CGI program: <a href="https://web.archive.org/web/20001025182142/http://pootpo
 more consistent level of quality. :-)</p>
 <h3 id="historical-remarks">Historical remarks:</h3>
 <p>A CGI script such as:</p>
-<pre class="&lt;!---sh--&gt;"><code>    #!/bin/sh
+<pre><code>    #!/bin/sh
     # pootify - a sample CGI pootifier
     #
     POOT=&quot;/usr/local/bin/dlowe&quot;
@@ -212,14 +213,14 @@ added bonus that one can use <code>file://</code> URLs. If one wants a CGI scrip
 should use the above one instead. You can use the script
 <a href="pootify.sh">pootify.sh</a>, however, to download and generate html files that you
 can look at locally in a browser or pipe through <code>less(1)</code>. For instance:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./pootify.sh URL=https://microsoft.com | less
+<pre><code>    ./pootify.sh URL=https://microsoft.com | less
 
     ./pootify.sh -r URL=https://microsoft.com &gt; ms.html</code></pre>
 <p>where the first one would show the text as rendered but without links, images
 etc. and the second one would write the html to <code>ms.html</code> so that you could open
 it in a browser.</p>
 <p>For an old example of it working as a CGI script see:</p>
-<pre class="&lt;!---sh--&gt;"><code>    https://web.archive.org/web/20040326083431/http://www.pootpoot.com/poot/pootify/?URL=http%3A%2F%2Fwww.ioccc.org</code></pre>
+<pre><code>    https://web.archive.org/web/20040326083431/http://www.pootpoot.com/poot/pootify/?URL=http%3A%2F%2Fwww.ioccc.org</code></pre>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>This program is a text filter, it reads <code>stdin</code> and outputs the
 “corrected” text to <code>stdout</code>.</p>
@@ -262,10 +263,10 @@ run <code>perl4</code> programs after they’ve been run through it; “encrypt�
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/dlowe/pootify.sh">pootify.sh</a> - pootify tool</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/dlowe/try.alt.sh">try.alt.sh</a> - how to run alternative code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/dlowe/try.sh">try.sh</a> - how to run</li>
-<li><a href="1998_dlowe.tar.bz2">1998_dlowe.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1998_dlowe.tar.bz2">1998_dlowe.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/dlowe/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/dlowe/.entry.json">.entry.json</a> - description of entry in JSON</li>

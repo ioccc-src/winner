@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,15 +142,15 @@ Location: <a href="../../location.html#AU">AU</a> - <em>Commonwealth of Australi
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1988_dale">1988 dale bugs</a>.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>Observe that three of the commands in the script are:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./dale these files are in this directory: *
+<pre><code>    ./dale these files are in this directory: *
     ./dale $(printf &quot;the following files exist in this directory:\n%s\n&quot; *)
     ./dale &quot;$(printf &quot;the following files exist in this directory:\n%s\n&quot; *)&quot;</code></pre>
 <p>As the script asks what do the last two do and why do they do it? Why do they
@@ -189,10 +190,10 @@ system calls.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/dale/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/dale/dale.orig.c">dale.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/dale/try.sh">try.sh</a> - how to run</li>
-<li><a href="1988_dale.tar.bz2">1988_dale.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1988_dale.tar.bz2">1988_dale.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/dale/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/dale/.entry.json">.entry.json</a> - description of entry in JSON</li>

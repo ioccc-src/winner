@@ -83,6 +83,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -151,7 +152,7 @@ movement is required) I have provided a source file that can test your terminal
 for the capabilities I use in the entry.</p>
 <p>It also tries to determine the minimum number of columns to play without the
 status line overflowing - even with the dynamic length. Try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ make test</code></pre>
+<pre><code>    $ make test</code></pre>
 <p>This compiles the program <a href="termcaps.c">termcaps.c</a> and runs it; you should see something like:</p>
 <pre><code>    terminal supports cursor movement
     terminal supports making cursor invisible
@@ -178,7 +179,7 @@ maximum (capped) snake size.</p>
 <p>If I pass in any of the variables <strong>GROW</strong>, <strong>MAXSIZE</strong>, <strong>SIZE</strong> and/or
 <strong>LINES</strong> or <strong>COLUMNS</strong> it bases its calculations on those variables. For
 example:</p>
-<pre class="&lt;!---sh--&gt;"><code>    terminal supports cursor movement
+<pre><code>    terminal supports cursor movement
     terminal supports making cursor invisible
     terminal supports bold
     terminal supports colours
@@ -224,12 +225,12 @@ resize the window with first. But what if you want exacts?</p>
 <p>To specify the lines/columns of curses program per instance use the <code>LINES</code> and
 <code>COLUMNS</code> environmental variables.</p>
 <p>For demonstration consider the following:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ echo $LINES $COLUMNS
+<pre><code>    $ echo $LINES $COLUMNS
     42 157</code></pre>
 <p>Note: I subtract 1 from the max y/x and the max coords in the game output
 include the walls and score line but these values are for the terminal itself.</p>
 <p>Say you want 55 columns:</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ COLUMNS=55 ./prog</code></pre>
+<pre><code>    $ COLUMNS=55 ./prog</code></pre>
 <p>This will force curses to detect the max columns (X) of your terminal (for the
 game dimensions) - to be 55; it might look like this instead:</p>
 <pre><code>    X:27/54 Y:20/41 S:5/997 B:0</code></pre>
@@ -245,7 +246,7 @@ etc. For the game you might not see the final score.</p>
 <p>In my tests there is one thing that at least allows you to see the final score
 and that is by running <code>clear</code> before running the program. That’s what the
 prog.alt version does. You might run it as one of:</p>
-<pre class="&lt;!---sh--&gt;"><code>    LINES=20 ./prog.alt
+<pre><code>    LINES=20 ./prog.alt
     LINES=20 ./snake.alt</code></pre>
 <p>Even if the final score is visible though the terminal may very well still be
 messed up. There are numerous things you might try but probably the easiest is
@@ -259,7 +260,7 @@ even just the <code>reset</code> command.</p>
                (the line-feed character is normally control-J) to get the terminal
                to work, as carriage-return may no longer work in the abnormal state.</code></pre>
 <p>If you don’t have the reset utility you can try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    echo -e \\033c</code></pre>
+<pre><code>    echo -e \\033c</code></pre>
 <p>Otherwise try <code>clear; stty sane</code> (that will turn on echo also) or if all else
 fails log out and back in.</p>
 <p>For more information on this subject generally see the <a href="https://www.tldp.org/HOWTO/Keyboard-and-Console-HOWTO.html">Linux keyboard and
@@ -271,10 +272,10 @@ outside what’s actually possible with their screen. But then player 4 comes
 along and thinks he/she will be clever and mess with the dimensions a bit. Let’s
 say they have a 13” monitor and they think it’d be funny to see how 997 lines
 would work; they might try something like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    LINES=997 ./prog</code></pre>
+<pre><code>    LINES=997 ./prog</code></pre>
 <p>What then? Well expect trouble; curses will not know any better and the max
 number of lines will be 997. If they were to do:</p>
-<pre class="&lt;!---sh--&gt;"><code>    COLUMNS=997 ./prog</code></pre>
+<pre><code>    COLUMNS=997 ./prog</code></pre>
 <p>Then they will see a different effect. Again the same reason: the player trying
 to be funny.</p>
 <p>The game will try and be funny in return and you can expect it to not function
@@ -306,7 +307,7 @@ GitHub) file).</p>
 <p>According to my tests for monochrome terminals the screen has the white and
 black background; if terminal is configured to be black background white
 foreground that is the order it is too. You can try that like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    TERM=linux-m ./prog</code></pre>
+<pre><code>    TERM=linux-m ./prog</code></pre>
 <p>But I do not specifically check if the terminal has colours. Is there a curses
 implementation that has a problem here? Below I explain what to comment out
 should you need colours to be disabled but I personally have not run into any
@@ -328,7 +329,7 @@ support in the source code itself.</p>
 <p>Based on the two as well as the fact that monochrome terminals (I’ve tried under
 both Linux and macOS) seem to work fine I believe I am fine here too. And to
 confirm this I wrote the following code with the output below:</p>
-<pre class="&lt;!---c--&gt;"><code>    #include &lt;curses.h&gt;
+<pre><code>    #include &lt;curses.h&gt;
 
     int main()
     {
@@ -338,7 +339,7 @@ confirm this I wrote the following code with the output below:</p>
         getch();
         endwin();
     }</code></pre>
-<pre class="&lt;!---sh--&gt;"><code>    TERM=linux-m ./colour_pairs
+<pre><code>    TERM=linux-m ./colour_pairs
     COLORS: 0
     COLOR_PAIRS: 0</code></pre>
 <p>Without specifying the TERM I get:</p>
@@ -348,7 +349,7 @@ confirm this I wrote the following code with the output below:</p>
 possible colour pairs than I have used so that’s not a problem either. Perhaps
 even it would only be a runtime error if the colours are supported and the
 number is out of the range? To try and figure this out I did another test:</p>
-<pre class="&lt;!---c--&gt;"><code>    int main()
+<pre><code>    int main()
     {
         initscr();
         start_color();
@@ -363,7 +364,7 @@ number is out of the range? To try and figure this out I did another test:</p>
         endwin();
     }</code></pre>
 <p>Running it like</p>
-<pre class="&lt;!---sh--&gt;"><code>    TERM=linux-m ./colour_pairs</code></pre>
+<pre><code>    TERM=linux-m ./colour_pairs</code></pre>
 <p>I got the output as if colours weren’t used: 0 and 0. With coloured terminals
 however it was not visible. If I however comment out the call to <code>bkgd()</code> I get
 instead:</p>

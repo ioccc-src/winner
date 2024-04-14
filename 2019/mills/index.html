@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,17 +142,17 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2019_mills">2019 mills bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make cpclean
+<pre><code>    make cpclean
     # Let this run for about about an hour and then kill it:
     ./prog Shakespeare.txt</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>However, as the binary model files used to produce the output are in an
 implementation-specific format, your mileage may vary.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -200,11 +201,11 @@ training, but you can have even more fun by downloading some larger datasets:</p
 </ul>
 <p>For your first OMLET experiment, we will try training a simple single-level
 RNN to write some <a href="https://en.wikipedia.org/wiki/William_Shakespeare">Shakespeare</a> plays. Start by typing</p>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>After it builds, train it using</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog Shakespere.txt</code></pre>
+<pre><code>    ./prog Shakespere.txt</code></pre>
 <p>This will immediately start outputting gibberish to the output, e.g.</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog Shakespere.txt</code></pre>
+<pre><code>    ./prog Shakespere.txt</code></pre>
 <p>produces:</p>
 <pre><code>    sins ohennAu
     T-teooclelp tiThoWy
@@ -331,7 +332,7 @@ helpful if you need to stop and restart training. You can stop training by
 doing <code>Control-C</code>.</p>
 <p>You can continue training from a previous checkpoint by providing the
 checkpoint file name as the second parameter, for example:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog Shakespeare.txt cp01_1.970</code></pre>
+<pre><code>    ./prog Shakespeare.txt cp01_1.970</code></pre>
 <p>After the validation cycle finishes, OMLET begins the next epoch by restarting
 training at the beginning of the training set. Training continues forever,
 until you quit it with <code>Control-C</code>. You should monitor the checkpoints to
@@ -342,7 +343,7 @@ OMLET to run the network in inference mode which uses the frozen checkpoint
 parameters to generate data. Inference mode takes the checkpoint file as
 <em>standard input</em> (not on the command line) and hence must be run with a
 command like</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; cp55_1.807</code></pre>
+<pre><code>    ./prog &lt; cp55_1.807</code></pre>
 <p>Running it produces an infinite amount of generated output, until you hit
 <code>Control-C</code> to stop it.</p>
 <p>Note that if you decide to change networks or use a different input file, you
@@ -353,7 +354,7 @@ cause a crash.</p>
 <p>The default network for OMLET (the one you get if you type <code>make</code> with the
 executable name <code>prog</code>) is the simplest recurrent neural network. It looks
 like</p>
-<pre class="&lt;!---c--&gt;"><code>    h = tanh(Wxh * x + Whh * h&#39; + Bh)
+<pre><code>    h = tanh(Wxh * x + Whh * h&#39; + Bh)
     y = Why * h + By</code></pre>
 <p>where</p>
 <ul>
@@ -371,14 +372,14 @@ the loss of the network across the training set.</p>
 <p>It is the presence of the hidden state vector that allows the RNN to
 “remember” the past. We can see what would happen if we removed this hidden
 state. If you type</p>
-<pre class="&lt;!---sh--&gt;"><code>    make lin1</code></pre>
+<pre><code>    make lin1</code></pre>
 <p>OMLET will create an <a href="https://en.wikipedia.org/wiki/ADALINE">ADALINE</a> network that does</p>
-<pre class="&lt;!---c--&gt;"><code>    y = Wxy * x + By</code></pre>
+<pre><code>    y = Wxy * x + By</code></pre>
 <p>This is a simple <a href="https://en.wikipedia.org/wiki/Linear_map">linear</a> <a href="https://en.wikipedia.org/wiki/Feedforward_neural_network">feed-forward network</a>. You can run it with</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./lin1 Shakespeare.txt</code></pre>
+<pre><code>    ./lin1 Shakespeare.txt</code></pre>
 <p>The linear network won’t be able to get past the gibberish stage, because it
 lacks history:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./lin1 Shakespeare.txt</code></pre>
+<pre><code>    ./lin1 Shakespeare.txt</code></pre>
 <p>produces:</p>
 <pre><code>    UERond w,
 
@@ -418,7 +419,7 @@ the language but <code>per</code> with the digit 1).</p>
 <h3 id="going-deeper">Going deeper:</h3>
 <p>We can try to improve the RNN’s performance by stacking RNN modules atop each
 other:</p>
-<pre class="&lt;!---c--&gt;"><code>    h1 = RNN(h1&#39;, x)
+<pre><code>    h1 = RNN(h1&#39;, x)
     h2 = RNN(h2&#39;, h1)
     y = Why * h2 + By</code></pre>
 <p>with <code>RNN(h, x)</code> defined as above. Each RNN module has its own set of
@@ -436,9 +437,9 @@ the hard limit with <code>limit -h stacksize</code> and set it with
 <code>limit stacksize 65532</code> (replacing <code>65532</code> with the actual hard limit).</p>
 <hr />
 <p>You can try the deeper network by doing</p>
-<pre class="&lt;!---sh--&gt;"><code>    make rnn2</code></pre>
+<pre><code>    make rnn2</code></pre>
 <p>(or even <code>make rnn3</code> if you want a three-layer RNN) and train it with</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./rnn2 Shakespeare.txt</code></pre>
+<pre><code>    ./rnn2 Shakespeare.txt</code></pre>
 <p>The additional depth should allow the network to make better predictions (it
 can represent more complicated history), but it may take a long time to train
 -- both because the network (being larger) now requires more time to train and
@@ -454,9 +455,9 @@ gradient, worsening the exploding and vanishing gradient problem.</p>
 <p><a href="https://en.wikipedia.org/wiki/Long_short-term_memory">Long Short Term Memory</a> networks (also called LSTMs) were developed to
 solve this problem. Christopher Olah gives a good description of them
 at his <a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">blog posting</a>. You can build a two-level LSTM by doing</p>
-<pre class="&lt;!---sh--&gt;"><code>    make lstm2</code></pre>
+<pre><code>    make lstm2</code></pre>
 <p>and train with it with</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./lstm2 Shakespeare.txt</code></pre>
+<pre><code>    ./lstm2 Shakespeare.txt</code></pre>
 <p>The LSTM is much easier to train because it explicitly decides how to update
 its hidden state via “gates”. These gates are called</p>
 <ul>
@@ -466,7 +467,7 @@ its hidden state via “gates”. These gates are called</p>
 produce the output</li>
 </ul>
 <p>The basic LSTM equations are</p>
-<pre class="&lt;!---c--&gt;"><code>    f = sigmoid(Wxf * x + Whf * h&#39; + Bf)
+<pre><code>    f = sigmoid(Wxf * x + Whf * h&#39; + Bf)
     i = sigmoid(Wxi * x + Whi * h&#39; + Bi)
     o = sigmoid(Wxo * x + Who * h&#39; + Bo)
     c = f * c&#39; + i * tanh(Wxc * x + Whc * h&#39; + Bc)
@@ -494,7 +495,7 @@ examples). One important one is the <a href="https://en.wikipedia.org/wiki/Gated
 simplified versions of an LSTM which combine the gates together, meaning they
 require fewer learned parameters. This allows them to train faster than a
 generic LSTM. You can build a two-layer GRU with</p>
-<pre class="&lt;!---sh--&gt;"><code>    make gru2</code></pre>
+<pre><code>    make gru2</code></pre>
 <h3 id="building-your-own-networks">Building your own networks</h3>
 <p>The OMLET <code>Makefile</code> comes with one-, two- and three-layer RNNs, LSTMs and
 GRUs, along with simpler feed-forward networks like multi-layer perceptrons and
@@ -503,7 +504,7 @@ own networks by modifying the <code>Makefile</code>. Networks are passed in on t
 compiler’s command-line by using <code>-D</code> directives. The network is defined by
 a <code>-DNW='...'</code> command which consists of a series of comma-separated
 assignments. For example, the simple one-layer RNN could be defined like</p>
-<pre class="&lt;!---make--&gt;"><code>    -DNW=&#39; x  = I(n), hp = I(128),                  \
+<pre><code>    -DNW=&#39; x  = I(n), hp = I(128),                  \
            h  = C(hp, T(A(L(128, x), L(128, hp)))), \
            y  = L(n, h)&#39;</code></pre>
 <p>The network declares <code>x</code> as an input vector (there must be a declaration for
@@ -538,7 +539,7 @@ inference mode, this is used to select the next character to emit. In
 training mode, this is used to generate the loss which is backpropagated.</p>
 <p>As an example of a more complicated network, we can look at a two-layer
 GRU network:</p>
-<pre class="&lt;!---make--&gt;"><code>    -DHS=128,                                 \
+<pre><code>    -DHS=128,                                 \
     -DNW=&#39; x  = I(n),                         \
            y  = L(n, MD(MD(x)))&#39;              \
     -DBK=&#39; hp = I(HS),                        \
@@ -649,10 +650,10 @@ the current directory.</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/mills/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/mills/prog.orig.c">prog.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/mills/try.sh">try.sh</a> - how to run</li>
-<li><a href="2019_mills.tar.bz2">2019_mills.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2019_mills.tar.bz2">2019_mills.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="Eugene_Onegin.cp11_1.188">Eugene_Onegin.cp11_1.188</a> - training data from Eugene Onegin poetry</li>
 <li><a href="Eugene_Onegin.txt.gz">Eugene_Onegin.txt.gz</a> - compressed Eugene Onegin poetry</li>

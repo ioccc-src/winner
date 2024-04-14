@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,25 +142,25 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog &quot;expression&quot;</code></pre>
+<pre><code>    ./prog &quot;expression&quot;</code></pre>
 <p>or:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog</code></pre>
+<pre><code>    ./prog</code></pre>
 <p>Type in expressions on standard input.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>Notice how the script reads in from a file. If you type just:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog</code></pre>
+<pre><code>    ./prog</code></pre>
 <p>it will prompt you in the same way. Send ctrl-c to exit.</p>
 <p>Finally, if you wish to read the man page:</p>
-<pre class="&lt;!---sh--&gt;"><code>    man ./calc.1</code></pre>
+<pre><code>    man ./calc.1</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>An alternate version of this entry, <a href="prog.alt.c">prog.alt.c</a>, is provided.
 This alternate code is discussed in the “prog.c vs prog.alt.c” section of the
 author’s remarks below.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>prog.alt</code> as you would <code>prog</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -189,7 +190,7 @@ corrected by adding <code>-fsigned-char</code> to the compile line.</p>
 <p>Yes, this is another calculator program.</p>
 <p>However, unlike any other calculator source code the author is aware of,
 this one contains no digits. At all. Anywhere. As in</p>
-<pre class="&lt;!---sh--&gt;"><code>    grep &#39;[0-9]&#39; prog.c || echo no digits!</code></pre>
+<pre><code>    grep &#39;[0-9]&#39; prog.c || echo no digits!</code></pre>
 <p>Nor are the digits simply obfuscated. There are no character constants. There
 is only one single, short string, and it does not contain any obfuscated digits.
 And yet the output is in decimal and hexadecimal, and it accepts octal, decimal,
@@ -265,7 +266,7 @@ To stifle these complaints:</p>
 <h3 id="test-suite">Test Suite:</h3>
 <p>If the program name begins with an <code>e</code>, it echoes <code>stdin</code> to <code>stdout</code>.
 This allows for a convenient test suite:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ln -sf prog eprog
+<pre><code>    ln -sf prog eprog
     PATH=. eprog &lt; test.in | diff - test.out</code></pre>
 <h3 id="spoilers">Spoilers:</h3>
 <p>If you do not want to puzzle out how it works, see <a href="spoilers.html">spoilers.html</a>.</p>
@@ -306,10 +307,10 @@ This allows for a convenient test suite:</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/burton/test.out">test.out</a> - test suite comparison data</li>
 <li><a href="spoilers.html">spoilers.html</a> - SPOILER WARNING</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/burton/src.doc.txt">src.doc.txt</a> - SPOILER WARNING hints about the source</li>
-<li><a href="2015_burton.tar.bz2">2015_burton.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2015_burton.tar.bz2">2015_burton.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/burton/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/burton/.entry.json">.entry.json</a> - description of entry in JSON</li>

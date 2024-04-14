@@ -83,6 +83,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -372,7 +373,7 @@ hit a key every time to move because it is blocking.</p></li>
 </ul>
 <h2 id="on-environmental-variables-more-generally-and-string-to-int-conversions"><a name="envvars" href="#toc">On environmental variables more generally and string to int conversions</a></h2>
 <p>What happens if you do:</p>
-<pre class="&lt;!---sh--&gt;"><code>    WALLS= ./prog</code></pre>
+<pre><code>    WALLS= ./prog</code></pre>
 <p>Can you run into the wall since you didn’t specify a value and the default is 1?
 No. That’s not the way it works. By saying WALLS= you have told the system that
 there is that environmental variable. However the way the <code>strtoul()</code> functions
@@ -381,12 +382,12 @@ it’s wasteful (iocccsize wise) and I have never felt that having invalid input
 for a number could have a better value than 0.</p>
 <p>If however you were to give valid input followed by invalid input the valid
 input would be parsed. For example:</p>
-<pre class="&lt;!---sh--&gt;"><code>    WALLS=1test ./prog</code></pre>
+<pre><code>    WALLS=1test ./prog</code></pre>
 <p>would let you go through the walls. On the other hand</p>
-<pre class="&lt;!---sh--&gt;"><code>    WALLS=test1 ./prog</code></pre>
+<pre><code>    WALLS=test1 ./prog</code></pre>
 <p>would not. Furthermore if you specify the same variable more than once it’s the
 last one that counts. For example:</p>
-<pre class="&lt;!---sh--&gt;"><code>    WALLS=0 WALLS=1 CANNIBAL=1 CANNIBAL=0 ./prog</code></pre>
+<pre><code>    WALLS=0 WALLS=1 CANNIBAL=1 CANNIBAL=0 ./prog</code></pre>
 <p>would allow you to go through walls but you could not cannibalise.</p>
 <p>Also note that I specify base 0 which means that you can also have it in hex and
 octal. These are all the same:</p>
@@ -421,7 +422,7 @@ will end (yes things that haven’t begun can be ended).</p>
 <p>If <code>calloc()</code> fails to obtain the needed memory you’ll see something like (here it
 was before I added proper - to make the perfect and obvious pun - capsizing
 so that by setting the size to -1 it went to the max unsigned value):</p>
-<pre class="&lt;!---sh--&gt;"><code>    $ MAXSIZE=-1 ./prog
+<pre><code>    $ MAXSIZE=-1 ./prog
     memory error
     X:0/157 Y:0/42 S:3/18446744073709551614 B:0</code></pre>
 <p>BTW: There are two arrays that have to be <strong>MAXSIZE</strong> (technically + 1).</p>
@@ -429,7 +430,7 @@ so that by setting the size to -1 it went to the max unsigned value):</p>
 not know but what I do know is that because it’s unsigned it can’t be negative;
 if the max size is 0 then the array size will be 1 but it won’t matter because
 the snake size will be &gt;= that max anyway. But here’s a curious output:</p>
-<pre class="&lt;!---sh--&gt;"><code>    SIZE=1 MAXSIZE=0 ./prog
+<pre><code>    SIZE=1 MAXSIZE=0 ./prog
     YOU WIN!
     X:78/156 Y:20/41 S:0/0 B:0</code></pre>
 <p>Why does it show snake size as 0 when I specified 1? It’s because the max size

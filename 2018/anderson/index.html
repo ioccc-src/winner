@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,29 +142,29 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>There is an alternate version of this entry. See <a href="#alternate-code">Alternate
 code</a> below for more details.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./prog &lt; textfile</code></pre>
+<pre><code>    ./prog &lt; textfile</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>Compare <a href="prog.c">prog.c</a> and <a href="prog.alt.c">prog.alt.c</a> and find out why we had to
 modify the entry, and what confused the author (see the author’s remarks). No,
 it was not the shape of the Roman V that we, or the compiler, didn’t like.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>prog.alt</code> as you would <code>prog</code> above.</p>
 <h3 id="alternate-try">Alternate try:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.alt.sh</code></pre>
+<pre><code>    ./try.alt.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>With this entry, you won’t need to turn your monitor <a href="http://en.wikipedia.org/wiki/River_%28typography%29">upside
 down</a>!</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="compiling-the-program">Compiling the program:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    cc -Wall -Wextra -Wpedantic -O3 -std=c11 prog.c -o prog</code></pre>
+<pre><code>    cc -Wall -Wextra -Wpedantic -O3 -std=c11 prog.c -o prog</code></pre>
 <p>Also works with a standard of C99, but C90/C89 will not compile due to
 <code>for</code> loop initial declarations, along with additional warnings about
 variable length arrays and lack of a <code>return</code> statement.</p>
@@ -222,10 +223,10 @@ secondarily to obfuscate.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/anderson/prog.orig.c">prog.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/anderson/try.alt.sh">try.alt.sh</a> - how to run alternate code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/anderson/try.sh">try.sh</a> - how to run</li>
-<li><a href="2018_anderson.tar.bz2">2018_anderson.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2018_anderson.tar.bz2">2018_anderson.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/anderson/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/anderson/.entry.json">.entry.json</a> - description of entry in JSON</li>

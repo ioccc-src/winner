@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,34 +142,34 @@ Location: <a href="../../location.html#SE">SE</a> - <em>Kingdom of Sweden</em> (
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: doesn&#39;t work with some compilers - please provide alternative code or fix for more compilers</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1996_august">1996 august bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    cat august.c test.oc | ./august &gt; test.oo
+<pre><code>    cat august.c test.oc | ./august &gt; test.oo
     ./august &lt; test.oo</code></pre>
 <p>NOTE: some compilers will compile this code into infinite loops! If the above
 cat line (or one of the ones later in the try section) does not execute in a
 very short amount of time, then you may need to fix your compiler or use gcc.</p>
 <p>The above should print a <code>!</code> followed by a newline.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This entry can feed on itself. If you C pre-process the source,
 you can compile the interpreter:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make august.oc</code></pre>
+<pre><code>    make august.oc</code></pre>
 <p>We can now compile the interpreter as follows:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cat august.c august.oc | ./august &gt; august.oo</code></pre>
+<pre><code>    cat august.c august.oc | ./august &gt; august.oo</code></pre>
 <p>and use the compiled interpreter to execute some previously
 compiled code:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cat august.oo test.oo | ./august</code></pre>
+<pre><code>    cat august.oo test.oo | ./august</code></pre>
 <p>And we can have the compiled interpreter interpret itself which
 in turn compiles the test program:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cat august.oo august.oo fac.oo | ./august</code></pre>
+<pre><code>    cat august.oo august.oo fac.oo | ./august</code></pre>
 <p>And if you have lots of spare time, you can recurse one level deeper:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cat august.oo august.oo august.oo fac.oo | ./august</code></pre>
+<pre><code>    cat august.oo august.oo august.oo fac.oo | ./august</code></pre>
 <p>We (the judges) recommend that you spend some time studying this
 entry as it surely will make the ‘best of the IOCCC’ list. It was
 very well received by those who attended the IOCCC BOF.</p>
@@ -194,13 +195,13 @@ of operators, and control constructs.</p>
 can go wrong. But this is what seasoned C programmers are used to.</p>
 <p>Assume that the interpreter has been compiled (source in <a href="august.c">august.c</a>
 and binary in august) and that we have this in a file named <code>test.oc</code>:</p>
-<pre class="&lt;!---c--&gt;"><code>    main() { putchar(&#39;!&#39;); putchar(&#39;\n&#39;); exit(0); }</code></pre>
+<pre><code>    main() { putchar(&#39;!&#39;); putchar(&#39;\n&#39;); exit(0); }</code></pre>
 <p>We can then compile by</p>
-<pre class="&lt;!---sh--&gt;"><code>    cat august.c test.oc | ./august &gt; test.oo</code></pre>
+<pre><code>    cat august.c test.oc | ./august &gt; test.oo</code></pre>
 <p>And run the compiled program by</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./august &lt; test.oo</code></pre>
+<pre><code>    ./august &lt; test.oo</code></pre>
 <p>Or even simpler:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cat august.c test.oc | ./august | ./august</code></pre>
+<pre><code>    cat august.c test.oc | ./august | ./august</code></pre>
 <p>A larger example is included <a href="fac.oc">fac.oc</a>.</p>
 <p>The compiler for OC is naturally written in OC (where did you think the byte
 code came from?). It is in the file <a href="parse.oc">parse.oc</a>.</p>
@@ -210,20 +211,20 @@ preprocessor (hey, what do you expect from a program that is this small), so we
 need to use an external one. To pre-process <a href="august.c">august.c</a> use the
 command from the Makefile, but add the <code>-E</code> flag and change 60000 to 40000,
 i.e.:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -E -DZ=40000 .... august.c &gt; august.oc</code></pre>
+<pre><code>    cc -E -DZ=40000 .... august.c &gt; august.oc</code></pre>
 <p>If <code>august.oc</code> contain some junk line starting with a <code>#</code> (most likely
 it does) then remove it like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    sed -i&#39;&#39; &#39;/^#/d&#39; august.oc</code></pre>
+<pre><code>    sed -i&#39;&#39; &#39;/^#/d&#39; august.oc</code></pre>
 <p>OK, we can now compile the interpreter:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cat august.c august.oc | ./august &gt; august.oo</code></pre>
+<pre><code>    cat august.c august.oc | ./august &gt; august.oo</code></pre>
 <p>And we can run it:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cat august.oo test.oo | ./august</code></pre>
+<pre><code>    cat august.oo test.oo | ./august</code></pre>
 <p>Here we have the interpreter interpreting another interpreter that runs
 the program. Did you think that was too fast? Just throw in another
 level of interpretation:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cat august.oo august.oo test.oo | ./august</code></pre>
+<pre><code>    cat august.oo august.oo test.oo | ./august</code></pre>
 <p>And another…</p>
-<pre class="&lt;!---sh--&gt;"><code>    cat august.oo august.oo august.oo test.oo | ./august</code></pre>
+<pre><code>    cat august.oo august.oo august.oo test.oo | ./august</code></pre>
 <hr />
 <p>Fitting the byte code for the compiler into the initial comment
 was a challenge. I had to strip the compiler/interpreter of
@@ -337,10 +338,10 @@ defined. <code>getchar()</code> and <code>putchar()</code> are predefined functi
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/august/parse.oc">parse.oc</a> - oc source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/august/test.oc">test.oc</a> - oc source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/august/try.sh">try.sh</a> - how to run</li>
-<li><a href="1996_august.tar.bz2">1996_august.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1996_august.tar.bz2">1996_august.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/august/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/august/.entry.json">.entry.json</a> - description of entry in JSON</li>

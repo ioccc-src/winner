@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,17 +142,17 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2005_mikeash">2005 mikeash bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./mikeash</code></pre>
+<pre><code>    ./mikeash</code></pre>
 <p>NOTE: the author stated that they tested this under i386 machines but this works
 under 64-bit (x86_64, arm64) machines too.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Having problems speaking code? Do you <a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)">LISP</a>? Parenthetically
 speaking, this entry takes advantage of C99 features, while
@@ -175,12 +176,12 @@ constant string, due to different string escape semantics in C and Lisp, and
 some implicit integer-to-pointer conversions due to the implicitly-declared
 functions.</p>
 <p>Try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    echo &#39;(format t &quot;~s&quot; (+ 2 2 ))&#39; | ./mikeash</code></pre>
+<pre><code>    echo &#39;(format t &quot;~s&quot; (+ 2 2 ))&#39; | ./mikeash</code></pre>
 <p>You should see <code>4"</code> echoed on your command prompt. The <code>"</code> after the 4 and
 the lack of a newline are due to the somewhat broken implementation of
 the format function. More sophisticated arithmetic expressions may be
 used:</p>
-<pre class="&lt;!---sh--&gt;"><code>    echo &#39;(format t &quot;~s&quot; (* (+ 2 2 ) (- 5 (/ 9 3 ))))&#39; | ./mikeash</code></pre>
+<pre><code>    echo &#39;(format t &quot;~s&quot; (* (+ 2 2 ) (- 5 (/ 9 3 ))))&#39; | ./mikeash</code></pre>
 <p>This evaluates the expression <code>(2+2) * (5 - 9/3)</code> giving the correct result,
 <code>8"</code> (with the same issue of no newline after the <code>"</code>). Note that due to the
 highly ad-hoc nature of the tokenizer, the spaces before the closing parentheses
@@ -219,7 +220,7 @@ nowhere near
 </ul>
 <p>Basically, the <a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)">LISP</a> interpreter is good for some basic math operations, and
 for running itself. To do the latter, try this:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./mikeash &lt; mikeash.c &gt; mikeash2.c
+<pre><code>    ./mikeash &lt; mikeash.c &gt; mikeash2.c
     diff mikeash.c mikeash2.c</code></pre>
 <p>The program can also be run from an implementation of <a href="https://en.wikipedia.org/wiki/Common_Lisp">common
 lisp</a>. To do
@@ -269,10 +270,10 @@ C library.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mikeash/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mikeash/mikeash.orig.c">mikeash.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mikeash/try.sh">try.sh</a> - how to run</li>
-<li><a href="2005_mikeash.tar.bz2">2005_mikeash.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2005_mikeash.tar.bz2">2005_mikeash.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mikeash/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mikeash/.entry.json">.entry.json</a> - description of entry in JSON</li>

@@ -83,6 +83,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -138,7 +139,7 @@ a file was not found (this limitation was removed in both versions in 2023). see
 <p>However, as noted, macOS does <strong>not</strong> have <code>/usr/include</code> so this would never
 work for macOS without some changes, described next. For macOS you will need the
 command line tools installed which can be done like:</p>
-<pre class="&lt;!---sh--&gt;"><code>    sudo xcode-select --install</code></pre>
+<pre><code>    sudo xcode-select --install</code></pre>
 <p>An important point is that the original version hard-coded <code>gcc</code> but just like
 the entry, the alternate version has also removed this limitation despite <code>gcc</code>
 existing (though it’s <code>clang</code>) in macOS.</p>
@@ -154,7 +155,7 @@ the command is:</p>
 <p>which has been changed to be:</p>
 <pre><code>&quot;0cc -ansi -E -dM -undef %s /usr/include/%s&gt;r\0 (&quot;</code></pre>
 <p>Shortly below that you will see, as noted above, the numbers:</p>
-<pre class="&lt;!---c--&gt;"><code>    if ((H = fopen (__FILE__+43, 43+__FILE__)))
+<pre><code>    if ((H = fopen (__FILE__+43, 43+__FILE__)))
     while ((fgets (L, (int)sizeof L, H)) != 0) {
             I[strcspn (I, 45+__FILE__)] = O = 0;</code></pre>
 <p>The first number in the above C means the length starting from 0 up through the

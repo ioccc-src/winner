@@ -88,7 +88,7 @@ TOP_MD_SET+=("faq")
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.4 2024-04-13"
+export VERSION="1.3 2024-04-14"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -125,6 +125,9 @@ TOP_MD_SET+=("index")
 TOP_MD_SET+=("judges")
 TOP_MD_SET+=("license")
 TOP_MD_SET+=("news")
+TOP_MD_SET+=("next/README")
+TOP_MD_SET+=("next/guidelines")
+TOP_MD_SET+=("next/rules")
 TOP_MD_SET+=("thanks-for-help")
 #
 export NOOP=
@@ -485,6 +488,10 @@ for name in "${TOP_MD_SET[@]}"; do
     # inc/README is a special case
     if [[ $name == inc/README ]]; then
 	HTML_FILE="inc/index.html"
+    fi
+    # next/README is a special case
+    if [[ $name == next/README ]]; then
+	HTML_FILE="next/index.html"
     fi
     # archive/historic/README is a special case
     if [[ $name == archive/historic/README ]]; then

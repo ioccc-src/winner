@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,11 +142,11 @@ Location: <a href="../../location.html#DE">DE</a> - <em>Federal Republic of Germ
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make -B [MACHINE=your_machine.h] [TAPE=your_tape.h] [X=[0|1|2|3|4|5|6|7|8|9]] [V=[0|1|2]] run</code></pre>
+<pre><code>    make -B [MACHINE=your_machine.h] [TAPE=your_tape.h] [X=[0|1|2|3|4|5|6|7|8|9]] [V=[0|1|2]] run</code></pre>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This is something we were fearing all along: that the C preprocessor is Turing-complete
 even without conditionals and recursive file inclusion as some kind of a
@@ -179,13 +180,13 @@ macros in the output.</p>
 files for examples.</p>
 <h4 id="tape-symbols">Tape Symbols</h4>
 <p>Every symbol used (except <code>_</code>) must be explicitly declared using</p>
-<pre class="&lt;!---c--&gt;"><code>    #define sym_SYMBOL(sym, _SYMBOL) sym</code></pre>
+<pre><code>    #define sym_SYMBOL(sym, _SYMBOL) sym</code></pre>
 <p>Example:</p>
-<pre class="&lt;!---c--&gt;"><code>    #define sym_1(sym, _1) sym</code></pre>
+<pre><code>    #define sym_1(sym, _1) sym</code></pre>
 <h4 id="tape">Tape</h4>
 <p>The initial content of the tape must be defined in the tape header using a
 triple like:</p>
-<pre class="&lt;!---c--&gt;"><code>    #define tape ((((,),...l2), l1), c, (r1, (r2..., (,))))</code></pre>
+<pre><code>    #define tape ((((,),...l2), l1), c, (r1, (r2..., (,))))</code></pre>
 <ul>
 <li><code>l1</code>, <code>l2</code>, … are the symbols to the left</li>
 <li><code>c</code> is the symbol at the current position</li>
@@ -209,7 +210,7 @@ want no movement.</li>
 <p>There must be a state <code>A</code> defined, which becomes the initial state of the
 machine.</p>
 <p>To halt the machine, use the keyword <code>break</code> as in</p>
-<pre class="&lt;!---c--&gt;"><code>    #define A_1 (2, break)</code></pre>
+<pre><code>    #define A_1 (2, break)</code></pre>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
@@ -252,10 +253,10 @@ machine.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/muth/tape_77_55.h">tape_77_55.h</a> - cpp macros</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/muth/tape_empty.h">tape_empty.h</a> - cpp macros</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/muth/tape_five.h">tape_five.h</a> - cpp macros</li>
-<li><a href="2015_muth.tar.bz2">2015_muth.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2015_muth.tar.bz2">2015_muth.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/muth/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/muth/.entry.json">.entry.json</a> - description of entry in JSON</li>

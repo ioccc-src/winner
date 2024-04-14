@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,16 +142,16 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <p>There is an alternate version, the original, that can’t be compiled in modern
 systems but can be if you have an old enough compiler. See <a href="#alternate-code">Alternate
 code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./isaak</code></pre>
+<pre><code>    ./isaak</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>The original version of this code is in <a href="isaak.alt.c">isaak.alt.c</a>.
 The original entry starts with the line:</p>
-<pre class="&lt;!---c--&gt;"><code>    main(){};</code></pre>
+<pre><code>    main(){};</code></pre>
 <p>This works on some systems. Why? Note that <code>#include &lt;stdio.h&gt;</code> is given on
 the last line. Why is this needed? Note the unusual calls to <code>sprintf(3)</code>.</p>
 <p>This version also relied on being able to define <code>#define</code> to something else and
@@ -158,7 +159,7 @@ using that macro for <code>#define</code>.</p>
 <p>This version will not likely work on modern systems if you can even get it to
 compile.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <p>Use <code>isaak.alt</code> as you would <code>isaak</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The program relies heavily on ASCII. Don’t even think of running it on
@@ -173,7 +174,7 @@ from a single macro (e.g., <code>"O/**/O"</code> creates either <code>++</code> 
 <p>NOTE: Most System V machines were not be able to execute this program correctly
 due to the fact that BSD style systems have an <code>sprintf(3)</code> that returns a <code>char *</code>. Due to the above problems, we placed the output of this program in the
 file: isaak.encode. To read this file do.</p>
-<pre class="&lt;!---sh--&gt;"><code>    uudecode &lt; isaak.encode
+<pre><code>    uudecode &lt; isaak.encode
     cat isaak.output</code></pre>
 <p>Since this was fixed, this file is not strictly necessary. See the
 <a href="isaak.alt.c">isaak.alt.c</a> for the original source.</p>
@@ -208,10 +209,10 @@ file: isaak.encode. To read this file do.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/isaak/isaak.alt.c">isaak.alt.c</a> - alternative source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/isaak/isaak.orig.c">isaak.orig.c</a> - original source</li>
 <li><a href="isaak.encode">isaak.encode</a> - uuencoded sample output</li>
-<li><a href="1988_isaak.tar.bz2">1988_isaak.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1988_isaak.tar.bz2">1988_isaak.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/isaak/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/isaak/.entry.json">.entry.json</a> - description of entry in JSON</li>

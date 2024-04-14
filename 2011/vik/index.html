@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,7 +142,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>There is an alternate version that should work for Windows. See <a href="#alternate-code">alternate
 code</a> below.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
@@ -149,14 +150,14 @@ code</a> below.</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#2011_vik">2011 vik bugs</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./vik file.mod &gt; audio_file.raw</code></pre>
+<pre><code>    ./vik file.mod &gt; audio_file.raw</code></pre>
 <p>If you have <code>mplayer(1)</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./vik file.mod | mplayer -demuxer rawaudio -</code></pre>
+<pre><code>    ./vik file.mod | mplayer -demuxer rawaudio -</code></pre>
 <p>Alternatively, you can convert the file to a WAV:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./vik file.mod &gt; file.raw; ./raw2wav file.raw &gt; file.wav</code></pre>
+<pre><code>    ./vik file.mod &gt; file.raw; ./raw2wav file.raw &gt; file.wav</code></pre>
 <p>and then play <code>file.wav</code> with a program that can play WAV files.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>The script checks that you have <code>mplayer(1)</code> installed and if it is it will pipe
 <code>vik</code> to <code>mplayer</code>. In this case it will also use <code>raw2wav</code> to convert the file
 to a WAV file. If <code>mplayer(1)</code> cannot be found it will just use <code>raw2wav</code>. This
@@ -168,7 +169,7 @@ Archive</a>.</p>
 <p>This version is based on the author’s remarks and it should work for Windows.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <p>Assuming that <code>make</code> is similar enough try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make alt</code></pre>
+<pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>vik.alt</code> as you would <code>vik</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -178,7 +179,7 @@ in a most pleasing manner if you don’t like tremolo or vibrato.</p>
 initialized 32MB array. Can you tell what that partial
 initialization for?</p>
 <p>Does it take your system a long time to compile? You may want to do:</p>
-<pre class="&lt;!---sh--&gt;"><code>    cc -S vik.c</code></pre>
+<pre><code>    cc -S vik.c</code></pre>
 <p>and examine the resulting assembly file <code>vik.s</code>. On some platforms
 the assembly file is about 128MB in size!</p>
 <p>NOTE: The <a href="randowan.mod">randowan.mod</a> and <a href="mad_world.mod">mad_world.mod</a> files were
@@ -225,12 +226,12 @@ Bertilsson, also known as Deelite:</p>
 </ol>
 <h3 id="build">Build</h3>
 <p>Compiling for Unix systems (including cygwin) is straight forward:</p>
-<pre class="&lt;!---sh--&gt;"><code>    gcc -o vik vik.c</code></pre>
+<pre><code>    gcc -o vik vik.c</code></pre>
 <h3 id="usage">Usage</h3>
 <h4 id="convert-mod-file-to-raw-44.1khz-stereo-audio-file">Convert MOD file to raw 44.1kHz stereo audio file</h4>
-<pre class="&lt;!---sh--&gt;"><code>    ./vik mad_world.mod &gt; audio_file.raw</code></pre>
+<pre><code>    ./vik mad_world.mod &gt; audio_file.raw</code></pre>
 <h4 id="listen-to-the-mod-file-streaming-to-mplayer">Listen to the MOD file (streaming to mplayer)</h4>
-<pre class="&lt;!---sh--&gt;"><code>    ./vik randowan.mod | mplayer -demuxer rawaudio -</code></pre>
+<pre><code>    ./vik randowan.mod | mplayer -demuxer rawaudio -</code></pre>
 <p>(Don’t forget the last <code>-</code> as it makes mplayer read from <code>stdin</code>.)</p>
 <h3 id="obfuscation">Obfuscation</h3>
 <p>The IOCCC rules did not put a limit on the entropy of the source code,
@@ -256,7 +257,7 @@ that the program relies on writing binary data to <code>stdout</code>.</p>
 <p>Microsoft compilers adds a carriage return to newlines, and to compile
 the program with this platform, the following line can be added after
 the main declaration in order for the program to run correctly:</p>
-<pre class="&lt;!---c--&gt;"><code>    _setmode(_fileno(stdout), 0x8000);</code></pre>
+<pre><code>    _setmode(_fileno(stdout), 0x8000);</code></pre>
 <p>NOTE: this is what the <a href="#alternate-code">alternate version</a> is for.</p>
 <h3 id="limitations">Limitations</h3>
 <p>The program only runs when a valid MOD file is passed as argument. If
@@ -292,10 +293,10 @@ no argument is passed, the program crashes.</p>
 <li><a href="randowan.mod">randowan.mod</a> - 4-channel Protracker module sound data</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/vik/raw2wav">raw2wav</a> - convert raw format to wav format</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/vik/try.sh">try.sh</a> - how to run</li>
-<li><a href="2011_vik.tar.bz2">2011_vik.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2011_vik.tar.bz2">2011_vik.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/vik/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/vik/.entry.json">.entry.json</a> - description of entry in JSON</li>

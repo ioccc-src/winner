@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -142,12 +143,12 @@ Location: <a href="../../location.html#MX">MX</a> - <em>United Mexican States</e
 
 <h2 id="to-build">To build:</h2>
 <p>If you have X11 installed:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make</code></pre>
+<pre><code>    make</code></pre>
 <p>There are two alternate versions, <a href="toledo.alt.c">one that lets you reconfigure the
 controls and size</a> and <a href="toledo.alt2.c">another that should work for
 Windows</a>. See <a href="#alternate-code">Alternate code</a> below.</p>
 <h2 id="to-use">To use:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./toledo</code></pre>
+<pre><code>    ./toledo</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>The first alt version, <a href="toledo.alt.c">toledo.alt.c</a>, allows you to reconfigure
 the controls and the dimensions more easily.</p>
@@ -168,7 +169,7 @@ have the right names you can define the macros <code>FIRE</code>, <code>FORWARD<
     HEIGHT= 288</code></pre>
 <p>but you can change them about however you like, even with other keys. For
 instance to swap <code>LEFT</code> and <code>RIGHT</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    make clobber LEFT=XK_Right:XK_d RIGHT=XK_Left:XK_a alt</code></pre>
+<pre><code>    make clobber LEFT=XK_Right:XK_d RIGHT=XK_Left:XK_a alt</code></pre>
 <p>but you can specify something completely else and you can pick and choose which
 controls you wish to redefine. You might also wish to change the dimensions of
 the game, <code>WIDTH</code> and <code>HEIGHT</code> which have an arbitrarily selected lower limit as
@@ -184,7 +185,7 @@ the source early on, right before the code gets hard to follow, or using the
 <a href="#alternate-code">alternate version</a>.</p>
 <p>Like Oscar’s previous winning X11 program for the 19th IOCCC, if
 you remove both the X11 include files and replace them with</p>
-<pre class="&lt;!---c--&gt;"><code>    #include &quot;layer.c&quot;</code></pre>
+<pre><code>    #include &quot;layer.c&quot;</code></pre>
 <p>you ought to be able to compile and run this program on Windows.
 NOTE: this is what <a href="toledo.alt2.c">toledo.alt2.c</a> is for.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
@@ -379,10 +380,10 @@ another program.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/toledo/toledo.orig.c">toledo.orig.c</a> - original source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/toledo/keysym.h">keysym.h</a> - included header file</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/toledo/layer.c">layer.c</a> - translation layer to make 3D Tanks game</li>
-<li><a href="2011_toledo.tar.bz2">2011_toledo.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="2011_toledo.tar.bz2">2011_toledo.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/toledo/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/toledo/.entry.json">.entry.json</a> - description of entry in JSON</li>

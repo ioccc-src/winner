@@ -88,6 +88,7 @@
     <div class="sidenav">
       <a href="../../news.html">IOCCC News</a>
       <a href="../../status.html">Contest status</a>
+      <a href="../../next/index.html">Rules and Guidelines</a>
       <a href="../../faq.html#submit">How to enter the IOCCC</a>
       <a href="../../faq.html">FAQ</a>
     </div>
@@ -141,16 +142,16 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <h2 id="to-build">To build:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    make all</code></pre>
+<pre><code>    make all</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: known bug - please help us fix
     STATUS: INABIAF - please **DO NOT** fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1992_adrian">1992 adrian bugs</a>.</p>
 <h2 id="try">Try:</h2>
-<pre class="&lt;!---sh--&gt;"><code>    ./try.sh</code></pre>
+<pre><code>    ./try.sh</code></pre>
 <p>For the slow minded, try:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./adsleep 32767</code></pre>
+<pre><code>    ./adsleep 32767</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Once you get past the obfuscation, you have an opportunity to learn
 about regular expressions and state machines.</p>
@@ -214,7 +215,7 @@ character list.</p>
     [q5]</code></pre>
 <p>With the automaton specification in <code>filename</code>, invoke the program by
 typing</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./adrian filename</code></pre>
+<pre><code>    ./adrian filename</code></pre>
 <p>It will read the file and print out all the lines which the automaton
 accepts. If the file cannot be opened, a system error message will
 be printed. If the input contains errors, then an error message along
@@ -225,7 +226,7 @@ being processed is printed. Error <code>no_destination</code> occurs if you spec
 set of characters, but no destination state, and error <code>too_many_states</code>
 occurs if your automaton has more than 257 states.</p>
 <p>Running:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./adrian from &lt; your_mailbox</code></pre>
+<pre><code>    ./adrian from &lt; your_mailbox</code></pre>
 <p>will perform a function similar to that of the unix <code>from</code> command.</p>
 <p>If no filename is specified on the command line, then <code>__FILE__</code> is used as the
 specification for the automaton. (Originally this was <code>"adgrep.c"</code> but the file
@@ -234,23 +235,23 @@ changed to <code>__FILE__</code>.) In this case, the program will search for mat
 the regular expression:</p>
 <pre><code>    ^.[^|C][^w[Q]*(Q|[w[]c).*|^.[C|]$</code></pre>
 <p>I suggest using <code>adrian.c</code> as input, and storing the output in <code>adwc.c</code>:</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./adrian &lt; adrian.c &gt; adwc.c</code></pre>
+<pre><code>    ./adrian &lt; adrian.c &gt; adwc.c</code></pre>
 <p>Compiling the new file, <code>adwc.c</code>, yields a clone of the unix <code>wc</code> command. It
 runs on one file, defaulting to <code>"adrian.c"</code> if no file is given (again, this
 was changed to be <code>__FILE__</code>) and displays the number of lines, words, and bytes
 in the input file.</p>
 <p>Another possibly interesting automaton can be created by slightly
 adjusting the <code>adrian.c</code> file. Change the first line to read</p>
-<pre class="&lt;!---c--&gt;"><code>    /* . echo| . */</code></pre>
+<pre><code>    /* . echo| . */</code></pre>
 <p>and repeat the process above</p>
-<pre class="&lt;!---sh--&gt;"><code>    ./adrian &lt;adrian.c &gt; adecho.c</code></pre>
+<pre><code>    ./adrian &lt;adrian.c &gt; adecho.c</code></pre>
 <p>The new file now contains all lines which match</p>
 <pre><code>    ^.[^5|m^]*[m^]([e=p,;]|[^e=+p,;].*)$</code></pre>
 <p>Compile and run. This is an <code>echo(1)</code> clone. Note the efficient algorithm
 employed.</p>
 <p>Two other adjustments to the first line also yield useful results. By
 changing it to</p>
-<pre class="&lt;!---c--&gt;"><code>    /* . head; . */</code></pre>
+<pre><code>    /* . head; . */</code></pre>
 <p>you can search for matches to</p>
 <pre><code>    ^.[^W]*W..*$</code></pre>
 <p>By some freak happenstance, lines of <code>adrian.c</code> which match this regular
@@ -258,7 +259,7 @@ expression form a unix <code>head(1)</code> command. It prints the first ten lin
 the file specified on the command line or <code>adrian.c</code> if no file is
 specified (again this was changed to <code>__FILE__</code>).</p>
 <p>By setting the first line to</p>
-<pre class="&lt;!---c--&gt;"><code>    /* . basename . */</code></pre>
+<pre><code>    /* . basename . */</code></pre>
 <p>a clone of the unix <code>basename(1)</code> command can be unearthed. The automaton will
 search for</p>
 <pre><code>    ^.[^j]*jr.*$</code></pre>
@@ -268,7 +269,7 @@ filename, and the second, an extension. All leading pathname components
 are removed from the filename, and the extension is removed if present.
 The resulting base name is printed to stdout.</p>
 <p>Lastly, by setting the first line to</p>
-<pre class="&lt;!---c--&gt;"><code>    /* . sleep . */</code></pre>
+<pre><code>    /* . sleep . */</code></pre>
 <p>you can search for</p>
 <pre><code>    ^.[^(~][^s]*sl.*$</code></pre>
 <p>Filtering <code>adrian.c</code> through this search yields a clone of the <code>sleep(1)</code>
@@ -327,10 +328,10 @@ when compiled depending on the compiler.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/adrian/adrian.grep.from">adrian.grep.from</a> - agrep script</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/adrian/adrian.grep.try">adrian.grep.try</a> - agrep script</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/adrian/try.sh">try.sh</a> - how to run</li>
-<li><a href="1992_adrian.tar.bz2">1992_adrian.tar.bz2</a> - download entry tarball</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
+<li><a href="1992_adrian.tar.bz2">1992_adrian.tar.bz2</a> - download entry tarball</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/adrian/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/adrian/.entry.json">.entry.json</a> - description of entry in JSON</li>
