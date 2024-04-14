@@ -101,7 +101,7 @@ shopt -s globstar	# enable '**' to match all files and zero or more directories 
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.4 2024-03-27"
+export VERSION="1.2.5 2024-04-13"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -119,7 +119,7 @@ fi
 export TOPDIR
 export PANDOC_WRAPPER="bin/pandoc-wrapper.sh"
 export DOCROOT_SLASH="../../"
-export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc"
+export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc/blob/master"
 export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 export URL="#"
 

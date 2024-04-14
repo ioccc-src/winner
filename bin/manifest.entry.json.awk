@@ -22,7 +22,7 @@ BEGIN {
 
     # setup
     #
-    VERSION="1.1 2024-02-11"
+    VERSION="1.1.1 2024-04-13"
     found_manifest_array = 0;	# 1 ==> we found the manifest ARRAY
     within_manifest_array = 0;	# 1 ==> found start of "manifest" : [ JSON array
     begin_manifest_element = 0;	# 1 ==> we have found the start of the manifest array element
@@ -373,7 +373,7 @@ within_manifest_array == 1 && begin_manifest_element == 1 && NF == 1 && $1 ~ /^}
     if (unquote_display_via_github == "false") {
         url = unquote_file_path;
     } else {
-	url = github "/blob/master/" YYYY "/" dir "/" unquote_file_path;
+	url = github "/" YYYY "/" dir "/" unquote_file_path;
     }
     print inventory_order, "* [" unquote_file_path "](" url ") -", unquote_entry_text;
 

@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.5 2024-04-13"
+export VERSION="1.3.6 2024-04-13"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -100,7 +100,7 @@ if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
 export TOPDIR
-export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc"
+export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc/blob/master"
 export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 export CAP_W_FLAG_FOUND=
 export MODTIME_METHOD=""
