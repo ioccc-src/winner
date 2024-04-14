@@ -43,14 +43,6 @@
 	    "entry_text" : "original source"
 	},
 	{
-	    "file_path" : "a.out.h",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "header file for gentab.c for compatibility with 1984 systems"
-	},
-	{
 	    "file_path" : "gentab.c",
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
@@ -59,12 +51,20 @@
 	    "entry_text" : "author tool to generate code"
 	},
 	{
+	    "file_path" : "a.out.h",
+	    "inventory_order" : 160,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "header file for gentab.c for compatibility with 1984 systems"
+	},
+	{
 	    "file_path" : "1984_mullender.tar.bz2",
 	    "inventory_order" : 100000,
 	    "OK_to_edit" : false,
 	    "display_as" : "tbz2",
 	    "display_via_github" : false,
-	    "entry_text" : "download entry"
+	    "entry_text" : "download entry tarball"
 	},
 	{
 	    "file_path" : "index.html",
@@ -104,7 +104,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
-	    "entry_text" : "markdown source for index.html"
+	    "entry_text" : "markdown source for this web page"
 	}
     ]
 }

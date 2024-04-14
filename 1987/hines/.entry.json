@@ -63,7 +63,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "tbz2",
 	    "display_via_github" : false,
-	    "entry_text" : "download entry"
+	    "entry_text" : "download entry tarball"
 	},
 	{
 	    "file_path" : "index.html",
@@ -103,7 +103,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
-	    "entry_text" : "markdown source for index.html"
+	    "entry_text" : "markdown source for this web page"
 	}
     ]
 }
