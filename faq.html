@@ -916,7 +916,7 @@ judging the IOCCC. A Unix man page for <code>cb</code>
 usually away with <code>stty echo</code>. Sometimes you can also get away with <code>stty sane</code>.
 <code>reset</code> does the most but note that it will clear the screen (obviously <code>clear</code>
 will too but it won’t reset the terminal).</p>
-<h3 id="faq-3.7-how-do-i-run-an-ioccc-entry-that-requires-x11"><a name="faq3_7"></a><a name="X11macos"></a><a name="X11"></a>FAQ 3.7: How do I run an IOCCC entry that requires X11?</h3>
+<h3 id="faq-3.7-how-do-i-run-an-ioccc-entry-that-requires-x11"><a name="faq3_7"></a><a name="X11macOS"></a><a name="X11"></a>FAQ 3.7: How do I run an IOCCC entry that requires X11?</h3>
 <h4 id="generally-to-compile-and-run-an-ioccc-entry-that-requires-x11"><a name="X11_general"></a>Generally, to compile and run an IOCCC entry that requires X11:</h4>
 <p>You must have the X11 related include files and X11 libraries in order to
 compile the IOCCC entry. In order to do this you will need to install Xorg and
@@ -987,7 +987,7 @@ shell</a>.</p>
 <p>As an example we will use <a href="1993/jonth/index.html">1993/jonth</a> which works
 with macOS 14.2.1 (macOS Sonoma).</p>
 <p>First of all you will need to install the <a href="https://www.xquartz.org">most recent
-XQuartz</a>, preferably on an <a href="https://support.apple.com/macos">Apple supported version of
+XQuartz</a>, preferably on an <a href="https://support.apple.com/macOS">Apple supported version of
 macOS, preferably the most recent version</a>.
 After it is installed, open the “XQuartz” application (usually located in
 <code>/Applications/Utilities/XQuartz.app</code>) by typing at the command line:</p>
@@ -1033,7 +1033,7 @@ may be helpful:</p>
 <pre class="&lt;!---sh--&gt;"><code>    sudo yum install --skip-broken --best --exclude xorgxrdp --exclude xorgxrdp-glamor &#39;*xorg*&#39; &#39;libx*&#39; &#39;libX*&#39; &#39;fontconfig*&#39;</code></pre>
 <p><strong>IMPORTANT NOTE</strong>: The <a href="#Xorg_deprecated">X.org server has been deprecated</a>.
 See the above note for details.</p>
-<h4 id="package-website">package website</h4>
+<h4 id="package-website">Package website</h4>
 <p>First, see the above note on <a href="#X11_general">installing and starting Xorg</a>.</p>
 <p>See the <a href="https://x.org/wiki/">X.org</a> foundation web site.</p>
 <p><strong>IMPORTANT NOTE</strong>: The <a href="#Xorg_deprecated">X.org server has been deprecated</a>.
@@ -1063,7 +1063,7 @@ the package website.</p>
 <p>Then to install SDL and SDL2, execute the following command:</p>
 <pre class="&lt;!---sh--&gt;"><code>    brew install sdl2 sdl12-compat
     eval &quot;$(opt/homebrew/bin/brew shellenv)&quot;</code></pre>
-<h5 id="macos-via-macports">macos via MacPorts</h5>
+<h5 id="macos-via-macports">macOS via MacPorts</h5>
 <p>If you haven’t already, install
 <a href="https://www.macports.org/install.php">MacPorts</a>. Then run:</p>
 <pre class="&lt;!---sh--&gt;"><code>    sudo port install libsdl libsdl2</code></pre>
@@ -1082,7 +1082,7 @@ the package website.</p>
 feature of the package manager to determine which packages you need to install.
 Note that you might have to install both the library and the developmental
 packages: one for compiling and one for linking / running.</p>
-<h4 id="package-website-1">package website</h4>
+<h4 id="package-website-1">Package website</h4>
 <p>Go to the <a href="https://www.libsdl.org">SDL website</a> and follow their instructions
 for downloading, installing and using SDL.</p>
 <p>We recommend trying a method suitable for your environment first, if possible.</p>
@@ -1105,7 +1105,7 @@ macOS with alternative methods for macOS and different package managers with Lin
 <p>and agree to the terms and conditions and proceed with the install.</p>
 <h5 id="macos-via-homebrew-1">macOS via Homebrew</h5>
 <p>Not applicable, see above.</p>
-<h5 id="macos-via-macports-1">macos via MacPorts</h5>
+<h5 id="macos-via-macports-1">macOS via MacPorts</h5>
 <p>Not applicable, see above.</p>
 <h4 id="debian-based-linux-2">Debian based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
@@ -1116,7 +1116,7 @@ macOS with alternative methods for macOS and different package managers with Lin
 feature of the package manager to determine which packages you need to install.
 Note that you might have to install both the library and the developmental
 packages: one for compiling and one for linking / running.</p>
-<h4 id="package-website-2">package website</h4>
+<h4 id="package-website-2">Package website</h4>
 <p>Go to the <a href="https://invisible-island.net/ncurses/">ncurses website</a> and follow their instructions
 for downloading, installing and using ncurses.</p>
 <p>We recommend trying a method suitable for your environment first, if possible.</p>
@@ -1141,7 +1141,7 @@ install depends on your OS.</p>
 <h4 id="debian-based-linux-3">Debian based Linux</h4>
 <p>Usually the index.html file will explain how to use it under Debian so we do not
 include this here, at least for now.</p>
-<h4 id="package-website-3">package website</h4>
+<h4 id="package-website-3">Package website</h4>
 <p>Not applicable, see above.</p>
 <h4 id="other-linux-distributions-3">Other Linux distributions</h4>
 <p>Usually the index.html file will explain how to use it under Linux so we do not
@@ -1294,7 +1294,7 @@ the package website.</p>
 <p>If you have not already done so, install <a href="https://brew.sh">Homebrew</a>.</p>
 <p>Then to install netpbm, execute the following command:</p>
 <pre class="&lt;!---sh--&gt;"><code>    brew install netpbm</code></pre>
-<h5 id="macos-via-macports-3">macos via MacPorts</h5>
+<h5 id="macos-via-macports-3">macOS via MacPorts</h5>
 <p>If you haven’t already, install
 <a href="https://www.macports.org/install.php">MacPorts</a>. Then run:</p>
 <pre class="&lt;!---sh--&gt;"><code>    sudo port install libnetpbm netpbm</code></pre>
@@ -1307,7 +1307,7 @@ the package website.</p>
 feature of the package manager to determine which packages you need to install.
 Note that you might have to install both the library and the developmental
 packages: one for compiling and one for linking / running.</p>
-<h4 id="package-website-4">package website</h4>
+<h4 id="package-website-4">Package website</h4>
 <p>Go to the <a href="https://netpbm.sourceforge.net">netpbm website</a> and follow their instructions
 for downloading, installing and using netpbm.</p>
 <p>We recommend trying a method suitable for your environment first, if possible.</p>
@@ -1328,7 +1328,7 @@ the package website.</p>
 <p>If you have not already done so, install <a href="https://brew.sh">Homebrew</a>.</p>
 <p>Then to install libjpeg-turbo, execute the following command:</p>
 <pre class="&lt;!---sh--&gt;"><code>    brew install libjpeg-turbo</code></pre>
-<h5 id="macos-via-macports-4">macos via MacPorts</h5>
+<h5 id="macos-via-macports-4">macOS via MacPorts</h5>
 <p>If you haven’t already, install
 <a href="https://www.macports.org/install.php">MacPorts</a>. Then run:</p>
 <pre class="&lt;!---sh--&gt;"><code>    sudo port install libjpeg-turbo libjpeg-turbo-devel</code></pre>
@@ -1341,7 +1341,7 @@ the package website.</p>
 feature of the package manager to determine which packages you need to install.
 Note that you might have to install both the library and the developmental
 packages: one for compiling and one for linking / running.</p>
-<h4 id="package-website-5">package website</h4>
+<h4 id="package-website-5">Package website</h4>
 <p>Go to the <a href="https://www.libjpeg-turbo.org">libjpeg-turbo website</a> and follow their instructions
 for downloading, installing and using libjpeg-turbo.</p>
 <p>We recommend trying a method suitable for your environment first, if possible.</p>
@@ -1362,7 +1362,7 @@ the package website.</p>
 <p>If you have not already done so, install <a href="https://brew.sh">Homebrew</a>.</p>
 <p>Then to install ImageMagick, execute the following command:</p>
 <pre class="&lt;!---sh--&gt;"><code>    brew install ImageMagick</code></pre>
-<h5 id="macos-via-macports-5">macos via MacPorts</h5>
+<h5 id="macos-via-macports-5">macOS via MacPorts</h5>
 <p>If you haven’t already, install
 <a href="https://www.macports.org/install.php">MacPorts</a>. Then run:</p>
 <pre class="&lt;!---sh--&gt;"><code>    sudo port install ImageMagick</code></pre>
@@ -1375,7 +1375,7 @@ the package website.</p>
 feature of the package manager to determine which packages you need to install.
 Note that you might have to install both the library and the developmental
 packages: one for compiling and one for linking / running.</p>
-<h4 id="package-website-6">package website</h4>
+<h4 id="package-website-6">Package website</h4>
 <p>Go to the <a href="https://imagemagick.org">ImageMagick website</a> and follow their instructions
 for downloading, installing and using ImageMagick.</p>
 <p>We recommend trying a method suitable for your environment first, if possible.</p>
@@ -1411,7 +1411,7 @@ you might look to install OpenGL via Homebrew or MacPorts.</p>
 feature of the package manager to determine which packages you need to install.
 Note that you might have to install both the library and the developmental
 packages: one for compiling and one for linking / running.</p>
-<h4 id="package-website-7">package website</h4>
+<h4 id="package-website-7">Package website</h4>
 <p>Go to the <a href="https://vulkan.org">Vulkan website</a> and follow their instructions
 for downloading, installing and using OpenGL.</p>
 <p>We recommend trying a method suitable for your environment first, if possible.</p>

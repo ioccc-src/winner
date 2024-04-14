@@ -1039,7 +1039,7 @@ usually away with `stty echo`. Sometimes you can also get away with `stty sane`.
 will too but it won't reset the terminal).
 
 
-### <a name="faq3_7"></a><a name="X11macos"></a><a name="X11"></a>FAQ 3.7: How do I run an IOCCC entry that requires X11?
+### <a name="faq3_7"></a><a name="X11macOS"></a><a name="X11"></a>FAQ 3.7: How do I run an IOCCC entry that requires X11?
 
 
 #### <a name="X11_general"></a>Generally, to compile and run an IOCCC entry that requires X11:
@@ -1138,7 +1138,7 @@ with macOS 14.2.1 (macOS Sonoma).
 
 First of all you will need to install the [most recent
 XQuartz](https://www.xquartz.org), preferably on an [Apple supported version of
-macOS, preferably the most recent version](https://support.apple.com/macos).
+macOS, preferably the most recent version](https://support.apple.com/macOS).
 After it is installed, open the "XQuartz" application (usually located in
 `/Applications/Utilities/XQuartz.app`) by typing at the command line:
 
@@ -1216,7 +1216,7 @@ For systems that have the `yum(1)` command:
 See the above note for details.
 
 
-#### package website
+#### Package website
 
 First, see the above note on [installing and starting Xorg](#X11_general).
 
@@ -1280,7 +1280,7 @@ Then to install SDL and SDL2, execute the following command:
 ```
 
 
-##### macos via MacPorts
+##### macOS via MacPorts
 
 If you haven't already, install
 [MacPorts](https://www.macports.org/install.php). Then run:
@@ -1325,7 +1325,7 @@ Note that you might have to install both the library and the developmental
 packages: one for compiling and one for linking / running.
 
 
-#### package website
+#### Package website
 
 Go to the [SDL website](https://www.libsdl.org) and follow their instructions
 for downloading, installing and using SDL.
@@ -1375,7 +1375,7 @@ and agree to the terms and conditions and proceed with the install.
 Not applicable, see above.
 
 
-##### macos via MacPorts
+##### macOS via MacPorts
 
 Not applicable, see above.
 
@@ -1399,7 +1399,7 @@ Note that you might have to install both the library and the developmental
 packages: one for compiling and one for linking / running.
 
 
-#### package website
+#### Package website
 
 Go to the [ncurses website](https://invisible-island.net/ncurses/) and follow their instructions
 for downloading, installing and using ncurses.
@@ -1454,7 +1454,7 @@ Usually the index.html file will explain how to use it under Debian so we do not
 include this here, at least for now.
 
 
-#### package website
+#### Package website
 
 Not applicable, see above.
 
@@ -1700,7 +1700,7 @@ Then to install netpbm, execute the following command:
 ```
 
 
-##### macos via MacPorts
+##### macOS via MacPorts
 
 If you haven't already, install
 [MacPorts](https://www.macports.org/install.php). Then run:
@@ -1730,7 +1730,7 @@ Note that you might have to install both the library and the developmental
 packages: one for compiling and one for linking / running.
 
 
-#### package website
+#### Package website
 
 Go to the [netpbm website](https://netpbm.sourceforge.net) and follow their instructions
 for downloading, installing and using netpbm.
@@ -1777,7 +1777,7 @@ Then to install libjpeg-turbo, execute the following command:
 ```
 
 
-##### macos via MacPorts
+##### macOS via MacPorts
 
 If you haven't already, install
 [MacPorts](https://www.macports.org/install.php). Then run:
@@ -1808,7 +1808,7 @@ Note that you might have to install both the library and the developmental
 packages: one for compiling and one for linking / running.
 
 
-#### package website
+#### Package website
 
 Go to the [libjpeg-turbo website](https://www.libjpeg-turbo.org) and follow their instructions
 for downloading, installing and using libjpeg-turbo.
@@ -1853,7 +1853,7 @@ Then to install ImageMagick, execute the following command:
 ```
 
 
-##### macos via MacPorts
+##### macOS via MacPorts
 
 If you haven't already, install
 [MacPorts](https://www.macports.org/install.php). Then run:
@@ -1883,7 +1883,7 @@ Note that you might have to install both the library and the developmental
 packages: one for compiling and one for linking / running.
 
 
-#### package website
+#### Package website
 
 Go to the [ImageMagick website](https://imagemagick.org) and follow their instructions
 for downloading, installing and using ImageMagick.
@@ -1955,7 +1955,7 @@ Note that you might have to install both the library and the developmental
 packages: one for compiling and one for linking / running.
 
 
-#### package website
+#### Package website
 
 Go to the [Vulkan website](https://vulkan.org) and follow their instructions
 for downloading, installing and using OpenGL.
