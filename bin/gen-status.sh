@@ -1227,7 +1227,7 @@ if [[ -z $NOOP ]]; then
 	#
 	if [[ $V_FLAG -ge 1 ]]; then
 	    echo "$0: debug[1]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]} --" \
-		 "next/guidelines.md $guidelines_HTML" 1>&2
+		 "next/guidelines.md $GUIDELINES_HTML" 1>&2
 	fi
 	"$MD2HTML_SH" "${TOOL_OPTION[@]}" -- \
 	  next/guidelines.md "$GUIDELINES_HTML"
@@ -1238,7 +1238,7 @@ if [[ -z $NOOP ]]; then
 		 "failed, error: $status" 1>&2
 	    exit 32
 	elif [[ $V_FLAG -ge 3 ]]; then
-	    echo "$0: debug[3]: guidelines.md now up to date: $guidelines_MD" 1>&2
+	    echo "$0: debug[3]: guidelines.md now up to date: $GUIDELINES_MD" 1>&2
 	fi
     fi
 
