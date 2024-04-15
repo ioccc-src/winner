@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.3 2024-04-13"
+export VERSION="1.4 2024-04-15"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -891,8 +891,8 @@ EOF
 
 	    # output author information
 	    #
-	    echo "<p><a name=\"$AUTHOR_HANDLE\"></a>**$FULL_NAME**</br>"
-	    echo "author_handle: $AUTHOR_HANDLE</br>"
+	    echo "<p><a name=\"$AUTHOR_HANDLE\"></a>**$FULL_NAME**"
+	    echo "author_handle: $AUTHOR_HANDLE"
 	    if [[ $LOCATION_NAME == "$LOCATION_COMMON_NAME" ]]; then
 		echo "Location: [$LOCATION_CODE](location.html#$LOCATION_CODE) -" \
 		     "_${LOCATION_NAME}_</p>"
