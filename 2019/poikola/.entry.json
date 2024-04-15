@@ -42,14 +42,6 @@
 	    "entry_text" : "original source"
 	},
 	{
-	    "file_path" : "poikola.tex",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "tex",
-	    "display_via_github" : true,
-	    "entry_text" : "supplied documentation"
-	},
-	{
 	    "file_path" : "try.alt.sh",
 	    "inventory_order" : 100,
 	    "OK_to_edit" : true,
@@ -64,6 +56,14 @@
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
 	    "entry_text" : "how to run"
+	},
+	{
+	    "file_path" : "poikola.tex",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "tex",
+	    "display_via_github" : true,
+	    "entry_text" : "supplied documentation"
 	},
 	{
 	    "file_path" : "2019_poikola.tar.bz2",

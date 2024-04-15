@@ -46,7 +46,7 @@
 	    "inventory_order" : 180,
 	    "OK_to_edit" : true,
 	    "display_as" : "xxencode",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "uuencoded sample output"
 	},
 	{

@@ -310,7 +310,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "reserved words for a given C standard"
 	},
 	{
@@ -326,7 +326,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "reserved words for a given C standard"
 	},
 	{
@@ -334,7 +334,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "reserved words for a given C standard"
 	},
 	{
@@ -342,7 +342,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "reserved words for a given C standard"
 	},
 	{
@@ -350,7 +350,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "reserved words for a given C standard"
 	},
 	{
@@ -358,7 +358,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "reserved words for a given C standard"
 	},
 	{
@@ -366,7 +366,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "reserved words for a Java v8"
 	},
 	{
@@ -374,7 +374,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "reserved words for a given C standard"
 	},
 	{
@@ -382,7 +382,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "reserved words for a given C standard"
 	},
 	{
@@ -398,7 +398,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "results without -k"
 	},
 	{

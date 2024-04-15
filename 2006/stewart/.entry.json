@@ -54,7 +54,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -62,7 +62,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -70,7 +70,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -78,7 +78,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -86,7 +86,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -94,7 +94,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -102,7 +102,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -110,7 +110,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -118,7 +118,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -126,7 +126,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -134,7 +134,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -142,7 +142,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -150,7 +150,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -158,7 +158,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -166,7 +166,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -174,7 +174,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -182,7 +182,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -190,7 +190,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -198,7 +198,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -206,7 +206,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -214,7 +214,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -222,7 +222,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -230,7 +230,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -238,7 +238,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -246,7 +246,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -254,7 +254,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -262,7 +262,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -270,7 +270,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -278,7 +278,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -286,7 +286,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -294,7 +294,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -302,7 +302,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -310,7 +310,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -318,7 +318,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -326,7 +326,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -334,7 +334,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -342,7 +342,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -350,7 +350,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
@@ -358,7 +358,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "sample input"
 	},
 	{
