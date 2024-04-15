@@ -88,7 +88,7 @@ TOP_MD_SET+=("faq")
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3 2024-04-14"
+export VERSION="1.4 2024-04-15"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -302,12 +302,7 @@ if [[ -n $TAGLINE ]]; then
     TOOL_OPTION+=("$TAGLINE")
 fi
 
-# always add the '-U URL' for the top level location.html file
-#
-TOOL_OPTION+=("-U")
-TOOL_OPTION+=("$SITE_URL/location.html")
-
-# always add the '-D docroot/' for the top level location.html file
+# always add the '-D docroot/' for the top level files
 #
 TOOL_OPTION+=("-D")
 TOOL_OPTION+=("$DOCROOT_SLASH")
@@ -402,10 +397,6 @@ if [[ ! -x $LOCATION_TOOL ]]; then
     exit 5
 fi
 
-# note location.html file
-#
-export LOCATION_HTML="location.html"
-
 # print running info if verbose
 #
 # If -v 3 or higher, print exported variables in order that they were exported.
@@ -437,7 +428,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: AUTHOR_DIR=$AUTHOR_DIR" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
-    echo "$0: debug[3]: LOCATION_HTML=$LOCATION_HTML" 1>&2
 fi
 
 # -N stops early before any processing is performed
@@ -505,7 +495,7 @@ for name in "${TOP_MD_SET[@]}"; do
 	    echo "$0: debug[1]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]} -m $MD_FILE --" \
 		 "$MD_FILE $HTML_FILE" 1>&2
 	fi
-	"$MD2HTML_SH" "${TOOL_OPTION[@]}" -m "$MD_FILE" -- \
+	"$MD2HTML_SH" "${TOOL_OPTION[@]}" -U "$SITE_URL/$HTML_FILE" -m "$MD_FILE" -- \
 	    "$MD_FILE" "$HTML_FILE"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
