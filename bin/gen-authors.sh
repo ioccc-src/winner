@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4 2024-04-15"
+export VERSION="1.5 2024-04-15"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -785,7 +785,7 @@ fi
     # output top of content
     #
     cat << EOF
-<center><p>Jump to authors starting with: [
+<p style="text-align:center;">Jump to authors starting with: [
 <a href="#A">A</a>&nbsp;&nbsp;
 <a href="#B">B</a>&nbsp;&nbsp;
 <a href="#C">C</a>&nbsp;&nbsp;
@@ -812,7 +812,7 @@ fi
 <a href="#X">X</a>&nbsp;&nbsp;
 <a href="#Y">Y</a>&nbsp;&nbsp;
 <a href="#Z">Z</a>
-]</p></center>
+]</p>
 <p>
 <hr>
 
