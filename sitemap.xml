@@ -17642,7 +17642,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2020/ferguson2/obfuscation.key</loc>
-    <lastmod>2024-04-15T03:41:47+00:00</lastmod>
+    <lastmod>2024-04-15T03:51:00+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2020/ferguson2/obfuscation.md</loc>
@@ -19090,19 +19090,19 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/gen-sitemap.sh</loc>
-    <lastmod>2024-04-14T01:22:03+00:00</lastmod>
+    <lastmod>2024-04-15T05:10:31+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/gen-status.sh</loc>
-    <lastmod>2024-04-14T01:22:03+00:00</lastmod>
+    <lastmod>2024-04-15T06:15:56+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/gen-top-html.sh</loc>
-    <lastmod>2024-04-14T22:45:19+00:00</lastmod>
+    <lastmod>2024-04-15T06:23:59+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/gen-year-index.sh</loc>
-    <lastmod>2024-04-14T01:22:03+00:00</lastmod>
+    <lastmod>2024-04-15T05:16:49+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/gen-years.sh</loc>
@@ -19130,7 +19130,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/output-year-index.sh</loc>
-    <lastmod>2024-04-14T01:22:03+00:00</lastmod>
+    <lastmod>2024-04-15T05:20:49+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/pandoc-wrapper.sh</loc>
@@ -19174,7 +19174,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/subst.year-index.sh</loc>
-    <lastmod>2024-04-14T01:22:03+00:00</lastmod>
+    <lastmod>2024-04-15T05:11:04+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/subst.year-navbar.awk</loc>
@@ -19194,7 +19194,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/untar-year.sh</loc>
-    <lastmod>2024-04-14T01:22:03+00:00</lastmod>
+    <lastmod>2024-04-15T05:23:28+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bugs.html</loc>
@@ -19310,7 +19310,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/inc/md2html.cfg</loc>
-    <lastmod>2024-04-14T22:25:14+00:00</lastmod>
+    <lastmod>2024-04-15T06:18:21+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/inc/README.md</loc>
@@ -19410,7 +19410,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/Makefile</loc>
-    <lastmod>2024-04-14T23:47:54+00:00</lastmod>
+    <lastmod>2024-04-15T06:27:07+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/news.html</loc>

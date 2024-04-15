@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.1 2024-04-13"
+export VERSION="1.3 2024-04-14"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -579,11 +579,11 @@ if [[ ! -f $NEWS_MD ]]; then
     exit 1
 fi
 if [[ ! -r $NEWS_MD ]]; then
-    echo  "$0: ERROR: news.md is not an executable file: $NEWS_MD" 1>&2
+    echo  "$0: ERROR: news.md is not an readable file: $NEWS_MD" 1>&2
     exit 1
 fi
 if [[ ! -s $NEWS_MD ]]; then
-    echo  "$0: ERROR: news.md is not an executable file: $NEWS_MD" 1>&2
+    echo  "$0: ERROR: news.md is not an non-empty readable file: $NEWS_MD" 1>&2
     exit 1
 fi
 
@@ -599,11 +599,11 @@ if [[ ! -f $STATUS_JSON ]]; then
     exit 1
 fi
 if [[ ! -r $STATUS_JSON ]]; then
-    echo  "$0: ERROR: status.json is not an executable file: $STATUS_JSON" 1>&2
+    echo  "$0: ERROR: status.json is not an readable file: $STATUS_JSON" 1>&2
     exit 1
 fi
 if [[ ! -s $STATUS_JSON ]]; then
-    echo  "$0: ERROR: status.json is not an executable file: $STATUS_JSON" 1>&2
+    echo  "$0: ERROR: status.json is not an non-empty readable file: $STATUS_JSON" 1>&2
     exit 1
 fi
 
@@ -619,11 +619,11 @@ if [[ ! -f $STATUS_MD ]]; then
     exit 1
 fi
 if [[ ! -r $STATUS_MD ]]; then
-    echo  "$0: ERROR: status.md is not an executable file: $STATUS_MD" 1>&2
+    echo  "$0: ERROR: status.md is not an readable file: $STATUS_MD" 1>&2
     exit 1
 fi
 if [[ ! -s $STATUS_MD ]]; then
-    echo  "$0: ERROR: status.md is not an executable file: $STATUS_MD" 1>&2
+    echo  "$0: ERROR: status.md is not an non-empty readable file: $STATUS_MD" 1>&2
     exit 1
 fi
 
@@ -650,6 +650,24 @@ if [[ ! -s $TOP_FILE ]]; then
     echo  "$0: ERROR: .top is not a non-empty readable file: $TOP_FILE" 1>&2
     exit 6
 fi
+
+# verify that we have an inc subdirectory
+#
+export INC_PATH="$TOPDIR/inc"
+if [[ ! -d $INC_PATH ]]; then
+    echo "$0: ERROR: inc is not a directory under topdir: $INC_PATH" 1>&2
+    exit 6
+fi
+export INC_DIR="inc"
+
+# verify that we have an next subdirectory
+#
+export NEXT_PATH="$TOPDIR/next"
+if [[ ! -d $NEXT_PATH ]]; then
+    echo "$0: ERROR: next is not a directory under topdir: $NEXT_PATH" 1>&2
+    exit 6
+fi
+export NEXT_DIR="next"
 
 # determine how we can determine the file modification time in W3C Datetime format:
 #
@@ -746,6 +764,10 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: STATUS_MD=$STATUS_MD" 1>&2
     echo "$0: debug[3]: STATUS_HTML=$STATUS_HTML" 1>&2
     echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
+    echo "$0: debug[3]: INC_PATH=$INC_PATH" 1>&2
+    echo "$0: debug[3]: INC_DIR=$INC_DIR" 1>&2
+    echo "$0: debug[3]: NEXT_PATH=$NEXT_PATH" 1>&2
+    echo "$0: debug[3]: NEXT_DIR=$NEXT_DIR" 1>&2
 fi
 
 # validate JSON in status.json
@@ -776,7 +798,7 @@ if [[ -z $CONTEST_STATUS ]]; then
 	exit 1
     fi
 
-    # validate and normalize the contest_status cfrom status.json
+    # validate and normalize the contest_status from status.json
     #
     case "$CONTEST_STATUS" in
     p|pending) CONTEST_STATUS="pending"
@@ -793,6 +815,88 @@ if [[ -z $CONTEST_STATUS ]]; then
 	exit 1
 	;;
     esac
+fi
+
+# determine the rules.md markdown file
+#
+export RULES_MD="$NEXT_DIR/rules.md"
+if [[ ! -e $RULES_MD ]]; then
+    echo  "$0: ERROR: rules.md does not exist: $RULES_MD" 1>&2
+    exit 1
+fi
+if [[ ! -f $RULES_MD ]]; then
+    echo  "$0: ERROR: rules.md is not a regular file: $RULES_MD" 1>&2
+    exit 1
+fi
+if [[ ! -r $RULES_MD ]]; then
+    echo  "$0: ERROR: rules.md is not an readable file: $RULES_MD" 1>&2
+    exit 1
+fi
+if [[ ! -s $RULES_MD ]]; then
+    echo  "$0: ERROR: rules.md is not an non-empty readable file: $RULES_MD" 1>&2
+    exit 1
+fi
+export RULES_HTML="$NEXT_DIR/rules.html"
+
+# determine the rules.md markdown file
+#
+export GUIDELINES_MD="$NEXT_DIR/guidelines.md"
+if [[ ! -e $GUIDELINES_MD ]]; then
+    echo  "$0: ERROR: guidelines.md does not exist: $GUIDELINES_MD" 1>&2
+    exit 1
+fi
+if [[ ! -f $GUIDELINES_MD ]]; then
+    echo  "$0: ERROR: guidelines.md is not a regular file: $GUIDELINES_MD" 1>&2
+    exit 1
+fi
+if [[ ! -r $GUIDELINES_MD ]]; then
+    echo  "$0: ERROR: guidelines.md is not an readable file: $GUIDELINES_MD" 1>&2
+    exit 1
+fi
+if [[ ! -s $GUIDELINES_MD ]]; then
+    echo  "$0: ERROR: guidelines.md is not an non-empty readable file: $GUIDELINES_MD" 1>&2
+    exit 1
+fi
+export GUIDELINES_HTML="$NEXT_DIR/guidelines.html"
+
+# determine the rules hdr file
+#
+export RULES_HDR="$INC_PATH/rules.$CONTEST_STATUS.hdr"
+if [[ ! -e $RULES_HDR ]]; then
+    echo  "$0: ERROR: rules hdr file does not exist: $RULES_HDR" 1>&2
+    exit 1
+fi
+if [[ ! -f $RULES_HDR ]]; then
+    echo  "$0: ERROR: rules hdr file is not a regular file: $RULES_HDR" 1>&2
+    exit 1
+fi
+if [[ ! -r $RULES_HDR ]]; then
+    echo  "$0: ERROR: rules hdr file is not an readable file: $RULES_HDR" 1>&2
+    exit 1
+fi
+if [[ ! -s $RULES_HDR ]]; then
+    echo  "$0: ERROR: rules hdr file is not an non-empty readable file: $RULES_HDR" 1>&2
+    exit 1
+fi
+
+# determine the guidelines hdr file
+#
+export GUIDELINES_HDR="$INC_PATH/guidelines.$CONTEST_STATUS.hdr"
+if [[ ! -e $GUIDELINES_HDR ]]; then
+    echo  "$0: ERROR: guidelines hdr file does not exist: $GUIDELINES_HDR" 1>&2
+    exit 1
+fi
+if [[ ! -f $GUIDELINES_HDR ]]; then
+    echo  "$0: ERROR: guidelines hdr file is not a regular file: $GUIDELINES_HDR" 1>&2
+    exit 1
+fi
+if [[ ! -r $GUIDELINES_HDR ]]; then
+    echo  "$0: ERROR: guidelines hdr file is not an readable file: $GUIDELINES_HDR" 1>&2
+    exit 1
+fi
+if [[ ! -s $GUIDELINES_HDR ]]; then
+    echo  "$0: ERROR: guidelines hdr file is not an non-empty readable file: $GUIDELINES_HDR" 1>&2
+    exit 1
 fi
 
 # -N stops early before any processing is performed
@@ -826,6 +930,50 @@ elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary status.json file is not used: $TMP_STATUS_JSON" 1>&2
 fi
 
+# create a temporary rules.md file
+#
+export TMP_RULES_MD=".$NAME.$$.entry.md"
+if [[ $V_FLAG -ge 3 ]]; then
+    echo  "$0: debug[3]: temporary rules.md file: $TMP_RULES_MD" 1>&2
+fi
+if [[ -z $NOOP ]]; then
+    trap 'rm -f $TMP_STATUS_JSON $TMP_RULES_MD $TMP_GUIDELINES_MD; exit' 0 1 2 3 15
+    rm -f "$TMP_RULES_MD"
+    if [[ -e $TMP_RULES_MD ]]; then
+	echo "$0: ERROR: cannot remove temporary rules.md file: $TMP_RULES_MD" 1>&2
+	exit 14
+    fi
+    :> "$TMP_RULES_MD"
+    if [[ ! -e $TMP_RULES_MD ]]; then
+	echo "$0: ERROR: cannot create temporary rules.md file: $TMP_RULES_MD" 1>&2
+	exit 15
+    fi
+elif [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: because of -n, temporary rules.md file is not used: $TMP_RULES_MD" 1>&2
+fi
+
+# create a temporary guidelines.md file
+#
+export TMP_GUIDELINES_MD=".$NAME.$$.entry.md"
+if [[ $V_FLAG -ge 3 ]]; then
+    echo  "$0: debug[3]: temporary guidelines.md file: $TMP_GUIDELINES_MD" 1>&2
+fi
+if [[ -z $NOOP ]]; then
+    trap 'rm -f $TMP_STATUS_JSON $TMP_RULES_MD $TMP_GUIDELINES_MD; exit' 0 1 2 3 15
+    rm -f "$TMP_GUIDELINES_MD"
+    if [[ -e $TMP_GUIDELINES_MD ]]; then
+	echo "$0: ERROR: cannot remove temporary guidelines.md file: $TMP_GUIDELINES_MD" 1>&2
+	exit 12
+    fi
+    :> "$TMP_GUIDELINES_MD"
+    if [[ ! -e $TMP_GUIDELINES_MD ]]; then
+	echo "$0: ERROR: cannot create temporary guidelines.md file: $TMP_GUIDELINES_MD" 1>&2
+	exit 13
+    fi
+elif [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: because of -n, temporary guidelines.md file is not used: $TMP_GUIDELINES_MD" 1>&2
+fi
+
 # generate the temporary status.json file
 #
 # In this stage, we use the date of the actual status.json file.
@@ -838,11 +986,11 @@ if [[ -z $NOOP ]]; then
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: failed to form temporary status.json file: $TMP_STATUS_JSON, error code: $status" 1>&2
-        exit 12
+        exit 16
     fi
     if [[ ! -s $TMP_STATUS_JSON ]]; then
 	echo "$0: ERROR: failed to form temporary status.json, file missing or empty: $TMP_STATUS_JSON" 1>&2
-        exit 13
+        exit 17
     fi
 
     # check if temporary status.json file is different from the actual status.json file
@@ -867,7 +1015,7 @@ if [[ -z $NOOP ]]; then
 	status="$?"
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: failed to touch -m $STATUS_JSON, error code: $status" 1>&2
-	    exit 14
+	    exit 18
         fi
 	#
 	# Rebuild temporary status.json file with updated (touched) modification time
@@ -876,11 +1024,11 @@ if [[ -z $NOOP ]]; then
 	status="$?"
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: failed to reform temporary status.json file: $TMP_STATUS_JSON, error code: $status" 1>&2
-	    exit 15
+	    exit 19
 	fi
 	if [[ ! -s $TMP_STATUS_JSON ]]; then
 	    echo "$0: ERROR: failed to reform temporary status.json, file missing or empty: $TMP_STATUS_JSON" 1>&2
-	    exit 16
+	    exit 20
 	fi
 	#
 	# touch the temporary status.json file to have the updated (touched) modification time
@@ -889,7 +1037,7 @@ if [[ -z $NOOP ]]; then
 	status="$?"
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: failed to touch -m -r $STATUS_JSON $TMP_STATUS_JSON, error code: $status" 1>&2
-	    exit 17
+	    exit 21
         fi
 
 	# move the temporary status.json file into place
@@ -900,14 +1048,14 @@ if [[ -z $NOOP ]]; then
 	    status="$?"
 	    if [[ $status -ne 0 ]]; then
 		echo "$0: ERROR: failed to mv -v -f $TMP_STATUS_JSON $STATUS_JSON, error code: $status" 1>&2
-		exit 18
+		exit 22
 	    fi
 	else
 	    mv -f "$TMP_STATUS_JSON" "$STATUS_JSON"
 	    status="$?"
 	    if [[ $status -ne 0 ]]; then
 		echo "$0: ERROR: failed to mv -f $TMP_STATUS_JSON $STATUS_JSON, error code: $status" 1>&2
-		exit 19
+		exit 23
 	    fi
 	fi
     fi
@@ -930,7 +1078,7 @@ if [[ -z $NOOP ]]; then
 	echo "$0: ERROR: md2html.sh: $MD2HTML_SH ${TOOL_OPTION[*]} --" \
 	     "status.md $STATUS_HTML" \
 	     "failed, error: $status" 1>&2
-	exit 20
+	exit 24
     elif [[ $V_FLAG -ge 3 ]]; then
 	echo "$0: debug[3]: now up to date: $STATUS_HTML" 1>&2
     fi
@@ -942,10 +1090,166 @@ elif [[ $V_FLAG -ge 5 ]]; then
          "status.md $STATUS_HTML" 1>&2
 fi
 
+# update rules.md
+#
+if [[ -z $NOOP ]]; then
+
+    # form a new rules.md
+    #
+    cat "$RULES_HDR" > "$TMP_RULES_MD"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: failed to cat $RULES_HDR > $TMP_RULES_MD, error code: $status" 1>&2
+	exit 25
+    fi
+    sed -e '1,/^<!-- This is the last line modified by the tool: bin\/gen-status.sh -->/d' \
+        "$RULES_MD" >> "$TMP_RULES_MD"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: failed to sed -e '1,/<!--- ... -->/d' $RULES_MD >> $TMP_RULES_MD," \
+	     "error code: $status" 1>&2
+	exit 26
+    fi
+
+    # update rules.md is different
+    #
+    if cmp -s "$TMP_RULES_MD" "$RULES_MD"; then
+
+	# case: rules.md did not change
+	#
+	if [[ $V_FLAG -ge 5 ]]; then
+            echo "$0: debug[5]: rules.md file did not change: $RULES_MD" 1>&2
+        fi
+
+    else
+
+	# case: rules.md changed, update the file
+	#
+	if [[ $V_FLAG -ge 5 ]]; then
+            echo "$0: debug[5]: mv -f -- $TMP_RULES_MD $RULES_MD" 1>&2
+        fi
+	if [[ $V_FLAG -ge 3 ]]; then
+            mv -f -v -- "$TMP_RULES_MD" "$RULES_MD"
+            status="$?"
+        else
+            mv -f -- "$TMP_RULES_MD" "$RULES_MD"
+            status="$?"
+        fi
+	if [[ status -ne 0 ]]; then
+            echo "$0: ERROR: mv -f -- $TMP_RULES_MD $RULES_MD filed, error code: $status" 1>&2
+	elif [[ $V_FLAG -ge 1 ]]; then
+            echo "$0: debug[1]: built replaced rules.md: $RULES_MD" 1>&2
+	fi
+	if [[ ! -s $RULES_MD ]]; then
+            echo "$0: ERROR: not a non-empty rules.md file: $RULES_MD" 1>&2
+	    exit 27
+	fi
+
+	# use the md2html.sh tool to form the rules.html file, unless -n
+	#
+	if [[ $V_FLAG -ge 1 ]]; then
+	    echo "$0: debug[1]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]} --" \
+		 "next/rules.md $RULES_HTML" 1>&2
+	fi
+	"$MD2HTML_SH" "${TOOL_OPTION[@]}" -- \
+	  next/rules.md "$RULES_HTML"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: md2html.sh: $MD2HTML_SH ${TOOL_OPTION[*]} --" \
+		 "next/rules.md $RULES_HTML" \
+		 "failed, error: $status" 1>&2
+	    exit 28
+	elif [[ $V_FLAG -ge 3 ]]; then
+	    echo "$0: debug[3]: rules.md now up to date: $RULES_MD" 1>&2
+	fi
+    fi
+
+elif [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: because of -n, rules.md was not updated: $RULES_MD" 1>&2
+fi
+
+# update guidelines.md
+#
+if [[ -z $NOOP ]]; then
+
+    # form a new guidelines.md
+    #
+    cat "$GUIDELINES_HDR" > "$TMP_GUIDELINES_MD"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: failed to cat $GUIDELINES_HDR > $TMP_GUIDELINES_MD, error code: $status" 1>&2
+	exit 29
+    fi
+    sed -e '1,/^<!-- This is the last line modified by the tool: bin\/gen-status.sh -->/d' \
+        "$GUIDELINES_MD" >> "$TMP_GUIDELINES_MD"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: failed to sed -e '1,/<!--- ... -->/d' $GUIDELINES_MD >> $TMP_GUIDELINES_MD," \
+	     "error code: $status" 1>&2
+	exit 30
+    fi
+
+    # update guidelines.md is different
+    #
+    if cmp -s "$TMP_GUIDELINES_MD" "$GUIDELINES_MD"; then
+
+	# case: guidelines.md did not change
+	#
+	if [[ $V_FLAG -ge 5 ]]; then
+            echo "$0: debug[5]: guidelines.md file did not change: $GUIDELINES_MD" 1>&2
+        fi
+
+    else
+
+	# case: guidelines.md changed, update the file
+	#
+	if [[ $V_FLAG -ge 5 ]]; then
+            echo "$0: debug[5]: mv -f -- $TMP_GUIDELINES_MD $GUIDELINES_MD" 1>&2
+        fi
+	if [[ $V_FLAG -ge 3 ]]; then
+            mv -f -v -- "$TMP_GUIDELINES_MD" "$GUIDELINES_MD"
+            status="$?"
+        else
+            mv -f -- "$TMP_GUIDELINES_MD" "$GUIDELINES_MD"
+            status="$?"
+        fi
+	if [[ status -ne 0 ]]; then
+            echo "$0: ERROR: mv -f -- $TMP_GUIDELINES_MD $GUIDELINES_MD filed, error code: $status" 1>&2
+	elif [[ $V_FLAG -ge 1 ]]; then
+            echo "$0: debug[1]: built replaced guidelines.md: $GUIDELINES_MD" 1>&2
+	fi
+	if [[ ! -s $GUIDELINES_MD ]]; then
+            echo "$0: ERROR: not a non-empty guidelines.md file: $GUIDELINES_MD" 1>&2
+	    exit 31
+	fi
+
+	# use the md2html.sh tool to form the guidelines.html file, unless -n
+	#
+	if [[ $V_FLAG -ge 1 ]]; then
+	    echo "$0: debug[1]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]} --" \
+		 "next/guidelines.md $guidelines_HTML" 1>&2
+	fi
+	"$MD2HTML_SH" "${TOOL_OPTION[@]}" -- \
+	  next/guidelines.md "$GUIDELINES_HTML"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: md2html.sh: $MD2HTML_SH ${TOOL_OPTION[*]} --" \
+		 "next/guidelines.md $GUIDELINES_HTML" \
+		 "failed, error: $status" 1>&2
+	    exit 32
+	elif [[ $V_FLAG -ge 3 ]]; then
+	    echo "$0: debug[3]: guidelines.md now up to date: $guidelines_MD" 1>&2
+	fi
+    fi
+
+elif [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: because of -n, guidelines.md was not updated: $GUIDELINES_MD" 1>&2
+fi
+
 # file cleanup
 #
 if [[ -z $NOOP ]]; then
-    rm -f -- "$TMP_STATUS_JSON"
+    rm -f -- "$TMP_STATUS_JSON" "$TMP_GUIDELINES_MD" "$TMP_RULES_MD"
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, disabled: rm -f -- $TMP_STATUS_JSON" 1>&2
 fi

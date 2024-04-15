@@ -108,7 +108,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.1 2024-04-13"
+export VERSION="1.2.2 2024-04-14"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -435,7 +435,7 @@ if [[ ! -d $YYYY ]]; then
     exit 6
 fi
 if [[ ! -r $YYYY ]]; then
-    echo "$0: ERROR: arg is not a writable directory: $YYYY" 1>&2
+    echo "$0: ERROR: arg is not a readable directory: $YYYY" 1>&2
     exit 6
 fi
 

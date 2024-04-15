@@ -266,10 +266,10 @@ help:
 	@echo make gen_location
 	@echo make gen_years
 	@echo make entry_index
-	@echo make gen_top_html
 	@echo make gen_other_html
 	@echo make gen_year_index
 	@echo make gen_status
+	@echo make gen_top_html
 	@echo make quick_entry_index
 	@echo make quick_www
 	@echo make www
@@ -434,9 +434,9 @@ quick_www:
 	${MAKE} gen_location
 	${MAKE} gen_years
 	${MAKE} gen_year_index
-	${MAKE} gen_top_html
 	${MAKE} gen_other_html
 	${MAKE} gen_status
+	${MAKE} gen_top_html
 	${MAKE} quick_entry_index
 	${MAKE} gen_sitemap
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
@@ -456,9 +456,9 @@ www:
 	${MAKE} gen_location
 	${MAKE} gen_years
 	${MAKE} gen_year_index
-	${MAKE} gen_top_html
 	${MAKE} gen_other_html
 	${MAKE} gen_status
+	${MAKE} gen_top_html
 	${MAKE} entry_index
 	${MAKE} gen_sitemap
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='

@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.6 2024-04-13"
+export VERSION="1.3.7 2024-04-14"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -357,7 +357,7 @@ export BIN_DIR="bin"
 #
 export INC_PATH="$TOPDIR/inc"
 if [[ ! -d $INC_PATH ]]; then
-    echo "$0: ERROR: inc is not a directory under topdir: $BIN_PATH" 1>&2
+    echo "$0: ERROR: inc is not a directory under topdir: $INC_PATH" 1>&2
     exit 6
 fi
 export INC_DIR="inc"
