@@ -38,7 +38,7 @@
 	    "inventory_order" : 100,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -54,7 +54,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -62,7 +62,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -70,7 +70,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -78,7 +78,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -86,7 +86,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -94,7 +94,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -102,7 +102,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -110,7 +110,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -118,7 +118,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -126,7 +126,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -134,7 +134,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -142,7 +142,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -150,7 +150,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -158,7 +158,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -166,7 +166,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -174,7 +174,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -182,7 +182,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -190,7 +190,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -198,7 +198,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -206,7 +206,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -214,7 +214,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -222,7 +222,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -230,7 +230,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -238,7 +238,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -246,7 +246,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -254,7 +254,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -262,7 +262,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -270,7 +270,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -278,7 +278,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -286,7 +286,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -294,7 +294,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -302,7 +302,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -310,7 +310,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -318,7 +318,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -326,7 +326,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -334,7 +334,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -342,7 +342,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -350,7 +350,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -358,7 +358,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -366,7 +366,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -374,7 +374,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -382,7 +382,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -390,7 +390,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -398,7 +398,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -406,7 +406,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -414,7 +414,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -422,7 +422,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -430,7 +430,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -438,7 +438,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -446,7 +446,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -454,7 +454,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -462,7 +462,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -470,7 +470,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -478,7 +478,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -486,7 +486,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -494,7 +494,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -502,7 +502,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -510,7 +510,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -518,7 +518,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -526,7 +526,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -534,7 +534,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -542,7 +542,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -550,7 +550,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -558,7 +558,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -566,7 +566,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -574,7 +574,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -582,7 +582,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -590,7 +590,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -598,7 +598,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -606,7 +606,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -614,7 +614,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -622,7 +622,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -630,7 +630,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -638,7 +638,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -646,7 +646,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -654,7 +654,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -662,7 +662,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -670,7 +670,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -678,7 +678,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -686,7 +686,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -694,7 +694,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -702,7 +702,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -710,7 +710,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -718,7 +718,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -726,7 +726,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -734,7 +734,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -742,7 +742,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -750,7 +750,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -758,7 +758,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -766,7 +766,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -774,7 +774,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -782,7 +782,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -790,7 +790,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -798,7 +798,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -806,7 +806,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -814,7 +814,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -822,7 +822,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -830,7 +830,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -838,7 +838,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -846,7 +846,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -854,7 +854,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -862,7 +862,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -870,7 +870,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -878,7 +878,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -886,7 +886,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -894,7 +894,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -902,7 +902,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -910,7 +910,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -918,7 +918,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -926,7 +926,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -934,7 +934,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -942,7 +942,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -950,7 +950,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -958,7 +958,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -966,7 +966,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -974,7 +974,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -982,7 +982,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -990,7 +990,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -998,7 +998,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1006,7 +1006,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1014,7 +1014,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1022,7 +1022,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1030,7 +1030,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1038,7 +1038,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1046,7 +1046,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1054,7 +1054,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1062,7 +1062,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1070,7 +1070,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1078,7 +1078,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1086,7 +1086,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1094,7 +1094,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1102,7 +1102,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1110,7 +1110,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1118,7 +1118,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1126,7 +1126,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1134,7 +1134,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1142,7 +1142,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1150,7 +1150,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1158,7 +1158,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1166,7 +1166,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1174,7 +1174,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1182,7 +1182,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1190,7 +1190,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1198,7 +1198,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1206,7 +1206,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1214,7 +1214,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1222,7 +1222,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "3D object coordinates"
 	},
 	{
@@ -1261,7 +1261,7 @@
 	    "file_path" : ".path",
 	    "inventory_order" : 4294967295,
 	    "OK_to_edit" : false,
-	    "display_as" : "text",
+	    "display_as" : "path",
 	    "display_via_github" : true,
 	    "entry_text" : "directory path from top directory"
 	},

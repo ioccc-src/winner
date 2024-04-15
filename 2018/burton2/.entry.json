@@ -94,7 +94,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "iocccsize keywords: sorted by 201x frequency"
 	},
 	{
@@ -166,7 +166,7 @@
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "results with -k"
 	},
 	{
@@ -310,7 +310,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "reserved words for a given C standard"
 	},
 	{
@@ -318,7 +318,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "author supplied README"
 	},
 	{
@@ -326,7 +326,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "reserved words for a given C standard"
 	},
 	{
@@ -334,7 +334,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "reserved words for a given C standard"
 	},
 	{
@@ -342,7 +342,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "reserved words for a given C standard"
 	},
 	{
@@ -350,7 +350,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "reserved words for a given C standard"
 	},
 	{
@@ -358,7 +358,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "reserved words for a given C standard"
 	},
 	{
@@ -366,7 +366,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "reserved words for a Java v8"
 	},
 	{
@@ -374,7 +374,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "reserved words for a given C standard"
 	},
 	{
@@ -382,7 +382,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "reserved words for a given C standard"
 	},
 	{
@@ -398,7 +398,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "results without -k"
 	},
 	{
@@ -422,7 +422,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "reserved words for a given C standard"
 	},
 	{
@@ -438,7 +438,7 @@
 	    "inventory_order" : 300,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "SPOILER WARNING hints about the source"
 	},
 	{
@@ -477,7 +477,7 @@
 	    "file_path" : ".path",
 	    "inventory_order" : 4294967295,
 	    "OK_to_edit" : false,
-	    "display_as" : "text",
+	    "display_as" : "path",
 	    "display_via_github" : true,
 	    "entry_text" : "directory path from top directory"
 	},

@@ -95,7 +95,7 @@
 	    "file_path" : ".path",
 	    "inventory_order" : 4294967295,
 	    "OK_to_edit" : false,
-	    "display_as" : "text",
+	    "display_as" : "path",
 	    "display_via_github" : true,
 	    "entry_text" : "directory path from top directory"
 	},

@@ -54,7 +54,7 @@
 	    "inventory_order" : 125,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "change log for code"
 	},
 	{
@@ -78,7 +78,7 @@
 	    "inventory_order" : 125,
 	    "OK_to_edit" : true,
 	    "display_as" : "php",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "PHP making an ISO 8601:2000 calendar"
 	},
 	{
@@ -86,7 +86,7 @@
 	    "inventory_order" : 125,
 	    "OK_to_edit" : true,
 	    "display_as" : "ruby",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "ruby home page"
 	},
 	{
@@ -94,7 +94,7 @@
 	    "inventory_order" : 125,
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "POSIX shell CGI home page"
 	},
 	{
@@ -134,7 +134,7 @@
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "Spoiler change log"
 	},
 	{
@@ -173,7 +173,7 @@
 	    "file_path" : ".path",
 	    "inventory_order" : 4294967295,
 	    "OK_to_edit" : false,
-	    "display_as" : "text",
+	    "display_as" : "path",
 	    "display_via_github" : true,
 	    "entry_text" : "directory path from top directory"
 	},
@@ -270,7 +270,7 @@
 	    "inventory_order" : 4294967295,
 	    "OK_to_edit" : true,
 	    "display_as" : "css",
-	    "display_via_github" : false,
+	    "display_via_github" : true,
 	    "entry_text" : "CSS for home page"
 	},
 	{
