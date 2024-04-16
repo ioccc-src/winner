@@ -101,7 +101,7 @@ shopt -s globstar	# enable '**' to match all files and zero or more directories 
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.5 2024-04-13"
+export VERSION="1.3 2024-04-15"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -522,7 +522,9 @@ if [[ -z $NOOP ]]; then
 	# Any inventory_order that is 1 to 9 decimal digits is considered a primary file.
 	# Any inventory_order that is 10 or more decimal digits is considered a secondary file.
 	#
-	echo '# <a name="inventory"></a>Inventory for' "$YYYY_DIR"
+	echo '<div id="inventory">'
+	echo '# Inventory for' "$YYYY_DIR"
+	echo '</div>'
 	echo
 	echo '<a href="#top">Jump to top</a>'
 	echo

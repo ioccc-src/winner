@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.1 2024-04-13"
+export VERSION="1.2 2024-04-15"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -665,10 +665,11 @@ for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
     #
     {
 	ORDINAL=$(output_ordinal "$YEAR_COUNT")
-	echo "## <a name=$YYYY></a>$YYYY - The $ORDINAL IOCCC"
+	echo "<div id=\"$YYYY\">"
+	echo "## $YYYY - The $ORDINAL IOCCC"
 	echo
 	echo "**About** the [$ORDINAL IOCCC]($YYYY/index.html)<br>"
-	echo "**Download** all [$YYYY IOCCC entry source]($YYYY/$YYYY.tar.bz2)"
+	echo "**Download** all [$YYYY IOCCC entry source]($YYYY/$YYYY.tar.bz2)</div>"
 	echo
     } | if [[ -z $NOOP ]]; then
 	cat >> "$TMP_YEARS_MD"
@@ -828,7 +829,9 @@ done
 # write year_level links to all the year level tarballs
 #
 {
-    echo '## <a name="year_level"></a><a name="inventory"></a>IOCCC Year level tarballs'
+    echo '<div id="year_level"><div id="inventory">'
+    echo '## IOCCC Year level tarballs'
+    echo '</div></div>'
     echo
     for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
 	echo "* Download all [$YYYY IOCCC entry source]($YYYY/$YYYY.tar.bz2)<br>"

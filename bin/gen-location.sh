@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.3 2024-04-13"
+export VERSION="1.2 2024-04-15"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -500,9 +500,9 @@ fi
 	# output markdown entry for this location
 	#
 	if [[ $LOCATION_NAME == "$LOCATION_COMMON_NAME" ]]; then
-	    echo "* <a name=$LOCATION_CODE></a>**$LOCATION_CODE** - _${LOCATION_NAME}_"
+	    echo "* <div id=$LOCATION_CODE>**$LOCATION_CODE** - _${LOCATION_NAME}_</div>"
 	else
-	    echo "* <a name=$LOCATION_CODE></a>**$LOCATION_CODE** - _${LOCATION_NAME}_ (_${LOCATION_COMMON_NAME}_)"
+	    echo "* <div id=$LOCATION_CODE>**$LOCATION_CODE** - _${LOCATION_NAME}_ (_${LOCATION_COMMON_NAME}_)</div>"
 	fi
 	echo
 	echo "  Author count: **$AUTHOR_COUNT**"

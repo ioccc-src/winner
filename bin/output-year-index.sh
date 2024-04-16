@@ -108,7 +108,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.2 2024-04-14"
+export VERSION="1.3 2024-04-15"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -550,7 +550,9 @@ fi
 # output leading markdown for this IOCCC year
 #
 {
-    echo "# <a name=inventory></a><a name=$YYYY></a>Winning Entries of $YYYY - The $ORDINAL IOCCC"
+    echo "<div id=\"inventory\"><div id=\"$YYYY\">"
+    echo "# Winning Entries of $YYYY - The $ORDINAL IOCCC"
+    echo '</div></div>'
     echo
     echo "**Download** all [$YYYY IOCCC entry source]($YYYY/$YYYY.tar.bz2)"
     echo

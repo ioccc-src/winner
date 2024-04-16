@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.5 2024-04-15"
+export VERSION="1.6 2024-04-15"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -829,9 +829,9 @@ EOF
 	    # output the letter header
 	    #
 	    l="$sort_word"
-	    echo "<!-- $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l -->"
-	    echo "## <a name=\"$l\"></a>${IS_FOR[$l]}"
-	    echo "<!-- $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l -->"
+	    echo "<div id="$l"><!-- $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l -->"
+	    echo "## ${IS_FOR[$l]}"
+	    echo "<!-- $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l --></div>"
 	    echo
 
 	# case: we have a "sort_word file" line
@@ -891,7 +891,7 @@ EOF
 
 	    # output author information
 	    #
-	    echo "<p><a name=\"$AUTHOR_HANDLE\"></a>**$FULL_NAME**"
+	    echo "<p><div id=\"$AUTHOR_HANDLE\">**$FULL_NAME**</div>"
 	    echo "author_handle: $AUTHOR_HANDLE"
 	    if [[ $LOCATION_NAME == "$LOCATION_COMMON_NAME" ]]; then
 		echo "Location: [$LOCATION_CODE](location.html#$LOCATION_CODE) -" \

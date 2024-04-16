@@ -101,7 +101,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.6.1 2024-04-13"
+export VERSION="1.7 2024-04-15"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -772,11 +772,13 @@ fi
 {
     AUTHOR_COUNT=$(echo "$AUTHOR_HANDLE_SET" | wc -l)
     export AUTHOR_COUNT
+    echo '<div id="author">'
     if [[ $AUTHOR_COUNT -gt 1 ]]; then
-	echo '## <a name="author"></a>Authors:'
+	echo '## Authors:'
     else
-	echo '## <a name="author"></a>Author:'
+	echo '## Author:'
     fi
+    echo '</div>'
 } | if [[ -z $NOOP ]]; then
     cat >> "$TMP_FILE"
 else
