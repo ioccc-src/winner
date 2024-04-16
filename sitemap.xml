@@ -19110,7 +19110,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/index.html</loc>
-    <lastmod>2024-04-16T19:14:55+00:00</lastmod>
+    <lastmod>2024-04-16T19:33:01+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/manifest.entry.json.awk</loc>
@@ -19118,7 +19118,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/md2html.sh</loc>
-    <lastmod>2024-04-16T19:14:55+00:00</lastmod>
+    <lastmod>2024-04-16T19:32:18+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/output-index-author.sh</loc>
@@ -19146,7 +19146,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/README.md</loc>
-    <lastmod>2024-04-16T19:14:55+00:00</lastmod>
+    <lastmod>2024-04-16T19:29:35+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/sgi.sh</loc>
@@ -19379,6 +19379,10 @@
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/inc/sidenav.default.html</loc>
     <lastmod>2024-04-16T19:14:55+00:00</lastmod>
+</url>
+<url>
+    <loc>https://ioccc-src.github.io/temp-test-ioccc/inc/topbar.default.html</loc>
+    <lastmod>2024-04-16T19:26:26+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/inc/top.default.html</loc>

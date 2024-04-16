@@ -527,16 +527,17 @@ The following HTML phase files are used to build HTML content:
 0. inc/top.default.html
 1. inc/head.default.html
 2. inc/body.default.html
-3. inc/header.default.html
-4. inc/navbar.default.html
-5. inc/begin-row.default.html
-6. inc/begin-leftcolumn.default.html
-7. inc/sidenav.default.html
-8. inc/end-leftcolumn.default.html
-9. inc/begin-rightcolumn.default.html
-10. inc/before-content.default.html
+3. inc/topbar.default.html
+4. inc/header.default.html
+5. inc/navbar.default.html
+6. inc/begin-row.default.html
+7. inc/begin-leftcolumn.default.html
+8. inc/sidenav.default.html
+9. inc/end-leftcolumn.default.html
+10. inc/begin-rightcolumn.default.html
+11. inc/before-content.default.html
 
-Phases 11-19 are reserved for future use.
+Phases 12-19 are reserved for future use.
 
 20. ((insert 'before tool' output))
 21. ((insert 'pandoc wrapper tool' output))

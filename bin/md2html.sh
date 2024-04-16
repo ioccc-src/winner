@@ -327,7 +327,7 @@ function global_variable_setup
     #
     unset PHASE_NAME
     declare -ag PHASE_NAME
-    PHASE_NAME=(top head body header navbar begin-row begin-leftcolumn
+    PHASE_NAME=(top head body topbar header navbar begin-row begin-leftcolumn
 	        sidenav end-leftcolumn end-leftcolumn begin-rightcolumn before-content
 		after-content end-rightcolumn end-row footer bottom)
     unset HTML_PHASE_NAME
@@ -1848,14 +1848,14 @@ if [[ $status -ne 0 ]]; then
     exit "$status"
 fi
 
-##########################################
-# HTML phase 3: inc/header.__name__.html #
-##########################################
+########################################
+# HTML phase 3: inc/topbar.__name__.html #
+########################################
 
 # NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
 CUR_PHASE_NUM=3
-CUR_PHASE_NAME="header"
+CUR_PHASE_NAME="topbar"
 BASE_EXIT_CODE=55	# possible: exit 55 or exit 56 or exit 57 or exit 58 or exit 59
 #
 append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
@@ -1868,13 +1868,13 @@ if [[ $status -ne 0 ]]; then
 fi
 
 ##########################################
-# HTML phase 4: inc/navbar.__name__.html #
+# HTML phase 4: inc/header.__name__.html #
 ##########################################
 
 # NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
 CUR_PHASE_NUM=4
-CUR_PHASE_NAME="navbar"
+CUR_PHASE_NAME="header"
 BASE_EXIT_CODE=60	# possible: exit 60 or exit 61 or exit 62 or exit 63 or exit 64
 #
 append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
@@ -1886,14 +1886,14 @@ if [[ $status -ne 0 ]]; then
     exit "$status"
 fi
 
-#############################################
-# HTML phase 5: inc/begin-row.__name__.html #
-#############################################
+##########################################
+# HTML phase 5: inc/navbar.__name__.html #
+##########################################
 
 # NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
 CUR_PHASE_NUM=5
-CUR_PHASE_NAME="begin-row"
+CUR_PHASE_NAME="navbar"
 BASE_EXIT_CODE=65	# possible: exit 65 or exit 66 or exit 67 or exit 68 or exit 69
 #
 append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
@@ -1905,14 +1905,14 @@ if [[ $status -ne 0 ]]; then
     exit "$status"
 fi
 
-####################################################
-# HTML phase 6: inc/begin-leftcolumn.__name__.html #
-####################################################
+#############################################
+# HTML phase 6: inc/begin-row.__name__.html #
+#############################################
 
 # NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
 CUR_PHASE_NUM=6
-CUR_PHASE_NAME="begin-leftcolumn"
+CUR_PHASE_NAME="begin-row"
 BASE_EXIT_CODE=70	# possible: exit 70 or exit 71 or exit 72 or exit 73 or exit 74
 #
 append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
@@ -1924,14 +1924,14 @@ if [[ $status -ne 0 ]]; then
     exit "$status"
 fi
 
-###########################################
-# HTML phase 7: inc/sidenav.__name__.html #
-###########################################
+####################################################
+# HTML phase 7: inc/begin-leftcolumn.__name__.html #
+####################################################
 
 # NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
 CUR_PHASE_NUM=7
-CUR_PHASE_NAME="sidenav"
+CUR_PHASE_NAME="begin-leftcolumn"
 BASE_EXIT_CODE=75	# possible: exit 75 or exit 76 or exit 77 or exit 78 or exit 79
 #
 append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
@@ -1943,14 +1943,14 @@ if [[ $status -ne 0 ]]; then
     exit "$status"
 fi
 
-##################################################
-# HTML phase 8: inc/end-leftcolumn.__name__.html #
-##################################################
+###########################################
+# HTML phase 8: inc/sidenav.__name__.html #
+###########################################
 
 # NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
 CUR_PHASE_NUM=8
-CUR_PHASE_NAME="end-leftcolumn"
+CUR_PHASE_NAME="sidenav"
 BASE_EXIT_CODE=80	# possible: exit 80 or exit 81 or exit 82 or exit 83 or exit 84
 #
 append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
@@ -1962,14 +1962,14 @@ if [[ $status -ne 0 ]]; then
     exit "$status"
 fi
 
-#####################################################
-# HTML phase 9: inc/begin-rightcolumn.__name__.html #
-#####################################################
+##################################################
+# HTML phase 9: inc/end-leftcolumn.__name__.html #
+##################################################
 
 # NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
 CUR_PHASE_NUM=9
-CUR_PHASE_NAME="begin-rightcolumn"
+CUR_PHASE_NAME="end-leftcolumn"
 BASE_EXIT_CODE=85	# possible: exit 85 or exit 86 or exit 87 or exit 88 or exit 89
 #
 append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
@@ -1981,15 +1981,34 @@ if [[ $status -ne 0 ]]; then
     exit "$status"
 fi
 
+#####################################################
+# HTML phase 10: inc/begin-rightcolumn.__name__.html #
+#####################################################
+
+# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+#
+CUR_PHASE_NUM=9
+CUR_PHASE_NAME="begin-rightcolumn"
+BASE_EXIT_CODE=90	# possible: exit 85 or exit 91 or exit 92 or exit 93 or exit 94
+#
+append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: append_html_phase" \
+         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+	 "error code: $status" 1>&2
+    exit "$status"
+fi
+
 ###################################################
-# HTML phase 10: inc/before-content.__name__.html #
+# HTML phase 11: inc/before-content.__name__.html #
 ###################################################
 
 # NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
-CUR_PHASE_NUM=10
+CUR_PHASE_NUM=11
 CUR_PHASE_NAME="before-content"
-BASE_EXIT_CODE=90	# possible: exit 90 or exit 91 or exit 92 or exit 93 or exit 94
+BASE_EXIT_CODE=95	# possible: exit 95 or exit 96 or exit 97 or exit 98 or exit 99
 #
 append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
 status="$?"
