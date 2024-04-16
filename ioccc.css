@@ -485,38 +485,38 @@ a:active {
 /* Top navigation bar ============================================================================ */
 
 /* Style the top navigation bar */
-.topnav {
+.navbar {
   overflow: hidden;
   background-color: #333;
 }
 
-/* Style the topnav links and paragraph text */
-.topnav a, p {
+/* Style the navbar links and paragraph text */
+.navbar a, p {
   display: block;
   color: lightblue;
   padding: 14px 16px;
   text-decoration: none;
 }
 
-/* Change topnav link color on hover */
-.topnav a:focus, .topnav a:hover {
+/* Change navbar link color on hover */
+.navbar a:focus, .navbar a:hover {
   background-color: #ddd;
   color: blue;
   text-decoration: underline;
 }
 
-/* Change topnav link after visit */
-.topnav a:visited {
+/* Change navbar link after visit */
+.navbar a:visited {
   color: #cO80c0;
 }
 
-/* Change topnav link when active */
-.topnav a:active {
+/* Change navbar link when active */
+.navbar a:active {
   color: red;
 }
 
-/* No padding nor border around topnav images */
-.topnav img {
+/* No padding nor border around navbar images */
+.navbar img {
   border: 0;
   padding: 0;
 }
@@ -742,7 +742,7 @@ a:active {
     border: 0;
     padding: 0;
   }
-  .topnav a, .sidenav a {
+  .navbar a, .sidenav a {
     float: none;
     width: 100%;
     padding: 0;
@@ -787,7 +787,7 @@ a:active {
   a:focus, a:hover, a:visited, a:active {
     color: blue;
   }
-  .topnav a, .topnav a:focus, .topnav a:hover, .topnav a:visited, .topnav a:active {
+  .navbar a, .navbar a:focus, .navbar a:hover, .navbar a:visited, .navbar a:active {
     color: lightblue;
   }
   .sidenav a, .sidenav a:focus, .sidenav a:hover, .sidenav a:visited, .sidenav a:active {

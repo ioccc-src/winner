@@ -26,7 +26,7 @@ BEGIN {
     process_next_line = 0;	# 1 ==> we found our entry_path, now process the next line
     found_entry_path = 0;	# 1 ==> we found our entry_path
     prev_line = "";		# the previous YYYY/dir line
-    topnav_phase = "mid";	# topnav name to use (-H topnav=topnav_phase)
+    navbar_phase = "mid";	# navbar name to use (-H navbar=navbar_phase)
 
     # error if github is not set via -v github=REPO_URL
     #
@@ -74,7 +74,7 @@ $0 ~ /[^\/]+\/[^\/]+/ {
 	#
 	if (NR == 1) {
 	    # no previous line entry_path is the 1st line
-	    topnav_phase = "first";
+	    navbar_phase = "first";
 	}
 
 	# process the previous YYYY/dir line with this match
@@ -161,11 +161,11 @@ END {
 
     } else if (process_next_line) {
 	# no next line entry_path is the last line
-	topnav_phase = "last";
+	navbar_phase = "last";
     }
 
-    # output the topnav phase name
+    # output the navbar phase name
     #
     print "-H";
-    print "topnav=" topnav_phase;
+    print "navbar=" navbar_phase;
 }

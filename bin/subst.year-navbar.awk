@@ -25,7 +25,7 @@ BEGIN {
     process_next_line = 0;	# 1 ==> we found our year_arg, now process the next line
     found_year_arg = 0;		# 1 ==> we found our year_arg
     prev_line = "";		# the previous YYYY line
-    topnav_phase = "year.mid";	# topnav name to use (-H topnav=topnav_phase)
+    navbar_phase = "year.mid";	# navbar name to use (-H navbar=navbar_phase)
 
     # error if year_arg is not set via -v year_arg=YYYY
     #
@@ -62,7 +62,7 @@ BEGIN {
 	#
 	if (NR == 1) {
 	    # no previous line year_arg is the 1st line
-	    topnav_phase = "year.first";
+	    navbar_phase = "year.first";
 	}
 
 	# process the previous YYYY line with this match
@@ -120,11 +120,11 @@ END {
 
     } else if (process_next_line) {
 	# no next line year_arg is the last line
-	topnav_phase = "year.last";
+	navbar_phase = "year.last";
     }
 
-    # output the topnav phase name
+    # output the navbar phase name
     #
     print "-H";
-    print "topnav=" topnav_phase;
+    print "navbar=" navbar_phase;
 }

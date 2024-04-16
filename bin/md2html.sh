@@ -327,7 +327,7 @@ function global_variable_setup
     #
     unset PHASE_NAME
     declare -ag PHASE_NAME
-    PHASE_NAME=(top head body header topnav begin-row begin-leftcolumn
+    PHASE_NAME=(top head body header navbar begin-row begin-leftcolumn
 	        sidenav end-leftcolumn end-leftcolumn begin-rightcolumn before-content
 		after-content end-rightcolumn end-row footer bottom)
     unset HTML_PHASE_NAME
@@ -1868,13 +1868,13 @@ if [[ $status -ne 0 ]]; then
 fi
 
 ##########################################
-# HTML phase 4: inc/topnav.__name__.html #
+# HTML phase 4: inc/navbar.__name__.html #
 ##########################################
 
 # NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
 CUR_PHASE_NUM=4
-CUR_PHASE_NAME="topnav"
+CUR_PHASE_NAME="navbar"
 BASE_EXIT_CODE=60	# possible: exit 60 or exit 61 or exit 62 or exit 63 or exit 64
 #
 append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"

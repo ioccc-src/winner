@@ -504,7 +504,7 @@ echo "KEYWORDS=IOCCC, $YEAR_DIR, IOCCC $YEAR_DIR, IOCCC entry, The $ORDINAL IOCC
 echo "-s"
 echo "HEADER_2=$YEAR_DIR - The $ORDINAL IOCCC"
 
-# output topnav left hand side links
+# output navbar left hand side links
 #
 awk -v year_arg="$YEAR_DIR" -f "$YEAR_NAVBAR_AWK" "$TOP_FILE"
 status="$?"
@@ -513,7 +513,7 @@ if [[ $status -ne 0 ]]; then
     exit 1
 fi
 
-# output topnav right hand side links
+# output navbar right hand side links
 #
 echo "-s"
 echo "INVENTORY_LINK=#inventory"

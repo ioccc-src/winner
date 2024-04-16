@@ -502,12 +502,12 @@ where `phase` is the name of an HTML phase,
 a non-default file may be used.  For example:
 
 ``` <!---sh-->
--H topnav=up2index
+-H navbar=up2index
 ```
 
-will cause [inc/topnav.up2index.html](../inc/topnav.up2index.html)
-instead of [inc/topnav.default.html](../inc/topnav.default.html) to be
-used during the _topnav_ HTML phase.
+will cause [inc/navbar.up2index.html](../inc/navbar.up2index.html)
+instead of [inc/navbar.default.html](../inc/navbar.default.html) to be
+used during the _navbar_ HTML phase.
 
 If `name` is dot (i.e., `.`), then the given HTML phase is skipped.
 For example:
@@ -528,7 +528,7 @@ The following HTML phase files are used to build HTML content:
 1. inc/head.default.html
 2. inc/body.default.html
 3. inc/header.default.html
-4. inc/topnav.default.html
+4. inc/navbar.default.html
 5. inc/begin-row.default.html
 6. inc/begin-leftcolumn.default.html
 7. inc/sidenav.default.html
@@ -631,7 +631,7 @@ IMPORTANT: An "output tool" will print each command line option / argument on a 
 So for example, if an "output tool" wishes to convey:
 
 ```
--s TITLE='IOCCC entry locations' -H topnav=top-of-site
+-s TITLE='IOCCC entry locations' -H navbar=top-of-site
 ```
 
 The  "output tool" would output the following 4 lines:
@@ -640,7 +640,7 @@ The  "output tool" would output the following 4 lines:
 -s
 TITLE='IOCCC entry locations'
 -H
-topnav=top-of-site
+navbar=top-of-site
 ```
 
 The command line options printed by an "output tool" are processed
@@ -685,15 +685,15 @@ different filename for a given phase.
 
 For example when forming the HTML from
 [2020/ferguson1/chocolate-cake.md](/2020/ferguson1/chocolate-cake.md),
-a different `topnav` navigation bar is needed.  So instead of the
+a different `navbar` navigation bar is needed.  So instead of the
 usual top navigation bar that normally directs people to the previous
 entry for the year, or go up to the year page, or to the next entry
 for the year, a top navigation bar to just go up to the entry's
 main page is needed.   A line in the [md2html config file](../inc/md2html.cfg)
 that refers to
 [2020/ferguson1/chocolate-cake.md](/2020/ferguson1/chocolate-cake.md) may
-specify use of `topnav.up2index.html` (as `topnav.up2index`)instead of using the
-`topnav.default.html` (`topnav.default.html`) default.
+specify use of `navbar.up2index.html` (as `navbar.up2index`)instead of using the
+`navbar.default.html` (`navbar.default.html`) default.
 
 The HTML phase may be skipped resulting in no HTML output during a given phase
 and furthermore, forming no HTML content from a given markdown file altogether.

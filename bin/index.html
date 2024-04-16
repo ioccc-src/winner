@@ -50,13 +50,13 @@
 </div>
 
 <!-- END: this line ends content from: inc/header.default.html -->
-<!-- START: this line starts content from: inc/topnav.default.html -->
+<!-- START: this line starts content from: inc/navbar.default.html -->
 
-<div class="topnav">
+<div class="navbar">
 &nbsp;
 </div>
 
-<!-- END: this line ends content from: inc/topnav.default.html -->
+<!-- END: this line ends content from: inc/navbar.default.html -->
 <!-- START: this line starts content from: inc/begin-row.default.html -->
 
 <div class="row">
@@ -342,10 +342,10 @@ the file name form:</p>
 <pre><code>-H phase=name</code></pre>
 <p>where <code>phase</code> is the name of an HTML phase,
 a non-default file may be used. For example:</p>
-<pre><code>-H topnav=up2index</code></pre>
-<p>will cause <a href="../inc/topnav.up2index.html">inc/topnav.up2index.html</a>
-instead of <a href="../inc/topnav.default.html">inc/topnav.default.html</a> to be
-used during the <em>topnav</em> HTML phase.</p>
+<pre><code>-H navbar=up2index</code></pre>
+<p>will cause <a href="../inc/navbar.up2index.html">inc/navbar.up2index.html</a>
+instead of <a href="../inc/navbar.default.html">inc/navbar.default.html</a> to be
+used during the <em>navbar</em> HTML phase.</p>
 <p>If <code>name</code> is dot (i.e., <code>.</code>), then the given HTML phase is skipped.
 For example:</p>
 <pre><code>-H footer=.</code></pre>
@@ -360,7 +360,7 @@ HTML phases
 <li>inc/head.default.html</li>
 <li>inc/body.default.html</li>
 <li>inc/header.default.html</li>
-<li>inc/topnav.default.html</li>
+<li>inc/navbar.default.html</li>
 <li>inc/begin-row.default.html</li>
 <li>inc/begin-leftcolumn.default.html</li>
 <li>inc/sidenav.default.html</li>
@@ -426,12 +426,12 @@ the same <code>token</code> <em>only</em>.</p>
 <p>An “output tool” may be used to add certain additional command line options to be processed.</p>
 <p>IMPORTANT: An “output tool” will print each command line option / argument on a separate line.
 So for example, if an “output tool” wishes to convey:</p>
-<pre><code>-s TITLE=&#39;IOCCC entry locations&#39; -H topnav=top-of-site</code></pre>
+<pre><code>-s TITLE=&#39;IOCCC entry locations&#39; -H navbar=top-of-site</code></pre>
 <p>The “output tool” would output the following 4 lines:</p>
 <pre><code>-s
 TITLE=&#39;IOCCC entry locations&#39;
 -H
-topnav=top-of-site</code></pre>
+navbar=top-of-site</code></pre>
 <p>The command line options printed by an “output tool” are processed
 after all command line options, and all options from a matching
 line from the <code>md2html.cfg</code> file, and before any filename arguments
@@ -461,15 +461,15 @@ modified via the <a href="../inc/md2html.cfg">md2html config file</a> may change
 different filename for a given phase.</p>
 <p>For example when forming the HTML from
 <a href="/2020/ferguson1/chocolate-cake.md">2020/ferguson1/chocolate-cake.md</a>,
-a different <code>topnav</code> navigation bar is needed. So instead of the
+a different <code>navbar</code> navigation bar is needed. So instead of the
 usual top navigation bar that normally directs people to the previous
 entry for the year, or go up to the year page, or to the next entry
 for the year, a top navigation bar to just go up to the entry’s
 main page is needed. A line in the <a href="../inc/md2html.cfg">md2html config file</a>
 that refers to
 <a href="/2020/ferguson1/chocolate-cake.md">2020/ferguson1/chocolate-cake.md</a> may
-specify use of <code>topnav.up2index.html</code> (as <code>topnav.up2index</code>)instead of using the
-<code>topnav.default.html</code> (<code>topnav.default.html</code>) default.</p>
+specify use of <code>navbar.up2index.html</code> (as <code>navbar.up2index</code>)instead of using the
+<code>navbar.default.html</code> (<code>navbar.default.html</code>) default.</p>
 <p>The HTML phase may be skipped resulting in no HTML output during a given phase
 and furthermore, forming no HTML content from a given markdown file altogether.</p>
 <p>See comments in the <a href="../inc/md2html.cfg">md2html config file</a> for details.

@@ -524,7 +524,7 @@ echo "KEYWORDS=IOCCC, $YEAR_DIR, IOCCC $YEAR_DIR, IOCCC entry, $ENTRY_DIR, $AWAR
 echo "-s"
 echo "HEADER_2=$YYYY_DIR - $AWARD"
 
-# output topnav left hand side links
+# output navbar left hand side links
 #
 awk -v entry_path="$YYYY_DIR" -f "$ENTRY_NAVBAR_AWK" "$DOT_YEAR"
 status="$?"
@@ -533,7 +533,7 @@ if [[ $status -ne 0 ]]; then
     exit 1
 fi
 
-# output topnav right hand side links
+# output navbar right hand side links
 #
 echo "-s"
 if [[ -f $YYYY_DIR/$ENTRY_DIR.c ]]; then
