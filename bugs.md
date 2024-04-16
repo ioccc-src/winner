@@ -409,10 +409,10 @@ own fix or suggest that they're fixed!
 # List of entries by year, sorted in alphabetical order per year
 
 
-# <a name="1984"></a>1984
+# <div id="1984">1984</div>
 
 
-## <a name="1984_decot"></a>1984/decot
+## <div id="1984_decot">1984/decot</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1984/decot/dedot.c](1984/decot/decot.c)
@@ -430,7 +430,7 @@ you should see something like:
 without a newline after the `\`. This is not a bug.
 
 
-## <a name="1984_mullender"></a>1984/mullender
+## <div id="1984_mullender">1984/mullender</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1984/mullender/mullender.c](1984/mullender/mullender.c)
@@ -449,15 +449,15 @@ emulator to test it) but running the code on the binary itself produces a
 `short[]` that can compile in modern systems though it'll not work.
 
 
-# <a name="1985"></a>1985
+# <div id="1985">1985</div>
 
 There are no known bugs and (Mis)features for entries in 1985.
 
 
-# <a name="1986"></a>1986
+# <div id="1986">1986</div>
 
 
-## <a name="1986_august"></a>1986/august
+## <div id="1986_august">1986/august</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1986/august/august.c](1986/august/august.c)
@@ -468,15 +468,15 @@ This entry is known to segfault after printing its output. It was documented by
 the judges and shouldn't be fixed.
 
 
-# <a name="1987"></a>1987
+# <div id="1987">1987</div>
 
 There are no known bugs and (Mis)features for entries in 1987.
 
 
-# <a name="1988"></a>1988
+# <div id="1988">1988</div>
 
 
-## <a name="1988_dale"></a>1988/dale
+## <div id="1988_dale">1988/dale</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1988/dale/dale.c](1988/dale/dale.c)
@@ -487,10 +487,10 @@ so, the program drops a core file into the directory even though the entry works
 and does not crash.
 
 
-# <a name="1989"></a>1989
+# <div id="1989">1989</div>
 
 
-## <a name="1989_fubar"></a>1989/fubar
+## <div id="1989_fubar">1989/fubar</div>
 
 ### STATUS: known bug - please help us fix
 ### Source code: [1989/fubar/fubar.c](1989/fubar/fubar.c)
@@ -504,7 +504,7 @@ errors.
 If you want to try and fix this (mis)feature, you are welcome to try.
 
 
-## <a name="1989_robison"></a>1989/robison
+## <div id="1989_robison">1989/robison</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1989/robison/robison.c](1989/robison/robison.c)
@@ -517,7 +517,7 @@ There are also other cases where this can happen for instance using unsupported
 operators like `/`. To see what operators are supported check the source code.
 
 
-## <a name="1989_westley"></a>1989/westley
+## <div id="1989_westley">1989/westley</div>
 
 ### STATUS: known bug - please help us fix
 ### Source code: [1989/westley/westley.c](1989/westley/westley.c)
@@ -640,10 +640,10 @@ That's about all I can say for how it works as other things have to be done too.
 Enjoy! :-)
 
 
-# <a name="1990"></a>1990
+# <div id="1990">1990</div>
 
 
-## <a name="1990_baruch"></a>1990/baruch
+## <div id="1990_baruch">1990/baruch</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1990/baruch/baruch.c](1990/baruch/baruch.c)
@@ -714,7 +714,7 @@ more time and resources to run as well. For instance:
 This is not considered a bug, however.
 
 
-## <a name="1990_jaw"></a>1990/jaw
+## <div id="1990_jaw">1990/jaw</div>
 
 ### STATUS: known bug - please help us fix
 ### Source code: [1990/jaw/jaw.c](1990/jaw/jaw.c)
@@ -768,7 +768,7 @@ options used, seemingly, it has to write to disk the tarball which seems to
 defeat the purpose. This would ideally be fixed.
 
 
-## <a name="1990_tbr"></a>1990/tbr
+## <div id="1990_tbr">1990/tbr</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1990/tbr/tbr.c](1990/tbr/tbr.c)
@@ -778,7 +778,7 @@ The authors provided a list of features in the
 [BUGS](1990/tbr/index.html#bugs) section in their remarks.
 
 
-## <a name="1990_theorem"></a>1990/theorem
+## <div id="1990_theorem">1990/theorem</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1990/theorem/theorem.c](1990/theorem/theorem.c)
@@ -791,10 +791,10 @@ will enter an infinite loop, printing 0 over and over again; another condition
 where this occurred was fixed but this one should not be fixed. Thank you.
 
 
-# <a name="1991"></a>1991
+# <div id="1991">1991</div>
 
 
-## <a name="1991_buzzard"></a>1991/buzzard
+## <div id="1991_buzzard">1991/buzzard</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1991/buzzard/buzzard.c](1991/buzzard/buzzard.c)
@@ -807,7 +807,7 @@ file does not exist in the directory, this program will very likely crash.
 This is a feature, not a bug.
 
 
-## <a name="1991_westley"></a>1991/westley
+## <div id="1991_westley">1991/westley</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1991/westley/westley.c](1991/westley/westley.c)
@@ -822,10 +822,10 @@ possibility. Can you find out how? There's also a way to make it so that even
 when you're cheating it ends up winning! Can you figure that out as well?
 
 
-# <a name="1992"></a>1992
+# <div id="1992">1992</div>
 
 
-## <a name="1992_adrian"></a>1992/adrian
+## <div id="1992_adrian">1992/adrian</div>
 
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -857,7 +857,7 @@ you did change it to fprintf, even if you have the right number of args, you'd
 have to remove the outer `()` pair.
 
 
-## <a name="1992_albert"></a>1992/albert
+## <div id="1992_albert">1992/albert</div>
 
 
 ### STATUS: known bug - please help us fix
@@ -922,7 +922,7 @@ The alt version does fix the problem but it is not obfuscated and not like the
 entry itself. Can you fix the actual entry? You are welcome to try and do so.
 
 
-## <a name="1992_gson"></a>1992/gson
+## <div id="1992_gson">1992/gson</div>
 
 ### STATUS: uses gets() - change to fgets() if possible
 ### Source code: [1992/gson/gson.c](1992/gson/gson.c)
@@ -947,7 +947,7 @@ to be read (in case the `gets(3)` was not used in a loop).
 
 
 
-## <a name="1992_kivinen"></a>1992/kivinen
+## <div id="1992_kivinen">1992/kivinen</div>
 
 ### STATUS: known bug - please help us fix
 ### Source code: [1992/kivinen/kivinen.c](1992/kivinen/kivinen.c)
@@ -960,7 +960,7 @@ click the mouse it takes it back towards the centre.
 If you want to try and fix this (mis)feature, you are welcome to try.
 
 
-## <a name="1992_lush"></a>1992/lush
+## <div id="1992_lush">1992/lush</div>
 
 ### STATUS: doesn't work with some compilers - please provide alternative code or fix for more compilers
 ### Source code: [1992/lush/lush.c](1992/lush/lush.c)
@@ -1043,7 +1043,7 @@ The entry is supposed to show warnings and then print:
 Can you help us?
 
 
-## <a name="1992_vern"></a>1992/vern
+## <div id="1992_vern">1992/vern</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1992/vern/vern.c](1992/vern/vern.c)
@@ -1054,7 +1054,7 @@ it can 'rub your nose in defeat', as the author puts it. You will have to exit
 it yourself through ctrl-c or killing it in some other fashion.
 
 
-## <a name="1992_westley"></a>1992/westley
+## <div id="1992_westley">1992/westley</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1992/westley/westley.c](1992/westley/westley.c)
@@ -1091,7 +1091,7 @@ showed was correct when at 80-columns so it seems like this could be a bug if
 not a misunderstanding).
 
 
-# <a name="1993"></a>1993
+# <div id="1993">1993</div>
 
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -1127,7 +1127,7 @@ system), this entry just shows a blank screen.
 Can you fix it? We welcome your help.
 
 
-## <a name="1993_lmfjyh"></a>1993/lmfjyh
+## <div id="1993_lmfjyh">1993/lmfjyh</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1993/lmfjyh/lmfjyh.c](1993/lmfjyh/lmfjyh.c)
@@ -1140,7 +1140,7 @@ An alternate version that will work for modern systems, however, does exist. See
 the index.html file for details.
 
 
-## <a name="1993_rince"></a>1993/rince
+## <div id="1993_rince">1993/rince</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1993/rince/rince.c](1993/rince/rince.c)
@@ -1153,7 +1153,7 @@ There is no end of game checking method so you will have to quit the game
 through ctrl-c or such.
 
 
-## <a name="1993_schnitzi"></a>1993/schnitzi
+## <div id="1993_schnitzi">1993/schnitzi</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1993/schnitzi/schnitzi.c](1993/schnitzi/schnitzi.c)
@@ -1211,10 +1211,10 @@ The unary `-` is an operator so decimal `-46` should be entered as `-d46` and
 not `d-46`.
 
 
-# <a name="1994"></a>1994
+# <div id="1994">1994</div>
 
 
-## <a name="1994_dodsond2"></a>1994/dodsond2
+## <div id="1994_dodsond2">1994/dodsond2</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1994/dodsond2/dodsond2.c](1994/dodsond2/dodsond2.c)
@@ -1227,7 +1227,7 @@ When you shoot it will move you to that room so if you end up shooting into a
 pit room you will end up dying even though you didn't explicitly move there.
 
 
-## <a name="1994_ldb"></a>1994/ldb
+## <div id="1994_ldb">1994/ldb</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1994/ldb/ldb.c](1994/ldb/ldb.c)
@@ -1247,7 +1247,7 @@ might be tampering too much with the entry as it's not a real problem and as a
 one liner it's already quite long.
 
 
-## <a name="1994_schnitzi"></a>1994/schnitzi
+## <div id="1994_schnitzi">1994/schnitzi</div>
 
 ### STATUS: uses gets() - change to fgets() if possible
 ### Source code: [1994/schnitzi/schnitzi.c](1994/schnitzi/schnitzi.c)
@@ -1372,7 +1372,7 @@ can be compiled and the output of that new program when fed itself can also be
 compiled!
 
 
-## <a name="1994_shapiro"></a>1994/shapiro
+## <div id="1994_shapiro">1994/shapiro</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1994/shapiro/shapiro.c](1994/shapiro/shapiro.c)
@@ -1415,7 +1415,7 @@ if it checked for `!= EOF`.
 Since it works there is no need to fix this except for a challenge to yourself.
 
 
-## <a name="1994_tvr"></a>1994/tvr
+## <div id="1994_tvr">1994/tvr</div>
 
 ### STATUS: known bug - please help us fix
 ### Source code: [1994/tvr/tvr.c](1994/tvr/tvr.c)
@@ -1435,10 +1435,10 @@ You are welcome to try and fix it and open a pull request, providing that it
 doesn't break something else.
 
 
-# <a name="1995"></a>1995
+# <div id="1995">1995</div>
 
 
-## <a name="1995_cdua"></a>1995/cdua
+## <div id="1995_cdua">1995/cdua</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1995/cdua/cdua.c](1995/cdua/cdua.c)
@@ -1455,7 +1455,7 @@ supposed to be printed again and one is supposed to press a key as at that point
 it calls `getchar()` via the pointer `m`. So this is a feature not a bug.
 
 
-## <a name="1995_leo"></a>1995/leo
+## <div id="1995_leo">1995/leo</div>
 
 ### STATUS: known bug - please help us fix
 ### Source code: [1995/leo/leo.c](1995/leo/leo.c)
@@ -1485,7 +1485,7 @@ It is not known if this is platform specific but this was observed in macOS and
 it would be good if it was fixed.
 
 
-## <a name="1995_savastio"></a>1995/savastio
+## <div id="1995_savastio">1995/savastio</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1995/savastio/savastio.c](1995/savastio/savastio.c)
@@ -1495,7 +1495,7 @@ This program expects a POSITIVE number. If you specify a negative number it will
 not show any output, stuck in a loop.
 
 
-## <a name="1995_vanschnitz"></a>1995/vanschnitz
+## <div id="1995_vanschnitz">1995/vanschnitz</div>
 
 ### STATUS: missing file - please provide it
 ### Source code: [1995/vanschnitz/vanschnitz.c](1995/vanschnitz/vanschnitz.c)
@@ -1507,10 +1507,10 @@ compilers to use the program but this file is missing. Can you provide it?
 We would appreciate anyone who has it or even just knows the name! Thank you.
 
 
-# <a name="1996"></a>1996
+# <div id="1996">1996</div>
 
 
-## <a name="1996_gandalf"></a>1996/gandalf
+## <div id="1996_gandalf">1996/gandalf</div>
 
 ### STATUS: missing or dead link - please provide them
 ### Source code: [1996/gandalf/gandalf.c](1996/gandalf/gandalf.c)
@@ -1522,7 +1522,7 @@ it was instead requiring a login / password.
 Do you have an updated link? We welcome your help!
 
 
-## <a name="1996_huffman"></a>1996/huffman
+## <div id="1996_huffman">1996/huffman</div>
 
 ### STATUS: uses gets() - change to fgets() if possible
 ### Source code: [1996/huffman/huffman.c](1996/huffman/huffman.c)
@@ -1563,7 +1563,7 @@ But since it does not for the time being it is advisable to just redirect
 `stderr` to `/dev/null` (`2>/dev/null`).
 
 
-## <a name="1996_jonth"></a>1996/jonth
+## <div id="1996_jonth">1996/jonth</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1996/jonth/jonth.c](1996/jonth/jonth.c)
@@ -1583,15 +1583,15 @@ there's no archive on the Internet Wayback Machine. Do you know of a proper URL?
 We greatly appreciate your help here!
 
 
-# <a name="1997"></a>1997
+# <div id="1997">1997</div>
 
 There was no IOCCC in 1997.
 
 
-# <a name="1998"></a>1998
+# <div id="1998">1998</div>
 
 
-## <a name="1998_dlowe"></a>1998/dlowe
+## <div id="1998_dlowe">1998/dlowe</div>
 
 ### STATUS: missing or dead link - please provide them
 ### Source code: [1998/dlowe/dlowe.c](1998/dlowe/dlowe.c)
@@ -1604,7 +1604,7 @@ would like to set it up?  We'll gladly thank you in the index.html file and link
 to the page as well!  You'll have IOCCC fame for reviving a pootifier! :-)
 
 
-## <a name="1998_dloweneil"></a>1998/dloweneil
+## <div id="1998_dloweneil">1998/dloweneil</div>
 
 ### STATUS: missing or dead link - please provide them
 ### Source code: [1998/dloweneil/dloweneil.c](1998/dloweneil/dloweneil.c)
@@ -1613,7 +1613,7 @@ to the page as well!  You'll have IOCCC fame for reviving a pootifier! :-)
 See above entry [1998/dlowe](1998/dlowe/dlowe.c).
 
 
-## <a name="1998_schnitzi"></a>1998/schnitzi
+## <div id="1998_schnitzi">1998/schnitzi</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1998/schnitzi/schnitzi.c](1998/schnitzi/schnitzi.c)
@@ -1636,15 +1636,15 @@ something funny will happen, very possibly with different results per run. This
 is in the index.html file as something to try and ponder.
 
 
-# <a name="1999"></a>1999
+# <div id="1999">1999</div>
 
 There was no IOCCC in 1999.
 
 
-# <a name="2000"></a>2000
+# <div id="2000">2000</div>
 
 
-## <a name="2000_dlowe"></a>2000/dlowe
+## <div id="2000_dlowe">2000/dlowe</div>
 
 
 ### STATUS: known bug - please help us fix
@@ -1910,7 +1910,7 @@ of 92 warnings! Nonetheless neither works okay and both crash.
 
 
 
-## <a name="2000_primenum"></a>2000/primenum
+## <div id="2000_primenum">2000/primenum</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2000/primenum/primenum.c](2000/primenum/primenum.c)
@@ -1936,7 +1936,7 @@ that it'll be worth your two second fix :-) ).  If you do fix it please do not
 make a pull request.
 
 
-## <a name="2000_rince"></a>2000/rince
+## <div id="2000_rince">2000/rince</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2000/rince/rince.c](2000/rince/rince.c)
@@ -1947,10 +1947,10 @@ If `DISPLAY` is not set the program will very likely crash, do something strange
 fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing))! :-) ).
 
 
-# <a name="2001"></a>2001
+# <div id="2001">2001</div>
 
 
-## <a name="2001_anonymous"></a>2001/anonymous
+## <div id="2001_anonymous">2001/anonymous</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2001/anonymous/anonymous.c](2001/anonymous/anonymous.c)
@@ -1979,7 +1979,7 @@ this program will very likely crash or do something strange like slaughter the
 elves of Imladris :-(
 
 
-## <a name="2001_bellard"></a>2001/bellard
+## <div id="2001_bellard">2001/bellard</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### STATUS: doesn't work with some platforms - please help us fix
@@ -2043,7 +2043,7 @@ and it can be run by itself for fun in modern systems, which was not possible
 before the fixes there.
 
 
-## <a name="2001_dgbeards"></a>2001/dgbeards
+## <div id="2001_dgbeards">2001/dgbeards</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2001/dgbeards/dgbeards.c](2001/dgbeards/dgbeards.c)
@@ -2052,7 +2052,7 @@ before the fixes there.
 This program deliberately crashes if it loses (which is what it aims to do).
 
 
-## <a name="2001_herrmann1"></a>2001/herrmann1
+## <div id="2001_herrmann1">2001/herrmann1</div>
 
 ### STATUS: missing files - please provide them
 ### Source code: [2001/herrmann1/herrmann1.c](2001/herrmann1/herrmann1.c)
@@ -2072,7 +2072,7 @@ appreciate your help!
 If you want to try and fix this (mis)feature, you are welcome to try.
 
 
-## <a name="2001_kev"></a>2001/kev
+## <div id="2001_kev">2001/kev</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2001/kev/kev.c](2001/kev/kev.c)
@@ -2097,7 +2097,7 @@ Although it is independent of endianness both systems need the same character
 set. In other words both have to be ASCII or EBCDIC - not one of each.
 
 
-## <a name="2001_rosten"></a>2001/rosten
+## <div id="2001_rosten">2001/rosten</div>
 
 
 ### STATUS: missing files - please provide them
@@ -2108,7 +2108,7 @@ The author stated that there is a cat man page for this program in case one
 wanted to install it as a tool but this is missing.
 
 
-## <a name="2001_schweikh"></a>2001/schweikh
+## <div id="2001_schweikh">2001/schweikh</div>
 
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -2121,7 +2121,7 @@ details and a workaround.
 There's also no way to escape meta characters.
 
 
-## <a name="2001_westley"></a>2001/westley
+## <div id="2001_westley">2001/westley</div>
 
 
 ### STATUS: uses gets() - change to fgets() if possible
@@ -2154,7 +2154,7 @@ The author referred to a file `card.gif` but this file is missing. Do you have
 it? Please provide it!
 
 
-## <a name="2001_williams"></a>2001/williams
+## <div id="2001_williams">2001/williams</div>
 
 
 ### STATUS: known bug - please help us fix
@@ -2217,20 +2217,20 @@ sleeping in a loop does suggest that it's not stuck only showing those lines and
 sleeping.
 
 
-# <a name="2002"></a>2002
+# <div id="2002">2002</div>
 
 There was no IOCCC in 2002.
 
 
-# <a name="2003"></a>2003
+# <div id="2003">2003</div>
 
 There was no IOCCC in 2003.
 
 
-# <a name="2004"></a>2004
+# <div id="2004">2004</div>
 
 
-## <a name="2004_gavin"></a>2004/gavin
+## <div id="2004_gavin">2004/gavin</div>
 
 ### STATUS: compiled executable crashes - please help us fix
 ### STATUS: doesn't work with some platforms - please help us fix
@@ -2342,7 +2342,7 @@ See [known features in the index.html](2004/gavin/index.html#known-features) for
 things that are not bugs but documented (mis)features.
 
 
-## <a name="2004_jdalbec"></a>2004/jdalbec
+## <div id="2004_jdalbec">2004/jdalbec</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2004/jdalbec/jdalbec.c](2004/jdalbec/jdalbec.c)
@@ -2372,7 +2372,7 @@ The author stated that:
 ```
 
 
-## <a name="2004_sds"></a>2004/sds
+## <div id="2004_sds">2004/sds</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2004/sds/sds.c](2004/sds/sds.c)
@@ -2382,10 +2382,10 @@ The generated code will very likely segfault or do something not intended if not
 given the right args. See the index.html file for the correct syntax.
 
 
-# <a name="2005"></a>2005
+# <div id="2005">2005</div>
 
 
-## <a name="2005_anon"></a>2005/anon
+## <div id="2005_anon">2005/anon</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2005/anon/anon.c](2005/anon/anon.c)
@@ -2402,7 +2402,7 @@ strange. This might also happen if you specify excessively large board
 dimensions. Try `100 100 100` for instance and see what happens!
 
 
-## <a name="2005_giljade"></a>2005/giljade
+## <div id="2005_giljade">2005/giljade</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2005/giljade/giljade.c](2005/giljade/giljade.c)
@@ -2414,7 +2414,7 @@ does not exist.
 This entry requires that `sed` and `make` are in the path.
 
 
-## <a name="2005_mikeash"></a>2005/mikeash
+## <div id="2005_mikeash">2005/mikeash</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2005/mikeash/mikeash.c](2005/mikeash/mikeash.c)
@@ -2459,7 +2459,7 @@ Basically, the [LISP][] interpreter is good for some basic math operations, and
 for running itself.
 
 
-## <a name="2005_mynx"></a>2005/mynx
+## <div id="2005_mynx">2005/mynx</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2005/mynx/mynx.c](2005/mynx/mynx.c)
@@ -2475,7 +2475,7 @@ out as it won't work on as many websites as it used to including the [IOCCC
 website](https://www.ioccc.org) itself.
 
 
-## <a name="2005_sykes"></a>2005/sykes
+## <div id="2005_sykes">2005/sykes</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2005/sykes/sykes.c](2005/sykes/sykes.c)
@@ -2507,10 +2507,10 @@ The
 used decimal mode, or any of the "undocumented" instructions.
 
 
-# <a name="2006"></a>2006
+# <div id="2006">2006</div>
 
 
-## <a name="2006_birken"></a>2006/birken
+## <div id="2006_birken">2006/birken</div>
 
 ### STATUS: uses gets() - change to fgets() if possible
 ### Source code: [2006/birken/birken.c](2006/birken/birken.c)
@@ -2527,7 +2527,7 @@ with at least `computer.tofu` input file:
 ```
 
 
-## <a name="2006_borsanyi"></a>2006/borsanyi
+## <div id="2006_borsanyi">2006/borsanyi</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2006/borsanyi/borsanyi.c](2006/borsanyi/borsanyi.c)
@@ -2538,7 +2538,7 @@ characters in the regex `a-z_A-Z0-9@.-`. Breaking these constraints will end up
 with possibly corrupt GIF files.
 
 
-## <a name="2006_monge"></a>2006/monge
+## <div id="2006_monge">2006/monge</div>
 
 ### STATUS: doesn't work with some platforms - please help us fix
 ### Source code: [2006/monge/monge.c](2006/monge/monge.c)
@@ -2564,7 +2564,7 @@ welcome to try and fix it if you wish to!
 Incorrect formulas will ungracefully crash the program.
 
 
-## <a name="2006_sykes1"></a>2006/sykes1
+## <div id="2006_sykes1">2006/sykes1</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2006/sykes1/sykes1.c](2006/sykes1/sykes1.c)
@@ -2586,7 +2586,7 @@ The author stated:
 ```
 
 
-## <a name="2006_toledo2"></a>2006/toledo2
+## <div id="2006_toledo2">2006/toledo2</div>
 
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -2609,30 +2609,30 @@ You must type in caps (except in strings) and this program is indeed
 case-sensitive.
 
 
-# <a name="2007"></a>2007
+# <div id="2007">2007</div>
 
 There was no IOCCC in 2007.
 
 
-# <a name="2008"></a>2008
+# <div id="2008">2008</div>
 
 There was no IOCCC in 2008.
 
 
-# <a name="2009"></a>2009
+# <div id="2009">2009</div>
 
 There was no IOCCC in 2009.
 
 
-# <a name="2010"></a>2010
+# <div id="2010">2010</div>
 
 There was no IOCCC in 2010.
 
 
-# <a name="2011"></a>2011
+# <div id="2011">2011</div>
 
 
-## <a name="2011_borsanyi"></a>2011/borsanyi
+## <div id="2011_borsanyi">2011/borsanyi</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2011/borsanyi/borsanyi.c](2011/borsanyi/borsanyi.c)
@@ -2657,7 +2657,7 @@ Rounding errors might cause an omission in the highest bin. There might be empty
 bins at the edges.
 
 
-## <a name="2011_dlowe"></a>2011/dlowe
+## <div id="2011_dlowe">2011/dlowe</div>
 
 ### STATUS: missing or dead link - please provide them
 ### Source code: [2011/dlowe/dlowe.c](2011/dlowe/dlowe.c)
@@ -2685,7 +2685,7 @@ tends to result in empty output.
 If you want to try and fix this (mis)feature, you are welcome to try.
 
 
-## <a name="2011_fredriksson"></a>2011/fredriksson
+## <div id="2011_fredriksson">2011/fredriksson</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2011/fredriksson/fredriksson.c](2011/fredriksson/fredriksson.c)
@@ -2697,7 +2697,7 @@ features](2011/fredriksson/index.html#other-features) and [limitations and
 remarks](2011/fredriksson/index.html#limitations-and-remarks) instead.
 
 
-## <a name="2011_richards"></a>2011/richards
+## <div id="2011_richards">2011/richards</div>
 
 ### STATUS: doesn't work with some platforms - please help us fix
 ### Source code: [2011/richards/richards.c](2011/richards/richards.c)
@@ -2916,7 +2916,7 @@ defined.
 Do you have a fix? We welcome it!
 
 
-## <a name="2011_vik"></a>2011/vik
+## <div id="2011_vik">2011/vik</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2011/vik/vik.c](2011/vik/vik.c)
@@ -2927,10 +2927,10 @@ program though we note that your computer might also [halt and catch
 fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
 
 
-# <a name="2012"></a>2012
+# <div id="2012">2012</div>
 
 
-## <a name="2012_blakely"></a>2012/blakely
+## <div id="2012_blakely">2012/blakely</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2012/blakely/blakely.c](2012/blakely/blakely.c)
@@ -2944,7 +2944,7 @@ The author stated:
 ```
 
 
-## <a name="2012_deckmyn"></a>2012/deckmyn
+## <div id="2012_deckmyn">2012/deckmyn</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2012/deckmyn/deckmyn.c](2012/deckmyn/deckmyn.c)
@@ -2985,7 +2985,7 @@ The author stated:
 The manual referred to is [here](2012/deckmyn/deckmyn.html).
 
 
-## <a name="2012_dlowe"></a>2012/dlowe
+## <div id="2012_dlowe">2012/dlowe</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2012/dlowe/dlowe.c](2012/dlowe/dlowe.c)
@@ -3000,7 +3000,7 @@ The author stated:
 * Cannot build or run without X11 (or an X11 compatibility layer).
 
 
-## <a name="2012_tromp"></a>2012/tromp
+## <div id="2012_tromp">2012/tromp</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2012/tromp/tromp.c](2012/tromp/tromp.c)
@@ -3026,7 +3026,7 @@ The author stated:
 ```
 
 
-## <a name="2012_vik"></a>2012/vik
+## <div id="2012_vik">2012/vik</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2012/vik/vik.c](2012/vik/vik.c)
@@ -3039,9 +3039,9 @@ might also [halt and catch
 fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
 
 
-# <a name="2013"></a>2013
+# <div id="2013">2013</div>
 
-## <a name="2013_cable2"></a>2013/cable2
+## <div id="2013_cable2">2013/cable2</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2013/cable2/cable2.c](2013/cable2/cable2.c)
@@ -3062,7 +3062,7 @@ antialiasing interferes with color detection in "color" mode.
 and endianness conversion would make the source too large for IOCCC rule 2).
 
 
-## <a name="2013_dlowe"></a>2013/dlowe
+## <div id="2013_dlowe">2013/dlowe</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2013/dlowe/dlowe.c](2013/dlowe/dlowe.c)
@@ -3084,7 +3084,7 @@ The author also stated:
   used.
 
 
-## <a name="2013_endoh1"></a>2013/endoh1
+## <div id="2013_endoh1">2013/endoh1</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2013/endoh1/endoh1.c](2013/endoh1/endoh1.c)
@@ -3108,7 +3108,7 @@ section](2013/endoh1/index.html#spoiler).
 --
 
 
-## <a name="2013_endoh3"></a>2013/endoh3
+## <div id="2013_endoh3">2013/endoh3</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2013/endoh3/endoh3.c](2013/endoh3/endoh3.c)
@@ -3128,7 +3128,7 @@ A workaround is inserting a whitespace: `C2 E2`.
 --
 
 
-## <a name="2013_endoh4"></a>2013/endoh4
+## <div id="2013_endoh4">2013/endoh4</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2013/endoh4/endoh4.c](2013/endoh4/endoh4.c)
@@ -3138,7 +3138,7 @@ Invalid input files will very likely crash the program.
 
 
 
-## <a name="2013_hou"></a>2013/hou
+## <div id="2013_hou">2013/hou</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2013/hou/hou.c](2013/hou/hou.c)
@@ -3148,7 +3148,7 @@ This program will not terminate on its own; you must kill `hou` (but not Qiming
 Hou :-) ) yourself. This should not be fixed.
 
 
-## <a name="2013_mills"></a>2013/mills
+## <div id="2013_mills">2013/mills</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2013/mills/mills.c](2013/mills/mills.c)
@@ -3162,10 +3162,10 @@ have experience with socket programming :-) ) fix. However as the author pointed
 it out as a known limitation it is not a bug but a feature.
 
 
-# <a name="2014"></a>2014
+# <div id="2014">2014</div>
 
 
-## <a name="2014_maffiodo1"></a>2014/maffiodo1
+## <div id="2014_maffiodo1">2014/maffiodo1</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2014/maffiodo1/prog.c](2014/maffiodo1/prog.c)
@@ -3198,7 +3198,7 @@ player become bigger, stay away from blocks!
 but since it's documented it's considered a feature, not a bug to fix.
 
 
-## <a name="2014_maffiodo2"></a>2014/maffiodo2
+## <div id="2014_maffiodo2">2014/maffiodo2</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2014/maffiodo2/prog.c](2014/maffiodo2/prog.c)
@@ -3207,7 +3207,7 @@ but since it's documented it's considered a feature, not a bug to fix.
 This program will very likely crash if no arg is given.
 
 
-## <a name="2014_vik"></a>2014/vik
+## <div id="2014_vik">2014/vik</div>
 
 ### STATUS: known bug - please help us fix
 ### Source code: [2014/vik/prog.c](2014/vik/prog.c)
@@ -3259,10 +3259,10 @@ they will properly get:
 ```
 
 
-# <a name="2015"></a>2015
+# <div id="2015">2015</div>
 
 
-## <a name="2015_hou"></a>2015/hou
+## <div id="2015_hou">2015/hou</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2015/hou/prog.c](2015/hou/prog.c)
@@ -3293,7 +3293,7 @@ result. Error messages become garbled, though.
 --
 
 
-## <a name="2015_mills2"></a>2015/mills2
+## <div id="2015_mills2">2015/mills2</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2015/mills2/prog.c](2015/mills2/prog.c)
@@ -3305,7 +3305,7 @@ is not compressed data it's likely to crash.
 The program depends on little endian systems.
 
 
-## <a name="2015_schweikhardt"></a>2015/schweikhardt
+## <div id="2015_schweikhardt">2015/schweikhardt</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2015/schweikhardt/prog.c](2015/schweikhardt/prog.c)
@@ -3327,20 +3327,20 @@ use `8 * sizeof(typ)` bits per place. It does not work when `CHAR_BIT <= 7`.
 --
 
 
-# <a name="2016"></a>2016
+# <div id="2016">2016</div>
 
 There was no IOCCC in 2016.
 
 
-# <a name="2017"></a>2017
+# <div id="2017">2017</div>
 
 There was no IOCCC in 2017.
 
 
-# <a name="2018"></a>2018
+# <div id="2018">2018</div>
 
 
-## <a name="2018_algmyr"></a>2018/algmyr
+## <div id="2018_algmyr">2018/algmyr</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2018/algmyr/algmyr.c](2018/algmyr/algmyr.c)
@@ -3361,7 +3361,7 @@ loop printing whitespace.
 
 
 
-## <a name="2018_hou"></a>2018/hou
+## <div id="2018_hou">2018/hou</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2018/hou/prog.c](2018/hou/prog.c)
@@ -3383,7 +3383,7 @@ infinitely increase the size of the output file. This can happen if you try
 fixing the syntax error in the generated `ioccc.json` file.
 
 
-## <a name="2018_mills"></a>2018/mills
+## <div id="2018_mills">2018/mills</div>
 
 ### STATUS: known bug - please help us fix
 ### Source code: [2018/mills/prog.c](2018/mills/prog.c)
@@ -3420,7 +3420,7 @@ exiting the program or else the next time you run it the file will not exist (or
 in the case of compiled code it won't be executable).
 
 
-## <a name="2018_vokes"></a>2018/vokes
+## <div id="2018_vokes">2018/vokes</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2018/vokes/vokes.c](2018/vokes/vokes.c)
@@ -3473,10 +3473,10 @@ The author wrote the following:
   this program has nothing to do with a hand.
 
 
-# <a name="2019"></a>2019
+# <div id="2019">2019</div>
 
 
-## <a name="2019_adamovsky"></a>2019/adamovsky
+## <div id="2019_adamovsky">2019/adamovsky</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/adamovsky/prog.c](2019/adamovsky/prog.c)
@@ -3486,7 +3486,7 @@ Certain input can crash this program. The file
 [crash.unl](2019/adamovsky/crash.unl) is an example file.
 
 
-## <a name="2019_burton"></a>2019/burton
+## <div id="2019_burton">2019/burton</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/burton/prog.c](2019/burton/prog.c)
@@ -3496,7 +3496,7 @@ The author pointed out that some implementations of `wc(1)` show different
 values but his implementation matches that of macOS and FreeBSD.
 
 
-## <a name="2019_ciura"></a>2019/ciura
+## <div id="2019_ciura">2019/ciura</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/ciura/prog.c](2019/ciura/prog.c)
@@ -3532,7 +3532,7 @@ in the de.sh/de.alt.sh scripts:
     # reason that so many words have them.
 ```
 
-## <a name="2019_dogon"></a>2019/dogon
+## <div id="2019_dogon">2019/dogon</div>
 
 ### STATUS: uses gets() - change to fgets() if possible
 ### Source code: [2019/dogon/prog.c](2019/dogon/prog.c)
@@ -3542,7 +3542,7 @@ The author does not it uses `gets()` and one will get warnings but it would be
 ideal if this was not the case.
 
 
-## <a name="2019_duble"></a>2019/duble
+## <div id="2019_duble">2019/duble</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/duble/prog.c](2019/duble/prog.c)
@@ -3588,7 +3588,7 @@ To delete them you can do:
 though one might want to check that the program is not currently running. :-)
 
 
-## <a name="2019_endoh"></a>2019/endoh
+## <div id="2019_endoh">2019/endoh</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/endoh/prog.c](2019/endoh/prog.c)
@@ -3598,7 +3598,7 @@ As a backtrace quine this entry is **SUPPOSED to segfault** so this should not b
 touched either.
 
 
-## <a name="2019_karns"></a>2019/karns
+## <div id="2019_karns">2019/karns</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/karns/prog.c](2019/karns/prog.c)
@@ -3624,7 +3624,7 @@ not encountered this myself).
 - The program contains some unused code and data.
 
 
-## <a name="2019_lynn"></a>2019/lynn
+## <div id="2019_lynn">2019/lynn</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/lynn/prog.c](2019/lynn/prog.c)
@@ -3636,7 +3636,7 @@ remarks in the sections [Syntax](2019/lynn/index.html#syntax) and
 [Caveats](2019/lynn/index.html#caveats).
 
 
-## <a name="2019_mills"></a>2019/mills
+## <div id="2019_mills">2019/mills</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/mills/prog.c](2019/mills/prog.c)
@@ -3664,7 +3664,7 @@ the hard limit with `limit -h stacksize` and set it with
 ---
 
 
-## <a name="2019_poikola"></a>2019/poikola
+## <div id="2019_poikola">2019/poikola</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/poikola/prog.c](2019/poikola/prog.c)
@@ -3675,7 +3675,7 @@ erroneously.
 
 Also, the maximum file size is 1GB.
 
-## <a name="2019_yang"></a>2019/yang
+## <div id="2019_yang">2019/yang</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/yang/prog.c](2019/yang/prog.c)
@@ -3690,10 +3690,10 @@ ignored except line feeds (preserved) and tabs (expanded to 8 spaces).'
 
 
 
-# <a name="2020"></a>2020
+# <div id="2020">2020</div>
 
 
-## <a name="2020_burton"></a>2020/burton
+## <div id="2020_burton">2020/burton</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2020/burton/prog.c](2020/burton/prog.c)
@@ -3707,7 +3707,7 @@ It will also show funny output with more than one arg. This should not be fixed
 either. But can you figure out why this happens?
 
 
-## <a name="2020_carlini"></a>2020/carlini
+## <div id="2020_carlini">2020/carlini</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2020/carlini/prog.c](2020/carlini/prog.c)
@@ -3726,7 +3726,7 @@ move.
 If you have audible bells enabled the program will beep at every turn.
 
 
-## <a name="2020_ferguson1"></a>2020/ferguson1
+## <div id="2020_ferguson1">2020/ferguson1</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2020/ferguson1/prog.c](2020/ferguson1/prog.c)
@@ -3738,7 +3738,7 @@ things that are misinterpreted as bugs. See the
 [troubleshooting.html](2020/ferguson1/troubleshooting.html) files for details.
 
 
-## <a name="2020_giles"></a>2020/giles
+## <div id="2020_giles">2020/giles</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2020/giles/prog.c](2020/giles/prog.c)
@@ -3749,7 +3749,7 @@ exactly 16 bits per sample, but it allows any sample rate and any number of
 audio channels.
 
 
-## <a name="2020_otterness"></a>2020/otterness
+## <div id="2020_otterness">2020/otterness</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2020/otterness/prog.c](2020/otterness/prog.c)
@@ -3775,22 +3775,22 @@ codes](2020/otterness/index.html#program-error-codes) written by the author
 which lists some other conditions which should be considered features, not bugs.
 
 
-# <a name="2021"></a>2021
+# <div id="2021">2021</div>
 
 There was no IOCCC in 2021.
 
 
-# <a name="2022"></a>2022
+# <div id="2022">2022</div>
 
 There was no IOCCC in 2022.
 
 
-# <a name="2023"></a>2023
+# <div id="2023">2023</div>
 
 There was no IOCCC in 2023.
 
 
-# <a name="2024"></a>2024
+# <div id="2024">2024</div>
 
 We hope to run the IOCCCMOCK this year, 2024, and hopefully the next IOCCC, but
 for now we wish everyone a happy new year!

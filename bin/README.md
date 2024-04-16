@@ -469,7 +469,7 @@ make untar_year_tarball
 ```
 
 
-# <a name="how"></a>How IOCCC HTML content is built
+# <div id="how">How IOCCC HTML content is built</div>
 
 The [md2html.sh](md2html.sh) tool is the primary tool that
 is used to form all IOCCC related HTML pages for the [official IOCCC web
@@ -520,7 +520,7 @@ will cause no HTML content to be produced during the `footer` HTML phase.
 
 
 
-## <a name="html"></a>HTML phases
+## <div id="html">HTML phases</div>
 
 The following HTML phase files are used to build HTML content:
 
@@ -563,7 +563,7 @@ See the tool [readme2index.sh](readme2index.sh) for an example of
 how HTML phases are implemented.
 
 
-## <a name="`getopt`"></a>`getopt` phase processing of the command line
+## <div id="getopt">`getopt` phase processing of the command line</div>
 
 The command options are evaluated in the following `getopt` phases:
 
@@ -733,7 +733,7 @@ we even need the tools in the [bin](index.html) directory when there other
 solutions available to form web pages.
 
 
-## <a name="static-only"></a>Static web pages only
+## <div id="static-only">Static web pages only</div>
 
 Here are some reasons why we are using these files and
 special tools to create HTML content / IOCCC web pages:
@@ -758,7 +758,7 @@ We use [static web pages](#static-only), so use of a "back-end database" is not
 available to the IOCCC.
 
 
-## <a name="why-github"></a>We cannot use non-GitHub web servers
+## <div id="why-github">We cannot use non-GitHub web servers</div>
 
 The [GitHub pages](https://pages.github.com) have the distributed server capacity needed to handle
 the **huge download volume** or [Slashdot effect](https://en.wikipedia.org/wiki/Slashdot_effect)
@@ -829,7 +829,7 @@ site](https://www.ioccc.org).
 For this reason, we cannot use JavaScript include HTML content.
 
 
-# <a name="terms"></a>IOCCC terms
+# <div id="terms">IOCCC terms</div>
 
 The following IOCCC terms apply to tools, JSON files, and the directory structure of this repo.
 

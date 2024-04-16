@@ -28,10 +28,10 @@ on a IOCCC entry by entry basis.
 - [Did we neglect to credit you?](#neglect)
 
 
-# <a name="1984"></a>1984
+# <div id="1984">1984</div>
 
 
-## <a name="1984_anonymous"></a>[1984/anonymous](1984/anonymous/anonymous.c) ([index.html](1984/anonymous/index.html))
+## <div id="1984_anonymous">[1984/anonymous](1984/anonymous/anonymous.c) ([index.html](1984/anonymous/index.html))</div>
 
 [Cody](#cody) fixed this to work for macOS.
 
@@ -54,7 +54,7 @@ the famous tattoo which we also include here:
 Scovell](https://web.archive.org/web/20070120220721/https://thomasscovell.com/tattoo.php).
 
 
-## <a name="1984_decot"></a>[1984/decot](1984/decot/decot.c) ([index.html](1984/decot/index.html]))
+## <div id="1984_decot">[1984/decot](1984/decot/decot.c) ([index.html](1984/decot/index.html]))</div>
 
 [Cody](#cody) fixed this to not require `-traditional-cpp` which some compilers like
 clang do not support. Fixing `-traditional-cpp` is, as noted later on, very
@@ -119,7 +119,7 @@ To see the difference from start to fixed:
 ```
 
 
-## <a name="1984_laman"></a>[1984/laman](1984/laman/laman.c) ([index.html](1984/laman/index.html]))
+## <div id="1984_laman">[1984/laman](1984/laman/laman.c) ([index.html](1984/laman/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](1984/laman/try.sh) script.
 
@@ -129,7 +129,7 @@ This was fixed on 30 October 2023 after the bug status was changed from INABIAF
 (it's not a bug it's a feature) to bug.
 
 
-## <a name="1984_mullender"></a>[1984/mullender](1984/mullender/mullender.c) ([index.html](1984/mullender/index.html]))
+## <div id="1984_mullender">[1984/mullender](1984/mullender/mullender.c) ([index.html](1984/mullender/index.html]))</div>
 
 [Cody](#cody) provided an [alternate version](1984/mullender/mullender.alt.c),
 an improved version of the judges, so that everyone can enjoy it with systems
@@ -151,10 +151,10 @@ History
 Repo](https://github.com/dspinellis/unix-history-repo/tree/Research-Release).
 
 
-# <a name="1985"></a>1985
+# <div id="1985">1985</div>
 
 
-## <a name="1985_applin"></a>[1985/applin](1985/applin/applin.c) ([index.html](1985/applin/index.html]))
+## <div id="1985_applin">[1985/applin](1985/applin/applin.c) ([index.html](1985/applin/index.html]))</div>
 
 Both [Cody](#cody) and [Yusuke](#yusuke) fixed this; Yusuke got this to not crash and Cody fixed it
 to work with macOS.
@@ -178,7 +178,7 @@ why?) but to make it more friendly to users Cody made it print a `\n` prior to
 returning to the shell. The original code does not have this change.
 
 
-## <a name="1985_august"></a>[1985/august](1985/august/august.c) ([index.html](1985/august/index.html))
+## <div id="1985_august">[1985/august](1985/august/august.c) ([index.html](1985/august/index.html))</div>
 
 [Cody](#cody), out of abundance of caution, added a second arg to `main()` because some
 versions of clang object to the number of args of `main()`, saying that it must
@@ -197,7 +197,7 @@ whether `primes(6)` is installed or not, but it only does it once with the
 default value).
 
 
-## <a name="1985_lycklama"></a>[1985/lycklama](1985/lycklama/lycklama.c) ([index.html](1985/lycklama/index.html]))
+## <div id="1985_lycklama">[1985/lycklama](1985/lycklama/lycklama.c) ([index.html](1985/lycklama/index.html]))</div>
 
 [Cody](#cody) fixed this to compile with modern compilers. In the past one could get away
 with defining some macro to `#define` and then use `#foo` to have the same
@@ -210,7 +210,7 @@ that Cody added. See the index.html for details.
 Cody also provided the [try.alt.sh](1985/lycklama/try.alt.sh) script.
 
 
-## <a name="1985_shapiro"></a>[1985/shapiro](1985/shapiro/shapiro.c) ([index.html](1985/shapiro/index.html]))
+## <div id="1985_shapiro">[1985/shapiro](1985/shapiro/shapiro.c) ([index.html](1985/shapiro/index.html]))</div>
 
 [Cody](#cody) added the alt code which allows one to resize the maze and he also added
 the [try.alt.sh](1985/shapiro/try.alt.sh) script that randomly selects sizes
@@ -220,7 +220,7 @@ enter a number, in an infinite loop, exiting if any non-digits are in input
 the default).
 
 
-## <a name="1985_sicherman"></a>[1985/sicherman](1985/sicherman/sicherman.c) ([index.html](1985/sicherman/index.html]))
+## <div id="1985_sicherman">[1985/sicherman](1985/sicherman/sicherman.c) ([index.html](1985/sicherman/index.html]))</div>
 
 [Cody](#cody) fixed this _very twisted entry_ to not require `-traditional-cpp`.  Fixing
 `-traditional-cpp` is, as noted later on, very complicated, but Cody would like
@@ -337,21 +337,21 @@ Cody also added the [try.sh](1985/sicherman/try.sh) and
 [try.alt.sh](1985/sicherman/try.alt.sh) scripts.
 
 
-# <a name="1986"></a>1986
+# <div id="1986">1986</div>
 
 
-## <a name="1986_applin"></a>[1986/applin](1986/applin/applin.c) ([index.html](1986/applin/index.html]))
+## <div id="1986_applin">[1986/applin](1986/applin/applin.c) ([index.html](1986/applin/index.html]))</div>
 
 [Cody](#cody) made the C file executable so one does not have to do `sh
 ./applin.c` or `./applin`; they can do either `./applin.c` or `./applin`.
 
 
-## <a name="1986_bright"></a>[1986/bright](1986/bright/bright.c) ([index.html](1986/bright/index.html]))
+## <div id="1986_bright">[1986/bright](1986/bright/bright.c) ([index.html](1986/bright/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](1986/bright/try.sh) script.
 
 
-## <a name="1986_hague"></a>[1986/hague](1986/hague/hague.c) ([index.html](1986/hague/index.html]))
+## <div id="1986_hague">[1986/hague](1986/hague/hague.c) ([index.html](1986/hague/index.html]))</div>
 
 [Cody](#cody) made this use `fgets()`.
 
@@ -359,7 +359,7 @@ Cody also added the [try.sh](1986/hague/try.sh) script which also feeds to the
 program the added `input.txt` file.
 
 
-## <a name="1986_holloway"></a>[1986/holloway](1986/holloway/holloway.c) ([index.html](1986/holloway/index.html]))
+## <div id="1986_holloway">[1986/holloway](1986/holloway/holloway.c) ([index.html](1986/holloway/index.html]))</div>
 
 [Cody](#cody) fixed this to compile and work with clang (it already worked with gcc).
 The problem was that clang is more strict about the type of second arg to
@@ -369,7 +369,7 @@ and then using `t` instead of `s` it compiles and runs successfully under clang
 and gcc.
 
 
-## <a name="1986_marshall"></a>[1986/marshall](1986/marshall/marshall.c) ([index.html](1986/marshall/index.html]))
+## <div id="1986_marshall">[1986/marshall](1986/marshall/marshall.c) ([index.html](1986/marshall/index.html]))</div>
 
 [Cody](#cody) got this to compile and work with clang and gcc. He noted that he tried to
 keep the ASCII art as close to the original as possible. The line lengths are
@@ -429,14 +429,14 @@ which can be disabled. It results in the same behaviour but this way no warnings
 are produced.
 
 
-## <a name="1986_pawka"></a>[1986/pawka](1986/pawka/pawka.c) ([index.html](1986/pawka/index.html))
+## <div id="1986_pawka">[1986/pawka](1986/pawka/pawka.c) ([index.html](1986/pawka/index.html))</div>
 
 [Cody](#cody) noticed and fixed a funny mistake in the Makefile where a
 `-Wno-strict-prototypes` was in the wrong location, suggesting that there is a
 `-D` needed to compile the entry.
 
 
-## <a name="1986_stein"></a>[1986/stein](1986/stein/stein.c) ([index.html](1986/stein/index.html]))
+## <div id="1986_stein">[1986/stein](1986/stein/stein.c) ([index.html](1986/stein/index.html]))</div>
 
 [Cody](#cody) restored the original entry which was a single line. The code
 being longer (in 1986 a one liner could be longer) was split to three lines to
@@ -447,7 +447,7 @@ Cody also added the [stein.sh](1986/stein/stein.sh) script which runs the two
 commands that we suggest in order to get it to show clean output.
 
 
-## <a name="1986_wall"></a>[1986/wall](1986/wall/wall.c) ([index.html](1986/wall/index.html]))
+## <div id="1986_wall">[1986/wall](1986/wall/wall.c) ([index.html](1986/wall/index.html]))</div>
 
 [Cody](#cody) fixed this so that it does not require `-traditional-cpp`. This took a fair
 bit of tinkering as this entry *very twisted*; fixing `-traditional-cpp` is, as
@@ -556,15 +556,15 @@ Some of the changes required:
 There might have been other changes as well.
 
 
-# <a name="1987"></a>1987
+# <div id="1987">1987</div>
 
 
-## <a name="1987_biggar"></a>[1987/biggar](1987/biggar/biggar.c) ([index.html](1987/biggar/index.html))
+## <div id="1987_biggar">[1987/biggar](1987/biggar/biggar.c) ([index.html](1987/biggar/index.html))</div>
 
 [Cody](#cody) added the [try.sh](1987/biggar/try.sh) script.
 
 
-## <a name="1987_heckbert"></a>[1987/heckbert](1987/heckbert/heckbert.c) ([index.html](1987/heckbert/index.html))
+## <div id="1987_heckbert">[1987/heckbert](1987/heckbert/heckbert.c) ([index.html](1987/heckbert/index.html))</div>
 
 [Cody](#cody) made this look more like the original entry by restoring the `#define` of
 `define`. It's not used but it now looks closer to the original.
@@ -578,7 +578,7 @@ that for System V we had to do this) Cody added to the Makefile
 `-Dindex=strchr`.
 
 
-## <a name="1987_hines"></a>[1987/hines](1987/hines/hines.c) ([index.html](1987/hines/index.html))
+## <div id="1987_hines">[1987/hines](1987/hines/hines.c) ([index.html](1987/hines/index.html))</div>
 
 [Cody](#cody) added the [try.sh](1987/hines/try.sh) script and the C file
 [goto.c](1987/hines/goto.c) and the text file [goto.txt](1987/hines/goto.txt)
@@ -586,7 +586,7 @@ for demonstration purposes. Notice that the program is case sensitive which
 running the program on the text file demonstrates.
 
 
-## <a name="1987_lievaart"></a>[1987/lievaart](1987/lievaart/lievaart.c) ([index.html](1987/lievaart/index.html))
+## <div id="1987_lievaart">[1987/lievaart](1987/lievaart/lievaart.c) ([index.html](1987/lievaart/index.html))</div>
 
 [Cody](#cody) added back the documented checks for invalid input which no longer worked
 and instead resulted in either accepting the level, whether or not it was a
@@ -631,14 +631,14 @@ well (the one with the board and the one without, the entry itself with the
 size constraints of the contest).
 
 
-## <a name="1987_wall"></a>[1987/wall](1987/wall/wall.c) ([index.html](1987/wall/index.html]))
+## <div id="1987_wall">[1987/wall](1987/wall/wall.c) ([index.html](1987/wall/index.html]))</div>
 
 [Cody](#cody) made this use `fgets(3)`.
 
 Cody also added the [try.sh](1987/wall/try.sh) script.
 
 
-## <a name="1987_westley"></a>[1987/westley](1987/westley/westley.c) ([index.html](1987/westley/index.html]))
+## <div id="1987_westley">[1987/westley](1987/westley/westley.c) ([index.html](1987/westley/index.html]))</div>
 
 [Cody](#cody) fixed this for modern systems. The problem was `'assignment to cast is
 illegal, lvalue casts are not supported'`. For the original file see the
@@ -653,10 +653,10 @@ Cody also added to the Makefile `-include stdio.h` in the nowadays very
 unlikely(?) but nevertheless suggested case that `putchar()` is not available.
 
 
-# <a name="1988"></a>1988
+# <div id="1988">1988</div>
 
 
-## <a name="1988_dale"></a>[1988/dale](1988/dale/dale.c) ([index.html](1988/dale/index.html]))
+## <div id="1988_dale">[1988/dale](1988/dale/dale.c) ([index.html](1988/dale/index.html]))</div>
 
 [Cody](#cody) fixed this twisted entry (as we called it :-) ) for modern compilers,
 including making it no longer require `-traditional-cpp`. Fixing
@@ -736,7 +736,7 @@ version in case you have an older compiler or wish to try `-traditional-cpp`.
 Cody also provided the [try.sh](1988/dale/try.sh) script.
 
 
-## <a name="1988_isaak"></a>[1988/isaak](1988/isaak/isaak.c) ([index.html](1988/isaak/index.html]))
+## <div id="1988_isaak">[1988/isaak](1988/isaak/isaak.c) ([index.html](1988/isaak/index.html]))</div>
 
 [Cody](#cody) fixed this to work for modern systems. The problem was that the important
 function, a redefinition of `exit()`, was not being called in `main()`. The
@@ -744,13 +744,13 @@ original version is in [1988/isaak/isaak.alt.c](1988/isaak/isaak.alt.c). See the
 index.html file for more details.
 
 
-## <a name="1988_litmaath"></a>[1988/litmaath](1988/litmaath/litmaath.c) ([index.html](1988/litmaath/index.html))
+## <div id="1988_litmaath">[1988/litmaath](1988/litmaath/litmaath.c) ([index.html](1988/litmaath/index.html))</div>
 
 [Cody](#cody) added the alt code which is code that we suggested at the time of
 publication, in the remarks, to help understand the entry, and for fun.
 
 
-## <a name="1988_phillipps"></a>[1988/phillipps](1988/phillipps/phillipps.c) ([index.html](1988/phillipps/index.html]))
+## <div id="1988_phillipps">[1988/phillipps](1988/phillipps/phillipps.c) ([index.html](1988/phillipps/index.html]))</div>
 
 [Cody](#cody) fixed this for modern systems. It did not compile with clang because it
 requires the second and third args of `main()` to be `char ** but even before
@@ -769,12 +769,12 @@ same code. Additionally, `main()` returns `!pain(...)` like `main()` used to do
 to itself and `pain()` does now.
 
 
-## <a name="1988_reddy"></a>[1988/reddy](1988/reddy/reddy.c) ([index.html](1988/reddy/index.html))
+## <div id="1988_reddy">[1988/reddy](1988/reddy/reddy.c) ([index.html](1988/reddy/index.html))</div>
 
 [Cody](#cody) made this use `fgets(3)`.
 
 
-## <a name="1988_spinellis"></a>[1988/spinellis](1988/spinellis/spinellis.c) ([index.html](1988/spinellis/index.html]))
+## <div id="1988_spinellis">[1988/spinellis](1988/spinellis/spinellis.c) ([index.html](1988/spinellis/index.html]))</div>
 
 [Cody](#cody) provided an [alternate version](1988/spinellis/spinellis.alt.c) so that
 this will work with compilers like clang. An alternate version had to be
@@ -790,7 +790,7 @@ doing this) that with a slight modification this entry can be C++ instead. We do
 thank him for this ghastly point! :-)
 
 
-## <a name="1988_westley"></a>[1988/westley](1988/westley/westley.c) ([index.html](1988/westley/index.html]))
+## <div id="1988_westley">[1988/westley](1988/westley/westley.c) ([index.html](1988/westley/index.html]))</div>
 
 The [original version](1988/westley/westley.alt.c), provided as alternate code,
 was fixed by Misha Dynin, based on the judges' remarks, so that this would work
@@ -806,10 +806,10 @@ not strictly necessary but nonetheless more correct, even if not warned against.
 
 
 
-# <a name="1989"></a>1989
+# <div id="1989">1989</div>
 
 
-## <a name="1989_fubar"></a>[1989/fubar](1989/fubar/fubar.c) ([index.html](1989/fubar/index.html]))
+## <div id="1989_fubar">[1989/fubar](1989/fubar/fubar.c) ([index.html](1989/fubar/index.html]))</div>
 
 [Cody](#cody) got this to work with modern systems. The main issues were that an
 `#include` had to be added along with fixing the path (due to `.` not being in
@@ -843,7 +843,7 @@ Cody also 'modernised' the script to use `bash` and fixed for ShellCheck. The
 Cody also added the [try.sh](1989/fubar/try.sh) script.
 
 
-## <a name="1989_jar.1"></a>[1989/jar.1](1989/jar.1/jar.1.c) ([index.html](1989/jar.1/index.html]))
+## <div id="1989_jar.1">[1989/jar.1](1989/jar.1/jar.1.c) ([index.html](1989/jar.1/index.html]))</div>
 
 To prevent annoying output to `/dev/tty` we changed the code to simulate the
 output via `strings(1)` but [Cody](#cody) removed the ill-famed `useless use of cat` to
@@ -860,7 +860,7 @@ anyway, and since one may still run the code or the script (for the original
 entry and the alt code) anyway, it works out well.
 
 
-## <a name="1989_jar.2"></a>[1989/jar.2](1989/jar.2/jar.2.c) ([index.html](1989/jar.2/index.html]))
+## <div id="1989_jar.2">[1989/jar.2](1989/jar.2/jar.2.c) ([index.html](1989/jar.2/index.html]))</div>
 
 [Cody](#cody) fixed this to work with modern compilers. Modern compilers do not allow
 code like:
@@ -899,7 +899,7 @@ because the `alt` rule had what normally is in the `${PROG}.alt` rule.
 
 
 
-## <a name="1989_ovdluhe"></a>[1989/ovdluhe](1989/ovdluhe/ovdluhe.c) ([index.html](1989/ovdluhe/index.html]))
+## <div id="1989_ovdluhe">[1989/ovdluhe](1989/ovdluhe/ovdluhe.c) ([index.html](1989/ovdluhe/index.html]))</div>
 
 [Cody](#cody) fixed an infinite loop where the program would print the same thing over
 and over again, flooding the screen. The problem is that there was a `for` loop
@@ -919,7 +919,7 @@ for details. The fix described above was fixed in this version too, after it was
 discovered and fixed.
 
 
-## <a name="1989_paul"></a>[1989/paul](1989/paul/paul.c) ([index.html](1989/paul/index.html]))
+## <div id="1989_paul">[1989/paul](1989/paul/paul.c) ([index.html](1989/paul/index.html]))</div>
 
 [Cody](#cody) fixed a segfault under macOS that prevented it from working. The problem
 was that the int (from `#define f`) should be a long. This became apparent when
@@ -930,7 +930,7 @@ which has the trace function that the author included but commented out. See the
 index.html for details.
 
 
-## <a name="1989_robison"></a>[1989/robison](1989/robison/robison.c) ([index.html](1989/robison/index.html]))
+## <div id="1989_robison">[1989/robison](1989/robison/robison.c) ([index.html](1989/robison/index.html]))</div>
 
 [Yusuke Endoh](#yusuke) fixed this to compile under modern systems. To see the changes
 made, try:
@@ -945,7 +945,7 @@ made, try:
 Cody also added the [try.sh](1989/robison/try.sh) script.
 
 
-## <a name="1989_tromp"></a>[1989/tromp](1989/tromp/tromp.c) ([index.html](1989/tromp/index.html]))
+## <div id="1989_tromp">[1989/tromp](1989/tromp/tromp.c) ([index.html](1989/tromp/index.html]))</div>
 
 [Cody](#cody) and [Yusuke](#yusuke) fixed this entry: Yusuke fixed this to compile with gcc and Cody
 fixed it for clang and made some other fixes as well.
@@ -974,12 +974,12 @@ IOCCC [Tetris](https://en.wikipedia.org/wiki/Tetris) working (this of course was
 not his only reason :-) )
 
 
-## <a name="1989_vanb"></a>[1989/vanb](1989/vanb/vanb.c) ([index.html](1989/vanb/index.html]))
+## <div id="1989_vanb">[1989/vanb](1989/vanb/vanb.c) ([index.html](1989/vanb/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](1989/vanb/try.sh) script.
 
 
-## <a name="1989_westley"></a>[1989/westley](1989/westley/westley.c) ([index.html](1989/westley/index.html]))
+## <div id="1989_westley">[1989/westley](1989/westley/westley.c) ([index.html](1989/westley/index.html]))</div>
 
 [Cody](#cody) fixed this for clang, except that two versions generated by the program
 cannot be compiled by clang due to inherent defects in the compiler and how the
@@ -1049,10 +1049,10 @@ The `compile.sh` script allows one to specify the compiler with the `CC`
 environmental variable; see the index.html for details.
 
 
-# <a name="1990"></a>1990
+# <div id="1990">1990</div>
 
 
-## <a name="1990_baruch"></a>[1990/baruch](1990/baruch/baruch.c) ([index.html](1990/baruch/index.html]))
+## <div id="1990_baruch">[1990/baruch](1990/baruch/baruch.c) ([index.html](1990/baruch/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](1990/baruch/try.sh) script.
 
@@ -1072,7 +1072,7 @@ the variables, adding instead `-Wno-implicit-int`. The newline added by the
 judges was retained.
 
 
-## <a name="1990_cmills"></a>[1990/cmills](1990/cmills/cmills.c) ([index.html](1990/cmills/index.html]))
+## <div id="1990_cmills">[1990/cmills](1990/cmills/cmills.c) ([index.html](1990/cmills/index.html]))</div>
 
 [Yusuke](#yusuke) got this to work in modern systems (it previously resulted in a bus
 error).
@@ -1080,7 +1080,7 @@ error).
 [Cody](#cody) made this use `fgets(3)`.
 
 
-## <a name="1990_dds"></a>[1990/dds](1990/dds/dds.c) ([index.html](1990/dds/index.html]))
+## <div id="1990_dds">[1990/dds](1990/dds/dds.c) ([index.html](1990/dds/index.html]))</div>
 
 [Yusuke](#yusuke) and [Cody](#cody) in conjunction fixed this for modern systems (both fixed a
 different compiler error but more fixes were also made).
@@ -1097,7 +1097,7 @@ Cody fixed another compiler error by removing the erroneous prototype to
 Cody also made this use `fgets(3)`.
 
 
-## <a name="1990_dg"></a>[1990/dg](1990/dg/dg.c) ([index.html](1990/dg/index.html]))
+## <div id="1990_dg">[1990/dg](1990/dg/dg.c) ([index.html](1990/dg/index.html]))</div>
 
 [Cody](#cody) fixed this for modern systems. There were two problems to be resolved.
 
@@ -1120,7 +1120,7 @@ with if the C preprocessor botches single quotes in cpp expansion.
 Cody also added the [try.sh](1990/dg/try.sh) script.
 
 
-## <a name="1990_jaw"></a>[1990/jaw](1990/jaw/jaw.c) ([index.html](1990/jaw/index.html]))
+## <div id="1990_jaw">[1990/jaw](1990/jaw/jaw.c) ([index.html](1990/jaw/index.html]))</div>
 
 [Cody](#cody) fixed the script to work properly in modern environments including writing
 to and extracting from `stdout` and relying on the exit code in the commands to
@@ -1137,14 +1137,14 @@ fix applied by Cody that made the program just show `oops` twice from invalid
 input but which now works.
 
 
-## <a name="1990_pjr"></a>[1990/pjr](1990/pjr/pjr.c) ([index.html](1990/pjr/index.html]))
+## <div id="1990_pjr">[1990/pjr](1990/pjr/pjr.c) ([index.html](1990/pjr/index.html]))</div>
 
 [Cody](#cody) added the [alt code](1990/pjr/pjr.alt.c) which was suggested by the judges
 in the case that your compiler cannot compile `X=g()...` but it actually does
 something else and is recommended by the author as well.
 
 
-## <a name="1990_scjones"></a>[1990/scjones](1990/scjones/scjones.c) ([index.html](1990/scjones/index.html]))
+## <div id="1990_scjones">[1990/scjones](1990/scjones/scjones.c) ([index.html](1990/scjones/index.html]))</div>
 
 [Yusuke](#yusuke) suggested `-ansi` to get the entry to compile due to trigraphs and [Cody](#cody)
 suggested `-trigraphs`. Both work but we used Yusuke's idea.
@@ -1153,7 +1153,7 @@ Cody added the [try.sh](1990/scjones/try.sh) script to show exactly what the
 entry does.
 
 
-## <a name="1990_tbr"></a>[1990/tbr](1990/tbr/tbr.c) ([index.html](1990/tbr/index.html]))
+## <div id="1990_tbr">[1990/tbr](1990/tbr/tbr.c) ([index.html](1990/tbr/index.html]))</div>
 
 [Cody](#cody) fixed this to work with modern compilers; `exit(3)` returns void but the
 function was used in a binary expression so this wouldn't even compile.
@@ -1171,7 +1171,7 @@ version](1990/tbr/index.html#alternate-code) is equivalent in function, like the
 author intended, but more compact.
 
 
-## <a name="1990_theorem"></a>[1990/theorem](1990/theorem/theorem.c) ([index.html](1990/theorem/index.html]))
+## <div id="1990_theorem">[1990/theorem](1990/theorem/theorem.c) ([index.html](1990/theorem/index.html]))</div>
 
 [Cody](#cody) fixed this to compile with modern systems.
 
@@ -1212,7 +1212,7 @@ used in order to get this to work initially (prior to this output was there but
 incomplete).
 
 
-## <a name="1990_stig"></a>[1990/stig](1990/stig/stig.c) ([index.html](1990/stig/index.html))
+## <div id="1990_stig">[1990/stig](1990/stig/stig.c) ([index.html](1990/stig/index.html))</div>
 
 [Cody](#cody) fixed the paths in the Makefile so that this would build in Linux (it
 worked fine in macOS).
@@ -1221,7 +1221,7 @@ He also changed the Makefile to use `bash` not `zsh` as not all systems have
 `zsh` and the Makefile actually sets `SHELL` to `bash`.
 
 
-## <a name="1990_westley"></a>[1990/westley](1990/westley/westley.c) ([index.html](1990/westley/index.html]))
+## <div id="1990_westley">[1990/westley](1990/westley/westley.c) ([index.html](1990/westley/index.html]))</div>
 
 [Cody](#cody) fixed this for modern systems. It had `1s` in places for a `short
 int` which was changed to just `1`.  Since it's instructional to see the
@@ -1240,10 +1240,10 @@ The alt code did NOT have arg checks added as it is actually a copy of the
 original code.
 
 
-# <a name="1991"></a>1991
+# <div id="1991">1991</div>
 
 
-## <a name="1991_ant"></a>[1991/ant](1991/ant/ant.c) ([index.html](1991/ant/index.html]))
+## <div id="1991_ant">[1991/ant](1991/ant/ant.c) ([index.html](1991/ant/index.html]))</div>
 
 [Cody](#cody) added [alt code](1991/ant/ant.alt.c) that will be a bit easier to use for
 those familiar with vim in the following ways:
@@ -1258,7 +1258,7 @@ those familiar with vim in the following ways:
 The other keys were left unchanged.
 
 
-## <a name="1991_brnstnd"></a>[1991/brnstnd](1991/brnstnd/brnstnd.c) ([index.html](1991/brnstnd/index.html]))
+## <div id="1991_brnstnd">[1991/brnstnd](1991/brnstnd/brnstnd.c) ([index.html](1991/brnstnd/index.html]))</div>
 
 [Cody](#cody) fixed this for modern systems. There were two invalid operands to binary
 expression (`char *` and `void` and `int` and `void`) to resolve and
@@ -1274,7 +1274,7 @@ Cody also added the [try.sh](1991/brnstnd/try.sh) script and
 [try.txt](1991/brnstnd/try.txt) which the script uses.
 
 
-## <a name="1991_buzzard"></a>[1991/buzzard](1991/buzzard/buzzard.c) ([index.html](1991/buzzard/index.html]))
+## <div id="1991_buzzard">[1991/buzzard](1991/buzzard/buzzard.c) ([index.html](1991/buzzard/index.html]))</div>
 
 [Cody](#cody) fixed this so that the coordinates being specified would not crash the
 program. This happened because the function that calls `atoi(3)` took an arg
@@ -1292,7 +1292,7 @@ more useful way to exit, just entering `q` followed by enter, rather than
 completing or killing the program.
 
 
-## <a name="1991_davidguy"></a>[1991/davidguy](1991/davidguy/davidguy.c) ([index.html](1991/davidguy/index.html]))
+## <div id="1991_davidguy">[1991/davidguy](1991/davidguy/davidguy.c) ([index.html](1991/davidguy/index.html]))</div>
 
 As some systems like macOS can be particular about not declaring functions [Cody](#cody)
 added to the Makefile some `-include` options. These appear to not be strictly
@@ -1300,7 +1300,7 @@ necessary but it was done due to other syscalls being a problem not being
 declared first.
 
 
-## <a name="1991_dds"></a>[1991/dds](1991/dds/dds.c) ([index.html](1991/dds/index.html]))
+## <div id="1991_dds">[1991/dds](1991/dds/dds.c) ([index.html](1991/dds/index.html]))</div>
 
 [Cody](#cody) fixed a segfault that prevented this entry from working in any condition
 and he also made it work for clang. He also added checks for NULL `FILE *`s.
@@ -1429,7 +1429,7 @@ was pondered and changed numerous times and ultimately that problem with this
 entry was fixed. It has not been done in all.
 
 
-## <a name="1991_fine"></a>[1991/fine](1991/fine/fine.c) ([index.html](1991/fine/index.html))
+## <div id="1991_fine">[1991/fine](1991/fine/fine.c) ([index.html](1991/fine/index.html))</div>
 
 [Cody](#cody) made it look much more like the original entry even after the fix that
 increased the count in characters from 80 to 106, getting it back down to just
@@ -1452,7 +1452,7 @@ Brian Westley and Cody also added several of his own (can you figure out exactly
 which ones? :-) )
 
 
-## <a name="1991_rince"></a>[1991/rince](1991/rince/rince.c) ([index.html](1991/rince/index.html))
+## <div id="1991_rince">[1991/rince](1991/rince/rince.c) ([index.html](1991/rince/index.html))</div>
 
 [Cody](#cody) fixed it so that the messages that show if you won or lost will be seen
 after the end of the game. The reason it did not work before is curses was ended
@@ -1467,7 +1467,7 @@ the maximum number of moves, even if that is making it harder to win. Naturally
 the above fix was applied to these versions too.
 
 
-## <a name="1991_westley"></a>[1991/westley](1991/westley/westley.c) ([index.html](1991/westley/index.html]))
+## <div id="1991_westley">[1991/westley](1991/westley/westley.c) ([index.html](1991/westley/index.html]))</div>
 
 [Cody](#cody) fixed a segfault in this program which prevented it from working. The
 problem was that the read-only char array `char *z[]` was being written to. The
@@ -1489,10 +1489,10 @@ Cody also fixed the make clobber rule where a file was left lying about when it
 should have been removed.
 
 
-# <a name="1992"></a>1992
+# <div id="1992">1992</div>
 
 
-## <a name="1992_adrian"></a>[1992/adrian](1992/adrian/adrian.c) ([index.html](1992/adrian/index.html]))
+## <div id="1992_adrian">[1992/adrian](1992/adrian/adrian.c) ([index.html](1992/adrian/index.html]))</div>
 
 [Cody](#cody) fixed the code so that it will try opening the file the code was compiled
 from (`__FILE__`), not	`adgrep.c`, as the latter does not exist: `adgrep` is
@@ -1567,7 +1567,7 @@ clear the screen after compilation so that one can see how the other files are
 generated.
 
 
-## <a name="1992_albert"></a>[1992/albert](1992/albert/albert.c) ([index.html](1992/albert/index.html]))
+## <div id="1992_albert">[1992/albert](1992/albert/albert.c) ([index.html](1992/albert/index.html]))</div>
 
 [Cody](#cody) fixed this to compile with modern systems. Note that in 1996 a bug fix was
 applied to the code, provided as the alt code as that version is not obfuscated.
@@ -1581,7 +1581,7 @@ Cody also added the [try.sh](1992/albert/try.sh) and
 the alt code.
 
 
-## <a name="1992_ant"></a>[1992/ant](1992/ant/ant.c) ([index.html](1992/ant/index.html]))
+## <div id="1992_ant">[1992/ant](1992/ant/ant.c) ([index.html](1992/ant/index.html]))</div>
 
 [Cody](#cody) fixed the Makefile so that the program will actually work with it (or at
 least the rule to clobber files and link `am` to `ant`). The issue was that the
@@ -1603,7 +1603,7 @@ systems too.
 Cody also added the [try.sh](1992/ant/try.sh) script.
 
 
-## <a name="1992_buzzard.1"></a>[1992/buzzard.1](1992/buzzard.1/buzzard.1.c) ([index.html](1992/buzzard.1/index.html))
+## <div id="1992_buzzard.1">[1992/buzzard.1](1992/buzzard.1/buzzard.1.c) ([index.html](1992/buzzard.1/index.html))</div>
 
 [Cody](#cody) added a check for the right number of args, exiting 1 if not enough (2)
 used. This was not originally done but at a time it was changed to be considered
@@ -1614,7 +1614,7 @@ He also added the [try.sh](1992/buzzard.1/try.sh) script to try out some
 commands that we suggested and some additional ones that he provide for some fun.
 
 
-## <a name="1992_buzzard.2"></a>[1992/buzzard.2](1992/buzzard.2/buzzard.2.c) ([index.html](1992/buzzard.2/index.html))
+## <div id="1992_buzzard.2">[1992/buzzard.2](1992/buzzard.2/buzzard.2.c) ([index.html](1992/buzzard.2/index.html))</div>
 
 [Cody](#cody) fixed the alt code to compile. The problem was it assumed that
 `exit(3)` returns a value, not `void`. This was fixed with a `,0`.
@@ -1624,7 +1624,7 @@ Cody also added the [try.sh](1992/buzzard.2/try.sh) and
 and its alt code.
 
 
-## <a name="1992_gson"></a>[1992/gson](1992/gson/gson.c) ([index.html](1992/gson/index.html]))
+## <div id="1992_gson">[1992/gson](1992/gson/gson.c) ([index.html](1992/gson/index.html]))</div>
 
 [Cody](#cody) fixed a crash that prevented this entry from working in some cases in some
 systems (like macOS) by disabling the optimiser in the Makefile.
@@ -1644,7 +1644,7 @@ is a more problematic. See [1992/gson in bugs.html](bugs.html#1992-gson) for mor
 details if you're interested in trying to understand it (or fix?).
 
 
-## <a name="1992_imc"></a>[1992/imc](1992/imc/imc.c) ([index.html](1992/imc/index.html]))
+## <div id="1992_imc">[1992/imc](1992/imc/imc.c) ([index.html](1992/imc/index.html]))</div>
 
 [Cody](#cody) provided the [try.sh](1992/imc/try.sh) script.
 
@@ -1655,7 +1655,7 @@ he made this more like the original by redefining `exit` to use the comma
 operator so that it could be used in binary expressions.
 
 
-## <a name="1992_kivinen"></a>[1992/kivinen](1992/kivinen/kivinen.c) ([index.html](1992/kivinen/index.html]))
+## <div id="1992_kivinen">[1992/kivinen](1992/kivinen/kivinen.c) ([index.html](1992/kivinen/index.html]))</div>
 
 It was observed that on modern systems this goes much too quick. [Yusuke](#yusuke) created
 a patch that calls `usleep(3)` but [Cody](#cody) thought the value was too slow so he
@@ -1681,7 +1681,7 @@ Yusuke also noted that there is a bug in the program where right after starting
 it moves towards the right but if you click the mouse it goes back.
 
 
-## <a name="1992_lush"></a>[1992/lush](1992/lush/lush.c) ([index.html](1992/lush/index.html]))
+## <div id="1992_lush">[1992/lush](1992/lush/lush.c) ([index.html](1992/lush/index.html]))</div>
 
 [Yusuke](#yusuke) supplied a patch which makes this work with gcc. Due to how it works (see
 Judges' remarks in the index.html file) this will not work with clang.
@@ -1695,12 +1695,12 @@ NOTE: this entry cannot work with clang due to different compiler messages (it
 will compile fine but it won't work). See [bugs.html](bugs.html) for details.
 
 
-## <a name="1992_marangon"></a>[1992/marangon](1992/marangon/marangon.c) ([index.html](1992/marangon/index.html))
+## <div id="1992_marangon">[1992/marangon](1992/marangon/marangon.c) ([index.html](1992/marangon/index.html))</div>
 
 [Cody](#cody) made this more portable by changing the `void main()` to be `int main()`.
 
 
-## <a name="1992_nathan"></a>[1992/nathan](1992/nathan/nathan.c) ([index.html](1992/nathan/index.html))
+## <div id="1992_nathan">[1992/nathan](1992/nathan/nathan.c) ([index.html](1992/nathan/index.html))</div>
 
 [Cody](#cody) added the original file back as it was deemed that the export restrictions
 should no longer be a cause of concern for this entry. Doing this did require a
@@ -1714,7 +1714,7 @@ Cody also added the [try.sh](1992/nathan/try.sh) script that runs a few commands
 that we suggested as well as one he provided.
 
 
-## <a name="1992_vern"></a>[1992/vern](1992/vern/vern.c) ([index.html](1992/vern/index.html]))
+## <div id="1992_vern">[1992/vern](1992/vern/vern.c) ([index.html](1992/vern/index.html]))</div>
 
 [Cody](#cody) fixed an infinite loop if one were to input numbers < `0` or > `077`. The
 problem was that it tried to use `scanf(3)` with the format specifier `"%o %o"` in a
@@ -1728,7 +1728,7 @@ new char arrays (always cleared in the beginning of the loop) and then using
 both numbers (using `"%o %o"` does not solve the problem).
 
 
-## <a name="1992_westley"></a>[1992/westley](1992/westley/westley.c) ([index.html](1992/westley/index.html]))
+## <div id="1992_westley">[1992/westley](1992/westley/westley.c) ([index.html](1992/westley/index.html]))</div>
 
 [Cody](#cody) fixed this to work for clang by changing the third and fourth arg of
 `main()` to be `char ** inside `main()`; clang requires args 2 - 4 to be `char
@@ -1772,16 +1772,16 @@ args (2). And not that we need the help or anything for this :-) but we
 encourage you to try the original without two args :-)
 
 
-# <a name="1993"></a>1993
+# <div id="1993">1993</div>
 
 
-## <a name="1993_ant"></a>[1993/ant](1993/ant/ant.c) ([index.html](1993/ant/index.html]))
+## <div id="1993_ant">[1993/ant](1993/ant/ant.c) ([index.html](1993/ant/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](1993/ant/try.sh) script and a data file,
 [ants.txt](1993/ant/ants.txt), full of ants for the script.
 
 
-## <a name="1993_cmills"></a>[1993/cmills](1993/cmills/cmills.c) ([index.html](1993/cmills/index.html]))
+## <div id="1993_cmills">[1993/cmills](1993/cmills/cmills.c) ([index.html](1993/cmills/index.html]))</div>
 
 [Yusuke](#yusuke) suggested that with modern systems this goes too fast so he added a call
 to `usleep(3)` in a patch he made. [Cody](#cody) made it configurable at compilation by
@@ -1789,7 +1789,7 @@ using a macro. This is in the alt version which is the recommended one to try
 first.
 
 
-## <a name="1993_dgibson"></a>[1993/dgibson](1993/dgibson/dgibson.c) ([index.html](1993/dgibson/index.html]))
+## <div id="1993_dgibson">[1993/dgibson](1993/dgibson/dgibson.c) ([index.html](1993/dgibson/index.html]))</div>
 
 [Cody](#cody) fixed the [dgibson.sh](1993/dgibson/dgibson.sh) script to work
 which assumed that `.` is in the path.
@@ -1798,12 +1798,12 @@ Cody also added the [try.sh](1993/dgibson/try.sh) script which runs the above
 mentioned script on all the data files.
 
 
-## <a name="1993_ejb"></a>[1993/ejb](1993/ejb/ejb.c) ([index.html](1993/ejb/index.html]))
+## <div id="1993_ejb">[1993/ejb](1993/ejb/ejb.c) ([index.html](1993/ejb/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](1993/ejb/try.sh) script.
 
 
-## <a name="1993_jonth"></a>[1993/jonth](1993/jonth/jonth.c) ([index.html](1993/jonth/index.html]))
+## <div id="1993_jonth">[1993/jonth](1993/jonth/jonth.c) ([index.html](1993/jonth/index.html]))</div>
 
 Both [Cody](#cody) and [Yusuke](#yusuke) fixed this so that it will work with modern systems. Yusuke
 provided some fixes of the X code and Cody fixed the C pre-processor directives
@@ -1819,13 +1819,13 @@ and expect `G;` to equate to `int i, j;` (though it's now a long) and `K` to mea
 prepended to them.
 
 
-## <a name="1993_leo"></a>[1993/leo](1993/leo/leo.c) ([index.html](1993/leo/index.html]))
+## <div id="1993_leo">[1993/leo](1993/leo/leo.c) ([index.html](1993/leo/index.html]))</div>
 
 [Cody](#cody) fixed this to work with modern compilers. This involved different header
 files for functions.
 
 
-## <a name="1993_lmfjyh"></a>[1993/lmfjyh](1993/lmfjyh/lmfjyh.c) ([index.html](1993/lmfjyh/index.html]))
+## <div id="1993_lmfjyh">[1993/lmfjyh](1993/lmfjyh/lmfjyh.c) ([index.html](1993/lmfjyh/index.html]))</div>
 
 [Cody](#cody) added an [alternate
 version](1993/lmfjyh/index.html#alternate-code) which does what the program did
@@ -1837,7 +1837,7 @@ would be compiled if gcc < 2.3.3) whether or not compilation succeeds (which is
 highly unlikely).
 
 
-## <a name="1993_plummer"></a>[1993/plummer](1993/plummer/plummer.c) ([index.html](1993/plummer/index.html]))
+## <div id="1993_plummer">[1993/plummer](1993/plummer/plummer.c) ([index.html](1993/plummer/index.html]))</div>
 
 [Cody](#cody) added check for two args.
 
@@ -1852,7 +1852,7 @@ entry and the alt version, both allowing one to change the args (and in the case
 of the alt one allowing one to change the amount to sleep).
 
 
-## <a name="1993_rince"></a>[1993/rince](1993/rince/rince.c) ([index.html](1993/rince/index.html]))
+## <div id="1993_rince">[1993/rince](1993/rince/rince.c) ([index.html](1993/rince/index.html]))</div>
 
 [Yusuke](#yusuke) supplied a patch to get this to work in modern systems. This fix also
 applies the compatibility issue of `select(2)` described in the index.html file.
@@ -1867,12 +1867,12 @@ slow down but Cody did it in such a way that makes it easy to configure at
 compile time. See the index.html for details.
 
 
-## <a name="1993_schnitzi"></a>[1993/schnitzi](1993/schnitzi/schnitzi.c) ([index.html](1993/schnitzi/index.html]))
+## <div id="1993_schnitzi">[1993/schnitzi](1993/schnitzi/schnitzi.c) ([index.html](1993/schnitzi/index.html]))</div>
 
 [Cody](#cody) made this use `fgets(3)` not `gets(3)`.
 
 
-## <a name="1993_vanb"></a>[1993/vanb](1993/vanb/vanb.c) ([index.html](1993/vanb/index.html]))
+## <div id="1993_vanb">[1993/vanb](1993/vanb/vanb.c) ([index.html](1993/vanb/index.html]))</div>
 
 [Cody](#cody) fixed this to work with clang. The problem was that the third arg to main()
 was not a `char **. Instead `O5()` (which was `main()` via `-DO5=main`) is now
@@ -1903,10 +1903,10 @@ this code. Other code is also described there.
 Cody also added the [try.sh](1993/vanb/try.sh) script.
 
 
-# <a name="1994"></a>1994
+# <div id="1994">1994</div>
 
 
-## <a name="1994_dodsond2"></a>[1994/dodsond2](1994/dodsond2/dodsond2.c) ([index.html](1994/dodsond2/index.html))
+## <div id="1994_dodsond2">[1994/dodsond2](1994/dodsond2/dodsond2.c) ([index.html](1994/dodsond2/index.html))</div>
 
 [Cody](#cody) fixed an infinite loop that could happen when you shoot an arrow
 and end up having no arrows, thus making one force quit the game. The problem
@@ -1937,7 +1937,7 @@ counter for how many you have found and how many you shot in addition to the two
 that already existed, how many you had and how many were stolen.
 
 
-## <a name="1994_horton"></a>[1994/horton](1994/horton/horton.c) ([index.html](1994/horton/index.html))
+## <div id="1994_horton">[1994/horton](1994/horton/horton.c) ([index.html](1994/horton/index.html))</div>
 
 [Cody](#cody) fixed this to check that four args were specified. With the use of the C
 pre-processor macro and inclusion of `stdlib.h` in the Makefile the layout of the
@@ -1960,7 +1960,7 @@ newsletter was found on the Internet Wayback Machine and the article was
 extracted as a PDF in the macOS `Preview.app` (`File -> Print` feature).
 
 
-## <a name="1994_imc"></a>[1994/imc](1994/imc/imc.c) ([index.html](1994/imc/index.html]))
+## <div id="1994_imc">[1994/imc](1994/imc/imc.c) ([index.html](1994/imc/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](1994/imc/try.sh) script.
 
@@ -1970,7 +1970,7 @@ as it was noticed it was changed (the only case this was done except in the
 entries that actually did not work because of missing or incorrect prototypes).
 
 
-## <a name="1994_ldb"></a>[1994/ldb](1994/ldb/ldb.c) ([index.html](1994/ldb/index.html]))
+## <div id="1994_ldb">[1994/ldb](1994/ldb/ldb.c) ([index.html](1994/ldb/index.html]))</div>
 
 [Cody](#cody) fixed this so it would compile and work with modern compilers. The problem
 was that `srand()` returns `void` but it was used in a `||` expression. Thus the
@@ -1994,7 +1994,7 @@ characters or it might print (up to) the next 231 characters and so on.
 Cody also added the [try.sh](1994/ldb/try.sh) script.
 
 
-## <a name="1994_schnitzi"></a>[1994/schnitzi](1994/schnitzi/schnitzi.c) ([index.html](1994/schnitzi/index.html]))
+## <div id="1994_schnitzi">[1994/schnitzi](1994/schnitzi/schnitzi.c) ([index.html](1994/schnitzi/index.html]))</div>
 
 [Cody](#cody) added two alt versions, [one which uses
 `fgets()`](1994/schnitzi/schnitzi.alt.c) but when fed its own source code cannot
@@ -2016,7 +2016,7 @@ Cody also added the [try.sh](1994/schnitzi/try.sh) and
 [try.alt.sh](1994/schnitzi/try.alt.sh) scripts.
 
 
-## <a name="1994_shapiro"></a>[1994/shapiro](1994/shapiro/shapiro.c) ([index.html](1994/shapiro/index.html]))
+## <div id="1994_shapiro">[1994/shapiro](1994/shapiro/shapiro.c) ([index.html](1994/shapiro/index.html]))</div>
 
 [Cody](#cody) fixed a bug on systems where `EOF != -1`. The problem is that `getc()` and
 the related functions do not return `-1` on EOF or error but rather `EOF`.
@@ -2028,12 +2028,12 @@ For an interesting problem that occurred here and what was done to solve it,
 check the [bugs.html](bugs.html) file.
 
 
-## <a name="1994_smr"></a>[1994/smr](1994/smr/smr.c) ([index.html](1994/smr/index.html]))
+## <div id="1994_smr">[1994/smr](1994/smr/smr.c) ([index.html](1994/smr/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](1994/smr/try.sh) script.
 
 
-## <a name="1994_tvr"></a>[1994/tvr](1994/tvr/tvr.c) ([index.html](1994/tvr/index.html]))
+## <div id="1994_tvr">[1994/tvr](1994/tvr/tvr.c) ([index.html](1994/tvr/index.html]))</div>
 
 [Cody](#cody) added the try scripts, four total, colour and black and white
 pairs for the original entry and the alt code. These scripts are
@@ -2050,7 +2050,7 @@ more like the original entry this was done in the Makefile. The alt code was
 also changed to use `fgets(3)`.
 
 
-## <a name="1994_weisberg"></a>[1994/weisberg](1994/weisberg/weisberg.c) ([index.html](1994/weisberg/index.html]))
+## <div id="1994_weisberg">[1994/weisberg](1994/weisberg/weisberg.c) ([index.html](1994/weisberg/index.html]))</div>
 
 [Cody](#cody) changed the Makefile to make this program more user friendly and easier to
 use with other tools as well by making the program output not a space after each
@@ -2064,7 +2064,7 @@ primes. It only does the reversed output because the program actually prints
 primes.
 
 
-## <a name="1994_westley"></a>[1994/westley](1994/westley/westley.c) ([index.html](1994/westley/index.html]))
+## <div id="1994_westley">[1994/westley](1994/westley/westley.c) ([index.html](1994/westley/index.html]))</div>
 
 [Cody](#cody) converted the spoiler compiler options (provided by the author) to be
 compiler commands and added a script [try.sh](1994/westley/try.sh) to
@@ -2076,10 +2076,10 @@ to 80 columns and the [try.alt.sh](1994/westley/try.alt.sh) script to automate
 the play along the lines of the [try.sh](1994/westley/try.sh) script.
 
 
-# <a name="1995"></a>1995
+# <div id="1995">1995</div>
 
 
-## <a name="1995_cdua"></a>[1995/cdua](1995/cdua/cdua.c) ([index.html](1995/cdua/index.html]))
+## <div id="1995_cdua">[1995/cdua](1995/cdua/cdua.c) ([index.html](1995/cdua/index.html]))</div>
 
 [Cody](#cody) fixed this so that it would work with macOS. Once it could compile it
 additionally segfaulted under macOS which he also fixed.
@@ -2097,18 +2097,18 @@ an error but it's entirely possible that they will eventually make the defect
 function as the error message claims.
 
 
-## <a name="1995_dodsond1"></a>[1995/dodsond1](1995/dodsond1/dodsond1.c) ([index.html](1995/dodsond1/index.html]))
+## <div id="1995_dodsond1">[1995/dodsond1](1995/dodsond1/dodsond1.c) ([index.html](1995/dodsond1/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](1995/dodsond1/try.sh) script that uses the text file he
 provided which is input we suggested one try with the entry.
 
 
-## <a name="1995_esde"></a>[1995/esde](1995/esde/esde.c) ([index.html](1995/esde/index.html]))
+## <div id="1995_esde">[1995/esde](1995/esde/esde.c) ([index.html](1995/esde/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](1995/esde/try.sh) script.
 
 
-## <a name="1995_garry"></a>[1995/garry](1995/garry/garry.c) ([index.html](1995/garry/index.html]))
+## <div id="1995_garry">[1995/garry](1995/garry/garry.c) ([index.html](1995/garry/index.html]))</div>
 
 [Cody](#cody) fixed the alt code so that it will compile with modern compilers. The
 problem was a missing `int` for the `f` variable. He felt it was even more
@@ -2124,12 +2124,12 @@ the paging to work right for the `garry.data` file leading blank lines had to be
 added.
 
 
-## <a name="1995_heathbar"></a>[1995/heathbar](1995/heathbar/heathbar.c) ([index.html](1995/heathbar/index.html]))
+## <div id="1995_heathbar">[1995/heathbar](1995/heathbar/heathbar.c) ([index.html](1995/heathbar/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](1995/heathbar/try.sh) script.
 
 
-## <a name="1995_leo"></a>[1995/leo](1995/leo/leo.c) ([index.html](1995/leo/index.html]))
+## <div id="1995_leo">[1995/leo](1995/leo/leo.c) ([index.html](1995/leo/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](1995/leo/try.sh) script.
 
@@ -2137,7 +2137,7 @@ At our change in how to deal with spoilers, Cody also uudecoded the spoiler prov
 by the author, putting it in [spoiler1.html](1995/leo/spoiler1.html).
 
 
-## <a name="1995_makarios"></a>[1995/makarios](1995/makarios/makarios.c) ([index.html](1995/makarios/index.html))
+## <div id="1995_makarios">[1995/makarios](1995/makarios/makarios.c) ([index.html](1995/makarios/index.html))</div>
 
 [Cody](#cody) fixed this so that it will compile with versions of clang that has a defect
 which only allows `main()` to have 0, 2 or 3 args. This is done by a new
@@ -2145,17 +2145,17 @@ function (`pain()` as it's annoying that clang is this way :-) ) that `main()`
 calls which has the four args.
 
 
-## <a name="1995_savastio"></a>[1995/savastio](1995/savastio/savastio.c) ([index.html](1995/savastio/index.html]))
+## <div id="1995_savastio">[1995/savastio](1995/savastio/savastio.c) ([index.html](1995/savastio/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](1995/savastio/try.sh) script.
 
 
-## <a name="1995_schnitzi"></a>[1995/schnitzi](1995/schnitzi/schnitzi.c) ([index.html](1995/schnitzi/index.html]))
+## <div id="1995_schnitzi">[1995/schnitzi](1995/schnitzi/schnitzi.c) ([index.html](1995/schnitzi/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](1995/schnitzi/try.sh) script.
 
 
-## <a name="1995_vanschnitz"></a>[1995/vanschnitz](1995/vanschnitz/vanschnitz.c) ([index.html](1995/vanschnitz/index.html))
+## <div id="1995_vanschnitz">[1995/vanschnitz](1995/vanschnitz/vanschnitz.c) ([index.html](1995/vanschnitz/index.html))</div>
 
 [Cody](#cody) added the authors' [spoiler as a C
 file](1995/vanschnitz/vanschnitz.alt.c) as in 2023 we have decided that in most
@@ -2166,10 +2166,10 @@ entry decrypts the text or something like that.
 Cody also added the [try.sh](1995/vanschnitz/try.sh) script.
 
 
-# <a name="1996"></a>1996
+# <div id="1996">1996</div>
 
 
-## <a name="1996_august"></a>[1996/august](1996/august/august.c) ([index.html](1996/august/index.html]))
+## <div id="1996_august">[1996/august](1996/august/august.c) ([index.html](1996/august/index.html]))</div>
 
 [Cody](#cody) fixed a segfault in this program that prevented it from working right and
 also fixed an infinite loop in the try commands.
@@ -2185,7 +2185,7 @@ commands that were given by the judges in the try section, with the fix above
 applied.
 
 
-## <a name="1996_dalbec"></a>[1996/dalbec](1996/dalbec/dalbec.c) ([index.html](1996/dalbec/index.html]))
+## <div id="1996_dalbec">[1996/dalbec](1996/dalbec/dalbec.c) ([index.html](1996/dalbec/index.html]))</div>
 
 [Cody](#cody) proposed a fix for this to compile with clang and Landon implemented it
 after some discussion (though Cody changed the function name). The reason Cody
@@ -2204,7 +2204,7 @@ it should be.
 Cody also added the [try.sh](1996/dalbec/try.sh) script.
 
 
-## <a name="1996_eldby"></a>[1996/eldby](1996/eldby/eldby.c) ([index.html](1996/eldby/index.html]))
+## <div id="1996_eldby">[1996/eldby](1996/eldby/eldby.c) ([index.html](1996/eldby/index.html]))</div>
 
 [Cody](#cody) provided an [alternate version](1996/eldby/eldby.alt.c) which uses
 `usleep()` in between writing the output to make it easier to see what is going
@@ -2214,7 +2214,7 @@ nowadays anyway). We recommend that you try the alternate version first due to
 these reasons.
 
 
-## <a name="1996_gandalf"></a>[1996/gandalf](1996/gandalf/gandalf.c) ([index.html](1996/gandalf/index.html]))
+## <div id="1996_gandalf">[1996/gandalf](1996/gandalf/gandalf.c) ([index.html](1996/gandalf/index.html]))</div>
 
 [Cody](#cody) fixed this to compile and work with modern systems. As he loved the
 references in the code that could not compile he just commented out as little as
@@ -2228,12 +2228,12 @@ BTW: it is perilous to try the patience of
 [Gandalf](https://www.glyphweb.com/arda/g/gandalf.html). Go ahead, try it! :-)
 
 
-## <a name="1996_huffman"></a>[1996/huffman](1996/huffman/huffman.c) ([index.html](1996/huffman/index.html]))
+## <div id="1996_huffman">[1996/huffman](1996/huffman/huffman.c) ([index.html](1996/huffman/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](1996/huffman/try.sh) script.
 
 
-## <a name="1996_jonth"></a>[1996/jonth](1996/jonth/jonth.c) ([index.html](1996/jonth/index.html]))
+## <div id="1996_jonth">[1996/jonth](1996/jonth/jonth.c) ([index.html](1996/jonth/index.html]))</div>
 
 [Cody](#cody) fixed this to not segfault under macOS. The problem was that the function
 pointer `w`, which points to `XCreateWindow()`, did not specify the parameters of
@@ -2242,12 +2242,12 @@ the function in the pointer assignment.
 NOTE: if there is no X server running this program will still crash.
 
 
-## <a name="1996_rcm"></a>[1996/rcm](1996/rcm/rcm.c) ([index.html](1996/rcm/index.html]))
+## <div id="1996_rcm">[1996/rcm](1996/rcm/rcm.c) ([index.html](1996/rcm/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](1996/rcm/try.sh) script.
 
 
-## <a name="1996_schweikh1"></a>[1996/schweikh1](1996/schweikh1/schweikh1.c) ([index.html](1996/schweikh1/index.html]))
+## <div id="1996_schweikh1">[1996/schweikh1](1996/schweikh1/schweikh1.c) ([index.html](1996/schweikh1/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](1996/schweikh1/try.sh) script.
 
@@ -2260,7 +2260,7 @@ on other systems (the other file is
 the Makefile despite the fact that very few probably use Solaris nowadays.
 
 
-## <a name="1996_schweikh2"></a>[1996/schweikh2](1996/schweikh2/schweikh2.c) ([index.html](1996/schweikh2/index.html]))
+## <div id="1996_schweikh2">[1996/schweikh2](1996/schweikh2/schweikh2.c) ([index.html](1996/schweikh2/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](1996/schweikh2/try.sh) script with a few commands to try
 along with a shorter version of something the author suggested one try (it is
@@ -2268,14 +2268,14 @@ suggested that one try the longer version too but it will run in an infinite
 loop so having it in a script is less desired).
 
 
-## <a name="1996_schweikh3"></a>[1996/schweikh3](1996/schweikh3/schweikh3.c) ([index.html](1996/schweikh3/index.html]))
+## <div id="1996_schweikh3">[1996/schweikh3](1996/schweikh3/schweikh3.c) ([index.html](1996/schweikh3/index.html]))</div>
 
 [Cody](#cody) updated the Makefile so that if it fails to compile it will try he
 method suggested for SunOS rather than having to update the Makefile manually or
 running a more complicated command: now one can just run `make`.
 
 
-## <a name="1996_westley"></a>[1996/westley](1996/westley/westley.c) ([index.html](1996/westley/index.html]))
+## <div id="1996_westley">[1996/westley](1996/westley/westley.c) ([index.html](1996/westley/index.html]))</div>
 
 [Cody](#cody) fixed a segfault in this entry as well as it displaying environmental
 variables.  Although the scripts showed correct output, it somewhat lessened the
@@ -2296,10 +2296,10 @@ Also, to fix any potential problem with displaying in GitHub the scripts
 provided by the author, Cody added '.sh' to the `clock[1-3].sh` scripts.
 
 
-# <a name="1998"></a>1998
+# <div id="1998">1998</div>
 
 
-## <a name="1998_banks"></a>[1998/banks](1998/banks/banks.c) ([index.html](1998/banks/index.html]))
+## <div id="1998_banks">[1998/banks](1998/banks/banks.c) ([index.html](1998/banks/index.html]))</div>
 
 [Cody](#cody) improved the Makefile to allow for easier redefining the control
 keys and time step that the author set up.
@@ -2314,7 +2314,7 @@ alternatives because not doing so would overly complicate both builds and since
 you can configure them all in both builds it shouldn't matter.
 
 
-## <a name="1998_bas1"></a>[1998/bas1](1998/bas1/bas1.c) ([index.html](1998/bas1/index.html]))
+## <div id="1998_bas1">[1998/bas1](1998/bas1/bas1.c) ([index.html](1998/bas1/index.html]))</div>
 
 [Cody](#cody), out of an abundance of caution, added a second arg to `main()` as some
 versions of clang whine about the number of args on top of what type they are
@@ -2327,13 +2327,13 @@ Cody also added the [bas1.sh](1998/bas1/bas1.sh) script to simplify running the
 program.
 
 
-## <a name="1998_bas2"></a>[1998/bas2](1998/bas2/bas2.c) ([index.html](1998/bas2/index.html]))
+## <div id="1998_bas2">[1998/bas2](1998/bas2/bas2.c) ([index.html](1998/bas2/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](1998/bas2/try.sh) script which runs some default actions
 as well as allowing one to pass in different file names or strings.
 
 
-## <a name="1998_chaos"></a>[1998/chaos](1998/chaos/chaos.c) ([index.html](1998/chaos/index.html]))
+## <div id="1998_chaos">[1998/chaos](1998/chaos/chaos.c) ([index.html](1998/chaos/index.html]))</div>
 
 [Cody](#cody) added a call to `endwin()` to restore terminal sanity (echo etc.) when
 exiting the program (in both versions).
@@ -2343,7 +2343,7 @@ all the data files, giving instructions on how to rotate and zoom in and out,
 prior to each run.
 
 
-## <a name="1998_df"></a>[1998/df](1998/df/df.c) ([index.html](1998/df/index.html]))
+## <div id="1998_df">[1998/df](1998/df/df.c) ([index.html](1998/df/index.html]))</div>
 
 [Cody](#cody) changed a `int *` used for `fopen(3)` to be a `FILE *` to be more correct
 and prevent any possible problems in some systems (which has happened).
@@ -2358,7 +2358,7 @@ loop until one hits `q` (or `Q`) or sends intr/ctrl-c. He also proposed there's
 a way to cheat very easily. Can you figure out how?
 
 
-## <a name="1998_dlowe"></a>[1998/dlowe](1998/dlowe/dlowe.c) ([index.html](1998/dlowe/index.html]))
+## <div id="1998_dlowe">[1998/dlowe](1998/dlowe/dlowe.c) ([index.html](1998/dlowe/index.html]))</div>
 
 [Cody](#cody) made the program more portable by changing the void return type of `main()`
 to be `int` (in both versions).
@@ -2371,19 +2371,19 @@ remarks](1998/dlowe/index.html#historical-remarks) for more details on the
 pootify scripts.
 
 
-## <a name="1998_dloweneil"></a>[1998/dloweneil](1998/dloweneil/dloweneil.c) ([index.html](1998/dloweneil/index.html]))
+## <div id="1998_dloweneil">[1998/dloweneil](1998/dloweneil/dloweneil.c) ([index.html](1998/dloweneil/index.html]))</div>
 
 [Cody](#cody) added [alt code](1998/dloweneil/dloweneil.alt.c) which has vi(m) movement
 (in addition to the other keys except for dropping it's not `d` but `j` or
 space) keys as well as allowing one to quit the game.
 
 
-## <a name="1998_dorssel"></a>[1998/dorssel](1998/dorssel/dorssel.c) ([index.html](1998/dorssel/index.html]))
+## <div id="1998_dorssel">[1998/dorssel](1998/dorssel/dorssel.c) ([index.html](1998/dorssel/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](1998/dorssel/try.sh) script.
 
 
-## <a name="1998_fanf"></a>[1998/fanf](1998/fanf/fanf.c) ([index.html](1998/fanf/index.html))
+## <div id="1998_fanf">[1998/fanf](1998/fanf/fanf.c) ([index.html](1998/fanf/index.html))</div>
 
 [Cody](#cody) fixed this to compile. The problem was the intermediate steps to get to the
 final code that is compiled. The code is now what it essentially becomes when
@@ -2404,7 +2404,7 @@ Cody also added the [try.sh](1998/fanf/try.sh) script to show the output of some
 of the expressions that we selected.
 
 
-## <a name="1998_schnitzi"></a>[1998/schnitzi](1998/schnitzi/schnitzi.c) ([index.html](1998/schnitzi/index.html]))
+## <div id="1998_schnitzi">[1998/schnitzi](1998/schnitzi/schnitzi.c) ([index.html](1998/schnitzi/index.html]))</div>
 
 [Cody](#cody) fixed invalid data types which prevented this entry from working, causing a
 segfault. This showed itself in two parts which required two fixes, one for
@@ -2429,7 +2429,7 @@ Cody also added the [try.sh](1998/schnitzi/try.sh) script to help users try the
 commands that we recommended as well as some added by him.
 
 
-## <a name="1998_schweikh1"></a>[1998/schweikh1](1998/schweikh1/schweikh1.c) ([index.html](1998/schweikh1/index.html]))
+## <div id="1998_schweikh1">[1998/schweikh1](1998/schweikh1/schweikh1.c) ([index.html](1998/schweikh1/index.html]))</div>
 
 [Cody](#cody) fixed this for modern systems (it did not work at all) and added an
 alternate version that works with macOS. Cody also made it ever so slightly more
@@ -2487,7 +2487,7 @@ compute the character count in the code according to the contest rules of 1998
 in the file [charcount.pl](1998/schweikh1/charcount.pl).
 
 
-## <a name="1998_schweikh2"></a>[1998/schweikh2](1998/schweikh2/schweikh2.c) ([index.html](1998/schweikh2/index.html]))
+## <div id="1998_schweikh2">[1998/schweikh2](1998/schweikh2/schweikh2.c) ([index.html](1998/schweikh2/index.html]))</div>
 
 [Cody](#cody) fixed the code to not trigger an internal compiler error in gcc:
 
@@ -2510,7 +2510,7 @@ question.
 Cody also added the [try.sh](1998/schweikh2/try.sh) script.
 
 
-## <a name="1998_schweikh3"></a>[1998/schweikh3](1998/schweikh3/schweikh3.c) ([index.html](1998/schweikh3/index.html]))
+## <div id="1998_schweikh3">[1998/schweikh3](1998/schweikh3/schweikh3.c) ([index.html](1998/schweikh3/index.html]))</div>
 
 [Cody](#cody) added the [alternate code](1998/schweikh3/index.html#alternate-code) which allows one
 to reconfigure the size constant in the rare case that the author wrote about
@@ -2545,7 +2545,7 @@ There actually is a web page for the tool and this was added to the author
 information for the entry. It has not been added to any JSON file.
 
 
-## <a name="1998_tomtorfs"></a>[1998/tomtorfs](1998/tomtorfs/tomtorfs.c) ([index.html](1998/tomtorfs/index.html]))
+## <div id="1998_tomtorfs">[1998/tomtorfs](1998/tomtorfs/tomtorfs.c) ([index.html](1998/tomtorfs/index.html]))</div>
 
 [Cody](#cody) fixed the assumption that `EOF` is `-1` (the author noted that it assumes
 it is `-1` and it's indeed a valid concern as the standard only guarantees that
@@ -2560,10 +2560,10 @@ Cody also added the [try.sh](1998/tomtorfs/try.sh) script to try out a few
 commands that we recommended.
 
 
-# <a name="2000"></a>2000
+# <div id="2000">2000</div>
 
 
-## <a name="2000_anderson"></a>[2000/anderson](2000/anderson/anderson.c) ([index.html](2000/anderson/index.html]))
+## <div id="2000_anderson">[2000/anderson](2000/anderson/anderson.c) ([index.html](2000/anderson/index.html]))</div>
 
 [Cody](#cody) changed this entry to use `fgets(3)` instead of `gets(3)`. This involved
 changing the `K` arg to `gets(3)` to `&K` in `fgets(3)`.
@@ -2571,14 +2571,14 @@ changing the `K` arg to `gets(3)` to `&K` in `fgets(3)`.
 Cody also added the [try.sh](2000/anderson/try.sh) script.
 
 
-## <a name="2000_bmeyer"></a>[2000/bmeyer](2000/bmeyer/bmeyer.c) ([index.html](2000/bmeyer/index.html]))
+## <div id="2000_bmeyer">[2000/bmeyer](2000/bmeyer/bmeyer.c) ([index.html](2000/bmeyer/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2000/bmeyer/try.sh) script with some improvements to the
 commands we recommended like not assuming the number of columns one has in their
 terminal.
 
 
-## <a name="2000_briddlebane"></a>[2000/briddlebane](2000/briddlebane/briddlebane.c) ([index.html](2000/briddlebane/index.html]))
+## <div id="2000_briddlebane">[2000/briddlebane](2000/briddlebane/briddlebane.c) ([index.html](2000/briddlebane/index.html]))</div>
 
 [Cody](#cody) fixed this to compile in systems that require one to explicitly link in
 `libm`.
@@ -2587,14 +2587,14 @@ Cody also added the [try.sh](2000/briddlebane/try.sh) script for those who are
 feeling a bit too confident, cocky or even happy :-)
 
 
-## <a name="2000_dhyang"></a>[2000/dhyang](2000/dhyang/dhyang.c) ([index.html](2000/dhyang/index.html]))
+## <div id="2000_dhyang">[2000/dhyang](2000/dhyang/dhyang.c) ([index.html](2000/dhyang/index.html]))</div>
 
 [Cody](#cody) made this more portable by changing the `void main` to `int main`.
 
 He also added the [try.sh](2000/dhyang/try.sh) script.
 
 
-## <a name="2000_dlowe"></a>[2000/dlowe](2000/dlowe/dlowe.c) ([index.html](2000/dlowe/index.html]))
+## <div id="2000_dlowe">[2000/dlowe](2000/dlowe/dlowe.c) ([index.html](2000/dlowe/index.html]))</div>
 
 [Cody](#cody) fixed this to compile with more recent perl versions; the symbol that's now
 `PL_na` was once `na`. He notes that this entry crashes under macOS but it works
@@ -2603,13 +2603,13 @@ under Linux after this change.
 Cody also added the [try.sh](2000/dlowe/try.sh) script.
 
 
-## <a name="2000_jarijyrki"></a>[2000/jarijyrki](2000/jarijyrki/jarijyrki.c) ([index.html](2000/jarijyrki/index.html]))
+## <div id="2000_jarijyrki">[2000/jarijyrki](2000/jarijyrki/jarijyrki.c) ([index.html](2000/jarijyrki/index.html]))</div>
 
 [Cody](#cody) made it easier to compile this in some cases by adding `X11/` to the
 includes of `Xlib.h` and `keysym.h`.
 
 
-## <a name="2000_natori"></a>[2000/natori](2000/natori/natori.c) ([index.html](2000/natori/index.html]))
+## <div id="2000_natori">[2000/natori](2000/natori/natori.c) ([index.html](2000/natori/index.html]))</div>
 
 [Cody](#cody) fixed this for modern compilers. Depending on the compiler it would either
 segfault when run or not compile at all (gcc and clang respectively).
@@ -2634,19 +2634,19 @@ variable which although works it is incongruent with the other Makefiles and is
 more confusing (even if not confusing).
 
 
-## <a name="2000_primenum"></a>[2000/primenum](2000/primenum/primenum.c) ([index.html](2000/primenum/index.html]))
+## <div id="2000_primenum">[2000/primenum](2000/primenum/primenum.c) ([index.html](2000/primenum/index.html]))</div>
 
 [Cody](#cody) made this more portable by changing the `void main` to `int main`.
 
 Cody also added the [try.sh](2000/primenum/try.sh) script.
 
 
-## <a name="2000_rince"></a>[2000/rince](2000/rince/rince.c) ([index.html](2000/rince/index.html]))
+## <div id="2000_rince">[2000/rince](2000/rince/rince.c) ([index.html](2000/rince/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2000/rince/try.sh) script.
 
 
-## <a name="2000_robison"></a>[2000/robison](2000/robison/robison.c) ([index.html](2000/robison/index.html]))
+## <div id="2000_robison">[2000/robison](2000/robison/robison.c) ([index.html](2000/robison/index.html]))</div>
 
 [Cody](#cody) fixed an infinite loop that occurred if invalid input was entered, flooding
 the screen with:
@@ -2660,12 +2660,12 @@ on it to assign to the `int`s, much like with `1987/lievaart`. The strings are
 `char[5]` and the `%` specifier is `%4s` which is enough for the game.
 
 
-## <a name="2000_schneiderwent"></a>[2000/schneiderwent](2000/schneiderwent/schneiderwent.c) ([index.html](2000/schneiderwent/index.html]))
+## <div id="2000_schneiderwent">[2000/schneiderwent](2000/schneiderwent/schneiderwent.c) ([index.html](2000/schneiderwent/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2000/schneiderwent/try.sh) script.
 
 
-## <a name="2000_thadgavin"></a>[2000/thadgavin](2000/thadgavin/thadgavin.c) ([index.html](2000/thadgavin/index.html]))
+## <div id="2000_thadgavin">[2000/thadgavin](2000/thadgavin/thadgavin.c) ([index.html](2000/thadgavin/index.html]))</div>
 
 [Cody](#cody) fixed the code and added an appropriate make rule so that the
 [SDL](https://www.libsdl.org) version works independent from the curses version
@@ -2708,7 +2708,7 @@ the curses and the SDL versions as Cody does not have a DOS system to test the
 other version in.
 
 
-## <a name="2000_tomx"></a>[2000/tomx](2000/tomx/tomx.c) ([index.html](2000/tomx/index.html]))
+## <div id="2000_tomx">[2000/tomx](2000/tomx/tomx.c) ([index.html](2000/tomx/index.html]))</div>
 
 [Cody](#cody) added the [alt code](2000/tomx/index.html#alternate-code) based on the
 author's remarks with a fix for modern systems and he also added the two
@@ -2719,10 +2719,10 @@ And although the scripts do `chmod +x` on the source code (see the index.html fo
 details) the source code is now executable by default.
 
 
-# <a name="2001"></a>2001
+# <div id="2001">2001</div>
 
 
-## <a name="2001_anonymous"></a>[2001/anonymous](2001/anonymous/anonymous.c) ([index.html](2001/anonymous/index.html]))
+## <div id="2001_anonymous">[2001/anonymous](2001/anonymous/anonymous.c) ([index.html](2001/anonymous/index.html]))</div>
 
 [Cody](#cody) fixed both the supplementary program and the program itself (both of which
 segfaulted and once that was fixed only the binary was modified; it was not run
@@ -2808,7 +2808,7 @@ attempt to use the program as it was designed but if compiling as 32-bit fails
 it will at least run the supplementary program as a 64-bit program directly.
 
 
-## <a name="2001_bellard"></a>[2001/bellard](2001/bellard/bellard.c) ([index.html](2001/bellard/index.html]))
+## <div id="2001_bellard">[2001/bellard](2001/bellard/bellard.c) ([index.html](2001/bellard/index.html]))</div>
 
 [Cody](#cody) fixed this to compile with clang but according to the author this will not
 work without i386 Linux. It generates i386 32-bit code (not bytecode) but
@@ -2854,7 +2854,7 @@ compiler that does not support this would not work. Thus we use the modification
 by Yusuke.
 
 
-## <a name="2001_cheong"></a>[2001/cheong](2001/cheong/cheong.c) ([index.html](2001/cheong/index.html]))
+## <div id="2001_cheong">[2001/cheong](2001/cheong/cheong.c) ([index.html](2001/cheong/index.html]))</div>
 
 [Cody](#cody) fixed this to work with clang by adding another function that is allowed to
 have a third arg as an int, not a `char **. He chose `pain()` because it's a four
@@ -2867,7 +2867,7 @@ Cody also added the [try.sh](2001/cheong/try.sh) script.
 He also fixed it to check the number of args.
 
 
-## <a name="2001_coupard"></a>[2001/coupard](2001/coupard/coupard.c) ([index.html](2001/coupard/index.html]))
+## <div id="2001_coupard">[2001/coupard](2001/coupard/coupard.c) ([index.html](2001/coupard/index.html]))</div>
 
 [Cody](#cody) added a value to `return` in `main()` to make it more portable.
 
@@ -2897,7 +2897,7 @@ sound devices in macOS).
 Cody added the [try.sh](2001/coupard/try.sh).
 
 
-## <a name="2001_ctk"></a>[2001/ctk](2001/ctk/ctk.c) ([index.html](2001/ctk/index.html]))
+## <div id="2001_ctk">[2001/ctk](2001/ctk/ctk.c) ([index.html](2001/ctk/index.html]))</div>
 
 The ANSI escape codes were no longer valid but [Yusuke](#yusuke) provided a patch to fix
 the ANSI escape codes. This works with both Linux and macOS.
@@ -2911,7 +2911,7 @@ Cody also added the [alt code](2001/ctk/index.html#alternate-code) that adds
 vi(m) movement keys.
 
 
-## <a name="2001_dgbeards"></a>[2001/dgbeards](2001/dgbeards/dgbeards.c) ([index.html](2001/dgbeards/index.html]))
+## <div id="2001_dgbeards">[2001/dgbeards](2001/dgbeards/dgbeards.c) ([index.html](2001/dgbeards/index.html]))</div>
 
 The author provided two changes: one to speed it up and one to make it not crash
 on losing. [Cody](#cody) provided an alternate version which does the former but he felt
@@ -2922,7 +2922,7 @@ He also points out that there is a way to get the computer to automatically lose
 very quickly. Do you know what it is?
 
 
-## <a name="2001_herrmann1"></a>[2001/herrmann1](2001/herrmann1/herrmann1.c) ([index.html](2001/herrmann1/index.html]))
+## <div id="2001_herrmann1">[2001/herrmann1](2001/herrmann1/herrmann1.c) ([index.html](2001/herrmann1/index.html]))</div>
 
 [Cody](#cody) fixed this so that the when compiling the code the program is not executed
 itself by itself which just showed the usage string and exited. The [script
@@ -2946,7 +2946,7 @@ errors/warnings.
 Cody also added the [try.sh](2001/herrmann1/try.sh) script.
 
 
-## <a name="2001_herrmann2"></a>[2001/herrmann2](2001/herrmann2/herrmann2.c) ([index.html](2001/herrmann2/index.html]))
+## <div id="2001_herrmann2">[2001/herrmann2](2001/herrmann2/herrmann2.c) ([index.html](2001/herrmann2/index.html]))</div>
 
 [Cody](#cody) fixed this to work with both 64-bit and 32-bit compilers by changing most
 of the `int`s (all but that in `main(int ...)`) to `long`s. He also fixed it to
@@ -2961,7 +2961,7 @@ For some reason the original code was missing (presumingly because it had been
 added to `.gitignore` by accident) but Cody restored it from the archive.
 
 
-## <a name="2001_kev"></a>[2001/kev](2001/kev/kev.c) ([index.html](2001/kev/index.html]))
+## <div id="2001_kev">[2001/kev](2001/kev/kev.c) ([index.html](2001/kev/index.html]))</div>
 
 [Cody](#cody) improved the Makefile to allow one to more easily set up the port,
 speed and `socket(2)` call that the author had set up.
@@ -2981,7 +2981,7 @@ line as 50 is what it used to be set to. This way it's more to the original but
 without having to sacrifice playability by running `make`.
 
 
-## <a name="2001_ollinger"></a>[2001/ollinger](2001/ollinger/ollinger.c) ([index.html](2001/ollinger/index.html))
+## <div id="2001_ollinger">[2001/ollinger](2001/ollinger/ollinger.c) ([index.html](2001/ollinger/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2001/ollinger/try.sh) script.
 
@@ -2990,7 +2990,7 @@ done at a time where it was said to be a bug that should be fixed, for better or
 worse.
 
 
-## <a name="2001_schweikh"></a>[2001/schweikh](2001/schweikh/schweikh.c) ([index.html](2001/schweikh/index.html]))
+## <div id="2001_schweikh">[2001/schweikh](2001/schweikh/schweikh.c) ([index.html](2001/schweikh/index.html]))</div>
 
 [Cody](#cody) fixed this to not crash if not enough args as this was not documented by
 the author. The other problems are documented so were not fixed. See
@@ -2999,7 +2999,7 @@ index.html for details.
 Cody also added the [try.sh](2001/schweikh/try.sh) script.
 
 
-## <a name="2001_westley"></a>[2001/westley](2001/westley/westley.c) ([index.html](2001/westley/index.html]))
+## <div id="2001_westley">[2001/westley](2001/westley/westley.c) ([index.html](2001/westley/index.html]))</div>
 
 [Cody](#cody) added the script [try.sh](2001/westley/try.sh) to automate a heap of commands
 that we, the IOCCC judges, suggested, as well as some additional ones that he
@@ -3007,15 +3007,15 @@ thought would be fun.  He also provided the sort and punch card versions,
 described in the index.html, based on the author's remarks.
 
 
-# <a name="2004"></a>2004
+# <div id="2004">2004</div>
 
 
-## <a name="2004_anonymous"></a>[2004/anonymous](2004/anonymous/anonymous.c) ([index.html](2004/anonymous/index.html]))
+## <div id="2004_anonymous">[2004/anonymous](2004/anonymous/anonymous.c) ([index.html](2004/anonymous/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2004/anonymous/try.sh) script.
 
 
-## <a name="2004_arachnid"></a>[2004/arachnid](2004/arachnid/arachnid.c) ([index.html](2004/arachnid/index.html]))
+## <div id="2004_arachnid">[2004/arachnid](2004/arachnid/arachnid.c) ([index.html](2004/arachnid/index.html]))</div>
 
 [Cody](#cody) added an [alternate version](2004/arachnid/index.html#alternate-code) which
 allows those like himself used to `h`, `j`, `k` and `l` movement keys to not get
@@ -3028,7 +3028,7 @@ file but a maze file. The extension `.maz` was not chosen to help with (some?)
 browsers knowing what to do with it.
 
 
-## <a name="2004_burley"></a>[2004/burley](2004/burley/burley.c) ([index.html](2004/burley/index.html]))
+## <div id="2004_burley">[2004/burley](2004/burley/burley.c) ([index.html](2004/burley/index.html]))</div>
 
 [Cody](#cody) fixed this to compile with clang and to work with both gcc and
 clang (even after fixing it to compile with clang it did not work properly).
@@ -3063,7 +3063,7 @@ Finally the optimiser cannot be enabled so the compiler flags were changed for
 this, forcing `-O0`.
 
 
-## <a name="2004_gavare"></a>[2004/gavare](2004/gavare/gavare.c) ([index.html](2004/gavare/index.html]))
+## <div id="2004_gavare">[2004/gavare](2004/gavare/gavare.c) ([index.html](2004/gavare/index.html]))</div>
 
 [Cody](#cody) added three different [alternate
 versions](2004/gavare/index.html#alternate-code):
@@ -3078,7 +3078,7 @@ that was used during development, found on their [website about the
 entry](https://gavare.se/ioccc/ioccc_gavare.c.html).
 
 
-## <a name="2004_gavin"></a>[2004/gavin](2004/gavin/gavin.c) ([index.html](2004/gavin/index.html]))
+## <div id="2004_gavin">[2004/gavin](2004/gavin/gavin.c) ([index.html](2004/gavin/index.html]))</div>
 
 [Cody](#cody) provided the [alt code](2004/gavin/index.html#alternate-code) for
 those who want to use QEMU. The most important part of this is the macro `K` has
@@ -3092,7 +3092,7 @@ is done this way to prevent extraction from the entry directory overwriting the
 files and causing `make clobber` to wipe some of them out.
 
 
-## <a name="2004_hibachi"></a>[2004/hibachi](2004/hibachi/hibachi.c) ([index.html](2004/hibachi/index.html]))
+## <div id="2004_hibachi">[2004/hibachi](2004/hibachi/hibachi.c) ([index.html](2004/hibachi/index.html]))</div>
 
 [Cody](#cody) fixed a bunch of links in the index.html provided with the entry
 (web server) that no longer exist or have changed in some other way (`https`
@@ -3101,12 +3101,12 @@ all that was necessary but at least one or two URLs required the Internet
 Wayback Machine.
 
 
-## <a name="2004_hoyle"></a>[2004/hoyle](2004/hoyle/hoyle.c) ([index.html](2004/hoyle/index.html]))
+## <div id="2004_hoyle">[2004/hoyle](2004/hoyle/hoyle.c) ([index.html](2004/hoyle/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2004/hoyle/try.sh) script.
 
 
-## <a name="2004_jdalbec"></a>[2004/jdalbec](2004/jdalbec/jdalbec.c) ([index.html](2004/jdalbec/index.html))
+## <div id="2004_jdalbec">[2004/jdalbec](2004/jdalbec/jdalbec.c) ([index.html](2004/jdalbec/index.html))</div>
 
 [Cody](#cody) fixed this to compile with gcc (it worked with clang). The problem was the
 cpp being unable to parse the generated code (see the index.html for details) and
@@ -3141,7 +3141,7 @@ Finally Cody added [try.sh](2004/jdalbec/try.sh) and
 [try.alt.sh](2004/jdalbec/try.alt.sh) to demonstrate both versions.
 
 
-## <a name="2004_kopczynski"></a>[2004/kopczynski](2004/kopczynski/kopczynski.c) ([index.html](2004/kopczynski/index.html]))
+## <div id="2004_kopczynski">[2004/kopczynski](2004/kopczynski/kopczynski.c) ([index.html](2004/kopczynski/index.html]))</div>
 
 [Cody](#cody) reported that this entry cannot be optimised by the compiler as otherwise
 it will not work.
@@ -3157,7 +3157,7 @@ the data files reversed with `rev(1)`. One had to be modified additionally to
 get it to work, that being `kopczynski-10-rev`.
 
 
-## <a name="2004_newbern"></a>[2004/newbern](2004/newbern/newbern.c) ([index.html](2004/newbern/index.html]))
+## <div id="2004_newbern">[2004/newbern](2004/newbern/newbern.c) ([index.html](2004/newbern/index.html]))</div>
 
 [Cody](#cody) and Landon individually fixed this to work with clang.
 
@@ -3166,12 +3166,12 @@ that the author referred to and was documented by [Yusuke](#yusuke) though Cody
 chose the word `IOCCC` instead of `AAA`).
 
 
-## <a name="2004_omoikane"></a>[2004/omoikane](2004/omoikane/omoikane.c) ([index.html](2004/omoikane/index.html]))
+## <div id="2004_omoikane">[2004/omoikane](2004/omoikane/omoikane.c) ([index.html](2004/omoikane/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2004/omoikane/try.sh) script.
 
 
-## <a name="2004_schnitzi"></a>[2004/schnitzi](2004/schnitzi/schnitzi.c) ([index.html](2004/schnitzi/index.html]))
+## <div id="2004_schnitzi">[2004/schnitzi](2004/schnitzi/schnitzi.c) ([index.html](2004/schnitzi/index.html]))</div>
 
 [Cody](#cody) made this use `fgets(3)`.
 
@@ -3182,7 +3182,7 @@ fast in modern systems, especially the scrolling text of
 Cody also added the [try.sh](2004/schnitzi/try.sh) script.
 
 
-## <a name="2004_sds"></a>[2004/sds](2004/sds/sds.c) ([index.html](2004/sds/index.html))
+## <div id="2004_sds">[2004/sds](2004/sds/sds.c) ([index.html](2004/sds/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2004/sds/try.sh) script.
 
@@ -3191,7 +3191,7 @@ Cody made a copy of the older README.md file into `README_sds.txt` and added tha
 to the repo for the script instead.
 
 
-## <a name="2004_vik2"></a>[2004/vik2](2004/vik2/vik2.c) ([index.html](2004/vik2/index.html))
+## <div id="2004_vik2">[2004/vik2](2004/vik2/vik2.c) ([index.html](2004/vik2/index.html))</div>
 
 [Cody](#cody) fixed this to compile in Linux. Although it compiled cleanly in macOS (and
 BSD?) the code failed to compile at all in Linux due to:
@@ -3251,10 +3251,10 @@ Cody also made it so that the `FNAME` is (for the entry file itself and
 just to make it a bit easier to compile.
 
 
-# <a name="2005"></a>2005
+# <div id="2005">2005</div>
 
 
-## <a name="2005_aidan"></a>[2005/aidan](2005/aidan/aidan.c) ([index.html](2005/aidan/index.html]))
+## <div id="2005_aidan">[2005/aidan](2005/aidan/aidan.c) ([index.html](2005/aidan/index.html]))</div>
 
 [Cody](#cody) fixed the test script, described by the author in their remarks, to refer
 to the proper compiled program (it's hardcoded). This had never been done and so
@@ -3273,7 +3273,7 @@ Cody added the `make test` and `make test-n0` rules for easier use of the test
 suite.
 
 
-## <a name="2005_anon"></a>[2005/anon](2005/anon/anon.c) ([index.html](2005/anon/index.html]))
+## <div id="2005_anon">[2005/anon](2005/anon/anon.c) ([index.html](2005/anon/index.html]))</div>
 
 [Cody](#cody) fixed a problem where in some systems (like macOS) the `stty sane` would
 not work and end up causing a bus error. Instead of `stty sane` it uses `stty
@@ -3287,7 +3287,7 @@ Cody added the [alt code](2005/anon/index.html#alternate-code) with vi(m) like
 movements.
 
 
-## <a name="2005_boutines"></a>[2005/boutines](2005/boutines/boutines.c) ([index.html](2005/boutines/index.html]))
+## <div id="2005_boutines">[2005/boutines](2005/boutines/boutines.c) ([index.html](2005/boutines/index.html]))</div>
 
 [Cody](#cody) added the [input.txt](2005/boutines/input.txt) data file based on suggested
 input from the author, adapting it to a command to try out.
@@ -3295,7 +3295,7 @@ input from the author, adapting it to a command to try out.
 Cody also added the [try.sh](2005/boutines/try.sh) script.
 
 
-## <a name="2005_giljade"></a>[2005/giljade](2005/giljade/giljade.c) ([index.html](2005/giljade/index.html]))
+## <div id="2005_giljade">[2005/giljade](2005/giljade/giljade.c) ([index.html](2005/giljade/index.html]))</div>
 
 After Landon fixed the entry to compile with clang [Cody](#cody) noticed this
 does not work at all in modern systems (see below). He fixed this to work and
@@ -3363,19 +3363,19 @@ program generates as the author states, 180.  If it does not find 180 it is an
 error; otherwise it is success. It uses [test.sh](2005/giljade/test.sh).
 
 
-## <a name="2005_jetro"></a>[2005/jetro](2005/jetro/jetro.c) ([index.html](2005/jetro/index.html))
+## <div id="2005_jetro">[2005/jetro](2005/jetro/jetro.c) ([index.html](2005/jetro/index.html))</div>
 
 [Cody](#cody) added explicit linking of libm (`-lm`) for systems like Linux that seem to
 not do it implicitly (like macOS does).
 
 
 
-## <a name="2005_klausler"></a>[2005/klausler](2005/klausler/klausler.c) ([index.html](2005/klausler/index.html))
+## <div id="2005_klausler">[2005/klausler](2005/klausler/klausler.c) ([index.html](2005/klausler/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2005/klausler/try.sh) script.
 
 
-## <a name="2005_mikeash"></a>[2005/mikeash](2005/mikeash/mikeash.c) ([index.html](2005/mikeash/index.html))
+## <div id="2005_mikeash">[2005/mikeash](2005/mikeash/mikeash.c) ([index.html](2005/mikeash/index.html))</div>
 
 [Cody](#cody) fixed this to work in Linux. The problem was an unknown escape sequence,
 `\N`, which caused a funny compiler error:
@@ -3407,7 +3407,7 @@ also show correct output though.
 Cody also added the [try.sh](2005/mikeash/try.sh) script.
 
 
-## <a name="2005_mynx"></a>[2005/mynx](2005/mynx/mynx.c) ([index.html](2005/mynx/index.html]))
+## <div id="2005_mynx">[2005/mynx](2005/mynx/mynx.c) ([index.html](2005/mynx/index.html]))</div>
 
 [Cody](#cody) fixed this so that the [configure](source/configure) script (which is not
 needed but part of the entry) would work with compilers that have by default
@@ -3419,7 +3419,7 @@ might be some command line that will let it work that way or perhaps someone
 wants to add the necessary code.
 
 
-## <a name="2005_persano"></a>[2005/persano](2005/persano/persano.c) ([index.html](2005/persano/index.html]))
+## <div id="2005_persano">[2005/persano](2005/persano/persano.c) ([index.html](2005/persano/index.html]))</div>
 
 [Cody](#cody) added the (untested) [alternate
 code](2005/persano/index.html#alternate-code) which should work for Windows as it
@@ -3429,7 +3429,7 @@ test it on.
 Cody also added the [try.sh](2005/persano/try.sh) script.
 
 
-## <a name="2005_sykes"></a>[2005/sykes](2005/sykes/sykes.c) ([index.html](2005/sykes/index.html]))
+## <div id="2005_sykes">[2005/sykes](2005/sykes/sykes.c) ([index.html](2005/sykes/index.html]))</div>
 
 [Cody](#cody) added the saved (with the `SAVE` command) BASIC program `PET` which was:
 
@@ -3468,14 +3468,14 @@ The scripts note every time that one will have to send ctrl-c or whatever their
 interrupt is set to in order to exit the program.
 
 
-## <a name="2005_timwi"></a>[2005/timwi](2005/timwi/timwi.c) ([index.html](2005/timwi/index.html]))
+## <div id="2005_timwi">[2005/timwi](2005/timwi/timwi.c) ([index.html](2005/timwi/index.html]))</div>
 
 [Cody](#cody) added [try.sh](2005/timwi/try.sh). It only has one command as he doesn't
 want to knacker his brain any more than it might or might not already be :-) and
 he doesn't want to damage anyone else's brain either. :-)
 
 
-## <a name="2005_toledo"></a>[2005/toledo](2005/toledo/toledo.c) ([index.html](2005/toledo/index.html))
+## <div id="2005_toledo">[2005/toledo](2005/toledo/toledo.c) ([index.html](2005/toledo/index.html))</div>
 
 [Cody](#cody) fixed this to compile with some versions of clang which have an additional
 defect where `main()` can only have 0, 2 or 3 args (it was 4). It now calls
@@ -3484,7 +3484,7 @@ another function that takes 4 args and which is what used to be `main()`.
 The alternate versions were also fixed.
 
 
-## <a name="2005_vince"></a>[2005/vince](2005/vince/vince.c) ([index.html](2005/vince/index.html))
+## <div id="2005_vince">[2005/vince](2005/vince/vince.c) ([index.html](2005/vince/index.html))</div>
 
 [Cody](#cody) fixed this in the case that the program is compiled or linked/copies to
 another file name: the code constructed the source code file name in a clever
@@ -3497,10 +3497,10 @@ with the appropriate extension so this might be called a bug fix as well though
 if one runs it from another directory, specifying the directory, it'll not catch it.
 
 
-# <a name="2006"></a>2006
+# <div id="2006">2006</div>
 
 
-## <a name="2006_birken"></a>[2006/birken](2006/birken/birken.c) ([index.html](2006/birken/index.html]))
+## <div id="2006_birken">[2006/birken](2006/birken/birken.c) ([index.html](2006/birken/index.html]))</div>
 
 [Cody](#cody) fixed a segfault in macOS with this entry. The problem was a missing `+1`
 for strlen() with malloc(). This prevented it from working.
@@ -3508,7 +3508,7 @@ for strlen() with malloc(). This prevented it from working.
 Cody also added the [try.sh](2006/birken/try.sh) script.
 
 
-## <a name="2006_borsanyi"></a>[2006/borsanyi](2006/borsanyi/borsanyi.c) ([index.html](2006/borsanyi/index.html]))
+## <div id="2006_borsanyi">[2006/borsanyi](2006/borsanyi/borsanyi.c) ([index.html](2006/borsanyi/index.html]))</div>
 
 [Cody](#cody) fixed the Makefile to work in systems where the `lpthread` is not
 implicitly linked in.
@@ -3516,12 +3516,12 @@ implicitly linked in.
 Cody also added the [try.sh](2006/borsanyi/try.sh) script.
 
 
-## <a name="2006_grothe"></a>[2006/grothe](2006/grothe/grothe.c) ([index.html](2006/grothe/index.html))
+## <div id="2006_grothe">[2006/grothe](2006/grothe/grothe.c) ([index.html](2006/grothe/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2006/grothe/try.sh) script.
 
 
-## <a name="2006_hamre"></a>[2006/hamre](2006/hamre/hamre.c) ([index.html](2006/hamre/index.html))
+## <div id="2006_hamre">[2006/hamre](2006/hamre/hamre.c) ([index.html](2006/hamre/index.html))</div>
 
 [Cody](#cody) fixed this so that it will not crash without an arg after it was suggested
 this should be fixed.
@@ -3529,7 +3529,7 @@ this should be fixed.
 Cody also added the [try.sh](2006/hamre/try.sh) script.
 
 
-## <a name="2006_monge"></a>[2006/monge](2006/monge/monge.c) ([index.html](2006/monge/index.html]))
+## <div id="2006_monge">[2006/monge](2006/monge/monge.c) ([index.html](2006/monge/index.html]))</div>
 
 [Cody](#cody) added the [alternate code](2006/monge/index.html#alternate-code) that lets
 one resize the image and redefine the number of iterations.
@@ -3549,13 +3549,13 @@ feature but one which we will accept fixes to. See [2006/monge in
 bugs.html](bugs.html#2006-monge).
 
 
-## <a name="2006_night"></a>[2006/night](2006/night/night.c) ([index.html](2006/night/index.html]))
+## <div id="2006_night">[2006/night](2006/night/night.c) ([index.html](2006/night/index.html]))</div>
 
 As [Cody](#cody) is a lost :-) `vim` user he took the author's remarks to add support
 back for arrow keys in the [alternate version](2006/night/night.alt.c).
 
 
-## <a name="2006_sloane"></a>[2006/sloane](2006/sloane/sloane.c) ([index.html](2006/sloane/index.html]))
+## <div id="2006_sloane">[2006/sloane](2006/sloane/sloane.c) ([index.html](2006/sloane/index.html]))</div>
 
 [Cody](#cody) fixed this entry to work with clang which has a defect with the args to
 `main()`: it requires specific types: `int` and `char ** for the first and
@@ -3584,7 +3584,7 @@ Since the author suggested that the lack of certain `#include`s might break the
 program in some systems he also added `-include ...` to the Makefile as well.
 
 
-## <a name="2006_stewart"></a>[2006/stewart](2006/stewart/stewart.c) ([index.html](2006/stewart/index.html]))
+## <div id="2006_stewart">[2006/stewart](2006/stewart/stewart.c) ([index.html](2006/stewart/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2006/stewart/try.sh) script.
 
@@ -3593,7 +3593,7 @@ to read from the file. This was done at a time when it was considered to be a
 bug to fix.
 
 
-## <a name="2006_sykes1"></a>[2006/sykes1](2006/sykes1/sykes1.c) ([index.html](2006/sykes1/index.html]))
+## <div id="2006_sykes1">[2006/sykes1](2006/sykes1/sykes1.c) ([index.html](2006/sykes1/index.html]))</div>
 
 [Cody](#cody) provided the [alt code](2006/sykes1/index.html#alternate-code) based on the
 author's remarks.
@@ -3606,7 +3606,7 @@ The video was also no longer available but Cody found an alternative and added
 it to the repo as well.
 
 
-## <a name="2006_sykes2"></a>[2006/sykes2](2006/sykes2/sykes2.c) ([index.html](2006/sykes2/index.html]))
+## <div id="2006_sykes2">[2006/sykes2](2006/sykes2/sykes2.c) ([index.html](2006/sykes2/index.html]))</div>
 
 [Cody](#cody), out of an abundance of caution for `clang`'s defects, made `main()` have
 to args instead of 1 as some versions report that `main()` must have 0, 2 or 3
@@ -3616,12 +3616,12 @@ Cody also added the [try.sh](2006/sykes2/try.sh) script for easier use of the
 entry to show the clock update in real time.
 
 
-## <a name="2006_toledo1"></a>[2006/toledo1](2006/toledo1/toledo1.c) ([index.html](2006/toledo1/index.html]))
+## <div id="2006_toledo1">[2006/toledo1](2006/toledo1/toledo1.c) ([index.html](2006/toledo1/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2006/toledo1/try.sh) script.
 
 
-## <a name="2006_toledo2"></a>[2006/toledo2](2006/toledo2/toledo2.c) ([index.html](2006/toledo2/index.html]))
+## <div id="2006_toledo2">[2006/toledo2](2006/toledo2/toledo2.c) ([index.html](2006/toledo2/index.html]))</div>
 
 [Cody](#cody) fixed a segfault in this program which was making it fail to work under
 macOS - it did not seem to be a problem under Linux, at least not fedora. The
@@ -3640,7 +3640,7 @@ where appears the `IMPORT.COM` and `HALT.COM` files.
 
 
 
-## <a name="2006_toledo3"></a>[2006/toledo3](2006/toledo3/toledo3.c) ([index.html](2006/toledo3/index.html]))
+## <div id="2006_toledo3">[2006/toledo3](2006/toledo3/toledo3.c) ([index.html](2006/toledo3/index.html]))</div>
 
 [Cody](#cody) fixed a crash and a display problem in this entry so that it now works in
 modern (64-bit) systems.  The crash appears to only occur in macOS but the fix
@@ -3653,20 +3653,20 @@ Cody also added the code that _should_ work for Windows,
 We're not able to test this.
 
 
-# <a name="2011"></a>2011
+# <div id="2011">2011</div>
 
 
-## <a name="2011_akari"></a>[2011/akari](2011/akari/akari.c) ([index.html](2011/akari/index.html]))
+## <div id="2011_akari">[2011/akari](2011/akari/akari.c) ([index.html](2011/akari/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2011/akari/try.sh) script.
 
 
-## <a name="2011_blakely"></a>[2011/blakely](2011/blakely/blakely.c) ([index.html](2011/blakely/index.html]))
+## <div id="2011_blakely">[2011/blakely](2011/blakely/blakely.c) ([index.html](2011/blakely/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2011/blakely/try.sh) script.
 
 
-## <a name="2011_borsanyi"></a>[2011/borsanyi](2011/borsanyi/borsanyi.c) ([index.html](2011/borsanyi/index.html]))
+## <div id="2011_borsanyi">[2011/borsanyi](2011/borsanyi/borsanyi.c) ([index.html](2011/borsanyi/index.html]))</div>
 
 [Cody](#cody), out of an abundance of caution, added a second arg to `main()` as some
 versions of clang complain about not only the type of each arg to `main()` but
@@ -3675,23 +3675,23 @@ the number of args as well.
 Cody also added the [try.sh](2011/borsanyi/try.sh) script.
 
 
-## <a name="2011_dlowe"></a>[2011/dlowe](2011/dlowe/dlowe.c) ([index.html](2011/dlowe/index.html]))
+## <div id="2011_dlowe">[2011/dlowe](2011/dlowe/dlowe.c) ([index.html](2011/dlowe/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2011/dlowe/try.sh) script.
 
 
-## <a name="2011_eastman"></a>[2011/eastman](2011/eastman/eastman.c) ([index.html](2011/eastman/index.html]))
+## <div id="2011_eastman">[2011/eastman](2011/eastman/eastman.c) ([index.html](2011/eastman/index.html]))</div>
 
 [Cody](#cody) added the video file [boing-ball.mp4](2011/eastman) which is the demo the
 author referred to.
 
 
-## <a name="2011_fredriksson"></a>[2011/fredriksson](2011/fredriksson/fredriksson.c) ([index.html](2011/fredriksson/index.html]))
+## <div id="2011_fredriksson">[2011/fredriksson](2011/fredriksson/fredriksson.c) ([index.html](2011/fredriksson/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2011/fredriksson/try.sh) script.
 
 
-## <a name="2011_goren"></a>[2011/goren](2011/goren/goren.c) ([index.html](2011/goren/index.html]))
+## <div id="2011_goren">[2011/goren](2011/goren/goren.c) ([index.html](2011/goren/index.html]))</div>
 
 [Cody](#cody) fixed this for macOS.  Before the fix it segfaulted. It worked fine under
 Linux. After fixing it it was noticed that the author stated it does not work
@@ -3704,7 +3704,7 @@ Cody also added the [try.sh](2011/goren/try.sh) script.
 Cody added the following words of wisdom: `'"this" is not a pipe but "!" is'`.
 
 
-## <a name="2011_hamaji"></a>[2011/hamaji](2011/hamaji/hamaji.c) ([index.html](2011/hamaji/index.html]))
+## <div id="2011_hamaji">[2011/hamaji](2011/hamaji/hamaji.c) ([index.html](2011/hamaji/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2011/hamaji/try.sh) script and the `.nono` files
 [conway-game-of-life.nono](2011/hamaji/conway-game-of-life.nono),
@@ -3716,12 +3716,12 @@ The latter two `.nono` files were taken from
 and the others were from the authors' remarks.
 
 
-## <a name="2011_hou"></a>[2011/hou](2011/hou/hou.c) ([index.html](2011/hou/index.html]))
+## <div id="2011_hou">[2011/hou](2011/hou/hou.c) ([index.html](2011/hou/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2011/hou/try.sh) script.
 
 
-## <a name="2011_konno"></a>[2011/konno](2011/konno/konno.c) ([index.html](2011/konno/index.html]))
+## <div id="2011_konno">[2011/konno](2011/konno/konno.c) ([index.html](2011/konno/index.html]))</div>
 
 [Cody](#cody) fixed the program to not crash if no arg was specified as this was not a
 documented feature.
@@ -3729,7 +3729,7 @@ documented feature.
 Cody also added the [try.sh](2011/konno/try.sh) script.
 
 
-## <a name="2011_richards"></a>[2011/richards](2011/richards/richards.c) ([index.html](2011/richards/index.html]))
+## <div id="2011_richards">[2011/richards](2011/richards/richards.c) ([index.html](2011/richards/index.html]))</div>
 
 [Cody](#cody) fixed a minor problem that showed up in both Linux and macOS. He notes
 however that as of this time this entry does not work properly with macOS at
@@ -3748,7 +3748,7 @@ helpful to test any fixes for Apple silicon chips (see [2011/richards in
 bugs.html](bugs.html#2011-richards) for more details).
 
 
-## <a name="2011_toledo"></a>[2011/toledo](2011/toledo/toledo.c) ([index.html](2011/toledo/index.html]))
+## <div id="2011_toledo">[2011/toledo](2011/toledo/toledo.c) ([index.html](2011/toledo/index.html]))</div>
 
 [Cody](#cody) added two [alternate versions](2011/toledo/index.html#alternate-code): one that
 lets one reconfigure the controls and also the size of the game and another
@@ -3759,7 +3759,7 @@ The Makefile was also modified by Cody to make it simpler to redefine the
 controls, width and height.
 
 
-## <a name="2011_vik"></a>[2011/vik](2011/vik/vik.c) ([index.html](2011/vik/index.html]))
+## <div id="2011_vik">[2011/vik](2011/vik/vik.c) ([index.html](2011/vik/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2011/vik/try.sh) script.
 
@@ -3768,7 +3768,7 @@ based on the author's comments (along with looking up the function for the right
 header files). To build try the alt rule of the Makefile.
 
 
-## <a name="2011_zucker"></a>[2011/zucker](2011/zucker/zucker.c) ([index.html](2011/zucker/index.html]))
+## <div id="2011_zucker">[2011/zucker](2011/zucker/zucker.c) ([index.html](2011/zucker/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2011/zucker/try.sh) script.
 
@@ -3781,10 +3781,10 @@ Cody also added the PDF file
 eventually dies.
 
 
-# <a name="2012"></a>2012
+# <div id="2012">2012</div>
 
 
-## <a name="2012_blakely"></a>[2012/blakely](2012/blakely/blakely.c) ([index.html](2012/blakely/index.html))
+## <div id="2012_blakely">[2012/blakely](2012/blakely/blakely.c) ([index.html](2012/blakely/index.html))</div>
 
 [Cody](#cody) added explicit linking of libm (`-lm`) as not all systems do this
 implicitly (Linux doesn't seem to but macOS does).
@@ -3792,12 +3792,12 @@ implicitly (Linux doesn't seem to but macOS does).
 Cody also added the [try.sh](2012/blakely/try.sh) script.
 
 
-## <a name="2012_deckmyn"></a>[2012/deckmyn](2012/deckmyn/deckmyn.c) ([index.html](2012/deckmyn/index.html]))
+## <div id="2012_deckmyn">[2012/deckmyn](2012/deckmyn/deckmyn.c) ([index.html](2012/deckmyn/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2012/deckmyn/try.sh) script.
 
 
-## <a name="2012_endoh1"></a>[2012/endoh1](2012/endoh1/endoh1.c) ([index.html](2012/endoh1/index.html))
+## <div id="2012_endoh1">[2012/endoh1](2012/endoh1/endoh1.c) ([index.html](2012/endoh1/index.html))</div>
 
 [Cody](#cody) added explicit linking of libm (`-lm`) as not all systems do this
 implicitly (Linux doesn't seem to but macOS does).
@@ -3831,7 +3831,7 @@ The [endoh1.alt2.c](2012/endoh1/endoh1.alt2.c) was provided by the author,
 [Yusuke](#yusuke), at the time of the contest as a de-obfuscated version.
 
 
-## <a name="2012_endoh2"></a>[2012/endoh2](2012/endoh2/endoh2.c) ([index.html](2012/endoh2/index.html))
+## <div id="2012_endoh2">[2012/endoh2](2012/endoh2/endoh2.c) ([index.html](2012/endoh2/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2012/endoh2/try.sh) script that runs
 everything, filtered through less.
@@ -3840,7 +3840,7 @@ Cody also fixed a typo in the ruby script
 [find-font-table.rb](2012/endoh2/find-font-table.rb).
 
 
-## <a name="2012_grothe"></a>[2012/grothe](2012/grothe/grothe.c) ([index.html](2012/grothe/index.html))
+## <div id="2012_grothe">[2012/grothe](2012/grothe/grothe.c) ([index.html](2012/grothe/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2012/grothe/try.sh) script.
 
@@ -3859,14 +3859,14 @@ recent domain. For historical purposes the old link was
 which the recipe file now links to.
 
 
-## <a name="2012_hamano"></a>[2012/hamano](2012/hamano/hamano.c) ([index.html](2012/hamano/index.html]))
+## <div id="2012_hamano">[2012/hamano](2012/hamano/hamano.c) ([index.html](2012/hamano/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2012/hamano/try.sh) script and the helper
 Makefile rules `hint.pdf`, `hint`, `hello.pdf` and `hello` to simplify the
 procedure for both `hint.pdf` and `hello.pdf` as well as compiling them as C.
 
 
-## <a name="2012_hou"></a>[2012/hou](2012/hou/hou.c) ([index.html](2012/hou/index.html]))
+## <div id="2012_hou">[2012/hou](2012/hou/hou.c) ([index.html](2012/hou/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2012/hou/try.sh) script and restored the original [hint
 markdown file](2012/hou/hint.html) as the changes made when converting to a GitHub
@@ -3875,7 +3875,7 @@ stylesheet etc. due to the fact that there is no `#` header (which specified
 title and stylesheet) and other formatting changes.
 
 
-## <a name="2012_kang"></a>[2012/kang](2012/kang/kang.c) ([index.html](2012/kang/index.html]))
+## <div id="2012_kang">[2012/kang](2012/kang/kang.c) ([index.html](2012/kang/index.html]))</div>
 
 [Cody](#cody) added alt code that fixes a problem where in German 'v' sounds like 'f'
 which the program has as 'f': with the original version it would translate
@@ -3905,12 +3905,12 @@ show different languages and numbers with the submitted and alternate version
 respectively. Notice how a single letter changes so much!
 
 
-## <a name="2012_konno"></a>[2012/konno](2012/konno/konno.c) ([index.html](2012/konno/index.html]))
+## <div id="2012_konno">[2012/konno](2012/konno/konno.c) ([index.html](2012/konno/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2012/konno/try.sh) script.
 
 
-## <a name="2012_omoikane"></a>[2012/omoikane](2012/omoikane/omoikane.c) ([index.html](2012/omoikane/index.html]))
+## <div id="2012_omoikane">[2012/omoikane](2012/omoikane/omoikane.c) ([index.html](2012/omoikane/index.html]))</div>
 
 [Cody](#cody) added the [alternate versions](2012/omoikane/index.html#alternate-code)
 which will, if no arg is specified, read in the program itself, rather than
@@ -3923,12 +3923,12 @@ Cody also added the [try.sh](2012/omoikane/try.sh) and
 [try.alt.sh](2012/omoikane/try.alt.sh) scripts.
 
 
-## <a name="2012_tromp"></a>[2012/tromp](2012/tromp/tromp.c) ([index.html](2012/tromp/index.html))
+## <div id="2012_tromp">[2012/tromp](2012/tromp/tromp.c) ([index.html](2012/tromp/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2012/tromp/try.sh) script.
 
 
-## <a name="2012_vik"></a>[2012/vik](2012/vik/vik.c) ([index.html](2012/vik/index.html]))
+## <div id="2012_vik">[2012/vik](2012/vik/vik.c) ([index.html](2012/vik/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2012/vik/try.sh) script.
 
@@ -3937,7 +3937,7 @@ for Windows. With his instructions Cody also added the alternate version that
 does this for the few who might use Windows.
 
 
-## <a name="2012_zeitak"></a>[2012/zeitak](2012/zeitak/zeitak.c) ([index.html](2012/zeitak/index.html]))
+## <div id="2012_zeitak">[2012/zeitak](2012/zeitak/zeitak.c) ([index.html](2012/zeitak/index.html]))</div>
 
 [Cody](#cody) [test.sh](2012/zeitak/test.sh) script and the `make test` rule
 that uses the script along with a number of files that will correctly be flagged
@@ -3953,10 +3953,10 @@ command to do this in vim for those who use it, in the judges' remarks, to make
 it easier for those who do not know how, and to make it more obvious to try it.
 
 
-# <a name="2013"></a>2013
+# <div id="2013">2013</div>
 
 
-## <a name="2013_birken"></a>[2013/birken](2013/birken/birken.c) ([index.html](2013/birken/index.html]))
+## <div id="2013_birken">[2013/birken](2013/birken/birken.c) ([index.html](2013/birken/index.html]))</div>
 
 [Cody](#cody) changed the `return 0;` at the end of the program to be `return
 system("reset");` (via redefining `exit(3)` so that the column ending would be
@@ -3974,18 +3974,18 @@ Cody also added the [try.sh](2013/birken/try.sh) script for the entry and the
 [try.alt.sh](2013/birken/try.alt.sh) script for the alt code.
 
 
-## <a name="2013_cable1"></a>[2013/cable1](2013/cable1/cable1.c) ([index.html](2013/cable1/index.html]))
+## <div id="2013_cable1">[2013/cable1](2013/cable1/cable1.c) ([index.html](2013/cable1/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2013/cable1/try.sh) script which also has an
 joke Easter egg in it based on the judges' remarks.
 
 
-## <a name="2013_cable2"></a>[2013/cable2](2013/cable2/cable2.c) ([index.html](2013/cable2/index.html]))
+## <div id="2013_cable2">[2013/cable2](2013/cable2/cable2.c) ([index.html](2013/cable2/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2013/cable2/try.sh) script.
 
 
-## <a name="2013_cable3"></a>[2013/cable3](2013/cable3/cable3.c) ([index.html](2013/cable3/index.html]))
+## <div id="2013_cable3">[2013/cable3](2013/cable3/cable3.c) ([index.html](2013/cable3/index.html]))</div>
 
 [Cody](#cody) fixed this to compile with modern systems. The problems were that
 `localtime()` is used differently and `time.h` being included (with
@@ -4024,7 +4024,7 @@ entry](https://github.com/adriancable/8086tiny/tree/master), and the 'ready-made
 author linked to at `https://bitly.com/1bU8URK`.
 
 
-## <a name="2013_dlowe"></a>[2013/dlowe](2013/dlowe/dlowe.c) ([index.html](2013/dlowe/index.html))
+## <div id="2013_dlowe">[2013/dlowe](2013/dlowe/dlowe.c) ([index.html](2013/dlowe/index.html))</div>
 
 [Cody](#cody) added the source code that we suggested one should compile and run with
 different compilers as [fun.c](2013/dlowe/fun.c). He modified the Makefile so
@@ -4049,12 +4049,12 @@ He also added the [diff.sh](2013/dlowe/diff.sh) script which is based on some
 commands to try that he suggested to see how different lengths look.
 
 
-## <a name="2013_endoh1"></a>[2013/endoh1](2013/endoh1/endoh1.c) ([index.html](2013/endoh1/index.html))
+## <div id="2013_endoh1">[2013/endoh1](2013/endoh1/endoh1.c) ([index.html](2013/endoh1/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2013/endoh1/try.sh) script.
 
 
-## <a name="2013_endoh2"></a>[2013/endoh2](2013/endoh2/endoh2.c) ([index.html](2013/endoh2/index.html))
+## <div id="2013_endoh2">[2013/endoh2](2013/endoh2/endoh2.c) ([index.html](2013/endoh2/index.html))</div>
 
 [Cody](#cody) fixed the Makefile `check` rule so that it `checks` :-) that both
 [Ruby](https://www.ruby-lang.org) and [ImageMagick](https://imagemagick.org) are
@@ -4076,7 +4076,7 @@ not found.
 The entry can still be enjoyed if you do not have these tools, however.
 
 
-## <a name="2013_endoh3"></a>[2013/endoh3](2013/endoh3/endoh3.c) ([index.html](2013/endoh3/index.html))
+## <div id="2013_endoh3">[2013/endoh3](2013/endoh3/endoh3.c) ([index.html](2013/endoh3/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2013/endoh3/try.sh) script.
 
@@ -4084,7 +4084,7 @@ Cody also (out of an abundance of caution for `clang(1)` which is strict with
 arg type and count to `main()`) added a second (unused) arg to `main()`.
 
 
-## <a name="2013_endoh4"></a>[2013/endoh4](2013/endoh4/endoh4.c) ([index.html](2013/endoh4/index.html))
+## <div id="2013_endoh4">[2013/endoh4](2013/endoh4/endoh4.c) ([index.html](2013/endoh4/index.html))</div>
 
 [Cody](#cody) added the [endoh4.sh](2013/endoh4/endoh4.sh) script which temporarily
 turns off the cursor as suggested by the author, with the addition that if no
@@ -4098,7 +4098,7 @@ author's remarks for more details on what this means). The `endoh4.sh` script
 allows one to redefine it as well.
 
 
-## <a name="2013_hou"></a>[2013/hou](2013/hou/hou.c) ([index.html](2013/hou/index.html))
+## <div id="2013_hou">[2013/hou](2013/hou/hou.c) ([index.html](2013/hou/index.html))</div>
 
 [Cody](#cody) fixed the Makefile so that this would work properly. Before this
 the use of the program just did what the judges' remarks said as far as how it
@@ -4133,7 +4133,7 @@ this broke `make` which Cody also fixed.
 Cody also added the [try.sh](2013/hou/try.sh) script.
 
 
-## <a name="2013_mills"></a>[2013/mills](2013/mills/mills.c) ([index.html)[2013/mills/index.html))
+## <div id="2013_mills">[2013/mills](2013/mills/mills.c) ([index.html)[2013/mills/index.html))</div>
 
 [Cody](#cody) fixed this so that the server would not refuse the connection
 after the first call to `close(2)`. The problem was that because the backlog to
@@ -4143,12 +4143,12 @@ this was specific to macOS but it was not specific to a browser as Safari and
 Firefox both had the problem.
 
 
-## <a name="2013_misaka"></a>[2013/misaka](2013/misaka/misaka.c) ([index.html)[2013/misaka/index.html))
+## <div id="2013_misaka">[2013/misaka](2013/misaka/misaka.c) ([index.html)[2013/misaka/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2013/misaka/try.sh) script.
 
 
-## <a name="2013_morgan1"></a>[2013/morgan1](2013/morgan1/morgan1.c) ([index.html](2013/morgan1/index.html))
+## <div id="2013_morgan1">[2013/morgan1](2013/morgan1/morgan1.c) ([index.html](2013/morgan1/index.html))</div>
 
 [Cody](#cody) added explicit linking of libm (`-lm`) as not all systems do this
 implicitly (Linux doesn't seem to but macOS does).
@@ -4156,15 +4156,15 @@ implicitly (Linux doesn't seem to but macOS does).
 Cody also added the [try.sh](2013/morgan1/try.sh) script.
 
 
-## <a name="2013_robison"></a>[2013/robison](2013/robison/robison.c) ([index.html](2013/robison/index.html))
+## <div id="2013_robison">[2013/robison](2013/robison/robison.c) ([index.html](2013/robison/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2013/robison/try.sh) script.
 
 
-# <a name="2014"></a>2014
+# <div id="2014">2014</div>
 
 
-## <a name="2014_birken"></a>[2014/birken](2014/birken/prog.c) ([index.html](2014/birken/index.html))
+## <div id="2014_birken">[2014/birken](2014/birken/prog.c) ([index.html](2014/birken/index.html))</div>
 
 [Cody](#cody) provided the [alternate
 code](2014/birken/index.html#alternate-code) that lets one redefine the port to
@@ -4175,7 +4175,7 @@ details on this macro). The Makefile was made to use variables so it's easier to
 redefine the port and timing constant.
 
 
-## <a name="2014_deak"></a>[2014/deak](2014/deak/prog.c) ([index.html](2014/deak/index.html))
+## <div id="2014_deak">[2014/deak](2014/deak/prog.c) ([index.html](2014/deak/index.html))</div>
 
 [Cody](#cody) added [alt code](2014/deak/index.html#alternate-code) that lets
 one (via the Makefile) reconfigure the coordinates but instead of being a
@@ -4195,7 +4195,7 @@ that was fixed and it also has `#include <stdio.h>` for `putchar(3)`. The
 Cody also added the [try.alt.sh](2014/deak/try.alt.sh) script.
 
 
-## <a name="2014_endoh1"></a>[2014/endoh1](2014/endoh1/prog.c) ([index.html](2014/endoh1/index.html]))
+## <div id="2014_endoh1">[2014/endoh1](2014/endoh1/prog.c) ([index.html](2014/endoh1/index.html]))</div>
 
 [Cody](#cody) added the [rake.sh](2014/endoh1/rake.sh) script and `make rake`
 rule that runs the script. This script will check that `rake` is installed and
@@ -4214,12 +4214,12 @@ file to [spoilers.html](2014/endoh1/spoilers.html) to be clearer in its purpose 
 it is a file with spoilers (and too close to index.html?).
 
 
-## <a name="2014_endoh2"></a>[2014/endoh2](2014/endoh2/prog.c) ([index.html](2014/endoh2/index.html]))
+## <div id="2014_endoh2">[2014/endoh2](2014/endoh2/prog.c) ([index.html](2014/endoh2/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2014/endoh2/try.sh) script.
 
 
-## <a name="2014_maffiodo1"></a>[2014/maffiodo1](2014/maffiodo1/prog.c) ([index.html](2014/maffiodo1/index.html]))
+## <div id="2014_maffiodo1">[2014/maffiodo1](2014/maffiodo1/prog.c) ([index.html](2014/maffiodo1/index.html]))</div>
 
 [Cody](#cody) fixed the build for this entry: it does not require
 [SDL2](https://www.libsdl.org) but SDL1 so there were linking errors.
@@ -4231,7 +4231,7 @@ Great Giana Sisters](http://en.wikipedia.org/wiki/The_Great_Giana_Sisters), but
 which let one configure the width and height of the game.
 
 
-## <a name="2014_maffiodo2"></a>[2014/maffiodo2](2014/maffiodo2/prog.c) ([index.html](2014/maffiodo2/index.html]))
+## <div id="2014_maffiodo2">[2014/maffiodo2](2014/maffiodo2/prog.c) ([index.html](2014/maffiodo2/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2014/maffiodo2/try.sh) script.
 
@@ -4239,12 +4239,12 @@ He also added the [alternate code](2014/maffiodo2/index.html#alternate-code)
 provided by the author.
 
 
-## <a name="2014_morgan"></a>[2014/morgan](2014/morgan/prog.c) ([index.html](2014/morgan/index.html))
+## <div id="2014_morgan">[2014/morgan](2014/morgan/prog.c) ([index.html](2014/morgan/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2014/morgan/try.sh) script.
 
 
-## <a name="2014_sinon"></a>[2014/sinon](2014/sinon/prog.c) ([index.html](2014/sinon/index.html))
+## <div id="2014_sinon">[2014/sinon](2014/sinon/prog.c) ([index.html](2014/sinon/index.html))</div>
 
 [Cody](#cody) fixed the code so that the game can play automatically like it
 once did. The problem is that it expects a certain file name which was
@@ -4261,7 +4261,7 @@ scripts in a loop until the user says they do not want to try again (or they
 kill it). This is done this way in case it jams (see index.html for details).
 
 
-## <a name="2014_skeggs"></a>[2014/skeggs](2014/skeggs/prog.c) ([index.html](2014/skeggs/index.html))
+## <div id="2014_skeggs">[2014/skeggs](2014/skeggs/prog.c) ([index.html](2014/skeggs/index.html))</div>
 
 [Cody](#cody) fixed the Makefile to compile this entry in modern systems. The problem was
 that the `CDEFINE` variable in the Makefile was missing `'`s: the `#define CC`
@@ -4279,7 +4279,7 @@ the index.html file for details) so Cody made sure that `make clobber` (via `mak
 clean`) removes those files and so that they are ignored by `.gitignore`.
 
 
-## <a name="2014_vik"></a>[2014/vik](2014/vik/prog.c) ([index.html](2014/vik/index.html))
+## <div id="2014_vik">[2014/vik](2014/vik/prog.c) ([index.html](2014/vik/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2014/vik/try.sh) script. Cody notes that there
 is a bug that will show itself as one of the features does not work right. The
@@ -4291,7 +4291,7 @@ theoretically work for Microsoft Windows compilers (if anything works in Windows
 that would break it we do not know.
 
 
-## <a name="2014_wiedijk"></a>[2014/wiedijk](2014/wiedijk/prog.c) ([index.html](2014/wiedijk/index.html))
+## <div id="2014_wiedijk">[2014/wiedijk](2014/wiedijk/prog.c) ([index.html](2014/wiedijk/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2014/wiedijk/try.sh) script which is based on
 the command to try in the 'try' section but improved so one can more easily
@@ -4301,10 +4301,10 @@ executable and it pipes it through less as it's longer than a page worth of
 output.
 
 
-# <a name="2015"></a>2015
+# <div id="2015">2015</div>
 
 
-## <a name="2015_burton"></a>[2015/endoh3](2015/burton/prog.c) ([index.html](2015/burton/index.html]))
+## <div id="2015_burton">[2015/endoh3](2015/burton/prog.c) ([index.html](2015/burton/index.html]))</div>
 
 
 [Cody](#cody) fixed the code so one can make use of the echo feature, where the
@@ -4345,7 +4345,7 @@ called `calc` and is in documentation including the man page. Thus one only need
 add a `./` to the commands in the man page/index.html.
 
 
-## <a name="2015_dogon"></a>[2015/endoh3](2015/dogon/prog.c) ([index.html](2015/dogon/index.html]))
+## <div id="2015_dogon">[2015/endoh3](2015/dogon/prog.c) ([index.html](2015/dogon/index.html]))</div>
 
 [Cody](#cody) improved the Makefile so that one can easily change the dimensions
 at compilation time via `make(1)`.
@@ -4355,17 +4355,17 @@ one change the value of `q` to a different number, in order to see a bug that
 they avoided.
 
 
-## <a name="2015_duble"></a>[2015/endoh3](2015/duble/prog.c) ([index.html](2015/duble/index.html]))
+## <div id="2015_duble">[2015/endoh3](2015/duble/prog.c) ([index.html](2015/duble/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2015/duble/try.sh) script.
 
 
-## <a name="2015_endoh2"></a>[2015/endoh2](2015/endoh2/prog.c) ([index.html](2015/endoh2/index.html]))
+## <div id="2015_endoh2">[2015/endoh2](2015/endoh2/prog.c) ([index.html](2015/endoh2/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2015/endoh2/try.sh) script.
 
 
-## <a name="2015_endoh3"></a>[2015/endoh3](2015/endoh3/prog.c) ([index.html](2015/endoh3/index.html]))
+## <div id="2015_endoh3">[2015/endoh3](2015/endoh3/prog.c) ([index.html](2015/endoh3/index.html]))</div>
 
 [Cody](#cody) fixed this to compile with Linux which was having a problem with duplicate
 symbols of `main()`. The fix is through the compiler option `-fcommon` which
@@ -4378,12 +4378,12 @@ simply typing `make back_to` or `make mullender`) and then runs the famous
 [1984/mullender.c](1984/mullender/mullender.c).
 
 
-## <a name="2015_endoh4"></a>[2015/endoh4](2015/endoh4/prog.c) ([index.html](2015/endoh4/index.html]))
+## <div id="2015_endoh4">[2015/endoh4](2015/endoh4/prog.c) ([index.html](2015/endoh4/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2015/endoh4/try.sh) script.
 
 
-## <a name="2015_hou"></a>[2015/hou](2015/hou/prog.c) ([index.html](2015/hou/index.html))
+## <div id="2015_hou">[2015/hou](2015/hou/prog.c) ([index.html](2015/hou/index.html))</div>
 
 [Cody](#cody) added explicit linking of libm (`-lm`) for systems that do not do this
 (Linux doesn't seem to but macOS does).
@@ -4396,7 +4396,7 @@ the directory, to make it so one need not download it, and which the index.html
 file now links to.
 
 
-## <a name="2015_howe"></a>[2015/howe](2015/howe/prog.c) ([index.html](2015/howe/index.html))
+## <div id="2015_howe">[2015/howe](2015/howe/prog.c) ([index.html](2015/howe/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2015/howe/try.sh) script, downloaded the War
 and Peace text file, fixed the [avgtime.sh](2015/howe/avgtime.sh) script (it
@@ -4405,7 +4405,7 @@ resulted in standard input errors in piping to `bc(1)`) and added the
 `gcc(1)` from Rocky Linux).
 
 
-## <a name="2015_mills1"></a>[2015/mills1](2015/mills1/prog.c) ([index.html](2015/mills1/index.html))
+## <div id="2015_mills1">[2015/mills1](2015/mills1/prog.c) ([index.html](2015/mills1/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2015/mills1/try.sh) script which changes the
 parameters to what we had in the judges' remarks to make it easier (he only died
@@ -4415,17 +4415,17 @@ also involves good eye-hand coordination and playing games like this in the
 past).
 
 
-## <a name="2015_mills2"></a>[2015/mills2](2015/mills2/prog.c) ([index.html](2015/mills2/index.html))
+## <div id="2015_mills2">[2015/mills2](2015/mills2/prog.c) ([index.html](2015/mills2/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2015/mills2/try.sh) script.
 
 
-## <a name="2015_muth"></a>[2015/muth](2015/muth/prog.c) ([index.html](2015/muth/index.html))
+## <div id="2015_muth">[2015/muth](2015/muth/prog.c) ([index.html](2015/muth/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2015/muth/try.sh) script.
 
 
-## <a name="2015_schweikhardt"></a>[2015/endoh3](2015/schweikhardt/prog.c) ([index.html](2015/schweikhardt/index.html]))
+## <div id="2015_schweikhardt">[2015/endoh3](2015/schweikhardt/prog.c) ([index.html](2015/schweikhardt/index.html]))</div>
 
 [Cody](#cody) fixed the build so that `EOF` will be `-1` as the program assumes
 this. It was decided by Cody to do `-UEOF -DEOF=-1` so as to not have to modify
@@ -4435,7 +4435,7 @@ the code any with C preprocessor directives (the preferred way) or changing
 Cody also added the [try.sh](2015/schweikhardt/try.sh) script.
 
 
-## <a name="2015_yang"></a>[2015/yang](2015/yang/prog.c) ([index.html](2015/yang/index.html]))
+## <div id="2015_yang">[2015/yang](2015/yang/prog.c) ([index.html](2015/yang/index.html]))</div>
 
 [Cody](#cody) fixed an unfortunate typo in the Makefile that was preventing some of the
 files from compiling properly, trying instead to compile already compiled code.
@@ -4446,22 +4446,22 @@ He also added explicit linking of libm (`-lm`) for systems that do not do this
 He also added the [try.sh](2015/yang/try.sh) script.
 
 
-# <a name="2018"></a>2018
+# <div id="2018">2018</div>
 
 
-## <a name="2018_anderson"></a>[2018/anderson](2018/anderson/prog.c) ([index.html](2018/anderson/index.html))
+## <div id="2018_anderson">[2018/anderson](2018/anderson/prog.c) ([index.html](2018/anderson/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2018/anderson/try.sh) and
 [try.alt.sh](2018/anderson/try.alt.sh) scripts.
 
 
-## <a name="2018_algmyr"></a>[2018/algmyr](2018/algmyr/prog.c) ([index.html](2018/algmyr/index.html))
+## <div id="2018_algmyr">[2018/algmyr](2018/algmyr/prog.c) ([index.html](2018/algmyr/index.html))</div>
 
 
 [Cody](#cody) added the [try.sh](2018/algmyr/try.sh) script.
 
 
-## <a name="2018_bellard"></a>[2018/bellard](2018/bellard/prog.c) ([index.html](2018/bellard/index.html))
+## <div id="2018_bellard">[2018/bellard](2018/bellard/prog.c) ([index.html](2018/bellard/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2018/bellard/try.sh) script.
 
@@ -4480,7 +4480,7 @@ of args to `main()` that was done in the original entry was done with this
 version as well.
 
 
-## <a name="2018_burton1"></a>[2018/burton1](2018/burton1/prog.c) ([index.html](2018/burton1/index.html))
+## <div id="2018_burton1">[2018/burton1](2018/burton1/prog.c) ([index.html](2018/burton1/index.html))</div>
 
 [Cody](#cody) fixed the `scripthd` script (referred to `prog` not `./prog`) and
 renamed it to [scripthd.sh](2018/burton1/scripthd.sh) to help browsers and
@@ -4490,7 +4490,7 @@ Cody also added the [try.sh](2018/burton1/try.sh) script which also uses
 `scripthd.sh` to show how it differs from `prog` itself.
 
 
-## <a name="2018_burton2"></a>[2018/burton2](2018/burton2/prog.c) ([index.html](2018/burton2/index.html))
+## <div id="2018_burton2">[2018/burton2](2018/burton2/prog.c) ([index.html](2018/burton2/index.html))</div>
 
 [Cody](#cody) fixed the `make test` rule: it tried to run `tac(1)` (in systems
 that have that command) rather than the entry itself which is called `tac` and
@@ -4514,7 +4514,7 @@ included in the remarks of the author but not an included file.
 Finally Cody added the [try.sh](2018/burton2/try.sh) script.
 
 
-## <a name="2018_ciura"></a>[2018/ciura](2018/ciura/prog.c) ([index.html](2018/ciura/index.html))
+## <div id="2018_ciura">[2018/ciura](2018/ciura/prog.c) ([index.html](2018/ciura/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2018/ciura/try.sh) and
 [try.alt.sh](2018/ciura/try.alt.sh) scripts and the PDF file,
@@ -4522,7 +4522,7 @@ Finally Cody added the [try.sh](2018/burton2/try.sh) script.
 Internet Wayback Machine.
 
 
-## <a name="2018_endoh1"></a>[2018/endoh1](2018/endoh1/prog.c) ([index.html](2018/endoh1/index.html))
+## <div id="2018_endoh1">[2018/endoh1](2018/endoh1/prog.c) ([index.html](2018/endoh1/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2018/endoh1/try.sh) script which shows the
 input files one at a time and after each one is shown, it feeds it to the
@@ -4533,7 +4533,7 @@ remarks. The input files offered includes the prog.c as the author,
 [Yusuke](#yusuke), suggested that it too has a secret.
 
 
-## <a name="2018_endoh2"></a>[2018/endoh2](2018/endoh2/prog.c) ([index.html](2018/endoh2/index.html))
+## <div id="2018_endoh2">[2018/endoh2](2018/endoh2/prog.c) ([index.html](2018/endoh2/index.html))</div>
 
 [Cody](#cody) fixed the [run.sh](2018/endoh2/run.sh) script (had commands that didn't
 exist and also didn't work even after that was addressed) and added the
@@ -4545,7 +4545,7 @@ exit the script). The `make python` and `make python3` rules in the Makefile now
 run the respective scripts.
 
 
-## <a name="2018_ferguson"></a>[2018/ferguson](2018/ferguson/prog.c) ([index.html](2018/ferguson/index.html))
+## <div id="2018_ferguson">[2018/ferguson](2018/ferguson/prog.c) ([index.html](2018/ferguson/index.html))</div>
 
 [Cody](#cody), with irony well intended :-), fixed the [test.sh
 script](2018/ferguson/test.sh) for portability, shellcheck, making it executable
@@ -4558,7 +4558,7 @@ that's probably true: let's just say that for the IOCCC I'm (Cody) a weasel! :-)
 (but isn't that kind of the point ? :-) )
 
 
-## <a name="2018_hou"></a>[2018/hou](2018/hou/prog.c) ([index.html](2018/hou/index.html))
+## <div id="2018_hou">[2018/hou](2018/hou/prog.c) ([index.html](2018/hou/index.html))</div>
 
 [Cody](#cody) added explicit linking of libm (`-lm`) for systems that do not do this
 (Linux doesn't seem to but macOS does).
@@ -4566,7 +4566,7 @@ that's probably true: let's just say that for the IOCCC I'm (Cody) a weasel! :-)
 Cody also added the [try.sh](2018/hou/try.sh) script.
 
 
-## <a name="2018_mills"></a>[2018/mills](2018/mills/prog.c) ([index.html](2018/mills/index.html))
+## <div id="2018_mills">[2018/mills](2018/mills/prog.c) ([index.html](2018/mills/index.html))</div>
 
 [Cody](#cody), based on the author's remarks, made it possible to save state
 between runs of the program so that one can resume where they left off. It
@@ -4578,7 +4578,7 @@ it might be corrupt. See [2018/mills in bugs.html](bugs.html#2018-mills) for mor
 details on the bug.
 
 
-## <a name="2018_poikola"></a>[2018/poikola](2018/poikola/prog.c) ([index.html[(2018/poikola/index.html))
+## <div id="2018_poikola">[2018/poikola](2018/poikola/prog.c) ([index.html[(2018/poikola/index.html))</div>
 
 [Cody](#cody) added the missing `docs` rule to the Makefile that forms a PDF
 file. The rule requires the tool `pdflatex`.
@@ -4591,12 +4591,12 @@ We added some additional notes on what might happen (it varies depending on
 configuration).
 
 
-## <a name="2018_vokes"></a>[2018/vokes](2018/vokes/prog.c) ([index.html](2018/vokes/index.html))
+## <div id="2018_vokes">[2018/vokes](2018/vokes/prog.c) ([index.html](2018/vokes/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2018/vokes/try.sh) script.
 
 
-## <a name="2018_yang"></a>[2018/yang](2018/yang/prog.c) ([index.html](2018/yang/index.html))
+## <div id="2018_yang">[2018/yang](2018/yang/prog.c) ([index.html](2018/yang/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2018/yang/try.sh) script. This script will ask
 if the user wants to see some of the spoilers and only show them if they type
@@ -4604,17 +4604,17 @@ if the user wants to see some of the spoilers and only show them if they type
 
 
 
-# <a name="2019"></a>2019
+# <div id="2019">2019</div>
 
 
-## <a name="2019_adamovsky"></a>[2019/adamovsky](2019/adamovsky/prog.c) ([index.html](2019/adamovsky/index.html]))
+## <div id="2019_adamovsky">[2019/adamovsky](2019/adamovsky/prog.c) ([index.html](2019/adamovsky/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2019/adamovsky/try.sh) script and the Unlambda
 file [crash.unl](2019/adamovsky/crash.unl) which is in the judges' remarks as
 to what can crash it - but it's not a bug, it's a feature.
 
 
-## <a name="2019_burton"></a>[2019/burton](2019/burton/prog.c) ([index.html](2019/burton/index.html]))
+## <div id="2019_burton">[2019/burton](2019/burton/prog.c) ([index.html](2019/burton/index.html]))</div>
 
 [Cody](#cody) fixed the Makefile which had a bad character, a '%' instead of a '$' which
 caused a rule to fail.
@@ -4635,7 +4635,7 @@ Cody also renamed the file `on.one.liners` to
 browsers/GitHub.
 
 
-## <a name="2019_ciura"></a>[2019/ciura](2019/ciura/prog.c) ([index.html](2019/ciura/index.html]))
+## <div id="2019_ciura">[2019/ciura](2019/ciura/prog.c) ([index.html](2019/ciura/index.html]))</div>
 
 [Cody](#cody) fixed an invalid bytes error in `tr` in the scripts. This does not
 mean that they will produce any output, though, as they provide expect all
@@ -4658,7 +4658,7 @@ bugs.html](bugs.html#2019-ciura) for more details.
 
 
 
-## <a name="2019_diels-grabsch1"></a>[2019/diels-grabsch1](2019/diels-grabsch1/prog.c) ([index.html](2019/diels-grabsch1/index.html]))
+## <div id="2019_diels-grabsch1">[2019/diels-grabsch1](2019/diels-grabsch1/prog.c) ([index.html](2019/diels-grabsch1/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2019/diels-grabsch1/try.sh) script.
 
@@ -4669,7 +4669,7 @@ entry in a subdirectory). This is more important as there is discussion of
 having tarballs for each individual entry as a convenience.
 
 
-## <a name="2019_diels-grabsch2"></a>[2019/diels-grabsch2](2019/diels-grabsch2/prog.c) ([index.html](2019/diels-grabsch2/index.html]))
+## <div id="2019_diels-grabsch2">[2019/diels-grabsch2](2019/diels-grabsch2/prog.c) ([index.html](2019/diels-grabsch2/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2019/diels-grabsch2/try.sh) script. This
 script will try and show the difference (i.e. the same output) between the
@@ -4678,7 +4678,7 @@ tools can be found but otherwise it'll just run the program itself, showing its
 own sha512sum value.
 
 
-## <a name="2019_dogon"></a>[2019/dogon](2019/dogon/prog.c) ([index.html](2019/dogon/index.html))
+## <div id="2019_dogon">[2019/dogon](2019/dogon/prog.c) ([index.html](2019/dogon/index.html))</div>
 
 [Cody](#cody) added explicit linking of libm (`-lm`) for systems that do not do this
 (Linux does not seem to but macOS does).
@@ -4696,7 +4696,7 @@ was to only correct spelling and only some, not to change wording or anything
 else).
 
 
-## <a name="2019_duble"></a>[2019/duble](2019/duble/prog.c) ([index.html](2019/duble/index.html]))
+## <div id="2019_duble">[2019/duble](2019/duble/prog.c) ([index.html](2019/duble/index.html]))</div>
 
 [Cody](#cody) made the `make fullscreen` more portable by not relying on
 `stty(1)` and `sed(1)` but rather it just uses `tput(1)`. He also made it so
@@ -4709,7 +4709,7 @@ how to easily compile the program to a specific size. Note that `LINES` and
 `COLUMNS` is not available to scripts so it can't make use of them that way.
 
 
-## <a name="2019_endoh"></a>[2019/endoh](2019/endoh/prog.c) ([index.html](2019/endoh/index.html]))
+## <div id="2019_endoh">[2019/endoh](2019/endoh/prog.c) ([index.html](2019/endoh/index.html]))</div>
 
 As this is a backtrace quine having the optimiser enabled is not a good idea so
 [Cody](#cody) disabled it. For this same reason he also added the `-g` flag to the
@@ -4723,12 +4723,12 @@ to easily reconstruct the source code through GDB by the fact it's a backtrace
 quine.
 
 
-## <a name="2019_giles"></a>[2019/giles](2019/giles/prog.c) ([index.html](2019/giles/index.html]))
+## <div id="2019_giles">[2019/giles](2019/giles/prog.c) ([index.html](2019/giles/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2019/giles/try.sh) script.
 
 
-## <a name="2019_karns"></a>[2019/karns](2019/karns/prog.c) ([index.html](2019/karns/index.html]))
+## <div id="2019_karns">[2019/karns](2019/karns/prog.c) ([index.html](2019/karns/index.html]))</div>
 
 [Cody](#cody) reported that with `-O` level > 0 this program segfaults (sometimes?). He's
 not sure why as it worked fine before on the same systems tested but `-O0`
@@ -4740,7 +4740,7 @@ He also added the script [try.sh](2019/karns/try.sh) to showcase the entry a
 bit more easily.
 
 
-## <a name="2019_lynn"></a>[2019/lynn](2019/lynn/prog.c) ([index.html](2019/lynn/index.html]))
+## <div id="2019_lynn">[2019/lynn](2019/lynn/prog.c) ([index.html](2019/lynn/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2019/lynn/try.sh) script.
 
@@ -4750,12 +4750,12 @@ Cody also added the [example-1.txt](2019/lynn/example-1.txt) and
 entry existing.
 
 
-## <a name="2019_mills"></a>[2019/mills](2019/mills/prog.c) ([index.html](2019/mills/index.html]))
+## <div id="2019_mills">[2019/mills](2019/mills/prog.c) ([index.html](2019/mills/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2019/mills/try.sh) script.
 
 
-## <a name="2019_poikola"></a>[2019/poikola](2019/poikola/prog.c) ([index.html[(2019/poikola/index.html))
+## <div id="2019_poikola">[2019/poikola](2019/poikola/prog.c) ([index.html[(2019/poikola/index.html))</div>
 
 [Cody](#cody) added the missing `docs` rule to the Makefile that forms a PDF
 file. The rule requires the tool
@@ -4774,7 +4774,7 @@ tested: `gnu17` was not tested but `gnu11` was so the standard was set to
 `gnu11`.
 
 
-## <a name="2019_yang"></a>[2019/yang](2019/yang/prog.c) ([index.html](2019/yang/index.html]))
+## <div id="2019_yang">[2019/yang](2019/yang/prog.c) ([index.html](2019/yang/index.html]))</div>
 
 [Cody](#cody) added the [try.sh](2019/yang/try.sh) script which also involved
 slightly updating the [sample_input.txt](2019/yang/sample_input.txt) file
@@ -4782,10 +4782,10 @@ slightly updating the [sample_input.txt](2019/yang/sample_input.txt) file
 shouldn't) and adding the [ioccc.txt](2019/yang/ioccc.txt) file.
 
 
-# <a name="2020"></a>2020
+# <div id="2020">2020</div>
 
 
-## <a name="2020_burton"></a>[2020/burton](2020/burton/prog.c) ([index.html](2020/burton/index.html))
+## <div id="2020_burton">[2020/burton](2020/burton/prog.c) ([index.html](2020/burton/index.html))</div>
 
 [Cody](#cody) fixed the script [check_be.sh](2020/burton/check_be.sh): it
 assumed that `prog_be` was in `PATH` which is unlikely so it was changed to
@@ -4798,7 +4798,7 @@ showing nothing at all.
 Cody also added the [try.sh](2020/burton/try.sh) script.
 
 
-## <a name="2020_carlini"></a>[2020/carlini](2020/carlini/prog.c) ([index.html](2020/carlini/index.html))
+## <div id="2020_carlini">[2020/carlini](2020/carlini/prog.c) ([index.html](2020/carlini/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2020/carlini/try.sh) script which although at
 first glance might not appear to have a point, it actually does, namely showing
@@ -4806,7 +4806,7 @@ how you can automate play and then reminding you to actually play for real, with
 a friend, whether that's real or imagined.
 
 
-## <a name="2020_endoh2"></a>[2020/endoh2](2020/endoh2/prog.c) ([index.html](2020/endoh2/index.html))
+## <div id="2020_endoh2">[2020/endoh2](2020/endoh2/prog.c) ([index.html](2020/endoh2/index.html))</div>
 
 [Cody](#cody) copied the files from the spoiler.zip file (from his copy during
 the preview period) that was password protected with a password that was no
@@ -4815,7 +4815,7 @@ longer known.
 He also added the [try.sh](2020/endoh2/try.sh) script.
 
 
-## <a name="2020_endoh3"></a>[2020/endoh3](2020/endoh3/prog.c) ([index.html](2020/endoh3/index.html))
+## <div id="2020_endoh3">[2020/endoh3](2020/endoh3/prog.c) ([index.html](2020/endoh3/index.html))</div>
 
 [Cody](#cody) fixed the script [run_clock.sh](2020/endoh3/run_clock.sh) which gave a
 funny error when running it:
@@ -4857,7 +4857,7 @@ which is analogous to the [run_clock.sh](2020/endoh3/run_clock.sh) but for the
 alt code provided by the author, Yusuke.
 
 
-## <a name="2020_ferguson1"></a>[2020/ferguson1](2020/ferguson1/prog.c) ([index.html](2020/ferguson1/index.html))
+## <div id="2020_ferguson1">[2020/ferguson1](2020/ferguson1/prog.c) ([index.html](2020/ferguson1/index.html))</div>
 
 [Cody](#cody), with intentional irony here :-), fixed formatting, links and typos in
 various files.
@@ -4877,7 +4877,7 @@ recommend you give it a go! :-) You're welcome to ask me questions if you wish
 and I encourage you to do so as the cake is quite picky!
 
 
-## <a name="2020_ferguson2"></a>[2020/ferguson2](2020/ferguson2/prog.c) ([index.html](2020/ferguson2/index.html))
+## <div id="2020_ferguson2">[2020/ferguson2](2020/ferguson2/prog.c) ([index.html](2020/ferguson2/index.html))</div>
 
 [Cody](#cody), with intentional irony here :-), fixed formatting, links and typos in
 various files.
@@ -4905,7 +4905,7 @@ recommend you give it a go! :-) You're welcome to ask me questions if you wish
 and I encourage you to do so as the cake is quite picky!
 
 
-## <a name="2020_giles"></a>[2020/giles](2020/giles/prog.c) ([index.html](2020/giles/index.html))
+## <div id="2020_giles">[2020/giles](2020/giles/prog.c) ([index.html](2020/giles/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2020/giles/try.sh) script. This script does
 the conversion of `pi.wav` (showing the digits) and also converts the number for
@@ -4919,12 +4919,12 @@ and tells them they will have to play the WAV files manually. Otherwise it'll
 use the program to play the WAV files (and in one case `stdout`).
 
 
-## <a name="2020_kurdyukov1"></a>[2020/kurdyukov1](2020/kurdyukov1/prog.c) ([index.html](2020/kurdyukov1/index.html))
+## <div id="2020_kurdyukov1">[2020/kurdyukov1](2020/kurdyukov1/prog.c) ([index.html](2020/kurdyukov1/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2020/kurdyukov1/try.sh) script.
 
 
-## <a name="2020_kurdyukov2"></a>[2020/kurdyukov2](2020/kurdyukov2/prog.c) ([index.html](2020/kurdyukov2/index.html))
+## <div id="2020_kurdyukov2">[2020/kurdyukov2](2020/kurdyukov2/prog.c) ([index.html](2020/kurdyukov2/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2020/kurdyukov2/try.sh) script.
 
@@ -4940,7 +4940,7 @@ specify which compiler to use with `CC=foo ./makegif.sh ...`), checking that
 entry if not installed or it fails).
 
 
-## <a name="2020_kurdyukov3"></a>[2020/kurdyukov3](2020/kurdyukov3/prog.c) ([index.html](2020/kurdyukov3/index.html))
+## <div id="2020_kurdyukov3">[2020/kurdyukov3](2020/kurdyukov3/prog.c) ([index.html](2020/kurdyukov3/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2020/kurdyukov3/try.sh) script.
 
@@ -4949,7 +4949,7 @@ index.html. Naturally he's one of the ones who can read text even if it's even
 more jumbled but we know of others too.
 
 
-## <a name="2020_kurdyukov4"></a>[2020/kurdyukov4](2020/kurdyukov4/prog.c) ([index.html](2020/kurdyukov4/index.html))
+## <div id="2020_kurdyukov4">[2020/kurdyukov4](2020/kurdyukov4/prog.c) ([index.html](2020/kurdyukov4/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2020/kurdyukov4/try.sh) script.
 
@@ -4964,7 +4964,7 @@ set by the late Christopher Tolkien, son and literary executor and heir to
 J.R.R. Tolkien).
 
 
-## <a name="2020_otterness"></a>[2020/otterness](2020/otterness/prog.c) ([index.html](2020/otterness/index.html))
+## <div id="2020_otterness">[2020/otterness](2020/otterness/prog.c) ([index.html](2020/otterness/index.html))</div>
 
 
 [Cody](#cody) added the MIDI files [cvikl.mid](2020/otterness/cvikl.mid) and
@@ -4975,14 +4975,14 @@ even if the domain or link goes dead.
 Cody also added the [try.sh](2020/otterness/try.sh) script.
 
 
-## <a name="2020_tsoj"></a>[2020/tsoj](2020/tsoj/prog.c) ([index.html](2020/tsoj/index.html))
+## <div id="2020_tsoj">[2020/tsoj](2020/tsoj/prog.c) ([index.html](2020/tsoj/index.html))</div>
 
 [Cody](#cody) added [alternate code](2020/tsoj/index.html#alternate-code) that will feel
 more at home for vi users. One might still end up cursing (see the index.html
 file) but probably a lot less :-)
 
 
-## <a name="2020_yang"></a>[2020/yang](2020/yang/prog.c) ([index.html](2020/yang/index.html))
+## <div id="2020_yang">[2020/yang](2020/yang/prog.c) ([index.html](2020/yang/index.html))</div>
 
 [Cody](#cody) added the [try.sh](2020/yang/try.sh) script.
 
@@ -4992,10 +4992,10 @@ compilers. See the index.html for more details.
 
 
 
-# <a name="general_thanks"></a>General thanks
+# <div id="general_thanks">General thanks</div>
 
 
-## <a name="makefiles_fixes_improvements"></a>Makefiles fixes and improvements
+## <div id="makefiles_fixes_improvements">Makefiles fixes and improvements</div>
 
 [Cody](#cody) fixed the top level Makefile `all` rule which had a stray `fi;`
 without an `if` so the rule failed entirely.
@@ -5053,7 +5053,7 @@ Cody's [sgit tool](https://github.com/xexyl/sgit) but many other changes he did
 manually.
 
 
-## <a name="consistency_improvements"></a>Consistency improvements
+## <div id="consistency_improvements">Consistency improvements</div>
 
 [Cody](#cody), being the IOCCC's resident corrections officer :-) (and a fine one at
 that, we think :-) ), made many, many typ0 (... :-) ) fixes throughout the
@@ -5073,7 +5073,7 @@ tool](https://github.com/xexyl/sgit) as well but the vast majority were done
 manually.
 
 
-## <a name="thank_you_honor_roll"></a>Thank you honor roll
+## <div id="thank_you_honor_roll">Thank you honor roll</div>
 
 There are a number of people who have contributed to several thousand changes,
 fixes and important improvements and one who has literally (or numerically :-) )
@@ -5090,7 +5090,7 @@ judges](../judges.html) **VERY MUCH APPRECIATE** those who
 helped improve the presentation of their fellow IOCCC entries.
 
 
-### <a name="cody"></a>Cody Boone Ferguson
+### <div id="cody">Cody Boone Ferguson</div>
 
 We call out the extensive contributions of [Cody Boone
 Ferguson](../authors.html#Cody_Boone_Ferguson) who is
@@ -5131,7 +5131,7 @@ presentation of past IOCCC entries and fixing almost all past entries for modern
 systems!
 
 
-### <a name="yusuke"></a>Yusuke Endoh
+### <div id="yusuke">Yusuke Endoh</div>
 
 [Yusuke Endoh](../authors.html#Yusuke_Endoh) supplied a
 number of important bug fixes to a number of past IOCCC entries. Some of those
@@ -5143,7 +5143,7 @@ fixes were **EXTREMELY TECHNICALLY CHALLENGING** such as
 your help!
 
 
-## <a name="neglect"></a>Did we neglect to credit you?
+## <div id="neglect">Did we neglect to credit you?</div>
 
 If you submitted a fix to an entry for which you are not the author,
 and your fix is accepted (in part or as a whole), we would be happy

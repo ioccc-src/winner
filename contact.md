@@ -36,7 +36,7 @@ and suggestion in the relevant places.
 See the above FAQ entries for more details.
 
 
-# <a name="mastodon"></a>Try mastodon
+# <div id="mastodon">Try mastodon</div>
 
 You may wish to follow us [IOCCC on Mastodon](https://fosstodon.org/@ioccc)
 as we use that platform to announce things such as the opening of a new IOCCC
