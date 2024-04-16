@@ -272,7 +272,7 @@ help:
 	@echo "make gen_top_html - generate a number of the top level HTML files from markdown"
 	@echo "make quick_entry_index - build winner index.html files that might be out of date"
 	@echo "make quick_www - generate html files more quickly, checking timestamps"
-	@echo "make www - build html pages for website"
+	@echo "make www - build html pages for web site"
 	@echo
 	@echo "make untar_entry_tarball - untar all entry tarballs"
 	@echo "make untar_year_tarball - untar all year level tarballs"
