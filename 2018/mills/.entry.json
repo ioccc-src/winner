@@ -42,16 +42,8 @@
 	    "entry_text" : "download entry tarball"
 	},
 	{
-	    "file_path" : "index.html",
-	    "inventory_order" : 2000000000,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "this web page"
-	},
-	{
 	    "file_path" : ".entry.json",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "json",
 	    "display_via_github" : true,
@@ -59,7 +51,7 @@
 	},
 	{
 	    "file_path" : ".gitignore",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "gitignore",
 	    "display_via_github" : true,
@@ -67,7 +59,7 @@
 	},
 	{
 	    "file_path" : ".path",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : false,
 	    "display_as" : "path",
 	    "display_via_github" : true,
@@ -75,7 +67,7 @@
 	},
 	{
 	    "file_path" : "README.md",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
@@ -83,7 +75,7 @@
 	},
 	{
 	    "file_path" : "boot.dat",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
@@ -91,7 +83,7 @@
 	},
 	{
 	    "file_path" : "bsd.img.bz2",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "bzip2",
 	    "display_via_github" : false,
@@ -99,7 +91,7 @@
 	},
 	{
 	    "file_path" : "v0.image.fs",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
@@ -107,11 +99,19 @@
 	},
 	{
 	    "file_path" : "v6.tape.gz",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "gzip",
 	    "display_via_github" : false,
 	    "entry_text" : "compressed filesystem image"
+	},
+	{
+	    "file_path" : "index.html",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "this web page"
 	}
     ]
 }

@@ -186,16 +186,8 @@
 	    "entry_text" : "download entry tarball"
 	},
 	{
-	    "file_path" : "index.html",
-	    "inventory_order" : 2000000000,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "this web page"
-	},
-	{
 	    "file_path" : ".entry.json",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "json",
 	    "display_via_github" : true,
@@ -203,7 +195,7 @@
 	},
 	{
 	    "file_path" : ".gitignore",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "gitignore",
 	    "display_via_github" : true,
@@ -211,7 +203,7 @@
 	},
 	{
 	    "file_path" : ".path",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : false,
 	    "display_as" : "path",
 	    "display_via_github" : true,
@@ -219,7 +211,7 @@
 	},
 	{
 	    "file_path" : "COMPILING.md",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
@@ -227,7 +219,7 @@
 	},
 	{
 	    "file_path" : "HACKING.md",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
@@ -235,7 +227,7 @@
 	},
 	{
 	    "file_path" : "README.md",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
@@ -243,7 +235,7 @@
 	},
 	{
 	    "file_path" : "bugs.md",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
@@ -251,7 +243,7 @@
 	},
 	{
 	    "file_path" : "cake.jpg",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
@@ -259,7 +251,7 @@
 	},
 	{
 	    "file_path" : "cannibalism.log.md",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
@@ -267,7 +259,7 @@
 	},
 	{
 	    "file_path" : "chocolate-cake.md",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
@@ -275,7 +267,7 @@
 	},
 	{
 	    "file_path" : "crazy.log.md",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
@@ -283,7 +275,7 @@
 	},
 	{
 	    "file_path" : "gameplay.md",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
@@ -291,7 +283,7 @@
 	},
 	{
 	    "file_path" : "halfwidth_vs_fullwidth.png",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
@@ -299,7 +291,7 @@
 	},
 	{
 	    "file_path" : "ioccc-cake.jpg",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
@@ -307,7 +299,7 @@
 	},
 	{
 	    "file_path" : "spoilers.md",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
@@ -315,7 +307,7 @@
 	},
 	{
 	    "file_path" : "terminals.md",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
@@ -323,11 +315,19 @@
 	},
 	{
 	    "file_path" : "troubleshooting.md",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
 	    "entry_text" : "markdown source for troubleshooting.html"
+	},
+	{
+	    "file_path" : "index.html",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "this web page"
 	}
     ]
 }

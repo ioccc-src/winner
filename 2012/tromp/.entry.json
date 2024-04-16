@@ -74,16 +74,8 @@
 	    "entry_text" : "download entry tarball"
 	},
 	{
-	    "file_path" : "index.html",
-	    "inventory_order" : 2000000000,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "this web page"
-	},
-	{
 	    "file_path" : ".entry.json",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "json",
 	    "display_via_github" : true,
@@ -91,7 +83,7 @@
 	},
 	{
 	    "file_path" : ".gitignore",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "gitignore",
 	    "display_via_github" : true,
@@ -99,7 +91,7 @@
 	},
 	{
 	    "file_path" : ".path",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : false,
 	    "display_as" : "path",
 	    "display_via_github" : true,
@@ -107,7 +99,7 @@
 	},
 	{
 	    "file_path" : "README.md",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
@@ -115,7 +107,7 @@
 	},
 	{
 	    "file_path" : "bf.Blc",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
@@ -123,7 +115,7 @@
 	},
 	{
 	    "file_path" : "deflate.Blc",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
@@ -131,7 +123,7 @@
 	},
 	{
 	    "file_path" : "hilbert.Blc",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
@@ -139,7 +131,7 @@
 	},
 	{
 	    "file_path" : "how.md",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
@@ -147,7 +139,7 @@
 	},
 	{
 	    "file_path" : "inflate.Blc",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
@@ -155,7 +147,7 @@
 	},
 	{
 	    "file_path" : "oddindices.Blc",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
@@ -163,7 +155,7 @@
 	},
 	{
 	    "file_path" : "parse.Blc",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
@@ -171,7 +163,7 @@
 	},
 	{
 	    "file_path" : "primes.blc",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
@@ -179,7 +171,7 @@
 	},
 	{
 	    "file_path" : "symbolic.Blc",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
@@ -187,7 +179,7 @@
 	},
 	{
 	    "file_path" : "uni.blc",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
@@ -195,11 +187,19 @@
 	},
 	{
 	    "file_path" : "uni8.Blc",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
 	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "index.html",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "this web page"
 	}
     ]
 }

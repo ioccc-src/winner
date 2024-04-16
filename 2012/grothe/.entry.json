@@ -59,16 +59,8 @@
 	    "entry_text" : "download entry tarball"
 	},
 	{
-	    "file_path" : "index.html",
-	    "inventory_order" : 2000000000,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "this web page"
-	},
-	{
 	    "file_path" : ".entry.json",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "json",
 	    "display_via_github" : true,
@@ -76,7 +68,7 @@
 	},
 	{
 	    "file_path" : ".gitignore",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "gitignore",
 	    "display_via_github" : true,
@@ -84,7 +76,7 @@
 	},
 	{
 	    "file_path" : ".path",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : false,
 	    "display_as" : "path",
 	    "display_via_github" : true,
@@ -92,7 +84,7 @@
 	},
 	{
 	    "file_path" : "README.md",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
@@ -100,7 +92,7 @@
 	},
 	{
 	    "file_path" : "cookie_piece1.dat",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
@@ -108,7 +100,7 @@
 	},
 	{
 	    "file_path" : "cookie_piece2.dat",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
@@ -116,7 +108,7 @@
 	},
 	{
 	    "file_path" : "cookie_piece3.dat",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
@@ -124,7 +116,7 @@
 	},
 	{
 	    "file_path" : "cookie_piece4.dat",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
@@ -132,11 +124,19 @@
 	},
 	{
 	    "file_path" : "cookie_recipe_restore.txt",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
 	    "entry_text" : "encoded cookie recipe"
+	},
+	{
+	    "file_path" : "index.html",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "this web page"
 	}
     ]
 }

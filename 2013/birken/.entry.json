@@ -282,16 +282,8 @@
 	    "entry_text" : "download entry tarball"
 	},
 	{
-	    "file_path" : "index.html",
-	    "inventory_order" : 2000000000,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "this web page"
-	},
-	{
 	    "file_path" : ".entry.json",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "json",
 	    "display_via_github" : true,
@@ -299,7 +291,7 @@
 	},
 	{
 	    "file_path" : ".gitignore",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "gitignore",
 	    "display_via_github" : true,
@@ -307,7 +299,7 @@
 	},
 	{
 	    "file_path" : ".path",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : false,
 	    "display_as" : "path",
 	    "display_via_github" : true,
@@ -315,7 +307,7 @@
 	},
 	{
 	    "file_path" : "README.md",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
@@ -323,7 +315,7 @@
 	},
 	{
 	    "file_path" : "multi2.gif",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
@@ -331,7 +323,7 @@
 	},
 	{
 	    "file_path" : "multi3.gif",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
@@ -339,7 +331,7 @@
 	},
 	{
 	    "file_path" : "multi4.gif",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
@@ -347,7 +339,7 @@
 	},
 	{
 	    "file_path" : "multi5.gif",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
@@ -355,7 +347,7 @@
 	},
 	{
 	    "file_path" : "pen0.gif",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
@@ -363,7 +355,7 @@
 	},
 	{
 	    "file_path" : "pen1.gif",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
@@ -371,7 +363,7 @@
 	},
 	{
 	    "file_path" : "pen2.gif",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
@@ -379,7 +371,7 @@
 	},
 	{
 	    "file_path" : "pen4.gif",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
@@ -387,7 +379,7 @@
 	},
 	{
 	    "file_path" : "pen5.gif",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
@@ -395,7 +387,7 @@
 	},
 	{
 	    "file_path" : "pen6.gif",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
@@ -403,7 +395,7 @@
 	},
 	{
 	    "file_path" : "pen7.gif",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
@@ -411,7 +403,7 @@
 	},
 	{
 	    "file_path" : "pen8.gif",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
@@ -419,7 +411,7 @@
 	},
 	{
 	    "file_path" : "platform0.gif",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
@@ -427,7 +419,7 @@
 	},
 	{
 	    "file_path" : "platform1.gif",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
@@ -435,7 +427,7 @@
 	},
 	{
 	    "file_path" : "platform2.gif",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
@@ -443,7 +435,7 @@
 	},
 	{
 	    "file_path" : "triple0.gif",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
@@ -451,11 +443,19 @@
 	},
 	{
 	    "file_path" : "triple1.gif",
-	    "inventory_order" : 4294967295,
+	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
 	    "entry_text" : "stages of constructed of rectangular regions"
+	},
+	{
+	    "file_path" : "index.html",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "this web page"
 	}
     ]
 }
