@@ -463,6 +463,89 @@ a:active {
   text-decoration: none;
 }
 
+/* Topbar ======================================================================================== */
+
+.outfit-font {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.theader {
+  width: 100%;
+  min-height: 72px;
+  box-shadow: 0 5px 10px 0 rgba(21,76,159,.0509803922);
+}
+
+.topbar {
+  width: 100%;
+  background-color: white;
+  height: 72px;
+}
+
+.container {
+  height: 72px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo {
+  color: #154c9f;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 40px;
+  cursor: pointer;
+  text-decoration: none !important;
+
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.topbar-items {
+  display: flex;
+  gap: 48px;
+}
+
+.topbar-items .item {
+  position: relative;
+  color: #154c9f;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.item-header {
+  display: block;
+}
+
+.topbar-items .sub-item {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 200px;
+  padding: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #154c9f;
+  text-align: left;
+  background-color: white;
+  left: -100%;
+}
+
+.topbar-items .item:hover .sub-item{
+  display: flex !important;
+}
+
 /* Header ======================================================================================== */
 
 /* Style the header */
@@ -521,83 +604,30 @@ a:active {
   padding: 0;
 }
 
-/* Side navigation bar =========================================================================== */
-
-/* Style the side navigation bar */
-.sidenav {
-  overflow: hidden;
-}
-
-/* Style the sidenav links */
-.sidenav a {
-  float: left;
-  display: block;
-  color: blue;
-  text-align: left;
-  padding: 14px 16px;
-  text-decoration: none;
-  width: 100%;
-  background-color: #ddd;
-}
-
-/* Change sidenav link color on hover */
-.sidenav a:hover {
-  background-color: #ccc;
-  text-decoration: underline;
-}
-
-/* Change sidenav link after visit */
-.sidenav a:visited {
-  color: purple;
-}
-
-/* Change sidenav link when active */
-.sidenav a:active {
-  color: red;
-}
-
-/* Two unequal columns =========================================================================== */
-
-/* Create two unequal columns that floats next to each other */
-
-/* Style the left column */
-.leftcolumn {
-  float: left;
-  width: 20%;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-}
-
-/* Left column horizontal line */
-.leftcolumn hr {
-  border-style: solid;
-  border-width: 1px;
-}
+/* Content =========================================================================== */
 
 /* Style the right column */
-.rightcolumn {
+.content {
   float: left;
   width: 80%;
   padding-left: 10px;
 }
-.rightcolumn p, code, pre, h1, h2, h3, h4, h5, h6 {
+.content p, code, pre, h1, h2, h3, h4, h5, h6 {
   color: black;
 }
-.rightcolumn p, code, pre {
+.content p, code, pre {
   padding-top: 0;
   padding-bottom: 0;
 }
 
 /* Right column headings */
-.rightcolumn h1 {
+.content h1 {
   font-size: 2em;
 }
-.rightcolumn h2 {
+.content h2 {
   font-size: 1.5em;
 }
-.rightcolumn h3 {
+.content h3 {
   font-size: 1.25em;
 }
 
@@ -652,19 +682,16 @@ a:active {
   .header h3 {
     font-size: 1.5em;
   }
-  .leftcolumn, .rightcolumn, .footer {
+  .content, .footer {
     padding: 2px;
   }
-  .sidenav a {
-    padding: 5px;
-  }
-  .rightcolumn h1 {
+  .content h1 {
     font-size: 1.75em;
   }
-  .rightcolumn h2 {
+  .content h2 {
     font-size: 1.5em;
   }
-  .rightcolumn h3 {
+  .content h3 {
     font-size: 1.25em;
   }
 }
@@ -693,20 +720,17 @@ a:active {
   .header h3 {
     font-size: 1em;
   }
-  .leftcolumn, .rightcolumn, .footer {
+  .content, .footer {
     width: 100%;
     padding: 2px;
   }
-  .sidenav a {
-    padding: 5px;
-  }
-  .rightcolumn h1 {
+  .content h1 {
     font-size: 1.25em;
   }
-  .rightcolumn h2 {
+  .content h2 {
     font-size: 1.1em;
   }
-  .rightcolumn h3 {
+  .content h3 {
     font-size: 1em;
   }
 }
@@ -742,21 +766,18 @@ a:active {
     border: 0;
     padding: 0;
   }
-  .navbar a, .sidenav a {
+  .navbar a {
     float: none;
     width: 100%;
     padding: 0;
   }
-  .leftcolumn hr {
-    display: none;
-  }
-  .rightcolumn h1 {
+  .content h1 {
     font-size: 1.25em;
   }
-  .rightcolumn h2 {
+  .content h2 {
     font-size: 1em;
   }
-  .rightcolumn h3 {
+  .content h3 {
     font-size: 0.9em;
   }
 }
@@ -789,8 +810,5 @@ a:active {
   }
   .navbar a, .navbar a:focus, .navbar a:hover, .navbar a:visited, .navbar a:active {
     color: lightblue;
-  }
-  .sidenav a, .sidenav a:focus, .sidenav a:hover, .sidenav a:visited, .sidenav a:active {
-    color: blue;
   }
 }

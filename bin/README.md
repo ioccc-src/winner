@@ -530,14 +530,9 @@ The following HTML phase files are used to build HTML content:
 3. inc/topbar.default.html
 4. inc/header.default.html
 5. inc/navbar.default.html
-6. inc/begin-row.default.html
-7. inc/begin-leftcolumn.default.html
-8. inc/sidenav.default.html
-9. inc/end-leftcolumn.default.html
-10. inc/begin-rightcolumn.default.html
-11. inc/before-content.default.html
+6. inc/before-content.default.html
 
-Phases 12-19 are reserved for future use.
+Phases 7-19 are reserved for future use.
 
 20. ((insert 'before tool' output))
 21. ((insert 'pandoc wrapper tool' output))
@@ -546,12 +541,10 @@ Phases 12-19 are reserved for future use.
 Phases 23-29 are reserved for future use.
 
 30. inc/after-content.default.html
-31. inc/end-rightcolumn.default.html
-32. inc/end-row.default.html
-33. inc/footer.default.html
-34. inc/bottom.default.html
+31. inc/footer.default.html
+32. inc/bottom.default.html
 
-Phases 35-39 are reserved for future use.
+Phases 33-39 are reserved for future use.
 
 In the above HTML phase numbers, except during HTML phase numbers 20-29, symbols
 of the form `%%TOKEN%%` are substituted.

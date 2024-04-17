@@ -327,9 +327,8 @@ function global_variable_setup
     #
     unset PHASE_NAME
     declare -ag PHASE_NAME
-    PHASE_NAME=(top head body topbar header navbar begin-row begin-leftcolumn
-	        sidenav end-leftcolumn end-leftcolumn begin-rightcolumn before-content
-		after-content end-rightcolumn end-row footer bottom)
+    PHASE_NAME=(top head body topbar header navbar before-content
+    		after-content footer bottom)
     unset HTML_PHASE_NAME
     declare -Ag HTML_PHASE_NAME
     for n in "${PHASE_NAME[@]}"; do
@@ -1905,110 +1904,15 @@ if [[ $status -ne 0 ]]; then
     exit "$status"
 fi
 
-#############################################
-# HTML phase 6: inc/begin-row.__name__.html #
-#############################################
+###################################################
+# HTML phase 6: inc/before-content.__name__.html #
+###################################################
 
 # NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
 CUR_PHASE_NUM=6
-CUR_PHASE_NAME="begin-row"
-BASE_EXIT_CODE=70	# possible: exit 70 or exit 71 or exit 72 or exit 73 or exit 74
-#
-append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
-status="$?"
-if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: append_html_phase" \
-         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
-	 "error code: $status" 1>&2
-    exit "$status"
-fi
-
-####################################################
-# HTML phase 7: inc/begin-leftcolumn.__name__.html #
-####################################################
-
-# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
-#
-CUR_PHASE_NUM=7
-CUR_PHASE_NAME="begin-leftcolumn"
-BASE_EXIT_CODE=75	# possible: exit 75 or exit 76 or exit 77 or exit 78 or exit 79
-#
-append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
-status="$?"
-if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: append_html_phase" \
-         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
-	 "error code: $status" 1>&2
-    exit "$status"
-fi
-
-###########################################
-# HTML phase 8: inc/sidenav.__name__.html #
-###########################################
-
-# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
-#
-CUR_PHASE_NUM=8
-CUR_PHASE_NAME="sidenav"
-BASE_EXIT_CODE=80	# possible: exit 80 or exit 81 or exit 82 or exit 83 or exit 84
-#
-append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
-status="$?"
-if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: append_html_phase" \
-         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
-	 "error code: $status" 1>&2
-    exit "$status"
-fi
-
-##################################################
-# HTML phase 9: inc/end-leftcolumn.__name__.html #
-##################################################
-
-# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
-#
-CUR_PHASE_NUM=9
-CUR_PHASE_NAME="end-leftcolumn"
-BASE_EXIT_CODE=85	# possible: exit 85 or exit 86 or exit 87 or exit 88 or exit 89
-#
-append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
-status="$?"
-if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: append_html_phase" \
-         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
-	 "error code: $status" 1>&2
-    exit "$status"
-fi
-
-#####################################################
-# HTML phase 10: inc/begin-rightcolumn.__name__.html #
-#####################################################
-
-# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
-#
-CUR_PHASE_NUM=9
-CUR_PHASE_NAME="begin-rightcolumn"
-BASE_EXIT_CODE=90	# possible: exit 85 or exit 91 or exit 92 or exit 93 or exit 94
-#
-append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
-status="$?"
-if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: append_html_phase" \
-         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
-	 "error code: $status" 1>&2
-    exit "$status"
-fi
-
-###################################################
-# HTML phase 11: inc/before-content.__name__.html #
-###################################################
-
-# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
-#
-CUR_PHASE_NUM=11
 CUR_PHASE_NAME="before-content"
-BASE_EXIT_CODE=95	# possible: exit 95 or exit 96 or exit 97 or exit 98 or exit 99
+BASE_EXIT_CODE=70	# possible: exit 70 or exit 71 or exit 72 or exit 73 or exit 74
 #
 append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
 status="$?"
@@ -2218,14 +2122,14 @@ if [[ $status -ne 0 ]]; then
     exit "$status"
 fi
 
-####################################################
-# HTML phase 31: inc/end-rightcolumn.__name__.html #
-####################################################
+###########################################
+# HTML phase 31: inc/footer.__name__.html #
+###########################################
 
 # NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
 CUR_PHASE_NUM=31
-CUR_PHASE_NAME="end-rightcolumn"
+CUR_PHASE_NAME="footer"
 BASE_EXIT_CODE=115	# possible: exit 115 or exit 116 or exit 117 or exit 118 or exit 119
 #
 append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
@@ -2237,53 +2141,15 @@ if [[ $status -ne 0 ]]; then
     exit "$status"
 fi
 
-############################################
-# HTML phase 32: inc/end-row.__name__.html #
-############################################
+###########################################
+# HTML phase 32: inc/bottom.__name__.html #
+###########################################
 
 # NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
 CUR_PHASE_NUM=32
-CUR_PHASE_NAME="end-row"
-BASE_EXIT_CODE=120	# possible: exit 120 or exit 121 or exit 122 or exit 123 or exit 124
-#
-append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
-status="$?"
-if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: append_html_phase" \
-         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
-	 "error code: $status" 1>&2
-    exit "$status"
-fi
-
-###########################################
-# HTML phase 33: inc/footer.__name__.html #
-###########################################
-
-# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
-#
-CUR_PHASE_NUM=33
-CUR_PHASE_NAME="footer"
-BASE_EXIT_CODE=125	# possible: exit 125 or exit 126 or exit 127 or exit 128 or exit 129
-#
-append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
-status="$?"
-if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: append_html_phase" \
-         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
-	 "error code: $status" 1>&2
-    exit "$status"
-fi
-
-###########################################
-# HTML phase 34: inc/bottom.__name__.html #
-###########################################
-
-# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
-#
-CUR_PHASE_NUM=34
 CUR_PHASE_NAME="bottom"
-BASE_EXIT_CODE=130	# possible: exit 130 or exit 131 or exit 132 or exit 133 or exit 134
+BASE_EXIT_CODE=120	# possible: exit 120 or exit 121 or exit 122 or exit 123 or exit 124
 #
 append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
 status="$?"
