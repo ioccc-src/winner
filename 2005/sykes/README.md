@@ -154,9 +154,14 @@ Supplied also is a short demo program written in
 ```
 
 Many other old programs will run in this emulator too. Files with a `.PRG`
-extension should work. (Look, for instance, here:
-<http://www.zimmers.net/anonftp/pub/cbm/pet/ALLFILES.html>,\
-or try this one: <http://www.zimmers.net/anonftp/pub/cbm/pet/games/english/dungeon.prg>)\
+extension should work.  Look, for instance, here:
+
+[http://www.zimmers.net/anonftp/pub/cbm/pet/ALLFILES.html](http://www.zimmers.net/anonftp/pub/cbm/pet/ALLFILES.html)
+
+or try this one:
+
+[http://www.zimmers.net/anonftp/pub/cbm/pet/games/english/dungeon.prg](http://www.zimmers.net/anonftp/pub/cbm/pet/games/english/dungeon.prg)
+
 The filenames must be upper case in order to be loaded by the emulator.
 
 You can save programs too - try

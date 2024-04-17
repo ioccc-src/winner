@@ -77,8 +77,11 @@ That's all there is to
 [BLC](https://tromp.github.io/cl/Binary_lambda_calculus.html)!
 
 For example the encoding of lambda term `S = \x \y \z  (x z) (y z)`,
-with [De Bruijn notation](https://en.wikipedia.org/wiki/De_Bruijn_notation) `\ \
-\ (3 1) (2 1)`, is `00 00 00 01 01 1110 10 01 110 10`.
+with [De Bruijn notation](https://en.wikipedia.org/wiki/De_Bruijn_notation):
+
+```
+    \ \ \ (3 1) (2 1)`, is `00 00 00 01 01 1110 10 01 110 10
+```
 
 In the closely related
 [BLC8](https://tromp.github.io/cl/Binary_lambda_calculus.html#BLC8:_byte_sized_I.2FO)

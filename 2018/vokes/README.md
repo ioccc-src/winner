@@ -104,8 +104,7 @@ Limitations](#issues-and-limitations).
 To build:
 
 ```
-    ${CC} -o prog prog.c -std=c11 -O3 \
-        -Wall -Wextra -pedantic -Wno-missing-prototypes
+    ${CC} -o prog prog.c -std=c11 -O3 -Wall -Wextra -pedantic -Wno-missing-prototypes
 ```
 
 `-Wno-missing-prototypes` is necessary because there aren't any

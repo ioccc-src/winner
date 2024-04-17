@@ -235,7 +235,7 @@ at build time into much-needed text. Without this hack the program
 wouldn’t pass the character limit. A nice side effect is that the
 initial source is gloriously difficult to peruse. In particular, the Makefile
 does:</p>
-<pre><code>    sed &lt;vern.c &#39;s/{ /(/g;s/} /)/g;s/;       /#define /&#39; | \
+<pre><code>    sed &lt;vern.c &#39;s/{ /(/g;s/} /)/g;s/;       /#define /&#39; |
         sed &#39;s/}      /=/g;s/{        /i/g&#39; &gt;vern.tmp.c</code></pre>
 <p>and compiles <code>vern.tmp.c</code>.</p>
 <p>Second, the rather ho-hum step has been taking of naming each variable

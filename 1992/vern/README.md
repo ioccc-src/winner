@@ -125,7 +125,7 @@ initial source is gloriously difficult to peruse. In particular, the Makefile
 does:
 
 ``` <!---sh-->
-    sed <vern.c 's/{ /(/g;s/} /)/g;s/;       /#define /' | \
+    sed <vern.c 's/{ /(/g;s/} /)/g;s/;       /#define /' |
 	sed 's/}      /=/g;s/{        /i/g' >vern.tmp.c
 ```
 

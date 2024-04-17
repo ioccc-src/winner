@@ -298,15 +298,13 @@ shortest code that compiles and runs correctly in Ancient UNIX.</p>
 It pre-dates <code>varargs.h</code>, and assembly was the only way to gain access to the
 variable argument types. The first edition <em>The C Programming Language</em>, 1978,
 page 71, remarks:</p>
-<blockquote>
-<p>By the way, there is no entirely satisfactory way to write a portable function
-that accepts a variable number of arguments, because there is no portable way
-for the called function to determine how many arguments where actually passed
-to it in a given call.
-…<br />
-<code>printf</code>, the most common C function with a variable number of arguments,
-… is also non-portable and must be modified for different environments.</p>
-</blockquote>
+<pre><code>    By the way, there is no entirely satisfactory way to write a portable function
+    that accepts a variable number of arguments, because there is no portable way
+    for the called function to determine how many arguments where actually passed
+    to it in a given call.
+    ...
+    `printf`, the most common C function with a variable number of arguments,
+    ... is also non-portable and must be modified for different environments.</code></pre>
 <p>It is fascinating to explore the roots of C through the history of the operating
 system it was birthed within. C is often criticized as a difficult, inscrutable
 language, but as this contest demonstrates, this is in parody. <em>Shell-gol</em> is

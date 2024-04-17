@@ -110,9 +110,9 @@ extra points.
 
 
 Caveat: You can shoot only 3 bullets at a time.
-\
+
 Trick: You can fire faster if they explode on anything.
-\
+
 Believe it or not, it has strategy!
 
 When only one tank remains on the field, the level will advance.

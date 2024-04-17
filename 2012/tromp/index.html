@@ -193,7 +193,8 @@ notation</a>) as <code>1^{n}0</code>.
 That’s all there is to
 <a href="https://tromp.github.io/cl/Binary_lambda_calculus.html">BLC</a>!</p>
 <p>For example the encoding of lambda term <code>S = \x \y \z  (x z) (y z)</code>,
-with <a href="https://en.wikipedia.org/wiki/De_Bruijn_notation">De Bruijn notation</a> <code>\ \ \ (3 1) (2 1)</code>, is <code>00 00 00 01 01 1110 10 01 110 10</code>.</p>
+with <a href="https://en.wikipedia.org/wiki/De_Bruijn_notation">De Bruijn notation</a>:</p>
+<pre><code>    \ \ \ (3 1) (2 1)`, is `00 00 00 01 01 1110 10 01 110 10</code></pre>
 <p>In the closely related
 <a href="https://tromp.github.io/cl/Binary_lambda_calculus.html#BLC8:_byte_sized_I.2FO">BLC8</a>
 language, I/O is byte oriented, translating between a stream of bytes and a list

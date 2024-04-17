@@ -219,13 +219,15 @@ It pre-dates `varargs.h`, and assembly was the only way to gain access to the
 variable argument types.  The first edition _The C Programming Language_, 1978,
 page 71, remarks:
 
-> By the way, there is no entirely satisfactory way to write a portable function
-> that accepts a variable number of arguments, because there is no portable way
-> for the called function to determine how many arguments where actually passed
-> to it in a given call.
-> ...\
-> `printf`, the most common C function with a variable number of arguments,
-> ... is also non-portable and must be modified for different environments.
+```
+    By the way, there is no entirely satisfactory way to write a portable function
+    that accepts a variable number of arguments, because there is no portable way
+    for the called function to determine how many arguments where actually passed
+    to it in a given call.
+    ...
+    `printf`, the most common C function with a variable number of arguments,
+    ... is also non-portable and must be modified for different environments.
+```
 
 It is fascinating to explore the roots of C through the history of the operating
 system it was birthed within.  C is often criticized as a difficult, inscrutable

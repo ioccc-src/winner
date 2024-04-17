@@ -209,8 +209,7 @@ implementation of counting sort, which sorts each group.</p>
 Limitations</a>.</p>
 <h3 id="building">Building:</h3>
 <p>To build:</p>
-<pre><code>    ${CC} -o prog prog.c -std=c11 -O3 \
-        -Wall -Wextra -pedantic -Wno-missing-prototypes</code></pre>
+<pre><code>    ${CC} -o prog prog.c -std=c11 -O3 -Wall -Wextra -pedantic -Wno-missing-prototypes</code></pre>
 <p><code>-Wno-missing-prototypes</code> is necessary because there aren’t any
 prototypes. (They would put the program well over the size limit.)</p>
 <p>Note: The program can also be built with <code>-std=c99</code> or <code>-std=c89</code>.</p>

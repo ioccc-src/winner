@@ -171,7 +171,7 @@ C compilers.
 
    is rejected by tcc version 4.1.2, the TenDRA compiler:
    ```
-   "t.c", line 3: Error:\
+   "t.c", line 3: Error:<br>
    [ISO 6.8.3.3]: Invalid result for '##' operator in macro 'H'.
    ```
 

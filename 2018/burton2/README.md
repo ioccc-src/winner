@@ -36,45 +36,45 @@ What is this program weighing and how much does it weigh?
 
 ### tac - tokenize and count C and derivative languages:
 
-`tac` computes C program size\
-(obfuscated / otherwise)\
-by splitting code as tokens small,\
-ignoring space, then counting all.\
+`tac` computes C program size<br>
+(obfuscated / otherwise)<br>
+by splitting code as tokens small,<br>
+ignoring space, then counting all.<br>
 
-It tries quite hard to act the same\
-as counting tool of I-OCCC fame.\
-Some bugs were fixed, it's faster too,\
-and does more things, just add some glue!\
+It tries quite hard to act the same<br>
+as counting tool of I-OCCC fame.<br>
+Some bugs were fixed, it's faster too,<br>
+and does more things, just add some glue!<br>
 
-It does far more than print the size:\
-the token part's a better prize!\
-With each upon on a single line,\
-how many things can you design?\
+It does far more than print the size:<br>
+the token part's a better prize!<br>
+With each upon on a single line,<br>
+how many things can you design?<br>
 
-Included is a keyword sorter,\
-de-obfuscator, freq reporter.\
-With code produced as little parts,\
-just add your own creative arts.\
+Included is a keyword sorter,<br>
+de-obfuscator, freq reporter.<br>
+With code produced as little parts,<br>
+just add your own creative arts.<br>
 
-But first you have to figure out\
-the braces part, without a doubt!\
-And then the code - it isn't easy:\
-for as else?  That's rather cheesy!\
+But first you have to figure out<br>
+the braces part, without a doubt!<br>
+And then the code - it isn't easy:<br>
+for as else?  That's rather cheesy!<br>
 
-The rest of it is standard fare:\
-expressions strange, the globals bare,\
-confusing symbols one and oh,\
-and precedence you have to know.\
+The rest of it is standard fare:<br>
+expressions strange, the globals bare,<br>
+confusing symbols one and oh,<br>
+and precedence you have to know.<br>
 
-The keyword list was made external,\
-because of standards change eternal.\
-Thus other languages can now,\
-be counted just like C, somehow!\
+The keyword list was made external,<br>
+because of standards change eternal.<br>
+Thus other languages can now,<br>
+be counted just like C, somehow!<br>
 
-I hope you find this code obscure\
-enough to win, and thus procure\
-a public place for all to see\
-how badly I can butcher C!\
+I hope you find this code obscure<br>
+enough to win, and thus procure<br>
+a public place for all to see<br>
+how badly I can butcher C!<br>
 
 
 ### Said another way....
@@ -270,9 +270,9 @@ language_.  It really is this easy with `tac`:
 
 * I assume you noticed the [braces][2]?
 
-  _Every brace is sacred,\
-  Every brace is great.\
-  If a brace is wasted,\
+  _Every brace is sacred,<br>
+  Every brace is great.<br>
+  If a brace is wasted,<br>
   Clang gets quite irate_.
 
 * Keywords follow the 2010s top five, without the `if`, for interesting flow control.

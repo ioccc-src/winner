@@ -163,41 +163,41 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 and non-zero).</p>
 <h3 id="variables">Variables:</h3>
 <ul>
-<li><p><strong>WAIT</strong><br />
+<li><p><strong>WAIT</strong><br>
 positive or negative integer that changes how long to wait for
 a key press prior to moving again. &lt; 0 blocks which allows
 for complete control over movement at your own pace. Default
 231; you can move faster by holding down or rapidly pressing an
 arrow key.</p></li>
-<li><p><strong>WALLS</strong><br />
+<li><p><strong>WALLS</strong><br>
 whether the walls are passable or impassable. Default passable,
 1; 0 makes walls impassable where you die if you hit a wall.</p></li>
-<li><p><strong>EVADE</strong><br />
+<li><p><strong>EVADE</strong><br>
 how many movements the Snake moves before the bug (well
 insect; see notes below about why bugs) will move to
 another location in the field. Default 300; 0 disables.</p></li>
-<li><p><strong>SIZE</strong><br />
+<li><p><strong>SIZE</strong><br>
 initial size of the Snake. Note that it grows by one per
 move so at the default 5 it will not initially be 5
 characters long! &lt; 0 is likely an immediate win.</p></li>
-<li><p><strong>MAXSIZE</strong><br />
+<li><p><strong>MAXSIZE</strong><br>
 the maximum size the Snake can become before the game is
 won. &lt; 0 is the maximum size based on terminal dimensions;
 any other size will be capped based on the terminal
 dimensions to prevent problems. Note that when <strong>SIZE+GROW &gt;=
 MAXSIZE</strong> you win <em>before</em> you grow to the full size!</p></li>
-<li><p><strong>GROW</strong><br />
+<li><p><strong>GROW</strong><br>
 size to grow every time you eat a bug. Default 5; negative
 values are allowed. ‘Negativity’ creates for fun gameplay modes with
 enough creativity. See <a href="gameplay.html">gameplay.html</a>
 GitHub) as well as <a href="play.sh">play.sh</a> for some examples.</p></li>
-<li><p><strong>SHED</strong><br />
+<li><p><strong>SHED</strong><br>
 every <strong>SHED</strong> movements you will grow (&gt; 0), shrink (&lt; 0) or
 stay the same length (0) by the <strong>SHEDS</strong> (below) value. Again
 with creativity you can create some fun gameplay modes. NOTE:
 the concept of shedding in this game is a misnomer; see notes
 below.</p></li>
-<li><p><strong>SHEDS</strong><br />
+<li><p><strong>SHEDS</strong><br>
 every <strong>SHED</strong> movements will impact what this value means: grow
 (&gt; 0), shrink (&lt; 0) or not at all (0). Exception: if the snake
 eats a bug the counter isn’t incremented. Again with creativity
@@ -207,7 +207,7 @@ and then it’s a battle of whether you win by <strong>SIZE &lt; 0</strong> or
 <strong>SIZE &gt;= MAXSIZE</strong>. See <a href="play.sh">play.sh</a> for examples.
 NOTE: the concept of shedding in this game is a misnomer; see
 notes below.</p></li>
-<li><p><strong>CANNIBAL</strong><br />
+<li><p><strong>CANNIBAL</strong><br>
 whether you can go through the Snake or not. Default is 0
 (cannot - die if you try).</p></li>
 </ul>
@@ -273,8 +273,7 @@ file modify the behaviour of Snake.</p>
 <p>Here are some other features of the game:</p>
 <ul>
 <li><p>A drawing/practising mode (<strong>WAIT</strong> &lt; 0 makes <code>timeout()</code> block).</p></li>
-<li><p>Computer plays the game (<strong>WAIT=0</strong>).<br />
-</p>
+<li><p>Computer plays the game (<strong>WAIT=0</strong>).<br></p>
 <ul>
 <li><strong>EPILEPSY/STIMULATION OVERLOAD WARNING</strong> included in the relevant
 section (this goes for a low <strong>EVADE</strong> value too).</li>

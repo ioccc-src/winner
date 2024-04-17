@@ -223,7 +223,7 @@ monkey; I thought the monkey had it too easy: unlike his limited keyboard I have
 `isprint()` returns non-zero except that only capital letters are included;
 the file [prog.alt.c](prog.alt.c) has a slightly smaller keyboard. There are some
 additional features I have added (including two Easter eggs); amongst others:
-ability to change the target string and maximum length. See\
+ability to change the target string and maximum length. See
 **[How it works](#how)**, **[Hints](#hints)** and **[How to build](#build)** for
 more details.
 
@@ -465,8 +465,8 @@ If you do one of:
 ```
 
 It will search for `MONKEY` in both cases; in other words it's the last one.
-If the string is too long given the value of `S` (see\
-**[How to build](#build)**) it will be truncated.
+If the string is too long given the value of `S` (see **[How to build](#build)**)
+it will be truncated.
 
 If you actually do want to search for a string starting with a `-` you must
 disable further parsing of options by using the `-` option itself; for
@@ -492,7 +492,7 @@ examples of the last set of three above are equivalent i.e. the following two
 are equivalent:
 
 ```
-    -q-\
+    -q-
     -q --
 ```
 
@@ -735,7 +735,7 @@ people. Take the following invocations:
     (1) $ echo test > test
     (2) $ ./weasel test
     (3) $ ./weasel < test
-    (4) $ cat test | ./weasel\
+    (4) $ cat test | ./weasel
     (5) $ < test-strings.txt ./weasel
     (6) $ cat | ./weasel
 ```
@@ -819,7 +819,7 @@ Skip to [Obfuscation](#obfuscation).
 
 There is a type of input error, as I said, that might appear to be a bug. What
 actually is going on though is due to a technicality on how spaces are printed
-and the fact the program does not accept spaces other than a literal space\
+and the fact the program does not accept spaces other than a literal space
 ` `; when a character in the string to be found isn't in the keyboard the
 program prints an error message and then exits (returning 1). But since the
 keyboard doesn't have `'\n'` if you were to type a `'` and send a

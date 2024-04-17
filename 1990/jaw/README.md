@@ -64,8 +64,8 @@ directory it is run from.
 
 #### Minimal, Universal File Bundling (or, Functional Obfuscation in a Self-Decoding Unix Shell Archive)
 
-James A. Woods\
-Universities Space Research Association\
+James A. Woods<br>
+Universities Space Research Association<br>
 NASA Ames Research Center
 
 
@@ -108,16 +108,15 @@ within a modified Shannon model of communication, the 'shark' effort aims to
 construct a "shortest program" for source decoding in the Turing-universal Unix
 environment.
 
-----------------------------------------------
+```
+    Oh, the shark has pretty teeth, dear--
+    And he shows them pearly white
+    Just a jackknife has Macheath, dear--
+    And he keeps it out of sight.
 
->   Oh, the shark has pretty teeth, dear--\
->   And he shows them pearly white\
->   Just a jackknife has Macheath, dear--\
->   And he keeps it out of sight.\
-> \
->   -- Bertolt Brecht, Threepenny Opera
+    -- Bertolt Brecht, Threepenny Opera
+```
 
-----------------------------------------------
 
 ### Portability
 

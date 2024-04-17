@@ -138,18 +138,18 @@ screen with long lines.  Paging up and down should work correctly, however.
 
 ### References:
 
-[Fin80]	Craig A. Finseth, "Theory and Practice of Text Editors or\
-	A Cookbook For An EMACS", TM-165, MIT Lab. for Computer\
+[Fin80]	Craig A. Finseth, "Theory and Practice of Text Editors or<br>
+	A Cookbook For An EMACS", TM-165, MIT Lab. for Computer<br>
 	Science
 
-[KeP81]	Kernighan & Plauger, "Software Tools in Pascal",\
+[KeP81]	Kernighan & Plauger, "Software Tools in Pascal",<br>
 	Addison-Wesley, 81, chapter 6
 
 [Mil86]	Eugene W. Myers & Webb Miller, "Row-replacement Algorithms
-	for Screen Editors", TR 86-19, Dept. of Computer Science,\
+	for Screen Editors", TR 86-19, Dept. of Computer Science,<br>
 	U. of Arizona
 
-[MyM86]	Eugene W. Myers & Webb Miller, "A simple row-replacement\
+[MyM86]	Eugene W. Myers & Webb Miller, "A simple row-replacement<br>
 	method", TR 86-28, Dept. of Computer Science, U. of Arizona
 
 [Mil87]	Webb Miller, "A Software Tools Sampler", Prentice Hall, 87

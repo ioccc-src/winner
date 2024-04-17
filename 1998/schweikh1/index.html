@@ -261,7 +261,7 @@ at least one compiler falls over.</p>
 <pre><code>    #define H(x) &lt;st##x##.h&gt;
     #include H(dio)              /* expands to &lt;stdio.h&gt; */</code></pre>
 <p>is rejected by tcc version 4.1.2, the TenDRA compiler:
-<code>"t.c", line 3: Error:\    [ISO 6.8.3.3]: Invalid result for '##' operator in macro 'H'.</code></p>
+<code>"t.c", line 3: Error:&lt;br&gt;    [ISO 6.8.3.3]: Invalid result for '##' operator in macro 'H'.</code></p>
 <p>To be honest, I don’t know if the rules for pp-tokens and token
 pasting don’t forbid what I do (and thus tcc is correct in rejecting it).
 In this case, all other compilers I tried are buggy, or the Standard

@@ -16,7 +16,7 @@
 and:
 
 ``` <!---sh-->
-    ./endoh2 e > e.c\
+    ./endoh2 e > e.c
     gcc -o e e.c
     ./e > 271.c
 ```

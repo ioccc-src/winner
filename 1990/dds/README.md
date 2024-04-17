@@ -85,8 +85,7 @@ Boolean expressions evaluate to 0 for false and 1 for true.
 
 - Free format positioning of tokens on the line.
 - No space is allowed before the line number.
-- Exactly one space is needed between the OLD or SAVE command and\
-  the filename.
+- Exactly one space is needed between the OLD or SAVE command and the filename.
 - ALL INPUT MUST BE UPPERCASE.
 
 

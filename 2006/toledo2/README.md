@@ -118,9 +118,9 @@ each line:
     RUN
 
     10 FOR A=1 TO 10
-    20 PRINT A\
-    30 NEXT A\
-    LIST\
+    20 PRINT A
+    30 NEXT A
+    LIST
     RUN
 
     10 INPUT A
