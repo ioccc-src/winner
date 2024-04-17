@@ -99,7 +99,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3 2024-04-16"
+export VERSION="1.3.1 2024-04-16"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -468,7 +468,7 @@ esac
     # write status.json content
     #
     echo '# status.json'
-    echo '``` <!---json-->'
+    echo '```'
     cat "$STATUS_JSON"
     echo '```'
 } | if [[ -z $NOOP ]]; then
