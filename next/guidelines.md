@@ -1156,5 +1156,5 @@ to be sure they are seeing the most recent tweets.
 
 **-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-**
 
-Leonid A. Broukhis
-chongo (Landon Curt Noll) /\cc/\
+Leonid A. Broukhis<br>
+chongo (Landon Curt Noll) /\\cc/\\
