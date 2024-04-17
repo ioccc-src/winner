@@ -52,7 +52,9 @@ By request, the original code is provided as
 [anonymous.alt.c](1984/anonymous/anonymous.alt.c) so that one can look at it and
 the famous tattoo which we also include here:
 
-![1984-anonymous-tattoo.jpg](1984/anonymous/1984-anonymous-tattoo.jpg)
+<img src="1984/anonymous/1984-anonymous-tattoo.jpg"
+ alt="image of a tattoo of the 1984 anonymous C code"
+ width=600 height=401>
 
 ...which was done in 2005 by [Thomas
 Scovell](https://web.archive.org/web/20070120220721/https://thomasscovell.com/tattoo.php).
