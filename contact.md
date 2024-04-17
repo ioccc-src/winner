@@ -2,9 +2,9 @@
 
 If you are trying to:
 
-* Fix a winning IOCCC entry - (see [FAQ 5.2](faq.html#fix_an_entry))
-* Update winning author information - (see [FAQ 5.5](faq.html#fix_author))
-* Correct a web site problem - (see [FAQ 5.4](faq.html#fix_web_site) or [FAQ 5.6](faq.html#fix_link))
+* **Fix a winning IOCCC entry** - (see [FAQ 5.2](faq.html#fix_an_entry))
+* **Update winning author information** - (see [FAQ 5.5](faq.html#fix_author))
+* **Correct a web site problem** - (see [FAQ 5.4](faq.html#fix_web_site) or [FAQ 5.6](faq.html#fix_link))
 
 Instead of sending us Email, **Please** consider using the [GitHub
 pull request](https://github.com/ioccc-src/winner/pulls) process
@@ -13,9 +13,9 @@ of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner).
 
 If you are trying to:
 
-* Report a bug in an IOCCC winning entry - (see [FAQ 5.1](faq.html#report_bug))
-* Report an IOCCC web site problem - (see [FAQ 5.3](faq.html#report_web_problem))
-* Report a broken or wrong web link - (see [FAQ 5.6](faq.html#fix_link))
+* **Report a bug in an IOCCC winning entry** - (see [FAQ 5.1](faq.html#report_bug))
+* **Report an IOCCC web site problem** - (see [FAQ 5.3](faq.html#report_web_problem))
+* **Report a broken or wrong web link** - (see [FAQ 5.6](faq.html#fix_link))
 
 Instead first look at the [IOCCC
 issues](https://github.com/ioccc-src/winner/issues) to see if the
@@ -26,9 +26,9 @@ issue](https://github.com/ioccc-src/winner/issues).
 
 If you are trying to:
 
-* Comment or make a suggestion on IOCCC rules - (see [FAQ 0.5](faq.html#feedback))
-* Comment or make a suggestion on IOCCC guidelines - (see [FAQ 0.5](faq.html#feedback))
-* Comment or make a suggestion on IOCCC tools - (see [FAQ 0.5](faq.html#feedback))
+* **Comment or make a suggestion on IOCCC rules** - (see [FAQ 0.5](faq.html#feedback))
+* **Comment or make a suggestion on IOCCC guidelines** - (see [FAQ 0.5](faq.html#feedback))
+* **Comment or make a suggestion on IOCCC tools** - (see [FAQ 0.5](faq.html#feedback))
 
 Those FAQ entries will help guide you on how to make public comments
 and suggestion in the relevant places.
@@ -36,7 +36,9 @@ and suggestion in the relevant places.
 See the above FAQ entries for more details.
 
 
-# <div id="mastodon">Try mastodon</div>
+<div id="mastodon">
+# Try mastodon
+</div>
 
 You may wish to follow us [IOCCC on Mastodon](https://fosstodon.org/@ioccc)
 as we use that platform to announce things such as the opening of a new IOCCC
@@ -67,7 +69,9 @@ If you must contact the IOCCC judges by email, then please send email to:
 
 You **MUST** include the following two words (separated by a space) in the subject of your email, otherwise the email will be rejected:
 
+```
     IOCCC YYYY
+```
 
 **IMPORTANT:** The _YYYY_ in the above Email address **MUST** be changed to the current 4 digit year!
 
