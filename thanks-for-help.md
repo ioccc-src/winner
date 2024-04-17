@@ -725,7 +725,7 @@ to compare the fix from the original entry. There was another problem to resolve
 as well, however.
 
 First of all, as noted above, the entry required `-traditional-cpp` (which
-<strike>not all compilers support</strike> `clang` does not support). It needed
+<del>not all compilers support</del> `clang` does not support). It needed
 that option in modern systems because of two things it did:
 
 ``` <!---c-->
@@ -1158,7 +1158,7 @@ did not change the `" #Q"` string as that showed worse looking output
 instead of improved output though he has no way to test the compilers in
 question (i.e. it was only tested in the original entry). YMMV.
 
-Although this is appreciated we agree with him that <strike>no one</strike>
+Although this is appreciated we agree with him that <del>no one</del>
 [very few](https://en.wikipedia.org/wiki/0)
 [users](https://en.wikipedia.org/wiki/Microsoft_Windows)
 [here](https://www.ioccc.org) will need it! :-)
@@ -5228,7 +5228,7 @@ Cody also fixed the script [check.sh](2019/burton/check.sh) (renamed from
 ShellCheck. He also made ShellCheck not be a cow and/or (to use Bart Simpson's
 advice :-) ) 'not have a cow' about certain things (including one thing it was
 wrong about) in [cow.sh](2019/burton/cow.sh) (which was renamed from `cow`)
-<strike>moo</strike>too.
+<del>moo</del>too.
 
 Cody also renamed the file `on.one.liners` to
 [on.one.liners.txt](2019/burton/on.one.liners.txt) to help with
