@@ -180,12 +180,10 @@ as having one of the largest “yummo quotients” in number theory:</p>
     yummo quotient = -----------------------------------
                      complexity of the problem statement</code></pre>
 <p><a href="https://en.wikipedia.org/wiki/Paul_Erdős">Erdős</a> privately told one of the IOCCC judges:</p>
-<blockquote>
 <p>Solving the <a href="https://en.wikipedia.org/wiki/Generalized_Riemann_hypothesis#Extended_Riemann_hypothesis_.28ERH.29">Generalized Riemann
 hypothesis</a>
 would be a good warm-up exercise for someone to get ready to begin to work on
 the <a href="https://en.wikipedia.org/wiki/Collatz_conjecture">Collatz conjecture</a>.</p>
-</blockquote>
 <p>You may explore this famous conjecture using this entry:</p>
 <pre><code>    ./prog 2410
     ./prog abfff
@@ -225,14 +223,10 @@ process indefinitely.</p>
 <p>The conjecture is that no matter what number you start with,
 you eventually reach <code>1</code>.</p>
 <p>Paul Erdős said about the Collatz conjecture:</p>
-<blockquote>
-<p>“Mathematics may not be ready for such problems.”</p>
-</blockquote>
+<pre><code>    &quot;Mathematics may not be ready for such problems.&quot;</code></pre>
 <p>He also offered $500 for its solution.</p>
 <p>For example, the sequence of numbers for <code>n</code> = 6 is</p>
-<blockquote>
-<p>6, 3, 10, 5, 16, 8, 4, 2, 1.</p>
-</blockquote>
+<pre><code>    6, 3, 10, 5, 16, 8, 4, 2, 1.</code></pre>
 <p>Continuing past one leads to the <em>cycle</em> 1, 4, 2, 1, 4, 2, 1, …
 Interesting factoid: if you allow <em>negative</em> start values, there are
 a few more cycles, each of different length:</p>
@@ -534,11 +528,9 @@ down in the guts of the Standard I/O library? After some serious head
 scratching it hit me. The only chance I have is telling the system I no
 longer want to do I/O, maybe then it would free that buffer. A reading
 of C99 7.19.5.1, “The fclose function”, was encouraging:</p>
-<blockquote>
-<p>Whether or not the call succeeds, the stream is disassociated from the file
-and any buffer set by the <code>setbuf</code> or <code>setvbuf</code> function is disassociated from the stream
-(and deallocated if it was automatically allocated).</p>
-</blockquote>
+<pre><code>    Whether or not the call succeeds, the stream is disassociated from the file
+    and any buffer set by the `setbuf` or `setvbuf` function is disassociated from the stream
+    (and deallocated if it was automatically allocated).</code></pre>
 <p>So I <code>fclose(stdout)</code> before returning and now:</p>
 <pre><code>    valgrind --leak-check=full --show-leak-kinds=all ./prog 6
     ==14571== Memcheck, a memory error detector

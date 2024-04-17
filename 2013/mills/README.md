@@ -92,8 +92,10 @@ Since ray-tracing was an obvious choice to return to a web server, I needed
 something to ray-trace.  A static scene would be uninteresting.  I took
 inspiration (as I often do) from the IOCCC remarks file which says
 
->  At least one judge prefers to maintain the use of the leap-second
->  as part of the world's time standard.
+```
+    At least one judge prefers to maintain the use of the leap-second
+    as part of the world's time standard.
+```
 
 Then it was obvious; the code should display the time.  It is believed (but
 not confirmed) that the code will, in fact, display leap seconds correctly.

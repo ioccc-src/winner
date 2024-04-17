@@ -58,7 +58,9 @@ To listen to what the program says directly, invoke
 
 The program then speaks out something like
 
-> The time is HH hours MM minutes SS seconds
+```
+    The time is HH hours MM minutes SS seconds
+```
 
 in military time (24 hours). Of course, you need to have permissions
 to write to `/dev/audio`, have your sound card enabled, the volume up,

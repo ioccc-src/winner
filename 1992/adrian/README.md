@@ -257,7 +257,9 @@ many seconds.
 If either `adbasename` or `adsleep` is invoked with too few parameters,
 the program will print the error message:
 
-> Segmentation fault (core dumped)
+```
+    Segmentation fault (core dumped)
+```
 
 (The exact text of the above error messages varies from machine to
 machine.)  The four programs which read from stdin require lines

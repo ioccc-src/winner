@@ -158,11 +158,9 @@ Location: <a href="../../location.html#RU">RU</a> - <em>Russian Federation</em> 
 <p>When running this, ask yourself why it gets progressively slower when the
 context length decreases:</p>
 <pre><code>    ./try.sh</code></pre>
-<blockquote>
-<p>Performance depends on the number of same hashes found.
-Too many identical strings if the context length is small.
-– Author</p>
-</blockquote>
+<pre><code>    Performance depends on the number of same hashes found.
+    Too many identical strings if the context length is small.
+    -- Author</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>We were able to <a href="rand.c">write our own program</a> performing the same trick using
 the (still non-standard, for some reason) library function <code>memmem()</code>, but that
@@ -178,10 +176,8 @@ Example:</p>
     # more twos in output
     ./rand test.txt 1000 2 123
     # more ones in output</code></pre>
-<blockquote>
-<p>But this will happen very rarely on real data.
-– Author</p>
-</blockquote>
+<pre><code>    But this will happen very rarely on real data.
+    -- Author</code></pre>
 <hr />
 <p>Try using the same random seed and varying the context size.</p>
 <p>BTW: what on Middle-earth is <code>lámatyávë</code>? It’s Quenya, one of the languages of

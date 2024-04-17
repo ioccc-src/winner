@@ -293,20 +293,18 @@ With my entry we can complete the loop!</p>
 <h3 id="the-1992-nathan-sidwell-entry"><a name="nathan" href="#toc">The 1992 Nathan Sidwell entry</a></h3>
 <p>The author <a href="../../authors.html#Nathan_Sidwell">Nathan Sidwell</a> of the <a href="../../1992/nathan/index.html">1992 Worst
 Abuse of the Rules</a> had this to say about his program:</p>
-<blockquote>
-<p>This program is a hello world text encrypter/decrypter. It uses an
-<a href="https://www.cryptomuseum.com/crypto/enigma/index.htm">enigma</a> (I think) style
-encryption algorithm, where the encryption key character is modified by a value,
-determined from the previous character. Non-printable characters (those with
-ASCII values <code>&lt; ' '</code> or <code>&gt; 0x7e</code>) are passed unaltered, thus any kind of file
-may be successfully processed, but if the original is printable, the processed
-file will be too. The input is read from stdin, and the output presented to
-stdout. The key, a text string, is presented as a command argument. This is
-optional, and if omitted, the file is self-{de,en}crypted. To specify
-decryption, a <code>-</code> should be given before the key. (Actually encryption and
-decryption proper inverse operations, so you can use decrypt to scramble and
-encrypt to descramble, if you’re perverse.)</p>
-</blockquote>
+<pre><code>    This program is a hello world text encrypter/decrypter. It uses an
+    [enigma](https://www.cryptomuseum.com/crypto/enigma/index.htm) (I think) style
+    encryption algorithm, where the encryption key character is modified by a value,
+    determined from the previous character.  Non-printable characters (those with
+    ASCII values `&lt; &#39; &#39;` or `&gt; 0x7e`) are passed unaltered, thus any kind of file
+    may be successfully processed, but if the original is printable, the processed
+    file will be too. The input is read from stdin, and the output presented to
+    stdout. The key, a text string, is presented as a command argument. This is
+    optional, and if omitted, the file is self-{de,en}crypted. To specify
+    decryption, a `-` should be given before the key. (Actually encryption and
+    decryption proper inverse operations, so you can use decrypt to scramble and
+    encrypt to descramble, if you&#39;re perverse.)</code></pre>
 <p>But the Enigma algorithm is more complex than that and my entry can encipher
 (and by extension decipher) text in the manner of the Enigma machines of the
 <a href="https://en.wikipedia.org/wiki/German_Army_(1935%E2%80%931945)">Heer</a> (army) and <a href="https://en.wikipedia.org/wiki/Luftwaffe">Luftwaffe</a> (air

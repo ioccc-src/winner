@@ -61,8 +61,10 @@ this program. Note that this alt file is currently missing. See
 The basic theme (pun) of this program is:
 
 
-> "This time (everything) is not where it should be."
->       ~~~~
+```
+    "This time (everything) is not where it should be."
+	  ~~~~
+```
 
 
 My entry ([shapiro.c](shapiro.c)) is mostly comments, formatted in the shape of a

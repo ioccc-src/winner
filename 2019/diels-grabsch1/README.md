@@ -62,8 +62,7 @@ right now. And exactly the same shape. Nevertheless, it is portable C99 code
 that runs on 32-bit and 64-bit platforms. It compiles without warnings on both
 GCC and Clang even with `-Wextra and -Weverything`.
 
-> 2023 note: the above paragraph might not be true as far as number of bytes
-goes.
+**2023 note**: the above paragraph might not be true as far as number of bytes goes.
 
 <!--
 

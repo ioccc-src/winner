@@ -210,18 +210,20 @@ With my entry we can complete the loop!
 The author [Nathan Sidwell](../../authors.html#Nathan_Sidwell) of the [1992 Worst
 Abuse of the Rules][] had this to say about his program:
 
-> This program is a hello world text encrypter/decrypter. It uses an
-[enigma](https://www.cryptomuseum.com/crypto/enigma/index.htm) (I think) style
-encryption algorithm, where the encryption key character is modified by a value,
-determined from the previous character.  Non-printable characters (those with
-ASCII values `< ' '` or `> 0x7e`) are passed unaltered, thus any kind of file
-may be successfully processed, but if the original is printable, the processed
-file will be too. The input is read from stdin, and the output presented to
-stdout. The key, a text string, is presented as a command argument. This is
-optional, and if omitted, the file is self-{de,en}crypted. To specify
-decryption, a `-` should be given before the key. (Actually encryption and
-decryption proper inverse operations, so you can use decrypt to scramble and
-encrypt to descramble, if you're perverse.)
+```
+    This program is a hello world text encrypter/decrypter. It uses an
+    [enigma](https://www.cryptomuseum.com/crypto/enigma/index.htm) (I think) style
+    encryption algorithm, where the encryption key character is modified by a value,
+    determined from the previous character.  Non-printable characters (those with
+    ASCII values `< ' '` or `> 0x7e`) are passed unaltered, thus any kind of file
+    may be successfully processed, but if the original is printable, the processed
+    file will be too. The input is read from stdin, and the output presented to
+    stdout. The key, a text string, is presented as a command argument. This is
+    optional, and if omitted, the file is self-{de,en}crypted. To specify
+    decryption, a `-` should be given before the key. (Actually encryption and
+    decryption proper inverse operations, so you can use decrypt to scramble and
+    encrypt to descramble, if you're perverse.)
+```
 
 
 But the Enigma algorithm is more complex than that and my entry can encipher

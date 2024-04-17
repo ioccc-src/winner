@@ -386,7 +386,7 @@ format randomly. So we wrote a program to choose an appropriate format at
 random. The program we wrote for that follows.  This program actually also
 extracted the machine code from the object file.
 
-> NOTE from judges: see [gentab.c](gentab.c) for a copy of this file that can be
+NOTE from judges: see [gentab.c](gentab.c) for a copy of this file that can be
 compiled in modern systems.
 
 ``` <!---c-->

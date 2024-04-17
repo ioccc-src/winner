@@ -53,7 +53,9 @@ keeping the program portable between different encodings
 
 This entry displays the current time to the console, for example:
 
-> it's just after ten 'til 6 in the evening
+```
+    it's just after ten 'til 6 in the evening
+```
 
 FWIW, none of the compilers with which this entry was tested issued
 any warnings or errors in compiling the source for this entry.  No

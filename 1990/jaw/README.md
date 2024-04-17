@@ -69,13 +69,11 @@ Universities Space Research Association<br>
 NASA Ames Research Center
 
 
----
+```
+    "Use an algorithm, go to jail."
 
-> "Use an algorithm, go to jail."
->
-> -- anon., circa 1988, pre-[Morris worm](https://en.wikipedia.org/wiki/Morris_worm) era
-
-----
+    -- anon., circa 1988, pre-[Morris worm](https://en.wikipedia.org/wiki/Morris_worm) era
+```
 
 
 Myriad formats have been proposed for network-mailable data. A major difficulty

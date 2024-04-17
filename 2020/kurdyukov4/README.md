@@ -21,9 +21,11 @@ context length decreases:
     ./try.sh
 ```
 
-> Performance depends on the number of same hashes found.
-> Too many identical strings if the context length is small.
-> -- Author
+```
+    Performance depends on the number of same hashes found.
+    Too many identical strings if the context length is small.
+    -- Author
+```
 
 
 ## Judges' remarks:
@@ -49,8 +51,10 @@ Example:
     # more ones in output
 ```
 
-> But this will happen very rarely on real data.
-> -- Author
+```
+    But this will happen very rarely on real data.
+    -- Author
+```
 
 ---
 

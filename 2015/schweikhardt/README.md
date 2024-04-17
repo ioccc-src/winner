@@ -65,7 +65,7 @@ as having one of the largest "yummo quotients" in number theory:
 
 [Erdős](https://en.wikipedia.org/wiki/Paul_Erdős) privately told one of the IOCCC judges:
 
-> Solving the [Generalized Riemann
+Solving the [Generalized Riemann
 hypothesis](https://en.wikipedia.org/wiki/Generalized_Riemann_hypothesis#Extended_Riemann_hypothesis_.28ERH.29)
 would be a good warm-up exercise for someone to get ready to begin to work on
 the [Collatz conjecture](https://en.wikipedia.org/wiki/Collatz_conjecture).
@@ -128,14 +128,17 @@ you eventually reach `1`.
 
 Paul Erdős said about the Collatz conjecture:
 
-
-> "Mathematics may not be ready for such problems."
+```
+    "Mathematics may not be ready for such problems."
+```
 
 He also offered $500 for its solution.
 
 For example, the sequence of numbers for `n` = 6 is
 
->    6, 3, 10, 5, 16, 8, 4, 2, 1.
+```
+    6, 3, 10, 5, 16, 8, 4, 2, 1.
+```
 
 Continuing past one leads to the *cycle* 1, 4, 2, 1, 4, 2, 1, ...
 Interesting factoid: if you allow *negative* start values, there are
@@ -537,9 +540,11 @@ scratching it hit me. The only chance I have is telling the system I no
 longer want to do I/O, maybe then it would free that buffer. A reading
 of C99 7.19.5.1, "The fclose function", was encouraging:
 
->  Whether or not the call succeeds, the stream is disassociated from the file
->  and any buffer set by the `setbuf` or `setvbuf` function is disassociated from the stream
->  (and deallocated if it was automatically allocated).
+```
+    Whether or not the call succeeds, the stream is disassociated from the file
+    and any buffer set by the `setbuf` or `setvbuf` function is disassociated from the stream
+    (and deallocated if it was automatically allocated).
+```
 
 So I `fclose(stdout)` before returning and now:
 

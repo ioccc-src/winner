@@ -95,7 +95,7 @@ Yes, the test suite really is 5 times larger than the actual program. You
 `./sudoku-sf`. If you rename it, please change the definition of `$sf_exe` to the
 new name.
 
-> Judges' note: this was done.
+**Judges' note**: this was done.
 
 
 ### Legal blurb
@@ -150,7 +150,7 @@ Now, with modern computers this **can** be solved using brute force, e.g.:
     :n%27?"\n":n%81?"\n------+-------+------\n":"\n\n"));}return z;}
 ```
 
-> Judges' note: this was added as [aidan.alt.c](aidan.alt.c).
+**Judges' note**: this was added as [aidan.alt.c](aidan.alt.c).
 
 That isn't the approach I've used; it's slow (particularly in worst-case or
 nearly so scenarios), inelegant, and not a good starting point for sudoku

@@ -96,7 +96,7 @@ and run it like this:
     ./prog advent.unl
 ```
 
-> NOTE: the file was added to the entry so there is no need to download it.
+**NOTE**: the file was added to the entry so there is no need to download it.
 
 You can also try other programs from the Web. Many example programs are in the official
 [Unlambda distribution][3] on the Unlambda homepage. The most complex programs there are

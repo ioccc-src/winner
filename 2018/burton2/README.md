@@ -157,11 +157,13 @@ designed to allow exhaustive, hand-counted values for comparison with the tool v
 These test cases were vital in debugging and regression testing, and provided a way to
 determine which tool was correct when there were differences.
 
-> A version of this tool in more clearly written C ([tac.c](tac.c))
-> is presented for the Judge's consideration as a more accurate replacement for `iocccsize`.
-> This obfuscated entry is derived from (and compatible with) that code,
-> but due to obfuscation, has had some significant, deep changes for the contest.
-> Nevertheless, the more clearly written code remains a spoiler for this entry.
+```
+    A version of this tool in more clearly written C ([tac.c](tac.c))
+    is presented for the Judge's consideration as a more accurate replacement for `iocccsize`.
+    This obfuscated entry is derived from (and compatible with) that code,
+    but due to obfuscation, has had some significant, deep changes for the contest.
+    Nevertheless, the more clearly written code remains a spoiler for this entry.
+```
 
 NB: `iocccsize` gets a different answer from `tac` on its own
 ([iocccsize.c](../../2018/iocccsize.c)) source code;

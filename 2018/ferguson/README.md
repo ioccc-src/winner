@@ -206,14 +206,16 @@ It is an implementation of Richard Dawkins' [Weasel program][] (Wikipedia).
 According to Wikipedia in chapter three of his book [The Blind Watchmaker][]
 Dawkins wrote:
 
-> I don't know who it was first pointed out that, given enough time, a monkey
-> bashing away at random on a typewriter could produce all the works of
-> Shakespeare. The operative phrase is, of course, *given enough time.* Let us
-> limit the task facing our monkey somewhat. Suppose that he has to produce, not
-> the complete works of Shakespeare but just the short sentence 'Methinks it is
-> like a weasel', and we shall make it relatively easy by giving him a typewriter
-> with a restricted keyboard, one with just the 26 (capital) letters, and a space
-> bar.  How long will he take to write this one little sentence?
+```
+    I don't know who it was first pointed out that, given enough time, a monkey
+    bashing away at random on a typewriter could produce all the works of
+    Shakespeare. The operative phrase is, of course, *given enough time.* Let us
+    limit the task facing our monkey somewhat. Suppose that he has to produce, not
+    the complete works of Shakespeare but just the short sentence 'Methinks it is
+    like a weasel', and we shall make it relatively easy by giving him a typewriter
+    with a restricted keyboard, one with just the 26 (capital) letters, and a space
+    bar.  How long will he take to write this one little sentence?
+```
 
 He refers to the [Infinite Monkey Theorem][] (Wikipedia). As he points out the
 operative phrase is *given enough time*; but even if it's extremely unlikely
@@ -244,16 +246,18 @@ Here you can find a general explanation of a *[genetic algorithm][]* as well as 
 brief history. Although the link provides more information (including images to
 try and show the way they work) for those interested I will cite the summary:
 
-> Genetic Algorithms (GAs) are adaptive heuristic search algorithm based on the
-> evolutionary ideas of natural selection and genetics. As such they represent an
-> intelligent exploitation of a random search used to solve optimization problems.
-> Although randomised, GAs are by no means random, instead they exploit historical
-> information to direct the search into the region of better performance within
-> the search space. The basic techniques of the GAs are designed to simulate
-> processes in natural systems necessary for evolution, specially those follow the
-> principles first laid down by Charles Darwin of "survival of the fittest.".
-> Since in nature, competition among individuals for scanty resources results in
-> the fittest individuals dominating over the weaker ones.
+```
+    Genetic Algorithms (GAs) are adaptive heuristic search algorithm based on the
+    evolutionary ideas of natural selection and genetics. As such they represent an
+    intelligent exploitation of a random search used to solve optimization problems.
+    Although randomised, GAs are by no means random, instead they exploit historical
+    information to direct the search into the region of better performance within
+    the search space. The basic techniques of the GAs are designed to simulate
+    processes in natural systems necessary for evolution, specially those follow the
+    principles first laid down by Charles Darwin of "survival of the fittest.".
+    Since in nature, competition among individuals for scanty resources results in
+    the fittest individuals dominating over the weaker ones.
+```
 
 **SPOILER WARNING: Some of the below might help you follow the code more
 easily.**
@@ -284,7 +288,9 @@ Note that the generation is checked *before the scoring takes place* by a prefix
 increment equality check; when the generation is `SIZE_MAX - 1` the fitness
 test loop will not be entered; instead the outer loop will end after printing:
 
-> Too many attempts, blaming the monkey Eric even if he isn't typing or doesn't exist. Bye.
+```
+    Too many attempts, blaming the monkey Eric even if he isn't typing or doesn't exist. Bye.
+```
 
 Why '*Eric*'? Because the judges stated in the [2018 guidelines][] that when
 there is a user input error the program should insult the pet fish Eric even if
@@ -292,16 +298,18 @@ such a fish (no, weasels do not equate monkeys to fish but see below) doesn't
 exist. The second to last example limitation example note (it's improved in the
 final but this is relevant) they give is:
 
-> The judges might not have a pet fish named Eric, so might want to state:
->
-> 	This entry factors integers between 1 and 2305567963945518424753102147331756070.
-> 	Attempting to factor anything else will cause the program to insult your
-> 	pet fish Eric, or in the case that you lack such a pet, will insult the
-> 	pet that you do not have.
+The judges might not have a pet fish named Eric, so might want to state:
+
+```
+    This entry factors integers between 1 and 2305567963945518424753102147331756070.
+    Attempting to factor anything else will cause the program to insult your
+    pet fish Eric, or in the case that you lack such a pet, will insult the
+    pet that you do not have.
+```
 
 After the final message they ask:
 
-> BTW: **What is so special about 2305567963945518424753102147331756070**?  You tell us!
+BTW: **What is so special about 2305567963945518424753102147331756070**?  You tell us!
 
 The answer is this: **it is the primorial prime of 97:** the product of all
 prime numbers less than or equal to N; **and the primorial prime of `N == 97` is
@@ -905,16 +913,18 @@ Skip to [How to build](#build).
 
 On the subject of beauty: the judges stated in the guidelines the following:
 
-> We want to get away from source that is simply **a compact blob of
-> octets.**   Really try to be more creative than **blob coding.** *HINT!*
+```
+    We want to get away from source that is simply **a compact blob of
+    octets.**   Really try to be more creative than **blob coding.** *HINT!*
+```
 
 And if you'll notice that although it *might look like a compact blob of octets*
 at first glance if you look throughout the file you'll see two statements to
 set your thinking straight:
 
-> **NO BLOB CODING**
+**NO BLOB CODING**
 
-> **THIS IS NOT A COMPACT BLOB OF OCTETS**
+**THIS IS NOT A COMPACT BLOB OF OCTETS**
 
 So you see even if your eyes are trying to deceive you they're quite wrong. Yes
 some of it might look like a blob but this is clearly false; *as all good
@@ -1133,48 +1143,50 @@ two things I think are rather amusing (in order of least to most):
 
 <a name="dmr">Dennis Ritchie's</a> Anti-Foreword:
 
-> Anti-Foreword
+```
+    Anti-Foreword
 
-> By Dennis Ritchie
-> From: dmr@plan9.research.att.com
-> Date: Tue, 15 Mar 1994 00:38:07 EST
-> Subject: anti-foreword
+    By Dennis Ritchie
+    From: dmr@plan9.research.att.com
+    Date: Tue, 15 Mar 1994 00:38:07 EST
+    Subject: anti-foreword
 
-> To the contributers to this book:
+    To the contributers to this book:
 
-> I have succumbed to the temptation you offered in your preface: I do write you
-> off as envious malcontents and romantic keepers of memories.  The systems you
-> remember so fondly (TOPS-20, ITS, Multics, Lisp Machine, Cedar/Mesa, the Dorado)
-> are not just out to pasture, they are fertilizing it from below.
+    I have succumbed to the temptation you offered in your preface: I do write you
+    off as envious malcontents and romantic keepers of memories.  The systems you
+    remember so fondly (TOPS-20, ITS, Multics, Lisp Machine, Cedar/Mesa, the Dorado)
+    are not just out to pasture, they are fertilizing it from below.
 
-> Your judgments are not keen, they are intoxicated by metaphor. In the Preface
-> you suffer first from heat, lice, and malnourishment, then become prisoners in
-> a Gulag. In Chapter 1 you are in turn infected by a virus, racked by drug
-> addiction, and addled by puffiness of the genome.
+    Your judgments are not keen, they are intoxicated by metaphor. In the Preface
+    you suffer first from heat, lice, and malnourishment, then become prisoners in
+    a Gulag. In Chapter 1 you are in turn infected by a virus, racked by drug
+    addiction, and addled by puffiness of the genome.
 
-> Yet your prison without coherent design continues to imprison you. How can
-> this be, if it has no strong places? The rational prisoner exploits the weak
-> places, creates order from chaos: instead, collectives like the FSF vindicate
-> their jailers by building cells almost compatible with the existing ones, albeit
-> with more features. The journalist with three undergraduate degrees from MIT,
-> the researcher at Microsoft, and the senior scientist at Apple might volunteer a
-> few words about the regulations of the prisons to which they have been
-> transferred.
+    Yet your prison without coherent design continues to imprison you. How can
+    this be, if it has no strong places? The rational prisoner exploits the weak
+    places, creates order from chaos: instead, collectives like the FSF vindicate
+    their jailers by building cells almost compatible with the existing ones, albeit
+    with more features. The journalist with three undergraduate degrees from MIT,
+    the researcher at Microsoft, and the senior scientist at Apple might volunteer a
+    few words about the regulations of the prisons to which they have been
+    transferred.
 
-> Your sense of the possible is in no sense pure: sometimes you want the same
-> thing you have, but wish you had done it yourselves; other times you want
-> something different, but can't seem to get people to use it; sometimes one
-> wonders why you just don't shut up and tell people to buy a PC with Windows or a
-> Mac. No Gulag or lice, just a future whose intellectual tone and interaction
-> style is set by Sonic the Hedgehog. You claim to seek progress, but you succeed
-> mainly in whining.
+    Your sense of the possible is in no sense pure: sometimes you want the same
+    thing you have, but wish you had done it yourselves; other times you want
+    something different, but can't seem to get people to use it; sometimes one
+    wonders why you just don't shut up and tell people to buy a PC with Windows or a
+    Mac. No Gulag or lice, just a future whose intellectual tone and interaction
+    style is set by Sonic the Hedgehog. You claim to seek progress, but you succeed
+    mainly in whining.
 
-> Here is my metaphor: your book is a pudding stuffed with apposite
-> observations, many well-conceived. Like excrement, it contains enough undigested
-> nuggets of nutrition to sustain life for some. But it is not a tasty pie: it
-> reeks too much of contempt and of envy.
+    Here is my metaphor: your book is a pudding stuffed with apposite
+    observations, many well-conceived. Like excrement, it contains enough undigested
+    nuggets of nutrition to sustain life for some. But it is not a tasty pie: it
+    reeks too much of contempt and of envy.
 
-> Bon appetit!
+    Bon appetit!
+```
 
 Yes he misspelt *'contributors'*! But then again we're talking about obfuscation
 and since it doesn't break his message it's not broken - it's just obfuscated
@@ -1183,52 +1195,56 @@ contest is about? :)
 
 <a name="ken">Ken Thompson's</a> ending:
 
-> Creators Admit C, Unix Were Hoax
+```
+    Creators Admit C, Unix Were Hoax
 
-> FOR IMMEDIATE RELEASE
+    FOR IMMEDIATE RELEASE
 
-> In an announcement that has stunned the computer industry, Ken Thompson,
-Dennis Ritchie, and Brian Kernighan admitted that the Unix operating system and
-C programming language created by them is an elaborate April Fools prank kept
-alive for more than 20 years. Speaking at the recent UnixWorld Software
-Development Forum, Thompson revealed the following:
+    In an announcement that has stunned the computer industry, Ken Thompson,
+    Dennis Ritchie, and Brian Kernighan admitted that the Unix operating system and
+    C programming language created by them is an elaborate April Fools prank kept
+    alive for more than 20 years. Speaking at the recent UnixWorld Software
+    Development Forum, Thompson revealed the following:
 
-> "In 1969, AT&T had just terminated their work with the GE/AT&T Multics
-project.  Brian and I had just started working with an early release of Pascal
-from Professor Nichlaus Wirth's ETH labs in Switzerland, and we were impressed
-with its elegant simplicity and power. Dennis had just finished reading Bored of
-the Rings, a hilarious National Lampoon parody of the great Tolkien Lord of the
-Rings trilogy. As a lark, we decided to do parodies of the Multics environment
-and Pascal. Dennis and I were responsible for the operating environment. We
-looked at Multics and designed the new system to be as complex and cryptic as
-possible to maximize casual users' frustration levels, calling it Unix as a
-parody of Multics, as well as other more risque allusions.
+    "In 1969, AT&T had just terminated their work with the GE/AT&T Multics
+    project.  Brian and I had just started working with an early release of Pascal
+    from Professor Nichlaus Wirth's ETH labs in Switzerland, and we were impressed
+    with its elegant simplicity and power. Dennis had just finished reading Bored of
+    the Rings, a hilarious National Lampoon parody of the great Tolkien Lord of the
+    Rings trilogy. As a lark, we decided to do parodies of the Multics environment
+    and Pascal. Dennis and I were responsible for the operating environment. We
+    looked at Multics and designed the new system to be as complex and cryptic as
+    possible to maximize casual users' frustration levels, calling it Unix as a
+    parody of Multics, as well as other more risque allusions.
 
-> "Then Dennis and Brian worked on a truly warped version of Pascal, called "A."
-When we found others were actually trying to programs with A, we quickly added
-additional cryptic features and evolved into B, BCPL, and finally C. We stopped
-when we got a clean compile on the following syntax:
+    "Then Dennis and Brian worked on a truly warped version of Pascal, called "A."
+    When we found others were actually trying to programs with A, we quickly added
+    additional cryptic features and evolved into B, BCPL, and finally C. We stopped
+    when we got a clean compile on the following syntax:
+```
 
 ``` <!---c-->
     for(;P("\n"),R=;P("|"))for(e=C;e=P("_"+(*u++/
     8)%2))P("|"+(*u/4)%2);
 ```
 
-> "To think that modern programmers would try to use a language that allowed
-such a statement was beyond our comprehension! We actually thought of selling
-this to the Soviets to set their computer science progress back 20 or more
-years. Imagine our surprise when AT&T and other U.S. corporations actually began
-trying to use Unix and C!  It has taken them 20 years to develop enough
-expertise to generate even marginally useful applications using this 1960s
-technological parody, but we are impressed with the tenacity (if not common
-sense) of the general Unix and C programmer.
+```
+    "To think that modern programmers would try to use a language that allowed
+    such a statement was beyond our comprehension! We actually thought of selling
+    this to the Soviets to set their computer science progress back 20 or more
+    years. Imagine our surprise when AT&T and other U.S. corporations actually began
+    trying to use Unix and C!  It has taken them 20 years to develop enough
+    expertise to generate even marginally useful applications using this 1960s
+    technological parody, but we are impressed with the tenacity (if not common
+    sense) of the general Unix and C programmer.
 
-> "In any event, Brian, Dennis, and I have been working exclusively in Lisp on
-the Apple Macintosh for the past few years and feel really guilty about the
-chaos, confusion, and truly bad programming that has resulted from our silly
-prank so long ago."
+    "In any event, Brian, Dennis, and I have been working exclusively in Lisp on
+    the Apple Macintosh for the past few years and feel really guilty about the
+    chaos, confusion, and truly bad programming that has resulted from our silly
+    prank so long ago."
+```
 
-> Major Unix and C vendors and customers, including AT&T, Microsoft,
+Major Unix and C vendors and customers, including AT&T, Microsoft,
 Hewlett-Packard, GTE, NCR, and DEC have refused comment at this time.  Borland
 International, a leading vendor of Pascal and C tools, including the popular
 Turbo Pascal, Turbo C, and Turbo C++, stated they had suspected this for a
@@ -1240,7 +1256,7 @@ cryptic statement, Professor Wirth of the ETH Institute and father of the
 Pascal, Modula 2, and Oberon structured languages, merely stated that P. T.
 Barnum was correct.
 
-**So is it a hoax about a non-hoax, a non-hoax about a hoax, a non-hoax about a
+So is it a hoax about a non-hoax, a non-hoax about a hoax, a non-hoax about a
 non-hoax or is it a hoax about a hoax ? :) And if it's any of those what does it
 mean about Unix and C?** And if a hoax is involved *what is the hoax?* The pedant
 and Tolkienist that I am has to state that **Tolkien didn't consider The Lord of

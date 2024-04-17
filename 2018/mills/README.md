@@ -387,12 +387,14 @@ respectively.  Let's try the Dennis Richie's `dmr` account:
 Even though this is not Ken's doing, I feel this gives me licence to
 include this quote from the BSD `fortune` program:
 
-> Ken Thompson has an automobile which he helped design. Unlike
-> most automobiles, it has neither speedometer, nor gas gauge,
-> nor any of the numerous idiot lights which plague the modern
-> driver. Rather, if the driver makes any mistake, a giant "?"
-> lights up in the center of the dashboard. "The experienced
-> driver", he says, "will usually know what's wrong."
+```
+    Ken Thompson has an automobile which he helped design. Unlike
+    most automobiles, it has neither speedometer, nor gas gauge,
+    nor any of the numerous idiot lights which plague the modern
+    driver. Rather, if the driver makes any mistake, a giant "?"
+    lights up in the center of the dashboard. "The experienced
+    driver", he says, "will usually know what's wrong."
+```
 
 What's the deal here?  Well, that's a slightly long story.  The short version
 is we have gone so far back in the history of UNIX that *we don't have
@@ -466,9 +468,11 @@ convenience of writing code in a high-level language -- Multics was written
 in a version of PL/1 -- and wanted the same convenience in UNIX.  He preferred
 BCPL (a typeless language) to PL/1.  As Dennis Ritchie [wrote] [6]:
 
-> B can be thought of as C without types; more accurately,
-> it is BCPL squeezed into 8K bytes of memory and filtered
-> through Thompson's brain.
+```
+    B can be thought of as C without types; more accurately,
+    it is BCPL squeezed into 8K bytes of memory and filtered
+    through Thompson's brain.
+```
 
 A look at the B reference manual will show the strong correlation with C, and
 shows the source of a lot of C's mysteriousness -- some of which is preserved

@@ -108,7 +108,7 @@ factors.
 
 Therefore this entry is limited to
 
-> ![floor\bigg(\frac{10^6}{4\times(sizeof(double)+1)}-1\bigg)](eqn.png)
+![floor\bigg(\frac{10^6}{4\times(sizeof(double)+1)}-1\bigg)](eqn.png)
 
 points and won't even be suitable for more than a few thousand; although
 generated files did pass the [W3C SVG
@@ -181,7 +181,7 @@ viewport and potentially every
 
 ### Example Output
 
-> ![Voronoi diagram of two regular pentagon vertices](Voronoi.png)
+![Voronoi diagram of two regular pentagon vertices](Voronoi.png)
 
 
 <!--

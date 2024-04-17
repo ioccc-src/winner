@@ -59,7 +59,9 @@ to functions!
 
 This program prints out the string:
 
-> the quick brown fox jumped over the lazy dog
+```
+    the quick brown fox jumped over the lazy dog
+```
 
 
 ## Author's remarks:

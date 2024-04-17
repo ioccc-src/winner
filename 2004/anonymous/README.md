@@ -62,8 +62,10 @@ some circumflexes missing! That's okay though due to I/O of the entry and in
 earlier drafts sometimes the û had no diacritic but H after the `u` in
 it. The real text is:
 
-> Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk, agh
-> burzum-ishi krimpatul.
+```
+    Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk, agh
+    burzum-ishi krimpatul.
+```
 
 which when translated from [Black
 Speech](https://www.glyphweb.com/arda/b/blackspeech.html) means:
