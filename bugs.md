@@ -3872,22 +3872,31 @@ touched either.
 
 The author stated the following:
 
----
+```
+    - The program must be ran in a terminal that supports ANSI
+      escape codes for moving the cursor and changing colors.
 
-- The program must be ran in a terminal that supports ANSI escape codes for
-moving the cursor and changing colors.
-- Segfaults happen sometimes.
-- I don't know what memory management there is, if any.
-- The program will not compile by an ANSI C compiler: it uses for loops, and
-it uses C++ style comments. It should compile cleanly using a C99 standard.
-- Breadth first search is slow (and very slow on certain maps), but my A star
-version of this program is too big.
-- Lots of extra whitespace may be needed if you want to feed in an arbitrary
-file.
-- It fails to compile on GCC sometimes (according to a friend of mine, I've
-not encountered this myself).
-- The program could be obfuscated much further.
-- The program contains some unused code and data.
+    - Segfaults happen sometimes.
+
+    - I don't know what memory management there is, if any.
+
+    - The program will not compile by an ANSI C compiler: it uses
+      for loops, and it uses C++ style comments. It should compile
+      cleanly using a C99 standard.
+
+    - Breadth first search is slow (and very slow on certain maps),
+      but my A star version of this program is too big.
+
+    - Lots of extra whitespace may be needed if you want to feed in
+      an arbitrary file.
+
+    - It fails to compile on GCC sometimes (according to a friend
+      of mine, I've not encountered this myself).
+
+    - The program could be obfuscated much further.
+
+    - The program contains some unused code and data.
+```
 
 
 <div id="2019_lynn">
@@ -3919,20 +3928,17 @@ a crash.
 
 The author also wrote:
 
----
-
-**IMPORTANT NOTE**: Since OMLET uses the system stack for network storage,
-larger networks may cause OMLET to crash (typically with a message like
-`Segmentation fault`) unless the system stack size is first increased.
-The exact command for doing so depends on your shell and your system's
-hard limits.  On `sh`/`ksh`/`bash` shells, you can view the hard limit
-with `ulimit -Hs` and set it with `ulimit -s 65532` (replacing `65532`
-with the actual hard limit).  On `csh`/`tcsh` shells, you can view
-the hard limit with `limit -h stacksize` and set it with
-`limit stacksize 65532` (replacing `65532` with the actual hard limit).
-
----
-
+```
+    IMPORTANT NOTE: Since OMLET uses the system stack for network storage,
+    larger networks may cause OMLET to crash (typically with a message like
+    Segmentation fault) unless the system stack size is first increased.
+    The exact command for doing so depends on your shell and your system's
+    hard limits.  On sh/ksh/bash shells, you can view the hard limit
+    with ulimit -Hs and set it with ulimit -s 65532 (replacing 65532
+    with the actual hard limit).  On csh/tcsh shells, you can view
+    the hard limit with limit -h stacksize and set it with
+    limit stacksize 65532 (replacing 65532 with the actual hard limit).
+```
 
 <div id="2019_poikola">
 ## 2019/poikola
