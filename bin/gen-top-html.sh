@@ -88,7 +88,7 @@ TOP_MD_SET+=("faq")
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4 2024-04-15"
+export VERSION="1.4.1 2024-04-16"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -492,15 +492,15 @@ for name in "${TOP_MD_SET[@]}"; do
     #
     if [[ -z $NOOP ]]; then
 	if [[ $V_FLAG -ge 1 ]]; then
-	    echo "$0: debug[1]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]} -m $MD_FILE --" \
-		 "$MD_FILE $HTML_FILE" 1>&2
+	    echo "$0: debug[1]: about to run: $MD2HTML_SH -U $SITE_URL/$HTML_FILE ${TOOL_OPTION[*]}" \
+	         "-m $MD_FILE -- $MD_FILE $HTML_FILE" 1>&2
 	fi
-	"$MD2HTML_SH" "${TOOL_OPTION[@]}" -U "$SITE_URL/$HTML_FILE" -m "$MD_FILE" -- \
-	    "$MD_FILE" "$HTML_FILE"
+	"$MD2HTML_SH" -U "$SITE_URL/$HTML_FILE" "${TOOL_OPTION[@]}" \
+	    -m "$MD_FILE" -- "$MD_FILE" "$HTML_FILE"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
-	    echo "$0: Warning: md2html.sh: $MD2HTML_SH ${TOOL_OPTION[*]} -m $MD_FILE --" \
-	         "$MD_FILE $HTML_FILE" \
+	    echo "$0: Warning: md2html.sh: $MD2HTML_SH -U $SITE_URL/$HTML_FILE ${TOOL_OPTION[*]}" \
+		 "-m $MD_FILE -- $MD_FILE $HTML_FILE" \
 		 "failed, error: $status" 1>&2
 	    EXIT_CODE="1"  # exit 1
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
@@ -511,8 +511,8 @@ for name in "${TOP_MD_SET[@]}"; do
     # report disabled by -n
     #
     elif [[ $V_FLAG -ge 5 ]]; then
-	echo "$0: debug[5]: because of -n, did not run: $MD2HTML_SH ${TOOL_OPTION[*]} -m $MD_FILE --" \
-	     "$MD_FILE $HTML_FILE" 1>&2
+	echo "$0: debug[5]: because of -n, did not run: $MD2HTML_SH -U $SITE_URL/$HTML_FILE ${TOOL_OPTION[*]}" \
+	     "-m $MD_FILE -- $MD_FILE $HTML_FILE" 1>&2
     fi
 done
 
