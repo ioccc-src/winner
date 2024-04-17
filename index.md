@@ -17,7 +17,10 @@ then consider making pull requests against the [temp-test-ioccc GitHub repo](htt
 
 # Suggestion for visitors
 
-Explore the [Winning Entries](years.html) sorted by year, or sorted by [People who have won](authors.html).
+Explore:
+
+* **[Winning Entries](years.html)**
+* **[People who have won](authors.html)**
 
 
 # Obfuscate defined:
