@@ -2705,7 +2705,8 @@ p.s. Here is an image of F. D. C. Willard:
 
 
 <div id="faq6_5">
-<div id="author_handle">
+<!-- we cannot use id="author_handle" because of a header in FAQ 6.6 -->
+<div id="author_handle_faq">
 ### FAQ 6.5: What is an author handle?
 </div>
 </div>
@@ -2908,7 +2909,7 @@ This _JSON member_ holds the author handle of the author.
 There **MUST** be one and only one `author_handle` _JSON member_
 and the _JSON value_ **MUST** be a _JSON string_ that is also a value author handle.
 
-See [FAQ 6.5](#author_handle) for more information about an author handles.
+See [FAQ 6.5](#author_handle_faq) for more information about an author handles.
 
 Normally the _author_handle_ _JSON value_ should **NOT** be changed
 **unless there is a strong reason to do so**.  If the  _JSON value_
@@ -3258,7 +3259,7 @@ and/or correct IOCCC author information.
 
 
 <div id="faq6_7">
-<div id="author_json">
+<div id="entry_id">
 ### FAQ 6.7: What is a entry_id?
 </div>
 </div>

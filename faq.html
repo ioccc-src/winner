@@ -1999,7 +1999,8 @@ exaggeration</a>.</p>
 <p>p.s. Here is an image of F. D. C. Willard:</p>
 <p><a href="png/F.D.C.Willard.png">F D C Willard</a></p>
 <div id="faq6_5">
-<div id="author_handle">
+<!-- we cannot use id="author_handle" because of a header in FAQ 6.6 -->
+<div id="author_handle_faq">
 <h3 id="faq-6.5-what-is-an-author-handle">FAQ 6.5: What is an author handle?</h3>
 </div>
 </div>
@@ -2128,7 +2129,7 @@ in conjunction with changes to <a href="bin/index.html">bin directory tools</a>.
 <p>This <em>JSON member</em> holds the author handle of the author.</p>
 <p>There <strong>MUST</strong> be one and only one <code>author_handle</code> <em>JSON member</em>
 and the <em>JSON value</em> <strong>MUST</strong> be a <em>JSON string</em> that is also a value author handle.</p>
-<p>See <a href="#author_handle">FAQ 6.5</a> for more information about an author handles.</p>
+<p>See <a href="#author_handle_faq">FAQ 6.5</a> for more information about an author handles.</p>
 <p>Normally the <em>author_handle</em> <em>JSON value</em> should <strong>NOT</strong> be changed
 <strong>unless there is a strong reason to do so</strong>. If the <em>JSON value</em>
 changes, then all of the <code>.entry.json</code> files for all of this authors
@@ -2314,7 +2315,7 @@ is a valid entry ID.</p>
 <p>See <a href="#fix_author">FAQ 5.5</a> for information about how to update
 and/or correct IOCCC author information.</p>
 <div id="faq6_7">
-<div id="author_json">
+<div id="entry_id">
 <h3 id="faq-6.7-what-is-a-entry_id">FAQ 6.7: What is a entry_id?</h3>
 </div>
 </div>
