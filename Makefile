@@ -258,33 +258,33 @@ indent.c:
 # here!
 #
 help:
-	@echo "make genpath - form top level .top, YYYY level .year and winner .path files"
-	@echo "make genfilelist - generate YYYY level .filelist"
-	@echo "make verify_entry_files - check to be sure all files in all entries exist"
-	@echo "make sort_gitignore - sort .gitignore files according to rules in bin/sgi.sh"
-	@echo "make gen_authors - generate the top level authors.html page"
-	@echo "make gen_location - generate the top level location.html page"
-	@echo "make gen_years - generate the top level years.html page"
-	@echo "make entry_index - force the build of ALL winner index.html files"
-	@echo "make gen_other_html - build entry HTML files from markdown other than README.md"
-	@echo "make gen_year_index - generate year level index.html files using the"
-	@echo "make gen_status - generate status.json and status.html"
-	@echo "make gen_top_html - generate a number of the top level HTML files from markdown"
-	@echo "make quick_entry_index - build winner index.html files that might be out of date"
-	@echo "make quick_www - generate html files more quickly, checking timestamps"
-	@echo "make www - build html pages for web site"
+	@echo "make genpath		 - form top level .top, YYYY level .year and winner .path files"
+	@echo "make genfilelist	 - generate YYYY level .filelist"
+	@echo "make verify_entry_files	 - check to be sure all files in all entries exist"
+	@echo "make sort_gitignore	 - sort .gitignore files according to rules in bin/sgi.sh"
+	@echo "make gen_authors	 - generate the top level authors.html page"
+	@echo "make gen_location	 - generate the top level location.html page"
+	@echo "make gen_years		 - generate the top level years.html page"
+	@echo "make entry_index	 - force the build of ALL winner index.html files"
+	@echo "make gen_other_html	 - build entry HTML files from markdown other than README.md"
+	@echo "make gen_year_index	 - generate year level index.html files using the"
+	@echo "make gen_status		 - generate status.json and status.html"
+	@echo "make gen_top_html	 - generate a number of the top level HTML files from markdown"
+	@echo "make quick_entry_index	 - build winner index.html files that might be out of date"
+	@echo "make quick_www		 - generate html files more quickly, checking timestamps"
+	@echo "make www		 - build html pages for web site"
 	@echo
 	@echo "make untar_entry_tarball - untar all entry tarballs"
-	@echo "make untar_year_tarball - untar all year level tarballs"
+	@echo "make untar_year_tarball	 - untar all year level tarballs"
 	@echo
-	@echo "make form_entry_tarball - form all entry compressed tarballs"
-	@echo "make form_year_tarball - form all IOCCC year level compressed tarballs"
-	@echo "make tar - build all tarballs"
+	@echo "make form_entry_tarball	 - form all entry compressed tarballs"
+	@echo "make form_year_tarball	 - form all IOCCC year level compressed tarballs"
+	@echo "make tar		 - build all tarballs"
 	@echo
-	@echo "make gen_sitemap - generate the XML sitemap"
-	@echo "make timestamp - generate things with timestamps (status, sitemap etc.)"
+	@echo "make gen_sitemap	 - generate the XML sitemap"
+	@echo "make timestamp		 - generate things with timestamps (status, sitemap etc.)"
 	@echo
-	@echo "make update - update everything on the web site"
+	@echo "make update		 - update everything on the web site"
 
 # form the top level .top, YYYY level .year and winner level .path files
 #
