@@ -556,9 +556,9 @@ myself! Very much appreciated especially coming from an amazing programmer who I
 have huge admiration for!
 
 I want to thank Ilya Kurdyukov for his helpful comments, suggestions and
-reporting the problem about half-width/full-width char spacing. He's been
-playing with some versions of his own and will have them on GitHub after the
-2020 IOCCC winning entries have been published.
+reporting the (undocumented) 'problem' about half-width/full-width char spacing.
+He's been playing with some versions of his own and will have them on GitHub
+after the 2020 IOCCC winning entries have been published.
 
 Finally I want to thank Leo Broukhis, Simon Cooper and Landon Curt Noll for
 continuing to hold the contest after all these years - and for having selected

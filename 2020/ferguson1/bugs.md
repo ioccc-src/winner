@@ -10,7 +10,6 @@ Current bugs and things that look like bugs but are not, as of 12 September 2020
 -   [With negative growth the snake drops from the middle of the body](#middleofsnake)
 -   [It looks like the bug is in the snake](#buginsnake)
 -   [On the safety of the bug placement loop](#bugplacement)
--   [Vertical snake has more space between snake char than horizontal](#verticalsnake)
 
 
 # <a name="builtin-test-unit" href="#toc">Built-in test unit for some features!</a>
@@ -268,46 +267,6 @@ cannibal mode it's even less likely that you'll ever run into this problem.
 The obvious question is why didn't I put in a break? Because of the IOCCC size
 rule 2 and what would it do anyway? I guess it would win but to my mind that is
 a bug and I prefer putting in restrictions to try and make it very unlikely.
-
-# <a name="verticalsnake" href="#toc">Vertical snake has more space between snake char than horizontal snake</a>
-
-Ilya Kurdyukov also pointed out that depending on orientation of the snake there
-are different amount of spaces between the snake char 'o'. This is what he
-had to say on it:
-
-> Yes, it is the problem, space in character terminal is not isotropic
-> from a viewer (gamer) perspective so one step up look like two steps
-> right.
->
-> MATE Terminal 1.20.0, and font "Ubuntu Mono Regular 13"
->
-> But, as I said, there is no terminal problem itself, it's because
-> character tiles are not square (except for Japanese/Chinese, Japanese
-> even have so called full-width English characters in their encoding,
-> presented in UTF too).
->
-> [https://en.wikipedia.org/wiki/Halfwidth_and_fullwidth_forms][]
->
-> So the typical fonts are Half-width or close to it.
->
-<img src="halfwidth_vs_fullwidth.png">
-
-However the function `mvaddch()` takes a `chtype` which amounts to a C char
-with additional information and so the full width `Ｏ`is too big for the
-function call. He reminded me of the old DOS box chars but even if this was
-easily duplicable (and it might be and I don't remember) the logic would
-have to be changed for drawing the snake and in such a way that would change
-the source code layout too much - to say nothing else of the fact I have
-also forgotten some of what I did obfuscation wise (and the
-[spoilers][] aren't enough here!).
-
-That being said the font and font size does seem to have somewhat of an
-effect on it since his screenshots have wider gaps than mine.
-
-Once again thank you mate for bringing this to my attention and also playing
-with it and providing the resources! Much appreciated! (And although you
-suggested it is bugging me I once again here say it's not at all bugging me
-but it is very much appreciated and it means a great deal to me. Cheers.)
 
 [crazy.log.md]: crazy.log.md
 [gameplay.md]: gameplay.md
