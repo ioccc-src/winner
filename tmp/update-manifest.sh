@@ -315,6 +315,13 @@ else
     fi
 fi
 
+echo "$(basename "$0"): now will run: bin/gen-other-html.sh -v $CAP_D_FLAG"
+echo "NOTE: this can take a while." 1>&2
+if ! bin/gen-other-html.sh -v "$CAP_D_FLAG"; then
+    echo "problem running bin/gen-other-html.sh, fix and try again." 1>&2
+    exit 5
+fi
+
 
 read -r -n 1 -p "Press any key to run: $GIT diff: "
 echo 1>&2
