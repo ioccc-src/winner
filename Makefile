@@ -381,8 +381,25 @@ gen_top_html: ${GEN_TOP_HTML}
 	${GEN_TOP_HTML} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-# a fishy rule :-)
+#   Say, can you see
+#   By the dawn's early light
+#   What so proudly we hailed
+#   At the twilight's last gleaming?
 #
+#   Whose broad stripes and bright stars
+#   Through the perilous fight
+#   O'er the ramparts we watched
+#   Were so gallantly, yeah, streaming?
+#
+#   And the rockets' red glare
+#   The bombs bursting in air
+#   Gave proof through the night
+#   That our flag was still there
+#
+#   O say, does that star-spangled banner yet wave
+#   O'er the land of the free and the home of the brave
+#
+# Just kidding .. So Long, and Thanks for All the Fish :-)
 thanks: ${GEN_TOP_HTML} thanks-for-help.md
 	@echo "Thanks for all the help ..."
 	@${GEN_TOP_HTML}
