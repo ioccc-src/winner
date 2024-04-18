@@ -4144,7 +4144,6 @@
 2020/ferguson1/crazy.log.md
 2020/ferguson1/gameplay.html
 2020/ferguson1/gameplay.md
-2020/ferguson1/halfwidth_vs_fullwidth.png
 2020/ferguson1/index.html
 2020/ferguson1/ioccc-cake.jpg
 2020/ferguson1/play.sh

@@ -282,14 +282,6 @@
 	    "entry_text" : "markdown source for gameplay.html"
 	},
 	{
-	    "file_path" : "halfwidth_vs_fullwidth.png",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "image",
-	    "display_via_github" : false,
-	    "entry_text" : "image for bugs.md"
-	},
-	{
 	    "file_path" : "ioccc-cake.jpg",
 	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,

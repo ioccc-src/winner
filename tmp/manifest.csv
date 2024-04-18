@@ -4157,7 +4157,6 @@
 2020,ferguson1,.entry.json,4000000000,true,json,true,description of entry in JSON
 2020,ferguson1,gameplay.md,4000000000,true,markdown,true,markdown source for gameplay.html
 2020,ferguson1,.gitignore,4000000000,true,gitignore,true,list of files that should not be committed under git
-2020,ferguson1,halfwidth_vs_fullwidth.png,4000000000,true,image,false,image for bugs.md
 2020,ferguson1,ioccc-cake.jpg,4000000000,true,image,false,image for chocolate cake
 2020,ferguson1,.path,4000000000,false,path,true,directory path from top directory
 2020,ferguson1,spoilers.md,4000000000,true,markdown,true,markdown source for spoilers.html
