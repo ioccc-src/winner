@@ -3259,7 +3259,8 @@ and/or correct IOCCC author information.
 
 
 <div id="faq6_7">
-<div id="entry_id">
+<!-- we cannot use id="entry_id" because of a header in FAQ 6.6 -->
+<div id="entry_id_faq">
 ### FAQ 6.7: What is a entry_id?
 </div>
 </div>
