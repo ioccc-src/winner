@@ -29,12 +29,13 @@ on a IOCCC entry by entry basis.
 
 
 <div id="1984">
-# 1984
+# [1984](1984/index.html)
 </div>
 
 
 <div id="1984_anonymous">
-## [1984/anonymous](1984/anonymous/anonymous.c) ([index.html](1984/anonymous/index.html))
+# [1984/anonymous](1984/anonymous/index.html)
+## Source code: [anonymous.c](1984/anonymous/anonymous.c)
 </div>
 
 [Cody](#cody) fixed this to work for macOS.
@@ -61,7 +62,8 @@ Scovell](https://web.archive.org/web/20070120220721/https://thomasscovell.com/ta
 
 
 <div id="1984_decot">
-## [1984/decot](1984/decot/decot.c) ([index.html](1984/decot/index.html]))
+# [1984/decot](1984/decot/index.html)
+## Source code: [decot.c](1984/decot/decot.c)
 </div>
 
 [Cody](#cody) fixed this to not require `-traditional-cpp` which some compilers like
@@ -128,7 +130,8 @@ To see the difference from start to fixed:
 
 
 <div id="1984_laman">
-## [1984/laman](1984/laman/laman.c) ([index.html](1984/laman/index.html]))
+# [1984/laman](1984/laman/index.html)
+## Source code: [laman.c](1984/laman/laman.c)
 </div>
 
 [Cody](#cody) added the [try.sh](1984/laman/try.sh) script.
@@ -140,7 +143,8 @@ This was fixed on 30 October 2023 after the bug status was changed from INABIAF
 
 
 <div id="1984_mullender">
-## [1984/mullender](1984/mullender/mullender.c) ([index.html](1984/mullender/index.html]))
+# [1984/mullender](1984/mullender/index.html)
+## Source code: [mullender.c](1984/mullender/mullender.c)
 </div>
 
 [Cody](#cody) provided an [alternate version](1984/mullender/mullender.alt.c),
@@ -164,12 +168,13 @@ Repo](https://github.com/dspinellis/unix-history-repo/tree/Research-Release).
 
 
 <div id="1985">
-# 1985
+# [1985](1985/index.html)
 </div>
 
 
 <div id="1985_applin">
-## [1985/applin](1985/applin/applin.c) ([index.html](1985/applin/index.html]))
+# [1984/applin](1985/applin/index.html)
+## Source code: [applin.c](1985/applin/applin.c)
 </div>
 
 Both [Cody](#cody) and [Yusuke](#yusuke) fixed this; Yusuke got this to not crash and Cody fixed it
@@ -195,7 +200,8 @@ returning to the shell. The original code does not have this change.
 
 
 <div id="1985_august">
-## [1985/august](1985/august/august.c) ([index.html](1985/august/index.html))
+# [1985/august](1985/august/index.html)
+## Source code: [august.c](1985/august/august.c)
 </div>
 
 [Cody](#cody), out of abundance of caution, added a second arg to `main()` because some
@@ -216,7 +222,8 @@ default value).
 
 
 <div id="1985_lycklama">
-## [1985/lycklama](1985/lycklama/lycklama.c) ([index.html](1985/lycklama/index.html]))
+# [1985/lycklama](1985/lycklama/index.html)
+## Source code: [lycklama.c](1985/lycklama/lycklama.c)
 </div>
 
 [Cody](#cody) fixed this to compile with modern compilers. In the past one could get away
@@ -231,7 +238,8 @@ Cody also provided the [try.alt.sh](1985/lycklama/try.alt.sh) script.
 
 
 <div id="1985_shapiro">
-## [1985/shapiro](1985/shapiro/shapiro.c) ([index.html](1985/shapiro/index.html]))
+# [1985/shapiro](1985/1985/lycklama/index.html)
+## Source code: [index.html](1985/shapiro/shapiro.c])
 </div>
 
 [Cody](#cody) added the alt code which allows one to resize the maze and he also added
@@ -243,7 +251,8 @@ the default).
 
 
 <div id="1985_sicherman">
-## [1985/sicherman](1985/sicherman/sicherman.c) ([index.html](1985/sicherman/index.html]))
+# [1985/sicherman](1985/sicherman/index.html)
+## Source code: [1985/sicherman](1985/sicherman/sicherman.c)
 </div>
 
 [Cody](#cody) fixed this _very twisted entry_ to not require `-traditional-cpp`.  Fixing
@@ -362,12 +371,13 @@ Cody also added the [try.sh](1985/sicherman/try.sh) and
 
 
 <div id="1986">
-# 1986
+# [1986](1986/index.html)
 </div>
 
 
 <div id="1986_applin">
-## [1986/applin](1986/applin/applin.c) ([index.html](1986/applin/index.html]))
+# [1986/applin](1986/applin/index.html])
+## Source code: [applin.c](1986/applin/applin.c)
 </div>
 
 [Cody](#cody) made the C file executable so one does not have to do `sh
@@ -375,14 +385,16 @@ Cody also added the [try.sh](1985/sicherman/try.sh) and
 
 
 <div id="1986_bright">
-## [1986/bright](1986/bright/bright.c) ([index.html](1986/bright/index.html]))
+# [1986/bright](1986/bright/index.html)
+## Source code: [bright.c](1986/bright/bright.c)
 </div>
 
 [Cody](#cody) added the [try.sh](1986/bright/try.sh) script.
 
 
 <div id="1986_hague">
-## [1986/hague](1986/hague/hague.c) ([index.html](1986/hague/index.html]))
+# [1986/hague](1986/hague/index.html])
+## Source code: [hague.c](1986/hague/hague.c)
 </div>
 
 [Cody](#cody) made this use `fgets()`.
@@ -392,7 +404,8 @@ program the added `input.txt` file.
 
 
 <div id="1986_holloway">
-## [1986/holloway](1986/holloway/holloway.c) ([index.html](1986/holloway/index.html]))
+# [1986/holloway](1986/holloway/index.html)
+## Source code: [holloway.c](1986/holloway/holloway.c)
 </div>
 
 [Cody](#cody) fixed this to compile and work with clang (it already worked with gcc).
@@ -404,7 +417,8 @@ and gcc.
 
 
 <div id="1986_marshall">
-## [1986/marshall](1986/marshall/marshall.c) ([index.html](1986/marshall/index.html]))
+# [1986/marshall](1986/marshall/index.html)
+## Source code: [marshall.c](1986/marshall/marshall.c)
 </div>
 
 [Cody](#cody) got this to compile and work with clang and gcc. He noted that he tried to
@@ -466,7 +480,8 @@ are produced.
 
 
 <div id="1986_pawka">
-## [1986/pawka](1986/pawka/pawka.c) ([index.html](1986/pawka/index.html))
+# [1986/pawka](1986/pawka/index.html)
+## Source code: [pawka.c](1986/pawka/pawka.c)
 </div>
 
 [Cody](#cody) noticed and fixed a funny mistake in the Makefile where a
@@ -475,7 +490,8 @@ are produced.
 
 
 <div id="1986_stein">
-## [1986/stein](1986/stein/stein.c) ([index.html](1986/stein/index.html]))
+# [1986/stein](1986/stein/index.html)
+## Source code: [stein.c](1986/stein/stein.c)
 </div>
 
 [Cody](#cody) restored the original entry which was a single line. The code
@@ -488,7 +504,8 @@ commands that we suggest in order to get it to show clean output.
 
 
 <div id="1986_wall">
-## [1986/wall](1986/wall/wall.c) ([index.html](1986/wall/index.html]))
+# [1986/wall](1986/wall/index.html)
+## Source code: [wall.c](1986/wall/wall.c)
 </div>
 
 [Cody](#cody) fixed this so that it does not require `-traditional-cpp`. This took a fair
@@ -599,19 +616,21 @@ There might have been other changes as well.
 
 
 <div id="1987">
-# 1987
+# [1987](1987/index.html)
 </div>
 
 
 <div id="1987_biggar">
-## [1987/biggar](1987/biggar/biggar.c) ([index.html](1987/biggar/index.html))
+# [1987/biggar](1987/biggar/index.html)
+## Source code: [biggar.c](1987/biggar/biggar.c)
 </div>
 
 [Cody](#cody) added the [try.sh](1987/biggar/try.sh) script.
 
 
 <div id="1987_heckbert">
-## [1987/heckbert](1987/heckbert/heckbert.c) ([index.html](1987/heckbert/index.html))
+# [1987/heckbert](1987/heckbert/index.html)
+## Source code: [heckbert.c](1987/heckbert/heckbert.c)
 </div>
 
 [Cody](#cody) made this look more like the original entry by restoring the `#define` of
@@ -627,7 +646,8 @@ that for System V we had to do this) Cody added to the Makefile
 
 
 <div id="1987_hines">
-## [1987/hines](1987/hines/hines.c) ([index.html](1987/hines/index.html))
+# [1987/hines](1987/hines/index.html)
+## Source code: [hines.c](1987/hines/hines.c)
 </div>
 
 [Cody](#cody) added the [try.sh](1987/hines/try.sh) script and the C file
@@ -637,7 +657,8 @@ running the program on the text file demonstrates.
 
 
 <div id="1987_lievaart">
-## [1987/lievaart](1987/lievaart/lievaart.c) ([index.html](1987/lievaart/index.html))
+# [1987/lievaart](1987/lievaart/index.html)
+## Source code: [lievaart.c](1987/lievaart/lievaart.c)
 </div>
 
 [Cody](#cody) added back the documented checks for invalid input which no longer worked
@@ -684,7 +705,8 @@ size constraints of the contest).
 
 
 <div id="1987_wall">
-## [1987/wall](1987/wall/wall.c) ([index.html](1987/wall/index.html]))
+# [1987/wall](1987/wall/index.html)
+## Source code: [wall.c](1987/wall/wall.c)
 </div>
 
 [Cody](#cody) made this use `fgets(3)`.
@@ -693,7 +715,8 @@ Cody also added the [try.sh](1987/wall/try.sh) script.
 
 
 <div id="1987_westley">
-## [1987/westley](1987/westley/westley.c) ([index.html](1987/westley/index.html]))
+# [1987/westley](1987/westley/index.html)
+## Source code: [westley.c](1987/westley/westley.c)
 </div>
 
 [Cody](#cody) fixed this for modern systems. The problem was `'assignment to cast is
@@ -710,12 +733,13 @@ unlikely(?) but nevertheless suggested case that `putchar()` is not available.
 
 
 <div id="1988">
-# 1988
+# [1988](1988/index.html)
 </div>
 
 
 <div id="1988_dale">
-## [1988/dale](1988/dale/dale.c) ([index.html](1988/dale/index.html]))
+# [1988/dale](1988/dale/index.html)
+## Source code: [dale.c](1988/dale/dale.c)
 </div>
 
 [Cody](#cody) fixed this twisted entry (as we called it :-) ) for modern compilers,
@@ -797,7 +821,8 @@ Cody also provided the [try.sh](1988/dale/try.sh) script.
 
 
 <div id="1988_isaak">
-## [1988/isaak](1988/isaak/isaak.c) ([index.html](1988/isaak/index.html]))
+# [1988/isaak](1988/isaak/index.html)
+## Source code: [isaak.c](1988/isaak/isaak.c)
 </div>
 
 [Cody](#cody) fixed this to work for modern systems. The problem was that the important
@@ -807,7 +832,8 @@ index.html file for more details.
 
 
 <div id="1988_litmaath">
-## [1988/litmaath](1988/litmaath/litmaath.c) ([index.html](1988/litmaath/index.html))
+# [1988/litmaath](1988/litmaath/index.html)
+## Source code: [litmaath.c](1988/litmaath/litmaath.c)
 </div>
 
 [Cody](#cody) added the alt code which is code that we suggested at the time of
@@ -815,7 +841,8 @@ publication, in the remarks, to help understand the entry, and for fun.
 
 
 <div id="1988_phillipps">
-## [1988/phillipps](1988/phillipps/phillipps.c) ([index.html](1988/phillipps/index.html]))
+# [1988/phillipps](1988/phillipps/index.html)
+## Source code: [phillipps.c](1988/phillipps/phillipps.c)
 </div>
 
 [Cody](#cody) fixed this for modern systems. It did not compile with clang because it
@@ -836,14 +863,16 @@ to itself and `pain()` does now.
 
 
 <div id="1988_reddy">
-## [1988/reddy](1988/reddy/reddy.c) ([index.html](1988/reddy/index.html))
+# [1988/reddy](1988/reddy/index.html)
+## Source code: [reddy.c](1988/reddy/reddy.c)
 </div>
 
 [Cody](#cody) made this use `fgets(3)`.
 
 
 <div id="1988_spinellis">
-## [1988/spinellis](1988/spinellis/spinellis.c) ([index.html](1988/spinellis/index.html]))
+# [1988/spinellis](1988/spinellis/index.html)
+## Source code: [spinellis.c](1988/spinellis/spinellis.c)
 </div>
 
 [Cody](#cody) provided an [alternate version](1988/spinellis/spinellis.alt.c) so that
@@ -861,7 +890,8 @@ thank him for this ghastly point! :-)
 
 
 <div id="1988_westley">
-## [1988/westley](1988/westley/westley.c) ([index.html](1988/westley/index.html]))
+# [1988/westley](1988/westley/index.html)
+## Source code: [westley.c](1988/westley/westley.c)
 </div>
 
 The [original version](1988/westley/westley.alt.c), provided as alternate code,
@@ -879,12 +909,13 @@ not strictly necessary but nonetheless more correct, even if not warned against.
 
 
 <div id="1989">
-# 1989
+# [1989](1989/index.html)
 </div>
 
 
 <div id="1989_fubar">
-## [1989/fubar](1989/fubar/fubar.c) ([index.html](1989/fubar/index.html]))
+# [1989/fubar](1989/fubar/index.html)
+## Source code: [fubar.c](1989/fubar/fubar.c)
 </div>
 
 [Cody](#cody) got this to work with modern systems. The main issues were that an
@@ -920,7 +951,8 @@ Cody also added the [try.sh](1989/fubar/try.sh) script.
 
 
 <div id="1989_jar.1">
-## [1989/jar.1](1989/jar.1/jar.1.c) ([index.html](1989/jar.1/index.html]))
+# [1989/jar.1](1989/jar.1/index.html)
+## Source code: [jar.1.c](1989/jar.1/jar.1.c)
 </div>
 
 To prevent annoying output to `/dev/tty` we changed the code to simulate the
@@ -939,7 +971,8 @@ entry and the alt code) anyway, it works out well.
 
 
 <div id="1989_jar.2">
-## [1989/jar.2](1989/jar.2/jar.2.c) ([index.html](1989/jar.2/index.html]))
+# [1989/jar.2](1989/jar.2/index.html)
+## Source code: [jar.2.c](1989/jar.2/jar.2.c)
 </div>
 
 [Cody](#cody) fixed this to work with modern compilers. Modern compilers do not allow
@@ -980,7 +1013,8 @@ because the `alt` rule had what normally is in the `${PROG}.alt` rule.
 
 
 <div id="1989_ovdluhe">
-## [1989/ovdluhe](1989/ovdluhe/ovdluhe.c) ([index.html](1989/ovdluhe/index.html]))
+# [1989/ovdluhe](1989/ovdluhe/index.html)
+## Source code: [ovdluhe.c](1989/ovdluhe/ovdluhe.c)
 </div>
 
 [Cody](#cody) fixed an infinite loop where the program would print the same thing over
@@ -1002,7 +1036,8 @@ discovered and fixed.
 
 
 <div id="1989_paul">
-## [1989/paul](1989/paul/paul.c) ([index.html](1989/paul/index.html]))
+# [1989/paul](1989/paul/index.html)
+## Source code: [paul.c](1989/paul/paul.c)
 </div>
 
 [Cody](#cody) fixed a segfault under macOS that prevented it from working. The problem
@@ -1015,7 +1050,8 @@ index.html for details.
 
 
 <div id="1989_robison">
-## [1989/robison](1989/robison/robison.c) ([index.html](1989/robison/index.html]))
+# [1989/robison](1989/robison/index.html)
+## Source code: [robison.c](1989/robison/robison.c)
 </div>
 
 [Yusuke Endoh](#yusuke) fixed this to compile under modern systems. To see the changes
@@ -1032,7 +1068,8 @@ Cody also added the [try.sh](1989/robison/try.sh) script.
 
 
 <div id="1989_tromp">
-## [1989/tromp](1989/tromp/tromp.c) ([index.html](1989/tromp/index.html]))
+# [1989/tromp](1989/tromp/index.html)
+## Source code: [tromp.c](1989/tromp/tromp.c)
 </div>
 
 [Cody](#cody) and [Yusuke](#yusuke) fixed this entry: Yusuke fixed this to compile with gcc and Cody
@@ -1063,14 +1100,16 @@ not his only reason :-) )
 
 
 <div id="1989_vanb">
-## [1989/vanb](1989/vanb/vanb.c) ([index.html](1989/vanb/index.html]))
+# [1989/vanb](1989/vanb/index.html)
+## Source code: [vanb.c](1989/vanb/vanb.c)
 </div>
 
 [Cody](#cody) added the [try.sh](1989/vanb/try.sh) script.
 
 
 <div id="1989_westley">
-## [1989/westley](1989/westley/westley.c) ([index.html](1989/westley/index.html]))
+# [1989/westley](1989/westley/index.html)
+## Source code: [westley.c](1989/westley/westley.c)
 </div>
 
 [Cody](#cody) fixed this for clang, except that two versions generated by the program
@@ -1091,7 +1130,7 @@ might just not be possible.
 The way it was fixed might be hard to see and describe but this is an attempt.
 Because `main()`'s args were all `int`s, `main()` had to call a new function
 which is allowed to have args as `int` (instead of `main()`'s args being int and
-the rest being `char **) but this is not as straight forward as it is for other
+the rest being `char **`) but this is not as straight forward as it is for other
 entries (if you look at the code you might see what is meant; the function called
 is `pain()`).
 
@@ -1100,17 +1139,17 @@ four**, even though the original program has four args. This is because not all
 versions of clang support four args and that is one of the issues with version 2
 and 3 as it generates `main()` to have four args and the wrong type, all `int`s.
 
-In the call to the new function, `pain()`, from `main()`, one of the `char **s
+In the call to the new function, `pain()`, from `main()`, one of the `char **`s
 is used twice, once as `argc` with bitwise AND with 2, naturally first being
-cast to an `int` (`(int)ABBA&2`), and once as a `char **, the fourth arg to
+cast to an `int` (`(int)ABBA&2`), and once as a `char **`, the fourth arg to
 `pain()` (yes even though `pain()` takes all `int`s).
 
-The argc,, meanwhile, `tang`, is used once and the second arg, `char **gnat` is
+The argc, meanwhile, `tang`, is used once and the second arg, `char **gnat` is
 used once (observe how `tang` is `gnat` spelt backwards as this is one of the
 things that makes this a masterpiece and very hard if not impossible to fix
 completely). Fortunately it is not actually necessary to use all four args (of
 `main()`) in the call which might or might not be surprising, especially as it
-uses one of the args, a `char **, instead of an `int` (through casts), twice
+uses one of the args, a `char **`, instead of an `int` (through casts), twice
 rather than just passing in for the fourth arg (the fourth arg passed in is the
 third arg to `main()`).
 
@@ -1142,12 +1181,13 @@ environmental variable; see the index.html for details.
 
 
 <div id="1990">
-# 1990
+# [1990](1990/index.html)
 </div>
 
 
 <div id="1990_baruch">
-## [1990/baruch](1990/baruch/baruch.c) ([index.html](1990/baruch/index.html]))
+# [1990/baruch](1990/baruch/index.html)
+## Source code: [baruch.c](1990/baruch/baruch.c)
 </div>
 
 [Cody](#cody) added the [try.sh](1990/baruch/try.sh) script.
@@ -1169,7 +1209,8 @@ judges was retained.
 
 
 <div id="1990_cmills">
-## [1990/cmills](1990/cmills/cmills.c) ([index.html](1990/cmills/index.html]))
+# [1990/cmills](1990/cmills/index.html)
+## Source code: [cmills.c](1990/cmills/cmills.c)
 </div>
 
 [Yusuke](#yusuke) got this to work in modern systems (it previously resulted in a bus
@@ -1179,7 +1220,8 @@ error).
 
 
 <div id="1990_dds">
-## [1990/dds](1990/dds/dds.c) ([index.html](1990/dds/index.html]))
+# [1990/dds](1990/dds/index.html)
+## Source code: [dds.c](1990/dds/dds.c)
 </div>
 
 [Yusuke](#yusuke) and [Cody](#cody) in conjunction fixed this for modern systems (both fixed a
@@ -1198,7 +1240,8 @@ Cody also made this use `fgets(3)`.
 
 
 <div id="1990_dg">
-## [1990/dg](1990/dg/dg.c) ([index.html](1990/dg/index.html]))
+# [1990/dg](1990/dg/index.html)
+## Source code: [dg.c](1990/dg/dg.c)
 </div>
 
 [Cody](#cody) fixed this for modern systems. There were two problems to be resolved.
@@ -1223,7 +1266,8 @@ Cody also added the [try.sh](1990/dg/try.sh) script.
 
 
 <div id="1990_jaw">
-## [1990/jaw](1990/jaw/jaw.c) ([index.html](1990/jaw/index.html]))
+# [1990/jaw](1990/jaw/index.html)
+## Source code: [jaw.c](1990/jaw/jaw.c)
 </div>
 
 [Cody](#cody) fixed the script to work properly in modern environments including writing
@@ -1242,7 +1286,8 @@ input but which now works.
 
 
 <div id="1990_pjr">
-## [1990/pjr](1990/pjr/pjr.c) ([index.html](1990/pjr/index.html]))
+# [1990/pjr](1990/pjr/index.html)
+## Source code: [pjr.c](1990/pjr/pjr.c)
 </div>
 
 [Cody](#cody) added the [alt code](1990/pjr/pjr.alt.c) which was suggested by the judges
@@ -1251,7 +1296,8 @@ something else and is recommended by the author as well.
 
 
 <div id="1990_scjones">
-## [1990/scjones](1990/scjones/scjones.c) ([index.html](1990/scjones/index.html]))
+# [1990/scjones](1990/scjones/index.html)
+## Source code: [scjones.c](1990/scjones/scjones.c)
 </div>
 
 [Yusuke](#yusuke) suggested `-ansi` to get the entry to compile due to trigraphs and [Cody](#cody)
@@ -1262,7 +1308,8 @@ entry does.
 
 
 <div id="1990_tbr">
-## [1990/tbr](1990/tbr/tbr.c) ([index.html](1990/tbr/index.html]))
+# [1990/tbr](1990/tbr/index.html)
+## Source code: [tbr.c](1990/tbr/tbr.c)
 </div>
 
 [Cody](#cody) fixed this to work with modern compilers; `exit(3)` returns void but the
@@ -1282,7 +1329,8 @@ author intended, but more compact.
 
 
 <div id="1990_theorem">
-## [1990/theorem](1990/theorem/theorem.c) ([index.html](1990/theorem/index.html]))
+# [1990/theorem](1990/theorem/index.html)
+## Source code: [theorem.c](1990/theorem/theorem.c)
 </div>
 
 [Cody](#cody) fixed this to compile with modern systems.
@@ -1325,7 +1373,8 @@ incomplete).
 
 
 <div id="1990_stig">
-## [1990/stig](1990/stig/stig.c) ([index.html](1990/stig/index.html))
+# [1990/stig](1990/stig/index.html)
+## Source code: [stig.c](1990/stig/stig.c)
 </div>
 
 [Cody](#cody) fixed the paths in the Makefile so that this would build in Linux (it
@@ -1336,7 +1385,8 @@ He also changed the Makefile to use `bash` not `zsh` as not all systems have
 
 
 <div id="1990_westley">
-## [1990/westley](1990/westley/westley.c) ([index.html](1990/westley/index.html]))
+# [1990/westley](1990/westley/index.html)
+## Source code: [westley.c](1990/westley/westley.c)
 </div>
 
 [Cody](#cody) fixed this for modern systems. It had `1s` in places for a `short
@@ -1357,12 +1407,13 @@ original code.
 
 
 <div id="1991">
-# 1991
+# [1991](1991/index.html)
 </div>
 
 
 <div id="1991_ant">
-## [1991/ant](1991/ant/ant.c) ([index.html](1991/ant/index.html]))
+# [1991/ant](1991/ant/index.html)
+## Source code: [ant.c](1991/ant/ant.c)
 </div>
 
 [Cody](#cody) added [alt code](1991/ant/ant.alt.c) that will be a bit easier to use for
@@ -1379,7 +1430,8 @@ The other keys were left unchanged.
 
 
 <div id="1991_brnstnd">
-## [1991/brnstnd](1991/brnstnd/brnstnd.c) ([index.html](1991/brnstnd/index.html]))
+# [1991/brnstnd](1991/brnstnd/index.html)
+## Source code: [brnstnd.c](1991/brnstnd/brnstnd.c)
 </div>
 
 [Cody](#cody) fixed this for modern systems. There were two invalid operands to binary
@@ -1397,7 +1449,8 @@ Cody also added the [try.sh](1991/brnstnd/try.sh) script and
 
 
 <div id="1991_buzzard">
-## [1991/buzzard](1991/buzzard/buzzard.c) ([index.html](1991/buzzard/index.html]))
+# [1991/buzzard](1991/buzzard/index.html)
+## Source code: [buzzard.c](1991/buzzard/buzzard.c)
 </div>
 
 [Cody](#cody) fixed this so that the coordinates being specified would not crash the
@@ -1417,7 +1470,8 @@ completing or killing the program.
 
 
 <div id="1991_davidguy">
-## [1991/davidguy](1991/davidguy/davidguy.c) ([index.html](1991/davidguy/index.html]))
+# [1991/davidguy](1991/davidguy/index.html)
+## Source code: [davidguy.c](1991/davidguy/davidguy.c)
 </div>
 
 As some systems like macOS can be particular about not declaring functions [Cody](#cody)
@@ -1427,7 +1481,8 @@ declared first.
 
 
 <div id="1991_dds">
-## [1991/dds](1991/dds/dds.c) ([index.html](1991/dds/index.html]))
+# [1991/dds](1991/dds/index.html)
+## Source code: [dds.c](1991/dds/dds.c)
 </div>
 
 [Cody](#cody) fixed a segfault that prevented this entry from working in any condition
@@ -1558,7 +1613,8 @@ entry was fixed. It has not been done in all.
 
 
 <div id="1991_fine">
-## [1991/fine](1991/fine/fine.c) ([index.html](1991/fine/index.html))
+# [1991/fine](1991/fine/index.html)
+## Source code: [fine.c](1991/fine/fine.c)
 </div>
 
 [Cody](#cody) made it look much more like the original entry even after the fix that
@@ -1583,7 +1639,8 @@ which ones? :-) )
 
 
 <div id="1991_rince">
-## [1991/rince](1991/rince/rince.c) ([index.html](1991/rince/index.html))
+# [1991/rince](1991/rince/index.html)
+## Source code: [rince.c](1991/rince/rince.c)
 </div>
 
 [Cody](#cody) fixed it so that the messages that show if you won or lost will be seen
@@ -1600,7 +1657,8 @@ the above fix was applied to these versions too.
 
 
 <div id="1991_westley">
-## [1991/westley](1991/westley/westley.c) ([index.html](1991/westley/index.html]))
+# [1991/westley](1991/westley/index.html)
+## Source code: [westley.c](1991/westley/westley.c)
 </div>
 
 [Cody](#cody) fixed a segfault in this program which prevented it from working. The
@@ -1624,12 +1682,13 @@ should have been removed.
 
 
 <div id="1992">
-# 1992
+# [1992](1992/index.html)
 </div>
 
 
 <div id="1992_adrian">
-## [1992/adrian](1992/adrian/adrian.c) ([index.html](1992/adrian/index.html]))
+# [1992/adrian](1992/adrian/index.html)
+## Source code: [adrian.c](1992/adrian/adrian.c)
 </div>
 
 [Cody](#cody) fixed the code so that it will try opening the file the code was compiled
@@ -1706,7 +1765,8 @@ generated.
 
 
 <div id="1992_albert">
-## [1992/albert](1992/albert/albert.c) ([index.html](1992/albert/index.html]))
+# [1992/albert](1992/albert/index.html)
+## Source code: [albert.c](1992/albert/albert.c)
 </div>
 
 [Cody](#cody) fixed this to compile with modern systems. Note that in 1996 a bug fix was
@@ -1722,7 +1782,8 @@ the alt code.
 
 
 <div id="1992_ant">
-## [1992/ant](1992/ant/ant.c) ([index.html](1992/ant/index.html]))
+# [1992/ant](1992/ant/index.html)
+## Source code: [ant.c](1992/ant/ant.c)
 </div>
 
 [Cody](#cody) fixed the Makefile so that the program will actually work with it (or at
@@ -1746,7 +1807,8 @@ Cody also added the [try.sh](1992/ant/try.sh) script.
 
 
 <div id="1992_buzzard.1">
-## [1992/buzzard.1](1992/buzzard.1/buzzard.1.c) ([index.html](1992/buzzard.1/index.html))
+# [1992/buzzard.1](1992/buzzard.1/index.html)
+## Source code: [buzzard.1.c](1992/buzzard.1/buzzard.1.c)
 </div>
 
 [Cody](#cody) added a check for the right number of args, exiting 1 if not enough (2)
@@ -1759,7 +1821,8 @@ commands that we suggested and some additional ones that he provide for some fun
 
 
 <div id="1992_buzzard.2">
-## [1992/buzzard.2](1992/buzzard.2/buzzard.2.c) ([index.html](1992/buzzard.2/index.html))
+# [1992/buzzard.2](1992/buzzard.2/index.html)
+## Source code: [buzzard.2.c](1992/buzzard.2/buzzard.2.c)
 </div>
 
 [Cody](#cody) fixed the alt code to compile. The problem was it assumed that
@@ -1771,7 +1834,8 @@ and its alt code.
 
 
 <div id="1992_gson">
-## [1992/gson](1992/gson/gson.c) ([index.html](1992/gson/index.html]))
+# [1992/gson](1992/gson/index.html)
+## Source code: [gson.c](1992/gson/gson.c)
 </div>
 
 [Cody](#cody) fixed a crash that prevented this entry from working in some cases in some
@@ -1793,20 +1857,22 @@ details if you're interested in trying to understand it (or fix?).
 
 
 <div id="1992_imc">
-## [1992/imc](1992/imc/imc.c) ([index.html](1992/imc/index.html]))
+# [1992/imc](1992/imc/index.html)
+## Source code: [imc.c](1992/imc/imc.c)
 </div>
 
 [Cody](#cody) provided the [try.sh](1992/imc/try.sh) script.
 
 The original code, [imc.orig.c](1992/imc/imc.orig.c), assumed that `exit(3)`
-returned a value but this will cause problems where `exit(3)` returns void. The
+returned a value but this will cause problems where `exit(3)` returns `void`. The
 source code was modified to avoid this problem but like Cody did with other fixes
 he made this more like the original by redefining `exit` to use the comma
 operator so that it could be used in binary expressions.
 
 
 <div id="1992_kivinen">
-## [1992/kivinen](1992/kivinen/kivinen.c) ([index.html](1992/kivinen/index.html]))
+# [1992/kivinen](1992/kivinen/index.html)
+## Source code: [kivinen.c](1992/kivinen/kivinen.c)
 </div>
 
 It was observed that on modern systems this goes much too quick. [Yusuke](#yusuke) created
@@ -1834,7 +1900,8 @@ it moves towards the right but if you click the mouse it goes back.
 
 
 <div id="1992_lush">
-## [1992/lush](1992/lush/lush.c) ([index.html](1992/lush/index.html]))
+# [1992/lush](1992/lush/index.html)
+## Source code: [lush.c](1992/lush/lush.c)
 </div>
 
 [Yusuke](#yusuke) supplied a patch which makes this work with gcc. Due to how it works (see
@@ -1850,14 +1917,16 @@ will compile fine but it won't work). See [bugs.html](bugs.html) for details.
 
 
 <div id="1992_marangon">
-## [1992/marangon](1992/marangon/marangon.c) ([index.html](1992/marangon/index.html))
+# [1992/marangon](1992/marangon/index.html)
+## Source code: [marangon.c](1992/marangon/marangon.c)
 </div>
 
 [Cody](#cody) made this more portable by changing the `void main()` to be `int main()`.
 
 
 <div id="1992_nathan">
-## [1992/nathan](1992/nathan/nathan.c) ([index.html](1992/nathan/index.html))
+# [1992/nathan](1992/nathan/index.html)
+## Source code: [nathan.c](1992/nathan/nathan.c)
 </div>
 
 [Cody](#cody) added the original file back as it was deemed that the export restrictions
@@ -1873,7 +1942,8 @@ that we suggested as well as one he provided.
 
 
 <div id="1992_vern">
-## [1992/vern](1992/vern/vern.c) ([index.html](1992/vern/index.html]))
+# [1992/vern](1992/vern/index.html)
+## Source code: [vern.c](1992/vern/vern.c)
 </div>
 
 [Cody](#cody) fixed an infinite loop if one were to input numbers < `0` or > `077`. The
@@ -1887,9 +1957,13 @@ new char arrays (always cleared in the beginning of the loop) and then using
 `strtol(3)` with a base of `8` (as it's octal), checking for `< 0 || > 077` on
 both numbers (using `"%o %o"` does not solve the problem).
 
+This was deemed a problem to fix as the Judges' remarks hinted that this was how
+it used to be.
+
 
 <div id="1992_westley">
-## [1992/westley](1992/westley/westley.c) ([index.html](1992/westley/index.html]))
+# [1992/westley](1992/westley/index.html)
+## Source code: [westley.c](1992/westley/westley.c)
 </div>
 
 [Cody](#cody) fixed this to work for clang by changing the third and fourth arg of
