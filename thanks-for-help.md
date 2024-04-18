@@ -2009,12 +2009,13 @@ encourage you to try the original without two args :-)
 
 
 <div id="1993">
-# 1993
+# [1993](1993/index.html)
 </div>
 
 
 <div id="1993_ant">
-## [1993/ant](1993/ant/ant.c) ([index.html](1993/ant/index.html]))
+# [1993/ant](1993/ant/index.html)
+## Source code: [ant.c](1993/ant/ant.c)
 </div>
 
 [Cody](#cody) added the [try.sh](1993/ant/try.sh) script and a data file,
@@ -2022,7 +2023,8 @@ encourage you to try the original without two args :-)
 
 
 <div id="1993_cmills">
-## [1993/cmills](1993/cmills/cmills.c) ([index.html](1993/cmills/index.html]))
+# [1993/cmills](1993/cmills/index.html)
+## Source code: [cmills.c](1993/cmills/cmills.c)
 </div>
 
 [Yusuke](#yusuke) suggested that with modern systems this goes too fast so he added a call
@@ -2032,7 +2034,8 @@ first.
 
 
 <div id="1993_dgibson">
-## [1993/dgibson](1993/dgibson/dgibson.c) ([index.html](1993/dgibson/index.html]))
+# [1993/dgibson](1993/dgibson/index.html)
+## Source code: [dgibson.c](1993/dgibson/dgibson.c)
 </div>
 
 [Cody](#cody) fixed the [dgibson.sh](1993/dgibson/dgibson.sh) script to work
@@ -2043,14 +2046,16 @@ mentioned script on all the data files.
 
 
 <div id="1993_ejb">
-## [1993/ejb](1993/ejb/ejb.c) ([index.html](1993/ejb/index.html]))
+# [1993/ejb](1993/ejb/index.html)
+## Source code: [ejb.c](1993/ejb/ejb.c)
 </div>
 
 [Cody](#cody) added the [try.sh](1993/ejb/try.sh) script.
 
 
 <div id="1993_jonth">
-## [1993/jonth](1993/jonth/jonth.c) ([index.html](1993/jonth/index.html]))
+# [1993/jonth](1993/jonth/index.html)
+## Source code: [jonth.c](1993/jonth/jonth.c)
 </div>
 
 Both [Cody](#cody) and [Yusuke](#yusuke) fixed this so that it will work with modern systems. Yusuke
@@ -2068,7 +2073,8 @@ prepended to them.
 
 
 <div id="1993_leo">
-## [1993/leo](1993/leo/leo.c) ([index.html](1993/leo/index.html]))
+# [1993/leo](1993/leo/index.html)
+## Source code: [leo.c](1993/leo/leo.c)
 </div>
 
 [Cody](#cody) fixed this to work with modern compilers. This involved different header
@@ -2076,7 +2082,8 @@ files for functions.
 
 
 <div id="1993_lmfjyh">
-## [1993/lmfjyh](1993/lmfjyh/lmfjyh.c) ([index.html](1993/lmfjyh/index.html]))
+# [1993/lmfjyh](1993/lmfjyh/index.html)
+## Source code: [lmfjyh.c](1993/lmfjyh/lmfjyh.c)
 </div>
 
 [Cody](#cody) added an [alternate
@@ -2090,10 +2097,12 @@ highly unlikely).
 
 
 <div id="1993_plummer">
-## [1993/plummer](1993/plummer/plummer.c) ([index.html](1993/plummer/index.html]))
+# [1993/plummer](1993/plummer/index.html)
+## Source code: [plummer.c](1993/plummer/plummer.c)
 </div>
 
-[Cody](#cody) added check for two args.
+[Cody](#cody) added check for two args during a time that this was considered a
+bug to fix.
 
 Cody also added an [alternate version](1993/plummer/plummer.alt.c) which uses
 `usleep(3)` so you can see what is happening with faster systems. This version
@@ -2107,7 +2116,8 @@ of the alt one allowing one to change the amount to sleep).
 
 
 <div id="1993_rince">
-## [1993/rince](1993/rince/rince.c) ([index.html](1993/rince/index.html]))
+# [1993/rince](1993/rince/index.html)
+## Source code: [rince.c](1993/rince/rince.c)
 </div>
 
 [Yusuke](#yusuke) supplied a patch to get this to work in modern systems. This fix also
@@ -2124,14 +2134,16 @@ compile time. See the index.html for details.
 
 
 <div id="1993_schnitzi">
-## [1993/schnitzi](1993/schnitzi/schnitzi.c) ([index.html](1993/schnitzi/index.html]))
+# [1993/schnitzi](1993/schnitzi/index.html)
+## Source code: [schnitzi.c](1993/schnitzi/schnitzi.c)
 </div>
 
 [Cody](#cody) made this use `fgets(3)` not `gets(3)`.
 
 
 <div id="1993_vanb">
-## [1993/vanb](1993/vanb/vanb.c) ([index.html](1993/vanb/index.html]))
+# [1993/vanb](1993/vanb/index.html)
+## Source code: [vanb.c](1993/vanb/vanb.c)
 </div>
 
 [Cody](#cody) fixed this to work with clang. The problem was that the third arg to main()
@@ -2164,12 +2176,13 @@ Cody also added the [try.sh](1993/vanb/try.sh) script.
 
 
 <div id="1994">
-# 1994
+# [1994](1994/index.html)
 </div>
 
 
 <div id="1994_dodsond2">
-## [1994/dodsond2](1994/dodsond2/dodsond2.c) ([index.html](1994/dodsond2/index.html))
+# [1994/dodsond2](1994/dodsond2/index.html)
+## Source code: [1994/dodsond2](1994/dodsond2/dodsond2.c)
 </div>
 
 [Cody](#cody) fixed an infinite loop that could happen when you shoot an arrow
@@ -2202,14 +2215,15 @@ that already existed, how many you had and how many were stolen.
 
 
 <div id="1994_horton">
-## [1994/horton](1994/horton/horton.c) ([index.html](1994/horton/index.html))
+# [1994/horton](1994/horton/index.html)
+## Source code: [1994/horton](1994/horton/horton.c)
 </div>
 
-[Cody](#cody) fixed this to check that four args were specified. With the use of the C
-pre-processor macro and inclusion of `stdlib.h` in the Makefile the layout of the
-source is exactly the same column width and no additional lines were added. This
-was done during one of the times where this was changed to bug to fix status, for
-better or worse.
+[Cody](#cody) fixed this to check that four args were specified (at a time it
+was considered a bug to fix). With the use of the C pre-processor macro and
+inclusion of `stdlib.h` in the Makefile the layout of the source is exactly the
+same column width and no additional lines were added. This was done during one
+of the times where this was changed to bug to fix status, for better or worse.
 
 Cody also fixed the Makefile which was causing alt code to be compiled when it
 shouldn't be.
@@ -2227,7 +2241,8 @@ extracted as a PDF in the macOS `Preview.app` (`File -> Print` feature).
 
 
 <div id="1994_imc">
-## [1994/imc](1994/imc/imc.c) ([index.html](1994/imc/index.html]))
+# [1994/imc](1994/imc/index.html)
+## Source code: [imc.c](1994/imc/imc.c)
 </div>
 
 [Cody](#cody) added the [try.sh](1994/imc/try.sh) script.
@@ -2239,7 +2254,8 @@ entries that actually did not work because of missing or incorrect prototypes).
 
 
 <div id="1994_ldb">
-## [1994/ldb](1994/ldb/ldb.c) ([index.html](1994/ldb/index.html]))
+# [1994/ldb](1994/ldb/index.html)
+## Source code: [ldb.c](1994/ldb/ldb.c)
 </div>
 
 [Cody](#cody) fixed this so it would compile and work with modern compilers. The problem
@@ -2265,7 +2281,8 @@ Cody also added the [try.sh](1994/ldb/try.sh) script.
 
 
 <div id="1994_schnitzi">
-## [1994/schnitzi](1994/schnitzi/schnitzi.c) ([index.html](1994/schnitzi/index.html]))
+# [1994/schnitzi](1994/schnitzi/index.html)
+## Source code: [schnitzi.c](1994/schnitzi/schnitzi.c)
 </div>
 
 [Cody](#cody) added two alt versions, [one which uses
@@ -2289,7 +2306,8 @@ Cody also added the [try.sh](1994/schnitzi/try.sh) and
 
 
 <div id="1994_shapiro">
-## [1994/shapiro](1994/shapiro/shapiro.c) ([index.html](1994/shapiro/index.html]))
+# [1994/shapiro](1994/shapiro/index.html)
+## Source code: [shapiro.c](1994/shapiro/shapiro.c)
 </div>
 
 [Cody](#cody) fixed a bug on systems where `EOF != -1`. The problem is that `getc()` and
@@ -2303,14 +2321,16 @@ check the [bugs.html](bugs.html) file.
 
 
 <div id="1994_smr">
-## [1994/smr](1994/smr/smr.c) ([index.html](1994/smr/index.html]))
+# [1994/smr](1994/smr/index.html)
+## Source code: [smr.c](1994/smr/smr.c)
 </div>
 
 [Cody](#cody) added the [try.sh](1994/smr/try.sh) script.
 
 
 <div id="1994_tvr">
-## [1994/tvr](1994/tvr/tvr.c) ([index.html](1994/tvr/index.html]))
+# [1994/tvr](1994/tvr/index.html)
+## Source code: [1994/tvr](1994/tvr/tvr.c)
 </div>
 
 [Cody](#cody) added the try scripts, four total, colour and black and white
@@ -2329,7 +2349,8 @@ also changed to use `fgets(3)`.
 
 
 <div id="1994_weisberg">
-## [1994/weisberg](1994/weisberg/weisberg.c) ([index.html](1994/weisberg/index.html]))
+# [1994/weisberg](1994/weisberg/index.html)
+## Source code: [weisberg.c](1994/weisberg/weisberg.c)
 </div>
 
 [Cody](#cody) changed the Makefile to make this program more user friendly and easier to
@@ -2345,7 +2366,8 @@ primes.
 
 
 <div id="1994_westley">
-## [1994/westley](1994/westley/westley.c) ([index.html](1994/westley/index.html]))
+# [1994/westley](1994/westley/index.html)
+## Source code: [westley.c](1994/westley/westley.c)
 </div>
 
 [Cody](#cody) converted the spoiler compiler options (provided by the author) to be
