@@ -1,4 +1,4 @@
-# Try mastodon
+# For more news, try mastodon
 
 We plan to update our [IOCCC on Mastodon](https://fosstodon.org/@ioccc) feed
 a bit more open than this web page.  We recommend you check that feed
