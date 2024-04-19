@@ -99,7 +99,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.6.1 2024-04-13"
+export VERSION="1.6.2 2024-04-18"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -126,7 +126,7 @@ declare -ag PANDOC_OPTION
 PANDOC_OPTION+=("-f")
 PANDOC_OPTION+=("markdown")
 PANDOC_OPTION+=("-t")
-PANDOC_OPTION+=("html")
+PANDOC_OPTION+=("html5")
 PANDOC_OPTION+=("--wrap=preserve")
 PANDOC_OPTION+=("--fail-if-warnings")
 PANDOC_OPTION+=("--tab-stop=8")
