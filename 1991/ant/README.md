@@ -87,21 +87,25 @@ results depending on the implementation of `curses`.
 
 ### Commands
 
--    h j k l	    left, down, up, right cursor movement
--    H J K L	    word left, page down, page up, word right
--    [ ]		    beginning and end of line
--    t b		    top and bottom of file
--    i		    enter insert mode, form-feed to quit
--    x		    delete character under the cursor
--    W		    write buffer to file
--    R		    refresh the screen
--    Q		    quit
+```
+    h j k l	    left, down, up, right cursor movement
+    H J K L	    word left, page down, page up, word right
+    [ ]		    beginning and end of line
+    t b		    top and bottom of file
+    i		    enter insert mode, form-feed to quit
+    x		    delete character under the cursor
+    W		    write buffer to file
+    R		    refresh the screen
+    Q		    quit
+```
 
 
 ### Exit status
 
--    0		    success
--    2		    missing edit filename
+```
+    0		    success
+    2		    missing edit filename
+```
 
 
 ### About this entry
