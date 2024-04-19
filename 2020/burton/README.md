@@ -87,7 +87,7 @@ machines(!!), so they are truly configuration parameters, not logic.
 
 ### Notes:
 
-One <strike>ping</strike> argument only.  It will segfault on zero arguments, and
+One <del>ping</del> argument only.  It will segfault on zero arguments, and
 display strange results with more than one argument.
 
 Small, non-negative integers only.  Useful range is `0 .. 511`, sorta, for LE; `0

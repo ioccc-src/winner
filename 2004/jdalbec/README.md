@@ -178,7 +178,7 @@ warning about a name conflict between my `BC()` and a `BC()` from
 curses in the main system library.
 
 
-### <strike>BUGS</strike> FEATURES:
+### <del>BUGS</del> FEATURES:
 
 Arguments matching `/[^2]22$/` cause the program to segfault
 after rapidly exhausting the available stack space.  I could

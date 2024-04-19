@@ -86,7 +86,7 @@ change to `_exit()`.
 
 ## Summary
 
-And that is the tale of a little <strike>engine</strike> train that
+And that is the tale of a little <del>engine</del> train that
 could...eventually! Or perhaps it's the compilers, optimisers and OSes that
 eventually could?
 

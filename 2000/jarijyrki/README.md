@@ -51,7 +51,7 @@ existing spreadsheet files unusable.
 ## Judges' remarks:
 
 This entry is one of those that makes you wonder why some commercial software
-needs tens to hundreds of <strike>megabytes</strike>gigabytes to install!  This
+needs tens to hundreds of <del>megabytes</del>gigabytes to install!  This
 entry does not simply do the basics, it includes graphing features.  All this
 program needs now is a [1998/banks](../../1998/banks/index.html) flight simulator!
 

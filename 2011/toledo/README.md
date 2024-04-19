@@ -118,7 +118,7 @@ Believe it or not, it has strategy!
 When only one tank remains on the field, the level will advance.
 Don't forget to destroy the aqua tank.
 
-The <strike>battle</strike>playground is surrounded by mountains and each level is
+The <del>battle</del>playground is surrounded by mountains and each level is
 filled with random obstacles (pyramids and cubes).
 
 The bars show players energy and score; each bar shows energy

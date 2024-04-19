@@ -47,7 +47,7 @@ ASCII art of the program source.
 
 ## Author's remarks:
 
-HOW ABOUT A NICE GAME OF <strike>CHESS</strike>TIC-TAC-TOE?
+HOW ABOUT A NICE GAME OF <del>CHESS</del>TIC-TAC-TOE?
 
 ### USAGE
 
@@ -114,7 +114,7 @@ to be Turing complete. (See "Control-Flow Bending: On the Effectiveness of Contr
 Integrity" where we introduced this in an actual, published, academic paper. The
 things you can get away with sometimes.)
 
-We <strike>ab</strike>use this fact to implement the logic of tic-tac-toe entirely within
+We <del>ab</del>use this fact to implement the logic of tic-tac-toe entirely within
 this one `printf(3)` call (and a call to `scanf(3)` to read user input).
 
 Here's (briefly) how it works.

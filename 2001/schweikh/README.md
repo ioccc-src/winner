@@ -95,7 +95,7 @@ character glob pattern evaluator, returning nonzero for a match:
 
 The recursion wonderfully and magically takes care of iteration and
 backtracking. I could tell you how it works but then I would have to
-<strike>kill</strike> request a NDA from you :-) Run it under a debugger with several
+<del>kill</del> request a NDA from you :-) Run it under a debugger with several
 inputs, it will be quite helpful and instructive. Handling of `?` is
 straightforward; for `*` start out with `*foo` and `foo*` against `foo`.
 How does it deal with sequences of adjacent `*`? How could this be

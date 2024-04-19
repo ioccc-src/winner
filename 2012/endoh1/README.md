@@ -308,7 +308,7 @@ colors.
 
 I would like to thank my wife @hirekoke for her teaching me the SPH method.
 
-The judges <strike>ordered</strike> suggested creating a color version
+The judges <del>ordered</del> suggested creating a color version
 after the contest.
 
 The judges and HAMANO Tsukasa (The silver medalist at this IOCCC) kindly

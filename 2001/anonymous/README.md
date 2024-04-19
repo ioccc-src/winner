@@ -199,7 +199,7 @@ global state, and the other doesn't.
 There is also quite a nice trick where I wave a magic wand, and a chunk of code
 which should only be run when the program is run for the first time (setting the
 [PC / IP](https://en.wikipedia.org/wiki/Program_counter) to point at `main()`
-etc.) gets turned into a <strike>frog</strike>string.  The C compiler sees a string by
+etc.) gets turned into a <del>frog</del>string.  The C compiler sees a string by
 itself in the code, thinks "yup, that's a valid C expression", and quietly moves
 on to the next line of code.
 
