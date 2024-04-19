@@ -141,7 +141,7 @@ shopt -s lastpipe	# run last command of a pipeline not executed in the backgroun
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3 2024-04-14"
+export VERSION="1.4 2024-04-18"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -149,12 +149,18 @@ GIT_TOOL=$(type -P git)
 export GIT_TOOL
 if [[ -z "$GIT_TOOL" ]]; then
     echo "$0: FATAL: git tool is not installed or not in \$PATH" 1>&2
-    exit 4
+    exit 5
 fi
 "$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
 status="$?"
 if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
+fi
+PERL_TOOL=$(type -P perl)
+export PERL_TOOL
+if [[ -z "$PERL_TOOL" ]]; then
+    echo "$0: FATAL: perl tool is not installed or not in \$PATH" 1>&2
+    exit 5
 fi
 export TOPDIR
 export DOCROOT_SLASH="./"
@@ -314,13 +320,13 @@ function global_variable_setup
     GIT_TOOL=$(type -P git)
     export GIT_TOOL
     if [[ -z "$GIT_TOOL" ]]; then
-	echo "$0: FATAL: git tool is not installed or not in PATH" 1>&2
-	exit 5
+       echo "$0: FATAL: git tool is not installed or not in PATH" 1>&2
+       exit 5
     fi
     "$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
     status="$?"
     if [[ $status -eq 0 ]]; then
-	TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
+       TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
     fi
 
     # setup phase names in phase array
@@ -713,6 +719,7 @@ function debug_parameters
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: NAME=$NAME" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: V_FLAG=$V_FLAG" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: GIT_TOOL=$GIT_TOOL" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: PERL_TOOL=$PERL_TOOL" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
@@ -1677,6 +1684,7 @@ fi
 
 # input.md is -, we will need to capture standard input into a new temporary file
 #
+export ORIG_INPUT_MD="$INPUT_MD"
 if [[ -z $NOOP ]]; then
     if [[ $INPUT_MD == - ]]; then
 	export TMP_INPUT_MD=".$NAME.$$.stdin.md"
@@ -1713,6 +1721,7 @@ if [[ -z $NOOP ]]; then
 	     echo "$0: debug[5]: input.md arg was - is now: $TMP_INPUT_MD" 1>&2
 	fi
 	INPUT_MD="$TMP_INPUT_MD"
+	ORIG_INPUT_MD="((stdin))"
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary stdin file is not formed: $TMP_INPUT_MD" 1>&2
@@ -1738,6 +1747,10 @@ if [[ -z $NOOP ]]; then
 	exit 24
     fi
 
+    # Note beginning of markdown input
+    #
+    echo "<!-- BEFORE: 1st line of markdown file: $ORIG_INPUT_MD -->" > "$TMP_STRIPPED_MD"
+
     # strip commented language after markdown code block
     #
     # We do not want the sed extended regular expression to be expanded, so
@@ -1746,13 +1759,14 @@ if [[ -z $NOOP ]]; then
     # SC2016 (info): Expressions don't expand in single quotes, use double quotes for that.
     # https://www.shellcheck.net/wiki/SC2016
     # shellcheck disable=SC2016
-    sed -E -e 's/^```[[:space:]]<!---[^-][^-]*-->/```/' "$INPUT_MD" > "$TMP_STRIPPED_MD"
+    sed -E -e 's/^```[[:space:]]<!---[^-][^-]*-->/```/' "$INPUT_MD" >> "$TMP_STRIPPED_MD"
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: strip commented language after markdown code block from $INPUT_MD into file:" \
 	     "$TMP_INPUT_MD failed, error code: $status" 1>&2
 	exit 25
     fi
+    echo "<!-- AFTER: last line of markdown file: $ORIG_INPUT_MD -->" >> "$TMP_STRIPPED_MD"
 
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary stripped markdown file is not formed: $TMP_INPUT_MD" 1>&2
@@ -2022,6 +2036,51 @@ if [[ -n $PANDOC_WRAPPER ]]; then
 		 "$PANDOC_WRAPPER ${P_OPTION[*]} -- $TMP_STRIPPED_MD - failed," \
 	         "error code: $status" 1>&2
 	    exit 100
+	fi
+
+	# fix any pandoc footnote bogons
+	#
+	# The pandoc(1) tool will generate the following BOGUS HTML 5 code
+	# when any markdown footnotes are used:
+	#
+	#	<!-- AFTER: last line of markdown file: PATH/FILE/NAME -->
+	#	<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+	#	<hr />
+	#
+	# The section element lacks any HTML h1..h6 heading element inside it,
+	# and "<hr />" has no effect in standard HTML 5 and interacts badly with
+	# unquoted attribute values.
+	#
+	# We replace such HTML 5 with HTML 5 code as follows:
+	#
+	#	<!-- AFTER: last line of markdown file: PATH/FILE/NAME -->
+	#	<hr style="width:10%;text-align:left;margin-left:0">
+	#	<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+	#	<h5>Footnotes</h5>
+	#
+	# It is easier to compose a perl script inline than to use an external file
+	# because we then have to test for that perl script to be a non-empty readable file,
+	# and perhaps allow some arg to specify an alternate location for the perl script/
+	# So instead we just build the perl script inline.
+	#
+	PERL_LINE='s|(<!-- AFTER: last line of markdown file: \S+ -->)\n'
+	PERL_LINE="$PERL_LINE"'(<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">)\n'
+	PERL_LINE="$PERL_LINE"'<hr />|'
+	PERL_LINE="$PERL_LINE\$1"'\n'
+	PERL_LINE="$PERL_LINE"'<hr style="width:10%;text-align:left;margin-left:0">\n'
+	PERL_LINE="$PERL_LINE\$2"'\n'
+	PERL_LINE="$PERL_LINE"'<h5>Footnotes</h5>|gms'
+	if [[ $V_FLAG -ge 5 ]]; then
+	    echo "$0: debug[5]: about to execute:" \
+		 "$PERL_TOOL -0 -p -i -e $PERL_LINE -- $TMP_INDEX_HTML" 1>&2
+	fi
+	cp "$TMP_STRIPPED_MD" z
+	"$PERL_TOOL" -0 -p -i -e "$PERL_LINE" -- "$TMP_INDEX_HTML"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: pandoc wrapper tool:" \
+		 "$PERL_TOOL -0 -p -i -e $PERL_LINE -- $TMP_INDEX_HTML - failed," \
+	         "error code: $status" 1>&2
+	    exit 101
 	fi
 
 	# write START of section comment
