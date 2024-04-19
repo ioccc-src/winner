@@ -162,6 +162,7 @@ To submit your code to the IOCCC, you **MUST** follow these steps:
 
 	remarks.md	Remarks about your entry in markdown format
 			NOTE: See the [markdown syntax](https://www.markdownguide.org/basic-syntax) guide.
+			See also [CommonMark Spec](https://spec.commonmark.org/current/).
 
 	[file ...]	extra data files to include with your entry
 
