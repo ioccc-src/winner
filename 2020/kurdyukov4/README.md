@@ -36,7 +36,7 @@ way it works too fast regardless of the context length, and it's much less fun.
 
 The author wrote in reply:
 
----
+<hr style="width:10%;text-align:left;margin-left:0">
 
 Wow, amazing! Very fast, but there is a drawback to randomness.
 If some string only appears after half the input, the first instance
@@ -56,7 +56,7 @@ Example:
     -- Author
 ```
 
----
+<hr style="width:10%;text-align:left;margin-left:0">
 
 
 Try using the same random seed and varying the context size.

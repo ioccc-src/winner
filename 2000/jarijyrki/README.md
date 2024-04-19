@@ -293,7 +293,7 @@ Division by zero results in an IEEE Inf number.
 This section explains the meaning and rationale for the
 compile time parameters:
 
----
+<hr style="width:10%;text-align:left;margin-left:0">
 
 ```
     -DC=XK_Up

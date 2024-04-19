@@ -398,19 +398,23 @@ with `RNN(h, x)` defined as above.  Each RNN module has its own set of
 parameters and its own hidden state vector.  This will improve the network's
 performance, at the cost of a much larger parameter space.
 
----
+<hr style="width:10%;text-align:left;margin-left:0">
 
-**IMPORTANT NOTE**: Since OMLET uses the system stack for network storage,
+**IMPORTANT NOTE**:
+
+```
+Since OMLET uses the system stack for network storage,
 larger networks may cause OMLET to crash (typically with a message like
-`Segmentation fault`) unless the system stack size is first increased.
+Segmentation fault) unless the system stack size is first increased.
 The exact command for doing so depends on your shell and your system's
-hard limits.  On `sh`/`ksh`/`bash` shells, you can view the hard limit
-with `ulimit -Hs` and set it with `ulimit -s 65532` (replacing `65532`
-with the actual hard limit).  On `csh`/`tcsh` shells, you can view
-the hard limit with `limit -h stacksize` and set it with
-`limit stacksize 65532` (replacing `65532` with the actual hard limit).
+hard limits.  On sh/ksh/bash shells, you can view the hard limit
+with ulimit -Hs and set it with ulimit -s 65532 (replacing 65532
+with the actual hard limit).  On csh/tcsh shells, you can view
+the hard limit with limit -h stacksize and set it with
+limit stacksize 65532 (replacing 65532 with the actual hard limit).
+```
 
----
+<hr style="width:10%;text-align:left;margin-left:0">
 
 You can try the deeper network by doing
 

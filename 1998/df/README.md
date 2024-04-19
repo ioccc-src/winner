@@ -118,7 +118,7 @@ reverse them. Anyone out there should have enough discipline and
 rot13 shouldn't be required, really. After all, we are not children
 anymore :-)
 
----
+<hr style="width:10%;text-align:left;margin-left:0">
 
 This paragraph is not part of the author's remarks, but is a helpful
 gift from the judges; if you read too fast to stop yourself, this should
@@ -126,7 +126,7 @@ give you enough time to stop, which you really need to do RIGHT NOW if
 you don't want to read the spoilers, which really do spoil everything,
 we mean it.
 
----
+<hr style="width:10%;text-align:left;margin-left:0">
 
 The source file needs to be present because the words are read from
 it. The wordlist is encoded within the source using a 24 entry

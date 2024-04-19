@@ -150,8 +150,13 @@ header has a comment line for non-standard-compliant viewers (specifically, my
 old HDRShop 1.0). And there is a nice text message saying "please wait...".
 Despite the messy look, [a.c](a.c) and [hou.c](hou.c) compile warning-free
 ([hou.c](hou.c) even wastes 18 bytes on `#include<stdio.h>` just for `putchar(3)`).
-[a.c](a.c) compiles mostly clean in the C99/ANSI modes of clang and gcc (with `-Wall
---pedantic`). The only warning generated is a pedantic one: `"string constant
+[a.c](a.c) compiles mostly clean in the C99/ANSI modes of clang and gcc (with:
+
+```
+-Wall --pedantic
+```
+
+The only warning generated is a pedantic one: `"string constant
 too long"`.
 
 

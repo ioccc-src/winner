@@ -264,8 +264,10 @@ header has a comment line for non-standard-compliant viewers (specifically, my
 old HDRShop 1.0). And there is a nice text message saying “please wait…”.
 Despite the messy look, <a href="a.c">a.c</a> and <a href="hou.c">hou.c</a> compile warning-free
 (<a href="hou.c">hou.c</a> even wastes 18 bytes on <code>#include&lt;stdio.h&gt;</code> just for <code>putchar(3)</code>).
-<a href="a.c">a.c</a> compiles mostly clean in the C99/ANSI modes of clang and gcc (with <code>-Wall --pedantic</code>). The only warning generated is a pedantic one: <code>"string constant too long"</code>.</li>
+<a href="a.c">a.c</a> compiles mostly clean in the C99/ANSI modes of clang and gcc (with:</li>
 </ul>
+<pre><code>-Wall --pedantic</code></pre>
+<p>The only warning generated is a pedantic one: <code>"string constant too long"</code>.</p>
 <h3 id="comments-and-why-obfuscated">Comments and why obfuscated</h3>
 <ul>
 <li>Both the compression and the rendering use mathematically involved algorithms.

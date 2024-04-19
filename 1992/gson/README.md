@@ -151,7 +151,7 @@ Here follows a description of some of the data structures and
 algorithms used by AG.  It is by no means complete, but it may help
 you get an idea about the general principles.
 
----
+<hr style="width:10%;text-align:left;margin-left:0">
 
 Internally, AG represents words and sentences as arrays of 32
 4-bit integer elements.  Each element represents the number of

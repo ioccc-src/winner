@@ -228,13 +228,7 @@ like this comment.</p>
 <p>Basically, you define a geometry using volume shaders, define a camera using a
 camera shader, and define light sources and surface reflectance properties using
 material shaders.</p>
-<table>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Continue to the comments before function A</td>
-</tr>
-</tbody>
-</table>
+<h3 id="continue-to-the-comments-before-function-a">Continue to the comments before function A</h3>
 <pre><code>    //As an (optional) assignment, figure out what function &#39;n&#39; does. And why there is a plus sign at every EOL except the last.
     n]#=1+
     x=X+1/2+
@@ -251,7 +245,7 @@ material shaders.</p>
     C=C#d+3*9+
     #=d+
     R=0#n</code></pre>
-<hr />
+<hr style="width:10%;text-align:left;margin-left:0">
 <p>The function <code>A</code> initializes global settings:</p>
 <pre><code>    G -- Image width, in pixels
     H -- Image height, in pixels
@@ -284,13 +278,7 @@ in China and my parents were planning to renovate their apartment. I rendered
 the image to tell my mom how ridiculous her starry-sky wall paper would look
 like if she used it on every single wall. She ends up using it on just one wall,
 the one facing my bed, to thank me for the effort.</p>
-<table>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Continue to the comments before function a</td>
-</tr>
-</tbody>
-</table>
+<h3 id="continue-to-the-comments-before-function-a-1">Continue to the comments before function a</h3>
 <pre><code>    //As a bonus, find out what the first line does
     A]#=#-#;&quot;=7:0-p+^;#=&quot;+
     R=n+
@@ -302,7 +290,7 @@ the one facing my bed, to thank me for the effort.</p>
     J=1/2+
     C=p+1+
     U=w+w+w</code></pre>
-<hr />
+<hr style="width:10%;text-align:left;margin-left:0">
 <p>The function <code>a</code> is the camera shader, which, well, generates the camera ray.
 It’s supposed to return the ray in variables <code>UVWXYZ</code> and <code>ABCDEF</code> (that may
 sound like a lot of variables, but it really isn’t that much).</p>
@@ -325,13 +313,7 @@ happen. Wall up everything.</p>
 explained in the material shaders part. For now, just put in:</p>
 <pre><code>    A=0;B=0;C=0
     D=1;E=1;F=1</code></pre>
-<table>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Continue to the comments before function 1</td>
-</tr>
-</tbody>
-</table>
+<h3 id="continue-to-the-comments-before-function-1">Continue to the comments before function 1</h3>
 <pre><code>    a]R=0+
     X=5:5+
     Y=5:5+
@@ -355,7 +337,7 @@ explained in the material shaders part. For now, just put in:</p>
     W=p*8+
     A=0;B=0;C=0+
     D=1;E=1;F=1</code></pre>
-<hr />
+<hr style="width:10%;text-align:left;margin-left:0">
 <p>The numbered functions define materials, i.e., surface reflectance properties.
 As the name suggests, the shader simulates ray-surface interaction. It’s done by
 updating <code>UVWXYZABCDEF</code>, of course.</p>
@@ -378,13 +360,7 @@ same if you use a RGB texture. And yes, that is the what the second <code>sqrt(3
 <p>Going beyond colors, to define a shiny or dull surface one needs more maths, and
 optics. The jargon for this is <code>BRDF</code> (Bidirectional Reflectance Distribution
 Function) importance sampling. Let’s continue to function <code>o</code>.</p>
-<table>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Continue to the comments before function o</td>
-</tr>
-</tbody>
-</table>
+<h3 id="continue-to-the-comments-before-function-o">Continue to the comments before function o</h3>
 <pre><code>    //This function computes the starred wallpaper
     //Original color: 0.36 0.714285 0.8
     1]R=o+
@@ -411,7 +387,7 @@ Function) importance sampling. Let’s continue to function <code>o</code>.</p>
     E=E*4/7+
     d=I#2/5+
     F=F*d</code></pre>
-<hr />
+<hr style="width:10%;text-align:left;margin-left:0">
 <p>Function <code>o</code> defines a diffuse (that is, dull) surface. To define reflectance
 properties like this, one needs to sample an outgoing ray direction, based on
 the incoming direction and the surface normal. It’s called importance sampling,
@@ -434,13 +410,7 @@ directly model the
 <a href="https://en.wikipedia.org/wiki/Mesoscopic_physics">mesoscopic</a> detail. Shader
 <code>D</code> in this file produces a bunch of dense, tiny spikes to simulate a fluffy
 appearance.</p>
-<table>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Continue to the EOF</td>
-</tr>
-</tbody>
-</table>
+<h3 id="continue-to-the-eof">Continue to the EOF</h3>
 <pre><code>    //diffuse ray generation
     o]R=0+
     u=5:5+
@@ -538,7 +508,7 @@ appearance.</p>
     y=4:#/7+
     #=#-y*7+
     C=7#C</code></pre>
-<hr />
+<hr style="width:10%;text-align:left;margin-left:0">
 <p>The last line, well, is the output filename. Just remember to throw in two <code>]</code>s
 and don’t put a newline after it.</p>
 <pre><code>    ]]example.ppm</code></pre>

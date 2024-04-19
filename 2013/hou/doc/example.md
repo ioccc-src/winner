@@ -136,9 +136,7 @@ camera shader, and define light sources and surface reflectance properties using
 material shaders.
 
 
--------------------------------------------
-Continue to the comments before function A
--------------------------------------------
+### Continue to the comments before function A
 
 
 ```
@@ -160,7 +158,7 @@ Continue to the comments before function A
     R=0#n
 ```
 
--------------------------------------------
+<hr style="width:10%;text-align:left;margin-left:0">
 
 The function `A` initializes global settings:
 
@@ -204,9 +202,7 @@ like if she used it on every single wall. She ends up using it on just one wall,
 the one facing my bed, to thank me for the effort.
 
 
--------------------------------------------
-Continue to the comments before function a
--------------------------------------------
+### Continue to the comments before function a
 
 ```
     //As a bonus, find out what the first line does
@@ -222,8 +218,7 @@ Continue to the comments before function a
     U=w+w+w
 ```
 
-
--------------------------------------------
+<hr style="width:10%;text-align:left;margin-left:0">
 
 The function `a` is the camera shader, which, well, generates the camera ray.
 It's supposed to return the ray in variables `UVWXYZ` and `ABCDEF` (that may
@@ -256,9 +251,7 @@ explained in the material shaders part. For now, just put in:
     D=1;E=1;F=1
 ```
 
--------------------------------------------
-Continue to the comments before function 1
--------------------------------------------
+### Continue to the comments before function 1
 
 ```
     a]R=0+
@@ -286,8 +279,7 @@ Continue to the comments before function 1
     D=1;E=1;F=1
 ```
 
-
---------------------------------------------------------
+<hr style="width:10%;text-align:left;margin-left:0">
 
 The numbered functions define materials, i.e., surface reflectance properties.
 As the name suggests, the shader simulates ray-surface interaction. It's done by
@@ -318,9 +310,7 @@ optics. The jargon for this is `BRDF` (Bidirectional Reflectance Distribution
 Function) importance sampling. Let's continue to function `o`.
 
 
--------------------------------------------
-Continue to the comments before function o
--------------------------------------------
+### Continue to the comments before function o
 
 ```
     //This function computes the starred wallpaper
@@ -351,7 +341,7 @@ Continue to the comments before function o
     F=F*d
 ```
 
--------------------------------------------
+<hr style="width:10%;text-align:left;margin-left:0">
 
 Function `o` defines a diffuse (that is, dull) surface. To define reflectance
 properties like this, one needs to sample an outgoing ray direction, based on
@@ -385,9 +375,7 @@ appearance.
 
 
 
--------------------------------------------
-Continue to the EOF
--------------------------------------------
+### Continue to the EOF
 
 ```
     //diffuse ray generation
@@ -489,7 +477,7 @@ Continue to the EOF
     C=7#C
 ```
 
--------------------------------------------
+<hr style="width:10%;text-align:left;margin-left:0">
 
 The last line, well, is the output filename. Just remember to throw in two `]`s
 and don't put a newline after it.

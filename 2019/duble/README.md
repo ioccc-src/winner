@@ -54,7 +54,7 @@ Alternatively, if you want to change the size, do something like:
 
 The author provided us with the following table for use:
 
----
+<hr style="width:10%;text-align:left;margin-left:0">
 
 * **Arrow keys**: move cursor.
 * `p` key: enter *pen* mode (type **p** again to return to the default *move*
@@ -76,7 +76,7 @@ After editing the file and quitting, try:
 i.e. execute the file.
 
 
----
+<hr style="width:10%;text-align:left;margin-left:0">
 
 WARNING: if the file is deleted it might lock any session still in use. These
 will have to be killed from another shell session or by closing the terminal tab

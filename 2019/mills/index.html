@@ -435,17 +435,18 @@ other:</p>
 <p>with <code>RNN(h, x)</code> defined as above. Each RNN module has its own set of
 parameters and its own hidden state vector. This will improve the network’s
 performance, at the cost of a much larger parameter space.</p>
-<hr />
-<p><strong>IMPORTANT NOTE</strong>: Since OMLET uses the system stack for network storage,
+<hr style="width:10%;text-align:left;margin-left:0">
+<p><strong>IMPORTANT NOTE</strong>:</p>
+<pre><code>Since OMLET uses the system stack for network storage,
 larger networks may cause OMLET to crash (typically with a message like
-<code>Segmentation fault</code>) unless the system stack size is first increased.
-The exact command for doing so depends on your shell and your system’s
-hard limits. On <code>sh</code>/<code>ksh</code>/<code>bash</code> shells, you can view the hard limit
-with <code>ulimit -Hs</code> and set it with <code>ulimit -s 65532</code> (replacing <code>65532</code>
-with the actual hard limit). On <code>csh</code>/<code>tcsh</code> shells, you can view
-the hard limit with <code>limit -h stacksize</code> and set it with
-<code>limit stacksize 65532</code> (replacing <code>65532</code> with the actual hard limit).</p>
-<hr />
+Segmentation fault) unless the system stack size is first increased.
+The exact command for doing so depends on your shell and your system&#39;s
+hard limits.  On sh/ksh/bash shells, you can view the hard limit
+with ulimit -Hs and set it with ulimit -s 65532 (replacing 65532
+with the actual hard limit).  On csh/tcsh shells, you can view
+the hard limit with limit -h stacksize and set it with
+limit stacksize 65532 (replacing 65532 with the actual hard limit).</code></pre>
+<hr style="width:10%;text-align:left;margin-left:0">
 <p>You can try the deeper network by doing</p>
 <pre><code>    make rnn2</code></pre>
 <p>(or even <code>make rnn3</code> if you want a three-layer RNN) and train it with</p>

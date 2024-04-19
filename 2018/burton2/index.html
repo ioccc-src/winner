@@ -399,56 +399,75 @@ the IOJCC trash can.</p>
 <li><a href="ioccc.kw.freq">ioccc.kw.freq</a> c11 + additional words, sorted on frequency of occurrence in IOCCC entries</li>
 </ul>
 <p>NB: The keyword file used in this code is derived from the list in <a href="../../2018/iocccsize.c">iocccsize.c</a>,
-which is neither complete (<code>#define</code>, <code>#ifndef</code>, <code>#undef</code> are missing
-– yes, Virginia knows about <code>#define</code> omitted on purpose),
-nor correct (many more are added: <code>I</code>, <code>true</code>, <code>bool</code>, <code>compl</code>, …):</p>
-<pre><code>    (sed -n &#39;1p&#39; c11; sed -n &#39;2,$p&#39; ioccc.kw.freq | sort) | comm -3 - c11</code></pre>
-<p>That is an obfuscated way to say “diff”. But it also more clearly shows the, um, diffs.</p>
-<p>The usage string is similarly externalized, providing a better usability string than
-the limits would otherwise allow. If this is considered bending the rules too far,
-just <code>-DU=O</code> to get a passible, if cryptic, usage message using no additional octets
+which is neither complete (<code>#define</code>, <code>#ifndef</code>, <code>#undef</code> are missing</p>
+<pre><code>yes, Virginia knows about `#define` omitted on purpose
+``
+
+nor correct (many more are added: `I`, `true`, `bool`, `compl`, ...):
+</code></pre>
+<p>(sed -n ‘1p’ c11; sed -n ‘2,$p’ ioccc.kw.freq | sort) | comm -3 - c11</p>
+<pre><code>
+That is an obfuscated way to say &quot;diff&quot;.  But it also more clearly shows the, um, diffs.
+
+The usage string is similarly externalized, providing a better usability string than
+the limits would otherwise allow.  If this is considered bending the rules too far,
+just `-DU=O` to get a passible, if cryptic, usage message using no additional octets
 than without the define.
 This also allows the builder to configure the amount of help a utility should provide
-(<a href="https://www.youtube.com/watch?v=VU0GYSA1POs" title="Ants">you want a manpage? Because that’s how you get a manpage.</a>) – a rather
-significant point of contention made moot.</p>
-<p>There is definitely abuse of the Rule2 counter, exploiting a “feature” of
-<code>iocccsize</code>: <code>iocccsize</code> does not Rule2 count <code>{</code>, <code>}</code> and <code>;</code> when followed by
-whitespace – even within a string! Thus: Freecode, a simple, uncounted, highly
-obfuscated encoding of a central part of this program. (The reserved word list
-is not Freecoded, both because it is useful apart from the program, and because
-Freecode is not entirely free.)</p>
-<ul>
-<li>Some restrictions apply. Not approved for all uses. Some assembly required.</li>
-</ul>
-<h3 id="compilation">Compilation:</h3>
-<p>The code is ANSI compliant, but it does have a string longer than 509 characters.
-It has been tested on OSX and Linux, Clang and GCC.</p>
-<p>The code uses trigraphs, ironically: it parses trigraphs with trigraph code.
-Because that’s funny. And it remains obscure after, so trigraphs are not used
-for obfuscation. Thus <code>-trigraphs -Wno-trigraphs</code> (which is also humorous).</p>
-<p>It’s obfuscated C. Thus <code>-Wno-parentheses -Wno-empty-body -Wno-char-subscripts</code>.</p>
-<p>The code uses <code>unsigned char</code>s, but C strings are <code>signed</code>. Thus <code>-Wno-pointer-sign</code>.
-NB: This is <em>not</em> a portability concern, the one string holds only printable ASCII characters.</p>
-<p>Thus:</p>
-<pre><code>    cc -ansi -Wall -trigraphs -Wno-trigraphs -Wno-parentheses -Wno-empty-body -Wno-char-subscripts -Wno-pointer-sign -DU=O -DW=\&quot;keywords\&quot; -o prog prog.c</code></pre>
-<h3 id="coda">Coda:</h3>
-<p><a href="../../authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> was relentless in his pursuit of bugs.
-Thanks to his reports, the version of <a href="unob.sh">unob.sh</a> is stronger,
-<code>tac</code> groks digraphs, <a href="tokenfix.sh">tokenfix.sh</a> corrects for missing digraphs
-in <a href="prog.c">prog.c</a>, and the program <a href="manpage.sh">manpage.sh</a> was added to the corpus.</p>
-<p><a href="manpage.sh">manpage.sh</a> is a useful program that turns ASCII versions of man
-pages (e.g. <a href="tac.man">tac.man</a>) into real man pages. It works for C and C-like
-languages, command lines, and was designed to handle man page sections 1-8. It
-works well on most inputs, but tends to need some raw nroff for more fancy
-constructions, such as combined arguments (e.g. the <code>-r</code> and <code>-s</code> arguments to tac
-are not recognised when written as <code>-rs</code> in prose).</p>
-<p>Try:</p>
-<pre><code>    ./manpage.sh tac
+([you want a manpage? Because that&#39;s how you get a manpage.][5]) -- a rather
+significant point of contention made moot.
 
-    ./manpage.sh -h
-    ./manpage.sh -h | ./manpage.sh
-    ./manpage.sh -h | ./manpage.sh -R | less
-    ./manpage.sh -h | ./manpage.sh -P | lpr</code></pre>
+There is definitely abuse of the Rule2 counter, exploiting a &quot;feature&quot; of
+`iocccsize`: `iocccsize` does not Rule2 count `{`, `}` and `;` when followed by
+whitespace -- even within a string!  Thus: Freecode, a simple, uncounted, highly
+obfuscated encoding of a central part of this program.  (The reserved word list
+is not Freecoded, both because it is useful apart from the program, and because
+Freecode is not entirely free.)
+
+* Some restrictions apply.  Not approved for all uses.  Some assembly required.
+
+[5]: https://www.youtube.com/watch?v=VU0GYSA1POs &quot;Ants&quot;
+
+### Compilation:
+
+The code is ANSI compliant, but it does have a string longer than 509 characters.
+It has been tested on OSX and Linux, Clang and GCC.
+
+The code uses trigraphs, ironically: it parses trigraphs with trigraph code.
+Because that&#39;s funny.  And it remains obscure after, so trigraphs are not used
+for obfuscation.  Thus `-trigraphs -Wno-trigraphs` (which is also humorous).
+
+It&#39;s obfuscated C.  Thus `-Wno-parentheses -Wno-empty-body -Wno-char-subscripts`.
+
+The code uses `unsigned char`s, but C strings are `signed`.  Thus `-Wno-pointer-sign`.
+NB: This is *not* a portability concern, the one string holds only printable ASCII characters.
+
+Thus:
+</code></pre>
+<p>cc -ansi -Wall -trigraphs -Wno-trigraphs -Wno-parentheses -Wno-empty-body -Wno-char-subscripts -Wno-pointer-sign -DU=O -DW="keywords" -o prog prog.c</p>
+<pre><code>
+### Coda:
+
+[Cody Boone Ferguson](../../authors.html#Cody_Boone_Ferguson) was relentless in his pursuit of bugs.
+Thanks to his reports, the version of [unob.sh](unob.sh) is stronger,
+`tac` groks digraphs, [tokenfix.sh](tokenfix.sh) corrects for missing digraphs
+in [prog.c](prog.c), and the program [manpage.sh](manpage.sh) was added to the corpus.
+
+[manpage.sh](manpage.sh) is a useful program that turns ASCII versions of man
+pages (e.g. [tac.man](tac.man)) into real man pages.  It works for C and C-like
+languages, command lines, and was designed to handle man page sections 1-8.  It
+works well on most inputs, but tends to need some raw nroff for more fancy
+constructions, such as combined arguments (e.g. the `-r` and `-s` arguments to tac
+are not recognised when written as `-rs` in prose).
+
+Try:
+</code></pre>
+<p>./manpage.sh tac</p>
+<p>./manpage.sh -h
+./manpage.sh -h | ./manpage.sh
+./manpage.sh -h | ./manpage.sh -R | less
+./manpage.sh -h | ./manpage.sh -P | lpr
+```</p>
 <p>NOTE: in 2023 the <code>tac.man</code> was updated to proper man format and renamed
 <a href="tac.1">tac.1</a>.</p>
 <!--

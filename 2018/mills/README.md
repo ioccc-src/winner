@@ -791,7 +791,7 @@ those friends and coworkers who had to listen to me complain about obscure
 corner-case bugs in my code.  The obsession is over, at least until next
 time...
 
--------------------------------------------------------------------------------
+<hr style="width:10%;text-align:left;margin-left:0">
 
 [1]:  ../../1984/mullender/mullender.c            "mullender.c"
 [2]:  http://minnie.tuhs.org/cgi-bin/utree.pl?file=2.9BSD    "2.9 BSD"

@@ -188,7 +188,7 @@ Summary of the use of l[999]:
     l[35] - l[998]  input line
 ```
 
----
+<hr style="width:10%;text-align:left;margin-left:0">
 
 Selected notes:
 - We don't need to declare `isalnum(3)` (or include ctype.h) as its implicit
@@ -202,7 +202,7 @@ Selected notes:
 - lclint 2.4b is positive the second `while` loop is infinite, whereas it is
   not.
 
----
+<hr style="width:10%;text-align:left;margin-left:0">
 
 ..  - .... .. -. -.-  - .... .. ...  ... .--. --- .. .-.. . .-.  .. ...  -- --- .-. .  --- -... ..-. ..- ... -.-. .- - . -..  - .... .- -.  - .... .  .--. .-. --- --. .-. .- --
 

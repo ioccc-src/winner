@@ -178,7 +178,7 @@ And another...
     cat august.oo august.oo august.oo test.oo | ./august
 ```
 
----
+<hr style="width:10%;text-align:left;margin-left:0">
 
 Fitting the byte code for the compiler into the initial comment
 was a challenge.  I had to strip the compiler/interpreter of
@@ -202,7 +202,7 @@ coder), but decompression then takes up too much code.  Maybe this
 would be a way to fit it all into the 1536 bytes, but I don't have
 time to try it.
 
----
+<hr style="width:10%;text-align:left;margin-left:0">
 
 Execution starts at `main()`.  Nothing can be used before it is
 defined.  `getchar()` and `putchar()` are predefined functions.
@@ -271,7 +271,7 @@ Terminals are in quotes, `()` is used for bracketing.
     stars:		"*"*
 ```
 
----
+<hr style="width:10%;text-align:left;margin-left:0">
 
 
 Well, that is enough ranting for now.
