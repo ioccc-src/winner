@@ -1,7 +1,7 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
     "entry_JSON_format_version" : "1.1 2024-02-11",
-    "award" : "Best use of 'Precious' Lines",
+    "award" : ""Best use of ""Precious"" Lines"",
     "year" : 2004,
     "dir" : "anonymous",
     "entry_id" : "2004_anonymous",
@@ -32,6 +32,14 @@
 	    "display_as" : "c",
 	    "display_via_github" : true,
 	    "entry_text" : "original source"
+	},
+	{
+	    "file_path" : "One_Ring_inscription.png",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "One Ring Black Speech inscription"
 	},
 	{
 	    "file_path" : "try.sh",

@@ -1818,6 +1818,7 @@
 2004/anonymous/.path
 2004/anonymous/2004_anonymous.tar.bz2
 2004/anonymous/Makefile
+2004/anonymous/One_Ring_inscription.png
 2004/anonymous/README.md
 2004/anonymous/anonymous.c
 2004/anonymous/anonymous.orig.c

@@ -32,7 +32,8 @@ does use some upper case letters for demonstration purposes.
 ## Judges' remarks:
 
 Did you know that in the first edition of The Hobbit Gollum was willing to give
-up the ring? It was not the Ruling Ring, the One Ring, the Ring of Power or
+up the ring? It was not the Ruling Ring, the [One Ring](https://www.glyphweb.com/arda/o/onering.html),
+the Ring of Power or
 anything like that: it was simply a literary device that could make one
 invisible. When Bilbo won the famous riddle game Gollum went to fetch the Ring -
 not to kill and eat Bilbo but to give it to him! But Bilbo had already found it
@@ -68,12 +69,19 @@ it. The real text is:
 ```
 
 which when translated from [Black
-Speech](https://www.glyphweb.com/arda/b/blackspeech.html) means:
+Speech](https://www.glyphweb.com/arda/b/blackspeech.html):
+
+
+<img src="One_Ring_inscription.png"
+ alt="The inscription, in the Black Speech of Mordor, on the One Ring"
+ width=453 height=127>
+
+into English reads:
 
 ```
-    [One Ring](https://www.glyphweb.com/arda/o/onering.html) to rule them all,
-    [One Ring](https://www.glyphweb.com/arda/o/onering.html) to find them,
-    [One Ring](https://www.glyphweb.com/arda/o/onering.html) to bring them all and in the darkness bind them.
+    **One Ring** to rule them all,
+    **One Ring** to find them,
+    **One Ring** to bring them all and in the darkness bind them.
 ```
 
 

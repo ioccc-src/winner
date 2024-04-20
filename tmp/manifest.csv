@@ -1817,6 +1817,7 @@
 2004,anonymous,anonymous.c,20,true,c,true,entry source
 2004,anonymous,Makefile,30,true,makefile,true,entry Makefile
 2004,anonymous,anonymous.orig.c,50,false,c,true,original source
+2004,anonymous,One_Ring_inscription.png,100,true,image,false,One Ring Black Speech inscription
 2004,anonymous,try.sh,100,true,shellscript,true,how to run
 2004,anonymous,2004_anonymous.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2004,anonymous,README.md,4000000000,true,markdown,true,markdown source for this web page
