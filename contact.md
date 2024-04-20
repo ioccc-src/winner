@@ -21,7 +21,7 @@ Instead first look at the [IOCCC
 issues](https://github.com/ioccc-src/winner/issues) to see if the
 problem has already been reported.  If it has been reported, feel
 free to add a comment to the issue.  If you do not find an it has
-been reported, then fee free to open a [new IOCCC
+been reported, then feel free to open a [new IOCCC
 issue](https://github.com/ioccc-src/winner/issues).
 
 If you are trying to:
