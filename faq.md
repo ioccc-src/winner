@@ -2537,7 +2537,7 @@ Authors of IOCCC winning entries are kept in JSON files of the form:
 ```
 
 where _author_handle_ is an author handle.  See [FAQ 6.5](#author_handle) for more
-information about an author handles.
+information about author handles.
 
 The contents of these JSON files contain the best known information
 about authors of IOCCC entries.  See [FAQ 6.6](#author_json) for information
