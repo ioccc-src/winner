@@ -74,14 +74,14 @@ Speech](https://www.glyphweb.com/arda/b/blackspeech.html):
 
 <img src="One_Ring_inscription.png"
  alt="The inscription, in the Black Speech of Mordor, on the One Ring"
- width=453 height=127>
+ width=690 height=127>
 
 into English reads:
 
 ```
-    **One Ring** to rule them all,
-    **One Ring** to find them,
-    **One Ring** to bring them all and in the darkness bind them.
+    One Ring to rule them all,
+    One Ring to find them,
+    One Ring to bring them all and in the darkness bind them.
 ```
 
 
