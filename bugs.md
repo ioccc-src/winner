@@ -75,7 +75,11 @@ one that's more than fine (and it has been done numerous times).
 Again, THANK YOU!
 
 
-# LIST OF STATUSES - PLEASE READ BEFORE FIXING (you may skip if you're only interested in knowing about entries with known issues)
+# LIST OF STATUSES
+
+## PLEASE READ BEFORE FIXING
+
+**BTW**: You may skip if you're only interested in knowing about entries with known issues.
 
 Entries below have one or more of the following _**STATUS**_ values. Please see
 the text below for more information. If an entry has more than one status it
@@ -160,7 +164,9 @@ when formatting code. In vim you should be able to do that with:
 ```
 
 
-## STATUS: known bug - please help us fix
+## STATUS: known bug
+
+**Please help us fix**!
 
 Entries with this status have one or more bugs that need to be fixed. Are you
 able to fix it? We welcome your help!
@@ -171,7 +177,11 @@ these are not meant to be maintainable or even good programming style! Use
 careful judgement when fixing bugs please!
 
 
-## STATUS: possible bug (possibly depending on system) - please help test and if necessary fix
+## STATUS: possible bug
+
+### System dependent bug possibly
+
+**Please help test, and if necessary fix this bug**!
 
 Entries with this status might or might not have a bug possibly depending on the
 system.  In these entries it's unknown if there is a bug and sometimes it's
@@ -179,27 +189,37 @@ because we do not remember and sometimes we don't have the appropriate system or
 environment to test and fix any possible problems.
 
 
-## STATUS: might not be completely functional - can you confirm?
+## STATUS: might not be completely functional
+
+**Can you confirm there is a bug?**
 
 Although these entries _appear_ to work for one or more reasons we're unsure if
 they are completely functional. Can you confirm this? Please let us know so we
 can fix it!
 
 
-## STATUS: probable bug (possibly depending on system) - please help test and if necessary fix
+## STATUS: probable bug
+
+### Possible system dependent bug
+
+**Please help test and if necessary fix this bug**!
 
 Entries with this status almost certainly have a bug or some other problem. The
 issue or issues might depend on the system much like the above _STATUS: possible
 bug (possibly depending on system)_.
 
 
-## STATUS: doesn't work with some platforms - please help us fix
+## STATUS: doesn't work with some platforms
+
+**Please help us fix this bug**!
 
 Entries with this status do not work under some OSes and/or architectures (and/or
 something else?). Please help us to fix it!
 
 
-## STATUS: doesn't work with some compilers - please provide alternative code or fix for more compilers
+## STATUS: doesn't work with some compilers
+
+**Please provide alternative code or fix for more compilers**!
 
 Some entries do not work with some compilers. A good example is
 [1992/lush](1992/lush/lush.c) which uses error messages from the compiler to
@@ -213,7 +233,9 @@ here as best you can manage.
 
 
 
-## STATUS: main() function args not allowed - please help us fix
+## STATUS: main() function args not allowed
+
+**Please help us fix the main() function**!
 
 NOTE: it appears that most if not all of these have been fixed except perhaps
 for [1989/westley](1989/westley/westley.c) but this has probably been fixed as
@@ -255,7 +277,9 @@ techniques to get them to compile. In some cases this introduced a problem but
 typically if not always that problem exists with compilers that are less strict.
 
 
-## STATUS: main() has only one arg - try and make it have 2 or 3
+## STATUS: main() has only one arg
+
+**Please help modify so that main() as 2 or 3 args**!
 
 Because some versions of clang complain about the number of args of `main()` and
 in particular say (when it has four, for instance) that it's only allowed to
@@ -267,7 +291,9 @@ were checked) that has this problem but it's not as simple as the others to fix
 without breaking it.
 
 
-## STATUS: compiled executable crashes - please help us fix
+## STATUS: compiled executable crashes
+
+**Please help us fix this bug**!
 
 While such entries can compile, the resulting executable sometimes or always
 crashes.
@@ -279,7 +305,9 @@ REMINDER: if you're debugging a crash it will be very helpful to have `-O0 -g`
 or if you can `-ggdb3` when compiling as that will help with debugging symbols.
 
 
-## STATUS: uses gets() - change to fgets() if possible
+## STATUS: uses gets()
+
+**Please help us change use of gets() to fgets()**, if possible.
 
 Entries with this status use `gets()` which is unsafe because it has no limit on
 the length of the string. [Cody Boone
@@ -326,7 +354,9 @@ Sometimes `getline(3)` will work but note that this function also stores the
 newline just like `fgets(3)`.
 
 
-## STATUS: missing file(s) - please provide them
+## STATUS: missing file(s)
+
+**Please help is by finding missing file(s)**!
 
 In these entries one file or multiple files are missing from the repo. In some
 cases these files can be found on the [IOCCC website](https://www.ioccc.org) but
@@ -334,14 +364,9 @@ in other cases they are entirely absent. In this case you'll probably have to
 contact the author (unless you are the author! :-) ).
 
 
-## STATUS: missing make rules - please provide them
+## STATUS: missing or dead link
 
-In these entries one or more make rules noted by the author and/or judges is/are
-missing. You might consider looking at the [archive](archive) as a good place
-to find them.
-
-
-## STATUS: missing or dead link - please provide them
+**Please help is fix missing or dead link(s)**!
 
 This is as they sound: a link is either missing or it's no longer valid. In many
 cases the [Internet Wayback Machine](https://web.archive.org) will be very
@@ -4105,6 +4130,11 @@ fixes] via a [GitHub pull
 request](https://github.com/ioccc-src/temp-test-ioccc/pulls) or otherwise, we
 thank you as well for the help! We will happily add you to the
 [thanks](thanks-for-help.html) file as well.
+
+
+<hr style="width:10%;text-align:left;margin-left:0">
+
+Jump to: [top](#)
 
 
 <!--

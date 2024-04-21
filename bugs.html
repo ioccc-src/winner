@@ -190,7 +190,9 @@ would be wise to test it under all that you have access to. Otherwise we can do
 that. Of course if the entry does not work under any platform and you fix it for
 one that’s more than fine (and it has been done numerous times).</p>
 <p>Again, THANK YOU!</p>
-<h1 id="list-of-statuses---please-read-before-fixing-you-may-skip-if-youre-only-interested-in-knowing-about-entries-with-known-issues">LIST OF STATUSES - PLEASE READ BEFORE FIXING (you may skip if you’re only interested in knowing about entries with known issues)</h1>
+<h1 id="list-of-statuses">LIST OF STATUSES</h1>
+<h2 id="please-read-before-fixing">PLEASE READ BEFORE FIXING</h2>
+<p><strong>BTW</strong>: You may skip if you’re only interested in knowing about entries with known issues.</p>
 <p>Entries below have one or more of the following <em><strong>STATUS</strong></em> values. Please see
 the text below for more information. If an entry has more than one status it
 means that either they all apply or they compliment each other. For instance
@@ -246,30 +248,38 @@ break code! <a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> h
 experienced this many times with vim so he tends to disable all format options
 when formatting code. In vim you should be able to do that with:</p>
 <pre><code>    :set formatoptions=</code></pre>
-<h2 id="status-known-bug---please-help-us-fix">STATUS: known bug - please help us fix</h2>
+<h2 id="status-known-bug">STATUS: known bug</h2>
+<p><strong>Please help us fix</strong>!</p>
 <p>Entries with this status have one or more bugs that need to be fixed. Are you
 able to fix it? We welcome your help!</p>
 <p>An important point to note is that there is a very fine line when fixing bugs
 where it might sometimes border on tampering with the program. And after all,
 these are not meant to be maintainable or even good programming style! Use
 careful judgement when fixing bugs please!</p>
-<h2 id="status-possible-bug-possibly-depending-on-system---please-help-test-and-if-necessary-fix">STATUS: possible bug (possibly depending on system) - please help test and if necessary fix</h2>
+<h2 id="status-possible-bug">STATUS: possible bug</h2>
+<h3 id="system-dependent-bug-possibly">System dependent bug possibly</h3>
+<p><strong>Please help test, and if necessary fix this bug</strong>!</p>
 <p>Entries with this status might or might not have a bug possibly depending on the
 system. In these entries it’s unknown if there is a bug and sometimes it’s
 because we do not remember and sometimes we don’t have the appropriate system or
 environment to test and fix any possible problems.</p>
-<h2 id="status-might-not-be-completely-functional---can-you-confirm">STATUS: might not be completely functional - can you confirm?</h2>
+<h2 id="status-might-not-be-completely-functional">STATUS: might not be completely functional</h2>
+<p><strong>Can you confirm there is a bug?</strong></p>
 <p>Although these entries <em>appear</em> to work for one or more reasons we’re unsure if
 they are completely functional. Can you confirm this? Please let us know so we
 can fix it!</p>
-<h2 id="status-probable-bug-possibly-depending-on-system---please-help-test-and-if-necessary-fix">STATUS: probable bug (possibly depending on system) - please help test and if necessary fix</h2>
+<h2 id="status-probable-bug">STATUS: probable bug</h2>
+<h3 id="possible-system-dependent-bug">Possible system dependent bug</h3>
+<p><strong>Please help test and if necessary fix this bug</strong>!</p>
 <p>Entries with this status almost certainly have a bug or some other problem. The
 issue or issues might depend on the system much like the above <em>STATUS: possible
 bug (possibly depending on system)</em>.</p>
-<h2 id="status-doesnt-work-with-some-platforms---please-help-us-fix">STATUS: doesn’t work with some platforms - please help us fix</h2>
+<h2 id="status-doesnt-work-with-some-platforms">STATUS: doesn’t work with some platforms</h2>
+<p><strong>Please help us fix this bug</strong>!</p>
 <p>Entries with this status do not work under some OSes and/or architectures (and/or
 something else?). Please help us to fix it!</p>
-<h2 id="status-doesnt-work-with-some-compilers---please-provide-alternative-code-or-fix-for-more-compilers">STATUS: doesn’t work with some compilers - please provide alternative code or fix for more compilers</h2>
+<h2 id="status-doesnt-work-with-some-compilers">STATUS: doesn’t work with some compilers</h2>
+<p><strong>Please provide alternative code or fix for more compilers</strong>!</p>
 <p>Some entries do not work with some compilers. A good example is
 <a href="1992/lush/lush.c">1992/lush</a> which uses error messages from the compiler to
 generate its output.</p>
@@ -278,7 +288,8 @@ tampering this is okay though it’s probably not possible with the above
 mentioned entry; otherwise it would be better to provide alternate code. In some
 cases it might be better to provide alternate code anyway. Use a judgement call
 here as best you can manage.</p>
-<h2 id="status-main-function-args-not-allowed---please-help-us-fix">STATUS: main() function args not allowed - please help us fix</h2>
+<h2 id="status-main-function-args-not-allowed">STATUS: main() function args not allowed</h2>
+<p><strong>Please help us fix the main() function</strong>!</p>
 <p>NOTE: it appears that most if not all of these have been fixed except perhaps
 for <a href="1989/westley/westley.c">1989/westley</a> but this has probably been fixed as
 much as possible given the nature of how it generates code: the entry itself
@@ -310,7 +321,8 @@ differently). In other cases he was able to dereference the pointers to be used
 like an int and other times a cast was necessary. He used other various
 techniques to get them to compile. In some cases this introduced a problem but
 typically if not always that problem exists with compilers that are less strict.</p>
-<h2 id="status-main-has-only-one-arg---try-and-make-it-have-2-or-3">STATUS: main() has only one arg - try and make it have 2 or 3</h2>
+<h2 id="status-main-has-only-one-arg">STATUS: main() has only one arg</h2>
+<p><strong>Please help modify so that main() as 2 or 3 args</strong>!</p>
 <p>Because some versions of clang complain about the number of args of <code>main()</code> and
 in particular say (when it has four, for instance) that it’s only allowed to
 have 0, 2 or 3 args, numerous entries had a second arg added to <code>main()</code> (if
@@ -319,14 +331,16 @@ impossible especially as it already claims having only one arg is not allowed.
 At this time (04 Feb 2024) there is one entry known (it is possible that not all
 were checked) that has this problem but it’s not as simple as the others to fix
 without breaking it.</p>
-<h2 id="status-compiled-executable-crashes---please-help-us-fix">STATUS: compiled executable crashes - please help us fix</h2>
+<h2 id="status-compiled-executable-crashes">STATUS: compiled executable crashes</h2>
+<p><strong>Please help us fix this bug</strong>!</p>
 <p>While such entries can compile, the resulting executable sometimes or always
 crashes.</p>
 <p>NOTE: this does NOT apply to entries under the INABIAF status (though they’re
 not mutually exclusive in some cases).</p>
 <p>REMINDER: if you’re debugging a crash it will be very helpful to have <code>-O0 -g</code>
 or if you can <code>-ggdb3</code> when compiling as that will help with debugging symbols.</p>
-<h2 id="status-uses-gets---change-to-fgets-if-possible">STATUS: uses gets() - change to fgets() if possible</h2>
+<h2 id="status-uses-gets">STATUS: uses gets()</h2>
+<p><strong>Please help us change use of gets() to fgets()</strong>, if possible.</p>
 <p>Entries with this status use <code>gets()</code> which is unsafe because it has no limit on
 the length of the string. <a href="authors.html#Cody_Boone_Ferguson">Cody Boone
 Ferguson</a> has fixed several of these and he’s
@@ -364,16 +378,14 @@ during compiling, linking and/or runtime, sometimes causing confusing output (as
 noted above).</p>
 <p>Sometimes <code>getline(3)</code> will work but note that this function also stores the
 newline just like <code>fgets(3)</code>.</p>
-<h2 id="status-missing-files---please-provide-them">STATUS: missing file(s) - please provide them</h2>
+<h2 id="status-missing-files">STATUS: missing file(s)</h2>
+<p><strong>Please help is by finding missing file(s)</strong>!</p>
 <p>In these entries one file or multiple files are missing from the repo. In some
 cases these files can be found on the <a href="https://www.ioccc.org">IOCCC website</a> but
 in other cases they are entirely absent. In this case you’ll probably have to
 contact the author (unless you are the author! :-) ).</p>
-<h2 id="status-missing-make-rules---please-provide-them">STATUS: missing make rules - please provide them</h2>
-<p>In these entries one or more make rules noted by the author and/or judges is/are
-missing. You might consider looking at the <a href="archive">archive</a> as a good place
-to find them.</p>
-<h2 id="status-missing-or-dead-link---please-provide-them">STATUS: missing or dead link - please provide them</h2>
+<h2 id="status-missing-or-dead-link">STATUS: missing or dead link</h2>
+<p><strong>Please help is fix missing or dead link(s)</strong>!</p>
 <p>This is as they sound: a link is either missing or it’s no longer valid. In many
 cases the <a href="https://web.archive.org">Internet Wayback Machine</a> will be very
 useful but there happens to be numerous links that this is not helpful. In other
@@ -489,7 +501,7 @@ and does not crash.</p>
 <div id="1989_fubar">
 <h2 id="fubar">1989/fubar</h2>
 </div>
-<h3 id="status-known-bug---please-help-us-fix-1">STATUS: known bug - please help us fix</h3>
+<h3 id="status-known-bug---please-help-us-fix">STATUS: known bug - please help us fix</h3>
 <h3 id="source-code-1989fubarfubar.c">Source code: <a href="1989/fubar/fubar.c">1989/fubar/fubar.c</a></h3>
 <h3 id="information-1989fubarindex.html">Information: <a href="1989/fubar/index.html">1989/fubar/index.html</a></h3>
 <p>If you use either <code>fubar</code> or <code>ouroboros.c</code> (it’s executable, see index.html for
@@ -510,7 +522,7 @@ operators like <code>/</code>. To see what operators are supported check the sou
 <div id="1989_westley">
 <h2 id="westley">1989/westley</h2>
 </div>
-<h3 id="status-known-bug---please-help-us-fix-2">STATUS: known bug - please help us fix</h3>
+<h3 id="status-known-bug---please-help-us-fix-1">STATUS: known bug - please help us fix</h3>
 <h3 id="source-code-1989westleywestley.c">Source code: <a href="1989/westley/westley.c">1989/westley/westley.c</a></h3>
 <h3 id="information-1989westleyindex.html">Information: <a href="1989/westley/index.html">1989/westley/index.html</a></h3>
 <p>With version 2 it sometimes segfaults even with the same input where other times
@@ -663,7 +675,7 @@ more time and resources to run as well. For instance:</p>
 <div id="1990_jaw">
 <h2 id="jaw">1990/jaw</h2>
 </div>
-<h3 id="status-known-bug---please-help-us-fix-3">STATUS: known bug - please help us fix</h3>
+<h3 id="status-known-bug---please-help-us-fix-2">STATUS: known bug - please help us fix</h3>
 <h3 id="source-code-1990jawjaw.c">Source code: <a href="1990/jaw/jaw.c">1990/jaw/jaw.c</a></h3>
 <h3 id="information-1990jawindex.html">Information: <a href="1990/jaw/index.html">1990/jaw/index.html</a></h3>
 <p><a href="../authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a>
@@ -766,7 +778,7 @@ have to remove the outer <code>()</code> pair.</p>
 <div id="1992_albert">
 <h2 id="albert">1992/albert</h2>
 </div>
-<h3 id="status-known-bug---please-help-us-fix-4">STATUS: known bug - please help us fix</h3>
+<h3 id="status-known-bug---please-help-us-fix-3">STATUS: known bug - please help us fix</h3>
 <h3 id="source-code-1992albertalbert.c">Source code: <a href="1992/albert/albert.c">1992/albert/albert.c</a></h3>
 <h3 id="information-1992albertindex.html">Information: <a href="1992/albert/index.html">1992/albert/index.html</a></h3>
 <p>Leo Broukhis, before he was an IOCCC judge, sent the IOCCC judges an email:</p>
@@ -809,7 +821,7 @@ entry itself. Can you fix the actual entry? You are welcome to try and do so.</p
 <div id="1992_gson">
 <h2 id="gson">1992/gson</h2>
 </div>
-<h3 id="status-uses-gets---change-to-fgets-if-possible-1">STATUS: uses gets() - change to fgets() if possible</h3>
+<h3 id="status-uses-gets---change-to-fgets-if-possible">STATUS: uses gets() - change to fgets() if possible</h3>
 <h3 id="source-code-1992gsongson.c">Source code: <a href="1992/gson/gson.c">1992/gson/gson.c</a></h3>
 <h3 id="information-1992gsonindex.html1992gsonindex.html">Information: [1992/gson/index.html])(1992/gson/index.html)</h3>
 <p>Cody changed it so that the buffer size is <code>ARG_MAX+1</code> to try and get past the
@@ -829,7 +841,7 @@ to be read (in case the <code>gets(3)</code> was not used in a loop).</p>
 <div id="1992_kivinen">
 <h2 id="kivinen">1992/kivinen</h2>
 </div>
-<h3 id="status-known-bug---please-help-us-fix-5">STATUS: known bug - please help us fix</h3>
+<h3 id="status-known-bug---please-help-us-fix-4">STATUS: known bug - please help us fix</h3>
 <h3 id="source-code-1992kivinenkivinen.c">Source code: <a href="1992/kivinen/kivinen.c">1992/kivinen/kivinen.c</a></h3>
 <h3 id="information-1992kivinenindex.html">Information: <a href="1992/kivinen/index.html">1992/kivinen/index.html</a></h3>
 <p>When you start the program everything starts to move over to the right side and
@@ -839,7 +851,7 @@ click the mouse it takes it back towards the centre.</p>
 <div id="1992_lush">
 <h2 id="lush">1992/lush</h2>
 </div>
-<h3 id="status-doesnt-work-with-some-compilers---please-provide-alternative-code-or-fix-for-more-compilers-1">STATUS: doesn’t work with some compilers - please provide alternative code or fix for more compilers</h3>
+<h3 id="status-doesnt-work-with-some-compilers---please-provide-alternative-code-or-fix-for-more-compilers">STATUS: doesn’t work with some compilers - please provide alternative code or fix for more compilers</h3>
 <h3 id="source-code-1992lushlush.c">Source code: <a href="1992/lush/lush.c">1992/lush/lush.c</a></h3>
 <h3 id="information-1992lushindex.html">Information: <a href="1992/lush/index.html">1992/lush/index.html</a></h3>
 <p>We used a patch from <a href="authors.html#Yusuke_Endoh">Yusuke Endoh</a> to get this to
@@ -922,7 +934,7 @@ at 80 columns. However due to the nature of the program if the terminal is &lt; 
 in column width it will not display right. To see the number of columns in your
 terminal try:</p>
 <pre><code>    echo $COLUMNS</code></pre>
-<h3 id="status-known-bug---please-help-us-fix-6">STATUS: known bug - please help us fix</h3>
+<h3 id="status-known-bug---please-help-us-fix-5">STATUS: known bug - please help us fix</h3>
 <p>The author suggested that the alternate version, which Cody added (but fixed for
 modern systems), should print</p>
 <pre><code>    main(l,a,n,d)...
@@ -951,7 +963,7 @@ not a misunderstanding).</p>
 <p>The author wrote in the documentation file <a href="1993/ant/ant.txt">ant.txt</a> that
 there is a version of the code that is not obfuscated. This file, <code>agag.c</code> does
 not exist in the archive. Do you have it? Please provide it!</p>
-<h3 id="status-known-bug---please-help-us-fix-7">STATUS: known bug - please help us fix</h3>
+<h3 id="status-known-bug---please-help-us-fix-6">STATUS: known bug - please help us fix</h3>
 <h3 id="source-code-1993cmillscmills.c">Source code: <a href="1993/cmills/cmills.c">1993/cmills/cmills.c</a></h3>
 <h3 id="information-1993cmillsindex.html">Information: <a href="1993/cmills/index.html">1993/cmills/index.html</a></h3>
 <p>In multiple platforms, both macOS and also linux (in particular a RHEL 9.3
@@ -1047,7 +1059,7 @@ one liner it’s already quite long.</p>
 <div id="1994_schnitzi">
 <h2 id="schnitzi-1">1994/schnitzi</h2>
 </div>
-<h3 id="status-uses-gets---change-to-fgets-if-possible-2">STATUS: uses gets() - change to fgets() if possible</h3>
+<h3 id="status-uses-gets---change-to-fgets-if-possible-1">STATUS: uses gets() - change to fgets() if possible</h3>
 <h3 id="source-code-1994schnitzischnitzi.c">Source code: <a href="1994/schnitzi/schnitzi.c">1994/schnitzi/schnitzi.c</a></h3>
 <h3 id="information-1994schnitziindex.html">Information: <a href="1994/schnitzi/index.html">1994/schnitzi/index.html</a></h3>
 <p>NOTE: the generated code of all versions, when fed its own source, will differ
@@ -1163,7 +1175,7 @@ if it checked for <code>!= EOF</code>.</p>
 <div id="1994_tvr">
 <h2 id="tvr">1994/tvr</h2>
 </div>
-<h3 id="status-known-bug---please-help-us-fix-8">STATUS: known bug - please help us fix</h3>
+<h3 id="status-known-bug---please-help-us-fix-7">STATUS: known bug - please help us fix</h3>
 <h3 id="source-code-1994tvrtvr.c">Source code: <a href="1994/tvr/tvr.c">1994/tvr/tvr.c</a></h3>
 <h3 id="information-1994tvrindex.html">Information: <a href="1994/tvr/index.html">1994/tvr/index.html</a></h3>
 <p>The judges said the following in their remarks:</p>
@@ -1192,7 +1204,7 @@ it calls <code>getchar()</code> via the pointer <code>m</code>. So this is a fea
 <div id="1995_leo">
 <h2 id="leo">1995/leo</h2>
 </div>
-<h3 id="status-known-bug---please-help-us-fix-9">STATUS: known bug - please help us fix</h3>
+<h3 id="status-known-bug---please-help-us-fix-8">STATUS: known bug - please help us fix</h3>
 <h3 id="source-code-1995leoleo.c">Source code: <a href="1995/leo/leo.c">1995/leo/leo.c</a></h3>
 <h3 id="information-1995leoindex.html">Information: <a href="1995/leo/index.html">1995/leo/index.html</a></h3>
 <p>The judges suggested that the following commands should result in output:</p>
@@ -1230,7 +1242,7 @@ compilers to use the program but this file is missing. Can you provide it?</p>
 <div id="1996_gandalf">
 <h2 id="gandalf">1996/gandalf</h2>
 </div>
-<h3 id="status-missing-or-dead-link---please-provide-them-1">STATUS: missing or dead link - please provide them</h3>
+<h3 id="status-missing-or-dead-link---please-provide-them">STATUS: missing or dead link - please provide them</h3>
 <h3 id="source-code-1996gandalfgandalf.c">Source code: <a href="1996/gandalf/gandalf.c">1996/gandalf/gandalf.c</a></h3>
 <h3 id="information-1996gandalfindex.html">Information: <a href="1996/gandalf/index.html">1996/gandalf/index.html</a></h3>
 <p>The link was http://www.tc3.co.uk/~gandalf/G.HTML but this no longer exists as
@@ -1239,7 +1251,7 @@ it was instead requiring a login / password.</p>
 <div id="1996_huffman">
 <h2 id="huffman">1996/huffman</h2>
 </div>
-<h3 id="status-uses-gets---change-to-fgets-if-possible-3">STATUS: uses gets() - change to fgets() if possible</h3>
+<h3 id="status-uses-gets---change-to-fgets-if-possible-2">STATUS: uses gets() - change to fgets() if possible</h3>
 <h3 id="source-code-1996huffmanhuffman.c">Source code: <a href="1996/huffman/huffman.c">1996/huffman/huffman.c</a></h3>
 <h3 id="information-1996huffmanindex.html">Information: <a href="1996/huffman/index.html">1996/huffman/index.html</a></h3>
 <p>The changing to using <code>fgets(3)</code> in this entry is a bit more complicated. It can
@@ -1280,7 +1292,7 @@ almost be done except that some of the output of the
 This should NOT be fixed.</p>
 <p>NOTE: the two boards will be on top of each other so you will have to drag one
 off the other so that you can properly play.</p>
-<h3 id="status-missing-or-dead-link---please-provide-them-2">STATUS: missing or dead link - please provide them</h3>
+<h3 id="status-missing-or-dead-link---please-provide-them-1">STATUS: missing or dead link - please provide them</h3>
 <p>As well: the link which was http://www.uio.no/~jonth is no longer valid and
 there’s no archive on the Internet Wayback Machine. Do you know of a proper URL?
 We greatly appreciate your help here!</p>
@@ -1294,7 +1306,7 @@ We greatly appreciate your help here!</p>
 <div id="1998_dlowe">
 <h2 id="dlowe">1998/dlowe</h2>
 </div>
-<h3 id="status-missing-or-dead-link---please-provide-them-3">STATUS: missing or dead link - please provide them</h3>
+<h3 id="status-missing-or-dead-link---please-provide-them-2">STATUS: missing or dead link - please provide them</h3>
 <h3 id="source-code-1998dlowedlowe.c">Source code: <a href="1998/dlowe/dlowe.c">1998/dlowe/dlowe.c</a></h3>
 <h3 id="information-1998dloweindex.html">Information: <a href="1998/dlowe/index.html">1998/dlowe/index.html</a></h3>
 <p>The domain http://pootpoot.com no longer exists as it once did. The judges have
@@ -1305,7 +1317,7 @@ to the page as well! You’ll have IOCCC fame for reviving a pootifier! :-)</p>
 <div id="1998_dloweneil">
 <h2 id="dloweneil">1998/dloweneil</h2>
 </div>
-<h3 id="status-missing-or-dead-link---please-provide-them-4">STATUS: missing or dead link - please provide them</h3>
+<h3 id="status-missing-or-dead-link---please-provide-them-3">STATUS: missing or dead link - please provide them</h3>
 <h3 id="source-code-1998dloweneildloweneil.c">Source code: <a href="1998/dloweneil/dloweneil.c">1998/dloweneil/dloweneil.c</a></h3>
 <h3 id="information-1998dloweneilindex.html">Information: <a href="1998/dloweneil/index.html">1998/dloweneil/index.html</a></h3>
 <p>See above entry <a href="1998/dlowe/dlowe.c">1998/dlowe</a>.</p>
@@ -1335,7 +1347,7 @@ is in the index.html file as something to try and ponder.</p>
 <div id="2000_dlowe">
 <h2 id="dlowe-1">2000/dlowe</h2>
 </div>
-<h3 id="status-known-bug---please-help-us-fix-10">STATUS: known bug - please help us fix</h3>
+<h3 id="status-known-bug---please-help-us-fix-9">STATUS: known bug - please help us fix</h3>
 <h3 id="source-code-2000dlowedlowe.c">Source code: <a href="2000/dlowe/dlowe.c">2000/dlowe/dlowe.c</a></h3>
 <h3 id="information-2000dloweindex.html">Information: <a href="2000/dlowe/index.html">2000/dlowe/index.html</a></h3>
 <p>The author gives an example command:</p>
@@ -1561,7 +1573,7 @@ elves of Imladris :-(</p>
 <h2 id="bellard">2001/bellard</h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-30">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="status-doesnt-work-with-some-platforms---please-help-us-fix-1">STATUS: doesn’t work with some platforms - please help us fix</h3>
+<h3 id="status-doesnt-work-with-some-platforms---please-help-us-fix">STATUS: doesn’t work with some platforms - please help us fix</h3>
 <h3 id="source-code-2001bellardbellard.c">Source code: <a href="2001/bellard/bellard.c">2001/bellard/bellard.c</a></h3>
 <h3 id="information-2001bellardindex.html">Information: <a href="2001/bellard/index.html">2001/bellard/index.html</a></h3>
 <p>The two statuses might seem contradictory but that is a complicated question.
@@ -1618,12 +1630,12 @@ before the fixes there.</p>
 <div id="2001_herrmann1">
 <h2 id="herrmann1">2001/herrmann1</h2>
 </div>
-<h3 id="status-missing-files---please-provide-them-1">STATUS: missing files - please provide them</h3>
+<h3 id="status-missing-files---please-provide-them">STATUS: missing files - please provide them</h3>
 <h3 id="source-code-2001herrmann1herrmann1.c">Source code: <a href="2001/herrmann1/herrmann1.c">2001/herrmann1/herrmann1.c</a></h3>
 <h3 id="information-2001herrmann1index.html">Information: <a href="2001/herrmann1/index.html">2001/herrmann1/index.html</a></h3>
 <p>The author referred to the file <code>herrmann1.turing</code> but it does not exist not even
 in the archive. Do you have a copy? Please provide it!</p>
-<h3 id="status-known-bug---please-help-us-fix-11">STATUS: known bug - please help us fix</h3>
+<h3 id="status-known-bug---please-help-us-fix-10">STATUS: known bug - please help us fix</h3>
 <p>There is also a bug in part. During compilation you’re supposed to see some
 animation but this does not seem to work with modern gcc versions. It appears
 that version 2.95 works but maybe others do as well. Do you have a fix? We would
@@ -1650,7 +1662,7 @@ set. In other words both have to be ASCII or EBCDIC - not one of each.</p>
 <div id="2001_rosten">
 <h2 id="rosten">2001/rosten</h2>
 </div>
-<h3 id="status-missing-files---please-provide-them-2">STATUS: missing files - please provide them</h3>
+<h3 id="status-missing-files---please-provide-them-1">STATUS: missing files - please provide them</h3>
 <h3 id="source-code-2001rostenrosten.c">Source code: <a href="2001/rosten/rosten.c">2001/rosten/rosten.c</a></h3>
 <h3 id="information-2001rostenindex.html">Information: <a href="2001/rosten/index.html">2001/rosten/index.html</a></h3>
 <p>The author stated that there is a cat man page for this program in case one
@@ -1667,14 +1679,14 @@ details and a workaround.</p>
 <div id="2001_westley">
 <h2 id="westley-3">2001/westley</h2>
 </div>
-<h3 id="status-uses-gets---change-to-fgets-if-possible-4">STATUS: uses gets() - change to fgets() if possible</h3>
+<h3 id="status-uses-gets---change-to-fgets-if-possible-3">STATUS: uses gets() - change to fgets() if possible</h3>
 <h3 id="source-code-2001westleywestley.c">Source code: <a href="2001/westley/westley.c">2001/westley/westley.c</a></h3>
 <h3 id="information-2001westleyindex.html">Information: <a href="2001/westley/index.html">2001/westley/index.html</a></h3>
 <p>This function uses <code>gets(3)</code> but it would be ideal if it used <code>fgets(3)</code>. This
 one is rather complicated and will be looked at later (some progress was made by
 Cody but it is less important than other work) but you are welcome to try
 and fix this if you wish.</p>
-<h3 id="status-main-has-only-one-arg---try-and-make-it-have-2-or-3-1">STATUS: main() has only one arg - try and make it have 2 or 3</h3>
+<h3 id="status-main-has-only-one-arg---try-and-make-it-have-2-or-3">STATUS: main() has only one arg - try and make it have 2 or 3</h3>
 <p>This program only has one arg to <code>main()</code>. However changing it to have 2 is not
 as simple as it might seem. Doing this breaks things. If memory serves changing
 it to two will, for instance, break the punch card code output. It might be that
@@ -1685,13 +1697,13 @@ does too. You might try running the <code>try.sh</code> script and redirect it t
 first so that you can compare the output. Make sure to recreate the extra files
 as described by the author if you do fix this. This might be looked at later if
 nobody else takes up the challenge.</p>
-<h3 id="status-missing-files---please-provide-them-3">STATUS: missing files - please provide them</h3>
+<h3 id="status-missing-files---please-provide-them-2">STATUS: missing files - please provide them</h3>
 <p>The author referred to a file <code>card.gif</code> but this file is missing. Do you have
 it? Please provide it!</p>
 <div id="2001_williams">
 <h2 id="williams">2001/williams</h2>
 </div>
-<h3 id="status-known-bug---please-help-us-fix-12">STATUS: known bug - please help us fix</h3>
+<h3 id="status-known-bug---please-help-us-fix-11">STATUS: known bug - please help us fix</h3>
 <h3 id="source-code-2001williamswilliams.c">Source code: <a href="2001/williams/williams.c">2001/williams/williams.c</a></h3>
 <h3 id="information-2001williamsindex.html">Information: <a href="2001/williams/index.html">2001/williams/index.html</a></h3>
 <p>There seem to be a couple bugs at least in this entry. The first one is that
@@ -1737,8 +1749,8 @@ sleeping.</p>
 <div id="2004_gavin">
 <h2 id="gavin">2004/gavin</h2>
 </div>
-<h3 id="status-compiled-executable-crashes---please-help-us-fix-1">STATUS: compiled executable crashes - please help us fix</h3>
-<h3 id="status-doesnt-work-with-some-platforms---please-help-us-fix-2">STATUS: doesn’t work with some platforms - please help us fix</h3>
+<h3 id="status-compiled-executable-crashes---please-help-us-fix">STATUS: compiled executable crashes - please help us fix</h3>
+<h3 id="status-doesnt-work-with-some-platforms---please-help-us-fix-1">STATUS: doesn’t work with some platforms - please help us fix</h3>
 <h3 id="source-code-2004gavingavin.c">Source code: <a href="2004/gavin/gavin.c">2004/gavin/gavin.c</a></h3>
 <h3 id="information-2004gavinindex.html">Information: <a href="2004/gavin//index.html">2004/gavin//index.html</a></h3>
 <p>Segmentation fault will occur in some systems. For instance on macOS with the
@@ -1960,7 +1972,7 @@ used decimal mode, or any of the “undocumented” instructions.</p>
 <div id="2006_birken">
 <h2 id="birken">2006/birken</h2>
 </div>
-<h3 id="status-uses-gets---change-to-fgets-if-possible-5">STATUS: uses gets() - change to fgets() if possible</h3>
+<h3 id="status-uses-gets---change-to-fgets-if-possible-4">STATUS: uses gets() - change to fgets() if possible</h3>
 <h3 id="source-code-2006birkenbirken.c">Source code: <a href="2006/birken/birken.c">2006/birken/birken.c</a></h3>
 <h3 id="information-2006birkenindex.html">Information: <a href="2006/birken/index.html">2006/birken/index.html</a></h3>
 <p>This entry uses <code>gets(3)</code> which is unsafe and provides annoying warnings, most
@@ -1981,7 +1993,7 @@ with possibly corrupt GIF files.</p>
 <div id="2006_monge">
 <h2 id="monge">2006/monge</h2>
 </div>
-<h3 id="status-doesnt-work-with-some-platforms---please-help-us-fix-3">STATUS: doesn’t work with some platforms - please help us fix</h3>
+<h3 id="status-doesnt-work-with-some-platforms---please-help-us-fix-2">STATUS: doesn’t work with some platforms - please help us fix</h3>
 <h3 id="source-code-2006mongemonge.c">Source code: <a href="2006/monge/monge.c">2006/monge/monge.c</a></h3>
 <h3 id="information-2006mongeindex.html">Information: <a href="2006/monge/index.html">2006/monge/index.html</a></h3>
 <p>This program requires x86 (with an x87 FPU) or x86_64 machine and it requires
@@ -2068,7 +2080,7 @@ bins at the edges.</p>
 <div id="2011_dlowe">
 <h2 id="dlowe-2">2011/dlowe</h2>
 </div>
-<h3 id="status-missing-or-dead-link---please-provide-them-5">STATUS: missing or dead link - please provide them</h3>
+<h3 id="status-missing-or-dead-link---please-provide-them-4">STATUS: missing or dead link - please provide them</h3>
 <h3 id="source-code-2011dlowedlowe.c">Source code: <a href="2011/dlowe/dlowe.c">2011/dlowe/dlowe.c</a></h3>
 <h3 id="information-2011dloweindex.html">Information: <a href="2011/dlowe/index.html">2011/dlowe/index.html</a></h3>
 <p>The author’s website, http://www.pootpoot.net, no longer exists as it once did,
@@ -2098,7 +2110,7 @@ remarks</a> instead.</p>
 <div id="2011_richards">
 <h2 id="richards">2011/richards</h2>
 </div>
-<h3 id="status-doesnt-work-with-some-platforms---please-help-us-fix-4">STATUS: doesn’t work with some platforms - please help us fix</h3>
+<h3 id="status-doesnt-work-with-some-platforms---please-help-us-fix-3">STATUS: doesn’t work with some platforms - please help us fix</h3>
 <h3 id="source-code-2011richardsrichards.c">Source code: <a href="2011/richards/richards.c">2011/richards/richards.c</a></h3>
 <h3 id="information-2011richardsindex.html">Information: <a href="2011/richards/index.html">2011/richards/index.html</a></h3>
 <p>This does not appear to work with macOS, resulting in a segfault (and sometimes
@@ -2492,7 +2504,7 @@ player become bigger, stay away from blocks!</p>
 <div id="2014_vik">
 <h2 id="vik-2">2014/vik</h2>
 </div>
-<h3 id="status-known-bug---please-help-us-fix-13">STATUS: known bug - please help us fix</h3>
+<h3 id="status-known-bug---please-help-us-fix-12">STATUS: known bug - please help us fix</h3>
 <h3 id="source-code-2014vikprog.c">Source code: <a href="2014/vik/prog.c">2014/vik/prog.c</a></h3>
 <h3 id="information-2014vikindex.html">Information: <a href="2014/vik/index.html">2014/vik/index.html</a></h3>
 <p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> discovered a bug to do
@@ -2619,7 +2631,7 @@ fixing the syntax error in the generated <code>ioccc.json</code> file.</p>
 <div id="2018_mills">
 <h2 id="mills-1">2018/mills</h2>
 </div>
-<h3 id="status-known-bug---please-help-us-fix-14">STATUS: known bug - please help us fix</h3>
+<h3 id="status-known-bug---please-help-us-fix-13">STATUS: known bug - please help us fix</h3>
 <h3 id="source-code-2018millsprog.c">Source code: <a href="2018/mills/prog.c">2018/mills/prog.c</a></h3>
 <h3 id="information-2018millsindex.html">Information: <a href="2018/mills/index.html">2018/mills/index.html</a></h3>
 <p>After exiting the program (with ctrl-e) if you try running it again you will
@@ -2732,7 +2744,7 @@ in the de.sh/de.alt.sh scripts:</p>
 <div id="2019_dogon">
 <h2 id="dogon">2019/dogon</h2>
 </div>
-<h3 id="status-uses-gets---change-to-fgets-if-possible-6">STATUS: uses gets() - change to fgets() if possible</h3>
+<h3 id="status-uses-gets---change-to-fgets-if-possible-5">STATUS: uses gets() - change to fgets() if possible</h3>
 <h3 id="source-code-2019dogonprog.c">Source code: <a href="2019/dogon/prog.c">2019/dogon/prog.c</a></h3>
 <h3 id="information-2019dogonindex.html">Information: <a href="2019/dogon/index.html">2019/dogon/index.html</a></h3>
 <p>The author does not it uses <code>gets()</code> and one will get warnings but it would be
@@ -2947,6 +2959,8 @@ fixes] via a <a href="https://github.com/ioccc-src/temp-test-ioccc/pulls">GitHub
 request</a> or otherwise, we
 thank you as well for the help! We will happily add you to the
 <a href="thanks-for-help.html">thanks</a> file as well.</p>
+<hr style="width:10%;text-align:left;margin-left:0">
+<p>Jump to: <a href="#">top</a></p>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
