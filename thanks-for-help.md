@@ -6,7 +6,7 @@
 To avoid having to change numerous "_index.html_" files to add thank you notes,
 we centralize them below.
 
-The [IOCCC judges](../judges.html) wish to recognize the many
+The [IOCCC judges](judges.html) wish to recognize the many
 important contributions to the IOCCC presentation of past IOCCC entries.
 We are pleased to note the many contributions, **made since 2021 Jan 01**,
 on a IOCCC entry by entry basis.
@@ -5841,10 +5841,10 @@ contributed thousands, that we wish to thank.
 ### Authors
 
 A good number of the [wining entries of the
-IOCCC](../authors.html) tested, identified and helped correct
+IOCCC](authors.html) tested, identified and helped correct
 and/or improve the write-ups of fellow IOCCC entries for the year that they won.
 The list of those entries is too long to mention: nevertheless the [IOCCC
-judges](../judges.html) **VERY MUCH APPRECIATE** those who
+judges](judges.html) **VERY MUCH APPRECIATE** those who
 helped improve the presentation of their fellow IOCCC entries.
 
 
@@ -5853,7 +5853,7 @@ helped improve the presentation of their fellow IOCCC entries.
 </div>
 
 We call out the extensive contributions of [Cody Boone
-Ferguson](../authors.html#Cody_Boone_Ferguson) who is
+Ferguson](authors.html#Cody_Boone_Ferguson) who is
 responsible for most of the improvements and fixes including many **EXTREMELY
 HARD bug fixes** like [1988/phillipps](thanks-for-help.html#1988_phillipps),
 [1992/vern](thanks-for-help.html#1992_vern),
@@ -5895,7 +5895,7 @@ systems!
 ### Yusuke Endoh
 </div>
 
-[Yusuke Endoh](../authors.html#Yusuke_Endoh) supplied a
+[Yusuke Endoh](authors.html#Yusuke_Endoh) supplied a
 number of important bug fixes to a number of past IOCCC entries. Some of those
 fixes were **EXTREMELY TECHNICALLY CHALLENGING** such as
 [1989/robison](thanks-for-help.html#1989_robison),

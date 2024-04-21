@@ -796,9 +796,9 @@ This is not considered a bug, however.
 ### Source code: [1990/jaw/jaw.c](1990/jaw/jaw.c)
 ### Information: [1990/jaw/index.html](1990/jaw/index.html)
 
-[Cody Boone Ferguson](../authors.html#Cody_Boone_Ferguson)
+[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson)
 fixed some issues in this program and [Yusuke
-Endoh](../authors.html#Yusuke_Endoh) provided the `btoa`
+Endoh](authors.html#Yusuke_Endoh) provided the `btoa`
 script but it appears there is a bug in this entry. The judges wrote that to
 test the entry one can do:
 

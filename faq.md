@@ -920,9 +920,9 @@ more other entries that came in close behind.
 ### FAQ 2.6: How are IOCCC entries announced?
 </div>
 
-Once the [IOCCC](../index.html) closes, the judges will:
+Once the [IOCCC](index.html) closes, the judges will:
 
-* Select the [winning entries](../years.html) announce them on the [@IOCCC
+* Select the [winning entries](years.html) announce them on the [@IOCCC
 mastodon feed](https://fosstodon.org/@ioccc).
 
 * Notify the authors of entries that won the IOCCC via email using their previously
@@ -933,11 +933,11 @@ feed](https://fosstodon.org/@ioccc).
 
 * Upload the winning code to the [Official IOCCC winner repo](https://github.com/ioccc-src/winner)
 
-* Update the [Official IOCCC web site](../index.html), and in particular
+* Update the [Official IOCCC web site](index.html), and in particular
 display this year's winning IOCCC entries at the top of the [IOCCC
-winning entries page](../years.html).
+winning entries page](years.html).
 
-* Update the [IOCCC news](../news.html) page.
+* Update the [IOCCC news](news.html) page.
 
 
 <div id="faq3">
@@ -1655,7 +1655,7 @@ some entries that recursively called `main()` caused a crash or otherwise broke
 the entry in modern systems). Some entries do not work in `clang` (or at least do
 not work completely) due to these defects, for instance
 [1989/westley](1989/westley/index.html); [Cody Boone
-Ferguson](../authors.html#Cody_Boone_Ferguson) was able to
+Ferguson](authors.html#Cody_Boone_Ferguson) was able to
 get much of it to work and looking at that entry might be of value to your
 submissions, at least if you can figure the code out :-). To see the
 differences, try from `1989/westley`:
@@ -2720,7 +2720,7 @@ plural](https://en.wikipedia.org/wiki/Plural), sometimes in the
 [first person plural](https://en.wikipedia.org/wiki/Nosism), there
 may be some who reject such a practice.  Therefore please consider
 that when you believe that just one of the [IOCCC
-judges](../judges.html) is in action, you may
+judges](judges.html) is in action, you may
 consider that [F. D. C.
 Willard](https://en.wikipedia.org/wiki/F._D._C._Willard) has been
 consulted, agreed, and has authorized the statement thus allowing
@@ -3714,12 +3714,12 @@ The IOCCC prefers to reside in the [fediverse](https://fediverse.info).
 There is [help with Mastodon](https://mastodon.help) available for
 those who might wish to [get started with Mastodon](https://fosstodon.org/deck/getting-started).
 
-While there are many fine Mastodon server instances out there, the [IOCCC judges](../judges.html)
+While there are many fine Mastodon server instances out there, the [IOCCC judges](judges.html)
 use [fosstodon.org](https://fosstodon.org/about) where lots of fun folk hang out,
 and topics like science, technology, [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software)
 have a good home.  The [fosstodon.org](https://fosstodon.org/@fosstodon) folk made the IOCCC feel welcome.
 
-While using Mastodon is free, the [IOCCC judges](../judges.html) are pleased to
+While using Mastodon is free, the [IOCCC judges](judges.html) are pleased to
 [support the Fosstodon Hub](https://hub.fosstodon.org/support/).
 
 
