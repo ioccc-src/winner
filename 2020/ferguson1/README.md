@@ -231,8 +231,7 @@ important one, chocolate cake. Most important for the cake as the formatting is
 very important.
 
 
-<a name="toc"></a>
-
+<div id="toc">
 *   ['Bugs'](#bugs)
 *   [NAQs/IAQs (Never/Infrequently Asked Questions)](#naqs)
     -	[Do I have any inspirations for this entry?](#inspirations)
@@ -247,9 +246,12 @@ very important.
 
 
 *   [Winning thoughts, dedications and thanks](#winning)
+</div>
 
 
-### <a name="bugs" href="#toc">'Bugs'</a>
+<div id="bugs">
+### 'Bugs'
+</div>
 
 *   'The screen keeps showing bugs!' Well yes, that's rather the point! Help out
     by eating them. Keep eating them until you win! Then you will have the
@@ -271,9 +273,13 @@ very important.
 On a more serious note look at [bugs.html](bugs.html).
 
 
-### <a name="naqs" href="#toc">NAQs/IAQs (Never/Infrequently Asked Questions)</a>
+<div id="naqs">
+### <a href="#toc">NAQs/IAQs (Never/Infrequently Asked Questions)</a>
+</div>
 
-####   <a name="inspirations" href="#toc">Do I have any inspirations for this entry?</a>
+<div id="inspirations">
+####   <a href="#toc">Do I have any inspirations for this entry?</a>
+</div>
 
 There are two in particular. First is a long time mate of mine wrote a bash
 implementation of Snake several years ago (uncoloured, no cheat modes, hardcoded
@@ -308,7 +314,9 @@ inspired the shedding mode. Anyway I always loved the game and it's similar to
 Snake in several ways.
 
 
-####   <a name="features" href="#toc">Are there any features I thought of that I wanted to implement but did not get to for some reason or another?</a>
+<div id="features">
+####   <a href="#toc">Are there any features I thought of that I wanted to implement but did not get to for some reason or another?</a>
+</div>
 
 Yes. I thought it would be fun if there were other obstacles for the snake (in
 my mind I was thinking of barriers like the walls but in the field).
@@ -332,7 +340,9 @@ Nevertheless I am quite happy with the features in the game and I hope everyone
 who plays it enjoys it as much as I enjoyed writing/playing it.
 
 
-####   <a name="easier" href="#toc">Are there ways that one can make this game easier?</a>
+<div id="easier">
+####   <a href="#toc">Are there ways that one can make this game easier?</a>
+</div>
 
 I can think of at the least the following:
 
@@ -368,7 +378,9 @@ I can think of at the least the following:
     default; does that mean it's not actually a cheat mode?).
 
 
-####   <a name="harder" href="#toc">Are there ways to make it harder?</a>
+<div id="harder">
+####   <a href="#toc">Are there ways to make it harder?</a>
+</div>
 
 -   Decrease the size of the game.
 -   Decrease the size of the snake growth (and initial snake size).
@@ -416,7 +428,9 @@ Either way I tip my proverbial snakeskin hat to you (animal cruelty but a pun is
 a pun and every pun deserves to be shed).
 
 
-####   <a name="moult" href="#toc">How do snakes grow in real life?</a>
+<div id="moult">
+####   <a href="#toc">How do snakes grow in real life?</a>
+</div>
 
 They grow through a process called moulting - shedding their skin (other
 creatures also moult). This takes place over some days and unlike humans snakes
@@ -425,7 +439,9 @@ variables **SHED** and **SHEDS** for simplicity and because the words are
 shorter. I don't like the words because it's rather a misnomer but what I had
 chosen before was longer - STRETCH and STRETCHES.
 
-#### <a name="other" href="#toc">Any other interesting things about snakes?</a>
+<div id="other">
+#### <a href="#toc">Any other interesting things about snakes?</a>
+</div>
 
 For the fascinating science behind snake slithering see [Snake walk: The physics
 of slithering][]. For the bizarre thought of snake human hybrids see [human
@@ -434,7 +450,9 @@ in there too because I believe that people actually believe in this (how/why I
 do not know) and they really do tell the truth as they see it (even if
 impossible).
 
-####   <a name="opposite" href="#toc">Why can you go the opposite direction and so immediately die when not cannibalising?</a>
+<div id="opposite">
+####   <a href="#toc">Why can you go the opposite direction and so immediately die when not cannibalising?</a>
+</div>
 
 When Ilya Kurdyukov was playing with this he questioned why this is possible
 when other implementations don't have it this way. There are a few reasons.
@@ -457,7 +475,9 @@ But if you have a problem with it you can always enable cannibalism and keep
 walls passable and not worry about dying.
 
 
-####   <a name="chocolatecake" href="#toc">Do you have any **DELICIOUS CHOCOLATE CAKE** recipes?</a>
+<div id="chocolatecake">
+####   <a href="#toc">Do you have any **DELICIOUS CHOCOLATE CAKE** recipes?</a>
+</div>
 
 Why yes I do! So good in fact that even my late stepmum who didn't even like
 chocolate (except white chocolate) loved this cake. It's a double-layered
@@ -489,7 +509,9 @@ been warned.
 
 
 
-#### <a name="alt" href="#toc">What are the files prog.2.c, prog.3.c, prog.3-j.c and prog.alt.c ?</a>
+<div id="alt">
+#### <a href="#toc">What are the files prog.2.c, prog.3.c, prog.3-j.c and prog.alt.c ?</a>
+</div>
 
 I submitted three Snake versions; these are the other layouts for those few
 (more likely none) who are interested to see them.
@@ -509,7 +531,9 @@ both do.
 
 ## Author's dedication:
 
-### <a name="winning" href="#toc">Winning thoughts, dedications and thanks</a>
+<div id="winning">
+### <a href="#toc">Winning thoughts, dedications and thanks</a>
+</div>
 
 Once again I'm honoured to win along with some of the other veterans who I have
 a huge amount of respect for; there's [Don Yang](../../authors.html#Don_Yang), [Dave
