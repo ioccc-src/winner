@@ -64,14 +64,14 @@ and 22 (one third of 666).
 Rule 22, now known as "Catch 22" states:
 
 ```
-    |  22) Your source code, data files, remarks and program output must NOT
-    |      identify the authors of your code.  The judges STRONGLY prefer to
-    |      not know who is submitting entries to the IOCCC.
+    22) Your source code, data files, remarks and program output must NOT
+        identify the authors of your code.  The judges STRONGLY prefer to
+        not know who is submitting entries to the IOCCC.
 
-    |      The "Peter Honeyman is exempt" guideline also applies to this rule.
-    |      Identifying yourself, in an obvious way in your code, data, remarks
-    |      or program output, unless you are Peter Honeyman or pretending
-    |      to be Peter Honeyman, will be grounds for disqualification of your entry.
+        The "Peter Honeyman is exempt" guideline also applies to this rule.
+        Identifying yourself, in an obvious way in your code, data, remarks
+        or program output, unless you are Peter Honeyman or pretending
+        to be Peter Honeyman, will be grounds for disqualification of your entry.
 ```
 
 A number of other entries were based on [iocccsize.c](iocccsize.c), making
@@ -79,7 +79,9 @@ derivative works rather than original works.
 
 Still other entries were too large, violating the first line of rule 2:
 
-> 2) The size of your program source must be <= 4096 bytes in length.
+```
+    2) The size of your program source must be <= 4096 bytes in length.
+```
 
 While these entries might have passed under the 2053 limit for iocccsize,
 they were larger than <= 4096 bytes, sometimes by an order or magnitude.
