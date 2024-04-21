@@ -108,7 +108,9 @@ factors.
 
 Therefore this entry is limited to
 
-![floor\bigg(\frac{10^6}{4\times(sizeof(double)+1)}-1\bigg)](eqn.png)
+<img src="eqn.png"
+ alt="equation of the limit of the entry"
+ width=232 height=43>
 
 points and won't even be suitable for more than a few thousand; although
 generated files did pass the [W3C SVG
@@ -181,7 +183,9 @@ viewport and potentially every
 
 ### Example Output
 
-![Voronoi diagram of two regular pentagon vertices](Voronoi.png)
+<img src="Voronoi.png"
+ alt="image of example output: 5 regions of a 5-pointed star with 5 external regions beyond it"
+ width=542 height=542>
 
 
 <!--

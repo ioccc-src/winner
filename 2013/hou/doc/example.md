@@ -191,9 +191,14 @@ cell content in variable `C`. To fill it with material `i`, return `64+i` in
 `C=0`.
 
 Before starting to build a scene, it's better to have a draft sketch handy
-first. Something like ![ Draft sketch ](draft.png). Sometimes it's hard to
-imagine where something should go without the sketch. And you don't have to
-stick to your sketch :)
+first. Something like:
+
+<img src="draft.png"
+ alt="image of the draft sketch of a room with a window"
+ width=513 height=487>
+
+Sometimes it's hard to imagine where something should go without the sketch.
+And you don't have to stick to your sketch :)
 
 What motivated my default scene: it was the full moon's day (a national holiday)
 in China and my parents were planning to renovate their apartment. I rendered
@@ -233,9 +238,13 @@ renderer would assemble the colors into an image.
 Remember the function `5`? Here it comes. The first two "random" numbers have
 special meaning and must specify a point on the image plane `[0,1)x[0,1)`.
 You're supposed to transform the image plane to the 3D space, choose a point for
-the camera, and shoot a ray from the camera point to the image plane point, see
-![ Camera convention ](camera.png). The camera point goes to `(U,V,W)`, and the
-ray direction vector (image plane point - camera point) is `(X,Y,Z)`. For the
+the camera, and shoot a ray from the camera point to the image plane point, see:
+
+<img src="camera.png"
+ alt="image of a sketch showing a light ray from an object (person) thru an image plane pixel to a camera viewpoint"
+ width=935 height=632>
+
+.. and the ray direction vector (image plane point - camera point) is `(X,Y,Z)`. For the
 coordinate space, volume 0 is scaled up 64x here to `(0,0,0)-(4096,4096,4096)`.
 
 For a basic camera shader example, check [otherroom.scene](../otherroom.scene).
@@ -349,7 +358,9 @@ the incoming direction and the surface normal. It's called importance sampling,
 because here the probability of each outgoing direction has to be proportional
 to the reflected light strength (i.e., the `BRDF`) on that direction. For a
 diffuse surface, sample the upper hemisphere with a probability proportional to
-the cosine of the outgoing angle, see ![ Cosine sampling ](cosine.png).
+the cosine of the outgoing angle, see <img src="cosine.png"
+ alt="image of a sketch of a ray a angle theta from the vertical normal with cosine theta below it"
+ width=935 height=632>.
 
 The incoming direction is in `(X,Y,Z)` and the hit point is `(U,V,W)`. The
 outgoing direction is returned in, where else, `(X,Y,Z)`.

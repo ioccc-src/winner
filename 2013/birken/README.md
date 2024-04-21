@@ -133,13 +133,19 @@ from the bottom up. To generate an individual square, the algorithm assembles a
 structure consisting of a rectangular region fully supported by a single square
 protruding from the bottom. When the rectangular region is completed, its rows
 are cleared, leaving behind the protruding square. Three examples of the process
-appear below.
+appear below:
 
-![](pen0.gif)
+<img src="pen0.gif"
+ alt="animated gif the bottom layers of a Tetris game being cleared #0"
+ width=528 height=132>
 
-![](pen1.gif)
+<img src="pen1.gif"
+ alt="animated gif the bottom layers of a Tetris game being cleared #1"
+ width=528 height=204>
 
-![](pen2.gif)
+<img src="pen2.gif"
+ alt="animated gif the bottom layers of a Tetris game being cleared #2"
+ width=528 height=228>
 
 During construction of a row, all of the squares produced by this method must be
 supported. In the images above, the generated squares are supported by the floor
@@ -148,9 +154,11 @@ provide the support necessary for the construction of the row above it. The
 algorithm solves this problem by constructing a flat platform on top of the row
 with holes. In the animation below, a platform is built above a row comprising
 of a single red square. The platform is a temporary structure and inserting the
-final piece removes it.
+final piece removes it:
 
-![](platform0.gif)
+<img src="platform0.gif"
+ alt="animated gif the bottom layers of a Tetris game showing a platform formed and going away #0"
+ width=528 height=156>
 
 Below, a row containing 5 red squares is deposited above a row containing 3 red
 squares. This is accomplished by building a flat platform on top of the lower
@@ -158,9 +166,11 @@ row. The platform provides the support necessary to generate the 5 red squares.
 Finally, the platform is removed by inserting its final piece and the new row
 drops into place. Note, if the algorithm needed to generate the rows in the
 opposite order (a row of 3 red squares above a row of 5 red squares), a platform
-would not be necessary.
+would not be necessary:
 
-![](platform1.gif)
+<img src="platform1.gif"
+ alt="animated gif the bottom layers of a Tetris game showing a platforms forming going away #1"
+ width=528 height=324>
 
 
 ### Single Square Emitters
@@ -170,7 +180,9 @@ For reference, the names of the 7
 actually a kind of geometric shape used in
 [Tetris](https://en.wikipedia.org/wiki/Tetris)) appear in the table below.
 
-![](names.png)
+<img src="names.png"
+ alt="image of names of the 7 Tetris game pieces"
+ width=696 height=144>
 
 This algorithm was tailored specifically to render sprites from early video
 games. Those games packed graphics into 8x8 tiles where 2 bits were dedicated to
@@ -182,9 +194,11 @@ The animation below depicts all the patterns used to emit single squares. `J`,
 interchangeably within each pattern to produce the protruding square at the
 bottom. The algorithm assigns those tetriminos to the 3 colors present in the
 sprite. The remaining tetriminos are assigned arbitrary colors. And, all the
-colors remain constant during gameplay.
+colors remain constant during gameplay"
 
-![](pen4.gif)
+<img src="pen4.gif"
+ alt="image of assignment of colours of Tetris game pieces"
+ width=528 height=228>
 
 It is not possible to emit a square of all 3 colors in the first 2 and the last
 2 columns due to the shapes of the 3
@@ -194,16 +208,20 @@ squares. However, it turns out that 20 is too small.
 
 As illustrated below, the region above the protruding square cannot exclusively
 consist of a single row because the only pieces that could fit, the `I`
-[tetriminos](https://en.wikipedia.org/wiki/Tetromino), are unsupported.
+[tetriminos](https://en.wikipedia.org/wiki/Tetromino), are unsupported:
 
-![](pen5.gif)
+<img src="pen5.gif"
+ alt="image of showing a single row with the only pieces that could fit"
+ width=480 height=84>
 
 With 2 rows, the only means of spanning the full play-field width in a way that
 remains supported is to use `S` and `Z`
 [tetriminos](https://en.wikipedia.org/wiki/Tetromino).  But, that will always
-leave holes in the upper row.
+leave holes in the upper row:
 
-![](pen6.gif)
+<img src="pen6.gif"
+ alt="image of showing a row of S and Z Tetris pieces"
+ width=576 height=108>
 
 The minimal number of rows required above the protruding square is 3 and as
 shown repeatedly above, such patterns do exist.  20 squares is the minimal width
@@ -224,11 +242,15 @@ square emitting patterns.  However, due to mirror symmetry, there are really
 only 10 patterns.  Clearing 3 rows works for the majority of them.  But, an
 exhaustive computer search revealed that 2 of the patterns require more.  The
 next possible option is 7 rows since `21 * 7 + 1 = 148`, requiring 37
-tetriminos.  As the images below show, those patterns do exist.
+tetriminos.  As the images below show, those patterns do exist:
 
-![](pen7.gif)
+<img src="pen7.gif"
+ alt="image of showing patterns of Tetris pieces #7"
+ width=528 height=228>
 
-![](pen8.gif)
+<img src="pen8.gif"
+ alt="image of showing patterns of Tetris pieces #8"
+ width=528 height=228>
 
 
 ### Platforms
@@ -246,9 +268,12 @@ a `T` [tetrimino](https://en.wikipedia.org/wiki/Tetromino) on top one of the
 squares of the last generated row.  The remaining tetriminos support each other
 down to that first `T`.  Meaning, as long as the previously generated row
 contains at least 1 square, like the red square below, then it is possible to
-construct a flat platform above it for the generation of the next row.
+construct a flat platform above it for the generation of the next row:
 
-![](platform2.gif)
+<img src="platform2.gif"
+ alt="image of a tattoo of the 1984 anonymous C code"
+ alt="animated gif showing a bottom Tetris row with a red square and constucted patterns above it"
+ width=528 height=156>
 
 In the middle of platform construction, the bottom row gets completed and
 cleared, leaving 3 rows above it.  The final `J` or `L`
@@ -269,7 +294,9 @@ above exist.
 The input sprite is represented textually.  Digit characters `0` to `7`
 correspond to pixels with colors from the palette below.
 
-![ANSI color palette](palette.png)
+<img src="palette.png"
+ alt="image of the Tetris palette"
+ width=432 height=84>
 
 As discussed above, sprites are limited to a maximum of 3 colors from this
 palette.
@@ -381,9 +408,11 @@ squares were sorted such that the least significant bits stored the largest
 coordinate values.  The results were offset by 35, the `#` character, which is 1
 beyond the ASCII value of `"`, making it easier to pack into a string.  None of
 the resultant values are beyond ASCII 127.  The coordinates for all 19 rotations
-fit in a string of length 38.
+fit in a string of length 38:
 
-![](rotations.png)
+<img src="rotations.png"
+ alt="image of a the 7 Tetris pieces under all 19 rotations"
+ width=672 height=336>
 
 The second string stores the single square emitter patterns and the platform
 patterns.  Each pattern is a sequence of pairs, `{ tetrimino index, drop
@@ -440,22 +469,34 @@ program as a prime number generator.
 Due to the contest code size constraint, some optimizations reluctantly had to
 be omitted.  For example, multi-square emitters are possible:
 
-![](multi2.gif)
+<img src="multi2.gif"
+ alt="image showing Tetris multi-square emitters #2"
+ width=528 height=204>
 
-![](multi3.gif)
+<img src="multi3.gif"
+ alt="image showing Tetris multi-square emitters #3"
+ width=528 height=180>
 
-![](multi4.gif)
+<img src="multi4.gif"
+ alt="image showing Tetris multi-square emitters #4"
+ width=528 height=156>
 
-![](multi5.gif)
+<img src="multi5.gif"
+ alt="image showing Tetris multi-square emitters #5"
+ width=528 height=132>
 
 In fact, using dynamic programming and creative heuristics, real-time search is
 possible, enabling patterns like this:
 
-![](triple0.gif)
+<img src="triple0.gif"
+ alt="image showing Tetris triple patterns #0"
+ width=528 height=180>
 
 And, even this:
 
-![](triple1.gif)
+<img src="triple1.gif"
+ alt="image showing Tetris triple patterns #1"
+ width=528 height=156>
 
 In addition, it is possible to extend the algorithm to 6 colors instead of just 3.
 This is achieved using `I`, `S` and `Z` to produce the protruding square.  A

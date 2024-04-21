@@ -83,10 +83,11 @@ Use `vik.alt` as you would `vik` above.
 References to chocolate had no effect on judging this entry. We
 guarantee it.
 
-Can you discern hidden pieces of chocolate in
-[chocolate-in-ioccc.png](chocolate-in-ioccc.png)?
+Can you discern hidden pieces of chocolate in:
 
-![chocolate in ioccc](chocolate-in-ioccc.png "Chocolate in IOCCC")
+<img src="chocolate.png"
+ alt="image of peices of chocolate candy"
+ width=300 height=110>
 
 
 ## Author's remarks:

@@ -65,18 +65,20 @@ A PC guy as expected.  What about that other Steve?
 Humm .. maybe there is a hidden reason he is leaving the late Micro$oft? :-)
 Why late? Because:
 
-![tweet about M$ being dead](dead-ms-tweet.jpg)
+<img src="dead-ms-tweet.jpg"
+ alt="image of snarky tweet from 2013 Nov 15 by Landon Noll about Microsoft"
+ width=491 height=312>
 
--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-An important 2023 update about twitter:
+```
+    An important 2023 update about twitter:
 
-The IOCCC no longer uses twitter.  Today the IOCCC uses Mastodon.
-For more information and to see our IOCCC Mastodon posts, see:
+    The IOCCC no longer uses twitter.  Today the IOCCC uses Mastodon.
+    For more information and to see our IOCCC Mastodon posts, see:
 
-    https://fosstodon.org/@ioccc
+	https://fosstodon.org/@ioccc
 
-End of important 2023 update to this historic note.
--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    End of important 2023 update to this historic note.
+```
 
 So how does a one line C source know so much?  Hint: it doesn't.
 

@@ -11,7 +11,9 @@ feeble attempt at drawing `IOCCC` into the cake before icing, a different time.
 The picture below was taken for my birthday (14 February) in 2022 as it's the
 best one I have:
 
-![picture of the Double-layered chocolate fudge cake](cake.jpg)
+<img src="cake.jpg"
+ alt="photograth of a delicious double-layered chocolate fudge cake"
+ width=756 height=602>
 
 There are two sets of ingredients and instructions; the cake and the icing. In
 addition there are some **VERY IMPORTANT NOTES** to pay attention to; some will

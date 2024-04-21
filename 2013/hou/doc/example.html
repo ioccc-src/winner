@@ -271,9 +271,12 @@ cell content in variable <code>C</code>. To fill it with material <code>i</code>
 <code>C</code>. To fill it with volume <code>i</code>, well, return <code>i</code>. To leave it empty, return
 <code>C=0</code>.</p>
 <p>Before starting to build a scene, it’s better to have a draft sketch handy
-first. Something like <img src="draft.png" alt="Draft sketch" />. Sometimes it’s hard to
-imagine where something should go without the sketch. And you don’t have to
-stick to your sketch :)</p>
+first. Something like:</p>
+<p><img src="draft.png"
+ alt="image of the draft sketch of a room with a window"
+ width=513 height=487></p>
+<p>Sometimes it’s hard to imagine where something should go without the sketch.
+And you don’t have to stick to your sketch :)</p>
 <p>What motivated my default scene: it was the full moon’s day (a national holiday)
 in China and my parents were planning to renovate their apartment. I rendered
 the image to tell my mom how ridiculous her starry-sky wall paper would look
@@ -303,9 +306,11 @@ renderer would assemble the colors into an image.</p>
 <p>Remember the function <code>5</code>? Here it comes. The first two “random” numbers have
 special meaning and must specify a point on the image plane <code>[0,1)x[0,1)</code>.
 You’re supposed to transform the image plane to the 3D space, choose a point for
-the camera, and shoot a ray from the camera point to the image plane point, see
-<img src="camera.png" alt="Camera convention" />. The camera point goes to <code>(U,V,W)</code>, and the
-ray direction vector (image plane point - camera point) is <code>(X,Y,Z)</code>. For the
+the camera, and shoot a ray from the camera point to the image plane point, see:</p>
+<p><img src="camera.png"
+ alt="image of a sketch showing a light ray from an object (person) thru an image plane pixel to a camera viewpoint"
+ width=935 height=632></p>
+<p>.. and the ray direction vector (image plane point - camera point) is <code>(X,Y,Z)</code>. For the
 coordinate space, volume 0 is scaled up 64x here to <code>(0,0,0)-(4096,4096,4096)</code>.</p>
 <p>For a basic camera shader example, check <a href="../otherroom.scene">otherroom.scene</a>.</p>
 <p>If any ray goes out of volume 0, the renderer crashes. Make sure it doesn’t
@@ -395,7 +400,9 @@ the incoming direction and the surface normal. It’s called importance sampling
 because here the probability of each outgoing direction has to be proportional
 to the reflected light strength (i.e., the <code>BRDF</code>) on that direction. For a
 diffuse surface, sample the upper hemisphere with a probability proportional to
-the cosine of the outgoing angle, see <img src="cosine.png" alt="Cosine sampling" />.</p>
+the cosine of the outgoing angle, see <img src="cosine.png"
+ alt="image of a sketch of a ray a angle theta from the vertical normal with cosine theta below it"
+ width=935 height=632>.</p>
 <p>The incoming direction is in <code>(X,Y,Z)</code> and the hit point is <code>(U,V,W)</code>. The
 outgoing direction is returned in, where else, <code>(X,Y,Z)</code>.</p>
 <p>The surface normal is provided in variables <code>S</code> and <code>T</code>. Since the geometry is

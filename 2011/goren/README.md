@@ -23,7 +23,9 @@
 
 In the words of [René François Ghislain Magritte Magritte](http://en.wikipedia.org/wiki/Rene_Magritte):
 
-![This is not a pipe](MagrittePipe.jpg "Ceci n'est pas une pipe")
+<img src="MagrittePipe.jpg"
+ alt="The Treachery of Images, image of a pipe, titled: Ceci n'est pas une pipe"
+ width=387 height=264>
 
 One may ask the surrealist question:
 

@@ -39,11 +39,17 @@ you leave the program running overnight to see what happens. If however you do
 not have all night :-) then the following JPEG files should show you what
 happens with some of the invocations above:
 
-![./hou BIG - Luna](luna.jpg)
+<img src="luna.jpg"
+ alt="artificial image showing a room lit by light from a window"
+ width=640 height=480>
 
-![./hou old_default.scene - Old default](old_default.jpg)
+<img src="old_default.jpg"
+ alt="artificial image showing IOCCC 2013 in a room with stars on the floor and double helix in the backgrond"
+ width=640 height=480>
 
-![./hou otherroom.scene - Other room](otherroom.jpg)
+<img src="otherroom.jpg"
+ alt="artificial image the background double helix"
+ width=320 height=240>
 
 This program does not terminate by itself: you must kill `hou` (but not Qiming
 Hou :-) ) in order to end the program.

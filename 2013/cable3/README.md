@@ -460,19 +460,31 @@ Police Quest, and a bunch of freeware Windows games), and diagnostic/benchmark
 software (Manifest, Microsoft MSD, InfoSpot, CheckIt) and all of them run well.
 
 Screenshots of some of these applications running (on Mac OS X) are provided for
-the impatient.
+the impatient:
 
-![AutoCAD](screenshot_autocad.png)
+<img src="screenshot_autocad.png"
+ alt="screenshot image of autocad of St. Paul's Cathedral"
+ width=748 height=400>
 
-![Flight Simulator 4](screenshot_flightsim4.png)
+<img src="screenshot_autocad.png"
+ alt="screenshot image from a Flight Simulator"
+ width=748 height=400>
 
-![Lotus 123](screenshot_lotus123.png)
+<img src="screenshot_lotus123.png"
+ alt="screenshot image Lotus 123 color test"
+ width=748 height=400>
 
-![QBASIC](screenshot_qbasic.png)
+<img src="screenshot_qbasic.png"
+ alt="screenshot image of the welcome message from MS-DOS QBasic"
+ width=859 height=540>
 
-![SimCity](screenshot_simcity.png)
+<img src="screenshot_simcity.png"
+ alt="screenshot image from the Sim City game"
+ width=748 height=400>
 
-![Windows 3 on macOS](screenshot_win3_on_macosx.png)
+<img src="screenshot_win3_on_macosx.png"
+ alt="screenshot image of Windows 3.00a under macOS"
+ width=748 height=400>
 
 
 ### Compiler warnings

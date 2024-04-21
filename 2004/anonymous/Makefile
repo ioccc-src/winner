@@ -203,6 +203,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -f precious.pgm ring.pgm
 	${RM} -rf *.dSYM
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
