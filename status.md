@@ -129,6 +129,11 @@ was modified without the content being changed.  While we will try to minimize
 the cases where this happen, we apologize in advance (Sorry tm Canada 🇨🇦) when it does.
 
 
+<hr style="width:10%;text-align:left;margin-left:0">
+
+Jump to: [top](#)
+
+
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
