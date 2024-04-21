@@ -74,7 +74,9 @@ this code?
 
 ## Author's remarks:
 
-### What is this? <a name="wit"></a>
+<div id="wit">
+### What is this?
+</div>
 
 This entry reads from standard input a list of words in any language
 written with an alphabet and outputs perfect pangrams composed of these
