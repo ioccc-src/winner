@@ -49,7 +49,7 @@ It is something completely different.
 
 The ["Most likely to be awarded" (ciura)](ciura/index.html) has an amazing vocabulary!
 
-There are also nods to entries of the years [2000/bellard](2000/bellard/index.htmk),
+There are also nods to entries of the years [2000/bellard](2000/bellard/index.html),
 [1989/yang](1989/yang/index.html), ...
 
 ...We'll stop spouting spoilers now. Have fun exploring all the entries!

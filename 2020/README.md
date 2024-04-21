@@ -33,7 +33,7 @@ For some reason, this year's set of winning entries contains three nostalgic gam
 and [Snake (ferguson1)](ferguson1/index.html).
 
 An entry ([kurdyukov1](kurdyukov1/index.html)) pays homage to previous entry
-[2015/hou](2015/hou/index.htm0).
+[2015/hou](2015/hou/index.html).
 
 ...We'll stop spouting spoilers now. Have fun exploring all the entries!
 
