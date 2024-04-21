@@ -284,7 +284,9 @@ from the infamous <em>UNIX-HATERS Handbook</em>.</p>
 <p><strong><a href="#winning">Winning thoughts</a>:</strong> What it means to me to win as well as some
 dedications and thanks. Here too I include a link to a website which will be
 dedicated to this entry beyond what will be published on the IOCCC website.</p>
-<h2 id="what-it-is"><strong>1. <a name="what">What it is</a></strong></h2>
+<div id="what">
+<h2 id="what-it-is"><strong>1. What it is</strong></h2>
+</div>
 <p>Skip to <a href="#how">How it works</a>.</p>
 <p>It is an implementation of Richard Dawkins’ <a href="https://en.wikipedia.org/wiki/Weasel_program">Weasel program</a> (Wikipedia).
 According to Wikipedia in chapter three of his book <a href="https://en.wikipedia.org/wiki/The_Blind_Watchmaker">The Blind Watchmaker</a>
@@ -312,7 +314,9 @@ more details.</p>
 algorithm) towards the solution of the string <code>METHINKS IT IS LIKE A WEASEL</code>
 (note that I use <code>toupper()</code> so it doesn’t matter what case the input is the
 comparison and output will always be capitalised).</p>
-<h2 id="how-it-works"><strong>2. <a name="how">How it works</a></strong></h2>
+<div id="how">
+<h2 id="how-it-works"><strong>2. How it works</strong></h2>
+</div>
 <p>Skip to <a href="#hints">Hints</a>.</p>
 <p>Here you can find a general explanation of a <em><a href="https://web.archive.org/web/20180308131613/http://www.doc.ic.ac.uk/~nd/surprise_96/journal/vol1/hmw/article1.html">genetic algorithm</a></em> as well as a
 brief history. Although the link provides more information (including images to
@@ -394,11 +398,11 @@ such a monkey isn’t typing or even doesn’t exist (because it’s not the <em
 Fish Theorem</em>). So although the user might not be a monkey the program makes the
 assumption that <strong>the user could in fact be a monkey called Eric</strong> <em>although it
 isn’t insolent enough to say the user is a monkey for certain!</em></p>
-<h2 id="hints"><strong>3. <a name="hints">Hints</a></strong></h2>
+<h2 id="hints"><strong>3. Hints</strong></h2>
 <p>Skip to <a href="#obfuscation">Obfuscation</a>.</p>
 <p>I noted that there are a number of additional features and here I will document
 some of them.</p>
-<h3 id="keyboards"><a name="keyboards">Keyboards</a></h3>
+<h3 id="keyboards">Keyboards</h3>
 <p>Skip to <a href="#options">Options</a>.</p>
 <p>The keyboard, as noted, has more than just the alphabet and space. To be
 precise the following characters are acceptable; it equates to this in C (note
@@ -410,7 +414,7 @@ it includes a literal space <code>' '</code> but it doesn’t include other
 <p>The program makes sure that the target string only has characters the keyboard
 can actually produce but there is a certain type of input error that might
 <em>appear</em> to be a bug; see specifically <a href="#error">Input Error Example</a>.</p>
-<h3 id="options"><a name="options">Options</a></h3>
+<h3 id="options">Options</h3>
 <p>Skip to <a href="#spoiler">Spoilers</a>.</p>
 <p>There are a number of options you can pass to the program besides the target
 string; some I will document here (the summary being in the man page). You can
@@ -517,7 +521,9 @@ itself) and then the target string would <em>literally</em> be set to <code>-r</
 it no longer cares about the <code>-</code> for option parsing. In other words options
 are only parsed if the first character is <code>-</code> and if the parser hasn’t seen
 the <code>-</code> - <em>in an earlier element of <code>argv</code>. This is not a bug!</em></p>
-<h3 id="spoilers"><a name="spoiler">Spoilers</a></h3>
+<div id="spoiler">
+<h3 id="spoilers">Spoilers</h3>
+</div>
 <p>Skip to <a href="#invocations">Example Invocations</a>.</p>
 <p>The Easter egg: Since Dawkins references the <a href="https://en.wikipedia.org/wiki/Infinite_monkey_theorem">Infinite Monkey Theorem</a> it
 simulates a monkey using a typewriter! This mode has the following changes:</p>
@@ -528,7 +534,9 @@ the string is of length 28 (the default) then all 28 characters in each
 offspring of each generation will be assigned a pseudo-randomly positioned
 character in the keyboard. If you want to enable this specially you can use the
 <code>-m</code> option (<em>-m for monkey</em>).</p>
-<h3 id="example-invocations"><a name="invocations">Example Invocations</a></h3>
+<div id="invocations">
+<h3 id="example-invocations">Example Invocations</h3>
+</div>
 <p>Skip to <a href="#error">Input Error Example</a>.</p>
 <p>The following examples are used to demonstrate better the command line parsing.
 In order to do that though I had to first document the <code>-m</code> option because
@@ -645,10 +653,11 @@ has no parents; it is generation 1 that starts working towards the goal. You’l
 see also <strong>(mutation)</strong> at the end of the line at this point (if you enable
 monkey mode you’ll find that it shows something else). The lines that only have
 <code>are separators: you won't see this between generation 0 and 1 but you will between future generations - as well as the final answer (if the answer is in generation 0 you won't see the</code>).</p>
-<p><a name="test"></a>
-One final thing to consider is that <strong>the program doesn’t directly read from a
+<div id="test">
+<p>One final thing to consider is that <strong>the program doesn’t directly read from a
 file</strong>. This combined with the way the shell works could possibly confuse some
 people. Take the following invocations:</p>
+</div>
 <pre><code>    (1) $ echo test &gt; test
     (2) $ ./weasel test
     (3) $ ./weasel &lt; test
@@ -706,7 +715,9 @@ search for <code>TEST</code>. In other words <strong>if you want to pass options
 script you will have to directly pass the options to the script</strong> like the above
 example shows (but the strings will still only be read from the
 <code>test-strings.txt</code> file).</p>
-<h3 id="input-error-example"><a name="error">Input Error Example</a></h3>
+<div id="error">
+<h3 id="input-error-example">Input Error Example</h3>
+</div>
 <p>Skip to <a href="#obfuscation">Obfuscation</a>.</p>
 <p>There is a type of input error, as I said, that might appear to be a bug. What
 actually is going on though is due to a technicality on how spaces are printed
@@ -730,7 +741,7 @@ invalid character (<code>'\n'</code> itself which means another line break) and 
 finally the closing <code>'</code>. Specifically <code>isspace()</code> characters aren’t
 distinctly seen like a letter, digit or symbol is: <code>isprint('\n') == 0 &amp;&amp; isspace('\n') == 1</code>. You can add these characters but the output will be
 rather confusing and hard to read.</p>
-<h2 id="obfuscation"><strong>4. <a name="obfuscation">Obfuscation</a></strong></h2>
+<h2 id="obfuscation"><strong>4. Obfuscation</strong></h2>
 <h3 id="techniques">Techniques</h3>
 <p>Skip to <a href="#beauty">Beauty</a>.</p>
 <p>The following might be some of the techniques used in this entry:</p>
@@ -772,7 +783,7 @@ code.</p></li>
 </ol>
 <p>In case you wondered deciphering #5 won’t decipher #7 (neither will
 deciphering #7 help you decipher #5).</p>
-<h3 id="beauty"><a name="beauty">Beauty</a></h3>
+<h3 id="beauty">Beauty</h3>
 <p>Skip to <a href="#build">How to build</a>.</p>
 <p>On the subject of beauty: the judges stated in the guidelines the following:</p>
 <pre><code>    We want to get away from source that is simply **a compact blob of
@@ -786,8 +797,12 @@ set your thinking straight:</p>
 some of it might look like a blob but this is clearly false; <em>as all good
 programmers know if something is potentially confusing or misleading it should
 be made clear in the comments! :)</em></p>
-<h2 id="how-to-build"><strong>5. <a name="build">How to build</a></strong></h2>
-<h3 id="s-m-and-n-constants"><a name="constants">S, M and N Constants</a></h3>
+<div id="build">
+<h2 id="how-to-build"><strong>5. How to build</strong></h2>
+</div>
+<div id="constants">
+<h3 id="s-m-and-n-constants">S, M and N Constants</h3>
+</div>
 <p>Skip to <a href="#compiling">Compilation</a>.</p>
 <p>There are three <code>#define</code>d constants that can be redefined at compilation to modify the
 behaviour of the program in a number of ways (see the
@@ -828,7 +843,9 @@ and the larger the values the more memory it’ll require.</p>
 <p>The Makefile simplifies how to reconfigure this value with the variable
 <code>OFFSPRING</code>:</p>
 <pre><code>    make clobber OFFSPRING=55 all</code></pre>
-<h3 id="compilation"><a name="compiling">Compilation</a></h3>
+<div id="compiling">
+<h3 id="compilation">Compilation</h3>
+</div>
 <p>Skip to <a href="#portability">Portability</a>.</p>
 <p>The following options <strong>must always be passed to the compiler:</strong></p>
 <pre><code>    -DQ=&#39;typedef&#39; -D&#39;g(o)&#39;=&#39;goto o;&#39; -D&#39;w(x)&#39;=&quot;x:&quot; -D&#39;H(main)&#39;=&#39;r(main)&#39;</code></pre>
@@ -844,7 +861,7 @@ result. Remember too that <code>S</code> (<code>MAX_SIZE</code>) cannot be less 
 <code>N</code> are capped at <code>SIZE_MAX - 1</code> or whatever <code>M</code> (<code>MAX_ATTEMPTS</code>) is set to.</p>
 <p>If you wanted to change the maximum number attempts to 100 you could do:</p>
 <pre><code>    make clobber MAX_ATTEMPTS=100 everything</code></pre>
-<h3 id="portability"><a name="portability">Portability</a></h3>
+<h3 id="portability">Portability</h3>
 <p>Skip to <a href="#bugs">An aside on bugs</a>.</p>
 <p>This entry requires at least C99 even if you translate digraphs. The program
 doesn’t require third-party libraries and should work on any Unix based system.
@@ -890,7 +907,9 @@ Kernel Version: Darwin 17.5.0</p>
     InstalledDir: /Library/Developer/CommandLineTools/usr/bin
     $ uname -srmv
     Darwin 17.5.0 Darwin Kernel Version 17.5.0: Mon Mar  5 22:24:32 PST 2018; root:xnu-4570.51.1~1/RELEASE_X86_64 x86_64</code></pre>
-<h4 id="an-aside"><a name="bugs">An aside</a></h4>
+<div id="bugs">
+<h4 id="an-aside">An aside</h4>
+</div>
 <p>Skip to <a href="#rpm">Installing</a>.</p>
 <p>Any undocumented bugs are the result of insolent monkeys tampering with any
 number of things. That includes but is not limited to running the program on a
@@ -904,12 +923,16 @@ and easy fashion if ever; or any other meddling including being petulant and/or
 unreasonable monkeys. I will say though that there is at least one place I see
 after having won that could be slightly more efficient (can you find it?); I am
 however leaving it as it is because this is what won.</p>
-<h3 id="installing"><a name="rpm">Installing</a></h3>
+<div id="rpm">
+<h3 id="installing">Installing</h3>
+</div>
 <p>Skip to <a href="#thoughts">Final thoughts</a>.</p>
 <p>I have included a RPM spec file for those with a Red Hat based Linux
 distribution; see <a href="rpm.html">rpm.html</a> for details (including why I implemented
 this) if for some (strange or maybe even mad) reason you’re interested.</p>
-<h2 id="final-thoughts"><strong>6. <a name="thoughts">Final thoughts</a></strong></h2>
+<div id="thoughts">
+<h2 id="final-thoughts"><strong>6. Final thoughts</strong></h2>
+</div>
 <p>Skip to <a href="#winning">Winning comments</a>.</p>
 <p>The judges suggested that making them laugh helps entries chance of winning.
 Well <em>laughter helps everything</em> so in case you haven’t seen - and <em>even if you
@@ -919,7 +942,9 @@ that book) I include it below; because I agree that looking at a lot of twisted
 code must be quite difficult (though maybe not as much as if you were to have to
 look at Microsoft Windows code or code for Windows in any case ? :)) and these
 two things I think are rather amusing (in order of least to most):</p>
-<p><a name="dmr">Dennis Ritchie’s</a> Anti-Foreword:</p>
+<div id="dmr">
+<p>Dennis Ritchie’s Anti-Foreword:</p>
+</div>
 <pre><code>    Anti-Foreword
 
     By Dennis Ritchie
@@ -966,7 +991,9 @@ two things I think are rather amusing (in order of least to most):</p>
 and since it doesn’t break his message it’s not broken - it’s just obfuscated
 albeit not very much (and it still <em>‘compiles’!</em>); and isn’t that what this
 contest is about? :)</p>
-<p><a name="ken">Ken Thompson’s</a> ending:</p>
+<div id="ken">
+<p>Ken Thompson’s ending:</p>
+</div>
 <pre><code>    Creators Admit C, Unix Were Hoax
 
     FOR IMMEDIATE RELEASE
@@ -1036,7 +1063,9 @@ I’m missing but either way it’s a funny piece. It could also be for irony it
 (actually I had previously thought of somehow implementing something like that
 for the contest but decided for the message by itself in the end). I would
 prefer believing that whether true or not.</p>
-<h2 id="winning-comments-thanks-dedications-links-etc."><strong>7. <a name="winning">Winning comments, thanks, dedications, links, etc.</a></strong></h2>
+<div id="winning">
+<h2 id="winning-comments-thanks-dedications-links-etc."><strong>7. Winning comments, thanks, dedications, links, etc.</strong></h2>
+</div>
 <p>I feel incredibly honoured, privileged and I am extremely happy and proud to
 have won! I am more proud and happy about this than anything I have ever done in
 my life and I don’t think there can be anything else I can be more proud of in

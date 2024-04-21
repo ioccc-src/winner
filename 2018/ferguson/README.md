@@ -198,7 +198,9 @@ dedicated to this entry beyond what will be published on the IOCCC website.
 [FILES]: FILES
 [rpm.html]: rpm.html
 
-## **1. <a name="what">What it is</a>**
+<div id="what">
+## **1. What it is**
+</div>
 
 Skip to [How it works](#how).
 
@@ -238,7 +240,9 @@ comparison and output will always be capitalised).
 [Weasel program]: https://en.wikipedia.org/wiki/Weasel_program
 [The Blind Watchmaker]: https://en.wikipedia.org/wiki/The_Blind_Watchmaker
 
-## **2. <a name="how">How it works</a>**
+<div id="how">
+## **2. How it works**
+</div>
 
 Skip to [Hints](#hints).
 
@@ -348,14 +352,18 @@ isn't insolent enough to say the user is a monkey for certain!*
 [2018 guidelines]: ../../2018/guidelines.txt
 
 
-## **3. <a name="hints">Hints</a>**
+<div id="hints">
+## **3. Hints**
+</div>
 
 Skip to [Obfuscation](#obfuscation).
 
 I noted that there are a number of additional features and here I will document
 some of them.
 
-### <a name="keyboards">Keyboards</a>
+<div id="keyboards">
+### Keyboards
+</div>
 
 Skip to [Options](#options).
 
@@ -375,7 +383,9 @@ can actually produce but there is a certain type of input error that might
 *appear* to be a bug; see specifically [Input Error Example](#error).
 
 
-### <a name="options">Options</a>
+<div id="options">
+### Options
+</div>
 
 Skip to [Spoilers](#spoiler).
 
@@ -548,7 +558,9 @@ it no longer cares about the `-` for option parsing. In other words options
 are only parsed if the first character is `-` and if the parser hasn't seen
 the `-` - *in an earlier element of `argv`. This is not a bug!*
 
-### <a name="spoiler">Spoilers</a>
+<div id="spoiler">
+### Spoilers
+</div>
 
 Skip to [Example Invocations](#invocations).
 
@@ -563,7 +575,9 @@ offspring of each generation will be assigned a pseudo-randomly positioned
 character in the keyboard. If you want to enable this specially you can use the
 `-m` option (*-m for monkey*).
 
-### <a name="invocations">Example Invocations</a>
+<div id="invocations">
+### Example Invocations
+</div>
 
 Skip to [Input Error Example](#error).
 
@@ -734,10 +748,11 @@ monkey mode you'll find that it shows something else). The lines that only have
 between future generations - as well as the final answer (if the answer is in
 generation 0 you won't see the ``).
 
-<a name="test"></a>
+<div id="test">
 One final thing to consider is that **the program doesn't directly read from a
 file**. This combined with the way the shell works could possibly confuse some
 people. Take the following invocations:
+</div>
 
 ```
     (1) $ echo test > test
@@ -821,7 +836,9 @@ script you will have to directly pass the options to the script** like the above
 example shows (but the strings will still only be read from the
 `test-strings.txt` file).
 
-### <a name="error">Input Error Example</a>
+<div id="error">
+### Input Error Example
+</div>
 
 Skip to [Obfuscation](#obfuscation).
 
@@ -853,7 +870,9 @@ distinctly seen like a letter, digit or symbol is: `isprint('\n') == 0 &&
 isspace('\n') == 1`. You can add these characters but the output will be
 rather confusing and hard to read.
 
-## **4. <a name="obfuscation">Obfuscation</a>**
+<div id="obfuscation">
+## **4. Obfuscation**
+</div>
 
 ### Techniques
 
@@ -907,7 +926,9 @@ code.
 In case you wondered deciphering #5 won't decipher #7 (neither will
 deciphering #7 help you decipher #5).
 
-### <a name="beauty">Beauty</a>
+<div id="beauty">
+### Beauty
+</div>
 
 Skip to [How to build](#build).
 
@@ -931,9 +952,13 @@ some of it might look like a blob but this is clearly false; *as all good
 programmers know if something is potentially confusing or misleading it should
 be made clear in the comments! :)*
 
-## **5. <a name="build">How to build</a>**
+<div id="build">
+## **5. How to build**
+</div>
 
-### <a name="constants">S, M and N Constants</a>
+<div id="constants">
+### S, M and N Constants
+</div>
 
 Skip to [Compilation](#compiling).
 
@@ -997,7 +1022,9 @@ The Makefile simplifies how to reconfigure this value with the variable
 ```
 
 
-### <a name="compiling">Compilation</a>
+<div id="compiling">
+### Compilation
+</div>
 
 Skip to [Portability](#portability).
 
@@ -1035,7 +1062,9 @@ If you wanted to change the maximum number attempts to 100 you could do:
 ```
 
 
-### <a name="portability">Portability</a>
+<div id="portability">
+### Portability
+</div>
 
 Skip to [An aside on bugs](#bugs).
 
@@ -1101,7 +1130,9 @@ Kernel Version: Darwin 17.5.0
     Darwin 17.5.0 Darwin Kernel Version 17.5.0: Mon Mar  5 22:24:32 PST 2018; root:xnu-4570.51.1~1/RELEASE_X86_64 x86_64
 ```
 
-#### <a name="bugs">An aside</a>
+<div id="bugs">
+#### An aside
+</div>
 
 Skip to [Installing](#rpm).
 
@@ -1118,7 +1149,9 @@ unreasonable monkeys. I will say though that there is at least one place I see
 after having won that could be slightly more efficient (can you find it?); I am
 however leaving it as it is because this is what won.
 
-### <a name="rpm">Installing</a>
+<div id="rpm">
+### Installing
+</div>
 
 Skip to [Final thoughts](#thoughts).
 
@@ -1128,7 +1161,9 @@ this) if for some (strange or maybe even mad) reason you're interested.
 
 [rpm.html]: rpm.html
 
-## **6. <a name="thoughts">Final thoughts</a>**
+<div id="thoughts">
+## **6. Final thoughts**
+</div>
 
 Skip to [Winning comments](#winning).
 
@@ -1141,7 +1176,9 @@ code must be quite difficult (though maybe not as much as if you were to have to
 look at Microsoft Windows code or code for Windows in any case ? :)) and these
 two things I think are rather amusing (in order of least to most):
 
-<a name="dmr">Dennis Ritchie's</a> Anti-Foreword:
+<div id="dmr">
+Dennis Ritchie's Anti-Foreword:
+</div>
 
 ```
     Anti-Foreword
@@ -1193,7 +1230,9 @@ and since it doesn't break his message it's not broken - it's just obfuscated
 albeit not very much (and it still *'compiles'!*); and isn't that what this
 contest is about? :)
 
-<a name="ken">Ken Thompson's</a> ending:
+<div id="ken">
+Ken Thompson's ending:
+</div>
 
 ```
     Creators Admit C, Unix Were Hoax
@@ -1279,7 +1318,9 @@ I'm missing but either way it's a funny piece. It could also be for irony itself
 for the contest but decided for the message by itself in the end). I would
 prefer believing that whether true or not.
 
-## **7. <a name="winning">Winning comments, thanks, dedications, links, etc.</a>**
+<div id="winning">
+## **7. Winning comments, thanks, dedications, links, etc.**
+</div>
 
 I feel incredibly honoured, privileged and I am extremely happy and proud to
 have won! I am more proud and happy about this than anything I have ever done in
