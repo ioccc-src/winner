@@ -271,7 +271,6 @@ contains at least 1 square, like the red square below, then it is possible to
 construct a flat platform above it for the generation of the next row:
 
 <img src="platform2.gif"
- alt="image of a tattoo of the 1984 anonymous C code"
  alt="animated gif showing a bottom Tetris row with a red square and constucted patterns above it"
  width=528 height=156>
 
