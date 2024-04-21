@@ -158,7 +158,7 @@ I have more information on this entry like the testing procedure at
 <https://ioccc.xexyl.net/2020/enigma>.
 
 
-<a name="toc"></a>
+<div id="toc">
 -   [IOCCC: an Enigma?](#ioccc)
 -   [The 1992 Nathan Sidwell entry](#nathan)
 -   [Usage](#usage)
@@ -172,8 +172,11 @@ I have more information on this entry like the testing procedure at
 -   [Portability](#portability)
 -   [Winning thoughts, dedications and thanks](#winning)
 -   [Resources](#resources)
+</div>
 
-### <a name="ioccc" href="#toc">IOCCC: an Enigma?</a>
+<div id="ioccc">
+### <a href="#toc">IOCCC: an Enigma?</a>
+</div>
 
 Is there a better single word that could describe the code that is IOCCC?  I'm
 sure there are some other words that are equally as valid but I believe 'Enigma'
@@ -205,7 +208,9 @@ Vik](../../authors.html#Daniel_Vik) can be used to allow for the actual sound of
 With my entry we can complete the loop!
 
 
-### <a name="nathan" href="#toc">The 1992 Nathan Sidwell entry</a>
+<div id="nathan">
+### <a href="#toc">The 1992 Nathan Sidwell entry</a>
+</div>
 
 The author [Nathan Sidwell](../../authors.html#Nathan_Sidwell) of the [1992 Worst
 Abuse of the Rules][] had this to say about his program:
@@ -245,7 +250,9 @@ code. As of 4 March 2023 the original before unseen code was published but I
 leave this in for historical purposes.
 
 
-### <a name="usage" href="#toc">Usage</a>
+<div id="usage">
+### <a href="#toc">Usage</a>
+</div>
 
 If you run the program by itself it'll use the default settings and prompt you
 for input (end with EOF). At that point it'll process the input string and print
@@ -274,7 +281,9 @@ pairs](https://www.cryptomuseum.com/crypto/enigma/i/sb.htm).
 
 After that you can input the string and it'll go from there.
 
-#### <a name="example" href="#toc">Example run</a>
+<div id="example">
+#### <a href="#toc">Example run</a>
+</div>
 
 BTW: There's a much more entertaining (and delicious) challenge or exercise in
 [recode.html][] (if you're reading this on GitHub check the
@@ -403,7 +412,9 @@ What about the other [Morse code entry](../../1998/dorssel/dorssel.c)?
     ..- ..- -- -- -..-
 ```
 
-### <a name="recode" href="#toc">The recode.c configurator</a>
+<div id="recode">
+### <a href="#toc">The recode.c configurator</a>
+</div>
 
 I have included a supplementary program [recode.c][] that can do a number of
 things which acts as a kind of wrapper and configurator to my entry. By default
@@ -437,7 +448,9 @@ For examples using it (and a delicious challenge) see [recode.html][] (or
 [enigma.1][] man pages.
 
 
-### <a name="parsersubtlety" href="#toc">A parser subtlety that could cause confusion</a>
+<div id="parsersubtlety">
+### <a href="#toc">A parser subtlety that could cause confusion</a>
+</div>
 
 The parser is in a sense rather rudimentary but allows for both interactive and
 automatic (e.g. via the [recode](recode.c) program) input. This does mean that
@@ -513,7 +526,9 @@ accomplished and made use of! :)
     ABC
 ```
 
-### <a name="layout" href="#toc">On the source code layout</a>
+<div id="layout">
+### <a href="#toc">On the source code layout</a>
+</div>
 
 The layout of [recode.c][] isn't too significant (but see below) but I want to
 mention [prog.c](prog.c) especially:
@@ -547,7 +562,9 @@ As for [recode.c][] though I really love this:
 'this' refer to?
 
 
-### <a name="obfuscation" href="#toc">Obfuscation</a>
+<div id="obfuscation">
+### <a href="#toc">Obfuscation</a>
+</div>
 
 
 It's an [Enigma machine](https://en.wikipedia.org/wiki/Enigma_machine) simulator! Isn't
@@ -584,7 +601,9 @@ word `OBFUSCATION`:
      OB FU SC ATION
 ```
 
-### <a name="bugs" href="#toc">Bugs, limitations, differences from the real Enigma machines and general notes</a>
+<div id="bugs">
+### <a href="#toc">Bugs, limitations, differences from the real Enigma machines and general notes</a>
+</div>
 
 Ways that my simulator differs from the real thing. Not all of these are bugs
 and some could be considered features; others are just differences.
@@ -678,7 +697,9 @@ online simulator so I presume it is correct. It might be that the Germans tended
 to have it at A but again I do not know.
 
 
-### <a name="kriegsmarine" href="#toc">Kriegsmarine support?</a>
+<div id="kriegsmarine">
+### <a href="#toc">Kriegsmarine support?</a>
+</div>
 
 Is it possible to add [Kriegsmarine](https://en.wikipedia.org/wiki/Kriegsmarine)
 support? I thought so by adding the additional rotors but looking at it again it
@@ -705,7 +726,9 @@ to just put the strings in. Again the way I set things up complicates this
 greatly.
 
 
-### <a name="portability" href="#toc">Portability</a>
+<div id="portability">
+### <a  href="#toc">Portability</a>
+</div>
 
 I have tested it under macOS, Fedora and CentOS Linux and all seems okay under
 these platforms. When I was in the final stages of obfuscation I made an error
@@ -727,7 +750,9 @@ The results of my test script (not included here but I will probably have it on
 my website) are the same under Fedora, CentOS and macOS.
 
 
-### <a name="resources" href="#toc">Resources</a>
+<div id="resources">
+### <a href="#toc">Resources</a>
+</div>
 
 #### A note on Wehrmacht, its branches and other agencies and their Enigma machines
 
@@ -848,7 +873,9 @@ that.
 
 ## Author's dedication:
 
-### <a name="winning" href="#toc">Winning thoughts, dedications and thanks</a>
+<div id="winning">
+### <a href="#toc">Winning thoughts, dedications and thanks</a>
+</div>
 
 Once again I'm honoured to win along with some of the other veterans who I have
 a huge amount of respect for; there's [Don Yang](../../authors.html#Don_Yang), [Dave

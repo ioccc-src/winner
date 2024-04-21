@@ -252,21 +252,28 @@ suffered the loss of friends or loved ones, as well as the world itself, in and
 from one of the greatest tragedies in the history of mankind.</p>
 <p>I have more information on this entry like the testing procedure at
 <a href="https://ioccc.xexyl.net/2020/enigma" class="uri">https://ioccc.xexyl.net/2020/enigma</a>.</p>
-<p><a name="toc"></a>
-- <a href="#ioccc">IOCCC: an Enigma?</a>
-- <a href="#nathan">The 1992 Nathan Sidwell entry</a>
-- <a href="#usage">Usage</a>
-* <a href="#example">Example run</a>
-- <a href="#recode">The recode.c configurator</a>
-- <a href="#parsersubtlety">A parser subtlety that could cause confusion</a>
-- <a href="#layout">On the source code layout</a>
-- <a href="#obfuscation">Obfuscation</a>
-- <a href="#bugs">Bugs, limitations, differences from the real Enigma machines and general notes</a>
-- <a href="#kriegsmarine">Kriegsmarine support?</a>
-- <a href="#portability">Portability</a>
-- <a href="#winning">Winning thoughts, dedications and thanks</a>
-- <a href="#resources">Resources</a></p>
-<h3 id="ioccc-an-enigma"><a name="ioccc" href="#toc">IOCCC: an Enigma?</a></h3>
+<div id="toc">
+<ul>
+<li><a href="#ioccc">IOCCC: an Enigma?</a></li>
+<li><a href="#nathan">The 1992 Nathan Sidwell entry</a></li>
+<li><a href="#usage">Usage</a>
+<ul>
+<li><a href="#example">Example run</a></li>
+</ul></li>
+<li><a href="#recode">The recode.c configurator</a></li>
+<li><a href="#parsersubtlety">A parser subtlety that could cause confusion</a></li>
+<li><a href="#layout">On the source code layout</a></li>
+<li><a href="#obfuscation">Obfuscation</a></li>
+<li><a href="#bugs">Bugs, limitations, differences from the real Enigma machines and general notes</a></li>
+<li><a href="#kriegsmarine">Kriegsmarine support?</a></li>
+<li><a href="#portability">Portability</a></li>
+<li><a href="#winning">Winning thoughts, dedications and thanks</a></li>
+<li><a href="#resources">Resources</a></li>
+</ul>
+</div>
+<div id="ioccc">
+<h3 id="ioccc-an-enigma"><a href="#toc">IOCCC: an Enigma?</a></h3>
+</div>
 <p>Is there a better single word that could describe the code that is IOCCC? I’m
 sure there are some other words that are equally as valid but I believe ‘Enigma’
 is a great word nonetheless.</p>
@@ -292,7 +299,9 @@ Dorsselaer</a> prints the Morse code of text;
 and the <a href="../../2014/vik/index.html">2014 Morse audio transcoder</a> by <a href="../../authors.html#Daniel_Vik">Daniel
 Vik</a> can be used to allow for the actual sound of it.
 With my entry we can complete the loop!</p>
-<h3 id="the-1992-nathan-sidwell-entry"><a name="nathan" href="#toc">The 1992 Nathan Sidwell entry</a></h3>
+<div id="nathan">
+<h3 id="the-1992-nathan-sidwell-entry"><a href="#toc">The 1992 Nathan Sidwell entry</a></h3>
+</div>
 <p>The author <a href="../../authors.html#Nathan_Sidwell">Nathan Sidwell</a> of the <a href="../../1992/nathan/index.html">1992 Worst
 Abuse of the Rules</a> had this to say about his program:</p>
 <pre><code>    This program is a hello world text encrypter/decrypter. It uses an
@@ -322,7 +331,7 @@ it was before his time in the IOCCC; but before the other judges could answer
 <a href="../../authors.html#Ilya_Kurdyukov">Ilya Kurdyukov</a> sent a link to the original 1992
 code. As of 4 March 2023 the original before unseen code was published but I
 leave this in for historical purposes.</p>
-<h3 id="usage"><a name="usage" href="#toc">Usage</a></h3>
+<h3 id="usage"><a href="#toc">Usage</a></h3>
 <p>If you run the program by itself it’ll use the default settings and prompt you
 for input (end with EOF). At that point it’ll process the input string and print
 the result (after finishing the enciphering).</p>
@@ -340,7 +349,9 @@ The first one is reflector B and the second is reflector C.</p>
 <p>Finally it’ll prompt you for the <a href="https://www.cryptomuseum.com/crypto/enigma/i/sb.htm">plugboard
 pairs</a>.</p>
 <p>After that you can input the string and it’ll go from there.</p>
-<h4 id="example-run"><a name="example" href="#toc">Example run</a></h4>
+<div id="example">
+<h4 id="example-run"><a href="#toc">Example run</a></h4>
+</div>
 <p>BTW: There’s a much more entertaining (and delicious) challenge or exercise in
 <a href="recode.html">recode.html</a> (if you’re reading this on GitHub check the
 <a href="recode.html">recode.html</a> file instead); this involves <a href="chocolate-cake.html">chocolate-cake.html</a> (if
@@ -420,7 +431,9 @@ too. Notice also how it showed the same output that my program gave it - <code>U
 <p>What about the other <a href="../../1998/dorssel/dorssel.c">Morse code entry</a>?</p>
 <pre><code>    $ echo IOCCC | ./prog | ./dorssel
     ..- ..- -- -- -..-</code></pre>
-<h3 id="the-recode.c-configurator"><a name="recode" href="#toc">The recode.c configurator</a></h3>
+<div id="recode">
+<h3 id="the-recode.c-configurator"><a href="#toc">The recode.c configurator</a></h3>
+</div>
 <p>I have included a supplementary program <a href="recode.c">recode.c</a> that can do a number of
 things which acts as a kind of wrapper and configurator to my entry. By default
 it prompts you for the settings
@@ -446,7 +459,9 @@ make it more flexible by a wrapper program.</p>
 <p>For examples using it (and a delicious challenge) see <a href="recode.html">recode.html</a> (or
 <a href="recode.html">recode.html</a> if reading on GitHub). See also the <a href="recode.1">recode.1</a> and
 <a href="enigma.1">enigma.1</a> man pages.</p>
-<h3 id="a-parser-subtlety-that-could-cause-confusion"><a name="parsersubtlety" href="#toc">A parser subtlety that could cause confusion</a></h3>
+<div id="parsersubtlety">
+<h3 id="a-parser-subtlety-that-could-cause-confusion"><a href="#toc">A parser subtlety that could cause confusion</a></h3>
+</div>
 <p>The parser is in a sense rather rudimentary but allows for both interactive and
 automatic (e.g. via the <a href="recode.c">recode</a> program) input. This does mean that
 something like the following can happen:</p>
@@ -507,7 +522,9 @@ accomplished and made use of! :)</p>
     GYM
     $ echo ABC | ./prog | ./prog
     ABC</code></pre>
-<h3 id="on-the-source-code-layout"><a name="layout" href="#toc">On the source code layout</a></h3>
+<div id="layout">
+<h3 id="on-the-source-code-layout"><a href="#toc">On the source code layout</a></h3>
+</div>
 <p>The layout of <a href="recode.c">recode.c</a> isn’t too significant (but see below) but I want to
 mention <a href="prog.c">prog.c</a> especially:</p>
 <p>I did think of a more artistic layout but
@@ -530,7 +547,7 @@ ended his life. (I later made a bug fix but I consider this inconsequential).</p
     /          This is *not* what you think:</code></pre>
 <p>…because it seems so wrong in C code at first glance. Also what does the
 ‘this’ refer to?</p>
-<h3 id="obfuscation"><a name="obfuscation" href="#toc">Obfuscation</a></h3>
+<h3 id="obfuscation"><a href="#toc">Obfuscation</a></h3>
 <p>It’s an <a href="https://en.wikipedia.org/wiki/Enigma_machine">Enigma machine</a> simulator! Isn’t
 that proof that it’s obfuscated itself?! :) Silliness aside <a href="obfuscation.txt">obfuscation.txt</a>
 has some of the ways I think this entry is obfuscated. To decipher try:</p>
@@ -551,7 +568,9 @@ to explore this entry.</p>
 word <code>OBFUSCATION</code>:</p>
 <pre><code>    2OB5FU1SC2ATIONCDEFGHJKLMPQRYZ
      OB FU SC ATION</code></pre>
-<h3 id="bugs-limitations-differences-from-the-real-enigma-machines-and-general-notes"><a name="bugs" href="#toc">Bugs, limitations, differences from the real Enigma machines and general notes</a></h3>
+<div id="bugs">
+<h3 id="bugs-limitations-differences-from-the-real-enigma-machines-and-general-notes"><a href="#toc">Bugs, limitations, differences from the real Enigma machines and general notes</a></h3>
+</div>
 <p>Ways that my simulator differs from the real thing. Not all of these are bugs
 and some could be considered features; others are just differences.</p>
 <ul>
@@ -631,7 +650,9 @@ part.</p>
 <p>I do not know if this is correct but as I show somewhere my entry does match the
 online simulator so I presume it is correct. It might be that the Germans tended
 to have it at A but again I do not know.</p>
-<h3 id="kriegsmarine-support"><a name="kriegsmarine" href="#toc">Kriegsmarine support?</a></h3>
+<div id="kriegsmarine">
+<h3 id="kriegsmarine-support"><a href="#toc">Kriegsmarine support?</a></h3>
+</div>
 <p>Is it possible to add <a href="https://en.wikipedia.org/wiki/Kriegsmarine">Kriegsmarine</a>
 support? I thought so by adding the additional rotors but looking at it again it
 appeared that it’s not as simple as adding the rotors to the code and then
@@ -652,7 +673,7 @@ be found in the source code verbatim and you could confirm it by looking them
 up; however much more would have to be done in order to get them to work, than
 to just put the strings in. Again the way I set things up complicates this
 greatly.</p>
-<h3 id="portability"><a name="portability" href="#toc">Portability</a></h3>
+<h3 id="portability"><a  href="#toc">Portability</a></h3>
 <p>I have tested it under macOS, Fedora and CentOS Linux and all seems okay under
 these platforms. When I was in the final stages of obfuscation I made an error
 somehow (or else maybe the vim formatting caused a problem - I have seen this
@@ -668,7 +689,7 @@ input was put in correctly because as soon as a letter differs the entire
 sequence will be off.</p>
 <p>The results of my test script (not included here but I will probably have it on
 my website) are the same under Fedora, CentOS and macOS.</p>
-<h3 id="resources"><a name="resources" href="#toc">Resources</a></h3>
+<h3 id="resources"><a href="#toc">Resources</a></h3>
 <h4 id="a-note-on-wehrmacht-its-branches-and-other-agencies-and-their-enigma-machines">A note on Wehrmacht, its branches and other agencies and their Enigma machines</h4>
 <p>The <a href="https://en.wikipedia.org/wiki/Wehrmacht">Wehrmacht</a> was the defence force
 in full which included the <a href="https://en.wikipedia.org/wiki/German_Army_(1935%E2%80%931945)">Heer</a> (army),
@@ -746,7 +767,9 @@ user here wants to they could add three letters to their message beginning. I
 don’t think there need be any addition to the recode program - at least not
 that.</p>
 <h2 id="authors-dedication">Author’s dedication:</h2>
-<h3 id="winning-thoughts-dedications-and-thanks"><a name="winning" href="#toc">Winning thoughts, dedications and thanks</a></h3>
+<div id="winning">
+<h3 id="winning-thoughts-dedications-and-thanks"><a href="#toc">Winning thoughts, dedications and thanks</a></h3>
+</div>
 <p>Once again I’m honoured to win along with some of the other veterans who I have
 a huge amount of respect for; there’s <a href="../../authors.html#Don_Yang">Don Yang</a>, <a href="../../authors.html#Dave_Burton">Dave
 Burton</a>, <a href="../../authors.html#Yusuke_Endoh">Yusuke Endoh</a>
