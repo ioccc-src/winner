@@ -344,7 +344,7 @@ which is neither complete (`#define`, `#ifndef`, `#undef` are missing
 
 ```
 yes, Virginia knows about `#define` omitted on purpose
-``
+```
 
 nor correct (many more are added: `I`, `true`, `bool`, `compl`, ...):
 
