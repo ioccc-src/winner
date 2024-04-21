@@ -3158,11 +3158,11 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/1992/buzzard.2/buzzard.2.README.html</loc>
-    <lastmod>2024-04-19T08:14:05+00:00</lastmod>
+    <lastmod>2024-04-21T06:04:43+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/1992/buzzard.2/buzzard.2.README.md</loc>
-    <lastmod>2024-04-12T18:22:04+00:00</lastmod>
+    <lastmod>2024-04-21T06:04:40+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/1992/buzzard.2/demo1.1st</loc>
@@ -7826,7 +7826,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2004/anonymous/.entry.json</loc>
-    <lastmod>2024-04-16T18:02:26+00:00</lastmod>
+    <lastmod>2024-04-20T21:38:41+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2004/anonymous/.gitignore</loc>
@@ -7834,11 +7834,15 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2004/anonymous/index.html</loc>
-    <lastmod>2024-04-19T08:15:41+00:00</lastmod>
+    <lastmod>2024-04-21T03:58:57+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2004/anonymous/Makefile</loc>
-    <lastmod>2024-03-23T07:10:42+00:00</lastmod>
+    <lastmod>2024-04-21T03:56:15+00:00</lastmod>
+</url>
+<url>
+    <loc>https://ioccc-src.github.io/temp-test-ioccc/2004/anonymous/One_Ring_inscription.png</loc>
+    <lastmod>2024-04-20T21:47:08+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2004/anonymous/.path</loc>
@@ -7846,7 +7850,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2004/anonymous/README.md</loc>
-    <lastmod>2024-04-17T07:31:20+00:00</lastmod>
+    <lastmod>2024-04-20T21:47:22+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2004/anonymous/try.sh</loc>
@@ -8290,7 +8294,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2004/index.html</loc>
-    <lastmod>2024-04-19T08:13:59+00:00</lastmod>
+    <lastmod>2024-04-20T21:00:59+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2004/jdalbec/2004_jdalbec.tar.bz2</loc>
@@ -8874,7 +8878,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2005/boutines/index.html</loc>
-    <lastmod>2024-04-19T08:15:50+00:00</lastmod>
+    <lastmod>2024-04-21T04:19:45+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2005/boutines/input.txt</loc>
@@ -8890,7 +8894,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2005/boutines/README.md</loc>
-    <lastmod>2024-04-17T07:32:28+00:00</lastmod>
+    <lastmod>2024-04-21T04:16:36+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2005/boutines/try.sh</loc>
@@ -10850,7 +10854,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2011/goren/index.html</loc>
-    <lastmod>2024-04-19T08:16:06+00:00</lastmod>
+    <lastmod>2024-04-21T03:59:24+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2011/goren/MagrittePipe.jpg</loc>
@@ -10866,7 +10870,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2011/goren/README.md</loc>
-    <lastmod>2024-04-12T18:22:04+00:00</lastmod>
+    <lastmod>2024-04-20T22:23:44+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2011/goren/try.sh</loc>
@@ -12082,7 +12086,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2012/vik/index.html</loc>
-    <lastmod>2024-04-19T08:16:17+00:00</lastmod>
+    <lastmod>2024-04-20T22:29:15+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2012/vik/ioccc.png</loc>
@@ -12098,7 +12102,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2012/vik/README.md</loc>
-    <lastmod>2024-04-12T18:22:04+00:00</lastmod>
+    <lastmod>2024-04-20T22:30:12+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2012/vik/try.sh</loc>
@@ -12286,7 +12290,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2013/birken/index.html</loc>
-    <lastmod>2024-04-19T08:16:18+00:00</lastmod>
+    <lastmod>2024-04-21T03:59:35+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2013/birken/ioccc.txt</loc>
@@ -12398,7 +12402,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2013/birken/README.md</loc>
-    <lastmod>2024-04-17T06:59:26+00:00</lastmod>
+    <lastmod>2024-04-21T03:36:52+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2013/birken/rhino.txt</loc>
@@ -12466,7 +12470,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2013/cable1/index.html</loc>
-    <lastmod>2024-04-19T08:16:19+00:00</lastmod>
+    <lastmod>2024-04-21T04:39:27+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2013/cable1/Makefile</loc>
@@ -12478,7 +12482,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2013/cable1/README.md</loc>
-    <lastmod>2024-04-12T18:22:04+00:00</lastmod>
+    <lastmod>2024-04-21T04:39:02+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2013/cable1/try.sh</loc>
@@ -12594,7 +12598,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2013/cable3/index.html</loc>
-    <lastmod>2024-04-19T08:16:20+00:00</lastmod>
+    <lastmod>2024-04-21T03:59:37+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2013/cable3/Makefile</loc>
@@ -12606,7 +12610,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2013/cable3/README.md</loc>
-    <lastmod>2024-04-12T18:22:04+00:00</lastmod>
+    <lastmod>2024-04-21T03:49:01+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2013/cable3/sc-ioccc.terminal</loc>
@@ -13510,11 +13514,11 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2013/hou/doc/example.html</loc>
-    <lastmod>2024-04-19T08:14:07+00:00</lastmod>
+    <lastmod>2024-04-21T04:28:50+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2013/hou/doc/example.md</loc>
-    <lastmod>2024-04-19T00:43:37+00:00</lastmod>
+    <lastmod>2024-04-21T04:27:20+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2013/hou/.entry.json</loc>
@@ -13534,7 +13538,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2013/hou/index.html</loc>
-    <lastmod>2024-04-19T08:16:23+00:00</lastmod>
+    <lastmod>2024-04-21T04:35:24+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2013/hou/luna.jpg</loc>
@@ -13566,7 +13570,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2013/hou/README.md</loc>
-    <lastmod>2024-04-19T00:37:17+00:00</lastmod>
+    <lastmod>2024-04-21T04:35:13+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2013/hou/try.sh</loc>
@@ -17466,11 +17470,11 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2020/ferguson1/chocolate-cake.html</loc>
-    <lastmod>2024-04-19T08:14:10+00:00</lastmod>
+    <lastmod>2024-04-21T04:31:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2020/ferguson1/chocolate-cake.md</loc>
-    <lastmod>2024-04-12T18:22:04+00:00</lastmod>
+    <lastmod>2024-04-21T04:31:12+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/2020/ferguson1/COMPILING.html</loc>
@@ -18942,7 +18946,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/authors.html</loc>
-    <lastmod>2024-04-19T08:36:03+00:00</lastmod>
+    <lastmod>2024-04-21T06:47:18+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/author/Sjoerd_Mullender.json</loc>
@@ -19082,7 +19086,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/gen-other-html.sh</loc>
-    <lastmod>2024-04-16T19:14:55+00:00</lastmod>
+    <lastmod>2024-04-21T05:40:59+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/gen-sitemap.sh</loc>
@@ -19106,7 +19110,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/index.html</loc>
-    <lastmod>2024-04-19T08:14:13+00:00</lastmod>
+    <lastmod>2024-04-21T06:40:41+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/manifest.entry.json.awk</loc>
@@ -19114,7 +19118,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/md2html.sh</loc>
-    <lastmod>2024-04-19T08:03:32+00:00</lastmod>
+    <lastmod>2024-04-21T06:46:26+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/output-index-author.sh</loc>
@@ -19142,7 +19146,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/README.md</loc>
-    <lastmod>2024-04-16T23:12:22+00:00</lastmod>
+    <lastmod>2024-04-21T06:40:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/sgi.sh</loc>
@@ -19158,7 +19162,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/subst.default.sh</loc>
-    <lastmod>2024-04-16T19:14:55+00:00</lastmod>
+    <lastmod>2024-04-21T05:17:54+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/bin/subst.entry-index.sh</loc>
@@ -19210,19 +19214,19 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/contact.html</loc>
-    <lastmod>2024-04-19T08:14:14+00:00</lastmod>
+    <lastmod>2024-04-20T20:35:51+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/contact.md</loc>
-    <lastmod>2024-04-17T06:00:03+00:00</lastmod>
+    <lastmod>2024-04-20T20:35:51+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/faq.html</loc>
-    <lastmod>2024-04-19T08:14:14+00:00</lastmod>
+    <lastmod>2024-04-20T20:35:51+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/faq.md</loc>
-    <lastmod>2024-04-19T05:37:43+00:00</lastmod>
+    <lastmod>2024-04-20T20:35:51+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/.gitignore</loc>
@@ -19310,7 +19314,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/inc/md2html.cfg</loc>
-    <lastmod>2024-04-16T19:14:55+00:00</lastmod>
+    <lastmod>2024-04-21T05:39:44+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/inc/navbar.default.html</loc>
@@ -19410,7 +19414,7 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/location.html</loc>
-    <lastmod>2024-04-19T08:36:05+00:00</lastmod>
+    <lastmod>2024-04-21T06:47:31+00:00</lastmod>
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/Makefile</loc>
@@ -19462,6 +19466,6 @@
 </url>
 <url>
     <loc>https://ioccc-src.github.io/temp-test-ioccc/years.html</loc>
-    <lastmod>2024-04-19T08:36:06+00:00</lastmod>
+    <lastmod>2024-04-21T06:48:01+00:00</lastmod>
 </url>
 </urlset>

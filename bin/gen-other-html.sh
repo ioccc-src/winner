@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.4 2024-04-13"
+export VERSION="1.1 2024-04-20"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -221,12 +221,8 @@ while getopts :hv:Vd:D:nNt:T:p:u:w: flag; do
 	TOOL_OPTION+=("$PANDOC_WRAPPER")
 	;;
     u) REPO_URL="$OPTARG"
-	TOOL_OPTION+=("-u")
-	TOOL_OPTION+=("$REPO_URL")
 	;;
     w) SITE_URL="$OPTARG"
-	TOOL_OPTION+=("-w")
-	TOOL_OPTION+=("$SITE_URL")
 	;;
     \?) echo "$0: ERROR: invalid option: -$OPTARG" 1>&2
 	echo 1>&2
@@ -342,6 +338,10 @@ fi
 #
 TOOL_OPTION+=("-t")
 TOOL_OPTION+=("$TAGLINE")
+TOOL_OPTION+=("-u")
+TOOL_OPTION+=("$REPO_URL")
+TOOL_OPTION+=("-w")
+TOOL_OPTION+=("$SITE_URL")
 
 # print running info if verbose
 #
@@ -631,17 +631,20 @@ for YYYY in $(< "$TOP_FILE"); do
 		if [[ $V_FLAG -ge 3 ]]; then
 		    echo "$0: debug[3]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]}" \
 			 "-s $DESCRIPTION -s $KEYWORDS -s $HEADER_2" \
+			 "-s REPO_URL=$REPO_URL -s SITE_URL=$SITE_URL" \
 			 "-s $UP_LINK -s $UP_TEXT -D $D_OPTION -m $MD_FILE -v $V_FLAG --" \
 			 "$MD_FILE $HTML_FLLE" 1>&2
 		fi
 		"$MD2HTML_SH" "${TOOL_OPTION[@]}" \
 		    -s "$DESCRIPTION" -s "$KEYWORDS" -s "$HEADER_2" \
+		    -s "REPO_URL=$REPO_URL" -s "SITE_URL=$SITE_URL" \
 		    -s "$UP_LINK" -s "$UP_TEXT" -D "$D_OPTION" -m "$MD_FILE" -v "$V_FLAG" -- \
 		    "$MD_FILE" "$HTML_FLLE"
 		status="$?"
 		if [[ $status -ne 0 ]]; then
 		    echo "$0: ERROR: tool: $MD2HTML_SH ${TOOL_OPTION[*]}" \
 			 "-s $DESCRIPTION -s $KEYWORDS -s $HEADER_2" \
+			 "-s REPO_URL=$REPO_URL -s SITE_URL=$SITE_URL" \
 			 "-s $UP_LINK -s $UP_TEXT -D $D_OPTION -m $MD_FILE -v $V_FLAG --" \
 			 "$MD_FILE $HTML_FLLE failed, error: $status" 1>&2
 		    echo 1 > "$TMP_EXIT_CODE" # exit 1

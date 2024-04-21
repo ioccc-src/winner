@@ -19,13 +19,13 @@ Run a command on all winning entries.
 For example:
 
 ``` <!---sh-->
-bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1
+    bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1
 ```
 
 Or for example:
 
 ``` <!---sh-->
-bin/all-run.sh -v 3 bin/readme2index.sh -v 1
+    bin/all-run.sh -v 3 bin/readme2index.sh -v 1
 ```
 
 
@@ -36,19 +36,19 @@ Run a command on all IOCCC years.
 For example:
 
 ``` <!---sh-->
-bin/all-years.sh -v 1 bin/gen-year-index.sh -v 1
+    bin/all-years.sh -v 1 bin/gen-year-index.sh -v 1
 ```
 
 Or for example:
 
 ``` <!---sh-->
-bin/all-years.sh -v 1 bin/chk-entry.sh
+    bin/all-years.sh -v 1 bin/chk-entry.sh
 ```
 
 We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
-make verify_entry_files
+    make verify_entry_files
 ```
 
 
@@ -60,7 +60,7 @@ Check that files required by an entry match the entry's manifest as found in
 For example:
 
 ``` <!---sh-->
-bin/chk-entry.sh 2020/ferguson1
+    bin/chk-entry.sh 2020/ferguson1
 ```
 
 
@@ -71,7 +71,7 @@ Generate the list of files in the entry's manifest, `.entry.json`.
 For example:
 
 ``` <!---sh-->
-awk -f bin/filelist.entry.json.awk 2020/ferguson1/.entry.json
+    awk -f bin/filelist.entry.json.awk 2020/ferguson1/.entry.json
 ```
 
 
@@ -82,7 +82,7 @@ Generate the top level `/authors.html` page.
 Usage:
 
 ``` <!---sh-->
-bin/gen-authors.sh -v 1
+    bin/gen-authors.sh -v 1
 ```
 
 
@@ -93,7 +93,7 @@ Generate the top level `/location.html` page.
 Usage:
 
 ``` <!---sh-->
-bin/gen-location.sh -v 1
+    bin/gen-location.sh -v 1
 ```
 
 
@@ -105,7 +105,7 @@ files.
 Usage:
 
 ``` <!---sh-->
-bin/gen-other-html.sh -v 1
+    bin/gen-other-html.sh -v 1
 ```
 
 
@@ -116,13 +116,13 @@ Generate an XML sitemap for the IOCCC web site.
 Usage:
 
 ``` <!---sh-->
-bin/gen-sitemap.sh -v 1
+    bin/gen-sitemap.sh -v 1
 ```
 
 We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
-make gen_sitemap
+    make gen_sitemap
 ```
 
 
@@ -136,31 +136,31 @@ Without argument, the `contest_status` is unchanged.
 Usage:
 
 ``` <!---sh-->
-bin/gen-status.sh -v 1
+    bin/gen-status.sh -v 1
 ```
 
 To force the  `contest_status` to be closed:
 
 ``` <!---sh-->
-bin/gen-status.sh -v 1 closed
+    bin/gen-status.sh -v 1 closed
 ```
 
 To force the  `contest_status` to be open:
 
 ``` <!---sh-->
-bin/gen-status.sh -v 1 open
+    bin/gen-status.sh -v 1 open
 ```
 
 To see other valid statuses:
 
 ``` <!---sh-->
-bin/gen-status -h
+    bin/gen-status -h
 ```
 
 We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
-make gen_status
+    make gen_status
 ```
 
 
@@ -171,7 +171,7 @@ Generate a number of top level HTML pages for the IOCCC web sites.
 Usage:
 
 ``` <!---sh-->
-bin/gen-top-html.sh -v 1
+    bin/gen-top-html.sh -v 1
 ```
 
 Examples of top level HTML pages built by this tool include:
@@ -192,7 +192,7 @@ Examples of top level HTML pages built by this tool include:
 We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
-make gen_top_html
+    make gen_top_html
 ```
 
 
@@ -203,13 +203,13 @@ Generate an `index.html` page for an given IOCCC year.
 Usage:
 
 ``` <!---sh-->
-bin/gen-year-index.sh -v 1 2020
+    bin/gen-year-index.sh -v 1 2020
 ```
 
 We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
-make gen_year_index
+    make gen_year_index
 ```
 
 
@@ -220,13 +220,13 @@ Generate the top level `/years.html` page.
 Usage:
 
 ``` <!---sh-->
-bin/gen-years.sh -v 1
+    bin/gen-years.sh -v 1
 ```
 
 We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
-make gen_years
+    make gen_years
 ```
 
 
@@ -280,7 +280,7 @@ this command will only briefly pause while the
 slightly longer [readme2index.sh](readme2index.sh) is run:
 
 ``` <!---sh-->
-bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1
+    bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1
 ```
 
 **NOTE**: This command assumes that the relative
@@ -290,7 +290,7 @@ and `index.html` are correct.  If in doubt, use:
 We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
-make quick_entry_index
+    make quick_entry_index
 ```
 
 
@@ -299,19 +299,19 @@ make quick_entry_index
 Convert an entry README.md into entry directory index.html.
 
 ``` <!---sh-->
-bin/all-run.sh -v 3 bin/readme2index.sh -v 1
+    bin/all-run.sh -v 3 bin/readme2index.sh -v 1
 ```
 
 To build `index.html` files for all entries:
 
 ``` <!---sh-->
-bin/all-run.sh -v 3 bin/readme2index.sh -v 1
+    bin/all-run.sh -v 3 bin/readme2index.sh -v 1
 ```
 
 We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
-make entry_index
+    make entry_index
 ```
 
 
@@ -342,19 +342,19 @@ Sort a .gitignore in a entry directory.
 Usage:
 
 ``` <!---sh-->
-bin/sort.gitignore.sh -v 1 YYYY/dir
+    bin/sort.gitignore.sh -v 1 YYYY/dir
 ```
 
 Suggested usage:
 
 ``` <!---sh-->
-bin/all-run.sh bin/sort.gitignore.sh -v 1
+    bin/all-run.sh bin/sort.gitignore.sh -v 1
 ```
 
 We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
-make sort_gitignore
+    make sort_gitignore
 ```
 
 
@@ -430,19 +430,19 @@ Untar an entry's a compressed tarball.
 Usage:
 
 ``` <!---sh-->
-bin/untar-entry.sh -v 1 YYYY/dir
+    bin/untar-entry.sh -v 1 YYYY/dir
 ```
 
 Suggested usage:
 
 ``` <!---sh-->
-bin/all-run.sh -v 3 bin/untar-entry.sh -v 1
+    bin/all-run.sh -v 3 bin/untar-entry.sh -v 1
 ```
 
 We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
-make untar_entry_tarball
+    make untar_entry_tarball
 ```
 
 
@@ -453,23 +453,25 @@ Untar an IOCCC year's compressed tarball.
 Usage:
 
 ``` <!---sh-->
-bin/untar-year.sh -v 1 YYYY
+    bin/untar-year.sh -v 1 YYYY
 ```
 
 Suggested usage:
 
 ``` <!---sh-->
-bin/all-years.sh -v 3 bin/untar-year.sh -v 1
+    bin/all-years.sh -v 3 bin/untar-year.sh -v 1
 ```
 
 We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
-make untar_year_tarball
+    make untar_year_tarball
 ```
 
 
-# <div id="how">How IOCCC HTML content is built</div>
+<div id="how">
+# How IOCCC HTML content is built
+</div>
 
 The [md2html.sh](md2html.sh) tool is the primary tool that
 is used to form all IOCCC related HTML pages for the [official IOCCC web
@@ -489,20 +491,20 @@ built uses, by default, files from the [inc directory](../inc/index.html), of
 the file name form:
 
 ```
-*.default.html
+    *.default.html
 ```
 
 By using command line options of the form:
 
 ``` <!---sh-->
--H phase=name
+    -H phase=name
 ```
 
 where `phase` is the name of an HTML phase,
 a non-default file may be used.  For example:
 
 ``` <!---sh-->
--H navbar=up2index
+    -H navbar=up2index
 ```
 
 will cause [inc/navbar.up2index.html](../inc/navbar.up2index.html)
@@ -513,14 +515,16 @@ If `name` is dot (i.e., `.`), then the given HTML phase is skipped.
 For example:
 
 ``` <!---sh-->
--H footer=.
+    -H footer=.
 ```
 
 will cause no HTML content to be produced during the `footer` HTML phase.
 
 
 
-## <div id="html">HTML phases</div>
+<div id="html">
+## HTML phases
+</div>
 
 The following HTML phase files are used to build HTML content:
 
@@ -546,18 +550,24 @@ Phases 23-29 are reserved for future use.
 
 Phases 33-39 are reserved for future use.
 
-In the above HTML phase numbers, except during HTML phase numbers 20-29, symbols
-of the form `%%TOKEN%%` are substituted.
+In all of the above HTML phase numbers, symbols of the form **%%TOKEN%%** are substituted.
 
-Any `%%TOKEN%%` printed by the 'before tool' (`-b tool`), the 'pandoc wrapper
-tool' (`-p tool`), and the 'after tool' (`-a tool`) are ignored (i.e., not
-substituted).
+Substitutions of and **%%TOKEN%%** are performed on included HTML content,
+content generated by the 'before tool' (`-b tool`),
+content generated by the 'after tool' (`-a tool`),
+as well as the markdown content given to the `pandoc wrapper tool` (`-p tool`).
+
+It is an error, unless `-S` is given, for any phase, except phases HTML
+20-29, to not substitute all **%%TOKEN%%**'s.  For phases HTML 20-29, any
+**%%TOKEN%%** that is not substituted are passed thru without substitution.
 
 See the tool [readme2index.sh](readme2index.sh) for an example of
 how HTML phases are implemented.
 
 
-## <div id="getopt">`getopt` phase processing of the command line</div>
+<div id="getopt">
+## getopt phase processing of the command line
+</div>
 
 The command options are evaluated in the following `getopt` phases:
 
@@ -625,16 +635,16 @@ IMPORTANT: An "output tool" will print each command line option / argument on a 
 So for example, if an "output tool" wishes to convey:
 
 ```
--s TITLE='IOCCC entry locations' -H navbar=top-of-site
+    -s TITLE='IOCCC entry locations' -H navbar=top-of-site
 ```
 
 The  "output tool" would output the following 4 lines:
 
 ```
--s
-TITLE='IOCCC entry locations'
--H
-navbar=top-of-site
+    -s
+    TITLE='IOCCC entry locations'
+    -H
+    navbar=top-of-site
 ```
 
 The command line options printed by an "output tool" are processed
@@ -645,7 +655,7 @@ on the command line.
 For example:
 
 ```
-command [command_options ..] [cfg_options ..] [output_tool_options ..] [--] [filename_arg ..]
+    command [command_options ..] [cfg_options ..] [output_tool_options ..] [--] [filename_arg ..]
 ```
 
 Here the `command` first processes any command line options, then it processes
@@ -709,7 +719,7 @@ on the [experimental web site](https://ioccc-src.github.io/temp-test-ioccc/).
 (called default HTML files) ...:
 
 ```
-*.default.html
+    *.default.html
 ```
 
 ... contain default content used to form IOCCC HTML / IOCCC web pages.
@@ -727,7 +737,9 @@ we even need the tools in the [bin](index.html) directory when there other
 solutions available to form web pages.
 
 
-## <div id="static-only">Static web pages only</div>
+<div id="static-only">
+## Static web pages only
+</div>
 
 Here are some reasons why we are using these files and
 special tools to create HTML content / IOCCC web pages:
@@ -752,7 +764,9 @@ We use [static web pages](#static-only), so use of a "back-end database" is not
 available to the IOCCC.
 
 
-## <div id="why-github">We cannot use non-GitHub web servers</div>
+<div id="why-github">
+## We cannot use non-GitHub web servers
+</div>
 
 The [GitHub pages](https://pages.github.com) have the distributed server capacity needed to handle
 the **huge download volume** or [Slashdot effect](https://en.wikipedia.org/wiki/Slashdot_effect)
@@ -823,7 +837,9 @@ site](https://www.ioccc.org).
 For this reason, we cannot use JavaScript include HTML content.
 
 
-# <div id="terms">IOCCC terms</div>
+<div id="terms">
+# IOCCC terms
+</div>
 
 The following IOCCC terms apply to tools, JSON files, and the directory structure of this repo.
 
@@ -845,7 +861,7 @@ IOCCC.  Each author has **EXACTLY ONE** `author_handle`.
 For each `author_handle`, there will be a JSON file located at:
 
 ```
-author/author_handle.json
+    author/author_handle.json
 ```
 
 where `author_handle` is the author's `author_handle`.
@@ -856,7 +872,7 @@ document).  In particular, the `author_handle` must be an ASCII
 string that matches this regexp:
 
 ``` <!---re-->
-^[0-9A-Za-z][0-9A-Za-z._+-]*$"
+    ^[0-9A-Za-z][0-9A-Za-z._+-]*$"
 ```
 
 Default `author_handle`'s do not have multiple consecutive `_` (underscore)
@@ -876,13 +892,13 @@ author.
 For an anonymous `author`, their handle is one of these forms:
 
 ```
-Anonymous_year
+    Anonymous_year
 ```
 
 or:
 
 ```
-Anonymous_year.digits
+    Anonymous_year.digits
 ```
 
 
@@ -895,7 +911,7 @@ in the case of [2005/anon](../2005/anon/anon.c).
 Anonymous `author_handle`'s match this regexp:
 
 ``` <!---re-->
-Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$
+    Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$
 ```
 
 
@@ -927,7 +943,7 @@ Non-numeric `year` strings are lower case.
 A `year` string matches this regexp:
 
 ``` <!---re-->
-[0-9a-z][0-9a-z][0-9a-z][0-9a-z]
+    [0-9a-z][0-9a-z][0-9a-z][0-9a-z]
 ```
 
 The `year` directories reside directly below the top level directory.
@@ -938,7 +954,7 @@ The `year` directories reside directly below the top level directory.
 Each `year` directory will have a file under it named:
 
 ```
-.year
+    .year
 ```
 
 The contents of the `.year` file is the year string of the directory. For
@@ -952,7 +968,7 @@ A `dir` is a POSIX safe string that holds an entry.
 A `dir` is a string that matches this regexp:
 
 ``` <!---re-->
-^[a-z][0-9a-z.-]*$
+    ^[a-z][0-9a-z.-]*$
 ```
 
 Each `entry` is under its own individual directory.  This directory
@@ -964,7 +980,7 @@ is directly under a `year` directory.
 A string that identifies the winning entry.  The string is of the form:
 
 ```
-year_dir
+    year_dir
 ```
 
 

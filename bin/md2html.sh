@@ -141,7 +141,7 @@ shopt -s lastpipe	# run last command of a pipeline not executed in the backgroun
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4 2024-04-18"
+export VERSION="1.5 2024-04-20"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -1684,7 +1684,7 @@ fi
 
 # input.md is -, we will need to capture standard input into a new temporary file
 #
-export ORIG_INPUT_MD="$INPUT_MD"
+export ORIG_INPUT_MD="$MATCH_MD"
 if [[ -z $NOOP ]]; then
     if [[ $INPUT_MD == - ]]; then
 	export TMP_INPUT_MD=".$NAME.$$.stdin.md"
@@ -1751,6 +1751,7 @@ if [[ -z $NOOP ]]; then
     #
     echo "<!-- BEFORE: 1st line of markdown file: $ORIG_INPUT_MD -->" > "$TMP_STRIPPED_MD"
 
+    # perform the %%TOKEN%% substitutions markdown file AND
     # strip commented language after markdown code block
     #
     # We do not want the sed extended regular expression to be expanded, so
@@ -1759,10 +1760,10 @@ if [[ -z $NOOP ]]; then
     # SC2016 (info): Expressions don't expand in single quotes, use double quotes for that.
     # https://www.shellcheck.net/wiki/SC2016
     # shellcheck disable=SC2016
-    sed -E -e 's/^```[[:space:]]<!---[^-][^-]*-->/```/' "$INPUT_MD" >> "$TMP_STRIPPED_MD"
+    sed -E -e 's/^```[[:space:]]<!---[^-][^-]*-->/```/' -f "$TMP_SED_SCRIPT" "$INPUT_MD" >> "$TMP_STRIPPED_MD"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: strip commented language after markdown code block from $INPUT_MD into file:" \
+	echo "$0: ERROR: token substation and strip code block command language from $INPUT_MD into file:" \
 	     "$TMP_INPUT_MD failed, error code: $status" 1>&2
 	exit 25
     fi

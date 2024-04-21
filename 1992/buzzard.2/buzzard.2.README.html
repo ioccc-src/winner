@@ -134,27 +134,34 @@
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <!-- BEFORE: 1st line of markdown file: 1992/buzzard.2/buzzard.2.README.md -->
-<p><a href="buzzard.2.README.md">buzzard.2.README.md</a> this file<br />
-<a href="buzzard.2.design.md">buzzard.2.design.md</a> description of FIRST (design documentation of THIRD)<br />
-<a href="third">third</a> implementation of THIRD in FIRST<br />
-<a href="help.th">help.th</a> online listing of THIRD primitives<br />
-</p>
+<h1 id="useful-files-to-view">Useful files to view</h1>
+<ul>
+<li><a href="buzzard.2.README.html">buzzard.2.README.html</a> - this file</li>
+<li><a href="buzzard.2.design.html">buzzard.2.design.html</a> - description of FIRST (design documentation of THIRD)</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/buzzard.2/third">third</a> - implementation of THIRD in FIRST</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/buzzard.2/help.th">help.th</a> - online listing of THIRD primitives</li>
+</ul>
 <h1 id="first-demos">FIRST demos:</h1>
 <p>Use <code>./first &lt; &lt;demo&gt;</code>.</p>
-<p><a href="demo1.1st">demo1.1st</a> prints Hello World! assuming ASCII</p>
+<ul>
+<li><a href="demo1.1st">demo1.1st</a> - prints Hello World! assuming ASCII</li>
+</ul>
 <h1 id="third-demos">THIRD demos:</h1>
 <p>Use <code>cat third &lt;demo&gt; | ./first</code>.</p>
 <h2 id="demo-files">Demo files:</h2>
-<p><a href="demo1.th">demo1.th</a> prints Hello World! regardless of character set
-<a href="demo2.th">demo2.th</a> demonstrates a simple loop
-<a href="demo3.th">demo3.th</a> demonstrates a simple if test
-<a href="demo4.th">demo4.th</a> recursive factorial calculating on the way up
-<a href="demo5.th">demo5.th</a> recursive factorial calculating on the way down
-<a href="demo6.th">demo6.th</a> demonstrates switching from compiler to execution mode</p>
+<ul>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/buzzard.2/demo1.th">demo1.th</a> - prints Hello World! regardless of character set</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/buzzard.2/demo2.th">demo2.th</a> - demonstrates a simple loop</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/buzzard.2/demo3.th">demo3.th</a> - demonstrates a simple if test</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/buzzard.2/demo4.th">demo4.th</a> - recursive factorial calculating on the way up</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/buzzard.2/demo5.th">demo5.th</a> - recursive factorial calculating on the way down</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/buzzard.2/demo6.th">demo6.th</a> - demonstrates switching from compiler to execution mode</li>
+</ul>
 <h1 id="interactive-third">Interactive THIRD:</h1>
-<p>Use <code>cat third - | ./first</code>.</p>
-<p>To include the primitive on-line help, use
-<code>cat third help.th - | ./first</code>.</p>
+<p>Use:</p>
+<pre><code>cat third - | ./first</code></pre>
+<p>To include the primitive on-line help, use:</p>
+<pre><code>cat third help.th - | ./first</code></pre>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

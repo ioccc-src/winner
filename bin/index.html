@@ -144,63 +144,63 @@ repo</a>.</p>
 <h3 id="all-run.sh"><a href="all-run.sh">all-run.sh</a></h3>
 <p>Run a command on all winning entries.</p>
 <p>For example:</p>
-<pre><code>bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1</code></pre>
+<pre><code>    bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1</code></pre>
 <p>Or for example:</p>
-<pre><code>bin/all-run.sh -v 3 bin/readme2index.sh -v 1</code></pre>
+<pre><code>    bin/all-run.sh -v 3 bin/readme2index.sh -v 1</code></pre>
 <h3 id="all-years.sh"><a href="all-years.sh">all-years.sh</a></h3>
 <p>Run a command on all IOCCC years.</p>
 <p>For example:</p>
-<pre><code>bin/all-years.sh -v 1 bin/gen-year-index.sh -v 1</code></pre>
+<pre><code>    bin/all-years.sh -v 1 bin/gen-year-index.sh -v 1</code></pre>
 <p>Or for example:</p>
-<pre><code>bin/all-years.sh -v 1 bin/chk-entry.sh</code></pre>
+<pre><code>    bin/all-years.sh -v 1 bin/chk-entry.sh</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<pre><code>make verify_entry_files</code></pre>
+<pre><code>    make verify_entry_files</code></pre>
 <h3 id="chk-entry.sh"><a href="chk-entry.sh">chk-entry.sh</a></h3>
 <p>Check that files required by an entry match the entry’s manifest as found in
 <code>.entry.json</code>.</p>
 <p>For example:</p>
-<pre><code>bin/chk-entry.sh 2020/ferguson1</code></pre>
+<pre><code>    bin/chk-entry.sh 2020/ferguson1</code></pre>
 <h3 id="filelist.entry.json.awk"><a href="filelist.entry.json.awk">filelist.entry.json.awk</a></h3>
 <p>Generate the list of files in the entry’s manifest, <code>.entry.json</code>.</p>
 <p>For example:</p>
-<pre><code>awk -f bin/filelist.entry.json.awk 2020/ferguson1/.entry.json</code></pre>
+<pre><code>    awk -f bin/filelist.entry.json.awk 2020/ferguson1/.entry.json</code></pre>
 <h3 id="gen-authors.sh"><a href="gen-authors.sh">gen-authors.sh</a></h3>
 <p>Generate the top level <code>/authors.html</code> page.</p>
 <p>Usage:</p>
-<pre><code>bin/gen-authors.sh -v 1</code></pre>
+<pre><code>    bin/gen-authors.sh -v 1</code></pre>
 <h3 id="gen-location.sh"><a href="gen-location.sh">gen-location.sh</a></h3>
 <p>Generate the top level <code>/location.html</code> page.</p>
 <p>Usage:</p>
-<pre><code>bin/gen-location.sh -v 1</code></pre>
+<pre><code>    bin/gen-location.sh -v 1</code></pre>
 <h3 id="gen-other-html.sh"><a href="gen-other-html.sh">gen-other-html.sh</a></h3>
 <p>Generate entry HTML files (other than README.md to index.html) from markdown
 files.</p>
 <p>Usage:</p>
-<pre><code>bin/gen-other-html.sh -v 1</code></pre>
+<pre><code>    bin/gen-other-html.sh -v 1</code></pre>
 <h3 id="gen-sitemap.sh"><a href="gen-sitemap.sh">gen-sitemap.sh</a></h3>
 <p>Generate an XML sitemap for the IOCCC web site.</p>
 <p>Usage:</p>
-<pre><code>bin/gen-sitemap.sh -v 1</code></pre>
+<pre><code>    bin/gen-sitemap.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<pre><code>make gen_sitemap</code></pre>
+<pre><code>    make gen_sitemap</code></pre>
 <h3 id="gen-status.sh"><a href="gen-status.sh">gen-status.sh</a></h3>
 <p>Generate <code>status.json</code> according to the modification dates of <code>status.json</code>
 and <code>news.html</code>.</p>
 <p>Without argument, the <code>contest_status</code> is unchanged.</p>
 <p>Usage:</p>
-<pre><code>bin/gen-status.sh -v 1</code></pre>
+<pre><code>    bin/gen-status.sh -v 1</code></pre>
 <p>To force the <code>contest_status</code> to be closed:</p>
-<pre><code>bin/gen-status.sh -v 1 closed</code></pre>
+<pre><code>    bin/gen-status.sh -v 1 closed</code></pre>
 <p>To force the <code>contest_status</code> to be open:</p>
-<pre><code>bin/gen-status.sh -v 1 open</code></pre>
+<pre><code>    bin/gen-status.sh -v 1 open</code></pre>
 <p>To see other valid statuses:</p>
-<pre><code>bin/gen-status -h</code></pre>
+<pre><code>    bin/gen-status -h</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<pre><code>make gen_status</code></pre>
+<pre><code>    make gen_status</code></pre>
 <h3 id="gen-top-html.sh"><a href="gen-top-html.sh">gen-top-html.sh</a></h3>
 <p>Generate a number of top level HTML pages for the IOCCC web sites.</p>
 <p>Usage:</p>
-<pre><code>bin/gen-top-html.sh -v 1</code></pre>
+<pre><code>    bin/gen-top-html.sh -v 1</code></pre>
 <p>Examples of top level HTML pages built by this tool include:</p>
 <ul>
 <li><a href="../CODE_OF_CONDUCT.html">CODE_OF_CONDUCT.html</a></li>
@@ -217,19 +217,19 @@ and <code>news.html</code>.</p>
 <li><a href="../thanks-for-help.html">thanks-for-help.html</a></li>
 </ul>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<pre><code>make gen_top_html</code></pre>
+<pre><code>    make gen_top_html</code></pre>
 <h3 id="gen-year-index.sh"><a href="gen-year-index.sh">gen-year-index.sh</a></h3>
 <p>Generate an <code>index.html</code> page for an given IOCCC year.</p>
 <p>Usage:</p>
-<pre><code>bin/gen-year-index.sh -v 1 2020</code></pre>
+<pre><code>    bin/gen-year-index.sh -v 1 2020</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<pre><code>make gen_year_index</code></pre>
+<pre><code>    make gen_year_index</code></pre>
 <h3 id="gen-years.sh"><a href="gen-years.sh">gen-years.sh</a></h3>
 <p>Generate the top level <code>/years.html</code> page.</p>
 <p>Usage:</p>
-<pre><code>bin/gen-years.sh -v 1</code></pre>
+<pre><code>    bin/gen-years.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<pre><code>make gen_years</code></pre>
+<pre><code>    make gen_years</code></pre>
 <h3 id="md2html.sh"><a href="md2html.sh">md2html.sh</a></h3>
 <p>This is the primary tool that forms IOCCC generated HTML content from
 markdown files (permanent markdown files or temporarily generated
@@ -258,19 +258,19 @@ the extra time can add up.</p>
 <p>If only a few <code>index.hmtl</code> files need updating, then
 this command will only briefly pause while the
 slightly longer <a href="readme2index.sh">readme2index.sh</a> is run:</p>
-<pre><code>bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1</code></pre>
+<pre><code>    bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1</code></pre>
 <p><strong>NOTE</strong>: This command assumes that the relative
 modification times for <code>index.hmtl</code>, <code>.entry.json</code>,
 and <code>index.html</code> are correct. If in doubt, use:</p>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<pre><code>make quick_entry_index</code></pre>
+<pre><code>    make quick_entry_index</code></pre>
 <h3 id="readme2index.sh"><a href="readme2index.sh">readme2index.sh</a></h3>
 <p>Convert an entry README.md into entry directory index.html.</p>
-<pre><code>bin/all-run.sh -v 3 bin/readme2index.sh -v 1</code></pre>
+<pre><code>    bin/all-run.sh -v 3 bin/readme2index.sh -v 1</code></pre>
 <p>To build <code>index.html</code> files for all entries:</p>
-<pre><code>bin/all-run.sh -v 3 bin/readme2index.sh -v 1</code></pre>
+<pre><code>    bin/all-run.sh -v 3 bin/readme2index.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<pre><code>make entry_index</code></pre>
+<pre><code>    make entry_index</code></pre>
 <h3 id="status2html.sh"><a href="status2html.sh">status2html.sh</a></h3>
 <p>Convert <code>status.json</code> into HTML.</p>
 <p>This tool is a ‘before tool’ (-b tool) that is intended
@@ -285,11 +285,11 @@ We sort with lines starting with <code>!</code> fourth.</p>
 <h3 id="sort.gitignore.sh"><a href="sort.gitignore.sh">sort.gitignore.sh</a></h3>
 <p>Sort a .gitignore in a entry directory.</p>
 <p>Usage:</p>
-<pre><code>bin/sort.gitignore.sh -v 1 YYYY/dir</code></pre>
+<pre><code>    bin/sort.gitignore.sh -v 1 YYYY/dir</code></pre>
 <p>Suggested usage:</p>
-<pre><code>bin/all-run.sh bin/sort.gitignore.sh -v 1</code></pre>
+<pre><code>    bin/all-run.sh bin/sort.gitignore.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<pre><code>make sort_gitignore</code></pre>
+<pre><code>    make sort_gitignore</code></pre>
 <h3 id="subst.default.sh"><a href="subst.default.sh">subst.default.sh</a></h3>
 <p>Print default substitutions.</p>
 <h3 id="subst.entry-index.sh"><a href="subst.entry-index.sh">subst.entry-index.sh</a></h3>
@@ -317,22 +317,21 @@ We sort with lines starting with <code>!</code> fourth.</p>
 <h2 id="untar-entry.sh"><a href="untar-entry.sh">untar-entry.sh</a></h2>
 <p>Untar an entry’s a compressed tarball.</p>
 <p>Usage:</p>
-<pre><code>bin/untar-entry.sh -v 1 YYYY/dir</code></pre>
+<pre><code>    bin/untar-entry.sh -v 1 YYYY/dir</code></pre>
 <p>Suggested usage:</p>
-<pre><code>bin/all-run.sh -v 3 bin/untar-entry.sh -v 1</code></pre>
+<pre><code>    bin/all-run.sh -v 3 bin/untar-entry.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<pre><code>make untar_entry_tarball</code></pre>
+<pre><code>    make untar_entry_tarball</code></pre>
 <h2 id="untar-year.sh"><a href="untar-year.sh">untar-year.sh</a></h2>
 <p>Untar an IOCCC year’s compressed tarball.</p>
 <p>Usage:</p>
-<pre><code>bin/untar-year.sh -v 1 YYYY</code></pre>
+<pre><code>    bin/untar-year.sh -v 1 YYYY</code></pre>
 <p>Suggested usage:</p>
-<pre><code>bin/all-years.sh -v 3 bin/untar-year.sh -v 1</code></pre>
+<pre><code>    bin/all-years.sh -v 3 bin/untar-year.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
-<pre><code>make untar_year_tarball</code></pre>
-#
+<pre><code>    make untar_year_tarball</code></pre>
 <div id="how">
-How IOCCC HTML content is built
+<h1 id="how-ioccc-html-content-is-built">How IOCCC HTML content is built</h1>
 </div>
 <p>The <a href="md2html.sh">md2html.sh</a> tool is the primary tool that
 is used to form all IOCCC related HTML pages for the <a href="https://www.ioccc.org">official IOCCC web
@@ -347,22 +346,21 @@ tools in the <a href="index.html">bin directory</a> and exist only while the too
 <p>In addition to converting markdown to HTML, the canonical way that HTML content is
 built uses, by default, files from the <a href="../inc/index.html">inc directory</a>, of
 the file name form:</p>
-<pre><code>*.default.html</code></pre>
+<pre><code>    *.default.html</code></pre>
 <p>By using command line options of the form:</p>
-<pre><code>-H phase=name</code></pre>
+<pre><code>    -H phase=name</code></pre>
 <p>where <code>phase</code> is the name of an HTML phase,
 a non-default file may be used. For example:</p>
-<pre><code>-H navbar=up2index</code></pre>
+<pre><code>    -H navbar=up2index</code></pre>
 <p>will cause <a href="../inc/navbar.up2index.html">inc/navbar.up2index.html</a>
 instead of <a href="../inc/navbar.default.html">inc/navbar.default.html</a> to be
 used during the <em>navbar</em> HTML phase.</p>
 <p>If <code>name</code> is dot (i.e., <code>.</code>), then the given HTML phase is skipped.
 For example:</p>
-<pre><code>-H footer=.</code></pre>
+<pre><code>    -H footer=.</code></pre>
 <p>will cause no HTML content to be produced during the <code>footer</code> HTML phase.</p>
-##
 <div id="html">
-HTML phases
+<h2 id="html-phases">HTML phases</h2>
 </div>
 <p>The following HTML phase files are used to build HTML content:</p>
 <ol start="0" type="1">
@@ -387,16 +385,18 @@ HTML phases
 <li>inc/bottom.default.html</li>
 </ol>
 <p>Phases 33-39 are reserved for future use.</p>
-<p>In the above HTML phase numbers, except during HTML phase numbers 20-29, symbols
-of the form <code>%%TOKEN%%</code> are substituted.</p>
-<p>Any <code>%%TOKEN%%</code> printed by the ‘before tool’ (<code>-b tool</code>), the ‘pandoc wrapper
-tool’ (<code>-p tool</code>), and the ‘after tool’ (<code>-a tool</code>) are ignored (i.e., not
-substituted).</p>
+<p>In all of the above HTML phase numbers, symbols of the form <strong>%%TOKEN%%</strong> are substituted.</p>
+<p>Substitutions of and <strong>%%TOKEN%%</strong> are performed on included HTML content,
+content generated by the ‘before tool’ (<code>-b tool</code>),
+content generated by the ‘after tool’ (<code>-a tool</code>),
+as well as the markdown content given to the <code>pandoc wrapper tool</code> (<code>-p tool</code>).</p>
+<p>It is an error, unless <code>-S</code> is given, for any phase, except phases HTML
+20-29, to not substitute all <strong>%%TOKEN%%</strong>’s. For phases HTML 20-29, any
+<strong>%%TOKEN%%</strong> that is not substituted are passed thru without substitution.</p>
 <p>See the tool <a href="readme2index.sh">readme2index.sh</a> for an example of
 how HTML phases are implemented.</p>
-##
 <div id="getopt">
-<code>getopt</code> phase processing of the command line
+<h2 id="getopt-phase-processing-of-the-command-line">getopt phase processing of the command line</h2>
 </div>
 <p>The command options are evaluated in the following <code>getopt</code> phases:</p>
 <h3 id="getopt-phase-0"><code>getopt</code> phase 0</h3>
@@ -430,18 +430,18 @@ the same <code>token</code> <em>only</em>.</p>
 <p>An “output tool” may be used to add certain additional command line options to be processed.</p>
 <p>IMPORTANT: An “output tool” will print each command line option / argument on a separate line.
 So for example, if an “output tool” wishes to convey:</p>
-<pre><code>-s TITLE=&#39;IOCCC entry locations&#39; -H navbar=top-of-site</code></pre>
+<pre><code>    -s TITLE=&#39;IOCCC entry locations&#39; -H navbar=top-of-site</code></pre>
 <p>The “output tool” would output the following 4 lines:</p>
-<pre><code>-s
-TITLE=&#39;IOCCC entry locations&#39;
--H
-navbar=top-of-site</code></pre>
+<pre><code>    -s
+    TITLE=&#39;IOCCC entry locations&#39;
+    -H
+    navbar=top-of-site</code></pre>
 <p>The command line options printed by an “output tool” are processed
 after all command line options, and all options from a matching
 line from the <code>md2html.cfg</code> file, and before any filename arguments
 on the command line.</p>
 <p>For example:</p>
-<pre><code>command [command_options ..] [cfg_options ..] [output_tool_options ..] [--] [filename_arg ..]</code></pre>
+<pre><code>    command [command_options ..] [cfg_options ..] [output_tool_options ..] [--] [filename_arg ..]</code></pre>
 <p>Here the <code>command</code> first processes any command line options, then it processes
 <code>cfg_options</code> obtained from this file from a first match of a given <code>file_glob</code>,
 then it processes <code>output tool</code> (i.e., <code>-o tool</code>) options found in
@@ -486,7 +486,7 @@ on the <a href="https://www.ioccc.org">official IOCCC web site</a>.</p>
 on the <a href="https://ioccc-src.github.io/temp-test-ioccc/">experimental web site</a>.</p>
 <p>… and in particular files under <a href="../inc/index.html">inc</a> that are of the form
 (called default HTML files) …:</p>
-<pre><code>*.default.html</code></pre>
+<pre><code>    *.default.html</code></pre>
 <p>… contain default content used to form IOCCC HTML / IOCCC web pages.</p>
 <p>Instead of editing the default HTML files in order to fix a special web page,
 consider making a copy of the default file and modifying the <a href="md2html.cfg">md2html config
@@ -496,9 +496,8 @@ situation will not impact <strong>MOST</strong> of the HTML content.</p>
 <p>You may wonder why we need these files in the first place. You may wonder why
 we even need the tools in the <a href="index.html">bin</a> directory when there other
 solutions available to form web pages.</p>
-##
 <div id="static-only">
-Static web pages only
+<h2 id="static-web-pages-only">Static web pages only</h2>
 </div>
 <p>Here are some reasons why we are using these files and
 special tools to create HTML content / IOCCC web pages:</p>
@@ -513,9 +512,8 @@ pages</a>.</p>
 <h2 id="we-cannot-use-a-back-end-database">We cannot use a back-end database</h2>
 <p>We use <a href="#static-only">static web pages</a>, so use of a “back-end database” is not
 available to the IOCCC.</p>
-##
 <div id="why-github">
-We cannot use non-GitHub web servers
+<h2 id="we-cannot-use-non-github-web-servers">We cannot use non-GitHub web servers</h2>
 </div>
 <p>The <a href="https://pages.github.com">GitHub pages</a> have the distributed server capacity needed to handle
 the <strong>huge download volume</strong> or <a href="https://en.wikipedia.org/wiki/Slashdot_effect">Slashdot effect</a>
@@ -563,9 +561,8 @@ disabled.</p>
 <p>The IOCCC will <strong>NOT MANDATE USE OF JavaScript</strong> to view <a href="https://www.ioccc.org">official IOCCC web
 site</a>.</p>
 <p>For this reason, we cannot use JavaScript include HTML content.</p>
-#
 <div id="terms">
-IOCCC terms
+<h1 id="ioccc-terms">IOCCC terms</h1>
 </div>
 <p>The following IOCCC terms apply to tools, JSON files, and the directory structure of this repo.</p>
 <h2 id="author"><code>author</code></h2>
@@ -577,13 +574,13 @@ IOCCC entries have more than one author. In that case we might use the word
 <p>An <code>author_handle</code> is string that refers to a given author and is unique to the
 IOCCC. Each author has <strong>EXACTLY ONE</strong> <code>author_handle</code>.</p>
 <p>For each <code>author_handle</code>, there will be a JSON file located at:</p>
-<pre><code>author/author_handle.json</code></pre>
+<pre><code>    author/author_handle.json</code></pre>
 <p>where <code>author_handle</code> is the author’s <code>author_handle</code>.</p>
 <p>Because the <code>author_handle</code> is used to form a JSON filename, the string must be
 a POSIX safe string with the addition of <code>+</code> (for technical reasons beyond this
 document). In particular, the <code>author_handle</code> must be an ASCII
 string that matches this regexp:</p>
-<pre><code>^[0-9A-Za-z][0-9A-Za-z._+-]*$&quot;</code></pre>
+<pre><code>    ^[0-9A-Za-z][0-9A-Za-z._+-]*$&quot;</code></pre>
 <p>Default <code>author_handle</code>’s do not have multiple consecutive <code>_</code> (underscore)
 characters. Nevertheless, multiple consecutive <code>_</code> (underscore) characters are
 allowed. Contest submitters who wish to override the <code>author_handle</code> may do so.</p>
@@ -596,15 +593,15 @@ desire.</p>
 <code>author_handle</code> so that new winning entries can be associated with the same
 author.</p>
 <p>For an anonymous <code>author</code>, their handle is one of these forms:</p>
-<pre><code>Anonymous_year</code></pre>
+<pre><code>    Anonymous_year</code></pre>
 <p>or:</p>
-<pre><code>Anonymous_year.digits</code></pre>
+<pre><code>    Anonymous_year.digits</code></pre>
 <p>The latter form is in case there are more than one anonymous author in a given
 year.</p>
 <p>NOTE: even if the directory name is not <code>anonymous</code> the above rules apply as in
 in the case of <a href="../2005/anon/anon.c">2005/anon</a>.</p>
 <p>Anonymous <code>author_handle</code>’s match this regexp:</p>
-<pre><code>Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$</code></pre>
+<pre><code>    Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$</code></pre>
 <h2 id="entry"><code>entry</code></h2>
 <p>An IOCCC entry that won an award for a given IOCCC.</p>
 <p>An <code>entry</code> has one more more <code>author</code>s.</p>
@@ -621,22 +618,22 @@ may be limited to previous <code>entry</code>s that used them.</p>
 represent the year. Some special <code>year</code> strings are possible, such as <code>mock</code>.
 Non-numeric <code>year</code> strings are lower case.</p>
 <p>A <code>year</code> string matches this regexp:</p>
-<pre><code>[0-9a-z][0-9a-z][0-9a-z][0-9a-z]</code></pre>
+<pre><code>    [0-9a-z][0-9a-z][0-9a-z][0-9a-z]</code></pre>
 <p>The <code>year</code> directories reside directly below the top level directory.</p>
 <h2 id="year-1"><code>.year</code></h2>
 <p>Each <code>year</code> directory will have a file under it named:</p>
-<pre><code>.year</code></pre>
+<pre><code>    .year</code></pre>
 <p>The contents of the <code>.year</code> file is the year string of the directory. For
 instance, <a href="../2020/.year">2020/.year</a> has the string: <code>2020</code>.</p>
 <h2 id="dir"><code>dir</code></h2>
 <p>A <code>dir</code> is a POSIX safe string that holds an entry.</p>
 <p>A <code>dir</code> is a string that matches this regexp:</p>
-<pre><code>^[a-z][0-9a-z.-]*$</code></pre>
+<pre><code>    ^[a-z][0-9a-z.-]*$</code></pre>
 <p>Each <code>entry</code> is under its own individual directory. This directory
 is directly under a <code>year</code> directory.</p>
 <h3 id="entry_id"><code>entry_id</code></h3>
 <p>A string that identifies the winning entry. The string is of the form:</p>
-<pre><code>year_dir</code></pre>
+<pre><code>    year_dir</code></pre>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

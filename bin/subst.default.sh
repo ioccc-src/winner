@@ -92,7 +92,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.3 2024-04-13"
+export VERSION="1.3 2024-04-20"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -260,6 +260,16 @@ fi
 echo "-s"
 echo "HEADER_1=The International Obfuscated C Code Contest"
 
+# output REPO_URL substitution
+#
+echo "-s"
+echo "REPO_URL=$REPO_URL"
+
+# output SITE_URL substitution
+#
+echo "-s"
+echo "SITE_URL=$SITE_URL"
+
 # output DOCROOT_SLASH substitution
 #
 echo "-s"
@@ -270,6 +280,7 @@ export VALIDATOR_ENCODED_URL
 #
 echo "-s"
 echo "VALIDATOR_ENCODED_URL=$VALIDATOR_ENCODED_URL"
+
 
 # All Done!!! -- Jessica Noll, Age 2
 #
