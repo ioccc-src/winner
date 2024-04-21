@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3 2024-04-16"
+export VERSION="1.4 2024-04-21"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -458,6 +458,7 @@ fi
 {
     # process unique location_codes found in author_handle JSON files in dictionary order
     #
+    export PREV_LOCATION_CODE="."
     find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' -print0 |
 	  xargs -0 grep '"location_code".*:' |
 	  sed -e 's/^.*: "//' -e 's/",*$//' |
@@ -499,11 +500,25 @@ fi
 
 	# output markdown entry for this location
 	#
+	if [[ $PREV_LOCATION_CODE != '.' ]]; then
+	    echo '<hr style="width:10%;text-align:left;margin-left:0">'
+	fi
 	if [[ $LOCATION_NAME == "$LOCATION_COMMON_NAME" ]]; then
 	    echo "* <div id=$LOCATION_CODE>**$LOCATION_CODE** - _${LOCATION_NAME}_</div>"
 	else
 	    echo "* <div id=$LOCATION_CODE>**$LOCATION_CODE** - _${LOCATION_NAME}_ (_${LOCATION_COMMON_NAME}_)</div>"
 	fi
+
+	# ask for help with location code ZZ (Unknown location)
+	#
+	if [[ $LOCATION_CODE == 'ZZ' ]]; then
+	    echo
+	    echo '<p>**PLEASE HELP** us identify proper locations for these authors!</p>'
+	    echo '<p>See [FAQ 5.5](faq.html#fix_author) for how you can help!</p>'
+	fi
+
+	# output author count for this location
+	#
 	echo
 	echo "  Author count: **$AUTHOR_COUNT**"
 	echo
@@ -540,7 +555,10 @@ fi
 	done
 	echo '<p></p>'
 	echo
+	PREV_LOCATION_CODE="$LOCATION_CODE"
     done
+    echo '<hr style="width:10%;text-align:left;margin-left:0">'
+    echo '<h4>Jump to: <a href="#">top</a></h4>'
 
 } | if [[ -z $NOOP ]]; then
     cat >> "$TMP_LOC_MD"

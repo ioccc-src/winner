@@ -2552,6 +2552,16 @@ and ask for help.  See [FAQ 5.3](#fix_an_entry) for information on opening up an
 </div>
 </div>
 
+#### PLEASE HELP us identify proper locations for IOCCC authors
+
+If you know the location of an author listed under:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**[ZZ - Unknown location](location.html#ZZ)**
+
+or if you find IOCCC author location that is incorrect,
+then **please [submit a pull request](faq.html#pull_request)**,
+or at least [inform the IOCCC judges](contact.html).
+
 Authors of IOCCC winning entries are kept in JSON files of the form:
 
 ```
@@ -2566,12 +2576,13 @@ about authors of IOCCC entries.  See [FAQ 6.6](#author_json) for information
 about the contents of these JSON file and how they are used.
 
 You may update IOCCC author information in a `author_handle.json` file
-by opening a [GitHub pull request](https://github.com/ioccc-src/winner/pulls)
+by [submitting  a pull request](faq.html#pull_request)
 against the master [branch](https://github.com/ioccc-src/winner/branches)
 of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner).
 
-Please see [FAQ 5.2 How may I submit a fix to an IOCCC
-entry](#fix_an_entry).  See also the [FAQ 6.10 How does someone
+Please see [FAQ 5.2 How may I submit a fix to an IOCCC entry](#fix_an_entry).
+
+See also the [FAQ 6.10 How does someone
 make a change to a file and submit that change as a GitHub pull
 request](#ull_request) for more information about pull requests.
 
