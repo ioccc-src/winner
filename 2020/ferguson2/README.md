@@ -885,7 +885,7 @@ programmers. I'm especially proud to win besides Dave Burton and Yusuke Endoh
 but Don Yang and Edward Giles too.
 
 But there are some others who I don't remember like [Ilya
-Kurdyukov](../../authors.html#https://en.wikipedia.org/wiki/Signals_intelligence#World_War_II)
+Kurdyukov](../../authors.html#Ilya_Kurdyukov)
 (who's offered a lot of interesting thoughts on [Snake](../ferguson1/prog.c) and
 who plans to have his own version after the entries are published), [Nathan
 Otterness](../../authors.html#Nathan_Otterness), [Nicholas
