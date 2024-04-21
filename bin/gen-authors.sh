@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.8.1 2024-04-16"
+export VERSION="1.9 2024-04-21"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -819,6 +819,7 @@ EOF
 
     # process each line in the temporary sort word list file
     #
+    export PREV_FILENAME="."
     while read -r sort_word filename; do
 
 	# case: we have a "letter ." line
@@ -828,9 +829,15 @@ EOF
 	    # output the letter header
 	    #
 	    l="$sort_word"
-	    echo "<div id="$l"><!-- $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l -->"
+	    echo "<!-- $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  -->"
+	    if [[ $PREV_FILENAME != '.' ]]; then
+		echo '<hr style="width:10%;text-align:left;margin-left:0">'
+	    fi
+	    echo "<div id=\"$l\">"
 	    echo "## ${IS_FOR[$l]}"
-	    echo "<!-- $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l --></div>"
+    	    echo '<hr style="width:10%;text-align:left;margin-left:0">'
+	    echo "<!-- $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  -->"
+	    echo "</div>"
 	    echo
 
 	# case: we have a "sort_word file" line
@@ -902,7 +909,7 @@ EOF
 	    fi
 	    echo "<p></p>"
 
-	    # output YYYY/dir set made bu this author
+	    # output YYYY/dir set made by this author
 	    #
 	    output_entry_ids "$filename" | while read -r ENTRY_ID; do
 
@@ -962,7 +969,10 @@ EOF
 	    done
 	    echo
 	fi
+	PREV_FILENAME="$filename"
     done < "$TMP_SORT_WORD"
+    echo '<hr style="width:10%;text-align:left;margin-left:0">'
+    echo '<h4>Jump to: <a href="#">top</a></h4>'
 } | if [[ -z $NOOP ]]; then
     cat >> "$TMP_AUTHORS_MD"
 else
