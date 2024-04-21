@@ -88,7 +88,7 @@ TOP_MD_SET+=("faq")
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4.1 2024-04-16"
+export VERSION="1.4.2 2024-04-21"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -124,6 +124,7 @@ TOP_MD_SET+=("inc/README")
 TOP_MD_SET+=("index")
 TOP_MD_SET+=("judges")
 TOP_MD_SET+=("license")
+TOP_MD_SET+=("markdown")
 TOP_MD_SET+=("news")
 TOP_MD_SET+=("next/README")
 TOP_MD_SET+=("next/guidelines")

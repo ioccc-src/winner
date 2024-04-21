@@ -8,6 +8,7 @@
 - [0.3  - May I use a different source or compiled filename than prog.c or prog?](#faq0_3)
 - [0.4  - What platform should I assume for my entry?](#faq0_4)
 - [0.5  - How may I comment or make a suggestion on IOCCC rules, guidelines and tools?](#faq0_5)
+- [0.6  - What are the IOCCC requirements for using markdown?](#faq0_6)
 
 
 ## Section  1 - [History of the IOCCC](#faq1)
@@ -406,6 +407,27 @@ discussion](https://github.com/ioccc-src/mkiocccentry/discussions/new/choose).
 As a very last resort and/or if you feel the need to engage in a private
 discussion with the [IOCCC judges](judges.html), then see
 [How to contact the IOCCC](contact.html).
+
+
+<div id="faq0_6">
+<div id="markdown">
+### FAQ 0.6: - What are the IOCCC requirements for using markdown?
+</div>
+</div>
+
+The IOCCC makes extensive use of [markdown](https://daringfireball.net/projects/markdown/).
+For example, we [submitting to the IOCCC](faq.html#submit), we have people
+to submit remarks about entry in markdown format.  Every
+[winning IOCCC entry](years.html) uses a `README.md` markdown file
+as the basis for forming the `index.html` web page for that entry.
+All generated HTML pages on the [Official IOCCC web site](https://www.ioccc.org/index.html)
+start with some markdown content.
+
+**IMPORTANT**: Please read the [IOCCC markdown best practices](markdown.html) guide
+as it lists things you **should not use** in markdown files.
+
+See the [markdown syntax](https://www.markdownguide.org/basic-syntax) guide.
+See also [CommonMark Spec](https://spec.commonmark.org/current/).
 
 
 <div id="faq1">
