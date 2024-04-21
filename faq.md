@@ -83,6 +83,7 @@ other inconsistencies with the original entry?](#faq4_3)
 - [6.9 -  What is the current meaning of the IOCCC terms Author, Entry, and Submission?](#faq6_9)
 - [6.10 - How does someone make a change to a file and submit that change as a GitHub pull request?](#faq6_10)
 - [6.11 - Am I allowed to use IOCCC content?](#faq6_11)
+- [6.12 - What is Mastodon and why does IOCCC use it?](#faq6_12)
 
 
 # The IOCCC FAQ
@@ -3198,6 +3199,9 @@ For example:
 
 NOTE: The _JSON null_ is **NOT** enclosed in quotes!
 
+See "[FAQ 6.12: What is Mastodon and why does IOCCC use it?](faq.html#try_mastodon)" for more
+information on Mastodon.
+
 
 ##### github
 
@@ -3685,6 +3689,43 @@ IOCCC content.  We use this to help ensure that we can all
 enjoy hat those working on the IOCCC have proper Attribution
 including, of course, the IOCCC winners themselves!  It is designed
 to help ensure that everyone may enjoy the IOCCC.
+
+
+<div id="faq6_12">
+<div id="try_mastodon">
+### FAQ 6.12: What is Mastodon and why does IOCCC use it?
+</div>
+</div>
+
+The [IOCCC uses Mastodon](https://fosstodon.org/@ioccc) for news updates,
+announcements, and for various other social media purposes.
+
+**Please follow the [IOCCC on Mastodon](https://fosstodon.org/@ioccc)**.
+
+```
+    The IOCCC no longer uses twitter, or whatever that someone who appears to have poor impulse control
+    (allegedly) calls their platform these days.
+```
+
+The IOCCC prefers to reside in the [fediverse](https://fediverse.info).
+
+**For help with Mastodon**:
+
+There is [help with Mastodon](https://mastodon.help) available for
+those who might wish to [get started with Mastodon](https://fosstodon.org/deck/getting-started).
+
+While there are many fine Mastodon server instances out there, the [IOCCC judges](../judges.html)
+use [fosstodon.org](https://fosstodon.org/about) where lots of fun folk hang out,
+and topics like science, technology, [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software)
+have a good home.  The [fosstodon.org](https://fosstodon.org/@fosstodon) folk made the IOCCC feel welcome.
+
+While using Mastodon is free, the [IOCCC judges](../judges.html) are pleased to
+[support the Fosstodon Hub](https://hub.fosstodon.org/support/).
+
+
+<hr style="width:10%;text-align:left;margin-left:0">
+
+Jump to: [top](#)
 
 
 <!--

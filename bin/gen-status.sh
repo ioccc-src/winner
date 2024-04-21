@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3 2024-04-14"
+export VERSION="1.4 2024-04-21"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -993,7 +993,7 @@ if [[ -z $NOOP ]]; then
         exit 17
     fi
 
-    # check if temporary status.json file is different from the actual status.json file
+    # check if temporary status.json file if different from the actual status.json file
     #
     if cmp -s "$STATUS_JSON" "$TMP_STATUS_JSON"; then
 
@@ -1003,7 +1003,7 @@ if [[ -z $NOOP ]]; then
 	    echo "$0: debug[3]: no change to status.json" 1>&2
 	fi
 
-    # case: temporary status.json file is different from the actual status.json
+    # case: temporary status.json file if different from the actual status.json
     #
     else
 
@@ -1111,9 +1111,9 @@ if [[ -z $NOOP ]]; then
 	exit 26
     fi
 
-    # update rules.md is different
+    # update rules.md if different or if rules.html is missing
     #
-    if cmp -s "$TMP_RULES_MD" "$RULES_MD"; then
+    if [[ -s "$RULES_HTML" ]] && cmp -s "$TMP_RULES_MD" "$RULES_MD"; then
 
 	# case: rules.md did not change
 	#
@@ -1189,9 +1189,9 @@ if [[ -z $NOOP ]]; then
 	exit 30
     fi
 
-    # update guidelines.md is different
+    # update guidelines.md if different or if guidelines.html is missing
     #
-    if cmp -s "$TMP_GUIDELINES_MD" "$GUIDELINES_MD"; then
+    if [[ -s "$GUIDELINES_HTML" ]] && cmp -s "$TMP_GUIDELINES_MD" "$GUIDELINES_MD"; then
 
 	# case: guidelines.md did not change
 	#

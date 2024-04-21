@@ -84,11 +84,10 @@ shopt -u dotglob	# disable matching files starting with .
 shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
-TOP_MD_SET+=("faq")
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4.2 2024-04-21"
+export VERSION="1.4.3 2024-04-21"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -127,8 +126,6 @@ TOP_MD_SET+=("license")
 TOP_MD_SET+=("markdown")
 TOP_MD_SET+=("news")
 TOP_MD_SET+=("next/README")
-TOP_MD_SET+=("next/guidelines")
-TOP_MD_SET+=("next/rules")
 TOP_MD_SET+=("thanks-for-help")
 #
 export NOOP=

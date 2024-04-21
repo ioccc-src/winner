@@ -268,8 +268,8 @@ help:
 	@echo "make entry_index	 - force the build of ALL winner index.html files"
 	@echo "make gen_other_html	 - build entry HTML files from markdown other than README.md"
 	@echo "make gen_year_index	 - generate year level index.html files using the"
-	@echo "make gen_status		 - generate status.json and status.html"
 	@echo "make gen_top_html	 - generate a number of the top level HTML files from markdown"
+	@echo "make gen_status		 - generate status.json and status.html"
 	@echo "make quick_entry_index	 - build winner index.html files that might be out of date"
 	@echo "make quick_www		 - generate html files more quickly, checking timestamps"
 	@echo "make www		 - build html pages for web site"
@@ -452,8 +452,8 @@ quick_www:
 	${MAKE} gen_years
 	${MAKE} gen_year_index
 	${MAKE} gen_other_html
-	${MAKE} gen_status
 	${MAKE} gen_top_html
+	${MAKE} gen_status
 	${MAKE} quick_entry_index
 	${MAKE} gen_sitemap
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
@@ -474,8 +474,8 @@ www:
 	${MAKE} gen_years
 	${MAKE} gen_year_index
 	${MAKE} gen_other_html
-	${MAKE} gen_status
 	${MAKE} gen_top_html
+	${MAKE} gen_status
 	${MAKE} entry_index
 	${MAKE} gen_sitemap
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='

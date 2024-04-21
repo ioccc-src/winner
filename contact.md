@@ -36,26 +36,17 @@ and suggestion in the relevant places.
 See the above FAQ entries for more details.
 
 
-<div id="mastodon">
-# Try mastodon
+<div id="try_mastodon">
+# Try Mastodon
 </div>
 
-You may wish to follow us [IOCCC on Mastodon](https://fosstodon.org/@ioccc)
-as we use that platform to announce things such as the opening of a new IOCCC
-as well as winning entries of the IOCCC.
+## Please follow the [IOCCC on Mastodon](https://fosstodon.org/@ioccc)
 
-We no longer tweet (or whatever someone with poor impulse control calls
-posting messages on their platform), preferring to reside in the [fediverse](https://fediverse.info) instead.
+We use Mastodon to make minor announcements, in addition announcing
+major events such as the opening of a new IOCCC, or who won.
 
-There is [help with Mastodon](https://mastodon.help) available for
-those who might wish to [get started with Mastodon](https://fosstodon.org/deck/getting-started).
-
-While there are many fine Mastodon server instances out there, the [IOCCC judges](../judges.html)
-use [fosstodon.org](https://fosstodon.org/about) where lots of fun folk hang out,
-and topics like science, technology, [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software)
-have a good home.  The [fosstodon.oeg](https://fosstodon.org/@fosstodon) folk made the IOCCC feel welcome.
-And while using Mastodon is free, the [IOCCC judges](../judges.html) are pleased to
-[support the Fosstodon Hub](https://hub.fosstodon.org/support/).
+See "[FAQ 6.12: What is Mastodon and why does IOCCC use it?](faq.html#try_mastodon)" for more
+information on Mastodon.
 
 
 # If you really need to send Email the IOCCC judges
