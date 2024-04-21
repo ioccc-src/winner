@@ -196,8 +196,8 @@ make your own decisions. Up there, it's all _up yours_.
 
 This code has some jumping too. I used some `goto`s instead of `longjmp(3)`. Some
 Finnish [ski jumping](https://en.wikipedia.org/wiki/Ski_jumping) sites are used
-as labels, however, there is `lahti` instead of <tt style="font-family: Monaco,
-Courier New, monospace;font-size: 12px;">salpausselk&auml;</tt>.
+as labels, however, there is `lahti` instead of
+<span style="font-family: monospace;">salpausselk&auml;</span>.
 
 
 ### SHA-3-512 Compatibility chart ###
