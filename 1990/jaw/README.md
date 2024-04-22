@@ -64,17 +64,14 @@ directory it is run from.
 
 #### Minimal, Universal File Bundling (or, Functional Obfuscation in a Self-Decoding Unix Shell Archive)
 
-James A. Woods<br>
-Universities Space Research Association<br>
-NASA Ames Research Center
-
-
 ```
     "Use an algorithm, go to jail."
 
-    -- anon., circa 1988, pre-[Morris worm](https://en.wikipedia.org/wiki/Morris_worm) era
+    -- anon., circa 1988
 ```
 
+**HISTORICAL NOTE**: This entry was submitted just before the
+[Morris worm](https://en.wikipedia.org/wiki/Morris_worm) era.
 
 Myriad formats have been proposed for network-mailable data. A major difficulty
 undermining the popularity of most file/message bundlers is that the sender
