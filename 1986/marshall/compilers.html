@@ -135,13 +135,13 @@
 
 <!-- BEFORE: 1st line of markdown file: 1986/marshall/compilers.md -->
 <h1 id="conflicting-compilers-and-optimisers-that-broke-this-entry-in-2023">Conflicting compilers and optimisers that broke this entry in 2023</h1>
-<p>As briefly noted in the <a href="README.md">README.md</a> gcc and clang caused different
+<p>As briefly noted in the <a href="index.html">index.html</a> gcc and clang caused different
 problems with this entry depending on the optimiser being enabled or not, where
 if the optimiser was enabled it would work with one compiler and not the other.
 But if you then disabled the optimiser the opposite problem would occur: the
 working compiler would no longer work and the non-functional one would start to
 work! And then there’s the problem of linux versus macOS causing problems.</p>
-<p>The <a href="marshall.alt.c">alternate code</a> (source code) demonstrates the problem so
+<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/marshall/marshall.alt.c">alternate code</a> (source code) demonstrates the problem so
 you can see if your compiler has the problem as described below.</p>
 <p>In some versions of gcc and clang (this was first discovered in fedora linux 38)
 if the compiler was enabled one compiler would generate code that segfaulted but
@@ -154,7 +154,7 @@ segfault.</p>
 <p>It was not only one compiler that dumped core. Both dumped core with other
 behaviour, depending on what changes in code were made and the optimiser being
 on or off. Clang in macOS also dumped core!</p>
-<p>The <a href="README.md#alternate-code">alternate code</a> (README.md) has the original fix
+<p>The <a href="index.html">index.html</a> has the original fix
 for clang which works with some compilers depending on the optimiser. When we
 refer to the code below we refer to the alternate code.</p>
 <h2 id="the-conflicting-compiler-problems">The conflicting compiler problems:</h2>

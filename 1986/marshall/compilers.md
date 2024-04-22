@@ -1,13 +1,13 @@
 # Conflicting compilers and optimisers that broke this entry in 2023
 
-As briefly noted in the [README.md](README.md) gcc and clang caused different
+As briefly noted in the [index.html](index.html) gcc and clang caused different
 problems with this entry depending on the optimiser being enabled or not, where
 if the optimiser was enabled it would work with one compiler and not the other.
 But if you then disabled the optimiser the opposite problem would occur: the
 working compiler would no longer work and the non-functional one would start to
 work! And then there's the problem of linux versus macOS causing problems.
 
-The [alternate code](marshall.alt.c) (source code) demonstrates the problem so
+The [alternate code](%%REPO_URL%%/1986/marshall/marshall.alt.c) (source code) demonstrates the problem so
 you can see if your compiler has the problem as described below.
 
 In some versions of gcc and clang (this was first discovered in fedora linux 38)
@@ -24,7 +24,7 @@ It was not only one compiler that dumped core. Both dumped core with other
 behaviour, depending on what changes in code were made and the optimiser being
 on or off. Clang in macOS also dumped core!
 
-The [alternate code](README.md#alternate-code) (README.md) has the original fix
+The [index.html](index.html) has the original fix
 for clang which works with some compilers depending on the optimiser. When we
 refer to the code below we refer to the alternate code.
 
