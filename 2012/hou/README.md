@@ -78,7 +78,7 @@ The following regular expression operators are supported:
 ```
 
 For example, one can use the following expression to match a certain declaration
-statement in [hou.c](hou.c):
+statement in [hou.c](%%REPO_URL%%/2012/hou/hou.c):
 
 ``` <!---re-->
 	"char"[ *]*[a-zA-Z_][0-9a-zA-Z_]*[ ]*((=[0-9a-zA-Z_ ]+)|(\[[0-9a-zA-Z_ ]*\]))?[ ]*(,[ *]*[a-zA-Z_][0-9a-zA-Z_]*[ ]*((=[0-9a-zA-Z_ ]+)|(\[[0-9a-zA-Z_ ]*\]))?[ ]*)*;

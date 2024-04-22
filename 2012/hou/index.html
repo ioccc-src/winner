@@ -194,7 +194,7 @@ in the regular expression by escaping it with <code>[]</code> or <code>""</code>
 <p>The following regular expression operators are supported:</p>
 <pre><code>    () [] * + ? | &quot;&quot;</code></pre>
 <p>For example, one can use the following expression to match a certain declaration
-statement in <a href="hou.c">hou.c</a>:</p>
+statement in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/hou/hou.c">hou.c</a>:</p>
 <pre><code>        &quot;char&quot;[ *]*[a-zA-Z_][0-9a-zA-Z_]*[ ]*((=[0-9a-zA-Z_ ]+)|(\[[0-9a-zA-Z_ ]*\]))?[ ]*(,[ *]*[a-zA-Z_][0-9a-zA-Z_]*[ ]*((=[0-9a-zA-Z_ ]+)|(\[[0-9a-zA-Z_ ]*\]))?[ ]*)*;</code></pre>
 <p>The regex engine is also algorithmically efficient. To illustrate the point,
 <a href="ansi.txt">ansi.txt</a> contains a pathological expression <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> that guarantees a
