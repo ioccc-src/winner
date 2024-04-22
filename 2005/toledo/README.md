@@ -22,8 +22,8 @@
 
 ## Alternate code:
 
-Two alternate versions of this entry, [toledo2.c](toledo2.c) and
-[toledo3.c](toledo3.c) are provided.
+Two alternate versions of this entry, [toledo2.c](%%REPO_URL%%/2005/toledo/toledo2.c) and
+[toledo3.c](%%REPO_URL%%/2005/toledo/toledo3.c) are provided.
 
 
 ### Alternate build:
