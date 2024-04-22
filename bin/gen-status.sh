@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4 2024-04-21"
+export VERSION="1.5 2024-04-22"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -1148,14 +1148,17 @@ if [[ -z $NOOP ]]; then
 	# use the md2html.sh tool to form the rules.html file, unless -n
 	#
 	if [[ $V_FLAG -ge 1 ]]; then
-	    echo "$0: debug[1]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]} --" \
+	    echo "$0: debug[1]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]}" \
+		 "-U $SITE_URL/$RULES_HTML --" \
 		 "next/rules.md $RULES_HTML" 1>&2
 	fi
-	"$MD2HTML_SH" "${TOOL_OPTION[@]}" -- \
+	"$MD2HTML_SH" "${TOOL_OPTION[@]}" \
+	  -U "$SITE_URL/$RULES_HTML" -- \
 	  next/rules.md "$RULES_HTML"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: md2html.sh: $MD2HTML_SH ${TOOL_OPTION[*]} --" \
+	    echo "$0: ERROR: md2html.sh: $MD2HTML_SH ${TOOL_OPTION[*]}" \
+		 "-U $SITE_URL/$RULES_HTML --" \
 		 "next/rules.md $RULES_HTML" \
 		 "failed, error: $status" 1>&2
 	    exit 28
@@ -1226,14 +1229,17 @@ if [[ -z $NOOP ]]; then
 	# use the md2html.sh tool to form the guidelines.html file, unless -n
 	#
 	if [[ $V_FLAG -ge 1 ]]; then
-	    echo "$0: debug[1]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]} --" \
+	    echo "$0: debug[1]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]}" \
+		 "-U $SITE_URL/$GUIDELINES_HTML --" \
 		 "next/guidelines.md $GUIDELINES_HTML" 1>&2
 	fi
-	"$MD2HTML_SH" "${TOOL_OPTION[@]}" -- \
+	"$MD2HTML_SH" "${TOOL_OPTION[@]}" \
+	  -U "$SITE_URL/$GUIDELINES_HTML" -- \
 	  next/guidelines.md "$GUIDELINES_HTML"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: md2html.sh: $MD2HTML_SH ${TOOL_OPTION[*]} --" \
+	    echo "$0: ERROR: md2html.sh: $MD2HTML_SH ${TOOL_OPTION[*]}" \
+		 "-U $SITE_URL/$GUIDELINES_HTML --" \
 		 "next/guidelines.md $GUIDELINES_HTML" \
 		 "failed, error: $status" 1>&2
 	    exit 32
