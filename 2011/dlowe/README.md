@@ -40,7 +40,7 @@ Try these pre-trained networks:
     ./try.sh
 ```
 
-NOTE: The `dlowe-aux-data/` directory, which [try.sh](try.sh) refers to, was
+NOTE: The `dlowe-aux-data/` directory, which [try.sh](%%REPO_URL%%/2011/dlowe/try.sh) refers to, was
 created by:
 
 
@@ -61,7 +61,7 @@ You can create your own trained networks.  For example, we trained a network
 on the C code of entries that were supplied to the 20Th IOCCC.
 
 The `ioccc-winlose-trained.net` was trained using the
-[earlystop.pl](earlystop.pl) tool:
+[earlystop.pl](%%REPO_URL%%/2011/dlowe/earlystop.pl) tool:
 
 ``` <!---sh-->
     rm -f ioccc-winlose-trained.net
@@ -71,11 +71,11 @@ The `ioccc-winlose-trained.net` was trained using the
 where:
 
 - `ioccc_won_training/`
-    1/2 of C code of the 20th IOCCC entries (except for [dlowe.c](dlowe.c) from 2011)
+    1/2 of C code of the 20th IOCCC entries (except for [dlowe.c](%%REPO_URL%%/2011/dlowe/dlowe.c) from 2011)
     plus 1/2 of the C code winning entries from prior IOCCC contests
 
 - `ioccc_won_test/`
-    1/2 of C code of the 20th IOCCC entries (except for [dlowe.c](dlowe.c) from 2011)
+    1/2 of C code of the 20th IOCCC entries (except for [dlowe.c](%%REPO_URL%%/2011/dlowe/dlowe.c) from 2011)
     plus 1/2 of the C code winning entries from prior IOCCC contests
 
 - `ioccc_lost_training/`
@@ -105,10 +105,10 @@ test is interesting:
     ./dlowe dlowe.c < dlowe-aux-data/ioccc-winlose-trained.net
 ```
 
-NOTE: this is done in [try.sh](try.sh).
+NOTE: this is done in [try.sh](%%REPO_URL%%/2011/dlowe/try.sh).
 
 
-The match of [dlowe.c](dlowe.c) to the lose/win trailed network was:
+The match of [dlowe.c](%%REPO_URL%%/2011/dlowe/dlowe.c) to the lose/win trailed network was:
 
 ```
     dlowe.c 0.125108
@@ -144,10 +144,10 @@ We created the [png-trained.net](dlowe-aux-data/png-trained.net) as follows:
 ```
 
 - [dlowe-aux-data/png-0/](dlowe-aux-data/png-0/)
-	    Non-png (gif) images
+    Non-png (gif) images
 
 - [dlowe-aux-data/png-1/](dlowe-aux-data/png-1/)
-	    png (non-gif) images
+    png (non-gif) images
 
 We created the [xor-trained.net](dlowe-aux-data/xor-trained.net) as follows:
 
@@ -156,10 +156,10 @@ We created the [xor-trained.net](dlowe-aux-data/xor-trained.net) as follows:
 ```
 
 - [dlowe-aux-data/xor-0](dlowe-aux-data/xor-0/)
-	    Data that XORs to 0
+    Data that XORs to 0
 
 - [dlowe-aux-data/xor-1/](dlowe-aux-data/xor-1/)
-	    Data that XORs to 1
+    Data that XORs to 1
 
 **NOTE**: The directory args **must end in a** `/` for them to work.
 
@@ -291,7 +291,7 @@ to within a tolerance of `<0.01`.
 ### Limitations
 
 The program can't tell you anything meaningful about files with less than two
-bytes in them (I'm looking at you, [smr.c](../../1994/smr/smr.c)!)
+bytes in them (I'm looking at you, [smr.c](%%REPO_URL%%/1994/smr/smr.c)!)
 
 You must include the trailing directory separator on training directories
 (this allows the program to be portable without wasting precious bytes on
