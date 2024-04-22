@@ -32,7 +32,7 @@ Mode may be a value from 0 to 12.
 ## Try:
 
 ``` <!---sh-->
-    ./try.color.sh			# for colour displays
+    ./try.color.sh		# for colour displays
     ./try.bw.sh			# for Black & White displays
 ```
 
@@ -62,8 +62,8 @@ where `altmode` `1` - `4` correspond to mode `0` - `3` in the original entry and
 ### Alternate try:
 
 ``` <!---sh-->
-    ./try.alt.color.sh			# for colour displays
-    ./try.alt.bw.sh			# for Black & White displays
+    ./try.alt.color.sh		# for colour displays
+    ./try.alt.bw.sh		# for Black & White displays
 ```
 
 
