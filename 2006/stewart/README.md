@@ -66,8 +66,7 @@ where:
 
 ```
     m   = The size of the picture (picture will be m X m in size).
-    n   = The number of iterations to run (More will make for a
-	 clearer picture).
+    n   = The number of iterations to run (More will make for a clearer picture).
     ifs = The file to use as input.
 ```
 
