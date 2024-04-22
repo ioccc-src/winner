@@ -43,7 +43,7 @@ The script will check for SoX first and next `padsp` from `PulseAudio` and
 finally if neither are found if you have `ruby(1)` installed it'll use the
 included ruby script to convert it to a WAV file for you to play.
 
-If no args are passed to the script it will play [twinkle.abc](twinkle.abc) and
+If no args are passed to the script it will play [twinkle.abc](%%REPO_URL%%/2013/endoh3/twinkle.abc) and
 the string `ABC`. Otherwise while there's a remaining arg if it's a file it will
 run the program on the file. If it's not a file it'll run it as a string.
 

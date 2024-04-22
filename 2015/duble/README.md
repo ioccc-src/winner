@@ -29,7 +29,7 @@ ctrl-c/sending intr.
 ## Alternate code:
 
 This alternate code, provided by the author, is discussed in more detail by the
-author in the '[prog.c](prog.c) vs [prog.alt.c](prog.alt.c)' section of their remarks.
+author in the '[prog.c](%%REPO_URL%%/ 2015/duble/prog.c) vs [prog.alt.c](%%REPO_URL%%/2015/duble/prog.alt.c)' section of their remarks.
 
 
 ### Alternate build:
@@ -67,7 +67,7 @@ blasphemous. When I was fighting to make this program work, I started
 wondering if it was not the reason for its very erratic behaviour.
 
 
-### [prog.c](prog.c) vs [prog.alt.c](prog.alt.c)
+### [prog.c](%%REPO_URL%%/2015/duble/prog.c) vs [prog.alt.c](%%REPO_URL%%/2015/duble/prog.alt.c)
 
 The file [prog.alt.c](prog.alt.c) is the one I submitted.
 

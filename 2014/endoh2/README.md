@@ -42,7 +42,7 @@ Enjoy DNA programming!
   <http://search.cpan.org/~xern/Acme-DoubleHelix-0.01/>
 
 * The synthesized helix just includes the original program at the head.
-  Do you see how [prog.c](prog.c) determines whether it was invoked as a
+  Do you see how [prog.c](%%REPO_URL%%/2014/endoh2/prog.c) determines whether it was invoked as a
   standalone program or included as a header file? Note that it does not use any
   gcc extension such as `__INCLUDE_LEVEL__`.
 

@@ -44,7 +44,7 @@ Finally, if you wish to read the man page:
 
 ## Alternate code:
 
-An alternate version of this entry, [prog.alt.c](prog.alt.c), is provided.
+An alternate version of this entry, [prog.alt.c](%%REPO_URL%%/2015/burton/prog.alt.c), is provided.
 This alternate code is discussed in the "prog.c vs prog.alt.c" section of the
 author's remarks below.
 

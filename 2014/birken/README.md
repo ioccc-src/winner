@@ -188,7 +188,7 @@ generator by accessing its prefix code: 16309).
 
 As obligated by a program that employs 23rd century cloaking technology, when
 the source is fed as input to [IOCCC size tool version
-2014-09-23-v19](../iocccsize.c), and the `-i` command line option is used, the
+2014-09-23-v19](%%REPO_URL%%/2014/iocccsize.c), and the `-i` command line option is used, the
 value printed is 0.
 
 

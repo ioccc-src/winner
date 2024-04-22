@@ -63,8 +63,8 @@ Or should we teach our youth to understand the intricacies of this code?
 Ying Tong Iddle I Po!  We suggest you read the source for yourself, which
 might be easier than the academic papers it was inspired by.
 
-NOTE: Unlike the original entry source, [prog.alt.c](prog.alt.c),
-[prog.c](prog.c) uses a
+NOTE: Unlike the original entry source, [prog.alt.c](%%REPO_URL%%/2015/howe/prog.alt.c),
+[prog.c](%%REPO_URL%%/2015/howe/prog.c) uses a
 64 bit FNV hash and fixes a function call warning.
 
 
@@ -95,7 +95,7 @@ The `-d` option simply writes the edit distance between `file1` and `file2`.
 The FNV1a hash is a little slow compared to the trivial hash [GNU
 diff](https://www.gnu.org/software/diffutils/) uses. I downloaded a plain text
 copy of "War And Peace" from [Project Gutenberg](https://www.gutenberg.org),
-used [makeholes.c](makeholes.c) to make 1000 random changes, then profiled and
+used [makeholes.c](%%REPO_URL%%/2015/howe/makeholes.c) to make 1000 random changes, then profiled and
 timed the program verses GNU `diff(1)`.  The bottleneck appears to be in the
 file I/O and line hashing with an average +0.05s slower.  Using a huge file like
 "War And Peace" for testing offsets the `diff(1)` optimised file I/O.
@@ -107,12 +107,12 @@ a region of edits are highly unlikely.
 
 ### Support Files
 
-* [prog-test.sh](prog-test.sh)
+* [prog-test.sh](%%REPO_URL%%/2015/howe/prog-test.sh)
     Basic test program verifies known test edit distances and `patch(1)` support.
 
-* [avgtime.sh](avgtime.sh)
+* [avgtime.sh](%%REPO_URL%%/2015/howe/avgtime.sh)
 
-* [makeholes.c](makeholes.c)
+* [makeholes.c](%%REPO_URL%%/2015/howe/makeholes.c)
     Random edits (holes) made to a file in-place.
 
 ### References

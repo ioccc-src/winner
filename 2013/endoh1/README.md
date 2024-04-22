@@ -64,7 +64,7 @@ This is a tool *for C programmers* to play the [SKI combinator calculus][1],
 especially, [Lazy K][2].
 
 This program will shine when it is used as a library.  For example,
-[hello.lazy](hello.lazy) is a "Hello world" program written in Lazy K.
+[hello.lazy](%%REPO_URL%%/2013/endoh1/hello.lazy) is a "Hello world" program written in Lazy K.
 
 ``` <!---sh-->
     $ lazy hello.lazy
@@ -72,7 +72,7 @@ This program will shine when it is used as a library.  For example,
 ```
 
 where `lazy` is [a reference implementation of Lazy K][3].  At the same time,
-[hello.lazy](hello.lazy) is *a valid C program* that uses [endoh1.c](endoh1.c)
+[hello.lazy](%%REPO_URL%%/2013/endoh1/hello.lazy) is *a valid C program* that uses [endoh1.c](%%REPO_URL%%/2013/endoh1/endoh1.c)
 as a library.
 
 ``` <!---sh-->
@@ -162,7 +162,7 @@ The whole program is interpreted by macro expansion.
 For example, `S (K I)` is translated to a normal C code, `(s)((k)(i))`, or
 simply `s(k(i))`.
 
-This expression returns an abstract syntax tree, and [endoh1.c](endoh1.c)
+This expression returns an abstract syntax tree, and [endoh1.c](%%REPO_URL%%/e2013/endoh1/ndoh1.c)
 evaluates it.
 
 This program uses a very simple "term rewriting" approach for evaluating SKI

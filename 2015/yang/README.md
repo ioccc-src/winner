@@ -28,7 +28,7 @@ The way the text is encoded in the output doesn't cease to amaze. Can you tell
 why an array of 512 elements is needed?
 
 NOTE: the author calls the program `Fuuko` and so the source file referred to in
-their remarks uses `fuuko.c`. The [Makefile](Makefile) will compile everything
+their remarks uses `fuuko.c`. The [Makefile](%%REPO_URL%%/2015/yang/Makefile) will compile everything
 so you need not worry about this.
 
 

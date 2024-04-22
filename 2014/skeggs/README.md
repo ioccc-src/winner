@@ -132,7 +132,7 @@ There is a little bit of obfuscation gained from using the stringification
 operator. (I can never remember what it's actually called, but it's the `#`
 operator in a preprocessor macro) - this allows me to pass C code in arguments
 to the macros, meaning that it gets interpreted as C code instead of a string
-by the [iocccsize](../iocccsize.c) tool, so it gets counted as smaller! :D
+by the [iocccsize](%%REPO_URL%%/2014/iocccsize.c) tool, so it gets counted as smaller! :D
 
 # A SLIGHTLY COOL PART
 
@@ -218,7 +218,7 @@ I ran out of time to test it on more systems.
   development of this entry.
 
 * What's the length of this README file according to the
-[iocccsize](../iocccsize.c) tool?
+[iocccsize](%%REPO_URL%%/2014/iocccsize.c) tool?
 
 ```
     $ ./iocccsize -i < README.md

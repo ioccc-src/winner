@@ -38,7 +38,7 @@ For more detailed information see [2014 vik bugs](../../bugs.html#2014_vik).
 
 ## Alternate code:
 
-The alternate code, [prog.alt.c](prog.alt.c), is based on the author's
+The alternate code, [prog.alt.c](%%REPO_URL%%/2014/vik/prog.alt.c), is based on the author's
 instructions on how to get it to work with Windows.
 
 
@@ -110,7 +110,7 @@ any code in order for the program to run correctly:
     _setmode(_fileno(stdout), 0x8000);
 ```
 
-NOTE: see the [alternate code](prog.alt.c) for this.
+NOTE: see the [alternate code](%%REPO_URL%%/2014/vik/prog.alt.c) for this.
 
 
 ### Known Issues

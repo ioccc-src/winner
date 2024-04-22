@@ -24,7 +24,7 @@ code](#alternate-code) below for more details.
 
 ## Alternate code:
 
-Compare [prog.c](prog.c) and [prog.alt.c](prog.alt.c) and find out why we had to
+Compare [prog.c](%%REPO_URL%%/2018/anderson/prog.c) and [prog.alt.c](%%REPO_URL%%/2018/anderson/prog.alt.c) and find out why we had to
 modify the entry, and what confused the author (see the author's remarks).  No,
 it was not the shape of the Roman V that we, or the compiler, didn't like.
 

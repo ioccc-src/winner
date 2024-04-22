@@ -12,7 +12,7 @@ below) you can do so with the `SIZE` variable. For instance you can do:
     make clobber SIZE=50,50 all
 ```
 
-but you can also do this directly with the [endoh4.sh](endoh4.sh) script as
+but you can also do this directly with the [endoh4.sh](%%REPO_URL%%/2013/endoh4/endoh4.sh) script as
 described below.
 
 
@@ -36,7 +36,7 @@ For more detailed information see [2013 endoh4 bugs](../../bugs.html#2013_endoh4
 
 The second form is preferable as it will temporarily make the cursor invisible
 as recommended by the author. If no file is specified in the `./endoh4.sh` command
-line it will feed to the program [endoh4.c](endoh4.c).
+line it will feed to the program [endoh4.c](%%REPO_URL%%/2013/endoh4/endoh4.c).
 
 
 ## Try:
@@ -70,7 +70,7 @@ If you wish to change the size to `50,50` without passing any arg:
     SIZE=50,50 ./endoh4.sh
 ```
 
-Not specifying a file feeds [endoh4.c](endoh4.c) to the program.
+Not specifying a file feeds [endoh4.c](%%REPO_URL%%/2013/endoh4/endoh4.c) to the program.
 
 
 ## Judges' remarks:

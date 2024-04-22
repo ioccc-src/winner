@@ -56,7 +56,7 @@ obfuscated way.
 Also, why doesn't it crash but instead produces a correct output when called
 with one argument or when all arguments are equal?
 
-For extra fun, compile and run [fun.c](fun.c):
+For extra fun, compile and run [fun.c](%%REPO_URL%%/2013/dlowe/fun.c):
 
 ``` <!---c-->
     #include <stdio.h>

@@ -47,7 +47,7 @@ note on macOS.
     ./mario.sh
 ```
 
-If you end up telnetting to the server (feature of [mario.sh](mario.sh)) you can
+If you end up telnetting to the server (feature of [mario.sh](%%REPO_URL%%/2014/maffiodo1/mario.sh)) you can
 try:
 
 

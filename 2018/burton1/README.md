@@ -24,7 +24,7 @@ code](#alternate-code) below.
 
 ## Alternate code:
 
-An alternate version of this entry, [prog.alt.c](prog.alt.c), is provided
+An alternate version of this entry, [prog.alt.c](%%REPO_URL%%/2018/burton1/prog.alt.c), is provided
 This alternate code was supposed to compile without warnings, however
 with modern compilers this is no longer the case so it will only cleanly compile
 with `-Wno-` options.
@@ -51,7 +51,7 @@ One line, one array, one loop and one statement but it prints many bytes. It won
 
 Feed this anything on `stdin`.
 
-The [included script.sh](scripthd.sh) may be used as a driver program for this entry.
+The [included script.sh](%%REPO_URL%%/2018/burton1/scripthd.sh) may be used as a driver program for this entry.
 It adds several nice-to-have features, and allows salt-to-taste customizability.
 
 This code has been compiled and tested on:
@@ -251,7 +251,7 @@ So which version is the shortest, portable hex dump?
 Clearly, the smallest possible program violates modern best practice.
 It is not even possible to compile cleanly, but it will compile correctly.
 
-Included is [prog.alt.c](prog.alt.c), a modern C implementation that is --
+Included is [prog.alt.c](%%REPO_URL%%/2018/burton1/prog.alt.c), a modern C implementation that is --
 perhaps -- the smallest, clean-compiling version using `clang` or `gcc` with
 `-Wall -pedantic`.  Note that while this is larger than all but the original
 attempt, it will *not* work with the original Ritchie PDP-11 C compiler, since

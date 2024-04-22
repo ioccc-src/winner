@@ -1,6 +1,6 @@
 # Conflicting compilers and optimisers that broke this entry in 2023
 
-As briefly noted in the [index.html](index.html) gcc and clang caused different
+As briefly noted in the [index.html](%%REPO_URL%%/1986/marshall/index.html) gcc and clang caused different
 problems with this entry depending on the optimiser being enabled or not, where
 if the optimiser was enabled it would work with one compiler and not the other.
 But if you then disabled the optimiser the opposite problem would occur: the
@@ -24,7 +24,7 @@ It was not only one compiler that dumped core. Both dumped core with other
 behaviour, depending on what changes in code were made and the optimiser being
 on or off. Clang in macOS also dumped core!
 
-The [index.html](index.html) has the original fix
+The [index.html](%%REPO_URL%%/1986/marshall/index.html) has the original fix
 for clang which works with some compilers depending on the optimiser. When we
 refer to the code below we refer to the alternate code.
 

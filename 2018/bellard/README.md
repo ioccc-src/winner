@@ -17,7 +17,7 @@ code](#alternate-code) below.
 
 ## Try:
 
-First open [Lenna.png](Lenna.png) in your graphics viewer of choice. Next, after
+First open [Lenna.png](%%REPO_URL%%/2018/bellard/Lenna.png) in your graphics viewer of choice. Next, after
 running the above command (`./prog > lena.ppm`), open `lena.ppm` in your
 graphics viewer of choice.  After that try:
 
@@ -32,13 +32,13 @@ compile and install netpbm for entries that require it?](../../faq.html#netpbm) 
 [FAQ 3.16 - How do I compile and install libjpeg-turbo for entries that require
 it?](../../faq.html#libjpeg).
 
-NOTE: [Lenna.png](Lenna.png) is from
+NOTE: [Lenna.png](%%REPO_URL%%/2018/bellard/Lenna.png) is from
 <https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png>.
 
 
 ## Alternate code:
 
-The [prog.alt.c](prog.alt.c) is based on the author's remarks and it should work
+The [prog.alt.c](%%REPO_URL%%/2018/bellard/prog.alt.c) is based on the author's remarks and it should work
 for Windows.
 
 

@@ -19,7 +19,7 @@
 ```
 
 The script will ask you if you wish to run `make rake` but this is not necessary
-to fully enjoy the entry. `make rake` will run the [rake.sh](rake.sh) script and
+to fully enjoy the entry. `make rake` will run the [rake.sh](%%REPO_URL%%/2014/endoh1/rake.sh) script and
 then `prog` if all is built okay. If `rake` is not installed then it will check
 that `gem` is installed. If `gem` is not installed it will tell you where to get
 it and then tell you how to install `rake`. Otherwise, if `rake` is installed it

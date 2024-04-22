@@ -247,7 +247,7 @@ the camera, and shoot a ray from the camera point to the image plane point, see:
 .. and the ray direction vector (image plane point - camera point) is `(X,Y,Z)`. For the
 coordinate space, volume 0 is scaled up 64x here to `(0,0,0)-(4096,4096,4096)`.
 
-For a basic camera shader example, check [otherroom.scene](../otherroom.scene).
+For a basic camera shader example, check [otherroom.scene](%%REPO_URL%%/2013/hou/otherroom.scene).
 
 If any ray goes out of volume 0, the renderer crashes. Make sure it doesn't
 happen. Wall up everything.

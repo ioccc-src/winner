@@ -458,7 +458,7 @@ always evaluate to true.
 decoding using the clever expression, `(i & 3) - 3`, which identifies pattern 3
 and 7 as longer.
 
-* The file size of [birken.c](birken.c) is a prime number.  Deleting the first
+* The file size of [birken.c](%%REPO_URL%%/2013/birken/birken.c) is a prime number.  Deleting the first
 line also produces a prime-sized program.  These properties do not qualify the
 program as a prime number generator.
 

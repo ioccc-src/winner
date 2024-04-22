@@ -65,7 +65,7 @@ program.
 This program will loop infinitely while progressively refining a
 [raytraced](https://en.wikipedia.org/wiki/Ray_tracing_(graphics)) image.
 
-NOTE: the author refers to [a.c](a.c), placed in a gzipped file `a.c.gz`. We do not
+NOTE: the author refers to [a.c](%%REPO_URL%%/2013/hou/a.c), placed in a gzipped file `a.c.gz`. We do not
 include it but it can be generated like:
 
 ``` <!---sh-->
@@ -134,7 +134,7 @@ don't have to worry about conflicts.
 
 ### Abuse of the rules
 
-* [hou.c](hou.c) uses compression to get around the size limit. The compression
+* [hou.c](%%REPO_URL%%/2013/hou/hou.c) uses compression to get around the size limit. The compression
 fully complies with the rules and the guidelines (at least the portion that
 shows up in `grep` "size limit"). Please see the [Self-imposed
 restrictions](self-imposed-restrictions) section below for more details.
@@ -145,18 +145,18 @@ restrictions](self-imposed-restrictions) section below for more details.
 
 * The building process does not involve any OS tool beyond `cc(1)` and
 `make(1)`. No `gzip(1)` compression! `a.c.gz` doesn't fit in 2053 bytes, anyway.
-* Neither [hou.c](hou.c) nor [a.c](a.c) (the *real* decompressed source) uses
+* Neither [hou.c](%%REPO_URL%%/2013/hou/hou.c) nor [a.c](%%REPO_URL%%/2013/hou/a.c) (the *real* decompressed source) uses
 `#define` (or `cc -D`) at all.
 * The source code is not required at runtime.
-* [a.c](a.c) does not drop optional features to reduce size. There are pure
+* [a.c](%%REPO_URL%%/2013/hou/a.c) does not drop optional features to reduce size. There are pure
 optimization code that can be dropped without affecting the converged output
 (only affecting the ray tracing speed / convergence rate). All files are
 properly `fopen()`ed with `"rb"` / `"wb"` for Windows compatibility. The PPM
 header has a comment line for non-standard-compliant viewers (specifically, my
 old HDRShop 1.0). And there is a nice text message saying "please wait...".
-Despite the messy look, [a.c](a.c) and [hou.c](hou.c) compile warning-free
-([hou.c](hou.c) even wastes 18 bytes on `#include<stdio.h>` just for `putchar(3)`).
-[a.c](a.c) compiles mostly clean in the C99/ANSI modes of clang and gcc (with:
+Despite the messy look, [a.c](%%REPO_URL%%/2013/hou/a.c) and [hou.c](%%REPO_URL%%/2013/hou/hou.c) compile warning-free
+([hou.c](%%REPO_URL%%/2013/hou/hou.c) even wastes 18 bytes on `#include<stdio.h>` just for `putchar(3)`).
+[a.c](%%REPO_URL%%/2013/hou/a.c) compiles mostly clean in the C99/ANSI modes of clang and gcc (with:
 
 ```
 -Wall --pedantic
@@ -178,15 +178,15 @@ internal states.
 the code, but they leave the text clear in the *result*. This entry takes it
 further and obfuscates the output image as well. Can you find the text in the
 image? Hint: look up.
-* [a.c](a.c) leaves all shaders in plain text, but the plain text shader code can't
+* [a.c](%%REPO_URL%%/2013/hou/a.c) leaves all shaders in plain text, but the plain text shader code can't
 be taken for its face value; the arithmetic rules subtly diverge from our common
 sense.
-* [a.c](a.c) is less portable than [hou.c](hou.c) itself. [hou.c](hou.c) only depends
+* [a.c](%%REPO_URL%%/2013/hou/a.c) is less portable than [hou.c](%%REPO_URL%%/2013/hou/hou.c) itself. [hou.c](%%REPO_URL%%/2013/hou/hou.c) only depends
 on ASCII and should run just fine on 16-bit, small memory, or
-floating-point-incapable machines. [a.c](a.c), while still reasonably portable, is
+floating-point-incapable machines. [a.c](%%REPO_URL%%/2013/hou/a.c), while still reasonably portable, is
 quite memory consuming, requires IEEE754-compliant `double`, and assumes `int` to be
 32-bits.
-* Though technically endian-dependent, [a.c](a.c) remains portable providing that one
+* Though technically endian-dependent, [a.c](%%REPO_URL%%/2013/hou/a.c) remains portable providing that one
 doesn't copy saved sessions across different endianness.
 
 
@@ -216,7 +216,7 @@ corresponds to the final image, which can then be produced as a simple per-pixel
 histogram of all generated paths. The robustness comes from a state mutation
 strategy that actively tries to explore the neighborhood of high energy peaks
 (e.g. paths that happen to hit the light source in
-[otherroom.scene](otherroom.scene)). In addition, a rudimentary form of lens
+[otherroom.scene](%%REPO_URL%%/2013/hou/otherroom.scene)). In addition, a rudimentary form of lens
 path stratification is added to balance the attention each pixel receives. The
 Metropolis-Hasting process completely avoids the tell-tale pixel sampling loop
 required in most other image generation methods.
@@ -237,11 +237,11 @@ necessarily map to the same set of paths in `PSSMLT`. After all,
 Metropolis-Hasting used an even worse PRNG in their 1953 paper.
 
 The `PPM` compressor uses statically weighted fixed order contexts with an
-arithmetic encoder tweaked for [iocccsize.c](../iocccsize.c). The encoder emits octet-space pairs
+arithmetic encoder tweaked for [iocccsize.c](%%REPO_URL%%/2013/iocccsize.c). The encoder emits octet-space pairs
 where each octet encodes ~6.5 bits of information and each space encodes 2 bits
-(thanks to the generous definition of "space" in [iocccsize.c](../iocccsize.c)). The compressor
+(thanks to the generous definition of "space" in [iocccsize.c](%%REPO_URL%%/2013/iocccsize.c)). The compressor
 actively shuffles the variable names around until the compressed string happens
-to contain enough `{}; `s to pass the final [iocccsize.c](../iocccsize.c) test.
+to contain enough `{}; `s to pass the final [iocccsize.c](%%REPO_URL%%/2013/iocccsize.c) test.
 There are a few other tweaks:
 
 * The `PPM` model uses mostly whitespace characters for weights.

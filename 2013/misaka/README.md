@@ -107,7 +107,7 @@ If `-` is specified as a file name, `horizontal_cat` will read from `stdin`.
 Unlike `cat`, `horizontal_cat` loads all input to memory first.  Thus you
 can specify `-` multiple times to get `stdin` multiplied horizontally.  For
 example, if you have `seq(1)` in your shell, you can add line numbers to both
-sides of [misaka.c](misaka.c) like this:
+sides of [misaka.c](%%REPO_URL%%/2013/misaka/misaka.c) like this:
 
 ``` <!---sh-->
     seq -f '  %.0f  ' 45 | ./horizontal_cat - misaka.c -
@@ -144,7 +144,7 @@ enabled by concatenating the source code horizontally:
 
 After `horizontal_cat` and `vertical_cat`, I thought, maybe all I really wanted
 was just more [cats](https://rationalwiki.org/wiki/Fun:Cat).  So I implemented
-one more mode, this one is enabled by concatenating [misaka.c](misaka.c)
+one more mode, this one is enabled by concatenating [misaka.c](%%REPO_URL%%/2013/misaka/misaka.c)
 vertically:
 
 ``` <!---sh-->
@@ -187,7 +187,7 @@ triangle like the following will not have horizontally expanded output:
     gcc misaka9.c -o same_as_long_cat
 ```
 
-Finally, if you lost track of how many [misaka.c](misaka.c) you have stacked
+Finally, if you lost track of how many [misaka.c](%%REPO_URL%%/2013/misaka/misaka.c) you have stacked
 together, you can feed the source to a
 [brainfuck](https://en.wikipedia.org/wiki/Brainfuck) interpreter to get an
 overview of how the programs are stacked.  Example:
@@ -261,7 +261,7 @@ does not output any irrelevant other warnings (verified on 4.6.3).
 Extra files included in my submission are informational only, they are not
 needed for the program to work.
 
-* [bf.pl](bf.pl) - a perl brainfuck interpreter, in case you don't have one
+* [bf.pl](%%REPO_URL%%/2013/misaka/bf.pl) - a perl brainfuck interpreter, in case you don't have one
 handy.
 * [spoiler.html](spoiler.html) - making of this program.
 

@@ -110,7 +110,7 @@ that there are no files named "run" and "run.c" in current directory
     perl prog.c | bash
 ```
 
-File size and CRC32 of [prog.c](prog.c) are embedded in line 7.
+File size and CRC32 of [prog.c](%%REPO_URL%%/2014/sinon/prog.c) are embedded in line 7.
 
 Process for making `Sinon` is included in [spoiler.html](spoiler.html).
 

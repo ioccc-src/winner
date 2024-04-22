@@ -85,7 +85,7 @@ You may explore this famous conjecture using this entry:
     ./prog 302ab3d052fb87c06228d249581be0e4
 ```
 
-NOTE: [try.sh](try.sh) runs these for you, filtered through `less(1)`.
+NOTE: [try.sh](%%REPO_URL%%/2015/schweikhardt/try.sh) runs these for you, filtered through `less(1)`.
 
 When you first look at the source, the code looks fairly straightforward.
 But look again.  Like the Collatz conjecture, simplicity is deceptive!

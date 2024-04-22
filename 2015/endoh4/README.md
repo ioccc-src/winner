@@ -25,7 +25,7 @@ code](#alternate-code) below for details.
 
 ## Alternate code:
 
-An alternate version of this entry, [prog.alt.c](prog.alt.c), is provided.
+An alternate version of this entry, [prog.alt.c](%%REPO_URL%%/2015/endoh4/prog.alt.c), is provided.
 This alternate code does not contain improvements suggested by [Gil
 Dogon](../../authors.html#Gil_Dogon); it is the author's original entry.
 
@@ -68,7 +68,7 @@ Visual factorization 1-liner.  Try:
 Inspired by [Animated Factorization
 Diagrams](http://www.datapointed.net/visualizations/math/factorization/animated-diagrams/).
 
-[prog.alt.c](prog.alt.c) is the original version that I submitted. [Gil
+[prog.alt.c](%%REPO_URL%%/2015/endoh4/prog.alt.c) is the original version that I submitted. [Gil
 Dogon](../../authors.html#Gil_Dogon) kindly improved it during the review.  Thank
 you!
 
