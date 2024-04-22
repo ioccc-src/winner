@@ -24,13 +24,13 @@ code](#alternate-code) below.
     ./try.sh 111 222 333 444 555 666 777 888 999
 ```
 
-Try running [try.sh](try.sh) a number of times as the first part randomly
+Try running [try.sh](%%REPO_URL%%/2012/konno/try.sh) a number of times as the first part randomly
 selects ten numbers to try.
 
 
 ## Alternate code:
 
-An alternate version of this entry, [konno.alt.c](konno.alt.c), is provided.
+An alternate version of this entry, [konno.alt.c](%%REPO_URL%%/2012/konno/konno.alt.c), is provided.
 This alternate code is an unobfuscated version of the winning code.
 
 
