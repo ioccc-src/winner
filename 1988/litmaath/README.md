@@ -52,7 +52,7 @@ Note the unusual structure:
 
 ``` <!---c-->
     while (<condition>)
-	     ;
+	 ;
 ```
 
 Did you notice that the body is empty?
