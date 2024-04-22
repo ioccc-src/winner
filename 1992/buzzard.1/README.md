@@ -128,34 +128,34 @@ place to site some references on the AE, but I don't have any.
 ```
     MACRO		FUNCTION				MNEMONIC
 
-    V               begin variable declarations		Variable
+    V               begin variable declarations			Variable
     C               begin program				Code
 
-    Q(b,a)          let b = a				eQuals
+    Q(b,a)          let b = a					eQuals
     A(c,a,b)        let c = a + b				Add
     S(c,a,b)        let c = a - b				Subtract
-    D(c,a,b)        let c = a / b, where b is a *constant*  Divide
-    U(c,a,b)        let c = a / b, where b is anything      Unknown
+    D(c,a,b)        let c = a / b, where b is a *constant*  	Divide
+    U(c,a,b)        let c = a / b, where b is anything      	Unknown
     M(c,a,b)        let c = a * b				Multiply
 
     O(c,a,b)        let c = a boolean-or b (a,b are 0 or 1) Or
-    B(b, a)         let b = boolean value of a		Boolean
-    P(b, a)         let b = 1 if a>0, else 0.		Positive
+    B(b, a)         let b = boolean value of a			Boolean
+    P(b, a)         let b = 1 if a>0, else 0.			Positive
 
-    l               emit next sequential label		Label
+    l               emit next sequential label			Label
     J(x)            goto label #x				Jump
 
-    Z(a,d)          if a is 0 goto d    (a is 0 or 1)	Zero
-    E(a,d)          if a is 1 goto d    (a is 0 or 1)	Else
+    Z(a,d)          if a is 0 goto d    (a is 0 or 1)		Zero
+    E(a,d)          if a is 1 goto d    (a is 0 or 1)		Else
 
     H               halt					Haly
 
     K(x)            let x = number of cmd line arguments	Kount
-    G(x,y)          let x = the value if the yth argument   Get argument
+    G(x,y)          let x = the value if the yth argument   	Get argument
 
-    T               end of code; begin output section	Terminate
-    X(y)            print out hexadecimal value of y	heXadecimal
-    T               end of output section and program	Terminate
+    T               end of code; begin output section		Terminate
+    X(y)            print out hexadecimal value of y		heXadecimal
+    T               end of output section and program		Terminate
 ```
 
 You can figure out the other macros yourself.  In the sample program, I've
