@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2 2024-04-15"
+export VERSION="1.3 2024-04-21"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -795,7 +795,7 @@ for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
 
 	# output markdown for this entry
 	#
-	echo "* [$YYYY_DIR]($YYYY_DIR/index.html) - $AWARD"
+	echo "* <div id=\"${YEAR_DIR}_${ENTRY_DIR}\">[$YYYY_DIR]($YYYY_DIR/index.html) - $AWARD</div>"
     done | if [[ -z $NOOP ]]; then
         cat >> "$TMP_YEARS_MD"
     else
