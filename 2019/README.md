@@ -34,8 +34,8 @@ vocabulary!
 
 There are again nods to entries of the years:
 
-	[1991/davidguy](../years.html#1991_davidguy)
-	[2011/blakely](../years.html#2011_blakely)
+* [1991/davidguy](../1991/davidguy/index.html)
+* [2011/blakely](../2011/blakely/index.html)
 
 These nods to not run afoul of the guideline:
 

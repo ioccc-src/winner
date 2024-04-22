@@ -202,7 +202,6 @@ While it is possible to win a new IOCCC with one of these
 __over-submitted__ types of entries, level of the competition from
 previous IOCCC entries make it more challenging to be successful.
 
-
 It is also important to note that the [guidelines](guidelines.html) often
 state something along the lines of:
 
@@ -211,35 +210,35 @@ state something along the lines of:
 
 #### maze generator
 
-- [1985/shapiro](years.html#1985_shapiro)
-- [1991/buzzard](years.html#1991_buzzard)
-- [1995/cdua](years.html#1995_cdua)
-- [1995/dodsond2](years.html#1995_dodsond2)
-- [1998/bas1](years.html#1998_bas1)
+- [1985/shapiro](1985/shapiro/index.html)
+- [1991/buzzard](1991/buzzard/index.html)
+- [1995/cdua](1995/cdua/index.html)
+- [1995/dodsond2](1995/dodsond2/index.html)
+- [1998/bas1](1998/bas1/index.html)
 
 
 #### tic-tac-toe/noughts and crosses/Xs and Os game
 
-- [1991/westley](years.html#1991_westley)
-- [1996/jonth](years.html#1996_jonth)
-- [2020/carlini](years.html#2020_carlini)
+- [1991/westley](1991/westley/index.html)
+- [1996/jonth](1996/jonth/index.html)
+- [2020/carlini](2020/carlini/index.html)
 
 
 #### solitaire/Othello game
 
-- [1987/lievaart](years.html#1987_lievaart)
-- [1994/dodsond1](years.html#1994_dodsond1)
+- [1987/lievaart](1987/lievaart/index.html)
+- [1994/dodsond1](1994/dodsond1/index.html)
 
 
 #### generating small primes (below is the list of all prime related winning entries)
 
-- [1985/august](years.html#1985_august)
-- [1988/applin](years.html#1988_applin)
-- [1994/weisberg](years.html#1994_weisberg)
-- [1995/makarios](years.html#1995_makarios)
-- [1996/dalbec](years.html#1996_dalbec)
+- [1985/august](1985/august/index.html)
+- [1988/applin](1988/applin/index.html)
+- [1994/weisberg](1994/weisberg/index.html)
+- [1995/makarios](1995/makarios/index.html)
+- [1996/dalbec](1996/dalbec/index.html)
 
-- [2000/bellard](years.html#2000_bellard)
+- [2000/bellard](2000/bellard/index.html)
 
 _As you can see, just a list of primes (let alone small primes) does not cut it
 anymore._
@@ -247,46 +246,46 @@ anymore._
 
 #### self reproducing program
 
-- [1990/scjones](years.html#1990_scjones)
-- [1994/smr](years.html#1994_smr) - _do not claim your program is the smallest one without seeing this!
-- [2000/dhyang](years.html#2000_dhyang) - _unless you beat this one, your chances are slim_
+- [1990/scjones](1990/scjones/index.html)
+- [1994/smr](1994/smr/index.html) - _do not claim your program is the smallest one without seeing this_!
+- [2000/dhyang](2000/dhyang/index.html) - _unless you beat this one, your chances are slim_
 
 
 #### entries that just print "Hello, world!"
 
-- [1984/anonymous](years.html#1984_anonymous)
-- [1985/applin](years.html#1985_applin)
-- [1986/applin](years.html#1986_applin)
-- [1986/holloway](years.html#1986_holloway)
-- [1989/jar.1](years.html#1989_jar.1)
-- [1992/lush](years.html#1992_lush)
-- [2000/tomx](years.html#2000_tomx)
+- [1984/anonymous](1984/anonymous/index.html)
+- [1985/applin](1985/applin/index.html)
+- [1986/applin](1986/applin/index.html)
+- [1986/holloway](1986/holloway/index.html)
+- [1989/jar.1](1989/jar.1/index.html)
+- [1992/lush](1992/lush/index.html)
+- [2000/tomx](2000/tomx/index.html)
 
-_**...it's so 20th century...**_
+_**...it's so 20th century...**_ :-)
 
 
 #### entries that use some complex state machine/table to print something
 
-- [1988/isaak](years.html#1988_isaak)
-- [1988/phillipps](years.html#1988_phillipps)
-- [2018/ciura](years.html#2018_ciura)
-- [2018/giles](years.html#2018_giles)
+- [1988/isaak](1988/isaak/index.html)
+- [1988/phillipps](1988/phillipps/index.html)
+- [2018/ciura](2018/ciura/index.html)
+- [2018/giles](2018/giles/index.html)
 
 
 #### rot13
 
-- [1985/sicherman](years.html#1985_sicherman)
-- [1989/westley](years.html#1989_westley)
-- [1990/dg](years.html#1990_dg)
-- [1991/fine](years.html#1991_fine)
+- [1985/sicherman](1985/sicherman/index.html)
+- [1989/westley](1989/westley/index.html)
+- [1990/dg](1990/dg/index.html)
+- [1991/fine](1991/fine/index.html)
 
 
 #### **pi** or **e** computation
 
-- [1986/august](years.html#1986_august)
-- [1988/robison](years.html#1988_robison)
-- [1988/westley](years.html#1988_westley)
-- [1989/roemer](years.html#1989_roemer)
+- [1986/august](1986/august/index.html)
+- [1988/robison](1988/robison/index.html)
+- [1988/westley](1988/westley/index.html)
+- [1989/roemer](1989/roemer/index.html)
 
 
 #### Hints on overused themes
@@ -375,7 +374,7 @@ Your entry must compile with GCC and run under at least one flavor of UNIX (e.g.
 Linux or Solaris). To improve chances to win, it should work under both BSD and
 SysV style UNIX (think **stty cbreak**), and should not depend on "Endianness".
 If it can compile and run on Windows and/or Mac  (see
-[2000/thadgavin](years.html#2000_thadgavin) for one example, amongst others),
+[2000/thadgavin](2000/thadgavin/index.html) for one example, amongst others),
 even better. Being able to compile with other compilers like clang is also a
 good thing.
 
@@ -500,9 +499,9 @@ author's wish to remain anonymous.
 A few years ago, we asked the author if they still wanted to remain anonymous.
 They said: '_Yes, I want to keep my anonymity.  But you can tell them that I am well known for my connection to the
 C language_'. It was not until 2001 that another [anonymous
-entry](years.html#2001_anonymous) received an award.
+entry](2001/anonymous/index.html) received an award.
 
-BTW: The [1984/mullender](years.html#1984_mullender) remains one of my (Landon Curt Noll) all time favorites.
+BTW: The [1984/mullender](1984/mullender/index.html) remains one of my (Landon Curt Noll) all time favorites.
 
 The name used in the posting of the [1st winning IOCCC
 entry](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=837%40nsc.UUCP&rnum=2&filter=0)
@@ -597,7 +596,7 @@ repo](https://github.com/ioccc-src/winner).
 
 The [winning
 entries](https://github.com/ioccc-src/winner/commit/9d61fc0fb4a3245afb1435458cfb597fad0e8e6a)
-of the [IOCCC 2020](https://www.ioccc.org/years.html#2020),
+of the [IOCCC 2020](years.html#2020),
 after a far too long of a delay
 (due in part to a [former IOCCC judge whose resignation was noted on
 2021 Jan 04](https://github.com/ioccc-src/winner/commit/c94fc84c35dc83e3eb9900720b95917a15c27afe))
@@ -608,7 +607,7 @@ to their local [git](https://git-scm.com) repository and then were
 merged into the [Official IOCCC winner repo on 2020 Dec
 31](https://github.com/ioccc-src/winner/commit/b1638ff0012964d79ab1c44aa815d3f824f35b6c).
 
-These [2020 IOCCC winning entries](https://www.ioccc.org/years.html#2020),
+These [2020 IOCCC winning entries](years.html#2020),
 as shown in the [Internet Wayback Machine](https://web.archive.org)
 [snapshot of 2021 Jan 02](https://web.archive.org/web/20210102042216/www.ioccc.org/years.html)
 were the first IOCCC entries to have been released via
@@ -702,7 +701,7 @@ tools and scripts](/bin/index.html).
 * Setting up a system whereby authors of IOCCC entries may update their own
 contact information via a [GitHub pull
 request](https://github.com/ioccc-src/temp-test-ioccc/pulls).
-* Setting up to generate the top level [years.html](/years.html) file via the
+* Setting up to generate the top level [years.html](years.html) file via the
 [gen-years.sh](/bin/gen-years.sh) tool.
 * Setting up to generate the top level [authors.html file](/authors.html), renamed
 from `winners.html`, via the [gen-authors.sh](/bin/gen-authors.sh) tool.
@@ -825,7 +824,7 @@ appreciate the opportunity for a fun read as well as a chuckle or two.
 - admitting that your entry is not very obfuscated (you see, the contest is
 called the **IOCCC**, not the **INVOCCC** :-) ); but even if you do not admit
 it, not very obfuscated entries have a minuscule chance to win (although
-[2000/tomx](years.html#2000_tomx) is a notable counterexample).
+[2000/tomx](2000/tomx/index.html) is a notable counterexample).
 - mentioning your name or any identifying information in the remark section (or
 in the C code for that matter) - we like to be unbiased during the judging
 rounds; we look at the author name only if an entry wins. See the guidelines if

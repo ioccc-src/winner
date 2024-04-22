@@ -33,7 +33,7 @@ For more detailed information see [2015 mills2 bugs](../../bugs.html#2015_mills2
 ## Judges' remarks:
 
 Without ASCII art, the source code of this entry would have been exactly 256
-bytes.  Compared to [1990/jaw](../../years.html#1990_jaw), it is very
+bytes.  Compared to [1990/jaw](../../1990/jaw/index.html), it is very
 impressive, even taking into account the missing `atob` functionality. Now we wish
 for a `compress(1)`-like compressor using a similar idea.
 
