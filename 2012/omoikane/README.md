@@ -34,7 +34,7 @@ binary itself.
     ./try.sh
 ```
 
-The script [try.sh](try.sh) will check if you have perl before trying to use the
+The script [try.sh](%%REPO_URL%%/2012/omoikane/try.sh) will check if you have perl before trying to use the
 perl parts of the script.
 
 
