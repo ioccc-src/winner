@@ -15,7 +15,7 @@ code](#alternate-code) below.
 ```
 
 where `file` is the file to be checked for nesting errors. For example, you may
-try [incorrect.c](incorrect.c) and the program itself. You may also run it on
+try [incorrect.c](%%REPO_URL%%/2012/zeitak/incorrect.c) and the program itself. You may also run it on
 text files that are not code.
 
 
@@ -31,7 +31,7 @@ will not detect multiple issues.
 
 ## Alternate code:
 
-The alternate code, [zeitak.alt.c](zeitak.alt.c), is a version that was slightly
+The alternate code, [zeitak.alt.c](z%%REPO_URL%%/2012/zeitak/eitak.alt.c), is a version that was slightly
 deobfuscated by the author. You may find reading it helpful in your attempt to
 understand this extremely subtle entry.
 
