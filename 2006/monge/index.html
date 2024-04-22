@@ -233,21 +233,48 @@ expression must be an assignment (<code>[variable] = [expr]</code>) or a compari
 <code>&lt;</code> or <code>&gt;</code> (<code>[expr1] &lt; [expr2]</code> or <code>[expr1] &gt; [expr2]</code>), and you can add spaces
 as you like (as understood by the C function <code>isspace()</code>).</p>
 <p>Supported operations and functions are:</p>
-<pre><code>    Operation | Description
-    :-------- | :----------
-     +,-,*,/    | Arithmetic operations, priority of  * , /  over  +,-  is
-                | respected.
-                |
-     &lt;,&gt;        | Compares the real parts of two complex numbers (the imaginary part
-                | is ignored). Any number of conditions is allowed, the iteration
-                | will just stop as soon as one of them fails.
-     Abs2       | Calculates the squared norm, i.e.: Abs2(a+b*i) is (a*a+b*b)+0*i.
-     Re         | Extract the real part, i.e.: Re(a+b*i) is a+0*i.
-     Im         | Extract the imaginary part, i.e.: Im(a+b*i) is b+0*i.
-     Exp        | Calculates the complex exponential, i.e. Exp(a+b*i) is
-                |   e^a*(cos(b)+sin(b)*i).
-     Ln             | Calculates the principal value of the natural logarithm, i.e.
-                   Ln(a+b*i) is ln(a*a+b*b)/2 + atan(b/a)*i.</code></pre>
+<table>
+<colgroup>
+<col style="width: 45%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Operation</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">+,-,*,/</td>
+<td style="text-align: left;">Arithmetic operations, priority of * , / over +,- is respected.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;,&gt;</td>
+<td style="text-align: left;">Compares the real parts of two complex numbers (the imaginary part is ignored). Any number of conditions is allowed, the iteration will just stop as soon as one of them fails.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Abs2</td>
+<td style="text-align: left;">Calculates the squared norm, i.e.: Abs2(a+b<em>i) is (a</em>a+b<em>b)+0</em>i.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Re</td>
+<td style="text-align: left;">Extract the real part, i.e.: Re(a+b<em>i) is a+0</em>i.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Im</td>
+<td style="text-align: left;">Extract the imaginary part, i.e.: Im(a+b<em>i) is b+0</em>i.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Exp</td>
+<td style="text-align: left;">Calculates the complex exponential, i.e. Exp(a+b<em>i) is e^a</em>(cos(b)+sin(b)*i).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ln</td>
+<td style="text-align: left;">Calculates the principal value of the natural logarithm, i.e. Ln(a+b<em>i) is ln(a</em>a+b<em>b)/2 + atan(b/a)</em>i.</td>
+</tr>
+</tbody>
+</table>
 <p>Here are a few examples of fractals you can draw:</p>
 <ul>
 <li>Mandelbrot:</li>
