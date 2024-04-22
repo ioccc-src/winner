@@ -93,7 +93,7 @@ Use `sykes1.alt` as you would `sykes1` above.
 
 ### Alternate try:
 
-The [try.sh](try.sh) script will use both versions to show some differences. You
+The [try.sh](%%REPO_URL%%/2006/sykes1/try.sh) script will use both versions to show some differences. You
 can do so like:
 
 ``` <!---sh-->
@@ -103,7 +103,7 @@ can do so like:
 
 ## Judges' remarks:
 
-Read the [sykes1.html](sykes1.html) page source.
+Read the [sykes1.html](%%REPO_URL%%/2006/sykes1/sykes1.html) page source.
 Now then read the C source.  Confused?  :-) If it's not clear try:
 
 ``` <!---sh-->
@@ -124,7 +124,7 @@ If you did not get one for Christmas, there is an [article about these
 puzzles in wikipedia](http://en.wikipedia.org/wiki/Bedlam_cube).
 
 Some instructions on how to make your own cube are in the included file
-[bedlam-cubes.pdf](bedlam-cubes.pdf).
+[bedlam-cubes.pdf](%%REPO_URL%%/2006/sykes1/bedlam-cubes.pdf).
 
 Finally, you can watch it being solved with the video file here,
 [solving-bedlam-cube.mp4](solving-bedlam-cube.mp4).
@@ -148,7 +148,7 @@ shows you how to build the cube piece by piece, rendered in glorious
 
 ASCII art is all very well, but you also have a web browser, right?  Well, just
 open the file [sykes1.html](sykes1.html).  This html file is just a copy of
-[sykes1.c](sykes1.c), which helpfully contains an html document that should make
+[sykes1.c](%%REPO_URL%%/2006/sykes1/sykes1.c), which helpfully contains an html document that should make
 the browser display for you a nice animated GIF, showing you how to build the
 cube.  Rendered in glorious 3D color.
 

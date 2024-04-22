@@ -22,7 +22,7 @@ You have been warned.
 The source fails to compile on compilers that recognize the inline
 keyword by default.  For gcc, you may need to use `-ansi`.
 
-See the file [schweikh3.info](schweikh3.info) for example output from various
+See the file [schweikh3.info](%%REPO_URL%%/1996/schweikh3/schweikh3.info) for example output from various
 systems.
 
 But still it is a useful utility.  To use try:

@@ -81,7 +81,7 @@ Thank God the IEEE does not standardize a coding style...
 ###    What this program does
 
 This is best explained in the man page. The troff source for this
-man page can be found in the file [samefile.1](samefile.1). To render try:
+man page can be found in the file [samefile.1](%%REPO_URL%%/1998/schweikh3/samefile.1). To render try:
 
 ``` <!---sh-->
     `man ./samefile.1

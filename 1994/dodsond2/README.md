@@ -85,13 +85,13 @@ in an effort to get around the 1994 version of Rule 2:
 ```
 
 Indeed, when [dodsond2.gz](dodsond2.gz) is uncompressed, it is identical
-to the [dodsond2.c](dodsond2.c) file you find today.
+to the [dodsond2.c](%%REPO_URL%%/1994/dodsond2/dodsond2.c) file you find today.
 
 The IOCCC rules and guidelines were modified in an effort to address
 this fun "_abuse of the rules_" style hack.
 
 It is worth noting that without this compression "_abuse of the rules_"
-style hack, the [dodsond2.c](dodsond2.c) is further obfuscated.
+style hack, the [dodsond2.c](%%REPO_URL%%/1994/dodsond2/dodsond2.c) is further obfuscated.
 
 
 ## Author's remarks:

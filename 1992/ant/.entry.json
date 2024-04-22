@@ -42,7 +42,7 @@
 	    "entry_text" : "how to run"
 	},
 	{
-	    "file_path" : "ant.README",
+	    "file_path" : "ant.README.txt",
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",

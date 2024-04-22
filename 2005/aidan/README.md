@@ -73,16 +73,16 @@ generate new ones.
 
 ### Contents
 
-* program file: [aidan.c](aidan.c) - sudoku solver and generator
-* test suite: [test-su.perl](test-su.perl) - optional test script (written for Perl5)
-* sudoku file: [blank.sudoku](blank.sudoku)
-* sudoku file: [insane1.sudoku](insane1.sudoku)
-* sudoku file: [insane2.sudoku](insane2.sudoku)
-* sudoku file: [insane3.sudoku](insane3.sudoku)
-* sudoku file: [insane4.sudoku](insane4.sudoku)
-* sudoku file: [insane5.sudoku](insane5.sudoku)
-* sudoku file: [tough1.sudoku](tough1.sudoku)
-* sudoku file: [wp.sudoku](wp.sudoku)
+* program file: [aidan.c](%%REPO_URL%%/2005/aidan/aidan.c) - sudoku solver and generator
+* test suite: [test-su.perl](%%REPO_URL%%/2005/aidan/test-su.perl) - optional test script (written for Perl5)
+* sudoku file: [blank.sudoku](%%REPO_URL%%/2005/aidan/blank.sudoku)
+* sudoku file: [insane1.sudoku](%%REPO_URL%%/2005/aidan/insane1.sudoku)
+* sudoku file: [insane2.sudoku](%%REPO_URL%%/2005/aidan/insane2.sudoku)
+* sudoku file: [insane3.sudoku](%%REPO_URL%%/2005/aidan/insane3.sudoku)
+* sudoku file: [insane4.sudoku](%%REPO_URL%%/2005/aidan/insane4.sudoku)
+* sudoku file: [insane5.sudoku](%%REPO_URL%%/2005/aidan/insane5.sudoku)
+* sudoku file: [tough1.sudoku](%%REPO_URL%%/2005/aidan/tough1.sudoku)
+* sudoku file: [wp.sudoku](%%REPO_URL%%/2005/aidan/wp.sudoku)
 
 
 Yes, the test suite really is 5 times larger than the actual program. You
@@ -150,7 +150,7 @@ Now, with modern computers this **can** be solved using brute force, e.g.:
     :n%27?"\n":n%81?"\n------+-------+------\n":"\n\n"));}return z;}
 ```
 
-**Judges' note**: this was added as [aidan.alt.c](aidan.alt.c).
+**Judges' note**: this was added as [aidan.alt.c](%%REPO_URL%%/2005/aidan/aidan.alt.c).
 
 That isn't the approach I've used; it's slow (particularly in worst-case or
 nearly so scenarios), inelegant, and not a good starting point for sudoku
@@ -177,7 +177,7 @@ program generated):
 ```
 
 Be warned - it's evil! (I certainly haven't been able to solve it by hand. The
-brute-force program given above, `sudoku-bfi.c` ([aidan.alt.c](aidan.alt.c)),
+brute-force program given above, `sudoku-bfi.c` ([aidan.alt.c](%%REPO_URL%%/2005/aidan/aidan.alt.c)),
 also has trouble - it took 66 seconds to solve it - but probably for different
 reasons. That's the worst performance I've had from brute-force so far!)
 

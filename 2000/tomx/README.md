@@ -25,8 +25,8 @@ There is an alternate version that compiles [mkentry.c](mkentry.c). See
 ## Alternate code:
 
 This alternate code is based on the author's remarks with a slight fix so that
-it will do what it once did, compile and run [mkentry.c](mkentry.c). You can use
-it in a similar way as [tomx.c](tomx.c), both executing the source file and
+it will do what it once did, compile and run [mkentry.c](%%REPO_URL%%/2000/tomx/mkentry.c). You can use
+it in a similar way as [tomx.c](%%REPO_URL%%/2000/tomx/tomx.c), both executing the source file and
 using it as a Makefile and running the code ends up running `mkentry`.
 
 
@@ -98,7 +98,7 @@ like a C program.
 program that it is. It is possible to do `#include "prog2.c"` in the place of
 the `main()`, leaving the complexities of the C file elsewhere and making this
 source still acceptable to `make` and `sh`. The following modification to the
-last few lines will compile the IOCCC's famous [mkentry.c](mkentry.c).
+last few lines will compile the IOCCC's famous [mkentry.c](%%REPO_URL%%/2000/tomx/mkentry.c).
 
 ```
     .PHONY: /* true clean */

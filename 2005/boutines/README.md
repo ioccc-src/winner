@@ -26,7 +26,7 @@ Implementations](https://www.w3.org/Graphics/SVG/WG/wiki/Implementations).
     ./try.sh
 ```
 
-If `ruby` is installed [try.sh](try.sh) will generate an SVG file by:
+If `ruby` is installed [try.sh](%%REPO_URL%%/2005/boutines/try.sh) will generate an SVG file by:
 
 ``` <!---sh-->
     ruby -e '20.times{puts "#{rand} #{rand}"}' | ./boutines > test.svg

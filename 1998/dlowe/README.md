@@ -118,17 +118,17 @@ A CGI script such as:
 ```
 
 can be used to pootify web pages. This has been added as
-[pootify.cgi.sh](pootify.cgi.sh) which forbids `file://` based URLs and which
+[pootify.cgi.sh](%%REPO_URL%%/1998/dlowe/pootify.cgi.sh) which forbids `file://` based URLs and which
 uses `lynx(1)` with the option referred to above. This will not, of course,
 render it as html but rather show the modified html. Nevertheless, this has
 **NOT** been tested as a CGI script with a webserver to display a pootified web
 page.
 
-The [pootify.sh](pootify.sh) script has also been added which is a modification
+The [pootify.sh](%%REPO_URL%%/1998/dlowe/pootify.sh) script has also been added which is a modification
 to the above script which can be used to render html files locally with the
 added bonus that one can use `file://` URLs. If one wants a CGI script they
 should use the above one instead. You can use the script
-[pootify.sh](pootify.sh), however, to download and generate html files that you
+[pootify.sh](%%REPO_URL%%/1998/dlowe/pootify.sh), however, to download and generate html files that you
 can look at locally in a browser or pipe through `less(1)`. For instance:
 
 ``` <!---sh-->

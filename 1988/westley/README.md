@@ -66,7 +66,7 @@ by changing the #define line to:
     #define _ F-->00||F-OO--;
 ```
 
-This is what the modified code in [westley.c](westley.c) does whereas the alt
+This is what the modified code in [westley.c](%%REPO_URL%%/1988/westley/westley.c) does whereas the alt
 code is the original.
 
 You might enjoy looking at the output of:

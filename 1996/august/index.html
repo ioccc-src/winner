@@ -213,13 +213,13 @@ and binary in august) and that we have this in a file named <code>test.oc</code>
 <pre><code>    ./august &lt; test.oo</code></pre>
 <p>Or even simpler:</p>
 <pre><code>    cat august.c test.oc | ./august | ./august</code></pre>
-<p>A larger example is included <a href="fac.oc">fac.oc</a>.</p>
+<p>A larger example is included <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/august/fac.oc">fac.oc</a>.</p>
 <p>The compiler for OC is naturally written in OC (where did you think the byte
-code came from?). It is in the file <a href="parse.oc">parse.oc</a>.</p>
+code came from?). It is in the file <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/august/parse.oc">parse.oc</a>.</p>
 <p>Hmm… So now we have an interpreter written in OC and a compiler for OC, can
 we compile the interpreter? Yes, we can! The OC compiler does not have a
 preprocessor (hey, what do you expect from a program that is this small), so we
-need to use an external one. To pre-process <a href="august.c">august.c</a> use the
+need to use an external one. To pre-process <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/august/august.c">august.c</a> use the
 command from the Makefile, but add the <code>-E</code> flag and change 60000 to 40000,
 i.e.:</p>
 <pre><code>    cc -E -DZ=40000 .... august.c &gt; august.oc</code></pre>

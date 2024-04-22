@@ -30,10 +30,10 @@ more details on it.
 
 ## Alternate code:
 
-The [sicherman.alt.c](sicherman.alt.c) is a slight change in the fixed version
+The [sicherman.alt.c](%%REPO_URL%%/1985/sicherman/sicherman.alt.c) is a slight change in the fixed version
 (fixed so it does not require `-traditional-cpp`) in that it has two args to
 `main()` as some compilers object to certain number of args in `main()`. This
-will be built in the case of the [sicherman.c](sicherman.c) failing to compile.
+will be built in the case of the [sicherman.c](%%REPO_URL%%/1985/sicherman/sicherman.c) failing to compile.
 In this case it'll be compiled to `sicherman` to simplify it for the larger
 audience.
 

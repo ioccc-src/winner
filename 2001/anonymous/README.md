@@ -5,7 +5,7 @@
 ```
 
 The programs that this program is supposed to act on,
-[anonymous.ten.c](anonymous.ten.c) and [anonymous.bed.c](anonymous.bed.c),
+[anonymous.ten.c](%%REPO_URL%%/2001/anonymous/anonymous.ten.c) and [anonymous.bed.c](%%REPO_URL%%/2001/anonymous/anonymous.bed.c),
 compiled with `make`, MUST be compiled as 32-bit ELF binaries. In the case that
 this fails these programs will be compiled as 64-bit binaries as alternate code,
 `anonymous.ten.alt` and `anonymous.bed.alt`, ELF or otherwise. However trying to
@@ -47,7 +47,7 @@ set to) and run it directly.
 What happens if the x86 program has already been modified by this program? The
 judges' remarks below might give you a hint!
 
-What happens if you try it on another file like [anonymous.c](anonymous.c)? Can
+What happens if you try it on another file like [anonymous.c](%%REPO_URL%%/2001/anonymous/anonymous.c)? Can
 you recompile it okay? What if you run it on `anonymous` itself? Can you run the
 program successfully after it without recompiling?
 
@@ -218,10 +218,10 @@ In short, please consider this a full disclaimer for any bug that may
 turn up - yes the program is unsafe, but it's pretty cool anyway.
 
 Despite all this, the translator is not exclusively limited to running the
-[anonymous.ten](anonymous.ten.c) program.  Other trivial **_x86_** programs may
+[anonymous.ten](%%REPO_URL%%/2001/anonymous/anonymous.ten.c) program.  Other trivial **_x86_** programs may
 run on the translator \- and I have successfully run a wide range of "Hello
 World" programs, including one of last year's IOCCC entries,
-[tomx](../../2000/tomx/tomx.c).
+[tomx](2001/anonymous/2000/tomx/tomx.c).
 
 
 ### Complete Program
@@ -233,7 +233,7 @@ new set of switches, and the call to `execv(3)` asks for the newly compiled
 program to be executed.  I would point out that almost every other entry to this
 competition also require a C compiler (well, the published winning entries at any rate,
 and I recognize that a few don't).  There is little real difference between this
-program and one like last year's entry [dhyang](../../2000/dhyang/dhyang.c); both are
+program and one like last year's entry [dhyang](%%REPO_URL%%/2000/dhyang/dhyang.c); both are
 just C programs that generate C code as their output.
 
 Enjoy and thanks!

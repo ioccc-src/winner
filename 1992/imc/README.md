@@ -34,7 +34,7 @@ Of course, the source (layout) is self-documenting!  :-)
 
 NOTE: The original winning source assumed that `exit(3)` returned a value which
 cause problems for some systems where `exit(3)` returns a void.  The file
-[imc.c](imc.c) has been modified to avoid this problem. The original file also
+[imc.c](%%REPO_URL%%/1992/imc/imc.c) has been modified to avoid this problem. The original file also
 declared argc to be a `long` which was fixed.
 
 

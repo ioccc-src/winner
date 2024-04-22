@@ -145,7 +145,7 @@ which is partially defined by the OS, and partially for the application's own
 use.
 
 The program compiles into a tool to build a kernel image,
-so having built the program, the [Makefile](Makefile) will run it,
+so having built the program, the [Makefile](%%REPO_URL%%/2004/gavin/Makefile) will run it,
 redirecting the output into a file called `kernel`.
 The Makefile will then proceed to build a root filesystem image.
 This involves rebuilding the program with different compiler flags,

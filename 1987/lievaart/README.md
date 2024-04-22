@@ -44,7 +44,7 @@ pruning](https://en.wikipedia.org/wiki/Alpha-beta_pruning), and it plays for
 instance on mobility(!).  Most important: it can play a pretty good game of Reversi!
 
 The Author was kind enough to supply the fully functional version of the
-program.  The file [lievaart2.c](lievaart2.c) contains what the program would
+program.  The file [lievaart2.c](%%REPO_URL%%/1987/lievaart/lievaart2.c) contains what the program would
 have been without the size restriction.  This version has the full end game
 logic and displays the board after each move! See above for how to use this.
 

@@ -163,7 +163,7 @@ the name of the machine running the server, e.g.
 ```
 
 Make sure that the terminals on both ends are the same size.  Also, the TCP port
-number (by default 5455) specified in the [Makefile](Makefile) mustn't be
+number (by default 5455) specified in the [Makefile](%%REPO_URL%%/2001/kev/Makefile) mustn't be
 blocked by a firewall.
 
 Here's a good quick example to see it in action on your own

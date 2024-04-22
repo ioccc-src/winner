@@ -31,7 +31,7 @@ IOCCC.  I thought it was time to relive hour long compile times so I made a
 program that does (almost) all computation in the pre-processor. The program
 even causes `gcc` (and other pre-processors) to crash when configured to do
 maximum number of computations.  The default configuration of the
-[Makefile](Makefile) is set to make the program compile in a not too long time.
+[Makefile](%%REPO_URL%%/2004/vik2/Makefile) is set to make the program compile in a not too long time.
 
 I've got `cpp` to crash in a couple of different ways. Most common is to
 get a segmentation fault, but a couple of times it just got stuck in

@@ -54,7 +54,7 @@ You can use it by typing:
 or by giving the C source to its standard input.
 
 `args` are given to the `main()` function of `bellard.c` (`argv[0]` is
-[bellard.c](bellard.c)).
+[bellard.c](%%REPO_URL%%/2001/bellard/bellard.c)).
 
 
 ### Examples:

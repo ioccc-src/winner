@@ -155,8 +155,8 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <h2 id="to-build">To build:</h2>
 <pre><code>    make all</code></pre>
 <p>A smaller version, originally called <code>zsmall.c</code> (and still exists as such, as
-the source of the alt code), of <a href="applin.c">applin.c</a>, can be found in
-<a href="applin.alt.c">applin.alt.c</a>. Your machine may have an easier time with this
+the source of the alt code), of <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/applin.c">applin.c</a>, can be found in
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/applin.alt.c">applin.alt.c</a>. Your machine may have an easier time with this
 program. See the <a href="#alternate-code">Alternate code</a> section below for details.</p>
 <h2 id="try">Try:</h2>
 <pre><code>    ./applin</code></pre>
@@ -172,17 +172,17 @@ with this entry.</p>
 Dhyrstone/sec/cpu machine) using the System V <code>cpp</code>. (The GNU <code>cpp</code> when defined as
 <code>BIG_CPP</code> took only 45 seconds.)</p>
 <p>Your <code>cpp</code> may not be able to compile it due to a common bug that results in
-<code>cpp</code> running out of space. The routine <a href="zsmall.c">zsmall</a> is a smaller version
-of the <a href="applin.c">applin.c</a> entry.</p>
+<code>cpp</code> running out of space. The routine <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/zsmall.c">zsmall</a> is a smaller version
+of the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/applin.c">applin.c</a> entry.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This entry is by far the most unusual abuse of the C preprocessor that
 we have received thus far. Nearly all of the real work is done in the
 C preprocessor!</p>
-<p>When we compiled <a href="applin.c">applin.c</a> on an
+<p>When we compiled <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/applin.c">applin.c</a> on an
 <a href="https://en.wikipedia.org/wiki/Amdahl_Corporation">Amdahl</a> 5890-300E, we found that it
 spent over 75 minutes in the System V C preprocessor! Besides showing that the
 standard System V <code>cpp</code> is slow, it showed that it contained a memory usage
-problem. The <a href="applin.c">applin.c</a> only uses 29 different preprocessor symbols
+problem. The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/applin.c">applin.c</a> only uses 29 different preprocessor symbols
 (besides <code>stdio.h</code>) and yet the preprocessor ran out of space!</p>
 <p>The GNU C preprocessor took under 45 seconds to perform the 2nd pass
 on the Amdahl 5890-300E. But due to the ANSI-likeness of GNU <code>cpp</code> (v. 1-21),

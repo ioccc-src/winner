@@ -64,7 +64,7 @@ NOTE: this alternative version also needs a terminal with at least 80 columns.
 
 ### Alternate try:
 
-The [try.sh](try.sh) script uses both the original entry and the alternate code
+The [try.sh](%%REPO_URL%%/1992/westley/try.sh) script uses both the original entry and the alternate code
 so one can try the same script for both:
 
 ``` <!---sh-->

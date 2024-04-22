@@ -119,7 +119,7 @@ The format of the input file is as follows:
 
 This file describe an IFS.
 
-One of the most well known would be the [Sierpinski Gasket](gasket):
+One of the most well known would be the [Sierpinski Gasket](%%REPO_URL%%/2006/stewart/gasket):
 
 ```
     3 0 0 1 1
@@ -128,7 +128,7 @@ One of the most well known would be the [Sierpinski Gasket](gasket):
     .5 0 0 .5 .25 .433 .34
 ```
 
-or the [fern](fern):
+or the [fern](%%REPO_URL%%/2006/stewart/fern):
 
 ```
     4 -5.5 0 5.5 11

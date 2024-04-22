@@ -172,7 +172,7 @@ default value. The author provided the following table:</p>
 on this in the author’s comments in the <a href="#alternate-build-instructions">Alternate Build
 Instructions</a> section.</p>
 <p>If however you wish to change the above controls, see the header file
-<a href="keysym.h">keysym.h</a> for the definitions of other characters that you might wish
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/banks/keysym.h">keysym.h</a> for the definitions of other characters that you might wish
 to use. The name of the macro in the header file is what you need to set the
 macros to, depending on what controls you wish to redefine. For instance, to set
 the throttle up and down to <code>u</code> and <code>d</code>:</p>
@@ -181,7 +181,7 @@ the throttle up and down to <code>u</code> and <code>d</code>:</p>
 corresponds to <code>d</code>:</p>
 <pre><code>    #define XK_d                             0x0064  /* U+0064 LATIN SMALL LETTER D */
     #define XK_u                             0x0075  /* U+0075 LATIN SMALL LETTER U */</code></pre>
-<p>Note that the <a href="keysym.h">keysym.h</a> file is not complete from X11; it’s just the
+<p>Note that the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/banks/keysym.h">keysym.h</a> file is not complete from X11; it’s just the
 more likely candidates (and some that are probably unlikely :-) ).</p>
 <p>The upper case letters would be <code>XK_U</code> and <code>XK_D</code> and you can search the header
 file for ‘LATIN CAPITAL D’, for example.</p>
@@ -283,21 +283,21 @@ You may input more than one scenery file, as long as there are
 less than 1000 total lines of input.</p>
 <p>Here is a brief description of the scenery files:</p>
 <ul>
-<li><p><a href="horizon.sc">horizon.sc</a></p>
+<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/banks/horizon.sc">horizon.sc</a></p>
 <p>A horizon, nothing more. You will probably always want to input this piece
 of scenery.</p></li>
-<li><p><a href="mountains.sc">mountains.sc</a></p>
+<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/banks/mountains.sc">mountains.sc</a></p>
 <p>An alternate horizon; a little more mountainous.</p></li>
-<li><p><a href="%5Bpittsburgh.sc%5D">pittsburgh.sc</a></p>
+<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/banks/pittsburgh.sc">pittsburgh.sc</a></p>
 <p>Scenery of downtown Pittsburgh. The downtown area is initially located
 to your right.</p></li>
-<li><p><a href="bb.sc">bb.sc</a></p>
+<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/banks/bb.sc">bb.sc</a></p>
 <p>Simple obstacle course. Try to fly over the buildings and under the
 bridges.</p></li>
-<li><p><a href="pyramids.sc">pyramids.sc</a></p>
+<li><p><a href="1998/banks/pyramids.sc">pyramids.sc</a></p>
 <p>Fly over the tombs of the ancient Pharaohs, in this (fictitious) Egyptian
 landscape.</p></li>
-<li><p><a href="river.sc">river.sc</a></p>
+<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/banks/river.sc">river.sc</a></p>
 <p>Follow a flowing river from the sky.</p></li>
 </ul>
 <p>A few examples of how to input scenery:</p>
@@ -316,7 +316,7 @@ positive altitudes</em>.</p>
 <p>I’m sure you’ll be making your own scenery files very soon!!!</p>
 <h3 id="alternate-build-instructions">Alternate Build Instructions</h3>
 <p>Several options must be passed to the compiler to make the build
-work. The provided <a href="Makefile">Makefile</a> has the appropriate options set
+work. The provided <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/banks/Makefile">Makefile</a> has the appropriate options set
 to default values. Use this section if you want to compile with
 different options.</p>
 <p>To map a key to a control, you must pass an option to the

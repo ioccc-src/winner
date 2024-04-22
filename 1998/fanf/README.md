@@ -28,7 +28,7 @@ Enter an expression on standard input.  To try some we have selected:
 
 ### Historical aside:
 
-At a time the code in [fanf.c](fanf.c) was that of [fanf.orig.c](fanf.orig.c)
+At a time the code in [fanf.c](%%REPO_URL%%/1998/fanf/fanf.c) was that of [fanf.orig.c](fanf.orig.c)
 but to get this to compile in modern systems it had to be translated to what you
 now see. The intermediate steps can still be performed but they might be
 different from the past. This should be kept in mind as you read the below
@@ -38,10 +38,10 @@ This program translates lambda expressions into combinator
 expressions.  But you do not need to know Lambda Calculus to be
 impressed by this program!
 
-See the file [fanf.lambda](fanf.lambda) for more examples of lambda calculus
+See the file [fanf.lambda](%%REPO_URL%%/1998/fanf/fanf.lambda) for more examples of lambda calculus
 source.
 
-Notice how large the code grows from the [fanf.c](fanf.c) into the final
+Notice how large the code grows from the [fanf.c](%%REPO_URL%%/1998/fanf/fanf.c) into the final
 `fanftmp2.c` C program.  Take a look at that final C program again,
 can you begin to understand what it is doing?
 

@@ -39,12 +39,12 @@ them with cool layout!
 
 For your enjoyment:
 
-1. Compile [dhyang.c](dhyang.c).
+1. Compile [dhyang.c](%%REPO_URL%%/2000/dhyang/dhyang.c).
 2. Run `./dhyang` and redirect output to another `.c` file.
 3. Compile that file.
 4. Repeat steps 2 and 3 until eventually the output cycles.
 
-To interpret the output: the [dhyang.c](dhyang.c.c) is an image of Saitou
+To interpret the output: the [dhyang.c](%%REPO_URL%%/2000/dhyang/dhyang.c.c) is an image of Saitou
 Hajime, which eventually generates three sources files that are images of "aku
 soku zan" (sin swift slay), Saitou's motto ;)
 
@@ -52,7 +52,7 @@ For best viewing, set tab spaces to 8 characters, and set your
 terminal fonts to as close to square as possible.  I hate to do this
 but you know, size...
 
-[dhyang.c](dhyang.c) and all its output compiles with gcc if your OS uses ASCII
+[dhyang.c](%%REPO_URL%%/2000/dhyang/dhyang.c) and all its output compiles with gcc if your OS uses ASCII
 character set.  No file is included and all functions assume default `int` return
 type (a source of compile warnings).
 

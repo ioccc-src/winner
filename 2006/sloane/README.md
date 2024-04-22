@@ -41,7 +41,7 @@ code](#original-code) was being used, you can do:
 ## Original code:
 
 Should you wish to see the original you may do so with the original code,
-[sloane.c](sloane.c).
+[sloane.c](%%REPO_URL%%/2006/sloane/sloane.c).
 
 
 ### Original build:

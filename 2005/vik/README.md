@@ -80,13 +80,13 @@ Start the engine using a built in labyrinth and texture bitmaps:
 ```
 
 Start the engine and loads the labyrinth defined in the file
-[maze.map](maze.map):
+[maze.map](%%REPO_URL%%/2005/vik/maze.map):
 
 ``` <!---sh-->
     ./vik maze.map
 ```
 
-Start the engine using [maze.map](maze.map) in a window that is 400 pixels wide:
+Start the engine using [maze.map](%%REPO_URL%%/2005/vik/maze.map) in a window that is 400 pixels wide:
 
 ``` <!---sh-->
     ./vik -w 400 maze.map

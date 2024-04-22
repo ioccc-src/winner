@@ -707,7 +707,7 @@
 1992/ant/1992_ant.tar.bz2
 1992/ant/Makefile
 1992/ant/README.md
-1992/ant/ant.README
+1992/ant/ant.README.txt
 1992/ant/ant.c
 1992/ant/ant.orig.c
 1992/ant/ant.test.mk

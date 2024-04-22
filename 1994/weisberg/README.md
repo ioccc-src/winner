@@ -27,7 +27,7 @@ If you have `primes(1)` installed you might also wish to try:
     ./primes.sh number
 ```
 
-where `number` is a positive number, defaulting to 15. The [try.sh](try.sh)
+where `number` is a positive number, defaulting to 15. The [try.sh](%%REPO_URL%%/1994/weisberg/try.sh)
 script will also do this.
 
 

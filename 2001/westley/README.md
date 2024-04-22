@@ -54,7 +54,7 @@ This is compiled by default; use `westley.sort` as you would `westley` above.
 
 The author also stated that if you just sort the code you'll get the with
 `sort`) version that just prints out the punch card. The
-[westley.punch.c](westley.punch.c) code is specifically so that Westley can punch
+[westley.punch.c](%%REPO_URL%%/2001/westley/westley.punch.c) code is specifically so that Westley can punch
 everyone in the face! :-) This is also compiled by default.
 
 
@@ -67,7 +67,7 @@ everyone in the face! :-) This is also compiled by default.
 
 ## Alternate code:
 
-An alternate version of this entry, [westley.alt.c](westley.alt.c), is provided.
+An alternate version of this entry, [westley.alt.c](%%REPO_URL%%/2001/westley/westley.alt.c), is provided.
 This alternate code might be less portable.
 
 

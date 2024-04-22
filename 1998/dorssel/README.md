@@ -45,7 +45,7 @@ altering the behavior ?
 
 ### Extra credit:
 
-Try doing what the last part of the last command in [try.sh](try.sh) suggests.
+Try doing what the last part of the last command in [try.sh](%%REPO_URL%%/1998/dorssel/try.sh) suggests.
 As in, do the following:
 
 ``` <!---sh-->
@@ -111,7 +111,7 @@ is the same as
     ./dorssel < dorssel.c | ./dorssel
 ```
 
-- The file [dorssel.md](dorssel.md) contains all the information needed to
+- The file [dorssel.html](dorssel.html) contains all the information needed to
 understand this program.  For an obfuscated spoiler, try
 
 ``` <!---sh-->

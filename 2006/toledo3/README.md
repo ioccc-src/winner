@@ -25,15 +25,15 @@ tested with Windows.  See [alternate code](#alternate-code) below.
 
 ## Alternate code:
 
-The author provided two additional versions, [toledo3-sbar.c](toledo3-sbar.c)
-and [toledo3-txt.c](toledo3-txt.c). Respectively these create a status bar and
+The author provided two additional versions, [toledo3-sbar.c](%%REPO_URL%%/2006/toledo3/toledo3-sbar.c)
+and [toledo3-txt.c](%%REPO_URL%%/2006/toledo3/toledo3-txt.c). Respectively these create a status bar and
 make the game text only.
 
 
 ### Alternate build:
 
 With the exception of the Windows version, these are built by default. To build
-the Windows version, [toledo3.alt.c](toledo3.alt.c), you will have to figure out
+the Windows version, [toledo3.alt.c](%%REPO_URL%%/2006/toledo3/toledo3.alt.c), you will have to figure out
 how to compile Windows code.
 
 
@@ -136,10 +136,10 @@ play stronger?
 
 ### UPGRADES
 
-Using [toledo3-sbar.c](toledo3-sbar.c) (which is too large for this IOCCC size
+Using [toledo3-sbar.c](%%REPO_URL%%/2006/toledo3/toledo3-sbar.c) (which is too large for this IOCCC size
 rules) creates a status display about gameplay on the window title bar.
 
-Using [toledo3-txt.c](toledo3-txt.c) turns this into being purely text based.
+Using [toledo3-txt.c](%%REPO_URL%%/2006/toledo3/toledo3-txt.c) turns this into being purely text based.
 
 
 <!--

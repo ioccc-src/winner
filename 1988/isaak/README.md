@@ -18,7 +18,7 @@ code](#alternate-code) below.
 
 ## Alternate code:
 
-The original version of this code is in [isaak.alt.c](isaak.alt.c).
+The original version of this code is in [isaak.alt.c](%%REPO_URL%%/1988/isaak/isaak.alt.c).
 The original entry starts with the line:
 
 ``` <!---c-->
@@ -51,7 +51,7 @@ an EBCDIC machine.
 
 ### Historical notes about the original entry:
 
-NOTE: If you named the file anything other than [isaak.c](isaak.c), you had to
+NOTE: If you named the file anything other than [isaak.c](%%REPO_URL%%/1988/isaak/isaak.c), you had to
 change the `#include` on line 6. This limitation has been fixed by using the
 `__FILE__` macro.
 
@@ -70,7 +70,7 @@ file: isaak.encode.  To read this file do.
 ```
 
 Since this was fixed, this file is not strictly necessary. See the
-[isaak.alt.c](isaak.alt.c) for the original source.
+[isaak.alt.c](%%REPO_URL%%/1988/isaak/isaak.alt.c) for the original source.
 
 FYI: We are likely to be more strict about portability in the future.
 

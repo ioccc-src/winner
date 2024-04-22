@@ -706,7 +706,7 @@
 1992,ant,Makefile,30,true,makefile,true,entry Makefile
 1992,ant,ant.orig.c,50,false,c,true,original source
 1992,ant,try.sh,100,true,shellscript,true,how to run
-1992,ant,ant.README,150,true,text,true,am man page
+1992,ant,ant.README.txt,150,true,text,true,am man page
 1992,ant,ant.test.mk,150,true,makefile,true,how to compile
 1992,ant,1992_ant.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1992,ant,README.md,4000000000,true,markdown,true,markdown source for this web page

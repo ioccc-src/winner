@@ -18,10 +18,10 @@ that's fewer than the original program.
 
 ## Alternate code:
 
-The first alternate version, [rince.alt.c](rince.alt.c), disables a maximum move
+The first alternate version, [rince.alt.c](%%REPO_URL%%/1991/rince/rince.alt.c), disables a maximum move
 count so that anyone with enough patience and time can complete the puzzle,
 without having to worry about how many moves they make, assuming they don't get
-stuck. The second version, [rince.alt2.c](rince.alt2.c), allows one to
+stuck. The second version, [rince.alt2.c](%%REPO_URL%%/1991/rince/rince.alt2.c), allows one to
 reconfigure at compilation the maximum number of moves, even if that is lowering
 the count.
 

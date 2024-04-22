@@ -19,7 +19,7 @@
 ```
 
 If you have perl installed you should be able to reproduce
-[dragon.nono](dragon.nono) like:
+[dragon.nono](%%REPO_URL%%/2011/hamaji/dragon.nono) like:
 
 ``` <!---sh-->
     perl c2nono.pl hamaji.c | ./hamaji
@@ -213,16 +213,16 @@ dragon](https://japanesezodiac.com/japanese-year-of-the-dragon).
 The second author wrote the picture, and the first author did
 everything else.
 
-The [dragon.nono](dragon.nono), [samurai.nono](samurai.nono), and
+The [dragon.nono](%%REPO_URL%%/2011/hamaji/dragon.nono), [samurai.nono](%%REPO_URL%%/2011/hamaji/samurai.nono), and
 [penguin.nono](penguin.nono) were written by the
-second author.  The [soccer.nono](soccer.nono) was from a wikipedia entry.  This file
-is important because it requires some guesses.  The [random.nono](random.nono) file
-was randomly generated. The [codegolf.nono](codegolf.nono) and
-[face.nono](face.nono) were taken from
+second author.  The [soccer.nono](%%REPO_URL%%/2011/hamaji/soccer.nono) was from a wikipedia entry.  This file
+is important because it requires some guesses.  The [random.nono](%%REPO_URL%%/2011/hamaji/random.nono) file
+was randomly generated. The [codegolf.nono](%%REPO_URL%%/2011/hamaji/codegolf.nono) and
+[face.nono](%%REPO_URL%%/2011/hamaji/face.nono) were taken from
 <https://web.archive.org/web/20130218055139/http://codegolf.com/paint-by-numbers>.
 
-You can reproduce [dragon.nono](dragon.nono) from [hamaji.c](hamaji.c) using
-[c2nono.pl](c2nono.pl):
+You can reproduce [dragon.nono](%%REPO_URL%%/2011/hamaji/dragon.nono) from [hamaji.c](%%REPO_URL%%/2011/hamaji/hamaji.c) using
+[c2nono.pl](%%REPO_URL%%/2011/hamaji/c2nono.pl):
 
 ``` <!---sh-->
     perl c2nono.pl hamaji.c | ./hamaji

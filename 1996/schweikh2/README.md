@@ -41,14 +41,14 @@ The author also suggests:
 ```
 
 (and we do too) which works with `sh`, `bash`, `ksh` and `zsh` as well. Press
-ctrl-c to stop it. Observe how the [try.sh](try.sh) script does this once to
+ctrl-c to stop it. Observe how the [try.sh](%%REPO_URL%%/1996/schweikh2/try.sh) script does this once to
 make it easier to see what is happening.
 
 
 ## Judges' remarks:
 
 The original program, with only slight obfuscations, may be found
-in [hunni.c](hunni.c). The perl script, [hunni.pl](hunni.pl), obfuscates it
+in [hunni.c](%%REPO_URL%%/1996/schweikh2/hunni.c). The perl script, [hunni.pl](hunni.pl), obfuscates it
 appropriately. Try:
 
 ``` <!---sh-->

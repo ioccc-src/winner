@@ -46,7 +46,7 @@ as the number of iterations to perform.
 
 ### Alternate build:
 
-To use the default values, the same as [monge.c](monge.c), just do:
+To use the default values, the same as [monge.c](%%REPO_URL%%/2006/monge/monge.c), just do:
 
 
 ``` <!---sh-->

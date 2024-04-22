@@ -24,7 +24,7 @@
 While it may not have been the intention of the author, the
 judges noted that the C pre-processed version (with the `#include`s
 left intact) looked very much like a rat "dropping core".  See
-[garry.alt.c](garry.alt.c) and judge for yourself!
+[garry.alt.c](%%REPO_URL%%/1995/garry/garry.alt.c) and judge for yourself!
 
 
 ### Alternate build:
@@ -51,7 +51,7 @@ left intact) looked very much like a rat "dropping core".  See
 ## Judges' remarks:
 
 The author was kind enough to provide a less obfuscated version of
-the source called [garry.fmt.c](garry.fmt.c).
+the source called [garry.fmt.c](%%REPO_URL%%/1995/garry/garry.fmt.c).
 
 
 ## Author's remarks:

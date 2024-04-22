@@ -129,15 +129,15 @@ Or even simpler:
     cat august.c test.oc | ./august | ./august
 ```
 
-A larger example is included [fac.oc](fac.oc).
+A larger example is included [fac.oc](%%REPO_URL%%/1996/august/fac.oc).
 
 The compiler for OC is naturally written in OC (where did you think the byte
-code came from?).  It is in the file [parse.oc](parse.oc).
+code came from?).  It is in the file [parse.oc](%%REPO_URL%%/1996/august/parse.oc).
 
 Hmm...  So now we have an interpreter written in OC and a compiler for OC, can
 we compile the interpreter?  Yes, we can!  The OC compiler does not have a
 preprocessor (hey, what do you expect from a program that is this small), so we
-need to use an external one.  To pre-process [august.c](august.c) use the
+need to use an external one.  To pre-process [august.c](%%REPO_URL%%/1996/august/august.c) use the
 command from the Makefile, but add the `-E` flag and change 60000 to 40000,
 i.e.:
 

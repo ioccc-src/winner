@@ -39,8 +39,8 @@ of sight: this program is a self-contained speech synthesizer that
 tells the current time through the computer's sound card - in just under
 2 Kb of source code !
 
-In the 2001 IOCCC [rules](../../2001/rules.txt) and
-[guidelines](../../2001/guidelines.txt) documents, there is no mention of
+In the 2001 IOCCC [rules](../rules.txt) and
+[guidelines](../guidelines.txt) documents, there is no mention of
 what is or isn't acceptable regarding audio I/O, but it is mentioned
 that hardware-specific and/or non-portable programs are not welcome. So,
 in order to do audio and satisfy those requirements, the format required

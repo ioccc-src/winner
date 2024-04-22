@@ -23,7 +23,7 @@
 
 ## Alternate code:
 
-This confuses cb greatly. See [horton.alt.c](horton.alt.c) for an unobfuscated/enhanced
+This confuses cb greatly. See [horton.alt.c](%%REPO_URL%%/1994/horton/horton.alt.c) for an unobfuscated/enhanced
 version.
 
 
@@ -78,7 +78,7 @@ cogs in the wheels of the grand plot to overthrow the cubics!
 Oh, by the way, it uses a self-contained graphtab and frame buffer.
 It's easily modified to graph *any* 96x160 bitmap on a dumb terminal.
 
-See the [gtface](gtface.c) program for another example.  Try:
+See the [gtface](%%REPO_URL%%/1994/horton/gtface.c) program for another example.  Try:
 
 ``` <!---sh-->
     make gtface

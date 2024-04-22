@@ -34,7 +34,7 @@ The program, in its base form, implements two useful utilities:
 
 Included with this entry is a shell script (with comments edited down to reduce
 it to 1530 bytes) which implements the complete shark utility. The script,
-[shark.sh](shark.sh), contains a `jaw.c` embedded within it!
+[shark.sh](%%REPO_URL%%/1990/jaw/shark.sh), contains a `jaw.c` embedded within it!
 
 The sender must have `compress` and `btoa`. To send, try:
 

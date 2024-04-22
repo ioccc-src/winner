@@ -175,14 +175,14 @@ next move, recompile <code>nextmove.c</code> and play it again:</p>
 <pre><code>    make nextmove
     ./nextmove move_location | tee nextmove.c</code></pre>
 <h2 id="try">Try:</h2>
-<p>We have provided the shell script, <a href="ttt.sh">ttt</a>, to make it easier to play the
+<p>We have provided the shell script, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/westley/ttt.sh">ttt</a>, to make it easier to play the
 game:</p>
 <pre><code>    make ttt
     ./ttt [first_move]  # &lt;- omit first arg to have it move first
     ./ttt next_move</code></pre>
 <p>The shell script determines when the game is over, and automatically replaces
 <code>merlyn.c</code> (copied from <a href="westley.c">westley.c</a> with an improved version after a
-loss). The <a href="ttt.sh">ttt</a> script has two other modes:</p>
+loss). The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/westley/ttt.sh">ttt</a> script has two other modes:</p>
 <pre><code>    ./ttt quitgame      # cancel any game in progress, revert to merlyn.c
     ./ttt clobber       # remove all game files, revert to original source</code></pre>
 <p>For example here is a potentially losing game:</p>
@@ -229,7 +229,7 @@ can lose if you cheat. That’s supposed to happen. Can you win any other time?<
 <p>Rather than use <code>ttt</code> try the script <code>ttt.alt</code> instead.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Can you figure out why the board looks different than the
-<a href="westley.c">westley.c</a>?</p>
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/westley/westley.c">westley.c</a>?</p>
 <p>What happens if you make a move already made?</p>
 <p>Now go try and draw or better yet win (without cheating which is very easy :-) )!
 Why is win better than draw? Because everyone knows how to draw:</p>

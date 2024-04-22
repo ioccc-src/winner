@@ -83,7 +83,7 @@ terminal!
 
 #### For the impatient
 
-The info files `herrmann1.turing` and [herrmann1.gcd](herrmann1.gcd) are sample
+The info files `herrmann1.turing` and [herrmann1.gcd](%%REPO_URL%%/2001/herrmann1/herrmann1.gcd) are sample
 programs for the Turing machine. For example, type
 
 ``` <!---sh-->

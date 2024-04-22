@@ -37,15 +37,15 @@ to not worry about writing it to a file and just viewing the image it creates.
 
 ## Alternate code:
 
-The alt code [gavare.alt.c](gavare.alt.c) allows you to change the size of the
+The alt code [gavare.alt.c](%%REPO_URL%%/2004/gavare/gavare.alt.c) allows you to change the size of the
 image as well as the anti-alias setting, when compiling.
 
 The author also provided [on their web page for the
 entry](https://gavare.se/ioccc/ioccc_gavare.c.html) an unobfuscated version that
 was used during development, which we have included in the file
-[gavare.r3.c](gavare.r3.c).
+[gavare.r3.c](%%REPO_URL%%/2004/gavare/gavare.r3.c).
 
-Finally, the file [gavare.alt2.c](gavare.alt2.c) sets binary mode
+Finally, the file [gavare.alt2.c](%%REPO_URL%%/2004/gavare/gavare.alt2.c) sets binary mode
 on `stdout` which theoretically should work in Windows.
 
 

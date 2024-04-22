@@ -57,7 +57,7 @@ Fourth:
 
 ## Alternate code:
 
-This alternate version, [buzzard.2.alt.c](buzzard.2.alt.c), does not contain a
+This alternate version, [buzzard.2.alt.c](%%REPO_URL%%/1992/buzzard.2/buzzard.2.alt.c), does not contain a
 fix that the author notes in their remarks.
 
 
@@ -123,7 +123,7 @@ included, but it only works on ASCII systems.
 Do not expect to be able to do anything interesting with `first`.
 
 To do something interesting, you need to feed `first` the file
-[third](third) first.  In unix, you can do
+[third](%%REPO_URL%%/1992/buzzard.2/third) first.  In unix, you can do
 
 ``` <!---sh-->
     cat third help.th - | ./first
@@ -132,10 +132,10 @@ To do something interesting, you need to feed `first` the file
 to do this.  Hopefully most operating systems will provide a way to do this.  It
 may take some time for this to complete (I seem to remember it taking several
 minutes on an 8086 PC); `THIRD` will prompt you when it is finished.  The file
-[third](third) has not been obfuscated, due to sheer kindness on the author's
+[third](%%REPO_URL%%/1992/buzzard.2/third) has not been obfuscated, due to sheer kindness on the author's
 part.
 
-For more information on what you can do once you've piped [third](third) into
+For more information on what you can do once you've piped [third](%%REPO_URL%%/1992/buzzard.2/third) into
 first, type `help` and consult
 [FORTH](https://en.wikipedia.org/wiki/Forth_(programming_language)) manuals for
 further reference.  Six sample THIRD programs are included in the files

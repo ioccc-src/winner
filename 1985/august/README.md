@@ -42,7 +42,7 @@ If you let it, the program will continue to print a numerical sequence (can you
 guess in what base it is printed by looking at the code?) until you run out of
 memory or until they sell your computer, whichever comes first.
 
-If you use the [primes.sh](primes.sh) script can you figure out if there's
+If you use the [primes.sh](%%REPO_URL%%/1985/august/primes.sh) script can you figure out if there's
 anything funny going on with the output?
 
 

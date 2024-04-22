@@ -12,7 +12,7 @@ version](#alternate-code) below. If your terminal has problems with the
     make anon-no_stty
 ```
 
-This will compile [anon.c](anon.c) as `anon` to not use `stty(1)`.
+This will compile [anon.c](%%REPO_URL%%/2005/anon/anon.c) as `anon` to not use `stty(1)`.
 
 
 ### Bugs and (Mis)features:

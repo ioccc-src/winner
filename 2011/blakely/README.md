@@ -76,10 +76,10 @@ other feature of the program which can be demonstrated as follows:
     ./blakely - < 3.dat
 ```
 
-The program will first display the grid given in [3.dat](3.dat), and then three
+The program will first display the grid given in [3.dat](%%REPO_URL%%/2011/blakely/3.dat), and then three
 more grids (taking a few minutes to display the last). Waiting for any more
 grids will take a substantial amount of time. The final grid has been put into
-[evolve_to_3.dat](evolve_to_3.dat), and if you type
+[evolve_to_3.dat](%%REPO_URL%%/2011/blakely/evolve_to_3.dat), and if you type
 
 ``` <!---sh-->
     ./blakely < evolve_to_3.dat

@@ -5,8 +5,8 @@
 ```
 
 A smaller version, originally called `zsmall.c` (and still exists as such, as
-the source of the alt code), of [applin.c](applin.c), can be found in
-[applin.alt.c](applin.alt.c).  Your machine may have an easier time with this
+the source of the alt code), of [applin.c](%%REPO_URL%%/1988/applin/applin.c), can be found in
+[applin.alt.c](%%REPO_URL%%/1988/applin/applin.alt.c).  Your machine may have an easier time with this
 program.  See the [Alternate code](#alternate-code) section below for details.
 
 
@@ -40,8 +40,8 @@ Dhyrstone/sec/cpu machine) using the System V `cpp`.  (The GNU `cpp` when define
 `BIG_CPP` took only 45 seconds.)
 
 Your `cpp` may not be able to compile it due to a common bug that results in
-`cpp` running out of space.  The routine [zsmall](zsmall.c) is a smaller version
-of the [applin.c](applin.c) entry.
+`cpp` running out of space.  The routine [zsmall](%%REPO_URL%%/1988/applin/zsmall.c) is a smaller version
+of the [applin.c](%%REPO_URL%%/1988/applin/applin.c) entry.
 
 
 ## Judges' remarks:
@@ -50,11 +50,11 @@ This entry is by far the most unusual abuse of the C preprocessor that
 we have received thus far.  Nearly all of the real work is done in the
 C preprocessor!
 
-When we compiled [applin.c](applin.c) on an
+When we compiled [applin.c](%%REPO_URL%%/1988/applin/applin.c) on an
 [Amdahl](https://en.wikipedia.org/wiki/Amdahl_Corporation) 5890-300E, we found that it
 spent over 75 minutes in the System V C preprocessor!  Besides showing that the
 standard System V `cpp` is slow, it showed that it contained a memory usage
-problem.  The [applin.c](applin.c) only uses 29 different preprocessor symbols
+problem.  The [applin.c](%%REPO_URL%%/1988/applin/applin.c) only uses 29 different preprocessor symbols
 (besides `stdio.h`) and yet the preprocessor ran out of space!
 
 The GNU C preprocessor took under 45 seconds to perform the 2nd pass

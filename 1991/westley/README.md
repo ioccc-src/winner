@@ -51,7 +51,7 @@ next move, recompile `nextmove.c` and play it again:
 
 ## Try:
 
-We have provided the shell script, [ttt](ttt.sh), to make it easier to play the
+We have provided the shell script, [ttt](%%REPO_URL%%/1991/westley/ttt.sh), to make it easier to play the
 game:
 
 ``` <!---sh-->
@@ -62,7 +62,7 @@ game:
 
 The shell script determines when the game is over, and automatically replaces
 `merlyn.c` (copied from [westley.c](westley.c) with an improved version after a
-loss).  The [ttt](ttt.sh) script has two other modes:
+loss).  The [ttt](%%REPO_URL%%/1991/westley/ttt.sh) script has two other modes:
 
 ``` <!---sh-->
     ./ttt quitgame	# cancel any game in progress, revert to merlyn.c
@@ -136,7 +136,7 @@ Rather than use `ttt` try the script `ttt.alt` instead.
 ## Judges' remarks:
 
 Can you figure out why the board looks different than the
-[westley.c](westley.c)?
+[westley.c](%%REPO_URL%%/1991/westley/westley.c)?
 
 What happens if you make a move already made?
 

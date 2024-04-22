@@ -31,7 +31,7 @@ For a good no-op try:
     gzip -c < rcm.c | ./rcm
 ```
 
-NOTE: this is done in the [try.sh](try.sh) script as well, along with some other
+NOTE: this is done in the [try.sh](%%REPO_URL%%/1996/rcm/try.sh) script as well, along with some other
 commands including a way to do the above command but with more steps.
 
 

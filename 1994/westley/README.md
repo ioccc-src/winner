@@ -29,7 +29,7 @@ invocations_ specified. That means with the right compiler invocation you can
 'win' the game on the first go.
 
 There are a variety of different `-D` flags you give to `cc` that change the
-message you get. You might wish to look at the [source code](westley.alt.c) to
+message you get. You might wish to look at the [source code](%%REPO_URL%%/1994/westley/westley.alt.c) to
 get a better idea or see below in the [Try](#try) section for running the game
 from start to finish.
 
@@ -70,7 +70,7 @@ reason that we recommend you try it first.
 ```
 
 There are a variety of different `-D` flags you can give to `cc` that change the
-message you get. You might wish to look at the [source code](westley.c) to get a
+message you get. You might wish to look at the [source code](%%REPO_URL%%/1994/westley/westley.c) to get a
 better idea or see below in the [Original try](#original-try) section for
 running the game from start to finish.
 

@@ -23,7 +23,7 @@ The author suggests trying:
 ```
 
 Notice that a file `a.c` has been generated.  Can you tell how `a.c` was
-produced?  How does `a.c` relate to [LANDER.BAS](LANDER.BAS)?
+produced?  How does `a.c` relate to [LANDER.BAS](%%REPO_URL%%/1991/ddsLANDER.BAS)?
 
 What happens if you give the program a C program like itself? Try:
 

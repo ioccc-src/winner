@@ -87,7 +87,7 @@ where:
 NOTE: The above directories were not shipped and everything from the entries
 that did not win were flushed to `/dev/null`.
 
-The [earlystop.pl](earlystop.pl) tool wrote:
+The [earlystop.pl](%%REPO_URL%%/2011/dlowe/earlystop.pl) tool wrote:
 
 ```
     training 1 to 1001...
@@ -98,7 +98,7 @@ The [earlystop.pl](earlystop.pl) tool wrote:
 The resulting `ioccc-winlose-trained.net` file was included in the
 [dlowe-aux-data.tar.bz2](dlowe-aux-data.tar.bz2) tarball.
 
-The [dlowe.c](dlowe.c) was explicitly excluded from this trailing set, so this
+The [dlowe.c](%%REPO_URL%%/2011/dlowe/dlowe.c) was explicitly excluded from this trailing set, so this
 test is interesting:
 
 ``` <!---sh-->
@@ -125,40 +125,40 @@ mean it will win or lose a future IOCCC.  On the other hand ... it just might!
 While we cannot supply you with the losing IOCCC source code, the author did supply a number
 data sets on which to test:
 
-We created the [english-trained.net](dlowe-aux-data/english-trained.net) as follows:
+We created the [english-trained.net](%%REPO_URL%%/2011/dlowe/dlowe-aux-data/english-trained.net) as follows:
 
 ``` <!---sh-->
     ./dlowe -8000 dlowe-aux-data/english-1/ dlowe-aux-data/english-0/ < /dev/null > dlowe-aux-data/english-trained.net
 ```
 
-- [dlowe-aux-data/english-0/](dlowe-aux-data/english-0/)
+- [dlowe-aux-data/english-0/](%%REPO_URL%%/2011/dlowe/dlowe-aux-data/english-0)
     Non-English (French) text
 
-- [dlowe-aux-data/english-1/](dlowe-aux-data/english-1)
+- [dlowe-aux-data/english-1/](%%REPO_URL%%/2011/dlowe/dlowe-aux-data/english-1)
     English (non-French) text
 
-We created the [png-trained.net](dlowe-aux-data/png-trained.net) as follows:
+We created the [png-trained.net](%%REPO_URL%%/2011/dlowe/dlowe-aux-data/png-trained.net) as follows:
 
 ``` <!---sh-->
     ./dlowe -8000 png-1/ png-0/ < /dev/null > dlowe-aux-data/png-trained.net
 ```
 
-- [dlowe-aux-data/png-0/](dlowe-aux-data/png-0/)
+- [dlowe-aux-data/png-0/](%%REPO_URL%%/2011/dlowe/dlowe-aux-data/png-0)
     Non-png (gif) images
 
-- [dlowe-aux-data/png-1/](dlowe-aux-data/png-1/)
+- [dlowe-aux-data/png-1/](%%REPO_URL%%/2011/dlowe/dlowe-aux-data/png-0/dlowe-aux-data/png-1)
     png (non-gif) images
 
-We created the [xor-trained.net](dlowe-aux-data/xor-trained.net) as follows:
+We created the [xor-trained.net](%%REPO_URL%%/2011/dlowe/dlowe-aux-data/png-0/dlowe-aux-data/xor-trained.net) as follows:
 
 ``` <!---sh-->
     ./dlowe -8000 dlowe-aux-data/xor-1/ dlowe-aux-data/xor-0/ < /dev/null > dlowe-aux-data/xor-trained.net
 ```
 
-- [dlowe-aux-data/xor-0](dlowe-aux-data/xor-0/)
+- [dlowe-aux-data/xor-0](%%REPO_URL%%/2011/dlowe/dlowe-aux-data/png-0/dlowe-aux-data/xor-0)
     Data that XORs to 0
 
-- [dlowe-aux-data/xor-1/](dlowe-aux-data/xor-1/)
+- [dlowe-aux-data/xor-1/](%%REPO_URL%%/2011/dlowe/dlowe-aux-data/png-0/dlowe-aux-data/xor-1)
     Data that XORs to 1
 
 **NOTE**: The directory args **must end in a** `/` for them to work.
@@ -251,11 +251,11 @@ produced a network with about 87% accuracy
 
 #### English corpora
 
-The [english-1](dlowe-aux-data/english-1) corpus was obtained by manually scraping the first results from
+The [english-1](%%REPO_URL%%/2011/dlowe/dlowe-aux-data/png-0/dlowe-aux-data/english-1) corpus was obtained by manually scraping the first results from
 a <https://www.google.com/webhp?lr=lang_en> search for "[paris
 filetype:txt](https://www.google.com/search?q=paris+filetype%3Atxt&lr=lang_en&tbs=lr%3Alang_1en&sxsrf=APwXEdeHXyUYdUxCYQQDHmJhbHzX9aARSA%3A1683049834430&source=hp&ei=ak1RZJHUGN_DkPIP26OtkA8&iflsig=AOEireoAAAAAZFFbejA0Xfqoq__FXx--Ok0S6GQjnGnA&ved=0ahUKEwiRsZOcmdf-AhXfIUQIHdtRC_IQ4dUDCAo&uact=5&oq=paris+filetype%3Atxt&gs_lcp=Cgdnd3Mtd2l6EANQAFgAYN4DaABwAHgAgAE-iAE-kgEBMZgBAKABAqABAQ&sclient=gws-wiz)".
 
-The [english-0](dlowe-aux-data/english-0) corpus was obtained by manually scraping the first results from
+The [english-0](%%REPO_URL%%/2011/dlowe/dlowe-aux-data/png-0/dlowe-aux-data/english-0) corpus was obtained by manually scraping the first results from
 a <https://www.google.com/webhp?lr=lang_fr> search for "[paris
 filetype:txt](https://www.google.com/search?q=paris+filetype%3Atxt&lr=lang_fr&tbs=lr%3Alang_1fr&sxsrf=APwXEddcsQ-gMhrqSUJo6omWFUl7jQMASg%3A1683049870736&source=hp&ei=jk1RZLevK_fKkPIPjbWN-AU&iflsig=AOEireoAAAAAZFFbnvExHGkcavB5H8F0xsLAWN2KfYFK&ved=0ahUKEwi3rrutmdf-AhV3JUQIHY1aA18Q4dUDCAo&uact=5&oq=paris+filetype%3Atxt&gs_lcp=Cgdnd3Mtd2l6EANQAFgAYLMDaABwAHgAgAE-iAE-kgEBMZgBAKABAqABAQ&sclient=gws-wiz)".
 
@@ -265,7 +265,7 @@ filetype:txt](https://www.google.com/search?q=paris+filetype%3Atxt&lr=lang_fr&tb
 * Using these corpora as a training set;
 * Using several dozen additional text files (obtained by the same methods) as a
 test set;
-* Using the included [earlystop.pl](earlystop.pl) script, which stopped after
+* Using the included [earlystop.pl](%%REPO_URL%%/2011/dlowe/dlowe-aux-data/png-0/earlystop.pl) script, which stopped after
 10000 iterations;
 * Interpreting output of `> 0.5` as "probably English" and `< 0.5` as "probably
 French"
@@ -275,10 +275,10 @@ produced a network with 100% accuracy.
 
 ### xor corpora
 
-The [xor-1](dlowe-aux-data/xor-1) corpus consists of two files containing `01`
+The [xor-1](%%REPO_URL%%/2011/dlowe/dlowe-aux-data/png-0/dlowe-aux-data/xor-1) corpus consists of two files containing `01`
 and `10` respectively.
 
-The [xor-0](dlowe-aux-data/xor-0) corpus consists of two files containing `00`
+The [xor-0](%%REPO_URL%%/2011/dlowe/dlowe-aux-data/png-0/dlowe-aux-data/xor-0) corpus consists of two files containing `00`
 and `11` respectively.
 
 

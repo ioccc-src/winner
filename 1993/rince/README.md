@@ -73,20 +73,20 @@ Use `rince.alt` or `rince.alt2` as you would `rince` above.
 
 The author has provided several CABBAGE files for your amusement:
 
-- [rince.data1](rince.data1) plays
+- [rince.data1](%%REPO_URL%%/1993/rince/rince.data1) plays
 [Breakout](https://en.wikipedia.org/wiki/Breakout_(video_game).  Keys are `,`
 for left, `/` for right, and `.` for 'fire the ball'.
 
-- [rince.data2](rince.data2) plays the old [James Bonfield](../../authors.html#James_Bonfield)'s
+- [rince.data2](%%REPO_URL%%/1993/rince/rince.data2) plays the old [James Bonfield](../../authors.html#James_Bonfield)'s
 ([1991/rince](../../1991/rince/index.html) game from IOCCC 1991.
 
-- [rince.data3](rince.data3) Sokoban screen 11. You are the `o` character.
+- [rince.data3](%%REPO_URL%%/1993/rince/rince.data3) Sokoban screen 11. You are the `o` character.
 You must push the money `m` into the dotted region of the screen. The game is
 considered finished when all the `m`s are then `M`s.
 
-- [rince.data4](rince.data4) Sokoban screen 13. Same rules as above.
+- [rince.data4](%%REPO_URL%%/1993/rince/rince.data4) Sokoban screen 13. Same rules as above.
 
-For a brief design description, see [design.html](design.html).
+For a brief design description, see [design.html](%%REPO_URL%%/1993/rince/design.html).
 
 
 ### WARNING for SunOS 4.1.x:

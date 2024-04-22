@@ -66,7 +66,7 @@ After this program prints the contents of 'file', ask it
 some questions related to the text.
 
 The author suggests the following questions when using
-[schnitzi.info](schnitzi.info):
+[schnitzi.info](%%REPO_URL%%/1993/schnitzi/schnitzi.info):
 
 
 - Who is Mark Schnitzius?

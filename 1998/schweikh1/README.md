@@ -109,7 +109,7 @@ itself. Just load it in your favorite editor.
 
 `gcc` (the GNU C compiler) must be available at runtime. It is assumed that your
 C implementation keeps headers as files in the `/usr/include` directory. The
-[info](info) file must be readable and reside in the current working directory.
+[info](%%REPO_URL%%/1998/schweikh1/info) file must be readable and reside in the current working directory.
 The current working directory must be writable in order to create a temporary
 file (which is removed upon program termination). In case you don't have gcc at
 runtime, not all is lost if your compiler or preprocessor can produce a list of

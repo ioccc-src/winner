@@ -23,7 +23,7 @@ what happens!
 
 ## Alternate code:
 
-The [vince.alt.c](vince.alt.c) code of the submission will run on SGI IRIX and
+The [vince.alt.c](%%REPO_URL%%/2005/vince/vince.alt.c) code of the submission will run on SGI IRIX and
 also has the recursive `CPP` macro (which sneaked in accidentally) removed.
 
 

@@ -28,7 +28,7 @@ on this in the author's comments in the [Alternate Build
 Instructions](#alternate-build-instructions) section.
 
 If however you wish to change the above controls, see the header file
-[keysym.h](keysym.h) for the definitions of other characters that you might wish
+[keysym.h](%%REPO_URL%%/1998/banks/keysym.h) for the definitions of other characters that you might wish
 to use. The name of the macro in the header file is what you need to set the
 macros to, depending on what controls you wish to redefine. For instance, to set
 the throttle up and down to `u` and `d`:
@@ -46,7 +46,7 @@ corresponds to `d`:
     #define XK_u                             0x0075  /* U+0075 LATIN SMALL LETTER U */
 ```
 
-Note that the [keysym.h](keysym.h) file is not complete from X11; it's just the
+Note that the [keysym.h](%%REPO_URL%%/1998/banks/keysym.h) file is not complete from X11; it's just the
 more likely candidates (and some that are probably unlikely :-) ).
 
 The upper case letters would be `XK_U` and `XK_D` and you can search the header
@@ -200,31 +200,31 @@ less than 1000 total lines of input.
 
 Here is a brief description of the scenery files:
 
-- [horizon.sc](horizon.sc)
+- [horizon.sc](%%REPO_URL%%/1998/banks/horizon.sc)
 
     A horizon, nothing more.  You will probably always want to input this piece
     of scenery.
 
-- [mountains.sc](mountains.sc)
+- [mountains.sc](%%REPO_URL%%/1998/banks/mountains.sc)
 
     An alternate horizon; a little more mountainous.
 
-- [pittsburgh.sc]([pittsburgh.sc])
+- [pittsburgh.sc](%%REPO_URL%%/1998/banks/pittsburgh.sc)
 
     Scenery of downtown Pittsburgh.  The downtown area is initially located
     to your right.
 
-- [bb.sc](bb.sc)
+- [bb.sc](%%REPO_URL%%/1998/banks/bb.sc)
 
     Simple obstacle course.  Try to fly over the buildings and under the
     bridges.
 
-- [pyramids.sc](pyramids.sc)
+- [pyramids.sc](1998/banks/pyramids.sc)
 
     Fly over the tombs of the ancient Pharaohs, in this (fictitious) Egyptian
     landscape.
 
-- [river.sc](river.sc)
+- [river.sc](%%REPO_URL%%/1998/banks/river.sc)
 
     Follow a flowing river from the sky.
 
@@ -261,7 +261,7 @@ I'm sure you'll be making your own scenery files very soon!!!
 ### Alternate Build Instructions
 
 Several options must be passed to the compiler to make the build
-work.  The provided [Makefile](Makefile) has the appropriate options set
+work.  The provided [Makefile](%%REPO_URL%%/1998/banks/Makefile) has the appropriate options set
 to default values.  Use this section if you want to compile with
 different options.
 

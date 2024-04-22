@@ -26,7 +26,7 @@ was the world's smallest self reproducing program.  While the sizes
 of these submissions varied, a quick glance would reveal that they
 were too big, until this entry came along.
 
-While strictly speaking, [smr.c](smr.c) is not a valid C program, it is not an
+While strictly speaking, [smr.c](%%REPO_URL%%/1994/smr/smr.c) is not a valid C program, it is not an
 invalid C program either!  Some C compilers will compile an empty file into a
 program that does nothing.  But even if your compiler can't, the build
 instructions supplied with this entry will produce an executable file.  On most

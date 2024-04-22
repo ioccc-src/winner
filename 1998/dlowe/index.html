@@ -213,16 +213,16 @@ more consistent level of quality. :-)</p>
         fi
     fi</code></pre>
 <p>can be used to pootify web pages. This has been added as
-<a href="pootify.cgi.sh">pootify.cgi.sh</a> which forbids <code>file://</code> based URLs and which
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/dlowe/pootify.cgi.sh">pootify.cgi.sh</a> which forbids <code>file://</code> based URLs and which
 uses <code>lynx(1)</code> with the option referred to above. This will not, of course,
 render it as html but rather show the modified html. Nevertheless, this has
 <strong>NOT</strong> been tested as a CGI script with a webserver to display a pootified web
 page.</p>
-<p>The <a href="pootify.sh">pootify.sh</a> script has also been added which is a modification
+<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/dlowe/pootify.sh">pootify.sh</a> script has also been added which is a modification
 to the above script which can be used to render html files locally with the
 added bonus that one can use <code>file://</code> URLs. If one wants a CGI script they
 should use the above one instead. You can use the script
-<a href="pootify.sh">pootify.sh</a>, however, to download and generate html files that you
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/dlowe/pootify.sh">pootify.sh</a>, however, to download and generate html files that you
 can look at locally in a browser or pipe through <code>less(1)</code>. For instance:</p>
 <pre><code>    ./pootify.sh URL=https://microsoft.com | less
 
