@@ -87,20 +87,20 @@ order as described below.
 
     a   - Advanced racing in a winter landscape
     d   - Racing in at night in the dark
-#   - Race track selection 1-3 are valid numbers
+    #   - Race track selection 1-3 are valid numbers
 ```
 
 Here are a few examples:
 
 ```
-    Command line:               Description:
+    Command line:             Description:
 
-    $ ./vik1                    Run track 1 at daytime in the summer
-    $ ./vik1 a                  Run track 1 at daytime in the winter
-    $ ./vik1 d                  Run track 1 at night in the summer
-    $ ./vik1 3                  Run track 3 at daytime in the summer
-    $ ./vik1 d3                 Run track 3 at night in the summer
-    $ ./vik1 ad2                Run track 2 at night in the winter
+    ./vik1                    Run track 1 at daytime in the summer
+    ./vik1 a                  Run track 1 at daytime in the winter
+    ./vik1 d                  Run track 1 at night in the summer
+    ./vik1 3                  Run track 3 at daytime in the summer
+    ./vik1 d3                 Run track 3 at night in the summer
+    ./vik1 ad2                Run track 2 at night in the winter
 ```
 
 Note that the order in which the argument characters are entered is
