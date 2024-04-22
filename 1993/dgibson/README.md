@@ -13,7 +13,7 @@
 
 where:
 
-`datafile` is the initial pattern (default: [dgibson.data1](dgibson.data1))
+`datafile` is the initial pattern (default: [dgibson.data1](%%REPO_URL%%/1993/dgibson/dgibson.data1))
 
 
 ## Try:
@@ -25,21 +25,21 @@ where:
 
 ## Judges' remarks:
 
-We have provided the shell script [dgibson.sh](dgibson.sh) to make it easier
+We have provided the shell script [dgibson.sh](%%REPO_URL%%/1993/dgibson/dgibson.sh) to make it easier
 to run this entry.  Run this shell script several times to
 see what happens.
 
 There are a number of data files available:
 
-- [dgibson.data1](dgibson.data1)
-- [dgibson.data2](dgibson.data2)
-- [dgibson.data3](dgibson.data3)
-- [dgibson.data4](dgibson.data4)
-- [dgibson.data5](dgibson.data5)
+- [dgibson.data1](%%REPO_URL%%/1993/dgibson/dgibson.data1)
+- [dgibson.data2](%%REPO_URL%%/1993/dgibson/dgibson.data2)
+- [dgibson.data3](%%REPO_URL%%/1993/dgibson/dgibson.data3)
+- [dgibson.data4](%%REPO_URL%%/1993/dgibson/dgibson.data4)
+- [dgibson.data5](%%REPO_URL%%/1993/dgibson/dgibson.data5)
 
-For [dgibson.data5](dgibson.data5) you will need a large screen, lots of virtual
-memory and lots of time! The [try.sh](try.sh) script will run
-[dgibson.sh](dgibson.sh) on all the data files.
+For [dgibson.data5](%%REPO_URL%%/1993/dgibson/dgibson.data5) you will need a large screen, lots of virtual
+memory and lots of time! The [try.sh](%%REPO_URL%%/1993/dgibson/try.sh) script will run
+[dgibson.sh](%%REPO_URL%%/1993/dgibson/dgibson.sh) on all the data files.
 
 Good luck trying to use a debugger on this entry!  Life is not
 always pretty.

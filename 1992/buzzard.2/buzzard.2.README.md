@@ -10,7 +10,7 @@
 
 Use  `./first < <demo>`.
 
-- [demo1.1st](demo1.1st)				- prints Hello World! assuming ASCII
+- [demo1.1st](%%REPO_URL%%/1992/buzzard.2/demo1.1st)				- prints Hello World! assuming ASCII
 
 
 # THIRD demos:
