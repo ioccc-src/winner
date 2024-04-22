@@ -3,12 +3,12 @@
 
 ## Section  0 - [Submitting entries to a new IOCCC](#faq0)
 - [0.0  - How may I submit to the IOCCC?](#faq0_0)
-- [0.1  - What types of entries have been over-submitted to the IOCCC?](#faq0_1)
+- [0.1  - What types of entries have been frequently submitted to the IOCCC?](#faq0_1)
 - [0.2  - What should I put in my entry's Makefile?](#faq0_2)
 - [0.3  - May I use a different source or compiled filename than prog.c or prog?](#faq0_3)
 - [0.4  - What platform should I assume for my entry?](#faq0_4)
 - [0.5  - How may I comment or make a suggestion on IOCCC rules, guidelines and tools?](#faq0_5)
-- [0.6  - What are the IOCCC requirements for using markdown?](#faq0_6)
+- [0.6  - What are the IOCCC best practices for using markdown?](#faq0_6)
 
 
 ## Section  1 - [History of the IOCCC](#faq1)
@@ -162,7 +162,8 @@ To submit your code to the IOCCC, you **MUST** follow these steps:
 
 	Makefile	Makefile to build (make all) and cleanup (make clean & make clobber)
 
-	remarks.md	Remarks about your entry in markdown format
+	remarks.md	Remarks about your entry in markdown format: see [FAQ 2.1](#remarks_md) for more info.
+
 			NOTE: See the [markdown syntax](https://www.markdownguide.org/basic-syntax) guide.
 			See also [CommonMark Spec](https://spec.commonmark.org/current/).
 
@@ -177,7 +178,7 @@ To submit your code to the IOCCC, you **MUST** follow these steps:
     then re-run the `mkiocccentry` tool.
 
     If you choose to risk violating rules, be sure an explain your reason
-    for doing so in your _remarks.md file.
+    for doing so in your `remarks.md` file.
 
 6. Upload your entry to the IOCCC submit server
 
@@ -191,24 +192,39 @@ To submit your code to the IOCCC, you **MUST** follow these steps:
 
 
 <div id="faq0_1">
-### FAQ 0.1: What types of entries have been over-submitted to the IOCCC?
+### FAQ 0.1: What types of entries have been frequently submitted to the IOCCC?
 </div>
 
-There are types of entries that show up over and over again.  The
-IOCCC judges, and we suspect the public that enjoy viewing the
-results of the IOCCC, like variety.
-
-While it is possible to win a new IOCCC with one of these
-__over-submitted__ types of entries, level of the competition from
-previous IOCCC entries make it more challenging to be successful.
-
-It is also important to note that the [guidelines](guidelines.html) often
-state something along the lines of:
-
-> _We tend to dislike programs that: are similar to previous winning entries_
+There are types of entries that are frequently submitted to the IOCCC.
+While we **do not wish to prevent** people from sending
+a submission to the IOCCC on a frequently submitted theme,
+we do wish to provide a **fair warning** to those who do.
 
 
-#### maze generator
+#### Fair warnings on frequently submitted themes
+
+**IMPORTANT HINT**: It is **not fatal** to send in those types of
+entries, it is just **HARDER to win** with such a submission.  A
+submission on a frequently submitted theme will have to do something
+in a **really unique AND interesting way** to even make it into the
+final judging rounds.  It will have to compete with previous IOCCC
+winners based on the same theme.
+
+**IMPORTANT HINT**: If you really wish send in an submission on a
+frequently submitted theme, be sure that it is obfuscated in several
+new and novel ways.
+
+**IMPORTANT HINT**: Be sure to **clearly explain** near the beginning
+of your `remarks.md` file (see [FAQ 2.1](#remarks_md))
+**why you are submitting a entry based on a frequently
+submitted theme** and **how compares with previous IOCCC winners**
+of the same theme.
+
+
+#### Examples of frequently submitted themes
+
+
+##### maze generator
 
 - [1985/shapiro](1985/shapiro/index.html)
 - [1991/buzzard](1991/buzzard/index.html)
@@ -217,41 +233,37 @@ state something along the lines of:
 - [1998/bas1](1998/bas1/index.html)
 
 
-#### tic-tac-toe/noughts and crosses/Xs and Os game
+##### tic-tac-toe/noughts and crosses/Xs and Os game
 
 - [1991/westley](1991/westley/index.html)
 - [1996/jonth](1996/jonth/index.html)
 - [2020/carlini](2020/carlini/index.html)
 
 
-#### solitaire/Othello game
+##### solitaire/Othello game
 
 - [1987/lievaart](1987/lievaart/index.html)
 - [1994/dodsond1](1994/dodsond1/index.html)
 
 
-#### generating small primes (below is the list of all prime related winning entries)
+##### generating small primes (below is the list of all prime related winning entries)
 
 - [1985/august](1985/august/index.html)
 - [1988/applin](1988/applin/index.html)
 - [1994/weisberg](1994/weisberg/index.html)
 - [1995/makarios](1995/makarios/index.html)
 - [1996/dalbec](1996/dalbec/index.html)
-
 - [2000/bellard](2000/bellard/index.html)
 
-_As you can see, just a list of primes (let alone small primes) does not cut it
-anymore._
 
-
-#### self reproducing program
+##### self reproducing program
 
 - [1990/scjones](1990/scjones/index.html)
-- [1994/smr](1994/smr/index.html) - _do not claim your program is the smallest one without seeing this_!
-- [2000/dhyang](2000/dhyang/index.html) - _unless you beat this one, your chances are slim_
+- [1994/smr](1994/smr/index.html) - _do not claim your program is the smallest without seeing this entry_!
+- [2000/dhyang](2000/dhyang/index.html) - _this entry set a high bar for entries of this theme_
 
 
-#### entries that just print "Hello, world!"
+##### entries that just print "Hello, world!"
 
 - [1984/anonymous](1984/anonymous/index.html)
 - [1985/applin](1985/applin/index.html)
@@ -261,10 +273,8 @@ anymore._
 - [1992/lush](1992/lush/index.html)
 - [2000/tomx](2000/tomx/index.html)
 
-_**...it's so 20th century...**_ :-)
 
-
-#### entries that use some complex state machine/table to print something
+##### entries that use some complex state machine/table to print something
 
 - [1988/isaak](1988/isaak/index.html)
 - [1988/phillipps](1988/phillipps/index.html)
@@ -272,7 +282,7 @@ _**...it's so 20th century...**_ :-)
 - [2018/giles](2018/giles/index.html)
 
 
-#### rot13
+##### rot13
 
 - [1985/sicherman](1985/sicherman/index.html)
 - [1989/westley](1989/westley/index.html)
@@ -280,7 +290,7 @@ _**...it's so 20th century...**_ :-)
 - [1991/fine](1991/fine/index.html)
 
 
-#### **pi** or **e** computation
+##### **pi** or **e** computation
 
 - [1986/august](1986/august/index.html)
 - [1988/robison](1988/robison/index.html)
@@ -288,19 +298,28 @@ _**...it's so 20th century...**_ :-)
 - [1989/roemer](1989/roemer/index.html)
 
 
-#### Hints on overused themes
+####  The above list of frequently submitted themes is not exhaustive
 
-HINT: It is not fatal to send in those types of entries, it is just MUCH
-HARDER to win. Such an entry would have to do something _really unique **AND**
-interesting_ to even make it into the final judging rounds. Entries that
-reuse these 'worn out' themes frequently lose to other entries that do
-something different.
 
-HINT: If you really MUST send in an entry based on an 'overused theme', be sure
-that it is obfuscated in several new and novel ways. Be sure to _clearly_
-explain near the beginning of your remarks why you are submitting a entry based
-on an 'overused theme' and why the judges should not simply toss it out as being
-boring.
+#### Some final thoughts on frequently used themes
+
+While it is possible to win a new IOCCC with one of these
+**frequently submitted** types of entries, level of the competition from
+previous IOCCC entries make it more challenging to be successful.
+
+It is also important to note that the [guidelines](guidelines.html) often
+state something along the lines of:
+
+```
+    We tend to dislike programs that: are similar to previous winning entries.
+```
+
+**FAIR WARNING**: Be sure to **clearly explain** near the beginning
+of your `remarks.md` file (see [FAQ 2.1](#remarks_md))
+**why you are submitting a entry based on a frequently
+submitted theme** and **how compares with previous IOCCC winners**
+of the same theme.
+
 
 
 <div id="faq0_2">
@@ -411,7 +430,7 @@ discussion with the [IOCCC judges](judges.html), then see
 
 <div id="faq0_6">
 <div id="markdown">
-### FAQ 0.6: - What are the IOCCC requirements for using markdown?
+### FAQ 0.6: - What are the IOCCC best practices for using markdown?
 </div>
 </div>
 
@@ -788,7 +807,9 @@ By tradition, we do not say.
 
 
 <div id="faq2_1">
+<div id="remarks_md">
 ### FAQ 2.1: What should I put in the remarks.md file of my entry?
+</div>
 </div>
 
 While you may put in as much or as little as you wish into your entry's
