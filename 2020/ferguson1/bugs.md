@@ -1,18 +1,22 @@
-Current bugs and things that look like bugs but are not, as of 12 September 2020.
+# Current bugs and things that look like bugs but are not
 
-<a name="toc"></a>
+.. as of 12 September 2020.
 
--   [Built-in test unit for some features!](#builtin-test-unit)
--   [The snake doesn't seem to be moving](#stillsnake)
--   [getch() also accepts input from some input hardware other than keyboards](#getch)
--   [SIZE=0 is the same as SIZE=1 and other oddities](#size)
--   ['I was a few places behind my tail and I ran into it!'](#bitetail)
--   [With negative growth the snake drops from the middle of the body](#middleofsnake)
--   [It looks like the bug is in the snake](#buginsnake)
--   [On the safety of the bug placement loop](#bugplacement)
+<div id="toc">
+* [Built-in test unit for some features!](#builtin-test-unit)
+* [The snake doesn't seem to be moving](#stillsnake)
+* [getch() also accepts input from some input hardware other than keyboards](#getch)
+* [SIZE=0 is the same as SIZE=1 and other oddities](#size)
+* ['I was a few places behind my tail and I ran into it!'](#bitetail)
+* [With negative growth the snake drops from the middle of the body](#middleofsnake)
+* [It looks like the bug is in the snake](#buginsnake)
+* [On the safety of the bug placement loop](#bugplacement)
+</div>
 
 
-# <a name="builtin-test-unit" href="#toc">Built-in test unit for some features!</a>
+<div id="builtin-test-unit">
+# <a href="#toc">Built-in test unit for some features!</a>
+</div>
 
 Fun fact: There's something of a built-in test unit for some features; much
 like some of the other features this was not intentionally designed but is
@@ -206,6 +210,7 @@ that's how they grow in the wild so it's a misnomer. The shrinking was only
 'discovered' because it's an unsigned number but happily it allows for different
 gameplay modes.
 
+
 <div id="buginsnake">
 # <a href="#toc">It looks like the bug is in the snake</a>
 </div>
@@ -223,6 +228,7 @@ something like:
 
 This is because the snake is no longer there: in fact in this run the snake was
 quite a bit lower on the screen and 25 in length.
+
 
 <div id="bugplacement">
 # <a href="#toc">On the safety of the bug placement loop</a>
