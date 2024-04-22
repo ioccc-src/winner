@@ -60,7 +60,7 @@ double-rounding (first internally set to 80 bit, then to 64 bit
 on writing the value to memory), there is a small but very real
 chance any given file produced might not be portable.
 
-The [Makefile](Makefile) defaults to `-O3` and no `asm()` call.
+The [Makefile](%%REPO_URL%%/2000/bmeyer/Makefile) defaults to `-O3` and no `asm()` call.
 
 
 ## Author's remarks:
@@ -323,21 +323,21 @@ en/decoded[^4].
 
 ### Photo Credit:
 
-[Lavabus](lavabus.pgm) was taken by the judge, Landon Curt Noll.
-[Michael](michael.pgm) was provided by the author.  [Lenna](lenna.glic) is a
+[Lavabus](%%REPO_URL%%/2000/bmeyer/lavabus.pgm) was taken by the judge, Landon Curt Noll.
+[Michael](%%REPO_URL%%/2000/bmeyer/michael.pgm) was provided by the author.  [Lenna](lenna.glic) is a
 1972 Playboy centerfold (doesn't show very much).
 
-- [michael.pgm](michael.pgm)
+- [michael.pgm](%%REPO_URL%%/2000/bmeyer/michael.pgm)
 
     The author's Godchild and nephew.
 
-- [lavabus.pgm](lavabus.pgm)
+- [lavabus.pgm](%%REPO_URL%%/2000/bmeyer/lavabus.pgm)
 
     A bus that was trapped by lava from [Kilauea
     volcano](https://en.wikipedia.org/wiki/Kīlauea) in Hawaii, US.  Nobody was
     in the bus at the time, BTW.  Photo date: 1981.
 
-- [lenna.glic](lenna.glic)
+- [lenna.glic](%%REPO_URL%%/2000/bmeyer/lenna.glic)
 
     A November 1972 Playboy centerfold was scanned in long ago and has been used
     for image compression research since then.  Playboy originally threatened to
