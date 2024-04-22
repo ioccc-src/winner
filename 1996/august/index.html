@@ -264,7 +264,7 @@ defined. <code>getchar()</code> and <code>putchar()</code> are predefined functi
 <p>Terminals are in quotes, <code>()</code> is used for bracketing.</p>
 <pre><code>    program:    decl*
 
-    decl:               vardecl
+    decl:       vardecl
                     fundecl
 
     vardecl:    type NAME ;
@@ -272,14 +272,14 @@ defined. <code>getchar()</code> and <code>putchar()</code> are predefined functi
 
     fundecl:    type NAME &quot;(&quot; args &quot;)&quot; &quot;{&quot; body &quot;}&quot;
 
-    args:               /*empty*/
+    args:       /*empty*/
                     ( arg &quot;,&quot; )* arg
 
-    arg:                type NAME
+    arg:        type NAME
 
-    body:               vardecl* stmt*
+    body:       vardecl* stmt*
 
-    stmt:               ifstmt
+    stmt:       ifstmt
                     whilestmt
                     dowhilestmt
                     &quot;return&quot; expr &quot;;&quot;
@@ -287,14 +287,14 @@ defined. <code>getchar()</code> and <code>putchar()</code> are predefined functi
                     &quot;{&quot; stmt* &quot;}&quot;
                     &quot;;&quot;
 
-    ifstmt:             &quot;if&quot; &quot;(&quot; expr &quot;)&quot; stmt
+    ifstmt:     &quot;if&quot; &quot;(&quot; expr &quot;)&quot; stmt
                     &quot;if&quot; &quot;(&quot; expr &quot;)&quot; stmt &quot;else&quot; stmt
 
     whilestmt:  &quot;while&quot; &quot;(&quot; expr &quot;)&quot; stmt
 
-    dowhilestmt:        &quot;do&quot; stmt &quot;while&quot; &quot;(&quot; expr &quot;)&quot; &quot;;&quot;
+    dowhilestmt:&quot;do&quot; stmt &quot;while&quot; &quot;(&quot; expr &quot;)&quot; &quot;;&quot;
 
-    expr:               expr binop expr
+    expr:       expr binop expr
                     unop expr
                     expr &quot;[&quot; expr &quot;]&quot;
                     &quot;(&quot; expr &quot;)&quot;
@@ -304,19 +304,19 @@ defined. <code>getchar()</code> and <code>putchar()</code> are predefined functi
                     CHAR
                     STRING
 
-    exprs:              /*empty*/
+    exprs:      /*empty*/
                     (expr &quot;,&quot;)* expr
 
-    binop:              &quot;+&quot; | &quot;-&quot; | &quot;*&quot; | &quot;/&quot; | &quot;%&quot; |
+    binop:      &quot;+&quot; | &quot;-&quot; | &quot;*&quot; | &quot;/&quot; | &quot;%&quot; |
                     &quot;=&quot; |
                     &quot;&lt;&quot; | &quot;==&quot; | &quot;!=&quot;
 
-    unop:               &quot;!&quot; | &quot;-&quot; | &quot;*&quot;
+    unop:       &quot;!&quot; | &quot;-&quot; | &quot;*&quot;
 
-    type:               &quot;int&quot; stars
+    type:       &quot;int&quot; stars
                     &quot;char&quot; stars
 
-    stars:              &quot;*&quot;*</code></pre>
+    stars:      &quot;*&quot;*</code></pre>
 <hr style="width:10%;text-align:left;margin-left:0">
 <p>Well, that is enough ranting for now.</p>
 <!--

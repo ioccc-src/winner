@@ -216,7 +216,7 @@ Terminals are in quotes, `()` is used for bracketing.
 ```
     program:	decl*
 
-    decl:		vardecl
+    decl:	vardecl
 		    fundecl
 
     vardecl:	type NAME ;
@@ -224,14 +224,14 @@ Terminals are in quotes, `()` is used for bracketing.
 
     fundecl:	type NAME "(" args ")" "{" body "}"
 
-    args:		/*empty*/
+    args:	/*empty*/
 		    ( arg "," )* arg
 
-    arg:		type NAME
+    arg:	type NAME
 
-    body:		vardecl* stmt*
+    body:	vardecl* stmt*
 
-    stmt:		ifstmt
+    stmt:	ifstmt
 		    whilestmt
 		    dowhilestmt
 		    "return" expr ";"
@@ -239,14 +239,14 @@ Terminals are in quotes, `()` is used for bracketing.
 		    "{" stmt* "}"
 		    ";"
 
-    ifstmt:		"if" "(" expr ")" stmt
+    ifstmt:	"if" "(" expr ")" stmt
 		    "if" "(" expr ")" stmt "else" stmt
 
     whilestmt:	"while" "(" expr ")" stmt
 
-    dowhilestmt:	"do" stmt "while" "(" expr ")" ";"
+    dowhilestmt:"do" stmt "while" "(" expr ")" ";"
 
-    expr:		expr binop expr
+    expr:	expr binop expr
 		    unop expr
 		    expr "[" expr "]"
 		    "(" expr ")"
@@ -256,19 +256,19 @@ Terminals are in quotes, `()` is used for bracketing.
 		    CHAR
 		    STRING
 
-    exprs:		/*empty*/
+    exprs:	/*empty*/
 		    (expr ",")* expr
 
-    binop:		"+" | "-" | "*" | "/" | "%" |
+    binop:	"+" | "-" | "*" | "/" | "%" |
 		    "=" |
 		    "<" | "==" | "!="
 
-    unop:		"!" | "-" | "*"
+    unop:	"!" | "-" | "*"
 
-    type:		"int" stars
+    type:	"int" stars
 		    "char" stars
 
-    stars:		"*"*
+    stars:	"*"*
 ```
 
 <hr style="width:10%;text-align:left;margin-left:0">
