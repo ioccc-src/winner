@@ -7,7 +7,7 @@ more thorough description and any resolutions (from easiest to hardest). For
 anything that can cause more than one issue I will list those separately to keep
 it as structured as possible/easiest to find.
 
-<a name="toc"></a>
+<div id="top">
 -   [The top wall isn't (all/some of the time) visible!](#topwall)
 -   [The snake isn't moving!](#notmoving)
 -   [I can't see the snake head (or other part of the snake)!](#invisiblehead)
@@ -20,9 +20,12 @@ it as structured as possible/easiest to find.
 -   [Can I move the snake faster temporarily without having to modify the wait time?](#movefaster)
 -   [On environmental variables more generally and string to int conversions](#envvars)
 -   [Errors and error reporting](#errors)
+</div>
 
 
-## <a name="topwall" href="#toc">The top wall isn't (all/some of the time) visible!</a>
+<div id="topwall">
+## <a href="#toc">The top wall isn't (all/some of the time) visible!</a>
+</div>
 
 Because the score line is dynamic in length depending on the terminal size it
 can happen that the score/status wraps to the next line(s). This can be fixed by
@@ -53,7 +56,9 @@ you shouldn't need it to be very wide.
     see).
 
 
-## <a name="notmoving" href="#toc">The snake isn't moving!</a>
+<div id="notmoving">
+## <a href="#toc">The snake isn't moving!</a>
+</div>
 
 Unless the game is paused this should not be happening. It can appear sometimes
 that there isn't movement and sometimes it might have to take a moment to
@@ -84,7 +89,9 @@ e.g. when the snake is growing.
 file.
 
 
-## <a name="invisiblehead" href="#toc">I can't see the snake head (or other part of the snake)!</a>
+<div id="invisiblehead">
+## <a href="#toc">I can't see the snake head (or other part of the snake)!</a>
+</div>
 
 Possibly this could happen with too long a score line which I already discussed.
 It also used to be possible during cannibal mode whilst cannibalising: you would
@@ -102,7 +109,9 @@ that earlier in this file. To get a recommended number of columns use `make
 test`.
 
 
-## <a name="invisiblebug" href="#toc">I can't see the bug!</a>
+<div id="invisiblebug">
+## <a href="#toc">I can't see the bug!</a>
+</div>
 
 This has happened to me a number of times and early in development there were
 times that I could swear I even saw it beyond the walls but this should not be a
@@ -139,7 +148,9 @@ since `*` is a regexp metacharacter). This has happened to me numerous times.
 [snake-colours.sh][] script to select a different colour scheme.
 
 
-## <a name="froze" href="#toc">The game froze!</a>
+<div id="froze">
+## <a href="#toc">The game froze!</a>
+</div>
 
 This should not be possible either but without certain safety checks in place I
 have caused this (and I did this deliberately in development to find all the
@@ -226,7 +237,9 @@ snake. See below for some tests.
     This shouldn't happen though.
 
 
-## <a name="bigsnake" href="#toc">The game gets slower as the snake gets bigger!</a>
+<div id="bigsnake">
+## <a href="#toc">The game gets slower as the snake gets bigger!</a>
+</div>
 
 Realistically the game shouldn't take that much memory but maybe in some very
 busy systems it would have a problem.
@@ -244,7 +257,9 @@ the snake is bigger i.e. the screen is rather fuller than when you first begin?
 Or is the system rather busy?
 
 
-## <a name="headonly" href="#toc">I set `SIZE=0 GROW=1`, ate a bug but still only the head was visible! Why?</a>
+<div id="headonly">
+## <a href="#toc">I set `SIZE=0 GROW=1`, ate a bug but still only the head was visible! Why?</a>
+</div>
 
 * RESOLUTION #0: The size includes the head but what should it show if the size
 is 0? The head is the obvious choice so once you do get to size 1 you will still
@@ -264,7 +279,9 @@ Try:
 * BOTTOM LINE: In some senses SIZE=0 and SIZE=1 are the same thing.
 
 
-## <a name="monochrome" href="#toc">I like black text on a white background but even with a white background terminal it ends up black!</a>
+<div id="monochrome">
+## <a href="#toc">I like black text on a white background but even with a white background terminal it ends up black!</a>
+</div>
 
 This is a curses thing but fortunately it should be easy enough to solve.
 
@@ -294,7 +311,9 @@ so that's probably why; in CentOS I did have to install it specially.
     [terminals.html][].
 
 
-## <a name="toodark" href="#toc">The text is hard to see (not bright enough)!</a>
+<div id="toodark">
+## <a href="#toc">The text is hard to see (not bright enough)!</a>
+</div>
 
 * RESOLUTION #0: Make sure that your terminal settings have for bold text a
 brighter font. The way I have my terminal profiles set up is to use bright
@@ -308,7 +327,10 @@ out if enabling brighter colours is possible.
     and in my systems I have the option to enable brighter colours for bold - it
     was only in testing that I came across this problem.
 
-## <a name="movefaster" href="#toc">Can I move the snake faster temporarily without having to modify the wait time?</a>
+
+<div id="movefaster">
+## <a href="#toc">Can I move the snake faster temporarily without having to modify the wait time?</a>
+</div>
 
 Yes. The `getch()` call is non-blocking when the timeout value is positive so
 it's up to that number of milliseconds.
@@ -323,8 +345,9 @@ than the regular wait time. For negative wait time (drawing mode) you have to
 hit a key every time to move because it is blocking.
 
 
-
-## <a name="envvars" href="#toc">On environmental variables more generally and string to int conversions</a>
+<div id="envvars">
+## <a href="#toc">On environmental variables more generally and string to int conversions</a>
+</div>
 
 What happens if you do:
 
@@ -398,7 +421,10 @@ I discuss the signed/unsigned issue to do with curses and sizes in C being
 unsigned in [bugs.html][] but probably there isn't
 anything more to say here.
 
-## <a name="errors" href="#toc">Errors and error reporting</a>
+
+<div id="errors">
+## <a href="#toc">Errors and error reporting</a>
+</div>
 
 If curses fails to initialise you should get an error that says 'curses error'
 and you have every right to curse it to hell if that's what you so wish.
