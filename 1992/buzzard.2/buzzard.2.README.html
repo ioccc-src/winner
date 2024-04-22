@@ -142,12 +142,14 @@
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/buzzard.2/help.th">help.th</a> - online listing of THIRD primitives</li>
 </ul>
 <h1 id="first-demos">FIRST demos:</h1>
-<p>Use <code>./first &lt; &lt;demo&gt;</code>.</p>
+<p>Use:</p>
+<pre><code>    ./first &lt; demo_file</code></pre>
 <ul>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/buzzard.2/demo1.1st">demo1.1st</a> - prints Hello World! assuming ASCII</li>
 </ul>
 <h1 id="third-demos">THIRD demos:</h1>
-<p>Use <code>cat third &lt;demo&gt; | ./first</code>.</p>
+<p>Use:</p>
+<pre><code>    cat third demo_file | ./first</code></pre>
 <h2 id="demo-files">Demo files:</h2>
 <ul>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/buzzard.2/demo1.th">demo1.th</a> - prints Hello World! regardless of character set</li>
@@ -159,9 +161,9 @@
 </ul>
 <h1 id="interactive-third">Interactive THIRD:</h1>
 <p>Use:</p>
-<pre><code>cat third - | ./first</code></pre>
+<pre><code>    cat third - | ./first</code></pre>
 <p>To include the primitive on-line help, use:</p>
-<pre><code>cat third help.th - | ./first</code></pre>
+<pre><code>    cat third help.th - | ./first</code></pre>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

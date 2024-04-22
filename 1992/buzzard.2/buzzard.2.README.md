@@ -3,19 +3,27 @@
 - [buzzard.2.README.html](buzzard.2.README.html)	- this file
 - [buzzard.2.design.html](buzzard.2.design.html)	- description of FIRST (design documentation of THIRD)
 - [third](%%REPO_URL%%/1992/buzzard.2/third)		- implementation of THIRD in FIRST
-- [help.th](%%REPO_URL%%/1992/buzzard.2/help.th)		- online listing of THIRD primitives
+- [help.th](%%REPO_URL%%/1992/buzzard.2/help.th)	- online listing of THIRD primitives
 
 
 # FIRST demos:
 
-Use  `./first < <demo>`.
+Use:
 
-- [demo1.1st](%%REPO_URL%%/1992/buzzard.2/demo1.1st)				- prints Hello World! assuming ASCII
+```
+    ./first < demo_file
+```
+
+- [demo1.1st](%%REPO_URL%%/1992/buzzard.2/demo1.1st)	- prints Hello World! assuming ASCII
 
 
 # THIRD demos:
 
-Use `cat third <demo> | ./first`.
+Use:
+
+```
+    cat third demo_file | ./first
+```
 
 
 ## Demo files:
@@ -33,13 +41,13 @@ Use `cat third <demo> | ./first`.
 Use:
 
 ```
-cat third - | ./first
+    cat third - | ./first
 ```
 
 To include the primitive on-line help, use:
 
 ```
-cat third help.th - | ./first
+    cat third help.th - | ./first
 ```
 
 
