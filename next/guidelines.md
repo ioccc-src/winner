@@ -34,6 +34,8 @@ writing from the contest judges.
 
 **`|`** This guidelines file is version **2023-04-04-v28**.
 
+**IMPORTANT**: Be sure to read the [IOCCC rules](rules.html).
+
 
 ### Change marks
 
