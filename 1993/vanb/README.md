@@ -42,9 +42,9 @@ The octal expression may contain:
 ```
     unary operators:	+, -
     binary operators	+, -, *, /, %
-    hex numbers:		x or X followed by hex digits
+    hex numbers:	x or X followed by hex digits
     decimal numbers:	d or D followed by decimal digits
-    octal numbers:		octal digits
+    octal numbers:	octal digits
     grouping:		()
 ```
 
