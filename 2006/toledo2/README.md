@@ -149,8 +149,10 @@ by the provided C.BIOS.
 To get a complete [CP/M](https://en.wikipedia.org/wiki/CP/M) system, you will need the following files
 from the `SOURCE` directory:
 
-        ASM.COM  DDT.COM   DUMP.COM   ED.COM   LOAD.COM
-        PIP.COM  STAT.COM  SUBMIT.COM XSUB.COM
+```
+    ASM.COM  DDT.COM   DUMP.COM   ED.COM   LOAD.COM
+    PIP.COM  STAT.COM  SUBMIT.COM XSUB.COM
+```
 
 To import them, you must run the emulator with an argument, by
 example:
