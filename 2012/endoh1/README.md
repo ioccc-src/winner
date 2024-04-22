@@ -1,3 +1,4 @@
+## To use:
 
 ``` <!---sh-->
     make
@@ -10,9 +11,6 @@ white and one for the colour one added by the author (at the request of the
 judges at the time of the contest).  Another version is the deobfuscated version
 provided by the author as well.  See the [Alternate code](#alternate-code)
 section below for more details.
-
-
-## To use:
 
 ``` <!---sh-->
     ./endoh1 < file
@@ -39,11 +37,11 @@ see what this looks like not going so fast then you might wish to try the
 
 ## Alternate code:
 
-The files [endoh1.alt.c](endoh1.alt.c) and
-[endoh1_color.alt.c](endoh1_color.alt.c) correspond to [endoh1.c](endoh1.c) and
-[endoh1_color.c](endoh1_color.c) but which allow you to speed up or slow down
+The files [endoh1.alt.c](%%REPO_URL%%/2012/endoh1/endoh1.alt.c) and
+[endoh1_color.alt.c](%%REPO_URL%%/2012/endoh1/endoh1_color.alt.c) correspond to [endoh1.c](%%REPO_URL%%/2012/endoh1/endoh1.c) and
+[endoh1_color.c](%%REPO_URL%%/2012/endoh1/endoh1_color.c) but which allow you to speed up or slow down
 the fluid and change the behaviour of the fluid. The file
-[endoh1.alt2.c](endoh1.alt.c) is deobfuscated and was provided by the author.
+[endoh1.alt2.c](%%REPO_URL%%/2012/endoh1/endoh1.alt.c) is deobfuscated and was provided by the author.
 
 
 ### Alternate build:
@@ -287,21 +285,21 @@ casting) it to an integer-type variable.
 
 ### Notes about Additional Files
 
-[logo.txt](logo.txt) is a source of the logo in this remark file.
+[logo.txt](%%REPO_URL%%/2012/endoh1/logo.txt) is a source of the logo in this remark file.
 
-[column.txt](column.txt) is a water column collapse, which is a popular demo of SPH.
+[column.txt](%%REPO_URL%%/2012/endoh1/column.txt) is a water column collapse, which is a popular demo of SPH.
 
-[pour-out.txt](pour-out.txt) pours you a cup of tea.
+[pour-out.txt](%%REPO_URL%%/2012/endoh1/pour-out.txt) pours you a cup of tea.
 
-[tanada.txt](tanada.txt) simulates "Terrace farming".  ("Tanada" means a "[terraced rice
+[tanada.txt](%%REPO_URL%%/2012/endoh1/tanada.txt) simulates "Terrace farming".  ("Tanada" means a "[terraced rice
 fields](https://en.wikipedia.org/wiki/Terrace_(earthworks))" in Japanese.)
 
-[clock.txt](clock.txt) is a "water" clock created by HAMANO Tsukasa.
+[clock.txt](%%REPO_URL%%/2012/endoh1/clock.txt) is a "water" clock created by HAMANO Tsukasa.
 
 Other `*.txt` files are from the judges.
 
 
-[endoh1_color.c](endoh1_color.c) is a variant that shows the density by using terminal 256
+[endoh1_color.c](%%REPO_URL%%/2012/endoh1/endoh1_color.c) is a variant that shows the density by using terminal 256
 colors.
 
 ### Acknowledgments
