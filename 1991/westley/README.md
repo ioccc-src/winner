@@ -82,7 +82,7 @@ The final might look like:
 
 ``` <!---c-->
 		    a(X){/*/X=-		a(X){/*/X=-
-	    X	-1;F;X=-	 	-1;F;X=-
+	    X	    -1;F;X=-	 	-1;F;X=-
 		    -1;F;}/*/		-1;F;}/*/
     char z[][100]={"char z[][100]={","a(X){/*/X=-","-1;F;X=-","-1;F;}/*/","1999999999  :-) ",
     "int q,i,j,k,X,O=0,H;S(x)int*x;{X+=X;O+=O;*x+1?*x+2||X++:O++;*x=1;}L(n){for(*",
@@ -94,7 +94,7 @@ The final might look like:
     ",O),R(),O|=1<<--i:J[*J-48+(X=O=0)]--;L(q=0);for(s(i=0);q=i<12;)s(i++),i>4&&N",
     ";s(q=12);P(48);P('}');P(59);N;q=0;L(1);for(i=5;i<13;)s(i++),N;L(2);}",0};
 		    b(X){/*/X=-		b(X){/*/X=-
-	    X	-1;F;X=-	 	-1;F;X=-	X
+	    X	    -1;F;X=-	 	-1;F;X=-	X
 		    -1;F;}/*/		-1;F;}/*/
     int q,i,j,k,X,O=0,H;S(x)int*x;{X+=X;O+=O;*x+1?*x+2||X++:O++;*x=1;}L(n){for(*
     z[i=1]=n+97;i<4;i++)M(256),s(i),M(128),s(i),M(64),N;X*=8;O*=8;}s(R){char*r=z
@@ -105,7 +105,7 @@ The final might look like:
     ,O),R(),O|=1<<--i:J[*J-48+(X=O=0)]--;L(q=0);for(s(i=0);q=i<12;)s(i++),i>4&&N
     ;s(q=12);P(48);P('}');P(59);N;q=0;L(1);for(i=5;i<13;)s(i++),N;L(2);}
 		    c(X){/*/X=-		c(X){/*/X=-
-	    0	-1;F;X=-	0	-1;F;X=-	0
+	    0	    -1;F;X=-	  0	-1;F;X=-	0
 		    -1;F;}/*/		-1;F;}/*/
 
     ttt: I win!
