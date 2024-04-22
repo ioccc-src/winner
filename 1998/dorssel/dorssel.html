@@ -266,17 +266,21 @@ mind ;-)</p>
     l[34]           terminator for backward decoding
     l[35] - l[998]  input line</code></pre>
 <hr style="width:10%;text-align:left;margin-left:0">
-<p>Selected notes:
-- We don’t need to declare <code>isalnum(3)</code> (or include ctype.h) as its implicit
+<p>Selected notes:</p>
+<ul>
+<li>We don’t need to declare <code>isalnum(3)</code> (or include ctype.h) as its implicit
 declaration is correct (int argument, int result). This is not so for
-<code>strlen(3)</code>, <code>strspn(3)</code>, and <code>memchr(3)</code> as they use <code>size_t</code>.
-- During development, my gcc 2.7.2.3 had an internal compiler error (signal
-6) on code that was correct !
-- lclint 2.4b thinks that “the observer is modified” a couple of times,
-whereas it is not. Well, it is, but there is a sequence point in between.
-- lclint 2.4b parses line 13 as <error>, whereas it is correct code.
-- lclint 2.4b is positive the second <code>while</code> loop is infinite, whereas it is
-not.</p>
+<code>strlen(3)</code>, <code>strspn(3)</code>, and <code>memchr(3)</code> as they use <code>size_t</code>.</li>
+<li>During development, my gcc 2.7.2.3 had an internal compiler error (signal
+<ol start="6" type="1">
+<li>on code that was correct !</li>
+</ol></li>
+<li>lclint 2.4b thinks that “the observer is modified” a couple of times,
+whereas it is not. Well, it is, but there is a sequence point in between.</li>
+<li>lclint 2.4b parses line 13 as &lt;error&gt;, whereas it is correct code.</li>
+<li>lclint 2.4b is positive the second <code>while</code> loop is infinite, whereas it is
+not.</li>
+</ul>
 <hr style="width:10%;text-align:left;margin-left:0">
 <p>.. - …. .. -. -.- - …. .. … … .–. — .. .-.. . .-. .. … – — .-. . — -… ..-. ..- … -.-. .- - . -.. - …. .- -. - …. . .–. .-. — –. .-. .- –</p>
 <p>. -..- . .-. -.-. .. … .

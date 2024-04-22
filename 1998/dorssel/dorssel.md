@@ -191,6 +191,7 @@ Summary of the use of l[999]:
 <hr style="width:10%;text-align:left;margin-left:0">
 
 Selected notes:
+
 - We don't need to declare `isalnum(3)` (or include ctype.h) as its implicit
   declaration is correct (int argument, int result).  This is not so for
   `strlen(3)`, `strspn(3)`, and `memchr(3)` as they use `size_t`.
@@ -198,7 +199,7 @@ Selected notes:
   6) on code that was correct !
 - lclint 2.4b thinks that "the observer is modified" a couple of times,
   whereas it is not.  Well, it is, but there is a sequence point in between.
-- lclint 2.4b parses line 13 as <error>, whereas it is correct code.
+- lclint 2.4b parses line 13 as `<error>`, whereas it is correct code.
 - lclint 2.4b is positive the second `while` loop is infinite, whereas it is
   not.
 
