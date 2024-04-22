@@ -1,4 +1,6 @@
-# Extreme cannibalism in [2020 IOCCC 'Don't tread on me' Snake game](/2020/ferguson1/prog.c)
+# Extreme cannibalism in a Snake game
+
+See the [2020 IOCCC 'Don't tread on me' Snake game source code](%%REPO_URL%%/2020/ferguson1/prog.c).
 
 To give an idea what cannibalism can look like (it's I believe a unique feature
 to any other version of Snake), this file shows just how extreme cannibalism can

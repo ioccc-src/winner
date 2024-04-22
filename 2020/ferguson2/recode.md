@@ -6,8 +6,7 @@ explore my [Enigma machine](https://www.cryptomuseum.com/crypto/enigma/index.htm
 have to if you don't wish to.
 
 
-<a name="toc"></a>
-
+<div id="toc">
 -   [What is recode and why is it recommended?](#recode)
 -   [Options](#options)
     *	[Protecting against the same I/O file](#samefile)
@@ -24,12 +23,15 @@ have to if you don't wish to.
 -   [Example additions](#additions)
 -   [Example uses](#exampleuses)
 -   [A fun way to explore my Enigma machine, with a surprise](#fun)
+</div>
 
 
-# <a name="recode" href="#toc">What is recode and why is it recommended?</a>
+<div id="recode">
+# <a href="#toc">What is recode and why is it recommended?</a>
+</div>
 
-To demonstrate how to and why you should use the [recode](recode.c) program with
-the [Enigma machine simulator](prog.c) I have included some examples here as
+To demonstrate how to and why you should use the [recode.c](%%REPO_URL%%/2020/ferguson1/recode.c) program with
+the [Enigma machine simulator](%%REPO_URL%%/2020/ferguson1/prog.c) I have included some examples here as
 well as brief ('brief?!' I am sure many would think but it's brief for me)
 commentary.
 
@@ -53,7 +55,10 @@ with the Roman numeral, showing their actual orders etc.), the reflectors
 In this file I will show an example of each feature and then get to the
 wonderful 'challenge' for everyone.
 
-# <a name="options" href="#toc">Options</a>
+
+<div id="options">
+# <a href="#toc">Options</a>
+</div>
 
 ``` <!---sh-->
     ./recode -h
@@ -123,10 +128,12 @@ Again note that this does not validate input! Although it detects out of range
 for the arrays it doesn't detect duplicates. This is because it wasn't meant to
 be any given file or anything else other than the direct output of a previous
 run (thus validated). I'm not even guaranteeing that I got the array tests valid
-in [recode.c](recode.c) `-R` option!
+in [recode.c](%%REPO_URL%%/2020/ferguson1/recode.c) `-R` option!
 
 
-## <a name="samefile" href="#toc">Protecting against the same I/O file</a>
+<div id="samefile">
+## <a href="#toc">Protecting against the same I/O file</a>
+</div>
 
 Because some file systems are case-insensitive I have implemented a
 case-insensitive `strcmp()`; if the input file name is the same as the output file
@@ -138,7 +145,10 @@ possible. Of course if neither file exists it might be argued that it's not
 necessary to worry since you can't read from a file that doesn't exist. But then
 what about if one exists but the other does not?
 
-## <a name="fileoptions" href="#toc">File options parser limitation</a>
+
+<div id="fileoptions">
+## <a href="#toc">File options parser limitation</a>
+</div>
 
 Due to the way the parsing of options is done (no spaces between option char and
 argument) shell expansion will not work right so for example doing:
@@ -153,12 +163,17 @@ achieve this later.
 This limitation also applies to the `-f` and `-o` options!
 
 
-## <a name="validation" href="#toc">-R option validation?</a>
+<div id="validation">
+## <a href="#toc">-R option validation?</a>
+</div>
 
 Again the `-R` option does not validate input. For validation you have to run
 the program interactively.
 
-# <a name="pipingtorecode" href="#toc">Piping commands to recode</a>
+
+<div id="pipingtorecode">
+# <a href="#toc">Piping commands to recode</a>
+</div>
 
 If stdin is not a tty (`!isatty(0)`) and neither randomised mode nor reading in
 from a file is specified then you might just see something like:
@@ -182,7 +197,9 @@ prompting again for input if it's invalid (though as you'll see it does a good
 job at this anyway).
 
 
-# <a name="pipingtoenigma" href="#toc">Piping recode to the Enigma simulator</a>
+<div id="pipingtoenigma">
+# <a href="#toc">Piping recode to the Enigma simulator</a>
+</div>
 
 If you're using recode to recode the input so you don't have to type in the
 input manually (if you randomise or read in from previously saved file no input
@@ -202,8 +219,9 @@ Anyway at this point the simulator is already expecting input to en/decipher.
 That's why after I sent EOF it printed out the remaining strings to stderr.
 
 
-
-# <a name="manuallytest" href="#toc">Manually test the recode program with the Enigma program</a>
+<div id="manuallytest">
+# <a href="#toc">Manually test the recode program with the Enigma program</a>
+</div>
 
 ``` <!---sh-->
     $ cat input
@@ -285,7 +303,9 @@ Also if you flip the order of the letters in the pair e.g. the AB as BA instead:
     HQNVO
 ```
 
-# <a name="onlyconfig" href="#toc">Only write config file</a>
+<div id="onlyconfig">
+# <a href="#toc">Only write config file</a>
+</div>
 
 ``` <!---sh-->
     $ ./recode -v -oconfig -finput >/dev/null
@@ -378,7 +398,9 @@ the buffer remains `NULL` and so I don't print it but still do print the setting
 file. (Actually even if `getdelim()` fails you're supposed to free the buffer so I
 set another variable to indicate if it should be printed.)
 
-# <a name="reuseconfig" href="#toc">Reusing a configuration</a>
+<div id="reuseconfig">
+# <a href="#toc">Reusing a configuration</a>
+</div>
 
 ``` <!---sh-->
     $ echo -n|./recode -r -oconfig
@@ -412,7 +434,9 @@ Alternatively you can just use the `-R` and `-f` options:
 ```
 
 
-# <a name="passtoenigma" href="#toc">Write config file, read data file and pass to Enigma simulator</a>
+<div id="passtoenigma">
+# <a href="#toc">Write config file, read data file and pass to Enigma simulator</a>
+</div>
 
 ```
     $ ./recode -finput.txt -oconfig | ./prog - 2>/dev/null > output
@@ -473,7 +497,9 @@ does is the output:
 ```
 
 
-# <a name="directlytoenigma" href="#toc">Piping directly to the Enigma code once (with randomised settings, saved)</a>
+<div id="directlytoenigma">
+# <a href="#toc">Piping directly to the Enigma code once (with randomised settings, saved)</a>
+</div>
 
 This is like the above only randomised:
 
@@ -510,19 +536,27 @@ actual pasting to demonstrate:
 ```
 
 
-# <a name="conclusion" href="#toc">Usage conclusion</a>
+<div id="conclusion">
+# <a href="#toc">Usage conclusion</a>
+</div>
 
 That should give you an idea of how to use the `recode` program. I leave it as
 an exercise to the reader to implement additional features but here are some
 ideas of what could be done and how this entry might be used (including that
 delicious challenge).
 
-# <a name="additions" href="#toc">Example additions</a>
 
-*   Add code (to [prog.c](prog.c)) that tries to determine possible decipherments based on
+<div id="additions">
+# <a href="#toc">Example additions</a>
+</div>
+
+*   Add code (to [prog.c](%%REPO_URL%%/2020/ferguson1/prog.c)) that tries to determine possible decipherments based on
 a given crib (or set of cribs).
 
-# <a name="exampleuses" href="#toc">Example uses</a>
+
+<div id="exampleuses">
+# <a href="#toc">Example uses</a>
+</div>
 
 *   Take an actual key sheet and message for that day and try and decipher the
 message (might help if you know German!). I haven't actually done this for
@@ -541,7 +575,9 @@ anyway?
 * Best idea: try the below experiment!
 
 
-# <a name="fun" href="#toc">A fun way to explore my Enigma machine, with a surprise</a>
+<div id="fun">
+# <a href="#toc">A fun way to explore my Enigma machine, with a surprise</a>
+</div>
 
 As I was making the above silly list something occurred to me. My [other
 entry](https://www.ioccc.org/2020/ferguson1/index.html) this year includes a

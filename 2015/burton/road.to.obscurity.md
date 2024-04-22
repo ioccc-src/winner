@@ -146,7 +146,7 @@ But wouldn't it be nice to have assignable memories?
 Around this time, the formatted code no longer fit with the 2053 limit (due to a
 lack of comprehension of the significance of the space-after-brace-and-semi
 rule, and a layout program that did not know how to do this).  Frustrated, I
-wrote another program to reformat this code into [rule2.c](rule2.c), which was a
+wrote another program to reformat this code into [rule2.c](%%REPO_URL%%/2015/burton/rule2.c), which was a
 single C token per line.  This solved the formatting problem, but intriguingly
 introduced another.  Now I was faced with the 4096 rule as well as the 2053
 rule.  But this was a challenge!
@@ -154,11 +154,11 @@ rule.  But this was a challenge!
 I wrote a de-obfuscator, and worked on both the unobfuscated version and the
 master code.  I worked on the template formatter to make this as automated as
 possible, and worked to achieve both a perfectly presented picture AND the
-single-line exactly-at-4096 [rule2.c](rule2.c).
+single-line exactly-at-4096 [rule2.c](%%REPO_URL%%/2015/burton/rule2.c).
 
 Finally, "perfection", with assignable memories!  Where perfection is defined
 as a nicely formatted picture at less than 2053, and exactly 4096
-token-per-line [rule2.c](rule2.c).
+token-per-line [rule2.c](%%REPO_URL%%/2015/burton/rule2.c).
 
 
 ## Testing Testing Testing
@@ -202,7 +202,7 @@ statement).  This involved careful examination of all the expressions within the
 logic, trying to find a different way of getting the same result, but typically
 within fewer bytes than before to allow for the added logic to fix the bugs.
 
-The bugs were fixed, the code re-formatted, and [rule2.c](rule2.c) was again
+The bugs were fixed, the code re-formatted, and [rule2.c](%%REPO_URL%%/2015/burton/rule2.c) was again
 4096 bytes.
 
 But wouldn't it be nice for unary plus to work?
@@ -243,7 +243,7 @@ the largest piece of logic -- yielded the necessary bytes, and improved
 obscurity by double duty encoding of the operations initialization.
 
 The utility is now truly functional, and feature complete, and obscure.  Without
-[src.doc.txt](src.doc.txt) (basic documentation of the code structure), and some
+[src.doc.txt](%%REPO_URL%%/2015/burton/src.doc.txt) (basic documentation of the code structure), and some
 commented expanded logic stashed away, and the familiarity I have with the code
 having written and revised it repeatedly, I would not even want to attempt to
 decipher the logic.  Many times in the debugging, I was thwarted by my own

@@ -157,7 +157,7 @@ it as structured as possible/easiest to find.</p>
 <h2 id="the-top-wall-isnt-allsome-of-the-time-visible"><a name="topwall" href="#toc">The top wall isn’t (all/some of the time) visible!</a></h2>
 <p>Because the score line is dynamic in length depending on the terminal size it
 can happen that the score/status wraps to the next line(s). This can be fixed by
-modifying the status line (see <a href="HACKING.html">HACKING.html</a> or on GitHub <a href="HACKING.md">HACKING.md</a>) but
+modifying the status line (see <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/HACKING.html">HACKING.html</a> but
 you shouldn’t need it to be very wide.</p>
 <ul>
 <li><p>RESOLUTION #0: Use a bigger screen (it doesn’t take that many columns)</p>
@@ -166,12 +166,12 @@ needed. This won’t work right if you change the score line!</p>
 <p>Note that this utility is not perfect; I describe this elsewhere. Either way a
 small screen will make it harder to play esp without the cheat modes enabled
 (but they can still be fun with large screens).</p></li>
-<li><p>RESOLUTION #1: Open the <a href="prog.c">prog.c</a> and change the line</p>
+<li><p>RESOLUTION #1: Open the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/prog.c">prog.c</a> and change the line</p>
 <pre><code>      #define J Z(X:%d/%d Y:%d/%d S:%zu/%zu B:%zu\n),Y,y[-2],X, *y, A, g, c );</code></pre>
 <p>To be something like:</p>
 <pre><code>      #define J Z(B:%zu\n), c);</code></pre>
 <p>Recompile and try again. That will then show only the number of bugs eaten.
-See the <a href="HACKING.html">HACKING.html</a> (<a href="HACKING.md">HACKING.md</a> on GitHub) file for other data you
+See the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/HACKING.html">HACKING.html</a> file for other data you
 can include (though there are some discrepancies here and there as you’ll
 see).</p></li>
 </ul>
@@ -194,8 +194,8 @@ when it does move you’ll see it doesn’t move for long.</p>
 <p>Sometimes also it might appear that the movement is delayed but there are
 numerous causes for this some of which are a busy computer but ultimately
 it’ll catch up; just give it the time it needs.</p></li>
-<li><p>BOTTOM LINE: If you want more information then see the <a href="bugs.html">bugs.html</a>
-(<a href="bugs.md">bugs.md</a> on GitHub) file.</p></li>
+<li><p>BOTTOM LINE: If you want more information then see the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/bugs.html">bugs.html</a>
+file.</p></li>
 </ul>
 <h2 id="i-cant-see-the-snake-head-or-other-part-of-the-snake"><a name="invisiblehead" href="#toc">I can’t see the snake head (or other part of the snake)!</a></h2>
 <p>Possibly this could happen with too long a score line which I already discussed.
@@ -239,7 +239,7 @@ desperate copy and paste the entire file into a document and search for the bug
 char (if it’s an editor like vi/vim you will have to be sure to escape the char
 since <code>*</code> is a regexp metacharacter). This has happened to me numerous times.</p></li>
 <li><p>RESOLUTION #3: If the colour contrast is not good for your eyes use the
-<a href="snake-colours">snake-colours</a> script to select a different colour scheme.</p></li>
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/snake-colours.sh">snake-colours.sh</a> script to select a different colour scheme.</p></li>
 </ul>
 <h2 id="the-game-froze"><a name="froze" href="#toc">The game froze!</a></h2>
 <p>This should not be possible either but without certain safety checks in place I
@@ -353,9 +353,9 @@ at least) it’s at <code>/usr/share/terminfo/6c/linux-m</code> (for macOS Ventu
 background white and the foreground black. This will of course mean you have
 no colour but unfortunately changing the background colour of curses would
 eat too many bytes in the entry (I cite the functions in the
-<a href="HACKING.html">HACKING.html</a> (<a href="HACKING.md">HACKING.md</a> on GitHub) file).</p>
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/HACKING.html">HACKING.html</a>.</p>
 <p>I discuss colours and terminals in much more detail in
-<a href="terminals.html">terminals.html</a> (<a href="terminals.md">terminals.md</a> on GitHub).</p></li>
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/terminals.html">terminals.html</a>.</p></li>
 </ul>
 <h2 id="the-text-is-hard-to-see-not-bright-enough"><a name="toodark" href="#toc">The text is hard to see (not bright enough)!</a></h2>
 <ul>
@@ -419,7 +419,7 @@ example:</p>
 <p>is invalid input because octal only has digits 0 - 7: the resulting size will be
 0.</p>
 <p>I discuss the signed/unsigned issue to do with curses and sizes in C being
-unsigned in <a href="bugs.html">bugs.html</a> (<a href="bugs.md">bugs.md</a> on GitHub) but probably there isn’t
+unsigned in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/bugs.html">bugs.html</a> but probably there isn’t
 anything more to say here.</p>
 <h2 id="errors-and-error-reporting"><a name="errors" href="#toc">Errors and error reporting</a></h2>
 <p>If curses fails to initialise you should get an error that says ‘curses error’

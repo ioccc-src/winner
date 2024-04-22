@@ -13,7 +13,7 @@ This minimalistic music notator expects two command line arguments. The first is
 the font description embedded in the source code. Notice that you don't pass the
 file name, but the actual content as one long character string! If you want to
 define your personal music font, you can of course do so. The file layout must
-be exactly the same as [deckmyn.c](deckmyn.c) though, only the locations of
+be exactly the same as [deckmyn.c](%%REPO_URL%%/2012/deckmyn/deckmyn.c) though, only the locations of
 space (`" "`) may differ.
 
 The second argument is the actual music. Again it is one long string, not a file

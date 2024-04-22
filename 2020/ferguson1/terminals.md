@@ -5,8 +5,7 @@ file. I discuss terminal capabilities, dimensions (setting and how to restore
 sanity if it causes any problems) as well as colours (limitations etc.).
 
 
-<a name="toc"></a>
-
+<div id="toc">
 -   [Capabilities support testing program](#termcaps)
 -   [Setting the game dimensions](#dimensions)
     *	[The LINES and COLUMNS environmental variables](#linescolumns)
@@ -19,9 +18,12 @@ sanity if it causes any problems) as well as colours (limitations etc.).
     *   [Monochrome terminals](#monochrome)
     *   [Colour limitations](#colourlimitations)
     *   [Disabling colour](#disablecolour)
+</div>
 
 
-# <a name="termcaps" href="#toc">Capabilities support testing program</a>
+<div id="termcaps">
+# <a href="#toc">Capabilities support testing program</a>
+</div>
 
 Although it should be playable without the features I use (except that cursor
 movement is required) I have provided a source file that can test your terminal
@@ -34,7 +36,7 @@ status line overflowing - even with the dynamic length. Try:
     $ make test
 ```
 
-This compiles the program [termcaps.c](termcaps.c) and runs it; you should see something like:
+This compiles the program [termcaps.c](%%REPO_URL%%/2020/ferguson1/termcaps.c) and runs it; you should see something like:
 
 
 ```
@@ -115,14 +117,19 @@ done (both seem unlikely to happen nowadays).
 Both scripts run this utility and prompt if there are any problems;
 you can continue either way.
 
-# <a name="dimensions" href="#toc">Setting the game dimensions</a>
+
+<div id="dimensions">
+# <a href="#toc">Setting the game dimensions</a>
+</div>
 
 There are a number of ways to do this and only one will keep the terminal sane
 all the time but that's by running it under a terminal emulator that you can
 resize the window with first. But what if you want exacts?
 
 
-## <a name="linescolumns" href="#toc">The LINES and COLUMNS environmental variables</a>
+<div id="linescolumns">
+## <a href="#toc">The LINES and COLUMNS environmental variables</a>
+</div>
 
 To specify the lines/columns of curses program per instance use the `LINES` and
 `COLUMNS` environmental variables.
@@ -151,7 +158,10 @@ game dimensions) - to be 55; it might look like this instead:
 But problems can arise with messing with dimensions: in my tests this held only
 to lines.
 
-## <a name="insanity" href="#toc">Terminal insanity</a>
+
+<div id="insanity">
+## <a href="#toc">Terminal insanity</a>
+</div>
 
 Terminal sanity can be compromised and it can cause all sorts of output
 problems; it might not appear right away but it will show its ugly head
@@ -160,7 +170,9 @@ be turned off, output of commands might overwrite the input of those commands,
 etc. For the game you might not see the final score.
 
 
-### <a name="restore" href="#toc">Restoring the terminal</a>
+<div id="restore">
+### <a href="#toc">Restoring the terminal</a>
+</div>
 
 In my tests there is one thing that at least allows you to see the final score
 and that is by running `clear` before running the program. That's what the
@@ -201,7 +213,10 @@ For more information on this subject generally see the [Linux keyboard and
 console HOWTO][] (specifically [Linux keyboard and console HOWTO section 4][]).
 Yes this works under macOS (at least it did for me).
 
-### <a name="abuse" href="#toc">Terminal size abuse</a>
+
+<div id="abuse">
+### <a href="#toc">Terminal size abuse</a>
+</div>
 
 So players 1, 2 and 3 are content with not meddling with the terminal sizes
 outside what's actually possible with their screen. But then player 4 comes
@@ -227,13 +242,15 @@ The game will try and be funny in return and you can expect it to not function
 properly. Because that's what funny means in this context.
 
 
-# <a name="termlimitations" href="#toc">Terminal limitations</a>
+<div id="termlimitations">
+# <a href="#toc">Terminal limitations</a>
+</div>
 
 It'd be nice if curses could detect hitting more than one arrow key at the
 same time so that diagonal directions would be possible but unfortunately it's
 not (`cat -v` confirms this). Even if I were to define four extra keys what
 would they be? And what about the head character? The [HACKING.html][]
-([HACKING](HACKING.md) on GitHub) file has information on this.
+file has information on this.
 
 I also limit the terminal size to 10 lines/columns but most likely it would
 require the cheat modes to win and in any event allowing certain low values
@@ -241,25 +258,31 @@ causes problems e.g. **LINES=6 COLUMNS=6** and **LINES=3 COLUMNS=3** caused some
 nasty issues.
 
 
-# <a name="colours" href="#toc">Terminal colours</a>
+<div id="colours">
+# <a href="#toc">Terminal colours</a>
+</div>
 
 N.B.: If all you're after is wanting to change the colours see the script
 [snake-colours.sh][] instead. The rest of this file was mostly notes for the
 judges; here I discuss the background, foreground as well as limitations (in
 particular runtime limitations).
 
-## <a name="background" href="#toc">Curses background</a>
+
+<div id="background">
+## <a href="#toc">Curses background</a>
+</div>
 
 The documentation I have seen says that the background will always be black and
 from a quick test this holds even with a terminal that has a white background.
 There is a way to force the background to remain white though that's by way of
 monochrome (so no colours); I discuss that and another related terminal specific
 in the troubleshooting guide (there's another way but it would take me over the
-iocccsize; I talk about it in the [HACKING.html][] ([HACKING](HACKING.md) on
-GitHub) file).
+iocccsize; I talk about it in the [HACKING.html][].
 
-## <a name="monochrome" href="#toc">Monochrome terminals</a>
 
+<div id="monochrome">
+## <a href="#toc">Monochrome terminals</a>
+</div>
 
 According to my tests for monochrome terminals the screen has the white and
 black background; if terminal is configured to be black background white
@@ -275,7 +298,10 @@ should you need colours to be disabled but I personally have not run into any
 problems even with monochrome terminals. Later I say what to do to remove colour
 support in the source code itself.
 
-## <a name="colourlimitations" href="#toc">Colour limitations</a>
+
+<div id="colourlimitations">
+## <a href="#toc">Colour limitations</a>
+</div>
 
 According to X/Open Curses, Issue 7 (pg. 57):
 
@@ -369,7 +395,10 @@ won't work for a colour-capable terminal but it doesn't matter for monochrome
 terminals one way or another. And since I don't go beyond the ranges (as I cited
 earlier) there shouldn't be any problem here.
 
-## <a name="disablecolour" href="#toc">Disabling colour</a>
+
+<div id="disablecolour">
+## <a href="#toc">Disabling colour</a>
+</div>
 
 Nevertheless if it is a problem and you don't want to use a monochrome terminal
 (or can't):
@@ -381,11 +410,10 @@ you can also comment out the `init_pair()` calls.
 Perhaps you only need to add the `return;` to `C()`. My guess is that's the case
 but I do not know for certain.
 
-[HACKING.md]: HACKING.md
-[HACKING.html]: HACKING.html
+[HACKING.html]: %%REPO_URL%%/2020/ferguson1/HACKING.html
 [Linux keyboard and console HOWTO]: https://www.tldp.org/HOWTO/Keyboard-and-Console-HOWTO.html
 [Linux keyboard and console HOWTO section 4]: https://www.tldp.org/HOWTO/Keyboard-and-Console-HOWTO-4.html
-[snake-colours.sh]: snake-colours.sh
+[snake-colours.sh]: %%REPO_URL%%/2020/ferguson1/snake-colours.sh
 
 
 <hr style="width:10%;text-align:left;margin-left:0">

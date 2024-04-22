@@ -4,7 +4,8 @@ will need two different packages: the library itself but also the dev package
 that has the header files etc. If you use the Makefile obviously you need `make`
 too.
 
-In [gameplay.md](gameplay.md) I show how to easily customise the colours, set up
+In [gameplay.html](%%REPO_URL%%/2020/ferguson1/gameplay.html)
+I show how to easily customise the colours, set up
 different gameplay modes and various other things. The troubleshooting.md
 and terminals.md as well as bugs.md include a variety of information
 should you run into trouble.
@@ -109,8 +110,6 @@ If it's an unsigned int I believe you will have to opt for an unsigned long (so
 
 Anything else I do not know other than just changing the typedef and updating to
 the proper function (and/or cast to the right type).
-
-[MacPorts]: https://www.macports.org
 
 
 <hr style="width:10%;text-align:left;margin-left:0">

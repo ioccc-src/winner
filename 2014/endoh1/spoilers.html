@@ -187,8 +187,8 @@ instruction set is carefully selected to minimize the sizes of both <code>&lt;ma
 </ul></li>
 </ul>
 <p>The instructions have variable lengths, but many of them are represented as one
-printable character. (See <a href="machine.rb">machine.rb</a> and
-<a href="assemble.rb">assemble.rb</a> in detail.) The mapping between instructions and
+printable character. (See <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/machine.rb">machine.rb</a> and
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/assemble.rb">assemble.rb</a> in detail.) The mapping between instructions and
 characters is also carefully designed to minimize <code>&lt;VM code&gt;</code>, which makes the
 resulted program non-human-readable.</p>
 <h2 id="how-did-i-create-the-main-code">How did I create the main code?</h2>
@@ -196,8 +196,8 @@ resulted program non-human-readable.</p>
 code in Ruby syntax and created a Ruby-to-VM compiler that involves alpha
 renaming and automatic register allocation only for this purpose.</p>
 <ul>
-<li><a href="src.rb">src.rb</a>: the source code of QR code encoder written in Ruby syntax.</li>
-<li><a href="vm.c">vm.c</a>: the source code of the VM.</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/src.rb">src.rb</a>: the source code of QR code encoder written in Ruby syntax.</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/vm.c">vm.c</a>: the source code of the VM.</li>
 </ul>
 <p>The compiler tool chain is the following.</p>
 <pre><code>    src.rb              interp.c
@@ -232,14 +232,14 @@ renaming and automatic register allocation only for this purpose.</p>
                 V
               prog.c</code></pre>
 <ul>
-<li><a href="parse.rb">parse.rb</a> converts Ruby to AST.</li>
-<li><a href="serialize.rb">serialize.rb</a> converts AST to intermediate instruction sequence.</li>
-<li><a href="alpha.rb">alpha.rb</a> applies “alpha-renaming” to the instruction sequence.</li>
-<li><a href="register.rb">register.rb</a> applies “register allocation”.</li>
-<li><a href="assemble.rb">assemble.rb</a> converts the sequence to the final stack-machine instructions.</li>
-<li><a href="interp.c">interp.c</a> is an implementation of the VM.</li>
-<li><a href="link.rb">link.rb</a> generates <code>main.c</code> by linking the instructions and interpreter source.</li>
-<li><a href="gen-prog.c">gen-prog.c</a> generates <a href="prog.c">prog.c</a> based on <code>main.c</code>.</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/parse.rb">parse.rb</a> converts Ruby to AST.</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/serialize.rb">serialize.rb</a> converts AST to intermediate instruction sequence.</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/alpha.rb">alpha.rb</a> applies “alpha-renaming” to the instruction sequence.</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/register.rb">register.rb</a> applies “register allocation”.</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/assemble.rb">assemble.rb</a> converts the sequence to the final stack-machine instructions.</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/interp.c">interp.c</a> is an implementation of the VM.</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/link.rb">link.rb</a> generates <code>main.c</code> by linking the instructions and interpreter source.</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/gen-prog.c">gen-prog.c</a> generates <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/prog.c">prog.c</a> based on <code>main.c</code>.</li>
 </ul>
 <p>You can run the process by <code>rake</code> command. <code>ruby-minisat</code> gem is needed.</p>
 <pre><code>    $ gem install ruby-minisat
@@ -254,7 +254,7 @@ renaming and automatic register allocation only for this purpose.</p>
 found at
 <code>https://play.google.com/store/apps/details?id=com.google.zxing.client.android</code>
 but it appears to no longer exist.</p>
-<p>You can use <a href="tool.rb">tool.rb</a> to convert the output to a png file.</p>
+<p>You can use <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/tool.rb">tool.rb</a> to convert the output to a png file.</p>
 <pre><code>    ./main Hello | ruby tool.rb &gt; hello.png
 
     $ zbarimg -q hello.png

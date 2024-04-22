@@ -100,9 +100,9 @@ The standard colour identifiers are:
 ```
 
 
-See Linux Journal for more information article
-<https://www.linuxjournal.com/content/programming-color-ncurses> for more
-details.
+See [Linux Journal for more information
+article](https://www.linuxjournal.com/content/programming-color-ncurses)
+for more details.
 
 
 ## Modifying the characters for the wall, bug and snake

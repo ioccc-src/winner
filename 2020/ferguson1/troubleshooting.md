@@ -26,7 +26,7 @@ it as structured as possible/easiest to find.
 
 Because the score line is dynamic in length depending on the terminal size it
 can happen that the score/status wraps to the next line(s). This can be fixed by
-modifying the status line (see [HACKING.html][] or on GitHub [HACKING.md][]) but
+modifying the status line (see [HACKING.html][] but
 you shouldn't need it to be very wide.
 
 * RESOLUTION #0: Use a bigger screen (it doesn't take that many columns)
@@ -48,7 +48,7 @@ you shouldn't need it to be very wide.
 		#define J Z(B:%zu\n), c);
 
     Recompile and try again. That will then show only the number of bugs eaten.
-    See the [HACKING.html][] ([HACKING.md][] on GitHub) file for other data you
+    See the [HACKING.html][] file for other data you
     can include (though there are some discrepancies here and there as you'll
     see).
 
@@ -81,7 +81,7 @@ e.g. when the snake is growing.
     it'll catch up; just give it the time it needs.
 
 * BOTTOM LINE: If you want more information then see the [bugs.html][]
-([bugs.md][] on GitHub) file.
+file.
 
 
 ## <a name="invisiblehead" href="#toc">I can't see the snake head (or other part of the snake)!</a>
@@ -136,7 +136,7 @@ char (if it's an editor like vi/vim you will have to be sure to escape the char
 since `*` is a regexp metacharacter). This has happened to me numerous times.
 
 * RESOLUTION #3: If the colour contrast is not good for your eyes use the
-[snake-colours][] script to select a different colour scheme.
+[snake-colours.sh][] script to select a different colour scheme.
 
 
 ## <a name="froze" href="#toc">The game froze!</a>
@@ -288,10 +288,10 @@ so that's probably why; in CentOS I did have to install it specially.
     background white and the foreground black. This will of course mean you have
     no colour but unfortunately changing the background colour of curses would
     eat too many bytes in the entry (I cite the functions in the
-    [HACKING.html][] ([HACKING.md][] on GitHub) file).
+    [HACKING.html][].
 
     I discuss colours and terminals in much more detail in
-    [terminals.html][] ([terminals.md][] on GitHub).
+    [terminals.html][].
 
 
 ## <a name="toodark" href="#toc">The text is hard to see (not bright enough)!</a>
@@ -395,7 +395,7 @@ is invalid input because octal only has digits 0 - 7: the resulting size will be
 
 
 I discuss the signed/unsigned issue to do with curses and sizes in C being
-unsigned in [bugs.html][] ([bugs.md][] on GitHub) but probably there isn't
+unsigned in [bugs.html][] but probably there isn't
 anything more to say here.
 
 ## <a name="errors" href="#toc">Errors and error reporting</a>
@@ -438,14 +438,11 @@ Why does it show snake size as 0 when I specified 1? It's because the max size
 is 0 and I limit the size to be no bigger than the max size.
 
 
-[HACKING.md]: HACKING.md
-[HACKING.html]: HACKING.html
-[prog.c]: prog.c
-[bugs.md]: bugs.md
-[bugs.html]: bugs.html
-[terminals.md]: terminals.md
-[terminals.html]: terminals.html
-[snake-colours]: snake-colours
+[HACKING.html]: %%REPO_URL%%/2020/ferguson1/HACKING.html
+[prog.c]: %%REPO_URL%%/2020/ferguson1/prog.c
+[bugs.html]: %%REPO_URL%%/2020/ferguson1/bugs.html
+[terminals.html]: %%REPO_URL%%/2020/ferguson1/terminals.html
+[snake-colours.sh]: %%REPO_URL%%/2020/ferguson1/snake-colours.sh
 [Snakey]: https://www.hp-lexicon.org/character/gaunt-family/morfin-gaunt/
 
 

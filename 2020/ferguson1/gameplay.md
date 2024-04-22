@@ -3,8 +3,7 @@ have included much more than just the input keys and a few printouts of the
 game. For normal play you probably don't even need this file at all unless it be
 for the input keys.
 
-<a name="toc"></a>
-
+<div id="toc">
 1.  [Testing terminal environment/capabilities](#support)
 
 2.  [Input keys](#input)
@@ -46,20 +45,25 @@ for the input keys.
 
 
 7.  [Conclusion (and inspirational words for everyone)](#conclusions)
+</div>
 
 
-# 1. <a name="support" href="#toc">Testing terminal environment/capabilities</a>
+<div id="support">
+# 1. <a href="#toc">Testing terminal environment/capabilities</a>
+</div>
 
 Most people probably won't have any issue at all but for those who have any
-problems with the terminal see the [terminals.html][] ([terminals.md][] on
-GitHub) file for more information on the terminal capabilities testing utility I
+problems with the terminal see the [terminals.html][]
+file for more information on the terminal capabilities testing utility I
 include.
 
 For troubleshooting other problems see [troubleshooting.html][]
-([troubleshooting.md][] on GitHub) and [bugs.html][] ([bugs.md][] on GitHub).
+and [bugs.html][].
 
 
-# 2. <a name="input" href="#toc">Input keys</a>
+<div id="input">
+# 2. <a href="#toc">Input keys</a>
+</div>
 
 -   Left, right, up and down **arrow keys**: move that direction.
 -   `q` (and `Q`): quit the game.
@@ -68,7 +72,10 @@ For troubleshooting other problems see [troubleshooting.html][]
     that `getch()` picks up on and the game is not paused then it will be as if
     you pressed the current direction key (assuming you already moved the snake).
 
-# 3. <a name="gameplay" href="#toc">Gameplay</a>
+
+<div id="gameplay">
+# 3. <a href="#toc">Gameplay</a>
+</div>
 
 Here I will show the initial screen as well as what a few things look like. If
 you don't feel you need this but you want to configure colours jump to [colour
@@ -79,7 +86,9 @@ The bug colour by default is white; the snake head colour is red and the snake
 body colour is green. The walls are cyan.
 
 
-## <a name="initial" href="#toc">Gameplay: The initial screen</a>
+<div id="initial">
+## <a href="#toc">Gameplay: The initial screen</a>
+</div>
 
 When you load the game you will see a screen that looks something like the
 below. Note that the top line is the score/status line: the top wall is at line
@@ -128,7 +137,9 @@ to the number in the diagram:
 -   The number of bugs eaten so far is 0.
 
 
-## <a name="playing" href="#toc">Gameplay: Playing the game</a>
+<div id="playing">
+## <a href="#toc">Gameplay: Playing the game</a>
+</div>
 
 
 ```
@@ -202,7 +213,9 @@ Observe that the bug was eaten and a new bug spawned elsewhere. I went left
 three and then up one and could slither on to the bug.
 
 
-# <a name="walls" href="#toc">Gameplay: Walls</a>
+<div id="walls">
+# <a href="#toc">Gameplay: Walls</a>
+</div>
 
 By default walls are passable (**WALLS=1**). Let's get to full size and go
 through the top wall:
@@ -286,8 +299,9 @@ X:20/49 Y:1/16 S:150/658 B:0
 ```
 
 
-
-# <a name="cannibalism" href="#toc">Gameplay: Cannibalism</a>
+<div id="cannibalism">
+# <a href="#toc">Gameplay: Cannibalism</a>
+</div>
 
 By default cannibalism is disabled (**CANNIBAL=0**)  so if you run into yourself it might look
 something like:
@@ -395,19 +409,24 @@ snake) turn (so that you go perpendicular) and then watch as the snake starts
 unwinding at one place and then suddenly unwinds another direction.
 
 An example of extreme cannibalism is in the [cannibalism.log.html][]
-([cannibalism.log.md][] on GitHub) file. It explains information about the file
+file. It explains information about the file
 including how to find the bug, head and tail of the snake, at least where it was
 documented. The first run has several dumps.  The final example has the snake
 inside itself.
 
-# <a name="shedding" href="#toc">Gameplay: Shedding (stretching)</a>
+
+<div id="shedding">
+# <a href="#toc">Gameplay: Shedding (stretching)</a>
+</div>
 
 This feature will make you grow by the value of **SHEDS** for every **SHED**
 movements (the counter isn't incremented when you eat a bug). Basically growing
 without eating a bug (stretching would be better name here).
 
 
-# <a name="winning" href="#toc">Gameplay: Winning</a>
+<div id="winning">
+# <a href="#toc">Gameplay: Winning</a>
+</div>
 
 If you ever get to the **MAXSIZE** the game is won. You can force a win by
 setting the max size to a smaller value than the size you specify (or the
@@ -445,7 +464,9 @@ the default starting size and growth size of 5 the number of bugs needed before
 the game is won is 199 - also a prime!
 
 
-# <a name="quitting" href="#toc">Gameplay: Quitting</a>
+<div id="quitting">
+# <a href="#toc">Gameplay: Quitting</a>
+</div>
 
 If you wish to quit you can hit 'q' (case-insensitive). For example:
 
@@ -454,10 +475,12 @@ If you wish to quit you can hit 'q' (case-insensitive). For example:
 ```
 
 
-# 4. <a name="modes" href="#toc">Gameplay modes</a>
+<div id="modes">
+# 4. <a href="#toc">Gameplay modes</a>
+</div>
 
 Here I list a number of different modes of play. In the [bugs.html][]
-([bugs.md][] on GitHub) file I even show how there's a built-in test unit for some
+file I even show how there's a built-in test unit for some
 modes! There are certainly other modes that could be imagined: the modes below
 happened over time and some were simply an accidental discovery or something I
 thought of by a chance; others were thought out from the beginning but were
@@ -467,7 +490,9 @@ The [play.sh][] script sets up some of these automatically; I describe it after
 the modes below.
 
 
-## <a name="warning" href="#toc">Photosensitive epilepsy/Stimulation overload trigger warnings</a>
+<div id="warning">
+## <a href="#toc">Photosensitive epilepsy/Stimulation overload trigger warnings</a>
+</div>
 
 If you have **photosensitive epilepsy please be careful** especially with low values
 for both **WAIT** and **EVADE**. It appears that the [number of hertz (flashes)
@@ -481,7 +506,10 @@ stimulation for some people.**
 **Please be careful of these if these types of things have ever affected you or if
 you have any form of epilepsy. Thank you.**
 
-## <a name="drawing" href="#toc">Gameplay mode: Drawing / Practice mode</a>
+
+<div id="drawing">
+## <a href="#toc">Gameplay mode: Drawing / Practice mode</a>
+</div>
 
 If you want to draw the snake wherever you like on the screen you can do this by
 modifying the wait time (for input) to -1 (or any value < 0): then the snake
@@ -542,8 +570,9 @@ for. But you can consider this mode drawing or practice mode.
 ```
 
 
-
-## <a name="auto" href="#toc">Gameplay mode: Computer playing / Automatic mode (Photosensitive epilepsy/Stimulation overload trigger)</a>
+<div id="auto">
+## <a href="#toc">Gameplay mode: Computer playing / Automatic mode (Photosensitive epilepsy/Stimulation overload trigger)</a>
+</div>
 
 **Photosensitive epilepsy/stimulation overload trigger warning:**
 For those who have epilepsy or are susceptible to stimulation overload from
@@ -578,7 +607,10 @@ seems to take longer for it to get a bug as it gets longer. I believe these
 happen because the bug has to find a X and Y coordinate that's not occupied and
 so with fewer available it has a harder time finding a place in that one line.
 
-### <a name="auto-variations" href="#toc">Computer player variations</a>
+
+<div id="auto-variations">
+### <a href="#toc">Computer player variations</a>
+</div>
 
 Here's how to make the bug move every time the snake moves:
 
@@ -650,7 +682,10 @@ horizontally the snake ran into itself at:
 What if you set the size to a high value? The lowest? There are bound to be
 other games to play with this feature!
 
-## <a name="grow-shrink" href="#toc">Gameplay mode: Grow-Shrink mode (Positive and Negative Winning)</a>
+
+<div id="grow-shrink">
+## <a href="#toc">Gameplay mode: Grow-Shrink mode (Positive and Negative Winning)</a>
+</div>
 
 In this mode you're simultaneously growing and shrinking but because the max
 size is unsigned you can win both by shrinking to the point of losing your body
@@ -676,7 +711,7 @@ The parameters above were chosen after playing with the mode a bit to find a
 value that wouldn't take that much time but still would pose a challenge. One
 could reverse it so that one shrinks more than growing.
 
-The [crazy.log.html][] ([crazy.log.md][] on GitHub) file has several screen
+The [crazy.log.html][] file has several screen
 dumps with this idea.
 
 You could also have it so that eating a bug makes you shrink and moving so many
@@ -692,7 +727,9 @@ of them (the above is option 5; others are 4, 15 and 16 but only options 4 and 5
 are called Grow / Shrink).
 
 
-## <a name="hypnotic" href="#toc">Hypnotic / Sleepy mode (**Photosensitive epilepsy/Stimulation overload trigger**)</a>
+<div id="hypnotic">
+## <a href="#toc">Hypnotic / Sleepy mode (**Photosensitive epilepsy/Stimulation overload trigger**)</a>
+</div>
 
 **Photosensitive epilepsy/stimulation overload trigger warning:**
 For those who have epilepsy or are susceptible to stimulation overload from
@@ -713,7 +750,9 @@ And just moving the snake about not trying to catch any bugs - just let whatever
 happens happen.
 
 
-## <a name="stim" href="#toc">Gameplay mode: Stimulation / Calming mode</a>
+<div id="stim">
+## <a href="#toc">Gameplay mode: Stimulation / Calming mode</a>
+</div>
 
 If you just need something to stimulate your mind to keep you calm or simply you
 want to play a game without having to worry about winning or losing you can set
@@ -726,7 +765,9 @@ worry about even running into yourself and losing:
 ```
 
 
-## <a name="expansibility" href="#toc">Gameplay mode: Expansibility</a>
+<div id="expansibility">
+## <a href="#toc">Gameplay mode: Expansibility</a>
+</div>
 
 As I was writing this document and the game modes I have thought of other game
 modes (they were added) and I have come back to this document to add more modes.
@@ -743,35 +784,43 @@ are therefore disregarded if even heard. I have played this game a lot for this
 reason as well as I simply enjoy it and thinking up new modes.
 
 
-# 5. <a name="scripts" href="#toc">Scripts</a>
+<div id="scripts">
+# 5. <a href="#toc">Scripts</a>
+</div>
 
 The following scripts are provided to simplify and automate some of the things
 this file discusses as well as allowing to easily change the colours.
 
-## <a name="colours" href="#toc">Colours selection: snake-colours</a>
 
-To do this use the [snake-colours][] script like so:
+<div id="colours">
+## <a href="#toc">Colours selection: snake-colours</a>
+</div>
+
+To do this use the [snake-colours.sh][] script like so:
 
 ``` <!---sh-->
-    ./snake-colours
+    ./snake-colours.sh
 ```
 
 If you want to pass in specific variables you can do that too e.g.:
 
 ``` <!---sh-->
-    CANNIBAL=1 ./snake-colours
+    CANNIBAL=1 ./snake-colours.sh
 ```
 
 The script will prompt you for the colour of the walls, snake head, body and the
 bug.
 
-## <a name="preset" href="#toc">Automate the above gameplay modes</a>
+
+<div id="preset">
+## <a href="#toc">Automate the above gameplay modes</a>
+</div>
 
 The [play.sh][] script has the gameplay modes described in this file and is menu
 based (there might be differences and some of the modes I include a variation).
 The script tests the terminal (allowing you to continue even if problems are
 detected), prompts you if you want to select colours (like those in
-snake-colours above) and then gives you a list of game modes to play. You can
+snake-colours.sh above) and then gives you a list of game modes to play. You can
 pass in the game variables but note that if you pass in a variable that the mode
 you choose uses then the script will override what you pass in.
 
@@ -788,19 +837,26 @@ Or to make it so walls are an obstacle:
 ```
 
 
-# 6. <a name="variables" href="#toc">Notes about some of the game variables</a>
+<div id="variables">
+# 6. <a href="#toc">Notes about some of the game variables</a>
+</div>
 
 The game variables can be used for a variety of things including different
 gameplay modes (as shown above) but here are some general notes about a few of them.
 
-## <a name="wait" href="#toc">WAIT: Snake speed</a>
+
+<div id="wait">
+## <a href="#toc">WAIT: Snake speed</a>
+</div>
 
 Besides the different game modes, if you find it too fast/slow you can change it
 to a value that's better for you. Remember it's a wait time so if you want the
 snake to move slower you have to increase the wait time!
 
 
-## <a name="evade" href="#toc">EVADE: Bug evasion frequency</a>
+<div id="evade">
+## <a href="#toc">EVADE: Bug evasion frequency</a>
+</div>
 
 For every **EVADE** snake movements the bug will try and find a new place to
 occupy. It might be very close to it and I do not ensure it's a new place at
@@ -812,7 +868,9 @@ bug or not reaching it in time. Default 300 moves.
 This can help you get out of a trap but it can also sometimes make it harder.
 
 
-## <a name="sizes" href="#toc">SIZE / MAXSIZE: Initial / Max snake sizes</a>
+<div id="sizes">
+## <a href="#toc">SIZE / MAXSIZE: Initial / Max snake sizes</a>
+</div>
 
 997 might be a bit high for many people. Or maybe you don't have enough time. Or
 you're not in the mood to lose. Or you want to get close to a size you were last
@@ -825,14 +883,17 @@ before the snake is visibly that many characters. In other words just because it
 says SIZE 29 doesn't mean it will instantly be 29 characters on the screen.
 
 
-## <a name="growth" href="#toc">GROW / SHEDS : Growth / Shedding sizes</a>
+<div id="growth">
+## <a href="#toc">GROW / SHEDS : Growth / Shedding sizes</a>
+</div>
 
 Similar to the initial size. Notice that the above point on size applies here:
 it will take the number of movements before it is 'its full size'.
 
 
-
-# 7. <a name="conclusions" href="#toc">Conclusion (and inspirational words for everyone)</a>
+<div id="conclusions">
+# 7. <a href="#toc">Conclusion (and inspirational words for everyone)</a>
+</div>
 
 I believe that this file has given more than enough information for anyone to
 get an idea of what is possible with my implementation of Snake. I realise also
@@ -849,22 +910,16 @@ the imagination and creativity almost anything is possible.** This is something
 they believe in themselves!** I would have never thought this the case for me
 years ago but I know it's true now. **Believe in yourself. Always.**
 
-[terminals.md]: terminals.md
-[terminals.html]: terminals.html
-[troubleshooting.md]: troubleshooting.md
-[troubleshooting.html]: troubleshooting.html
-[bugs.md]: bugs.md
-[bugs.html]: bugs.html
-[spoilers.md]: spoilers.md
-[spoilers.html]: spoilers.html
-[snake-colours]: snake-colours
+[terminals.html]: %%REPO_URL%%/2020/ferguson1/terminals.html
+[troubleshooting.html]: %%REPO_URL%%/2020/ferguson1/troubleshooting.html
+[bugs.html]: %%REPO_URL%%/2020/ferguson1/bugs.html
+[spoilers.html]: %%REPO_URL%%/2020/ferguson1/spoilers.html
+[snake-colours.sh]: %%REPO_URL%%/2020/ferguson1/snake-colours.sh
 [number of hertz (flashes) per second triggering seizures]: https://www.epilepsysociety.org.uk/photosensitive-epilepsy#.Xjgpwi2ZOgQ
-[termcaps.c]: termcaps.c
-[cannibalism.log.md]: cannibalism.log.md
-[cannibalism.log.html]: cannibalism.log.html
-[crazy.log.md]: crazy.log.md
-[crazy.log.html]: crazy.log.html
-[play.sh]: play.sh
+[termcaps.c]: %%REPO_URL%%/2020/ferguson1/termcaps.c
+[cannibalism.log.html]: %%REPO_URL%%/2020/ferguson1/cannibalism.log.html
+[crazy.log.html]: %%REPO_URL%%/2020/ferguson1/crazy.log.html
+[play.sh]: %%REPO_URL%%/2020/ferguson1/play.sh
 
 
 <hr style="width:10%;text-align:left;margin-left:0">

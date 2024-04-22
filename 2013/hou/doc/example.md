@@ -179,7 +179,7 @@ indirect source.
 of up to 32 volumes, each with 64x64x64 cells. The volume 0 is the 'top level'
 volume where the camera goes. Each cell of a volume can be empty, filled with a
 material, or another volume. The roundish characters in
-[old_default.scene](../old_default.scene) and the carpet on the floor in this
+[old_default.scene](%%REPO_URL%%/2013/hou/old_default.scene) and the carpet on the floor in this
 file are examples where a cell is defined to another volume. Materials will be
 explained later.
 

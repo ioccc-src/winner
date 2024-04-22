@@ -254,17 +254,17 @@ Obscurity now increased!</p>
 <p>Around this time, the formatted code no longer fit with the 2053 limit (due to a
 lack of comprehension of the significance of the space-after-brace-and-semi
 rule, and a layout program that did not know how to do this). Frustrated, I
-wrote another program to reformat this code into <a href="rule2.c">rule2.c</a>, which was a
+wrote another program to reformat this code into <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/burton/rule2.c">rule2.c</a>, which was a
 single C token per line. This solved the formatting problem, but intriguingly
 introduced another. Now I was faced with the 4096 rule as well as the 2053
 rule. But this was a challenge!</p>
 <p>I wrote a de-obfuscator, and worked on both the unobfuscated version and the
 master code. I worked on the template formatter to make this as automated as
 possible, and worked to achieve both a perfectly presented picture AND the
-single-line exactly-at-4096 <a href="rule2.c">rule2.c</a>.</p>
+single-line exactly-at-4096 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/burton/rule2.c">rule2.c</a>.</p>
 <p>Finally, “perfection”, with assignable memories! Where perfection is defined
 as a nicely formatted picture at less than 2053, and exactly 4096
-token-per-line <a href="rule2.c">rule2.c</a>.</p>
+token-per-line <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/burton/rule2.c">rule2.c</a>.</p>
 <h2 id="testing-testing-testing">Testing Testing Testing</h2>
 <p>Cross platform, it works on Mac OSX, fails on Linux. It works if <code>#include &lt;stdlib.h&gt;</code>, but it dumps core without it (the only change!)?. 64-bits without
 proper declaration of <code>int</code>s in syscalls yields unpredictable results. 32-bit
@@ -298,7 +298,7 @@ unobfuscated version; think: a complex chain of ternary expressions is a single
 statement). This involved careful examination of all the expressions within the
 logic, trying to find a different way of getting the same result, but typically
 within fewer bytes than before to allow for the added logic to fix the bugs.</p>
-<p>The bugs were fixed, the code re-formatted, and <a href="rule2.c">rule2.c</a> was again
+<p>The bugs were fixed, the code re-formatted, and <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/burton/rule2.c">rule2.c</a> was again
 4096 bytes.</p>
 <p>But wouldn’t it be nice for unary plus to work?</p>
 <p>Add unary plus, re-balance. Little things now take a fair bit of work. Adding
@@ -327,7 +327,7 @@ relatively tight. But changing around the stable initialization code – by now
 the largest piece of logic – yielded the necessary bytes, and improved
 obscurity by double duty encoding of the operations initialization.</p>
 <p>The utility is now truly functional, and feature complete, and obscure. Without
-<a href="src.doc.txt">src.doc.txt</a> (basic documentation of the code structure), and some
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/burton/src.doc.txt">src.doc.txt</a> (basic documentation of the code structure), and some
 commented expanded logic stashed away, and the familiarity I have with the code
 having written and revised it repeatedly, I would not even want to attempt to
 decipher the logic. Many times in the debugging, I was thwarted by my own

@@ -6,7 +6,7 @@ has seemed to get it down as well as she has but it's well worth the effort if
 you love chocolate and have the time and patience.
 
 My late stepmum who only liked white 'chocolate' loved this cake! The picture
-below is after it's been iced. The image [ioccc-cake.jpg](ioccc-cake.jpg) was a
+below is after it's been iced. The image [cake.jpg](%%REPO_URL%%/2020/ferguson1/cake.jpg) was a
 feeble attempt at drawing `IOCCC` into the cake before icing, a different time.
 The picture below was taken for my birthday (14 February) in 2022 as it's the
 best one I have:
@@ -35,9 +35,9 @@ I don't check it very often. Thanks and again enjoy!
 ## Measurements
 
 This was originally taken from an American magazine for women so the
-measurements are in the US standards. A nice resource (that has much more than
-just cooking) is <http://www.onlineconversion.com/cooking.htm>. This will
-particularly matter for cups, teaspoons, tablespoons and ounces.
+measurements are in the US standards. There is a
+[nice resource](http://www.onlineconversion.com/cooking.htm) that has much more than
+just cooking). This will particularly matter for cups, teaspoons, tablespoons and ounces.
 
 
 ## Baker's chocolate
@@ -197,7 +197,7 @@ bowl can sit in.
     thick BUT not too thick. **Make *SURE* ICING DOES *NOT* GET WET!** The idea is to
     **MAKE THE BOWL IT'S IN COLD *BUT TO NOT LET THE ICING GET WET!***
 
-[IOCCC and chocolate]: ioccc-and-chocolate.pdf
+[IOCCC and chocolate]: %%REPO_URL%%/2020/ferguson1/cake.jpg
 [chocolates FAQ]: https://www.davidlebovitz.com/chocolate-faqs/
 
 

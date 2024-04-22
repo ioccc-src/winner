@@ -138,7 +138,7 @@
 have included much more than just the input keys and a few printouts of the
 game. For normal play you probably don’t even need this file at all unless it be
 for the input keys.</p>
-<p><a name="toc"></a></p>
+<div id="toc">
 <ol type="1">
 <li><p><a href="#support">Testing terminal environment/capabilities</a></p></li>
 <li><p><a href="#input">Input keys</a></p></li>
@@ -179,14 +179,19 @@ for the input keys.</p>
 </ul></li>
 <li><p><a href="#conclusions">Conclusion (and inspirational words for everyone)</a></p></li>
 </ol>
-<h1 id="testing-terminal-environmentcapabilities">1. <a name="support" href="#toc">Testing terminal environment/capabilities</a></h1>
+</div>
+<div id="support">
+<h1 id="testing-terminal-environmentcapabilities">1. <a href="#toc">Testing terminal environment/capabilities</a></h1>
+</div>
 <p>Most people probably won’t have any issue at all but for those who have any
-problems with the terminal see the <a href="terminals.html">terminals.html</a> (<a href="terminals.md">terminals.md</a> on
-GitHub) file for more information on the terminal capabilities testing utility I
+problems with the terminal see the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/terminals.html">terminals.html</a>
+file for more information on the terminal capabilities testing utility I
 include.</p>
-<p>For troubleshooting other problems see <a href="troubleshooting.html">troubleshooting.html</a>
-(<a href="troubleshooting.md">troubleshooting.md</a> on GitHub) and <a href="bugs.html">bugs.html</a> (<a href="bugs.md">bugs.md</a> on GitHub).</p>
-<h1 id="input-keys">2. <a name="input" href="#toc">Input keys</a></h1>
+<p>For troubleshooting other problems see <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/troubleshooting.html">troubleshooting.html</a>
+and <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/bugs.html">bugs.html</a>.</p>
+<div id="input">
+<h1 id="input-keys">2. <a href="#toc">Input keys</a></h1>
+</div>
 <ul>
 <li>Left, right, up and down <strong>arrow keys</strong>: move that direction.</li>
 <li><code>q</code> (and <code>Q</code>): quit the game.</li>
@@ -195,14 +200,16 @@ Note that no other keys will resume the game; however if you press a key
 that <code>getch()</code> picks up on and the game is not paused then it will be as if
 you pressed the current direction key (assuming you already moved the snake).</li>
 </ul>
-<h1 id="gameplay">3. <a name="gameplay" href="#toc">Gameplay</a></h1>
+<h1 id="gameplay">3. <a href="#toc">Gameplay</a></h1>
 <p>Here I will show the initial screen as well as what a few things look like. If
 you don’t feel you need this but you want to configure colours jump to <a href="#colours">colour
 selection</a>. You can also jump to <a href="#modes">gameplay modes</a> or <a href="#variables">game
 variables</a>.</p>
 <p>The bug colour by default is white; the snake head colour is red and the snake
 body colour is green. The walls are cyan.</p>
-<h2 id="gameplay-the-initial-screen"><a name="initial" href="#toc">Gameplay: The initial screen</a></h2>
+<div id="initial">
+<h2 id="gameplay-the-initial-screen"><a href="#toc">Gameplay: The initial screen</a></h2>
+</div>
 <p>When you load the game you will see a screen that looks something like the
 below. Note that the top line is the score/status line: the top wall is at line
 1 and the left wall is column 0. Below I use the coordinates in the X/Y order
@@ -242,7 +249,9 @@ size.</p></li>
 it will always have an upper limit depending on the terminal size.</p></li>
 <li><p>The number of bugs eaten so far is 0.</p></li>
 </ul>
-<h2 id="gameplay-playing-the-game"><a name="playing" href="#toc">Gameplay: Playing the game</a></h2>
+<div id="playing">
+<h2 id="gameplay-playing-the-game"><a href="#toc">Gameplay: Playing the game</a></h2>
+</div>
 <pre><code>    X:39/49 Y:8/16 S:5/658 B:0
     ##################################################
     #                                                #
@@ -300,7 +309,9 @@ Let’s do that:</p>
     ##################################################</code></pre>
 <p>Observe that the bug was eaten and a new bug spawned elsewhere. I went left
 three and then up one and could slither on to the bug.</p>
-<h1 id="gameplay-walls"><a name="walls" href="#toc">Gameplay: Walls</a></h1>
+<div id="walls">
+<h1 id="gameplay-walls"><a href="#toc">Gameplay: Walls</a></h1>
+</div>
 <p>By default walls are passable (<strong>WALLS=1</strong>). Let’s get to full size and go
 through the top wall:</p>
 <pre><code>    X:36/49 Y:15/16 S:10/658 B:1
@@ -363,7 +374,9 @@ might look like (I set the starting size to 150 and had only just started):</p>
 <p>If I continue going up I will see:</p>
 <pre><code>OUCH!
 X:20/49 Y:1/16 S:150/658 B:0</code></pre>
-<h1 id="gameplay-cannibalism"><a name="cannibalism" href="#toc">Gameplay: Cannibalism</a></h1>
+<div id="cannibalism">
+<h1 id="gameplay-cannibalism"><a href="#toc">Gameplay: Cannibalism</a></h1>
+</div>
 <p>By default cannibalism is disabled (<strong>CANNIBAL=0</strong>) so if you run into yourself it might look
 something like:</p>
 <pre><code>    X:45/49 Y:10/16 S:10/658 B:1
@@ -448,16 +461,20 @@ will see that the arrow has moved over:</p>
 left go right etc.) and then after some length (but before you get beyond the
 snake) turn (so that you go perpendicular) and then watch as the snake starts
 unwinding at one place and then suddenly unwinds another direction.</p>
-<p>An example of extreme cannibalism is in the <a href="cannibalism.log.html">cannibalism.log.html</a>
-(<a href="cannibalism.log.md">cannibalism.log.md</a> on GitHub) file. It explains information about the file
+<p>An example of extreme cannibalism is in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/cannibalism.log.html">cannibalism.log.html</a>
+file. It explains information about the file
 including how to find the bug, head and tail of the snake, at least where it was
 documented. The first run has several dumps. The final example has the snake
 inside itself.</p>
-<h1 id="gameplay-shedding-stretching"><a name="shedding" href="#toc">Gameplay: Shedding (stretching)</a></h1>
+<div id="shedding">
+<h1 id="gameplay-shedding-stretching"><a href="#toc">Gameplay: Shedding (stretching)</a></h1>
+</div>
 <p>This feature will make you grow by the value of <strong>SHEDS</strong> for every <strong>SHED</strong>
 movements (the counter isn’t incremented when you eat a bug). Basically growing
 without eating a bug (stretching would be better name here).</p>
-<h1 id="gameplay-winning"><a name="winning" href="#toc">Gameplay: Winning</a></h1>
+<div id="winning">
+<h1 id="gameplay-winning"><a href="#toc">Gameplay: Winning</a></h1>
+</div>
 <p>If you ever get to the <strong>MAXSIZE</strong> the game is won. You can force a win by
 setting the max size to a smaller value than the size you specify (or the
 default) or setting the size to higher than the default (or &lt; 0 which will end
@@ -467,7 +484,7 @@ less than again - I’m not going to try and figure that out however). Anyway:</
     YOU WIN!
     X:24/49 Y:8/16 S:658/658 B:0</code></pre>
 <p>Observe that the size isn’t the default 997: because the screen size is too
-small for that value (see <a href="terminals.md">terminals.md</a>).</p>
+small for that value (see [terminals.md][]).</p>
 <p>The reason I chose 997 is that it leaves a bit of a challenge for some (maybe
 most) people but it’s still winnable. Previously even I couldn’t have won unless
 maybe a much bigger screen, if both cheat modes were disabled. I probably could
@@ -485,19 +502,25 @@ but then it occurred to me that there are prime numbers close to 1000 so why not
 choose one instead (that was less than 1000)? And so I did. Another fun fact: at
 the default starting size and growth size of 5 the number of bugs needed before
 the game is won is 199 - also a prime!</p>
-<h1 id="gameplay-quitting"><a name="quitting" href="#toc">Gameplay: Quitting</a></h1>
+<div id="quitting">
+<h1 id="gameplay-quitting"><a href="#toc">Gameplay: Quitting</a></h1>
+</div>
 <p>If you wish to quit you can hit ‘q’ (case-insensitive). For example:</p>
 <pre><code>    X:24/49 Y:8/16 S:5/658 B:0</code></pre>
-<h1 id="gameplay-modes">4. <a name="modes" href="#toc">Gameplay modes</a></h1>
-<p>Here I list a number of different modes of play. In the <a href="bugs.html">bugs.html</a>
-(<a href="bugs.md">bugs.md</a> on GitHub) file I even show how there’s a built-in test unit for some
+<div id="modes">
+<h1 id="gameplay-modes">4. <a href="#toc">Gameplay modes</a></h1>
+</div>
+<p>Here I list a number of different modes of play. In the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/bugs.html">bugs.html</a>
+file I even show how there’s a built-in test unit for some
 modes! There are certainly other modes that could be imagined: the modes below
 happened over time and some were simply an accidental discovery or something I
 thought of by a chance; others were thought out from the beginning but were
 improved over time.</p>
-<p>The <a href="play.sh">play.sh</a> script sets up some of these automatically; I describe it after
+<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/play.sh">play.sh</a> script sets up some of these automatically; I describe it after
 the modes below.</p>
-<h2 id="photosensitive-epilepsystimulation-overload-trigger-warnings"><a name="warning" href="#toc">Photosensitive epilepsy/Stimulation overload trigger warnings</a></h2>
+<div id="warning">
+<h2 id="photosensitive-epilepsystimulation-overload-trigger-warnings"><a href="#toc">Photosensitive epilepsy/Stimulation overload trigger warnings</a></h2>
+</div>
 <p>If you have <strong>photosensitive epilepsy please be careful</strong> especially with low values
 for both <strong>WAIT</strong> and <strong>EVADE</strong>. It appears that the <a href="https://www.epilepsysociety.org.uk/photosensitive-epilepsy#.Xjgpwi2ZOgQ">number of hertz (flashes)
 per second triggering seizures</a> is wide but depending on the variables it
@@ -507,7 +530,9 @@ exercise caution. This could trigger seizures and <strong>it might also be too m
 stimulation for some people.</strong></p>
 <p><strong>Please be careful of these if these types of things have ever affected you or if
 you have any form of epilepsy. Thank you.</strong></p>
-<h2 id="gameplay-mode-drawing-practice-mode"><a name="drawing" href="#toc">Gameplay mode: Drawing / Practice mode</a></h2>
+<div id="drawing">
+<h2 id="gameplay-mode-drawing-practice-mode"><a href="#toc">Gameplay mode: Drawing / Practice mode</a></h2>
+</div>
 <p>If you want to draw the snake wherever you like on the screen you can do this by
 modifying the wait time (for input) to -1 (or any value &lt; 0): then the snake
 does not move until you press a movement key. For example:</p>
@@ -527,7 +552,7 @@ to be a problem simply do:</p>
 <p>Or something like that (maybe make the size bigger but that’s up to you). You
 could also set the max size to be the highest possible by saying</p>
 <pre><code>    MAXSIZE=-1</code></pre>
-<p>Which I’ve done in the <a href="play.sh">play.sh</a> script.</p>
+<p>Which I’ve done in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/play.sh">play.sh</a> script.</p>
 <p>I discuss how this mode works in [spoilers.markdown][].</p>
 <p>Here’s an example run where I spelt ‘SNAKE’. As you can see it’s far from
 perfect: the snake after all does not leave gaps and the game does not support
@@ -538,7 +563,9 @@ for. But you can consider this mode drawing or practice mode.</p>
                    oooo  o   oo ooooooo  oooo   ooooo
                       o  o    ooo     oo o ooo  o
                    oooo  o     oo      ooo  oooooooo&gt;</code></pre>
-<h2 id="gameplay-mode-computer-playing-automatic-mode-photosensitive-epilepsystimulation-overload-trigger"><a name="auto" href="#toc">Gameplay mode: Computer playing / Automatic mode (Photosensitive epilepsy/Stimulation overload trigger)</a></h2>
+<div id="auto">
+<h2 id="gameplay-mode-computer-playing-automatic-mode-photosensitive-epilepsystimulation-overload-trigger"><a href="#toc">Gameplay mode: Computer playing / Automatic mode (Photosensitive epilepsy/Stimulation overload trigger)</a></h2>
+</div>
 <p><strong>Photosensitive epilepsy/stimulation overload trigger warning:</strong>
 For those who have epilepsy or are susceptible to stimulation overload from
 flashing lights please do be careful with this mode. Depending on your
@@ -563,7 +590,9 @@ by itself.</p>
 seems to take longer for it to get a bug as it gets longer. I believe these
 happen because the bug has to find a X and Y coordinate that’s not occupied and
 so with fewer available it has a harder time finding a place in that one line.</p>
-<h3 id="computer-player-variations"><a name="auto-variations" href="#toc">Computer player variations</a></h3>
+<div id="auto-variations">
+<h3 id="computer-player-variations"><a href="#toc">Computer player variations</a></h3>
+</div>
 <p>Here’s how to make the bug move every time the snake moves:</p>
 <pre><code>    CANNIBAL=1 WALLS=1 WAIT=0 EVADE=1 ./prog</code></pre>
 <h4 id="help-the-computer-win-fairly-quickly">Help the computer win fairly quickly</h4>
@@ -577,7 +606,7 @@ thought of):</p>
 shows to be 10 characters depends on whether or not it gets a bug before it can
 get to that length - and then it’ll start shrinking until it’s just the head
 then the head again (i.e. 1 then 0 in size) and then win! This is also in the
-<a href="play.sh">play.sh</a> script.</p>
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/play.sh">play.sh</a> script.</p>
 <h4 id="adjusting-the-timespeed">Adjusting the time/speed</h4>
 <p>Of course you can also do something like:</p>
 <pre><code>    WAIT=5 WALLS=1 CANNIBAL=1 ./prog</code></pre>
@@ -597,7 +626,9 @@ horizontally the snake ran into itself at:</p>
     X:57/156 Y:20/41 S:155/997 B:30</code></pre>
 <p>What if you set the size to a high value? The lowest? There are bound to be
 other games to play with this feature!</p>
-<h2 id="gameplay-mode-grow-shrink-mode-positive-and-negative-winning"><a name="grow-shrink" href="#toc">Gameplay mode: Grow-Shrink mode (Positive and Negative Winning)</a></h2>
+<div id="grow-shrink">
+<h2 id="gameplay-mode-grow-shrink-mode-positive-and-negative-winning"><a href="#toc">Gameplay mode: Grow-Shrink mode (Positive and Negative Winning)</a></h2>
+</div>
 <p>In this mode you’re simultaneously growing and shrinking but because the max
 size is unsigned you can win both by shrinking to the point of losing your body
 or growing to the full size directly. This is how it works:</p>
@@ -615,16 +646,18 @@ actually tried it.</p>
 <p>The parameters above were chosen after playing with the mode a bit to find a
 value that wouldn’t take that much time but still would pose a challenge. One
 could reverse it so that one shrinks more than growing.</p>
-<p>The <a href="crazy.log.html">crazy.log.html</a> (<a href="crazy.log.md">crazy.log.md</a> on GitHub) file has several screen
+<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/crazy.log.html">crazy.log.html</a> file has several screen
 dumps with this idea.</p>
 <p>You could also have it so that eating a bug makes you shrink and moving so many
-moves you grow. I tried this and for me it was far more fun. The <a href="play.sh">play.sh</a>
+moves you grow. I tried this and for me it was far more fun. The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/play.sh">play.sh</a>
 also has this mode:</p>
 <pre><code>    SIZE=100 SHEDS=5 GROW=-10 SHED=50 MAXSIZE=250 ./prog</code></pre>
-<p>Obviously there are many other variations. The <a href="play.sh">play.sh</a> script has some
+<p>Obviously there are many other variations. The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/play.sh">play.sh</a> script has some
 of them (the above is option 5; others are 4, 15 and 16 but only options 4 and 5
 are called Grow / Shrink).</p>
-<h2 id="hypnotic-sleepy-mode-photosensitive-epilepsystimulation-overload-trigger"><a name="hypnotic" href="#toc">Hypnotic / Sleepy mode (<strong>Photosensitive epilepsy/Stimulation overload trigger</strong>)</a></h2>
+<div id="hypnotic">
+<h2 id="hypnotic-sleepy-mode-photosensitive-epilepsystimulation-overload-trigger"><a href="#toc">Hypnotic / Sleepy mode (<strong>Photosensitive epilepsy/Stimulation overload trigger</strong>)</a></h2>
+</div>
 <p><strong>Photosensitive epilepsy/stimulation overload trigger warning:</strong>
 For those who have epilepsy or are susceptible to stimulation overload from
 flashing lights and patterns please do be careful with this mode. Depending on your
@@ -637,14 +670,18 @@ snake moving too.</p>
 <pre><code>    EVADE=1 CANNIBAL=1 ./prog</code></pre>
 <p>And just moving the snake about not trying to catch any bugs - just let whatever
 happens happen.</p>
-<h2 id="gameplay-mode-stimulation-calming-mode"><a name="stim" href="#toc">Gameplay mode: Stimulation / Calming mode</a></h2>
+<div id="stim">
+<h2 id="gameplay-mode-stimulation-calming-mode"><a href="#toc">Gameplay mode: Stimulation / Calming mode</a></h2>
+</div>
 <p>If you just need something to stimulate your mind to keep you calm or simply you
 want to play a game without having to worry about winning or losing you can set
 the growth size to 0 and then just move the snake round and round eating bugs
 until you want to quit. You can enable cannibalism so that you don’t have to
 worry about even running into yourself and losing:</p>
 <pre><code>    GROW=0 CANNIBAL=1 ./prog</code></pre>
-<h2 id="gameplay-mode-expansibility"><a name="expansibility" href="#toc">Gameplay mode: Expansibility</a></h2>
+<div id="expansibility">
+<h2 id="gameplay-mode-expansibility"><a href="#toc">Gameplay mode: Expansibility</a></h2>
+</div>
 <p>As I was writing this document and the game modes I have thought of other game
 modes (they were added) and I have come back to this document to add more modes.
 That’s the beauty of the variables I have implemented: together with the
@@ -657,43 +694,55 @@ not be too hard either. And a game developer who does not play their games is a
 game developer who is detached from their player base and the wants and needs
 are therefore disregarded if even heard. I have played this game a lot for this
 reason as well as I simply enjoy it and thinking up new modes.</p>
-<h1 id="scripts">5. <a name="scripts" href="#toc">Scripts</a></h1>
+<h1 id="scripts">5. <a href="#toc">Scripts</a></h1>
 <p>The following scripts are provided to simplify and automate some of the things
 this file discusses as well as allowing to easily change the colours.</p>
-<h2 id="colours-selection-snake-colours"><a name="colours" href="#toc">Colours selection: snake-colours</a></h2>
-<p>To do this use the <a href="snake-colours">snake-colours</a> script like so:</p>
-<pre><code>    ./snake-colours</code></pre>
+<div id="colours">
+<h2 id="colours-selection-snake-colours"><a href="#toc">Colours selection: snake-colours</a></h2>
+</div>
+<p>To do this use the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/snake-colours.sh">snake-colours.sh</a> script like so:</p>
+<pre><code>    ./snake-colours.sh</code></pre>
 <p>If you want to pass in specific variables you can do that too e.g.:</p>
-<pre><code>    CANNIBAL=1 ./snake-colours</code></pre>
+<pre><code>    CANNIBAL=1 ./snake-colours.sh</code></pre>
 <p>The script will prompt you for the colour of the walls, snake head, body and the
 bug.</p>
-<h2 id="automate-the-above-gameplay-modes"><a name="preset" href="#toc">Automate the above gameplay modes</a></h2>
-<p>The <a href="play.sh">play.sh</a> script has the gameplay modes described in this file and is menu
+<div id="preset">
+<h2 id="automate-the-above-gameplay-modes"><a href="#toc">Automate the above gameplay modes</a></h2>
+</div>
+<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/play.sh">play.sh</a> script has the gameplay modes described in this file and is menu
 based (there might be differences and some of the modes I include a variation).
 The script tests the terminal (allowing you to continue even if problems are
 detected), prompts you if you want to select colours (like those in
-snake-colours above) and then gives you a list of game modes to play. You can
+snake-colours.sh above) and then gives you a list of game modes to play. You can
 pass in the game variables but note that if you pass in a variable that the mode
 you choose uses then the script will override what you pass in.</p>
 <p>To use you can do something like:</p>
 <pre><code>    ./play.sh</code></pre>
 <p>Or to make it so walls are an obstacle:</p>
 <pre><code>    WALLS=0 ./play.sh</code></pre>
-<h1 id="notes-about-some-of-the-game-variables">6. <a name="variables" href="#toc">Notes about some of the game variables</a></h1>
+<div id="variables">
+<h1 id="notes-about-some-of-the-game-variables">6. <a href="#toc">Notes about some of the game variables</a></h1>
+</div>
 <p>The game variables can be used for a variety of things including different
 gameplay modes (as shown above) but here are some general notes about a few of them.</p>
-<h2 id="wait-snake-speed"><a name="wait" href="#toc">WAIT: Snake speed</a></h2>
+<div id="wait">
+<h2 id="wait-snake-speed"><a href="#toc">WAIT: Snake speed</a></h2>
+</div>
 <p>Besides the different game modes, if you find it too fast/slow you can change it
 to a value that’s better for you. Remember it’s a wait time so if you want the
 snake to move slower you have to increase the wait time!</p>
-<h2 id="evade-bug-evasion-frequency"><a name="evade" href="#toc">EVADE: Bug evasion frequency</a></h2>
+<div id="evade">
+<h2 id="evade-bug-evasion-frequency"><a href="#toc">EVADE: Bug evasion frequency</a></h2>
+</div>
 <p>For every <strong>EVADE</strong> snake movements the bug will try and find a new place to
 occupy. It might be very close to it and I do not ensure it’s a new place at
 all.</p>
 <p>Each time the bug is placed the counter will be reset whether from eating the
 bug or not reaching it in time. Default 300 moves.</p>
 <p>This can help you get out of a trap but it can also sometimes make it harder.</p>
-<h2 id="size-maxsize-initial-max-snake-sizes"><a name="sizes" href="#toc">SIZE / MAXSIZE: Initial / Max snake sizes</a></h2>
+<div id="sizes">
+<h2 id="size-maxsize-initial-max-snake-sizes"><a href="#toc">SIZE / MAXSIZE: Initial / Max snake sizes</a></h2>
+</div>
 <p>997 might be a bit high for many people. Or maybe you don’t have enough time. Or
 you’re not in the mood to lose. Or you want to get close to a size you were last
 time but quickly. It might be in conjunction with drawing mode.</p>
@@ -702,10 +751,14 @@ the snake will ‘populate’ in the snake arrays and the visible size: as I hav
 discussed here and there the snake doesn’t grow immediately so it takes time
 before the snake is visibly that many characters. In other words just because it
 says SIZE 29 doesn’t mean it will instantly be 29 characters on the screen.</p>
-<h2 id="grow-sheds-growth-shedding-sizes"><a name="growth" href="#toc">GROW / SHEDS : Growth / Shedding sizes</a></h2>
+<div id="growth">
+<h2 id="grow-sheds-growth-shedding-sizes"><a href="#toc">GROW / SHEDS : Growth / Shedding sizes</a></h2>
+</div>
 <p>Similar to the initial size. Notice that the above point on size applies here:
 it will take the number of movements before it is ‘its full size’.</p>
-<h1 id="conclusion-and-inspirational-words-for-everyone">7. <a name="conclusions" href="#toc">Conclusion (and inspirational words for everyone)</a></h1>
+<div id="conclusions">
+<h1 id="conclusion-and-inspirational-words-for-everyone">7. <a href="#toc">Conclusion (and inspirational words for everyone)</a></h1>
+</div>
 <p>I believe that this file has given more than enough information for anyone to
 get an idea of what is possible with my implementation of Snake. I realise also
 that most people won’t have read this far and that’s quite all right; I’m very

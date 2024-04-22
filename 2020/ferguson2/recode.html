@@ -139,7 +139,7 @@
 explore my <a href="https://www.cryptomuseum.com/crypto/enigma/index.htm">Enigma machine</a>
 <a href="prog.c">simulator</a>. I really encourage you to do this but of course you don’t
 have to if you don’t wish to.</p>
-<p><a name="toc"></a></p>
+<div id="toc">
 <ul>
 <li><a href="#recode">What is recode and why is it recommended?</a></li>
 <li><a href="#options">Options</a>
@@ -160,9 +160,12 @@ have to if you don’t wish to.</p>
 <li><a href="#exampleuses">Example uses</a></li>
 <li><a href="#fun">A fun way to explore my Enigma machine, with a surprise</a></li>
 </ul>
-<h1 id="what-is-recode-and-why-is-it-recommended"><a name="recode" href="#toc">What is recode and why is it recommended?</a></h1>
-<p>To demonstrate how to and why you should use the <a href="recode.c">recode</a> program with
-the <a href="prog.c">Enigma machine simulator</a> I have included some examples here as
+</div>
+<div id="recode">
+<h1 id="what-is-recode-and-why-is-it-recommended"><a href="#toc">What is recode and why is it recommended?</a></h1>
+</div>
+<p>To demonstrate how to and why you should use the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/recode.c">recode.c</a> program with
+the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/prog.c">Enigma machine simulator</a> I have included some examples here as
 well as brief (‘brief?!’ I am sure many would think but it’s brief for me)
 commentary.</p>
 <p>It would not be possible to do all that the recode program does in my entry
@@ -181,7 +184,7 @@ with the Roman numeral, showing their actual orders etc.), the reflectors
 (labelling them with B, C and showing the actual strings) etc.</p>
 <p>In this file I will show an example of each feature and then get to the
 wonderful ‘challenge’ for everyone.</p>
-<h1 id="options"><a name="options" href="#toc">Options</a></h1>
+<h1 id="options"><a href="#toc">Options</a></h1>
 <pre><code>    ./recode -h
     usage: ./recode [options]
     -v                  display selected settings
@@ -234,8 +237,10 @@ Again note that this does not validate input! Although it detects out of range
 for the arrays it doesn’t detect duplicates. This is because it wasn’t meant to
 be any given file or anything else other than the direct output of a previous
 run (thus validated). I’m not even guaranteeing that I got the array tests valid
-in <a href="recode.c">recode.c</a> <code>-R</code> option!</p>
-<h2 id="protecting-against-the-same-io-file"><a name="samefile" href="#toc">Protecting against the same I/O file</a></h2>
+in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/recode.c">recode.c</a> <code>-R</code> option!</p>
+<div id="samefile">
+<h2 id="protecting-against-the-same-io-file"><a href="#toc">Protecting against the same I/O file</a></h2>
+</div>
 <p>Because some file systems are case-insensitive I have implemented a
 case-insensitive <code>strcmp()</code>; if the input file name is the same as the output file
 name I won’t write to it. From a quick test this is important particularly if
@@ -245,17 +250,23 @@ This might be overprotective but I believe it better to prevent user error where
 possible. Of course if neither file exists it might be argued that it’s not
 necessary to worry since you can’t read from a file that doesn’t exist. But then
 what about if one exists but the other does not?</p>
-<h2 id="file-options-parser-limitation"><a name="fileoptions" href="#toc">File options parser limitation</a></h2>
+<div id="fileoptions">
+<h2 id="file-options-parser-limitation"><a href="#toc">File options parser limitation</a></h2>
+</div>
 <p>Due to the way the parsing of options is done (no spaces between option char and
 argument) shell expansion will not work right so for example doing:</p>
 <pre><code>    $ ./recode -R~/config</code></pre>
 <p>will <em>not</em> read the file ‘config’ in the home directory. I show another way to
 achieve this later.</p>
 <p>This limitation also applies to the <code>-f</code> and <code>-o</code> options!</p>
-<h2 id="r-option-validation"><a name="validation" href="#toc">-R option validation?</a></h2>
+<div id="validation">
+<h2 id="r-option-validation"><a href="#toc">-R option validation?</a></h2>
+</div>
 <p>Again the <code>-R</code> option does not validate input. For validation you have to run
 the program interactively.</p>
-<h1 id="piping-commands-to-recode"><a name="pipingtorecode" href="#toc">Piping commands to recode</a></h1>
+<div id="pipingtorecode">
+<h1 id="piping-commands-to-recode"><a href="#toc">Piping commands to recode</a></h1>
+</div>
 <p>If stdin is not a tty (<code>!isatty(0)</code>) and neither randomised mode nor reading in
 from a file is specified then you might just see something like:</p>
 <pre><code>    $ echo testing test tests | ./recode
@@ -272,7 +283,9 @@ from a file is specified then you might just see something like:</p>
 <p>In other words just the defaults. This was to simplify the problems with
 prompting again for input if it’s invalid (though as you’ll see it does a good
 job at this anyway).</p>
-<h1 id="piping-recode-to-the-enigma-simulator"><a name="pipingtoenigma" href="#toc">Piping recode to the Enigma simulator</a></h1>
+<div id="pipingtoenigma">
+<h1 id="piping-recode-to-the-enigma-simulator"><a href="#toc">Piping recode to the Enigma simulator</a></h1>
+</div>
 <p>If you’re using recode to recode the input so you don’t have to type in the
 input manually (if you randomise or read in from previously saved file no input
 need be done at all) then make sure to redirect stderr to /dev/null. If you
@@ -285,7 +298,9 @@ redirected to <code>/dev/null</code> it prints this out; at this point however i
 input. Why or how it shows the first prompt instead of later on I do not know.
 Anyway at this point the simulator is already expecting input to en/decipher.
 That’s why after I sent EOF it printed out the remaining strings to stderr.</p>
-<h1 id="manually-test-the-recode-program-with-the-enigma-program"><a name="manuallytest" href="#toc">Manually test the recode program with the Enigma program</a></h1>
+<div id="manuallytest">
+<h1 id="manually-test-the-recode-program-with-the-enigma-program"><a href="#toc">Manually test the recode program with the Enigma program</a></h1>
+</div>
 <pre><code>    $ cat input
     IOCCC
 
@@ -347,7 +362,9 @@ the same output:</p>
 <p>Also if you flip the order of the letters in the pair e.g. the AB as BA instead:</p>
 <pre><code>    $ echo 1AA2AA3AA2BA..CDEFGHIJKLMNOPQRIOCCC|./prog - 2&gt;/dev/null
     HQNVO</code></pre>
-<h1 id="only-write-config-file"><a name="onlyconfig" href="#toc">Only write config file</a></h1>
+<div id="onlyconfig">
+<h1 id="only-write-config-file"><a href="#toc">Only write config file</a></h1>
+</div>
 <pre><code>    $ ./recode -v -oconfig -finput &gt;/dev/null
     Rotors:
     (1)   I: EKMFLGDQVZNTOWYHXUSPAIBRCJ
@@ -425,7 +442,9 @@ first one will print a newline with the echo but that won’t matter):</p>
 the buffer remains <code>NULL</code> and so I don’t print it but still do print the settings
 file. (Actually even if <code>getdelim()</code> fails you’re supposed to free the buffer so I
 set another variable to indicate if it should be printed.)</p>
-<h1 id="reusing-a-configuration"><a name="reuseconfig" href="#toc">Reusing a configuration</a></h1>
+<div id="reuseconfig">
+<h1 id="reusing-a-configuration"><a href="#toc">Reusing a configuration</a></h1>
+</div>
 <pre><code>    $ echo -n|./recode -r -oconfig
     4UH5II1RJ1SPIFEJLYGZWRTBHVCAMN$
 
@@ -450,7 +469,9 @@ set another variable to indicate if it should be printed.)</p>
 <pre><code>    $ ./recode -finput.txt -Rconfig | ./prog - 2&gt;/dev/null &gt; output2
     $ diff output output2
     $</code></pre>
-<h1 id="write-config-file-read-data-file-and-pass-to-enigma-simulator"><a name="passtoenigma" href="#toc">Write config file, read data file and pass to Enigma simulator</a></h1>
+<div id="passtoenigma">
+<h1 id="write-config-file-read-data-file-and-pass-to-enigma-simulator"><a href="#toc">Write config file, read data file and pass to Enigma simulator</a></h1>
+</div>
 <pre><code>    $ ./recode -finput.txt -oconfig | ./prog - 2&gt;/dev/null &gt; output
     Rotors:
     (1)   I: EKMFLGDQVZNTOWYHXUSPAIBRCJ
@@ -501,7 +522,9 @@ does is the output:</p>
     This is a sentence.
 
     This is another sentence.</code></pre>
-<h1 id="piping-directly-to-the-enigma-code-once-with-randomised-settings-saved"><a name="directlytoenigma" href="#toc">Piping directly to the Enigma code once (with randomised settings, saved)</a></h1>
+<div id="directlytoenigma">
+<h1 id="piping-directly-to-the-enigma-code-once-with-randomised-settings-saved"><a href="#toc">Piping directly to the Enigma code once (with randomised settings, saved)</a></h1>
+</div>
 <p>This is like the above only randomised:</p>
 <pre><code>    $ ./recode -r -oconfig|./prog - 2&gt;/dev/null
     IOCCC
@@ -519,17 +542,23 @@ okay:</p>
 actual pasting to demonstrate:</p>
 <pre><code>    $ echo IOCCC | ./recode -R$(cat config) | ./prog - 2&gt;/dev/null | ./recode -R2BM4GJ3HK1LNCBXWRMGKSYIAZUTPVJ | ./prog - 2&gt;/dev/null
     IOCCC</code></pre>
-<h1 id="usage-conclusion"><a name="conclusion" href="#toc">Usage conclusion</a></h1>
+<div id="conclusion">
+<h1 id="usage-conclusion"><a href="#toc">Usage conclusion</a></h1>
+</div>
 <p>That should give you an idea of how to use the <code>recode</code> program. I leave it as
 an exercise to the reader to implement additional features but here are some
 ideas of what could be done and how this entry might be used (including that
 delicious challenge).</p>
-<h1 id="example-additions"><a name="additions" href="#toc">Example additions</a></h1>
+<div id="additions">
+<h1 id="example-additions"><a href="#toc">Example additions</a></h1>
+</div>
 <ul>
-<li>Add code (to <a href="prog.c">prog.c</a>) that tries to determine possible decipherments based on
+<li>Add code (to <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/prog.c">prog.c</a>) that tries to determine possible decipherments based on
 a given crib (or set of cribs).</li>
 </ul>
-<h1 id="example-uses"><a name="exampleuses" href="#toc">Example uses</a></h1>
+<div id="exampleuses">
+<h1 id="example-uses"><a href="#toc">Example uses</a></h1>
+</div>
 <ul>
 <li><p>Take an actual key sheet and message for that day and try and decipher the
 message (might help if you know German!). I haven’t actually done this for
@@ -545,7 +574,9 @@ watching dry paint stay dry on a wall but why not poke fun at politicians
 anyway?</p></li>
 <li><p>Best idea: try the below experiment!</p></li>
 </ul>
-<h1 id="a-fun-way-to-explore-my-enigma-machine-with-a-surprise"><a name="fun" href="#toc">A fun way to explore my Enigma machine, with a surprise</a></h1>
+<div id="fun">
+<h1 id="a-fun-way-to-explore-my-enigma-machine-with-a-surprise"><a href="#toc">A fun way to explore my Enigma machine, with a surprise</a></h1>
+</div>
 <p>As I was making the above silly list something occurred to me. My <a href="https://www.ioccc.org/2020/ferguson1/index.html">other
 entry</a> this year includes a
 <a href="https://www.ioccc.org/2020/ferguson1/chocolate-cake.html">recipe for a wonderful double-layered chocolate fudge

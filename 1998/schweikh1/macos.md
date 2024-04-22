@@ -28,7 +28,7 @@ the entry, the alternate version has also removed this limitation despite `gcc`
 existing (though it's `clang`) in macOS.
 
 Now as far as how this works if you look at the code of
-[schweikh1.c](schweikh1.c), on line 55 you'll see a funny command (this goes for
+[schweikh1.c](%%REPO_URL%%/1998/schweikh1/schweikh1.c), on line 55 you'll see a funny command (this goes for
 the alternate version as well but a bit different).
 
 Now the key is two magic numbers, one (two times) on a different line shortly below the

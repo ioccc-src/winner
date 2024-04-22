@@ -1,6 +1,6 @@
 # Introduction (SPOILER ALERT)
 
-In the [gameplay.html][] ([gameplay.md][] on GitHub) file I have given enough
+In the [gameplay.html][] file I have given enough
 information to know how the game looks, how to move the snake, how to pause etc.
 In this file I am including (some) information on how the game actually works:
 the technical details as it were, obfuscation techniques and also some of the
@@ -12,8 +12,7 @@ If you're still interested in this file (i.e. you're a judge or someone who
 wants to know more about it) read on. Yes I write a lot. But you probably
 already knew that so no harm there, hey?
 
-<a name="toc"></a>
-
+<div id="toc">
 -   [How does it work?](#works)
 -   [How does the snake movement work?](#movement)
 -   [Drawing (manual) and computer playing (automatic) modes](#manual-automatic)
@@ -23,9 +22,12 @@ already knew that so no harm there, hey?
 -   [Obfuscation](#obfuscation)
 -   [Skinning the snake (i.e. decreasing the iocccsize)](#skinning)
 -   [A few more interesting size optimisations](#size)
+</div>
 
 
-# <a name="works" href="#toc">How does it work?</a>
+<div id="works">
+# <a href="#toc">How does it work?</a>
+</div>
 
 The gameplay I have already described but this explains the way things are
 actually done in more detail.
@@ -105,7 +107,9 @@ bug the snake will not shed; if it sheds the snake will not move in the same
 manner as if it simply moved. Growth/movement can in some ways be conflated.
 
 
-# <a name="movement" href="#toc">How does the snake movement work?</a>
+<div id="movement">
+# <a href="#toc">How does the snake movement work?</a>
+</div>
 
 The way the snake looks to move is that every time the snake moves the last
 position (the tail) is replaced with a space (`' '`). If the snake eats a bug
@@ -118,7 +122,9 @@ positions that are shifted forward as the snake moves about the field looking
 for bugs.
 
 
-# <a name="manual-automatic" href="#toc">Drawing (manual) and computer playing (automatic) modes</a>
+<div id="manual-automatic">
+# <a href="#toc">Drawing (manual) and computer playing (automatic) modes</a>
+</div>
 
 How do these modes work? The `timeout()` function takes a signed int: if it's `<
 0` it waits indefinitely; if it's `0` it returns immediately even if there's no
@@ -129,7 +135,9 @@ will move as long as it's not paused etc. and otherwise it waits up to that many
 milliseconds (which is how the `0` value comes into play).
 
 
-# <a name="collision" href="#toc">Collision detection</a>
+<div id="collision">
+# <a href="#toc">Collision detection</a>
+</div>
 
 This was an interesting thing to work out. Because the snake could occupy more
 than one row and more than one column at a time the two arrays approach seemed
@@ -145,7 +153,9 @@ are very flexible and cunning who can tell what might happen? As I noted _these
 bugs are not bugs! :)_
 
 
-## <a name="cannibalcollision" href="#toc">Cannibal collision detection</a>
+<div id="cannibalcollision">
+## <a href="#toc">Cannibal collision detection</a>
+</div>
 
 How does cannibalism change collision detection? The fact that each time the
 snake function is called there is a space printed at the tail end was a problem
@@ -177,7 +187,9 @@ other. This can also appear to defy physics!
 Choose your poison. Or rather your venom.
 
 
-## <a name="resizing" href="#toc">Collision detection when resizing the window of the game</a>
+<div id="resizing">
+## <a href="#toc">Collision detection when resizing the window of the game</a>
+</div>
 
 What happens if the window is resized during the game? If the size is increased
 then the border can (and will) stay the same; but if the window is shrunk then
@@ -196,7 +208,9 @@ was increased in size but I believe that's resolved. Anyway what kind of field
 in real life increases in size like that so suddenly? :)
 
 
-# <a name="obfuscation" href="#toc">Obfuscation</a>
+<div id="obfuscation">
+# <a href="#toc">Obfuscation</a>
+</div>
 
 - I make use of the C token pasting operator. Although this is well known it's
 probably less known and either way it's not as simple as just having the code
@@ -427,11 +441,11 @@ dimensions. Now in the first call in `main()` I have the code and tests followin
     offsets for every time I use negative offsets. But where's the fun in that? :)
 
     BTW: Some of these are not in the table of expressions in the
-    [HACKING.html][] ([HACKING.md][] on GitHub) file.  Also there might be some
+    [HACKING.html][] file.  Also there might be some
     code in there that is no longer correct (it was before I started
     obfuscation) though it might be able to give an idea.  Spoilers abound in
-    that file (in addition to this file) but the [HACKING.html][] ([HACKING.md][]
-    on GitHub) file states things that are no longer true: a way of obfuscation
+    that file (in addition to this file) but the [HACKING.html][]
+    file states things that are no longer true: a way of obfuscation
     itself! Instead of misleading comments it's misleading statements in the
     file that explains what some of the things are for!
 
@@ -783,7 +797,10 @@ though again maybe I have an off by one or two here and/or there.
 
 Most of the primes above were intentional.
 
-# <a name="skinning" href="#toc">Skinning the snake (i.e. decreasing the iocccsize)</a>
+
+<div id="skinning">
+# <a href="#toc">Skinning the snake (i.e. decreasing the iocccsize)</a>
+</div>
 
 This happened in a number of ways and I have already documented some in other
 parts. Now there are a number of reasons to do this: amongst them to make it
@@ -837,7 +854,10 @@ add additional features and also to add proper error reporting (when `calloc()`
 failed I called `abort()` and before that if initialising ncurses failed I also
 called `abort()` and did not report any errors in either event but I do now).
 
-# <a name="size" href="#toc">A few more interesting size optimisations</a>
+
+<div id="size">
+# <a href="#toc">A few more interesting size optimisations</a>
+</div>
 
 As I was getting to the end of obfuscation (wrt size available - and it was
 getting pretty obfuscated too - the majority of the techniques were already in
@@ -934,18 +954,16 @@ all spaces anyway. Thus I could save another three bytes by changing it to:
     !o  && q *U,*V,' ');
 ```
 
-Technically it would be a `" "` (see [HACKING.html][] or on GitHub
-[HACKING.md][]) else for N (not referring to the variable though it might very
+Technically it would be a `" "` (see [HACKING.html][]
+else for N (not referring to the variable though it might very
 well matter here too) movements (i.e.  due to sizes) you will at times (e.g.
 after eating a bug) see the snake body char at 0,0. I'm not bothered about that
 though because the score line is meant to display something, it squeezes a few
 more bytes and having a space is hardly an imposition on usage (and for that
 matter having a 'o' at 0,0 isn't either).
 
-[gameplay.md]: gameplay.md
-[gameplay.html]: gameplay.html
-[HACKING.md]: HACKING.md
-[HACKING.html]: HACKING.html
+[gameplay.html]: %%REPO_URL%%/2020/ferguson1/gameplay.html
+[HACKING.html]: %%REPO_URL%%/2020/ferguson1/HACKING.html
 
 
 <hr style="width:10%;text-align:left;margin-left:0">

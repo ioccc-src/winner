@@ -38,7 +38,9 @@ There probably are combinations that can test these types of things I just
 don't at this time remember any I might have done.
 
 
-# <a name="stillsnake" href="#toc">The snake doesn't seem to be moving</a>
+<div id="stillsnake">
+# <a href="#toc">The snake doesn't seem to be moving</a>
+</div>
 
 One way to show this is in full is to set the initial size and growth size to a
 high value; then try each one individually. For example:
@@ -73,13 +75,17 @@ moving or growing and that's the important point (if you have the default
 status line you can also see the coordinates being updated to show this).
 
 
-# <a name="getch" href="#toc">getch() also accepts input from some input hardware other than keyboards</a>
+<div id="getch">
+# <a href="#toc">getch() also accepts input from some input hardware other than keyboards</a>
+</div>
 
 On my MacBook Pro the trackpad has actually triggered directions; if I were to
 swipe up and then down the snake would run into itself. I believe this has to do
 with the function call `keypad(v, 1);` which enables arrow keys.
 
-# <a name="size" href="#toc">SIZE=0 is the same as SIZE=1 and other oddities</a>
+<div id="size">
+# <a href="#toc">SIZE=0 is the same as SIZE=1 and other oddities</a>
+</div>
 
 What this means is that for both you will only have the snake head. At this point
 you can safely go back on yourself even without cannibalism enabled. This is
@@ -133,7 +139,7 @@ And you'll see that you start to be the normal size but then you leave your
 head several places until you end up getting to the max size (by way of it
 being unsigned). This isn't a bug even if it might seem like one. In fact
 this is the basis of the grow/shrink mode of play that I talk about in the
-[gameplay.html][] ([gameplay.md][] on GitHub) file.
+[gameplay.html][] file.
 
 Here's another thing to be aware of. Let's say you do:
 
@@ -150,7 +156,9 @@ that if you get another bug you will be at the 'max size':
     X:81/156 Y:35/41 S:997/997 B:2
 ```
 
-#  <a name="bitetail" href="#toc">'I was a few places behind my tail and I ran into it!'</a>
+<div id="bitetail">
+#  <a href="#toc">'I was a few places behind my tail and I ran into it!'</a>
+</div>
 
 I.e. what happens if you're growing - for example after just eating a bug - and
 you're racing towards your tail? If you're behind it should be fine since you're
@@ -162,7 +170,9 @@ me and I figured I better note it.
 **Remember: the tail at that point isn't moving yet; the snake is growing!**
 
 
-# <a name="middleofsnake" href="#toc">With negative growth the snake drops from the middle of the body</a>
+<div id="middleofsnake">
+# <a href="#toc">With negative growth the snake drops from the middle of the body</a>
+</div>
 
 For instance it might look like this (the first line is as it happens, the
 second pointing to where it happens and the third being what's left after the
@@ -196,7 +206,9 @@ that's how they grow in the wild so it's a misnomer. The shrinking was only
 'discovered' because it's an unsigned number but happily it allows for different
 gameplay modes.
 
-# <a name="buginsnake" href="#toc">It looks like the bug is in the snake</a>
+<div id="buginsnake">
+# <a href="#toc">It looks like the bug is in the snake</a>
+</div>
 
 I show a different example in the [crazy.log.md][] file but what defines a coordinate
 which the snake occupies? If the snake breaks apart then the only part
@@ -212,7 +224,9 @@ something like:
 This is because the snake is no longer there: in fact in this run the snake was
 quite a bit lower on the screen and 25 in length.
 
-# <a name="bugplacement" href="#toc">On the safety of the bug placement loop</a>
+<div id="bugplacement">
+# <a href="#toc">On the safety of the bug placement loop</a>
+</div>
 
 Ilya Kurdyukov shared concern for the loop in the bug placement routine: is it
 safe? What he refers to is that it's a potential infinite loop. But is it? I
@@ -257,7 +271,7 @@ With 10 rows and columns it's calculated as `7 * 7` (i.e. it's
 (`playable_rows * playable_columns`). I have played with this many
 times and I do not believe there should be a problem. If there is it's from a
 very poor implementation of rand() and I discuss this in
-[troubleshooting.html][] ([troubleshooting.md][] on GitHub).
+[troubleshooting.html][].
 
 There I also give some test outputs without the cap in place to give an idea of
 when it became a problem (or would have). In short this is known but I do not
@@ -268,16 +282,13 @@ The obvious question is why didn't I put in a break? Because of the IOCCC size
 rule 2 and what would it do anyway? I guess it would win but to my mind that is
 a bug and I prefer putting in restrictions to try and make it very unlikely.
 
-[crazy.log.md]: crazy.log.md
-[gameplay.md]: gameplay.md
-[troubleshooting.md]: troubleshooting.md
-[troubleshooting.html]: troubleshooting.html
-[gameplay.html]: gameplay.html
-[gameplay.md]: gameplay.md
-[cannibalism.log.md]: cannibalism.log.md
+[crazy.log.html]: %%REPO_URL%%/2020/ferguson1/crazy.log.html
+[gameplay.html]: %%REPO_URL%%/2020/ferguson1/gameplay.html
+[troubleshooting.html]: %%REPO_URL%%/2020/ferguson1/troubleshooting.html
+[gameplay.html]: %%REPO_URL%%/2020/ferguson1/gameplay.html
+[cannibalism.log.html]: %%REPO_URL%%/2020/ferguson1/cannibalism.log.html
 [https://en.wikipedia.org/wiki/Halfwidth_and_fullwidth_forms]: https://en.wikipedia.org/wiki/Halfwidth_and_fullwidth_forms
-[spoilers]: spoilers.markdown
-[screenshot of halfwidth vs fullwidth]: halfwidth_vs_fullwidth.png
+[spoilers.html]: %%REPO_URL%%/2020/ferguson1/spoilers.html
 
 
 <hr style="width:10%;text-align:left;margin-left:0">

@@ -2,7 +2,7 @@
 
 1. First, build the kernel and filesystem (just `make`).  In short, you need to
 build this on an x86 Linux machine.  If you wish to try to compile on an OS
-other than Linux you may need modify the [Makefile](Makefile) to compile `sh`
+other than Linux you may need modify the [Makefile](%%REPO_URL%%/2004/gavin/Makefile) to compile `sh`
 using a cross-compiler that produces ELF binaries - i.e. a cross-compiler
 targeting x86 Linux.  In short, you need to build this on an x86 Linux machine.
 

@@ -60,8 +60,8 @@ code>` and `<VM code>`.
   * putchar, exit
 
 The instructions have variable lengths, but many of them are represented as one
-printable character.  (See [machine.rb](machine.rb) and
-[assemble.rb](assemble.rb) in detail.) The mapping between instructions and
+printable character.  (See [machine.rb](%%REPO_URL%%/2014/endoh1/machine.rb) and
+[assemble.rb](%%REPO_URL%%/2014/endoh1/assemble.rb) in detail.) The mapping between instructions and
 characters is also carefully designed to minimize `<VM code>`, which makes the
 resulted program non-human-readable.
 
@@ -72,8 +72,8 @@ It is too tedious to write the machine language directly.  So I wrote the source
 code in Ruby syntax and created a Ruby-to-VM compiler that involves alpha
 renaming and automatic register allocation only for this purpose.
 
-* [src.rb](src.rb): the source code of QR code encoder written in Ruby syntax.
-* [vm.c](vm.c): the source code of the VM.
+* [src.rb](%%REPO_URL%%/2014/endoh1/src.rb): the source code of QR code encoder written in Ruby syntax.
+* [vm.c](%%REPO_URL%%/2014/endoh1/vm.c): the source code of the VM.
 
 The compiler tool chain is the following.
 
@@ -111,14 +111,14 @@ The compiler tool chain is the following.
 	      prog.c
 ```
 
-* [parse.rb](parse.rb) converts Ruby to AST.
-* [serialize.rb](serialize.rb) converts AST to intermediate instruction sequence.
-* [alpha.rb](alpha.rb) applies "alpha-renaming" to the instruction sequence.
-* [register.rb](register.rb) applies "register allocation".
-* [assemble.rb](assemble.rb) converts the sequence to the final stack-machine instructions.
-* [interp.c](interp.c) is an implementation of the VM.
-* [link.rb](link.rb) generates `main.c` by linking the instructions and interpreter source.
-* [gen-prog.c](gen-prog.c) generates [prog.c](prog.c) based on `main.c`.
+* [parse.rb](%%REPO_URL%%/2014/endoh1/parse.rb) converts Ruby to AST.
+* [serialize.rb](%%REPO_URL%%/2014/endoh1/serialize.rb) converts AST to intermediate instruction sequence.
+* [alpha.rb](%%REPO_URL%%/2014/endoh1/alpha.rb) applies "alpha-renaming" to the instruction sequence.
+* [register.rb](%%REPO_URL%%/2014/endoh1/register.rb) applies "register allocation".
+* [assemble.rb](%%REPO_URL%%/2014/endoh1/assemble.rb) converts the sequence to the final stack-machine instructions.
+* [interp.c](%%REPO_URL%%/2014/endoh1/interp.c) is an implementation of the VM.
+* [link.rb](%%REPO_URL%%/2014/endoh1/link.rb) generates `main.c` by linking the instructions and interpreter source.
+* [gen-prog.c](%%REPO_URL%%/2014/endoh1/gen-prog.c) generates [prog.c](%%REPO_URL%%/2014/endoh1/prog.c) based on `main.c`.
 
 You can run the process by `rake` command.  `ruby-minisat` gem is needed.
 
@@ -143,7 +143,7 @@ but it appears to no longer exist.
 
 [1]: http://zbar.sourceforge.net/
 
-You can use [tool.rb](tool.rb) to convert the output to a png file.
+You can use [tool.rb](%%REPO_URL%%/2014/endoh1/tool.rb) to convert the output to a png file.
 
 ``` <!---sh-->
     ./main Hello | ruby tool.rb > hello.png
