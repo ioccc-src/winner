@@ -69,7 +69,7 @@ versions? Or are there any?
     ./try.alt.sh
 ```
 
-Like with [try.sh](try.sh), try using this multiple times in a row or throughout
+Like with [try.sh](%%REPO_URL%%/2000/natori/try.sh), try using this multiple times in a row or throughout
 the day on different days (if different phases of the Moon you'll see more of a
 difference, of course).
 
