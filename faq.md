@@ -386,16 +386,15 @@ For example:
 
 
 <div id="faq0_4">
+<div id="SUS">
 ### FAQ 0.4: What platform should I assume for my entry?
 </div>
+</div>
 
-Your entry must compile with GCC and run under at least one flavor of UNIX (e.g.
-Linux or Solaris). To improve chances to win, it should work under both BSD and
-SysV style UNIX (think **stty cbreak**), and should not depend on "Endianness".
-If it can compile and run on Windows and/or Mac  (see
-[2000/thadgavin](2000/thadgavin/index.html) for one example, amongst others),
-even better. Being able to compile with other compilers like clang is also a
-good thing.
+Your entry must compile with **clang** or **gcc** and run under at least one flavor of a UNIX
+system that conforms to the [SUS](https://en.wikipedia.org/wiki/Single_UNIX_Specification),
+otherwise known as the [The Single UNIX Specification Version 4](https://unix.org/version4/)
+or [later SUS](https://unix.org/online.html).
 
 
 <div id="faq0_5">

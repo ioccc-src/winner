@@ -435,15 +435,14 @@ For example:</p>
             rm -f $@
             cp -f prog $@</code></pre>
 <div id="faq0_4">
+<div id="SUS">
 <h3 id="faq-0.4-what-platform-should-i-assume-for-my-entry">FAQ 0.4: What platform should I assume for my entry?</h3>
 </div>
-<p>Your entry must compile with GCC and run under at least one flavor of UNIX (e.g.
-Linux or Solaris). To improve chances to win, it should work under both BSD and
-SysV style UNIX (think <strong>stty cbreak</strong>), and should not depend on “Endianness”.
-If it can compile and run on Windows and/or Mac (see
-<a href="2000/thadgavin/index.html">2000/thadgavin</a> for one example, amongst others),
-even better. Being able to compile with other compilers like clang is also a
-good thing.</p>
+</div>
+<p>Your entry must compile with <strong>clang</strong> or <strong>gcc</strong> and run under at least one flavor of a UNIX
+system that conforms to the <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">SUS</a>,
+otherwise known as the <a href="https://unix.org/version4/">The Single UNIX Specification Version 4</a>
+or <a href="https://unix.org/online.html">later SUS</a>.</p>
 <div id="faq0_5">
 <div id="feedback">
 <h3 id="faq-0.5-how-may-i-comment-or-make-a-suggestion-on-ioccc-rules-guidelines-and-tools">FAQ 0.5: How may I comment or make a suggestion on IOCCC rules, guidelines and tools?</h3>
