@@ -7,7 +7,7 @@ If you have X11 installed:
 ```
 
 There are two alternate versions, [one that lets you reconfigure the
-controls and size](toledo.alt.c) and [another that should work for
+controls and size](%%REPO_URL%%/2011/toledo/toledo.alt.c) and [another that should work for
 Windows](toledo.alt2.c). See [Alternate code](#alternate-code) below.
 
 
@@ -20,10 +20,10 @@ Windows](toledo.alt2.c). See [Alternate code](#alternate-code) below.
 
 ## Alternate code:
 
-The first alt version, [toledo.alt.c](toledo.alt.c), allows you to reconfigure
+The first alt version, [toledo.alt.c](%%REPO_URL%%/2011/toledo/toledo.alt.c), allows you to reconfigure
 the controls and the dimensions more easily.
 
-The second version, [toledo.alt2.c](toledo.alt2.c), should work for Windows but
+The second version, [toledo.alt2.c](%%REPO_URL%%/2011/toledo/toledo.alt2.c), should work for Windows but
 does not allow you to reconfigure the keys or dimensions. This is because it
 cannot be tested by us.
 
@@ -31,7 +31,7 @@ cannot be tested by us.
 ### Alternate build:
 
 For the one that lets you reconfigure the keys you will want to look at the
-included header file, [keysym.h](keysym.h), to find the correct macros. Once you
+included header file, [keysym.h](%%REPO_URL%%/2011/toledo/keysym.h), to find the correct macros. Once you
 have the right names you can define the macros `FIRE`, `FORWARD`, `BACKWARD`,
 `LEFT`, `RIGHT`, `WIDTH` and `HEIGHT`. Here are the defaults:
 
@@ -80,7 +80,7 @@ you remove both the X11 include files and replace them with
 ```
 
 you ought to be able to compile and run this program on Windows.
-NOTE: this is what [toledo.alt2.c](toledo.alt2.c) is for.
+NOTE: this is what [toledo.alt2.c](%%REPO_URL%%/2011/toledo/toledo.alt2.c) is for.
 
 
 ## Author's remarks:

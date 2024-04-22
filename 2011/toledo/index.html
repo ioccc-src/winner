@@ -155,20 +155,20 @@ Location: <a href="../../location.html#MX">MX</a> - <em>United Mexican States</e
 <h2 id="to-build">To build:</h2>
 <p>If you have X11 installed:</p>
 <pre><code>    make</code></pre>
-<p>There are two alternate versions, <a href="toledo.alt.c">one that lets you reconfigure the
+<p>There are two alternate versions, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/toledo/toledo.alt.c">one that lets you reconfigure the
 controls and size</a> and <a href="toledo.alt2.c">another that should work for
 Windows</a>. See <a href="#alternate-code">Alternate code</a> below.</p>
 <h2 id="to-use">To use:</h2>
 <pre><code>    ./toledo</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
-<p>The first alt version, <a href="toledo.alt.c">toledo.alt.c</a>, allows you to reconfigure
+<p>The first alt version, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/toledo/toledo.alt.c">toledo.alt.c</a>, allows you to reconfigure
 the controls and the dimensions more easily.</p>
-<p>The second version, <a href="toledo.alt2.c">toledo.alt2.c</a>, should work for Windows but
+<p>The second version, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/toledo/toledo.alt2.c">toledo.alt2.c</a>, should work for Windows but
 does not allow you to reconfigure the keys or dimensions. This is because it
 cannot be tested by us.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <p>For the one that lets you reconfigure the keys you will want to look at the
-included header file, <a href="keysym.h">keysym.h</a>, to find the correct macros. Once you
+included header file, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/toledo/keysym.h">keysym.h</a>, to find the correct macros. Once you
 have the right names you can define the macros <code>FIRE</code>, <code>FORWARD</code>, <code>BACKWARD</code>,
 <code>LEFT</code>, <code>RIGHT</code>, <code>WIDTH</code> and <code>HEIGHT</code>. Here are the defaults:</p>
 <pre><code>    FIRE= XK_BackSpace:XK_Tab
@@ -198,7 +198,7 @@ the source early on, right before the code gets hard to follow, or using the
 you remove both the X11 include files and replace them with</p>
 <pre><code>    #include &quot;layer.c&quot;</code></pre>
 <p>you ought to be able to compile and run this program on Windows.
-NOTE: this is what <a href="toledo.alt2.c">toledo.alt2.c</a> is for.</p>
+NOTE: this is what <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/toledo/toledo.alt2.c">toledo.alt2.c</a> is for.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <pre><code>        /=========\\
         \==\   /==/                ||
