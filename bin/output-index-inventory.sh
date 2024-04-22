@@ -101,7 +101,7 @@ shopt -s globstar	# enable '**' to match all files and zero or more directories 
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3 2024-04-15"
+export VERSION="1.4 2024-04-21"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -526,8 +526,6 @@ if [[ -z $NOOP ]]; then
 	echo '# Inventory for' "$YYYY_DIR"
 	echo '</div>'
 	echo
-	echo '<a href="#top">Jump to top</a>'
-	echo
 	echo '## Primary files'
 	echo
 	grep -E '^[0-9][0-9]{0,8} ' "$TMP_MANIFEST" | LC_ALL=C sort -k 1n -k 3.2d | sed -e 's/^[0-9][0-9]* //'
@@ -535,6 +533,9 @@ if [[ -z $NOOP ]]; then
 	echo '## Secondary files'
 	echo
 	grep -E '^[1-9][0-9]{9,} ' "$TMP_MANIFEST" | LC_ALL=C sort -k 1n -k 3.2d | sed -e 's/^[0-9][0-9]* //'
+	echo
+	echo '<hr style="width:10%;text-align:left;margin-left:0">'
+	echo '<h4>Jump to: <a href="#">top</a></h4>'
 
     } >> "$TMP_FILE"
 elif [[ $V_FLAG -ge 3 ]]; then
