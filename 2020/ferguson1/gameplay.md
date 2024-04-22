@@ -867,6 +867,11 @@ years ago but I know it's true now. **Believe in yourself. Always.**
 [play.sh]: play.sh
 
 
+<hr style="width:10%;text-align:left;margin-left:0">
+
+Jump to: [top](#)
+
+
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

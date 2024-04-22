@@ -948,6 +948,11 @@ matter having a 'o' at 0,0 isn't either).
 [HACKING.html]: HACKING.html
 
 
+<hr style="width:10%;text-align:left;margin-left:0">
+
+Jump to: [top](#)
+
+
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

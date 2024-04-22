@@ -38,6 +38,11 @@ sharing state via global variables is an ancient and honored form of
 obfuscation, and remarkably effective.
 
 
+<hr style="width:10%;text-align:left;margin-left:0">
+
+Jump to: [top](#)
+
+
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

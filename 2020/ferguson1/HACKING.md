@@ -523,6 +523,11 @@ evasions (I just don't have many more bytes left!) - unless maybe that there is
 no default limit on max moves.
 
 
+<hr style="width:10%;text-align:left;margin-left:0">
+
+Jump to: [top](#)
+
+
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

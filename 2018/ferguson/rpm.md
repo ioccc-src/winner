@@ -42,6 +42,11 @@ further. Nevertheless more information on my entry can be found at
 [https://ioccc.xexyl.net/2018/weasel]: https://ioccc.xexyl.net/2018/weasel
 
 
+<hr style="width:10%;text-align:left;margin-left:0">
+
+Jump to: [top](#)
+
+
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

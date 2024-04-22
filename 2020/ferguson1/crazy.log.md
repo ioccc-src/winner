@@ -119,6 +119,11 @@ the snake split off at some point: the snake no longer occupies that place and i
 could safely go through that part of the screen.
 
 
+<hr style="width:10%;text-align:left;margin-left:0">
+
+Jump to: [top](#)
+
+
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

@@ -94,6 +94,11 @@ The `<X size>` should take into account the newline at the end of each line
 of map, and hence should also be one larger than expected.
 
 
+<hr style="width:10%;text-align:left;margin-left:0">
+
+Jump to: [top](#)
+
+
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

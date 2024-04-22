@@ -253,6 +253,11 @@ functionality.  Now I think I have a good entry.
 But wouldn't it be nice to import pre-set definitions from a file?
 
 
+<hr style="width:10%;text-align:left;margin-left:0">
+
+Jump to: [top](#)
+
+
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

@@ -201,6 +201,11 @@ bowl can sit in.
 [chocolates FAQ]: https://www.davidlebovitz.com/chocolate-faqs/
 
 
+<hr style="width:10%;text-align:left;margin-left:0">
+
+Jump to: [top](#)
+
+
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

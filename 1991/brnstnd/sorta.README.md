@@ -202,6 +202,11 @@ and watch the powers of 3 (mod your computer's word size) flow by.
 This final example is a simple pipeline, `who | sort`.
 
 
+<hr style="width:10%;text-align:left;margin-left:0">
+
+Jump to: [top](#)
+
+
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

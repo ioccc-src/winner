@@ -70,6 +70,11 @@ the different command line and the different numbers. The change of the numbers
 can be found in the alternate code and the explanation is the same.
 
 
+<hr style="width:10%;text-align:left;margin-left:0">
+
+Jump to: [top](#)
+
+
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

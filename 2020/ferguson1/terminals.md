@@ -388,6 +388,11 @@ but I do not know for certain.
 [snake-colours.sh]: snake-colours.sh
 
 
+<hr style="width:10%;text-align:left;margin-left:0">
+
+Jump to: [top](#)
+
+
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

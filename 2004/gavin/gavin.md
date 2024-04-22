@@ -49,6 +49,11 @@ to tell them apart.
 5. To shut down - just hit the power button. :-)
 
 
+<hr style="width:10%;text-align:left;margin-left:0">
+
+Jump to: [top](#)
+
+
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

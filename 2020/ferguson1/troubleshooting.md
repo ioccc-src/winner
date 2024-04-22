@@ -449,6 +449,11 @@ is 0 and I limit the size to be no bigger than the max size.
 [Snakey]: https://www.hp-lexicon.org/character/gaunt-family/morfin-gaunt/
 
 
+<hr style="width:10%;text-align:left;margin-left:0">
+
+Jump to: [top](#)
+
+
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

@@ -280,6 +280,11 @@ a bug and I prefer putting in restrictions to try and make it very unlikely.
 [screenshot of halfwidth vs fullwidth]: halfwidth_vs_fullwidth.png
 
 
+<hr style="width:10%;text-align:left;margin-left:0">
+
+Jump to: [top](#)
+
+
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

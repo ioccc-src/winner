@@ -33,11 +33,11 @@ ints:
 		e<:j:> = j+3;
 ```
 
-    Which I think is more confusing: when one is iterating an array you don't
-    expect to start out with index < 0 but to then compare that that index < 0
-    and increment until 0 along with setting the value of the array to j + 3 is
-    more confusing still. There are at least two other ways that are much easier
-    to read that could accomplish the same thing. It continues on:
+Which I think is more confusing: when one is iterating an array you don't
+expect to start out with index < 0 but to then compare that that index < 0
+and increment until 0 along with setting the value of the array to j + 3 is
+more confusing still. There are at least two other ways that are much easier
+to read that could accomplish the same thing. It continues on:
 
 ``` <!---c-->
 	    /* ... */
@@ -67,27 +67,27 @@ ints:
 	    }
 ```
 
-    First of all: why do I set `e[2]` to 0 and increment it for each pass in the
-    loop, but then the condition for the loop is `s[*P]`?
+First of all: why do I set `e[2]` to 0 and increment it for each pass in the
+loop, but then the condition for the loop is `s[*P]`?
 
-    Second notice the many references to e[1] (as e[1] and *g). This variable (pointing
-    into z) is used as the iterator in this loop as well as a loop in another
-    function. Now why do I pass *g to the function w()? To mislead. Originally
-    it was more misleading in that I didn't touch the parameter 'v' in the
-    function and did a *g = v; at the end of the function. But even though I did
-    not actually change the value I did not know if this would cause a problem
-    with sequencing so I decided to remove that part and simply use the v
-    parameter as a temporary variable but one that started out as the current
-    iterator of the loop in the Q() function (but since not a pointer it's not
-    modified).
+Second notice the many references to e[1] (as e[1] and *g). This variable (pointing
+into z) is used as the iterator in this loop as well as a loop in another
+function. Now why do I pass *g to the function w()? To mislead. Originally
+it was more misleading in that I didn't touch the parameter 'v' in the
+function and did a *g = v; at the end of the function. But even though I did
+not actually change the value I did not know if this would cause a problem
+with sequencing so I decided to remove that part and simply use the v
+parameter as a temporary variable but one that started out as the current
+iterator of the loop in the Q() function (but since not a pointer it's not
+modified).
 
-    Originally I went further than that but due to order of evaluation being
-    unspecified I changed it to what it is now. Anyway:
+Originally I went further than that but due to order of evaluation being
+unspecified I changed it to what it is now. Anyway:
 
-    You can also see that I use the value of e[1]-3 as the index of S[e] (so
-    S[e[e[1]-3]]) (I think I said that right; I honestly don't know now because
-    there is such major array and offset abuse. The entire prog.c is riddled
-    with offset abuses.).
+You can also see that I use the value of e[1]-3 as the index of S[e] (so
+S[e[e[1]-3]]) (I think I said that right; I honestly don't know now because
+there is such major array and offset abuse. The entire prog.c is riddled
+with offset abuses.).
 
 
 *   If you observe that above the compound literal `z` is of size 13 but I point
@@ -107,12 +107,12 @@ address `e[1]`. Thus I also have:
 	    }
 ```
 
-    This `e[1]` of course is the same as `*g` as above and as you can see has
-    multiple dimensions (that is the reference to Y does) too (and this is also
-    strewn about the code). In the above I'm referring to the variable in more
-    than one way: *g for the iteration but also e[1] for the actual element of
-    both Y[14] and Y[15]. I also happen to use S (via r which points to S + 10)
-    which I use as the two chars to compare (this is the plugboard function).
+This `e[1]` of course is the same as `*g` as above and as you can see has
+multiple dimensions (that is the reference to Y does) too (and this is also
+strewn about the code). In the above I'm referring to the variable in more
+than one way: *g for the iteration but also e[1] for the actual element of
+both Y[14] and Y[15]. I also happen to use S (via r which points to S + 10)
+which I use as the two chars to compare (this is the plugboard function).
 
 *   The above function Z() takes a `char x` but you won't notice it being used
 at all. Why? In fact I call it like so:
@@ -121,12 +121,12 @@ at all. Why? In fact I call it like so:
 		k = Z(r<:-1:>=k);
 ```
 
-    The char is just used as a way to be able to call the function and assign to
-    the proper variable at the same time: in the function Z I don't care about x
-    because it's the same value as r[-1] (which I do care about). Why is it
-    attached to S? Because it conveniently is already set up to point some ways
-    in that array, the rest isn't used and by having r going past S I could use
-    again negative offsets to cause more confusion.
+The char is just used as a way to be able to call the function and assign to
+the proper variable at the same time: in the function Z I don't care about x
+because it's the same value as r[-1] (which I do care about). Why is it
+attached to S? Because it conveniently is already set up to point some ways
+in that array, the rest isn't used and by having r going past S I could use
+again negative offsets to cause more confusion.
 
 *   Although this is clearly already shown in the above there are other ways I
 refer to the same variable in more than one way (or in some cases maybe more
@@ -198,31 +198,31 @@ obfuscation but rather to save bytes. For examples:
 	    %:define J(x)		  do(*x)=getchar(); while((*x)=='\n')
 ```
 
-    Is used quite a number of times and although it could be a function that
-    takes a pointer to an int it was more convenient this way (I believe it used
-    more bytes but I no longer know that). There are many others and they all
-    save bytes (or at least most of them do if not all). There is one in
-    particular I want to bring up though because I think it's a curious one and
-    it ties in to another point above:
+Is used quite a number of times and although it could be a function that
+takes a pointer to an int it was more convenient this way (I believe it used
+more bytes but I no longer know that). There are many others and they all
+save bytes (or at least most of them do if not all). There is one in
+particular I want to bring up though because I think it's a curious one and
+it ties in to another point above:
 
 ``` <!---c-->
 	    %:define A(y)				  *(&Y<:7:><:1:>+(y))
 ```
 
-    What is special about this one: Above I noted how I sort of refer directly
-    to the notch settings (I think it was the notch settings anyway). Now I
-    could have done say
+What is special about this one: Above I noted how I sort of refer directly
+to the notch settings (I think it was the notch settings anyway). Now I
+could have done say
 
 ``` <!---c-->
 	    char a = Y[7][1], b = Y[7][3], c = Y[7][5];
 ```
 
-    But I felt that doing instead the pointer arithmetic was worth doing.
-    However it used significantly more bytes even as a macro: 17 if I recall
-    right. That's with the macro. If I were to include it three times by itself
-    it'd be many more. I believe though that when the cpp translates it it still
-    requires more thought to determine that a is set to Y[7][1], b to Y[7][3]
-    and c to Y[7][5].
+But I felt that doing instead the pointer arithmetic was worth doing.
+However it used significantly more bytes even as a macro: 17 if I recall
+right. That's with the macro. If I were to include it three times by itself
+it'd be many more. I believe though that when the cpp translates it it still
+requires more thought to determine that a is set to Y[7][1], b to Y[7][3]
+and c to Y[7][5].
 
 
 # Obfuscation wrt recode.c
@@ -255,11 +255,16 @@ variables in recode.c, move them to prog.c, compile and expect it to work right.
 ```
 
 
-    Is that valid and if so how does it function? Yes it's valid but I'll leave
-    the other part of the question up to the reader to answer. Hint: you already
-    know how it works (yes, really you do)! Another hint: This is and is not a
-    misleading comment (conversely this makes this hint both misleading - and
-    also not).
+Is that valid and if so how does it function? Yes it's valid but I'll leave
+the other part of the question up to the reader to answer. Hint: you already
+know how it works (yes, really you do)! Another hint: This is and is not a
+misleading comment (conversely this makes this hint both misleading - and
+also not).
+
+
+<hr style="width:10%;text-align:left;margin-left:0">
+
+Jump to: [top](#)
 
 
 <!--

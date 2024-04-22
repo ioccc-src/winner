@@ -100,6 +100,11 @@ Notice how only the first staff (or any staff) needs to have the full length.
 Some files with well-known melodies are included as examples.
 
 
+<hr style="width:10%;text-align:left;margin-left:0">
+
+Jump to: [top](#)
+
+
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
