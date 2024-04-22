@@ -108,7 +108,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3 2024-04-15"
+export VERSION="1.4 2024-04-21"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -659,7 +659,8 @@ fi
 #
 {
     echo
-    echo '&nbsp;**Jump to:** [top](#)'
+    echo '<hr style="width:10%;text-align:left;margin-left:0">'
+    echo '<h4>Jump to: <a href="#">top</a></h4>'
     echo
 } | if [[ -z $NOOP ]]; then
     cat >> "$TMP_FILE"
