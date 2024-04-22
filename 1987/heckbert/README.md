@@ -36,12 +36,9 @@ Try not to
 [Fold, Spindle or Mutilate](https://repository.library.brown.edu/studio/item/bdr:788264/PDF/)
 files. :-)
 
-```
-    The judges used this program to fold up
-    very long lines which the BSD fold(1)
-    was unable to process. This program has
-    been added to the contest tool chest.
-```
+The judges used this program to fold up very long lines which the
+BSD fold(1) was unable to process. This program has been added to
+the contest tool chest.
 
 
 ## Author's remarks:
