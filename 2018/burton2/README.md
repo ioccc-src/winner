@@ -28,7 +28,7 @@ If you get really stuck, try:
 ## Judges' remarks:
 
 They say size isn't everything, and in the case of IOCCC
-[iocccsize.c](../../2018/iocccsize.c) that is saying something!
+[iocccsize.c](%%REPO_URL%%/2018/iocccsize.c) that is saying something!
 What is this program weighing and how much does it weigh?
 
 
