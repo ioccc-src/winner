@@ -116,12 +116,12 @@ There is a good deal of useful documentation that is provided with this entry:
 
 
 * [recode.html][] (or [recode.html](recode.html) if reading on GitHub)
-	- Some useful information about [recode.c](recode.c)
+    - Some useful information about [recode.c](recode.c)
 
 
 * [chocolate-cake.html][] (or [chocolate-cake.html](chocolate-cake.html) if reading on GitHub)
-	- Because most of us could use some *Double-layered Chocolate Fudge Cake*!
-	- NOTE: see [recode.html][] (or [recode.html](recode.html) for details about how to decrypt this!
+    - Because most of us could use some *Double-layered Chocolate Fudge Cake*!
+    - NOTE: see [recode.html][] (or [recode.html](recode.html) for details about how to decrypt this!
 
 
 [recode.html]: recode.html
@@ -175,7 +175,7 @@ I have more information on this entry like the testing procedure at
 </div>
 
 <div id="ioccc">
-### <a href="#toc">IOCCC: an Enigma?</a>
+### IOCCC: an Enigma?
 </div>
 
 Is there a better single word that could describe the code that is IOCCC?  I'm
@@ -209,7 +209,7 @@ With my entry we can complete the loop!
 
 
 <div id="nathan">
-### <a href="#toc">The 1992 Nathan Sidwell entry</a>
+### The 1992 Nathan Sidwell entry
 </div>
 
 The author [Nathan Sidwell](../../authors.html#Nathan_Sidwell) of the [1992 Worst
@@ -251,7 +251,7 @@ leave this in for historical purposes.
 
 
 <div id="usage">
-### <a href="#toc">Usage</a>
+### Usage
 </div>
 
 If you run the program by itself it'll use the default settings and prompt you
@@ -282,7 +282,7 @@ pairs](https://www.cryptomuseum.com/crypto/enigma/i/sb.htm).
 After that you can input the string and it'll go from there.
 
 <div id="example">
-#### <a href="#toc">Example run</a>
+#### Example run
 </div>
 
 BTW: There's a much more entertaining (and delicious) challenge or exercise in
@@ -413,7 +413,7 @@ What about the other [Morse code entry](../../1998/dorssel/dorssel.c)?
 ```
 
 <div id="recode">
-### <a href="#toc">The recode.c configurator</a>
+### The recode.c configurator
 </div>
 
 I have included a supplementary program [recode.c][] that can do a number of
@@ -449,7 +449,7 @@ For examples using it (and a delicious challenge) see [recode.html][] (or
 
 
 <div id="parsersubtlety">
-### <a href="#toc">A parser subtlety that could cause confusion</a>
+### A parser subtlety that could cause confusion
 </div>
 
 The parser is in a sense rather rudimentary but allows for both interactive and
@@ -527,7 +527,7 @@ accomplished and made use of! :)
 ```
 
 <div id="layout">
-### <a href="#toc">On the source code layout</a>
+### On the source code layout
 </div>
 
 The layout of [recode.c][] isn't too significant (but see below) but I want to
@@ -563,7 +563,7 @@ As for [recode.c][] though I really love this:
 
 
 <div id="obfuscation">
-### <a href="#toc">Obfuscation</a>
+### Obfuscation
 </div>
 
 
@@ -602,7 +602,7 @@ word `OBFUSCATION`:
 ```
 
 <div id="bugs">
-### <a href="#toc">Bugs, limitations, differences from the real Enigma machines and general notes</a>
+### Bugs, limitations, differences from the real Enigma machines and general notes
 </div>
 
 Ways that my simulator differs from the real thing. Not all of these are bugs
@@ -698,7 +698,7 @@ to have it at A but again I do not know.
 
 
 <div id="kriegsmarine">
-### <a href="#toc">Kriegsmarine support?</a>
+### Kriegsmarine support?
 </div>
 
 Is it possible to add [Kriegsmarine](https://en.wikipedia.org/wiki/Kriegsmarine)
@@ -727,7 +727,7 @@ greatly.
 
 
 <div id="portability">
-### <a  href="#toc">Portability</a>
+### <a  href="#toc">Portability
 </div>
 
 I have tested it under macOS, Fedora and CentOS Linux and all seems okay under
@@ -751,7 +751,7 @@ my website) are the same under Fedora, CentOS and macOS.
 
 
 <div id="resources">
-### <a href="#toc">Resources</a>
+### Resources
 </div>
 
 #### A note on Wehrmacht, its branches and other agencies and their Enigma machines
@@ -874,7 +874,7 @@ that.
 ## Author's dedication:
 
 <div id="winning">
-### <a href="#toc">Winning thoughts, dedications and thanks</a>
+### Winning thoughts, dedications and thanks
 </div>
 
 Once again I'm honoured to win along with some of the other veterans who I have

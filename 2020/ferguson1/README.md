@@ -29,60 +29,60 @@ and non-zero).
 ### Variables:
 
 * **WAIT**<br>
-	    	positive or negative integer that changes how long to wait for
-		a key press prior to moving again. < 0 blocks which allows
-		for complete control over movement at your own pace. Default
-		231; you can move faster by holding down or rapidly pressing an
-		arrow key.
+    positive or negative integer that changes how long to wait for
+    a key press prior to moving again. < 0 blocks which allows
+    for complete control over movement at your own pace. Default
+    231; you can move faster by holding down or rapidly pressing an
+    arrow key.
 
 * **WALLS**<br>
-	        whether the walls are passable or impassable. Default passable,
-		1; 0 makes walls impassable where you die if you hit a wall.
+    whether the walls are passable or impassable. Default passable,
+    1; 0 makes walls impassable where you die if you hit a wall.
 
 * **EVADE**<br>
-	        how many movements the Snake moves before the bug (well
-		insect; see notes below about why bugs) will move to
-		another location in the field. Default 300; 0 disables.
+    how many movements the Snake moves before the bug (well
+    insect; see notes below about why bugs) will move to
+    another location in the field. Default 300; 0 disables.
 
 * **SIZE**<br>
-	        initial size of the Snake. Note that it grows by one per
-		move so at the default 5 it will not initially be 5
-		characters long! < 0 is likely an immediate win.
+    initial size of the Snake. Note that it grows by one per
+    move so at the default 5 it will not initially be 5
+    characters long! < 0 is likely an immediate win.
 
 * **MAXSIZE**<br>
-	        the maximum size the Snake can become before the game is
-		won. < 0 is the maximum size based on terminal dimensions;
-		any other size will be capped based on the terminal
-		dimensions to prevent problems. Note that when **SIZE+GROW >=
-		MAXSIZE** you win _before_ you grow to the full size!
+    the maximum size the Snake can become before the game is
+    won. < 0 is the maximum size based on terminal dimensions;
+    any other size will be capped based on the terminal
+    dimensions to prevent problems. Note that when **SIZE+GROW >=
+    MAXSIZE** you win _before_ you grow to the full size!
 
 * **GROW**<br>
-	        size to grow every time you eat a bug. Default 5; negative
-		values are allowed. 'Negativity' creates for fun gameplay modes with
-		enough creativity. See [gameplay.html](gameplay.html)
-		GitHub) as well as [play.sh](play.sh) for some examples.
+    size to grow every time you eat a bug. Default 5; negative
+    values are allowed. 'Negativity' creates for fun gameplay modes with
+    enough creativity. See [gameplay.html](gameplay.html)
+    GitHub) as well as [play.sh](play.sh) for some examples.
 
 * **SHED**<br>
-	        every **SHED** movements you will grow (> 0), shrink (< 0) or
-		stay the same length (0) by the **SHEDS** (below) value. Again
-		with creativity you can create some fun gameplay modes.  NOTE:
-		the concept of shedding in this game is a misnomer; see notes
-		below.
+    every **SHED** movements you will grow (> 0), shrink (< 0) or
+    stay the same length (0) by the **SHEDS** (below) value. Again
+    with creativity you can create some fun gameplay modes.  NOTE:
+    the concept of shedding in this game is a misnomer; see notes
+    below.
 
 * **SHEDS**<br>
-	        every **SHED** movements will impact what this value means: grow
-		(> 0), shrink (< 0) or not at all (0). Exception: if the snake
-		eats a bug the counter isn't incremented. Again with creativity
-		you can create some fun gameplay modes here. For instance you
-		can grow upon eating a bug but shrink every **SHED** movements
-		and then it's a battle of whether you win by **SIZE < 0** or
-		**SIZE >= MAXSIZE**. See [play.sh](play.sh) for examples.
-		NOTE: the concept of shedding in this game is a misnomer; see
-		notes below.
+    every **SHED** movements will impact what this value means: grow
+    (> 0), shrink (< 0) or not at all (0). Exception: if the snake
+    eats a bug the counter isn't incremented. Again with creativity
+    you can create some fun gameplay modes here. For instance you
+    can grow upon eating a bug but shrink every **SHED** movements
+    and then it's a battle of whether you win by **SIZE < 0** or
+    **SIZE >= MAXSIZE**. See [play.sh](play.sh) for examples.
+    NOTE: the concept of shedding in this game is a misnomer; see
+    notes below.
 
 * **CANNIBAL**<br>
-	        whether you can go through the Snake or not. Default is 0
-		(cannot - die if you try).
+    whether you can go through the Snake or not. Default is 0
+    (cannot - die if you try).
 
 
 ## Try:
@@ -274,11 +274,11 @@ On a more serious note look at [bugs.html](bugs.html).
 
 
 <div id="naqs">
-### <a href="#toc">NAQs/IAQs (Never/Infrequently Asked Questions)</a>
+### NAQs/IAQs (Never/Infrequently Asked Questions)
 </div>
 
 <div id="inspirations">
-####   <a href="#toc">Do I have any inspirations for this entry?</a>
+#### Do I have any inspirations for this entry?
 </div>
 
 There are two in particular. First is a long time mate of mine wrote a bash
@@ -315,7 +315,7 @@ Snake in several ways.
 
 
 <div id="features">
-####   <a href="#toc">Are there any features I thought of that I wanted to implement but did not get to for some reason or another?</a>
+#### Are there any features I thought of that I wanted to implement but did not get to for some reason or another?
 </div>
 
 Yes. I thought it would be fun if there were other obstacles for the snake (in
@@ -341,7 +341,7 @@ who plays it enjoys it as much as I enjoyed writing/playing it.
 
 
 <div id="easier">
-####   <a href="#toc">Are there ways that one can make this game easier?</a>
+#### Are there ways that one can make this game easier?
 </div>
 
 I can think of at the least the following:
@@ -379,7 +379,7 @@ I can think of at the least the following:
 
 
 <div id="harder">
-####   <a href="#toc">Are there ways to make it harder?</a>
+#### Are there ways to make it harder?
 </div>
 
 -   Decrease the size of the game.
@@ -429,7 +429,7 @@ a pun and every pun deserves to be shed).
 
 
 <div id="moult">
-####   <a href="#toc">How do snakes grow in real life?</a>
+#### How do snakes grow in real life?
 </div>
 
 They grow through a process called moulting - shedding their skin (other
@@ -440,7 +440,7 @@ shorter. I don't like the words because it's rather a misnomer but what I had
 chosen before was longer - STRETCH and STRETCHES.
 
 <div id="other">
-#### <a href="#toc">Any other interesting things about snakes?</a>
+#### Any other interesting things about snakes?
 </div>
 
 For the fascinating science behind snake slithering see [Snake walk: The physics
@@ -451,7 +451,7 @@ do not know) and they really do tell the truth as they see it (even if
 impossible).
 
 <div id="opposite">
-####   <a href="#toc">Why can you go the opposite direction and so immediately die when not cannibalising?</a>
+#### Why can you go the opposite direction and so immediately die when not cannibalising?
 </div>
 
 When Ilya Kurdyukov was playing with this he questioned why this is possible
@@ -476,7 +476,7 @@ walls passable and not worry about dying.
 
 
 <div id="chocolatecake">
-####   <a href="#toc">Do you have any **DELICIOUS CHOCOLATE CAKE** recipes?</a>
+#### Do you have any **DELICIOUS CHOCOLATE CAKE** recipes?
 </div>
 
 Why yes I do! So good in fact that even my late stepmum who didn't even like
@@ -510,7 +510,7 @@ been warned.
 
 
 <div id="alt">
-#### <a href="#toc">What are the files prog.2.c, prog.3.c, prog.3-j.c and prog.alt.c ?</a>
+#### What are the files prog.2.c, prog.3.c, prog.3-j.c and prog.alt.c ?
 </div>
 
 I submitted three Snake versions; these are the other layouts for those few
@@ -532,7 +532,7 @@ both do.
 ## Author's dedication:
 
 <div id="winning">
-### <a href="#toc">Winning thoughts, dedications and thanks</a>
+### Winning thoughts, dedications and thanks
 </div>
 
 Once again I'm honoured to win along with some of the other veterans who I have
