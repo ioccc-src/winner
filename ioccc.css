@@ -606,33 +606,56 @@ a:active {
 
 /* Content =========================================================================== */
 
-/* Style the right column */
+/* Style content */
 .content {
   float: left;
   width: 80%;
   padding-left: 10px;
 }
-.content p, code, pre, h1, h2, h3, h4, h5, h6 {
-  color: black;
-}
-.content p, code, pre {
+
+/* content code */
+.content code, pre {
+  font-weight: bold;
   padding-top: 0;
   padding-bottom: 0;
+  color: Indigo;
 }
 
-/* Right column headings */
+/* content text */
+.content p {
+  padding-top: 0;
+  padding-bottom: 0;
+  color: black;
+}
+
+/* content links */
+.content a {
+  text-decoration: underline;
+}
+.content a:hover {
+  text-decoration: underline;
+}
+
+/* content main headings */
 .content h1 {
   font-size: 2em;
+  color: DarkBlue;
 }
 .content h2 {
   font-size: 1.5em;
+  color: DarkBlue;
 }
 .content h3 {
   font-size: 1.25em;
+  color: DarkBlue;
+}
+.content h4, h5, h6 {
+  color: DarkBlue;
 }
 
 /* Footer  ======================================================================================== */
 
+/* Style footer */
 .footer {
   display: block;
   clear: both;
@@ -641,18 +664,32 @@ a:active {
   border-style:  solid hidden hidden hidden;
   text-decoration: none;
 }
-.footer p, code, pre {
+
+/* footer code */
+.footer code, pre {
+  font-weight: bold;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: Indigo;
+}
+
+/* footer text */
+.footer p {
   padding-top: 0;
   padding-bottom: 0;
   color: black;
 }
 
+/* footer links */
 .footer a {
   text-decoration: none;
 }
-
 .footer a:hover {
   text-decoration: underline;
+}
+
+.footer h1, h2, h3, h4, h5, h6 {
+  color: DarkBlue;
 }
 
 /* Responsive Web Design ========================================================================== */
