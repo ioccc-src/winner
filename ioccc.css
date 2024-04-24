@@ -393,6 +393,7 @@ p {
     -ms-hyphens: none;
     -webkit-hyphens: none;
     hyphens: manual;
+    color: black;
 }
 
 body {
@@ -410,6 +411,7 @@ pre, code {
   overflow-wrap: normal;
   overflow: visible;
   white-space: pre-wrap;
+  color: Indigo;
 }
 
 blockquote {
@@ -661,7 +663,7 @@ a:active {
   clear: both;
   padding-left: 10px;
   padding-right: 10px;
-  border-style:  solid hidden hidden hidden;
+  border-style: solid hidden hidden hidden;
   text-decoration: none;
 }
 
@@ -696,6 +698,16 @@ a:active {
 
 /*
  * Topbar CSS
+ *
+ * When the screen is > 1024 pixels, the topbar menu, with dropdown menus are used.
+ * When the screen is <= 1024 pixels, a "hamburger" icon is used.
+ *
+ * NOTE: inc/topbar.default.html implements:
+ *
+ * If JavaScript is enabled, then a "hamburger" icon is shown.
+ * If JavaScript is disabled, then a "Please Enable JavaScript" (as 3 center lines) is shown.
+ *
+ * If JavaScript is disabled, then the "Please Enable JavaScript" text is a link to a web page.
  */
 
 /* Mobile menu section */
