@@ -480,7 +480,7 @@ a:active {
 
 .topbar {
   width: 100%;
-  background-color: white;
+  background-color: whitesmoke;
   height: 72px;
 }
 
@@ -540,7 +540,7 @@ a:active {
   font-weight: 500;
   color: #154c9f;
   text-align: left;
-  background-color: white;
+  background-color: whitesmoke;
   left: -100%;
 }
 
@@ -751,8 +751,7 @@ a:active {
   top: 20px;
   height: 48px;
   width: 48px;
-  border-color: #154c9f;
-  border-width: 0.5px;
+  border: none;
 }
 
 .hide-content {

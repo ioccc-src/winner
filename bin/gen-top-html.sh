@@ -87,7 +87,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4.4 2024-04-21"
+export VERSION="1.4.5 2024-04-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -126,8 +126,9 @@ TOP_MD_SET+=("license")
 TOP_MD_SET+=("markdown")
 TOP_MD_SET+=("news")
 TOP_MD_SET+=("next/README")
-TOP_MD_SET+=("next/rules")
 TOP_MD_SET+=("next/guidelines")
+TOP_MD_SET+=("next/rules")
+TOP_MD_SET+=("nojs-menu")
 TOP_MD_SET+=("thanks-for-help")
 #
 export NOOP=
