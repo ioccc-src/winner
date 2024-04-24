@@ -61,7 +61,7 @@ FWIW, none of the compilers with which this entry was tested issued
 any warnings or errors in compiling the source for this entry.  No
 doubt lint will complain about the goto statements.
 
-The [schneiderwent.data](schneiderwent.data) file consists of the values used by
+The [schneiderwent.data](%%REPO_URL%%/2000/schneiderwent/schneiderwent.data) file consists of the values used by
 multiple table lookups.  This is simply good program design, separating these
 values from the source code allows changing the behavior of the application
 without recompiling.

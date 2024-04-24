@@ -49,7 +49,7 @@ and
 
 to another value like 18 or 19 which you can do with the alternate code.
 
-In the case of [rince.alt2.c](rince.alt2.c) the movement keys for the default
+In the case of [rince.alt2.c](%%REPO_URL%%/1993/rince/rince.alt2.c) the movement keys for the default
 game are slightly different and will feel more familiar to vi users: `h` for
 left, `l` for right (that was not changed) and `k` for fire (that was also not
 changed).

@@ -41,7 +41,7 @@ will be converted to the DTMF sound!
     ./prog 867-5309 > jenny.wav
 ```
 
-If the script [try.sh](try.sh) did not play a WAV file, it means you do not have
+If the script [try.sh](%%REPO_URL%%/2020/giles/try.sh) did not play a WAV file, it means you do not have
 SoX installed; see [FAQ 3.10: How do I compile and use an IOCCC entry that
 requires sound?](../../faq.html#sox)). In this case install it and try it again or
 play the files `jenny.wav` and `ioccc28.wav` in a program that can play WAV

@@ -35,7 +35,7 @@ If you have `gdb(1)` installed:
 ```
 
 Note that in macOS installing `gdb(1)` takes multiple steps - it's not just a
-matter of installing `gdb(1)` and that's that. The [try.sh](try.sh) script has
+matter of installing `gdb(1)` and that's that. The [try.sh](%%REPO_URL%%/2019/endoh/try.sh) script has
 only been tested with linux.
 
 You might also wish to try:

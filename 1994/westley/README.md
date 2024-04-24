@@ -85,7 +85,7 @@ compiler line you will get a different message (**as compiler errors** due to
 
 _This is independent of the previous (if there are any previous) compiler
 invocations_ specified. That means with the right compiler invocation you can
-'win' the game on the first go. But unlike the [alternate code](westley.alt.c),
+'win' the game on the first go. But unlike the [alternate code](%%REPO_URL%%/1994/westley/westley.alt.c),
 you do not run this program as it will not compile: instead it will be compiler
 error messages; there is no running the program.
 

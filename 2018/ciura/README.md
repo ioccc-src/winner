@@ -25,7 +25,7 @@ below for more details.
 
 ## Alternate code:
 
-An alternate version of this entry, [prog.alt.c](prog.alt.c), is provided.  As
+An alternate version of this entry, [prog.alt.c](%%REPO_URL%%/2018/ciura/prog.alt.c), is provided.  As
 mentioned in the author's [remarks](#remarks), the alternate version lacks a
 useful bug fix.
 
@@ -48,14 +48,14 @@ Use `prog.alt` as you would `prog` above.
     ./try.alt.sh
 ```
 
-Do you spot the fix by running both [try.sh](try.sh) and
-[try.alt.sh](try.alt.sh)?
+Do you spot the fix by running both [try.sh](%%REPO_URL%%/2018/ciura/try.sh) and
+[try.alt.sh](%%REPO_URL%%/2018/ciura/try.alt.sh)?
 
 
 ## Judges' remarks:
 
 This text was processed by `prog`. You may get confused.  We're not really sure:
-[prog.c](prog.c) wasn't commented.  Who has been thoroughly puzzled by `prog`?
+[prog.c](%%REPO_URL%%/2018/ciura/prog.c) wasn't commented.  Who has been thoroughly puzzled by `prog`?
 Also how obfuscated is `prog`?  Having been written in C, how large of a
 vocabulary has it?
 
@@ -258,8 +258,8 @@ Return `abbreviation`.
 
 ### Remarks:
 
-The judges found a bug in the handling of contractions: [prog.alt.c](prog.alt.c)
-outputs "foo wasn'**[t bazzed]**".  I fixed the bug in [prog.c](prog.c), making
+The judges found a bug in the handling of contractions: [prog.alt.c](%%REPO_URL%%/2018/ciura/prog.alt.c)
+outputs "foo wasn'**[t bazzed]**".  I fixed the bug in [prog.c](%%REPO_URL%%/2018/ciura/prog.c), making
 it output "foo **[wasn't bazzed]**" instead, and took the liberty to merge
 one statement into a `for` loop inside its `main()` function.
 

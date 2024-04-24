@@ -37,8 +37,8 @@ NOTE: if your move is invalid it will prompt you again but not show the board.
 
 This entry turns a newspaper solitaire puzzle into a competition
 with the computer to be the last one moving.  The object of this
-[source code](meyer.c) is to determine the object of this [source
-code](meyer.c)!  :-)
+[source code](%%REPO_URL%%/2006/meyer/meyer.c) is to determine the object of this [source
+code](%%REPO_URL%%/2006/meyer/meyer.c)!  :-)
 
 
 ## Author's remarks:

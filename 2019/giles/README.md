@@ -19,7 +19,7 @@
 ```
 
 
-NOTE: `play`, which [try.sh](try.sh) uses, comes from SoX, the Swiss Army Knife
+NOTE: `play`, which [try.sh](%%REPO_URL%%/2019/giles/try.sh) uses, comes from SoX, the Swiss Army Knife
 of sound processing programs.  If you don't have this installed, see [FAQ 3.10:
 How do I compile and use an IOCCC entry that requires sound](../../faq.html#sox).
 

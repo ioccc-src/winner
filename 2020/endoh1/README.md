@@ -34,7 +34,7 @@ code](#alternate-code) below.
 
 ## Alternate code:
 
-An alternate version of this entry, [prog.alt.c](prog.alt.c), is provided.  This
+An alternate version of this entry, [prog.alt.c](%%REPO_URL%%/2020/endoh1/prog.alt.c), is provided.  This
 alternate code lacks the additional rule to flag all unprobed cells.  See the
 Author's remarks for more details.
 
@@ -217,13 +217,13 @@ There are mines in a cell whose "priorities-of-each-cell" is less than
 ### Bug fixes and Credits
 
 The judges pointed out a bug of the original version that I submitted
-([prog.alt.c](prog.alt.c)).  Because this program does not provide a feature to
+([prog.alt.c](%%REPO_URL%%/2020/endoh1/prog.alt.c)).  Because this program does not provide a feature to
 flag unprobed cells manually, we can do nothing if the number of unprobed cells
 are equal to the number of mines remaining; [unwinnable.txt](unwinnable.txt) is
 an example for such a case.
 
 Thus, I implemented an additional rule to flag all unprobed cells in such a case
-into the final version ([prog.c](prog.c)).
+into the final version ([prog.c](%%REPO_URL%%/2020/endoh1/prog.c)).
 
 [Ilya Kurdyukov](../../authors.html#Ilya_Kurdyukov) also pointed out a warning
 "ignoring return value of 'fscanf'" only when `-O3` is used.  So I changed the

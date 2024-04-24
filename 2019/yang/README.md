@@ -209,7 +209,7 @@ Verified to work and compiles without warnings on these environments:
 
 I tried really hard to make `prog.c` fit in a 80x25 terminal without wrapping.
 If I were not constrained by space, I would have made an ASCII art out of it.
-[violet.c](violet.c) is that program, and also comes with the minor benefit of
+[violet.c](%%REPO_URL%%/2019/yang/violet.c) is that program, and also comes with the minor benefit of
 supporting lines longer than a million columns depending on `sizeof(int)`.
 
 Violet is named after [Violet

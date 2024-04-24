@@ -80,7 +80,7 @@ transformation occurs.
 
 ### Rule 2-ish:
 
-Exporting the constants `B`,`I`,`T`,`S` to the [Makefile](Makefile) allows the
+Exporting the constants `B`,`I`,`T`,`S` to the [Makefile](%%REPO_URL%%/2020/burton/Makefile) allows the
 code to be compiled for either LE (little-endian) or BE (big-endian)
 machines(!!), so they are truly configuration parameters, not logic.
 

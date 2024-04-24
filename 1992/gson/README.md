@@ -58,7 +58,7 @@ Then using the proper dictionary file it does:
 where `/usr/share/dict/words` is the dictionary file.
 
 Then it uses the [mkdict.sh](%%REPO_URL%%/1992/gson/mkdict.sh) script to create a dictionary file out
-of the files [README.md](%%REPO_URL%%/1992/gson/README.md), [try.sh](try.sh) (itself) and
+of the files [index.html](%%REPO_URL%%/1992/gson/index.html), [try.sh](%%REPO_URL%%/1992/gson/try.sh) (itself) and
 [Makefile](%%REPO_URL%%/1992/gson/Makefile) and it repeats the same commands as above. In the case no
 dictionary file can be found in the first step it only runs the commands once
 with the created dictionary file.

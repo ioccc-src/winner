@@ -162,7 +162,7 @@ White](https://www.glyphweb.com/arda/g/gandalf.html) and the [Judges of
 the IOCCC](../../judges.html).
 
 Output of `iocccsize`, using the [2019 version of
-iocccsize](../../2019/iocccsize.c), is carefully selected.  For
+iocccsize](%%REPO_URL%%/2019/iocccsize.c), is carefully selected.  For
 the sake of clarity, I used single letter variables in the code. I also avoided
 unnecessary use of functions.  Like a
 [tripundra](https://en.wikipedia.org/wiki/Tripundra), this program has three
@@ -261,7 +261,7 @@ arrays, so I did it.
 [Cody Boone Ferguson](../../authors.html#Cody_Boone_Ferguson): I really like that you enjoyed my
 previous entry. I hope that you will like this entry too.  Because I did not
 want to give too many clues to [the Judges](../../judges.html), I tried to write this
-entry in a different way than [Most Stellar](../../2018/poikola/index.html), but in this
+entry in a different way than [Most Stellar](%%REPO_URL%%/2018/poikola/index.html), but in this
 code there is at least one recycled thing from it. By the way, the answers to
 the questions I posed: (1) 255. (2) Try to compare binary representations of
 those `float`s and binary representation of the string "`25th IOCCC!`". (3) I
@@ -278,7 +278,7 @@ not match anymore and `goto` jumps to the end of the code.
 
 I see that one of the [Volker
 Diels-Grabsch](../../authors.html#Volker_Diels-Grabsch)'s winning entries is
-awarded the category [Most self-aware](../../2019/diels-grabsch2/prog.c). In last
+awarded the category [Most self-aware](%%REPO_URL%%/2019/diels-grabsch2/prog.c). In last
 year, my entry incorporates the [Fletcher's 16
 algorithm](https://en.wikipedia.org/wiki/Fletcher%27s_checksum#Fletcher-16) to
 ensure integrity of code. One of my first ideas for this year was to do the same

@@ -74,7 +74,7 @@ Rule 22, now known as "Catch 22" states:
         to be Peter Honeyman, will be grounds for disqualification of your entry.
 ```
 
-A number of other entries were based on [iocccsize.c](iocccsize.c), making
+A number of other entries were based on [iocccsize.c](%%REPO_URL%%/2018/iocccsize.c), making
 derivative works rather than original works.
 
 Still other entries were too large, violating the first line of rule 2:

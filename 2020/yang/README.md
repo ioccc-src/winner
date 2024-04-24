@@ -19,7 +19,7 @@
 ```
 
 
-The author provided the file [cppp.cc](cppp.cc) which can preprocess the
+The author provided the file [cppp.cc](%%REPO_URL%%/2020/yang/cppp.cc) which can preprocess the
 generated output to make them more acceptable to typical compilers. To build:
 
 ``` <!---sh-->
@@ -139,7 +139,7 @@ above:
 
 For people eager to encode large files, an extra utility has been packaged
 with this entry to preprocess the generated output to make them more
-acceptable to typical compilers.  View the [cppp.cc](cppp.cc) source and
+acceptable to typical compilers.  View the [cppp.cc](%%REPO_URL%%/2020/yang/cppp.cc) source and
 then compile it with a c++ compiler of your choice.
 
 <!--

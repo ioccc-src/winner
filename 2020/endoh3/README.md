@@ -25,7 +25,7 @@ code](#alternate-code) below.
 
 ## Alternate code:
 
-An alternate version of this entry, [prog.alt.c](prog.alt.c), is provided.  This
+An alternate version of this entry, [prog.alt.c](%%REPO_URL%%/2020/endoh3/prog.alt.c), is provided.  This
 alternate code uses Unicode letters.
 
 
@@ -55,7 +55,7 @@ You may be tempted to use a mirror. Resist the temptation! Try figuring out how
 the clock hands are drawn.  Can you change the program to make it draw a
 familiar (non-mirrored) clock face? Can you add the second hand?
 
-When using the [run_clock.sh](run_clock.sh) shell script, your perception of
+When using the [run_clock.sh](%%REPO_URL%%/2020/endoh3/run_clock.sh) shell script, your perception of
 time might depend on what time it is.
 
 

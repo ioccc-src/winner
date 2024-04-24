@@ -77,7 +77,7 @@ you have with the program.  :-)
 NOTE: Some systems do not need (or have) `-lsocket -lresolv -lnsl`.
 Such systems should compile using `-lX11`.
 
-NOTE: The original winning source [kivinen.orig.c](kivinen.orig.c) assumed that
+NOTE: The original winning source [kivinen.orig.c](%%REPO_URL%%/1992/kivinen/kivinen.orig.c) assumed that
 `exit(3)` returned a value which cause problems for some systems where `exit(3)` returns
 `void`.  The file [kivinen.c](%%REPO_URL%%/1992/kivinen/kivinen.c) avoids this problem.
 

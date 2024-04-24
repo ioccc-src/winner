@@ -91,7 +91,7 @@ directory which you'll have to delete manually. This is also discussed in
 
 ## Alternate code:
 
-An alternate version of this entry, [prog.alt.c](prog.alt.c), is provided.  This
+An alternate version of this entry, [prog.alt.c](%%REPO_URL%%/2019/duble/prog.alt.c), is provided.  This
 alternate code might not work as well in macOS.
 
 
@@ -228,9 +228,9 @@ IMPORTANT NOTES:
     so any peer reaching the session should have a terminal with the same
     size or larger.
 
-### [prog.c](prog.c) vs [prog.alt.c](prog.alt.c)
+### [prog.c](%%REPO_URL%%/2019/duble/prog.c) vs [prog.alt.c](%%REPO_URL%%/2019/duble/prog.alt.c)
 
-The file [prog.alt.c](prog.alt.c) is the one I submitted.
+The file [prog.alt.c](%%REPO_URL%%/2019/duble/prog.alt.c) is the one I submitted.
 
 The judges proposed a small update: the program was using macro `FD_SET` inside an
 expression, which breaks compilation on macOS. Wrapping this macro into a
@@ -240,13 +240,13 @@ However, that was not enough to make the program work on macOS. If you analyse
 the program you will see that it heavily relies on OS resources. And, for this
 first version of the program, you even needed to increase default `sysctl`
 parameters to make it work on FreeBSD (this was the purpose of file
-[check-os.sh](check-os.sh)). I tried hard to tune macOS the same, but failed.
+[check-os.sh](%%REPO_URL%%/2019/duble/check-os.sh)). I tried hard to tune macOS the same, but failed.
 
 The simple fact the Judges proposed this update meant they wish it could work on
 Mac.  And if the judges wish something, it **has to** be done. ;) So I
 refactored a little more the program to reduce OS resources consumption.  Or
 maybe not reduce consumption, but consume them differently...  And I obtained
-[prog.c](prog.c). With this version, no need to touch `sysctl` parameters, and
+[prog.c](%%REPO_URL%%/2019/duble/prog.c). With this version, no need to touch `sysctl` parameters, and
 it works on macOS too!  I must confess it was challenging to remain below the
 size limit with this little change.
 

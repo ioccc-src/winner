@@ -61,7 +61,7 @@ game:
 ```
 
 The shell script determines when the game is over, and automatically replaces
-`merlyn.c` (copied from [westley.c](westley.c) with an improved version after a
+`merlyn.c` (copied from [westley.c](%%REPO_URL%%/1991/westley/westley.c) with an improved version after a
 loss).  The [ttt](%%REPO_URL%%/1991/westley/ttt.sh) script has two other modes:
 
 ``` <!---sh-->

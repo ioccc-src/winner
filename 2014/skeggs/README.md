@@ -60,7 +60,7 @@ Escape to quit.)
 
 Unfortunately, it became very difficult to get this entry to fit within the
 size requirements. It's currently at 2052 according to
-[iocccsize](../iocccsize.c), and 3994 according to `wc -c`.
+[iocccsize](%%REPO_URL%%/2014/iocccsize.c), and 3994 according to `wc -c`.
 
 The current size is a third to a half of the original size before compression.
 

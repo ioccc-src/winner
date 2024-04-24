@@ -102,13 +102,13 @@ etc.
 The program expects *two command line arguments*. The first is a (very long)
 string that contains the complete music font. Note that it should *not* be given
 as a file name! The default music font is encoded in the (whitespace of the)
-source code [deckmyn.c](deckmyn.c) itself. Therefore, the first argument should
+source code [deckmyn.c](%%REPO_URL%%/2012/deckmyn/deckmyn.c) itself. Therefore, the first argument should
 be `"`` ` ``cat deckmyn.c`` ` ``"`.
 
 The second command line argument is the music itself. This is, again, a string,
 not a file name. All music signs are entered as tokens of exactly 3 characters.
 The code is very sensitive to bad spacing! So for instance, if you use a file to
-write the music (e.g. [example\_greensleeves](example_greensleeves)), you should
+write the music (e.g. [example\_greensleeves](%%REPO_URL%%/2012/deckmyn/example_greensleeves)), you should
 keep in mind that newline is also a character!
 
 

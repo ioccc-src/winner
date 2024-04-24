@@ -87,7 +87,7 @@ hijack the `main()` function call.  And then it interprets `main()` as an
 instruction sequence.
 
 It supports the minimal subset of instructions and addressing modes which are
-needed for [mullender.c](mullender.c) to work:
+needed for [mullender.c](%%REPO_URL%%/2015/endoh3/mullender.c) to work:
 
 * Instructions
   * BR: branch

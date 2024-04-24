@@ -247,7 +247,7 @@ printer when you make a hard copy of the source...
 
 While I'm at it, the rules state that only space, tab and newline
 are ignored for the count (plus '`{`', '`}`', '`;`' followed by
-whitespace). The [mkentry.c](../mkentry.c) program, however, uses `isspace(3)` which
+whitespace). The [mkentry.c](%%REPO_URL%%/1998/mkentry.c) program, however, uses `isspace(3)` which
 returns nonzero for `\v` and `\f` and other characters as well.
 I could have used a lot more `^K` and `^L` probably undetected by your
 counter but decided to err on the side of safety. I use a perl

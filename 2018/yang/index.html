@@ -433,10 +433,10 @@ leading whitespaces:</p>
     ./shift &lt; input.txt &gt; no_leading_space.txt</code></pre>
 <p>Where this might be useful, besides ruining the formatting of certain
 files, is that it completes the set of tools needed to solve the
-puzzle that is embedded in <a href="prog.c">prog.c</a>.</p>
+puzzle that is embedded in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/prog.c">prog.c</a>.</p>
 <h3 id="puzzle-box">Puzzle box:</h3>
-<p>Notice how the edges of <a href="prog.c">prog.c</a> contain two notches. By rotating
-<a href="prog.c">prog.c</a> and removing leading space, the code would be shifted one space
+<p>Notice how the edges of <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/prog.c">prog.c</a> contain two notches. By rotating
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/prog.c">prog.c</a> and removing leading space, the code would be shifted one space
 toward one of those notches (and create a new notch on the other
 side). This shifted code behaves slightly different from the original
 program. For example, here are two more messages that can be
@@ -445,13 +445,13 @@ produced:</p>
     ./shift &lt; prog.c | ./left &gt; msg2.c &amp;&amp; gcc msg2.c -o msg2 &amp;&amp; ./msg2</code></pre>
 <p>In total, there are 9 embedded strings that can be produced via a
 sequence of rotates and shifts, one of which can be used to extract
-the 10th final string from <a href="prog.c">prog.c</a>. The intent is to simulate those
+the 10th final string from <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/prog.c">prog.c</a>. The intent is to simulate those
 wooden puzzle boxes that can be opened by pushing and shifting various
 well-concealed seams. Thus, finding the correct sequence of rotates
 and shifts is left as an exercise to the reader (but if you are really
-lazy, just read the <a href="Makefile">Makefile</a>).</p>
+lazy, just read the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/Makefile">Makefile</a>).</p>
 <p>Source code for all the tools needed to solve this puzzle are embedded
-in <a href="prog.c">prog.c</a>, all you need is a C compiler.</p>
+in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/prog.c">prog.c</a>, all you need is a C compiler.</p>
 <h3 id="features">Features</h3>
 <ul>
 <li><p>Code compiles when rotated 4 ways. This required a bit of patience to
@@ -462,7 +462,7 @@ various tweaks to satisfy cases where the compiler is overly protective, includi
 but not limited to the “1125” at line 4 as opposed to “1025”, to satisfy
 <code>-Waggresive-loop-optimizations</code>.</p></li>
 <li><p>CRC32 of the code is embedded in the code itself.</p></li>
-<li><p>Process for writing <a href="prog.c">prog.c</a> is available in
+<li><p>Process for writing <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/prog.c">prog.c</a> is available in
 <a href="spoiler.html">spoiler.html</a>.</p></li>
 </ul>
 <h3 id="compatibility">Compatibility:</h3>

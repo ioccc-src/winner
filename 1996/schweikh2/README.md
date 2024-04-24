@@ -48,7 +48,7 @@ make it easier to see what is happening.
 ## Judges' remarks:
 
 The original program, with only slight obfuscations, may be found
-in [hunni.c](%%REPO_URL%%/1996/schweikh2/hunni.c). The perl script, [hunni.pl](hunni.pl), obfuscates it
+in [hunni.c](%%REPO_URL%%/1996/schweikh2/hunni.c). The perl script, [hunni.pl](%%REPO_URL%%/1996/schweikh2/hunni.pl), obfuscates it
 appropriately. Try:
 
 ``` <!---sh-->

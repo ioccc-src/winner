@@ -159,7 +159,7 @@ cannot execute deeper recursions).
 
 First of all, as you see, my program looks like a nonogram puzzle which results
 in a [dragon](https://www.draconika.com/what). This puzzle is
-[dragon.nono](dragon.nono) in this directory. Note that whitespaces in character
+[dragon.nono](%%REPO_URL%%/2011/hamaji/dragon.nono) in this directory. Note that whitespaces in character
 literals, a string literal, and around the last comment are considered as a
 boxed cell.
 
@@ -214,7 +214,7 @@ The second author wrote the picture, and the first author did
 everything else.
 
 The [dragon.nono](%%REPO_URL%%/2011/hamaji/dragon.nono), [samurai.nono](%%REPO_URL%%/2011/hamaji/samurai.nono), and
-[penguin.nono](penguin.nono) were written by the
+[penguin.nono](%%REPO_URL%%/2011/hamaji/penguin.nono) were written by the
 second author.  The [soccer.nono](%%REPO_URL%%/2011/hamaji/soccer.nono) was from a wikipedia entry.  This file
 is important because it requires some guesses.  The [random.nono](%%REPO_URL%%/2011/hamaji/random.nono) file
 was randomly generated. The [codegolf.nono](%%REPO_URL%%/2011/hamaji/codegolf.nono) and

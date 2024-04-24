@@ -101,7 +101,7 @@ the number from 8 to 11 that it thinks it is.
   (`$?` is shorter)
 
 * I achieved some additional tightness by `-Dif=while` which saved 9 chars of
-source for the cost of 11 chars of the [Makefile](Makefile). If I used
+source for the cost of 11 chars of the [Makefile](%%REPO_URL%%/2004/kopczynski/Makefile). If I used
 `-DB=while`, I would save 12 for 10, but I think the current version is slightly
 more obfuscated.
 

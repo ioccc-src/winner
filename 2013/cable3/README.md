@@ -112,7 +112,7 @@ little endian machine.
 
 ### RULE 2 ABUSE DISCLAIMER
 
-- [cable3.c](cable3.c) is 4043 bytes in length (half an 8086).
+- [cable3.c](%%REPO_URL%%/2013/cable3/cable3.c) is 4043 bytes in length (half an 8086).
 - `iocccsize -i < cable3.c` returns 1977 (the year the 4.77 MHz 8086 CPU was announced)
 - Therefore, any suspicions the judges may have regarding rule 2 non-compliance
 might be well-intentioned but are groundless.

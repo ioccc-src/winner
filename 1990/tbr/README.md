@@ -92,7 +92,7 @@ of the program which we include below:
     e(x){x<0?write(2,"?\n$ "-x/4,2),x+1||(exit(1),0):5;}
 ```
 
-and in the [alternate source](tbr.alt.c). It has the `exit()` returns `void` fix
+and in the [alternate source](%%REPO_URL%%/1990/tbr/tbr.alt.c). It has the `exit()` returns `void` fix
 as well as the `gets()` to `fgets()` fix applied to it to make it functionally
 equivalent like the authors intended.
 

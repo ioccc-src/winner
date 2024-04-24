@@ -228,11 +228,11 @@ The learning rate is hard-coded as `0.3`. No momentum factor is used.
 
 #### png corpora
 
-The [png-1](dlowe-aux-data/png-1) corpus was obtained by manually scraping the first results from an
+The `dlowe-aux-data/png-1` corpus was obtained by manually scraping the first results from an
 <https://images.google.com> search for "[obfuscate
 filetype:png](https://www.google.com/search?tbm=isch&sxsrf=APwXEddqIU34dxhpFdjEa8emNJKHOkYXIw:1683049158657&source=hp&biw=1727&bih=952&ei=xkpRZLapJtLKkPIP8bGKkAk&iflsig=AOEireoAAAAAZFFY1nbmEUHC74Cmg3Y5rEY1fV7ocASZ&ved=0ahUKEwi2pPXZltf-AhVSJUQIHfGYApIQ4dUDCAY&uact=5&oq=obfuscate+filetype:png&gs_lcp=CgNpbWcQA1AAWABg9QNoAHAAeACAATuIATuSAQExmAEAoAECoAEBqgELZ3dzLXdpei1pbWc&sclient=img&q=obfuscate&tbs=ift:png)".
 
-The [png-0](dlowe-aux-data/png-0) corpus was obtained by manually scraping the first results from an
+The `dlowe-aux-data/png-0` corpus was obtained by manually scraping the first results from an
 <https://images.google.com> search for "[obfuscate
 filetype:gif](https://www.google.com/search?tbm=isch&ved=2ahUKEwiowo7fltf-AhXSOUQIHbJBDp8Q2-cCegQIABAA&oq=obfuscate+filetype:gif&gs_lcp=CgNpbWcQAzoECCMQJzoHCAAQigUQQzoFCAAQgARQ6AxY6AxgpBJoAHAAeACAAUeIAcsBkgEBM5gBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=0UpRZOiVINLzkPIPsoO5-Ak&bih=952&biw=1727&q=obfuscate&tbs=ift:gif)".
 
@@ -242,7 +242,7 @@ filetype:gif](https://www.google.com/search?tbm=isch&ved=2ahUKEwiowo7fltf-AhXSOU
 * Using these corpora as a training set;
 * Using several hundred random `*.gif` and `*.png` files from my home computer as
   a test set;
-* Using the included [earlystop.pl](earlystop.pl) script, which stopped after 67000 iterations.
+* Using the included [earlystop.pl](%%REPO_URL%%/2011/dlowe/earlystop.pl) script, which stopped after 67000 iterations.
 * Interpreting output of `> 0.5` as "probably a `.png`" and `< 0.5` as "probably
   a `.gif`"
 
@@ -303,7 +303,7 @@ representation and [endianness](https://en.wikipedia.org/wiki/Endianness).
 
 Making sure not to
 [overfit](https://en.wikipedia.org/wiki/Overfitting#Machine_learning) the network to the training data is a bit of a
-black art. I have enclosed [earlystop.pl](earlystop.pl), a wrapper script that implements
+black art. I have enclosed [earlystop.pl](%%REPO_URL%%/2011/dlowe/earlystop.pl), a wrapper script that implements
 a simple 'early stopping' algorithm; other techniques are possible.
 
 Bad input (e.g. nonexistent files, non-numeric number of iterations, etc.)

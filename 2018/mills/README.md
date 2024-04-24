@@ -526,10 +526,10 @@ contest scheduling, I chose not to wait for the actual 50th anniversary).
 I had thought of writing self-hosting compilers for a stripped-down version of
 C, or maybe even a version of the B language...  At the same time, I was
 obsessed with the idea of allowing [mullender.c from
-1984](../../1984/mullender/index.html) to run.  Although
+1984](%%REPO_URL%%/1984/mullender/index.html) to run.  Although
 that was still a possibility on an interpreted version of B or a stripped-down
 version of C, it felt cheap, as it would be
-[mullender.c](../../1984/mullender/mullender.c) only in spirit.
+[mullender.c](%%REPO_URL%%/1984/mullender/mullender.c) only in spirit.
 
 It was during this time that I discovered that in 2016, members of the Unix
 Heritage Society got access to [printouts of assembly-language source for the
@@ -793,7 +793,7 @@ time...
 
 <hr style="width:10%;text-align:left;margin-left:0">
 
-[1]:  ../../1984/mullender/mullender.c            "mullender.c"
+[1]:  %%REPO_URL%%/1984/mullender/mullender.c            "mullender.c"
 [2]:  http://minnie.tuhs.org/cgi-bin/utree.pl?file=2.9BSD    "2.9 BSD"
 [3]:  https://www.bell-labs.com/usr/dmr/www/kbman.html       "B Language"
 [4]:  https://www.bell-labs.com/usr/dmr/www/hist.html        "UNIX history"

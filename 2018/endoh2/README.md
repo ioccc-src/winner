@@ -41,7 +41,7 @@ The "_Python_" in the award name refers to Monty Python, **not** the
 [programming language Python](https://en.wikipedia.org/wiki/Python_(programming_language)
 (the name of the programming language Python is derived from Monty Python).
 
-The shape of [prog.c](prog.c) is "Undead Parrot" based on "dead parrot". The
+The shape of [prog.c](%%REPO_URL%%/2018/endoh2prog.c) is "Undead Parrot" based on "dead parrot". The
 message that appears in the bottom line of the output source code is the subject
 of the dialogue that appears in "Dead Parrot" and explains in various
 expressions that the parrot died. Also, the second **__<-_Source_of_Parrots__**

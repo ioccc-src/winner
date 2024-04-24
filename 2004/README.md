@@ -26,11 +26,11 @@ local compiler.
 ## Remarks on some of the entries
 
 We believe you will be impressed with this year's winning entries.  The [Best of
-Show](gavin/gavin.c) is a fine example of obfuscation.  But don't ignore the
+Show](%%REPO_URL%%/2004/gavin/gavin.c) is a fine example of obfuscation.  But don't ignore the
 other entries!  There are games, utilities, programs that output images and a
 one-liner that is incredibly compact for what it can do.
 
-The [Best Abuse of the Guidelines](hibachi/hibachi.c) is technically allowed by
+The [Best Abuse of the Guidelines](%%REPO_URL%%/2004/hibachi/hibachi.c) is technically allowed by
 the rules.  This year we allowed it due to the functionality of the program.
 This entry is one of the easiest to read!  Don't assume you can win using
 similar techniques next time ... :-)

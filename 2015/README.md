@@ -46,7 +46,7 @@ We suggest that you attempt to completely understand the
 [endoh4](endoh4/index.html) 1-liner program: another impressive compact piece of
 C code.
 
-And while you are at it, cat the [endoh2 prog.c](endoh2/prog.c) code.  Compile it
+And while you are at it, cat the [endoh2 prog.c](%%REPO_URL%%/2015/endoh2/prog.c) code.  Compile it
 and look at the source code again.
 
 In a "Back to the Future" moment, [endoh3](endoh3/index.html) gave us a twist on
@@ -77,7 +77,7 @@ Rule 22, now known as **Catch 22** states:
         to be Peter Honeyman, will be grounds for disqualification of your entry.
 ```
 
-A number of other entries were based on [iocccsize.c](iocccsize.c), making
+A number of other entries were based on [iocccsize.c](%%REPO_URL%%/2015/iocccsize.c), making
 derivative works rather than original works.
 
 Still other entries were too large, violating the first line of rule 2:

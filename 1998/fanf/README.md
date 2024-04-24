@@ -28,7 +28,7 @@ Enter an expression on standard input.  To try some we have selected:
 
 ### Historical aside:
 
-At a time the code in [fanf.c](%%REPO_URL%%/1998/fanf/fanf.c) was that of [fanf.orig.c](fanf.orig.c)
+At a time the code in [fanf.c](%%REPO_URL%%/1998/fanf/fanf.c) was that of [fanf.orig.c](%%REPO_URL%%/1998/fanf/fanf.orig.c)
 but to get this to compile in modern systems it had to be translated to what you
 now see. The intermediate steps can still be performed but they might be
 different from the past. This should be kept in mind as you read the below

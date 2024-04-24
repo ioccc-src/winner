@@ -73,7 +73,7 @@ separator in the form of a single line followed by a section signifying the
 function of the program, a block with removed shape of lambda character. Even
 the official IOCCC size tool acknowledges this: When you call `./iocccsize -i
 <prog.c`, using the [2019 version of
-iocccsize](../../2019/iocccsize.c), iocccsize returns **955**,
+iocccsize](%%REPO_URL%%/2019/iocccsize.c), iocccsize returns **955**,
 which is the Unicode codepoint of the **&#955;** character.
 
 It might be a surprise for you that according to the IOCCC size tool the program is
@@ -89,7 +89,7 @@ When built directly using
 ```
 
 the program (`prog`) accepts a single parameter with the name of an Unlambda program. You can
-download the [Colossal Cave Adventure][1] (the [advent.unl](advent.unl) file)
+download the [Colossal Cave Adventure][1] (the [advent.unl](%%REPO_URL%%/2019/adamovsky/advent.unl) file)
 and run it like this:
 
 ``` <!---sh-->
@@ -103,7 +103,7 @@ You can also try other programs from the Web. Many example programs are in the o
 entries from [quine contest][4].
 
 There is an alternative build path that requires the 2018 IOCCC size tool to complete. Put the tool
-source [iocccsize_2018.c](iocccsize_2018.c) in the project directory and call
+source [iocccsize_2018.c](%%REPO_URL%%/2019/adamovskyiocccsize_2018.c) in the project directory and call
 
 ``` <!---sh-->
     make identify
@@ -199,7 +199,7 @@ since it was developed using `char`s it should be always used safely.
 
 ### Spoilers:
 
-- You can examine the [progSpoiler.c](progSpoiler.c) file. It is the original
+- You can examine the [progSpoiler.c](%%REPO_URL%%/2019/adamovskyprogSpoiler.c) file. It is the original
 final version of the interpreter, before I started the downsizing. It accepts
 one more optional parameter that specifies a filename for the output Unlambda
 function (it's the Unlambda function that remains after all function
@@ -291,7 +291,7 @@ be applied.
 [6]: https://en.wikipedia.org/wiki/Lambda_calculus           "Lambda Calculus on Wikipedia"
 [7]: https://en.wikipedia.org/wiki/Combinatory_logic         "Combinatory Logic on Wikipedia"
 [8]: https://inazz.jp/unlambda/                              "Online Unlambda interpreter"
-[9]: ../../2014/birken/index.html			     "Best use of port 1701"
+[9]: %%REPO_URL%%/2014/birken/index.html			     "Best use of port 1701"
 
 <!--
 

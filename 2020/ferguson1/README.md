@@ -60,7 +60,7 @@ and non-zero).
     size to grow every time you eat a bug. Default 5; negative
     values are allowed. 'Negativity' creates for fun gameplay modes with
     enough creativity. See [gameplay.html](gameplay.html)
-    GitHub) as well as [play.sh](play.sh) for some examples.
+    GitHub) as well as [play.sh](%%REPO_URL%%/2020/ferguson1/play.sh) for some examples.
 
 * **SHED**<br>
     every **SHED** movements you will grow (> 0), shrink (< 0) or
@@ -76,7 +76,7 @@ and non-zero).
     you can create some fun gameplay modes here. For instance you
     can grow upon eating a bug but shrink every **SHED** movements
     and then it's a battle of whether you win by **SIZE < 0** or
-    **SIZE >= MAXSIZE**. See [play.sh](play.sh) for examples.
+    **SIZE >= MAXSIZE**. See [play.sh](%%REPO_URL%%/2020/ferguson1/play.sh) for examples.
     NOTE: the concept of shedding in this game is a misnomer; see
     notes below.
 
@@ -516,13 +516,13 @@ been warned.
 I submitted three Snake versions; these are the other layouts for those few
 (more likely none) who are interested to see them.
 
-The [prog.2.c](prog.2.c) has more digraphs but I think no other significant differences.
+The [prog.2.c](%%REPO_URL%%/2020/ferguson1/prog.2.c) has more digraphs but I think no other significant differences.
 
-The [prog.3.c](prog.3.c) is in a more artistic layout (a backwards S), has at least one
+The [prog.3.c](%%REPO_URL%%/2020/ferguson1/prog.3.c) is in a more artistic layout (a backwards S), has at least one
 additional obfuscation technique (see spoilers) but it also has more digraphs
 and as the judges said they feel that digraphs are dated so that's probably why
-they chose the first layout. The [prog.3-j.c](prog.3-j.c) version is
-[prog.3.c](prog.3.c) with a shorter `J` macro.
+they chose the first layout. The [prog.3-j.c](%%REPO_URL%%/2020/ferguson1/prog.3-j.c) version is
+[prog.3.c](%%REPO_URL%%%%REPO_URL%%//2020/ferguson1/prog.3.c) with a shorter `J` macro.
 
 The prog.alt.c version is the one that allows for customising the bug colour and
 it's used in both [snake-colours.sh][] and [play.sh][]. It also calls `erase()`
@@ -544,7 +544,7 @@ but Don Yang and Edward Giles too.
 
 But there are some others who I don't remember like [Ilya
 Kurdyukov](../../authors.html#Ilya_Kurdyukov)
-(who's offered a lot of interesting thoughts on [Snake](../ferguson1/prog.c) and
+(who's offered a lot of interesting thoughts on [Snake](%%REPO_URL%%/2020/ferguson1/prog.c) and
 who plans to have his own version after the entries are published), [Nathan
 Otterness](../../authors.html#Nathan_Otterness), [Nicholas
 Carlini](../../authors.html#Nicholas_Carlini) (your entry is an absolutely brilliant
@@ -556,7 +556,7 @@ Well done and congratulations to all of you again!  Thank you for submitting the
 wonderful entries and I'm honoured to have my two entries beside yours!
 
 To Dave Burton I thank you for your wonderful comments as well as pointing out
-that even with [prog.alt.c](prog.alt.c) it probably would be better to make use
+that even with [prog.alt.c](%%REPO_URL%%/2020/ferguson1/prog.alt.c) it probably would be better to make use
 of the alt target instead of naming prog.c prog.alt.c. You're quite right, I had
 thought of it but you brought it up so I could correct it. Much appreciated
 mate.

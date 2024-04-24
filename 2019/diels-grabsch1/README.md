@@ -27,7 +27,7 @@ to a one-liner, still producing files in the UNIX compress format, albeit
 sacrificing the compression ratio?
 
 Can you explain why the `/dev/zero` file compresses identically by the entry and
-the standard `compress(1)` tool (see [try.sh](try.sh)), but the text file
+the standard `compress(1)` tool (see [try.sh](%%REPO_URL%%/2019/diels-grabsch1/try.sh)), but the text file
 compresses differently? The judges know. :)
 
 
@@ -54,7 +54,7 @@ compresses differently? The judges know. :)
     diff -s guidelines.txt guidelines2.txt
 ```
 
-Of course you can  also use [2015/mills2](../../2015/mills2/mills2.c) instead of
+Of course you can  also use [2015/mills2](%%REPO_URL%%/2015/mills2/mills2.c) instead of
 `zcat` to verify the output file. The achieved compression ratio roughly matches
 that of the classic Unix `compress(1)` tool. And the source code is very
 compressed, too: It has exactly the same size as the  paragraph you are reading

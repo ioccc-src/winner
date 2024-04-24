@@ -8,7 +8,7 @@ If you have X11 installed:
 
 There are two alternate versions, [one that lets you reconfigure the
 controls and size](%%REPO_URL%%/2011/toledo/toledo.alt.c) and [another that should work for
-Windows](toledo.alt2.c). See [Alternate code](#alternate-code) below.
+Windows](%%REPO_URL%%/2011/toledo/toledo.alt2.c). See [Alternate code](#alternate-code) below.
 
 
 ## To use:

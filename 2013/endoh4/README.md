@@ -142,7 +142,7 @@ So, try:
     ./endoh4 < endoh4.c # or ./endoh4.sh
 ```
 
-The [solids/](solids/) directory includes various solid data:
+The `solids` directory includes various solid data:
 
 - [Platonic solids](http://en.wikipedia.org/wiki/Platonic_solid)
 - [Archimedean solids](http://en.wikipedia.org/wiki/Archimedean_solid)

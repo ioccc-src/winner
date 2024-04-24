@@ -71,8 +71,8 @@ to:
     for(signal=0;*k *x * __FILE__ *i;) do {
 ```
 
-To see what we mean look at the [original source file](decot.orig.c). The
-[alternate code](decot.alt.c) is the version that has this modification. The
+To see what we mean look at the [original source file](%%REPO_URL%%/1984/decot/decot.orig.c). The
+[alternate code](%%REPO_URL%%/1984/decot/decot.alt.c) is the version that has this modification. The
 fixed version has instead:
 
 ``` <!---c-->

@@ -24,7 +24,7 @@ code](#alternate-code) below.
 
 ## Alternate code:
 
-The alternate version, [prog.alt.c](prog.alt.c), has the main code as a macro.
+The alternate version, [prog.alt.c](%%REPO_URL%%/2020/kurdyukov3/prog.alt.c), has the main code as a macro.
 
 
 ### Alternate build:

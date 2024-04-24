@@ -82,7 +82,10 @@ put `#!/usr/local/bin/otcc` at the beginning of your C source if
 you installed `otcc` at this place.
 
 
-### Supported C language subset (read joint example [bellard.otccex.c](bellard.otccex.c) to have an introduction to `OTCC` dialect)
+### Supported C language subset
+
+
+Read joint example [bellard.otccex.c](%%REPO_URL%%/2001/bellard/bellard.otccex.c) to have an introduction to `OTCC` dialect.
 
 
 #### Expressions:

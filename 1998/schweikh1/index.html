@@ -546,7 +546,7 @@ something new – after 14 years of IOCCC. Be sure to have enough paper in your
 printer when you make a hard copy of the source…</p>
 <p>While I’m at it, the rules state that only space, tab and newline
 are ignored for the count (plus ‘<code>{</code>’, ‘<code>}</code>’, ‘<code>;</code>’ followed by
-whitespace). The <a href="../mkentry.c">mkentry.c</a> program, however, uses <code>isspace(3)</code> which
+whitespace). The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/mkentry.c">mkentry.c</a> program, however, uses <code>isspace(3)</code> which
 returns nonzero for <code>\v</code> and <code>\f</code> and other characters as well.
 I could have used a lot more <code>^K</code> and <code>^L</code> probably undetected by your
 counter but decided to err on the side of safety. I use a perl

@@ -41,7 +41,7 @@ For more detailed information see [2001 anonymous bugs](../../bugs.html#2001_ano
 ```
 
 NOTE: if the 32-bit version cannot be compiled the script will at least compile
-[anonymous.ten](anonymous.ten.c) as a 64-bit program (or whatever your system is
+[anonymous.ten](%%REPO_URL%%/2001/anonymous/anonymous.ten.c) as a 64-bit program (or whatever your system is
 set to) and run it directly.
 
 What happens if the x86 program has already been modified by this program? The
@@ -105,7 +105,7 @@ run x86 programs on any machine (x86 or otherwise).
 
 I have included a simple [10 Green
 Bottles](https://www.bbc.co.uk/teach/school-radio/nursery-rhymes-ten-green-bottles/zncyt39)
-[program](anonymous.ten.c) (try `make anonymous.ten`), meant to be compiled as a
+[program](%%REPO_URL%%/2001/anonymous/anonymous.ten.c) (try `make anonymous.ten`), meant to be compiled as a
 32-bit ELF binary.
 
 The program `anonymous.ten`, and its source (dull) are included as data
@@ -129,7 +129,7 @@ generates a translation for an entire basic block of subject code.  Having
 translated a block once, the target code generated will be stored for the
 duration that the program is running, so as a program runs its performance will
 improve, as it hits cached blocks.  This can be clearly observed in the example
-program, [anonymous.ten](anonymous.ten.c) which must be compiled as a 32-bit ELF
+program, [anonymous.ten](%%REPO_URL%%/2001/anonymous/anonymous.ten.c) which must be compiled as a 32-bit ELF
 binary.
 
 ### Target Library Linking:
@@ -221,7 +221,7 @@ Despite all this, the translator is not exclusively limited to running the
 [anonymous.ten](%%REPO_URL%%/2001/anonymous/anonymous.ten.c) program.  Other trivial **_x86_** programs may
 run on the translator \- and I have successfully run a wide range of "Hello
 World" programs, including one of last year's IOCCC entries,
-[tomx](2001/anonymous/2000/tomx/tomx.c).
+[tomx](%%REPO_URL%%/2000/tomx/index.html).
 
 
 ### Complete Program

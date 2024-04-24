@@ -104,7 +104,7 @@ of operators, and control constructs.
 The compiler has absolutely no error checking, so things
 can go wrong.  But this is what seasoned C programmers are used to.
 
-Assume that the interpreter has been compiled (source in [august.c](august.c)
+Assume that the interpreter has been compiled (source in [august.c](%%REPO_URL%%/1996/august/august.c)
 and binary in august) and that we have this in a file named `test.oc`:
 
 ``` <!---c-->

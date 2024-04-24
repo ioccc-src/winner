@@ -70,7 +70,7 @@ Build the compiler:
 
 #### Fibonacci numbers:
 
-Test the compiler on [fib.hs](fib.hs):
+Test the compiler on [fib.hs](%%REPO_URL%%/2019/lynn/fib.hs):
 
 ``` <!---sh-->
     (./prog < fib.hs ; cat prog.c) > fib.c
@@ -78,7 +78,8 @@ Test the compiler on [fib.hs](fib.hs):
 
 Compiling the output produces a binary that prints the 30th Fibonacci number.
 
-The file [ghcfib.hs](ghcfib.hs) includes [fib.hs](fib.hs) with some glue code,
+The file [ghcfib.hs](%%REPO_URL%%/2019/lynn/ghcfib.hs)
+includes [fib.hs](%%REPO_URL%%/2019/lynn/fib.hs) with some glue code,
 and shows GHC also accepts our subset of Haskell:
 
 ``` <!---sh-->
@@ -89,7 +90,7 @@ and shows GHC also accepts our subset of Haskell:
 #### Self-hosting compiler:
 
 To avoid spoiling this entry by revealing the original Haskell source, we
-instead provide [hint.hs](hint.hs), the output of a certain stage of the
+instead provide [hint.hs](%%REPO_URL%%/2019/lynn/hint.hs), the output of a certain stage of the
 compiler when run on itself. This intermediate output is hopefully difficult to
 understand, yet is accepted by our compiler:
 
@@ -102,7 +103,7 @@ understand, yet is accepted by our compiler:
 The output program behaves like the compiler itself.
 
 Unlike the original source from which it is derived, GHC fails to compile
-[hint.hs](hint.hs). This is because values have been replaced with their [Scott
+[hint.hs](%%REPO_URL%%/2019/lynn/hint.hs). This is because values have been replaced with their [Scott
 encodings](https://en.wikipedia.org/wiki/Mogensen-Scott_encoding)
 by this stage, which messes up type-checks; we'd need `equirecursive` types for
 it to work.
@@ -110,7 +111,7 @@ it to work.
 
 #### Regexes:
 
-The file [lol.hs](lol.hs) contains an adaptation of [Doug McIlroy's elegant code from
+The file [lol.hs](%%REPO_URL%%/2019/lynn/lol.hs) contains an adaptation of [Doug McIlroy's elegant code from
 "Enumerating the strings of regular
 languages"](https://www.cs.dartmouth.edu/~doug/nfa.pdf). We exercise it by
 showing the first entries of the length-ordered list of all strings consisting
@@ -131,7 +132,7 @@ A GHC wrapper is provided:
 
 ### Strongly-connected components:
 
-See [scc.hs](scc.hs) (and its GHC wrapper [ghcscc.hs](ghcscc.hs)) for an elegant
+See [scc.hs](%%REPO_URL%%/2019/lynn/scc.hs) (and its GHC wrapper [ghcscc.hs](%%REPO_URL%%/2019/lynn/ghcscc.hs)) for an elegant
 way to print the strongly-connected components of a graph in reverse topological
 order.
 
@@ -280,7 +281,7 @@ represent the integer `n` with a term equivalent to `Y(BT)n`; it works because
 * A sentinel in the heap often confused me, so ought to confuse others.
 
 Other obfuscation techniques are better appreciated after decoding the
-compiler. See [hint.hs](hint.hs).
+compiler. See [hint.hs](%%REPO_URL%%/2019/lynn/hint.hs).
 
  * Mercilessly point-free. Everything is a combinator.
  * Scott encoding. Everything is a combinator.

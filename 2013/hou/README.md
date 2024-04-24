@@ -1,4 +1,4 @@
-## To build:
+%%REPO_URL%%/## To build:
 
 ``` <!---sh-->
     make all
@@ -137,7 +137,7 @@ don't have to worry about conflicts.
 * [hou.c](%%REPO_URL%%/2013/hou/hou.c) uses compression to get around the size limit. The compression
 fully complies with the rules and the guidelines (at least the portion that
 shows up in `grep` "size limit"). Please see the [Self-imposed
-restrictions](self-imposed-restrictions) section below for more details.
+restrictions](#self-imposed-restrictions) section below for more details.
 * `hou` does not terminate (as suggested by the second line of rule 6).
 
 

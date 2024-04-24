@@ -32,19 +32,19 @@ code](#alternate-code) below for more details.
 There are a number of alternate versions for this program, some in C and some in
 assembly.
 
-The file [prog.alt.c](prog.alt.c) is smaller and does not contain any
+The file [prog.alt.c](%%REPO_URL%%/2020/kurdyukov1/prog.alt.c) is smaller and does not contain any
 headers or any workaround for WIN32 based platforms.
 
-The file [prog.extra.c](prog.extra.c) has a number of layouts including some for
+The file [prog.extra.c](%%REPO_URL%%/2020/kurdyukov1/prog.extra.c) has a number of layouts including some for
 different social media profile covers as well as different shapes.
 
-The files [prog.x86_64.asm](prog.x86_64.asm) and [prog.x86.asm](prog.x86.asm)
+The files [prog.x86_64.asm](%%REPO_URL%%/2020/kurdyukov1/prog.x86_64.asm) and [prog.x86.asm](%%REPO_URL%%/2020/kurdyukov1/prog.x86.asm)
 are the program in assembly for x86_64 linux and x86 linux respectively.
 
 
 ### Alternate build:
 
-To build [prog.alt.c](prog.alt.c):
+To build [prog.alt.c](%%REPO_URL%%/2020/kurdyukov1/prog.alt.c):
 
 ``` <!---sh-->
     make alt
@@ -100,17 +100,17 @@ under mingw64), otherwise the hashes can be incorrect.
 
 ### Bonus
 
-- [prog.extra.c](prog.extra.c) is the same with the sine function (so smaller),
+- [prog.extra.c](%%REPO_URL%%/2020/kurdyukov1/prog.extra.c) is the same with the sine function (so smaller),
 and in different shapes.
 
-- [prog.x86_64.asm](prog.x86_64.asm) contains the same program, but written in
+- [prog.x86_64.asm](%%REPO_URL%%/2020/kurdyukov1/prog.x86_64.asm) contains the same program, but written in
 assembly for x86_64 Linux, for the sake of smaller executable size which is 500
 bytes long (where 120 is for the ELF headers) after compilation. Algorithm
 details is slightly different (like constants packing), just to make smaller
 binary code. It's interesting to compare density of binary code and obfuscated
 C.
 
-- [prog.x86.asm](prog.x86.asm) is for x86, although the headers are smaller, but
+- [prog.x86.asm](%%REPO_URL%%/2020/kurdyukov1/prog.x86.asm) is for x86, although the headers are smaller, but
 the binary code is larger due to fewer registers and lack of 64-bit multiply.
 
 <!--

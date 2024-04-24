@@ -132,14 +132,14 @@ is too long, and 2 if the command-line arguments are missing.
 
 ### Helper scripts:
 
-- [getwords.sh](getwords.sh)
+- [getwords.sh](%%REPO_URL%%/2019/ciura/getwords.sh)
 
     `./getwords.sh LANGUAGE_CODE`
 
     outputs a sorted list of unique words in a given language, one per line.  It
     requires `aspell` with a dictionary for _LANGUAGE_CODE_.
 
-- [wrapprog.py](wrapprog.py)
+- [wrapprog.py](%%REPO_URL%%/2019/ciura/wrapprog.py)
 
     `./wrapprog.py LETTERS [N]`
 
@@ -148,8 +148,9 @@ is too long, and 2 if the command-line arguments are missing.
     it finishes the job faster than `prog` when there are millions of perfect
     pangrams. It requires a UTF-8 locale.
 
-- [de.sh](de.sh), [en.sh](en.sh), [fr.sh](fr.sh), [it.sh](it.sh),
-[pl.sh](pl.sh), and [ru.sh](ru.sh) output German,
+- [de.sh](%%REPO_URL%%/2019/ciura/de.sh), [en.sh](%%REPO_URL%%/2019/ciura/en.sh),
+[fr.sh](%%REPO_URL%%/2019/ciura/fr.sh), [it.sh](%%REPO_URL%%/2019/ciura/it.sh),
+[pl.sh](%%REPO_URL%%/2019/ciura/pl.sh), and [ru.sh](%%REPO_URL%%/2019/ciura/ru.sh) output German,
 English, French, Italian, Polish, and Russian perfect pangrams, respectively.
 They require a UTF-8 locale.
 
@@ -162,7 +163,7 @@ among the programs that won IOCCC in the past), and _obscure bugs_ (see
 the questions about Linux core dumps below).
 
 To a casual eye, this entry may look similar to
-[2005/klausler](../../2005/klausler/index.html).
+[2005/klausler](%%REPO_URL%%/2005/klausler/index.html).
 However, `prog` is internationalized and way faster. On my machine,
 `./klausler abcdefghijklmnopqrstuvwxyz` printed only 3,965 perfect
 pangrams until I killed it after 144 hours running, while the
@@ -173,7 +174,7 @@ the example from section [What is this?](#wit) finished in 1.35
 seconds. On the other hand, `prog` can only output series of words
 with non-repeating characters, unlike `klausler`.
 
-In contrast to [prog.alt.c](prog.alt.c), [prog.c](prog.c) does not call
+In contrast to [prog.alt.c](%%REPO_URL%%/2019/ciura/prog.alt.c), [prog.c](%%REPO_URL%%/2019/ciura/prog.c) does not call
 `fflush(stdout)` after outputting each line, thus running faster.
 I am grateful to Witold Jarnicki for suggesting this change.
 The original `prog` finished the example above in 100 minutes
@@ -201,8 +202,8 @@ by without `goto M` and `goto H`, I challenge the adherents of
 structured programming to refactor `goto T`, which jumps back into a
 nested `if` block.
 
-With the supplied [Makefile](Makefile), both `gcc` and `clang` compile
-[prog.c](prog.c) without warnings in C11 and C99 mode. For a clean
+With the supplied [Makefile](%%REPO_URL%%/2019/ciura/Makefile), both `gcc` and `clang` compile
+[prog.c](%%REPO_URL%%/2019/ciura/prog.c) without warnings in C11 and C99 mode. For a clean
 compilation with `gcc -std=c90`, add `-Wno-format` to
 `CSILENCE` in `Makefile`.
 

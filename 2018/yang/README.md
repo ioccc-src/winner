@@ -100,13 +100,13 @@ leading whitespaces:
 
 Where this might be useful, besides ruining the formatting of certain
 files, is that it completes the set of tools needed to solve the
-puzzle that is embedded in [prog.c](prog.c).
+puzzle that is embedded in [prog.c](%%REPO_URL%%/2018/yang/prog.c).
 
 
 ### Puzzle box:
 
-Notice how the edges of [prog.c](prog.c) contain two notches.  By rotating
-[prog.c](prog.c) and removing leading space, the code would be shifted one space
+Notice how the edges of [prog.c](%%REPO_URL%%/2018/yang/prog.c) contain two notches.  By rotating
+[prog.c](%%REPO_URL%%/2018/yang/prog.c) and removing leading space, the code would be shifted one space
 toward one of those notches (and create a new notch on the other
 side).  This shifted code behaves slightly different from the original
 program.  For example, here are two more messages that can be
@@ -119,14 +119,14 @@ produced:
 
 In total, there are 9 embedded strings that can be produced via a
 sequence of rotates and shifts, one of which can be used to extract
-the 10th final string from [prog.c](prog.c).  The intent is to simulate those
+the 10th final string from [prog.c](%%REPO_URL%%/2018/yang/prog.c).  The intent is to simulate those
 wooden puzzle boxes that can be opened by pushing and shifting various
 well-concealed seams.  Thus, finding the correct sequence of rotates
 and shifts is left as an exercise to the reader (but if you are really
-lazy, just read the [Makefile](Makefile)).
+lazy, just read the [Makefile](%%REPO_URL%%/2018/yang/Makefile)).
 
 Source code for all the tools needed to solve this puzzle are embedded
-in [prog.c](prog.c), all you need is a C compiler.
+in [prog.c](%%REPO_URL%%/2018/yang/prog.c), all you need is a C compiler.
 
 
 ### Features
@@ -142,7 +142,7 @@ but not limited to the "1125" at line 4 as opposed to "1025", to satisfy
 
 - CRC32 of the code is embedded in the code itself.
 
-- Process for writing [prog.c](prog.c) is available in
+- Process for writing [prog.c](%%REPO_URL%%/2018/yang/prog.c) is available in
 [spoiler.html](spoiler.html).
 
 

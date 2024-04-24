@@ -78,7 +78,7 @@ the letter `e`.
 The IOCCC has been no stranger to this concept.  Several winning entries from
 years past have accomplished interesting feats while completely avoiding the use
 of certain C constructs thought to be essential (e.g.
-[1988/robison.c](../../1988/robison/robison.c)).  If you have to ask why they would
+[1988/robison.c](%%REPO_URL%%/1988/robison/robison.c)).  If you have to ask why they would
 do it this way, then this contest just isn't for you.
 
 In continuing with this fine tradition, this program suggests to the ANSI

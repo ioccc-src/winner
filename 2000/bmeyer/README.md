@@ -324,7 +324,7 @@ en/decoded[^4].
 ### Photo Credit:
 
 [Lavabus](%%REPO_URL%%/2000/bmeyer/lavabus.pgm) was taken by the judge, Landon Curt Noll.
-[Michael](%%REPO_URL%%/2000/bmeyer/michael.pgm) was provided by the author.  [Lenna](lenna.glic) is a
+[Michael](%%REPO_URL%%/2000/bmeyer/michael.pgm) was provided by the author.  [Lenna](%%REPO_URL%%/2000/bmeyer/lenna.glic) is a
 1972 Playboy centerfold (doesn't show very much).
 
 - [michael.pgm](%%REPO_URL%%/2000/bmeyer/michael.pgm)

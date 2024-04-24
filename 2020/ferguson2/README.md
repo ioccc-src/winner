@@ -1,4 +1,4 @@
-## To build:
+%%REPO_URL%%/## To build:
 
 ``` <!---sh-->
     make
@@ -43,7 +43,7 @@ at once. See [Alternate code](#alternate-code) below.
     ./recode -v
 ```
 
-**NOTE**: in [recode](recode.c) no spaces between options and option arguments
+**NOTE**: in [recode](%%REPO_URL%%/2020/ferguson2/recode.c) no spaces between options and option arguments
 are allowed.
 
 
@@ -65,7 +65,7 @@ do?
 
 ## Alternate code:
 
-This version, [prog.alt.c](prog.alt.c), writes a character at a time, sleeping
+This version, [prog.alt.c](%%REPO_URL%%/2020/ferguson2/prog.alt.c), writes a character at a time, sleeping
 after each character, so that one can read it more easily (for longer output)
 and to make it a bit more like the real thing.
 
@@ -107,7 +107,7 @@ This code is an [enigma](https://youtu.be/ybkkiGtJmkM).  Try to decode it!
 
 There is a good deal of useful documentation that is provided with this entry:
 
-* [enigma.1](enigma.1)	-  A useful man page for this entry.  To render, try:
+* [enigma.1](%%REPO_URL%%/2020/ferguson2/enigma.1)	-  A useful man page for this entry.  To render, try:
 
 
 ``` <!---sh-->
@@ -116,7 +116,7 @@ There is a good deal of useful documentation that is provided with this entry:
 
 
 * [recode.html][] (or [recode.html](recode.html) if reading on GitHub)
-    - Some useful information about [recode.c](recode.c)
+    - Some useful information about [recode.c](%%REPO_URL%%/2020/ferguson2/recode.c)
 
 
 * [chocolate-cake.html][] (or [chocolate-cake.html](chocolate-cake.html) if reading on GitHub)
@@ -131,7 +131,7 @@ There is a good deal of useful documentation that is provided with this entry:
 ## Author's remarks:
 
 My remarks about my [Heer][] (army) and [Luftwaffe][] (air force) [Enigma
-machine](https://www.cryptomuseum.com/crypto/enigma/index.htm) [simulator](prog.c) for
+machine](https://www.cryptomuseum.com/crypto/enigma/index.htm) [simulator](%%REPO_URL%%/2020/ferguson2/prog.c) for
 the 27th IOCCC.
 
 I want to dedicate this entry in part to the millions of poor souls that were
@@ -405,7 +405,7 @@ Phew! The program redeemed itself after the test failure! :)
 is with some of the things I pasted in the other file and maybe others here
 too. Notice also how it showed the same output that my program gave it - `UUMMX`.)
 
-What about the other [Morse code entry](../../1998/dorssel/dorssel.c)?
+What about the other [Morse code entry](%%REPO_URL%%/1998/dorssel/dorssel.c)?
 
 ``` <!---sh-->
     $ echo IOCCC | ./prog | ./dorssel
@@ -433,7 +433,7 @@ It has a randomise mode and it can save/read the settings to/from a file to
 allow for duplicity (an archaic term for the state of being double but obviously
 for Enigma it has to also mean deceitful).
 
-I recommend using this in a pipeline instead of the [simulator](prog.c) itself
+I recommend using this in a pipeline instead of the [simulator](%%REPO_URL%%/2020/ferguson2/prog.c) itself
 if you want to change the configuration of the simulator because it offers a
 much richer experience (and because you can reuse the configuration without
 having to type it out again every time).
@@ -453,7 +453,7 @@ For examples using it (and a delicious challenge) see [recode.html][] (or
 </div>
 
 The parser is in a sense rather rudimentary but allows for both interactive and
-automatic (e.g. via the [recode](recode.c) program) input. This does mean that
+automatic (e.g. via the [recode]((%%REPO_URL%%/2020/ferguson2recode.c) program) input. This does mean that
 something like the following can happen:
 
 ``` <!---sh-->
@@ -499,7 +499,7 @@ is buffering at play I believe but it's useful for allowing the `recode` program
 to easily configure the Enigma machine. In the [recode.html](recode.html) file
 (or [recode.html](recode.html) if reading on GitHub) file I give a hint as to how
 this could be fixed but the caveat is it would necessitate a need for rewriting
-[recode.c](recode.c).
+[recode.c](%%REPO_URL%%/2020/ferguson2/recode.c).
 
 There's another thing to be aware of and that's the way the ranges are enforced.
 There are five rotors which obviously are in C 0-4 but in 'natural language'
@@ -508,7 +508,7 @@ There are five rotors which obviously are in C 0-4 but in 'natural language'
 There are two
 [reflectors](https://www.ciphermachinesandcryptology.com/en/enigmatech.htm#Reflector) and the
 same applies: in C 0-1 but in human it's 1-2 (technically these were reflectors B and C in
-the Enigma machine which I display by name in [recode.c](recode.c) just like
+the Enigma machine which I display by name in [recode.c](%%REPO_URL%%/2020/ferguson2/recode.c) just like
 with the rotors).
 
 For more information see [recode.html][] (or [recode.html](recode.html) if viewing on
@@ -531,7 +531,7 @@ accomplished and made use of! :)
 </div>
 
 The layout of [recode.c][] isn't too significant (but see below) but I want to
-mention [prog.c](prog.c) especially:
+mention [prog.c](%%REPO_URL%%/2020/ferguson2/prog.c) especially:
 
 I did think of a more artistic layout but
 [reflecting](https://www.ciphermachinesandcryptology.com/en/enigmatech.htm#Reflector)
@@ -587,7 +587,7 @@ The file [obfuscation.key][] is the key to decipher/encipher
 For the lazy [obfuscation.html](obfuscation.html) has the deciphered version. I am afraid I'm not
 so inclined to do that for the cake recipe: the idea there is to make it a fun
 exercise that when solved unlocks a wonderful double-layered chocolate fudge
-cake recipe. But given that my ['Don't tread on me'](../ferguson1) award entry
+cake recipe. But given that my ['Don't tread on me'](../ferguson1/index.html) award entry
 also has the [recipe](../ferguson1/chocolate-cake.html)
 ([ferguson1/chocolate-cake.html](../ferguson1/chocolate-cake.html) if reading on
 GitHub), not enciphered, one might just go there instead. Still it's a fun way
@@ -639,7 +639,7 @@ can at least have the output played in Morse code as the Germans did; I think
 that's really cool (I think it's really cool even if there's a bug in it). That
 it pays homage to that (and another) entry is a bonus here.
 
-*   The [simulator](prog.c) doesn't report errors but tries to gracefully deal
+*   The [simulator](%%REPO_URL%%/2020/ferguson2/prog.c) doesn't report errors but tries to gracefully deal
 with them: if one chooses a value out of range it moves it into the range (if >
 the max then the max, if < min then the min). If invalid chars are input for the
 plugboard pairs then it's not added to the plugboard etc.
@@ -798,7 +798,7 @@ rotor selection 'screen'. Then use the arrow buttons above each rotor to set
 from left to right B, B and C. After this you can type your message in the input
 field and watch the wiring of the rotors change and show the path it takes.
 
-If I made use of the Enigma code in the [recode.c](recode.c) program I would
+If I made use of the Enigma code in the [recode.c](%%REPO_URL%%/2020/ferguson2/recode.c) program I would
 maybe consider doing something like that but I intentionally do not use it
 there: as cool as it might be it would give a better idea of how the algorithm
 works (unless I were to make it just as obscure as I do in prog.c but that's
@@ -886,7 +886,7 @@ but Don Yang and Edward Giles too.
 
 But there are some others who I don't remember like [Ilya
 Kurdyukov](../../authors.html#Ilya_Kurdyukov)
-(who's offered a lot of interesting thoughts on [Snake](../ferguson1/prog.c) and
+(who's offered a lot of interesting thoughts on [Snake](%%REPO_URL%%/2020/ferguson1/prog.c) and
 who plans to have his own version after the entries are published), [Nathan
 Otterness](../../authors.html#Nathan_Otterness), [Nicholas
 Carlini](../../authors.html#Nicholas_Carlini) (your entry is an absolutely brilliant

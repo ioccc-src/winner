@@ -333,7 +333,7 @@ rate in which the terminal application receives and displays the [ANSI
 escape](https://en.wikipedia.org/wiki/ANSI_escape_code) sequences.
 
 To slow down the output programmatically, introduce a delay immediately after the
-call to `fflush(3)` (N.B: see [birken.alt.c](birken.alt.c)).
+call to `fflush(3)` (N.B: see [birken.alt.c](%%REPO_URL%%/2013/birken/birken.alt.c)).
 
 
 ### IOCCC Size Tool Bug

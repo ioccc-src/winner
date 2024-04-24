@@ -58,7 +58,7 @@ more while it puzzles out some puzzles: all in a puzzling way!
 
 `goto` the source and notice the lack of functions.  Jump
 to the `switch` statement.  And if you think you can puzzle
-it out better, try solving [insane1.sudoku](insane1.sudoku) all by yourself!
+it out better, try solving [insane1.sudoku](%%REPO_URL%%/2005/aidan/insane1.sudoku) all by yourself!
 
 NOTE: the tarball named by the author was removed after the files were extracted
 into the directory instead. These files were added to the list.
@@ -91,7 +91,7 @@ Yes, the test suite really is 5 times larger than the actual program. You
 
 ### IMPORTANT
 
-[test.perl](test-su.perl) expects the `sudoku-sf` executable to be
+[test.perl](%%REPO_URL%%/2005/aidan/test-su.perl) expects the `sudoku-sf` executable to be
 `./sudoku-sf`. If you rename it, please change the definition of `$sf_exe` to the
 new name.
 
@@ -219,7 +219,7 @@ Input should be the numbers of each row in turn. Empty spaces can be
 represented as a full stop (`.`) or zero (`0`). Other characters are ignored, so you
 can cut-and-paste either example sudoku puzzle from above into a file and feed that
 in. The program has coped with every input I've thrown at it so far, including
-an [empty grid](blank.sudoku).
+an [empty grid](%%REPO_URL%%/2005/aidan/blank.sudoku).
 
 Output consists of the problem, then the solution, then a message of
 success/failure.

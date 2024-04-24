@@ -512,7 +512,7 @@ and detract from its single minded focus on conciseness.
 
 It implicitly declares functions `read(2)`, `write(2)`, `exit(3)` and
 `calloc(3)`, the latter two incompatibly.  32 bit and 64 bit executables are
-separate [Makefile](Makefile) targets, involving a change from `int` to `long`
+separate [Makefile](%%REPO_URL%%/2012/tromp/Makefile) targets, involving a change from `int` to `long`
 and from a hardcoded sizeof of 4 to 8.
 
 The program has been tested to work correctly on Linux/Solaris/MacOSX both in 32

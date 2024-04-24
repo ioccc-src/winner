@@ -219,7 +219,7 @@ Here is a brief description of the scenery files:
     Simple obstacle course.  Try to fly over the buildings and under the
     bridges.
 
-- [pyramids.sc](1998/banks/pyramids.sc)
+- [pyramids.sc](%%REPO_URL%%/1998/banks/pyramids.sc)
 
     Fly over the tombs of the ancient Pharaohs, in this (fictitious) Egyptian
     landscape.

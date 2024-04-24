@@ -1,4 +1,4 @@
-## To build:
+%%REPO_URL%%/2019/lynn/## To build:
 
 ``` <!---sh-->
     make
@@ -35,8 +35,8 @@ the program and the script.
 
 ## Judges' remarks:
 
-[1991/davidguy](../../1991/davidguy/index.html),
-[2011/blakely](../../2011/blakely/index.html), ...
+[1991/davidguy](%%REPO_URL%%/1991/davidguy/index.html),
+[2011/blakely](%%REPO_URL%%/2011/blakely/index.html), ...
 
 ...This entry likely concludes the IOCCC category "Cellular automata simulators";
 it would be very hard to beat it on its field.
@@ -135,7 +135,7 @@ is the current macrocell (`L`) and which zoom Scale you are watching (`S`).
 
 This entry is quite portable hopefully on most modern platforms. It assumes X
 Window support of course. More than 2GB of memory is recommended. Configuration
-through [Makefile](Makefile) is provided for the display windows size and for
+through [Makefile](%%REPO_URL%%/2019/dogon/Makefile) is provided for the display windows size and for
 the memory usage. The Makefile provided configuration (`Z=0x20000000`) will need a
 system with 4GB DRAM to run nicely. There are several other salient assumptions
 though:
@@ -228,7 +228,7 @@ includes some famous name dropping and documents itself as usual.
 ### Further spoilers, engineering, and obfuscation galore:
 
 Those wait for you, curious and intrepid reader, in the attached
-[apholife.c](apholife.c) file, which is a partially obfuscated version of the
+[apholife.c](%%REPO_URL%%/2019/ciura/apholife.c) file, which is a partially obfuscated version of the
 program I wrote with a lot of helpful annotations and comments for myself and
 posterity, revealing some of the magic under the hood. This program is also a
 somewhat improved version which uses `ldexp()`s in the draw routine and has

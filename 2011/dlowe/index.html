@@ -501,10 +501,10 @@ assigned a target value of <code>0</code>. Intervening directories (if any) will
 intermediate target values.</p>
 <p>The learning rate is hard-coded as <code>0.3</code>. No momentum factor is used.</p>
 <h4 id="png-corpora">png corpora</h4>
-<p>The <a href="dlowe-aux-data/png-1">png-1</a> corpus was obtained by manually scraping the first results from an
+<p>The <code>dlowe-aux-data/png-1</code> corpus was obtained by manually scraping the first results from an
 <a href="https://images.google.com" class="uri">https://images.google.com</a> search for “<a href="https://www.google.com/search?tbm=isch&amp;sxsrf=APwXEddqIU34dxhpFdjEa8emNJKHOkYXIw:1683049158657&amp;source=hp&amp;biw=1727&amp;bih=952&amp;ei=xkpRZLapJtLKkPIP8bGKkAk&amp;iflsig=AOEireoAAAAAZFFY1nbmEUHC74Cmg3Y5rEY1fV7ocASZ&amp;ved=0ahUKEwi2pPXZltf-AhVSJUQIHfGYApIQ4dUDCAY&amp;uact=5&amp;oq=obfuscate+filetype:png&amp;gs_lcp=CgNpbWcQA1AAWABg9QNoAHAAeACAATuIATuSAQExmAEAoAECoAEBqgELZ3dzLXdpei1pbWc&amp;sclient=img&amp;q=obfuscate&amp;tbs=ift:png">obfuscate
 filetype:png</a>”.</p>
-<p>The <a href="dlowe-aux-data/png-0">png-0</a> corpus was obtained by manually scraping the first results from an
+<p>The <code>dlowe-aux-data/png-0</code> corpus was obtained by manually scraping the first results from an
 <a href="https://images.google.com" class="uri">https://images.google.com</a> search for “<a href="https://www.google.com/search?tbm=isch&amp;ved=2ahUKEwiowo7fltf-AhXSOUQIHbJBDp8Q2-cCegQIABAA&amp;oq=obfuscate+filetype:gif&amp;gs_lcp=CgNpbWcQAzoECCMQJzoHCAAQigUQQzoFCAAQgARQ6AxY6AxgpBJoAHAAeACAAUeIAcsBkgEBM5gBAKABAaoBC2d3cy13aXotaW1nwAEB&amp;sclient=img&amp;ei=0UpRZOiVINLzkPIPsoO5-Ak&amp;bih=952&amp;biw=1727&amp;q=obfuscate&amp;tbs=ift:gif">obfuscate
 filetype:gif</a>”.</p>
 <h5 id="results">Results:</h5>
@@ -512,7 +512,7 @@ filetype:gif</a>”.</p>
 <li>Using these corpora as a training set;</li>
 <li>Using several hundred random <code>*.gif</code> and <code>*.png</code> files from my home computer as
 a test set;</li>
-<li>Using the included <a href="earlystop.pl">earlystop.pl</a> script, which stopped after 67000 iterations.</li>
+<li>Using the included <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/earlystop.pl">earlystop.pl</a> script, which stopped after 67000 iterations.</li>
 <li>Interpreting output of <code>&gt; 0.5</code> as “probably a <code>.png</code>” and <code>&lt; 0.5</code> as “probably
 a <code>.gif</code>”</li>
 </ul>
@@ -554,7 +554,7 @@ figuring out how to concatenate directory and file names…).</p>
 representation and <a href="https://en.wikipedia.org/wiki/Endianness">endianness</a>.</p>
 <p>Making sure not to
 <a href="https://en.wikipedia.org/wiki/Overfitting#Machine_learning">overfit</a> the network to the training data is a bit of a
-black art. I have enclosed <a href="earlystop.pl">earlystop.pl</a>, a wrapper script that implements
+black art. I have enclosed <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/earlystop.pl">earlystop.pl</a>, a wrapper script that implements
 a simple ‘early stopping’ algorithm; other techniques are possible.</p>
 <p>Bad input (e.g. nonexistent files, non-numeric number of iterations, etc.)
 tends to result in empty output.</p>

@@ -131,7 +131,7 @@ situation and effectively halts.
 I had the pleasure and pain to find all three behaviours on the
 platforms I use regularly.
 
-The file [schweikh3.info](schweikh3.info) has output for
+The file [schweikh3.info](%%REPO_URL%%/1996/schweikh3/schweikh3.info) has output for
 Solaris, FreeBSD and Linux. The Linux case is interesting in that
 the behaviour changes when `calloc(3)` is used instead of `malloc(3)`.
 For FreeBSD, the last two lines are not messages stemming from

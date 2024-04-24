@@ -125,8 +125,8 @@ favorite entries!
 In 2023 remarks were discovered from [Sjoerd
 Mullender](../../authors.html#Sjoerd_Mullender), one of the authors, and so was the
 program that was used by the authors to generate the array that he referred to.
-Because [a.out.h](a.out.h), which [gentab.c](gentab.c) uses, is not available in
-all systems (like macOS) and more importantly because we wanted it to be as
+Because [a.out.h](%%REPO_URL%%/1984/mullender/a.out.h), which [gentab.c](%%REPO_URL%%/1984/mullender/gentab.c) uses,
+is not available in all systems (like macOS) and more importantly because we wanted it to be as
 close to as the original as possible we used a copy of
 <https://raw.githubusercontent.com/dspinellis/unix-history-repo/Research-Release/usr/include/a.out.h>
 in the *fabulous* [Unix History
@@ -386,7 +386,7 @@ format randomly. So we wrote a program to choose an appropriate format at
 random. The program we wrote for that follows.  This program actually also
 extracted the machine code from the object file.
 
-NOTE from judges: see [gentab.c](gentab.c) for a copy of this file that can be
+NOTE from judges: see [gentab.c](%%REPO_URL%%/1984/mullender/gentab.c) for a copy of this file that can be
 compiled in modern systems.
 
 ``` <!---c-->

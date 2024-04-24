@@ -410,7 +410,7 @@ it into two portions: the initial macro section where I had limited resources
 which you should disregard its shape, unless you like it, and the rest, which is a
 separator in the form of a single line followed by a section signifying the
 function of the program, a block with removed shape of lambda character. Even
-the official IOCCC size tool acknowledges this: When you call <code>./iocccsize -i &lt;prog.c</code>, using the <a href="../../2019/iocccsize.c">2019 version of
+the official IOCCC size tool acknowledges this: When you call <code>./iocccsize -i &lt;prog.c</code>, using the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/iocccsize.c">2019 version of
 iocccsize</a>, iocccsize returns <strong>955</strong>,
 which is the Unicode codepoint of the <strong>λ</strong> character.</p>
 <p>It might be a surprise for you that according to the IOCCC size tool the program is
@@ -420,7 +420,7 @@ by the sheer length of the dividing line and totally overlooks the rest of the p
 <p>When built directly using</p>
 <pre><code>    make</code></pre>
 <p>the program (<code>prog</code>) accepts a single parameter with the name of an Unlambda program. You can
-download the <a href="https://github.com/irori/advent-unlambda" title="Adventure">Colossal Cave Adventure</a> (the <a href="advent.unl">advent.unl</a> file)
+download the <a href="https://github.com/irori/advent-unlambda" title="Adventure">Colossal Cave Adventure</a> (the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/advent.unl">advent.unl</a> file)
 and run it like this:</p>
 <pre><code>    ./prog advent.unl</code></pre>
 <p><strong>NOTE</strong>: the file was added to the entry so there is no need to download it.</p>
@@ -428,7 +428,7 @@ and run it like this:</p>
 <a href="http://www.madore.org/~david/programs/unlambda/#distrib" title="Reference Unlambda distribution">Unlambda distribution</a> on the Unlambda homepage. The most complex programs there are
 entries from <a href="http://www.madore.org/~david/programs/unlambda/#quine" title="Unlambda quine contest">quine contest</a>.</p>
 <p>There is an alternative build path that requires the 2018 IOCCC size tool to complete. Put the tool
-source <a href="iocccsize_2018.c">iocccsize_2018.c</a> in the project directory and call</p>
+source <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovskyiocccsize_2018.c">iocccsize_2018.c</a> in the project directory and call</p>
 <pre><code>    make identify</code></pre>
 <p>It will build the tool and use it to build an alternative program <code>prog2</code>, which in turn will
 produce an Unlambda program <code>identify.unl</code>. <code>make identify</code> runs this program to identify
@@ -502,7 +502,7 @@ since it was developed using <code>char</code>s it should be always used safely.
 </ul>
 <h3 id="spoilers">Spoilers:</h3>
 <ul>
-<li><p>You can examine the <a href="progSpoiler.c">progSpoiler.c</a> file. It is the original
+<li><p>You can examine the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovskyprogSpoiler.c">progSpoiler.c</a> file. It is the original
 final version of the interpreter, before I started the downsizing. It accepts
 one more optional parameter that specifies a filename for the output Unlambda
 function (it’s the Unlambda function that remains after all function
@@ -547,7 +547,7 @@ were shuffled both for <code>S</code> functions and Apply functions in the same 
 the meaning of <code>f</code> and <code>r</code> prefixes.</p></li>
 </ul>
 <h3 id="identification-spoiler">Identification spoiler:</h3>
-<p>The alternative build path <code>make identify</code> output commemorates a <a href="../../2014/birken/index.html" title="Best use of port 1701">previous IOCCC
+<p>The alternative build path <code>make identify</code> output commemorates a <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/birken/index.html" title="Best use of port 1701">previous IOCCC
 winning entry</a> which uses similar methods to mess with the size tool.</p>
 <h3 id="judges-spoilers">Judges’ spoilers:</h3>
 <p>It is not a bug, it is a feature. :)</p>

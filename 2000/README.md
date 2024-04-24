@@ -45,7 +45,7 @@ them for the next IOCCC.
 We believe you will be impressed with this year's winning entries.  The [Best of
 Show](jarijyrki/index.html) is a fine example of compact obfuscation. But don't
 ignore the shorter entries.  The [Best Small Program](natori/index.html), [Best
-Abuse of User](briddlebane/README.m) and [Most Complete Program](tomx/index.html)
+Abuse of User](briddlebane/index.html) and [Most Complete Program](tomx/index.html)
 are well worth studying in detail.
 
 The [Worst Abuse of the Rules](dlowe/index.html) is technically allowed by the

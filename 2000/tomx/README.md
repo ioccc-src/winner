@@ -4,7 +4,7 @@
     make
 ```
 
-There is an alternate version that compiles [mkentry.c](mkentry.c). See
+There is an alternate version that compiles [mkentry.c](%%REPO_URL%%/2000/mkentry.c). See
 [alternate code](#alternate-code).
 
 

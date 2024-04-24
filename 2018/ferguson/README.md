@@ -29,9 +29,9 @@ monkey Eric. See [Alternate code](#alternate-code) below.
     ./monkey-words.sh
 ```
 
-NOTE: the [try.sh](try.sh) script will run the other two scripts but if the
-first one, [id.sh](id.sh) is terminated early in the try script, the second one,
-[monkey-words.sh](monkey-words.sh) will not be run.
+NOTE: the [try.sh](%%REPO_URL%%/2018/ferguson/try.sh) script will run the other two scripts but if the
+first one, [id.sh](%%REPO_URL%%/2018/ferguson/id.sh) is terminated early in the try script, the second one,
+[monkey-words.sh](%%REPO_URL%%/2018/ferguson/monkey-words.sh) will not be run.
 
 You can reconfigure certain values. These are described by the author in more
 detail in the [S, M and N Constants](#constants) section. The script above will
@@ -71,9 +71,9 @@ Use `weasel.alt` as you would `weasel` above.
     ./monkey-words.alt.sh
 ```
 
-NOTE: the [try.alt.sh](try.alt.sh) script will run the other two scripts but if the
-first one, [id.alt.sh](id.alt.sh) is terminated early in the try script, the second one,
-[monkey-words.alt.sh](monkey-words.alt.sh) will not be run.
+NOTE: the [try.alt.sh](%%REPO_URL%%/2018/ferguson/try.alt.sh) script will run the other two scripts but if the
+first one, [id.alt.sh](%%REPO_URL%%/2018/ferguson/id.alt.sh) is terminated early in the try script, the second one,
+[monkey-words.alt.sh](%%REPO_URL%%/2018/ferguson/monkey-words.alt.sh) will not be run.
 
 You can reconfigure certain values. These are described by the author in more
 detail in the [S, M and N Constants](#constants) section. The script above will
@@ -225,7 +225,7 @@ operative phrase is *given enough time*; but even if it's extremely unlikely
 monkey; I thought the monkey had it too easy: unlike his limited keyboard I have
 (besides space) every character in the ASCII range `0<=126` that
 `isprint()` returns non-zero except that only capital letters are included;
-the file [prog.alt.c](prog.alt.c) has a slightly smaller keyboard. There are some
+the file [prog.alt.c](%%REPO_URL%%/2018/ferguson/prog.alt.c) has a slightly smaller keyboard. There are some
 additional features I have added (including two Easter eggs); amongst others:
 ability to change the target string and maximum length. See
 **[How it works](#how)**, **[Hints](#hints)** and **[How to build](#build)** for
@@ -1358,7 +1358,7 @@ Finally I would like to thank my mother for being the best mum anyone could ask
 for, who's always been here for me and whom I also inherit the keen analytical
 mind from. I love you all!
 
-I want to also thank [Dave Burton](../../authors#Dave_Burton) for acknowledging me in
+I want to also thank [Dave Burton](../../authors.html#Dave_Burton) for acknowledging me in
 his [Dave Burton]((../../authors.html#Dave_Burton) for his [2018/burton2](../burton2/index.html)
 entry for as he put it 'being relentless with pursuit of bugs'. To think that it
 was circumstantial to my entry too makes it all the more unlikely but that

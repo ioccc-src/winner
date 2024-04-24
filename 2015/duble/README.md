@@ -69,12 +69,12 @@ wondering if it was not the reason for its very erratic behaviour.
 
 ### [prog.c](%%REPO_URL%%/2015/duble/prog.c) vs [prog.alt.c](%%REPO_URL%%/2015/duble/prog.alt.c)
 
-The file [prog.alt.c](prog.alt.c) is the one I submitted.
+The file [prog.alt.c](%%REPO_URL%%/2015/duble/prog.alt.c) is the one I submitted.
 
 [Gil Dogon](../../authors.html#Gil_Dogon) noted a few unsafe statements (statements
 whose behaviour is undefined in the C standard and, as such, could cause issues
 with other compilers or optimization levels). These have been fixed in
-[prog.c](prog.c).
+[prog.c](%%REPO_URL%%/2015/duble/prog.c).
 
 After this fix, in order to remain rule-2-compliant, a variable name has also
 been shortened in this file.

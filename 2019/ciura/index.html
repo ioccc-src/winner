@@ -451,18 +451,19 @@ unlimited. The characters in <code>LETTERS</code> must not repeat. The length of
 is too long, and 2 if the command-line arguments are missing.</p>
 <h3 id="helper-scripts">Helper scripts:</h3>
 <ul>
-<li><p><a href="getwords.sh">getwords.sh</a></p>
+<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/getwords.sh">getwords.sh</a></p>
 <p><code>./getwords.sh LANGUAGE_CODE</code></p>
 <p>outputs a sorted list of unique words in a given language, one per line. It
 requires <code>aspell</code> with a dictionary for <em>LANGUAGE_CODE</em>.</p></li>
-<li><p><a href="wrapprog.py">wrapprog.py</a></p>
+<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/wrapprog.py">wrapprog.py</a></p>
 <p><code>./wrapprog.py LETTERS [N]</code></p>
 <p>works similarly to <code>./prog LETTERS [N]</code> except that it merges pangrams
 before passing them to <code>prog</code> and expands them in <code>prog</code>’s output. This way,
 it finishes the job faster than <code>prog</code> when there are millions of perfect
 pangrams. It requires a UTF-8 locale.</p></li>
-<li><p><a href="de.sh">de.sh</a>, <a href="en.sh">en.sh</a>, <a href="fr.sh">fr.sh</a>, <a href="it.sh">it.sh</a>,
-<a href="pl.sh">pl.sh</a>, and <a href="ru.sh">ru.sh</a> output German,
+<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/de.sh">de.sh</a>, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/en.sh">en.sh</a>,
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/fr.sh">fr.sh</a>, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/it.sh">it.sh</a>,
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/pl.sh">pl.sh</a>, and <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/ru.sh">ru.sh</a> output German,
 English, French, Italian, Polish, and Russian perfect pangrams, respectively.
 They require a UTF-8 locale.</p></li>
 </ul>
@@ -472,7 +473,7 @@ They require a UTF-8 locale.</p></li>
 among the programs that won IOCCC in the past), and <em>obscure bugs</em> (see
 the questions about Linux core dumps below).</p>
 <p>To a casual eye, this entry may look similar to
-<a href="../../2005/klausler/index.html">2005/klausler</a>.
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/klausler/index.html">2005/klausler</a>.
 However, <code>prog</code> is internationalized and way faster. On my machine,
 <code>./klausler abcdefghijklmnopqrstuvwxyz</code> printed only 3,965 perfect
 pangrams until I killed it after 144 hours running, while the
@@ -482,7 +483,7 @@ finished in 62 minutes, reporting 1,640,569,315 perfect pangrams, and
 the example from section <a href="#wit">What is this?</a> finished in 1.35
 seconds. On the other hand, <code>prog</code> can only output series of words
 with non-repeating characters, unlike <code>klausler</code>.</p>
-<p>In contrast to <a href="prog.alt.c">prog.alt.c</a>, <a href="prog.c">prog.c</a> does not call
+<p>In contrast to <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/prog.alt.c">prog.alt.c</a>, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/prog.c">prog.c</a> does not call
 <code>fflush(stdout)</code> after outputting each line, thus running faster.
 I am grateful to Witold Jarnicki for suggesting this change.
 The original <code>prog</code> finished the example above in 100 minutes
@@ -504,8 +505,8 @@ have no perfect pangrams.</p>
 by without <code>goto M</code> and <code>goto H</code>, I challenge the adherents of
 structured programming to refactor <code>goto T</code>, which jumps back into a
 nested <code>if</code> block.</p>
-<p>With the supplied <a href="Makefile">Makefile</a>, both <code>gcc</code> and <code>clang</code> compile
-<a href="prog.c">prog.c</a> without warnings in C11 and C99 mode. For a clean
+<p>With the supplied <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/Makefile">Makefile</a>, both <code>gcc</code> and <code>clang</code> compile
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/prog.c">prog.c</a> without warnings in C11 and C99 mode. For a clean
 compilation with <code>gcc -std=c90</code>, add <code>-Wno-format</code> to
 <code>CSILENCE</code> in <code>Makefile</code>.</p>
 <!--

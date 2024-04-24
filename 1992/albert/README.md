@@ -57,7 +57,7 @@ judges this Email message:
 ```
 
 The [albert.alt.c](%%REPO_URL%%/1992/albert/albert.c) file is the fixed file, whereas the
-[albert.c](1992/albert/1992/albert/lbert.c) is the file before applying Leo Broukhis' fix.
+[albert.c](%%REPO_URL%%/1992/albert/1992/albert/lbert.c) is the file before applying Leo Broukhis' fix.
 
 
 ### Alternate build:

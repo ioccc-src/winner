@@ -96,7 +96,7 @@ When evolving forwards, the code can only be stopped by killing the
 program. In the reverse direction, the code can either be killed, or
 will stop if it is unable to find a grid that will evolve to the
 current layout correctly. This can be seen with the sample grid
-[t0_3.dat](t0_3.dat), which evolves backwards by only two time-steps.
+[t0_3.dat](%%REPO_URL%%/2011/blakely/t0_3.dat), which evolves backwards by only two time-steps.
 
 
 ### Input file format

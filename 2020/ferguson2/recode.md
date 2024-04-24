@@ -2,7 +2,7 @@
 
 N.B. At the end of this file I have given a fun exercise that can be used to
 explore my [Enigma machine](https://www.cryptomuseum.com/crypto/enigma/index.htm)
-[simulator](prog.c). I really encourage you to do this but of course you don't
+[simulator](%%REPO_URL%%/2020/ferguson2/prog.c). I really encourage you to do this but of course you don't
 have to if you don't wish to.
 
 
@@ -97,8 +97,8 @@ if you don't give the option to read in a file for input.
     1WX5AK4RE1XEHJSAPYCIZBWDQNRUVGIOCCC
 ```
 
-Though you won't find some of those strings in [recode.c](recode.c) or
-[prog.c](prog.c). Yes the `WAR` for the Ringstellung (Ring settings) is an
+Though you won't find some of those strings in [recode.c]((%%REPO_URL%%/2020/ferguson2/recode.c) or
+[prog.c]((%%REPO_URL%%/2020/ferguson2/prog.c). Yes the `WAR` for the Ringstellung (Ring settings) is an
 amusing coincidence *but it really did happen!*
 
 As for `-f` the contents would be output with the settings e.g. to pipe to
@@ -265,7 +265,7 @@ pair](https://www.cryptomuseum.com/crypto/enigma/i/sb.htm); this can be done in
 a number of ways but two dots is one. Notice also that it's in a different order
 than the simulator: because with the size restrictions on my entry I saved bytes
 by using the same loop where I could. It just felt more natural to have them
-grouped together in a configurator for the [simulator](prog.c).
+grouped together in a configurator for the [simulator]((%%REPO_URL%%/2020/ferguson2/prog.c).
 
 ``` <!---sh-->
     $ echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRIOCCC | ./prog - 2>/dev/null

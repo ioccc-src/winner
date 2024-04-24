@@ -114,7 +114,7 @@ last digit.  Four common elements could also be written as isotopes of these two
 elements: `He=Np(2)`, `Li=Pu(2)`, `Ta=Np(3)`, `W=Pu(3)`.  To get other isotopes,
 just change the last digit to a number greater than 3.
 
-The build file runs [jdalbec.c](jdalbec.c) through the C preprocessor to
+The build file runs [jdalbec.c](%%REPO_URL%%/2004/jdalbec/jdalbec.c) through the C preprocessor to
 generate `jdalbec2.c` which is edited with `ed(1)` (NOTE: this was
 changed to `sed(1)` by the judges) to correct spacing
 problems caused by some preprocessors.  (I know you dislike
@@ -122,10 +122,10 @@ Perl, but hopefully `ed(1)` is more common on POSIX systems than
 Perl.)  The build file then compiles `jdalbec2.c]` and removes the
 `jdalbec2.c` file.
 
-I don't think I'm abusing the [Makefile](Makefile) since I'm only using
+I don't think I'm abusing the [Makefile](%%REPO_URL%%/2004/jdalbec/Makefile) since I'm only using
 147 characters including white space and the `#!` line and the
 commented-out `-Wall -pedantic` options.  The [rules for the
-16th IOCCC](../../2004/rules.txt) specifically allowed build files up to 521
+16th IOCCC](../rules.txt) specifically allowed build files up to 521
 characters long so my build file would have been well within
 those limits.  (What typo?)
 
@@ -168,7 +168,7 @@ line 3 because the compiler doesn't recognize `??=` as a trigraph
 step on Mac OS X 10.1.5 generates lots of errors in "smart
 mode" because the "smart" preprocessor expects a valid C
 program as input.  The preprocessor then falls back to "basic
-mode" and preprocesses [jdalbec.c](jdalbec.c) successfully without warnings,
+mode" and preprocesses [jdalbec.c](%%REPO_URL%%/2004/jdalbec/jdalbec.c) successfully without warnings,
 even when I give it the `-Wall -pedantic` options.  It inserts
 a lot of extra spaces into the preprocessed output which is
 why I had to add the `ed(1)` step to the build file so that my
@@ -191,7 +191,7 @@ it if you run into this feature (e.g. `1 22` instead of `122`).
 Note: you may want to be sure you have a limit on stack size before trying this.
 I ran it on Debian GNU/Linux and discovered that I did not have a limit on stack
 size.  Fortunately the OS killed the process after a while.  This is consistent
-with the output of [1996/schweikh3](../../1996/schweikh3/schweikh3.c) which reports
+with the output of [1996/schweikh3](%%REPO_URL%%/1996/schweikh3/schweikh3.c) which reports
 `malloc lied!  Killed by SIGKILL`.
 
 Arguments matching `/(?:.){10,}/` will produce visually incorrect

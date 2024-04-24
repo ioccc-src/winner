@@ -158,7 +158,7 @@ These test cases were vital in debugging and regression testing, and provided a 
 determine which tool was correct when there were differences.
 
 ```
-    A version of this tool in more clearly written C ([tac.c](tac.c))
+    A version of this tool in more clearly written C
     is presented for the Judge's consideration as a more accurate replacement for `iocccsize`.
     This obfuscated entry is derived from (and compatible with) that code,
     but due to obfuscation, has had some significant, deep changes for the contest.
@@ -166,10 +166,10 @@ determine which tool was correct when there were differences.
 ```
 
 NB: `iocccsize` gets a different answer from `tac` on its own
-([iocccsize.c](../../2018/iocccsize.c)) source code;
+([iocccsize.c](%%REPO_URL%%/2018/iocccsize.c)) source code;
 `tac` gets the correct answer.  This is due to the aforementioned bugs within `iocccsize`,
 proved by fixing
-[iocccsize.c](../../2018/iocccsize.c) with the included patch, so `iocccsize` reports
+[iocccsize.c](%%REPO_URL%%/2018/iocccsize.c) with the included patch, so `iocccsize` reports
 the correct answer for itself.
 
 ### But wait... There's More!
@@ -219,7 +219,7 @@ This allows such additional programs in concert with the tool's primary operatio
 
 A poor-man's de-obfuscator can be based upon the output of `tac -t` and a
 handful of simple rules (and another use of the external keyword file).  A more
-refined version of this is included in the file [unob.sh](unob.sh), but the
+refined version of this is included in the file [unob.sh](%%REPO_URL%%/2018/burton/unob.sh), but the
 simple code below is a serviceable obfuscated C de-obfuscator in a _scripting
 language_.  It really is this easy with `tac`:
 
@@ -294,7 +294,7 @@ language_.  It really is this easy with `tac`:
 * The code describes its function by careful arrangement of variables up front...
 * ...coupled with a description of the typical IOCCC contestant, or at least the author
 * Why shouldn't trigraph parsing be written in trigraph?
-* Where [iocccsize.c](../../2018/iocccsize.c) mocks, this code flaunts:
+* Where [iocccsize.c](%%REPO_URL%%/2018/iocccsize.c) mocks, this code flaunts:
   "_no matter how well you may think you understand this code, you don't, so don't mess with it. :-)_"
 * `O,0,l,1` are used to confusing effect, local names obscure global names.
 * Globals are used to pass information between routines: don't reorder "unrelated" statements....
@@ -316,7 +316,7 @@ using a different list.  For instance: removing all the secondary keywords;
 removing all the C11 keywords; trying just K&R C.  Since C++ and Java share the
 same operators as C, just change the keyword list and `tac` will correctly
 tokenize both of these; the tokens `>>>` and `::` can be handled with a short
-post-filter ([tokenfix.sh](tokenfix.sh), included).
+post-filter ([tokenfix.sh](%%REPO_URL%%/2018/burton2/tokenfix.sh), included).
 
 I believe this entry may also satisfy the request for gratuitous use of all the
 C11 keywords?  Whether this context satisfies "intended C language context" is a
@@ -326,20 +326,20 @@ the IOJCC trash can.
 The following reserved word files are included:
 
 
-* [kandr](kandr)    from my venerable 1978 18th printing "The C Programming Language"
-* [v7unix](v7unix)  7th edition Unix source code, extracted from c00.c
-* [kandr2](kandr2)  from my 1988 1st printing "The C Programming Language", 2e
-* [ansi](ansi)	    ANSI X3.159-1989
-* [c99](c99)	    ISO/IEC 9899:1999(E)
-* [c11](c11)	    ISO/IEC 9899:201x(E) N1570
-* [c++98](c++98)    http://en.cppreference.com/w/cpp/keyword
-* [c++11](c++11)    ISO/IEC 14882:2011(E) N3337 2012-01-16
-* [c++14](c++14)    ISO/IEC 14882:2014(E) N4296 2014-11-09
-* [java8](java8)    <http://docs.oracle.com/javase/specs/index.html>
-* [ioccc.kw.freq](ioccc.kw.freq)    c11 + additional words, sorted on frequency of occurrence in IOCCC entries
+* [kandr](%%REPO_URL%%/2018/burton/kandr)    from my venerable 1978 18th printing "The C Programming Language"
+* [v7unix](%%REPO_URL%%/2018/burton/v7unix)  7th edition Unix source code, extracted from c00.c
+* [kandr2](%%REPO_URL%%/2018/burton/kandr2)  from my 1988 1st printing "The C Programming Language", 2e
+* [ansi](%%REPO_URL%%/2018/burton/ansi)	    ANSI X3.159-1989
+* [c99](%%REPO_URL%%/2018/burton/c99)	    ISO/IEC 9899:1999(E)
+* [c11](%%REPO_URL%%/2018/burton/c11)	    ISO/IEC 9899:201x(E) N1570
+* [c++98](%%REPO_URL%%/2018/burton/c++98)    http://en.cppreference.com/w/cpp/keyword
+* [c++11](%%REPO_URL%%/2018/burton/c++11)    ISO/IEC 14882:2011(E) N3337 2012-01-16
+* [c++14](%%REPO_URL%%/2018/burton/c++14)    ISO/IEC 14882:2014(E) N4296 2014-11-09
+* [java8](%%REPO_URL%%/2018/burton/java8)    <http://docs.oracle.com/javase/specs/index.html>
+* [ioccc.kw.freq](%%REPO_URL%%/2018/burton/ioccc.kw.freq)    c11 + additional words, sorted on frequency of occurrence in IOCCC entries
 
 
-NB: The keyword file used in this code is derived from the list in [iocccsize.c](../../2018/iocccsize.c),
+NB: The keyword file used in this code is derived from the list in [iocccsize.c](%%REPO_URL%%/2018/iocccsize.c),
 which is neither complete (`#define`, `#ifndef`, `#undef` are missing
 
 ```
@@ -396,12 +396,13 @@ Thus:
 ### Coda:
 
 [Cody Boone Ferguson](../../authors.html#Cody_Boone_Ferguson) was relentless in his pursuit of bugs.
-Thanks to his reports, the version of [unob.sh](unob.sh) is stronger,
-`tac` groks digraphs, [tokenfix.sh](tokenfix.sh) corrects for missing digraphs
-in [prog.c](prog.c), and the program [manpage.sh](manpage.sh) was added to the corpus.
+Thanks to his reports, the version of [unob.sh](%%REPO_URL%%/2018/burton2/unob.sh) is stronger,
+`tac` groks digraphs, [tokenfix.sh](%%REPO_URL%%/2018/burton2/tokenfix.sh) corrects for missing digraphs
+in [prog.c](%%REPO_URL%%/2018/burton/prog.c), and the program
+[manpage.sh](%%REPO_URL%%/2018/burton/manpage.sh) was added to the corpus.
 
-[manpage.sh](manpage.sh) is a useful program that turns ASCII versions of man
-pages (e.g. [tac.man](tac.man)) into real man pages.  It works for C and C-like
+[manpage.sh](%%REPO_URL%%/2018/burton/manpage.sh) is a useful program that turns ASCII versions of man
+pages (e.g. [tac.man](%%REPO_URL%%/2018/burton/tac.man)) into real man pages.  It works for C and C-like
 languages, command lines, and was designed to handle man page sections 1-8.  It
 works well on most inputs, but tends to need some raw nroff for more fancy
 constructions, such as combined arguments (e.g. the `-r` and `-s` arguments to tac
@@ -419,7 +420,7 @@ Try:
 ```
 
 NOTE: in 2023 the `tac.man` was updated to proper man format and renamed
-[tac.1](tac.1).
+[tac.1](%%REPO_URL%%/2018/burton/tac.1).
 
 <!--
 

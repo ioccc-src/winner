@@ -411,15 +411,16 @@ trace of those scary <code>unsafeThisAndThat</code> functions. All functions mus
 <pre><code>    cc -o prog prog.c</code></pre>
 <h3 id="demos">Demos:</h3>
 <h4 id="fibonacci-numbers">Fibonacci numbers:</h4>
-<p>Test the compiler on <a href="fib.hs">fib.hs</a>:</p>
+<p>Test the compiler on <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/fib.hs">fib.hs</a>:</p>
 <pre><code>    (./prog &lt; fib.hs ; cat prog.c) &gt; fib.c</code></pre>
 <p>Compiling the output produces a binary that prints the 30th Fibonacci number.</p>
-<p>The file <a href="ghcfib.hs">ghcfib.hs</a> includes <a href="fib.hs">fib.hs</a> with some glue code,
+<p>The file <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/ghcfib.hs">ghcfib.hs</a>
+includes <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/fib.hs">fib.hs</a> with some glue code,
 and shows GHC also accepts our subset of Haskell:</p>
 <pre><code>    ghc ghcfib.hs</code></pre>
 <h4 id="self-hosting-compiler">Self-hosting compiler:</h4>
 <p>To avoid spoiling this entry by revealing the original Haskell source, we
-instead provide <a href="hint.hs">hint.hs</a>, the output of a certain stage of the
+instead provide <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/hint.hs">hint.hs</a>, the output of a certain stage of the
 compiler when run on itself. This intermediate output is hopefully difficult to
 understand, yet is accepted by our compiler:</p>
 <pre><code>    (./prog &lt; hint.hs ; cat prog.c) &gt; hint.c
@@ -427,12 +428,12 @@ understand, yet is accepted by our compiler:</p>
     ./hint</code></pre>
 <p>The output program behaves like the compiler itself.</p>
 <p>Unlike the original source from which it is derived, GHC fails to compile
-<a href="hint.hs">hint.hs</a>. This is because values have been replaced with their <a href="https://en.wikipedia.org/wiki/Mogensen-Scott_encoding">Scott
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/hint.hs">hint.hs</a>. This is because values have been replaced with their <a href="https://en.wikipedia.org/wiki/Mogensen-Scott_encoding">Scott
 encodings</a>
 by this stage, which messes up type-checks; we’d need <code>equirecursive</code> types for
 it to work.</p>
 <h4 id="regexes">Regexes:</h4>
-<p>The file <a href="lol.hs">lol.hs</a> contains an adaptation of <a href="https://www.cs.dartmouth.edu/~doug/nfa.pdf">Doug McIlroy’s elegant code from
+<p>The file <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/lol.hs">lol.hs</a> contains an adaptation of <a href="https://www.cs.dartmouth.edu/~doug/nfa.pdf">Doug McIlroy’s elegant code from
 “Enumerating the strings of regular
 languages”</a>. We exercise it by
 showing the first entries of the length-ordered list of all strings consisting
@@ -443,7 +444,7 @@ of the characters <code>a</code> and <code>b</code> that contain an even number 
 <p>A GHC wrapper is provided:</p>
 <pre><code>    ghc ghclol.hs</code></pre>
 <h3 id="strongly-connected-components">Strongly-connected components:</h3>
-<p>See <a href="scc.hs">scc.hs</a> (and its GHC wrapper <a href="ghcscc.hs">ghcscc.hs</a>) for an elegant
+<p>See <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/scc.hs">scc.hs</a> (and its GHC wrapper <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/ghcscc.hs">ghcscc.hs</a>) for an elegant
 way to print the strongly-connected components of a graph in reverse topological
 order.</p>
 <pre><code>    (./prog &lt; scc.hs ; cat prog.c) &gt; scc.c</code></pre>
@@ -547,7 +548,7 @@ represent the integer <code>n</code> with a term equivalent to <code>Y(BT)n</cod
 <li>A sentinel in the heap often confused me, so ought to confuse others.</li>
 </ul>
 <p>Other obfuscation techniques are better appreciated after decoding the
-compiler. See <a href="hint.hs">hint.hs</a>.</p>
+compiler. See <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/hint.hs">hint.hs</a>.</p>
 <ul>
 <li>Mercilessly point-free. Everything is a combinator.</li>
 <li>Scott encoding. Everything is a combinator.</li>
