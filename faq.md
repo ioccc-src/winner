@@ -1175,7 +1175,7 @@ By X11 terminal application we suggest one of:
 
 * [Gnome](https://www.gnome.org) terminal application
 * [KDE](https://kde.org) terminal application
-* `xterm(`) terminal application
+* `xterm(1)` terminal application
 
 See below for various system related hints that may be of help.
 
