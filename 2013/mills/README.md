@@ -110,7 +110,7 @@ them.
 ### User-modifiable Features
 
 The code can be user-modified simply by changing the build command line.
-The following symbols are defined in the [Makefile](%%REPO_URL%%/2013/millsMakefile):
+The following symbols are defined in the [Makefile](%%REPO_URL%%/2013/mills/Makefile):
 
 * `-DLT=x1,y1,z1,x2,y2,z2,...` defines the coordinates of the lights in the
 scene. It should be a comma-separated list of coordinates `(x, y, z)`, three per
@@ -129,7 +129,7 @@ The original program bound the server to `INADDR_ANY` to allow everyone to
 experience the server's output.  The Judges suggested that I instead restrict
 the bind to `INADDR_LOOPBACK` to reduce security alarms.  As a compliant veteran
 of innumerable post-ship late feature additions, I have modified the
-[Makefile](%%REPO_URL%%/2013/millsMakefile) to inject the new code without destroying the beautiful
+[Makefile](%%REPO_URL%%/2013/mills/Makefile) to inject the new code without destroying the beautiful
 spherical symmetry of the source code.  In addition, I have altered the word
 `sin_port` to the more family-friendly version `win_port` (via
 `-Dwin_port="sin_addr.s_addr=htonl(2130706433),R.sin_port"`) to protect against

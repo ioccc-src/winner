@@ -162,7 +162,7 @@ The whole program is interpreted by macro expansion.
 For example, `S (K I)` is translated to a normal C code, `(s)((k)(i))`, or
 simply `s(k(i))`.
 
-This expression returns an abstract syntax tree, and [endoh1.c](%%REPO_URL%%/e2013/endoh1/ndoh1.c)
+This expression returns an abstract syntax tree, and [endoh1.c](%%REPO_URL%%/2013/endoh1/endoh1.c)
 evaluates it.
 
 This program uses a very simple "term rewriting" approach for evaluating SKI

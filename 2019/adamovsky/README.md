@@ -73,7 +73,7 @@ separator in the form of a single line followed by a section signifying the
 function of the program, a block with removed shape of lambda character. Even
 the official IOCCC size tool acknowledges this: When you call `./iocccsize -i
 <prog.c`, using the [2019 version of
-iocccsize](%%REPO_URL%%/2019/iocccsize.c), iocccsize returns **955**,
+iocccsize.c](%%REPO_URL%%/2019/iocccsize.c), iocccsize returns **955**,
 which is the Unicode codepoint of the **&#955;** character.
 
 It might be a surprise for you that according to the IOCCC size tool the program is
@@ -103,7 +103,7 @@ You can also try other programs from the Web. Many example programs are in the o
 entries from [quine contest][4].
 
 There is an alternative build path that requires the 2018 IOCCC size tool to complete. Put the tool
-source [iocccsize_2018.c](%%REPO_URL%%/2019/adamovskyiocccsize_2018.c) in the project directory and call
+source [iocccsize_2018.c](%%REPO_URL%%/2019/adamovsky/iocccsize_2018.c) in the project directory and call
 
 ``` <!---sh-->
     make identify
@@ -199,7 +199,7 @@ since it was developed using `char`s it should be always used safely.
 
 ### Spoilers:
 
-- You can examine the [progSpoiler.c](%%REPO_URL%%/2019/adamovskyprogSpoiler.c) file. It is the original
+- You can examine the [progSpoiler.c](%%REPO_URL%%/2019/adamovsky/progSpoiler.c) file. It is the original
 final version of the interpreter, before I started the downsizing. It accepts
 one more optional parameter that specifies a filename for the output Unlambda
 function (it's the Unlambda function that remains after all function

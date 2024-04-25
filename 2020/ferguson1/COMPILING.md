@@ -4,7 +4,7 @@ will need two different packages: the library itself but also the dev package
 that has the header files etc. If you use the Makefile obviously you need `make`
 too.
 
-In [gameplay.html](%%REPO_URL%%/2020/ferguson1/gameplay.html)
+In [gameplay.html](gameplay.html)
 I show how to easily customise the colours, set up
 different gameplay modes and various other things. The troubleshooting.md
 and terminals.md as well as bugs.md include a variety of information

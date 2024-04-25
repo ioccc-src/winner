@@ -103,7 +103,7 @@ can do so like:
 
 ## Judges' remarks:
 
-Read the [sykes1.html](%%REPO_URL%%/2006/sykes1/sykes1.html) page source.
+Read the [sykes1.html](sykes1.html) page source.
 Now then read the C source.  Confused?  :-) If it's not clear try:
 
 ``` <!---sh-->

@@ -163,7 +163,7 @@ among the programs that won IOCCC in the past), and _obscure bugs_ (see
 the questions about Linux core dumps below).
 
 To a casual eye, this entry may look similar to
-[2005/klausler](%%REPO_URL%%/2005/klausler/index.html).
+[2005/klausler](../../2005/klausler/index.html).
 However, `prog` is internationalized and way faster. On my machine,
 `./klausler abcdefghijklmnopqrstuvwxyz` printed only 3,965 perfect
 pangrams until I killed it after 144 hours running, while the

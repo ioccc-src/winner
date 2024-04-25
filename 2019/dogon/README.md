@@ -35,8 +35,8 @@ the program and the script.
 
 ## Judges' remarks:
 
-[1991/davidguy](%%REPO_URL%%/1991/davidguy/index.html),
-[2011/blakely](%%REPO_URL%%/2011/blakely/index.html), ...
+[1991/davidguy](../..//1991/davidguy/index.html),
+[2011/blakely](../../2011/blakely/index.html), ...
 
 ...This entry likely concludes the IOCCC category "Cellular automata simulators";
 it would be very hard to beat it on its field.

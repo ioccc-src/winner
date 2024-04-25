@@ -163,7 +163,7 @@ This entry has been tested on Windows (compiled with MS Visual Studio 2010 and
 supplied is good for Mac OS X, Linux and probably other Unices. I have received
 reports that the emulator works on Raspberry Pi/Android/ARM (you will need to
 compile with `-fsigned-char`) and iOS. You will need to adjust the
-[Makefile](%%REPO_URL%%/M2013/cable3/akefile) if your system lacks `sdl-config` to correctly point to the
+[Makefile](%%REPO_URL%%/2013/cable3/Makefile) if your system lacks `sdl-config` to correctly point to the
 SDL libraries and header files.
 
 On UNIX-based systems we can get raw keystrokes using `stty`. However Windows
@@ -221,7 +221,7 @@ the `fd.img` provided, which is a FreeDOS boot disk.
 Before running the emulator on a Unix-type system, `stty` needs to be used to
 put the keyboard into raw mode (and afterwards it needs to be put back to
 cooked). So, run the emulator using something like this script (provided as
-[cable3.sh](%%REPO_URL%%/c2013/cable3/able3.sh)):
+[cable3.sh](%%REPO_URL%%/2013/cable3/cable3.sh)):
 
 ``` <!---sh-->
     stty cbreak raw -echo min 0

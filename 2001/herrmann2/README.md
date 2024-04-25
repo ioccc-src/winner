@@ -18,8 +18,8 @@
     ./try.sh
 ```
 
-If you use vi(m) you can see a pattern in [herrmann2.cup](%%REPO_URL%%/2001/herrmann2herrmann2.cup) and
-[herrmann2.ioccc][(%%REPO_URL%%/2001/herrmann2herrmann2.ioccc]) by say:
+If you use vi(m) you can see a pattern in [herrmann2.cup](%%REPO_URL%%/2001/herrmann2/herrmann2.cup) and
+[herrmann2.ioccc][(%%REPO_URL%%/2001/herrmann2/herrmann2.ioccc]) by say:
 
 
 ```
@@ -32,7 +32,7 @@ and
     /l
 ```
 
-For additional fun in [herrmann2.cup](%%REPO_URL%%/2001/herrmann2herrmann2.cup) try:
+For additional fun in [herrmann2.cup](%%REPO_URL%%/2001/herrmann2/herrmann2.cup) try:
 
 
 ```
@@ -40,7 +40,7 @@ For additional fun in [herrmann2.cup](%%REPO_URL%%/2001/herrmann2herrmann2.cup) 
     /q
 ```
 
-and in [herrmann2.ioccc](%%REPO_URL%%/2001/herrmann2herrmann2.ioccc) try:
+and in [herrmann2.ioccc](%%REPO_URL%%/2001/herrmann2/herrmann2.ioccc) try:
 
 ```
     /n

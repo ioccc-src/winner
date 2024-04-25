@@ -221,7 +221,7 @@ Despite all this, the translator is not exclusively limited to running the
 [anonymous.ten](%%REPO_URL%%/2001/anonymous/anonymous.ten.c) program.  Other trivial **_x86_** programs may
 run on the translator \- and I have successfully run a wide range of "Hello
 World" programs, including one of last year's IOCCC entries,
-[tomx](%%REPO_URL%%/2000/tomx/index.html).
+[2000/tomx](../../2000/tomx/index.html).
 
 
 ### Complete Program

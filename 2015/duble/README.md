@@ -29,7 +29,7 @@ ctrl-c/sending intr.
 ## Alternate code:
 
 This alternate code, provided by the author, is discussed in more detail by the
-author in the '[prog.c](%%REPO_URL%%/ 2015/duble/prog.c) vs [prog.alt.c](%%REPO_URL%%/2015/duble/prog.alt.c)' section of their remarks.
+author in the '[prog.c](%%REPO_URL%%/2015/duble/prog.c) vs [prog.alt.c](%%REPO_URL%%/2015/duble/prog.alt.c)' section of their remarks.
 
 
 ### Alternate build:

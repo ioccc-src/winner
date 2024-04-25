@@ -23,7 +23,7 @@ NOTE: that's not a typo or mistake but one can also do:
 We changed the alias that the author's suggested alias from a
 C-shell alias to a Bourne-like shell alias.
 
-Note that `shst.c` is renamed to [stig.c](%%REPO_URL%%/1990/stigstig.c) in the distribution.
+Note that `shst.c` is renamed to [stig.c](%%REPO_URL%%/1990/stig/stig.c) in the distribution.
 
 WARNING: This program's `how to compile` is too specific to a particular shell.
 The obfuscation of this program is more related to shell obfuscation than C

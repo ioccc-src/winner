@@ -475,7 +475,7 @@ a:active {
 .theader {
   width: 100%;
   min-height: 72px;
-  box-shadow: 0 5px 10px 0 rgba(21,76,159,.0509803922);
+  border-bottom: 1px solid #eee;
 }
 
 .topbar {
@@ -490,13 +490,55 @@ a:active {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* Fixed Header Menu Issue */
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
 }
 
+@media (min-width: 1025px) and (max-width: 1100px) {
+  .container {
+    max-width: 840px;
+  }
+}
+
+@media (min-width: 1101px) and (max-width: 1150px) {
+  .container {
+    max-width: 900px;
+  }
+}
+
+@media (min-width: 1151px) and (max-width: 1200px) {
+  .container {
+    max-width: 970px;
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1250px) {
+  .container {
+    max-width: 1000px;
+  }
+}
+
+@media (min-width: 1251px) and (max-width: 1300px) {
+  .container {
+    max-width: 1060px;
+  }
+}
+
+@media (min-width: 1301px) and (max-width: 1350px) {
+  .container {
+    max-width: 1100px;
+  }
+}
+
 .logo {
-  color: #154c9f;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.logo-link {
+  color: #154c9f !important;
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
@@ -504,9 +546,12 @@ a:active {
   font-size: 40px;
   cursor: pointer;
   text-decoration: none !important;
+  border-bottom: none !important;
+}
 
-  margin-top: auto;
-  margin-bottom: auto;
+.logo-link:hover {
+  opacity: 0.8;
+  transition: all .3s ease;
 }
 
 .topbar-items {
@@ -529,6 +574,11 @@ a:active {
   display: block;
 }
 
+.item-header:hover {
+  opacity: 0.8;
+  transition: all .3s ease;
+}
+
 .topbar-items .sub-item {
   position: absolute;
   display: none;
@@ -546,6 +596,44 @@ a:active {
 
 .topbar-items .item:hover .sub-item{
   display: flex !important;
+}
+
+.topbar-items .item .sub-item .outfit-font .sub-item-link {
+  color: #154c9f;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.sub-item-link:hover {
+  opacity: 0.8;
+  transition: all .3s ease;
+}
+
+.topbar-js-label {
+  display: block;
+  position: absolute;
+  top: 40px;
+  right: 20px;
+
+  color: #154c9f !important;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 14px;
+
+  text-decoration: none;
+  border-bottom: none;
+}
+
+@media (scripting: enabled) {
+  .topbar-js-label {
+    display: none;
+  }
+}
+
+.topbar-js-label:hover {
+  border-bottom: none;
 }
 
 /* Header ======================================================================================== */
@@ -746,12 +834,19 @@ a:active {
 }
 
 .topbar-mobile-menu {
+  display: none;
   position: absolute;
-  right: 10px;
+  right: 20px;
   top: 20px;
   height: 48px;
   width: 48px;
   border: none;
+}
+
+@media (scripting: enabled) {
+  .topbar-mobile-menu {
+    display: block;
+  }
 }
 
 .hide-content {

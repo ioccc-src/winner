@@ -86,7 +86,7 @@ considered finished when all the `m`s are then `M`s.
 
 - [rince.data4](%%REPO_URL%%/1993/rince/rince.data4) Sokoban screen 13. Same rules as above.
 
-For a brief design description, see [design.html](%%REPO_URL%%/1993/rince/design.html).
+For a brief design description, see [design.html](design.html).
 
 
 ### WARNING for SunOS 4.1.x:
