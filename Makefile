@@ -456,7 +456,6 @@ quick_www:
 	${MAKE} gen_top_html
 	${MAKE} gen_status
 	${MAKE} quick_entry_index
-	${MAKE} gen_sitemap
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # do everything needed to build HTML content for the web site
@@ -478,7 +477,6 @@ www:
 	${MAKE} gen_top_html
 	${MAKE} gen_status
 	${MAKE} entry_index
-	${MAKE} gen_sitemap
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # untar all entry tarballs
