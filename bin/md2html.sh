@@ -2075,7 +2075,7 @@ if [[ -n $PANDOC_WRAPPER ]]; then
 	    echo "$0: debug[5]: about to execute:" \
 		 "$PERL_TOOL -0 -p -i -e $PERL_LINE -- $TMP_INDEX_HTML" 1>&2
 	fi
-	cp "$TMP_STRIPPED_MD" z
+
 	"$PERL_TOOL" -0 -p -i -e "$PERL_LINE" -- "$TMP_INDEX_HTML"
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: pandoc wrapper tool:" \
