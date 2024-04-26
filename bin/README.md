@@ -9,10 +9,10 @@ files and other content from the [IOCCC GitHub
 repo](https://github.com/ioccc-src/temp-test-ioccc).
 
 
-## [bin/](index.html) tools
+## [bin/](%%DOCROOT_SLASH%%bin/index.html) tools
 
 
-### [all-run.sh](all-run.sh)
+### [all-run.sh](%%DOCROOT_SLASH%%bin/all-run.sh)
 
 Run a command on all winning entries.
 
@@ -29,7 +29,7 @@ Or for example:
 ```
 
 
-### [all-years.sh](all-years.sh)
+### [all-years.sh](%%DOCROOT_SLASH%%bin/all-years.sh)
 
 Run a command on all IOCCC years.
 
@@ -52,7 +52,7 @@ We recommend that this tool be invoked via the top level `Makefile`:
 ```
 
 
-### [chk-entry.sh](chk-entry.sh)
+### [chk-entry.sh](%%DOCROOT_SLASH%%bin/chk-entry.sh)
 
 Check that files required by an entry match the entry's manifest as found in
 `.entry.json`.
@@ -64,7 +64,7 @@ For example:
 ```
 
 
-### [filelist.entry.json.awk](filelist.entry.json.awk)
+### [filelist.entry.json.awk](%%DOCROOT_SLASH%%bin/filelist.entry.json.awk)
 
 Generate the list of files in the entry's manifest, `.entry.json`.
 
@@ -75,7 +75,7 @@ For example:
 ```
 
 
-### [gen-authors.sh](gen-authors.sh)
+### [gen-authors.sh](%%DOCROOT_SLASH%%bin/gen-authors.sh)
 
 Generate the top level `/authors.html` page.
 
@@ -86,7 +86,7 @@ Usage:
 ```
 
 
-### [gen-location.sh](gen-location.sh)
+### [gen-location.sh](%%DOCROOT_SLASH%%bin/gen-location.sh)
 
 Generate the top level `/location.html` page.
 
@@ -97,7 +97,7 @@ Usage:
 ```
 
 
-### [gen-other-html.sh](gen-other-html.sh)
+### [gen-other-html.sh](%%DOCROOT_SLASH%%bin/gen-other-html.sh)
 
 Generate entry HTML files (other than README.md to index.html) from markdown
 files.
@@ -109,7 +109,7 @@ Usage:
 ```
 
 
-### [gen-sitemap.sh](gen-sitemap.sh)
+### [gen-sitemap.sh](%%DOCROOT_SLASH%%bin/gen-sitemap.sh)
 
 Generate an XML sitemap for the IOCCC web site.
 
@@ -126,7 +126,7 @@ We recommend that this tool be invoked via the top level `Makefile`:
 ```
 
 
-### [gen-status.sh](gen-status.sh)
+### [gen-status.sh](%%DOCROOT_SLASH%%bin/gen-status.sh)
 
 Generate `status.json` according to the modification dates of `status.json`
 and `news.html`.
@@ -164,7 +164,7 @@ We recommend that this tool be invoked via the top level `Makefile`:
 ```
 
 
-### [gen-top-html.sh](gen-top-html.sh)
+### [gen-top-html.sh](%%DOCROOT_SLASH%%bin/gen-top-html.sh)
 
 Generate a number of top level HTML pages for the IOCCC web sites.
 
@@ -196,7 +196,7 @@ We recommend that this tool be invoked via the top level `Makefile`:
 ```
 
 
-### [gen-year-index.sh](gen-year-index.sh)
+### [gen-year-index.sh](%%DOCROOT_SLASH%%bin/gen-year-index.sh)
 
 Generate an `index.html` page for an given IOCCC year.
 
@@ -213,7 +213,7 @@ We recommend that this tool be invoked via the top level `Makefile`:
 ```
 
 
-### [gen-years.sh](gen-years.sh)
+### [gen-years.sh](%%DOCROOT_SLASH%%bin/gen-years.sh)
 
 Generate the top level `/years.html` page.
 
@@ -230,7 +230,7 @@ We recommend that this tool be invoked via the top level `Makefile`:
 ```
 
 
-### [md2html.sh](md2html.sh)
+### [md2html.sh](%%DOCROOT_SLASH%%bin/md2html.sh)
 
 This is the primary tool that forms IOCCC generated HTML content from
 markdown files (permanent markdown files or temporarily generated
@@ -240,28 +240,28 @@ The [../inc/md2html.cfg](../inc/md2html.cfg) configuration file is
 used by [md2html.sh](md2html.sh) to drive the generation process.
 
 
-### [output-index-author.sh](output-index-author.sh)
+### [output-index-author.sh](%%DOCROOT_SLASH%%bin/output-index-author.sh)
 
 Output author's or authors' related HTML details for an entry's index.html
 page.
 
 
-### [output-index-inventory.sh](output-index-inventory.sh)
+### [output-index-inventory.sh](%%DOCROOT_SLASH%%bin/output-index-inventory.sh)
 
 Output the inventory in HTML form for an entry's index.html page.
 
 
-### [output-year-index.sh](output-year-index.sh)
+### [output-year-index.sh](%%DOCROOT_SLASH%%bin/output-year-index.sh)
 
 Output markdown of wining entry links for a given year.
 
 
-### [pandoc-wrapper.sh](pandoc-wrapper.sh)
+### [pandoc-wrapper.sh](%%DOCROOT_SLASH%%bin/pandoc-wrapper.sh)
 
 Wrapper tool to run pandoc.
 
 
-### [quick-readme2index.sh](quick-readme2index.sh)
+### [quick-readme2index.sh](%%DOCROOT_SLASH%%bin/quick-readme2index.sh)
 
 Builds an entry's `index.html` file if the entry directory
 does not have a non-empty `index.hmtl` file, or if either
@@ -271,13 +271,13 @@ This is useful when only a few entries have been
 modified (resulting in an updated `.entry.json` file)
 or if the `index.html` of a few entries has been changed.
 
-While the [readme2index.sh](readme2index.sh) take a few
+While the [readme2index.sh](%%DOCROOT_SLASH%%bin/readme2index.sh) take a few
 seconds to run, when applied to 300+ entries,
 the extra time can add up.
 
 If only a few `index.hmtl` files need updating, then
 this command will only briefly pause while the
-slightly longer [readme2index.sh](readme2index.sh) is run:
+slightly longer [readme2index.sh](%%DOCROOT_SLASH%%bin/readme2index.sh) is run:
 
 ``` <!---sh-->
     bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1
@@ -294,7 +294,7 @@ We recommend that this tool be invoked via the top level `Makefile`:
 ```
 
 
-### [readme2index.sh](readme2index.sh)
+### [readme2index.sh](%%DOCROOT_SLASH%%bin/readme2index.sh)
 
 Convert an entry README.md into entry directory index.html.
 
@@ -315,7 +315,7 @@ We recommend that this tool be invoked via the top level `Makefile`:
 ```
 
 
-### [status2html.sh](status2html.sh)
+### [status2html.sh](%%DOCROOT_SLASH%%bin/status2html.sh)
 
 Convert `status.json` into HTML.
 
@@ -323,7 +323,7 @@ This tool is a  'before tool' (-b tool) that is intended
 to be used by `bin/gen-status.sh`.
 
 
-### [sgi.sh](sgi.sh)
+### [sgi.sh](%%DOCROOT_SLASH%%bin/sgi.sh)
 
 Sort .gitignore content from `stdin` to `stdout`.
 
@@ -332,10 +332,10 @@ We sort with lines starting with `*` second.
 We sort with lines that do not start with `[#!*]` third.
 We sort with lines starting with `!` fourth.
 
-This tool is used by [sort.gitignore.sh](sort.gitignore.sh).
+This tool is used by [sort.gitignore.sh](%%DOCROOT_SLASH%%bin/sort.gitignore.sh).
 
 
-### [sort.gitignore.sh](sort.gitignore.sh)
+### [sort.gitignore.sh](%%DOCROOT_SLASH%%bin/sort.gitignore.sh)
 
 Sort a .gitignore in a entry directory.
 
@@ -358,32 +358,32 @@ We recommend that this tool be invoked via the top level `Makefile`:
 ```
 
 
-### [subst.default.sh](subst.default.sh)
+### [subst.default.sh](%%DOCROOT_SLASH%%bin/subst.default.sh)
 
 Print default substitutions.
 
 
-### [subst.entry-index.sh](subst.entry-index.sh)
+### [subst.entry-index.sh](%%DOCROOT_SLASH%%bin/subst.entry-index.sh)
 
 Print substitutions for an entry index.html.
 
 
-### [subst.entry-navbar.awk](subst.entry-navbar.awk)
+### [subst.entry-navbar.awk](%%DOCROOT_SLASH%%bin/subst.entry-navbar.awk)
 
 Output substitutions for navbar on behalf of an entry.
 
 
-### [subst.year-index.sh](subst.year-index.sh)
+### [subst.year-index.sh](%%DOCROOT_SLASH%%bin/subst.year-index.sh)
 
 Print substitutions for a year level index.html.
 
 
-### [subst.year-navbar.awk](subst.year-navbar.awk)
+### [subst.year-navbar.awk](%%DOCROOT_SLASH%%bin/subst.year-navbar.awk)
 
 Output substitutions for navbar on behalf of a year level index.html.
 
 
-## [tar-entry.sh](tar-entry.sh)
+## [tar-entry.sh](%%DOCROOT_SLASH%%bin/tar-entry.sh)
 
 Form a compressed tarball for an entry.
 
@@ -400,7 +400,7 @@ bin/all-run.sh -v 3 bin/tar-entry.sh -v 1 -W
 ```
 
 
-## [tar-year.sh](tar-year.sh)
+## [tar-year.sh](%%DOCROOT_SLASH%%bin/tar-year.sh)
 
 Form a compressed tarball for an IOCCC year.
 
@@ -423,7 +423,7 @@ make form_year_tarball
 ```
 
 
-## [untar-entry.sh](untar-entry.sh)
+## [untar-entry.sh](%%DOCROOT_SLASH%%bin/untar-entry.sh)
 
 Untar an entry's a compressed tarball.
 
@@ -446,7 +446,7 @@ We recommend that this tool be invoked via the top level `Makefile`:
 ```
 
 
-## [untar-year.sh](untar-year.sh)
+## [untar-year.sh](%%DOCROOT_SLASH%%bin/untar-year.sh)
 
 Untar an IOCCC year's compressed tarball.
 
@@ -473,7 +473,7 @@ We recommend that this tool be invoked via the top level `Makefile`:
 # How IOCCC HTML content is built
 </div>
 
-The [md2html.sh](md2html.sh) tool is the primary tool that
+The [md2html.sh](%%DOCROOT_SLASH%%bin/md2html.sh) tool is the primary tool that
 is used to form all IOCCC related HTML pages for the [official IOCCC web
 site](https://www.ioccc.org).
 
@@ -561,7 +561,7 @@ It is an error, unless `-S` is given, for any phase, except phases HTML
 20-29, to not substitute all **%%TOKEN%%**'s.  For phases HTML 20-29, any
 **%%TOKEN%%** that is not substituted are passed thru without substitution.
 
-See the tool [readme2index.sh](readme2index.sh) for an example of
+See the tool [readme2index.sh](%%DOCROOT_SLASH%%bin/readme2index.sh) for an example of
 how HTML phases are implemented.
 
 
@@ -684,18 +684,18 @@ output), or the command will exit non-zero, unless `-S` is given.  If `-S` is
 given, only a warning about non-substituted tokens will be written to `stderr`.
 
 The command line of tools in the [bin directory](index.html), and perhaps
-modified via the [md2html config file](../inc/md2html.cfg) may change to using a
+modified via the [md2html config file](%%DOCROOT_SLASH%%inc/md2html.cfg) may change to using a
 different filename for a given phase.
 
 For example when forming the HTML from
-[2020/ferguson1/chocolate-cake.md](/2020/ferguson1/chocolate-cake.md),
+[2020/ferguson1/chocolate-cake.md](%%DOCROOT_SLASH%%2020/ferguson1/chocolate-cake.md),
 a different `navbar` navigation bar is needed.  So instead of the
 usual top navigation bar that normally directs people to the previous
 entry for the year, or go up to the year page, or to the next entry
 for the year, a top navigation bar to just go up to the entry's
-main page is needed.   A line in the [md2html config file](../inc/md2html.cfg)
+main page is needed.   A line in the [md2html config file](%%DOCROOT_SLASH%%inc/md2html.cfg)
 that refers to
-[2020/ferguson1/chocolate-cake.md](/2020/ferguson1/chocolate-cake.md) may
+[2020/ferguson1/chocolate-cake.md](%%DOCROOT_SLASH%%2020/ferguson1/chocolate-cake.md) may
 specify use of `navbar.up2index.html` (as `navbar.up2index`)instead of using the
 `navbar.default.html` (`navbar.default.html`) default.
 
@@ -703,7 +703,7 @@ The HTML phase may be skipped resulting in no HTML output during a given phase
 and furthermore, forming no HTML content from a given markdown file altogether.
 
 See comments in the [md2html config file](../inc/md2html.cfg) for details.
-See also, the tool [readme2index.sh](readme2index.sh) for an example of
+See also, the tool [readme2index.sh](%%DOCROOT_SLASH%%bin/readme2index.sh) for an example of
 how such command lines are used.
 
 
@@ -792,7 +792,7 @@ a natural fit for GitHub and [GitHub pages](https://pages.github.com).
 The `<object>` HTML element does not work for our needs.
 
 HTML elements do not extend into the content that they include.
-For example, menu bars [ioccc.css](../ioccc.css) will not operate
+For example, menu bars [ioccc.css](%%DOCROOT_SLASH%%ioccc.css) will not operate
 under an HTML element.
 
 
@@ -802,7 +802,7 @@ The `<embed>` HTML element does not work for our needs.
 
 This element wants one to specify the `width` and `height` in pixels.
 Use of a percentage is not officially supported even if some browsers
-might do so.  Our Responsive Web Design in the [ioccc.css](../ioccc.css)
+might do so.  Our Responsive Web Design in the [ioccc.css](%%DOCROOT_SLASH%%ioccc.css)
 needs to be responsive to small-sized cell phone-like screens,
 mid-sized table-like screens, as well as large-sized desktop-like screens.
 Specifying a `width` and `height` in pixels will not work well in
@@ -815,7 +815,7 @@ The `<iframe>` HTML element does not work for our needs.
 
 This element wants one to specify the `width` and `height` in pixels.
 Use of a percentage is not officially supported even if some browsers
-might do so.  Our Responsive Web Design in the [ioccc.css](../ioccc.css)
+might do so.  Our Responsive Web Design in the [ioccc.css](%%DOCROOT_SLASH%%ioccc.css)
 needs to be responsive to small-sized cell phone-like screens,
 mid-sized table-like screens, as well as large-sized desktop-like screens.
 Specifying a `width` and `height` in pixels will not work well in
@@ -906,7 +906,7 @@ The latter form is in case there are more than one anonymous author in a given
 year.
 
 NOTE: even if the directory name is not `anonymous` the above rules apply as in
-in the case of [2005/anon](../2005/anon/anon.c).
+in the case of [2005/anon](%%DOCROOT_SLASH%%2005/anon/anon.c).
 
 Anonymous `author_handle`'s match this regexp:
 
@@ -958,7 +958,7 @@ Each `year` directory will have a file under it named:
 ```
 
 The contents of the `.year` file is the year string of the directory. For
-instance, [2020/.year](../2020/.year) has the string: `2020`.
+instance, [2020/.year](%%DOCROOT_SLASH%%2020/.year) has the string: `2020`.
 
 
 ## `dir`

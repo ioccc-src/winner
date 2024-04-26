@@ -288,7 +288,7 @@ After that you can input the string and it'll go from there.
 BTW: There's a much more entertaining (and delicious) challenge or exercise in
 [recode.html][] (if you're reading this on GitHub check the
 [recode.html](recode.html) file instead); this involves [chocolate-cake.html][] (if
-on GitHub see [here](chocolate-cake.html)) though one might need a different kind
+on GitHub, see [here](chocolate-cake.html), though one might need a different kind
 of exercise after taking up the challenge! :-) These however show the general
 program as well as how to use the two winning entries of the [Morse
 code](https://en.wikipedia.org/wiki/Morse_code) that I referred to earlier:
@@ -423,7 +423,7 @@ it prompts you for the settings
 settings](https://en.wikipedia.org/wiki/Enigma_rotor_details#Ring_setting) and
 positions,
 [reflector](https://www.ciphermachinesandcryptology.com/en/enigmatech.htm#Reflector) and
-[plugboard pairs](https://www.cryptomuseum.com/crypto/enigma/i/sb.htm)),
+[plugboard pairs](https://www.cryptomuseum.com/crypto/enigma/i/sb.htm),
 validating input as you go.
 
 After that it prompts for text that you can pass to the Enigma simulator;
@@ -775,7 +775,7 @@ of the Wehrmacht rather than the Wehrmacht and the Kriegsmarine.
 
 [Enigma Message Procedures][]: The [Heer][],
 [Luftwaffe](https://en.wikipedia.org/wiki/Luftwaffe) and
-[Kriegsmarine](https://en.wikipedia.org/wiki/Kriegsmarine))
+[Kriegsmarine](https://en.wikipedia.org/wiki/Kriegsmarine)
 [Enigma](https://en.wikipedia.org/wiki/Enigma_machine)
 procedures.
 

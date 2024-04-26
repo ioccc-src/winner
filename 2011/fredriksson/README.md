@@ -75,8 +75,8 @@ This version of `grep` recognizes two more options, not present in normal
 `grep` implementations:
 
 * `-kN`	Permit `N` insertions, deletions or mismatches of characters in the
-	matches (aka
-	[edit-distance](https://en.wikipedia.org/wiki/Edit_distance)). E.g.
+	matches, aka
+	[edit-distance](https://en.wikipedia.org/wiki/Edit_distance). E.g.,
 	"`obfuscated`" matches "`obfuscation`"
 	with one deletion and two mismatches. Likewise, "`obfuscate`" and
 	"`oversimplify`" match with 7
@@ -119,7 +119,7 @@ expressions by putting `]` as the first character, and putting `-` last.
 
 ### Other uses
 
-* You can use this in place of [cat](https://en.wikipedia.org/wiki/Cat_(Unix)).
+* You can use this in place of [cat](https://en.wikipedia.org/wiki/Cat_&#x28;Unix&#x29;).
 Just say
 
 

@@ -32,7 +32,7 @@ this program left and recompiling will reveal other tools including a right rota
 and a shift program.
 
 Strange things happen [when the world is upside
-down](https://en.wikipedia.org/wiki/Wacky_Wednesday_(book))! It is entirely possible
+down](https://en.wikipedia.org/wiki/Wacky_Wednesday_&#x28;book&#x29;)! It is entirely possible
 that this remark is completely misleading.
 
 What exactly does the shift program do?
@@ -123,7 +123,7 @@ the 10th final string from [prog.c](%%REPO_URL%%/2018/yang/prog.c).  The intent 
 wooden puzzle boxes that can be opened by pushing and shifting various
 well-concealed seams.  Thus, finding the correct sequence of rotates
 and shifts is left as an exercise to the reader (but if you are really
-lazy, just read the [Makefile](%%REPO_URL%%/2018/yang/Makefile)).
+lazy, just read the [Makefile](%%REPO_URL%%/2018/yang/Makefile).
 
 Source code for all the tools needed to solve this puzzle are embedded
 in [prog.c](%%REPO_URL%%/2018/yang/prog.c), all you need is a C compiler.

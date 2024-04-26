@@ -499,8 +499,8 @@ by comparing the function pointer with the function itself).</p>
 <p>Fourth, there are no independent routines for generating potential moves.
 Instead, the program generates its moves by brute force: for every piece it
 controls on the board, it attempts to move it to every square on the board.
-Those moves that are legal it then explores to see their effects (using
-<a href="https://en.wikipedia.org/wiki/Alpha-beta_pruning">alpha-beta search</a>). This
+Those moves that are legal it then explores to see their effects, using
+<a href="https://en.wikipedia.org/wiki/Alpha-beta_pruning">alpha-beta search</a>. This
 tactic somewhat obfuscates the algorithm used by the program.</p>
 <p>Finally, there are three key constants that occur throughout the program: <code>64</code>,
 <code>8</code>, and <code>3</code> (<code>lg 8</code>). Rather than making these available at compile-time,

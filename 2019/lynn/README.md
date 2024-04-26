@@ -132,8 +132,8 @@ A GHC wrapper is provided:
 
 ### Strongly-connected components:
 
-See [scc.hs](%%REPO_URL%%/2019/lynn/scc.hs) (and its GHC wrapper [ghcscc.hs](%%REPO_URL%%/2019/lynn/ghcscc.hs)) for an elegant
-way to print the strongly-connected components of a graph in reverse topological
+See [scc.hs](%%REPO_URL%%/2019/lynn/scc.hs), and its GHC wrapper [ghcscc.hs](%%REPO_URL%%/2019/lynn/ghcscc.hs),
+for an elegant way to print the strongly-connected components of a graph in reverse topological
 order.
 
 ``` <!---sh-->
@@ -258,8 +258,8 @@ format earlier in the source.)
 ternary operators, and so on.
 * Huffman coding.
 * Base-85 because high bits are frowned upon.
-* Mixed radix encoding to game iocccsize. From a past entry
-([2018/bellard](../../2018/bellard/index.html)), it seems 9 11 12 32 are the only
+* Mixed radix encoding to game iocccsize. From a past entry,
+[2018/bellard](../../2018/bellard/index.html), it seems 9 11 12 32 are the only
 whitespace octets that may appear verbatim in string literals.
 * Choosing what to encode in Huffman/base-85 and what to encode in mixed radix
 was a delicate balancing act. In the end, I only had a few bytes to spare, which
@@ -267,7 +267,7 @@ I spent on gratuitous confusion.
 * The effects of some functions depend on the order their arguments are
 evaluated, yet the program works either way. Why?
 * Ugly macros for the runtime system's jump table for lazy reduction. A previous
-entry ([2013/endoh1](../../2013/endoh1/index.html)) has a cuter solution, which I
+entry, [2013/endoh1](../../2013/endoh1/index.html), has a cuter solution, which I
 avoid because of originality concerns and also because my combinators are
 compressed.
 * Relies on the inability of C comments to nest.

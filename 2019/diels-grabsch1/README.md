@@ -27,7 +27,7 @@ to a one-liner, still producing files in the UNIX compress format, albeit
 sacrificing the compression ratio?
 
 Can you explain why the `/dev/zero` file compresses identically by the entry and
-the standard `compress(1)` tool (see [try.sh](%%REPO_URL%%/2019/diels-grabsch1/try.sh)), but the text file
+the standard `compress(1)` tool, see [try.sh](%%REPO_URL%%/2019/diels-grabsch1/try.sh), but the text file
 compresses differently? The judges know. :)
 
 

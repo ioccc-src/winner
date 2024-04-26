@@ -157,7 +157,7 @@ Then run the program to reveal all prime numbers up to 32 (if you used
 
 I wasn't able to compile the full program which calculates [prime
 numbers](https://en.wikipedia.org/wiki/Prime_number) up to 1024 using GNU `cpp`
-(or any other [pre-processor](https://en.wikipedia.org/wiki/C_preprocessor)) so
+(or any other [pre-processor](https://en.wikipedia.org/wiki/C_preprocessor) tool) so
 I had to write my own. Knowing how the program works it was quite easy to reduce
 the compilation time from several hours to about one second. I also added some
 statistics to my home made pre-processor and I found that calculating prime

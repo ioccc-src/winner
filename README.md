@@ -56,7 +56,7 @@ tried to write poor code?
 
 I put that question to the USENET news groups net.lang.c and net.unix-wizards in
 the form of a contest.  I selected a form similar to the contest
-([Bulwer-Lytton](https://www.bulwer-lytton.com)) that asks people to create the
+([Bulwer-Lytton](https://www.bulwer-lytton.com) contest) that asks people to create the
 worst opening line to a novel (that contest in turn was inspired by disgust over
 [a novel](https://en.wikipedia.org/wiki/Paul_Clifford) by [Edward
 Bulwer-Lytton](https://en.wikipedia.org/wiki/Edward_Bulwer-Lytton) that opened

@@ -89,10 +89,10 @@ include:
 - constructors (invoked by the new operator).
 - new operators (every class gets its own new operator at compile time).
 - virtual method tables (all the virtual method tables have been combined to a
-single [vtable](https://en.wikipedia.org/wiki/Virtual_method_table)).
+single [vtable](https://en.wikipedia.org/wiki/Virtual_method_table) table).
 - runtime method binding.
-- [inheritance](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming))
-and [polymorphism](https://en.wikipedia.org/wiki/Polymorphism_(computer_science)).
+- [inheritance](https://en.wikipedia.org/wiki/Inheritance_&#x28;object-oriented_programming&#x29;)
+and [polymorphism](https://en.wikipedia.org/wiki/Polymorphism_&#x28;computer_science&#x29;).
 
 It is left as an exercise to the reader to find a corresponding
 implementation in a popular object-oriented programming language.

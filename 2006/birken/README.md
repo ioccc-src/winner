@@ -41,7 +41,7 @@ A: Electronic Design Automation - Mechanical Abstract Machine Emulator
 What is TOFU?  It's not a veggie friendly food, nor it is
 [Verilog](https://en.wikipedia.org/wiki/Verilog) or
 [VHDL](https://en.wikipedia.org/wiki/VHDL)  It is not even
-[Pascal](https://en.wikipedia.org/wiki/Pascal_(programming_language))!
+[Pascal](https://en.wikipedia.org/wiki/Pascal_&#x28;programming_language&#x29;)!
 
 NOTE: On some systems, `file(1)` claims one of the `.tofu` files is Pascal
 source. :-)
@@ -66,7 +66,7 @@ circuits)?  This program is my tribute to the early computer pioneers like
 tool designed to introduce students to digital circuit theory using technology
 that was considered state of the art in the 1940s!  To enable you to fully
 understand the capabilities of this circuit simulator, I have included a 55 page
-manual ([info.pdf](info.pdf)) in the info portion of the entry submission.
+manual, [info.pdf](info.pdf), in the info portion of the entry submission.
 
 The primary obfuscation is the data structure chosen for parsing the
 input file and for executing the simulation.  Oh man...  coding that

@@ -47,7 +47,7 @@ note on macOS.
     ./mario.sh
 ```
 
-If you end up telnetting to the server (feature of [mario.sh](%%REPO_URL%%/2014/maffiodo1/mario.sh)) you can
+If you end up telnetting to the server (feature of [mario.sh](%%REPO_URL%%/2014/maffiodo1/mario.sh) script) you can
 try:
 
 
@@ -325,7 +325,7 @@ NES](http://en.wikipedia.org/wiki/Nintendo_Entertainment_System).
 
 [Super Mario Bros](http://en.wikipedia.org/wiki/Super_Mario_Bros.) is a game
 created by [Nintendo Co., Ltd](https://en.wikipedia.org/wiki/Nintendo). My use
-of the [sprites](https://en.wikipedia.org/wiki/Sprite_(computer_graphics)) does
+of the [sprites](https://en.wikipedia.org/wiki/Sprite_&#x28;computer_graphics&#x29;) does
 not intend to infringe the [intellectual
 property](https://en.wikipedia.org/wiki/Intellectual_property) of Nintendo but
 only demonstrates the operation of the program. From my point of view this is a

@@ -122,7 +122,7 @@ Flow control is by `for` and `return`.  It is `if`-less,  `switch`-less,
 `while`-less, and hopeless. Literally, if not figuratively. ;-)
 
 The code size is intentionally 2015, as stated by `iocccsize -i`, and can be
-reformatted without changes (as in [rule2.c](%%REPO_URL%%/2015/burton/rule2.c)) to exactly 4096 octets.
+reformatted without changes (as in [rule2.c](%%REPO_URL%%/2015/burton/rule2.c) source) to exactly 4096 octets.
 
 Finally, `calc` is interesting, if for no other reason than it is practically
 useful: Hex/decimal conversion, arithmetic, byte-swapping, bit-shifting, and

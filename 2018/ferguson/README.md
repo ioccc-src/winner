@@ -163,9 +163,9 @@ number of ways but the `-m` option enables it specially (I discuss this
 thoroughly in **[Hints](#hints)**).
 
 **[Hints](#hints):** Perhaps the longest part of this document because in it I
-document the [keyboards](#keyboards), [options](#options), subtleties (including
+document the [keyboards](#keyboards), [options](#options), subtleties, including
 features that might appear to be bugs but aren't - including an
-[input error](#error)), an [Easter egg spoiler](#spoiler) and quite a few
+[input error](#error), an [Easter egg spoiler](#spoiler) and quite a few
 [example invocations](#invocations). If you've read the man page you probably
 don't need this unless there is something specific you're after.
 

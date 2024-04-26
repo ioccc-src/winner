@@ -239,8 +239,8 @@ function was enough to fix this compilation issue.
 However, that was not enough to make the program work on macOS. If you analyse
 the program you will see that it heavily relies on OS resources. And, for this
 first version of the program, you even needed to increase default `sysctl`
-parameters to make it work on FreeBSD (this was the purpose of file
-[check-os.sh](%%REPO_URL%%/2019/duble/check-os.sh)). I tried hard to tune macOS the same, but failed.
+parameters to make it work on FreeBSD (this was the purpose of the
+[check-os.sh](%%REPO_URL%%/2019/duble/check-os.sh) file). I tried hard to tune macOS the same, but failed.
 
 The simple fact the Judges proposed this update meant they wish it could work on
 Mac.  And if the judges wish something, it **has to** be done. ;) So I

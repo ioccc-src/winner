@@ -13,7 +13,7 @@ A poll was taken for the worst code for
 [BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution) and [System
 V](https://en.wikipedia.org/wiki/UNIX_System_V) program.  The [Bourne
 Shell](https://en.wikipedia.org/wiki/Bourne_shell) (`/bin/sh`) won for both
-systems.  The BSD [finger](https://en.wikipedia.org/wiki/Finger_(protocol))
+systems.  The BSD [finger](https://en.wikipedia.org/wiki/Finger_&#x28;protocol&#x29;)
 program took third place.
 
 [Rules](rules.txt) and [results](../years.html#1986) were posted to _net.lang.c_

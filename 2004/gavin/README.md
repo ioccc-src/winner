@@ -102,8 +102,8 @@ well as the judges' remarks below plus [gavin.html](gavin.html).
 ## Judges' remarks:
 
 Over the years, we've seen a program that immediately dumps core if executed on
-the "wrong" architectures (e.g., [1984/mullender](../../1984/mullender/index.html)) and a
-program that dumps core after a while (e.g., [2001/bellard](../../2001/bellard/index.html)).
+the "wrong" architectures (e.g., [1984/mullender](../../1984/mullender/index.html) entry) and a
+program that dumps core after a while (e.g., [2001/bellard](../../2001/bellard/index.html) entry).
 This entry will happily compile and execute on most any architecture - the trick
 is that the result, to be useful, must be produced (and can only be enjoyed) on
 a particular architecture.  We have not decided yet whether to disallow this for

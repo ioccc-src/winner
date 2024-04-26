@@ -162,7 +162,7 @@ program would probably be rated somewhere around 1700-1900.  It is better
 than most players, but will get destroyed by experienced human opponents.
 
 This program searches to a fixed depth of 3
-[ply](https://en.wikipedia.org/wiki/Ply_(game_theory)).  Because it does not
+[ply](https://en.wikipedia.org/wiki/Ply_&#x28;game_theory&#x29;).  Because it does not
 search very deep, it performs very poorly in quiet strategic positions.
 In such positions, it will often just shuffle pieces around aimlessly
 until a tactical exchange presents itself.

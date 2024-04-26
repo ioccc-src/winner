@@ -154,7 +154,7 @@ The `solids` directory includes various solid data:
 
 I created the files by using the POV-Ray scripts
 ([1](http://en.wikipedia.org/wiki/File:Poly.pov) and
-[2](http://en.wikipedia.org/wiki/User:AndrewKepert/poly.pov)) in Wikipedia.
+[2](http://en.wikipedia.org/wiki/User:AndrewKepert/poly.pov) in Wikipedia.
 They are copyrighted in CC BY-SA 3.0 by "User:Cyp" and "User:AndrewKepert".
 
 

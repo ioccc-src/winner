@@ -135,7 +135,7 @@ separated list of assignments to do once per pixel, and the second a semicolon
 separated list of assignments and conditions that will be executed (and
 conditions checked) for each iteration (up to the maximum).  Using the left and
 right mouse buttons you will be able to zoom in and out (a la
-[XaoS](https://github.com/xaos-project/XaoS)), the zooming algorithm is a bit
+[XaoS](https://github.com/xaos-project/XaoS) project), the zooming algorithm is a bit
 slower than `XaoS`'s but it should give slightly better results.
 
 Formulas can use all `a-z` (lowercase) variables, and the special

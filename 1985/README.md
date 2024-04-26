@@ -6,7 +6,7 @@ and try to figure how it does what it does!  You may then wish to look at the
 Author's remarks for even more details.
 
 Hints against machine dependent code were added to the [rules](rules.txt) to
-avoid another 1984 style entry ([1984/mullender](../1984/mullender/index.html)).
+avoid another 1984 style [1984/mullender](../1984/mullender/index.html) entry.
 [Rules](rules.txt) and [results](../years.html#1985) were posted to _net.lang.c_
 and _net.unix-wizards_.  Larry Bassel was invited to help in the judging.
 Awards were given to 5 classes of programs since we were unable to select only

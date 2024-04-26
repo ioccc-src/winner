@@ -348,6 +348,80 @@ Examples:
 ```
 
 
+## [md-links.sh](%%DOCROOT_SLASH%%tmp/md-links.sh)
+
+For all markdown files, print markdown links.
+
+Usage:
+
+``` <!---sh-->
+    tmp/md-links.sh
+```
+
+Lines printed are of the form:
+
+```
+    markdown_path.md [pseudo title](path)
+```
+
+
+## [md-local-links.sh](%%DOCROOT_SLASH%%tmp/md-local-links.sh)
+
+For all markdown files, print markdown links that are local.
+We ignore URLs that start with "http:" or "https:" or "mailto:".
+We ignore links that are internal to the file (i.e., "#name").
+
+Usage:
+
+``` <!---sh-->
+    tmp/md-local-links.sh
+```
+
+Lines printed are of the form:
+
+```
+    markdown_path.md [pseudo title](path)
+```
+
+
+## [md-token-links.sh](%%DOCROOT_SLASH%%tmp/md-token-links.sh)
+
+For all markdown files, print markdown links that start with a **%%TOKEN%%**.
+
+Usage:
+
+``` <!---sh-->
+    tmp/md-token-links.sh
+```
+
+Lines printed are of the form:
+
+```
+    markdown_path.md [pseudo title](%%TOKEN%%path)
+```
+
+
+## [md-link-paths.sh](%%DOCROOT_SLASH%%tmp/md-link-paths.sh(
+
+Print local file paths referenced in markdown links.
+
+We ignore URLs that start with "http:" or "https:" or "mailto:".
+We remove "%%REPO_URL%%/" and "%%DOCROOT_SLASH%%" from paths.
+We delete lines with "%%TOKEN%%" as this is just a test/example token.
+
+Usage:
+
+``` <!---sh-->
+    tmp/md-link-paths.sh
+```
+
+Lines printed are of the form:
+
+```
+    path
+```
+
+
 ### [src](src)
 
 This is a temporary location for potential tools that are used to

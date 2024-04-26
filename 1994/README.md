@@ -25,7 +25,7 @@ errors.
 
 Rule abuse was encouraged this year - two of this year's winning entries found
 new and interesting abuses of the rules. Next year's rules will change
-due to these ([smr](smr/index.html) and [dodsond2](dodsond2/index.html)) entries'
+due to these [smr](smr/index.html) and [dodsond2](dodsond2/index.html) entries'
 forms of abuse.
 
 

@@ -435,8 +435,8 @@ the remainder of input (translated to a lazy list of
 representation in lambda calculus), and translates the evaluated result back
 into a stream of bits to be output.</p>
 <p>Lambda is encoded as 00, application as 01, and the variable bound by the <code>n</code>th
-enclosing lambda (denoted <code>n</code> in so-called <a href="https://en.wikipedia.org/wiki/De_Bruijn_notation">De Bruijn
-notation</a>) as <code>1^{n}0</code>.
+enclosing lambda (denoted <code>n</code> in so-called <a href="https://en.wikipedia.org/wiki/De_Bruijn_notation">De Bruijn</a>
+notation) as <code>1^{n}0</code>.
 That’s all there is to
 <a href="https://tromp.github.io/cl/Binary_lambda_calculus.html">BLC</a>!</p>
 <p>For example the encoding of lambda term <code>S = \x \y \z  (x z) (y z)</code>,
@@ -459,8 +459,8 @@ bit of input, and using characters <code>0</code> and <code>1</code> for output.
     1,2,3,4,8,9: result not in list form</code></pre>
 <p>The size of the term space is fixed at compile time with <code>-DA</code>.</p>
 <h3 id="a-half-byte-cat">A half byte <code>cat</code></h3>
-<p>The shortest (closed) lambda calculus term is <code>\x x (\ 1</code> in <a href="https://en.wikipedia.org/wiki/De_Bruijn_notation">De Bruijn
-notation</a>) which is the
+<p>The shortest (closed) lambda calculus term is <code>\x x (\ 1</code> in
+<a href="https://en.wikipedia.org/wiki/De_Bruijn_notation">De Bruijn</a> notation which is the
 identity function. When its encoding <code>0010</code> is fed into the universal machine,
 it will simply copy the input to the output (well, not that simply, since each
 byte is smashed to bits and rebuilt from scratch). Voila: a half byte cat:</p>

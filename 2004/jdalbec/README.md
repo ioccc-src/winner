@@ -47,7 +47,7 @@ which line it is on.
     make alt
 ```
 
-The macro `Ag` ([silver](https://en.wikipedia.org/wiki/Silver)) controls how
+The macro [Ag](https://en.wikipedia.org/wiki/Silver) controls how
 many number of lines to print on a line. Set at default to 11 protons, salt, if
 you wish to make it silver, 47 (a prime) protons, do:
 

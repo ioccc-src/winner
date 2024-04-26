@@ -93,8 +93,8 @@ transcription to standard output as a [portable
 graymap](https://en.wikipedia.org/wiki/Netpbm#PGM_example) (PGM) file.
 
 The specific transcription mode is the [Black
-Speech](https://www.glyphweb.com/arda/b/blackspeech.html) ([Tengwar
-mode](https://www.glyphweb.com/arda/t/tengwar.html)), as
+Speech](https://www.glyphweb.com/arda/b/blackspeech.html)
+([Tengwar](https://www.glyphweb.com/arda/t/tengwar.html) mode), as
 used in the inscription on the [One
 Ring](https://www.glyphweb.com/arda/o/onering.html). The program handles the
 following digraphs:

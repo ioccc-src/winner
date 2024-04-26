@@ -518,13 +518,13 @@ Analyze the code.</p>
 <p>There are mines in a cell whose “priorities-of-each-cell” is less than
 “number-of-mines”. (But the mine in the first-clicked cell is removed.)</p>
 <h3 id="bug-fixes-and-credits">Bug fixes and Credits</h3>
-<p>The judges pointed out a bug of the original version that I submitted
-(<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/endoh1/prog.alt.c">prog.alt.c</a>). Because this program does not provide a feature to
+<p>The judges pointed out a bug of the original version that I submitted,
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/endoh1/prog.alt.c">prog.alt.c</a>. Because this program does not provide a feature to
 flag unprobed cells manually, we can do nothing if the number of unprobed cells
 are equal to the number of mines remaining; <a href="unwinnable.txt">unwinnable.txt</a> is
 an example for such a case.</p>
 <p>Thus, I implemented an additional rule to flag all unprobed cells in such a case
-into the final version (<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/endoh1/prog.c">prog.c</a>).</p>
+into the final version: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/endoh1/prog.c">prog.c</a>.</p>
 <p><a href="../../authors.html#Ilya_Kurdyukov">Ilya Kurdyukov</a> also pointed out a warning
 “ignoring return value of ‘fscanf’” only when <code>-O3</code> is used. So I changed the
 code a little to pretend to use the return value of <code>fscanf(3)</code>.</p>

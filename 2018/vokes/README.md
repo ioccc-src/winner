@@ -51,7 +51,7 @@ grouped into strongly connected components. Given a set of nodes
 representing targets and edges representing dependencies between them,
 it produces a build order with any dependency cycles gathered.
 
-For example, the following input (provided as [example-1.txt](example-1.txt)):
+For example, the following input, provided as [example-1.txt](example-1.txt):
 
 ```
     0 4 8

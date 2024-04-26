@@ -108,8 +108,8 @@ be `"`` ` ``cat deckmyn.c`` ` ``"`.
 The second command line argument is the music itself. This is, again, a string,
 not a file name. All music signs are entered as tokens of exactly 3 characters.
 The code is very sensitive to bad spacing! So for instance, if you use a file to
-write the music (e.g. [example\_greensleeves](%%REPO_URL%%/2012/deckmyn/example_greensleeves)), you should
-keep in mind that newline is also a character!
+write the music (e.g., [example\_greensleeves](%%REPO_URL%%/2012/deckmyn/example_greensleeves) file),
+you should keep in mind that newline is also a character!
 
 
 ### Internals

@@ -28,7 +28,7 @@ simple 3-character fix will make it slightly less so.
 
 Quite a few BF programs found on the Net expect byte-based memory, quite a few
 exceed the capacity of this interpreter, but there are many that work. Some
-small [quines](https://en.wikipedia.org/wiki/Quine_(computing)) work, some don't.
+small [quines](https://en.wikipedia.org/wiki/Quine_&#x28;computing&#x29;) work, some don't.
 
 Why?
 

@@ -82,7 +82,7 @@ a mistake and the computer surpasses you. ;)
 ### WHAT ABOUT THE ENGINE
 
 Uses an [alpha-beta](https://en.wikipedia.org/wiki/Alpha_Beta) search up to a
-depth of 3+level [ply](https://en.wikipedia.org/wiki/Ply_(game_theory)),
+depth of 3+level [ply](https://en.wikipedia.org/wiki/Ply_&#x28;game_theory&#x29;),
 extended with quiescence search, that helps playing strength, something around
 1500 ELO (level 1) to 1700 ELO (level 3).
 

@@ -166,7 +166,7 @@ determine which tool was correct when there were differences.
 ```
 
 NB: `iocccsize` gets a different answer from `tac` on its own
-([iocccsize.c](%%REPO_URL%%/2018/iocccsize.c)) source code;
+[iocccsize.c](%%REPO_URL%%/2018/iocccsize.c) source code;
 `tac` gets the correct answer.  This is due to the aforementioned bugs within `iocccsize`,
 proved by fixing
 [iocccsize.c](%%REPO_URL%%/2018/iocccsize.c) with the included patch, so `iocccsize` reports
@@ -402,7 +402,7 @@ in [prog.c](%%REPO_URL%%/2018/burton/prog.c), and the program
 [manpage.sh](%%REPO_URL%%/2018/burton/manpage.sh) was added to the corpus.
 
 [manpage.sh](%%REPO_URL%%/2018/burton/manpage.sh) is a useful program that turns ASCII versions of man
-pages (e.g. [tac.man](%%REPO_URL%%/2018/burton/tac.man)) into real man pages.  It works for C and C-like
+pages (e.g., [tac.man](%%REPO_URL%%/2018/burton/tac.man) man page) into real man pages.  It works for C and C-like
 languages, command lines, and was designed to handle man page sections 1-8.  It
 works well on most inputs, but tends to need some raw nroff for more fancy
 constructions, such as combined arguments (e.g. the `-r` and `-s` arguments to tac

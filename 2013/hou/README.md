@@ -63,7 +63,7 @@ really just a decompressor to generate the real source code of the
 program.
 
 This program will loop infinitely while progressively refining a
-[raytraced](https://en.wikipedia.org/wiki/Ray_tracing_(graphics)) image.
+[raytraced](https://en.wikipedia.org/wiki/Ray_tracing_&#x28;graphics&#x29;) image.
 
 NOTE: the author refers to [a.c](%%REPO_URL%%/2013/hou/a.c), placed in a gzipped file `a.c.gz`. We do not
 include it but it can be generated like:
@@ -215,8 +215,9 @@ probability proportional to its energy, the sample distribution directly
 corresponds to the final image, which can then be produced as a simple per-pixel
 histogram of all generated paths. The robustness comes from a state mutation
 strategy that actively tries to explore the neighborhood of high energy peaks
-(e.g. paths that happen to hit the light source in
-[otherroom.scene](%%REPO_URL%%/2013/hou/otherroom.scene)). In addition, a rudimentary form of lens
+(e.g., paths that happen to hit the light source in
+[otherroom.scene](%%REPO_URL%%/2013/hou/otherroom.scene) file).
+In addition, a rudimentary form of lens
 path stratification is added to balance the attention each pixel receives. The
 Metropolis-Hasting process completely avoids the tell-tale pixel sampling loop
 required in most other image generation methods.
@@ -239,7 +240,8 @@ Metropolis-Hasting used an even worse PRNG in their 1953 paper.
 The `PPM` compressor uses statically weighted fixed order contexts with an
 arithmetic encoder tweaked for [iocccsize.c](%%REPO_URL%%/2013/iocccsize.c). The encoder emits octet-space pairs
 where each octet encodes ~6.5 bits of information and each space encodes 2 bits
-(thanks to the generous definition of "space" in [iocccsize.c](%%REPO_URL%%/2013/iocccsize.c)). The compressor
+(thanks to the generous definition of "space" in [iocccsize.c](%%REPO_URL%%/2013/iocccsize.c) code).
+The compressor
 actively shuffles the variable names around until the compressed string happens
 to contain enough `{}; `s to pass the final [iocccsize.c](%%REPO_URL%%/2013/iocccsize.c) test.
 There are a few other tweaks:

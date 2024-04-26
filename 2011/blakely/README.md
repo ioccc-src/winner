@@ -33,7 +33,7 @@ threshold.
 ## Judges' remarks:
 
 This program plays [Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
-(see also [here](https://conwaylife.com)), computes Pi to 16 digits
+(see [here](https://conwaylife.com) also), computes Pi to 16 digits
 if given its own source as input, and allows to check if your garden
 is a [Garden of Eden](http://en.wikipedia.org/wiki/Garden_of_Eden_%28cellular_automaton%29), all in one source.
 

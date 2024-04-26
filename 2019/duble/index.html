@@ -538,8 +538,8 @@ function was enough to fix this compilation issue.</p>
 <p>However, that was not enough to make the program work on macOS. If you analyse
 the program you will see that it heavily relies on OS resources. And, for this
 first version of the program, you even needed to increase default <code>sysctl</code>
-parameters to make it work on FreeBSD (this was the purpose of file
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/duble/check-os.sh">check-os.sh</a>). I tried hard to tune macOS the same, but failed.</p>
+parameters to make it work on FreeBSD (this was the purpose of the
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/duble/check-os.sh">check-os.sh</a> file). I tried hard to tune macOS the same, but failed.</p>
 <p>The simple fact the Judges proposed this update meant they wish it could work on
 Mac. And if the judges wish something, it <strong>has to</strong> be done. ;) So I
 refactored a little more the program to reduce OS resources consumption. Or

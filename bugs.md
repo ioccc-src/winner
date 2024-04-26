@@ -38,7 +38,7 @@ it takes away some instructional value or even usability. _In this case we're
 judgement but invariably some might have been the wrong decision. Thank you for
 understanding!
 
-I ([Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson))
+I ( [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) )
 accept the blame in some cases; when working on getting entries to compile
 sometimes I got carried away with it and there might be that I fixed some things
 that should not have been fixed. I am correcting these mistakes as I come across
@@ -2079,7 +2079,7 @@ The example command above _should_ print:
 and that's what it shows in linux.
 
 Note that with different perl libraries in macOS (for instance from
-[Homebrew](https://brew.sh) and [MacPorts](https://www.macports.org)) it will
+[Homebrew](https://brew.sh) and [MacPorts](https://www.macports.org) package managers) it will
 likely print different warnings when compiling. It was observed that with
 Homebrew it does not report any warnings but with MacPorts it results in a total
 of 92 warnings! Nonetheless neither works okay and both crash.
@@ -2124,7 +2124,7 @@ make a pull request.
 
 If `DISPLAY` is not set the program will very likely crash, do something strange
 (or if you're very unlucky your computer might [halt and catch
-fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing))! :-) ).
+fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_&#x28;computing&#x29;)! :-) ).
 
 
 <hr style="width:10%;text-align:left;margin-left:0">
@@ -3202,7 +3202,7 @@ Do you have a fix? We welcome it!
 
 The author stated that the program will crash if no argument is passed to the
 program though we note that your computer might also [halt and catch
-fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
+fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_&#x28;computing&#x29;) :-)
 
 
 <hr style="width:10%;text-align:left;margin-left:0">
@@ -3328,7 +3328,7 @@ The author stated that the program will crash if no argument is passed to the
 program or if invalid arguments (e.g. file does not exist) or images of
 mismatching sizes or unsupported pixel formats though we note that your computer
 might also [halt and catch
-fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
+fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_&#x28;computing&#x29;) :-)
 
 
 <hr style="width:10%;text-align:left;margin-left:0">

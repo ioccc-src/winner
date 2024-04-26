@@ -39,8 +39,8 @@ commands including a way to do the above command but with more steps.
 
 Except for some silly requirements regarding input validation, CRC checking, and
 similar unimportant fluff, this program is a fully compliant
-[RFC1951](https://www.ietf.org/rfc/rfc1951.txt)/[RFC1952](https://www.ietf.org/rfc/rfc1952.txt)
-([GNU Gzip](https://www.gnu.org/software/gzip/)) file uncompressor.  Feed it a
+[RFC1951](https://www.ietf.org/rfc/rfc1951.txt)/[RFC1952](https://www.ietf.org/rfc/rfc1952.txt),
+[GNU Gzip](https://www.gnu.org/software/gzip/), file uncompressor.  Feed it a
 `gzip` compressed file on standard input, and it will write the fully
 uncompressed original file to standard output.
 

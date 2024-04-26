@@ -129,7 +129,7 @@ Information about terminal capabilities, dimensions (setting and how to restore 
 
 Workarounds for various game *features*
 
-* [bugs.html]([bugs.html)
+* [bugs.html](bugs.html)
 
 Bugs and things that might seem like bugs but are not.
 
@@ -522,7 +522,7 @@ The [prog.3.c](%%REPO_URL%%/2020/ferguson1/prog.3.c) is in a more artistic layou
 additional obfuscation technique (see spoilers) but it also has more digraphs
 and as the judges said they feel that digraphs are dated so that's probably why
 they chose the first layout. The [prog.3-j.c](%%REPO_URL%%/2020/ferguson1/prog.3-j.c) version is
-[prog.3.c](%%REPO_URL%%%%REPO_URL%%/2020/ferguson1/prog.3.c) with a shorter `J` macro.
+[prog.3.c](%%REPO_URL%%/2020/ferguson1/prog.3.c) with a shorter `J` macro.
 
 The prog.alt.c version is the one that allows for customising the bug colour and
 it's used in both [snake-colours.sh][] and [play.sh][]. It also calls `erase()`

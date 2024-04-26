@@ -175,9 +175,9 @@ to help the IOCCC judges.  Here's to shorter, more frequent contests!
 
 ### Description
 
-This is a multilayer [perceptron](https://en.wikipedia.org/wiki/Perceptron) (a
+This is a multilayer [perceptron](https://en.wikipedia.org/wiki/Perceptron), a
 [feedforward artificial neural
-network](https://en.wikipedia.org/wiki/Feedforward_neural_network))
+network](https://en.wikipedia.org/wiki/Feedforward_neural_network),
 which can be trained, using on-line
 [backpropagation](https://en.wikipedia.org/wiki/Backpropagation), to classify input files.
 

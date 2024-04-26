@@ -13,7 +13,7 @@
 
 where:
 
-`datafile` is the initial pattern (default: [dgibson.data1](%%REPO_URL%%/1993/dgibson/dgibson.data1))
+`datafile` is the initial pattern (default is the [dgibson.data1](%%REPO_URL%%/1993/dgibson/dgibson.data1) file)
 
 
 ## Try:

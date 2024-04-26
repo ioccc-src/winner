@@ -111,7 +111,7 @@ it as you wish, though please give me credit.
 ### What is a sudoku?
 
 (If you know, feel free to skip this section. Get more details from [the
-wikipedia entry](http://en.wikipedia.org/wiki/Sudoku))
+wikipedia entry](http://en.wikipedia.org/wiki/Sudoku).
 
 A sudoku is a type of logic puzzle. You are given a grid of 9x9 boxes, some
 of which contain digits. This is divided into a 3x3 set up, e.g. (from the
@@ -177,7 +177,7 @@ program generated):
 ```
 
 Be warned - it's evil! (I certainly haven't been able to solve it by hand. The
-brute-force program given above, `sudoku-bfi.c` ([aidan.alt.c](%%REPO_URL%%/2005/aidan/aidan.alt.c)),
+brute-force program given above, `sudoku-bfi.c`, [aidan.alt.c](%%REPO_URL%%/2005/aidan/aidan.alt.c),
 also has trouble - it took 66 seconds to solve it - but probably for different
 reasons. That's the worst performance I've had from brute-force so far!)
 

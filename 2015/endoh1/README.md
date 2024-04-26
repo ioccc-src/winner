@@ -96,7 +96,7 @@ detail.
 This program simulates the systems.  The field consists of 128 x 128 cells.
 Each cell includes information of an amount of the two substances, and interacts
 with neighbor cells (in terms of [von Neumann
-neighborhood](https://en.wikipedia.org/wiki/Von_Neumann_neighborhood)) in each frame.
+neighborhood](https://en.wikipedia.org/wiki/Von_Neumann_neighborhood) lattice) in each frame.
 
 
 ### Configuration

@@ -426,7 +426,7 @@ It adds several nice-to-have features, and allows salt-to-taste customizability.
 <li>X86-Linux, gcc 4.1.2 and 4.8.4, -O0 and -O3</li>
 <li>ARM-QEMU, gcc 4.8.4, -O0 and -O3</li>
 <li>X86-FreeBSD 10.3, clang 3.4.1, -O0 and -O3</li>
-<li>TCC 0.9.26 (x86-64) (used as a proxy for <a href="../../2001/bellard/index.html">2001/bellard</a>)</li>
+<li>TCC 0.9.26 (x86-64), used as a proxy for <a href="../../2001/bellard/index.html">2001/bellard</a></li>
 <li>UNIX V7 pcc (Johnson’s C compiler) on a <a href="http://simh.trailing-edge.com/">simulated PDP-11/45</a>
 (see spoiler for further detail)</li>
 </ul>
@@ -526,7 +526,7 @@ that writing more than a single char will cause a fault, which is <em>technicall
 correct.</p>
 <p>But how does this work at all, even as an extension? <code>o[]</code> allocates one(!)
 byte in a zero-filled data area (formerly
-<a href="https://en.wikipedia.org/wiki/.bss">BSS</a>). The UNIX-derived systems this code
+<a href="https://en.wikipedia.org/wiki/.bss">.bss</a> language). The UNIX-derived systems this code
 was run upon all place the storage of <code>O</code> and <code>o</code> into a zero-filled VM page
 with nothing following: thus, there are plenty of available and unused zero
 bytes following <code>O</code>, addressed via <code>o</code>, and this code only needs 17. This is

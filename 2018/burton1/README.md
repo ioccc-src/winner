@@ -60,7 +60,7 @@ This code has been compiled and tested on:
 * X86-Linux, gcc 4.1.2 and 4.8.4, -O0 and -O3
 * ARM-QEMU, gcc 4.8.4, -O0 and -O3
 * X86-FreeBSD 10.3, clang 3.4.1, -O0 and -O3
-* TCC 0.9.26 (x86-64) (used as a proxy for [2001/bellard](../../2001/bellard/index.html))
+* TCC 0.9.26 (x86-64), used as a proxy for [2001/bellard](../../2001/bellard/index.html)
 * UNIX V7 pcc (Johnson's C compiler) on a [simulated PDP-11/45](http://simh.trailing-edge.com/)
   (see spoiler for further detail)
 
@@ -193,7 +193,7 @@ correct.
 
 But how does this work at all, even as an extension?  `o[]` allocates one(!)
 byte in a zero-filled data area (formerly
-[BSS](https://en.wikipedia.org/wiki/.bss)).  The UNIX-derived systems this code
+[.bss](https://en.wikipedia.org/wiki/.bss) language).  The UNIX-derived systems this code
 was run upon all place the storage of `O` and `o` into a zero-filled VM page
 with nothing following: thus, there are plenty of available and unused zero
 bytes following `O`, addressed via `o`, and this code only needs 17. This is

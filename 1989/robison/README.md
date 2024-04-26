@@ -58,7 +58,7 @@ For an interesting document on APL, see
 
 This program is a handy picoAPL interpreter written in `C--`.  It
 outputs the evaluation of an
-[APL](https://en.wikipedia.org/wiki/APL_(programming_language)) expression from standard
+[APL](https://en.wikipedia.org/wiki/APL_&#x28;programming_language&#x29;) expression from standard
 input.  Functions are limited to dyadic `+`,`-`,`x`, and unary `-`;
 numerals must be binary.  Parentheses may be used for
 grouping.  For example:

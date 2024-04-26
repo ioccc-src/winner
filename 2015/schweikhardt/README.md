@@ -258,7 +258,7 @@ letter identifiers). Not the random kind, rather with a connection to
 the meaning of life, the universe and the rest. Enter amino acids! Among
 the myriad of possible amino acids there are 23 from which proteins are
 built. In biochemistry, each is assigned a TLI (see [Proteinogenic amino
-acid](https://en.wikipedia.org/wiki/Proteinogenic_amino_acid)):
+acid](https://en.wikipedia.org/wiki/Proteinogenic_amino_acid) for more info):
 
 ```
     ala	Alanine

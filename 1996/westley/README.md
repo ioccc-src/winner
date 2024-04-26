@@ -60,8 +60,9 @@ This 1-line program allows various analog ASCII clocks to print out the time;
 the ASCII clock is built from the command line arguments, so many different
 types of clocks can be generated.  Three different scripts are supplied to print
 out a grandfather clock, a mantle clock that runs backwards, and a linear-style
-clock.  (they are [clock1.sh](%%REPO_URL%%/1996/westley/clock1.sh), [clock2.sh](%%REPO_URL%%/1996/westley/clock2.sh), and
-[clock3.sh](%%REPO_URL%%/1996/westley/clock3.sh))
+clock.  (they are [clock1.sh](%%REPO_URL%%/1996/westley/clock1.sh),
+[clock2.sh](%%REPO_URL%%/1996/westley/clock2.sh), and
+[clock3.sh](%%REPO_URL%%/1996/westley/clock3.sh).
 
 The program makes the following (possibly non-portable) assumptions:
 

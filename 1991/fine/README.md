@@ -30,7 +30,7 @@ rotated from `the rug gary lent`!
 ## Judges' remarks:
 
 This filter, 80 chars plus a newline, fits into a single line on most
-terminals (unless your terminal has a line wrap mis-feature :-)).
+terminals, unless your terminal has a line wrap mis-feature :-).
 
 Note in 2023: fixing this entry to work with modern systems increased the size,
 originally to 106 characters but it was dropped back down to 80 with clever use

@@ -56,7 +56,7 @@ But don't ignore the other winning entries!  There are games, utilities,
 eye candy, calculators and graphical tools to explore.
 
 This year, Yusuke Endoh won with two entries, one of which
-([endoh1](endoh1/index.html)) won the special Honorable mention award.  Eight of
+([endoh1](endoh1/index.html) entry) won the special Honorable mention award.  Eight of
 the winning entries were from people who won in previous years.
 
 This year we had a number of authors from Asia.  We saw our second

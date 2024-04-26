@@ -31,7 +31,7 @@ will not detect multiple issues.
 
 ## Alternate code:
 
-The alternate code, [zeitak.alt.c](z%%REPO_URL%%/2012/zeitak/eitak.alt.c), is a version that was slightly
+The alternate code, [zeitak.alt.c](%%REPO_URL%%/2012/zeitak/zeitak.alt.c), is a version that was slightly
 deobfuscated by the author. You may find reading it helpful in your attempt to
 understand this extremely subtle entry.
 

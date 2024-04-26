@@ -452,7 +452,7 @@ that has ever been received! Like all great contest entries, it resulted in a
 change of rules for the following year. To prevent a flood of similar programs,
 the rules were changed, requesting non-machine specific code.</p>
 <p>This program was selected for the 1987 t-shirt collection.</p>
-<p>The C startup routine (via <a href="https://en.wikipedia.org/wiki/Crt0">crt0.o</a>)
+<p>The C startup routine, via <a href="https://en.wikipedia.org/wiki/Crt0">crt0.o</a>,
 transfers control to a location named <code>main</code>. In this case, <code>main</code> just happens
 to be in the data area. The array of <code>short</code>s, which has been further
 obfuscated by use of different data types, just happens to form a meaningful set
@@ -549,7 +549,7 @@ Our program is idempotent under <code>cb</code>.</p>
 <h3 id="more-detailed-analysis">More detailed analysis</h3>
 <p>When this program is compiled, the compiler places the array somewhere in
 memory, just like it places any compiled code somewhere in memory. Usually, the
-C startup code (<a href="https://en.wikipedia.org/wiki/Crt0">crt0.o</a>) calls a routine
+C startup code, <a href="https://en.wikipedia.org/wiki/Crt0">crt0.o</a>, calls a routine
 named <code>main()</code>. The loader fills in the address in the startup code, but at
 least on the old systems where this program ran, it doesn’t know that the
 <code>main()</code> in this program isn’t code but data!</p>
@@ -562,7 +562,7 @@ with the <code>calls</code> instruction. This instruction uses the first (2-byte
 <a href="https://en.wikipedia.org/wiki/Word_(computer_architecture)">word</a> of the called
 routine as a mask of
 <a href="https://en.wikipedia.org/wiki/Processor_register">registers</a> that are to be
-saved on the <a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)">stack</a>.
+saved on the <a href="https://en.wikipedia.org/wiki/Stack(abstract_data_type)">stack</a>.
 In other words, on the VAX the first word can be anything. On the
 <a href="https://en.wikipedia.org/wiki/Programmed_Data_Processor">PDP</a>, the first word
 is a <a href="https://en.wikipedia.org/wiki/Branch_(computer_science)">branch</a>
@@ -664,9 +664,9 @@ programs use is after the <code>str</code> label, and the
 <code>pdp</code> label.</p>
 <p>On the <a href="https://en.wikipedia.org/wiki/VAX">VAX</a>, the program
 <a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)">pushes</a> 9 (the length
-of the string), the address of the string and 1 (the <a href="https://en.wikipedia.org/wiki/File_descriptor">file
+of the string), the address of the string and 1, the <a href="https://en.wikipedia.org/wiki/File_descriptor">file
 descriptor</a> on the
-<a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)">stack</a>) and calls
+<a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)">stack</a>, and calls
 <code>write(2)</code>. Since we didn’t know the exact calling sequence for <a href="https://en.wikipedia.org/wiki/System_call">system
 calls</a>, we just copied the source for
 the <code>write(2)</code> system call stub into our program. After <code>write(2)</code> finishes, the
@@ -745,7 +745,7 @@ The only problem we had was that the program had chosen an
 Since everybody knows what a <a href="https://en.wikipedia.org/wiki/PDP-11">PDP-11</a>
 branch instruction looks like (everyone knows that the traditional magic word
 for an executable, <code>0407</code>, is a <a href="https://en.wikipedia.org/wiki/PDP-11">PDP-11</a>
-<a href="https://en.wikipedia.org/wiki/Branch_(computer_science)">branch</a>), we changed
+<a href="https://en.wikipedia.org/wiki/Branch_(computer_science)">branch</a>, we changed
 that to <a href="https://en.wikipedia.org/wiki/Decimal">decimal</a>. After checking the
 size of the resulting program we saw that it was one byte too long. The limit
 was 512 bytes, and our program was 513 bytes. So we changed the word <code>and</code> in

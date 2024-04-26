@@ -121,7 +121,7 @@ diagrams](https://en.wikipedia.org/wiki/Voronoi_diagram), see
 [Qhull](http://www.qhull.org/), [CGAL](https://www.cgal.org) and the like but
 you may still encounter large output volumes (and have to handle some sort of
 clipping in order to represent properly infinite regions of the diagram in
-[SVG](https://www.w3.org/TR/SVG11/expanded-toc.html)).
+[SVG](https://www.w3.org/TR/SVG11/expanded-toc.html).
 
 Beware, compilation may report warnings about precision loss, linting may be a
 disaster, but the code should remain portable, and the output accurate enough

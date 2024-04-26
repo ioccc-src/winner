@@ -21,7 +21,7 @@ Why is the following label necessary?
 ```
 
 Notice that if you C beautify (cb) or pre-process this program, it
-will no longer work correctly, if at all.  (go ahead, try it... :-))
+will no longer work correctly, if at all.  Go ahead, try it... :-)
 
 NOTE: One should remove the final trailing newline to obtain the
 original source file.  This step is not needed to compile

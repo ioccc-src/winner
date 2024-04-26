@@ -246,7 +246,7 @@ training loss will give you an idea of how well the network is learning and
 can let you know if the network is [overfitting or underfitting][7].
 
 As part of the training process, the data set (which for OMLET is the
-[Shakespeare.txt](Shakespeare.txt) file you gave on the command line) is divided into
+[Shakespeare.txt](Shakespeare.txt)file you gave on the command line) is divided into
 [training and validation sets][8] (by default, 95% of the data is used for
 training, but like most OMLET parameters, you can change this at compile-time).
 

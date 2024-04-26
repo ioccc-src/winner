@@ -12,6 +12,8 @@ See the [markdown syntax](https://www.markdownguide.org/basic-syntax) guide.
 See also [CommonMark Spec](https://spec.commonmark.org/current/).
 
 Nevertheless, the IOCCC does have certain practices that we ask authors to follow.
+Some these relate to use of markdown directly, others relate to injecting HTML
+into the markdown file.
 
 In particular there are things we ask people to please do **NOT** use markdown files:
 
@@ -194,4 +196,88 @@ Or better and easier still, use an inline markdown code block:
 
 ```
     `inline markdown code block is easier and much better`
+```
+
+
+## Do not add trailing slash on void HTML elements
+
+Please do not use trailing slash on [void HTML
+elements](https://github.com/validator/validator/wiki/Markup-»-Void-elements).
+
+See also this note on [trailing slashes in void-element start
+tags](https://github.com/validator/validator/wiki/Markup-»-Void-elements#trailing-slashes-in-void-element-start-tags-do-not-mark-the-start-tags-as-self-closing).
+
+The trailing slash on void HTML elements has no effect and interacts badly with unquoted attribute values.
+
+For example, please do not use:
+
+```
+    <br/>	<=== no thank you
+```
+
+Instead use just:
+
+```
+    <br>
+```
+
+And for example, please do not use:
+
+```
+    <hr/>	<=== no thank you
+```
+
+Instead use just:
+
+```
+    <hr>
+```
+
+And for example, please do not use:
+
+```
+    <img src="1984-anonymous-tattoo.jpg"
+     alt="image of a tattoo of the 1984 anonymous C code"
+     width=600 height=401 />					<=== no thank you
+```
+
+Instead use just:
+
+```
+    <img src="1984-anonymous-tattoo.jpg"
+     alt="image of a tattoo of the 1984 anonymous C code"
+     width=600 height=401>
+```
+
+etc.
+
+## Do not end markdown links in ))
+
+Please do not end a markdown links with a double closed parenthesis "))".
+
+Markdown links that end in "))" complicate parsing and sometimes lead
+to incorrect URLs or file paths.
+
+Instead of:
+
+```
+[some text](https://example.com/foo_(bar))	<=== no thank you
+```
+
+Use:
+
+```
+[some text](https://example.com/foo_&#x28;bar&#x29;)
+```
+
+Instead of:
+
+```
+This thing ([some text](some/path)) is not ideal.	<=== no thank you
+``
+
+Use:
+
+```
+This thing, [some text](some/path), is better.
 ```

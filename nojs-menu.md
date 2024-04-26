@@ -5,7 +5,7 @@
 * [Winning Entries](%%DOCROOT_SLASH%%years.html)
 * [People who have won](%%DOCROOT_SLASH%%authors.html)
 * [Location of authors](%%DOCROOT_SLASH%%location.html)
-* [Bugs &amp; (Mis)features](%%DOCROOT_SLASH%%bugs.html)
+* [Bugs &amp; Misfeatures](%%DOCROOT_SLASH%%bugs.html)
 
 ## Status
 

@@ -550,7 +550,7 @@ delicious challenge).
 # <a href="#toc">Example additions</a>
 </div>
 
-*   Add code (to [prog.c](%%REPO_URL%%/2020/ferguson1/prog.c)) that tries to determine possible decipherments based on
+*   Add code, to [prog.c](%%REPO_URL%%/2020/ferguson1/prog.c), that tries to determine possible decipherments based on
 a given crib (or set of cribs).
 
 

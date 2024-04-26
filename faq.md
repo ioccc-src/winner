@@ -215,7 +215,7 @@ frequently submitted theme, be sure that it is obfuscated in several
 new and novel ways.
 
 **IMPORTANT HINT**: Be sure to **clearly explain** near the beginning
-of your `remarks.md` file (see [FAQ 2.1](#remarks_md))
+of your `remarks.md` file, see [FAQ 2.1](#remarks_md),
 **why you are submitting a entry based on a frequently
 submitted theme** and **how compares with previous IOCCC winners**
 of the same theme.
@@ -315,7 +315,7 @@ state something along the lines of:
 ```
 
 **FAIR WARNING**: Be sure to **clearly explain** near the beginning
-of your `remarks.md` file (see [FAQ 2.1](#remarks_md))
+of your `remarks.md` file, see [FAQ 2.1](#remarks_md),
 **why you are submitting a entry based on a frequently
 submitted theme** and **how compares with previous IOCCC winners**
 of the same theme.
@@ -617,7 +617,7 @@ entries](https://github.com/ioccc-src/winner/commit/9d61fc0fb4a3245afb1435458cfb
 of the [IOCCC 2020](years.html#2020),
 after a far too long of a delay
 (due in part to a [former IOCCC judge whose resignation was noted on
-2021 Jan 04](https://github.com/ioccc-src/winner/commit/c94fc84c35dc83e3eb9900720b95917a15c27afe))
+2021 Jan 04](https://github.com/ioccc-src/winner/commit/c94fc84c35dc83e3eb9900720b95917a15c27afe) commit)
 from their initial [2020 Jul 25
 announcement](https://web.archive.org/web/20200726232505/http://www.ioccc.org:80/index.html),
 were added by an [IOCCC judge](https://www.ioccc.org/judges.html)
@@ -3148,7 +3148,7 @@ NOTE: The _JSON null_ is **NOT** enclosed in quotes!
 ```
 
 This _JSON member_ holds the
-[Mastodon social network](https://en.wikipedia.org/wiki/Mastodon_\(social_network\))
+[Mastodon social network](https://en.wikipedia.org/wiki/Mastodon_&#x28;social_network&#x29;)
 handle of the author.
 
 There **MUST** be one and only one `mastodon` _JSON member_ and the _JSON value_ **MUST**

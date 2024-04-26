@@ -80,7 +80,7 @@ by the receiver. Command shell archives alleviate this problem somewhat, but
 still require standardization for the function of data compression and
 mail-transparency encoding. On Unix, these coding format quandaries are overcome
 by planting a novel [Trojan
-Horse](https://en.wikipedia.org/wiki/Trojan_horse_(computing)) in the archive
+Horse](https://en.wikipedia.org/wiki/Trojan_horse_&#x28;computing&#x29;) in the archive
 header to perform negotiation-less decoding.
 
 Specifically, we outline the development of an extraordinarily compact portable

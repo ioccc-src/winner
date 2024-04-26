@@ -222,7 +222,7 @@ isolated `||` on line 68?
 
 But wait... why aren't any statements terminated by semicolons? Why is there
 only ONE semicolon in the entire program?! Why is the author opening nested
-blocks by such strange things as `||` and `(`, and closing them by `||` and `))`? The
+blocks by such strange things as `||` and `(`, and closing them by `||` and `)`? The
 `for` loop isn't a `for` loop! The `do` loop isn't a `do` loop! Or... are they? Well,
 the `for` loop is defined in terms of a `while` loop. But wait, the `while` loop is
 defined in terms of the `do` loop. And the `do` loop is defined in terms of ...

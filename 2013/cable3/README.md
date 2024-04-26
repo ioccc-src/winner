@@ -221,7 +221,7 @@ the `fd.img` provided, which is a FreeDOS boot disk.
 Before running the emulator on a Unix-type system, `stty` needs to be used to
 put the keyboard into raw mode (and afterwards it needs to be put back to
 cooked). So, run the emulator using something like this script (provided as
-[cable3.sh](%%REPO_URL%%/2013/cable3/cable3.sh)):
+the [cable3.sh](%%REPO_URL%%/2013/cable3/cable3.sh) file):
 
 ``` <!---sh-->
     stty cbreak raw -echo min 0
@@ -394,7 +394,7 @@ disks (18 sectors per track, 2 heads) and 720KB disks (9 sectors per track, 2
 heads).
 
 If you want to install your own software from floppy images (downloaded from
-e.g. [Vetusware](https://vetusware.com)), the easiest way to "change disks" is
+e.g., vetusware.com at one time), the easiest way to "change disks" is
 to copy each disk image in turn over the floppy image file you specify on the
 command line. Don't forget to put your original boot disk back at the end!
 

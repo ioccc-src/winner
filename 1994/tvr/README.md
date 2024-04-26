@@ -86,9 +86,9 @@ fix it without breaking something else?
 
 This program contains four pairs of fractals/effects and three methods of
 animating them. There are two windows for a pair of fractals, one of which
-contains static fractal (e.g. [Mandelbrot
-set](https://en.wikipedia.org/wiki/Mandelbrot_set)) and the other an animating
-one (e.g. [Julia set](https://en.wikipedia.org/wiki/Julia_set)) which is derived
+contains static fractal (e.g., [Mandelbrot](https://en.wikipedia.org/wiki/Mandelbrot_set) set)
+and the other an animating
+one (e.g., [Julia](https://en.wikipedia.org/wiki/Julia_set) set) which is derived
 from the same formula as the static one. Only one pair of fractals can be
 displayed in one process.
 

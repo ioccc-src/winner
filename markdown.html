@@ -388,7 +388,9 @@ All generated HTML pages on the <a href="https://www.ioccc.org/index.html">Offic
 start with some markdown content.</p>
 <p>See the <a href="https://www.markdownguide.org/basic-syntax">markdown syntax</a> guide.
 See also <a href="https://spec.commonmark.org/current/">CommonMark Spec</a>.</p>
-<p>Nevertheless, the IOCCC does have certain practices that we ask authors to follow.</p>
+<p>Nevertheless, the IOCCC does have certain practices that we ask authors to follow.
+Some these relate to use of markdown directly, others relate to injecting HTML
+into the markdown file.</p>
 <p>In particular there are things we ask people to please do <strong>NOT</strong> use markdown files:</p>
 <h2 id="do-not-use-name-attributes-in-html-a-tags">Do not use name attributes in HTML a tags</h2>
 <p>Please do not use the HTML construct:</p>
@@ -476,7 +478,46 @@ unquoted attribute values.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> style</span><span class="op">=</span><span class="st">&quot;font-family: monospace;&quot;</span><span class="dt">&gt;</span>Use of monospaced font is one option<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span></code></pre></div>
 <p>Or better and easier still, use an inline markdown code block:</p>
 <pre><code>    `inline markdown code block is easier and much better`</code></pre>
-<!-- AFTER: last line of markdown file: markdown.md -->
+<h2 id="do-not-add-trailing-slash-on-void-html-elements">Do not add trailing slash on void HTML elements</h2>
+<p>Please do not use trailing slash on <a href="https://github.com/validator/validator/wiki/Markup-»-Void-elements">void HTML
+elements</a>.</p>
+<p>See also this note on <a href="https://github.com/validator/validator/wiki/Markup-»-Void-elements#trailing-slashes-in-void-element-start-tags-do-not-mark-the-start-tags-as-self-closing">trailing slashes in void-element start
+tags</a>.</p>
+<p>The trailing slash on void HTML elements has no effect and interacts badly with unquoted attribute values.</p>
+<p>For example, please do not use:</p>
+<pre><code>    &lt;br/&gt;       &lt;=== no thank you</code></pre>
+<p>Instead use just:</p>
+<pre><code>    &lt;br&gt;</code></pre>
+<p>And for example, please do not use:</p>
+<pre><code>    &lt;hr/&gt;       &lt;=== no thank you</code></pre>
+<p>Instead use just:</p>
+<pre><code>    &lt;hr&gt;</code></pre>
+<p>And for example, please do not use:</p>
+<pre><code>    &lt;img src=&quot;1984-anonymous-tattoo.jpg&quot;
+     alt=&quot;image of a tattoo of the 1984 anonymous C code&quot;
+     width=600 height=401 /&gt;                                    &lt;=== no thank you</code></pre>
+<p>Instead use just:</p>
+<pre><code>    &lt;img src=&quot;1984-anonymous-tattoo.jpg&quot;
+     alt=&quot;image of a tattoo of the 1984 anonymous C code&quot;
+     width=600 height=401&gt;</code></pre>
+<p>etc.</p>
+<h2 id="do-not-end-markdown-links-in">Do not end markdown links in ))</h2>
+<p>Please do not end a markdown links with a double closed parenthesis “))”.</p>
+<p>Markdown links that end in “))” complicate parsing and sometimes lead
+to incorrect URLs or file paths.</p>
+<p>Instead of:</p>
+<pre><code>[some text](https://example.com/foo_(bar))      &lt;=== no thank you</code></pre>
+<p>Use:</p>
+<pre><code>[some text](https://example.com/foo_&amp;#x28;bar&amp;#x29;)</code></pre>
+<p>Instead of:</p>
+<pre><code>This thing ([some text](some/path)) is not ideal.       &lt;=== no thank you
+``
+
+Use:
+</code></pre>
+<p>This thing, <a href="some/path">some text</a>, is better.
+```
+<!-- AFTER: last line of markdown file: markdown.md --></p>
 
 <!-- END: this line ends content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 <!-- START: this line starts content from: inc/after-content.default.html -->

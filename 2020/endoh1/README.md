@@ -54,7 +54,7 @@ Use `prog.alt` as you would `prog` above.
 ## Judges' remarks:
 
 When playing
-[Minesweeper](https://en.wikipedia.org/wiki/Minesweeper_(video_game)), a
+[Minesweeper](https://en.wikipedia.org/wiki/Minesweeper_&#x28;video_game&#x29;), a
 misclick might ruin a game, so why not leave the routine to the computer?  This
 program automatically uncovers mines according to several rules, and leaves
 guessing (and applying the most straightforward of the rules -- just for fun,
@@ -216,14 +216,14 @@ There are mines in a cell whose "priorities-of-each-cell" is less than
 
 ### Bug fixes and Credits
 
-The judges pointed out a bug of the original version that I submitted
-([prog.alt.c](%%REPO_URL%%/2020/endoh1/prog.alt.c)).  Because this program does not provide a feature to
+The judges pointed out a bug of the original version that I submitted,
+[prog.alt.c](%%REPO_URL%%/2020/endoh1/prog.alt.c).  Because this program does not provide a feature to
 flag unprobed cells manually, we can do nothing if the number of unprobed cells
 are equal to the number of mines remaining; [unwinnable.txt](unwinnable.txt) is
 an example for such a case.
 
 Thus, I implemented an additional rule to flag all unprobed cells in such a case
-into the final version ([prog.c](%%REPO_URL%%/2020/endoh1/prog.c)).
+into the final version: [prog.c](%%REPO_URL%%/2020/endoh1/prog.c).
 
 [Ilya Kurdyukov](../../authors.html#Ilya_Kurdyukov) also pointed out a warning
 "ignoring return value of 'fscanf'" only when `-O3` is used.  So I changed the

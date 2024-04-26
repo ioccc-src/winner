@@ -18,7 +18,7 @@ Windows](%%REPO_URL%%/2011/toledo/toledo.alt2.c). See [Alternate code](#alternat
 ```
 
 
-## Alternate code:
+## Alternate code
 
 The first alt version, [toledo.alt.c](%%REPO_URL%%/2011/toledo/toledo.alt.c), allows you to reconfigure
 the controls and the dimensions more easily.
@@ -191,7 +191,7 @@ Not really, just kidding :D
 * It is written in the only true C: K&R, and no, that doesn't mean
   Katherine & Rose.
 * Vectorial scalable graphics: do you want a bigger viewport? Change variables
-  `M` and `N` (see the [alternate code](#alternate-code)).
+  `M` and `N` (see the [alternate](#alternate-code) code).
 * Half of the program is formatted as 3D cube. View with tabs at 8 columns and a
   square font.
 * The other half of the program is unprintable source code, so no typing from

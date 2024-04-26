@@ -1,6 +1,6 @@
 # HINTS
 
-For the first program ([shapiro.c](%%REPO_URL%%/1994/shapiro/shapiro.c)):
+For the first program, [shapiro.c](%%REPO_URL%%/1994/shapiro/shapiro.c):
 
 
 This is a very simple program:

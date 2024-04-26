@@ -137,7 +137,7 @@ part.
 
 For more information on what you can do once you've piped [third](%%REPO_URL%%/1992/buzzard.2/third) into
 first, type `help` and consult
-[FORTH](https://en.wikipedia.org/wiki/Forth_(programming_language)) manuals for
+[FORTH](https://en.wikipedia.org/wiki/Forth_&#x28;programming_language&#x29;) manuals for
 further reference.  Six sample THIRD programs are included in the files
 `demo1.th` through `demo6.th`.  See [buzzard.2.README.html](buzzard.2.README.html)
 for more information.
@@ -190,7 +190,7 @@ answer the question "what will this do when I run it".  A reader who has
 deciphered `first` to this point may think they know the answer to this
 question, but they may not know the answer to the more important question, "what
 will this program do when given the right input?"
-[FORTH](https://en.wikipedia.org/wiki/Forth_(programming_language)) aficionados,
+[FORTH](https://en.wikipedia.org/wiki/Forth_&#x28;programming_language&#x29;) aficionados,
 and especially FORTH implementers, may recognize the similarity of the internal
 compiler format to many FORTH internal representations, and, being aware that
 FORTH interpreters can often be self-compiling, may be suspicious that this

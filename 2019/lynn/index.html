@@ -464,8 +464,8 @@ of the characters <code>a</code> and <code>b</code> that contain an even number 
 <p>A GHC wrapper is provided:</p>
 <pre><code>    ghc ghclol.hs</code></pre>
 <h3 id="strongly-connected-components">Strongly-connected components:</h3>
-<p>See <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/scc.hs">scc.hs</a> (and its GHC wrapper <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/ghcscc.hs">ghcscc.hs</a>) for an elegant
-way to print the strongly-connected components of a graph in reverse topological
+<p>See <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/scc.hs">scc.hs</a>, and its GHC wrapper <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/ghcscc.hs">ghcscc.hs</a>,
+for an elegant way to print the strongly-connected components of a graph in reverse topological
 order.</p>
 <pre><code>    (./prog &lt; scc.hs ; cat prog.c) &gt; scc.c</code></pre>
 <p>It expects the input to be in a similar format as a previous entry
@@ -545,8 +545,8 @@ format earlier in the source.)</li>
 ternary operators, and so on.</li>
 <li>Huffman coding.</li>
 <li>Base-85 because high bits are frowned upon.</li>
-<li>Mixed radix encoding to game iocccsize. From a past entry
-(<a href="../../2018/bellard/index.html">2018/bellard</a>), it seems 9 11 12 32 are the only
+<li>Mixed radix encoding to game iocccsize. From a past entry,
+<a href="../../2018/bellard/index.html">2018/bellard</a>, it seems 9 11 12 32 are the only
 whitespace octets that may appear verbatim in string literals.</li>
 <li>Choosing what to encode in Huffman/base-85 and what to encode in mixed radix
 was a delicate balancing act. In the end, I only had a few bytes to spare, which
@@ -554,7 +554,7 @@ I spent on gratuitous confusion.</li>
 <li>The effects of some functions depend on the order their arguments are
 evaluated, yet the program works either way. Why?</li>
 <li>Ugly macros for the runtime system’s jump table for lazy reduction. A previous
-entry (<a href="../../2013/endoh1/index.html">2013/endoh1</a>) has a cuter solution, which I
+entry, <a href="../../2013/endoh1/index.html">2013/endoh1</a>, has a cuter solution, which I
 avoid because of originality concerns and also because my combinators are
 compressed.</li>
 <li>Relies on the inability of C comments to nest.</li>

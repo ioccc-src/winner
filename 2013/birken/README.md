@@ -177,8 +177,8 @@ would not be necessary:
 
 For reference, the names of the 7
 [tetriminos](https://en.wikipedia.org/wiki/Tetromino) (the game pieces or
-actually a kind of geometric shape used in
-[Tetris](https://en.wikipedia.org/wiki/Tetris)) appear in the table below.
+actually a kind of geometric shape used in the
+[Tetris](https://en.wikipedia.org/wiki/Tetris) game) appear in the table below.
 
 <img src="names.png"
  alt="image of names of the 7 Tetris game pieces"
@@ -333,7 +333,7 @@ rate in which the terminal application receives and displays the [ANSI
 escape](https://en.wikipedia.org/wiki/ANSI_escape_code) sequences.
 
 To slow down the output programmatically, introduce a delay immediately after the
-call to `fflush(3)` (N.B: see [birken.alt.c](%%REPO_URL%%/2013/birken/birken.alt.c)).
+call to `fflush(3)` (N.B: see [birken.alt.c](%%REPO_URL%%/2013/birken/birken.alt.c) source).
 
 
 ### IOCCC Size Tool Bug
@@ -529,7 +529,7 @@ origin of each file is detailed below (character, game, company, year).
 
 * [belmont.txt](belmont.txt) - [Simon
 Belmont](https://en.wikipedia.org/wiki/Simon_Belmont),
-[Castlevania](https://en.wikipedia.org/wiki/Castlevania_(1986_video_game)),
+[Castlevania](https://en.wikipedia.org/wiki/Castlevania_&#x28;1986_video_game&#x29;),
 [Konami](https://en.wikipedia.org/wiki/Konami), 1986.
 
 * [bloober.txt](bloober.txt) - Bloober, [Super Mario
@@ -573,7 +573,7 @@ Plant](https://www.mariowiki.com/Piranha_Plant), Super Mario Brothers, Nintendo,
 
 * [samus.txt](samus.txt) - [Samus
 Aran](https://metroid.fandom.com/wiki/Samus_Aran),
-[Metroid](https://metroid.fandom.com/wiki/Metroid_(game)), Nintendo/[Intelligent
+[Metroid](https://metroid.fandom.com/wiki/Metroid_&#x28;game&#x29;), Nintendo/[Intelligent
 Systems](https://en.wikipedia.org/wiki/Intelligent_Systems), 1986.
 
 * [toad.txt](toad.txt) - [Toad](https://www.mariowiki.com/Toad), Super Mario

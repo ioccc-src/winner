@@ -385,14 +385,14 @@ content, for the <a href="https://www.ioccc.org">official IOCCC web site</a>.</p
 fragments from the <a href="../inc/index.html">inc directory</a> as well as various JSON
 files and other content from the <a href="https://github.com/ioccc-src/temp-test-ioccc">IOCCC GitHub
 repo</a>.</p>
-<h2 id="bin-tools"><a href="index.html">bin/</a> tools</h2>
-<h3 id="all-run.sh"><a href="all-run.sh">all-run.sh</a></h3>
+<h2 id="bin-tools"><a href="../bin/index.html">bin/</a> tools</h2>
+<h3 id="all-run.sh"><a href="../bin/all-run.sh">all-run.sh</a></h3>
 <p>Run a command on all winning entries.</p>
 <p>For example:</p>
 <pre><code>    bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1</code></pre>
 <p>Or for example:</p>
 <pre><code>    bin/all-run.sh -v 3 bin/readme2index.sh -v 1</code></pre>
-<h3 id="all-years.sh"><a href="all-years.sh">all-years.sh</a></h3>
+<h3 id="all-years.sh"><a href="../bin/all-years.sh">all-years.sh</a></h3>
 <p>Run a command on all IOCCC years.</p>
 <p>For example:</p>
 <pre><code>    bin/all-years.sh -v 1 bin/gen-year-index.sh -v 1</code></pre>
@@ -400,35 +400,35 @@ repo</a>.</p>
 <pre><code>    bin/all-years.sh -v 1 bin/chk-entry.sh</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make verify_entry_files</code></pre>
-<h3 id="chk-entry.sh"><a href="chk-entry.sh">chk-entry.sh</a></h3>
+<h3 id="chk-entry.sh"><a href="../bin/chk-entry.sh">chk-entry.sh</a></h3>
 <p>Check that files required by an entry match the entry’s manifest as found in
 <code>.entry.json</code>.</p>
 <p>For example:</p>
 <pre><code>    bin/chk-entry.sh 2020/ferguson1</code></pre>
-<h3 id="filelist.entry.json.awk"><a href="filelist.entry.json.awk">filelist.entry.json.awk</a></h3>
+<h3 id="filelist.entry.json.awk"><a href="../bin/filelist.entry.json.awk">filelist.entry.json.awk</a></h3>
 <p>Generate the list of files in the entry’s manifest, <code>.entry.json</code>.</p>
 <p>For example:</p>
 <pre><code>    awk -f bin/filelist.entry.json.awk 2020/ferguson1/.entry.json</code></pre>
-<h3 id="gen-authors.sh"><a href="gen-authors.sh">gen-authors.sh</a></h3>
+<h3 id="gen-authors.sh"><a href="../bin/gen-authors.sh">gen-authors.sh</a></h3>
 <p>Generate the top level <code>/authors.html</code> page.</p>
 <p>Usage:</p>
 <pre><code>    bin/gen-authors.sh -v 1</code></pre>
-<h3 id="gen-location.sh"><a href="gen-location.sh">gen-location.sh</a></h3>
+<h3 id="gen-location.sh"><a href="../bin/gen-location.sh">gen-location.sh</a></h3>
 <p>Generate the top level <code>/location.html</code> page.</p>
 <p>Usage:</p>
 <pre><code>    bin/gen-location.sh -v 1</code></pre>
-<h3 id="gen-other-html.sh"><a href="gen-other-html.sh">gen-other-html.sh</a></h3>
+<h3 id="gen-other-html.sh"><a href="../bin/gen-other-html.sh">gen-other-html.sh</a></h3>
 <p>Generate entry HTML files (other than README.md to index.html) from markdown
 files.</p>
 <p>Usage:</p>
 <pre><code>    bin/gen-other-html.sh -v 1</code></pre>
-<h3 id="gen-sitemap.sh"><a href="gen-sitemap.sh">gen-sitemap.sh</a></h3>
+<h3 id="gen-sitemap.sh"><a href="../bin/gen-sitemap.sh">gen-sitemap.sh</a></h3>
 <p>Generate an XML sitemap for the IOCCC web site.</p>
 <p>Usage:</p>
 <pre><code>    bin/gen-sitemap.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_sitemap</code></pre>
-<h3 id="gen-status.sh"><a href="gen-status.sh">gen-status.sh</a></h3>
+<h3 id="gen-status.sh"><a href="../bin/gen-status.sh">gen-status.sh</a></h3>
 <p>Generate <code>status.json</code> according to the modification dates of <code>status.json</code>
 and <code>news.html</code>.</p>
 <p>Without argument, the <code>contest_status</code> is unchanged.</p>
@@ -442,7 +442,7 @@ and <code>news.html</code>.</p>
 <pre><code>    bin/gen-status -h</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_status</code></pre>
-<h3 id="gen-top-html.sh"><a href="gen-top-html.sh">gen-top-html.sh</a></h3>
+<h3 id="gen-top-html.sh"><a href="../bin/gen-top-html.sh">gen-top-html.sh</a></h3>
 <p>Generate a number of top level HTML pages for the IOCCC web sites.</p>
 <p>Usage:</p>
 <pre><code>    bin/gen-top-html.sh -v 1</code></pre>
@@ -463,71 +463,71 @@ and <code>news.html</code>.</p>
 </ul>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_top_html</code></pre>
-<h3 id="gen-year-index.sh"><a href="gen-year-index.sh">gen-year-index.sh</a></h3>
+<h3 id="gen-year-index.sh"><a href="../bin/gen-year-index.sh">gen-year-index.sh</a></h3>
 <p>Generate an <code>index.html</code> page for an given IOCCC year.</p>
 <p>Usage:</p>
 <pre><code>    bin/gen-year-index.sh -v 1 2020</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_year_index</code></pre>
-<h3 id="gen-years.sh"><a href="gen-years.sh">gen-years.sh</a></h3>
+<h3 id="gen-years.sh"><a href="../bin/gen-years.sh">gen-years.sh</a></h3>
 <p>Generate the top level <code>/years.html</code> page.</p>
 <p>Usage:</p>
 <pre><code>    bin/gen-years.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_years</code></pre>
-<h3 id="md2html.sh"><a href="md2html.sh">md2html.sh</a></h3>
+<h3 id="md2html.sh"><a href="../bin/md2html.sh">md2html.sh</a></h3>
 <p>This is the primary tool that forms IOCCC generated HTML content from
 markdown files (permanent markdown files or temporarily generated
 markdown files) and HTML fragments from the <a href="../inc/index.html">inc directory</a>.</p>
 <p>The <a href="../inc/md2html.cfg">../inc/md2html.cfg</a> configuration file is
 used by <a href="md2html.sh">md2html.sh</a> to drive the generation process.</p>
-<h3 id="output-index-author.sh"><a href="output-index-author.sh">output-index-author.sh</a></h3>
+<h3 id="output-index-author.sh"><a href="../bin/output-index-author.sh">output-index-author.sh</a></h3>
 <p>Output author’s or authors’ related HTML details for an entry’s index.html
 page.</p>
-<h3 id="output-index-inventory.sh"><a href="output-index-inventory.sh">output-index-inventory.sh</a></h3>
+<h3 id="output-index-inventory.sh"><a href="../bin/output-index-inventory.sh">output-index-inventory.sh</a></h3>
 <p>Output the inventory in HTML form for an entry’s index.html page.</p>
-<h3 id="output-year-index.sh"><a href="output-year-index.sh">output-year-index.sh</a></h3>
+<h3 id="output-year-index.sh"><a href="../bin/output-year-index.sh">output-year-index.sh</a></h3>
 <p>Output markdown of wining entry links for a given year.</p>
-<h3 id="pandoc-wrapper.sh"><a href="pandoc-wrapper.sh">pandoc-wrapper.sh</a></h3>
+<h3 id="pandoc-wrapper.sh"><a href="../bin/pandoc-wrapper.sh">pandoc-wrapper.sh</a></h3>
 <p>Wrapper tool to run pandoc.</p>
-<h3 id="quick-readme2index.sh"><a href="quick-readme2index.sh">quick-readme2index.sh</a></h3>
+<h3 id="quick-readme2index.sh"><a href="../bin/quick-readme2index.sh">quick-readme2index.sh</a></h3>
 <p>Builds an entry’s <code>index.html</code> file if the entry directory
 does not have a non-empty <code>index.hmtl</code> file, or if either
 <code>.entry.json</code> or <code>index.html</code> is newer than the <code>index.hmtl</code> file.</p>
 <p>This is useful when only a few entries have been
 modified (resulting in an updated <code>.entry.json</code> file)
 or if the <code>index.html</code> of a few entries has been changed.</p>
-<p>While the <a href="readme2index.sh">readme2index.sh</a> take a few
+<p>While the <a href="../bin/readme2index.sh">readme2index.sh</a> take a few
 seconds to run, when applied to 300+ entries,
 the extra time can add up.</p>
 <p>If only a few <code>index.hmtl</code> files need updating, then
 this command will only briefly pause while the
-slightly longer <a href="readme2index.sh">readme2index.sh</a> is run:</p>
+slightly longer <a href="../bin/readme2index.sh">readme2index.sh</a> is run:</p>
 <pre><code>    bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1</code></pre>
 <p><strong>NOTE</strong>: This command assumes that the relative
 modification times for <code>index.hmtl</code>, <code>.entry.json</code>,
 and <code>index.html</code> are correct. If in doubt, use:</p>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make quick_entry_index</code></pre>
-<h3 id="readme2index.sh"><a href="readme2index.sh">readme2index.sh</a></h3>
+<h3 id="readme2index.sh"><a href="../bin/readme2index.sh">readme2index.sh</a></h3>
 <p>Convert an entry README.md into entry directory index.html.</p>
 <pre><code>    bin/all-run.sh -v 3 bin/readme2index.sh -v 1</code></pre>
 <p>To build <code>index.html</code> files for all entries:</p>
 <pre><code>    bin/all-run.sh -v 3 bin/readme2index.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make entry_index</code></pre>
-<h3 id="status2html.sh"><a href="status2html.sh">status2html.sh</a></h3>
+<h3 id="status2html.sh"><a href="../bin/status2html.sh">status2html.sh</a></h3>
 <p>Convert <code>status.json</code> into HTML.</p>
 <p>This tool is a ‘before tool’ (-b tool) that is intended
 to be used by <code>bin/gen-status.sh</code>.</p>
-<h3 id="sgi.sh"><a href="sgi.sh">sgi.sh</a></h3>
+<h3 id="sgi.sh"><a href="../bin/sgi.sh">sgi.sh</a></h3>
 <p>Sort .gitignore content from <code>stdin</code> to <code>stdout</code>.</p>
 <p>We sort with lines starting with <code>#</code> first.
 We sort with lines starting with <code>*</code> second.
 We sort with lines that do not start with <code>[#!*]</code> third.
 We sort with lines starting with <code>!</code> fourth.</p>
-<p>This tool is used by <a href="sort.gitignore.sh">sort.gitignore.sh</a>.</p>
-<h3 id="sort.gitignore.sh"><a href="sort.gitignore.sh">sort.gitignore.sh</a></h3>
+<p>This tool is used by <a href="../bin/sort.gitignore.sh">sort.gitignore.sh</a>.</p>
+<h3 id="sort.gitignore.sh"><a href="../bin/sort.gitignore.sh">sort.gitignore.sh</a></h3>
 <p>Sort a .gitignore in a entry directory.</p>
 <p>Usage:</p>
 <pre><code>    bin/sort.gitignore.sh -v 1 YYYY/dir</code></pre>
@@ -535,23 +535,23 @@ We sort with lines starting with <code>!</code> fourth.</p>
 <pre><code>    bin/all-run.sh bin/sort.gitignore.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make sort_gitignore</code></pre>
-<h3 id="subst.default.sh"><a href="subst.default.sh">subst.default.sh</a></h3>
+<h3 id="subst.default.sh"><a href="../bin/subst.default.sh">subst.default.sh</a></h3>
 <p>Print default substitutions.</p>
-<h3 id="subst.entry-index.sh"><a href="subst.entry-index.sh">subst.entry-index.sh</a></h3>
+<h3 id="subst.entry-index.sh"><a href="../bin/subst.entry-index.sh">subst.entry-index.sh</a></h3>
 <p>Print substitutions for an entry index.html.</p>
-<h3 id="subst.entry-navbar.awk"><a href="subst.entry-navbar.awk">subst.entry-navbar.awk</a></h3>
+<h3 id="subst.entry-navbar.awk"><a href="../bin/subst.entry-navbar.awk">subst.entry-navbar.awk</a></h3>
 <p>Output substitutions for navbar on behalf of an entry.</p>
-<h3 id="subst.year-index.sh"><a href="subst.year-index.sh">subst.year-index.sh</a></h3>
+<h3 id="subst.year-index.sh"><a href="../bin/subst.year-index.sh">subst.year-index.sh</a></h3>
 <p>Print substitutions for a year level index.html.</p>
-<h3 id="subst.year-navbar.awk"><a href="subst.year-navbar.awk">subst.year-navbar.awk</a></h3>
+<h3 id="subst.year-navbar.awk"><a href="../bin/subst.year-navbar.awk">subst.year-navbar.awk</a></h3>
 <p>Output substitutions for navbar on behalf of a year level index.html.</p>
-<h2 id="tar-entry.sh"><a href="tar-entry.sh">tar-entry.sh</a></h2>
+<h2 id="tar-entry.sh"><a href="../bin/tar-entry.sh">tar-entry.sh</a></h2>
 <p>Form a compressed tarball for an entry.</p>
 <p>Usage:</p>
 <pre><code>bin/tar-entry.sh -v 1 YYYY/dir</code></pre>
 <p>Suggested usage:</p>
 <pre><code>bin/all-run.sh -v 3 bin/tar-entry.sh -v 1 -W</code></pre>
-<h2 id="tar-year.sh"><a href="tar-year.sh">tar-year.sh</a></h2>
+<h2 id="tar-year.sh"><a href="../bin/tar-year.sh">tar-year.sh</a></h2>
 <p>Form a compressed tarball for an IOCCC year.</p>
 <p>Usage:</p>
 <pre><code>bin/tar-year.sh -v 1 YYYY</code></pre>
@@ -559,7 +559,7 @@ We sort with lines starting with <code>!</code> fourth.</p>
 <pre><code>bin/all-years.sh -v 3 bin/tar-year.sh -v 1 -W</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>make form_year_tarball</code></pre>
-<h2 id="untar-entry.sh"><a href="untar-entry.sh">untar-entry.sh</a></h2>
+<h2 id="untar-entry.sh"><a href="../bin/untar-entry.sh">untar-entry.sh</a></h2>
 <p>Untar an entry’s a compressed tarball.</p>
 <p>Usage:</p>
 <pre><code>    bin/untar-entry.sh -v 1 YYYY/dir</code></pre>
@@ -567,7 +567,7 @@ We sort with lines starting with <code>!</code> fourth.</p>
 <pre><code>    bin/all-run.sh -v 3 bin/untar-entry.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make untar_entry_tarball</code></pre>
-<h2 id="untar-year.sh"><a href="untar-year.sh">untar-year.sh</a></h2>
+<h2 id="untar-year.sh"><a href="../bin/untar-year.sh">untar-year.sh</a></h2>
 <p>Untar an IOCCC year’s compressed tarball.</p>
 <p>Usage:</p>
 <pre><code>    bin/untar-year.sh -v 1 YYYY</code></pre>
@@ -578,7 +578,7 @@ We sort with lines starting with <code>!</code> fourth.</p>
 <div id="how">
 <h1 id="how-ioccc-html-content-is-built">How IOCCC HTML content is built</h1>
 </div>
-<p>The <a href="md2html.sh">md2html.sh</a> tool is the primary tool that
+<p>The <a href="../bin/md2html.sh">md2html.sh</a> tool is the primary tool that
 is used to form all IOCCC related HTML pages for the <a href="https://www.ioccc.org">official IOCCC web
 site</a>.</p>
 <p>Nearly all IOCCC related HTML pages are built from markdown files,
@@ -638,7 +638,7 @@ as well as the markdown content given to the <code>pandoc wrapper tool</code> (<
 <p>It is an error, unless <code>-S</code> is given, for any phase, except phases HTML
 20-29, to not substitute all <strong>%%TOKEN%%</strong>’s. For phases HTML 20-29, any
 <strong>%%TOKEN%%</strong> that is not substituted are passed thru without substitution.</p>
-<p>See the tool <a href="readme2index.sh">readme2index.sh</a> for an example of
+<p>See the tool <a href="../bin/readme2index.sh">readme2index.sh</a> for an example of
 how HTML phases are implemented.</p>
 <div id="getopt">
 <h2 id="getopt-phase-processing-of-the-command-line">getopt phase processing of the command line</h2>
@@ -709,20 +709,20 @@ given, only a warning about non-substituted tokens will be written to <code>stde
 modified via the <a href="../inc/md2html.cfg">md2html config file</a> may change to using a
 different filename for a given phase.</p>
 <p>For example when forming the HTML from
-<a href="/2020/ferguson1/chocolate-cake.md">2020/ferguson1/chocolate-cake.md</a>,
+<a href="../2020/ferguson1/chocolate-cake.md">2020/ferguson1/chocolate-cake.md</a>,
 a different <code>navbar</code> navigation bar is needed. So instead of the
 usual top navigation bar that normally directs people to the previous
 entry for the year, or go up to the year page, or to the next entry
 for the year, a top navigation bar to just go up to the entry’s
 main page is needed. A line in the <a href="../inc/md2html.cfg">md2html config file</a>
 that refers to
-<a href="/2020/ferguson1/chocolate-cake.md">2020/ferguson1/chocolate-cake.md</a> may
+<a href="../2020/ferguson1/chocolate-cake.md">2020/ferguson1/chocolate-cake.md</a> may
 specify use of <code>navbar.up2index.html</code> (as <code>navbar.up2index</code>)instead of using the
 <code>navbar.default.html</code> (<code>navbar.default.html</code>) default.</p>
 <p>The HTML phase may be skipped resulting in no HTML output during a given phase
 and furthermore, forming no HTML content from a given markdown file altogether.</p>
 <p>See comments in the <a href="../inc/md2html.cfg">md2html config file</a> for details.
-See also, the tool <a href="readme2index.sh">readme2index.sh</a> for an example of
+See also, the tool <a href="../bin/readme2index.sh">readme2index.sh</a> for an example of
 how such command lines are used.</p>
 <h1 id="use-caution-when-modifying-inc-files">Use CAUTION when modifying inc files</h1>
 <p>Some of the files under this directory are used to form <strong>MOST</strong> of the HTML content
