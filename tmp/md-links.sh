@@ -298,7 +298,7 @@ fi
 # We do not process markdown.md because it contains examples
 # of poor markdown use.
 #
-find . -name '*.md' ! -name markdown.md -print |
+find . -name '*.md' ! -name markdown.md ! -path './tmp/*' -print |
     LANG=C sort -d |
     xargs grep '\]([^)][^)]*)' /dev/null |
     sed -E \

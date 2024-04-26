@@ -2286,7 +2286,7 @@ Cody also added the [try.sh](%%REPO_URL%%/1994/ldb/try.sh) script.
 </div>
 
 [Cody](#cody) added two alt versions, [one which uses
-`fgets()`](%%REPO_URL%%/1994/schnitzi/schnitzi.alt.c) but when fed its own source code cannot
+fgets_&#x28;&#x29;](%%REPO_URL%%/1994/schnitzi/schnitzi.alt.c) but when fed its own source code cannot
 generate code that compile and another [one with a bigger buffer
 size](%%REPO_URL%%/1994/schnitzi/schnitzi.alt2.c) which, when fed its own source code, will
 generate compilable code but not with the same buffer size but rather the
