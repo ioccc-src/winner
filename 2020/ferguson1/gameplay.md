@@ -14,7 +14,7 @@ for the input keys.
     *   [Playing the game](#playing)
     *   [Walls](#walls)
     *   [Cannibalism](#cannibalism)
-    *   [Stretching (shedding)](#shedding)
+    *   [Stretching &#x28;shedding&#x29;](#shedding)
     *   [Winning](#winning)
     *   [Quitting](#quitting)
 
@@ -23,10 +23,10 @@ for the input keys.
 
     *   [**Photosensitive epilepsy/Stimulation overload trigger warnings**](#warning)
     *   [Drawing / Practice mode](#drawing)
-    *   [Computer playing / Automatic mode (**Photosensitive epilepsy/Stimulation overload trigger**)](#auto)
+    *   [Computer playing / Automatic mode &#x28;Photosensitive epilepsy/Stimulation overload trigger&#x29;](#auto)
 	    *	[Variations](#auto-variations)
-    *   [Grow-Shrink (Positive/Negative Winning) mode](#grow-shrink)
-    *   [Hypnotic / Sleepy mode (**Photosensitive epilepsy/Stimulation overload trigger**)](#hypnotic)
+    *   [Grow-Shrink &#x28;Positive/Negative Winning&#x29; mode](#grow-shrink)
+    *   [Hypnotic / Sleepy mode &#x28;Photosensitive epilepsy/Stimulation overload trigger&#x29;](#hypnotic)
     *   [Stimulation / Calming mode](#stim)
     *   [Other ideas](#other-ideas)
 
@@ -44,7 +44,7 @@ for the input keys.
     * [GROW / SHEDS	    -	Growth / Shedding sizes](#growth)
 
 
-7.  [Conclusion (and inspirational words for everyone)](#conclusions)
+7.  [Conclusion &#x28;and inspirational words for everyone&#x29;](#conclusions)
 </div>
 
 
@@ -728,7 +728,7 @@ are called Grow / Shrink).
 
 
 <div id="hypnotic">
-## <a href="#toc">Hypnotic / Sleepy mode (**Photosensitive epilepsy/Stimulation overload trigger**)</a>
+## <a href="#toc">Hypnotic / Sleepy mode &#x28;Photosensitive epilepsy/Stimulation overload trigger&#x29;</a>
 </div>
 
 **Photosensitive epilepsy/stimulation overload trigger warning:**
@@ -892,7 +892,7 @@ it will take the number of movements before it is 'its full size'.
 
 
 <div id="conclusions">
-# 7. <a href="#toc">Conclusion (and inspirational words for everyone)</a>
+# 7. <a href="#toc">Conclusion &#x28;and inspirational words for everyone&#x29;</a>
 </div>
 
 I believe that this file has given more than enough information for anyone to

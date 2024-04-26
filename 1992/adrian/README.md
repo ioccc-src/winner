@@ -194,7 +194,7 @@ and repeat the process above
 The new file now contains all lines which match
 
 ```
-    ^.[^5|m^]*[m^]([e=p,;]|[^e=+p,;].*)$
+    ^.[^5|m^]*[m^]\([e=p,;]|[^e=+p,;].*\)$
 ```
 
 Compile and run.  This is an `echo(1)` clone.  Note the efficient algorithm

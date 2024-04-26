@@ -38,7 +38,7 @@
 - [3.6  - An IOCCC entry messed up my terminal application, how do I fix this?](#faq3_6)
 - [3.7  - How do I run an IOCCC entry that requires X11?](#faq3_7)
 - [3.8  - How do I compile an IOCCC entry that requires SDL1 or SDL2?](#faq3_8)
-- [3.9  - How do I compile an IOCCC entry that requires (n)curses?](#faq3_9)
+- [3.9  - How do I compile an IOCCC entry that requires &#x28;n&#x29;?](#faq3_9)
 - [3.10 - How do I compile and use an IOCCC entry that requires sound?](#faq3_10)
 - [3.11 - Why do Makefiles use -Weverything with clang?](#faq3_11)
 - [3.12 - How do I find out how to send interrupt/EOF etc. for entries that require it?](#faq3_12)
@@ -48,12 +48,12 @@
 - [3.16 - How do I compile and install libjpeg-turbo for entries that require it?](#faq3_16)
 - [3.17 - How do I compile and install ImageMagick for entries that require it?](#faq3_17)
 - [3.18 - How do I compile and install OpenGL for entries that require it?](#faq3_18)
-- [3.19 - What kind of make(1) compatibility does the IOCCC support and will it support other kinds?](#faq3_19)
+- [3.19 - What kind of make&#x28;1&#x29; compatibility does the IOCCC support and will it support other kinds?](#faq3_19)
 
 
 ## Section  4 - [Changes made to IOCCC entries](#faq4)
 - [4.0  - Why are some winning author remarks incongruent with the winning IOCCC code?](#faq4_0)
-- [4.1  - Why were some calls to the libc function `gets(3)` changed to use `fgets(3)`?](#faq4_1)
+- [4.1  - Why were some calls to the libc function gets&#x28;3&#x28; changed to use fgets&#x28;3&#x29;?](#faq4_1)
 - [4.2  - What was changed in an IOCCC entry source code?](#faq4_2)
 - [4.3  - Why do author remarks sometimes not match the source and/or why are there
 other inconsistencies with the original entry?](#faq4_3)
@@ -72,7 +72,7 @@ other inconsistencies with the original entry?](#faq4_3)
 
 ## Section  6 - [Miscellaneous IOCCC](#faq6)
 - [6.0  - How did an entry that breaks the size rule 2 win the IOCCC?](#faq6_0)
-- [6.1  - Is there a list of known bugs and (mis)features of IOCCC entries?](#faq6_1)
+- [6.1  - Is there a list of known bugs and &#x28;mis&#x29;features of IOCCC entries?](#faq6_1)
 - [6.2  - May I mirror the IOCCC web site?](#faq6_2)
 - [6.3  - May I use parts of the IOCCC in an article, book, newsletter, or instructional material?](#faq6_3)
 - [6.4  - Why do you sometimes use the first person plural?](#faq6_4)
@@ -505,7 +505,7 @@ were posted on 17 April 1984.
 
 There were 4 entries that won in 1984:
 
-1. [(dis)honorable mention](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=842%40nsc.UUCP&rnum=8&filter=0)
+1. [&#x28;dis&#x29;honorable mention](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=842%40nsc.UUCP&rnum=8&filter=0)
 2.  [3rd place](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=843%40nsc.UUCP&rnum=7&filter=0)
 3. [2nd place](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=844%40nsc.UUCP&rnum=6&filter=0)
 4. [1st place](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=845%40nsc.UUCP&rnum=5&filter=0)
@@ -572,8 +572,8 @@ web site.
 
 Furthermore, a bzip2 compressed tarball containing the released
 IOCCC entry source code may be found under the
-[archive/historic](/archive/histroic) directory.  The file
-[archive-all.tar.bz2](/archive/historic/archive-all.tar.bz2) contains
+[archive/historic](archive/histroic) directory.  The file
+[archive-all.tar.bz2](archive/historic/archive-all.tar.bz2) contains
 all years and the individual years are in the form
 `archive/historic/archive-YYYY.tar.bz2`.
 
@@ -581,7 +581,7 @@ These files were obtained from the [Internet Wayback
 Machine](https://web.archive.org) from the [snapshot of the website
 on 2020 Dec
 28](https://web.archive.org/web/20201228005211/https://www.ioccc.org/).
-See [/archive/historic/index.html](archive/historic/index.html) for
+See [archive/historic/index.html](archive/historic/index.html) for
 details about these bzip2 compressed tarballs.
 
 
@@ -715,15 +715,15 @@ with/in modern systems.
 * Replacing the various hint files with a index.html markdown (from README.md
 files) that is more consistent across IOCCC years.
 * Generating HTML content from markdown files and JSON data files via a [set of
-tools and scripts](/bin/index.html).
+tools and scripts](bin/index.html).
 * Setting up a system whereby authors of IOCCC entries may update their own
 contact information via a [GitHub pull
 request](https://github.com/ioccc-src/temp-test-ioccc/pulls).
 * Setting up to generate the top level [years.html](years.html) file via the
-[gen-years.sh](/bin/gen-years.sh) tool.
-* Setting up to generate the top level [authors.html file](/authors.html), renamed
-from `winners.html`, via the [gen-authors.sh](/bin/gen-authors.sh) tool.
-* Making use of a new and improved [IOCCC CSS](/ioccc.css) for web site consistency
+[gen-years.sh](%%REPO_URL%%/bin/gen-years.sh) tool.
+* Setting up to generate the top level [authors.html file](authors.html), renamed
+from `winners.html`, via the [gen-authors.sh](%%REPO_URL%%/bin/gen-authors.sh) tool.
+* Making use of a new and improved [IOCCC CSS](%%REPO_URL%%/ioccc.css) for web site consistency
 * Etc.
 
 #### 202y mm dd The Great Fork Merge <!-- XXX - Fill in the date when Great Fork Merge happens -->
@@ -852,7 +852,7 @@ this is not clear!
 - leaving the remark section empty.
 
 
-<div id="faq2_2">
+%%REPO_URL%%/<div id="faq2_2">
 ### FAQ 2.2: Why don't you publish entries that do not win?
 </div>
 
@@ -1467,7 +1467,7 @@ as a GitHub pull request](#ull_request) for more information about pull requests
 
 <div id="faq3_9">
 <div id="curses">
-### FAQ 3.9: How do I compile an IOCCC entry that requires (n)curses?
+### FAQ 3.9: How do I compile an IOCCC entry that requires &#x28;n&#x29;?
 </div>
 </div>
 
@@ -2122,7 +2122,7 @@ We recommend trying a method suitable for your environment first, if possible.
 
 <div id="faq3_19">
 <div id="make_compatibility">
-### 3.19 - What kind of make(1) compatibility does the IOCCC support and will it support other kinds?
+### 3.19 - What kind of make&#x28;1&#x29; compatibility does the IOCCC support and will it support other kinds?
 </div>
 </div>
 
@@ -2176,7 +2176,7 @@ the original code when reading the author's (and sometimes authors') remarks.
 
 <div id="faq4_1">
 <div id="gets">
-### FAQ 4.1: Why were some calls to the libc function `gets(3)` changed to use `fgets(3)`?
+### FAQ 4.1: Why were some calls to the libc function gets&#x28;3&#x29; changed to use fgets&#x28;3&#x29;?
 </div>
 </div>
 
@@ -2684,7 +2684,7 @@ get around rule 2 size limits is discouraged).
 
 
 <div id="faq6_1">
-### FAQ 6.1: Is there a list of known bugs and misfeatures of IOCCC entries?
+### FAQ 6.1: Is there a list of known bugs and &#x28;mis&#x29;features of IOCCC entries?
 </div>
 
 Yes! Please see [bugs.html](bugs.html) for a list of known bugs and/or issues of a
@@ -2710,7 +2710,7 @@ While IOCCC judges look favorably on most requests to use IOCCC material,
 we request that you ask the [IOCCC judges](judges.html) first.
 
 Please send your request using the instructions on the [contacting
-the IOCCC Judges](/contact.html) page.
+the IOCCC Judges](contact.html) page.
 
 Please note that the content of the IOCCC is [Copyrighted and is under
 the CC BY-SA 4.0 License](#copyright).

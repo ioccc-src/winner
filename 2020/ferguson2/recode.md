@@ -18,7 +18,7 @@ have to if you don't wish to.
 -   [Only write config file](#onlyconfig)
 -   [Reusing a configuration](#reuseconfig)
 -   [Write config file, read data file and pass to Enigma simulator](#passtoenigma)
--   [Piping directly to the Enigma code once (with randomised settings, saved)](#directlytoenigma)
+-   [Piping directly to the Enigma code once &#x28;with randomised settings, saved&#x29;](#directlytoenigma)
 -   [Usage conclusion](#conclusion)
 -   [Example additions](#additions)
 -   [Example uses](#exampleuses)
@@ -97,8 +97,8 @@ if you don't give the option to read in a file for input.
     1WX5AK4RE1XEHJSAPYCIZBWDQNRUVGIOCCC
 ```
 
-Though you won't find some of those strings in [recode.c]((%%REPO_URL%%/2020/ferguson2/recode.c) or
-[prog.c]((%%REPO_URL%%/2020/ferguson2/prog.c). Yes the `WAR` for the Ringstellung (Ring settings) is an
+Though you won't find some of those strings in [recode.c](%%REPO_URL%%/2020/ferguson2/recode.c) or
+[prog.c](%%REPO_URL%%/2020/ferguson2/prog.c). Yes the `WAR` for the Ringstellung (Ring settings) is an
 amusing coincidence *but it really did happen!*
 
 As for `-f` the contents would be output with the settings e.g. to pipe to
@@ -265,7 +265,7 @@ pair](https://www.cryptomuseum.com/crypto/enigma/i/sb.htm); this can be done in
 a number of ways but two dots is one. Notice also that it's in a different order
 than the simulator: because with the size restrictions on my entry I saved bytes
 by using the same loop where I could. It just felt more natural to have them
-grouped together in a configurator for the [simulator]((%%REPO_URL%%/2020/ferguson2/prog.c).
+grouped together in a configurator for the [simulator](%%REPO_URL%%/2020/ferguson2/prog.c).
 
 ``` <!---sh-->
     $ echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRIOCCC | ./prog - 2>/dev/null

@@ -508,7 +508,7 @@ To query this on your POSIX system, run</p>
 whether a <a href="https://en.wikipedia.org/wiki/Googol">Googol</a>, which is
 10<sup>100</sup>, satisfies the conjecture. But what is a googol in hex?
 Fear not,
-<a href="http://pubs.opengroup.org/onlinepubs/9699919799/utilities/bc.html">bc(1)</a>
+<a href="http://pubs.opengroup.org/onlinepubs/9699919799/utilities/bc.html">bc()</a>
 to the rescue:</p>
 <pre><code>    $ printf &#39;obase=16;10^100\n&#39; | bc
     1249AD2594C37CEB0B2784C4CE0BF38ACE408E211A7CAAB24308A82E8F10000000000000000000000000
@@ -988,7 +988,7 @@ explore yet untested numbers for the rest of your life.</p>
 <h3 id="how-big-a-number-can-i-test-with-4-gb-of-ram">How big a number can I test with 4 GB of RAM?</h3>
 <p>The number of hex digits in the start number is limited by <code>ARG_MAX</code>,
 probably minus some overhead for the environment variables (use
-<a href="http://pubs.opengroup.org/onlinepubs/9699919799/utilities/env.html">env(1)</a>
+<a href="http://pubs.opengroup.org/onlinepubs/9699919799/utilities/env.html">env()</a>
 to trim your environment). In bits this leaves you with <code>2 to the power of (4 * ARG_MAX)</code>.</p>
 <p>The algorithm requires two <code>bignum</code>s in memory for addition.
 If you hit a divergent number, this will cause out-of-memory (“laugh”)

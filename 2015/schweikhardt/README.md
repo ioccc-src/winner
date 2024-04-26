@@ -187,7 +187,7 @@ which reports the limit in bytes, here 256KB. This allows to test
 whether a [Googol](https://en.wikipedia.org/wiki/Googol), which is
 10<sup>100</sup>, satisfies the conjecture. But what is a googol in hex?
 Fear not,
-[bc(1)](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/bc.html)
+[bc&#x28;&#x29;](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/bc.html)
 to the rescue:
 
 ``` <!---sh-->
@@ -821,7 +821,7 @@ explore yet untested numbers for the rest of your life.
 
 The number of hex digits in the start number is limited by `ARG_MAX`,
 probably minus some overhead for the environment variables (use
-[env(1)](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/env.html)
+[env&#x28;&#x29;](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/env.html)
 to trim your environment). In bits this leaves you with `2 to the power of (4 *
 ARG_MAX)`.
 

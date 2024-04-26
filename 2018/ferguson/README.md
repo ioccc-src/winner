@@ -1359,7 +1359,7 @@ for, who's always been here for me and whom I also inherit the keen analytical
 mind from. I love you all!
 
 I want to also thank [Dave Burton](../../authors.html#Dave_Burton) for acknowledging me in
-his [Dave Burton]((../../authors.html#Dave_Burton) for his [2018/burton2](../burton2/index.html)
+his [Dave Burton](../../authors.html#Dave_Burton) for his [2018/burton2](../burton2/index.html)
 entry for as he put it 'being relentless with pursuit of bugs'. To think that it
 was circumstantial to my entry too makes it all the more unlikely but that
 doesn't take away the significance of it; for I am a very symbolic person and

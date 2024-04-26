@@ -15,12 +15,12 @@ already knew that so no harm there, hey?
 <div id="toc">
 -   [How does it work?](#works)
 -   [How does the snake movement work?](#movement)
--   [Drawing (manual) and computer playing (automatic) modes](#manual-automatic)
+-   [Drawing &#x28;manual&#x29; and computer playing &#x28;automatic&#x29; modes](#manual-automatic)
 -   [Collision detection](#collision)
     *	[Cannibal collision detection](#cannibalcollision)
     *	[Collision detection when resizing the window of the game](#resizing)
 -   [Obfuscation](#obfuscation)
--   [Skinning the snake (i.e. decreasing the iocccsize)](#skinning)
+-   [Skinning the snake &#x28;i.e., decreasing the iocccsize&#x29;](#skinning)
 -   [A few more interesting size optimisations](#size)
 </div>
 

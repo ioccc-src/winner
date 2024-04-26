@@ -295,7 +295,10 @@ fi
 #
 #	markdown_path.md [pseudo title](%%TOKEN%%path)
 #
-find . -name '*.md' -print |
+# We do not process markdown.md because it contains examples
+# of poor markdown use.
+#
+find . -name '*.md' ! -name markdown.md -print |
     LANG=C sort -d |
     xargs grep '\](%%[A-Za-z][0-9A-Za-z_]*%%[^)]*)' /dev/null |
     sed -E \

@@ -502,7 +502,7 @@ adjusting the <code>adrian.c</code> file. Change the first line to read</p>
 <p>and repeat the process above</p>
 <pre><code>    ./adrian &lt;adrian.c &gt; adecho.c</code></pre>
 <p>The new file now contains all lines which match</p>
-<pre><code>    ^.[^5|m^]*[m^]([e=p,;]|[^e=+p,;].*)$</code></pre>
+<pre><code>    ^.[^5|m^]*[m^]\([e=p,;]|[^e=+p,;].*\)$</code></pre>
 <p>Compile and run. This is an <code>echo(1)</code> clone. Note the efficient algorithm
 employed.</p>
 <p>Two other adjustments to the first line also yield useful results. By

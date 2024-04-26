@@ -111,8 +111,7 @@ To stop the server:
 
 *  Supports all [MIME](https://en.wikipedia.org/wiki/MIME) types.
 
-*  Supports [Common Gateway Interface
-(CGI)](https://en.wikipedia.org/wiki/Common_Gateway_Interface) scripts and programs.
+*  Supports CGI: [Common Gateway Interface](https://en.wikipedia.org/wiki/Common_Gateway_Interface) scripts and programs.
 
 *  Supports multiple `index.*` file extensions and types:
 

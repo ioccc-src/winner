@@ -66,7 +66,7 @@ the Elves in Tolkien's Legendarium. It means sound taste (plural is lámatyáver
 and it refers to phonaesthesia - in other words, it refers to the pleasure of
 sound and form of words. It's discussed in [Morgoth's
 Ring](https://en.wikipedia.org/wiki/Morgoth%27s_Ring), volume X of [History of
-Middle-earth (HoMe)](https://en.wikipedia.org/wiki/The_History_of_Middle-earth).
+Middle-earth &#x28;HoMe&#x29;](https://en.wikipedia.org/wiki/The_History_of_Middle-earth).
 Now can you appreciate the award title a bit better?
 
 

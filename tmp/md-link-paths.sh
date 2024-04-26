@@ -323,7 +323,10 @@ fi
 #
 # and output just paths
 #
-find . -name '*.md' -print |
+# We do not process markdown.md because it contains examples
+# of poor markdown use.
+#
+find . -name '*.md' ! -name markdown.md -print |
     LANG=C sort -d |
     xargs grep '\]([^)][^)]*)' /dev/null |
     sed -E \

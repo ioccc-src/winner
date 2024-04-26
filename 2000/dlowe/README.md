@@ -228,7 +228,7 @@ therein.
 - The points and ways in which C and Perl connect are *really*
 obscure.  They're also incredibly poorly documented, as they're
 primarily used in machine-generated code.  However, there's a
-wealth of example code on [CPAN (www.cpan.org)](https://www.cpan.org).
+wealth of example code on [CPAN](https://www.cpan.org).
 
 - The Perl API functions are almost all macros, so you will probably
 find that preprocessor expansion will only make things worse.  They

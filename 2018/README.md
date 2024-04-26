@@ -30,24 +30,24 @@ compiler.
 
 We believe you will again be impressed with this year's winning entries.
 
-The ["Best of show" (mills)](mills/index.html) is an amazing tribute to entries
+The [Best of show - 2018/mills](mills/index.html) is an amazing tribute to entries
 from 1984 and 2015.
 
-Take a close look at the "[Most likely to top the charts" (hou)](hou/index.html).
+Take a close look at the [Most likely to top the charts - 2018/hou](hou/index.html).
 Observe that while it contains no variables and no operators, it
 remains functional in what it does.
 
-The ["Best one-liner" (burton1)](burton1/index.html), at 109 characters, is a
+The [Best one-liner - 2018/burton1](burton1/index.html), at 109 characters, is a
 short and sweet implementation of a classic utility and a nod to a winning entry
 from 1986.  Sometimes it takes 20 some years to do things the true IOCCC way.
 
 The color of the remarks text this year was inspired by one of the stars
-of the ["Most stellar" (poikola)](poikola/index.html).
+of the [Most stellar - 2018/poikola](poikola/index.html).
 
-The ["Best use of python" (endoh2)](endoh2/index.html) is a not what you might think it is.
+The [Best use of python - 2018/endoh2](endoh2/index.html) is a not what you might think it is.
 It is something completely different.
 
-The ["Most likely to be awarded" (ciura)](ciura/index.html) has an amazing vocabulary!
+The [Most likely to be awarded - 2018/ciura](ciura/index.html) has an amazing vocabulary!
 
 There are also nods to entries of the years [2000/bellard](2000/bellard/index.html),
 [1989/yang](1989/yang/index.html), ...

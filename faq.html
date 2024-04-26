@@ -417,7 +417,7 @@
 <li><a href="#faq3_6">3.6 - An IOCCC entry messed up my terminal application, how do I fix this?</a></li>
 <li><a href="#faq3_7">3.7 - How do I run an IOCCC entry that requires X11?</a></li>
 <li><a href="#faq3_8">3.8 - How do I compile an IOCCC entry that requires SDL1 or SDL2?</a></li>
-<li><a href="#faq3_9">3.9 - How do I compile an IOCCC entry that requires (n)curses?</a></li>
+<li><a href="#faq3_9">3.9 - How do I compile an IOCCC entry that requires (n)?</a></li>
 <li><a href="#faq3_10">3.10 - How do I compile and use an IOCCC entry that requires sound?</a></li>
 <li><a href="#faq3_11">3.11 - Why do Makefiles use -Weverything with clang?</a></li>
 <li><a href="#faq3_12">3.12 - How do I find out how to send interrupt/EOF etc. for entries that require it?</a></li>
@@ -432,7 +432,7 @@
 <h2 id="section-4---changes-made-to-ioccc-entries">Section 4 - <a href="#faq4">Changes made to IOCCC entries</a></h2>
 <ul>
 <li><a href="#faq4_0">4.0 - Why are some winning author remarks incongruent with the winning IOCCC code?</a></li>
-<li><a href="#faq4_1">4.1 - Why were some calls to the libc function <code>gets(3)</code> changed to use <code>fgets(3)</code>?</a></li>
+<li><a href="#faq4_1">4.1 - Why were some calls to the libc function gets(3( changed to use fgets(3)?</a></li>
 <li><a href="#faq4_2">4.2 - What was changed in an IOCCC entry source code?</a></li>
 <li><a href="#faq4_3">4.3 - Why do author remarks sometimes not match the source and/or why are there
 other inconsistencies with the original entry?</a></li>
@@ -817,15 +817,15 @@ web site.</p>
 <h4 id="dec-28-bzip2-compressed-tarball-archive">2020 Dec 28 bzip2 compressed tarball archive</h4>
 <p>Furthermore, a bzip2 compressed tarball containing the released
 IOCCC entry source code may be found under the
-<a href="/archive/histroic">archive/historic</a> directory. The file
-<a href="/archive/historic/archive-all.tar.bz2">archive-all.tar.bz2</a> contains
+<a href="archive/histroic">archive/historic</a> directory. The file
+<a href="archive/historic/archive-all.tar.bz2">archive-all.tar.bz2</a> contains
 all years and the individual years are in the form
 <code>archive/historic/archive-YYYY.tar.bz2</code>.</p>
 <p>These files were obtained from the <a href="https://web.archive.org">Internet Wayback
 Machine</a> from the <a href="https://web.archive.org/web/20201228005211/https://www.ioccc.org/">snapshot of the website
 on 2020 Dec
 28</a>.
-See <a href="archive/historic/index.html">/archive/historic/index.html</a> for
+See <a href="archive/historic/index.html">archive/historic/index.html</a> for
 details about these bzip2 compressed tarballs.</p>
 <h4 id="dec-29-official-ioccc-winner-repo">2022 Dec 29 Official IOCCC winner repo</h4>
 <p>The <a href="https://github.com/ioccc-src/winner">Official IOCCC winner repo</a>
@@ -934,16 +934,16 @@ with/in modern systems.</li>
 <li>Reworking the Makefiles specific to the gcc and clang C compilers.</li>
 <li>Replacing the various hint files with a index.html markdown (from README.md
 files) that is more consistent across IOCCC years.</li>
-<li>Generating HTML content from markdown files and JSON data files via a <a href="/bin/index.html">set of
+<li>Generating HTML content from markdown files and JSON data files via a <a href="bin/index.html">set of
 tools and scripts</a>.</li>
 <li>Setting up a system whereby authors of IOCCC entries may update their own
 contact information via a <a href="https://github.com/ioccc-src/temp-test-ioccc/pulls">GitHub pull
 request</a>.</li>
 <li>Setting up to generate the top level <a href="years.html">years.html</a> file via the
-<a href="/bin/gen-years.sh">gen-years.sh</a> tool.</li>
-<li>Setting up to generate the top level <a href="/authors.html">authors.html file</a>, renamed
-from <code>winners.html</code>, via the <a href="/bin/gen-authors.sh">gen-authors.sh</a> tool.</li>
-<li>Making use of a new and improved <a href="/ioccc.css">IOCCC CSS</a> for web site consistency</li>
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/gen-years.sh">gen-years.sh</a> tool.</li>
+<li>Setting up to generate the top level <a href="authors.html">authors.html file</a>, renamed
+from <code>winners.html</code>, via the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/gen-authors.sh">gen-authors.sh</a> tool.</li>
+<li>Making use of a new and improved <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/ioccc.css">IOCCC CSS</a> for web site consistency</li>
 <li>Etc.</li>
 </ul>
 <h4 id="y-mm-dd-the-great-fork-merge">202y mm dd The Great Fork Merge <!-- XXX - Fill in the date when Great Fork Merge happens --></h4>
@@ -1048,6 +1048,7 @@ rounds; we look at the author name only if an entry wins. See the guidelines if
 this is not clear!</li>
 <li>leaving the remark section empty.</li>
 </ul>
+https://github.com/ioccc-src/temp-test-ioccc/blob/master/
 <div id="faq2_2">
 <h3 id="faq-2.2-why-dont-you-publish-entries-that-do-not-win">FAQ 2.2: Why don’t you publish entries that do not win?</h3>
 </div>
@@ -1457,7 +1458,7 @@ fix it and make a new pull request.</p>
 as a GitHub pull request</a> for more information about pull requests.</p>
 <div id="faq3_9">
 <div id="curses">
-<h3 id="faq-3.9-how-do-i-compile-an-ioccc-entry-that-requires-ncurses">FAQ 3.9: How do I compile an IOCCC entry that requires (n)curses?</h3>
+<h3 id="faq-3.9-how-do-i-compile-an-ioccc-entry-that-requires-n">FAQ 3.9: How do I compile an IOCCC entry that requires (n)?</h3>
 </div>
 </div>
 <p>This depends on your operating system but below are instructions for Linux and
@@ -1851,7 +1852,7 @@ version like <code>dirname.alt.c</code> or <code>prog.alt.c</code>. In fact it i
 the original code when reading the author’s (and sometimes authors’) remarks.</p>
 <div id="faq4_1">
 <div id="gets">
-<h3 id="faq-4.1-why-were-some-calls-to-the-libc-function-gets3-changed-to-use-fgets3">FAQ 4.1: Why were some calls to the libc function <code>gets(3)</code> changed to use <code>fgets(3)</code>?</h3>
+<h3 id="faq-4.1-why-were-some-calls-to-the-libc-function-gets3-changed-to-use-fgets3">FAQ 4.1: Why were some calls to the libc function gets(3) changed to use fgets(3)?</h3>
 </div>
 </div>
 <p>Some may wonder: “Doesn’t this tamper with the entry too much?”</p>
@@ -2224,7 +2225,7 @@ original winning entries as compressed tar files for a given year.</p>
 “abuse of the rules” (although now blatant abuse of the rules to
 get around rule 2 size limits is discouraged).</p>
 <div id="faq6_1">
-<h3 id="faq-6.1-is-there-a-list-of-known-bugs-and-misfeatures-of-ioccc-entries">FAQ 6.1: Is there a list of known bugs and misfeatures of IOCCC entries?</h3>
+<h3 id="faq-6.1-is-there-a-list-of-known-bugs-and-misfeatures-of-ioccc-entries">FAQ 6.1: Is there a list of known bugs and (mis)features of IOCCC entries?</h3>
 </div>
 <p>Yes! Please see <a href="bugs.html">bugs.html</a> for a list of known bugs and/or issues of a
 variety of kinds.</p>
@@ -2240,7 +2241,7 @@ something like that.</p>
 </div>
 <p>While IOCCC judges look favorably on most requests to use IOCCC material,
 we request that you ask the <a href="judges.html">IOCCC judges</a> first.</p>
-<p>Please send your request using the instructions on the <a href="/contact.html">contacting
+<p>Please send your request using the instructions on the <a href="contact.html">contacting
 the IOCCC Judges</a> page.</p>
 <p>Please note that the content of the IOCCC is <a href="#copyright">Copyrighted and is under
 the CC BY-SA 4.0 License</a>.</p>

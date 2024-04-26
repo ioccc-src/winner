@@ -233,7 +233,7 @@ very important.
 
 <div id="toc">
 *   ['Bugs'](#bugs)
-*   [NAQs/IAQs (Never/Infrequently Asked Questions)](#naqs)
+*   [NAQs/IAQs - Never/Infrequently Asked Questions](#naqs)
     -	[Do I have any inspirations for this entry?](#inspirations)
     -	[Are there any features I thought of that I wanted to implement but did not get to for some reason or another?](#features)
     -	[Are there ways that one can make this game easier?](#easier)

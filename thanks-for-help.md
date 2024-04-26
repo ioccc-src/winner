@@ -3562,7 +3562,7 @@ the prototype being included).
 `main()` also called itself but this was a problem so it now calls another
 function `poke()` which calls itself instead (this is sometimes necessary
 nowadays and other entries had to have this same kind of change,
-[2001/anonymous](/2001/anonymous/index.html) being a good example).
+[2001/anonymous](2001/anonymous/index.html) being a good example).
 
 Finally the optimiser cannot be enabled so the compiler flags were changed for
 this, forcing `-O0`.
@@ -6005,7 +6005,7 @@ Cody also added missing variables like `BASH` and `PDFLATEX` to the
 undesired. Other variable names had typos in them.
 
 In at least one case, like the [top level Makefile](%%REPO_URL%%/Makefile), where raw
-commands that are in [var.mk](/var.mk) were used, Cody updated them to use the
+commands that are in [var.mk](var.mk) were used, Cody updated them to use the
 variables.
 
 A comment was missing for the `diff_alt_orig` rule in all the Makefiles and

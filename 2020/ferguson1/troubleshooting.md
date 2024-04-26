@@ -1,4 +1,4 @@
-# Troubleshooting Snake
+9 Troubleshooting Snake
 
 In this file I have a list of a number of possible problems that could show up
 under some situations as well as some things that might appear to be happening
@@ -8,15 +8,15 @@ anything that can cause more than one issue I will list those separately to keep
 it as structured as possible/easiest to find.
 
 <div id="top">
-* [The top wall isn't (all/some of the time) visible!](#topwall)
+* [The top wall isn't &#x28;all/some of the time&#x29; visible!](#topwall)
 * [The snake isn't moving!](#notmoving)
-* [I can't see the snake head (or other part of the snake)!](#invisiblehead)
+* [I can't see the snake head &#x28;or other part of the snake&#x29;!](#invisiblehead)
 * [I can't see the bug!](#invisiblebug)
 * [The game froze!](#froze)
 * [The game gets slower as the snake gets bigger!](#bigsnake)
 * [I set SIZE=0 GROW=1, ate a bug but still only the head was visible!  Why?](#headonly)
 * [I like black text on a white background but even with a white background terminal it ends up black!](#monochrome)
-* [The text is hard to see (not bright enough)!](#toodark)
+* [The text is hard to see &#x28;not bright enough&#x29;!](#toodark)
 * [Can I move the snake faster temporarily without having to modify the wait time?](#movefaster)
 * [On environmental variables more generally and string to int conversions](#envvars)
 * [Errors and error reporting](#errors)

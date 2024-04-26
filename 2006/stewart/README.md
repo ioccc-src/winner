@@ -99,8 +99,8 @@ pretty pictures.  I figured it would be nice to add some more fractals to the
 IOCCC, since one hasn't won since 1994.
 
 Instead of something that has already won I figured I would go with
-another kind of fractal, those from the [Iterated Function System
-(IFS)](https://en.wikipedia.org/wiki/Iterated_function_system).
+another kind of fractal, those from the IFS:
+[Iterated Function System](https://en.wikipedia.org/wiki/Iterated_function_system).
 
 
 ### Input File

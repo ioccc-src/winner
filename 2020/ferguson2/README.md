@@ -452,9 +452,9 @@ For examples using it (and a delicious challenge) see [recode.html][] (or
 ### A parser subtlety that could cause confusion
 </div>
 
-The parser is in a sense rather rudimentary but allows for both interactive and
-automatic (e.g. via the [recode]((%%REPO_URL%%/2020/ferguson2/recode.c) program) input. This does mean that
-something like the following can happen:
+The parser is in a sense rather rudimentary but allows for both interactive and automatic
+(e.g., via the [recode](%%REPO_URL%%/2020/ferguson2/recode.c) program) input.
+This does mean that something like the following can happen:
 
 ``` <!---sh-->
     $ ./prog -

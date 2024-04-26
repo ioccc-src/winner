@@ -26,10 +26,10 @@ compiler.
 
 This year's winning entries are impressive!
 
-The ["Most in need of debugging" (endoh)](endoh/index.html) is very inventive in
+The [Most in need of debugging - 2019/endoh](endoh/index.html) is very inventive in
 a way it produces its own text!
 
-The ["Most likely to be awarded" (ciura)](ciura/index.html) has an amazing
+The [Most likely to be awarded - 2019/ciura](ciura/index.html) has an amazing
 vocabulary!
 
 There are again nods to entries of the years:

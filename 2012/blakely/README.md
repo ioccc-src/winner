@@ -99,7 +99,8 @@ operation, then the results are undefined.
 For test-runs, use a resolution of 32. For simple expressions, the
 [GIF](https://en.wikipedia.org/wiki/GIF) generation should take only
 a few seconds with a modern processor and full optimization. Runtime scales as
-[O(N^3)](https://en.wikipedia.org/wiki/Big_O_notation) with resolution `N`,
+O^(N^3), (see [Big O notation](https://en.wikipedia.org/wiki/Big_O_notation) web page)
+with resolution `N`,
 and more complex expressions take longer to compute. For example, increasing the
 resolution of `ripple.gif`
 to 250 took ~35 minutes to render on an [i7

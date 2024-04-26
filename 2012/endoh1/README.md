@@ -216,8 +216,8 @@ than 80 x 25.
 
 ```
 
-This program is a fluid simulator using the [Smoothed-particle hydrodynamics
-(SPH)](http://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics) method.
+This program is a fluid simulator using the SPH:
+[Smoothed-particle hydrodynamics](http://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics) method.
 
 The SPH particles represent the fluid flow.  Particles have information about
 the position, density, and velocity.  In every simulation step, they are

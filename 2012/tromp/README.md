@@ -51,8 +51,8 @@ are more obfuscated than the entry itself.
 ## Author's remarks:
 
 This program celebrates the close connection between obfuscation and conciseness,
-by implementing the most concise language known, [Binary Lambda Calculus
-(BLC)](https://tromp.github.io/cl/Binary_lambda_calculus.html).
+by implementing the most concise language known, BLC:
+[Binary Lambda Calculus](https://tromp.github.io/cl/Binary_lambda_calculus.html).
 
 [BLC](https://tromp.github.io/cl/Binary_lambda_calculus.html) was developed to
 make [Algorithmic Information

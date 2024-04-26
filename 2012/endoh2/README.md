@@ -35,7 +35,7 @@ and:
 
 A
 [pi](https://en.wikipedia.org/wiki/Pi)/[e](https://en.wikipedia.org/wiki/E_&#x28;mathematical_constant&#x29;)
-printing quasi-[quine](https://en.wikipedia.org/wiki/Quine_(computing) in [ASCII
+printing quasi-[quine](https://en.wikipedia.org/wiki/Quine_&#x28;computing&#x29;) in [ASCII
 art](https://en.wikipedia.org/wiki/ASCII_art) with a compressed font in it; what
 else to wish for in this program? [Virtual
 machine](https://en.wikipedia.org/wiki/Virtual_machine) emulation?

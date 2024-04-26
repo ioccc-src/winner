@@ -24,13 +24,13 @@ compiler.
 
 ## Remarks on some of the winning entries
 
-This year's [Best of Show (carlini)](carlini/index.html) is such a novel way of
+This year's [Best of Show - 2020/carlini](carlini/index.html) is such a novel way of
 obfuscation that it would be worth of a special mention in the (future) Best of
 IOCCC list!
 
 For some reason, this year's set of winning entries contains three nostalgic games,
-[Asteroids (tsoj)](tsoj/index.html), [Minesweeper (endoh1)](endoh1/index.html),
-and [Snake (ferguson1)](ferguson1/index.html).
+[Asteroids - 2020/tsoj](tsoj/index.html), [Minesweeper - 2020/endoh1](endoh1/index.html),
+and [Snake - 2020/ferguson1](ferguson1/index.html).
 
 An entry, [kurdyukov1](kurdyukov1/index.html), pays homage to previous entry
 [2015/hou](2015/hou/index.html).

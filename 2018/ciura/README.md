@@ -181,7 +181,7 @@ And here are sample steps of scanning tokens with classes `to_be`,
 
 Type B state machines are built by a variant of the algorithm described
 in the paper
-[How to squeeze a lexicon (PDF)](lexicon.pdf).
+[How to squeeze a lexicon](lexicon.pdf).
 Their states are represented as interlaced sparse arrays of transitions.
 
 The `transition_label` is one of:

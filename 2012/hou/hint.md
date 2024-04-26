@@ -129,7 +129,7 @@ As an extra tweak, the text message actually does something useful. Remove the
 
 [1] [Russ Cox, Regular Expression Matching: the Virtual Machine Approach](http://swtch.com/~rsc/regexp/regexp2.html)
 
-[2] [Regular Expression Matching Can Be Simple And Fast (but is slow in Java, Perl, PHP, Python, Ruby, ...)](http://swtch.com/~rsc/regexp/regexp1.html)
+[2] [Regular Expression Matching Can Be Simple And Fast (but is slow in Java, Perl, PHP, Python, Ruby, ...](http://swtch.com/~rsc/regexp/regexp1.html)
 
 
 <hr style="width:10%;text-align:left;margin-left:0">

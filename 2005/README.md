@@ -31,42 +31,42 @@ We believe you will be impressed with this year's winning entries.
 
 In particular:
 
-+ The [Abuse of the rules (klausler)](klausler/index.html) used local dictionary data to
++ The [Abuse of the rules - 2005/klausler](klausler/index.html) used local dictionary data to
 get around the size limit.
 
-+ The [Most beauteous visuals (vince)](vince/index.html) made clever use of `{}`s and
++ The [Most beauteous visuals - 2005/vince](vince/index.html) made clever use of `{}`s and
 whitespace in their source code and during execution.
 
-+ The [Most circuitous walk (vik)](vik/index.html) entry is just amazing.
++ The [Most circuitous walk - 2005/vik](vik/index.html) entry is just amazing.
 
-+ The [Best game (toledo)](toledo/index.html) makes full use of its single function.
++ The [Best game - 2005/toledo](toledo/index.html) makes full use of its single function.
 
-+ The [Best emulator (sykes)](sykes/index.html) may allow you to reconnect to your first
++ The [Best emulator - 2005/sykes](sykes/index.html) may allow you to reconnect to your first
 [PET](https://en.wikipedia.org/wiki/Commodore_PET).
 
-+ Our [Best of Show (persano)](persano/index.html) this year was simply (or non-simply :-) ) the best!
++ Our [Best of Show - 2005/persano](persano/index.html) this year was simply (or non-simply :-) ) the best!
 
 + (And we need only mention (parenthetically speaking) that the [Best use of
 parenthesis](mikeash/index.html) is self reproducing).
 
-+ The [Most sonorous output (jetro)](jetro/index.html) might `sound` :-) like a good idea.
++ The [Most sonorous output - 2005/jetro](jetro/index.html) might `sound` :-) like a good idea.
 
-+ The [Best 2D puzzle (giljade)](giljade/index.html) takes editorial license with expressions as well as the
++ The [Best 2D puzzle - 2005/giljade](giljade/index.html) takes editorial license with expressions as well as the
 with the [vi editor](https://en.wikipedia.org/wiki/Vi).
 
-+ The [Most ambiguous language (chia)](chia/index.html) entry is really a C program.
++ The [Most ambiguous language - 2005/chia](chia/index.html) entry is really a C program.
 
-+ The [Most superfluous output (boutines)](boutines/index.html) entry is simply
++ The [Most superfluous output - 2005/boutines](boutines/index.html) entry is simply
 [Voronoi](Voronoi)-lific!
 
 + Try not to have your sense of good coding offended by the [Most
-discourteous interpreter (timwi)](timwi/index.html) entry.
+discourteous interpreter - 2005/timwi](timwi/index.html) entry.
 
-+ The [Best use of the www (mynx)](mynx/index.html) doesn't include those letters.
++ The [Best use of the www - 2005/mynx](mynx/index.html) doesn't include those letters.
 
-+ You will be puzzled by the [Best 3D puzzle (anon)](anon/index.html) entry; we are sure!
++ You will be puzzled by the [Best 3D puzzle - 2005/anon](anon/index.html) entry; we are sure!
 
-+ The [Most ingenious puzzle solution (aidan)](aidan/index.html) might puzzle you more while it
++ The [Most ingenious puzzle solution - 2005/aidan](aidan/index.html) might puzzle you more while it
 puzzles out some puzzles: all in a puzzling way!  :-)
 
 ### Remarks on some of the losing entries
