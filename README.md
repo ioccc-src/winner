@@ -191,7 +191,7 @@ time to time.  A valid entry one year may be rejected in a later year due to
 changes in the rules.  See [news.html](news.html) for up to
 date information on how to enter.
 
-Last, PLEASE don't code in the style of these programs It is hoped that you will
+Last, **PLEASE DO *NOT*** code in the style of these programs! It is hoped that you will
 gain an understanding that poor style destroys an otherwise correct program.
 Real programmers don't write obfuscated programs, unless they are submitting a
 contest entry!  :-)
