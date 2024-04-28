@@ -45,7 +45,7 @@ These nods to not run afoul of the guideline:
     are rather similar to previous entries
 ```
 
-because the entry [2019/dogon](2019/dogon/index.html) appropriately pays homage
+because the entry [2019/dogon](dogon/index.html) appropriately pays homage
 to past entries without blatantly reusing their code.
 
 ...We'll stop spouting spoilers now. Have fun exploring all the entries!

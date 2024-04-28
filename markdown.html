@@ -473,11 +473,24 @@ unquoted attribute values.</p>
 <pre><code>    &lt;del&gt;...&lt;/del&gt;</code></pre>
 <h2 id="do-not-use-tt-html-elements">Do not use tt HTML elements</h2>
 <p>Please do not use the tt HTML elements:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">tt</span><span class="dt">&gt;</span>The HTML 5 obsolete tt element is obsolete<span class="dt">&lt;/</span><span class="kw">tt</span><span class="dt">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">tt</span><span class="dt">&gt;</span>The HTML 5 obsolete tt element is obsolete<span class="dt">&lt;/</span><span class="kw">tt</span><span class="dt">&gt;</span>         <span class="er">&lt;</span>=== no thank you</span></code></pre></div>
 <p>Instead use either a monospaced span:</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> style</span><span class="op">=</span><span class="st">&quot;font-family: monospace;&quot;</span><span class="dt">&gt;</span>Use of monospaced font is one option<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span></code></pre></div>
 <p>Or better and easier still, use an inline markdown code block:</p>
 <pre><code>    `inline markdown code block is easier and much better`</code></pre>
+<h2 id="do-not-use-un-indented-code-clocks">Do not use un-indented code clocks</h2>
+<p>Please do not start code blocks at the left-hand edge.</p>
+<pre><code>```
+This code block         &lt;=== no thank you
+is not indendted
+```
+```
+
+We request that you indent the code block by 4 spaces:
+</code></pre>
+<pre><code>    This code block
+    is intented 4 spaces</code></pre>
+<p>````</p>
 <h2 id="do-not-add-trailing-slash-on-void-html-elements">Do not add trailing slash on void HTML elements</h2>
 <p>Please do not use trailing slash on <a href="https://github.com/validator/validator/wiki/Markup-»-Void-elements">void HTML
 elements</a>.</p>
@@ -506,18 +519,24 @@ tags</a>.</p>
 <p>Markdown links that end in “))” complicate parsing and sometimes lead
 to incorrect URLs or file paths.</p>
 <p>Instead of:</p>
-<pre><code>[some text](https://example.com/foo_(bar))      &lt;=== no thank you</code></pre>
+<pre><code>    [some text](https://example.com/foo_(bar))  &lt;=== no thank you</code></pre>
 <p>Use:</p>
-<pre><code>[some text](https://example.com/foo_&amp;#x28;bar&amp;#x29;)</code></pre>
+<pre><code>    [some text](https://example.com/foo_&amp;#x28;bar&amp;#x29;)</code></pre>
 <p>Instead of:</p>
-<pre><code>This thing ([some text](some/path)) is not ideal.       &lt;=== no thank you
-``
-
-Use:
-</code></pre>
-<p>This thing, <a href="some/path">some text</a>, is better.
-```
-<!-- AFTER: last line of markdown file: markdown.md --></p>
+<pre><code>    This thing ([some text](some/path)) is not ideal.   &lt;=== no thank you</code></pre>
+<p>Use:</p>
+<pre><code>    This thing, [some text](some/path), is better.</code></pre>
+<h2 id="do-not-put-s-or-markdown-link-titles">Do not put (‘s or )’ markdown link titles</h2>
+<p>Please do not use parenthesis inside the markdown link titles.</p>
+<p>Instead of:</p>
+<pre><code>    [some (text)](https://example.com/cyrds)      &lt;=== no thank you</code></pre>
+<p>Use:</p>
+<pre><code>    [some &amp;#x28;text&amp;#x29;](https://example.com/cyrds)</code></pre>
+<p>Instead of:</p>
+<pre><code>    [ls(1)](https://example.com/ls-man-page.1)      &lt;=== no thank you</code></pre>
+<p>Use:</p>
+<pre><code>    [ls&amp;#x28;1&amp;#x29;](https://example.com/ls-man-page.1)</code></pre>
+<!-- AFTER: last line of markdown file: markdown.md -->
 
 <!-- END: this line ends content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 <!-- START: this line starts content from: inc/after-content.default.html -->

@@ -183,7 +183,7 @@ Use instead:
 Please do not use the tt HTML elements:
 
 ```html
-    <tt>The HTML 5 obsolete tt element is obsolete</tt>
+    <tt>The HTML 5 obsolete tt element is obsolete</tt>		<=== no thank you
 ```
 
 Instead use either a monospaced span:
@@ -197,6 +197,27 @@ Or better and easier still, use an inline markdown code block:
 ```
     `inline markdown code block is easier and much better`
 ```
+
+
+## Do not use un-indented code clocks
+
+Please do not start code blocks at the left-hand edge.
+
+````
+```
+This code block		<=== no thank you
+is not indendted
+```
+```
+
+We request that you indent the code block by 4 spaces:
+
+````
+```
+    This code block
+    is intented 4 spaces
+```
+````
 
 
 ## Do not add trailing slash on void HTML elements
@@ -251,6 +272,7 @@ Instead use just:
 
 etc.
 
+
 ## Do not end markdown links in ))
 
 Please do not end a markdown links with a double closed parenthesis "))".
@@ -261,23 +283,52 @@ to incorrect URLs or file paths.
 Instead of:
 
 ```
-[some text](https://example.com/foo_(bar))	<=== no thank you
+    [some text](https://example.com/foo_(bar))	<=== no thank you
 ```
 
 Use:
 
 ```
-[some text](https://example.com/foo_&#x28;bar&#x29;)
+    [some text](https://example.com/foo_&#x28;bar&#x29;)
 ```
 
 Instead of:
 
 ```
-This thing ([some text](some/path)) is not ideal.	<=== no thank you
-``
+    This thing ([some text](some/path)) is not ideal.	<=== no thank you
+```
 
 Use:
 
 ```
-This thing, [some text](some/path), is better.
+    This thing, [some text](some/path), is better.
+```
+
+
+## Do not put ('s or )' markdown link titles
+
+Please do not use parenthesis inside the markdown link titles.
+
+Instead of:
+
+```
+    [some (text)](https://example.com/cyrds)      <=== no thank you
+```
+
+Use:
+
+```
+    [some &#x28;text&#x29;](https://example.com/cyrds)
+```
+
+Instead of:
+
+```
+    [ls(1)](https://example.com/ls-man-page.1)      <=== no thank you
+```
+
+Use:
+
+```
+    [ls&#x28;1&#x29;](https://example.com/ls-man-page.1)
 ```

@@ -48,7 +48,7 @@ aren't familiar with it. Back in its day, this demo inspired lust and awe in
 geeks around the world.
 
 The graphics are
-[raytraced](https://en.wikipedia.org/wiki/Ray_tracing_(graphics), with
+[raytraced](https://en.wikipedia.org/wiki/Ray_tracing_&#x28;graphics&#x29;), with
 procedural textures on the ball and the back wall.  I did cheat a little to
 simplify the calculations: it uses a parallel projection, but textures the back
 wall to look as if there were a floor being viewed in perspective.  The shadow

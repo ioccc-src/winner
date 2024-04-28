@@ -2344,7 +2344,7 @@ remarks and always the author's or authors' remarks, you look at the original
 code. When the entry source code is called `prog.c` the original code is in
 `prog.orig.c`; otherwise it is `dirname.orig.c`. For instance one of Landon's all
 time favourite entries is [1984/mullender](1984/mullender/index.html) and the
-original code is in [mullender.orig.c](1984/mullender/mullender.orig.c). In
+original code is in [mullender.orig.c](%%REPO_URL%%/1984/mullender/mullender.orig.c). In
 some cases, such as `1984/mullender`, the original code is the same as the code
 as no changes were made (there is an alt version for systems that are not
 VAX-11/PDP-11, however).
@@ -2675,7 +2675,7 @@ and/or number of rows have also changed.
 
 The `winner.orig.c` file contains the original source code that was
 subjected to rule 2 of the given IOCCC.  You may also wish to see
-the [/archive](archive) directory where you can find all the
+the [archive](archive) directory where you can find all the
 original winning entries as compressed tar files for a given year.
 
 In some cases the entry may have abused rule 2 and declared an
@@ -2817,7 +2817,7 @@ The latter form is in case there are more than one anonymous author in a given
 year.
 
 NOTE: even if the directory name is not `anonymous` the above rules apply as in
-in the case of [2005/anon](2005/anon/anon.c).
+in the case of [2005/anon](%%REPO_URL%%/2005/anon/anon.c).
 
 Anonymous `author_handle`'s match this regexp:
 
@@ -3352,7 +3352,7 @@ of the IOCCC entry directories for a given year.  For example, see the [1984/.ye
 
 Under each IOCCC entry directory, you will find a `.path` file.
 These files contain the directory path from the top directory.
-For example see [1984/anonymous/.path](1984/anonymous/.path).
+For example see [1984/anonymous/.path](%%REPO_URL%%/1984/anonymous/.path).
 
 The .top, .year and .path files are generated from the top level Makefile, by:
 
@@ -3513,7 +3513,7 @@ You're ready to make your changes now!
 
 Here you must use your wits, knowledge, creativity and whatever else you have.
 Let's say that Cody wants to update his file
-[/2020/ferguson1/play.sh](2020/ferguson1/play.sh) script. He would open it in
+[2020/ferguson1/play.sh](%%REPO_URL%%/2020/ferguson1/play.sh) script. He would open it in
 his editor of choice (in his case vim) and make the changes. He would then make
 sure (as there is a last updated date) to update the last updated date. For
 instance he might add the following:
@@ -3563,7 +3563,7 @@ Now you'd be ready to make your commits.
 
 Before doing anything else, however, a new branch needs to be created.
 Continuing the example above for
-[2020/ferguson1/play.sh](2020/ferguson1/play.sh), it might be that:
+[2020/ferguson1/play.sh](%%REPO_URL%%/2020/ferguson1/play.sh), it might be that:
 
 
 ``` <!---sh-->

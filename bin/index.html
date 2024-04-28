@@ -409,6 +409,24 @@ repo</a>.</p>
 <p>Generate the list of files in the entry’s manifest, <code>.entry.json</code>.</p>
 <p>For example:</p>
 <pre><code>    awk -f bin/filelist.entry.json.awk 2020/ferguson1/.entry.json</code></pre>
+<h3 id="find-missing-links.sh"><a href="../bin/find-missing-links.sh">find-missing-links.sh</a></h3>
+<p>Find all markdown links to local files that do not exist.</p>
+<p>This tool does <strong>NOT</strong> check of a remote URL exists.
+This tool only checks on links to local files.</p>
+<p>This tool does <strong>NOT</strong> check links into a given place in a file.
+This tool only checks that local files linked by markdown exist.</p>
+<p>This tool does <strong>NOT</strong> check HTML file links.
+This tool only checks markdown based links.</p>
+<p>Usage:</p>
+<pre><code>    bin/find-missing-links.sh -v 1</code></pre>
+<p>If no missing links are found, this tool exits 0 with no output
+(debug messages not withstanding), otherwise this tool will exit non-zero.</p>
+<p>NOTE: If the markdown link is malformed, this tool
+might generate an error about a file that does exist.
+If this tool claims that a file is missing that does exist,
+look for a malformed markdown line and/or use of markdown
+that is <strong>NOT</strong> an IOCCC markdown best practice.</p>
+<p>See <a href="markdown.html">IOCCC markdown best practices</a> for more info.</p>
 <h3 id="gen-authors.sh"><a href="../bin/gen-authors.sh">gen-authors.sh</a></h3>
 <p>Generate the top level <code>/authors.html</code> page.</p>
 <p>Usage:</p>

@@ -15,7 +15,7 @@ Nearly all of the [temp-test-ioccc web site](https://ioccc-src.github.io/temp-te
 web site has undergone editorial review.  Nearly all [IOCCC winning entries](years.html)
 compile on modern systems and many have `try.sh` scripts to help you run them.
 For those that cannot compile and/or do not work, we have made a
-[Bugs and (Mis)features](bugs.html) page.
+[Bugs and &#x28;Mis&#x29;features](bugs.html) page.
 
 We have made nearly 4823 changes to date!
 

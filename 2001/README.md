@@ -39,7 +39,7 @@ them for the next IOCCC.
 We believe you will be impressed with this year's winning entries  The [Best of
 Show](ollinger/index.html) is a fine example of obfuscation.  But don't ignore
 the other entries!  There are games, programs that speak, ones that compile code
-and [one that _might_ run binaries you already have](2001/anonymous/index.html).
+and [one that _might_ run binaries you already have](anonymous/index.html).
 
 The [Best/Worst Abuse of the Rules](bellard/index.html) is technically allowed by the
 [rules](rules.txt).  This year we awarded it again, but don't assume you can get

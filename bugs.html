@@ -421,7 +421,7 @@ Sometimes it is okay: some entries are known to not work but they can still have
 improvements (rarer situation but it’s happened). Some might have slightly
 different output but which is not a problem for instance a newline after output
 in <a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a>’s changing it to
-<a href="1994/ldb/ldb.c">1994/ldb</a> use <code>fgets()</code> from <code>gets()</code>.</p>
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/ldb/ldb.c">1994/ldb</a> use <code>fgets()</code> from <code>gets()</code>.</p>
 <p>Make <strong>ABSOLUTE CERTAIN</strong> that you read the index.html file <em>BEFORE</em> your changes
 as it’s important to see that the code is doing what it is supposed to. In the
 case that it’s not obvious (some index.html files do not even have commands to
@@ -442,7 +442,7 @@ one that’s more than fine (and it has been done numerous times).</p>
 <p>Entries below have one or more of the following <em><strong>STATUS</strong></em> values. Please see
 the text below for more information. If an entry has more than one status it
 means that either they all apply or they compliment each other. For instance
-<a href="2004/gavin/gavin.c">2004/gavin</a> crashes but it also doesn’t even compile with
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/gavin/gavin.c">2004/gavin</a> crashes but it also doesn’t even compile with
 some platforms/architectures.</p>
 <h2 id="general-notes-about-the-statuses-and-making-fixes">General notes about the statuses and making fixes</h2>
 <h3 id="compiler-warnings-are-very-rarely-a-problem">Compiler warnings are very rarely a problem</h3>
@@ -459,17 +459,17 @@ sizes on different platforms. These tend to be required at the risk that
 sometimes the entry will not work for certain platforms, some of which might or
 might not be fixable; a good example where it was required to change and is okay
 is when <a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> fixed the
-segfault in macOS of <a href="1994/paul/paul.c">1989/paul</a>: changing the <code>int *</code> to a
+segfault in macOS of <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/paul/paul.c">1989/paul</a>: changing the <code>int *</code> to a
 <code>long *</code> was required and it works just as well with linux.</p>
 <p>But even if they are fixable (which will likely be hard to do) it’s almost
 certain that such code would be just as non-portable (importable ? :-) ).</p>
 <p>In rare cases they are valid. For instance Cody noticed in linux the following
-warning in <a href="1985/applin/applin.c">1985/applin</a> with gcc:</p>
+warning in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/applin/applin.c">1985/applin</a> with gcc:</p>
 <pre><code>    applin.c:1:78: warning: incompatible implicit declaration of built-in function &#39;execlp&#39; [-Wbuiltin-declaration-mismatch]
         1 | main(v,c)char**c;{for(v[c++]=strdup(&quot;Hello, world!\n&quot;);(!!c)[*c]&amp;&amp;(v--||--c&amp;&amp;execlp(*c,*c,c[!!c]+!!c,!c));**c=!c)write(!!*c,*c,!!**c);}
           |                                                                              ^~~~~~</code></pre>
 <p>and this reminded him of his fix to
-<a href="1984/anonymous/anonymous.c">1984/anonymous</a>. In the case of <code>1984/anonymous</code> it
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/anonymous/anonymous.c">1984/anonymous</a>. In the case of <code>1984/anonymous</code> it
 was a bit more involved but with <code>1985/applin</code> one need only add to the Makefile
 <code>-include unistd.h</code>. So there are some cases where fixing warnings can fix a
 problem but in general they should be ignored even if they’re annoying.</p>
@@ -527,7 +527,7 @@ something else?). Please help us to fix it!</p>
 <h2 id="status-doesnt-work-with-some-compilers">STATUS: doesn’t work with some compilers</h2>
 <p><strong>Please provide alternative code or fix for more compilers</strong>!</p>
 <p>Some entries do not work with some compilers. A good example is
-<a href="1992/lush/lush.c">1992/lush</a> which uses error messages from the compiler to
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/lush/lush.c">1992/lush</a> which uses error messages from the compiler to
 generate its output.</p>
 <p>If you can provide code that works for multiple compilers without too much
 tampering this is okay though it’s probably not possible with the above
@@ -537,7 +537,7 @@ here as best you can manage.</p>
 <h2 id="status-main-function-args-not-allowed">STATUS: main() function args not allowed</h2>
 <p><strong>Please help us fix the main() function</strong>!</p>
 <p>NOTE: it appears that most if not all of these have been fixed except perhaps
-for <a href="1989/westley/westley.c">1989/westley</a> but this has probably been fixed as
+for <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/westley/westley.c">1989/westley</a> but this has probably been fixed as
 much as possible given the nature of how it generates code: the entry itself
 compiles but two versions of code it generates does not work with clang.</p>
 <p>However some still might have problems of some kind or another and some might
@@ -560,9 +560,10 @@ the same issue.</p>
 clang</strong> despite the fact it might appear to be gcc: no symlink and both gcc and
 clang exist but the gcc is clang which you’ll see if you run <code>gcc --version</code>.</p>
 <p>A tip and some fix methods from Cody: in the older days args to main() not given
-a type were implicit ints but when they’re required to be <code>char ** this can cause a problem. In some cases Cody was able to use a</code>char *<code>inside</code>main()`
-(see <a href="1989/tromp/tromp.c">1989/tromp/tromp.c</a> and
-<a href="1986/holloway">1986/holloway/holloway.c</a> for two examples though done slightly
+a type were implicit ints but when they’re required to be <code>char **</code> this can
+cause a problem. In some cases Cody was able to use a <code>char *</code> inside <code>main()</code>
+(see <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/tromp/tromp.c">1989/tromp/tromp.c</a> and
+<a href="1986/holloway/index.html">1986/holloway/holloway.c</a> for two examples though done slightly
 differently). In other cases he was able to dereference the pointers to be used
 like an int and other times a cast was necessary. He used other various
 techniques to get them to compile. In some cases this introduced a problem but
@@ -597,7 +598,7 @@ warnings during at least one of compiling, linking and execution. In macOS it’
 most annoying as it happens during execution (also compilation) with the warning
 being interspersed with the output of the program, often causing confusing
 output with the entry. A good example that was fixed is
-<a href="1990/tbr/tbr.c">1990/tbr</a>.</p>
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/tbr/tbr.c">1990/tbr</a>.</p>
 <p>Cody provided some important notes on this status with respect to fixing /
 changing entries:</p>
 <ol start="0" type="1">
@@ -655,12 +656,12 @@ the entry. Nonetheless they are noteworthy.</p>
 something was noted by the author, the judges, a consequence of earlier
 requirements for winning entries or the purpose was to do something that might
 appear to be buggy. An example of system specific entries:</p>
-<p><a href="1984/mullender/mullender.c">1984/mullender</a> (see below and the <a href="faq.html">FAQ</a>
+<p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/mullender.c">1984/mullender</a> (see below and the <a href="faq.html">FAQ</a>
 for a version that works in modern systems) is very system specific and was
 before system specific winning entries were discouraged. This is an all time
 personal favourite of Landon Curt Noll. Run the alternate code to understand why
 this might be (along with how strange the source code is :-) ).</p>
-<p>An example where a crash is not a bug: <a href="2019/endoh/endoh.c">2019/endoh</a> is
+<p>An example where a crash is not a bug: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/endoh/endoh.c">2019/endoh</a> is
 supposed to crash. There are others that are also supposed to crash or that are
 known to segfault but are considered features.</p>
 <p>An important note is that if the index.html of the entry has a bug status that
@@ -672,7 +673,7 @@ figure it out you’re invited to look at the git diffs, where there are some
 (some were fixed earlier on but rolled back as both Cody and Landon individually
 felt that the fix was tampering with the entry).</p>
 <p>NOTE: in the case of <code>gets()</code> we’ve fixed some to avoid the warning of the
-compiler, linker or even during runtime, depending on the system. In <a href="1990/tbr/tbr.c">some cases
+compiler, linker or even during runtime, depending on the system. In <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/tbr/tbr.c">some cases
 like 1990/tbr</a> the fix actually prevents confusing output (though that
 was not the only fix made in that entry).</p>
 <h3 id="exception-your-own-entries">Exception: your own entries</h3>
@@ -689,7 +690,7 @@ own fix or suggest that they’re fixed!</p>
 <h2 id="decot"><a href="1984/decot/index.html">1984/decot</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-1">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-1984decotdedot.c">Source code: <a href="1984/decot/decot.c">1984/decot/dedot.c</a></h3>
+<h3 id="source-code-1984decotdedot.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/decot/decot.c">1984/decot/dedot.c</a></h3>
 <h3 id="information-1984decotindex.html">Information: <a href="1984/decot/index.html">1984/decot/index.html</a></h3>
 <p>The purpose of this program is to print out a string of rubbish. In particular
 you should see something like:</p>
@@ -701,14 +702,14 @@ you should see something like:</p>
 <h2 id="mullender"><a href="1984/mullender/index.html">1984/mullender</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-2">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-1984mullendermullender.c">Source code: <a href="1984/mullender/mullender.c">1984/mullender/mullender.c</a></h3>
+<h3 id="source-code-1984mullendermullender.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/mullender.c">1984/mullender/mullender.c</a></h3>
 <h3 id="information-1984mullenderindex.html">Information: <a href="1984/mullender/index.html">1984/mullender/index.html</a></h3>
 <p>Although there is an alt version and supplementary program added by Cody that
 will work in modern systems, if you do not have a
 <a href="https://en.wikipedia.org/wiki/VAX-11">VAX-11</a> or
 <a href="https://en.wikipedia.org/wiki/PDP-11">PDP-11</a> to run the original entry on it
 will not work. See the index.html for details on the alternate versions.</p>
-<p>Cody added and fixed the <a href="1984/mullender/gentab.c">gentab.c</a> which is from the
+<p>Cody added and fixed the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/gentab.c">gentab.c</a> which is from the
 author’s (or one of them, Mullender) remarks found by Cody. Cody fixed this to
 compile and work (as best as he can determine: he has no VAX-11 or PDP-11 or
 emulator to test it) but running the code on the binary itself produces a
@@ -728,7 +729,7 @@ emulator to test it) but running the code on the binary itself produces a
 <h2 id="august"><a href="1986/august/index.html">1986/august</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-3">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-1986augustaugust.c">Source code: <a href="1986/august/august.c">1986/august/august.c</a></h3>
+<h3 id="source-code-1986augustaugust.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/august/august.c">1986/august/august.c</a></h3>
 <h3 id="information-1986augustindex.html">Information: <a href="1986/august/index.html">1986/august/index.html</a></h3>
 <p>This entry is known to segfault after printing its output. It was documented by
 the judges and shouldn’t be fixed.</p>
@@ -747,7 +748,7 @@ the judges and shouldn’t be fixed.</p>
 <h2 id="dale"><a href="1988/dale/index.html">1988/dale</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-4">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-1988daledale.c">Source code: <a href="1988/dale/dale.c">1988/dale/dale.c</a></h3>
+<h3 id="source-code-1988daledale.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/dale/dale.c">1988/dale/dale.c</a></h3>
 <h3 id="information-1988daleindex.html">Information: <a href="1988/dale/index.html">1988/dale/index.html</a></h3>
 <p>In linux it might happen that despite no error message or message about doing
 so, the program drops a core file into the directory even though the entry works
@@ -761,7 +762,7 @@ and does not crash.</p>
 <h2 id="fubar"><a href="1989/fubar/index.html">1989/fubar</a></h2>
 </div>
 <h3 id="status-known-bug---please-help-us-fix">STATUS: known bug - please help us fix</h3>
-<h3 id="source-code-1989fubarfubar.c">Source code: <a href="1989/fubar/fubar.c">1989/fubar/fubar.c</a></h3>
+<h3 id="source-code-1989fubarfubar.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/fubar/fubar.c">1989/fubar/fubar.c</a></h3>
 <h3 id="information-1989fubarindex.html">Information: <a href="1989/fubar/index.html">1989/fubar/index.html</a></h3>
 <p>If you use either <code>fubar</code> or <code>ouroboros.c</code> (it’s executable, see index.html for
 details) with a number &lt; 0 or larger than, say 20, it’s very likely that the
@@ -772,7 +773,7 @@ errors.</p>
 <h2 id="robison"><a href="1989/robison/index.html">1989/robison</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-5">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-1989robisonrobison.c">Source code: <a href="1989/robison/robison.c">1989/robison/robison.c</a></h3>
+<h3 id="source-code-1989robisonrobison.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/robison/robison.c">1989/robison/robison.c</a></h3>
 <h3 id="information-1989robisonindex.html">Information: <a href="1989/robison/index.html">1989/robison/index.html</a></h3>
 <p>This program will very likely crash or break into tiny bits :-) if you feed it
 numbers with non-binary digits.</p>
@@ -782,7 +783,7 @@ operators like <code>/</code>. To see what operators are supported check the sou
 <h2 id="westley"><a href="1989/westley/index.html">1989/westley</a></h2>
 </div>
 <h3 id="status-known-bug---please-help-us-fix-1">STATUS: known bug - please help us fix</h3>
-<h3 id="source-code-1989westleywestley.c">Source code: <a href="1989/westley/westley.c">1989/westley/westley.c</a></h3>
+<h3 id="source-code-1989westleywestley.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/westley/westley.c">1989/westley/westley.c</a></h3>
 <h3 id="information-1989westleyindex.html">Information: <a href="1989/westley/index.html">1989/westley/index.html</a></h3>
 <p>With version 2 it sometimes segfaults even with the same input where other times
 it does not. We don’t believe this is because of the fix that lets some versions
@@ -872,7 +873,7 @@ Enjoy! :-)</p>
 <h2 id="baruch"><a href="1990/baruch/index.html">1990/baruch</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-6">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-1990baruchbaruch.c">Source code: <a href="1990/baruch/baruch.c">1990/baruch/baruch.c</a></h3>
+<h3 id="source-code-1990baruchbaruch.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/baruch/baruch.c">1990/baruch/baruch.c</a></h3>
 <h3 id="information-1990baruchindex.html">Information: <a href="1990/baruch/index.html">1990/baruch/index.html</a></h3>
 <p>A point worth considering is that as the number passed into the program gets
 bigger the number of lines of output gets substantially larger and it takes much
@@ -937,7 +938,7 @@ more time and resources to run as well. For instance:</p>
 <h2 id="jaw"><a href="1990/jaw/index.html">1990/jaw</a></h2>
 </div>
 <h3 id="status-known-bug---please-help-us-fix-2">STATUS: known bug - please help us fix</h3>
-<h3 id="source-code-1990jawjaw.c">Source code: <a href="1990/jaw/jaw.c">1990/jaw/jaw.c</a></h3>
+<h3 id="source-code-1990jawjaw.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/jaw/jaw.c">1990/jaw/jaw.c</a></h3>
 <h3 id="information-1990jawindex.html">Information: <a href="1990/jaw/index.html">1990/jaw/index.html</a></h3>
 <p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a>
 fixed some issues in this program and <a href="authors.html#Yusuke_Endoh">Yusuke
@@ -961,7 +962,7 @@ sentence.</p>
 <pre><code>    oops</code></pre>
 <p>which seems to be an error message (one of the fixes was to make it not use
 <code>perror(3)</code> - this fixed something else though it’s no longer known what).</p>
-<p>The script <a href="1990/jaw/shark.sh">shark.sh</a> has some issues too in that due to
+<p>The script <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/jaw/shark.sh">shark.sh</a> has some issues too in that due to
 path not having <code>.</code> (this and maybe some other things were fixed) and <code>tar</code> not
 wanting to accept reading from <code>stdin</code> (this in particular) even with the right
 options used, seemingly, it has to write to disk the tarball which seems to
@@ -970,7 +971,7 @@ defeat the purpose. This would ideally be fixed.</p>
 <h2 id="tbr"><a href="1990/tbr/index.html">1990/tbr</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-7">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-1990tbrtbr.c">Source code: <a href="1990/tbr/tbr.c">1990/tbr/tbr.c</a></h3>
+<h3 id="source-code-1990tbrtbr.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/tbr/tbr.c">1990/tbr/tbr.c</a></h3>
 <h3 id="information-1990tbrindex.html">Information: <a href="1990/tbr/index.html">1990/tbr/index.html</a></h3>
 <p>The authors provided a list of features in the
 <a href="1990/tbr/index.html#bugs">BUGS</a> section in their remarks.</p>
@@ -978,7 +979,7 @@ defeat the purpose. This would ideally be fixed.</p>
 <h2 id="theorem"><a href="1990/theorem/index.html">1990/theorem</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-8">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-1990theoremtheorem.c">Source code: <a href="1990/theorem/theorem.c">1990/theorem/theorem.c</a></h3>
+<h3 id="source-code-1990theoremtheorem.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/theorem/theorem.c">1990/theorem/theorem.c</a></h3>
 <h3 id="information-1990theoremindex.html">Information: <a href="1990/theorem/index.html">1990/theorem/index.html</a></h3>
 <p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> fixed many bugs that
 prevented this from working properly (including segfaults) but one thing to note
@@ -994,7 +995,7 @@ where this occurred was fixed but this one should not be fixed. Thank you.</p>
 <h2 id="buzzard"><a href="1991/buzzard/index.html">1991/buzzard</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-9">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-1991buzzardbuzzard.c">Source code: <a href="1991/buzzard/buzzard.c">1991/buzzard/buzzard.c</a></h3>
+<h3 id="source-code-1991buzzardbuzzard.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/buzzard/buzzard.c">1991/buzzard/buzzard.c</a></h3>
 <h3 id="information-1991buzzardindex.html">Information: <a href="1991/buzzard/index.html">1991/buzzard/index.html</a></h3>
 <p>If the maze file cannot be opened, either because the path specified does not
 exist or because the default (whatever the source file was at compilation time)
@@ -1004,7 +1005,7 @@ file does not exist in the directory, this program will very likely crash.</p>
 <h2 id="westley-1"><a href="1991/westley/index.html">1991/westley</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-10">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-1991westleywestley.c">Source code: <a href="1991/westley/westley.c">1991/westley/westley.c</a></h3>
+<h3 id="source-code-1991westleywestley.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/westley/westley.c">1991/westley/westley.c</a></h3>
 <h3 id="information-1991westleyindex.html">Information: <a href="1991/westley/index.html">1991/westley/index.html</a></h3>
 <p>There is a very simple way to always win. The program doesn’t catch you and as
 someone called Cody’s late grandmother said to him: ‘it’s not cheating unless
@@ -1021,7 +1022,7 @@ when you’re cheating it ends up winning! Can you figure that out as well?</p>
 <h2 id="adrian"><a href="1992/adrian/index.html">1992/adrian</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-11">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-1992adrianadrian.c">Source code: <a href="1992/adrian/adrian.c">1992/adrian/adrian.c</a></h3>
+<h3 id="source-code-1992adrianadrian.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/adrian/adrian.c">1992/adrian/adrian.c</a></h3>
 <h3 id="information-1992adrianindex.html">Information: <a href="1992/adrian/index.html">1992/adrian/index.html</a></h3>
 <p>The author stated that if the file cannot be opened then it will print a system
 error but this is not the case unless it’s showing a fault. However this was
@@ -1044,7 +1045,7 @@ have to remove the outer <code>()</code> pair.</p>
 <h2 id="albert"><a href="1992/albert/index.html">1992/albert</a></h2>
 </div>
 <h3 id="status-known-bug---please-help-us-fix-3">STATUS: known bug - please help us fix</h3>
-<h3 id="source-code-1992albertalbert.c">Source code: <a href="1992/albert/albert.c">1992/albert/albert.c</a></h3>
+<h3 id="source-code-1992albertalbert.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/albert/albert.c">1992/albert/albert.c</a></h3>
 <h3 id="information-1992albertindex.html">Information: <a href="1992/albert/index.html">1992/albert/index.html</a></h3>
 <p>Leo Broukhis, before he was an IOCCC judge, sent the IOCCC judges an email:</p>
 <pre><code>    From: leo _at_ zycad -dot- com (Leo Broukhis)
@@ -1087,7 +1088,7 @@ entry itself. Can you fix the actual entry? You are welcome to try and do so.</p
 <h2 id="gson"><a href="1992/gson/index.html">1992/gson</a></h2>
 </div>
 <h3 id="status-uses-gets---change-to-fgets-if-possible">STATUS: uses gets() - change to fgets() if possible</h3>
-<h3 id="source-code-1992gsongson.c">Source code: <a href="1992/gson/gson.c">1992/gson/gson.c</a></h3>
+<h3 id="source-code-1992gsongson.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/gson/gson.c">1992/gson/gson.c</a></h3>
 <h3 id="information-1992gsonindex.html1992gsonindex.html">Information: [1992/gson/index.html])(1992/gson/index.html)</h3>
 <p>Cody changed it so that the buffer size is <code>ARG_MAX+1</code> to try and get past the
 problem of <code>gets()</code> being used in a more complex way.</p>
@@ -1107,7 +1108,7 @@ to be read (in case the <code>gets(3)</code> was not used in a loop).</p>
 <h2 id="kivinen"><a href="1992/kivinen/index.html">1992/kivinen</a></h2>
 </div>
 <h3 id="status-known-bug---please-help-us-fix-4">STATUS: known bug - please help us fix</h3>
-<h3 id="source-code-1992kivinenkivinen.c">Source code: <a href="1992/kivinen/kivinen.c">1992/kivinen/kivinen.c</a></h3>
+<h3 id="source-code-1992kivinenkivinen.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/kivinen/kivinen.c">1992/kivinen/kivinen.c</a></h3>
 <h3 id="information-1992kivinenindex.html">Information: <a href="1992/kivinen/index.html">1992/kivinen/index.html</a></h3>
 <p>When you start the program everything starts to move over to the right side and
 then ends. <a href="authors.html#Yusuke_Endoh">Yusuke Endoh</a> pointed out that if you
@@ -1117,7 +1118,7 @@ click the mouse it takes it back towards the centre.</p>
 <h2 id="lush"><a href="1992/lush/index.html">1992/lush</a></h2>
 </div>
 <h3 id="status-doesnt-work-with-some-compilers---please-provide-alternative-code-or-fix-for-more-compilers">STATUS: doesn’t work with some compilers - please provide alternative code or fix for more compilers</h3>
-<h3 id="source-code-1992lushlush.c">Source code: <a href="1992/lush/lush.c">1992/lush/lush.c</a></h3>
+<h3 id="source-code-1992lushlush.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/lush/lush.c">1992/lush/lush.c</a></h3>
 <h3 id="information-1992lushindex.html">Information: <a href="1992/lush/index.html">1992/lush/index.html</a></h3>
 <p>We used a patch from <a href="authors.html#Yusuke_Endoh">Yusuke Endoh</a> to get this to
 work but it only works with gcc. Cody removed the warnings of <code>gets()</code> and
@@ -1182,7 +1183,7 @@ than that. For instance this is what it looks like with clang:</p>
 <h2 id="vern"><a href="1992/vern/index.html">1992/vern</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-12">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-1992vernvern.c">Source code: <a href="1992/vern/vern.c">1992/vern/vern.c</a></h3>
+<h3 id="source-code-1992vernvern.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/vern/vern.c">1992/vern/vern.c</a></h3>
 <h3 id="information-1992vernindex.html">Information: <a href="1992/vern/index.html">1992/vern/index.html</a></h3>
 <p>When your own checkmate is imminent it prints <code>"Har har"</code> but does not exit so
 it can ‘rub your nose in defeat’, as the author puts it. You will have to exit
@@ -1191,7 +1192,7 @@ it yourself through ctrl-c or killing it in some other fashion.</p>
 <h2 id="westley-2"><a href="1992/westley/index.html">1992/westley</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-13">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-1992westleywestley.c">Source code: <a href="1992/westley/westley.c">1992/westley/westley.c</a></h3>
+<h3 id="source-code-1992westleywestley.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/westley/westley.c">1992/westley/westley.c</a></h3>
 <h3 id="information-1992westleyindex.html">Information: <a href="1992/westley/index.html">1992/westley/index.html</a></h3>
 <p>Cody improved the usability of this program by making it so that as long as the
 terminal columns is &gt;= 80 it will display properly, rather than having to wrap
@@ -1217,7 +1218,7 @@ not a misunderstanding).</p>
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 <h3 id="status-inabiaf---please-do-not-fix-14">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-1993antant.c">Source code: <a href="1993/ant/ant.c">1993/ant/ant.c</a></h3>
+<h3 id="source-code-1993antant.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/ant/ant.c">1993/ant/ant.c</a></h3>
 <h3 id="information-1993antindex.html">Information: <a href="1993/ant/index.html">1993/ant/index.html</a></h3>
 <p>The author stated that:</p>
 <pre><code>    The expression `(a*)*` compiles but loops forever.
@@ -1231,7 +1232,7 @@ not a misunderstanding).</p>
 there is a version of the code that is not obfuscated. This file, <code>agag.c</code> does
 not exist in the archive. Do you have it? Please provide it!</p>
 <h3 id="status-known-bug---please-help-us-fix-6">STATUS: known bug - please help us fix</h3>
-<h3 id="source-code-1993cmillscmills.c">Source code: <a href="1993/cmills/cmills.c">1993/cmills/cmills.c</a></h3>
+<h3 id="source-code-1993cmillscmills.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/cmills/cmills.c">1993/cmills/cmills.c</a></h3>
 <h3 id="information-1993cmillsindex.html">Information: <a href="1993/cmills/index.html">1993/cmills/index.html</a></h3>
 <p>In multiple platforms, both macOS and also linux (in particular a RHEL 9.3
 system), this entry just shows a blank screen.</p>
@@ -1240,7 +1241,7 @@ system), this entry just shows a blank screen.</p>
 <h2 id="lmfjyh"><a href="1993/lmfjyh/index.html">1993/lmfjyh</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-15">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-1993lmfjyhlmfjyh.c">Source code: <a href="1993/lmfjyh/lmfjyh.c">1993/lmfjyh/lmfjyh.c</a></h3>
+<h3 id="source-code-1993lmfjyhlmfjyh.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/lmfjyh/lmfjyh.c">1993/lmfjyh/lmfjyh.c</a></h3>
 <h3 id="information-1993lmfjyhindex.html">Information: <a href="1993/lmfjyh/index.html">1993/lmfjyh/index.html</a></h3>
 <p>This entry relied on a bug in gcc that was fixed with gcc version 2.3.3. This
 cannot be fixed for modern systems as the bug is long gone.</p>
@@ -1250,7 +1251,7 @@ the index.html file for details.</p>
 <h2 id="rince"><a href="1993/rince/index.html">1993/rince</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-16">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-1993rincerince.c">Source code: <a href="1993/rince/rince.c">1993/rince/rince.c</a></h3>
+<h3 id="source-code-1993rincerince.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/rince/rince.c">1993/rince/rince.c</a></h3>
 <h3 id="information-1993rinceindex.html">Information: <a href="1993/rince/index.html">1993/rince/index.html</a></h3>
 <p>Although the code checks if the file can be opened or not, badly formatted files
 will cause problems. No other checks are performed either.</p>
@@ -1260,7 +1261,7 @@ through ctrl-c or such.</p>
 <h2 id="schnitzi"><a href="1993/schnitzi/index.html">1993/schnitzi</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-17">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-1993schnitzischnitzi.c">Source code: <a href="1993/schnitzi/schnitzi.c">1993/schnitzi/schnitzi.c</a></h3>
+<h3 id="source-code-1993schnitzischnitzi.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/schnitzi/schnitzi.c">1993/schnitzi/schnitzi.c</a></h3>
 <h3 id="information-1993schnitziindex.html">Information: <a href="1993/schnitzi/index.html">1993/schnitzi/index.html</a></h3>
 <p>If the file cannot be opened it will very likely segfault. This should not be
 fixed except for an exercise to yourself, should you wish to try.</p>
@@ -1286,7 +1287,7 @@ question you might cause an error. For instance don’t do this:</p>
 <pre><code>    What is &#39;foo&#39;?</code></pre>
 <p>it will work fine.</p>
 <h3 id="status-inabiaf---please-do-not-fix-18">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-1993vanbvanb.c">Source code: <a href="1993/vanb/vanb.c">1993/vanb/vanb.c</a></h3>
+<h3 id="source-code-1993vanbvanb.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/vanb/vanb.c">1993/vanb/vanb.c</a></h3>
 <h3 id="information-1993vanbindex.html">Information: <a href="1993/vanb/index.html">1993/vanb/index.html</a></h3>
 <p>No spaces are allowed in the expression.</p>
 <p>The program does no error checking so erroneous expressions will produce
@@ -1302,7 +1303,7 @@ not <code>d-46</code>.</p>
 <h2 id="dodsond2"><a href="1994/dodsond2/index.html">1994/dodsond2</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-19">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-1994dodsond2dodsond2.c">Source code: <a href="1994/dodsond2/dodsond2.c">1994/dodsond2/dodsond2.c</a></h3>
+<h3 id="source-code-1994dodsond2dodsond2.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/dodsond2/dodsond2.c">1994/dodsond2/dodsond2.c</a></h3>
 <h3 id="information-1994dodsond2index.html">Information: <a href="1994/dodsond2/index.html">1994/dodsond2/index.html</a></h3>
 <p>When you initiate shooting via the <code>s</code> command you immediately lose an arrow
 <em>before you choose where to shoot</em>.</p>
@@ -1312,7 +1313,7 @@ pit room you will end up dying even though you didn’t explicitly move there.</
 <h2 id="ldb"><a href="1994/ldb/index.html">1994/ldb</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-20">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-1994ldbldb.c">Source code: <a href="1994/ldb/ldb.c">1994/ldb/ldb.c</a></h3>
+<h3 id="source-code-1994ldbldb.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/ldb/ldb.c">1994/ldb/ldb.c</a></h3>
 <h3 id="information-1994ldbindex.html">Information: <a href="1994/ldb/index.html">1994/ldb/index.html</a></h3>
 <p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> fixed this to compile
 with modern systems (see the <a href="thanks-for-help.html">thanks</a> file for
@@ -1329,7 +1330,7 @@ one liner it’s already quite long.</p>
 <h2 id="schnitzi-1"><a href="1994/schnitzi/index.html">1994/schnitzi</a></h2>
 </div>
 <h3 id="status-uses-gets---change-to-fgets-if-possible-1">STATUS: uses gets() - change to fgets() if possible</h3>
-<h3 id="source-code-1994schnitzischnitzi.c">Source code: <a href="1994/schnitzi/schnitzi.c">1994/schnitzi/schnitzi.c</a></h3>
+<h3 id="source-code-1994schnitzischnitzi.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/schnitzi/schnitzi.c">1994/schnitzi/schnitzi.c</a></h3>
 <h3 id="information-1994schnitziindex.html">Information: <a href="1994/schnitzi/index.html">1994/schnitzi/index.html</a></h3>
 <p>NOTE: the generated code of all versions, when fed its own source, will differ
 even when it works. See the author’s remarks in the index.html for details.
@@ -1359,7 +1360,7 @@ alone using <code>fgets()</code>) when fed itself (to reiterate, just changing t
 <code>fgets(3)</code> retains the newline whereas <code>gets(3)</code> does not). Nevertheless looking
 at these commands will be of help to understand how it works.</p>
 <p>For the alternate versions the other functionality is unaffected.</p>
-<h3 id="the-magic-of-1994schnitzi-and-how-it-flips-text">The magic of <a href="1994/schnitzi/schnitzi.c">1994/schnitzi</a> and how it flips text</h3>
+<h3 id="the-magic-of-1994schnitzi-and-how-it-flips-text">The magic of <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/schnitzi/schnitzi.c">1994/schnitzi</a> and how it flips text</h3>
 <p>The problem is getting the generated code to use <code>fgets()</code> (once it even
 compiles which was easy to do) and also have the updated buffer size be the
 same (which was easy to do too at least in the original version). The generated
@@ -1415,7 +1416,7 @@ compiled!</p>
 <h2 id="shapiro"><a href="1994/shapiro/index.html">1994/shapiro</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-21">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-1994shapiroshapiro.c">Source code: <a href="1994/shapiro/shapiro.c">1994/shapiro/shapiro.c</a></h3>
+<h3 id="source-code-1994shapiroshapiro.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/shapiro/shapiro.c">1994/shapiro/shapiro.c</a></h3>
 <h3 id="information-1994shapiroindex.html">Information: <a href="1994/shapiro/index.html">1994/shapiro/index.html</a></h3>
 <p>This program will likely crash if the source code file (by the name of the file
 that’s compiled) cannot be opened in the directory it is run from.</p>
@@ -1445,7 +1446,7 @@ if it checked for <code>!= EOF</code>.</p>
 <h2 id="tvr"><a href="1994/tvr/index.html">1994/tvr</a></h2>
 </div>
 <h3 id="status-known-bug---please-help-us-fix-7">STATUS: known bug - please help us fix</h3>
-<h3 id="source-code-1994tvrtvr.c">Source code: <a href="1994/tvr/tvr.c">1994/tvr/tvr.c</a></h3>
+<h3 id="source-code-1994tvrtvr.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/tvr/tvr.c">1994/tvr/tvr.c</a></h3>
 <h3 id="information-1994tvrindex.html">Information: <a href="1994/tvr/index.html">1994/tvr/index.html</a></h3>
 <p>The judges said the following in their remarks:</p>
 <pre><code>    The fractally minded may be able to detect that mode 0 does not calculate
@@ -1462,7 +1463,7 @@ doesn’t break something else.</p>
 <h2 id="cdua"><a href="1995/cdua/index.html">1995/cdua</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-22">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-1995cduacdua.c">Source code: <a href="1995/cdua/cdua.c">1995/cdua/cdua.c</a></h3>
+<h3 id="source-code-1995cduacdua.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/cdua/cdua.c">1995/cdua/cdua.c</a></h3>
 <h3 id="information-1995cduaindex.html">Information: <a href="1995/cdua/index.html">1995/cdua/index.html</a></h3>
 <p>This did not originally compile under macOS and after it did compile under
 macOS, it crashed. <a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a>
@@ -1476,7 +1477,7 @@ it calls <code>getchar()</code> via the pointer <code>m</code>. So this is a fea
 <h2 id="leo"><a href="1995/leo/index.html">1995/leo</a></h2>
 </div>
 <h3 id="status-known-bug---please-help-us-fix-8">STATUS: known bug - please help us fix</h3>
-<h3 id="source-code-1995leoleo.c">Source code: <a href="1995/leo/leo.c">1995/leo/leo.c</a></h3>
+<h3 id="source-code-1995leoleo.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/leo/leo.c">1995/leo/leo.c</a></h3>
 <h3 id="information-1995leoindex.html">Information: <a href="1995/leo/index.html">1995/leo/index.html</a></h3>
 <p>The judges suggested that the following commands should result in output:</p>
 <pre><code>    ./leo 1 | cat - /dev/tty | gs -
@@ -1494,7 +1495,7 @@ it would be good if it was fixed.</p>
 <h2 id="savastio"><a href="1995/savastio/index.html">1995/savastio</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-23">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-1995savastiosavastio.c">Source code: <a href="1995/savastio/savastio.c">1995/savastio/savastio.c</a></h3>
+<h3 id="source-code-1995savastiosavastio.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/savastio/savastio.c">1995/savastio/savastio.c</a></h3>
 <h3 id="information-1995savastioindex.html">Information: <a href="1995/savastio/index.html">1995/savastio/index.html</a></h3>
 <p>This program expects a POSITIVE number. If you specify a negative number it will
 not show any output, stuck in a loop.</p>
@@ -1502,7 +1503,7 @@ not show any output, stuck in a loop.</p>
 <h2 id="vanschnitz"><a href="1995/vanschnitz/index.html">1995/vanschnitz</a></h2>
 </div>
 <h3 id="status-missing-file---please-provide-it-2">STATUS: missing file - please provide it</h3>
-<h3 id="source-code-1995vanschnitzvanschnitz.c">Source code: <a href="1995/vanschnitz/vanschnitz.c">1995/vanschnitz/vanschnitz.c</a></h3>
+<h3 id="source-code-1995vanschnitzvanschnitz.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/vanschnitz/vanschnitz.c">1995/vanschnitz/vanschnitz.c</a></h3>
 <h3 id="information-1995vanschnitzindex.html">Information: <a href="1995/vanschnitz/index.html">1995/vanschnitz/index.html</a></h3>
 <p>The authors stated that they included a version that allows people with just K&amp;R
 compilers to use the program but this file is missing. Can you provide it?</p>
@@ -1516,7 +1517,7 @@ compilers to use the program but this file is missing. Can you provide it?</p>
 <h2 id="gandalf"><a href="1996/gandalf/index.html">1996/gandalf</a></h2>
 </div>
 <h3 id="status-missing-or-dead-link---please-provide-them">STATUS: missing or dead link - please provide them</h3>
-<h3 id="source-code-1996gandalfgandalf.c">Source code: <a href="1996/gandalf/gandalf.c">1996/gandalf/gandalf.c</a></h3>
+<h3 id="source-code-1996gandalfgandalf.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/gandalf/gandalf.c">1996/gandalf/gandalf.c</a></h3>
 <h3 id="information-1996gandalfindex.html">Information: <a href="1996/gandalf/index.html">1996/gandalf/index.html</a></h3>
 <p>The link was http://www.tc3.co.uk/~gandalf/G.HTML but this no longer exists as
 it was instead requiring a login / password.</p>
@@ -1525,11 +1526,11 @@ it was instead requiring a login / password.</p>
 <h2 id="huffman"><a href="1996/huffman/index.html">1996/huffman</a></h2>
 </div>
 <h3 id="status-uses-gets---change-to-fgets-if-possible-2">STATUS: uses gets() - change to fgets() if possible</h3>
-<h3 id="source-code-1996huffmanhuffman.c">Source code: <a href="1996/huffman/huffman.c">1996/huffman/huffman.c</a></h3>
+<h3 id="source-code-1996huffmanhuffman.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/huffman/huffman.c">1996/huffman/huffman.c</a></h3>
 <h3 id="information-1996huffmanindex.html">Information: <a href="1996/huffman/index.html">1996/huffman/index.html</a></h3>
 <p>The changing to using <code>fgets(3)</code> in this entry is a bit more complicated. It can
 almost be done except that some of the output of the
-<a href="1996/huffman/try.sh">try.sh</a> is wrong, especially the last one.</p>
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/huffman/try.sh">try.sh</a> is wrong, especially the last one.</p>
 <p>This diff almost does it but not quite:</p>
 <pre><code>    diff --git i/1996/huffman/huffman.c w/1996/huffman/huffman.c
     index a5745bc7f4fa28b834c004f4cf19633e40ad9165..5e5e5334f33f9dbd95c70eddece3189d9bcff5e9 100644
@@ -1559,7 +1560,7 @@ almost be done except that some of the output of the
 <h2 id="jonth"><a href="1996/jonth/index.html">1996/jonth</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-24">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-1996jonthjonth.c">Source code: <a href="1996/jonth/jonth.c">1996/jonth/jonth.c</a></h3>
+<h3 id="source-code-1996jonthjonth.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/jonth/jonth.c">1996/jonth/jonth.c</a></h3>
 <h3 id="information-1996jonthindex.html">Information: <a href="1996/jonth/index.html">1996/jonth/index.html</a></h3>
 <p>If X is not running this program will very likely crash or do something funny.
 This should NOT be fixed.</p>
@@ -1584,7 +1585,7 @@ We greatly appreciate your help here!</p>
 <h2 id="dlowe"><a href="1998/dlowe/index.html">1998/dlowe</a></h2>
 </div>
 <h3 id="status-missing-or-dead-link---please-provide-them-2">STATUS: missing or dead link - please provide them</h3>
-<h3 id="source-code-1998dlowedlowe.c">Source code: <a href="1998/dlowe/dlowe.c">1998/dlowe/dlowe.c</a></h3>
+<h3 id="source-code-1998dlowedlowe.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/dlowe/dlowe.c">1998/dlowe/dlowe.c</a></h3>
 <h3 id="information-1998dloweindex.html">Information: <a href="1998/dlowe/index.html">1998/dlowe/index.html</a></h3>
 <p>The domain http://pootpoot.com no longer exists as it once did. The judges have
 given a script that can be used to make a similar page (<strong>warning: not checked
@@ -1595,14 +1596,14 @@ to the page as well! You’ll have IOCCC fame for reviving a pootifier! :-)</p>
 <h2 id="dloweneil"><a href="1998/dloweneil/index.html">1998/dloweneil</a></h2>
 </div>
 <h3 id="status-missing-or-dead-link---please-provide-them-3">STATUS: missing or dead link - please provide them</h3>
-<h3 id="source-code-1998dloweneildloweneil.c">Source code: <a href="1998/dloweneil/dloweneil.c">1998/dloweneil/dloweneil.c</a></h3>
+<h3 id="source-code-1998dloweneildloweneil.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/dloweneil/dloweneil.c">1998/dloweneil/dloweneil.c</a></h3>
 <h3 id="information-1998dloweneilindex.html">Information: <a href="1998/dloweneil/index.html">1998/dloweneil/index.html</a></h3>
-<p>See above entry <a href="1998/dlowe/dlowe.c">1998/dlowe</a>.</p>
+<p>See above entry <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/dlowe/dlowe.c">1998/dlowe</a>.</p>
 <div id="1998_schnitzi">
 <h2 id="schnitzi-2"><a href="1998/schnitzi/index.html">1998/schnitzi</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-25">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-1998schnitzischnitzi.c">Source code: <a href="1998/schnitzi/schnitzi.c">1998/schnitzi/schnitzi.c</a></h3>
+<h3 id="source-code-1998schnitzischnitzi.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schnitzi/schnitzi.c">1998/schnitzi/schnitzi.c</a></h3>
 <h3 id="information-1998schnitziindex.html">Information: <a href="1998/schnitzi/index.html">1998/schnitzi/index.html</a></h3>
 <p>A point worth considering is that as the number passed into the program gets
 bigger the number of lines of output gets substantially larger. For instance:</p>
@@ -1629,7 +1630,7 @@ is in the index.html file as something to try and ponder.</p>
 <h2 id="dlowe-1"><a href="2000/dlowe/index.html">2000/dlowe</a></h2>
 </div>
 <h3 id="status-known-bug---please-help-us-fix-9">STATUS: known bug - please help us fix</h3>
-<h3 id="source-code-2000dlowedlowe.c">Source code: <a href="2000/dlowe/dlowe.c">2000/dlowe/dlowe.c</a></h3>
+<h3 id="source-code-2000dlowedlowe.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/dlowe/dlowe.c">2000/dlowe/dlowe.c</a></h3>
 <h3 id="information-2000dloweindex.html">Information: <a href="2000/dlowe/index.html">2000/dlowe/index.html</a></h3>
 <p>The author gives an example command:</p>
 <pre><code>    echo &quot;7 P 6 d P P 8 p&quot; | ./dlowe | tr 876 tpo</code></pre>
@@ -1801,7 +1802,7 @@ of 92 warnings! Nonetheless neither works okay and both crash.</p>
 <h2 id="primenum"><a href="2000/primenum/index.html">2000/primenum</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-27">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2000primenumprimenum.c">Source code: <a href="2000/primenum/primenum.c">2000/primenum/primenum.c</a></h3>
+<h3 id="source-code-2000primenumprimenum.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/primenum/primenum.c">2000/primenum/primenum.c</a></h3>
 <h3 id="information-2000primenumindex.html">Information: <a href="2000/primenum/index.html">2000/primenum/index.html</a></h3>
 <p>This program does not do what you might think it does! Running it like:</p>
 <pre><code>    ./primenum 13</code></pre>
@@ -1819,7 +1820,7 @@ make a pull request.</p>
 <h2 id="rince-1"><a href="2000/rince/index.html">2000/rince</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-28">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2000rincerince.c">Source code: <a href="2000/rince/rince.c">2000/rince/rince.c</a></h3>
+<h3 id="source-code-2000rincerince.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/rince/rince.c">2000/rince/rince.c</a></h3>
 <h3 id="information-2000rinceindex.html">Information: <a href="2000/rince/index.html">2000/rince/index.html</a></h3>
 <p>If <code>DISPLAY</code> is not set the program will very likely crash, do something strange
 (or if you’re very unlucky your computer might <a href="https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)">halt and catch
@@ -1833,20 +1834,20 @@ fire</a>! :-) ).</p>
 <h2 id="anonymous"><a href="2001/anonymous/index.html">2001/anonymous</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-29">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2001anonymousanonymous.c">Source code: <a href="2001/anonymous/anonymous.c">2001/anonymous/anonymous.c</a></h3>
+<h3 id="source-code-2001anonymousanonymous.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.c">2001/anonymous/anonymous.c</a></h3>
 <h3 id="information-2001anonymousindex.html">Information: <a href="2001/anonymous/index.html">2001/anonymous/index.html</a></h3>
 <p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> fixed this so that it
 doesn’t segfault and then also fixed the functionality of it (but see below).</p>
-<p>Cody also fixed the <a href="2001/anonymous/anonymous.ten.c">anonymous.ten.c</a> program
+<p>Cody also fixed the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.ten.c">anonymous.ten.c</a> program
 (it also segfaulted) but notes that it <strong>MUST</strong> be compiled as a <strong>32-bit ELF
 binary</strong> so it will NOT work in macOS (for example); if you cannot use <code>-m32</code> or
 even if you can but it cannot compile as an ELF binary (not elf binary :-) )
 (but see below) then the <code>anonymous</code> program itself will very likely crash if
-you run it on the compiled <a href="2001/anonymous/anonymous.ten.c">anonymous.ten.c</a> but
+you run it on the compiled <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.ten.c">anonymous.ten.c</a> but
 if nothing else it will not modify the target executable (this part of the fix
 at least should be correct).</p>
 <p>The file <code>2001/anonymous/anonymous.ten.32</code> is a pre-compiled
-<a href="2001/anonymous.ten.c">2001/anonymous.ten.c</a> as a 32-bit ELF binary in case you
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous.ten.c">2001/anonymous.ten.c</a> as a 32-bit ELF binary in case you
 can run ELF binaries but cannot compile 32-bit binaries.</p>
 <p>Other BSD Unices were not tested.</p>
 <p>Note also that if you don’t specify a file or you specify a non-32-bit ELF file
@@ -1857,7 +1858,7 @@ elves of Imladris :-(</p>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-30">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="status-doesnt-work-with-some-platforms---please-help-us-fix">STATUS: doesn’t work with some platforms - please help us fix</h3>
-<h3 id="source-code-2001bellardbellard.c">Source code: <a href="2001/bellard/bellard.c">2001/bellard/bellard.c</a></h3>
+<h3 id="source-code-2001bellardbellard.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/bellard/bellard.c">2001/bellard/bellard.c</a></h3>
 <h3 id="information-2001bellardindex.html">Information: <a href="2001/bellard/index.html">2001/bellard/index.html</a></h3>
 <p>The two statuses might seem contradictory but that is a complicated question.
 The author stated that it only works with i386 linux so on the one hand the fact
@@ -1866,7 +1867,7 @@ the other hand it would be nice if there was an alternate version which worked
 for modern systems. This does seem quite unlikely but some fixes, described
 next, were made.</p>
 <p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> fixed an initial
-segfault (trying to open the file) and he also fixed the <a href="2001/bellard/bellard.otccex.c">supplementary program
+segfault (trying to open the file) and he also fixed the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/bellard/bellard.otccex.c">supplementary program
 bellard.otccex.c</a> but this still crashes in
 systems not i386 linux which is what the author stated.</p>
 <p>On the other hand if you do have a fix for 64-bit systems you’re welcome to
@@ -1882,7 +1883,7 @@ emulator.</p>
 <p>On the author’s <a href="https://bellard.org/otcc/">web page for this program</a> it is
 explicitly stated that it requires i386 linux.</p>
 <p>There I found what should be a more portable version which is included as
-<a href="2001/bellard/otccelf.c">otccelf.c</a> (after adding some <code>#include</code>s and the
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/bellard/otccelf.c">otccelf.c</a> (after adding some <code>#include</code>s and the
 modification by Yusuke noted in the <a href="thanks-for-help.html">thanks</a>
 file) but it appears this <em>also</em> requires i386 linux; indeed looking at the code
 it hard codes paths that are i386 specific to linux.</p>
@@ -1907,14 +1908,14 @@ before the fixes there.</p>
 <h2 id="dgbeards"><a href="2001/dgbeards/index.html">2001/dgbeards</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-31">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2001dgbeardsdgbeards.c">Source code: <a href="2001/dgbeards/dgbeards.c">2001/dgbeards/dgbeards.c</a></h3>
+<h3 id="source-code-2001dgbeardsdgbeards.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/dgbeards/dgbeards.c">2001/dgbeards/dgbeards.c</a></h3>
 <h3 id="information-2001dgbeardsindex.html">Information: <a href="2001/dgbeards/index.html">2001/dgbeards/index.html</a></h3>
 <p>This program deliberately crashes if it loses (which is what it aims to do).</p>
 <div id="2001_herrmann1">
 <h2 id="herrmann1"><a href="2001/herrmann1/index.html">2001/herrmann1</a></h2>
 </div>
 <h3 id="status-missing-files---please-provide-them">STATUS: missing files - please provide them</h3>
-<h3 id="source-code-2001herrmann1herrmann1.c">Source code: <a href="2001/herrmann1/herrmann1.c">2001/herrmann1/herrmann1.c</a></h3>
+<h3 id="source-code-2001herrmann1herrmann1.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/herrmann1/herrmann1.c">2001/herrmann1/herrmann1.c</a></h3>
 <h3 id="information-2001herrmann1index.html">Information: <a href="2001/herrmann1/index.html">2001/herrmann1/index.html</a></h3>
 <p>The author referred to the file <code>herrmann1.turing</code> but it does not exist not even
 in the archive. Do you have a copy? Please provide it!</p>
@@ -1928,7 +1929,7 @@ appreciate your help!</p>
 <h2 id="kev"><a href="2001/kev/index.html">2001/kev</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-32">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2001kevkev.c">Source code: <a href="2001/kev/kev.c">2001/kev/kev.c</a></h3>
+<h3 id="source-code-2001kevkev.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/kev/kev.c">2001/kev/kev.c</a></h3>
 <h3 id="information-2001kevindex.html">Information: <a href="2001/kev/index.html">2001/kev/index.html</a></h3>
 <p>Sometimes when one player presses <code>q</code> it will result in broken pipe on the other
 end.</p>
@@ -1946,7 +1947,7 @@ set. In other words both have to be ASCII or EBCDIC - not one of each.</p>
 <h2 id="rosten"><a href="2001/rosten/index.html">2001/rosten</a></h2>
 </div>
 <h3 id="status-missing-files---please-provide-them-1">STATUS: missing files - please provide them</h3>
-<h3 id="source-code-2001rostenrosten.c">Source code: <a href="2001/rosten/rosten.c">2001/rosten/rosten.c</a></h3>
+<h3 id="source-code-2001rostenrosten.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/rosten/rosten.c">2001/rosten/rosten.c</a></h3>
 <h3 id="information-2001rostenindex.html">Information: <a href="2001/rosten/index.html">2001/rosten/index.html</a></h3>
 <p>The author stated that there is a cat man page for this program in case one
 wanted to install it as a tool but this is missing.</p>
@@ -1954,7 +1955,7 @@ wanted to install it as a tool but this is missing.</p>
 <h2 id="schweikh"><a href="2001/schweikh/index.html">2001/schweikh</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-33">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2001schweikhschweikh.c">Source code: <a href="2001/schweikh/schweikh.c">2001/schweikh/schweikh.c</a></h3>
+<h3 id="source-code-2001schweikhschweikh.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/schweikh/schweikh.c">2001/schweikh/schweikh.c</a></h3>
 <h3 id="information-2001schweikhindex.html">Information: <a href="2001/schweikh/index.html">2001/schweikh/index.html</a></h3>
 <p>The glob pattern must match the whole string. See the author’s comments for
 details and a workaround.</p>
@@ -1963,7 +1964,7 @@ details and a workaround.</p>
 <h2 id="westley-3"><a href="2001/westley/index.html">2001/westley</a></h2>
 </div>
 <h3 id="status-uses-gets---change-to-fgets-if-possible-3">STATUS: uses gets() - change to fgets() if possible</h3>
-<h3 id="source-code-2001westleywestley.c">Source code: <a href="2001/westley/westley.c">2001/westley/westley.c</a></h3>
+<h3 id="source-code-2001westleywestley.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/westley/westley.c">2001/westley/westley.c</a></h3>
 <h3 id="information-2001westleyindex.html">Information: <a href="2001/westley/index.html">2001/westley/index.html</a></h3>
 <p>This function uses <code>gets(3)</code> but it would be ideal if it used <code>fgets(3)</code>. This
 one is rather complicated and will be looked at later (some progress was made by
@@ -1987,7 +1988,7 @@ it? Please provide it!</p>
 <h2 id="williams"><a href="2001/williams/index.html">2001/williams</a></h2>
 </div>
 <h3 id="status-known-bug---please-help-us-fix-11">STATUS: known bug - please help us fix</h3>
-<h3 id="source-code-2001williamswilliams.c">Source code: <a href="2001/williams/williams.c">2001/williams/williams.c</a></h3>
+<h3 id="source-code-2001williamswilliams.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/williams/williams.c">2001/williams/williams.c</a></h3>
 <h3 id="information-2001williamsindex.html">Information: <a href="2001/williams/index.html">2001/williams/index.html</a></h3>
 <p>There seem to be a couple bugs at least in this entry. The first one is that
 when it does reach a certain point it crashes. This is in the function <code>J()</code> (or
@@ -2036,11 +2037,11 @@ sleeping.</p>
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2004_gavin">
-<h2 id="gavin"><a href="2004/gavin/index.html">2004/gavin</a></h2>
+<h2 id="gavin"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/gavin/index.html">2004/gavin</a></h2>
 </div>
 <h3 id="status-compiled-executable-crashes---please-help-us-fix">STATUS: compiled executable crashes - please help us fix</h3>
 <h3 id="status-doesnt-work-with-some-platforms---please-help-us-fix-1">STATUS: doesn’t work with some platforms - please help us fix</h3>
-<h3 id="source-code-2004gavingavin.c">Source code: <a href="2004/gavin/gavin.c">2004/gavin/gavin.c</a></h3>
+<h3 id="source-code-2004gavingavin.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/gavin/gavin.c">2004/gavin/gavin.c</a></h3>
 <h3 id="information-2004gavinindex.html">Information: <a href="2004/gavin//index.html">2004/gavin//index.html</a></h3>
 <p>Segmentation fault will occur in some systems. For instance on macOS with the
 arm64 chip:</p>
@@ -2119,7 +2120,7 @@ compile under clang. The following patch was applied:</p>
             ${RM} -f gavin fs.tar
 
     gavin_files: boot.b lilo.conf prim gavin_install.txt</code></pre>
-<p>The current (<a href="2004/gavin/Makefile">Makefile</a> was modified to try and
+<p>The current (<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/gavin/Makefile">Makefile</a> was modified to try and
 fit into the current IOCCC build environment.</p>
 <h3 id="status-inabiaf---please-do-not-fix-34">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <p>See <a href="2004/gavin/index.html#known-features">known features in the index.html</a> for
@@ -2128,7 +2129,7 @@ things that are not bugs but documented (mis)features.</p>
 <h2 id="jdalbec"><a href="2004/jdalbec/index.html">2004/jdalbec</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-35">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2004jdalbecjdalbec.c">Source code: <a href="2004/jdalbec/jdalbec.c">2004/jdalbec/jdalbec.c</a></h3>
+<h3 id="source-code-2004jdalbecjdalbec.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/jdalbec/jdalbec.c">2004/jdalbec/jdalbec.c</a></h3>
 <h3 id="information-2004jdalbecindex.html">Information: <a href="2004/jdalbec/index.html">2004/jdalbec/index.html</a></h3>
 <p>The author stated that:</p>
 <pre><code>    Arguments matching `/[^2]22$/` cause the program to segfault
@@ -2153,7 +2154,7 @@ things that are not bugs but documented (mis)features.</p>
 <h2 id="sds"><a href="2004/sds/index.html">2004/sds</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-36">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2004sdssds.c">Source code: <a href="2004/sds/sds.c">2004/sds/sds.c</a></h3>
+<h3 id="source-code-2004sdssds.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/sds/sds.c">2004/sds/sds.c</a></h3>
 <h3 id="information-2004sdsindex.html">Information: <a href="2004/sds/index.html">2004/sds/index.html</a></h3>
 <p>The generated code will very likely segfault or do something not intended if not
 given the right args. See the index.html file for the correct syntax.</p>
@@ -2166,7 +2167,7 @@ given the right args. See the index.html file for the correct syntax.</p>
 <h2 id="anon"><a href="2005/anon/index.html">2005/anon</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-37">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2005anonanon.c">Source code: <a href="2005/anon/anon.c">2005/anon/anon.c</a></h3>
+<h3 id="source-code-2005anonanon.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/anon/anon.c">2005/anon/anon.c</a></h3>
 <h3 id="information-2005anonindex.html">Information: <a href="2005/anon/index.html">2005/anon/index.html</a></h3>
 <p>This program sometimes will create unsolvable puzzles :-) just to hook you.
 As a protection against this - and to prevent you from spending too much time on
@@ -2180,7 +2181,7 @@ dimensions. Try <code>100 100 100</code> for instance and see what happens!</p>
 <h2 id="giljade"><a href="2005/giljade/index.html">2005/giljade</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-38">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2005giljadegiljade.c">Source code: <a href="2005/giljade/giljade.c">2005/giljade/giljade.c</a></h3>
+<h3 id="source-code-2005giljadegiljade.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/giljade/giljade.c">2005/giljade/giljade.c</a></h3>
 <h3 id="information-2005giljadeindex.html">Information: <a href="2005/giljade/index.html">2005/giljade/index.html</a></h3>
 <p>This entry will very likely segfault or do something strange if the source code
 does not exist.</p>
@@ -2189,7 +2190,7 @@ does not exist.</p>
 <h2 id="mikeash"><a href="2005/mikeash/index.html">2005/mikeash</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-39">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2005mikeashmikeash.c">Source code: <a href="2005/mikeash/mikeash.c">2005/mikeash/mikeash.c</a></h3>
+<h3 id="source-code-2005mikeashmikeash.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mikeash/mikeash.c">2005/mikeash/mikeash.c</a></h3>
 <h3 id="information-2005mikeashindex.html">Information: <a href="2005/mikeash/index.html">2005/mikeash/index.html</a></h3>
 <p>The author states:</p>
 <ul>
@@ -2223,7 +2224,7 @@ for running itself.</p>
 <h2 id="mynx"><a href="2005/mynx/index.html">2005/mynx</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-40">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2005mynxmynx.c">Source code: <a href="2005/mynx/mynx.c">2005/mynx/mynx.c</a></h3>
+<h3 id="source-code-2005mynxmynx.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/mynx.c">2005/mynx/mynx.c</a></h3>
 <h3 id="information-2005mynxindex.html">Information: <a href="2005/mynx/index.html">2005/mynx/index.html</a></h3>
 <p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> notes that, though
 probably obvious, this entry will not work with https. He added an alt version
@@ -2237,7 +2238,7 @@ website</a> itself.</p>
 <h2 id="sykes"><a href="2005/sykes/index.html">2005/sykes</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-41">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2005sykessykes.c">Source code: <a href="2005/sykes/sykes.c">2005/sykes/sykes.c</a></h3>
+<h3 id="source-code-2005sykessykes.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/sykes/sykes.c">2005/sykes/sykes.c</a></h3>
 <h3 id="information-2005sykesindex.html">Information: <a href="2005/sykes/index.html">2005/sykes/index.html</a></h3>
 <p>The author stated the below points of interest.</p>
 <p>The machine emulated is an older 40 column one so 80 column programs will not
@@ -2266,7 +2267,7 @@ used decimal mode, or any of the “undocumented” instructions.</p>
 <h2 id="birken"><a href="2006/birken/index.html">2006/birken</a></h2>
 </div>
 <h3 id="status-uses-gets---change-to-fgets-if-possible-4">STATUS: uses gets() - change to fgets() if possible</h3>
-<h3 id="source-code-2006birkenbirken.c">Source code: <a href="2006/birken/birken.c">2006/birken/birken.c</a></h3>
+<h3 id="source-code-2006birkenbirken.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/birken/birken.c">2006/birken/birken.c</a></h3>
 <h3 id="information-2006birkenindex.html">Information: <a href="2006/birken/index.html">2006/birken/index.html</a></h3>
 <p>This entry uses <code>gets(3)</code> which is unsafe and provides annoying warnings, most
 obnoxious in macOS as it shows it at runtime (redirecting <code>stderr</code> to
@@ -2278,7 +2279,7 @@ with at least <code>computer.tofu</code> input file:</p>
 <h2 id="borsanyi"><a href="2006/borsanyi/index.html">2006/borsanyi</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-42">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2006borsanyiborsanyi.c">Source code: <a href="2006/borsanyi/borsanyi.c">2006/borsanyi/borsanyi.c</a></h3>
+<h3 id="source-code-2006borsanyiborsanyi.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/borsanyi/borsanyi.c">2006/borsanyi/borsanyi.c</a></h3>
 <h3 id="information-2006borsanyiindex.html">Information: <a href="2006/borsanyi/index.html">2006/borsanyi/index.html</a></h3>
 <p>The string specified must be &lt;= 42 characters and may only consist of the
 characters in the regex <code>a-z_A-Z0-9@.-</code>. Breaking these constraints will end up
@@ -2287,7 +2288,7 @@ with possibly corrupt GIF files.</p>
 <h2 id="monge"><a href="2006/monge/index.html">2006/monge</a></h2>
 </div>
 <h3 id="status-doesnt-work-with-some-platforms---please-help-us-fix-2">STATUS: doesn’t work with some platforms - please help us fix</h3>
-<h3 id="source-code-2006mongemonge.c">Source code: <a href="2006/monge/monge.c">2006/monge/monge.c</a></h3>
+<h3 id="source-code-2006mongemonge.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/monge/monge.c">2006/monge/monge.c</a></h3>
 <h3 id="information-2006mongeindex.html">Information: <a href="2006/monge/index.html">2006/monge/index.html</a></h3>
 <p>This program requires x86 (with an x87 FPU) or x86_64 machine and it requires
 the SDL1 library.</p>
@@ -2304,7 +2305,7 @@ welcome to try and fix it if you wish to!</p>
 <h2 id="sykes1"><a href="2006/sykes1/index.html">2006/sykes1</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-44">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2006sykes1sykes1.c">Source code: <a href="2006/sykes1/sykes1.c">2006/sykes1/sykes1.c</a></h3>
+<h3 id="source-code-2006sykes1sykes1.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/sykes1/sykes1.c">2006/sykes1/sykes1.c</a></h3>
 <h3 id="information-2006sykes1index.html">Information: <a href="2006/sykes1/index.html">2006/sykes1/index.html</a></h3>
 <p>The author stated:</p>
 <pre><code>    If you pick a number higher than 19186, the program will return a
@@ -2321,7 +2322,7 @@ welcome to try and fix it if you wish to!</p>
 <h2 id="toledo2"><a href="2006/toledo2/index.html">2006/toledo2</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-45">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2006toledo2toledo2.c">Source code: <a href="2006/toledo2/toledo2.c">2006/toledo2/toledo2.c</a></h3>
+<h3 id="source-code-2006toledo2toledo2.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/toledo2/toledo2.c">2006/toledo2/toledo2.c</a></h3>
 <h3 id="information-2006toledo2index.html">Information: <a href="2006/toledo2/index.html">2006/toledo2/index.html</a></h3>
 <p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> fixed this program to
 not crash in macOS (it appeared to work fine in fedora linux on an <code>x86_64</code>
@@ -2368,7 +2369,7 @@ case-sensitive.</p>
 <h2 id="borsanyi-1"><a href="2011/borsanyi/index.html">2011/borsanyi</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-46">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2011borsanyiborsanyi.c">Source code: <a href="2011/borsanyi/borsanyi.c">2011/borsanyi/borsanyi.c</a></h3>
+<h3 id="source-code-2011borsanyiborsanyi.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/borsanyi/borsanyi.c">2011/borsanyi/borsanyi.c</a></h3>
 <h3 id="information-2011borsanyiindex.html">Information: <a href="2011/borsanyi/index.html">2011/borsanyi/index.html</a></h3>
 <p>For a great amount of data points the program will crash, depending on your
 available stack space.</p>
@@ -2384,7 +2385,7 @@ bins at the edges.</p>
 <h2 id="dlowe-2"><a href="2011/dlowe/index.html">2011/dlowe</a></h2>
 </div>
 <h3 id="status-missing-or-dead-link---please-provide-them-4">STATUS: missing or dead link - please provide them</h3>
-<h3 id="source-code-2011dlowedlowe.c">Source code: <a href="2011/dlowe/dlowe.c">2011/dlowe/dlowe.c</a></h3>
+<h3 id="source-code-2011dlowedlowe.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe.c">2011/dlowe/dlowe.c</a></h3>
 <h3 id="information-2011dloweindex.html">Information: <a href="2011/dlowe/index.html">2011/dlowe/index.html</a></h3>
 <p>The author’s website, http://www.pootpoot.net, no longer exists as it once did,
 instead being something else entirely. The Internet Wayback Machine, although it
@@ -2404,7 +2405,7 @@ tends to result in empty output.</p></li>
 <h2 id="fredriksson"><a href="2011/fredriksson/index.html">2011/fredriksson</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-48">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2011fredrikssonfredriksson.c">Source code: <a href="2011/fredriksson/fredriksson.c">2011/fredriksson/fredriksson.c</a></h3>
+<h3 id="source-code-2011fredrikssonfredriksson.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/fredriksson/fredriksson.c">2011/fredriksson/fredriksson.c</a></h3>
 <h3 id="information-2011fredrikssonindex.html">Information: <a href="2011/fredriksson/index.html">2011/fredriksson/index.html</a></h3>
 <p>The author stated that there are a number of features and limitations. As the
 list is rather long see <a href="2011/fredriksson/index.html#other-features">other
@@ -2414,7 +2415,7 @@ remarks</a> instead.</p>
 <h2 id="richards"><a href="2011/richards/index.html">2011/richards</a></h2>
 </div>
 <h3 id="status-doesnt-work-with-some-platforms---please-help-us-fix-3">STATUS: doesn’t work with some platforms - please help us fix</h3>
-<h3 id="source-code-2011richardsrichards.c">Source code: <a href="2011/richards/richards.c">2011/richards/richards.c</a></h3>
+<h3 id="source-code-2011richardsrichards.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/richards/richards.c">2011/richards/richards.c</a></h3>
 <h3 id="information-2011richardsindex.html">Information: <a href="2011/richards/index.html">2011/richards/index.html</a></h3>
 <p>This does not appear to work with macOS, resulting in a segfault (and sometimes
 a bus error).</p>
@@ -2427,7 +2428,7 @@ workarounds but at this time he could not get it to work. He offers some earlier
 debugging sessions below as well as a resource from the author as well as some
 resources on Apple’s website should anyone wish to take a crack at it. He might
 address it later but a starting point might be in
-<a href="2011/richards/richards.alt.c">richards.alt.c</a>.</p>
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/richards/richards.alt.c">richards.alt.c</a>.</p>
 <h3 id="debugging">Debugging</h3>
 <p>At first glance it appeared to be that it might be the function pointers or the
 fact it is trying to execute code in memory (as noted above). The function
@@ -2554,7 +2555,7 @@ linux.</p>
 <p>This can be fixed easily enough however but it doesn’t appear to matter in this
 case.</p>
 <h3 id="testing-fixes">Testing fixes</h3>
-<p>It might be helpful to use the <a href="2011/richards/try.alt.sh">try.alt.sh</a> script to
+<p>It might be helpful to use the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/richards/try.alt.sh">try.alt.sh</a> script to
 test that it does not crash and functions properly.</p>
 <h3 id="resources">Resources</h3>
 <h4 id="more-from-the-author">More from the author</h4>
@@ -2576,7 +2577,7 @@ defined.</p>
 <h2 id="vik"><a href="2011/vik/index.html">2011/vik</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-49">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2011vikvik.c">Source code: <a href="2011/vik/vik.c">2011/vik/vik.c</a></h3>
+<h3 id="source-code-2011vikvik.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/vik/vik.c">2011/vik/vik.c</a></h3>
 <h3 id="information-2011vikindex.html">Information: <a href="2011/vik/index.html">2011/vik/index.html</a></h3>
 <p>The author stated that the program will crash if no argument is passed to the
 program though we note that your computer might also <a href="https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)">halt and catch
@@ -2590,7 +2591,7 @@ fire</a> :-)</p>
 <h2 id="blakely"><a href="2012/blakely/index.html">2012/blakely</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-50">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2012blakelyblakely.c">Source code: <a href="2012/blakely/blakely.c">2012/blakely/blakely.c</a></h3>
+<h3 id="source-code-2012blakelyblakely.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/blakely/blakely.c">2012/blakely/blakely.c</a></h3>
 <h3 id="information-2012blakelyindex.html">Information: <a href="2012/blakely/index.html">2012/blakely/index.html</a></h3>
 <p>The author stated:</p>
 <pre><code>    If there is a division by zero, square-root of a negative number, or similar
@@ -2599,7 +2600,7 @@ fire</a> :-)</p>
 <h2 id="deckmyn"><a href="2012/deckmyn/index.html">2012/deckmyn</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-51">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2012deckmyndeckmyn.c">Source code: <a href="2012/deckmyn/deckmyn.c">2012/deckmyn/deckmyn.c</a></h3>
+<h3 id="source-code-2012deckmyndeckmyn.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/deckmyn/deckmyn.c">2012/deckmyn/deckmyn.c</a></h3>
 <h3 id="information-2012deckmynindex.html">Information: <a href="2012/deckmyn/index.html">2012/deckmyn/index.html</a></h3>
 <p>The author stated:</p>
 <pre><code>    The memory locations of `argv` are used for various purposes. Therefore, the
@@ -2632,7 +2633,7 @@ fire</a> :-)</p>
 <h2 id="dlowe-3"><a href="2012/dlowe/index.html">2012/dlowe</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-52">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2012dlowedlowe.c">Source code: <a href="2012/dlowe/dlowe.c">2012/dlowe/dlowe.c</a></h3>
+<h3 id="source-code-2012dlowedlowe.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/dlowe/dlowe.c">2012/dlowe/dlowe.c</a></h3>
 <h3 id="information-2012dloweindex.html">Information: <a href="2012/dlowe/index.html">2012/dlowe/index.html</a></h3>
 <p>The author stated:</p>
 <ul>
@@ -2646,7 +2647,7 @@ doesn’t make it possible to lock drawing to the display refresh rate.)</li>
 <h2 id="tromp"><a href="2012/tromp/index.html">2012/tromp</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-53">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2012tromptromp.c">Source code: <a href="2012/tromp/tromp.c">2012/tromp/tromp.c</a></h3>
+<h3 id="source-code-2012tromptromp.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/tromp/tromp.c">2012/tromp/tromp.c</a></h3>
 <h3 id="information-2012trompindex.html">Information: <a href="2012/tromp/index.html">2012/tromp/index.html</a></h3>
 <p>The author stated:</p>
 <pre><code>    If the input doesn&#39;t start with a valid program, that is,
@@ -2667,7 +2668,7 @@ doesn’t make it possible to lock drawing to the display refresh rate.)</li>
 <h2 id="vik-1"><a href="2012/vik/index.html">2012/vik</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-54">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2012vikvik.c">Source code: <a href="2012/vik/vik.c">2012/vik/vik.c</a></h3>
+<h3 id="source-code-2012vikvik.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/vik/vik.c">2012/vik/vik.c</a></h3>
 <h3 id="information-2012vikindex.html">Information: <a href="2012/vik/index.html">2012/vik/index.html</a></h3>
 <p>The author stated that the program will crash if no argument is passed to the
 program or if invalid arguments (e.g. file does not exist) or images of
@@ -2683,7 +2684,7 @@ fire</a> :-)</p>
 <h2 id="cable2"><a href="2013/cable2/index.html">2013/cable2</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-55">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2013cable2cable2.c">Source code: <a href="2013/cable2/cable2.c">2013/cable2/cable2.c</a></h3>
+<h3 id="source-code-2013cable2cable2.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/cable2/cable2.c">2013/cable2/cable2.c</a></h3>
 <h3 id="information-2013cable2index.html">Information: <a href="2013/cable2/index.html">2013/cable2/index.html</a></h3>
 <p>The author stated:</p>
 <ul>
@@ -2703,7 +2704,7 @@ and endianness conversion would make the source too large for IOCCC rule 2).</li
 <h2 id="dlowe-4"><a href="2013/dlowe/index.html">2013/dlowe</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-56">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2013dlowedlowe.c">Source code: <a href="2013/dlowe/dlowe.c">2013/dlowe/dlowe.c</a></h3>
+<h3 id="source-code-2013dlowedlowe.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/dlowe/dlowe.c">2013/dlowe/dlowe.c</a></h3>
 <h3 id="information-2013dloweindex.html">Information: <a href="2013/dlowe/index.html">2013/dlowe/index.html</a></h3>
 <p>This program will possibly crash or draw something strange with 0 args. Then
 again it might not. :-) This is easy to fix but would add bytes and since the
@@ -2722,7 +2723,7 @@ used.</li>
 <h2 id="endoh1"><a href="2013/endoh1/index.html">2013/endoh1</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-57">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2013endoh1endoh1.c">Source code: <a href="2013/endoh1/endoh1.c">2013/endoh1/endoh1.c</a></h3>
+<h3 id="source-code-2013endoh1endoh1.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh1/endoh1.c">2013/endoh1/endoh1.c</a></h3>
 <h3 id="information-2013endoh1index.html">Information: <a href="2013/endoh1/index.html">2013/endoh1/index.html</a></h3>
 <p>From the author:</p>
 <p>–</p>
@@ -2738,7 +2739,7 @@ section</a>.</p>
 <h2 id="endoh3"><a href="2013/endoh3/index.html">2013/endoh3</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-58">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2013endoh3endoh3.c">Source code: <a href="2013/endoh3/endoh3.c">2013/endoh3/endoh3.c</a></h3>
+<h3 id="source-code-2013endoh3endoh3.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh3/endoh3.c">2013/endoh3/endoh3.c</a></h3>
 <h3 id="information-2013endoh3index.html">Information: <a href="2013/endoh3/index.html">2013/endoh3/index.html</a></h3>
 <p>From the author:</p>
 <p>–</p>
@@ -2751,14 +2752,14 @@ such as <code>C2E2</code>.</p>
 <h2 id="endoh4"><a href="2013/endoh4/index.html">2013/endoh4</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-59">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2013endoh4endoh4.c">Source code: <a href="2013/endoh4/endoh4.c">2013/endoh4/endoh4.c</a></h3>
+<h3 id="source-code-2013endoh4endoh4.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4/endoh4.c">2013/endoh4/endoh4.c</a></h3>
 <h3 id="information-2013endoh4index.html">Information: <a href="2013/endoh4/index.html">2013/endoh4/index.html</a></h3>
 <p>Invalid input files will very likely crash the program.</p>
 <div id="2013_hou">
 <h2 id="hou"><a href="2013/hou/index.html">2013/hou</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-60">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2013houhou.c">Source code: <a href="2013/hou/hou.c">2013/hou/hou.c</a></h3>
+<h3 id="source-code-2013houhou.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/hou.c">2013/hou/hou.c</a></h3>
 <h3 id="information-2013houindex.html">Information: <a href="2013/hou/index.html">2013/hou/index.html</a></h3>
 <p>This program will not terminate on its own; you must kill <code>hou</code> (but not Qiming
 Hou :-) ) yourself. This should not be fixed.</p>
@@ -2766,7 +2767,7 @@ Hou :-) ) yourself. This should not be fixed.</p>
 <h2 id="mills"><a href="2013/mills/index.html">2013/mills</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-61">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2013millsmills.c">Source code: <a href="2013/mills/mills.c">2013/mills/mills.c</a></h3>
+<h3 id="source-code-2013millsmills.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/mills/mills.c">2013/mills/mills.c</a></h3>
 <h3 id="information-2013millsindex.html">Information: <a href="2013/mills/index.html">2013/mills/index.html</a></h3>
 <p>The author reminds us that if you kill the program you will have to wait a short
 bit of time before you can start it again if you want it to be able to bind to
@@ -2783,7 +2784,7 @@ it out as a known limitation it is not a bug but a feature.</p>
 <h2 id="maffiodo1"><a href="2014/maffiodo1/index.html">2014/maffiodo1</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-62">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2014maffiodo1prog.c">Source code: <a href="2014/maffiodo1/prog.c">2014/maffiodo1/prog.c</a></h3>
+<h3 id="source-code-2014maffiodo1prog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/maffiodo1/prog.c">2014/maffiodo1/prog.c</a></h3>
 <h3 id="information-2014maffiodo1index.html">Information: <a href="2014/maffiodo1/index.html">2014/maffiodo1/index.html</a></h3>
 <p>The author noted that in macOS the colours might be wrong. They gave a solution.
 However Cody didn’t see any problem with it and he beat the series many times.
@@ -2807,18 +2808,18 @@ player become bigger, stay away from blocks!</p>
 <h2 id="maffiodo2"><a href="2014/maffiodo2/index.html">2014/maffiodo2</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-63">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2014maffiodo2prog.c">Source code: <a href="2014/maffiodo2/prog.c">2014/maffiodo2/prog.c</a></h3>
+<h3 id="source-code-2014maffiodo2prog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/maffiodo2/prog.c">2014/maffiodo2/prog.c</a></h3>
 <h3 id="information-2014maffiodo2index.html">Information: <a href="2014/maffiodo2/index.html">2014/maffiodo2/index.html</a></h3>
 <p>This program will very likely crash if no arg is given.</p>
 <div id="2014_vik">
 <h2 id="vik-2"><a href="2014/vik/index.html">2014/vik</a></h2>
 </div>
 <h3 id="status-known-bug---please-help-us-fix-12">STATUS: known bug - please help us fix</h3>
-<h3 id="source-code-2014vikprog.c">Source code: <a href="2014/vik/prog.c">2014/vik/prog.c</a></h3>
+<h3 id="source-code-2014vikprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/vik/prog.c">2014/vik/prog.c</a></h3>
 <h3 id="information-2014vikindex.html">Information: <a href="2014/vik/index.html">2014/vik/index.html</a></h3>
 <p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> discovered a bug to do
 with translating sound to text that shows itself in some cases (it works in
-others) when working on his winning <a href="2020/ferguson2/prog.c">2020 Enigma machine</a>
+others) when working on his winning <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson2/prog.c">2020 Enigma machine</a>
 (‘Most enigmatic’) entry. See his <a href="2020/ferguson2/index.html">index.html</a> for
 details (search for <code>vik</code> in the file). This one might be more of a limitation
 but this is not known.</p>
@@ -2848,7 +2849,7 @@ rely on the entry as the below shows. One should be able to do:</p>
 <h2 id="hou-1"><a href="2015/hou/index.html">2015/hou</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-64">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2015houprog.c">Source code: <a href="2015/hou/prog.c">2015/hou/prog.c</a></h3>
+<h3 id="source-code-2015houprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/hou/prog.c">2015/hou/prog.c</a></h3>
 <h3 id="information-2015houindex.html">Information: <a href="2015/hou/index.html">2015/hou/index.html</a></h3>
 <p>The author stated:</p>
 <p>–</p>
@@ -2873,7 +2874,7 @@ result. Error messages become garbled, though.</p></li>
 <h2 id="mills2"><a href="2015/mills2/index.html">2015/mills2</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-65">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2015mills2prog.c">Source code: <a href="2015/mills2/prog.c">2015/mills2/prog.c</a></h3>
+<h3 id="source-code-2015mills2prog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/mills2/prog.c">2015/mills2/prog.c</a></h3>
 <h3 id="information-2015mills2index.html">Information: <a href="2015/mills2/index.html">2015/mills2/index.html</a></h3>
 <p>The program doesn’t look at the header of files so if it’s passed something hat
 is not compressed data it’s likely to crash.</p>
@@ -2882,7 +2883,7 @@ is not compressed data it’s likely to crash.</p>
 <h2 id="schweikhardt"><a href="2015/schweikhardt/index.html">2015/schweikhardt</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-66">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2015schweikhardtprog.c">Source code: <a href="2015/schweikhardt/prog.c">2015/schweikhardt/prog.c</a></h3>
+<h3 id="source-code-2015schweikhardtprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/schweikhardt/prog.c">2015/schweikhardt/prog.c</a></h3>
 <h3 id="information-2015schweikhardtindex.html">Information: <a href="2015/schweikhardt/index.html">2015/schweikhardt/index.html</a></h3>
 <p>The program assumes that <code>EOF</code> is <code>-1</code>. This can be fixed but at this time it is
 uncertain if it should be.</p>
@@ -2915,7 +2916,7 @@ use <code>8 * sizeof(typ)</code> bits per place. It does not work when <code>CHA
 <h2 id="algmyr"><a href="2018/algmyr/index.html">2018/algmyr</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-67">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2018algmyralgmyr.c">Source code: <a href="2018/algmyr/algmyr.c">2018/algmyr/algmyr.c</a></h3>
+<h3 id="source-code-2018algmyralgmyr.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/algmyr/algmyr.c">2018/algmyr/algmyr.c</a></h3>
 <h3 id="information-2018algmyrindex.html">Information: <a href="2018/algmyr/index.html">2018/algmyr/index.html</a></h3>
 <p>The author wrote:</p>
 <ul>
@@ -2934,7 +2935,7 @@ loop printing whitespace.</li>
 <h2 id="hou-2"><a href="2018/hou/index.html">2018/hou</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-68">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2018houprog.c">Source code: <a href="2018/hou/prog.c">2018/hou/prog.c</a></h3>
+<h3 id="source-code-2018houprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/hou/prog.c">2018/hou/prog.c</a></h3>
 <h3 id="information-2018houindex.html">Information: <a href="2018/hou/index.html">2018/hou/index.html</a></h3>
 <p>When you run it on a JSON file you will see something like:</p>
 <pre><code>    $ ./prog &lt; ioccc.json &gt; ioccc.html
@@ -2949,7 +2950,7 @@ fixing the syntax error in the generated <code>ioccc.json</code> file.</p>
 <h2 id="mills-1"><a href="2018/mills/index.html">2018/mills</a></h2>
 </div>
 <h3 id="status-known-bug---please-help-us-fix-13">STATUS: known bug - please help us fix</h3>
-<h3 id="source-code-2018millsprog.c">Source code: <a href="2018/mills/prog.c">2018/mills/prog.c</a></h3>
+<h3 id="source-code-2018millsprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/mills/prog.c">2018/mills/prog.c</a></h3>
 <h3 id="information-2018millsindex.html">Information: <a href="2018/mills/index.html">2018/mills/index.html</a></h3>
 <p>After exiting the program (with ctrl-e) if you try running it again you will
 likely see:</p>
@@ -2974,7 +2975,7 @@ in the case of compiled code it won’t be executable).</p>
 <h2 id="vokes"><a href="2018/vokes/index.html">2018/vokes</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-70">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2018vokesvokes.c">Source code: <a href="2018/vokes/vokes.c">2018/vokes/vokes.c</a></h3>
+<h3 id="source-code-2018vokesvokes.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/vokes/vokes.c">2018/vokes/vokes.c</a></h3>
 <h3 id="information-2018vokesindex.html">Information: <a href="2018/vokes/index.html">2018/vokes/index.html</a></h3>
 <p>The author wrote the following:</p>
 <ul>
@@ -3024,15 +3025,15 @@ this program has nothing to do with a hand.</p></li>
 <h2 id="adamovsky"><a href="2019/adamovsky/index.html">2019/adamovsky</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-71">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2019adamovskyprog.c">Source code: <a href="2019/adamovsky/prog.c">2019/adamovsky/prog.c</a></h3>
+<h3 id="source-code-2019adamovskyprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/prog.c">2019/adamovsky/prog.c</a></h3>
 <h3 id="information-2019adamovskyindex.html">Information: <a href="2019/adamovsky/index.html">2019/adamovsky/index.html</a></h3>
 <p>Certain input can crash this program. The file
-<a href="2019/adamovsky/crash.unl">crash.unl</a> is an example file.</p>
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/crash.unl">crash.unl</a> is an example file.</p>
 <div id="2019_burton">
 <h2 id="burton"><a href="2019/burton/index.html">2019/burton</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-72">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2019burtonprog.c">Source code: <a href="2019/burton/prog.c">2019/burton/prog.c</a></h3>
+<h3 id="source-code-2019burtonprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/burton/prog.c">2019/burton/prog.c</a></h3>
 <h3 id="information-2019burtonindex.html">Information: <a href="2019/burton/index.html">2019/burton/index.html</a></h3>
 <p>The author pointed out that some implementations of <code>wc(1)</code> show different
 values but his implementation matches that of macOS and FreeBSD.</p>
@@ -3040,7 +3041,7 @@ values but his implementation matches that of macOS and FreeBSD.</p>
 <h2 id="ciura"><a href="2019/ciura/index.html">2019/ciura</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-73">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2019ciuraprog.c">Source code: <a href="2019/ciura/prog.c">2019/ciura/prog.c</a></h3>
+<h3 id="source-code-2019ciuraprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/prog.c">2019/ciura/prog.c</a></h3>
 <h3 id="information-2019ciuraindex.html">Information: <a href="2019/ciura/index.html">2019/ciura/index.html</a></h3>
 <p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> fixed the scripts so
 that they can work but it might end up that the scripts don’t show any output
@@ -3064,7 +3065,7 @@ in the de.sh/de.alt.sh scripts:</p>
 <h2 id="dogon"><a href="2019/dogon/index.html">2019/dogon</a></h2>
 </div>
 <h3 id="status-uses-gets---change-to-fgets-if-possible-5">STATUS: uses gets() - change to fgets() if possible</h3>
-<h3 id="source-code-2019dogonprog.c">Source code: <a href="2019/dogon/prog.c">2019/dogon/prog.c</a></h3>
+<h3 id="source-code-2019dogonprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/dogon/prog.c">2019/dogon/prog.c</a></h3>
 <h3 id="information-2019dogonindex.html">Information: <a href="2019/dogon/index.html">2019/dogon/index.html</a></h3>
 <p>The author does not it uses <code>gets()</code> and one will get warnings but it would be
 ideal if this was not the case.</p>
@@ -3072,7 +3073,7 @@ ideal if this was not the case.</p>
 <h2 id="duble"><a href="2019/duble/index.html">2019/duble</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-74">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2019dubleprog.c">Source code: <a href="2019/duble/prog.c">2019/duble/prog.c</a></h3>
+<h3 id="source-code-2019dubleprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/duble/prog.c">2019/duble/prog.c</a></h3>
 <h3 id="information-2019dubleindex.html">Information: <a href="2019/duble/index.html">2019/duble/index.html</a></h3>
 <p>There are two things to be aware of with this entry.</p>
 <p>If the file being used (to draw) is deleted it might lock any session still in
@@ -3101,7 +3102,7 @@ in the directory:</p>
 <h2 id="endoh"><a href="2019/endoh/index.html">2019/endoh</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-75">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2019endohprog.c">Source code: <a href="2019/endoh/prog.c">2019/endoh/prog.c</a></h3>
+<h3 id="source-code-2019endohprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/endoh/prog.c">2019/endoh/prog.c</a></h3>
 <h3 id="information-2019endohindex.html">Information: <a href="2019/endoh/index.html">2019/endoh/index.html</a></h3>
 <p>As a backtrace quine this entry is <strong>SUPPOSED to segfault</strong> so this should not be
 touched either.</p>
@@ -3109,7 +3110,7 @@ touched either.</p>
 <h2 id="karns"><a href="2019/karns/index.html">2019/karns</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-76">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2019karnsprog.c">Source code: <a href="2019/karns/prog.c">2019/karns/prog.c</a></h3>
+<h3 id="source-code-2019karnsprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/karns/prog.c">2019/karns/prog.c</a></h3>
 <h3 id="information-2019karnsindex.html">Information: <a href="2019/karns/index.html">2019/karns/index.html</a></h3>
 <p>The author stated the following:</p>
 <pre><code>    - The program must be ran in a terminal that supports ANSI
@@ -3139,7 +3140,7 @@ touched either.</p>
 <h2 id="lynn"><a href="2019/lynn/index.html">2019/lynn</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-77">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2019lynnprog.c">Source code: <a href="2019/lynn/prog.c">2019/lynn/prog.c</a></h3>
+<h3 id="source-code-2019lynnprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/prog.c">2019/lynn/prog.c</a></h3>
 <h3 id="information-2019lynnindex.html">Information: <a href="2019/lynn/index.html">2019/lynn/index.html</a></h3>
 <p>The author wrote that there are a number of differences from what one might
 expect. Rather than duplicate the information we refer you to the author’s
@@ -3149,7 +3150,7 @@ remarks in the sections <a href="2019/lynn/index.html#syntax">Syntax</a> and
 <h2 id="mills-2"><a href="2019/mills/index.html">2019/mills</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-78">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2019millsprog.c">Source code: <a href="2019/mills/prog.c">2019/mills/prog.c</a></h3>
+<h3 id="source-code-2019millsprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/mills/prog.c">2019/mills/prog.c</a></h3>
 <h3 id="information-2019millsindex.html">Information: <a href="2019/mills/index.html">2019/mills/index.html</a></h3>
 <p>The author wrote that if you decide to change networks or use a different input
 file you should delete all the checkpoint files because the format depends on
@@ -3169,16 +3170,16 @@ a crash.</p>
 <h2 id="poikola"><a href="2019/poikola/index.html">2019/poikola</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-79">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2019poikolaprog.c">Source code: <a href="2019/poikola/prog.c">2019/poikola/prog.c</a></h3>
+<h3 id="source-code-2019poikolaprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/poikola/prog.c">2019/poikola/prog.c</a></h3>
 <h3 id="information-2019poikolaindex.html">Information: <a href="2019/poikola/index.html">2019/poikola/index.html</a></h3>
 <p>This program will not validate input so it might fail or get stuck if invoked
 erroneously.</p>
 <p>Also, the maximum file size is 1GB.</p>
 <div id="2019_yang">
-<h2 id="yang"><a href="2019/yang/index.html">2019/yang</a></h2>
+<h2 id="yang"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/yang/index.html">2019/yang</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-80">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2019yangprog.c">Source code: <a href="2019/yang/prog.c">2019/yang/prog.c</a></h3>
+<h3 id="source-code-2019yangprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/yang/prog.c">2019/yang/prog.c</a></h3>
 <h3 id="information-2019yangindex.html">Information: <a href="2019/yang/index.html">2019/yang/index.html</a></h3>
 <p>The author noted that if the program runs out of memory it is likely to crash.</p>
 <p>The author also stated that ‘if input contains CR-LF end of line sequences,
@@ -3193,7 +3194,7 @@ ignored except line feeds (preserved) and tabs (expanded to 8 spaces).’</p>
 <h2 id="burton-1"><a href="2020/burton/index.html">2020/burton</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-81">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2020burtonprog.c">Source code: <a href="2020/burton/prog.c">2020/burton/prog.c</a></h3>
+<h3 id="source-code-2020burtonprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/burton/prog.c">2020/burton/prog.c</a></h3>
 <h3 id="information-2020burtonindex.html">Information: <a href="2020/burton/index.html">2020/burton/index.html</a></h3>
 <p>This entry is known to crash if no arg is specified. Although easy to fix it is
 documented and should not be fixed (of course you may fix it to see if you can
@@ -3204,7 +3205,7 @@ either. But can you figure out why this happens?</p>
 <h2 id="carlini"><a href="2020/carlini/index.html">2020/carlini</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-82">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2020carliniprog.c">Source code: <a href="2020/carlini/prog.c">2020/carlini/prog.c</a></h3>
+<h3 id="source-code-2020carliniprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/carlini/prog.c">2020/carlini/prog.c</a></h3>
 <h3 id="information-2020carliniindex.html">Information: <a href="2020/carlini/index.html">2020/carlini/index.html</a></h3>
 <p>The author stated that bad things happen if the entered move is outside of the
 range [1..9]. We observed a crash but we also observed a tie and other things
@@ -3218,7 +3219,7 @@ move.</p>
 <h2 id="ferguson1"><a href="2020/ferguson1/index.html">2020/ferguson1</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-83">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2020ferguson1prog.c">Source code: <a href="2020/ferguson1/prog.c">2020/ferguson1/prog.c</a></h3>
+<h3 id="source-code-2020ferguson1prog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/prog.c">2020/ferguson1/prog.c</a></h3>
 <h3 id="information-2020ferguson1index.html">Information: <a href="2020/ferguson1/index.html">2020/ferguson1/index.html</a></h3>
 <p>There are some things that might appear to be bugs but are actually features or
 things that are misinterpreted as bugs. See the
@@ -3228,7 +3229,7 @@ things that are misinterpreted as bugs. See the
 <h2 id="giles"><a href="2020/giles/index.html">2020/giles</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-84">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2020gilesprog.c">Source code: <a href="2020/giles/prog.c">2020/giles/prog.c</a></h3>
+<h3 id="source-code-2020gilesprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/giles/prog.c">2020/giles/prog.c</a></h3>
 <h3 id="information-2020gilesindex.html">Information: <a href="2020/giles/index.html">2020/giles/index.html</a></h3>
 <p>The author noted that the program only supports WAV files that have
 exactly 16 bits per sample, but it allows any sample rate and any number of
@@ -3237,7 +3238,7 @@ audio channels.</p>
 <h2 id="otterness"><a href="2020/otterness/index.html">2020/otterness</a></h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-85">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
-<h3 id="source-code-2020otternessprog.c">Source code: <a href="2020/otterness/prog.c">2020/otterness/prog.c</a></h3>
+<h3 id="source-code-2020otternessprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/otterness/prog.c">2020/otterness/prog.c</a></h3>
 <h3 id="information-2020otternessindex.html">Information: <a href="2020/otterness/index.html">2020/otterness/index.html</a></h3>
 <p>The author listed the following limitations:</p>
 <ol type="1">

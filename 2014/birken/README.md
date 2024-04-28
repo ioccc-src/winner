@@ -180,7 +180,7 @@ for [Khan](https://memory-alpha.fandom.com/wiki/Khan_Noonien_Singh) (in the
 final engagement in [Star Trek II: The Wrath of
 Khan](https://memory-alpha.fandom.com/wiki/Star_Trek_II:_The_Wrath_of_Khan), the
 damaged Enterprise managed to disable the USS
-[Reliant](https://memory-alpha.fandom.com/wiki/USS_Reliant_(NCC-1864) ship)'s shield
+[Reliant](https://memory-alpha.fandom.com/wiki/USS_Reliant_&#x28;NCC-1864&#x29; ship)'s shield
 generator by accessing its prefix code: 16309).
 
 

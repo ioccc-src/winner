@@ -65,6 +65,7 @@ TAR_YEAR= bin/tar-year.sh
 GEN_STATUS= bin/gen-status.sh
 GEN_SITEMAP= bin/gen-sitemap.sh
 SORT_GITIGNORE= bin/sort.gitignore.sh
+FIND_MISSING_LINKS= bin/find-missing-links.sh
 
 
 #############
@@ -241,7 +242,7 @@ indent.c:
 #	   simple want to examine, run / test winning IOCCC entries.
 
 .PHONY: help genpath genfilelist verify_entry_files gen_authors gen_location gen_years \
-	entry_index gen_top_html thanks gen_other_html quick_entry_index \
+	find_missing_links entry_index gen_top_html thanks gen_other_html quick_entry_index \
 	gen_year_index quick_www www \
 	untar_entry_tarball untar_year_tarball \
 	form_entry_tarball form_year_tarball tar \
@@ -271,6 +272,7 @@ help:
 	@echo "make gen_top_html	 - generate a number of the top level HTML files from markdown"
 	@echo "make gen_status		 - generate status.json and status.html"
 	@echo "make quick_entry_index	 - build winner index.html files that might be out of date"
+	@echo "make find_missing_links	 - find markdown links to missing local files"
 	@echo "make quick_www		 - generate html files more quickly, checking timestamps"
 	@echo "make www		 - build html pages for web site"
 	@echo
@@ -335,6 +337,7 @@ genfilelist:
 verify_entry_files: ${ALL_RUN} ${CHK_ENTRY}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${ALL_RUN} -v 3 ${CHK_ENTRY}
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # sort .gitignore files according to rules in bin/sgi.sh
 #
@@ -433,6 +436,13 @@ quick_entry_index quick_readme2index: ${ALL_RUN} ${QUICK_README2INDEX}
 	${ALL_RUN} -v 3 ${QUICK_README2INDEX} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
+# find markdown links to missing local files
+#
+find_missing_links:
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${FIND_MISSING_LINKS} -v 1
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
 # do work to build HTML content for the web site
 #
 # This rule uses quick_entry_index, not slow_entry_index, so
@@ -456,6 +466,7 @@ quick_www:
 	${MAKE} gen_top_html
 	${MAKE} gen_status
 	${MAKE} quick_entry_index
+	${MAKE} find_missing_links
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # do everything needed to build HTML content for the web site
@@ -477,6 +488,7 @@ www:
 	${MAKE} gen_top_html
 	${MAKE} gen_status
 	${MAKE} entry_index
+	${MAKE} find_missing_links
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # untar all entry tarballs

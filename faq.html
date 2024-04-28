@@ -1981,7 +1981,7 @@ remarks and always the author’s or authors’ remarks, you look at the origina
 code. When the entry source code is called <code>prog.c</code> the original code is in
 <code>prog.orig.c</code>; otherwise it is <code>dirname.orig.c</code>. For instance one of Landon’s all
 time favourite entries is <a href="1984/mullender/index.html">1984/mullender</a> and the
-original code is in <a href="1984/mullender/mullender.orig.c">mullender.orig.c</a>. In
+original code is in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/mullender.orig.c">mullender.orig.c</a>. In
 some cases, such as <code>1984/mullender</code>, the original code is the same as the code
 as no changes were made (there is an alt version for systems that are not
 VAX-11/PDP-11, however).</p>
@@ -2219,7 +2219,7 @@ longer fit within the year’s size restrictions. Invariably the length of colum
 and/or number of rows have also changed.</p>
 <p>The <code>winner.orig.c</code> file contains the original source code that was
 subjected to rule 2 of the given IOCCC. You may also wish to see
-the <a href="archive">/archive</a> directory where you can find all the
+the <a href="archive">archive</a> directory where you can find all the
 original winning entries as compressed tar files for a given year.</p>
 <p>In some cases the entry may have abused rule 2 and declared an
 “abuse of the rules” (although now blatant abuse of the rules to
@@ -2314,7 +2314,7 @@ author.</p>
 <p>The latter form is in case there are more than one anonymous author in a given
 year.</p>
 <p>NOTE: even if the directory name is not <code>anonymous</code> the above rules apply as in
-in the case of <a href="2005/anon/anon.c">2005/anon</a>.</p>
+in the case of <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/anon/anon.c">2005/anon</a>.</p>
 <p>Anonymous <code>author_handle</code>’s match this regexp:</p>
 <pre><code>    Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$</code></pre>
 <p>See <a href="#fix_author">FAQ 5.5</a> for information about how to update
@@ -2619,7 +2619,7 @@ of IOCCC years.</p>
 of the IOCCC entry directories for a given year. For example, see the <a href=".1984/.year">1984/.year</a> file.</p>
 <p>Under each IOCCC entry directory, you will find a <code>.path</code> file.
 These files contain the directory path from the top directory.
-For example see <a href="1984/anonymous/.path">1984/anonymous/.path</a>.</p>
+For example see <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/anonymous/.path">1984/anonymous/.path</a>.</p>
 <p>The .top, .year and .path files are generated from the top level Makefile, by:</p>
 <pre><code>    make genpath</code></pre>
 <div id="faq6_9">
@@ -2735,7 +2735,7 @@ it will be that. For instance using the above example you might do:</p>
 <h4 id="making-changes-fixes-etc.">Making changes, fixes etc.</h4>
 <p>Here you must use your wits, knowledge, creativity and whatever else you have.
 Let’s say that Cody wants to update his file
-<a href="2020/ferguson1/play.sh">/2020/ferguson1/play.sh</a> script. He would open it in
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/play.sh">2020/ferguson1/play.sh</a> script. He would open it in
 his editor of choice (in his case vim) and make the changes. He would then make
 sure (as there is a last updated date) to update the last updated date. For
 instance he might add the following:</p>
@@ -2767,7 +2767,7 @@ with your ssh key. To do this you need to do:</p>
 <p>Now you’d be ready to make your commits.</p>
 <p>Before doing anything else, however, a new branch needs to be created.
 Continuing the example above for
-<a href="2020/ferguson1/play.sh">2020/ferguson1/play.sh</a>, it might be that:</p>
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/play.sh">2020/ferguson1/play.sh</a>, it might be that:</p>
 <pre><code>    git checkout -B human-snakes</code></pre>
 <p>This would change the branch to the newly created branch <code>human-snakes</code> branch.
 Now Cody could commit the changes:</p>

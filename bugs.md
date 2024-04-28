@@ -55,7 +55,7 @@ Sometimes it is okay: some entries are known to not work but they can still have
 improvements (rarer situation but it's happened). Some might have slightly
 different output but which is not a problem for instance a newline after output
 in [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson)'s changing it to
-[1994/ldb](1994/ldb/ldb.c) use `fgets()` from `gets()`.
+[1994/ldb](%%REPO_URL%%/1994/ldb/ldb.c) use `fgets()` from `gets()`.
 
 Make **ABSOLUTE CERTAIN** that you read the index.html file _BEFORE_ your changes
 as it's important to see that the code is doing what it is supposed to. In the
@@ -87,7 +87,7 @@ Again, THANK YOU!
 Entries below have one or more of the following _**STATUS**_ values. Please see
 the text below for more information. If an entry has more than one status it
 means that either they all apply or they compliment each other. For instance
-[2004/gavin](2004/gavin/gavin.c) crashes but it also doesn't even compile with
+[2004/gavin](%%REPO_URL%%/2004/gavin/gavin.c) crashes but it also doesn't even compile with
 some platforms/architectures.
 
 
@@ -111,14 +111,14 @@ sizes on different platforms.  These tend to be required at the risk that
 sometimes the entry will not work for certain platforms, some of which might or
 might not be fixable; a good example where it was required to change and is okay
 is when [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed the
-segfault in macOS of [1989/paul](1994/paul/paul.c): changing the `int *` to a
+segfault in macOS of [1989/paul](%%REPO_URL%%/1994/paul/paul.c): changing the `int *` to a
 `long *` was required and it works just as well with linux.
 
 But even if they are fixable (which will likely be hard to do) it's almost
 certain that such code would be just as non-portable (importable ? :-) ).
 
 In rare cases they are valid. For instance Cody noticed in linux the following
-warning in [1985/applin](1985/applin/applin.c) with gcc:
+warning in [1985/applin](%%REPO_URL%%/1985/applin/applin.c) with gcc:
 
 ```
     applin.c:1:78: warning: incompatible implicit declaration of built-in function 'execlp' [-Wbuiltin-declaration-mismatch]
@@ -127,7 +127,7 @@ warning in [1985/applin](1985/applin/applin.c) with gcc:
 ```
 
 and this reminded him of his fix to
-[1984/anonymous](1984/anonymous/anonymous.c). In the case of `1984/anonymous` it
+[1984/anonymous](%%REPO_URL%%/1984/anonymous/anonymous.c). In the case of `1984/anonymous` it
 was a bit more involved but with `1985/applin` one need only add to the Makefile
 `-include unistd.h`. So there are some cases where fixing warnings can fix a
 problem but in general they should be ignored even if they're annoying.
@@ -225,7 +225,7 @@ something else?). Please help us to fix it!
 **Please provide alternative code or fix for more compilers**!
 
 Some entries do not work with some compilers. A good example is
-[1992/lush](1992/lush/lush.c) which uses error messages from the compiler to
+[1992/lush](%%REPO_URL%%/1992/lush/lush.c) which uses error messages from the compiler to
 generate its output.
 
 If you can provide code that works for multiple compilers without too much
@@ -241,7 +241,7 @@ here as best you can manage.
 **Please help us fix the main() function**!
 
 NOTE: it appears that most if not all of these have been fixed except perhaps
-for [1989/westley](1989/westley/westley.c) but this has probably been fixed as
+for [1989/westley](%%REPO_URL%%/1989/westley/westley.c) but this has probably been fixed as
 much as possible given the nature of how it generates code: the entry itself
 compiles but two versions of code it generates does not work with clang.
 
@@ -270,10 +270,10 @@ clang** despite the fact it might appear to be gcc: no symlink and both gcc and
 clang exist but the gcc is clang which you'll see if you run `gcc --version`.
 
 A tip and some fix methods from Cody: in the older days args to main() not given
-a type were implicit ints but when they're required to be `char ** this can
+a type were implicit ints but when they're required to be `char **` this can
 cause a problem. In some cases Cody was able to use a `char *` inside `main()`
-(see [1989/tromp/tromp.c](1989/tromp/tromp.c) and
-[1986/holloway/holloway.c](1986/holloway) for two examples though done slightly
+(see [1989/tromp/tromp.c](%%REPO_URL%%/1989/tromp/tromp.c) and
+[1986/holloway/holloway.c](1986/holloway/index.html) for two examples though done slightly
 differently). In other cases he was able to dereference the pointers to be used
 like an int and other times a cast was necessary. He used other various
 techniques to get them to compile. In some cases this introduced a problem but
@@ -323,7 +323,7 @@ warnings during at least one of compiling, linking and execution. In macOS it's
 most annoying as it happens during execution (also compilation) with the warning
 being interspersed with the output of the program, often causing confusing
 output with the entry. A good example that was fixed is
-[1990/tbr](1990/tbr/tbr.c).
+[1990/tbr](%%REPO_URL%%/1990/tbr/tbr.c).
 
 Cody provided some important notes on this status with respect to fixing /
 changing entries:
@@ -401,13 +401,13 @@ something was noted by the author, the judges, a consequence of earlier
 requirements for winning entries or the purpose was to do something that might
 appear to be buggy. An example of system specific entries:
 
-[1984/mullender](1984/mullender/mullender.c) (see below and the [FAQ](faq.html)
+[1984/mullender](%%REPO_URL%%/1984/mullender/mullender.c) (see below and the [FAQ](faq.html)
 for a version that works in modern systems) is very system specific and was
 before system specific winning entries were discouraged. This is an all time
 personal favourite of Landon Curt Noll. Run the alternate code to understand why
 this might be (along with how strange the source code is :-) ).
 
-An example where a crash is not a bug: [2019/endoh](2019/endoh/endoh.c) is
+An example where a crash is not a bug: [2019/endoh](%%REPO_URL%%/2019/endoh/endoh.c) is
 supposed to crash. There are others that are also supposed to crash or that are
 known to segfault but are considered features.
 
@@ -423,7 +423,7 @@ felt that the fix was tampering with the entry).
 
 NOTE: in the case of `gets()` we've fixed some to avoid the warning of the
 compiler, linker or even during runtime, depending on the system. In [some cases
-like 1990/tbr](1990/tbr/tbr.c) the fix actually prevents confusing output (though that
+like 1990/tbr](%%REPO_URL%%/1990/tbr/tbr.c) the fix actually prevents confusing output (though that
 was not the only fix made in that entry).
 
 
@@ -451,7 +451,7 @@ own fix or suggest that they're fixed!
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1984/decot/dedot.c](1984/decot/decot.c)
+### Source code: [1984/decot/dedot.c](%%REPO_URL%%/1984/decot/decot.c)
 ### Information: [1984/decot/index.html](1984/decot/index.html)
 
 The purpose of this program is to print out a string of rubbish. In particular
@@ -471,7 +471,7 @@ without a newline after the `\`. This is not a bug.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1984/mullender/mullender.c](1984/mullender/mullender.c)
+### Source code: [1984/mullender/mullender.c](%%REPO_URL%%/1984/mullender/mullender.c)
 ### Information: [1984/mullender/index.html](1984/mullender/index.html)
 
 Although there is an alt version and supplementary program added by Cody that
@@ -480,7 +480,7 @@ will work in modern systems, if you do not have a
 [PDP-11](https://en.wikipedia.org/wiki/PDP-11) to run the original entry on it
 will not work. See the index.html for details on the alternate versions.
 
-Cody added and fixed the [gentab.c](1984/mullender/gentab.c) which is from the
+Cody added and fixed the [gentab.c](%%REPO_URL%%/1984/mullender/gentab.c) which is from the
 author's (or one of them, Mullender) remarks found by Cody. Cody fixed this to
 compile and work (as best as he can determine: he has no VAX-11 or PDP-11 or
 emulator to test it) but running the code on the binary itself produces a
@@ -508,7 +508,7 @@ There are no known bugs and (Mis)features for entries in 1985.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1986/august/august.c](1986/august/august.c)
+### Source code: [1986/august/august.c](%%REPO_URL%%/1986/august/august.c)
 ### Information: [1986/august/index.html](1986/august/index.html)
 
 
@@ -537,7 +537,7 @@ There are no known bugs and (Mis)features for entries in 1987.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1988/dale/dale.c](1988/dale/dale.c)
+### Source code: [1988/dale/dale.c](%%REPO_URL%%/1988/dale/dale.c)
 ### Information: [1988/dale/index.html](1988/dale/index.html)
 
 In linux it might happen that despite no error message or message about doing
@@ -557,7 +557,7 @@ and does not crash.
 </div>
 
 ### STATUS: known bug - please help us fix
-### Source code: [1989/fubar/fubar.c](1989/fubar/fubar.c)
+### Source code: [1989/fubar/fubar.c](%%REPO_URL%%/1989/fubar/fubar.c)
 ### Information: [1989/fubar/index.html](1989/fubar/index.html)
 
 If you use either `fubar` or `ouroboros.c` (it's executable, see index.html for
@@ -573,7 +573,7 @@ If you want to try and fix this (mis)feature, you are welcome to try.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1989/robison/robison.c](1989/robison/robison.c)
+### Source code: [1989/robison/robison.c](%%REPO_URL%%/1989/robison/robison.c)
 ### Information: [1989/robison/index.html](1989/robison/index.html)
 
 This program will very likely crash or break into tiny bits :-) if you feed it
@@ -588,7 +588,7 @@ operators like `/`. To see what operators are supported check the source code.
 </div>
 
 ### STATUS: known bug - please help us fix
-### Source code: [1989/westley/westley.c](1989/westley/westley.c)
+### Source code: [1989/westley/westley.c](%%REPO_URL%%/1989/westley/westley.c)
 ### Information: [1989/westley/index.html](1989/westley/index.html)
 
 With version 2 it sometimes segfaults even with the same input where other times
@@ -720,7 +720,7 @@ Enjoy! :-)
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1990/baruch/baruch.c](1990/baruch/baruch.c)
+### Source code: [1990/baruch/baruch.c](%%REPO_URL%%/1990/baruch/baruch.c)
 ### Information: [1990/baruch/index.html](1990/baruch/index.html)
 
 A point worth considering is that as the number passed into the program gets
@@ -793,7 +793,7 @@ This is not considered a bug, however.
 </div>
 
 ### STATUS: known bug - please help us fix
-### Source code: [1990/jaw/jaw.c](1990/jaw/jaw.c)
+### Source code: [1990/jaw/jaw.c](%%REPO_URL%%/1990/jaw/jaw.c)
 ### Information: [1990/jaw/index.html](1990/jaw/index.html)
 
 [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson)
@@ -837,7 +837,7 @@ they will get just
 which seems to be an error message (one of the fixes was to make it not use
 `perror(3)` - this fixed something else though it's no longer known what).
 
-The script [shark.sh](1990/jaw/shark.sh) has some issues too in that due to
+The script [shark.sh](%%REPO_URL%%/1990/jaw/shark.sh) has some issues too in that due to
 path not having `.` (this and maybe some other things were fixed) and `tar` not
 wanting to accept reading from `stdin` (this in particular) even with the right
 options used, seemingly, it has to write to disk the tarball which seems to
@@ -849,7 +849,7 @@ defeat the purpose. This would ideally be fixed.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1990/tbr/tbr.c](1990/tbr/tbr.c)
+### Source code: [1990/tbr/tbr.c](%%REPO_URL%%/1990/tbr/tbr.c)
 ### Information: [1990/tbr/index.html](1990/tbr/index.html)
 
 The authors provided a list of features in the
@@ -861,7 +861,7 @@ The authors provided a list of features in the
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1990/theorem/theorem.c](1990/theorem/theorem.c)
+### Source code: [1990/theorem/theorem.c](%%REPO_URL%%/1990/theorem/theorem.c)
 ### Information: [1990/theorem/index.html](1990/theorem/index.html)
 
 [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed many bugs that
@@ -883,7 +883,7 @@ where this occurred was fixed but this one should not be fixed. Thank you.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1991/buzzard/buzzard.c](1991/buzzard/buzzard.c)
+### Source code: [1991/buzzard/buzzard.c](%%REPO_URL%%/1991/buzzard/buzzard.c)
 ### Information: [1991/buzzard/index.html](1991/buzzard/index.html)
 
 If the maze file cannot be opened, either because the path specified does not
@@ -898,7 +898,7 @@ This is a feature, not a bug.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1991/westley/westley.c](1991/westley/westley.c)
+### Source code: [1991/westley/westley.c](%%REPO_URL%%/1991/westley/westley.c)
 ### Information: [1991/westley/index.html](1991/westley/index.html)
 
 There is a very simple way to always win. The program doesn't catch you and as
@@ -923,7 +923,7 @@ when you're cheating it ends up winning! Can you figure that out as well?
 
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1992/adrian/adrian.c](1992/adrian/adrian.c)
+### Source code: [1992/adrian/adrian.c](%%REPO_URL%%/1992/adrian/adrian.c)
 ### Information: [1992/adrian/index.html](1992/adrian/index.html)
 
 The author stated that if the file cannot be opened then it will print a system
@@ -957,7 +957,7 @@ have to remove the outer `()` pair.
 
 
 ### STATUS: known bug - please help us fix
-### Source code: [1992/albert/albert.c](1992/albert/albert.c)
+### Source code: [1992/albert/albert.c](%%REPO_URL%%/1992/albert/albert.c)
 ### Information: [1992/albert/index.html](1992/albert/index.html)
 
 Leo Broukhis, before he was an IOCCC judge, sent the IOCCC judges an email:
@@ -1023,7 +1023,7 @@ entry itself. Can you fix the actual entry? You are welcome to try and do so.
 </div>
 
 ### STATUS: uses gets() - change to fgets() if possible
-### Source code: [1992/gson/gson.c](1992/gson/gson.c)
+### Source code: [1992/gson/gson.c](%%REPO_URL%%/1992/gson/gson.c)
 ### Information: [1992/gson/index.html])(1992/gson/index.html)
 
 Cody changed it so that the buffer size is `ARG_MAX+1` to try and get past the
@@ -1050,7 +1050,7 @@ to be read (in case the `gets(3)` was not used in a loop).
 </div>
 
 ### STATUS: known bug - please help us fix
-### Source code: [1992/kivinen/kivinen.c](1992/kivinen/kivinen.c)
+### Source code: [1992/kivinen/kivinen.c](%%REPO_URL%%/1992/kivinen/kivinen.c)
 ### Information: [1992/kivinen/index.html](1992/kivinen/index.html)
 
 When you start the program everything starts to move over to the right side and
@@ -1065,7 +1065,7 @@ If you want to try and fix this (mis)feature, you are welcome to try.
 </div>
 
 ### STATUS: doesn't work with some compilers - please provide alternative code or fix for more compilers
-### Source code: [1992/lush/lush.c](1992/lush/lush.c)
+### Source code: [1992/lush/lush.c](%%REPO_URL%%/1992/lush/lush.c)
 ### Information: [1992/lush/index.html](1992/lush/index.html)
 
 We used a patch from [Yusuke Endoh](authors.html#Yusuke_Endoh) to get this to
@@ -1150,7 +1150,7 @@ Can you help us?
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1992/vern/vern.c](1992/vern/vern.c)
+### Source code: [1992/vern/vern.c](%%REPO_URL%%/1992/vern/vern.c)
 ### Information: [1992/vern/index.html](1992/vern/index.html)
 
 When your own checkmate is imminent it prints `"Har har"` but does not exit so
@@ -1163,7 +1163,7 @@ it yourself through ctrl-c or killing it in some other fashion.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1992/westley/westley.c](1992/westley/westley.c)
+### Source code: [1992/westley/westley.c](%%REPO_URL%%/1992/westley/westley.c)
 ### Information: [1992/westley/index.html](1992/westley/index.html)
 
 Cody improved the usability of this program by making it so that as long as the
@@ -1205,7 +1205,7 @@ not a misunderstanding).
 
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1993/ant/ant.c](1993/ant/ant.c)
+### Source code: [1993/ant/ant.c](%%REPO_URL%%/1993/ant/ant.c)
 ### Information: [1993/ant/index.html](1993/ant/index.html)
 
 The author stated that:
@@ -1228,7 +1228,7 @@ not exist in the archive. Do you have it? Please provide it!
 
 
 ### STATUS: known bug - please help us fix
-### Source code: [1993/cmills/cmills.c](1993/cmills/cmills.c)
+### Source code: [1993/cmills/cmills.c](%%REPO_URL%%/1993/cmills/cmills.c)
 ### Information: [1993/cmills/index.html](1993/cmills/index.html)
 
 In multiple platforms, both macOS and also linux (in particular a RHEL 9.3
@@ -1242,7 +1242,7 @@ Can you fix it? We welcome your help.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1993/lmfjyh/lmfjyh.c](1993/lmfjyh/lmfjyh.c)
+### Source code: [1993/lmfjyh/lmfjyh.c](%%REPO_URL%%/1993/lmfjyh/lmfjyh.c)
 ### Information: [1993/lmfjyh/index.html](1993/lmfjyh/index.html)
 
 This entry relied on a bug in gcc that was fixed with gcc version 2.3.3. This
@@ -1257,7 +1257,7 @@ the index.html file for details.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1993/rince/rince.c](1993/rince/rince.c)
+### Source code: [1993/rince/rince.c](%%REPO_URL%%/1993/rince/rince.c)
 ### Information: [1993/rince/index.html](1993/rince/index.html)
 
 Although the code checks if the file can be opened or not, badly formatted files
@@ -1272,7 +1272,7 @@ through ctrl-c or such.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1993/schnitzi/schnitzi.c](1993/schnitzi/schnitzi.c)
+### Source code: [1993/schnitzi/schnitzi.c](%%REPO_URL%%/1993/schnitzi/schnitzi.c)
 ### Information: [1993/schnitzi/index.html](1993/schnitzi/index.html)
 
 If the file cannot be opened it will very likely segfault. This should not be
@@ -1315,7 +1315,7 @@ it will work fine.
 
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1993/vanb/vanb.c](1993/vanb/vanb.c)
+### Source code: [1993/vanb/vanb.c](%%REPO_URL%%/1993/vanb/vanb.c)
 ### Information: [1993/vanb/index.html](1993/vanb/index.html)
 
 No spaces are allowed in the expression.
@@ -1339,7 +1339,7 @@ not `d-46`.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1994/dodsond2/dodsond2.c](1994/dodsond2/dodsond2.c)
+### Source code: [1994/dodsond2/dodsond2.c](%%REPO_URL%%/1994/dodsond2/dodsond2.c)
 ### Information: [1994/dodsond2/index.html](1994/dodsond2/index.html)
 
 When you initiate shooting via the `s` command you immediately lose an arrow
@@ -1354,7 +1354,7 @@ pit room you will end up dying even though you didn't explicitly move there.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1994/ldb/ldb.c](1994/ldb/ldb.c)
+### Source code: [1994/ldb/ldb.c](%%REPO_URL%%/1994/ldb/ldb.c)
 ### Information: [1994/ldb/index.html](1994/ldb/index.html)
 
 [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed this to compile
@@ -1376,7 +1376,7 @@ one liner it's already quite long.
 </div>
 
 ### STATUS: uses gets() - change to fgets() if possible
-### Source code: [1994/schnitzi/schnitzi.c](1994/schnitzi/schnitzi.c)
+### Source code: [1994/schnitzi/schnitzi.c](%%REPO_URL%%/1994/schnitzi/schnitzi.c)
 ### Information: [1994/schnitzi/index.html](1994/schnitzi/index.html)
 
 NOTE: the generated code of all versions, when fed its own source, will differ
@@ -1423,7 +1423,7 @@ at these commands will be of help to understand how it works.
 
 For the alternate versions the other functionality is unaffected.
 
-### The magic of [1994/schnitzi](1994/schnitzi/schnitzi.c) and how it flips text
+### The magic of [1994/schnitzi](%%REPO_URL%%/1994/schnitzi/schnitzi.c) and how it flips text
 
 The problem is getting the generated code to use `fgets()` (once it even
 compiles which was easy to do) and also have the updated buffer size be the
@@ -1503,7 +1503,7 @@ compiled!
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1994/shapiro/shapiro.c](1994/shapiro/shapiro.c)
+### Source code: [1994/shapiro/shapiro.c](%%REPO_URL%%/1994/shapiro/shapiro.c)
 ### Information: [1994/shapiro/index.html](1994/shapiro/index.html)
 
 This program will likely crash if the source code file (by the name of the file
@@ -1548,7 +1548,7 @@ Since it works there is no need to fix this except for a challenge to yourself.
 </div>
 
 ### STATUS: known bug - please help us fix
-### Source code: [1994/tvr/tvr.c](1994/tvr/tvr.c)
+### Source code: [1994/tvr/tvr.c](%%REPO_URL%%/1994/tvr/tvr.c)
 ### Information: [1994/tvr/index.html](1994/tvr/index.html)
 
 
@@ -1577,7 +1577,7 @@ doesn't break something else.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1995/cdua/cdua.c](1995/cdua/cdua.c)
+### Source code: [1995/cdua/cdua.c](%%REPO_URL%%/1995/cdua/cdua.c)
 ### Information: [1995/cdua/index.html](1995/cdua/index.html)
 
 This did not originally compile under macOS and after it did compile under
@@ -1596,7 +1596,7 @@ it calls `getchar()` via the pointer `m`. So this is a feature not a bug.
 </div>
 
 ### STATUS: known bug - please help us fix
-### Source code: [1995/leo/leo.c](1995/leo/leo.c)
+### Source code: [1995/leo/leo.c](%%REPO_URL%%/1995/leo/leo.c)
 ### Information: [1995/leo/index.html](1995/leo/index.html)
 
 The judges suggested that the following commands should result in output:
@@ -1628,7 +1628,7 @@ it would be good if it was fixed.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1995/savastio/savastio.c](1995/savastio/savastio.c)
+### Source code: [1995/savastio/savastio.c](%%REPO_URL%%/1995/savastio/savastio.c)
 ### Information: [1995/savastio/index.html](1995/savastio/index.html)
 
 This program expects a POSITIVE number. If you specify a negative number it will
@@ -1640,7 +1640,7 @@ not show any output, stuck in a loop.
 </div>
 
 ### STATUS: missing file - please provide it
-### Source code: [1995/vanschnitz/vanschnitz.c](1995/vanschnitz/vanschnitz.c)
+### Source code: [1995/vanschnitz/vanschnitz.c](%%REPO_URL%%/1995/vanschnitz/vanschnitz.c)
 ### Information: [1995/vanschnitz/index.html](1995/vanschnitz/index.html)
 
 The authors stated that they included a version that allows people with just K&R
@@ -1661,7 +1661,7 @@ We would appreciate anyone who has it or even just knows the name! Thank you.
 </div>
 
 ### STATUS: missing or dead link - please provide them
-### Source code: [1996/gandalf/gandalf.c](1996/gandalf/gandalf.c)
+### Source code: [1996/gandalf/gandalf.c](%%REPO_URL%%/1996/gandalf/gandalf.c)
 ### Information: [1996/gandalf/index.html](1996/gandalf/index.html)
 
 The link was http://www.tc3.co.uk/~gandalf/G.HTML but this no longer exists as
@@ -1675,12 +1675,12 @@ Do you have an updated link? We welcome your help!
 </div>
 
 ### STATUS: uses gets() - change to fgets() if possible
-### Source code: [1996/huffman/huffman.c](1996/huffman/huffman.c)
+### Source code: [1996/huffman/huffman.c](%%REPO_URL%%/1996/huffman/huffman.c)
 ### Information: [1996/huffman/index.html](1996/huffman/index.html)
 
 The changing to using `fgets(3)` in this entry is a bit more complicated. It can
 almost be done except that some of the output of the
-[try.sh](1996/huffman/try.sh) is wrong, especially the last one.
+[try.sh](%%REPO_URL%%/1996/huffman/try.sh) is wrong, especially the last one.
 
 This diff almost does it but not quite:
 
@@ -1718,7 +1718,7 @@ But since it does not for the time being it is advisable to just redirect
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1996/jonth/jonth.c](1996/jonth/jonth.c)
+### Source code: [1996/jonth/jonth.c](%%REPO_URL%%/1996/jonth/jonth.c)
 ### Information: [1996/jonth/index.html](1996/jonth/index.html)
 
 If X is not running this program will very likely crash or do something funny.
@@ -1756,7 +1756,7 @@ There was no IOCCC in 1997.
 </div>
 
 ### STATUS: missing or dead link - please provide them
-### Source code: [1998/dlowe/dlowe.c](1998/dlowe/dlowe.c)
+### Source code: [1998/dlowe/dlowe.c](%%REPO_URL%%/1998/dlowe/dlowe.c)
 ### Information: [1998/dlowe/index.html](1998/dlowe/index.html)
 
 The domain http://pootpoot.com no longer exists as it once did. The judges have
@@ -1771,10 +1771,10 @@ to the page as well!  You'll have IOCCC fame for reviving a pootifier! :-)
 </div>
 
 ### STATUS: missing or dead link - please provide them
-### Source code: [1998/dloweneil/dloweneil.c](1998/dloweneil/dloweneil.c)
+### Source code: [1998/dloweneil/dloweneil.c](%%REPO_URL%%/1998/dloweneil/dloweneil.c)
 ### Information: [1998/dloweneil/index.html](1998/dloweneil/index.html)
 
-See above entry [1998/dlowe](1998/dlowe/dlowe.c).
+See above entry [1998/dlowe](%%REPO_URL%%/1998/dlowe/dlowe.c).
 
 
 <div id="1998_schnitzi">
@@ -1782,7 +1782,7 @@ See above entry [1998/dlowe](1998/dlowe/dlowe.c).
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1998/schnitzi/schnitzi.c](1998/schnitzi/schnitzi.c)
+### Source code: [1998/schnitzi/schnitzi.c](%%REPO_URL%%/1998/schnitzi/schnitzi.c)
 ### Information: [1998/schnitzi/index.html](1998/schnitzi/index.html)
 
 A point worth considering is that as the number passed into the program gets
@@ -1824,7 +1824,7 @@ There was no IOCCC in 1999.
 
 
 ### STATUS: known bug - please help us fix
-### Source code: [2000/dlowe/dlowe.c](2000/dlowe/dlowe.c)
+### Source code: [2000/dlowe/dlowe.c](%%REPO_URL%%/2000/dlowe/dlowe.c)
 ### Information: [2000/dlowe/index.html](2000/dlowe/index.html)
 
 The author gives an example command:
@@ -2091,7 +2091,7 @@ of 92 warnings! Nonetheless neither works okay and both crash.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2000/primenum/primenum.c](2000/primenum/primenum.c)
+### Source code: [2000/primenum/primenum.c](%%REPO_URL%%/2000/primenum/primenum.c)
 ### Information: [2000/primenum/index.html](2000/primenum/index.html)
 
 This program does not do what you might think it does! Running it like:
@@ -2119,7 +2119,7 @@ make a pull request.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2000/rince/rince.c](2000/rince/rince.c)
+### Source code: [2000/rince/rince.c](%%REPO_URL%%/2000/rince/rince.c)
 ### Information: [2000/rince/index.html](2000/rince/index.html)
 
 If `DISPLAY` is not set the program will very likely crash, do something strange
@@ -2139,23 +2139,23 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_&#x28;computing&#x29;)! 
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2001/anonymous/anonymous.c](2001/anonymous/anonymous.c)
+### Source code: [2001/anonymous/anonymous.c](%%REPO_URL%%/2001/anonymous/anonymous.c)
 ### Information: [2001/anonymous/index.html](2001/anonymous/index.html)
 
 [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed this so that it
 doesn't segfault and then also fixed the functionality of it (but see below).
 
-Cody also fixed the [anonymous.ten.c](2001/anonymous/anonymous.ten.c) program
+Cody also fixed the [anonymous.ten.c](%%REPO_URL%%/2001/anonymous/anonymous.ten.c) program
 (it also segfaulted) but notes that it **MUST** be compiled as a **32-bit ELF
 binary** so it will NOT work in macOS (for example); if you cannot use `-m32` or
 even if you can but it cannot compile as an ELF binary (not elf binary :-) )
 (but see below) then the `anonymous` program itself will very likely crash if
-you run it on the compiled [anonymous.ten.c](2001/anonymous/anonymous.ten.c) but
+you run it on the compiled [anonymous.ten.c](%%REPO_URL%%/2001/anonymous/anonymous.ten.c) but
 if nothing else it will not modify the target executable (this part of the fix
 at least should be correct).
 
 The file `2001/anonymous/anonymous.ten.32` is a pre-compiled
-[2001/anonymous.ten.c](2001/anonymous.ten.c) as a 32-bit ELF binary in case you
+[2001/anonymous.ten.c](%%REPO_URL%%/2001/anonymous.ten.c) as a 32-bit ELF binary in case you
 can run ELF binaries but cannot compile 32-bit binaries.
 
 Other BSD Unices were not tested.
@@ -2171,7 +2171,7 @@ elves of Imladris :-(
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### STATUS: doesn't work with some platforms - please help us fix
-### Source code: [2001/bellard/bellard.c](2001/bellard/bellard.c)
+### Source code: [2001/bellard/bellard.c](%%REPO_URL%%/2001/bellard/bellard.c)
 ### Information: [2001/bellard/index.html](2001/bellard/index.html)
 
 The two statuses might seem contradictory but that is a complicated question.
@@ -2183,7 +2183,7 @@ next, were made.
 
 [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed an initial
 segfault (trying to open the file) and he also fixed the [supplementary program
-bellard.otccex.c](2001/bellard/bellard.otccex.c) but this still crashes in
+bellard.otccex.c](%%REPO_URL%%/2001/bellard/bellard.otccex.c) but this still crashes in
 systems not i386 linux which is what the author stated.
 
 On the other hand if you do have a fix for 64-bit systems you're welcome to
@@ -2203,7 +2203,7 @@ On the author's [web page for this program](https://bellard.org/otcc/) it is
 explicitly stated that it requires i386 linux.
 
 There I found what should be a more portable version which is included as
-[otccelf.c](2001/bellard/otccelf.c) (after adding some `#include`s and the
+[otccelf.c](%%REPO_URL%%/2001/bellard/otccelf.c) (after adding some `#include`s and the
 modification by Yusuke noted in the [thanks](thanks-for-help.html)
 file) but it appears this *also* requires i386 linux; indeed looking at the code
 it hard codes paths that are i386 specific to linux.
@@ -2236,7 +2236,7 @@ before the fixes there.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2001/dgbeards/dgbeards.c](2001/dgbeards/dgbeards.c)
+### Source code: [2001/dgbeards/dgbeards.c](%%REPO_URL%%/2001/dgbeards/dgbeards.c)
 ### Information: [2001/dgbeards/index.html](2001/dgbeards/index.html)
 
 This program deliberately crashes if it loses (which is what it aims to do).
@@ -2247,7 +2247,7 @@ This program deliberately crashes if it loses (which is what it aims to do).
 </div>
 
 ### STATUS: missing files - please provide them
-### Source code: [2001/herrmann1/herrmann1.c](2001/herrmann1/herrmann1.c)
+### Source code: [2001/herrmann1/herrmann1.c](%%REPO_URL%%/2001/herrmann1/herrmann1.c)
 ### Information: [2001/herrmann1/index.html](2001/herrmann1/index.html)
 
 The author referred to the file `herrmann1.turing` but it does not exist not even
@@ -2269,7 +2269,7 @@ If you want to try and fix this (mis)feature, you are welcome to try.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2001/kev/kev.c](2001/kev/kev.c)
+### Source code: [2001/kev/kev.c](%%REPO_URL%%/2001/kev/kev.c)
 ### Information: [2001/kev/index.html](2001/kev/index.html)
 
 Sometimes when one player presses `q` it will result in broken pipe on the other
@@ -2297,7 +2297,7 @@ set. In other words both have to be ASCII or EBCDIC - not one of each.
 
 
 ### STATUS: missing files - please provide them
-### Source code: [2001/rosten/rosten.c](2001/rosten/rosten.c)
+### Source code: [2001/rosten/rosten.c](%%REPO_URL%%/2001/rosten/rosten.c)
 ### Information: [2001/rosten/index.html](2001/rosten/index.html)
 
 The author stated that there is a cat man page for this program in case one
@@ -2310,7 +2310,7 @@ wanted to install it as a tool but this is missing.
 
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2001/schweikh/schweikh.c](2001/schweikh/schweikh.c)
+### Source code: [2001/schweikh/schweikh.c](%%REPO_URL%%/2001/schweikh/schweikh.c)
 ### Information: [2001/schweikh/index.html](2001/schweikh/index.html)
 
 The glob pattern must match the whole string. See the author's comments for
@@ -2325,7 +2325,7 @@ There's also no way to escape meta characters.
 
 
 ### STATUS: uses gets() - change to fgets() if possible
-### Source code: [2001/westley/westley.c](2001/westley/westley.c)
+### Source code: [2001/westley/westley.c](%%REPO_URL%%/2001/westley/westley.c)
 ### Information: [2001/westley/index.html](2001/westley/index.html)
 
 This function uses `gets(3)` but it would be ideal if it used `fgets(3)`. This
@@ -2360,7 +2360,7 @@ it? Please provide it!
 
 
 ### STATUS: known bug - please help us fix
-### Source code: [2001/williams/williams.c](2001/williams/williams.c)
+### Source code: [2001/williams/williams.c](%%REPO_URL%%/2001/williams/williams.c)
 ### Information: [2001/williams/index.html](2001/williams/index.html)
 
 There seem to be a couple bugs at least in this entry. The first one is that
@@ -2445,12 +2445,12 @@ There was no IOCCC in 2003.
 
 
 <div id="2004_gavin">
-## [2004/gavin](2004/gavin/index.html)
+## [2004/gavin](%%REPO_URL%%/2004/gavin/index.html)
 </div>
 
 ### STATUS: compiled executable crashes - please help us fix
 ### STATUS: doesn't work with some platforms - please help us fix
-### Source code: [2004/gavin/gavin.c](2004/gavin/gavin.c)
+### Source code: [2004/gavin/gavin.c](%%REPO_URL%%/2004/gavin/gavin.c)
 ### Information: [2004/gavin//index.html](2004/gavin//index.html)
 
 Segmentation fault will occur in some systems. For instance on macOS with the
@@ -2548,7 +2548,7 @@ The original Makefile from 2004 had the following to say about this entry:
     gavin_files: boot.b lilo.conf prim gavin_install.txt
 ```
 
-The current ([Makefile](2004/gavin/Makefile) was modified to try and
+The current ([Makefile](%%REPO_URL%%/2004/gavin/Makefile) was modified to try and
 fit into the current IOCCC build environment.
 
 
@@ -2563,7 +2563,7 @@ things that are not bugs but documented (mis)features.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2004/jdalbec/jdalbec.c](2004/jdalbec/jdalbec.c)
+### Source code: [2004/jdalbec/jdalbec.c](%%REPO_URL%%/2004/jdalbec/jdalbec.c)
 ### Information: [2004/jdalbec/index.html](2004/jdalbec/index.html)
 
 The author stated that:
@@ -2595,7 +2595,7 @@ The author stated that:
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2004/sds/sds.c](2004/sds/sds.c)
+### Source code: [2004/sds/sds.c](%%REPO_URL%%/2004/sds/sds.c)
 ### Information: [2004/sds/index.html](2004/sds/index.html)
 
 The generated code will very likely segfault or do something not intended if not
@@ -2614,7 +2614,7 @@ given the right args. See the index.html file for the correct syntax.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2005/anon/anon.c](2005/anon/anon.c)
+### Source code: [2005/anon/anon.c](%%REPO_URL%%/2005/anon/anon.c)
 ### Information: [2005/anon/index.html](2005/anon/index.html)
 
 This program sometimes will create unsolvable puzzles :-) just to hook you.
@@ -2633,7 +2633,7 @@ dimensions. Try `100 100 100` for instance and see what happens!
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2005/giljade/giljade.c](2005/giljade/giljade.c)
+### Source code: [2005/giljade/giljade.c](%%REPO_URL%%/2005/giljade/giljade.c)
 ### Information: [2005/giljade/index.html](2005/giljade/index.html)
 
 This entry will very likely segfault or do something strange if the source code
@@ -2647,7 +2647,7 @@ This entry requires that `sed` and `make` are in the path.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2005/mikeash/mikeash.c](2005/mikeash/mikeash.c)
+### Source code: [2005/mikeash/mikeash.c](%%REPO_URL%%/2005/mikeash/mikeash.c)
 ### Information: [2005/mikeash/index.html](2005/mikeash/index.html)
 
 The author states:
@@ -2694,7 +2694,7 @@ for running itself.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2005/mynx/mynx.c](2005/mynx/mynx.c)
+### Source code: [2005/mynx/mynx.c](%%REPO_URL%%/2005/mynx/mynx.c)
 ### Information: [2005/mynx/index.html](2005/mynx/index.html)
 
 [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) notes that, though
@@ -2712,7 +2712,7 @@ website](https://www.ioccc.org) itself.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2005/sykes/sykes.c](2005/sykes/sykes.c)
+### Source code: [2005/sykes/sykes.c](%%REPO_URL%%/2005/sykes/sykes.c)
 ### Information: [2005/sykes/index.html](2005/sykes/index.html)
 
 The author stated the below points of interest.
@@ -2753,7 +2753,7 @@ used decimal mode, or any of the "undocumented" instructions.
 </div>
 
 ### STATUS: uses gets() - change to fgets() if possible
-### Source code: [2006/birken/birken.c](2006/birken/birken.c)
+### Source code: [2006/birken/birken.c](%%REPO_URL%%/2006/birken/birken.c)
 ### Information: [2006/birken/index.html](2006/birken/index.html)
 
 This entry uses `gets(3)` which is unsafe and provides annoying warnings, most
@@ -2772,7 +2772,7 @@ with at least `computer.tofu` input file:
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2006/borsanyi/borsanyi.c](2006/borsanyi/borsanyi.c)
+### Source code: [2006/borsanyi/borsanyi.c](%%REPO_URL%%/2006/borsanyi/borsanyi.c)
 ### Information: [2006/borsanyi/index.html](2006/borsanyi/index.html)
 
 The string specified must be <= 42 characters and may only consist of the
@@ -2785,7 +2785,7 @@ with possibly corrupt GIF files.
 </div>
 
 ### STATUS: doesn't work with some platforms - please help us fix
-### Source code: [2006/monge/monge.c](2006/monge/monge.c)
+### Source code: [2006/monge/monge.c](%%REPO_URL%%/2006/monge/monge.c)
 ### Information: [2006/monge/index.html](2006/monge/index.html)
 
 This program requires x86 (with an x87 FPU) or x86_64 machine and it requires
@@ -2813,7 +2813,7 @@ Incorrect formulas will ungracefully crash the program.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2006/sykes1/sykes1.c](2006/sykes1/sykes1.c)
+### Source code: [2006/sykes1/sykes1.c](%%REPO_URL%%/2006/sykes1/sykes1.c)
 ### Information: [2006/sykes1/index.html](2006/sykes1/index.html)
 
 The author stated:
@@ -2838,7 +2838,7 @@ The author stated:
 
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2006/toledo2/toledo2.c](2006/toledo2/toledo2.c)
+### Source code: [2006/toledo2/toledo2.c](%%REPO_URL%%/2006/toledo2/toledo2.c)
 ### Information: [2006/toledo2/index.html](2006/toledo2/index.html)
 
 [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed this program to
@@ -2905,7 +2905,7 @@ There was no IOCCC in 2010.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2011/borsanyi/borsanyi.c](2011/borsanyi/borsanyi.c)
+### Source code: [2011/borsanyi/borsanyi.c](%%REPO_URL%%/2011/borsanyi/borsanyi.c)
 ### Information: [2011/borsanyi/index.html](2011/borsanyi/index.html)
 
 For a great amount of data points the program will crash, depending on your
@@ -2932,7 +2932,7 @@ bins at the edges.
 </div>
 
 ### STATUS: missing or dead link - please provide them
-### Source code: [2011/dlowe/dlowe.c](2011/dlowe/dlowe.c)
+### Source code: [2011/dlowe/dlowe.c](%%REPO_URL%%/2011/dlowe/dlowe.c)
 ### Information: [2011/dlowe/index.html](2011/dlowe/index.html)
 
 The author's website, http://www.pootpoot.net, no longer exists as it once did,
@@ -2962,7 +2962,7 @@ If you want to try and fix this (mis)feature, you are welcome to try.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2011/fredriksson/fredriksson.c](2011/fredriksson/fredriksson.c)
+### Source code: [2011/fredriksson/fredriksson.c](%%REPO_URL%%/2011/fredriksson/fredriksson.c)
 ### Information: [2011/fredriksson/index.html](2011/fredriksson/index.html)
 
 The author stated that there are a number of features and limitations. As the
@@ -2976,7 +2976,7 @@ remarks](2011/fredriksson/index.html#limitations-and-remarks) instead.
 </div>
 
 ### STATUS: doesn't work with some platforms - please help us fix
-### Source code: [2011/richards/richards.c](2011/richards/richards.c)
+### Source code: [2011/richards/richards.c](%%REPO_URL%%/2011/richards/richards.c)
 ### Information: [2011/richards/index.html](2011/richards/index.html)
 
 This does not appear to work with macOS, resulting in a segfault (and sometimes
@@ -2992,7 +2992,7 @@ workarounds but at this time he could not get it to work. He offers some earlier
 debugging sessions below as well as a resource from the author as well as some
 resources on Apple's website should anyone wish to take a crack at it. He might
 address it later but a starting point might be in
-[richards.alt.c](2011/richards/richards.alt.c).
+[richards.alt.c](%%REPO_URL%%/2011/richards/richards.alt.c).
 
 
 ### Debugging
@@ -3162,7 +3162,7 @@ case.
 
 ### Testing fixes
 
-It might be helpful to use the [try.alt.sh](2011/richards/try.alt.sh) script to
+It might be helpful to use the [try.alt.sh](%%REPO_URL%%/2011/richards/try.alt.sh) script to
 test that it does not crash and functions properly.
 
 
@@ -3197,7 +3197,7 @@ Do you have a fix? We welcome it!
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2011/vik/vik.c](2011/vik/vik.c)
+### Source code: [2011/vik/vik.c](%%REPO_URL%%/2011/vik/vik.c)
 ### Information: [2011/vik/index.html](2011/vik/index.html)
 
 The author stated that the program will crash if no argument is passed to the
@@ -3217,7 +3217,7 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_&#x28;computing&#x29;) :
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2012/blakely/blakely.c](2012/blakely/blakely.c)
+### Source code: [2012/blakely/blakely.c](%%REPO_URL%%/2012/blakely/blakely.c)
 ### Information: [2012/blakely/index.html](2012/blakely/index.html)
 
 The author stated:
@@ -3233,7 +3233,7 @@ The author stated:
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2012/deckmyn/deckmyn.c](2012/deckmyn/deckmyn.c)
+### Source code: [2012/deckmyn/deckmyn.c](%%REPO_URL%%/2012/deckmyn/deckmyn.c)
 ### Information: [2012/deckmyn/index.html](2012/deckmyn/index.html)
 
 The author stated:
@@ -3276,7 +3276,7 @@ The manual referred to is [here](2012/deckmyn/deckmyn.html).
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2012/dlowe/dlowe.c](2012/dlowe/dlowe.c)
+### Source code: [2012/dlowe/dlowe.c](%%REPO_URL%%/2012/dlowe/dlowe.c)
 ### Information: [2012/dlowe/index.html](2012/dlowe/index.html)
 
 The author stated:
@@ -3293,7 +3293,7 @@ The author stated:
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2012/tromp/tromp.c](2012/tromp/tromp.c)
+### Source code: [2012/tromp/tromp.c](%%REPO_URL%%/2012/tromp/tromp.c)
 ### Information: [2012/tromp/index.html](2012/tromp/index.html)
 
 The author stated:
@@ -3321,7 +3321,7 @@ The author stated:
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2012/vik/vik.c](2012/vik/vik.c)
+### Source code: [2012/vik/vik.c](%%REPO_URL%%/2012/vik/vik.c)
 ### Information: [2012/vik/index.html](2012/vik/index.html)
 
 The author stated that the program will crash if no argument is passed to the
@@ -3342,7 +3342,7 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_&#x28;computing&#x29;) :
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2013/cable2/cable2.c](2013/cable2/cable2.c)
+### Source code: [2013/cable2/cable2.c](%%REPO_URL%%/2013/cable2/cable2.c)
 ### Information: [2013/cable2/index.html](2013/cable2/index.html)
 
 The author stated:
@@ -3365,7 +3365,7 @@ and endianness conversion would make the source too large for IOCCC rule 2).
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2013/dlowe/dlowe.c](2013/dlowe/dlowe.c)
+### Source code: [2013/dlowe/dlowe.c](%%REPO_URL%%/2013/dlowe/dlowe.c)
 ### Information: [2013/dlowe/index.html](2013/dlowe/index.html)
 
 This program will possibly crash or draw something strange with 0 args. Then
@@ -3389,7 +3389,7 @@ The author also stated:
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2013/endoh1/endoh1.c](2013/endoh1/endoh1.c)
+### Source code: [2013/endoh1/endoh1.c](%%REPO_URL%%/2013/endoh1/endoh1.c)
 ### Information: [2013/endoh1/index.html](2013/endoh1/index.html)
 
 From the author:
@@ -3415,7 +3415,7 @@ section](2013/endoh1/index.html#spoiler).
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2013/endoh3/endoh3.c](2013/endoh3/endoh3.c)
+### Source code: [2013/endoh3/endoh3.c](%%REPO_URL%%/2013/endoh3/endoh3.c)
 ### Information: [2013/endoh3/index.html](2013/endoh3/index.html)
 
 From the author:
@@ -3437,7 +3437,7 @@ A workaround is inserting a whitespace: `C2 E2`.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2013/endoh4/endoh4.c](2013/endoh4/endoh4.c)
+### Source code: [2013/endoh4/endoh4.c](%%REPO_URL%%/2013/endoh4/endoh4.c)
 ### Information: [2013/endoh4/index.html](2013/endoh4/index.html)
 
 Invalid input files will very likely crash the program.
@@ -3449,7 +3449,7 @@ Invalid input files will very likely crash the program.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2013/hou/hou.c](2013/hou/hou.c)
+### Source code: [2013/hou/hou.c](%%REPO_URL%%/2013/hou/hou.c)
 ### Information: [2013/hou/index.html](2013/hou/index.html)
 
 This program will not terminate on its own; you must kill `hou` (but not Qiming
@@ -3461,7 +3461,7 @@ Hou :-) ) yourself. This should not be fixed.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2013/mills/mills.c](2013/mills/mills.c)
+### Source code: [2013/mills/mills.c](%%REPO_URL%%/2013/mills/mills.c)
 ### Information: [2013/mills/index.html](2013/mills/index.html)
 
 The author reminds us that if you kill the program you will have to wait a short
@@ -3484,7 +3484,7 @@ it out as a known limitation it is not a bug but a feature.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2014/maffiodo1/prog.c](2014/maffiodo1/prog.c)
+### Source code: [2014/maffiodo1/prog.c](%%REPO_URL%%/2014/maffiodo1/prog.c)
 ### Information: [2014/maffiodo1/index.html](2014/maffiodo1/index.html)
 
 The author noted that in macOS the colours might be wrong. They gave a solution.
@@ -3519,7 +3519,7 @@ but since it's documented it's considered a feature, not a bug to fix.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2014/maffiodo2/prog.c](2014/maffiodo2/prog.c)
+### Source code: [2014/maffiodo2/prog.c](%%REPO_URL%%/2014/maffiodo2/prog.c)
 ### Information: [2014/maffiodo2/index.html](2014/maffiodo2/index.html)
 
 This program will very likely crash if no arg is given.
@@ -3530,12 +3530,12 @@ This program will very likely crash if no arg is given.
 </div>
 
 ### STATUS: known bug - please help us fix
-### Source code: [2014/vik/prog.c](2014/vik/prog.c)
+### Source code: [2014/vik/prog.c](%%REPO_URL%%/2014/vik/prog.c)
 ### Information: [2014/vik/index.html](2014/vik/index.html)
 
 [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) discovered a bug to do
 with translating sound to text that shows itself in some cases (it works in
-others) when working on his winning [2020 Enigma machine](2020/ferguson2/prog.c)
+others) when working on his winning [2020 Enigma machine](%%REPO_URL%%/2020/ferguson2/prog.c)
 ('Most enigmatic') entry. See his [index.html](2020/ferguson2/index.html) for
 details (search for `vik` in the file). This one might be more of a limitation
 but this is not known.
@@ -3591,7 +3591,7 @@ they will properly get:
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2015/hou/prog.c](2015/hou/prog.c)
+### Source code: [2015/hou/prog.c](%%REPO_URL%%/2015/hou/prog.c)
 ### Information: [2015/hou/index.html](2015/hou/index.html)
 
 The author stated:
@@ -3624,7 +3624,7 @@ result. Error messages become garbled, though.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2015/mills2/prog.c](2015/mills2/prog.c)
+### Source code: [2015/mills2/prog.c](%%REPO_URL%%/2015/mills2/prog.c)
 ### Information: [2015/mills2/index.html](2015/mills2/index.html)
 
 The program doesn't look at the header of files so if it's passed something hat
@@ -3638,7 +3638,7 @@ The program depends on little endian systems.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2015/schweikhardt/prog.c](2015/schweikhardt/prog.c)
+### Source code: [2015/schweikhardt/prog.c](%%REPO_URL%%/2015/schweikhardt/prog.c)
 ### Information: [2015/schweikhardt/index.html](2015/schweikhardt/index.html)
 
 The program assumes that `EOF` is `-1`. This can be fixed but at this time it is
@@ -3687,7 +3687,7 @@ There was no IOCCC in 2017.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2018/algmyr/algmyr.c](2018/algmyr/algmyr.c)
+### Source code: [2018/algmyr/algmyr.c](%%REPO_URL%%/2018/algmyr/algmyr.c)
 ### Information: [2018/algmyr/index.html](2018/algmyr/index.html)
 
 The author wrote:
@@ -3710,7 +3710,7 @@ loop printing whitespace.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2018/hou/prog.c](2018/hou/prog.c)
+### Source code: [2018/hou/prog.c](%%REPO_URL%%/2018/hou/prog.c)
 ### Information: [2018/hou/index.html](2018/hou/index.html)
 
 When you run it on a JSON file you will see something like:
@@ -3734,7 +3734,7 @@ fixing the syntax error in the generated `ioccc.json` file.
 </div>
 
 ### STATUS: known bug - please help us fix
-### Source code: [2018/mills/prog.c](2018/mills/prog.c)
+### Source code: [2018/mills/prog.c](%%REPO_URL%%/2018/mills/prog.c)
 ### Information: [2018/mills/index.html](2018/mills/index.html)
 
 After exiting the program (with ctrl-e) if you try running it again you will
@@ -3773,7 +3773,7 @@ in the case of compiled code it won't be executable).
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2018/vokes/vokes.c](2018/vokes/vokes.c)
+### Source code: [2018/vokes/vokes.c](%%REPO_URL%%/2018/vokes/vokes.c)
 ### Information: [2018/vokes/index.html](2018/vokes/index.html)
 
 The author wrote the following:
@@ -3835,11 +3835,11 @@ The author wrote the following:
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2019/adamovsky/prog.c](2019/adamovsky/prog.c)
+### Source code: [2019/adamovsky/prog.c](%%REPO_URL%%/2019/adamovsky/prog.c)
 ### Information: [2019/adamovsky/index.html](2019/adamovsky/index.html)
 
 Certain input can crash this program. The file
-[crash.unl](2019/adamovsky/crash.unl) is an example file.
+[crash.unl](%%REPO_URL%%/2019/adamovsky/crash.unl) is an example file.
 
 
 <div id="2019_burton">
@@ -3847,7 +3847,7 @@ Certain input can crash this program. The file
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2019/burton/prog.c](2019/burton/prog.c)
+### Source code: [2019/burton/prog.c](%%REPO_URL%%/2019/burton/prog.c)
 ### Information: [2019/burton/index.html](2019/burton/index.html)
 
 The author pointed out that some implementations of `wc(1)` show different
@@ -3859,7 +3859,7 @@ values but his implementation matches that of macOS and FreeBSD.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2019/ciura/prog.c](2019/ciura/prog.c)
+### Source code: [2019/ciura/prog.c](%%REPO_URL%%/2019/ciura/prog.c)
 ### Information: [2019/ciura/index.html](2019/ciura/index.html)
 
 [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed the scripts so
@@ -3897,7 +3897,7 @@ in the de.sh/de.alt.sh scripts:
 </div>
 
 ### STATUS: uses gets() - change to fgets() if possible
-### Source code: [2019/dogon/prog.c](2019/dogon/prog.c)
+### Source code: [2019/dogon/prog.c](%%REPO_URL%%/2019/dogon/prog.c)
 ### Information: [2019/dogon/index.html](2019/dogon/index.html)
 
 The author does not it uses `gets()` and one will get warnings but it would be
@@ -3909,7 +3909,7 @@ ideal if this was not the case.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2019/duble/prog.c](2019/duble/prog.c)
+### Source code: [2019/duble/prog.c](%%REPO_URL%%/2019/duble/prog.c)
 ### Information: [2019/duble/index.html](2019/duble/index.html)
 
 There are two things to be aware of with this entry.
@@ -3957,7 +3957,7 @@ though one might want to check that the program is not currently running. :-)
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2019/endoh/prog.c](2019/endoh/prog.c)
+### Source code: [2019/endoh/prog.c](%%REPO_URL%%/2019/endoh/prog.c)
 ### Information: [2019/endoh/index.html](2019/endoh/index.html)
 
 As a backtrace quine this entry is **SUPPOSED to segfault** so this should not be
@@ -3969,7 +3969,7 @@ touched either.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2019/karns/prog.c](2019/karns/prog.c)
+### Source code: [2019/karns/prog.c](%%REPO_URL%%/2019/karns/prog.c)
 ### Information: [2019/karns/index.html](2019/karns/index.html)
 
 The author stated the following:
@@ -4006,7 +4006,7 @@ The author stated the following:
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2019/lynn/prog.c](2019/lynn/prog.c)
+### Source code: [2019/lynn/prog.c](%%REPO_URL%%/2019/lynn/prog.c)
 ### Information: [2019/lynn/index.html](2019/lynn/index.html)
 
 The author wrote that there are a number of differences from what one might
@@ -4020,7 +4020,7 @@ remarks in the sections [Syntax](2019/lynn/index.html#syntax) and
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2019/mills/prog.c](2019/mills/prog.c)
+### Source code: [2019/mills/prog.c](%%REPO_URL%%/2019/mills/prog.c)
 ### Information: [2019/mills/index.html](2019/mills/index.html)
 
 The author wrote that if you decide to change networks or use a different input
@@ -4047,7 +4047,7 @@ The author also wrote:
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2019/poikola/prog.c](2019/poikola/prog.c)
+### Source code: [2019/poikola/prog.c](%%REPO_URL%%/2019/poikola/prog.c)
 ### Information: [2019/poikola/index.html](2019/poikola/index.html)
 
 This program will not validate input so it might fail or get stuck if invoked
@@ -4056,11 +4056,11 @@ erroneously.
 Also, the maximum file size is 1GB.
 
 <div id="2019_yang">
-## [2019/yang](2019/yang/index.html)
+## [2019/yang](%%REPO_URL%%/2019/yang/index.html)
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2019/yang/prog.c](2019/yang/prog.c)
+### Source code: [2019/yang/prog.c](%%REPO_URL%%/2019/yang/prog.c)
 ### Information: [2019/yang/index.html](2019/yang/index.html)
 
 The author noted that if the program runs out of memory it is likely to crash.
@@ -4084,7 +4084,7 @@ ignored except line feeds (preserved) and tabs (expanded to 8 spaces).'
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2020/burton/prog.c](2020/burton/prog.c)
+### Source code: [2020/burton/prog.c](%%REPO_URL%%/2020/burton/prog.c)
 ### Information: [2020/burton/index.html](2020/burton/index.html)
 
 This entry is known to crash if no arg is specified. Although easy to fix it is
@@ -4100,7 +4100,7 @@ either. But can you figure out why this happens?
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2020/carlini/prog.c](2020/carlini/prog.c)
+### Source code: [2020/carlini/prog.c](%%REPO_URL%%/2020/carlini/prog.c)
 ### Information: [2020/carlini/index.html](2020/carlini/index.html)
 
 The author stated that bad things happen if the entered move is outside of the
@@ -4121,7 +4121,7 @@ If you have audible bells enabled the program will beep at every turn.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2020/ferguson1/prog.c](2020/ferguson1/prog.c)
+### Source code: [2020/ferguson1/prog.c](%%REPO_URL%%/2020/ferguson1/prog.c)
 ### Information: [2020/ferguson1/index.html](2020/ferguson1/index.html)
 
 There are some things that might appear to be bugs but are actually features or
@@ -4135,7 +4135,7 @@ things that are misinterpreted as bugs. See the
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2020/giles/prog.c](2020/giles/prog.c)
+### Source code: [2020/giles/prog.c](%%REPO_URL%%/2020/giles/prog.c)
 ### Information: [2020/giles/index.html](2020/giles/index.html)
 
 The author noted that the program only supports WAV files that have
@@ -4148,7 +4148,7 @@ audio channels.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2020/otterness/prog.c](2020/otterness/prog.c)
+### Source code: [2020/otterness/prog.c](%%REPO_URL%%/2020/otterness/prog.c)
 ### Information: [2020/otterness/index.html](2020/otterness/index.html)
 
 The author listed the following limitations:

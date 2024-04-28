@@ -75,6 +75,37 @@ For example:
 ```
 
 
+### [find-missing-links.sh](%%DOCROOT_SLASH%%bin/find-missing-links.sh)
+
+Find all markdown links to local files that do not exist.
+
+This tool does **NOT** check of a remote URL exists.
+This tool only checks on links to local files.
+
+This tool does **NOT** check links into a given place in a file.
+This tool only checks that local files linked by markdown exist.
+
+This tool does **NOT** check HTML file links.
+This tool only checks markdown based links.
+
+Usage:
+
+``` <!---sh-->
+    bin/find-missing-links.sh -v 1
+```
+
+If no missing links are found, this tool exits 0 with no output
+(debug messages not withstanding), otherwise this tool will exit non-zero.
+
+NOTE: If the markdown link is malformed, this tool
+might generate an error about a file that does exist.
+If this tool claims that a file is missing that does exist,
+look for a malformed markdown line and/or use of markdown
+that is **NOT** an IOCCC markdown best practice.
+
+See [IOCCC markdown best practices](markdown.html) for more info.
+
+
 ### [gen-authors.sh](%%DOCROOT_SLASH%%bin/gen-authors.sh)
 
 Generate the top level `/authors.html` page.

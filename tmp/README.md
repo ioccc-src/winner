@@ -348,6 +348,17 @@ Examples:
 ```
 
 
+## [md-chk-paths.sh](%%DOCROOT_SLASH%%tmp/md-chk-paths.sh)
+
+Print full directories of local (non-remote URL) markdown paths.
+
+Usage:
+
+``` <!---sh-->
+    tmp/md-chk-paths.sh
+```
+
+
 ## [md-links.sh](%%DOCROOT_SLASH%%tmp/md-links.sh)
 
 For all markdown files, print markdown links.

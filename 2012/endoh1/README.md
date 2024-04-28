@@ -292,7 +292,7 @@ casting) it to an integer-type variable.
 [pour-out.txt](%%REPO_URL%%/2012/endoh1/pour-out.txt) pours you a cup of tea.
 
 [tanada.txt](%%REPO_URL%%/2012/endoh1/tanada.txt) simulates "Terrace farming".  ("Tanada" means a
-"[terraced rice](https://en.wikipedia.org/wiki/Terrace_(earthworks) fields)" in Japanese.)
+"[terraced rice](https://en.wikipedia.org/wiki/Terrace_&#x28;earthworks&#x29; fields)" in Japanese.)
 
 [clock.txt](%%REPO_URL%%/2012/endoh1/clock.txt) is a "water" clock created by HAMANO Tsukasa.
 
