@@ -111,7 +111,7 @@ sizes on different platforms.  These tend to be required at the risk that
 sometimes the entry will not work for certain platforms, some of which might or
 might not be fixable; a good example where it was required to change and is okay
 is when [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed the
-segfault in macOS of [1989/paul](%%REPO_URL%%/1994/paul/paul.c): changing the `int *` to a
+segfault in macOS of [1989/paul](%%REPO_URL%%/1989/paul/paul.c): changing the `int *` to a
 `long *` was required and it works just as well with linux.
 
 But even if they are fixable (which will likely be hard to do) it's almost
@@ -407,7 +407,7 @@ before system specific winning entries were discouraged. This is an all time
 personal favourite of Landon Curt Noll. Run the alternate code to understand why
 this might be (along with how strange the source code is :-) ).
 
-An example where a crash is not a bug: [2019/endoh](%%REPO_URL%%/2019/endoh/endoh.c) is
+An example where a crash is not a bug: [2019/endoh](%%REPO_URL%%/2019/endoh/prog.c) is
 supposed to crash. There are others that are also supposed to crash or that are
 known to segfault but are considered features.
 
@@ -2155,7 +2155,7 @@ if nothing else it will not modify the target executable (this part of the fix
 at least should be correct).
 
 The file `2001/anonymous/anonymous.ten.32` is a pre-compiled
-[2001/anonymous.ten.c](%%REPO_URL%%/2001/anonymous.ten.c) as a 32-bit ELF binary in case you
+[2001/anonymous/anonymous.ten.c](%%REPO_URL%%/2001/anonymous/anonymous.ten.c) as a 32-bit ELF binary in case you
 can run ELF binaries but cannot compile 32-bit binaries.
 
 Other BSD Unices were not tested.
@@ -3687,7 +3687,7 @@ There was no IOCCC in 2017.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2018/algmyr/algmyr.c](%%REPO_URL%%/2018/algmyr/algmyr.c)
+### Source code: [2018/algmyr/prog.c](%%REPO_URL%%/2018/algmyr/prog.c)
 ### Information: [2018/algmyr/index.html](2018/algmyr/index.html)
 
 The author wrote:
@@ -3773,7 +3773,7 @@ in the case of compiled code it won't be executable).
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2018/vokes/vokes.c](%%REPO_URL%%/2018/vokes/vokes.c)
+### Source code: [2018/vokes/prog.c](%%REPO_URL%%/2018/vokes/prog.c)
 ### Information: [2018/vokes/index.html](2018/vokes/index.html)
 
 The author wrote the following:
