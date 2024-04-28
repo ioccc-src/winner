@@ -113,10 +113,10 @@ To submit your code to the IOCCC, you **MUST** follow these steps:
 
 1. Read the latest IOCCC rules and review the IOCCC guidelines
 
-    Please pay close attention to the [official IOCCC rules](rules.html).
+    Please pay close attention to the [official IOCCC rules](next/rules.html).
 
     You are also **highly encouraged** to review the
-    [official IOCCC guidelines](guidelines.html) as they contain important
+    [official IOCCC guidelines](next/guidelines.html) as they contain important
     suggestions, useful hints, and IOCCC humor.  :-)
 
 2. Register for the IOCCC
@@ -173,7 +173,7 @@ To submit your code to the IOCCC, you **MUST** follow these steps:
     the tools from the top of the _mkiocccentry repo_ directory just fine.
 
     If `mkiocccentry` tool indicates that there is a problem with your entry,
-    especially if it identifies a [rule 2](rules.html#2) related problem,
+    especially if it identifies a [rule 2](next/rules.html#2) related problem,
     you are **strongly** encouraged to revise and correct your entry and
     then re-run the `mkiocccentry` tool.
 
@@ -307,7 +307,7 @@ While it is possible to win a new IOCCC with one of these
 **frequently submitted** types of entries, level of the competition from
 previous IOCCC entries make it more challenging to be successful.
 
-It is also important to note that the [guidelines](guidelines.html) often
+It is also important to note that the [guidelines](next/guidelines.html) often
 state something along the lines of:
 
 ```
@@ -491,7 +491,7 @@ Thus began the tradition of putting typos in the contest rules and guidelines
 BTW: This posting was made back in the days when AT&amp;T was the evil giant.
 Now, Microsoft makes AT&amp;T look mild and kind in comparison. :-( (IMHO) ).
 
-BTW: See the story about the '[Bill Gates](1993/mills/index.html)' award. :-)
+BTW: See the story about the '[Bill Gates](1993/cmills/index.html)' award. :-)
 
 OK, back to the story.
 
@@ -532,8 +532,6 @@ and the tradition continues as the longest running contest on the Internet.
 P.S. Part of the inspiration for making the IOCCC a contest goes to the
 [Bulwer-Lytton fiction contest](http://www.bulwer-lytton.com/).
 
-P^2.S. See the [overall README](all/index.html) for more details.
-
 
 <div id="faq1_1">
 ### FAQ 1.1: Why are some years missing IOCCC entries?
@@ -572,7 +570,7 @@ web site.
 
 Furthermore, a bzip2 compressed tarball containing the released
 IOCCC entry source code may be found under the
-[archive/historic](archive/histroic) directory.  The file
+[archive/historic](archive/historic/index.html) directory.  The file
 [archive-all.tar.bz2](archive/historic/archive-all.tar.bz2) contains
 all years and the individual years are in the form
 `archive/historic/archive-YYYY.tar.bz2`.
@@ -3348,7 +3346,7 @@ The [.top](.top) file resides at the top directory.  This file contains the comp
 of IOCCC years.
 
 Under each IOCCC year. one will find a `.year` file.  These files contain directory paths from the top directory,
-of the IOCCC entry directories for a given year.  For example, see the [1984/.year](.1984/.year) file.
+of the IOCCC entry directories for a given year.  For example, see the [1984/.year](%%REPO_URL%%/1984/.year) file.
 
 Under each IOCCC entry directory, you will find a `.path` file.
 These files contain the directory path from the top directory.
