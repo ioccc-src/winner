@@ -115,17 +115,15 @@ There is a good deal of useful documentation that is provided with this entry:
 ```
 
 
-* [recode.html][] (or [recode.html](recode.html) if reading on GitHub)
+* [recode.html][]
     - Some useful information about [recode.c](%%REPO_URL%%/2020/ferguson2/recode.c)
 
 
-* [chocolate-cake.html][] (or [chocolate-cake.html](chocolate-cake.html) if reading on GitHub)
-    - Because most of us could use some *Double-layered Chocolate Fudge Cake*!
+* [encrypted.html][]
     - NOTE: see [recode.html][] (or [recode.html](recode.html) for details about how to decrypt this!
 
 
 [recode.html]: recode.html
-[chocolate-cake.html]: chocolate-cake.html
 
 
 ## Author's remarks:
@@ -285,14 +283,11 @@ After that you can input the string and it'll go from there.
 #### Example run
 </div>
 
-BTW: There's a much more entertaining (and delicious) challenge or exercise in
-[recode.html][] (if you're reading this on GitHub check the
-[recode.html](recode.html) file instead); this involves [chocolate-cake.html][] (if
-on GitHub, see [here](chocolate-cake.html), though one might need a different kind
-of exercise after taking up the challenge! :-) These however show the general
-program as well as how to use the two winning entries of the [Morse
+BTW: There's a much more entertaining way to explore this entry. See
+[recode.html][] for more details. There's a secret message that one might like
+to decipher. These however show the general program as well as how to use the
+two winning entries of the [Morse
 code](https://en.wikipedia.org/wiki/Morse_code) that I referred to earlier:
-
 
 ``` <!---sh-->
     $ ./prog -
@@ -443,8 +438,10 @@ I didn't think of everything. My entry was meant to be a simulator only as far
 as the ciphering goes but I thought this would make it much more interesting:
 make it more flexible by a wrapper program.
 
-For examples using it (and a delicious challenge) see [recode.html][] (or
-[recode.html](recode.html) if reading on GitHub). See also the [recode.1][] and
+For examples using it you might enjoy a fun message that I have encrypted using
+a key that you should be able to figure out (it's in a list). This might lead to
+something else fun as well but I will not say more than that. Anyway, see
+[recode.html](recode.html) for more details. See also the [recode.1][] and
 [enigma.1][] man pages.
 
 
@@ -497,8 +494,8 @@ by itself. However for the reflector I did `1A` but it only expects 1 char! So
 will that mean that the plugboard pairs are off? Yes it does seem to be so. This
 is buffering at play I believe but it's useful for allowing the `recode` program
 to easily configure the Enigma machine. In the [recode.html](recode.html) file
-(or [recode.html](recode.html) if reading on GitHub) file I give a hint as to how
-this could be fixed but the caveat is it would necessitate a need for rewriting
+file I give a hint as to how this could be fixed but the caveat is it would
+necessitate a need for rewriting
 [recode.c](%%REPO_URL%%/2020/ferguson2/recode.c).
 
 There's another thing to be aware of and that's the way the ranges are enforced.
@@ -511,13 +508,10 @@ same applies: in C 0-1 but in human it's 1-2 (technically these were reflectors 
 the Enigma machine which I display by name in [recode.c](%%REPO_URL%%/2020/ferguson2/recode.c) just like
 with the rotors).
 
-For more information see [recode.html][] (or [recode.html](recode.html) if viewing on
-GitHub).
+For more information see [recode.html][].
 
 BTW: If you need a reminder to go to the gym just do your Enigma ABCs and it
-should help you remember (though not at this time in our world it might help you
-later on?). This might become even more useful after the challenge is accepted,
-accomplished and made use of! :)
+should help you remember:
 
 ``` <!---sh-->
     $ echo ABC | ./prog
@@ -584,14 +578,7 @@ To encipher:
 The file [obfuscation.key][] is the key to decipher/encipher
 [obfuscation.txt][].
 
-For the lazy [obfuscation.html](obfuscation.html) has the deciphered version. I am afraid I'm not
-so inclined to do that for the cake recipe: the idea there is to make it a fun
-exercise that when solved unlocks a wonderful double-layered chocolate fudge
-cake recipe. But given that my ['Don't tread on me'](../ferguson1/index.html) award entry
-also has the [recipe](../ferguson1/chocolate-cake.html)
-([ferguson1/chocolate-cake.html](../ferguson1/chocolate-cake.html) if reading on
-GitHub), not enciphered, one might just go there instead. Still it's a fun way
-to explore this entry.
+For the lazy [obfuscation.html](obfuscation.html) has the deciphered version.
 
 As for the [obfuscation.key][] file if you observe the contents you'll find the
 word `OBFUSCATION`:
@@ -616,7 +603,7 @@ choose from a set of rotors and there were no duplicates. This shouldn't be a
 problem here however except that it wouldn't be a possible configuration of the
 real Enigma machine. The `recode` program *however does validate this* (except
 when reading in settings via the `-R` option which I explain in the
-[recode.html][] file ([recode.html](recode.html) on GitHub).
+[recode.html][] file.
 
 *   The way the [plugboard](https://www.cryptomuseum.com/crypto/enigma/i/sb.htm)
 \- for the machines that had them - is, if you connect A to B then no other
@@ -861,7 +848,6 @@ that.
 [enigma.1]: enigma.1
 [recode.1]: recode.1
 [recode.html]: recode.html
-[chocolate-cake.html]: chocolate-cake.html
 [recode.c]: recode.c
 [obfuscation.html]: obfuscation.html
 [obfuscation.txt]: obfuscation.txt
@@ -942,7 +928,6 @@ as well as the award titles. And yes indeed 'most of us could use
 If you wish to contact me please do so. Please contact via mastodon. You can try
 email but I'm more likely to respond to mastodon messages.
 
-[Double-layered Chocolate Fudge Cake]: chocolate-cake.html
 [Heer (army)]: https://en.wikipedia.org/wiki/German_Army_(1935%E2%80%931945)
 [Heer]: https://en.wikipedia.org/wiki/German_Army_(1935%E2%80%931945)
 [Luftwaffe]: https://en.wikipedia.org/wiki/Luftwaffe

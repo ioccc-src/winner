@@ -464,13 +464,12 @@ out! Can you figure out why this works this way?</p>
 </ul>
 <pre><code>    man ./enigma.1</code></pre>
 <ul>
-<li><a href="recode.html">recode.html</a> (or <a href="recode.html">recode.html</a> if reading on GitHub)
+<li><a href="recode.html">recode.html</a>
 <ul>
 <li>Some useful information about <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson2/recode.c">recode.c</a></li>
 </ul></li>
-<li><a href="chocolate-cake.html">chocolate-cake.html</a> (or <a href="chocolate-cake.html">chocolate-cake.html</a> if reading on GitHub)
+<li>[encrypted.html][]
 <ul>
-<li>Because most of us could use some <em>Double-layered Chocolate Fudge Cake</em>!</li>
 <li>NOTE: see <a href="recode.html">recode.html</a> (or <a href="recode.html">recode.html</a> for details about how to decrypt this!</li>
 </ul></li>
 </ul>
@@ -597,12 +596,10 @@ pairs</a>.</p>
 <div id="example">
 <h4 id="example-run">Example run</h4>
 </div>
-<p>BTW: There’s a much more entertaining (and delicious) challenge or exercise in
-<a href="recode.html">recode.html</a> (if you’re reading this on GitHub check the
-<a href="recode.html">recode.html</a> file instead); this involves <a href="chocolate-cake.html">chocolate-cake.html</a> (if
-on GitHub, see <a href="chocolate-cake.html">here</a>, though one might need a different kind
-of exercise after taking up the challenge! :-) These however show the general
-program as well as how to use the two winning entries of the <a href="https://en.wikipedia.org/wiki/Morse_code">Morse
+<p>BTW: There’s a much more entertaining way to explore this entry. See
+<a href="recode.html">recode.html</a> for more details. There’s a secret message that one might like
+to decipher. These however show the general program as well as how to use the
+two winning entries of the <a href="https://en.wikipedia.org/wiki/Morse_code">Morse
 code</a> that I referred to earlier:</p>
 <pre><code>    $ ./prog -
     Ring 1: 3
@@ -701,8 +698,10 @@ having to type it out again every time).</p>
 I didn’t think of everything. My entry was meant to be a simulator only as far
 as the ciphering goes but I thought this would make it much more interesting:
 make it more flexible by a wrapper program.</p>
-<p>For examples using it (and a delicious challenge) see <a href="recode.html">recode.html</a> (or
-<a href="recode.html">recode.html</a> if reading on GitHub). See also the <a href="recode.1">recode.1</a> and
+<p>For examples using it you might enjoy a fun message that I have encrypted using
+a key that you should be able to figure out (it’s in a list). This might lead to
+something else fun as well but I will not say more than that. Anyway, see
+<a href="recode.html">recode.html</a> for more details. See also the <a href="recode.1">recode.1</a> and
 <a href="enigma.1">enigma.1</a> man pages.</p>
 <div id="parsersubtlety">
 <h3 id="a-parser-subtlety-that-could-cause-confusion">A parser subtlety that could cause confusion</h3>
@@ -746,8 +745,8 @@ by itself. However for the reflector I did <code>1A</code> but it only expects 1
 will that mean that the plugboard pairs are off? Yes it does seem to be so. This
 is buffering at play I believe but it’s useful for allowing the <code>recode</code> program
 to easily configure the Enigma machine. In the <a href="recode.html">recode.html</a> file
-(or <a href="recode.html">recode.html</a> if reading on GitHub) file I give a hint as to how
-this could be fixed but the caveat is it would necessitate a need for rewriting
+file I give a hint as to how this could be fixed but the caveat is it would
+necessitate a need for rewriting
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson2/recode.c">recode.c</a>.</p>
 <p>There’s another thing to be aware of and that’s the way the ranges are enforced.
 There are five rotors which obviously are in C 0-4 but in ‘natural language’
@@ -757,12 +756,9 @@ There are five rotors which obviously are in C 0-4 but in ‘natural language’
 same applies: in C 0-1 but in human it’s 1-2 (technically these were reflectors B and C in
 the Enigma machine which I display by name in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson2/recode.c">recode.c</a> just like
 with the rotors).</p>
-<p>For more information see <a href="recode.html">recode.html</a> (or <a href="recode.html">recode.html</a> if viewing on
-GitHub).</p>
+<p>For more information see <a href="recode.html">recode.html</a>.</p>
 <p>BTW: If you need a reminder to go to the gym just do your Enigma ABCs and it
-should help you remember (though not at this time in our world it might help you
-later on?). This might become even more useful after the challenge is accepted,
-accomplished and made use of! :)</p>
+should help you remember:</p>
 <pre><code>    $ echo ABC | ./prog
     GYM
     $ echo ABC | ./prog | ./prog
@@ -801,14 +797,7 @@ has some of the ways I think this entry is obfuscated. To decipher try:</p>
 <pre><code>    ./recode -Robfuscation.key -fobfuscation.md | ./prog - 2&gt;/dev/null &gt; obfuscation.txt</code></pre>
 <p>The file <a href="obfuscation.key">obfuscation.key</a> is the key to decipher/encipher
 <a href="obfuscation.txt">obfuscation.txt</a>.</p>
-<p>For the lazy <a href="obfuscation.html">obfuscation.html</a> has the deciphered version. I am afraid I’m not
-so inclined to do that for the cake recipe: the idea there is to make it a fun
-exercise that when solved unlocks a wonderful double-layered chocolate fudge
-cake recipe. But given that my <a href="../ferguson1/index.html">‘Don’t tread on me’</a> award entry
-also has the <a href="../ferguson1/chocolate-cake.html">recipe</a>
-(<a href="../ferguson1/chocolate-cake.html">ferguson1/chocolate-cake.html</a> if reading on
-GitHub), not enciphered, one might just go there instead. Still it’s a fun way
-to explore this entry.</p>
+<p>For the lazy <a href="obfuscation.html">obfuscation.html</a> has the deciphered version.</p>
 <p>As for the <a href="obfuscation.key">obfuscation.key</a> file if you observe the contents you’ll find the
 word <code>OBFUSCATION</code>:</p>
 <pre><code>    2OB5FU1SC2ATIONCDEFGHJKLMPQRYZ
@@ -826,7 +815,7 @@ choose from a set of rotors and there were no duplicates. This shouldn’t be a
 problem here however except that it wouldn’t be a possible configuration of the
 real Enigma machine. The <code>recode</code> program <em>however does validate this</em> (except
 when reading in settings via the <code>-R</code> option which I explain in the
-<a href="recode.html">recode.html</a> file (<a href="recode.html">recode.html</a> on GitHub).</p></li>
+<a href="recode.html">recode.html</a> file.</p></li>
 <li><p>The way the <a href="https://www.cryptomuseum.com/crypto/enigma/i/sb.htm">plugboard</a>
 - for the machines that had them - is, if you connect A to B then no other
 letters can connect to A or B. Earlier there wasn’t proper detection and this
@@ -1067,7 +1056,7 @@ have huge admiration for!</p>
 continuing to hold the contest after all these years - and for having selected
 my entries. It’s a huge honour; thank you! I also happen to love your comments
 as well as the award titles. And yes indeed ‘most of us could use
-<em><a href="chocolate-cake.html">Double-layered Chocolate Fudge Cake</a></em>!’</p>
+<em>[Double-layered Chocolate Fudge Cake][]</em>!’</p>
 <p>If you wish to contact me please do so. Please contact via mastodon. You can try
 email but I’m more likely to respond to mastodon messages.</p>
 <!--

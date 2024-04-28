@@ -60,7 +60,7 @@ and non-zero).
     size to grow every time you eat a bug. Default 5; negative
     values are allowed. 'Negativity' creates for fun gameplay modes with
     enough creativity. See [gameplay.html](gameplay.html)
-    GitHub) as well as [play.sh](%%REPO_URL%%/2020/ferguson1/play.sh) for some examples.
+    as well as [play.sh](%%REPO_URL%%/2020/ferguson1/play.sh) for some examples.
 
 * **SHED**<br>
     every **SHED** movements you will grow (> 0), shrink (< 0) or
@@ -578,11 +578,6 @@ the years and who I owe a great deal to. Thank you for believing in me and my
 programming abilities (and other abilities) even when I couldn't believe in
 myself! Very much appreciated especially coming from an amazing programmer who I
 have huge admiration for!
-
-I want to thank Ilya Kurdyukov for his helpful comments, suggestions and
-reporting the (undocumented) 'problem' about half-width/full-width char spacing.
-He's been playing with some versions of his own and will have them on GitHub
-after the 2020 IOCCC winning entries have been published.
 
 Finally I want to thank Leo Broukhis, Simon Cooper and Landon Curt Noll for
 continuing to hold the contest after all these years - and for having selected
