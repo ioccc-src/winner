@@ -329,7 +329,7 @@ fi
 #
 #	-e 's/\[[^]]*\]([^(])/\1/' \
 #
-#	# remove any trialing "[followed by text without a closing bracket"
+#	# remove any trailing "[followed by text without a closing bracket"
 #
 #	-e 's/\[[^]]*$//' \
 #
