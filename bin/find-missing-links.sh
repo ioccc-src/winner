@@ -103,7 +103,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1 2024-04-28"
+export VERSION="1.1.1 2024-04-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -296,7 +296,7 @@ fi
 
 # create a temporary missing link error message file
 #
-export TMP_MISSING_LINK=".$NAME.$$.missing_link.md"
+export TMP_MISSING_LINK=".tmp.$NAME.$$"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary missing link error message file: $TMP_MISSING_LINK" 1>&2
 fi
