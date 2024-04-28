@@ -103,7 +103,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0 2024-04-28"
+export VERSION="1.1 2024-04-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -517,7 +517,7 @@ export MISSING_LINK_COUNT
 # report on any missing links
 #
 if [[ -s $TMP_MISSING_LINK ]]; then
-    cat "$TMP_MISSING_LINK" 1>&2
+    sed -e "s;^$TOPDIR/;;" "$TMP_MISSING_LINK" 1>&2
 fi
 
 # All Done!!! -- Jessica Noll, Age 2
