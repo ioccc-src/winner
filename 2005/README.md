@@ -57,7 +57,7 @@ with the [vi editor](https://en.wikipedia.org/wiki/Vi).
 + The [Most ambiguous language - 2005/chia](chia/index.html) entry is really a C program.
 
 + The [Most superfluous output - 2005/boutines](boutines/index.html) entry is simply
-[Voronoi](Voronoi)-lific!
+[Voronoi](https://en.wikipedia.org/wiki/Voronoi_diagram)-lific!
 
 + Try not to have your sense of good coding offended by the [Most
 discourteous interpreter - 2005/timwi](timwi/index.html) entry.
