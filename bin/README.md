@@ -103,7 +103,7 @@ If this tool claims that a file is missing that does exist,
 look for a malformed markdown line and/or use of markdown
 that is **NOT** an IOCCC markdown best practice.
 
-See [IOCCC markdown best practices](markdown.html) for more info.
+See [IOCCC markdown best practices](../markdown.html) for more info.
 
 
 ### [gen-authors.sh](%%DOCROOT_SLASH%%bin/gen-authors.sh)
@@ -757,7 +757,7 @@ on the [experimental web site](https://ioccc-src.github.io/temp-test-ioccc/).
 
 Instead of editing the default HTML files in order to fix a special web page,
 consider making a copy of the default file and modifying the [md2html config
-file](md2html.cfg) to refer to the copy instead.  That way your special case
+file](%%DOCROOT_SLASH%%inc/md2html.cfg) to refer to the copy instead.  That way your special case
 situation will not impact **MOST** of the HTML content.
 
 
