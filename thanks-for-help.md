@@ -291,13 +291,13 @@ were actually not what they appear: the only arg that existed in `main()` was
 
 - The macros `C` and `V` were changed to lower case. This is because it felt
 like the `C=" ..`' part in `subr()` would be better to be upper case as it talks
-about the language. Also in the second [alternate
-version](%%REPO_URL%%/1985/sicherman/sicherman.alt2.c) (the first being the
+about the language. Also in the [alternate
+version](%%REPO_URL%%/1985/sicherman/sicherman.c) (the first being the
 original code) which is in case a new version of clang ever objects to only one
 arg in `main()` (which is not out of the realm of possibility), `main()` can
 have `C` as `argc` to `main()` so it would read like it once did: `C manual`
-albeit with a `,` separating the two. The [second
-alternate](%%REPO_URL%%/1985/sicherman/sicherman.alt2.c) version is compiled
+albeit with a `,` separating the two. The [alternate
+version](%%REPO_URL%%/1985/sicherman/sicherman.c) is compiled
 in case the first does not. Originally the macros were kept the same and the
 `C` in `subr()` was `c`. It feels better (in some ways) to make it so that the
 `C` for the language is upper case though, and since it actually translated to
@@ -2231,13 +2231,8 @@ shouldn't be.
 Cody also added the scripts [try.sh](%%REPO_URL%%/1994/horton/try.sh) and
 [try.alt.sh](%%REPO_URL%%/1994/horton/try.alt.sh).
 
-Finally he added the article (written by the entry's author) cited in the
-remarks: the full [USENIX Association Newsletter ;login: September / October
-1992 Vol. 17, No. 5](%%REPO_URL%%/1994/horton/login_sept92.pdf) and the pages cited as a
-shorter PDF file,
-[login_sept92-pp28-31.pdf](%%REPO_URL%%/1994/horton/login_sept92-pp28-31.pdf). The full
-newsletter was found on the Internet Wayback Machine and the article was
-extracted as a PDF in the macOS `Preview.app` (`File -> Print` feature).
+Finally he added the article (written by the entry's author) cited in
+[login_sept92-pp28-31.pdf](%%REPO_URL%%/1994/horton/login_sept92-pp28-31.pdf).
 
 
 <div id="1994_imc">
@@ -2335,7 +2330,7 @@ check the [bugs.html](bugs.html) file.
 
 [Cody](#cody) added the try scripts, four total, colour and black and white
 pairs for the original entry and the alt code. These scripts are
-[try.color.sh](%%REPO_URL%%/1994/tvr/try.color.sh), [try.bw.sh](%%REPO_URL%%/21994/tvr/try.bw.sh),
+[try.color.sh](%%REPO_URL%%/1994/tvr/try.color.sh), [try.bw.sh](%%REPO_URL%%/1994/tvr/try.bw.sh),
 [try.alt.color.sh](%%REPO_URL%%/1994/tvr/try.alt.color.sh) and
 [try.alt.bw.sh](%%REPO_URL%%/1994/tvr/try.alt.bw.sh), respectively. The scripts go through
 each mode allowed with two sizes, 128 and 256, allowing one to quit or skip each
@@ -3260,7 +3255,8 @@ or to not use `git`:
     make diff_orig_prog
 ```
 
-Cody also added a [program](anonymous.bed.c) like [anonymous.ten.c](anonymous.ten.c)
+Cody also added a [program](%%REPO_URL%%/2001/anonymous/anonymous.bed.c)
+like [anonymous.ten.c](%%REPO_URL%%/2001/anonymous/anonymous.ten.c)
 [Ten Green Bottles](https://en.wikipedia.org/wiki/Ten_Green_Bottles) but which
 sings [Ten in the Bed](https://allnurseryrhymes.com/ten-in-the-bed/) instead.
 
@@ -3674,7 +3670,7 @@ as some versions complain about the number of args and although they accept 1 it
 is entirely possible it will eventually be that they don't.
 
 Cody also added the [try.sh](%%REPO_URL%%/2004/kopczynski/try.sh) script and various data
-files: [kopczynski-a](kopczynski-a) to demonstrate what happens when art more
+files: [kopczynski-a](%%REPO_URL%%/2004/kopczynski/kopczynski-a) to demonstrate what happens when art more
 like a letter is fed to the program and the `kopczynski*-rev` files which are
 the data files reversed with `rev(1)`. One had to be modified additionally to
 get it to work, that being `kopczynski-10-rev`.
@@ -3709,7 +3705,7 @@ chose the word `IOCCC` instead of `AAA`).
 
 He also changed the time factor in the data files as the animations went too
 fast in modern systems, especially the scrolling text of
-[schnitzi.inp1](schnitzi.inp1).
+[schnitzi.inp1](%%REPO_URL%%/2004/schnitzi/schnitzi.inp1).
 
 Cody also added the [try.sh](%%REPO_URL%%/2004/schnitzi/try.sh) script.
 
@@ -3973,7 +3969,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2005/mikeash/try.sh) script.
 ### Source code: [mynx.c](%%REPO_URL%%/2005/mynx//mynx.c)
 </div>
 
-[Cody](#cody) fixed this so that the [configure](source/configure) script (which is not
+[Cody](#cody) fixed this so that the [configure](%%REPO_URL%%/2005/mynx/source/configure) script (which is not
 needed but part of the entry) would work with compilers that have by default
 `-Werror` like clang in macOS.
 
@@ -4581,7 +4577,7 @@ difference is.
 
 Cody also added six scripts: [en.sh](%%REPO_URL%%/2012/kang/en.sh),
 [de.sh](%%REPO_URL%%/2012/kang/de.sh), [en.alt.sh](%%REPO_URL%%/2012/kang/en.alt.sh) and
-[de.alt.sh](%%REPO_URL%%/2012/de.alt.sh) which count from 0 through 13 in English and German
+[de.alt.sh](%%REPO_URL%%/2012/kang/de.alt.sh) which count from 0 through 13 in English and German
 using the original entry and the alt version respectively.
 
 In the German scripts it uses the umlaut and also does it without the umlaut
@@ -5770,8 +5766,8 @@ first.
 
 Cody also reported (during the preview period of 2020) for some systems (at some
 point?) like macOS the use of `make clock` would not work due possibly to a
-timing issue so [Yusuke](#yusuke) changed it to compile the
-[clock.c](%%REPO_URL%%/2020/endoh3/clock.c) file directly (this might have been fixed in the
+timing issue so [Yusuke](#yusuke) changed it to compile `clock.c`
+file directly (this might have been fixed in the
 Makefile later on but it doesn't hurt to keep it in and this way it isn't a
 problem in any system). How Cody remembers this minor detail more than three
 years ago is something that many people might wonder but he also once told us
@@ -5827,10 +5823,6 @@ something the author (Cody :-) ) submitted in the first place.
 
 He also fixed some issues that occurred when files were renamed to `.html` from
 `.markdown`.
-
-Most importantly he also added some corrections to the vital [Double
-layered chocolate fudge cake recipe](2020/ferguson2/chocolate-cake.html),
-enciphered though it is :-)
 
 Yes the irony here is as rich as the chocolate cake: the question is do you know
 how rich it is? If not and you like chocolate I (that is Cody :-) ) highly

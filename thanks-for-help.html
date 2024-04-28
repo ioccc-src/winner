@@ -597,13 +597,13 @@ were actually not what they appear: the only arg that existed in <code>main()</c
 <ul>
 <li><p>The macros <code>C</code> and <code>V</code> were changed to lower case. This is because it felt
 like the <code>C=" ..</code>’ part in <code>subr()</code> would be better to be upper case as it talks
-about the language. Also in the second <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/sicherman/sicherman.alt2.c">alternate
+about the language. Also in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/sicherman/sicherman.c">alternate
 version</a> (the first being the
 original code) which is in case a new version of clang ever objects to only one
 arg in <code>main()</code> (which is not out of the realm of possibility), <code>main()</code> can
 have <code>C</code> as <code>argc</code> to <code>main()</code> so it would read like it once did: <code>C manual</code>
-albeit with a <code>,</code> separating the two. The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/sicherman/sicherman.alt2.c">second
-alternate</a> version is compiled
+albeit with a <code>,</code> separating the two. The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/sicherman/sicherman.c">alternate
+version</a> is compiled
 in case the first does not. Originally the macros were kept the same and the
 <code>C</code> in <code>subr()</code> was <code>c</code>. It feels better (in some ways) to make it so that the
 <code>C</code> for the language is upper case though, and since it actually translated to
@@ -1943,13 +1943,8 @@ of the times where this was changed to bug to fix status, for better or worse.</
 shouldn’t be.</p>
 <p>Cody also added the scripts <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/horton/try.sh">try.sh</a> and
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/horton/try.alt.sh">try.alt.sh</a>.</p>
-<p>Finally he added the article (written by the entry’s author) cited in the
-remarks: the full <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/horton/login_sept92.pdf">USENIX Association Newsletter ;login: September / October
-1992 Vol. 17, No. 5</a> and the pages cited as a
-shorter PDF file,
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/horton/login_sept92-pp28-31.pdf">login_sept92-pp28-31.pdf</a>. The full
-newsletter was found on the Internet Wayback Machine and the article was
-extracted as a PDF in the macOS <code>Preview.app</code> (<code>File -&gt; Print</code> feature).</p>
+<p>Finally he added the article (written by the entry’s author) cited in
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/horton/login_sept92-pp28-31.pdf">login_sept92-pp28-31.pdf</a>.</p>
 <div id="1994_imc">
 <h2 id="imc-1"><a href="1994/imc/index.html">1994/imc</a></h2>
 <h3 id="source-code-imc.c-1">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/imc/imc.c">imc.c</a></h3>
@@ -2022,7 +2017,7 @@ check the <a href="bugs.html">bugs.html</a> file.</p>
 </div>
 <p><a href="#cody">Cody</a> added the try scripts, four total, colour and black and white
 pairs for the original entry and the alt code. These scripts are
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/tvr/try.color.sh">try.color.sh</a>, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/21994/tvr/try.bw.sh">try.bw.sh</a>,
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/tvr/try.color.sh">try.color.sh</a>, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/tvr/try.bw.sh">try.bw.sh</a>,
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/tvr/try.alt.color.sh">try.alt.color.sh</a> and
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/tvr/try.alt.bw.sh">try.alt.bw.sh</a>, respectively. The scripts go through
 each mode allowed with two sizes, 128 and 256, allowing one to quit or skip each
@@ -2675,7 +2670,8 @@ wish to see, try the following commands from the <code>2001/anonymous</code> dir
 <pre><code>    git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..4bc03de321612869aebf855850c6500df95cb6ef anonymous.c</code></pre>
 <p>or to not use <code>git</code>:</p>
 <pre><code>    make diff_orig_prog</code></pre>
-<p>Cody also added a <a href="anonymous.bed.c">program</a> like <a href="anonymous.ten.c">anonymous.ten.c</a>
+<p>Cody also added a <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.bed.c">program</a>
+like <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.ten.c">anonymous.ten.c</a>
 <a href="https://en.wikipedia.org/wiki/Ten_Green_Bottles">Ten Green Bottles</a> but which
 sings <a href="https://allnurseryrhymes.com/ten-in-the-bed/">Ten in the Bed</a> instead.</p>
 <p>As well he added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/try.sh">try.sh</a> so that one can
@@ -2972,7 +2968,7 @@ it will not work.</p>
 as some versions complain about the number of args and although they accept 1 it
 is entirely possible it will eventually be that they don’t.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/kopczynski/try.sh">try.sh</a> script and various data
-files: <a href="kopczynski-a">kopczynski-a</a> to demonstrate what happens when art more
+files: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/kopczynski/kopczynski-a">kopczynski-a</a> to demonstrate what happens when art more
 like a letter is fed to the program and the <code>kopczynski*-rev</code> files which are
 the data files reversed with <code>rev(1)</code>. One had to be modified additionally to
 get it to work, that being <code>kopczynski-10-rev</code>.</p>
@@ -2996,7 +2992,7 @@ chose the word <code>IOCCC</code> instead of <code>AAA</code>).</p>
 <p><a href="#cody">Cody</a> made this use <code>fgets(3)</code>.</p>
 <p>He also changed the time factor in the data files as the animations went too
 fast in modern systems, especially the scrolling text of
-<a href="schnitzi.inp1">schnitzi.inp1</a>.</p>
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/schnitzi/schnitzi.inp1">schnitzi.inp1</a>.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/schnitzi/try.sh">try.sh</a> script.</p>
 <div id="2004_sds">
 <h2 id="sds"><a href="2004/sds/index.html">2004/sds</a></h2>
@@ -3184,7 +3180,7 @@ also show correct output though.</p>
 <h2 id="mynx"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/index.html">2005/mynx</a></h2>
 <h3 id="source-code-mynx.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx//mynx.c">mynx.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> fixed this so that the <a href="source/configure">configure</a> script (which is not
+<p><a href="#cody">Cody</a> fixed this so that the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/source/configure">configure</a> script (which is not
 needed but part of the entry) would work with compilers that have by default
 <code>-Werror</code> like clang in macOS.</p>
 <p>Cody also added the alt code which does scan for https. Futile, maybe, based on
@@ -3611,7 +3607,7 @@ and also enjoy or appreciate the entry even more, given how simple the
 difference is.</p>
 <p>Cody also added six scripts: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/en.sh">en.sh</a>,
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/de.sh">de.sh</a>, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/en.alt.sh">en.alt.sh</a> and
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/de.alt.sh">de.alt.sh</a> which count from 0 through 13 in English and German
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/de.alt.sh">de.alt.sh</a> which count from 0 through 13 in English and German
 using the original entry and the alt version respectively.</p>
 <p>In the German scripts it uses the umlaut and also does it without the umlaut
 (add an ‘e’). Notice how the program picks up on this! All scripts can use
@@ -4446,8 +4442,8 @@ invalid <code>clock.c</code> which meant it could not compile so it now runs <co
 first.</p>
 <p>Cody also reported (during the preview period of 2020) for some systems (at some
 point?) like macOS the use of <code>make clock</code> would not work due possibly to a
-timing issue so <a href="#yusuke">Yusuke</a> changed it to compile the
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/endoh3/clock.c">clock.c</a> file directly (this might have been fixed in the
+timing issue so <a href="#yusuke">Yusuke</a> changed it to compile <code>clock.c</code>
+file directly (this might have been fixed in the
 Makefile later on but it doesn’t hurt to keep it in and this way it isn’t a
 problem in any system). How Cody remembers this minor detail more than three
 years ago is something that many people might wonder but he also once told us
@@ -4489,9 +4485,6 @@ added in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/
 something the author (Cody :-) ) submitted in the first place.</p>
 <p>He also fixed some issues that occurred when files were renamed to <code>.html</code> from
 <code>.markdown</code>.</p>
-<p>Most importantly he also added some corrections to the vital <a href="2020/ferguson2/chocolate-cake.html">Double
-layered chocolate fudge cake recipe</a>,
-enciphered though it is :-)</p>
 <p>Yes the irony here is as rich as the chocolate cake: the question is do you know
 how rich it is? If not and you like chocolate I (that is Cody :-) ) highly
 recommend you give it a go! :-) You’re welcome to ask me questions if you wish
