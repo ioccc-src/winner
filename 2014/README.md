@@ -102,7 +102,7 @@ For the latest information on how to contact the IOCCC Judges please visit
 
 For news of the next contest watch:
 
-* [news.html](../news/html)
+* [news.html](../news.html)
 
 
 <!--
