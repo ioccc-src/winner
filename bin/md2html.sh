@@ -141,7 +141,7 @@ shopt -s lastpipe	# run last command of a pipeline not executed in the backgroun
 
 # set variables referenced in the usage message
 #
-export VERSION="1.5 2024-04-20"
+export VERSION="1.5.1 2024-04-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -1589,7 +1589,7 @@ fi
 
 # create a temporary sed script
 #
-export TMP_SED_SCRIPT=".$NAME.$$.sed"
+export TMP_SED_SCRIPT=".tmp.$NAME.SED_SCRIPT.$$.tmp"
 if [[ $V_FLAG -ge 5 ]]; then
     echo  "$0: debug[5]: temporary sed script: $TMP_SED_SCRIPT" 1>&2
 fi
@@ -1632,7 +1632,7 @@ fi
 #
 # NOTE: This file, when we are finished building it, will be come the final index.html file.
 #
-export TMP_PHASE=".$NAME.$$.html-phase.html"
+export TMP_PHASE=".tmp.$NAME.PHASE.$$.tmp"
 if [[ $V_FLAG -ge 5 ]]; then
     echo  "$0: debug[5]: temporary HTML file: $TMP_PHASE" 1>&2
 fi
@@ -1659,7 +1659,7 @@ fi
 #
 # NOTE: This file, when we are finished building it, will be come the final index.html file.
 #
-export TMP_INDEX_HTML=".$NAME.$$.index.html"
+export TMP_INDEX_HTML=".tmp.$NAME.INDEX_HTML.$$.tmp"
 if [[ $V_FLAG -ge 5 ]]; then
     echo  "$0: debug[5]: temporary index HTML file: $TMP_INDEX_HTML" 1>&2
 fi
@@ -1687,7 +1687,7 @@ fi
 export ORIG_INPUT_MD="$MATCH_MD"
 if [[ -z $NOOP ]]; then
     if [[ $INPUT_MD == - ]]; then
-	export TMP_INPUT_MD=".$NAME.$$.stdin.md"
+	export TMP_INPUT_MD=".tmp.$NAME.INPUT_MD.$$.tmp"
 	if [[ $V_FLAG -ge 5 ]]; then
 	    echo  "$0: debug[5]: temporary stdin file: $TMP_INPUT_MD" 1>&2
 	fi
@@ -1731,7 +1731,7 @@ fi
 #
 if [[ -z $NOOP ]]; then
 
-    export TMP_STRIPPED_MD=".$NAME.$$.stripped.md"
+    export TMP_STRIPPED_MD=".tmp.$NAME.STRIPPED_MD.$$.tmp"
     if [[ $V_FLAG -ge 5 ]]; then
 	echo  "$0: debug[5]: temporary stripped markdown file: $TMP_STRIPPED_MD" 1>&2
     fi

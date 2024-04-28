@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.5 2024-04-22"
+export VERSION="1.5.1 2024-04-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -910,7 +910,7 @@ fi
 
 # create a temporary status.json file
 #
-export TMP_STATUS_JSON=".$NAME.$$.entry.md"
+export TMP_STATUS_JSON=".tmp.$NAME.STATUS_JSON.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary status.json file: $TMP_STATUS_JSON" 1>&2
 fi
@@ -932,7 +932,7 @@ fi
 
 # create a temporary rules.md file
 #
-export TMP_RULES_MD=".$NAME.$$.entry.md"
+export TMP_RULES_MD=".tmp.$NAME.RULES_MD.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary rules.md file: $TMP_RULES_MD" 1>&2
 fi
@@ -954,7 +954,7 @@ fi
 
 # create a temporary guidelines.md file
 #
-export TMP_GUIDELINES_MD=".$NAME.$$.entry.md"
+export TMP_GUIDELINES_MD=".tmp.$NAME.GUIDELINES_MD.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary guidelines.md file: $TMP_GUIDELINES_MD" 1>&2
 fi

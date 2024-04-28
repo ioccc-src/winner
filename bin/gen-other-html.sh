@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.2 2024-04-21"
+export VERSION="1.2.3 2024-04-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -384,7 +384,7 @@ fi
 # It is a pain to set the EXIT_CODE deep inside a loop, so we write the EXIT_CODE into a file
 # and read the file (setting EXIT_CODE again) after the loop.  A hack, but good enough for our needs.
 #
-export TMP_EXIT_CODE=".$NAME.$$.exit.code"
+export TMP_EXIT_CODE=".tmp.$NAME.EXIT_CODE.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary exit code: $TMP_EXIT_CODE" 1>&2
 fi

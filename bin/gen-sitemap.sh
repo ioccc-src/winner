@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.7 2024-04-14"
+export VERSION="1.3.8 2024-04-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -510,7 +510,7 @@ fi
 
 # create a temporary file manifest list
 #
-export TMP_MANIFEST_LIST=".$NAME.$$.manifest.list"
+export TMP_MANIFEST_LIST=".tmp.$NAME.MANIFEST_LIST.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary file manifest list: $TMP_MANIFEST_LIST" 1>&2
 fi
@@ -531,7 +531,7 @@ fi
 # It is a pain to set the EXIT_CODE deep inside a loop, so we write the EXIT_CODE into a file
 # and read the file (setting EXIT_CODE again) after the loop.  A hack, but good enough for our needs.
 #
-export TMP_EXIT_CODE=".$NAME.$$.exit.code"
+export TMP_EXIT_CODE=".tmp.$NAME.EXIT_CODE.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary exit code: $TMP_EXIT_CODE" 1>&2
 fi
@@ -549,7 +549,7 @@ fi
 
 # create a temporary sitemap
 #
-export TMP_SITEMAP=".$NAME.$$.sitemap"
+export TMP_SITEMAP=".tmp.$NAME.SITEMAP.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary tarball: $TMP_SITEMAP" 1>&2
 fi

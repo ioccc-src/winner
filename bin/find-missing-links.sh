@@ -296,7 +296,7 @@ fi
 
 # create a temporary missing link error message file
 #
-export TMP_MISSING_LINK=".tmp.$NAME.$$"
+export TMP_MISSING_LINK=".tmp.$NAME.MISSING_LINK.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary missing link error message file: $TMP_MISSING_LINK" 1>&2
 fi

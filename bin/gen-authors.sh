@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.9 2024-04-21"
+export VERSION="1.9.1 2024-04-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -702,7 +702,7 @@ fi
 
 # create a temporary entry markdown file
 #
-export TMP_AUTHORS_MD=".$NAME.$$.entry.md"
+export TMP_AUTHORS_MD=".tmp.$NAME.AUTHORS_MD.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary entry markdown file: $TMP_AUTHORS_MD" 1>&2
 fi
@@ -724,7 +724,7 @@ fi
 
 # create a temporary sort word list file
 #
-export TMP_SORT_WORD=".$NAME.$$.sort.word"
+export TMP_SORT_WORD=".tmp.$NAME.SORT_WORD.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary sort word list file: $TMP_SORT_WORD" 1>&2
 fi

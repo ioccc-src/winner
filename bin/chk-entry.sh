@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.6 2024-04-13"
+export VERSION="1.1.7 2024-04-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -386,7 +386,7 @@ fi
 
 # create a temporary file manifest list
 #
-export TMP_MANIFEST_LIST=".$NAME.$$.manifest.list"
+export TMP_MANIFEST_LIST=".tmp.$NAME.MANIFEST_LIST.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary file manifest list: $TMP_MANIFEST_LIST" 1>&2
 fi
@@ -408,7 +408,7 @@ fi
 
 # create a temporary find files list
 #
-export TMP_FILE_LIST=".$NAME.$$.find.list"
+export TMP_FILE_LIST=".tmp.$NAME.FILE_LIST.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary file manifest list: $TMP_FILE_LIST" 1>&2
 fi

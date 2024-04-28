@@ -29,6 +29,7 @@
 /archive/historic/2018
 /archive/historic/2019
 /archive/historic/2020
+.tmp.*
 .su[a-z]
 .*.sv[a-z]
 .*.sw[a-z]

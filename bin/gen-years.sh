@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3 2024-04-21"
+export VERSION="1.3.1 2024-04-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -548,7 +548,7 @@ fi
 
 # create a temporary years markdown file
 #
-export TMP_YEARS_MD=".$NAME.$$.years.md"
+export TMP_YEARS_MD=".tmp.$NAME.YEARS_MD.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary years markdown file: $TMP_YEARS_MD" 1>&2
 fi

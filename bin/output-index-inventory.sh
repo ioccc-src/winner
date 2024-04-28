@@ -101,7 +101,7 @@ shopt -s globstar	# enable '**' to match all files and zero or more directories 
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4 2024-04-21"
+export VERSION="1.4.1 2024-04-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -465,7 +465,7 @@ fi
 
 # create a temporary markdown for pandoc to process
 #
-export TMP_FILE=".$NAME.$$.md"
+export TMP_FILE=".tmp.$NAME.FILE.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary markdown file: $TMP_FILE" 1>&2
 fi
@@ -487,7 +487,7 @@ fi
 
 # create a temporary manifest file
 #
-export TMP_MANIFEST=".$NAME.$$.manifest"
+export TMP_MANIFEST=".tmp.$NAME.MANIFEST.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary manifest file: $TMP_MANIFEST" 1>&2
 fi
