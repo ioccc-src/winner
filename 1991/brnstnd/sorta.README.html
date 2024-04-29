@@ -378,15 +378,15 @@
 
 <!-- BEFORE: 1st line of markdown file: 1991/brnstnd/sorta.README.md -->
 <p>The <code>sorta</code> scripts described below can sorta be found in this directory.</p>
-<h1 id="sorta.i22"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.i2+2">sorta.i2+2</a></h1>
+<h2 id="sorta.i22"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.i2+2">sorta.i2+2</a></h2>
 <pre><code>    2 2+#`            [ about as basic as you can get ]ld</code></pre>
 <p>This script takes 2, adds 2 to it, and prints the result (with a
 newline). I get 5 on the hand-held Sinclair under ZYNIX. Let me know if
 your machine produces a different result so that I can send you patches.</p>
-<h1 id="sorta.iarg0"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.iarg0">sorta.iarg0</a></h1>
+<h2 id="sorta.iarg0"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.iarg0">sorta.iarg0</a></h2>
 <pre><code>    0A`           [ take arg 0, print it ]</code></pre>
 <p>This is self-explanatory.</p>
-<h1 id="sorta.icalc"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.icalc">sorta.icalc</a></h1>
+<h2 id="sorta.icalc"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.icalc">sorta.icalc</a></h2>
 <pre><code>    [D2sD3s]:Dld        [ input m n, output m n m n ]ld
 
     [2*1=d]:cld         [ aux routine for :d recursion ]ld
@@ -428,43 +428,43 @@ its arguments. Can you see how? (Hint: Try <code>./sorta "2 2+" 3 &lt; sorta.ica
 Look at program A.) <code>icalc</code> also provides a useful binary output routine,
 and if you can’t remember offhand that <code>D2sD3s&amp;2sD&amp;1sD&amp;&amp;&amp;D&amp;</code> means XOR,
 you can just look it up here.</p>
-<h1 id="sorta.idup"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.idup">sorta.idup</a></h1>
+<h2 id="sorta.idup"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.idup">sorta.idup</a></h2>
 <pre><code>    [ld#1_+1=y]:x
     [uD1+=x]:y
     0&quot;&quot;1=y`</code></pre>
 <p>This script prints out the maximum file descriptor available from
 repeated <code>dup(2)</code>s—usually <code>NOFILE - 1</code>. Can you see how it works?</p>
-<h1 id="sorta.iecho"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.iecho">sorta.iecho</a></h1>
+<h2 id="sorta.iecho"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.iecho">sorta.iecho</a></h2>
 <pre><code>    [&quot; &quot;$ld]:sld                    [ print a space ]ld
     [1s1+DA$ld1s1_+D=sD=x]:xld      [ given n (argc-n), print args ]ld
     0a1_+D=x&quot;&quot;`                     [ simulation of /bin/echo ]ld</code></pre>
 <p>This is a clone of <code>/bin/echo</code>, minus any argument processing and escape
 interpretation. (Note that, unlike some shells’ echo, <code>/bin/echo</code> prints a
 newline even with no arguments.) Try <code>./sorta foo bar &lt; iecho</code>.</p>
-<h1 id="sorta.ifact1"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.ifact1">sorta.ifact1</a></h1>
+<h2 id="sorta.ifact1"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.ifact1">sorta.ifact1</a></h2>
 <pre><code>    1#`ld2*#`ld3*#`ld4*#`ld5*#`ld6*#`ld7*#`ld8*#`ld9*#`ld10*#`ld</code></pre>
 <p>This is a very straightforward factorial program: Take 1, print it,
 multiply by 2, print it, multiply by 3, print it, etc.</p>
-<h1 id="sorta.ifact2"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.ifact2">sorta.ifact2</a></h1>
+<h2 id="sorta.ifact2"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.ifact2">sorta.ifact2</a></h2>
 <pre><code>    [1+D2s*#`ld1s]:f
     1 0
     1=f 1=f 1=f 1=f 1=f 1=f 1=f 1=f 1=f 1=f</code></pre>
 <p><code>ifact1</code> does a lot of repeated work. <code>ifact2</code> takes advantage of this by
 keeping the current <code>n!</code> <code>n</code> on the stack. Each call to routine <code>f (1=f)</code>
 increments <code>n</code> by <code>1</code> and prints out the factorial.</p>
-<h1 id="sorta.ifact3"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.ifact3">sorta.ifact3</a></h1>
+<h2 id="sorta.ifact3"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.ifact3">sorta.ifact3</a></h2>
 <pre><code>    [1+D2s*#`ld1s]:f       [ given (n-1)! (n-1), print n!, put n! n ]
     [2s1=f2s1_+D0&gt;=x]:x    [ given n n! x, print (n+1)! through (n+x)! ]
     0 1 10 1=x</code></pre>
 <p>Finally, <code>ifact3</code> removes all the redundancy from <code>ifact2</code>, and exhibits
 proper documentation of stack routines. You can replace the <code>10</code> by
 anything in this version.</p>
-<h1 id="sorta.iio"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.iio">sorta.iio</a></h1>
+<h2 id="sorta.iio"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.iio">sorta.iio</a></h2>
 <pre><code>    [ a simple example of interpreting code on the fly ]ld
 
     [&quot;] &quot;2 2+&quot;:xT [&quot;]T &quot; produces &quot;T 1=x#T &quot; which should be 4.&quot;T`</code></pre>
 <p>Notice that <code>"2 2+"</code> is a literal string inside the program.</p>
-<h1 id="sorta.irot13"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.irot13">sorta.irot13</a></h1>
+<h2 id="sorta.irot13"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.irot13">sorta.irot13</a></h2>
 <pre><code>    &quot;[] [.tr] &quot;
     [&quot;]&quot;.[a-m][n-z][A-M][N-Z]&quot;[&quot; ]TTT [&quot;]&quot;.[n-z][a-m][N-Z][A-M]&quot;[&quot; ]TTT
     &quot;[tr] !q&quot;T:xld
@@ -481,7 +481,7 @@ spots. <code>1A 0 0 o</code> opens <code>argv[1]</code>; the <code>'</code> keep
 subroutine <code>h</code> to print a nice error message if necessary. <code>0Ou</code> closes
 stdout and replaces it with the new descriptor. Finally, subroutine <code>x</code>
 executes the <code>tr</code>.</p>
-<h1 id="sorta.isleep"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.isleep">sorta.isleep</a></h1>
+<h2 id="sorta.isleep"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.isleep">sorta.isleep</a></h2>
 <pre><code>    [&quot;&quot; &quot;+sleep&quot; &quot;+5&quot; &quot;sleep&quot; !q]:S [F0&gt;1_+=S]:s
     &quot;forking sleep 5...&quot;`ld
     1=s
@@ -489,13 +489,13 @@ executes the <code>tr</code>.</p>
     w
     &quot;done, sleep exit code &quot; #T`</code></pre>
 <p>This script illustrates the classic fork-exec-wait.</p>
-<h1 id="sorta.itailrec"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.itailrec">sorta.itailrec</a></h1>
+<h2 id="sorta.itailrec"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.itailrec">sorta.itailrec</a></h2>
 <pre><code>    [3*#&quot; &quot;T$ldD=f]:f
     1=f</code></pre>
 <p>The sole purpose of this script is to prove that <code>sorta</code> can do infinite
 tail recursion (in this case, in program <code>f</code>). Do <code>./sorta &lt; itailrec | more</code>
 and watch the powers of 3 (mod your computer’s word size) flow by.</p>
-<h1 id="sorta.iwhosort"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.iwhosort">sorta.iwhosort</a></h1>
+<h2 id="sorta.iwhosort"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/sorta.iwhosort">sorta.iwhosort</a></h2>
 <pre><code>    [0Ou &quot;&quot; &quot;+-u&quot; &quot;sort&quot; !q]:S [F0&gt;1_+=S]:s
     [1Ou &quot;&quot; &quot;+-u&quot; &quot;who&quot;  !q]:W [F0&gt;1_+=W]:w
     P1=wO1=sOww</code></pre>
