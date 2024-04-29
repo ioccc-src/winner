@@ -30,8 +30,8 @@ have to if you don't wish to.
 # <a href="#toc">What is recode and why is it recommended?</a>
 </div>
 
-To demonstrate how to and why you should use the [recode.c](%%REPO_URL%%/2020/ferguson1/recode.c) program with
-the [Enigma machine simulator](%%REPO_URL%%/2020/ferguson1/prog.c) I have included some examples here as
+To demonstrate how to and why you should use the [recode.c](%%REPO_URL%%/2020/ferguson2/recode.c) program with
+the [Enigma machine simulator](%%REPO_URL%%/2020/ferguson2/prog.c) I have included some examples here as
 well as brief ('brief?!' I am sure many would think but it's brief for me)
 commentary.
 
@@ -128,7 +128,7 @@ Again note that this does not validate input! Although it detects out of range
 for the arrays it doesn't detect duplicates. This is because it wasn't meant to
 be any given file or anything else other than the direct output of a previous
 run (thus validated). I'm not even guaranteeing that I got the array tests valid
-in [recode.c](%%REPO_URL%%/2020/ferguson1/recode.c) `-R` option!
+in [recode.c](%%REPO_URL%%/2020/ferguson2/recode.c) `-R` option!
 
 
 <div id="samefile">
@@ -550,7 +550,7 @@ delicious challenge).
 # <a href="#toc">Example additions</a>
 </div>
 
-*   Add code, to [prog.c](%%REPO_URL%%/2020/ferguson1/prog.c), that tries to determine possible decipherments based on
+*   Add code, to [prog.c](%%REPO_URL%%/2020/ferguson2/prog.c), that tries to determine possible decipherments based on
 a given crib (or set of cribs).
 
 
