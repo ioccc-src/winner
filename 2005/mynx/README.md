@@ -80,7 +80,7 @@ won't work.
 
 This little `mynx` will give any [Fiery
 Fox](https://en.wikipedia.org/wiki/Firefox) a run for its money. A nice
-complement to last years winning [2004/hibachi](../../2004/hibachi/src/index.html). The
+complement to last years winning [2004/hibachi](../../2004/hibachi/index.html). The
 judges double dare any eager Obfuscationalists to submit the missing pieces to
 get a functioning LAMP stack.
 
