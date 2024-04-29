@@ -56,8 +56,8 @@ judges this Email message:
     the first factor is 101 and is usually found in an instant.
 ```
 
-The [albert.alt.c](%%REPO_URL%%/1992/albert/albert.c) file is the fixed file, whereas the
-[albert.c](%%REPO_URL%%/1992/albert/1992/albert/lbert.c) is the file before applying Leo Broukhis' fix.
+The [albert.alt.c](%%REPO_URL%%/1992/albert/albert.alt.c) file is the fixed file, whereas the
+[albert.c](%%REPO_URL%%/1992/albert/albert.c) is the file before applying Leo Broukhis' fix.
 
 
 ### Alternate build:
