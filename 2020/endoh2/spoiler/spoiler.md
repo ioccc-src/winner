@@ -7,7 +7,7 @@ chunks that is a ASCII code (65-90) followed by points data: `x,y,ctrl`.
 
 If `ctrl` is 1, the point is used as control point for quadratic bezier curve.
 
-[code.c](%%REPO_URL%%/2020/endoh2/code.c) is the main logic for the program, which has some placeholders
+[code.c](%%REPO_URL%%/2020/endoh2/spoiler/code.c) is the main logic for the program, which has some placeholders
 for font data and something.
 
 It decompresses the font data and renders a given text by projection.  It
@@ -15,7 +15,7 @@ exploits `C99`'s `double complex` type to represent 2D points, but carefully
 coded so that it does not require any `math.h` functions; you don't have to pass
 `-lm` to `cc`.
 
-[tmpl.txt](tmpl.txt) is a template for the program.  [gen.rb](%%REPO_URL%%/2020/endoh2/gen.rb) composes
+[tmpl.txt](tmpl.txt) is a template for the program.  [gen.rb](%%REPO_URL%%/2020/endoh2/spoiler/gen.rb) composes
 the all items and generates [prog.c](%%REPO_URL%%/2020/endoh2/prog.c).
 
 

@@ -384,13 +384,13 @@
 <p>The source code of the font is <a href="glyphs.txt">glyphs.txt</a>, which is a sequence of
 chunks that is a ASCII code (65-90) followed by points data: <code>x,y,ctrl</code>.</p>
 <p>If <code>ctrl</code> is 1, the point is used as control point for quadratic bezier curve.</p>
-<p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/endoh2/code.c">code.c</a> is the main logic for the program, which has some placeholders
+<p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/endoh2/spoiler/code.c">code.c</a> is the main logic for the program, which has some placeholders
 for font data and something.</p>
 <p>It decompresses the font data and renders a given text by projection. It
 exploits <code>C99</code>’s <code>double complex</code> type to represent 2D points, but carefully
 coded so that it does not require any <code>math.h</code> functions; you don’t have to pass
 <code>-lm</code> to <code>cc</code>.</p>
-<p><a href="tmpl.txt">tmpl.txt</a> is a template for the program. <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/endoh2/gen.rb">gen.rb</a> composes
+<p><a href="tmpl.txt">tmpl.txt</a> is a template for the program. <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/endoh2/spoiler/gen.rb">gen.rb</a> composes
 the all items and generates <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/endoh2/prog.c">prog.c</a>.</p>
 <hr style="width:10%;text-align:left;margin-left:0">
 <p>Jump to: <a href="#">top</a></p>
