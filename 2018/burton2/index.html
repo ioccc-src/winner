@@ -543,7 +543,7 @@ keyword distribution over time. The top five for the decades:</p>
 This allows such additional programs in concert with the tool’s primary operation.</p>
 <p>A poor-man’s de-obfuscator can be based upon the output of <code>tac -t</code> and a
 handful of simple rules (and another use of the external keyword file). A more
-refined version of this is included in the file <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton/unob.sh">unob.sh</a>, but the
+refined version of this is included in the file <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/unob.sh">unob.sh</a>, but the
 simple code below is a serviceable obfuscated C de-obfuscator in a <em>scripting
 language</em>. It really is this easy with <code>tac</code>:</p>
 <pre><code>    #!/usr/bin/env bash
@@ -632,17 +632,17 @@ matter of interpretation. ;-) And <code>tac</code> is ready for the IOCCC++ cont
 the IOJCC trash can.</p>
 <p>The following reserved word files are included:</p>
 <ul>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton/kandr">kandr</a> from my venerable 1978 18th printing “The C Programming Language”</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton/v7unix">v7unix</a> 7th edition Unix source code, extracted from c00.c</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton/kandr2">kandr2</a> from my 1988 1st printing “The C Programming Language”, 2e</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton/ansi">ansi</a> ANSI X3.159-1989</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton/c99">c99</a> ISO/IEC 9899:1999(E)</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton/c11">c11</a> ISO/IEC 9899:201x(E) N1570</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton/c++98">c++98</a> http://en.cppreference.com/w/cpp/keyword</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton/c++11">c++11</a> ISO/IEC 14882:2011(E) N3337 2012-01-16</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton/c++14">c++14</a> ISO/IEC 14882:2014(E) N4296 2014-11-09</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton/java8">java8</a> <a href="http://docs.oracle.com/javase/specs/index.html" class="uri">http://docs.oracle.com/javase/specs/index.html</a></li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton/ioccc.kw.freq">ioccc.kw.freq</a> c11 + additional words, sorted on frequency of occurrence in IOCCC entries</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/kandr">kandr</a> from my venerable 1978 18th printing “The C Programming Language”</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/v7unix">v7unix</a> 7th edition Unix source code, extracted from c00.c</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/kandr2">kandr2</a> from my 1988 1st printing “The C Programming Language”, 2e</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/ansi">ansi</a> ANSI X3.159-1989</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/c99">c99</a> ISO/IEC 9899:1999(E)</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/c11">c11</a> ISO/IEC 9899:201x(E) N1570</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/c++98">c++98</a> http://en.cppreference.com/w/cpp/keyword</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/c++11">c++11</a> ISO/IEC 14882:2011(E) N3337 2012-01-16</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/c++14">c++14</a> ISO/IEC 14882:2014(E) N4296 2014-11-09</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/java8">java8</a> <a href="http://docs.oracle.com/javase/specs/index.html" class="uri">http://docs.oracle.com/javase/specs/index.html</a></li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/ioccc.kw.freq">ioccc.kw.freq</a> c11 + additional words, sorted on frequency of occurrence in IOCCC entries</li>
 </ul>
 <p>NB: The keyword file used in this code is derived from the list in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/iocccsize.c">iocccsize.c</a>,
 which is neither complete (<code>#define</code>, <code>#ifndef</code>, <code>#undef</code> are missing</p>
@@ -681,10 +681,10 @@ NB: This is <em>not</em> a portability concern, the one string holds only printa
 <p><a href="../../authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> was relentless in his pursuit of bugs.
 Thanks to his reports, the version of <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/unob.sh">unob.sh</a> is stronger,
 <code>tac</code> groks digraphs, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/tokenfix.sh">tokenfix.sh</a> corrects for missing digraphs
-in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton/prog.c">prog.c</a>, and the program
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton/manpage.sh">manpage.sh</a> was added to the corpus.</p>
-<p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton/manpage.sh">manpage.sh</a> is a useful program that turns ASCII versions of man
-pages (e.g., <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton/tac.man">tac.man</a> man page) into real man pages. It works for C and C-like
+in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/prog.c">prog.c</a>, and the program
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/manpage.sh">manpage.sh</a> was added to the corpus.</p>
+<p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/manpage.sh">manpage.sh</a> is a useful program that turns ASCII versions of man
+pages (e.g., <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/tac.1">tac(1)</a> man page) into real man pages. It works for C and C-like
 languages, command lines, and was designed to handle man page sections 1-8. It
 works well on most inputs, but tends to need some raw nroff for more fancy
 constructions, such as combined arguments (e.g. the <code>-r</code> and <code>-s</code> arguments to tac
@@ -697,7 +697,7 @@ are not recognised when written as <code>-rs</code> in prose).</p>
     ./manpage.sh -h | ./manpage.sh -R | less
     ./manpage.sh -h | ./manpage.sh -P | lpr</code></pre>
 <p>NOTE: in 2023 the <code>tac.man</code> was updated to proper man format and renamed
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton/tac.1">tac.1</a>.</p>
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/tac.1">tac.1</a>.</p>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
