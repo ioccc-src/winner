@@ -412,7 +412,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <h2 id="try">Try:</h2>
 <p>Try these pre-trained networks:</p>
 <pre><code>    ./try.sh</code></pre>
-<p>NOTE: The <code>dlowe-aux-data/</code> directory, which <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/try.sh">try.sh</a> refers to, was
+<p>NOTE: The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data">dlowe-aux-data</a> directory, which <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/try.sh">try.sh</a> refers to, was
 created by:</p>
 <pre><code>    tar -jxf dlowe-aux-data.tar.bz2</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -472,15 +472,15 @@ English (non-French) text</p></li>
 <ul>
 <li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/png-0">dlowe-aux-data/png-0/</a>
 Non-png (gif) images</p></li>
-<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/png-0/dlowe-aux-data/png-1">dlowe-aux-data/png-1/</a>
+<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/png-1">dlowe-aux-data/png-1/</a>
 png (non-gif) images</p></li>
 </ul>
-<p>We created the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/png-0/dlowe-aux-data/xor-trained.net">xor-trained.net</a> as follows:</p>
+<p>We created the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/xor-trained.net">xor-trained.net</a> as follows:</p>
 <pre><code>    ./dlowe -8000 dlowe-aux-data/xor-1/ dlowe-aux-data/xor-0/ &lt; /dev/null &gt; dlowe-aux-data/xor-trained.net</code></pre>
 <ul>
-<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/png-0/dlowe-aux-data/xor-0">dlowe-aux-data/xor-0</a>
+<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/xor-0">dlowe-aux-data/xor-0</a>
 Data that XORs to 0</p></li>
-<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/png-0/dlowe-aux-data/xor-1">dlowe-aux-data/xor-1/</a>
+<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/xor-1">dlowe-aux-data/xor-1/</a>
 Data that XORs to 1</p></li>
 </ul>
 <p><strong>NOTE</strong>: The directory args <strong>must end in a</strong> <code>/</code> for them to work.</p>
@@ -538,10 +538,10 @@ a <code>.gif</code>”</li>
 </ul>
 <p>produced a network with about 87% accuracy</p>
 <h4 id="english-corpora">English corpora</h4>
-<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/png-0/dlowe-aux-data/english-1">english-1</a> corpus was obtained by manually scraping the first results from
+<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/english-1">english-1</a> corpus was obtained by manually scraping the first results from
 a <a href="https://www.google.com/webhp?lr=lang_en" class="uri">https://www.google.com/webhp?lr=lang_en</a> search for “<a href="https://www.google.com/search?q=paris+filetype%3Atxt&amp;lr=lang_en&amp;tbs=lr%3Alang_1en&amp;sxsrf=APwXEdeHXyUYdUxCYQQDHmJhbHzX9aARSA%3A1683049834430&amp;source=hp&amp;ei=ak1RZJHUGN_DkPIP26OtkA8&amp;iflsig=AOEireoAAAAAZFFbejA0Xfqoq__FXx--Ok0S6GQjnGnA&amp;ved=0ahUKEwiRsZOcmdf-AhXfIUQIHdtRC_IQ4dUDCAo&amp;uact=5&amp;oq=paris+filetype%3Atxt&amp;gs_lcp=Cgdnd3Mtd2l6EANQAFgAYN4DaABwAHgAgAE-iAE-kgEBMZgBAKABAqABAQ&amp;sclient=gws-wiz">paris
 filetype:txt</a>”.</p>
-<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/png-0/dlowe-aux-data/english-0">english-0</a> corpus was obtained by manually scraping the first results from
+<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/english-0">english-0</a> corpus was obtained by manually scraping the first results from
 a <a href="https://www.google.com/webhp?lr=lang_fr" class="uri">https://www.google.com/webhp?lr=lang_fr</a> search for “<a href="https://www.google.com/search?q=paris+filetype%3Atxt&amp;lr=lang_fr&amp;tbs=lr%3Alang_1fr&amp;sxsrf=APwXEddcsQ-gMhrqSUJo6omWFUl7jQMASg%3A1683049870736&amp;source=hp&amp;ei=jk1RZLevK_fKkPIPjbWN-AU&amp;iflsig=AOEireoAAAAAZFFbnvExHGkcavB5H8F0xsLAWN2KfYFK&amp;ved=0ahUKEwi3rrutmdf-AhV3JUQIHY1aA18Q4dUDCAo&amp;uact=5&amp;oq=paris+filetype%3Atxt&amp;gs_lcp=Cgdnd3Mtd2l6EANQAFgAYLMDaABwAHgAgAE-iAE-kgEBMZgBAKABAqABAQ&amp;sclient=gws-wiz">paris
 filetype:txt</a>”.</p>
 <h5 id="results-1">Results:</h5>
@@ -549,16 +549,16 @@ filetype:txt</a>”.</p>
 <li>Using these corpora as a training set;</li>
 <li>Using several dozen additional text files (obtained by the same methods) as a
 test set;</li>
-<li>Using the included <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/png-0/earlystop.pl">earlystop.pl</a> script, which stopped after
+<li>Using the included <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/earlystop.pl">earlystop.pl</a> script, which stopped after
 10000 iterations;</li>
 <li>Interpreting output of <code>&gt; 0.5</code> as “probably English” and <code>&lt; 0.5</code> as “probably
 French”</li>
 </ul>
 <p>produced a network with 100% accuracy.</p>
 <h3 id="xor-corpora">xor corpora</h3>
-<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/png-0/dlowe-aux-data/xor-1">xor-1</a> corpus consists of two files containing <code>01</code>
+<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/xor-1">xor-1</a> corpus consists of two files containing <code>01</code>
 and <code>10</code> respectively.</p>
-<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/png-0/dlowe-aux-data/xor-0">xor-0</a> corpus consists of two files containing <code>00</code>
+<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/xor-0">xor-0</a> corpus consists of two files containing <code>00</code>
 and <code>11</code> respectively.</p>
 <h5 id="results-2">Results:</h5>
 <p>Using these corpora as a training set takes about 8000 iterations to learn xor
