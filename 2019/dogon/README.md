@@ -228,7 +228,7 @@ includes some famous name dropping and documents itself as usual.
 ### Further spoilers, engineering, and obfuscation galore:
 
 Those wait for you, curious and intrepid reader, in the attached
-[apholife.c](%%REPO_URL%%/2019/ciura/apholife.c) file, which is a partially obfuscated version of the
+[apholife.c](%%REPO_URL%%/2019/dogon/apholife.c) file, which is a partially obfuscated version of the
 program I wrote with a lot of helpful annotations and comments for myself and
 posterity, revealing some of the magic under the hood. This program is also a
 somewhat improved version which uses `ldexp()`s in the draw routine and has
