@@ -162,7 +162,7 @@ White](https://www.glyphweb.com/arda/g/gandalf.html) and the [Judges of
 the IOCCC](../../judges.html).
 
 Output of `iocccsize`, using the [2019 version of
-iocccsize](%%REPO_URL%%/2019/poikola/iocccsize.c), is carefully selected.  For
+iocccsize](%%REPO_URL%%/2019/iocccsize.c), is carefully selected.  For
 the sake of clarity, I used single letter variables in the code. I also avoided
 unnecessary use of functions.  Like a
 [tripundra](https://en.wikipedia.org/wiki/Tripundra), this program has three
