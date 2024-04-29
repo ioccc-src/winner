@@ -413,9 +413,6 @@ fi
 #
 #	    -e '/^mailto:/d' \
 #
-#
-#	    -e 's;%%DOCROOT_SLASH%%/*;/;' \
-#
 #	# add current directory in front of absolute paths
 #
 #	    -e "s;^/;$PWD;" \
