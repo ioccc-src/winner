@@ -1,4 +1,4 @@
-# Useful files to view
+## Useful files to view
 
 - [buzzard.2.README.html](buzzard.2.README.html)	- this file
 - [buzzard.2.design.html](buzzard.2.design.html)	- description of FIRST (design documentation of THIRD)
@@ -6,7 +6,7 @@
 - [help.th](%%REPO_URL%%/1992/buzzard.2/help.th)	- online listing of THIRD primitives
 
 
-# FIRST demos:
+## FIRST demos:
 
 Use:
 
@@ -17,7 +17,7 @@ Use:
 - [demo1.1st](%%REPO_URL%%/1992/buzzard.2/demo1.1st)	- prints Hello World! assuming ASCII
 
 
-# THIRD demos:
+## THIRD demos:
 
 Use:
 
@@ -36,7 +36,7 @@ Use:
 - [demo6.th](%%REPO_URL%%/1992/buzzard.2/demo6.th)	- demonstrates switching from compiler to execution mode
 
 
-# Interactive THIRD:
+## Interactive THIRD:
 
 Use:
 
