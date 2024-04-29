@@ -143,7 +143,7 @@ this, run the common lisp compiler and then type the following command:
     (load "mikeash.c")
 ```
 
-The source code of [mikeash.c](%%REPO_URL%%/2005/mikeashmikeash.c) will be printed.
+The source code of [mikeash.c](%%REPO_URL%%/2005/mikeash/mikeash.c) will be printed.
 
 
 ### Obfuscation
