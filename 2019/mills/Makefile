@@ -288,7 +288,8 @@ all: data ${TARGET}
 .PHONY: all alt data everything diff_orig_prog diff_prog_orig \
 	diff_alt_prog diff_prog_alt diff_orig_alt diff_alt_orig \
 	clean clobber install love haste waste maker easter_egg \
-	sandwich supernova deep_magic magic charon pluto
+	sandwich supernova deep_magic magic charon pluto \
+	text
 
 ${TARGET}: ${PROG}.c Makefile ${INPUTS}
 	${CC} ${CFLAGS} -o $@ $< $($@) ${LDFLAGS}
@@ -305,6 +306,9 @@ data: ${DATA}
 
 ${INPUTS}: %.txt: %.txt.gz
 	${ZCAT} < $< > $@
+
+text: ${INPUTS}
+	@${TRUE}
 
 test: ${OUTPUTS}
 

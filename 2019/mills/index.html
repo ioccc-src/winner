@@ -577,10 +577,15 @@ looks like</p>
 validation loss is about 1.72. Comparing the validation loss and the
 training loss will give you an idea of how well the network is learning and
 can let you know if the network is <a href="https://en.wikipedia.org/wiki/Overfitting">overfitting or underfitting</a>.</p>
-<p>As part of the training process, the data set (which for OMLET is the
-<a href="Shakespeare.txt">Shakespeare.txt</a>file you gave on the command line) is divided into
+<p>As part of the training process, the data set, which for OMLET is a
+file you gave on the command line, is divided into
 <a href="https://en.wikipedia.org/wiki/Training,_validation,_and_test_sets">training and validation sets</a> (by default, 95% of the data is used for
 training, but like most OMLET parameters, you can change this at compile-time).</p>
+<p>For examples of input text files, try:</p>
+<pre><code>    make text</code></pre>
+<p>and then examine the resulting <code>IOCCC-hints.output.txt</code>
+<code>Shakespeare.output.txt</code> <code>IOCCC-Rules-Guidelines.output.txt</code>
+<code>Eugene_Onegin.output.txt</code> temporary files.</p>
 <p>At the end of the validation run, OMLET writes out a checkpoint file with a
 name like <code>cp01_1.970</code>. This saves the state of the run at the start of the
 epoch 1, after computing a validation loss of 1.970. The checkpoint is
