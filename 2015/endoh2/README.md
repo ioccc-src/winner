@@ -42,7 +42,7 @@ Where did those underscores come from?  Well [RTFS](http://acronyms.thefreedicti
 ** Read the Freaking Source (polite form)
 ** Read The Freaking Screen (polite form)
 
-If you are still puzzled, look at [prog.c](%%REPO_URL%%/2015/endoh2/Rprog.c) with your favorite text editor.
+If you are still puzzled, look at [prog.c](%%REPO_URL%%/2015/endoh2/prog.c) with your favorite text editor.
 
 
 ## Author's remarks:
