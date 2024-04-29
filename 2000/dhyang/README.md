@@ -44,7 +44,7 @@ For your enjoyment:
 3. Compile that file.
 4. Repeat steps 2 and 3 until eventually the output cycles.
 
-To interpret the output: the [dhyang.c](%%REPO_URL%%/2000/dhyang/dhyang.c.c) is an image of Saitou
+To interpret the output: the [dhyang.c](%%REPO_URL%%/2000/dhyang/dhyang.c) is an image of Saitou
 Hajime, which eventually generates three sources files that are images of "aku
 soku zan" (sin swift slay), Saitou's motto ;)
 
