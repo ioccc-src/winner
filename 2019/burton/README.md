@@ -60,7 +60,7 @@ Compiles cleanly with:
 
 Included is a test script, useful for the corner cases.  As in all good Unix
 programs, it is silent upon success; any output demonstrates an error.  Instead
-of checking correctness, the [check.sh](%%REPO_URL%%/2019/burton/Rcheck.sh) script can simply output the
+of checking correctness, the [check.sh](%%REPO_URL%%/2019/burton/check.sh) script can simply output the
 results:   (The Makefile contains the spoiler):
 
 ``` <!---sh-->
