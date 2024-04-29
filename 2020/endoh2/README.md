@@ -29,11 +29,11 @@ What happens if you do
 
 ## Judges' remarks:
 
-Clever use of the C99 complex data type. The [spoiler](spoiler.html) directory
+Clever use of the C99 complex data type. The [spoiler](spoiler/spoiler.html) directory
 contains clues as to how some winning authors create / edit programs into ASCII
 shapes.
 
-With the source from the [spoiler](spoiler.html) directory could you make the code
+With the source from the [spoiler](spoiler/spoiler.html) directory could you make the code
 render for a larger terminal window?  How about adding more glyphs?
 
 
