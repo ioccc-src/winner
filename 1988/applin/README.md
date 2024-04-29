@@ -40,7 +40,8 @@ Dhyrstone/sec/cpu machine) using the System V `cpp`.  (The GNU `cpp` when define
 `BIG_CPP` took only 45 seconds.)
 
 Your `cpp` may not be able to compile it due to a common bug that results in
-`cpp` running out of space.  The routine [zsmall](%%REPO_URL%%/1988/applin/zsmall.c) is a smaller version
+`cpp` running out of space.  The routine
+[zsmall](%%REPO_URL%%/1988/applin/applin.alt.c) is a smaller version
 of the [applin.c](%%REPO_URL%%/1988/applin/applin.c) entry.
 
 
