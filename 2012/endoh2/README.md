@@ -47,7 +47,7 @@ Yeah, "Again".  Sorry.  But I don't feel guilty or uncomfortable.
 
 This entry is based on 'over-used themes' such as self reproducing
 program and [pi](https://en.wikipedia.org/wiki/Pi) or
-[e](https://en.wikipedia.org/wiki/E_&#x28;mathematical_constant&#x28;) computation.  I
+[e](https://en.wikipedia.org/wiki/E_&#x28;mathematical_constant&#x29;) computation.  I
 know you're tired of them.
 
 But have you ever seen them **all-in-one**?
