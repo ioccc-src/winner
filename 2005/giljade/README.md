@@ -40,7 +40,7 @@ For more detailed information see [2005 giljade bugs](../../bugs.html#2005_gilja
     ./giljade out
 ```
 
-NOTE: [try.sh](%%REPO_URL%%/2005/giljadetry.sh) will ask you if you wish to do this.
+NOTE: [try.sh](%%REPO_URL%%/2005/giljade/try.sh) will ask you if you wish to do this.
 
 
 ## Judges' remarks:
