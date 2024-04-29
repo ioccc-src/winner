@@ -714,7 +714,7 @@ greatly.
 
 
 <div id="portability">
-### <a  href="#toc">Portability
+### <a  href="#toc">Portability</a>
 </div>
 
 I have tested it under macOS, Fedora and CentOS Linux and all seems okay under
