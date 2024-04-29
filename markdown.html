@@ -394,7 +394,7 @@ into the markdown file.</p>
 <p>In particular there are things we ask people to please do <strong>NOT</strong> use markdown files:</p>
 <h2 id="do-not-use-name-attributes-in-html-a-tags">Do not use name attributes in HTML a tags</h2>
 <p>Please do not use the HTML construct:</p>
-<pre><code>    &lt;a name=&quot;string&quot;&gt;\&lt;/a&gt;</code></pre>
+<pre><code>    &lt;a name=&quot;string&quot;&gt;\&lt;/a&gt;              &lt;=== no thank you</code></pre>
 <p>as those are <strong>NOT</strong> part of the HTML 5 standard.</p>
 <p>Instead use:</p>
 <pre><code>    &lt;div id=&quot;string&quot;&gt;...\&lt;/div&gt;</code></pre>
@@ -416,7 +416,7 @@ name=”string”&gt;&lt;/a&gt;</strong>”, they may not in the future.</p>
 end a markdown line with a trailing backslash (“\”). Instead use
 a trailing “<strong>&lt;br&gt;</strong>”.</p>
 <p>Instead of:</p>
-<pre><code>    In markdown,\
+<pre><code>    In markdown,\                       &lt;=== no thank you
     do not use trailing\
     backslashes outside of\
     a code block</code></pre>
@@ -432,19 +432,18 @@ a trailing “<strong>&lt;br&gt;</strong>”.</p>
     markdown code\
     block
 ```</code></pre>
-<p>This will avoid <code>pandoc(1)</code> generating deprecated HTML elements such as:</p>
-<p>“<strong>&lt;br /&gt;</strong>”</p>
+<p>This will avoid <code>pandoc(1)</code> generating deprecated HTML elements such as <code>\&lt;br /&gt;</code>.</p>
 <h2 id="do-not-use-markdown-image-elements">Do not use markdown image elements</h2>
 <p>Please do not use the markdown embedded image element.</p>
 <p>Instead of using this markdown element to embed an image:</p>
-<pre><code>    ![alt text](filename.png &quot;Title&quot;)</code></pre>
+<pre><code>    ![alt text](filename.png &quot;Title&quot;)           &lt;=== no thank you</code></pre>
 <p>Use a “img” HTML element with “alt”, “alt”, “width” and “length”
 attributes:</p>
 <pre><code>    &lt;img src=&quot;filename.png&quot;
      alt=&quot;describe the filename.png image for someone who cannot view it&quot;
      width=PIXEL_WIDTH height=PIXEL_HEIGHT&gt;</code></pre>
 <p>For example, instead of:</p>
-<pre><code>    ![1984-anonymous-tattoo.jpg](1984-anonymous-tattoo.jpg)</code></pre>
+<pre><code>    ![1984-anonymous-tattoo.jpg](1984-anonymous-tattoo.jpg)     &lt;=== no thank you</code></pre>
 <p>use this HTML:</p>
 <pre><code>    &lt;img src=&quot;1984-anonymous-tattoo.jpg&quot;
      alt=&quot;image of a tattoo of the 1984 anonymous C code&quot;
@@ -468,7 +467,7 @@ unquoted attribute values.</p>
 <pre><code>    &lt;hr style=&quot;width:10%;text-align:left;margin-left:0&quot;&gt;</code></pre>
 <h2 id="do-not-use-the-strike-html-element">Do not use the strike HTML element</h2>
 <p>Please not use the HTML element:</p>
-<pre><code>    &lt;strike&gt;...&lt;/strike&gt;</code></pre>
+<pre><code>    &lt;strike&gt;...&lt;/strike&gt;        &lt;=== no thank you</code></pre>
 <p>Use instead:</p>
 <pre><code>    &lt;del&gt;...&lt;/del&gt;</code></pre>
 <h2 id="do-not-use-tt-html-elements">Do not use tt HTML elements</h2>

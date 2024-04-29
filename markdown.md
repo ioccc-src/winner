@@ -23,7 +23,7 @@ In particular there are things we ask people to please do **NOT** use markdown f
 Please do not use the HTML construct:
 
 ```
-    <a name="string">\</a>
+    <a name="string">\</a>		<=== no thank you
 ```
 
 as those are **NOT** part of the HTML 5 standard.
@@ -67,7 +67,7 @@ a trailing "**\<br>**".
 Instead of:
 
 ```
-    In markdown,\
+    In markdown,\			<=== no thank you
     do not use trailing\
     backslashes outside of\
     a code block
@@ -93,9 +93,7 @@ Again, use of a trailing backslash ("\\") inside a markdown code block is fine:
 ```
 ````
 
-This will avoid `pandoc(1)` generating deprecated HTML elements such as:
-
-"**\<br />**"
+This will avoid `pandoc(1)` generating deprecated HTML elements such as `\<br />`.
 
 
 ## Do not use markdown image elements
@@ -105,7 +103,7 @@ Please do not use the markdown embedded image element.
 Instead of using this markdown element to embed an image:
 
 ```
-    ![alt text](filename.png "Title")
+    ![alt text](filename.png "Title")		<=== no thank you
 ```
 
 Use a "img" HTML element with "alt", "alt", "width" and "length"
@@ -120,7 +118,7 @@ attributes:
 For example, instead of:
 
 ```
-    ![1984-anonymous-tattoo.jpg](1984-anonymous-tattoo.jpg)
+    ![1984-anonymous-tattoo.jpg](1984-anonymous-tattoo.jpg)	<=== no thank you
 ```
 
 use this HTML:
@@ -168,7 +166,7 @@ If a short line is needed, use:
 Please not use the HTML element:
 
 ```
-    <strike>...</strike>
+    <strike>...</strike>	<=== no thank you
 ```
 
 Use instead:
