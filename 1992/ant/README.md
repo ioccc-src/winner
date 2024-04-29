@@ -35,7 +35,7 @@ P1003 subcommittee.
 
 ## Author's remarks:
 
-See the file [ant.README.txt](%%REPO_URL%%/1992/ant/ant.README).
+See the file [ant.README.txt](%%REPO_URL%%/1992/ant/ant.README.txt).
 
 
 <!--
