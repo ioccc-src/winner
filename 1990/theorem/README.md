@@ -45,7 +45,7 @@ where:
 The program's source implements four functions, all from the
 same source file!
 
-When you compile [theorem.c](%%REPO_URL%%/1990/theorem/Rtheorem.c) as is and run with 5 args, it
+When you compile [theorem.c](%%REPO_URL%%/1990/theorem/theorem.c) as is and run with 5 args, it
 numerically solves the equation `y'=f(x,y)`, with a step size of `h` (see above
 usage), over the interval `x=[x1,x2]`, with the initial condition of `y(x1)=y1`.
 
