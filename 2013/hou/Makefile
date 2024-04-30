@@ -114,6 +114,9 @@ OBJ= ${PROG}.o
 DATA= luna.jpg old_default.jpg otherroom.jpg otherroom.scene \
 	doc/camera.png doc/cosine.png doc/draft.png doc/example.md
 TARGET= ${PROG}
+OTHER_PROG= a
+OTHER_SRC= a.c
+OTHER_OBJ= a.o
 #
 ALT_OBJ=
 ALT_TARGET=
@@ -134,6 +137,13 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 	./${PROG} | ${CC} ${CFLAGS} -x c - -o $@ ${LDFLAGS}
+
+${OTHER_PROG}: ${PROG}.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
+${OTHER_SRC}: ${OTHER_PROG}
+	${RM} -f $@
+	./${OTHER_PROG} > $@
 
 
 # alternative executable
@@ -207,7 +217,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -rf *.dSYM luna.ppm old_default.ppm otherroom.ppm
+	${RM} -rf *.dSYM luna.ppm old_default.ppm otherroom.ppm a a.c
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \

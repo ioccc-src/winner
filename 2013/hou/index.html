@@ -431,12 +431,12 @@ really just a decompressor to generate the real source code of the
 program.</p>
 <p>This program will loop infinitely while progressively refining a
 <a href="https://en.wikipedia.org/wiki/Ray_tracing_(graphics)">raytraced</a> image.</p>
-<p>NOTE: the author refers to <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/a.c">a.c</a>, placed in a gzipped file <code>a.c.gz</code>. We do not
+<p>NOTE: the author refers to <code>a.c</code>, placed in a gzipped file <code>a.c.gz</code>. We do not
 include it but it can be generated like:</p>
-<pre><code>    cc -Wall hou.c -o hou -lm
-    ./hou &gt; a.c</code></pre>
-<p>but there is no need to do this as the Makefile takes care of it without even
-needing to create a temporary file.</p>
+<pre><code>    make a.c</code></pre>
+<p>There is no longer a need to do this as the Makefile takes care of it without
+even needing to create a temporary file but as the author refers to it and its
+uses it can still be generated to follow along.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="using-hou">Using hou</h3>
 <p>This program is a programmable rendering engine with a built-in default scene.
@@ -497,15 +497,15 @@ restrictions</a> section below for more details.</li>
 <li>Neither <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/hou.c">hou.c</a> nor <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/a.c">a.c</a> (the <em>real</em> decompressed source) uses
 <code>#define</code> (or <code>cc -D</code>) at all.</li>
 <li>The source code is not required at runtime.</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/a.c">a.c</a> does not drop optional features to reduce size. There are pure
+<li><code>a.c</code> does not drop optional features to reduce size. There are pure
 optimization code that can be dropped without affecting the converged output
 (only affecting the ray tracing speed / convergence rate). All files are
 properly <code>fopen()</code>ed with <code>"rb"</code> / <code>"wb"</code> for Windows compatibility. The PPM
 header has a comment line for non-standard-compliant viewers (specifically, my
 old HDRShop 1.0). And there is a nice text message saying “please wait…”.
-Despite the messy look, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/a.c">a.c</a> and <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/hou.c">hou.c</a> compile warning-free
+Despite the messy look, <code>a.c</code> and <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/hou.c">hou.c</a> compile warning-free
 (<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/hou.c">hou.c</a> even wastes 18 bytes on <code>#include&lt;stdio.h&gt;</code> just for <code>putchar(3)</code>).
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/a.c">a.c</a> compiles mostly clean in the C99/ANSI modes of clang and gcc (with:</li>
+<code>a.c</code> compiles mostly clean in the C99/ANSI modes of clang and gcc (with:</li>
 </ul>
 <pre><code>-Wall --pedantic</code></pre>
 <p>The only warning generated is a pedantic one: <code>"string constant too long"</code>.</p>
@@ -521,15 +521,15 @@ internal states.</li>
 the code, but they leave the text clear in the <em>result</em>. This entry takes it
 further and obfuscates the output image as well. Can you find the text in the
 image? Hint: look up.</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/a.c">a.c</a> leaves all shaders in plain text, but the plain text shader code can’t
+<li><code>a.c</code> leaves all shaders in plain text, but the plain text shader code can’t
 be taken for its face value; the arithmetic rules subtly diverge from our common
 sense.</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/a.c">a.c</a> is less portable than <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/hou.c">hou.c</a> itself. <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/hou.c">hou.c</a> only depends
+<li><code>a.c</code> is less portable than <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/hou.c">hou.c</a> itself. <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/hou.c">hou.c</a> only depends
 on ASCII and should run just fine on 16-bit, small memory, or
-floating-point-incapable machines. <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/a.c">a.c</a>, while still reasonably portable, is
+floating-point-incapable machines. <code>a.c</code>, while still reasonably portable, is
 quite memory consuming, requires IEEE754-compliant <code>double</code>, and assumes <code>int</code> to be
 32-bits.</li>
-<li>Though technically endian-dependent, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/a.c">a.c</a> remains portable providing that one
+<li>Though technically endian-dependent, <code>a.c</code> remains portable providing that one
 doesn’t copy saved sessions across different endianness.</li>
 </ul>
 <h3 id="spoiler">Spoiler</h3>
