@@ -3804,6 +3804,9 @@ program to be used. Thus the Makefile rule looks like:</p>
 <p>The <code>LDFLAGS</code> were updated to have <code>-lm</code> as the author suggested it uses the
 <code>math.h</code> library which not all systems link in by default (Linux for instance
 does not).</p>
+<p>The author noted that one can build <code>a.c</code> and refers to it in documentation. The
+rule in the Makefile was originally removed as part of the above but it was
+restored so that one can see what the author is talking about.</p>
 <p>Further, after the file <code>2013/hou/doc/example.markdown</code> was moved to
 <a href="2013/hou/doc/example.html">2013/hou/doc/example.html</a> to match the rest of the repo
 this broke <code>make</code> which Cody also fixed.</p>
@@ -3880,6 +3883,8 @@ install <code>gem</code>. Then it tells you how to install <code>rake</code>. If
 then it tells you to install a specific gem and then to try again. Finally if
 <code>rake</code> succeeds it will verify that <code>prog</code> is executable and if it is it will
 run it.</p>
+<p>After more work on the manifest was done Cody had to update the <code>clobber</code> rule
+to remove some text files so as to not cause problems with an invalid manifest.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/try.sh">try.sh</a> script.</p>
 <p><strong><em>Barely</em></strong> worth noting but done nonetheless, Cody renamed the <code>read_me.html</code>
 file to <a href="2014/endoh1/spoilers.html">spoilers.html</a> to be clearer in its purpose as
