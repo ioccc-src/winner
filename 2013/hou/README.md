@@ -65,16 +65,18 @@ program.
 This program will loop infinitely while progressively refining a
 [raytraced](https://en.wikipedia.org/wiki/Ray_tracing_&#x28;graphics&#x29;) image.
 
-NOTE: the author refers to [a.c](%%REPO_URL%%/2013/hou/a.c), placed in a gzipped file `a.c.gz`. We do not
+NOTE: the author refers to `a.c`, placed in a gzipped file `a.c.gz`. We do not
 include it but it can be generated like:
 
 ``` <!---sh-->
-    cc -Wall hou.c -o hou -lm
-    ./hou > a.c
+    make a.c
 ```
 
-but there is no need to do this as the Makefile takes care of it without even
-needing to create a temporary file.
+There is no longer a need to do this as the Makefile takes care of it without
+even needing to create a temporary file but as the author refers to it and its
+uses it can still be generated to follow along.
+
+
 
 
 ## Author's remarks:
@@ -148,15 +150,15 @@ restrictions](#self-imposed-restrictions) section below for more details.
 * Neither [hou.c](%%REPO_URL%%/2013/hou/hou.c) nor [a.c](%%REPO_URL%%/2013/hou/a.c) (the *real* decompressed source) uses
 `#define` (or `cc -D`) at all.
 * The source code is not required at runtime.
-* [a.c](%%REPO_URL%%/2013/hou/a.c) does not drop optional features to reduce size. There are pure
+* `a.c` does not drop optional features to reduce size. There are pure
 optimization code that can be dropped without affecting the converged output
 (only affecting the ray tracing speed / convergence rate). All files are
 properly `fopen()`ed with `"rb"` / `"wb"` for Windows compatibility. The PPM
 header has a comment line for non-standard-compliant viewers (specifically, my
 old HDRShop 1.0). And there is a nice text message saying "please wait...".
-Despite the messy look, [a.c](%%REPO_URL%%/2013/hou/a.c) and [hou.c](%%REPO_URL%%/2013/hou/hou.c) compile warning-free
+Despite the messy look, `a.c` and [hou.c](%%REPO_URL%%/2013/hou/hou.c) compile warning-free
 ([hou.c](%%REPO_URL%%/2013/hou/hou.c) even wastes 18 bytes on `#include<stdio.h>` just for `putchar(3)`).
-[a.c](%%REPO_URL%%/2013/hou/a.c) compiles mostly clean in the C99/ANSI modes of clang and gcc (with:
+`a.c` compiles mostly clean in the C99/ANSI modes of clang and gcc (with:
 
 ```
 -Wall --pedantic
@@ -178,15 +180,15 @@ internal states.
 the code, but they leave the text clear in the *result*. This entry takes it
 further and obfuscates the output image as well. Can you find the text in the
 image? Hint: look up.
-* [a.c](%%REPO_URL%%/2013/hou/a.c) leaves all shaders in plain text, but the plain text shader code can't
+* `a.c` leaves all shaders in plain text, but the plain text shader code can't
 be taken for its face value; the arithmetic rules subtly diverge from our common
 sense.
-* [a.c](%%REPO_URL%%/2013/hou/a.c) is less portable than [hou.c](%%REPO_URL%%/2013/hou/hou.c) itself. [hou.c](%%REPO_URL%%/2013/hou/hou.c) only depends
+* `a.c` is less portable than [hou.c](%%REPO_URL%%/2013/hou/hou.c) itself. [hou.c](%%REPO_URL%%/2013/hou/hou.c) only depends
 on ASCII and should run just fine on 16-bit, small memory, or
-floating-point-incapable machines. [a.c](%%REPO_URL%%/2013/hou/a.c), while still reasonably portable, is
+floating-point-incapable machines. `a.c`, while still reasonably portable, is
 quite memory consuming, requires IEEE754-compliant `double`, and assumes `int` to be
 32-bits.
-* Though technically endian-dependent, [a.c](%%REPO_URL%%/2013/hou/a.c) remains portable providing that one
+* Though technically endian-dependent, `a.c` remains portable providing that one
 doesn't copy saved sessions across different endianness.
 
 
