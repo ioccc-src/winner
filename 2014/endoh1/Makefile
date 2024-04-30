@@ -224,7 +224,8 @@ clean:
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
 	${RM} -rf *.dSYM
-	${RM} -f main.c treacle.c
+	${RM} -f main.c treacle.c 
+	${RM} -f alpha.txt ast.txt raw.txt reg.txt seq.txt 
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \

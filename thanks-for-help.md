@@ -4859,6 +4859,10 @@ The `LDFLAGS` were updated to have `-lm` as the author suggested it uses the
 `math.h` library which not all systems link in by default (Linux for instance
 does not).
 
+The author noted that one can build `a.c` and refers to it in documentation. The
+rule in the Makefile was originally removed as part of the above but it was
+restored so that one can see what the author is talking about.
+
 Further, after the file `2013/hou/doc/example.markdown` was moved to
 [2013/hou/doc/example.html](2013/hou/doc/example.html) to match the rest of the repo
 this broke `make` which Cody also fixed.
@@ -4962,6 +4966,9 @@ install `gem`.  Then it tells you how to install `rake`. If `rake` fails to run
 then it tells you to install a specific gem and then to try again. Finally if
 `rake` succeeds it will verify that `prog` is executable and if it is it will
 run it.
+
+After more work on the manifest was done Cody had to update the `clobber` rule
+to remove some text files so as to not cause problems with an invalid manifest.
 
 Cody also added the [try.sh](%%REPO_URL%%/2014/endoh1/try.sh) script.
 

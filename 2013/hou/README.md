@@ -147,7 +147,7 @@ restrictions](#self-imposed-restrictions) section below for more details.
 
 * The building process does not involve any OS tool beyond `cc(1)` and
 `make(1)`. No `gzip(1)` compression! `a.c.gz` doesn't fit in 2053 bytes, anyway.
-* Neither [hou.c](%%REPO_URL%%/2013/hou/hou.c) nor [a.c](%%REPO_URL%%/2013/hou/a.c) (the *real* decompressed source) uses
+* Neither [hou.c](%%REPO_URL%%/2013/hou/hou.c) nor `a.c` (the *real* decompressed source) uses
 `#define` (or `cc -D`) at all.
 * The source code is not required at runtime.
 * `a.c` does not drop optional features to reduce size. There are pure
