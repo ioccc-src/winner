@@ -421,7 +421,7 @@ bring it back to the foreground.</p>
 source file is self documenting. :-)</p>
 <p>From time to time, run <code>ps(1)</code> and look at the new processes.</p>
 <p>See <a href="shapiro.html">shapiro.html</a> for more information in the internals of this program.
-The file <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/shapiro/shapiro.alt.c">shapiro.alt.c</a> contains a non-obfuscated version of
+The file <code>shapiro.alt.c</code> contains a non-obfuscated version of
 this program. Note that this alt file is currently missing. See
 <a href="../../bugs.html#1994_shapiro">1994 shapiro bugs</a> for details.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
@@ -432,12 +432,12 @@ this program. Note that this alt file is currently missing. See
 clock. If you strip out the comments and look at the code you will
 quickly realize that the comments were the important part and that
 the code does very little (see pun above). It writes (to <code>stdout</code>)
-another C program (<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/shapiro/shapiro_t2.c">shapiro_t2.c</a>. This is the first level of
+another C program (<code>shapiro_t2.c</code>). This is the first level of
 obfuscation.</p>
-<p>The second program (<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/shapiro/shapiro_t2.c">shapiro_t2.c</a> (use <code>make everything</code> first)
-prints a clock in the upper right hand corner of your VTxxx/ANSI display.</p>
+<p>The second program (<code>shapiro_t2.c</code>) prints a clock in the upper right hand
+corner of your VTxxx/ANSI display.</p>
 <p>Most of the surface obfuscation in the second program,
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/shapiro/shapiro_t2.c">shapiro_t2.c</a>, was an attempt to make it as small as possible.
+<code>shapiro_t2.c</code>, was an attempt to make it as small as possible.
 You should be able to see around this with <code>cb(1)</code> and some more intelligent
 variable names. Once you get past this you will realize that the third level of
 obfuscation is a six member client/server hierarchy. (See the
