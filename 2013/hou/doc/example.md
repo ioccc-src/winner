@@ -312,7 +312,7 @@ editing program, you need to convert the RGB values from 0..255 to 0..1, and
 then put here its *square*. Only after squaring you get your real, lively color
 in the output image, as opposed to something dull and gray. You need to do the
 same if you use a RGB texture. And yes, that is the what the second `sqrt(3)` in
-[a.c](%%REPO_URL%%/2013/hou/a.c) is for.
+`a.c` is for.
 
 Going beyond colors, to define a shiny or dull surface one needs more maths, and
 optics. The jargon for this is `BRDF` (Bidirectional Reflectance Distribution
