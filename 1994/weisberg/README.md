@@ -77,7 +77,8 @@ event of a system shutdown or reboot.
 
 ### Bugs
 
-The alternative version ([weisberg.alt.c](%%REPO_URL%%/1994/weisberg/weisberg.alt.c) source) has never actually run
+The alternative version ([weisberg.c](%%REPO_URL%%/1994/weisberg/weisberg.c)
+compiled to `weisberg.alt`) has never actually run
 to completion. After running for close to a week it had reached somewhere around
 250e6, when it became necessary to test the reboot feature (which worked
 remarkably well). As there are quite a lot of primes to be found before reaching
