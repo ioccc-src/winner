@@ -116,9 +116,9 @@ The compiler tool chain is the following.
 * [alpha.rb](%%REPO_URL%%/2014/endoh1/alpha.rb) applies "alpha-renaming" to the instruction sequence.
 * [register.rb](%%REPO_URL%%/2014/endoh1/register.rb) applies "register allocation".
 * [assemble.rb](%%REPO_URL%%/2014/endoh1/assemble.rb) converts the sequence to the final stack-machine instructions.
-* [interp.c](%%REPO_URL%%/2014/endoh1/interp.c) is an implementation of the VM.
+* [vm.c](%%REPO_URL%%/2014/endoh1/vm.c) is an implementation of the VM.
 * [link.rb](%%REPO_URL%%/2014/endoh1/link.rb) generates `main.c` by linking the instructions and interpreter source.
-* [gen-prog.c](%%REPO_URL%%/2014/endoh1/gen-prog.c) generates [prog.c](%%REPO_URL%%/2014/endoh1/prog.c) based on `main.c`.
+* `gen-prog.rb` generates [prog.c](%%REPO_URL%%/2014/endoh1/prog.c) based on `main.c`.
 
 You can run the process by `rake` command.  `ruby-minisat` gem is needed.
 

@@ -480,9 +480,9 @@ renaming and automatic register allocation only for this purpose.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/alpha.rb">alpha.rb</a> applies “alpha-renaming” to the instruction sequence.</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/register.rb">register.rb</a> applies “register allocation”.</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/assemble.rb">assemble.rb</a> converts the sequence to the final stack-machine instructions.</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/interp.c">interp.c</a> is an implementation of the VM.</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/vm.c">vm.c</a> is an implementation of the VM.</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/link.rb">link.rb</a> generates <code>main.c</code> by linking the instructions and interpreter source.</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/gen-prog.c">gen-prog.c</a> generates <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/prog.c">prog.c</a> based on <code>main.c</code>.</li>
+<li><code>gen-prog.rb</code> generates <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/prog.c">prog.c</a> based on <code>main.c</code>.</li>
 </ul>
 <p>You can run the process by <code>rake</code> command. <code>ruby-minisat</code> gem is needed.</p>
 <pre><code>    $ gem install ruby-minisat
