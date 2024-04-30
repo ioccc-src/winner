@@ -15,7 +15,7 @@ code](#alternate-code) below.
 ```
 
 where `file` is the file to be checked for nesting errors. For example, you may
-try [incorrect.c](%%REPO_URL%%/2012/zeitak/incorrect.c) and the program itself. You may also run it on
+try [incorrect.1.quote.c](%%REPO_URL%%/2012/zeitak/incorrect.1.quote.c) and the program itself. You may also run it on
 text files that are not code.
 
 
