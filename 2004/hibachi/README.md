@@ -26,7 +26,7 @@ we are considering starting an IOCCC standards body just to reign in the likes
 of Mr Howe.
 
 This entry also has the dubious honour of being the only one to have been
-submitted with its own [configure](%%REPO_URL%%/2004/hibachi/build/configure) script.
+submitted with its own `configure` script.
 
 NOTE: the author states there is a tarball `hibachi.tgz` but this was extracted
 so the file does not exist here.
