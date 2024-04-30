@@ -120,7 +120,7 @@ solution wherein the disks end up on peg 2; for an even
 number of disks, they will end on peg 3.  This should
 provide some hint as to what sort of algorithm is used.
 
-We have included a [spoiler](%%REPO_URL%%/1995/vanschnitz/spoiler.c) version of the program, with
+We have included a [spoiler](%%REPO_URL%%/1995/vanschnitz/vanschnitz.alt.c) version of the program, with
 meaningful symbol names and comments, but we encourage you
 to try to decipher the program without it...
 
@@ -203,7 +203,6 @@ to try to decipher the program without it...
     `
     end
 ```
-
 
 <!--
 
