@@ -389,33 +389,32 @@ See also <a href="https://spec.commonmark.org/current/">CommonMark Spec</a>.</p>
 <p>Nevertheless, the IOCCC does have certain practices that we ask authors to follow.
 Some these relate to use of markdown directly, others relate to injecting HTML
 into the markdown file.</p>
-<p>In particular there are things we ask people to please do <strong>NOT</strong> use markdown files:</p>
-<h2 id="do-not-use-name-attributes-in-html-a-tags">Do not use name attributes in HTML a tags</h2>
-<p>Please do not use the HTML construct:</p>
-<pre><code>    &lt;a name=&quot;string&quot;&gt;\&lt;/a&gt;              &lt;=== no thank you</code></pre>
+<p>In particular there are things we ask people to please do <strong>NOT</strong> use in
+markdown files:</p>
+<h2 id="do-not-use-name-attributes-in-html-a-tags">Do NOT use name attributes in HTML a tags</h2>
+<p>Please do <strong>NOT</strong> use the HTML construct:</p>
+<pre><code>    &lt;a name=&quot;string&quot;&gt;...&lt;/a&gt;    &lt;=== no thank you</code></pre>
 <p>as those are <strong>NOT</strong> part of the HTML 5 standard.</p>
 <p>Instead use:</p>
-<pre><code>    &lt;div id=&quot;string&quot;&gt;...\&lt;/div&gt;</code></pre>
-<p>where the “…” is the HTML you want to “name”. The <strong>div</strong>
-encapsulates the HTML you want to name: I.e., the target of some
-“<strong>&lt;a href=”#string”&gt;</strong>” or some other “<strong>&lt;a href=”URL#string”&gt;</strong>”
+<pre><code>    &lt;div id=&quot;string&quot;&gt;...&lt;/div&gt;</code></pre>
+<p>where the <code>...</code> is the HTML you want to “name”. The <code>&lt;div&gt;</code>
+encapsulates the HTML you want to name: i.e., the target of some
+<code>&lt;a href="#string"&gt;</code> or some other <code>&lt;a href="URL#string"&gt;</code>
 for the given page URL.</p>
-<p>There are certain HTML Elements that cannot have internal “<strong>&lt;div
-id=”string”&gt;…&lt;/div&gt;</strong>”. For example you cannot do this:</p>
-<pre><code>    # &lt;div id=&quot;string&quot;&gt;This will not work&lt;/div&gt;</code></pre>
+<p>There are certain HTML Elements that cannot have internal <code>&lt;div id="string"&gt;...&lt;/div&gt;</code>. For example you cannot do this:</p>
+<pre><code>    # &lt;div id=&quot;string&quot;&gt;This will NOT work&lt;/div&gt;</code></pre>
 <p>For things like headings, you have to surround them as in:</p>
 <pre><code>    &lt;div id=&quot;string&quot;&gt;
     # This will work
     &lt;/div&gt;</code></pre>
-<p>While some browsers will still recognize the HTML construct “<strong>&lt;a
-name=”string”&gt;&lt;/a&gt;</strong>”, they may not in the future.</p>
-<h2 id="do-not-use-trailing-backslash-outside-of-a-code-block">Do not use trailing backslash outside of a code block</h2>
+<p>While some browsers will still recognize the HTML construct <code>&lt;a name="string"&gt;...&lt;/a&gt;</code>, it is possible they might NOT in the future.</p>
+<h2 id="do-not-use-trailing-backslash-outside-of-a-code-block">Do NOT use trailing backslash outside of a code block</h2>
 <p>Unless the line is inside a markdown code block, please do <strong>NOT</strong>
-end a markdown line with a trailing backslash (“\”). Instead use
-a trailing “<strong>&lt;br&gt;</strong>”.</p>
+end a markdown line with a trailing backslash (<code>\</code>). Instead use
+a trailing <code>&lt;br&gt;</code>.</p>
 <p>Instead of:</p>
 <pre><code>    In markdown,\                       &lt;=== no thank you
-    do not use trailing\
+    do NOT use trailing\
     backslashes outside of\
     a code block</code></pre>
 <p>use:</p>
@@ -423,19 +422,20 @@ a trailing “<strong>&lt;br&gt;</strong>”.</p>
     use trailing&lt;br&gt;
     br&#39;s outside of&lt;br&gt;
     a code block</code></pre>
-<p>Again, use of a trailing backslash (“\”) inside a markdown code block is fine:</p>
+<p>Again, use of a trailing backslash (<code>\</code>) inside a markdown code block is fine:</p>
 <pre><code>```
     This is OK\
     inside a\
     markdown code\
     block
 ```</code></pre>
-<p>This will avoid <code>pandoc(1)</code> generating deprecated HTML elements such as <code>\&lt;br /&gt;</code>.</p>
-<h2 id="do-not-use-markdown-image-elements">Do not use markdown image elements</h2>
-<p>Please do not use the markdown embedded image element.</p>
+<p>This will prevent <code>pandoc(1)</code> from generating deprecated HTML elements such as
+<code>&lt;br /&gt;</code>.</p>
+<h2 id="do-not-use-markdown-image-elements">Do NOT use markdown image elements</h2>
+<p>Please do <strong>NOT</strong> use the markdown embedded image element.</p>
 <p>Instead of using this markdown element to embed an image:</p>
 <pre><code>    ![alt text](filename.png &quot;Title&quot;)           &lt;=== no thank you</code></pre>
-<p>Use a “img” HTML element with “alt”, “alt”, “width” and “length”
+<p>Use an <code>img</code> HTML element with <code>alt</code>, <code>width</code> and <code>length</code>
 attributes:</p>
 <pre><code>    &lt;img src=&quot;filename.png&quot;
      alt=&quot;describe the filename.png image for someone who cannot view it&quot;
@@ -447,173 +447,119 @@ attributes:</p>
      alt=&quot;image of a tattoo of the 1984 anonymous C code&quot;
      width=600 height=401&gt;</code></pre>
 <p>The problem goes beyond the fact that <code>pandoc(1)</code> generates problematic
-HTML from the markdown image construct, the resulting HTML does not
-have “width” and “height” information so browsers have to slow down
+HTML from the markdown image construct, the resulting HTML does NOT
+have <code>width</code> and <code>height</code> information so browsers have to slow down
 on rendering text around the image until it can internally determine
 the image size.</p>
-<h2 id="do-not-use-markdown-style-horizontal-lines">Do not use markdown style horizontal lines</h2>
-<p>Please do not use “<strong>—</strong>”-style lines in markdown to create horizontal
-lines, nor to separate sections.</p>
-<p>Unless something is inside a markdown code block, do not start a
-line with 3 or more dashes (“-”).</p>
-<p>Such causes <code>pandoc(1)</code> to generate “<strong>&lt;hr /&gt;</strong>”. The “<strong>&lt;hr
-/&gt;</strong>” has no effect in standard HTML 5 and interacts badly with
-unquoted attribute values.</p>
+<h2 id="do-not-use-markdown-style-horizontal-lines">Do NOT use markdown style horizontal lines</h2>
+<p>Please do <strong>NOT</strong> use <code>**---**</code>-style lines in markdown to create horizontal
+lines or to separate sections.</p>
+<p>Unless something is inside a markdown code block, do NOT start a
+line with 3 or more dashes (<code>-</code>s).</p>
+<p>Such causes <code>pandoc(1)</code> to generate <code>&lt;hr /&gt;</code>. The <code>&lt;hr /&gt;</code> has no effect in
+standard HTML 5 and interacts badly with unquoted attribute values.</p>
 <p>If a horizontal line is really needed, use:</p>
 <pre><code>    &lt;hr&gt;</code></pre>
 <p>If a short line is needed, use:</p>
 <pre><code>    &lt;hr style=&quot;width:10%;text-align:left;margin-left:0&quot;&gt;</code></pre>
-<h2 id="do-not-use-the-strike-html-element">Do not use the strike HTML element</h2>
-<p>Please not use HTML elements:</p>
+<h2 id="do-not-use-the-strike-html-element">Do NOT use the strike HTML element</h2>
+<p>Please NOT use HTML elements:</p>
 <pre><code>    &lt;strike&gt;...&lt;/strike&gt;        &lt;=== no thank you</code></pre>
 <p>Use instead:</p>
 <pre><code>    &lt;del&gt;...&lt;/del&gt;</code></pre>
-<h2 id="do-not-use-the-tt-html-element">Do not use the tt HTML element</h2>
-<p>Please do not use the tt HTML elements:</p>
+<h2 id="do-not-use-the-tt-html-element">Do NOT use the <code>&lt;tt&gt;</code> HTML element</h2>
+<p>Please do <strong>NOT</strong> use the <code>&lt;tt&gt;</code> HTML elements:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">tt</span><span class="dt">&gt;</span>The HTML 5 obsolete tt element is obsolete<span class="dt">&lt;/</span><span class="kw">tt</span><span class="dt">&gt;</span>         <span class="er">&lt;</span>=== no thank you</span></code></pre></div>
 <p>Instead use either a monospaced span:</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> style</span><span class="op">=</span><span class="st">&quot;font-family: monospace;&quot;</span><span class="dt">&gt;</span>Use of monospaced font is one option<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span></code></pre></div>
 <p>Or better and easier still, use an inline markdown code block:</p>
 <pre><code>    `inline markdown code block is easier and much better`</code></pre>
-<h2 id="do-not-use-un-indented-code-clocks">Do not use un-indented code clocks</h2>
-<p>Please do not start code blocks at the left-hand edge.</p>
+<h2 id="do-not-use-unindented-code-clocks">Do NOT use unindented code clocks</h2>
+<p>Please do <strong>NOT</strong> start code blocks at the left-hand edge.</p>
 <pre><code>```
 This code block         &lt;=== no thank you
-is not indendted
-```
-```
-
-We request that you indent the code block by 4 spaces:
-</code></pre>
-<pre><code>    This code block
-    is intented 4 spaces</code></pre>
-<pre><code>
-One exception is where change bars are needed, such as
-those used in `next/rules.md` and in `next/guidelines.md`.
-
-For example, `next/guidelines.md` uses this markdown code block:
-</code></pre>
-<pre><code>    main() {
+is NOT indented
+```</code></pre>
+<p>We request that you indent the code block by 4 spaces:</p>
+<pre><code>```
+    This code block
+    is indented 4 spaces
+```</code></pre>
+<p>One exception is where change bars are needed, such as
+those used in <code>next/rules.md</code> and in <code>next/guidelines.md</code>.</p>
+<p>For example, <code>next/guidelines.md</code> uses this markdown code block:</p>
+<pre><code>```
+    main() {
 |       void please_do_not_submit_this() {
 |           printf(&quot;The machine that goes BING!\n&quot;);
         }
 |       please_do_not_submit_this();
-    }</code></pre>
-<pre><code>
-
-## Do not add trailing slash on void HTML elements
-
-Please do not use trailing slash on [void HTML
-elements](https://github.com/validator/validator/wiki/Markup-»-Void-elements).
-
-See also this note on [trailing slashes in void-element start
-tags](https://github.com/validator/validator/wiki/Markup-»-Void-elements#trailing-slashes-in-void-element-start-tags-do-not-mark-the-start-tags-as-self-closing).
-
-The trailing slash on void HTML elements has no effect and interacts badly with unquoted attribute values.
-
-For example, please do not use:
-
-```
-    &lt;br/&gt;       &lt;=== no thank you
-```
-
-Instead use just:
-
-```
-    &lt;br&gt;
-```
-
-And for example, please do not use:
-
-```
-    &lt;hr/&gt;       &lt;=== no thank you
-```
-
-Instead use just:
-
-```
-    &lt;hr&gt;
-```
-
-And for example, please do not use:
-
-```
-    &lt;img src=&quot;1984-anonymous-tattoo.jpg&quot;
+    }
+```</code></pre>
+<h2 id="do-not-add-trailing-slash-on-void-html-elements">Do NOT add trailing slash on void HTML elements</h2>
+<p>Please do <strong>NOT</strong> use a trailing slash on <a href="https://github.com/validator/validator/wiki/Markup-»-Void-elements">void HTML
+elements</a>.</p>
+<p>See also this note on <a href="https://github.com/validator/validator/wiki/Markup-»-Void-elements#trailing-slashes-in-void-element-start-tags-do-NOT-mark-the-start-tags-as-self-closing">trailing slashes in void-element start
+tags</a>.</p>
+<p>The trailing slash on void HTML elements has no effect and interacts badly with
+unquoted attribute values.</p>
+<p>For example, please do NOT use:</p>
+<pre><code>    &lt;br/&gt;       &lt;=== no thank you</code></pre>
+<p>Instead use just:</p>
+<pre><code>    &lt;br&gt;</code></pre>
+<p>And for example, please do NOT use:</p>
+<pre><code>    &lt;hr/&gt;       &lt;=== no thank you</code></pre>
+<p>Instead use just:</p>
+<pre><code>    &lt;hr&gt;</code></pre>
+<p>And for example, please do NOT use:</p>
+<pre><code>    &lt;img src=&quot;1984-anonymous-tattoo.jpg&quot;
      alt=&quot;image of a tattoo of the 1984 anonymous C code&quot;
-     width=600 height=401 /&gt;                                    &lt;=== no thank you
-```
-
-Instead use just:
-
-```
-    &lt;img src=&quot;1984-anonymous-tattoo.jpg&quot;
+     width=600 height=401 /&gt;                                    &lt;=== no thank you</code></pre>
+<p>Instead use just:</p>
+<pre><code>    &lt;img src=&quot;1984-anonymous-tattoo.jpg&quot;
      alt=&quot;image of a tattoo of the 1984 anonymous C code&quot;
-     width=600 height=401&gt;
-```
-
-etc.
-
-
-## Do not end markdown links in ))
-
-Please do not end a markdown links with a double closed parenthesis &quot;))&quot;.
-
-Markdown links that end in &quot;))&quot; complicate parsing and sometimes lead
-to incorrect URLs or file paths.
-
-Instead of:
-
-```
-    [some text](https://example.com/foo_(bar))  &lt;=== no thank you
-```
-
-Use:
-
-```
-    [some text](https://example.com/foo_&amp;#x28;bar&amp;#x29;)
-```
-
-Instead of:
-
-```
-    This thing ([some text](some/path)) is not ideal.   &lt;=== no thank you
-```
-
-Use:
-
-```
-    This thing, [some text](some/path), is better.
-```
-
-
-## Do not place text on the next line after a markdown code block
-
-Please do not place text on the next line after a markdown code block.
+     width=600 height=401&gt;</code></pre>
+<p>etc.</p>
+<h2 id="do-not-end-markdown-links-in">Do NOT end markdown links in “))”</h2>
+<p>Please do <strong>NOT</strong> end a markdown links with a double closed parenthesis “))”.</p>
+<p>Markdown links that end in “))” complicate parsing and sometimes lead
+to incorrect URLs or file paths.</p>
+<p>Instead of:</p>
+<pre><code>    [some text](https://example.com/foo_(bar))  &lt;=== no thank you</code></pre>
+<p>Use:</p>
+<pre><code>    [some text](https://example.com/foo_&amp;#x28;bar&amp;#x29;)</code></pre>
+<p>Instead of:</p>
+<pre><code>    This thing, ([some text](some/path)), is NOT ideal. &lt;=== no thank you</code></pre>
+<p>Use:</p>
+<pre><code>    This thing, [some text](some/path), is better.</code></pre>
+<h2 id="do-not-place-text-on-the-next-line-after-a-markdown-code-block">Do NOT place text on the next line after a markdown code block</h2>
+<p>Please do <strong>NOT</strong> place text on the next line after a markdown code block.
 Instead, place a blank line after the end of a markdown code block
-is this makes it easier to detect when markdown code blocks are
-not properly indented.
+as this makes it easier to detect when markdown code blocks are
+NOT properly indented.</p>
+<p>Instead of:</p>
+<pre><code>```
+    int
+    main(int foo)
+    {
+        return foo;
+    }
+```
+C compilers cannot be given a -Wno-main-arg-errors flag.         &lt;=== no thank you</code></pre>
+<p>Use:</p>
+<pre><code>```
+    int
+    main(int foo)
+    {
+        return foo;
+    }
+```
 
-Instead of:
-</code></pre>
-<pre><code>    int
-    main(int foo)
-    {
-        return foo;
-    }</code></pre>
-<p>C compilers cannot be given a -Wno-main-arg-errors flag. &lt;=== no thank you</p>
-<pre><code>
-Use:
-</code></pre>
-<pre><code>    int
-    main(int foo)
-    {
-        return foo;
-    }</code></pre>
-<p>C compilers cannot be given a -Wno-main-arg-errors flag.</p>
-<p>BTW: Not the blank line after the code block.
-````</p>
-<h2 id="do-not-put-s-or-markdown-link-titles">Do not put (‘s or )’ markdown link titles</h2>
-<p>Please do not use parenthesis inside the markdown link titles.</p>
+C compilers cannot be given a -Wno-main-arg-errors flag.
+
+BTW: note the blank line after the code block.</code></pre>
+<h2 id="do-not-put-s-or-s-in-markdown-link-titles">Do NOT put “(”s or “)”s in markdown link titles</h2>
+<p>Please do <strong>NOT</strong> use parenthesis inside the markdown link titles.</p>
 <p>Instead of:</p>
 <pre><code>    [some (text)](https://example.com/cyrds)      &lt;=== no thank you</code></pre>
 <p>Use:</p>
