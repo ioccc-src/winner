@@ -2867,7 +2867,7 @@
 2018/endoh2/try.sh
 2018/ferguson/.entry.json
 2018/ferguson/.gitignore
-2018/ferguson/FILES
+2018/ferguson/FILES.md
 2018/ferguson/Makefile
 2018/ferguson/README.md
 2018/ferguson/hint.css

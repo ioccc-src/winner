@@ -876,6 +876,7 @@
 2018/endoh2/index.html
 2018/ferguson/.path
 2018/ferguson/2018_ferguson.tar.bz2
+2018/ferguson/FILES.html
 2018/ferguson/index.html
 2018/ferguson/rpm.html
 2018/giles/.path

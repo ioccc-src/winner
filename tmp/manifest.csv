@@ -3746,7 +3746,8 @@
 2018,ferguson,Makefile,30,true,makefile,true,entry Makefile
 2018,ferguson,prog.alt.c,40,true,c,true,alternative source
 2018,ferguson,prog.orig.c,50,false,c,true,original source
-2018,ferguson,FILES,100,true,text,true,information about various files
+2018,ferguson,FILES.html,100,false,html,false,list of files in this entry
+2018,ferguson,FILES.md,100,true,text,true,markdown source for FILES.html
 2018,ferguson,id.alt.sh,100,true,shellscript,true,how to run
 2018,ferguson,id.sh,100,true,shellscript,true,how to run
 2018,ferguson,monkey-words.alt.sh,100,true,shellscript,true,how to run
