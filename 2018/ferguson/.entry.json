@@ -42,12 +42,20 @@
 	    "entry_text" : "original source"
 	},
 	{
-	    "file_path" : "FILES",
+	    "file_path" : "FILES.html",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "list of files in this entry"
+	},
+	{
+	    "file_path" : "FILES.md",
 	    "inventory_order" : 100,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "information about various files"
+	    "entry_text" : "markdown source for FILES.html"
 	},
 	{
 	    "file_path" : "id.alt.sh",
