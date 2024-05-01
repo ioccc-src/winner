@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 # 
-# update-manifest.sh - interactive script to update the IOCCC manifest step by
-# step post manifest.csv export
+# update-manifest.sh - temporary interactive script to update the IOCCC manifest
+# step by step post manifest.csv export.
+#
+# Written by Cody Boone Ferguson in 2024 to greatly simplify fixing and
+# improving the manifest of winning IOCCC entries. This script WILL GO AWAY when
+# both the manifest and html issues are completed.
 #
 
 export UPDATE_MANIFEST_VERSION="0.0.1-1 2024-28-01" # format: major.minor.patch-release YYYY-DD-MM
@@ -116,9 +120,9 @@ fi
 
 echo 1>&2
 echo "NOTE: manifest.numbers and manifest.csv may be modified here BUT NOTHING ELSE" 1>&2
-echo "MAY BE (UNLESS RERUNNING THIS SCRIPT AFTER FIXING A PROBLEM: then related files" 1>&2
-echo "in /tmp/ may be modified BUT ONLY FILES RELEVANT TO THE MANIFEST!). NO NEW FILES" 1>&2
-echo "MAY BE STAGED FOR COMMIT EITHER!" 1>&2
+echo "MAY BE UNLESS IT IS RELATED TO THE MANIFEST UPDATE ITSELF (e.g. rerunning to fix" 1>&2
+echo "a problem or if the need for the manifest to be updated is because of the other" 1>&2
+echo "changes)." 1>&2
 read -r -p "Do you have a clean state from git status (Y/N)? "
 if [[ "$REPLY" != "Y" && "$REPLY" != "y" ]]; then
     echo 1>&2

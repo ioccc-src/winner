@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "how to run alternative code in Germain"
+	    "entry_text" : "run alternative code with Germain words"
 	},
 	{
 	    "file_path" : "en.alt.sh",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "how to run alternative code in English"
+	    "entry_text" : "run alternative code with English words"
 	},
 	{
 	    "file_path" : "getwords.sh",
@@ -63,7 +63,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "how to run"
+	    "entry_text" : "fetch words from aspell dictionary file"
 	},
 	{
 	    "file_path" : "it.alt.sh",
@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "how to run alternative code in Italian"
+	    "entry_text" : "run alternative code with Italian words"
 	},
 	{
 	    "file_path" : "pl.alt.sh",
@@ -79,7 +79,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "how to run alternative code in Polish"
+	    "entry_text" : "run alternative code with Polish words"
 	},
 	{
 	    "file_path" : "ru.alt.sh",
@@ -87,7 +87,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "how to run alternative code in Russian"
+	    "entry_text" : "run alternative code with Russian words"
 	},
 	{
 	    "file_path" : "try.alt.sh",
@@ -95,7 +95,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "how to run alternative code"
+	    "entry_text" : "script to try alternative code"
 	},
 	{
 	    "file_path" : "try.sh",
@@ -103,7 +103,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "how to run"
+	    "entry_text" : "script to try entry"
 	},
 	{
 	    "file_path" : "wrapprog.py",
@@ -119,7 +119,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "run with German data"
+	    "entry_text" : "run with German words"
 	},
 	{
 	    "file_path" : "en.sh",
@@ -127,7 +127,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "run with English data"
+	    "entry_text" : "run with English words"
 	},
 	{
 	    "file_path" : "fr.alt.sh",
@@ -135,7 +135,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "how to run alternative code in French"
+	    "entry_text" : "script to try alternative code in French"
 	},
 	{
 	    "file_path" : "fr.sh",
@@ -143,7 +143,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "run with French data"
+	    "entry_text" : "run with French words"
 	},
 	{
 	    "file_path" : "it.sh",
@@ -151,7 +151,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "run with Italian data"
+	    "entry_text" : "run with Italian words"
 	},
 	{
 	    "file_path" : "pl.sh",
@@ -159,7 +159,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "run with Polish data"
+	    "entry_text" : "run with Polish words"
 	},
 	{
 	    "file_path" : "ru.sh",
@@ -167,7 +167,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "run with Russian data"
+	    "entry_text" : "run with Russian words"
 	},
 	{
 	    "file_path" : "fasc5c.pdf",
@@ -191,7 +191,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "json",
 	    "display_via_github" : true,
-	    "entry_text" : "description of entry in JSON"
+	    "entry_text" : "entry summary and manifest in JSON"
 	},
 	{
 	    "file_path" : ".gitignore",

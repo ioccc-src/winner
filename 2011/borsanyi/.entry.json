@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "how to run"
+	    "entry_text" : "script to try entry"
 	},
 	{
 	    "file_path" : "data.1",
@@ -79,7 +79,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "json",
 	    "display_via_github" : true,
-	    "entry_text" : "description of entry in JSON"
+	    "entry_text" : "entry summary and manifest in JSON"
 	},
 	{
 	    "file_path" : ".gitignore",
