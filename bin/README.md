@@ -421,13 +421,13 @@ Form a compressed tarball for an entry.
 Usage:
 
 ``` <!---sh-->
-bin/tar-entry.sh -v 1 YYYY/dir
+    bin/tar-entry.sh -v 1 YYYY/dir
 ```
 
 Suggested usage:
 
 ``` <!---sh-->
-bin/all-run.sh -v 3 bin/tar-entry.sh -v 1 -W
+    bin/all-run.sh -v 3 bin/tar-entry.sh -v 1 -W
 ```
 
 
@@ -438,19 +438,19 @@ Form a compressed tarball for an IOCCC year.
 Usage:
 
 ``` <!---sh-->
-bin/tar-year.sh -v 1 YYYY
+    bin/tar-year.sh -v 1 YYYY
 ```
 
 Suggested usage:
 
 ``` <!---sh-->
-bin/all-years.sh -v 3 bin/tar-year.sh -v 1 -W
+    bin/all-years.sh -v 3 bin/tar-year.sh -v 1 -W
 ```
 
 We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
-make form_year_tarball
+    make form_year_tarball
 ```
 
 

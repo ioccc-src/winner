@@ -45,7 +45,7 @@ the command is:
 which has been changed to be:
 
 ```
-"0cc -ansi -E -dM -undef %s /usr/include/%s>r\0 ("
+    "0cc -ansi -E -dM -undef %s /usr/include/%s>r\0 ("
 ```
 
 Shortly below that you will see, as noted above, the numbers:

@@ -163,7 +163,7 @@ If a short line is needed, use:
 
 ## Do not use the strike HTML element
 
-Please not use the HTML element:
+Please not use HTML elements:
 
 ```
     <strike>...</strike>	<=== no thank you
@@ -176,7 +176,7 @@ Use instead:
 ```
 
 
-## Do not use tt HTML elements
+## Do not use the tt HTML element
 
 Please do not use the tt HTML elements:
 
@@ -214,6 +214,22 @@ We request that you indent the code block by 4 spaces:
 ```
     This code block
     is intented 4 spaces
+```
+````
+
+One exception is where change bars are needed, such as
+those used in `next/rules.md` and in `next/guidelines.md`.
+
+For example, `next/guidelines.md` uses this markdown code block:
+
+````
+```
+    main() {
+|       void please_do_not_submit_this() {
+|           printf("The machine that goes BING!\n");
+        }
+|       please_do_not_submit_this();
+    }
 ```
 ````
 
@@ -301,6 +317,43 @@ Use:
 ```
     This thing, [some text](some/path), is better.
 ```
+
+
+## Do not place text on the next line after a markdown code block
+
+Please do not place text on the next line after a markdown code block.
+Instead, place a blank line after the end of a markdown code block
+is this makes it easier to detect when markdown code blocks are
+not properly indented.
+
+Instead of:
+
+````
+```
+    int
+    main(int foo)
+    {
+        return foo;
+    }
+```
+C compilers cannot be given a -Wno-main-arg-errors flag.	 <=== no thank you
+````
+
+Use:
+
+````
+```
+    int
+    main(int foo)
+    {
+        return foo;
+    }
+```
+
+C compilers cannot be given a -Wno-main-arg-errors flag.
+
+BTW: Not the blank line after the code block.
+````
 
 
 ## Do not put ('s or )' markdown link titles

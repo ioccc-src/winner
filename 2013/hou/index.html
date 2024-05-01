@@ -507,7 +507,7 @@ Despite the messy look, <code>a.c</code> and <a href="https://github.com/ioccc-s
 (<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/hou.c">hou.c</a> even wastes 18 bytes on <code>#include&lt;stdio.h&gt;</code> just for <code>putchar(3)</code>).
 <code>a.c</code> compiles mostly clean in the C99/ANSI modes of clang and gcc (with:</li>
 </ul>
-<pre><code>-Wall --pedantic</code></pre>
+<pre><code>    -Wall --pedantic</code></pre>
 <p>The only warning generated is a pedantic one: <code>"string constant too long"</code>.</p>
 <h3 id="comments-and-why-obfuscated">Comments and why obfuscated</h3>
 <ul>

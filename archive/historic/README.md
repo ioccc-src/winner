@@ -80,7 +80,7 @@ Machine](https://web.archive.org) as of [2022 Dec
 *HINT*: To uncompress a given bzip2 compressed tarball file, use:
 
 ``` <!---sh-->
-tar -jxvf file.tar.bz2
+    tar -jxvf file.tar.bz2
 ```
 
 where "_file.tar.bz2_" is the name of a file found in this directory.
@@ -89,10 +89,10 @@ To uncompress all of the 2022 Dec 28 archive using the year based
 bzip2 compressed tarball files:
 
 ``` <!---sh-->
-for year in 198{4,5,6,7,8,9} 199{0,1,2,3,4,5,6,8} 200{0,1,4,5,6} 201{1,2,3,4,5,8,9} 2020; do
-    rm -rf "$year"
-    tar -jxvf "archive-$year.tar.bz2"
-done
+    for year in 198{4,5,6,7,8,9} 199{0,1,2,3,4,5,6,8} 200{0,1,4,5,6} 201{1,2,3,4,5,8,9} 2020; do
+	rm -rf "$year"
+	tar -jxvf "archive-$year.tar.bz2"
+    done
 ```
 
 

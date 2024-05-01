@@ -464,11 +464,11 @@ unquoted attribute values.</p>
 <p>If a short line is needed, use:</p>
 <pre><code>    &lt;hr style=&quot;width:10%;text-align:left;margin-left:0&quot;&gt;</code></pre>
 <h2 id="do-not-use-the-strike-html-element">Do not use the strike HTML element</h2>
-<p>Please not use the HTML element:</p>
+<p>Please not use HTML elements:</p>
 <pre><code>    &lt;strike&gt;...&lt;/strike&gt;        &lt;=== no thank you</code></pre>
 <p>Use instead:</p>
 <pre><code>    &lt;del&gt;...&lt;/del&gt;</code></pre>
-<h2 id="do-not-use-tt-html-elements">Do not use tt HTML elements</h2>
+<h2 id="do-not-use-the-tt-html-element">Do not use the tt HTML element</h2>
 <p>Please do not use the tt HTML elements:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">tt</span><span class="dt">&gt;</span>The HTML 5 obsolete tt element is obsolete<span class="dt">&lt;/</span><span class="kw">tt</span><span class="dt">&gt;</span>         <span class="er">&lt;</span>=== no thank you</span></code></pre></div>
 <p>Instead use either a monospaced span:</p>
@@ -487,42 +487,131 @@ We request that you indent the code block by 4 spaces:
 </code></pre>
 <pre><code>    This code block
     is intented 4 spaces</code></pre>
-<p>````</p>
-<h2 id="do-not-add-trailing-slash-on-void-html-elements">Do not add trailing slash on void HTML elements</h2>
-<p>Please do not use trailing slash on <a href="https://github.com/validator/validator/wiki/Markup-»-Void-elements">void HTML
-elements</a>.</p>
-<p>See also this note on <a href="https://github.com/validator/validator/wiki/Markup-»-Void-elements#trailing-slashes-in-void-element-start-tags-do-not-mark-the-start-tags-as-self-closing">trailing slashes in void-element start
-tags</a>.</p>
-<p>The trailing slash on void HTML elements has no effect and interacts badly with unquoted attribute values.</p>
-<p>For example, please do not use:</p>
-<pre><code>    &lt;br/&gt;       &lt;=== no thank you</code></pre>
-<p>Instead use just:</p>
-<pre><code>    &lt;br&gt;</code></pre>
-<p>And for example, please do not use:</p>
-<pre><code>    &lt;hr/&gt;       &lt;=== no thank you</code></pre>
-<p>Instead use just:</p>
-<pre><code>    &lt;hr&gt;</code></pre>
-<p>And for example, please do not use:</p>
-<pre><code>    &lt;img src=&quot;1984-anonymous-tattoo.jpg&quot;
+<pre><code>
+One exception is where change bars are needed, such as
+those used in `next/rules.md` and in `next/guidelines.md`.
+
+For example, `next/guidelines.md` uses this markdown code block:
+</code></pre>
+<pre><code>    main() {
+|       void please_do_not_submit_this() {
+|           printf(&quot;The machine that goes BING!\n&quot;);
+        }
+|       please_do_not_submit_this();
+    }</code></pre>
+<pre><code>
+
+## Do not add trailing slash on void HTML elements
+
+Please do not use trailing slash on [void HTML
+elements](https://github.com/validator/validator/wiki/Markup-»-Void-elements).
+
+See also this note on [trailing slashes in void-element start
+tags](https://github.com/validator/validator/wiki/Markup-»-Void-elements#trailing-slashes-in-void-element-start-tags-do-not-mark-the-start-tags-as-self-closing).
+
+The trailing slash on void HTML elements has no effect and interacts badly with unquoted attribute values.
+
+For example, please do not use:
+
+```
+    &lt;br/&gt;       &lt;=== no thank you
+```
+
+Instead use just:
+
+```
+    &lt;br&gt;
+```
+
+And for example, please do not use:
+
+```
+    &lt;hr/&gt;       &lt;=== no thank you
+```
+
+Instead use just:
+
+```
+    &lt;hr&gt;
+```
+
+And for example, please do not use:
+
+```
+    &lt;img src=&quot;1984-anonymous-tattoo.jpg&quot;
      alt=&quot;image of a tattoo of the 1984 anonymous C code&quot;
-     width=600 height=401 /&gt;                                    &lt;=== no thank you</code></pre>
-<p>Instead use just:</p>
-<pre><code>    &lt;img src=&quot;1984-anonymous-tattoo.jpg&quot;
+     width=600 height=401 /&gt;                                    &lt;=== no thank you
+```
+
+Instead use just:
+
+```
+    &lt;img src=&quot;1984-anonymous-tattoo.jpg&quot;
      alt=&quot;image of a tattoo of the 1984 anonymous C code&quot;
-     width=600 height=401&gt;</code></pre>
-<p>etc.</p>
-<h2 id="do-not-end-markdown-links-in">Do not end markdown links in ))</h2>
-<p>Please do not end a markdown links with a double closed parenthesis “))”.</p>
-<p>Markdown links that end in “))” complicate parsing and sometimes lead
-to incorrect URLs or file paths.</p>
-<p>Instead of:</p>
-<pre><code>    [some text](https://example.com/foo_(bar))  &lt;=== no thank you</code></pre>
-<p>Use:</p>
-<pre><code>    [some text](https://example.com/foo_&amp;#x28;bar&amp;#x29;)</code></pre>
-<p>Instead of:</p>
-<pre><code>    This thing ([some text](some/path)) is not ideal.   &lt;=== no thank you</code></pre>
-<p>Use:</p>
-<pre><code>    This thing, [some text](some/path), is better.</code></pre>
+     width=600 height=401&gt;
+```
+
+etc.
+
+
+## Do not end markdown links in ))
+
+Please do not end a markdown links with a double closed parenthesis &quot;))&quot;.
+
+Markdown links that end in &quot;))&quot; complicate parsing and sometimes lead
+to incorrect URLs or file paths.
+
+Instead of:
+
+```
+    [some text](https://example.com/foo_(bar))  &lt;=== no thank you
+```
+
+Use:
+
+```
+    [some text](https://example.com/foo_&amp;#x28;bar&amp;#x29;)
+```
+
+Instead of:
+
+```
+    This thing ([some text](some/path)) is not ideal.   &lt;=== no thank you
+```
+
+Use:
+
+```
+    This thing, [some text](some/path), is better.
+```
+
+
+## Do not place text on the next line after a markdown code block
+
+Please do not place text on the next line after a markdown code block.
+Instead, place a blank line after the end of a markdown code block
+is this makes it easier to detect when markdown code blocks are
+not properly indented.
+
+Instead of:
+</code></pre>
+<pre><code>    int
+    main(int foo)
+    {
+        return foo;
+    }</code></pre>
+<p>C compilers cannot be given a -Wno-main-arg-errors flag. &lt;=== no thank you</p>
+<pre><code>
+Use:
+</code></pre>
+<pre><code>    int
+    main(int foo)
+    {
+        return foo;
+    }</code></pre>
+<p>C compilers cannot be given a -Wno-main-arg-errors flag.</p>
+<p>BTW: Not the blank line after the code block.
+````</p>
 <h2 id="do-not-put-s-or-markdown-link-titles">Do not put (‘s or )’ markdown link titles</h2>
 <p>Please do not use parenthesis inside the markdown link titles.</p>
 <p>Instead of:</p>

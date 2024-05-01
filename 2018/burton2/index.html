@@ -644,7 +644,7 @@ the IOJCC trash can.</p>
 </ul>
 <p>NB: The keyword file used in this code is derived from the list in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/iocccsize.c">iocccsize.c</a>,
 which is neither complete (<code>#define</code>, <code>#ifndef</code>, <code>#undef</code> are missing</p>
-<pre><code>yes, Virginia knows about `#define` omitted on purpose</code></pre>
+<pre><code>    yes, Virginia knows about `#define` omitted on purpose</code></pre>
 <p>nor correct (many more are added: <code>I</code>, <code>true</code>, <code>bool</code>, <code>compl</code>, …):</p>
 <pre><code>    (sed -n &#39;1p&#39; c11; sed -n &#39;2,$p&#39; ioccc.kw.freq | sort) | comm -3 - c11</code></pre>
 <p>That is an obfuscated way to say “diff”. But it also more clearly shows the, um, diffs.</p>

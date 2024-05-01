@@ -744,7 +744,7 @@ Keep in mind the way I display the generations and the fact that generation 0
 has no parents; it is generation 1 that starts working towards the goal. You'll
 see also **(mutation)** at the end of the line at this point (if you enable
 monkey mode you'll find that it shows something else). The lines that only have
-`` are separators: you won't see this between generation 0 and 1 but you will
+back-quote ("\`") are separators: you won't see this between generation 0 and 1 but you will
 between future generations - as well as the final answer (if the answer is in
 generation 0 you won't see the ``).
 

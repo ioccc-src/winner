@@ -93,7 +93,7 @@ readable version of these programs, you should next consider some preprocessing
 such as:
 
 ``` <!---sh-->
-sed -e '/^#.*include/d' prog.c | cc -E
+    sed -e '/^#.*include/d' prog.c | cc -E
 ```
 
 This strips away comments and expands the program's macros without having things

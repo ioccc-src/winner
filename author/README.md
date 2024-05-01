@@ -5,7 +5,7 @@ least one winning IOCCC entry.  For each author, there is a JSON
 file with the following name format:
 
 ```
-author/author_handle.json
+    author/author_handle.json
 ```
 
 where `author_handle` is defined below.
@@ -16,7 +16,7 @@ Each author of a winning IOCCC entry has an assigned `author_handle`,
 an IOCCC unique string that matches this regex:
 
 ``` <!---re-->
-^[0-9a-z][0-9a-z_]*$
+    ^[0-9a-z][0-9a-z_]*$
 ```
 
 The `author_handle`, by default, is derived from the name of the author.
@@ -34,13 +34,13 @@ author or authors.
 For an anonymous `author`, their handle is one of these forms:
 
 ```
-Anonymous_year
+    Anonymous_year
 ```
 
 or:
 
 ```
-Anonymous_year.digits
+    Anonymous_year.digits
 ```
 
 The latter form is in case there are more than one
@@ -49,7 +49,7 @@ anonymous author in a given year.
 Anonymous author_handle's match this regexp:
 
 ``` <!---re-->
-Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$
+    Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$
 ```
 
 ## author_handle.json JSON syntax
@@ -57,17 +57,17 @@ Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$
 The `author_handle.json` must have the following JSON members:
 
 ``` <!---json-->
-"no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-"author_JSON_format_version" : "0.1 2023-05-22",
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "0.1 2023-05-22",
 ```
 
 There must be the following JSON members:
 
 ``` <!---json-->
-"full_name" : "Your Full Name",
-"sort_word" : "lowercaselast",
-"location_code" : "XX",
-"location_name" : "Formal location name",
+    "full_name" : "Your Full Name",
+    "sort_word" : "lowercaselast",
+    "location_code" : "XX",
+    "location_name" : "Formal location name",
 ```
 
 - `"full_name"` value is the author's formal full name.
@@ -81,20 +81,20 @@ an `author` and the entry they submitted are to be listed.
 A `sort_word` matches this regexp:
 
 ``` <!---re-->
-^[a-z][0-9a-z]*
+    ^[a-z][0-9a-z]*
 ```
 
 And there must be the following JSON members:
 
 ``` <!---json-->
-"email" : "user0@example.com",
-"url" : "https://a.host0.example.com/index.html",
-"alt_url" : "https://b.host0.example.com/index.html",
-"deprecated_twitter_handle" : "@something",
-"mastodon" : "@mastodon0@example.com",
-"mastodon_url" : "https://example.org/@mastodon0",
-"github" : "@github0",
-"affiliation" : "an affiliation group",
+    "email" : "user0@example.com",
+    "url" : "https://a.host0.example.com/index.html",
+    "alt_url" : "https://b.host0.example.com/index.html",
+    "deprecated_twitter_handle" : "@something",
+    "mastodon" : "@mastodon0@example.com",
+    "mastodon_url" : "https://example.org/@mastodon0",
+    "github" : "@github0",
+    "affiliation" : "an affiliation group",
 ```
 
 - `"email"` value is the author's email address as a JSON encoded string, or `null` if not given
@@ -110,14 +110,14 @@ If an author does not have one of the previous set of values, or wishes to not d
 then the JSON value can be `null`. For example:
 
 ``` <!---json-->
-"email" : null,
-"url" : null,
-"alt_url" : null,
-"deprecated_twitter_handle" : null,
-"mastodon" : null,
-"mastodon_url" : null,
-"github" : null,
-"affiliation" : null,
+    "email" : null,
+    "url" : null,
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
 ```
 
 NOTE: The JSON value of `null` is NOT enclosed in double quotes.
@@ -126,7 +126,7 @@ The `"winning_entry_set"` is an array of JSON members that indicate
 each of the IOCCC winning entries that the author is the author of.  :-)
 
 ``` <!---json-->
-{ "entry_id" : "YYYY_dirname" }
+    { "entry_id" : "YYYY_dirname" }
 ```
 
 The `"YYYY_dirname"` is a entry ID in JSON encoded string form.
@@ -137,11 +137,11 @@ NOTE: Due to mis-features in the JSON spec, the final JSON member must NOT be fo
 For example:
 
 ``` <!---json-->
-"winning_entry_set" : [
-    { "entry_id" : "1987_somedir" },
-    { "entry_id" : "2020_entrydir" },
-    { "entry_id" : "2024_dirname" }
-]
+    "winning_entry_set" : [
+	{ "entry_id" : "1987_somedir" },
+	{ "entry_id" : "2020_entrydir" },
+	{ "entry_id" : "2024_dirname" }
+    ]
 ```
 
 ### author_handle.json example
@@ -149,56 +149,56 @@ For example:
 Here is a fictitious author_handle.json example:
 
 ``` <!---json-->
-{
-    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "author_JSON_format_version" : "1.0 2023-06-10",
-    "author_handle" : "first0_last0",
-    "full_name" : "First Middle Last",
-    "sort_word" : "lowercaselast",
-    "location_code" : "AU",
-    "location_name" : "Australia",
-    "email" : "user0@example.com",
-    "url" : "https://a.host0.example.com/index.html",
-    "alt_url" : "https://b.host0.example.com/index.html",
-    "deprecated_twitter_handle" : "@something",
-    "mastodon" : "@mastodon0@example.com",
-    "mastodon_url" : "https://example.org/@mastodon0",
-    "github" : "@github0",
-    "affiliation" : "an affiliation group",
-    "winning_entry_set" : [
-	{ "entry_id" : "1987_somedir" },
-	{ "entry_id" : "2020_entrydir" },
-	{ "entry_id" : "2024_dirname" }
-    ]
-}
+    {
+	"no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+	"author_JSON_format_version" : "1.0 2023-06-10",
+	"author_handle" : "first0_last0",
+	"full_name" : "First Middle Last",
+	"sort_word" : "lowercaselast",
+	"location_code" : "AU",
+	"location_name" : "Australia",
+	"email" : "user0@example.com",
+	"url" : "https://a.host0.example.com/index.html",
+	"alt_url" : "https://b.host0.example.com/index.html",
+	"deprecated_twitter_handle" : "@something",
+	"mastodon" : "@mastodon0@example.com",
+	"mastodon_url" : "https://example.org/@mastodon0",
+	"github" : "@github0",
+	"affiliation" : "an affiliation group",
+	"winning_entry_set" : [
+	    { "entry_id" : "1987_somedir" },
+	    { "entry_id" : "2020_entrydir" },
+	    { "entry_id" : "2024_dirname" }
+	]
+    }
 ```
 
 Here is fictitious author_handle.json example where all entries that may be
 withheld are null:
 
 ``` <!---json-->
-{
-    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "author_JSON_format_version" : "1.0 2023-06-10",
-    "author_handle" : "first0_last0",
-    "full_name" : "First Middle Last",
-    "sort_word" : "lowercaselast",
-    "location_code" : "AU",
-    "location_name" : "Australia",
-    "email" : null,
-    "url" : null,
-    "alt_url" : null,
-    "deprecated_twitter_handle" : null,
-    "mastodon" : null,
-    "mastodon_url" : null,
-    "github" : null,
-    "affiliation" : null,
-    "winning_entry_set" : [
-	{ "entry_id" : "1987_somedir" },
-	{ "entry_id" : "2020_entrydir" },
-	{ "entry_id" : "2024_dirname" }
-    ]
-}
+    {
+	"no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+	"author_JSON_format_version" : "1.0 2023-06-10",
+	"author_handle" : "first0_last0",
+	"full_name" : "First Middle Last",
+	"sort_word" : "lowercaselast",
+	"location_code" : "AU",
+	"location_name" : "Australia",
+	"email" : null,
+	"url" : null,
+	"alt_url" : null,
+	"deprecated_twitter_handle" : null,
+	"mastodon" : null,
+	"mastodon_url" : null,
+	"github" : null,
+	"affiliation" : null,
+	"winning_entry_set" : [
+	    { "entry_id" : "1987_somedir" },
+	    { "entry_id" : "2020_entrydir" },
+	    { "entry_id" : "2024_dirname" }
+	]
+    }
 ```
 
 ## NOTE to authors

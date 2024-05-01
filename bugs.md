@@ -1441,30 +1441,30 @@ instance the first column looks like:
 
 
 ```
-i
-n
-c
-l
-u
-d
-e
+    i
+    n
+    c
+    l
+    u
+    d
+    e
 
-<
-s
-t
-d
-i
-o
-.
-h
->
+    <
+    s
+    t
+    d
+    i
+    o
+    .
+    h
+    >
 ```
 
 If you join the lines you end up with:
 
 
 ``` <!---c-->
-#include <stdio.h>
+    #include <stdio.h>
 ```
 
 If you look at column 25 which is the end of the word 'mh111' and you go down to

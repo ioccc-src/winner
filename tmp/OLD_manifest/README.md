@@ -30,7 +30,7 @@ IOCCC.  Each author has exactly one `author_handle`.
 For each `author_handle`, there will be a JSON file of the form:
 
 ```
-author/author_handle.json
+    author/author_handle.json
 ```
 
 Because the `author_handle` is used to form a JSON filename, the string must be
@@ -38,7 +38,7 @@ lower case POSIX safe string.  Furthermore, the `author_handle` must be an ASCII
 string that matches this regexp:
 
 ``` <!---re-->
-^[0-9a-z][0-9a-z_]*$
+    ^[0-9a-z][0-9a-z_]*$
 ```
 
 Default `author_handle`'s do not have multiple consecutive `_` (underscore)
@@ -58,13 +58,13 @@ author.
 For an anonymous `author`, their handle is one of these forms:
 
 ```
-Anonymous_year
+    Anonymous_year
 ```
 
 or:
 
 ```
-Anonymous_year.digits
+    Anonymous_year.digits
 ```
 
 
@@ -77,7 +77,7 @@ in the case of [2005/anon](/2005/anon/anon.c).
 Anonymous `author_handle`'s match this regexp:
 
 ``` <!---re-->
-Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$
+    Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$
 ```
 
 
@@ -106,7 +106,7 @@ Non-numeric `year` strings are lower case.
 A `year` string matches this regexp:
 
 ``` <!---re-->
-[0-9a-z][0-9a-z][0-9a-z][0-9a-z]
+    [0-9a-z][0-9a-z][0-9a-z][0-9a-z]
 ```
 
 The `year` directories reside directly below the top level directory.
@@ -117,7 +117,7 @@ The `year` directories reside directly below the top level directory.
 Each `year` will have a file directory under it named:
 
 ```
-.year
+    .year
 ```
 
 The contents of the `.year` file is the year string of the directory. For
@@ -131,7 +131,7 @@ A `dir` is a POSIX safe string that holds an winner.
 A `dir` is a string that matches this regexp:
 
 ``` <!---re-->
-^[a-z][0-9a-z.-]*$
+    ^[a-z][0-9a-z.-]*$
 ```
 
 Each `winner` is under its own individual directory.  This directory
@@ -143,7 +143,7 @@ is directly under a `year` directory.
 A string that identifies the winning entry.  The string is of the form:
 
 ```
-year_dir
+    year_dir
 ```
 
 
@@ -152,7 +152,7 @@ year_dir
 Each `winner` directory will have a file directory under it named:
 
 ```
-.id
+    .id
 ```
 
 The contents of `_.id_` file is the `winner_id` string for that `winner`.
@@ -165,7 +165,7 @@ an `author` and the `winners` they submitted are to be listed.
 A `sort_word` match this regexp:
 
 ``` <!---re-->
-^[a-z][0-9a-z]*
+    ^[a-z][0-9a-z]*
 ```
 
 
@@ -184,7 +184,7 @@ A text file of full names of each `author`: one full name per line.
 In the case of anonymous authors the form is:
 
 ```
-Anonymous YYYY
+    Anonymous YYYY
 ```
 
 
@@ -282,7 +282,7 @@ Run the script from the top level directory.  The output should end in ":1".
 For example, this command should not produce any output.
 
 ``` <!---sh-->
-tmp/awards_check.sh | grep -v ':1$'
+    tmp/awards_check.sh | grep -v ':1$'
 ```
 
 Any output is an indication that either an award name is incorrect, or the
@@ -420,7 +420,7 @@ Temporary tool used to generate the `author/author_handle.json` files.
 The following command, executed in this directory, created the `author/` directory:
 
 ``` <!---sh-->
-rm -rf ../author ; ./gen_author_json.sh  author_handle.txt author.csv author_wins.csv ../author
+    rm -rf ../author ; ./gen_author_json.sh  author_handle.txt author.csv author_wins.csv ../author
 ```
 
 

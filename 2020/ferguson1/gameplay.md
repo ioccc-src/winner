@@ -294,8 +294,8 @@ might look like (I set the starting size to 150 and had only just started):
 If I continue going up I will see:
 
 ```
-OUCH!
-X:20/49 Y:1/16 S:150/658 B:0
+    OUCH!
+    X:20/49 Y:1/16 S:150/658 B:0
 ```
 
 

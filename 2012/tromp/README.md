@@ -373,6 +373,7 @@ and change it to BLC8 with
     $ wc rev.Blc
 	0 1 9 rev.Blc
 ```
+
 and then try it out with:
 
 ``` <!---sh-->

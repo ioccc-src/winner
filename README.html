@@ -448,7 +448,7 @@ you encounter should give you more appreciation for the entry.</p>
 <p>If you have the energy to type in the text, or if you have access to a machine
 readable version of these programs, you should next consider some preprocessing
 such as:</p>
-<pre><code>sed -e &#39;/^#.*include/d&#39; prog.c | cc -E</code></pre>
+<pre><code>    sed -e &#39;/^#.*include/d&#39; prog.c | cc -E</code></pre>
 <p>This strips away comments and expands the program’s macros without having things
 such as includes and macros cluttering up the output. If the entry requires or
 suggests the use of compile line options (such as <code>-Dindex=strchr</code>) they should

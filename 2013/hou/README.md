@@ -161,7 +161,7 @@ Despite the messy look, `a.c` and [hou.c](%%REPO_URL%%/2013/hou/hou.c) compile w
 `a.c` compiles mostly clean in the C99/ANSI modes of clang and gcc (with:
 
 ```
--Wall --pedantic
+    -Wall --pedantic
 ```
 
 The only warning generated is a pedantic one: `"string constant

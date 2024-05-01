@@ -1506,6 +1506,7 @@ changed from `char*s` to `char s[]`):
 ```
     !.Xop.fssps!.Xop.sfuvso.uzqf!.Xop.jnqmjdju.gvodujpo.efdmbsbujpo
 ```
+
 and then the call to `system()` had to be changed to:
 
 ``` <!---c-->

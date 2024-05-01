@@ -412,7 +412,6 @@ performance, at the cost of a much larger parameter space.
 
 **IMPORTANT NOTE**:
 
-```
 Since OMLET uses the system stack for network storage,
 larger networks may cause OMLET to crash (typically with a message like
 Segmentation fault) unless the system stack size is first increased.
@@ -422,7 +421,6 @@ with ulimit -Hs and set it with ulimit -s 65532 (replacing 65532
 with the actual hard limit).  On csh/tcsh shells, you can view
 the hard limit with limit -h stacksize and set it with
 limit stacksize 65532 (replacing 65532 with the actual hard limit).
-```
 
 <hr style="width:10%;text-align:left;margin-left:0">
 

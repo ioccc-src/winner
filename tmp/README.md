@@ -56,7 +56,7 @@ A text file of full names of each `author`: one full name per line.
 In the case of anonymous authors the form is:
 
 ```
-Anonymous YYYY
+    Anonymous YYYY
 ```
 
 
@@ -157,9 +157,9 @@ returns and appending a newline if it was missing.
 Fixing involves these actions:
 
 ``` <!---sh-->
-tr -d '\015' < input.csv > tmp.csv
-echo >> tmp.csv
-mv -f tmp.csv input.csv
+    tr -d '\015' < input.csv > tmp.csv
+    echo >> tmp.csv
+    mv -f tmp.csv input.csv
 ```
 
 This tool also forms [path_list.built.txt](path_list.built.txt),
@@ -343,8 +343,8 @@ A tool to run another tool over all _YYYY/dir_ entry directories.
 Examples:
 
 ``` <!---sh-->
-./run_all.sh -v 3 ./fake.gen_index.sh
-./run_all.sh -v 1 ./gen_entry_json.sh
+    ./run_all.sh -v 3 ./fake.gen_index.sh
+    ./run_all.sh -v 1 ./gen_entry_json.sh
 ```
 
 

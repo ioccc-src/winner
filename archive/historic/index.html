@@ -445,14 +445,14 @@ Machine</a> as of [2022 Dec
 28)(https://web.archive.org/web/20201228005211/https://www.ioccc.org/).</p>
 <h2 id="how-to-unpack">How to unpack</h2>
 <p><em>HINT</em>: To uncompress a given bzip2 compressed tarball file, use:</p>
-<pre><code>tar -jxvf file.tar.bz2</code></pre>
+<pre><code>    tar -jxvf file.tar.bz2</code></pre>
 <p>where “<em>file.tar.bz2</em>” is the name of a file found in this directory.</p>
 <p>To uncompress all of the 2022 Dec 28 archive using the year based
 bzip2 compressed tarball files:</p>
-<pre><code>for year in 198{4,5,6,7,8,9} 199{0,1,2,3,4,5,6,8} 200{0,1,4,5,6} 201{1,2,3,4,5,8,9} 2020; do
-    rm -rf &quot;$year&quot;
-    tar -jxvf &quot;archive-$year.tar.bz2&quot;
-done</code></pre>
+<pre><code>    for year in 198{4,5,6,7,8,9} 199{0,1,2,3,4,5,6,8} 200{0,1,4,5,6} 201{1,2,3,4,5,8,9} 2020; do
+        rm -rf &quot;$year&quot;
+        tar -jxvf &quot;archive-$year.tar.bz2&quot;
+    done</code></pre>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
