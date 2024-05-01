@@ -40,5 +40,5 @@ elif [[ ! -x prog ]]; then
     exit 1
 else
     ./prog 1>&2
+    exit "$?"
 fi
-rm -rf prog.dSYM

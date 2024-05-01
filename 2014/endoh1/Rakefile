@@ -27,7 +27,7 @@ file "prog.c" => ["main.c", "gen-prog.rb", "prog-tmpl.c"] do |t|
 end
 
 file "prog" => "prog.c" do |t|
-  sh "gcc", "-Wall", "-W", "-Wextra", "-o", t.name, t.prerequisites[0], "-g"
+  sh "gcc", "-Wall", "-W", "-Wextra", "-Wno-misleading-indentation", "-o", t.name, t.prerequisites[0]
 end
 
 task :test => :default do

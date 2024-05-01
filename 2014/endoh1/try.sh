@@ -50,5 +50,6 @@ echo 1>&2
 
 read -r -p "Do you want to run make rake (Y/N)? "
 if [[ "$REPLY" == "y" || "$REPLY" == "Y" ]]; then
+    make clobber
     make rake 2>/dev/null
 fi

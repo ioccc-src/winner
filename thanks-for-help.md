@@ -4973,6 +4973,10 @@ to remove some text files so as to not cause problems with an invalid manifest.
 
 Cody also added the [try.sh](%%REPO_URL%%/2014/endoh1/try.sh) script.
 
+To silence the annoying misleading indentation warning and to prevent debug
+symbols from being built with `rake` Cody also updated the
+[Rakefile](%%REPO_URL%%/2014/endoh1/Rakefile) slightly.
+
 **_Barely_** worth noting but done nonetheless, Cody renamed the `read_me.html`
 file to [spoilers.html](2014/endoh1/spoilers.html) to be clearer in its purpose as
 it is a file with spoilers (and too close to index.html?).
