@@ -15,15 +15,16 @@ Nevertheless, the IOCCC does have certain practices that we ask authors to follo
 Some these relate to use of markdown directly, others relate to injecting HTML
 into the markdown file.
 
-In particular there are things we ask people to please do **NOT** use markdown files:
+In particular there are things we ask people to please do **NOT** use in
+markdown files:
 
 
-## Do not use name attributes in HTML a tags
+## Do NOT use name attributes in HTML a tags
 
-Please do not use the HTML construct:
+Please do **NOT** use the HTML construct:
 
 ```
-    <a name="string">\</a>		<=== no thank you
+    <a name="string">...</a>	<=== no thank you
 ```
 
 as those are **NOT** part of the HTML 5 standard.
@@ -31,19 +32,19 @@ as those are **NOT** part of the HTML 5 standard.
 Instead use:
 
 ```
-    <div id="string">...\</div>
+    <div id="string">...</div>
 ```
 
-where the "..." is the HTML you want to "name". The **div**
-encapsulates the HTML you want to name: I.e., the target of some
-"**\<a href="#string">**" or some other "**\<a href="URL#string">**"
+where the `...` is the HTML you want to "name". The `<div>`
+encapsulates the HTML you want to name: i.e., the target of some
+`<a href="#string">` or some other `<a href="URL#string">`
 for the given page URL.
 
-There are certain HTML Elements that cannot have internal "**\<div
-id="string">...\</div>**".  For example you cannot do this:
+There are certain HTML Elements that cannot have internal `<div
+id="string">...</div>`.  For example you cannot do this:
 
 ```
-    # <div id="string">This will not work</div>
+    # <div id="string">This will NOT work</div>
 ```
 
 For things like headings, you have to surround them as in:
@@ -54,21 +55,21 @@ For things like headings, you have to surround them as in:
     </div>
 ```
 
-While some browsers will still recognize the HTML construct "**\<a
-name="string">\</a>**", they may not in the future.
+While some browsers will still recognize the HTML construct `<a
+name="string">...</a>`, it is possible they might NOT in the future.
 
 
-## Do not use trailing backslash outside of a code block
+## Do NOT use trailing backslash outside of a code block
 
 Unless the line is inside a markdown code block, please do **NOT**
-end a markdown line with a trailing backslash ("\\").  Instead use
-a trailing "**\<br>**".
+end a markdown line with a trailing backslash (`\`).  Instead use
+a trailing `<br>`.
 
 Instead of:
 
 ```
     In markdown,\			<=== no thank you
-    do not use trailing\
+    do NOT use trailing\
     backslashes outside of\
     a code block
 ```
@@ -82,7 +83,7 @@ use:
     a code block
 ```
 
-Again, use of a trailing backslash ("\\") inside a markdown code block is fine:
+Again, use of a trailing backslash (`\`) inside a markdown code block is fine:
 
 ````
 ```
@@ -93,12 +94,13 @@ Again, use of a trailing backslash ("\\") inside a markdown code block is fine:
 ```
 ````
 
-This will avoid `pandoc(1)` generating deprecated HTML elements such as `\<br />`.
+This will prevent `pandoc(1)` from generating deprecated HTML elements such as
+`<br />`.
 
 
-## Do not use markdown image elements
+## Do NOT use markdown image elements
 
-Please do not use the markdown embedded image element.
+Please do **NOT** use the markdown embedded image element.
 
 Instead of using this markdown element to embed an image:
 
@@ -106,7 +108,7 @@ Instead of using this markdown element to embed an image:
     ![alt text](filename.png "Title")		<=== no thank you
 ```
 
-Use a "img" HTML element with "alt", "alt", "width" and "length"
+Use an `img` HTML element with `alt`, `width` and `length`
 attributes:
 
 ```
@@ -130,23 +132,22 @@ use this HTML:
 ```
 
 The problem goes beyond the fact that `pandoc(1)` generates problematic
-HTML from the markdown image construct, the resulting HTML does not
-have "width" and "height" information so browsers have to slow down
+HTML from the markdown image construct, the resulting HTML does NOT
+have `width` and `height` information so browsers have to slow down
 on rendering text around the image until it can internally determine
 the image size.
 
 
-## Do not use markdown style horizontal lines
+## Do NOT use markdown style horizontal lines
 
-Please do not use "**---**"-style lines in markdown to create horizontal
-lines, nor to separate sections.
+Please do **NOT** use `**---**`-style lines in markdown to create horizontal
+lines or to separate sections.
 
-Unless something is inside a markdown code block, do not start a
-line with 3 or more dashes ("-").
+Unless something is inside a markdown code block, do NOT start a
+line with 3 or more dashes (`-`s).
 
-Such causes `pandoc(1)` to generate "**\<hr />**".  The  "**\<hr
-/>**" has no effect in standard HTML 5 and interacts badly with
-unquoted attribute values.
+Such causes `pandoc(1)` to generate `<hr />`.  The  `<hr />` has no effect in
+standard HTML 5 and interacts badly with unquoted attribute values.
 
 If a horizontal line is really needed, use:
 
@@ -161,9 +162,9 @@ If a short line is needed, use:
 ```
 
 
-## Do not use the strike HTML element
+## Do NOT use the strike HTML element
 
-Please not use HTML elements:
+Please NOT use HTML elements:
 
 ```
     <strike>...</strike>	<=== no thank you
@@ -176,9 +177,9 @@ Use instead:
 ```
 
 
-## Do not use the tt HTML element
+## Do NOT use the `<tt>` HTML element
 
-Please do not use the tt HTML elements:
+Please do **NOT** use the `<tt>` HTML elements:
 
 ```html
     <tt>The HTML 5 obsolete tt element is obsolete</tt>		<=== no thank you
@@ -197,25 +198,27 @@ Or better and easier still, use an inline markdown code block:
 ```
 
 
-## Do not use un-indented code clocks
+## Do NOT use unindented code clocks
 
-Please do not start code blocks at the left-hand edge.
+Please do **NOT** start code blocks at the left-hand edge.
 
 ````
 ```
 This code block		<=== no thank you
-is not indendted
+is NOT indented
 ```
-```
+````
+
 
 We request that you indent the code block by 4 spaces:
 
 ````
 ```
     This code block
-    is intented 4 spaces
+    is indented 4 spaces
 ```
 ````
+
 
 One exception is where change bars are needed, such as
 those used in `next/rules.md` and in `next/guidelines.md`.
@@ -234,17 +237,18 @@ For example, `next/guidelines.md` uses this markdown code block:
 ````
 
 
-## Do not add trailing slash on void HTML elements
+## Do NOT add trailing slash on void HTML elements
 
-Please do not use trailing slash on [void HTML
+Please do **NOT** use a trailing slash on [void HTML
 elements](https://github.com/validator/validator/wiki/Markup-»-Void-elements).
 
 See also this note on [trailing slashes in void-element start
-tags](https://github.com/validator/validator/wiki/Markup-»-Void-elements#trailing-slashes-in-void-element-start-tags-do-not-mark-the-start-tags-as-self-closing).
+tags](https://github.com/validator/validator/wiki/Markup-»-Void-elements#trailing-slashes-in-void-element-start-tags-do-NOT-mark-the-start-tags-as-self-closing).
 
-The trailing slash on void HTML elements has no effect and interacts badly with unquoted attribute values.
+The trailing slash on void HTML elements has no effect and interacts badly with
+unquoted attribute values.
 
-For example, please do not use:
+For example, please do NOT use:
 
 ```
     <br/>	<=== no thank you
@@ -256,7 +260,7 @@ Instead use just:
     <br>
 ```
 
-And for example, please do not use:
+And for example, please do NOT use:
 
 ```
     <hr/>	<=== no thank you
@@ -268,7 +272,7 @@ Instead use just:
     <hr>
 ```
 
-And for example, please do not use:
+And for example, please do NOT use:
 
 ```
     <img src="1984-anonymous-tattoo.jpg"
@@ -287,9 +291,9 @@ Instead use just:
 etc.
 
 
-## Do not end markdown links in ))
+## Do NOT end markdown links in "))"
 
-Please do not end a markdown links with a double closed parenthesis "))".
+Please do **NOT** end a markdown links with a double closed parenthesis "))".
 
 Markdown links that end in "))" complicate parsing and sometimes lead
 to incorrect URLs or file paths.
@@ -309,7 +313,7 @@ Use:
 Instead of:
 
 ```
-    This thing ([some text](some/path)) is not ideal.	<=== no thank you
+    This thing, ([some text](some/path)), is NOT ideal.	<=== no thank you
 ```
 
 Use:
@@ -319,12 +323,12 @@ Use:
 ```
 
 
-## Do not place text on the next line after a markdown code block
+## Do NOT place text on the next line after a markdown code block
 
-Please do not place text on the next line after a markdown code block.
+Please do **NOT** place text on the next line after a markdown code block.
 Instead, place a blank line after the end of a markdown code block
-is this makes it easier to detect when markdown code blocks are
-not properly indented.
+as this makes it easier to detect when markdown code blocks are
+NOT properly indented.
 
 Instead of:
 
@@ -352,13 +356,13 @@ Use:
 
 C compilers cannot be given a -Wno-main-arg-errors flag.
 
-BTW: Not the blank line after the code block.
+BTW: note the blank line after the code block.
 ````
 
 
-## Do not put ('s or )' markdown link titles
+## Do NOT put "("s or ")"s in markdown link titles
 
-Please do not use parenthesis inside the markdown link titles.
+Please do **NOT** use parenthesis inside the markdown link titles.
 
 Instead of:
 
