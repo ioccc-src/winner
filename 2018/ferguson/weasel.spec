@@ -53,7 +53,7 @@ install -m 644 prog.alt.c -D $RPM_BUILD_ROOT%{_usrsrc}/weasel/weasel.alt.c
 ln -s weasel.alt.c $RPM_BUILD_ROOT%{_usrsrc}/weasel/prog.alt.c
 install -m 644 weasel.1 -D $RPM_BUILD_ROOT%{_mandir}/man1/weasel.1
 install -m 644 README.md -D $RPM_BUILD_ROOT%{_docdir}/weasel/weasel.md
-install -m 644 FILES -D $RPM_BUILD_ROOT%{_docdir}/weasel/FILES
+install -m 644 FILES.html -D $RPM_BUILD_ROOT%{_docdir}/weasel/FILES.html
 
 %files
 %{_bindir}/weasel*
