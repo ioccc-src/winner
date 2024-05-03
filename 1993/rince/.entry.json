@@ -31,7 +31,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "alternative source"
+	    "entry_text" : "alternate code"
 	},
 	{
 	    "file_path" : "rince.alt2.c",
@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "alternate alternative source"
+	    "entry_text" : "second alternate code"
 	},
 	{
 	    "file_path" : "rince.orig.c",

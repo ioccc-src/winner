@@ -31,7 +31,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "alternative source"
+	    "entry_text" : "alternate code"
 	},
 	{
 	    "file_path" : "prog.orig.c",
@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "run alternative code with Germain words"
+	    "entry_text" : "run alternate code with Germain words"
 	},
 	{
 	    "file_path" : "en.alt.sh",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "run alternative code with English words"
+	    "entry_text" : "run alternate code with English words"
 	},
 	{
 	    "file_path" : "getwords.sh",
@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "run alternative code with Italian words"
+	    "entry_text" : "run alternate code with Italian words"
 	},
 	{
 	    "file_path" : "pl.alt.sh",
@@ -79,7 +79,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "run alternative code with Polish words"
+	    "entry_text" : "run alternate code with Polish words"
 	},
 	{
 	    "file_path" : "ru.alt.sh",
@@ -87,7 +87,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "run alternative code with Russian words"
+	    "entry_text" : "run alternate code with Russian words"
 	},
 	{
 	    "file_path" : "try.alt.sh",
@@ -95,7 +95,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "script to try alternative code"
+	    "entry_text" : "script to try alternate code"
 	},
 	{
 	    "file_path" : "try.sh",
@@ -135,7 +135,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "script to try alternative code in French"
+	    "entry_text" : "script to try alternate code in French"
 	},
 	{
 	    "file_path" : "fr.sh",
