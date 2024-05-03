@@ -31,7 +31,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "alternative source"
+	    "entry_text" : "alternate code"
 	},
 	{
 	    "file_path" : "marshall.orig.c",

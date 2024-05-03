@@ -31,7 +31,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "alternative source"
+	    "entry_text" : "alternate code"
 	},
 	{
 	    "file_path" : "jar.1.orig.c",
@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "a method to compile"
+	    "entry_text" : "compile or recompile and run alternate code"
 	},
 	{
 	    "file_path" : "jar.1.sh",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "a method to compile the alternative source"
+	    "entry_text" : "compile or recompile and run entry"
 	},
 	{
 	    "file_path" : "1989_jar.1.tar.bz2",

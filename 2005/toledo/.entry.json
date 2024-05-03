@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "alternative source"
+	    "entry_text" : "alternate code"
 	},
 	{
 	    "file_path" : "toledo3.c",
@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "alternative source"
+	    "entry_text" : "alternate code"
 	},
 	{
 	    "file_path" : "2005_toledo.tar.bz2",

@@ -31,7 +31,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "alternative source"
+	    "entry_text" : "alternate code"
 	},
 	{
 	    "file_path" : "buzzard.2.orig.c",
@@ -63,7 +63,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "script to try alternative code"
+	    "entry_text" : "script to try alternate code"
 	},
 	{
 	    "file_path" : "try.sh",
