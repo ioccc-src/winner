@@ -13,7 +13,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [1986 august bugs](../../bugs.html#1986_august).
+For more detailed information see [1986/august in bugs.html](../../bugs.html#1986_august).
 
 
 ## Try:

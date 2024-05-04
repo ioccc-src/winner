@@ -17,7 +17,7 @@ The current status of this entry is:
     STATUS: missing or dead link - please provide them
 ```
 
-For more detailed information see [1998 dloweneil bugs](../../bugs.html#1998_dloweneil).
+For more detailed information see [1998/dloweneil in bugs.html](../../bugs.html#1998_dloweneil).
 
 
 ## To use:

@@ -29,7 +29,7 @@ The current status of this entry is:
     STATUS: known bug - please help us fix
 ```
 
-For more detailed information see [1993 cmills bugs](../../bugs.html#1993_cmills).
+For more detailed information see [1993/cmills in bugs.html](../../bugs.html#1993_cmills).
 
 
 ## To use:

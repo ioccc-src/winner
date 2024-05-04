@@ -22,7 +22,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2000 dlowe bugs](../../bugs.html#2000_dlowe).
+For more detailed information see [2000/dlowe in bugs.html](../../bugs.html#2000_dlowe).
 
 
 ## To use:

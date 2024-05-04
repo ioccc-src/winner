@@ -13,7 +13,7 @@ The current status of this entry is:
     STATUS: doesn't work with some platforms - please help us fix
 ```
 
-For more detailed information see [2011 richards bugs](../../bugs.html#2011_richards).
+For more detailed information see [2011/richards in bugs.html](../../bugs.html#2011_richards).
 
 
 ## To use:

@@ -13,7 +13,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2018 vokes bugs](../../bugs.html#2018_vokes).
+For more detailed information see [2018/vokes in bugs.html](../../bugs.html#2018_vokes).
 
 
 ## To use:

@@ -13,7 +13,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2019 burton bugs](../../bugs.html#2019_burton).
+For more detailed information see [2019/burton in bugs.html](../../bugs.html#2019_burton).
 
 
 ## To use:

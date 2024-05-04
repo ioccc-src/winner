@@ -13,7 +13,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [1994 ldb bugs](../../bugs.html#1994_ldb).
+For more detailed information see [1994/ldb in bugs.html](../../bugs.html#1994_ldb).
 
 
 ## To use:

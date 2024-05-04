@@ -13,7 +13,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2019 adamovsky bugs](../../bugs.html#2019_adamovsky).
+For more detailed information see [2019/adamovsky in bugs.html](../../bugs.html#2019_adamovsky).
 
 
 ## To use:

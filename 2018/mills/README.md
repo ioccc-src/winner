@@ -26,7 +26,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2018 mills bugs](../../bugs.html#2018_mills).
+For more detailed information see [2018/mills in bugs.html](../../bugs.html#2018_mills).
 
 
 ## To use:

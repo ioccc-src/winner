@@ -17,7 +17,7 @@ The current status of this entry is:
     STATUS: known bug - please help us fix
 ```
 
-For more detailed information see [1994 tvr bugs](../../bugs.html#1994_tvr).
+For more detailed information see [1994/tvr in bugs.html](../../bugs.html#1994_tvr).
 
 
 ## To use:

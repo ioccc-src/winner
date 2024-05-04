@@ -13,7 +13,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2015 mills2 bugs](../../bugs.html#2015_mills2).
+For more detailed information see [2015/mills2 in bugs.html](../../bugs.html#2015_mills2).
 
 
 ## To use:

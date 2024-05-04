@@ -14,7 +14,7 @@ The current status of this entry is:
     STATUS: doesn't work with some platforms - please help us fix
 ```
 
-For more detailed information see [2001 bellard bugs](../../bugs.html#2001_bellard).
+For more detailed information see [2001/bellard in bugs.html](../../bugs.html#2001_bellard).
 
 
 ## To use:

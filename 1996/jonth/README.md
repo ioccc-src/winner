@@ -19,7 +19,7 @@ The current status of this entry is:
     STATUS: missing or dead link - please provide them
 ```
 
-For more detailed information see [1996 jonth bugs](../../bugs.html#1996_jonth).
+For more detailed information see [1996/jonth in bugs.html](../../bugs.html#1996_jonth).
 
 
 ## To use:

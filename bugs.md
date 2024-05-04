@@ -1,4 +1,4 @@
-# Bugs and (Mis)features
+# Bugs and (mis)features
 
 There are a number of known problems with IOCCC entries: many of
 which have to do with differences between today's compiler environments
@@ -493,7 +493,7 @@ emulator to test it) but running the code on the binary itself produces a
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
-There are no known bugs and (Mis)features for entries in 1985.
+There are no known bugs or (mis)features for entries in 1985.
 
 
 <hr style="width:10%;text-align:left;margin-left:0">
@@ -522,7 +522,7 @@ the judges and shouldn't be fixed.
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
-There are no known bugs and (Mis)features for entries in 1987.
+There are no known bugs or (mis)features for entries in 1987.
 
 
 <hr style="width:10%;text-align:left;margin-left:0">
@@ -605,7 +605,7 @@ It should be noted that in additional to rot13 names there is code that is the
 reverse of other code (also wrt names). See the source file and the index.html
 (in the author's remarks) for more details.
 
-Fixing the (Mis)feature is likely to be a very difficult challenge especially
+Fixing the (mis)feature is likely to be a very difficult challenge especially
 without breaking something else which is far more likely (see below in tips from
 Cody). You are welcome to try and fix it if you can!
 
@@ -667,7 +667,7 @@ ROT13 of each other as well which is the reverse of the original (this is not
 because it goes backwards (it doesn't in this version) but because they are
 ROT13 pairs!). `main` spelt backwards is `niam` and `pain` spelt backwards is
 `niap`. Furthermore see the Makefile for other defines that had to be specified
-and for ver2 and ver3 (that both work with gcc) one had to be undefined (search
+and for `ver2` and `ver3` (that both work with gcc) one had to be undefined (search
 for `CDEFINE` and `-U`). These details will be important momentarily.
 
 As far as `NOON` and `ABBA` being ROT13 pairs, notice how `NOON` is not in the

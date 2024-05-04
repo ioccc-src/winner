@@ -16,7 +16,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2014 maffiodo2 bugs](../../bugs.html#2014_maffiodo2).
+For more detailed information see [2014/maffiodo2 in bugs.html](../../bugs.html#2014_maffiodo2).
 
 
 ## To use:

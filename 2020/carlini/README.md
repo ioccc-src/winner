@@ -13,7 +13,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2020 carlini bugs](../../bugs.html#2020_carlini).
+For more detailed information see [2020/carlini in bugs.html](../../bugs.html#2020_carlini).
 
 
 ## To use:

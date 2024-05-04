@@ -16,7 +16,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2001 dgbeards bugs](../../bugs.html#2001_dgbeards).
+For more detailed information see [2001/dgbeards in bugs.html](../../bugs.html#2001_dgbeards).
 
 
 ## To use:

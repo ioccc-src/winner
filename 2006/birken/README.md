@@ -13,7 +13,7 @@ The current status of this entry is:
     STATUS: uses gets() - change to fgets() if possible
 ```
 
-For more detailed information see [2006 birken bugs](../../bugs.html#2006_birken).
+For more detailed information see [2006/birken in bugs.html](../../bugs.html#2006_birken).
 
 
 ## To use:

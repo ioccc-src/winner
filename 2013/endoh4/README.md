@@ -24,7 +24,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2013 endoh4 bugs](../../bugs.html#2013_endoh4).
+For more detailed information see [2013/endoh4 in bugs.html](../../bugs.html#2013_endoh4).
 
 
 ## To use:

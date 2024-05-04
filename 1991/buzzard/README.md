@@ -16,7 +16,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [1991 buzzard bugs](../../bugs.html#1991_buzzard).
+For more detailed information see [1991/buzzard in bugs.html](../../bugs.html#1991_buzzard).
 
 
 ## To use:

@@ -13,7 +13,7 @@ The current status of this entry is:
     STATUS: known bug - please help us fix
 ```
 
-For more detailed information see [1989 fubar bugs](../../bugs.html#1989_fubar).
+For more detailed information see [1989/fubar in bugs.html](../../bugs.html#1989_fubar).
 
 
 ## To use:
@@ -36,7 +36,7 @@ For more detailed information see [1989 fubar bugs](../../bugs.html#1989_fubar).
 ## Judges' remarks:
 
 Run this with a single digit argument (or wait a long time and risk an infinite
-loop as described in the [1989 fubar bugs](../../bugs.html#1989_fubar) file).
+loop as described in the [1989/fubar in bugs.html](../../bugs.html#1989_fubar) file).
 
 The blank line at the beginning of the source is mandatory.
 Do you know why?

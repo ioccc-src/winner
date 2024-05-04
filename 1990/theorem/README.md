@@ -13,7 +13,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [1990 theorem bugs](../../bugs.html#1990_theorem).
+For more detailed information see [1990/theorem in bugs.html](../../bugs.html#1990_theorem).
 
 
 ## To use:

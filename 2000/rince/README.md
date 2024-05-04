@@ -13,7 +13,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2000 rince bugs](../../bugs.html#2000_rince).
+For more detailed information see [2000/rince in bugs.html](../../bugs.html#2000_rince).
 
 
 ## To use:
