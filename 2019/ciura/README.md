@@ -17,7 +17,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2019 ciura bugs](../../bugs.html#2019_ciura).
+For more detailed information see [2019/ciura in bugs.html](../../bugs.html#2019_ciura).
 
 
 ## To use:

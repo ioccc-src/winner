@@ -16,7 +16,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [1990 tbr bugs](../../bugs.html#1990_tbr).
+For more detailed information see [1990/tbr in bugs.html](../../bugs.html#1990_tbr).
 
 
 ### A note about the fixes of this entry in 2023:

@@ -21,7 +21,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2019 poikola bugs](../../bugs.html#2019_poikola).
+For more detailed information see [2019/poikola in bugs.html](../../bugs.html#2019_poikola).
 
 
 ## To use:
@@ -53,7 +53,7 @@ If you don't have a few days, try:
     ./try.sh
 ```
 
-As the [2019 poikola bugs](../../bugs.html#2019_poikola) says, this program will not validate
+As the [2019/poikola in bugs.html](../../bugs.html#2019_poikola) says, this program will not validate
 input so it might get stuck or fail if invoked erroneously.
 
 

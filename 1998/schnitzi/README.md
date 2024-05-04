@@ -13,7 +13,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [1998 schnitzi bugs](../../bugs.html#1998_schnitzi).
+For more detailed information see [1998/schnitzi in bugs.html](../../bugs.html#1998_schnitzi).
 
 
 ## To use:

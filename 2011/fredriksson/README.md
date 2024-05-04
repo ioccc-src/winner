@@ -13,7 +13,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2011 fredriksson bugs](../../bugs.html#2011_fredriksson).
+For more detailed information see [2011/fredriksson in bugs.html](../../bugs.html#2011_fredriksson).
 
 
 ## To use:

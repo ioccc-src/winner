@@ -13,7 +13,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2015 schweikhardt bugs](../../bugs.html#2015_schweikhardt).
+For more detailed information see [2015/schweikhardt in bugs.html](../../bugs.html#2015_schweikhardt).
 
 
 ## To use:

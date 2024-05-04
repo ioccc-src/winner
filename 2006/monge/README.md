@@ -19,7 +19,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2006 monge bugs](../../bugs.html#2006_monge).
+For more detailed information see [2006/monge in bugs.html](../../bugs.html#2006_monge).
 
 
 ## To use:

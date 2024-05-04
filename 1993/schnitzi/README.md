@@ -13,7 +13,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [1993 schnitzi bugs](../../bugs.html#1993_schnitzi).
+For more detailed information see [1993/schnitzi in bugs.html](../../bugs.html#1993_schnitzi).
 
 
 ## To use:
@@ -28,7 +28,7 @@ where
 `file` is a file containing some text.
 
 Certain input will cause the program to fail as described
-in [1993 schnitzi bugs](../../bugs.html#1993_schnitzi).
+in [1993/schnitzi in bugs.html](../../bugs.html#1993_schnitzi).
 
 
 ## Try:

@@ -20,7 +20,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2004 gavin bugs](../../bugs.html#2004_gavin).
+For more detailed information see [2004/gavin in bugs.html](../../bugs.html#2004_gavin).
 
 
 ## To use:

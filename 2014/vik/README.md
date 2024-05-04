@@ -17,7 +17,7 @@ The current status of this entry is:
     STATUS: known bug - please help us fix
 ```
 
-For more detailed information see [2014 vik bugs](../../bugs.html#2014_vik).
+For more detailed information see [2014/vik in bugs.html](../../bugs.html#2014_vik).
 
 
 ## To use:

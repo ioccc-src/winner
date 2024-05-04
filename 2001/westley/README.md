@@ -20,7 +20,7 @@ The current status of this entry is:
     STATUS: main() has only one arg - try and make it have 2 or 3
 ```
 
-For more detailed information see [2001 westley bugs](../../bugs.html#2001_westley).
+For more detailed information see [2001/westley in bugs.html](../../bugs.html#2001_westley).
 
 
 ## To use:

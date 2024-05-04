@@ -13,7 +13,7 @@ The current status of this entry is:
     STATUS: known bug - please help us fix
 ```
 
-For more detailed information see [2001 williams bugs](../../bugs.html#2001_williams).
+For more detailed information see [2001/williams in bugs.html](../../bugs.html#2001_williams).
 
 
 ## To use:

@@ -13,7 +13,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [1989 robison bugs](../../bugs.html#1989_robison).
+For more detailed information see [1989/robison in bugs.html](../../bugs.html#1989_robison).
 
 
 ## To use:

@@ -14,7 +14,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [1994 shapiro bugs](../../bugs.html#1994_shapiro).
+For more detailed information see [1994/shapiro in bugs.html](../../bugs.html#1994_shapiro).
 
 
 ## To use:
@@ -53,7 +53,7 @@ From time to time, run `ps(1)` and look at the new processes.
 See [shapiro.html](shapiro.html) for more information in the internals of this program.
 The file `shapiro.alt.c` contains a non-obfuscated version of
 this program. Note that this alt file is currently missing. See
-[1994 shapiro bugs](../../bugs.html#1994_shapiro) for details.
+[1994/shapiro in bugs.html](../../bugs.html#1994_shapiro) for details.
 
 
 ## Author's remarks:

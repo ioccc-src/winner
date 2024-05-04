@@ -15,7 +15,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2012 tromp bugs](../../bugs.html#2012_tromp).
+For more detailed information see [2012/tromp in bugs.html](../../bugs.html#2012_tromp).
 
 
 ## To use:

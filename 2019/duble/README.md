@@ -16,7 +16,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2019 duble bugs](../../bugs.html#2019_duble).
+For more detailed information see [2019/duble in bugs.html](../../bugs.html#2019_duble).
 
 
 ## To use:
@@ -82,11 +82,11 @@ WARNING: if the file is deleted it might lock any session still in use. These
 will have to be killed from another shell session or by closing the terminal tab
 (in other words don't do this from the console!). If the file cannot be opened
 in the beginning this will also happen. This is discussed in
-[2019 duble bugs](../../bugs.html#2019_duble).
+[2019/duble in bugs.html](../../bugs.html#2019_duble).
 
 NOTE: this entry might leave sockets lying about in the current working
 directory which you'll have to delete manually. This is also discussed in
-[2019 duble bugs](../../bugs.html#2019_duble).
+[2019/duble in bugs.html](../../bugs.html#2019_duble).
 
 
 ## Alternate code:

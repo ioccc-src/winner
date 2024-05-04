@@ -13,7 +13,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2020 giles bugs](../../bugs.html#2020_giles).
+For more detailed information see [2020/giles in bugs.html](../../bugs.html#2020_giles).
 
 
 ## To use:

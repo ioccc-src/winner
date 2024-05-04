@@ -16,7 +16,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [1991 westley bugs](../../bugs.html#1991_westley).
+For more detailed information see [1991/westley in bugs.html](../../bugs.html#1991_westley).
 
 
 ## To use:

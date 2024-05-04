@@ -14,7 +14,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2011 dlowe bugs](../../bugs.html#2011_dlowe).
+For more detailed information see [2011/dlowe in bugs.html](../../bugs.html#2011_dlowe).
 
 
 ## To use:

@@ -13,7 +13,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2012 blakely bugs](../../bugs.html#2012_blakely).
+For more detailed information see [2012/blakely in bugs.html](../../bugs.html#2012_blakely).
 
 
 ## To use:

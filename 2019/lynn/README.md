@@ -13,7 +13,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2019 lynn bugs](../../bugs.html#2019_lynn).
+For more detailed information see [2019/lynn in bugs.html](../../bugs.html#2019_lynn).
 
 
 ## To use:

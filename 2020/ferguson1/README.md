@@ -13,7 +13,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2020 ferguson1 bugs](../../bugs.html#2020_ferguson1).
+For more detailed information see [2020/ferguson1 in bugs.html](../../bugs.html#2020_ferguson1).
 
 
 ## To use:

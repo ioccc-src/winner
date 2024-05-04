@@ -25,7 +25,7 @@ The current status of this entry is:
     STATUS: missing or dead link - please provide them
 ```
 
-For more detailed information see [1998 dlowe bugs](../../bugs.html#1998_dlowe).
+For more detailed information see [1998/dlowe in bugs.html](../../bugs.html#1998_dlowe).
 
 
 ## Try:

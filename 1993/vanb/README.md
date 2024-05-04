@@ -13,7 +13,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [1993 vanb bugs](../../bugs.html#1993_vanb).
+For more detailed information see [1993/vanb in bugs.html](../../bugs.html#1993_vanb).
 
 
 ## To use:

@@ -13,7 +13,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2019 yang bugs](../../bugs.html#2019_yang).
+For more detailed information see [2019/yang in bugs.html](../../bugs.html#2019_yang).
 
 
 ## To use:

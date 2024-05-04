@@ -14,7 +14,7 @@ The current status of this entry is:
     STATUS: known bug - please help us fix
 ```
 
-For more detailed information see [2001 herrmann1 bugs](../../bugs.html#2001_herrmann1).
+For more detailed information see [2001/herrmann1 in bugs.html](../../bugs.html#2001_herrmann1).
 
 
 ## To use:

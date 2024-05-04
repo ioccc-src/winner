@@ -16,7 +16,7 @@ The current status of this entry is:
     STATUS: missing file - please provide it
 ```
 
-For more detailed information see [1995 vanschnitz bugs](../../bugs.html#1995_vanschnitz).
+For more detailed information see [1995/vanschnitz in bugs.html](../../bugs.html#1995_vanschnitz).
 
 
 ## To use:

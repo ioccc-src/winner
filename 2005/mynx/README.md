@@ -16,7 +16,7 @@ The current status of this entry is:
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [2005 mynx bugs](../../bugs.html#2005_mynx).
+For more detailed information see [2005/mynx in bugs.html](../../bugs.html#2005_mynx).
 
 
 ## To use:

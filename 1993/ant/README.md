@@ -13,7 +13,7 @@ The current status of this entry is:
     STATUS: missing file - please provide it
 ```
 
-For more detailed information see [1993 ant bugs](../../bugs.html#1993_ant).
+For more detailed information see [1993/ant in bugs.html](../../bugs.html#1993_ant).
 
 
 ## To use:

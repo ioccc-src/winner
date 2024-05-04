@@ -14,7 +14,7 @@ The current status of this entry is:
     STATUS: known bug - please help us fix
 ```
 
-For more detailed information see [1992 westley bugs](../../bugs.html#1992_westley).
+For more detailed information see [1992/westley in bugs.html](../../bugs.html#1992_westley).
 
 
 ## To use:

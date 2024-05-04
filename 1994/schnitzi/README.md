@@ -18,7 +18,7 @@ The current status of this entry is:
     STATUS: uses gets() - change to fgets() if possible
 ```
 
-For more detailed information see [1994 schnitzi bugs](../../bugs.html#1994_schnitzi).
+For more detailed information see [1994/schnitzi in bugs.html](../../bugs.html#1994_schnitzi).
 
 
 ## To use:

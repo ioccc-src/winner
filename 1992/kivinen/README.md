@@ -19,7 +19,7 @@ The current status of this entry is:
     STATUS: known bug - please help us fix
 ```
 
-For more detailed information see [1992 kivinen bugs](../../bugs.html#1992_kivinen).
+For more detailed information see [1992/kivinen in bugs.html](../../bugs.html#1992_kivinen).
 
 
 ## To use:
