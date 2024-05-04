@@ -9,7 +9,7 @@ we centralize them below.
 The [IOCCC judges](judges.html) wish to recognize the many
 important contributions to the IOCCC presentation of past IOCCC entries.
 We are pleased to note the many contributions, **made since 2021 Jan 01**,
-on a IOCCC entry by entry basis.
+on an IOCCC entry by entry basis.
 
 
 ## IOCCC thank you table of contents
