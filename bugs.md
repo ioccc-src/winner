@@ -2445,7 +2445,7 @@ There was no IOCCC in 2003.
 
 
 <div id="2004_gavin">
-## [2004/gavin](%%REPO_URL%%/2004/gavin/index.html)
+## [2004/gavin](2004/gavin/index.html)
 </div>
 
 ### STATUS: compiled executable crashes - please help us fix
@@ -4056,7 +4056,7 @@ erroneously.
 Also, the maximum file size is 1GB.
 
 <div id="2019_yang">
-## [2019/yang](%%REPO_URL%%/2019/yang/index.html)
+## [2019/yang](2019/yang/index.html)
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix

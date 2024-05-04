@@ -2,28 +2,28 @@
 
 ## Entries
 
-* [Winning Entries](%%DOCROOT_SLASH%%years.html)
-* [People who have won](%%DOCROOT_SLASH%%authors.html)
-* [Location of authors](%%DOCROOT_SLASH%%location.html)
-* [Bugs &amp; Misfeatures](%%DOCROOT_SLASH%%bugs.html)
+* [Winning Entries](years.html)
+* [People who have won](authors.html)
+* [Location of authors](location.html)
+* [Bugs &amp; Misfeatures](bugs.html)
 
 ## Status
 
-* [IOCCC News](%%DOCROOT_SLASH%%news.html)
-* [Contest status](%%DOCROOT_SLASH%%status.html)
-* [Rules &amp; Guidelines](%%DOCROOT_SLASH%%next/index.html)
+* [IOCCC News](news.html)
+* [Contest status](status.html)
+* [Rules &amp; Guidelines](next/index.html)
 
 ## FAQ
 
-* [FAQ](%%DOCROOT_SLASH%%faq.html)
-* [How to enter the IOCCC](%%DOCROOT_SLASH%%faq.html#fix_an_entry)
-* [Fixing IOCCC entries](%%DOCROOT_SLASH%%faq.html#fix_an_entry)
-* [Fixing the web site](%%DOCROOT_SLASH%%faq.html#fix_web_site)
-* [Fixing author info](%%DOCROOT_SLASH%%faq.html#fix_author)
+* [FAQ](faq.html)
+* [How to enter the IOCCC](faq.html#fix_an_entry)
+* [Fixing IOCCC entries](faq.html#fix_an_entry)
+* [Fixing the web site](faq.html#fix_web_site)
+* [Fixing author info](faq.html#fix_author)
 
 ## About
 
-* [IOCCC Home](%%DOCROOT_SLASH%%index.html)
-* [The IOCCC Judges](%%DOCROOT_SLASH%%contact.html)
-* [Contacting the IOCCC](%%DOCROOT_SLASH%%contact.html)
-* [Thanks for the help](%%DOCROOT_SLASH%%thanks-for-help.html)
+* [IOCCC Home](index.html)
+* [The IOCCC Judges](contact.html)
+* [Contacting the IOCCC](contact.html)
+* [Thanks for the help](thanks-for-help.html)

@@ -261,7 +261,7 @@ arrays, so I did it.
 [Cody Boone Ferguson](../../authors.html#Cody_Boone_Ferguson): I really like that you enjoyed my
 previous entry. I hope that you will like this entry too.  Because I did not
 want to give too many clues to [the Judges](../../judges.html), I tried to write this
-entry in a different way than [Most Stellar](%%REPO_URL%%/2018/poikola/index.html), but in this
+entry in a different way than [Most Stellar](../../2018/poikola/index.html), but in this
 code there is at least one recycled thing from it. By the way, the answers to
 the questions I posed: (1) 255. (2) Try to compare binary representations of
 those `float`s and binary representation of the string "`25th IOCCC!`". (3) I

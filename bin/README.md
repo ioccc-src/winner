@@ -9,7 +9,7 @@ files and other content from the [IOCCC GitHub
 repo](https://github.com/ioccc-src/temp-test-ioccc).
 
 
-## [bin/](%%DOCROOT_SLASH%%bin/index.html) tools
+## [bin/](index.html) tools
 
 
 ### [all-run.sh](%%DOCROOT_SLASH%%bin/all-run.sh)

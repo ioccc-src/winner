@@ -526,7 +526,7 @@ contest scheduling, I chose not to wait for the actual 50th anniversary).
 I had thought of writing self-hosting compilers for a stripped-down version of
 C, or maybe even a version of the B language...  At the same time, I was
 obsessed with the idea of allowing [mullender.c from
-1984](%%REPO_URL%%/1984/mullender/index.html) to run.  Although
+1984](../../1984/mullender/index.html) to run.  Although
 that was still a possibility on an interpreted version of B or a stripped-down
 version of C, it felt cheap, as it would be
 [mullender.c](%%REPO_URL%%/1984/mullender/mullender.c) only in spirit.

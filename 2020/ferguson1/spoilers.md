@@ -962,8 +962,8 @@ though because the score line is meant to display something, it squeezes a few
 more bytes and having a space is hardly an imposition on usage (and for that
 matter having a 'o' at 0,0 isn't either).
 
-[gameplay.html]: %%REPO_URL%%/2020/ferguson1/gameplay.html
-[HACKING.html]: %%REPO_URL%%/2020/ferguson1/HACKING.html
+[gameplay.html]: gameplay.html
+[HACKING.html]: HACKING.html
 
 
 <hr style="width:10%;text-align:left;margin-left:0">

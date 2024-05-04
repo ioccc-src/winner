@@ -291,7 +291,7 @@ be applied.
 [6]: https://en.wikipedia.org/wiki/Lambda_calculus           "Lambda Calculus on Wikipedia"
 [7]: https://en.wikipedia.org/wiki/Combinatory_logic         "Combinatory Logic on Wikipedia"
 [8]: https://inazz.jp/unlambda/                              "Online Unlambda interpreter"
-[9]: %%REPO_URL%%/2014/birken/index.html			     "Best use of port 1701"
+[9]: ../../2014/birken/index.html			     "Best use of port 1701"
 
 <!--
 

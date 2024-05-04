@@ -410,7 +410,7 @@ you can also comment out the `init_pair()` calls.
 Perhaps you only need to add the `return;` to `C()`. My guess is that's the case
 but I do not know for certain.
 
-[HACKING.html]: %%REPO_URL%%/2020/ferguson1/HACKING.html
+[HACKING.html]: HACKING.html
 [Linux keyboard and console HOWTO]: https://www.tldp.org/HOWTO/Keyboard-and-Console-HOWTO.html
 [Linux keyboard and console HOWTO section 4]: https://www.tldp.org/HOWTO/Keyboard-and-Console-HOWTO-4.html
 [snake-colours.sh]: %%REPO_URL%%/2020/ferguson1/snake-colours.sh

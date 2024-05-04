@@ -464,10 +464,10 @@ Why does it show snake size as 0 when I specified 1? It's because the max size
 is 0 and I limit the size to be no bigger than the max size.
 
 
-[HACKING.html]: %%REPO_URL%%/2020/ferguson1/HACKING.html
+[HACKING.html]: HACKING.html
 [prog.c]: %%REPO_URL%%/2020/ferguson1/prog.c
-[bugs.html]: %%REPO_URL%%/2020/ferguson1/bugs.html
-[terminals.html]: %%REPO_URL%%/2020/ferguson1/terminals.html
+[bugs.html]: bugs.html
+[terminals.html]: terminals.html
 [snake-colours.sh]: %%REPO_URL%%/2020/ferguson1/snake-colours.sh
 [Snakey]: https://www.hp-lexicon.org/character/gaunt-family/morfin-gaunt/
 

@@ -910,15 +910,15 @@ the imagination and creativity almost anything is possible.** This is something
 they believe in themselves!** I would have never thought this the case for me
 years ago but I know it's true now. **Believe in yourself. Always.**
 
-[terminals.html]: %%REPO_URL%%/2020/ferguson1/terminals.html
-[troubleshooting.html]: %%REPO_URL%%/2020/ferguson1/troubleshooting.html
-[bugs.html]: %%REPO_URL%%/2020/ferguson1/bugs.html
-[spoilers.html]: %%REPO_URL%%/2020/ferguson1/spoilers.html
+[terminals.html]: terminals.html
+[troubleshooting.html]: troubleshooting.html
+[bugs.html]: bugs.html
+[spoilers.html]: spoilers.html
 [snake-colours.sh]: %%REPO_URL%%/2020/ferguson1/snake-colours.sh
 [number of hertz (flashes) per second triggering seizures]: https://www.epilepsysociety.org.uk/photosensitive-epilepsy#.Xjgpwi2ZOgQ
 [termcaps.c]: %%REPO_URL%%/2020/ferguson1/termcaps.c
-[cannibalism.log.html]: %%REPO_URL%%/2020/ferguson1/cannibalism.log.html
-[crazy.log.html]: %%REPO_URL%%/2020/ferguson1/crazy.log.html
+[cannibalism.log.html]: cannibalism.log.html
+[crazy.log.html]: ferguson1/crazy.log.html
 [play.sh]: %%REPO_URL%%/2020/ferguson1/play.sh
 
 

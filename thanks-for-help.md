@@ -376,7 +376,7 @@ Cody also added the [try.sh](%%REPO_URL%%/1985/sicherman/try.sh) and
 
 
 <div id="1986_applin">
-## [1986/applin](%%REPO_URL%%/1986/applin/index.html)
+## [1986/applin](1986/applin/index.html)
 ### Source code: [applin.c](%%REPO_URL%%/1986/applin/applin.c)
 </div>
 
@@ -393,7 +393,7 @@ Cody also added the [try.sh](%%REPO_URL%%/1985/sicherman/try.sh) and
 
 
 <div id="1986_hague">
-## [1986/hague](%%REPO_URL%%/1986/hague/index.html)
+## [1986/hague](1986/hague/index.html)
 ### Source code: [hague.c](%%REPO_URL%%/1986/hague/hague.c)
 </div>
 
@@ -1324,7 +1324,7 @@ Additionally, Cody fixed the shortened version provided by the author in the
 same way as the original entry, first the compile fix and then later on making
 it look more like the original by redefining `exit` and also redefining `gets()`
 to be `fgets()` in the same way that the original entry is. This way the [alt
-version](%%REPO_URL%%/1990/tbr/index.html#alternate-code) is equivalent in function, like the
+version](1990/tbr/index.html#alternate-code) is equivalent in function, like the
 author intended, but more compact.
 
 
@@ -1462,7 +1462,7 @@ Cody also made the file name in the code (which is the default maze file) not
 hard-coded but instead be `__FILE__`.
 
 Finally Cody added the [alternate
-version](%%REPO_URL%%/1991/buzzard/index.html#alternate-code) which will possibly feel more at
+version](1991/buzzard/index.html#alternate-code) which will possibly feel more at
 home with those familiar with vi(m) (it certainly does feel more at home with
 him): `k` for forward, `h` for left and `l` for right. This version also has a
 more useful way to exit, just entering `q` followed by enter, rather than
@@ -1651,7 +1651,7 @@ original entry Cody left the message before ending curses in and printed another
 message of the same kind after `endwin()` was called with the exception that he
 added a newline at the end of the screen to be more user friendly.
 
-Cody also added [two alt versions](%%REPO_URL%%/1991/rince/index.html#alternate-code), one to
+Cody also added [two alt versions](1991/rince/index.html#alternate-code), one to
 remove the maximum number of moves you may make and another to let you configure
 the maximum number of moves, even if that is making it harder to win. Naturally
 the above fix was applied to these versions too.
@@ -2088,7 +2088,7 @@ files for functions.
 </div>
 
 [Cody](#cody) added an [alternate
-version](%%REPO_URL%%/1993/lmfjyh/index.html#alternate-code) which does what the program did
+version](1993/lmfjyh/index.html#alternate-code) which does what the program did
 with gcc < 2.3.3. See the index.html file for details and for why this was made
 the alternate version, not the actual entry.
 
@@ -2382,7 +2382,7 @@ the play along the lines of the [try.sh](%%REPO_URL%%/1994/westley/try.sh) scrip
 
 
 <div id="1995_cdua">
-## [1995/cdua](%%REPO_URL%%/1995/cdua/index.html)
+## [1995/cdua](1995/cdua/index.html)
 ### Source code: [cdua.c](%%REPO_URL%%/1995/cdua/cdua.c)
 </div>
 
@@ -2403,7 +2403,7 @@ function as the error message claims.
 
 
 <div id="1995_dodsond1">
-## [1995/dodsond1](%%REPO_URL%%/1995/dodsond1/index.html)
+## [1995/dodsond1](1995/dodsond1/index.html)
 ### Source code: [dodsond1.c](%%REPO_URL%%/1995/dodsond1/dodsond1.c)
 </div>
 
@@ -2412,7 +2412,7 @@ provided which is input we suggested one try with the entry.
 
 
 <div id="1995_esde">
-## [1995/esde](%%REPO_URL%%/1995/esde/index.html)
+## [1995/esde](1995/esde/index.html)
 ### Source code: [esde.c](%%REPO_URL%%/1995/esde/esde.c)
 </div>
 
@@ -2420,7 +2420,7 @@ provided which is input we suggested one try with the entry.
 
 
 <div id="1995_garry">
-## [1995/garry](%%REPO_URL%%/1995/garry/index.html)
+## [1995/garry](1995/garry/index.html)
 ### Source code: [garry.c](%%REPO_URL%%/1995/garry/garry.c)
 </div>
 
@@ -2439,7 +2439,7 @@ added.
 
 
 <div id="1995_heathbar">
-## [1995/heathbar](%%REPO_URL%%/1995/heathbar/index.html)
+## [1995/heathbar](1995/heathbar/index.html)
 ### Source code: [1995/heathbar](%%REPO_URL%%/1995/heathbar/heathbar.c)
 </div>
 
@@ -2447,7 +2447,7 @@ added.
 
 
 <div id="1995_leo">
-## [1995/leo](%%REPO_URL%%/1995/leo/index.html)
+## [1995/leo](1995/leo/index.html)
 ### Source code: [leo.c](%%REPO_URL%%/1995/leo/leo.c)
 </div>
 
@@ -2469,7 +2469,7 @@ calls which has the four args.
 
 
 <div id="1995_savastio">
-## [1995/savastio](%%REPO_URL%%/1995/savastio/index.html)
+## [1995/savastio](1995/savastio/index.html)
 ### Source code: [savastio.c](%%REPO_URL%%/1995/savastio/savastio.c)
 </div>
 
@@ -2477,7 +2477,7 @@ calls which has the four args.
 
 
 <div id="1995_schnitzi">
-## [1995/schnitzi](%%REPO_URL%%/1995/schnitzi/index.html)
+## [1995/schnitzi](1995/schnitzi/index.html)
 ### Source code: [schnitzi.c](%%REPO_URL%%/1995/schnitzi/schnitzi.c)
 </div>
 
@@ -2504,7 +2504,7 @@ Cody also added the [try.sh](%%REPO_URL%%/1995/vanschnitz/try.sh) script.
 
 
 <div id="1996_august">
-## [1996/august](%%REPO_URL%%/1996/august/index.html)
+## [1996/august](1996/august/index.html)
 ### Source code: [august.c](%%REPO_URL%%/1996/august/august.c)
 </div>
 
@@ -2523,7 +2523,7 @@ applied.
 
 
 <div id="1996_dalbec">
-## [1996/dalbec](%%REPO_URL%%/1996/dalbec/index.html)
+## [1996/dalbec](1996/dalbec/index.html)
 ### Source code: [dalbec.c](%%REPO_URL%%/1996/dalbec/dalbec.c)
 </div>
 
@@ -2545,7 +2545,7 @@ Cody also added the [try.sh](%%REPO_URL%%/1996/dalbec/try.sh) script.
 
 
 <div id="1996_eldby">
-## [1996/eldby](%%REPO_URL%%/1996/eldby/index.html)
+## [1996/eldby](1996/eldby/index.html)
 ### Source code: [eldby.c](%%REPO_URL%%/1996/eldby/eldby.c)
 </div>
 
@@ -2558,7 +2558,7 @@ these reasons.
 
 
 <div id="1996_gandalf">
-## [1996/gandalf](%%REPO_URL%%/1996/gandalf/index.html)
+## [1996/gandalf](1996/gandalf/index.html)
 ### Source code: [gandalf.c](%%REPO_URL%%/1996/gandalf/gandalf.c)
 </div>
 
@@ -2575,7 +2575,7 @@ BTW: it is perilous to try the patience of
 
 
 <div id="1996_huffman">
-## [1996/huffman](%%REPO_URL%%/1996/huffman/index.html)
+## [1996/huffman](1996/huffman/index.html)
 ### Source code: [huffman.c](%%REPO_URL%%/1996/huffman/huffman.c)
 </div>
 
@@ -2583,7 +2583,7 @@ BTW: it is perilous to try the patience of
 
 
 <div id="1996_jonth">
-## [1996/jonth](%%REPO_URL%%/1996/jonth/index.html)
+## [1996/jonth](1996/jonth/index.html)
 ### Source code: [jonth.c](%%REPO_URL%%/1996/jonth/jonth.c)
 </div>
 
@@ -2603,7 +2603,7 @@ NOTE: if there is no X server running this program will still crash.
 
 
 <div id="1996_schweikh1">
-## [1996/schweikh1](%%REPO_URL%%/1996/schweikh1/index.html)
+## [1996/schweikh1](1996/schweikh1/index.html)
 ### Source code: [schweikh1.c](%%REPO_URL%%/1996/schweikh1/schweikh1.c)
 </div>
 
@@ -2619,7 +2619,7 @@ the Makefile despite the fact that very few probably use Solaris nowadays.
 
 
 <div id="1996_schweikh2">
-## [1996/schweikh2](%%REPO_URL%%/1996/schweikh2/index.html)
+## [1996/schweikh2](1996/schweikh2/index.html)
 ### Source code: [schweikh2.c](%%REPO_URL%%/1996/schweikh2/schweikh2.c)
 </div>
 
@@ -2630,7 +2630,7 @@ loop so having it in a script is less desired).
 
 
 <div id="1996_schweikh3">
-## [1996/schweikh3](%%REPO_URL%%/1996/schweikh3/index.html)
+## [1996/schweikh3](1996/schweikh3/index.html)
 ## Source code: [schweikh3.c](%%REPO_URL%%/1996/schweikh3/schweikh3.c)
 </div>
 
@@ -2640,7 +2640,7 @@ running a more complicated command: now one can just run `make`.
 
 
 <div id="1996_westley">
-## [1996/westley](%%REPO_URL%%/1996/westley/index.html)
+## [1996/westley](1996/westley/index.html)
 ### Source code: [westley.c](%%REPO_URL%%/1996/westley/westley.c)
 </div>
 
@@ -2669,7 +2669,7 @@ provided by the author, Cody added '.sh' to the `clock[1-3].sh` scripts.
 
 
 <div id="1998_banks">
-## [1998/banks](%%REPO_URL%%/1998/banks/index.html)
+## [1998/banks](1998/banks/index.html)
 ### Source code: [/banks.c](%%REPO_URL%%/1998/banks/banks.c)
 </div>
 
@@ -2687,7 +2687,7 @@ you can configure them all in both builds it shouldn't matter.
 
 
 <div id="1998_bas1">
-## [1998/bas1](%%REPO_URL%%/1998/bas1/index.html)
+## [1998/bas1](1998/bas1/index.html)
 ### Source code: [bas1.c](%%REPO_URL%%/1998/bas1/bas1.c)
 </div>
 
@@ -2703,7 +2703,7 @@ program.
 
 
 <div id="1998_bas2">
-## [1998/bas2](%%REPO_URL%%/1998/bas2/index.html)
+## [1998/bas2](1998/bas2/index.html)
 ### Source code: [bas2.c](%%REPO_URL%%/1998/bas2/bas2.c)
 </div>
 
@@ -2712,7 +2712,7 @@ as well as allowing one to pass in different file names or strings.
 
 
 <div id="1998_chaos">
-## [1998/chaos](%%REPO_URL%%/1998/chaos/index.html)
+## [1998/chaos](1998/chaos/index.html)
 ### Source code: [chaos.c](%%REPO_URL%%/1998/chaos/chaos.c)
 </div>
 
@@ -2725,7 +2725,7 @@ prior to each run.
 
 
 <div id="1998_df">
-## [1998/df](%%REPO_URL%%/1998/df/index.html)
+## [1998/df](1998/df/index.html)
 ### Source code: [df.c](%%REPO_URL%%/1998/df/df.c)
 </div>
 
@@ -2743,7 +2743,7 @@ a way to cheat very easily. Can you figure out how?
 
 
 <div id="1998_dlowe">
-## [1998/dlowe](%%REPO_URL%%/1998/dlowe/index.html)
+## [1998/dlowe](1998/dlowe/index.html)
 ### Source code: [dlowe.c](%%REPO_URL%%/1998/dlowe/dlowe.c)
 </div>
 
@@ -2754,12 +2754,12 @@ Cody added the scripts [try.sh](%%REPO_URL%%/1998/dlowe/try.sh),
 [try.alt.sh](%%REPO_URL%%/1998/dlowe/try.alt.sh), [pootify.sh](%%REPO_URL%%/1998/dlowe/pootify.sh) and
 [pootify.cgi.sh](%%REPO_URL%%/1998/dlowe/pootify.cgi.sh) for a fun example use of the
 program, a local pootifier of web pages and a CGI pootifier. See [historical
-remarks](%%REPO_URL%%/1998/dlowe/index.html#historical-remarks) for more details on the
+remarks](1998/dlowe/index.html#historical-remarks) for more details on the
 pootify scripts.
 
 
 <div id="1998_dloweneil">
-## [c1998/dloweneil](%%REPO_URL%%/1998/dloweneil/index.html)
+## [c1998/dloweneil](1998/dloweneil/index.html)
 ### Source code: [dloweneil.c](%%REPO_URL%%/1998/dloweneil/dloweneil.c)
 </div>
 
@@ -2769,7 +2769,7 @@ space) keys as well as allowing one to quit the game.
 
 
 <div id="1998_dorssel">
-## [1998/dorssel](%%REPO_URL%%/1998/dorssel/index.html)
+## [1998/dorssel](1998/dorssel/index.html)
 ### Source code: [dorssel.c](%%REPO_URL%%/1998/dorssel/dorssel.c)
 </div>
 
@@ -2801,7 +2801,7 @@ of the expressions that we selected.
 
 
 <div id="1998_schnitzi">
-## [1998/schnitzi](%%REPO_URL%%/1998/schnitzi/index.html)
+## [1998/schnitzi](1998/schnitzi/index.html)
 ### Source code: [schnitzi.c](%%REPO_URL%%/1998/schnitzi/schnitzi.c)
 </div>
 
@@ -2829,7 +2829,7 @@ commands that we recommended as well as some added by him.
 
 
 <div id="1998_schweikh1">
-## [index.html](%%REPO_URL%%/1998/schweikh1/index.html)
+## [index.html](1998/schweikh1/index.html)
 ### Source code: [1998/schweikh1](%%REPO_URL%%/1998/schweikh1/schweikh1.c)
 </div>
 
@@ -2890,7 +2890,7 @@ in the file [charcount.pl](%%REPO_URL%%/1998/schweikh1/charcount.pl).
 
 
 <div id="1998_schweikh2">
-## [1998/schweikh2](%%REPO_URL%%/1998/schweikh2/index.html)
+## [1998/schweikh2](1998/schweikh2/index.html)
 ### Source code: [schweikh2.c](%%REPO_URL%%/1998/schweikh2/schweikh2.c)
 </div>
 
@@ -2905,7 +2905,7 @@ in the file [charcount.pl](%%REPO_URL%%/1998/schweikh1/charcount.pl).
 
 The string `"01\015"` had to be changed to `ONE(O(1,1,2,6,0,6))`. For an
 interesting historical explanation and further details and fun, see the
-[historical remarks](%%REPO_URL%%/1998/schweikh2/index.html#historical-remarks) in the
+[historical remarks](1998/schweikh2/index.html#historical-remarks) in the
 index.html.
 
 Cody also added an `int` after `register` in `main()` in case clang decides to
@@ -2916,11 +2916,11 @@ Cody also added the [try.sh](%%REPO_URL%%/1998/schweikh2/try.sh) script.
 
 
 <div id="1998_schweikh3">
-## [1998/schweikh3](%%REPO_URL%%/1998/schweikh3/index.html)
+## [1998/schweikh3](1998/schweikh3/index.html)
 ### Source code: [schweikh3.c](%%REPO_URL%%/1998/schweikh3/schweikh3.c)
 </div>
 
-[Cody](#cody) added the [alternate code](%%REPO_URL%%/1998/schweikh3/index.html#alternate-code) which allows one
+[Cody](#cody) added the [alternate code](1998/schweikh3/index.html#alternate-code) which allows one
 to reconfigure the size constant in the rare case that the author wrote about
 occurs.
 
@@ -2954,7 +2954,7 @@ information for the entry. It has not been added to any JSON file.
 
 
 <div id="1998_tomtorfs">
-## [1998/tomtorfs](%%REPO_URL%%/1998/tomtorfs/index.html)
+## [1998/tomtorfs](1998/tomtorfs/index.html)
 ### Source code: /tomtorfs.c](%%REPO_URL%%/1998/tomtorfs/tomtorfs.c)
 </div>
 
@@ -2977,7 +2977,7 @@ commands that we recommended.
 
 
 <div id="2000_anderson">
-## [2000/anderson](%%REPO_URL%%/2000/anderson/index.html)
+## [2000/anderson](2000/anderson/index.html)
 ### Source code: [anderson.c](%%REPO_URL%%/2000/anderson//anderson.c)
 </div>
 
@@ -2988,7 +2988,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2000/anderson/try.sh) script.
 
 
 <div id="2000_bmeyer">
-## [2000/bmeyer](%%REPO_URL%%/2000/bmeyer/index.html)
+## [2000/bmeyer](2000/bmeyer/index.html)
 ### Source code: [bmeyer.c](%%REPO_URL%%/2000/bmeyer//bmeyer.c)
 </div>
 
@@ -2998,7 +2998,7 @@ terminal.
 
 
 <div id="2000_briddlebane">
-## [2000/briddlebane](%%REPO_URL%%/2000/briddlebane/index.html)
+## [2000/briddlebane](2000/briddlebane/index.html)
 ### Source code: [briddlebane.c](%%REPO_URL%%/2000/briddlebane//briddlebane.c)
 </div>
 
@@ -3010,7 +3010,7 @@ feeling a bit too confident, cocky or even happy :-)
 
 
 <div id="2000_dhyang">
-## [2000/dhyang](%%REPO_URL%%/2000/dhyang/index.html)
+## [2000/dhyang](2000/dhyang/index.html)
 ### Source code: [dhyang.c](%%REPO_URL%%/2000/dhyang//dhyang.c)
 </div>
 
@@ -3020,7 +3020,7 @@ He also added the [try.sh](%%REPO_URL%%/2000/dhyang/try.sh) script.
 
 
 <div id="2000_dlowe">
-## [2000/dlowe](%%REPO_URL%%/2000/dlowe/index.html)
+## [2000/dlowe](2000/dlowe/index.html)
 ### Source code: [dlowe.c](%%REPO_URL%%/2000/dlowe//dlowe.c)
 </div>
 
@@ -3032,7 +3032,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2000/dlowe/try.sh) script.
 
 
 <div id="2000_jarijyrki">
-## [2000/jarijyrki](%%REPO_URL%%/2000/jarijyrki/index.html)
+## [2000/jarijyrki](2000/jarijyrki/index.html)
 ### Source code: [jarijyrki.c](%%REPO_URL%%/2000/jarijyrki//jarijyrki.c)
 </div>
 
@@ -3041,7 +3041,7 @@ includes of `Xlib.h` and `keysym.h`.
 
 
 <div id="2000_natori">
-## [2000/natori](%%REPO_URL%%/2000/natori/index.html)
+## [2000/natori](2000/natori/index.html)
 ### Source code: [natori.c](%%REPO_URL%%/2000/natori//natori.c)
 </div>
 
@@ -3069,7 +3069,7 @@ more confusing (even if not confusing).
 
 
 <div id="2000_primenum">
-## [2000/primenum](%%REPO_URL%%/2000/primenum/index.html)
+## [2000/primenum](2000/primenum/index.html)
 ### Source code: [primenum.c](%%REPO_URL%%/2000/primenum//primenum.c)
 </div>
 
@@ -3079,7 +3079,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2000/primenum/try.sh) script.
 
 
 <div id="2000_rince">
-## [2000/rince](%%REPO_URL%%/2000/rince/index.html)
+## [2000/rince](2000/rince/index.html)
 ### Source code: [rince.c](%%REPO_URL%%/2000/rince//rince.c)
 </div>
 
@@ -3087,7 +3087,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2000/primenum/try.sh) script.
 
 
 <div id="2000_robison">
-## [2000/robison](%%REPO_URL%%/2000/robison/index.html)
+## [2000/robison](2000/robison/index.html)
 ### Source code: [robison.c](%%REPO_URL%%/2000/robison//robison.c)
 </div>
 
@@ -3104,7 +3104,7 @@ on it to assign to the `int`s, much like with `1987/lievaart`. The strings are
 
 
 <div id="2000_schneiderwent">
-## [2000/schneiderwent](%%REPO_URL%%/2000/schneiderwent/index.html)
+## [2000/schneiderwent](2000/schneiderwent/index.html)
 ### Source code: [schneiderwent.c](%%REPO_URL%%/2000/schneiderwent//schneiderwent.c)
 </div>
 
@@ -3112,7 +3112,7 @@ on it to assign to the `int`s, much like with `1987/lievaart`. The strings are
 
 
 <div id="2000_thadgavin">
-## [2000/thadgavin](%%REPO_URL%%/2000/thadgavin/index.html)
+## [2000/thadgavin](2000/thadgavin/index.html)
 ### Source code: [thadgavin.c](%%REPO_URL%%/2000/thadgavin//thadgavin.c)
 </div>
 
@@ -3158,11 +3158,11 @@ other version in.
 
 
 <div id="2000_tomx">
-## [2000/tomx](%%REPO_URL%%/2000/tomx/index.html)
+## [2000/tomx](2000/tomx/index.html)
 ### Source code: [tomx.c](%%REPO_URL%%/2000/tomx//tomx.c)
 </div>
 
-[Cody](#cody) added the [alt code](%%REPO_URL%%/2000/tomx/index.html#alternate-code) based on the
+[Cody](#cody) added the [alt code](2000/tomx/index.html#alternate-code) based on the
 author's remarks with a fix for modern systems and he also added the two
 scripts, [try.sh](%%REPO_URL%%/2000/tomx/try.sh) and [try.alt.sh](%%REPO_URL%%/2000/tomx/try.alt.sh) for
 the main code and the alt code respectively.
@@ -3267,7 +3267,7 @@ it will at least run the supplementary program as a 64-bit program directly.
 
 
 <div id="2001_bellard">
-## [2001/bellard](%%REPO_URL%%/2001/bellard/index.html)
+## [2001/bellard](2001/bellard/index.html)
 ### Source code: [bellard.c](%%REPO_URL%%/2001/bellard//bellard.c)
 </div>
 
@@ -3316,7 +3316,7 @@ by Yusuke.
 
 
 <div id="2001_cheong">
-## [2001/cheong](%%REPO_URL%%/2001/cheong/index.html)
+## [2001/cheong](2001/cheong/index.html)
 ### Source code: [cheong.c](%%REPO_URL%%/2001/cheong//cheong.c)
 </div>
 
@@ -3332,7 +3332,7 @@ He also fixed it to check the number of args.
 
 
 <div id="2001_coupard">
-## [2001/coupard](%%REPO_URL%%/2001/coupard/index.html)
+## [2001/coupard](2001/coupard/index.html)
 ### Source code: [coupard.c](%%REPO_URL%%/2001/coupard//coupard.c)
 </div>
 
@@ -3365,7 +3365,7 @@ Cody added the [try.sh](%%REPO_URL%%/2001/coupard/try.sh).
 
 
 <div id="2001_ctk">
-## [2001/ctk](%%REPO_URL%%/2001/ctk/index.html)
+## [2001/ctk](2001/ctk/index.html)
 ### Source code: [ctk.c](%%REPO_URL%%/2001/ctk//ctk.c)
 </div>
 
@@ -3377,12 +3377,12 @@ etc.) after exiting even if you don't press 'q', if you crash or if you kill the
 program prematurely. This was done by adding an explicit call to `e()` at the
 end of `main()`.
 
-Cody also added the [alt code](%%REPO_URL%%/2001/ctk/index.html#alternate-code) that adds
+Cody also added the [alt code](2001/ctk/index.html#alternate-code) that adds
 vi(m) movement keys.
 
 
 <div id="2001_dgbeards">
-## [2001/dgbeards](%%REPO_URL%%/2001/dgbeards/index.html)
+## [2001/dgbeards](2001/dgbeards/index.html)
 ### Source code: [dgbeards.c](%%REPO_URL%%/2001/dgbeards//dgbeards.c)
 </div>
 
@@ -3396,7 +3396,7 @@ very quickly. Do you know what it is?
 
 
 <div id="2001_herrmann1">
-## [2001/herrmann1](%%REPO_URL%%/2001/herrmann1/index.html)
+## [2001/herrmann1](2001/herrmann1/index.html)
 ### Source code: [herrmann1.c](%%REPO_URL%%/2001/herrmann1//herrmann1.c)
 </div>
 
@@ -3423,7 +3423,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2001/herrmann1/try.sh) script.
 
 
 <div id="2001_herrmann2">
-## [2001/herrmann2](%%REPO_URL%%/2001/herrmann2/index.html)
+## [2001/herrmann2](2001/herrmann2/index.html)
 ### Source code: [herrmann2.c](%%REPO_URL%%/2001/herrmann2//herrmann2.c)
 </div>
 
@@ -3441,7 +3441,7 @@ added to `.gitignore` by accident) but Cody restored it from the archive.
 
 
 <div id="2001_kev">
-## [2001/kev](%%REPO_URL%%/2001/kev/index.html)
+## [2001/kev](2001/kev/index.html)
 ### Source code: [kev.c](%%REPO_URL%%/2001/kev//kev.c)
 </div>
 
@@ -3476,7 +3476,7 @@ worse.
 
 
 <div id="2001_schweikh">
-## [2001/schweikh](%%REPO_URL%%/2001/schweikh/index.html)
+## [2001/schweikh](2001/schweikh/index.html)
 ### Source code: [schweikh.c](%%REPO_URL%%/2001/schweikh//schweikh.c)
 </div>
 
@@ -3488,7 +3488,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2001/schweikh/try.sh) script.
 
 
 <div id="2001_westley">
-## [2001/westley](%%REPO_URL%%/2001/westley/index.html)
+## [2001/westley](2001/westley/index.html)
 ### Source code: [westley.c](%%REPO_URL%%/2001/westley//westley.c)
 </div>
 
@@ -3504,7 +3504,7 @@ described in the index.html, based on the author's remarks.
 
 
 <div id="2004_anonymous">
-## [2004/anonymous](%%REPO_URL%%/2004/anonymous/index.html)
+## [2004/anonymous](2004/anonymous/index.html)
 ### Source code: [anonymous.c](%%REPO_URL%%/2004/anonymous//anonymous.c)
 </div>
 
@@ -3512,11 +3512,11 @@ described in the index.html, based on the author's remarks.
 
 
 <div id="2004_arachnid">
-## [2004/arachnid](%%REPO_URL%%/2004/arachnid/index.html)
+## [2004/arachnid](2004/arachnid/index.html)
 ### Source code: [arachnid.c](%%REPO_URL%%/2004/arachnid//arachnid.c)
 </div>
 
-[Cody](#cody) added an [alternate version](%%REPO_URL%%/2004/arachnid/index.html#alternate-code) which
+[Cody](#cody) added an [alternate version](2004/arachnid/index.html#alternate-code) which
 allows those like himself used to `h`, `j`, `k` and `l` movement keys to not get
 lost. Non rogue players, vi users and Dvorak typists are invited to get lost (or
 use the original version)! :-)
@@ -3528,7 +3528,7 @@ browsers knowing what to do with it.
 
 
 <div id="2004_burley">
-## [2004/burley](%%REPO_URL%%/2004/burley/index.html)
+## [2004/burley](2004/burley/index.html)
 ### Source code: [burley.c](%%REPO_URL%%/2004/burley//burley.c)
 </div>
 
@@ -3566,12 +3566,12 @@ this, forcing `-O0`.
 
 
 <div id="2004_gavare">
-## [2004/gavare](%%REPO_URL%%/2004/gavare/index.html)
+## [2004/gavare](2004/gavare/index.html)
 ### Source code: [gavare.c](%%REPO_URL%%/2004/gavare//gavare.c)
 </div>
 
 [Cody](#cody) added three different [alternate
-versions](%%REPO_URL%%/2004/gavare/index.html#alternate-code):
+versions](2004/gavare/index.html#alternate-code):
 
 - [gavare.alt.c](%%REPO_URL%%/2004/gavare/gavare.alt.c) allows you to change the image size
 and anti-alias setting at compile time.
@@ -3584,11 +3584,11 @@ entry](https://gavare.se/ioccc/ioccc_gavare.c.html).
 
 
 <div id="2004_gavin">
-## [2004/gavin](%%REPO_URL%%/2004/gavin/index.html)
+## [2004/gavin](2004/gavin/index.html)
 ### Source code: [gavin.c](%%REPO_URL%%/2004/gavin//gavin.c)
 </div>
 
-[Cody](#cody) provided the [alt code](%%REPO_URL%%/2004/gavin/index.html#alternate-code) for
+[Cody](#cody) provided the [alt code](2004/gavin/index.html#alternate-code) for
 those who want to use QEMU. The most important part of this is the macro `K` has
 to be defined as `1`, not `0`.
 
@@ -3601,7 +3601,7 @@ files and causing `make clobber` to wipe some of them out.
 
 
 <div id="2004_hibachi">
-## [2004/hibachi](%%REPO_URL%%/2004/hibachi/index.html)
+## [2004/hibachi](2004/hibachi/index.html)
 ### Source code: [hibachi.c](%%REPO_URL%%/2004/hibachi//hibachi.c)
 </div>
 
@@ -3613,7 +3613,7 @@ Wayback Machine.
 
 
 <div id="2004_hoyle">
-## [2004/hoyle](%%REPO_URL%%/2004/hoyle/index.html)
+## [2004/hoyle](2004/hoyle/index.html)
 ### Source code: [hoyle.c](%%REPO_URL%%/2004/hoyle//hoyle.c)
 </div>
 
@@ -3649,7 +3649,7 @@ this ended up with a number of errors like:
 
 and various other problems.
 
-Cody also added [alt code](%%REPO_URL%%/2004/jdalbec/index.html#alternate-code) which allows
+Cody also added [alt code](2004/jdalbec/index.html#alternate-code) which allows
 one to control how many numbers after the `:` to print before printing a
 newline, so that one can see the output a bit better (though for lines that have
 a lot of numbers this will be harder to see).
@@ -3659,7 +3659,7 @@ Finally Cody added [try.sh](%%REPO_URL%%/2004/jdalbec/try.sh) and
 
 
 <div id="2004_kopczynski">
-## [2004/kopczynski](%%REPO_URL%%/2004/kopczynski/index.html)
+## [2004/kopczynski](2004/kopczynski/index.html)
 ### Source code: [kopczynski.c](%%REPO_URL%%/2004/kopczynski//kopczynski.c)
 </div>
 
@@ -3678,7 +3678,7 @@ get it to work, that being `kopczynski-10-rev`.
 
 
 <div id="2004_newbern">
-## [2004/newbern](%%REPO_URL%%/2004/newbern/index.html)
+## [2004/newbern](2004/newbern/index.html)
 ### Source code: [newbern.c](%%REPO_URL%%/2004/newbern//newbern.c)
 </div>
 
@@ -3690,7 +3690,7 @@ chose the word `IOCCC` instead of `AAA`).
 
 
 <div id="2004_omoikane">
-## [2004/omoikane](%%REPO_URL%%/2004/omoikane/index.html)
+## [2004/omoikane](2004/omoikane/index.html)
 ### Source code: [omoikane.c](%%REPO_URL%%/2004/omoikane//omoikane.c)
 </div>
 
@@ -3698,7 +3698,7 @@ chose the word `IOCCC` instead of `AAA`).
 
 
 <div id="2004_schnitzi">
-## [2004/schnitzi](%%REPO_URL%%/2004/schnitzi/index.html)
+## [2004/schnitzi](2004/schnitzi/index.html)
 ### Source code: [schnitzi.c](%%REPO_URL%%/2004/schnitzi//schnitzi.c)
 </div>
 
@@ -3792,7 +3792,7 @@ just to make it a bit easier to compile.
 
 
 <div id="2005_aidan">
-## [2005/aidan](%%REPO_URL%%/2005/aidan/index.html)
+## [2005/aidan](2005/aidan/index.html)
 ### Source code: [aidan.c](%%REPO_URL%%/2005/aidan//aidan.c)
 </div>
 
@@ -3800,7 +3800,7 @@ just to make it a bit easier to compile.
 to the proper compiled program (it's hardcoded). This had never been done and so
 the script did not even work (at least modernly?).
 
-He also added the [alt code](%%REPO_URL%%/2005/aidan/index.html#alternate-code) based on the
+He also added the [alt code](2005/aidan/index.html#alternate-code) based on the
 author's remarks which is a different approach than the one used and which
 (according to the author) 'is slower (particularly in worst-case or nearly so
 scenarios), inelegant, and not a good starting place for sudoku generation.'
@@ -3814,7 +3814,7 @@ suite.
 
 
 <div id="2005_anon">
-## [2005/anon](%%REPO_URL%%/2005/anon/index.html)
+## [2005/anon](2005/anon/index.html)
 ### Source code: [anon.c](%%REPO_URL%%/2005/anon//anon.c)
 </div>
 
@@ -3826,12 +3826,12 @@ The author noted that one can define `NO_STTY` to not use `stty(1)` at all
 (either to prevent having to hit enter or to turn echo off/on) which is
 explained in the index.html.
 
-Cody added the [alt code](%%REPO_URL%%/2005/anon/index.html#alternate-code) with vi(m) like
+Cody added the [alt code](2005/anon/index.html#alternate-code) with vi(m) like
 movements.
 
 
 <div id="2005_boutines">
-## [2005/boutines](%%REPO_URL%%/2005/boutines/index.html)
+## [2005/boutines](2005/boutines/index.html)
 ### Source code: [boutines.c](%%REPO_URL%%/2005/boutines//boutines.c)
 </div>
 
@@ -3842,7 +3842,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2005/boutines/try.sh) script.
 
 
 <div id="2005_giljade">
-## [2005/giljade](%%REPO_URL%%/2005/giljade/index.html)
+## [2005/giljade](2005/giljade/index.html)
 ### Source code: [giljade.c](%%REPO_URL%%/2005/giljade//giljade.c)
 </div>
 
@@ -3966,7 +3966,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2005/mikeash/try.sh) script.
 
 
 <div id="2005_mynx">
-## [2005/mynx](%%REPO_URL%%/2005/mynx/index.html)
+## [2005/mynx](2005/mynx/index.html)
 ### Source code: [mynx.c](%%REPO_URL%%/2005/mynx//mynx.c)
 </div>
 
@@ -3981,12 +3981,12 @@ wants to add the necessary code.
 
 
 <div id="2005_persano">
-## [2005/persano](%%REPO_URL%%/2005/persano/index.html)
+## [2005/persano](2005/persano/index.html)
 ### Source code: [persano.c](%%REPO_URL%%/2005/persano//persano.c)
 </div>
 
 [Cody](#cody) added the (untested) [alternate
-code](%%REPO_URL%%/2005/persano/index.html#alternate-code) which should work for Windows as it
+code](2005/persano/index.html#alternate-code) which should work for Windows as it
 sets binary mode on `stdout`. It is untested as Cody has no Windows system to
 test it on.
 
@@ -3994,7 +3994,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2005/persano/try.sh) script.
 
 
 <div id="2005_sykes">
-## [2005/sykes](%%REPO_URL%%/2005/sykes/index.html)
+## [2005/sykes](2005/sykes/index.html)
 ### Source code: [sykes.c](%%REPO_URL%%/2005/sykes//sykes.c)
 </div>
 
@@ -4036,7 +4036,7 @@ interrupt is set to in order to exit the program.
 
 
 <div id="2005_timwi">
-## [2005/timwi](%%REPO_URL%%/2005/timwi/index.html)
+## [2005/timwi](2005/timwi/index.html)
 ### Source code: [timwi.c](%%REPO_URL%%/2005/timwi//timwi.c)
 </div>
 
@@ -4079,7 +4079,7 @@ if one runs it from another directory, specifying the directory, it'll not catch
 
 
 <div id="2006_birken">
-## [2006/birken](%%REPO_URL%%/2006/birken/index.html)
+## [2006/birken](2006/birken/index.html)
 ### Source code: [birken.c](%%REPO_URL%%/2006/birken//birken.c)
 </div>
 
@@ -4090,7 +4090,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2006/birken/try.sh) script.
 
 
 <div id="2006_borsanyi">
-## [2006/borsanyi](%%REPO_URL%%/2006/borsanyi/index.html)
+## [2006/borsanyi](2006/borsanyi/index.html)
 ### Source code: [borsanyi.c](%%REPO_URL%%/2006/borsanyi//borsanyi.c)
 </div>
 
@@ -4120,11 +4120,11 @@ Cody also added the [try.sh](%%REPO_URL%%/2006/hamre/try.sh) script.
 
 
 <div id="2006_monge">
-## [2006/monge](%%REPO_URL%%/2006/monge/index.html)
+## [2006/monge](2006/monge/index.html)
 ### Source code: [monge.c](%%REPO_URL%%/2006/monge//monge.c)
 </div>
 
-[Cody](#cody) added the [alternate code](%%REPO_URL%%/2006/monge/index.html#alternate-code) that lets
+[Cody](#cody) added the [alternate code](2006/monge/index.html#alternate-code) that lets
 one resize the image and redefine the number of iterations.
 
 Cody also added the [try.sh](%%REPO_URL%%/2006/monge/try.sh) and
@@ -4143,7 +4143,7 @@ bugs.html](bugs.html#2006-monge).
 
 
 <div id="2006_night">
-## [2006/night](%%REPO_URL%%/2006/night/index.html)
+## [2006/night](2006/night/index.html)
 ### Source code: [night.c](%%REPO_URL%%/2006/night//night.c)
 </div>
 
@@ -4152,7 +4152,7 @@ back for arrow keys in the [alternate version](%%REPO_URL%%/2006/night/night.alt
 
 
 <div id="2006_sloane">
-## [2006/sloane](%%REPO_URL%%/2006/sloane/index.html)
+## [2006/sloane](2006/sloane/index.html)
 ### Source code: [sloane.c](%%REPO_URL%%/2006/sloane//sloane.c)
 </div>
 
@@ -4184,7 +4184,7 @@ program in some systems he also added `-include ...` to the Makefile as well.
 
 
 <div id="2006_stewart">
-## [2006/stewart](%%REPO_URL%%/2006/stewart/index.html)
+## [2006/stewart](2006/stewart/index.html)
 ### Source code: [stewart.c](%%REPO_URL%%/2006/stewart//stewart.c)
 </div>
 
@@ -4196,11 +4196,11 @@ bug to fix.
 
 
 <div id="2006_sykes1">
-## [2006/sykes1](%%REPO_URL%%/2006/sykes1/index.html)
+## [2006/sykes1](2006/sykes1/index.html)
 ### Source code: [sykes1.c](%%REPO_URL%%/2006/sykes1//sykes1.c)
 </div>
 
-[Cody](#cody) provided the [alt code](%%REPO_URL%%/2006/sykes1/index.html#alternate-code) based on the
+[Cody](#cody) provided the [alt code](2006/sykes1/index.html#alternate-code) based on the
 author's remarks.
 
 Cody also added the [try.sh](%%REPO_URL%%/2006/sykes1/try.sh) script.
@@ -4212,7 +4212,7 @@ it to the repo as well.
 
 
 <div id="2006_sykes2">
-## [2006/sykes2](%%REPO_URL%%/2006/sykes2/index.html)
+## [2006/sykes2](2006/sykes2/index.html)
 ### Source code: [sykes2.c](%%REPO_URL%%/2006/sykes2//sykes2.c)
 </div>
 
@@ -4225,7 +4225,7 @@ entry to show the clock update in real time.
 
 
 <div id="2006_toledo1">
-## [2006/toledo1](%%REPO_URL%%/2006/toledo1/index.html)
+## [2006/toledo1](2006/toledo1/index.html)
 ### Source code: [toledo1.c](%%REPO_URL%%/2006/toledo1//toledo1.c)
 </div>
 
@@ -4233,7 +4233,7 @@ entry to show the clock update in real time.
 
 
 <div id="2006_toledo2">
-## [2006/toledo2](%%REPO_URL%%/2006/toledo2/index.html)
+## [2006/toledo2](2006/toledo2/index.html)
 ### Source code: [toledo2.c](%%REPO_URL%%/2006/toledo2//toledo2.c)
 </div>
 
@@ -4255,7 +4255,7 @@ where appears the `IMPORT.COM` and `HALT.COM` files.
 
 
 <div id="2006_toledo3">
-## [2006/toledo3](%%REPO_URL%%/2006/toledo3/index.html)
+## [2006/toledo3](2006/toledo3/index.html)
 ### Source code: [toledo3.c](%%REPO_URL%%/2006/toledo3//toledo3.c)
 </div>
 
@@ -4276,7 +4276,7 @@ We're not able to test this.
 
 
 <div id="2011_akari">
-## [2011/akari](%%REPO_URL%%/2011/akari/index.html)
+## [2011/akari](2011/akari/index.html)
 ### Source code: [akari.c](%%REPO_URL%%/2011/akari//akari.c)
 </div>
 
@@ -4284,7 +4284,7 @@ We're not able to test this.
 
 
 <div id="2011_blakely">
-## [2011/blakely](%%REPO_URL%%/2011/blakely/index.html)
+## [2011/blakely](2011/blakely/index.html)
 ### Source code: [blakely.c](%%REPO_URL%%/2011/blakely//blakely.c)
 </div>
 
@@ -4292,7 +4292,7 @@ We're not able to test this.
 
 
 <div id="2011_borsanyi">
-## [2011/borsanyi](%%REPO_URL%%/2011/borsanyi/index.html)
+## [2011/borsanyi](2011/borsanyi/index.html)
 ### Source code: [borsanyi.c](%%REPO_URL%%/2011/borsanyi//borsanyi.c)
 </div>
 
@@ -4304,7 +4304,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2011/borsanyi/try.sh) script.
 
 
 <div id="2011_dlowe">
-## [2011/dlowe](%%REPO_URL%%/2011/dlowe/index.html)
+## [2011/dlowe](2011/dlowe/index.html)
 ### Source code: [dlowe.c](%%REPO_URL%%/2011/dlowe//dlowe.c)
 </div>
 
@@ -4312,7 +4312,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2011/borsanyi/try.sh) script.
 
 
 <div id="2011_eastman">
-## [2011/eastman](%%REPO_URL%%/2011/eastman/index.html)
+## [2011/eastman](2011/eastman/index.html)
 ### Source code: [eastman.c](%%REPO_URL%%/2011/eastman//eastman.c)
 </div>
 
@@ -4321,7 +4321,7 @@ author referred to.
 
 
 <div id="2011_fredriksson">
-## [2011/fredriksson](%%REPO_URL%%/2011/fredriksson/index.html)
+## [2011/fredriksson](2011/fredriksson/index.html)
 ### Source code: [fredriksson.c](%%REPO_URL%%/2011/fredriksson//fredriksson.c)
 </div>
 
@@ -4329,7 +4329,7 @@ author referred to.
 
 
 <div id="2011_goren">
-## [2011/goren](%%REPO_URL%%/2011/goren/index.html)
+## [2011/goren](2011/goren/index.html)
 ### Source code: [goren.c](%%REPO_URL%%/2011/goren//goren.c)
 </div>
 
@@ -4345,7 +4345,7 @@ Cody added the following words of wisdom: `'"this" is not a pipe but "!" is'`.
 
 
 <div id="2011_hamaji">
-## [2011/hamaji](%%REPO_URL%%/2011/hamaji/index.html)
+## [2011/hamaji](2011/hamaji/index.html)
 ### Source code: [hamaji.c](%%REPO_URL%%/2011/hamaji//hamaji.c)
 </div>
 
@@ -4360,7 +4360,7 @@ and the others were from the authors' remarks.
 
 
 <div id="2011_hou">
-## [2011/hou](%%REPO_URL%%/2011/hou/index.html)
+## [2011/hou](2011/hou/index.html)
 ### Source code: [hou.c](%%REPO_URL%%/2011/hou//hou.c)
 </div>
 
@@ -4368,7 +4368,7 @@ and the others were from the authors' remarks.
 
 
 <div id="2011_konno">
-## [2011/konno](%%REPO_URL%%/2011/konno/index.html)
+## [2011/konno](2011/konno/index.html)
 ### Source code: [konno.c](%%REPO_URL%%/2011/konno//konno.c)
 </div>
 
@@ -4379,7 +4379,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2011/konno/try.sh) script.
 
 
 <div id="2011_richards">
-## [2011/richards](%%REPO_URL%%/2011/richards/index.html)
+## [2011/richards](2011/richards/index.html)
 ### Source code: [richards.c](%%REPO_URL%%/2011/richards//richards.c)
 </div>
 
@@ -4401,11 +4401,11 @@ bugs.html](bugs.html#2011-richards) for more details).
 
 
 <div id="2011_toledo">
-## [2011/toledo](%%REPO_URL%%/2011/toledo/index.html)
+## [2011/toledo](2011/toledo/index.html)
 ### Source code: [toledo.c](%%REPO_URL%%/2011/toledo//toledo.c)
 </div>
 
-[Cody](#cody) added two [alternate versions](%%REPO_URL%%/2011/toledo/index.html#alternate-code): one that
+[Cody](#cody) added two [alternate versions](2011/toledo/index.html#alternate-code): one that
 lets one reconfigure the controls and also the size of the game and another
 version that should work in Windows, based on the author's remarks and support
 file, `layer.c`.
@@ -4415,25 +4415,25 @@ controls, width and height.
 
 
 <div id="2011_vik">
-## [2011/vik](%%REPO_URL%%/2011/vik/index.html)
+## [2011/vik](2011/vik/index.html)
 ### Source code: [vik.c](%%REPO_URL%%/2011/vik//vik.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/vik/try.sh) script.
 
-Cody also added an [alternate version](%%REPO_URL%%/2011/vik/index.html#alternate-code) for Windows
+Cody also added an [alternate version](2011/vik/index.html#alternate-code) for Windows
 based on the author's comments (along with looking up the function for the right
 header files). To build try the alt rule of the Makefile.
 
 
 <div id="2011_zucker">
-## [2011/zucker](%%REPO_URL%%/2011/zucker/index.html)
+## [2011/zucker](2011/zucker/index.html)
 ### Source code: [zucker.c](%%REPO_URL%%/2011/zucker//zucker.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/zucker/try.sh) script.
 
-Cody also added [alt code](%%REPO_URL%%/2011/zucker/index.html#alternate-code) that should work on
+Cody also added [alt code](2011/zucker/index.html#alternate-code) that should work on
 Windows, based on the author's remarks that if the system distinguishes binary
 and text then `stdout` needs to be set to binary mode.
 
@@ -4459,7 +4459,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2012/blakely/try.sh) script.
 
 
 <div id="2012_deckmyn">
-## [2012/deckmyn](%%REPO_URL%%/2012/deckmyn/index.html)
+## [2012/deckmyn](2012/deckmyn/index.html)
 ### Source code: [deckmyn.c](%%REPO_URL%%/2012/deckmyn//deckmyn.c)
 </div>
 
@@ -4474,7 +4474,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2012/blakely/try.sh) script.
 [Cody](#cody) added explicit linking of libm (`-lm`) as not all systems do this
 implicitly (Linux doesn't seem to but macOS does).
 
-Cody also added two [alt versions](%%REPO_URL%%/2012/endoh1/index.html#alternate-code) that
+Cody also added two [alt versions](2012/endoh1/index.html#alternate-code) that
 let one control how fast the fluid moves (how long to sleep in between writes)
 and also the gravity factor, the pressure factor and the viscosity factor as
 well as an alarm that lets one run it in a loop without having to hit
@@ -4538,7 +4538,7 @@ which the recipe file now links to.
 
 
 <div id="2012_hamano">
-## [2012/hamano](%%REPO_URL%%/2012/hamano/index.html)
+## [2012/hamano](2012/hamano/index.html)
 ### Source code: [hamano.c](%%REPO_URL%%/2012/hamano//hamano.c)
 </div>
 
@@ -4548,7 +4548,7 @@ procedure for both `hint.pdf` and `hello.pdf` as well as compiling them as C.
 
 
 <div id="2012_hou">
-## [2012/hou](%%REPO_URL%%/2012/hou/index.html)
+## [2012/hou](2012/hou/index.html)
 ### Source code: [hou.c](%%REPO_URL%%/2012/hou//hou.c)
 </div>
 
@@ -4560,7 +4560,7 @@ title and stylesheet) and other formatting changes.
 
 
 <div id="2012_kang">
-## [2012/kang](%%REPO_URL%%/2012/kang/index.html)
+## [2012/kang](2012/kang/index.html)
 ### Source code: [kang.c](%%REPO_URL%%/2012/kang//kang.c)
 </div>
 
@@ -4593,7 +4593,7 @@ respectively. Notice how a single letter changes so much!
 
 
 <div id="2012_konno">
-## [2012/konno](%%REPO_URL%%/2012/konno/index.html)
+## [2012/konno](2012/konno/index.html)
 ### Source code: [konno.c](%%REPO_URL%%/2012/konno//konno.c)
 </div>
 
@@ -4601,11 +4601,11 @@ respectively. Notice how a single letter changes so much!
 
 
 <div id="2012_omoikane">
-## [2012/omoikane](%%REPO_URL%%/2012/omoikane/index.html)
+## [2012/omoikane](2012/omoikane/index.html)
 ### Source code: [omoikane.c](%%REPO_URL%%/2012/omoikane//omoikane.c)
 </div>
 
-[Cody](#cody) added the [alternate versions](%%REPO_URL%%/2012/omoikane/index.html#alternate-code)
+[Cody](#cody) added the [alternate versions](2012/omoikane/index.html#alternate-code)
 which will, if no arg is specified, read in the program itself, rather than
 `/dev/urandom`. This is mostly useful for those without a `/dev/urandom` device
 file (the default for the entry). The second alternate version is like the first
@@ -4625,7 +4625,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2012/omoikane/try.sh) and
 
 
 <div id="2012_vik">
-## [2012/vik](%%REPO_URL%%/2012/vik/index.html)
+## [2012/vik](2012/vik/index.html)
 ### Source code: [vik.c](%%REPO_URL%%/2012/vik//vik.c)
 </div>
 
@@ -4637,7 +4637,7 @@ does this for the few who might use Windows.
 
 
 <div id="2012_zeitak">
-## [2012/zeitak](%%REPO_URL%%/2012/zeitak/index.html)
+## [2012/zeitak](2012/zeitak/index.html)
 ### Source code: [zeitak.c](%%REPO_URL%%/2012/zeitak//zeitak.c)
 </div>
 
@@ -4661,7 +4661,7 @@ it easier for those who do not know how, and to make it more obvious to try it.
 
 
 <div id="2013_birken">
-## [2013/birken](%%REPO_URL%%/2013/birken/index.html)
+## [2013/birken](2013/birken/index.html)
 ### Source code: [birken.c](%%REPO_URL%%/2013/birken//birken.c)
 </div>
 
@@ -4682,7 +4682,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2013/birken/try.sh) script for the ent
 
 
 <div id="2013_cable1">
-## [2013/cable1](%%REPO_URL%%/2013/cable1/index.html)
+## [2013/cable1](2013/cable1/index.html)
 ### Source code: [cable1.c](%%REPO_URL%%/2013/cable1//cable1.c)
 </div>
 
@@ -4691,7 +4691,7 @@ joke Easter egg in it based on the judges' remarks.
 
 
 <div id="2013_cable2">
-## [2013/cable2](%%REPO_URL%%/2013/cable2/index.html)
+## [2013/cable2](2013/cable2/index.html)
 ### Source code: [cable2.c](%%REPO_URL%%/2013/cable2//cable2.c)
 </div>
 
@@ -4699,7 +4699,7 @@ joke Easter egg in it based on the judges' remarks.
 
 
 <div id="2013_cable3">
-## [2013/cable3](%%REPO_URL%%/2013/cable3/index.html)
+## [2013/cable3](2013/cable3/index.html)
 ### Source code: [cable3.c](%%REPO_URL%%/2013/cable3//cable3.c)
 </div>
 
@@ -4922,7 +4922,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2013/morgan1/try.sh) script.
 </div>
 
 [Cody](#cody) provided the [alternate
-code](%%REPO_URL%%/2014/birken/index.html#alternate-code) that lets one redefine the port to
+code](2014/birken/index.html#alternate-code) that lets one redefine the port to
 bind to in case there is a firewall issue or there is some other reason to not
 have the default port. Remember that ports < 1024 are privileged. It also lets
 you redefine the timing constant `STARDATE` (see the author's remarks for more
@@ -4935,7 +4935,7 @@ redefine the port and timing constant.
 ### Source code: [prog.c](%%REPO_URL%%/2014/deak//prog.c)
 </div>
 
-[Cody](#cody) added [alt code](%%REPO_URL%%/2014/deak/index.html#alternate-code) that lets
+[Cody](#cody) added [alt code](2014/deak/index.html#alternate-code) that lets
 one (via the Makefile) reconfigure the coordinates but instead of being a
 modified version of the entry it is the version the author provided which would
 be what the program would look like if, as the author put it:
@@ -4954,7 +4954,7 @@ Cody also added the [try.alt.sh](%%REPO_URL%%/2014/deak/try.alt.sh) script.
 
 
 <div id="2014_endoh1">
-## [2014/endoh1](%%REPO_URL%%/2014/endoh1/index.html)
+## [2014/endoh1](2014/endoh1/index.html)
 ### Source code: [prog.c](%%REPO_URL%%/2014/endoh1//prog.c)
 </div>
 
@@ -4983,7 +4983,7 @@ it is a file with spoilers (and too close to index.html?).
 
 
 <div id="2014_endoh2">
-## [2014/endoh2](%%REPO_URL%%/2014/endoh2/index.html)
+## [2014/endoh2](2014/endoh2/index.html)
 ### Source code: [prog.c](%%REPO_URL%%/2014/endoh2//prog.c)
 </div>
 
@@ -4991,7 +4991,7 @@ it is a file with spoilers (and too close to index.html?).
 
 
 <div id="2014_maffiodo1">
-## [2014/maffiodo1](%%REPO_URL%%/2014/maffiodo1/index.html)
+## [2014/maffiodo1](2014/maffiodo1/index.html)
 ### Source code: [prog.c](%%REPO_URL%%/2014/maffiodo1//prog.c)
 </div>
 
@@ -5006,13 +5006,13 @@ which let one configure the width and height of the game.
 
 
 <div id="2014_maffiodo2">
-## [2014/maffiodo2](%%REPO_URL%%/2014/maffiodo2/index.html)
+## [2014/maffiodo2](2014/maffiodo2/index.html)
 ### Source code: [prog.c](%%REPO_URL%%/2014/maffiodo2//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2014/maffiodo2/try.sh) script.
 
-He also added the [alternate code](%%REPO_URL%%/2014/maffiodo2/index.html#alternate-code)
+He also added the [alternate code](2014/maffiodo2/index.html#alternate-code)
 provided by the author.
 
 
@@ -5099,7 +5099,7 @@ output.
 
 
 <div id="2015_burton">
-## [2015/burton](%%REPO_URL%%/2015/burton/index.html)
+## [2015/burton](2015/burton/index.html)
 ### Source code: [prog.c](%%REPO_URL%%/2015/burton//prog.c)
 </div>
 
@@ -5143,7 +5143,7 @@ add a `./` to the commands in the man page/index.html.
 
 
 <div id="2015_dogon">
-## [2015/dogon](%%REPO_URL%%/2015/dogon/index.html)
+## [2015/dogon](2015/dogon/index.html)
 ### Source code: [prog.c](%%REPO_URL%%/2015/dogon//prog.c)
 </div>
 
@@ -5156,7 +5156,7 @@ they avoided.
 
 
 <div id="2015_duble">
-## [2015/duble](%%REPO_URL%%/2015/duble/index.html)
+## [2015/duble](2015/duble/index.html)
 ### Source code: [prog.c](%%REPO_URL%%/2015/duble//prog.c)
 </div>
 
@@ -5164,7 +5164,7 @@ they avoided.
 
 
 <div id="2015_endoh2">
-## [2015/endoh2](%%REPO_URL%%/2015/endoh2/index.html)
+## [2015/endoh2](2015/endoh2/index.html)
 ### Source code: [prog.c](%%REPO_URL%%/2015/endoh2//prog.c)
 </div>
 
@@ -5172,7 +5172,7 @@ they avoided.
 
 
 <div id="2015_endoh3">
-## [2015/endoh3](%%REPO_URL%%/2015/endoh3/index.html)
+## [2015/endoh3](2015/endoh3/index.html)
 ### Source code: [prog.c](%%REPO_URL%%/2015/endoh3//prog.c)
 </div>
 
@@ -5188,7 +5188,7 @@ simply typing `make back_to` or `make mullender`) and then runs the famous
 
 
 <div id="2015_endoh4">
-## [2015/endoh4](%%REPO_URL%%/2015/endoh4/index.html)
+## [2015/endoh4](2015/endoh4/index.html)
 ### Source code: [prog.c](%%REPO_URL%%/2015/endoh4//prog.c)
 </div>
 
@@ -5253,7 +5253,7 @@ past).
 
 
 <div id="2015_schweikhardt">
-## [2015/schweikhardt](%%REPO_URL%%/2015/schweikhardt/index.html)
+## [2015/schweikhardt](2015/schweikhardt/index.html)
 ### Source code: [prog.c](%%REPO_URL%%/2015/schweikhardt//prog.c)
 </div>
 
@@ -5266,7 +5266,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2015/schweikhardt/try.sh) script.
 
 
 <div id="2015_yang">
-## [2015/yang](%%REPO_URL%%/2015/yang/index.html)
+## [2015/yang](2015/yang/index.html)
 ### Source code: [prog.c](%%REPO_URL%%/2015/yang//prog.c)
 </div>
 
@@ -5318,7 +5318,7 @@ object to 1 arg but it is entirely possible that this changes so a second arg
 Cody also added explicit linking of libm (`-lm`) for systems that do not do this
 (Linux doesn't seem to but macOS does).
 
-Cody also added [alt code](%%REPO_URL%%/2018/bellard/index.html#alternate-code) that should
+Cody also added [alt code](2018/bellard/index.html#alternate-code) that should
 work for Windows, based on the author's remarks. The same thing with the number
 of args to `main()` that was done in the original entry was done with this
 version as well.
@@ -5487,7 +5487,7 @@ if the user wants to see some of the spoilers and only show them if they type
 
 
 <div id="2019_adamovsky">
-## [2019/adamovsky](%%REPO_URL%%/2019/adamovsky/index.html)
+## [2019/adamovsky](2019/adamovsky/index.html)
 ### Source code: [prog.c](%%REPO_URL%%/2019/adamovsky//prog.c)
 </div>
 
@@ -5497,7 +5497,7 @@ to what can crash it - but it's not a bug, it's a feature.
 
 
 <div id="2019_burton">
-## [2019/burton](%%REPO_URL%%/2019/burton/index.html)
+## [2019/burton](2019/burton/index.html)
 ### Source code: [prog.c](%%REPO_URL%%/2019/burton//prog.c)
 </div>
 
@@ -5521,7 +5521,7 @@ browsers/GitHub.
 
 
 <div id="2019_ciura">
-## [2019/ciura](%%REPO_URL%%/2019/ciura/index.html)
+## [2019/ciura](2019/ciura/index.html)
 ### Source code: [prog.c](%%REPO_URL%%/2019/ciura//prog.c)
 </div>
 
@@ -5547,7 +5547,7 @@ bugs.html](bugs.html#2019-ciura) for more details.
 
 
 <div id="2019_diels-grabsch1">
-## [2019/diels-grabsch1](%%REPO_URL%%/2019/diels-grabsch1/index.html)
+## [2019/diels-grabsch1](2019/diels-grabsch1/index.html)
 ### Source code: [prog.c](%%REPO_URL%%/2019/diels-grabsch1//prog.c)
 </div>
 
@@ -5561,7 +5561,7 @@ having tarballs for each individual entry as a convenience.
 
 
 <div id="2019_diels-grabsch2">
-## [2019/diels-grabsch2](%%REPO_URL%%/2019/diels-grabsch2/index.html)
+## [2019/diels-grabsch2](2019/diels-grabsch2/index.html)
 ### Source code: [prog.c](%%REPO_URL%%/2019/diels-grabsch2//prog.c)
 </div>
 
@@ -5594,7 +5594,7 @@ else).
 
 
 <div id="2019_duble">
-## [2019/duble](%%REPO_URL%%/2019/duble/index.html)
+## [2019/duble](2019/duble/index.html)
 ### Source code: [prog.c](%%REPO_URL%%/2019/duble//prog.c)
 </div>
 
@@ -5610,7 +5610,7 @@ how to easily compile the program to a specific size. Note that `LINES` and
 
 
 <div id="2019_endoh">
-## [2019/endoh](%%REPO_URL%%/2019/endoh/index.html)
+## [2019/endoh](2019/endoh/index.html)
 ### Source code: [prog.c](%%REPO_URL%%/2019/endoh//prog.c)
 </div>
 
@@ -5627,7 +5627,7 @@ quine.
 
 
 <div id="2019_giles">
-## [2019/giles](%%REPO_URL%%/2019/giles/index.html)
+## [2019/giles](2019/giles/index.html)
 ### Source code: [prog.c](%%REPO_URL%%/2019/giles//prog.c)
 </div>
 
@@ -5635,7 +5635,7 @@ quine.
 
 
 <div id="2019_karns">
-## [2019/karns](%%REPO_URL%%/2019/karns/index.html)
+## [2019/karns](2019/karns/index.html)
 ### Source code: [prog.c](%%REPO_URL%%/2019/karns//prog.c)
 </div>
 
@@ -5650,7 +5650,7 @@ bit more easily.
 
 
 <div id="2019_lynn">
-## [2019/lynn](%%REPO_URL%%/2019/lynn/index.html)
+## [2019/lynn](2019/lynn/index.html)
 ### Source code: [prog.c](%%REPO_URL%%/2019/lynn//prog.c)
 </div>
 
@@ -5663,7 +5663,7 @@ entry existing.
 
 
 <div id="2019_mills">
-## [2019/mills](%%REPO_URL%%/2019/mills/index.html)
+## [2019/mills](2019/mills/index.html)
 ### Source code: [prog.c](%%REPO_URL%%/2019/mills//prog.c)
 </div>
 
@@ -5679,7 +5679,7 @@ entry existing.
 file. The rule requires the tool
 [pdflatex](https://tug.org/applications/pdftex/index.html).
 
-Cody also added the [alternate code](%%REPO_URL%%/2019/poikola/index.html#alternate-code).
+Cody also added the [alternate code](2019/poikola/index.html#alternate-code).
 
 Cody also added the [try.sh](%%REPO_URL%%/2019/poikola/try.sh) and
 [try.alt.sh](%%REPO_URL%%/2019/poikola/try.alt.sh) scripts.
@@ -5693,7 +5693,7 @@ tested: `gnu17` was not tested but `gnu11` was so the standard was set to
 
 
 <div id="2019_yang">
-## [2019/yang](%%REPO_URL%%/2019/yang/index.html)
+## [2019/yang](2019/yang/index.html)
 ### Source code: [prog.c](%%REPO_URL%%/2019/yang//prog.c)
 </div>
 
@@ -5825,7 +5825,7 @@ various files.
 
 He also added the [try.sh](%%REPO_URL%%/2020/ferguson2/try.sh) script.
 
-He also added the [alt code](%%REPO_URL%%/2020/ferguson2/index.html#alternate-code) and the
+He also added the [alt code](2020/ferguson2/index.html#alternate-code) and the
 [try.alt.sh](%%REPO_URL%%/2020/ferguson2/try.alt.sh) script.
 
 The try scripts involved the addition of a text file,
@@ -5935,7 +5935,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2020/otterness/try.sh) script.
 ### Source code: [prog.c](%%REPO_URL%%/2020/tsoj//prog.c)
 </div>
 
-[Cody](#cody) added [alternate code](%%REPO_URL%%/2020/tsoj/index.html#alternate-code) that will feel
+[Cody](#cody) added [alternate code](2020/tsoj/index.html#alternate-code) that will feel
 more at home for vi users. One might still end up cursing (see the index.html
 file) but probably a lot less :-)
 

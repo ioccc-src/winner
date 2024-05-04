@@ -288,13 +288,13 @@ The obvious question is why didn't I put in a break? Because of the IOCCC size
 rule 2 and what would it do anyway? I guess it would win but to my mind that is
 a bug and I prefer putting in restrictions to try and make it very unlikely.
 
-[crazy.log.html]: %%REPO_URL%%/2020/ferguson1/crazy.log.html
-[gameplay.html]: %%REPO_URL%%/2020/ferguson1/gameplay.html
-[troubleshooting.html]: %%REPO_URL%%/2020/ferguson1/troubleshooting.html
-[gameplay.html]: %%REPO_URL%%/2020/ferguson1/gameplay.html
-[cannibalism.log.html]: %%REPO_URL%%/2020/ferguson1/cannibalism.log.html
+[crazy.log.html]: crazy.log.html
+[gameplay.html]: gameplay.html
+[troubleshooting.html]: troubleshooting.html
+[gameplay.html]: gameplay.html
+[cannibalism.log.html]: cannibalism.log.html
 [https://en.wikipedia.org/wiki/Halfwidth_and_fullwidth_forms]: https://en.wikipedia.org/wiki/Halfwidth_and_fullwidth_forms
-[spoilers.html]: %%REPO_URL%%/2020/ferguson1/spoilers.html
+[spoilers.html]: spoilers.html
 
 
 <hr style="width:10%;text-align:left;margin-left:0">

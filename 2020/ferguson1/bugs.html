@@ -475,7 +475,7 @@ way negative size will force a win.</p>
 head several places until you end up getting to the max size (by way of it
 being unsigned). This isn’t a bug even if it might seem like one. In fact
 this is the basis of the grow/shrink mode of play that I talk about in the
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/gameplay.html">gameplay.html</a> file.</p>
+<a href="gameplay.html">gameplay.html</a> file.</p>
 <p>Here’s another thing to be aware of. Let’s say you do:</p>
 <pre><code>    SIZE=1 GROW=-1 ./prog</code></pre>
 <p>How many bugs will it take before you win? In fact it’s two: you would see the
@@ -569,7 +569,7 @@ that 49 is the max snake size. How is this derived and why?</p>
 (<code>playable_rows * playable_columns</code>). I have played with this many
 times and I do not believe there should be a problem. If there is it’s from a
 very poor implementation of rand() and I discuss this in
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/troubleshooting.html">troubleshooting.html</a>.</p>
+<a href="troubleshooting.html">troubleshooting.html</a>.</p>
 <p>There I also give some test outputs without the cap in place to give an idea of
 when it became a problem (or would have). In short this is known but I do not
 think it will be a problem and I have given resolutions. In any event without

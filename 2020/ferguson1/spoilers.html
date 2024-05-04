@@ -378,7 +378,7 @@
 
 <!-- BEFORE: 1st line of markdown file: 2020/ferguson1/spoilers.md -->
 <h1 id="introduction-spoiler-alert">Introduction (SPOILER ALERT)</h1>
-<p>In the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/gameplay.html">gameplay.html</a> file I have given enough
+<p>In the <a href="gameplay.html">gameplay.html</a> file I have given enough
 information to know how the game looks, how to move the snake, how to pause etc.
 In this file I am including (some) information on how the game actually works:
 the technical details as it were, obfuscation techniques and also some of the
@@ -710,10 +710,10 @@ refer to a <code>x</code> is possibly confusing even without the negative offset
 <p>Of course I don’t have to use negative offsets at all! I could use positive
 offsets for every time I use negative offsets. But where’s the fun in that? :)</p>
 <p>BTW: Some of these are not in the table of expressions in the
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/HACKING.html">HACKING.html</a> file. Also there might be some
+<a href="HACKING.html">HACKING.html</a> file. Also there might be some
 code in there that is no longer correct (it was before I started
 obfuscation) though it might be able to give an idea. Spoilers abound in
-that file (in addition to this file) but the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/HACKING.html">HACKING.html</a>
+that file (in addition to this file) but the <a href="HACKING.html">HACKING.html</a>
 file states things that are no longer true: a way of obfuscation
 itself! Instead of misleading comments it’s misleading statements in the
 file that explains what some of the things are for!</p></li>
@@ -1104,7 +1104,7 @@ the score line is updated: so the empty space will be overwritten anyway. And if
 the score line is made an empty string it doesn’t matter because it’ll appear as
 all spaces anyway. Thus I could save another three bytes by changing it to:</p>
 <pre><code>    !o  &amp;&amp; q *U,*V,&#39; &#39;);</code></pre>
-<p>Technically it would be a <code>" "</code> (see <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/HACKING.html">HACKING.html</a>
+<p>Technically it would be a <code>" "</code> (see <a href="HACKING.html">HACKING.html</a>
 else for N (not referring to the variable though it might very
 well matter here too) movements (i.e. due to sizes) you will at times (e.g.
 after eating a bug) see the snake body char at 0,0. I’m not bothered about that
