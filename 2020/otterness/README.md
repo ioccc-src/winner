@@ -66,7 +66,7 @@ I found [here](http://www.kunstderfuge.com/beethoven/variae.htm#Symphonies).
 However, as discussed under the [Limitations](#limitations) section below, not
 all of them work correctly.  I will admit to having used
 `http://www.kunstderfuge.com/-/midi.asp?file=beethoven/symphony_6_1_(c)cvikl.mid`
-for most of my testing, see [cvikl.mid](%%REPO_URL%%/2020/otterness/cvikl.mid).
+for most of my testing, see [cvikl.mid](cvikl.mid).
 
 
 ### Usage

@@ -5922,8 +5922,8 @@ J.R.R. Tolkien).
 </div>
 
 
-[Cody](#cody) added the MIDI files [cvikl.mid](%%REPO_URL%%/2020/otterness/cvikl.mid) and
-[entertainer.mid](%%REPO_URL%%/2020/otterness/entertainer.mid) from the URLs we suggested so
+[Cody](#cody) added the MIDI files [cvikl.mid](2020/otterness/cvikl.mid) and
+[entertainer.mid](2020/otterness/entertainer.mid) from the URLs we suggested so
 that one need not download them and to make sure they can always be obtained
 even if the domain or link goes dead.
 
