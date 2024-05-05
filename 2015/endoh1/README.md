@@ -134,9 +134,9 @@ All cells have `(u0, v0)` by default.
 
 You can specify a pattern file when the executable is invoked (not
 compile-time).  The file should include a sequence of points, see
-[ioccc.txt](%%REPO_URL%%/2015/endoh1/ioccc.txt),
-[center.txt](%%REPO_URL%%/2015/endoh1/center.txt),
-or [line.txt](%%REPO_URL%%/2015/endoh1/line.txt) as
+[ioccc.txt](ioccc.txt),
+[center.txt](center.txt),
+or [line.txt](line.txt) as
 examples.  Each amount in cells near to the point included in the file, will be
 added by `(u1, v1)`.
 

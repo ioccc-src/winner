@@ -243,7 +243,7 @@ the largest piece of logic -- yielded the necessary bytes, and improved
 obscurity by double duty encoding of the operations initialization.
 
 The utility is now truly functional, and feature complete, and obscure.  Without
-[src.doc.txt](%%REPO_URL%%/2015/burton/src.doc.txt) (basic documentation of the code structure), and some
+[src.doc.txt](src.doc.txt) (basic documentation of the code structure), and some
 commented expanded logic stashed away, and the familiarity I have with the code
 having written and revised it repeatedly, I would not even want to attempt to
 decipher the logic.  Many times in the debugging, I was thwarted by my own

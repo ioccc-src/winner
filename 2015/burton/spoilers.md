@@ -4,7 +4,7 @@
 `calc` is a recursive-descent parser.  It allocates from the stack deep enough
 that all expressions are exhausted before the recursion stack depth reaches the
 allocations.  The memory map and source is documented in
-[src.doc.txt](%%REPO_URL%%/2015/burton/src.doc.txt).  Tokens are encoded using values 0-20, where 0 is an
+[src.doc.txt](src.doc.txt).  Tokens are encoded using values 0-20, where 0 is an
 invalid token, 1 is minus, 2 is space, 3 is plus, etc.  The necessary constants
 are derived at the start of the program, using the guarantee that globals are
 initialized to zero; so a correct NULL pointer is obtained from an uninitialized

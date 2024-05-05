@@ -990,7 +990,7 @@ He notes that there _is_ a way to get it (or something close to it) to work. Do
 you know how?
 
 Cody also provided the [try.sh](%%REPO_URL%%/1989/jar.2/try.sh) script and the
-supplementary files [try.txt](%%REPO_URL%%/1989/jar.2/try.txt),
+supplementary files [try.txt](1989/jar.2/try.txt),
 [fib.lisp](%%REPO_URL%%/1989/jar.2/fib.lisp) and
 [chocolate_cake.lisp](%%REPO_URL%%/1989/jar.2/chocolate_cake.lisp). The `try.txt` comes
 from the author and the `fib.lisp` comes from [Yusuke](#yusuke). Cody wrote the script and
@@ -1445,7 +1445,7 @@ Later on, Cody added back the macro `#define D define` to make it look ever so
 slightly more like the original, even though it's unused.
 
 Cody also added the [try.sh](%%REPO_URL%%/1991/brnstnd/try.sh) script and
-[try.txt](%%REPO_URL%%/1991/brnstnd/try.txt) which the script uses.
+[try.txt](1991/brnstnd/try.txt) which the script uses.
 
 
 <div id="1991_buzzard">
@@ -2020,7 +2020,7 @@ encourage you to try the original without two args :-)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1993/ant/try.sh) script and a data file,
-[ants.txt](%%REPO_URL%%/1993/ant/ants.txt), full of ants for the script.
+[ants.txt](1993/ant/ants.txt), full of ants for the script.
 
 
 <div id="1993_cmills">
@@ -3522,7 +3522,7 @@ lost. Non rogue players, vi users and Dvorak typists are invited to get lost (or
 use the original version)! :-)
 
 Cody also renamed the `arachnid.info` file to
-[arachnid.txt](%%REPO_URL%%/2004/arachnid/arachnid.txt) as it's not really an informative
+[arachnid.txt](2004/arachnid/arachnid.txt) as it's not really an informative
 file but a maze file. The extension `.maz` was not chosen to help with (some?)
 browsers knowing what to do with it.
 
@@ -3835,7 +3835,7 @@ movements.
 ### Source code: [boutines.c](%%REPO_URL%%/2005/boutines//boutines.c)
 </div>
 
-[Cody](#cody) added the [input.txt](%%REPO_URL%%/2005/boutines/input.txt) data file based on suggested
+[Cody](#cody) added the [input.txt](2005/boutines/input.txt) data file based on suggested
 input from the author, adapting it to a command to try out.
 
 Cody also added the [try.sh](%%REPO_URL%%/2005/boutines/try.sh) script.
@@ -5130,7 +5130,7 @@ of `${PROG}` and `${PROG}.alt` respectively both of which also copy the `prog`
 these changes now one can easily use the echo feature the author implemented.
 
 Cody also added the [try.sh](%%REPO_URL%%/2015/burton/try.sh) script. This involved
-adding a text file, [try.this.txt](%%REPO_URL%%/2015/burton/try.this.txt).
+adding a text file, [try.this.txt](2015/burton/try.this.txt).
 
 Cody also added [calc.1](%%REPO_URL%%/2015/burton/calc.1) in place of `calc.man` to have
 proper formatting (in the style of `man(1)`). The `calc.man` was removed so as
@@ -5206,7 +5206,7 @@ simply typing `make back_to` or `make mullender`) and then runs the famous
 Cody also added the [try.sh](%%REPO_URL%%/2015/hou/try.sh) script and the large file `large`
 which the `try.sh` script uses.
 
-Cody also added the RFC 1321 text file, [rfc1321.txt](%%REPO_URL%%/2015/hou/rfc1321.txt) to
+Cody also added the RFC 1321 text file, [rfc1321.txt](2015/hou/rfc1321.txt) to
 the directory, to make it so one need not download it, and which the index.html
 file now links to.
 
@@ -5516,7 +5516,7 @@ wrong about) in [cow.sh](%%REPO_URL%%/2019/burton/cow.sh) (which was renamed fro
 <del>moo</del>too.
 
 Cody also renamed the file `on.one.liners` to
-[on.one.liners.txt](%%REPO_URL%%/2019/burton/on.one.liners.txt) to help with
+[on.one.liners.txt](2019/burton/on.one.liners.txt) to help with
 browsers/GitHub.
 
 
@@ -5553,7 +5553,7 @@ bugs.html](bugs.html#2019-ciura) for more details.
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2019/diels-grabsch1/try.sh) script.
 
-Cody also added the file [Shakespeare.txt](%%REPO_URL%%/2019/diels-grabsch1/Shakespeare.txt)
+Cody also added the file [Shakespeare.txt](2019/diels-grabsch1/Shakespeare.txt)
 from [2019/mills](2019/mills/index.html) (after running `make`) so that one can
 not worry about having the entire IOCCC winning entry tree (or at least the 2019 tree each
 entry in a subdirectory). This is more important as there is discussion of
@@ -5656,8 +5656,8 @@ bit more easily.
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2019/lynn/try.sh) script.
 
-Cody also added the [example-1.txt](%%REPO_URL%%/2019/lynn/example-1.txt) and
-[example-2.txt](%%REPO_URL%%/2019/lynn/example-2.txt) text files from
+Cody also added the [example-1.txt](2019/lynn/example-1.txt) and
+[example-2.txt](2019/lynn/example-2.txt) text files from
 [2018/vokes](2018/vokes/index.html) so that the entry does not rely on any other
 entry existing.
 
@@ -5698,9 +5698,9 @@ tested: `gnu17` was not tested but `gnu11` was so the standard was set to
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2019/yang/try.sh) script which also involved
-slightly updating the [sample_input.txt](%%REPO_URL%%/2019/yang/sample_input.txt) file
+slightly updating the [sample_input.txt](2019/yang/sample_input.txt) file
 (removed trailing newlines as it resulted in `diff` showing differences when it
-shouldn't) and adding the [ioccc.txt](%%REPO_URL%%/2019/yang/ioccc.txt) file.
+shouldn't) and adding the [ioccc.txt](2019/yang/ioccc.txt) file.
 
 
 <div id="2020">
@@ -5829,8 +5829,8 @@ He also added the [alt code](2020/ferguson2/index.html#alternate-code) and the
 [try.alt.sh](%%REPO_URL%%/2020/ferguson2/try.alt.sh) script.
 
 The try scripts involved the addition of a text file,
-[key.txt](%%REPO_URL%%/2020/ferguson2/key.txt) which has the key of the file the judges
-added in [try.this.txt](%%REPO_URL%%/2020/ferguson2/try.this.txt) which itself was based on
+[key.txt](2020/ferguson2/key.txt) which has the key of the file the judges
+added in [try.this.txt](2020/ferguson2/try.this.txt) which itself was based on
 something the author (Cody :-) ) submitted in the first place.
 
 He also fixed some issues that occurred when files were renamed to `.html` from
@@ -5906,7 +5906,7 @@ more jumbled but we know of others too.
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2020/kurdyukov4/try.sh) script.
 
 Cody also added from [2019/mills](2019/mills/index.html) the text file
-[Shakespeare.txt](%%REPO_URL%%/2020/kurdyukov4/Shakespeare.txt) as we are considering to
+[Shakespeare.txt](2020/kurdyukov4/Shakespeare.txt) as we are considering to
 have each entry have a tarball with the entry by itself.
 
 Also, to explain the confusing to most people award, Cody gave a quick

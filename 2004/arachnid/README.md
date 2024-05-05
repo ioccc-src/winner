@@ -73,7 +73,7 @@ characters as walls.
 Feed the program its own source for a default maze. Running it with no command
 line parameters will do this. In a nice symmetry, the character constant `~`
 that recognises exits to input mazes itself forms the exit to the default maze.
-Another maze, [arachnid.txt](%%REPO_URL%%/2004/arachnid/arachnid.txt) has also been provided. This maze is
+Another maze, [arachnid.txt](arachnid.txt) has also been provided. This maze is
 255x255, about the largest maze supported, for the particularly insane maze
 explorers out there.
 

@@ -285,16 +285,16 @@ casting) it to an integer-type variable.
 
 ### Notes about Additional Files
 
-[logo.txt](%%REPO_URL%%/2012/endoh1/logo.txt) is a source of the logo in this remark file.
+[logo.txt](logo.txt) is a source of the logo in this remark file.
 
-[column.txt](%%REPO_URL%%/2012/endoh1/column.txt) is a water column collapse, which is a popular demo of SPH.
+[column.txt](column.txt) is a water column collapse, which is a popular demo of SPH.
 
-[pour-out.txt](%%REPO_URL%%/2012/endoh1/pour-out.txt) pours you a cup of tea.
+[pour-out.txt](pour-out.txt) pours you a cup of tea.
 
-[tanada.txt](%%REPO_URL%%/2012/endoh1/tanada.txt) simulates "Terrace farming".  ("Tanada" means a
+[tanada.txt](tanada.txt) simulates "Terrace farming".  ("Tanada" means a
 "[terraced rice](https://en.wikipedia.org/wiki/Terrace_&#x28;earthworks&#x29; fields)" in Japanese.)
 
-[clock.txt](%%REPO_URL%%/2012/endoh1/clock.txt) is a "water" clock created by HAMANO Tsukasa.
+[clock.txt](clock.txt) is a "water" clock created by HAMANO Tsukasa.
 
 Other `*.txt` files are from the judges.
 
