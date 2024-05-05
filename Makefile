@@ -406,7 +406,7 @@ gen_top_html: ${GEN_TOP_HTML}
 # Just kidding .. So Long, and Thanks for All the Fish :-)
 thanks: ${GEN_TOP_HTML} thanks-for-help.md
 	@echo "Thanks for all the help ..."
-	@${GEN_TOP_HTML}
+	@${GEN_TOP_HTML} thanks-for-help
 	@echo "... and thanks for all the fish :-)"
 
 # build entry HTML files from markdown other than README.md to index.html
