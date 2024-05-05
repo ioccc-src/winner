@@ -124,7 +124,7 @@ If you did not get one for Christmas, there is an [article about these
 puzzles in wikipedia](http://en.wikipedia.org/wiki/Bedlam_cube).
 
 Some instructions on how to make your own cube are in the included file
-[bedlam-cubes.pdf](%%REPO_URL%%/2006/sykes1/bedlam-cubes.pdf).
+[bedlam-cubes.pdf](bedlam-cubes.pdf).
 
 Finally, you can watch it being solved with the video file here,
 [solving-bedlam-cube.mp4](%%REPO_URL%%/2006/sykes1/solving-bedlam-cube.mp4).

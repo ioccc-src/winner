@@ -2233,7 +2233,7 @@ Cody also added the scripts [try.sh](%%REPO_URL%%/1994/horton/try.sh) and
 [try.alt.sh](%%REPO_URL%%/1994/horton/try.alt.sh).
 
 Finally he added the article (written by the entry's author) cited in
-[login_sept92-pp28-31.pdf](%%REPO_URL%%/1994/horton/login_sept92-pp28-31.pdf).
+[login_sept92-pp28-31.pdf](1994/horton/login_sept92-pp28-31.pdf).
 
 
 <div id="1994_imc">
@@ -4205,7 +4205,7 @@ author's remarks.
 
 Cody also added the [try.sh](%%REPO_URL%%/2006/sykes1/try.sh) script.
 
-Cody also provided the [bedlam-cubes.pdf](%%REPO_URL%%/2006/sykes1/bedlam-cubes.pdf) file,
+Cody also provided the [bedlam-cubes.pdf](2006/sykes1/bedlam-cubes.pdf) file,
 obtained from the Internet Wayback Machine, as the file was no longer available.
 The video was also no longer available but Cody found an alternative and added
 it to the repo as well.
@@ -4438,7 +4438,7 @@ Windows, based on the author's remarks that if the system distinguishes binary
 and text then `stdout` needs to be set to binary mode.
 
 Cody also added the PDF file
-[sphere-tracing.pdf](%%REPO_URL%%/2011/zucker/sphere-tracing.pdf) in case the link
+[sphere-tracing.pdf](2011/zucker/sphere-tracing.pdf) in case the link
 eventually dies.
 
 
@@ -5371,7 +5371,7 @@ Finally Cody added the [try.sh](%%REPO_URL%%/2018/burton2/try.sh) script.
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2018/ciura/try.sh) and
 [try.alt.sh](%%REPO_URL%%/2018/ciura/try.alt.sh) scripts and the PDF file,
-[lexicon.pdf](%%REPO_URL%%/2018/ciura/lexicon.pdf), that was a dead link, restored from the
+[lexicon.pdf](2018/ciura/lexicon.pdf), that was a dead link, restored from the
 Internet Wayback Machine.
 
 
@@ -5534,7 +5534,7 @@ Cody also fixed the Makefile so that the alt code would be built when running
 `make alt`.
 
 Cody converted the PS file linked to by the author to a PDF,
-[fasc5c.pdf](%%REPO_URL%%/2019/ciura/fasc5c.pdf), and added it to the
+[fasc5c.pdf](2019/ciura/fasc5c.pdf), and added it to the
 website.
 
 Cody also added the [try.sh](%%REPO_URL%%/2019/ciura/try.sh) and
