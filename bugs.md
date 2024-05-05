@@ -1024,7 +1024,7 @@ entry itself. Can you fix the actual entry? You are welcome to try and do so.
 
 ### STATUS: uses gets() - change to fgets() if possible
 ### Source code: [1992/gson/gson.c](%%REPO_URL%%/1992/gson/gson.c)
-### Information: [1992/gson/index.html])(1992/gson/index.html)
+### Information: [1992/gson/index.html](1992/gson/index.html)
 
 Cody changed it so that the buffer size is `ARG_MAX+1` to try and get past the
 problem of `gets()` being used in a more complex way.
