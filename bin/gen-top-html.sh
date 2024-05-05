@@ -93,7 +93,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4.5 2024-04-23"
+export VERSION="1.4.6 2024-05-05"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -150,7 +150,7 @@ declare -ag TOOL_OPTION
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
-			[-t tagline] [-T md2html.sh] [-p tool] [-u repo_url]
+			[-t tagline] [-T md2html.sh] [-p tool] [-u repo_url] [file...]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
