@@ -53,7 +53,7 @@
 
 ## Section  4 - [Changes made to IOCCC entries](#faq4)
 - [4.0  - Why are some winning author remarks incongruent with the winning IOCCC code?](#faq4_0)
-- [4.1  - Why were some calls to the libc function gets&#x28;3&#x28; changed to use fgets&#x28;3&#x29;?](#faq4_1)
+- [4.1  - Why were some calls to the libc function gets&#x28;3&#x29; changed to use fgets&#x28;3&#x29;?](#faq4_1)
 - [4.2  - What was changed in an IOCCC entry source code?](#faq4_2)
 - [4.3  - Why do author remarks sometimes not match the source and/or why are there
 other inconsistencies with the original entry?](#faq4_3)
