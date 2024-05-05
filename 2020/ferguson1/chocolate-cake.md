@@ -6,7 +6,7 @@ has seemed to get it down as well as she has but it's well worth the effort if
 you love chocolate and have the time and patience.
 
 My late stepmum who only liked white 'chocolate' loved this cake! The picture
-below is after it's been iced. The image [cake.jpg](%%REPO_URL%%/2020/ferguson1/cake.jpg) was a
+below is after it's been iced. The image [cake.jpg](cake.jpg) was a
 feeble attempt at drawing `IOCCC` into the cake before icing, a different time.
 The picture below was taken for my birthday (14 February) in 2022 as it's the
 best one I have:
@@ -197,7 +197,7 @@ bowl can sit in.
     thick BUT not too thick. **Make *SURE* ICING DOES *NOT* GET WET!** The idea is to
     **MAKE THE BOWL IT'S IN COLD *BUT TO NOT LET THE ICING GET WET!***
 
-[IOCCC and chocolate]: %%REPO_URL%%/2020/ferguson1/cake.jpg
+[IOCCC and chocolate]: cake.jpg
 [chocolates FAQ]: https://www.davidlebovitz.com/chocolate-faqs/
 
 

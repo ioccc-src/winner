@@ -105,7 +105,7 @@ this entry win the IOCCC, it will be the first time (to the author's knowledge)
 that the IOCCC has been used for peer review/publication of original research.
 - OCR in general is a hard problem. Here, we only recognise one possible form
 for each character. You can see what the supported character shapes look like by
-looking at the examples in [ascii.bmp](%%REPO_URL%%/2013/cable2/ascii.bmp). If you copy the shape of the
+looking at the examples in [ascii.bmp](ascii.bmp). If you copy the shape of the
 character forms you find in there, recognition accuracy should be very good
 (95%+). A more "useful" version would extend the character stroke table to
 support multiple different commonly-used forms for each character.

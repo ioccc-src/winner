@@ -76,7 +76,7 @@ properly.
 * ASCII art (with end of lines in LF bytes only, not CR-LF)
 
 This is useful for decoding some curiously interlaced images, such as
-the included [example.ppm](%%REPO_URL%%/2011/akari/example.ppm).
+the included [example.ppm](example.ppm).
 
 Anything that is not parsable as `PGM` or `PPM` will be downsampled as
 ASCII art.  Since the source code is formatted as ASCII art, it's only

@@ -323,15 +323,15 @@ en/decoded[^4].
 
 ### Photo Credit:
 
-[Lavabus](%%REPO_URL%%/2000/bmeyer/lavabus.pgm) was taken by the judge, Landon Curt Noll.
-[Michael](%%REPO_URL%%/2000/bmeyer/michael.pgm) was provided by the author.  [Lenna](%%REPO_URL%%/2000/bmeyer/lenna.glic) is a
+[Lavabus](lavabus.pgm) was taken by the judge, Landon Curt Noll.
+[Michael](michael.pgm) was provided by the author.  [Lenna](%%REPO_URL%%/2000/bmeyer/lenna.glic) is a
 1972 Playboy centerfold (doesn't show very much).
 
-- [michael.pgm](%%REPO_URL%%/2000/bmeyer/michael.pgm)
+- [michael.pgm](michael.pgm)
 
     The author's Godchild and nephew.
 
-- [lavabus.pgm](%%REPO_URL%%/2000/bmeyer/lavabus.pgm)
+- [lavabus.pgm](lavabus.pgm)
 
     A bus that was trapped by lava from [Kilauea
     volcano](https://en.wikipedia.org/wiki/Kīlauea) in Hawaii, US.  Nobody was
