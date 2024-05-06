@@ -26,8 +26,8 @@ on or off. `Clang` in macOS also dumped core!
 
 The [marshall.c](%%REPO_URL%%/1986/marshall/marshall.c) has the original fix
 for `clang` which works with some compilers depending on the optimiser. When we
-refer to the code below we refer to the [alternate code,
-marshall.alt.c](%%REPO_URL%%/1986/marshall/marshall.alt.c).
+refer to the code below we refer to the alternate code,
+[marshall.alt.c](%%REPO_URL%%/1986/marshall/marshall.alt.c).
 
 ## The conflicting compiler problems:
 

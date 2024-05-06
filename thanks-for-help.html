@@ -491,12 +491,12 @@ This was fixed on 30 October 2023 after the bug status was changed from INABIAF
 <p><a href="#cody">Cody</a> provided an <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/mullender.alt.c">alternate version</a>,
 an improved version of the judges, so that everyone can enjoy it with systems
 that are not VAX/PDP. It moves at approximately the same speed as the original
-did. We also refer you to the <a href="faq.html">FAQ</a> as there are some winning entries
-that also let one enjoy it (which through trial and error was how the right
-speed was discovered) - with more to them of course! The difference between the
-original is that it will start over after it times out but that might not happen
-with the original (might need you to press a key though this is not known for
-sure).</p>
+did. By using one or more of the other entries that actually let one enjoy this entry as
+originally written, Cody was able to find, with trial and error, approximately
+the correct speed.</p>
+<p>The difference between the original is that it will start over after it times
+out but that might not happen with the original (might need you to press a key
+though this is not known for sure).</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/gentab.c">gentab.c</a> file, fixed to compile
 (and work, though see <a href="bugs.html#1984_mullender">1984/mullender in bugs.html</a>) with modern systems
 and so that it would create the proper array (it had unbalanced <code>}</code>s), which the
@@ -515,13 +515,13 @@ Repo</a>.</p>
 <p>Both <a href="#cody">Cody</a> and <a href="#yusuke">Yusuke</a> fixed this; Yusuke got this to not crash and Cody fixed it
 to work with macOS.</p>
 <p>The crash was because it destructively rewrites string literals. However with
-<code>strdup()</code> it’s safe.</p>
+<code>strdup(3)</code> it’s safe.</p>
 <p>The problem with macOS is that although it didn’t crash, it printed <code>H????</code> in a
 seemingly infinite loop, each time printing another <code>?</code>, and it probably would
 have until it ran out of memory.</p>
 <p>The fix for macOS is that there was no prototype for <code>execlp(3)</code> and macOS has
 problems with missing prototypes for some functions (this was also seen when
-Cody fixed <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/anonymous/anonymous.c">1984/anonymous</a> for macOS as well). As
+Cody fixed <a href="1984/anonymous/index.html">1984/anonymous</a> for macOS as well). As
 this is a one-liner the include of <code>unistd.h</code> was done in the Makefile.
 Ironically this fix was discovered through Linux!</p>
 <p>NOTE: originally this entry did not print a newline prior to returning to the
@@ -542,7 +542,7 @@ to check the output for the first <code>N</code> prime numbers of the output, wh
 either the default or user specified. The inspiration was the previous <code>try</code>
 command he gave to have fun with finding primes that might seem unusual in a
 way.</p>
-<p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/august/try.sh">try.sh</a> script (which calls <code>primes.sh</code>
+<p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/august/try.sh">try.sh</a> script (which runs <code>primes.sh</code>
 whether <code>primes(6)</code> is installed or not, but it only does it once with the
 default value).</p>
 <div id="1985_lycklama">
@@ -557,7 +557,7 @@ changed the <code>#o</code> lines to <code>#define</code>. Also <code>unistd.h</
 that Cody added. See the <a href="1985/lycklama/index.html">index.html</a> for details.</p>
 <p>Cody also provided the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/lycklama/try.alt.sh">try.alt.sh</a> script.</p>
 <div id="1985_shapiro">
-<h2 id="shapiro"><a href="1985/lycklama/index.html">1985/shapiro</a></h2>
+<h2 id="shapiro"><a href="1985/shapiro/index.html">1985/shapiro</a></h2>
 <h3 id="source-code-shapiro.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/shapiro/shapiro.c">shapiro.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/shapiro/shapiro.alt.c">alt code</a>
@@ -599,18 +599,17 @@ were actually not what they appear: the only arg that existed in <code>main()</c
 <ul>
 <li><p>The macros <code>C</code> and <code>V</code> were changed to lower case. This is because it felt
 like the <code>C=" ..</code>’ part in <code>subr()</code> would be better to be upper case as it talks
-about the language. Also in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/sicherman/sicherman.c">alternate
-version</a> (the first being the
-original code) which is in case a new version of <code>clang</code> ever objects to only one
-arg in <code>main()</code> (which is not out of the realm of possibility), <code>main()</code> can
-have <code>C</code> as <code>argc</code> to <code>main()</code> so it would read like it once did: <code>C manual</code>
-albeit with a <code>,</code> separating the two. The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/sicherman/sicherman.c">alternate
-version</a> can be compiled
-in case the first does not. Originally the macros were kept the same and the
-<code>C</code> in <code>subr()</code> was <code>c</code>. It feels better (in some ways) to make it so that the
-<code>C</code> for the language is upper case though, and since it actually translated to
-<code>/**/</code> it can just be <code>c</code>, not <code>C</code>. The <code>V</code> was changed to <code>v</code> to be the same
-case as <code>c</code>.</p></li>
+about the language. Also in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/sicherman/sicherman.alt.c">alternate
+version</a> which is in case a new
+version of <code>clang</code> ever objects to only one arg in <code>main()</code> (which is not out of
+the realm of possibility), <code>main()</code>, <code>argc</code> of <code>main()</code> is <code>C</code> so it
+would read like it once did: <code>C manual</code> albeit with a <code>,</code> separating the two.
+The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/sicherman/sicherman.alt.c">alternate version</a> can be
+compiled in case the first does not. Originally the macros were kept the same
+and the <code>C</code> in <code>subr()</code> was <code>c</code>. It feels better (in some ways) to make it so
+that the <code>C</code> for the language is upper case though, and since it actually
+translated to <code>/**/</code> it can just be <code>c</code>, not <code>C</code>. The <code>V</code> was changed to <code>v</code> to
+be the same case as <code>c</code>.</p></li>
 <li><p>The code:</p></li>
 </ul>
 <pre><code>    C=&quot;Lint says &quot;argument Manual isn&#39;t used.&quot;  What&#39;s that
@@ -672,7 +671,7 @@ should they object to <code>main()</code> having only one arg.</p>
 the libc function gets(3) changed to use
 fgets(3)?</a> for why this was done.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/hague/try.sh">try.sh</a> script which also feeds to the
-program the added <code>input.txt</code> file.</p>
+program the <code>input.txt</code> text file that Cody added.</p>
 <div id="1986_holloway">
 <h2 id="holloway"><a href="1986/holloway/index.html">1986/holloway</a></h2>
 <h3 id="source-code-holloway.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/holloway/holloway.c">holloway.c</a></h3>
@@ -695,8 +694,8 @@ the same but some spaces had to be changed to non-spaces.</p>
 different compilers (different problems with different compilers in different
 systems and also depending on optimisation with those compilers in those
 systems).</p>
-<p>We give more details in the <a href="1986/marshall/compilers.html">compilers.html</a> file,
-giving which compilers had which problems in which systems: the optimiser being
+<p>Cody gives more details in the <a href="1986/marshall/compilers.html">compilers.html</a>
+file: which compilers had which problems in which systems: the optimiser being
 enabled in one compiler let it work but broke it in the other; and disabling it
 would let it work in the one that didn’t work but suddenly the one that worked
 wouldn’t work. And by ‘not working’ it did not work in more than one way and for
@@ -741,8 +740,8 @@ are produced.</p>
 <p><a href="#cody">Cody</a> restored the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/stein/stein.orig.c">original
 entry</a> which was a single line. The code
 being longer (in 1986 a one liner could be longer) had been split to three lines to
-avoid problems with news and mail but as it is the ‘Best one liner’ it is now
-one line.</p>
+avoid problems with news and mail but as it is the <strong>Best one liner</strong> the original
+code is now one line.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/stein/stein.sh">stein.sh</a> script which runs the two
 commands that we suggest in order to get it to show clean output.</p>
 <div id="1986_wall">
@@ -754,7 +753,7 @@ bit of tinkering as this entry <em>very twisted</em>; fixing <code>-traditional-
 noted later on, very complicated, but we encourage you to look at <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/wall/wall.orig.c">original
 code</a>, as well as below, to see how
 different C was in 1986.</p>
-<p><a href="#yusuke">Yusuke</a> originally patched this to use <code>strdup()</code> on two strings and this let it
+<p><a href="#yusuke">Yusuke</a> originally patched this to use <code>strdup(3)</code> on two strings and this let it
 work with <code>gcc</code> - but it still required <code>-traditional-cpp</code>.</p>
 <p>If you’d like to see the difference between the version that requires
 <code>-traditional-cpp</code> and the fixed version, try:</p>
@@ -962,7 +961,7 @@ macro in place but it’s no longer used.</p>
 <p><a href="#cody">Cody</a> fixed this to work for modern systems. The problem was that the important
 function, a redefinition of <code>exit(3)</code>, was not being called in <code>main()</code>. Earlier
 fixes that let it compile, but not work with modern systems, can be found in
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/isaak/isaak.alt.c">1988/isaak/isaak.alt.c</a>. See the
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/isaak/isaak.alt.c">isaak.alt.c</a>. See the
 index.html file for more details.</p>
 <p>Cody also uudecoded and removed the file <code>isaak.encode</code>, putting the output in
 <code>isaak.output.txt</code>. This was done strictly for historical remarks that can be
@@ -979,16 +978,18 @@ help understand the entry, and for fun.</p>
 <h3 id="source-code-phillipps.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/phillipps/phillipps.c">phillipps.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> fixed this for modern systems. It did not compile with <code>clang</code> because it
-requires the second and third args of <code>main()</code> to be <code>char ** but even before that with</code>gcc` it printed garbage and then crashed.</p>
-<p>After fixing it for <code>clang</code> by changing the very <code>main()</code> (in fact it called
-itself up to 12 times!) to call the new function <code>pain()</code> (chosen because it’s a
-pain that <code>clang</code> requires these args to be <code>char ** :-), which is just as recursive, with the correct args it now works with both</code>gcc<code>and</code>clang`.</p>
-<p>Later Cody improved the fix to make it look a bit more like the original, using
-K&amp;R style functions, and trying to match the format as best as possible of what
-<code>main()</code> used to look like but without the full body that cannot exist as it
-once did. The format of <code>pain()</code> is exactly like how <code>main()</code> was as it’s the
-same code. Additionally, <code>main()</code> returns <code>!pain(...)</code> like <code>main()</code> used to do
-to itself and <code>pain()</code> does now.</p>
+requires the second and third args of <code>main()</code> to be <code>char **</code> but even before
+that with <code>gcc</code> it printed garbage and then crashed.</p>
+<p>After fixing it for <code>clang</code> by changing the <strong>very recursive</strong> <code>main()</code> (<strong>it called
+itself up to <em>12</em> times!</strong>) to call the new function <code>pain()</code> (named such because it’s a
+pain that <code>clang</code> requires these args to be <code>char **</code> :-) ), which is just as
+recursive, with the correct args, it now works with both <code>gcc</code> and <code>clang</code>.</p>
+<p>To make it look as close to the original as possible, Cody made it K&amp;R style
+functions and tried to match the format as best as possible of what
+<code>main()</code> used to look like but without the full body as that cannot exist as it
+once did; instead, the format of <code>pain()</code> is exactly like how <code>main()</code> was as it’s the
+same code, just a <code>p</code> instead of an <code>m</code> in the name. Additionally, <code>main()</code> returns
+<code>!pain(...)</code> like <code>main()</code> used to do to itself (<code>pain()</code> does as well).</p>
 <div id="1988_reddy">
 <h2 id="reddy"><a href="1988/reddy/index.html">1988/reddy</a></h2>
 <h3 id="source-code-reddy.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/reddy/reddy.c">reddy.c</a></h3>
@@ -1075,20 +1076,22 @@ entry and the alt code) anyway, it works out well.</p>
 </div>
 <p><a href="#cody">Cody</a> fixed this to work with modern compilers. Modern compilers do not allow
 code like:</p>
-<pre><code>    #define D define
+<pre><code>    #define d define
     #define a include
 
-    #D foo bar
+    #d foo bar
     #a &lt;stdio.h&gt;</code></pre>
-<p>He notes that there <em>is</em> a way to get it (or something close to it) to work. Do
+<p>Cody notes that there <em>is</em> a way to get it (or something close to it) to work. Do
 you know how?</p>
+<p>The old <code>#define</code>s are left in to make it look like the original as much as
+possible but they are not used.</p>
 <p>Cody also provided the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/jar.2/try.sh">try.sh</a> script and the
-supplementary files <a href="1989/jar.2/try.txt">try.txt</a>,
+supplementary files <a href="1989/jar.2/try.lisp">try.lisp</a>,
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/jar.2/fib.lisp">fib.lisp</a> and
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/jar.2/chocolate_cake.lisp">chocolate_cake.lisp</a>. The <code>try.txt</code> comes
-from the author and the <code>fib.lisp</code> comes from <a href="#yusuke">Yusuke</a>. Cody wrote the script and
-offered us some chocolate cake :-) See index.html for details on how to use the
-script.</p>
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/jar.2/chocolate_cake.lisp">chocolate_cake.lisp</a>. The
+<code>try.lisp</code> comes from the author and the <code>fib.lisp</code> comes from
+<a href="#yusuke">Yusuke</a>. Cody wrote the script and offered us some chocolate cake :-)
+See index.html for details on how to use the script.</p>
 <p>Cody also fixed the Makefile where typing <code>make everything</code> or <code>make alt</code> would
 result in:</p>
 <pre><code>    `clang`: error: no such file or directory: &#39;data&#39;
@@ -1120,7 +1123,7 @@ discovered and fixed.</p>
 <h3 id="source-code-paul.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/paul/paul.c">paul.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> fixed a segfault under macOS that prevented it from working. The problem
-was that the int (from <code>#define f</code>) should be a long. This became apparent when
+was that the int (from <code>#define f</code>) should be a <code>long</code>. This became apparent when
 he was using lldb and saw that the type of a pointer was too <code>long</code> :-)</p>
 <p>Cody also provided the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/paul/paul.alt.c">alternate version</a>
 which has the trace function that the author included but commented out. See the
@@ -1133,7 +1136,7 @@ index.html for details.</p>
 made, try:</p>
 <pre><code>    cd 1989/robison ; make diff_orig_prog</code></pre>
 <p>(It adds the C token pasting operator <code>##</code> instead of <code>/**/</code>.)</p>
-<p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/robison/try.sh">try.sh</a> script.</p>
+<p>Cody added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/robison/try.sh">try.sh</a> script.</p>
 <div id="1989_tromp">
 <h2 id="tromp"><a href="1989/tromp/index.html">1989/tromp</a></h2>
 <h3 id="source-code-tromp.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/tromp/tromp.c">tromp.c</a></h3>
@@ -1145,10 +1148,10 @@ to <code>main()</code> but instead be a variable in <code>main()</code>.</p>
 <p>Cody also fixed a segfault and made it so the that the high score file would
 work (it was not even being created but it was supposed to be). This was
 happening due to a file pointer being declared as a <code>long</code> and more
-significantly is the command in <code>popen(3)</code> was not correct.</p>
+significantly the command in <code>popen(3)</code> was not correct.</p>
 <p>Another problem Cody fixed was that the terminal was left in an insane state where you
 could not type ‘<code>u</code>’ and echo was completely disabled.</p>
-<p>Cody later on fixed the alt version, provided by the author, so that it would
+<p>Cody later on fixed the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/tromp/tromp.alt.c">alt version</a>, provided by the author, so that it would
 compile with <code>clang</code>, not abort (with an alarm), would have the tetriminos fall,
 it would write to the high score file (the command to <code>popen(3)</code> was incorrect
 here too but as can be seen it differs from the submitted version), could use
@@ -1182,7 +1185,7 @@ but even getting it just about there caused compilation errors in <code>gcc</cod
 might just not be possible.</p>
 <p>The way it was fixed might be hard to see and describe but this is an attempt.
 Because <code>main()</code>’s args were all <code>int</code>s, <code>main()</code> had to call a new function
-which is allowed to have args as <code>int</code> (instead of <code>main()</code>’s args being int and
+which is allowed to have args as <code>int</code> (instead of <code>main()</code>’s args being <code>int</code> and
 the rest being <code>char **</code>) but this is not as straight forward as it is for other
 entries (if you look at the code you might see what is meant; the function called
 is <code>pain()</code>).</p>
@@ -1216,11 +1219,12 @@ can work for <code>clang</code> (versions 0 and 1 can).</p>
 Comments might have been changed but it is no longer known if that happened only
 in the working on version 2 and 3 or if in the fix for <code>clang</code> as well as version
 0 and 1.</p>
-<p>To make use of this several scripts were added by Cody.</p>
-<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/westley/compile.sh">compile.sh</a> script that removes the generated
-code, rebuilds the program and regenerates the other code and then compiles it
-will work for compilers like <code>gcc</code> and one can then use the
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/westley/try.sh">try.sh</a> script to see example input and output.</p>
+<p>To make use of this several scripts were added by Cody. The
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/westley/compile.sh">compile.sh</a> script that removes the
+generated code, rebuilds the program and regenerates the other code and then
+compiles it will work for compilers like <code>gcc</code> and one can then use the
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/westley/try.sh">try.sh</a> script to see example input and
+output.</p>
 <p>The <code>compile.sh</code> script allows one to specify the compiler with the <code>CC</code>
 environmental variable; see the index.html for details.</p>
 <div id="1990">
