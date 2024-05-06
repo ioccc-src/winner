@@ -415,30 +415,33 @@ line rather than two lines which the author told us (Landon) that they liked.
 Thus now it is like the original where the first line ends with <code>"hell\</code> and
 the second line starts with <code>o, world!\n"</code>.</p>
 <p>By request, the original code is provided as
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/anonymous/anonymous.alt.c">anonymous.alt.c</a> so that one can look at it and
-the famous tattoo which we also include here:</p>
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/anonymous/anonymous.alt.c">anonymous.alt.c</a> so that one can
+look at it and the famous tattoo which we also include here, together as a
+single image that Cody added (locating the missing tattoo image and putting the
+source code and the tattoo together as an image):</p>
 <p><img src="1984/anonymous/1984-anonymous-tattoo.jpg"
  alt="image of a tattoo of the 1984 anonymous C code"
  width=600 height=401></p>
-<p>…which was done in 2005 by <a href="https://web.archive.org/web/20070120220721/https://thomasscovell.com/tattoo.php">Thomas
+<p>The tattoo was done in 2005 by <a href="https://web.archive.org/web/20070120220721/https://thomasscovell.com/tattoo.php">Thomas
 Scovell</a>.</p>
 <div id="1984_decot">
 <h2 id="decot"><a href="1984/decot/index.html">1984/decot</a></h2>
 <h3 id="source-code-decot.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/decot/decot.c">decot.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> fixed this to not require <code>-traditional-cpp</code> which some compilers like
-clang do not support. Fixing <code>-traditional-cpp</code> is, as noted later on, very
+<code>clang</code> do not support. Fixing <code>-traditional-cpp</code> is, as noted later on, very
 complicated, but we encourage you to look at the alternate code (which is the
 original code with a minor modification made by the judges) and the fixed
 code, to see what had to be done.</p>
-<p>Clang is also more strict about the type of args in <code>main()</code> and this was also a
-problem that Cody fixed, making it work with both clang and gcc.</p>
-<p>These fixes worked fine in macOS but it turned out that in some cases with clang
+<p><code>Clang</code> is also more strict about the type of args in <code>main()</code> and this was also a
+problem that Cody fixed, making it work with both <code>clang</code> and <code>gcc</code>.</p>
+<p>These fixes worked fine in macOS but it turned out that in some cases with
+<code>clang</code>
 in Linux it did not work so this had to be further fixed which Cody also did. It
-is no longer clear what the problem was as in fedora 38 with clang 16.0.6 the
+is no longer clear what the problem was as in fedora 38 with <code>clang</code> 16.0.6; the
 only difference is it causes additional warnings but it seems to work just fine.
 It seems unlikely that a fix was made just for warnings so it is presumed that
-there was another problem so the change is kept in place.</p>
+there was another problem and thus the change is kept in place.</p>
 <p>A note about the fix is that the <code>#define</code>d macros that were used still exist
 but most are not used; they are left in just to make it look more like the
 original entry. Nevertheless those cannot be used.</p>
@@ -451,10 +454,10 @@ be kept in:</p>
     char x {sizeof(
          double(%s,%D)(*)())</code></pre>
 <p>This does mean that there cannot be a second arg to <code>main()</code>
-as clang requires that to be a <code>char **</code> and the <code>char</code> redefined would not
-allow this. Some versions of clang say that <code>main()</code> must have either 0, 2 or 3
+as <code>clang</code> requires that to be a <code>char **</code> and the <code>char</code> redefined would not
+allow this. Some versions of <code>clang</code> say that <code>main()</code> must have either 0, 2 or 3
 args but these versions do not object to 1 arg. However as the <code>char</code> macro
-seems more obscure and it is possible that a new version of clang will be even
+seems more obscure and it is possible that a new version of <code>clang</code> will be even
 more strict the <code>int i</code> parameter in <code>main()</code> was moved to be inside <code>main()</code>,
 set to non-zero (setting <code>i</code> to 0 will not work). This is way <code>main()</code> has zero
 args.</p>
@@ -466,10 +469,10 @@ certain number of args (in some versions) and that the first arg is an <code>int
 the others are <code>char **</code>s. This is why the arg was removed and the call to
 <code>main()</code> was not updated beyond what had to be done to fix it for compilers that
 do not support <code>-traditional-cpp</code>.</p>
-<p>If the ANSI C committee or a new version of clang messes this up (both of which
+<p>If the ANSI C committee or a new version of <code>clang</code> messes this up (both of which
 seem possible) it is easy to fix but it is hoped that this won’t happen.</p>
-<p>Originally <a href="#yusuke">Yusuke</a> supplied a patch so that this entry would compile with gcc -
-but not clang - or at least some versions.</p>
+<p>Originally <a href="#yusuke">Yusuke</a> supplied a patch so that this entry would compile with <code>gcc</code> -
+but not <code>clang</code> - or at least some versions.</p>
 <p>To see the difference from start to fixed:</p>
 <pre><code>    cd 1984/decot ; make diff_orig_prog</code></pre>
 <div id="1984_laman">
@@ -495,7 +498,7 @@ original is that it will start over after it times out but that might not happen
 with the original (might need you to press a key though this is not known for
 sure).</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/gentab.c">gentab.c</a> file, fixed to compile
-(and work, though see the <a href="bugs.html#1984_mullender">bugs</a> entry for 1984/mullender) with modern systems
+(and work, though see <a href="bugs.html#1984_mullender">1984/mullender in bugs.html</a>) with modern systems
 and so that it would create the proper array (it had unbalanced <code>}</code>s), which the
 author noted in their remarks (which Cody also found). As this file uses the old
 header file <code>a.out.h</code> that is not available in all modern systems, Cody found a
@@ -530,7 +533,7 @@ returning to the shell. The original code does not have this change.</p>
 <h3 id="source-code-august.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/august/august.c">august.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a>, out of abundance of caution, added a second arg to <code>main()</code> because some
-versions of clang object to the number of args of <code>main()</code>, saying that it must
+versions of <code>clang</code> object to the number of args of <code>main()</code>, saying that it must
 be 0, 2 or 3. The version this has been observed in does not actually object to
 1 arg but it is entirely possible that this changes so a second arg (that’s not
 needed and is unused) has been added just in case.</p>
@@ -551,18 +554,19 @@ with defining some macro to <code>#define</code> and then use <code>#foo</code> 
 effect as using <code>#define</code> but this does not work in modern systems so Cody
 changed the <code>#o</code> lines to <code>#define</code>. Also <code>unistd.h</code> had to be <code>#include</code>d.</p>
 <p><a href="#yusuke">Yusuke</a> provided some useful information that amounts to an alternate version
-that Cody added. See the index.html for details.</p>
+that Cody added. See the <a href="1985/lycklama/index.html">index.html</a> for details.</p>
 <p>Cody also provided the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/lycklama/try.alt.sh">try.alt.sh</a> script.</p>
 <div id="1985_shapiro">
 <h2 id="shapiro"><a href="1985/lycklama/index.html">1985/shapiro</a></h2>
-<h3 id="source-code-index.html">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/shapiro/shapiro.c">index.html</a></h3>
+<h3 id="source-code-shapiro.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/shapiro/shapiro.c">shapiro.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> added the alt code which allows one to resize the maze and he also added
-the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/shapiro/try.alt.sh">try.alt.sh</a> script that randomly selects sizes
-(five times) and compiles and runs it. After the five runs it prompts you to
-enter a number, in an infinite loop, exiting if any non-digits are in input
-(this includes negative numbers which in the code actually sets it back to 39,
-the default).</p>
+<p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/shapiro/shapiro.alt.c">alt code</a>
+which allows one to resize the maze and he also added the
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/shapiro/try.alt.sh">try.alt.sh</a> script that randomly selects
+sizes (five times) and then compiles and runs it. After the five runs it prompts
+you to enter a number, in an infinite loop, exiting if any non-digits are in
+input (this includes negative numbers which in the code actually sets it back to
+39, the default).</p>
 <div id="1985_sicherman">
 <h2 id="sicherman"><a href="1985/sicherman/index.html">1985/sicherman</a></h2>
 <h3 id="source-code-1985sicherman">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/sicherman/sicherman.c">1985/sicherman</a></h3>
@@ -597,11 +601,11 @@ were actually not what they appear: the only arg that existed in <code>main()</c
 like the <code>C=" ..</code>’ part in <code>subr()</code> would be better to be upper case as it talks
 about the language. Also in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/sicherman/sicherman.c">alternate
 version</a> (the first being the
-original code) which is in case a new version of clang ever objects to only one
+original code) which is in case a new version of <code>clang</code> ever objects to only one
 arg in <code>main()</code> (which is not out of the realm of possibility), <code>main()</code> can
 have <code>C</code> as <code>argc</code> to <code>main()</code> so it would read like it once did: <code>C manual</code>
 albeit with a <code>,</code> separating the two. The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/sicherman/sicherman.c">alternate
-version</a> is compiled
+version</a> can be compiled
 in case the first does not. Originally the macros were kept the same and the
 <code>C</code> in <code>subr()</code> was <code>c</code>. It feels better (in some ways) to make it so that the
 <code>C</code> for the language is upper case though, and since it actually translated to
@@ -637,19 +641,14 @@ rename to <code>c</code>.</p>
 <pre><code>    while (read(0,&amp;__,1) &amp; write((_=(_=C_C_(__),
     V))?__:__-_+&#39;\b&#39;b&#39;\b&#39;|((_-52)%(&#39;\b&#39;b&#39;\b&#39;+~
     &#39; &#39;&amp;&#39;\t&#39;b&#39;\n&#39;)+1),1),&amp;_,1))_=c-v+subr(&amp;v));</code></pre>
-<p>Note how numerous of the macros (though two changed in case) can still be
+<p>Note how several of the macros (though two changed in case) can still be
 used but some cannot be. Can you figure out why? Why too is it that the
 <code>subr()</code> function is called but it appears that some of the code in that
 function is also in <code>main()</code> in the <code>while</code> condition? What happens if you
 remove it from <code>main()</code>? What happens if you remove it from <code>subr()</code> or
 don’t even bother calling <code>subr()</code>?</p>
-<p>Additional code was added in case the fix cannot be compiled by some compilers
-should they object to <code>main()</code> having only one arg. This version will
-automatically be compiled if the entry fails to compile for some reason but one
-can compile it manually as <code>make alt</code> in which case it’ll be compiled as
-<code>sicherman.alt</code> (if it’s done because <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/sicherman/sicherman.c">sicherman.c</a>
-fails to compile it will be built as <code>sicherman</code> as part of the <code>sicherman</code>
-rule).</p>
+<p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/sicherman/sicherman.alt.c">Additional code</a> was added in case the fix cannot be compiled by some compilers
+should they object to <code>main()</code> having only one arg.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/sicherman/try.sh">try.sh</a> and
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/sicherman/try.alt.sh">try.alt.sh</a> scripts.</p>
 <div id="1986">
@@ -669,51 +668,57 @@ rule).</p>
 <h2 id="hague"><a href="1986/hague/index.html">1986/hague</a></h2>
 <h3 id="source-code-hague.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/hague/hague.c">hague.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> made this use <code>fgets()</code>.</p>
+<p><a href="#cody">Cody</a> made this use <code>fgets()</code>. See <a href="faq.html#faq4_1">FAQ 4.1 - Why were some calls to
+the libc function gets(3) changed to use
+fgets(3)?</a> for why this was done.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/hague/try.sh">try.sh</a> script which also feeds to the
 program the added <code>input.txt</code> file.</p>
 <div id="1986_holloway">
 <h2 id="holloway"><a href="1986/holloway/index.html">1986/holloway</a></h2>
 <h3 id="source-code-holloway.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/holloway/holloway.c">holloway.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> fixed this to compile and work with clang (it already worked with gcc).
-The problem was that clang is more strict about the type of second arg to
-<code>main()</code>. However simply changing it to a <code>char ** and updating the</code>*s<code>to **s</code>
+<p><a href="#cody">Cody</a> fixed this to compile and work with <code>clang</code> (it already worked with <code>gcc</code>).
+The problem was that <code>clang</code> is more strict about the types of args to
+<code>main()</code>. However simply changing the second arg (that <code>clang</code> insists on being
+a <code>char **</code>) to a <code>char **</code> and updating the <code>*s</code> to <code>**s</code>
 caused a segfault. By adding a new variable, <code>char *t</code>, initialising it to <code>s</code>
-and then using <code>t</code> instead of <code>s</code> it compiles and runs successfully under clang
-and gcc.</p>
+and then using <code>t</code> instead of <code>s</code> it compiles and runs successfully under
+<code>clang</code> and <code>gcc</code>.</p>
 <div id="1986_marshall">
 <h2 id="marshall"><a href="1986/marshall/index.html">1986/marshall</a></h2>
 <h3 id="source-code-marshall.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/marshall/marshall.c">marshall.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> got this to compile and work with clang and gcc. He noted that he tried to
+<p><a href="#cody">Cody</a> got this to compile and work with <code>clang</code> and <code>gcc</code>. He noted that he tried to
 keep the ASCII art as close to the original as possible. The line lengths are
 the same but some spaces had to be changed to non-spaces.</p>
 <p>This fix was very interesting and quite amusing, showing up problems with two
-different compilers. This is a brief summary but much more is explained in the
-<a href="1986/marshall/compilers.html">compilers.html</a> file, giving which compilers had
-which problems in which systems: the optimiser being enabled in one compiler let
-it work but broke it in the other; and disabling it would let it work in the one
-that didn’t work but suddenly the one that worked wouldn’t work. And by ‘not
-working’ it did not work in more than one way and for different platforms it had
-other problems as well.</p>
-<p>This problem was only after getting clang to compile, of course. It did not
-compile it because it is more strict about the second and third args to <code>main()</code>
-and the third arg was an <code>int</code>.</p>
+different compilers (different problems with different compilers in different
+systems and also depending on optimisation with those compilers in those
+systems).</p>
+<p>We give more details in the <a href="1986/marshall/compilers.html">compilers.html</a> file,
+giving which compilers had which problems in which systems: the optimiser being
+enabled in one compiler let it work but broke it in the other; and disabling it
+would let it work in the one that didn’t work but suddenly the one that worked
+wouldn’t work. And by ‘not working’ it did not work in more than one way and for
+different platforms it had other problems as well.</p>
+<p>This problem was only after getting <code>clang</code> to compile, of course. It did not
+compile it because it is more strict about the arg types of <code>main()</code> and in this case
+particularly the second and third args to <code>main()</code>, which must be a <code>char **</code>.
+As the third arg was an <code>int</code> the code had to be modified.</p>
 <p>We encourage you to read the <a href="1986/marshall/compilers.html">compilers.html</a> file to
 see how odd this problem was and what Cody did to fix it, if nothing else but
 for entertainment!</p>
-<p>Also, after all warnings but one that could not be silenced were disabled,
-Cody changed the alt code (which was not the same as the original - see above
-for details or try <code>make diff_orig_alt</code> in the directory) slightly so that it
-was possible to silence it. In particular:</p>
+<p>Also, after all warnings but one that could not be silenced were disabled, Cody
+changed the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/marshall/marshall.alt.c">alt code</a> (which was not
+the same as the original - see above for details or try <code>make diff_orig_alt</code> in
+the directory) slightly so that it was possible to silence it. In particular:</p>
 <pre><code>      P  (    a  )   char a   ;  {    a  ;   while(    a  &gt;      &quot;  B   &quot;</code></pre>
 <p>which gave:</p>
 <pre><code>    marshall.alt.c:13:55: warning: ordered comparison between pointer and integer (&#39;char&#39; and &#39;char *&#39;)
       P  (    a  )   char a   ;  {    a  ;   while(    a  &gt;      &quot;  B   &quot;
                                                        ~  ^      ~~~~~~~~
     1 warning generated.</code></pre>
-<p>was changed to:</p>
+<p>This was changed to:</p>
 <pre><code>      P  (    a  )   char a   ;  {    a  ;   while((char *)a  &gt;   &quot;  B   &quot;</code></pre>
 <p>which gave:</p>
 <pre><code>    marshall.alt.c:13:48: warning: cast to &#39;char *&#39; from smaller integer type &#39;char&#39; [-Wint-to-pointer-cast]
@@ -733,9 +738,10 @@ are produced.</p>
 <h2 id="stein"><a href="1986/stein/index.html">1986/stein</a></h2>
 <h3 id="source-code-stein.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/stein/stein.c">stein.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> restored the original entry which was a single line. The code
-being longer (in 1986 a one liner could be longer) was split to three lines to
-avoid problems with news and mail but as it was the ‘Best one liner’ it is now
+<p><a href="#cody">Cody</a> restored the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/stein/stein.orig.c">original
+entry</a> which was a single line. The code
+being longer (in 1986 a one liner could be longer) had been split to three lines to
+avoid problems with news and mail but as it is the ‘Best one liner’ it is now
 one line.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/stein/stein.sh">stein.sh</a> script which runs the two
 commands that we suggest in order to get it to show clean output.</p>
@@ -745,11 +751,11 @@ commands that we suggest in order to get it to show clean output.</p>
 </div>
 <p><a href="#cody">Cody</a> fixed this so that it does not require <code>-traditional-cpp</code>. This took a fair
 bit of tinkering as this entry <em>very twisted</em>; fixing <code>-traditional-cpp</code> is, as
-noted earlier, very complicated, but we encourage you to look at <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/wall/wall.orig.c">original
-code</a> to see how different C was in 1986, as well as
-below.</p>
+noted later on, very complicated, but we encourage you to look at <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/wall/wall.orig.c">original
+code</a>, as well as below, to see how
+different C was in 1986.</p>
 <p><a href="#yusuke">Yusuke</a> originally patched this to use <code>strdup()</code> on two strings and this let it
-work with gcc but it still required <code>-traditional-cpp</code>.</p>
+work with <code>gcc</code> - but it still required <code>-traditional-cpp</code>.</p>
 <p>If you’d like to see the difference between the version that requires
 <code>-traditional-cpp</code> and the fixed version, try:</p>
 <pre><code>    cd 1986/wall ; make diff_orig_prog</code></pre>
@@ -816,8 +822,8 @@ work with gcc but it still required <code>-traditional-cpp</code>.</p>
 <h2 id="heckbert"><a href="1987/heckbert/index.html">1987/heckbert</a></h2>
 <h3 id="source-code-heckbert.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1987/heckbert/heckbert.c">heckbert.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> made this look more like the original entry by restoring the <code>#define</code> of
-<code>define</code>. It’s not used but it now looks closer to the original.</p>
+<p><a href="#cody">Cody</a> made this look more like the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1987/heckbert/heckbert.orig.c">original
+entry</a> by restoring the <code>#define _ define</code>. It’s not used but it now looks closer to the original.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1987/heckbert/try.sh">try.sh</a> script which shows how the
 program works but also how the folded code can recreate the original.</p>
 <p>Also because <code>index(3)</code> is deprecated and in some systems requires the inclusion
@@ -828,7 +834,7 @@ that for System V we had to do this) Cody added to the Makefile
 <h2 id="hines"><a href="1987/hines/index.html">1987/hines</a></h2>
 <h3 id="source-code-hines.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1987/hines/hines.c">hines.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1987/hines/try.sh">try.sh</a> script and the C file
+<p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1987/hines/try.sh">try.sh</a> script, the C file
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1987/hines/goto.c">goto.c</a> and the text file <a href="1987/hines/goto.txt">goto.txt</a>
 for demonstration purposes. Notice that the program is case sensitive which
 running the program on the text file demonstrates.</p>
@@ -837,7 +843,7 @@ running the program on the text file demonstrates.</p>
 <h3 id="source-code-lievaart.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1987/lievaart/lievaart.c">lievaart.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added back the documented checks for invalid input which no longer worked
-and instead resulted in either accepting the level, whether or not it was a
+and instead resulted in accepting the level, whether or not it was a
 number or out of range (see below on range). For the move it entered an infinite
 loop, prompting the player with <code>"You:"</code> but not letting the player input
 anything so that the screen was flooded and the game could not be played.</p>
@@ -851,8 +857,8 @@ overkill; there’s no good reason for it here: it was just arbitrarily selected
 <p>For the level if <code>atoi(A)&gt;10||&lt;0</code> (see next part) or <code>!isdigit(*A)</code> it goes back
 and prompts again. The level is checked for <code>&gt;=0||&lt;=10</code>, perhaps incorrectly or
 perhaps not, because in the code that variable is checked for <code>&lt;10</code> and if that
-is the case it is incremented by 2. I do not know the rules of the game and
-neither do I know what the author had in mind so I chosen 10 as the maximum.</p>
+is the case it is incremented by 2. Cody does not know the rules of the game and
+neither does he know what the author had in mind so he chosen 10 as the maximum.</p>
 <p>As for the move the <code>do..while</code> loop works properly now that it does it in two
 steps (<code>scanf("%2s", A); m=atoi(A);</code>) so there’s no need to check the value
 explicitly, again. Thus it will prompt until valid input is entered, but only
@@ -874,21 +880,24 @@ size constraints of the contest).</p>
 <h2 id="wall-1"><a href="1987/wall/index.html">1987/wall</a></h2>
 <h3 id="source-code-wall.c-1">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1987/wall/wall.c">wall.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> made this use <code>fgets(3)</code>.</p>
+<p><a href="#cody">Cody</a> made this use <code>fgets(3)</code>. See <a href="faq.html#faq4_1">FAQ 4.1 - Why were some calls to
+the libc function gets(3) changed to use
+fgets(3)?</a> for why this was done.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1987/wall/try.sh">try.sh</a> script.</p>
 <div id="1987_westley">
 <h2 id="westley"><a href="1987/westley/index.html">1987/westley</a></h2>
 <h3 id="source-code-westley.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1987/westley/westley.c">westley.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> fixed this for modern systems. The problem was <code>'assignment to cast is illegal, lvalue casts are not supported'</code>. For the original file see the
-index.html file. Unfortunately this ruins some symmetry. To try and resolve this
-as much as possible at first code was commented out but later on the commented
-out code was removed and another part changed so that, although it has some code
-no longer there, it has a closer match in symmetry and since the code was
-commented out it’s probably not a big deal to have it removed instead as it does
-look more symmetrical now.</p>
+<p><a href="#cody">Cody</a> fixed this for modern systems. The problem was <code>'assignment to cast is illegal, lvalue casts are not supported'</code>. For details on the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1987/westley/westley.orig.c">original
+code</a> see the
+<a href="1987/westley/index.html">index.html</a> file. Unfortunately this fix ruins some symmetry.</p>
+<p>To try and resolve this as much as possible at first code was commented out but
+later on the commented out code was removed and another part changed so that,
+although it has some code no longer there, it has a closer match in symmetry and
+since the code was commented out it’s probably not a big deal to have it removed
+instead as it does look more symmetrical now.</p>
 <p>Cody also added to the Makefile <code>-include stdio.h</code> in the nowadays very
-unlikely(?) but nevertheless suggested case that <code>putchar()</code> is not available.</p>
+unlikely(?) but nevertheless suggested case that <code>putchar(3)</code> is not available.</p>
 <div id="1988">
 <h1 id="section-4"><a href="1988/index.html">1988</a></h1>
 </div>
@@ -966,13 +975,11 @@ publication, in the remarks, to help understand the entry, and for fun.</p>
 <h2 id="phillipps"><a href="1988/phillipps/index.html">1988/phillipps</a></h2>
 <h3 id="source-code-phillipps.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/phillipps/phillipps.c">phillipps.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> fixed this for modern systems. It did not compile with clang because it
-requires the second and third args of <code>main()</code> to be `char ** but even before
-that with gcc it printed garbage and then crashed.</p>
-<p>After fixing it for clang by changing the very <code>main()</code> (in fact it called
+<p><a href="#cody">Cody</a> fixed this for modern systems. It did not compile with <code>clang</code> because it
+requires the second and third args of <code>main()</code> to be <code>char ** but even before that with</code>gcc` it printed garbage and then crashed.</p>
+<p>After fixing it for <code>clang</code> by changing the very <code>main()</code> (in fact it called
 itself up to 12 times!) to call the new function <code>pain()</code> (chosen because it’s a
-pain that clang requires these args to be `char ** :-), which is just as
-recursive, with the correct args it now works with both gcc and clang.</p>
+pain that <code>clang</code> requires these args to be <code>char ** :-), which is just as recursive, with the correct args it now works with both</code>gcc<code>and</code>clang`.</p>
 <p>Later Cody improved the fix to make it look a bit more like the original, using
 K&amp;R style functions, and trying to match the format as best as possible of what
 <code>main()</code> used to look like but without the full body that cannot exist as it
@@ -983,16 +990,18 @@ to itself and <code>pain()</code> does now.</p>
 <h2 id="reddy"><a href="1988/reddy/index.html">1988/reddy</a></h2>
 <h3 id="source-code-reddy.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/reddy/reddy.c">reddy.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> made this use <code>fgets(3)</code>.</p>
+<p><a href="#cody">Cody</a> made this use <code>fgets(3)</code>. See <a href="faq.html#faq4_1">FAQ 4.1 - Why were some calls to
+the libc function gets(3) changed to use
+fgets(3)?</a> for why this was done.</p>
 <div id="1988_spinellis">
 <h2 id="spinellis"><a href="1988/spinellis/index.html">1988/spinellis</a></h2>
 <h3 id="source-code-spinellis.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/spinellis/spinellis.c">spinellis.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> provided an <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/spinellis/spinellis.alt.c">alternate version</a> so that
-this will work with compilers like clang. An alternate version had to be
+this will work with compilers like <code>clang</code>. An alternate version had to be
 provided because not doing so would be tampering with the entry too much. It
 would work but it would not show the same creativity and cleverness.</p>
-<p>The original entry exploits a fun mis-feature that works with gcc but not clang.
+<p>The original entry exploits a fun mis-feature that works with <code>gcc</code> but not <code>clang</code>.
 This resulted in a change of rules which is another reason to not modify the
 original. See the index.html file for details on the alternate code.</p>
 <p>Meanwhile Cody was twisted enough to point out (though to be fair he felt sick
@@ -1079,8 +1088,8 @@ offered us some chocolate cake :-) See index.html for details on how to use the
 script.</p>
 <p>Cody also fixed the Makefile where typing <code>make everything</code> or <code>make alt</code> would
 result in:</p>
-<pre><code>    clang: error: no such file or directory: &#39;data&#39;
-    clang: error: no input files
+<pre><code>    `clang`: error: no such file or directory: &#39;data&#39;
+    `clang`: error: no input files
     make: *** [Makefile:143: alt] Error 1
 
     shell returned 2</code></pre>
@@ -1126,9 +1135,9 @@ made, try:</p>
 <h2 id="tromp"><a href="1989/tromp/index.html">1989/tromp</a></h2>
 <h3 id="source-code-tromp.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/tromp/tromp.c">tromp.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> and <a href="#yusuke">Yusuke</a> fixed this entry: Yusuke fixed this to compile with gcc and Cody
-fixed it for clang and made some other fixes as well.</p>
-<p>To get it to work with clang the variable <code>a</code> had to not be the third argument
+<p><a href="#cody">Cody</a> and <a href="#yusuke">Yusuke</a> fixed this entry: Yusuke fixed this to compile with <code>gcc</code> and Cody
+fixed it for <code>clang</code> and made some other fixes as well.</p>
+<p>To get it to work with <code>clang</code> the variable <code>a</code> had to not be the third argument
 to <code>main()</code> but instead be a variable in <code>main()</code>.</p>
 <p>Cody also fixed a segfault and made it so the that the high score file would
 work (it was not even being created but it was supposed to be). This was
@@ -1137,7 +1146,7 @@ significantly is the command in <code>popen(3)</code> was not correct.</p>
 <p>Another problem Cody fixed was that the terminal was left in an insane state where you
 could not type ‘<code>u</code>’ and echo was completely disabled.</p>
 <p>Cody later on fixed the alt version, provided by the author, so that it would
-compile with clang, not abort (with an alarm), would have the tetriminos fall,
+compile with <code>clang</code>, not abort (with an alarm), would have the tetriminos fall,
 it would write to the high score file (the command to <code>popen(3)</code> was incorrect
 here too but as can be seen it differs from the submitted version), could use
 <code>stty</code> properly (and thus turn on echo again - it did not work because it was in
@@ -1155,18 +1164,18 @@ not his only reason :-) )</p>
 <h2 id="westley-2"><a href="1989/westley/index.html">1989/westley</a></h2>
 <h3 id="source-code-westley.c-2">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/westley/westley.c">westley.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> fixed this for clang, except that two versions generated by the program
-cannot be compiled by clang due to inherent defects in the compiler and how the
-entry works. This is an <strong>incredibly hard</strong> one to fix for clang whilst still
-being compilable with gcc (and gcc can compile every generated version with the
-fix) and even if one fixes it to compile with clang it does not mean that any
-other version will compile! It is, however, possible to get clang to work with
+<p><a href="#cody">Cody</a> fixed this for <code>clang</code>, except that two versions generated by the program
+cannot be compiled by <code>clang</code> due to inherent defects in the compiler and how the
+entry works. This is an <strong>incredibly hard</strong> one to fix for <code>clang</code> whilst still
+being compilable with <code>gcc</code> (and <code>gcc</code> can compile every generated version with the
+fix) and even if one fixes it to compile with <code>clang</code> it does not mean that any
+other version will compile! It is, however, possible to get <code>clang</code> to work with
 two versions generated, <code>ver0</code> and <code>ver1</code>, though <code>ver0</code> is actually just the
 main entry (but still generated by the program itself).</p>
 <p>Unfortunately due to the way this entry works if it is even possible to get all
-versions to compile with clang it will take heavy modifications to get all
-versions to compile with clang. Cody almost got it and knows how it functions
-but even getting it just about there caused compilation errors in gcc so it
+versions to compile with <code>clang</code> it will take heavy modifications to get all
+versions to compile with <code>clang</code>. Cody almost got it and knows how it functions
+but even getting it just about there caused compilation errors in <code>gcc</code> so it
 might just not be possible.</p>
 <p>The way it was fixed might be hard to see and describe but this is an attempt.
 Because <code>main()</code>’s args were all <code>int</code>s, <code>main()</code> had to call a new function
@@ -1176,7 +1185,7 @@ entries (if you look at the code you might see what is meant; the function calle
 is <code>pain()</code>).</p>
 <p>The args of <code>main()</code> had to be set to the right type but only three args, <strong>not
 four</strong>, even though the original program has four args. This is because not all
-versions of clang support four args and that is one of the issues with version 2
+versions of <code>clang</code> support four args and that is one of the issues with version 2
 and 3 as it generates <code>main()</code> to have four args and the wrong type, all <code>int</code>s.</p>
 <p>In the call to the new function, <code>pain()</code>, from <code>main()</code>, one of the <code>char **</code>s
 is used twice, once as <code>argc</code> with bitwise AND with 2, naturally first being
@@ -1196,18 +1205,18 @@ ROT13 and reversed output of the code, it is the <strong>comments that create th
 names and the rest of the code!</strong>: sometimes it is the word backwards, other
 times it is the ROT13 of it and other times it is both, both for comments and
 otherwise. Trying to change comments can be very difficult though it was done
-when clang could almost compile every version if not actually compile all
+when <code>clang</code> could almost compile every version if not actually compile all
 versions. Unfortunately when this was done it caused other systems to have
 additional compilation errors so it seems highly unlikely that version 2 and 3
-can work for clang (versions 0 and 1 can).</p>
+can work for <code>clang</code> (versions 0 and 1 can).</p>
 <p>Despite the risks of changing names this was done and indeed by necessity.
 Comments might have been changed but it is no longer known if that happened only
-in the working on version 2 and 3 or if in the fix for clang as well as version
+in the working on version 2 and 3 or if in the fix for <code>clang</code> as well as version
 0 and 1.</p>
 <p>To make use of this several scripts were added by Cody.</p>
 <p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/westley/compile.sh">compile.sh</a> script that removes the generated
 code, rebuilds the program and regenerates the other code and then compiles it
-will work for compilers like gcc and one can then use the
+will work for compilers like <code>gcc</code> and one can then use the
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/westley/try.sh">try.sh</a> script to see example input and output.</p>
 <p>The <code>compile.sh</code> script allows one to specify the compiler with the <code>CC</code>
 environmental variable; see the index.html for details.</p>
@@ -1237,7 +1246,9 @@ judges was retained.</p>
 </div>
 <p><a href="#yusuke">Yusuke</a> got this to work in modern systems (it previously resulted in a bus
 error).</p>
-<p><a href="#cody">Cody</a> made this use <code>fgets(3)</code>.</p>
+<p><a href="#cody">Cody</a> made this use <code>fgets(3)</code>. See <a href="faq.html#faq4_1">FAQ 4.1 - Why were some calls to
+the libc function gets(3) changed to use
+fgets(3)?</a> for why this was done.</p>
 <div id="1990_dds">
 <h2 id="dds"><a href="1990/dds/index.html">1990/dds</a></h2>
 <h3 id="source-code-dds.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/dds/dds.c">dds.c</a></h3>
@@ -1250,7 +1261,9 @@ more like the original in this way by redefining <code>free</code> to have the c
 operator itself.</p>
 <p>Cody fixed another compiler error by removing the erroneous prototype to
 <code>fopen()</code>. Cody also changed a <code>char *</code> used for file I/O to be a proper <code>FILE *</code> and fixed a typo in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/dds/LANDER.BAS">LANDER.BAS</a>.</p>
-<p>Cody also made this use <code>fgets(3)</code>.</p>
+<p>Cody also made this use <code>fgets(3)</code>. See <a href="faq.html#faq4_1">FAQ 4.1 - Why were some calls to
+the libc function gets(3) changed to use
+fgets(3)?</a> for why this was done.</p>
 <div id="1990_dg">
 <h2 id="dg"><a href="1990/dg/index.html">1990/dg</a></h2>
 <h3 id="source-code-dg.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/dg/dg.c">dg.c</a></h3>
@@ -1305,7 +1318,9 @@ function was used in a binary expression so this wouldn’t even compile.</p>
 <p>Cody also changed the code to use <code>fgets()</code> instead of <code>gets()</code> so one would not get
 a warning about the use of <code>gets(3)</code> at linking time or execution, the latter of
 which was causing confusing output due to the warning being interspersed with
-the program’s interactive output.</p>
+the program’s interactive output. See <a href="faq.html#faq4_1">FAQ 4.1 - Why were some calls to
+the libc function gets(3) changed to use
+fgets(3)?</a> for more details.</p>
 <p>Additionally, Cody fixed the shortened version provided by the author in the
 same way as the original entry, first the compile fix and then later on making
 it look more like the original by redefining <code>exit</code> and also redefining <code>gets()</code>
@@ -1330,11 +1345,13 @@ but as he was testing the <code>fibonacci.c</code> bug he ended up changing it a
 <p>BTW: why can’t the fix:</p>
 <pre><code>    if (a[1]==NULL||a[2]==NULL||a[3]==NULL||a[4]==NULL||a[5]==NULL) return 1;</code></pre>
 <p>be changed to just test the value of <code>A</code> when <code>a</code> is argv and <code>A</code> is argc?</p>
-<p>Cody also changed the code to use <code>fgets(3)</code>.</p>
+<p>Cody also changed the code to use <code>fgets(3)</code>. See <a href="faq.html#faq4_1">FAQ 4.1 - Why were some calls to
+the libc function gets(3) changed to use
+fgets(3)?</a> for why this was done.</p>
 <p>Since this program is so incredible the extra fixes were deemed worth having and
 this is why it was done.</p>
 <p>Cody later disabled a warning in the Makefile that proved to be a problem only
-with clang in Linux but which was defaulting to an error. This way was the
+with <code>clang</code> in Linux but which was defaulting to an error. This way was the
 simplest way to deal with the problem in question due to the way the entry
 works.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/theorem/try.sh">try.sh</a> script which shows the
@@ -1425,13 +1442,16 @@ declared first.</p>
 <h3 id="source-code-dds.c-1">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/dds/dds.c">dds.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> fixed a segfault that prevented this entry from working in any condition
-and he also made it work for clang. He also added checks for NULL <code>FILE *</code>s.
+and he also made it work for <code>clang</code>. He also added checks for NULL <code>FILE *</code>s.
 Furthermore he changed it so that the C from the BASIC uses <code>fgets()</code>, not
-<code>gets()</code>. For the magic of clang and <code>fgets()</code> see below.</p>
-<p>Clang (at least in some systems?) defaults to having <code>-Werror</code> and the code that
+<code>gets()</code>. See <a href="faq.html#faq4_1">FAQ 4.1 - Why were some calls to
+the libc function gets(3) changed to use
+fgets(3)?</a> for why this was done.</p>
+<p>For the magic of <code>clang</code> and <code>fgets()</code> see below.</p>
+<p><code>Clang</code> (at least in some systems?) defaults to having <code>-Werror</code> and the code that
 the entry generates had some warnings that were causing compilation to fail if
-<code>cc</code> is clang as it just ran <code>cc a.c</code>. It ran it by what was once <code>system(q-6);</code>
-but if <code>cc</code> is clang like in macOS this is not enough.</p>
+<code>cc</code> is <code>clang</code> as it just ran <code>cc a.c</code>. It ran it by what was once <code>system(q-6);</code>
+but if <code>cc</code> is <code>clang</code> like in macOS this is not enough.</p>
 <p>(Cody said he stupidly did the below manually until he thought to write a simple
 program to do the conversions which he used for <code>gets()</code> to <code>fgets()</code> and for
 making the generated code return a value from <code>main()</code> rather than just
@@ -1463,9 +1483,9 @@ have <code>-include stdio.h</code> which in this rotated string is:</p>
 <pre><code>    .jodmvef!tuejp/i</code></pre>
 <p>which had to be added after:</p>
 <pre><code>    efdmbsbujpo!</code></pre>
-<p>which is the end of the warning disabled for clang as described above.</p>
+<p>which is the end of the warning disabled for <code>clang</code> as described above.</p>
 <p>But now the <code>system(q-69);</code> had to be changed to <code>system(q-86);</code>.</p>
-<p>Then, later on, Cody discovered that in some systems, clang triggers even more
+<p>Then, later on, Cody discovered that in some systems, <code>clang</code> triggers even more
 warnings so this had to be corrected too so the string was updated again and
 the <code>system(q-86)</code> had to be changed to <code>system(q-104)</code>.</p>
 <p>But then to prevent the need for disabling a warning and to be more correct
@@ -1483,8 +1503,8 @@ Thus in full the string became:</p>
     b/d&quot;;</code></pre>
 <p>and it now is <code>system(q-87);</code>.</p>
 <p>It is hoped that this is the last time the string has to be updated to work with
-all versions of clang but if not the above is how it works.</p>
-<p>With these changes in place it will compile and work with both gcc and clang and
+all versions of <code>clang</code> but if not the above is how it works.</p>
+<p>With these changes in place it will compile and work with both <code>gcc</code> and <code>clang</code> and
 the C code generated will use <code>fgets(3)</code>, not <code>gets(3)</code>, therefore removing the
 annoying warnings. Note that the array passed to <code>fgets(3)</code> is an int but that
 was the same for <code>gets()</code> and is not necessary to update to a <code>char[]</code>.</p>
@@ -1577,6 +1597,9 @@ true of another change as further below.</p>
     +   putc(i[&quot;}|uutsrq`_^bji`[Zkediml[PO]a_M__]ISOYIRGTNR&quot;]+i-9,stderr);</code></pre>
 <p>though it’s questionable how much more (if at all) obscure that is :-)</p>
 <p>Cody also changed the location that it used <code>gets()</code> to be <code>fgets(3)</code>.
+See <a href="faq.html#faq4_1">FAQ 4.1 - Why were some calls to
+the libc function gets(3) changed to use
+fgets(3)?</a> for why this was done.
 This was complicated because of how the other source files are generated (as
 above); simply changing the code could cause invalid output in the program which
 made other files fail to compile (for this example specifically, see below).</p>
@@ -1695,10 +1718,10 @@ the <code>ext</code> macro to be <code>exit</code> which uses the comma operator
 line lengths match the original code, at least as best as possible (if not
 perfectly), including start and end columns, often (if not all) with the same
 start and end character.</p>
-<p>Cody made <code>main()</code> have two args, not one, as some versions of clang have a
+<p>Cody made <code>main()</code> have two args, not one, as some versions of <code>clang</code> have a
 defect with the number of args to <code>main()</code> though when it comes to 1 arg it is
 only in an error message if say 4 args are used. This is out of an abundance of
-caution as it’s quite possible that clang or the ANSI C committee end up further
+caution as it’s quite possible that <code>clang</code> or the ANSI C committee end up further
 changing this.</p>
 <p>Yusuke also noted that there is a bug in the program where right after starting
 it moves towards the right but if you click the mouse it goes back.</p>
@@ -1706,12 +1729,14 @@ it moves towards the right but if you click the mouse it goes back.</p>
 <h2 id="lush"><a href="1992/lush/index.html">1992/lush</a></h2>
 <h3 id="source-code-lush.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/lush/lush.c">lush.c</a></h3>
 </div>
-<p><a href="#yusuke">Yusuke</a> supplied a patch which makes this work with gcc. Due to how it works (see
-Judges’ remarks in the index.html file) this will not work with clang.</p>
+<p><a href="#yusuke">Yusuke</a> supplied a patch which makes this work with <code>gcc</code>. Due to how it works (see
+Judges’ remarks in the index.html file) this will not work with <code>clang</code>.</p>
 <p><a href="#cody">Cody</a> also provided the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/lush/lush.sh">lush.sh</a> script to
 demonstrate it as using make was problematic.</p>
-<p>Cody made it use <code>fgets()</code> instead of <code>gets()</code>.</p>
-<p>NOTE: this entry cannot work with clang due to different compiler messages (it
+<p>Cody made it use <code>fgets()</code> instead of <code>gets()</code>. See <a href="faq.html#faq4_1">FAQ 4.1 - Why were some calls to
+the libc function gets)3( changed to use
+fgets(3)?</a> for why this was done.</p>
+<p>NOTE: this entry cannot work with <code>clang</code> due to different compiler messages (it
 will compile fine but it won’t work). See <a href="bugs.html">bugs.html</a> for details.</p>
 <div id="1992_marangon">
 <h2 id="marangon"><a href="1992/marangon/index.html">1992/marangon</a></h2>
@@ -1749,14 +1774,14 @@ it used to be.</p>
 <h2 id="westley-5"><a href="1992/westley/index.html">1992/westley</a></h2>
 <h3 id="source-code-westley.c-5">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/westley/westley.c">westley.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> fixed this to work for clang by changing the third and fourth arg of
-<code>main()</code> to be <code>char ** inside</code>main()<code>; clang requires args 2 - 4 to be</code>char
+<p><a href="#cody">Cody</a> fixed this to work for <code>clang</code> by changing the third and fourth arg of
+<code>main()</code> to be <code>char ** inside</code>main()<code>;</code>clang<code>requires args 2 - 4 to be</code>char
 ** and some versions do not even allow a fourth arg.</p>
 <p>He also added the alternate version that the author gave in the remarks that is
-specifically for the USA rather than the world. This had to be fixed for clang
+specifically for the USA rather than the world. This had to be fixed for <code>clang</code>
 as well to make the args of <code>main()</code> be the correct type and by moving the body
 of main() to another function, <code>pain()</code>, which does the work since not all
-versions of clang support four args to <code>main()</code>.</p>
+versions of <code>clang</code> support four args to <code>main()</code>.</p>
 <p>Cody also removed the restriction that one has to have a terminal that wraps at
 80 columns so that as long as the terminal’s columns (try <code>echo $COLUMNS</code>) is &gt;=
 80 it should work. As most people have wider terminals than back in 1992 this
@@ -1838,10 +1863,10 @@ files for functions.</p>
 </div>
 <p><a href="#cody">Cody</a> added an <a href="1993/lmfjyh/index.html#alternate-code">alternate
 version</a> which does what the program did
-with gcc &lt; 2.3.3. See the index.html file for details and for why this was made
+with <code>gcc</code> &lt; 2.3.3. See the index.html file for details and for why this was made
 the alternate version, not the actual entry.</p>
 <p>Cody also made the Makefile delete the very unsafe filename that is compiled (or
-would be compiled if gcc &lt; 2.3.3) whether or not compilation succeeds (which is
+would be compiled if <code>gcc</code> &lt; 2.3.3) whether or not compilation succeeds (which is
 highly unlikely).</p>
 <div id="1993_plummer">
 <h2 id="plummer"><a href="1993/plummer/index.html">1993/plummer</a></h2>
@@ -1874,12 +1899,14 @@ compile time. See the index.html for details.</p>
 <h2 id="schnitzi"><a href="1993/schnitzi/index.html">1993/schnitzi</a></h2>
 <h3 id="source-code-schnitzi.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/schnitzi/schnitzi.c">schnitzi.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> made this use <code>fgets(3)</code> not <code>gets(3)</code>.</p>
+<p><a href="#cody">Cody</a> made this use <code>fgets(3)</code> not <code>gets(3)</code>. See <a href="faq.html#faq4_1">FAQ 4.1 - Why were some calls to
+the libc function gets(3) changed to use
+fgets(3)?</a> for why this was done.</p>
 <div id="1993_vanb">
 <h2 id="vanb-1"><a href="1993/vanb/index.html">1993/vanb</a></h2>
 <h3 id="source-code-vanb.c-1">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/vanb/vanb.c">vanb.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> fixed this to work with clang. The problem was that the third arg to main()
+<p><a href="#cody">Cody</a> fixed this to work with <code>clang</code>. The problem was that the third arg to main()
 was not a <code>char **. Instead</code>O5()<code>(which was</code>main()<code>via</code>-DO5=main`) is now
 its own function which main() calls with the right parameters.</p>
 <p>Later Cody fixed it again to look much more like the original where only a
@@ -1893,7 +1920,7 @@ work).</p>
 <pre><code>    ... a version of the program before it got formatted into the VIII,
     augmented with comments showing where each state begins. N1 and N2 are
     notes.</code></pre>
-<p>but fixed to work with clang as well.</p>
+<p>but fixed to work with <code>clang</code> as well.</p>
 <p>NOTE: the <code>N1</code> and <code>N2</code> are provided as notes in the index.html file describing
 this code. Other code is also described there.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/vanb/try.sh">try.sh</a> script.</p>
@@ -1959,10 +1986,14 @@ entries that actually did not work because of missing or incorrect prototypes).<
 <p><a href="#cody">Cody</a> fixed this so it would compile and work with modern compilers. The problem
 was that <code>srand()</code> returns <code>void</code> but it was used in a <code>||</code> expression. Thus the
 comma operator was needed.</p>
-<p>Cody also fixed it for clang under Linux which objected to incompatible pointer
+<p>Cody also fixed it for <code>clang</code> under Linux which objected to incompatible pointer
 type (because <code>time(2)</code> takes a <code>time_t *</code> which in some systems is a <code>long *</code>
 but what was being passed to it is an <code>int</code>).</p>
-<p>Cody also changed the entry to use <code>fgets(3)</code> instead of <code>gets(3)</code>. This one has
+<p>Cody also changed the entry to use <code>fgets(3)</code> instead of <code>gets(3)</code>.
+(See <a href="faq.html#faq4_1">FAQ 4.1 - Why were some calls to
+the libc function gets(3) changed to use
+fgets(3)?</a> for why this was done.)</p>
+<p>This one has
 a minor annoyance in that it now prints a newline after the output but this
 seems like a worthy compromise for preventing the interspersed output in macOS
 and at the same time it’s safer and allows for parsing file with longer lines.
@@ -1995,7 +2026,7 @@ now there is more important work to do so that the next contest can run.</p>
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/schnitzi/try.alt.sh">try.alt.sh</a> scripts.</p>
 <div id="1994_shapiro">
 <h2 id="shapiro-1"><a href="1994/shapiro/index.html">1994/shapiro</a></h2>
-<h3 id="source-code-shapiro.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/shapiro/shapiro.c">shapiro.c</a></h3>
+<h3 id="source-code-shapiro.c-1">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/shapiro/shapiro.c">shapiro.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> fixed a bug on systems where <code>EOF != -1</code>. The problem is that <code>getc()</code> and
 the related functions do not return <code>-1</code> on EOF or error but rather <code>EOF</code>.
@@ -2020,7 +2051,11 @@ pairs for the original entry and the alt code. These scripts are
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/tvr/try.alt.bw.sh">try.alt.bw.sh</a>, respectively. The scripts go through
 each mode allowed with two sizes, 128 and 256, allowing one to quit or skip each
 (given that there are a lot of invocations this seemed like a good idea).</p>
-<p>Cody also made this use <code>fgets(3)</code> instead of <code>gets(3)</code>. In this case the newline had
+<p>Cody also made this use <code>fgets(3)</code> instead of <code>gets(3)</code>.
+See <a href="faq.html#faq4_1">FAQ 4.1 - Why were some calls to
+the libc function gets)3( changed to use
+fgets(3)?</a> for why this was done.
+In this case the newline had
 to be terminated but it was a pretty straightforward fix. <code>gets()</code> was defined
 to use <code>fgets()</code> and the inclusion of <code>stdio.h</code> had to be added but to make it
 more like the original entry this was done in the Makefile. The alt code was
@@ -2062,8 +2097,8 @@ additionally segfaulted under macOS which he also fixed.</p>
 particular to make it easier to see the program do what it does in systems that
 are too fast … if there is such a thing anyway :-) ). See the index.html for
 details on this.</p>
-<p>Out of an abundance of caution with clang, Cody also added a second arg to
-<code>main()</code> as some versions of clang whine about the number of args on top of the
+<p>Out of an abundance of caution with <code>clang</code>, Cody also added a second arg to
+<code>main()</code> as some versions of <code>clang</code> whine about the number of args on top of the
 type of args. In particular some versions supposedly only allow 0, 2 or 3 args.
 It actually appears to allow 1 but if you specify 4 it says 0, 2 or 3 and it is
 an error but it’s entirely possible that they will eventually make the defect
@@ -2110,9 +2145,9 @@ by the author, putting it in <a href="1995/leo/spoiler1.html">spoiler1.html</a>.
 <h2 id="makarios"><a href="1995/makarios/index.html">1995/makarios</a></h2>
 <h3 id="source-code-makarios.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/makarios/makarios.c">makarios.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> fixed this so that it will compile with versions of clang that has a defect
+<p><a href="#cody">Cody</a> fixed this so that it will compile with versions of <code>clang</code> that has a defect
 which only allows <code>main()</code> to have 0, 2 or 3 args. This is done by a new
-function (<code>pain()</code> as it’s annoying that clang is this way :-) ) that <code>main()</code>
+function (<code>pain()</code> as it’s annoying that <code>clang</code> is this way :-) ) that <code>main()</code>
 calls which has the four args.</p>
 <div id="1995_savastio">
 <h2 id="savastio"><a href="1995/savastio/index.html">1995/savastio</a></h2>
@@ -2155,7 +2190,7 @@ applied.</p>
 <h2 id="dalbec"><a href="1996/dalbec/index.html">1996/dalbec</a></h2>
 <h3 id="source-code-dalbec.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/dalbec/dalbec.c">dalbec.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> proposed a fix for this to compile with clang and Landon implemented it
+<p><a href="#cody">Cody</a> proposed a fix for this to compile with <code>clang</code> and Landon implemented it
 after some discussion (though Cody changed the function name). The reason Cody
 did not do it is because he thought it was the wrong output but as it happens
 the try section below was worded a bit confusingly. He looked at <a href="#yusuke">Yusuke</a>‘s
@@ -2213,7 +2248,7 @@ the function in the pointer assignment.</p>
 <h3 id="source-code-schweikh1.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/schweikh1/schweikh1.c">schweikh1.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/schweikh1/try.sh">try.sh</a> script.</p>
-<p>The author stated that <code>-I/usr/include</code> is needed by gcc in Solaris because
+<p>The author stated that <code>-I/usr/include</code> is needed by <code>gcc</code> in Solaris because
 <code>errno.h</code> has two identical extern declarations of <code>errno</code>. That leads to an
 error due to the redefinition of <code>main</code> but the <code>-I</code> option makes sure the
 working <code>/usr/include/rrno.h</code> is found first, which shouldn’t cause any problems
@@ -2276,7 +2311,7 @@ you can configure them all in both builds it shouldn’t matter.</p>
 <h3 id="source-code-bas1.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/bas1/bas1.c">bas1.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a>, out of an abundance of caution, added a second arg to <code>main()</code> as some
-versions of clang whine about the number of args on top of what type they are
+versions of <code>clang</code> whine about the number of args on top of what type they are
 In particular some versions claim that they only allow 0, 2 or 3 args. It
 appears that they do allow 1 but for instance 4 is not allowed. However as it’s
 quite possible they will ‘fix’ this defect it would be better to have this not
@@ -2344,12 +2379,12 @@ final code that is compiled. The code is now what it essentially becomes when
 processed completely. The intermediate steps can now be performed to see how it
 expands but it can still compile and be used.</p>
 <p>Cody also added a second arg to <code>main()</code> out of an abundance of caution as some
-versions of clang whine about the number of args to <code>main()</code>. These versions
+versions of <code>clang</code> whine about the number of args to <code>main()</code>. These versions
 claim that only 0, 2 or 3 are allowed but it does allow 1 anyway. It is quite
 possible though that this will change so it is fixed in case this happens. As it
 is mostly just through the C pre-processor Cody added a new macro to make the
 code look like the original with just an extra arg.</p>
-<p>In some versions of clang <code>-Wno-int-conversion</code> had to be added to the
+<p>In some versions of <code>clang</code> <code>-Wno-int-conversion</code> had to be added to the
 <code>CSILENCE</code> variable of the Makefile.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/fanf/try.sh">try.sh</a> script to show the output of some
 of the expressions that we selected.</p>
@@ -2421,7 +2456,7 @@ in the file <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/19
 <h2 id="schweikh2-1"><a href="1998/schweikh2/index.html">1998/schweikh2</a></h2>
 <h3 id="source-code-schweikh2.c-1">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh2/schweikh2.c">schweikh2.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> fixed the code to not trigger an internal compiler error in gcc:</p>
+<p><a href="#cody">Cody</a> fixed the code to not trigger an internal compiler error in <code>gcc</code>:</p>
 <pre><code>    :10:16: warning: type defaults to &#39;int&#39; in declaration of &#39;zero&#39; [-Wimplicit-int]
     : In function &#39;main&#39;:
     :12:1: warning: missing terminating &quot; character
@@ -2430,7 +2465,7 @@ in the file <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/19
 interesting historical explanation and further details and fun, see the
 <a href="1998/schweikh2/index.html#historical-remarks">historical remarks</a> in the
 index.html.</p>
-<p>Cody also added an <code>int</code> after <code>register</code> in <code>main()</code> in case clang decides to
+<p>Cody also added an <code>int</code> after <code>register</code> in <code>main()</code> in case <code>clang</code> decides to
 have a problem with that in the future which is not entirely out of the
 question.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh2/try.sh">try.sh</a> script.</p>
@@ -2442,7 +2477,7 @@ question.</p>
 to reconfigure the size constant in the rare case that the author wrote about
 occurs.</p>
 <p>Cody made <code>main()</code> have two args out of an abundance of caution as some versions
-of clang say that <code>main()</code> can only have 0, 2 or 3 args. These versions accept 1
+of <code>clang</code> say that <code>main()</code> can only have 0, 2 or 3 args. These versions accept 1
 arg but it is entirely possible that they fix this so this should prevent it
 from breaking if that happens.</p>
 <p>Cody added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh3/try.sh">try.sh</a> script to make it easier to try
@@ -2480,8 +2515,11 @@ commands that we recommended.</p>
 <h2 id="anderson"><a href="2000/anderson/index.html">2000/anderson</a></h2>
 <h3 id="source-code-anderson.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/anderson//anderson.c">anderson.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> changed this entry to use <code>fgets(3)</code> instead of <code>gets(3)</code>. This involved
-changing the <code>K</code> arg to <code>gets(3)</code> to <code>&amp;K</code> in <code>fgets(3)</code>.</p>
+<p><a href="#cody">Cody</a> changed this entry to use <code>fgets(3)</code> instead of <code>gets(3)</code>.
+See <a href="faq.html#faq4_1">FAQ 4.1 - Why were some calls to
+the libc function gets(3) changed to use
+fgets(3)?</a> for why this was done.
+This involved changing the <code>K</code> arg to <code>gets(3)</code> to <code>&amp;K</code> in <code>fgets(3)</code>.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/anderson/try.sh">try.sh</a> script.</p>
 <div id="2000_bmeyer">
 <h2 id="bmeyer"><a href="2000/bmeyer/index.html">2000/bmeyer</a></h2>
@@ -2523,7 +2561,7 @@ includes of <code>Xlib.h</code> and <code>keysym.h</code>.</p>
 <h3 id="source-code-natori.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/natori//natori.c">natori.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> fixed this for modern compilers. Depending on the compiler it would either
-segfault when run or not compile at all (gcc and clang respectively).</p>
+segfault when run or not compile at all (<code>gcc</code> and <code>clang</code> respectively).</p>
 <p>Cody also provided alternate code that supports the southern hemisphere.</p>
 <p>Cody also provided the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/natori/try.sh">try.sh</a> and
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/natori/try.alt.sh">try.alt.sh</a> scripts that show the Moon phase in
@@ -2646,7 +2684,7 @@ the <code>munmap()</code> call.</li>
 was supposed to do; instead it reported text file busy error.</p>
 <p>Notice that the location of <code>munmap()</code> and <code>close()</code> followed by <code>execv()</code> <em>does
 matter</em>!</p>
-<p>To get this to compile with clang, <code>main()</code> had to change from:</p>
+<p>To get this to compile with <code>clang</code>, <code>main()</code> had to change from:</p>
 <pre><code>    main (char *ck, char **k)</code></pre>
 <p>to:</p>
 <pre><code>    main (int cka, char **k) { char *ck = (char *)cka; /* ... */ }</code></pre>
@@ -2679,7 +2717,7 @@ it will at least run the supplementary program as a 64-bit program directly.</p>
 <h2 id="bellard"><a href="2001/bellard/index.html">2001/bellard</a></h2>
 <h3 id="source-code-bellard.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/bellard//bellard.c">bellard.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> fixed this to compile with clang but according to the author this will not
+<p><a href="#cody">Cody</a> fixed this to compile with <code>clang</code> but according to the author this will not
 work without i386 Linux. It generates i386 32-bit code (not bytecode) but
 unfortunately it will not work without i386 Linux. See <a href="bugs.html">bugs.html</a>.</p>
 <p>Cody fixed an earlier segfault so that it can at least now open the file should
@@ -2705,10 +2743,10 @@ this entry by Yusuke.</p>
 <p>With a tip from Yusuke we rediscovered the author’s <a href="https://bellard.org/otcc/">web page for this
 program</a> where it is stated that this will only work
 in i386 Linux. The author also stated in the remarks in this document that they
-used <a href="https://ftp.gnu.org/gnu/gcc/gcc-2.95.2/gcc-everything-2.95.2.tar.gz">gcc
+used <a href="https://ftp.gnu.org/gnu/%60gcc%60/%60gcc%60-2.95.2/%60gcc%60-everything-2.95.2.tar.gz"><code>gcc</code>
 2.95.2</a> but
 we don’t know if that’s relevant or not.</p>
-<p>Yusuke offered a modification which is not needed with gcc but with some
+<p>Yusuke offered a modification which is not needed with <code>gcc</code> but with some
 versions of <code>clang</code> it is. With <code>gcc</code> we can get away with <code>-rdynamic -fno-pie -Wl,-z,execstack</code> which solves the problem of execution in memory but any
 compiler that does not support this would not work. Thus we use the modification
 by Yusuke.</p>
@@ -2716,9 +2754,8 @@ by Yusuke.</p>
 <h2 id="cheong"><a href="2001/cheong/index.html">2001/cheong</a></h2>
 <h3 id="source-code-cheong.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/cheong//cheong.c">cheong.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> fixed this to work with clang by adding another function that is allowed to
-have a third arg as an int, not a <code>char **. He chose</code>pain()` because it’s a four
-letter word that would match the format and because it’s pain that clang forces
+<p><a href="#cody">Cody</a> fixed this to work with <code>clang</code> by adding another function that is allowed to
+have a third arg as an int, not a <code>char **. He chose</code>pain()<code>because it's a four letter word that would match the format and because it's pain that</code>clang` forces
 this. :-) This fix makes a point of the author’s notes on portability no longer
 valid, BTW.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/cheong/try.sh">try.sh</a> script.</p>
@@ -2728,7 +2765,7 @@ valid, BTW.</p>
 <h3 id="source-code-coupard.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/coupard//coupard.c">coupard.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added a value to <code>return</code> in <code>main()</code> to make it more portable.</p>
-<p>Cody fixed this to compile with clang in Linux. The problem was C99 does not
+<p>Cody fixed this to compile with <code>clang</code> in Linux. The problem was C99 does not
 support implicit int:</p>
 <pre><code>    coupard.c:31:10: error: parameter &#39;h&#39; was not declared, defaults to &#39;int&#39;; ISO C99 and later do not support implicit int [-Wimplicit-int]
     void e(n,h){
@@ -2790,7 +2827,7 @@ shellcheck. In particular there were quite a few:</p>
 </div>
 <p><a href="#cody">Cody</a> fixed this to work with both 64-bit and 32-bit compilers by changing most
 of the <code>int</code>s (all but that in <code>main(int ...)</code>) to <code>long</code>s. He also fixed it to
-compile with clang by changing the args of main to be <code>int</code> and <code>char **, respectively, and changing specific references to the</code>argv<code>arg, casting to</code>long<code>(was</code>int<code>but the 64-bit fix requires</code>long`) which was its old type.</p>
+compile with <code>clang</code> by changing the args of main to be <code>int</code> and <code>char **, respectively, and changing specific references to the</code>argv<code>arg, casting to</code>long<code>(was</code>int<code>but the 64-bit fix requires</code>long`) which was its old type.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/herrmann2/try.sh">try.sh</a> script which might be more
 useful than any other place as the command to try is quite long with C code.</p>
 <p>For some reason the original code was missing (presumingly because it had been
@@ -2860,10 +2897,10 @@ browsers knowing what to do with it.</p>
 <h2 id="burley"><a href="2004/burley/index.html">2004/burley</a></h2>
 <h3 id="source-code-burley.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/burley//burley.c">burley.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> fixed this to compile with clang and to work with both gcc and
-clang (even after fixing it to compile with clang it did not work properly).</p>
-<p>For clang the problem was that <code>main()</code> had one arg, a <code>char *</code> and this is not
-allowed in any version of clang. In some versions it is allowed if the arg is an
+<p><a href="#cody">Cody</a> fixed this to compile with <code>clang</code> and to work with both <code>gcc</code> and
+<code>clang</code> (even after fixing it to compile with <code>clang</code> it did not work properly).</p>
+<p>For <code>clang</code> the problem was that <code>main()</code> had one arg, a <code>char *</code> and this is not
+allowed in any version of <code>clang</code>. In some versions it is allowed if the arg is an
 <code>int</code> but never if it’s anything else. To get it to work took numerous changes.</p>
 <p>First the inclusion of <code>setjmp.h</code> was necessary. Without this <code>longjmp(3)</code>
 implicitly returned <code>int</code> which was used for the purpose of binary expression but
@@ -2932,7 +2969,7 @@ Wayback Machine.</p>
 <h2 id="jdalbec"><a href="2004/jdalbec/index.html">2004/jdalbec</a></h2>
 <h3 id="source-code-jdalbec.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/jdalbec//jdalbec.c">jdalbec.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> fixed this to compile with gcc (it worked with clang). The problem was the
+<p><a href="#cody">Cody</a> fixed this to compile with <code>gcc</code> (it worked with <code>clang</code>). The problem was the
 cpp being unable to parse the generated code (see the index.html for details) and
 this ended up with a number of errors like:</p>
 <pre><code>    jdalbec.c:64:5: error: stray &#39;##&#39; in program
@@ -2962,7 +2999,7 @@ a lot of numbers this will be harder to see).</p>
 </div>
 <p><a href="#cody">Cody</a> reported that this entry cannot be optimised by the compiler as otherwise
 it will not work.</p>
-<p>Cody, out of an abundance of caution for clang, added a second arg to <code>main()</code>
+<p>Cody, out of an abundance of caution for <code>clang</code>, added a second arg to <code>main()</code>
 as some versions complain about the number of args and although they accept 1 it
 is entirely possible it will eventually be that they don’t.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/kopczynski/try.sh">try.sh</a> script and various data
@@ -2974,7 +3011,7 @@ get it to work, that being <code>kopczynski-10-rev</code>.</p>
 <h2 id="newbern"><a href="2004/newbern/index.html">2004/newbern</a></h2>
 <h3 id="source-code-newbern.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/newbern//newbern.c">newbern.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> and Landon individually fixed this to work with clang.</p>
+<p><a href="#cody">Cody</a> and Landon individually fixed this to work with <code>clang</code>.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/newbern/try.sh">try.sh</a> script (with a hidden feature
 that the author referred to and was documented by <a href="#yusuke">Yusuke</a> though Cody
 chose the word <code>IOCCC</code> instead of <code>AAA</code>).</p>
@@ -2987,7 +3024,9 @@ chose the word <code>IOCCC</code> instead of <code>AAA</code>).</p>
 <h2 id="schnitzi-4"><a href="2004/schnitzi/index.html">2004/schnitzi</a></h2>
 <h3 id="source-code-schnitzi.c-4">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/schnitzi//schnitzi.c">schnitzi.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> made this use <code>fgets(3)</code>.</p>
+<p><a href="#cody">Cody</a> made this use <code>fgets(3)</code>. See <a href="faq.html#faq4_1">FAQ 4.1 - Why were some calls to
+the libc function gets(3) changed to use
+fgets(3)?</a> for why this was done.</p>
 <p>He also changed the time factor in the data files as the animations went too
 fast in modern systems, especially the scrolling text of
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/schnitzi/schnitzi.inp1">schnitzi.inp1</a>.</p>
@@ -3095,7 +3134,7 @@ input from the author, adapting it to a command to try out.</p>
 <h2 id="giljade"><a href="2005/giljade/index.html">2005/giljade</a></h2>
 <h3 id="source-code-giljade.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/giljade//giljade.c">giljade.c</a></h3>
 </div>
-<p>After Landon fixed the entry to compile with clang <a href="#cody">Cody</a> noticed this
+<p>After Landon fixed the entry to compile with <code>clang</code> <a href="#cody">Cody</a> noticed this
 does not work at all in modern systems (see below). He fixed this to work and
 then he later fixed the self-test feature.</p>
 <p>The problem that was showing up is that with either optimising or if anything
@@ -3180,7 +3219,7 @@ also show correct output though.</p>
 </div>
 <p><a href="#cody">Cody</a> fixed this so that the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/source/configure">configure</a> script (which is not
 needed but part of the entry) would work with compilers that have by default
-<code>-Werror</code> like clang in macOS.</p>
+<code>-Werror</code> like <code>clang</code> in macOS.</p>
 <p>Cody also added the alt code which does scan for https. Futile, maybe, based on
 how https is set up, in which case just enjoy it for what it was. But there
 might be some command line that will let it work that way or perhaps someone
@@ -3233,7 +3272,7 @@ he doesn’t want to damage anyone else’s brain either. :-)</p>
 <h2 id="toledo"><a href="2005/toledo/index.html">2005/toledo</a></h2>
 <h3 id="source-code-toledo.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/toledo//toledo.c">toledo.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> fixed this to compile with some versions of clang which have an additional
+<p><a href="#cody">Cody</a> fixed this to compile with some versions of <code>clang</code> which have an additional
 defect where <code>main()</code> can only have 0, 2 or 3 args (it was 4). It now calls
 another function that takes 4 args and which is what used to be <code>main()</code>.</p>
 <p>The alternate versions were also fixed.</p>
@@ -3306,15 +3345,15 @@ back for arrow keys in the <a href="https://github.com/ioccc-src/temp-test-ioccc
 <h2 id="sloane"><a href="2006/sloane/index.html">2006/sloane</a></h2>
 <h3 id="source-code-sloane.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/sloane//sloane.c">sloane.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> fixed this entry to work with clang which has a defect with the args to
+<p><a href="#cody">Cody</a> fixed this entry to work with <code>clang</code> which has a defect with the args to
 <code>main()</code>: it requires specific types: <code>int</code> and `char ** for the first and
 latter args.</p>
 <p>Cody also provided the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/sloane/sloane.alt.c">alternate version</a>, which
 allows one to see what is going on in modern systems, and which we recommend one
 use <em>first</em>.</p>
-<p>Curiously, although clang requires the types of args to be strictly correct,
+<p>Curiously, although <code>clang</code> requires the types of args to be strictly correct,
 some versions do allow only one arg. This was done at first because it’s not
-used but Cody discovered that later versions of clang have an additional defect
+used but Cody discovered that later versions of <code>clang</code> have an additional defect
 where it does not allow only one arg so the second arg to <code>main()</code> was added
 back.</p>
 <p>This was an unfortunate problem for the alt code as he has been using Z for alt
@@ -3405,7 +3444,7 @@ We’re not able to test this.</p>
 <h3 id="source-code-borsanyi.c-1">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/borsanyi//borsanyi.c">borsanyi.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a>, out of an abundance of caution, added a second arg to <code>main()</code> as some
-versions of clang complain about not only the type of each arg to <code>main()</code> but
+versions of <code>clang</code> complain about not only the type of each arg to <code>main()</code> but
 the number of args as well.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/borsanyi/try.sh">try.sh</a> script.</p>
 <div id="2011_dlowe">
@@ -3563,7 +3602,7 @@ everything, filtered through less.</p>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/grothe/try.sh">try.sh</a> script.</p>
 <p>Cody also changed <code>argv</code> to be not <code>const char ** but</code>char <strong>, mostly out of an
-abundance of caution in case clang, which already imposes restrictions on the
+abundance of caution in case <code>clang</code>, which already imposes restrictions on the
 types of args to <code>main()</code> including to do with `char </strong>, decides to further
 restrict them.</p>
 <p>Cody also restored the original code from the archive.</p>
@@ -3715,7 +3754,7 @@ Studio. This is done by in the compile line undefining <code>KB</code> (<code>-U
 the source code defining <code>KB</code> to what the author suggested,
 <code>(kb=H(8),kbhit())&amp;&amp;(r[1190]=getch(),H(7))</code>. It need hardly be mentioned that
 this will not link in Unix systems (including macOS).</p>
-<p>Clang required a <code>-Wno-</code> option as well.</p>
+<p><code>Clang</code> required a <code>-Wno-</code> option as well.</p>
 <p>Finally Cody provided the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/cable3/bios.asm">bios.asm</a> that the author
 referred to, found at the <a href="https://github.com/adriancable/8086tiny/tree/master">GitHub repo for the
 entry</a>, and the ‘ready-made
@@ -4117,7 +4156,7 @@ files from compiling properly, trying instead to compile already compiled code.<
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/bellard/try.sh">try.sh</a> script.</p>
 <p>Cody also, out of abundance of caution, added a second arg to <code>main()</code> because
-some versions of clang object to the number of args of <code>main()</code>, saying that it
+some versions of <code>clang</code> object to the number of args of <code>main()</code>, saying that it
 must be 0, 2 or 3. The version this has been observed in does not actually
 object to 1 arg but it is entirely possible that this changes so a second arg
 (that’s not needed and is unused) has been added just in case.</p>
@@ -4311,7 +4350,7 @@ own sha512sum value.</p>
 </div>
 <p><a href="#cody">Cody</a> added explicit linking of libm (<code>-lm</code>) for systems that do not do this
 (Linux does not seem to but macOS does).</p>
-<p>He also fixed the Makefile so that it compiles with clang in Linux.</p>
+<p>He also fixed the Makefile so that it compiles with <code>clang</code> in Linux.</p>
 <p>He also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/dogon/try.sh">try.sh</a> script.</p>
 <p>He also made it possible to easily redefine the memory macro <code>Z</code> at compilation
 time by modifying the Makefile.</p>
@@ -4385,10 +4424,10 @@ file. The rule requires the tool
 <p>Cody also added the <a href="2019/poikola/index.html#alternate-code">alternate code</a>.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/poikola/try.sh">try.sh</a> and
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/poikola/try.alt.sh">try.alt.sh</a> scripts.</p>
-<p>Cody also disabled the optimiser because the author stated that for clang the
-levels [0123s] work okay but with GCC (6) they only said level 0 works,
-suggesting that with some versions of GCC it might not be correct with levels !=
-0 and since 0 works with clang that’s okay. Similarly, the same for C standards
+<p>Cody also disabled the optimiser because the author stated that for <code>clang</code> the
+levels <code>[0123s]</code> work okay but with <code>GCC</code> version 6 they only said level 0 works,
+suggesting that with some versions of <code>GCC</code> it might not be correct with levels !=
+0 and since 0 works with <code>clang</code> that’s okay. Similarly, the same for C standards
 tested: <code>gnu17</code> was not tested but <code>gnu11</code> was so the standard was set to
 <code>gnu11</code>.</p>
 <div id="2019_yang">
@@ -4597,7 +4636,7 @@ know of certain problems or features that matter for instance having to disable
 the optimiser or in one case enabling <code>-g</code>.</p>
 <p>Also, rather than check <code>$(CC)</code> for exact matches of <code>gcc</code> or <code>clang</code> it now is
 that if <code>$(CC)</code> contains <code>gcc</code> or contains <code>clang</code> then the specific actions
-related to the specific compiler will be done (priority is gcc then clang). This
+related to the specific compiler will be done (priority is <code>gcc</code> then <code>clang</code>). This
 is useful because it’s not guaranteed that the compiler names for <code>gcc</code> or
 <code>clang</code> will be exactly that; in macOS for instance it can happen that they are
 in fact different names especially if one installs them from something like
@@ -4661,10 +4700,10 @@ HARD bug fixes</strong> like <a href="thanks-for-help.html#1988_phillipps">1988/
 <a href="thanks-for-help.html#1992_vern">1992/vern</a>,
 <a href="thanks-for-help.html#2001_anonymous">2001/anonymous</a>,
 <a href="thanks-for-help.html#2004_burley">2004/burley</a> and
-<a href="thanks-for-help.html#2005_giljade">2005/giljade</a>, making entries like
+<a href="thanks-for-help.html#2005_giljade">2005/giljade</a>, making all entries such as
 <a href="thanks-for-help.html#1985_sicherman">1985/sicherman</a> and
 <a href="thanks-for-help.html#1986_wall">1986/wall</a> not need <code>-traditional-cpp</code> (all
-<strong>EXTREMELY HARD</strong>), fixing entries to work with clang, some <strong>EXTREMELY HARD</strong>
+<strong>EXTREMELY HARD</strong>), fixing entries to work with <code>clang</code>, some <strong>EXTREMELY HARD</strong>
 like <a href="thanks-for-help.html#1991_dds">1991/dds</a>, or as much as possible
 (<a href="thanks-for-help.html#1989_westley">1989/westley</a>, a true masterpiece that is
 <strong>INCREDIBLY HARD, <em>MUCH MORE SO</em> than any other fix!</strong>), porting entries to
