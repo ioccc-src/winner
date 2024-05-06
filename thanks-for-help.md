@@ -50,14 +50,16 @@ Thus now it is like the original where the first line ends with `"hell\` and
 the second line starts with `o, world!\n"`.
 
 By request, the original code is provided as
-[anonymous.alt.c](%%REPO_URL%%/1984/anonymous/anonymous.alt.c) so that one can look at it and
-the famous tattoo which we also include here:
+[anonymous.alt.c](%%REPO_URL%%/1984/anonymous/anonymous.alt.c) so that one can
+look at it and the famous tattoo which we also include here, together as a
+single image that Cody added (locating the missing tattoo image and putting the
+source code and the tattoo together as an image):
 
 <img src="1984/anonymous/1984-anonymous-tattoo.jpg"
  alt="image of a tattoo of the 1984 anonymous C code"
  width=600 height=401>
 
-...which was done in 2005 by [Thomas
+The tattoo was done in 2005 by [Thomas
 Scovell](https://web.archive.org/web/20070120220721/https://thomasscovell.com/tattoo.php).
 
 
@@ -67,20 +69,21 @@ Scovell](https://web.archive.org/web/20070120220721/https://thomasscovell.com/ta
 </div>
 
 [Cody](#cody) fixed this to not require `-traditional-cpp` which some compilers like
-clang do not support. Fixing `-traditional-cpp` is, as noted later on, very
+`clang` do not support. Fixing `-traditional-cpp` is, as noted later on, very
 complicated, but we encourage you to look at the alternate code (which is the
 original code with a minor modification made by the judges) and the fixed
 code, to see what had to be done.
 
-Clang is also more strict about the type of args in `main()` and this was also a
-problem that Cody fixed, making it work with both clang and gcc.
+`Clang` is also more strict about the type of args in `main()` and this was also a
+problem that Cody fixed, making it work with both `clang` and `gcc`.
 
-These fixes worked fine in macOS but it turned out that in some cases with clang
+These fixes worked fine in macOS but it turned out that in some cases with
+`clang`
 in Linux it did not work so this had to be further fixed which Cody also did. It
-is no longer clear what the problem was as in fedora 38 with clang 16.0.6 the
+is no longer clear what the problem was as in fedora 38 with `clang` 16.0.6; the
 only difference is it causes additional warnings but it seems to work just fine.
 It seems unlikely that a fix was made just for warnings so it is presumed that
-there was another problem so the change is kept in place.
+there was another problem and thus the change is kept in place.
 
 A note about the fix is that the `#define`d macros that were used still exist
 but most are not used; they are left in just to make it look more like the
@@ -99,10 +102,10 @@ be kept in:
 ```
 
 This does mean that there cannot be a second arg to `main()`
-as clang requires that to be a `char **` and the `char` redefined would not
-allow this. Some versions of clang say that `main()` must have either 0, 2 or 3
+as `clang` requires that to be a `char **` and the `char` redefined would not
+allow this. Some versions of `clang` say that `main()` must have either 0, 2 or 3
 args but these versions do not object to 1 arg. However as the `char` macro
-seems more obscure and it is possible that a new version of clang will be even
+seems more obscure and it is possible that a new version of `clang` will be even
 more strict the `int i` parameter in `main()` was moved to be inside `main()`,
 set to non-zero (setting `i` to 0 will not work). This is way `main()` has zero
 args.
@@ -116,11 +119,11 @@ the others are `char **`s. This is why the arg was removed and the call to
 `main()` was not updated beyond what had to be done to fix it for compilers that
 do not support `-traditional-cpp`.
 
-If the ANSI C committee or a new version of clang messes this up (both of which
+If the ANSI C committee or a new version of `clang` messes this up (both of which
 seem possible) it is easy to fix but it is hoped that this won't happen.
 
-Originally [Yusuke](#yusuke) supplied a patch so that this entry would compile with gcc -
-but not clang - or at least some versions.
+Originally [Yusuke](#yusuke) supplied a patch so that this entry would compile with `gcc` -
+but not `clang` - or at least some versions.
 
 To see the difference from start to fixed:
 
@@ -158,7 +161,7 @@ with the original (might need you to press a key though this is not known for
 sure).
 
 Cody also added the [gentab.c](%%REPO_URL%%/1984/mullender/gentab.c) file, fixed to compile
-(and work, though see the [bugs](bugs.html#1984_mullender) entry for 1984/mullender) with modern systems
+(and work, though see [1984/mullender in bugs.html](bugs.html#1984_mullender)) with modern systems
 and so that it would create the proper array (it had unbalanced `}`s), which the
 author noted in their remarks (which Cody also found). As this file uses the old
 header file `a.out.h` that is not available in all modern systems, Cody found a
@@ -205,7 +208,7 @@ returning to the shell. The original code does not have this change.
 </div>
 
 [Cody](#cody), out of abundance of caution, added a second arg to `main()` because some
-versions of clang object to the number of args of `main()`, saying that it must
+versions of `clang` object to the number of args of `main()`, saying that it must
 be 0, 2 or 3. The version this has been observed in does not actually object to
 1 arg but it is entirely possible that this changes so a second arg (that's not
 needed and is unused) has been added just in case.
@@ -232,22 +235,23 @@ effect as using `#define` but this does not work in modern systems so Cody
 changed the `#o` lines to `#define`. Also `unistd.h` had to be `#include`d.
 
 [Yusuke](#yusuke) provided some useful information that amounts to an alternate version
-that Cody added. See the index.html for details.
+that Cody added. See the [index.html](1985/lycklama/index.html) for details.
 
 Cody also provided the [try.alt.sh](%%REPO_URL%%/1985/lycklama/try.alt.sh) script.
 
 
 <div id="1985_shapiro">
 ## [1985/shapiro](1985/lycklama/index.html)
-### Source code: [index.html](%%REPO_URL%%/1985/shapiro/shapiro.c)
+### Source code: [shapiro.c](%%REPO_URL%%/1985/shapiro/shapiro.c)
 </div>
 
-[Cody](#cody) added the alt code which allows one to resize the maze and he also added
-the [try.alt.sh](%%REPO_URL%%/1985/shapiro/try.alt.sh) script that randomly selects sizes
-(five times) and compiles and runs it. After the five runs it prompts you to
-enter a number, in an infinite loop, exiting if any non-digits are in input
-(this includes negative numbers which in the code actually sets it back to 39,
-the default).
+[Cody](#cody) added the [alt code](%%REPO_URL%%/1985/shapiro/shapiro.alt.c)
+which allows one to resize the maze and he also added the
+[try.alt.sh](%%REPO_URL%%/1985/shapiro/try.alt.sh) script that randomly selects
+sizes (five times) and then compiles and runs it. After the five runs it prompts
+you to enter a number, in an infinite loop, exiting if any non-digits are in
+input (this includes negative numbers which in the code actually sets it back to
+39, the default).
 
 
 <div id="1985_sicherman">
@@ -293,11 +297,11 @@ were actually not what they appear: the only arg that existed in `main()` was
 like the `C=" ..`' part in `subr()` would be better to be upper case as it talks
 about the language. Also in the [alternate
 version](%%REPO_URL%%/1985/sicherman/sicherman.c) (the first being the
-original code) which is in case a new version of clang ever objects to only one
+original code) which is in case a new version of `clang` ever objects to only one
 arg in `main()` (which is not out of the realm of possibility), `main()` can
 have `C` as `argc` to `main()` so it would read like it once did: `C manual`
 albeit with a `,` separating the two. The [alternate
-version](%%REPO_URL%%/1985/sicherman/sicherman.c) is compiled
+version](%%REPO_URL%%/1985/sicherman/sicherman.c) can be compiled
 in case the first does not. Originally the macros were kept the same and the
 `C` in `subr()` was `c`. It feels better (in some ways) to make it so that the
 `C` for the language is upper case though, and since it actually translated to
@@ -351,20 +355,15 @@ case as `c`.
     ' '&'\t'b'\n')+1),1),&_,1))_=c-v+subr(&v));
 ```
 
-    Note how numerous of the macros (though two changed in case) can still be
+    Note how several of the macros (though two changed in case) can still be
     used but some cannot be. Can you figure out why? Why too is it that the
     `subr()` function is called but it appears that some of the code in that
     function is also in `main()` in the `while` condition? What happens if you
     remove it from `main()`? What happens if you remove it from `subr()` or
     don't even bother calling `subr()`?
 
-Additional code was added in case the fix cannot be compiled by some compilers
-should they object to `main()` having only one arg. This version will
-automatically be compiled if the entry fails to compile for some reason but one
-can compile it manually as `make alt` in which case it'll be compiled as
-`sicherman.alt` (if it's done because [sicherman.c](%%REPO_URL%%/1985/sicherman/sicherman.c)
-fails to compile it will be built as `sicherman` as part of the `sicherman`
-rule).
+[Additional code](%%REPO_URL%%/1985/sicherman/sicherman.alt.c) was added in case the fix cannot be compiled by some compilers
+should they object to `main()` having only one arg.
 
 Cody also added the [try.sh](%%REPO_URL%%/1985/sicherman/try.sh) and
 [try.alt.sh](%%REPO_URL%%/1985/sicherman/try.alt.sh) scripts.
@@ -397,7 +396,9 @@ Cody also added the [try.sh](%%REPO_URL%%/1985/sicherman/try.sh) and
 ### Source code: [hague.c](%%REPO_URL%%/1986/hague/hague.c)
 </div>
 
-[Cody](#cody) made this use `fgets()`.
+[Cody](#cody) made this use `fgets()`. See [FAQ 4.1  - Why were some calls to
+the libc function gets&#x28;3&#x29; changed to use
+fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
 
 Cody also added the [try.sh](%%REPO_URL%%/1986/hague/try.sh) script which also feeds to the
 program the added `input.txt` file.
@@ -408,12 +409,13 @@ program the added `input.txt` file.
 ### Source code: [holloway.c](%%REPO_URL%%/1986/holloway/holloway.c)
 </div>
 
-[Cody](#cody) fixed this to compile and work with clang (it already worked with gcc).
-The problem was that clang is more strict about the type of second arg to
-`main()`. However simply changing it to a `char ** and updating the `*s` to **s`
+[Cody](#cody) fixed this to compile and work with `clang` (it already worked with `gcc`).
+The problem was that `clang` is more strict about the types of args to
+`main()`. However simply changing the second arg (that `clang` insists on being
+a `char **`) to a `char **` and updating the `*s` to `**s`
 caused a segfault. By adding a new variable, `char *t`, initialising it to `s`
-and then using `t` instead of `s` it compiles and runs successfully under clang
-and gcc.
+and then using `t` instead of `s` it compiles and runs successfully under
+`clang` and `gcc`.
 
 
 <div id="1986_marshall">
@@ -421,31 +423,35 @@ and gcc.
 ### Source code: [marshall.c](%%REPO_URL%%/1986/marshall/marshall.c)
 </div>
 
-[Cody](#cody) got this to compile and work with clang and gcc. He noted that he tried to
+[Cody](#cody) got this to compile and work with `clang` and `gcc`. He noted that he tried to
 keep the ASCII art as close to the original as possible. The line lengths are
 the same but some spaces had to be changed to non-spaces.
 
 This fix was very interesting and quite amusing, showing up problems with two
-different compilers. This is a brief summary but much more is explained in the
-[compilers.html](1986/marshall/compilers.html) file, giving which compilers had
-which problems in which systems: the optimiser being enabled in one compiler let
-it work but broke it in the other; and disabling it would let it work in the one
-that didn't work but suddenly the one that worked wouldn't work. And by 'not
-working' it did not work in more than one way and for different platforms it had
-other problems as well.
+different compilers (different problems with different compilers in different
+systems and also depending on optimisation with those compilers in those
+systems).
 
-This problem was only after getting clang to compile, of course. It did not
-compile it because it is more strict about the second and third args to `main()`
-and the third arg was an `int`.
+We give more details in the [compilers.html](1986/marshall/compilers.html) file,
+giving which compilers had which problems in which systems: the optimiser being
+enabled in one compiler let it work but broke it in the other; and disabling it
+would let it work in the one that didn't work but suddenly the one that worked
+wouldn't work. And by 'not working' it did not work in more than one way and for
+different platforms it had other problems as well.
+
+This problem was only after getting `clang` to compile, of course. It did not
+compile it because it is more strict about the arg types of `main()` and in this case
+particularly the second and third args to `main()`, which must be a `char **`.
+As the third arg was an `int` the code had to be modified.
 
 We encourage you to read the [compilers.html](1986/marshall/compilers.html) file to
 see how odd this problem was and what Cody did to fix it, if nothing else but
 for entertainment!
 
-Also, after all warnings but one that could not be silenced were disabled,
-Cody changed the alt code (which was not the same as the original - see above
-for details or try `make diff_orig_alt` in the directory) slightly so that it
-was possible to silence it. In particular:
+Also, after all warnings but one that could not be silenced were disabled, Cody
+changed the [alt code](%%REPO_URL%%/1986/marshall/marshall.alt.c) (which was not
+the same as the original - see above for details or try `make diff_orig_alt` in
+the directory) slightly so that it was possible to silence it. In particular:
 
 ``` <!---c-->
       P  (    a  )   char a   ;  {    a  ;   while(    a  >      "  B   "
@@ -460,7 +466,7 @@ which gave:
     1 warning generated.
 ```
 
-was changed to:
+This was changed to:
 
 ``` <!---c-->
       P  (    a  )   char a   ;  {    a  ;   while((char *)a  >   "  B   "
@@ -494,9 +500,10 @@ are produced.
 ### Source code: [stein.c](%%REPO_URL%%/1986/stein/stein.c)
 </div>
 
-[Cody](#cody) restored the original entry which was a single line. The code
-being longer (in 1986 a one liner could be longer) was split to three lines to
-avoid problems with news and mail but as it was the 'Best one liner' it is now
+[Cody](#cody) restored the [original
+entry](%%REPO_URL%%/1986/stein/stein.orig.c) which was a single line. The code
+being longer (in 1986 a one liner could be longer) had been split to three lines to
+avoid problems with news and mail but as it is the 'Best one liner' it is now
 one line.
 
 Cody also added the [stein.sh](%%REPO_URL%%/1986/stein/stein.sh) script which runs the two
@@ -510,12 +517,12 @@ commands that we suggest in order to get it to show clean output.
 
 [Cody](#cody) fixed this so that it does not require `-traditional-cpp`. This took a fair
 bit of tinkering as this entry *very twisted*; fixing `-traditional-cpp` is, as
-noted earlier, very complicated, but we encourage you to look at [original
-code](%%REPO_URL%%/1986/wall/wall.orig.c) to see how different C was in 1986, as well as
-below.
+noted later on, very complicated, but we encourage you to look at [original
+code](%%REPO_URL%%/1986/wall/wall.orig.c), as well as below, to see how
+different C was in 1986.
 
 [Yusuke](#yusuke) originally patched this to use `strdup()` on two strings and this let it
-work with gcc but it still required `-traditional-cpp`.
+work with `gcc` - but it still required `-traditional-cpp`.
 
 If you'd like to see the difference between the version that requires
 `-traditional-cpp` and the fixed version, try:
@@ -633,8 +640,9 @@ There might have been other changes as well.
 ### Source code: [heckbert.c](%%REPO_URL%%/1987/heckbert/heckbert.c)
 </div>
 
-[Cody](#cody) made this look more like the original entry by restoring the `#define` of
-`define`. It's not used but it now looks closer to the original.
+[Cody](#cody) made this look more like the [original
+entry](%%REPO_URL%%/1987/heckbert/heckbert.orig.c) by restoring the `#define _
+define`. It's not used but it now looks closer to the original.
 
 Cody also added the [try.sh](%%REPO_URL%%/1987/heckbert/try.sh) script which shows how the
 program works but also how the folded code can recreate the original.
@@ -650,7 +658,7 @@ that for System V we had to do this) Cody added to the Makefile
 ### Source code: [hines.c](%%REPO_URL%%/1987/hines/hines.c)
 </div>
 
-[Cody](#cody) added the [try.sh](%%REPO_URL%%/1987/hines/try.sh) script and the C file
+[Cody](#cody) added the [try.sh](%%REPO_URL%%/1987/hines/try.sh) script, the C file
 [goto.c](%%REPO_URL%%/1987/hines/goto.c) and the text file [goto.txt](1987/hines/goto.txt)
 for demonstration purposes. Notice that the program is case sensitive which
 running the program on the text file demonstrates.
@@ -662,7 +670,7 @@ running the program on the text file demonstrates.
 </div>
 
 [Cody](#cody) added back the documented checks for invalid input which no longer worked
-and instead resulted in either accepting the level, whether or not it was a
+and instead resulted in accepting the level, whether or not it was a
 number or out of range (see below on range). For the move it entered an infinite
 loop, prompting the player with `"You:"` but not letting the player input
 anything so that the screen was flooded and the game could not be played.
@@ -679,8 +687,8 @@ overkill; there's no good reason for it here: it was just arbitrarily selected).
 For the level if `atoi(A)>10||<0` (see next part) or `!isdigit(*A)` it goes back
 and prompts again. The level is checked for `>=0||<=10`, perhaps incorrectly or
 perhaps not, because in the code that variable is checked for `<10` and if that
-is the case it is incremented by 2. I do not know the rules of the game and
-neither do I know what the author had in mind so I chosen 10 as the maximum.
+is the case it is incremented by 2. Cody does not know the rules of the game and
+neither does he know what the author had in mind so he chosen 10 as the maximum.
 
 As for the move the `do..while` loop works properly now that it does it in two
 steps (`scanf("%2s", A); m=atoi(A);`) so there's no need to check the value
@@ -709,7 +717,10 @@ size constraints of the contest).
 ### Source code: [wall.c](%%REPO_URL%%/1987/wall/wall.c)
 </div>
 
-[Cody](#cody) made this use `fgets(3)`.
+[Cody](#cody) made this use `fgets(3)`. See [FAQ 4.1  - Why were some calls to
+the libc function gets&#x28;3&#x29; changed to use
+fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
+
 
 Cody also added the [try.sh](%%REPO_URL%%/1987/wall/try.sh) script.
 
@@ -720,16 +731,18 @@ Cody also added the [try.sh](%%REPO_URL%%/1987/wall/try.sh) script.
 </div>
 
 [Cody](#cody) fixed this for modern systems. The problem was `'assignment to cast is
-illegal, lvalue casts are not supported'`. For the original file see the
-index.html file. Unfortunately this ruins some symmetry. To try and resolve this
-as much as possible at first code was commented out but later on the commented
-out code was removed and another part changed so that, although it has some code
-no longer there, it has a closer match in symmetry and since the code was
-commented out it's probably not a big deal to have it removed instead as it does
-look more symmetrical now.
+illegal, lvalue casts are not supported'`. For details on the [original
+code](%%REPO_URL%%/1987/westley/westley.orig.c) see the
+[index.html](1987/westley/index.html) file. Unfortunately this fix ruins some symmetry.
+
+To try and resolve this as much as possible at first code was commented out but
+later on the commented out code was removed and another part changed so that,
+although it has some code no longer there, it has a closer match in symmetry and
+since the code was commented out it's probably not a big deal to have it removed
+instead as it does look more symmetrical now.
 
 Cody also added to the Makefile `-include stdio.h` in the nowadays very
-unlikely(?) but nevertheless suggested case that `putchar()` is not available.
+unlikely(?) but nevertheless suggested case that `putchar(3)` is not available.
 
 
 <div id="1988">
@@ -845,14 +858,14 @@ publication, in the remarks, to help understand the entry, and for fun.
 ### Source code: [phillipps.c](%%REPO_URL%%/1988/phillipps/phillipps.c)
 </div>
 
-[Cody](#cody) fixed this for modern systems. It did not compile with clang because it
+[Cody](#cody) fixed this for modern systems. It did not compile with `clang` because it
 requires the second and third args of `main()` to be `char ** but even before
-that with gcc it printed garbage and then crashed.
+that with `gcc` it printed garbage and then crashed.
 
-After fixing it for clang by changing the very `main()` (in fact it called
+After fixing it for `clang` by changing the very `main()` (in fact it called
 itself up to 12 times!) to call the new function `pain()` (chosen because it's a
-pain that clang requires these args to be `char ** :-), which is just as
-recursive, with the correct args it now works with both gcc and clang.
+pain that `clang` requires these args to be `char ** :-), which is just as
+recursive, with the correct args it now works with both `gcc` and `clang`.
 
 Later Cody improved the fix to make it look a bit more like the original, using
 K&R style functions, and trying to match the format as best as possible of what
@@ -867,7 +880,10 @@ to itself and `pain()` does now.
 ### Source code: [reddy.c](%%REPO_URL%%/1988/reddy/reddy.c)
 </div>
 
-[Cody](#cody) made this use `fgets(3)`.
+[Cody](#cody) made this use `fgets(3)`. See [FAQ 4.1  - Why were some calls to
+the libc function gets&#x28;3&#x29; changed to use
+fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
+
 
 
 <div id="1988_spinellis">
@@ -876,11 +892,11 @@ to itself and `pain()` does now.
 </div>
 
 [Cody](#cody) provided an [alternate version](%%REPO_URL%%/1988/spinellis/spinellis.alt.c) so that
-this will work with compilers like clang. An alternate version had to be
+this will work with compilers like `clang`. An alternate version had to be
 provided because not doing so would be tampering with the entry too much. It
 would work but it would not show the same creativity and cleverness.
 
-The original entry exploits a fun mis-feature that works with gcc but not clang.
+The original entry exploits a fun mis-feature that works with `gcc` but not `clang`.
 This resulted in a change of rules which is another reason to not modify the
 original. See the index.html file for details on the alternate code.
 
@@ -1001,8 +1017,8 @@ Cody also fixed the Makefile where typing `make everything` or `make alt` would
 result in:
 
 ```
-    clang: error: no such file or directory: 'data'
-    clang: error: no input files
+    `clang`: error: no such file or directory: 'data'
+    `clang`: error: no input files
     make: *** [Makefile:143: alt] Error 1
 
     shell returned 2
@@ -1072,10 +1088,10 @@ Cody also added the [try.sh](%%REPO_URL%%/1989/robison/try.sh) script.
 ### Source code: [tromp.c](%%REPO_URL%%/1989/tromp/tromp.c)
 </div>
 
-[Cody](#cody) and [Yusuke](#yusuke) fixed this entry: Yusuke fixed this to compile with gcc and Cody
-fixed it for clang and made some other fixes as well.
+[Cody](#cody) and [Yusuke](#yusuke) fixed this entry: Yusuke fixed this to compile with `gcc` and Cody
+fixed it for `clang` and made some other fixes as well.
 
-To get it to work with clang the variable `a` had to not be the third argument
+To get it to work with `clang` the variable `a` had to not be the third argument
 to `main()` but instead be a variable in `main()`.
 
 Cody also fixed a segfault and made it so the that the high score file would
@@ -1087,7 +1103,7 @@ Another problem Cody fixed was that the terminal was left in an insane state whe
 could not type '`u`' and echo was completely disabled.
 
 Cody later on fixed the alt version, provided by the author, so that it would
-compile with clang, not abort (with an alarm), would have the tetriminos fall,
+compile with `clang`, not abort (with an alarm), would have the tetriminos fall,
 it would write to the high score file (the command to `popen(3)` was incorrect
 here too but as can be seen it differs from the submitted version), could use
 `stty` properly (and thus turn on echo again - it did not work because it was in
@@ -1112,19 +1128,19 @@ not his only reason :-) )
 ### Source code: [westley.c](%%REPO_URL%%/1989/westley/westley.c)
 </div>
 
-[Cody](#cody) fixed this for clang, except that two versions generated by the program
-cannot be compiled by clang due to inherent defects in the compiler and how the
-entry works. This is an **incredibly hard** one to fix for clang whilst still
-being compilable with gcc (and gcc can compile every generated version with the
-fix) and even if one fixes it to compile with clang it does not mean that any
-other version will compile! It is, however, possible to get clang to work with
+[Cody](#cody) fixed this for `clang`, except that two versions generated by the program
+cannot be compiled by `clang` due to inherent defects in the compiler and how the
+entry works. This is an **incredibly hard** one to fix for `clang` whilst still
+being compilable with `gcc` (and `gcc` can compile every generated version with the
+fix) and even if one fixes it to compile with `clang` it does not mean that any
+other version will compile! It is, however, possible to get `clang` to work with
 two versions generated, `ver0` and `ver1`, though `ver0` is actually just the
 main entry (but still generated by the program itself).
 
 Unfortunately due to the way this entry works if it is even possible to get all
-versions to compile with clang it will take heavy modifications to get all
-versions to compile with clang. Cody almost got it and knows how it functions
-but even getting it just about there caused compilation errors in gcc so it
+versions to compile with `clang` it will take heavy modifications to get all
+versions to compile with `clang`. Cody almost got it and knows how it functions
+but even getting it just about there caused compilation errors in `gcc` so it
 might just not be possible.
 
 The way it was fixed might be hard to see and describe but this is an attempt.
@@ -1136,7 +1152,7 @@ is `pain()`).
 
 The args of `main()` had to be set to the right type but only three args, **not
 four**, even though the original program has four args. This is because not all
-versions of clang support four args and that is one of the issues with version 2
+versions of `clang` support four args and that is one of the issues with version 2
 and 3 as it generates `main()` to have four args and the wrong type, all `int`s.
 
 In the call to the new function, `pain()`, from `main()`, one of the `char **`s
@@ -1159,21 +1175,21 @@ ROT13 and reversed output of the code, it is the **comments that create the
 names and the rest of the code!**: sometimes it is the word backwards, other
 times it is the ROT13 of it and other times it is both, both for comments and
 otherwise. Trying to change comments can be very difficult though it was done
-when clang could almost compile every version if not actually compile all
+when `clang` could almost compile every version if not actually compile all
 versions. Unfortunately when this was done it caused other systems to have
 additional compilation errors so it seems highly unlikely that version 2 and 3
-can work for clang (versions 0 and 1 can).
+can work for `clang` (versions 0 and 1 can).
 
 Despite the risks of changing names this was done and indeed by necessity.
 Comments might have been changed but it is no longer known if that happened only
-in the working on version 2 and 3 or if in the fix for clang as well as version
+in the working on version 2 and 3 or if in the fix for `clang` as well as version
 0 and 1.
 
 To make use of this several scripts were added by Cody.
 
 The [compile.sh](%%REPO_URL%%/1989/westley/compile.sh) script that removes the generated
 code, rebuilds the program and regenerates the other code and then compiles it
-will work for compilers like gcc and one can then use the
+will work for compilers like `gcc` and one can then use the
 [try.sh](%%REPO_URL%%/1989/westley/try.sh) script to see example input and output.
 
 The `compile.sh` script allows one to specify the compiler with the `CC`
@@ -1216,7 +1232,10 @@ judges was retained.
 [Yusuke](#yusuke) got this to work in modern systems (it previously resulted in a bus
 error).
 
-[Cody](#cody) made this use `fgets(3)`.
+[Cody](#cody) made this use `fgets(3)`. See [FAQ 4.1  - Why were some calls to
+the libc function gets&#x28;3&#x29; changed to use
+fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
+
 
 
 <div id="1990_dds">
@@ -1236,7 +1255,10 @@ Cody fixed another compiler error by removing the erroneous prototype to
 `fopen()`.  Cody also changed a `char *` used for file I/O to be a proper `FILE
 *` and fixed a typo in [LANDER.BAS](%%REPO_URL%%/1990/dds/LANDER.BAS).
 
-Cody also made this use `fgets(3)`.
+Cody also made this use `fgets(3)`. See [FAQ 4.1  - Why were some calls to
+the libc function gets&#x28;3&#x29; changed to use
+fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
+
 
 
 <div id="1990_dg">
@@ -1318,7 +1340,10 @@ function was used in a binary expression so this wouldn't even compile.
 Cody also changed the code to use `fgets()` instead of `gets()` so one would not get
 a warning about the use of `gets(3)` at linking time or execution, the latter of
 which was causing confusing output due to the warning being interspersed with
-the program's interactive output.
+the program's interactive output. See [FAQ 4.1  - Why were some calls to
+the libc function gets&#x28;3&#x29; changed to use
+fgets&#x28;3&#x29;?](faq.html#faq4_1) for more details.
+
 
 Additionally, Cody fixed the shortened version provided by the author in the
 same way as the original entry, first the compile fix and then later on making
@@ -1354,13 +1379,16 @@ BTW: why can't the fix:
 
 be changed to just test the value of `A` when `a` is argv and `A` is argc?
 
-Cody also changed the code to use `fgets(3)`.
+Cody also changed the code to use `fgets(3)`. See [FAQ 4.1  - Why were some calls to
+the libc function gets&#x28;3&#x29; changed to use
+fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
+
 
 Since this program is so incredible the extra fixes were deemed worth having and
 this is why it was done.
 
 Cody later disabled a warning in the Makefile that proved to be a problem only
-with clang in Linux but which was defaulting to an error. This way was the
+with `clang` in Linux but which was defaulting to an error. This way was the
 simplest way to deal with the problem in question due to the way the entry
 works.
 
@@ -1486,14 +1514,18 @@ declared first.
 </div>
 
 [Cody](#cody) fixed a segfault that prevented this entry from working in any condition
-and he also made it work for clang. He also added checks for NULL `FILE *`s.
+and he also made it work for `clang`. He also added checks for NULL `FILE *`s.
 Furthermore he changed it so that the C from the BASIC uses `fgets()`, not
-`gets()`. For the magic of clang and `fgets()` see below.
+`gets()`. See [FAQ 4.1  - Why were some calls to
+the libc function gets&#x28;3&#x29; changed to use
+fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
 
-Clang (at least in some systems?) defaults to having `-Werror` and the code that
+For the magic of `clang` and `fgets()` see below.
+
+`Clang` (at least in some systems?) defaults to having `-Werror` and the code that
 the entry generates had some warnings that were causing compilation to fail if
-`cc` is clang as it just ran `cc a.c`. It ran it by what was once `system(q-6);`
-but if `cc` is clang like in macOS this is not enough.
+`cc` is `clang` as it just ran `cc a.c`. It ran it by what was once `system(q-6);`
+but if `cc` is `clang` like in macOS this is not enough.
 
 (Cody said he stupidly did the below manually until he thought to write a simple
 program to do the conversions which he used for `gets()` to `fgets()` and for
@@ -1567,11 +1599,11 @@ which had to be added after:
     efdmbsbujpo!
 ```
 
-which is the end of the warning disabled for clang as described above.
+which is the end of the warning disabled for `clang` as described above.
 
 But now the `system(q-69);` had to be changed to `system(q-86);`.
 
-Then, later on, Cody discovered that in some systems, clang triggers even more
+Then, later on, Cody discovered that in some systems, `clang` triggers even more
 warnings so this had to be corrected too so the string was updated again and
 the `system(q-86)` had to be changed to `system(q-104)`.
 
@@ -1595,9 +1627,9 @@ Thus in full the string became:
 and it now is `system(q-87);`.
 
 It is hoped that this is the last time the string has to be updated to work with
-all versions of clang but if not the above is how it works.
+all versions of `clang` but if not the above is how it works.
 
-With these changes in place it will compile and work with both gcc and clang and
+With these changes in place it will compile and work with both `gcc` and `clang` and
 the C code generated will use `fgets(3)`, not `gets(3)`, therefore removing the
 annoying warnings. Note that the array passed to `fgets(3)` is an int but that
 was the same for `gets()` and is not necessary to update to a `char[]`.
@@ -1729,6 +1761,9 @@ Cody also restored a slightly more obscure line of code that had been changed:
 though it's questionable how much more (if at all) obscure that is :-)
 
 Cody also changed the location that it used `gets()` to be `fgets(3)`.
+See [FAQ 4.1  - Why were some calls to
+the libc function gets&#x28;3&#x29; changed to use
+fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
 This was complicated because of how the other source files are generated (as
 above); simply changing the code could cause invalid output in the program which
 made other files fail to compile (for this example specifically, see below).
@@ -1890,10 +1925,10 @@ line lengths match the original code, at least as best as possible (if not
 perfectly), including start and end columns, often (if not all) with the same
 start and end character.
 
-Cody made `main()` have two args, not one, as some versions of clang have a
+Cody made `main()` have two args, not one, as some versions of `clang` have a
 defect with the number of args to `main()` though when it comes to 1 arg it is
 only in an error message if say 4 args are used. This is out of an abundance of
-caution as it's quite possible that clang or the ANSI C committee end up further
+caution as it's quite possible that `clang` or the ANSI C committee end up further
 changing this.
 
 Yusuke also noted that there is a bug in the program where right after starting
@@ -1905,15 +1940,18 @@ it moves towards the right but if you click the mouse it goes back.
 ### Source code: [lush.c](%%REPO_URL%%/1992/lush/lush.c)
 </div>
 
-[Yusuke](#yusuke) supplied a patch which makes this work with gcc. Due to how it works (see
-Judges' remarks in the index.html file) this will not work with clang.
+[Yusuke](#yusuke) supplied a patch which makes this work with `gcc`. Due to how it works (see
+Judges' remarks in the index.html file) this will not work with `clang`.
 
 [Cody](#cody) also provided the [lush.sh](%%REPO_URL%%/1992/lush/lush.sh) script to
 demonstrate it as using make was problematic.
 
-Cody made it use `fgets()` instead of `gets()`.
+Cody made it use `fgets()` instead of `gets()`. See [FAQ 4.1  - Why were some calls to
+the libc function gets&#x29;3&#x28; changed to use
+fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
 
-NOTE: this entry cannot work with clang due to different compiler messages (it
+
+NOTE: this entry cannot work with `clang` due to different compiler messages (it
 will compile fine but it won't work). See [bugs.html](bugs.html) for details.
 
 
@@ -1967,15 +2005,15 @@ it used to be.
 ### Source code: [westley.c](%%REPO_URL%%/1992/westley/westley.c)
 </div>
 
-[Cody](#cody) fixed this to work for clang by changing the third and fourth arg of
-`main()` to be `char ** inside `main()`; clang requires args 2 - 4 to be `char
+[Cody](#cody) fixed this to work for `clang` by changing the third and fourth arg of
+`main()` to be `char ** inside `main()`; `clang` requires args 2 - 4 to be `char
 ** and some versions do not even allow a fourth arg.
 
 He also added the alternate version that the author gave in the remarks that is
-specifically for the USA rather than the world. This had to be fixed for clang
+specifically for the USA rather than the world. This had to be fixed for `clang`
 as well to make the args of `main()` be the correct type and by moving the body
 of main() to another function, `pain()`, which does the work since not all
-versions of clang support four args to `main()`.
+versions of `clang` support four args to `main()`.
 
 Cody also removed the restriction that one has to have a terminal that wraps at
 80 columns so that as long as the terminal's columns (try `echo $COLUMNS`) is >=
@@ -2089,11 +2127,11 @@ files for functions.
 
 [Cody](#cody) added an [alternate
 version](1993/lmfjyh/index.html#alternate-code) which does what the program did
-with gcc < 2.3.3. See the index.html file for details and for why this was made
+with `gcc` < 2.3.3. See the index.html file for details and for why this was made
 the alternate version, not the actual entry.
 
 Cody also made the Makefile delete the very unsafe filename that is compiled (or
-would be compiled if gcc < 2.3.3) whether or not compilation succeeds (which is
+would be compiled if `gcc` < 2.3.3) whether or not compilation succeeds (which is
 highly unlikely).
 
 
@@ -2139,7 +2177,10 @@ compile time. See the index.html for details.
 ### Source code: [schnitzi.c](%%REPO_URL%%/1993/schnitzi/schnitzi.c)
 </div>
 
-[Cody](#cody) made this use `fgets(3)` not `gets(3)`.
+[Cody](#cody) made this use `fgets(3)` not `gets(3)`. See [FAQ 4.1  - Why were some calls to
+the libc function gets&#x28;3&#x29; changed to use
+fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
+
 
 
 <div id="1993_vanb">
@@ -2147,7 +2188,7 @@ compile time. See the index.html for details.
 ### Source code: [vanb.c](%%REPO_URL%%/1993/vanb/vanb.c)
 </div>
 
-[Cody](#cody) fixed this to work with clang. The problem was that the third arg to main()
+[Cody](#cody) fixed this to work with `clang`. The problem was that the third arg to main()
 was not a `char **. Instead `O5()` (which was `main()` via `-DO5=main`) is now
 its own function which main() calls with the right parameters.
 
@@ -2168,7 +2209,7 @@ Cody also added the alt code, provided by the author, which is:
     notes.
 ```
 
-but fixed to work with clang as well.
+but fixed to work with `clang` as well.
 
 NOTE: the `N1` and `N2` are provided as notes in the index.html file describing
 this code. Other code is also described there.
@@ -2258,11 +2299,16 @@ entries that actually did not work because of missing or incorrect prototypes).
 was that `srand()` returns `void` but it was used in a `||` expression. Thus the
 comma operator was needed.
 
-Cody also fixed it for clang under Linux which objected to incompatible pointer
+Cody also fixed it for `clang` under Linux which objected to incompatible pointer
 type (because `time(2)` takes a `time_t *` which in some systems is a `long *`
 but what was being passed to it is an `int`).
 
-Cody also changed the entry to use `fgets(3)` instead of `gets(3)`. This one has
+Cody also changed the entry to use `fgets(3)` instead of `gets(3)`.
+(See [FAQ 4.1  - Why were some calls to
+the libc function gets&#x28;3&#x29; changed to use
+fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.)
+
+This one has
 a minor annoyance in that it now prints a newline after the output but this
 seems like a worthy compromise for preventing the interspersed output in macOS
 and at the same time it's safer and allows for parsing file with longer lines.
@@ -2337,7 +2383,11 @@ pairs for the original entry and the alt code. These scripts are
 each mode allowed with two sizes, 128 and 256, allowing one to quit or skip each
 (given that there are a lot of invocations this seemed like a good idea).
 
-Cody also made this use `fgets(3)` instead of `gets(3)`. In this case the newline had
+Cody also made this use `fgets(3)` instead of `gets(3)`.
+See [FAQ 4.1  - Why were some calls to
+the libc function gets&#x29;3&#x28; changed to use
+fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
+In this case the newline had
 to be terminated but it was a pretty straightforward fix. `gets()` was defined
 to use `fgets()` and the inclusion of `stdio.h` had to be added but to make it
 more like the original entry this was done in the Makefile. The alt code was
@@ -2394,8 +2444,8 @@ particular to make it easier to see the program do what it does in systems that
 are too fast ... if there is such a thing anyway :-) ). See the index.html for
 details on this.
 
-Out of an abundance of caution with clang, Cody also added a second arg to
-`main()` as some versions of clang whine about the number of args on top of the
+Out of an abundance of caution with `clang`, Cody also added a second arg to
+`main()` as some versions of `clang` whine about the number of args on top of the
 type of args. In particular some versions supposedly only allow 0, 2 or 3 args.
 It actually appears to allow 1 but if you specify 4 it says 0, 2 or 3 and it is
 an error but it's entirely possible that they will eventually make the defect
@@ -2462,9 +2512,9 @@ by the author, putting it in [spoiler1.html](1995/leo/spoiler1.html).
 ### Source code: [makarios.c](%%REPO_URL%%/1995/makarios/makarios.c)
 </div>
 
-[Cody](#cody) fixed this so that it will compile with versions of clang that has a defect
+[Cody](#cody) fixed this so that it will compile with versions of `clang` that has a defect
 which only allows `main()` to have 0, 2 or 3 args. This is done by a new
-function (`pain()` as it's annoying that clang is this way :-) ) that `main()`
+function (`pain()` as it's annoying that `clang` is this way :-) ) that `main()`
 calls which has the four args.
 
 
@@ -2527,7 +2577,7 @@ applied.
 ### Source code: [dalbec.c](%%REPO_URL%%/1996/dalbec/dalbec.c)
 </div>
 
-[Cody](#cody) proposed a fix for this to compile with clang and Landon implemented it
+[Cody](#cody) proposed a fix for this to compile with `clang` and Landon implemented it
 after some discussion (though Cody changed the function name). The reason Cody
 did not do it is because he thought it was the wrong output but as it happens
 the try section below was worded a bit confusingly. He looked at [Yusuke](#yusuke)'s
@@ -2609,7 +2659,7 @@ NOTE: if there is no X server running this program will still crash.
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1996/schweikh1/try.sh) script.
 
-The author stated that `-I/usr/include` is needed by gcc in Solaris because
+The author stated that `-I/usr/include` is needed by `gcc` in Solaris because
 `errno.h` has two identical extern declarations of `errno`. That leads to an
 error due to the redefinition of `main` but the `-I` option makes sure the
 working `/usr/include/rrno.h` is found first, which shouldn't cause any problems
@@ -2692,7 +2742,7 @@ you can configure them all in both builds it shouldn't matter.
 </div>
 
 [Cody](#cody), out of an abundance of caution, added a second arg to `main()` as some
-versions of clang whine about the number of args on top of what type they are
+versions of `clang` whine about the number of args on top of what type they are
 In particular some versions claim that they only allow 0, 2 or 3 args. It
 appears that they do allow 1 but for instance 4 is not allowed. However as it's
 quite possible they will 'fix' this defect it would be better to have this not
@@ -2787,13 +2837,13 @@ processed completely. The intermediate steps can now be performed to see how it
 expands but it can still compile and be used.
 
 Cody also added a second arg to `main()` out of an abundance of caution as some
-versions of clang whine about the number of args to `main()`. These versions
+versions of `clang` whine about the number of args to `main()`. These versions
 claim that only 0, 2 or 3 are allowed but it does allow 1 anyway. It is quite
 possible though that this will change so it is fixed in case this happens. As it
 is mostly just through the C pre-processor Cody added a new macro to make the
 code look like the original with just an extra arg.
 
-In some versions of clang `-Wno-int-conversion` had to be added to the
+In some versions of `clang` `-Wno-int-conversion` had to be added to the
 `CSILENCE` variable of the Makefile.
 
 Cody also added the [try.sh](%%REPO_URL%%/1998/fanf/try.sh) script to show the output of some
@@ -2894,7 +2944,7 @@ in the file [charcount.pl](%%REPO_URL%%/1998/schweikh1/charcount.pl).
 ### Source code: [schweikh2.c](%%REPO_URL%%/1998/schweikh2/schweikh2.c)
 </div>
 
-[Cody](#cody) fixed the code to not trigger an internal compiler error in gcc:
+[Cody](#cody) fixed the code to not trigger an internal compiler error in `gcc`:
 
 ```
     :10:16: warning: type defaults to 'int' in declaration of 'zero' [-Wimplicit-int]
@@ -2908,7 +2958,7 @@ interesting historical explanation and further details and fun, see the
 [historical remarks](1998/schweikh2/index.html#historical-remarks) in the
 index.html.
 
-Cody also added an `int` after `register` in `main()` in case clang decides to
+Cody also added an `int` after `register` in `main()` in case `clang` decides to
 have a problem with that in the future which is not entirely out of the
 question.
 
@@ -2925,7 +2975,7 @@ to reconfigure the size constant in the rare case that the author wrote about
 occurs.
 
 Cody made `main()` have two args out of an abundance of caution as some versions
-of clang say that `main()` can only have 0, 2 or 3 args. These versions accept 1
+of `clang` say that `main()` can only have 0, 2 or 3 args. These versions accept 1
 arg but it is entirely possible that they fix this so this should prevent it
 from breaking if that happens.
 
@@ -2981,8 +3031,11 @@ commands that we recommended.
 ### Source code: [anderson.c](%%REPO_URL%%/2000/anderson//anderson.c)
 </div>
 
-[Cody](#cody) changed this entry to use `fgets(3)` instead of `gets(3)`. This involved
-changing the `K` arg to `gets(3)` to `&K` in `fgets(3)`.
+[Cody](#cody) changed this entry to use `fgets(3)` instead of `gets(3)`.
+See [FAQ 4.1  - Why were some calls to
+the libc function gets&#x28;3&#x29; changed to use
+fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
+This involved changing the `K` arg to `gets(3)` to `&K` in `fgets(3)`.
 
 Cody also added the [try.sh](%%REPO_URL%%/2000/anderson/try.sh) script.
 
@@ -3046,7 +3099,7 @@ includes of `Xlib.h` and `keysym.h`.
 </div>
 
 [Cody](#cody) fixed this for modern compilers. Depending on the compiler it would either
-segfault when run or not compile at all (gcc and clang respectively).
+segfault when run or not compile at all (`gcc` and `clang` respectively).
 
 Cody also provided alternate code that supports the southern hemisphere.
 
@@ -3212,7 +3265,7 @@ was supposed to do; instead it reported text file busy error.
 Notice that the location of `munmap()` and `close()` followed by `execv()` _does
 matter_!
 
-To get this to compile with clang, `main()` had to change from:
+To get this to compile with `clang`, `main()` had to change from:
 
 ``` <!---c-->
     main (char *ck, char **k)
@@ -3271,7 +3324,7 @@ it will at least run the supplementary program as a 64-bit program directly.
 ### Source code: [bellard.c](%%REPO_URL%%/2001/bellard//bellard.c)
 </div>
 
-[Cody](#cody) fixed this to compile with clang but according to the author this will not
+[Cody](#cody) fixed this to compile with `clang` but according to the author this will not
 work without i386 Linux. It generates i386 32-bit code (not bytecode) but
 unfortunately it will not work without i386 Linux. See [bugs.html](bugs.html).
 
@@ -3304,11 +3357,11 @@ this entry by Yusuke.
 With a tip from Yusuke we rediscovered the author's [web page for this
 program](https://bellard.org/otcc/) where it is stated that this will only work
 in i386 Linux.  The author also stated in the remarks in this document that they
-used [gcc
-2.95.2](https://ftp.gnu.org/gnu/gcc/gcc-2.95.2/gcc-everything-2.95.2.tar.gz) but
+used [`gcc`
+2.95.2](https://ftp.gnu.org/gnu/`gcc`/`gcc`-2.95.2/`gcc`-everything-2.95.2.tar.gz) but
 we don't know if that's relevant or not.
 
-Yusuke offered a modification which is not needed with gcc but with some
+Yusuke offered a modification which is not needed with `gcc` but with some
 versions of `clang` it is. With `gcc` we can get away with `-rdynamic -fno-pie
 -Wl,-z,execstack` which solves the problem of execution in memory but any
 compiler that does not support this would not work. Thus we use the modification
@@ -3320,9 +3373,9 @@ by Yusuke.
 ### Source code: [cheong.c](%%REPO_URL%%/2001/cheong//cheong.c)
 </div>
 
-[Cody](#cody) fixed this to work with clang by adding another function that is allowed to
+[Cody](#cody) fixed this to work with `clang` by adding another function that is allowed to
 have a third arg as an int, not a `char **. He chose `pain()` because it's a four
-letter word that would match the format and because it's pain that clang forces
+letter word that would match the format and because it's pain that `clang` forces
 this. :-) This fix makes a point of the author's notes on portability no longer
 valid, BTW.
 
@@ -3338,7 +3391,7 @@ He also fixed it to check the number of args.
 
 [Cody](#cody) added a value to `return` in `main()` to make it more portable.
 
-Cody fixed this to compile with clang in Linux. The problem was C99 does not
+Cody fixed this to compile with `clang` in Linux. The problem was C99 does not
 support implicit int:
 
 ``` <!---c-->
@@ -3429,7 +3482,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2001/herrmann1/try.sh) script.
 
 [Cody](#cody) fixed this to work with both 64-bit and 32-bit compilers by changing most
 of the `int`s (all but that in `main(int ...)`) to `long`s. He also fixed it to
-compile with clang by changing the args of main to be `int` and `char **,
+compile with `clang` by changing the args of main to be `int` and `char **,
 respectively, and changing specific references to the `argv` arg, casting to
 `long` (was `int` but the 64-bit fix requires `long`) which was its old type.
 
@@ -3532,11 +3585,11 @@ browsers knowing what to do with it.
 ### Source code: [burley.c](%%REPO_URL%%/2004/burley//burley.c)
 </div>
 
-[Cody](#cody) fixed this to compile with clang and to work with both gcc and
-clang (even after fixing it to compile with clang it did not work properly).
+[Cody](#cody) fixed this to compile with `clang` and to work with both `gcc` and
+`clang` (even after fixing it to compile with `clang` it did not work properly).
 
-For clang the problem was that `main()` had one arg, a `char *` and this is not
-allowed in any version of clang. In some versions it is allowed if the arg is an
+For `clang` the problem was that `main()` had one arg, a `char *` and this is not
+allowed in any version of `clang`. In some versions it is allowed if the arg is an
 `int` but never if it's anything else. To get it to work took numerous changes.
 
 First the inclusion of `setjmp.h` was necessary. Without this `longjmp(3)`
@@ -3625,7 +3678,7 @@ Wayback Machine.
 ### Source code: [jdalbec.c](%%REPO_URL%%/2004/jdalbec//jdalbec.c)
 </div>
 
-[Cody](#cody) fixed this to compile with gcc (it worked with clang). The problem was the
+[Cody](#cody) fixed this to compile with `gcc` (it worked with `clang`). The problem was the
 cpp being unable to parse the generated code (see the index.html for details) and
 this ended up with a number of errors like:
 
@@ -3666,7 +3719,7 @@ Finally Cody added [try.sh](%%REPO_URL%%/2004/jdalbec/try.sh) and
 [Cody](#cody) reported that this entry cannot be optimised by the compiler as otherwise
 it will not work.
 
-Cody, out of an abundance of caution for clang, added a second arg to `main()`
+Cody, out of an abundance of caution for `clang`, added a second arg to `main()`
 as some versions complain about the number of args and although they accept 1 it
 is entirely possible it will eventually be that they don't.
 
@@ -3682,7 +3735,7 @@ get it to work, that being `kopczynski-10-rev`.
 ### Source code: [newbern.c](%%REPO_URL%%/2004/newbern//newbern.c)
 </div>
 
-[Cody](#cody) and Landon individually fixed this to work with clang.
+[Cody](#cody) and Landon individually fixed this to work with `clang`.
 
 Cody also added the [try.sh](%%REPO_URL%%/2004/newbern/try.sh) script (with a hidden feature
 that the author referred to and was documented by [Yusuke](#yusuke) though Cody
@@ -3702,7 +3755,10 @@ chose the word `IOCCC` instead of `AAA`).
 ### Source code: [schnitzi.c](%%REPO_URL%%/2004/schnitzi//schnitzi.c)
 </div>
 
-[Cody](#cody) made this use `fgets(3)`.
+[Cody](#cody) made this use `fgets(3)`.  See [FAQ 4.1  - Why were some calls to
+the libc function gets&#x28;3&#x29; changed to use
+fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
+
 
 He also changed the time factor in the data files as the animations went too
 fast in modern systems, especially the scrolling text of
@@ -3846,7 +3902,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2005/boutines/try.sh) script.
 ### Source code: [giljade.c](%%REPO_URL%%/2005/giljade//giljade.c)
 </div>
 
-After Landon fixed the entry to compile with clang [Cody](#cody) noticed this
+After Landon fixed the entry to compile with `clang` [Cody](#cody) noticed this
 does not work at all in modern systems (see below). He fixed this to work and
 then he later fixed the self-test feature.
 
@@ -3972,7 +4028,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2005/mikeash/try.sh) script.
 
 [Cody](#cody) fixed this so that the [configure](%%REPO_URL%%/2005/mynx/source/configure) script (which is not
 needed but part of the entry) would work with compilers that have by default
-`-Werror` like clang in macOS.
+`-Werror` like `clang` in macOS.
 
 Cody also added the alt code which does scan for https. Futile, maybe, based on
 how https is set up, in which case just enjoy it for what it was. But there
@@ -4050,7 +4106,7 @@ he doesn't want to damage anyone else's brain either. :-)
 ### Source code: [toledo.c](%%REPO_URL%%/2005/toledo//toledo.c)
 </div>
 
-[Cody](#cody) fixed this to compile with some versions of clang which have an additional
+[Cody](#cody) fixed this to compile with some versions of `clang` which have an additional
 defect where `main()` can only have 0, 2 or 3 args (it was 4). It now calls
 another function that takes 4 args and which is what used to be `main()`.
 
@@ -4156,7 +4212,7 @@ back for arrow keys in the [alternate version](%%REPO_URL%%/2006/night/night.alt
 ### Source code: [sloane.c](%%REPO_URL%%/2006/sloane//sloane.c)
 </div>
 
-[Cody](#cody) fixed this entry to work with clang which has a defect with the args to
+[Cody](#cody) fixed this entry to work with `clang` which has a defect with the args to
 `main()`: it requires specific types: `int` and `char ** for the first and
 latter args.
 
@@ -4164,9 +4220,9 @@ Cody also provided the [alternate version](%%REPO_URL%%/2006/sloane/sloane.alt.c
 allows one to see what is going on in modern systems, and which we recommend one
 use _first_.
 
-Curiously, although clang requires the types of args to be strictly correct,
+Curiously, although `clang` requires the types of args to be strictly correct,
 some versions do allow only one arg. This was done at first because it's not
-used but Cody discovered that later versions of clang have an additional defect
+used but Cody discovered that later versions of `clang` have an additional defect
 where it does not allow only one arg so the second arg to `main()` was added
 back.
 
@@ -4297,7 +4353,7 @@ We're not able to test this.
 </div>
 
 [Cody](#cody), out of an abundance of caution, added a second arg to `main()` as some
-versions of clang complain about not only the type of each arg to `main()` but
+versions of `clang` complain about not only the type of each arg to `main()` but
 the number of args as well.
 
 Cody also added the [try.sh](%%REPO_URL%%/2011/borsanyi/try.sh) script.
@@ -4523,7 +4579,7 @@ Cody also fixed a typo in the ruby script
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/grothe/try.sh) script.
 
 Cody also changed `argv` to be not `const char ** but `char **, mostly out of an
-abundance of caution in case clang, which already imposes restrictions on the
+abundance of caution in case `clang`, which already imposes restrictions on the
 types of args to `main()` including to do with `char **, decides to further
 restrict them.
 
@@ -4731,7 +4787,7 @@ the source code defining `KB` to what the author suggested,
 `(kb=H(8),kbhit())&&(r[1190]=getch(),H(7))`. It need hardly be mentioned that
 this will not link in Unix systems (including macOS).
 
-Clang required a `-Wno-` option as well.
+`Clang` required a `-Wno-` option as well.
 
 Finally Cody provided the [bios.asm](%%REPO_URL%%/2013/cable3/bios.asm) that the author
 referred to, found at the [GitHub repo for the
@@ -5310,7 +5366,7 @@ He also added the [try.sh](%%REPO_URL%%/2015/yang/try.sh) script.
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2018/bellard/try.sh) script.
 
 Cody also, out of abundance of caution, added a second arg to `main()` because
-some versions of clang object to the number of args of `main()`, saying that it
+some versions of `clang` object to the number of args of `main()`, saying that it
 must be 0, 2 or 3. The version this has been observed in does not actually
 object to 1 arg but it is entirely possible that this changes so a second arg
 (that's not needed and is unused) has been added just in case.
@@ -5580,7 +5636,7 @@ own sha512sum value.
 [Cody](#cody) added explicit linking of libm (`-lm`) for systems that do not do this
 (Linux does not seem to but macOS does).
 
-He also fixed the Makefile so that it compiles with clang in Linux.
+He also fixed the Makefile so that it compiles with `clang` in Linux.
 
 He also added the [try.sh](%%REPO_URL%%/2019/dogon/try.sh) script.
 
@@ -5684,10 +5740,10 @@ Cody also added the [alternate code](2019/poikola/index.html#alternate-code).
 Cody also added the [try.sh](%%REPO_URL%%/2019/poikola/try.sh) and
 [try.alt.sh](%%REPO_URL%%/2019/poikola/try.alt.sh) scripts.
 
-Cody also disabled the optimiser because the author stated that for clang the
-levels [0123s] work okay but with GCC (6) they only said level 0 works,
-suggesting that with some versions of GCC it might not be correct with levels !=
-0 and since 0 works with clang that's okay. Similarly, the same for C standards
+Cody also disabled the optimiser because the author stated that for `clang` the
+levels `[0123s]` work okay but with `GCC` version 6 they only said level 0 works,
+suggesting that with some versions of `GCC` it might not be correct with levels !=
+0 and since 0 works with `clang` that's okay. Similarly, the same for C standards
 tested: `gnu17` was not tested but `gnu11` was so the standard was set to
 `gnu11`.
 
@@ -5986,7 +6042,7 @@ the optimiser or in one case enabling `-g`.
 
 Also, rather than check `$(CC)` for exact matches of `gcc` or `clang` it now is
 that if `$(CC)` contains `gcc` or contains `clang` then the specific actions
-related to the specific compiler will be done (priority is gcc then clang). This
+related to the specific compiler will be done (priority is `gcc` then `clang`). This
 is useful because it's not guaranteed that the compiler names for `gcc` or
 `clang` will be exactly that; in macOS for instance it can happen that they are
 in fact different names especially if one installs them from something like
@@ -6070,10 +6126,10 @@ HARD bug fixes** like [1988/phillipps](thanks-for-help.html#1988_phillipps),
 [1992/vern](thanks-for-help.html#1992_vern),
 [2001/anonymous](thanks-for-help.html#2001_anonymous),
 [2004/burley](thanks-for-help.html#2004_burley) and
-[2005/giljade](thanks-for-help.html#2005_giljade), making entries like
+[2005/giljade](thanks-for-help.html#2005_giljade), making all entries such as
 [1985/sicherman](thanks-for-help.html#1985_sicherman) and
 [1986/wall](thanks-for-help.html#1986_wall) not need `-traditional-cpp` (all
-**EXTREMELY HARD**), fixing entries to work with clang, some **EXTREMELY HARD**
+**EXTREMELY HARD**), fixing entries to work with `clang`, some **EXTREMELY HARD**
 like [1991/dds](thanks-for-help.html#1991_dds), or as much as possible
 ([1989/westley](thanks-for-help.html#1989_westley), a true masterpiece that is
 **INCREDIBLY HARD, *MUCH MORE SO* than any other fix!**), porting entries to
@@ -6088,10 +6144,10 @@ greatly simplify running many of the entries and writing
 
 Cody Boone Ferguson also used one of his own tools to detect many dead links.
 While the tool was not perfect it went a long way to uncover a good number of
-bad, broken or otherwise invalid links.  It was a very laborious task to copy
+bad, broken or otherwise invalid links. It was a very laborious task to copy
 and paste problematic links into the [Internet Wayback
 Machine](https://web.archive.org) in an effort to try and find otherwise lost
-content.  A good number of links that now refer to something in the [Internet
+content. A good number of links that now refer to something in the [Internet
 Wayback Machine](https://web.archive.org) replace bad, broken, or otherwise
 invalid links are thanks to Cody's efforts! Another tool he wrote detected
 inconsistent award titles in the README files and CSV file (that he generated
