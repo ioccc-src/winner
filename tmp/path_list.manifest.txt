@@ -378,8 +378,8 @@
 1989/jar.2/index.html
 1989/jar.2/jar.2.c
 1989/jar.2/jar.2.orig.c
+1989/jar.2/try.lisp
 1989/jar.2/try.sh
-1989/jar.2/try.txt
 1989/ovdluhe/.entry.json
 1989/ovdluhe/.gitignore
 1989/ovdluhe/.path

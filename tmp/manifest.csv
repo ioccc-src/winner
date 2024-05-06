@@ -373,8 +373,8 @@
 1989,jar.2,jar.2.orig.c,50,false,c,true,original source
 1989,jar.2,chocolate_cake.lisp,100,true,lisp,true,input file
 1989,jar.2,fib.lisp,100,true,lisp,true,input file
+1989,jar.2,try.lisp,100,true,lisp,true,input file
 1989,jar.2,try.sh,100,true,shellscript,true,script to try entry
-1989,jar.2,try.txt,100,true,text,false,input file
 1989,jar.2,1989_jar.2.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1989,jar.2,README.md,4000000000,true,markdown,true,markdown source for this web page
 1989,jar.2,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
