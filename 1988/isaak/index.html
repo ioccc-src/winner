@@ -403,35 +403,38 @@ code</a> below.</p>
 <h2 id="to-use">To use:</h2>
 <pre><code>    ./isaak</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
-<p>The original version of this code is in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/isaak/isaak.alt.c">isaak.alt.c</a>.
-The original entry starts with the line:</p>
+<p>The original version of this code is in
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/isaak/isaak.alt.c">isaak.alt.c</a>, with a minor fix so that it
+will compile. The original entry starts with the line:</p>
 <pre><code>    main(){};</code></pre>
 <p>This works on some systems. Why? Note that <code>#include &lt;stdio.h&gt;</code> is given on
 the last line. Why is this needed? Note the unusual calls to <code>sprintf(3)</code>.</p>
 <p>This version also relied on being able to define <code>#define</code> to something else and
-using that macro for <code>#define</code>.</p>
-<p>This version will not likely work on modern systems if you can even get it to
-compile.</p>
+using that macro for <code>#define</code>. This was fixed, however, so that you can at
+least compile it in modern systems.</p>
+<p>This version will not likely work on modern systems even though you should be
+able to compile it.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <pre><code>    make alt</code></pre>
+<h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>isaak.alt</code> as you would <code>isaak</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The program relies heavily on ASCII. Don’t even think of running it on
 an EBCDIC machine.</p>
-<h3 id="historical-notes-about-the-original-entry">Historical notes about the original entry:</h3>
-<p>NOTE: If you named the file anything other than <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/isaak/isaak.c">isaak.c</a>, you had to
-change the <code>#include</code> on line 6. This limitation has been fixed by using the
-<code>__FILE__</code> macro.</p>
+<h3 id="historical-notes-about-the-original-entry">Historical notes about the original entry</h3>
+<p>NOTE: If you named the file anything other than <code>isaak.c</code>, you had to
+change the <code>#include</code> on line 6. This limitation has been fixed in
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/isaak/isaak.c">isaak.c</a> and
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/isaak/isaak.alt.c">isaak.alt.c</a> by using the <code>__FILE__</code> macro.</p>
 <p>NOTE: The use of null comments to separate macros to construct different tokens
 from a single macro (e.g., <code>"O/**/O"</code> creates either <code>++</code> or <code>--</code> by defining
 <code>O</code> to be <code>+</code> or <code>-</code>) may cause some strict ANSI C preprocessors to object.</p>
 <p>NOTE: Most System V machines were not be able to execute this program correctly
 due to the fact that BSD style systems have an <code>sprintf(3)</code> that returns a <code>char *</code>. Due to the above problems, we placed the output of this program in the
-file: isaak.encode. To read this file do.</p>
-<pre><code>    uudecode &lt; isaak.encode
-    cat isaak.output</code></pre>
-<p>Since this was fixed, this file is not strictly necessary. See the
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/isaak/isaak.alt.c">isaak.alt.c</a> for the original source.</p>
+file <a href="isaak.output.txt">isaak.output.txt</a>.</p>
+<p>Since this was fixed, this file is not strictly necessary, but we keep it for
+historical purposes (decoded as it used to be uuencoded). See the
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/isaak/isaak.orig.c">isaak.orig.c</a> for the original source.</p>
 <p>FYI: We are likely to be more strict about portability in the future.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>No remarks were provided by the author.</p>
@@ -464,7 +467,7 @@ file: isaak.encode. To read this file do.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/isaak/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/isaak/isaak.alt.c">isaak.alt.c</a> - alternate code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/isaak/isaak.orig.c">isaak.orig.c</a> - original source</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/isaak/isaak.encode">isaak.encode</a> - uuencoded sample output</li>
+<li><a href="isaak.output.txt">isaak.output.txt</a> - program output</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>

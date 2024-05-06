@@ -282,8 +282,8 @@
 1988/isaak/index.html
 1988/isaak/isaak.alt.c
 1988/isaak/isaak.c
-1988/isaak/isaak.encode
 1988/isaak/isaak.orig.c
+1988/isaak/isaak.output.txt
 1988/litmaath/.entry.json
 1988/litmaath/.gitignore
 1988/litmaath/.path

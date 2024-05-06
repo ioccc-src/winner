@@ -278,7 +278,7 @@
 1988,isaak,Makefile,30,true,makefile,true,entry Makefile
 1988,isaak,isaak.alt.c,40,true,c,true,alternate code
 1988,isaak,isaak.orig.c,50,false,c,true,original source
-1988,isaak,isaak.encode,180,true,xxencode,true,uuencoded sample output
+1988,isaak,isaak.output.txt,180,false,text,false,program output
 1988,isaak,1988_isaak.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1988,isaak,README.md,4000000000,true,markdown,true,markdown source for this web page
 1988,isaak,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON

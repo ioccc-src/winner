@@ -83,6 +83,7 @@
 1988/isaak/.path
 1988/isaak/1988_isaak.tar.bz2
 1988/isaak/index.html
+1988/isaak/isaak.output.txt
 1988/litmaath/.path
 1988/litmaath/1988_litmaath.tar.bz2
 1988/litmaath/index.html

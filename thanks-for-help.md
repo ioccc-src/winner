@@ -762,8 +762,8 @@ to compare the fix from the original entry. There was another problem to resolve
 as well, however.
 
 First of all, as noted above, the entry required `-traditional-cpp` (which
-<del>not all compilers support</del> `clang` does not support). It needed
-that option in modern systems because of two things it did:
+`clang` does not support). It needed that option in modern systems because of
+two things it did:
 
 ``` <!---c-->
     #define a(x)get/***/x/***/id())
@@ -777,10 +777,10 @@ that option in modern systems because of two things it did:
     case_2:L(!--V){O/*/*/c*c+c);wait(A+c*c-c);L(!Z)f(A,"\n",c);return(A*getgid());};C++;
 ```
 
-This macro, `a`, formed the functions (the names) `getuid()` and `getgid()`, but
+This macro, `a`, formed the function names `getuid()` and `getgid()`, but
 this no longer works.  The code still uses the macro `a` to form the names but
 it's done differently, using the C token paste operator `##`. It's done like
-thus:
+this:
 
 ``` <!---diff-->
     --- i/1988/dale/dale.c
@@ -825,10 +825,7 @@ so Cody changed the lines to be in the form of:
 ```
 
 However, to keep the entry as close to as possible in look, Cody kept the `_`
-macro in place it's just no longer used.
-
-See the index.html file for details on the original code, provided as an alt
-version in case you have an older compiler or wish to try `-traditional-cpp`.
+macro in place but it's no longer used.
 
 Cody also provided the [try.sh](%%REPO_URL%%/1988/dale/try.sh) script.
 
@@ -839,9 +836,14 @@ Cody also provided the [try.sh](%%REPO_URL%%/1988/dale/try.sh) script.
 </div>
 
 [Cody](#cody) fixed this to work for modern systems. The problem was that the important
-function, a redefinition of `exit()`, was not being called in `main()`. The
-original version is in [1988/isaak/isaak.alt.c](%%REPO_URL%%/1988/isaak/isaak.alt.c). See the
+function, a redefinition of `exit(3)`, was not being called in `main()`. Earlier
+fixes that let it compile, but not work with modern systems, can be found in
+[1988/isaak/isaak.alt.c](%%REPO_URL%%/1988/isaak/isaak.alt.c). See the
 index.html file for more details.
+
+Cody also uudecoded and removed the file `isaak.encode`, putting the output in
+`isaak.output.txt`. This was done strictly for historical remarks that can be
+found in the index.html file.
 
 
 <div id="1988_litmaath">
@@ -849,8 +851,9 @@ index.html file for more details.
 ### Source code: [litmaath.c](%%REPO_URL%%/1988/litmaath/litmaath.c)
 </div>
 
-[Cody](#cody) added the alt code which is code that we suggested at the time of
-publication, in the remarks, to help understand the entry, and for fun.
+[Cody](#cody) added the [alt code](%%REPO_URL%%/1988/litmaath/litmaath.alt.c)
+which is code that we suggested at the time of publication, in the remarks, to
+help understand the entry, and for fun.
 
 
 <div id="1988_phillipps">

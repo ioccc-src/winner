@@ -911,8 +911,8 @@ including making it no longer require <code>-traditional-cpp</code>. Fixing
 to compare the fix from the original entry. There was another problem to resolve
 as well, however.</p>
 <p>First of all, as noted above, the entry required <code>-traditional-cpp</code> (which
-<del>not all compilers support</del> <code>clang</code> does not support). It needed
-that option in modern systems because of two things it did:</p>
+<code>clang</code> does not support). It needed that option in modern systems because of
+two things it did:</p>
 <pre><code>    #define a(x)get/***/x/***/id())
 
     /* ... */
@@ -922,10 +922,10 @@ that option in modern systems because of two things it did:</p>
     /* ... */
 
     case_2:L(!--V){O/*/*/c*c+c);wait(A+c*c-c);L(!Z)f(A,&quot;\n&quot;,c);return(A*getgid());};C++;</code></pre>
-<p>This macro, <code>a</code>, formed the functions (the names) <code>getuid()</code> and <code>getgid()</code>, but
+<p>This macro, <code>a</code>, formed the function names <code>getuid()</code> and <code>getgid()</code>, but
 this no longer works. The code still uses the macro <code>a</code> to form the names but
 it’s done differently, using the C token paste operator <code>##</code>. It’s done like
-thus:</p>
+this:</p>
 <pre><code>    --- i/1988/dale/dale.c
     +++ w/1988/dale/dale.c
     @@ -9,18 +9,18 @@
@@ -953,24 +953,27 @@ modern compilers do not allow directives like:</p>
     #define O close(
     /* ... */</code></pre>
 <p>However, to keep the entry as close to as possible in look, Cody kept the <code>_</code>
-macro in place it’s just no longer used.</p>
-<p>See the index.html file for details on the original code, provided as an alt
-version in case you have an older compiler or wish to try <code>-traditional-cpp</code>.</p>
+macro in place but it’s no longer used.</p>
 <p>Cody also provided the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/dale/try.sh">try.sh</a> script.</p>
 <div id="1988_isaak">
 <h2 id="isaak"><a href="1988/isaak/index.html">1988/isaak</a></h2>
 <h3 id="source-code-isaak.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/isaak/isaak.c">isaak.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> fixed this to work for modern systems. The problem was that the important
-function, a redefinition of <code>exit()</code>, was not being called in <code>main()</code>. The
-original version is in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/isaak/isaak.alt.c">1988/isaak/isaak.alt.c</a>. See the
+function, a redefinition of <code>exit(3)</code>, was not being called in <code>main()</code>. Earlier
+fixes that let it compile, but not work with modern systems, can be found in
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/isaak/isaak.alt.c">1988/isaak/isaak.alt.c</a>. See the
 index.html file for more details.</p>
+<p>Cody also uudecoded and removed the file <code>isaak.encode</code>, putting the output in
+<code>isaak.output.txt</code>. This was done strictly for historical remarks that can be
+found in the index.html file.</p>
 <div id="1988_litmaath">
 <h2 id="litmaath"><a href="1988/litmaath/index.html">1988/litmaath</a></h2>
 <h3 id="source-code-litmaath.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/litmaath/litmaath.c">litmaath.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> added the alt code which is code that we suggested at the time of
-publication, in the remarks, to help understand the entry, and for fun.</p>
+<p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/litmaath/litmaath.alt.c">alt code</a>
+which is code that we suggested at the time of publication, in the remarks, to
+help understand the entry, and for fun.</p>
 <div id="1988_phillipps">
 <h2 id="phillipps"><a href="1988/phillipps/index.html">1988/phillipps</a></h2>
 <h3 id="source-code-phillipps.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/phillipps/phillipps.c">phillipps.c</a></h3>
