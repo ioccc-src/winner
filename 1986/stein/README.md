@@ -12,6 +12,13 @@
 ```
 
 
+## Try:
+
+``` <!---sh-->
+    ./stein.sh
+```
+
+
 ## Judges' remarks:
 
 NOTE: to avoid problems with news and mail, the single line was split
