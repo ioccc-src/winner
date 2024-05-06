@@ -12,7 +12,7 @@ fi
 make CC="$CC" all || exit 1
 
 if [[ "$#" -lt 1 ]]; then
-    FILES="try.txt fib.lisp chocolate_cake.lisp"
+    FILES="try.lisp fib.lisp chocolate_cake.lisp"
 else
     FILES="$*"
 fi

@@ -52,20 +52,20 @@
 	    "entry_text" : "input file"
 	},
 	{
+	    "file_path" : "try.lisp",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "lisp",
+	    "display_via_github" : true,
+	    "entry_text" : "input file"
+	},
+	{
 	    "file_path" : "try.sh",
 	    "inventory_order" : 100,
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
 	    "entry_text" : "script to try entry"
-	},
-	{
-	    "file_path" : "try.txt",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : false,
-	    "entry_text" : "input file"
 	},
 	{
 	    "file_path" : "1989_jar.2.tar.bz2",

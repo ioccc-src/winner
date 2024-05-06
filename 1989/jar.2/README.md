@@ -24,7 +24,7 @@ NOTE: this entry will likely segfault on invalid input.
 
     ./try.sh chocolate_cake.lisp
 
-    ./try.sh try.txt
+    ./try.sh try.lisp
 ```
 
 
