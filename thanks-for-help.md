@@ -153,12 +153,13 @@ This was fixed on 30 October 2023 after the bug status was changed from INABIAF
 [Cody](#cody) provided an [alternate version](%%REPO_URL%%/1984/mullender/mullender.alt.c),
 an improved version of the judges, so that everyone can enjoy it with systems
 that are not VAX/PDP. It moves at approximately the same speed as the original
-did. We also refer you to the [FAQ](faq.html) as there are some winning entries
-that also let one enjoy it (which through trial and error was how the right
-speed was discovered) - with more to them of course! The difference between the
-original is that it will start over after it times out but that might not happen
-with the original (might need you to press a key though this is not known for
-sure).
+did. By using one or more of the other entries that actually let one enjoy this entry as
+originally written, Cody was able to find, with trial and error, approximately
+the correct speed.
+
+The difference between the original is that it will start over after it times
+out but that might not happen with the original (might need you to press a key
+though this is not known for sure).
 
 Cody also added the [gentab.c](%%REPO_URL%%/1984/mullender/gentab.c) file, fixed to compile
 (and work, though see [1984/mullender in bugs.html](bugs.html#1984_mullender)) with modern systems
@@ -184,7 +185,7 @@ Both [Cody](#cody) and [Yusuke](#yusuke) fixed this; Yusuke got this to not cras
 to work with macOS.
 
 The crash was because it destructively rewrites string literals. However with
-`strdup()` it's safe.
+`strdup(3)` it's safe.
 
 The problem with macOS is that although it didn't crash, it printed `H????` in a
 seemingly infinite loop, each time printing another `?`, and it probably would
@@ -192,7 +193,7 @@ have until it ran out of memory.
 
 The fix for macOS is that there was no prototype for `execlp(3)` and macOS has
 problems with missing prototypes for some functions (this was also seen when
-Cody fixed [1984/anonymous](%%REPO_URL%%/1984/anonymous/anonymous.c) for macOS as well). As
+Cody fixed [1984/anonymous](1984/anonymous/index.html) for macOS as well). As
 this is a one-liner the include of `unistd.h` was done in the Makefile.
 Ironically this fix was discovered through Linux!
 
@@ -219,7 +220,7 @@ either the default or user specified. The inspiration was the previous `try`
 command he gave to have fun with finding primes that might seem unusual in a
 way.
 
-Cody also added the [try.sh](%%REPO_URL%%/1985/august/try.sh) script (which calls `primes.sh`
+Cody also added the [try.sh](%%REPO_URL%%/1985/august/try.sh) script (which runs `primes.sh`
 whether `primes(6)` is installed or not, but it only does it once with the
 default value).
 
@@ -241,7 +242,7 @@ Cody also provided the [try.alt.sh](%%REPO_URL%%/1985/lycklama/try.alt.sh) scrip
 
 
 <div id="1985_shapiro">
-## [1985/shapiro](1985/lycklama/index.html)
+## [1985/shapiro](1985/shapiro/index.html)
 ### Source code: [shapiro.c](%%REPO_URL%%/1985/shapiro/shapiro.c)
 </div>
 
@@ -296,17 +297,16 @@ were actually not what they appear: the only arg that existed in `main()` was
 - The macros `C` and `V` were changed to lower case. This is because it felt
 like the `C=" ..`' part in `subr()` would be better to be upper case as it talks
 about the language. Also in the [alternate
-version](%%REPO_URL%%/1985/sicherman/sicherman.c) (the first being the
-original code) which is in case a new version of `clang` ever objects to only one
-arg in `main()` (which is not out of the realm of possibility), `main()` can
-have `C` as `argc` to `main()` so it would read like it once did: `C manual`
-albeit with a `,` separating the two. The [alternate
-version](%%REPO_URL%%/1985/sicherman/sicherman.c) can be compiled
-in case the first does not. Originally the macros were kept the same and the
-`C` in `subr()` was `c`. It feels better (in some ways) to make it so that the
-`C` for the language is upper case though, and since it actually translated to
-`/**/` it can just be `c`, not `C`. The `V` was changed to `v` to be the same
-case as `c`.
+version](%%REPO_URL%%/1985/sicherman/sicherman.alt.c) which is in case a new
+version of `clang` ever objects to only one arg in `main()` (which is not out of
+the realm of possibility), `main()`, `argc` of `main()` is `C` so it
+would read like it once did: `C manual` albeit with a `,` separating the two.
+The [alternate version](%%REPO_URL%%/1985/sicherman/sicherman.alt.c) can be
+compiled in case the first does not. Originally the macros were kept the same
+and the `C` in `subr()` was `c`. It feels better (in some ways) to make it so
+that the `C` for the language is upper case though, and since it actually
+translated to `/**/` it can just be `c`, not `C`. The `V` was changed to `v` to
+be the same case as `c`.
 
 - The code:
 
@@ -401,7 +401,7 @@ the libc function gets&#x28;3&#x29; changed to use
 fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
 
 Cody also added the [try.sh](%%REPO_URL%%/1986/hague/try.sh) script which also feeds to the
-program the added `input.txt` file.
+program the `input.txt` text file that Cody added.
 
 
 <div id="1986_holloway">
@@ -432,8 +432,8 @@ different compilers (different problems with different compilers in different
 systems and also depending on optimisation with those compilers in those
 systems).
 
-We give more details in the [compilers.html](1986/marshall/compilers.html) file,
-giving which compilers had which problems in which systems: the optimiser being
+Cody gives more details in the [compilers.html](1986/marshall/compilers.html)
+file: which compilers had which problems in which systems: the optimiser being
 enabled in one compiler let it work but broke it in the other; and disabling it
 would let it work in the one that didn't work but suddenly the one that worked
 wouldn't work. And by 'not working' it did not work in more than one way and for
@@ -503,8 +503,8 @@ are produced.
 [Cody](#cody) restored the [original
 entry](%%REPO_URL%%/1986/stein/stein.orig.c) which was a single line. The code
 being longer (in 1986 a one liner could be longer) had been split to three lines to
-avoid problems with news and mail but as it is the 'Best one liner' it is now
-one line.
+avoid problems with news and mail but as it is the **Best one liner** the original
+code is now one line.
 
 Cody also added the [stein.sh](%%REPO_URL%%/1986/stein/stein.sh) script which runs the two
 commands that we suggest in order to get it to show clean output.
@@ -521,7 +521,7 @@ noted later on, very complicated, but we encourage you to look at [original
 code](%%REPO_URL%%/1986/wall/wall.orig.c), as well as below, to see how
 different C was in 1986.
 
-[Yusuke](#yusuke) originally patched this to use `strdup()` on two strings and this let it
+[Yusuke](#yusuke) originally patched this to use `strdup(3)` on two strings and this let it
 work with `gcc` - but it still required `-traditional-cpp`.
 
 If you'd like to see the difference between the version that requires
@@ -838,7 +838,7 @@ Cody also provided the [try.sh](%%REPO_URL%%/1988/dale/try.sh) script.
 [Cody](#cody) fixed this to work for modern systems. The problem was that the important
 function, a redefinition of `exit(3)`, was not being called in `main()`. Earlier
 fixes that let it compile, but not work with modern systems, can be found in
-[1988/isaak/isaak.alt.c](%%REPO_URL%%/1988/isaak/isaak.alt.c). See the
+[isaak.alt.c](%%REPO_URL%%/1988/isaak/isaak.alt.c). See the
 index.html file for more details.
 
 Cody also uudecoded and removed the file `isaak.encode`, putting the output in
@@ -862,20 +862,20 @@ help understand the entry, and for fun.
 </div>
 
 [Cody](#cody) fixed this for modern systems. It did not compile with `clang` because it
-requires the second and third args of `main()` to be `char ** but even before
+requires the second and third args of `main()` to be `char **` but even before
 that with `gcc` it printed garbage and then crashed.
 
-After fixing it for `clang` by changing the very `main()` (in fact it called
-itself up to 12 times!) to call the new function `pain()` (chosen because it's a
-pain that `clang` requires these args to be `char ** :-), which is just as
-recursive, with the correct args it now works with both `gcc` and `clang`.
+After fixing it for `clang` by changing the **very recursive** `main()` (**it called
+itself up to *12* times!**) to call the new function `pain()` (named such because it's a
+pain that `clang` requires these args to be `char **` :-) ), which is just as
+recursive, with the correct args, it now works with both `gcc` and `clang`.
 
-Later Cody improved the fix to make it look a bit more like the original, using
-K&R style functions, and trying to match the format as best as possible of what
-`main()` used to look like but without the full body that cannot exist as it
-once did. The format of `pain()` is exactly like how `main()` was as it's the
-same code. Additionally, `main()` returns `!pain(...)` like `main()` used to do
-to itself and `pain()` does now.
+To make it look as close to the original as possible, Cody made it K&R style
+functions and tried to match the format as best as possible of what
+`main()` used to look like but without the full body as that cannot exist as it
+once did; instead, the format of `pain()` is exactly like how `main()` was as it's the
+same code, just a `p` instead of an `m` in the name. Additionally, `main()` returns
+`!pain(...)` like `main()` used to do to itself (`pain()` does as well).
 
 
 <div id="1988_reddy">
@@ -998,23 +998,26 @@ entry and the alt code) anyway, it works out well.
 code like:
 
 ``` <!---c-->
-    #define D define
+    #define d define
     #define a include
 
-    #D foo bar
+    #d foo bar
     #a <stdio.h>
 ```
 
-He notes that there _is_ a way to get it (or something close to it) to work. Do
+Cody notes that there _is_ a way to get it (or something close to it) to work. Do
 you know how?
 
+The old `#define`s are left in to make it look like the original as much as
+possible but they are not used.
+
 Cody also provided the [try.sh](%%REPO_URL%%/1989/jar.2/try.sh) script and the
-supplementary files [try.txt](1989/jar.2/try.txt),
+supplementary files [try.lisp](1989/jar.2/try.lisp),
 [fib.lisp](%%REPO_URL%%/1989/jar.2/fib.lisp) and
-[chocolate_cake.lisp](%%REPO_URL%%/1989/jar.2/chocolate_cake.lisp). The `try.txt` comes
-from the author and the `fib.lisp` comes from [Yusuke](#yusuke). Cody wrote the script and
-offered us some chocolate cake :-) See index.html for details on how to use the
-script.
+[chocolate_cake.lisp](%%REPO_URL%%/1989/jar.2/chocolate_cake.lisp). The
+`try.lisp` comes from the author and the `fib.lisp` comes from
+[Yusuke](#yusuke). Cody wrote the script and offered us some chocolate cake :-)
+See index.html for details on how to use the script.
 
 Cody also fixed the Makefile where typing `make everything` or `make alt` would
 result in:
@@ -1060,7 +1063,7 @@ discovered and fixed.
 </div>
 
 [Cody](#cody) fixed a segfault under macOS that prevented it from working. The problem
-was that the int (from `#define f`) should be a long. This became apparent when
+was that the int (from `#define f`) should be a `long`. This became apparent when
 he was using lldb and saw that the type of a pointer was too `long` :-)
 
 Cody also provided the [alternate version](%%REPO_URL%%/1989/paul/paul.alt.c)
@@ -1083,7 +1086,7 @@ made, try:
 
 (It adds the C token pasting operator `##` instead of `/**/`.)
 
-Cody also added the [try.sh](%%REPO_URL%%/1989/robison/try.sh) script.
+Cody added the [try.sh](%%REPO_URL%%/1989/robison/try.sh) script.
 
 
 <div id="1989_tromp">
@@ -1100,12 +1103,12 @@ to `main()` but instead be a variable in `main()`.
 Cody also fixed a segfault and made it so the that the high score file would
 work (it was not even being created but it was supposed to be). This was
 happening due to a file pointer being declared as a `long` and more
-significantly is the command in `popen(3)` was not correct.
+significantly the command in `popen(3)` was not correct.
 
 Another problem Cody fixed was that the terminal was left in an insane state where you
 could not type '`u`' and echo was completely disabled.
 
-Cody later on fixed the alt version, provided by the author, so that it would
+Cody later on fixed the [alt version](%%REPO_URL%%/1989/tromp/tromp.alt.c), provided by the author, so that it would
 compile with `clang`, not abort (with an alarm), would have the tetriminos fall,
 it would write to the high score file (the command to `popen(3)` was incorrect
 here too but as can be seen it differs from the submitted version), could use
@@ -1148,7 +1151,7 @@ might just not be possible.
 
 The way it was fixed might be hard to see and describe but this is an attempt.
 Because `main()`'s args were all `int`s, `main()` had to call a new function
-which is allowed to have args as `int` (instead of `main()`'s args being int and
+which is allowed to have args as `int` (instead of `main()`'s args being `int` and
 the rest being `char **`) but this is not as straight forward as it is for other
 entries (if you look at the code you might see what is meant; the function called
 is `pain()`).
@@ -1188,12 +1191,12 @@ Comments might have been changed but it is no longer known if that happened only
 in the working on version 2 and 3 or if in the fix for `clang` as well as version
 0 and 1.
 
-To make use of this several scripts were added by Cody.
-
-The [compile.sh](%%REPO_URL%%/1989/westley/compile.sh) script that removes the generated
-code, rebuilds the program and regenerates the other code and then compiles it
-will work for compilers like `gcc` and one can then use the
-[try.sh](%%REPO_URL%%/1989/westley/try.sh) script to see example input and output.
+To make use of this several scripts were added by Cody. The
+[compile.sh](%%REPO_URL%%/1989/westley/compile.sh) script that removes the
+generated code, rebuilds the program and regenerates the other code and then
+compiles it will work for compilers like `gcc` and one can then use the
+[try.sh](%%REPO_URL%%/1989/westley/try.sh) script to see example input and
+output.
 
 The `compile.sh` script allows one to specify the compiler with the `CC`
 environmental variable; see the index.html for details.
