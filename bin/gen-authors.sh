@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.9.1 2024-04-28"
+export VERSION="1.10 2024-05-06"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -434,6 +434,312 @@ function output_award
 	return 5
     fi
     echo "$AWARD_STRING"
+    return 0
+}
+
+# output_url
+#
+# Write the url from an author/author_handle.json file to standard output (stdout)
+#
+# NOTE: If the url for the author is null, nothing is written to standard output.
+#
+# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
+# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
+# XXX - until we have the jnamval command, we must FAKE PARSE the author/author_handle.json file - XXX
+# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
+# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
+#
+# usage:
+#	output_url author/author_handle.json
+#
+# returns:
+#	0 ==> no errors detected, but output may be empty
+#     > 0 ==> function error number
+#
+function output_url
+{
+    local AUTHOR_HANDLE_JSON_PATH;	# the .entry.json path
+
+    # parse args
+    #
+    if [[ $# -ne 1 ]]; then
+	echo "$0: ERROR: in output_url: expected 1 arg, found $#" 1>&2
+	return 1
+    fi
+    AUTHOR_HANDLE_JSON_PATH="$1"
+    if [[ ! -e $AUTHOR_HANDLE_JSON_PATH ]]; then
+	echo "$0: ERROR: in output_url: author_handle.json does not exist: $AUTHOR_HANDLE_JSON_PATH" 1>&2
+	return 2
+    fi
+    if [[ ! -f $AUTHOR_HANDLE_JSON_PATH ]]; then
+	echo "$0: ERROR: in output_url: author_handle.json is not a file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
+	return 3
+    fi
+    if [[ ! -r $AUTHOR_HANDLE_JSON_PATH ]]; then
+	echo "$0: ERROR: in output_url: author_handle.json is not a readable file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
+	return 4
+    fi
+
+    # extract url from the author/author_handle.json file
+    #
+    # NOTE: We output nothing if the JSON member value is null.
+    #
+    grep -F '"url"' "$AUTHOR_HANDLE_JSON_PATH" | grep -v -E ':\s*null' | sed -e 's/.*"url" : "//' -e 's/",.*//'
+    return 0
+}
+
+# output_alt_url
+#
+# Write the alternate url from an author/author_handle.json file to standard output (stdout)
+#
+# NOTE: If the alternate url for the author is null, nothing is written to standard output.
+#
+# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
+# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
+# XXX - until we have the jnamval command, we must FAKE PARSE the author/author_handle.json file - XXX
+# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
+# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
+#
+# usage:
+#	output_alt_url author/author_handle.json
+#
+# returns:
+#	0 ==> no errors detected, but output may be empty
+#     > 0 ==> function error number
+#
+function output_alt_url
+{
+    local AUTHOR_HANDLE_JSON_PATH;	# the .entry.json path
+
+    # parse args
+    #
+    if [[ $# -ne 1 ]]; then
+	echo "$0: ERROR: in output_alt_url: expected 1 arg, found $#" 1>&2
+	return 1
+    fi
+    AUTHOR_HANDLE_JSON_PATH="$1"
+    if [[ ! -e $AUTHOR_HANDLE_JSON_PATH ]]; then
+	echo "$0: ERROR: in output_alt_url: author_handle.json does not exist: $AUTHOR_HANDLE_JSON_PATH" 1>&2
+	return 2
+    fi
+    if [[ ! -f $AUTHOR_HANDLE_JSON_PATH ]]; then
+	echo "$0: ERROR: in output_alt_url: author_handle.json is not a file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
+	return 3
+    fi
+    if [[ ! -r $AUTHOR_HANDLE_JSON_PATH ]]; then
+	echo "$0: ERROR: in output_alt_url: author_handle.json is not a readable file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
+	return 4
+    fi
+
+    # extract alternate url from the author/author_handle.json file
+    #
+    # NOTE: We output nothing if the JSON member value is null.
+    #
+    grep -F '"alt_url"' "$AUTHOR_HANDLE_JSON_PATH" | grep -v -E ':\s*null' | sed -e 's/.*"alt_url" : "//' -e 's/",.*//'
+    return 0
+}
+
+# output_mastodon
+#
+# Write the mastodon handle from an author/author_handle.json file to standard output (stdout)
+#
+# NOTE: If the mastodon handle for the author is null, nothing is written to standard output.
+#
+# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
+# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
+# XXX - until we have the jnamval command, we must FAKE PARSE the author/author_handle.json file - XXX
+# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
+# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
+#
+# usage:
+#	output_mastodon author/author_handle.json
+#
+# returns:
+#	0 ==> no errors detected, but output may be empty
+#     > 0 ==> function error number
+#
+function output_mastodon
+{
+    local AUTHOR_HANDLE_JSON_PATH;	# the .entry.json path
+
+    # parse args
+    #
+    if [[ $# -ne 1 ]]; then
+	echo "$0: ERROR: in output_mastodon: expected 1 arg, found $#" 1>&2
+	return 1
+    fi
+    AUTHOR_HANDLE_JSON_PATH="$1"
+    if [[ ! -e $AUTHOR_HANDLE_JSON_PATH ]]; then
+	echo "$0: ERROR: in output_mastodon: author_handle.json does not exist: $AUTHOR_HANDLE_JSON_PATH" 1>&2
+	return 2
+    fi
+    if [[ ! -f $AUTHOR_HANDLE_JSON_PATH ]]; then
+	echo "$0: ERROR: in output_mastodon: author_handle.json is not a file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
+	return 3
+    fi
+    if [[ ! -r $AUTHOR_HANDLE_JSON_PATH ]]; then
+	echo "$0: ERROR: in output_mastodon: author_handle.json is not a readable file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
+	return 4
+    fi
+
+    # extract mastodon handle from the author/author_handle.json file
+    #
+    # NOTE: We output nothing if the JSON member value is null.
+    #
+    grep -F '"mastodon"' "$AUTHOR_HANDLE_JSON_PATH" | grep -v -E ':\s*null' | sed -e 's/.*"mastodon" : "//' -e 's/",.*//'
+    return 0
+}
+
+# output_mastodon_url
+#
+# Write the mastodon handle from an author/author_handle.json file to standard output (stdout)
+#
+# NOTE: If the mastodon URL for the author is null, nothing is written to standard output.
+#
+# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
+# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
+# XXX - until we have the jnamval command, we must FAKE PARSE the author/author_handle.json file - XXX
+# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
+# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
+#
+# usage:
+#	output_mastodon_url author/author_handle.json
+#
+# returns:
+#	0 ==> no errors detected, but output may be empty
+#     > 0 ==> function error number
+#
+function output_mastodon_url
+{
+    local AUTHOR_HANDLE_JSON_PATH;	# the .entry.json path
+
+    # parse args
+    #
+    if [[ $# -ne 1 ]]; then
+	echo "$0: ERROR: in output_mastodon_url: expected 1 arg, found $#" 1>&2
+	return 1
+    fi
+    AUTHOR_HANDLE_JSON_PATH="$1"
+    if [[ ! -e $AUTHOR_HANDLE_JSON_PATH ]]; then
+	echo "$0: ERROR: in output_mastodon_url: author_handle.json does not exist: $AUTHOR_HANDLE_JSON_PATH" 1>&2
+	return 2
+    fi
+    if [[ ! -f $AUTHOR_HANDLE_JSON_PATH ]]; then
+	echo "$0: ERROR: in output_mastodon_url: author_handle.json is not a file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
+	return 3
+    fi
+    if [[ ! -r $AUTHOR_HANDLE_JSON_PATH ]]; then
+	echo "$0: ERROR: in output_mastodon_url: author_handle.json is not a readable file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
+	return 4
+    fi
+
+    # extract mastodon URL from the author/author_handle.json file
+    #
+    # NOTE: We output nothing if the JSON member value is null.
+    #
+    grep -F '"mastodon_url"' "$AUTHOR_HANDLE_JSON_PATH" | grep -v -E ':\s*null' | sed -e 's/.*"mastodon_url" : "//' -e 's/",.*//'
+    return 0
+}
+
+# output_github
+#
+# Write the GitHub handle from an author/author_handle.json file to standard output (stdout)
+#
+# NOTE: If the GitHub handle for the author is null, nothing is written to standard output.
+#
+# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
+# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
+# XXX - until we have the jnamval command, we must FAKE PARSE the author/author_handle.json file - XXX
+# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
+# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
+#
+# usage:
+#	output_github author/author_handle.json
+#
+# returns:
+#	0 ==> no errors detected, but output may be empty
+#     > 0 ==> function error number
+#
+function output_github
+{
+    local AUTHOR_HANDLE_JSON_PATH;	# the .entry.json path
+
+    # parse args
+    #
+    if [[ $# -ne 1 ]]; then
+	echo "$0: ERROR: in output_github: expected 1 arg, found $#" 1>&2
+	return 1
+    fi
+    AUTHOR_HANDLE_JSON_PATH="$1"
+    if [[ ! -e $AUTHOR_HANDLE_JSON_PATH ]]; then
+	echo "$0: ERROR: in output_github: author_handle.json does not exist: $AUTHOR_HANDLE_JSON_PATH" 1>&2
+	return 2
+    fi
+    if [[ ! -f $AUTHOR_HANDLE_JSON_PATH ]]; then
+	echo "$0: ERROR: in output_github: author_handle.json is not a file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
+	return 3
+    fi
+    if [[ ! -r $AUTHOR_HANDLE_JSON_PATH ]]; then
+	echo "$0: ERROR: in output_github: author_handle.json is not a readable file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
+	return 4
+    fi
+
+    # extract GitHub handle from the author/author_handle.json file
+    #
+    # NOTE: We output nothing if the JSON member value is null.
+    #
+    grep -F '"github"' "$AUTHOR_HANDLE_JSON_PATH" | grep -v -E ':\s*null' | sed -e 's/.*"github" : "//' -e 's/",.*//'
+    return 0
+}
+
+# output_affiliation
+#
+# Write the affiliation from an author/author_handle.json file to standard output (stdout)
+#
+# NOTE: If the affiliation for the author is null, nothing is written to standard output.
+#
+# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
+# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
+# XXX - until we have the jnamval command, we must FAKE PARSE the author/author_handle.json file - XXX
+# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
+# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
+#
+# usage:
+#	output_affiliation author/author_handle.json
+#
+# returns:
+#	0 ==> no errors detected, but output may be empty
+#     > 0 ==> function error number
+#
+function output_affiliation
+{
+    local AUTHOR_HANDLE_JSON_PATH;	# the .entry.json path
+
+    # parse args
+    #
+    if [[ $# -ne 1 ]]; then
+	echo "$0: ERROR: in output_affiliation: expected 1 arg, found $#" 1>&2
+	return 1
+    fi
+    AUTHOR_HANDLE_JSON_PATH="$1"
+    if [[ ! -e $AUTHOR_HANDLE_JSON_PATH ]]; then
+	echo "$0: ERROR: in output_affiliation: author_handle.json does not exist: $AUTHOR_HANDLE_JSON_PATH" 1>&2
+	return 2
+    fi
+    if [[ ! -f $AUTHOR_HANDLE_JSON_PATH ]]; then
+	echo "$0: ERROR: in output_affiliation: author_handle.json is not a file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
+	return 3
+    fi
+    if [[ ! -r $AUTHOR_HANDLE_JSON_PATH ]]; then
+	echo "$0: ERROR: in output_affiliation: author_handle.json is not a readable file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
+	return 4
+    fi
+
+    # extract affiliation from the author/author_handle.json file
+    #
+    # NOTE: We output nothing if the JSON member value is null.
+    #
+    grep -F '"affiliation"' "$AUTHOR_HANDLE_JSON_PATH" | grep -v -E ':\s*null' | sed -e 's/.*"affiliation" : "//' -e 's/",.*//'
     return 0
 }
 
@@ -835,7 +1141,7 @@ EOF
 	    fi
 	    echo "<div id=\"$l\">"
 	    echo "## ${IS_FOR[$l]}"
-    	    echo '<hr style="width:10%;text-align:left;margin-left:0">'
+	    echo '<hr style="width:10%;text-align:left;margin-left:0">'
 	    echo "<!-- $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  -->"
 	    echo "</div>"
 	    echo
@@ -850,18 +1156,21 @@ EOF
 		echo "$0: ERROR: sort_word is empty" 1>&2
 		exit 15
 	    fi
+
 	    FULL_NAME=$(output_full_name "$filename")
 	    export FULL_NAME
 	    if [[ -z $FULL_NAME ]]; then
 		echo "$0: ERROR: full name is empty in: $filename" 1>&2
 		exit 16
 	    fi
+
 	    LOCATION_CODE=$(output_location_code "$filename")
 	    export LOCATION_CODE
 	    if [[ -z $LOCATION_CODE ]]; then
 		echo "$0: ERROR: location code is empty in: $filename" 1>&2
 		exit 17
 	    fi
+
 	    LOCATION_NAME=$("$LOCATION_TOOL" "$LOCATION_CODE" 2>/dev/null)
 	    status="$?"
 	    export LOCATION_NAME
@@ -875,6 +1184,7 @@ EOF
 		     "for location ISO 3166 code: $LOCATION_CODE is empty: $LOCATION_NAME" 1>&2
 		exit 19
 	    fi
+
 	    LOCATION_COMMON_NAME=$("$LOCATION_TOOL" -c "$LOCATION_CODE" 2>/dev/null)
 	    status="$?"
 	    export LOCATION_COMMON_NAME
@@ -888,6 +1198,7 @@ EOF
 		     "for location ISO 3166 code: $LOCATION_CODE is empty: $LOCATION_COMMON_NAME" 1>&2
 		exit 21
 	    fi
+
 	    AUTHOR_HANDLE=$(output_author_handle "$filename")
 	    export AUTHOR_HANDLE
 	    if [[ -z $AUTHOR_HANDLE ]]; then
@@ -895,11 +1206,45 @@ EOF
 		exit 22
 	    fi
 
+	    # NOTE: AUTHOR_AFFILIATION will be empty if there is no affiliation
+	    AUTHOR_AFFILIATION=$(output_affiliation "$filename")
+	    export AUTHOR_AFFILIATION
+
+	    # NOTE: AUTHOR_URL will be empty if there is no url
+	    AUTHOR_URL=$(output_url "$filename")
+	    export AUTHOR_URL
+
+	    # NOTE: AUTHOR_ALT_URL will be empty if there is no alternate url
+	    AUTHOR_ALT_URL=$(output_alt_url "$filename")
+	    export AUTHOR_ALT_URL
+
+	    # NOTE: AUTHOR_MASTODON_HANDLE will be empty if there is no mastodon handle
+	    AUTHOR_MASTODON_HANDLE=$(output_mastodon "$filename")
+	    export AUTHOR_MASTODON_HANDLE
+
+	    # NOTE: AUTHOR_MASTODON_URL will be empty if there is no mastodon URL
+	    AUTHOR_MASTODON_URL=$(output_mastodon_url "$filename")
+	    export AUTHOR_MASTODON_URL
+	    if [[ -n $AUTHOR_MASTODON_HANDLE && -z $AUTHOR_MASTODON_URL ]]; then
+		echo "$0: ERROR: mastodon url is null but mastodon handle is not null in: $filename" 1>&2
+		exit 23
+	    fi
+	    if [[ -z $AUTHOR_MASTODON_HANDLE && -n $AUTHOR_MASTODON_URL ]]; then
+		echo "$0: ERROR: mastodon handle is null but mastodon url is not null in: $filename" 1>&2
+		exit 24
+	    fi
+
+	    # NOTE: AUTHOR_GITHUB will be empty if there is no GitHub handle
+	    AUTHOR_GITHUB=$(output_github "$filename")
+	    export AUTHOR_GITHUB
+	    AUTHOR_GUTHUB_USERNAME=${AUTHOR_GITHUB#@}
+	    export AUTHOR_GUTHUB_USERNAME
+
 	    # output author information
 	    #
 	    echo "<p></p>"
 	    echo "<div id=\"$AUTHOR_HANDLE\">**$FULL_NAME**</div>"
-	    echo "author_handle: $AUTHOR_HANDLE<br>"
+	    echo "<p></p>"
 	    if [[ $LOCATION_NAME == "$LOCATION_COMMON_NAME" ]]; then
 		echo "Location: [$LOCATION_CODE](location.html#$LOCATION_CODE) -" \
 		     "_${LOCATION_NAME}_"
@@ -907,6 +1252,28 @@ EOF
 		echo "Location: [$LOCATION_CODE](location.html#$LOCATION_CODE) -" \
 		     "_${LOCATION_NAME}_ (_${LOCATION_COMMON_NAME}_)"
 	    fi
+	    if [[ -n $AUTHOR_AFFILIATION ]]; then
+		echo "<br>"
+	        echo "Affiliation: $AUTHOR_AFFILIATION"
+	    fi
+	    if [[ -n $AUTHOR_URL ]]; then
+		echo "<br>"
+	        echo "URL: [$AUTHOR_URL]($AUTHOR_URL)"
+	    fi
+	    if [[ -n $AUTHOR_ALT_URL ]]; then
+		echo "<br>"
+	        echo "Alternate URL: [$AUTHOR_ALT_URL]($AUTHOR_ALT_URL)"
+	    fi
+	    if [[ -n $AUTHOR_MASTODON_HANDLE && -n $AUTHOR_MASTODON_URL ]]; then
+		echo "<br>"
+		echo "Mastodon: [$AUTHOR_MASTODON_HANDLE]($AUTHOR_MASTODON_URL)"
+	    fi
+	    if [[ -n $AUTHOR_GITHUB ]]; then
+		echo "<br>"
+	        echo "GitHub: [$AUTHOR_GITHUB](https://github.com/$AUTHOR_GUTHUB_USERNAME)"
+	    fi
+	    echo "<br>"
+	    echo "author_handle: $AUTHOR_HANDLE"
 	    echo "<p></p>"
 
 	    # output YYYY/dir set made by this author
@@ -921,13 +1288,13 @@ EOF
 		    fi
 		else
 		    echo "$0: ERROR: entry_id is not in YYYY_dir formmat: $entry_id" 1>&2
-		    exit 23
+		    exit 25
 		fi
 		YYYY_DIR=$(echo "$ENTRY_ID" | tr _ /)
 		export YYYY_DIR
 		if [[ ! -d $YYYY_DIR ]]; then
 		    echo "$0: ERROR: YYYY/dir is not a directory" 1>&2
-		    exit 24
+		    exit 26
 		fi
 
 		# verify that the .entry.json file is a non-empty readable file
@@ -936,19 +1303,19 @@ EOF
 		export ENTRY_JSON
 		if [[ ! -e $ENTRY_JSON ]]; then
 		    echo "$0: ERROR: .entry.json does not exist: $ENTRY_JSON" 1>&2
-		    exit 25
+		    exit 27
 		fi
 		if [[ ! -f $ENTRY_JSON ]]; then
 		    echo "$0: ERROR: .entry.json is not a file: $ENTRY_JSON" 1>&2
-		    exit 26
+		    exit 28
 		fi
 		if [[ ! -r $ENTRY_JSON ]]; then
 		    echo "$0: ERROR: .entry.json is not a readable file: $ENTRY_JSON" 1>&2
-		    exit 27
+		    exit 29
 		fi
 		if [[ ! -s $ENTRY_JSON ]]; then
 		    echo "$0: ERROR: .entry.json is not a non-empty readable file: $ENTRY_JSON" 1>&2
-		    exit 28
+		    exit 30
 		fi
 		if [[ $V_FLAG -ge 7 ]]; then
 		    echo "$0: debug[7]: .entry.json: $ENTRY_JSON" 1>&2
@@ -960,7 +1327,7 @@ EOF
 		export AWARD
 		if [[ -z $AWARD ]]; then
 		    echo "$0: ERROR: award not found in .entry.json: $ENTRY_JSON" 1>&2
-		    exit 29
+		    exit 31
 		fi
 
 		# output the YYYY/dir entry for this author
