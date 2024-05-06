@@ -447,7 +447,7 @@ own fix or suggest that they're fixed!
 
 
 <div id="1984_decot">
-## [1984/decot](1984/decot/index.html)
+## 1984/decot
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -467,7 +467,7 @@ without a newline after the `\`. This is not a bug.
 
 
 <div id="1984_mullender">
-## [1984/mullender](1984/mullender/index.html)
+## 1984/mullender
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -504,7 +504,7 @@ There are no known bugs or (mis)features for entries in 1985.
 
 
 <div id="1986_august">
-## [1986/august](1986/august/index.html)
+## 1986/august
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -533,7 +533,7 @@ There are no known bugs or (mis)features for entries in 1987.
 
 
 <div id="1988_dale">
-## [1988/dale](1988/dale/index.html)
+## 1988/dale
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -553,7 +553,7 @@ and does not crash.
 
 
 <div id="1989_fubar">
-## [1989/fubar](1989/fubar/index.html)
+## 1989/fubar
 </div>
 
 ### STATUS: known bug - please help us fix
@@ -569,7 +569,7 @@ If you want to try and fix this (mis)feature, you are welcome to try.
 
 
 <div id="1989_robison">
-## [1989/robison](1989/robison/index.html)
+## 1989/robison
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -584,7 +584,7 @@ operators like `/`. To see what operators are supported check the source code.
 
 
 <div id="1989_westley">
-## [1989/westley](1989/westley/index.html)
+## 1989/westley
 </div>
 
 ### STATUS: known bug - please help us fix
@@ -716,7 +716,7 @@ Enjoy! :-)
 
 
 <div id="1990_baruch">
-## [1990/baruch](1990/baruch/index.html)
+## 1990/baruch
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -789,7 +789,7 @@ This is not considered a bug, however.
 
 
 <div id="1990_jaw">
-## [1990/jaw](1990/jaw/index.html)
+## 1990/jaw
 </div>
 
 ### STATUS: known bug - please help us fix
@@ -845,7 +845,7 @@ defeat the purpose. This would ideally be fixed.
 
 
 <div id="1990_tbr">
-## [1990/tbr](1990/tbr/index.html)
+## 1990/tbr
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -857,7 +857,7 @@ The authors provided a list of features in the
 
 
 <div id="1990_theorem">
-## [1990/theorem](1990/theorem/index.html)
+## 1990/theorem
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -879,7 +879,7 @@ where this occurred was fixed but this one should not be fixed. Thank you.
 
 
 <div id="1991_buzzard">
-## [1991/buzzard](1991/buzzard/index.html)
+## 1991/buzzard
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -894,7 +894,7 @@ This is a feature, not a bug.
 
 
 <div id="1991_westley">
-## [1991/westley](1991/westley/index.html)
+## 1991/westley
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -918,7 +918,7 @@ when you're cheating it ends up winning! Can you figure that out as well?
 
 
 <div id="1992_adrian">
-## [1992/adrian](1992/adrian/index.html)
+## 1992/adrian
 </div>
 
 
@@ -952,7 +952,7 @@ have to remove the outer `()` pair.
 
 
 <div id="1992_albert">
-## [1992/albert](1992/albert/index.html)
+## 1992/albert
 </div>
 
 
@@ -1019,7 +1019,7 @@ entry itself. Can you fix the actual entry? You are welcome to try and do so.
 
 
 <div id="1992_gson">
-## [1992/gson](1992/gson/index.html)
+## 1992/gson
 </div>
 
 ### STATUS: uses gets() - change to fgets() if possible
@@ -1046,7 +1046,7 @@ to be read (in case the `gets(3)` was not used in a loop).
 
 
 <div id="1992_kivinen">
-## [1992/kivinen](1992/kivinen/index.html)
+## 1992/kivinen
 </div>
 
 ### STATUS: known bug - please help us fix
@@ -1061,7 +1061,7 @@ If you want to try and fix this (mis)feature, you are welcome to try.
 
 
 <div id="1992_lush">
-## [1992/lush](1992/lush/index.html)
+## 1992/lush
 </div>
 
 ### STATUS: doesn't work with some compilers - please provide alternative code or fix for more compilers
@@ -1146,7 +1146,7 @@ Can you help us?
 
 
 <div id="1992_vern">
-## [1992/vern](1992/vern/index.html)
+## 1992/vern
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -1159,7 +1159,7 @@ it yourself through ctrl-c or killing it in some other fashion.
 
 
 <div id="1992_westley">
-## [1992/westley](1992/westley/index.html)
+## 1992/westley
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -1238,7 +1238,7 @@ Can you fix it? We welcome your help.
 
 
 <div id="1993_lmfjyh">
-## [1993/lmfjyh](1993/lmfjyh/index.html)
+## 1993/lmfjyh
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -1253,7 +1253,7 @@ the index.html file for details.
 
 
 <div id="1993_rince">
-## [1993/rince](1993/rince/index.html)
+## 1993/rince
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -1268,7 +1268,7 @@ through ctrl-c or such.
 
 
 <div id="1993_schnitzi">
-## [1993/schnitzi](1993/schnitzi/index.html)
+## 1993/schnitzi
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -1335,7 +1335,7 @@ not `d-46`.
 
 
 <div id="1994_dodsond2">
-## [1994/dodsond2](1994/dodsond2/index.html)
+## 1994/dodsond2
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -1350,7 +1350,7 @@ pit room you will end up dying even though you didn't explicitly move there.
 
 
 <div id="1994_ldb">
-## [1994/ldb](1994/ldb/index.html)
+## 1994/ldb
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -1372,7 +1372,7 @@ one liner it's already quite long.
 
 
 <div id="1994_schnitzi">
-## [1994/schnitzi](1994/schnitzi/index.html)
+## 1994/schnitzi
 </div>
 
 ### STATUS: uses gets() - change to fgets() if possible
@@ -1499,7 +1499,7 @@ compiled!
 
 
 <div id="1994_shapiro">
-## [1994/shapiro](1994/shapiro/index.html)
+## 1994/shapiro
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -1544,7 +1544,7 @@ Since it works there is no need to fix this except for a challenge to yourself.
 
 
 <div id="1994_tvr">
-## [1994/tvr](1994/tvr/index.html)
+## 1994/tvr
 </div>
 
 ### STATUS: known bug - please help us fix
@@ -1573,7 +1573,7 @@ doesn't break something else.
 
 
 <div id="1995_cdua">
-## [1995/cdua](1995/cdua/index.html)
+## 1995/cdua
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -1592,7 +1592,7 @@ it calls `getchar()` via the pointer `m`. So this is a feature not a bug.
 
 
 <div id="1995_leo">
-## [1995/leo](1995/leo/index.html)
+## 1995/leo
 </div>
 
 ### STATUS: known bug - please help us fix
@@ -1624,7 +1624,7 @@ it would be good if it was fixed.
 
 
 <div id="1995_savastio">
-## [1995/savastio](1995/savastio/index.html)
+## 1995/savastio
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -1636,7 +1636,7 @@ not show any output, stuck in a loop.
 
 
 <div id="1995_vanschnitz">
-## [1995/vanschnitz](1995/vanschnitz/index.html)
+## 1995/vanschnitz
 </div>
 
 ### STATUS: missing file - please provide it
@@ -1657,7 +1657,7 @@ We would appreciate anyone who has it or even just knows the name! Thank you.
 
 
 <div id="1996_gandalf">
-## [1996/gandalf](1996/gandalf/index.html)
+## 1996/gandalf
 </div>
 
 ### STATUS: missing or dead link - please provide them
@@ -1671,7 +1671,7 @@ Do you have an updated link? We welcome your help!
 
 
 <div id="1996_huffman">
-## [1996/huffman](1996/huffman/index.html)
+## 1996/huffman
 </div>
 
 ### STATUS: uses gets() - change to fgets() if possible
@@ -1714,7 +1714,7 @@ But since it does not for the time being it is advisable to just redirect
 
 
 <div id="1996_jonth">
-## [1996/jonth](1996/jonth/index.html)
+## 1996/jonth
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -1752,7 +1752,7 @@ There was no IOCCC in 1997.
 
 
 <div id="1998_dlowe">
-## [1998/dlowe](1998/dlowe/index.html)
+## 1998/dlowe
 </div>
 
 ### STATUS: missing or dead link - please provide them
@@ -1767,7 +1767,7 @@ to the page as well!  You'll have IOCCC fame for reviving a pootifier! :-)
 
 
 <div id="1998_dloweneil">
-## [1998/dloweneil](1998/dloweneil/index.html)
+## 1998/dloweneil
 </div>
 
 ### STATUS: missing or dead link - please provide them
@@ -1778,7 +1778,7 @@ See above entry [1998/dlowe](%%REPO_URL%%/1998/dlowe/dlowe.c).
 
 
 <div id="1998_schnitzi">
-## [1998/schnitzi](1998/schnitzi/index.html)
+## 1998/schnitzi
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -1819,7 +1819,7 @@ There was no IOCCC in 1999.
 
 
 <div id="2000_dlowe">
-## [2000/dlowe](2000/dlowe/index.html)
+## 2000/dlowe
 </div>
 
 
@@ -2087,7 +2087,7 @@ of 92 warnings! Nonetheless neither works okay and both crash.
 
 
 <div id="2000_primenum">
-## [2000/primenum](2000/primenum/index.html)
+## 2000/primenum
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -2115,7 +2115,7 @@ make a pull request.
 
 
 <div id="2000_rince">
-## [2000/rince](2000/rince/index.html)
+## 2000/rince
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -2135,7 +2135,7 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_&#x28;computing&#x29;)! 
 
 
 <div id="2001_anonymous">
-## [2001/anonymous](2001/anonymous/index.html)
+## 2001/anonymous
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -2166,7 +2166,7 @@ elves of Imladris :-(
 
 
 <div id="2001_bellard">
-## [2001/bellard](2001/bellard/index.html)
+## 2001/bellard
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -2232,7 +2232,7 @@ before the fixes there.
 
 
 <div id="2001_dgbeards">
-## [2001/dgbeards](2001/dgbeards/index.html)
+## 2001/dgbeards
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -2243,7 +2243,7 @@ This program deliberately crashes if it loses (which is what it aims to do).
 
 
 <div id="2001_herrmann1">
-## [2001/herrmann1](2001/herrmann1/index.html)
+## 2001/herrmann1
 </div>
 
 ### STATUS: missing files - please provide them
@@ -2265,7 +2265,7 @@ If you want to try and fix this (mis)feature, you are welcome to try.
 
 
 <div id="2001_kev">
-## [2001/kev](2001/kev/index.html)
+## 2001/kev
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -2292,7 +2292,7 @@ set. In other words both have to be ASCII or EBCDIC - not one of each.
 
 
 <div id="2001_rosten">
-## [2001/rosten](2001/rosten/index.html)
+## 2001/rosten
 </div>
 
 
@@ -2305,7 +2305,7 @@ wanted to install it as a tool but this is missing.
 
 
 <div id="2001_schweikh">
-## [2001/schweikh](2001/schweikh/index.html)
+## 2001/schweikh
 </div>
 
 
@@ -2320,7 +2320,7 @@ There's also no way to escape meta characters.
 
 
 <div id="2001_westley">
-## [2001/westley](2001/westley/index.html)
+## 2001/westley
 </div>
 
 
@@ -2355,7 +2355,7 @@ it? Please provide it!
 
 
 <div id="2001_williams">
-## [2001/williams](2001/williams/index.html)
+## 2001/williams
 </div>
 
 
@@ -2445,7 +2445,7 @@ There was no IOCCC in 2003.
 
 
 <div id="2004_gavin">
-## [2004/gavin](2004/gavin/index.html)
+## 2004/gavin
 </div>
 
 ### STATUS: compiled executable crashes - please help us fix
@@ -2559,7 +2559,7 @@ things that are not bugs but documented (mis)features.
 
 
 <div id="2004_jdalbec">
-## [2004/jdalbec](2004/jdalbec/index.html)
+## 2004/jdalbec
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -2591,7 +2591,7 @@ The author stated that:
 
 
 <div id="2004_sds">
-## [2004/sds](2004/sds/index.html)
+## 2004/sds
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -2610,7 +2610,7 @@ given the right args. See the index.html file for the correct syntax.
 
 
 <div id="2005_anon">
-## [2005/anon](2005/anon/index.html)
+## 2005/anon
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -2629,7 +2629,7 @@ dimensions. Try `100 100 100` for instance and see what happens!
 
 
 <div id="2005_giljade">
-## [2005/giljade](2005/giljade/index.html)
+## 2005/giljade
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -2643,7 +2643,7 @@ This entry requires that `sed` and `make` are in the path.
 
 
 <div id="2005_mikeash">
-## [2005/mikeash](2005/mikeash/index.html)
+## 2005/mikeash
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -2690,7 +2690,7 @@ for running itself.
 
 
 <div id="2005_mynx">
-## [2005/mynx](2005/mynx/index.html)
+## 2005/mynx
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -2708,7 +2708,7 @@ website](https://www.ioccc.org) itself.
 
 
 <div id="2005_sykes">
-## [2005/sykes](2005/sykes/index.html)
+## 2005/sykes
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -2749,7 +2749,7 @@ used decimal mode, or any of the "undocumented" instructions.
 
 
 <div id="2006_birken">
-## [2006/birken](2006/birken/index.html)
+## 2006/birken
 </div>
 
 ### STATUS: uses gets() - change to fgets() if possible
@@ -2768,7 +2768,7 @@ with at least `computer.tofu` input file:
 
 
 <div id="2006_borsanyi">
-## [2006/borsanyi](2006/borsanyi/index.html)
+## 2006/borsanyi
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -2781,7 +2781,7 @@ with possibly corrupt GIF files.
 
 
 <div id="2006_monge">
-## [2006/monge](2006/monge/index.html)
+## 2006/monge
 </div>
 
 ### STATUS: doesn't work with some platforms - please help us fix
@@ -2809,7 +2809,7 @@ Incorrect formulas will ungracefully crash the program.
 
 
 <div id="2006_sykes1">
-## [2006/sykes1](2006/sykes1/index.html)
+## 2006/sykes1
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -2833,7 +2833,7 @@ The author stated:
 
 
 <div id="2006_toledo2">
-## [2006/toledo2](2006/toledo2/index.html)
+## 2006/toledo2
 </div>
 
 
@@ -2901,7 +2901,7 @@ There was no IOCCC in 2010.
 
 
 <div id="2011_borsanyi">
-## [2011/borsanyi](2011/borsanyi/index.html)
+## 2011/borsanyi
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -2928,7 +2928,7 @@ bins at the edges.
 
 
 <div id="2011_dlowe">
-## [2011/dlowe](2011/dlowe/index.html)
+## 2011/dlowe
 </div>
 
 ### STATUS: missing or dead link - please provide them
@@ -2958,7 +2958,7 @@ If you want to try and fix this (mis)feature, you are welcome to try.
 
 
 <div id="2011_fredriksson">
-## [2011/fredriksson](2011/fredriksson/index.html)
+## 2011/fredriksson
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -2972,7 +2972,7 @@ remarks](2011/fredriksson/index.html#limitations-and-remarks) instead.
 
 
 <div id="2011_richards">
-## [2011/richards](2011/richards/index.html)
+## 2011/richards
 </div>
 
 ### STATUS: doesn't work with some platforms - please help us fix
@@ -3193,7 +3193,7 @@ Do you have a fix? We welcome it!
 
 
 <div id="2011_vik">
-## [2011/vik](2011/vik/index.html)
+## 2011/vik
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3213,7 +3213,7 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_&#x28;computing&#x29;) :
 
 
 <div id="2012_blakely">
-## [2012/blakely](2012/blakely/index.html)
+## 2012/blakely
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3229,7 +3229,7 @@ The author stated:
 
 
 <div id="2012_deckmyn">
-## [2012/deckmyn](2012/deckmyn/index.html)
+## 2012/deckmyn
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3272,7 +3272,7 @@ The manual referred to is [here](2012/deckmyn/deckmyn.html).
 
 
 <div id="2012_dlowe">
-## [2012/dlowe](2012/dlowe/index.html)
+## 2012/dlowe
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3289,7 +3289,7 @@ The author stated:
 
 
 <div id="2012_tromp">
-## [2012/tromp](2012/tromp/index.html)
+## 2012/tromp
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3317,7 +3317,7 @@ The author stated:
 
 
 <div id="2012_vik">
-## [2012/vik](2012/vik/index.html)
+## 2012/vik
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3338,7 +3338,7 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_&#x28;computing&#x29;) :
 <hr style="width:10%;text-align:left;margin-left:0">
 
 <div id="2013_cable2">
-## [2013/cable2](2013/cable2/index.html)
+## 2013/cable2
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3361,7 +3361,7 @@ and endianness conversion would make the source too large for IOCCC rule 2).
 
 
 <div id="2013_dlowe">
-## [2013/dlowe](2013/dlowe/index.html)
+## 2013/dlowe
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3385,7 +3385,7 @@ The author also stated:
 
 
 <div id="2013_endoh1">
-## [2013/endoh1](2013/endoh1/index.html)
+## 2013/endoh1
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3411,7 +3411,7 @@ section](2013/endoh1/index.html#spoiler).
 
 
 <div id="2013_endoh3">
-## [2013/endoh3](2013/endoh3/index.html)
+## 2013/endoh3
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3433,7 +3433,7 @@ A workaround is inserting a whitespace: `C2 E2`.
 
 
 <div id="2013_endoh4">
-## [2013/endoh4](2013/endoh4/index.html)
+## 2013/endoh4
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3445,7 +3445,7 @@ Invalid input files will very likely crash the program.
 
 
 <div id="2013_hou">
-## [2013/hou](2013/hou/index.html)
+## 2013/hou
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3457,7 +3457,7 @@ Hou :-) ) yourself. This should not be fixed.
 
 
 <div id="2013_mills">
-## [2013/mills](2013/mills/index.html)
+## 2013/mills
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3480,7 +3480,7 @@ it out as a known limitation it is not a bug but a feature.
 
 
 <div id="2014_maffiodo1">
-## [2014/maffiodo1](2014/maffiodo1/index.html)
+## 2014/maffiodo1
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3515,7 +3515,7 @@ but since it's documented it's considered a feature, not a bug to fix.
 
 
 <div id="2014_maffiodo2">
-## [2014/maffiodo2](2014/maffiodo2/index.html)
+## 2014/maffiodo2
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3526,7 +3526,7 @@ This program will very likely crash if no arg is given.
 
 
 <div id="2014_vik">
-## [2014/vik](2014/vik/index.html)
+## 2014/vik
 </div>
 
 ### STATUS: known bug - please help us fix
@@ -3587,7 +3587,7 @@ they will properly get:
 
 
 <div id="2015_hou">
-## [2015/hou](2015/hou/index.html)
+## 2015/hou
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3620,7 +3620,7 @@ result. Error messages become garbled, though.
 
 
 <div id="2015_mills2">
-## [2015/mills2](2015/mills2/index.html)
+## 2015/mills2
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3634,7 +3634,7 @@ The program depends on little endian systems.
 
 
 <div id="2015_schweikhardt">
-## [2015/schweikhardt](2015/schweikhardt/index.html)
+## 2015/schweikhardt
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3683,7 +3683,7 @@ There was no IOCCC in 2017.
 
 
 <div id="2018_algmyr">
-## [2018/algmyr](2018/algmyr/index.html)
+## 2018/algmyr
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3706,7 +3706,7 @@ loop printing whitespace.
 
 
 <div id="2018_hou">
-## [2018/hou](2018/hou/index.html)
+## 2018/hou
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3730,7 +3730,7 @@ fixing the syntax error in the generated `ioccc.json` file.
 
 
 <div id="2018_mills">
-## [2018/mills](2018/mills/index.html)
+## 2018/mills
 </div>
 
 ### STATUS: known bug - please help us fix
@@ -3769,7 +3769,7 @@ in the case of compiled code it won't be executable).
 
 
 <div id="2018_vokes">
-## [2018/vokes](2018/vokes/index.html)
+## 2018/vokes
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3831,7 +3831,7 @@ The author wrote the following:
 
 
 <div id="2019_adamovsky">
-## [2019/adamovsky](2019/adamovsky/index.html)
+## 2019/adamovsky
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3843,7 +3843,7 @@ Certain input can crash this program. The file
 
 
 <div id="2019_burton">
-## [2019/burton](2019/burton/index.html)
+## 2019/burton
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3855,7 +3855,7 @@ values but his implementation matches that of macOS and FreeBSD.
 
 
 <div id="2019_ciura">
-## [2019/ciura](2019/ciura/index.html)
+## 2019/ciura
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3893,7 +3893,7 @@ in the de.sh/de.alt.sh scripts:
 ```
 
 <div id="2019_dogon">
-## [2019/dogon](2019/dogon/index.html)
+## 2019/dogon
 </div>
 
 ### STATUS: uses gets() - change to fgets() if possible
@@ -3905,7 +3905,7 @@ ideal if this was not the case.
 
 
 <div id="2019_duble">
-## [2019/duble](2019/duble/index.html)
+## 2019/duble
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3953,7 +3953,7 @@ though one might want to check that the program is not currently running. :-)
 
 
 <div id="2019_endoh">
-## [2019/endoh](2019/endoh/index.html)
+## 2019/endoh
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3965,7 +3965,7 @@ touched either.
 
 
 <div id="2019_karns">
-## [2019/karns](2019/karns/index.html)
+## 2019/karns
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -4002,7 +4002,7 @@ The author stated the following:
 
 
 <div id="2019_lynn">
-## [2019/lynn](2019/lynn/index.html)
+## 2019/lynn
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -4016,7 +4016,7 @@ remarks in the sections [Syntax](2019/lynn/index.html#syntax) and
 
 
 <div id="2019_mills">
-## [2019/mills](2019/mills/index.html)
+## 2019/mills
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -4043,7 +4043,7 @@ The author also wrote:
 ```
 
 <div id="2019_poikola">
-## [2019/poikola](2019/poikola/index.html)
+## 2019/poikola
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -4056,7 +4056,7 @@ erroneously.
 Also, the maximum file size is 1GB.
 
 <div id="2019_yang">
-## [2019/yang](2019/yang/index.html)
+## 2019/yang
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -4080,7 +4080,7 @@ ignored except line feeds (preserved) and tabs (expanded to 8 spaces).'
 
 
 <div id="2020_burton">
-## [2020/burton](2020/burton/index.html)
+## 2020/burton
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -4096,7 +4096,7 @@ either. But can you figure out why this happens?
 
 
 <div id="2020_carlini">
-## [2020/carlini](2020/carlini/index.html)
+## 2020/carlini
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -4117,7 +4117,7 @@ If you have audible bells enabled the program will beep at every turn.
 
 
 <div id="2020_ferguson1">
-## [2020/ferguson1](2020/ferguson1/index.html)
+## 2020/ferguson1
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -4131,7 +4131,7 @@ things that are misinterpreted as bugs. See the
 
 
 <div id="2020_giles">
-## [2020/giles](2020/giles/index.html)
+## 2020/giles
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -4144,7 +4144,7 @@ audio channels.
 
 
 <div id="2020_otterness">
-## [2020/otterness](2020/otterness/index.html)
+## 2020/otterness
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
