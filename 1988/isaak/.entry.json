@@ -42,12 +42,12 @@
 	    "entry_text" : "original source"
 	},
 	{
-	    "file_path" : "isaak.encode",
+	    "file_path" : "isaak.output.txt",
 	    "inventory_order" : 180,
-	    "OK_to_edit" : true,
-	    "display_as" : "xxencode",
-	    "display_via_github" : true,
-	    "entry_text" : "uuencoded sample output"
+	    "OK_to_edit" : false,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "program output"
 	},
 	{
 	    "file_path" : "1988_isaak.tar.bz2",
