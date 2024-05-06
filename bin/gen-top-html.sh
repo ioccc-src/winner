@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
 #
-# gen-top-html.sh - generate select top level HTML files from markdown files
+# gen-top-html.sh - generate all or select top level HTML files from markdown files
 #
 # We also generate the bin/index.html file from the bin/README.md file.
 # We also generate the inc/index.html file from the inc/README.md file.
 # We also generate the archive/historic/index.html file from the archive/historic/README.md file.
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
+#
+# Cody Boone Ferguson made an improvement where one can specify the select top
+# html files to generate to save time. Works just like the script without args
+# but if any args are specified and the markdown file exists it will just
+# generate that or those html files. This is to save time for some Makefile
+# rules that only need update one file.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -87,7 +93,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4.5 2024-04-23"
+export VERSION="1.4.6 2024-05-05"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -130,6 +136,7 @@ TOP_MD_SET+=("next/guidelines")
 TOP_MD_SET+=("next/rules")
 TOP_MD_SET+=("nojs-menu")
 TOP_MD_SET+=("thanks-for-help")
+declare -ag TOP_MD_SELECT_SET
 #
 export NOOP=
 export DO_NOT_PROCESS=
@@ -143,7 +150,7 @@ declare -ag TOOL_OPTION
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
-			[-t tagline] [-T md2html.sh] [-p tool] [-u repo_url]
+			[-t tagline] [-T md2html.sh] [-p tool] [-u repo_url] [file...]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -283,7 +290,22 @@ shift $(( OPTIND - 1 ));
 if [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: file argument count: $#" 1>&2
 fi
-#
+
+# allow specifying specific files to generate
+FILE_COUNT="$#"
+while [[ $# -ne 0 ]]; do
+    for (( index=0; index < ${#TOP_MD_SET[@]}; index++ )); do
+	if [[ "${TOP_MD_SET[$index]}" = "$1" ]]; then
+	    TOP_MD_SELECT_SET+=("$1")
+	fi
+    done
+    shift 1
+done
+if [[ "$FILE_COUNT" != 0 && ${#TOP_MD_SELECT_SET[@]} = 0 ]]; then
+    echo "$0: ERROR: no select files specified are in allowed set" 1>&2
+    exit 3
+fi
+
 if [[ $# -ne 0 ]]; then
     echo "$0: ERROR: expected 0 args, found: $#" 1>&2
     exit 3
@@ -414,6 +436,11 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
+    if (( ${#TOP_MD_SELECT_SET[@]} )); then
+	for index in "${!TOP_MD_SELECT_SET[@]}"; do
+	    echo "$0: debug[3]: TOP_MD_SELECT_SET[$index]=${TOP_MD_SELECT_SET[$index]}" 1>&2
+	done
+    fi
     for index in "${!TOP_MD_SET[@]}"; do
 	echo "$0: debug[3]: TOP_MD_SET[$index]=${TOP_MD_SET[$index]}" 1>&2
     done
@@ -442,80 +469,157 @@ fi
 
 # process the entire markdown set
 #
-for name in "${TOP_MD_SET[@]}"; do
+if (( ${#TOP_MD_SELECT_SET[@]} )); then
+    for name in "${TOP_MD_SELECT_SET[@]}"; do
 
-    # verify that the markdown file exists at the topdir
-    #
-    export MD_FILE="$name.md"
-    if [[ ! -e $MD_FILE ]]; then
-	echo  "$0: Warning: markdown file does not exist: $MD_FILE" 1>&2
-	EXIT_CODE=8 # exit 8
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	continue
-    fi
-    if [[ ! -f $MD_FILE ]]; then
-	echo  "$0: Warning: markdown file is not a regular file: $MD_FILE" 1>&2
-	EXIT_CODE=8 # exit 8
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	continue
-    fi
-    if [[ ! -r $MD_FILE ]]; then
-	echo  "$0: Warning: markdown file is not a readable file: $MD_FILE" 1>&2
-	EXIT_CODE=8 # exit 8
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	continue
-    fi
-    if [[ ! -s $MD_FILE ]]; then
-	echo  "$0: Warning: markdown file is not a non-empty readable file: $MD_FILE" 1>&2
-	EXIT_CODE=8 # exit 8
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	continue
-    fi
-    export HTML_FILE="$name.html"
-    # bin/README is a special case
-    if [[ $name == bin/README ]]; then
-	HTML_FILE="bin/index.html"
-    fi
-    # inc/README is a special case
-    if [[ $name == inc/README ]]; then
-	HTML_FILE="inc/index.html"
-    fi
-    # next/README is a special case
-    if [[ $name == next/README ]]; then
-	HTML_FILE="next/index.html"
-    fi
-    # archive/historic/README is a special case
-    if [[ $name == archive/historic/README ]]; then
-	HTML_FILE="archive/historic/index.html"
-    fi
-
-    # use the md2html.sh tool to form the HTML file, unless -n
-    #
-    if [[ -z $NOOP ]]; then
-	if [[ $V_FLAG -ge 1 ]]; then
-	    echo "$0: debug[1]: about to run: $MD2HTML_SH -U $SITE_URL/$HTML_FILE ${TOOL_OPTION[*]}" \
-	         "-m $MD_FILE -- $MD_FILE $HTML_FILE" 1>&2
-	fi
-	"$MD2HTML_SH" -U "$SITE_URL/$HTML_FILE" "${TOOL_OPTION[@]}" \
-	    -m "$MD_FILE" -- "$MD_FILE" "$HTML_FILE"
-	status="$?"
-	if [[ $status -ne 0 ]]; then
-	    echo "$0: Warning: md2html.sh: $MD2HTML_SH -U $SITE_URL/$HTML_FILE ${TOOL_OPTION[*]}" \
-		 "-m $MD_FILE -- $MD_FILE $HTML_FILE" \
-		 "failed, error: $status" 1>&2
-	    EXIT_CODE="1"  # exit 1
+	# verify that the markdown file exists at the topdir
+	#
+	export MD_FILE="$name.md"
+	if [[ ! -e $MD_FILE ]]; then
+	    echo  "$0: Warning: markdown file does not exist: $MD_FILE" 1>&2
+	    EXIT_CODE=8 # exit 8
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	elif [[ $V_FLAG -ge 3 ]]; then
-	    echo "$0: debug[3]: now up to date: $HTML_FILE" 1>&2
+	    continue
+	fi
+	if [[ ! -f $MD_FILE ]]; then
+	    echo  "$0: Warning: markdown file is not a regular file: $MD_FILE" 1>&2
+	    EXIT_CODE=8 # exit 8
+	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    continue
+	fi
+	if [[ ! -r $MD_FILE ]]; then
+	    echo  "$0: Warning: markdown file is not a readable file: $MD_FILE" 1>&2
+	    EXIT_CODE=8 # exit 8
+	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    continue
+	fi
+	if [[ ! -s $MD_FILE ]]; then
+	    echo  "$0: Warning: markdown file is not a non-empty readable file: $MD_FILE" 1>&2
+	    EXIT_CODE=8 # exit 8
+	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    continue
+	fi
+	export HTML_FILE="$name.html"
+	# bin/README is a special case
+	if [[ $name == bin/README ]]; then
+	    HTML_FILE="bin/index.html"
+	fi
+	# inc/README is a special case
+	if [[ $name == inc/README ]]; then
+	    HTML_FILE="inc/index.html"
+	fi
+	# next/README is a special case
+	if [[ $name == next/README ]]; then
+	    HTML_FILE="next/index.html"
+	fi
+	# archive/historic/README is a special case
+	if [[ $name == archive/historic/README ]]; then
+	    HTML_FILE="archive/historic/index.html"
 	fi
 
-    # report disabled by -n
-    #
-    elif [[ $V_FLAG -ge 5 ]]; then
-	echo "$0: debug[5]: because of -n, did not run: $MD2HTML_SH -U $SITE_URL/$HTML_FILE ${TOOL_OPTION[*]}" \
-	     "-m $MD_FILE -- $MD_FILE $HTML_FILE" 1>&2
-    fi
-done
+	# use the md2html.sh tool to form the HTML file, unless -n
+	#
+	if [[ -z $NOOP ]]; then
+	    if [[ $V_FLAG -ge 1 ]]; then
+		echo "$0: debug[1]: about to run: $MD2HTML_SH -U $SITE_URL/$HTML_FILE ${TOOL_OPTION[*]}" \
+		     "-m $MD_FILE -- $MD_FILE $HTML_FILE" 1>&2
+	    fi
+	    "$MD2HTML_SH" -U "$SITE_URL/$HTML_FILE" "${TOOL_OPTION[@]}" \
+		-m "$MD_FILE" -- "$MD_FILE" "$HTML_FILE"
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: Warning: md2html.sh: $MD2HTML_SH -U $SITE_URL/$HTML_FILE ${TOOL_OPTION[*]}" \
+		     "-m $MD_FILE -- $MD_FILE $HTML_FILE" \
+		     "failed, error: $status" 1>&2
+		EXIT_CODE="1"  # exit 1
+		echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    elif [[ $V_FLAG -ge 3 ]]; then
+		echo "$0: debug[3]: now up to date: $HTML_FILE" 1>&2
+	    fi
+
+	# report disabled by -n
+	#
+	elif [[ $V_FLAG -ge 5 ]]; then
+	    echo "$0: debug[5]: because of -n, did not run: $MD2HTML_SH -U $SITE_URL/$HTML_FILE ${TOOL_OPTION[*]}" \
+		 "-m $MD_FILE -- $MD_FILE $HTML_FILE" 1>&2
+	fi
+    done
+else
+    for name in "${TOP_MD_SET[@]}"; do
+
+	# verify that the markdown file exists at the topdir
+	#
+	export MD_FILE="$name.md"
+	if [[ ! -e $MD_FILE ]]; then
+	    echo  "$0: Warning: markdown file does not exist: $MD_FILE" 1>&2
+	    EXIT_CODE=8 # exit 8
+	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    continue
+	fi
+	if [[ ! -f $MD_FILE ]]; then
+	    echo  "$0: Warning: markdown file is not a regular file: $MD_FILE" 1>&2
+	    EXIT_CODE=8 # exit 8
+	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    continue
+	fi
+	if [[ ! -r $MD_FILE ]]; then
+	    echo  "$0: Warning: markdown file is not a readable file: $MD_FILE" 1>&2
+	    EXIT_CODE=8 # exit 8
+	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    continue
+	fi
+	if [[ ! -s $MD_FILE ]]; then
+	    echo  "$0: Warning: markdown file is not a non-empty readable file: $MD_FILE" 1>&2
+	    EXIT_CODE=8 # exit 8
+	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    continue
+	fi
+	export HTML_FILE="$name.html"
+	# bin/README is a special case
+	if [[ $name == bin/README ]]; then
+	    HTML_FILE="bin/index.html"
+	fi
+	# inc/README is a special case
+	if [[ $name == inc/README ]]; then
+	    HTML_FILE="inc/index.html"
+	fi
+	# next/README is a special case
+	if [[ $name == next/README ]]; then
+	    HTML_FILE="next/index.html"
+	fi
+	# archive/historic/README is a special case
+	if [[ $name == archive/historic/README ]]; then
+	    HTML_FILE="archive/historic/index.html"
+	fi
+
+	# use the md2html.sh tool to form the HTML file, unless -n
+	#
+	if [[ -z $NOOP ]]; then
+	    if [[ $V_FLAG -ge 1 ]]; then
+		echo "$0: debug[1]: about to run: $MD2HTML_SH -U $SITE_URL/$HTML_FILE ${TOOL_OPTION[*]}" \
+		     "-m $MD_FILE -- $MD_FILE $HTML_FILE" 1>&2
+	    fi
+	    "$MD2HTML_SH" -U "$SITE_URL/$HTML_FILE" "${TOOL_OPTION[@]}" \
+		-m "$MD_FILE" -- "$MD_FILE" "$HTML_FILE"
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: Warning: md2html.sh: $MD2HTML_SH -U $SITE_URL/$HTML_FILE ${TOOL_OPTION[*]}" \
+		     "-m $MD_FILE -- $MD_FILE $HTML_FILE" \
+		     "failed, error: $status" 1>&2
+		EXIT_CODE="1"  # exit 1
+		echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    elif [[ $V_FLAG -ge 3 ]]; then
+		echo "$0: debug[3]: now up to date: $HTML_FILE" 1>&2
+	    fi
+
+	# report disabled by -n
+	#
+	elif [[ $V_FLAG -ge 5 ]]; then
+	    echo "$0: debug[5]: because of -n, did not run: $MD2HTML_SH -U $SITE_URL/$HTML_FILE ${TOOL_OPTION[*]}" \
+		 "-m $MD_FILE -- $MD_FILE $HTML_FILE" 1>&2
+	fi
+    done
+fi
 
 # All Done!!! -- Jessica Noll, Age 2
 #

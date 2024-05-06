@@ -136,13 +136,15 @@ all: data ${TARGET}
 	sandwich supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c ${PROG}.alt.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS} || \
-	    ${CC} ${CFLAGS} ${PROG}.alt.c -o $@ ${LDFLAGS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # alternative executable
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} ${PROG}.alt.c -o $@ ${LDFLAGS}
 
 # data files
 #

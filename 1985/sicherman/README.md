@@ -4,9 +4,8 @@
     make all
 ```
 
-There is another version that will be compiled in case the first fails. This
-should happen automatically. See [Alternate code](#alternate-code) below for
-more details on it.
+There is another version that can be compiled in case the first fails.
+See [Alternate code](#alternate-code) below for more details on it.
 
 
 ## To use:
@@ -40,14 +39,10 @@ audience.
 
 ### Alternate build:
 
-Although this will be built if the original fails to compile you can do it
-manually like:
 
 ``` <!---sh-->
     make alt
 ```
-
-In this case it will be built as `sicherman.alt`.
 
 
 ### Alternate use:
