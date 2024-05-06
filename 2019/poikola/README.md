@@ -8,7 +8,7 @@ There is an alternate version of this program which changes the way the output
 is displayed. See [Alternate code](#alternate-code) below.
 
 NOTE: we disable the optimiser because the author stated that for GCC optimiser
-level 0 gave correct output. With clang [0123s] works which suggests that [123s]
+level 0 gave correct output. With clang `[0123s]` works which suggests that [123s]
 might or might not work with GCC. Likewise, we do similar for the standard,
 forcing `-std=gnu11`.
 
@@ -204,13 +204,14 @@ as labels, however, there is `lahti` instead of
 
 Tested against [test vectors](https://www.di-mgt.com.au/sha_testvectors.html).
 
-Clang-4.0: For optimization levels [0123s], the program compiles and produces
+`Clang` (version 4.0): For optimization levels `[0123s]`, the program compiles and produces
 correct output for every tested vector using the C standards c11, c89, c90, c99,
 gnu11, gnu1x, gnu89, gnu90, gnu99, iso9899:1990, iso9899:199409, iso9899:1999
 and iso9899:2011 (argument of `-std=`).
 
-GCC-6: For optimization level 0, correct output using the C standards
-c11, c99, gnu11, gnu1x, gnu89, gnu90, gnu99, iso9899:1999 and iso9899:2011.
+`GCC` (version 6): For optimization level 0, correct output using the C
+standards c11, c99, gnu11, gnu1x, gnu89, gnu90, gnu99, iso9899:1999 and
+iso9899:2011.
 
 
 ### Missing a prime

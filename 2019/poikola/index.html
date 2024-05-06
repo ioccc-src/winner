@@ -400,7 +400,7 @@ Location: <a href="../../location.html#FI">FI</a> - <em>Republic of Finland </em
 <p>There is an alternate version of this program which changes the way the output
 is displayed. See <a href="#alternate-code">Alternate code</a> below.</p>
 <p>NOTE: we disable the optimiser because the author stated that for GCC optimiser
-level 0 gave correct output. With clang [0123s] works which suggests that [123s]
+level 0 gave correct output. With clang <code>[0123s]</code> works which suggests that [123s]
 might or might not work with GCC. Likewise, we do similar for the standard,
 forcing <code>-std=gnu11</code>.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
@@ -500,12 +500,13 @@ as labels, however, there is <code>lahti</code> instead of
 <span style="font-family: monospace;">salpausselkä</span>.</p>
 <h3 id="sha-3-512-compatibility-chart">SHA-3-512 Compatibility chart</h3>
 <p>Tested against <a href="https://www.di-mgt.com.au/sha_testvectors.html">test vectors</a>.</p>
-<p>Clang-4.0: For optimization levels [0123s], the program compiles and produces
+<p><code>Clang</code> (version 4.0): For optimization levels <code>[0123s]</code>, the program compiles and produces
 correct output for every tested vector using the C standards c11, c89, c90, c99,
 gnu11, gnu1x, gnu89, gnu90, gnu99, iso9899:1990, iso9899:199409, iso9899:1999
 and iso9899:2011 (argument of <code>-std=</code>).</p>
-<p>GCC-6: For optimization level 0, correct output using the C standards
-c11, c99, gnu11, gnu1x, gnu89, gnu90, gnu99, iso9899:1999 and iso9899:2011.</p>
+<p><code>GCC</code> (version 6): For optimization level 0, correct output using the C
+standards c11, c99, gnu11, gnu1x, gnu89, gnu90, gnu99, iso9899:1999 and
+iso9899:2011.</p>
 <h3 id="missing-a-prime">Missing a prime</h3>
 <p>For obvious reason, the <a href="https://mathworld.wolfram.com/OddPrime.html">oddest
 prime</a> is missing from output.</p>
