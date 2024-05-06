@@ -6044,9 +6044,9 @@ manually.
 ## Thank you honor roll
 </div>
 
-There are a number of people who have contributed to several thousand changes,
-fixes and important improvements and one who has literally (or numerically :-) )
-contributed thousands, that we wish to thank.
+There are a number of people who have contributed to **many many
+changes**, fixes and **many important improvements** that we
+wish to **especially thank**.
 
 
 ### Authors
@@ -6122,7 +6122,7 @@ your help!
 
 If you submitted a fix to an entry for which you are not the author,
 and your fix is accepted (in part or as a whole), we would be happy
-to add you to this [honor roll list](#thank_you_honor_roll).
+to add you to this [thanks for the help](thanks-for-help.html) file.
 
 If you believe we incorporated one of your fixes to an IOCCC winning entry (that you
 are not the author of) for which we neglected to mention in this file, please
