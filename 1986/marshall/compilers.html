@@ -378,7 +378,7 @@
 
 <!-- BEFORE: 1st line of markdown file: 1986/marshall/compilers.md -->
 <h1 id="conflicting-compilers-and-optimisers-that-broke-this-entry-in-2023">Conflicting compilers and optimisers that broke this entry in 2023</h1>
-<p>As briefly noted in the <a href="index.html">index.html</a> gcc and clang caused different
+<p>As briefly noted in the <a href="index.html">index.html</a> <code>gcc</code> and <code>clang</code> caused different
 problems with this entry depending on the optimiser being enabled or not, where
 if the optimiser was enabled it would work with one compiler and not the other.
 But if you then disabled the optimiser the opposite problem would occur: the
@@ -386,7 +386,7 @@ working compiler would no longer work and the non-functional one would start to
 work! And then there’s the problem of linux versus macOS causing problems.</p>
 <p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/marshall/marshall.alt.c">alternate code</a> (source code) demonstrates the problem so
 you can see if your compiler has the problem as described below.</p>
-<p>In some versions of gcc and clang (this was first discovered in fedora linux 38)
+<p>In some versions of <code>gcc</code> and <code>clang</code> (this was first discovered in fedora linux 38)
 if the compiler was enabled one compiler would generate code that segfaulted but
 the other one would not. However, when then disabling the optimiser the compiler
 that had no problem suddenly did and the one that did suddenly did not. But
@@ -396,25 +396,26 @@ entered. But then removing it would cause other problems as well, including a
 segfault.</p>
 <p>It was not only one compiler that dumped core. Both dumped core with other
 behaviour, depending on what changes in code were made and the optimiser being
-on or off. Clang in macOS also dumped core!</p>
-<p>The <a href="index.html">index.html</a> has the original fix
-for clang which works with some compilers depending on the optimiser. When we
-refer to the code below we refer to the alternate code.</p>
+on or off. <code>Clang</code> in macOS also dumped core!</p>
+<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/marshall/marshall.c">marshall.c</a> has the original fix
+for <code>clang</code> which works with some compilers depending on the optimiser. When we
+refer to the code below we refer to the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/marshall/marshall.alt.c">alternate code,
+marshall.alt.c</a>.</p>
 <h2 id="the-conflicting-compiler-problems">The conflicting compiler problems:</h2>
 <p>Below we describe the conflicting options that resulted in the need to modify
 the original code.</p>
 <h3 id="linux">Linux</h3>
-<p>With the optimiser disabled GCC compiled the code to enter an infinite loop.
-Enabling the optimiser and it worked fine. But if the optimiser is enabled clang
-generates code that first prints the text twice (it should print it once) and
+<p>With the optimiser disabled <code>GCC</code> compiled the code to enter an infinite loop.
+If the optimiser was enabled it worked fine. But if the optimiser is enabled
+<code>clang</code> generates code that first prints the text twice (it should print it once) and
 then immediately dumps core!</p>
 <p>But then there’s that infinite loop. What happens if we remove it?</p>
-<p>Once the loop is removed if we compile with clang and the optimiser is disabled
-all is okay. If however we compile with gcc and the optimiser is disabled the
+<p>Once the loop is removed if we compile with <code>clang</code> and the optimiser is disabled
+all is okay. If however we compile with <code>gcc</code> and the optimiser is disabled the
 string is printed once and then the program dumps core! Why is this? It is
 because of the call to <code>_exit()</code> (see below).</p>
-<p>Clang works fine with the loop removed and the optimiser disabled. If however we
-enable the optimiser clang will generate code that prints the string twice and
+<p><code>Clang</code> works fine with the loop removed and the optimiser disabled. If however we
+enable the optimiser <code>clang</code> will generate code that prints the string twice and
 dumps core just like before! What about the call to <code>_exit()</code>?</p>
 <p>The call was:</p>
 <pre><code>    _exit(argv[(int)*argc-2/cc[1*(int)*argc]|-1&lt;&lt;4]);</code></pre>
@@ -438,7 +439,7 @@ change to <code>_exit()</code>.</p>
 <p>And that is the tale of a little <del>engine</del> train that
 could…eventually! Or perhaps it’s the compilers, optimisers and OSes that
 eventually could?</p>
-<p>Whichever you wish it to be, it now works with both clang and gcc! Choo choo!</p>
+<p>Whichever you wish it to be, it now works with both <code>clang</code> and <code>cc</code> Choo choo!</p>
 <hr style="width:10%;text-align:left;margin-left:0">
 <p>Jump to: <a href="#">top</a></p>
 <!--
