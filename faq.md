@@ -2611,6 +2611,15 @@ See also the [FAQ 6.10 How does someone
 make a change to a file and submit that change as a GitHub pull
 request](#ull_request) for more information about pull requests.
 
+**FYI**: The [ZZ - Unknown location](location.html#ZZ) is used for
+historic winning authors whose location or country is not known,
+whereas the [XX - Anonymous location](location.html#XX) is used when the
+winning author does **not wish to disclose their location**.
+
+Unless you are the author who originally selected the **XX - Anonymous
+location**, please do not attempt to change an **XX - Anonymous
+location**, without the permission of the original author.
+
 
 <div id="faq5_6">
 <div id="fix_link">
