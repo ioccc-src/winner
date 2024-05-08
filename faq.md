@@ -84,6 +84,7 @@ other inconsistencies with the original entry?](#faq4_3)
 - [6.10 - How does someone make a change to a file and submit that change as a GitHub pull request?](#faq6_10)
 - [6.11 - Am I allowed to use IOCCC content?](#faq6_11)
 - [6.12 - What is Mastodon and why does IOCCC use it?](#faq6_12)
+- [6.13 - How may I find my author handle?](#faq6_13)
 
 
 # The IOCCC FAQ
@@ -2586,8 +2587,14 @@ Authors of IOCCC winning entries are kept in JSON files of the form:
     author/author_handle.json
 ```
 
-where _author_handle_ is an author handle.  See [FAQ 6.5](#author_handle) for more
-information about author handles.
+where _author_handle_ is an author handle.
+
+See [FAQ 6.5](#author_handle_faq) for more information about author handles.
+
+See [FAQ 6.6](#author_json) for information about the contents of these JSON file and
+how they are used.
+
+See [FAQ 6.13](#find_author_handle) for how to find your own _author_handle_.
 
 The contents of these JSON files contain the best known information
 about authors of IOCCC entries.  See [FAQ 6.6](#author_json) for information
@@ -2772,13 +2779,18 @@ For each `author_handle`, there will be a JSON file of the form:
     author/author_handle.json
 ```
 
+See [FAQ 5.5](#fix_author) for information about how to update
+and/or correct IOCCC author information.
+
 See [FAQ 6.6](#author_json) for information about the contents of these JSON file and
 how they are used.
 
+See [FAQ 6.13](#find_author_handle) for how to find your own _author_handle_.
+
 Because the `author_handle` is used to form a JSON filename, the string must be
 POSIX safe string plus the use of `+` (for technical reasons beyond this
-answer).  In particular, the `author_handle` must be an ASCII string that
-matches this regexp:
+answer).  In particular, the `author_handle` must be an ASCII string or
+32 characters or less that matches this regexp:
 
 ``` <!---re-->
     ^[0-9A-Za-z][0-9A-Za-z._+-]*$"
@@ -2786,7 +2798,10 @@ matches this regexp:
 
 Default `author_handle`'s do not have multiple consecutive `_` (underscore)
 characters.  Nevertheless, multiple consecutive `_` (underscore) characters are
-allowed. Contest submitters who wish to override their default `author_handle` may do so.
+allowed. Contest submitters who wish to override their default `author_handle`
+may do so, long as the ASCII string matches the regexp above AND
+so long as the length does not exceed the 32 ASCII characters (not including
+the terminating NUL byte).
 
 The `author_handle` is derived from the name of the author.  While there is a
 algorithm that maps the name of the author (which can contain any UTF-8
@@ -2823,9 +2838,6 @@ Anonymous `author_handle`'s match this regexp:
     Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$
 ```
 
-See [FAQ 5.5](#fix_author) for information about how to update
-and/or correct IOCCC author information.
-
 
 <div id="faq6_6">
 <div id="author_json">
@@ -2855,7 +2867,7 @@ of the form:
     author/author_handle.json
 ```
 
-where _author_handle_ is an author handle.  See [FAQ 6.5](#author_handle) for more
+where _author_handle_ is an author handle.  See [FAQ 6.5](#author_handle_faq) for more
 information about an author handles.
 
 #### author_handle.json JSON file contents
@@ -3382,7 +3394,7 @@ names such as _winner_ when they should use _author_.  Sorry (tm Canada)! :-)
 
 - Entry
 
-An _entry_ is a submission that won the IOCCC.
+An _entry_ is a _submission_ that won the IOCCC.
 
 An _entry_ has one or more _authors_.
 
@@ -3738,6 +3750,41 @@ have a good home.  The [fosstodon.org](https://fosstodon.org/@fosstodon) folk ma
 
 While using Mastodon is free, the [IOCCC judges](judges.html) are pleased to
 [support the Fosstodon Hub](https://hub.fosstodon.org/support/).
+
+
+<div id="faq6_13">
+<div id="find_author_handle">
+### FAQ 6.13: How may I find my author handle?
+</div>
+</div>
+
+If you are an _author_ of a winning _entry_, you may find your own _author_handle_
+by going to your entry in the [authors.html](authors.html) web page and viewing the string
+that follows the _author_handle_: line.
+
+If you are not someone who has won a previous IOCCC, you will be able to select
+a potential _author_handle_ when you form your _submission_ tarball (see [FAQ 0.0](#submit)).
+
+**Helpful Hint**: If an _author_ clicks on their _author_handle:_
+line link, you will be taken to that author's `author_handle.json` file.
+
+For example, [Brian Westley](authors.html#Brian_Westley) can view his
+author entry and see that his _author_handle_ is **Brian_Westley**.
+Clicking on the _author_handle_ shows the contents of
+the [Brian_Westley.json](%%REPO_URL%%/author/Brian_Westley.json) file.
+
+**IMPORTANT NOTE**: An `author` who has won a previous IOCCC is encouraged to reuse their
+`author_handle` so that new winning entries can be associated with the same author.
+
+See [FAQ 5.5](#fix_author) for information about how to update
+and/or correct IOCCC author information.
+
+See [FAQ 6.5](#author_handle_faq) for more information about author handles.
+
+See [FAQ 6.6](#author_json) for information about the contents of these JSON file and
+how they are used.
+
+See [FAQ 6.9](#terms) for more information on terms such as _author_, _entry_, and _submission_.
 
 
 <hr style="width:10%;text-align:left;margin-left:0">

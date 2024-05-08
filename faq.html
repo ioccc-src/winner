@@ -461,6 +461,7 @@ other inconsistencies with the original entry?</a></li>
 <li><a href="#faq6_10">6.10 - How does someone make a change to a file and submit that change as a GitHub pull request?</a></li>
 <li><a href="#faq6_11">6.11 - Am I allowed to use IOCCC content?</a></li>
 <li><a href="#faq6_12">6.12 - What is Mastodon and why does IOCCC use it?</a></li>
+<li><a href="#faq6_13">6.13 - How may I find my author handle?</a></li>
 </ul>
 <h1 id="the-ioccc-faq">The IOCCC FAQ</h1>
 <div id="faq0">
@@ -2154,8 +2155,11 @@ then <strong>please <a href="faq.html#pull_request">submit a pull request</a></s
 or at least <a href="contact.html">inform the IOCCC judges</a>.</p>
 <p>Authors of IOCCC winning entries are kept in JSON files of the form:</p>
 <pre><code>    author/author_handle.json</code></pre>
-<p>where <em>author_handle</em> is an author handle. See <a href="#author_handle">FAQ 6.5</a> for more
-information about author handles.</p>
+<p>where <em>author_handle</em> is an author handle.</p>
+<p>See <a href="#author_handle_faq">FAQ 6.5</a> for more information about author handles.</p>
+<p>See <a href="#author_json">FAQ 6.6</a> for information about the contents of these JSON file and
+how they are used.</p>
+<p>See <a href="#find_author_handle">FAQ 6.13</a> for how to find your own <em>author_handle</em>.</p>
 <p>The contents of these JSON files contain the best known information
 about authors of IOCCC entries. See <a href="#author_json">FAQ 6.6</a> for information
 about the contents of these JSON file and how they are used.</p>
@@ -2286,16 +2290,22 @@ exaggeration</a>.</p>
 IOCCC. Each author has exactly one <code>author_handle</code>.</p>
 <p>For each <code>author_handle</code>, there will be a JSON file of the form:</p>
 <pre><code>    author/author_handle.json</code></pre>
+<p>See <a href="#fix_author">FAQ 5.5</a> for information about how to update
+and/or correct IOCCC author information.</p>
 <p>See <a href="#author_json">FAQ 6.6</a> for information about the contents of these JSON file and
 how they are used.</p>
+<p>See <a href="#find_author_handle">FAQ 6.13</a> for how to find your own <em>author_handle</em>.</p>
 <p>Because the <code>author_handle</code> is used to form a JSON filename, the string must be
 POSIX safe string plus the use of <code>+</code> (for technical reasons beyond this
-answer). In particular, the <code>author_handle</code> must be an ASCII string that
-matches this regexp:</p>
+answer). In particular, the <code>author_handle</code> must be an ASCII string or
+32 characters or less that matches this regexp:</p>
 <pre><code>    ^[0-9A-Za-z][0-9A-Za-z._+-]*$&quot;</code></pre>
 <p>Default <code>author_handle</code>’s do not have multiple consecutive <code>_</code> (underscore)
 characters. Nevertheless, multiple consecutive <code>_</code> (underscore) characters are
-allowed. Contest submitters who wish to override their default <code>author_handle</code> may do so.</p>
+allowed. Contest submitters who wish to override their default <code>author_handle</code>
+may do so, long as the ASCII string matches the regexp above AND
+so long as the length does not exceed the 32 ASCII characters (not including
+the terminating NUL byte).</p>
 <p>The <code>author_handle</code> is derived from the name of the author. While there is a
 algorithm that maps the name of the author (which can contain any UTF-8
 characters) into a default <code>author_handle</code> string, those who submit an entry to
@@ -2314,8 +2324,6 @@ year.</p>
 in the case of <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/anon/anon.c">2005/anon</a>.</p>
 <p>Anonymous <code>author_handle</code>’s match this regexp:</p>
 <pre><code>    Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$</code></pre>
-<p>See <a href="#fix_author">FAQ 5.5</a> for information about how to update
-and/or correct IOCCC author information.</p>
 <div id="faq6_6">
 <div id="author_json">
 <h3 id="faq-6.6-what-is-a-author_handle.json-file-and-how-are-they-used">FAQ 6.6: What is a author_handle.json file and how are they used?</h3>
@@ -2336,7 +2344,7 @@ of the author’s JSON file for ways to contact them.</p>
 <p>Each author of an IOCCC winning entry has their own <code>author_handle.json</code> file
 of the form:</p>
 <pre><code>    author/author_handle.json</code></pre>
-<p>where <em>author_handle</em> is an author handle. See <a href="#author_handle">FAQ 6.5</a> for more
+<p>where <em>author_handle</em> is an author handle. See <a href="#author_handle_faq">FAQ 6.5</a> for more
 information about an author handles.</p>
 <h4 id="author_handle.json-json-file-contents">author_handle.json JSON file contents</h4>
 <p>The syntax of a <code>author_handle.json</code> follows the <em>So-called JSON spec</em>.
@@ -2639,7 +2647,7 @@ names such as <em>winner</em> when they should use <em>author</em>. Sorry (tm Ca
 <ul>
 <li>Entry</li>
 </ul>
-<p>An <em>entry</em> is a submission that won the IOCCC.</p>
+<p>An <em>entry</em> is a <em>submission</em> that won the IOCCC.</p>
 <p>An <em>entry</em> has one or more <em>authors</em>.</p>
 <p>An <em>entry</em> includes all of the files needed to compile it,
 plus sample input files, a <code>Makefile</code>, an <code>.entry.json</code> file
@@ -2880,6 +2888,30 @@ and topics like science, technology, <a href="https://en.wikipedia.org/wiki/Free
 have a good home. The <a href="https://fosstodon.org/@fosstodon">fosstodon.org</a> folk made the IOCCC feel welcome.</p>
 <p>While using Mastodon is free, the <a href="judges.html">IOCCC judges</a> are pleased to
 <a href="https://hub.fosstodon.org/support/">support the Fosstodon Hub</a>.</p>
+<div id="faq6_13">
+<div id="find_author_handle">
+<h3 id="faq-6.13-how-may-i-find-my-author-handle">FAQ 6.13: How may I find my author handle?</h3>
+</div>
+</div>
+<p>If you are an <em>author</em> of a winning <em>entry</em>, you may find your own <em>author_handle</em>
+by going to your entry in the <a href="authors.html">authors.html</a> web page and viewing the string
+that follows the <em>author_handle</em>: line.</p>
+<p>If you are not someone who has won a previous IOCCC, you will be able to select
+a potential <em>author_handle</em> when you form your <em>submission</em> tarball (see <a href="#submit">FAQ 0.0</a>).</p>
+<p><strong>Helpful Hint</strong>: If an <em>author</em> clicks on their <em>author_handle:</em>
+line link, you will be taken to that author’s <code>author_handle.json</code> file.</p>
+<p>For example, <a href="authors.html#Brian_Westley">Brian Westley</a> can view his
+author entry and see that his <em>author_handle</em> is <strong>Brian_Westley</strong>.
+Clicking on the <em>author_handle</em> shows the contents of
+the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/author/Brian_Westley.json">Brian_Westley.json</a> file.</p>
+<p><strong>IMPORTANT NOTE</strong>: An <code>author</code> who has won a previous IOCCC is encouraged to reuse their
+<code>author_handle</code> so that new winning entries can be associated with the same author.</p>
+<p>See <a href="#fix_author">FAQ 5.5</a> for information about how to update
+and/or correct IOCCC author information.</p>
+<p>See <a href="#author_handle_faq">FAQ 6.5</a> for more information about author handles.</p>
+<p>See <a href="#author_json">FAQ 6.6</a> for information about the contents of these JSON file and
+how they are used.</p>
+<p>See <a href="#terms">FAQ 6.9</a> for more information on terms such as <em>author</em>, <em>entry</em>, and <em>submission</em>.</p>
 <hr style="width:10%;text-align:left;margin-left:0">
 <p>Jump to: <a href="#">top</a></p>
 <!--
