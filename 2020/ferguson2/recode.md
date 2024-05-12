@@ -588,7 +588,7 @@ why on Earth should it be unscrambled? It would be more fun and a great way to
 explore this entry if you have to use the Enigma machine to read the message!
 
 So this is what I offer: if you take one of the settings below and run the
-Enigma machine simulator on the file [encrypted.html][encrypted.html] you will
+Enigma machine simulator on the file [enigma.html][enigma.html] you will
 unlock a html file with something special in it. I recommend you decrypt it to
 `decrypted.html` and open it in a web browser.
 
@@ -649,7 +649,7 @@ the key you wish to select is
 you can do:
 
 ``` <!---sh-->
-    ./recode -R0EZ4PC1CC0PGTAQSOXWNMDRYKFUZEI -fencrypted.html | ./prog - 2>/dev/null > decrypted.html
+    ./recode -R0EZ4PC1CC0PGTAQSOXWNMDRYKFUZEI -fenigma.html | ./prog - 2>/dev/null > decrypted.html
 ```
 
 Then open `decrypted.html` in your browser.

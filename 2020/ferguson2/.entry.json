@@ -42,7 +42,7 @@
 	    "entry_text" : "original source"
 	},
 	{
-	    "file_path" : "encrypted.html",
+	    "file_path" : "enigma.html",
 	    "inventory_order" : 100,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",

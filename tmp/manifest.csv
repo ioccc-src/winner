@@ -4169,7 +4169,7 @@
 2020,ferguson2,Makefile,30,true,makefile,true,entry Makefile
 2020,ferguson2,prog.alt.c,40,true,c,true,alternate code
 2020,ferguson2,prog.orig.c,50,false,c,true,original source
-2020,ferguson2,encrypted.html,100,true,text,true,secret message in a html file to decrypt
+2020,ferguson2,enigma.html,100,true,text,true,secret message in a html file to decrypt
 2020,ferguson2,input.txt,100,true,text,false,sample input
 2020,ferguson2,obfuscation.html,100,true,html,false,about the obfuscation of this entry
 2020,ferguson2,obfuscation.txt,100,true,text,false,about the obfuscation of this entry - encrypted with entry
