@@ -114,7 +114,7 @@ PROG= prog
 OBJ= ${PROG}.o
 DATA= enigma.1 input.txt obfuscation.key \
 	obfuscation.md obfuscation.txt recode.1 recode.md \
-	try.this.txt encrypted.html
+	try.this.txt enigma.html
 TARGET= ${PROG} recode
 #
 ALT_OBJ= ${PROG}.alt.o

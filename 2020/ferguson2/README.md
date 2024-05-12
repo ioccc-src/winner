@@ -119,7 +119,7 @@ There is a good deal of useful documentation that is provided with this entry:
     - Some useful information about [recode.c](%%REPO_URL%%/2020/ferguson2/recode.c)
 
 
-* [encrypted.html][]
+* [enigma.html][]
     - NOTE: see [recode.html][] (or [recode.html](recode.html) for details about how to decrypt this!
 
 

@@ -4170,8 +4170,8 @@
 2020/ferguson2/2020_ferguson2.tar.bz2
 2020/ferguson2/Makefile
 2020/ferguson2/README.md
-2020/ferguson2/encrypted.html
 2020/ferguson2/enigma.1
+2020/ferguson2/enigma.html
 2020/ferguson2/index.html
 2020/ferguson2/input.txt
 2020/ferguson2/key.txt
