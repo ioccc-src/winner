@@ -288,7 +288,10 @@ X11_INCDIR= /opt/X11/include
 # SD1 and SDL2 libraries #
 ##########################
 #
-# For details on how to install SDL/SDL2 see faq.md.
+# For details on how to install SDL/SDL2 see FAQ 3.8  - How do I compile an
+# IOCCC entry that requires SDL1 or SDL2? which can be found at:
+#
+#   https://ioccc-src.github.io/temp-test-ioccc/faq.html#SDL
 #
 # SDL2_INCLUDE_ROOT is the directory under which include/SDL/ and/or
 # include/SDL2/ may be found.
