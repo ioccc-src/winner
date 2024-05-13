@@ -1235,16 +1235,16 @@ environmental variable; see the index.html for details.</p>
 <h3 id="source-code-baruch.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/baruch/baruch.c">baruch.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/baruch/try.sh">try.sh</a> script.</p>
-<p>Cody also added an <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/baruch/baruch.alt.c">alternate version</a> which allows Turbo-C
+<p>Cody also added an <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/baruch/baruch.alt.c">alternate version</a>, which allows Turbo-C
 and MSC to compile this code, based on the authors’ remarks, except that Cody
-did not change the <code>" #Q"</code> string as that showed worse looking output
+did not change the <code>" #Q"</code> string as that appeared to show worse looking output
 instead of improved output though he has no way to test the compilers in
 question (i.e. it was only tested in the original entry). YMMV.</p>
 <p>Although this is appreciated we agree with him that <del>no one</del>
 <a href="https://en.wikipedia.org/wiki/0">very few</a>
 <a href="https://en.wikipedia.org/wiki/Microsoft_Windows">users</a>
 <a href="https://www.ioccc.org">here</a> will need it! :-)</p>
-<p>Cody also made the code look more like the original, removing the <code>int</code> from
+<p>Cody made the code look more like the original, removing the <code>int</code> from
 the variables, adding instead <code>-Wno-implicit-int</code>. The newline added by the
 judges was retained.</p>
 <div id="1990_cmills">
@@ -1263,11 +1263,11 @@ fgets(3)?</a> for why this was done.</p>
 <p><a href="#yusuke">Yusuke</a> and <a href="#cody">Cody</a> in conjunction fixed this for modern systems (both fixed a
 different compiler error but more fixes were also made).</p>
 <p>Yusuke added the comma operator for a binary expression with <code>free(3)</code> which is
-is a compiler error because <code>free()</code> returns void. Cody then made it slightly
+a compiler error because <code>free()</code> returns <code>void</code>. Cody then made it slightly
 more like the original in this way by redefining <code>free</code> to have the comma
 operator itself.</p>
 <p>Cody fixed another compiler error by removing the erroneous prototype to
-<code>fopen()</code>. Cody also changed a <code>char *</code> used for file I/O to be a proper <code>FILE *</code> and fixed a typo in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/dds/LANDER.BAS">LANDER.BAS</a>.</p>
+<code>fopen(3)</code>. Cody also changed a <code>char *</code> used for file I/O to be a proper <code>FILE *</code> and fixed a typo in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/dds/LANDER.BAS">LANDER.BAS</a>.</p>
 <p>Cody also made this use <code>fgets(3)</code>. See <a href="faq.html#faq4_1">FAQ 4.1 - Why were some calls to
 the libc function gets(3) changed to use
 fgets(3)?</a> for why this was done.</p>
@@ -1294,13 +1294,14 @@ with if the C preprocessor botches single quotes in cpp expansion.</p>
 <p><a href="#cody">Cody</a> fixed the script to work properly in modern environments including writing
 to and extracting from <code>stdout</code> and relying on the exit code in the commands to
 allow for <code>&amp;&amp; ...</code>.</p>
-<p>He also changed the <code>perror(3)</code> call to <code>fprintf(3)</code> because in macOS when errno
-is 0 it shows what looks like an error.</p>
-<p>He added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/jaw/try.sh">try.sh</a> to run the commands that we suggested at
-the time.</p>
+<p>Cody also changed the <code>perror(3)</code> call to <code>fprintf(3)</code> because in macOS when errno
+is 0 it shows what looks like an error. However, see <a href="bugs.html#1990_jaw">1990/jaw in
+bugs.html</a>.</p>
+<p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/jaw/try.sh">try.sh</a> to run the commands that we suggested at
+the time of releasing the winning entries of 1990.</p>
 <p>NOTE: as <code>btoa</code> is not common we used a ruby script from <a href="#yusuke">Yusuke</a> but with a minor
-fix applied by Cody that made the program just show <code>oops</code> twice from invalid
-input but which now works.</p>
+fix applied by Cody that made the program just show <code>oops</code> twice (twice is not
+an error here) from invalid input but which now works.</p>
 <div id="1990_pjr">
 <h2 id="pjr"><a href="1990/pjr/index.html">1990/pjr</a></h2>
 <h3 id="source-code-pjr.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/pjr/pjr.c">pjr.c</a></h3>
@@ -1320,20 +1321,18 @@ entry does.</p>
 <h2 id="tbr"><a href="1990/tbr/index.html">1990/tbr</a></h2>
 <h3 id="source-code-tbr.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/tbr/tbr.c">tbr.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> fixed this to work with modern compilers; <code>exit(3)</code> returns void but the
+<p><a href="#cody">Cody</a> fixed this to work with modern compilers; <code>exit(3)</code> returns <code>void</code> but the
 function was used in a binary expression so this wouldn’t even compile.</p>
-<p>Cody also changed the code to use <code>fgets()</code> instead of <code>gets()</code> so one would not get
-a warning about the use of <code>gets(3)</code> at linking time or execution, the latter of
-which was causing confusing output due to the warning being interspersed with
-the program’s interactive output. See <a href="faq.html#faq4_1">FAQ 4.1 - Why were some calls to
-the libc function gets(3) changed to use
-fgets(3)?</a> for more details.</p>
-<p>Additionally, Cody fixed the shortened version provided by the author in the
-same way as the original entry, first the compile fix and then later on making
-it look more like the original by redefining <code>exit</code> and also redefining <code>gets()</code>
-to be <code>fgets()</code> in the same way that the original entry is. This way the <a href="1990/tbr/index.html#alternate-code">alt
-version</a> is equivalent in function, like the
-author intended, but more compact.</p>
+<p>Cody fixed (as above) and added the shortened version as <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/tbr/tbr.alt.c">alt
+code</a> which originally comes from the
+author.</p>
+<p>Cody also changed the code (in both versions) to use <code>fgets(3)</code> instead of
+<code>gets(3)</code> so one would not get a warning about the use of <code>gets(3)</code> at linking
+time or execution, the latter of which was causing confusing output due to the
+warning being interspersed with the program’s interactive output. See <a href="faq.html#faq4_1">FAQ 4.1
+- Why were some calls to the libc function gets(3) changed to use
+fgets(3)?</a> for more details on why this change was
+done more generally.</p>
 <div id="1990_theorem">
 <h2 id="theorem"><a href="1990/theorem/index.html">1990/theorem</a></h2>
 <h3 id="source-code-theorem.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/theorem/theorem.c">theorem.c</a></h3>
@@ -1341,9 +1340,9 @@ author intended, but more compact.</p>
 <p><a href="#cody">Cody</a> fixed this to compile with modern systems.</p>
 <p>He also fixed some bugs that impacted the usability of this program including some
 segfaults under modern systems (and possibly in some cases earlier systems) with
-this entry. Originally we noted that the 4 trailing args ‘0 0 0 0’ were
-required on systems that dump core when NULL is dereferenced but this problem
-showed itself in modern systems even with the 4 ‘0 0 0 0’. He also fixed a
+this entry. Originally we noted that 4 trailing args, <code>0 0 0 0</code>, were
+required on systems that dump core when <code>NULL</code> is dereferenced but the problem
+this was meant to fix showed itself in modern systems even with the 4 <code>0</code>s. He also fixed a
 segfault if not enough args are specified and fixed the code so that the
 generated <code>fibonacci.c</code> actually works; before it just printed <code>0</code> over and over
 again (since it did not work anyway a segfault prevention was added here). He
@@ -1351,29 +1350,30 @@ also fixed some array addressing (some of which might not be strictly necessary
 but as he was testing the <code>fibonacci.c</code> bug he ended up changing it anyway).</p>
 <p>BTW: why can’t the fix:</p>
 <pre><code>    if (a[1]==NULL||a[2]==NULL||a[3]==NULL||a[4]==NULL||a[5]==NULL) return 1;</code></pre>
-<p>be changed to just test the value of <code>A</code> when <code>a</code> is argv and <code>A</code> is argc?</p>
+<p>be changed to just test the value of <code>A</code> when <code>a</code> is argv and <code>A</code> is argc? You
+tell us!</p>
 <p>Cody also changed the code to use <code>fgets(3)</code>. See <a href="faq.html#faq4_1">FAQ 4.1 - Why were some calls to
 the libc function gets(3) changed to use
 fgets(3)?</a> for why this was done.</p>
 <p>Since this program is so incredible the extra fixes were deemed worth having and
-this is why it was done.</p>
-<p>Cody later disabled a warning in the Makefile that proved to be a problem only
+this is why they were done.</p>
+<p>Cody later disabled a warning in the <code>Makefile</code> that proved to be a problem only
 with <code>clang</code> in Linux but which was defaulting to an error. This way was the
 simplest way to deal with the problem in question due to the way the entry
 works.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/theorem/try.sh">try.sh</a> script which shows the
 original program and some of the programs it generates.</p>
-<p><a href="#yusuke">Yusuke</a> pointed out that <code>atof</code> nowadays needs <code>#include &lt;stdlib.h&gt;</code> which was
+<p><a href="#yusuke">Yusuke</a> pointed out that <code>atof(3)</code> nowadays needs <code>#include &lt;stdlib.h&gt;</code> which was
 used in order to get this to work initially (prior to this output was there but
 incomplete).</p>
 <div id="1990_stig">
 <h2 id="stig"><a href="1990/stig/index.html">1990/stig</a></h2>
 <h3 id="source-code-stig.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/stig/stig.c">stig.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> fixed the paths in the Makefile so that this would build in Linux (it
+<p><a href="#cody">Cody</a> fixed the paths in the <code>Makefile</code> so that this would build in Linux (it
 worked fine in macOS).</p>
-<p>He also changed the Makefile to use <code>bash</code> not <code>zsh</code> as not all systems have
-<code>zsh</code> and the Makefile actually sets <code>SHELL</code> to <code>bash</code>.</p>
+<p>He also changed the <code>Makefile</code> to use <code>bash</code> not <code>zsh</code> as not all systems have
+<code>zsh</code> and the <code>Makefile</code> actually sets <code>SHELL</code> to <code>bash</code>.</p>
 <div id="1990_westley">
 <h2 id="westley-3"><a href="1990/westley/index.html">1990/westley</a></h2>
 <h3 id="source-code-westley.c-3">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/westley/westley.c">westley.c</a></h3>
@@ -1382,12 +1382,13 @@ worked fine in macOS).</p>
 differences he has provided an alternate version,
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/westley/westley.alt.c">westley.alt.c</a>, which is the original code.</p>
 <p>He also changed the <code>argc</code> to be an <code>int</code>, not a <code>char</code>, even though it might
-often be the same (for the purpose of <code>clang</code>?).</p>
+often be the same (this in particular was done for <code>clang</code>).</p>
 <p>He also fixed the code to not enter an infinite loop if arg is a number not &gt; 0
-and to not crash if no arg is specified.</p>
-<p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/westley/try.sh">try.sh</a> script.</p>
-<p>The alt code did NOT have arg checks added as it is actually a copy of the
+and to not crash if no arg is specified. This was done during a time it was
+deemed a problem to be fixed.</p>
+<p>NOTE: the alt code did NOT have arg checks added as it is actually a copy of the
 original code.</p>
+<p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/westley/try.sh">try.sh</a> script.</p>
 <div id="1991">
 <h1 id="section-7"><a href="1991/index.html">1991</a></h1>
 </div>

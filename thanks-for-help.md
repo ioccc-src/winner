@@ -1214,9 +1214,9 @@ environmental variable; see the index.html for details.
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1990/baruch/try.sh) script.
 
-Cody also added an [alternate version](%%REPO_URL%%/1990/baruch/baruch.alt.c) which allows Turbo-C
+Cody also added an [alternate version](%%REPO_URL%%/1990/baruch/baruch.alt.c), which allows Turbo-C
 and MSC to compile this code, based on the authors' remarks, except that Cody
-did not change the `" #Q"` string as that showed worse looking output
+did not change the `" #Q"` string as that appeared to show worse looking output
 instead of improved output though he has no way to test the compilers in
 question (i.e. it was only tested in the original entry). YMMV.
 
@@ -1225,7 +1225,7 @@ Although this is appreciated we agree with him that <del>no one</del>
 [users](https://en.wikipedia.org/wiki/Microsoft_Windows)
 [here](https://www.ioccc.org) will need it! :-)
 
-Cody also made the code look more like the original, removing the `int` from
+Cody made the code look more like the original, removing the `int` from
 the variables, adding instead `-Wno-implicit-int`. The newline added by the
 judges was retained.
 
@@ -1253,12 +1253,12 @@ fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
 different compiler error but more fixes were also made).
 
 Yusuke added the comma operator for a binary expression with `free(3)` which is
-is a compiler error because `free()` returns void. Cody then made it slightly
+a compiler error because `free()` returns `void`. Cody then made it slightly
 more like the original in this way by redefining `free` to have the comma
 operator itself.
 
 Cody fixed another compiler error by removing the erroneous prototype to
-`fopen()`.  Cody also changed a `char *` used for file I/O to be a proper `FILE
+`fopen(3)`.  Cody also changed a `char *` used for file I/O to be a proper `FILE
 *` and fixed a typo in [LANDER.BAS](%%REPO_URL%%/1990/dds/LANDER.BAS).
 
 Cody also made this use `fgets(3)`. See [FAQ 4.1  - Why were some calls to
@@ -1302,15 +1302,16 @@ Cody also added the [try.sh](%%REPO_URL%%/1990/dg/try.sh) script.
 to and extracting from `stdout` and relying on the exit code in the commands to
 allow for `&& ...`.
 
-He also changed the `perror(3)` call to `fprintf(3)` because in macOS when errno
-is 0 it shows what looks like an error.
+Cody also changed the `perror(3)` call to `fprintf(3)` because in macOS when errno
+is 0 it shows what looks like an error. However, see [1990/jaw in
+bugs.html](bugs.html#1990_jaw).
 
-He added the [try.sh](%%REPO_URL%%/1990/jaw/try.sh) to run the commands that we suggested at
-the time.
+Cody also added the [try.sh](%%REPO_URL%%/1990/jaw/try.sh) to run the commands that we suggested at
+the time of releasing the winning entries of 1990.
 
 NOTE: as `btoa` is not common we used a ruby script from [Yusuke](#yusuke) but with a minor
-fix applied by Cody that made the program just show `oops` twice from invalid
-input but which now works.
+fix applied by Cody that made the program just show `oops` twice (twice is not
+an error here) from invalid input but which now works.
 
 
 <div id="1990_pjr">
@@ -1340,23 +1341,20 @@ entry does.
 ### Source code: [tbr.c](%%REPO_URL%%/1990/tbr/tbr.c)
 </div>
 
-[Cody](#cody) fixed this to work with modern compilers; `exit(3)` returns void but the
+[Cody](#cody) fixed this to work with modern compilers; `exit(3)` returns `void` but the
 function was used in a binary expression so this wouldn't even compile.
 
-Cody also changed the code to use `fgets()` instead of `gets()` so one would not get
-a warning about the use of `gets(3)` at linking time or execution, the latter of
-which was causing confusing output due to the warning being interspersed with
-the program's interactive output. See [FAQ 4.1  - Why were some calls to
-the libc function gets&#x28;3&#x29; changed to use
-fgets&#x28;3&#x29;?](faq.html#faq4_1) for more details.
+Cody fixed (as above) and added the shortened version as [alt
+code](%%REPO_URL%%/1990/tbr/tbr.alt.c) which originally comes from the
+author.
 
-
-Additionally, Cody fixed the shortened version provided by the author in the
-same way as the original entry, first the compile fix and then later on making
-it look more like the original by redefining `exit` and also redefining `gets()`
-to be `fgets()` in the same way that the original entry is. This way the [alt
-version](1990/tbr/index.html#alternate-code) is equivalent in function, like the
-author intended, but more compact.
+Cody also changed the code (in both versions) to use `fgets(3)` instead of
+`gets(3)` so one would not get a warning about the use of `gets(3)` at linking
+time or execution, the latter of which was causing confusing output due to the
+warning being interspersed with the program's interactive output. See [FAQ 4.1
+- Why were some calls to the libc function gets&#x28;3&#x29; changed to use
+fgets&#x28;3&#x29;?](faq.html#faq4_1) for more details on why this change was
+done more generally.
 
 
 <div id="1990_theorem">
@@ -1368,9 +1366,9 @@ author intended, but more compact.
 
 He also fixed some bugs that impacted the usability of this program including some
 segfaults under modern systems (and possibly in some cases earlier systems) with
-this entry.  Originally we noted that the 4 trailing args '0 0 0 0' were
-required on systems that dump core when NULL is dereferenced but this problem
-showed itself in modern systems even with the 4 '0 0 0 0'. He also fixed a
+this entry.  Originally we noted that 4 trailing args, `0 0 0 0`, were
+required on systems that dump core when `NULL` is dereferenced but the problem
+this was meant to fix showed itself in modern systems even with the 4 `0`s. He also fixed a
 segfault if not enough args are specified and fixed the code so that the
 generated `fibonacci.c` actually works; before it just printed `0` over and over
 again (since it did not work anyway a segfault prevention was added here). He
@@ -1383,7 +1381,8 @@ BTW: why can't the fix:
     if (a[1]==NULL||a[2]==NULL||a[3]==NULL||a[4]==NULL||a[5]==NULL) return 1;
 ```
 
-be changed to just test the value of `A` when `a` is argv and `A` is argc?
+be changed to just test the value of `A` when `a` is argv and `A` is argc? You
+tell us!
 
 Cody also changed the code to use `fgets(3)`. See [FAQ 4.1  - Why were some calls to
 the libc function gets&#x28;3&#x29; changed to use
@@ -1391,9 +1390,9 @@ fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
 
 
 Since this program is so incredible the extra fixes were deemed worth having and
-this is why it was done.
+this is why they were done.
 
-Cody later disabled a warning in the Makefile that proved to be a problem only
+Cody later disabled a warning in the `Makefile` that proved to be a problem only
 with `clang` in Linux but which was defaulting to an error. This way was the
 simplest way to deal with the problem in question due to the way the entry
 works.
@@ -1401,7 +1400,7 @@ works.
 Cody also added the [try.sh](%%REPO_URL%%/1990/theorem/try.sh) script which shows the
 original program and some of the programs it generates.
 
-[Yusuke](#yusuke) pointed out that `atof` nowadays needs `#include <stdlib.h>` which was
+[Yusuke](#yusuke) pointed out that `atof(3)` nowadays needs `#include <stdlib.h>` which was
 used in order to get this to work initially (prior to this output was there but
 incomplete).
 
@@ -1411,11 +1410,11 @@ incomplete).
 ### Source code: [stig.c](%%REPO_URL%%/1990/stig/stig.c)
 </div>
 
-[Cody](#cody) fixed the paths in the Makefile so that this would build in Linux (it
+[Cody](#cody) fixed the paths in the `Makefile` so that this would build in Linux (it
 worked fine in macOS).
 
-He also changed the Makefile to use `bash` not `zsh` as not all systems have
-`zsh` and the Makefile actually sets `SHELL` to `bash`.
+He also changed the `Makefile` to use `bash` not `zsh` as not all systems have
+`zsh` and the `Makefile` actually sets `SHELL` to `bash`.
 
 
 <div id="1990_westley">
@@ -1429,15 +1428,17 @@ differences he has provided an alternate version,
 [westley.alt.c](%%REPO_URL%%/1990/westley/westley.alt.c), which is the original code.
 
 He also changed the `argc` to be an `int`, not a `char`, even though it might
-often be the same (for the purpose of `clang`?).
+often be the same (this in particular was done for `clang`).
 
 He also fixed the code to not enter an infinite loop if arg is a number not > 0
-and to not crash if no arg is specified.
+and to not crash if no arg is specified. This was done during a time it was
+deemed a problem to be fixed.
+
+NOTE: the alt code did NOT have arg checks added as it is actually a copy of the
+original code.
 
 Cody also added the [try.sh](%%REPO_URL%%/1990/westley/try.sh) script.
 
-The alt code did NOT have arg checks added as it is actually a copy of the
-original code.
 
 
 <div id="1991">
