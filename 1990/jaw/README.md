@@ -4,6 +4,16 @@
     make all
 ```
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+    STATUS: known bug - please help us fix
+```
+
+For more detailed information see [1990/jaw in bugs.html](../../bugs.html#1990_jaw).
+
 
 ## Try:
 
