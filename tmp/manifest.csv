@@ -497,7 +497,7 @@
 1990,jaw,Makefile,30,true,makefile,true,entry Makefile
 1990,jaw,jaw.orig.c,50,false,c,true,original source
 1990,jaw,try.sh,100,true,shellscript,true,script to try entry
-1990,jaw,btoa,150,true,ruby,true,bota utility
+1990,jaw,btoa,150,true,ruby,true,btoa utility
 1990,jaw,shark.sh,150,true,shellscript,true,shark utility with embedded source
 1990,jaw,1990_jaw.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1990,jaw,README.md,4000000000,true,markdown,true,markdown source for this web page
