@@ -670,7 +670,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: author handles found in $ENTRY_JSON end above" 1>&2
 fi
 
-# verify each author handle has a readable /author/author_handle.json file
+# verify each author handle has a readable author/author_handle.json file
 #
 for author_handle in $AUTHOR_HANDLE_SET; do
 
@@ -678,7 +678,7 @@ for author_handle in $AUTHOR_HANDLE_SET; do
     #
     export AUTHOR_HANDLE_JSON="$AUTHOR_DIR/$author_handle.json"
 
-    # verify that /author/author_handle.json exists as a readable file
+    # verify that author/author_handle.json exists as a readable file
     #
     if [[ ! -e $AUTHOR_HANDLE_JSON ]]; then
 	echo "$0: ERROR: for author handle: $author_handle author JSON file not found: $AUTHOR_HANDLE_JSON" 1>&2
@@ -696,7 +696,7 @@ for author_handle in $AUTHOR_HANDLE_SET; do
 	echo "$0: debug[5]: for author handle: $author_handle found a readable author JSON file: $AUTHOR_HANDLE_JSON" 1>&2
     fi
 
-    # verify that the /author/author_handle.json file lists the ENTRY_ID as one of their wins
+    # verify that the author/author_handle.json file lists the ENTRY_ID as one of their wins
     #
     ENTRY_ID_FOUND=$(output_entry_ids "$AUTHOR_HANDLE_JSON" | grep -F -- "$ENTRY_ID")
     status="$?"
@@ -709,7 +709,7 @@ for author_handle in $AUTHOR_HANDLE_SET; do
 	echo "$0: debug[7]: readable author JSON file: $AUTHOR_HANDLE_JSON mentions entry id: $ENTRY_ID" 1>&2
     fi
 
-    # verify that we have a Full Name in the /author/author_handle.json file
+    # verify that we have a Full Name in the author/author_handle.json file
     #
     FULL_NAME=$(output_full_name "$AUTHOR_HANDLE_JSON")
     status="$?"
@@ -722,7 +722,7 @@ for author_handle in $AUTHOR_HANDLE_SET; do
 	echo "$0: debug[7]: author JSON file: $AUTHOR_HANDLE_JSON Full Name: $FULL_NAME" 1>&2
     fi
 
-    # verify that we have a Location Code in the /author/author_handle.json file
+    # verify that we have a Location Code in the author/author_handle.json file
     #
     LOCATION_CODE=$(output_location_code "$AUTHOR_HANDLE_JSON")
     status="$?"
