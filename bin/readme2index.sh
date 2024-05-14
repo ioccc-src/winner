@@ -86,7 +86,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.3 2024-04-13"
+export VERSION="1.2.4 2024-04-14"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -390,19 +390,6 @@ DOT_PATH_CONTENT=$(< "$DOT_PATH")
 export DOT_PATH_CONTENT
 if [[ $ENTRY_PATH != "$DOT_PATH_CONTENT" ]]; then
     echo "$0: ERROR: arg: $ENTRY_PATH does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
-    exit 7
-fi
-export ENTRY_JSON="$YYYY_DIR/.entry.json"
-if [[ ! -e $ENTRY_JSON ]]; then
-    echo "$0: ERROR: .entry.json does not exist: $ENTRY_JSON" 1>&2
-    exit 7
-fi
-if [[ ! -f $ENTRY_JSON ]]; then
-    echo "$0: ERROR: .entry.json is not a file: $ENTRY_JSON" 1>&2
-    exit 7
-fi
-if [[ ! -r $ENTRY_JSON ]]; then
-    echo "$0: ERROR: .entry.json is not a readable file: $ENTRY_JSON" 1>&2
     exit 7
 fi
 
