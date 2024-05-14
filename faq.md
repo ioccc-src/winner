@@ -38,7 +38,7 @@
 - [3.6  - An IOCCC entry messed up my terminal application, how do I fix this?](#faq3_6)
 - [3.7  - How do I run an IOCCC entry that requires X11?](#faq3_7)
 - [3.8  - How do I compile an IOCCC entry that requires SDL1 or SDL2?](#faq3_8)
-- [3.9  - How do I compile an IOCCC entry that requires &#x28;n&#x29;?](#faq3_9)
+- [3.9  - How do I compile an IOCCC entry that requires &#x28;n&#x29;curses?](#faq3_9)
 - [3.10 - How do I compile and use an IOCCC entry that requires sound?](#faq3_10)
 - [3.11 - Why do Makefiles use -Weverything with clang?](#faq3_11)
 - [3.12 - How do I find out how to send interrupt/EOF etc. for entries that require it?](#faq3_12)
@@ -1466,7 +1466,7 @@ as a GitHub pull request](#ull_request) for more information about pull requests
 
 <div id="faq3_9">
 <div id="curses">
-### FAQ 3.9: How do I compile an IOCCC entry that requires &#x28;n&#x29;?
+### FAQ 3.9: How do I compile an IOCCC entry that requires &#x28;n&#x29;curses?
 </div>
 </div>
 
