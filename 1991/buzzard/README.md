@@ -5,7 +5,7 @@
 ```
 
 There is an [alternate version](#alternate-code) which might feel more at home
-for vi(m) users in navigation.
+for vi(m) users in navigation and which has an easy way to exit.
 
 
 ### Bugs and (Mis)features:
