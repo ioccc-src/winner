@@ -1397,7 +1397,8 @@ original code.</p>
 <h3 id="source-code-ant.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/ant/ant.c">ant.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/ant/ant.alt.c">alt code</a> that will be a bit easier to use for
-those familiar with vim in the following ways:</p>
+those familiar with vim in the following ways (we don’t want vi users to also
+not be able to use it or exit it, now do we ? :-) ):</p>
 <ul>
 <li>Use <code>0</code> to go to first column.</li>
 <li>Use <code>$</code> to go to last column.</li>
@@ -1412,7 +1413,7 @@ those familiar with vim in the following ways:</p>
 <h3 id="source-code-brnstnd.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/brnstnd.c">brnstnd.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> fixed this for modern systems. There were two invalid operands to binary
-expression (<code>char *</code> and <code>void</code> and <code>int</code> and <code>void</code>) to resolve and
+expression (<code>char *</code>, <code>void</code> and <code>int</code>, <code>void</code>) to resolve and
 additionally a mis-feature of the C pre-processor which no longer works had to
 be changed as well in order to get this to compile. In particular the macro <code>C</code>,
 defined as <code>C =G</code> to make <code>+=</code> and similar operators no longer works. The
@@ -1425,58 +1426,60 @@ slightly more like the original, even though it’s unused.</p>
 <h2 id="buzzard"><a href="1991/buzzard/index.html">1991/buzzard</a></h2>
 <h3 id="source-code-buzzard.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/buzzard/buzzard.c">buzzard.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> fixed this so that the coordinates being specified would not crash the
-program. This happened because the function that calls <code>atoi(3)</code> took an arg
-without any type specified and as an implicit <code>int</code> it was not a <code>char *</code> which
-crashed the program in modern systems.</p>
+<p><a href="#cody">Cody</a> fixed this so that the coordinates being specified, a documented
+feature, would not crash the program. This happened because the function that
+calls <code>atoi(3)</code> took an arg without any type specified and as an implicit <code>int</code>
+it was not a <code>char *</code> which crashed the program in modern systems.</p>
 <p>Cody also made the file name in the code (which is the default maze file) not
 hard-coded but instead be <code>__FILE__</code>.</p>
-<p>Finally Cody added the <a href="1991/buzzard/index.html#alternate-code">alternate
-version</a> which will possibly feel more at
-home with those familiar with vi(m) (it certainly does feel more at home with
-him): <code>k</code> for forward, <code>h</code> for left and <code>l</code> for right. This version also has a
-more useful way to exit, just entering <code>q</code> followed by enter, rather than
-completing or killing the program.</p>
+<p>Finally Cody added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/buzzard/buzzard.alt.c">alternate
+version</a> which will possibly feel more
+at home with those familiar with vi(m): <code>k</code> for forward, <code>h</code> for left and <code>l</code>
+for right. This version also has a more useful way to exit, just entering <code>q</code>
+followed by enter, rather than completing (and it’s a maze) or killing the
+program. We still recommend you try the original version first, of course.</p>
 <div id="1991_davidguy">
 <h2 id="davidguy"><a href="1991/davidguy/index.html">1991/davidguy</a></h2>
 <h3 id="source-code-davidguy.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/davidguy/davidguy.c">davidguy.c</a></h3>
 </div>
-<p>As some systems like macOS can be particular about not declaring functions <a href="#cody">Cody</a>
-added to the Makefile some <code>-include</code> options. These appear to not be strictly
-necessary but it was done due to other syscalls being a problem not being
-declared first.</p>
+<p>As some systems like macOS can be particular about not declaring functions
+<a href="#cody">Cody</a> added to the <code>Makefile</code> some <code>-include</code> options. These appear to
+not be strictly necessary (currently) but it was done due to other syscalls
+being a problem not being declared first, to hopefully future-proof it.</p>
 <div id="1991_dds">
 <h2 id="dds-1"><a href="1991/dds/index.html">1991/dds</a></h2>
 <h3 id="source-code-dds.c-1">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/dds/dds.c">dds.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> fixed a segfault that prevented this entry from working in any condition
-and he also made it work for <code>clang</code>. He also added checks for NULL <code>FILE *</code>s.
-Furthermore he changed it so that the C from the BASIC uses <code>fgets()</code>, not
+<p><a href="#cody">Cody</a> fixed a segfault that prevented this entry from working in any
+condition (the <code>char *s</code> had to be changed to <code>char s[]</code>) and he also made it
+and the generated code work for <code>clang</code>.</p>
+<p>Furthermore Cody changed it so that the C from the BASIC uses <code>fgets()</code>, not
 <code>gets()</code>. See <a href="faq.html#faq4_1">FAQ 4.1 - Why were some calls to
 the libc function gets(3) changed to use
 fgets(3)?</a> for why this was done.</p>
-<p>For the magic of <code>clang</code> and <code>fgets()</code> see below.</p>
-<p><code>Clang</code> (at least in some systems?) defaults to having <code>-Werror</code> and the code that
-the entry generates had some warnings that were causing compilation to fail if
-<code>cc</code> is <code>clang</code> as it just ran <code>cc a.c</code>. It ran it by what was once <code>system(q-6);</code>
-but if <code>cc</code> is <code>clang</code> like in macOS this is not enough.</p>
-<p>(Cody said he stupidly did the below manually until he thought to write a simple
-program to do the conversions which he used for <code>gets()</code> to <code>fgets()</code> and for
-making the generated code return a value from <code>main()</code> rather than just
-<code>return;</code>).</p>
-<p>The following had to be added to the string <code>s</code> (which to fix the segfault was
-changed from <code>char*s</code> to <code>char s[]</code>):</p>
+<p>For the magic of <code>clang</code> (which was done manually except the returning a value
+in <code>main()</code>) and <code>fgets(3)</code>, see below. The problem with <code>clang</code> can be
+described simply as: <code>clang</code> (at least in some systems?) defaults to having
+<code>-Werror</code> and the code that the entry generates had some warnings that were
+causing compilation to fail if <code>cc</code> is <code>clang</code> (the entry runs <code>cc a.c</code>). An
+example problem that had to be fixed is that the generated code returned from
+<code>main()</code> no value but rather just had <code>return;</code>.</p>
+<p>The code used to run <code>cc a.c</code> by what was once <code>system(q-6);</code> but if <code>cc</code> is <code>clang</code>
+like in macOS this is not enough.</p>
+<p>If you have the time and interest and you wish to follow the below a bit better,
+see the author’s remarks for the way the string works. The following had to be
+added to the string <code>s</code>:</p>
 <pre><code>    !.Xop.fssps!.Xop.sfuvso.uzqf!.Xop.jnqmjdju.gvodujpo.efdmbsbujpo</code></pre>
-<p>and then the call to <code>system()</code> had to be changed to:</p>
+<p>and then the call to <code>system(3)</code> had to be changed to:</p>
 <pre><code>    system(q-69);</code></pre>
-<p>An important point is that the placement of this string in the <code>s</code> array does
-matter. This is because of the code:</p>
+<p>An important point is that the placement of this string in the <code>s</code> array
+<strong><em>does</em> matter</strong>. This is because of the code:</p>
 <pre><code>    *o=fopen(q-3,&quot;w&quot;);</code></pre>
 <p>which means the file name that translates to <code>a.c</code> has to be at the end of the
 string. Thus the end of the string actually looks like:</p>
 <pre><code>    !.Xop.fssps!.Xop.sfuvso.uzqf!.Xop.jnqmjdju.gvodujpo.efdmbsbujpo!b/d</code></pre>
 <p>But then there is the matter of getting the C to use <code>fgets(3)</code>. As can be seen
-above it’s not as simple as changing <code>gets(3)</code> to <code>fgets(3)</code>. This was more magic
+above it’s not as simple as changing <code>gets(3)</code> to <code>fgets(3)</code>. This involved more magic
 characters that had to be updated and some added. The C code:</p>
 <pre><code>    atoi(gets(b))</code></pre>
 <p>is in the string:</p>
@@ -1491,7 +1494,7 @@ have <code>-include stdio.h</code> which in this rotated string is:</p>
 <pre><code>    .jodmvef!tuejp/i</code></pre>
 <p>which had to be added after:</p>
 <pre><code>    efdmbsbujpo!</code></pre>
-<p>which is the end of the warning disabled for <code>clang</code> as described above.</p>
+<p>which is the end of the warning disabled for <code>clang</code> (as described above).</p>
 <p>But now the <code>system(q-69);</code> had to be changed to <code>system(q-86);</code>.</p>
 <p>Then, later on, Cody discovered that in some systems, <code>clang</code> triggers even more
 warnings so this had to be corrected too so the string was updated again and
@@ -1511,15 +1514,17 @@ Thus in full the string became:</p>
     b/d&quot;;</code></pre>
 <p>and it now is <code>system(q-87);</code>.</p>
 <p>It is hoped that this is the last time the string has to be updated to work with
-all versions of <code>clang</code> but if not the above is how it works.</p>
+all versions of <code>clang</code>, but if not the above is how it works.</p>
 <p>With these changes in place it will compile and work with both <code>gcc</code> and <code>clang</code> and
 the C code generated will use <code>fgets(3)</code>, not <code>gets(3)</code>, therefore removing the
-annoying warnings. Note that the array passed to <code>fgets(3)</code> is an int but that
-was the same for <code>gets()</code> and is not necessary to update to a <code>char[]</code>.</p>
+annoying warnings. Note that the array passed to <code>fgets(3)</code> is an <code>int</code> but that
+was the same for <code>gets()</code> and is not necessary to update to a <code>char[]</code>. Thus you
+might still get some warnings there.</p>
 <p>The key to the string is that it rotates the character by <code>+1</code>. This was not
 immediately clear until reading the author’s remarks so there was an alt version
-that was something of a kludge, running <code>make a</code> instead but that was removed.</p>
-<p>Cody also fixed a typo in LANDER.BAS and made it so that if a file could not be
+that was something of a kludge, running <code>make a</code> instead, but after the proper
+fix was implemented the alt code was removed.</p>
+<p>Cody also fixed a typo in <code>LANDER.BAS</code> and made it so that if a file could not be
 opened for reading or a file could not be opened for writing it would not crash.
 The definition of whether that should be a bug to fix or a feature to not fix
 was pondered and changed numerous times and ultimately that problem with this
@@ -1528,16 +1533,17 @@ entry was fixed. It has not been done in all.</p>
 <h2 id="fine"><a href="1991/fine/index.html">1991/fine</a></h2>
 <h3 id="source-code-fine.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/fine/fine.c">fine.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> made it look much more like the original entry even after the fix that
-increased the count in characters from 80 to 106, getting it back down to just
-85 (and later back down to 80, see below).</p>
+<p><a href="#cody">Cody</a> made it look much more like the original entry even after the fix
+for <code>clang</code> (by the judges) that increased the count in characters from 80 to
+106, getting it back down to just 85 (and later back down to 80, see below).</p>
 <p>This was done by redefining <code>main</code> at the compiler line so that it looks like
-the original where one didn’t have to worry about the type of args of main() and
-there were other fewer restrictions and also by removing a cast that was
-not strictly necessary (this does create a new warning: <code>ordered comparison between pointer and integer ('char **' and 'int')</code> but it works just <code>fine</code>).</p>
+the original where one didn’t have to worry about the type of args of <code>main()</code>
+(when there were fewer restrictions), and also by removing a cast that was
+not strictly necessary (this created a new warning: <code>ordered comparison between pointer and integer ('char **' and 'int')</code> but it’s no longer there, as
+described below).</p>
 <p>That was <code>fine</code> as well but Cody decided to drop it back down to its original 80
-which also resolved the warning described above. This was by more clever use of
-the Makefile which now has a <code>-DB=(int)b</code> so that <code>B</code> can be used in place where
+characters which also resolved the warning described above. This was by more clever use of
+the <code>Makefile</code> which now has a <code>-DB=(int)b</code> so that <code>B</code> can be used in place where
 <code>(int)b</code> used to be necessary.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/fine/try.sh">try.sh</a> script which feeds the program
 some fun input for fun but mostly different output. He added a great string from
@@ -1562,7 +1568,7 @@ the above fix was applied to these versions too.</p>
 <h3 id="source-code-westley.c-4">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/westley/westley.c">westley.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> fixed a segfault in this program which prevented it from working. The
-problem was that the read-only char array <code>char *z[]</code> was being written to. The
+problem was that the read-only <code>char</code> array <code>char *z[]</code> was being written to. The
 fix was to change it to <code>char z[][100]</code> in two spots (see if you can determine
 why two places, not one!). Why 100 when the longest string is &lt; 100? Because a
 shorter value caused strange output and it’s easier to just choose a larger
@@ -1572,8 +1578,8 @@ also improved it so that warnings/errors/about to compile messages are not shown
 unless the <code>-e</code> option is used. This is because the errors being shown kind of
 ruins the experience. Finally he made it pass
 <a href="https://github.com/koalaman/shellcheck">ShellCheck</a>.</p>
-<p>Cody also added the alt version which is based on the author’s remarks, a
-version that supposedly (:-) ) always wins.</p>
+<p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/westley/westley.alt.c">alt version</a> which
+is based on the author’s remarks, a version that supposedly (:-) ) always wins.</p>
 <p>Cody also fixed the make clobber rule where a file was left lying about when it
 should have been removed.</p>
 <div id="1992">

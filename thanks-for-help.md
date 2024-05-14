@@ -1452,7 +1452,8 @@ Cody also added the [try.sh](%%REPO_URL%%/1990/westley/try.sh) script.
 </div>
 
 [Cody](#cody) added [alt code](%%REPO_URL%%/1991/ant/ant.alt.c) that will be a bit easier to use for
-those familiar with vim in the following ways:
+those familiar with vim in the following ways (we don't want vi users to also
+not be able to use it or exit it, now do we ? :-) ):
 
 - Use `0` to go to first column.
 - Use `$` to go to last column.
@@ -1470,7 +1471,7 @@ The other keys were left unchanged.
 </div>
 
 [Cody](#cody) fixed this for modern systems. There were two invalid operands to binary
-expression (`char *` and `void` and `int` and `void`) to resolve and
+expression (`char *`, `void` and `int`, `void`) to resolve and
 additionally a mis-feature of the C pre-processor which no longer works had to
 be changed as well in order to get this to compile. In particular the macro `C`,
 defined as `C =G` to make `+=` and similar operators no longer works.  The
@@ -1488,20 +1489,20 @@ Cody also added the [try.sh](%%REPO_URL%%/1991/brnstnd/try.sh) script and
 ### Source code: [buzzard.c](%%REPO_URL%%/1991/buzzard/buzzard.c)
 </div>
 
-[Cody](#cody) fixed this so that the coordinates being specified would not crash the
-program. This happened because the function that calls `atoi(3)` took an arg
-without any type specified and as an implicit `int` it was not a `char *` which
-crashed the program in modern systems.
+[Cody](#cody) fixed this so that the coordinates being specified, a documented
+feature, would not crash the program. This happened because the function that
+calls `atoi(3)` took an arg without any type specified and as an implicit `int`
+it was not a `char *` which crashed the program in modern systems.
 
 Cody also made the file name in the code (which is the default maze file) not
 hard-coded but instead be `__FILE__`.
 
 Finally Cody added the [alternate
-version](1991/buzzard/index.html#alternate-code) which will possibly feel more at
-home with those familiar with vi(m) (it certainly does feel more at home with
-him): `k` for forward, `h` for left and `l` for right. This version also has a
-more useful way to exit, just entering `q` followed by enter, rather than
-completing or killing the program.
+version](%%REPO_URL%%/1991/buzzard/buzzard.alt.c) which will possibly feel more
+at home with those familiar with vi(m): `k` for forward, `h` for left and `l`
+for right. This version also has a more useful way to exit, just entering `q`
+followed by enter, rather than completing (and it's a maze) or killing the
+program. We still recommend you try the original version first, of course.
 
 
 <div id="1991_davidguy">
@@ -1509,10 +1510,10 @@ completing or killing the program.
 ### Source code: [davidguy.c](%%REPO_URL%%/1991/davidguy/davidguy.c)
 </div>
 
-As some systems like macOS can be particular about not declaring functions [Cody](#cody)
-added to the Makefile some `-include` options. These appear to not be strictly
-necessary but it was done due to other syscalls being a problem not being
-declared first.
+As some systems like macOS can be particular about not declaring functions
+[Cody](#cody) added to the `Makefile` some `-include` options. These appear to
+not be strictly necessary (currently) but it was done due to other syscalls
+being a problem not being declared first, to hopefully future-proof it.
 
 
 <div id="1991_dds">
@@ -1520,40 +1521,42 @@ declared first.
 ### Source code: [dds.c](%%REPO_URL%%/1991/dds/dds.c)
 </div>
 
-[Cody](#cody) fixed a segfault that prevented this entry from working in any condition
-and he also made it work for `clang`. He also added checks for NULL `FILE *`s.
-Furthermore he changed it so that the C from the BASIC uses `fgets()`, not
+[Cody](#cody) fixed a segfault that prevented this entry from working in any
+condition (the `char *s` had to be changed to `char s[]`) and he also made it
+and the generated code work for `clang`.
+
+Furthermore Cody changed it so that the C from the BASIC uses `fgets()`, not
 `gets()`. See [FAQ 4.1  - Why were some calls to
 the libc function gets&#x28;3&#x29; changed to use
 fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
 
-For the magic of `clang` and `fgets()` see below.
+For the magic of `clang` (which was done manually except the returning a value
+in `main()`) and `fgets(3)`, see below. The problem with `clang` can be
+described simply as: `clang` (at least in some systems?) defaults to having
+`-Werror` and the code that the entry generates had some warnings that were
+causing compilation to fail if `cc` is `clang` (the entry runs `cc a.c`). An
+example problem that had to be fixed is that the generated code returned from
+`main()` no value but rather just had `return;`.
 
-`Clang` (at least in some systems?) defaults to having `-Werror` and the code that
-the entry generates had some warnings that were causing compilation to fail if
-`cc` is `clang` as it just ran `cc a.c`. It ran it by what was once `system(q-6);`
-but if `cc` is `clang` like in macOS this is not enough.
+The code used to run `cc a.c` by what was once `system(q-6);` but if `cc` is `clang`
+like in macOS this is not enough.
 
-(Cody said he stupidly did the below manually until he thought to write a simple
-program to do the conversions which he used for `gets()` to `fgets()` and for
-making the generated code return a value from `main()` rather than just
-`return;`).
-
-The following had to be added to the string `s` (which to fix the segfault was
-changed from `char*s` to `char s[]`):
+If you have the time and interest and you wish to follow the below a bit better,
+see the author's remarks for the way the string works. The following had to be
+added to the string `s`:
 
 ```
     !.Xop.fssps!.Xop.sfuvso.uzqf!.Xop.jnqmjdju.gvodujpo.efdmbsbujpo
 ```
 
-and then the call to `system()` had to be changed to:
+and then the call to `system(3)` had to be changed to:
 
 ``` <!---c-->
     system(q-69);
 ```
 
-An important point is that the placement of this string in the `s` array does
-matter. This is because of the code:
+An important point is that the placement of this string in the `s` array
+**_does_ matter**. This is because of the code:
 
 ``` <!---c-->
     *o=fopen(q-3,"w");
@@ -1567,7 +1570,7 @@ string. Thus the end of the string actually looks like:
 ```
 
 But then there is the matter of getting the C to use `fgets(3)`. As can be seen
-above it's not as simple as changing `gets(3)` to `fgets(3)`. This was more magic
+above it's not as simple as changing `gets(3)` to `fgets(3)`. This involved more magic
 characters that had to be updated and some added. The C code:
 
 ``` <!---c-->
@@ -1606,7 +1609,7 @@ which had to be added after:
     efdmbsbujpo!
 ```
 
-which is the end of the warning disabled for `clang` as described above.
+which is the end of the warning disabled for `clang` (as described above).
 
 But now the `system(q-69);` had to be changed to `system(q-86);`.
 
@@ -1634,18 +1637,20 @@ Thus in full the string became:
 and it now is `system(q-87);`.
 
 It is hoped that this is the last time the string has to be updated to work with
-all versions of `clang` but if not the above is how it works.
+all versions of `clang`, but if not the above is how it works.
 
 With these changes in place it will compile and work with both `gcc` and `clang` and
 the C code generated will use `fgets(3)`, not `gets(3)`, therefore removing the
-annoying warnings. Note that the array passed to `fgets(3)` is an int but that
-was the same for `gets()` and is not necessary to update to a `char[]`.
+annoying warnings. Note that the array passed to `fgets(3)` is an `int` but that
+was the same for `gets()` and is not necessary to update to a `char[]`. Thus you
+might still get some warnings there.
 
 The key to the string is that it rotates the character by `+1`. This was not
 immediately clear until reading the author's remarks so there was an alt version
-that was something of a kludge, running `make a` instead but that was removed.
+that was something of a kludge, running `make a` instead, but after the proper
+fix was implemented the alt code was removed.
 
-Cody also fixed a typo in LANDER.BAS and made it so that if a file could not be
+Cody also fixed a typo in `LANDER.BAS` and made it so that if a file could not be
 opened for reading or a file could not be opened for writing it would not crash.
 The definition of whether that should be a bug to fix or a feature to not fix
 was pondered and changed numerous times and ultimately that problem with this
@@ -1657,19 +1662,20 @@ entry was fixed. It has not been done in all.
 ### Source code: [fine.c](%%REPO_URL%%/1991/fine/fine.c)
 </div>
 
-[Cody](#cody) made it look much more like the original entry even after the fix that
-increased the count in characters from 80 to 106, getting it back down to just
-85 (and later back down to 80, see below).
+[Cody](#cody) made it look much more like the original entry even after the fix
+for `clang` (by the judges) that increased the count in characters from 80 to
+106, getting it back down to just 85 (and later back down to 80, see below).
 
 This was done by redefining `main` at the compiler line so that it looks like
-the original where one didn't have to worry about the type of args of main() and
-there were other fewer restrictions and also by removing a cast that was
-not strictly necessary (this does create a new warning: `ordered comparison
-between pointer and integer ('char **' and 'int')` but it works just `fine`).
+the original where one didn't have to worry about the type of args of `main()`
+(when there were fewer restrictions), and also by removing a cast that was
+not strictly necessary (this created a new warning: `ordered comparison
+between pointer and integer ('char **' and 'int')` but it's no longer there, as
+described below).
 
 That was `fine` as well but Cody decided to drop it back down to its original 80
-which also resolved the warning described above. This was by more clever use of
-the Makefile which now has a `-DB=(int)b` so that `B` can be used in place where
+characters which also resolved the warning described above. This was by more clever use of
+the `Makefile` which now has a `-DB=(int)b` so that `B` can be used in place where
 `(int)b` used to be necessary.
 
 Cody also added the [try.sh](%%REPO_URL%%/1991/fine/try.sh) script which feeds the program
@@ -1702,7 +1708,7 @@ the above fix was applied to these versions too.
 </div>
 
 [Cody](#cody) fixed a segfault in this program which prevented it from working. The
-problem was that the read-only char array `char *z[]` was being written to. The
+problem was that the read-only `char` array `char *z[]` was being written to. The
 fix was to change it to `char z[][100]` in two spots (see if you can determine
 why two places, not one!). Why 100 when the longest string is < 100? Because a
 shorter value caused strange output and it's easier to just choose a larger
@@ -1714,8 +1720,8 @@ unless the `-e` option is used.  This is because the errors being shown kind of
 ruins the experience. Finally he made it pass
 [ShellCheck](https://github.com/koalaman/shellcheck).
 
-Cody also added the alt version which is based on the author's remarks, a
-version that supposedly (:-) ) always wins.
+Cody also added the [alt version](%%REPO_URL%%/1991/westley/westley.alt.c) which
+is based on the author's remarks, a version that supposedly (:-) ) always wins.
 
 Cody also fixed the make clobber rule where a file was left lying about when it
 should have been removed.
