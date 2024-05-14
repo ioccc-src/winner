@@ -156,13 +156,6 @@ Why is win better than draw? Because everyone knows how to draw:
 	    be acceptable draws.
 ```
 
-This is supposed to happen.  As is written in the
-[The Jargon File](http://catb.org/jargon/html/F/feature.html):
-
-```
-    That's not a bug, that's a feature.
-```
-
 Try not to cheat (even though it's very easy :-) ), the computer has not learned
 how to catch you doing it.
 
