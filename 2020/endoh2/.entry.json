@@ -15,7 +15,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "entry source"
+	    "entry_text" : "entry source code"
 	},
 	{
 	    "file_path" : "Makefile",
@@ -31,7 +31,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "original source"
+	    "entry_text" : "original source code"
 	},
 	{
 	    "file_path" : "bear.txt",
@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "SPOILER WARNING - main logic for the program"
+	    "entry_text" : "spoiler code main logic"
 	},
 	{
 	    "file_path" : "spoiler/gen.rb",
@@ -79,7 +79,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "ruby",
 	    "display_via_github" : true,
-	    "entry_text" : "SPOILER WARNING - compose items and prog.c"
+	    "entry_text" : "ruby code to compose items and prog.c in artistic way"
 	},
 	{
 	    "file_path" : "spoiler/glyphs.txt",
@@ -87,7 +87,15 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "SPOILER WARNING - font data"
+	    "entry_text" : "glyphs data for spoiler/gen.rb"
+	},
+	{
+	    "file_path" : "spoiler/index.html",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "spoiler index.html web page"
 	},
 	{
 	    "file_path" : "spoiler/prog.c",
@@ -95,15 +103,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "SPOILER WARNING - generated source"
-	},
-	{
-	    "file_path" : "spoiler/spoiler.html",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "SPOILER WARNING - about the spoiler"
+	    "entry_text" : "spoiler source code"
 	},
 	{
 	    "file_path" : "spoiler/tmpl.txt",
@@ -111,7 +111,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "SPOILER WARNING - template for the program"
+	    "entry_text" : "template for spoiler/gen.rb output"
 	},
 	{
 	    "file_path" : "2020_endoh2.tar.bz2",
@@ -143,7 +143,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "path",
 	    "display_via_github" : true,
-	    "entry_text" : "directory path from top directory"
+	    "entry_text" : "directory path from top level directory"
 	},
 	{
 	    "file_path" : "README.md",
@@ -154,7 +154,7 @@
 	    "entry_text" : "markdown source for this web page"
 	},
 	{
-	    "file_path" : "spoiler/spoiler.md",
+	    "file_path" : "spoiler/index.md",
 	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",

@@ -15,7 +15,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "entry source"
+	    "entry_text" : "entry source code"
 	},
 	{
 	    "file_path" : "Makefile",
@@ -31,7 +31,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "alternate code"
+	    "entry_text" : "alternate source code"
 	},
 	{
 	    "file_path" : "prog.orig.c",
@@ -39,7 +39,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "original source"
+	    "entry_text" : "original source code"
 	},
 	{
 	    "file_path" : "COMPILING.html",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "information for herpetologist hackers"
+	    "entry_text" : "how one might add to or modify code"
 	},
 	{
 	    "file_path" : "bugs.html",
@@ -103,7 +103,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "script to try entry"
+	    "entry_text" : "like snake-colours.sh with pre-configured gameplay modes"
 	},
 	{
 	    "file_path" : "snake-colours.sh",
@@ -111,7 +111,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "script to reset - preset colors"
+	    "entry_text" : "script to configure colours of game"
 	},
 	{
 	    "file_path" : "spoilers.html",
@@ -119,7 +119,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "SPOILER ALERT - about the code"
+	    "entry_text" : "spoilers about the code"
 	},
 	{
 	    "file_path" : "terminals.html",
@@ -127,7 +127,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "terminal capabilities and dimensions and colors"
+	    "entry_text" : "terminal capabilities and dimensions and colours"
 	},
 	{
 	    "file_path" : "troubleshooting.html",
@@ -143,7 +143,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "source with more digraphs"
+	    "entry_text" : "source code with more digraphs"
 	},
 	{
 	    "file_path" : "prog.3-j.c",
@@ -151,7 +151,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "source with artistic layout and shorter j macro"
+	    "entry_text" : "source code with artistic layout and shorter j macro"
 	},
 	{
 	    "file_path" : "prog.3.c",
@@ -159,7 +159,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "source with a more artistic layout"
+	    "entry_text" : "source code with a more artistic layout"
 	},
 	{
 	    "file_path" : "snake.1",
@@ -207,7 +207,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "path",
 	    "display_via_github" : true,
-	    "entry_text" : "directory path from top directory"
+	    "entry_text" : "directory path from top level directory"
 	},
 	{
 	    "file_path" : "COMPILING.md",

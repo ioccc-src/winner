@@ -15,7 +15,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "entry source"
+	    "entry_text" : "entry source code"
 	},
 	{
 	    "file_path" : "Makefile",
@@ -31,7 +31,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "original source"
+	    "entry_text" : "original source code"
 	},
 	{
 	    "file_path" : "dgibson.sh",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "life cell layout"
+	    "entry_text" : "game of life cell layout"
 	},
 	{
 	    "file_path" : "dgibson.data2",
@@ -63,7 +63,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "life cell layout"
+	    "entry_text" : "game of life cell layout"
 	},
 	{
 	    "file_path" : "dgibson.data3",
@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "life cell layout"
+	    "entry_text" : "game of life cell layout"
 	},
 	{
 	    "file_path" : "dgibson.data4",
@@ -79,7 +79,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "life cell layout"
+	    "entry_text" : "game of life cell layout"
 	},
 	{
 	    "file_path" : "dgibson.data5",
@@ -87,7 +87,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "life cell layout"
+	    "entry_text" : "game of life cell layout"
 	},
 	{
 	    "file_path" : "1993_dgibson.tar.bz2",
@@ -119,7 +119,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "path",
 	    "display_via_github" : true,
-	    "entry_text" : "directory path from top directory"
+	    "entry_text" : "directory path from top level directory"
 	},
 	{
 	    "file_path" : "README.md",
