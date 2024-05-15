@@ -15,7 +15,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "entry source"
+	    "entry_text" : "entry source code"
 	},
 	{
 	    "file_path" : "Makefile",
@@ -31,7 +31,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "original source"
+	    "entry_text" : "original source code"
 	},
 	{
 	    "file_path" : "diff.sh",
@@ -95,7 +95,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "path",
 	    "display_via_github" : true,
-	    "entry_text" : "directory path from top directory"
+	    "entry_text" : "directory path from top level directory"
 	},
 	{
 	    "file_path" : "README.md",

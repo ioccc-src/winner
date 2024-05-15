@@ -4107,9 +4107,9 @@
 2020/endoh2/spoiler/code.c
 2020/endoh2/spoiler/gen.rb
 2020/endoh2/spoiler/glyphs.txt
+2020/endoh2/spoiler/index.html
+2020/endoh2/spoiler/index.md
 2020/endoh2/spoiler/prog.c
-2020/endoh2/spoiler/spoiler.html
-2020/endoh2/spoiler/spoiler.md
 2020/endoh2/spoiler/tmpl.txt
 2020/endoh2/try.sh
 2020/endoh2/yoda.txt

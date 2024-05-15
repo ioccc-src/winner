@@ -24,6 +24,7 @@ on an IOCCC entry by entry basis.
 - [General thanks](#general_thanks)
 - [Makefiles fixes and improvements](#makefiles_fixes_improvements)
 - [Consistency improvements](#consistency_improvements)
+- [Manifest improvements](#manifest_improvements)
 - [Thank you honor roll](#thank_you_honor_roll)
 - [Did we neglect to credit you?](#neglect)
 
@@ -6109,6 +6110,15 @@ tool](https://github.com/xexyl/sgit) as well but the vast majority were done
 manually.
 
 
+<div id="manifest_improvements">
+## Manifest improvements
+</div>
+
+[Cody](#cody) greatly improved the manifest of the winning entries so that the
+links to the files in the index.html files make sense and are consistent,
+although some might not make as much sense unless one looks into the entry.
+
+
 <div id="thank_you_honor_roll">
 ## Thank you honor roll
 </div>
@@ -6118,7 +6128,9 @@ changes**, fixes and **many important improvements** that we
 wish to **especially thank**.
 
 
+<div id="authors">
 ### Authors
+</div>
 
 A good number of the [wining entries of the
 IOCCC](authors.html) tested, identified and helped correct
@@ -6153,7 +6165,7 @@ macOS (some **EXTREMELY HARD** like
 useful/necessary, improving **ALL _Makefiles_**, writing scripts to
 greatly simplify running many of the entries and writing
 [sgit](https://github.com/xexyl/sgit) to easily run
-`sed` on files in the repo to help build the website.
+`sed(1)` on files in the repo to help build the website.
 
 Cody Boone Ferguson also used one of his own tools to detect many dead links.
 While the tool was not perfect it went a long way to uncover a good number of
@@ -6165,6 +6177,10 @@ Wayback Machine](https://web.archive.org) replace bad, broken, or otherwise
 invalid links are thanks to Cody's efforts! Another tool he wrote detected
 inconsistent award titles in the README files and CSV file (that he generated
 from the SQL file).
+
+Additionally Cody greatly improved the manifest of the winning entries and
+checked that the generated html files, index.html and otherwise, look well and
+presentable.
 
 **THANK YOU VERY MUCH** for your extensive efforts in helping improve the IOCCC
 presentation of past IOCCC entries and fixing almost all past entries for modern

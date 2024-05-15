@@ -15,7 +15,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "entry source"
+	    "entry_text" : "entry source code"
 	},
 	{
 	    "file_path" : "Makefile",
@@ -31,7 +31,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "alternate code"
+	    "entry_text" : "alternate source code"
 	},
 	{
 	    "file_path" : "jar.1.orig.c",
@@ -39,7 +39,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "original source"
+	    "entry_text" : "original source code"
 	},
 	{
 	    "file_path" : "jar.1.alt.sh",
@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "compile or recompile and run alternate code"
+	    "entry_text" : "compile or recompile and run alternate source code"
 	},
 	{
 	    "file_path" : "jar.1.sh",
@@ -87,7 +87,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "path",
 	    "display_via_github" : true,
-	    "entry_text" : "directory path from top directory"
+	    "entry_text" : "directory path from top level directory"
 	},
 	{
 	    "file_path" : "README.md",

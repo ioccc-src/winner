@@ -7,7 +7,7 @@ you prefer to play doesn't really matter.
 
 # Warning / caveat about this document
 
-WARNING: There are some things cited in this document that are no longer
+WARNING: there are some things cited in this document that are no longer
 correct, might be misleading or otherwise not clear. This is both intentional
 and unintentional. This is especially true for claims that something means
 something specific. Put another way just because the table says something
@@ -383,7 +383,7 @@ die) OR you go through it and come out on the opposite side. There certainly are
 other possibilities though. Here I give some ideas that could be implemented
 (and one I have some code for).
 
-### Different types of walls: Blockades
+### Different types of walls: blockades
 
 I did this once before as an experiment so it can work fine: let's say instead
 of the snake either dying or going through and out on the other side what if
