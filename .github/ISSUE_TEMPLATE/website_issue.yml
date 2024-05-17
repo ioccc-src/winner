@@ -1,0 +1,65 @@
+name: Website issue
+description: File a problem with the website
+title: "[Website] <subject>"
+labels: ["Website"]
+body:
+- type: checkboxes
+  attributes:
+    label: Is there an existing issue for this?
+    description: Please search to see if an issue already exists for the problem you're reporting.
+    options:
+    - label: I have searched for existing issues and did not find anything like it
+      required: true
+- type: textarea
+  attributes:
+    label: Describe the problem
+    description: Please describe the issue that you have with the website.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: What you expect
+    description: Please describe what you think it should be instead and why.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Relevant links
+    description: Please provide us with a list of relevant links.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Environment
+    description: |
+      Examples:
+        - **OS**: macOS Sonoma 14.5
+        - **Device**: MacBook Pro M1
+        - **Browser**: Safari 17.5 (19618.2.12.11.6)
+
+        If you have the problem with more than one device please list the above for all devices.
+    value: |
+        - OS:
+        - Device:
+        - Browser:
+    render: markdown
+  validations:
+    required: true
+- type: checkboxes
+  attributes:
+    label: Do you have JavaScript enabled?
+    description: Please let us know if you have JavaScript enabled or not.
+    options:
+    - label: JavaScript enabled?
+      required: true
+
+- type: textarea
+  attributes:
+    label: Anything else?
+    description: |
+      Do you have any additional context? Do you have any browser plug-ins that might be causing a problem? Please let us know!
+
+      Tip: you can attach images or log files by clicking this area to highlight it and then dragging files in.
+  validations:
+    required: false
+
