@@ -1,6 +1,7 @@
 name: Feature request
 description: Suggest a feature
 title: "[Feature] <title>"
+labels: ["Feature"]
 body:
 - type: checkboxes
   attributes:
