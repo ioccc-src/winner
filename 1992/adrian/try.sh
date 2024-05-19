@@ -15,16 +15,17 @@ fi
 make CC="$CC" everything || exit 1
 # DON'T clear the screen so they can see how the files are generated!
 
-echo 1>&2
-read -r -n 1 -p "Press any key to show: adrian.grep.try: "
-echo 1>&2
-cat adrian.grep.try
-echo 1>&2
-
-read -r -n 1 -p "Press any key to run: ./adrian adrian.grep.try < README.md: "
-echo 1>&2
-./adrian adrian.grep.try < README.md
-echo 1>&2
+for f in adrian.grep.*; do
+    echo 1>&2
+    read -r -n 1 -p "Press any key to show: $f: "
+    echo 1>&2
+    cat "$f"
+    echo 1>&2
+    read -r -n 1 -p "Press any key to run: ./adrian $f < README.md: "
+    echo 1>&2
+    ./adrian "$f" < README.md
+    echo 1>&2
+done
 
 read -r -n 1 -p "Press any key to run: ./adhead try.sh: "
 echo 1>&2
@@ -37,7 +38,8 @@ echo 1>&2
 echo 1>&2
 
 rm -f wc.adwc.txt adwc.adwc.txt
-echo "$ wc adwc.c | sed -e 's/^[[:space:]]//g' | tr -s '[:space:]' | cut -d' ' -f1-3 | tee wc.adwc.txt" 1>&2
+echo "$ wc adwc.c | sed -e 's/^[[:space:]]//g' | tr -s '[:space:]' | \\" 1>&2
+echo "    cut -d' ' -f1-3 | tee wc.adwc.txt" 1>&2
 read -r -n 1 -p "Press any key to continue: "
 echo 1>&2
 wc adwc.c | sed -e 's/^[[:space:]]//g' | tr -s '[:space:]' | cut -d' ' -f1-3 | tee wc.adwc.txt
@@ -56,6 +58,6 @@ echo 1>&2
 rm -f wc.adwc.txt adwc.adwc.txt
 
 echo "$ ./adsleep 10" 1>&2
-read -r -n 1 -p "Press any key to take a 10 second nap: "
+read -r -n 1 -p "Press any key to make your computer take a 10 second nap (./adsleep 10): "
 echo 1>&2
 ./adsleep 10
