@@ -35,7 +35,7 @@ tac.c			more clearly written code, offered as a replacement of iocccsize.c
 patch			fixes single quotes in iocccsize.c, adds #ifndef, removes "I"
 fixed_iocccsize.c	iocccsize with patch applied, and nop -c argument added
 
-tests/*
+tests/*			moved to entry directory by judges
 runtest.sh		script to run the tests; ./runtest.sh | diff results -
 results			results without -k
 results.k		results with -k; opt=kcrs ./runtest.sh | diff results.k -
@@ -47,18 +47,18 @@ discrepancies.md	markdown file of the differences found using all the ioccc winn
 
 to test prog:
 
-	runtest.sh | diff - results
-	opt=kcrs runtest.sh | diff - results.k
-	find ~/src/obc -type f -a -name "*.c" | xargs spotcheck.sh prog
-		[ | spotdiff.sh | diff -bw - discrepancies ]
+	./runtest.sh | diff - results
+	opt=kcrs ./runtest.sh | diff - results.k
+	find ~/src/obc -type f -a -name "*.c" | xargs spotcheck.sh ./prog
+		[ | ./spotdiff.sh | diff -bw - discrepancies ]
 
 to test tac:
 
-	prog=tac runtest.sh | diff - results
-	prog=tac opt=krs runtest.sh | diff - results.k
-	find ~/src/obc -type f -a -name "*.c" | xargs spotcheck.sh tac
+	prog=tac ./runtest.sh | diff - results
+	prog=tac opt=krs ./runtest.sh | diff - results.k
+	find ~/src/obc -type f -a -name "*.c" | xargs ./spotcheck.sh tac
 
-variations/*		as described in the remarks, and in each file below
+variations/*		as described in the remarks, and in each file below, also moved to entry directory by judges
 ansi	
 c++11
 c++14
