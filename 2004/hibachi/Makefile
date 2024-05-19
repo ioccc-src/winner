@@ -216,7 +216,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -f src/hibachi.c
+	${RM} -f src/hibachi.c src/config.log
 	${RM} -rf *.dSYM
 	${RM} -rf build
 	@-if [ -e sandwich ]; then \
