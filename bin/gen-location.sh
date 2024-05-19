@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4.1 2024-04-28"
+export VERSION="1.4.2 2024-05-19"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -602,4 +602,7 @@ fi
 
 # All Done!!! -- Jessica Noll, Age 2
 #
-exit 0
+if [[ $EXIT_CODE -ne 0 ]]; then
+    echo "$0: Warning: about to exit $EXIT_CODE" 1>&2
+fi
+exit "$EXIT_CODE"

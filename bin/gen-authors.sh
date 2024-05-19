@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.10.1 2024-05-07"
+export VERSION="1.10.2 2024-05-19"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -1141,9 +1141,9 @@ EOF
 	    fi
 	    echo "<div id=\"$l\">"
 	    echo "## ${IS_FOR[$l]}"
-	    echo '<hr style="width:10%;text-align:left;margin-left:0">'
 	    echo "<!-- $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  $l  -->"
 	    echo "</div>"
+	    echo '<hr style="width:10%;text-align:left;margin-left:0">'
 	    echo
 
 	# case: we have a "sort_word file" line
@@ -1358,7 +1358,7 @@ if [[ -z $NOOP ]]; then
     "$MD2HTML_SH" "${TOOL_OPTION[@]}" -- authors.md "$TMP_AUTHORS_MD" "$AUTHORS_HTML"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: Warning: md2html.sh: $MD2HTML_SH ${TOOL_OPTION[*]} -- authors.md $TMP_AUTHORS_MD $AUTHORS_HTML" \
+	echo "$0: ERROR: md2html.sh: $MD2HTML_SH ${TOOL_OPTION[*]} -- authors.md $TMP_AUTHORS_MD $AUTHORS_HTML" \
 	     "failed, error: $status" 1>&2
 	EXIT_CODE="1"  # exit 1
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
@@ -1382,4 +1382,7 @@ fi
 
 # All Done!!! -- Jessica Noll, Age 2
 #
-exit 0
+if [[ $EXIT_CODE -ne 0 ]]; then
+    echo "$0: Warning: about to exit $EXIT_CODE" 1>&2
+fi
+exit "$EXIT_CODE"

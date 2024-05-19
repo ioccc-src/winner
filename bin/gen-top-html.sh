@@ -93,7 +93,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4.6 2024-05-05"
+export VERSION="1.4.5 2024-05-19"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -476,25 +476,25 @@ if (( ${#TOP_MD_SELECT_SET[@]} )); then
 	#
 	export MD_FILE="$name.md"
 	if [[ ! -e $MD_FILE ]]; then
-	    echo  "$0: Warning: markdown file does not exist: $MD_FILE" 1>&2
+	    echo  "$0: ERROR: markdown file does not exist: $MD_FILE" 1>&2
 	    EXIT_CODE=8 # exit 8
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
 	if [[ ! -f $MD_FILE ]]; then
-	    echo  "$0: Warning: markdown file is not a regular file: $MD_FILE" 1>&2
+	    echo  "$0: ERROR: markdown file is not a regular file: $MD_FILE" 1>&2
 	    EXIT_CODE=8 # exit 8
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
 	if [[ ! -r $MD_FILE ]]; then
-	    echo  "$0: Warning: markdown file is not a readable file: $MD_FILE" 1>&2
+	    echo  "$0: ERROR: markdown file is not a readable file: $MD_FILE" 1>&2
 	    EXIT_CODE=8 # exit 8
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
 	if [[ ! -s $MD_FILE ]]; then
-	    echo  "$0: Warning: markdown file is not a non-empty readable file: $MD_FILE" 1>&2
+	    echo  "$0: ERROR: markdown file is not a non-empty readable file: $MD_FILE" 1>&2
 	    EXIT_CODE=8 # exit 8
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
@@ -528,7 +528,7 @@ if (( ${#TOP_MD_SELECT_SET[@]} )); then
 		-m "$MD_FILE" -- "$MD_FILE" "$HTML_FILE"
 	    status="$?"
 	    if [[ $status -ne 0 ]]; then
-		echo "$0: Warning: md2html.sh: $MD2HTML_SH -U $SITE_URL/$HTML_FILE ${TOOL_OPTION[*]}" \
+		echo "$0: ERROR: md2html.sh: $MD2HTML_SH -U $SITE_URL/$HTML_FILE ${TOOL_OPTION[*]}" \
 		     "-m $MD_FILE -- $MD_FILE $HTML_FILE" \
 		     "failed, error: $status" 1>&2
 		EXIT_CODE="1"  # exit 1
@@ -551,25 +551,25 @@ else
 	#
 	export MD_FILE="$name.md"
 	if [[ ! -e $MD_FILE ]]; then
-	    echo  "$0: Warning: markdown file does not exist: $MD_FILE" 1>&2
+	    echo  "$0: ERROR: markdown file does not exist: $MD_FILE" 1>&2
 	    EXIT_CODE=8 # exit 8
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
 	if [[ ! -f $MD_FILE ]]; then
-	    echo  "$0: Warning: markdown file is not a regular file: $MD_FILE" 1>&2
+	    echo  "$0: ERROR: markdown file is not a regular file: $MD_FILE" 1>&2
 	    EXIT_CODE=8 # exit 8
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
 	if [[ ! -r $MD_FILE ]]; then
-	    echo  "$0: Warning: markdown file is not a readable file: $MD_FILE" 1>&2
+	    echo  "$0: ERROR: markdown file is not a readable file: $MD_FILE" 1>&2
 	    EXIT_CODE=8 # exit 8
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
 	if [[ ! -s $MD_FILE ]]; then
-	    echo  "$0: Warning: markdown file is not a non-empty readable file: $MD_FILE" 1>&2
+	    echo  "$0: ERROR: markdown file is not a non-empty readable file: $MD_FILE" 1>&2
 	    EXIT_CODE=8 # exit 8
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
@@ -603,7 +603,7 @@ else
 		-m "$MD_FILE" -- "$MD_FILE" "$HTML_FILE"
 	    status="$?"
 	    if [[ $status -ne 0 ]]; then
-		echo "$0: Warning: md2html.sh: $MD2HTML_SH -U $SITE_URL/$HTML_FILE ${TOOL_OPTION[*]}" \
+		echo "$0: ERROR: md2html.sh: $MD2HTML_SH -U $SITE_URL/$HTML_FILE ${TOOL_OPTION[*]}" \
 		     "-m $MD_FILE -- $MD_FILE $HTML_FILE" \
 		     "failed, error: $status" 1>&2
 		EXIT_CODE="1"  # exit 1
@@ -623,4 +623,7 @@ fi
 
 # All Done!!! -- Jessica Noll, Age 2
 #
+if [[ $EXIT_CODE -ne 0 ]]; then
+    echo "$0: Warning: about to exit $EXIT_CODE" 1>&2
+fi
 exit "$EXIT_CODE"

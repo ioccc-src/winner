@@ -92,7 +92,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.4 2024-04-13"
+export VERSION="1.1.5 2024-05-19"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -549,7 +549,7 @@ if [[ -z $NOOP ]]; then
         "$README_PATH" "$INDEX_PATH"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: Warning: md2html.sh: $MD2HTML_SH ${TOOL_OPTION[*]} -m $README_PATH --" \
+	echo "$0: ERROR: md2html.sh: $MD2HTML_SH ${TOOL_OPTION[*]} -m $README_PATH --" \
 	     "$README_PATH $INDEX_PATH failed, error: $status" 1>&2
 	EXIT_CODE="1"  # exit 1
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
@@ -580,4 +580,7 @@ fi
 
 # All Done!!! -- Jessica Noll, Age 2
 #
-exit 0
+if [[ $EXIT_CODE -ne 0 ]]; then
+    echo "$0: Warning: about to exit $EXIT_CODE" 1>&2
+fi
+exit "$EXIT_CODE"

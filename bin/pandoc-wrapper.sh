@@ -413,6 +413,10 @@ else
 fi
 if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: pandoc: $PANDOC_TOOL exited non-zero: $status" 1>&2
+    cp -f "$MARKDOWN_INPUT" XXX # XXX
+    if [[ -n $NOOP ]]; then
+	cp -f "$HTML_OUTPUT" YYY # XXX
+    fi
     exit 1
 fi
 
