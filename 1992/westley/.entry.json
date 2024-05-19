@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "tool to find your location on the map"
+	    "entry_text" : "tool to show your location on the map"
 	},
 	{
 	    "file_path" : "whereami.sh",
@@ -79,7 +79,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "whereami tool"
+	    "entry_text" : "script to show where you are on the map"
 	},
 	{
 	    "file_path" : "1992_westley.tar.bz2",

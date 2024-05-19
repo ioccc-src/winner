@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "equation limit for entry"
+	    "entry_text" : "equation limit for entry in png file"
 	},
 	{
 	    "file_path" : "input.txt",

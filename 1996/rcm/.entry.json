@@ -87,7 +87,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "gzip",
 	    "display_via_github" : false,
-	    "entry_text" : "input data"
+	    "entry_text" : "RFC 1951 gzipped"
 	},
 	{
 	    "file_path" : "rfc1952.gz",
@@ -95,7 +95,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "gzip",
 	    "display_via_github" : false,
-	    "entry_text" : "input data"
+	    "entry_text" : "RFC 1952 gzipped"
 	},
 	{
 	    "file_path" : "index.html",

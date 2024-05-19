@@ -79,7 +79,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
-	    "entry_text" : "data file"
+	    "entry_text" : "game data input file"
 	},
 	{
 	    "file_path" : "splash.d",
@@ -87,7 +87,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
-	    "entry_text" : "data file"
+	    "entry_text" : "game data input file"
 	},
 	{
 	    "file_path" : "sprites.d",
@@ -95,7 +95,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
-	    "entry_text" : "data file"
+	    "entry_text" : "game data input file"
 	},
 	{
 	    "file_path" : "index.html",

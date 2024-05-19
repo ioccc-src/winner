@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "change log for code"
+	    "entry_text" : "obfuscated change log for code"
 	},
 	{
 	    "file_path" : "src/localhost/reference/rfc2616.html",
@@ -375,7 +375,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "man",
 	    "display_via_github" : true,
-	    "entry_text" : "configure.in experiment that is not used"
+	    "entry_text" : "makefile template"
 	},
 	{
 	    "file_path" : "index.html",

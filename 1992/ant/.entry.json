@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "makefile",
 	    "display_via_github" : true,
-	    "entry_text" : "how to compile"
+	    "entry_text" : "Makefile to demonstrate entry"
 	},
 	{
 	    "file_path" : "1992_ant.tar.bz2",

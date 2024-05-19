@@ -143,7 +143,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "partially obfuscated source"
+	    "entry_text" : "partially obfuscated 64-bit Hash Life source code"
 	},
 	{
 	    "file_path" : "2019_dogon.tar.bz2",

@@ -39,7 +39,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "field-by-field difference between iocccsize and ion"
+	    "entry_text" : "field-by-field difference between iocccsize and ioc"
 	},
 	{
 	    "file_path" : "freqcount.sh",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "man",
 	    "display_via_github" : true,
-	    "entry_text" : "tokenize and count man page"
+	    "entry_text" : "tac.c man page"
 	},
 	{
 	    "file_path" : "tokcount.sh",
@@ -63,7 +63,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "count the tokens produced by prog -t"
+	    "entry_text" : "count the tokens produced by ./prog -t"
 	},
 	{
 	    "file_path" : "try.sh",

@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "bloober.txt",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "bomberman.txt",
@@ -63,7 +63,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "boo.txt",
@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "bub.txt",
@@ -79,7 +79,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "cheepcheep.txt",
@@ -87,7 +87,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "format.txt",
@@ -95,7 +95,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "gurin.txt",
@@ -103,7 +103,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "happyface.txt",
@@ -111,7 +111,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "helloworld.txt",
@@ -119,7 +119,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "hilbert.txt",
@@ -127,7 +127,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "ioccc.txt",
@@ -135,7 +135,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "koopaparatroopa.txt",
@@ -143,7 +143,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "lakitu.txt",
@@ -151,7 +151,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "landon.txt",
@@ -159,7 +159,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "leo.txt",
@@ -167,7 +167,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "mario.txt",
@@ -175,7 +175,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "mspacman.txt",
@@ -183,7 +183,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "names.png",
@@ -191,7 +191,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "palette.png",
@@ -199,7 +199,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "paranaplant.txt",
@@ -207,7 +207,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "rhino.txt",
@@ -215,7 +215,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "rotations.png",
@@ -223,7 +223,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "samus.txt",
@@ -231,7 +231,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "simon.txt",
@@ -239,7 +239,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "snoo.txt",
@@ -247,7 +247,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "toad.txt",
@@ -255,7 +255,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "sprites in this textual format"
+	    "entry_text" : "example sprites input file"
 	},
 	{
 	    "file_path" : "try.alt.sh",

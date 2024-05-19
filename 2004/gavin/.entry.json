@@ -47,7 +47,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "author usage guide"
+	    "entry_text" : "author's usage guide"
 	},
 	{
 	    "file_path" : "lilo.conf",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "boot loader configuration"
+	    "entry_text" : "lilo boot loader configuration"
 	},
 	{
 	    "file_path" : "boot.b",

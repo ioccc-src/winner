@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "source to create a status bar"
+	    "entry_text" : "source code with status bar"
 	},
 	{
 	    "file_path" : "toledo3-txt.c",

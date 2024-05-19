@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "roll over song C source"
+	    "entry_text" : "Ten In the Bed song C source"
 	},
 	{
 	    "file_path" : "anonymous.ten.c",
@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "green bottles song C source"
+	    "entry_text" : "Ten Green Bottles song C source"
 	},
 	{
 	    "file_path" : "try.sh",

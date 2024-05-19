@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "cpp macros"
+	    "entry_text" : "busy beaver Turing machine macros"
 	},
 	{
 	    "file_path" : "machine_champ_2_4.h",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "cpp macros"
+	    "entry_text" : "current champion Turing machine macros"
 	},
 	{
 	    "file_path" : "machine_chaos_5_2.h",
@@ -63,7 +63,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "cpp macros"
+	    "entry_text" : "chaos Turing machine cpp macros"
 	},
 	{
 	    "file_path" : "machine_cmplx_5_2.h",
@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "cpp macros"
+	    "entry_text" : "complex Turing machine cpp macros"
 	},
 	{
 	    "file_path" : "machine_count_5_2.h",
@@ -79,7 +79,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "cpp macros"
+	    "entry_text" : "counting Turing machine cpp macros"
 	},
 	{
 	    "file_path" : "machine_gcd.h",
@@ -87,7 +87,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "cpp macros"
+	    "entry_text" : "greatest common divisor Turing machine cpp macros"
 	},
 	{
 	    "file_path" : "machine_great_3_2.h",
@@ -95,7 +95,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "cpp macros"
+	    "entry_text" : "greater Turing machine cpp macros"
 	},
 	{
 	    "file_path" : "machine_ioccc.h",
@@ -103,7 +103,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "cpp macros"
+	    "entry_text" : "IOCCC Turing machine cpp macros"
 	},
 	{
 	    "file_path" : "machine_nop.h",
@@ -111,7 +111,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "cpp macros"
+	    "entry_text" : "minimal Turing machine cpp macros"
 	},
 	{
 	    "file_path" : "machine_ru_2_4.h",
@@ -119,7 +119,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "cpp macros"
+	    "entry_text" : "runner up Turing machine cpp macros"
 	},
 	{
 	    "file_path" : "machine_times2.h",
@@ -127,7 +127,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "cpp macros"
+	    "entry_text" : "multiply by 2 Turing machine cpp macros"
 	},
 	{
 	    "file_path" : "tape_15_50.h",
@@ -135,7 +135,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "cpp macros"
+	    "entry_text" : "tape cpp macros"
 	},
 	{
 	    "file_path" : "tape_77_55.h",
@@ -143,7 +143,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "cpp macros"
+	    "entry_text" : "tape cpp macros"
 	},
 	{
 	    "file_path" : "tape_empty.h",
@@ -151,7 +151,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "cpp macros"
+	    "entry_text" : "empty tape cpp macros"
 	},
 	{
 	    "file_path" : "tape_five.h",
@@ -159,7 +159,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "cpp macros"
+	    "entry_text" : "tape cpp macros"
 	},
 	{
 	    "file_path" : "2015_muth.tar.bz2",

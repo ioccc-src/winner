@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "character to recognize"
+	    "entry_text" : "ASCII file with number 10 drawn to recognize"
 	},
 	{
 	    "file_path" : "kopczynski-10-rev",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "reverse character to recognize"
+	    "entry_text" : "ASCII file with number 10 drawn reversed to recognize"
 	},
 	{
 	    "file_path" : "kopczynski-11",
@@ -63,7 +63,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "character to recognize"
+	    "entry_text" : "ASCII file with number 11 drawn to recognize"
 	},
 	{
 	    "file_path" : "kopczynski-11-rev",
@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "reverse character to recognize"
+	    "entry_text" : "ASCII file with number 11 drawn reversed to recognize"
 	},
 	{
 	    "file_path" : "kopczynski-8a",
@@ -79,7 +79,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "character to recognize"
+	    "entry_text" : "ASCII file with number 8 drawn to recognize"
 	},
 	{
 	    "file_path" : "kopczynski-8a-rev",
@@ -87,7 +87,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "reverse character to recognize"
+	    "entry_text" : "ASCII file with number 8 drawn reversed to recognize"
 	},
 	{
 	    "file_path" : "kopczynski-8b",
@@ -95,7 +95,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "character to recognize"
+	    "entry_text" : "ASCII file with number 8 drawn to recognize"
 	},
 	{
 	    "file_path" : "kopczynski-8b-rev",
@@ -103,7 +103,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "reverse character to recognize"
+	    "entry_text" : "ASCII file with number 8 drawn reversed to recognize"
 	},
 	{
 	    "file_path" : "kopczynski-8c",
@@ -111,7 +111,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "character to recognize"
+	    "entry_text" : "ASCII file with number 8 drawn to to recognize"
 	},
 	{
 	    "file_path" : "kopczynski-8c-rev",
@@ -119,7 +119,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "reverse character to recognize"
+	    "entry_text" : "ASCII file with number 8 drawn reversed to recognize"
 	},
 	{
 	    "file_path" : "kopczynski-9",
@@ -127,7 +127,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "character to recognize"
+	    "entry_text" : "ASCII file with number 9 drawn to recognize"
 	},
 	{
 	    "file_path" : "kopczynski-9-rev",
@@ -135,7 +135,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "reverse character to recognize"
+	    "entry_text" : "ASCII file with number 9 drawn reversed to recognize"
 	},
 	{
 	    "file_path" : "kopczynski-a",
@@ -143,7 +143,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "character to recognize"
+	    "entry_text" : "ASCII file with letter A drawn to see what it recognizes"
 	},
 	{
 	    "file_path" : "kopczynski-a-rev",
@@ -151,7 +151,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "reverse character to recognize"
+	    "entry_text" : "ASCII file with letter A reversed to see what it recognizes"
 	},
 	{
 	    "file_path" : "try.sh",

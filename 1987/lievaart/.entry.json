@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "source without size restriction"
+	    "entry_text" : "source code with drawn board - breaks size rule"
 	},
 	{
 	    "file_path" : "1987_lievaart.tar.bz2",

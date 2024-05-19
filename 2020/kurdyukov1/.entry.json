@@ -63,7 +63,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "asm",
 	    "display_via_github" : true,
-	    "entry_text" : "assembly source code"
+	    "entry_text" : "x86 assembly source code"
 	},
 	{
 	    "file_path" : "prog.x86_64.asm",
@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "asm",
 	    "display_via_github" : true,
-	    "entry_text" : "assembly source code"
+	    "entry_text" : "x86_64 assembly source code"
 	},
 	{
 	    "file_path" : "2020_kurdyukov1.tar.bz2",

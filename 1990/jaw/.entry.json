@@ -49,7 +49,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "ruby",
 	    "display_via_github" : true,
-	    "entry_text" : "btoa utility"
+	    "entry_text" : "binary to ASCII utility"
 	},
 	{
 	    "file_path" : "shark.sh",

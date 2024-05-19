@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "input data from 2018 IOCCC guidelines"
+	    "entry_text" : "2018 IOCCC guidelines"
 	},
 	{
 	    "file_path" : "try.sh",

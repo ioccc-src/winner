@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "blank sudoku puzzle"
+	    "entry_text" : "blank Sudoku puzzle"
 	},
 	{
 	    "file_path" : "insane1.sudoku",

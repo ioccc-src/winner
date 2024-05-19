@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "a file to goto and see"
+	    "entry_text" : "text file with goto in various cases to see how entry works"
 	},
 	{
 	    "file_path" : "try.sh",

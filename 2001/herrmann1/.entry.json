@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "GCD program as c defines"
+	    "entry_text" : "GCD program as C defines"
 	},
 	{
 	    "file_path" : "herrmann1.sh",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "turning program as c defines"
+	    "entry_text" : "Turing program as C defines"
 	},
 	{
 	    "file_path" : "plus1.turing",
@@ -63,7 +63,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "turning program as c defines"
+	    "entry_text" : "Turing program as C defines"
 	},
 	{
 	    "file_path" : "try.sh",

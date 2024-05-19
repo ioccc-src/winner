@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "example input"
+	    "entry_text" : "modified README.md for input to program"
 	},
 	{
 	    "file_path" : "try.alt.sh",
@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "defocused source code"
+	    "entry_text" : "deobfuscated and formatted source code"
 	},
 	{
 	    "file_path" : "1995_garry.tar.bz2",

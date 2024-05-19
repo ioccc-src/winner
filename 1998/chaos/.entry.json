@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "data file"
+	    "entry_text" : "data file for cube 3d object"
 	},
 	{
 	    "file_path" : "desk.data",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "data file"
+	    "entry_text" : "data file for desk 3d object"
 	},
 	{
 	    "file_path" : "ioccc.data",
@@ -63,7 +63,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "data file"
+	    "entry_text" : "data file for IOCCC 3d object"
 	},
 	{
 	    "file_path" : "pyramid.data",
@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "data file"
+	    "entry_text" : "data file for pyramid 3d object"
 	},
 	{
 	    "file_path" : "xwing.data",
@@ -79,7 +79,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "data file"
+	    "entry_text" : "data file for X-Wing 3d object"
 	},
 	{
 	    "file_path" : "1998_chaos.tar.bz2",

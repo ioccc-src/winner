@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "basic",
 	    "display_via_github" : true,
-	    "entry_text" : "BASIC source code"
+	    "entry_text" : "BASIC source code for Lunar Lander game"
 	},
 	{
 	    "file_path" : "1990_dds.tar.bz2",

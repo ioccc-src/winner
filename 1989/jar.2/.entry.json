@@ -41,7 +41,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "lisp",
 	    "display_via_github" : true,
-	    "entry_text" : "input file"
+	    "entry_text" : "example LISP source file"
 	},
 	{
 	    "file_path" : "fib.lisp",
@@ -49,7 +49,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "lisp",
 	    "display_via_github" : true,
-	    "entry_text" : "input file"
+	    "entry_text" : "example LISP source file"
 	},
 	{
 	    "file_path" : "try.lisp",
@@ -57,7 +57,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "lisp",
 	    "display_via_github" : true,
-	    "entry_text" : "input file"
+	    "entry_text" : "example LISP source file"
 	},
 	{
 	    "file_path" : "try.sh",

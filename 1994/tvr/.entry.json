@@ -79,7 +79,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "black and white"
+	    "entry_text" : "data file for black and white output"
 	},
 	{
 	    "file_path" : "tvr.color",

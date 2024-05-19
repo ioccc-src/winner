@@ -71,7 +71,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "about the snake game"
+	    "entry_text" : "shows extreme cannibalism mode output"
 	},
 	{
 	    "file_path" : "chocolate-cake.html",
@@ -87,7 +87,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "about some screen dumps"
+	    "entry_text" : "explains various odd screen dumps"
 	},
 	{
 	    "file_path" : "gameplay.html",
@@ -95,7 +95,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "how to play the game"
+	    "entry_text" : "many different gameplay modes explained"
 	},
 	{
 	    "file_path" : "play.sh",
@@ -167,7 +167,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "man",
 	    "display_via_github" : true,
-	    "entry_text" : "snake game man page"
+	    "entry_text" : "Snake game man page"
 	},
 	{
 	    "file_path" : "termcaps.c",
@@ -247,7 +247,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "image for chocolate cake"
+	    "entry_text" : "image for double-layered chocolate fudge cake"
 	},
 	{
 	    "file_path" : "cannibalism.log.md",
@@ -287,7 +287,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "image for chocolate cake"
+	    "entry_text" : "double-layered chocolate fudge cake with IOCCC"
 	},
 	{
 	    "file_path" : "spoilers.md",

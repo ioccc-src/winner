@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "utility to form GIFs from the results"
+	    "entry_text" : "script to form GIFs from the results"
 	},
 	{
 	    "file_path" : "prog.png.c",
@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "sample image data"
+	    "entry_text" : "sample image input file"
 	},
 	{
 	    "file_path" : "2020_kurdyukov2.tar.bz2",

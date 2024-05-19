@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "alternate source code"
+	    "entry_text" : "alternate source code with color"
 	},
 	{
 	    "file_path" : "endoh1.orig.c",
@@ -215,7 +215,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "try.alt.bw.sh"
+	    "entry_text" : "try black and white version"
 	},
 	{
 	    "file_path" : "try.sh",
@@ -223,7 +223,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "script to try entry in color"
+	    "entry_text" : "script to try entry"
 	},
 	{
 	    "file_path" : "endoh1_color.c",
@@ -231,7 +231,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "alternate source code using terminal 256 colors"
+	    "entry_text" : "source code using terminal 256 colors"
 	},
 	{
 	    "file_path" : "2012_endoh1.tar.bz2",

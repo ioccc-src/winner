@@ -103,7 +103,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "xml",
 	    "display_via_github" : true,
-	    "entry_text" : "configuration file will correctly display console apps"
+	    "entry_text" : "config for macOS to correctly display ANSI graphics apps"
 	},
 	{
 	    "file_path" : "bios.asm",
@@ -167,7 +167,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
-	    "entry_text" : "DOS boot sector"
+	    "entry_text" : "FreeDOS boot disk"
 	},
 	{
 	    "file_path" : "hd.img",

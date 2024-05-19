@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "feed primes to the program"
+	    "entry_text" : "feed primes program to the entry"
 	},
 	{
 	    "file_path" : "try.sh",

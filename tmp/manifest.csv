@@ -32,9 +32,9 @@
 1984,laman,index.html,4294967295,false,html,false,this web page
 1984,mullender,mullender.c,20,true,c,true,entry source code
 1984,mullender,Makefile,30,true,makefile,true,entry Makefile
-1984,mullender,mullender.alt.c,40,true,c,true,alternate source code
+1984,mullender,mullender.alt.c,40,true,c,true,alternate source code that works with modern systems
 1984,mullender,mullender.orig.c,50,false,c,true,original source code
-1984,mullender,gentab.c,150,true,c,true,author tool to generate code
+1984,mullender,gentab.c,150,true,c,true,authors' tool to generate code
 1984,mullender,a.out.h,160,true,c,true,gentab.c header file for compatibility with systems in 1984
 1984,mullender,1984_mullender.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1984,mullender,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -208,7 +208,7 @@
 1987,hines,Makefile,30,true,makefile,true,entry Makefile
 1987,hines,hines.orig.c,50,false,c,true,original source code
 1987,hines,goto.c,100,true,c,true,sample source full of goto statements
-1987,hines,goto.txt,100,true,text,false,a file to goto and see
+1987,hines,goto.txt,100,true,text,false,text file with goto in various cases to see how entry works
 1987,hines,try.sh,100,true,shellscript,true,script to try entry
 1987,hines,1987_hines.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1987,hines,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -228,7 +228,7 @@
 1987,lievaart,lievaart.c,20,true,c,true,entry source code
 1987,lievaart,Makefile,30,true,makefile,true,entry Makefile
 1987,lievaart,lievaart.orig.c,50,false,c,true,original source code
-1987,lievaart,lievaart2.c,150,true,c,true,source without size restriction
+1987,lievaart,lievaart2.c,150,true,c,true,source code with drawn board - breaks size rule
 1987,lievaart,1987_lievaart.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1987,lievaart,README.md,4000000000,true,markdown,true,markdown source for this web page
 1987,lievaart,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -348,7 +348,7 @@
 1989,fubar,fubar.c,20,true,c,true,entry source code
 1989,fubar,Makefile,30,true,makefile,true,entry Makefile
 1989,fubar,fubar.orig.c,50,false,c,true,original source code
-1989,fubar,fubar.sh,100,true,shellscript,true,script to try entry fubar
+1989,fubar,fubar.sh,100,true,shellscript,true,script to try entry
 1989,fubar,try.sh,100,true,shellscript,true,script to try entry
 1989,fubar,1989_fubar.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1989,fubar,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -371,9 +371,9 @@
 1989,jar.2,jar.2.c,20,true,c,true,entry source code
 1989,jar.2,Makefile,30,true,makefile,true,entry Makefile
 1989,jar.2,jar.2.orig.c,50,false,c,true,original source code
-1989,jar.2,chocolate_cake.lisp,100,true,lisp,true,input file
-1989,jar.2,fib.lisp,100,true,lisp,true,input file
-1989,jar.2,try.lisp,100,true,lisp,true,input file
+1989,jar.2,chocolate_cake.lisp,100,true,lisp,true,example LISP source file
+1989,jar.2,fib.lisp,100,true,lisp,true,example LISP source file
+1989,jar.2,try.lisp,100,true,lisp,true,example LISP source file
 1989,jar.2,try.sh,100,true,shellscript,true,script to try entry
 1989,jar.2,1989_jar.2.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1989,jar.2,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -476,7 +476,7 @@
 1990,dds,dds.c,20,true,c,true,entry source code
 1990,dds,Makefile,30,true,makefile,true,entry Makefile
 1990,dds,dds.orig.c,50,false,c,true,original source code
-1990,dds,LANDER.BAS,150,true,basic,true,BASIC source code
+1990,dds,LANDER.BAS,150,true,basic,true,BASIC source code for Lunar Lander game
 1990,dds,1990_dds.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1990,dds,README.md,4000000000,true,markdown,true,markdown source for this web page
 1990,dds,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -497,7 +497,7 @@
 1990,jaw,Makefile,30,true,makefile,true,entry Makefile
 1990,jaw,jaw.orig.c,50,false,c,true,original source code
 1990,jaw,try.sh,100,true,shellscript,true,script to try entry
-1990,jaw,btoa,150,true,ruby,true,btoa utility
+1990,jaw,btoa,150,true,ruby,true,binary to ASCII utility
 1990,jaw,shark.sh,150,true,shellscript,true,shark utility with embedded source
 1990,jaw,1990_jaw.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1990,jaw,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -528,7 +528,7 @@
 1990,stig,stig.c,20,true,c,true,entry source code
 1990,stig,Makefile,30,true,makefile,true,entry Makefile
 1990,stig,stig.orig.c,50,true,c,true,original source code
-1990,stig,stig.sh,100,true,shellscript,true,how to compile
+1990,stig,stig.sh,100,true,shellscript,true,script to run this entry
 1990,stig,1990_stig.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1990,stig,README.md,4000000000,true,markdown,true,markdown source for this web page
 1990,stig,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -633,7 +633,7 @@
 1991,dds,dds.c,20,true,c,true,entry source code
 1991,dds,Makefile,30,true,makefile,true,entry Makefile
 1991,dds,dds.orig.c,50,false,c,true,original source code
-1991,dds,LANDER.BAS,150,true,basic,true,BASIC source code
+1991,dds,LANDER.BAS,150,true,basic,true,BASIC source code for Lunar Lander game
 1991,dds,1991_dds.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1991,dds,README.md,4000000000,true,markdown,true,markdown source for this web page
 1991,dds,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -665,7 +665,7 @@
 1991,westley,Makefile,30,true,makefile,true,entry Makefile
 1991,westley,westley.alt.c,40,true,c,true,alternate source code
 1991,westley,westley.orig.c,50,true,c,true,original source code
-1991,westley,ttt.alt.sh,100,true,shellscript,true,script to try entry the alternate source code
+1991,westley,ttt.alt.sh,100,true,shellscript,true,script to try alternate source code
 1991,westley,ttt.sh,100,true,shellscript,true,play tic-tac-toe
 1991,westley,1991_westley.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1991,westley,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -707,7 +707,7 @@
 1992,ant,ant.orig.c,50,false,c,true,original source code
 1992,ant,try.sh,100,true,shellscript,true,script to try entry
 1992,ant,ant.README.txt,150,true,text,true,am man page
-1992,ant,ant.test.mk,150,true,makefile,true,how to compile
+1992,ant,ant.test.mk,150,true,makefile,true,Makefile to demonstrate entry
 1992,ant,1992_ant.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1992,ant,README.md,4000000000,true,markdown,true,markdown source for this web page
 1992,ant,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -728,18 +728,18 @@
 1992,buzzard.2,Makefile,30,true,makefile,true,entry Makefile
 1992,buzzard.2,buzzard.2.alt.c,40,true,c,true,alternate source code
 1992,buzzard.2,buzzard.2.orig.c,50,false,c,true,original source code
-1992,buzzard.2,buzzard.2.README.html,100,false,html,false,author description of files
+1992,buzzard.2,buzzard.2.README.html,100,false,html,false,author's description of files
 1992,buzzard.2,buzzard.2.design.html,100,true,html,false,about the FORTH language
 1992,buzzard.2,try.alt.sh,100,true,shellscript,true,script to try alternate source code
 1992,buzzard.2,try.sh,100,true,shellscript,true,script to try entry
-1992,buzzard.2,demo1.1st,150,true,FORTH,true,FORTH source
-1992,buzzard.2,demo1.th,150,true,FORTH,true,FORTH source
-1992,buzzard.2,demo2.th,150,true,FORTH,true,FORTH source
-1992,buzzard.2,demo3.th,150,true,FORTH,true,FORTH source
-1992,buzzard.2,demo4.th,150,true,FORTH,true,FORTH source
-1992,buzzard.2,demo5.th,150,true,FORTH,true,FORTH source
-1992,buzzard.2,demo6.th,150,true,FORTH,true,FORTH source
-1992,buzzard.2,help.th,150,true,FORTH,true,FORTH source
+1992,buzzard.2,demo1.1st,150,true,FORTH,true,demo FORTH source
+1992,buzzard.2,demo1.th,150,true,FORTH,true,demo FORTH source
+1992,buzzard.2,demo2.th,150,true,FORTH,true,demo FORTH source
+1992,buzzard.2,demo3.th,150,true,FORTH,true,demo FORTH source
+1992,buzzard.2,demo4.th,150,true,FORTH,true,demo FORTH source
+1992,buzzard.2,demo5.th,150,true,FORTH,true,demo FORTH source
+1992,buzzard.2,demo6.th,150,true,FORTH,true,demo FORTH source
+1992,buzzard.2,help.th,150,true,FORTH,true,demo FORTH source
 1992,buzzard.2,third,150,true,FORTH,true,the third source
 1992,buzzard.2,1992_buzzard.2.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1992,buzzard.2,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -753,7 +753,7 @@
 1992,gson,Makefile,30,true,makefile,true,entry Makefile
 1992,gson,gson.orig.c,50,false,c,true,original source code
 1992,gson,try.sh,100,true,shellscript,true,script to try entry
-1992,gson,mkdict.sh,150,true,shellscript,true,tool to make the dictionary
+1992,gson,mkdict.sh,150,true,shellscript,true,author supplied script to make a dictionary
 1992,gson,1992_gson.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1992,gson,README.md,4000000000,true,markdown,true,markdown source for this web page
 1992,gson,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -825,8 +825,8 @@
 1992,westley,westley.orig.c,50,true,c,true,original source code
 1992,westley,try.sh,100,true,shellscript,true,script to try entry
 1992,westley,whereami.alt.sh,100,true,shellscript,true,alternate whereami tool
-1992,westley,whereami.c,100,true,c,true,tool to find your location on the map
-1992,westley,whereami.sh,100,true,shellscript,true,whereami tool
+1992,westley,whereami.c,100,true,c,true,tool to show your location on the map
+1992,westley,whereami.sh,100,true,shellscript,true,script to show where you are on the map
 1992,westley,1992_westley.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1992,westley,README.md,4000000000,true,markdown,true,markdown source for this web page
 1992,westley,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -838,8 +838,8 @@
 1993,ant,ant.orig.c,50,false,c,true,original source code
 1993,ant,ant.txt,100,true,text,false,ag man page
 1993,ant,try.sh,100,true,shellscript,true,script to try entry
-1993,ant,ants.txt,150,true,text,false,lots of ASCII ants
-1993,ant,ant.test.mk,150,true,makefile,true,test suite
+1993,ant,ants.txt,150,true,text,false,the ants marching song
+1993,ant,ant.test.mk,150,true,makefile,true,test suite Makefile
 1993,ant,1993_ant.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1993,ant,README.md,4000000000,true,markdown,true,markdown source for this web page
 1993,ant,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -1036,7 +1036,7 @@
 1994,shapiro,shapiro.c,20,true,c,true,entry source code
 1994,shapiro,Makefile,30,true,makefile,true,entry Makefile
 1994,shapiro,shapiro.orig.c,50,true,c,true,original source code
-1994,shapiro,shapiro.html,100,false,html,false,author hints
+1994,shapiro,shapiro.html,100,false,html,false,author's hints
 1994,shapiro,1994_shapiro.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1994,shapiro,README.md,4000000000,true,markdown,true,markdown source for this web page
 1994,shapiro,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -1062,7 +1062,7 @@
 1994,tvr,try.alt.color.sh,100,true,shellscript,true,demonstrate alternate source code in colour mode
 1994,tvr,try.bw.sh,100,true,shellscript,true,demonstrate code in black and white mode
 1994,tvr,try.color.sh,100,true,shellscript,true,demonstrate alternate source code in colour mode
-1994,tvr,tvr.bw,150,true,text,true,black and white
+1994,tvr,tvr.bw,150,true,text,true,data file for black and white output
 1994,tvr,tvr.color,150,true,text,true,RGB values
 1994,tvr,1994_tvr.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1994,tvr,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -1073,7 +1073,7 @@
 1994,weisberg,weisberg.c,20,true,c,true,entry source code
 1994,weisberg,Makefile,30,true,makefile,true,entry Makefile
 1994,weisberg,weisberg.orig.c,50,true,c,true,original source code
-1994,weisberg,primes.sh,100,true,shellscript,true,feed primes to the program
+1994,weisberg,primes.sh,100,true,shellscript,true,feed primes program to the entry
 1994,weisberg,try.sh,100,true,shellscript,true,script to try entry
 1994,weisberg,1994_weisberg.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1994,weisberg,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -1107,7 +1107,7 @@
 1995,dodsond1,Makefile,30,true,makefile,true,entry Makefile
 1995,dodsond1,dodsond1.orig.c,50,false,c,true,original source code
 1995,dodsond1,try.sh,100,true,shellscript,true,script to try entry
-1995,dodsond1,try.this.txt,100,true,text,false,sample input
+1995,dodsond1,try.this.txt,100,true,text,false,input file used by try.sh
 1995,dodsond1,1995_dodsond1.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1995,dodsond1,README.md,4000000000,true,markdown,true,markdown source for this web page
 1995,dodsond1,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -1126,8 +1126,8 @@
 1995,esde,esde.c,20,true,c,true,entry source code
 1995,esde,Makefile,30,true,makefile,true,entry Makefile
 1995,esde,esde.orig.c,50,false,c,true,original source code
-1995,esde,esde.data,100,true,text,true,example file argument
-1995,esde,esde.data2,100,true,text,true,example file argument
+1995,esde,esde.data,100,true,text,true,example argument file
+1995,esde,esde.data2,100,true,text,true,example argument file
 1995,esde,try.sh,100,true,shellscript,true,script to try entry
 1995,esde,1995_esde.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1995,esde,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -1139,10 +1139,10 @@
 1995,garry,Makefile,30,true,makefile,true,entry Makefile
 1995,garry,garry.alt.c,40,true,c,true,alternate source code
 1995,garry,garry.orig.c,50,false,c,true,original source code
-1995,garry,garry.data,100,true,text,true,example input
+1995,garry,garry.data,100,true,text,true,modified README.md for input to program
 1995,garry,try.alt.sh,100,true,shellscript,true,script to try alternate source code
 1995,garry,try.sh,100,true,shellscript,true,script to try entry
-1995,garry,garry.fmt.c,150,true,c,true,defocused source code
+1995,garry,garry.fmt.c,150,true,c,true,deobfuscated and formatted source code
 1995,garry,1995_garry.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1995,garry,README.md,4000000000,true,markdown,true,markdown source for this web page
 1995,garry,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -1291,8 +1291,8 @@
 1996,rcm,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
 1996,rcm,.gitignore,4000000000,true,gitignore,true,list of files that should not be committed under git
 1996,rcm,.path,4000000000,false,path,true,directory path from top level directory
-1996,rcm,rfc1951.gz,4000000000,true,gzip,false,input data
-1996,rcm,rfc1952.gz,4000000000,true,gzip,false,input data
+1996,rcm,rfc1951.gz,4000000000,true,gzip,false,RFC 1951 gzipped
+1996,rcm,rfc1952.gz,4000000000,true,gzip,false,RFC 1952 gzipped
 1996,rcm,index.html,4294967295,false,html,false,this web page
 1996,schweikh1,schweikh1.c,20,true,c,true,entry source code
 1996,schweikh1,Makefile,30,true,makefile,true,entry Makefile
@@ -1309,7 +1309,7 @@
 1996,schweikh2,Makefile,30,true,makefile,true,entry Makefile
 1996,schweikh2,schweikh2.orig.c,50,true,c,true,original source code
 1996,schweikh2,hunni.c,100,true,c,true,original slightly obfuscated source
-1996,schweikh2,hunni.pl,100,true,perl,true,perl script to obfuscate c
+1996,schweikh2,hunni.pl,100,true,perl,true,perl script to obfuscate original code hunni.c
 1996,schweikh2,try.sh,100,true,shellscript,true,script to try entry
 1996,schweikh2,1996_schweikh2.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1996,schweikh2,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -1345,7 +1345,7 @@
 1998,banks,banks.c,20,true,c,true,entry source code
 1998,banks,Makefile,30,true,makefile,true,entry Makefile
 1998,banks,banks.orig.c,50,false,c,true,original source code
-1998,banks,keysym.h,100,true,c,true,included header file
+1998,banks,keysym.h,100,true,c,true,header file to help identify some key symbols
 1998,banks,bb.sc,150,true,text,true,scenery file
 1998,banks,horizon.sc,150,true,text,true,scenery file
 1998,banks,mountains.sc,150,true,text,true,scenery file
@@ -1361,7 +1361,7 @@
 1998,bas1,bas1.c,20,true,c,true,entry source code
 1998,bas1,Makefile,30,true,makefile,true,entry Makefile
 1998,bas1,bas1.orig.c,50,false,c,true,original source code
-1998,bas1,bas1.sh,100,true,shellscript,true,script to try entry bas1
+1998,bas1,bas1.sh,100,true,shellscript,true,script to try entry
 1998,bas1,1998_bas1.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1998,bas1,README.md,4000000000,true,markdown,true,markdown source for this web page
 1998,bas1,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -1382,11 +1382,11 @@
 1998,chaos,Makefile,30,true,makefile,true,entry Makefile
 1998,chaos,chaos.orig.c,50,false,c,true,original source code
 1998,chaos,try.sh,100,true,shellscript,true,script to try entry
-1998,chaos,cube.data,150,true,text,true,data file
-1998,chaos,desk.data,150,true,text,true,data file
-1998,chaos,ioccc.data,150,true,text,true,data file
-1998,chaos,pyramid.data,150,true,text,true,data file
-1998,chaos,xwing.data,150,true,text,true,data file
+1998,chaos,cube.data,150,true,text,true,data file for cube 3d object
+1998,chaos,desk.data,150,true,text,true,data file for desk 3d object
+1998,chaos,ioccc.data,150,true,text,true,data file for IOCCC 3d object
+1998,chaos,pyramid.data,150,true,text,true,data file for pyramid 3d object
+1998,chaos,xwing.data,150,true,text,true,data file for X-Wing 3d object
 1998,chaos,1998_chaos.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1998,chaos,README.md,4000000000,true,markdown,true,markdown source for this web page
 1998,chaos,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -1407,8 +1407,8 @@
 1998,dlowe,Makefile,30,true,makefile,true,entry Makefile
 1998,dlowe,dlowe.alt.c,40,true,c,true,alternate source code
 1998,dlowe,dlowe.orig.c,50,false,c,true,original source code
-1998,dlowe,pootify.cgi.sh,100,true,shellscript,true,pootify CGI
-1998,dlowe,pootify.sh,100,true,shellscript,true,pootify tool
+1998,dlowe,pootify.cgi.sh,100,true,shellscript,true,pootify CGI script
+1998,dlowe,pootify.sh,100,true,shellscript,true,pootify script
 1998,dlowe,try.alt.sh,100,true,shellscript,true,script to try alternate source code
 1998,dlowe,try.sh,100,true,shellscript,true,script to try entry
 1998,dlowe,1998_dlowe.tar.bz2,1415926535,false,tbz2,false,download entry tarball
@@ -1430,7 +1430,7 @@
 1998,dorssel,dorssel.c,20,true,c,true,entry source code
 1998,dorssel,Makefile,30,true,makefile,true,entry Makefile
 1998,dorssel,dorssel.orig.c,50,false,c,true,original source code
-1998,dorssel,dorssel.html,100,false,html,false,author description of entry
+1998,dorssel,dorssel.html,100,false,html,false,author's description of entry
 1998,dorssel,try.sh,100,true,shellscript,true,script to try entry
 1998,dorssel,1998_dorssel.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1998,dorssel,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -1465,8 +1465,8 @@
 1998,schweikh1,schweikh1.alt.c,40,true,c,true,alternate source code
 1998,schweikh1,schweikh1.orig.c,50,true,c,true,original source code
 1998,schweikh1,charcount.pl,100,true,perl,true,character counter
-1998,schweikh1,macos.html,100,false,html,false,work with macOS
-1998,schweikh1,info,150,true,text,true,standards compliance
+1998,schweikh1,macos.html,100,false,html,false,explains how this entry was fixed to work with macOS
+1998,schweikh1,info,150,true,text,true,file for standards conformance test
 1998,schweikh1,1998_schweikh1.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1998,schweikh1,README.md,4000000000,true,markdown,true,markdown source for this web page
 1998,schweikh1,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -1489,7 +1489,7 @@
 1998,schweikh3,schweikh3.alt.c,40,true,c,true,alternate source code
 1998,schweikh3,schweikh3.orig.c,50,true,c,true,original source code
 1998,schweikh3,samefile.1,100,true,man,true,samefile man page
-1998,schweikh3,samefile.1.dupe,100,true,man,true,samefile man page
+1998,schweikh3,samefile.1.dupe,100,true,man,true,copy of samefile man page
 1998,schweikh3,try.sh,100,true,shellscript,true,script to try entry
 1998,schweikh3,1998_schweikh3.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1998,schweikh3,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -1531,7 +1531,7 @@
 2000,bmeyer,Makefile,30,true,makefile,true,entry Makefile
 2000,bmeyer,bmeyer.orig.c,50,false,c,true,original source code
 2000,bmeyer,lavabus.pgm,100,true,image,false,Kilauea volcano bus trapped in lava
-2000,bmeyer,michael.pgm,100,true,image,false,author’s Godchild and Nephew
+2000,bmeyer,michael.pgm,100,true,image,false,image of author’s godchild and nephew
 2000,bmeyer,try.sh,100,true,shellscript,true,script to try entry
 2000,bmeyer,lenna.glic,150,true,binary,false,P10 scan of 1972 Playboy centerfold
 2000,bmeyer,2000_bmeyer.tar.bz2,1415926535,false,tbz2,false,download entry tarball
@@ -1576,7 +1576,7 @@
 2000,jarijyrki,2000_jarijyrki.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2000,jarijyrki,README.md,4000000000,true,markdown,true,markdown source for this web page
 2000,jarijyrki,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
-2000,jarijyrki,finance.sheet,4000000000,true,spreadsheet,false,spreadsheet
+2000,jarijyrki,finance.sheet,4000000000,true,spreadsheet,false,example spreadsheet file
 2000,jarijyrki,.gitignore,4000000000,true,gitignore,true,list of files that should not be committed under git
 2000,jarijyrki,.path,4000000000,false,path,true,directory path from top level directory
 2000,jarijyrki,index.html,4294967295,false,html,false,this web page
@@ -1659,8 +1659,8 @@
 2001,anonymous,anonymous.c,20,true,c,true,entry source code
 2001,anonymous,Makefile,30,true,makefile,true,entry Makefile
 2001,anonymous,anonymous.orig.c,50,false,c,true,original source code
-2001,anonymous,anonymous.bed.c,100,true,c,true,roll over song C source
-2001,anonymous,anonymous.ten.c,100,true,c,true,green bottles song C source
+2001,anonymous,anonymous.bed.c,100,true,c,true,Ten In the Bed song C source
+2001,anonymous,anonymous.ten.c,100,true,c,true,Ten Green Bottles song C source
 2001,anonymous,try.sh,100,true,shellscript,true,script to try entry
 2001,anonymous,2001_anonymous.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2001,anonymous,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -1722,10 +1722,10 @@
 2001,herrmann1,herrmann1.c,20,true,c,true,entry source code
 2001,herrmann1,Makefile,30,true,makefile,true,entry Makefile
 2001,herrmann1,herrmann1.orig.c,50,false,c,true,original source code
-2001,herrmann1,herrmann1.gcd,100,true,c,true,GCD program as c defines
+2001,herrmann1,herrmann1.gcd,100,true,c,true,GCD program as C defines
 2001,herrmann1,herrmann1.sh,100,true,shellscript,true,script to try entry
-2001,herrmann1,herrmann1.times2,100,true,c,true,turning program as c defines
-2001,herrmann1,plus1.turing,100,true,c,true,turning program as c defines
+2001,herrmann1,herrmann1.times2,100,true,c,true,Turing program as C defines
+2001,herrmann1,plus1.turing,100,true,c,true,Turing program as C defines
 2001,herrmann1,try.sh,100,true,shellscript,true,script to try entry
 2001,herrmann1,2001_herrmann1.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2001,herrmann1,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -1817,7 +1817,7 @@
 2004,anonymous,anonymous.c,20,true,c,true,entry source code
 2004,anonymous,Makefile,30,true,makefile,true,entry Makefile
 2004,anonymous,anonymous.orig.c,50,false,c,true,original source code
-2004,anonymous,One_Ring_inscription.png,100,true,image,false,One Ring Black Speech inscription
+2004,anonymous,One_Ring_inscription.png,100,true,image,false,image of One Ring Black Speech inscription
 2004,anonymous,try.sh,100,true,shellscript,true,script to try entry
 2004,anonymous,2004_anonymous.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2004,anonymous,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -1861,8 +1861,8 @@
 2004,gavin,Makefile,30,true,makefile,true,entry Makefile
 2004,gavin,gavin.alt.c,40,true,c,true,alternate source code
 2004,gavin,gavin.orig.c,50,false,c,true,original source code
-2004,gavin,gavin.html,100,false,html,false,author usage guide
-2004,gavin,lilo.conf,100,true,text,true,boot loader configuration
+2004,gavin,gavin.html,100,false,html,false,author's usage guide
+2004,gavin,lilo.conf,100,true,text,true,lilo boot loader configuration
 2004,gavin,boot.b,200,true,binary,false,boot sector
 2004,gavin,img/fs.tar,200,true,tarball,false,tar of root file system
 2004,gavin,img/kernel,200,true,kernel,false,Linux kernel x86 boot executable zImage
@@ -1879,7 +1879,7 @@
 2004,hibachi,hibachi.orig.c,50,false,c,true,original source code
 2004,hibachi,src/configure,100,true,shellscript,true,GNU autoconf script
 2004,hibachi,src/localhost/index.html,100,true,html,false,home page of HIBACHI web server
-2004,hibachi,src/localhost/CHANGES-OBFUSCATED.TXT,125,true,text,false,change log for code
+2004,hibachi,src/localhost/CHANGES-OBFUSCATED.TXT,125,true,text,false,obfuscated change log for code
 2004,hibachi,src/localhost/reference/rfc2616.html,125,true,html,false,RFC 2616 - Hypertext Transfer Protocol
 2004,hibachi,src/localhost/test/perl/index.html,125,true,html,false,perl home page
 2004,hibachi,src/localhost/test/php/index.php,125,true,php,true,PHP making an ISO 8601:2000 calendar
@@ -1919,7 +1919,7 @@
 2004,hibachi,src/localhost/test/shell/dump.sh,4000000000,true,shellscript,true,POSIX shell page support file
 2004,hibachi,src/localhost/test/shell/test1.sh,4000000000,true,shellscript,true,POSIX shell page support file
 2004,hibachi,src/localhost/test/shell/test2.sh,4000000000,true,shellscript,true,POSIX shell page support file
-2004,hibachi,src/makefile.in,4000000000,true,man,true,configure.in experiment that is not used
+2004,hibachi,src/makefile.in,4000000000,true,man,true,makefile template
 2004,hibachi,index.html,4294967295,false,html,false,this web page
 2004,hoyle,hoyle.c,20,true,c,true,entry source code
 2004,hoyle,Makefile,30,true,makefile,true,entry Makefile
@@ -1947,20 +1947,20 @@
 2004,kopczynski,Makefile,30,true,makefile,true,entry Makefile
 2004,kopczynski,kopczynski.alt.c,40,true,c,true,alternate source code
 2004,kopczynski,kopczynski.orig.c,50,false,c,true,original source code
-2004,kopczynski,kopczynski-10,100,true,text,true,character to recognize
-2004,kopczynski,kopczynski-10-rev,100,true,text,true,reverse character to recognize
-2004,kopczynski,kopczynski-11,100,true,text,true,character to recognize
-2004,kopczynski,kopczynski-11-rev,100,true,text,true,reverse character to recognize
-2004,kopczynski,kopczynski-8a,100,true,text,true,character to recognize
-2004,kopczynski,kopczynski-8a-rev,100,true,text,true,reverse character to recognize
-2004,kopczynski,kopczynski-8b,100,true,text,true,character to recognize
-2004,kopczynski,kopczynski-8b-rev,100,true,text,true,reverse character to recognize
-2004,kopczynski,kopczynski-8c,100,true,text,true,character to recognize
-2004,kopczynski,kopczynski-8c-rev,100,true,text,true,reverse character to recognize
-2004,kopczynski,kopczynski-9,100,true,text,true,character to recognize
-2004,kopczynski,kopczynski-9-rev,100,true,text,true,reverse character to recognize
-2004,kopczynski,kopczynski-a,100,true,text,true,character to recognize
-2004,kopczynski,kopczynski-a-rev,100,true,text,true,reverse character to recognize
+2004,kopczynski,kopczynski-10,100,true,text,true,ASCII file with number 10 drawn to recognize
+2004,kopczynski,kopczynski-10-rev,100,true,text,true,ASCII file with number 10 drawn reversed to recognize
+2004,kopczynski,kopczynski-11,100,true,text,true,ASCII file with number 11 drawn to recognize
+2004,kopczynski,kopczynski-11-rev,100,true,text,true,ASCII file with number 11 drawn reversed to recognize
+2004,kopczynski,kopczynski-8a,100,true,text,true,ASCII file with number 8 drawn to recognize
+2004,kopczynski,kopczynski-8a-rev,100,true,text,true,ASCII file with number 8 drawn reversed to recognize
+2004,kopczynski,kopczynski-8b,100,true,text,true,ASCII file with number 8 drawn to recognize
+2004,kopczynski,kopczynski-8b-rev,100,true,text,true,ASCII file with number 8 drawn reversed to recognize
+2004,kopczynski,kopczynski-8c,100,true,text,true,ASCII file with number 8 drawn to to recognize
+2004,kopczynski,kopczynski-8c-rev,100,true,text,true,ASCII file with number 8 drawn reversed to recognize
+2004,kopczynski,kopczynski-9,100,true,text,true,ASCII file with number 9 drawn to recognize
+2004,kopczynski,kopczynski-9-rev,100,true,text,true,ASCII file with number 9 drawn reversed to recognize
+2004,kopczynski,kopczynski-a,100,true,text,true,ASCII file with letter A drawn to see what it recognizes
+2004,kopczynski,kopczynski-a-rev,100,true,text,true,ASCII file with letter A reversed to see what it recognizes
 2004,kopczynski,try.sh,100,true,shellscript,true,script to try entry
 2004,kopczynski,2004_kopczynski.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2004,kopczynski,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -1993,8 +1993,8 @@
 2004,schnitzi,schnitzi.c,20,true,c,true,entry source code
 2004,schnitzi,Makefile,30,true,makefile,true,entry Makefile
 2004,schnitzi,schnitzi.orig.c,50,true,c,true,original source code
-2004,schnitzi,schnitzi.inp0,100,true,text,true,example input
-2004,schnitzi,schnitzi.inp1,100,true,text,true,example input
+2004,schnitzi,schnitzi.inp0,100,true,text,true,animated scene input file
+2004,schnitzi,schnitzi.inp1,100,true,text,true,animated scene input file
 2004,schnitzi,try.sh,100,true,shellscript,true,script to try entry
 2004,schnitzi,2004_schnitzi.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2004,schnitzi,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -2037,7 +2037,7 @@
 2005,aidan,Makefile,30,true,makefile,true,entry Makefile
 2005,aidan,aidan.alt.c,40,true,c,true,alternate source code
 2005,aidan,aidan.orig.c,50,false,c,true,original source code
-2005,aidan,blank.sudoku,100,true,text,true,blank sudoku puzzle
+2005,aidan,blank.sudoku,100,true,text,true,blank Sudoku puzzle
 2005,aidan,insane1.sudoku,100,true,text,true,insane sudoku puzzle
 2005,aidan,insane2.sudoku,100,true,text,true,insane sudoku puzzle
 2005,aidan,insane3.sudoku,100,true,text,true,insane sudoku puzzle
@@ -2068,7 +2068,7 @@
 2005,boutines,Makefile,30,true,makefile,true,entry Makefile
 2005,boutines,boutines.orig.c,50,false,c,true,original source code
 2005,boutines,Voronoi.png,100,true,image,false,output example
-2005,boutines,eqn.png,100,true,image,false,equation limit for entry
+2005,boutines,eqn.png,100,true,image,false,equation limit for entry in png file
 2005,boutines,input.txt,100,true,text,false,sample input
 2005,boutines,try.sh,100,true,shellscript,true,script to try entry
 2005,boutines,2005_boutines.tar.bz2,1415926535,false,tbz2,false,download entry tarball
@@ -2133,7 +2133,7 @@
 2005,mynx,manual.html,100,true,html,false,manual for the Mynx web browser
 2005,mynx,entities.txt,120,true,text,false,ISO 8859-1 entitles
 2005,mynx,source/configure,150,true,shellscript,true,pre-built configure script
-2005,mynx,source/configure.in,150,true,shellscript,true,configure script description
+2005,mynx,source/configure.in,150,true,shellscript,true,Autoconf input file
 2005,mynx,source/makefile.in,150,true,shellscript,true,makefile template
 2005,mynx,2005_mynx.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2005,mynx,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -2408,7 +2408,7 @@
 2006,toledo2,A,4000000000,true,binary,false,binary support file
 2006,toledo2,B,4000000000,true,binary,false,binary support file
 2006,toledo2,C.BASIC,4000000000,true,binary,false,compiled BASIC file
-2006,toledo2,C.BIOS,4000000000,true,binary,false,basic input output system
+2006,toledo2,C.BIOS,4000000000,true,binary,false,required Basic Input/Output System
 2006,toledo2,README.md,4000000000,true,markdown,true,markdown source for this web page
 2006,toledo2,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
 2006,toledo2,.gitignore,4000000000,true,gitignore,true,list of files that should not be committed under git
@@ -2418,7 +2418,7 @@
 2006,toledo3,Makefile,30,true,makefile,true,entry Makefile
 2006,toledo3,toledo3.alt.c,40,true,c,true,alternate source code
 2006,toledo3,toledo3.orig.c,50,true,c,true,original source code
-2006,toledo3,toledo3-sbar.c,100,true,c,true,source to create a status bar
+2006,toledo3,toledo3-sbar.c,100,true,c,true,source code with status bar
 2006,toledo3,toledo3-txt.c,100,true,c,true,source to make the game text
 2006,toledo3,layer.c,150,true,c,true,windows portability source
 2006,toledo3,2006_toledo3.tar.bz2,1415926535,false,tbz2,false,download entry tarball
@@ -2430,7 +2430,7 @@
 2011,akari,akari.c,20,true,c,true,entry source code
 2011,akari,Makefile,30,true,makefile,true,entry Makefile
 2011,akari,akari.orig.c,50,false,c,true,original source code
-2011,akari,example.ppm,100,true,image,false,input image
+2011,akari,example.ppm,100,true,image,false,example input file
 2011,akari,try.sh,100,true,shellscript,true,script to try entry
 2011,akari,2011_akari.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2011,akari,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -2613,7 +2613,7 @@
 2011,toledo,toledo.alt2.c,40,true,c,true,second alternate source code
 2011,toledo,toledo.alt.c,40,true,c,true,alternate source code
 2011,toledo,toledo.orig.c,50,true,c,true,original source code
-2011,toledo,keysym.h,100,true,c,true,included header file
+2011,toledo,keysym.h,100,true,c,true,header file to help identify some key symbols
 2011,toledo,layer.c,150,true,c,true,translation layer to make 3D Tanks game
 2011,toledo,2011_toledo.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2011,toledo,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -2676,18 +2676,18 @@
 2012,dlowe,dlowe.orig.c,50,false,c,true,original source code
 2012,dlowe,2012_dlowe.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2012,dlowe,README.md,4000000000,true,markdown,true,markdown source for this web page
-2012,dlowe,dead.d,4000000000,true,binary,false,data file
+2012,dlowe,dead.d,4000000000,true,binary,false,game data input file
 2012,dlowe,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
 2012,dlowe,.gitignore,4000000000,true,gitignore,true,list of files that should not be committed under git
 2012,dlowe,.path,4000000000,false,path,true,directory path from top level directory
-2012,dlowe,splash.d,4000000000,true,binary,false,data file
-2012,dlowe,sprites.d,4000000000,true,binary,false,data file
+2012,dlowe,splash.d,4000000000,true,binary,false,game data input file
+2012,dlowe,sprites.d,4000000000,true,binary,false,game data input file
 2012,dlowe,index.html,4294967295,false,html,false,this web page
 2012,endoh1,endoh1.c,20,true,c,true,entry source code
 2012,endoh1,Makefile,30,true,makefile,true,entry Makefile
 2012,endoh1,endoh1.alt2.c,40,true,c,true,second alternate source code
 2012,endoh1,endoh1.alt.c,40,true,c,true,alternate source code
-2012,endoh1,endoh1_color.alt.c,40,true,c,true,alternate source code
+2012,endoh1,endoh1_color.alt.c,40,true,c,true,alternate source code with color
 2012,endoh1,endoh1.orig.c,50,false,c,true,original source code
 2012,endoh1,clock.txt,100,true,text,false,fluid initial state as text
 2012,endoh1,column2.txt,100,true,text,false,fluid initial state as text
@@ -2708,9 +2708,9 @@
 2012,endoh1,tanada.txt,100,true,text,false,fluid initial state as text
 2012,endoh1,try.alt.bw.sh,100,true,shellscript,true,script to try alternate source code in black and white
 2012,endoh1,try.alt.sh,100,true,shellscript,true,script to try alternate source code
-2012,endoh1,try.bw.sh,100,true,shellscript,true,try.alt.bw.sh
-2012,endoh1,try.sh,100,true,shellscript,true,script to try entry in color
-2012,endoh1,endoh1_color.c,150,true,c,true,alternate source code using terminal 256 colors
+2012,endoh1,try.bw.sh,100,true,shellscript,true,try black and white version
+2012,endoh1,try.sh,100,true,shellscript,true,script to try entry
+2012,endoh1,endoh1_color.c,150,true,c,true,source code using terminal 256 colors
 2012,endoh1,2012_endoh1.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2012,endoh1,README.md,4000000000,true,markdown,true,markdown source for this web page
 2012,endoh1,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -2739,7 +2739,7 @@
 2012,grothe,cookie_piece2.dat,4000000000,true,binary,false,binary support file
 2012,grothe,cookie_piece3.dat,4000000000,true,binary,false,binary support file
 2012,grothe,cookie_piece4.dat,4000000000,true,binary,false,binary support file
-2012,grothe,cookie_recipe_restore.txt,4000000000,true,text,false,encoded cookie recipe
+2012,grothe,cookie_recipe_restore.txt,4000000000,true,text,false,unencoded cookie recipe
 2012,grothe,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
 2012,grothe,.gitignore,4000000000,true,gitignore,true,list of files that should not be committed under git
 2012,grothe,.path,4000000000,false,path,true,directory path from top level directory
@@ -2765,7 +2765,7 @@
 2012,hou,patho.pl,100,true,perl,true,perl program - takes a long time to process ansi.txt
 2012,hou,try.sh,100,true,shellscript,true,script to try entry
 2012,hou,header.htm,150,true,html,false,HTML header
-2012,hou,perl-notes.txt,150,true,text,false,notes about patho.pl
+2012,hou,perl-notes.txt,150,true,text,false,time command diff of patho.pl and prog
 2012,hou,2012_hou.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2012,hou,README.md,4000000000,true,markdown,true,markdown source for this web page
 2012,hou,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -2777,10 +2777,10 @@
 2012,kang,Makefile,30,true,makefile,true,entry Makefile
 2012,kang,kang.alt.c,40,true,c,true,alternate source code
 2012,kang,kang.orig.c,50,false,c,true,original source code
-2012,kang,de.alt.sh,100,true,shellscript,true,German words for 0 through 13 for alt
-2012,kang,de.sh,100,true,shellscript,true,German words for 0 through 13
-2012,kang,en.alt.sh,100,true,shellscript,true,English words for 1 through 13 for alt
-2012,kang,en.sh,100,true,shellscript,true,English words for 1 through 13
+2012,kang,de.alt.sh,100,true,shellscript,true,English words script for 1 through 13 for alt code
+2012,kang,de.sh,100,true,shellscript,true,English words script for 1 through 13
+2012,kang,en.alt.sh,100,true,shellscript,true,English words script for 1 through 13 for alt code
+2012,kang,en.sh,100,true,shellscript,true,English words script for 1 through 13
 2012,kang,try.alt.sh,100,true,shellscript,true,script to try alternate source code
 2012,kang,try.sh,100,true,shellscript,true,script to try entry
 2012,kang,2012_kang.tar.bz2,1415926535,false,tbz2,false,download entry tarball
@@ -2804,7 +2804,7 @@
 2012,omoikane,omoikane.alt2.c,40,true,c,true,second alternate source code
 2012,omoikane,omoikane.alt.c,40,true,c,true,alternate source code
 2012,omoikane,omoikane.orig.c,50,false,c,true,original source code
-2012,omoikane,omoikane.c,100,true,c,true,source to generate random data
+2012,omoikane,omoikane.c,100,true,c,true,entry source code
 2012,omoikane,try.alt.sh,100,true,shellscript,true,script to try alternate source code
 2012,omoikane,try.sh,100,true,shellscript,true,script to try entry
 2012,omoikane,spoiler.html,200,true,html,false,Spoiler web page
@@ -2820,7 +2820,7 @@
 2012,tromp,how.html,100,false,html,false,author supplied spoiler
 2012,tromp,primes.pl,100,true,perl,true,post process entry output to print primes
 2012,tromp,try.sh,100,true,shellscript,true,script to try entry
-2012,tromp,hw.bf,150,true,bf,true,bf source code
+2012,tromp,hw.bf,150,true,bf,true,hello world bf source code
 2012,tromp,2012_tromp.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2012,tromp,README.md,4000000000,true,markdown,true,markdown source for this web page
 2012,tromp,bf.Blc,4000000000,true,binary,false,sample input
@@ -2842,8 +2842,8 @@
 2012,vik,Makefile,30,true,makefile,true,entry Makefile
 2012,vik,vik.alt.c,40,true,c,true,alternate source code
 2012,vik,vik.orig.c,50,true,c,true,original source code
-2012,vik,chocolate.png,100,true,image,false,encoding image
-2012,vik,ioccc.png,100,true,image,false,encoding image
+2012,vik,chocolate.png,100,true,image,false,message or image encoded in picture of chocolate candy
+2012,vik,ioccc.png,100,true,image,false,message or image encoded in ioccc image
 2012,vik,try.sh,100,true,shellscript,true,script to try entry
 2012,vik,2012_vik.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2012,vik,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -2858,16 +2858,16 @@
 2012,zeitak,zeitak.alt.c,40,true,c,true,alternate source code
 2012,zeitak,zeitak.orig.c,50,true,c,true,original source code
 2012,zeitak,test.sh,100,true,shellscript,true,test tool
-2012,zeitak,correct.java,150,false,java,true,example source with correct brace (supposedly :-) )
-2012,zeitak,incorrect.1.quote.c,150,true,c,true,example source with incorrect quote
-2012,zeitak,incorrect.3.quotes.c,150,true,c,true,example source with incorrect quote
-2012,zeitak,incorrect.brace.c,150,true,c,true,example source with incorrect brace
-2012,zeitak,incorrect.bracket.c,150,true,c,true,example source with incorrect bracket
-2012,zeitak,incorrect.java,150,false,java,true,example source with incorrect brace
-2012,zeitak,incorrect.paren.c,150,true,c,true,example source with incorrect parenthesis
-2012,zeitak,incorrect.quote-esc.c,150,true,c,true,example source with incorrect quote escape
-2012,zeitak,incorrect.single.quote.c,150,true,c,true,example source with incorrect single quote
-2012,zeitak,incorrect.txt,150,true,text,false,example source with incorrect text
+2012,zeitak,correct.java,150,false,java,true,example Java source with correct brace (supposedly :-) )
+2012,zeitak,incorrect.1.quote.c,150,true,c,true,example C source with incorrect quote
+2012,zeitak,incorrect.3.quotes.c,150,true,c,true,example C source with incorrect quote
+2012,zeitak,incorrect.brace.c,150,true,c,true,example C source with incorrect brace
+2012,zeitak,incorrect.bracket.c,150,true,c,true,example C source with incorrect bracket
+2012,zeitak,incorrect.java,150,false,java,true,example Java source with incorrect brace
+2012,zeitak,incorrect.paren.c,150,true,c,true,example C source with incorrect parenthesis
+2012,zeitak,incorrect.quote-esc.c,150,true,c,true,example C source with incorrect quote escape
+2012,zeitak,incorrect.single.quote.c,150,true,c,true,example C source with incorrect single quote
+2012,zeitak,incorrect.txt,150,true,text,false,example text file with unmatched quote
 2012,zeitak,2012_zeitak.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2012,zeitak,README.md,4000000000,true,markdown,true,markdown source for this web page
 2012,zeitak,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -2878,33 +2878,33 @@
 2013,birken,Makefile,30,true,makefile,true,entry Makefile
 2013,birken,birken.alt.c,40,true,c,true,alternate source code
 2013,birken,birken.orig.c,50,false,c,true,original source code
-2013,birken,belmont.txt,100,true,text,false,sprites in this textual format
-2013,birken,bloober.txt,100,true,text,false,sprites in this textual format
-2013,birken,bomberman.txt,100,true,text,false,sprites in this textual format
-2013,birken,boo.txt,100,true,text,false,sprites in this textual format
-2013,birken,bub.txt,100,true,text,false,sprites in this textual format
-2013,birken,cheepcheep.txt,100,true,text,false,sprites in this textual format
-2013,birken,format.txt,100,true,text,false,sprites in this textual format
-2013,birken,gurin.txt,100,true,text,false,sprites in this textual format
-2013,birken,happyface.txt,100,true,text,false,sprites in this textual format
-2013,birken,helloworld.txt,100,true,text,false,sprites in this textual format
-2013,birken,hilbert.txt,100,true,text,false,sprites in this textual format
-2013,birken,ioccc.txt,100,true,text,false,sprites in this textual format
-2013,birken,koopaparatroopa.txt,100,true,text,false,sprites in this textual format
-2013,birken,lakitu.txt,100,true,text,false,sprites in this textual format
-2013,birken,landon.txt,100,true,text,false,sprites in this textual format
-2013,birken,leo.txt,100,true,text,false,sprites in this textual format
-2013,birken,mario.txt,100,true,text,false,sprites in this textual format
-2013,birken,mspacman.txt,100,true,text,false,sprites in this textual format
-2013,birken,names.png,100,true,image,false,sprites in this textual format
-2013,birken,palette.png,100,true,image,false,sprites in this textual format
-2013,birken,paranaplant.txt,100,true,text,false,sprites in this textual format
-2013,birken,rhino.txt,100,true,text,false,sprites in this textual format
-2013,birken,rotations.png,100,true,image,false,sprites in this textual format
-2013,birken,samus.txt,100,true,text,false,sprites in this textual format
-2013,birken,simon.txt,100,true,text,false,sprites in this textual format
-2013,birken,snoo.txt,100,true,text,false,sprites in this textual format
-2013,birken,toad.txt,100,true,text,false,sprites in this textual format
+2013,birken,belmont.txt,100,true,text,false,example sprites input file
+2013,birken,bloober.txt,100,true,text,false,example sprites input file
+2013,birken,bomberman.txt,100,true,text,false,example sprites input file
+2013,birken,boo.txt,100,true,text,false,example sprites input file
+2013,birken,bub.txt,100,true,text,false,example sprites input file
+2013,birken,cheepcheep.txt,100,true,text,false,example sprites input file
+2013,birken,format.txt,100,true,text,false,example sprites input file
+2013,birken,gurin.txt,100,true,text,false,example sprites input file
+2013,birken,happyface.txt,100,true,text,false,example sprites input file
+2013,birken,helloworld.txt,100,true,text,false,example sprites input file
+2013,birken,hilbert.txt,100,true,text,false,example sprites input file
+2013,birken,ioccc.txt,100,true,text,false,example sprites input file
+2013,birken,koopaparatroopa.txt,100,true,text,false,example sprites input file
+2013,birken,lakitu.txt,100,true,text,false,example sprites input file
+2013,birken,landon.txt,100,true,text,false,example sprites input file
+2013,birken,leo.txt,100,true,text,false,example sprites input file
+2013,birken,mario.txt,100,true,text,false,example sprites input file
+2013,birken,mspacman.txt,100,true,text,false,example sprites input file
+2013,birken,names.png,100,true,image,false,example sprites input file
+2013,birken,palette.png,100,true,image,false,example sprites input file
+2013,birken,paranaplant.txt,100,true,text,false,example sprites input file
+2013,birken,rhino.txt,100,true,text,false,example sprites input file
+2013,birken,rotations.png,100,true,image,false,example sprites input file
+2013,birken,samus.txt,100,true,text,false,example sprites input file
+2013,birken,simon.txt,100,true,text,false,example sprites input file
+2013,birken,snoo.txt,100,true,text,false,example sprites input file
+2013,birken,toad.txt,100,true,text,false,example sprites input file
 2013,birken,try.alt.sh,100,true,shellscript,true,script to try alternate source code
 2013,birken,try.sh,100,true,shellscript,true,script to try entry
 2013,birken,2013_birken.tar.bz2,1415926535,false,tbz2,false,download entry tarball
@@ -2933,7 +2933,7 @@
 2013,cable1,cable1.c,20,true,c,true,entry source code
 2013,cable1,Makefile,30,true,makefile,true,entry Makefile
 2013,cable1,cable1.orig.c,50,false,c,true,original source code
-2013,cable1,dead-ms-tweet.jpg,100,true,image,false,tweet image
+2013,cable1,dead-ms-tweet.jpg,100,true,image,false,image of tweet by Landon about MS being dead
 2013,cable1,try.sh,100,true,shellscript,true,script to try entry
 2013,cable1,2013_cable1.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2013,cable1,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -2968,13 +2968,13 @@
 2013,cable3,screenshot_qbasic.png,100,true,image,false,Screenshots of some applications running on macOS
 2013,cable3,screenshot_simcity.png,100,true,image,false,Screenshots of some applications running on macOS
 2013,cable3,screenshot_win3_on_macosx.png,100,true,image,false,Screenshots of some applications running on macOS
-2013,cable3,sc-ioccc.terminal,150,true,xml,true,configuration file will correctly display console apps
+2013,cable3,sc-ioccc.terminal,150,true,xml,true,config for macOS to correctly display ANSI graphics apps
 2013,cable3,bios.asm,200,true,asm,true,BIOS source in assembly
 2013,cable3,2013_cable3.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2013,cable3,README.md,4000000000,true,markdown,true,markdown source for this web page
 2013,cable3,bios,4000000000,true,binary,false,custom BIOS
 2013,cable3,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
-2013,cable3,fd.img,4000000000,true,binary,false,DOS boot sector
+2013,cable3,fd.img,4000000000,true,binary,false,FreeDOS boot disk
 2013,cable3,.gitignore,4000000000,true,gitignore,true,list of files that should not be committed under git
 2013,cable3,hd.img,4000000000,true,binary,false,disk image
 2013,cable3,.path,4000000000,false,path,true,directory path from top level directory
@@ -2983,8 +2983,8 @@
 2013,dlowe,Makefile,30,true,makefile,true,entry Makefile
 2013,dlowe,dlowe.orig.c,50,false,c,true,original source code
 2013,dlowe,diff.sh,100,true,shellscript,true,difference tool
-2013,dlowe,fun.c,100,true,c,true,compile and run for extra run
-2013,dlowe,slflen.sh,100,true,shellscript,true,generate sparkline of file lengths
+2013,dlowe,fun.c,100,true,c,true,compile and run for extra fun
+2013,dlowe,slflen.sh,100,true,shellscript,true,show sparkline length of all files in current directory
 2013,dlowe,try.sh,100,true,shellscript,true,script to try entry
 2013,dlowe,2013_dlowe.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2013,dlowe,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -3197,9 +3197,9 @@
 2013,hou,old_default.scene,100,true,text,true,sample input
 2013,hou,otherroom.scene,100,true,text,true,sample input
 2013,hou,try.sh,100,true,shellscript,true,script to try entry
-2013,hou,luna.jpg,150,true,image,false,sample image data
-2013,hou,old_default.jpg,150,true,image,false,sample image data
-2013,hou,otherroom.jpg,150,true,image,false,sample image data
+2013,hou,luna.jpg,150,true,image,false,sample image input file
+2013,hou,old_default.jpg,150,true,image,false,sample image input file
+2013,hou,otherroom.jpg,150,true,image,false,sample image input file
 2013,hou,2013_hou.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2013,hou,README.md,4000000000,true,markdown,true,markdown source for this web page
 2013,hou,doc/camera.png,4000000000,true,image,false,documentation support image
@@ -3322,20 +3322,20 @@
 2014,maffiodo1,prog.c,20,true,c,true,entry source code
 2014,maffiodo1,Makefile,30,true,makefile,true,entry Makefile
 2014,maffiodo1,prog.orig.c,50,false,c,true,original source code
-2014,maffiodo1,giana.sh,100,true,shellscript,true,demonstrate with The Great Giana Sisters
-2014,maffiodo1,mario.sh,100,true,shellscript,true,demonstrate with Super Mario Brothers
-2014,maffiodo1,screenshot-giana.png,100,true,image,false,gameplay screenshot
-2014,maffiodo1,screenshot-mario.png,100,true,image,false,gameplay screenshot
-2014,maffiodo1,giana8.wav,150,true,wav,false,sound file for game
-2014,maffiodo1,giana.level,150,true,text,true,game level data
-2014,maffiodo1,mario8.wav,150,true,wav,false,sound file for game
-2014,maffiodo1,mario.level,150,true,text,true,game level data
+2014,maffiodo1,giana.sh,100,true,shellscript,true,demonstrate The Great Giana Sisters
+2014,maffiodo1,mario.sh,100,true,shellscript,true,demonstrate Super Mario Brothers
+2014,maffiodo1,screenshot-giana.png,100,true,image,false,gameplay screenshot of The Great Giana Sisters
+2014,maffiodo1,screenshot-mario.png,100,true,image,false,gameplay screenshot of Super Mario Brothers
+2014,maffiodo1,giana8.wav,150,true,wav,false,sound file for The Great Giana Sisters
+2014,maffiodo1,giana.level,150,true,text,true,game level data for The Great Giana Sisters
+2014,maffiodo1,mario8.wav,150,true,wav,false,sound file for Super Mario Brothers
+2014,maffiodo1,mario.level,150,true,text,true,game level data for Super Mario Brothers
 2014,maffiodo1,2014_maffiodo1.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2014,maffiodo1,README.md,4000000000,true,markdown,true,markdown source for this web page
 2014,maffiodo1,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
-2014,maffiodo1,giana.rgba,4000000000,true,binary,false,raw RGBA image
+2014,maffiodo1,giana.rgba,4000000000,true,binary,false,raw RGBA image for The Great Giana Sisters
 2014,maffiodo1,.gitignore,4000000000,true,gitignore,true,list of files that should not be committed under git
-2014,maffiodo1,mario.rgba,4000000000,true,binary,false,raw RGBA image
+2014,maffiodo1,mario.rgba,4000000000,true,binary,false,raw RGBA image for Super Mario Brothers
 2014,maffiodo1,.path,4000000000,false,path,true,directory path from top level directory
 2014,maffiodo1,index.html,4294967295,false,html,false,this web page
 2014,maffiodo2,prog.c,20,true,c,true,entry source code
@@ -3513,7 +3513,7 @@
 2015,howe,makeholes.c,100,true,c,true,add random holes to a file
 2015,howe,prog-test.sh,100,true,shellscript,true,script to try entry
 2015,howe,try.sh,100,true,shellscript,true,script to try entry
-2015,howe,cc.1,159,true,man,true,gcc man page
+2015,howe,cc.1,159,true,man,true,cc man page
 2015,howe,spoiler/Makefile,200,true,makefile,true,spoiler Makefile
 2015,howe,spoiler/err.h,210,true,c,true,spoiler err.h header file
 2015,howe,spoiler/prog.c,210,true,c,true,spoiler source code
@@ -3550,21 +3550,21 @@
 2015,muth,Makefile,30,true,makefile,true,entry Makefile
 2015,muth,prog.orig.c,50,false,c,true,original source code
 2015,muth,try.sh,100,true,shellscript,true,script to try entry
-2015,muth,machine_beaver_4_2.h,200,true,c,true,cpp macros
-2015,muth,machine_champ_2_4.h,200,true,c,true,cpp macros
-2015,muth,machine_chaos_5_2.h,200,true,c,true,cpp macros
-2015,muth,machine_cmplx_5_2.h,200,true,c,true,cpp macros
-2015,muth,machine_count_5_2.h,200,true,c,true,cpp macros
-2015,muth,machine_gcd.h,200,true,c,true,cpp macros
-2015,muth,machine_great_3_2.h,200,true,c,true,cpp macros
-2015,muth,machine_ioccc.h,200,true,c,true,cpp macros
-2015,muth,machine_nop.h,200,true,c,true,cpp macros
-2015,muth,machine_ru_2_4.h,200,true,c,true,cpp macros
-2015,muth,machine_times2.h,200,true,c,true,cpp macros
-2015,muth,tape_15_50.h,200,true,c,true,cpp macros
-2015,muth,tape_77_55.h,200,true,c,true,cpp macros
-2015,muth,tape_empty.h,200,true,c,true,cpp macros
-2015,muth,tape_five.h,200,true,c,true,cpp macros
+2015,muth,machine_beaver_4_2.h,200,true,c,true,busy beaver Turing machine macros
+2015,muth,machine_champ_2_4.h,200,true,c,true,current champion Turing machine macros
+2015,muth,machine_chaos_5_2.h,200,true,c,true,chaos Turing machine cpp macros
+2015,muth,machine_cmplx_5_2.h,200,true,c,true,complex Turing machine cpp macros
+2015,muth,machine_count_5_2.h,200,true,c,true,counting Turing machine cpp macros
+2015,muth,machine_gcd.h,200,true,c,true,greatest common divisor Turing machine cpp macros
+2015,muth,machine_great_3_2.h,200,true,c,true,greater Turing machine cpp macros
+2015,muth,machine_ioccc.h,200,true,c,true,IOCCC Turing machine cpp macros
+2015,muth,machine_nop.h,200,true,c,true,minimal Turing machine cpp macros
+2015,muth,machine_ru_2_4.h,200,true,c,true,runner up Turing machine cpp macros
+2015,muth,machine_times2.h,200,true,c,true,multiply by 2 Turing machine cpp macros
+2015,muth,tape_15_50.h,200,true,c,true,tape cpp macros
+2015,muth,tape_77_55.h,200,true,c,true,tape cpp macros
+2015,muth,tape_empty.h,200,true,c,true,empty tape cpp macros
+2015,muth,tape_five.h,200,true,c,true,tape cpp macros
 2015,muth,2015_muth.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2015,muth,README.md,4000000000,true,markdown,true,markdown source for this web page
 2015,muth,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -3619,7 +3619,7 @@
 2018,bellard,Makefile,30,true,makefile,true,entry Makefile
 2018,bellard,prog.alt.c,40,true,c,true,alternate source code
 2018,bellard,prog.orig.c,50,false,c,true,original source code
-2018,bellard,Lenna.png,100,true,image,false,sample image data
+2018,bellard,Lenna.png,100,true,image,false,sample image input file
 2018,bellard,try.sh,100,true,shellscript,true,script to try entry
 2018,bellard,2018_bellard.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2018,bellard,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -3645,10 +3645,10 @@
 2018,burton2,prog.c,20,true,c,true,entry source code
 2018,burton2,Makefile,30,true,makefile,true,entry Makefile
 2018,burton2,prog.orig.c,50,false,c,true,original source code
-2018,burton2,discrepancies.html,100,false,html,false,field-by-field difference between iocccsize and ion
+2018,burton2,discrepancies.html,100,false,html,false,field-by-field difference between iocccsize and ioc
 2018,burton2,freqcount.sh,100,true,shellscript,true,frequency count utility
-2018,burton2,tac.1,100,true,man,true,tokenize and count man page
-2018,burton2,tokcount.sh,100,true,shellscript,true,count the tokens produced by prog -t
+2018,burton2,tac.1,100,true,man,true,tac.c man page
+2018,burton2,tokcount.sh,100,true,shellscript,true,count the tokens produced by ./prog -t
 2018,burton2,try.sh,100,true,shellscript,true,script to try entry
 2018,burton2,fixed_iocccsize.c,120,true,c,true,iocccsize with patch applied
 2018,burton2,iocccbug01.c,150,true,c,true,test cases demonstrating problems with iocccsize
@@ -3762,10 +3762,10 @@
 2018,ferguson,README.md,4000000000,true,markdown,true,markdown source for this web page
 2018,ferguson,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
 2018,ferguson,.gitignore,4000000000,true,gitignore,true,list of files that should not be committed under git
-2018,ferguson,hint.css,4000000000,true,css,true,CSS for hint page
+2018,ferguson,hint.css,4000000000,true,css,true,CSS for index in rpm
 2018,ferguson,.path,4000000000,false,path,true,directory path from top level directory
 2018,ferguson,rpm.md,4000000000,true,markdown,true,markdown source for rpm.html
-2018,ferguson,test-strings.txt,4000000000,true,text,false,test.sh support file
+2018,ferguson,test-strings.txt,4000000000,true,text,false,test.sh input file
 2018,ferguson,index.html,4294967295,false,html,false,this web page
 2018,giles,prog.c,20,true,c,true,entry source code
 2018,giles,Makefile,30,true,makefile,true,entry Makefile
@@ -3902,7 +3902,7 @@
 2019,diels-grabsch1,prog.c,20,true,c,true,entry source code
 2019,diels-grabsch1,Makefile,30,true,makefile,true,entry Makefile
 2019,diels-grabsch1,prog.orig.c,50,false,c,true,original source code
-2019,diels-grabsch1,guidelines.txt,100,true,text,false,input data from 2018 IOCCC guidelines
+2019,diels-grabsch1,guidelines.txt,100,true,text,false,2018 IOCCC guidelines
 2019,diels-grabsch1,try.sh,100,true,shellscript,true,script to try entry
 2019,diels-grabsch1,Shakespeare.txt,200,true,text,false,Coriolanus by Shakespeare
 2019,diels-grabsch1,2019_diels-grabsch1.tar.bz2,1415926535,false,tbz2,false,download entry tarball
@@ -3937,7 +3937,7 @@
 2019,dogon,mosquito5.mc,100,true,text,true,Golly macrocell input file
 2019,dogon,try.sh,100,true,shellscript,true,script to try entry
 2019,dogon,unlimited-novelty.mc,100,true,text,true,Golly macrocell input file
-2019,dogon,apholife.c,150,true,c,true,partially obfuscated source
+2019,dogon,apholife.c,150,true,c,true,partially obfuscated 64-bit Hash Life source code
 2019,dogon,2019_dogon.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2019,dogon,README.md,4000000000,true,markdown,true,markdown source for this web page
 2019,dogon,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -3960,7 +3960,7 @@
 2019,endoh,Makefile,30,true,makefile,true,entry Makefile
 2019,endoh,prog.orig.c,50,false,c,true,original source code
 2019,endoh,try.sh,100,true,shellscript,true,script to try entry
-2019,endoh,ascii.c,150,true,c,true,shows character value of ASCII
+2019,endoh,ascii.c,150,true,c,true,shows character value of ASCII values
 2019,endoh,2019_endoh.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2019,endoh,README.md,4000000000,true,markdown,true,markdown source for this web page
 2019,endoh,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -3996,12 +3996,12 @@
 2019,lynn,example-1.txt,100,true,text,false,sample input
 2019,lynn,example-2.txt,100,true,text,false,sample input
 2019,lynn,try.sh,100,true,shellscript,true,script to try entry
-2019,lynn,fib.hs,200,true,text,true,compiler macros
-2019,lynn,ghcfib.hs,200,true,text,true,compiler macros
-2019,lynn,ghclol.hs,200,true,text,true,compiler macros
-2019,lynn,ghcscc.hs,200,true,text,true,compiler macros
-2019,lynn,lol.hs,200,true,text,true,compiler macros
-2019,lynn,scc.hs,200,true,text,true,compiler macros
+2019,lynn,fib.hs,200,true,text,true,Haskell source code
+2019,lynn,ghcfib.hs,200,true,text,true,Haskell source code
+2019,lynn,ghclol.hs,200,true,text,true,Haskell source code
+2019,lynn,ghcscc.hs,200,true,text,true,Haskell source code
+2019,lynn,lol.hs,200,true,text,true,Haskell source code
+2019,lynn,scc.hs,200,true,text,true,Haskell source code
 2019,lynn,hint.hs,250,true,text,true,self-hosting compiler stage output
 2019,lynn,2019_lynn.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2019,lynn,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -4018,8 +4018,8 @@
 2019,mills,Eugene_Onegin.txt.gz,4000000000,true,gzip,false,compressed Eugene Onegin poetry
 2019,mills,IOCCC-Rules-Guidelines.cp98_0.175,4000000000,true,binary,false,training data from IOCCC 1984-2019 rules guidelines
 2019,mills,IOCCC-Rules-Guidelines.txt.gz,4000000000,true,gzip,false,compressed IOCCC rules and guidelines 1984-2019
-2019,mills,IOCCC-hints.cp09_1.809,4000000000,true,binary,false,training data from IOCCC hints file text for 1984-2018
-2019,mills,IOCCC-hints.txt.gz,4000000000,true,gzip,false,compressed IOCCC hints for 1984-2018
+2019,mills,IOCCC-hints.cp09_1.809,4000000000,true,binary,false,training data from IOCCC hints files text for 1984-2018
+2019,mills,IOCCC-hints.txt.gz,4000000000,true,gzip,false,compressed IOCCC hints files for 1984-2018
 2019,mills,README.md,4000000000,true,markdown,true,markdown source for this web page
 2019,mills,Shakespeare.cp04_1.633,4000000000,true,binary,false,training data from Shakespeare text
 2019,mills,Shakespeare.txt.gz,4000000000,true,gzip,false,compressed Shakespeare text
@@ -4081,13 +4081,13 @@
 2020,endoh1,Makefile,30,true,makefile,true,entry Makefile
 2020,endoh1,prog.alt.c,40,true,c,true,alternate source code
 2020,endoh1,prog.orig.c,50,false,c,true,original source code
-2020,endoh1,hilbert16x8.txt,150,true,text,false,gameplay map
-2020,endoh1,hilbert2x2.txt,150,true,text,false,gameplay map
-2020,endoh1,hilbert4x4.txt,150,true,text,false,gameplay map
-2020,endoh1,hilbert8x8.txt,150,true,text,false,gameplay map
-2020,endoh1,ioccc.txt,150,true,text,false,gameplay map
-2020,endoh1,megumin.txt,150,true,text,false,gameplay map
-2020,endoh1,unwinnable.txt,150,true,text,false,gameplay map
+2020,endoh1,hilbert16x8.txt,150,true,text,false,example Minesweeper minefield map
+2020,endoh1,hilbert2x2.txt,150,true,text,false,example Minesweeper minefield map
+2020,endoh1,hilbert4x4.txt,150,true,text,false,example Minesweeper minefield map
+2020,endoh1,hilbert8x8.txt,150,true,text,false,example Minesweeper minefield map
+2020,endoh1,ioccc.txt,150,true,text,false,example Minesweeper minefield map
+2020,endoh1,megumin.txt,150,true,text,false,example Minesweeper minefield map
+2020,endoh1,unwinnable.txt,150,true,text,false,example Minesweeper minefield map
 2020,endoh1,2020_endoh1.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2020,endoh1,README.md,4000000000,true,markdown,true,markdown source for this web page
 2020,endoh1,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -4133,10 +4133,10 @@
 2020,ferguson1,COMPILING.html,100,false,html,false,about compiling
 2020,ferguson1,HACKING.html,100,false,html,false,how one might add to or modify code
 2020,ferguson1,bugs.html,100,false,html,false,current bugs and things that look like bugs but are not
-2020,ferguson1,cannibalism.log.html,100,false,html,false,about the snake game
+2020,ferguson1,cannibalism.log.html,100,false,html,false,shows extreme cannibalism mode output
 2020,ferguson1,chocolate-cake.html,100,false,html,false,double-layered chocolate fudge cake recipe
-2020,ferguson1,crazy.log.html,100,false,html,false,about some screen dumps
-2020,ferguson1,gameplay.html,100,false,html,false,how to play the game
+2020,ferguson1,crazy.log.html,100,false,html,false,explains various odd screen dumps
+2020,ferguson1,gameplay.html,100,false,html,false,many different gameplay modes explained
 2020,ferguson1,play.sh,100,true,shellscript,true,like snake-colours.sh with pre-configured gameplay modes
 2020,ferguson1,snake-colours.sh,100,true,shellscript,true,script to configure colours of game
 2020,ferguson1,spoilers.html,100,false,html,false,spoilers about the code
@@ -4145,21 +4145,21 @@
 2020,ferguson1,prog.2.c,150,true,c,true,source code with more digraphs
 2020,ferguson1,prog.3.c,150,true,c,true,source code with a more artistic layout
 2020,ferguson1,prog.3-j.c,150,true,c,true,source code with artistic layout and shorter j macro
-2020,ferguson1,snake.1,150,true,man,true,snake game man page
+2020,ferguson1,snake.1,150,true,man,true,Snake game man page
 2020,ferguson1,termcaps.c,150,true,c,true,terminal capability test source code
 2020,ferguson1,2020_ferguson1.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2020,ferguson1,COMPILING.md,4000000000,true,markdown,true,markdown source for COMPILING.html
 2020,ferguson1,HACKING.md,4000000000,true,markdown,true,markdown source for HACKING.html
 2020,ferguson1,README.md,4000000000,true,markdown,true,markdown source for this web page
 2020,ferguson1,bugs.md,4000000000,true,markdown,true,markdown source for bugs.html
-2020,ferguson1,cake.jpg,4000000000,true,image,false,image for chocolate cake
+2020,ferguson1,cake.jpg,4000000000,true,image,false,image for double-layered chocolate fudge cake
 2020,ferguson1,cannibalism.log.md,4000000000,true,markdown,true,markdown source for cannibalism.log.html
 2020,ferguson1,chocolate-cake.md,4000000000,true,markdown,true,markdown source for chocolate-cake.html
 2020,ferguson1,crazy.log.md,4000000000,true,markdown,true,markdown source for crazy.log.html
 2020,ferguson1,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
 2020,ferguson1,gameplay.md,4000000000,true,markdown,true,markdown source for gameplay.html
 2020,ferguson1,.gitignore,4000000000,true,gitignore,true,list of files that should not be committed under git
-2020,ferguson1,ioccc-cake.jpg,4000000000,true,image,false,image for chocolate cake
+2020,ferguson1,ioccc-cake.jpg,4000000000,true,image,false,double-layered chocolate fudge cake with IOCCC
 2020,ferguson1,.path,4000000000,false,path,true,directory path from top level directory
 2020,ferguson1,spoilers.md,4000000000,true,markdown,true,markdown source for spoilers.html
 2020,ferguson1,terminals.md,4000000000,true,markdown,true,markdown source for terminals.html
@@ -4178,10 +4178,10 @@
 2020,ferguson2,try.alt.sh,100,true,shellscript,true,script to try alternate source code
 2020,ferguson2,try.sh,100,true,shellscript,true,script to try entry
 2020,ferguson2,try.this.txt,100,true,text,false,sample input
-2020,ferguson2,enigma.1,150,true,man,true,Enigma simulator man page
-2020,ferguson2,key.txt,150,true,text,false,key to decipher or encipher IOCCC
+2020,ferguson2,enigma.1,150,true,man,true,Enigma machine simulator man page
+2020,ferguson2,key.txt,150,true,text,false,example key to decipher or encipher the letters IOCCC
 2020,ferguson2,obfuscation.key,150,true,text,true,key to decipher or encipher obfuscation.txt
-2020,ferguson2,recode.1,150,true,man,true,configuration tool man page
+2020,ferguson2,recode.1,150,true,man,true,configurator tool recode.c man page
 2020,ferguson2,2020_ferguson2.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2020,ferguson2,README.md,4000000000,true,markdown,true,markdown source for this web page
 2020,ferguson2,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -4194,7 +4194,7 @@
 2020,giles,Makefile,30,true,makefile,true,entry Makefile
 2020,giles,prog.orig.c,50,false,c,true,original source code
 2020,giles,try.sh,100,true,shellscript,true,script to try entry
-2020,giles,pi.wav,150,true,wav,false,touch tone for leading decimal digits of pi
+2020,giles,pi.wav,150,true,wav,false,wav file of touch tone for leading decimal digits of pi
 2020,giles,2020_giles.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2020,giles,README.md,4000000000,true,markdown,true,markdown source for this web page
 2020,giles,dtmf.bin,4000000000,true,binary,false,binary support file
@@ -4208,8 +4208,8 @@
 2020,kurdyukov1,prog.orig.c,50,false,c,true,original source code
 2020,kurdyukov1,try.sh,100,true,shellscript,true,script to try entry
 2020,kurdyukov1,prog.extra.c,150,true,c,true,variant of entry source code with sine function
-2020,kurdyukov1,prog.x86_64.asm,200,true,asm,true,assembly source code
-2020,kurdyukov1,prog.x86.asm,200,true,asm,true,assembly source code
+2020,kurdyukov1,prog.x86_64.asm,200,true,asm,true,x86_64 assembly source code
+2020,kurdyukov1,prog.x86.asm,200,true,asm,true,x86 assembly source code
 2020,kurdyukov1,2020_kurdyukov1.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2020,kurdyukov1,README.md,4000000000,true,markdown,true,markdown source for this web page
 2020,kurdyukov1,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -4220,10 +4220,10 @@
 2020,kurdyukov2,Makefile,30,true,makefile,true,entry Makefile
 2020,kurdyukov2,prog.orig.c,50,false,c,true,original source code
 2020,kurdyukov2,try.sh,100,true,shellscript,true,script to try entry
-2020,kurdyukov2,makegif.sh,150,true,shellscript,true,utility to form GIFs from the results
+2020,kurdyukov2,makegif.sh,150,true,shellscript,true,script to form GIFs from the results
 2020,kurdyukov2,prog.png.c,150,true,c,true,build a PNG version
 2020,kurdyukov2,prog.ppm.c,150,true,c,true,build a PPM version
-2020,kurdyukov2,sample.jpg,150,true,image,false,sample image data
+2020,kurdyukov2,sample.jpg,150,true,image,false,sample image input file
 2020,kurdyukov2,2020_kurdyukov2.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2020,kurdyukov2,README.md,4000000000,true,markdown,true,markdown source for this web page
 2020,kurdyukov2,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -4248,7 +4248,7 @@
 2020,kurdyukov4,prog.orig.c,50,false,c,true,original source code
 2020,kurdyukov4,Eugene_Onegin.txt,100,true,text,false,Eugene Onegin poetry
 2020,kurdyukov4,Shakespeare.txt,100,true,text,false,Shakespeare text
-2020,kurdyukov4,rand.c,100,true,c,true,randomize a file
+2020,kurdyukov4,rand.c,100,true,c,true,Judges' provided code to randomize a file
 2020,kurdyukov4,try.sh,100,true,shellscript,true,script to try entry
 2020,kurdyukov4,2020_kurdyukov4.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2020,kurdyukov4,README.md,4000000000,true,markdown,true,markdown source for this web page
