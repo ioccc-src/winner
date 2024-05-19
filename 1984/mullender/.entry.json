@@ -56,7 +56,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "header file for gentab.c for compatibility with 1984 systems"
+	    "entry_text" : "gentab.c header file for compatibility with systems in 1984"
 	},
 	{
 	    "file_path" : "1984_mullender.tar.bz2",

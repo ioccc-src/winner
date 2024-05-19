@@ -55,7 +55,7 @@ in your head.
 
 ## Judges' remarks:
 
-As submitted, this program was 3 lines (2 of defines and 1 of code).
+As submitted, this program was 3 lines (two `#define`s, one code).
 To make news & mail happy we split the last line into seven lines.
 
 This program was selected for the 1987 t-shirt collection.

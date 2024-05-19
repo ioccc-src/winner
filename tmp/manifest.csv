@@ -3,7 +3,7 @@
 1984,anonymous,Makefile,30,true,makefile,true,entry Makefile
 1984,anonymous,anonymous.alt.c,40,true,c,true,alternate source code
 1984,anonymous,anonymous.orig.c,50,false,c,true,original source code
-1984,anonymous,1984-anonymous-tattoo.jpg,100,true,image,false,source code tattoo image
+1984,anonymous,1984-anonymous-tattoo.jpg,100,true,image,false,source code and tattoo image
 1984,anonymous,1984_anonymous.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1984,anonymous,README.md,4000000000,true,markdown,true,markdown source for this web page
 1984,anonymous,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -35,7 +35,7 @@
 1984,mullender,mullender.alt.c,40,true,c,true,alternate source code
 1984,mullender,mullender.orig.c,50,false,c,true,original source code
 1984,mullender,gentab.c,150,true,c,true,author tool to generate code
-1984,mullender,a.out.h,160,true,c,true,header file for gentab.c for compatibility with 1984 systems
+1984,mullender,a.out.h,160,true,c,true,gentab.c header file for compatibility with systems in 1984
 1984,mullender,1984_mullender.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1984,mullender,README.md,4000000000,true,markdown,true,markdown source for this web page
 1984,mullender,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
