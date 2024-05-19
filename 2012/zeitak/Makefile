@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-constant-conversion -Wno-format-security \
 	  -Wno-incompatible-function-pointer-types -Wno-int-conversion \
 	  -Wno-missing-braces -Wno-non-literal-null-conversion \
-	  -Wno-pointer-sign \Wno-pointer-to-int-cast -Wno-self-assign \
+	  -Wno-pointer-sign -Wno-pointer-to-int-cast -Wno-self-assign \
 	  -Wno-unused-parameter -Wno-incompatible-pointer-types -Wno-overflow \
 	  -Wno-pointer-to-int-cast -Wno-strict-aliasing
 
