@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "shows character value of ASCII"
+	    "entry_text" : "shows character value of ASCII values"
 	},
 	{
 	    "file_path" : "2019_endoh.tar.bz2",

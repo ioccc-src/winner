@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "perl",
 	    "display_via_github" : true,
-	    "entry_text" : "perl script to obfuscate c"
+	    "entry_text" : "perl script to obfuscate original code hunni.c"
 	},
 	{
 	    "file_path" : "try.sh",

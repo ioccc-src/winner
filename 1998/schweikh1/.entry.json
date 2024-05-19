@@ -55,7 +55,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "work with macOS"
+	    "entry_text" : "explains how this entry was fixed to work with macOS"
 	},
 	{
 	    "file_path" : "info",
@@ -63,7 +63,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "standards compliance"
+	    "entry_text" : "file for standards conformance test"
 	},
 	{
 	    "file_path" : "1998_schweikh1.tar.bz2",

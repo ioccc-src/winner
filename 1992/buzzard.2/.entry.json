@@ -47,7 +47,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "author description of files"
+	    "entry_text" : "author's description of files"
 	},
 	{
 	    "file_path" : "buzzard.2.design.html",
@@ -79,7 +79,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "FORTH",
 	    "display_via_github" : true,
-	    "entry_text" : "FORTH source"
+	    "entry_text" : "demo FORTH source"
 	},
 	{
 	    "file_path" : "demo1.th",
@@ -87,7 +87,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "FORTH",
 	    "display_via_github" : true,
-	    "entry_text" : "FORTH source"
+	    "entry_text" : "demo FORTH source"
 	},
 	{
 	    "file_path" : "demo2.th",
@@ -95,7 +95,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "FORTH",
 	    "display_via_github" : true,
-	    "entry_text" : "FORTH source"
+	    "entry_text" : "demo FORTH source"
 	},
 	{
 	    "file_path" : "demo3.th",
@@ -103,7 +103,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "FORTH",
 	    "display_via_github" : true,
-	    "entry_text" : "FORTH source"
+	    "entry_text" : "demo FORTH source"
 	},
 	{
 	    "file_path" : "demo4.th",
@@ -111,7 +111,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "FORTH",
 	    "display_via_github" : true,
-	    "entry_text" : "FORTH source"
+	    "entry_text" : "demo FORTH source"
 	},
 	{
 	    "file_path" : "demo5.th",
@@ -119,7 +119,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "FORTH",
 	    "display_via_github" : true,
-	    "entry_text" : "FORTH source"
+	    "entry_text" : "demo FORTH source"
 	},
 	{
 	    "file_path" : "demo6.th",
@@ -127,7 +127,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "FORTH",
 	    "display_via_github" : true,
-	    "entry_text" : "FORTH source"
+	    "entry_text" : "demo FORTH source"
 	},
 	{
 	    "file_path" : "help.th",
@@ -135,7 +135,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "FORTH",
 	    "display_via_github" : true,
-	    "entry_text" : "FORTH source"
+	    "entry_text" : "demo FORTH source"
 	},
 	{
 	    "file_path" : "third",

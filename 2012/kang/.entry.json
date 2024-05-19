@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "German words for 0 through 13 for alt"
+	    "entry_text" : "English words script for 1 through 13 for alt code"
 	},
 	{
 	    "file_path" : "de.sh",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "German words for 0 through 13"
+	    "entry_text" : "English words script for 1 through 13"
 	},
 	{
 	    "file_path" : "en.alt.sh",
@@ -63,7 +63,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "English words for 1 through 13 for alt"
+	    "entry_text" : "English words script for 1 through 13 for alt code"
 	},
 	{
 	    "file_path" : "en.sh",
@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "English words for 1 through 13"
+	    "entry_text" : "English words script for 1 through 13"
 	},
 	{
 	    "file_path" : "try.alt.sh",

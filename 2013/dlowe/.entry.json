@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "compile and run for extra run"
+	    "entry_text" : "compile and run for extra fun"
 	},
 	{
 	    "file_path" : "slflen.sh",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "generate sparkline of file lengths"
+	    "entry_text" : "show sparkline length of all files in current directory"
 	},
 	{
 	    "file_path" : "try.sh",

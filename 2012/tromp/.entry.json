@@ -63,7 +63,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "bf",
 	    "display_via_github" : true,
-	    "entry_text" : "bf source code"
+	    "entry_text" : "hello world bf source code"
 	},
 	{
 	    "file_path" : "2012_tromp.tar.bz2",

@@ -103,7 +103,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "notes about patho.pl"
+	    "entry_text" : "time command diff of patho.pl and prog"
 	},
 	{
 	    "file_path" : "2012_hou.tar.bz2",

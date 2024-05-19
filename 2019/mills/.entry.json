@@ -111,7 +111,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
-	    "entry_text" : "training data from IOCCC hints file text for 1984-2018"
+	    "entry_text" : "training data from IOCCC hints files text for 1984-2018"
 	},
 	{
 	    "file_path" : "IOCCC-hints.txt.gz",
@@ -119,7 +119,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "gzip",
 	    "display_via_github" : false,
-	    "entry_text" : "compressed IOCCC hints for 1984-2018"
+	    "entry_text" : "compressed IOCCC hints files for 1984-2018"
 	},
 	{
 	    "file_path" : "README.md",

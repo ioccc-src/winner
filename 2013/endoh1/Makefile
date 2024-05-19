@@ -135,7 +135,7 @@ all: data ${TARGET}
 	sandwich supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "This next step may take some time to complete:"
+	@echo "This may take some time to complete:"
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 hello: hello.lazy ${PROG}.c

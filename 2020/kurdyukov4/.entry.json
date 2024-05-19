@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "randomize a file"
+	    "entry_text" : "Judges' provided code to randomize a file"
 	},
 	{
 	    "file_path" : "try.sh",

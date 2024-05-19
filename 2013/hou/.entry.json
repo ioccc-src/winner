@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "sample image data"
+	    "entry_text" : "sample image input file"
 	},
 	{
 	    "file_path" : "old_default.jpg",
@@ -79,7 +79,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "sample image data"
+	    "entry_text" : "sample image input file"
 	},
 	{
 	    "file_path" : "otherroom.jpg",
@@ -87,7 +87,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "sample image data"
+	    "entry_text" : "sample image input file"
 	},
 	{
 	    "file_path" : "2013_hou.tar.bz2",

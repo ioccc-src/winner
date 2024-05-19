@@ -32,7 +32,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "alternate source code"
+	    "entry_text" : "alternate source code that works with modern systems"
 	},
 	{
 	    "file_path" : "mullender.orig.c",
@@ -48,7 +48,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "author tool to generate code"
+	    "entry_text" : "authors' tool to generate code"
 	},
 	{
 	    "file_path" : "a.out.h",

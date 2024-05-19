@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "included header file"
+	    "entry_text" : "header file to help identify some key symbols"
 	},
 	{
 	    "file_path" : "layer.c",

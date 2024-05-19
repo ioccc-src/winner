@@ -183,7 +183,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "css",
 	    "display_via_github" : true,
-	    "entry_text" : "CSS for hint page"
+	    "entry_text" : "CSS for index in rpm"
 	},
 	{
 	    "file_path" : "rpm.md",
@@ -199,7 +199,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "test.sh support file"
+	    "entry_text" : "test.sh input file"
 	},
 	{
 	    "file_path" : "index.html",

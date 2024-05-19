@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "demonstrate with The Great Giana Sisters"
+	    "entry_text" : "demonstrate The Great Giana Sisters"
 	},
 	{
 	    "file_path" : "mario.sh",
@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "demonstrate with Super Mario Brothers"
+	    "entry_text" : "demonstrate Super Mario Brothers"
 	},
 	{
 	    "file_path" : "screenshot-giana.png",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "gameplay screenshot"
+	    "entry_text" : "gameplay screenshot of The Great Giana Sisters"
 	},
 	{
 	    "file_path" : "screenshot-mario.png",
@@ -63,7 +63,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "gameplay screenshot"
+	    "entry_text" : "gameplay screenshot of Super Mario Brothers"
 	},
 	{
 	    "file_path" : "giana.level",
@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "game level data"
+	    "entry_text" : "game level data for The Great Giana Sisters"
 	},
 	{
 	    "file_path" : "giana8.wav",
@@ -79,7 +79,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "wav",
 	    "display_via_github" : false,
-	    "entry_text" : "sound file for game"
+	    "entry_text" : "sound file for The Great Giana Sisters"
 	},
 	{
 	    "file_path" : "mario.level",
@@ -87,7 +87,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "game level data"
+	    "entry_text" : "game level data for Super Mario Brothers"
 	},
 	{
 	    "file_path" : "mario8.wav",
@@ -95,7 +95,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "wav",
 	    "display_via_github" : false,
-	    "entry_text" : "sound file for game"
+	    "entry_text" : "sound file for Super Mario Brothers"
 	},
 	{
 	    "file_path" : "2014_maffiodo1.tar.bz2",
@@ -143,7 +143,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
-	    "entry_text" : "raw RGBA image"
+	    "entry_text" : "raw RGBA image for The Great Giana Sisters"
 	},
 	{
 	    "file_path" : "mario.rgba",
@@ -151,7 +151,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
-	    "entry_text" : "raw RGBA image"
+	    "entry_text" : "raw RGBA image for Super Mario Brothers"
 	},
 	{
 	    "file_path" : "index.html",

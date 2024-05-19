@@ -80,7 +80,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "spreadsheet",
 	    "display_via_github" : false,
-	    "entry_text" : "spreadsheet"
+	    "entry_text" : "example spreadsheet file"
 	},
 	{
 	    "file_path" : "index.html",

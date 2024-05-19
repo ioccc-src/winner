@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "how to compile"
+	    "entry_text" : "script to run this entry"
 	},
 	{
 	    "file_path" : "1990_stig.tar.bz2",

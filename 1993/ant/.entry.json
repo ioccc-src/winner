@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "makefile",
 	    "display_via_github" : true,
-	    "entry_text" : "test suite"
+	    "entry_text" : "test suite Makefile"
 	},
 	{
 	    "file_path" : "ants.txt",
@@ -63,7 +63,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "lots of ASCII ants"
+	    "entry_text" : "the ants marching song"
 	},
 	{
 	    "file_path" : "1993_ant.tar.bz2",

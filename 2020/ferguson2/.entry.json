@@ -119,7 +119,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "man",
 	    "display_via_github" : true,
-	    "entry_text" : "Enigma simulator man page"
+	    "entry_text" : "Enigma machine simulator man page"
 	},
 	{
 	    "file_path" : "key.txt",
@@ -127,7 +127,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "key to decipher or encipher IOCCC"
+	    "entry_text" : "example key to decipher or encipher the letters IOCCC"
 	},
 	{
 	    "file_path" : "obfuscation.key",
@@ -143,7 +143,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "man",
 	    "display_via_github" : true,
-	    "entry_text" : "configuration tool man page"
+	    "entry_text" : "configurator tool recode.c man page"
 	},
 	{
 	    "file_path" : "2020_ferguson2.tar.bz2",

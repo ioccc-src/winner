@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "pootify CGI"
+	    "entry_text" : "pootify CGI script"
 	},
 	{
 	    "file_path" : "pootify.sh",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "pootify tool"
+	    "entry_text" : "pootify script"
 	},
 	{
 	    "file_path" : "try.alt.sh",

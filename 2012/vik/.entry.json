@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "encoding image"
+	    "entry_text" : "message or image encoded in picture of chocolate candy"
 	},
 	{
 	    "file_path" : "ioccc.png",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "encoding image"
+	    "entry_text" : "message or image encoded in ioccc image"
 	},
 	{
 	    "file_path" : "try.sh",

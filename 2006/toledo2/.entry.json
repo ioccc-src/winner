@@ -111,7 +111,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
-	    "entry_text" : "basic input output system"
+	    "entry_text" : "required Basic Input/Output System"
 	},
 	{
 	    "file_path" : "README.md",

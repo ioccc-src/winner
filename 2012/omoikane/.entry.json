@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "source to generate random data"
+	    "entry_text" : "entry source code"
 	},
 	{
 	    "file_path" : "try.alt.sh",

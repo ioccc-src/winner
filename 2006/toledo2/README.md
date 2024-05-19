@@ -102,7 +102,7 @@ and a disk controller, just like at the start of the personal computers
 revolution (circa 1975).
 
 It needs an initial memory image to do something usable, so along with it you
-will find two files: [C.BASIC](%%REPO_URL%%/2006/toledo2/C.BASIC) and [C.BIOS](%%REPO_URL%%/2006/toledo2/C.BIOS). Rename
+will find two files: [C.BASIC](C.BASIC) and [C.BIOS](C.BIOS). Rename
 [C.BASIC](%%REPO_URL%%/2006/toledo2/C.BASIC) to `C` (NOTE from the judges: running `make` will do this for
 you), run the emulator, and et voila! you have the public domain Palo Alto [Tiny
 BASIC](https://en.wikipedia.org/wiki/Tiny_BASIC) (by Li-Chen Wang), published in

@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "configure script description"
+	    "entry_text" : "Autoconf input file"
 	},
 	{
 	    "file_path" : "source/makefile.in",

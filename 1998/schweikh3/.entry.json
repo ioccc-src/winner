@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "man",
 	    "display_via_github" : true,
-	    "entry_text" : "samefile man page"
+	    "entry_text" : "copy of samefile man page"
 	},
 	{
 	    "file_path" : "try.sh",

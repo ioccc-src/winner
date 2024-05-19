@@ -63,7 +63,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "compiler macros"
+	    "entry_text" : "Haskell source code"
 	},
 	{
 	    "file_path" : "ghcfib.hs",
@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "compiler macros"
+	    "entry_text" : "Haskell source code"
 	},
 	{
 	    "file_path" : "ghclol.hs",
@@ -79,7 +79,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "compiler macros"
+	    "entry_text" : "Haskell source code"
 	},
 	{
 	    "file_path" : "ghcscc.hs",
@@ -87,7 +87,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "compiler macros"
+	    "entry_text" : "Haskell source code"
 	},
 	{
 	    "file_path" : "lol.hs",
@@ -95,7 +95,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "compiler macros"
+	    "entry_text" : "Haskell source code"
 	},
 	{
 	    "file_path" : "scc.hs",
@@ -103,7 +103,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "compiler macros"
+	    "entry_text" : "Haskell source code"
 	},
 	{
 	    "file_path" : "hint.hs",

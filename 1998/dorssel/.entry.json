@@ -39,7 +39,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "author description of entry"
+	    "entry_text" : "author's description of entry"
 	},
 	{
 	    "file_path" : "try.sh",

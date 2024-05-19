@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "gameplay map"
+	    "entry_text" : "example Minesweeper minefield map"
 	},
 	{
 	    "file_path" : "hilbert2x2.txt",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "gameplay map"
+	    "entry_text" : "example Minesweeper minefield map"
 	},
 	{
 	    "file_path" : "hilbert4x4.txt",
@@ -63,7 +63,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "gameplay map"
+	    "entry_text" : "example Minesweeper minefield map"
 	},
 	{
 	    "file_path" : "hilbert8x8.txt",
@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "gameplay map"
+	    "entry_text" : "example Minesweeper minefield map"
 	},
 	{
 	    "file_path" : "ioccc.txt",
@@ -79,7 +79,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "gameplay map"
+	    "entry_text" : "example Minesweeper minefield map"
 	},
 	{
 	    "file_path" : "megumin.txt",
@@ -87,7 +87,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "gameplay map"
+	    "entry_text" : "example Minesweeper minefield map"
 	},
 	{
 	    "file_path" : "unwinnable.txt",
@@ -95,7 +95,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "gameplay map"
+	    "entry_text" : "example Minesweeper minefield map"
 	},
 	{
 	    "file_path" : "2020_endoh1.tar.bz2",
