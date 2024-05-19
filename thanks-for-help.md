@@ -4711,13 +4711,16 @@ does this for the few who might use Windows.
 ### Source code: [zeitak.c](%%REPO_URL%%/2012/zeitak//zeitak.c)
 </div>
 
-[Cody](#cody) [test.sh](%%REPO_URL%%/2012/zeitak/test.sh) script and the `make test` rule
+[Cody](#cody) added the [test.sh](%%REPO_URL%%/2012/zeitak/test.sh) script and the `make test` rule
 that uses the script along with a number of files that will correctly be flagged
 as incorrect (including a text file and a java file, with a joke, to show that
 it's not that it parses C but rather just matching pairs though that's probably
 obvious) and some correctly nested files were also added including
 [1984/anonymous](1984/anonymous/index.html) (as the author explicitly mentioned
 it) and a java file as well with another joke.
+
+A problem was later fixed in the Makefile by Cody, a typo in the `CSILENCE`
+variable that prevented compilation.
 
 A minor point is that the author noted that one should
 look at the program source with tab space of 4 characters so Cody added the

@@ -3703,13 +3703,15 @@ does this for the few who might use Windows.</p>
 <h2 id="zeitak"><a href="2012/zeitak/index.html">2012/zeitak</a></h2>
 <h3 id="source-code-zeitak.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/zeitak//zeitak.c">zeitak.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/zeitak/test.sh">test.sh</a> script and the <code>make test</code> rule
+<p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/zeitak/test.sh">test.sh</a> script and the <code>make test</code> rule
 that uses the script along with a number of files that will correctly be flagged
 as incorrect (including a text file and a java file, with a joke, to show that
 it’s not that it parses C but rather just matching pairs though that’s probably
 obvious) and some correctly nested files were also added including
 <a href="1984/anonymous/index.html">1984/anonymous</a> (as the author explicitly mentioned
 it) and a java file as well with another joke.</p>
+<p>A problem was later fixed in the Makefile by Cody, a typo in the <code>CSILENCE</code>
+variable that prevented compilation.</p>
 <p>A minor point is that the author noted that one should
 look at the program source with tab space of 4 characters so Cody added the
 command to do this in vim for those who use it, in the judges’ remarks, to make
