@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.10.2 2024-05-19"
+export VERSION="1.10.3 2024-05-24"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -114,32 +114,32 @@ export EXIT_CODE="0"
 #
 unset IS_FOR
 declare -Ag IS_FOR
-IS_FOR[A]="A is for atoi"
-IS_FOR[B]="B is for break"
-IS_FOR[C]="C is for const"
-IS_FOR[D]="D is for do"
-IS_FOR[E]="E is for else"
-IS_FOR[F]="F is for float"
-IS_FOR[G]="G is for getc"
-IS_FOR[H]="H is for hypot"
-IS_FOR[I]="I is for int"
-IS_FOR[J]="J is for jmp_buf"
-IS_FOR[K]="K is for killchar"
-IS_FOR[L]="L is for long"
-IS_FOR[M]="M is for malloc"
-IS_FOR[N]="N is for nullptr"
-IS_FOR[O]="O is for open"
-IS_FOR[P]="P is for printf"
-IS_FOR[Q]="Q is for qsort"
-IS_FOR[R]="R is for return"
-IS_FOR[S]="S is for switch"
-IS_FOR[T]="T is for true"
-IS_FOR[U]="U is for union"
-IS_FOR[V]="V is for volatile"
-IS_FOR[W]="W is for while"
-IS_FOR[X]="X is for xor"
-IS_FOR[Y]="Y is for y0"
-IS_FOR[Z]="Z is for zlib"
+IS_FOR[a]="<i>a is for</i> <code>atoi</i></code>"
+IS_FOR[b]="<i>b is for</i> <code>break</i></code>"
+IS_FOR[c]="<i>c is for</i> <code>const</i></code>"
+IS_FOR[d]="<i>d is for</i> <code>do</i></code>"
+IS_FOR[e]="<i>e is for</i> <code>else</i></code>"
+IS_FOR[f]="<i>f is for</i> <code>float</i></code>"
+IS_FOR[g]="<i>g is for</i> <code>getc</i></code>"
+IS_FOR[h]="<i>h is for</i> <code>hypot</i></code>"
+IS_FOR[i]="<i>i is for</i> <code>int</i></code>"
+IS_FOR[j]="<i>j is for</i> <code>jmp_buf</i></code>"
+IS_FOR[k]="<i>k is for</i> <code>killchar</i></code>"
+IS_FOR[l]="<i>l is for</i> <code>long</i></code>"
+IS_FOR[m]="<i>m is for</i> <code>malloc</i></code>"
+IS_FOR[n]="<i>n is for</i> <code>nullptr</i></code>"
+IS_FOR[o]="<i>o is for</i> <code>open</i></code>"
+IS_FOR[p]="<i>p is for</i> <code>printf</i></code>"
+IS_FOR[q]="<i>q is for</i> <code>qsort</i></code>"
+IS_FOR[r]="<i>r is for</i> <code>return</i></code>"
+IS_FOR[s]="<i>s is for</i> <code>switch</i></code>"
+IS_FOR[t]="<i>t is for</i> <code>true</i></code>"
+IS_FOR[u]="<i>u is for</i> <code>union</i></code>"
+IS_FOR[v]="<i>v is for</i> <code>volatile</i></code>"
+IS_FOR[w]="<i>w is for</i> <code>while</i></code>"
+IS_FOR[x]="<i>x is for</i> <code>xor</i></code>"
+IS_FOR[y]="<i>y is for</i> <code>y0</i></code>"
+IS_FOR[z]="<i>z is for</i> <code>zlib</i></code>"
 
 # clear options we will add to tools
 #
@@ -1091,33 +1091,33 @@ fi
     # output top of content
     #
     cat << EOF
-<p style="text-align:center;">Jump to authors starting with: [
-<a href="#A">A</a>&nbsp;&nbsp;
-<a href="#B">B</a>&nbsp;&nbsp;
-<a href="#C">C</a>&nbsp;&nbsp;
-<a href="#D">D</a>&nbsp;&nbsp;
-<a href="#E">E</a>&nbsp;&nbsp;
-<a href="#F">F</a>&nbsp;&nbsp;
-<a href="#G">G</a>&nbsp;&nbsp;
-<a href="#H">H</a>&nbsp;&nbsp;
-<a href="#I">I</a>&nbsp;&nbsp;
-<a href="#J">J</a>&nbsp;&nbsp;
-<a href="#K">K</a>&nbsp;&nbsp;
-<a href="#L">L</a>&nbsp;&nbsp;
-<a href="#M">M</a>&nbsp;&nbsp;
-<a href="#N">N</a>&nbsp;&nbsp;
-<a href="#O">O</a>&nbsp;&nbsp;
-<a href="#P">P</a>&nbsp;&nbsp;
-<a href="#Q">Q</a>&nbsp;&nbsp;
-<a href="#R">R</a>&nbsp;&nbsp;
-<a href="#S">S</a>&nbsp;&nbsp;
-<a href="#T">T</a>&nbsp;&nbsp;
-<a href="#U">U</a>&nbsp;&nbsp;
-<a href="#V">V</a>&nbsp;&nbsp;
-<a href="#W">W</a>&nbsp;&nbsp;
-<a href="#X">X</a>&nbsp;&nbsp;
-<a href="#Y">Y</a>&nbsp;&nbsp;
-<a href="#Z">Z</a>
+<p style="text-align:center;">Jump to authors sorted by: [
+<a href="#a">a</a>&nbsp;&nbsp;
+<a href="#b">b</a>&nbsp;&nbsp;
+<a href="#c">c</a>&nbsp;&nbsp;
+<a href="#d">d</a>&nbsp;&nbsp;
+<a href="#e">e</a>&nbsp;&nbsp;
+<a href="#f">f</a>&nbsp;&nbsp;
+<a href="#g">g</a>&nbsp;&nbsp;
+<a href="#h">h</a>&nbsp;&nbsp;
+<a href="#i">i</a>&nbsp;&nbsp;
+<a href="#j">j</a>&nbsp;&nbsp;
+<a href="#k">k</a>&nbsp;&nbsp;
+<a href="#l">l</a>&nbsp;&nbsp;
+<a href="#m">m</a>&nbsp;&nbsp;
+<a href="#n">n</a>&nbsp;&nbsp;
+<a href="#o">o</a>&nbsp;&nbsp;
+<a href="#p">p</a>&nbsp;&nbsp;
+<a href="#q">q</a>&nbsp;&nbsp;
+<a href="#r">r</a>&nbsp;&nbsp;
+<a href="#s">s</a>&nbsp;&nbsp;
+<a href="#t">t</a>&nbsp;&nbsp;
+<a href="#u">u</a>&nbsp;&nbsp;
+<a href="#v">v</a>&nbsp;&nbsp;
+<a href="#w">w</a>&nbsp;&nbsp;
+<a href="#x">x</a>&nbsp;&nbsp;
+<a href="#y">y</a>&nbsp;&nbsp;
+<a href="#z">z</a>
 ]</p>
 <hr>
 
