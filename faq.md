@@ -58,6 +58,7 @@
 - [4.3  - Why do author remarks sometimes not match the source and/or why are there
 other inconsistencies with the original entry?](#faq4_3)
 - [4.4  - What is the meaning of the file ending in .orig.c in IOCCC entries?](#faq4_4)
+- [4.5  - Why were alternate versions added to some entries when the original entry worked fine and well?](#faq4_5)
 
 
 ## Section  5 - [Helping the IOCCC](#faq5)
@@ -2358,6 +2359,22 @@ See also [FAQ 4.2: What was changed in an IOCCC entry source code?](#what_change
 Due to the fact that the original code has sometimes had to change these files
 are the original winning entry or as close to as possible to the original that
 we can find.
+
+<div id="faq4_5">
+### FAQ 4.5: Why were alternate versions added to some entries when the original entry worked fine and well?
+</div>
+
+This was a judgement call and the reasons vary. In many cases it was simply to
+make the entry more presentable to more people but without modifying the entry
+itself, which would be tampering with the entry, and in some cases it would be
+changing it so much that it would no longer be what was submitted.
+
+In one case an alternate version was created to help locate and fix a bug that
+prevented the entry from working properly and it seemed like it should be added
+as well, for fun.
+
+In some cases it might be better to not have them but as noted this is a
+judgement call.
 
 
 <div id="faq5">
