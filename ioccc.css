@@ -301,7 +301,7 @@ textarea {
  */
 
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
+    -webkit-appearance: button; /* 1 */
     font: inherit; /* 2 */
 }
 
@@ -351,31 +351,31 @@ template {
 
 /* Fonts */
 .serif {
-  font-family: Georgia, serif;
+    font-family: Georgia, serif;
 }
 
 .sans-serif {
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 .mono {
-  font-family: Menlo, Monaco, Consolas, "Lucida Console", "Courier New", monospace;
+    font-family: Menlo, Monaco, Consolas, "Lucida Console", "Courier New", monospace;
 }
 
 * {
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Georgia, serif;
+    font-family: Georgia, serif;
 }
 
 pre, code {
-  font-family: Menlo, Monaco, Consolas, "Lucida Console", "Courier New", monospace;
+    font-family: Menlo, Monaco, Consolas, "Lucida Console", "Courier New", monospace;
 }
 
 body {
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 /* Top level ===================================================================================== */
@@ -383,8 +383,8 @@ body {
 /* Establish IOCCC defaults */
 
 * {
-  box-sizing: border-box;
-  background: whitesmoke;
+    box-sizing: border-box;
+    background: whitesmoke;
 }
 
 /* Remove hyphenation in line endings from most well known browsers */
@@ -397,389 +397,395 @@ p {
 }
 
 body {
-  margin: 0 auto;
-  padding: 10px;
-  hyphens: manual;
-  overflow-wrap: break-word;
-  text-rendering: optimizeLegibility;
-  font-kerning: normal;
+    margin: 0 auto;
+    padding: 10px;
+    hyphens: manual;
+    overflow-wrap: break-word;
+    text-rendering: optimizeLegibility;
+    font-kerning: normal;
 }
 
 pre, code {
-  margin: 1em 0;
-  hyphens: manual;
-  overflow-wrap: normal;
-  overflow: visible;
-  white-space: pre-wrap;
-  color: Indigo;
+    margin: 1em 0;
+    hyphens: manual;
+    overflow-wrap: normal;
+    overflow: visible;
+    white-space: pre-wrap;
+    color: Indigo;
 }
 
 blockquote {
-  margin: 1em 0 1em 1.7em;
-  padding-left: 1em;
-  border-left: 2px solid #e6e6e6;
-  color: inherit;
+    margin: 1em 0 1em 1.7em;
+    padding-left: 1em;
+    border-left: 2px solid #e6e6e6;
+    color: inherit;
 }
 
 a {
-  outline-color: transparent;
-  text-decoration: none;
-  padding: 2px 1px 0;
+    outline-color: transparent;
+    text-decoration: none;
+    padding: 2px 1px 0;
 }
 
 a:link {
-  color: blue;
+    color: blue;
 }
 
 a:visited {
-  color: purple;
+    color: purple;
 }
 
 a:focus, a:hover {
-  border-bottom: 1px solid;
+    border-bottom: 1px solid;
 }
 
 a:active {
-  color: red;
+    color: red;
+}
+
+img {
+    height: auto;
+    max-width: 95%;
+    position: relative;
 }
 
 /* IOCCC classes ================================================================================= */
 
 /* Left - class for placing things on the left side */
 .Left {
-  float: left;
+    float: left;
 }
 
 /* Right - class for placing things on the left side */
 .Right {
-  float: right;
+    float: right;
 }
 
 /* Disabled - class for making something as if the feature has been disabled */
 .Disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-  color: inherit;
-  display: inline-block;	/* For IE11/MS Edge bug */
-  pointer-events: none;
-  text-decoration: none;
+    cursor: not-allowed;
+    opacity: 0.5;
+    color: inherit;
+    display: inline-block;	/* For IE11/MS Edge bug */
+    pointer-events: none;
+    text-decoration: none;
 }
 
 /* Topbar ======================================================================================== */
 
 .outfit-font {
-  font-family: "Outfit", sans-serif;
-  font-optical-sizing: auto;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
 }
 
 .theader {
-  width: 100%;
-  min-height: 72px;
-  border-bottom: 1px solid #eee;
+    width: 100%;
+    min-height: 72px;
+    border-bottom: 1px solid #eee;
 }
 
 .topbar {
-  width: 100%;
-  background-color: whitesmoke;
-  height: 72px;
+    width: 100%;
+    background-color: whitesmoke;
+    height: 72px;
 }
 
 .container {
-  height: 72px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  /* Fixed Header Menu Issue */
-  max-width: 1140px;
-  margin-left: auto;
-  margin-right: auto;
+    height: 72px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Fixed Header Menu Issue */
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media (min-width: 1025px) and (max-width: 1100px) {
-  .container {
-    max-width: 840px;
-  }
+    .container {
+	max-width: 840px;
+    }
 }
 
 @media (min-width: 1101px) and (max-width: 1150px) {
-  .container {
-    max-width: 900px;
-  }
+    .container {
+	max-width: 900px;
+    }
 }
 
 @media (min-width: 1151px) and (max-width: 1200px) {
-  .container {
-    max-width: 970px;
-  }
+    .container {
+	max-width: 970px;
+    }
 }
 
 @media (min-width: 1201px) and (max-width: 1250px) {
-  .container {
-    max-width: 1000px;
-  }
+    .container {
+	max-width: 1000px;
+    }
 }
 
 @media (min-width: 1251px) and (max-width: 1300px) {
-  .container {
-    max-width: 1060px;
-  }
+    .container {
+	max-width: 1060px;
+    }
 }
 
 @media (min-width: 1301px) and (max-width: 1350px) {
-  .container {
-    max-width: 1100px;
-  }
+    .container {
+	max-width: 1100px;
+    }
 }
 
 .logo {
-  margin-top: auto;
-  margin-bottom: auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .logo-link {
-  color: #154c9f !important;
-  font-family: "Outfit", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 40px;
-  cursor: pointer;
-  text-decoration: none !important;
-  border-bottom: none !important;
+    color: #154c9f !important;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 40px;
+    cursor: pointer;
+    text-decoration: none !important;
+    border-bottom: none !important;
 }
 
 .logo-link:hover {
-  opacity: 0.8;
-  transition: all .3s ease;
+    opacity: 0.8;
+    transition: all .3s ease;
 }
 
 .topbar-items {
-  display: flex;
-  gap: 48px;
+    display: flex;
+    gap: 48px;
 }
 
 .topbar-items .item {
-  position: relative;
-  color: #154c9f;
-  font-family: "Outfit", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 14px;
-  cursor: pointer;
+    position: relative;
+    color: #154c9f;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 14px;
+    cursor: pointer;
 }
 
 .item-header {
-  display: block;
+    display: block;
 }
 
 .item-header:hover {
-  opacity: 0.8;
-  transition: all .3s ease;
+    opacity: 0.8;
+transition: all .3s ease;
 }
 
 .topbar-items .sub-item {
-  position: absolute;
-  display: none;
-  flex-direction: column;
-  gap: 24px;
-  min-width: 200px;
-  padding: 24px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #154c9f;
-  text-align: left;
-  background-color: whitesmoke;
-  left: -100%;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 200px;
+    padding: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #154c9f;
+    text-align: left;
+    background-color: whitesmoke;
+    left: -100%;
 }
 
 .topbar-items .item:hover .sub-item{
-  display: flex !important;
+    display: flex !important;
 }
 
 .topbar-items .item .sub-item .outfit-font .sub-item-link {
-  color: #154c9f;
-  text-decoration: none;
-  border-bottom: none;
+    color: #154c9f;
+    text-decoration: none;
+    border-bottom: none;
 }
 
 .sub-item-link:hover {
-  opacity: 0.8;
-  transition: all .3s ease;
+    opacity: 0.8;
+    transition: all .3s ease;
 }
 
 .topbar-js-label {
-  display: block;
-  position: absolute;
-  top: 40px;
-  right: 20px;
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 20px;
 
-  color: #154c9f !important;
-  font-family: "Outfit", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 14px;
+    color: #154c9f !important;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 14px;
 
-  text-decoration: none;
-  border-bottom: none;
+    text-decoration: none;
+    border-bottom: none;
 }
 
 @media (scripting: enabled) {
-  .topbar-js-label {
-    display: none;
-  }
+    .topbar-js-label {
+	display: none;
+    }
 }
 
 .topbar-js-label:hover {
-  border-bottom: none;
+    border-bottom: none;
 }
 
 /* Header ======================================================================================== */
 
 /* Style the header */
 .header {
-  padding: 10px;
-  text-align: center;
+    padding: 10px;
+    text-align: center;
 }
 
 /* Header headings */
 .header h1 {
-  font-size: 2.5em;
+    font-size: 2.5em;
 }
 .header h2 {
-  font-size: 2em;
+    font-size: 2em;
 }
 .header h3 {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 /* Top navigation bar ============================================================================ */
 
 /* Style the top navigation bar */
 .navbar {
-  overflow: hidden;
-  background-color: #333;
+    overflow: hidden;
+    background-color: #333;
 }
 
 /* Style the navbar links and paragraph text */
 .navbar a, p {
-  display: block;
-  color: lightblue;
-  padding: 14px 16px;
-  text-decoration: none;
+    display: block;
+    color: lightblue;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
 /* Change navbar link color on hover */
 .navbar a:focus, .navbar a:hover {
-  background-color: #ddd;
-  color: blue;
-  text-decoration: underline;
+    background-color: #ddd;
+    color: blue;
+    text-decoration: underline;
 }
 
 /* Change navbar link after visit */
 .navbar a:visited {
-  color: #cO80c0;
+    color: #cO80c0;
 }
 
 /* Change navbar link when active */
 .navbar a:active {
-  color: red;
+    color: red;
 }
 
 /* No padding nor border around navbar images */
 .navbar img {
-  border: 0;
-  padding: 0;
+    border: 0;
+    padding: 0;
 }
 
 /* Content =========================================================================== */
 
 /* Style content */
 .content {
-  float: left;
-  width: 80%;
-  padding-left: 10px;
+    float: left;
+    width: 80%;
+    padding-left: 10px;
 }
 
 /* content code */
 .content code, pre {
-  font-weight: bold;
-  padding-top: 0;
-  padding-bottom: 0;
-  color: Indigo;
+    font-weight: bold;
+    padding-top: 0;
+    padding-bottom: 0;
+    color: Indigo;
 }
 
 /* content text */
 .content p {
-  padding-top: 0;
-  padding-bottom: 0;
-  color: black;
+    padding-top: 0;
+    padding-bottom: 0;
+    color: black;
 }
 
 /* content links */
 .content a {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 .content a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 /* content main headings */
 .content h1 {
-  font-size: 2em;
-  color: DarkBlue;
+    font-size: 2em;
+    color: DarkBlue;
 }
 .content h2 {
-  font-size: 1.5em;
-  color: DarkBlue;
+    font-size: 1.5em;
+    color: DarkBlue;
 }
 .content h3 {
-  font-size: 1.25em;
-  color: DarkBlue;
+    font-size: 1.25em;
+    color: DarkBlue;
 }
 .content h4, h5, h6 {
-  color: DarkBlue;
+    color: DarkBlue;
 }
 
 /* Footer  ======================================================================================== */
 
 /* Style footer */
 .footer {
-  display: block;
-  clear: both;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-style: solid hidden hidden hidden;
-  text-decoration: none;
+    display: block;
+    clear: both;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-style: solid hidden hidden hidden;
+    text-decoration: none;
 }
 
 /* footer code */
 .footer code, pre {
-  font-weight: bold;
-  padding-top: 0;
-  padding-bottom: 0;
-  color: Indigo;
+    font-weight: bold;
+    padding-top: 0;
+    padding-bottom: 0;
+    color: Indigo;
 }
 
 /* footer text */
 .footer p {
-  padding-top: 0;
-  padding-bottom: 0;
-  color: black;
+    padding-top: 0;
+    padding-bottom: 0;
+    color: black;
 }
 
 /* footer links */
 .footer a {
-  text-decoration: none;
+    text-decoration: none;
 }
 .footer a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .footer h1, h2, h3, h4, h5, h6 {
-  color: DarkBlue;
+    color: DarkBlue;
 }
 
 /* Responsive Web Design ========================================================================== */
@@ -800,109 +806,109 @@ a:active {
 
 /* Mobile menu section */
 @media screen and (max-width: 1024px) {
-  .topbar-items {
-    display: none;
-  }
+    .topbar-items {
+	display: none;
+    }
 }
 
 .header-mobile-menu {
-  display: none;
+    display: none;
 }
 
 @media screen and (max-width: 1024px) {
-  .header-mobile-menu {
-    display: block;
-  }
+    .header-mobile-menu {
+	display: block;
+    }
 }
 
 .mobile-header-button-label {
-  display: none;
+    display: none;
 }
 
 @media screen and (max-width: 1024px) {
-  .mobile-header-button-label {
-    display: block;
-    position: absolute;
-    right: 64px;
-    color: #154c9f;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: "Outfit", sans-serif;
-    font-optical-sizing: auto;
-    text-transform: capitalize;
-  }
+    .mobile-header-button-label {
+	display: block;
+	position: absolute;
+	right: 64px;
+	color: #154c9f;
+	font-size: 16px;
+	font-weight: bold;
+	font-family: "Outfit", sans-serif;
+	font-optical-sizing: auto;
+	text-transform: capitalize;
+    }
 }
 
 .topbar-mobile-menu {
-  display: none;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  height: 48px;
-  width: 48px;
-  border: none;
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    height: 48px;
+    width: 48px;
+    border: none;
 }
 
 @media (scripting: enabled) {
-  .topbar-mobile-menu {
-    display: block;
-  }
+    .topbar-mobile-menu {
+	display: block;
+    }
 }
 
 .hide-content {
-  display: none;
+    display: none;
 }
 
 .topbar-mobile-panel {
-  background-color: #f5f5f5;
-  width: 100%;
-  height: 100vh;
-  position: relative;
+    background-color: #f5f5f5;
+    width: 100%;
+    height: 100vh;
+    position: relative;
 }
 
 .mobile-menu-item {
-  font-family: "Outfit", sans-serif;
-  font-optical-sizing: auto;
-  font-size: 18px;
-  font-weight: 700;
-  color: #154c9f;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 18px;
+    font-weight: 700;
+    color: #154c9f;
 }
 
 .mobile-submenu-item {
-  font-family: "Outfit", sans-serif;
-  font-optical-sizing: auto;
-  font-size: 16px;
-  font-weight: 500;
-  color: #154c9f !important;
-  width: fit-content;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 16px;
+    font-weight: 500;
+    color: #154c9f !important;
+    width: fit-content;
 }
 
 .mobile-menu-container {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 16px;
 }
 
 .mobile-menu-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .mobile-submenu-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding-left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-left: 16px;
 }
 
 .mobile-menu-icon {
-  color: #154c9f;
-  width: 24px;
-  height: 24px;
-  margin-left: auto;
-  margin-right: auto;
+    color: #154c9f;
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Default: screen is > 968 pixels wide (> 984 w/padding) */
@@ -913,35 +919,35 @@ a:active {
  * Use two columns but with slightly smaller header font sizes.
  */
 @media screen and (max-width: 968px) {
-  body {
-    font-size: 1em;
-  }
-  .header {
-    padding: 0;
-    border: 0;
-    text-align: center;
-  }
-  .header h1 {
-    font-size: 2em;
-  }
-  .header h2 {
-    font-size: 1.75em;
-  }
-  .header h3 {
-    font-size: 1.5em;
-  }
-  .content, .footer {
-    padding: 2px;
-  }
-  .content h1 {
-    font-size: 1.75em;
-  }
-  .content h2 {
-    font-size: 1.5em;
-  }
-  .content h3 {
-    font-size: 1.25em;
-  }
+    body {
+	font-size: 1em;
+    }
+    .header {
+	padding: 0;
+	border: 0;
+	text-align: center;
+    }
+    .header h1 {
+	font-size: 2em;
+    }
+    .header h2 {
+	font-size: 1.75em;
+    }
+    .header h3 {
+	font-size: 1.5em;
+    }
+    .content, .footer {
+	padding: 2px;
+    }
+    .content h1 {
+	font-size: 1.75em;
+    }
+    .content h2 {
+	font-size: 1.5em;
+    }
+    .content h3 {
+	font-size: 1.25em;
+    }
 }
 
 /*
@@ -951,36 +957,36 @@ a:active {
  * and adjust the defaults for a somewhat smaller screen.
  */
 @media screen and (max-width: 761px) {
-  body {
-    font-size: 1em;
-  }
-  .header {
-    padding: 0;
-    border: 0;
-    text-align: center;
-  }
-  .header h1 {
-    font-size: 1.5em;
-  }
-  .header h2 {
-    font-size: 1.25em;
-  }
-  .header h3 {
-    font-size: 1em;
-  }
-  .content, .footer {
-    width: 100%;
-    padding: 2px;
-  }
-  .content h1 {
-    font-size: 1.25em;
-  }
-  .content h2 {
-    font-size: 1.1em;
-  }
-  .content h3 {
-    font-size: 1em;
-  }
+    body {
+	font-size: 1em;
+    }
+    .header {
+	padding: 0;
+	border: 0;
+	text-align: center;
+    }
+    .header h1 {
+	font-size: 1.5em;
+    }
+    .header h2 {
+	font-size: 1.25em;
+    }
+    .header h3 {
+	font-size: 1em;
+    }
+    .content, .footer {
+	width: 100%;
+	padding: 2px;
+    }
+    .content h1 {
+	font-size: 1.25em;
+    }
+    .content h2 {
+	font-size: 1.1em;
+    }
+    .content h3 {
+	font-size: 1em;
+    }
 }
 
 /*
@@ -990,44 +996,44 @@ a:active {
  * and adjust the defaults for a small screen.
  */
 @media screen and (max-width: 500px) {
-  body {
-    font-size: 0.9em;
-  }
-  .header {
-    padding: 0;
-    border: 0;
-    text-align: center;
-  }
-  .header h1 {
-    font-size: 1.25em;
-  }
-  .header h2 {
-    font-size: 1em;
-  }
-  .header h3 {
-    font-size: 0.9em;
-  }
-  .header img {
-    visibility: none;
-    width: 0;
-    height: 0;
-    border: 0;
-    padding: 0;
-  }
-  .navbar a {
-    float: none;
-    width: 100%;
-    padding: 0;
-  }
-  .content h1 {
-    font-size: 1.25em;
-  }
-  .content h2 {
-    font-size: 1em;
-  }
-  .content h3 {
-    font-size: 0.9em;
-  }
+    body {
+	font-size: 0.9em;
+    }
+    .header {
+	padding: 0;
+	border: 0;
+	text-align: center;
+    }
+    .header h1 {
+	font-size: 1.25em;
+    }
+    .header h2 {
+	font-size: 1em;
+    }
+    .header h3 {
+	font-size: 0.9em;
+    }
+    .header img {
+	visibility: none;
+	width: 0;
+	height: 0;
+	border: 0;
+	padding: 0;
+    }
+    .navbar a {
+	float: none;
+	width: 100%;
+	padding: 0;
+    }
+    .content h1 {
+	font-size: 1.25em;
+    }
+    .content h2 {
+	font-size: 1em;
+    }
+    .content h3 {
+	font-size: 0.9em;
+    }
 }
 
 /*
@@ -1037,26 +1043,26 @@ a:active {
  * when using the --standalone option.
  */
 @media print {
-  html {
-    background-color: white;
-  }
-  body {
-    background-color: transparent;
-    color: black;
-    font-size: 12pt;
-  }
-  p, h2, h3 {
-    orphans: 3;
-    widows: 3;
-  }
-  h2, h3, h4 {
-    page-break-after: avoid;
-  }
-  /* IOCCC addition - print all as if they were not visited */
-  a:focus, a:hover, a:visited, a:active {
-    color: blue;
-  }
-  .navbar a, .navbar a:focus, .navbar a:hover, .navbar a:visited, .navbar a:active {
-    color: lightblue;
-  }
+    html {
+	background-color: white;
+    }
+    body {
+	background-color: transparent;
+	color: black;
+	font-size: 12pt;
+    }
+    p, h2, h3 {
+	orphans: 3;
+	widows: 3;
+    }
+    h2, h3, h4 {
+	page-break-after: avoid;
+    }
+    /* IOCCC addition - print all as if they were not visited */
+    a:focus, a:hover, a:visited, a:active {
+	color: blue;
+    }
+    .navbar a, .navbar a:focus, .navbar a:hover, .navbar a:visited, .navbar a:active {
+	color: lightblue;
+    }
 }
