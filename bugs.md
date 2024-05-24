@@ -835,7 +835,9 @@ they will get just
 ```
 
 which seems to be an error message (one of the fixes was to make it not use
-`perror(3)` - this fixed something else though it's no longer known what).
+`perror(3)` - this fixed something else though it's no longer known what except
+that in macOS if `errno` is 0 it reports what looks like an error, rather than
+success in, say, linux).
 
 The script [shark.sh](%%REPO_URL%%/1990/jaw/shark.sh) has some issues too in that due to
 path not having `.` (this and maybe some other things were fixed) and `tar` not
