@@ -959,7 +959,9 @@ sentence.</p>
 <p>they will get just</p>
 <pre><code>    oops</code></pre>
 <p>which seems to be an error message (one of the fixes was to make it not use
-<code>perror(3)</code> - this fixed something else though it’s no longer known what).</p>
+<code>perror(3)</code> - this fixed something else though it’s no longer known what except
+that in macOS if <code>errno</code> is 0 it reports what looks like an error, rather than
+success in, say, linux).</p>
 <p>The script <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/jaw/shark.sh">shark.sh</a> has some issues too in that due to
 path not having <code>.</code> (this and maybe some other things were fixed) and <code>tar</code> not
 wanting to accept reading from <code>stdin</code> (this in particular) even with the right
