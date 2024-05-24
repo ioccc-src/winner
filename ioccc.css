@@ -698,6 +698,9 @@ transition: all .3s ease;
 .navbar img {
     border: 0;
     padding: 0;
+    height: auto;
+    max-width: 95%;
+    position: relative;
 }
 
 /* Content =========================================================================== */
@@ -1016,9 +1019,11 @@ transition: all .3s ease;
     .header img {
 	visibility: none;
 	width: 0;
-	height: 0;
 	border: 0;
 	padding: 0;
+	height: auto;
+	max-width: 95%;
+	position: relative;
     }
     .navbar a {
 	float: none;
