@@ -35,8 +35,8 @@ on an IOCCC entry by entry basis.
 
 
 <div id="1984_anonymous">
-## [1984/anonymous](1984/anonymous/index.html)
-### Source code: [anonymous.c](%%REPO_URL%%/1984/anonymous/anonymous.c)
+## Winning entry: [1984/anonymous](1984/anonymous/index.html)
+### Winning entry source code: [anonymous.c](%%REPO_URL%%/1984/anonymous/anonymous.c)
 </div>
 
 [Cody](#cody) fixed this to work for macOS.
@@ -65,8 +65,8 @@ Scovell](https://web.archive.org/web/20070120220721/https://thomasscovell.com/ta
 
 
 <div id="1984_decot">
-## [1984/decot](1984/decot/index.html)
-### Source code: [decot.c](%%REPO_URL%%/1984/decot/decot.c)
+## Winning entry: [1984/decot](1984/decot/index.html)
+### Winning entry source code: [decot.c](%%REPO_URL%%/1984/decot/decot.c)
 </div>
 
 [Cody](#cody) fixed this to not require `-traditional-cpp` which some compilers like
@@ -134,8 +134,8 @@ To see the difference from start to fixed:
 
 
 <div id="1984_laman">
-## [1984/laman](1984/laman/index.html)
-### Source code: [laman.c](%%REPO_URL%%/1984/laman/laman.c)
+## Winning entry: [1984/laman](1984/laman/index.html)
+### Winning entry source code: [laman.c](%%REPO_URL%%/1984/laman/laman.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1984/laman/try.sh) script.
@@ -147,8 +147,8 @@ This was fixed on 30 October 2023 after the bug status was changed from INABIAF
 
 
 <div id="1984_mullender">
-## [1984/mullender](1984/mullender/index.html)
-### Source code: [mullender.c](%%REPO_URL%%/1984/mullender/mullender.c)
+## Winning entry: [1984/mullender](1984/mullender/index.html)
+### Winning entry source code: [mullender.c](%%REPO_URL%%/1984/mullender/mullender.c)
 </div>
 
 [Cody](#cody) provided an [alternate version](%%REPO_URL%%/1984/mullender/mullender.alt.c),
@@ -178,8 +178,8 @@ Repo](https://github.com/dspinellis/unix-history-repo/tree/Research-Release).
 
 
 <div id="1985_applin">
-## [1984/applin](1985/applin/index.html)
-### Source code: [applin.c](%%REPO_URL%%/1985/applin/applin.c)
+## Winning entry: [1984/applin](1985/applin/index.html)
+### Winning entry source code: [applin.c](%%REPO_URL%%/1985/applin/applin.c)
 </div>
 
 Both [Cody](#cody) and [Yusuke](#yusuke) fixed this; Yusuke got this to not crash and Cody fixed it
@@ -205,8 +205,8 @@ returning to the shell. The original code does not have this change.
 
 
 <div id="1985_august">
-## [1985/august](1985/august/index.html)
-### Source code: [august.c](%%REPO_URL%%/1985/august/august.c)
+## Winning entry: [1985/august](1985/august/index.html)
+### Winning entry source code: [august.c](%%REPO_URL%%/1985/august/august.c)
 </div>
 
 [Cody](#cody), out of abundance of caution, added a second arg to `main()` because some
@@ -227,8 +227,8 @@ default value).
 
 
 <div id="1985_lycklama">
-## [1985/lycklama](1985/lycklama/index.html)
-### Source code: [lycklama.c](%%REPO_URL%%/1985/lycklama/lycklama.c)
+## Winning entry: [1985/lycklama](1985/lycklama/index.html)
+### Winning entry source code: [lycklama.c](%%REPO_URL%%/1985/lycklama/lycklama.c)
 </div>
 
 [Cody](#cody) fixed this to compile with modern compilers. In the past one could get away
@@ -243,8 +243,8 @@ Cody also provided the [try.alt.sh](%%REPO_URL%%/1985/lycklama/try.alt.sh) scrip
 
 
 <div id="1985_shapiro">
-## [1985/shapiro](1985/shapiro/index.html)
-### Source code: [shapiro.c](%%REPO_URL%%/1985/shapiro/shapiro.c)
+## Winning entry: [1985/shapiro](1985/shapiro/index.html)
+### Winning entry source code: [shapiro.c](%%REPO_URL%%/1985/shapiro/shapiro.c)
 </div>
 
 [Cody](#cody) added the [alt code](%%REPO_URL%%/1985/shapiro/shapiro.alt.c)
@@ -257,8 +257,8 @@ input (this includes negative numbers which in the code actually sets it back to
 
 
 <div id="1985_sicherman">
-## [1985/sicherman](1985/sicherman/index.html)
-### Source code: [1985/sicherman](%%REPO_URL%%/1985/sicherman/sicherman.c)
+## Winning entry: [1985/sicherman](1985/sicherman/index.html)
+### Winning entry source code: [1985/sicherman](%%REPO_URL%%/1985/sicherman/sicherman.c)
 </div>
 
 [Cody](#cody) fixed this _very twisted entry_ to not require `-traditional-cpp`.  Fixing
@@ -376,8 +376,8 @@ Cody also added the [try.sh](%%REPO_URL%%/1985/sicherman/try.sh) and
 
 
 <div id="1986_applin">
-## [1986/applin](1986/applin/index.html)
-### Source code: [applin.c](%%REPO_URL%%/1986/applin/applin.c)
+## Winning entry: [1986/applin](1986/applin/index.html)
+### Winning entry source code: [applin.c](%%REPO_URL%%/1986/applin/applin.c)
 </div>
 
 [Cody](#cody) made the C file executable so one does not have to do `sh
@@ -385,16 +385,16 @@ Cody also added the [try.sh](%%REPO_URL%%/1985/sicherman/try.sh) and
 
 
 <div id="1986_bright">
-## [1986/bright](1986/bright/index.html)
-### Source code: [bright.c](%%REPO_URL%%/1986/bright/bright.c)
+## Winning entry: [1986/bright](1986/bright/index.html)
+### Winning entry source code: [bright.c](%%REPO_URL%%/1986/bright/bright.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1986/bright/try.sh) script.
 
 
 <div id="1986_hague">
-## [1986/hague](1986/hague/index.html)
-### Source code: [hague.c](%%REPO_URL%%/1986/hague/hague.c)
+## Winning entry: [1986/hague](1986/hague/index.html)
+### Winning entry source code: [hague.c](%%REPO_URL%%/1986/hague/hague.c)
 </div>
 
 [Cody](#cody) made this use `fgets()`. See [FAQ 4.1  - Why were some calls to
@@ -406,8 +406,8 @@ program the `input.txt` text file that Cody added.
 
 
 <div id="1986_holloway">
-## [1986/holloway](1986/holloway/index.html)
-### Source code: [holloway.c](%%REPO_URL%%/1986/holloway/holloway.c)
+## Winning entry: [1986/holloway](1986/holloway/index.html)
+### Winning entry source code: [holloway.c](%%REPO_URL%%/1986/holloway/holloway.c)
 </div>
 
 [Cody](#cody) fixed this to compile and work with `clang` (it already worked with `gcc`).
@@ -420,8 +420,8 @@ and then using `t` instead of `s` it compiles and runs successfully under
 
 
 <div id="1986_marshall">
-## [1986/marshall](1986/marshall/index.html)
-### Source code: [marshall.c](%%REPO_URL%%/1986/marshall/marshall.c)
+## Winning entry: [1986/marshall](1986/marshall/index.html)
+### Winning entry source code: [marshall.c](%%REPO_URL%%/1986/marshall/marshall.c)
 </div>
 
 [Cody](#cody) got this to compile and work with `clang` and `gcc`. He noted that he tried to
@@ -487,18 +487,18 @@ are produced.
 
 
 <div id="1986_pawka">
-## [1986/pawka](1986/pawka/index.html)
-### Source code: [pawka.c](%%REPO_URL%%/1986/pawka/pawka.c)
+## Winning entry: [1986/pawka](1986/pawka/index.html)
+### Winning entry source code: [pawka.c](%%REPO_URL%%/1986/pawka/pawka.c)
 </div>
 
 [Cody](#cody) noticed and fixed a funny mistake in the Makefile where a
 `-Wno-strict-prototypes` was in the wrong location, suggesting that there is a
-`-D` needed to compile the entry.
+`-D` needed to compile the entry but this is not actually so.
 
 
 <div id="1986_stein">
-## [1986/stein](1986/stein/index.html)
-### Source code: [stein.c](%%REPO_URL%%/1986/stein/stein.c)
+## Winning entry: [1986/stein](1986/stein/index.html)
+### Winning entry source code: [stein.c](%%REPO_URL%%/1986/stein/stein.c)
 </div>
 
 [Cody](#cody) restored the [original
@@ -512,8 +512,8 @@ commands that we suggest in order to get it to show clean output.
 
 
 <div id="1986_wall">
-## [1986/wall](1986/wall/index.html)
-### Source code: [wall.c](%%REPO_URL%%/1986/wall/wall.c)
+## Winning entry: [1986/wall](1986/wall/index.html)
+### Winning entry source code: [wall.c](%%REPO_URL%%/1986/wall/wall.c)
 </div>
 
 [Cody](#cody) fixed this so that it does not require `-traditional-cpp`. This took a fair
@@ -629,16 +629,16 @@ There might have been other changes as well.
 
 
 <div id="1987_biggar">
-## [1987/biggar](1987/biggar/index.html)
-### Source code: [biggar.c](%%REPO_URL%%/1987/biggar/biggar.c)
+## Winning entry: [1987/biggar](1987/biggar/index.html)
+### Winning entry source code: [biggar.c](%%REPO_URL%%/1987/biggar/biggar.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1987/biggar/try.sh) script.
 
 
 <div id="1987_heckbert">
-## [1987/heckbert](1987/heckbert/index.html)
-### Source code: [heckbert.c](%%REPO_URL%%/1987/heckbert/heckbert.c)
+## Winning entry: [1987/heckbert](1987/heckbert/index.html)
+### Winning entry source code: [heckbert.c](%%REPO_URL%%/1987/heckbert/heckbert.c)
 </div>
 
 [Cody](#cody) made this look more like the [original
@@ -655,8 +655,8 @@ that for System V we had to do this) Cody added to the Makefile
 
 
 <div id="1987_hines">
-## [1987/hines](1987/hines/index.html)
-### Source code: [hines.c](%%REPO_URL%%/1987/hines/hines.c)
+## Winning entry: [1987/hines](1987/hines/index.html)
+### Winning entry source code: [hines.c](%%REPO_URL%%/1987/hines/hines.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1987/hines/try.sh) script, the C file
@@ -666,8 +666,8 @@ running the program on the text file demonstrates.
 
 
 <div id="1987_lievaart">
-## [1987/lievaart](1987/lievaart/index.html)
-### Source code: [lievaart.c](%%REPO_URL%%/1987/lievaart/lievaart.c)
+## Winning entry: [1987/lievaart](1987/lievaart/index.html)
+### Winning entry source code: [lievaart.c](%%REPO_URL%%/1987/lievaart/lievaart.c)
 </div>
 
 [Cody](#cody) added back the documented checks for invalid input which no longer worked
@@ -714,8 +714,8 @@ size constraints of the contest).
 
 
 <div id="1987_wall">
-## [1987/wall](1987/wall/index.html)
-### Source code: [wall.c](%%REPO_URL%%/1987/wall/wall.c)
+## Winning entry: [1987/wall](1987/wall/index.html)
+### Winning entry source code: [wall.c](%%REPO_URL%%/1987/wall/wall.c)
 </div>
 
 [Cody](#cody) made this use `fgets(3)`. See [FAQ 4.1  - Why were some calls to
@@ -727,8 +727,8 @@ Cody also added the [try.sh](%%REPO_URL%%/1987/wall/try.sh) script.
 
 
 <div id="1987_westley">
-## [1987/westley](1987/westley/index.html)
-### Source code: [westley.c](%%REPO_URL%%/1987/westley/westley.c)
+## Winning entry: [1987/westley](1987/westley/index.html)
+### Winning entry source code: [westley.c](%%REPO_URL%%/1987/westley/westley.c)
 </div>
 
 [Cody](#cody) fixed this for modern systems. The problem was `'assignment to cast is
@@ -752,8 +752,8 @@ unlikely(?) but nevertheless suggested case that `putchar(3)` is not available.
 
 
 <div id="1988_dale">
-## [1988/dale](1988/dale/index.html)
-### Source code: [dale.c](%%REPO_URL%%/1988/dale/dale.c)
+## Winning entry: [1988/dale](1988/dale/index.html)
+### Winning entry source code: [dale.c](%%REPO_URL%%/1988/dale/dale.c)
 </div>
 
 [Cody](#cody) fixed this twisted entry (as we called it :-) ) for modern compilers,
@@ -832,8 +832,8 @@ Cody also provided the [try.sh](%%REPO_URL%%/1988/dale/try.sh) script.
 
 
 <div id="1988_isaak">
-## [1988/isaak](1988/isaak/index.html)
-### Source code: [isaak.c](%%REPO_URL%%/1988/isaak/isaak.c)
+## Winning entry: [1988/isaak](1988/isaak/index.html)
+### Winning entry source code: [isaak.c](%%REPO_URL%%/1988/isaak/isaak.c)
 </div>
 
 [Cody](#cody) fixed this to work for modern systems. The problem was that the important
@@ -848,8 +848,8 @@ found in the index.html file.
 
 
 <div id="1988_litmaath">
-## [1988/litmaath](1988/litmaath/index.html)
-### Source code: [litmaath.c](%%REPO_URL%%/1988/litmaath/litmaath.c)
+## Winning entry: [1988/litmaath](1988/litmaath/index.html)
+### Winning entry source code: [litmaath.c](%%REPO_URL%%/1988/litmaath/litmaath.c)
 </div>
 
 [Cody](#cody) added the [alt code](%%REPO_URL%%/1988/litmaath/litmaath.alt.c)
@@ -858,8 +858,8 @@ help understand the entry, and for fun.
 
 
 <div id="1988_phillipps">
-## [1988/phillipps](1988/phillipps/index.html)
-### Source code: [phillipps.c](%%REPO_URL%%/1988/phillipps/phillipps.c)
+## Winning entry: [1988/phillipps](1988/phillipps/index.html)
+### Winning entry source code: [phillipps.c](%%REPO_URL%%/1988/phillipps/phillipps.c)
 </div>
 
 [Cody](#cody) fixed this for modern systems. It did not compile with `clang` because it
@@ -880,8 +880,8 @@ same code, just a `p` instead of an `m` in the name. Additionally, `main()` retu
 
 
 <div id="1988_reddy">
-## [1988/reddy](1988/reddy/index.html)
-### Source code: [reddy.c](%%REPO_URL%%/1988/reddy/reddy.c)
+## Winning entry: [1988/reddy](1988/reddy/index.html)
+### Winning entry source code: [reddy.c](%%REPO_URL%%/1988/reddy/reddy.c)
 </div>
 
 [Cody](#cody) made this use `fgets(3)`. See [FAQ 4.1  - Why were some calls to
@@ -891,8 +891,8 @@ fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
 
 
 <div id="1988_spinellis">
-## [1988/spinellis](1988/spinellis/index.html)
-### Source code: [spinellis.c](%%REPO_URL%%/1988/spinellis/spinellis.c)
+## Winning entry: [1988/spinellis](1988/spinellis/index.html)
+### Winning entry source code: [spinellis.c](%%REPO_URL%%/1988/spinellis/spinellis.c)
 </div>
 
 [Cody](#cody) provided an [alternate version](%%REPO_URL%%/1988/spinellis/spinellis.alt.c) so that
@@ -910,8 +910,8 @@ thank him for this ghastly point! :-)
 
 
 <div id="1988_westley">
-## [1988/westley](1988/westley/index.html)
-### Source code: [westley.c](%%REPO_URL%%/1988/westley/westley.c)
+## Winning entry: [1988/westley](1988/westley/index.html)
+### Winning entry source code: [westley.c](%%REPO_URL%%/1988/westley/westley.c)
 </div>
 
 The [original version](%%REPO_URL%%/1988/westley/westley.alt.c), provided as alternate code,
@@ -934,8 +934,8 @@ not strictly necessary but nonetheless more correct, even if not warned against.
 
 
 <div id="1989_fubar">
-## [1989/fubar](1989/fubar/index.html)
-### Source code: [fubar.c](%%REPO_URL%%/1989/fubar/fubar.c)
+## Winning entry: [1989/fubar](1989/fubar/index.html)
+### Winning entry source code: [fubar.c](%%REPO_URL%%/1989/fubar/fubar.c)
 </div>
 
 [Cody](#cody) got this to work with modern systems. The main issues were that an
@@ -971,8 +971,8 @@ Cody also added the [try.sh](%%REPO_URL%%/1989/fubar/try.sh) script.
 
 
 <div id="1989_jar.1">
-## [1989/jar.1](1989/jar.1/index.html)
-### Source code: [jar.1.c](%%REPO_URL%%/1989/jar.1/jar.1.c)
+## Winning entry: [1989/jar.1](1989/jar.1/index.html)
+### Winning entry source code: [jar.1.c](%%REPO_URL%%/1989/jar.1/jar.1.c)
 </div>
 
 To prevent annoying output to `/dev/tty` we changed the code to simulate the
@@ -991,8 +991,8 @@ entry and the alt code) anyway, it works out well.
 
 
 <div id="1989_jar.2">
-## [1989/jar.2](1989/jar.2/index.html)
-### Source code: [jar.2.c](%%REPO_URL%%/1989/jar.2/jar.2.c)
+## Winning entry: [1989/jar.2](1989/jar.2/index.html)
+### Winning entry source code: [jar.2.c](%%REPO_URL%%/1989/jar.2/jar.2.c)
 </div>
 
 [Cody](#cody) fixed this to work with modern compilers. Modern compilers do not allow
@@ -1013,7 +1013,7 @@ The old `#define`s are left in to make it look like the original as much as
 possible but they are not used.
 
 Cody also provided the [try.sh](%%REPO_URL%%/1989/jar.2/try.sh) script and the
-supplementary files [try.lisp](1989/jar.2/try.lisp),
+supplementary files [try.lisp](%%REPO_URL%%/1989/jar.2/try.lisp),
 [fib.lisp](%%REPO_URL%%/1989/jar.2/fib.lisp) and
 [chocolate_cake.lisp](%%REPO_URL%%/1989/jar.2/chocolate_cake.lisp). The
 `try.lisp` comes from the author and the `fib.lisp` comes from
@@ -1036,8 +1036,8 @@ because the `alt` rule had what normally is in the `${PROG}.alt` rule.
 
 
 <div id="1989_ovdluhe">
-## [1989/ovdluhe](1989/ovdluhe/index.html)
-### Source code: [ovdluhe.c](%%REPO_URL%%/1989/ovdluhe/ovdluhe.c)
+## Winning entry: [1989/ovdluhe](1989/ovdluhe/index.html)
+### Winning entry source code: [ovdluhe.c](%%REPO_URL%%/1989/ovdluhe/ovdluhe.c)
 </div>
 
 [Cody](#cody) fixed an infinite loop where the program would print the same thing over
@@ -1059,8 +1059,8 @@ discovered and fixed.
 
 
 <div id="1989_paul">
-## [1989/paul](1989/paul/index.html)
-### Source code: [paul.c](%%REPO_URL%%/1989/paul/paul.c)
+## Winning entry: [1989/paul](1989/paul/index.html)
+### Winning entry source code: [paul.c](%%REPO_URL%%/1989/paul/paul.c)
 </div>
 
 [Cody](#cody) fixed a segfault under macOS that prevented it from working. The problem
@@ -1073,8 +1073,8 @@ index.html for details.
 
 
 <div id="1989_robison">
-## [1989/robison](1989/robison/index.html)
-### Source code: [robison.c](%%REPO_URL%%/1989/robison/robison.c)
+## Winning entry: [1989/robison](1989/robison/index.html)
+### Winning entry source code: [robison.c](%%REPO_URL%%/1989/robison/robison.c)
 </div>
 
 [Yusuke Endoh](#yusuke) fixed this to compile under modern systems. To see the changes
@@ -1091,8 +1091,8 @@ Cody added the [try.sh](%%REPO_URL%%/1989/robison/try.sh) script.
 
 
 <div id="1989_tromp">
-## [1989/tromp](1989/tromp/index.html)
-### Source code: [tromp.c](%%REPO_URL%%/1989/tromp/tromp.c)
+## Winning entry: [1989/tromp](1989/tromp/index.html)
+### Winning entry source code: [tromp.c](%%REPO_URL%%/1989/tromp/tromp.c)
 </div>
 
 [Cody](#cody) and [Yusuke](#yusuke) fixed this entry: Yusuke fixed this to compile with `gcc` and Cody
@@ -1123,24 +1123,28 @@ not his only reason :-) )
 
 
 <div id="1989_vanb">
-## [1989/vanb](1989/vanb/index.html)
-### Source code: [vanb.c](%%REPO_URL%%/1989/vanb/vanb.c)
+## Winning entry: [1989/vanb](1989/vanb/index.html)
+### Winning entry source code: [vanb.c](%%REPO_URL%%/1989/vanb/vanb.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1989/vanb/try.sh) script.
 
 
 <div id="1989_westley">
-## [1989/westley](1989/westley/index.html)
-### Source code: [westley.c](%%REPO_URL%%/1989/westley/westley.c)
+## Winning entry: [1989/westley](1989/westley/index.html)
+### Winning entry source code: [westley.c](%%REPO_URL%%/1989/westley/westley.c)
 </div>
 
-[Cody](#cody) fixed this for `clang`, except that two versions generated by the program
-cannot be compiled by `clang` due to inherent defects in the compiler and how the
-entry works. This is an **incredibly hard** one to fix for `clang` whilst still
-being compilable with `gcc` (and `gcc` can compile every generated version with the
-fix) and even if one fixes it to compile with `clang` it does not mean that any
-other version will compile! It is, however, possible to get `clang` to work with
+[Cody](#cody) fixed this for `clang`, except that two versions generated by the
+program cannot be compiled by `clang` due to inherent defects in the compiler
+and how the entry works. This is an **incredibly hard** one to fix for `clang`
+whilst still being compilable with `gcc` (`gcc` can compile every generated
+version with the fix but if one fixes all to compile with `clang`, which was
+attempted, it introduced compile errors for `gcc`) and even if one fixes it to
+compile with `clang` it does not, depending on how it's done, mean that any
+other version will compile!
+
+It is, however, possible to get `clang` to work with
 two versions generated, `ver0` and `ver1`, though `ver0` is actually just the
 main entry (but still generated by the program itself).
 
@@ -1209,8 +1213,8 @@ environmental variable; see the index.html for details.
 
 
 <div id="1990_baruch">
-## [1990/baruch](1990/baruch/index.html)
-### Source code: [baruch.c](%%REPO_URL%%/1990/baruch/baruch.c)
+## Winning entry: [1990/baruch](1990/baruch/index.html)
+### Winning entry source code: [baruch.c](%%REPO_URL%%/1990/baruch/baruch.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1990/baruch/try.sh) script.
@@ -1221,19 +1225,14 @@ did not change the `" #Q"` string as that appeared to show worse looking output
 instead of improved output though he has no way to test the compilers in
 question (i.e. it was only tested in the original entry). YMMV.
 
-Although this is appreciated we agree with him that <del>no one</del>
-[very few](https://en.wikipedia.org/wiki/0)
-[users](https://en.wikipedia.org/wiki/Microsoft_Windows)
-[here](https://www.ioccc.org) will need it! :-)
-
-Cody made the code look more like the original, removing the `int` from
+Cody also made the code look more like the original, removing the `int` from
 the variables, adding instead `-Wno-implicit-int`. The newline added by the
 judges was retained.
 
 
 <div id="1990_cmills">
-## [1990/cmills](1990/cmills/index.html)
-### Source code: [cmills.c](%%REPO_URL%%/1990/cmills/cmills.c)
+## Winning entry: [1990/cmills](1990/cmills/index.html)
+### Winning entry source code: [cmills.c](%%REPO_URL%%/1990/cmills/cmills.c)
 </div>
 
 [Yusuke](#yusuke) got this to work in modern systems (it previously resulted in a bus
@@ -1246,15 +1245,15 @@ fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
 
 
 <div id="1990_dds">
-## [1990/dds](1990/dds/index.html)
-### Source code: [dds.c](%%REPO_URL%%/1990/dds/dds.c)
+## Winning entry: [1990/dds](1990/dds/index.html)
+### Winning entry source code: [dds.c](%%REPO_URL%%/1990/dds/dds.c)
 </div>
 
 [Yusuke](#yusuke) and [Cody](#cody) in conjunction fixed this for modern systems (both fixed a
 different compiler error but more fixes were also made).
 
 Yusuke added the comma operator for a binary expression with `free(3)` which is
-a compiler error because `free()` returns `void`. Cody then made it slightly
+a compiler error because `free(3)` returns `void`. Cody then made it slightly
 more like the original in this way by redefining `free` to have the comma
 operator itself.
 
@@ -1269,8 +1268,8 @@ fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
 
 
 <div id="1990_dg">
-## [1990/dg](1990/dg/index.html)
-### Source code: [dg.c](%%REPO_URL%%/1990/dg/dg.c)
+## Winning entry: [1990/dg](1990/dg/index.html)
+### Winning entry source code: [dg.c](%%REPO_URL%%/1990/dg/dg.c)
 </div>
 
 [Cody](#cody) fixed this for modern systems. There were two problems to be resolved.
@@ -1289,14 +1288,14 @@ so the use of `#d` is now instead `#define` (the macro was originally deleted
 but later Cody added it back to make it more like the original).
 
 The second problem was suggested by the judges at the time of judging, to do
-with if the C preprocessor botches single quotes in cpp expansion.
+with if the C preprocessor botches single quotes in `cpp` expansion.
 
 Cody also added the [try.sh](%%REPO_URL%%/1990/dg/try.sh) script.
 
 
 <div id="1990_jaw">
-## [1990/jaw](1990/jaw/index.html)
-### Source code: [jaw.c](%%REPO_URL%%/1990/jaw/jaw.c)
+## Winning entry: [1990/jaw](1990/jaw/index.html)
+### Winning entry source code: [jaw.c](%%REPO_URL%%/1990/jaw/jaw.c)
 </div>
 
 [Cody](#cody) fixed the script to work properly in modern environments including writing
@@ -1312,12 +1311,12 @@ the time of releasing the winning entries of 1990.
 
 NOTE: as `btoa` is not common we used a ruby script from [Yusuke](#yusuke) but with a minor
 fix applied by Cody that made the program just show `oops` twice (twice is not
-an error here) from invalid input but which now works.
+a typo here) from invalid input but which now works.
 
 
 <div id="1990_pjr">
-## [1990/pjr](1990/pjr/index.html)
-### Source code: [pjr.c](%%REPO_URL%%/1990/pjr/pjr.c)
+## Winning entry: [1990/pjr](1990/pjr/index.html)
+### Winning entry source code: [pjr.c](%%REPO_URL%%/1990/pjr/pjr.c)
 </div>
 
 [Cody](#cody) added the [alt code](%%REPO_URL%%/1990/pjr/pjr.alt.c) which was suggested by the judges
@@ -1326,20 +1325,21 @@ something else and is recommended by the author as well.
 
 
 <div id="1990_scjones">
-## [1990/scjones](1990/scjones/index.html)
-### Source code: [scjones.c](%%REPO_URL%%/1990/scjones/scjones.c)
+## Winning entry: [1990/scjones](1990/scjones/index.html)
+### Winning entry source code: [scjones.c](%%REPO_URL%%/1990/scjones/scjones.c)
 </div>
 
 [Yusuke](#yusuke) suggested `-ansi` to get the entry to compile due to trigraphs and [Cody](#cody)
-suggested `-trigraphs`. Both work but we used Yusuke's idea.
+suggested `-trigraphs`. Both work but we used Yusuke's idea as this was seen
+first.
 
 Cody added the [try.sh](%%REPO_URL%%/1990/scjones/try.sh) script to show exactly what the
 entry does.
 
 
 <div id="1990_tbr">
-## [1990/tbr](1990/tbr/index.html)
-### Source code: [tbr.c](%%REPO_URL%%/1990/tbr/tbr.c)
+## Winning entry: [1990/tbr](1990/tbr/index.html)
+### Winning entry source code: [tbr.c](%%REPO_URL%%/1990/tbr/tbr.c)
 </div>
 
 [Cody](#cody) fixed this to work with modern compilers; `exit(3)` returns `void` but the
@@ -1359,8 +1359,8 @@ done more generally.
 
 
 <div id="1990_theorem">
-## [1990/theorem](1990/theorem/index.html)
-### Source code: [theorem.c](%%REPO_URL%%/1990/theorem/theorem.c)
+## Winning entry: [1990/theorem](1990/theorem/index.html)
+### Winning entry source code: [theorem.c](%%REPO_URL%%/1990/theorem/theorem.c)
 </div>
 
 [Cody](#cody) fixed this to compile with modern systems.
@@ -1407,8 +1407,8 @@ incomplete).
 
 
 <div id="1990_stig">
-## [1990/stig](1990/stig/index.html)
-### Source code: [stig.c](%%REPO_URL%%/1990/stig/stig.c)
+## Winning entry: [1990/stig](1990/stig/index.html)
+### Winning entry source code: [stig.c](%%REPO_URL%%/1990/stig/stig.c)
 </div>
 
 [Cody](#cody) fixed the paths in the `Makefile` so that this would build in Linux (it
@@ -1419,14 +1419,15 @@ He also changed the `Makefile` to use `bash` not `zsh` as not all systems have
 
 
 <div id="1990_westley">
-## [1990/westley](1990/westley/index.html)
-### Source code: [westley.c](%%REPO_URL%%/1990/westley/westley.c)
+## Winning entry: [1990/westley](1990/westley/index.html)
+### Winning entry source code: [westley.c](%%REPO_URL%%/1990/westley/westley.c)
 </div>
 
-[Cody](#cody) fixed this for modern systems. It had `1s` in places for a `short
-int` which was changed to just `1`.  Since it's instructional to see the
-differences he has provided an alternate version,
-[westley.alt.c](%%REPO_URL%%/1990/westley/westley.alt.c), which is the original code.
+[Cody](#cody) fixed this for modern systems. It had `1s` (digit one, letter s)
+in places for a `short int` which was changed to just `1`.  Since it's
+instructional to see the differences he has provided an alternate version,
+[westley.alt.c](%%REPO_URL%%/1990/westley/westley.alt.c), which is the original
+code.
 
 He also changed the `argc` to be an `int`, not a `char`, even though it might
 often be the same (this in particular was done for `clang`).
@@ -1448,8 +1449,8 @@ Cody also added the [try.sh](%%REPO_URL%%/1990/westley/try.sh) script.
 
 
 <div id="1991_ant">
-## [1991/ant](1991/ant/index.html)
-### Source code: [ant.c](%%REPO_URL%%/1991/ant/ant.c)
+## Winning entry: [1991/ant](1991/ant/index.html)
+### Winning entry source code: [ant.c](%%REPO_URL%%/1991/ant/ant.c)
 </div>
 
 [Cody](#cody) added [alt code](%%REPO_URL%%/1991/ant/ant.alt.c) that will be a bit easier to use for
@@ -1467,8 +1468,8 @@ The other keys were left unchanged.
 
 
 <div id="1991_brnstnd">
-## [1991/brnstnd](1991/brnstnd/index.html)
-### Source code: [brnstnd.c](%%REPO_URL%%/1991/brnstnd/brnstnd.c)
+## Winning entry: [1991/brnstnd](1991/brnstnd/index.html)
+### Winning entry source code: [brnstnd.c](%%REPO_URL%%/1991/brnstnd/brnstnd.c)
 </div>
 
 [Cody](#cody) fixed this for modern systems. There were two invalid operands to binary
@@ -1484,10 +1485,12 @@ slightly more like the original, even though it's unused.
 Cody also added the [try.sh](%%REPO_URL%%/1991/brnstnd/try.sh) script and
 [try.txt](1991/brnstnd/try.txt) which the script uses.
 
+Cody also fixed the make clobber rule which left a symbolic link in the
+directory even after the target file was deleted (from make clobber).
 
 <div id="1991_buzzard">
-## [1991/buzzard](1991/buzzard/index.html)
-### Source code: [buzzard.c](%%REPO_URL%%/1991/buzzard/buzzard.c)
+## Winning entry: [1991/buzzard](1991/buzzard/index.html)
+### Winning entry source code: [buzzard.c](%%REPO_URL%%/1991/buzzard/buzzard.c)
 </div>
 
 [Cody](#cody) fixed this so that the coordinates being specified, a documented
@@ -1507,8 +1510,8 @@ program. We still recommend you try the original version first, of course.
 
 
 <div id="1991_davidguy">
-## [1991/davidguy](1991/davidguy/index.html)
-### Source code: [davidguy.c](%%REPO_URL%%/1991/davidguy/davidguy.c)
+## Winning entry: [1991/davidguy](1991/davidguy/index.html)
+### Winning entry source code: [davidguy.c](%%REPO_URL%%/1991/davidguy/davidguy.c)
 </div>
 
 As some systems like macOS can be particular about not declaring functions
@@ -1518,8 +1521,8 @@ being a problem not being declared first, to hopefully future-proof it.
 
 
 <div id="1991_dds">
-## [1991/dds](1991/dds/index.html)
-### Source code: [dds.c](%%REPO_URL%%/1991/dds/dds.c)
+## Winning entry: [1991/dds](1991/dds/index.html)
+### Winning entry source code: [dds.c](%%REPO_URL%%/1991/dds/dds.c)
 </div>
 
 [Cody](#cody) fixed a segfault that prevented this entry from working in any
@@ -1532,12 +1535,13 @@ the libc function gets&#x28;3&#x29; changed to use
 fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
 
 For the magic of `clang` (which was done manually except the returning a value
-in `main()`) and `fgets(3)`, see below. The problem with `clang` can be
-described simply as: `clang` (at least in some systems?) defaults to having
-`-Werror` and the code that the entry generates had some warnings that were
-causing compilation to fail if `cc` is `clang` (the entry runs `cc a.c`). An
-example problem that had to be fixed is that the generated code returned from
-`main()` no value but rather just had `return;`.
+in `main()` in the generated code and possibly `fgets(3)`) and `fgets(3)`, see
+below. The problem with `clang` can be described simply as: `clang` (at least in
+some systems?) defaults to having `-Werror` and the code that the entry
+generates had some warnings that were causing compilation to fail if `cc` is
+`clang` (the entry runs `cc a.c`).  An example problem that had to be fixed is
+that the generated code returned from `main()` no value but rather just had
+`return;`.
 
 The code used to run `cc a.c` by what was once `system(q-6);` but if `cc` is `clang`
 like in macOS this is not enough.
@@ -1659,13 +1663,14 @@ entry was fixed. It has not been done in all.
 
 
 <div id="1991_fine">
-## [1991/fine](1991/fine/index.html)
-### Source code: [fine.c](%%REPO_URL%%/1991/fine/fine.c)
+## Winning entry: [1991/fine](1991/fine/index.html)
+### Winning entry source code: [fine.c](%%REPO_URL%%/1991/fine/fine.c)
 </div>
 
 [Cody](#cody) made it look much more like the original entry even after the fix
-for `clang` (by the judges) that increased the count in characters from 80 to
-106, getting it back down to just 85 (and later back down to 80, see below).
+for `clang` (made by the judges) that increased the count in characters from 80 to
+106, getting it back down to just 85 (and later back down to the original 80,
+see below).
 
 This was done by redefining `main` at the compiler line so that it looks like
 the original where one didn't have to worry about the type of args of `main()`
@@ -1686,8 +1691,8 @@ which ones? :-) )
 
 
 <div id="1991_rince">
-## [1991/rince](1991/rince/index.html)
-### Source code: [rince.c](%%REPO_URL%%/1991/rince/rince.c)
+## Winning entry: [1991/rince](1991/rince/index.html)
+### Winning entry source code: [rince.c](%%REPO_URL%%/1991/rince/rince.c)
 </div>
 
 [Cody](#cody) fixed it so that the messages that show if you won or lost will be seen
@@ -1704,8 +1709,8 @@ the above fix was applied to these versions too.
 
 
 <div id="1991_westley">
-## [1991/westley](1991/westley/index.html)
-### Source code: [westley.c](%%REPO_URL%%/1991/westley/westley.c)
+## Winning entry: [1991/westley](1991/westley/index.html)
+### Winning entry source code: [westley.c](%%REPO_URL%%/1991/westley/westley.c)
 </div>
 
 [Cody](#cody) fixed a segfault in this program which prevented it from working. The
@@ -1719,7 +1724,7 @@ Cody also fixed the `ttt.sh` script that prevented the game from working and he
 also improved it so that warnings/errors/about to compile messages are not shown
 unless the `-e` option is used.  This is because the errors being shown kind of
 ruins the experience. Finally he made it pass
-[ShellCheck](https://github.com/koalaman/shellcheck).
+[ShellCheck](https://www.shellcheck.net).
 
 Cody also added the [alt version](%%REPO_URL%%/1991/westley/westley.alt.c) which
 is based on the author's remarks, a version that supposedly (:-) ) always wins.
@@ -1734,8 +1739,8 @@ should have been removed.
 
 
 <div id="1992_adrian">
-## [1992/adrian](1992/adrian/index.html)
-### Source code: [adrian.c](%%REPO_URL%%/1992/adrian/adrian.c)
+## Winning entry: [1992/adrian](1992/adrian/index.html)
+### Winning entry source code: [adrian.c](%%REPO_URL%%/1992/adrian/adrian.c)
 </div>
 
 [Cody](#cody) fixed the code so that it will try opening the file the code was compiled
@@ -1815,8 +1820,8 @@ generated.
 
 
 <div id="1992_albert">
-## [1992/albert](1992/albert/index.html)
-### Source code: [albert.c](%%REPO_URL%%/1992/albert/albert.c)
+## Winning entry: [1992/albert](1992/albert/index.html)
+### Winning entry source code: [albert.c](%%REPO_URL%%/1992/albert/albert.c)
 </div>
 
 [Cody](#cody) fixed this to compile with modern systems. Note that in 1996 a bug fix was
@@ -1832,8 +1837,8 @@ the alt code.
 
 
 <div id="1992_ant">
-## [1992/ant](1992/ant/index.html)
-### Source code: [ant.c](%%REPO_URL%%/1992/ant/ant.c)
+## Winning entry: [1992/ant](1992/ant/index.html)
+### Winning entry source code: [ant.c](%%REPO_URL%%/1992/ant/ant.c)
 </div>
 
 [Cody](#cody) fixed the Makefile so that the program will actually work with it (or at
@@ -1857,8 +1862,8 @@ Cody also added the [try.sh](%%REPO_URL%%/1992/ant/try.sh) script.
 
 
 <div id="1992_buzzard.1">
-## [1992/buzzard.1](1992/buzzard.1/index.html)
-### Source code: [buzzard.1.c](%%REPO_URL%%/1992/buzzard.1/buzzard.1.c)
+## Winning entry: [1992/buzzard.1](1992/buzzard.1/index.html)
+### Winning entry source code: [buzzard.1.c](%%REPO_URL%%/1992/buzzard.1/buzzard.1.c)
 </div>
 
 [Cody](#cody) added a check for the right number of args, exiting 1 if not enough (2)
@@ -1871,8 +1876,8 @@ commands that we suggested and some additional ones that he provide for some fun
 
 
 <div id="1992_buzzard.2">
-## [1992/buzzard.2](1992/buzzard.2/index.html)
-### Source code: [buzzard.2.c](%%REPO_URL%%/1992/buzzard.2/buzzard.2.c)
+## Winning entry: [1992/buzzard.2](1992/buzzard.2/index.html)
+### Winning entry source code: [buzzard.2.c](%%REPO_URL%%/1992/buzzard.2/buzzard.2.c)
 </div>
 
 [Cody](#cody) fixed the alt code to compile. The problem was it assumed that
@@ -1884,8 +1889,8 @@ and its alt code.
 
 
 <div id="1992_gson">
-## [1992/gson](1992/gson/index.html)
-### Source code: [gson.c](%%REPO_URL%%/1992/gson/gson.c)
+## Winning entry: [1992/gson](1992/gson/index.html)
+### Winning entry source code: [gson.c](%%REPO_URL%%/1992/gson/gson.c)
 </div>
 
 [Cody](#cody) fixed a crash that prevented this entry from working in some cases in some
@@ -1895,20 +1900,20 @@ Cody also added the [try.sh](%%REPO_URL%%/1992/gson/try.sh) script.
 
 Cody also added the [mkdict.sh](%%REPO_URL%%/1992/gson/mkdict.sh) script that the author
 included in their remarks. See the index.html for its purpose. It was NOT fixed
-for [ShellCheck](https://github.com/koalaman/shellcheck)
+for [ShellCheck](https://www.shellcheck.net)
 because the author deliberately obfuscated it so **PLEASE *DO NOT* FIX THIS OR
 MODERNISE IT**.
 
 Cody also changed the buffer size in such a way that `gets(3)` should be safe
 (well, theoretically) as it comes from the command line (though it can also read input
 from `stdin` after starting the program). Ideally `fgets(3)` would be used but this
-is a more problematic. See [1992/gson in bugs.html](bugs.html#1992-gson) for more
+is a more problematic. See [1992/gson in bugs.html](bugs.html#1992_gson) for more
 details if you're interested in trying to understand it (or fix?).
 
 
 <div id="1992_imc">
-## [1992/imc](1992/imc/index.html)
-### Source code: [imc.c](%%REPO_URL%%/1992/imc/imc.c)
+## Winning entry: [1992/imc](1992/imc/index.html)
+### Winning entry source code: [imc.c](%%REPO_URL%%/1992/imc/imc.c)
 </div>
 
 [Cody](#cody) provided the [try.sh](%%REPO_URL%%/1992/imc/try.sh) script.
@@ -1921,8 +1926,8 @@ operator so that it could be used in binary expressions.
 
 
 <div id="1992_kivinen">
-## [1992/kivinen](1992/kivinen/index.html)
-### Source code: [kivinen.c](%%REPO_URL%%/1992/kivinen/kivinen.c)
+## Winning entry: [1992/kivinen](1992/kivinen/index.html)
+### Winning entry source code: [kivinen.c](%%REPO_URL%%/1992/kivinen/kivinen.c)
 </div>
 
 It was observed that on modern systems this goes much too quick. [Yusuke](#yusuke) created
@@ -1950,12 +1955,13 @@ it moves towards the right but if you click the mouse it goes back.
 
 
 <div id="1992_lush">
-## [1992/lush](1992/lush/index.html)
-### Source code: [lush.c](%%REPO_URL%%/1992/lush/lush.c)
+## Winning entry: [1992/lush](1992/lush/index.html)
+### Winning entry source code: [lush.c](%%REPO_URL%%/1992/lush/lush.c)
 </div>
 
-[Yusuke](#yusuke) supplied a patch which makes this work with `gcc`. Due to how it works (see
-Judges' remarks in the index.html file) this will not work with `clang`.
+[Yusuke](#yusuke) supplied a patch which makes this work with `gcc`. Due to how
+it works (see [Judges' remarks in the index.html
+file](1992/lush/index.html#judges-remarks)) this will not work with `clang`.
 
 [Cody](#cody) also provided the [lush.sh](%%REPO_URL%%/1992/lush/lush.sh) script to
 demonstrate it as using make was problematic.
@@ -1964,22 +1970,22 @@ Cody made it use `fgets()` instead of `gets()`. See [FAQ 4.1  - Why were some ca
 the libc function gets&#x29;3&#x28; changed to use
 fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
 
-
 NOTE: this entry cannot work with `clang` due to different compiler messages (it
-will compile fine but it won't work). See [bugs.html](bugs.html) for details.
+will compile fine but it won't work). See [1992/lush in
+bugs.html](bugs.html#1992_lush) for details.
 
 
 <div id="1992_marangon">
-## [1992/marangon](1992/marangon/index.html)
-### Source code: [marangon.c](%%REPO_URL%%/1992/marangon/marangon.c)
+## Winning entry: [1992/marangon](1992/marangon/index.html)
+### Winning entry source code: [marangon.c](%%REPO_URL%%/1992/marangon/marangon.c)
 </div>
 
 [Cody](#cody) made this more portable by changing the `void main()` to be `int main()`.
 
 
 <div id="1992_nathan">
-## [1992/nathan](1992/nathan/index.html)
-### Source code: [nathan.c](%%REPO_URL%%/1992/nathan/nathan.c)
+## Winning entry: [1992/nathan](1992/nathan/index.html)
+### Winning entry source code: [nathan.c](%%REPO_URL%%/1992/nathan/nathan.c)
 </div>
 
 [Cody](#cody) added the original file back as it was deemed that the export restrictions
@@ -1995,8 +2001,8 @@ that we suggested as well as one he provided.
 
 
 <div id="1992_vern">
-## [1992/vern](1992/vern/index.html)
-### Source code: [vern.c](%%REPO_URL%%/1992/vern/vern.c)
+## Winning entry: [1992/vern](1992/vern/index.html)
+### Winning entry source code: [vern.c](%%REPO_URL%%/1992/vern/vern.c)
 </div>
 
 [Cody](#cody) fixed an infinite loop if one were to input numbers < `0` or > `077`. The
@@ -2015,8 +2021,8 @@ it used to be.
 
 
 <div id="1992_westley">
-## [1992/westley](1992/westley/index.html)
-### Source code: [westley.c](%%REPO_URL%%/1992/westley/westley.c)
+## Winning entry: [1992/westley](1992/westley/index.html)
+### Winning entry source code: [westley.c](%%REPO_URL%%/1992/westley/westley.c)
 </div>
 
 [Cody](#cody) fixed this to work for `clang` by changing the third and fourth arg of
@@ -2067,8 +2073,8 @@ encourage you to try the original without two args :-)
 
 
 <div id="1993_ant">
-## [1993/ant](1993/ant/index.html)
-### Source code: [ant.c](%%REPO_URL%%/1993/ant/ant.c)
+## Winning entry: [1993/ant](1993/ant/index.html)
+### Winning entry source code: [ant.c](%%REPO_URL%%/1993/ant/ant.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1993/ant/try.sh) script and a data file,
@@ -2076,19 +2082,20 @@ encourage you to try the original without two args :-)
 
 
 <div id="1993_cmills">
-## [1993/cmills](1993/cmills/index.html)
-### Source code: [cmills.c](%%REPO_URL%%/1993/cmills/cmills.c)
+## Winning entry: [1993/cmills](1993/cmills/index.html)
+### Winning entry source code: [cmills.c](%%REPO_URL%%/1993/cmills/cmills.c)
 </div>
 
 [Yusuke](#yusuke) suggested that with modern systems this goes too fast so he added a call
 to `usleep(3)` in a patch he made. [Cody](#cody) made it configurable at compilation by
-using a macro. This is in the alt version which is the recommended one to try
+using a macro. This is in the [alt
+version](%%REPO_URL%%/1993/cmills/cmills.alt.c) which is the recommended one to try
 first.
 
 
 <div id="1993_dgibson">
-## [1993/dgibson](1993/dgibson/index.html)
-### Source code: [dgibson.c](%%REPO_URL%%/1993/dgibson/dgibson.c)
+## Winning entry: [1993/dgibson](1993/dgibson/index.html)
+### Winning entry source code: [dgibson.c](%%REPO_URL%%/1993/dgibson/dgibson.c)
 </div>
 
 [Cody](#cody) fixed the [dgibson.sh](%%REPO_URL%%/1993/dgibson/dgibson.sh) script to work
@@ -2099,20 +2106,21 @@ mentioned script on all the data files.
 
 
 <div id="1993_ejb">
-## [1993/ejb](1993/ejb/index.html)
-### Source code: [ejb.c](%%REPO_URL%%/1993/ejb/ejb.c)
+## Winning entry: [1993/ejb](1993/ejb/index.html)
+### Winning entry source code: [ejb.c](%%REPO_URL%%/1993/ejb/ejb.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1993/ejb/try.sh) script.
 
 
 <div id="1993_jonth">
-## [1993/jonth](1993/jonth/index.html)
-### Source code: [jonth.c](%%REPO_URL%%/1993/jonth/jonth.c)
+## Winning entry: [1993/jonth](1993/jonth/index.html)
+### Winning entry source code: [jonth.c](%%REPO_URL%%/1993/jonth/jonth.c)
 </div>
 
 Both [Cody](#cody) and [Yusuke](#yusuke) fixed this so that it will work with modern systems. Yusuke
-provided some fixes of the X code and Cody fixed the C pre-processor directives
+provided some fixes of the X code (it is not known at the time of writing this
+what changed) and Cody fixed the C pre-processor directives
 so that it would compile. It used to be that you could get away with code like:
 
 ``` <!---c-->
@@ -2126,8 +2134,8 @@ prepended to them.
 
 
 <div id="1993_leo">
-## [1993/leo](1993/leo/index.html)
-### Source code: [leo.c](%%REPO_URL%%/1993/leo/leo.c)
+## Winning entry: [1993/leo](1993/leo/index.html)
+### Winning entry source code: [leo.c](%%REPO_URL%%/1993/leo/leo.c)
 </div>
 
 [Cody](#cody) fixed this to work with modern compilers. This involved different header
@@ -2135,12 +2143,12 @@ files for functions.
 
 
 <div id="1993_lmfjyh">
-## [1993/lmfjyh](1993/lmfjyh/index.html)
-### Source code: [lmfjyh.c](%%REPO_URL%%/1993/lmfjyh/lmfjyh.c)
+## Winning entry: [1993/lmfjyh](1993/lmfjyh/index.html)
+### Winning entry source code: [lmfjyh.c](%%REPO_URL%%/1993/lmfjyh/lmfjyh.c)
 </div>
 
 [Cody](#cody) added an [alternate
-version](1993/lmfjyh/index.html#alternate-code) which does what the program did
+version](%%REPO_URL%%/1993/lmfjyh/lmfjyh.alt.c) which does what the program did
 with `gcc` < 2.3.3. See the index.html file for details and for why this was made
 the alternate version, not the actual entry.
 
@@ -2150,17 +2158,17 @@ highly unlikely).
 
 
 <div id="1993_plummer">
-## [1993/plummer](1993/plummer/index.html)
-### Source code: [plummer.c](%%REPO_URL%%/1993/plummer/plummer.c)
+## Winning entry: [1993/plummer](1993/plummer/index.html)
+### Winning entry source code: [plummer.c](%%REPO_URL%%/1993/plummer/plummer.c)
 </div>
 
 [Cody](#cody) added check for two args during a time that this was considered a
 bug to fix.
 
-Cody also added an [alternate version](%%REPO_URL%%/1993/plummer/plummer.alt.c) which uses
-`usleep(3)` so you can see what is happening with faster systems. This version
-also checks for two args and it is the one we recommend one try first. See the
-index.html files for details.
+Cody also added an [alternate version](%%REPO_URL%%/1993/plummer/plummer.alt.c)
+which uses `usleep(3)` so you can see how this entry used to look, if you're
+using a more modern system. This version also checks for two args and it is the
+one we recommend one try first. See the index.html files for details.
 
 Cody also added the [try.sh](%%REPO_URL%%/1993/plummer/try.sh) and
 [try.alt.sh](%%REPO_URL%%/1993/plummer/try.alt.sh) scripts that correspond to the original
@@ -2169,8 +2177,8 @@ of the alt one allowing one to change the amount to sleep).
 
 
 <div id="1993_rince">
-## [1993/rince](1993/rince/index.html)
-### Source code: [rince.c](%%REPO_URL%%/1993/rince/rince.c)
+## Winning entry: [1993/rince](1993/rince/index.html)
+### Winning entry source code: [rince.c](%%REPO_URL%%/1993/rince/rince.c)
 </div>
 
 [Yusuke](#yusuke) supplied a patch to get this to work in modern systems. This fix also
@@ -2187,8 +2195,8 @@ compile time. See the index.html for details.
 
 
 <div id="1993_schnitzi">
-## [1993/schnitzi](1993/schnitzi/index.html)
-### Source code: [schnitzi.c](%%REPO_URL%%/1993/schnitzi/schnitzi.c)
+## Winning entry: [1993/schnitzi](1993/schnitzi/index.html)
+### Winning entry source code: [schnitzi.c](%%REPO_URL%%/1993/schnitzi/schnitzi.c)
 </div>
 
 [Cody](#cody) made this use `fgets(3)` not `gets(3)`. See [FAQ 4.1  - Why were some calls to
@@ -2198,8 +2206,8 @@ fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
 
 
 <div id="1993_vanb">
-## [1993/vanb](1993/vanb/index.html)
-### Source code: [vanb.c](%%REPO_URL%%/1993/vanb/vanb.c)
+## Winning entry: [1993/vanb](1993/vanb/index.html)
+### Winning entry source code: [vanb.c](%%REPO_URL%%/1993/vanb/vanb.c)
 </div>
 
 [Cody](#cody) fixed this to work with `clang`. The problem was that the third arg to main()
@@ -2237,8 +2245,8 @@ Cody also added the [try.sh](%%REPO_URL%%/1993/vanb/try.sh) script.
 
 
 <div id="1994_dodsond2">
-## [1994/dodsond2](1994/dodsond2/index.html)
-### Source code: [1994/dodsond2](%%REPO_URL%%/1994/dodsond2/dodsond2.c)
+## Winning entry: [1994/dodsond2](1994/dodsond2/index.html)
+### Winning entry source code: [1994/dodsond2](%%REPO_URL%%/1994/dodsond2/dodsond2.c)
 </div>
 
 [Cody](#cody) fixed an infinite loop that could happen when you shoot an arrow
@@ -2251,8 +2259,8 @@ if you shoot your last arrow it would not move you to the room you shoot into
 (whereas if you had more arrows it would).
 
 Cody added an alt version that allows one to cheat by specifying how many arrows
-to start with (this was for fun but it turned out a good way to debug the above
-infinite loop too which hanged the program).
+to start with (this does make for fun but it allowed to easily debug the above
+mentioned infinite loop which hanged the program).
 
 As in some places it would properly say that you have '1 arrow' or else, if you
 have any other number of arrows (including 0), it would say 'arrows', Cody fixed
@@ -2271,8 +2279,8 @@ that already existed, how many you had and how many were stolen.
 
 
 <div id="1994_horton">
-## [1994/horton](1994/horton/index.html)
-### Source code: [1994/horton](%%REPO_URL%%/1994/horton/horton.c)
+## Winning entry: [1994/horton](1994/horton/index.html)
+### Winning entry source code: [1994/horton](%%REPO_URL%%/1994/horton/horton.c)
 </div>
 
 [Cody](#cody) fixed this to check that four args were specified (at a time it
@@ -2292,8 +2300,8 @@ Finally he added the article (written by the entry's author) cited in
 
 
 <div id="1994_imc">
-## [1994/imc](1994/imc/index.html)
-### Source code: [imc.c](%%REPO_URL%%/1994/imc/imc.c)
+## Winning entry: [1994/imc](1994/imc/index.html)
+### Winning entry source code: [imc.c](%%REPO_URL%%/1994/imc/imc.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1994/imc/try.sh) script.
@@ -2305,8 +2313,8 @@ entries that actually did not work because of missing or incorrect prototypes).
 
 
 <div id="1994_ldb">
-## [1994/ldb](1994/ldb/index.html)
-### Source code: [ldb.c](%%REPO_URL%%/1994/ldb/ldb.c)
+## Winning entry: [1994/ldb](1994/ldb/index.html)
+### Winning entry source code: [ldb.c](%%REPO_URL%%/1994/ldb/ldb.c)
 </div>
 
 [Cody](#cody) fixed this so it would compile and work with modern compilers. The problem
@@ -2337,8 +2345,8 @@ Cody also added the [try.sh](%%REPO_URL%%/1994/ldb/try.sh) script.
 
 
 <div id="1994_schnitzi">
-## [1994/schnitzi](1994/schnitzi/index.html)
-### Source code: [schnitzi.c](%%REPO_URL%%/1994/schnitzi/schnitzi.c)
+## Winning entry: [1994/schnitzi](1994/schnitzi/index.html)
+### Winning entry source code: [schnitzi.c](%%REPO_URL%%/1994/schnitzi/schnitzi.c)
 </div>
 
 [Cody](#cody) added two alt versions, [one which uses
@@ -2346,14 +2354,14 @@ fgets_&#x28;&#x29;](%%REPO_URL%%/1994/schnitzi/schnitzi.alt.c) but when fed its 
 generate code that compile and another [one with a bigger buffer
 size](%%REPO_URL%%/1994/schnitzi/schnitzi.alt2.c) which, when fed its own source code, will
 generate compilable code but not with the same buffer size but rather the
-original buffer size. Cody explains this in the at [1994/schnitzi in
+original buffer size. Cody explains this at [1994/schnitzi in
 bugs.html](bugs.html#1994-schnitzi).
 
 The purpose for these versions it both demonstrate how the magic works behind it
 and to help others, should they wish, get the code to work with `fgets(3)`, with
 or without an increase in buffer size. Note that without this feeding longer
 files, say the index.html file, will crash the program. See [1994/schnitzi in
-bugs.html](bugs.html#1994-schnitzi) where Cody also explains the magic for more
+bugs.html](bugs.html#1994_schnitzi) where Cody also explains the magic for more
 details. Later on, if nobody takes up the task, Cody might resume it, but for
 now there is more important work to do so that the next contest can run.
 
@@ -2362,8 +2370,8 @@ Cody also added the [try.sh](%%REPO_URL%%/1994/schnitzi/try.sh) and
 
 
 <div id="1994_shapiro">
-## [1994/shapiro](1994/shapiro/index.html)
-### Source code: [shapiro.c](%%REPO_URL%%/1994/shapiro/shapiro.c)
+## Winning entry: [1994/shapiro](1994/shapiro/index.html)
+### Winning entry source code: [shapiro.c](%%REPO_URL%%/1994/shapiro/shapiro.c)
 </div>
 
 [Cody](#cody) fixed a bug on systems where `EOF != -1`. The problem is that `getc()` and
@@ -2373,25 +2381,26 @@ assumed that `getc()` will return `-1` on EOF or error, not `EOF`. On systems
 where `EOF != -1` it could result in an infinite loop.
 
 For an interesting problem that occurred here and what was done to solve it,
-check the [bugs.html](bugs.html) file.
+check [1994/shapiro in bugs.html](bugs.html#1994_shapiro).
 
 
 <div id="1994_smr">
-## [1994/smr](1994/smr/index.html)
-### Source code: [smr.c](%%REPO_URL%%/1994/smr/smr.c)
+## Winning entry: [1994/smr](1994/smr/index.html)
+### Winning entry source code: [smr.c](%%REPO_URL%%/1994/smr/smr.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1994/smr/try.sh) script.
 
 
 <div id="1994_tvr">
-## [1994/tvr](1994/tvr/index.html)
-### Source code: [1994/tvr](%%REPO_URL%%/1994/tvr/tvr.c)
+## Winning entry: [1994/tvr](1994/tvr/index.html)
+### Winning entry source code: [1994/tvr](%%REPO_URL%%/1994/tvr/tvr.c)
 </div>
 
 [Cody](#cody) added the try scripts, four total, colour and black and white
 pairs for the original entry and the alt code. These scripts are
-[try.color.sh](%%REPO_URL%%/1994/tvr/try.color.sh), [try.bw.sh](%%REPO_URL%%/1994/tvr/try.bw.sh),
+[try.color.sh](%%REPO_URL%%/1994/tvr/try.color.sh) (color to match the author's
+remarks), [try.bw.sh](%%REPO_URL%%/1994/tvr/try.bw.sh),
 [try.alt.color.sh](%%REPO_URL%%/1994/tvr/try.alt.color.sh) and
 [try.alt.bw.sh](%%REPO_URL%%/1994/tvr/try.alt.bw.sh), respectively. The scripts go through
 each mode allowed with two sizes, 128 and 256, allowing one to quit or skip each
@@ -2409,8 +2418,8 @@ also changed to use `fgets(3)`.
 
 
 <div id="1994_weisberg">
-## [1994/weisberg](1994/weisberg/index.html)
-### Source code: [weisberg.c](%%REPO_URL%%/1994/weisberg/weisberg.c)
+## Winning entry: [1994/weisberg](1994/weisberg/index.html)
+### Winning entry source code: [weisberg.c](%%REPO_URL%%/1994/weisberg/weisberg.c)
 </div>
 
 [Cody](#cody) changed the Makefile to make this program more user friendly and easier to
@@ -2426,8 +2435,8 @@ primes.
 
 
 <div id="1994_westley">
-## [1994/westley](1994/westley/index.html)
-### Source code: [westley.c](%%REPO_URL%%/1994/westley/westley.c)
+## Winning entry: [1994/westley](1994/westley/index.html)
+### Winning entry source code: [westley.c](%%REPO_URL%%/1994/westley/westley.c)
 </div>
 
 [Cody](#cody) converted the spoiler compiler options (provided by the author) to be
@@ -2435,25 +2444,26 @@ compiler commands and added a script [try.sh](%%REPO_URL%%/1994/westley/try.sh) 
 automate the spoiler commands to make it easier to see the game in action from
 start to finish.
 
-Cody also added the alternate version that will look fine on terminals not set
-to 80 columns and the [try.alt.sh](%%REPO_URL%%/1994/westley/try.alt.sh) script to automate
-the play along the lines of the [try.sh](%%REPO_URL%%/1994/westley/try.sh) script.
+Cody also added the [alternate version](%%REPO_URL%%/1994/westley/westley.alt.c)
+that will look fine on terminals not set to 80 columns and the
+[try.alt.sh](%%REPO_URL%%/1994/westley/try.alt.sh) script to automate the play
+along the lines of the [try.sh](%%REPO_URL%%/1994/westley/try.sh) script.
 
 
 <div id="1995">
-# 1995
+# [1995](1995/index.html)
 </div>
 
 
 <div id="1995_cdua">
-## [1995/cdua](1995/cdua/index.html)
-### Source code: [cdua.c](%%REPO_URL%%/1995/cdua/cdua.c)
+## Winning entry: [1995/cdua](1995/cdua/index.html)
+### Winning entry source code: [cdua.c](%%REPO_URL%%/1995/cdua/cdua.c)
 </div>
 
 [Cody](#cody) fixed this so that it would work with macOS. Once it could compile it
 additionally segfaulted under macOS which he also fixed.
 
-Cody also provided the [Alternate code](%%REPO_URL%%/1995/cdua/cdua.alt.c) for fun :-) ) (in
+Cody also provided the [alternate code](%%REPO_URL%%/1995/cdua/cdua.alt.c) for fun :-) ) (in
 particular to make it easier to see the program do what it does in systems that
 are too fast ... if there is such a thing anyway :-) ). See the index.html for
 details on this.
@@ -2467,8 +2477,8 @@ function as the error message claims.
 
 
 <div id="1995_dodsond1">
-## [1995/dodsond1](1995/dodsond1/index.html)
-### Source code: [dodsond1.c](%%REPO_URL%%/1995/dodsond1/dodsond1.c)
+## Winning entry: [1995/dodsond1](1995/dodsond1/index.html)
+### Winning entry source code: [dodsond1.c](%%REPO_URL%%/1995/dodsond1/dodsond1.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1995/dodsond1/try.sh) script that uses the text file he
@@ -2476,16 +2486,16 @@ provided which is input we suggested one try with the entry.
 
 
 <div id="1995_esde">
-## [1995/esde](1995/esde/index.html)
-### Source code: [esde.c](%%REPO_URL%%/1995/esde/esde.c)
+## Winning entry: [1995/esde](1995/esde/index.html)
+### Winning entry source code: [esde.c](%%REPO_URL%%/1995/esde/esde.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1995/esde/try.sh) script.
 
 
 <div id="1995_garry">
-## [1995/garry](1995/garry/index.html)
-### Source code: [garry.c](%%REPO_URL%%/1995/garry/garry.c)
+## Winning entry: [1995/garry](1995/garry/index.html)
+### Winning entry source code: [garry.c](%%REPO_URL%%/1995/garry/garry.c)
 </div>
 
 [Cody](#cody) fixed the alt code so that it will compile with modern compilers. The
@@ -2503,16 +2513,16 @@ added.
 
 
 <div id="1995_heathbar">
-## [1995/heathbar](1995/heathbar/index.html)
-### Source code: [1995/heathbar](%%REPO_URL%%/1995/heathbar/heathbar.c)
+## Winning entry: [1995/heathbar](1995/heathbar/index.html)
+### Winning entry source code: [1995/heathbar](%%REPO_URL%%/1995/heathbar/heathbar.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1995/heathbar/try.sh) script.
 
 
 <div id="1995_leo">
-## [1995/leo](1995/leo/index.html)
-### Source code: [leo.c](%%REPO_URL%%/1995/leo/leo.c)
+## Winning entry: [1995/leo](1995/leo/index.html)
+### Winning entry source code: [leo.c](%%REPO_URL%%/1995/leo/leo.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1995/leo/try.sh) script.
@@ -2522,8 +2532,8 @@ by the author, putting it in [spoiler1.html](1995/leo/spoiler1.html).
 
 
 <div id="1995_makarios">
-## [1995/makarios](1995/makarios/index.html)
-### Source code: [makarios.c](%%REPO_URL%%/1995/makarios/makarios.c)
+## Winning entry: [1995/makarios](1995/makarios/index.html)
+### Winning entry source code: [makarios.c](%%REPO_URL%%/1995/makarios/makarios.c)
 </div>
 
 [Cody](#cody) fixed this so that it will compile with versions of `clang` that has a defect
@@ -2533,24 +2543,24 @@ calls which has the four args.
 
 
 <div id="1995_savastio">
-## [1995/savastio](1995/savastio/index.html)
-### Source code: [savastio.c](%%REPO_URL%%/1995/savastio/savastio.c)
+## Winning entry: [1995/savastio](1995/savastio/index.html)
+### Winning entry source code: [savastio.c](%%REPO_URL%%/1995/savastio/savastio.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1995/savastio/try.sh) script.
 
 
 <div id="1995_schnitzi">
-## [1995/schnitzi](1995/schnitzi/index.html)
-### Source code: [schnitzi.c](%%REPO_URL%%/1995/schnitzi/schnitzi.c)
+## Winning entry: [1995/schnitzi](1995/schnitzi/index.html)
+### Winning entry source code: [schnitzi.c](%%REPO_URL%%/1995/schnitzi/schnitzi.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1995/schnitzi/try.sh) script.
 
 
 <div id="1995_vanschnitz">
-## [1995/vanschnitz](1995/vanschnitz/index.html)
-### Source code: [vanschnitz.c](%%REPO_URL%%/1995/vanschnitz/vanschnitz.c)
+## Winning entry: [1995/vanschnitz](1995/vanschnitz/index.html)
+### Winning entry source code: [vanschnitz.c](%%REPO_URL%%/1995/vanschnitz/vanschnitz.c)
 </div>
 
 [Cody](#cody) added the authors' [spoiler as a C
@@ -2563,13 +2573,13 @@ Cody also added the [try.sh](%%REPO_URL%%/1995/vanschnitz/try.sh) script.
 
 
 <div id="1996">
-# 1996
+# [1996](1996/index.html)
 </div>
 
 
 <div id="1996_august">
-## [1996/august](1996/august/index.html)
-### Source code: [august.c](%%REPO_URL%%/1996/august/august.c)
+## Winning entry: [1996/august](1996/august/index.html)
+### Winning entry source code: [august.c](%%REPO_URL%%/1996/august/august.c)
 </div>
 
 [Cody](#cody) fixed a segfault in this program that prevented it from working right and
@@ -2587,8 +2597,8 @@ applied.
 
 
 <div id="1996_dalbec">
-## [1996/dalbec](1996/dalbec/index.html)
-### Source code: [dalbec.c](%%REPO_URL%%/1996/dalbec/dalbec.c)
+## Winning entry: [1996/dalbec](1996/dalbec/index.html)
+### Winning entry source code: [dalbec.c](%%REPO_URL%%/1996/dalbec/dalbec.c)
 </div>
 
 [Cody](#cody) proposed a fix for this to compile with `clang` and Landon implemented it
@@ -2609,8 +2619,8 @@ Cody also added the [try.sh](%%REPO_URL%%/1996/dalbec/try.sh) script.
 
 
 <div id="1996_eldby">
-## [1996/eldby](1996/eldby/index.html)
-### Source code: [eldby.c](%%REPO_URL%%/1996/eldby/eldby.c)
+## Winning entry: [1996/eldby](1996/eldby/index.html)
+### Winning entry source code: [eldby.c](%%REPO_URL%%/1996/eldby/eldby.c)
 </div>
 
 [Cody](#cody) provided an [alternate version](%%REPO_URL%%/1996/eldby/eldby.alt.c) which uses
@@ -2622,8 +2632,8 @@ these reasons.
 
 
 <div id="1996_gandalf">
-## [1996/gandalf](1996/gandalf/index.html)
-### Source code: [gandalf.c](%%REPO_URL%%/1996/gandalf/gandalf.c)
+## Winning entry: [1996/gandalf](1996/gandalf/index.html)
+### Winning entry source code: [gandalf.c](%%REPO_URL%%/1996/gandalf/gandalf.c)
 </div>
 
 [Cody](#cody) fixed this to compile and work with modern systems. As he loved the
@@ -2639,16 +2649,16 @@ BTW: it is perilous to try the patience of
 
 
 <div id="1996_huffman">
-## [1996/huffman](1996/huffman/index.html)
-### Source code: [huffman.c](%%REPO_URL%%/1996/huffman/huffman.c)
+## Winning entry: [1996/huffman](1996/huffman/index.html)
+### Winning entry source code: [huffman.c](%%REPO_URL%%/1996/huffman/huffman.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1996/huffman/try.sh) script.
 
 
 <div id="1996_jonth">
-## [1996/jonth](1996/jonth/index.html)
-### Source code: [jonth.c](%%REPO_URL%%/1996/jonth/jonth.c)
+## Winning entry: [1996/jonth](1996/jonth/index.html)
+### Winning entry source code: [jonth.c](%%REPO_URL%%/1996/jonth/jonth.c)
 </div>
 
 [Cody](#cody) fixed this to not segfault under macOS. The problem was that the function
@@ -2659,16 +2669,16 @@ NOTE: if there is no X server running this program will still crash.
 
 
 <div id="1996_rcm">
-## [1996/rcm](1996/rcm/index.html)
-### Source code: [rcm.c](%%REPO_URL%%/1996/rcm/rcm.c)
+## Winning entry: [1996/rcm](1996/rcm/index.html)
+### Winning entry source code: [rcm.c](%%REPO_URL%%/1996/rcm/rcm.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1996/rcm/try.sh) script.
 
 
 <div id="1996_schweikh1">
-## [1996/schweikh1](1996/schweikh1/index.html)
-### Source code: [schweikh1.c](%%REPO_URL%%/1996/schweikh1/schweikh1.c)
+## Winning entry: [1996/schweikh1](1996/schweikh1/index.html)
+### Winning entry source code: [schweikh1.c](%%REPO_URL%%/1996/schweikh1/schweikh1.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1996/schweikh1/try.sh) script.
@@ -2683,8 +2693,8 @@ the Makefile despite the fact that very few probably use Solaris nowadays.
 
 
 <div id="1996_schweikh2">
-## [1996/schweikh2](1996/schweikh2/index.html)
-### Source code: [schweikh2.c](%%REPO_URL%%/1996/schweikh2/schweikh2.c)
+## Winning entry: [1996/schweikh2](1996/schweikh2/index.html)
+### Winning entry source code: [schweikh2.c](%%REPO_URL%%/1996/schweikh2/schweikh2.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1996/schweikh2/try.sh) script with a few commands to try
@@ -2694,7 +2704,7 @@ loop so having it in a script is less desired).
 
 
 <div id="1996_schweikh3">
-## [1996/schweikh3](1996/schweikh3/index.html)
+## Winning entry: [1996/schweikh3](1996/schweikh3/index.html)
 ## Source code: [schweikh3.c](%%REPO_URL%%/1996/schweikh3/schweikh3.c)
 </div>
 
@@ -2704,8 +2714,8 @@ running a more complicated command: now one can just run `make`.
 
 
 <div id="1996_westley">
-## [1996/westley](1996/westley/index.html)
-### Source code: [westley.c](%%REPO_URL%%/1996/westley/westley.c)
+## Winning entry: [1996/westley](1996/westley/index.html)
+### Winning entry source code: [westley.c](%%REPO_URL%%/1996/westley/westley.c)
 </div>
 
 [Cody](#cody) fixed a segfault in this entry as well as it displaying environmental
@@ -2728,13 +2738,13 @@ provided by the author, Cody added '.sh' to the `clock[1-3].sh` scripts.
 
 
 <div id="1998">
-# 1998
+# [1998](1998/index.html)
 </div>
 
 
 <div id="1998_banks">
-## [1998/banks](1998/banks/index.html)
-### Source code: [/banks.c](%%REPO_URL%%/1998/banks/banks.c)
+## Winning entry: [1998/banks](1998/banks/index.html)
+### Winning entry source code: [/banks.c](%%REPO_URL%%/1998/banks/banks.c)
 </div>
 
 [Cody](#cody) improved the Makefile to allow for easier redefining the control
@@ -2751,8 +2761,8 @@ you can configure them all in both builds it shouldn't matter.
 
 
 <div id="1998_bas1">
-## [1998/bas1](1998/bas1/index.html)
-### Source code: [bas1.c](%%REPO_URL%%/1998/bas1/bas1.c)
+## Winning entry: [1998/bas1](1998/bas1/index.html)
+### Winning entry source code: [bas1.c](%%REPO_URL%%/1998/bas1/bas1.c)
 </div>
 
 [Cody](#cody), out of an abundance of caution, added a second arg to `main()` as some
@@ -2767,8 +2777,8 @@ program.
 
 
 <div id="1998_bas2">
-## [1998/bas2](1998/bas2/index.html)
-### Source code: [bas2.c](%%REPO_URL%%/1998/bas2/bas2.c)
+## Winning entry: [1998/bas2](1998/bas2/index.html)
+### Winning entry source code: [bas2.c](%%REPO_URL%%/1998/bas2/bas2.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1998/bas2/try.sh) script which runs some default actions
@@ -2776,8 +2786,8 @@ as well as allowing one to pass in different file names or strings.
 
 
 <div id="1998_chaos">
-## [1998/chaos](1998/chaos/index.html)
-### Source code: [chaos.c](%%REPO_URL%%/1998/chaos/chaos.c)
+## Winning entry: [1998/chaos](1998/chaos/index.html)
+### Winning entry source code: [chaos.c](%%REPO_URL%%/1998/chaos/chaos.c)
 </div>
 
 [Cody](#cody) added a call to `endwin()` to restore terminal sanity (echo etc.) when
@@ -2789,8 +2799,8 @@ prior to each run.
 
 
 <div id="1998_df">
-## [1998/df](1998/df/index.html)
-### Source code: [df.c](%%REPO_URL%%/1998/df/df.c)
+## Winning entry: [1998/df](1998/df/index.html)
+### Winning entry source code: [df.c](%%REPO_URL%%/1998/df/df.c)
 </div>
 
 [Cody](#cody) changed a `int *` used for `fopen(3)` to be a `FILE *` to be more correct
@@ -2807,8 +2817,8 @@ a way to cheat very easily. Can you figure out how?
 
 
 <div id="1998_dlowe">
-## [1998/dlowe](1998/dlowe/index.html)
-### Source code: [dlowe.c](%%REPO_URL%%/1998/dlowe/dlowe.c)
+## Winning entry: [1998/dlowe](1998/dlowe/index.html)
+### Winning entry source code: [dlowe.c](%%REPO_URL%%/1998/dlowe/dlowe.c)
 </div>
 
 [Cody](#cody) made the program more portable by changing the void return type of `main()`
@@ -2823,8 +2833,8 @@ pootify scripts.
 
 
 <div id="1998_dloweneil">
-## [c1998/dloweneil](1998/dloweneil/index.html)
-### Source code: [dloweneil.c](%%REPO_URL%%/1998/dloweneil/dloweneil.c)
+## Winning entry: [c1998/dloweneil](1998/dloweneil/index.html)
+### Winning entry source code: [dloweneil.c](%%REPO_URL%%/1998/dloweneil/dloweneil.c)
 </div>
 
 [Cody](#cody) added [alt code](%%REPO_URL%%/1998/dloweneil/dloweneil.alt.c) which has vi(m) movement
@@ -2833,16 +2843,16 @@ space) keys as well as allowing one to quit the game.
 
 
 <div id="1998_dorssel">
-## [1998/dorssel](1998/dorssel/index.html)
-### Source code: [dorssel.c](%%REPO_URL%%/1998/dorssel/dorssel.c)
+## Winning entry: [1998/dorssel](1998/dorssel/index.html)
+### Winning entry source code: [dorssel.c](%%REPO_URL%%/1998/dorssel/dorssel.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1998/dorssel/try.sh) script.
 
 
 <div id="1998_fanf">
-## [1998/fanf.html](1998/fanf/index.html)
-### Source code: [fanf.c](%%REPO_URL%%/1998/fanf/fanf.c)
+## Winning entry: [1998/fanf.html](1998/fanf/index.html)
+### Winning entry source code: [fanf.c](%%REPO_URL%%/1998/fanf/fanf.c)
 </div>
 
 [Cody](#cody) fixed this to compile. The problem was the intermediate steps to get to the
@@ -2865,8 +2875,8 @@ of the expressions that we selected.
 
 
 <div id="1998_schnitzi">
-## [1998/schnitzi](1998/schnitzi/index.html)
-### Source code: [schnitzi.c](%%REPO_URL%%/1998/schnitzi/schnitzi.c)
+## Winning entry: [1998/schnitzi](1998/schnitzi/index.html)
+### Winning entry source code: [schnitzi.c](%%REPO_URL%%/1998/schnitzi/schnitzi.c)
 </div>
 
 [Cody](#cody) fixed invalid data types which prevented this entry from working, causing a
@@ -2893,8 +2903,8 @@ commands that we recommended as well as some added by him.
 
 
 <div id="1998_schweikh1">
-## [index.html](1998/schweikh1/index.html)
-### Source code: [1998/schweikh1](%%REPO_URL%%/1998/schweikh1/schweikh1.c)
+## Winning entry: [index.html](1998/schweikh1/index.html)
+### Winning entry source code: [1998/schweikh1](%%REPO_URL%%/1998/schweikh1/schweikh1.c)
 </div>
 
 [Cody](#cody) fixed this for modern systems (it did not work at all) and added an
@@ -2954,8 +2964,8 @@ in the file [charcount.pl](%%REPO_URL%%/1998/schweikh1/charcount.pl).
 
 
 <div id="1998_schweikh2">
-## [1998/schweikh2](1998/schweikh2/index.html)
-### Source code: [schweikh2.c](%%REPO_URL%%/1998/schweikh2/schweikh2.c)
+## Winning entry: [1998/schweikh2](1998/schweikh2/index.html)
+### Winning entry source code: [schweikh2.c](%%REPO_URL%%/1998/schweikh2/schweikh2.c)
 </div>
 
 [Cody](#cody) fixed the code to not trigger an internal compiler error in `gcc`:
@@ -2980,8 +2990,8 @@ Cody also added the [try.sh](%%REPO_URL%%/1998/schweikh2/try.sh) script.
 
 
 <div id="1998_schweikh3">
-## [1998/schweikh3](1998/schweikh3/index.html)
-### Source code: [schweikh3.c](%%REPO_URL%%/1998/schweikh3/schweikh3.c)
+## Winning entry: [1998/schweikh3](1998/schweikh3/index.html)
+### Winning entry source code: [schweikh3.c](%%REPO_URL%%/1998/schweikh3/schweikh3.c)
 </div>
 
 [Cody](#cody) added the [alternate code](1998/schweikh3/index.html#alternate-code) which allows one
@@ -3018,8 +3028,8 @@ information for the entry. It has not been added to any JSON file.
 
 
 <div id="1998_tomtorfs">
-## [1998/tomtorfs](1998/tomtorfs/index.html)
-### Source code: /tomtorfs.c](%%REPO_URL%%/1998/tomtorfs/tomtorfs.c)
+## Winning entry: [1998/tomtorfs](1998/tomtorfs/index.html)
+### Winning entry source code: /tomtorfs.c](%%REPO_URL%%/1998/tomtorfs/tomtorfs.c)
 </div>
 
 [Cody](#cody) fixed the assumption that `EOF` is `-1` (the author noted that it assumes
@@ -3036,13 +3046,13 @@ commands that we recommended.
 
 
 <div id="2000">
-# 2000
+# [2000](2000/index.html)
 </div>
 
 
 <div id="2000_anderson">
-## [2000/anderson](2000/anderson/index.html)
-### Source code: [anderson.c](%%REPO_URL%%/2000/anderson//anderson.c)
+## Winning entry: [2000/anderson](2000/anderson/index.html)
+### Winning entry source code: [anderson.c](%%REPO_URL%%/2000/anderson//anderson.c)
 </div>
 
 [Cody](#cody) changed this entry to use `fgets(3)` instead of `gets(3)`.
@@ -3055,8 +3065,8 @@ Cody also added the [try.sh](%%REPO_URL%%/2000/anderson/try.sh) script.
 
 
 <div id="2000_bmeyer">
-## [2000/bmeyer](2000/bmeyer/index.html)
-### Source code: [bmeyer.c](%%REPO_URL%%/2000/bmeyer//bmeyer.c)
+## Winning entry: [2000/bmeyer](2000/bmeyer/index.html)
+### Winning entry source code: [bmeyer.c](%%REPO_URL%%/2000/bmeyer//bmeyer.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2000/bmeyer/try.sh) script with some improvements to the
@@ -3065,8 +3075,8 @@ terminal.
 
 
 <div id="2000_briddlebane">
-## [2000/briddlebane](2000/briddlebane/index.html)
-### Source code: [briddlebane.c](%%REPO_URL%%/2000/briddlebane//briddlebane.c)
+## Winning entry: [2000/briddlebane](2000/briddlebane/index.html)
+### Winning entry source code: [briddlebane.c](%%REPO_URL%%/2000/briddlebane//briddlebane.c)
 </div>
 
 [Cody](#cody) fixed this to compile in systems that require one to explicitly link in
@@ -3077,8 +3087,8 @@ feeling a bit too confident, cocky or even happy :-)
 
 
 <div id="2000_dhyang">
-## [2000/dhyang](2000/dhyang/index.html)
-### Source code: [dhyang.c](%%REPO_URL%%/2000/dhyang//dhyang.c)
+## Winning entry: [2000/dhyang](2000/dhyang/index.html)
+### Winning entry source code: [dhyang.c](%%REPO_URL%%/2000/dhyang//dhyang.c)
 </div>
 
 [Cody](#cody) made this more portable by changing the `void main` to `int main`.
@@ -3087,8 +3097,8 @@ He also added the [try.sh](%%REPO_URL%%/2000/dhyang/try.sh) script.
 
 
 <div id="2000_dlowe">
-## [2000/dlowe](2000/dlowe/index.html)
-### Source code: [dlowe.c](%%REPO_URL%%/2000/dlowe//dlowe.c)
+## Winning entry: [2000/dlowe](2000/dlowe/index.html)
+### Winning entry source code: [dlowe.c](%%REPO_URL%%/2000/dlowe//dlowe.c)
 </div>
 
 [Cody](#cody) fixed this to compile with more recent perl versions; the symbol that's now
@@ -3099,8 +3109,8 @@ Cody also added the [try.sh](%%REPO_URL%%/2000/dlowe/try.sh) script.
 
 
 <div id="2000_jarijyrki">
-## [2000/jarijyrki](2000/jarijyrki/index.html)
-### Source code: [jarijyrki.c](%%REPO_URL%%/2000/jarijyrki//jarijyrki.c)
+## Winning entry: [2000/jarijyrki](2000/jarijyrki/index.html)
+### Winning entry source code: [jarijyrki.c](%%REPO_URL%%/2000/jarijyrki//jarijyrki.c)
 </div>
 
 [Cody](#cody) made it easier to compile this in some cases by adding `X11/` to the
@@ -3108,8 +3118,8 @@ includes of `Xlib.h` and `keysym.h`.
 
 
 <div id="2000_natori">
-## [2000/natori](2000/natori/index.html)
-### Source code: [natori.c](%%REPO_URL%%/2000/natori//natori.c)
+## Winning entry: [2000/natori](2000/natori/index.html)
+### Winning entry source code: [natori.c](%%REPO_URL%%/2000/natori//natori.c)
 </div>
 
 [Cody](#cody) fixed this for modern compilers. Depending on the compiler it would either
@@ -3136,8 +3146,8 @@ more confusing (even if not confusing).
 
 
 <div id="2000_primenum">
-## [2000/primenum](2000/primenum/index.html)
-### Source code: [primenum.c](%%REPO_URL%%/2000/primenum//primenum.c)
+## Winning entry: [2000/primenum](2000/primenum/index.html)
+### Winning entry source code: [primenum.c](%%REPO_URL%%/2000/primenum//primenum.c)
 </div>
 
 [Cody](#cody) made this more portable by changing the `void main` to `int main`.
@@ -3146,16 +3156,16 @@ Cody also added the [try.sh](%%REPO_URL%%/2000/primenum/try.sh) script.
 
 
 <div id="2000_rince">
-## [2000/rince](2000/rince/index.html)
-### Source code: [rince.c](%%REPO_URL%%/2000/rince//rince.c)
+## Winning entry: [2000/rince](2000/rince/index.html)
+### Winning entry source code: [rince.c](%%REPO_URL%%/2000/rince//rince.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2000/rince/try.sh) script.
 
 
 <div id="2000_robison">
-## [2000/robison](2000/robison/index.html)
-### Source code: [robison.c](%%REPO_URL%%/2000/robison//robison.c)
+## Winning entry: [2000/robison](2000/robison/index.html)
+### Winning entry source code: [robison.c](%%REPO_URL%%/2000/robison//robison.c)
 </div>
 
 [Cody](#cody) fixed an infinite loop that occurred if invalid input was entered, flooding
@@ -3171,16 +3181,16 @@ on it to assign to the `int`s, much like with `1987/lievaart`. The strings are
 
 
 <div id="2000_schneiderwent">
-## [2000/schneiderwent](2000/schneiderwent/index.html)
-### Source code: [schneiderwent.c](%%REPO_URL%%/2000/schneiderwent//schneiderwent.c)
+## Winning entry: [2000/schneiderwent](2000/schneiderwent/index.html)
+### Winning entry source code: [schneiderwent.c](%%REPO_URL%%/2000/schneiderwent//schneiderwent.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2000/schneiderwent/try.sh) script.
 
 
 <div id="2000_thadgavin">
-## [2000/thadgavin](2000/thadgavin/index.html)
-### Source code: [thadgavin.c](%%REPO_URL%%/2000/thadgavin//thadgavin.c)
+## Winning entry: [2000/thadgavin](2000/thadgavin/index.html)
+### Winning entry source code: [thadgavin.c](%%REPO_URL%%/2000/thadgavin//thadgavin.c)
 </div>
 
 [Cody](#cody) fixed the code and added an appropriate make rule so that the
@@ -3225,8 +3235,8 @@ other version in.
 
 
 <div id="2000_tomx">
-## [2000/tomx](2000/tomx/index.html)
-### Source code: [tomx.c](%%REPO_URL%%/2000/tomx//tomx.c)
+## Winning entry: [2000/tomx](2000/tomx/index.html)
+### Winning entry source code: [tomx.c](%%REPO_URL%%/2000/tomx//tomx.c)
 </div>
 
 [Cody](#cody) added the [alt code](2000/tomx/index.html#alternate-code) based on the
@@ -3239,13 +3249,13 @@ details) the source code is now executable by default.
 
 
 <div id="2001">
-# 2001
+# [2001](2001/index.html)
 </div>
 
 
 <div id="2001_anonymous">
-## [2001/anonymous](2001/anonymous/index.html)
-### Source code: [anonymous.c](%%REPO_URL%%/2001/anonymous//anonymous.c)
+## Winning entry: [2001/anonymous](2001/anonymous/index.html)
+### Winning entry source code: [anonymous.c](%%REPO_URL%%/2001/anonymous//anonymous.c)
 </div>
 
 [Cody](#cody) fixed both the supplementary program and the program itself (both of which
@@ -3334,8 +3344,8 @@ it will at least run the supplementary program as a 64-bit program directly.
 
 
 <div id="2001_bellard">
-## [2001/bellard](2001/bellard/index.html)
-### Source code: [bellard.c](%%REPO_URL%%/2001/bellard//bellard.c)
+## Winning entry: [2001/bellard](2001/bellard/index.html)
+### Winning entry source code: [bellard.c](%%REPO_URL%%/2001/bellard//bellard.c)
 </div>
 
 [Cody](#cody) fixed this to compile with `clang` but according to the author this will not
@@ -3383,8 +3393,8 @@ by Yusuke.
 
 
 <div id="2001_cheong">
-## [2001/cheong](2001/cheong/index.html)
-### Source code: [cheong.c](%%REPO_URL%%/2001/cheong//cheong.c)
+## Winning entry: [2001/cheong](2001/cheong/index.html)
+### Winning entry source code: [cheong.c](%%REPO_URL%%/2001/cheong//cheong.c)
 </div>
 
 [Cody](#cody) fixed this to work with `clang` by adding another function that is allowed to
@@ -3399,8 +3409,8 @@ He also fixed it to check the number of args.
 
 
 <div id="2001_coupard">
-## [2001/coupard](2001/coupard/index.html)
-### Source code: [coupard.c](%%REPO_URL%%/2001/coupard//coupard.c)
+## Winning entry: [2001/coupard](2001/coupard/index.html)
+### Winning entry source code: [coupard.c](%%REPO_URL%%/2001/coupard//coupard.c)
 </div>
 
 [Cody](#cody) added a value to `return` in `main()` to make it more portable.
@@ -3432,8 +3442,8 @@ Cody added the [try.sh](%%REPO_URL%%/2001/coupard/try.sh).
 
 
 <div id="2001_ctk">
-## [2001/ctk](2001/ctk/index.html)
-### Source code: [ctk.c](%%REPO_URL%%/2001/ctk//ctk.c)
+## Winning entry: [2001/ctk](2001/ctk/index.html)
+### Winning entry source code: [ctk.c](%%REPO_URL%%/2001/ctk//ctk.c)
 </div>
 
 The ANSI escape codes were no longer valid but [Yusuke](#yusuke) provided a patch to fix
@@ -3449,8 +3459,8 @@ vi(m) movement keys.
 
 
 <div id="2001_dgbeards">
-## [2001/dgbeards](2001/dgbeards/index.html)
-### Source code: [dgbeards.c](%%REPO_URL%%/2001/dgbeards//dgbeards.c)
+## Winning entry: [2001/dgbeards](2001/dgbeards/index.html)
+### Winning entry source code: [dgbeards.c](%%REPO_URL%%/2001/dgbeards//dgbeards.c)
 </div>
 
 The author provided two changes: one to speed it up and one to make it not crash
@@ -3463,8 +3473,8 @@ very quickly. Do you know what it is?
 
 
 <div id="2001_herrmann1">
-## [2001/herrmann1](2001/herrmann1/index.html)
-### Source code: [herrmann1.c](%%REPO_URL%%/2001/herrmann1//herrmann1.c)
+## Winning entry: [2001/herrmann1](2001/herrmann1/index.html)
+### Winning entry source code: [herrmann1.c](%%REPO_URL%%/2001/herrmann1//herrmann1.c)
 </div>
 
 [Cody](#cody) fixed this so that the when compiling the code the program is not executed
@@ -3490,8 +3500,8 @@ Cody also added the [try.sh](%%REPO_URL%%/2001/herrmann1/try.sh) script.
 
 
 <div id="2001_herrmann2">
-## [2001/herrmann2](2001/herrmann2/index.html)
-### Source code: [herrmann2.c](%%REPO_URL%%/2001/herrmann2//herrmann2.c)
+## Winning entry: [2001/herrmann2](2001/herrmann2/index.html)
+### Winning entry source code: [herrmann2.c](%%REPO_URL%%/2001/herrmann2//herrmann2.c)
 </div>
 
 [Cody](#cody) fixed this to work with both 64-bit and 32-bit compilers by changing most
@@ -3508,8 +3518,8 @@ added to `.gitignore` by accident) but Cody restored it from the archive.
 
 
 <div id="2001_kev">
-## [2001/kev](2001/kev/index.html)
-### Source code: [kev.c](%%REPO_URL%%/2001/kev//kev.c)
+## Winning entry: [2001/kev](2001/kev/index.html)
+### Winning entry source code: [kev.c](%%REPO_URL%%/2001/kev//kev.c)
 </div>
 
 [Cody](#cody) improved the Makefile to allow one to more easily set up the port,
@@ -3531,8 +3541,8 @@ without having to sacrifice playability by running `make`.
 
 
 <div id="2001_ollinger">
-## [2001/ollinger](2001/ollinger/index.html)
-### Source code: [ollinger.c](%%REPO_URL%%/2001/ollinger//ollinger.c)
+## Winning entry: [2001/ollinger](2001/ollinger/index.html)
+### Winning entry source code: [ollinger.c](%%REPO_URL%%/2001/ollinger//ollinger.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2001/ollinger/try.sh) script.
@@ -3543,8 +3553,8 @@ worse.
 
 
 <div id="2001_schweikh">
-## [2001/schweikh](2001/schweikh/index.html)
-### Source code: [schweikh.c](%%REPO_URL%%/2001/schweikh//schweikh.c)
+## Winning entry: [2001/schweikh](2001/schweikh/index.html)
+### Winning entry source code: [schweikh.c](%%REPO_URL%%/2001/schweikh//schweikh.c)
 </div>
 
 [Cody](#cody) fixed this to not crash if not enough args as this was not documented by
@@ -3555,8 +3565,8 @@ Cody also added the [try.sh](%%REPO_URL%%/2001/schweikh/try.sh) script.
 
 
 <div id="2001_westley">
-## [2001/westley](2001/westley/index.html)
-### Source code: [westley.c](%%REPO_URL%%/2001/westley//westley.c)
+## Winning entry: [2001/westley](2001/westley/index.html)
+### Winning entry source code: [westley.c](%%REPO_URL%%/2001/westley//westley.c)
 </div>
 
 [Cody](#cody) added the script [try.sh](%%REPO_URL%%/2001/westley/try.sh) to automate a heap of commands
@@ -3566,21 +3576,21 @@ described in the index.html, based on the author's remarks.
 
 
 <div id="2004">
-# 2004
+# [2004](2004/index.html)
 </div>
 
 
 <div id="2004_anonymous">
-## [2004/anonymous](2004/anonymous/index.html)
-### Source code: [anonymous.c](%%REPO_URL%%/2004/anonymous//anonymous.c)
+## Winning entry: [2004/anonymous](2004/anonymous/index.html)
+### Winning entry source code: [anonymous.c](%%REPO_URL%%/2004/anonymous//anonymous.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2004/anonymous/try.sh) script.
 
 
 <div id="2004_arachnid">
-## [2004/arachnid](2004/arachnid/index.html)
-### Source code: [arachnid.c](%%REPO_URL%%/2004/arachnid//arachnid.c)
+## Winning entry: [2004/arachnid](2004/arachnid/index.html)
+### Winning entry source code: [arachnid.c](%%REPO_URL%%/2004/arachnid//arachnid.c)
 </div>
 
 [Cody](#cody) added an [alternate version](2004/arachnid/index.html#alternate-code) which
@@ -3595,8 +3605,8 @@ browsers knowing what to do with it.
 
 
 <div id="2004_burley">
-## [2004/burley](2004/burley/index.html)
-### Source code: [burley.c](%%REPO_URL%%/2004/burley//burley.c)
+## Winning entry: [2004/burley](2004/burley/index.html)
+### Winning entry source code: [burley.c](%%REPO_URL%%/2004/burley//burley.c)
 </div>
 
 [Cody](#cody) fixed this to compile with `clang` and to work with both `gcc` and
@@ -3633,8 +3643,8 @@ this, forcing `-O0`.
 
 
 <div id="2004_gavare">
-## [2004/gavare](2004/gavare/index.html)
-### Source code: [gavare.c](%%REPO_URL%%/2004/gavare//gavare.c)
+## Winning entry: [2004/gavare](2004/gavare/index.html)
+### Winning entry source code: [gavare.c](%%REPO_URL%%/2004/gavare//gavare.c)
 </div>
 
 [Cody](#cody) added three different [alternate
@@ -3651,8 +3661,8 @@ entry](https://gavare.se/ioccc/ioccc_gavare.c.html).
 
 
 <div id="2004_gavin">
-## [2004/gavin](2004/gavin/index.html)
-### Source code: [gavin.c](%%REPO_URL%%/2004/gavin//gavin.c)
+## Winning entry: [2004/gavin](2004/gavin/index.html)
+### Winning entry source code: [gavin.c](%%REPO_URL%%/2004/gavin//gavin.c)
 </div>
 
 [Cody](#cody) provided the [alt code](2004/gavin/index.html#alternate-code) for
@@ -3668,8 +3678,8 @@ files and causing `make clobber` to wipe some of them out.
 
 
 <div id="2004_hibachi">
-## [2004/hibachi](2004/hibachi/index.html)
-### Source code: [hibachi.c](%%REPO_URL%%/2004/hibachi//hibachi.c)
+## Winning entry: [2004/hibachi](2004/hibachi/index.html)
+### Winning entry source code: [hibachi.c](%%REPO_URL%%/2004/hibachi//hibachi.c)
 </div>
 
 [Cody](#cody) fixed a bunch of links in the index.html provided with the entry
@@ -3680,16 +3690,16 @@ Wayback Machine.
 
 
 <div id="2004_hoyle">
-## [2004/hoyle](2004/hoyle/index.html)
-### Source code: [hoyle.c](%%REPO_URL%%/2004/hoyle//hoyle.c)
+## Winning entry: [2004/hoyle](2004/hoyle/index.html)
+### Winning entry source code: [hoyle.c](%%REPO_URL%%/2004/hoyle//hoyle.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2004/hoyle/try.sh) script.
 
 
 <div id="2004_jdalbec">
-## [2004/jdalbec](2004/jdalbec/index.html)
-### Source code: [jdalbec.c](%%REPO_URL%%/2004/jdalbec//jdalbec.c)
+## Winning entry: [2004/jdalbec](2004/jdalbec/index.html)
+### Winning entry source code: [jdalbec.c](%%REPO_URL%%/2004/jdalbec//jdalbec.c)
 </div>
 
 [Cody](#cody) fixed this to compile with `gcc` (it worked with `clang`). The problem was the
@@ -3726,8 +3736,8 @@ Finally Cody added [try.sh](%%REPO_URL%%/2004/jdalbec/try.sh) and
 
 
 <div id="2004_kopczynski">
-## [2004/kopczynski](2004/kopczynski/index.html)
-### Source code: [kopczynski.c](%%REPO_URL%%/2004/kopczynski//kopczynski.c)
+## Winning entry: [2004/kopczynski](2004/kopczynski/index.html)
+### Winning entry source code: [kopczynski.c](%%REPO_URL%%/2004/kopczynski//kopczynski.c)
 </div>
 
 [Cody](#cody) reported that this entry cannot be optimised by the compiler as otherwise
@@ -3745,8 +3755,8 @@ get it to work, that being `kopczynski-10-rev`.
 
 
 <div id="2004_newbern">
-## [2004/newbern](2004/newbern/index.html)
-### Source code: [newbern.c](%%REPO_URL%%/2004/newbern//newbern.c)
+## Winning entry: [2004/newbern](2004/newbern/index.html)
+### Winning entry source code: [newbern.c](%%REPO_URL%%/2004/newbern//newbern.c)
 </div>
 
 [Cody](#cody) and Landon individually fixed this to work with `clang`.
@@ -3757,16 +3767,16 @@ chose the word `IOCCC` instead of `AAA`).
 
 
 <div id="2004_omoikane">
-## [2004/omoikane](2004/omoikane/index.html)
-### Source code: [omoikane.c](%%REPO_URL%%/2004/omoikane//omoikane.c)
+## Winning entry: [2004/omoikane](2004/omoikane/index.html)
+### Winning entry source code: [omoikane.c](%%REPO_URL%%/2004/omoikane//omoikane.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2004/omoikane/try.sh) script.
 
 
 <div id="2004_schnitzi">
-## [2004/schnitzi](2004/schnitzi/index.html)
-### Source code: [schnitzi.c](%%REPO_URL%%/2004/schnitzi//schnitzi.c)
+## Winning entry: [2004/schnitzi](2004/schnitzi/index.html)
+### Winning entry source code: [schnitzi.c](%%REPO_URL%%/2004/schnitzi//schnitzi.c)
 </div>
 
 [Cody](#cody) made this use `fgets(3)`.  See [FAQ 4.1  - Why were some calls to
@@ -3782,8 +3792,8 @@ Cody also added the [try.sh](%%REPO_URL%%/2004/schnitzi/try.sh) script.
 
 
 <div id="2004_sds">
-## [2004/sds](2004/sds/index.html)
-### Source code: [sds.c](%%REPO_URL%%/2004/sds//sds.c)
+## Winning entry: [2004/sds](2004/sds/index.html)
+### Winning entry source code: [sds.c](%%REPO_URL%%/2004/sds//sds.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2004/sds/try.sh) script.
@@ -3794,8 +3804,8 @@ to the repo for the script instead.
 
 
 <div id="2004_vik2">
-## [2004/vik2](2004/vik2/index.html)
-### Source code: [vik2.c](%%REPO_URL%%/2004/vik2//vik2.c)
+## Winning entry: [2004/vik2](2004/vik2/index.html)
+### Winning entry source code: [vik2.c](%%REPO_URL%%/2004/vik2//vik2.c)
 </div>
 
 [Cody](#cody) fixed this to compile in Linux. Although it compiled cleanly in macOS (and
@@ -3857,13 +3867,13 @@ just to make it a bit easier to compile.
 
 
 <div id="2005">
-# 2005
+# [2005](2005/index.html)
 </div>
 
 
 <div id="2005_aidan">
-## [2005/aidan](2005/aidan/index.html)
-### Source code: [aidan.c](%%REPO_URL%%/2005/aidan//aidan.c)
+## Winning entry: [2005/aidan](2005/aidan/index.html)
+### Winning entry source code: [aidan.c](%%REPO_URL%%/2005/aidan//aidan.c)
 </div>
 
 [Cody](#cody) fixed the test script, described by the author in their remarks, to refer
@@ -3884,8 +3894,8 @@ suite.
 
 
 <div id="2005_anon">
-## [2005/anon](2005/anon/index.html)
-### Source code: [anon.c](%%REPO_URL%%/2005/anon//anon.c)
+## Winning entry: [2005/anon](2005/anon/index.html)
+### Winning entry source code: [anon.c](%%REPO_URL%%/2005/anon//anon.c)
 </div>
 
 [Cody](#cody) fixed a problem where in some systems (like macOS) the `stty sane` would
@@ -3901,8 +3911,8 @@ movements.
 
 
 <div id="2005_boutines">
-## [2005/boutines](2005/boutines/index.html)
-### Source code: [boutines.c](%%REPO_URL%%/2005/boutines//boutines.c)
+## Winning entry: [2005/boutines](2005/boutines/index.html)
+### Winning entry source code: [boutines.c](%%REPO_URL%%/2005/boutines//boutines.c)
 </div>
 
 [Cody](#cody) added the [input.txt](2005/boutines/input.txt) data file based on suggested
@@ -3912,8 +3922,8 @@ Cody also added the [try.sh](%%REPO_URL%%/2005/boutines/try.sh) script.
 
 
 <div id="2005_giljade">
-## [2005/giljade](2005/giljade/index.html)
-### Source code: [giljade.c](%%REPO_URL%%/2005/giljade//giljade.c)
+## Winning entry: [2005/giljade](2005/giljade/index.html)
+### Winning entry source code: [giljade.c](%%REPO_URL%%/2005/giljade//giljade.c)
 </div>
 
 After Landon fixed the entry to compile with `clang` [Cody](#cody) noticed this
@@ -3983,8 +3993,8 @@ error; otherwise it is success. It uses [test.sh](%%REPO_URL%%/2005/giljade/test
 
 
 <div id="2005_jetro">
-## [2005/jetro](2005/jetro/index.html)
-### Source code: [jetro.c](%%REPO_URL%%/2005/jetro//jetro.c)
+## Winning entry: [2005/jetro](2005/jetro/index.html)
+### Winning entry source code: [jetro.c](%%REPO_URL%%/2005/jetro//jetro.c)
 </div>
 
 [Cody](#cody) added explicit linking of libm (`-lm`) for systems like Linux that seem to
@@ -3993,16 +4003,16 @@ not do it implicitly (like macOS does).
 
 
 <div id="2005_klausler">
-## [2005/klausler](2005/klausler/index.html)
-### Source code: [klausler.c](%%REPO_URL%%/2005/klausler//klausler.c)
+## Winning entry: [2005/klausler](2005/klausler/index.html)
+### Winning entry source code: [klausler.c](%%REPO_URL%%/2005/klausler//klausler.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2005/klausler/try.sh) script.
 
 
 <div id="2005_mikeash">
-## [2005/mikeash](2005/mikeash/index.html)
-### Source code: [mikeash.c](%%REPO_URL%%/2005/mikeash//mikeash.c)
+## Winning entry: [2005/mikeash](2005/mikeash/index.html)
+### Winning entry source code: [mikeash.c](%%REPO_URL%%/2005/mikeash//mikeash.c)
 </div>
 
 [Cody](#cody) fixed this to work in Linux. The problem was an unknown escape sequence,
@@ -4036,8 +4046,8 @@ Cody also added the [try.sh](%%REPO_URL%%/2005/mikeash/try.sh) script.
 
 
 <div id="2005_mynx">
-## [2005/mynx](2005/mynx/index.html)
-### Source code: [mynx.c](%%REPO_URL%%/2005/mynx//mynx.c)
+## Winning entry: [2005/mynx](2005/mynx/index.html)
+### Winning entry source code: [mynx.c](%%REPO_URL%%/2005/mynx//mynx.c)
 </div>
 
 [Cody](#cody) fixed this so that the [configure](%%REPO_URL%%/2005/mynx/source/configure) script (which is not
@@ -4051,8 +4061,8 @@ wants to add the necessary code.
 
 
 <div id="2005_persano">
-## [2005/persano](2005/persano/index.html)
-### Source code: [persano.c](%%REPO_URL%%/2005/persano//persano.c)
+## Winning entry: [2005/persano](2005/persano/index.html)
+### Winning entry source code: [persano.c](%%REPO_URL%%/2005/persano//persano.c)
 </div>
 
 [Cody](#cody) added the (untested) [alternate
@@ -4064,8 +4074,8 @@ Cody also added the [try.sh](%%REPO_URL%%/2005/persano/try.sh) script.
 
 
 <div id="2005_sykes">
-## [2005/sykes](2005/sykes/index.html)
-### Source code: [sykes.c](%%REPO_URL%%/2005/sykes//sykes.c)
+## Winning entry: [2005/sykes](2005/sykes/index.html)
+### Winning entry source code: [sykes.c](%%REPO_URL%%/2005/sykes//sykes.c)
 </div>
 
 [Cody](#cody) added the saved (with the `SAVE` command) BASIC program `PET` which was:
@@ -4106,8 +4116,8 @@ interrupt is set to in order to exit the program.
 
 
 <div id="2005_timwi">
-## [2005/timwi](2005/timwi/index.html)
-### Source code: [timwi.c](%%REPO_URL%%/2005/timwi//timwi.c)
+## Winning entry: [2005/timwi](2005/timwi/index.html)
+### Winning entry source code: [timwi.c](%%REPO_URL%%/2005/timwi//timwi.c)
 </div>
 
 [Cody](#cody) added [try.sh](%%REPO_URL%%/2005/timwi/try.sh). It only has one command as he doesn't
@@ -4116,8 +4126,8 @@ he doesn't want to damage anyone else's brain either. :-)
 
 
 <div id="2005_toledo">
-## [2005/toledo](2005/toledo/index.html)
-### Source code: [toledo.c](%%REPO_URL%%/2005/toledo//toledo.c)
+## Winning entry: [2005/toledo](2005/toledo/index.html)
+### Winning entry source code: [toledo.c](%%REPO_URL%%/2005/toledo//toledo.c)
 </div>
 
 [Cody](#cody) fixed this to compile with some versions of `clang` which have an additional
@@ -4128,8 +4138,8 @@ The alternate versions were also fixed.
 
 
 <div id="2005_vince">
-## [2005/vince](2005/vince/index.html)
-### Source code: [vince.c](%%REPO_URL%%/2005/vince//vince.c)
+## Winning entry: [2005/vince](2005/vince/index.html)
+### Winning entry source code: [vince.c](%%REPO_URL%%/2005/vince//vince.c)
 </div>
 
 [Cody](#cody) fixed this in the case that the program is compiled or linked/copies to
@@ -4144,13 +4154,13 @@ if one runs it from another directory, specifying the directory, it'll not catch
 
 
 <div id="2006">
-# 2006
+# [2006](2006/index.html)
 </div>
 
 
 <div id="2006_birken">
-## [2006/birken](2006/birken/index.html)
-### Source code: [birken.c](%%REPO_URL%%/2006/birken//birken.c)
+## Winning entry: [2006/birken](2006/birken/index.html)
+### Winning entry source code: [birken.c](%%REPO_URL%%/2006/birken//birken.c)
 </div>
 
 [Cody](#cody) fixed a segfault in macOS with this entry. The problem was a missing `+1`
@@ -4160,8 +4170,8 @@ Cody also added the [try.sh](%%REPO_URL%%/2006/birken/try.sh) script.
 
 
 <div id="2006_borsanyi">
-## [2006/borsanyi](2006/borsanyi/index.html)
-### Source code: [borsanyi.c](%%REPO_URL%%/2006/borsanyi//borsanyi.c)
+## Winning entry: [2006/borsanyi](2006/borsanyi/index.html)
+### Winning entry source code: [borsanyi.c](%%REPO_URL%%/2006/borsanyi//borsanyi.c)
 </div>
 
 [Cody](#cody) fixed the Makefile to work in systems where the `lpthread` is not
@@ -4171,16 +4181,16 @@ Cody also added the [try.sh](%%REPO_URL%%/2006/borsanyi/try.sh) script.
 
 
 <div id="2006_grothe">
-## [2006/grothe](2006/grothe/index.html)
-### Source code: [grothe.c](%%REPO_URL%%/2006/grothe//grothe.c)
+## Winning entry: [2006/grothe](2006/grothe/index.html)
+### Winning entry source code: [grothe.c](%%REPO_URL%%/2006/grothe//grothe.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2006/grothe/try.sh) script.
 
 
 <div id="2006_hamre">
-## [2006/hamre](2006/hamre/index.html)
-### Source code: [hamre.c](%%REPO_URL%%/2006/hamre//hamre.c)
+## Winning entry: [2006/hamre](2006/hamre/index.html)
+### Winning entry source code: [hamre.c](%%REPO_URL%%/2006/hamre//hamre.c)
 </div>
 
 [Cody](#cody) fixed this so that it will not crash without an arg after it was suggested
@@ -4190,8 +4200,8 @@ Cody also added the [try.sh](%%REPO_URL%%/2006/hamre/try.sh) script.
 
 
 <div id="2006_monge">
-## [2006/monge](2006/monge/index.html)
-### Source code: [monge.c](%%REPO_URL%%/2006/monge//monge.c)
+## Winning entry: [2006/monge](2006/monge/index.html)
+### Winning entry source code: [monge.c](%%REPO_URL%%/2006/monge//monge.c)
 </div>
 
 [Cody](#cody) added the [alternate code](2006/monge/index.html#alternate-code) that lets
@@ -4213,8 +4223,8 @@ bugs.html](bugs.html#2006-monge).
 
 
 <div id="2006_night">
-## [2006/night](2006/night/index.html)
-### Source code: [night.c](%%REPO_URL%%/2006/night//night.c)
+## Winning entry: [2006/night](2006/night/index.html)
+### Winning entry source code: [night.c](%%REPO_URL%%/2006/night//night.c)
 </div>
 
 As [Cody](#cody) is a lost :-) `vim` user he took the author's remarks to add support
@@ -4222,8 +4232,8 @@ back for arrow keys in the [alternate version](%%REPO_URL%%/2006/night/night.alt
 
 
 <div id="2006_sloane">
-## [2006/sloane](2006/sloane/index.html)
-### Source code: [sloane.c](%%REPO_URL%%/2006/sloane//sloane.c)
+## Winning entry: [2006/sloane](2006/sloane/index.html)
+### Winning entry source code: [sloane.c](%%REPO_URL%%/2006/sloane//sloane.c)
 </div>
 
 [Cody](#cody) fixed this entry to work with `clang` which has a defect with the args to
@@ -4254,8 +4264,8 @@ program in some systems he also added `-include ...` to the Makefile as well.
 
 
 <div id="2006_stewart">
-## [2006/stewart](2006/stewart/index.html)
-### Source code: [stewart.c](%%REPO_URL%%/2006/stewart//stewart.c)
+## Winning entry: [2006/stewart](2006/stewart/index.html)
+### Winning entry source code: [stewart.c](%%REPO_URL%%/2006/stewart//stewart.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2006/stewart/try.sh) script.
@@ -4266,8 +4276,8 @@ bug to fix.
 
 
 <div id="2006_sykes1">
-## [2006/sykes1](2006/sykes1/index.html)
-### Source code: [sykes1.c](%%REPO_URL%%/2006/sykes1//sykes1.c)
+## Winning entry: [2006/sykes1](2006/sykes1/index.html)
+### Winning entry source code: [sykes1.c](%%REPO_URL%%/2006/sykes1//sykes1.c)
 </div>
 
 [Cody](#cody) provided the [alt code](2006/sykes1/index.html#alternate-code) based on the
@@ -4282,8 +4292,8 @@ it to the repo as well.
 
 
 <div id="2006_sykes2">
-## [2006/sykes2](2006/sykes2/index.html)
-### Source code: [sykes2.c](%%REPO_URL%%/2006/sykes2//sykes2.c)
+## Winning entry: [2006/sykes2](2006/sykes2/index.html)
+### Winning entry source code: [sykes2.c](%%REPO_URL%%/2006/sykes2//sykes2.c)
 </div>
 
 [Cody](#cody), out of an abundance of caution for `clang`'s defects, made `main()` have
@@ -4295,16 +4305,16 @@ entry to show the clock update in real time.
 
 
 <div id="2006_toledo1">
-## [2006/toledo1](2006/toledo1/index.html)
-### Source code: [toledo1.c](%%REPO_URL%%/2006/toledo1//toledo1.c)
+## Winning entry: [2006/toledo1](2006/toledo1/index.html)
+### Winning entry source code: [toledo1.c](%%REPO_URL%%/2006/toledo1//toledo1.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2006/toledo1/try.sh) script.
 
 
 <div id="2006_toledo2">
-## [2006/toledo2](2006/toledo2/index.html)
-### Source code: [toledo2.c](%%REPO_URL%%/2006/toledo2//toledo2.c)
+## Winning entry: [2006/toledo2](2006/toledo2/index.html)
+### Winning entry source code: [toledo2.c](%%REPO_URL%%/2006/toledo2//toledo2.c)
 </div>
 
 [Cody](#cody) fixed a segfault in this program which was making it fail to work under
@@ -4325,8 +4335,8 @@ where appears the `IMPORT.COM` and `HALT.COM` files.
 
 
 <div id="2006_toledo3">
-## [2006/toledo3](2006/toledo3/index.html)
-### Source code: [toledo3.c](%%REPO_URL%%/2006/toledo3//toledo3.c)
+## Winning entry: [2006/toledo3](2006/toledo3/index.html)
+### Winning entry source code: [toledo3.c](%%REPO_URL%%/2006/toledo3//toledo3.c)
 </div>
 
 [Cody](#cody) fixed a crash and a display problem in this entry so that it now works in
@@ -4341,29 +4351,29 @@ We're not able to test this.
 
 
 <div id="2011">
-# 2011
+# [2011](2011/index.html)
 </div>
 
 
 <div id="2011_akari">
-## [2011/akari](2011/akari/index.html)
-### Source code: [akari.c](%%REPO_URL%%/2011/akari//akari.c)
+## Winning entry: [2011/akari](2011/akari/index.html)
+### Winning entry source code: [akari.c](%%REPO_URL%%/2011/akari//akari.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/akari/try.sh) script.
 
 
 <div id="2011_blakely">
-## [2011/blakely](2011/blakely/index.html)
-### Source code: [blakely.c](%%REPO_URL%%/2011/blakely//blakely.c)
+## Winning entry: [2011/blakely](2011/blakely/index.html)
+### Winning entry source code: [blakely.c](%%REPO_URL%%/2011/blakely//blakely.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/blakely/try.sh) script.
 
 
 <div id="2011_borsanyi">
-## [2011/borsanyi](2011/borsanyi/index.html)
-### Source code: [borsanyi.c](%%REPO_URL%%/2011/borsanyi//borsanyi.c)
+## Winning entry: [2011/borsanyi](2011/borsanyi/index.html)
+### Winning entry source code: [borsanyi.c](%%REPO_URL%%/2011/borsanyi//borsanyi.c)
 </div>
 
 [Cody](#cody), out of an abundance of caution, added a second arg to `main()` as some
@@ -4374,16 +4384,16 @@ Cody also added the [try.sh](%%REPO_URL%%/2011/borsanyi/try.sh) script.
 
 
 <div id="2011_dlowe">
-## [2011/dlowe](2011/dlowe/index.html)
-### Source code: [dlowe.c](%%REPO_URL%%/2011/dlowe//dlowe.c)
+## Winning entry: [2011/dlowe](2011/dlowe/index.html)
+### Winning entry source code: [dlowe.c](%%REPO_URL%%/2011/dlowe//dlowe.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/dlowe/try.sh) script.
 
 
 <div id="2011_eastman">
-## [2011/eastman](2011/eastman/index.html)
-### Source code: [eastman.c](%%REPO_URL%%/2011/eastman//eastman.c)
+## Winning entry: [2011/eastman](2011/eastman/index.html)
+### Winning entry source code: [eastman.c](%%REPO_URL%%/2011/eastman//eastman.c)
 </div>
 
 [Cody](#cody) added the video file [boing-ball.mp4](%%REPO_URL%%/2011/eastman) which is the demo the
@@ -4391,16 +4401,16 @@ author referred to.
 
 
 <div id="2011_fredriksson">
-## [2011/fredriksson](2011/fredriksson/index.html)
-### Source code: [fredriksson.c](%%REPO_URL%%/2011/fredriksson//fredriksson.c)
+## Winning entry: [2011/fredriksson](2011/fredriksson/index.html)
+### Winning entry source code: [fredriksson.c](%%REPO_URL%%/2011/fredriksson//fredriksson.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/fredriksson/try.sh) script.
 
 
 <div id="2011_goren">
-## [2011/goren](2011/goren/index.html)
-### Source code: [goren.c](%%REPO_URL%%/2011/goren//goren.c)
+## Winning entry: [2011/goren](2011/goren/index.html)
+### Winning entry source code: [goren.c](%%REPO_URL%%/2011/goren//goren.c)
 </div>
 
 [Cody](#cody) fixed this for macOS.  Before the fix it segfaulted. It worked fine under
@@ -4415,8 +4425,8 @@ Cody added the following words of wisdom: `'"this" is not a pipe but "!" is'`.
 
 
 <div id="2011_hamaji">
-## [2011/hamaji](2011/hamaji/index.html)
-### Source code: [hamaji.c](%%REPO_URL%%/2011/hamaji//hamaji.c)
+## Winning entry: [2011/hamaji](2011/hamaji/index.html)
+### Winning entry source code: [hamaji.c](%%REPO_URL%%/2011/hamaji//hamaji.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/hamaji/try.sh) script and the `.nono` files
@@ -4430,16 +4440,16 @@ and the others were from the authors' remarks.
 
 
 <div id="2011_hou">
-## [2011/hou](2011/hou/index.html)
-### Source code: [hou.c](%%REPO_URL%%/2011/hou//hou.c)
+## Winning entry: [2011/hou](2011/hou/index.html)
+### Winning entry source code: [hou.c](%%REPO_URL%%/2011/hou//hou.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/hou/try.sh) script.
 
 
 <div id="2011_konno">
-## [2011/konno](2011/konno/index.html)
-### Source code: [konno.c](%%REPO_URL%%/2011/konno//konno.c)
+## Winning entry: [2011/konno](2011/konno/index.html)
+### Winning entry source code: [konno.c](%%REPO_URL%%/2011/konno//konno.c)
 </div>
 
 [Cody](#cody) fixed the program to not crash if no arg was specified as this was not a
@@ -4449,8 +4459,8 @@ Cody also added the [try.sh](%%REPO_URL%%/2011/konno/try.sh) script.
 
 
 <div id="2011_richards">
-## [2011/richards](2011/richards/index.html)
-### Source code: [richards.c](%%REPO_URL%%/2011/richards//richards.c)
+## Winning entry: [2011/richards](2011/richards/index.html)
+### Winning entry source code: [richards.c](%%REPO_URL%%/2011/richards//richards.c)
 </div>
 
 [Cody](#cody) fixed a minor problem that showed up in both Linux and macOS. He notes
@@ -4471,8 +4481,8 @@ bugs.html](bugs.html#2011-richards) for more details).
 
 
 <div id="2011_toledo">
-## [2011/toledo](2011/toledo/index.html)
-### Source code: [toledo.c](%%REPO_URL%%/2011/toledo//toledo.c)
+## Winning entry: [2011/toledo](2011/toledo/index.html)
+### Winning entry source code: [toledo.c](%%REPO_URL%%/2011/toledo//toledo.c)
 </div>
 
 [Cody](#cody) added two [alternate versions](2011/toledo/index.html#alternate-code): one that
@@ -4485,8 +4495,8 @@ controls, width and height.
 
 
 <div id="2011_vik">
-## [2011/vik](2011/vik/index.html)
-### Source code: [vik.c](%%REPO_URL%%/2011/vik//vik.c)
+## Winning entry: [2011/vik](2011/vik/index.html)
+### Winning entry source code: [vik.c](%%REPO_URL%%/2011/vik//vik.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/vik/try.sh) script.
@@ -4497,8 +4507,8 @@ header files). To build try the alt rule of the Makefile.
 
 
 <div id="2011_zucker">
-## [2011/zucker](2011/zucker/index.html)
-### Source code: [zucker.c](%%REPO_URL%%/2011/zucker//zucker.c)
+## Winning entry: [2011/zucker](2011/zucker/index.html)
+### Winning entry source code: [zucker.c](%%REPO_URL%%/2011/zucker//zucker.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/zucker/try.sh) script.
@@ -4513,13 +4523,13 @@ eventually dies.
 
 
 <div id="2012">
-# 2012
+# [2012](2012/index.html)
 </div>
 
 
 <div id="2012_blakely">
-## [2012/blakely](2012/blakely/index.html)
-### Source code: [blakely.c](%%REPO_URL%%/2012/blakely//blakely.c)
+## Winning entry: [2012/blakely](2012/blakely/index.html)
+### Winning entry source code: [blakely.c](%%REPO_URL%%/2012/blakely//blakely.c)
 </div>
 
 [Cody](#cody) added explicit linking of libm (`-lm`) as not all systems do this
@@ -4529,16 +4539,16 @@ Cody also added the [try.sh](%%REPO_URL%%/2012/blakely/try.sh) script.
 
 
 <div id="2012_deckmyn">
-## [2012/deckmyn](2012/deckmyn/index.html)
-### Source code: [deckmyn.c](%%REPO_URL%%/2012/deckmyn//deckmyn.c)
+## Winning entry: [2012/deckmyn](2012/deckmyn/index.html)
+### Winning entry source code: [deckmyn.c](%%REPO_URL%%/2012/deckmyn//deckmyn.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/deckmyn/try.sh) script.
 
 
 <div id="2012_endoh1">
-## [2012/endoh1](2012/endoh1/index.html)
-### Source code: [endoh1.c](%%REPO_URL%%/2012/endoh1//endoh1.c)
+## Winning entry: [2012/endoh1](2012/endoh1/index.html)
+### Winning entry source code: [endoh1.c](%%REPO_URL%%/2012/endoh1//endoh1.c)
 </div>
 
 [Cody](#cody) added explicit linking of libm (`-lm`) as not all systems do this
@@ -4574,8 +4584,8 @@ The [endoh1.alt2.c](%%REPO_URL%%/2012/endoh1/endoh1.alt2.c) was provided by the 
 
 
 <div id="2012_endoh2">
-## [2012/endoh2](2012/endoh2/index.html)
-### Source code: [endoh2.c](%%REPO_URL%%/2012/endoh2//endoh2.c)
+## Winning entry: [2012/endoh2](2012/endoh2/index.html)
+### Winning entry source code: [endoh2.c](%%REPO_URL%%/2012/endoh2//endoh2.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/endoh2/try.sh) script that runs
@@ -4586,8 +4596,8 @@ Cody also fixed a typo in the ruby script
 
 
 <div id="2012_grothe">
-## [2012/grothe](2012/grothe/index.html)
-### Source code: [grothe.c](%%REPO_URL%%/2012/grothe//grothe.c)
+## Winning entry: [2012/grothe](2012/grothe/index.html)
+### Winning entry source code: [grothe.c](%%REPO_URL%%/2012/grothe//grothe.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/grothe/try.sh) script.
@@ -4608,8 +4618,8 @@ which the recipe file now links to.
 
 
 <div id="2012_hamano">
-## [2012/hamano](2012/hamano/index.html)
-### Source code: [hamano.c](%%REPO_URL%%/2012/hamano//hamano.c)
+## Winning entry: [2012/hamano](2012/hamano/index.html)
+### Winning entry source code: [hamano.c](%%REPO_URL%%/2012/hamano//hamano.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/hamano/try.sh) script and the helper
@@ -4618,8 +4628,8 @@ procedure for both `hint.pdf` and `hello.pdf` as well as compiling them as C.
 
 
 <div id="2012_hou">
-## [2012/hou](2012/hou/index.html)
-### Source code: [hou.c](%%REPO_URL%%/2012/hou//hou.c)
+## Winning entry: [2012/hou](2012/hou/index.html)
+### Winning entry source code: [hou.c](%%REPO_URL%%/2012/hou//hou.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/hou/try.sh) script and restored the original [hint
@@ -4630,8 +4640,8 @@ title and stylesheet) and other formatting changes.
 
 
 <div id="2012_kang">
-## [2012/kang](2012/kang/index.html)
-### Source code: [kang.c](%%REPO_URL%%/2012/kang//kang.c)
+## Winning entry: [2012/kang](2012/kang/index.html)
+### Winning entry source code: [kang.c](%%REPO_URL%%/2012/kang//kang.c)
 </div>
 
 [Cody](#cody) added alt code that fixes a problem where in German 'v' sounds like 'f'
@@ -4663,16 +4673,16 @@ respectively. Notice how a single letter changes so much!
 
 
 <div id="2012_konno">
-## [2012/konno](2012/konno/index.html)
-### Source code: [konno.c](%%REPO_URL%%/2012/konno//konno.c)
+## Winning entry: [2012/konno](2012/konno/index.html)
+### Winning entry source code: [konno.c](%%REPO_URL%%/2012/konno//konno.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/konno/try.sh) script.
 
 
 <div id="2012_omoikane">
-## [2012/omoikane](2012/omoikane/index.html)
-### Source code: [omoikane.c](%%REPO_URL%%/2012/omoikane//omoikane.c)
+## Winning entry: [2012/omoikane](2012/omoikane/index.html)
+### Winning entry source code: [omoikane.c](%%REPO_URL%%/2012/omoikane//omoikane.c)
 </div>
 
 [Cody](#cody) added the [alternate versions](2012/omoikane/index.html#alternate-code)
@@ -4687,16 +4697,16 @@ Cody also added the [try.sh](%%REPO_URL%%/2012/omoikane/try.sh) and
 
 
 <div id="2012_tromp">
-## [2012/tromp](2012/tromp/index.html)
-### Source code: [tromp.c](%%REPO_URL%%/2012/tromp//tromp.c)
+## Winning entry: [2012/tromp](2012/tromp/index.html)
+### Winning entry source code: [tromp.c](%%REPO_URL%%/2012/tromp//tromp.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/tromp/try.sh) script.
 
 
 <div id="2012_vik">
-## [2012/vik](2012/vik/index.html)
-### Source code: [vik.c](%%REPO_URL%%/2012/vik//vik.c)
+## Winning entry: [2012/vik](2012/vik/index.html)
+### Winning entry source code: [vik.c](%%REPO_URL%%/2012/vik//vik.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/vik/try.sh) script.
@@ -4707,8 +4717,8 @@ does this for the few who might use Windows.
 
 
 <div id="2012_zeitak">
-## [2012/zeitak](2012/zeitak/index.html)
-### Source code: [zeitak.c](%%REPO_URL%%/2012/zeitak//zeitak.c)
+## Winning entry: [2012/zeitak](2012/zeitak/index.html)
+### Winning entry source code: [zeitak.c](%%REPO_URL%%/2012/zeitak//zeitak.c)
 </div>
 
 [Cody](#cody) added the [test.sh](%%REPO_URL%%/2012/zeitak/test.sh) script and the `make test` rule
@@ -4729,13 +4739,13 @@ it easier for those who do not know how, and to make it more obvious to try it.
 
 
 <div id="2013">
-# 2013
+# [2013](2013/index.html)
 </div>
 
 
 <div id="2013_birken">
-## [2013/birken](2013/birken/index.html)
-### Source code: [birken.c](%%REPO_URL%%/2013/birken//birken.c)
+## Winning entry: [2013/birken](2013/birken/index.html)
+### Winning entry source code: [birken.c](%%REPO_URL%%/2013/birken//birken.c)
 </div>
 
 [Cody](#cody) changed the `return 0;` at the end of the program to be `return
@@ -4755,8 +4765,8 @@ Cody also added the [try.sh](%%REPO_URL%%/2013/birken/try.sh) script for the ent
 
 
 <div id="2013_cable1">
-## [2013/cable1](2013/cable1/index.html)
-### Source code: [cable1.c](%%REPO_URL%%/2013/cable1//cable1.c)
+## Winning entry: [2013/cable1](2013/cable1/index.html)
+### Winning entry source code: [cable1.c](%%REPO_URL%%/2013/cable1//cable1.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2013/cable1/try.sh) script which also has an
@@ -4764,16 +4774,16 @@ joke Easter egg in it based on the judges' remarks.
 
 
 <div id="2013_cable2">
-## [2013/cable2](2013/cable2/index.html)
-### Source code: [cable2.c](%%REPO_URL%%/2013/cable2//cable2.c)
+## Winning entry: [2013/cable2](2013/cable2/index.html)
+### Winning entry source code: [cable2.c](%%REPO_URL%%/2013/cable2//cable2.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2013/cable2/try.sh) script.
 
 
 <div id="2013_cable3">
-## [2013/cable3](2013/cable3/index.html)
-### Source code: [cable3.c](%%REPO_URL%%/2013/cable3//cable3.c)
+## Winning entry: [2013/cable3](2013/cable3/index.html)
+### Winning entry source code: [cable3.c](%%REPO_URL%%/2013/cable3//cable3.c)
 </div>
 
 [Cody](#cody) fixed this to compile with modern systems. The problems were that
@@ -4814,8 +4824,8 @@ author linked to at `https://bitly.com/1bU8URK`.
 
 
 <div id="2013_dlowe">
-## [2013/dlowe](2013/dlowe/index.html)
-### Source code: [dlowe.c](%%REPO_URL%%/2013/dlowe//dlowe.c)
+## Winning entry: [2013/dlowe](2013/dlowe/index.html)
+### Winning entry source code: [dlowe.c](%%REPO_URL%%/2013/dlowe//dlowe.c)
 </div>
 
 [Cody](#cody) added the source code that we suggested one should compile and run with
@@ -4842,16 +4852,16 @@ commands to try that he suggested to see how different lengths look.
 
 
 <div id="2013_endoh1">
-## [2013/endoh1](2013/endoh1/index.html)
-### Source code: [endoh1.c](%%REPO_URL%%/2013/endoh1//endoh1.c)
+## Winning entry: [2013/endoh1](2013/endoh1/index.html)
+### Winning entry source code: [endoh1.c](%%REPO_URL%%/2013/endoh1//endoh1.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2013/endoh1/try.sh) script.
 
 
 <div id="2013_endoh2">
-## [2013/endoh2](2013/endoh2/index.html)
-### Source code: [endoh2.c](%%REPO_URL%%/2013/endoh2//endoh2.c)
+## Winning entry: [2013/endoh2](2013/endoh2/index.html)
+### Winning entry source code: [endoh2.c](%%REPO_URL%%/2013/endoh2//endoh2.c)
 </div>
 
 [Cody](#cody) fixed the Makefile `check` rule so that it `checks` :-) that both
@@ -4875,8 +4885,8 @@ The entry can still be enjoyed if you do not have these tools, however.
 
 
 <div id="2013_endoh3">
-## [2013/endoh3](2013/endoh3/index.html)
-### Source code: [endoh3.c](%%REPO_URL%%/2013/endoh3//endoh3.c)
+## Winning entry: [2013/endoh3](2013/endoh3/index.html)
+### Winning entry source code: [endoh3.c](%%REPO_URL%%/2013/endoh3//endoh3.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2013/endoh3/try.sh) script.
@@ -4886,8 +4896,8 @@ arg type and count to `main()`) added a second (unused) arg to `main()`.
 
 
 <div id="2013_endoh4">
-## [2013/endoh4](2013/endoh4/index.html)
-### Source code: [endoh4.c](%%REPO_URL%%/2013/endoh4//endoh4.c)
+## Winning entry: [2013/endoh4](2013/endoh4/index.html)
+### Winning entry source code: [endoh4.c](%%REPO_URL%%/2013/endoh4//endoh4.c)
 </div>
 
 [Cody](#cody) added the [endoh4.sh](%%REPO_URL%%/2013/endoh4/endoh4.sh) script which temporarily
@@ -4903,8 +4913,8 @@ allows one to redefine it as well.
 
 
 <div id="2013_hou">
-## [2013/hou](2013/hou/index.html)
-### Source code: [hou.c](%%REPO_URL%%/2013/hou//hou.c)
+## Winning entry: [2013/hou](2013/hou/index.html)
+### Winning entry source code: [hou.c](%%REPO_URL%%/2013/hou//hou.c)
 </div>
 
 [Cody](#cody) fixed the Makefile so that this would work properly. Before this
@@ -4945,7 +4955,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2013/hou/try.sh) script.
 
 
 <div id="2013_mills">
-## [2013/mills](2013/mills/index.html)
+## Winning entry: [2013/mills](2013/mills/index.html)
 ## Source code: [mills.c](%%REPO_URL%%/2013/mills/mills.c)
 </div>
 
@@ -4958,16 +4968,16 @@ Firefox both had the problem.
 
 
 <div id="2013_misaka">
-## [2013/misaka](2013/misaka/index.html)
-### Source code: [misaka.c](%%REPO_URL%%/2013/misaka//misaka.c)
+## Winning entry: [2013/misaka](2013/misaka/index.html)
+### Winning entry source code: [misaka.c](%%REPO_URL%%/2013/misaka//misaka.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2013/misaka/try.sh) script.
 
 
 <div id="2013_morgan1">
-## [2013/morgan1](2013/morgan1/index.html)
-### Source code: [morgan1.c](%%REPO_URL%%/2013/morgan1//morgan1.c)
+## Winning entry: [2013/morgan1](2013/morgan1/index.html)
+### Winning entry source code: [morgan1.c](%%REPO_URL%%/2013/morgan1//morgan1.c)
 </div>
 
 [Cody](#cody) added explicit linking of libm (`-lm`) as not all systems do this
@@ -4977,21 +4987,21 @@ Cody also added the [try.sh](%%REPO_URL%%/2013/morgan1/try.sh) script.
 
 
 <div id="2013_robison">
-## [2013/robison](2013/robison/index.html)
-### Source code: [robison.c](%%REPO_URL%%/2013/robison//robison.c)
+## Winning entry: [2013/robison](2013/robison/index.html)
+### Winning entry source code: [robison.c](%%REPO_URL%%/2013/robison//robison.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2013/robison/try.sh) script.
 
 
 <div id="2014">
-# 2014
+# [2014](2014/index.html)
 </div>
 
 
 <div id="2014_birken">
-## [2014/birken](2014/birken/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2014/birken//prog.c)
+## Winning entry: [2014/birken](2014/birken/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2014/birken//prog.c)
 </div>
 
 [Cody](#cody) provided the [alternate
@@ -5004,8 +5014,8 @@ redefine the port and timing constant.
 
 
 <div id="2014_deak">
-## [2014/deak](2014/deak/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2014/deak//prog.c)
+## Winning entry: [2014/deak](2014/deak/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2014/deak//prog.c)
 </div>
 
 [Cody](#cody) added [alt code](2014/deak/index.html#alternate-code) that lets
@@ -5027,8 +5037,8 @@ Cody also added the [try.alt.sh](%%REPO_URL%%/2014/deak/try.alt.sh) script.
 
 
 <div id="2014_endoh1">
-## [2014/endoh1](2014/endoh1/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2014/endoh1//prog.c)
+## Winning entry: [2014/endoh1](2014/endoh1/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2014/endoh1//prog.c)
 </div>
 
 [Cody](#cody) added the [rake.sh](%%REPO_URL%%/2014/endoh1/rake.sh) script and `make rake`
@@ -5056,16 +5066,16 @@ it is a file with spoilers (and too close to index.html?).
 
 
 <div id="2014_endoh2">
-## [2014/endoh2](2014/endoh2/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2014/endoh2//prog.c)
+## Winning entry: [2014/endoh2](2014/endoh2/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2014/endoh2//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2014/endoh2/try.sh) script.
 
 
 <div id="2014_maffiodo1">
-## [2014/maffiodo1](2014/maffiodo1/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2014/maffiodo1//prog.c)
+## Winning entry: [2014/maffiodo1](2014/maffiodo1/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2014/maffiodo1//prog.c)
 </div>
 
 [Cody](#cody) fixed the build for this entry: it does not require
@@ -5079,8 +5089,8 @@ which let one configure the width and height of the game.
 
 
 <div id="2014_maffiodo2">
-## [2014/maffiodo2](2014/maffiodo2/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2014/maffiodo2//prog.c)
+## Winning entry: [2014/maffiodo2](2014/maffiodo2/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2014/maffiodo2//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2014/maffiodo2/try.sh) script.
@@ -5090,16 +5100,16 @@ provided by the author.
 
 
 <div id="2014_morgan">
-## [2014/morgan](2014/morgan/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2014/morgan//prog.c)
+## Winning entry: [2014/morgan](2014/morgan/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2014/morgan//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2014/morgan/try.sh) script.
 
 
 <div id="2014_sinon">
-## [2014/sinon](2014/sinon/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2014/sinon//prog.c)
+## Winning entry: [2014/sinon](2014/sinon/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2014/sinon//prog.c)
 </div>
 
 [Cody](#cody) fixed the code so that the game can play automatically like it
@@ -5118,8 +5128,8 @@ kill it). This is done this way in case it jams (see index.html for details).
 
 
 <div id="2014_skeggs">
-## [2014/skeggs](2014/skeggs/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2014/skeggs//prog.c)
+## Winning entry: [2014/skeggs](2014/skeggs/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2014/skeggs//prog.c)
 </div>
 
 [Cody](#cody) fixed the Makefile to compile this entry in modern systems. The problem was
@@ -5139,8 +5149,8 @@ clean`) removes those files and so that they are ignored by `.gitignore`.
 
 
 <div id="2014_vik">
-## [2014/vik](2014/vik/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2014/vik//prog.c)
+## Winning entry: [2014/vik](2014/vik/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2014/vik//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2014/vik/try.sh) script. Cody notes that there
@@ -5154,8 +5164,8 @@ that would break it we do not know.
 
 
 <div id="2014_wiedijk">
-## [2014/wiedijk](2014/wiedijk/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2014/wiedijk//prog.c)
+## Winning entry: [2014/wiedijk](2014/wiedijk/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2014/wiedijk//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2014/wiedijk/try.sh) script which is based on
@@ -5167,13 +5177,13 @@ output.
 
 
 <div id="2015">
-# 2015
+# [2015](2015/index.html)
 </div>
 
 
 <div id="2015_burton">
-## [2015/burton](2015/burton/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2015/burton//prog.c)
+## Winning entry: [2015/burton](2015/burton/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2015/burton//prog.c)
 </div>
 
 
@@ -5216,8 +5226,8 @@ add a `./` to the commands in the man page/index.html.
 
 
 <div id="2015_dogon">
-## [2015/dogon](2015/dogon/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2015/dogon//prog.c)
+## Winning entry: [2015/dogon](2015/dogon/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2015/dogon//prog.c)
 </div>
 
 [Cody](#cody) improved the Makefile so that one can easily change the dimensions
@@ -5229,24 +5239,24 @@ they avoided.
 
 
 <div id="2015_duble">
-## [2015/duble](2015/duble/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2015/duble//prog.c)
+## Winning entry: [2015/duble](2015/duble/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2015/duble//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2015/duble/try.sh) script.
 
 
 <div id="2015_endoh2">
-## [2015/endoh2](2015/endoh2/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2015/endoh2//prog.c)
+## Winning entry: [2015/endoh2](2015/endoh2/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2015/endoh2//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2015/endoh2/try.sh) script.
 
 
 <div id="2015_endoh3">
-## [2015/endoh3](2015/endoh3/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2015/endoh3//prog.c)
+## Winning entry: [2015/endoh3](2015/endoh3/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2015/endoh3//prog.c)
 </div>
 
 [Cody](#cody) fixed this to compile with Linux which was having a problem with duplicate
@@ -5261,16 +5271,16 @@ simply typing `make back_to` or `make mullender`) and then runs the famous
 
 
 <div id="2015_endoh4">
-## [2015/endoh4](2015/endoh4/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2015/endoh4//prog.c)
+## Winning entry: [2015/endoh4](2015/endoh4/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2015/endoh4//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2015/endoh4/try.sh) script.
 
 
 <div id="2015_hou">
-## [2015/hou](2015/hou/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2015/hou//prog.c)
+## Winning entry: [2015/hou](2015/hou/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2015/hou//prog.c)
 </div>
 
 [Cody](#cody) added explicit linking of libm (`-lm`) for systems that do not do this
@@ -5285,8 +5295,8 @@ file now links to.
 
 
 <div id="2015_howe">
-## [2015/howe](2015/howe/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2015/howe//prog.c)
+## Winning entry: [2015/howe](2015/howe/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2015/howe//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2015/howe/try.sh) script, downloaded the War
@@ -5297,8 +5307,8 @@ resulted in standard input errors in piping to `bc(1)`) and added the
 
 
 <div id="2015_mills1">
-## [2015/mills1](2015/mills1/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2015/mills1//prog.c)
+## Winning entry: [2015/mills1](2015/mills1/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2015/mills1//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2015/mills1/try.sh) script which changes the
@@ -5310,24 +5320,24 @@ past).
 
 
 <div id="2015_mills2">
-## [2015/mills2](2015/mills2/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2015/mills2//prog.c)
+## Winning entry: [2015/mills2](2015/mills2/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2015/mills2//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2015/mills2/try.sh) script.
 
 
 <div id="2015_muth">
-## [2015/muth](2015/muth/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2015/muth//prog.c)
+## Winning entry: [2015/muth](2015/muth/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2015/muth//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2015/muth/try.sh) script.
 
 
 <div id="2015_schweikhardt">
-## [2015/schweikhardt](2015/schweikhardt/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2015/schweikhardt//prog.c)
+## Winning entry: [2015/schweikhardt](2015/schweikhardt/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2015/schweikhardt//prog.c)
 </div>
 
 [Cody](#cody) fixed the build so that `EOF` will be `-1` as the program assumes
@@ -5339,8 +5349,8 @@ Cody also added the [try.sh](%%REPO_URL%%/2015/schweikhardt/try.sh) script.
 
 
 <div id="2015_yang">
-## [2015/yang](2015/yang/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2015/yang//prog.c)
+## Winning entry: [2015/yang](2015/yang/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2015/yang//prog.c)
 </div>
 
 [Cody](#cody) fixed an unfortunate typo in the Makefile that was preventing some of the
@@ -5353,13 +5363,13 @@ He also added the [try.sh](%%REPO_URL%%/2015/yang/try.sh) script.
 
 
 <div id="2018">
-# 2018
+# [2018](2018/index.html)
 </div>
 
 
 <div id="2018_anderson">
-## [2018/anderson](2018/anderson/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2018/anderson//prog.c)
+## Winning entry: [2018/anderson](2018/anderson/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2018/anderson//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2018/anderson/try.sh) and
@@ -5367,8 +5377,8 @@ He also added the [try.sh](%%REPO_URL%%/2015/yang/try.sh) script.
 
 
 <div id="2018_algmyr">
-## [2018/algmyr](2018/algmyr/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2018/algmyr//prog.c)
+## Winning entry: [2018/algmyr](2018/algmyr/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2018/algmyr//prog.c)
 </div>
 
 
@@ -5376,8 +5386,8 @@ He also added the [try.sh](%%REPO_URL%%/2015/yang/try.sh) script.
 
 
 <div id="2018_bellard">
-## [2018/bellard](2018/bellard/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2018/bellard//prog.c)
+## Winning entry: [2018/bellard](2018/bellard/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2018/bellard//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2018/bellard/try.sh) script.
@@ -5398,8 +5408,8 @@ version as well.
 
 
 <div id="2018_burton1">
-## [2018/burton1](2018/burton1/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2018/burton1//prog.c)
+## Winning entry: [2018/burton1](2018/burton1/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2018/burton1//prog.c)
 </div>
 
 [Cody](#cody) fixed the `scripthd` script (referred to `prog` not `./prog`) and
@@ -5411,8 +5421,8 @@ Cody also added the [try.sh](%%REPO_URL%%/2018/burton1/try.sh) script which also
 
 
 <div id="2018_burton2">
-## [2018/burton2](2018/burton2/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2018/burton2//prog.c)
+## Winning entry: [2018/burton2](2018/burton2/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2018/burton2//prog.c)
 </div>
 
 [Cody](#cody) fixed the `make test` rule: it tried to run `tac(1)` (in systems
@@ -5438,8 +5448,8 @@ Finally Cody added the [try.sh](%%REPO_URL%%/2018/burton2/try.sh) script.
 
 
 <div id="2018_ciura">
-## [2018/ciura](2018/ciura/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2018/ciura//prog.c)
+## Winning entry: [2018/ciura](2018/ciura/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2018/ciura//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2018/ciura/try.sh) and
@@ -5449,8 +5459,8 @@ Internet Wayback Machine.
 
 
 <div id="2018_endoh1">
-## [2018/endoh1](2018/endoh1/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2018/endoh1//prog.c)
+## Winning entry: [2018/endoh1](2018/endoh1/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2018/endoh1//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2018/endoh1/try.sh) script which shows the
@@ -5463,8 +5473,8 @@ remarks. The input files offered includes the prog.c as the author,
 
 
 <div id="2018_endoh2">
-## [2018/endoh2](2018/endoh2/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2018/endoh2//prog.c)
+## Winning entry: [2018/endoh2](2018/endoh2/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2018/endoh2//prog.c)
 </div>
 
 [Cody](#cody) fixed the [run.sh](%%REPO_URL%%/2018/endoh2/run.sh) script (had commands that didn't
@@ -5478,8 +5488,8 @@ run the respective scripts.
 
 
 <div id="2018_ferguson">
-## [2018/ferguson](2018/ferguson/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2018/ferguson//prog.c)
+## Winning entry: [2018/ferguson](2018/ferguson/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2018/ferguson//prog.c)
 </div>
 
 [Cody](#cody), with irony well intended :-), fixed the [test.sh
@@ -5494,8 +5504,8 @@ that's probably true: let's just say that for the IOCCC I'm (Cody) a weasel! :-)
 
 
 <div id="2018_hou">
-## [2018/hou](2018/hou/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2018/hou//prog.c)
+## Winning entry: [2018/hou](2018/hou/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2018/hou//prog.c)
 </div>
 
 [Cody](#cody) added explicit linking of libm (`-lm`) for systems that do not do this
@@ -5505,8 +5515,8 @@ Cody also added the [try.sh](%%REPO_URL%%/2018/hou/try.sh) script.
 
 
 <div id="2018_mills">
-## [2018/mills](2018/mills/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2018/mills//prog.c)
+## Winning entry: [2018/mills](2018/mills/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2018/mills//prog.c)
 </div>
 
 [Cody](#cody), based on the author's remarks, made it possible to save state
@@ -5520,8 +5530,8 @@ details on the bug.
 
 
 <div id="2018_poikola">
-## [2018/poikola](2018/poikola/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2018/poikola//prog.c)
+## Winning entry: [2018/poikola](2018/poikola/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2018/poikola//prog.c)
 </div>
 
 [Cody](#cody) added the missing `docs` rule to the Makefile that forms a PDF
@@ -5536,16 +5546,16 @@ configuration).
 
 
 <div id="2018_vokes">
-## [2018/vokes](2018/vokes/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2018/vokes//prog.c)
+## Winning entry: [2018/vokes](2018/vokes/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2018/vokes//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2018/vokes/try.sh) script.
 
 
 <div id="2018_yang">
-## [2018/yang](2018/yang/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2018/yang//prog.c)
+## Winning entry: [2018/yang](2018/yang/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2018/yang//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2018/yang/try.sh) script. This script will ask
@@ -5555,13 +5565,13 @@ if the user wants to see some of the spoilers and only show them if they type
 
 
 <div id="2019">
-# 2019
+# [2019](2019/index.html)
 </div>
 
 
 <div id="2019_adamovsky">
-## [2019/adamovsky](2019/adamovsky/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2019/adamovsky//prog.c)
+## Winning entry: [2019/adamovsky](2019/adamovsky/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2019/adamovsky//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2019/adamovsky/try.sh) script and the Unlambda
@@ -5570,8 +5580,8 @@ to what can crash it - but it's not a bug, it's a feature.
 
 
 <div id="2019_burton">
-## [2019/burton](2019/burton/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2019/burton//prog.c)
+## Winning entry: [2019/burton](2019/burton/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2019/burton//prog.c)
 </div>
 
 [Cody](#cody) fixed the Makefile which had a bad character, a '%' instead of a '$' which
@@ -5594,8 +5604,8 @@ browsers/GitHub.
 
 
 <div id="2019_ciura">
-## [2019/ciura](2019/ciura/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2019/ciura//prog.c)
+## Winning entry: [2019/ciura](2019/ciura/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2019/ciura//prog.c)
 </div>
 
 [Cody](#cody) fixed an invalid bytes error in `tr` in the scripts. This does not
@@ -5620,8 +5630,8 @@ bugs.html](bugs.html#2019-ciura) for more details.
 
 
 <div id="2019_diels-grabsch1">
-## [2019/diels-grabsch1](2019/diels-grabsch1/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2019/diels-grabsch1//prog.c)
+## Winning entry: [2019/diels-grabsch1](2019/diels-grabsch1/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2019/diels-grabsch1//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2019/diels-grabsch1/try.sh) script.
@@ -5634,8 +5644,8 @@ having tarballs for each individual entry as a convenience.
 
 
 <div id="2019_diels-grabsch2">
-## [2019/diels-grabsch2](2019/diels-grabsch2/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2019/diels-grabsch2//prog.c)
+## Winning entry: [2019/diels-grabsch2](2019/diels-grabsch2/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2019/diels-grabsch2//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2019/diels-grabsch2/try.sh) script. This
@@ -5646,8 +5656,8 @@ own sha512sum value.
 
 
 <div id="2019_dogon">
-## [2019/dogon](2019/dogon/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2019/dogon//prog.c)
+## Winning entry: [2019/dogon](2019/dogon/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2019/dogon//prog.c)
 </div>
 
 [Cody](#cody) added explicit linking of libm (`-lm`) for systems that do not do this
@@ -5667,8 +5677,8 @@ else).
 
 
 <div id="2019_duble">
-## [2019/duble](2019/duble/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2019/duble//prog.c)
+## Winning entry: [2019/duble](2019/duble/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2019/duble//prog.c)
 </div>
 
 [Cody](#cody) made the `make fullscreen` more portable by not relying on
@@ -5683,8 +5693,8 @@ how to easily compile the program to a specific size. Note that `LINES` and
 
 
 <div id="2019_endoh">
-## [2019/endoh](2019/endoh/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2019/endoh//prog.c)
+## Winning entry: [2019/endoh](2019/endoh/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2019/endoh//prog.c)
 </div>
 
 As this is a backtrace quine having the optimiser enabled is not a good idea so
@@ -5700,16 +5710,16 @@ quine.
 
 
 <div id="2019_giles">
-## [2019/giles](2019/giles/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2019/giles//prog.c)
+## Winning entry: [2019/giles](2019/giles/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2019/giles//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2019/giles/try.sh) script.
 
 
 <div id="2019_karns">
-## [2019/karns](2019/karns/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2019/karns//prog.c)
+## Winning entry: [2019/karns](2019/karns/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2019/karns//prog.c)
 </div>
 
 [Cody](#cody) reported that with `-O` level > 0 this program segfaults (sometimes?). He's
@@ -5723,8 +5733,8 @@ bit more easily.
 
 
 <div id="2019_lynn">
-## [2019/lynn](2019/lynn/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2019/lynn//prog.c)
+## Winning entry: [2019/lynn](2019/lynn/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2019/lynn//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2019/lynn/try.sh) script.
@@ -5736,16 +5746,16 @@ entry existing.
 
 
 <div id="2019_mills">
-## [2019/mills](2019/mills/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2019/mills//prog.c)
+## Winning entry: [2019/mills](2019/mills/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2019/mills//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2019/mills/try.sh) script.
 
 
 <div id="2019_poikola">
-## [2019/poikola](2019/poikola/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2019/poikola//prog.c)
+## Winning entry: [2019/poikola](2019/poikola/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2019/poikola//prog.c)
 </div>
 
 [Cody](#cody) added the missing `docs` rule to the Makefile that forms a PDF
@@ -5766,8 +5776,8 @@ tested: `gnu17` was not tested but `gnu11` was so the standard was set to
 
 
 <div id="2019_yang">
-## [2019/yang](2019/yang/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2019/yang//prog.c)
+## Winning entry: [2019/yang](2019/yang/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2019/yang//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2019/yang/try.sh) script which also involved
@@ -5777,13 +5787,13 @@ shouldn't) and adding the [ioccc.txt](2019/yang/ioccc.txt) file.
 
 
 <div id="2020">
-# 2020
+# [2020](2020/index.html)
 </div>
 
 
 <div id="2020_burton">
-## [2020/burton](2020/burton/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2020/burton//prog.c)
+## Winning entry: [2020/burton](2020/burton/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2020/burton//prog.c)
 </div>
 
 [Cody](#cody) fixed the script [check_be.sh](%%REPO_URL%%/2020/burton/check_be.sh): it
@@ -5798,8 +5808,8 @@ Cody also added the [try.sh](%%REPO_URL%%/2020/burton/try.sh) script.
 
 
 <div id="2020_carlini">
-## [2020/carlini](2020/carlini/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2020/carlini//prog.c)
+## Winning entry: [2020/carlini](2020/carlini/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2020/carlini//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2020/carlini/try.sh) script which although at
@@ -5809,8 +5819,8 @@ a friend, whether that's real or imagined.
 
 
 <div id="2020_endoh2">
-## [2020/endoh2](2020/endoh2/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2020/endoh2//prog.c)
+## Winning entry: [2020/endoh2](2020/endoh2/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2020/endoh2//prog.c)
 </div>
 
 [Cody](#cody) copied the files from the spoiler.zip file (from his copy during
@@ -5821,8 +5831,8 @@ He also added the [try.sh](%%REPO_URL%%/2020/endoh2/try.sh) script.
 
 
 <div id="2020_endoh3">
-## [2020/endoh3](2020/endoh3/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2020/endoh3//prog.c)
+## Winning entry: [2020/endoh3](2020/endoh3/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2020/endoh3//prog.c)
 </div>
 
 [Cody](#cody) fixed the script [run_clock.sh](%%REPO_URL%%/2020/endoh3/run_clock.sh) which gave a
@@ -5866,8 +5876,8 @@ alt code provided by the author, Yusuke.
 
 
 <div id="2020_ferguson1">
-## [2020/ferguson1](2020/ferguson1/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2020/ferguson1//prog.c)
+## Winning entry: [2020/ferguson1](2020/ferguson1/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2020/ferguson1//prog.c)
 </div>
 
 [Cody](#cody), with intentional irony here :-), fixed formatting, links and typos in
@@ -5889,8 +5899,8 @@ and I encourage you to do so as the cake is quite picky!
 
 
 <div id="2020_ferguson2">
-## [2020/ferguson2](2020/ferguson2/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2020/ferguson2//prog.c)
+## Winning entry: [2020/ferguson2](2020/ferguson2/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2020/ferguson2//prog.c)
 </div>
 
 [Cody](#cody), with intentional irony here :-), fixed formatting, links and typos in
@@ -5916,8 +5926,8 @@ and I encourage you to do so as the cake is quite picky!
 
 
 <div id="2020_giles">
-## [2020/giles](2020/giles/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2020/giles//prog.c)
+## Winning entry: [2020/giles](2020/giles/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2020/giles//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2020/giles/try.sh) script. This script does
@@ -5933,16 +5943,16 @@ use the program to play the WAV files (and in one case `stdout`).
 
 
 <div id="2020_kurdyukov1">
-## [2020/kurdyukov1](2020/kurdyukov1/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2020/kurdyukov1//prog.c)
+## Winning entry: [2020/kurdyukov1](2020/kurdyukov1/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2020/kurdyukov1//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2020/kurdyukov1/try.sh) script.
 
 
 <div id="2020_kurdyukov2">
-## [2020/kurdyukov2](2020/kurdyukov2/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2020/kurdyukov2//prog.c)
+## Winning entry: [2020/kurdyukov2](2020/kurdyukov2/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2020/kurdyukov2//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2020/kurdyukov2/try.sh) script.
@@ -5960,8 +5970,8 @@ entry if not installed or it fails).
 
 
 <div id="2020_kurdyukov3">
-## [2020/kurdyukov3](2020/kurdyukov3/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2020/kurdyukov3//prog.c)
+## Winning entry: [2020/kurdyukov3](2020/kurdyukov3/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2020/kurdyukov3//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2020/kurdyukov3/try.sh) script.
@@ -5972,8 +5982,8 @@ more jumbled but we know of others too.
 
 
 <div id="2020_kurdyukov4">
-## [2020/kurdyukov4](2020/kurdyukov4/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2020/kurdyukov4//prog.c)
+## Winning entry: [2020/kurdyukov4](2020/kurdyukov4/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2020/kurdyukov4//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2020/kurdyukov4/try.sh) script.
@@ -5990,8 +6000,8 @@ J.R.R. Tolkien).
 
 
 <div id="2020_otterness">
-## [2020/otterness](2020/otterness/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2020/otterness//prog.c)
+## Winning entry: [2020/otterness](2020/otterness/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2020/otterness//prog.c)
 </div>
 
 
@@ -6004,8 +6014,8 @@ Cody also added the [try.sh](%%REPO_URL%%/2020/otterness/try.sh) script.
 
 
 <div id="2020_tsoj">
-## [2020/tsoj](2020/tsoj/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2020/tsoj//prog.c)
+## Winning entry: [2020/tsoj](2020/tsoj/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2020/tsoj//prog.c)
 </div>
 
 [Cody](#cody) added [alternate code](2020/tsoj/index.html#alternate-code) that will feel
@@ -6014,8 +6024,8 @@ file) but probably a lot less :-)
 
 
 <div id="2020_yang">
-## [2020/yang](2020/yang/index.html)
-### Source code: [prog.c](%%REPO_URL%%/2020/yang//prog.c)
+## Winning entry: [2020/yang](2020/yang/index.html)
+### Winning entry source code: [prog.c](%%REPO_URL%%/2020/yang//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2020/yang/try.sh) script.
