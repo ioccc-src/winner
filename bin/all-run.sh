@@ -113,7 +113,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.3 2024-04-13"
+export VERSION="1.3.4 2024-05-24"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -446,7 +446,7 @@ for YYYY in $(< "$TOP_FILE"); do
     # debug YYYY
     #
     if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[1]: starting to process year: $YYYY" 1>&2
+	echo "$0: debug[1]: for $TOOL: starting to process year: $YYYY" 1>&2
     fi
 
     # verify that YYYY is a readable directory
@@ -506,7 +506,7 @@ for YYYY in $(< "$TOP_FILE"); do
 	# debug YYYY
 	#
 	if [[ $V_FLAG -ge 3 ]]; then
-	    echo "$0: debug[3]: starting to process year/dir: $YYYY_DIR" 1>&2
+	    echo "$0: debug[3]: for $TOOL: starting to process year/dir: $YYYY_DIR" 1>&2
 	fi
 
 	# parse YYYY_DIR

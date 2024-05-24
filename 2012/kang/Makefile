@@ -38,8 +38,8 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-bitwise-op-parentheses -Wno-error
-	  -Wno-implicit-function-declaration -Wno-implicit-int -Wno-int-conversion
+CSILENCE= -Wno-bitwise-op-parentheses -Wno-error \
+	  -Wno-implicit-function-declaration -Wno-implicit-int -Wno-int-conversion \
 	  -Wno-pointer-to-int-cast -Wno-deprecated-non-prototype
 
 # Common C compiler warning flags

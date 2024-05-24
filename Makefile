@@ -179,7 +179,6 @@ diff_orig_alt:
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-# diff alt and orig
 diff_alt_orig:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
@@ -259,34 +258,58 @@ indent.c:
 # here!
 #
 help:
-	@echo "make genpath		 - form top level .top, YYYY level .year and winner .path files"
-	@echo "make genfilelist	 - generate YYYY level .filelist"
-	@echo "make verify_entry_files	 - check to be sure all files in all entries exist"
-	@echo "make sort_gitignore	 - sort .gitignore files according to rules in bin/sgi.sh"
-	@echo "make gen_authors	 - generate the top level authors.html page"
-	@echo "make gen_location	 - generate the top level location.html page"
-	@echo "make gen_years		 - generate the top level years.html page"
-	@echo "make entry_index	 - force the build of ALL winner index.html files"
-	@echo "make gen_other_html	 - build entry HTML files from markdown other than README.md"
-	@echo "make gen_year_index	 - generate year level index.html files using the"
-	@echo "make gen_top_html	 - generate a number of the top level HTML files from markdown"
-	@echo "make gen_status		 - generate status.json and status.html"
-	@echo "make quick_entry_index	 - build winner index.html files that might be out of date"
-	@echo "make find_missing_links	 - find markdown links to missing local files"
-	@echo "make quick_www		 - generate html files more quickly, checking timestamps"
-	@echo "make www		 - build html pages for web site"
+	@echo '# Rules for those who wish to expore the winning IOCCC entries:'
 	@echo
-	@echo "make untar_entry_tarball - untar all entry tarballs"
-	@echo "make untar_year_tarball	 - untar all year level tarballs"
+	@echo 'make clobber		 - Remove all temprary, compiled and constructed files from all winning IOCCC entries'
+	@echo 'make all		 - Compile all winning IOCCC entries'
 	@echo
-	@echo "make form_entry_tarball	 - form all entry compressed tarballs"
-	@echo "make form_year_tarball	 - form all IOCCC year level compressed tarballs"
-	@echo "make tar		 - build all tarballs"
+	@echo 'make alt		 - Compile all alternative executables for winning IOCCC entries'
+	@echo 'make everything		 - make all and make alt'
 	@echo
-	@echo "make gen_sitemap	 - generate the XML sitemap"
-	@echo "make timestamp		 - generate things with timestamps (status, sitemap etc.)"
+	@echo 'make diff_orig_prog	- diff original source and current source'
+	@echo 'make diff_prog_orig	- diff current source and original source'
 	@echo
-	@echo "make update		 - update everything on the web site"
+	@echo 'make diff_alt_prog	- diff alternative source and current source'
+	@echo 'make diff_prog_alt	- diff current source and alternative source'
+	@echo
+	@echo 'make diff_alt_orig	- diff alternative source and original source'
+	@echo 'make diff_orig_alt	- diff original source and alternative source'
+	@echo
+	@echo '# Rules for building a local copy of the IOCCC web site:'
+	@echo
+	@echo 'make genpath		 - form top level .top, YYYY level .year and winner .path files'
+	@echo 'make genfilelist	 - generate YYYY level .filelist'
+	@echo 'make verify_entry_files	 - check to be sure all files in all entries exist'
+	@echo 'make sort_gitignore	 - sort .gitignore files according to rules in bin/sgi.sh'
+	@echo 'make gen_authors	 - generate the top level authors.html page'
+	@echo 'make gen_location	 - generate the top level location.html page'
+	@echo 'make gen_years		 - generate the top level years.html page'
+	@echo 'make entry_index	 - force the build of ALL winner index.html files'
+	@echo 'make gen_other_html	 - build entry HTML files from markdown other than README.md'
+	@echo 'make gen_year_index	 - generate year level index.html files using the'
+	@echo 'make gen_top_html	 - generate a number of the top level HTML files from markdown'
+	@echo 'make quick_entry_index	 - build winner index.html files that might be out of date'
+	@echo 'make find_missing_links	 - find markdown links to missing local files'
+	@echo
+	@echo '# Compound make rules for building a local copy of the IOCCC web site:'
+	@echo
+	@echo 'make quick_www		 - generate html files more quickly, checking timestamps'
+	@echo 'make www		 - build html pages for web site'
+	@echo
+	@echo '# Rules that are useful only for those IOCCC judges who mainain the official IOCCC web site:'
+	@echo
+	@echo 'make untar_entry_tarball - untar all entry tarballs'
+	@echo 'make untar_year_tarball	 - untar all year level tarballs'
+	@echo
+	@echo 'make form_entry_tarball	 - form all entry compressed tarballs'
+	@echo 'make form_year_tarball	 - form all IOCCC year level compressed tarballs'
+	@echo 'make tar		 - build all tarballs'
+	@echo
+	@echo 'make gen_status		 - generate status.json and status.html'
+	@echo 'make gen_sitemap	 - generate the XML sitemap'
+	@echo 'make timestamp		 - generate things with timestamps (status, sitemap etc.)'
+	@echo
+	@echo 'make update		 - update everything in a local copy of the web site'
 
 # form the top level .top, YYYY level .year and winner level .path files
 #
@@ -302,7 +325,6 @@ genpath:
         done
 	@-if ${CMP} -s .tmp.genpath .top; then \
 	    ${RM} -f .tmp.genpath; \
-	    echo ".top already up to date"; \
 	else \
 	    ${MV} -f .tmp.genpath .top; \
 	    ${CHMOD} 0444 .top; \
@@ -323,7 +345,6 @@ genfilelist:
 	      ${SORT} -f -d -u > "$$i/.genfilelist.tmp"; \
 	    if ${CMP} -s "$$i/.genfilelist.tmp" "$$i/.filelist"; then \
 		${RM} -f "$$i/.genfilelist.tmp"; \
-		echo "$$i/.filelist already up to date"; \
 	    else \
 		${MV} -f "$$i/.genfilelist.tmp" "$$i/.filelist"; \
 		${CHMOD} 0444 "$$i/.filelist"; \
@@ -336,14 +357,14 @@ genfilelist:
 #
 verify_entry_files: ${ALL_RUN} ${CHK_ENTRY}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	${ALL_RUN} -v 3 ${CHK_ENTRY}
+	${ALL_RUN} -v 1 ${CHK_ENTRY}
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # sort .gitignore files according to rules in bin/sgi.sh
 #
 sort_gitignore: ${ALL_RUN} ${SORT_GITIGNORE}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	${ALL_RUN} -v 3 ${SORT_GITIGNORE} -v 1
+	${ALL_RUN} -v 1 ${SORT_GITIGNORE} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # generate the top level authors.html page using the
@@ -452,9 +473,15 @@ find_missing_links:
 # Well, short of pushing changes to the GitHub repo, that is.  :-)
 #
 quick_www:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	${MAKE} clobber
-	${MAKE} genpath
+	@echo '=-=-=-=-=-= IOCCC begin make $@ =-=-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin make clobber =-=-=-=-='
+	@echo '... hiding verbose output on stdout ...'
+	@${MAKE} clobber >/dev/null
+	@echo '=-=-=-=-= IOCCC complete make clobber =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin make genpath =-=-=-=-='
+	@echo '... hiding verbose output on stdout ...'
+	@${MAKE} genpath >/dev/null
+	@echo '=-=-=-=-= IOCCC complete make genpath =-=-=-=-='
 	${MAKE} genfilelist
 	${MAKE} verify_entry_files
 	${MAKE} sort_gitignore
@@ -462,21 +489,34 @@ quick_www:
 	${MAKE} gen_location
 	${MAKE} gen_years
 	${MAKE} gen_year_index
-	${MAKE} gen_other_html
 	${MAKE} gen_top_html
-	${MAKE} gen_status
 	${MAKE} quick_entry_index
+	${MAKE} gen_other_html
 	${MAKE} find_missing_links
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-=-= IOCCC complete make $@ =-=-=-=-=-='
+
+foo:
+	@echo '=-=-=-=-=-= IOCCC begin make $@ =-=-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin make sort_gitignore =-=-=-=-='
+	@echo '... hiding verbose output on stdout ...'
+	@${MAKE} sort_gitignore >/dev/null
+	@echo '=-=-=-=-= IOCCC complete make sort_gitignore =-=-=-=-='
+	@echo '=-=-=-=-=-= IOCCC complete make $@ =-=-=-=-=-='
 
 # do everything needed to build HTML content for the web site
 #
 # Well, short of pushing changes to the GitHub repo, that is.  :-)
 #
 www:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	${MAKE} clobber
-	${MAKE} genpath
+	@echo '=-=-=-=-=-= IOCCC begin make $@ =-=-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin make clobber =-=-=-=-='
+	@echo '... hiding verbose output on stdout ...'
+	@${MAKE} clobber >/dev/null
+	@echo '=-=-=-=-= IOCCC complete make clobber =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin make genpath =-=-=-=-='
+	@echo '... hiding verbose output on stdout ...'
+	@${MAKE} genpath >/dev/null
+	@echo '=-=-=-=-= IOCCC complete make genpath =-=-=-=-='
 	${MAKE} genfilelist
 	${MAKE} verify_entry_files
 	${MAKE} sort_gitignore
@@ -484,12 +524,11 @@ www:
 	${MAKE} gen_location
 	${MAKE} gen_years
 	${MAKE} gen_year_index
-	${MAKE} gen_other_html
 	${MAKE} gen_top_html
-	${MAKE} gen_status
 	${MAKE} entry_index
+	${MAKE} gen_other_html
 	${MAKE} find_missing_links
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-=-= IOCCC complete make $@ =-=-=-=-=-='
 
 # untar all entry tarballs
 #
@@ -537,6 +576,7 @@ tar:
 #
 gen_status: ${GEN_STATUS}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${MAKE} gen_top_html
 	${GEN_STATUS} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
@@ -552,6 +592,7 @@ gen_sitemap sitemap: ${GEN_SITEMAP}
 timestamp:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${MAKE} gen_status
+	${MAKE} gen_top_html
 	${MAKE} gen_sitemap
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 

@@ -39,7 +39,7 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-format -Wno-parentheses -Wno-string-plus-int \
-	  -Wno-strict-prototypes -Wno-int-in-bool-context
+	  -Wno-strict-prototypes -Wno-int-in-bool-context \
 	  -Wno-misleading-indentation
 
 # Common C compiler warning flags
