@@ -30,7 +30,7 @@ on an IOCCC entry by entry basis.
 
 
 <div id="1984">
-# [1984](1984/index.html)
+# [1984 - The 1st IOCCC](1984/index.html)
 </div>
 
 
@@ -173,7 +173,7 @@ Repo](https://github.com/dspinellis/unix-history-repo/tree/Research-Release).
 
 
 <div id="1985">
-# [1985](1985/index.html)
+# [1985 - The 2nd IOCCC](1985/index.html)
 </div>
 
 
@@ -371,7 +371,7 @@ Cody also added the [try.sh](%%REPO_URL%%/1985/sicherman/try.sh) and
 
 
 <div id="1986">
-# [1986](1986/index.html)
+# [1986 - The 3rd IOCCC](1986/index.html)
 </div>
 
 
@@ -624,7 +624,7 @@ There might have been other changes as well.
 
 
 <div id="1987">
-# [1987](1987/index.html)
+# [1987 - The 4th IOCCC](1987/index.html)
 </div>
 
 
@@ -747,7 +747,7 @@ unlikely(?) but nevertheless suggested case that `putchar(3)` is not available.
 
 
 <div id="1988">
-# [1988](1988/index.html)
+# [1988 - The 5th IOCCC](1988/index.html)
 </div>
 
 
@@ -929,7 +929,7 @@ not strictly necessary but nonetheless more correct, even if not warned against.
 
 
 <div id="1989">
-# [1989](1989/index.html)
+# [1989 - The 6th IOCCC](1989/index.html)
 </div>
 
 
@@ -1208,7 +1208,7 @@ environmental variable; see the index.html for details.
 
 
 <div id="1990">
-# [1990](1990/index.html)
+# [1990 - The 7th IOCCC](1990/index.html)
 </div>
 
 
@@ -1444,7 +1444,7 @@ Cody also added the [try.sh](%%REPO_URL%%/1990/westley/try.sh) script.
 
 
 <div id="1991">
-# [1991](1991/index.html)
+# [1991 - The 8th IOCCC](1991/index.html)
 </div>
 
 
@@ -1734,7 +1734,7 @@ should have been removed.
 
 
 <div id="1992">
-# [1992](1992/index.html)
+# [1992 - The 9th IOCCC](1992/index.html)
 </div>
 
 
@@ -1827,7 +1827,7 @@ generated.
 [Cody](#cody) fixed this to compile with modern systems. Note that in 1996 a bug fix was
 applied to the code, provided as the alt code as that version is not obfuscated.
 Thus Cody's fix applies to the original entry. The problems were that `malloc.h`
-is not the correct header file now (at least in some systems?) and a non-void
+is not the correct header file now (at least in some systems) and a non-void
 (implicit `int`) function returning without a value. That function was changed to
 return `void`.
 
@@ -2068,7 +2068,7 @@ encourage you to try the original without two args :-)
 
 
 <div id="1993">
-# [1993](1993/index.html)
+# [1993 - The 10th IOCCC](1993/index.html)
 </div>
 
 
@@ -2240,7 +2240,7 @@ Cody also added the [try.sh](%%REPO_URL%%/1993/vanb/try.sh) script.
 
 
 <div id="1994">
-# [1994](1994/index.html)
+# [1994 - The 11th IOCCC](1994/index.html)
 </div>
 
 
@@ -2451,7 +2451,7 @@ along the lines of the [try.sh](%%REPO_URL%%/1994/westley/try.sh) script.
 
 
 <div id="1995">
-# [1995](1995/index.html)
+# [1995 - The 12th IOCCC](1995/index.html)
 </div>
 
 
@@ -2573,7 +2573,7 @@ Cody also added the [try.sh](%%REPO_URL%%/1995/vanschnitz/try.sh) script.
 
 
 <div id="1996">
-# [1996](1996/index.html)
+# [1996 - The 13th IOCCC](1996/index.html)
 </div>
 
 
@@ -2583,7 +2583,8 @@ Cody also added the [try.sh](%%REPO_URL%%/1995/vanschnitz/try.sh) script.
 </div>
 
 [Cody](#cody) fixed a segfault in this program that prevented it from working right and
-also fixed an infinite loop in the try commands.
+also fixed an infinite loop in the try commands. This infinite loop prevented it
+from working with some systems or compilers which we noted a long time ago.
 
 The problem with the infinite loop is that the file `august.oc` had to have
 lines starting with `#` removed and it was not being done. After this is done
@@ -2612,8 +2613,7 @@ the fix was wrong.
 
 Cody also made the recommended change of the author to make it so that each
 number is printed on a line by itself rather than having a long string of
-numbers on the same line. This was not put in an alternate version but perhaps
-it should be.
+numbers on the same line.
 
 Cody also added the [try.sh](%%REPO_URL%%/1996/dalbec/try.sh) script.
 
@@ -2624,10 +2624,9 @@ Cody also added the [try.sh](%%REPO_URL%%/1996/dalbec/try.sh) script.
 </div>
 
 [Cody](#cody) provided an [alternate version](%%REPO_URL%%/1996/eldby/eldby.alt.c) which uses
-`usleep()` in between writing the output to make it easier to see what is going
-on with faster systems and importantly also for those who are sensitive to text
-flashing by rapidly (it affects him too but he also thinks it moves too fast
-nowadays anyway). We recommend that you try the alternate version first due to
+`usleep()` in between writing the output to make it easier to see what it looked
+like back in 1996 with modern systems and importantly also for those who are sensitive to text
+flashing by rapidly. We recommend that you try the alternate version first due to
 these reasons.
 
 
@@ -2738,7 +2737,7 @@ provided by the author, Cody added '.sh' to the `clock[1-3].sh` scripts.
 
 
 <div id="1998">
-# [1998](1998/index.html)
+# [1998 - The 14th IOCCC](1998/index.html)
 </div>
 
 
@@ -3046,7 +3045,7 @@ commands that we recommended.
 
 
 <div id="2000">
-# [2000](2000/index.html)
+# [2000 - The 15th IOCCC](2000/index.html)
 </div>
 
 
@@ -3249,7 +3248,7 @@ details) the source code is now executable by default.
 
 
 <div id="2001">
-# [2001](2001/index.html)
+# [2001 - The 16th IOCCC](2001/index.html)
 </div>
 
 
@@ -3576,7 +3575,7 @@ described in the index.html, based on the author's remarks.
 
 
 <div id="2004">
-# [2004](2004/index.html)
+# [2004 - The 17th IOCCC](2004/index.html)
 </div>
 
 
@@ -3867,7 +3866,7 @@ just to make it a bit easier to compile.
 
 
 <div id="2005">
-# [2005](2005/index.html)
+# [2005 - The 18th IOCCC](2005/index.html)
 </div>
 
 
@@ -4154,7 +4153,7 @@ if one runs it from another directory, specifying the directory, it'll not catch
 
 
 <div id="2006">
-# [2006](2006/index.html)
+# [2006 - The 19th IOCCC](2006/index.html)
 </div>
 
 
@@ -4351,7 +4350,7 @@ We're not able to test this.
 
 
 <div id="2011">
-# [2011](2011/index.html)
+# [2011 - The 20th IOCCC](2011/index.html)
 </div>
 
 
@@ -4523,7 +4522,7 @@ eventually dies.
 
 
 <div id="2012">
-# [2012](2012/index.html)
+# [2012 - The 21st IOCCC](2012/index.html)
 </div>
 
 
@@ -4739,7 +4738,7 @@ it easier for those who do not know how, and to make it more obvious to try it.
 
 
 <div id="2013">
-# [2013](2013/index.html)
+# [2013 - The 22nd IOCCC](2013/index.html)
 </div>
 
 
@@ -4995,7 +4994,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2013/morgan1/try.sh) script.
 
 
 <div id="2014">
-# [2014](2014/index.html)
+# [2014 - The 23rd IOCCC](2014/index.html)
 </div>
 
 
@@ -5177,7 +5176,7 @@ output.
 
 
 <div id="2015">
-# [2015](2015/index.html)
+# [2015 - The 24th IOCCC](2015/index.html)
 </div>
 
 
@@ -5363,7 +5362,7 @@ He also added the [try.sh](%%REPO_URL%%/2015/yang/try.sh) script.
 
 
 <div id="2018">
-# [2018](2018/index.html)
+# [2018 - The 25th IOCCC](2018/index.html)
 </div>
 
 
@@ -5565,7 +5564,7 @@ if the user wants to see some of the spoilers and only show them if they type
 
 
 <div id="2019">
-# [2019](2019/index.html)
+# [2019 - The 26th IOCCC](2019/index.html)
 </div>
 
 
@@ -5787,7 +5786,7 @@ shouldn't) and adding the [ioccc.txt](2019/yang/ioccc.txt) file.
 
 
 <div id="2020">
-# [2020](2020/index.html)
+# [2020 - The 27th IOCCC](2020/index.html)
 </div>
 
 
@@ -5989,14 +5988,18 @@ more jumbled but we know of others too.
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2020/kurdyukov4/try.sh) script.
 
 Cody also added from [2019/mills](2019/mills/index.html) the text file
-[Shakespeare.txt](2020/kurdyukov4/Shakespeare.txt) as we are considering to
-have each entry have a tarball with the entry by itself.
+[Shakespeare.txt](2020/kurdyukov4/Shakespeare.txt) as we now provide a tarball
+of each entry by itself.
 
-Also, to explain the confusing to most people award, Cody gave a quick
-translation of `lámatyávë`, which comes from History of Middle-earth [HoMe],
-volume X, Morgoth's Ring, which he also has (and which is part of the 12 volume
-set by the late Christopher Tolkien, son and literary executor and heir to
-J.R.R. Tolkien).
+Also, as a fellow Tolkienist, to explain the confusing (to most people) award
+title, Cody gave a quick translation of `lámatyávë`, which comes from [Morgoth's
+Ring](https://en.wikipedia.org/wiki/Morgoth%27s_Ring), volume X of the 12
+volume [History of
+Middle-earth](https://en.wikipedia.org/wiki/The_History_of_Middle-earth) (known
+to us Tolkienists as `HoMe`), which he naturally :-) has, by the late and great
+[Christopher Tolkien](https://en.wikipedia.org/wiki/Christopher_Tolkien), son
+and literary executor and heir to [J.R.R.
+Tolkien](https://www.tolkienestate.com/life/biography/).
 
 
 <div id="2020_otterness">
@@ -6145,7 +6148,7 @@ wish to **especially thank**.
 ### Authors
 </div>
 
-A good number of the [wining entries of the
+A good number of the [winning entries of the
 IOCCC](authors.html) tested, identified and helped correct
 and/or improve the write-ups of fellow IOCCC entries for the year that they won.
 The list of those entries is too long to mention: nevertheless the [IOCCC
@@ -6193,7 +6196,8 @@ from the SQL file).
 
 Additionally Cody greatly improved the manifest of the winning entries and
 checked that the generated html files, index.html and otherwise, look well and
-presentable.
+presentable and suggested a CSS rule for `<img>` to  make images more responsive
+on smaller screens.
 
 **THANK YOU VERY MUCH** for your extensive efforts in helping improve the IOCCC
 presentation of past IOCCC entries and fixing almost all past entries for modern
