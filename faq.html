@@ -463,6 +463,7 @@ other inconsistencies with the original entry?</a></li>
 <li><a href="#faq6_11">6.11 - Am I allowed to use IOCCC content?</a></li>
 <li><a href="#faq6_12">6.12 - What is Mastodon and why does IOCCC use it?</a></li>
 <li><a href="#faq6_13">6.13 - How may I find my author handle?</a></li>
+<li><a href="#faq6_14">6.14 - How do I set certain tabstops for viewing source code in vi(m)?</a></li>
 </ul>
 <h1 id="the-ioccc-faq">The IOCCC FAQ</h1>
 <div id="faq0">
@@ -737,11 +738,11 @@ See also <a href="https://spec.commonmark.org/current/">CommonMark Spec</a>.</p>
 </div>
 </div>
 <p>One day (1984 March 23 to be exact), Larry Bassel and I (Landon Curt
-Noll) were working for National Semiconductor’s Genix porting group, we
+Noll) were working for National Semiconductor’s Genix porting group, and we
 were both in our offices trying to fix some very broken code.</p>
 <p>Larry had been trying to fix a bug in the classic Bourne shell (C code <code>#define</code>d
-to death to sort of look like Algol) and I had been working on the finger
-program from early BSD (a bug ridden finger implementation to be sure).</p>
+to death to sort of look like Algol) and I had been working on the <code>finger(1)</code>
+program from early BSD (a bug ridden <code>finger</code> implementation to be sure).</p>
 <p>We happened to both wander (at the same time) out to the hallway
 in Building 7C to clear our heads.</p>
 <p>We began to compare notes: ‘<em>You won’t believe the code I am trying to fix</em>’.</p>
@@ -795,7 +796,7 @@ and the tradition continues as the longest running contest on the Internet.</p>
 </div>
 <p>Some years, such as 1997, 1999, 2002-2003, 2007-2010, 2016-2017, 2021-2023, no IOCCC was held.</p>
 <p>While we try to hold the IOCCC every year, sometime the other demands on the IOCCC judges
-so not permit us to hold a new IOCCC.</p>
+do not permit us to hold a new IOCCC.</p>
 <p>The pause during the 2021-2023 period was due to the IOCCC judges developing tools to
 make is much more likely for the IOCCC to be held in a yearly basis later on.</p>
 <div id="faq1_2">
@@ -2908,6 +2909,10 @@ and topics like science, technology, <a href="https://en.wikipedia.org/wiki/Free
 have a good home. The <a href="https://fosstodon.org/@fosstodon">fosstodon.org</a> folk made the IOCCC feel welcome.</p>
 <p>While using Mastodon is free, the <a href="judges.html">IOCCC judges</a> are pleased to
 <a href="https://hub.fosstodon.org/support/">support the Fosstodon Hub</a>.</p>
+<p>If you have a phone or tablet there is also an official app that you can get
+from the App Store or whatever equivalent your device has. Please note that the
+app does not at this time seem to give push notifications when someone you
+follow posts something so you will have to check the IOCCC feed manually.</p>
 <div id="faq6_13">
 <div id="find_author_handle">
 <h3 id="faq-6.13-how-may-i-find-my-author-handle">FAQ 6.13: How may I find my author handle?</h3>
@@ -2932,6 +2937,17 @@ and/or correct IOCCC author information.</p>
 <p>See <a href="#author_json">FAQ 6.6</a> for information about the contents of these JSON file and
 how they are used.</p>
 <p>See <a href="#terms">FAQ 6.9</a> for more information on terms such as <em>author</em>, <em>entry</em>, and <em>submission</em>.</p>
+<div id="faq6_14">
+<div id="tabstops">
+<h3 id="faq-6.14-how-do-i-set-certain-tabstops-for-viewing-source-code-in-vim">FAQ 6.14: How do I set certain tabstops for viewing source code in vi(m)?</h3>
+</div>
+</div>
+<p>Sometimes an author will state that for best viewing purposes you should have
+your tabstop set at say 4 or 8. If you use vim or vi or vim in no compatible
+mode you can do this easily: make sure you’re in command mode (in most cases you
+can hit ESC to do this) and then type the command:</p>
+<pre><code>    :set tabstop=4</code></pre>
+<p>where <code>4</code> is the value you wish to set the tabstop to.</p>
 <hr style="width:10%;text-align:left;margin-left:0">
 <p>Jump to: <a href="#">top</a></p>
 <!--
