@@ -2575,8 +2575,7 @@ feeling a bit too confident, cocky or even happy :-)</p>
 <h3 id="winning-entry-source-code-dlowe.c-1">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/dlowe//dlowe.c">dlowe.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> fixed this to compile with more recent perl versions; the symbol that’s now
-<code>PL_na</code> was once <code>na</code>. He notes that this entry crashes under macOS but it works
-under Linux after this change.</p>
+<code>PL_na</code> was once <code>na</code>.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/dlowe/try.sh">try.sh</a> script.</p>
 <div id="2000_jarijyrki">
 <h2 id="winning-entry-2000jarijyrki">Winning entry: <a href="2000/jarijyrki/index.html">2000/jarijyrki</a></h2>
@@ -2589,8 +2588,10 @@ includes of <code>Xlib.h</code> and <code>keysym.h</code>.</p>
 <h3 id="winning-entry-source-code-natori.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/natori//natori.c">natori.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> fixed this for modern compilers. Depending on the compiler it would either
-segfault when run or not compile at all (<code>gcc</code> and <code>clang</code> respectively).</p>
-<p>Cody also provided alternate code that supports the southern hemisphere.</p>
+segfault when run or not compile at all (<code>gcc</code> and <code>clang</code> respectively). The
+compiler fix is due to <code>clang</code> being more strict about arg types to <code>main()</code>.</p>
+<p>Cody also provided <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/natori/natori.alt.c">alternate code</a> that
+supports the southern hemisphere, based on the author’s remarks.</p>
 <p>Cody also provided the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/natori/try.sh">try.sh</a> and
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/natori/try.alt.sh">try.alt.sh</a> scripts that show the Moon phase in
 artistic ways. It is recommended one try both a number of times in a row on
@@ -2604,7 +2605,7 @@ itself a one-line like the code is in the original entry. Now it looks much more
 like the original entry but with the two fixes.</p>
 <p>Finally Cody fixed the Makefile that had the <code>-Wno-foo</code> options in the <code>CDEFINE</code>
 variable which although works it is incongruent with the other Makefiles and is
-more confusing (even if not confusing).</p>
+more confusing (though not really).</p>
 <div id="2000_primenum">
 <h2 id="winning-entry-2000primenum">Winning entry: <a href="2000/primenum/index.html">2000/primenum</a></h2>
 <h3 id="winning-entry-source-code-primenum.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/primenum//primenum.c">primenum.c</a></h3>
@@ -2624,8 +2625,9 @@ more confusing (even if not confusing).</p>
 the screen with:</p>
 <pre><code>    Black position and direction: illegal</code></pre>
 <p>This was fixed by having the <code>scanf(3)</code> read in a string and then use <code>atoi(3)</code>
-on it to assign to the <code>int</code>s, much like with <code>1987/lievaart</code>. The strings are
-<code>char[5]</code> and the <code>%</code> specifier is <code>%4s</code> which is enough for the game.</p>
+on it to assign to the <code>int</code>s, much like with <a href="#1987_lievaart">1987/lievaart</a>.
+The strings are <code>char[5]</code> and the <code>%</code> specifier is <code>%4s</code> which is enough for the
+game.</p>
 <div id="2000_schneiderwent">
 <h2 id="winning-entry-2000schneiderwent">Winning entry: <a href="2000/schneiderwent/index.html">2000/schneiderwent</a></h2>
 <h3 id="winning-entry-source-code-schneiderwent.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/schneiderwent//schneiderwent.c">schneiderwent.c</a></h3>
@@ -2637,12 +2639,16 @@ on it to assign to the <code>int</code>s, much like with <code>1987/lievaart</co
 </div>
 <p><a href="#cody">Cody</a> fixed the code and added an appropriate make rule so that the
 <a href="https://www.libsdl.org">SDL</a> version works independent from the curses version
-(using the same code).</p>
-<p>Cody also added alt code to allow one to slow down the code. This code also, at
-least for the curses mode, allows one to quit at any time by pressing ‘q’. See
-below for more details.</p>
+(using the same code). See below for an interesting problem that occurred that
+had to be resolved for SDL1.</p>
+<p>Cody also added <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/thadgavin/thadgavin.alt.c">alt code</a> to allow
+one to slow down the code to get a better idea of what the program looked like
+back in 2000, with modern systems. This code also, at least for the curses mode, allows
+one to quit at any time by pressing ‘q’. Note that this alternate version only
+will impact the curses and the SDL versions as Cody does not have a DOS system
+to test the other version in.</p>
 <p>Due to a terrible design choice of the SDL1 developers something had to be
-changed. As was noted in the log:</p>
+changed. As was noted in the log at the time:</p>
 <pre><code>    The SDL version did not work for a number of reasons. First of all the
     code requires that SDL is defined. Second the path[sic] wrong header file was
     included. Third the SDL1 developers thought it would be a great idea
@@ -2663,16 +2669,11 @@ changed. As was noted in the log:</p>
         make: *** [thadgavin_sdl] Error 1
 
     Thus main() was changed to &#39;int main(int argc, char **argv)&#39;.</code></pre>
-<p>Cody also added an alternate version to help see what is going on in more modern
-systems and in case you’re sensitive to rapidly moving swirling. See the
-index.html for details on that. Note that this alternate version only will impact
-the curses and the SDL versions as Cody does not have a DOS system to test the
-other version in.</p>
 <div id="2000_tomx">
 <h2 id="winning-entry-2000tomx">Winning entry: <a href="2000/tomx/index.html">2000/tomx</a></h2>
 <h3 id="winning-entry-source-code-tomx.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/tomx//tomx.c">tomx.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> added the <a href="2000/tomx/index.html#alternate-code">alt code</a> based on the
+<p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/tomx/tomx.alt.c">alt code</a> based on the
 author’s remarks with a fix for modern systems and he also added the two
 scripts, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/tomx/try.sh">try.sh</a> and <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/tomx/try.alt.sh">try.alt.sh</a> for
 the main code and the alt code respectively.</p>
@@ -2689,7 +2690,7 @@ details) the source code is now executable by default.</p>
 segfaulted and once that was fixed only the binary was modified; it was not run
 but according to the author’s remarks it should be executed). He managed to do
 this with Linux but it will not work with any system that does not allow one to
-compile 32-bit ELF binaries. See <a href="bugs.html#2001anonymous-readmemd">bugs.html</a> for
+compile 32-bit ELF binaries. See <a href="bugs.html#2001_anonymous">2001/anonymous in bugs.html</a> for
 why this is; <em>this is <strong>not</strong> a bug, it’s a feature</em> inherent in what it does!</p>
 <p>The following had to be done to fix this:</p>
 <ul>
@@ -2699,7 +2700,8 @@ this prevented <code>main()</code> from entering an infinite recursive loop.</li
 </ul>
 <p>Without these it would crash and prevent modification of the 32-bit
 <a href="https://en.wikipedia.org/wiki/Executable_and_Linkable_Format">ELF</a> (not elf :-) )
-binary. But again see <a href="bugs.html">bugs.html</a> here.</p>
+binary. But again see <a href="bugs.html#2001_anonymous">2001/anonymous in bugs.html</a>
+for this.</p>
 <p>These also had to be done:</p>
 <ul>
 <li>when <code>open()</code>ing the file the file descriptor had to be saved so it could be
@@ -2734,11 +2736,12 @@ wish to see, try the following commands from the <code>2001/anonymous</code> dir
 <pre><code>    git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..4bc03de321612869aebf855850c6500df95cb6ef anonymous.c</code></pre>
 <p>or to not use <code>git</code>:</p>
 <pre><code>    make diff_orig_prog</code></pre>
-<p>Cody also added a <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.bed.c">program</a>
-like <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.ten.c">anonymous.ten.c</a>
-<a href="https://en.wikipedia.org/wiki/Ten_Green_Bottles">Ten Green Bottles</a> but which
-sings <a href="https://allnurseryrhymes.com/ten-in-the-bed/">Ten in the Bed</a> instead.</p>
-<p>As well he added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/try.sh">try.sh</a> so that one can
+<p>Cody also added a <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.bed.c">program</a> like
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.ten.c">anonymous.ten.c</a> which ‘sings’ the
+lyrics to <a href="https://en.wikipedia.org/wiki/Ten_Green_Bottles">Ten Green Bottles</a>
+but which sings <a href="https://allnurseryrhymes.com/ten-in-the-bed/">Ten in the Bed</a>
+instead.</p>
+<p>As well he added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/try.sh">try.sh</a> script so that one can
 attempt to use the program as it was designed but if compiling as 32-bit fails
 it will at least run the supplementary program as a 64-bit program directly.</p>
 <div id="2001_bellard">

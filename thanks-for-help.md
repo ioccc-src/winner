@@ -3103,8 +3103,7 @@ He also added the [try.sh](%%REPO_URL%%/2000/dhyang/try.sh) script.
 </div>
 
 [Cody](#cody) fixed this to compile with more recent perl versions; the symbol that's now
-`PL_na` was once `na`. He notes that this entry crashes under macOS but it works
-under Linux after this change.
+`PL_na` was once `na`.
 
 Cody also added the [try.sh](%%REPO_URL%%/2000/dlowe/try.sh) script.
 
@@ -3124,9 +3123,11 @@ includes of `Xlib.h` and `keysym.h`.
 </div>
 
 [Cody](#cody) fixed this for modern compilers. Depending on the compiler it would either
-segfault when run or not compile at all (`gcc` and `clang` respectively).
+segfault when run or not compile at all (`gcc` and `clang` respectively). The
+compiler fix is due to `clang` being more strict about arg types to `main()`.
 
-Cody also provided alternate code that supports the southern hemisphere.
+Cody also provided [alternate code](%%REPO_URL%%/2000/natori/natori.alt.c) that
+supports the southern hemisphere, based on the author's remarks.
 
 Cody also provided the [try.sh](%%REPO_URL%%/2000/natori/try.sh) and
 [try.alt.sh](%%REPO_URL%%/2000/natori/try.alt.sh) scripts that show the Moon phase in
@@ -3143,7 +3144,7 @@ like the original entry but with the two fixes.
 
 Finally Cody fixed the Makefile that had the `-Wno-foo` options in the `CDEFINE`
 variable which although works it is incongruent with the other Makefiles and is
-more confusing (even if not confusing).
+more confusing (though not really).
 
 
 <div id="2000_primenum">
@@ -3177,8 +3178,9 @@ the screen with:
 ```
 
 This was fixed by having the `scanf(3)` read in a string and then use `atoi(3)`
-on it to assign to the `int`s, much like with `1987/lievaart`. The strings are
-`char[5]` and the `%` specifier is `%4s` which is enough for the game.
+on it to assign to the `int`s, much like with [1987/lievaart](#1987_lievaart).
+The strings are `char[5]` and the `%` specifier is `%4s` which is enough for the
+game.
 
 
 <div id="2000_schneiderwent">
@@ -3196,14 +3198,18 @@ on it to assign to the `int`s, much like with `1987/lievaart`. The strings are
 
 [Cody](#cody) fixed the code and added an appropriate make rule so that the
 [SDL](https://www.libsdl.org) version works independent from the curses version
-(using the same code).
+(using the same code).  See below for an interesting problem that occurred that
+had to be resolved for SDL1.
 
-Cody also added alt code to allow one to slow down the code. This code also, at
-least for the curses mode, allows one to quit at any time by pressing 'q'. See
-below for more details.
+Cody also added [alt code](%%REPO_URL%%/2000/thadgavin/thadgavin.alt.c) to allow
+one to slow down the code to get a better idea of what the program looked like
+back in 2000, with modern systems. This code also, at least for the curses mode, allows
+one to quit at any time by pressing 'q'. Note that this alternate version only
+will impact the curses and the SDL versions as Cody does not have a DOS system
+to test the other version in.
 
 Due to a terrible design choice of the SDL1 developers something had to be
-changed. As was noted in the log:
+changed. As was noted in the log at the time:
 
 ```
     The SDL version did not work for a number of reasons. First of all the
@@ -3228,19 +3234,13 @@ changed. As was noted in the log:
     Thus main() was changed to 'int main(int argc, char **argv)'.
 ```
 
-Cody also added an alternate version to help see what is going on in more modern
-systems and in case you're sensitive to rapidly moving swirling. See the
-index.html for details on that. Note that this alternate version only will impact
-the curses and the SDL versions as Cody does not have a DOS system to test the
-other version in.
-
 
 <div id="2000_tomx">
 ## Winning entry: [2000/tomx](2000/tomx/index.html)
 ### Winning entry source code: [tomx.c](%%REPO_URL%%/2000/tomx//tomx.c)
 </div>
 
-[Cody](#cody) added the [alt code](2000/tomx/index.html#alternate-code) based on the
+[Cody](#cody) added the [alt code](%%REPO_URL%%/2000/tomx/tomx.alt.c) based on the
 author's remarks with a fix for modern systems and he also added the two
 scripts, [try.sh](%%REPO_URL%%/2000/tomx/try.sh) and [try.alt.sh](%%REPO_URL%%/2000/tomx/try.alt.sh) for
 the main code and the alt code respectively.
@@ -3263,7 +3263,7 @@ details) the source code is now executable by default.
 segfaulted and once that was fixed only the binary was modified; it was not run
 but according to the author's remarks it should be executed). He managed to do
 this with Linux but it will not work with any system that does not allow one to
-compile 32-bit ELF binaries. See [bugs.html](bugs.html#2001anonymous-readmemd) for
+compile 32-bit ELF binaries. See [2001/anonymous in bugs.html](bugs.html#2001_anonymous) for
 why this is; _this is **not** a bug, it's a feature_ inherent in what it does!
 
 The following had to be done to fix this:
@@ -3274,7 +3274,8 @@ this prevented `main()` from entering an infinite recursive loop.
 
 Without these it would crash and prevent modification of the 32-bit
 [ELF](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) (not elf :-) )
-binary. But again see [bugs.html](bugs.html) here.
+binary. But again see [2001/anonymous in bugs.html](bugs.html#2001_anonymous)
+for this.
 
 These also had to be done:
 
@@ -3334,12 +3335,13 @@ or to not use `git`:
     make diff_orig_prog
 ```
 
-Cody also added a [program](%%REPO_URL%%/2001/anonymous/anonymous.bed.c)
-like [anonymous.ten.c](%%REPO_URL%%/2001/anonymous/anonymous.ten.c)
-[Ten Green Bottles](https://en.wikipedia.org/wiki/Ten_Green_Bottles) but which
-sings [Ten in the Bed](https://allnurseryrhymes.com/ten-in-the-bed/) instead.
+Cody also added a [program](%%REPO_URL%%/2001/anonymous/anonymous.bed.c) like
+[anonymous.ten.c](%%REPO_URL%%/2001/anonymous/anonymous.ten.c) which 'sings' the
+lyrics to [Ten Green Bottles](https://en.wikipedia.org/wiki/Ten_Green_Bottles)
+but which sings [Ten in the Bed](https://allnurseryrhymes.com/ten-in-the-bed/)
+instead.
 
-As well he added the [try.sh](%%REPO_URL%%/2001/anonymous/try.sh) so that one can
+As well he added the [try.sh](%%REPO_URL%%/2001/anonymous/try.sh) script so that one can
 attempt to use the program as it was designed but if compiling as 32-bit fails
 it will at least run the supplementary program as a 64-bit program directly.
 
