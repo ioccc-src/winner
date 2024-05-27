@@ -203,6 +203,7 @@ clean:
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
 	${RM} -rf *.dSYM
+	${RM} -f obfus.c
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
