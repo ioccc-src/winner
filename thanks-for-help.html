@@ -2280,20 +2280,21 @@ error due to the redefinition of <code>main</code> but the <code>-I</code> optio
 working <code>/usr/include/rrno.h</code> is found first, which shouldn’t cause any problems
 on other systems (the other file is
 <code>gcc-lib/sparc-sun-solaris2.5/2.7.2/include/errno.h</code>). Thus Cody also added this to
-the Makefile despite the fact that very few probably use Solaris nowadays.</p>
+the Makefile for the (likely?) few who still use Solaris.</p>
 <div id="1996_schweikh2">
 <h2 id="winning-entry-1996schweikh2">Winning entry: <a href="1996/schweikh2/index.html">1996/schweikh2</a></h2>
 <h3 id="winning-entry-source-code-schweikh2.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/schweikh2/schweikh2.c">schweikh2.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/schweikh2/try.sh">try.sh</a> script with a few commands to try
-along with a shorter version of something the author suggested one try (it is
-suggested that one try the longer version too but it will run in an infinite
-loop so having it in a script is less desired).</p>
+<p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/schweikh2/try.sh">try.sh</a> script with
+a few commands to try along with a shorter version of something the author
+suggested one try (at the end of the script it prompts if you wish to run the
+author’s idea, with a <code>sleep</code> and <code>echo</code> in between to help one distinguish the
+output better, with the warning that it is an infinite loop).</p>
 <div id="1996_schweikh3">
 <h2 id="winning-entry-1996schweikh3">Winning entry: <a href="1996/schweikh3/index.html">1996/schweikh3</a></h2>
 <h2 id="source-code-schweikh3.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/schweikh3/schweikh3.c">schweikh3.c</a></h2>
 </div>
-<p><a href="#cody">Cody</a> updated the Makefile so that if it fails to compile it will try he
+<p><a href="#cody">Cody</a> updated the Makefile so that if it fails to compile it will try the
 method suggested for SunOS rather than having to update the Makefile manually or
 running a more complicated command: now one can just run <code>make</code>.</p>
 <div id="1996_westley">
@@ -2305,13 +2306,13 @@ variables. Although the scripts showed correct output, it somewhat lessened the
 usability because they segfaulted and showed (an) environmental variable,
 interspersed with the output of the program. With the fix they no longer have
 this problem. If <code>argc &lt; 5</code> (<code>argv[4]</code> is referenced) it will not do anything
-and it will not segfault either - this was caused by the body of the for() loop
+and it will not segfault either - this was caused by the body of the <code>for()</code> loop
 which is now empty (it doesn’t appear to be needed at all at least modernly).
 Note that you should check the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/westley/westley.alt.c">westley.alt.c</a> file
 when reading the author’s comments. To see how to use the original, see the
 index.html file.</p>
-<p>Cody also added the two scripts, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/westley/try.sh">try.sh</a> and
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/westley/try.alt.sh">try.alt.sh</a> to automate showing the different
+<p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/westley/try.sh">try.sh</a> and
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/westley/try.alt.sh">try.alt.sh</a> scripts to automate showing the different
 clocks, both with the fixed version and the original (alt) version.</p>
 <p>Also, to fix any potential problem with displaying in GitHub the scripts
 provided by the author, Cody added ‘.sh’ to the <code>clock[1-3].sh</code> scripts.</p>
@@ -2320,11 +2321,11 @@ provided by the author, Cody added ‘.sh’ to the <code>clock[1-3].sh</code> s
 </div>
 <div id="1998_banks">
 <h2 id="winning-entry-1998banks">Winning entry: <a href="1998/banks/index.html">1998/banks</a></h2>
-<h3 id="winning-entry-source-code-banks.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/banks/banks.c">/banks.c</a></h3>
+<h3 id="winning-entry-source-code-banks.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/banks/banks.c">banks.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> improved the Makefile to allow for easier redefining the control
+<p><a href="#cody">Cody</a> improved the <code>Makefile</code> to allow for easier redefining the control
 keys and time step that the author set up.</p>
-<p>Cody also set up the Makefile to have an alt build (using the same code) for those
+<p>Cody also set up the <code>Makefile</code> to have an alt build (using the same code) for those
 who do not have a page up or page down key and added the
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/banks/keysym.h">keysym.h</a> header file as a reference for other keys one
 can use if they wish to modify the controls. One can certainly do this even if
@@ -2385,7 +2386,7 @@ program, a local pootifier of web pages and a CGI pootifier. See <a href="1998/d
 remarks</a> for more details on the
 pootify scripts.</p>
 <div id="1998_dloweneil">
-<h2 id="winning-entry-c1998dloweneil">Winning entry: <a href="1998/dloweneil/index.html">c1998/dloweneil</a></h2>
+<h2 id="winning-entry-1998dloweneil">Winning entry: <a href="1998/dloweneil/index.html">1998/dloweneil</a></h2>
 <h3 id="winning-entry-source-code-dloweneil.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/dloweneil/dloweneil.c">dloweneil.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/dloweneil/dloweneil.alt.c">alt code</a> which has vi(m) movement
@@ -2397,7 +2398,7 @@ space) keys as well as allowing one to quit the game.</p>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/dorssel/try.sh">try.sh</a> script.</p>
 <div id="1998_fanf">
-<h2 id="winning-entry-1998fanf.html">Winning entry: <a href="1998/fanf/index.html">1998/fanf.html</a></h2>
+<h2 id="winning-entry-1998fanf">Winning entry: <a href="1998/fanf/index.html">1998/fanf</a></h2>
 <h3 id="winning-entry-source-code-fanf.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/fanf/fanf.c">fanf.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> fixed this to compile. The problem was the intermediate steps to get to the
@@ -2434,7 +2435,7 @@ doing:</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schnitzi/try.sh">try.sh</a> script to help users try the
 commands that we recommended as well as some added by him.</p>
 <div id="1998_schweikh1">
-<h2 id="winning-entry-index.html">Winning entry: <a href="1998/schweikh1/index.html">index.html</a></h2>
+<h2 id="winning-entry-1998schweikh1">Winning entry: <a href="1998/schweikh1/index.html">1998/schweikh1</a></h2>
 <h3 id="winning-entry-source-code-1998schweikh1">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh1/schweikh1.c">1998/schweikh1</a></h3>
 </div>
 <p><a href="#cody">Cody</a> fixed this for modern systems (it did not work at all) and added an
@@ -2499,7 +2500,8 @@ question.</p>
 <h2 id="winning-entry-1998schweikh3">Winning entry: <a href="1998/schweikh3/index.html">1998/schweikh3</a></h2>
 <h3 id="winning-entry-source-code-schweikh3.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh3/schweikh3.c">schweikh3.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> added the <a href="1998/schweikh3/index.html#alternate-code">alternate code</a> which allows one
+<p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh3/schweikh3.alt.c">alternate
+code</a> which allows one
 to reconfigure the size constant in the rare case that the author wrote about
 occurs.</p>
 <p>Cody made <code>main()</code> have two args out of an abundance of caution as some versions
@@ -2523,7 +2525,7 @@ for more details.</p>
 information for the entry. It has not been added to any JSON file.</p>
 <div id="1998_tomtorfs">
 <h2 id="winning-entry-1998tomtorfs">Winning entry: <a href="1998/tomtorfs/index.html">1998/tomtorfs</a></h2>
-<h3 id="winning-entry-source-code-tomtorfs.chttpsgithub.comioccc-srctemp-test-iocccblobmaster1998tomtorfstomtorfs.c">Winning entry source code: /tomtorfs.c](https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/tomtorfs/tomtorfs.c)</h3>
+<h3 id="winning-entry-source-code-tomtorfs.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/tomtorfs/tomtorfs.c">tomtorfs.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> fixed the assumption that <code>EOF</code> is <code>-1</code> (the author noted that it assumes
 it is <code>-1</code> and it’s indeed a valid concern as the standard only guarantees that
@@ -4508,8 +4510,7 @@ funny error when running it:</p>
 <pre><code>    /bin/bash: ./run_clock.sh: /usr/bin/end: bad interpreter: No such file or directory</code></pre>
 <p>though this was only noticed later on after it was fixed.</p>
 <p>What was wrong? A typo in the shebang which had <code>/usr/bin/end</code> instead of
-<code>/usr/bin/env</code>. Anyone who knows Cody would know that he’d zoom in on that quite
-quick.</p>
+<code>/usr/bin/env</code>.</p>
 <p>Also if <code>clock</code> did not exist and one tried to run the script it would make an
 invalid <code>clock.c</code> which meant it could not compile so it now runs <code>make clock</code>
 first.</p>
@@ -4539,10 +4540,6 @@ fixed typos and formatting and he also fixed some issues that occurred when
 files were renamed to <code>.html</code> from <code>.markdown</code>.</p>
 <p>Most importantly he also added some corrections to the vital <a href="2020/ferguson1/chocolate-cake.html">Double
 layered chocolate fudge cake recipe</a> :-)</p>
-<p>Yes the irony here is as rich as the chocolate cake: the question is do you know
-how rich it is? If not and you like chocolate I (that is Cody :-) ) highly
-recommend you give it a go! :-) You’re welcome to ask me questions if you wish
-and I encourage you to do so as the cake is quite picky!</p>
 <div id="2020_ferguson2">
 <h2 id="winning-entry-2020ferguson2">Winning entry: <a href="2020/ferguson2/index.html">2020/ferguson2</a></h2>
 <h3 id="winning-entry-source-code-prog.c-57">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson2//prog.c">prog.c</a></h3>

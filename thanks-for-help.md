@@ -2688,7 +2688,7 @@ error due to the redefinition of `main` but the `-I` option makes sure the
 working `/usr/include/rrno.h` is found first, which shouldn't cause any problems
 on other systems (the other file is
 `gcc-lib/sparc-sun-solaris2.5/2.7.2/include/errno.h`). Thus Cody also added this to
-the Makefile despite the fact that very few probably use Solaris nowadays.
+the Makefile for the (likely?) few who still use Solaris.
 
 
 <div id="1996_schweikh2">
@@ -2696,10 +2696,11 @@ the Makefile despite the fact that very few probably use Solaris nowadays.
 ### Winning entry source code: [schweikh2.c](%%REPO_URL%%/1996/schweikh2/schweikh2.c)
 </div>
 
-[Cody](#cody) added the [try.sh](%%REPO_URL%%/1996/schweikh2/try.sh) script with a few commands to try
-along with a shorter version of something the author suggested one try (it is
-suggested that one try the longer version too but it will run in an infinite
-loop so having it in a script is less desired).
+[Cody](#cody) added the [try.sh](%%REPO_URL%%/1996/schweikh2/try.sh) script with
+a few commands to try along with a shorter version of something the author
+suggested one try (at the end of the script it prompts if you wish to run the
+author's idea, with a `sleep` and `echo` in between to help one distinguish the
+output better, with the warning that it is an infinite loop).
 
 
 <div id="1996_schweikh3">
@@ -2707,7 +2708,7 @@ loop so having it in a script is less desired).
 ## Source code: [schweikh3.c](%%REPO_URL%%/1996/schweikh3/schweikh3.c)
 </div>
 
-[Cody](#cody) updated the Makefile so that if it fails to compile it will try he
+[Cody](#cody) updated the Makefile so that if it fails to compile it will try the
 method suggested for SunOS rather than having to update the Makefile manually or
 running a more complicated command: now one can just run `make`.
 
@@ -2722,14 +2723,14 @@ variables.  Although the scripts showed correct output, it somewhat lessened the
 usability because they segfaulted and showed (an) environmental variable,
 interspersed with the output of the program. With the fix they no longer have
 this problem. If `argc < 5` (`argv[4]` is referenced) it will not do anything
-and it will not segfault either - this was caused by the body of the for() loop
+and it will not segfault either - this was caused by the body of the `for()` loop
 which is now empty (it doesn't appear to be needed at all at least modernly).
 Note that you should check the [westley.alt.c](%%REPO_URL%%/1996/westley/westley.alt.c) file
 when reading the author's comments. To see how to use the original, see the
 index.html file.
 
-Cody also added the two scripts, [try.sh](%%REPO_URL%%/1996/westley/try.sh) and
-[try.alt.sh](%%REPO_URL%%/1996/westley/try.alt.sh) to automate showing the different
+Cody also added the [try.sh](%%REPO_URL%%/1996/westley/try.sh) and
+[try.alt.sh](%%REPO_URL%%/1996/westley/try.alt.sh) scripts to automate showing the different
 clocks, both with the fixed version and the original (alt) version.
 
 Also, to fix any potential problem with displaying in GitHub the scripts
@@ -2743,13 +2744,13 @@ provided by the author, Cody added '.sh' to the `clock[1-3].sh` scripts.
 
 <div id="1998_banks">
 ## Winning entry: [1998/banks](1998/banks/index.html)
-### Winning entry source code: [/banks.c](%%REPO_URL%%/1998/banks/banks.c)
+### Winning entry source code: [banks.c](%%REPO_URL%%/1998/banks/banks.c)
 </div>
 
-[Cody](#cody) improved the Makefile to allow for easier redefining the control
+[Cody](#cody) improved the `Makefile` to allow for easier redefining the control
 keys and time step that the author set up.
 
-Cody also set up the Makefile to have an alt build (using the same code) for those
+Cody also set up the `Makefile` to have an alt build (using the same code) for those
 who do not have a page up or page down key and added the
 [keysym.h](%%REPO_URL%%/1998/banks/keysym.h) header file as a reference for other keys one
 can use if they wish to modify the controls. One can certainly do this even if
@@ -2832,7 +2833,7 @@ pootify scripts.
 
 
 <div id="1998_dloweneil">
-## Winning entry: [c1998/dloweneil](1998/dloweneil/index.html)
+## Winning entry: [1998/dloweneil](1998/dloweneil/index.html)
 ### Winning entry source code: [dloweneil.c](%%REPO_URL%%/1998/dloweneil/dloweneil.c)
 </div>
 
@@ -2850,7 +2851,7 @@ space) keys as well as allowing one to quit the game.
 
 
 <div id="1998_fanf">
-## Winning entry: [1998/fanf.html](1998/fanf/index.html)
+## Winning entry: [1998/fanf](1998/fanf/index.html)
 ### Winning entry source code: [fanf.c](%%REPO_URL%%/1998/fanf/fanf.c)
 </div>
 
@@ -2902,7 +2903,7 @@ commands that we recommended as well as some added by him.
 
 
 <div id="1998_schweikh1">
-## Winning entry: [index.html](1998/schweikh1/index.html)
+## Winning entry: [1998/schweikh1](1998/schweikh1/index.html)
 ### Winning entry source code: [1998/schweikh1](%%REPO_URL%%/1998/schweikh1/schweikh1.c)
 </div>
 
@@ -2993,7 +2994,8 @@ Cody also added the [try.sh](%%REPO_URL%%/1998/schweikh2/try.sh) script.
 ### Winning entry source code: [schweikh3.c](%%REPO_URL%%/1998/schweikh3/schweikh3.c)
 </div>
 
-[Cody](#cody) added the [alternate code](1998/schweikh3/index.html#alternate-code) which allows one
+[Cody](#cody) added the [alternate
+code](%%REPO_URL%%/1998/schweikh3/schweikh3.alt.c) which allows one
 to reconfigure the size constant in the rare case that the author wrote about
 occurs.
 
@@ -3028,7 +3030,7 @@ information for the entry. It has not been added to any JSON file.
 
 <div id="1998_tomtorfs">
 ## Winning entry: [1998/tomtorfs](1998/tomtorfs/index.html)
-### Winning entry source code: /tomtorfs.c](%%REPO_URL%%/1998/tomtorfs/tomtorfs.c)
+### Winning entry source code: [tomtorfs.c](%%REPO_URL%%/1998/tomtorfs/tomtorfs.c)
 </div>
 
 [Cody](#cody) fixed the assumption that `EOF` is `-1` (the author noted that it assumes
@@ -5851,8 +5853,7 @@ If run from within vim a different error message occurred:
 though this was only noticed later on after it was fixed.
 
 What was wrong? A typo in the shebang which had `/usr/bin/end` instead of
-`/usr/bin/env`. Anyone who knows Cody would know that he'd zoom in on that quite
-quick.
+`/usr/bin/env`.
 
 Also if `clock` did not exist and one tried to run the script it would make an
 invalid `clock.c` which meant it could not compile so it now runs `make clock`
@@ -5891,10 +5892,6 @@ files were renamed to `.html` from `.markdown`.
 Most importantly he also added some corrections to the vital [Double
 layered chocolate fudge cake recipe](2020/ferguson1/chocolate-cake.html) :-)
 
-Yes the irony here is as rich as the chocolate cake: the question is do you know
-how rich it is? If not and you like chocolate I (that is Cody :-) ) highly
-recommend you give it a go! :-) You're welcome to ask me questions if you wish
-and I encourage you to do so as the cake is quite picky!
 
 
 <div id="2020_ferguson2">
