@@ -3335,11 +3335,12 @@ or to not use `git`:
     make diff_orig_prog
 ```
 
-Cody also added a [program](%%REPO_URL%%/2001/anonymous/anonymous.bed.c) like
-[anonymous.ten.c](%%REPO_URL%%/2001/anonymous/anonymous.ten.c) which 'sings' the
-lyrics to [Ten Green Bottles](https://en.wikipedia.org/wiki/Ten_Green_Bottles)
+Cody also added a [supplementary program](%%REPO_URL%%/2001/anonymous/anonymous.bed.c) like
+[anonymous.ten.c](%%REPO_URL%%/2001/anonymous/anonymous.ten.c) (which 'sings' the
+lyrics to [Ten Green Bottles](https://en.wikipedia.org/wiki/Ten_Green_Bottles))
 but which sings [Ten in the Bed](https://allnurseryrhymes.com/ten-in-the-bed/)
-instead.
+instead (the way it's implemented is different and this allows showing more of
+what the entry supports).
 
 As well he added the [try.sh](%%REPO_URL%%/2001/anonymous/try.sh) script so that one can
 attempt to use the program as it was designed but if compiling as 32-bit fails
@@ -3353,7 +3354,8 @@ it will at least run the supplementary program as a 64-bit program directly.
 
 [Cody](#cody) fixed this to compile with `clang` but according to the author this will not
 work without i386 Linux. It generates i386 32-bit code (not bytecode) but
-unfortunately it will not work without i386 Linux. See [bugs.html](bugs.html).
+unfortunately it will not work without i386 Linux. See [2001/bellard in
+bugs.html](bugs.html#2001_bellard).
 
 Cody fixed an earlier segfault so that it can at least now open the file should
 you have an i386 Linux machine (it can open it in other platforms too, of
@@ -3366,10 +3368,11 @@ compilers besides what Cody did.
 
 Cody entirely fixed the [supplementary
 bellard.otccex.c](%%REPO_URL%%/2001/bellard/bellard.otccex.c) so it does not segfault and
-works as well (it did not work at all). The main problem was that some ints were
-being used as pointers.  This includes, for example, an int used as a `char *`,
-an int used as a function pointer and an int to access `argv` as well as there
-being invalid access to `argv`. He updated the Makefile so that this program
+works as well (it did not work at all though it is possible it would work in
+older systems). The main problem was that some `int`s were
+being used as pointers.  This includes, for example, an `int` used as a `char *`,
+an `int` used as a function pointer and an `int` to access `argv` as well as there
+being invalid access to `argv`. He updated the `Makefile` so that this program
 will compile by default.
 
 Also the Fibonacci sequence (`fib()`) will overflow at `n > 48` so this is
@@ -3384,9 +3387,7 @@ this entry by Yusuke.
 With a tip from Yusuke we rediscovered the author's [web page for this
 program](https://bellard.org/otcc/) where it is stated that this will only work
 in i386 Linux.  The author also stated in the remarks in this document that they
-used [`gcc`
-2.95.2](https://ftp.gnu.org/gnu/`gcc`/`gcc`-2.95.2/`gcc`-everything-2.95.2.tar.gz) but
-we don't know if that's relevant or not.
+used `gcc 2.95.2` but we do not know if that's relevant or not.
 
 Yusuke offered a modification which is not needed with `gcc` but with some
 versions of `clang` it is. With `gcc` we can get away with `-rdynamic -fno-pie
@@ -3400,15 +3401,13 @@ by Yusuke.
 ### Winning entry source code: [cheong.c](%%REPO_URL%%/2001/cheong//cheong.c)
 </div>
 
-[Cody](#cody) fixed this to work with `clang` by adding another function that is allowed to
-have a third arg as an int, not a `char **. He chose `pain()` because it's a four
+[Cody](#cody) fixed this to compile with `clang` by adding another function that is allowed to
+have a third arg as an int, not a `char **`. He chose `pain()` because it's a four
 letter word that would match the format and because it's pain that `clang` forces
 this. :-) This fix makes a point of the author's notes on portability no longer
 valid, BTW.
 
 Cody also added the [try.sh](%%REPO_URL%%/2001/cheong/try.sh) script.
-
-He also fixed it to check the number of args.
 
 
 <div id="2001_coupard">

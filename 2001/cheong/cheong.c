@@ -11,4 +11,4 @@ c=o+     (D[I]+82)%10-(I>l/2)*
 :!(o=pain(c/10,O,I-1))*((c+999
 )%10-(D[I]+92)%10);}return o;}
 int main(int o,char **O)     {
-return o>1?pain(o, O, l):1;  }
+return pain(o, O, l);        }

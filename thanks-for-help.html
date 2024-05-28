@@ -2742,11 +2742,12 @@ wish to see, try the following commands from the <code>2001/anonymous</code> dir
 <pre><code>    git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..4bc03de321612869aebf855850c6500df95cb6ef anonymous.c</code></pre>
 <p>or to not use <code>git</code>:</p>
 <pre><code>    make diff_orig_prog</code></pre>
-<p>Cody also added a <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.bed.c">program</a> like
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.ten.c">anonymous.ten.c</a> which ‘sings’ the
-lyrics to <a href="https://en.wikipedia.org/wiki/Ten_Green_Bottles">Ten Green Bottles</a>
+<p>Cody also added a <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.bed.c">supplementary program</a> like
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.ten.c">anonymous.ten.c</a> (which ‘sings’ the
+lyrics to <a href="https://en.wikipedia.org/wiki/Ten_Green_Bottles">Ten Green Bottles</a>)
 but which sings <a href="https://allnurseryrhymes.com/ten-in-the-bed/">Ten in the Bed</a>
-instead.</p>
+instead (the way it’s implemented is different and this allows showing more of
+what the entry supports).</p>
 <p>As well he added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/try.sh">try.sh</a> script so that one can
 attempt to use the program as it was designed but if compiling as 32-bit fails
 it will at least run the supplementary program as a 64-bit program directly.</p>
@@ -2756,7 +2757,8 @@ it will at least run the supplementary program as a 64-bit program directly.</p>
 </div>
 <p><a href="#cody">Cody</a> fixed this to compile with <code>clang</code> but according to the author this will not
 work without i386 Linux. It generates i386 32-bit code (not bytecode) but
-unfortunately it will not work without i386 Linux. See <a href="bugs.html">bugs.html</a>.</p>
+unfortunately it will not work without i386 Linux. See <a href="bugs.html#2001_bellard">2001/bellard in
+bugs.html</a>.</p>
 <p>Cody fixed an earlier segfault so that it can at least now open the file should
 you have an i386 Linux machine (it can open it in other platforms too, of
 course, but it won’t work). This involved pointer updates and also changing an
@@ -2766,10 +2768,11 @@ case of <code>main()</code> this was not possible.</p>
 compilers besides what Cody did.</p>
 <p>Cody entirely fixed the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/bellard/bellard.otccex.c">supplementary
 bellard.otccex.c</a> so it does not segfault and
-works as well (it did not work at all). The main problem was that some ints were
-being used as pointers. This includes, for example, an int used as a <code>char *</code>,
-an int used as a function pointer and an int to access <code>argv</code> as well as there
-being invalid access to <code>argv</code>. He updated the Makefile so that this program
+works as well (it did not work at all though it is possible it would work in
+older systems). The main problem was that some <code>int</code>s were
+being used as pointers. This includes, for example, an <code>int</code> used as a <code>char *</code>,
+an <code>int</code> used as a function pointer and an <code>int</code> to access <code>argv</code> as well as there
+being invalid access to <code>argv</code>. He updated the <code>Makefile</code> so that this program
 will compile by default.</p>
 <p>Also the Fibonacci sequence (<code>fib()</code>) will overflow at <code>n &gt; 48</code> so this is
 checked prior to running the function just like the author did for the factorial
@@ -2780,9 +2783,7 @@ this entry by Yusuke.</p>
 <p>With a tip from Yusuke we rediscovered the author’s <a href="https://bellard.org/otcc/">web page for this
 program</a> where it is stated that this will only work
 in i386 Linux. The author also stated in the remarks in this document that they
-used <a href="https://ftp.gnu.org/gnu/%60gcc%60/%60gcc%60-2.95.2/%60gcc%60-everything-2.95.2.tar.gz"><code>gcc</code>
-2.95.2</a> but
-we don’t know if that’s relevant or not.</p>
+used <code>gcc 2.95.2</code> but we do not know if that’s relevant or not.</p>
 <p>Yusuke offered a modification which is not needed with <code>gcc</code> but with some
 versions of <code>clang</code> it is. With <code>gcc</code> we can get away with <code>-rdynamic -fno-pie -Wl,-z,execstack</code> which solves the problem of execution in memory but any
 compiler that does not support this would not work. Thus we use the modification
@@ -2791,12 +2792,12 @@ by Yusuke.</p>
 <h2 id="winning-entry-2001cheong">Winning entry: <a href="2001/cheong/index.html">2001/cheong</a></h2>
 <h3 id="winning-entry-source-code-cheong.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/cheong//cheong.c">cheong.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> fixed this to work with <code>clang</code> by adding another function that is allowed to
-have a third arg as an int, not a <code>char **. He chose</code>pain()<code>because it's a four letter word that would match the format and because it's pain that</code>clang` forces
+<p><a href="#cody">Cody</a> fixed this to compile with <code>clang</code> by adding another function that is allowed to
+have a third arg as an int, not a <code>char **</code>. He chose <code>pain()</code> because it’s a four
+letter word that would match the format and because it’s pain that <code>clang</code> forces
 this. :-) This fix makes a point of the author’s notes on portability no longer
 valid, BTW.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/cheong/try.sh">try.sh</a> script.</p>
-<p>He also fixed it to check the number of args.</p>
 <div id="2001_coupard">
 <h2 id="winning-entry-2001coupard">Winning entry: <a href="2001/coupard/index.html">2001/coupard</a></h2>
 <h3 id="winning-entry-source-code-coupard.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/coupard//coupard.c">coupard.c</a></h3>
