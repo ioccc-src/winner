@@ -1012,11 +1012,18 @@ clobber` depends on `clean` so running `make clobber` will invoke `make clean`.
 
 Are there any other rules? You tell us!
 
+The top level and the year (e.g. `1984/Makefile`, `1985/Makefile` etc.)
+`Makefile`s recurse into the subdirectories for each entry so you can compile
+individual entries, entries of a given year or all entries, based on what you
+wish to do.
+
 NOTE about the above rules: the Makefile default assumes `cc` which might be a
 gcc-based compiler, or a clang-based compiler, or some other compiler. Only by
 forcing `CC=clang` or `CC=gcc` will one invoke a specific compiler to, say,
 enable or disable additional warnings or flags. Even so different versions or
 compilers might do different things, have different defects or other issues.
+Note that the `Makefile`s check the `CC` variable by substrings so that if you
+were to do something like `make CC=gcc=mp-12` it would register as `gcc`.
 
 
 <div id="faq3_1">

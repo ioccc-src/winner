@@ -1162,11 +1162,17 @@ not compiled)</li>
 <li>everything: equivalent to <code>make all alt</code>.</li>
 </ul>
 <p>Are there any other rules? You tell us!</p>
+<p>The top level and the year (e.g. <code>1984/Makefile</code>, <code>1985/Makefile</code> etc.)
+<code>Makefile</code>s recurse into the subdirectories for each entry so you can compile
+individual entries, entries of a given year or all entries, based on what you
+wish to do.</p>
 <p>NOTE about the above rules: the Makefile default assumes <code>cc</code> which might be a
 gcc-based compiler, or a clang-based compiler, or some other compiler. Only by
 forcing <code>CC=clang</code> or <code>CC=gcc</code> will one invoke a specific compiler to, say,
 enable or disable additional warnings or flags. Even so different versions or
-compilers might do different things, have different defects or other issues.</p>
+compilers might do different things, have different defects or other issues.
+Note that the <code>Makefile</code>s check the <code>CC</code> variable by substrings so that if you
+were to do something like <code>make CC=gcc=mp-12</code> it would register as <code>gcc</code>.</p>
 <div id="faq3_1">
 <h3 id="faq-3.1-why-doesnt-this-ioccc-entry-compile">FAQ 3.1: Why doesn’t this IOCCC entry compile?</h3>
 </div>
