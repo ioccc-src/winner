@@ -113,7 +113,7 @@ Or better and easier still, use an inline markdown code block:
 ```
 
 
-## Please do NOT use code blocks that are NOT indented
+## Please do NOT use unindented code blocks
 
 Please do **NOT** start code blocks at the left-hand edge.
 
