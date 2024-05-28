@@ -2,7 +2,7 @@
 
 ### Please follow** the [IOCCC on Mastodon](https://fosstodon.org/@ioccc)
 
-We use Mastodon to make minor announcements, in addition announcing
+We use Mastodon to make minor announcements, in addition to announcing
 major events such as the opening of a new IOCCC, or who won.
 
 See "[FAQ 6.12: What is Mastodon and why does IOCCC use it?](faq.html#try_mastodon)" for more
