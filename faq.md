@@ -86,7 +86,7 @@ other inconsistencies with the original entry?](#faq4_3)
 - [6.11 - Am I allowed to use IOCCC content?](#faq6_11)
 - [6.12 - What is Mastodon and why does IOCCC use it?](#faq6_12)
 - [6.13 - How may I find my author handle?](#faq6_13)
-- [6.14 - How do I set certain tabstops for viewing source code in vi(m)?](#faq6_14)
+- [6.14 - How do I set certain tabstops for viewing source code in vi&#x28;m&#x29;?](#faq6_14)
 
 
 # The IOCCC FAQ
