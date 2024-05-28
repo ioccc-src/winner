@@ -111,6 +111,18 @@ if [[ -z "$JPARSE_TOOL" ]]; then
     echo "$0: FATAL: jparse tool is not installed or not in \$PATH" 1>&2
     exit 5
 fi
+STAT_TOOL=$(type -P stat)
+if [[ -z "$STAT_TOOL" ]]; then
+    echo "$0: FATAL: stat tool is not installed or not in \$PATH" 1>&2
+    exit 5
+fi
+
+LS_TOOL=$(type -P ls)
+if [[ -z "$LS_TOOL" ]]; then
+    echo "$0: FATAL: ls tool is not installed or not in \$PATH" 1>&2
+    exit 5
+fi
+
 export IOCCC_STATUS_VERSION="1.0 2024-03-09"
 #
 export NOOP=
@@ -153,11 +165,11 @@ function output_modtime
     # macOS stat
     #
     macos_stat)
-	TZ=UTC stat -f '%Sm' -t '%FT%T+00:00' "$FILENAME"
+	TZ=UTC "$STAT_TOOL" -f '%Sm' -t '%FT%T+00:00' "$FILENAME"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: in output_modtime:" \
-		 "TZ=UTC stat -f '%Sm' -t '%FT%T+00:00' $FILENAME failed, error code: $status" 1>&2
+		 "TZ=UTC $STAT_TOOL -f '%Sm' -t '%FT%T+00:00' $FILENAME failed, error code: $status" 1>&2
 	    exit 1
 	fi
 	;;
@@ -165,12 +177,12 @@ function output_modtime
     # RHEL Linux stat
     #
     RHEL_stat)
-	TZ=UTC stat -c '%y' "$FILENAME" | sed -e 's/ /T/' -e 's/\.[0-9]* //' -e 's/\([0-9][0-9]\)$/:&/'
+	TZ=UTC "$STAT_TOOL" -c '%y' "$FILENAME" | sed -e 's/ /T/' -e 's/\.[0-9]* //' -e 's/\([0-9][0-9]\)$/:&/'
 	status0="${PIPESTATUS[0]}"
 	status1="${PIPESTATUS[1]}"
 	if [[ $status0 -ne 0 || $status1 -ne 0 ]]; then
 	    echo "$0: ERROR: in output_modtime:" \
-		 "TZ=UTC stat -c '%y' $FILENAME | sed .. failed, error codes: $status0 and $status1" 1>&2
+		 "TZ=UTC $STAT_TOOL -c '%y' $FILENAME | sed .. failed, error codes: $status0 and $status1" 1>&2
 	    exit 1
 	fi
 	;;
@@ -181,12 +193,12 @@ function output_modtime
 	# SC2012 (info): Use find instead of ls to better handle non-alphanumeric filenames.
 	# https://www.shellcheck.net/wiki/SC2012
 	# shellcheck disable=SC2012
-	TZ=UTZ ls -D '%FT%T+00:00' -ld "$FILENAME" | awk '{print $6;}'
+	TZ=UTZ "$LS_TOOL" -D '%FT%T+00:00' -ld "$FILENAME" | awk '{print $6;}'
 	status0="${PIPESTATUS[0]}"
 	status1="${PIPESTATUS[1]}"
 	if [[ $status0 -ne 0 || $status1 -ne 0 ]]; then
 	    echo "$0: ERROR: in output_modtime:" \
-		 "TZ=UTZ ls -D '%FT%T+00:00' -ld $FILENAME | awk .. failed, error codes: $status0 and $status1" 1>&2
+		 "TZ=UTZ $LS_TOOL -D '%FT%T+00:00' -ld $FILENAME | awk .. failed, error codes: $status0 and $status1" 1>&2
 	    exit 1
 	fi
 	;;
@@ -687,12 +699,12 @@ export NEXT_DIR="next"
 #
 #	TZ=UTC stat -f '%Sm' -t '%FT%T+00:00' filename
 #
-TZ=UTC stat -f '%Sm' -t '%FT%T+00:00' "$TOP_FILE" > /dev/null 2>&1
+TZ=UTC "$STAT_TOOL" -f '%Sm' -t '%FT%T+00:00' "$TOP_FILE" > /dev/null 2>&1
 status="$?"
 if [[ $status -eq 0 ]]; then
     MODTIME_METHOD="macos_stat"
     if [[ $V_FLAG -ge 5 ]]; then
-        echo "$0: debug[5]: TZ=UTC stat -f '%Sm' -t '%FT%T+00:00' works, MODTIME_METHOD: $MODTIME_METHOD" 1>&2
+        echo "$0: debug[5]: TZ=UTC $STAT_TOOL -f '%Sm' -t '%FT%T+00:00' works, MODTIME_METHOD: $MODTIME_METHOD" 1>&2
     fi
 
 else
@@ -703,12 +715,12 @@ else
     #
     # NOTE: We only need to test the stat command.
     #
-    TZ=UTC stat -c '%y' "$TOP_FILE" > /dev/null 2>&1
+    TZ=UTC "$STAT_TOOL" -c '%y' "$TOP_FILE" > /dev/null 2>&1
     status="$?"
     if [[ $status -eq 0 ]]; then
 	MODTIME_METHOD="RHEL_stat"
 	if [[ $V_FLAG -ge 5 ]]; then
-	    echo "$0: debug[5]: TZ=UTC stat -c '%y' works, MODTIME_METHOD: $MODTIME_METHOD" 1>&2
+	    echo "$0: debug[5]: TZ=UTC $STAT_TOOL -c '%y' works, MODTIME_METHOD: $MODTIME_METHOD" 1>&2
 	fi
 
     else
@@ -717,12 +729,12 @@ else
 	#
 	#	TZ=UTZ ls -D '%FT%T+00:00' -ld
 	#
-	TZ=UTZ ls -D '%FT%T+00:00' -ld "$TOP_FILE" > /dev/null 2>&1
+	TZ=UTZ "$LS_TOOL" -D '%FT%T+00:00' -ld "$TOP_FILE" > /dev/null 2>&1
 	status="$?"
 	if [[ $status -eq 0 ]]; then
 	    MODTIME_METHOD="ls_D"
 	    if [[ $V_FLAG -ge 5 ]]; then
-		echo "$0: debug[5]: TZ=UTZ ls -D '%FT%T+00:00' -ld works, MODTIME_METHOD: $MODTIME_METHOD" 1>&2
+		echo "$0: debug[5]: TZ=UTZ $LS_TOOL -D '%FT%T+00:00' -ld works, MODTIME_METHOD: $MODTIME_METHOD" 1>&2
 	    fi
 
 	else

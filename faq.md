@@ -86,6 +86,7 @@ other inconsistencies with the original entry?](#faq4_3)
 - [6.11 - Am I allowed to use IOCCC content?](#faq6_11)
 - [6.12 - What is Mastodon and why does IOCCC use it?](#faq6_12)
 - [6.13 - How may I find my author handle?](#faq6_13)
+- [6.14 - How do I set certain tabstops for viewing source code in vi(m)?](#faq6_14)
 
 
 # The IOCCC FAQ
@@ -462,12 +463,12 @@ See also [CommonMark Spec](https://spec.commonmark.org/current/).
 </div>
 
 One day (1984 March 23 to be exact), Larry Bassel and I (Landon Curt
-Noll) were working for National Semiconductor's Genix porting group, we
+Noll) were working for National Semiconductor's Genix porting group, and we
 were both in our offices trying to fix some very broken code.
 
 Larry had been trying to fix a bug in the classic Bourne shell (C code `#define`d
-to death to sort of look like Algol) and I had been working on the finger
-program from early BSD (a bug ridden finger implementation to be sure).
+to death to sort of look like Algol) and I had been working on the `finger(1)`
+program from early BSD (a bug ridden `finger` implementation to be sure).
 
 We happened to both wander (at the same time) out to the hallway
 in Building 7C to clear our heads.
@@ -542,7 +543,7 @@ P.S. Part of the inspiration for making the IOCCC a contest goes to the
 Some years, such as 1997, 1999, 2002-2003, 2007-2010, 2016-2017, 2021-2023, no IOCCC was held.
 
 While we try to hold the IOCCC every year, sometime the other demands on the IOCCC judges
-so not permit us to hold a new IOCCC.
+do not permit us to hold a new IOCCC.
 
 The pause during the 2021-2023 period was due to the IOCCC judges developing tools to
 make is much more likely for the IOCCC to be held in a yearly basis later on.
@@ -3777,6 +3778,11 @@ have a good home.  The [fosstodon.org](https://fosstodon.org/@fosstodon) folk ma
 While using Mastodon is free, the [IOCCC judges](judges.html) are pleased to
 [support the Fosstodon Hub](https://hub.fosstodon.org/support/).
 
+If you have a phone or tablet there is also an official app that you can get
+from the App Store or whatever equivalent your device has. Please note that the
+app does not at this time seem to give push notifications when someone you
+follow posts something so you will have to check the IOCCC feed manually.
+
 
 <div id="faq6_13">
 <div id="find_author_handle">
@@ -3811,6 +3817,24 @@ See [FAQ 6.6](#author_json) for information about the contents of these JSON fil
 how they are used.
 
 See [FAQ 6.9](#terms) for more information on terms such as _author_, _entry_, and _submission_.
+
+<div id="faq6_14">
+<div id="tabstops">
+### FAQ 6.14: How do I set certain tabstops for viewing source code in vi(m)?
+</div>
+</div>
+
+Sometimes an author will state that for best viewing purposes you should have
+your tabstop set at say 4 or 8. If you use vim or vi or vim in no compatible
+mode you can do this easily: make sure you're in command mode (in most cases you
+can hit ESC to do this) and then type the command:
+
+
+```
+    :set tabstop=4
+```
+
+where `4` is the value you wish to set the tabstop to.
 
 
 <hr style="width:10%;text-align:left;margin-left:0">

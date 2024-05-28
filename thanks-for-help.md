@@ -30,7 +30,7 @@ on an IOCCC entry by entry basis.
 
 
 <div id="1984">
-# [1984](1984/index.html)
+# [1984 - The 1st IOCCC](1984/index.html)
 </div>
 
 
@@ -173,7 +173,7 @@ Repo](https://github.com/dspinellis/unix-history-repo/tree/Research-Release).
 
 
 <div id="1985">
-# [1985](1985/index.html)
+# [1985 - The 2nd IOCCC](1985/index.html)
 </div>
 
 
@@ -371,7 +371,7 @@ Cody also added the [try.sh](%%REPO_URL%%/1985/sicherman/try.sh) and
 
 
 <div id="1986">
-# [1986](1986/index.html)
+# [1986 - The 3rd IOCCC](1986/index.html)
 </div>
 
 
@@ -624,7 +624,7 @@ There might have been other changes as well.
 
 
 <div id="1987">
-# [1987](1987/index.html)
+# [1987 - The 4th IOCCC](1987/index.html)
 </div>
 
 
@@ -747,7 +747,7 @@ unlikely(?) but nevertheless suggested case that `putchar(3)` is not available.
 
 
 <div id="1988">
-# [1988](1988/index.html)
+# [1988 - The 5th IOCCC](1988/index.html)
 </div>
 
 
@@ -929,7 +929,7 @@ not strictly necessary but nonetheless more correct, even if not warned against.
 
 
 <div id="1989">
-# [1989](1989/index.html)
+# [1989 - The 6th IOCCC](1989/index.html)
 </div>
 
 
@@ -1208,7 +1208,7 @@ environmental variable; see the index.html for details.
 
 
 <div id="1990">
-# [1990](1990/index.html)
+# [1990 - The 7th IOCCC](1990/index.html)
 </div>
 
 
@@ -1444,7 +1444,7 @@ Cody also added the [try.sh](%%REPO_URL%%/1990/westley/try.sh) script.
 
 
 <div id="1991">
-# [1991](1991/index.html)
+# [1991 - The 8th IOCCC](1991/index.html)
 </div>
 
 
@@ -1734,7 +1734,7 @@ should have been removed.
 
 
 <div id="1992">
-# [1992](1992/index.html)
+# [1992 - The 9th IOCCC](1992/index.html)
 </div>
 
 
@@ -1827,7 +1827,7 @@ generated.
 [Cody](#cody) fixed this to compile with modern systems. Note that in 1996 a bug fix was
 applied to the code, provided as the alt code as that version is not obfuscated.
 Thus Cody's fix applies to the original entry. The problems were that `malloc.h`
-is not the correct header file now (at least in some systems?) and a non-void
+is not the correct header file now (at least in some systems) and a non-void
 (implicit `int`) function returning without a value. That function was changed to
 return `void`.
 
@@ -2068,7 +2068,7 @@ encourage you to try the original without two args :-)
 
 
 <div id="1993">
-# [1993](1993/index.html)
+# [1993 - The 10th IOCCC](1993/index.html)
 </div>
 
 
@@ -2240,7 +2240,7 @@ Cody also added the [try.sh](%%REPO_URL%%/1993/vanb/try.sh) script.
 
 
 <div id="1994">
-# [1994](1994/index.html)
+# [1994 - The 11th IOCCC](1994/index.html)
 </div>
 
 
@@ -2451,7 +2451,7 @@ along the lines of the [try.sh](%%REPO_URL%%/1994/westley/try.sh) script.
 
 
 <div id="1995">
-# [1995](1995/index.html)
+# [1995 - The 12th IOCCC](1995/index.html)
 </div>
 
 
@@ -2573,7 +2573,7 @@ Cody also added the [try.sh](%%REPO_URL%%/1995/vanschnitz/try.sh) script.
 
 
 <div id="1996">
-# [1996](1996/index.html)
+# [1996 - The 13th IOCCC](1996/index.html)
 </div>
 
 
@@ -2583,7 +2583,8 @@ Cody also added the [try.sh](%%REPO_URL%%/1995/vanschnitz/try.sh) script.
 </div>
 
 [Cody](#cody) fixed a segfault in this program that prevented it from working right and
-also fixed an infinite loop in the try commands.
+also fixed an infinite loop in the try commands. This infinite loop prevented it
+from working with some systems or compilers which we noted a long time ago.
 
 The problem with the infinite loop is that the file `august.oc` had to have
 lines starting with `#` removed and it was not being done. After this is done
@@ -2612,8 +2613,7 @@ the fix was wrong.
 
 Cody also made the recommended change of the author to make it so that each
 number is printed on a line by itself rather than having a long string of
-numbers on the same line. This was not put in an alternate version but perhaps
-it should be.
+numbers on the same line.
 
 Cody also added the [try.sh](%%REPO_URL%%/1996/dalbec/try.sh) script.
 
@@ -2624,10 +2624,9 @@ Cody also added the [try.sh](%%REPO_URL%%/1996/dalbec/try.sh) script.
 </div>
 
 [Cody](#cody) provided an [alternate version](%%REPO_URL%%/1996/eldby/eldby.alt.c) which uses
-`usleep()` in between writing the output to make it easier to see what is going
-on with faster systems and importantly also for those who are sensitive to text
-flashing by rapidly (it affects him too but he also thinks it moves too fast
-nowadays anyway). We recommend that you try the alternate version first due to
+`usleep()` in between writing the output to make it easier to see what it looked
+like back in 1996 with modern systems and importantly also for those who are sensitive to text
+flashing by rapidly. We recommend that you try the alternate version first due to
 these reasons.
 
 
@@ -2689,7 +2688,7 @@ error due to the redefinition of `main` but the `-I` option makes sure the
 working `/usr/include/rrno.h` is found first, which shouldn't cause any problems
 on other systems (the other file is
 `gcc-lib/sparc-sun-solaris2.5/2.7.2/include/errno.h`). Thus Cody also added this to
-the Makefile despite the fact that very few probably use Solaris nowadays.
+the Makefile for the (likely?) few who still use Solaris.
 
 
 <div id="1996_schweikh2">
@@ -2697,10 +2696,11 @@ the Makefile despite the fact that very few probably use Solaris nowadays.
 ### Winning entry source code: [schweikh2.c](%%REPO_URL%%/1996/schweikh2/schweikh2.c)
 </div>
 
-[Cody](#cody) added the [try.sh](%%REPO_URL%%/1996/schweikh2/try.sh) script with a few commands to try
-along with a shorter version of something the author suggested one try (it is
-suggested that one try the longer version too but it will run in an infinite
-loop so having it in a script is less desired).
+[Cody](#cody) added the [try.sh](%%REPO_URL%%/1996/schweikh2/try.sh) script with
+a few commands to try along with a shorter version of something the author
+suggested one try (at the end of the script it prompts if you wish to run the
+author's idea, with a `sleep` and `echo` in between to help one distinguish the
+output better, with the warning that it is an infinite loop).
 
 
 <div id="1996_schweikh3">
@@ -2708,7 +2708,7 @@ loop so having it in a script is less desired).
 ## Source code: [schweikh3.c](%%REPO_URL%%/1996/schweikh3/schweikh3.c)
 </div>
 
-[Cody](#cody) updated the Makefile so that if it fails to compile it will try he
+[Cody](#cody) updated the Makefile so that if it fails to compile it will try the
 method suggested for SunOS rather than having to update the Makefile manually or
 running a more complicated command: now one can just run `make`.
 
@@ -2723,14 +2723,14 @@ variables.  Although the scripts showed correct output, it somewhat lessened the
 usability because they segfaulted and showed (an) environmental variable,
 interspersed with the output of the program. With the fix they no longer have
 this problem. If `argc < 5` (`argv[4]` is referenced) it will not do anything
-and it will not segfault either - this was caused by the body of the for() loop
+and it will not segfault either - this was caused by the body of the `for()` loop
 which is now empty (it doesn't appear to be needed at all at least modernly).
 Note that you should check the [westley.alt.c](%%REPO_URL%%/1996/westley/westley.alt.c) file
 when reading the author's comments. To see how to use the original, see the
 index.html file.
 
-Cody also added the two scripts, [try.sh](%%REPO_URL%%/1996/westley/try.sh) and
-[try.alt.sh](%%REPO_URL%%/1996/westley/try.alt.sh) to automate showing the different
+Cody also added the [try.sh](%%REPO_URL%%/1996/westley/try.sh) and
+[try.alt.sh](%%REPO_URL%%/1996/westley/try.alt.sh) scripts to automate showing the different
 clocks, both with the fixed version and the original (alt) version.
 
 Also, to fix any potential problem with displaying in GitHub the scripts
@@ -2738,19 +2738,19 @@ provided by the author, Cody added '.sh' to the `clock[1-3].sh` scripts.
 
 
 <div id="1998">
-# [1998](1998/index.html)
+# [1998 - The 14th IOCCC](1998/index.html)
 </div>
 
 
 <div id="1998_banks">
 ## Winning entry: [1998/banks](1998/banks/index.html)
-### Winning entry source code: [/banks.c](%%REPO_URL%%/1998/banks/banks.c)
+### Winning entry source code: [banks.c](%%REPO_URL%%/1998/banks/banks.c)
 </div>
 
-[Cody](#cody) improved the Makefile to allow for easier redefining the control
+[Cody](#cody) improved the `Makefile` to allow for easier redefining the control
 keys and time step that the author set up.
 
-Cody also set up the Makefile to have an alt build (using the same code) for those
+Cody also set up the `Makefile` to have an alt build (using the same code) for those
 who do not have a page up or page down key and added the
 [keysym.h](%%REPO_URL%%/1998/banks/keysym.h) header file as a reference for other keys one
 can use if they wish to modify the controls. One can certainly do this even if
@@ -2833,7 +2833,7 @@ pootify scripts.
 
 
 <div id="1998_dloweneil">
-## Winning entry: [c1998/dloweneil](1998/dloweneil/index.html)
+## Winning entry: [1998/dloweneil](1998/dloweneil/index.html)
 ### Winning entry source code: [dloweneil.c](%%REPO_URL%%/1998/dloweneil/dloweneil.c)
 </div>
 
@@ -2851,7 +2851,7 @@ space) keys as well as allowing one to quit the game.
 
 
 <div id="1998_fanf">
-## Winning entry: [1998/fanf.html](1998/fanf/index.html)
+## Winning entry: [1998/fanf](1998/fanf/index.html)
 ### Winning entry source code: [fanf.c](%%REPO_URL%%/1998/fanf/fanf.c)
 </div>
 
@@ -2903,7 +2903,7 @@ commands that we recommended as well as some added by him.
 
 
 <div id="1998_schweikh1">
-## Winning entry: [index.html](1998/schweikh1/index.html)
+## Winning entry: [1998/schweikh1](1998/schweikh1/index.html)
 ### Winning entry source code: [1998/schweikh1](%%REPO_URL%%/1998/schweikh1/schweikh1.c)
 </div>
 
@@ -2994,7 +2994,8 @@ Cody also added the [try.sh](%%REPO_URL%%/1998/schweikh2/try.sh) script.
 ### Winning entry source code: [schweikh3.c](%%REPO_URL%%/1998/schweikh3/schweikh3.c)
 </div>
 
-[Cody](#cody) added the [alternate code](1998/schweikh3/index.html#alternate-code) which allows one
+[Cody](#cody) added the [alternate
+code](%%REPO_URL%%/1998/schweikh3/schweikh3.alt.c) which allows one
 to reconfigure the size constant in the rare case that the author wrote about
 occurs.
 
@@ -3029,7 +3030,7 @@ information for the entry. It has not been added to any JSON file.
 
 <div id="1998_tomtorfs">
 ## Winning entry: [1998/tomtorfs](1998/tomtorfs/index.html)
-### Winning entry source code: /tomtorfs.c](%%REPO_URL%%/1998/tomtorfs/tomtorfs.c)
+### Winning entry source code: [tomtorfs.c](%%REPO_URL%%/1998/tomtorfs/tomtorfs.c)
 </div>
 
 [Cody](#cody) fixed the assumption that `EOF` is `-1` (the author noted that it assumes
@@ -3046,7 +3047,7 @@ commands that we recommended.
 
 
 <div id="2000">
-# [2000](2000/index.html)
+# [2000 - The 15th IOCCC](2000/index.html)
 </div>
 
 
@@ -3102,8 +3103,7 @@ He also added the [try.sh](%%REPO_URL%%/2000/dhyang/try.sh) script.
 </div>
 
 [Cody](#cody) fixed this to compile with more recent perl versions; the symbol that's now
-`PL_na` was once `na`. He notes that this entry crashes under macOS but it works
-under Linux after this change.
+`PL_na` was once `na`.
 
 Cody also added the [try.sh](%%REPO_URL%%/2000/dlowe/try.sh) script.
 
@@ -3123,9 +3123,11 @@ includes of `Xlib.h` and `keysym.h`.
 </div>
 
 [Cody](#cody) fixed this for modern compilers. Depending on the compiler it would either
-segfault when run or not compile at all (`gcc` and `clang` respectively).
+segfault when run or not compile at all (`gcc` and `clang` respectively). The
+compiler fix is due to `clang` being more strict about arg types to `main()`.
 
-Cody also provided alternate code that supports the southern hemisphere.
+Cody also provided [alternate code](%%REPO_URL%%/2000/natori/natori.alt.c) that
+supports the southern hemisphere, based on the author's remarks.
 
 Cody also provided the [try.sh](%%REPO_URL%%/2000/natori/try.sh) and
 [try.alt.sh](%%REPO_URL%%/2000/natori/try.alt.sh) scripts that show the Moon phase in
@@ -3142,7 +3144,7 @@ like the original entry but with the two fixes.
 
 Finally Cody fixed the Makefile that had the `-Wno-foo` options in the `CDEFINE`
 variable which although works it is incongruent with the other Makefiles and is
-more confusing (even if not confusing).
+more confusing (though not really).
 
 
 <div id="2000_primenum">
@@ -3176,8 +3178,9 @@ the screen with:
 ```
 
 This was fixed by having the `scanf(3)` read in a string and then use `atoi(3)`
-on it to assign to the `int`s, much like with `1987/lievaart`. The strings are
-`char[5]` and the `%` specifier is `%4s` which is enough for the game.
+on it to assign to the `int`s, much like with [1987/lievaart](#1987_lievaart).
+The strings are `char[5]` and the `%` specifier is `%4s` which is enough for the
+game.
 
 
 <div id="2000_schneiderwent">
@@ -3195,14 +3198,18 @@ on it to assign to the `int`s, much like with `1987/lievaart`. The strings are
 
 [Cody](#cody) fixed the code and added an appropriate make rule so that the
 [SDL](https://www.libsdl.org) version works independent from the curses version
-(using the same code).
+(using the same code).  See below for an interesting problem that occurred that
+had to be resolved for SDL1.
 
-Cody also added alt code to allow one to slow down the code. This code also, at
-least for the curses mode, allows one to quit at any time by pressing 'q'. See
-below for more details.
+Cody also added [alt code](%%REPO_URL%%/2000/thadgavin/thadgavin.alt.c) to allow
+one to slow down the code to get a better idea of what the program looked like
+back in 2000, with modern systems. This code also, at least for the curses mode, allows
+one to quit at any time by pressing 'q'. Note that this alternate version only
+will impact the curses and the SDL versions as Cody does not have a DOS system
+to test the other version in.
 
 Due to a terrible design choice of the SDL1 developers something had to be
-changed. As was noted in the log:
+changed. As was noted in the log at the time:
 
 ```
     The SDL version did not work for a number of reasons. First of all the
@@ -3227,19 +3234,13 @@ changed. As was noted in the log:
     Thus main() was changed to 'int main(int argc, char **argv)'.
 ```
 
-Cody also added an alternate version to help see what is going on in more modern
-systems and in case you're sensitive to rapidly moving swirling. See the
-index.html for details on that. Note that this alternate version only will impact
-the curses and the SDL versions as Cody does not have a DOS system to test the
-other version in.
-
 
 <div id="2000_tomx">
 ## Winning entry: [2000/tomx](2000/tomx/index.html)
 ### Winning entry source code: [tomx.c](%%REPO_URL%%/2000/tomx//tomx.c)
 </div>
 
-[Cody](#cody) added the [alt code](2000/tomx/index.html#alternate-code) based on the
+[Cody](#cody) added the [alt code](%%REPO_URL%%/2000/tomx/tomx.alt.c) based on the
 author's remarks with a fix for modern systems and he also added the two
 scripts, [try.sh](%%REPO_URL%%/2000/tomx/try.sh) and [try.alt.sh](%%REPO_URL%%/2000/tomx/try.alt.sh) for
 the main code and the alt code respectively.
@@ -3249,7 +3250,7 @@ details) the source code is now executable by default.
 
 
 <div id="2001">
-# [2001](2001/index.html)
+# [2001 - The 16th IOCCC](2001/index.html)
 </div>
 
 
@@ -3262,7 +3263,7 @@ details) the source code is now executable by default.
 segfaulted and once that was fixed only the binary was modified; it was not run
 but according to the author's remarks it should be executed). He managed to do
 this with Linux but it will not work with any system that does not allow one to
-compile 32-bit ELF binaries. See [bugs.html](bugs.html#2001anonymous-readmemd) for
+compile 32-bit ELF binaries. See [2001/anonymous in bugs.html](bugs.html#2001_anonymous) for
 why this is; _this is **not** a bug, it's a feature_ inherent in what it does!
 
 The following had to be done to fix this:
@@ -3273,7 +3274,8 @@ this prevented `main()` from entering an infinite recursive loop.
 
 Without these it would crash and prevent modification of the 32-bit
 [ELF](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) (not elf :-) )
-binary. But again see [bugs.html](bugs.html) here.
+binary. But again see [2001/anonymous in bugs.html](bugs.html#2001_anonymous)
+for this.
 
 These also had to be done:
 
@@ -3333,12 +3335,13 @@ or to not use `git`:
     make diff_orig_prog
 ```
 
-Cody also added a [program](%%REPO_URL%%/2001/anonymous/anonymous.bed.c)
-like [anonymous.ten.c](%%REPO_URL%%/2001/anonymous/anonymous.ten.c)
-[Ten Green Bottles](https://en.wikipedia.org/wiki/Ten_Green_Bottles) but which
-sings [Ten in the Bed](https://allnurseryrhymes.com/ten-in-the-bed/) instead.
+Cody also added a [program](%%REPO_URL%%/2001/anonymous/anonymous.bed.c) like
+[anonymous.ten.c](%%REPO_URL%%/2001/anonymous/anonymous.ten.c) which 'sings' the
+lyrics to [Ten Green Bottles](https://en.wikipedia.org/wiki/Ten_Green_Bottles)
+but which sings [Ten in the Bed](https://allnurseryrhymes.com/ten-in-the-bed/)
+instead.
 
-As well he added the [try.sh](%%REPO_URL%%/2001/anonymous/try.sh) so that one can
+As well he added the [try.sh](%%REPO_URL%%/2001/anonymous/try.sh) script so that one can
 attempt to use the program as it was designed but if compiling as 32-bit fails
 it will at least run the supplementary program as a 64-bit program directly.
 
@@ -3576,7 +3579,7 @@ described in the index.html, based on the author's remarks.
 
 
 <div id="2004">
-# [2004](2004/index.html)
+# [2004 - The 17th IOCCC](2004/index.html)
 </div>
 
 
@@ -3867,7 +3870,7 @@ just to make it a bit easier to compile.
 
 
 <div id="2005">
-# [2005](2005/index.html)
+# [2005 - The 18th IOCCC](2005/index.html)
 </div>
 
 
@@ -4154,7 +4157,7 @@ if one runs it from another directory, specifying the directory, it'll not catch
 
 
 <div id="2006">
-# [2006](2006/index.html)
+# [2006 - The 19th IOCCC](2006/index.html)
 </div>
 
 
@@ -4351,7 +4354,7 @@ We're not able to test this.
 
 
 <div id="2011">
-# [2011](2011/index.html)
+# [2011 - The 20th IOCCC](2011/index.html)
 </div>
 
 
@@ -4523,7 +4526,7 @@ eventually dies.
 
 
 <div id="2012">
-# [2012](2012/index.html)
+# [2012 - The 21st IOCCC](2012/index.html)
 </div>
 
 
@@ -4739,7 +4742,7 @@ it easier for those who do not know how, and to make it more obvious to try it.
 
 
 <div id="2013">
-# [2013](2013/index.html)
+# [2013 - The 22nd IOCCC](2013/index.html)
 </div>
 
 
@@ -4995,7 +4998,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2013/morgan1/try.sh) script.
 
 
 <div id="2014">
-# [2014](2014/index.html)
+# [2014 - The 23rd IOCCC](2014/index.html)
 </div>
 
 
@@ -5177,7 +5180,7 @@ output.
 
 
 <div id="2015">
-# [2015](2015/index.html)
+# [2015 - The 24th IOCCC](2015/index.html)
 </div>
 
 
@@ -5363,7 +5366,7 @@ He also added the [try.sh](%%REPO_URL%%/2015/yang/try.sh) script.
 
 
 <div id="2018">
-# [2018](2018/index.html)
+# [2018 - The 25th IOCCC](2018/index.html)
 </div>
 
 
@@ -5565,7 +5568,7 @@ if the user wants to see some of the spoilers and only show them if they type
 
 
 <div id="2019">
-# [2019](2019/index.html)
+# [2019 - The 26th IOCCC](2019/index.html)
 </div>
 
 
@@ -5787,7 +5790,7 @@ shouldn't) and adding the [ioccc.txt](2019/yang/ioccc.txt) file.
 
 
 <div id="2020">
-# [2020](2020/index.html)
+# [2020 - The 27th IOCCC](2020/index.html)
 </div>
 
 
@@ -5852,8 +5855,7 @@ If run from within vim a different error message occurred:
 though this was only noticed later on after it was fixed.
 
 What was wrong? A typo in the shebang which had `/usr/bin/end` instead of
-`/usr/bin/env`. Anyone who knows Cody would know that he'd zoom in on that quite
-quick.
+`/usr/bin/env`.
 
 Also if `clock` did not exist and one tried to run the script it would make an
 invalid `clock.c` which meant it could not compile so it now runs `make clock`
@@ -5892,10 +5894,6 @@ files were renamed to `.html` from `.markdown`.
 Most importantly he also added some corrections to the vital [Double
 layered chocolate fudge cake recipe](2020/ferguson1/chocolate-cake.html) :-)
 
-Yes the irony here is as rich as the chocolate cake: the question is do you know
-how rich it is? If not and you like chocolate I (that is Cody :-) ) highly
-recommend you give it a go! :-) You're welcome to ask me questions if you wish
-and I encourage you to do so as the cake is quite picky!
 
 
 <div id="2020_ferguson2">
@@ -5989,14 +5987,18 @@ more jumbled but we know of others too.
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2020/kurdyukov4/try.sh) script.
 
 Cody also added from [2019/mills](2019/mills/index.html) the text file
-[Shakespeare.txt](2020/kurdyukov4/Shakespeare.txt) as we are considering to
-have each entry have a tarball with the entry by itself.
+[Shakespeare.txt](2020/kurdyukov4/Shakespeare.txt) as we now provide a tarball
+of each entry by itself.
 
-Also, to explain the confusing to most people award, Cody gave a quick
-translation of `lámatyávë`, which comes from History of Middle-earth [HoMe],
-volume X, Morgoth's Ring, which he also has (and which is part of the 12 volume
-set by the late Christopher Tolkien, son and literary executor and heir to
-J.R.R. Tolkien).
+Also, as a fellow Tolkienist, to explain the confusing (to most people) award
+title, Cody gave a quick translation of `lámatyávë`, which comes from [Morgoth's
+Ring](https://en.wikipedia.org/wiki/Morgoth%27s_Ring), volume X of the 12
+volume [History of
+Middle-earth](https://en.wikipedia.org/wiki/The_History_of_Middle-earth) (known
+to us Tolkienists as `HoMe`), which he naturally :-) has, by the late and great
+[Christopher Tolkien](https://en.wikipedia.org/wiki/Christopher_Tolkien), son
+and literary executor and heir to [J.R.R.
+Tolkien](https://www.tolkienestate.com/life/biography/).
 
 
 <div id="2020_otterness">
@@ -6145,7 +6147,7 @@ wish to **especially thank**.
 ### Authors
 </div>
 
-A good number of the [wining entries of the
+A good number of the [winning entries of the
 IOCCC](authors.html) tested, identified and helped correct
 and/or improve the write-ups of fellow IOCCC entries for the year that they won.
 The list of those entries is too long to mention: nevertheless the [IOCCC
@@ -6193,7 +6195,8 @@ from the SQL file).
 
 Additionally Cody greatly improved the manifest of the winning entries and
 checked that the generated html files, index.html and otherwise, look well and
-presentable.
+presentable and suggested a CSS rule for `<img>` to  make images more responsive
+on smaller screens.
 
 **THANK YOU VERY MUCH** for your extensive efforts in helping improve the IOCCC
 presentation of past IOCCC entries and fixing almost all past entries for modern

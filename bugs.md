@@ -2156,12 +2156,6 @@ you run it on the compiled [anonymous.ten.c](%%REPO_URL%%/2001/anonymous/anonymo
 if nothing else it will not modify the target executable (this part of the fix
 at least should be correct).
 
-The file `2001/anonymous/anonymous.ten.32` is a pre-compiled
-[2001/anonymous/anonymous.ten.c](%%REPO_URL%%/2001/anonymous/anonymous.ten.c) as a 32-bit ELF binary in case you
-can run ELF binaries but cannot compile 32-bit binaries.
-
-Other BSD Unices were not tested.
-
 Note also that if you don't specify a file or you specify a non-32-bit ELF file
 this program will very likely crash or do something strange like slaughter the
 elves of Imladris :-(

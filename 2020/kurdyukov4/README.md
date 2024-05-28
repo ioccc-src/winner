@@ -62,7 +62,7 @@ Example:
 Try using the same random seed and varying the context size.
 
 BTW: what on Middle-earth is `lámatyávë`? It's Quenya, one of the languages of
-the Elves in Tolkien's Legendarium. It means sound taste (plural is lámatyáver)
+the Elves in Tolkien's Legendarium. It means sound taste (plural is `lámatyáver`)
 and it refers to phonaesthesia - in other words, it refers to the pleasure of
 sound and form of words. It's discussed in [Morgoth's
 Ring](https://en.wikipedia.org/wiki/Morgoth%27s_Ring), volume X of [History of

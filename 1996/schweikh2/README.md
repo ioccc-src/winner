@@ -57,6 +57,10 @@ appropriately. Try:
     perl ./hunni.pl < hunni.c
 ```
 
+NOTE: the [try.sh](%%REPO_URL%%/1996/schweikh2/try.sh) does this if you have
+`perl(1)` installed to show how the output is the same as
+[schweikh2.c](%%REPO_URL%%/1996/schweikh2/schweikh2.c) itself.
+
 This entry was another crowd pleaser at the IOCCC BOF.
 
 
