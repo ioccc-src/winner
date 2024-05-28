@@ -162,7 +162,7 @@ If a short line is needed, use:
 ```
 
 
-## Do NOT use the strike HTML element
+## Do NOT use the `<strike>` HTML element
 
 Please NOT use HTML elements:
 
@@ -174,6 +174,21 @@ Use instead:
 
 ```
     <del>...</del>
+```
+
+
+## Do NOT use the `<u>` HTML element
+
+Please NOT use HTML elements:
+
+```
+    <u>...</u>	<=== no thank you
+```
+
+Use instead:
+
+```
+    <ins>...</ins>
 ```
 
 
@@ -360,7 +375,7 @@ BTW: note the blank line after the code block.
 ````
 
 
-## Do NOT put "("s or ")"s in markdown link titles
+## Do NOT put "("s nor ")"s in markdown link titles
 
 Please do **NOT** use parenthesis inside the markdown link titles.
 
