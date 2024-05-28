@@ -5,6 +5,19 @@
 ```
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+    STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2001/cheong in bugs.html](../../bugs.html#2001_cheong).
+
+
+
+
 ## To use:
 
 ``` <!---sh-->

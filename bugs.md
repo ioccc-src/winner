@@ -2205,13 +2205,12 @@ file) but it appears this *also* requires i386 linux; indeed looking at the code
 it hard codes paths that are i386 specific to linux.
 
 Another point of interest is that the author provided de-obfuscated versions
-which might be of value to look at. I might do that as well but this entry is
-very likely never going to work for 64-bit linux so that's not that likely since
-there are other things that are more important.
+which might be of value to look at.
 
 If you have a fix for 64-bit systems this is welcome as an alternate version, as
 stated above. You might like to look at the otccelf version but note that it (at
 least in 64-bit linux and macOS) has compilation errors.
+
 
 ### Aside: why were there changes made if INABIAF ?
 
@@ -2225,6 +2224,16 @@ the compiler won't work there.
 Also the supplementary program, which did not work at all, was fixed (by Cody)
 and it can be run by itself for fun in modern systems, which was not possible
 before the fixes there.
+
+<div id="2001_cheong">
+## 2001/cheong
+</div>
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2001/cheong/cheong.c](%%REPO_URL%%/2001/cheong/cheong.c)
+### Information: [2001/cheong/index.html](2001/cheong/index.html)
+
+This program will crash without an arg.
 
 
 <div id="2001_dgbeards">
