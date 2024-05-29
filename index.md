@@ -21,6 +21,7 @@ Explore, under the **Entries** in the _topbar_ menu:
 
 * **[Winning Entries](years.html)**
 * **[People who have won](authors.html)**
+* Other parts of the IOCCC menu
 
 If you see this icon <a href="nojs-menu.html"> <img src="png/hamburger-icon-open.png"
      alt="hambuger-style menu icon"
@@ -53,17 +54,11 @@ The goals of the IOCCC:
 *  To provide a safe forum for poor C code. :-)
 
 
-# The IOCCC is currently **CLOSED**.
+# Entering the Contest
 
-Right now, you **CANNOT register** as a contestant with the IOCCC,<BR>
-nor can you send us a submission, because the **IOCCC** is yet **NOT open**.
-<BR>
-You may wish to follow [IOCCC on Mastodon](https://fosstodon.org/@ioccc) as we announce
-the start of an new IOCCC there.
-<BR>
-Speaking of IOCCC news, you may wish to visit [IOCCC news](news.html#news) for information on the next **IOCCC**.
-<BR>
-You may also check on the [status.json](status.json) for the current status of the **IOCCC**.
+View the [current status of the IOCCC](status.html) to see of the IOCCC is open for submissions.
+
+See [FAQ 0.0: How may I submit to the IOCCC?](faq.html#submit) for more information.
 
 
 <!--

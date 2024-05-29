@@ -481,19 +481,17 @@ other inconsistencies with the original entry?</a></li>
 </div>
 </div>
 <p>To submit your code to the IOCCC, you <strong>MUST</strong> follow these steps:</p>
-<ol start="0" type="1">
-<li><p>Verify that the IOCCC is open for submissions</p>
-<p>Check the <a href="status.json">status.json</a> URL and
-check the <a href="news.html#news">IOCCC news</a> to
-see of the IOCCC is open.</p>
-<p>You may only register for the IOCCC
-and you may only submit your entries to the IOCCC when the IOCCC is <strong>OPEN</strong>.</p></li>
-<li><p>Read the latest IOCCC rules and review the IOCCC guidelines</p>
+<h4 id="verify-that-the-ioccc-is-open-for-submissions">0. Verify that the IOCCC is open for submissions</h4>
+<p>Check the <a href="status.html">current status of the IOCCC</a> see of the IOCCC is open.</p>
+<p>You may <strong>only register for the IOCCC when the IOCCC is OPEN</strong>.</p>
+<p>You may <strong>only submit your entries to the IOCCC when the IOCCC is OPEN</strong>.</p>
+<p>See also the <a href="news.html#news">IOCCC news</a> for more information.</p>
+<h4 id="read-the-latest-ioccc-rules-and-review-the-ioccc-guidelines">1. Read the latest IOCCC rules and review the IOCCC guidelines</h4>
 <p>Please pay close attention to the <a href="next/rules.html">official IOCCC rules</a>.</p>
 <p>You are also <strong>highly encouraged</strong> to review the
 <a href="next/guidelines.html">official IOCCC guidelines</a> as they contain important
-suggestions, useful hints, and IOCCC humor. :-)</p></li>
-<li><p>Register for the IOCCC</p>
+suggestions, useful hints, and IOCCC humor. :-)</p>
+<h4 id="register-for-the-ioccc">2. Register for the IOCCC</h4>
 <p>The <strong>IOCCC registration procedure</strong> is still being designed.
 <!--XXX--> As such, we do not yet have instructions on how to
 use the <strong>IOCCC registration procedure</strong>. Once <strong>IOCCC
@@ -502,28 +500,34 @@ with the proper instructions. Watch the <a href="news.html">IOCCC news</a>
 for an annoucement about the <strong>IOCCC registration procedure</strong>.</p>
 <p>Once you have been registered, you will receive an email message for how to
 prepare your entries for submission, and how to upload the compressed tarballs
-to our submission portal.</p></li>
-<li><p>Obtain the latest mkiocccentry toolkit</p>
+to our submission portal.</p>
+<h4 id="obtain-the-latest-mkiocccentry-toolkit">3. Obtain the latest mkiocccentry toolkit</h4>
 <p>If you do not have an mkiocccentry tool directory:</p>
-<p>cd some_directory
-git clone git@github.com:ioccc-src/mkiocccentry.git
-cd mkiocccentry</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">cd</span> some_directory</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">git</span> clone git@github.com:ioccc-src/mkiocccentry.git</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">cd</span> mkiocccentry</span></code></pre></div>
 <p>If you already have an mkiocccentry tool directory:</p>
-<p>cd mkiocccentry
-git fetch
-git rebase</p></li>
-<li><p>Make the mkiocccentry toolkit</p>
-<p>make clobber all</p></li>
-<li><p>Run the mkiocccentry tool to form your entry tarball</p>
-<p>./mkiocccentry work_dir prog.c Makefile remarks.md [file …]</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">cd</span> mkiocccentry</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">git</span> fetch</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">git</span> rebase</span></code></pre></div>
+<h4 id="make-the-mkiocccentry-toolkit">4. Make the mkiocccentry toolkit</h4>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> clobber all</span></code></pre></div>
+<h4 id="run-the-mkiocccentry-tool-to-form-your-entry-tarball">5. Run the mkiocccentry tool to form your entry tarball</h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">mkiocccentry</span> work_dir prog.c Makefile remarks.md [file ...]</span></code></pre></div>
 <p>where:</p>
-<p>work_dir directory where the entry directory and tarball are formed
-prog.c path to the C source for your entry</p>
-<p>Makefile Makefile to build (make all) and cleanup (make clean &amp; make clobber)</p>
-<p>remarks.md Remarks about your entry in markdown format: see <a href="#remarks_md">FAQ 2.1</a> for more info.</p>
-<pre><code>             NOTE: See the [markdown syntax](https://www.markdownguide.org/basic-syntax) guide.
-             See also [CommonMark Spec](https://spec.commonmark.org/current/).</code></pre>
-<p>[file …] extra data files to include with your entry</p>
+<ul>
+<li><p>work_dir</p>
+<p>directory where the entry directory and tarball are formed</p></li>
+<li><p>prog.c</p>
+<p>path to the C source for your entry</p></li>
+<li><p>Makefile</p>
+<p>Makefile to build (make all) and cleanup (make clean &amp; make clobber)</p></li>
+<li><p>remarks.md</p>
+<p>Remarks about your entry in markdown format: see <a href="#remarks_md">FAQ 2.1</a> for more info.</p></li>
+<li><p>[file …]</p>
+<p>Optional extra data files to include with your entry</p></li>
+</ul>
+<p>NOTE: Please see our <a href="markdown.html">IOCCC markdown guide</a> for <strong>important information</strong> on using markdown in the IOCCC.</p>
 <p>NOTE: It is <em>NOT</em> necessary to install the tools to use them as you can run
 the tools from the top of the <em>mkiocccentry repo</em> directory just fine.</p>
 <p>If <code>mkiocccentry</code> tool indicates that there is a problem with your entry,
@@ -531,15 +535,14 @@ especially if it identifies a <a href="next/rules.html#2">rule 2</a> related pro
 you are <strong>strongly</strong> encouraged to revise and correct your entry and
 then re-run the <code>mkiocccentry</code> tool.</p>
 <p>If you choose to risk violating rules, be sure an explain your reason
-for doing so in your <code>remarks.md</code> file.</p></li>
-<li><p>Upload your entry to the IOCCC submit server</p>
-<p>The <strong>IOCCC submit server</strong> is still being written as of 2024
-Mar 10. <!--XXX--> As such, we do not yet have instructions
+for doing so in your <code>remarks.md</code> file.</p>
+<h4 id="upload-your-entry-to-the-ioccc-submit-server">6. Upload your entry to the IOCCC submit server</h4>
+<p>The <strong>IOCCC submit server</strong> is still being written.
+<!--XXX--> As such, we do not yet have instructions
 on how upload your entry to the <strong>IOCCC submit server</strong>. Once
 <strong>IOCCC submit server</strong> is ready, we will update this section
 with the proper instructions. Watch the <a href="news.html">IOCCC news</a>
-for an annoucement of the availability of the <strong>IOCCC submit server</strong>.</p></li>
-</ol>
+for an annoucement of the availability of the <strong>IOCCC submit server</strong>.</p>
 <div id="faq0_1">
 <h3 id="faq-0.1-what-types-of-entries-have-been-frequently-submitted-to-the-ioccc">FAQ 0.1: What types of entries have been frequently submitted to the IOCCC?</h3>
 </div>

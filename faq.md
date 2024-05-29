@@ -105,92 +105,115 @@ other inconsistencies with the original entry?](#faq4_3)
 
 To submit your code to the IOCCC, you **MUST** follow these steps:
 
-0. Verify that the IOCCC is open for submissions
 
-    Check the [status.json](status.json) URL and
-    check the [IOCCC news](news.html#news) to
-    see of the IOCCC is open.
+#### 0. Verify that the IOCCC is open for submissions
 
-    You may only register for the IOCCC
-    and you may only submit your entries to the IOCCC when the IOCCC is **OPEN**.
+Check the [current status of the IOCCC](status.html) see of the IOCCC is open.
 
-1. Read the latest IOCCC rules and review the IOCCC guidelines
+You may **only register for the IOCCC when the IOCCC is OPEN**.
 
-    Please pay close attention to the [official IOCCC rules](next/rules.html).
+You may **only submit your entries to the IOCCC when the IOCCC is OPEN**.
 
-    You are also **highly encouraged** to review the
-    [official IOCCC guidelines](next/guidelines.html) as they contain important
-    suggestions, useful hints, and IOCCC humor.  :-)
-
-2. Register for the IOCCC
-
-    The **IOCCC registration procedure** is still being designed.
-    <!--XXX--> As such, we do not yet have instructions on how to
-    use the **IOCCC registration procedure**.  Once **IOCCC
-    registration procedure** is ready, we will update this section
-    with the proper instructions.  Watch the [IOCCC news](news.html)
-    for an annoucement about the **IOCCC registration procedure**.
-
-    Once you have been registered, you will receive an email message for how to
-    prepare your entries for submission, and how to upload the compressed tarballs
-    to our submission portal.
-
-3. Obtain the latest mkiocccentry toolkit
-
-    If you do not have an mkiocccentry tool directory:
-
-	cd some_directory
-	git clone git@github.com:ioccc-src/mkiocccentry.git
-	cd mkiocccentry
-
-    If you already have an mkiocccentry tool directory:
-
-	cd mkiocccentry
-	git fetch
-	git rebase
-
-4. Make the mkiocccentry toolkit
-
-	make clobber all
-
-5. Run the mkiocccentry tool to form your entry tarball
-
-        ./mkiocccentry work_dir prog.c Makefile remarks.md [file ...]
-
-    where:
-
-	work_dir	directory where the entry directory and tarball are formed
-	prog.c		path to the C source for your entry
+See also the [IOCCC news](news.html#news) for more information.
 
 
-	Makefile	Makefile to build (make all) and cleanup (make clean & make clobber)
+#### 1. Read the latest IOCCC rules and review the IOCCC guidelines
 
-	remarks.md	Remarks about your entry in markdown format: see [FAQ 2.1](#remarks_md) for more info.
+Please pay close attention to the [official IOCCC rules](next/rules.html).
 
-			NOTE: See the [markdown syntax](https://www.markdownguide.org/basic-syntax) guide.
-			See also [CommonMark Spec](https://spec.commonmark.org/current/).
+You are also **highly encouraged** to review the
+[official IOCCC guidelines](next/guidelines.html) as they contain important
+suggestions, useful hints, and IOCCC humor.  :-)
 
-	[file ...]	extra data files to include with your entry
 
-    NOTE: It is *NOT* necessary to install the tools to use them as you can run
-    the tools from the top of the _mkiocccentry repo_ directory just fine.
+#### 2. Register for the IOCCC
 
-    If `mkiocccentry` tool indicates that there is a problem with your entry,
-    especially if it identifies a [rule 2](next/rules.html#2) related problem,
-    you are **strongly** encouraged to revise and correct your entry and
-    then re-run the `mkiocccentry` tool.
+The **IOCCC registration procedure** is still being designed.
+<!--XXX--> As such, we do not yet have instructions on how to
+use the **IOCCC registration procedure**.  Once **IOCCC
+registration procedure** is ready, we will update this section
+with the proper instructions.  Watch the [IOCCC news](news.html)
+for an annoucement about the **IOCCC registration procedure**.
 
-    If you choose to risk violating rules, be sure an explain your reason
-    for doing so in your `remarks.md` file.
+Once you have been registered, you will receive an email message for how to
+prepare your entries for submission, and how to upload the compressed tarballs
+to our submission portal.
 
-6. Upload your entry to the IOCCC submit server
 
-    The **IOCCC submit server** is still being written as of 2024
-    Mar 10.  <!--XXX--> As such, we do not yet have instructions
-    on how upload your entry to the **IOCCC submit server**.  Once
-    **IOCCC submit server** is ready, we will update this section
-    with the proper instructions.  Watch the [IOCCC news](news.html)
-    for an annoucement of the availability of the **IOCCC submit server**.
+#### 3. Obtain the latest mkiocccentry toolkit
+
+If you do not have an mkiocccentry tool directory:
+
+```sh
+    cd some_directory
+    git clone git@github.com:ioccc-src/mkiocccentry.git
+    cd mkiocccentry
+```
+
+If you already have an mkiocccentry tool directory:
+
+```sh
+    cd mkiocccentry
+    git fetch
+    git rebase
+```
+
+#### 4. Make the mkiocccentry toolkit
+
+```sh
+    make clobber all
+```
+
+#### 5. Run the mkiocccentry tool to form your entry tarball
+
+```sh
+    mkiocccentry work_dir prog.c Makefile remarks.md [file ...]
+```
+
+where:
+
+* work_dir
+
+    directory where the entry directory and tarball are formed
+
+* prog.c
+
+    path to the C source for your entry
+
+* Makefile
+
+    Makefile to build (make all) and cleanup (make clean & make clobber)
+
+* remarks.md
+
+    Remarks about your entry in markdown format: see [FAQ 2.1](#remarks_md) for more info.
+
+* [file ...]
+
+    Optional extra data files to include with your entry
+
+NOTE: Please see our [IOCCC markdown guide](markdown.html) for **important information** on using markdown in the IOCCC.
+
+NOTE: It is *NOT* necessary to install the tools to use them as you can run
+the tools from the top of the _mkiocccentry repo_ directory just fine.
+
+If `mkiocccentry` tool indicates that there is a problem with your entry,
+especially if it identifies a [rule 2](next/rules.html#2) related problem,
+you are **strongly** encouraged to revise and correct your entry and
+then re-run the `mkiocccentry` tool.
+
+If you choose to risk violating rules, be sure an explain your reason
+for doing so in your `remarks.md` file.
+
+
+#### 6. Upload your entry to the IOCCC submit server
+
+The **IOCCC submit server** is still being written.
+<!--XXX--> As such, we do not yet have instructions
+on how upload your entry to the **IOCCC submit server**.  Once
+**IOCCC submit server** is ready, we will update this section
+with the proper instructions.  Watch the [IOCCC news](news.html)
+for an annoucement of the availability of the **IOCCC submit server**.
 
 
 
