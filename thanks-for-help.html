@@ -2793,7 +2793,7 @@ by Yusuke.</p>
 <h3 id="winning-entry-source-code-cheong.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/cheong//cheong.c">cheong.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> fixed this to compile with <code>clang</code> by adding another function that is allowed to
-have a third arg as an int, not a <code>char **</code>. He chose <code>pain()</code> because it’s a four
+have a third arg as an <code>int</code>, not a <code>char **</code>. He chose <code>pain()</code> because it’s a four
 letter word that would match the format and because it’s pain that <code>clang</code> forces
 this. :-) This fix makes a point of the author’s notes on portability no longer
 valid, BTW.</p>
@@ -2811,16 +2811,13 @@ support implicit int:</p>
     coupard.c:31:8: error: parameter &#39;n&#39; was not declared, defaults to &#39;int&#39;; ISO C99 and later do not support implicit int [-Wimplicit-int]
     void e(n,h){
            ^</code></pre>
-<p>and for some reason it was being reported as an error. This was not really worth
-a thanks per se but it was originally done by adding <code>int</code>. The better solution
-is to disable the warning which is what was done later on to make it more like
-the original.</p>
+<p>and for some reason it was being reported as an error.</p>
+<p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/coupard/try.sh">try.sh</a> script.</p>
 <p><a href="#yusuke">Yusuke</a> provided a proper command line for those without <code>/dev/audio</code>
 or <code>/dev/sound/dsp</code> (which is most everyone nowadays, it seems, and especially
 those with macOS) (to do with sound; see his
-<a href="2013/endoh3/index.html">/2013/endoh3/index.html</a> entry where he also refers to
+<a href="2013/endoh3/index.html">2013/endoh3/index.html</a> entry where he also refers to
 sound devices in macOS).</p>
-<p>Cody added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/coupard/try.sh">try.sh</a>.</p>
 <div id="2001_ctk">
 <h2 id="winning-entry-2001ctk">Winning entry: <a href="2001/ctk/index.html">2001/ctk</a></h2>
 <h3 id="winning-entry-source-code-ctk.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/ctk//ctk.c">ctk.c</a></h3>
@@ -2831,17 +2828,19 @@ the ANSI escape codes. This works with both Linux and macOS.</p>
 etc.) after exiting even if you don’t press ‘q’, if you crash or if you kill the
 program prematurely. This was done by adding an explicit call to <code>e()</code> at the
 end of <code>main()</code>.</p>
-<p>Cody also added the <a href="2001/ctk/index.html#alternate-code">alt code</a> that adds
+<p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/ctk/ctk.alt.c">alt code</a> that adds
 vi(m) movement keys.</p>
 <div id="2001_dgbeards">
 <h2 id="winning-entry-2001dgbeards">Winning entry: <a href="2001/dgbeards/index.html">2001/dgbeards</a></h2>
 <h3 id="winning-entry-source-code-dgbeards.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/dgbeards//dgbeards.c">dgbeards.c</a></h3>
 </div>
 <p>The author provided two changes: one to speed it up and one to make it not crash
-on losing. <a href="#cody">Cody</a> provided an alternate version which does the former but he felt
-that the idea of crashing on losing (see the index.html for details on why that
-might be) too good to get rid of so he kept that in.</p>
-<p>He also points out that there is a way to get the computer to automatically lose
+on losing. <a href="#cody">Cody</a> provided an <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/dgbeards/dgbeards.alt.c">alternate
+version</a> which does the former but
+not the latter as he he felt that the idea of crashing on losing (see the
+index.html for details on why that might be) too good to get rid. The author
+explains how to make this change, however.</p>
+<p>Cody also points out that there is a way to get the computer to automatically lose
 very quickly. Do you know what it is?</p>
 <div id="2001_herrmann1">
 <h2 id="winning-entry-2001herrmann1">Winning entry: <a href="2001/herrmann1/index.html">2001/herrmann1</a></h2>
@@ -2849,7 +2848,7 @@ very quickly. Do you know what it is?</p>
 </div>
 <p><a href="#cody">Cody</a> fixed this so that the when compiling the code the program is not executed
 itself by itself which just showed the usage string and exited. The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/herrmann1/herrmann1.sh">script
-herrmann1.sh</a> is used to compile the program but
+herrmann1.sh</a> is how one should compile the program but
 it’s also how you invoke the program.</p>
 <p>Cody provided the file <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/herrmann1/plus1.turing">plus1.turing</a> based on the
 author’s remarks.</p>
@@ -2865,7 +2864,9 @@ shellcheck. In particular there were quite a few:</p>
 </div>
 <p><a href="#cody">Cody</a> fixed this to work with both 64-bit and 32-bit compilers by changing most
 of the <code>int</code>s (all but that in <code>main(int ...)</code>) to <code>long</code>s. He also fixed it to
-compile with <code>clang</code> by changing the args of main to be <code>int</code> and <code>char **, respectively, and changing specific references to the</code>argv<code>arg, casting to</code>long<code>(was</code>int<code>but the 64-bit fix requires</code>long`) which was its old type.</p>
+compile with <code>clang</code> by changing the args of <code>main</code> to be <code>int</code> and <code>char **</code>,
+respectively, and changing specific references to the <code>argv</code> arg, casting to
+<code>long</code> (was <code>int</code> but the 64-bit fix requires <code>long</code>) which was its old type.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/herrmann2/try.sh">try.sh</a> script which might be more
 useful than any other place as the command to try is quite long with C code.</p>
 <p>For some reason the original code was missing (presumingly because it had been
@@ -2874,27 +2875,24 @@ added to <code>.gitignore</code> by accident) but Cody restored it from the arch
 <h2 id="winning-entry-2001kev">Winning entry: <a href="2001/kev/index.html">2001/kev</a></h2>
 <h3 id="winning-entry-source-code-kev.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/kev//kev.c">kev.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> improved the Makefile to allow one to more easily set up the port,
+<p><a href="#cody">Cody</a> improved the <code>Makefile</code> to allow one to more easily set up the port,
 speed and <code>socket(2)</code> call that the author had set up.</p>
 <p>Cody also slowed down the ball just a tad (it was already a <code>-D</code> macro that was used
 in the code) as it went too fast for the speed at which the paddles move even
 when holding down the movement keys (but see below).</p>
 <p>Cody also provided an <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/kev/kev.alt.c">alternate version</a> which lets you use
 the arrow keys on your keyboard instead of the more awkward ‘<code>,</code>’ and ‘<code>.</code>’.</p>
-<p>He updated both versions to have <code>#ifndef..#endif</code> pairs for the macros so one
+<p>Cody updated both versions to have <code>#ifndef..#endif</code> pairs for the macros so one
 can more easily configure different settings without having to specify all of
 them (though this change became unnecessary with an improvement on how it was
-done). The speed, <code>SPEED</code>, will be set to 50 if it’s not defined at the compiler
-line as 50 is what it used to be set to. This way it’s more to the original but
+done). The speed, <code>SPEED</code>, will be set to <code>50</code> if it’s not defined at the compiler
+line as <code>50</code> is what it used to be set to. This way it’s more to the original but
 without having to sacrifice playability by running <code>make</code>.</p>
 <div id="2001_ollinger">
 <h2 id="winning-entry-2001ollinger">Winning entry: <a href="2001/ollinger/index.html">2001/ollinger</a></h2>
 <h3 id="winning-entry-source-code-ollinger.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/ollinger//ollinger.c">ollinger.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/ollinger/try.sh">try.sh</a> script.</p>
-<p>Cody also fixed it to not crash if not enough args, exiting 1 instead. This was
-done at a time where it was said to be a bug that should be fixed, for better or
-worse.</p>
 <div id="2001_schweikh">
 <h2 id="winning-entry-2001schweikh">Winning entry: <a href="2001/schweikh/index.html">2001/schweikh</a></h2>
 <h3 id="winning-entry-source-code-schweikh.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/schweikh//schweikh.c">schweikh.c</a></h3>

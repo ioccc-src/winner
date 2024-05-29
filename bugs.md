@@ -2296,6 +2296,18 @@ Although it is independent of endianness both systems need the same character
 set. In other words both have to be ASCII or EBCDIC - not one of each.
 
 
+<div id="2001_ollinger">
+## 2001/ollinger
+</div>
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2001/ollinger/ollinger.c](%%REPO_URL%%/2001/ollinger/ollinger.c)
+### Information: [2001/ollinger/index.html](2001/ollinger/index.html)
+
+This program will very likely crash or do something unexpected if you do not
+provide enough args.
+
+
 <div id="2001_rosten">
 ## 2001/rosten
 </div>
