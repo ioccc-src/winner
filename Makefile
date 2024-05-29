@@ -280,7 +280,6 @@ help:
 	@echo 'make genpath		 - form top level .top, YYYY level .year and winner .path files'
 	@echo 'make genfilelist	 - generate YYYY level .filelist'
 	@echo 'make verify_entry_files	 - check to be sure all files in all entries exist'
-	@echo 'make sort_gitignore	 - sort .gitignore files according to rules in bin/sgi.sh'
 	@echo 'make gen_authors	 - generate the top level authors.html page'
 	@echo 'make gen_location	 - generate the top level location.html page'
 	@echo 'make gen_years		 - generate the top level years.html page'
@@ -297,6 +296,8 @@ help:
 	@echo 'make www		 - build html pages for web site'
 	@echo
 	@echo '# Rules that are useful only for those IOCCC judges who mainain the official IOCCC web site:'
+	@echo
+	@echo 'make sort_gitignore	 - sort .gitignore files according to rules in bin/sgi.sh'
 	@echo
 	@echo 'make untar_entry_tarball - untar all entry tarballs'
 	@echo 'make untar_year_tarball	 - untar all year level tarballs'
@@ -484,7 +485,6 @@ quick_www:
 	@echo '=-=-=-=-= IOCCC complete make genpath =-=-=-=-='
 	${MAKE} genfilelist
 	${MAKE} verify_entry_files
-	${MAKE} sort_gitignore
 	${MAKE} gen_authors
 	${MAKE} gen_location
 	${MAKE} gen_years
@@ -493,14 +493,6 @@ quick_www:
 	${MAKE} quick_entry_index
 	${MAKE} gen_other_html
 	${MAKE} find_missing_links
-	@echo '=-=-=-=-=-= IOCCC complete make $@ =-=-=-=-=-='
-
-foo:
-	@echo '=-=-=-=-=-= IOCCC begin make $@ =-=-=-=-=-='
-	@echo '=-=-=-=-= IOCCC begin make sort_gitignore =-=-=-=-='
-	@echo '... hiding verbose output on stdout ...'
-	@${MAKE} sort_gitignore >/dev/null
-	@echo '=-=-=-=-= IOCCC complete make sort_gitignore =-=-=-=-='
 	@echo '=-=-=-=-=-= IOCCC complete make $@ =-=-=-=-=-='
 
 # do everything needed to build HTML content for the web site
@@ -519,7 +511,6 @@ www:
 	@echo '=-=-=-=-= IOCCC complete make genpath =-=-=-=-='
 	${MAKE} genfilelist
 	${MAKE} verify_entry_files
-	${MAKE} sort_gitignore
 	${MAKE} gen_authors
 	${MAKE} gen_location
 	${MAKE} gen_years
@@ -568,6 +559,7 @@ tar:
 	${MAKE} genpath
 	${MAKE} genfilelist
 	${MAKE} verify_entry_files
+	${MAKE} sort_gitignore
 	${MAKE} form_entry_tarball
 	${MAKE} form_year_tarball
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
