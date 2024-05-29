@@ -72,8 +72,8 @@ earlier drafts sometimes the `û` had no diacritic but `h` after the `u` in
 it (and other times nothing). The real text is:
 
 ```
-    Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk, agh
-    burzum-ishi krimpatul.
+    Ash nazg durbatulûk, ash nazg gimbatul,
+    ash nazg thrakatulûk agh burzum-ishi krimpatul.
 ```
 
 which when translated from [Black
