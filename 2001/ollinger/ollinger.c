@@ -11,7 +11,6 @@ char e[]="**3<HRZcir+3@OXakt;=GOXds*\?HRZcir*7HNZ`i19JS\\p*H[m1:CJSz*>H[`mr25\
 int main(int j,char *k[]) {
   int a,b,c,d,g,h,i=19;
 
-  if (j<2)exit(1);
   printf("       ");
   for(g=0[f=(char *)calloc(80+(h=atoi(1[k])),1)]=1; g<=h; g++) {
     if ((g>30)&&(f[i-2]+f[i-1]!=0)) i++;

@@ -3402,7 +3402,7 @@ by Yusuke.
 </div>
 
 [Cody](#cody) fixed this to compile with `clang` by adding another function that is allowed to
-have a third arg as an int, not a `char **`. He chose `pain()` because it's a four
+have a third arg as an `int`, not a `char **`. He chose `pain()` because it's a four
 letter word that would match the format and because it's pain that `clang` forces
 this. :-) This fix makes a point of the author's notes on portability no longer
 valid, BTW.
@@ -3429,18 +3429,16 @@ support implicit int:
 	   ^
 ```
 
-and for some reason it was being reported as an error. This was not really worth
-a thanks per se but it was originally done by adding `int`. The better solution
-is to disable the warning which is what was done later on to make it more like
-the original.
+and for some reason it was being reported as an error.
+
+Cody also added the [try.sh](%%REPO_URL%%/2001/coupard/try.sh) script.
 
 [Yusuke](#yusuke) provided a proper command line for those without `/dev/audio`
 or `/dev/sound/dsp` (which is most everyone nowadays, it seems, and especially
 those with macOS) (to do with sound; see his
-[/2013/endoh3/index.html](2013/endoh3/index.html) entry where he also refers to
+[2013/endoh3/index.html](2013/endoh3/index.html) entry where he also refers to
 sound devices in macOS).
 
-Cody added the [try.sh](%%REPO_URL%%/2001/coupard/try.sh).
 
 
 <div id="2001_ctk">
@@ -3456,7 +3454,7 @@ etc.) after exiting even if you don't press 'q', if you crash or if you kill the
 program prematurely. This was done by adding an explicit call to `e()` at the
 end of `main()`.
 
-Cody also added the [alt code](2001/ctk/index.html#alternate-code) that adds
+Cody also added the [alt code](%%REPO_URL%%/2001/ctk/ctk.alt.c) that adds
 vi(m) movement keys.
 
 
@@ -3466,11 +3464,13 @@ vi(m) movement keys.
 </div>
 
 The author provided two changes: one to speed it up and one to make it not crash
-on losing. [Cody](#cody) provided an alternate version which does the former but he felt
-that the idea of crashing on losing (see the index.html for details on why that
-might be) too good to get rid of so he kept that in.
+on losing. [Cody](#cody) provided an [alternate
+version](%%REPO_URL%%/2001/dgbeards/dgbeards.alt.c) which does the former but
+not the latter as he he felt that the idea of crashing on losing (see the
+index.html for details on why that might be) too good to get rid. The author
+explains how to make this change, however.
 
-He also points out that there is a way to get the computer to automatically lose
+Cody also points out that there is a way to get the computer to automatically lose
 very quickly. Do you know what it is?
 
 
@@ -3481,7 +3481,7 @@ very quickly. Do you know what it is?
 
 [Cody](#cody) fixed this so that the when compiling the code the program is not executed
 itself by itself which just showed the usage string and exited. The [script
-herrmann1.sh](%%REPO_URL%%/2001/herrmann1/herrmann1.sh) is used to compile the program but
+herrmann1.sh](%%REPO_URL%%/2001/herrmann1/herrmann1.sh) is how one should compile the program but
 it's also how you invoke the program.
 
 Cody provided the file [plus1.turing](%%REPO_URL%%/2001/herrmann1/plus1.turing) based on the
@@ -3508,7 +3508,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2001/herrmann1/try.sh) script.
 
 [Cody](#cody) fixed this to work with both 64-bit and 32-bit compilers by changing most
 of the `int`s (all but that in `main(int ...)`) to `long`s. He also fixed it to
-compile with `clang` by changing the args of main to be `int` and `char **,
+compile with `clang` by changing the args of `main` to be `int` and `char **`,
 respectively, and changing specific references to the `argv` arg, casting to
 `long` (was `int` but the 64-bit fix requires `long`) which was its old type.
 
@@ -3524,7 +3524,7 @@ added to `.gitignore` by accident) but Cody restored it from the archive.
 ### Winning entry source code: [kev.c](%%REPO_URL%%/2001/kev//kev.c)
 </div>
 
-[Cody](#cody) improved the Makefile to allow one to more easily set up the port,
+[Cody](#cody) improved the `Makefile` to allow one to more easily set up the port,
 speed and `socket(2)` call that the author had set up.
 
 Cody also slowed down the ball just a tad (it was already a `-D` macro that was used
@@ -3534,11 +3534,11 @@ when holding down the movement keys (but see below).
 Cody also provided an [alternate version](%%REPO_URL%%/2001/kev/kev.alt.c) which lets you use
 the arrow keys on your keyboard instead of the more awkward '`,`' and '`.`'.
 
-He updated both versions to have `#ifndef..#endif` pairs for the macros so one
+Cody updated both versions to have `#ifndef..#endif` pairs for the macros so one
 can more easily configure different settings without having to specify all of
 them (though this change became unnecessary with an improvement on how it was
-done). The speed, `SPEED`, will be set to 50 if it's not defined at the compiler
-line as 50 is what it used to be set to. This way it's more to the original but
+done). The speed, `SPEED`, will be set to `50` if it's not defined at the compiler
+line as `50` is what it used to be set to. This way it's more to the original but
 without having to sacrifice playability by running `make`.
 
 
@@ -3549,9 +3549,6 @@ without having to sacrifice playability by running `make`.
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2001/ollinger/try.sh) script.
 
-Cody also fixed it to not crash if not enough args, exiting 1 instead. This was
-done at a time where it was said to be a bug that should be fixed, for better or
-worse.
 
 
 <div id="2001_schweikh">
