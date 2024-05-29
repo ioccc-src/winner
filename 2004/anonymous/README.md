@@ -31,27 +31,36 @@ does use some upper case letters for demonstration purposes.
 
 ## Judges' remarks:
 
-Did you know that in the first edition of The Hobbit Gollum was willing to give
+Did you know that in the first edition of [The
+Hobbit](https://tolkiengateway.net/wiki/The_Hobbit),
+[Gollum](https://www.glyphweb.com/arda/g/gollum.html) was willing to give
 up the ring? It was not the Ruling Ring, the [One Ring](https://www.glyphweb.com/arda/o/onering.html),
 the Ring of Power or
 anything like that: it was simply a literary device that could make one
-invisible. When Bilbo won the famous riddle game Gollum went to fetch the Ring -
+invisible. When [Bilbo](https://www.glyphweb.com/arda/b/bilbobaggins.html) won
+the famous [Riddle-game](https://www.glyphweb.com/arda/r/riddlegame.html) Gollum went to fetch the Ring -
 not to kill and eat Bilbo but to give it to him! But Bilbo had already found it
 just like in the later editions. Gollum profusely apologised and begged for
 forgiveness. Bilbo told him never mind because he would have had it anyway. But
 he'd let him off on one condition: that he show him the way out. It was at this
 point that Bilbo slipped the ring on and Gollum saw him vanish and understood
 that he already found it. But there was no call of thief and no hatred of Bilbo.
+It was not until a sequel was called for that this was changed.
 
 If you want to read the first edition they reprinted it some years back: `The
-Hobbit Facsimile First Edition`. The details are also discussed in History of
-Middle-earth [HoMe] VI, [The Return of the
+Hobbit Facsimile First Edition`. The details are also discussed in [History of
+Middle-earth
+(HoMe)](https://tolkiengateway.net/wiki/The_History_of_Middle-earth) VI, [The Return of the
 Shadow](https://tolkiengateway.net/wiki/The_Return_of_the_Shadow), part one of
-the history of The Lord of the Rings of a twelve volume set - as well as in [The
+the history of [The Lord of the
+Rings](https://en.wikipedia.org/wiki/The_Lord_of_the_Rings) of a twelve volume set - as well as in [The
 History of the
 Hobbit](https://tolkiengateway.net/wiki/The_History_of_The_Hobbit).
 
-p.s. Frodo lives!
+Fun fact: at first Gollum was akin to a goblin-kind but this was immediately
+struck out.
+
+p.s. [Frodo](https://www.glyphweb.com/arda/f/frodobaggins.html) lives!
 
 
 ### An important aside :-)
@@ -60,8 +69,8 @@ BTW: if you haven't read [The Lord of the
 Rings](https://en.wikipedia.org/wiki/The_Lord_of_the_Rings) what are you waiting for? :-)
 You'll find out the source of the text above though you'll see that there are
 some circumflexes missing! That's okay though due to I/O of the entry and in
-earlier drafts sometimes the û had no diacritic but H after the `u` in
-it. The real text is:
+earlier drafts sometimes the `û` had no diacritic but `h` after the `u` in
+it (and other times nothing). The real text is:
 
 ```
     Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk, agh
@@ -76,11 +85,10 @@ Speech](https://www.glyphweb.com/arda/b/blackspeech.html):
  alt="The inscription, in the Black Speech of Mordor, on the One Ring"
  width=690 height=127>
 
-into English reads:
+into the Common Tongue reads:
 
 ```
-    One Ring to rule them all,
-    One Ring to find them,
+    One Ring to rule them all, One Ring to find them,
     One Ring to bring them all and in the darkness bind them.
 ```
 
