@@ -15,12 +15,19 @@ If you wish to recommend changes (understanding that things may be rapidly chang
 then consider making pull requests against the [temp-test-ioccc GitHub repo](https://github.com/ioccc-src/temp-test-ioccc).
 
 
-# Suggestion for visitors
+# Suggestions for visitors
 
-Explore:
+Explore, under the **Entries** in the _topbar_ menu:
 
 * **[Winning Entries](years.html)**
 * **[People who have won](authors.html)**
+
+If you see this icon <a href="nojs-menu.html"> <img src="png/hamburger-icon-open.png"
+     alt="hambuger-style menu icon"
+      width=24 height=24></a> in the upper right corner, click on it to display the menu.
+
+On a **touchscreen mobile device** browser **wider than 1024 pixels**,
+**press and hold** words in the upper right corner to activate the pull-down menu.
 
 
 # Obfuscate defined:
