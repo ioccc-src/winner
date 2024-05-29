@@ -13,7 +13,7 @@ Please regard these guidelines as a historic archive.
 # The IOCCC is closed
 
 The IOCCC is **NOT** accepting new submissions at this time.  See the
-[IOCCC winning entries page](../years.html) for the entires that have won the IOCCC.
+[IOCCC winning entries page](../years.html) for the entries that have won the IOCCC.
 
 Watch both [the IOCCC status page](../status.html) and the
 [@IOCCC mastodon feed](https://fosstodon.org/@ioccc) for information about future IOCCC openings.

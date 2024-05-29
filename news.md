@@ -109,7 +109,7 @@ to hold what will be called **IOCCCMOCK**, a beta-test IOCCC where we plan to te
 submissions to the IOCCC.
 
 We are working on an improved **IOCCC submit server**
-that will allow those who submit entires to be informed about the status of their submission.
+that will allow those who submit entries to be informed about the status of their submission.
 This **IOCCC submit server** will be beta tested in the **IOCCCMOCK**.
 
 We are working on a method to rapidly post the winning entries of an IOCCC.  No longer will entries
