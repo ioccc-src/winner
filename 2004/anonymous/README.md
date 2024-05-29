@@ -84,7 +84,7 @@ Speech](https://www.glyphweb.com/arda/b/blackspeech.html):
  alt="The inscription, in the Black Speech of Mordor, on the One Ring"
  width=690 height=127>
 
-into the Common Tongue reads:
+into the [Common Tongue](https://www.glyphweb.com/arda/c/commontongue.html) reads:
 
 ```
     One Ring to rule them all, One Ring to find them,
