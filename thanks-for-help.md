@@ -3303,12 +3303,10 @@ to:
     main (int cka, char **k) { char *ck = (char *)cka; /* ... */ }
 ```
 
-The following change was also made to be more portable, in case the constants
+The following was also done to be more portable, in case the constants
 `PROT_READ` and/or `PROT_WRITE` are not standardised or some platform does not
-follow it:
-
-Change `3` in the call to `mmap()` to be `PROT_READ|PROT_WRITE`: just in case
-`PROT_READ|PROT_WRITE` does not equal 3 (though it seems to be equal in both
+follow it: change `3` in the call to `mmap()` to be `PROT_READ|PROT_WRITE`: just in case
+`PROT_READ|PROT_WRITE` does not equal `3` (though it seems to be equal in both
 macOS and Linux).
 
 NOTE: there might be educational value to see the progress of this fix; if you
@@ -3592,7 +3590,8 @@ described in the index.html, based on the author's remarks.
 ### Winning entry source code: [arachnid.c](%%REPO_URL%%/2004/arachnid//arachnid.c)
 </div>
 
-[Cody](#cody) added an [alternate version](2004/arachnid/index.html#alternate-code) which
+[Cody](#cody) added an [alternate
+version](%%REPO_URL%%/2004/arachnid/arachnid.alt.c) which
 allows those like himself used to `h`, `j`, `k` and `l` movement keys to not get
 lost. Non rogue players, vi users and Dvorak typists are invited to get lost (or
 use the original version)! :-)
@@ -3650,10 +3649,10 @@ this, forcing `-O0`.
 versions](2004/gavare/index.html#alternate-code):
 
 - [gavare.alt.c](%%REPO_URL%%/2004/gavare/gavare.alt.c) allows you to change the image size
-and anti-alias setting at compile time.
+and anti-alias setting at compile time. This is based on the author's remarks.
 - [gavare.alt2.c](%%REPO_URL%%/2004/gavare/gavare.alt2.c) is like
 [gavare.alt.c](%%REPO_URL%%/2004/gavare/gavare.alt.c) but it should work for Windows as well
-(it sets binary mode on `stdout`).
+(it sets binary mode on `stdout`). This is also based on the author's remarks.
 - [gavare.r3.c](%%REPO_URL%%/2004/gavare/gavare.r3.c) is the author's unobfuscated version
 that was used during development, found on their [website about the
 entry](https://gavare.se/ioccc/ioccc_gavare.c.html).
@@ -3664,7 +3663,7 @@ entry](https://gavare.se/ioccc/ioccc_gavare.c.html).
 ### Winning entry source code: [gavin.c](%%REPO_URL%%/2004/gavin//gavin.c)
 </div>
 
-[Cody](#cody) provided the [alt code](2004/gavin/index.html#alternate-code) for
+[Cody](#cody) provided the [alt code](%%REPO_URL%%/2004/gavin/gavin.alt.c) for
 those who want to use QEMU. The most important part of this is the macro `K` has
 to be defined as `1`, not `0`.
 
@@ -3682,7 +3681,7 @@ files and causing `make clobber` to wipe some of them out.
 </div>
 
 [Cody](#cody) fixed a bunch of links in the index.html provided with the entry
-(web server) that no longer exist or have changed in some other way (`https`
+(the web server's index.html) that no longer exist or have changed in some other way (`https`
 instead of `http` for instance). In most cases a new link or change to https was
 all that was necessary but at least one or two URLs required the Internet
 Wayback Machine.
@@ -3723,9 +3722,11 @@ this ended up with a number of errors like:
 	  |     ;
 ```
 
-and various other problems.
+and various other problems. However there does seem to be a problem at least
+with some `gcc` versions in macOS but this appears to be due to errors in
+`/Library/Developer/CommandLineTools/SDKs/MacOSX14.sdk/usr/include/sys/cdefs.h`.
 
-Cody also added [alt code](2004/jdalbec/index.html#alternate-code) which allows
+Cody also added [alt code](%%REPO_URL%%/2004/jdalbec/jdalbec.alt.c) which allows
 one to control how many numbers after the `:` to print before printing a
 newline, so that one can see the output a bit better (though for lines that have
 a lot of numbers this will be harder to see).
@@ -3739,8 +3740,8 @@ Finally Cody added [try.sh](%%REPO_URL%%/2004/jdalbec/try.sh) and
 ### Winning entry source code: [kopczynski.c](%%REPO_URL%%/2004/kopczynski//kopczynski.c)
 </div>
 
-[Cody](#cody) reported that this entry cannot be optimised by the compiler as otherwise
-it will not work.
+[Cody](#cody) force disabled the optimiser in the `Makefile` with `-O0` as he
+discovered it will not work otherwise.
 
 Cody, out of an abundance of caution for `clang`, added a second arg to `main()`
 as some versions complain about the number of args and although they accept 1 it
@@ -3797,8 +3798,8 @@ Cody also added the [try.sh](%%REPO_URL%%/2004/schnitzi/try.sh) script.
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2004/sds/try.sh) script.
 
-Also, after the README.md file had copyright changes, it broke the script so
-Cody made a copy of the older README.md file into `README_sds.txt` and added that
+Also, after the `README.md` file had copyright changes, it broke the script so
+Cody made a copy of the older `README.md` file into `README_sds.txt` and added that
 to the repo for the script instead.
 
 
@@ -3860,8 +3861,7 @@ resulted in macros themselves like `#ifdef`, `#else` etc. to be `#ifdef`,
 which used to be generated by the Makefile via `cc -E`.
 
 Cody also made it so that the `FNAME` is (for the entry file itself and
-`vik2_1.c`: it shouldn't be done for
-[vik2.possible.cat.death.c](%%REPO_URL%%/2004/vik2/vik2.possible.cat.death.c)!) `__FILE__`
+`vik2_1.c` - there are other places it should not be done) `__FILE__`
 just to make it a bit easier to compile.
 
 

@@ -2724,11 +2724,10 @@ matter</em>!</p>
 <pre><code>    main (char *ck, char **k)</code></pre>
 <p>to:</p>
 <pre><code>    main (int cka, char **k) { char *ck = (char *)cka; /* ... */ }</code></pre>
-<p>The following change was also made to be more portable, in case the constants
+<p>The following was also done to be more portable, in case the constants
 <code>PROT_READ</code> and/or <code>PROT_WRITE</code> are not standardised or some platform does not
-follow it:</p>
-<p>Change <code>3</code> in the call to <code>mmap()</code> to be <code>PROT_READ|PROT_WRITE</code>: just in case
-<code>PROT_READ|PROT_WRITE</code> does not equal 3 (though it seems to be equal in both
+follow it: change <code>3</code> in the call to <code>mmap()</code> to be <code>PROT_READ|PROT_WRITE</code>: just in case
+<code>PROT_READ|PROT_WRITE</code> does not equal <code>3</code> (though it seems to be equal in both
 macOS and Linux).</p>
 <p>NOTE: there might be educational value to see the progress of this fix; if you
 wish to see, try the following commands from the <code>2001/anonymous</code> directory:</p>
@@ -2921,7 +2920,8 @@ described in the index.html, based on the author’s remarks.</p>
 <h2 id="winning-entry-2004arachnid">Winning entry: <a href="2004/arachnid/index.html">2004/arachnid</a></h2>
 <h3 id="winning-entry-source-code-arachnid.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/arachnid//arachnid.c">arachnid.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> added an <a href="2004/arachnid/index.html#alternate-code">alternate version</a> which
+<p><a href="#cody">Cody</a> added an <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/arachnid/arachnid.alt.c">alternate
+version</a> which
 allows those like himself used to <code>h</code>, <code>j</code>, <code>k</code> and <code>l</code> movement keys to not get
 lost. Non rogue players, vi users and Dvorak typists are invited to get lost (or
 use the original version)! :-)</p>
@@ -2966,10 +2966,10 @@ this, forcing <code>-O0</code>.</p>
 versions</a>:</p>
 <ul>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/gavare/gavare.alt.c">gavare.alt.c</a> allows you to change the image size
-and anti-alias setting at compile time.</li>
+and anti-alias setting at compile time. This is based on the author’s remarks.</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/gavare/gavare.alt2.c">gavare.alt2.c</a> is like
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/gavare/gavare.alt.c">gavare.alt.c</a> but it should work for Windows as well
-(it sets binary mode on <code>stdout</code>).</li>
+(it sets binary mode on <code>stdout</code>). This is also based on the author’s remarks.</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/gavare/gavare.r3.c">gavare.r3.c</a> is the author’s unobfuscated version
 that was used during development, found on their <a href="https://gavare.se/ioccc/ioccc_gavare.c.html">website about the
 entry</a>.</li>
@@ -2978,7 +2978,7 @@ entry</a>.</li>
 <h2 id="winning-entry-2004gavin">Winning entry: <a href="2004/gavin/index.html">2004/gavin</a></h2>
 <h3 id="winning-entry-source-code-gavin.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/gavin//gavin.c">gavin.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> provided the <a href="2004/gavin/index.html#alternate-code">alt code</a> for
+<p><a href="#cody">Cody</a> provided the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/gavin/gavin.alt.c">alt code</a> for
 those who want to use QEMU. The most important part of this is the macro <code>K</code> has
 to be defined as <code>1</code>, not <code>0</code>.</p>
 <p><a href="#yusuke">Yusuke</a> provided the <code>kernel</code> and <code>fs.tar</code> files which can be used if
@@ -2992,7 +2992,7 @@ files and causing <code>make clobber</code> to wipe some of them out.</p>
 <h3 id="winning-entry-source-code-hibachi.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi//hibachi.c">hibachi.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> fixed a bunch of links in the index.html provided with the entry
-(web server) that no longer exist or have changed in some other way (<code>https</code>
+(the web server’s index.html) that no longer exist or have changed in some other way (<code>https</code>
 instead of <code>http</code> for instance). In most cases a new link or change to https was
 all that was necessary but at least one or two URLs required the Internet
 Wayback Machine.</p>
@@ -3022,8 +3022,10 @@ this ended up with a number of errors like:</p>
        65 | V F##B (B) ; \
           |     ^ ~
           |     ;</code></pre>
-<p>and various other problems.</p>
-<p>Cody also added <a href="2004/jdalbec/index.html#alternate-code">alt code</a> which allows
+<p>and various other problems. However there does seem to be a problem at least
+with some <code>gcc</code> versions in macOS but this appears to be due to errors in
+<code>/Library/Developer/CommandLineTools/SDKs/MacOSX14.sdk/usr/include/sys/cdefs.h</code>.</p>
+<p>Cody also added <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/jdalbec/jdalbec.alt.c">alt code</a> which allows
 one to control how many numbers after the <code>:</code> to print before printing a
 newline, so that one can see the output a bit better (though for lines that have
 a lot of numbers this will be harder to see).</p>
@@ -3033,8 +3035,8 @@ a lot of numbers this will be harder to see).</p>
 <h2 id="winning-entry-2004kopczynski">Winning entry: <a href="2004/kopczynski/index.html">2004/kopczynski</a></h2>
 <h3 id="winning-entry-source-code-kopczynski.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/kopczynski//kopczynski.c">kopczynski.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> reported that this entry cannot be optimised by the compiler as otherwise
-it will not work.</p>
+<p><a href="#cody">Cody</a> force disabled the optimiser in the <code>Makefile</code> with <code>-O0</code> as he
+discovered it will not work otherwise.</p>
 <p>Cody, out of an abundance of caution for <code>clang</code>, added a second arg to <code>main()</code>
 as some versions complain about the number of args and although they accept 1 it
 is entirely possible it will eventually be that they don’t.</p>
@@ -3072,8 +3074,8 @@ fast in modern systems, especially the scrolling text of
 <h3 id="winning-entry-source-code-sds.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/sds//sds.c">sds.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/sds/try.sh">try.sh</a> script.</p>
-<p>Also, after the README.md file had copyright changes, it broke the script so
-Cody made a copy of the older README.md file into <code>README_sds.txt</code> and added that
+<p>Also, after the <code>README.md</code> file had copyright changes, it broke the script so
+Cody made a copy of the older <code>README.md</code> file into <code>README_sds.txt</code> and added that
 to the repo for the script instead.</p>
 <div id="2004_vik2">
 <h2 id="winning-entry-2004vik2">Winning entry: <a href="2004/vik2/index.html">2004/vik2</a></h2>
@@ -3126,8 +3128,7 @@ resulted in macros themselves like <code>#ifdef</code>, <code>#else</code> etc. 
 (which actually includes itself, once directly and now by <code>__FILE__</code>)
 which used to be generated by the Makefile via <code>cc -E</code>.</p>
 <p>Cody also made it so that the <code>FNAME</code> is (for the entry file itself and
-<code>vik2_1.c</code>: it shouldn’t be done for
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/vik2/vik2.possible.cat.death.c">vik2.possible.cat.death.c</a>!) <code>__FILE__</code>
+<code>vik2_1.c</code> - there are other places it should not be done) <code>__FILE__</code>
 just to make it a bit easier to compile.</p>
 <div id="2005">
 <h1 id="the-18th-ioccc"><a href="2005/index.html">2005 - The 18th IOCCC</a></h1>
