@@ -84,7 +84,7 @@ winning entries page](years.html).
 
 The IOCCC is closed and is **NOT** accepting new submissions.
 
-See the [IOCCC winning entries page](years.html) for the entires that have won the IOCCC.
+See the [IOCCC winning entries page](years.html) for the entries that have won the IOCCC.
 
 **NOTE**: From time to time, winning IOCCC entries may have their write-ups updated,
 Makefiles improved and source code fixed.  See [IOCCC news](news.html) for details.
