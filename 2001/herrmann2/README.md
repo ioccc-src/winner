@@ -19,7 +19,7 @@
 ```
 
 If you use vi(m) you can see a pattern in [herrmann2.cup](%%REPO_URL%%/2001/herrmann2/herrmann2.cup) and
-[herrmann2.ioccc][(%%REPO_URL%%/2001/herrmann2/herrmann2.ioccc] by say:
+[herrmann2.ioccc](%%REPO_URL%%/2001/herrmann2/herrmann2.ioccc) by say:
 
 
 ```
