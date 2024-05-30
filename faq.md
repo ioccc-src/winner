@@ -1,4 +1,4 @@
-# FAQ Table of Contents <!-- XXX - Change the references from _temp-test-ioccc_ to _winners_ when these fixes are merged. -->
+# FAQ Table of Contents
 
 
 ## Section  0 - [Submitting entries to a new IOCCC](#faq0)
@@ -435,11 +435,11 @@ and on the [IOCCC mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry)
 
 To comment on the [IOCCC rules](next/rules.html) or the
 [IOCCC guidelines](next/guidelines.html) please view the
-[GitHub discussions for this repo](https://github.com/ioccc-src/temp-test-ioccc/discussions).
+[GitHub discussions for this repo](https://github.com/ioccc-src/winner/discussions).
 If there is an on-going discussion that seems relevant to what you
 have to say, consider adding comments to that particular discussion.
 Otherwise consider opening a [new IOCCC repo
-discussion](https://github.com/ioccc-src/temp-test-ioccc/discussions/new/choose).
+discussion](https://github.com/ioccc-src/winner/discussions/new/choose).
 
 To comment on [IOCCC mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry),
 please view the [mkiocccentry repo discussions](https://github.com/ioccc-src/mkiocccentry/discussions).
@@ -742,7 +742,7 @@ files) that is more consistent across IOCCC years.
 tools and scripts](bin/index.html).
 * Setting up a system whereby authors of IOCCC entries may update their own
 contact information via a [GitHub pull
-request](https://github.com/ioccc-src/temp-test-ioccc/pulls).
+request](https://github.com/ioccc-src/winner/pulls).
 * Setting up to generate the top level [years.html](years.html) file via the
 [gen-years.sh](%%REPO_URL%%/bin/gen-years.sh) tool.
 * Setting up to generate the top level [authors.html file](authors.html), renamed
@@ -1803,7 +1803,7 @@ that you may wish to try.
 It also possible that you may have discovered a bug in an winning IOCCC
 entry.  If so, you are invited to try an fix the IOCCC entry and
 submit that fix by way of a [GitHub pull
-request](https://github.com/ioccc-src/temp-test-ioccc/pulls).
+request](https://github.com/ioccc-src/winner/pulls).
 Please see [FAQ 5.2](#fix_an_entry) for how to submit a fix to an IOCCC entry.
 
 
@@ -2444,7 +2444,7 @@ section may offer you important fixing clues.
 
 We do not 'maintain' the contest entries as such. The code is made available on an 'AS
 IS' basis. If you have a FIX for an entry, we suggest that you submit your fixes in a [GitHub pull
-request](https://github.com/ioccc-src/temp-test-ioccc/pulls) as we welcome pull requests that have a
+request](https://github.com/ioccc-src/winner/pulls) as we welcome pull requests that have a
 minimal impact on the entry while improving the portability, functionality, and/or addressing known problems.
 
 If you do submit a pull request, we ask that each pull request address just one IOCCC entry at a time.
@@ -3505,8 +3505,8 @@ To help you out here is a navigation menu in this FAQ entry:
 
 - [Creating a GitHub account](#creating-a-github-account)
 - [Installing an ssh key to GitHub](#installing-an-ssh-key)
-- [Forking the temp-test-ioccc repo](#forking-the-temp-test-ioccc-repo)
-- [Cloning the temp-test-ioccc repo](#cloning-the-temp-test-ioccc-repo)
+- [Forking the IOCCC winner repo](#forking-the-ioccc-winner-repo)
+- [Cloning the IOCCC winner repo](#cloning-the-ioccc-winner-repo)
 - [Making changes, fixes etc.](#making-changes-fixes-etc)
 - [Committing your changes](#committing-your-changes)
 - [Opening a pull request](#opening-a-pull-request)
@@ -3549,20 +3549,20 @@ it might be `~/.ssh/github.pub`.
 Whatever the key file is, copy the contents and paste it into the GitHub field
 labelled _Key_. Once you have done so click on _Add SSH key_.
 
-#### Forking the temp-test-ioccc repo
+#### Forking the IOCCC winner repo
 
 Open in your browser the link:
-<https://github.com/ioccc-src/temp-test-ioccc/fork>. You now should follow the
+<https://github.com/ioccc-src/winner/fork>. You now should follow the
 instructions in forking the repo.
 
 
-#### Cloning the temp-test-ioccc repo
+#### Cloning the IOCCC winner repo
 
 Once you have forked the repo you are ready to clone it to your system. For
 instance Cody Boone Ferguson has the GitHub handle _xexyl_ so he would type in:
 
 ``` <!---sh-->
-    git clone https://github.com/xexyl/temp-test-ioccc [target_dir]
+    git clone https://github.com/xexyl/winner [target_dir]
 ```
 
 Once that is completed you will need to change to that directory. The default
@@ -3570,7 +3570,7 @@ directory would be the name of the repo but if you specified a target directory
 it will be that. For instance using the above example you might do:
 
 ``` <!---sh-->
-    cd temp-test-ioccc
+    cd winner
 ```
 
 You're ready to make your changes now!
@@ -3619,11 +3619,11 @@ Cody would see:
 > Hi xexyl! You've successfully authenticated, but GitHub does not provide shell access.
 
 Now, assuming that the forked repo is
-<https://github.com/xexyl/temp-test-ioccc>, you'd type:
+<https://github.com/xexyl/winner>, you'd type:
 
 
 ``` <!---sh-->
-    git remote set-url origin git@github.com:xexyl/temp-test-ioccc.git
+    git remote set-url origin git@github.com:xexyl/winner.git
 ```
 
 Now you'd be ready to make your commits.
@@ -3688,9 +3688,9 @@ This might show:
     remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
     remote:
     remote: Create a pull request for 'human-snakes' on GitHub by visiting:
-    remote:      https://github.com/xexyl/temp-test-ioccc/pull/new/human-snakes
+    remote:      https://github.com/xexyl/winner/pull/new/human-snakes
     remote:
-    To github.com:xexyl/temp-test-ioccc.git
+    To github.com:xexyl/winner.git
      * [new branch]	human-snakes -> human-snakes
     branch 'human-snakes' set up to track 'origin/human-snakes'.
 ```
@@ -3699,7 +3699,7 @@ The link referred to above would then be opened to open a pull request. Just
 follow the instructions at this point. If however it does not show a link it is
 likely because the branch already exists in your GitHub account (for the repo).
 In this case you can open the link:
-<https://github.com/ioccc-src/temp-test-ioccc/pulls> which might show something
+<https://github.com/ioccc-src/winner/pulls> which might show something
 like:
 
 ```
@@ -3736,7 +3736,7 @@ has the merge. To do this from the command line, assuming the fork in the above
 example, you would type:
 
 ``` <!---sh-->
-    git checkout master && git pull https://github.com/ioccc-src/temp-test-ioccc.git master && git push origin master
+    git checkout master && git pull https://github.com/ioccc-src/winner.git master && git push origin master
 ```
 
 This will merge your pull request to your fork.

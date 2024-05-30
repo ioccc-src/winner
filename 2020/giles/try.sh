@@ -25,7 +25,7 @@ if [[ -z "$PLAY" ]]; then
 	echo "Note: cannot find play(1) or aplay(1). Will not play sounds for you. Try installing" 1>&2
 	echo "SoX. You will have to play the WAV output manually, sorry." 1>&2
 	echo 1>&2
-	echo "Tip: see https://github.com/ioccc-src/temp-test-ioccc/blob/master/faq.md#sox." 1>&2
+	echo "Tip: visit: https://www.ioccc.org/faq.html#sox" 1>&2
 	echo 1>&2
     fi
 fi
@@ -40,7 +40,7 @@ if [[ -n "$PLAY" ]]; then
 else
     echo "Please play pi.wav in an audio player that can play WAV files." 1>&2
     echo 1>&2
-    echo "Tip: see https://github.com/ioccc-src/temp-test-ioccc/blob/master/faq.md#sox." 1>&2
+    echo "Tip: visit: https://www.ioccc.org/faq.html#sox" 1>&2
     echo 1>&2
 fi
 
@@ -60,7 +60,7 @@ else
     echo 1>&2
     echo "Please play jenny.wav with an audio player that can play WAV files."
     echo 1>&2
-    echo "Tip: see https://github.com/ioccc-src/temp-test-ioccc/blob/master/faq.md#sox." 1>&2
+    echo "Tip: visit: https://www.ioccc.org/faq.html#sox" 1>&2
     echo 1>&2
     read -r -n 1 -p "Press any key to convert 10666-28 ('IOCCC-28'): "
     echo 1>&2

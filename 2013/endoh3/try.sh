@@ -76,7 +76,7 @@ endoh3()
 	    echo 1>&2
 	else
 	    echo "Please install either SoX, ruby or padsp (from PulseAudio)." 1>&2
-	    echo "Tip: see https://github.com/ioccc-src/temp-test-ioccc/blob/master/faq.md#sox." 1>&2
+	    echo "Tip: visit: https://www.ioccc.org/faq.html#sox" 1>&2
 	    exit 1
 	fi
     fi

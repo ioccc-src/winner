@@ -1,3 +1,4 @@
+<!-- XXX - This entire section goes away during the final stages of the Great Fork Merge -->
 # THIS IS AN EXPERIMENTAL IOCCC WEB SITE
 
 **IMPORTANT: This is NOT the official IOCCC web site!**
@@ -14,7 +15,9 @@ This web site will be undergoing major changes, so expect many broken links, typ
 If you wish to recommend changes (understanding that things may be rapidly changing out from under your copy),
 then consider making pull requests against the [temp-test-ioccc GitHub repo](https://github.com/ioccc-src/temp-test-ioccc).
 
+## What follows is the actual index.html file
 
+<!-- XXX - remove down to here in the final stages of the Great Fork Merge -->
 # Suggestions for visitors
 
 Explore, under the **Entries** in the _topbar_ menu:

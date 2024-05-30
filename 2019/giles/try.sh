@@ -35,6 +35,6 @@ if [[ -n "$PLAY" ]]; then
     echo 1>&2
 else
     echo "play(1) from SoX not installed." 1>&2
-    echo "NOTE: see https://github.com/ioccc-src/temp-test-ioccc/blob/master/faq.md#sox." 1>&2
+    echo "Tip: visit: https://www.ioccc.org/faq.html#sox" 1>&2
 fi
 

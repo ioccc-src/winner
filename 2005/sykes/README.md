@@ -37,7 +37,7 @@ For those who fondly remember their first
 down memory lane ... starting with `$C000` of course!
 
 We encourage you to try and grok the obfuscated expression on [line
-56](https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/sykes/sykes.c#L56),
+56](%%REPO_URL%%/2005/sykes/sykes.c#L56),
 after the C pre-processor gets finished with it!
 
 We downloaded the [ROM](https://en.wikipedia.org/wiki/ROM_image) contents to use
@@ -258,13 +258,13 @@ mode. Otherwise some PET specific features are skipped during normal
 
 The main processing all happens in a heroic expression containing no
 less than 64 ternary operators (after `cpp`) starting on [line
-56](https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/sykes/sykes.c#L56).
+56](%%REPO_URL%%/2005/sykes/sykes.c#L56).
 This decodes the
 [6502](https://en.wikipedia.org/wiki/MOS_Technology_6502#Technical_description)
 instructions according to a table and executes them.
 
 The addressing mode is decoded in a similar expression starting on [line
-53](https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/sykes/sykes.c#L53).
+53](%%REPO_URL%%/2005/sykes/sykes.c#L53).
 
 
 ### Bugs

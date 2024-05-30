@@ -1,3 +1,4 @@
+<!-- XXX - This entire section goes away during the final stages of the Great Fork Merge -->
 ### This is NOT the official IOCCC web site!
 
 Please visit [www.ioccc.org](https://www.ioccc.org) for the official **IOCCC** web site.
@@ -14,13 +15,11 @@ changes (understanding that things may be rapidly changing out from
 under your copy), then consider making pull requests against the
 temp-test-ioccc GitHub repo.
 
-XXX - The text from the top down to the _What follows is the actual README.md file_
-line will be removed when this web site becomes official - XXX
+
+### What follows is the actual README.md file
 
 
-## What follows is the actual README.md file - Remove from top down through this line - XXX
-
-
+<!-- XXX - remove down to here in the final stages of the Great Fork Merge -->
 # The International Obfuscated C Code Contest
 
 ## **Obfuscate** | *verb* [with object]

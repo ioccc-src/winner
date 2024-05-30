@@ -32,5 +32,5 @@ elif [[ -S "$DSP" ]]; then
     ./coupard > "$DSP"
 else
     echo "SoX not installed. Please install it and try again." 1>&2
-    echo "Tip: see https://github.com/ioccc-src/temp-test-ioccc/blob/master/faq.md#sox." 1>&2
+    echo "Tip: visit: https://www.ioccc.org/faq.html#sox" 1>&2
 fi

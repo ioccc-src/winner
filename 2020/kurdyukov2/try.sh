@@ -21,7 +21,7 @@ convert_error()
 {
     echo 1>&2
     echo "Warning: $CONVERT failed to generate out.gif. Is $CONVERT convert(1) from ImageMagick?" 1>&2
-    echo "See: https://github.com/ioccc-src/temp-test-ioccc/blob/master/faq.md#imagemagick." 1>&2
+    echo "Tip: visit: https://www.ioccc.org/faq.html#imagemagick" 1>&2
     echo 1>&2
     echo "Tip: if you have it in a different path, try: CONVERT=path ./try.sh" 1>&2
     echo 1>&2
@@ -78,6 +78,6 @@ if [[ -n "$CONVERT" ]]; then
 else
     echo 1>&2
     echo "Could not fine convert(1) from ImageMagick." 1>&2
-    echo "See: https://github.com/ioccc-src/temp-test-ioccc/blob/master/faq.md#imagemagick." 1>&2
+    echo "Tip: visit: https://www.ioccc.org/faq.html#imagemagick" 1>&2
     echo 1>&2
 fi

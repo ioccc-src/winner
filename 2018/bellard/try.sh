@@ -40,12 +40,12 @@ elif [[ -n "$PNGTOPNM" && -n "$PNMSCALE" && -n "$CJPEG" ]]; then
 else
     if [[ -z "$PNGTOPAM" || -z "$PNGTOPNM" || "$PNMSCALE" ]]; then
 	echo "Cannot find pngtopam(1) or pnmscale(1). Try installing netpbm first." 1>&2
-	echo "See https://github.com/ioccc-src/temp-test-ioccc/blob/master/faq.md#netpbm" 1>&2
+	echo "Tip: visit: https://www.ioccc.org/faq.html#netpbm" 1>&2
 	echo 1>&2
     fi
     if [[ -z "$CJPEG" ]]; then
 	echo "Cannot find cjpeg. Try installing libjpeg-turbo." 1>&2
-	echo "See https://github.com/ioccc-src/temp-test-ioccc/blob/master/faq.md#libjpeg." 1>&2
+	echo "Tip: visit: https://www.ioccc.org/faq.html#libjpeg" 1>&2
 	echo 1>&2
     fi
 fi

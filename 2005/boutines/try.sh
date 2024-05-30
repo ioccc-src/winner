@@ -65,5 +65,5 @@ else
     echo 1>&2
     echo "convert not found (ImageMagick not installed?)" 1>&2
     echo "Try viewing *.svg with a graphics viewer that can view SVG files." 1>&2
-    echo "Tip: see https://github.com/ioccc-src/temp-test-ioccc/blob/master/faq.md#imagemagick." 1>&2
+    echo "Tip: visit: https://www.ioccc.org/faq.html#imagemagick" 1>&2
 fi

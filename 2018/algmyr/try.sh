@@ -31,7 +31,7 @@ SOX="$(type -P sox)"
 
 if [[ -z "$SOX" && -z "$APLAY" ]]; then
     echo "Missing both sox and aplay, cannot do this step." 1>&2
-    echo "NOTE: see https://github.com/ioccc-src/temp-test-ioccc/blob/master/faq.md#sox." 1>&2
+    echo "Tip: visit: https://www.ioccc.org/faq.html#sox" 1>&2
 elif [[ -n "$SOX" ]]; then
     echo "$ echo -n ' MENE MENE TEKEL UPHARSIN ' | ./prog | \
 $SOX -t raw -c 1 -r 44100 -L -e floating-point -b 32 \

@@ -12,11 +12,11 @@ Can you fix/improve entries not under the INABIAF (it's not a bug it's a
 feature)? You are **VERY WELCOME** to try.
 
 As far as how to help: please submit your fixes in a [GitHub pull
-request](https://github.com/ioccc-src/temp-test-ioccc/pulls) (with ONE PULL
+request](https://github.com/ioccc-src/winner/pulls) (with ONE PULL
 REQUEST *PER* FIX, please)!
 
 We will be **happy to credit anyone who submits successful [GitHub pull
-requests](https://github.com/ioccc-src/temp-test-ioccc/pulls)** in the
+requests](https://github.com/ioccc-src/winner/pulls)** in the
 [thanks](thanks-for-help.html) file. If you're the author of an entry
 that win the IOCCC, we will add a link to your winning entries in the file
 (if you're not an author, we can add a link to your GitHub page or personal
@@ -4231,7 +4231,7 @@ We hope this document was of use to you in determining which entries are known
 to have a problem, what entries are known to have features that are not bugs and
 so on. We also thank you for going through this  document and, if you propose any
 fixes] via a [GitHub pull
-request](https://github.com/ioccc-src/temp-test-ioccc/pulls) or otherwise, we
+request](https://github.com/ioccc-src/winner/pulls) or otherwise, we
 thank you as well for the help! We will happily add you to the
 [thanks](thanks-for-help.html) file as well.
 
