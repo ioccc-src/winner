@@ -2797,6 +2797,17 @@ characters in the regex `a-z_A-Z0-9@.-`. Breaking these constraints will end up
 with possibly corrupt GIF files.
 
 
+<div id="2006_hamre">
+## 2006/hamre
+</div>
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2006/hamre/hamre.c](%%REPO_URL%%/2006/hamre/hamre.c)
+### Information: [2006/hamre/index.html](2006/hamre/index.html)
+
+This program will likely crash or do something funny without an arg.
+
+
 <div id="2006_monge">
 ## 2006/monge
 </div>

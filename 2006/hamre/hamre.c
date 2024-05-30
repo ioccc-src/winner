@@ -8,7 +8,7 @@
 <m?(c++		       ,d=1,3	   q=0,5      q=m,main\
 (a+3,b)		      ,o=o*s	 q,O=O*		 w q):0:
 static		     d,v[99	];main		  (int a,
-char**b		    ){if(a<2)exit(1);d=7;if(*c?!   (p(+,3
+char**b		    ){d=7;     if(*c?!		  (p(+,3
 ,4 q+O*		   3,4)p(			   -,(o?3
 :(O=1,6		  )),4 q			  -O*3,4)
 p(*,4,3		 ,4)p(/				  ,5,4,3)
