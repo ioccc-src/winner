@@ -39,7 +39,7 @@ echo 1>&2
 echo vier | ./kang # notice the issue here, see alternate code instead
 echo 1>&2
 echo "Note: for a version that gets this one right (breaking others" 1>&2
-echo "including fier), see the alt code." 1>&2
+echo "including fier), see the alternate code." 1>&2
 echo 1>&2
 
 read -r -n 1 -p "Press any key to run: echo \"shest'\" | ./kang # 6: "

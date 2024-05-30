@@ -138,7 +138,7 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-# Variable to control size of maze for alt code
+# Variable to control size of maze for alternate code
 #
 SIZE= 39
 

@@ -1918,23 +1918,23 @@ current source (that is <code>entry.orig.c</code> to <code>entry.c</code>).</li>
 </ul></li>
 <li><code>make make diff_alt_orig</code>:
 <ul>
-<li>This rule will show the diff of the alt code to the original
-code (that is <code>entry.alt.c</code> to <code>entry.orig.c</code>). If no alt code exists
+<li>This rule will show the diff of the alternate code to the original
+code (that is <code>entry.alt.c</code> to <code>entry.orig.c</code>). If no alternate code exists
 nothing will be shown.</li>
 </ul></li>
 <li><code>make diff_alt_prog</code>:
 <ul>
-<li>This rule will show the diff of the alt code to the entry as it
+<li>This rule will show the diff of the alternate code to the entry as it
 stands (that is <code>entry.alt.c</code> to <code>entry.c</code>).</li>
 </ul></li>
 <li><code>make diff_orig_alt</code>:
 <ul>
-<li>This rule will show the diff of the original code to the alt code
+<li>This rule will show the diff of the original code to the alternate code
 (that is <code>entry.orig.c</code> to <code>entry.alt.c</code>).</li>
 </ul></li>
 <li><code>make diff_prog_alt</code>:
 <ul>
-<li>This rule will show the diff of the entry to the alt code (that is
+<li>This rule will show the diff of the entry to the alternate code (that is
 <code>entry.c</code> to <code>entry.alt.c</code>).</li>
 </ul></li>
 <li><code>make diff_prog_orig</code>:
@@ -1950,7 +1950,7 @@ would be instead <code>prog.orig.c</code>, <code>prog.alt.c</code> and <code>pro
 <p>Note that you might see something like:</p>
 <pre><code>    make: [Makefile:170: diff_orig_prog] Error 1 (ignored)</code></pre>
 <p>at the end of the output but this is completely normal if there are differences.</p>
-<p>If the alt code is the same as the original, say with
+<p>If the alternate code is the same as the original, say with
 <a href="1984/anonymous/index.html">1984/anonymous</a>, then naturally there is no point in
 running the rule and the same applies for all the other rules but this system
 allows for easily seeing the diffs.</p>
@@ -1981,7 +1981,7 @@ very easily. To do that <code>cd 1991/dds</code> and then do:</p>
 just do:</p>
 <pre><code>    make DIFF=colordiff diff_orig_prog # for orig to prog diff
     make DIFF=colordiff diff_alt_prog # for alt to prog diff</code></pre>
-<p>Obviously if you want to view the alt code or the orig code you can just open
+<p>Obviously if you want to view the alternate code or the orig code you can just open
 the files as described above.</p>
 <div id="faq4_3">
 <h3 id="faq-4.3---why-do-author-remarks-sometimes-not-match-the-source-andor-why-are-there-other-inconsistencies-with-the-original-entry">FAQ 4.3 - Why do author remarks sometimes not match the source and/or why are there other inconsistencies with the original entry?</h3>

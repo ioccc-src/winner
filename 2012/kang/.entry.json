@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "English words script for 1 through 13 for alt code"
+	    "entry_text" : "English words script for 1 through 13 for alternate code"
 	},
 	{
 	    "file_path" : "de.sh",
@@ -63,7 +63,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "English words script for 1 through 13 for alt code"
+	    "entry_text" : "English words script for 1 through 13 for alternate code"
 	},
 	{
 	    "file_path" : "en.sh",

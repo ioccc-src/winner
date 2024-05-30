@@ -37,7 +37,7 @@ to not worry about writing it to a file and just viewing the image it creates.
 
 ## Alternate code:
 
-The alt code [gavare.alt.c](%%REPO_URL%%/2004/gavare/gavare.alt.c) allows you to change the size of the
+The alternate code [gavare.alt.c](%%REPO_URL%%/2004/gavare/gavare.alt.c) allows you to change the size of the
 image as well as the anti-alias setting, when compiling.
 
 The author also provided [on their web page for the

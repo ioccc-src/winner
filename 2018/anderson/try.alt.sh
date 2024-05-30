@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.sh - demonstrate IOCCC entry 2018/anderson alt code
+# try.sh - demonstrate IOCCC entry 2018/anderson alternate code
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it

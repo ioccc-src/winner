@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.alt.sh - demonstrate IOCCC entry 1989/ovdluhe.alt alt code
+# try.alt.sh - demonstrate IOCCC entry 1989/ovdluhe.alt alternate code
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it

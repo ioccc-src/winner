@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.alt.sh - demonstrate IOCCC entry 2000/natori alt code
+# try.alt.sh - demonstrate IOCCC entry 2000/natori alternate code
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
@@ -190,7 +190,7 @@ moon()
     fi
     echo 1>&2
 
-    # Finally, for the try.alt.sh (alt code, southern hemisphere), force
+    # Finally, for the try.alt.sh (alternate code, southern hemisphere), force
     # starting with southern hemisphere.
     echo "Will now use less(1): 'q' = quit, space = next page, enter = next line." 1>&2
     echo "We now recommend that you try holding enter down." 1>&2

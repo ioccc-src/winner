@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.alt.sh - demonstrate IOCCC entry 1985/shapiro alt code
+# try.alt.sh - demonstrate IOCCC entry 1985/shapiro alternate code
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
@@ -31,7 +31,7 @@ while ((i < 5)); do
     ((i++))
 done
 
-# while input is only numbers recompile the alt code with that value.  If number
+# while input is only numbers recompile the alternate code with that value.  If number
 # is <=0 it sets to 39 in the code but here if one enters a negative number it
 # will exit due to the '-'. 1 is rather pointless but we don't check for
 # it either.

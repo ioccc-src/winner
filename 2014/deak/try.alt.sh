@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.alt.sh - demonstrate IOCCC entry 2014/deak alt code
+# try.alt.sh - demonstrate IOCCC entry 2014/deak alternate code
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
@@ -10,7 +10,7 @@ if [[ -z "$CC" ]]; then
     CC="cc"
 fi
 
-# compile the alt code with various parameters and run it to show different
+# compile the alternate code with various parameters and run it to show different
 # output
 
 read -r -n 1 -p "Press any key to change X1 to 2, X2 to -1 and Y1 to -2.3: "

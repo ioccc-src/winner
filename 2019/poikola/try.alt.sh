@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.alt.sh - demonstrate IOCCC entry 2019/poikola alt code
+# try.alt.sh - demonstrate IOCCC entry 2019/poikola alternate code
 #
 # 'I will move to Copenhagen and apply for Swedish citizenship.'
 #

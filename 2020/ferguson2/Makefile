@@ -144,7 +144,7 @@ recode: recode.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-# Variable to control how long to sleep for alt code
+# Variable to control how long to sleep for alternate code
 #
 SLEEP= 400000
 ${PROG}.alt: ${PROG}.alt.c

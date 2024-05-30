@@ -146,7 +146,7 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-# Variable to control how to redefine sleep time in alt code
+# Variable to control how to redefine sleep time in alternate code
 #
 SLEEP= 15000
 

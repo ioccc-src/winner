@@ -18,7 +18,7 @@ There is alternate code which allows one to change the size of the maze. See
 ## Alternate code:
 
 The code has a define `C` set to 39 but this can be modified to change the size
-of the maze. The alt code allows one to easily do this.
+of the maze. The alternate code allows one to easily do this.
 
 
 ### Alternate build:

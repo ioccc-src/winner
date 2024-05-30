@@ -143,7 +143,7 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-# Variables to control port and timing constant in alt code
+# Variables to control port and timing constant in alternate code
 #
 PORT= 1701
 TIME= 500000

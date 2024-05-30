@@ -140,7 +140,7 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-# Variable to control max number of moves for alt code
+# Variable to control max number of moves for alternate code
 #
 MAXMOVES= 484
 

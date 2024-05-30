@@ -36,7 +36,7 @@ very well. This feature is so you can experiment with different speeds in
 between writes. It can be useful if your CPU is too fast :-)
 
 The author stated that the original version also had a delay but the difference
-is it required one to hit enter for it to print another line; the alt code will
+is it required one to hit enter for it to print another line; the alternate code will
 start over once it times out or if one hits a key.
 
 Note that the microseconds is argc and it uses `atoi()` which does NOT check for

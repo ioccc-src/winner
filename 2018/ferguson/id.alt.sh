@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# id.alt.sh - determine exactly how real '"intelligent" design' is with alt code
+# id.alt.sh - determine exactly how real '"intelligent" design' is with alternate code
 #
 
 # limit to 250000 attempts to save them time if they really wish to try and

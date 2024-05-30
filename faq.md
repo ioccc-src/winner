@@ -2275,17 +2275,17 @@ The following `make` rules exist to make a difference:
     - This rule will show the diff of the _original_ source to the
     current source (that is `entry.orig.c` to `entry.c`).
 * `make make diff_alt_orig`:
-    - This rule will show the diff of the alt code to the original
-    code (that is `entry.alt.c` to `entry.orig.c`). If no alt code exists
+    - This rule will show the diff of the alternate code to the original
+    code (that is `entry.alt.c` to `entry.orig.c`). If no alternate code exists
     nothing will be shown.
 * `make diff_alt_prog`:
-    - This rule will show the diff of the alt code to the entry as it
+    - This rule will show the diff of the alternate code to the entry as it
     stands (that is `entry.alt.c` to `entry.c`).
 * `make diff_orig_alt`:
-    - This rule will show the diff of the original code to the alt code
+    - This rule will show the diff of the original code to the alternate code
     (that is `entry.orig.c` to `entry.alt.c`).
 * `make diff_prog_alt`:
-    - This rule will show the diff of the entry to the alt code (that is
+    - This rule will show the diff of the entry to the alternate code (that is
     `entry.c` to `entry.alt.c`).
 * `make diff_prog_orig`:
     - This rule will show the diff of the entry to the original code (that is
@@ -2304,7 +2304,7 @@ Note that you might see something like:
 
 at the end of the output but this is completely normal if there are differences.
 
-If the alt code is the same as the original, say with
+If the alternate code is the same as the original, say with
 [1984/anonymous](1984/anonymous/index.html), then naturally there is no point in
 running the rule and the same applies for all the other rules but this system
 allows for easily seeing the diffs.
@@ -2356,7 +2356,7 @@ just do:
     make DIFF=colordiff diff_alt_prog # for alt to prog diff
 ```
 
-Obviously if you want to view the alt code or the orig code you can just open
+Obviously if you want to view the alternate code or the orig code you can just open
 the files as described above.
 
 

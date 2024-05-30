@@ -247,7 +247,7 @@ Cody also provided the [try.alt.sh](%%REPO_URL%%/1985/lycklama/try.alt.sh) scrip
 ### Winning entry source code: [shapiro.c](%%REPO_URL%%/1985/shapiro/shapiro.c)
 </div>
 
-[Cody](#cody) added the [alt code](%%REPO_URL%%/1985/shapiro/shapiro.alt.c)
+[Cody](#cody) added the [alternate code](%%REPO_URL%%/1985/shapiro/shapiro.alt.c)
 which allows one to resize the maze and he also added the
 [try.alt.sh](%%REPO_URL%%/1985/shapiro/try.alt.sh) script that randomly selects
 sizes (five times) and then compiles and runs it. After the five runs it prompts
@@ -450,7 +450,7 @@ see how odd this problem was and what Cody did to fix it, if nothing else but
 for entertainment!
 
 Also, after all warnings but one that could not be silenced were disabled, Cody
-changed the [alt code](%%REPO_URL%%/1986/marshall/marshall.alt.c) (which was not
+changed the [alternate code](%%REPO_URL%%/1986/marshall/marshall.alt.c) (which was not
 the same as the original - see above for details or try `make diff_orig_alt` in
 the directory) slightly so that it was possible to silence it. In particular:
 
@@ -852,7 +852,7 @@ found in the index.html file.
 ### Winning entry source code: [litmaath.c](%%REPO_URL%%/1988/litmaath/litmaath.c)
 </div>
 
-[Cody](#cody) added the [alt code](%%REPO_URL%%/1988/litmaath/litmaath.alt.c)
+[Cody](#cody) added the [alternate code](%%REPO_URL%%/1988/litmaath/litmaath.alt.c)
 which is code that we suggested at the time of publication, in the remarks, to
 help understand the entry, and for fun.
 
@@ -987,7 +987,7 @@ most certainly do have a personality and they can be very sociable.
 Whilst he was at it, Cody made it so that one need not run the alt script or alt
 code directly, to match that of the main entry. As we simulate the functionality
 anyway, and since one may still run the code or the script (for the original
-entry and the alt code) anyway, it works out well.
+entry and the alternate code) anyway, it works out well.
 
 
 <div id="1989_jar.2">
@@ -1053,7 +1053,7 @@ output.
 
 Cody also provided an [alternate version](%%REPO_URL%%/1989/ovdluhe/ovdluhe.alt.c) based on
 the author's remarks and the [try.alt.sh](%%REPO_URL%%/1989/ovdluhe/try.alt.sh) script that
-uses the alt code, allowing one to configure the alt build. See the index.html
+uses the alternate code, allowing one to configure the alt build. See the index.html
 for details. The fix described above was fixed in this version too, after it was
 discovered and fixed.
 
@@ -1319,7 +1319,7 @@ a typo here) from invalid input but which now works.
 ### Winning entry source code: [pjr.c](%%REPO_URL%%/1990/pjr/pjr.c)
 </div>
 
-[Cody](#cody) added the [alt code](%%REPO_URL%%/1990/pjr/pjr.alt.c) which was suggested by the judges
+[Cody](#cody) added the [alternate code](%%REPO_URL%%/1990/pjr/pjr.alt.c) which was suggested by the judges
 in the case that your compiler cannot compile `X=g()...` but it actually does
 something else and is recommended by the author as well.
 
@@ -1436,7 +1436,7 @@ He also fixed the code to not enter an infinite loop if arg is a number not > 0
 and to not crash if no arg is specified. This was done during a time it was
 deemed a problem to be fixed.
 
-NOTE: the alt code did NOT have arg checks added as it is actually a copy of the
+NOTE: the alternate code did NOT have arg checks added as it is actually a copy of the
 original code.
 
 Cody also added the [try.sh](%%REPO_URL%%/1990/westley/try.sh) script.
@@ -1453,7 +1453,7 @@ Cody also added the [try.sh](%%REPO_URL%%/1990/westley/try.sh) script.
 ### Winning entry source code: [ant.c](%%REPO_URL%%/1991/ant/ant.c)
 </div>
 
-[Cody](#cody) added [alt code](%%REPO_URL%%/1991/ant/ant.alt.c) that will be a bit easier to use for
+[Cody](#cody) added [alternate code](%%REPO_URL%%/1991/ant/ant.alt.c) that will be a bit easier to use for
 those familiar with vim in the following ways (we don't want vi users to also
 not be able to use it or exit it, now do we ? :-) ):
 
@@ -1653,7 +1653,7 @@ might still get some warnings there.
 The key to the string is that it rotates the character by `+1`. This was not
 immediately clear until reading the author's remarks so there was an alt version
 that was something of a kludge, running `make a` instead, but after the proper
-fix was implemented the alt code was removed.
+fix was implemented the alternate code was removed.
 
 Cody also fixed a typo in `LANDER.BAS` and made it so that if a file could not be
 opened for reading or a file could not be opened for writing it would not crash.
@@ -1825,7 +1825,7 @@ generated.
 </div>
 
 [Cody](#cody) fixed this to compile with modern systems. Note that in 1996 a bug fix was
-applied to the code, provided as the alt code as that version is not obfuscated.
+applied to the code, provided as the alternate code as that version is not obfuscated.
 Thus Cody's fix applies to the original entry. The problems were that `malloc.h`
 is not the correct header file now (at least in some systems) and a non-void
 (implicit `int`) function returning without a value. That function was changed to
@@ -1833,7 +1833,7 @@ return `void`.
 
 Cody also added the [try.sh](%%REPO_URL%%/1992/albert/try.sh) and
 [try.alt.sh](%%REPO_URL%%/1992/albert/try.alt.sh) scripts that correspond to the entry and
-the alt code.
+the alternate code.
 
 
 <div id="1992_ant">
@@ -1880,12 +1880,12 @@ commands that we suggested and some additional ones that he provide for some fun
 ### Winning entry source code: [buzzard.2.c](%%REPO_URL%%/1992/buzzard.2/buzzard.2.c)
 </div>
 
-[Cody](#cody) fixed the alt code to compile. The problem was it assumed that
+[Cody](#cody) fixed the alternate code to compile. The problem was it assumed that
 `exit(3)` returns a value, not `void`. This was fixed with a `,0`.
 
 Cody also added the [try.sh](%%REPO_URL%%/1992/buzzard.2/try.sh) and
 [try.alt.sh](%%REPO_URL%%/1992/buzzard.2/try.alt.sh) scripts that correspond to the entry
-and its alt code.
+and its alternate code.
 
 
 <div id="1992_gson">
@@ -1938,7 +1938,7 @@ version](%%REPO_URL%%/1992/kivinen/kivinen.alt.c) and it is recommended one use 
 version first. See the index.html file to see how to reconfigure it.
 
 Cody also made the fixed version (the code relied on `exit(3)` returning to use
-in binary expressions) (and alt code from it) more like the original by renaming
+in binary expressions) (and alternate code from it) more like the original by renaming
 the `ext` macro to be `exit` which uses the comma operator. He made it so the
 line lengths match the original code, at least as best as possible (if not
 perfectly), including start and end columns, often (if not all) with the same
@@ -2046,7 +2046,7 @@ unless of course it becomes too small.
 
 Cody added the scripts [whereami.sh](%%REPO_URL%%/1992/westley/whereami.sh) and
 [whereami.alt.sh](%%REPO_URL%%/1992/westley/whereami.alt.sh) which correspond to the entry and
-the alt code but first check that the number of columns is at least 80 and if
+the alternate code but first check that the number of columns is at least 80 and if
 not it is an error.
 
 Cody added the [try.sh](%%REPO_URL%%/1992/westley/try.sh) script that shows the different
@@ -2223,7 +2223,7 @@ arg (as it was 0 at file scope already this is perfectly fine and it means
 there's no need to cast it to an int in the function call though that would also
 work).
 
-Cody also added the alt code, provided by the author, which is:
+Cody also added the alternate code, provided by the author, which is:
 
 ```
     ... a version of the program before it got formatted into the VIII,
@@ -2289,7 +2289,7 @@ inclusion of `stdlib.h` in the Makefile the layout of the source is exactly the
 same column width and no additional lines were added. This was done during one
 of the times where this was changed to bug to fix status, for better or worse.
 
-Cody also fixed the Makefile which was causing alt code to be compiled when it
+Cody also fixed the Makefile which was causing alternate code to be compiled when it
 shouldn't be.
 
 Cody also added the scripts [try.sh](%%REPO_URL%%/1994/horton/try.sh) and
@@ -2398,7 +2398,7 @@ check [1994/shapiro in bugs.html](bugs.html#1994_shapiro).
 </div>
 
 [Cody](#cody) added the try scripts, four total, colour and black and white
-pairs for the original entry and the alt code. These scripts are
+pairs for the original entry and the alternate code. These scripts are
 [try.color.sh](%%REPO_URL%%/1994/tvr/try.color.sh) (color to match the author's
 remarks), [try.bw.sh](%%REPO_URL%%/1994/tvr/try.bw.sh),
 [try.alt.color.sh](%%REPO_URL%%/1994/tvr/try.alt.color.sh) and
@@ -2413,7 +2413,7 @@ fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
 In this case the newline had
 to be terminated but it was a pretty straightforward fix. `gets()` was defined
 to use `fgets()` and the inclusion of `stdio.h` had to be added but to make it
-more like the original entry this was done in the Makefile. The alt code was
+more like the original entry this was done in the Makefile. The alternate code was
 also changed to use `fgets(3)`.
 
 
@@ -2498,7 +2498,7 @@ provided which is input we suggested one try with the entry.
 ### Winning entry source code: [garry.c](%%REPO_URL%%/1995/garry/garry.c)
 </div>
 
-[Cody](#cody) fixed the alt code so that it will compile with modern compilers. The
+[Cody](#cody) fixed the alternate code so that it will compile with modern compilers. The
 problem was a missing `int` for the `f` variable. He felt it was even more
 important that it works because the layout does indeed look to him like a rat is
 dropping core :-), something that the judges suggested.
@@ -2507,7 +2507,7 @@ Cody also renamed `garry.test.sh` to [try.sh](%%REPO_URL%%/1995/garry/try.sh) an
 to to make sure the program is compiled before trying to use it as well as
 adding a few enhancements. For the alt version he also added the
 [try.alt.sh](%%REPO_URL%%/1995/garry/try.alt.sh) script to use the alt version, though the
-alt version is not as important as alt code in other entries. In order to get
+alt version is not as important as alternate code in other entries. In order to get
 the paging to work right for the `garry.data` file leading blank lines had to be
 added.
 
@@ -2837,7 +2837,7 @@ pootify scripts.
 ### Winning entry source code: [dloweneil.c](%%REPO_URL%%/1998/dloweneil/dloweneil.c)
 </div>
 
-[Cody](#cody) added [alt code](%%REPO_URL%%/1998/dloweneil/dloweneil.alt.c) which has vi(m) movement
+[Cody](#cody) added [alternate code](%%REPO_URL%%/1998/dloweneil/dloweneil.alt.c) which has vi(m) movement
 (in addition to the other keys except for dropping it's not `d` but `j` or
 space) keys as well as allowing one to quit the game.
 
@@ -3201,7 +3201,7 @@ game.
 (using the same code).  See below for an interesting problem that occurred that
 had to be resolved for SDL1.
 
-Cody also added [alt code](%%REPO_URL%%/2000/thadgavin/thadgavin.alt.c) to allow
+Cody also added [alternate code](%%REPO_URL%%/2000/thadgavin/thadgavin.alt.c) to allow
 one to slow down the code to get a better idea of what the program looked like
 back in 2000, with modern systems. This code also, at least for the curses mode, allows
 one to quit at any time by pressing 'q'. Note that this alternate version only
@@ -3240,10 +3240,10 @@ changed. As was noted in the log at the time:
 ### Winning entry source code: [tomx.c](%%REPO_URL%%/2000/tomx//tomx.c)
 </div>
 
-[Cody](#cody) added the [alt code](%%REPO_URL%%/2000/tomx/tomx.alt.c) based on the
+[Cody](#cody) added the [alternate code](%%REPO_URL%%/2000/tomx/tomx.alt.c) based on the
 author's remarks with a fix for modern systems and he also added the two
 scripts, [try.sh](%%REPO_URL%%/2000/tomx/try.sh) and [try.alt.sh](%%REPO_URL%%/2000/tomx/try.alt.sh) for
-the main code and the alt code respectively.
+the main code and the alternate code respectively.
 
 And although the scripts do `chmod +x` on the source code (see the index.html for
 details) the source code is now executable by default.
@@ -3452,7 +3452,7 @@ etc.) after exiting even if you don't press 'q', if you crash or if you kill the
 program prematurely. This was done by adding an explicit call to `e()` at the
 end of `main()`.
 
-Cody also added the [alt code](%%REPO_URL%%/2001/ctk/ctk.alt.c) that adds
+Cody also added the [alternate code](%%REPO_URL%%/2001/ctk/ctk.alt.c) that adds
 vi(m) movement keys.
 
 
@@ -3663,7 +3663,7 @@ entry](https://gavare.se/ioccc/ioccc_gavare.c.html).
 ### Winning entry source code: [gavin.c](%%REPO_URL%%/2004/gavin//gavin.c)
 </div>
 
-[Cody](#cody) provided the [alt code](%%REPO_URL%%/2004/gavin/gavin.alt.c) for
+[Cody](#cody) provided the [alternate code](%%REPO_URL%%/2004/gavin/gavin.alt.c) for
 those who want to use QEMU. The most important part of this is the macro `K` has
 to be defined as `1`, not `0`.
 
@@ -3726,7 +3726,7 @@ and various other problems. However there does seem to be a problem at least
 with some `gcc` versions in macOS but this appears to be due to errors in
 `/Library/Developer/CommandLineTools/SDKs/MacOSX14.sdk/usr/include/sys/cdefs.h`.
 
-Cody also added [alt code](%%REPO_URL%%/2004/jdalbec/jdalbec.alt.c) which allows
+Cody also added [alternate code](%%REPO_URL%%/2004/jdalbec/jdalbec.alt.c) which allows
 one to control how many numbers after the `:` to print before printing a
 newline, so that one can see the output a bit better (though for lines that have
 a lot of numbers this will be harder to see).
@@ -3879,14 +3879,14 @@ just to make it a bit easier to compile.
 to the proper compiled program (it's hardcoded). This had never been done and so
 the script did not even work (at least modernly?).
 
-He also added the [alt code](2005/aidan/index.html#alternate-code) based on the
+He also added the [alternate code](%%REPO_URL%%/2005/aidan/aidan.alt.c) based on the
 author's remarks which is a different approach than the one used and which
 (according to the author) 'is slower (particularly in worst-case or nearly so
 scenarios), inelegant, and not a good starting place for sudoku generation.'
 
 Cody added the [try.sh](%%REPO_URL%%/2005/aidan/try.sh) and
 [try.alt.sh](%%REPO_URL%%/2005/aidan/try.alt.sh) scripts that correspond to the entry and
-alt code respectively.
+alternate code respectively.
 
 Cody added the `make test` and `make test-n0` rules for easier use of the test
 suite.
@@ -3905,7 +3905,7 @@ The author noted that one can define `NO_STTY` to not use `stty(1)` at all
 (either to prevent having to hit enter or to turn echo off/on) which is
 explained in the index.html.
 
-Cody added the [alt code](2005/anon/index.html#alternate-code) with vi(m) like
+Cody added the [alternate code](2005/anon/index.html#alternate-code) with vi(m) like
 movements.
 
 
@@ -4053,7 +4053,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2005/mikeash/try.sh) script.
 needed but part of the entry) would work with compilers that have by default
 `-Werror` like `clang` in macOS.
 
-Cody also added the alt code which does scan for https. Futile, maybe, based on
+Cody also added the alternate code which does scan for https. Futile, maybe, based on
 how https is set up, in which case just enjoy it for what it was. But there
 might be some command line that will let it work that way or perhaps someone
 wants to add the necessary code.
@@ -4249,7 +4249,7 @@ used but Cody discovered that later versions of `clang` have an additional defec
 where it does not allow only one arg so the second arg to `main()` was added
 back.
 
-This was an unfortunate problem for the alt code as he has been using Z for alt
+This was an unfortunate problem for the alternate code as he has been using Z for alt
 code `usleep()` (for sleep) but in this case unfortunately the original entry
 used `Z` in `main()` (though unused) so to make it more like the original Cody
 renamed the macro `Z` for `usleep()` to `S` instead which can stand for sleep
@@ -4279,7 +4279,7 @@ bug to fix.
 ### Winning entry source code: [sykes1.c](%%REPO_URL%%/2006/sykes1//sykes1.c)
 </div>
 
-[Cody](#cody) provided the [alt code](2006/sykes1/index.html#alternate-code) based on the
+[Cody](#cody) provided the [alternate code](2006/sykes1/index.html#alternate-code) based on the
 author's remarks.
 
 Cody also added the [try.sh](%%REPO_URL%%/2006/sykes1/try.sh) script.
@@ -4321,7 +4321,7 @@ macOS - it did not seem to be a problem under Linux, at least not fedora. The
 problem was wrong variable types - implicit `int`s instead of `FILE *`s. It now
 works with both macOS and Linux.
 
-Cody also added the (untested) alt code that is based on the author's remarks to
+Cody also added the (untested) alternate code that is based on the author's remarks to
 port this to systems that have the non-standard `kbhit()` and `getch()` (not the
 one from curses) which is typically (always?) in `conio.h`.
 
@@ -4512,7 +4512,7 @@ header files). To build try the alt rule of the Makefile.
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/zucker/try.sh) script.
 
-Cody also added [alt code](2011/zucker/index.html#alternate-code) that should work on
+Cody also added [alternate code](2011/zucker/index.html#alternate-code) that should work on
 Windows, based on the author's remarks that if the system distinguishes binary
 and text then `stdout` needs to be set to binary mode.
 
@@ -4565,7 +4565,7 @@ and the colour version added by the author, [Yusuke](#yusuke), at the request of
 the judges.
 
 Cody also added the [try.alt.sh](%%REPO_URL%%/2012/endoh1/try.alt.sh) script that compiles
-the alt code in two ways, one with setting the gravity factor to `I` and another
+the alternate code in two ways, one with setting the gravity factor to `I` and another
 with the default, and which is run on the source file and each of the text files
 supplied by the author. This code has an alarm set at 10 seconds so that one
 need not hit ctrl-c/intr in between .. say to make it more fluid :-)
@@ -4643,7 +4643,7 @@ title and stylesheet) and other formatting changes.
 ### Winning entry source code: [kang.c](%%REPO_URL%%/2012/kang//kang.c)
 </div>
 
-[Cody](#cody) added alt code that fixes a problem where in German 'v' sounds like 'f'
+[Cody](#cody) added alternate code that fixes a problem where in German 'v' sounds like 'f'
 which the program has as 'f': with the original version it would translate
 'fier' to '4' when the word is 'vier'. But see below.
 
@@ -4760,7 +4760,7 @@ configurable at compile time. The Makefile was modified in such a way as to make
 it very easy to redefine it at compile time.
 
 Cody also added the [try.sh](%%REPO_URL%%/2013/birken/try.sh) script for the entry and the
-[try.alt.sh](%%REPO_URL%%/2013/birken/try.alt.sh) script for the alt code.
+[try.alt.sh](%%REPO_URL%%/2013/birken/try.alt.sh) script for the alternate code.
 
 
 <div id="2013_cable1">
@@ -5017,7 +5017,7 @@ redefine the port and timing constant.
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2014/deak//prog.c)
 </div>
 
-[Cody](#cody) added [alt code](2014/deak/index.html#alternate-code) that lets
+[Cody](#cody) added [alternate code](2014/deak/index.html#alternate-code) that lets
 one (via the Makefile) reconfigure the coordinates but instead of being a
 modified version of the entry it is the version the author provided which would
 be what the program would look like if, as the author put it:
@@ -5030,7 +5030,7 @@ application source code is intentionally kept to a bare minimum.
 This alt version did not originally compile because a value was left off the
 `return` statement (this might have been fixed in the index.html file too) so
 that was fixed and it also has `#include <stdio.h>` for `putchar(3)`. The
-`#ifndef..#define..#endif` was not part of the original alt code, of course.
+`#ifndef..#define..#endif` was not part of the original alternate code, of course.
 
 Cody also added the [try.alt.sh](%%REPO_URL%%/2014/deak/try.alt.sh) script.
 
@@ -5232,7 +5232,7 @@ add a `./` to the commands in the man page/index.html.
 [Cody](#cody) improved the Makefile so that one can easily change the dimensions
 at compilation time via `make(1)`.
 
-Cody also added alt code that is based on the author's remarks, suggesting that
+Cody also added alternate code that is based on the author's remarks, suggesting that
 one change the value of `q` to a different number, in order to see a bug that
 they avoided.
 
@@ -5400,7 +5400,7 @@ object to 1 arg but it is entirely possible that this changes so a second arg
 Cody also added explicit linking of libm (`-lm`) for systems that do not do this
 (Linux doesn't seem to but macOS does).
 
-Cody also added [alt code](2018/bellard/index.html#alternate-code) that should
+Cody also added [alternate code](2018/bellard/index.html#alternate-code) that should
 work for Windows, based on the author's remarks. The same thing with the number
 of args to `main()` that was done in the original entry was done with this
 version as well.
@@ -5612,7 +5612,7 @@ mean that they will produce any output, though, as they provide expect all
 letters and that makes it harder to form perfect pangrams. On the subject of
 German umlauts and Eszett (ß) see the [entry in bugs.html](bugs.html#2019-ciura).
 
-Cody also fixed the Makefile so that the alt code would be built when running
+Cody also fixed the Makefile so that the alternate code would be built when running
 `make alt`.
 
 Cody converted the PS file linked to by the author to a PDF,
@@ -5870,7 +5870,7 @@ knows it so he might be called unusual (and he argues, with pride, eccentric :-)
 
 Cody also added the [run_clock.alt.sh](%%REPO_URL%%/2020/endoh3/run_clock.alt.sh) script
 which is analogous to the [run_clock.sh](%%REPO_URL%%/2020/endoh3/run_clock.sh) but for the
-alt code provided by the author, Yusuke.
+alternate code provided by the author, Yusuke.
 
 
 <div id="2020_ferguson1">
@@ -5902,7 +5902,7 @@ various files.
 
 He also added the [try.sh](%%REPO_URL%%/2020/ferguson2/try.sh) script.
 
-He also added the [alt code](2020/ferguson2/index.html#alternate-code) and the
+He also added the [alternate code](2020/ferguson2/index.html#alternate-code) and the
 [try.alt.sh](%%REPO_URL%%/2020/ferguson2/try.alt.sh) script.
 
 The try scripts involved the addition of a text file,

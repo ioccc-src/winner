@@ -5,7 +5,7 @@
 # This script runs westley on a variety of locations to show different cities in
 # the world, based on the author's remarks and the judges' remarks.
 #
-# This script will first try compiling the code and alt code (alt = US only with
+# This script will first try compiling the code and alternate code (alt = US only with
 # higher resolution, based on the author's remarks) and then if all is OK it
 # will continue.
 #
@@ -26,7 +26,7 @@
 # will try chmod +x on them and then try again. Otherwise it'll just use westley
 # and westley.alt.
 #
-# This script knows which version, the entry or alt code, to use based on what
+# This script knows which version, the entry or alternate code, to use based on what
 # city is being shown (based on the author's remarks).
 #
 # Usage: ./try.sh

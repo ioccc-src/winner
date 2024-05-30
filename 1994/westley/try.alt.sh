@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.alt.sh - demonstrate IOCCC entry 1994/westley alt code
+# try.alt.sh - demonstrate IOCCC entry 1994/westley alternate code
 #
 
 # make sure CC is set so that one can control what compiler to use in an easy
