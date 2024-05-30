@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.alt.bw.sh - demonstrate IOCCC entry 2012/endoh1 alt code w/o colour
+# try.alt.bw.sh - demonstrate IOCCC entry 2012/endoh1 alternate code w/o colour
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it

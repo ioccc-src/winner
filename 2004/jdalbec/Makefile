@@ -142,7 +142,7 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-# Variable to control how many numbers to print on a line for alt code
+# Variable to control how many numbers to print on a line for alternate code
 #
 Ag= 11
 

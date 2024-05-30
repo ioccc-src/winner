@@ -43,7 +43,7 @@ You might also try:
     ./try.sh
 ```
 
-This will run both the original entry and the alt code to show some differences.
+This will run both the original entry and the alternate code to show some differences.
 
 
 ### Also try:

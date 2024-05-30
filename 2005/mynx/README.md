@@ -5,7 +5,9 @@
 ```
 
 There is an alternate version that scans for (_ONLY_ scans) the string `https`
-as a starting point. See [alternate code](#alternate-code) below.
+as a starting point in case anyone wishes to add support or come up with a
+pipeline to let it work, as many websites no longer work with `http`.
+See [alternate code](#alternate-code) below.
 
 
 ### Bugs and (Mis)features:

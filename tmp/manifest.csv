@@ -2777,9 +2777,9 @@
 2012,kang,Makefile,30,true,makefile,true,entry Makefile
 2012,kang,kang.alt.c,40,true,c,true,alternate source code
 2012,kang,kang.orig.c,50,false,c,true,original source code
-2012,kang,de.alt.sh,100,true,shellscript,true,English words script for 1 through 13 for alt code
+2012,kang,de.alt.sh,100,true,shellscript,true,English words script for 1 through 13 for alternate code
 2012,kang,de.sh,100,true,shellscript,true,English words script for 1 through 13
-2012,kang,en.alt.sh,100,true,shellscript,true,English words script for 1 through 13 for alt code
+2012,kang,en.alt.sh,100,true,shellscript,true,English words script for 1 through 13 for alternate code
 2012,kang,en.sh,100,true,shellscript,true,English words script for 1 through 13
 2012,kang,try.alt.sh,100,true,shellscript,true,script to try alternate source code
 2012,kang,try.sh,100,true,shellscript,true,script to try entry

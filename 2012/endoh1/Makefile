@@ -155,7 +155,7 @@ ${PROG}_color: ${PROG}_color.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-# Variables that control the alarm(3) timer and how much to sleep for alt code
+# Variables that control the alarm(3) timer and how much to sleep for alternate code
 #
 TIMER= 10
 SLEEP= 12321

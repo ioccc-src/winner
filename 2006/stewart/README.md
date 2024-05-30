@@ -5,6 +5,18 @@
 ```
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+    STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2006/stewart in bugs.html](../../bugs.html#2006_stewart).
+
+
+
 ## To use:
 
 ``` <!---sh-->

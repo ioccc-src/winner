@@ -82,7 +82,7 @@ you can regain control?
 ## Alternate code:
 
 If you do not have access to a page up or page down key, for instance you're
-using a Mac, you can use the alt code (though it actually uses the same code)
+using a Mac, you can use the alternate code (though it actually uses the same code)
 that will redefine the keys to increase throttle and decrease throttle. This
 same method can be used with the original code but this sets up predefined keys
 in place of Page Up and Page Down.
@@ -111,7 +111,7 @@ To use the default settings for the alternate build:
 ```
 
 You may change the other keys as described in the build instructions, above, but
-this alt code can be seen as an alternative for those who don't have or don't
+this alternate code can be seen as an alternative for those who don't have or don't
 want to use page up and page down.
 
 

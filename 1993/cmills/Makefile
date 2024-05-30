@@ -144,7 +144,7 @@ chris: ${PROG}
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-# Variable to control amount of time to sleep between updates for alt code.
+# Variable to control amount of time to sleep between updates for alternate code.
 #
 SLEEP= 100
 

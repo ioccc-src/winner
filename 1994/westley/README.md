@@ -7,9 +7,9 @@
 We recommend that you try the alternate version first as the original entry
 requires (for better display) 80 columns and 8 character tabs with wraparound.
 
-The alt code uses the same logic as the original code except that the original
+The alternate code uses the same logic as the original code except that the original
 code used `#include`s of files that do not exist to generate the messages (as
-compiler errors) whereas the alt code uses `printf(3)`. For the original entry
+compiler errors) whereas the alternate code uses `printf(3)`. For the original entry
 see [Original code](#original-code) below.
 
 

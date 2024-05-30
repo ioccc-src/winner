@@ -141,7 +141,7 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-# Variable to set amount of arrows to start with for alt code
+# Variable to set amount of arrows to start with for alternate code
 #
 ARROWS= 3
 

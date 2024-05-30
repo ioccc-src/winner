@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.alt.sh - demonstrate IOCCC entry 1985/sicherman.alt alt code
+# try.alt.sh - demonstrate IOCCC entry 1985/sicherman.alt alternate code
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it

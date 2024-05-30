@@ -5,7 +5,7 @@
 ```
 
 
-The author provided a spoiler version as alt code. See [Alternate
+The author provided a spoiler version as alternate code. See [Alternate
 code](#alternate-code) below.
 
 

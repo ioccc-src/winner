@@ -141,7 +141,7 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-# Variable to control size for alt code
+# Variable to control size for alternate code
 #
 SIZE=32767
 

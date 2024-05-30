@@ -145,7 +145,7 @@ alt: data ${ALT_TARGET}
 	@${TRUE}
 
 
-# Variable to control amount of time to sleep between writes for alt code.
+# Variable to control amount of time to sleep between writes for alternate code.
 #
 SLEEP= 17
 

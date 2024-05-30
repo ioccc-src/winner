@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.color.sh - demonstrate IOCCC entry 1994/tvr alt code colour mode
+# try.color.sh - demonstrate IOCCC entry 1994/tvr alternate code colour mode
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it

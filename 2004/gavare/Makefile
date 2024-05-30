@@ -144,7 +144,7 @@ alt: data ${ALT_TARGET}
 alt2: ${PROG}.alt2
 	@${TRUE}
 
-# Variables to control the size and anti-aliasing factor for alt code
+# Variables to control the size and anti-aliasing factor for alternate code
 XX= 1024
 YY= 768
 AA= 3

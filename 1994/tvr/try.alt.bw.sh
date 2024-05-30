@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.alt.bw.sh - demonstrate IOCCC entry 1994/tvr alt code B&W mode
+# try.alt.bw.sh - demonstrate IOCCC entry 1994/tvr alternate code B&W mode
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it

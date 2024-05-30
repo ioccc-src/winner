@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # 
-# try.sh - try out 1998/dlowe pootifier alt code
+# try.sh - try out 1998/dlowe pootifier alternate code
 #
 
 make everything || exit 1

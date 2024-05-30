@@ -5,7 +5,7 @@
 ```
 
 A smaller version, originally called `zsmall.c` (and still exists as such, as
-the source of the alt code), of [applin.c](%%REPO_URL%%/1988/applin/applin.c), can be found in
+the source of the alternate code), of [applin.c](%%REPO_URL%%/1988/applin/applin.c), can be found in
 [applin.alt.c](%%REPO_URL%%/1988/applin/applin.alt.c).  Your machine may have an easier time with this
 program.  See the [Alternate code](#alternate-code) section below for details.
 

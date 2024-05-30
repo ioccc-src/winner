@@ -69,7 +69,7 @@ wish to see the original entry see below.
 NOTE: in curses mode you might want to type `reset` after execution of this
 program if your terminal is messed up after exiting the program (send intr,
 typically ctrl-c) as the program does not call `endwin()`. Using `reset` will
-clear the screen. The alt code, as noted above, allows one to quit early so this
+clear the screen. The alternate code, as noted above, allows one to quit early so this
 is not a problem there.
 
 
