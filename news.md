@@ -9,6 +9,46 @@ See "[FAQ 6.12: What is Mastodon and why does IOCCC use it?](faq.html#try_mastod
 information on Mastodon.
 
 
+## 2024-05-30
+
+A number of issues from minor fixes have been applied to the
+[temp-test-ioccc web site](https://ioccc-src.github.io/temp-test-ioccc/)
+via the [temp-test-ioccc](https://github.com/ioccc-src/temp-test-ioccc) repo.
+
+437 commits have been applied since 2024-04-20, bringing the total
+number to 5260 commits to date.  The
+[temp-test-ioccc](https://github.com/ioccc-src/temp-test-ioccc)
+repo is now 5159 commits ahead of the [IOCCC
+winner[(https://github.com/ioccc-src/winner) repo.
+
+Multiple **((top priority))** issues have been resolved or completed.
+Only one **((top priority))** [issue
+2006](https://github.com/ioccc-src/temp-test-ioccc/issues/2006)
+remains before we begin the final steps to perform the **Great Fork
+Merge** when the [Official IOCCC web
+site](https://www.ioccc.org/index.html) will be updated.
+
+The [issue 2239](https://github.com/ioccc-src/temp-test-ioccc/issues/2239)
+TODO list has 10 out of 51 sub-tasks completed.  That might not
+seem like much progress, but keep in mind that some of those 10
+tasks look many months and thousands of commits to complete.
+Moreover, most of the remaining 41 TODO items are short "checkbox"
+tasks.  The final 31 TODO items are planned to be completed in about
+a single day.
+
+The **IOCCC Submit server** is in active development.  We plan to
+update the FAQ with screenshots from the IOCCC Submit server as
+well as the **IOCCC registration process** prior to starting the
+**Great Fork Merge**.
+
+We have decided to not hold an **IOCCC mock** content, but instead
+ask for beta testing of the new **IOCCC registration process** and
+**IOCCC Submit server** when the have left alpha testing phase.
+This will speed up the start date of IOCCC28.
+
+It is our plan that IOCCC28 will occur in 2024, the 40th anniversary of the IOCCC.
+
+
 ## 2024-04-30
 
 The web site now is viewing by mobile devices such as cell phones
