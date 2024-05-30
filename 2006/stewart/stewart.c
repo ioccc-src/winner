@@ -20,7 +20,6 @@ int main(int c,char**o)
    Z(v,6)=(long)malloc(Z(v,0));
    memset((void*)Z(v,6),0,Z(v,0));
    Z(v,13)=(long)fopen(o[3],"r");
-   if(F(v,13)==NULL)P("file doesn't exist\n"), exit(1);
    fscanf(F(v,13),"%ld",(long*)Y(v,3));
    Z(v,8)=(long)malloc(050+Z(v,3)*070);
    Z(Z(v,8),0)=Z(v,3);

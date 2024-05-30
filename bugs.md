@@ -2836,6 +2836,18 @@ welcome to try and fix it if you wish to!
 Incorrect formulas will ungracefully crash the program.
 
 
+<div id="2006_stewart">
+## 2006/stewart
+</div>
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2006/stewart/stewart.c](%%REPO_URL%%/2006/stewart/stewart.c)
+### Information: [2006/stewart/index.html](2006/stewart/index.html)
+
+This program will likely crash or do something funny if the file cannot be
+opened. The number of args is however checked.
+
+
 <div id="2006_sykes1">
 ## 2006/sykes1
 </div>
