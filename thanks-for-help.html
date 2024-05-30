@@ -1073,10 +1073,10 @@ useless cat, that’s why! For instance, the fact they even exist is proof that
 the Earth is <strong>NOT</strong> flat: because if it was they would have pushed everything
 off it by now! :-) They’re also a great joy to all ailurophiles and yes they
 most certainly do have a personality and they can be very sociable.</p>
-<p>Whilst he was at it, Cody made it so that one need not run the alt script or alt
-code directly, to match that of the main entry. As we simulate the functionality
-anyway, and since one may still run the code or the script (for the original
-entry and the alternate code) anyway, it works out well.</p>
+<p>Whilst he was at it, Cody made it so that one need not run the alt script or
+alternate code directly, to match that of the main entry. As we simulate the
+functionality anyway, and since one may still run the code or the script (for
+the original entry and the alternate code) anyway, it works out well.</p>
 <div id="1989_jar.2">
 <h2 id="winning-entry-1989jar.2">Winning entry: <a href="1989/jar.2/index.html">1989/jar.2</a></h2>
 <h3 id="winning-entry-source-code-jar.2.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/jar.2/jar.2.c">jar.2.c</a></h3>
@@ -1330,7 +1330,7 @@ entry does.</p>
 </div>
 <p><a href="#cody">Cody</a> fixed this to work with modern compilers; <code>exit(3)</code> returns <code>void</code> but the
 function was used in a binary expression so this wouldn’t even compile.</p>
-<p>Cody fixed (as above) and added the shortened version as <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/tbr/tbr.alt.c">alt
+<p>Cody fixed (as above) and added the shortened version as <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/tbr/tbr.alt.c">alternate
 code</a> which originally comes from the
 author.</p>
 <p>Cody also changed the code (in both versions) to use <code>fgets(3)</code> instead of
@@ -1736,9 +1736,9 @@ operator so that it could be used in binary expressions.</p>
 </div>
 <p>It was observed that on modern systems this goes much too quick. <a href="#yusuke">Yusuke</a> created
 a patch that calls <code>usleep(3)</code> but <a href="#cody">Cody</a> thought the value was too slow so he
-made it a macro in the Makefile <code>Z</code> (which can be redefined with <code>make SLEEP=...</code>), defaulting at 15000. This was made an <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/kivinen/kivinen.alt.c">alt
-version</a> and it is recommended one use the alt
-version first. See the index.html file to see how to reconfigure it.</p>
+made it a macro in the Makefile <code>Z</code> (which can be redefined with <code>make SLEEP=...</code>), defaulting at 15000. This was made an <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/kivinen/kivinen.alt.c">alternate
+version</a> and it is recommended one use
+the alternate version first. See the index.html file to see how to reconfigure it.</p>
 <p>Cody also made the fixed version (the code relied on <code>exit(3)</code> returning to use
 in binary expressions) (and alternate code from it) more like the original by renaming
 the <code>ext</code> macro to be <code>exit</code> which uses the comma operator. He made it so the
@@ -1853,7 +1853,7 @@ encourage you to try the original without two args :-)</p>
 </div>
 <p><a href="#yusuke">Yusuke</a> suggested that with modern systems this goes too fast so he added a call
 to <code>usleep(3)</code> in a patch he made. <a href="#cody">Cody</a> made it configurable at compilation by
-using a macro. This is in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/cmills/cmills.alt.c">alt
+using a macro. This is in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/cmills/cmills.alt.c">alternate
 version</a> which is the recommended one to try
 first.</p>
 <div id="1993_dgibson">
@@ -3142,8 +3142,7 @@ to the proper compiled program (it’s hardcoded). This had never been done and 
 the script did not even work (at least modernly?).</p>
 <p>He also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/aidan/aidan.alt.c">alternate code</a> based on the
 author’s remarks which is a different approach than the one used and which
-(according to the author) ‘is slower (particularly in worst-case or nearly so
-scenarios), inelegant, and not a good starting place for sudoku generation.’</p>
+(according to the author) ‘<code>is slower (particularly in worst-case or nearly so scenarios), inelegant, and not a good starting place for sudoku generation.</code>’</p>
 <p>Cody added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/aidan/try.sh">try.sh</a> and
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/aidan/try.alt.sh">try.alt.sh</a> scripts that correspond to the entry and
 alternate code respectively.</p>
@@ -3393,11 +3392,12 @@ some versions do allow only one arg. This was done at first because it’s not
 used but Cody discovered that later versions of <code>clang</code> have an additional defect
 where it does not allow only one arg so the second arg to <code>main()</code> was added
 back.</p>
-<p>This was an unfortunate problem for the alternate code as he has been using Z for alt
-code <code>usleep()</code> (for sleep) but in this case unfortunately the original entry
-used <code>Z</code> in <code>main()</code> (though unused) so to make it more like the original Cody
-renamed the macro <code>Z</code> for <code>usleep()</code> to <code>S</code> instead which can stand for sleep
-and also it is kind of like a backwards <code>Z</code>. That way <code>Z</code> could be in <code>main()</code>.</p>
+<p>This was an unfortunate problem for the alternate code as he has been using Z
+for alternate code <code>usleep()</code> (for sleep) but in this case unfortunately the
+original entry used <code>Z</code> in <code>main()</code> (though unused) so to make it more like the
+original Cody renamed the macro <code>Z</code> for <code>usleep()</code> to <code>S</code> instead which can
+stand for sleep and also it is kind of like a backwards <code>Z</code>. That way <code>Z</code> could
+be in <code>main()</code>.</p>
 <p>Cody also made sure that the Makefile links in <code>libm</code> as not all systems do this
 by default.</p>
 <p>Since the author suggested that the lack of certain <code>#include</code>s might break the
@@ -4361,7 +4361,7 @@ German umlauts and Eszett (ß) see the <a href="bugs.html#2019-ciura">entry in b
 website.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/try.sh">try.sh</a> and
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/try.alt.sh">try.alt.sh</a> scripts.</p>
-<p>Finally he added the scripts for the different languages that use the alt
+<p>Finally he added the scripts for the different languages that use the alternate
 version but with the caveat that only English appears to work. See the <a href="bugs.html#2019-ciura">entry in
 bugs.html</a> for more details.</p>
 <div id="2019_diels-grabsch1">

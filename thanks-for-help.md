@@ -984,10 +984,10 @@ the Earth is **NOT** flat: because if it was they would have pushed everything
 off it by now! :-) They're also a great joy to all ailurophiles and yes they
 most certainly do have a personality and they can be very sociable.
 
-Whilst he was at it, Cody made it so that one need not run the alt script or alt
-code directly, to match that of the main entry. As we simulate the functionality
-anyway, and since one may still run the code or the script (for the original
-entry and the alternate code) anyway, it works out well.
+Whilst he was at it, Cody made it so that one need not run the alt script or
+alternate code directly, to match that of the main entry. As we simulate the
+functionality anyway, and since one may still run the code or the script (for
+the original entry and the alternate code) anyway, it works out well.
 
 
 <div id="1989_jar.2">
@@ -1345,7 +1345,7 @@ entry does.
 [Cody](#cody) fixed this to work with modern compilers; `exit(3)` returns `void` but the
 function was used in a binary expression so this wouldn't even compile.
 
-Cody fixed (as above) and added the shortened version as [alt
+Cody fixed (as above) and added the shortened version as [alternate
 code](%%REPO_URL%%/1990/tbr/tbr.alt.c) which originally comes from the
 author.
 
@@ -1933,9 +1933,9 @@ operator so that it could be used in binary expressions.
 It was observed that on modern systems this goes much too quick. [Yusuke](#yusuke) created
 a patch that calls `usleep(3)` but [Cody](#cody) thought the value was too slow so he
 made it a macro in the Makefile `Z` (which can be redefined with `make
-SLEEP=...`), defaulting at 15000. This was made an [alt
-version](%%REPO_URL%%/1992/kivinen/kivinen.alt.c) and it is recommended one use the alt
-version first. See the index.html file to see how to reconfigure it.
+SLEEP=...`), defaulting at 15000. This was made an [alternate
+version](%%REPO_URL%%/1992/kivinen/kivinen.alt.c) and it is recommended one use
+the alternate version first. See the index.html file to see how to reconfigure it.
 
 Cody also made the fixed version (the code relied on `exit(3)` returning to use
 in binary expressions) (and alternate code from it) more like the original by renaming
@@ -2088,7 +2088,7 @@ encourage you to try the original without two args :-)
 
 [Yusuke](#yusuke) suggested that with modern systems this goes too fast so he added a call
 to `usleep(3)` in a patch he made. [Cody](#cody) made it configurable at compilation by
-using a macro. This is in the [alt
+using a macro. This is in the [alternate
 version](%%REPO_URL%%/1993/cmills/cmills.alt.c) which is the recommended one to try
 first.
 
@@ -3881,8 +3881,8 @@ the script did not even work (at least modernly?).
 
 He also added the [alternate code](%%REPO_URL%%/2005/aidan/aidan.alt.c) based on the
 author's remarks which is a different approach than the one used and which
-(according to the author) 'is slower (particularly in worst-case or nearly so
-scenarios), inelegant, and not a good starting place for sudoku generation.'
+(according to the author) '`is slower (particularly in worst-case or nearly so
+scenarios), inelegant, and not a good starting place for sudoku generation.`'
 
 Cody added the [try.sh](%%REPO_URL%%/2005/aidan/try.sh) and
 [try.alt.sh](%%REPO_URL%%/2005/aidan/try.alt.sh) scripts that correspond to the entry and
@@ -4249,11 +4249,12 @@ used but Cody discovered that later versions of `clang` have an additional defec
 where it does not allow only one arg so the second arg to `main()` was added
 back.
 
-This was an unfortunate problem for the alternate code as he has been using Z for alt
-code `usleep()` (for sleep) but in this case unfortunately the original entry
-used `Z` in `main()` (though unused) so to make it more like the original Cody
-renamed the macro `Z` for `usleep()` to `S` instead which can stand for sleep
-and also it is kind of like a backwards `Z`. That way `Z` could be in `main()`.
+This was an unfortunate problem for the alternate code as he has been using Z
+for alternate code `usleep()` (for sleep) but in this case unfortunately the
+original entry used `Z` in `main()` (though unused) so to make it more like the
+original Cody renamed the macro `Z` for `usleep()` to `S` instead which can
+stand for sleep and also it is kind of like a backwards `Z`. That way `Z` could
+be in `main()`.
 
 Cody also made sure that the Makefile links in `libm` as not all systems do this
 by default.
@@ -5622,7 +5623,7 @@ website.
 Cody also added the [try.sh](%%REPO_URL%%/2019/ciura/try.sh) and
 [try.alt.sh](%%REPO_URL%%/2019/ciura/try.alt.sh) scripts.
 
-Finally he added the scripts for the different languages that use the alt
+Finally he added the scripts for the different languages that use the alternate
 version but with the caveat that only English appears to work. See the [entry in
 bugs.html](bugs.html#2019-ciura) for more details.
 
