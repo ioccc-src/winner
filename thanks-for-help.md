@@ -491,7 +491,7 @@ are produced.
 ### Winning entry source code: [pawka.c](%%REPO_URL%%/1986/pawka/pawka.c)
 </div>
 
-[Cody](#cody) noticed and fixed a funny mistake in the Makefile where a
+[Cody](#cody) noticed and fixed a funny mistake in the `Makefile` where a
 `-Wno-strict-prototypes` was in the wrong location, suggesting that there is a
 `-D` needed to compile the entry but this is not actually so.
 
@@ -742,7 +742,7 @@ although it has some code no longer there, it has a closer match in symmetry and
 since the code was commented out it's probably not a big deal to have it removed
 instead as it does look more symmetrical now.
 
-Cody also added to the Makefile `-include stdio.h` in the nowadays very
+Cody also added to the `Makefile` `-include stdio.h` in the nowadays very
 unlikely(?) but nevertheless suggested case that `putchar(3)` is not available.
 
 
@@ -1020,7 +1020,7 @@ supplementary files [try.lisp](%%REPO_URL%%/1989/jar.2/try.lisp),
 [Yusuke](#yusuke). Cody wrote the script and offered us some chocolate cake :-)
 See index.html for details on how to use the script.
 
-Cody also fixed the Makefile where typing `make everything` or `make alt` would
+Cody also fixed the `Makefile` where typing `make everything` or `make alt` would
 result in:
 
 ```
@@ -1810,7 +1810,7 @@ like:
 
 one must keep the `Y[strlen(Y)-1]='\0';` part and keep it there.
 
-These fixes are complex changes due to the way the program and Makefile generate
+These fixes are complex changes due to the way the program and `Makefile` generate
 the additional tools.
 
 Cody finally added the [try.sh](%%REPO_URL%%/1992/adrian/try.sh) script that shows the entry
@@ -1841,17 +1841,17 @@ the alternate code.
 ### Winning entry source code: [ant.c](%%REPO_URL%%/1992/ant/ant.c)
 </div>
 
-[Cody](#cody) fixed the Makefile so that the program will actually work with it (or at
+[Cody](#cody) fixed the `Makefile` so that the program will actually work with it (or at
 least the rule to clobber files and link `am` to `ant`). The issue was that the
-variables in the Makefile could not be evaluated in the same way as it's not as
+variables in the `Makefile` could not be evaluated in the same way as it's not as
 feature-rich as other implementations of `make(1)`. Thus the use of `${RM}` and
 `${CP}` were in the respective rules changed to `rm` and `cp`, for two examples.
 A new rule had to be added as well. The variable situation might be because they
-are obtained from the root variable Makefile `var.mk` via `include` which the
+are obtained from the root variable `Makefile` `var.mk` via `include` which the
 program might not support (this has not been tested, however) and also because
 it appears that the syntax for this program is to use `$()` rather than `${}`.
 
-Cody also fixed another problem, unrelated, in the Makefile with the `.PHONY`
+Cody also fixed another problem, unrelated, in the `Makefile` with the `.PHONY`
 rule where a line was not ended with a `\` but should have been.
 
 The author stated that in some systems like DOS with Turbo C, it might be
@@ -1932,7 +1932,7 @@ operator so that it could be used in binary expressions.
 
 It was observed that on modern systems this goes much too quick. [Yusuke](#yusuke) created
 a patch that calls `usleep(3)` but [Cody](#cody) thought the value was too slow so he
-made it a macro in the Makefile `Z` (which can be redefined with `make
+made it a macro in the `Makefile` `Z` (which can be redefined with `make
 SLEEP=...`), defaulting at 15000. This was made an [alternate
 version](%%REPO_URL%%/1992/kivinen/kivinen.alt.c) and it is recommended one use
 the alternate version first. See the index.html file to see how to reconfigure it.
@@ -2152,7 +2152,7 @@ version](%%REPO_URL%%/1993/lmfjyh/lmfjyh.alt.c) which does what the program did
 with `gcc` < 2.3.3. See the index.html file for details and for why this was made
 the alternate version, not the actual entry.
 
-Cody also made the Makefile delete the very unsafe filename that is compiled (or
+Cody also made the `Makefile` delete the very unsafe filename that is compiled (or
 would be compiled if `gcc` < 2.3.3) whether or not compilation succeeds (which is
 highly unlikely).
 
@@ -2285,11 +2285,11 @@ that already existed, how many you had and how many were stolen.
 
 [Cody](#cody) fixed this to check that four args were specified (at a time it
 was considered a bug to fix). With the use of the C pre-processor macro and
-inclusion of `stdlib.h` in the Makefile the layout of the source is exactly the
+inclusion of `stdlib.h` in the `Makefile` the layout of the source is exactly the
 same column width and no additional lines were added. This was done during one
 of the times where this was changed to bug to fix status, for better or worse.
 
-Cody also fixed the Makefile which was causing alternate code to be compiled when it
+Cody also fixed the `Makefile` which was causing alternate code to be compiled when it
 shouldn't be.
 
 Cody also added the scripts [try.sh](%%REPO_URL%%/1994/horton/try.sh) and
@@ -2422,7 +2422,7 @@ also changed to use `fgets(3)`.
 ### Winning entry source code: [weisberg.c](%%REPO_URL%%/1994/weisberg/weisberg.c)
 </div>
 
-[Cody](#cody) changed the Makefile to make this program more user friendly and easier to
+[Cody](#cody) changed the `Makefile` to make this program more user friendly and easier to
 use with other tools as well by making the program output not a space after each
 number but rather a newline.
 
@@ -2688,7 +2688,7 @@ error due to the redefinition of `main` but the `-I` option makes sure the
 working `/usr/include/rrno.h` is found first, which shouldn't cause any problems
 on other systems (the other file is
 `gcc-lib/sparc-sun-solaris2.5/2.7.2/include/errno.h`). Thus Cody also added this to
-the Makefile for the (likely?) few who still use Solaris.
+the `Makefile` for the (likely?) few who still use Solaris.
 
 
 <div id="1996_schweikh2">
@@ -2708,8 +2708,8 @@ output better, with the warning that it is an infinite loop).
 ## Source code: [schweikh3.c](%%REPO_URL%%/1996/schweikh3/schweikh3.c)
 </div>
 
-[Cody](#cody) updated the Makefile so that if it fails to compile it will try the
-method suggested for SunOS rather than having to update the Makefile manually or
+[Cody](#cody) updated the `Makefile` so that if it fails to compile it will try the
+method suggested for SunOS rather than having to update the `Makefile` manually or
 running a more complicated command: now one can just run `make`.
 
 
@@ -3008,7 +3008,7 @@ Cody added the [try.sh](%%REPO_URL%%/1998/schweikh3/try.sh) script to make it ea
 the commands that we suggested. One command was not added, that of the to use
 command.
 
-Cody also made the Makefile rule `all` symlink the entry to `samefile` as that
+Cody also made the `Makefile` rule `all` symlink the entry to `samefile` as that
 is the name of the program.
 
 The author stated that:
@@ -3020,7 +3020,7 @@ The author stated that:
     31.
 ```
 
-so Cody changed the constant to a macro in the Makefile called `SZ` so one can
+so Cody changed the constant to a macro in the `Makefile` called `SZ` so one can
 more easily do this (though it indeed seems highly unlikely). See the index.html
 for more details.
 
@@ -3142,7 +3142,7 @@ one-liner but rather a small program. At the same point Cody made the code
 itself a one-line like the code is in the original entry. Now it looks much more
 like the original entry but with the two fixes.
 
-Finally Cody fixed the Makefile that had the `-Wno-foo` options in the `CDEFINE`
+Finally Cody fixed the `Makefile` that had the `-Wno-foo` options in the `CDEFINE`
 variable which although works it is incongruent with the other Makefiles and is
 more confusing (though not really).
 
@@ -3858,7 +3858,7 @@ As for the fix itself it required changing the C pre-processor macros that
 resulted in macros themselves like `#ifdef`, `#else` etc. to be `#ifdef`,
 `#else` etc. and also the inclusion of the file [vik2_1.c](%%REPO_URL%%/2004/vik2/vik2_1.c)
 (which actually includes itself, once directly and now by `__FILE__`)
-which used to be generated by the Makefile via `cc -E`.
+which used to be generated by the `Makefile` via `cc -E`.
 
 Cody also made it so that the `FNAME` is (for the entry file itself and
 `vik2_1.c` - there are other places it should not be done) `__FILE__`
@@ -3902,10 +3902,10 @@ not work and end up causing a bus error. Instead of `stty sane` it uses `stty
 echo` which is what it was trying to accomplish.
 
 The author noted that one can define `NO_STTY` to not use `stty(1)` at all
-(either to prevent having to hit enter or to turn echo off/on) which is
+(either to prevent having to hit enter or to turn echo off/on) and this is
 explained in the index.html.
 
-Cody added the [alternate code](2005/anon/index.html#alternate-code) with vi(m) like
+Cody added the [alternate code](%%REPO_URL%%/2005/anon/anon.alt.c) with vi(m) like
 movements.
 
 
@@ -3988,7 +3988,7 @@ Finally, to improve upon the test-suite provided by the program, Cody added the
 temporary file the compilation including the 'Line' lines. After that is done it
 uses `grep -c` on the file to show that there are indeed as many versions the
 program generates as the author states, 180.  If it does not find 180 it is an
-error; otherwise it is success. It uses [test.sh](%%REPO_URL%%/2005/giljade/test.sh).
+error; otherwise it is success. See [test.sh](%%REPO_URL%%/2005/giljade/test.sh).
 
 
 <div id="2005_jetro">
@@ -4014,8 +4014,8 @@ not do it implicitly (like macOS does).
 ### Winning entry source code: [mikeash.c](%%REPO_URL%%/2005/mikeash//mikeash.c)
 </div>
 
-[Cody](#cody) fixed this to work in Linux. The problem was an unknown escape sequence,
-`\N`, which caused a funny compiler error:
+[Cody](#cody) fixed this to work in some versions of linux. The problem was an
+unknown escape sequence, `\N`, which caused a funny compiler error:
 
 ``` <!---c-->
     };n b[2048];int i
@@ -4053,10 +4053,11 @@ Cody also added the [try.sh](%%REPO_URL%%/2005/mikeash/try.sh) script.
 needed but part of the entry) would work with compilers that have by default
 `-Werror` like `clang` in macOS.
 
-Cody also added the alternate code which does scan for https. Futile, maybe, based on
-how https is set up, in which case just enjoy it for what it was. But there
-might be some command line that will let it work that way or perhaps someone
-wants to add the necessary code.
+Cody also added the [alternate code](%%REPO_URL%%/2005/mynx/mynx.alt.c) which
+does scan for `https`. Futile, maybe, based on how `https` is set up, in which
+case just enjoy it for what it was, without it working with websites that do not
+support `http`. But there might be some command line that will let it work that
+way or perhaps someone wants to add the necessary code.
 
 
 <div id="2005_persano">
@@ -4065,9 +4066,9 @@ wants to add the necessary code.
 </div>
 
 [Cody](#cody) added the (untested) [alternate
-code](2005/persano/index.html#alternate-code) which should work for Windows as it
-sets binary mode on `stdout`. It is untested as Cody has no Windows system to
-test it on.
+code](%%REPO_URL%%/2005/persano/persano.alt.c) which should work for Windows as
+it sets binary mode on `stdout`. This was based on the author's remarks but it
+is untested as Cody has no Windows system to test it on.
 
 Cody also added the [try.sh](%%REPO_URL%%/2005/persano/try.sh) script.
 
@@ -4133,7 +4134,8 @@ he doesn't want to damage anyone else's brain either. :-)
 defect where `main()` can only have 0, 2 or 3 args (it was 4). It now calls
 another function that takes 4 args and which is what used to be `main()`.
 
-The alternate versions were also fixed.
+The [alternate versions](2005/toledo/index.html#alternate-code) that the author
+provided were also fixed.
 
 
 <div id="2005_vince">
@@ -4141,13 +4143,13 @@ The alternate versions were also fixed.
 ### Winning entry source code: [vince.c](%%REPO_URL%%/2005/vince//vince.c)
 </div>
 
-[Cody](#cody) fixed this in the case that the program is compiled or linked/copies to
+[Cody](#cody) fixed this in the case that the program is compiled or linked/copied to
 another file name: the code constructed the source code file name in a clever
 and more obscure way by copying to the buffer `*argv` and then using `strcat(3)`
 to concatenate to it `.c`. But this assumes that the executable is the same name
-as the source file which isn't always be true. The author even stated: 'as long
+as the source file which isn't always true. The author even stated: '`as long
 as the source is in the same directory as the executable it should be able to
-find it' but the source code file name is not always the same as the executable
+find it`' but the source code file name is not always the same as the executable
 with the appropriate extension so this might be called a bug fix as well though
 if one runs it from another directory, specifying the directory, it'll not catch it.
 
@@ -4162,8 +4164,9 @@ if one runs it from another directory, specifying the directory, it'll not catch
 ### Winning entry source code: [birken.c](%%REPO_URL%%/2006/birken//birken.c)
 </div>
 
-[Cody](#cody) fixed a segfault in macOS with this entry. The problem was a missing `+1`
-for strlen() with malloc(). This prevented it from working.
+[Cody](#cody) fixed a segfault that prevented this entry from working in macOS.
+The problem was a missing `+1` for `strlen(3)` with `malloc(3)`. This prevented
+it from working.
 
 Cody also added the [try.sh](%%REPO_URL%%/2006/birken/try.sh) script.
 
@@ -4173,7 +4176,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2006/birken/try.sh) script.
 ### Winning entry source code: [borsanyi.c](%%REPO_URL%%/2006/borsanyi//borsanyi.c)
 </div>
 
-[Cody](#cody) fixed the Makefile to work in systems where the `lpthread` is not
+[Cody](#cody) fixed the `Makefile` to work in systems where the `lpthread` is not
 implicitly linked in.
 
 Cody also added the [try.sh](%%REPO_URL%%/2006/borsanyi/try.sh) script.
@@ -4192,9 +4195,6 @@ Cody also added the [try.sh](%%REPO_URL%%/2006/borsanyi/try.sh) script.
 ### Winning entry source code: [hamre.c](%%REPO_URL%%/2006/hamre//hamre.c)
 </div>
 
-[Cody](#cody) fixed this so that it will not crash without an arg after it was suggested
-this should be fixed.
-
 Cody also added the [try.sh](%%REPO_URL%%/2006/hamre/try.sh) script.
 
 
@@ -4203,13 +4203,13 @@ Cody also added the [try.sh](%%REPO_URL%%/2006/hamre/try.sh) script.
 ### Winning entry source code: [monge.c](%%REPO_URL%%/2006/monge//monge.c)
 </div>
 
-[Cody](#cody) added the [alternate code](2006/monge/index.html#alternate-code) that lets
+[Cody](#cody) added the [alternate code](%%REPO_URL%%/2006/monge/monge.alt.c) that lets
 one resize the image and redefine the number of iterations.
 
 Cody also added the [try.sh](%%REPO_URL%%/2006/monge/try.sh) and
 [try.alt.sh](%%REPO_URL%%/2006/monge/try.alt.sh) scripts.
 
-Cody also fixed the Makefile to use `sdl-config` (which is what the author
+Cody also fixed the `Makefile` to use `sdl-config` (which is what the author
 stated too though that was noticed later), not `sdl2-config` as two functions
 that are used were removed from [SDL2](https://www.libsdl.org),
 thus making it not link. Since SDL2 is still available and since changing the
@@ -4218,7 +4218,7 @@ the original it was simply made to link in SDL1.
 
 Nevertheless this entry does require x86/x86_64 CPUS. This is a documented
 feature but one which we will accept fixes to. See [2006/monge in
-bugs.html](bugs.html#2006-monge).
+bugs.html](bugs.html#2006_monge).
 
 
 <div id="2006_night">
@@ -4236,7 +4236,7 @@ back for arrow keys in the [alternate version](%%REPO_URL%%/2006/night/night.alt
 </div>
 
 [Cody](#cody) fixed this entry to work with `clang` which has a defect with the args to
-`main()`: it requires specific types: `int` and `char ** for the first and
+`main()`: it requires specific types: `int` and `char **` for the first and
 latter args.
 
 Cody also provided the [alternate version](%%REPO_URL%%/2006/sloane/sloane.alt.c), which
@@ -4249,18 +4249,18 @@ used but Cody discovered that later versions of `clang` have an additional defec
 where it does not allow only one arg so the second arg to `main()` was added
 back.
 
-This was an unfortunate problem for the alternate code as he has been using Z
+This was an unfortunate problem for the alternate code as he has been using `Z`
 for alternate code `usleep()` (for sleep) but in this case unfortunately the
 original entry used `Z` in `main()` (though unused) so to make it more like the
 original Cody renamed the macro `Z` for `usleep()` to `S` instead which can
 stand for sleep and also it is kind of like a backwards `Z`. That way `Z` could
 be in `main()`.
 
-Cody also made sure that the Makefile links in `libm` as not all systems do this
+Cody also made sure that the `Makefile` links in `libm` as not all systems do this
 by default.
 
 Since the author suggested that the lack of certain `#include`s might break the
-program in some systems he also added `-include ...` to the Makefile as well.
+program in some systems he also added `-include ...` to the `Makefile` as well.
 
 
 <div id="2006_stewart">
@@ -4270,17 +4270,14 @@ program in some systems he also added `-include ...` to the Makefile as well.
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2006/stewart/try.sh) script.
 
-Cody also fixed it so that if the file cannot be opened it exits rather than trying
-to read from the file. This was done at a time when it was considered to be a
-bug to fix.
-
 
 <div id="2006_sykes1">
 ## Winning entry: [2006/sykes1](2006/sykes1/index.html)
 ### Winning entry source code: [sykes1.c](%%REPO_URL%%/2006/sykes1//sykes1.c)
 </div>
 
-[Cody](#cody) provided the [alternate code](2006/sykes1/index.html#alternate-code) based on the
+[Cody](#cody) provided the [alternate
+code](%%REPO_URL%%/2006/sykes1/sykes1.alt.c) based on the
 author's remarks.
 
 Cody also added the [try.sh](%%REPO_URL%%/2006/sykes1/try.sh) script.
@@ -4297,7 +4294,7 @@ it to the repo as well.
 </div>
 
 [Cody](#cody), out of an abundance of caution for `clang`'s defects, made `main()` have
-to args instead of 1 as some versions report that `main()` must have 0, 2 or 3
+2 args instead of 1 as some versions report that `main()` must have 0, 2 or 3
 args, even though at least one of those versions allows 1 arg only.
 
 Cody also added the [try.sh](%%REPO_URL%%/2006/sykes2/try.sh) script for easier use of the
@@ -4322,7 +4319,8 @@ macOS - it did not seem to be a problem under Linux, at least not fedora. The
 problem was wrong variable types - implicit `int`s instead of `FILE *`s. It now
 works with both macOS and Linux.
 
-Cody also added the (untested) alternate code that is based on the author's remarks to
+Cody also added the (untested) [alternate
+code](%%REPO_URL%%/2006/toledo2/toledo2.alt.c) that is based on the author's remarks to
 port this to systems that have the non-standard `kbhit()` and `getch()` (not the
 one from curses) which is typically (always?) in `conio.h`.
 
@@ -4490,7 +4488,7 @@ lets one reconfigure the controls and also the size of the game and another
 version that should work in Windows, based on the author's remarks and support
 file, `layer.c`.
 
-The Makefile was also modified by Cody to make it simpler to redefine the
+The `Makefile` was also modified by Cody to make it simpler to redefine the
 controls, width and height.
 
 
@@ -4558,7 +4556,7 @@ Cody also added two [alt versions](2012/endoh1/index.html#alternate-code) that
 let one control how fast the fluid moves (how long to sleep in between writes)
 and also the gravity factor, the pressure factor and the viscosity factor as
 well as an alarm that lets one run it in a loop without having to hit
-ctrl-c/intr in between (the alarm can be disabled, however). The Makefile allows
+ctrl-c/intr in between (the alarm can be disabled, however). The `Makefile` allows
 one to easily do this with variable names rather than redefining `CDEFINE`.
 
 The two different alt versions is because there are two versions: the original
@@ -4729,7 +4727,7 @@ obvious) and some correctly nested files were also added including
 [1984/anonymous](1984/anonymous/index.html) (as the author explicitly mentioned
 it) and a java file as well with another joke.
 
-A problem was later fixed in the Makefile by Cody, a typo in the `CSILENCE`
+A problem was later fixed in the `Makefile` by Cody, a typo in the `CSILENCE`
 variable that prevented compilation.
 
 A minor point is that the author noted that one should
@@ -4757,7 +4755,7 @@ these were not done.
 
 Cody also added the alt version that lets one control how fast the painting is
 done, based on the author's recommendations, except that Cody made it
-configurable at compile time. The Makefile was modified in such a way as to make
+configurable at compile time. The `Makefile` was modified in such a way as to make
 it very easy to redefine it at compile time.
 
 Cody also added the [try.sh](%%REPO_URL%%/2013/birken/try.sh) script for the entry and the
@@ -4793,7 +4791,7 @@ function type. This appeared to be a problem with macOS and only when SDL2 was
 included (but which as noted next it cannot be).
 
 The other problem is that this entry uses SDL functions that were
-removed from SDL2 so the Makefile has to use `sdl-config` and not `sdl2-config`.
+removed from SDL2 so the `Makefile` has to use `sdl-config` and not `sdl2-config`.
 This meant that at one point to be strictly technical, the removal of
 `localtime()` wasn't necessary but this change was left in place anyway.
 
@@ -4829,7 +4827,7 @@ author linked to at `https://bitly.com/1bU8URK`.
 </div>
 
 [Cody](#cody) added the source code that we suggested one should compile and run with
-different compilers as [fun.c](%%REPO_URL%%/2013/dlowe/fun.c). He modified the Makefile so
+different compilers as [fun.c](%%REPO_URL%%/2013/dlowe/fun.c). He modified the `Makefile` so
 that running `make all` will compile it, saving you the effort.
 
 He also provided the script [slflen.sh](%%REPO_URL%%/2013/dlowe/slflen.sh) which is based on
@@ -4838,7 +4836,7 @@ files will be processed). This script shows the sparkline of the file lengths
 (as in `wc -c`). The fixes (but not the improvements) were added to the author's
 remarks.
 
-Since the author called the program `sparkl` Cody modified the Makefile so that
+Since the author called the program `sparkl` Cody modified the `Makefile` so that
 running `make all` will create a symlink to `dlowe` as `sparkl`. Running `make
 clobber` will delete both and running `make clobber all` will ensure that the
 symlink is created. The `slflen.sh` script also explicitly makes sure to create
@@ -4864,7 +4862,7 @@ commands to try that he suggested to see how different lengths look.
 ### Winning entry source code: [endoh2.c](%%REPO_URL%%/2013/endoh2//endoh2.c)
 </div>
 
-[Cody](#cody) fixed the Makefile `check` rule so that it `checks` :-) that both
+[Cody](#cody) fixed the `Makefile` `check` rule so that it `checks` :-) that both
 [Ruby](https://www.ruby-lang.org) and [ImageMagick](https://imagemagick.org) are
 installed before trying to run the ruby script. To be more technically correct:
 it checks that the `convert` tool of ImageMagick is available (via `type -P`)
@@ -4917,12 +4915,12 @@ allows one to redefine it as well.
 ### Winning entry source code: [hou.c](%%REPO_URL%%/2013/hou//hou.c)
 </div>
 
-[Cody](#cody) fixed the Makefile so that this would work properly. Before this
+[Cody](#cody) fixed the `Makefile` so that this would work properly. Before this
 the use of the program just did what the judges' remarks said as far as how it
 might violate rule 2: the program is really just a decompressor to generate the
 real source of the program. So the source of the entry has to be compiled and
 then run, and the output has to be compiled to be `hou`. This allows the real
-program to be used. Thus the Makefile rule looks like:
+program to be used. Thus the `Makefile` rule looks like:
 
 ``` <!---makefile-->
     ${PROG}: ${PROG}.c
@@ -4944,7 +4942,7 @@ The `LDFLAGS` were updated to have `-lm` as the author suggested it uses the
 does not).
 
 The author noted that one can build `a.c` and refers to it in documentation. The
-rule in the Makefile was originally removed as part of the above but it was
+rule in the `Makefile` was originally removed as part of the above but it was
 restored so that one can see what the author is talking about.
 
 Further, after the file `2013/hou/doc/example.markdown` was moved to
@@ -5009,7 +5007,7 @@ code](2014/birken/index.html#alternate-code) that lets one redefine the port to
 bind to in case there is a firewall issue or there is some other reason to not
 have the default port. Remember that ports < 1024 are privileged. It also lets
 you redefine the timing constant `STARDATE` (see the author's remarks for more
-details on this macro). The Makefile was made to use variables so it's easier to
+details on this macro). The `Makefile` was made to use variables so it's easier to
 redefine the port and timing constant.
 
 
@@ -5132,8 +5130,8 @@ kill it). This is done this way in case it jams (see index.html for details).
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2014/skeggs//prog.c)
 </div>
 
-[Cody](#cody) fixed the Makefile to compile this entry in modern systems. The problem was
-that the `CDEFINE` variable in the Makefile was missing `'`s: the `#define CC`
+[Cody](#cody) fixed the `Makefile` to compile this entry in modern systems. The problem was
+that the `CDEFINE` variable in the `Makefile` was missing `'`s: the `#define CC`
 is an actual string that is, in the Makefile, `"${CC} -fPIC"`, which
 translates to whatever the compiler is followed by a space followed by `-fPIC`
 but without the `'`s it was incomplete and so would not compile. Cody didn't
@@ -5197,7 +5195,7 @@ before that is if one did something like:
 ```
 
 since otherwise the first character would not be `e` but rather a dot
-(`./eprog`). This was done by adding to the Makefile `-include libgen.h` and
+(`./eprog`). This was done by adding to the `Makefile` `-include libgen.h` and
 adding to `main()` after the variable declaration (`V*A;`) the code:
 
 ``` <!---c-->
@@ -5205,7 +5203,7 @@ adding to `main()` after the variable declaration (`V*A;`) the code:
 ```
 
 This was done for both the [prog.c](%%REPO_URL%%/2015/burton/prog.c) and
-[prog.alt.c](%%REPO_URL%%/2015/burton/prog.alt.c). The Makefile was also updated to build
+[prog.alt.c](%%REPO_URL%%/2015/burton/prog.alt.c). The `Makefile` was also updated to build
 `eprog` and `eprog.alt` to make use of the feature more easily. Each is a new
 target (first in `TARGET` and second in `ALT_TARGET`) which have a prerequisite
 of `${PROG}` and `${PROG}.alt` respectively both of which also copy the `prog`
@@ -5219,7 +5217,7 @@ Cody also added [calc.1](%%REPO_URL%%/2015/burton/calc.1) in place of `calc.man`
 proper formatting (in the style of `man(1)`). The `calc.man` was removed so as
 to not have to maintain two copies of the same text.
 
-Cody updated the Makefile to copy the `prog` to `calc` and `prog.alt` to
+Cody updated the `Makefile` to copy the `prog` to `calc` and `prog.alt` to
 `calc.alt`. `ecalc` and `ecalc.alt` also work. This is because the program is
 called `calc` and is in documentation including the man page. Thus one only need
 add a `./` to the commands in the man page/index.html.
@@ -5230,7 +5228,7 @@ add a `./` to the commands in the man page/index.html.
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2015/dogon//prog.c)
 </div>
 
-[Cody](#cody) improved the Makefile so that one can easily change the dimensions
+[Cody](#cody) improved the `Makefile` so that one can easily change the dimensions
 at compilation time via `make(1)`.
 
 Cody also added alternate code that is based on the author's remarks, suggesting that
@@ -5353,7 +5351,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2015/schweikhardt/try.sh) script.
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2015/yang//prog.c)
 </div>
 
-[Cody](#cody) fixed an unfortunate typo in the Makefile that was preventing some of the
+[Cody](#cody) fixed an unfortunate typo in the `Makefile` that was preventing some of the
 files from compiling properly, trying instead to compile already compiled code.
 
 He also added explicit linking of libm (`-lm`) for systems that do not do this
@@ -5483,7 +5481,7 @@ exist and also didn't work even after that was addressed) and added the
 [python3.sh](%%REPO_URL%%/2018/endoh2/python3.sh) scripts. The `try.sh` script runs all
 three of the other scripts but each allows one to send an interrupt in the loops
 and still continue to the next script (if one does it when not in a loop it will
-exit the script). The `make python` and `make python3` rules in the Makefile now
+exit the script). The `make python` and `make python3` rules in the `Makefile` now
 run the respective scripts.
 
 
@@ -5534,7 +5532,7 @@ details on the bug.
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2018/poikola//prog.c)
 </div>
 
-[Cody](#cody) added the missing `docs` rule to the Makefile that forms a PDF
+[Cody](#cody) added the missing `docs` rule to the `Makefile` that forms a PDF
 file. The rule requires the tool `pdflatex`.
 
 Cody also added the [try.sh](%%REPO_URL%%/2018/poikola/try.sh) script.
@@ -5584,7 +5582,7 @@ to what can crash it - but it's not a bug, it's a feature.
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2019/burton//prog.c)
 </div>
 
-[Cody](#cody) fixed the Makefile which had a bad character, a '%' instead of a '$' which
+[Cody](#cody) fixed the `Makefile` which had a bad character, a '%' instead of a '$' which
 caused a rule to fail.
 
 Cody also added the [try.sh](%%REPO_URL%%/2019/burton/try.sh) script which shows a
@@ -5613,7 +5611,7 @@ mean that they will produce any output, though, as they provide expect all
 letters and that makes it harder to form perfect pangrams. On the subject of
 German umlauts and Eszett (ß) see the [entry in bugs.html](bugs.html#2019-ciura).
 
-Cody also fixed the Makefile so that the alternate code would be built when running
+Cody also fixed the `Makefile` so that the alternate code would be built when running
 `make alt`.
 
 Cody converted the PS file linked to by the author to a PDF,
@@ -5663,7 +5661,7 @@ own sha512sum value.
 [Cody](#cody) added explicit linking of libm (`-lm`) for systems that do not do this
 (Linux does not seem to but macOS does).
 
-He also fixed the Makefile so that it compiles with `clang` in Linux.
+He also fixed the `Makefile` so that it compiles with `clang` in Linux.
 
 He also added the [try.sh](%%REPO_URL%%/2019/dogon/try.sh) script.
 
@@ -5685,7 +5683,7 @@ else).
 `stty(1)` and `sed(1)` but rather it just uses `tput(1)`. He also made it so
 that if `tput(1)` is not found it tells the user an easier way to compile the full
 screen size rather than having to modify the Makefile. This done with a script,
-[fullscreen.sh](%%REPO_URL%%/2019/duble/fullscreen.sh), to simplify the Makefile and provide
+[fullscreen.sh](%%REPO_URL%%/2019/duble/fullscreen.sh), to simplify the `Makefile` and provide
 an easy way to tell the user how to compile it, assuming that the environmental
 variables `LINES` and `COLUMNS` are set. But even if they're not set it explains
 how to easily compile the program to a specific size. Note that `LINES` and
@@ -5758,7 +5756,7 @@ entry existing.
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2019/poikola//prog.c)
 </div>
 
-[Cody](#cody) added the missing `docs` rule to the Makefile that forms a PDF
+[Cody](#cody) added the missing `docs` rule to the `Makefile` that forms a PDF
 file. The rule requires the tool
 [pdflatex](https://tug.org/applications/pdftex/index.html).
 
@@ -5952,7 +5950,7 @@ use the program to play the WAV files (and in one case `stdout`).
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2020/kurdyukov2/try.sh) script.
 
-Cody also added `-L`/`-I` paths to the Makefile to let this compile more easily if
+Cody also added `-L`/`-I` paths to the `Makefile` to let this compile more easily if
 the user has installed the appropriate library with
 [MacPorts](https://www.macports.org) (with the default MacPorts prefix
 `/opt/local`).
@@ -6044,7 +6042,7 @@ compilers. See the index.html for more details.
 ## Makefiles fixes and improvements
 </div>
 
-[Cody](#cody) fixed the top level Makefile `all` rule which had a stray `fi;`
+[Cody](#cody) fixed the top level `Makefile` `all` rule which had a stray `fi;`
 without an `if` so the rule failed entirely.
 
 Cody also made a variety of other changes in all the Makefiles, sometimes to get
@@ -6052,9 +6050,9 @@ an entry to work, all noted above, but he also **improved them all** in at least
 one or two ways. Some of the changes made are below.
 
 Cody changed the `LIBS` variable to `LDFLAGS` as that is the standard
-variable. This simplifies compiling without having to modify the Makefile which
+variable. This simplifies compiling without having to modify the `Makefile` which
 can be useful if something changes or if someone is trying to fix an entry but
-forgets to change the Makefile or even if they don't want to make a change due
+forgets to change the `Makefile` or even if they don't want to make a change due
 to a temporary test. These would of course depend on the compiler invocation but
 since `LDFLAGS` is standard it is more likely to be used by default so no need
 to check the Makefiles.
