@@ -4517,9 +4517,9 @@ controls, width and height.
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/vik/try.sh) script.
 
-Cody also added an [alternate version](2011/vik/index.html#alternate-code) for Windows
+Cody also added an [alternate version](%%REPO_URL%%/2011/vik/vik.alt.c) for Windows
 based on the author's comments (along with looking up the function for the right
-header files). To build try the alt rule of the Makefile.
+header files). To build try the `alt` rule of the `Makefile`.
 
 
 <div id="2011_zucker">
@@ -4529,7 +4529,7 @@ header files). To build try the alt rule of the Makefile.
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/zucker/try.sh) script.
 
-Cody also added [alternate code](2011/zucker/index.html#alternate-code) that should work on
+Cody also added [alternate code](%%REPO_URL%%/2011/zucker/zucker.alt.c) that should work on
 Windows, based on the author's remarks that if the system distinguishes binary
 and text then `stdout` needs to be set to binary mode.
 
