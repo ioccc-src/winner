@@ -4652,7 +4652,7 @@ procedure for both `hint.pdf` and `hello.pdf` as well as compiling them as C.
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/hou/try.sh) script and restored the original [hint
-markdown file](2012/hou/hint.html) as the changes made when converting to a GitHub
+markdown file](%%REPO_URL%%/2012/hou/hint.md) as the changes made when converting to a GitHub
 index.html made the generated html not look correct; it did not have a title, a
 stylesheet etc. due to the fact that there is no `#` header (which specified
 title and stylesheet) and other formatting changes.
@@ -4663,22 +4663,24 @@ title and stylesheet) and other formatting changes.
 ### Winning entry source code: [kang.c](%%REPO_URL%%/2012/kang//kang.c)
 </div>
 
-[Cody](#cody) added alternate code that fixes a problem where in German 'v' sounds like 'f'
-which the program has as 'f': with the original version it would translate
-'fier' to '4' when the word is 'vier'. But see below.
+[Cody](#cody) added alternate code that fixes a problem where in German 'v'
+sounds like 'f' which the program has as 'f': with the original version it would
+translate 'fier' to '4' when the word is 'vier'. This was during a time that a
+lot of entries that no longer worked were fixed and it was done without much
+thought but having this alternate version allows one to appreciate the entry
+even more so it was kept in.
 
-Originally this was updated in the original code but it was noticed that this
-caused _other_ German (and maybe other languages?) words to be incorrect so it
-was set as an alt version since the code was already there. It might also be
-considered a feature and not a bug so an alt version is the better way to go
-about it. Using both, however, allows one to experience different capabilities
-and also enjoy or appreciate the entry even more, given how simple the
-difference is.
+This change will actually break other translations. It also was a feature, not a
+bug, even if it might seem like a bug. But having both versions allows one to
+appreciate the entry even more, given how simple the difference is: as has been
+seen in many entries over the years, a single character can drastically change
+what happens, sometimes in surprising and delightful ways!
 
-Cody also added six scripts: [en.sh](%%REPO_URL%%/2012/kang/en.sh),
-[de.sh](%%REPO_URL%%/2012/kang/de.sh), [en.alt.sh](%%REPO_URL%%/2012/kang/en.alt.sh) and
-[de.alt.sh](%%REPO_URL%%/2012/kang/de.alt.sh) which count from 0 through 13 in English and German
-using the original entry and the alt version respectively.
+Cody also added six scripts, starting with
+[en.sh](%%REPO_URL%%/2012/kang/en.sh), [de.sh](%%REPO_URL%%/2012/kang/de.sh),
+[en.alt.sh](%%REPO_URL%%/2012/kang/en.alt.sh) and
+[de.alt.sh](%%REPO_URL%%/2012/kang/de.alt.sh) which count from 0 through 13 in
+English and German using the original entry and the alt version respectively.
 
 In the German scripts it uses the umlaut and also does it without the umlaut
 (add an 'e'). Notice how the program picks up on this! All scripts can use
@@ -4704,12 +4706,14 @@ respectively. Notice how a single letter changes so much!
 ### Winning entry source code: [omoikane.c](%%REPO_URL%%/2012/omoikane//omoikane.c)
 </div>
 
-[Cody](#cody) added the [alternate versions](2012/omoikane/index.html#alternate-code)
-which will, if no arg is specified, read in the program itself, rather than
-`/dev/urandom`. This is mostly useful for those without a `/dev/urandom` device
-file (the default for the entry). The second alternate version is like the first
-except that it also sets binary mode on `stdin` and `stdout` which should
-theoretically make it work in Windows.
+[Cody](#cody) added the [alternate
+versions](2012/omoikane/index.html#alternate-code) which will, if no arg is
+specified, read in the program itself, rather than `/dev/urandom`. This is
+mostly useful for those without a `/dev/urandom` device file, which the author
+pointed out as being a problem, but which is the default for the entry . The
+second alternate version is like the first except that it also sets binary mode
+on `stdin` and `stdout` which should theoretically make it work in Windows. This
+comes from the author's remarks.
 
 Cody also added the [try.sh](%%REPO_URL%%/2012/omoikane/try.sh) and
 [try.alt.sh](%%REPO_URL%%/2012/omoikane/try.alt.sh) scripts.
@@ -4730,9 +4734,9 @@ Cody also added the [try.sh](%%REPO_URL%%/2012/omoikane/try.sh) and
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/vik/try.sh) script.
 
-Based on the author's description it should be able to get this entry to work
-for Windows. With his instructions Cody also added the alternate version that
-does this for the few who might use Windows.
+Based on the author's description it should be possible to get this entry to work
+for Windows. With his instructions Cody also added the [alternate
+version](%%REPO_URL%%/2012/vik/vik.alt.c) that does this.
 
 
 <div id="2012_zeitak">

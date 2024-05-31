@@ -3673,7 +3673,7 @@ procedure for both <code>hint.pdf</code> and <code>hello.pdf</code> as well as c
 <h2 id="winning-entry-2012hou">Winning entry: <a href="2012/hou/index.html">2012/hou</a></h2>
 <h3 id="winning-entry-source-code-hou.c-1">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/hou//hou.c">hou.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/hou/try.sh">try.sh</a> script and restored the original <a href="2012/hou/hint.html">hint
+<p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/hou/try.sh">try.sh</a> script and restored the original <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/hou/hint.md">hint
 markdown file</a> as the changes made when converting to a GitHub
 index.html made the generated html not look correct; it did not have a title, a
 stylesheet etc. due to the fact that there is no <code>#</code> header (which specified
@@ -3682,20 +3682,22 @@ title and stylesheet) and other formatting changes.</p>
 <h2 id="winning-entry-2012kang">Winning entry: <a href="2012/kang/index.html">2012/kang</a></h2>
 <h3 id="winning-entry-source-code-kang.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang//kang.c">kang.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> added alternate code that fixes a problem where in German ‘v’ sounds like ‘f’
-which the program has as ‘f’: with the original version it would translate
-‘fier’ to ‘4’ when the word is ‘vier’. But see below.</p>
-<p>Originally this was updated in the original code but it was noticed that this
-caused <em>other</em> German (and maybe other languages?) words to be incorrect so it
-was set as an alt version since the code was already there. It might also be
-considered a feature and not a bug so an alt version is the better way to go
-about it. Using both, however, allows one to experience different capabilities
-and also enjoy or appreciate the entry even more, given how simple the
-difference is.</p>
-<p>Cody also added six scripts: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/en.sh">en.sh</a>,
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/de.sh">de.sh</a>, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/en.alt.sh">en.alt.sh</a> and
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/de.alt.sh">de.alt.sh</a> which count from 0 through 13 in English and German
-using the original entry and the alt version respectively.</p>
+<p><a href="#cody">Cody</a> added alternate code that fixes a problem where in German ‘v’
+sounds like ‘f’ which the program has as ‘f’: with the original version it would
+translate ‘fier’ to ‘4’ when the word is ‘vier’. This was during a time that a
+lot of entries that no longer worked were fixed and it was done without much
+thought but having this alternate version allows one to appreciate the entry
+even more so it was kept in.</p>
+<p>This change will actually break other translations. It also was a feature, not a
+bug, even if it might seem like a bug. But having both versions allows one to
+appreciate the entry even more, given how simple the difference is: as has been
+seen in many entries over the years, a single character can drastically change
+what happens, sometimes in surprising and delightful ways!</p>
+<p>Cody also added six scripts, starting with
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/en.sh">en.sh</a>, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/de.sh">de.sh</a>,
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/en.alt.sh">en.alt.sh</a> and
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/de.alt.sh">de.alt.sh</a> which count from 0 through 13 in
+English and German using the original entry and the alt version respectively.</p>
 <p>In the German scripts it uses the umlaut and also does it without the umlaut
 (add an ‘e’). Notice how the program picks up on this! All scripts can use
 either version but the <code>.alt.sh</code> versions default to the <code>alt</code> version whereas
@@ -3713,12 +3715,14 @@ respectively. Notice how a single letter changes so much!</p>
 <h2 id="winning-entry-2012omoikane">Winning entry: <a href="2012/omoikane/index.html">2012/omoikane</a></h2>
 <h3 id="winning-entry-source-code-omoikane.c-1">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/omoikane//omoikane.c">omoikane.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> added the <a href="2012/omoikane/index.html#alternate-code">alternate versions</a>
-which will, if no arg is specified, read in the program itself, rather than
-<code>/dev/urandom</code>. This is mostly useful for those without a <code>/dev/urandom</code> device
-file (the default for the entry). The second alternate version is like the first
-except that it also sets binary mode on <code>stdin</code> and <code>stdout</code> which should
-theoretically make it work in Windows.</p>
+<p><a href="#cody">Cody</a> added the <a href="2012/omoikane/index.html#alternate-code">alternate
+versions</a> which will, if no arg is
+specified, read in the program itself, rather than <code>/dev/urandom</code>. This is
+mostly useful for those without a <code>/dev/urandom</code> device file, which the author
+pointed out as being a problem, but which is the default for the entry . The
+second alternate version is like the first except that it also sets binary mode
+on <code>stdin</code> and <code>stdout</code> which should theoretically make it work in Windows. This
+comes from the author’s remarks.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/omoikane/try.sh">try.sh</a> and
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/omoikane/try.alt.sh">try.alt.sh</a> scripts.</p>
 <div id="2012_tromp">
@@ -3731,9 +3735,9 @@ theoretically make it work in Windows.</p>
 <h3 id="winning-entry-source-code-vik.c-1">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/vik//vik.c">vik.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/vik/try.sh">try.sh</a> script.</p>
-<p>Based on the author’s description it should be able to get this entry to work
-for Windows. With his instructions Cody also added the alternate version that
-does this for the few who might use Windows.</p>
+<p>Based on the author’s description it should be possible to get this entry to work
+for Windows. With his instructions Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/vik/vik.alt.c">alternate
+version</a> that does this.</p>
 <div id="2012_zeitak">
 <h2 id="winning-entry-2012zeitak">Winning entry: <a href="2012/zeitak/index.html">2012/zeitak</a></h2>
 <h3 id="winning-entry-source-code-zeitak.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/zeitak//zeitak.c">zeitak.c</a></h3>
