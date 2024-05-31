@@ -41,12 +41,13 @@ update the FAQ with screenshots from the IOCCC Submit server as
 well as the **IOCCC registration process** prior to starting the
 **Great Fork Merge**.
 
-We have decided to not hold an **IOCCC mock** content, but instead
+We have decided to **NOT** hold an **IOCCC mock** contest, but instead
 ask for beta testing of the new **IOCCC registration process** and
-**IOCCC Submit server** when the have left alpha testing phase.
+**IOCCC Submit server** when they have left alpha testing phase.
 This will speed up the start date of IOCCC28.
 
-It is our plan that IOCCC28 will occur in 2024, the 40th anniversary of the IOCCC.
+It is our plan that IOCCC28 will occur in 2024, the 40th anniversary of the
+IOCCC.
 
 
 ## 2024-04-30
