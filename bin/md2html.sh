@@ -8,7 +8,7 @@
 #
 # For general information on how IOCCC HTML files are generated, see:
 #
-#	https://www.ioccc.org/bin/README.md#how
+#	https://www.ioccc.org/bin/index.html#how
 #
 ####
 #
@@ -28,7 +28,7 @@
 #
 # For more information on "getopt phases", RTFS :-) or see:
 #
-#	https://www.ioccc.org/bin/README.md#getopt
+#	https://www.ioccc.org/bin/index.html#getopt
 #
 ####
 #
@@ -52,7 +52,7 @@
 #
 # For more information on "HTML phases", RTFS :-) or see:
 #
-#	https://www.ioccc.org/bin/README.md#html
+#	https://www.ioccc.org/bin/index.html#html
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
