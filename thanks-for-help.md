@@ -4471,10 +4471,7 @@ and the others were from the authors' remarks.
 ### Winning entry source code: [konno.c](%%REPO_URL%%/2011/konno//konno.c)
 </div>
 
-[Cody](#cody) fixed the program to not crash if no arg was specified as this was not a
-documented feature.
-
-Cody also added the [try.sh](%%REPO_URL%%/2011/konno/try.sh) script.
+Cody added the [try.sh](%%REPO_URL%%/2011/konno/try.sh) script.
 
 
 <div id="2011_richards">
@@ -4487,7 +4484,7 @@ however that as of this time this entry does not work properly with macOS at
 least with the silicon chip (Intel has not been tested) and it is quite possibly
 an inherent problem in macOS to do with executing code in in memory/JIT and in
 particular with the silicon chip. See [2011/richards in
-bugs.html](bugs.html#2011-richards) for more details and a
+bugs.html](bugs.html#2011_richards) for more details and a
 document from Apple about how it might be fixed if anyone is brave enough to
 try. If they do they might want to look also at
 [richards.alt.c](%%REPO_URL%%/2011/richards/richards.alt.c), for whatever it might or might
@@ -4496,7 +4493,7 @@ not be worth, as it is a possible starting point that Cody added.
 Cody also added the [try.sh](%%REPO_URL%%/2011/richards/try.sh) and the
 [try.alt.sh](%%REPO_URL%%/2011/richards/try.alt.sh) scripts. The `try.alt.sh` script will be
 helpful to test any fixes for Apple silicon chips (see [2011/richards in
-bugs.html](bugs.html#2011-richards) for more details).
+bugs.html](bugs.html#2011_richards) for more details).
 
 
 <div id="2011_toledo">

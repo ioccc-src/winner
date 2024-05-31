@@ -451,7 +451,7 @@ own fix or suggest that they're fixed!
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1984/decot/dedot.c](%%REPO_URL%%/1984/decot/decot.c)
+### Source code: [1984/decot/decot.c](%%REPO_URL%%/1984/decot/decot.c)
 ### Information: [1984/decot/index.html](1984/decot/index.html)
 
 The purpose of this program is to print out a string of rubbish. In particular
@@ -471,7 +471,7 @@ without a newline after the `\`. This is not a bug.
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1984/laman/dedot.c](%%REPO_URL%%/1984/laman/laman.c)
+### Source code: [1984/laman/laman.c](%%REPO_URL%%/1984/laman/laman.c)
 ### Information: [1984/laman/index.html](1984/laman/index.html)
 
 This program will very likely crash or do something funny without an arg.
@@ -3020,6 +3020,18 @@ The author stated that there are a number of features and limitations. As the
 list is rather long see [other
 features](2011/fredriksson/index.html#other-features) and [limitations and
 remarks](2011/fredriksson/index.html#limitations-and-remarks) instead.
+
+
+<div id="2011_konno">
+## 2011/konno
+</div>
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2011/konno/konno.c](%%REPO_URL%%/2011/konno/konno.c)
+### Information: [2011/konno/index.html](2011/konno/index.html)
+
+This program will very likely crash or do something funny without an arg.
+
 
 
 <div id="2011_richards">
