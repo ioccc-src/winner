@@ -59,6 +59,7 @@
 other inconsistencies with the original entry?](#faq4_3)
 - [4.4  - What is the meaning of the file ending in .orig.c in IOCCC entries?](#faq4_4)
 - [4.5  - Why were alternate versions added to some entries when the original entry worked fine and well?](#faq4_5)
+- [4.6  - Why was arg count and/or type changed in main&#x28;&#x29; in some older entries?](#faq4_6)
 
 
 ## Section  5 - [Helping the IOCCC](#faq5)
@@ -2406,6 +2407,26 @@ as well, for fun.
 
 In some cases it might be better to not have them but as noted this is a
 judgement call.
+
+
+<div id="faq4_6">
+### FAQ 4.6: Why was arg count and/or type changed in main&#x28;&#x29; in some older entries?
+</div>
+
+There are a number of reasons this was done but they usually come down to a
+mis-feature or defect in the `clang` compiler.
+
+In all versions of `clang` the first arg must be an `int` and the rest must be a
+`char **` but in some versions it also objects to the number of args in
+`main()`. In the versions observed that complain about the number of args it
+says that there must be 0, 2 or 3 args. This only was triggered with 4 args, not
+1, but to future proof the entry entries that had only one arg to `main()` were
+changed to two.
+
+The above also meant that some entries that were recursive calls to `main()`
+could no longer be so: `main()` instead had to call another function that has
+the body of the old `main()` and that function would call itself again. In some
+cases, however, this had to be done even without `clang` objections.
 
 
 <div id="faq5">

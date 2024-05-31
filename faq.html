@@ -442,6 +442,7 @@
 other inconsistencies with the original entry?</a></li>
 <li><a href="#faq4_4">4.4 - What is the meaning of the file ending in .orig.c in IOCCC entries?</a></li>
 <li><a href="#faq4_5">4.5 - Why were alternate versions added to some entries when the original entry worked fine and well?</a></li>
+<li><a href="#faq4_6">4.6 - Why was arg count and/or type changed in main() in some older entries?</a></li>
 </ul>
 <h2 id="section-5---helping-the-ioccc">Section 5 - <a href="#faq5">Helping the IOCCC</a></h2>
 <ul>
@@ -2019,6 +2020,21 @@ prevented the entry from working properly and it seemed like it should be added
 as well, for fun.</p>
 <p>In some cases it might be better to not have them but as noted this is a
 judgement call.</p>
+<div id="faq4_6">
+<h3 id="faq-4.6-why-was-arg-count-andor-type-changed-in-main-in-some-older-entries">FAQ 4.6: Why was arg count and/or type changed in main() in some older entries?</h3>
+</div>
+<p>There are a number of reasons this was done but they usually come down to a
+mis-feature or defect in the <code>clang</code> compiler.</p>
+<p>In all versions of <code>clang</code> the first arg must be an <code>int</code> and the rest must be a
+<code>char **</code> but in some versions it also objects to the number of args in
+<code>main()</code>. In the versions observed that complain about the number of args it
+says that there must be 0, 2 or 3 args. This only was triggered with 4 args, not
+1, but to future proof the entry entries that had only one arg to <code>main()</code> were
+changed to two.</p>
+<p>The above also meant that some entries that were recursive calls to <code>main()</code>
+could no longer be so: <code>main()</code> instead had to call another function that has
+the body of the old <code>main()</code> and that function would call itself again. In some
+cases, however, this had to be done even without <code>clang</code> objections.</p>
 <div id="faq5">
 <h2 id="section-5-updating-or-correcting-ioccc-web-site-content">Section 5: Updating or correcting IOCCC web site content</h2>
 </div>
