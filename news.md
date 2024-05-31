@@ -22,11 +22,14 @@ repo is now 5159 commits ahead of the [IOCCC
 winner[(https://github.com/ioccc-src/winner) repo.
 
 Multiple **((top priority))** issues have been resolved or completed.
-Only one **((top priority))** [issue
+Only one **((top priority))** issue, [issue
 2006](https://github.com/ioccc-src/temp-test-ioccc/issues/2006)
 remains before we begin the final steps to perform the **Great Fork
 Merge** when the [Official IOCCC web
-site](https://www.ioccc.org/index.html) will be updated.
+site](https://www.ioccc.org/index.html) will be updated. And although there are
+a lot of files to look at for this issue, most of them should go relatively
+quickly, once these are started. One of the slower files is almost done and then
+there are two more before we can look at the other files.
 
 The [issue 2239](https://github.com/ioccc-src/temp-test-ioccc/issues/2239)
 TODO list has 10 out of 51 sub-tasks completed.  That might not
