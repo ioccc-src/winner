@@ -466,7 +466,7 @@ allow this. Some versions of <code>clang</code> say that <code>main()</code> mus
 args but these versions do not object to 1 arg. However as the <code>char</code> macro
 seems more obscure and it is possible that a new version of <code>clang</code> will be even
 more strict the <code>int i</code> parameter in <code>main()</code> was moved to be inside <code>main()</code>,
-set to non-zero (setting <code>i</code> to 0 will not work). This is way <code>main()</code> has zero
+set to non-zero (setting <code>i</code> to 0 will not work). This is why <code>main()</code> has zero
 args.</p>
 <p>Observe how on line 29 there is a call to <code>main()</code> which does pass in a
 parameter. It has never been observed to be an error to pass in too many
@@ -487,10 +487,6 @@ but not <code>clang</code> - or at least some versions.</p>
 <h3 id="winning-entry-source-code-laman.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/laman/laman.c">laman.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/laman/try.sh">try.sh</a> script.</p>
-<p>Cody also fixed this to not crash when no arg is specified. Note that if the arg
-is not a positive number it will not do anything useful or anything at all.
-This was fixed on 30 October 2023 after the bug status was changed from INABIAF
-(it’s not a bug it’s a feature) to bug.</p>
 <div id="1984_mullender">
 <h2 id="winning-entry-1984mullender">Winning entry: <a href="1984/mullender/index.html">1984/mullender</a></h2>
 <h3 id="winning-entry-source-code-mullender.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/mullender.c">mullender.c</a></h3>
@@ -543,7 +539,9 @@ returning to the shell. The original code does not have this change.</p>
 versions of <code>clang</code> object to the number of args of <code>main()</code>, saying that it must
 be 0, 2 or 3. The version this has been observed in does not actually object to
 1 arg but it is entirely possible that this changes so a second arg (that’s not
-needed and is unused) has been added just in case.</p>
+needed and is unused) has been added just in case. See <a href="faq.html#faq4_6">FAQ 4.6 - Why was arg
+count and/or type changed in main() in some older
+entries?</a> for more details.</p>
 <p>Cody also added the script <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/august/primes.sh">primes.sh</a> which allows one
 to check the output for the first <code>N</code> prime numbers of the output, where <code>N</code> is
 either the default or user specified. The inspiration was the previous <code>try</code>
@@ -1749,7 +1747,9 @@ start and end character.</p>
 defect with the number of args to <code>main()</code> though when it comes to 1 arg it is
 only in an error message if say 4 args are used. This is out of an abundance of
 caution as it’s quite possible that <code>clang</code> or the ANSI C committee end up further
-changing this.</p>
+changing this. See <a href="faq.html#faq4_6">FAQ 4.6 - Why was arg
+count and/or type changed in main() in some older
+entries?</a> for more details.</p>
 <p>Yusuke also noted that there is a bug in the program where right after starting
 it moves towards the right but if you click the mouse it goes back.</p>
 <div id="1992_lush">
@@ -2135,7 +2135,9 @@ details on this.</p>
 type of args. In particular some versions supposedly only allow 0, 2 or 3 args.
 It actually appears to allow 1 but if you specify 4 it says 0, 2 or 3 and it is
 an error but it’s entirely possible that they will eventually make the defect
-function as the error message claims.</p>
+function as the error message claims. See <a href="faq.html#faq4_6">FAQ 4.6 - Why was arg
+count and/or type changed in main() in some older
+entries?</a> for more details.</p>
 <div id="1995_dodsond1">
 <h2 id="winning-entry-1995dodsond1">Winning entry: <a href="1995/dodsond1/index.html">1995/dodsond1</a></h2>
 <h3 id="winning-entry-source-code-dodsond1.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/dodsond1/dodsond1.c">dodsond1.c</a></h3>
@@ -2348,7 +2350,9 @@ versions of <code>clang</code> whine about the number of args on top of what typ
 In particular some versions claim that they only allow 0, 2 or 3 args. It
 appears that they do allow 1 but for instance 4 is not allowed. However as it’s
 quite possible they will ‘fix’ this defect it would be better to have this not
-be a problem at such a time.</p>
+be a problem at such a time. See <a href="faq.html#faq4_6">FAQ 4.6 - Why was arg
+count and/or type changed in main() in some older
+entries?</a> for more details.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/bas1/bas1.sh">bas1.sh</a> script to simplify running the
 program.</p>
 <div id="1998_bas2">
@@ -2412,11 +2416,13 @@ final code that is compiled. The code is now what it essentially becomes when
 processed completely. The intermediate steps can now be performed to see how it
 expands but it can still compile and be used.</p>
 <p>Cody also added a second arg to <code>main()</code> out of an abundance of caution as some
-versions of <code>clang</code> whine about the number of args to <code>main()</code>. These versions
+versions of <code>clang</code> complain about the number of args to <code>main()</code>. These versions
 claim that only 0, 2 or 3 are allowed but it does allow 1 anyway. It is quite
 possible though that this will change so it is fixed in case this happens. As it
 is mostly just through the C pre-processor Cody added a new macro to make the
-code look like the original with just an extra arg.</p>
+code look like the original with just an extra arg. See <a href="faq.html#faq4_6">FAQ 4.6 - Why was arg
+count and/or type changed in main() in some older
+entries?</a> for more details.</p>
 <p>In some versions of <code>clang</code> <code>-Wno-int-conversion</code> had to be added to the
 <code>CSILENCE</code> variable of the Makefile.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/fanf/try.sh">try.sh</a> script to show the output of some
@@ -2513,7 +2519,9 @@ occurs.</p>
 <p>Cody made <code>main()</code> have two args out of an abundance of caution as some versions
 of <code>clang</code> say that <code>main()</code> can only have 0, 2 or 3 args. These versions accept 1
 arg but it is entirely possible that they fix this so this should prevent it
-from breaking if that happens.</p>
+from breaking if that happens. See <a href="faq.html#faq4_6">FAQ 4.6 - Why was arg
+count and/or type changed in main() in some older
+entries?</a> for more details.</p>
 <p>Cody added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh3/try.sh">try.sh</a> script to make it easier to try
 the commands that we suggested. One command was not added, that of the to use
 command.</p>
@@ -3039,7 +3047,9 @@ a lot of numbers this will be harder to see).</p>
 discovered it will not work otherwise.</p>
 <p>Cody, out of an abundance of caution for <code>clang</code>, added a second arg to <code>main()</code>
 as some versions complain about the number of args and although they accept 1 it
-is entirely possible it will eventually be that they don’t.</p>
+is entirely possible it will eventually be that they don’t. See <a href="faq.html#faq4_6">FAQ 4.6 - Why was arg
+count and/or type changed in main() in some older
+entries?</a> for more details.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/kopczynski/try.sh">try.sh</a> script and various data
 files: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/kopczynski/kopczynski-a">kopczynski-a</a> to demonstrate what happens when art more
 like a letter is fed to the program and the <code>kopczynski*-rev</code> files which are
@@ -3424,7 +3434,9 @@ it to the repo as well.</p>
 </div>
 <p><a href="#cody">Cody</a>, out of an abundance of caution for <code>clang</code>’s defects, made <code>main()</code> have
 2 args instead of 1 as some versions report that <code>main()</code> must have 0, 2 or 3
-args, even though at least one of those versions allows 1 arg only.</p>
+args, even though at least one of those versions allows 1 arg only. See <a href="faq.html#faq4_6">FAQ 4.6 - Why was arg
+count and/or type changed in main() in some older
+entries?</a> for more details.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/sykes2/try.sh">try.sh</a> script for easier use of the
 entry to show the clock update in real time.</p>
 <div id="2006_toledo1">
@@ -3480,7 +3492,9 @@ We’re not able to test this.</p>
 </div>
 <p><a href="#cody">Cody</a>, out of an abundance of caution, added a second arg to <code>main()</code> as some
 versions of <code>clang</code> complain about not only the type of each arg to <code>main()</code> but
-the number of args as well.</p>
+the number of args as well. See <a href="faq.html#faq4_6">FAQ 4.6 - Why was arg
+count and/or type changed in main() in some older
+entries?</a> for more details.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/borsanyi/try.sh">try.sh</a> script.</p>
 <div id="2011_dlowe">
 <h2 id="winning-entry-2011dlowe">Winning entry: <a href="2011/dlowe/index.html">2011/dlowe</a></h2>
@@ -3491,7 +3505,8 @@ the number of args as well.</p>
 <h2 id="winning-entry-2011eastman">Winning entry: <a href="2011/eastman/index.html">2011/eastman</a></h2>
 <h3 id="winning-entry-source-code-eastman.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/eastman//eastman.c">eastman.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> added the video file <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/eastman">boing-ball.mp4</a> which is the demo the
+<p><a href="#cody">Cody</a> added the video file
+<a href="2011/eastman/boing-ball.mp4">boing-ball.mp4</a> which is the demo the
 author referred to.</p>
 <div id="2011_fredriksson">
 <h2 id="winning-entry-2011fredriksson">Winning entry: <a href="2011/fredriksson/index.html">2011/fredriksson</a></h2>
@@ -3508,7 +3523,7 @@ for 64-bit so it was then tested as a 32-bit binary (Linux) and 64-bit binary
 (Linux, macOS) and both work. It was fixed by changing some <code>int</code>s to <code>long</code>s
 and now it does work with 64-bit systems as well as 32-bit systems.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/goren/try.sh">try.sh</a> script.</p>
-<p>Cody added the following words of wisdom: <code>'"this" is not a pipe but "!" is'</code>.</p>
+<p>Cody added the following words of wisdom: <code>'"this" is not a pipe but "|" is'</code>.</p>
 <div id="2011_hamaji">
 <h2 id="winning-entry-2011hamaji">Winning entry: <a href="2011/hamaji/index.html">2011/hamaji</a></h2>
 <h3 id="winning-entry-source-code-hamaji.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/hamaji//hamaji.c">hamaji.c</a></h3>
@@ -3636,10 +3651,12 @@ everything, filtered through less.</p>
 <h3 id="winning-entry-source-code-grothe.c-1">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/grothe//grothe.c">grothe.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/grothe/try.sh">try.sh</a> script.</p>
-<p>Cody also changed <code>argv</code> to be not <code>const char ** but</code>char <strong>, mostly out of an
+<p>Cody also changed <code>argv</code> to be not <code>const char **</code> but <code>char **</code>, mostly out of an
 abundance of caution in case <code>clang</code>, which already imposes restrictions on the
-types of args to <code>main()</code> including to do with `char </strong>, decides to further
-restrict them.</p>
+types of args to <code>main()</code> including to do with <code>char **</code>, decides to further
+restrict them. See <a href="faq.html#faq4_6">FAQ 4.6 - Why was arg
+count and/or type changed in main() in some older
+entries?</a> for more details.</p>
 <p>Cody also restored the original code from the archive.</p>
 <p>And although the URL works for now (via redirect), Cody changed the website
 linked to in the recipe file to the domain that the old one currently redirects
@@ -3847,7 +3864,9 @@ not found.</p>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh3/try.sh">try.sh</a> script.</p>
 <p>Cody also (out of an abundance of caution for <code>clang(1)</code> which is strict with
-arg type and count to <code>main()</code>) added a second (unused) arg to <code>main()</code>.</p>
+arg type and count to <code>main()</code>) added a second (unused) arg to <code>main()</code>. See
+<a href="faq.html#faq4_6">FAQ 4.6 - Why was arg count and/or type changed in main() in some
+older entries?</a> for more details.</p>
 <div id="2013_endoh4">
 <h2 id="winning-entry-2013endoh4">Winning entry: <a href="2013/endoh4/index.html">2013/endoh4</a></h2>
 <h3 id="winning-entry-source-code-endoh4.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh4//endoh4.c">endoh4.c</a></h3>
@@ -4196,7 +4215,9 @@ files from compiling properly, trying instead to compile already compiled code.<
 some versions of <code>clang</code> object to the number of args of <code>main()</code>, saying that it
 must be 0, 2 or 3. The version this has been observed in does not actually
 object to 1 arg but it is entirely possible that this changes so a second arg
-(that’s not needed and is unused) has been added just in case.</p>
+(that’s not needed and is unused) has been added just in case. See <a href="faq.html#faq4_6">FAQ 4.6 -
+Why was arg count and/or type changed in main() in some older
+entries?</a> for more details.</p>
 <p>Cody also added explicit linking of libm (<code>-lm</code>) for systems that do not do this
 (Linux doesn’t seem to but macOS does).</p>
 <p>Cody also added <a href="2018/bellard/index.html#alternate-code">alternate code</a> that should

@@ -108,7 +108,7 @@ allow this. Some versions of `clang` say that `main()` must have either 0, 2 or 
 args but these versions do not object to 1 arg. However as the `char` macro
 seems more obscure and it is possible that a new version of `clang` will be even
 more strict the `int i` parameter in `main()` was moved to be inside `main()`,
-set to non-zero (setting `i` to 0 will not work). This is way `main()` has zero
+set to non-zero (setting `i` to 0 will not work). This is why `main()` has zero
 args.
 
 Observe how on line 29 there is a call to `main()` which does pass in a
@@ -139,11 +139,6 @@ To see the difference from start to fixed:
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1984/laman/try.sh) script.
-
-Cody also fixed this to not crash when no arg is specified. Note that if the arg
-is not a positive number it will not do anything useful or anything at all.
-This was fixed on 30 October 2023 after the bug status was changed from INABIAF
-(it's not a bug it's a feature) to bug.
 
 
 <div id="1984_mullender">
@@ -213,7 +208,9 @@ returning to the shell. The original code does not have this change.
 versions of `clang` object to the number of args of `main()`, saying that it must
 be 0, 2 or 3. The version this has been observed in does not actually object to
 1 arg but it is entirely possible that this changes so a second arg (that's not
-needed and is unused) has been added just in case.
+needed and is unused) has been added just in case. See [FAQ 4.6  - Why was arg
+count and/or type changed in main&#x28;&#x29; in some older
+entries?](faq.html#faq4_6) for more details.
 
 Cody also added the script [primes.sh](%%REPO_URL%%/1985/august/primes.sh) which allows one
 to check the output for the first `N` prime numbers of the output, where `N` is
@@ -1948,7 +1945,10 @@ Cody made `main()` have two args, not one, as some versions of `clang` have a
 defect with the number of args to `main()` though when it comes to 1 arg it is
 only in an error message if say 4 args are used. This is out of an abundance of
 caution as it's quite possible that `clang` or the ANSI C committee end up further
-changing this.
+changing this.  See [FAQ 4.6  - Why was arg
+count and/or type changed in main&#x28;&#x29; in some older
+entries?](faq.html#faq4_6) for more details.
+
 
 Yusuke also noted that there is a bug in the program where right after starting
 it moves towards the right but if you click the mouse it goes back.
@@ -2473,7 +2473,10 @@ Out of an abundance of caution with `clang`, Cody also added a second arg to
 type of args. In particular some versions supposedly only allow 0, 2 or 3 args.
 It actually appears to allow 1 but if you specify 4 it says 0, 2 or 3 and it is
 an error but it's entirely possible that they will eventually make the defect
-function as the error message claims.
+function as the error message claims.  See [FAQ 4.6  - Why was arg
+count and/or type changed in main&#x28;&#x29; in some older
+entries?](faq.html#faq4_6) for more details.
+
 
 
 <div id="1995_dodsond1">
@@ -2770,7 +2773,10 @@ versions of `clang` whine about the number of args on top of what type they are
 In particular some versions claim that they only allow 0, 2 or 3 args. It
 appears that they do allow 1 but for instance 4 is not allowed. However as it's
 quite possible they will 'fix' this defect it would be better to have this not
-be a problem at such a time.
+be a problem at such a time. See [FAQ 4.6  - Why was arg
+count and/or type changed in main&#x28;&#x29; in some older
+entries?](faq.html#faq4_6) for more details.
+
 
 Cody also added the [bas1.sh](%%REPO_URL%%/1998/bas1/bas1.sh) script to simplify running the
 program.
@@ -2861,11 +2867,14 @@ processed completely. The intermediate steps can now be performed to see how it
 expands but it can still compile and be used.
 
 Cody also added a second arg to `main()` out of an abundance of caution as some
-versions of `clang` whine about the number of args to `main()`. These versions
+versions of `clang` complain about the number of args to `main()`. These versions
 claim that only 0, 2 or 3 are allowed but it does allow 1 anyway. It is quite
 possible though that this will change so it is fixed in case this happens. As it
 is mostly just through the C pre-processor Cody added a new macro to make the
-code look like the original with just an extra arg.
+code look like the original with just an extra arg. See [FAQ 4.6  - Why was arg
+count and/or type changed in main&#x28;&#x29; in some older
+entries?](faq.html#faq4_6) for more details.
+
 
 In some versions of `clang` `-Wno-int-conversion` had to be added to the
 `CSILENCE` variable of the Makefile.
@@ -3002,7 +3011,10 @@ occurs.
 Cody made `main()` have two args out of an abundance of caution as some versions
 of `clang` say that `main()` can only have 0, 2 or 3 args. These versions accept 1
 arg but it is entirely possible that they fix this so this should prevent it
-from breaking if that happens.
+from breaking if that happens. See [FAQ 4.6  - Why was arg
+count and/or type changed in main&#x28;&#x29; in some older
+entries?](faq.html#faq4_6) for more details.
+
 
 Cody added the [try.sh](%%REPO_URL%%/1998/schweikh3/try.sh) script to make it easier to try
 the commands that we suggested. One command was not added, that of the to use
@@ -3745,7 +3757,9 @@ discovered it will not work otherwise.
 
 Cody, out of an abundance of caution for `clang`, added a second arg to `main()`
 as some versions complain about the number of args and although they accept 1 it
-is entirely possible it will eventually be that they don't.
+is entirely possible it will eventually be that they don't. See [FAQ 4.6  - Why was arg
+count and/or type changed in main&#x28;&#x29; in some older
+entries?](faq.html#faq4_6) for more details.
 
 Cody also added the [try.sh](%%REPO_URL%%/2004/kopczynski/try.sh) script and various data
 files: [kopczynski-a](%%REPO_URL%%/2004/kopczynski/kopczynski-a) to demonstrate what happens when art more
@@ -4295,7 +4309,10 @@ it to the repo as well.
 
 [Cody](#cody), out of an abundance of caution for `clang`'s defects, made `main()` have
 2 args instead of 1 as some versions report that `main()` must have 0, 2 or 3
-args, even though at least one of those versions allows 1 arg only.
+args, even though at least one of those versions allows 1 arg only.  See [FAQ 4.6  - Why was arg
+count and/or type changed in main&#x28;&#x29; in some older
+entries?](faq.html#faq4_6) for more details.
+
 
 Cody also added the [try.sh](%%REPO_URL%%/2006/sykes2/try.sh) script for easier use of the
 entry to show the clock update in real time.
@@ -4376,7 +4393,10 @@ We're not able to test this.
 
 [Cody](#cody), out of an abundance of caution, added a second arg to `main()` as some
 versions of `clang` complain about not only the type of each arg to `main()` but
-the number of args as well.
+the number of args as well. See [FAQ 4.6  - Why was arg
+count and/or type changed in main&#x28;&#x29; in some older
+entries?](faq.html#faq4_6) for more details.
+
 
 Cody also added the [try.sh](%%REPO_URL%%/2011/borsanyi/try.sh) script.
 
@@ -4394,7 +4414,8 @@ Cody also added the [try.sh](%%REPO_URL%%/2011/borsanyi/try.sh) script.
 ### Winning entry source code: [eastman.c](%%REPO_URL%%/2011/eastman//eastman.c)
 </div>
 
-[Cody](#cody) added the video file [boing-ball.mp4](%%REPO_URL%%/2011/eastman) which is the demo the
+[Cody](#cody) added the video file
+[boing-ball.mp4](2011/eastman/boing-ball.mp4) which is the demo the
 author referred to.
 
 
@@ -4419,7 +4440,7 @@ and now it does work with 64-bit systems as well as 32-bit systems.
 
 Cody also added the [try.sh](%%REPO_URL%%/2011/goren/try.sh) script.
 
-Cody added the following words of wisdom: `'"this" is not a pipe but "!" is'`.
+Cody added the following words of wisdom: `'"this" is not a pipe but "|" is'`.
 
 
 <div id="2011_hamaji">
@@ -4600,10 +4621,13 @@ Cody also fixed a typo in the ruby script
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/grothe/try.sh) script.
 
-Cody also changed `argv` to be not `const char ** but `char **, mostly out of an
+Cody also changed `argv` to be not `const char **` but `char **`, mostly out of an
 abundance of caution in case `clang`, which already imposes restrictions on the
-types of args to `main()` including to do with `char **, decides to further
-restrict them.
+types of args to `main()` including to do with `char **`, decides to further
+restrict them. See [FAQ 4.6  - Why was arg
+count and/or type changed in main&#x28;&#x29; in some older
+entries?](faq.html#faq4_6) for more details.
+
 
 Cody also restored the original code from the archive.
 
@@ -4890,7 +4914,11 @@ The entry can still be enjoyed if you do not have these tools, however.
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2013/endoh3/try.sh) script.
 
 Cody also (out of an abundance of caution for `clang(1)` which is strict with
-arg type and count to `main()`) added a second (unused) arg to `main()`.
+arg type and count to `main()`) added a second (unused) arg to `main()`. See
+[FAQ 4.6  - Why was arg count and/or type changed in main&#x28;&#x29; in some
+older entries?](faq.html#faq4_6) for more details.
+
+
 
 
 <div id="2013_endoh4">
@@ -5394,7 +5422,10 @@ Cody also, out of abundance of caution, added a second arg to `main()` because
 some versions of `clang` object to the number of args of `main()`, saying that it
 must be 0, 2 or 3. The version this has been observed in does not actually
 object to 1 arg but it is entirely possible that this changes so a second arg
-(that's not needed and is unused) has been added just in case.
+(that's not needed and is unused) has been added just in case. See [FAQ 4.6  -
+Why was arg count and/or type changed in main&#x28;&#x29; in some older
+entries?](faq.html#faq4_6) for more details.
+
 
 Cody also added explicit linking of libm (`-lm`) for systems that do not do this
 (Linux doesn't seem to but macOS does).

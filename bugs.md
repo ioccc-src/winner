@@ -401,11 +401,11 @@ something was noted by the author, the judges, a consequence of earlier
 requirements for winning entries or the purpose was to do something that might
 appear to be buggy. An example of system specific entries:
 
-[1984/mullender](%%REPO_URL%%/1984/mullender/mullender.c) (see below and the [FAQ](faq.html)
-for a version that works in modern systems) is very system specific and was
-before system specific winning entries were discouraged. This is an all time
-personal favourite of Landon Curt Noll. Run the alternate code to understand why
-this might be (along with how strange the source code is :-) ).
+[1984/mullender](%%REPO_URL%%/1984/mullender/mullender.c) (see below for a
+version that works in modern systems) is very system specific and was before
+system specific winning entries were discouraged. This is an all time personal
+favourite of Landon Curt Noll. Run the alternate code to understand why this
+might be (along with how strange the source code is :-) ).
 
 An example where a crash is not a bug: [2019/endoh](%%REPO_URL%%/2019/endoh/prog.c) is
 supposed to crash. There are others that are also supposed to crash or that are
@@ -464,6 +464,17 @@ you should see something like:
 ```
 
 without a newline after the `\`. This is not a bug.
+
+
+<div id="1984_laman">
+## 1984/laman
+</div>
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [1984/laman/dedot.c](%%REPO_URL%%/1984/laman/laman.c)
+### Information: [1984/laman/index.html](1984/laman/index.html)
+
+This program will very likely crash or do something funny without an arg.
 
 
 <div id="1984_mullender">
