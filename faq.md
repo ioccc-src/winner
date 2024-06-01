@@ -59,6 +59,7 @@
 other inconsistencies with the original entry?](#faq4_3)
 - [4.4  - What is the meaning of the file ending in .orig.c in IOCCC entries?](#faq4_4)
 - [4.5  - Why were alternate versions added to some entries when the original entry worked fine and well?](#faq4_5)
+- [4.6  - Why was arg count and/or type changed in main&#x28;&#x29; in some older entries?](#faq4_6)
 
 
 ## Section  5 - [Helping the IOCCC](#faq5)
@@ -2408,6 +2409,26 @@ In some cases it might be better to not have them but as noted this is a
 judgement call.
 
 
+<div id="faq4_6">
+### FAQ 4.6: Why was arg count and/or type changed in main&#x28;&#x29; in some older entries?
+</div>
+
+There are a number of reasons this was done but they usually come down to a
+mis-feature or defect in the `clang` compiler.
+
+In all versions of `clang` the first arg must be an `int` and the rest must be a
+`char **` but in some versions it also objects to the number of args in
+`main()`. In the versions observed that complain about the number of args it
+says that there must be 0, 2 or 3 args. This only was triggered with 4 args, not
+1, but to future proof the entry entries that had only one arg to `main()` were
+changed to two.
+
+The above also meant that some entries that were recursive calls to `main()`
+could no longer be so: `main()` instead had to call another function that has
+the body of the old `main()` and that function would call itself again. In some
+cases, however, this had to be done even without `clang` objections.
+
+
 <div id="faq5">
 ## Section 5: Updating or correcting IOCCC web site content
 </div>
@@ -3119,7 +3140,7 @@ There **MUST** be one and only one `email` _JSON member_ and the _JSON value_ **
 be a _JSON string_ or it **MUST** be a _JSON null_.
 
 If the author wishes to not specify an email address, or if the email address is
-unknown, they should use the _JSON null_ as the _JSON value_ of this _JSON member_.
+unknown, it should be the _JSON null_ as the _JSON value_ of this _JSON member_.
 For example:
 
 ``` <!---json-->
@@ -3140,9 +3161,9 @@ This _JSON member_ holds the URL of the author's home page.
 There **MUST** be one and only one `url` _JSON member_ and the _JSON value_ **MUST**
 be a _JSON string_ or it **MUST** be a _JSON null_.
 
-If the author wishes to not specify an email address, or if the URL is
-unknown, they should use the _JSON null_ as the _JSON value_ of this _JSON member_.
-For example:
+If the author wishes to not specify a URL or if the URL is
+unknown, it should be the _JSON null_ as the _JSON value_ of this _JSON
+member_.  For example:
 
 ``` <!---json-->
     "url" : null,
@@ -3159,7 +3180,7 @@ NOTE: The _JSON null_ is **NOT** enclosed in quotes!
 
 This _JSON member_ holds an alternate or 2nd URL a home page for the author.
 
-There **MUST** be one and only one `url` _JSON member_ and the _JSON value_ **MUST**
+There **MUST** be one and only one `alt_url` _JSON member_ and the _JSON value_ **MUST**
 be a _JSON string_ or it **MUST** be a _JSON null_.
 
 In some cases the author may wish to record a special URL for their IOCCC entry,
@@ -3170,12 +3191,12 @@ Cody as of  _Thu Nov 30 23:51:12 UTC 2023_ used:
     "alt_url" : "https://ioccc.xexyl.net",
 ```
 
-If the author wishes to not specify an email address, or if the alternate URL is
-unknown, they should use the _JSON null_ as the _JSON value_ of this _JSON member_.
-For example:
+If the author wishes to not specify an alternate URL, or if the alternate URL is
+unknown, it should be the _JSON null_ as the _JSON value_ of this _JSON
+member_.  For example:
 
 ``` <!---json-->
-    "url" : null,
+    "alt_url" : null,
 ```
 
 NOTE: The _JSON null_ is **NOT** enclosed in quotes!
@@ -3197,8 +3218,8 @@ once used:
     "deprecated_twitter_handle" : "@SirWumpus",
 ```
 
-If the author wishes to not specify an twitter handle, or if the twitter handle is
-unknown, they should use the _JSON null_ as the _JSON value_ of this _JSON member_.
+If the author wishes to not specify a twitter handle, or if the twitter handle is
+unknown, it should be the _JSON null_ as the _JSON value_ of this _JSON member_.
 For example:
 
 ``` <!---json-->
@@ -3239,7 +3260,7 @@ site, updates during the judging process, and when new IOCCC entries
 are selected.  We recommend you follow us on Mastodon.
 
 If the author wishes to not specify an Mastodon handle, or if the Mastodon handle is
-unknown, they should use the _JSON null_ as the _JSON value_ of this _JSON member_.
+unknown, it should be the _JSON null_ as the _JSON value_ of this _JSON member_.
 For example:
 
 ``` <!---json-->
@@ -3276,7 +3297,7 @@ Then the `mastodon_url` would be:
 ```
 
 If the author wishes to not specify an Mastodon URL, or if the Mastodon URL is
-unknown, they should use the _JSON null_ as the _JSON value_ of this _JSON member_.
+unknown, it should be the _JSON null_ as the _JSON value_ of this _JSON member_.
 For example:
 
 ``` <!---json-->
@@ -3311,7 +3332,7 @@ The IOCCC GitHub handle is:
 ```
 
 If the author wishes to not specify an GitHub handle, or if the GitHub handle is
-unknown, they should use the _JSON null_ as the _JSON value_ of this _JSON member_.
+unknown, it should be the _JSON null_ as the _JSON value_ of this _JSON member_.
 For example:
 
 ``` <!---json-->
@@ -3341,7 +3362,7 @@ For example, the affiliation for the IOCCC would be:
 ```
 
 If the author wishes to not specify an affiliation, or if the affiliation is
-unknown, they should use the _JSON null_ as the _JSON value_ of this _JSON member_.
+unknown, it should be the _JSON null_ as the _JSON value_ of this _JSON member_.
 For example:
 
 ``` <!---json-->

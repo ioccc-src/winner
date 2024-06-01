@@ -442,6 +442,7 @@
 other inconsistencies with the original entry?</a></li>
 <li><a href="#faq4_4">4.4 - What is the meaning of the file ending in .orig.c in IOCCC entries?</a></li>
 <li><a href="#faq4_5">4.5 - Why were alternate versions added to some entries when the original entry worked fine and well?</a></li>
+<li><a href="#faq4_6">4.6 - Why was arg count and/or type changed in main() in some older entries?</a></li>
 </ul>
 <h2 id="section-5---helping-the-ioccc">Section 5 - <a href="#faq5">Helping the IOCCC</a></h2>
 <ul>
@@ -2019,6 +2020,21 @@ prevented the entry from working properly and it seemed like it should be added
 as well, for fun.</p>
 <p>In some cases it might be better to not have them but as noted this is a
 judgement call.</p>
+<div id="faq4_6">
+<h3 id="faq-4.6-why-was-arg-count-andor-type-changed-in-main-in-some-older-entries">FAQ 4.6: Why was arg count and/or type changed in main() in some older entries?</h3>
+</div>
+<p>There are a number of reasons this was done but they usually come down to a
+mis-feature or defect in the <code>clang</code> compiler.</p>
+<p>In all versions of <code>clang</code> the first arg must be an <code>int</code> and the rest must be a
+<code>char **</code> but in some versions it also objects to the number of args in
+<code>main()</code>. In the versions observed that complain about the number of args it
+says that there must be 0, 2 or 3 args. This only was triggered with 4 args, not
+1, but to future proof the entry entries that had only one arg to <code>main()</code> were
+changed to two.</p>
+<p>The above also meant that some entries that were recursive calls to <code>main()</code>
+could no longer be so: <code>main()</code> instead had to call another function that has
+the body of the old <code>main()</code> and that function would call itself again. In some
+cases, however, this had to be done even without <code>clang</code> objections.</p>
 <div id="faq5">
 <h2 id="section-5-updating-or-correcting-ioccc-web-site-content">Section 5: Updating or correcting IOCCC web site content</h2>
 </div>
@@ -2504,7 +2520,7 @@ a country, such as “Antarctica” or a User-assigned code.</p>
 <p>There <strong>MUST</strong> be one and only one <code>email</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>.</p>
 <p>If the author wishes to not specify an email address, or if the email address is
-unknown, they should use the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
+unknown, it should be the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
 <pre><code>    &quot;email&quot; : null,</code></pre>
 <p>NOTE: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
@@ -2513,24 +2529,24 @@ For example:</p>
 <p>This <em>JSON member</em> holds the URL of the author’s home page.</p>
 <p>There <strong>MUST</strong> be one and only one <code>url</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>.</p>
-<p>If the author wishes to not specify an email address, or if the URL is
-unknown, they should use the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
-For example:</p>
+<p>If the author wishes to not specify a URL or if the URL is
+unknown, it should be the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON
+member</em>. For example:</p>
 <pre><code>    &quot;url&quot; : null,</code></pre>
 <p>NOTE: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <h5 id="alt_url">alt_url</h5>
 <pre><code>    &quot;alt_url&quot; : null,</code></pre>
 <p>This <em>JSON member</em> holds an alternate or 2nd URL a home page for the author.</p>
-<p>There <strong>MUST</strong> be one and only one <code>url</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
+<p>There <strong>MUST</strong> be one and only one <code>alt_url</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>.</p>
 <p>In some cases the author may wish to record a special URL for their IOCCC entry,
 or a 2nd URL such as a work or school or personal home page. For example,
 Cody as of <em>Thu Nov 30 23:51:12 UTC 2023</em> used:</p>
 <pre><code>    &quot;alt_url&quot; : &quot;https://ioccc.xexyl.net&quot;,</code></pre>
-<p>If the author wishes to not specify an email address, or if the alternate URL is
-unknown, they should use the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
-For example:</p>
-<pre><code>    &quot;url&quot; : null,</code></pre>
+<p>If the author wishes to not specify an alternate URL, or if the alternate URL is
+unknown, it should be the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON
+member</em>. For example:</p>
+<pre><code>    &quot;alt_url&quot; : null,</code></pre>
 <p>NOTE: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <h5 id="deprecated_twitter_handle">deprecated_twitter_handle</h5>
 <p>This <em>JSON member</em> used to hold the twitter handle of the author.</p>
@@ -2541,8 +2557,8 @@ and so the <code>deprecated_twitter_handle</code> is <strong>no longer used</str
 not a <em>JSON null</em> is kept for only historic reasons. For example, Anthony C. Howe
 once used:</p>
 <pre><code>    &quot;deprecated_twitter_handle&quot; : &quot;@SirWumpus&quot;,</code></pre>
-<p>If the author wishes to not specify an twitter handle, or if the twitter handle is
-unknown, they should use the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
+<p>If the author wishes to not specify a twitter handle, or if the twitter handle is
+unknown, it should be the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
 <pre><code>    &quot;deprecated_twitter_handle&quot; : null,</code></pre>
 <p>NOTE: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
@@ -2565,7 +2581,7 @@ as the opening and closing of a new IOCCC, changes to the IOCCC web
 site, updates during the judging process, and when new IOCCC entries
 are selected. We recommend you follow us on Mastodon.</p>
 <p>If the author wishes to not specify an Mastodon handle, or if the Mastodon handle is
-unknown, they should use the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
+unknown, it should be the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
 <pre><code>    &quot;mastodon&quot; : null,</code></pre>
 <p>NOTE: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
@@ -2582,7 +2598,7 @@ For example, if the Mastodon handle is:</p>
 <p>Then the <code>mastodon_url</code> would be:</p>
 <pre><code>    https://server.domain/@user</code></pre>
 <p>If the author wishes to not specify an Mastodon URL, or if the Mastodon URL is
-unknown, they should use the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
+unknown, it should be the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
 <pre><code>    &quot;mastodon_url&quot; : null,</code></pre>
 <p>NOTE: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
@@ -2599,7 +2615,7 @@ and hosts <a href="https://www.ioccc.org">official IOCCC web site</a> on GitHub 
 <p>The IOCCC GitHub handle is:</p>
 <pre><code>    @ioccc-src</code></pre>
 <p>If the author wishes to not specify an GitHub handle, or if the GitHub handle is
-unknown, they should use the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
+unknown, it should be the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
 <pre><code>    &quot;github&quot; : null,</code></pre>
 <p>NOTE: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
@@ -2613,7 +2629,7 @@ It is recommended that the affiliation <em>JSON string</em> be the formal affili
 For example, the affiliation for the IOCCC would be:</p>
 <pre><code>    The International Obfuscared C Code Contest</code></pre>
 <p>If the author wishes to not specify an affiliation, or if the affiliation is
-unknown, they should use the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
+unknown, it should be the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
 <pre><code>    &quot;affiliation&quot; : null,</code></pre>
 <p>NOTE: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>

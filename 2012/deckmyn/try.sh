@@ -39,7 +39,7 @@ echo 1>&2
 echo 1>&2
 
 # Convert pbm files to png files if convert(1) is found in case the user does
-# not have a viewer of pbm files. At the end we will check for png files to ake
+# not have a viewer of pbm files. At the end we will check for png files to make
 # sure that there was at least one conversion. If that does not happen as long
 # as there are pbm files those will be listed instead. Otherwise something went
 # wrong and we warn the user about it.

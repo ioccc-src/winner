@@ -5,6 +5,18 @@
 ```
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+    STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2011/konno in bugs.html](../../bugs.html#2011_konno).
+
+
+
 ## To use:
 
 ``` <!---sh-->
