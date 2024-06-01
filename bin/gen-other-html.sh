@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.3 2024-04-28"
+export VERSION="1.2.4 2024-05-31"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -162,6 +162,7 @@ Exit codes:
  >= 10         internal error
 
 $NAME version: $VERSION"
+
 
 # parse command line
 #
@@ -579,6 +580,8 @@ for YYYY in $(< "$TOP_FILE"); do
 	    # determine the HTML file
 	    #
 	    export HTML_FILE=${MD_FILE//\.md/.html}
+	    HTML_BASENAME=$(basename "$HTML_FILE")
+	    export HTML_BASENAME
 
 	    # determine the description arg
 	    #
@@ -591,7 +594,7 @@ for YYYY in $(< "$TOP_FILE"); do
 
 	    # determine the HEADER_2 arg
 	    #
-	    export HEADER_2="HEADER_2=$MD_BASENAME for $YYYY_DIR"
+	    export HEADER_2="HEADER_2=$HTML_BASENAME for $YYYY_DIR"
 
 	    # determine the number of levels in path of MD_FILE from topdir
 	    #
