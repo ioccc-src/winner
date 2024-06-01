@@ -4744,13 +4744,18 @@ version](%%REPO_URL%%/2012/vik/vik.alt.c) that does this.
 ### Winning entry source code: [zeitak.c](%%REPO_URL%%/2012/zeitak//zeitak.c)
 </div>
 
-[Cody](#cody) added the [test.sh](%%REPO_URL%%/2012/zeitak/test.sh) script and the `make test` rule
-that uses the script along with a number of files that will correctly be flagged
-as incorrect (including a text file and a java file, with a joke, to show that
-it's not that it parses C but rather just matching pairs though that's probably
-obvious) and some correctly nested files were also added including
-[1984/anonymous](1984/anonymous/index.html) (as the author explicitly mentioned
-it) and a java file as well with another joke.
+[Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/zeitak/try.sh) script and the
+`make test` rule that uses the script along with a number of files that will
+correctly be flagged as incorrect (including a text file and a Java file, with a
+joke, to show that it's not that it parses C but rather just matching pairs
+though that's probably obvious) and some correctly nested files were also added
+including [1984/anonymous](%%REPO_URL%%/1984/anonymous/index.html) (as the
+author explicitly mentioned it), both the [original
+version](%%REPO_URL%%/2012/zeitak/anonymous.alt.c) (.alt.c) and the
+[modified version](%%REPO_URL%%/2012/zeitak/anonymous.c) that works with macOS
+as well, and a Java file as well with another joke. Those C files had to be
+added because each entry has its own tarball and without the files it would
+break the script.
 
 A problem was later fixed in the `Makefile` by Cody, a typo in the `CSILENCE`
 variable that prevented compilation.

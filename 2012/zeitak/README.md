@@ -22,7 +22,7 @@ text files that are not code.
 ## Try:
 
 ``` <!---sh-->
-    make test
+    ./try.sh
 ```
 
 NOTE: the program prints an error and exits on the first nesting error so it

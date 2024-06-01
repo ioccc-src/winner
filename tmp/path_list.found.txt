@@ -2869,7 +2869,7 @@
 2012/zeitak/incorrect.single.quote.c
 2012/zeitak/incorrect.txt
 2012/zeitak/index.html
-2012/zeitak/test.sh
+2012/zeitak/try.sh
 2012/zeitak/zeitak.alt.c
 2012/zeitak/zeitak.c
 2012/zeitak/zeitak.orig.c

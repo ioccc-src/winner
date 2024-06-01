@@ -137,7 +137,7 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
-test: test.sh
+test: try.sh
 	./$< || exit 1
 
 
