@@ -1,4 +1,4 @@
-%%REPO_URL%%/2019/lynn/## To build:
+## To build:
 
 ``` <!---sh-->
     make
