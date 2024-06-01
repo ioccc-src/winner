@@ -2216,7 +2216,7 @@ its own function which main() calls with the right parameters.
 
 Later Cody fixed it again to look much more like the original where only a
 single line is added, that of `main()`, which calls `O5()`. This was done through
-`-include stdio.h` at the compiler (in the Makefile) and by removing the `O3`
+`-include stdio.h` at the compiler (in the `Makefile`) and by removing the `O3`
 variable (an int) at the top of the file, instead making it a `char ** in
 `main()` (`O5()` had three args) but then passing in `0` to `O5()` for the third
 arg (as it was 0 at file scope already this is perfectly fine and it means
@@ -3578,10 +3578,12 @@ Cody also added the [try.sh](%%REPO_URL%%/2001/schweikh/try.sh) script.
 ### Winning entry source code: [westley.c](%%REPO_URL%%/2001/westley//westley.c)
 </div>
 
-[Cody](#cody) added the script [try.sh](%%REPO_URL%%/2001/westley/try.sh) to automate a heap of commands
-that we, the IOCCC judges, suggested, as well as some additional ones that he
-thought would be fun.  He also provided the sort and punch card versions,
-described in the index.html, based on the author's remarks.
+[Cody](#cody) added the script [try.sh](%%REPO_URL%%/2001/westley/try.sh) to
+automate a heap of commands that we, the IOCCC judges, suggested, as well as
+some additional ones that he thought would be fun.  He also provided the sort
+and punch card versions, described in the index.html, based on the author's
+remarks, through `Makefile` rules that generate the files by default with `make
+all`.
 
 
 <div id="2004">
@@ -4783,10 +4785,11 @@ the cursor will be visible. Using `atexit(3)` will not work if the program is
 killed, signals are ugly and these would be messing with the entry too much so
 these were not done.
 
-Cody also added the alt version that lets one control how fast the painting is
-done, based on the author's recommendations, except that Cody made it
-configurable at compile time. The `Makefile` was modified in such a way as to make
-it very easy to redefine it at compile time.
+Cody also added the [alternate version](%%REPO_URL%%/2013/birken/birken.alt.c)
+that lets one control how fast the painting is done, based on the author's
+recommendations, except that Cody made it configurable at compile time. The
+`Makefile` was modified in such a way as to make it very easy to redefine it at
+compile time.
 
 Cody also added the [try.sh](%%REPO_URL%%/2013/birken/try.sh) script for the entry and the
 [try.alt.sh](%%REPO_URL%%/2013/birken/try.alt.sh) script for the alternate code.
@@ -4797,8 +4800,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2013/birken/try.sh) script for the ent
 ### Winning entry source code: [cable1.c](%%REPO_URL%%/2013/cable1//cable1.c)
 </div>
 
-[Cody](#cody) added the [try.sh](%%REPO_URL%%/2013/cable1/try.sh) script which also has an
-joke Easter egg in it based on the judges' remarks.
+[Cody](#cody) added the [try.sh](%%REPO_URL%%/2013/cable1/try.sh) script.
 
 
 <div id="2013_cable2">
@@ -4815,7 +4817,7 @@ joke Easter egg in it based on the judges' remarks.
 </div>
 
 [Cody](#cody) fixed this to compile with modern systems. The problems were that
-`localtime()` is used differently and `time.h` being included (with
+`localtime()` is used differently and with `time.h` being included (with
 [SDL2](https://www.libsdl.org) in macOS - but see below) there was a conflicting
 function type. This appeared to be a problem with macOS and only when SDL2 was
 included (but which as noted next it cannot be).
@@ -4823,7 +4825,8 @@ included (but which as noted next it cannot be).
 The other problem is that this entry uses SDL functions that were
 removed from SDL2 so the `Makefile` has to use `sdl-config` and not `sdl2-config`.
 This meant that at one point to be strictly technical, the removal of
-`localtime()` wasn't necessary but this change was left in place anyway.
+`localtime()` wasn't necessary but this change was left in place anyway (but see
+below again).
 
 Later on in an updated macOS (problem discovered in macOS Sonoma) the entry
 failed to compile again also due to `localtime()` so he removed the prototype
@@ -4842,12 +4845,11 @@ the source code defining `KB` to what the author suggested,
 `(kb=H(8),kbhit())&&(r[1190]=getch(),H(7))`. It need hardly be mentioned that
 this will not link in Unix systems (including macOS).
 
-`Clang` required a `-Wno-` option as well.
 
 Finally Cody provided the [bios.asm](%%REPO_URL%%/2013/cable3/bios.asm) that the author
 referred to, found at the [GitHub repo for the
-entry](https://github.com/adriancable/8086tiny/tree/master), and the 'ready-made
-40MB hard disk image containing a whole bunch of software' in `hd.img` that the
+entry](https://github.com/adriancable/8086tiny/tree/master), and the `ready-made
+40MB hard disk image containing a whole bunch of software` in `hd.img` that the
 author linked to at `https://bitly.com/1bU8URK`.
 
 
@@ -4896,18 +4898,14 @@ commands to try that he suggested to see how different lengths look.
 [Ruby](https://www.ruby-lang.org) and [ImageMagick](https://imagemagick.org) are
 installed before trying to run the ruby script. To be more technically correct:
 it checks that the `convert` tool of ImageMagick is available (via `type -P`)
-because `convert` is part of the ImageMagick suite.
+because `convert` is part of the ImageMagick suite. The rule will report the
+tools not installed and where to find them, if they are not installed, and after
+checking these requirements it will exit if either is not found.
 
-This is useful because the Ruby script tries to run (via `IO.popen()`) the
+The checks are useful because the Ruby script tries to run (via `IO.popen()`) the
 `convert` tool but without ImageMagick being installed, if one is unaware of
 where it comes from it will appear to be an error in the Ruby script (it might
-also appear to be an issue with the script even if you know of `convert`: it was
-another day that Cody remembered it and why it wasn't installed on his MacBook
-Pro even though in the past it had been and is indeed now).
-
-The rule will report the tools not installed and where to find them, if they are
-not installed, and after checking these requirements it will exit if either is
-not found.
+also appear to be an issue with the script even if you know of `convert`).
 
 The entry can still be enjoyed if you do not have these tools, however.
 
@@ -4980,7 +4978,7 @@ rule in the `Makefile` was originally removed as part of the above but it was
 restored so that one can see what the author is talking about.
 
 Further, after the file `2013/hou/doc/example.markdown` was moved to
-[2013/hou/doc/example.html](2013/hou/doc/example.html) to match the rest of the repo
+[2013/hou/doc/example.md](%%REPO_URL%%/2013/hou/doc/example.md) to match the rest of the repo
 this broke `make` which Cody also fixed.
 
 Cody also added the [try.sh](%%REPO_URL%%/2013/hou/try.sh) script.
@@ -4993,8 +4991,8 @@ Cody also added the [try.sh](%%REPO_URL%%/2013/hou/try.sh) script.
 
 [Cody](#cody) fixed this so that the server would not refuse the connection
 after the first call to `close(2)`. The problem was that because the backlog to
-`listen(2)` was 1 once the connection closed the server was essentially 'dead'.
-The backlog was changed to 10 and this solves the problem. It is not known if
+`listen(2)` was `1`, once the connection closed the server was essentially 'dead'.
+The backlog was changed to `10` and this solves the problem. It is not known if
 this was specific to macOS but it was not specific to a browser as Safari and
 Firefox both had the problem.
 
@@ -5037,7 +5035,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2013/morgan1/try.sh) script.
 </div>
 
 [Cody](#cody) provided the [alternate
-code](2014/birken/index.html#alternate-code) that lets one redefine the port to
+code](%%REPO_URL%%/2014/birken/prog.alt.c) that lets one redefine the port to
 bind to in case there is a firewall issue or there is some other reason to not
 have the default port. Remember that ports < 1024 are privileged. It also lets
 you redefine the timing constant `STARDATE` (see the author's remarks for more
@@ -5051,7 +5049,7 @@ redefine the port and timing constant.
 </div>
 
 [Cody](#cody) added [alternate code](2014/deak/index.html#alternate-code) that lets
-one (via the Makefile) reconfigure the coordinates but instead of being a
+one (via the `Makefile`) reconfigure the coordinates but instead of being a
 modified version of the entry it is the version the author provided which would
 be what the program would look like if, as the author put it:
 
@@ -5060,7 +5058,7 @@ application source code is intentionally kept to a bare minimum.
 
 .. was not true.
 
-This alt version did not originally compile because a value was left off the
+This alternate version did not originally compile because a value was left off the
 `return` statement (this might have been fixed in the index.html file too) so
 that was fixed and it also has `#include <stdio.h>` for `putchar(3)`. The
 `#ifndef..#define..#endif` was not part of the original alternate code, of course.
@@ -5110,8 +5108,8 @@ it is a file with spoilers (and too close to index.html?).
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2014/maffiodo1//prog.c)
 </div>
 
-[Cody](#cody) fixed the build for this entry: it does not require
-[SDL2](https://www.libsdl.org) but SDL1 so there were linking errors.
+[Cody](#cody) fixed the `Makefile` for this entry: it does not require
+`SDL2` but `SDL1` so there were linking errors.
 
 Cody also added the [mario.sh](%%REPO_URL%%/2014/maffiodo1/mario.sh) and
 [giana.sh](%%REPO_URL%%/2014/maffiodo1/giana.sh) scripts which play, respectively, [Super
@@ -5127,7 +5125,7 @@ which let one configure the width and height of the game.
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2014/maffiodo2/try.sh) script.
 
-He also added the [alternate code](2014/maffiodo2/index.html#alternate-code)
+Cody also added the [alternate code](%%REPO_URL%%/2014/maffiodo2/prog.alt.c)
 provided by the author.
 
 
@@ -5146,12 +5144,12 @@ provided by the author.
 
 [Cody](#cody) fixed the code so that the game can play automatically like it
 once did. The problem is that it expects a certain file name which was
-`sinon.c`. The code now refers to `prog.c`.
+`sinon.c`. The code now refers to `prog.c` (it cannot as easily use `__FILE__`).
 
 Cody also fixed the scripts [glock.sh](%%REPO_URL%%/2014/sinon/glock.sh) and
-[hecate.sh](%%REPO_URL%%/2014/sinon/hecate.sh) which did not work after running either once
-as they compile `run.c` and then do `./run | tee run.c` which overwrites it with
-output that is not code.
+[hecate.sh](%%REPO_URL%%/2014/sinon/hecate.sh) which did not work after running
+either of them once as they compile `run.c` and then do `./run | tee run.c`
+which overwrites it with output that is not code.
 
 Cody also added the [try.sh](%%REPO_URL%%/2014/sinon/try.sh) script that will first (if perl
 is installed) run the demo mode and then after that it will run the above noted
@@ -5202,9 +5200,9 @@ that would break it we do not know.
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2014/wiedijk/try.sh) script which is based on
 the command to try in the 'try' section but improved so one can more easily
-specify what ident tool they want to use and also change which sed to use,
+specify what `indent` tool they want to use and also change which `sed(1)` to use,
 should they want to. It also checks that both of these two tools exist and are
-executable and it pipes it through less as it's longer than a page worth of
+executable and it pipes it through `less(1)` as it's longer than a page worth of
 output.
 
 
@@ -5265,9 +5263,9 @@ add a `./` to the commands in the man page/index.html.
 [Cody](#cody) improved the `Makefile` so that one can easily change the dimensions
 at compilation time via `make(1)`.
 
-Cody also added alternate code that is based on the author's remarks, suggesting that
-one change the value of `q` to a different number, in order to see a bug that
-they avoided.
+Cody also added [alternate code](%%REPO_URL%%/2015/dogon/prog.alt.c) that is
+based on the author's remarks, suggesting that one change the value of `q` to a
+different number, in order to see a bug that they avoided.
 
 
 <div id="2015_duble">
@@ -5295,11 +5293,11 @@ they avoided.
 symbols of `main()`. The fix is through the compiler option `-fcommon` which
 will let it compile like it does with macOS.
 
-Cody also added the [try.sh](%%REPO_URL%%/2015/endoh3/try.sh) script which makes use of the
-make rule he added (to enjoy the theme of the entry, [Back to the
+Cody also added the [try.sh](%%REPO_URL%%/2015/endoh3/try.sh) script which makes
+use of the make rule he added (to enjoy the theme of the entry, [Back to the
 Future](https://en.wikipedia.org/wiki/Back_to_the_Future) using this entry by
-simply typing `make back_to` or `make mullender`) and then runs the famous
-[1984/mullender.c](%%REPO_URL%%/1984/mullender/mullender.c).
+simply typing `make back_to`, `make future` or `make mullender`) and then runs
+the famous [1984/mullender.c](%%REPO_URL%%/1984/mullender/mullender.c).
 
 
 <div id="2015_endoh4">
@@ -5344,11 +5342,7 @@ resulted in standard input errors in piping to `bc(1)`) and added the
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2015/mills1/try.sh) script which changes the
-parameters to what we had in the judges' remarks to make it easier (he only died
-when he tried to mark a reminder complete on the other side of the screen at the
-same time and he almost survived that, scoring at that point over 90 - but this
-also involves good eye-hand coordination and playing games like this in the
-past).
+parameters to what we had in the judges' remarks to make it easier.
 
 
 <div id="2015_mills2">
@@ -5436,7 +5430,7 @@ entries?](faq.html#faq4_6) for more details.
 Cody also added explicit linking of libm (`-lm`) for systems that do not do this
 (Linux doesn't seem to but macOS does).
 
-Cody also added [alternate code](2018/bellard/index.html#alternate-code) that should
+Cody also added [alternate code](%%REPO_URL%%/2018/bellard/prog.alt.c) that should
 work for Windows, based on the author's remarks. The same thing with the number
 of args to `main()` that was done in the original entry was done with this
 version as well.
@@ -5461,7 +5455,7 @@ Cody also added the [try.sh](%%REPO_URL%%/2018/burton1/try.sh) script which also
 </div>
 
 [Cody](#cody) fixed the `make test` rule: it tried to run `tac(1)` (in systems
-that have that command) rather than the entry itself which is called `tac` and
+that have that command) rather than the entry itself which is called `tac`. Also
 the `runtest` script (which he renamed to `runtest.sh` for download/browser
 display purposes) was not executable.
 
@@ -5476,7 +5470,7 @@ file `tac.1`.
 Cody also renamed `discrepancies` to `discrepancies.html` and made it markdown
 format.
 
-Cody added the [tokcount.sh](%%REPO_URL%%/2018/burton2/tokcount.sh) script which was
+Cody also added the [tokcount.sh](%%REPO_URL%%/2018/burton2/tokcount.sh) script which was
 included in the remarks of the author but not an included file.
 
 Finally Cody added the [try.sh](%%REPO_URL%%/2018/burton2/try.sh) script.
@@ -5503,7 +5497,7 @@ input files one at a time and after each one is shown, it feeds it to the
 program, redirecting the output to the respective GIF file. It then will inform
 the user they should open it in a GIF viewer that can show animation in animated
 GIF files. It offers an example command for macOS like the judges did in their
-remarks. The input files offered includes the prog.c as the author,
+remarks. The input files offered includes the `prog.c` as the author,
 [Yusuke](#yusuke), suggested that it too has a secret.
 
 
@@ -5520,22 +5514,6 @@ three of the other scripts but each allows one to send an interrupt in the loops
 and still continue to the next script (if one does it when not in a loop it will
 exit the script). The `make python` and `make python3` rules in the `Makefile` now
 run the respective scripts.
-
-
-<div id="2018_ferguson">
-## Winning entry: [2018/ferguson](2018/ferguson/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2018/ferguson//prog.c)
-</div>
-
-[Cody](#cody), with irony well intended :-), fixed the [test.sh
-script](%%REPO_URL%%/2018/ferguson/test.sh) for portability, shellcheck, making it executable
-and other things, fixed dead links in the man page, updated the test-strings.txt
-file and other things as well (like adding the [try.sh](%%REPO_URL%%/2018/ferguson/try.sh)
-and [try.alt.sh](%%REPO_URL%%/2018/ferguson/try.alt.sh) scripts).
-
-Landon notes that Cody will probably never finish changes in his entries and
-that's probably true: let's just say that for the IOCCC I'm (Cody) a weasel! :-)
-(but isn't that kind of the point ? :-) )
 
 
 <div id="2018_hou">
@@ -5560,7 +5538,7 @@ should be noted that there is a bug in the entry (irrespective of save state
 option) where running `./prog` twice in a row involves having to hit (the second
 run) enter and then exit and then start the program again. Also if you do add a
 file you should run `sync` prior to exiting or else the file might not exist or
-it might be corrupt. See [2018/mills in bugs.html](bugs.html#2018-mills) for more
+it might be corrupt. See [2018/mills in bugs.html](bugs.html#2018_mills) for more
 details on the bug.
 
 
@@ -5629,7 +5607,7 @@ running `make test`.
 Cody also fixed the script [check.sh](%%REPO_URL%%/2019/burton/check.sh) (renamed from
 `check`) in case `x` is specified and is not executable and also made it satisfy
 ShellCheck. He also made ShellCheck not be a cow and/or (to use Bart Simpson's
-advice :-) ) 'not have a cow' about certain things (including one thing it was
+advice :-) ) `'not have a cow` about certain things (including one thing it was
 wrong about) in [cow.sh](%%REPO_URL%%/2019/burton/cow.sh) (which was renamed from `cow`)
 <del>moo</del>too.
 
@@ -5644,9 +5622,9 @@ browsers/GitHub.
 </div>
 
 [Cody](#cody) fixed an invalid bytes error in `tr` in the scripts. This does not
-mean that they will produce any output, though, as they provide expect all
+mean that they will produce any output, though, as they expect all
 letters and that makes it harder to form perfect pangrams. On the subject of
-German umlauts and Eszett (ß) see the [entry in bugs.html](bugs.html#2019-ciura).
+German umlauts and Eszett (ß) see the [2019/ciura in bugs.html](bugs.html#2019_ciura).
 
 Cody also fixed the `Makefile` so that the alternate code would be built when running
 `make alt`.
@@ -5659,8 +5637,8 @@ Cody also added the [try.sh](%%REPO_URL%%/2019/ciura/try.sh) and
 [try.alt.sh](%%REPO_URL%%/2019/ciura/try.alt.sh) scripts.
 
 Finally he added the scripts for the different languages that use the alternate
-version but with the caveat that only English appears to work. See the [entry in
-bugs.html](bugs.html#2019-ciura) for more details.
+version but with the caveat that only English appears to work. Again, see [2019/ciura in
+bugs.html](bugs.html#2019_ciura) for more details.
 
 
 
@@ -5674,8 +5652,8 @@ bugs.html](bugs.html#2019-ciura) for more details.
 Cody also added the file [Shakespeare.txt](2019/diels-grabsch1/Shakespeare.txt)
 from [2019/mills](2019/mills/index.html) (after running `make`) so that one can
 not worry about having the entire IOCCC winning entry tree (or at least the 2019 tree each
-entry in a subdirectory). This is more important as there is discussion of
-having tarballs for each individual entry as a convenience.
+entry in a subdirectory). This was important as we now have tarballs for each
+entry by themselves.
 
 
 <div id="2019_diels-grabsch2">
@@ -5703,7 +5681,7 @@ He also fixed the `Makefile` so that it compiles with `clang` in Linux.
 He also added the [try.sh](%%REPO_URL%%/2019/dogon/try.sh) script.
 
 He also made it possible to easily redefine the memory macro `Z` at compilation
-time by modifying the Makefile.
+time by improving the `Makefile`.
 
 He fixed a link in the spoiler source code. As a spoiler it felt more important
 that this was done (some typos were fixed as well but only some - the purpose
@@ -5719,7 +5697,7 @@ else).
 [Cody](#cody) made the `make fullscreen` more portable by not relying on
 `stty(1)` and `sed(1)` but rather it just uses `tput(1)`. He also made it so
 that if `tput(1)` is not found it tells the user an easier way to compile the full
-screen size rather than having to modify the Makefile. This done with a script,
+screen size rather than having to modify the `Makefile`. This is done with a script,
 [fullscreen.sh](%%REPO_URL%%/2019/duble/fullscreen.sh), to simplify the `Makefile` and provide
 an easy way to tell the user how to compile it, assuming that the environmental
 variables `LINES` and `COLUMNS` are set. But even if they're not set it explains
@@ -5735,7 +5713,7 @@ how to easily compile the program to a specific size. Note that `LINES` and
 As this is a backtrace quine having the optimiser enabled is not a good idea so
 [Cody](#cody) disabled it. For this same reason he also added the `-g` flag to the
 compilation as debugging symbols might just be useful for an entry that's
-supposed to segfault :-)
+supposed to segfault (and which you're supposed to inspect the core file) :-)
 
 Cody also added the simple [ascii.c](%%REPO_URL%%/2019/endoh/ascii.c) that (while it has an
 arg) prints out the character of the ASCII value (uses `isascii(3)` first). This
@@ -5757,11 +5735,10 @@ quine.
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2019/karns//prog.c)
 </div>
 
-[Cody](#cody) reported that with `-O` level > 0 this program segfaults (sometimes?). He's
-not sure why as it worked fine before on the same systems tested but `-O0`
-appears to fix the problem in both macOS and Linux. Perhaps this is the problem
+[Cody](#cody) forced the `Makefile` to use `-O0` as he discovered that an
+optimiser level > 0 causes a segfault (sometimes?). (Perhaps this is the problem
 that the author reported where it sometimes segfaults but Cody did not try
-debugging it since it works with `-O0`.
+debugging it since it works with `-O0`.)
 
 He also added the script [try.sh](%%REPO_URL%%/2019/karns/try.sh) to showcase the entry a
 bit more easily.
@@ -5797,7 +5774,8 @@ entry existing.
 file. The rule requires the tool
 [pdflatex](https://tug.org/applications/pdftex/index.html).
 
-Cody also added the [alternate code](2019/poikola/index.html#alternate-code).
+Cody also added the [alternate code](%%REPO_URL%%/2019/poikola/prog.alt.c) which
+adds a newline after each number for parsing in additional ways.
 
 Cody also added the [try.sh](%%REPO_URL%%/2019/poikola/try.sh) and
 [try.alt.sh](%%REPO_URL%%/2019/poikola/try.alt.sh) scripts.
@@ -5858,9 +5836,9 @@ a friend, whether that's real or imagined.
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2020/endoh2//prog.c)
 </div>
 
-[Cody](#cody) copied the files from the spoiler.zip file (from his copy during
+[Cody](#cody) copied the files from the `spoiler.zip` file (from his copy during
 the preview period) that was password protected with a password that was no
-longer known.
+longer known (but fortunately was already extracted).
 
 He also added the [try.sh](%%REPO_URL%%/2020/endoh2/try.sh) script.
 
@@ -5897,12 +5875,8 @@ Cody also reported (during the preview period of 2020) for some systems (at some
 point?) like macOS the use of `make clock` would not work due possibly to a
 timing issue so [Yusuke](#yusuke) changed it to compile `clock.c`
 file directly (this might have been fixed in the
-Makefile later on but it doesn't hurt to keep it in and this way it isn't a
-problem in any system). How Cody remembers this minor detail more than three
-years ago is something that many people might wonder but he also once told us
-that if someone moves something of his even a millimetre from where it was he
-knows it so he might be called unusual (and he argues, with pride, eccentric :-)
-) :-)
+`Makefile` later on but it doesn't hurt to keep it in and this way it isn't a
+problem in any system).
 
 Cody also added the [run_clock.alt.sh](%%REPO_URL%%/2020/endoh3/run_clock.alt.sh) script
 which is analogous to the [run_clock.sh](%%REPO_URL%%/2020/endoh3/run_clock.sh) but for the
@@ -5914,45 +5888,9 @@ alternate code provided by the author, Yusuke.
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2020/ferguson1//prog.c)
 </div>
 
-[Cody](#cody), with intentional irony here :-), fixed formatting, links and typos in
-various files.
-
-He improved the [termcaps.c test utility](%%REPO_URL%%/2020/ferguson1/termcaps.c), bug fixed
-[play.sh](%%REPO_URL%%/2020/ferguson1/play.sh), fixed other scripts and the Makefile, changed
-some files to be markdown (and fixed problems that he caused in doing so :-) ),
-fixed typos and formatting and he also fixed some issues that occurred when
-files were renamed to `.html` from `.markdown`.
-
-Most importantly he also added some corrections to the vital [Double
+Just for awareness, here: [Cody](#cody) made some corrections to the vital [Double
 layered chocolate fudge cake recipe](2020/ferguson1/chocolate-cake.html) :-)
-
-
-
-<div id="2020_ferguson2">
-## Winning entry: [2020/ferguson2](2020/ferguson2/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2020/ferguson2//prog.c)
-</div>
-
-[Cody](#cody), with intentional irony here :-), fixed formatting, links and typos in
-various files.
-
-He also added the [try.sh](%%REPO_URL%%/2020/ferguson2/try.sh) script.
-
-He also added the [alternate code](2020/ferguson2/index.html#alternate-code) and the
-[try.alt.sh](%%REPO_URL%%/2020/ferguson2/try.alt.sh) script.
-
-The try scripts involved the addition of a text file,
-[key.txt](2020/ferguson2/key.txt) which has the key of the file the judges
-added in [try.this.txt](2020/ferguson2/try.this.txt) which itself was based on
-something the author (Cody :-) ) submitted in the first place.
-
-He also fixed some issues that occurred when files were renamed to `.html` from
-`.markdown`.
-
-Yes the irony here is as rich as the chocolate cake: the question is do you know
-how rich it is? If not and you like chocolate I (that is Cody :-) ) highly
-recommend you give it a go! :-) You're welcome to ask me questions if you wish
-and I encourage you to do so as the cake is quite picky!
+Other fixes were made but as it's his entry it's not worth noting.
 
 
 <div id="2020_giles">
@@ -5993,7 +5931,7 @@ the user has installed the appropriate library with
 `/opt/local`).
 
 Cody also fixed the script [makegif.sh](%%REPO_URL%%/2020/kurdyukov2/makegif.sh) in a variety
-of ways: shellcheck(1), make sure the program is compiled first (allowing one to
+of ways: `shellcheck(1)`, make sure the program is compiled first (allowing one to
 specify which compiler to use with `CC=foo ./makegif.sh ...`), checking that
 `convert(1)` is found and that it worked properly (linking to the proper FAQ
 entry if not installed or it fails).
@@ -6113,7 +6051,7 @@ There were some other fixes as well including mass typo fixes in the Makefiles
 (though that usually does not mean it is worth a thank you note it might be
 worth noting in this case). Other times it was enabling or disabling the
 optimiser to fix an entry, sometimes causing other problems that also had to be
-fixed, a good example being [1986/marshall](#1986marshall-readmemd) (see the
+fixed, a good example being [1986/marshall](#1986_marshall) (see the
 [compilers.html](1986/marshall/compilers.html) for the amusing details and all that
 had to be done to fix it).
 
@@ -6122,11 +6060,11 @@ but it is inconsistent with the rest of the `${foo}` tools even if by tradition
 it is `$(MAKE)`.
 
 Cody also added missing variables like `BASH` and `PDFLATEX` to the
-[var.mk](var.mk) file and removed another that was deemed problematic or
+[var.mk](%%REPO_URL%%/var.mk) file and removed another that was deemed problematic or
 undesired. Other variable names had typos in them.
 
 In at least one case, like the [top level Makefile](%%REPO_URL%%/Makefile), where raw
-commands that are in [var.mk](var.mk) were used, Cody updated them to use the
+commands that are in [var.mk](%%REPO_URL%%/var.mk) were used, Cody updated them to use the
 variables.
 
 A comment was missing for the `diff_alt_orig` rule in all the Makefiles and
