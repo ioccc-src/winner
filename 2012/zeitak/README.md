@@ -64,7 +64,9 @@ NOTE: if you use vim to view the code, make sure to do:
     :set tabstop=4
 ```
 
-in command mode, before looking at the code, to see the correct layout.
+in command mode, before looking at the code, to see the correct layout. For more
+help see [[6.14 - How do I set certain tabstops for viewing source code in
+vi&#x28;m&#x29;?](../../faq.html#faq6_14)
 
 
 ## Author's remarks:
