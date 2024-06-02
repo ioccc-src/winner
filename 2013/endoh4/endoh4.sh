@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.sh - demonstrate IOCCC entry 2013/endoh4
+# endoh4.sh - run IOCCC entry 2013/endoh4 without cursor being in the way
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it

@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "script to try entry"
+	    "entry_text" : "script to run entry without cursor"
 	},
 	{
 	    "file_path" : "solids/antiprism/a04-square-antiprism.txt",

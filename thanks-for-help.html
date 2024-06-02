@@ -1942,7 +1942,7 @@ was not a <code>char **. Instead</code>O5()<code>(which was</code>main()<code>vi
 its own function which main() calls with the right parameters.</p>
 <p>Later Cody fixed it again to look much more like the original where only a
 single line is added, that of <code>main()</code>, which calls <code>O5()</code>. This was done through
-<code>-include stdio.h</code> at the compiler (in the Makefile) and by removing the <code>O3</code>
+<code>-include stdio.h</code> at the compiler (in the <code>Makefile</code>) and by removing the <code>O3</code>
 variable (an int) at the top of the file, instead making it a <code>char ** in</code>main()<code>(</code>O5()<code>had three args) but then passing in</code>0<code>to</code>O5()` for the third
 arg (as it was 0 at file scope already this is perfectly fine and it means
 there’s no need to cast it to an int in the function call though that would also
@@ -2912,10 +2912,11 @@ index.html for details.</p>
 <h2 id="winning-entry-2001westley">Winning entry: <a href="2001/westley/index.html">2001/westley</a></h2>
 <h3 id="winning-entry-source-code-westley.c-8">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/westley//westley.c">westley.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> added the script <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/westley/try.sh">try.sh</a> to automate a heap of commands
-that we, the IOCCC judges, suggested, as well as some additional ones that he
-thought would be fun. He also provided the sort and punch card versions,
-described in the index.html, based on the author’s remarks.</p>
+<p><a href="#cody">Cody</a> added the script <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/westley/try.sh">try.sh</a> to
+automate a heap of commands that we, the IOCCC judges, suggested, as well as
+some additional ones that he thought would be fun. He also provided the sort
+and punch card versions, described in the index.html, based on the author’s
+remarks, through <code>Makefile</code> rules that generate the files by default with <code>make all</code>.</p>
 <div id="2004">
 <h1 id="the-17th-ioccc"><a href="2004/index.html">2004 - The 17th IOCCC</a></h1>
 </div>
@@ -3742,13 +3743,18 @@ version</a> that does this.</p>
 <h2 id="winning-entry-2012zeitak">Winning entry: <a href="2012/zeitak/index.html">2012/zeitak</a></h2>
 <h3 id="winning-entry-source-code-zeitak.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/zeitak//zeitak.c">zeitak.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/zeitak/test.sh">test.sh</a> script and the <code>make test</code> rule
-that uses the script along with a number of files that will correctly be flagged
-as incorrect (including a text file and a java file, with a joke, to show that
-it’s not that it parses C but rather just matching pairs though that’s probably
-obvious) and some correctly nested files were also added including
-<a href="1984/anonymous/index.html">1984/anonymous</a> (as the author explicitly mentioned
-it) and a java file as well with another joke.</p>
+<p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/zeitak/try.sh">try.sh</a> script and the
+<code>make test</code> rule that uses the script along with a number of files that will
+correctly be flagged as incorrect (including a text file and a Java file, with a
+joke, to show that it’s not that it parses C but rather just matching pairs
+though that’s probably obvious) and some correctly nested files were also added
+including <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/anonymous/index.html">1984/anonymous</a> (as the
+author explicitly mentioned it), both the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/zeitak/anonymous.alt.c">original
+version</a> (.alt.c) and the
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/zeitak/anonymous.c">modified version</a> that works with macOS
+as well, and a Java file as well with another joke. Those C files had to be
+added because each entry has its own tarball and without the files it would
+break the script.</p>
 <p>A problem was later fixed in the <code>Makefile</code> by Cody, a typo in the <code>CSILENCE</code>
 variable that prevented compilation.</p>
 <p>A minor point is that the author noted that one should
@@ -3767,18 +3773,18 @@ the same) so that as long as it runs to completion the terminal will be sane and
 the cursor will be visible. Using <code>atexit(3)</code> will not work if the program is
 killed, signals are ugly and these would be messing with the entry too much so
 these were not done.</p>
-<p>Cody also added the alt version that lets one control how fast the painting is
-done, based on the author’s recommendations, except that Cody made it
-configurable at compile time. The <code>Makefile</code> was modified in such a way as to make
-it very easy to redefine it at compile time.</p>
+<p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/birken/birken.alt.c">alternate version</a>
+that lets one control how fast the painting is done, based on the author’s
+recommendations, except that Cody made it configurable at compile time. The
+<code>Makefile</code> was modified in such a way as to make it very easy to redefine it at
+compile time.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/birken/try.sh">try.sh</a> script for the entry and the
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/birken/try.alt.sh">try.alt.sh</a> script for the alternate code.</p>
 <div id="2013_cable1">
 <h2 id="winning-entry-2013cable1">Winning entry: <a href="2013/cable1/index.html">2013/cable1</a></h2>
 <h3 id="winning-entry-source-code-cable1.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/cable1//cable1.c">cable1.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/cable1/try.sh">try.sh</a> script which also has an
-joke Easter egg in it based on the judges’ remarks.</p>
+<p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/cable1/try.sh">try.sh</a> script.</p>
 <div id="2013_cable2">
 <h2 id="winning-entry-2013cable2">Winning entry: <a href="2013/cable2/index.html">2013/cable2</a></h2>
 <h3 id="winning-entry-source-code-cable2.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/cable2//cable2.c">cable2.c</a></h3>
@@ -3789,14 +3795,15 @@ joke Easter egg in it based on the judges’ remarks.</p>
 <h3 id="winning-entry-source-code-cable3.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/cable3//cable3.c">cable3.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> fixed this to compile with modern systems. The problems were that
-<code>localtime()</code> is used differently and <code>time.h</code> being included (with
+<code>localtime()</code> is used differently and with <code>time.h</code> being included (with
 <a href="https://www.libsdl.org">SDL2</a> in macOS - but see below) there was a conflicting
 function type. This appeared to be a problem with macOS and only when SDL2 was
 included (but which as noted next it cannot be).</p>
 <p>The other problem is that this entry uses SDL functions that were
 removed from SDL2 so the <code>Makefile</code> has to use <code>sdl-config</code> and not <code>sdl2-config</code>.
 This meant that at one point to be strictly technical, the removal of
-<code>localtime()</code> wasn’t necessary but this change was left in place anyway.</p>
+<code>localtime()</code> wasn’t necessary but this change was left in place anyway (but see
+below again).</p>
 <p>Later on in an updated macOS (problem discovered in macOS Sonoma) the entry
 failed to compile again also due to <code>localtime()</code> so he removed the prototype
 entirely to solve the problem.</p>
@@ -3810,11 +3817,9 @@ Studio. This is done by in the compile line undefining <code>KB</code> (<code>-U
 the source code defining <code>KB</code> to what the author suggested,
 <code>(kb=H(8),kbhit())&amp;&amp;(r[1190]=getch(),H(7))</code>. It need hardly be mentioned that
 this will not link in Unix systems (including macOS).</p>
-<p><code>Clang</code> required a <code>-Wno-</code> option as well.</p>
 <p>Finally Cody provided the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/cable3/bios.asm">bios.asm</a> that the author
 referred to, found at the <a href="https://github.com/adriancable/8086tiny/tree/master">GitHub repo for the
-entry</a>, and the ‘ready-made
-40MB hard disk image containing a whole bunch of software’ in <code>hd.img</code> that the
+entry</a>, and the <code>ready-made 40MB hard disk image containing a whole bunch of software</code> in <code>hd.img</code> that the
 author linked to at <code>https://bitly.com/1bU8URK</code>.</p>
 <div id="2013_dlowe">
 <h2 id="winning-entry-2013dlowe">Winning entry: <a href="2013/dlowe/index.html">2013/dlowe</a></h2>
@@ -3849,16 +3854,13 @@ commands to try that he suggested to see how different lengths look.</p>
 <a href="https://www.ruby-lang.org">Ruby</a> and <a href="https://imagemagick.org">ImageMagick</a> are
 installed before trying to run the ruby script. To be more technically correct:
 it checks that the <code>convert</code> tool of ImageMagick is available (via <code>type -P</code>)
-because <code>convert</code> is part of the ImageMagick suite.</p>
-<p>This is useful because the Ruby script tries to run (via <code>IO.popen()</code>) the
+because <code>convert</code> is part of the ImageMagick suite. The rule will report the
+tools not installed and where to find them, if they are not installed, and after
+checking these requirements it will exit if either is not found.</p>
+<p>The checks are useful because the Ruby script tries to run (via <code>IO.popen()</code>) the
 <code>convert</code> tool but without ImageMagick being installed, if one is unaware of
 where it comes from it will appear to be an error in the Ruby script (it might
-also appear to be an issue with the script even if you know of <code>convert</code>: it was
-another day that Cody remembered it and why it wasn’t installed on his MacBook
-Pro even though in the past it had been and is indeed now).</p>
-<p>The rule will report the tools not installed and where to find them, if they are
-not installed, and after checking these requirements it will exit if either is
-not found.</p>
+also appear to be an issue with the script even if you know of <code>convert</code>).</p>
 <p>The entry can still be enjoyed if you do not have these tools, however.</p>
 <div id="2013_endoh3">
 <h2 id="winning-entry-2013endoh3">Winning entry: <a href="2013/endoh3/index.html">2013/endoh3</a></h2>
@@ -3905,7 +3907,7 @@ does not).</p>
 rule in the <code>Makefile</code> was originally removed as part of the above but it was
 restored so that one can see what the author is talking about.</p>
 <p>Further, after the file <code>2013/hou/doc/example.markdown</code> was moved to
-<a href="2013/hou/doc/example.html">2013/hou/doc/example.html</a> to match the rest of the repo
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/doc/example.md">2013/hou/doc/example.md</a> to match the rest of the repo
 this broke <code>make</code> which Cody also fixed.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/try.sh">try.sh</a> script.</p>
 <div id="2013_mills">
@@ -3914,8 +3916,8 @@ this broke <code>make</code> which Cody also fixed.</p>
 </div>
 <p><a href="#cody">Cody</a> fixed this so that the server would not refuse the connection
 after the first call to <code>close(2)</code>. The problem was that because the backlog to
-<code>listen(2)</code> was 1 once the connection closed the server was essentially ‘dead’.
-The backlog was changed to 10 and this solves the problem. It is not known if
+<code>listen(2)</code> was <code>1</code>, once the connection closed the server was essentially ‘dead’.
+The backlog was changed to <code>10</code> and this solves the problem. It is not known if
 this was specific to macOS but it was not specific to a browser as Safari and
 Firefox both had the problem.</p>
 <div id="2013_misaka">
@@ -3942,7 +3944,7 @@ implicitly (Linux doesn’t seem to but macOS does).</p>
 <h2 id="winning-entry-2014birken">Winning entry: <a href="2014/birken/index.html">2014/birken</a></h2>
 <h3 id="winning-entry-source-code-prog.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/birken//prog.c">prog.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> provided the <a href="2014/birken/index.html#alternate-code">alternate
+<p><a href="#cody">Cody</a> provided the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/birken/prog.alt.c">alternate
 code</a> that lets one redefine the port to
 bind to in case there is a firewall issue or there is some other reason to not
 have the default port. Remember that ports &lt; 1024 are privileged. It also lets
@@ -3954,7 +3956,7 @@ redefine the port and timing constant.</p>
 <h3 id="winning-entry-source-code-prog.c-1">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/deak//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added <a href="2014/deak/index.html#alternate-code">alternate code</a> that lets
-one (via the Makefile) reconfigure the coordinates but instead of being a
+one (via the <code>Makefile</code>) reconfigure the coordinates but instead of being a
 modified version of the entry it is the version the author provided which would
 be what the program would look like if, as the author put it:</p>
 <blockquote>
@@ -3962,7 +3964,7 @@ be what the program would look like if, as the author put it:</p>
 application source code is intentionally kept to a bare minimum.</p>
 </blockquote>
 <p>.. was not true.</p>
-<p>This alt version did not originally compile because a value was left off the
+<p>This alternate version did not originally compile because a value was left off the
 <code>return</code> statement (this might have been fixed in the index.html file too) so
 that was fixed and it also has <code>#include &lt;stdio.h&gt;</code> for <code>putchar(3)</code>. The
 <code>#ifndef..#define..#endif</code> was not part of the original alternate code, of course.</p>
@@ -3998,8 +4000,8 @@ it is a file with spoilers (and too close to index.html?).</p>
 <h2 id="winning-entry-2014maffiodo1">Winning entry: <a href="2014/maffiodo1/index.html">2014/maffiodo1</a></h2>
 <h3 id="winning-entry-source-code-prog.c-4">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/maffiodo1//prog.c">prog.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> fixed the build for this entry: it does not require
-<a href="https://www.libsdl.org">SDL2</a> but SDL1 so there were linking errors.</p>
+<p><a href="#cody">Cody</a> fixed the <code>Makefile</code> for this entry: it does not require
+<code>SDL2</code> but <code>SDL1</code> so there were linking errors.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/maffiodo1/mario.sh">mario.sh</a> and
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/maffiodo1/giana.sh">giana.sh</a> scripts which play, respectively, <a href="http://en.wikipedia.org/wiki/Super_Mario_Bros.">Super
 Mario Bros</a> and one of <a href="http://en.wikipedia.org/wiki/The_Great_Giana_Sisters">The
@@ -4010,7 +4012,7 @@ which let one configure the width and height of the game.</p>
 <h3 id="winning-entry-source-code-prog.c-5">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/maffiodo2//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/maffiodo2/try.sh">try.sh</a> script.</p>
-<p>He also added the <a href="2014/maffiodo2/index.html#alternate-code">alternate code</a>
+<p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/maffiodo2/prog.alt.c">alternate code</a>
 provided by the author.</p>
 <div id="2014_morgan">
 <h2 id="winning-entry-2014morgan">Winning entry: <a href="2014/morgan/index.html">2014/morgan</a></h2>
@@ -4023,11 +4025,11 @@ provided by the author.</p>
 </div>
 <p><a href="#cody">Cody</a> fixed the code so that the game can play automatically like it
 once did. The problem is that it expects a certain file name which was
-<code>sinon.c</code>. The code now refers to <code>prog.c</code>.</p>
+<code>sinon.c</code>. The code now refers to <code>prog.c</code> (it cannot as easily use <code>__FILE__</code>).</p>
 <p>Cody also fixed the scripts <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/sinon/glock.sh">glock.sh</a> and
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/sinon/hecate.sh">hecate.sh</a> which did not work after running either once
-as they compile <code>run.c</code> and then do <code>./run | tee run.c</code> which overwrites it with
-output that is not code.</p>
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/sinon/hecate.sh">hecate.sh</a> which did not work after running
+either of them once as they compile <code>run.c</code> and then do <code>./run | tee run.c</code>
+which overwrites it with output that is not code.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/sinon/try.sh">try.sh</a> script that will first (if perl
 is installed) run the demo mode and then after that it will run the above noted
 scripts in a loop until the user says they do not want to try again (or they
@@ -4064,9 +4066,9 @@ that would break it we do not know.</p>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/wiedijk/try.sh">try.sh</a> script which is based on
 the command to try in the ‘try’ section but improved so one can more easily
-specify what ident tool they want to use and also change which sed to use,
+specify what <code>indent</code> tool they want to use and also change which <code>sed(1)</code> to use,
 should they want to. It also checks that both of these two tools exist and are
-executable and it pipes it through less as it’s longer than a page worth of
+executable and it pipes it through <code>less(1)</code> as it’s longer than a page worth of
 output.</p>
 <div id="2015">
 <h1 id="the-24th-ioccc"><a href="2015/index.html">2015 - The 24th IOCCC</a></h1>
@@ -4106,9 +4108,9 @@ add a <code>./</code> to the commands in the man page/index.html.</p>
 </div>
 <p><a href="#cody">Cody</a> improved the <code>Makefile</code> so that one can easily change the dimensions
 at compilation time via <code>make(1)</code>.</p>
-<p>Cody also added alternate code that is based on the author’s remarks, suggesting that
-one change the value of <code>q</code> to a different number, in order to see a bug that
-they avoided.</p>
+<p>Cody also added <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/dogon/prog.alt.c">alternate code</a> that is
+based on the author’s remarks, suggesting that one change the value of <code>q</code> to a
+different number, in order to see a bug that they avoided.</p>
 <div id="2015_duble">
 <h2 id="winning-entry-2015duble">Winning entry: <a href="2015/duble/index.html">2015/duble</a></h2>
 <h3 id="winning-entry-source-code-prog.c-13">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/duble//prog.c">prog.c</a></h3>
@@ -4126,11 +4128,11 @@ they avoided.</p>
 <p><a href="#cody">Cody</a> fixed this to compile with Linux which was having a problem with duplicate
 symbols of <code>main()</code>. The fix is through the compiler option <code>-fcommon</code> which
 will let it compile like it does with macOS.</p>
-<p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh3/try.sh">try.sh</a> script which makes use of the
-make rule he added (to enjoy the theme of the entry, <a href="https://en.wikipedia.org/wiki/Back_to_the_Future">Back to the
+<p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh3/try.sh">try.sh</a> script which makes
+use of the make rule he added (to enjoy the theme of the entry, <a href="https://en.wikipedia.org/wiki/Back_to_the_Future">Back to the
 Future</a> using this entry by
-simply typing <code>make back_to</code> or <code>make mullender</code>) and then runs the famous
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/mullender.c">1984/mullender.c</a>.</p>
+simply typing <code>make back_to</code>, <code>make future</code> or <code>make mullender</code>) and then runs
+the famous <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/mullender.c">1984/mullender.c</a>.</p>
 <div id="2015_endoh4">
 <h2 id="winning-entry-2015endoh4">Winning entry: <a href="2015/endoh4/index.html">2015/endoh4</a></h2>
 <h3 id="winning-entry-source-code-prog.c-16">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/endoh4//prog.c">prog.c</a></h3>
@@ -4161,11 +4163,7 @@ resulted in standard input errors in piping to <code>bc(1)</code>) and added the
 <h3 id="winning-entry-source-code-prog.c-19">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/mills1//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/mills1/try.sh">try.sh</a> script which changes the
-parameters to what we had in the judges’ remarks to make it easier (he only died
-when he tried to mark a reminder complete on the other side of the screen at the
-same time and he almost survived that, scoring at that point over 90 - but this
-also involves good eye-hand coordination and playing games like this in the
-past).</p>
+parameters to what we had in the judges’ remarks to make it easier.</p>
 <div id="2015_mills2">
 <h2 id="winning-entry-2015mills2">Winning entry: <a href="2015/mills2/index.html">2015/mills2</a></h2>
 <h3 id="winning-entry-source-code-prog.c-20">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/mills2//prog.c">prog.c</a></h3>
@@ -4222,7 +4220,7 @@ Why was arg count and/or type changed in main() in some older
 entries?</a> for more details.</p>
 <p>Cody also added explicit linking of libm (<code>-lm</code>) for systems that do not do this
 (Linux doesn’t seem to but macOS does).</p>
-<p>Cody also added <a href="2018/bellard/index.html#alternate-code">alternate code</a> that should
+<p>Cody also added <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/bellard/prog.alt.c">alternate code</a> that should
 work for Windows, based on the author’s remarks. The same thing with the number
 of args to <code>main()</code> that was done in the original entry was done with this
 version as well.</p>
@@ -4240,7 +4238,7 @@ GitHub as far as downloading/displaying goes.</p>
 <h3 id="winning-entry-source-code-prog.c-28">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> fixed the <code>make test</code> rule: it tried to run <code>tac(1)</code> (in systems
-that have that command) rather than the entry itself which is called <code>tac</code> and
+that have that command) rather than the entry itself which is called <code>tac</code>. Also
 the <code>runtest</code> script (which he renamed to <code>runtest.sh</code> for download/browser
 display purposes) was not executable.</p>
 <p>Cody also renamed <code>manpage</code> to <code>manpage.sh</code> for download/browser purposes and he
@@ -4251,7 +4249,7 @@ did the same with <code>tokenfix</code> to <code>tokenfix.sh</code> as well as <
 file <code>tac.1</code>.</p>
 <p>Cody also renamed <code>discrepancies</code> to <code>discrepancies.html</code> and made it markdown
 format.</p>
-<p>Cody added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/tokcount.sh">tokcount.sh</a> script which was
+<p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/tokcount.sh">tokcount.sh</a> script which was
 included in the remarks of the author but not an included file.</p>
 <p>Finally Cody added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/try.sh">try.sh</a> script.</p>
 <div id="2018_ciura">
@@ -4271,7 +4269,7 @@ input files one at a time and after each one is shown, it feeds it to the
 program, redirecting the output to the respective GIF file. It then will inform
 the user they should open it in a GIF viewer that can show animation in animated
 GIF files. It offers an example command for macOS like the judges did in their
-remarks. The input files offered includes the prog.c as the author,
+remarks. The input files offered includes the <code>prog.c</code> as the author,
 <a href="#yusuke">Yusuke</a>, suggested that it too has a secret.</p>
 <div id="2018_endoh2">
 <h2 id="winning-entry-2018endoh2">Winning entry: <a href="2018/endoh2/index.html">2018/endoh2</a></h2>
@@ -4285,28 +4283,16 @@ three of the other scripts but each allows one to send an interrupt in the loops
 and still continue to the next script (if one does it when not in a loop it will
 exit the script). The <code>make python</code> and <code>make python3</code> rules in the <code>Makefile</code> now
 run the respective scripts.</p>
-<div id="2018_ferguson">
-<h2 id="winning-entry-2018ferguson">Winning entry: <a href="2018/ferguson/index.html">2018/ferguson</a></h2>
-<h3 id="winning-entry-source-code-prog.c-32">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/ferguson//prog.c">prog.c</a></h3>
-</div>
-<p><a href="#cody">Cody</a>, with irony well intended :-), fixed the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/ferguson/test.sh">test.sh
-script</a> for portability, shellcheck, making it executable
-and other things, fixed dead links in the man page, updated the test-strings.txt
-file and other things as well (like adding the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/ferguson/try.sh">try.sh</a>
-and <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/ferguson/try.alt.sh">try.alt.sh</a> scripts).</p>
-<p>Landon notes that Cody will probably never finish changes in his entries and
-that’s probably true: let’s just say that for the IOCCC I’m (Cody) a weasel! :-)
-(but isn’t that kind of the point ? :-) )</p>
 <div id="2018_hou">
 <h2 id="winning-entry-2018hou">Winning entry: <a href="2018/hou/index.html">2018/hou</a></h2>
-<h3 id="winning-entry-source-code-prog.c-33">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/hou//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-32">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/hou//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added explicit linking of libm (<code>-lm</code>) for systems that do not do this
 (Linux doesn’t seem to but macOS does).</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/hou/try.sh">try.sh</a> script.</p>
 <div id="2018_mills">
 <h2 id="winning-entry-2018mills">Winning entry: <a href="2018/mills/index.html">2018/mills</a></h2>
-<h3 id="winning-entry-source-code-prog.c-34">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/mills//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-33">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/mills//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a>, based on the author’s remarks, made it possible to save state
 between runs of the program so that one can resume where they left off. It
@@ -4314,11 +4300,11 @@ should be noted that there is a bug in the entry (irrespective of save state
 option) where running <code>./prog</code> twice in a row involves having to hit (the second
 run) enter and then exit and then start the program again. Also if you do add a
 file you should run <code>sync</code> prior to exiting or else the file might not exist or
-it might be corrupt. See <a href="bugs.html#2018-mills">2018/mills in bugs.html</a> for more
+it might be corrupt. See <a href="bugs.html#2018_mills">2018/mills in bugs.html</a> for more
 details on the bug.</p>
 <div id="2018_poikola">
 <h2 id="winning-entry-2018poikola">Winning entry: <a href="2018/poikola/index.html">2018/poikola</a></h2>
-<h3 id="winning-entry-source-code-prog.c-35">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/poikola//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-34">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/poikola//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the missing <code>docs</code> rule to the <code>Makefile</code> that forms a PDF
 file. The rule requires the tool <code>pdflatex</code>.</p>
@@ -4329,12 +4315,12 @@ We added some additional notes on what might happen (it varies depending on
 configuration).</p>
 <div id="2018_vokes">
 <h2 id="winning-entry-2018vokes">Winning entry: <a href="2018/vokes/index.html">2018/vokes</a></h2>
-<h3 id="winning-entry-source-code-prog.c-36">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/vokes//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-35">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/vokes//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/vokes/try.sh">try.sh</a> script.</p>
 <div id="2018_yang">
 <h2 id="winning-entry-2018yang">Winning entry: <a href="2018/yang/index.html">2018/yang</a></h2>
-<h3 id="winning-entry-source-code-prog.c-37">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-36">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/try.sh">try.sh</a> script. This script will ask
 if the user wants to see some of the spoilers and only show them if they type
@@ -4344,14 +4330,14 @@ if the user wants to see some of the spoilers and only show them if they type
 </div>
 <div id="2019_adamovsky">
 <h2 id="winning-entry-2019adamovsky">Winning entry: <a href="2019/adamovsky/index.html">2019/adamovsky</a></h2>
-<h3 id="winning-entry-source-code-prog.c-38">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-37">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/try.sh">try.sh</a> script and the Unlambda
 file <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/crash.unl">crash.unl</a> which is in the judges’ remarks as
 to what can crash it - but it’s not a bug, it’s a feature.</p>
 <div id="2019_burton">
 <h2 id="winning-entry-2019burton">Winning entry: <a href="2019/burton/index.html">2019/burton</a></h2>
-<h3 id="winning-entry-source-code-prog.c-39">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/burton//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-38">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/burton//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> fixed the <code>Makefile</code> which had a bad character, a ‘%’ instead of a ‘$’ which
 caused a rule to fail.</p>
@@ -4361,7 +4347,7 @@ running <code>make test</code>.</p>
 <p>Cody also fixed the script <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/burton/check.sh">check.sh</a> (renamed from
 <code>check</code>) in case <code>x</code> is specified and is not executable and also made it satisfy
 ShellCheck. He also made ShellCheck not be a cow and/or (to use Bart Simpson’s
-advice :-) ) ‘not have a cow’ about certain things (including one thing it was
+advice :-) ) <code>'not have a cow</code> about certain things (including one thing it was
 wrong about) in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/burton/cow.sh">cow.sh</a> (which was renamed from <code>cow</code>)
 <del>moo</del>too.</p>
 <p>Cody also renamed the file <code>on.one.liners</code> to
@@ -4369,12 +4355,12 @@ wrong about) in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/maste
 browsers/GitHub.</p>
 <div id="2019_ciura">
 <h2 id="winning-entry-2019ciura">Winning entry: <a href="2019/ciura/index.html">2019/ciura</a></h2>
-<h3 id="winning-entry-source-code-prog.c-40">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-39">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> fixed an invalid bytes error in <code>tr</code> in the scripts. This does not
-mean that they will produce any output, though, as they provide expect all
+mean that they will produce any output, though, as they expect all
 letters and that makes it harder to form perfect pangrams. On the subject of
-German umlauts and Eszett (ß) see the <a href="bugs.html#2019-ciura">entry in bugs.html</a>.</p>
+German umlauts and Eszett (ß) see the <a href="bugs.html#2019_ciura">2019/ciura in bugs.html</a>.</p>
 <p>Cody also fixed the <code>Makefile</code> so that the alternate code would be built when running
 <code>make alt</code>.</p>
 <p>Cody converted the PS file linked to by the author to a PDF,
@@ -4383,21 +4369,21 @@ website.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/try.sh">try.sh</a> and
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/try.alt.sh">try.alt.sh</a> scripts.</p>
 <p>Finally he added the scripts for the different languages that use the alternate
-version but with the caveat that only English appears to work. See the <a href="bugs.html#2019-ciura">entry in
+version but with the caveat that only English appears to work. Again, see <a href="bugs.html#2019_ciura">2019/ciura in
 bugs.html</a> for more details.</p>
 <div id="2019_diels-grabsch1">
 <h2 id="winning-entry-2019diels-grabsch1">Winning entry: <a href="2019/diels-grabsch1/index.html">2019/diels-grabsch1</a></h2>
-<h3 id="winning-entry-source-code-prog.c-41">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/diels-grabsch1//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-40">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/diels-grabsch1//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/diels-grabsch1/try.sh">try.sh</a> script.</p>
 <p>Cody also added the file <a href="2019/diels-grabsch1/Shakespeare.txt">Shakespeare.txt</a>
 from <a href="2019/mills/index.html">2019/mills</a> (after running <code>make</code>) so that one can
 not worry about having the entire IOCCC winning entry tree (or at least the 2019 tree each
-entry in a subdirectory). This is more important as there is discussion of
-having tarballs for each individual entry as a convenience.</p>
+entry in a subdirectory). This was important as we now have tarballs for each
+entry by themselves.</p>
 <div id="2019_diels-grabsch2">
 <h2 id="winning-entry-2019diels-grabsch2">Winning entry: <a href="2019/diels-grabsch2/index.html">2019/diels-grabsch2</a></h2>
-<h3 id="winning-entry-source-code-prog.c-42">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/diels-grabsch2//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-41">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/diels-grabsch2//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/diels-grabsch2/try.sh">try.sh</a> script. This
 script will try and show the difference (i.e. the same output) between the
@@ -4406,26 +4392,26 @@ tools can be found but otherwise it’ll just run the program itself, showing it
 own sha512sum value.</p>
 <div id="2019_dogon">
 <h2 id="winning-entry-2019dogon">Winning entry: <a href="2019/dogon/index.html">2019/dogon</a></h2>
-<h3 id="winning-entry-source-code-prog.c-43">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/dogon//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-42">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/dogon//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added explicit linking of libm (<code>-lm</code>) for systems that do not do this
 (Linux does not seem to but macOS does).</p>
 <p>He also fixed the <code>Makefile</code> so that it compiles with <code>clang</code> in Linux.</p>
 <p>He also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/dogon/try.sh">try.sh</a> script.</p>
 <p>He also made it possible to easily redefine the memory macro <code>Z</code> at compilation
-time by modifying the Makefile.</p>
+time by improving the <code>Makefile</code>.</p>
 <p>He fixed a link in the spoiler source code. As a spoiler it felt more important
 that this was done (some typos were fixed as well but only some - the purpose
 was to only correct spelling and only some, not to change wording or anything
 else).</p>
 <div id="2019_duble">
 <h2 id="winning-entry-2019duble">Winning entry: <a href="2019/duble/index.html">2019/duble</a></h2>
-<h3 id="winning-entry-source-code-prog.c-44">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/duble//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-43">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/duble//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> made the <code>make fullscreen</code> more portable by not relying on
 <code>stty(1)</code> and <code>sed(1)</code> but rather it just uses <code>tput(1)</code>. He also made it so
 that if <code>tput(1)</code> is not found it tells the user an easier way to compile the full
-screen size rather than having to modify the Makefile. This done with a script,
+screen size rather than having to modify the <code>Makefile</code>. This is done with a script,
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/duble/fullscreen.sh">fullscreen.sh</a>, to simplify the <code>Makefile</code> and provide
 an easy way to tell the user how to compile it, assuming that the environmental
 variables <code>LINES</code> and <code>COLUMNS</code> are set. But even if they’re not set it explains
@@ -4433,12 +4419,12 @@ how to easily compile the program to a specific size. Note that <code>LINES</cod
 <code>COLUMNS</code> is not available to scripts so it can’t make use of them that way.</p>
 <div id="2019_endoh">
 <h2 id="winning-entry-2019endoh">Winning entry: <a href="2019/endoh/index.html">2019/endoh</a></h2>
-<h3 id="winning-entry-source-code-prog.c-45">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/endoh//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-44">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/endoh//prog.c">prog.c</a></h3>
 </div>
 <p>As this is a backtrace quine having the optimiser enabled is not a good idea so
 <a href="#cody">Cody</a> disabled it. For this same reason he also added the <code>-g</code> flag to the
 compilation as debugging symbols might just be useful for an entry that’s
-supposed to segfault :-)</p>
+supposed to segfault (and which you’re supposed to inspect the core file) :-)</p>
 <p>Cody also added the simple <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/endoh/ascii.c">ascii.c</a> that (while it has an
 arg) prints out the character of the ASCII value (uses <code>isascii(3)</code> first). This
 combined with the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/endoh/try.sh">try.sh</a> script that he added allows one
@@ -4446,23 +4432,22 @@ to easily reconstruct the source code through GDB by the fact it’s a backtrace
 quine.</p>
 <div id="2019_giles">
 <h2 id="winning-entry-2019giles">Winning entry: <a href="2019/giles/index.html">2019/giles</a></h2>
-<h3 id="winning-entry-source-code-prog.c-46">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/giles//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-45">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/giles//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/giles/try.sh">try.sh</a> script.</p>
 <div id="2019_karns">
 <h2 id="winning-entry-2019karns">Winning entry: <a href="2019/karns/index.html">2019/karns</a></h2>
-<h3 id="winning-entry-source-code-prog.c-47">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/karns//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-46">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/karns//prog.c">prog.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> reported that with <code>-O</code> level &gt; 0 this program segfaults (sometimes?). He’s
-not sure why as it worked fine before on the same systems tested but <code>-O0</code>
-appears to fix the problem in both macOS and Linux. Perhaps this is the problem
+<p><a href="#cody">Cody</a> forced the <code>Makefile</code> to use <code>-O0</code> as he discovered that an
+optimiser level &gt; 0 causes a segfault (sometimes?). (Perhaps this is the problem
 that the author reported where it sometimes segfaults but Cody did not try
-debugging it since it works with <code>-O0</code>.</p>
+debugging it since it works with <code>-O0</code>.)</p>
 <p>He also added the script <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/karns/try.sh">try.sh</a> to showcase the entry a
 bit more easily.</p>
 <div id="2019_lynn">
 <h2 id="winning-entry-2019lynn">Winning entry: <a href="2019/lynn/index.html">2019/lynn</a></h2>
-<h3 id="winning-entry-source-code-prog.c-48">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-47">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/try.sh">try.sh</a> script.</p>
 <p>Cody also added the <a href="2019/lynn/example-1.txt">example-1.txt</a> and
@@ -4471,17 +4456,18 @@ bit more easily.</p>
 entry existing.</p>
 <div id="2019_mills">
 <h2 id="winning-entry-2019mills">Winning entry: <a href="2019/mills/index.html">2019/mills</a></h2>
-<h3 id="winning-entry-source-code-prog.c-49">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/mills//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-48">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/mills//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/mills/try.sh">try.sh</a> script.</p>
 <div id="2019_poikola">
 <h2 id="winning-entry-2019poikola">Winning entry: <a href="2019/poikola/index.html">2019/poikola</a></h2>
-<h3 id="winning-entry-source-code-prog.c-50">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/poikola//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-49">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/poikola//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the missing <code>docs</code> rule to the <code>Makefile</code> that forms a PDF
 file. The rule requires the tool
 <a href="https://tug.org/applications/pdftex/index.html">pdflatex</a>.</p>
-<p>Cody also added the <a href="2019/poikola/index.html#alternate-code">alternate code</a>.</p>
+<p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/poikola/prog.alt.c">alternate code</a> which
+adds a newline after each number for parsing in additional ways.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/poikola/try.sh">try.sh</a> and
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/poikola/try.alt.sh">try.alt.sh</a> scripts.</p>
 <p>Cody also disabled the optimiser because the author stated that for <code>clang</code> the
@@ -4492,7 +4478,7 @@ tested: <code>gnu17</code> was not tested but <code>gnu11</code> was so the stan
 <code>gnu11</code>.</p>
 <div id="2019_yang">
 <h2 id="winning-entry-2019yang">Winning entry: <a href="2019/yang/index.html">2019/yang</a></h2>
-<h3 id="winning-entry-source-code-prog.c-51">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/yang//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-50">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/yang//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/yang/try.sh">try.sh</a> script which also involved
 slightly updating the <a href="2019/yang/sample_input.txt">sample_input.txt</a> file
@@ -4503,7 +4489,7 @@ shouldn’t) and adding the <a href="2019/yang/ioccc.txt">ioccc.txt</a> file.</p
 </div>
 <div id="2020_burton">
 <h2 id="winning-entry-2020burton">Winning entry: <a href="2020/burton/index.html">2020/burton</a></h2>
-<h3 id="winning-entry-source-code-prog.c-52">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/burton//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-51">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/burton//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> fixed the script <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/burton/check_be.sh">check_be.sh</a>: it
 assumed that <code>prog_be</code> was in <code>PATH</code> which is unlikely so it was changed to
@@ -4514,7 +4500,7 @@ showing nothing at all.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/burton/try.sh">try.sh</a> script.</p>
 <div id="2020_carlini">
 <h2 id="winning-entry-2020carlini">Winning entry: <a href="2020/carlini/index.html">2020/carlini</a></h2>
-<h3 id="winning-entry-source-code-prog.c-53">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/carlini//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-52">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/carlini//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/carlini/try.sh">try.sh</a> script which although at
 first glance might not appear to have a point, it actually does, namely showing
@@ -4522,15 +4508,15 @@ how you can automate play and then reminding you to actually play for real, with
 a friend, whether that’s real or imagined.</p>
 <div id="2020_endoh2">
 <h2 id="winning-entry-2020endoh2">Winning entry: <a href="2020/endoh2/index.html">2020/endoh2</a></h2>
-<h3 id="winning-entry-source-code-prog.c-54">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/endoh2//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-53">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/endoh2//prog.c">prog.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> copied the files from the spoiler.zip file (from his copy during
+<p><a href="#cody">Cody</a> copied the files from the <code>spoiler.zip</code> file (from his copy during
 the preview period) that was password protected with a password that was no
-longer known.</p>
+longer known (but fortunately was already extracted).</p>
 <p>He also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/endoh2/try.sh">try.sh</a> script.</p>
 <div id="2020_endoh3">
 <h2 id="winning-entry-2020endoh3">Winning entry: <a href="2020/endoh3/index.html">2020/endoh3</a></h2>
-<h3 id="winning-entry-source-code-prog.c-55">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/endoh3//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-54">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/endoh3//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> fixed the script <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/endoh3/run_clock.sh">run_clock.sh</a> which gave a
 funny error when running it:</p>
@@ -4548,50 +4534,21 @@ first.</p>
 point?) like macOS the use of <code>make clock</code> would not work due possibly to a
 timing issue so <a href="#yusuke">Yusuke</a> changed it to compile <code>clock.c</code>
 file directly (this might have been fixed in the
-Makefile later on but it doesn’t hurt to keep it in and this way it isn’t a
-problem in any system). How Cody remembers this minor detail more than three
-years ago is something that many people might wonder but he also once told us
-that if someone moves something of his even a millimetre from where it was he
-knows it so he might be called unusual (and he argues, with pride, eccentric :-)
-) :-)</p>
+<code>Makefile</code> later on but it doesn’t hurt to keep it in and this way it isn’t a
+problem in any system).</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/endoh3/run_clock.alt.sh">run_clock.alt.sh</a> script
 which is analogous to the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/endoh3/run_clock.sh">run_clock.sh</a> but for the
 alternate code provided by the author, Yusuke.</p>
 <div id="2020_ferguson1">
 <h2 id="winning-entry-2020ferguson1">Winning entry: <a href="2020/ferguson1/index.html">2020/ferguson1</a></h2>
-<h3 id="winning-entry-source-code-prog.c-56">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-55">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1//prog.c">prog.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a>, with intentional irony here :-), fixed formatting, links and typos in
-various files.</p>
-<p>He improved the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/termcaps.c">termcaps.c test utility</a>, bug fixed
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/play.sh">play.sh</a>, fixed other scripts and the Makefile, changed
-some files to be markdown (and fixed problems that he caused in doing so :-) ),
-fixed typos and formatting and he also fixed some issues that occurred when
-files were renamed to <code>.html</code> from <code>.markdown</code>.</p>
-<p>Most importantly he also added some corrections to the vital <a href="2020/ferguson1/chocolate-cake.html">Double
-layered chocolate fudge cake recipe</a> :-)</p>
-<div id="2020_ferguson2">
-<h2 id="winning-entry-2020ferguson2">Winning entry: <a href="2020/ferguson2/index.html">2020/ferguson2</a></h2>
-<h3 id="winning-entry-source-code-prog.c-57">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson2//prog.c">prog.c</a></h3>
-</div>
-<p><a href="#cody">Cody</a>, with intentional irony here :-), fixed formatting, links and typos in
-various files.</p>
-<p>He also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson2/try.sh">try.sh</a> script.</p>
-<p>He also added the <a href="2020/ferguson2/index.html#alternate-code">alternate code</a> and the
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson2/try.alt.sh">try.alt.sh</a> script.</p>
-<p>The try scripts involved the addition of a text file,
-<a href="2020/ferguson2/key.txt">key.txt</a> which has the key of the file the judges
-added in <a href="2020/ferguson2/try.this.txt">try.this.txt</a> which itself was based on
-something the author (Cody :-) ) submitted in the first place.</p>
-<p>He also fixed some issues that occurred when files were renamed to <code>.html</code> from
-<code>.markdown</code>.</p>
-<p>Yes the irony here is as rich as the chocolate cake: the question is do you know
-how rich it is? If not and you like chocolate I (that is Cody :-) ) highly
-recommend you give it a go! :-) You’re welcome to ask me questions if you wish
-and I encourage you to do so as the cake is quite picky!</p>
+<p>Just for awareness, here: <a href="#cody">Cody</a> made some corrections to the vital <a href="2020/ferguson1/chocolate-cake.html">Double
+layered chocolate fudge cake recipe</a> :-)
+Other fixes were made but as it’s his entry it’s not worth noting.</p>
 <div id="2020_giles">
 <h2 id="winning-entry-2020giles">Winning entry: <a href="2020/giles/index.html">2020/giles</a></h2>
-<h3 id="winning-entry-source-code-prog.c-58">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/giles//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-56">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/giles//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/giles/try.sh">try.sh</a> script. This script does
 the conversion of <code>pi.wav</code> (showing the digits) and also converts the number for
@@ -4604,12 +4561,12 @@ and tells them they will have to play the WAV files manually. Otherwise it’ll
 use the program to play the WAV files (and in one case <code>stdout</code>).</p>
 <div id="2020_kurdyukov1">
 <h2 id="winning-entry-2020kurdyukov1">Winning entry: <a href="2020/kurdyukov1/index.html">2020/kurdyukov1</a></h2>
-<h3 id="winning-entry-source-code-prog.c-59">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/kurdyukov1//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-57">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/kurdyukov1//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/kurdyukov1/try.sh">try.sh</a> script.</p>
 <div id="2020_kurdyukov2">
 <h2 id="winning-entry-2020kurdyukov2">Winning entry: <a href="2020/kurdyukov2/index.html">2020/kurdyukov2</a></h2>
-<h3 id="winning-entry-source-code-prog.c-60">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/kurdyukov2//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-58">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/kurdyukov2//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/kurdyukov2/try.sh">try.sh</a> script.</p>
 <p>Cody also added <code>-L</code>/<code>-I</code> paths to the <code>Makefile</code> to let this compile more easily if
@@ -4617,13 +4574,13 @@ the user has installed the appropriate library with
 <a href="https://www.macports.org">MacPorts</a> (with the default MacPorts prefix
 <code>/opt/local</code>).</p>
 <p>Cody also fixed the script <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/kurdyukov2/makegif.sh">makegif.sh</a> in a variety
-of ways: shellcheck(1), make sure the program is compiled first (allowing one to
+of ways: <code>shellcheck(1)</code>, make sure the program is compiled first (allowing one to
 specify which compiler to use with <code>CC=foo ./makegif.sh ...</code>), checking that
 <code>convert(1)</code> is found and that it worked properly (linking to the proper FAQ
 entry if not installed or it fails).</p>
 <div id="2020_kurdyukov3">
 <h2 id="winning-entry-2020kurdyukov3">Winning entry: <a href="2020/kurdyukov3/index.html">2020/kurdyukov3</a></h2>
-<h3 id="winning-entry-source-code-prog.c-61">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/kurdyukov3//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-59">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/kurdyukov3//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/kurdyukov3/try.sh">try.sh</a> script.</p>
 <p>He also added a link that has much more details about this phenomenon to the
@@ -4631,7 +4588,7 @@ index.html. Naturally he’s one of the ones who can read text even if it’s ev
 more jumbled but we know of others too.</p>
 <div id="2020_kurdyukov4">
 <h2 id="winning-entry-2020kurdyukov4">Winning entry: <a href="2020/kurdyukov4/index.html">2020/kurdyukov4</a></h2>
-<h3 id="winning-entry-source-code-prog.c-62">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/kurdyukov4//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-60">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/kurdyukov4//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/kurdyukov4/try.sh">try.sh</a> script.</p>
 <p>Cody also added from <a href="2019/mills/index.html">2019/mills</a> the text file
@@ -4648,7 +4605,7 @@ and literary executor and heir to <a href="https://www.tolkienestate.com/life/bi
 Tolkien</a>.</p>
 <div id="2020_otterness">
 <h2 id="winning-entry-2020otterness">Winning entry: <a href="2020/otterness/index.html">2020/otterness</a></h2>
-<h3 id="winning-entry-source-code-prog.c-63">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/otterness//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-61">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/otterness//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the MIDI files <a href="2020/otterness/cvikl.mid">cvikl.mid</a> and
 <a href="2020/otterness/entertainer.mid">entertainer.mid</a> from the URLs we suggested so
@@ -4657,14 +4614,14 @@ even if the domain or link goes dead.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/otterness/try.sh">try.sh</a> script.</p>
 <div id="2020_tsoj">
 <h2 id="winning-entry-2020tsoj">Winning entry: <a href="2020/tsoj/index.html">2020/tsoj</a></h2>
-<h3 id="winning-entry-source-code-prog.c-64">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/tsoj//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-62">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/tsoj//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added <a href="2020/tsoj/index.html#alternate-code">alternate code</a> that will feel
 more at home for vi users. One might still end up cursing (see the index.html
 file) but probably a lot less :-)</p>
 <div id="2020_yang">
 <h2 id="winning-entry-2020yang">Winning entry: <a href="2020/yang/index.html">2020/yang</a></h2>
-<h3 id="winning-entry-source-code-prog.c-65">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/yang//prog.c">prog.c</a></h3>
+<h3 id="winning-entry-source-code-prog.c-63">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/yang//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/yang/try.sh">try.sh</a> script.</p>
 <p>Cody also added a make rule (<code>make cppp</code>) for the author’s provided C++ code
@@ -4704,17 +4661,17 @@ in fact different names especially if one installs them from something like
 (though that usually does not mean it is worth a thank you note it might be
 worth noting in this case). Other times it was enabling or disabling the
 optimiser to fix an entry, sometimes causing other problems that also had to be
-fixed, a good example being <a href="#1986marshall-readmemd">1986/marshall</a> (see the
+fixed, a good example being <a href="#1986_marshall">1986/marshall</a> (see the
 <a href="1986/marshall/compilers.html">compilers.html</a> for the amusing details and all that
 had to be done to fix it).</p>
 <p>There was a ‘problem’ where <code>${MAKE}</code> was <code>$(MAKE)</code>: this doesn’t break anything
 but it is inconsistent with the rest of the <code>${foo}</code> tools even if by tradition
 it is <code>$(MAKE)</code>.</p>
 <p>Cody also added missing variables like <code>BASH</code> and <code>PDFLATEX</code> to the
-<a href="var.mk">var.mk</a> file and removed another that was deemed problematic or
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/var.mk">var.mk</a> file and removed another that was deemed problematic or
 undesired. Other variable names had typos in them.</p>
 <p>In at least one case, like the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/Makefile">top level Makefile</a>, where raw
-commands that are in <a href="var.mk">var.mk</a> were used, Cody updated them to use the
+commands that are in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/var.mk">var.mk</a> were used, Cody updated them to use the
 variables.</p>
 <p>A comment was missing for the <code>diff_alt_orig</code> rule in all the Makefiles and
 this, along with many other fixes and changes to the Makefiles were made by

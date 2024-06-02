@@ -2857,7 +2857,7 @@
 2012,zeitak,anonymous.c,40,true,c,true,1984/anonymous source
 2012,zeitak,zeitak.alt.c,40,true,c,true,alternate source code
 2012,zeitak,zeitak.orig.c,50,true,c,true,original source code
-2012,zeitak,test.sh,100,true,shellscript,true,test tool
+2012,zeitak,try.sh,100,true,shellscript,true,script to try entry
 2012,zeitak,correct.java,150,false,java,true,example Java source with correct brace (supposedly :-) )
 2012,zeitak,incorrect.1.quote.c,150,true,c,true,example C source with incorrect quote
 2012,zeitak,incorrect.3.quotes.c,150,true,c,true,example C source with incorrect quote
@@ -3036,7 +3036,7 @@
 2013,endoh4,Makefile,30,true,makefile,true,entry Makefile
 2013,endoh4,endoh4.orig.c,50,false,c,true,original source code
 2013,endoh4,cube.txt,100,true,text,false,3D object coordinates
-2013,endoh4,endoh4.sh,100,true,shellscript,true,script to try entry
+2013,endoh4,endoh4.sh,100,true,shellscript,true,script to run entry without cursor
 2013,endoh4,solids/antiprism/a04-square-antiprism.txt,200,true,text,false,3D object coordinates
 2013,endoh4,solids/antiprism/a05-pentagonal-antiprism.txt,200,true,text,false,3D object coordinates
 2013,endoh4,solids/antiprism/a06-hexagonal-antiprism.txt,200,true,text,false,3D object coordinates

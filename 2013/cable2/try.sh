@@ -44,7 +44,6 @@ echo 1>&2
 
 echo "Sometimes typeset text will work if the typeset has characters that are" 1>&2
 echo "enough to support the handwritten shapes." 1>&2
-read -r -n 1 -p "Press any key to try Menlo 160pt text: "
 echo 1>&2
 read -r -n 1 -p "Press any key to run: ./cable2 typeset.bmp: "
 echo 1>&2

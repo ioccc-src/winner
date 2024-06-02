@@ -1,5 +1,7 @@
 # Double-layered Chocolate Fudge Cake
 
+## Last updated Tue 26 Mar 16:28:01 2024 UTC
+
 Here's a delicious double-layered chocolate fudge cake that is
 something of my mum's speciality. It's complicated and I should warn that nobody
 has seemed to get it down as well as she has but it's well worth the effort if
@@ -12,7 +14,7 @@ The picture below was taken for my birthday (14 February) in 2022 as it's the
 best one I have:
 
 <img src="cake.jpg"
- alt="photograth of a delicious double-layered chocolate fudge cake"
+ alt="photograph of a delicious double-layered chocolate fudge cake"
  width=756 height=602>
 
 There are two sets of ingredients and instructions; the cake and the icing. In
