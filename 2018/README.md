@@ -30,7 +30,7 @@ compiler.
 
 We believe you will again be impressed with this year's winning entries.
 
-The [Best of show - 2018/mills](mills/index.html) is an amazing tribute to entries
+The [Best of Show - 2018/mills](mills/index.html) is an amazing tribute to entries
 from 1984 and 2015.
 
 Take a close look at the [Most likely to top the charts - 2018/hou](hou/index.html).
