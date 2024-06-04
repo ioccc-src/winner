@@ -42,13 +42,14 @@
 - [3.10 - How do I compile and use an IOCCC entry that requires sound?](#faq3_10)
 - [3.11 - Why do Makefiles use -Weverything with clang?](#faq3_11)
 - [3.12 - How do I find out how to send interrupt/EOF etc. for entries that require it?](#faq3_12)
-- [3.13 - Why does an IOCCC entry fail to compile or or fail run?](#faq3_13)
+- [3.13 - Why does an IOCCC entry fail to compile and/or fail to run?](#faq3_13)
 - [3.14 - How do I compile and install tcpserver for entries that require it?](#faq3_14)
 - [3.15 - How do I compile and install netpbm for entries that require it?](#faq3_15)
 - [3.16 - How do I compile and install libjpeg-turbo for entries that require it?](#faq3_16)
 - [3.17 - How do I compile and install ImageMagick for entries that require it?](#faq3_17)
 - [3.18 - How do I compile and install OpenGL for entries that require it?](#faq3_18)
 - [3.19 - What kind of make&#x28;1&#x29; compatibility does the IOCCC support and will it support other kinds?](#faq3_19)
+- [3.20 - How do I download individual entries or entries of a given year?](#faq3_20)
 
 
 ## Section  4 - [Changes made to IOCCC entries](#faq4)
@@ -1768,7 +1769,7 @@ just `grep intr` or whatever.
 
 <div id="faq3_13">
 <div id="no_support">
-### FAQ 3.13: Why does an IOCCC entry fail to compile or or fail run?
+### FAQ 3.13: Why does an IOCCC entry fail to compile and/or fail to run?
 </div>
 </div>
 
@@ -2185,6 +2186,91 @@ it like:
 ```
 
 though of course for both you may specify a rule or rules to run.
+
+
+<div id="faq3_20">
+<div id="entry_downloads">
+### 3.20 - How do I download individual entries or entries of a given year?
+</div>
+</div>
+
+Although one can clone the entire [winner
+repo](https://github.com/ioccc-src/winner) to get the entire web site and all
+entries, we also provide a way to download individual entries as well as a
+way to download a year's winning entries.
+
+Please note that some of the links in the html files will not work! This is
+because you are not downloading the full website. If you want to view the entry
+with links intact you should clone the repo or view it on the [official IOCCC
+web site](https://www.ioccc.org) instead.
+
+
+#### Individual winning entry tarballs
+
+The individual entry tarballs are named in the form of
+`YYYY/winner/YYYY_winner.tar.bz2` (e.g. `1984/mullender/1984_mullender.tar.bz2`)
+and will have the following files:
+
+- `ioccc.css`					- stylesheet for the html files
+- `var.mk`						- the top level Makefile included by all the other Makefiles that holds variables used by the Makefiles
+- `YYYY/winner/.path`			- directory path from top level directory
+- `YYYY/winner/.entry.json`		- entry summary and manifest in JSON
+- `YYYY/winner/.gitignore`		- list of files that should not be committed under git
+
+plus the winning entry files like source code, the Makefile, supplementary data
+provided by the author and any other file found in the winning entry, found in
+`YYYY/winner`.
+
+If you downloaded `1984/mullender/1984_mullender.tar.bz2`, for instance, you might
+then do:
+
+```sh
+	cd 1984/mullender
+	make everything
+	./mullender.alt
+```
+
+to compile and run all versions and then run the alternate version (if you have
+a PDP-11 or VAX-11 you would be able to run the original version).
+
+If you want to view the index.html file you can point your browser to the
+index.html file of the winning entry (e.g. `1984/mullender/index.html`) with the
+caveats noted above.
+
+
+#### Year based tarballs
+
+The year based tarballs, which are under each year's directory and are named in the form
+of `YYYY/YYYY.tar.bz2`, have, along with each entry's directory and their
+respective files (as if you downloaded each entry tarball of the year
+individually as described above), the following files:
+
+- `.filelist`		- list of files in the year that are not part of a winning entry of the year, including the `YYYY.tar.bz2` tarball
+- `index.html`		- the `YYYY/index.html` file rendered from the `YYYY/README.md` file
+- `Makefile`		- Makefile for the year to compile etc. all entries of the year
+- `README.md`		- the source of the `YYYY/index.html` file
+- `rules.txt`		- rules of the year's contest
+- `.year`			- text file that has a list of the winning entries' directories of the year
+
+
+Additionally, some will have extra files like:
+
+- `.gitignore`		- list of files that should not be committed under git
+- `guidelines.txt`	- the guidelines of the year
+- `iocccsize.c`		- `iocccsize` tool of the year
+- `iocccsize.mk`	- Makefile to compile the `iocccsize` tool of the year
+- `iocccsize-test.sh`	- test suite for the `iocccsize` tool
+
+.. and perhaps some others we have missed as well.
+
+If you extract a year's tarball you can `cd YYYY` (e.g. `cd 1984`) and then run
+`make everything` to compile the entries and alt code of every entry), as if you
+switched to each entry's directory and ran `make everything` in each one.
+
+If you want to view the index.html files you can point your browser to the
+index.html file of the year (e.g. `1984/index.html`) or an entry's individual
+index.html file or other html file (e.g. `1984/mullender/index.html`) again with
+the caveats noted earlier.
 
 
 <div id="faq4">

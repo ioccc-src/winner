@@ -425,13 +425,14 @@
 <li><a href="#faq3_10">3.10 - How do I compile and use an IOCCC entry that requires sound?</a></li>
 <li><a href="#faq3_11">3.11 - Why do Makefiles use -Weverything with clang?</a></li>
 <li><a href="#faq3_12">3.12 - How do I find out how to send interrupt/EOF etc. for entries that require it?</a></li>
-<li><a href="#faq3_13">3.13 - Why does an IOCCC entry fail to compile or or fail run?</a></li>
+<li><a href="#faq3_13">3.13 - Why does an IOCCC entry fail to compile and/or fail to run?</a></li>
 <li><a href="#faq3_14">3.14 - How do I compile and install tcpserver for entries that require it?</a></li>
 <li><a href="#faq3_15">3.15 - How do I compile and install netpbm for entries that require it?</a></li>
 <li><a href="#faq3_16">3.16 - How do I compile and install libjpeg-turbo for entries that require it?</a></li>
 <li><a href="#faq3_17">3.17 - How do I compile and install ImageMagick for entries that require it?</a></li>
 <li><a href="#faq3_18">3.18 - How do I compile and install OpenGL for entries that require it?</a></li>
 <li><a href="#faq3_19">3.19 - What kind of make(1) compatibility does the IOCCC support and will it support other kinds?</a></li>
+<li><a href="#faq3_20">3.20 - How do I download individual entries or entries of a given year?</a></li>
 </ul>
 <h2 id="section-4---changes-made-to-ioccc-entries">Section 4 - <a href="#faq4">Changes made to IOCCC entries</a></h2>
 <ul>
@@ -1629,7 +1630,7 @@ reason it’s not you might have to do something else including just piping it t
 just <code>grep intr</code> or whatever.</p>
 <div id="faq3_13">
 <div id="no_support">
-<h3 id="faq-3.13-why-does-an-ioccc-entry-fail-to-compile-or-or-fail-run">FAQ 3.13: Why does an IOCCC entry fail to compile or or fail run?</h3>
+<h3 id="faq-3.13-why-does-an-ioccc-entry-fail-to-compile-andor-fail-to-run">FAQ 3.13: Why does an IOCCC entry fail to compile and/or fail to run?</h3>
 </div>
 </div>
 <p>What may have worked years ago may not work well or work at all today.
@@ -1852,6 +1853,72 @@ to the top level directory of the winner repo you can do:</p>
 it like:</p>
 <pre><code>    gmake MAKE=gmake</code></pre>
 <p>though of course for both you may specify a rule or rules to run.</p>
+<div id="faq3_20">
+<div id="entry_downloads">
+<h3 id="how-do-i-download-individual-entries-or-entries-of-a-given-year">3.20 - How do I download individual entries or entries of a given year?</h3>
+</div>
+</div>
+<p>Although one can clone the entire <a href="https://github.com/ioccc-src/winner">winner
+repo</a> to get the entire web site and all
+entries, we also provide a way to download individual entries as well as a
+way to download a year’s winning entries.</p>
+<p>Please note that some of the links in the html files will not work! This is
+because you are not downloading the full website. If you want to view the entry
+with links intact you should clone the repo or view it on the <a href="https://www.ioccc.org">official IOCCC
+web site</a> instead.</p>
+<h4 id="individual-winning-entry-tarballs">Individual winning entry tarballs</h4>
+<p>The individual entry tarballs are named in the form of
+<code>YYYY/winner/YYYY_winner.tar.bz2</code> (e.g. <code>1984/mullender/1984_mullender.tar.bz2</code>)
+and will have the following files:</p>
+<ul>
+<li><code>ioccc.css</code> - stylesheet for the html files</li>
+<li><code>var.mk</code> - the top level Makefile included by all the other Makefiles that holds variables used by the Makefiles</li>
+<li><code>YYYY/winner/.path</code> - directory path from top level directory</li>
+<li><code>YYYY/winner/.entry.json</code> - entry summary and manifest in JSON</li>
+<li><code>YYYY/winner/.gitignore</code> - list of files that should not be committed under git</li>
+</ul>
+<p>plus the winning entry files like source code, the Makefile, supplementary data
+provided by the author and any other file found in the winning entry, found in
+<code>YYYY/winner</code>.</p>
+<p>If you downloaded <code>1984/mullender/1984_mullender.tar.bz2</code>, for instance, you might
+then do:</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984/mullender</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>        <span class="ex">./mullender.alt</span></span></code></pre></div>
+<p>to compile and run all versions and then run the alternate version (if you have
+a PDP-11 or VAX-11 you would be able to run the original version).</p>
+<p>If you want to view the index.html file you can point your browser to the
+index.html file of the winning entry (e.g. <code>1984/mullender/index.html</code>) with the
+caveats noted above.</p>
+<h4 id="year-based-tarballs">Year based tarballs</h4>
+<p>The year based tarballs, which are under each year’s directory and are named in the form
+of <code>YYYY/YYYY.tar.bz2</code>, have, along with each entry’s directory and their
+respective files (as if you downloaded each entry tarball of the year
+individually as described above), the following files:</p>
+<ul>
+<li><code>.filelist</code> - list of files in the year that are not part of a winning entry of the year, including the <code>YYYY.tar.bz2</code> tarball</li>
+<li><code>index.html</code> - the <code>YYYY/index.html</code> file rendered from the <code>YYYY/README.md</code> file</li>
+<li><code>Makefile</code> - Makefile for the year to compile etc. all entries of the year</li>
+<li><code>README.md</code> - the source of the <code>YYYY/index.html</code> file</li>
+<li><code>rules.txt</code> - rules of the year’s contest</li>
+<li><code>.year</code> - text file that has a list of the winning entries’ directories of the year</li>
+</ul>
+<p>Additionally, some will have extra files like:</p>
+<ul>
+<li><code>.gitignore</code> - list of files that should not be committed under git</li>
+<li><code>guidelines.txt</code> - the guidelines of the year</li>
+<li><code>iocccsize.c</code> - <code>iocccsize</code> tool of the year</li>
+<li><code>iocccsize.mk</code> - Makefile to compile the <code>iocccsize</code> tool of the year</li>
+<li><code>iocccsize-test.sh</code> - test suite for the <code>iocccsize</code> tool</li>
+</ul>
+<p>.. and perhaps some others we have missed as well.</p>
+<p>If you extract a year’s tarball you can <code>cd YYYY</code> (e.g. <code>cd 1984</code>) and then run
+<code>make everything</code> to compile the entries and alt code of every entry), as if you
+switched to each entry’s directory and ran <code>make everything</code> in each one.</p>
+<p>If you want to view the index.html files you can point your browser to the
+index.html file of the year (e.g. <code>1984/index.html</code>) or an entry’s individual
+index.html file or other html file (e.g. <code>1984/mullender/index.html</code>) again with
+the caveats noted earlier.</p>
 <div id="faq4">
 <h2 id="section-4-changes-made-to-ioccc-entries">Section 4: Changes made to IOCCC entries</h2>
 </div>
