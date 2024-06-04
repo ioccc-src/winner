@@ -29,10 +29,10 @@ it as structured as possible/easiest to find.
 
 Because the score line is dynamic in length depending on the terminal size it
 can happen that the score/status wraps to the next line(s). This can be fixed by
-modifying the status line (see [HACKING.html][] but
+modifying the status line (see [HACKING.html][]) but
 you shouldn't need it to be very wide.
 
-* RESOLUTION #0: Use a bigger screen (it doesn't take that many columns)
+* **RESOLUTION #0**: use a bigger screen (it doesn't take that many columns)
 
     **Tip:** try running `make test` to get an estimate of the minimum number of columns
     needed. This won't work right if you change the score line!
@@ -42,7 +42,7 @@ you shouldn't need it to be very wide.
     (but they can still be fun with large screens).
 
 
-* RESOLUTION #1: Open the [prog.c][] and change the line
+* **RESOLUTION #1**: open the [prog.c][] and change the line
 
 		#define J Z(X:%d/%d Y:%d/%d S:%zu/%zu B:%zu\n),Y,y[-2],X, *y, A, g, c );
 
@@ -69,7 +69,7 @@ isn't moving but as long as the head is moving then the snake can be assumed to
 be moving.
 
 
-* RESOLUTION #0: Unless the game is paused as long as the snake head is moving
+* **RESOLUTION #0**: unless the game is paused as long as the snake head is moving
 everything is fine even if it seems sometimes that the snake tail is still: this
 is normal and there are a few conditions that this might especially show itself
 e.g. when the snake is growing.
@@ -85,7 +85,7 @@ e.g. when the snake is growing.
     numerous causes for this some of which are a busy computer but ultimately
     it'll catch up; just give it the time it needs.
 
-* BOTTOM LINE: If you want more information then see the [bugs.html][]
+* **BOTTOM LINE**: if you want more information then see the [bugs.html][]
 file.
 
 
@@ -99,11 +99,11 @@ just have to continue moving on and you'd eventually find your head (assuming
 the rest of the screen isn't covered with your body!). And what else could you
 expect if you decided to shove your head up your .... ? :))
 
-* RESOLUTION #0: Actually I thought it would look better that you could see the
+* **RESOLUTION #0**: actually I thought it would look better that you could see the
 head even when cannibalising so you should be able to lose your head and at the
 same time see it!
 
-* RESOLUTION #1: If the terminal width is too small then it could be that the
+* **RESOLUTION #1**: if the terminal width is too small then it could be that the
 score line is covering the wall, snake and even bug; I gave two resolutions to
 that earlier in this file. To get a recommended number of columns use `make
 test`.
@@ -129,14 +129,14 @@ without there being restrictions it could end up being a bad value that causes
 the bug placement loop to never end (in this case the snake would also stop
 moving).
 
-* RESOLUTION #0: If evasion mode is enabled (default after 300 moves) just wait
+* **RESOLUTION #0**: if evasion mode is enabled (default after 300 moves) just wait
 it out and the bug will move to a new place and it might be easier to see in the
 new place.
 
-* RESOLUTION #1: The terminal size is too small for the score line. See the
+* **RESOLUTION #1**: the terminal size is too small for the score line. See the
 earlier problem for how to resolve this if that's the case.
 
-* RESOLUTION #2: Sometimes you have to look closely for it can be easy to miss.
+* **RESOLUTION #2**: sometimes you have to look closely for it can be easy to miss.
 If it's against the wall and the screen is [Snakey][] or you're tired or the colour
 contrast isn't right for you or something like that it might be harder to see.
 Try pausing the game (space) and scan the screen for it. If you really are
@@ -144,7 +144,7 @@ desperate copy and paste the entire file into a document and search for the bug
 char (if it's an editor like vi/vim you will have to be sure to escape the char
 since `*` is a regexp metacharacter). This has happened to me numerous times.
 
-* RESOLUTION #3: If the colour contrast is not good for your eyes use the
+* **RESOLUTION #3**: if the colour contrast is not good for your eyes use the
 [snake-colours.sh][] script to select a different colour scheme.
 
 
@@ -156,16 +156,16 @@ This should not be possible either but without certain safety checks in place I
 have caused this (and I did this deliberately in development to find all the
 conditions I could to resolve them).
 
-* RESOLUTION #0: If this does happen it likely is to do with placement of the
+* **RESOLUTION #0**: if this does happen it likely is to do with placement of the
 bug; that is why I have the max size of the snake capped a fair bit below the
 maximum number of coordinates in the game field: because the bug isn't to be at
 a place the snake already occupies.
 
-* RESOLUTION #1: If the system `rand()` implementation is really bad maybe it's
+* **RESOLUTION #1**: if the system `rand()` implementation is really bad maybe it's
 having a problem finding a location to place the bug. The best I can think of is
 to try increasing the screen size or decrease the max size of the snake.
 
-* BOTTOM LINE: If the bug cannot find a place to be this will likely cause the
+* **BOTTOM LINE**: if the bug cannot find a place to be this will likely cause the
 game to freeze because the game loops until it finds an available place for the
 bug to be; if the pRNG is so bad wrt where the snake occupies it could
 theoretically happen. If this happens you will have to kill the game by e.g.
@@ -244,13 +244,13 @@ snake. See below for some tests.
 Realistically the game shouldn't take that much memory but maybe in some very
 busy systems it would have a problem.
 
-* RESOLUTION #0: If the rand() implementation is particularly poor then it might
+* **RESOLUTION #0**: if the `rand(3)` implementation is particularly poor then it might
 be that the bug placement is taking more time.
 
-* RESOLUTION #1: It could also be the arrays being updated as the snake gets
+* **RESOLUTION #1**: it could also be the arrays being updated as the snake gets
 bigger.
 
-* BOTTOM LINE: I find it unlikely that either of these happen and I don't know
+* **BOTTOM LINE**: I find it unlikely that either of these happen and I don't know
 what to say; you can try decreasing the max size to see if it doesn't reach this
 problem. Otherwise it would be good to see if you can find a pattern: is it when
 the snake is bigger i.e. the screen is rather fuller than when you first begin?
@@ -261,7 +261,7 @@ Or is the system rather busy?
 ## <a href="#toc">I set `SIZE=0 GROW=1`, ate a bug but still only the head was visible! Why?</a>
 </div>
 
-* RESOLUTION #0: The size includes the head but what should it show if the size
+* **RESOLUTION #0**: the size includes the head but what should it show if the size
 is 0? The head is the obvious choice so once you do get to size 1 you will still
 only have the head. When you get to size 2 you'll have part of the body too.
 Try:
@@ -271,12 +271,12 @@ Try:
     And you will see that at one bug you'll have size two and just as if you had
     two bugs with the previous invocation.
 
-    BTW: When you are size 1 you can go back on yourself even if cannibalism is
+    BTW: when you are size 1 you can go back on yourself even if cannibalism is
     disabled because there really isn't anything to go back through: it's just
     you moving the head until you find a body to use! Once you have size >= 2
     then cannibalism mode counts.
 
-* BOTTOM LINE: In some senses SIZE=0 and SIZE=1 are the same thing.
+* **BOTTOM LINE**: in some senses `SIZE=0` and `SIZE=1` are the same thing.
 
 
 <div id="monochrome">
@@ -285,7 +285,7 @@ Try:
 
 This is a curses thing but fortunately it should be easy enough to solve.
 
-* RESOLUTION #0: Try setting the terminal to monochrome for the invocation of
+* **RESOLUTION #0**: try setting the terminal to monochrome for the invocation of
 the game. Depending on what is installed on your system you might not have a
 monochrome terminal but you can certainly get them. In Red Hat systems these can
 be found in the package ncurses-term but maybe that will vary on others. I don't
@@ -297,7 +297,7 @@ so that's probably why; in CentOS I did have to install it specially.
     at least) it's at `/usr/share/terminfo/6c/linux-m` (for macOS Ventura it's
     `/usr/share/terminfo/6c/linux-m`).
 
-* BOTTOM LINE: Try using a monochrome terminal for the game by e.g.:
+* **BOTTOM LINE**: try using a monochrome terminal for the game by e.g.:
 
 		TERM=linux-m ./prog
 
@@ -315,7 +315,7 @@ so that's probably why; in CentOS I did have to install it specially.
 ## <a href="#toc">The text is hard to see (not bright enough)!</a>
 </div>
 
-* RESOLUTION #0: Make sure that your terminal settings have for bold text a
+* **RESOLUTION #0**: make sure that your terminal settings have for bold text a
 brighter font. The way I have my terminal profiles set up is to use bright
 colours for bold text. I specifically enable bold in the program so try and find
 out if enabling brighter colours is possible.
@@ -325,7 +325,10 @@ out if enabling brighter colours is possible.
     other settings. Probably better to make a new profile for this first in case
     you mess up your old one. FWIW I haven't had this problem on consoles only
     and in my systems I have the option to enable brighter colours for bold - it
-    was only in testing that I came across this problem.
+    was only in testing that I came across this problem. Of course you might
+	also try changing the colours of the game. For that see
+	[snake-colours.sh](%%REPO_URL%%/2020/ferguson1/snake-colours.sh) and
+	[play.sh](%%REPO_URL%%/2020/ferguson1/play.sh).
 
 
 <div id="movefaster">
@@ -335,11 +338,11 @@ out if enabling brighter colours is possible.
 Yes. The `getch()` call is non-blocking when the timeout value is positive so
 it's up to that number of milliseconds.
 
-* RESOLUTION #0: All you need to do then is hold down the direction key (or for
+* **RESOLUTION #0**: all you need to do then is hold down the direction key (or for
 that matter any other key that `getch()` will pick up on). You can also rapidly
 push the key instead of holding it down.
 
-* BOTTOM LINE: Depending on the key repeat rate and/or how fast you repeatedly
+* **BOTTOM LINE**: depending on the key repeat rate and/or how fast you repeatedly
 hit the key you can have more control over the speed - as long as it is quicker
 than the regular wait time. For negative wait time (drawing mode) you have to
 hit a key every time to move because it is blocking.
@@ -447,7 +450,7 @@ so that by setting the size to -1 it went to the max unsigned value):
 ```
 
 
-BTW: There are two arrays that have to be **MAXSIZE** (technically + 1).
+BTW: there are two arrays that have to be **MAXSIZE** (technically + 1).
 
 Is it possible that some value specified by the user could mess this up? I do
 not know but what I do know is that because it's unsigned it can't be negative;

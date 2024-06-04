@@ -411,16 +411,16 @@ it as structured as possible/easiest to find.</p>
 </div>
 <p>Because the score line is dynamic in length depending on the terminal size it
 can happen that the score/status wraps to the next line(s). This can be fixed by
-modifying the status line (see <a href="HACKING.html">HACKING.html</a> but
+modifying the status line (see <a href="HACKING.html">HACKING.html</a>) but
 you shouldn’t need it to be very wide.</p>
 <ul>
-<li><p>RESOLUTION #0: Use a bigger screen (it doesn’t take that many columns)</p>
+<li><p><strong>RESOLUTION #0</strong>: use a bigger screen (it doesn’t take that many columns)</p>
 <p><strong>Tip:</strong> try running <code>make test</code> to get an estimate of the minimum number of columns
 needed. This won’t work right if you change the score line!</p>
 <p>Note that this utility is not perfect; I describe this elsewhere. Either way a
 small screen will make it harder to play esp without the cheat modes enabled
 (but they can still be fun with large screens).</p></li>
-<li><p>RESOLUTION #1: Open the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/prog.c">prog.c</a> and change the line</p>
+<li><p><strong>RESOLUTION #1</strong>: open the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/prog.c">prog.c</a> and change the line</p>
 <pre><code>      #define J Z(X:%d/%d Y:%d/%d S:%zu/%zu B:%zu\n),Y,y[-2],X, *y, A, g, c );</code></pre>
 <p>To be something like:</p>
 <pre><code>      #define J Z(B:%zu\n), c);</code></pre>
@@ -439,7 +439,7 @@ that there isn’t movement and sometimes it might have to take a moment to
 isn’t moving but as long as the head is moving then the snake can be assumed to
 be moving.</p>
 <ul>
-<li><p>RESOLUTION #0: Unless the game is paused as long as the snake head is moving
+<li><p><strong>RESOLUTION #0</strong>: unless the game is paused as long as the snake head is moving
 everything is fine even if it seems sometimes that the snake tail is still: this
 is normal and there are a few conditions that this might especially show itself
 e.g. when the snake is growing.</p>
@@ -450,7 +450,7 @@ when it does move you’ll see it doesn’t move for long.</p>
 <p>Sometimes also it might appear that the movement is delayed but there are
 numerous causes for this some of which are a busy computer but ultimately
 it’ll catch up; just give it the time it needs.</p></li>
-<li><p>BOTTOM LINE: If you want more information then see the <a href="bugs.html">bugs.html</a>
+<li><p><strong>BOTTOM LINE</strong>: if you want more information then see the <a href="bugs.html">bugs.html</a>
 file.</p></li>
 </ul>
 <div id="invisiblehead">
@@ -462,10 +462,10 @@ just have to continue moving on and you’d eventually find your head (assuming
 the rest of the screen isn’t covered with your body!). And what else could you
 expect if you decided to shove your head up your …. ? :))</p>
 <ul>
-<li><p>RESOLUTION #0: Actually I thought it would look better that you could see the
+<li><p><strong>RESOLUTION #0</strong>: actually I thought it would look better that you could see the
 head even when cannibalising so you should be able to lose your head and at the
 same time see it!</p></li>
-<li><p>RESOLUTION #1: If the terminal width is too small then it could be that the
+<li><p><strong>RESOLUTION #1</strong>: if the terminal width is too small then it could be that the
 score line is covering the wall, snake and even bug; I gave two resolutions to
 that earlier in this file. To get a recommended number of columns use <code>make test</code>.</p></li>
 </ul>
@@ -486,19 +486,19 @@ without there being restrictions it could end up being a bad value that causes
 the bug placement loop to never end (in this case the snake would also stop
 moving).</p>
 <ul>
-<li><p>RESOLUTION #0: If evasion mode is enabled (default after 300 moves) just wait
+<li><p><strong>RESOLUTION #0</strong>: if evasion mode is enabled (default after 300 moves) just wait
 it out and the bug will move to a new place and it might be easier to see in the
 new place.</p></li>
-<li><p>RESOLUTION #1: The terminal size is too small for the score line. See the
+<li><p><strong>RESOLUTION #1</strong>: the terminal size is too small for the score line. See the
 earlier problem for how to resolve this if that’s the case.</p></li>
-<li><p>RESOLUTION #2: Sometimes you have to look closely for it can be easy to miss.
+<li><p><strong>RESOLUTION #2</strong>: sometimes you have to look closely for it can be easy to miss.
 If it’s against the wall and the screen is <a href="https://www.hp-lexicon.org/character/gaunt-family/morfin-gaunt/">Snakey</a> or you’re tired or the colour
 contrast isn’t right for you or something like that it might be harder to see.
 Try pausing the game (space) and scan the screen for it. If you really are
 desperate copy and paste the entire file into a document and search for the bug
 char (if it’s an editor like vi/vim you will have to be sure to escape the char
 since <code>*</code> is a regexp metacharacter). This has happened to me numerous times.</p></li>
-<li><p>RESOLUTION #3: If the colour contrast is not good for your eyes use the
+<li><p><strong>RESOLUTION #3</strong>: if the colour contrast is not good for your eyes use the
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/snake-colours.sh">snake-colours.sh</a> script to select a different colour scheme.</p></li>
 </ul>
 <div id="froze">
@@ -508,14 +508,14 @@ since <code>*</code> is a regexp metacharacter). This has happened to me numerou
 have caused this (and I did this deliberately in development to find all the
 conditions I could to resolve them).</p>
 <ul>
-<li><p>RESOLUTION #0: If this does happen it likely is to do with placement of the
+<li><p><strong>RESOLUTION #0</strong>: if this does happen it likely is to do with placement of the
 bug; that is why I have the max size of the snake capped a fair bit below the
 maximum number of coordinates in the game field: because the bug isn’t to be at
 a place the snake already occupies.</p></li>
-<li><p>RESOLUTION #1: If the system <code>rand()</code> implementation is really bad maybe it’s
+<li><p><strong>RESOLUTION #1</strong>: if the system <code>rand()</code> implementation is really bad maybe it’s
 having a problem finding a location to place the bug. The best I can think of is
 to try increasing the screen size or decrease the max size of the snake.</p></li>
-<li><p>BOTTOM LINE: If the bug cannot find a place to be this will likely cause the
+<li><p><strong>BOTTOM LINE</strong>: if the bug cannot find a place to be this will likely cause the
 game to freeze because the game loops until it finds an available place for the
 bug to be; if the pRNG is so bad wrt where the snake occupies it could
 theoretically happen. If this happens you will have to kill the game by e.g.
@@ -573,11 +573,11 @@ This shouldn’t happen though.</p></li>
 <p>Realistically the game shouldn’t take that much memory but maybe in some very
 busy systems it would have a problem.</p>
 <ul>
-<li><p>RESOLUTION #0: If the rand() implementation is particularly poor then it might
+<li><p><strong>RESOLUTION #0</strong>: if the <code>rand(3)</code> implementation is particularly poor then it might
 be that the bug placement is taking more time.</p></li>
-<li><p>RESOLUTION #1: It could also be the arrays being updated as the snake gets
+<li><p><strong>RESOLUTION #1</strong>: it could also be the arrays being updated as the snake gets
 bigger.</p></li>
-<li><p>BOTTOM LINE: I find it unlikely that either of these happen and I don’t know
+<li><p><strong>BOTTOM LINE</strong>: I find it unlikely that either of these happen and I don’t know
 what to say; you can try decreasing the max size to see if it doesn’t reach this
 problem. Otherwise it would be good to see if you can find a pattern: is it when
 the snake is bigger i.e. the screen is rather fuller than when you first begin?
@@ -587,25 +587,25 @@ Or is the system rather busy?</p></li>
 <h2 id="i-set-size0-grow1-ate-a-bug-but-still-only-the-head-was-visible-why"><a href="#toc">I set <code>SIZE=0 GROW=1</code>, ate a bug but still only the head was visible! Why?</a></h2>
 </div>
 <ul>
-<li><p>RESOLUTION #0: The size includes the head but what should it show if the size
+<li><p><strong>RESOLUTION #0</strong>: the size includes the head but what should it show if the size
 is 0? The head is the obvious choice so once you do get to size 1 you will still
 only have the head. When you get to size 2 you’ll have part of the body too.
 Try:</p>
 <pre><code>      SIZE=1 GROW=1</code></pre>
 <p>And you will see that at one bug you’ll have size two and just as if you had
 two bugs with the previous invocation.</p>
-<p>BTW: When you are size 1 you can go back on yourself even if cannibalism is
+<p>BTW: when you are size 1 you can go back on yourself even if cannibalism is
 disabled because there really isn’t anything to go back through: it’s just
 you moving the head until you find a body to use! Once you have size &gt;= 2
 then cannibalism mode counts.</p></li>
-<li><p>BOTTOM LINE: In some senses SIZE=0 and SIZE=1 are the same thing.</p></li>
+<li><p><strong>BOTTOM LINE</strong>: in some senses <code>SIZE=0</code> and <code>SIZE=1</code> are the same thing.</p></li>
 </ul>
 <div id="monochrome">
 <h2 id="i-like-black-text-on-a-white-background-but-even-with-a-white-background-terminal-it-ends-up-black"><a href="#toc">I like black text on a white background but even with a white background terminal it ends up black!</a></h2>
 </div>
 <p>This is a curses thing but fortunately it should be easy enough to solve.</p>
 <ul>
-<li><p>RESOLUTION #0: Try setting the terminal to monochrome for the invocation of
+<li><p><strong>RESOLUTION #0</strong>: try setting the terminal to monochrome for the invocation of
 the game. Depending on what is installed on your system you might not have a
 monochrome terminal but you can certainly get them. In Red Hat systems these can
 be found in the package ncurses-term but maybe that will vary on others. I don’t
@@ -615,7 +615,7 @@ so that’s probably why; in CentOS I did have to install it specially.</p>
 terminal is under <code>/usr/share/terminfo/l/linux-m</code> and under macOS (Catalina
 at least) it’s at <code>/usr/share/terminfo/6c/linux-m</code> (for macOS Ventura it’s
 <code>/usr/share/terminfo/6c/linux-m</code>).</p></li>
-<li><p>BOTTOM LINE: Try using a monochrome terminal for the game by e.g.:</p>
+<li><p><strong>BOTTOM LINE</strong>: try using a monochrome terminal for the game by e.g.:</p>
 <pre><code>      TERM=linux-m ./prog</code></pre>
 <p>And then on your white background terminal the game should keep the
 background white and the foreground black. This will of course mean you have
@@ -629,7 +629,7 @@ eat too many bytes in the entry (I cite the functions in the
 <h2 id="the-text-is-hard-to-see-not-bright-enough"><a href="#toc">The text is hard to see (not bright enough)!</a></h2>
 </div>
 <ul>
-<li><p>RESOLUTION #0: Make sure that your terminal settings have for bold text a
+<li><p><strong>RESOLUTION #0</strong>: make sure that your terminal settings have for bold text a
 brighter font. The way I have my terminal profiles set up is to use bright
 colours for bold text. I specifically enable bold in the program so try and find
 out if enabling brighter colours is possible.</p>
@@ -638,7 +638,10 @@ playing with the colours in your terminal, maybe the font size or various
 other settings. Probably better to make a new profile for this first in case
 you mess up your old one. FWIW I haven’t had this problem on consoles only
 and in my systems I have the option to enable brighter colours for bold - it
-was only in testing that I came across this problem.</p></li>
+was only in testing that I came across this problem. Of course you might
+also try changing the colours of the game. For that see
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/snake-colours.sh">snake-colours.sh</a> and
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/play.sh">play.sh</a>.</p></li>
 </ul>
 <div id="movefaster">
 <h2 id="can-i-move-the-snake-faster-temporarily-without-having-to-modify-the-wait-time"><a href="#toc">Can I move the snake faster temporarily without having to modify the wait time?</a></h2>
@@ -646,10 +649,10 @@ was only in testing that I came across this problem.</p></li>
 <p>Yes. The <code>getch()</code> call is non-blocking when the timeout value is positive so
 it’s up to that number of milliseconds.</p>
 <ul>
-<li><p>RESOLUTION #0: All you need to do then is hold down the direction key (or for
+<li><p><strong>RESOLUTION #0</strong>: all you need to do then is hold down the direction key (or for
 that matter any other key that <code>getch()</code> will pick up on). You can also rapidly
 push the key instead of holding it down.</p></li>
-<li><p>BOTTOM LINE: Depending on the key repeat rate and/or how fast you repeatedly
+<li><p><strong>BOTTOM LINE</strong>: depending on the key repeat rate and/or how fast you repeatedly
 hit the key you can have more control over the speed - as long as it is quicker
 than the regular wait time. For negative wait time (drawing mode) you have to
 hit a key every time to move because it is blocking.</p></li>
@@ -712,7 +715,7 @@ so that by setting the size to -1 it went to the max unsigned value):</p>
 <pre><code>    $ MAXSIZE=-1 ./prog
     memory error
     X:0/157 Y:0/42 S:3/18446744073709551614 B:0</code></pre>
-<p>BTW: There are two arrays that have to be <strong>MAXSIZE</strong> (technically + 1).</p>
+<p>BTW: there are two arrays that have to be <strong>MAXSIZE</strong> (technically + 1).</p>
 <p>Is it possible that some value specified by the user could mess this up? I do
 not know but what I do know is that because it’s unsigned it can’t be negative;
 if the max size is 0 then the array size will be 1 but it won’t matter because
