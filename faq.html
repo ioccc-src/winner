@@ -413,7 +413,7 @@
 <h2 id="section-3---compiling-and-running-ioccc-entries">Section 3 - <a href="#faq3">Compiling and running IOCCC entries</a></h2>
 <ul>
 <li><a href="#faq3_0">3.0 - What Makefile rules are available to build or clean up IOCCC entries?</a></li>
-<li><a href="#faq3_1">3.1 - Why doesn’t this IOCCC entry compile?</a></li>
+<li><a href="#faq3_1">3.1 - Why doesn’t an IOCCC entry compile?</a></li>
 <li><a href="#faq3_2">3.2 - Why does a IOCCC entry fail on my 64-bit system?</a></li>
 <li><a href="#faq3_3">3.3 - Why do some IOCCC entries fail to compile under macOS?</a></li>
 <li><a href="#faq3_4">3.4 - Why does clang or gcc fail to compile an IOCCC entry?</a></li>
@@ -1185,7 +1185,7 @@ compilers might do different things, have different defects or other issues.
 Note that the <code>Makefile</code>s check the <code>CC</code> variable by substrings so that if you
 were to do something like <code>make CC=gcc=mp-12</code> it would register as <code>gcc</code>.</p>
 <div id="faq3_1">
-<h3 id="faq-3.1-why-doesnt-this-ioccc-entry-compile">FAQ 3.1: Why doesn’t this IOCCC entry compile?</h3>
+<h3 id="faq-3.1-why-doesnt-an-ioccc-entry-compile">FAQ 3.1: Why doesn’t an IOCCC entry compile?</h3>
 </div>
 <p>Some entries that won the IOCCC, particularly entries from long ago, no longer compile on more
 modern systems because the C language has evolved (i.e. the modern C compilers
@@ -1205,6 +1205,9 @@ request</a> for more information about pull requests.</p>
 that works for modern systems but one can view the original code in the
 <code>.orig.c</code> files (sometimes the original code is also in the directory as a
 <code>dirname.alt.c</code> or <code>prog.alt.c</code>).</p>
+<p>It might also be worth noting that almost all entries, have been
+fixed so that they can compile in modern systems though just because an entry
+compiles does not mean it will run on your specific system.</p>
 <div id="faq3_2">
 <h3 id="faq-3.2-why-does-a-ioccc-entry-fail-on-my-64-bit-system">FAQ 3.2: Why does a IOCCC entry fail on my 64-bit system?</h3>
 </div>
@@ -1214,7 +1217,7 @@ version macOS no longer supports 32-bit binaries. If the entry acts on a certain
 type of binary, say ELF, then that will also be a problem depending on the
 entry. For example <a href="2001/anonymous/index.html">2001/anonymous</a> requires 32-bit
 ELF binaries.</p>
-<p>There are numerous example entries that require 32-bit binaries. We have tried
+<p>There are a few example entries that require 32-bit binaries. We have tried
 to note these in both the respective Makefiles and index.html files but it is
 possible that some were missed. These entries are very likely in the
 <a href="bugs.html">bugs.html</a> file and we welcome any help in making an alternate version
@@ -1860,8 +1863,8 @@ it like:</p>
 </div>
 <p>Although one can clone the entire <a href="https://github.com/ioccc-src/winner">winner
 repo</a> to get the entire web site and all
-entries, we also provide a way to download individual entries as well as a
-way to download a year’s winning entries.</p>
+entries, we also provide, as a convenience, a way to download individual entries
+as well as a way to download a year’s winning entries.</p>
 <p>Please note that some of the links in the html files will not work! This is
 because you are not downloading the full website. If you want to view the entry
 with links intact you should clone the repo or view it on the <a href="https://www.ioccc.org">official IOCCC
@@ -1885,10 +1888,12 @@ then do:</p>
 <div class="sourceCode" id="cb58"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984/mullender</span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>        <span class="ex">./mullender.alt</span></span></code></pre></div>
-<p>to compile and run all versions and then run the alternate version (if you have
-a PDP-11 or VAX-11 you would be able to run the original version).</p>
-<p>If you want to view the index.html file you can point your browser to the
-index.html file of the winning entry (e.g. <code>1984/mullender/index.html</code>) with the
+<p>to compile all versions and then run the alternate version (if you have
+a PDP-11 or VAX-11 you would be able to run the original version). For more help
+on compiling entries, see also <a href="#faq3_0">3.0 - What Makefile rules are available to
+build or clean up IOCCC entries?</a>.</p>
+<p>If you want to view the <code>index.html</code> file you can point your browser to the
+<code>index.html</code> file of the winning entry (e.g. <code>1984/mullender/index.html</code>) with the
 caveats noted above.</p>
 <h4 id="year-based-tarballs">Year based tarballs</h4>
 <p>The year based tarballs, which are under each year’s directory and are named in the form
@@ -1915,10 +1920,20 @@ individually as described above), the following files:</p>
 <p>If you extract a year’s tarball you can <code>cd YYYY</code> (e.g. <code>cd 1984</code>) and then run
 <code>make everything</code> to compile the entries and alt code of every entry), as if you
 switched to each entry’s directory and ran <code>make everything</code> in each one.</p>
-<p>If you want to view the index.html files you can point your browser to the
-index.html file of the year (e.g. <code>1984/index.html</code>) or an entry’s individual
-index.html file or other html file (e.g. <code>1984/mullender/index.html</code>) again with
-the caveats noted earlier.</p>
+<p>If you download the 1984 tarball, i.e. <code>1984/1984.tar.bz2</code>, then you might
+extract it and then switch to the directory and compile everything of each
+entry:</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span></code></pre></div>
+<p>For more help on compiling entries, see also <a href="#faq3_0">3.0 - What Makefile rules are
+available to build or clean up IOCCC entries?</a>.</p>
+<p>Of course in this case you can also switch to individual entries and look at the
+<code>index.html</code> file (or any other file in the entry) and try out the entries that
+interest you, as if you downloaded that entry’s individual tarball.</p>
+<p>If you want to view the <code>index.html</code> files of that tarball, for instance the
+year’s <code>index.html</code> file and then <code>1984/mullender/index.html</code> you could point your
+browser to <code>1984/index.html</code>, scroll down to <code>Winning Entries of 1984 - The 1st IOCCC</code> and click on the link <code>1984/mullender</code> which will take you to the
+<code>index.html</code> file. Of course the caveats listed above still will apply.</p>
 <div id="faq4">
 <h2 id="section-4-changes-made-to-ioccc-entries">Section 4: Changes made to IOCCC entries</h2>
 </div>

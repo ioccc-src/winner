@@ -30,7 +30,7 @@
 
 ## Section  3 - [Compiling and running IOCCC entries](#faq3)
 - [3.0  - What Makefile rules are available to build or clean up IOCCC entries?](#faq3_0)
-- [3.1  - Why doesn't this IOCCC entry compile?](#faq3_1)
+- [3.1  - Why doesn't an IOCCC entry compile?](#faq3_1)
 - [3.2  - Why does a IOCCC entry fail on my 64-bit system?](#faq3_2)
 - [3.3  - Why do some IOCCC entries fail to compile under macOS?](#faq3_3)
 - [3.4  - Why does clang or gcc fail to compile an IOCCC entry?](#faq3_4)
@@ -1052,7 +1052,7 @@ were to do something like `make CC=gcc=mp-12` it would register as `gcc`.
 
 
 <div id="faq3_1">
-### FAQ 3.1: Why doesn't this IOCCC entry compile?
+### FAQ 3.1: Why doesn't an IOCCC entry compile?
 </div>
 
 Some entries that won the IOCCC, particularly entries from long ago, no longer compile on more
@@ -1078,6 +1078,10 @@ that works for modern systems but one can view the original code in the
 `.orig.c` files (sometimes the original code is also in the directory as a
 `dirname.alt.c` or `prog.alt.c`).
 
+It might also be worth noting that almost all entries, have been
+fixed so that they can compile in modern systems though just because an entry
+compiles does not mean it will run on your specific system.
+
 
 <div id="faq3_2">
 ### FAQ 3.2: Why does a IOCCC entry fail on my 64-bit system?
@@ -1090,7 +1094,7 @@ type of binary, say ELF, then that will also be a problem depending on the
 entry. For example [2001/anonymous](2001/anonymous/index.html) requires 32-bit
 ELF binaries.
 
-There are numerous example entries that require 32-bit binaries. We have tried
+There are a few example entries that require 32-bit binaries. We have tried
 to note these in both the respective Makefiles and index.html files but it is
 possible that some were missed. These entries are very likely in the
 [bugs.html](bugs.html) file and we welcome any help in making an alternate version
@@ -2196,8 +2200,8 @@ though of course for both you may specify a rule or rules to run.
 
 Although one can clone the entire [winner
 repo](https://github.com/ioccc-src/winner) to get the entire web site and all
-entries, we also provide a way to download individual entries as well as a
-way to download a year's winning entries.
+entries, we also provide, as a convenience, a way to download individual entries
+as well as a way to download a year's winning entries.
 
 Please note that some of the links in the html files will not work! This is
 because you are not downloading the full website. If you want to view the entry
@@ -2230,11 +2234,13 @@ then do:
 	./mullender.alt
 ```
 
-to compile and run all versions and then run the alternate version (if you have
-a PDP-11 or VAX-11 you would be able to run the original version).
+to compile all versions and then run the alternate version (if you have
+a PDP-11 or VAX-11 you would be able to run the original version). For more help
+on compiling entries, see also [3.0  - What Makefile rules are available to
+build or clean up IOCCC entries?](#faq3_0).
 
-If you want to view the index.html file you can point your browser to the
-index.html file of the winning entry (e.g. `1984/mullender/index.html`) with the
+If you want to view the `index.html` file you can point your browser to the
+`index.html` file of the winning entry (e.g. `1984/mullender/index.html`) with the
 caveats noted above.
 
 
@@ -2267,10 +2273,28 @@ If you extract a year's tarball you can `cd YYYY` (e.g. `cd 1984`) and then run
 `make everything` to compile the entries and alt code of every entry), as if you
 switched to each entry's directory and ran `make everything` in each one.
 
-If you want to view the index.html files you can point your browser to the
-index.html file of the year (e.g. `1984/index.html`) or an entry's individual
-index.html file or other html file (e.g. `1984/mullender/index.html`) again with
-the caveats noted earlier.
+If you download the 1984 tarball, i.e. `1984/1984.tar.bz2`, then you might
+extract it and then switch to the directory and compile everything of each
+entry:
+
+```sh
+	cd 1984
+	make everything
+```
+
+For more help on compiling entries, see also [3.0  - What Makefile rules are
+available to build or clean up IOCCC entries?](#faq3_0).
+
+Of course in this case you can also switch to individual entries and look at the
+`index.html` file (or any other file in the entry) and try out the entries that
+interest you, as if you downloaded that entry's individual tarball.
+
+
+If you want to view the `index.html` files of that tarball, for instance the
+year's `index.html` file and then `1984/mullender/index.html` you could point your
+browser to `1984/index.html`, scroll down to `Winning Entries of 1984 - The 1st
+IOCCC` and click on the link `1984/mullender` which will take you to the
+`index.html` file. Of course the caveats listed above still will apply.
 
 
 <div id="faq4">
