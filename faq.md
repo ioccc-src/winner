@@ -49,7 +49,8 @@
 - [3.17 - How do I compile and install ImageMagick for entries that require it?](#faq3_17)
 - [3.18 - How do I compile and install OpenGL for entries that require it?](#faq3_18)
 - [3.19 - What kind of make&#x28;1&#x29; compatibility does the IOCCC support and will it support other kinds?](#faq3_19)
-- [3.20 - How do I download individual entries or entries of a given year?](#faq3_20)
+- [3.20 - How do I download individual winning entries or all winning entries of
+a given year?](#faq3_20)
 
 
 ## Section  4 - [Changes made to IOCCC entries](#faq4)
@@ -135,7 +136,7 @@ The **IOCCC registration procedure** is still being designed.
 use the **IOCCC registration procedure**.  Once **IOCCC
 registration procedure** is ready, we will update this section
 with the proper instructions.  Watch the [IOCCC news](news.html)
-for an annoucement about the **IOCCC registration procedure**.
+for an announcement about the **IOCCC registration procedure**.
 
 Once you have been registered, you will receive an email message for how to
 prepare your entries for submission, and how to upload the compressed tarballs
@@ -215,7 +216,7 @@ The **IOCCC submit server** is still being written.
 on how upload your entry to the **IOCCC submit server**.  Once
 **IOCCC submit server** is ready, we will update this section
 with the proper instructions.  Watch the [IOCCC news](news.html)
-for an annoucement of the availability of the **IOCCC submit server**.
+for an announcement of the availability of the **IOCCC submit server**.
 
 
 
@@ -2194,7 +2195,7 @@ though of course for both you may specify a rule or rules to run.
 
 <div id="faq3_20">
 <div id="entry_downloads">
-### 3.20 - How do I download individual entries or entries of a given year?
+### 3.20 - How do I download individual winning entries or all winning entries of a given year?
 </div>
 </div>
 
@@ -2212,8 +2213,14 @@ web site](https://www.ioccc.org) instead.
 #### Individual winning entry tarballs
 
 The individual entry tarballs are named in the form of
-`YYYY/winner/YYYY_winner.tar.bz2` (e.g. `1984/mullender/1984_mullender.tar.bz2`)
-and will have the following files:
+`YYYY/winner/YYYY_winner.tar.bz2` (e.g.
+[1984/mullender/1984_mullender.tar.bz2](1984/mullender/1984_mullender.tar.bz2))
+and they contain a single entry as well as some additional necessary files. Each
+entry tarball is linked to in its `index.html` (e.g.
+[1984/mullender/index.html](1984/mullender/index.html)) manifest, listed in the
+_Secondary files_ list.
+
+These tarballs will have the following files:
 
 - `ioccc.css`					- stylesheet for the html files
 - `var.mk`						- the top level Makefile included by all the other Makefiles that holds variables used by the Makefiles
@@ -2222,8 +2229,8 @@ and will have the following files:
 - `YYYY/winner/.gitignore`		- list of files that should not be committed under git
 
 plus the winning entry files like source code, the Makefile, supplementary data
-provided by the author and any other file found in the winning entry, found in
-`YYYY/winner`.
+provided by the author and any other file in the winning entry, found under the
+entry's subdirectory.
 
 If you downloaded `1984/mullender/1984_mullender.tar.bz2`, for instance, you might
 then do:
@@ -2246,10 +2253,16 @@ caveats noted above.
 
 #### Year based tarballs
 
-The year based tarballs, which are under each year's directory and are named in the form
-of `YYYY/YYYY.tar.bz2`, have, along with each entry's directory and their
-respective files (as if you downloaded each entry tarball of the year
-individually as described above), the following files:
+The year based tarballs, which are under each year's directory and are named in
+the form of `YYYY/YYYY.tar.bz2` (e.g. [1984/1984.tar.bz2](1984/1984.tar.bz2)),
+include all the winning entries of a given year.
+Each year's tarball can be found under that year in the [years.html](years.html)
+page and in the year's `index.html` as well (e.g.
+[1984/index.html](1984/index.html)).
+
+These tarballs have, along with each entry's directory and their respective
+files (as if you downloaded each entry tarball of the year individually as
+described above), the following files:
 
 - `.filelist`		- list of files in the year that are not part of a winning entry of the year, including the `YYYY.tar.bz2` tarball
 - `index.html`		- the `YYYY/index.html` file rendered from the `YYYY/README.md` file
@@ -2261,17 +2274,17 @@ individually as described above), the following files:
 
 Additionally, some will have extra files like:
 
-- `.gitignore`		- list of files that should not be committed under git
-- `guidelines.txt`	- the guidelines of the year
-- `iocccsize.c`		- `iocccsize` tool of the year
-- `iocccsize.mk`	- Makefile to compile the `iocccsize` tool of the year
+- `.gitignore`			- list of files that should not be committed under git
+- `guidelines.txt`		- the guidelines of the year
+- `iocccsize.c`			- `iocccsize` tool of the year
+- `iocccsize.mk`		- Makefile to compile the `iocccsize` tool of the year
 - `iocccsize-test.sh`	- test suite for the `iocccsize` tool
 
-.. and perhaps some others we have missed as well.
+.. and perhaps some others we have neglected to mention as well.
 
 If you extract a year's tarball you can `cd YYYY` (e.g. `cd 1984`) and then run
-`make everything` to compile the entries and alt code of every entry), as if you
-switched to each entry's directory and ran `make everything` in each one.
+`make everything` to compile the entries and alternate code of every entry, as
+if you switched to each entry's directory and ran `make everything` in each one.
 
 If you download the 1984 tarball, i.e. `1984/1984.tar.bz2`, then you might
 extract it and then switch to the directory and compile everything of each
@@ -2288,7 +2301,6 @@ available to build or clean up IOCCC entries?](#faq3_0).
 Of course in this case you can also switch to individual entries and look at the
 `index.html` file (or any other file in the entry) and try out the entries that
 interest you, as if you downloaded that entry's individual tarball.
-
 
 If you want to view the `index.html` files of that tarball, for instance the
 year's `index.html` file and then `1984/mullender/index.html` you could point your

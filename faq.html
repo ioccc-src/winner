@@ -432,7 +432,8 @@
 <li><a href="#faq3_17">3.17 - How do I compile and install ImageMagick for entries that require it?</a></li>
 <li><a href="#faq3_18">3.18 - How do I compile and install OpenGL for entries that require it?</a></li>
 <li><a href="#faq3_19">3.19 - What kind of make(1) compatibility does the IOCCC support and will it support other kinds?</a></li>
-<li><a href="#faq3_20">3.20 - How do I download individual entries or entries of a given year?</a></li>
+<li><a href="#faq3_20">3.20 - How do I download individual winning entries or all winning entries of
+a given year?</a></li>
 </ul>
 <h2 id="section-4---changes-made-to-ioccc-entries">Section 4 - <a href="#faq4">Changes made to IOCCC entries</a></h2>
 <ul>
@@ -499,7 +500,7 @@ suggestions, useful hints, and IOCCC humor. :-)</p>
 use the <strong>IOCCC registration procedure</strong>. Once <strong>IOCCC
 registration procedure</strong> is ready, we will update this section
 with the proper instructions. Watch the <a href="news.html">IOCCC news</a>
-for an annoucement about the <strong>IOCCC registration procedure</strong>.</p>
+for an announcement about the <strong>IOCCC registration procedure</strong>.</p>
 <p>Once you have been registered, you will receive an email message for how to
 prepare your entries for submission, and how to upload the compressed tarballs
 to our submission portal.</p>
@@ -544,7 +545,7 @@ for doing so in your <code>remarks.md</code> file.</p>
 on how upload your entry to the <strong>IOCCC submit server</strong>. Once
 <strong>IOCCC submit server</strong> is ready, we will update this section
 with the proper instructions. Watch the <a href="news.html">IOCCC news</a>
-for an annoucement of the availability of the <strong>IOCCC submit server</strong>.</p>
+for an announcement of the availability of the <strong>IOCCC submit server</strong>.</p>
 <div id="faq0_1">
 <h3 id="faq-0.1-what-types-of-entries-have-been-frequently-submitted-to-the-ioccc">FAQ 0.1: What types of entries have been frequently submitted to the IOCCC?</h3>
 </div>
@@ -1858,7 +1859,7 @@ it like:</p>
 <p>though of course for both you may specify a rule or rules to run.</p>
 <div id="faq3_20">
 <div id="entry_downloads">
-<h3 id="how-do-i-download-individual-entries-or-entries-of-a-given-year">3.20 - How do I download individual entries or entries of a given year?</h3>
+<h3 id="how-do-i-download-individual-winning-entries-or-all-winning-entries-of-a-given-year">3.20 - How do I download individual winning entries or all winning entries of a given year?</h3>
 </div>
 </div>
 <p>Although one can clone the entire <a href="https://github.com/ioccc-src/winner">winner
@@ -1871,8 +1872,13 @@ with links intact you should clone the repo or view it on the <a href="https://w
 web site</a> instead.</p>
 <h4 id="individual-winning-entry-tarballs">Individual winning entry tarballs</h4>
 <p>The individual entry tarballs are named in the form of
-<code>YYYY/winner/YYYY_winner.tar.bz2</code> (e.g. <code>1984/mullender/1984_mullender.tar.bz2</code>)
-and will have the following files:</p>
+<code>YYYY/winner/YYYY_winner.tar.bz2</code> (e.g.
+<a href="1984/mullender/1984_mullender.tar.bz2">1984/mullender/1984_mullender.tar.bz2</a>)
+and they contain a single entry as well as some additional necessary files. Each
+entry tarball is linked to in its <code>index.html</code> (e.g.
+<a href="1984/mullender/index.html">1984/mullender/index.html</a>) manifest, listed in the
+<em>Secondary files</em> list.</p>
+<p>These tarballs will have the following files:</p>
 <ul>
 <li><code>ioccc.css</code> - stylesheet for the html files</li>
 <li><code>var.mk</code> - the top level Makefile included by all the other Makefiles that holds variables used by the Makefiles</li>
@@ -1881,8 +1887,8 @@ and will have the following files:</p>
 <li><code>YYYY/winner/.gitignore</code> - list of files that should not be committed under git</li>
 </ul>
 <p>plus the winning entry files like source code, the Makefile, supplementary data
-provided by the author and any other file found in the winning entry, found in
-<code>YYYY/winner</code>.</p>
+provided by the author and any other file in the winning entry, found under the
+entry’s subdirectory.</p>
 <p>If you downloaded <code>1984/mullender/1984_mullender.tar.bz2</code>, for instance, you might
 then do:</p>
 <div class="sourceCode" id="cb58"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984/mullender</span>
@@ -1896,10 +1902,15 @@ build or clean up IOCCC entries?</a>.</p>
 <code>index.html</code> file of the winning entry (e.g. <code>1984/mullender/index.html</code>) with the
 caveats noted above.</p>
 <h4 id="year-based-tarballs">Year based tarballs</h4>
-<p>The year based tarballs, which are under each year’s directory and are named in the form
-of <code>YYYY/YYYY.tar.bz2</code>, have, along with each entry’s directory and their
-respective files (as if you downloaded each entry tarball of the year
-individually as described above), the following files:</p>
+<p>The year based tarballs, which are under each year’s directory and are named in
+the form of <code>YYYY/YYYY.tar.bz2</code> (e.g. <a href="1984/1984.tar.bz2">1984/1984.tar.bz2</a>),
+include all the winning entries of a given year.
+Each year’s tarball can be found under that year in the <a href="years.html">years.html</a>
+page and in the year’s <code>index.html</code> as well (e.g.
+<a href="1984/index.html">1984/index.html</a>).</p>
+<p>These tarballs have, along with each entry’s directory and their respective
+files (as if you downloaded each entry tarball of the year individually as
+described above), the following files:</p>
 <ul>
 <li><code>.filelist</code> - list of files in the year that are not part of a winning entry of the year, including the <code>YYYY.tar.bz2</code> tarball</li>
 <li><code>index.html</code> - the <code>YYYY/index.html</code> file rendered from the <code>YYYY/README.md</code> file</li>
@@ -1916,10 +1927,10 @@ individually as described above), the following files:</p>
 <li><code>iocccsize.mk</code> - Makefile to compile the <code>iocccsize</code> tool of the year</li>
 <li><code>iocccsize-test.sh</code> - test suite for the <code>iocccsize</code> tool</li>
 </ul>
-<p>.. and perhaps some others we have missed as well.</p>
+<p>.. and perhaps some others we have neglected to mention as well.</p>
 <p>If you extract a year’s tarball you can <code>cd YYYY</code> (e.g. <code>cd 1984</code>) and then run
-<code>make everything</code> to compile the entries and alt code of every entry), as if you
-switched to each entry’s directory and ran <code>make everything</code> in each one.</p>
+<code>make everything</code> to compile the entries and alternate code of every entry, as
+if you switched to each entry’s directory and ran <code>make everything</code> in each one.</p>
 <p>If you download the 1984 tarball, i.e. <code>1984/1984.tar.bz2</code>, then you might
 extract it and then switch to the directory and compile everything of each
 entry:</p>
