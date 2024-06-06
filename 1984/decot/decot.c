@@ -6,7 +6,7 @@
 extern double floor(double);
 double (x1, y1) b;
 char x {sizeof(
-     double(%s,%D)(*)())
+    double(%s,%D)(*)())
 ,};
 struct tag{int x0,*xO;};
 
