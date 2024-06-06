@@ -1429,12 +1429,9 @@ code.
 He also changed the `argc` to be an `int`, not a `char`, even though it might
 often be the same (this in particular was done for `clang`).
 
-He also fixed the code to not enter an infinite loop if arg is a number not > 0
-and to not crash if no arg is specified. This was done during a time it was
-deemed a problem to be fixed.
-
-NOTE: the alternate code did NOT have arg checks added as it is actually a copy of the
-original code.
+He also fixed the code to not enter an infinite loop if arg is a number not > 0.
+To be more like the original the number of args passed to the program has not
+been fixed so that if one passes no arg it will still likely crash.
 
 Cody also added the [try.sh](%%REPO_URL%%/1990/westley/try.sh) script.
 

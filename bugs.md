@@ -884,6 +884,20 @@ will enter an infinite loop, printing 0 over and over again; another condition
 where this occurred was fixed but this one should not be fixed. Thank you.
 
 
+<div id="1990_westley">
+## 1990/westley
+</div>
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [1990/westley/westley.c](%%REPO_URL%%/1990/westley/westley.c)
+### Information: [1990/westley/index.html](1990/westley/index.html)
+
+Although Cody fixed this to not enter an infinite loop if the arg (converted to
+a number) is < 0 the lack of an arg check at all was kept in to make it like the
+original. The reason for the < 0 check is it floods the screen.
+
+
+
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1991">
 # 1991

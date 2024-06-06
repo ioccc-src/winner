@@ -1390,11 +1390,9 @@ instructional to see the differences he has provided an alternate version,
 code.</p>
 <p>He also changed the <code>argc</code> to be an <code>int</code>, not a <code>char</code>, even though it might
 often be the same (this in particular was done for <code>clang</code>).</p>
-<p>He also fixed the code to not enter an infinite loop if arg is a number not &gt; 0
-and to not crash if no arg is specified. This was done during a time it was
-deemed a problem to be fixed.</p>
-<p>NOTE: the alternate code did NOT have arg checks added as it is actually a copy of the
-original code.</p>
+<p>He also fixed the code to not enter an infinite loop if arg is a number not &gt; 0.
+To be more like the original the number of args passed to the program has not
+been fixed so that if one passes no arg it will still likely crash.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/westley/try.sh">try.sh</a> script.</p>
 <div id="1991">
 <h1 id="the-8th-ioccc"><a href="1991/index.html">1991 - The 8th IOCCC</a></h1>
