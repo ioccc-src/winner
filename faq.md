@@ -2349,10 +2349,6 @@ warning in such a way that caused confusing output for the entry, looking like:
     # nothing here, what to do?
 ```
 
-In some cases changing the code to use `fgets()` is not so easy to fix and in
-one case at least there is an alternate version that has the fix instead due to
-a problem it creates (correct output but segfaults after the output in one of
-the forms of input).
 
 In some cases it is not possible to fix or at least it is highly unlikely and so
 those have mainly not been touched except one that has had the buffer size
@@ -2362,6 +2358,9 @@ increased (which could be done for others that are not possible to change to
 Some entries can be made to look almost identical to the original entry. For
 instance the fix to [1988/reddy](1988/reddy/index.html) required only a single
 `#define` be added.
+
+In the cases it has not been done it is likely the entry can be found in the
+[bugs.html](bugs.html) file.
 
 In the future we, the judges, would prefer that entries use `fgets()` to prevent
 these problems.

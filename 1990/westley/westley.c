@@ -11,7 +11,7 @@ char*lie;
 
 dear; (char)lotte--;
 
-	if (ly < 2 || atoi(die[1])<1) exit(1);
+	if (atoi(die[1])<1) exit(1);
 	for(get= !me;; not){
 
 	1 -  out & out ;lie;{

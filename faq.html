@@ -1973,10 +1973,6 @@ warning in such a way that caused confusing output for the entry, looking like:<
 <pre><code>    $ ./tbr
     $ warning: this program uses gets(), which is unsafe.
     # nothing here, what to do?</code></pre>
-<p>In some cases changing the code to use <code>fgets()</code> is not so easy to fix and in
-one case at least there is an alternate version that has the fix instead due to
-a problem it creates (correct output but segfaults after the output in one of
-the forms of input).</p>
 <p>In some cases it is not possible to fix or at least it is highly unlikely and so
 those have mainly not been touched except one that has had the buffer size
 increased (which could be done for others that are not possible to change to
@@ -1984,6 +1980,8 @@ increased (which could be done for others that are not possible to change to
 <p>Some entries can be made to look almost identical to the original entry. For
 instance the fix to <a href="1988/reddy/index.html">1988/reddy</a> required only a single
 <code>#define</code> be added.</p>
+<p>In the cases it has not been done it is likely the entry can be found in the
+<a href="bugs.html">bugs.html</a> file.</p>
 <p>In the future we, the judges, would prefer that entries use <code>fgets()</code> to prevent
 these problems.</p>
 <p>An annoying fact is that for ‘“compatibility” reasons’ <code>fgets()</code> retains the
