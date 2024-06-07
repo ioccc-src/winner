@@ -37,7 +37,7 @@ SHELL= bash
 include var.mk
 
 #################################
-# IOCCC web site maintenance tulz
+# IOCCC website maintenance tulz
 #################################
 
 # NOTE: The "tulz" (tools) in this section are intended to be used by those
@@ -45,7 +45,7 @@ include var.mk
 #
 # We file "tulz" paths should be relative to the top directory of the repo.
 # We need only list those "tulz" that are invoked directly by the
-# "IOCCC web site maintenance rulz" section below.
+# "IOCCC website maintenance rulz" section below.
 
 ALL_RUN= bin/all-run.sh
 ALL_YEARS= bin/all-years.sh
@@ -226,7 +226,7 @@ indent.c:
 
 
 #################################
-# IOCCC web site maintenance rulz
+# IOCCC website maintenance rulz
 #################################
 
 # NOTE: The rules in this section are intended to be used by those
@@ -250,7 +250,7 @@ indent.c:
 # Suggest rules in this section
 #
 # This may not be much help to people who are not already familiar with
-# the tools needed to build the web site, but it does print out a friendly
+# the tools needed to build the website, but it does print out a friendly
 # reminder to those who understand it. For all else, there is "RTFS". :-)
 #
 # Note: there is one rule that should not be in this list. We want to make sure
@@ -275,7 +275,7 @@ help:
 	@echo 'make diff_alt_orig	- diff alternative source and original source'
 	@echo 'make diff_orig_alt	- diff original source and alternative source'
 	@echo
-	@echo '# Rules for building a local copy of the IOCCC web site:'
+	@echo '# Rules for building a local copy of the IOCCC website:'
 	@echo
 	@echo 'make genpath		 - form top level .top, YYYY level .year and winner .path files'
 	@echo 'make genfilelist	 - generate YYYY level .filelist'
@@ -290,12 +290,12 @@ help:
 	@echo 'make quick_entry_index	 - build winner index.html files that might be out of date'
 	@echo 'make find_missing_links	 - find markdown links to missing local files'
 	@echo
-	@echo '# Compound make rules for building a local copy of the IOCCC web site:'
+	@echo '# Compound make rules for building a local copy of the IOCCC website:'
 	@echo
 	@echo 'make quick_www		 - generate html files more quickly, checking timestamps'
-	@echo 'make www		 - build html pages for web site'
+	@echo 'make www		 - build html pages for website'
 	@echo
-	@echo '# Rules that are useful only for those IOCCC judges who mainain the official IOCCC web site:'
+	@echo '# Rules that are useful only for those IOCCC judges who mainain the official IOCCC website:'
 	@echo
 	@echo 'make sort_gitignore	 - sort .gitignore files according to rules in bin/sgi.sh'
 	@echo
@@ -310,7 +310,7 @@ help:
 	@echo 'make gen_sitemap	 - generate the XML sitemap'
 	@echo 'make timestamp		 - generate things with timestamps (status, sitemap etc.)'
 	@echo
-	@echo 'make update		 - update everything in a local copy of the web site'
+	@echo 'make update		 - update everything in a local copy of the website'
 
 # form the top level .top, YYYY level .year and winner level .path files
 #
@@ -465,7 +465,7 @@ find_missing_links:
 	${FIND_MISSING_LINKS} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-# do work to build HTML content for the web site
+# do work to build HTML content for the website
 #
 # This rule uses quick_entry_index, not slow_entry_index, so
 # some winner index.html files that seem to be up to date
@@ -495,7 +495,7 @@ quick_www:
 	${MAKE} find_missing_links
 	@echo '=-=-=-=-=-= IOCCC complete make $@ =-=-=-=-=-='
 
-# do everything needed to build HTML content for the web site
+# do everything needed to build HTML content for the website
 #
 # Well, short of pushing changes to the GitHub repo, that is.  :-)
 #
@@ -587,7 +587,7 @@ timestamp:
 	${MAKE} gen_sitemap
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-# update everything on the web site
+# update everything on the website
 #
 update:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='

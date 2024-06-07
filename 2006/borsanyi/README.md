@@ -52,7 +52,7 @@ anti-CAPTCHA tools.
 
 ### Introduction:
 
-Most spam robots collect email addresses from the web sites of
+Most spam robots collect email addresses from the websites of
 innocent people, like you. Conference organizers cannot disclose
 the participant's address to prevent malicious users from
 grabbing them. One solution is to write as `my_email _at_ address

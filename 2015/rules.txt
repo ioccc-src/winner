@@ -45,8 +45,8 @@ GOALS OF THE CONTEST:
 |   will be available and active on or slightly before the start of this IOCCC.
 |
 |   The official rules, guidelines and iocccsize.c tool will be available
-|   on the official IOCCC web site on or slightly before start of this IOCCC.
-|   Please check the IOCCC web site "How to enter" link:
+|   on the official IOCCC website on or slightly before start of this IOCCC.
+|   Please check the IOCCC website "How to enter" link:
 |
 |	https://www.ioccc.org/index.html#enter
 |

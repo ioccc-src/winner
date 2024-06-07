@@ -142,7 +142,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 
 	-u repo_url	Base level URL of target git repo (def: $REPO_URL)
 	-U url		URL of HTML file being formed (def: $URL)
-	-w site_url	Base URL of the web site (def: $SITE_URL)
+	-w site_url	Base URL of the website (def: $SITE_URL)
 
 	-e string	output string, followed by newline, to stderr (def: do not)
 	-E exitcode	force exit with exitcode (def: exit based on success or failure of the action)

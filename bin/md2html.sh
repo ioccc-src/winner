@@ -2,7 +2,7 @@
 #
 # md2html.sh - convert markdown into an IOCCC HTML file via config file
 #
-# Convert a markdown file into a HTML file for the IOCCC web site,
+# Convert a markdown file into a HTML file for the IOCCC website,
 # using the inc/md2html.cfg configuration file.  Conversion from
 # markdown to HTML is performed via the 'pandoc wrapper tool'.
 #
@@ -228,7 +228,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 			NOTE: The '-u repo_url' is passed as leading options on -b tool, -a tool, and -o tool command lines.
 	-U url		URL of HTML being formed (def: $URL)
 			NOTE: The '-U url' is passed as leading options on -b tool, -a tool, and -o tool command lines.
-	-w site_url	Base URL of the web site (def: $SITE_URL)
+	-w site_url	Base URL of the website (def: $SITE_URL)
 	-m mdtag	string to write about the markdown file used to form HTML content (def: no markdown file is used)
 
 	-e string	output 'string', followed by newline, to stderr (def: do not)

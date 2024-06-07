@@ -8,7 +8,7 @@ on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
-The IOCCC has a web site and now has a number of international mirrors.  The
+The IOCCC has a website and now has a number of international mirrors.  The
 primary site can be found at [www.ioccc.org](https://www.ioccc.org).
 
 Use `make` to compile entries.  It is possible that on non-Unix / non-Linux

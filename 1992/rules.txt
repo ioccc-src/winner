@@ -165,7 +165,7 @@ FOR MORE INFORMATION:
     prior to submitting entries.  The IOCCC rules, guidelines and mkentry
     program may be obtained from the judges using the email address above.
 
-    See the official IOCCC web site:
+    See the official IOCCC website:
 
 	https://www.ioccc.org
 

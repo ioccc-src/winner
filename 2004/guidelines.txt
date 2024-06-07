@@ -477,7 +477,7 @@ ANNOUNCEMENT OF WINNERS:
 
     The judges will post an initial announcement of who won, the name
     of their award, and a very brief description of the winning entry
-    on the IOCCC web site:
+    on the IOCCC website:
 									  
 	    https://www.ioccc.org/whowon.html				  
 									  
@@ -494,7 +494,7 @@ ANNOUNCEMENT OF WINNERS:
 
     Sometime after the initial announcement, and once the review
     by the winners has been completed, the winning source will be
-    posted to the IOCCC web site:
+    posted to the IOCCC website:
 
 	    https://www.ioccc.org/years.html
 

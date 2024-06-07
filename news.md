@@ -12,7 +12,7 @@ information on Mastodon.
 ## 2024-05-30
 
 A number of issues from minor fixes have been applied to the
-[temp-test-ioccc web site](https://ioccc-src.github.io/temp-test-ioccc/)
+[temp-test-ioccc website](https://ioccc-src.github.io/temp-test-ioccc/)
 via the [temp-test-ioccc](https://github.com/ioccc-src/temp-test-ioccc) repo.
 
 437 commits have been applied since 2024-04-20, bringing the total
@@ -55,7 +55,7 @@ IOCCC.
 
 ## 2024-04-30
 
-The web site now is viewing by mobile devices such as cell phones
+The website now is viewing by mobile devices such as cell phones
 and tablets.  Devices with a screen resolution 1024 pixels and
 narrower are given a _hamburger-style_ menu icon in place of
 drop-down menus at the very top of the page (called the _topbar_).
@@ -85,8 +85,8 @@ _topbar_ are now HTML 5 conforming.
 
 ## 2024-04-20
 
-Nearly all of the [temp-test-ioccc web site](https://ioccc-src.github.io/temp-test-ioccc/)
-web site has undergone editorial review.  Nearly all [IOCCC winning entries](years.html)
+Nearly all of the [temp-test-ioccc website](https://ioccc-src.github.io/temp-test-ioccc/)
+website has undergone editorial review.  Nearly all [IOCCC winning entries](years.html)
 compile on modern systems and many have `try.sh` scripts to help you run them.
 For those that cannot compile and/or do not work, we have made a
 [Bugs and &#x28;Mis&#x29;features](bugs.html) page.
@@ -97,38 +97,38 @@ All generated HTML pages are now conform to HTML 5 with the
 [Nu Html Checker](https://validator.w3.org/nu/) reporting **no error, warnings, nor info** messages.
 
 The [IOCCC judges](judges.html) have contracted with a web designer
-to improve the overall look of the web site, while **maintaining
+to improve the overall look of the website, while **maintaining
 the utilitarian look and feel**, and without introducing any
 glaring "_dancing bears_" and other frivolous web features.
 
 We are working towards what we call the
 **[Great Fork Merge](https://github.com/ioccc-src/temp-test-ioccc/issues/2239)**
-where the contents of the [temp-test-ioccc web site](https://ioccc-src.github.io/temp-test-ioccc/)
-will be merged into the [Official IOCCC web site](https://www.ioccc.org/index.html).
+where the contents of the [temp-test-ioccc website](https://ioccc-src.github.io/temp-test-ioccc/)
+will be merged into the [Official IOCCC website](https://www.ioccc.org/index.html).
 
 Stay tuned!
 
 
 ## 2024-02-29
 
-We continue to make good progress on web site.  In the [temp-test-ioccc GitHub repo](https://github.com/ioccc-src/temp-test-ioccc) we have made nearly 4600 changes to date!
+We continue to make good progress on website.  In the [temp-test-ioccc GitHub repo](https://github.com/ioccc-src/temp-test-ioccc) we have made nearly 4600 changes to date!
 
 All web pages, including this one, are now constructed from markdown files and/or JSON data files using tools found in the [bin](bin/index.html) directory.
 
 
 ## 2023-05-22
 
-We have been busy preparing for an important / significant update to this web site.  In the [temp-test-ioccc GitHub repo](https://github.com/ioccc-src/temp-test-ioccc) we have made nearly 2645 changes to date.
+We have been busy preparing for an important / significant update to this website.  In the [temp-test-ioccc GitHub repo](https://github.com/ioccc-src/temp-test-ioccc) we have made nearly 2645 changes to date.
 
 While you are free to look at the [temp-test-ioccc GitHub repo](https://github.com/ioccc-src/temp-test-ioccc),
-please **do not link to it** as this repo and related web site will disappear once the main
+please **do not link to it** as this repo and related website will disappear once the main
 [IOCCC winner repo](https://github.com/ioccc-src/winner) has been updated.
 
 Also be aware that the [temp-test-ioccc GitHub repo](https://github.com/ioccc-src/temp-test-ioccc)
 is undergoing rapid changes.  There are broken links and other things in mid-change.
 
 Once we are ready to update the [IOCCC winner repo](https://github.com/ioccc-src/winner)
-and its associated web site,
+and its associated website,
 we will post a news article warning of the pending change that is about to arrive.
 
 These 2645+ changes in the [temp-test-ioccc GitHub repo](https://github.com/ioccc-src/temp-test-ioccc)
@@ -207,7 +207,7 @@ of the most recent news item.
 
 As per the suggestion of [Toni Mikkola](https://fosstodon.org/@Virtaava@home.social)
 (_@Virtaava@home.social_) we now maintain a
-[status.json](status.json) page on this web site.
+[status.json](status.json) page on this website.
 
 In addition to the IOCCC-style _easter egg_, you may count on
 the JSON status page having a JSON member with name of **"contest"**
@@ -294,7 +294,7 @@ We plan to hold in 2023, what we will call **IOCCCMOCK**, a trial IOCCC contest 
 judges will go through the motions (without judging the content) of an IOCCC:
 testing the above mentioned tools and testing the submit server.
 
-We are working on complete rebuild of this web site as well.
+We are working on complete rebuild of this website as well.
 
 
 ## 2022-01-15
@@ -331,7 +331,7 @@ we will do so by committing their code to the
 of the IOCCC repo, so that people will be able immediately
 view the winning source.
 
-We plan to refactor and modernize the IOCCC web site.
+We plan to refactor and modernize the IOCCC website.
 We also plan to build a new and improved way to submit entries the next IOCCC.
 As a result of all this work we need to do,
 **we plan to hold IOCCC28 in 2023 instead of 2021**.

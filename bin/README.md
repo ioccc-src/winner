@@ -1,7 +1,7 @@
 # bin
 
 The [bin directory](index.html) holds tools that build files, such as HTML
-content, for the [official IOCCC web site](https://www.ioccc.org).
+content, for the [official IOCCC website](https://www.ioccc.org).
 
 For HTML content, the [bin directory](index.html) tools make use of HTML
 fragments from the [inc directory](../inc/index.html) as well as various JSON
@@ -142,7 +142,7 @@ Usage:
 
 ### [gen-sitemap.sh](%%DOCROOT_SLASH%%bin/gen-sitemap.sh)
 
-Generate an XML sitemap for the IOCCC web site.
+Generate an XML sitemap for the IOCCC website.
 
 Usage:
 
@@ -197,7 +197,7 @@ We recommend that this tool be invoked via the top level `Makefile`:
 
 ### [gen-top-html.sh](%%DOCROOT_SLASH%%bin/gen-top-html.sh)
 
-Generate a number of top level HTML pages for the IOCCC web sites.
+Generate a number of top level HTML pages for the IOCCC websites.
 
 Usage:
 
@@ -741,10 +741,10 @@ how such command lines are used.
 # Use CAUTION when modifying inc files
 
 Some of the files under this directory are used to form **MOST** of the HTML content
-on the [official IOCCC web site](https://www.ioccc.org).
+on the [official IOCCC website](https://www.ioccc.org).
 
 These files are used to form **MOST** of the HTML content
-on the [experimental web site](https://ioccc-src.github.io/temp-test-ioccc/).
+on the [experimental website](https://ioccc-src.github.io/temp-test-ioccc/).
 
 ... and in particular files under [inc](../inc/index.html) that are of the form
 (called default HTML files) ...:
@@ -775,7 +775,7 @@ solutions available to form web pages.
 Here are some reasons why we are using these files and
 special tools to create HTML content / IOCCC web pages:
 
-We host [official IOCCC web site](https://www.ioccc.org) via [GitHub
+We host [official IOCCC website](https://www.ioccc.org) via [GitHub
 pages](https://pages.github.com).  As of the time this file written, **only
 static web pages are supported**.
 
@@ -813,7 +813,7 @@ by someone else who is not so generous.  While it is possible that GitHub might 
 suffer a similar fate, for the time being we are betting that GitHub will remain
 willing to host the IOCCC.
 
-The [official IOCCC web site](https://www.ioccc.org) is, after all, primarily C
+The [official IOCCC website](https://www.ioccc.org) is, after all, primarily C
 source code with some supporting documentation (sometimes :-) ).  As such it is
 a natural fit for GitHub and [GitHub pages](https://pages.github.com).
 
@@ -859,7 +859,7 @@ We do not use JavaScript to include HTML content.
 
 While the IOCCC may use JavaScript in the future to directly render things like
 C source code, we will do so in such a way that someone will be able to view
-[official IOCCC web site](https://www.ioccc.org) content with JavaScript
+[official IOCCC website](https://www.ioccc.org) content with JavaScript
 disabled.
 
 The IOCCC will **NOT MANDATE USE OF JavaScript** to view [official IOCCC web

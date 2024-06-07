@@ -5,7 +5,7 @@ For example, we [submitting to the IOCCC](faq.html#submit), we have people
 to submit remarks about entry in markdown format.  Every
 [winning IOCCC entry](years.html) uses a `README.md` markdown file
 as the basis for forming the `index.html` web page for that entry.
-All generated HTML pages on the [Official IOCCC web site](https://www.ioccc.org/index.html)
+All generated HTML pages on the [Official IOCCC website](https://www.ioccc.org/index.html)
 start with some markdown content.
 
 See the [markdown syntax](https://www.markdownguide.org/basic-syntax) guide.

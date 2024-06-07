@@ -520,7 +520,7 @@ FOR MORE INFORMATION:
     One may obtain a copy of the current rules, guidelines or mkentry
     program may be obtained from the judges using the email address above.
 
-    See the official IOCCC web site:
+    See the official IOCCC website:
 
 	https://www.ioccc.org
 

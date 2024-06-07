@@ -12,8 +12,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>The International Obfuscated C Code Contest</title>
 <link rel="icon" type="image/x-icon" href="../favicon.ico">
-<meta name="description" content="Tools used to build and maintain the IOCCC web site">
-<meta name="keywords" content="IOCCC, tools, web site tools, bin">
+<meta name="description" content="Tools used to build and maintain the IOCCC website">
+<meta name="keywords" content="IOCCC, tools, website tools, bin">
 </head>
 
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
@@ -138,7 +138,7 @@
 
             <div class="outfit-font">
               <a href="../faq.html#fix_web_site" class="sub-item-link">
-                Fixing the web site
+                Fixing the website
               </a>
             </div>
 
@@ -283,7 +283,7 @@
             </a>
 
             <a class="mobile-submenu-item" href="../faq.html#fix_web_site">
-              Fixing the web site
+              Fixing the website
             </a>
 
             <a class="mobile-submenu-item" href="../faq.html#fix_author">
@@ -363,7 +363,7 @@
 	   height=110>
   </a>
   <h1>The International Obfuscated C Code Contest</h1>
-  <h2>IOCCC tools used build and maintain the IOCCC web site</h2>
+  <h2>IOCCC tools used build and maintain the IOCCC website</h2>
 </div>
 
 <!-- END: this line ends content from: inc/header.default.html -->
@@ -384,7 +384,7 @@
 <!-- BEFORE: 1st line of markdown file: bin/README.md -->
 <h1 id="bin">bin</h1>
 <p>The <a href="index.html">bin directory</a> holds tools that build files, such as HTML
-content, for the <a href="https://www.ioccc.org">official IOCCC web site</a>.</p>
+content, for the <a href="https://www.ioccc.org">official IOCCC website</a>.</p>
 <p>For HTML content, the <a href="index.html">bin directory</a> tools make use of HTML
 fragments from the <a href="../inc/index.html">inc directory</a> as well as various JSON
 files and other content from the <a href="https://github.com/ioccc-src/temp-test-ioccc">IOCCC GitHub
@@ -445,7 +445,7 @@ files.</p>
 <p>Usage:</p>
 <pre><code>    bin/gen-other-html.sh -v 1</code></pre>
 <h3 id="gen-sitemap.sh"><a href="../bin/gen-sitemap.sh">gen-sitemap.sh</a></h3>
-<p>Generate an XML sitemap for the IOCCC web site.</p>
+<p>Generate an XML sitemap for the IOCCC website.</p>
 <p>Usage:</p>
 <pre><code>    bin/gen-sitemap.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
@@ -465,7 +465,7 @@ and <code>news.html</code>.</p>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_status</code></pre>
 <h3 id="gen-top-html.sh"><a href="../bin/gen-top-html.sh">gen-top-html.sh</a></h3>
-<p>Generate a number of top level HTML pages for the IOCCC web sites.</p>
+<p>Generate a number of top level HTML pages for the IOCCC websites.</p>
 <p>Usage:</p>
 <pre><code>    bin/gen-top-html.sh -v 1</code></pre>
 <p>Examples of top level HTML pages built by this tool include:</p>
@@ -748,9 +748,9 @@ See also, the tool <a href="../bin/readme2index.sh">readme2index.sh</a> for an e
 how such command lines are used.</p>
 <h1 id="use-caution-when-modifying-inc-files">Use CAUTION when modifying inc files</h1>
 <p>Some of the files under this directory are used to form <strong>MOST</strong> of the HTML content
-on the <a href="https://www.ioccc.org">official IOCCC web site</a>.</p>
+on the <a href="https://www.ioccc.org">official IOCCC website</a>.</p>
 <p>These files are used to form <strong>MOST</strong> of the HTML content
-on the <a href="https://ioccc-src.github.io/temp-test-ioccc/">experimental web site</a>.</p>
+on the <a href="https://ioccc-src.github.io/temp-test-ioccc/">experimental website</a>.</p>
 <p>… and in particular files under <a href="../inc/index.html">inc</a> that are of the form
 (called default HTML files) …:</p>
 <pre><code>    *.default.html</code></pre>
@@ -768,7 +768,7 @@ solutions available to form web pages.</p>
 </div>
 <p>Here are some reasons why we are using these files and
 special tools to create HTML content / IOCCC web pages:</p>
-<p>We host <a href="https://www.ioccc.org">official IOCCC web site</a> via <a href="https://pages.github.com">GitHub
+<p>We host <a href="https://www.ioccc.org">official IOCCC website</a> via <a href="https://pages.github.com">GitHub
 pages</a>. As of the time this file written, <strong>only
 static web pages are supported</strong>.</p>
 <h2 id="we-cannot-use-server-side-include">We cannot use server side include</h2>
@@ -793,7 +793,7 @@ only to find that the generous benefactor moves on, or their service is purchase
 by someone else who is not so generous. While it is possible that GitHub might someday
 suffer a similar fate, for the time being we are betting that GitHub will remain
 willing to host the IOCCC.</p>
-<p>The <a href="https://www.ioccc.org">official IOCCC web site</a> is, after all, primarily C
+<p>The <a href="https://www.ioccc.org">official IOCCC website</a> is, after all, primarily C
 source code with some supporting documentation (sometimes :-) ). As such it is
 a natural fit for GitHub and <a href="https://pages.github.com">GitHub pages</a>.</p>
 <h2 id="we-cannot-use-the-html-object-element">We cannot use the HTML <code>&lt;object&gt;</code> element</h2>
@@ -823,7 +823,7 @@ all of those screen size contexts.</p>
 <p>We do not use JavaScript to include HTML content.</p>
 <p>While the IOCCC may use JavaScript in the future to directly render things like
 C source code, we will do so in such a way that someone will be able to view
-<a href="https://www.ioccc.org">official IOCCC web site</a> content with JavaScript
+<a href="https://www.ioccc.org">official IOCCC website</a> content with JavaScript
 disabled.</p>
 <p>The IOCCC will <strong>NOT MANDATE USE OF JavaScript</strong> to view <a href="https://www.ioccc.org">official IOCCC web
 site</a>.</p>

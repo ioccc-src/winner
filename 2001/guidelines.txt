@@ -769,7 +769,7 @@ ANNOUNCEMENT OF WINNERS:
 
     In Jan or Feb 2002 the judges will post an initial announcement of who     |
     won, the name of their award, and a very brief description of the	       |
-    winning entry on the IOCCC web site:				       |
+    winning entry on the IOCCC website:				       |
 									       |
 	    https://www.ioccc.org/whowon.html				       |
 									       |
@@ -786,7 +786,7 @@ ANNOUNCEMENT OF WINNERS:
 									       |
     Sometime after the initial announcement, and once the review by	       |
     the winners has been completed (perhaps Feb or Mar 2002), the winning      |
-    source will be posted to the IOCCC web site:		               |
+    source will be posted to the IOCCC website:		               |
 									       |
 	    https://www.ioccc.org/years.html				       |
 									       |

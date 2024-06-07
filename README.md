@@ -1,15 +1,15 @@
 <!-- XXX - This entire section goes away during the final stages of the Great Fork Merge -->
-### This is NOT the official IOCCC web site!
+### This is NOT the official IOCCC website!
 
-Please visit [www.ioccc.org](https://www.ioccc.org) for the official **IOCCC** web site.
+Please visit [www.ioccc.org](https://www.ioccc.org) for the official **IOCCC** website.
 
-Please do NOT bookmark or link to this [experimental web site](https://ioccc-src.github.io/temp-test-ioccc/).
+Please do NOT bookmark or link to this [experimental website](https://ioccc-src.github.io/temp-test-ioccc/).
 
 When this experiment is finished, this site will go away!
 
 This test web tree is part of the [temp-test-ioccc GitHub repo](https://github.com/ioccc-src/temp-test-ioccc).
 
-This web site will be undergoing major changes, so expect many
+This website will be undergoing major changes, so expect many
 broken links, typos and other problems. If you wish to recommend
 changes (understanding that things may be rapidly changing out from
 under your copy), then consider making pull requests against the
@@ -42,7 +42,7 @@ mealy-mouthed denials and obfuscations.
     late Middle English: from late Latin **obfuscatio(n-)**, from **obfuscare**
     'to darken or obscure' (see *obfuscate*).
 
-The official IOCCC web site is [www.ioccc.org](https://www.ioccc.org).
+The official IOCCC website is [www.ioccc.org](https://www.ioccc.org).
 
 ## How it was started:
 

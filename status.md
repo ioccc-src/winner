@@ -73,7 +73,7 @@ feed](https://fosstodon.org/@ioccc).
 
 * Upload the winning code to the [Official IOCCC winner repo](https://github.com/ioccc-src/winner)
 
-* Update the [Official IOCCC web site](index.html), and in particular
+* Update the [Official IOCCC website](index.html), and in particular
 display this year's winning IOCCC entries at the top of the [IOCCC
 winning entries page](years.html).
 

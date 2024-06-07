@@ -158,7 +158,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 	-u repo_url	Base level URL of target git repo (def: $REPO_URL)
 			NOTE: The '-u repo_url' is passed as leading options on tool command lines.
-	-w site_url	Base URL of the web site (def: $SITE_URL)
+	-w site_url	Base URL of the website (def: $SITE_URL)
 			NOTE: The '-w site_url' is passed as leading options on tool command lines.
 
 	tool		the tool to run over all entries

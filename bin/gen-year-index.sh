@@ -133,7 +133,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 	-T md2html.sh	run 'markdown to html tool' to convert markdown into HTML (def: $MD2HTML_SH)
 
 	-u repo_url	Base level URL of target git repo (def: $REPO_URL)
-	-w site_url	Base URL of the web site (def: $SITE_URL)
+	-w site_url	Base URL of the website (def: $SITE_URL)
 
 	YYYY		path from topdir to year directory: must contain the files: README.md, .path and .entry.json
 	[more_options]	additional tool command line options to use before the YYYY argument

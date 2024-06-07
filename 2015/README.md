@@ -9,7 +9,7 @@ source and try to figure how it does what it does!  You may then wish to look at
 the Author's remarks for even more details. This year we included most of the
 information included by the submitter.
 
-The IOCCC has a web site and now has a number of international mirrors.
+The IOCCC has a website and now has a number of international mirrors.
 The primary site can be found at [www.ioccc.org](https://www.ioccc.org).
 
 Use `make` to compile entries.  It is possible that on non-Unix / non-Linux

@@ -84,8 +84,8 @@ The IOCCC submission URL:
 Please wait to submit your entries until after that time.
 
 The official rules, guidelines and iocccsize.c tool will be available
-on the official IOCCC web site on or slightly before start of this IOCCC.
-Please check the IOCCC web site "How to enter" link:
+on the official IOCCC website on or slightly before start of this IOCCC.
+Please check the IOCCC website "How to enter" link:
 
 ```
     https://www.ioccc.org/index.html#enter
@@ -897,7 +897,7 @@ by a git commit to the IOCCC entries repo:
     https://github.com/ioccc-src/winner
 ```
 
-that, in turn, updates the offivial IOCCC web site:
+that, in turn, updates the offivial IOCCC website:
 
 ```
     https://www.ioccc.org/index.html
@@ -1031,7 +1031,7 @@ to be sure they are seeing the most recent tweets.
 
 The judges will then post an initial announcement of who won, the name
 of their award, and a very brief description of the winning entry
-on the IOCCC web site:
+on the IOCCC website:
 
 ```
     https://www.ioccc.org/whowon.html
@@ -1052,7 +1052,7 @@ and test our Makefile.  This review process typically takes a few weeks.
 
 Sometime after the initial announcement, and once the review
 by the winners has been completed, the winning source will be
-posted to the IOCCC web site:
+posted to the IOCCC website:
 
 ```
     https://www.ioccc.org/years.html
@@ -1072,7 +1072,7 @@ by a git commit to the IOCCC entries repo:
     https://github.com/ioccc-src/winner
 ```
 
-that, in turn, updates the official IOCCC web site:
+that, in turn, updates the official IOCCC website:
 
 ```
     https://www.ioccc.org/index.html

@@ -86,7 +86,7 @@ for **important information** on how to submit to the IOCCC.
 Please wait to submit your entries until after that time.
 
 The official rules, guidelines and iocccsize.c tool will be available
-on the official IOCCC web site on or slightly before start of this IOCCC.
+on the official IOCCC website on or slightly before start of this IOCCC.
 
 
 Please recheck on or after the start of this IOCCC to be sure you
@@ -388,7 +388,7 @@ The rules and the guidelines may (and often do) change from year to
 year.  You should be sure you have the current rules and guidelines
 prior to submitting entries.
 
-**`|`** See the [Official IOCCC web site](../index.html) for additional information.
+**`|`** See the [Official IOCCC website](../index.html) for additional information.
 
 For the updates and breaking IOCCC news, you are encouraged to follow
 the twitter handle:
