@@ -48,7 +48,7 @@ Papers Submission:
 Submissions should be original and limited to 5 double-column pages,
 and should follow IEEE paper templates. Paper with more pages can be
 accepted however they need to be reduced to 5 pages for publication.
-Papers are to be submitted electronically on the EDAS website of the
+Papers are to be submitted electronically on the EDAS web site of the
 conference in PDF format.
 
 http://edas.info//N10969

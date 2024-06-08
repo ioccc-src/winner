@@ -4407,6 +4407,19 @@ Cody also added the [try.sh](%%REPO_URL%%/2011/borsanyi/try.sh) script.
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/dlowe/try.sh) script.
 
+Cody also fixed a problem in the manifest, caused by a file name that would be
+interpreted as something else in web servers and would thus be a 404 error even
+though the file appears to exist on disk. In particular the file
+`2011/dlowe/dlowe-aux-data/english-0/CIR_APE_08_doc%5B1%5D.txt` had to be
+renamed to `CIR_APE_08_doc.txt` because web servers would parse it as
+`CIR_APE_08_doc[1].txt` which obviously does not exist as on disk the file name had
+the html encoding literally for the characters, not the characters they
+translate to themselves (which was in the manifest).
+The file could have been named to that but it is not POSIX safe so the `[]`s
+were removed.  At the same time, for the same reason (though the link worked),
+the file `2011/dlowe/dlowe-aux-data/png-1/image_thumb[40].png` was renamed to
+`image_thumb.png`.
+
 
 <div id="2011_eastman">
 ## Winning entry: [2011/eastman](2011/eastman/index.html)

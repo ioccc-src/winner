@@ -3500,6 +3500,18 @@ entries?</a> for more details.</p>
 <h3 id="winning-entry-source-code-dlowe.c-2">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe//dlowe.c">dlowe.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/try.sh">try.sh</a> script.</p>
+<p>Cody also fixed a problem in the manifest, caused by a file name that would be
+interpreted as something else in web servers and would thus be a 404 error even
+though the file appears to exist on disk. In particular the file
+<code>2011/dlowe/dlowe-aux-data/english-0/CIR_APE_08_doc%5B1%5D.txt</code> had to be
+renamed to <code>CIR_APE_08_doc.txt</code> because web servers would parse it as
+<code>CIR_APE_08_doc[1].txt</code> which obviously does not exist as on disk the file name had
+the html encoding literally for the characters, not the characters they
+translate to themselves (which was in the manifest).
+The file could have been named to that but it is not POSIX safe so the <code>[]</code>s
+were removed. At the same time, for the same reason (though the link worked),
+the file <code>2011/dlowe/dlowe-aux-data/png-1/image_thumb[40].png</code> was renamed to
+<code>image_thumb.png</code>.</p>
 <div id="2011_eastman">
 <h2 id="winning-entry-2011eastman">Winning entry: <a href="2011/eastman/index.html">2011/eastman</a></h2>
 <h3 id="winning-entry-source-code-eastman.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/eastman//eastman.c">eastman.c</a></h3>

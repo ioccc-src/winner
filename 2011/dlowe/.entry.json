@@ -162,7 +162,7 @@
 	    "entry_text" : "training text for neural networks"
 	},
 	{
-	    "file_path" : "dlowe-aux-data/english-0/CIR_APE_08_doc%5B1%5D.txt",
+	    "file_path" : "dlowe-aux-data/english-0/CIR_APE_08_doc.txt",
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
@@ -346,7 +346,7 @@
 	    "entry_text" : "training image for neural networks"
 	},
 	{
-	    "file_path" : "dlowe-aux-data/png-1/image_thumb[40].png",
+	    "file_path" : "dlowe-aux-data/png-1/image_thumb.png",
 	    "inventory_order" : 220,
 	    "OK_to_edit" : true,
 	    "display_as" : "image",

@@ -1683,7 +1683,7 @@
 2011/dlowe/dlowe-aux-data/english-0/040604.txt
 2011/dlowe/dlowe-aux-data/english-0/2001-2002.txt
 2011/dlowe/dlowe-aux-data/english-0/CFP_TSI_Graphes_appel.txt
-2011/dlowe/dlowe-aux-data/english-0/CIR_APE_08_doc%5B1%5D.txt
+2011/dlowe/dlowe-aux-data/english-0/CIR_APE_08_doc.txt
 2011/dlowe/dlowe-aux-data/english-0/admin_fr.txt
 2011/dlowe/dlowe-aux-data/english-0/agenda.txt
 2011/dlowe/dlowe-aux-data/english-0/paris.txt
@@ -1715,7 +1715,7 @@
 2011/dlowe/dlowe-aux-data/png-1/control_flow_obfuscation_before.png
 2011/dlowe/dlowe-aux-data/png-1/deceive-inveigle-obfuscate-t-shirts.png
 2011/dlowe/dlowe-aux-data/png-1/help_obfuscation1.png
-2011/dlowe/dlowe-aux-data/png-1/image_thumb[40].png
+2011/dlowe/dlowe-aux-data/png-1/image_thumb.png
 2011/dlowe/dlowe-aux-data/png-1/jquery_after_deobfuscation.png
 2011/dlowe/dlowe-aux-data/png-1/obfuscate4e.png
 2011/dlowe/dlowe-aux-data/png-1/obfuscation-decoder.png
