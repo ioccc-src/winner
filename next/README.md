@@ -15,26 +15,26 @@ are official, to be sure you are **using an up to date official mkiocccentry too
 # Important disclaimers about scope
 
 
-### When the IOCCC status is closed
+### When the IOCCC status is _closed_
 
-When the IOCCC status is closed, the [rules](rules.html) and [guidelines](guidelines.html)
+When the IOCCC status is _closed_, the [rules](rules.html) and [guidelines](guidelines.html)
 are **OUT OF DATE**.
 
 They are a **very tentative proposal** for the next IOCCC
 that is **VERY LIKELY** to be updated before the next IOCCC.
-They are are provided as a **tentative** hint at what
-might be used for the next IOCCC.
+They are are provided as a **tentative** hint **at what
+might be used** for the next IOCCC.
 
 **IMPORTANT**: All **tentative** [rules](rules.html) and [guidelines](guidelines.html)
-are subject to change by the [IOCCC judges](../judges.html) at any time.
+are **subject to change by the [IOCCC judges](../judges.html) at _ANY_ time**.
 See both the [IOCCC news](../news.html) and the [IOCCC
 Mastodon](https://fosstodon.org/@ioccc) feed as _sometimes_ the
-[IOCCC judges](../judges.html) _mention_ changes there.
+[IOCCC judges](../judges.html) **mention changes** there.
 
 
-### When the IOCCC status is pending
+### When the IOCCC status is _pending_
 
-When the IOCCC status is pending, the [rules](rules.html) and [guidelines](guidelines.html) are
+When the IOCCC status is **_pending_**, the [rules](rules.html) and [guidelines](guidelines.html) are
 **tentative**.
 
 One might think of them as a **beta** release for the IOCCC
@@ -44,12 +44,12 @@ that is about to open.
 are subject to change by the [IOCCC judges](../judges.html) at any time.
 See both the [IOCCC news](../news.html) and the [IOCCC
 Mastodon](https://fosstodon.org/@ioccc) feed as _sometimes_ the
-[IOCCC judges](../judges.html) _mention_ changes there.
+[IOCCC judges](../judges.html) **mention changes** there.
 
 
-### When the IOCCC status is open
+### When the IOCCC status is _open_
 
-When the IOCCC status is open, the [rules](rules.html) and [guidelines](guidelines.html) are **OFFICIAL**.
+When the IOCCC status is **_open_**, the [rules](rules.html) and [guidelines](guidelines.html) are **OFFICIAL**.
 
 Unless some significant problem turns up (such as a need to delay
 in when the IOCCC will close, or some major bug is discovered) they
@@ -57,13 +57,13 @@ will remain **OFFICIAL** for this IOCCC.
 
 **SUGGESTION**: Watch both the [IOCCC news](../news.html) and the [IOCCC
 Mastodon](https://fosstodon.org/@ioccc) feed for the latest news
-about any _mentions_ changes.
+about any **changes**.
 
 
-### When the IOCCC status is judging
+### When the IOCCC status is _judging_
 
-When the IOCCC status is judging, the [rules](rules.html) and [guidelines](guidelines.html) are
-for the current IOCCC that is no **longer open for new submissions**.
+When the IOCCC status is **_judging_**, the [rules](rules.html) and [guidelines](guidelines.html) are
+for the current IOCCC **that is _no longer open_ for new submissions**.
 
 See the [IOCCC news](../news.html) and well as the [IOCCC
 Mastodon](https://fosstodon.org/@ioccc) feed for updates
