@@ -4,6 +4,8 @@
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
+# .. with very minor improvements in June 2024 by Cody Boone Ferguson.
+#
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
 # provided that the above copyright, this permission notice and text
@@ -225,7 +227,7 @@ function output_award
 	echo "$0: ERROR: in output_award: no award found in .entry.json file: $ENTRY_JSON_PATH" 1>&2
 	return 5
     fi
-    echo "$AWARD_STRING"
+    echo "**$AWARD_STRING**"
     return 0
 }
 
@@ -586,7 +588,7 @@ EOF
       "$FMT_TOOL" -w 120 |
       sed -e 's/ / | /g' -e 's/$/<br><br>/' -e '$s/<br><br>//'
     echo
-    echo '**Jump to** the [year level tarballs](#year_level)'
+    echo '[**Year level tarballs**](#year_level)'
     echo
 
 } | if [[ -z $NOOP ]]; then
@@ -668,8 +670,8 @@ for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
 	echo "<div id=\"$YYYY\">"
 	echo "## $YYYY - The $ORDINAL IOCCC"
 	echo
-	echo "**About** the [$ORDINAL IOCCC]($YYYY/index.html)<br>"
-	echo "**Download** all [$YYYY IOCCC entry source]($YYYY/$YYYY.tar.bz2)</div>"
+	echo "[**About the $ORDINAL IOCCC &#40;$YYYY&#41;**]($YYYY/index.html).<br>"
+	echo "[**Download all IOCCC winning entries of $YYYY**]($YYYY/$YYYY.tar.bz2).</div>"
 	echo
     } | if [[ -z $NOOP ]]; then
 	cat >> "$TMP_YEARS_MD"
@@ -795,7 +797,7 @@ for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
 
 	# output markdown for this entry
 	#
-	echo "* <div id=\"${YEAR_DIR}_${ENTRY_DIR}\">[$YYYY_DIR]($YYYY_DIR/index.html) - $AWARD</div>"
+	echo "* <div id=\"${YEAR_DIR}_${ENTRY_DIR}\">[**$YYYY_DIR**]($YYYY_DIR/index.html) - $AWARD</div>"
     done | if [[ -z $NOOP ]]; then
         cat >> "$TMP_YEARS_MD"
     else
@@ -834,7 +836,7 @@ done
     echo '</div></div>'
     echo
     for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
-	echo "* Download all [$YYYY IOCCC entry source]($YYYY/$YYYY.tar.bz2)<br>"
+	echo "[**Download all IOCCC winning entries of $YYYY**]($YYYY/$YYYY.tar.bz2).<br>"
     done
     echo
     echo '&nbsp;**Jump to:** [top](#)'
