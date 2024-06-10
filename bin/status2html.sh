@@ -20,6 +20,8 @@
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
+# ... with minor improvements made in June 2024 by Cody Boone Ferguson.
+#
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
 # provided that the above copyright, this permission notice and text
@@ -450,17 +452,18 @@ esac
 	;;
     closed) echo "# The IOCCC is closed"
         echo
-	echo "The IOCCC is **NOT** accepting new submissions at this time.  See the" \
+		echo "The IOCCC is **NOT** accepting [new submissions](faq.html#submit) at this time.  See the" \
 	     "[IOCCC winning entries page](years.html) for the entries that have won the IOCCC."
 	echo
-	echo "Watch both [the IOCCC status page](status.html) and the" \
+	echo "Watch both [this IOCCC status page](status.html) and the" \
 	     "[@IOCCC mastodon feed](https://fosstodon.org/@ioccc) for information about future IOCCC openings."
 	;;
     *) echo "# The IOCCC status is unknown"
         echo
 	echo "The IOCCC status is an unexpected status value: $CONTEST_STATUS"
         echo
-        echo "This is a **BUG**, not a feature.  Feel free to report it!"
+        echo "This is a **BUG**, not a feature.  Feel free to report it!" 1>&2
+		echo "See the [GitHub issues page](https://github.com/ioccc-src/temp-test-ioccc/issues/new/choose}." 1>&2
 	;;
     esac
     echo

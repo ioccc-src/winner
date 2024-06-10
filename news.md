@@ -1,12 +1,53 @@
 # For more news, try mastodon
 
-### Please follow** the [IOCCC on Mastodon](https://fosstodon.org/@ioccc)
+### Please follow the [IOCCC on Mastodon](https://fosstodon.org/@ioccc)
 
 We use Mastodon to make minor announcements, in addition to announcing
 major events such as the opening of a new IOCCC, or who won.
 
 See "[FAQ 6.12: What is Mastodon and why does IOCCC use it?](faq.html#try_mastodon)" for more
 information on Mastodon.
+
+<div id="news">
+# News
+</div>
+
+## 2024-06-08
+
+We continue to make good progress on the
+[temp-test-ioccc website](https://ioccc-src.github.io/temp-test-ioccc/)
+via the [temp-test-ioccc](https://github.com/ioccc-src/temp-test-ioccc) repo.
+
+One of the [largest html
+files](thanks-for-help.html) has
+been checked for broken links which leaves two longer files to go. These two
+files are the [bugs.html](bugs.html)
+file and the [FAQ](faq.html).
+
+However, where it was thought that those two files would be looked at before the
+other html files, it has been decided that they will be done after the other
+files as it is very possible that some things in these two files will have to be
+changed or added as the other files are reviewed for broken links.
+
+As of today, 08 June 2024, the top level html files are being looked at, with at
+least three done already ([judges.html](judges.html), [news.html](news.html) and
+[status.html](status.html)). This should not take more than a few days if things
+go as planned, as these files are small and should be relatively quick and easy
+to check for broken links. Of course, some of these, like the
+[news.html](news.html) and possibly [status.html](status.html) will likely have to be
+checked again but as for [news.html](news.html) the dates up to and including _08
+June 2024_ have been checked for invalid links so that only new news updates
+will have to be checked.
+
+Once those are done the html files of all the entries will be looked at. As
+those are being reviewed it the [bugs.html](bugs.html) might very well be
+updated and the [FAQ](faq.html) might be as well.  This is why, as noted above,
+we have decided to review these files last, in order to save time and effort in
+not having to look at them more than once on a whole, other than possible
+entries that have to be added at the end, like the example below.
+
+Once the _submit server_ server is ready another FAQ will be added and that
+entry can be looked at alone.
 
 
 ## 2024-05-30
@@ -19,7 +60,7 @@ via the [temp-test-ioccc](https://github.com/ioccc-src/temp-test-ioccc) repo.
 number to 5260 commits to date.  The
 [temp-test-ioccc](https://github.com/ioccc-src/temp-test-ioccc)
 repo is now 5159 commits ahead of the [IOCCC
-winner[(https://github.com/ioccc-src/winner) repo.
+winner](https://github.com/ioccc-src/winner) repo.
 
 Multiple **((top priority))** issues have been resolved or completed.
 Only one **((top priority))** issue, [issue
@@ -34,7 +75,7 @@ there are two more before we can look at the other files.
 The [issue 2239](https://github.com/ioccc-src/temp-test-ioccc/issues/2239)
 TODO list has 10 out of 51 sub-tasks completed.  That might not
 seem like much progress, but keep in mind that some of those 10
-tasks look many months and thousands of commits to complete.
+tasks took many months and thousands of commits to complete.
 Moreover, most of the remaining 41 TODO items are short "checkbox"
 tasks.  The final 31 TODO items are planned to be completed in about
 a single day.
@@ -205,11 +246,11 @@ of the most recent news item.
 
 ## 2022-12-18
 
-As per the suggestion of [Toni Mikkola](https://fosstodon.org/@Virtaava@home.social)
-(_@Virtaava@home.social_) we now maintain a
-[status.json](status.json) page on this website.
+As per the suggestion of [Toni Mikkola
+&#x28;@Virtaava@home.social&#x29;](https://fosstodon.org/@Virtaava@home.social)
+we now maintain a [status.json](status.json) page on this website.
 
-In addition to the IOCCC-style _easter egg_, you may count on
+In addition to the IOCCC-style _Easter egg_, you may count on
 the JSON status page having a JSON member with name of **"contest"**
 that will have a value of either **"closed"** or **"open"**.
 When a future **IOCCC** is announced or the IOCCC is currently open,
@@ -229,7 +270,7 @@ and/or follow us on Mastodon via **@ioccc@fosstodon.org**.
 
 ## 2022-11-29
 
-We are plan to abandon our
+We are planning to abandon our
 [IOCCC Twitter feed](https://twitter.com/ioccc)
 in favor of our new [IOCCC Mastodon](https://fosstodon.org/@ioccc) feed.
 
@@ -263,7 +304,7 @@ If you do not yet have a Mastodon account, you may obtain a **free mastodon acco
 If you do have / obtain a Mastodon account, **please do us a favor and follow the IOCCC at**:
 
 ```
-    **@ioccc@fosstodon.org**
+    @ioccc@fosstodon.org
 ```
 
 The IOCCC wishes to thank the good folk running the

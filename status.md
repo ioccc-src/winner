@@ -1,80 +1,93 @@
 # format
 
-The following JSON members are required to be present [status.json](status.json).
+The following **JSON** members are required to be present [status.json](status.json).
 
 
+<div id="no_comment">
 ## no_comment
+</div>
 
 This is a **mandatory** comment for which we offer no comment other
 than this comment.  :-)
 
-The JSON member value must be the following JSON quoted string:
+The **JSON** member value must be the following **JSON** quoted string:
 
 ``` <!---json-->
     "mandatory comment: because comments were removed from the original JSON spec"
 ```
 
 
+<div id="IOCCC_status_version">
 ## IOCCC_status_version
+</div>
 
 This is the version of format of the [status.json](status.json) file.
 
-The JSON member value of is a JSON quoted string the form "_version YYYY-MM-DD_".
+The **JSON** member value of is a **JSON** quoted string the form "_version YYYY-MM-DD_".
 
 This document describes version "**1.0 2024-03-09**".
 
 
+<div id="contest_status">
 ## contest_status
+</div>
 
-The current status of the IOCCC.
+The current status of the [IOCCC](index.html).
 
-The following JSON member value string may be one of the following JSON quoted strings:
+The following **JSON** member value string may be one of the following **JSON** quoted strings:
 
 
+<div id="pending">
 #### "**pending**"
+</div>
 
-The IOCCC is not yet open, however there is a tentative scheduled
-date and time by which the IOCCC will open for submissions.
+The [IOCCC](index.html) is not yet [open](#open), however there is a tentative scheduled
+date and time by which the [IOCCC](index.html) will open for submissions.
 
-A preliminary IOCCC rules, guidelines, and tools have been posted.
+A preliminary [IOCCC](index.html) rules, guidelines, and tools have been posted.
 Comments and suggestions on these preliminary items are welcome.
 See the [IOCCC news](news.html) for details including the tentative
 scheduled opening date.
 
 
+<div id="open">
 #### "**open**"
+</div>
 
-The IOCCC is open for submissions.
+The [IOCCC](index.html) is [open](#open) for [submissions](faq.html#submit).
 
 See the [IOCCC news](news.html) page for details on rules, guidelines, tools and deadlines.
 
-Be sure to review the official IOCCC rules, guidelines, and tools
-for any changes that may have been made while the IOCCC was "**pending**".
+Be sure to review the official [IOCCC](index.html) rules, guidelines, and tools
+for any changes that may have been made while the [IOCCC](index.html) was "**pending**".
 
-
+<div id="judging">
 #### "**judging**"
+</div>
 
-The IOCCC is closed to new submissions.  The [IOCCC judges](judges.html)
-are in the process of judging the submissions they received while
-the IOCCC was open.
+The [IOCCC](index.html) is [closed](#closed) to new submissions.  The [IOCCC judges](judges.html)
+are in the process of judging the [submissions](faq.html#faq2_0) they received while
+the [IOCCC](index.html) was open.
 
 Watch the [@IOCCC mastodon feed](https://fosstodon.org/@ioccc) for updates.
 
-Once the [IOCCC](index.html) closes, the judges will:
+Once the [IOCCC](index.html) [closes](#closed), the judges will:
 
-* Select the [winning entries](years.html) announce them on the [@IOCCC
+* Select the [winning entries](years.html) and announce them on the [@IOCCC
 mastodon feed](https://fosstodon.org/@ioccc).
 
-* Notify the authors of entries that won the IOCCC via email using their previously
-registered email address.
+* Notify the [authors](authors.html) of entries that won the [IOCCC](index.html)
+via email using their registered email address.
 
-* Announce who are authors of this year's winning IOCCC entries via the [@IOCCC mastodon
+* Announce who the [authors](authors.html) are of this year's [winning IOCCC
+entries](years.html) via the [@IOCCC mastodon
 feed](https://fosstodon.org/@ioccc).
 
-* Upload the winning code to the [Official IOCCC winner repo](https://github.com/ioccc-src/winner)
+* Upload the winning code to the [Official IOCCC winner
+repo](https://github.com/ioccc-src/winner).
 
 * Update the [Official IOCCC website](index.html), and in particular
-display this year's winning IOCCC entries at the top of the [IOCCC
+display this year's [winning IOCCC entries](years.html) at the top of the [IOCCC
 winning entries page](years.html).
 
 * Update the [IOCCC news](news.html) page.
@@ -82,22 +95,27 @@ winning entries page](years.html).
 
 #### "**closed**"
 
-The IOCCC is closed and is **NOT** accepting new submissions.
+The [IOCCC](index.html) is closed and is **NOT** accepting [new
+submissions](faq.html#submit).
 
-See the [IOCCC winning entries page](years.html) for the entries that have won the IOCCC.
+See the [IOCCC winning entries page](years.html) for the entries that have won
+the [IOCCC](index.html).
 
-**NOTE**: From time to time, winning IOCCC entries may have their write-ups updated,
-Makefiles improved and source code fixed.  See [IOCCC news](news.html) for details.
+**NOTE**: From time to time, [winning IOCCC entries](years.html) may have their write-ups updated,
+`Makefiles` improved, source code fixed etc.  See [IOCCC news](news.html) for details.
 
-Watch both [the IOCCC status page](status.html) and  [@IOCCC
-mastodon feed](https://fosstodon.org/@ioccc) for information about future IOCCC openings.
+Watch both [this IOCCC status page](status.html) and the [@IOCCC
+mastodon feed](https://fosstodon.org/@ioccc) for information about future
+[IOCCC](index.html) [openings](#open).
 
 
+<div id="news_update">
 ## news_update
+</div>
 
 This shows the latest modification date for the [IOCCC news](news.html) page.
 
-The JSON member value is a JSON quoted string obtained from the date field
+The **JSON** member value is a **JSON** quoted string obtained from the date field
 of the following `ls(1)` command:
 
 ``` <!---ls-->
@@ -106,16 +124,18 @@ of the following `ls(1)` command:
 
 **NOTE**: The date and time are given with respect to **UTC** timezone.
 
-**Sorry**: It is possible that for some reason, the [IOCCC news](news.html) page
+**NOTE**: It is possible that for some reason, the [IOCCC news](news.html) page
 was modified without the content being changed.  While we will try to minimize
 the cases where this happen, we apologize in advance (Sorry tm Canada 🇨🇦) when it does.
 
 
+<div id="status_update">
 ## status_update
+</div>
 
-This shows the latest modification date [status.json](status.json) file.
+This shows the latest modification date of [status.json](status.json) file.
 
-The JSON member value is a JSON quoted string obtained from the date field
+The **JSON** member value is a **JSON** quoted string obtained from the date field
 of the following `ls(1)` command:
 
 ``` <!---ls-->
@@ -124,7 +144,7 @@ of the following `ls(1)` command:
 
 **NOTE**: The date and time are given with respect to **UTC** timezone.
 
-**Sorry**: It is possible that for some reason, the [status.json](status.json) file
+**NOTE**: It is possible that for some reason, the [status.json](status.json) file
 was modified without the content being changed.  While we will try to minimize
 the cases where this happen, we apologize in advance (Sorry tm Canada 🇨🇦) when it does.
 
