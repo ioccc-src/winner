@@ -2,7 +2,7 @@
 
 # WARNING: These rules are OUT OF DATE
 
-They are a **very tentative proposal** for the next IOCCC
+These rules are a **very tentative proposal** for the next IOCCC
 that is **VERY LIKELY** to be updated before the next IOCCC.
 They are are provided as a **very tentative** hint at what
 might be used in a future IOCCC.
@@ -20,14 +20,14 @@ Watch both [the IOCCC status page](../status.html) and the
 
 <!-- END: the next line ends content from: inc/rules.closed.hdr -->
 <!-- This is the last line modified by the tool: bin/gen-status.sh -->
-# 27th International Obfuscated C Code Contest Official Rules
+# 28th International Obfuscated C Code Contest Official Rules
 
 **`|`** Copyright &copy; 2024 Leonid A. Broukhis, Landon Curt Noll.
 
 All Rights Reserved.  Permission for personal, education or non-profit use is
 granted provided this this copyright and notice are included in its entirety
 and remains unaltered.  All other uses must receive prior permission in
-writing from the [contest judges](../contact.html).
+writing by [contacting the judges](../contact.html).
 
 
 ## Rules version
@@ -41,7 +41,8 @@ writing from the [contest judges](../contact.html).
 
 **`|`** **&larr; Lines that start with this symbol indicate a change from the previous IOCCC**
 
-Most lines (we sometimes make mistakes) that were modified start the **`|`** symbol.
+Most lines (we sometimes make mistakes) that were modified since the previous
+IOCCC start the **`|`** symbol.
 
 
 # Obfuscate defined:
@@ -72,8 +73,11 @@ The goals of the IOCCC:
 **`|`** This IOCCC runs from **2019-Dec-26 06:01:41 UTC** to **2020-Mar-15 06:26:49 UTC**.
 
 Until the start of this IOCCC, these rules, guidelines and iocccsize.c
-tool should be considered provisional BETA versions and may be
-adjusted at any time.
+(contained in the [mkiocccentry
+toolkit](https://github.com/ioccc-src/mkiocccentry) and invoked by the
+`mkiocccentry` tool)
+should be considered provisional **BETA** versions and may be
+adjusted **AT ANY TIME**.
 
 When the IOCCC is open, the submission URL is:
 [https://submit.ioccc.org/](https://submit.ioccc.org/), at all other
@@ -85,9 +89,10 @@ for **important information** on how to submit to the IOCCC.
 **`|`** The submit URL should be active on or slightly before **2020-Jan-15 12:21:37 UTC**.
 Please wait to submit your entries until after that time.
 
-The official rules, guidelines and iocccsize.c tool will be available
-on the official IOCCC website on or slightly before start of this IOCCC.
-
+The official rules, guidelines will be available on the [official IOCCC
+website](../index.html) on or slightly before start of this IOCCC. The
+`mkiocccentry` toolkit may be obtained at any time at the
+[mkiocccentry toolkit repo](https://github.com/ioccc-src/mkiocccentry).
 
 Please recheck on or after the start of this IOCCC to be sure you
 are using the correct versions of these items before using the IOCCC
@@ -111,12 +116,12 @@ Your entry must be a complete program.
 
 ## Rule 2
 
-**`|`** The size rule requires your entry to satisfy BOTH rule 2a and rule 2b:
+**`|`** The size rule requires your entry to satisfy **BOTH** rule 2a and rule 2b:
 
 
 ## Rule 2a
 
-The size of your program source **must be <= 4096 bytes**in length.
+The size of your program source **MUST BE <= 4096 bytes**in length.
 
 ## Rule 2b
 
@@ -125,7 +130,9 @@ tool, and the IOCCC size tool -i command line option is used, the
 value printed **shall not exceed 2053**.
 
 **`|`** The source to the current IOCCC size tool is found in the
-[mkiocccentry tool repo](https://github.com/ioccc-src/mkiocccentry).
+[mkiocccentry tool repo](https://github.com/ioccc-src/mkiocccentry). If you use
+the `mkiocccentry` tool (which we **STRONGLY recommend you do**) will invoke
+this tool before packaging your entry for submission.
 
 
 ## Rule 3
@@ -133,7 +140,7 @@ value printed **shall not exceed 2053**.
 Submissions should be performed using the instructions outlined at:
 the [How to enter link](../faq.html#submit) link.
 
-To submit to an open IOCCC, you must the [IOCCC submit server](https://submit.ioccc.org/).
+To submit to an open IOCCC, you must use the [IOCCC submit server](https://submit.ioccc.org/).
 
 When the IOCCC is not open, that link will likely be unresponsive.
 
@@ -153,18 +160,18 @@ will be called **prog**.
 
 ## Rule 5
 
-Your entry must not modify the content or filename of any part of your
-original entry including, but not limited to prog.c, the Makefile
-(we create from your how to build instructions), as well as any data
+Your entry **MUST** not modify the content or filename of any part of your
+original entry including, but not limited to **prog.c**, the **Makefile**
+(that we create from your how to build instructions), as well as any data
 files you submit.
 
-If you entry wishes to modify such content, it must first copy the
+If you entry wishes to modify such content, it **MUST** first copy the
 file to a new filename and then modify that copy.
 
 
 ## Rule 6
 
-**`|`** I am not a rule, I am a free(void \*man)!
+**`|`** I am not a rule, I am a `free(void \*man)`!
 
 ``` <!---c-->
         while (!understand(ioccc(rule(you(are(number(6))))))) { ha_ha_ha(); }
@@ -175,19 +182,19 @@ file to a new filename and then modify that copy.
 
 The obfuscated C program must be an original work that you own.
 
-You (the authors) must own the contents of your submission OR
-you must have permission from the owners to submit their content
+You (the author(s)) must own the contents of your submission OR
+you must have permission from the owner(s) to submit their content
 under the following license:
 
 **`|`** **[CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)**
 
 See also Rule 18.
 
-If you submit any content that is owned by others, you MUST
+If you submit any content that is owned by others, you **MUST**
 detail that ownership (i.e., who owns what) and document the
 permission you obtained.
 
-Please note that the IOCCC size tool is not an original work.
+Please note that the IOCCC size tool is **NOT** an original work.
 
 
 ## Rule 8
@@ -198,7 +205,8 @@ Please note that the IOCCC size tool is not an original work.
     2020-Mar-15 06:26:49 UTC
 ```
 
-A confirmation of submission will be sent to the submitter email address before the close of the contest.
+A confirmation of submission will be sent to the submitting email address
+before the close of the contest.
 
 
 ## Rule 9
@@ -215,10 +223,10 @@ Entries requiring human interaction to be initially compiled are not permitted.
 
 ## Rule 11
 
-Programs that require special privileges (setuid, setgid, super-user,
+Programs that require special privileges (`setuid(2)`, `setgid(2)`, super-user,
 special owner, special group, etc.) are still highly discouraged. We
 do not guarantee these functions will behave as you expect on our test
-platforms. If your program needs special permissions please document
+platforms. If your program needs special permissions **please** document
 them in the remarks file.
 
 
@@ -226,8 +234,8 @@ them in the remarks file.
 
 Legal abuse of the rules is somewhat encouraged.  An entry that, in
 the opinion of the judges, violates the rules will be disqualified.
-Entries that attempt to abuse the rules must try to justify why
-their rule abuse is legal in the remarks file.
+Entries that attempt to abuse the rules **MUST** try to justify why
+their rule abuse is legal, in the remarks file.
 
 
 ## Rule 13
@@ -239,7 +247,7 @@ the high bit set (octet value >= 128) will be rejected.
 ## Rule 14
 
 Any C source that fails to compile because of lines with trailing
-control-M's (i.e., lines with a tailing octet 015) will be rejected.
+control-M's (i.e., lines with a tailing octet `015`) will be rejected.
 
 Please do not put trailing control-M's on remarks file lines.
 Please check to be sure, before submitting, that you have removed
@@ -265,10 +273,13 @@ After your email address has been confirmed, the submission code will
 be valid for submitting and editing the entry for the lifetime of the
 competition.
 
+See also [How may I submit to the IOCCC?](../faq.html#submit) in the
+[FAQ](../faq.html).
+
 
 ## Rule 16
 
-You are STRONGLY encouraged to submit a previously unpublished and
+You are **STRONGLY** encouraged to submit a previously unpublished and
 original entry. Submissions that are similar to previous entries are
 discouraged. As we judge anonymously, submissions that have already
 been published may be disqualified.
@@ -277,8 +288,10 @@ been published may be disqualified.
 ## Rule 17
 
 The total size of your submission: the sum of the size of the program,
-hints, comments, build and info files MUST be less than or equal
-to 1048576 octets in size.
+hints, comments, build and info files **MUST** be less than or equal
+to 1048576 octets in size. The
+[mkiocccentry toolkit]((https://github.com/ioccc-src/mkiocccentry) will verify
+that your entry is not too big.
 
 
 ## Rule 18
@@ -287,8 +300,8 @@ The entirety of your entry must be submitted under the following license:
 
 **`|`** **[CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)**
 
-You (the authors) must own the contents of your submission OR
-you must have permission from the owners to submit their content
+You (the author(s)) **MUST** own the contents of your submission **OR**
+you **MUST** have permission from the owner(s) to submit their content.
 
 You must not submit anything that cannot be submitted under that license.
 
@@ -296,7 +309,7 @@ You must not submit anything that cannot be submitted under that license.
 ## Rule 19
 
 The remarks file must be written in markdown format. See
-the Daring Fireball {Markdown: Basics](http://daringfireball.net/projects/markdown/basics)
+the Daring Fireball [Markdown: Basics](http://daringfireball.net/projects/markdown/basics)
 for more information.
 
 **`|`** We currently use [pandoc](https://pandoc.org) to convert markdown to HTML.
@@ -304,15 +317,17 @@ for more information.
 
 ## Rule 20
 
-The how to build instructions must be in make form.
+The how to build instructions must be in Makefile format. See [What kind of
+make&#x28;1&#x29; compatibility does the IOCCC support and will it support other
+kinds?](../faq.html#make_compatibility) for more details on what we support.
 
-The target of the make file must be called prog.  The original
-C source file must be called prog.c.
+The target of the Makefile must be called `prog`.  The original
+C source file must be called `prog.c`.
 
 To invoke the C compiler, use `${CC}`.
 To invoke the C preprocessor use `${CPP}`.
 
-Do not assume that . (the current directory) is in the `$PATH`.
+Do not assume that `.` (the current directory) is in the `$PATH`.
 
 Use a shell command syntax that is compatible with bash.
 
@@ -320,16 +335,23 @@ Assume that commands commonly found in POSIX-like / Linux-like systems
 are available in the search path.
 
 Do not assume any particular given value of `${CFLAGS}` or other
-commonly used make variables.
+commonly used make variables. In other words you **MUST** specify the `CFLAGS`
+to use.
+
+See also the
+[Makefile.example](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example)
+for help in constructing your Makefile. The `mkiocccentry`, which can be found
+at the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry), tries to
+detect if required rules exist in your Makefile.
 
 
 ## Rule 21
 
-Your entry must not create nor modify files above the current directory
+Your entry must not create or modify files above the current directory
 with the exception of the `/tmp` and the `/var/tmp` directories.  Your entry
-may create subdirectories below the current directory, or in /tmp,
-or in `/var/tmp` provided that "**.**" is **not** the first octet in any
-directory name.
+**MAY** create subdirectories below the current directory, or in `/tmp`,
+or in `/var/tmp` provided that "**.**" is **NOT** the first octet in any
+directory name or filename you submit.
 
 
 ## Rule 22
@@ -338,16 +360,16 @@ Catch 22:
 
 Your source code, data files, remarks and program output must **NOT**
 identify the authors of your code.  The judges **STRONGLY prefer** to
-not know who is submitting entries to the IOCCC.
+NOT know who is submitting entries to the IOCCC.
 
 Even if you are a previous IOCCC winner, catch 22 still applies.
 
-Identifying the authors of your entry in an obvious way anywhere
-within in your code, data, remarks or program output (unless you are
+Identifying the author(s) of your entry in an obvious way anywhere
+within your code, data, remarks or program output (unless you are
 _Peter Honeyman_ or pretending to be _Peter Honeyman_) will be grounds
 for disqualification of your entry.
 
-Yes, Virginia, **we really mean it**!
+Yes, Virginia, **we REALLY mean it**!
 
 
 ## Rule 23
@@ -372,16 +394,16 @@ Even though 24 is not prime, you should still see rule #23.
 
 # FOR MORE INFORMATION:
 
-The judging will be done by Leonid A. Broukhis, Simon Cooper,
+The judging will be done by Leonid A. Broukhis and
 Landon Curt Noll.
 
 **`|`** Please send questions or comments about the contest, to:
 
 ```
-    q.2020@ioccc.org
+    q.2024@ioccc.org
 ```
 
-**`|`** **IMPORANT**: You must include the words **ioccc 2020 question**
+**`|`** **IMPORTANT**: You must include the words **ioccc 2024 question**
 in the subject of your email message when sending email to the judges.
 
 The rules and the guidelines may (and often do) change from year to
@@ -413,7 +435,7 @@ to be sure they are seeing the most recent tweets.
 
 **`|`** **The IOCCC no longer uses twitter**.
 
-**`|`** Today the [IOCCC uses Mastodon](../contact.html#mastodon).
+**`|`** Today the [IOCCC uses Mastodon](../contact.html#try_mastodon).
 
 **`|`** For more information and to see our IOCCC Mastodon posts, see:
 
@@ -424,7 +446,6 @@ to be sure they are seeing the most recent tweets.
 **-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-**
 
 Leonid A. Broukhis<br>
-Simon Cooper<br>
 chongo (Landon Curt Noll) `/\cc/\`
 
 

@@ -384,7 +384,7 @@
 <!-- BEFORE: 1st line of markdown file: next/guidelines.md -->
 <!-- START: this line starts content from: inc/guidelines.closed.hdr -->
 <h1 id="warning-these-guidelines-are-out-of-date">WARNING: These guidelines are OUT OF DATE</h1>
-<p>They are a <strong>very tentative proposal</strong> for the next IOCCC
+<p>These guidelines are a <strong>very tentative proposal</strong> for the next IOCCC
 that is <strong>VERY LIKELY</strong> to be updated before the next IOCCC.
 They are are provided as a <strong>very tentative</strong> hint at what
 might be used in a future IOCCC.</p>
@@ -396,46 +396,48 @@ might be used in a future IOCCC.</p>
 <a href="https://fosstodon.org/@ioccc"><span class="citation" data-cites="IOCCC">@IOCCC</span> mastodon feed</a> for information about future IOCCC openings.</p>
 <!-- END: the next line ends content from: inc/guidelines.closed.hdr -->
 <!-- This is the last line modified by the tool: bin/gen-status.sh -->
-<h1 id="th-international-obfuscated-c-code-contest-official-guidelines">27th International Obfuscated C Code Contest Official Guidelines</h1>
+<h1 id="th-international-obfuscated-c-code-contest-official-guidelines">28th International Obfuscated C Code Contest Official Guidelines</h1>
 <p>Copyright © 2024 Leonid A. Broukhis, Landon Curt Noll.</p>
 <p>All Rights Reserved. Permission for personal, education or non-profit use is
 granted provided this this copyright and notice are included in its entirety
 and remains unaltered. All other uses must receive prior permission in
-writing from the contest judges.</p>
+writing by <a href="../contact.html">contacting the judges</a>.</p>
 <h2 id="guidelines-version">Guidelines version</h2>
 <p><strong><code>|</code></strong> This guidelines file is version <strong>2023-04-04-v28</strong>.</p>
-<p><strong>IMPORTANT</strong>: Be sure to read the <a href="rules.html">IOCCC rules</a>.</p>
+<p><strong>IMPORTANT</strong>: Be <strong>SURE</strong> to read the <a href="rules.html">IOCCC rules</a>.</p>
 <h3 id="change-marks">Change marks</h3>
 <p><strong><code>|</code></strong> <strong>← Lines that start with this symbol indicate a change from the previous IOCCC</strong></p>
-<p>Most lines (we sometimes make mistakes) that were modified start the <strong><code>|</code></strong> symbol.</p>
+<p>Most lines (we sometimes make mistakes) that were modified since the previous
+IOCCC start with the <strong><code>|</code></strong> symbol.</p>
 <h1 id="about-this-file">ABOUT THIS FILE:</h1>
-<p>This file contains guidelines intended to help people who wish to
-submit entries to the International Obfuscated C Code Contest (IOCCC).</p>
-<p>This is not the IOCCC rules, though it does contain comments about
-them. The guidelines should be viewed as hints and suggestions.
+<p>This file contains <em>guidelines</em> intended to help people who wish to
+submit entries to the <a href="https://www.ioccc.org">International Obfuscated C Code Contest
+(IOCCC)</a>.</p>
+<p>These are not the IOCCC rules, though it does contain comments about
+them. The guidelines should be viewed as <em>hints</em> and <em>suggestions</em>.
 Entries that violate the guidelines but remain within the rules are
 allowed. Even so, you are safer if you remain within the guidelines.</p>
-<p>You should read the current IOCCC rules, prior to submitting entries.
+<p>You should read the current <a href="rules.html">IOCCC rules</a>, prior to submitting entries.
 The rules are typically sent out with these guidelines.</p>
 <h1 id="whats-new-in-20192020">WHAT’S NEW IN 2019/2020</h1>
 <p><strong><code>|</code></strong> This IOCCC runs from <strong>2019-Dec-26 06:01:41 UTC</strong> to <strong>2020-Mar-15 06:26:49 UTC</strong>.</p>
 <p><strong><code>|</code></strong> The reason for the times of day are so that key IOCCC events occur during UTC
 <strong><code>|</code></strong> “prime time”. Do you understand why we factored this into the rules and
 <strong><code>|</code></strong> guidelines? :-)</p>
-<p>Until the start of this IOCCC, these rules, guidelines and iocccsize.c tool
-should be considered provisional BETA versions and may be adjusted
-at any time.</p>
+<p>Until the start of this IOCCC, these rules, guidelines and iocccsize.c
+(contained in the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
+toolkit</a>)
+tool should be considered provisional <strong>BETA</strong> versions and may be
+adjusted <strong>AT ANY TIME</strong>.</p>
 <p><strong><code>|</code></strong> Even though the contest will start in 2019, because the contest will close
 <strong><code>|</code></strong> in 2020, URLs, subject lines, and contest related email addresses use 2019.</p>
-<p>The IOCCC submission URL:</p>
-<pre><code>    https://submit.ioccc.org/</code></pre>
+<p>The IOCCC submission URL is <a href="https://submit.ioccc.org/" class="uri">https://submit.ioccc.org/</a>.</p>
 <p><strong><code>|</code></strong> The submit URL should be active on or slightly before <strong>2020-Jan-15 12:21:37 UTC</strong>.</p>
 <p>Please wait to submit your entries until after that time.</p>
-<p>The official rules, guidelines and iocccsize.c tool will be available
+<p>The official rules, guidelines and iocccsize.c (invoked by the mkiocccentry) tool will be available
 on the official IOCCC website on or slightly before start of this IOCCC.
-Please check the IOCCC website “How to enter” link:</p>
-<pre><code>    https://www.ioccc.org/index.html#enter</code></pre>
-<p>on or after the start of this IOCCC to be sure you are using the correct
+Please check the IOCCC FAQ <a href="../faq#submit">How to submit</a>.
+on or after the start of this IOCCC to be sure you are using the correct
 versions of these items before using the IOCCC entry submission URL.</p>
 <h1 id="hints-and-suggestions">HINTS AND SUGGESTIONS:</h1>
 <p>You are encouraged to examine the winners of previous contests. See
@@ -568,9 +570,11 @@ and enjoy your entry.</p>
 So try to ensure that your entry compiles warning free. If possible,
 to compile compile your code using:</p>
 <pre><code>    -Wall -Wextra -pedantic</code></pre>
-<p>For compilers, such as clang, that have the -Weverything option, try
+<p>For compilers, such as clang, that have the <code>-Weverything</code> option, try
 to make your code compile warning free using:</p>
 <pre><code>    -Wall -Wextra -Weverything -pedantic</code></pre>
+<p>.. though see <a href="../faq.html#faq3_11">Why do Makefiles use -Weverything with
+clang?</a> in the <a href="../faq.html">FAQ</a>.</p>
 <p>If you must turn off various warnings on the compile line such as:</p>
 <pre><code>    ... -Wno-empty-body -Wno-return-type ...</code></pre>
 <p>be sure to clearly state so in your remarks AS WELL AS in
@@ -588,7 +592,7 @@ except in one small part (ISO/IEC 9899:2011) where they might not truly
 understand the implications of such words.</p>
 <pre><code>    http://hitchhikers.wikia.com/wiki/Belgium
     http://www.bezem.de/pdf/ReservedWordsInC.pdf</code></pre>
-<p>DO NOT assume that we will use gcc to compile your program.
+<p><strong>DO NOT</strong> assume that we will use gcc to compile your program.
 We will first try to compile your program using Clang.</p>
 <p>It is much better to not use any obscure compiler flags if
 you can help it. We want to discourage the use of obscure compiler
@@ -602,7 +606,7 @@ of nested functions such as:</p>
 |       please_do_not_submit_this();
     }</code></pre>
 <p>This is because such nested functions often requires one to compile with
-a flag such as -fnested-functions that is not found on some compilers.</p>
+a flag such as <code>-fnested-functions</code> that is not found on some compilers.</p>
 <p>On 2012 July 20, the judges rescinded the encouragement of
 nested functions. Such constructions, while interesting and sometimes
 amusing, will have to wait until they required by a C standard that are
@@ -610,23 +614,23 @@ actually implemented in commonly used C compilers. Sorry!</p>
 <p><strong><code>|</code></strong> We prefer programs that do not require a fish license: crayons and
 <strong><code>|</code></strong> cat detector vans not withstanding.</p>
 <p>If your entry uses functions that have a variable number of
-arguments, be careful. Systems implement va_list as a wide variety
-of ways. Because of this, a number of operations using va_list are
+arguments, be careful. Systems implement <code>va_list</code> as a wide variety
+of ways. Because of this, a number of operations using <code>va_list</code> are
 not portable and must not be used:</p>
 <ul>
-<li>assigning a non-va_list variable to/from a va_list variable</li>
-<li>casting a non-va_list variable into/from a va_list variable</li>
-<li>passing a va_list variable to a function expecting a non-va_list arg</li>
-<li>passing a non-va_list variable to a function expecting a va_list arg</li>
-<li>performing arithmetic on va_list variables</li>
-<li>using va_list as a structure or union</li>
+<li>assigning a non-<code>va_list</code> variable to/from a <code>va_list</code> variable</li>
+<li>casting a non-<code>va_list</code> variable into/from a <code>va_list</code> variable</li>
+<li>passing a <code>va_list</code> variable to a function expecting a non-<code>va_list</code> arg</li>
+<li>passing a non-<code>va_list</code> variable to a function expecting a <code>va_list</code> arg</li>
+<li>performing arithmetic on <code>va_list</code> variables</li>
+<li>using <code>va_list</code> as a structure or union</li>
 </ul>
-<p>In particular, do not treat va_list variables as if they were a char **’s.</p>
-<p>Avoid using &lt;varargs.h&gt;. Use &lt;stdarg.h&gt; instead.</p>
+<p>In particular, do not treat <code>va_list</code> variables as if they were a <code>char **</code>s.</p>
+<p>Avoid using <code>varargs.h</code>. Use <code>stdarg.h</code> instead.</p>
 <p>On 28 January 2007, the Judges rescinded the requirement that the
-’#” in a C preprocessor directive must be the 1st non-whitespace octet.</p>
-<p>The exit() function returns void. Some broken systems have exit()
-return int, your entry should assume that exit() returns a void.</p>
+<code>#</code> in a C preprocessor directive must be the 1st non-whitespace octet.</p>
+<p>The <code>exit(3)</code> function returns void. Some broken systems have <code>exit(3)</code>
+return <code>int</code>, your entry should assume that <code>exit(3)</code> returns a <code>void</code>.</p>
 <p><strong><code>|</code></strong> This guideline has a change mark at the very start of this line.</p>
 <p>Small programs are best when they are short, obscure and concise.
 While such programs are not as complex as other winners, they do
@@ -697,13 +701,13 @@ operating systems (i.e., Linux, GNU Hurd, BSD, Unix, etc.).</p>
 <p>There are at least zero judges who think that Fideism has little
 or nothing to do with the IOCCC judging process.</p>
 <p>Don’t forget that the building of your program should be done
-<strong><em>without human intervention</em></strong>. So don’t do things such as:</p>
+<strong><em>WITHOUT human intervention</em></strong>. So don’t do things such as:</p>
 <pre><code>    prog: prog.c
         #echo this next line requires data from standard input
         cat &gt; prog.c
         ${CC} prog.c -o prog</code></pre>
 <p>However, you can do something cute such as making your program
-do something dumb (or cute) when it is built ‘automatically’. And
+do something dumb (or cute) when it is built ‘automatically’, and
 when it is run with a human involved, do something more clever.
 For example, one could use the build instructions:</p>
 <pre><code>    prog: prog.c
@@ -713,14 +717,14 @@ For example, one could use the build instructions:</p>
 alternate / human intervention based building.</p>
 <p>We want to get away from source that is simply a compact blob of
 octets. Really try to be more creative than blob coding. <em>HINT!</em></p>
-<p>Please do not use things like gzip to get around the size limit.
+<p>Please do not use things like <code>gzip(1)</code> to get around the size limit.
 Please try to be much more creative.</p>
 <p>We really dislike entries that make blatant use of including
 large data files to get around the source code size limit.</p>
-<p>We do not recommend submitting systemd source code to the IOCCC,
+<p>We do not recommend submitting <a href="https://systemd.io">systemd</a> source code to the IOCCC,
 if nothing else because that code is likely to exceed the source code
 size limit. This isn’t to say that another highly compact and obfuscated
-replacement of init would not be an interesting submission.</p>
+replacement of <code>init</code> would not be an interesting submission.</p>
 <p>Did we remember to indicate that programs that blatantly use
 some complex state machine to do something simple are boring?
 We think we did. :-)</p>
@@ -732,7 +736,7 @@ version of the same program that is formatted in an interesting
 and/or obfuscated way, would definitely win over the first two!
 Remember, you can submit more than one entry. See the rules for details.</p>
 <p>We suggest that you avoid trying for the ‘smallest self-replicating’
-source. The smallest, a zero byte entry, won in 1994.</p>
+source. The smallest, a zero byte entry, <a href="../1994/smr/index.html">won in 1994</a>.</p>
 <p>Programs that claim to be the smallest C source that does something, really
 better be the smallest such program or they risk being rejected because
 they do not work as documented.</p>
@@ -813,7 +817,7 @@ read so many twisted entries, you too would enjoy a good laugh or two.
 We think the readers of the contest winners do as well. We do read
 the program “remarks” during the judging process, so it is worth your
 while to write remarkable program “remarks”.</p>
-<p>We dislike C code with trailing control-M’s (r \015) that results
+<p>We dislike C code with trailing control-M’s (<code>\r</code> or <code>\015</code>) that results
 in compilation failures. Some non-Unix/non-Linux tools such as
 MS Visual C and MS Visual C++ leave trailing control-M’s on lines.
 Users of such tools should strip off such control-M’s before submitting
@@ -832,7 +836,7 @@ Instead of unescaped octets, you should use or escapes:</p>
 <p>It is a very good idea to, in your remarks file, tell us why you
 think your entry is obfuscated. This is particularly true if
 your entry is has some very subtle obfuscations that we might
-otherwise overlook. &lt;&lt;– Hint!</p>
+otherwise overlook. <strong>&lt;&lt;– Hint!</strong></p>
 <p>Anyone can format their code into a dense blob. A really clever
 author will try format their entry using a “normal” formatting style
 such that at first glance (if you squint and don’t look at the details)
@@ -941,11 +945,11 @@ sales, product management an even from customers themselves on a
 all too regular basis. This is one of the reasons why the rules and
 guidelines are written in obfuscated form.</p>
 <h1 id="judging-process">JUDGING PROCESS:</h1>
-<p>Entries are judged by Leonid A. Broukhis, Simon Cooper, Landon Curt Noll.</p>
+<p>Entries are judged by Leonid A. Broukhis and Landon Curt Noll.</p>
 <p>Each entry submitted is given a random id number and subdirectory. The
 entry files including, but not limited to prog.c, Makefile (that we
 form from around your “how to build” information), as well as any
-data files that you submit are all placed under their own directory.
+data files that you submit are all placed under their own directory
 stored and judged from this directory.</p>
 <p>Any information about the authors is not read by the judges until
 the judging process is complete, and then only from entries that have
@@ -959,7 +963,7 @@ about the others. However we consider this to be simply circumstantial
 and outside the scope of the above paragraph.</p>
 <p>Some people, in the past, have attempted to obfuscate their identity by
 including comments of famous Internet personalities such as Peter Honeyman
-(http://www.citi.umich.edu/u/honey/). The judges are on to this
+(<a href="http://www.citi.umich.edu/u/honey/" class="uri">http://www.citi.umich.edu/u/honey/</a>). The judges are on to this
 trick and therefore consider any obfuscated source or data file
 claiming to be from Honeyman to not be form Honeyman. This of course
 creates an interesting paradox known as the “obfuscated Peter Honeyman
@@ -972,7 +976,7 @@ won an award. So it is theoretically possible that Peter Honeyman
 did submit an entry in the past. In the past, Peter had denied
 submitting anything to the IOCCC. Perhaps those entries were
 submitted by one of his students?</p>
-<p>Hopefully we are very CLEAR on this point! The rules now strongly state:
+<p>Hopefully we are <strong>VERY CLEAR</strong> on this point! The rules now strongly state:
 PLEASE DO NOT put a name of an author, in an obvious way, into your
 source code, remarks, data files, etc. The above “Peter Honeyman is
 exempt” not withstanding.</p>
@@ -985,7 +989,7 @@ Because the main ‘prize’ of winning is being announced, we make all
 attempts to send non-winners into oblivion. We remove all non-winning
 files, and shred all related paper. By tradition, we do not even
 reveal the number of entries that we received.</p>
-<p>During the judging process. a process that spans multiple sessions
+<p>During the judging process, a process that spans multiple sessions
 over a few weeks, post general updates from our <span class="citation" data-cites="IOCCC">@IOCCC</span> twitter account.</p>
 <p>Once we have selected the winners, for each category we will tweet:</p>
 <ul>
@@ -1002,12 +1006,12 @@ often accept their suggestions/comments about our remarks as well.
 This is done prior to posting the winners to the wide world.</p>
 <h2 id="an-important-2023-update-to-how-winners-are-announced">An important 2023 update to how winners are announced</h2>
 <p>The IOCCC no longer uses twitter. IOCCC entries will be announced
-by a git commit to the IOCCC entries repo:</p>
-<pre><code>    https://github.com/ioccc-src/winner</code></pre>
-<p>that, in turn, updates the offivial IOCCC website:</p>
-<pre><code>    https://www.ioccc.org/index.html</code></pre>
-<p>In addition a note is posted to the IOCCC Mastodon account:</p>
-<pre><code>    https://fosstodon.org/@ioccc</code></pre>
+by a git commit to the <a href="https://github.com/ioccc-src/winner">IOCCC entries
+repo</a>.</p>
+<p>that, in turn, updates the <a href="https://www.ioccc.org/index.html">official IOCCC
+website</a>.</p>
+<p>In addition a note is posted to the IOCCC Mastodon account
+(<a href="https://fosstodon.org/@ioccc" class="uri">https://fosstodon.org/@ioccc</a>).</p>
 <h2 id="back-to-the-judging-process">Back to the Judging process</h2>
 <p>Judging consists of a number of elimination rounds. During a round,
 the collection of entries are divided into two roughly equal piles;
@@ -1123,7 +1127,7 @@ by a git commit to the IOCCC entries repo:</p>
 <pre><code>    https://www.ioccc.org/index.html</code></pre>
 <p>In addition a note is posted to the IOCCC Mastodon account:</p>
 <pre><code>    https://fosstodon.org/@ioccc</code></pre>
-<h2 id="back-to-annoucement-of-winners">Back to annoucement of winners</h2>
+<h2 id="back-to-announcement-of-winners">Back to announcement of winners</h2>
 <p>It is pointless to ask the IOCCC judges how many entries we receive.
 Other government TLA or FLA snooping organizations are prohibited from
 either confirming, denying or revealing any knowledge of this data point.</p>
@@ -1133,8 +1137,8 @@ and on T-Shirts. More than one winner has been turned in a tattoo!</p>
 <p>Last, but not least, winners receive international fame and flames! :-)</p>
 <h1 id="for-more-information">FOR MORE INFORMATION:</h1>
 <p>You may contact the judges by sending email to the following address:</p>
-<pre><code>|   q.2020@ioccc.org        (do not submit entries to this address)</code></pre>
-<p><strong><code>|</code></strong> You must include the words ‘ioccc 2020 question’ in the subject of your
+<pre><code>|   q.2024@ioccc.org        (do not submit entries to this address)</code></pre>
+<p><strong><code>|</code></strong> You must include the words ‘ioccc 2024 question’ in the subject of your
 email message when sending email to the judges.</p>
 <p>Questions and comments about the contest are welcome. Comments about
 confusing rules and guidelines are also welcome.</p>
