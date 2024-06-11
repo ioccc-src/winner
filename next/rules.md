@@ -22,7 +22,7 @@ Watch both [the IOCCC status page](../status.html) and the
 <!-- This is the last line modified by the tool: bin/gen-status.sh -->
 # 28th International Obfuscated C Code Contest Official Rules
 
-**`|`** Copyright &copy; 2024 Leonid A. Broukhis, Landon Curt Noll.
+**`|`**   Copyright &copy; 2024 Leonid A. Broukhis, Landon Curt Noll.
 
 All Rights Reserved.  Permission for personal, education or non-profit use is
 granted provided this this copyright and notice are included in its entirety
@@ -32,14 +32,14 @@ writing by [contacting the judges](../contact.html).
 
 ## Rules version
 
-**`|`** These rules are version **2024-04-04-v28**.
+**`|`**   These rules are version **2024-04-04-v28**.
 
 **IMPORTANT**: Be sure to read the [IOCCC guidelines](guidelines.html).
 
 
 ### Change marks
 
-**`|`** **&larr; Lines that start with this symbol indicate a change from the previous IOCCC**
+**`|`**   **&larr; Lines that start with this symbol indicate a change from the previous IOCCC**
 
 Most lines (we sometimes make mistakes) that were modified since the previous
 IOCCC start the **`|`** symbol.
@@ -70,7 +70,7 @@ The goals of the IOCCC:
 
 # Important IOCCC dates
 
-**`|`** This IOCCC runs from **2019-Dec-26 06:01:41 UTC** to **2020-Mar-15 06:26:49 UTC**.
+**`|`**   This IOCCC runs from **2019-Dec-26 06:01:41 UTC** to **2020-Mar-15 06:26:49 UTC**.
 
 Until the start of this IOCCC, these rules, guidelines and iocccsize.c
 (contained in the [mkiocccentry
@@ -86,7 +86,7 @@ times that link is likely to be unresponsive.
 Please check the [How to enter link](../faq.html#submit) link
 for **important information** on how to submit to the IOCCC.
 
-**`|`** The submit URL should be active on or slightly before **2020-Jan-15 12:21:37 UTC**.
+**`|`**   The submit URL should be active on or slightly before **2020-Jan-15 12:21:37 UTC**.
 Please wait to submit your entries until after that time.
 
 The official rules, guidelines will be available on the [official IOCCC
@@ -116,7 +116,7 @@ Your entry must be a complete program.
 
 ## Rule 2
 
-**`|`** The size rule requires your entry to satisfy **BOTH** rule 2a and rule 2b:
+The size rule requires your entry to satisfy **BOTH** rule 2a and rule 2b:
 
 
 ## Rule 2a
@@ -125,11 +125,11 @@ The size of your program source **MUST BE <= 4096 bytes**in length.
 
 ## Rule 2b
 
-When your program source is fed as input to the current IOCCC size
+**`|`**   When your program source is fed as input to the current IOCCC size
 tool, and the IOCCC size tool -i command line option is used, the
-value printed **shall not exceed 2053**.
+value printed **shall not exceed 2503**.
 
-**`|`** The source to the current IOCCC size tool is found in the
+**`|`**   The source to the current IOCCC size tool is found in the
 [mkiocccentry tool repo](https://github.com/ioccc-src/mkiocccentry). If you use
 the `mkiocccentry` tool (which we **STRONGLY recommend you do**) will invoke
 this tool before packaging your entry for submission.
@@ -144,7 +144,7 @@ To submit to an open IOCCC, you must use the [IOCCC submit server](https://submi
 
 When the IOCCC is not open, that link will likely be unresponsive.
 
-**`|`** The submit URL should be active on or slightly before **2020-Jan-15 12:21:37 UTC**.
+**`|`**   The submit URL should be active on or slightly before **2020-Jan-15 12:21:37 UTC**.
 Please wait to submit your entries until after that time.
 
 
@@ -171,10 +171,10 @@ file to a new filename and then modify that copy.
 
 ## Rule 6
 
-**`|`** I am not a rule, I am a `free(void \*man)`!
+**`|`**   I am not a rule, I am a `free(void \*human)`!
 
 ``` <!---c-->
-        while (!understand(ioccc(rule(you(are(number(6))))))) { ha_ha_ha(); }
+|       while (!understand(ioccc(rule(that(you(are(number(6)))))))) { ha_ha_ha(); }
 ```
 
 
@@ -186,7 +186,7 @@ You (the author(s)) must own the contents of your submission OR
 you must have permission from the owner(s) to submit their content
 under the following license:
 
-**`|`** **[CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)**
+**`|`**   **[CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)**
 
 See also Rule 18.
 
@@ -199,11 +199,9 @@ Please note that the IOCCC size tool is **NOT** an original work.
 
 ## Rule 8
 
-**`|`** Entries must be received prior to the end of this IOCCC which is:
+**`|`**   Entries must be received prior to the end of this IOCCC which is
+**2024-MMM-DD HH:MM:SS UTC**.  ** XXX - This date and time is TDB - XXX **.
 
-```
-    2020-Mar-15 06:26:49 UTC
-```
 
 A confirmation of submission will be sent to the submitting email address
 before the close of the contest.
@@ -211,7 +209,7 @@ before the close of the contest.
 
 ## Rule 9
 
-**`|`** Each person may submit up to and including 8.000000 entries per contest.
+**`|`**   Each person may submit up to and including 8.000000 entries per contest.
 
 Each entry must be submitted separately.
 
@@ -287,18 +285,21 @@ been published may be disqualified.
 
 ## Rule 17
 
-The total size of your submission: the sum of the size of the program,
+**`|`**   The total size of your submission: the sum of the size of the program,
 hints, comments, build and info files **MUST** be less than or equal
-to 1048576 octets in size. The
-[mkiocccentry toolkit]((https://github.com/ioccc-src/mkiocccentry) will verify
-that your entry is not too big.
+to 28314624 octets (27651K) in size.
+
+**`|`**   When your submission is formed into a bzip2 compressed tarball file,
+that file must than or equal 3999971 octets in size.
+
+**`|`**   The [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) (see `mkiocccentry(1)` and `txzchk(1)`) will help you verify that your submission conforms to this rule.
 
 
 ## Rule 18
 
 The entirety of your entry must be submitted under the following license:
 
-**`|`** **[CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)**
+**`|`**   **[CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)**
 
 You (the author(s)) **MUST** own the contents of your submission **OR**
 you **MUST** have permission from the owner(s) to submit their content.
@@ -312,7 +313,7 @@ The remarks file must be written in markdown format. See
 the Daring Fireball [Markdown: Basics](http://daringfireball.net/projects/markdown/basics)
 for more information.
 
-**`|`** We currently use [pandoc](https://pandoc.org) to convert markdown to HTML.
+**`|`**   We currently use [pandoc](https://pandoc.org) to convert markdown to HTML.
 
 
 ## Rule 20
@@ -384,66 +385,33 @@ Even though 24 is not prime, you should still see rule #23.
 
 ## Rule 25
 
-**`|`** The IOCCC rule set consists of at least 26 rules.
+The IOCCC rule set consists of at least 26 rules.
 
 
 ## Rule 26
 
-**`|`** Rule 26 is also a rule.
+Rule 26 is also a rule.
+
+
+## Rule 27
+
+**`|`**   Rule 27 is reserved for something cubic.  :-)
 
 
 # FOR MORE INFORMATION:
 
-The judging will be done by Leonid A. Broukhis and
-Landon Curt Noll.
+**`|`**   For questions or comments about the contest, see [Contacting the IOCCC](../contact.html).
 
-**`|`** Please send questions or comments about the contest, to:
+**`|`**   Be sure to review the [IOCCC Rules and Guidelines](index.html) as rules and the guidelines may (and often do) change from year to year.
 
-```
-    q.2024@ioccc.org
-```
+**`|`**   You should be sure you have the current rules and guidelines prior to submitting entries.
 
-**`|`** **IMPORTANT**: You must include the words **ioccc 2024 question**
-in the subject of your email message when sending email to the judges.
+**`|`**   See the [Official IOCCC website news](../news.html) for additional information.
 
-The rules and the guidelines may (and often do) change from year to
-year.  You should be sure you have the current rules and guidelines
-prior to submitting entries.
+**`|`**   For the updates and breaking IOCCC news, you are encouraged to follow the [IOCCC on Mastodon](https://fosstodon.org/@ioccc) account.  See our [FAQ](../faq.html#try_mastodon) for more information.
 
-**`|`** See the [Official IOCCC website](../index.html) for additional information.
+**`|`**   Check out the [Official IOCCC winner web site](https://www.ioccc.org/index.html) in general.
 
-For the updates and breaking IOCCC news, you are encouraged to follow
-the twitter handle:
-
-```
-    @IOCCC
-```
-
-You do not have to be a twitter user to follow @IOCCC.  Non-twitter users should access:
-
-```
-    https://twitter.com/ioccc
-```
-
-Non-twitter users should force their browsers to reload the above URL
-to be sure they are seeing the most recent tweets.
-
-
-## An important update to this historic note
-
-**-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-**
-
-**`|`** **The IOCCC no longer uses twitter**.
-
-**`|`** Today the [IOCCC uses Mastodon](../contact.html#try_mastodon).
-
-**`|`** For more information and to see our IOCCC Mastodon posts, see:
-
-```
-    https://fosstodon.org/@ioccc
-```
-
-**-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-**
 
 Leonid A. Broukhis<br>
 chongo (Landon Curt Noll) `/\cc/\`

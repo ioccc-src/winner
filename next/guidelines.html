@@ -403,7 +403,7 @@ granted provided this this copyright and notice are included in its entirety
 and remains unaltered. All other uses must receive prior permission in
 writing by <a href="../contact.html">contacting the judges</a>.</p>
 <h2 id="guidelines-version">Guidelines version</h2>
-<p><strong><code>|</code></strong> This guidelines file is version <strong>2023-04-04-v28</strong>.</p>
+<p><strong><code>|</code></strong> This guidelines file is version <strong>2024-06-11-v28</strong>.</p>
 <p><strong>IMPORTANT</strong>: Be <strong>SURE</strong> to read the <a href="rules.html">IOCCC rules</a>.</p>
 <h3 id="change-marks">Change marks</h3>
 <p><strong><code>|</code></strong> <strong>← Lines that start with this symbol indicate a change from the previous IOCCC</strong></p>
@@ -419,24 +419,23 @@ Entries that violate the guidelines but remain within the rules are
 allowed. Even so, you are safer if you remain within the guidelines.</p>
 <p>You should read the current <a href="rules.html">IOCCC rules</a>, prior to submitting entries.
 The rules are typically sent out with these guidelines.</p>
-<h1 id="whats-new-in-20192020">WHAT’S NEW IN 2019/2020</h1>
-<p><strong><code>|</code></strong> This IOCCC runs from <strong>2019-Dec-26 06:01:41 UTC</strong> to <strong>2020-Mar-15 06:26:49 UTC</strong>.</p>
-<p><strong><code>|</code></strong> The reason for the times of day are so that key IOCCC events occur during UTC
-<strong><code>|</code></strong> “prime time”. Do you understand why we factored this into the rules and
-<strong><code>|</code></strong> guidelines? :-)</p>
+<h1 id="whats-new-this-ioccc">WHAT’S NEW THIS IOCCC</h1>
+<p><strong><code>|</code></strong> This IOCCC runs from <strong>2024-MMM-DD HH:MM:SS UTC</strong> to <strong>YYYY-MMM-DD HH:MM:SS UTC</strong>.
+** XXX - This date and time is TDB - XXX **.</p>
+<p><strong><code>|</code></strong> The reason for the times of day are so that key IOCCC events are <strong>calculated</strong>
+for be a <strong>fun</strong>ctional UTC time. :-)</p>
 <p>Until the start of this IOCCC, these rules, guidelines and iocccsize.c
 (contained in the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
 toolkit</a>)
 tool should be considered provisional <strong>BETA</strong> versions and may be
 adjusted <strong>AT ANY TIME</strong>.</p>
-<p><strong><code>|</code></strong> Even though the contest will start in 2019, because the contest will close
-<strong><code>|</code></strong> in 2020, URLs, subject lines, and contest related email addresses use 2019.</p>
 <p>The IOCCC submission URL is <a href="https://submit.ioccc.org/" class="uri">https://submit.ioccc.org/</a>.</p>
-<p><strong><code>|</code></strong> The submit URL should be active on or slightly before <strong>2020-Jan-15 12:21:37 UTC</strong>.</p>
+<p><strong><code>|</code></strong> The submit URL should be active on or slightly before <strong>2024-MMM-DD HH:MM:SS UTC</strong>.
+** XXX - This date and time is TDB - XXX **.</p>
 <p>Please wait to submit your entries until after that time.</p>
 <p>The official rules, guidelines and iocccsize.c (invoked by the mkiocccentry) tool will be available
 on the official IOCCC website on or slightly before start of this IOCCC.
-Please check the IOCCC FAQ <a href="../faq#submit">How to submit</a>.
+Please check the IOCCC FAQ <a href="../faq.html#submit">How to submit</a>.
 on or after the start of this IOCCC to be sure you are using the correct
 versions of these items before using the IOCCC entry submission URL.</p>
 <h1 id="hints-and-suggestions">HINTS AND SUGGESTIONS:</h1>
@@ -473,9 +472,9 @@ is important. For this reason, we often award ‘worst abuse of the
 rules’ to an entry that illustrates this point in an ironic way.</p>
 <p>We do realize that there are holes in the rules, and invite entries
 to attempt to exploit them. We will award ‘worst abuse of the rules’
-and then plug the hole next year. Even so, we will attempt to use
-<strong><code>|</code></strong> the smallest plug needed, if not smaller. Or, maybe not. :-)</p>
-<p><strong><code>|</code></strong> There may be less than 2^7-1 reasons why these guidelines seem obfuscated.</p>
+and then plug the hole next year.</p>
+<p><strong><code>|</code></strong> Even so, we will attempt to use the smallest plug needed, if not smaller. Or, maybe not. :-)</p>
+<p><strong><code>|</code></strong> There may be less than 2^7+1 reasons why these guidelines seem obfuscated.</p>
 <p>Check out your program and be sure that it works. We sometimes make
 the effort to debug an entry that has a slight problem, particularly
 in or near the final round. On the other hand, we have seen some
@@ -499,14 +498,11 @@ misleading comments and variable names might be a good start.</p>
 <p>When programs use VTxxx/ANSI sequences, they should NOT limited to a
 specific terminal brand. Those programs that work in a standard xterm
 are considered more portable.</p>
-<p><strong><code>|</code></strong> Rule 2 (the size rule) refers to the use of an IOCCC size tool.
-<strong><code>|</code></strong> The source for this tool is found at:</p>
-<pre><code>|    https://www.ioccc.org/2020/iocccsize.c</code></pre>
-<p>To further clarify rule 2, we subdivided it into two parts, 2a and 2b.
-<strong><code>|</code></strong> Your entry must satisfy BOTH the maximum size rule 2a AND your entry
+<p><strong><code>|</code></strong> Rule 2 (the size rule) refers to the use of the IOCCC size tool called <code>iocccsize</code>.</p>
+<p><strong><code>|</code></strong> See the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a> for how to compile and <code>iocccsize</code>.</p>
+<p><strong><code>|</code></strong> To further clarify rule 2, we subdivided it into two parts, 2a and 2b.</p>
+<p><strong><code>|</code></strong> Your entry must satisfy BOTH the maximum size rule 2a AND your entry
 must satisfy the IOCCC size tool rule 2b.</p>
-<p>The IOCCC size tool should be compiled as:</p>
-<pre><code>    cc -pedantic -Wall -Wextra -std=c11 iocccsize.c -o iocccsize</code></pre>
 <p>This tool imposes a 2nd limit on C code size (rule 2b). To check your
 code against the 2nd limit of rule 2, use the -i command line option.
 For example:</p>
@@ -524,27 +520,27 @@ ASCII formfeed, and ASCII carriage return.</p>
 <p>In cases where the above summary and the algorithm implemented by
 the IOCCC size tool source code conflict, the algorithm implemented
 by the IOCCC size tool source code is preferred by the judges.</p>
-<p>There are at least 2 other reasons for selecting 2053 as the 2nd limit
-besides the fact that 2053 is the next prime &gt; 2048. These reasons
-may be searched for and discovered if you are “Curios!” about 2053. :-)
-Moreover, 2053 was the number of the kernel disk pack of one of the
-judge’s BESM-6.</p>
+<p><strong><code>|</code></strong> There are at least 2 other reasons for selecting 2503 as the 2nd limit
+<strong><code>|</code></strong> besides the fact that 2053 is a prime. These reasons
+<strong><code>|</code></strong> may be searched for and discovered if you are <a href="https://t5k.org/curios/page.php/2503.html">“Curios!” about 2503</a>. :-)
+<strong><code>|</code></strong> Moreover, 2053 was the number of the kernel disk pack of one of the
+<strong><code>|</code></strong> judge’s BESM-6, and 2503 is a decimal anagram of 2053.</p>
 <p>Take note that this secondary limit imposed by the IOCCC size tool
 obviates some of the need to #define C reserved words in an effort
 to get around the size limits of rule 2.</p>
 <p>Yes Virginia, <strong>that is a hint</strong>!</p>
-<p><strong><code>|</code></strong> We applaud programs that do not issue warnings when compiled.
-<strong><code>|</code></strong> To avoid warnings, you might be tempted to add various -Wno-foobar
-<strong><code>|</code></strong> flags. Unfortunately such flags are NOT portable. Moreover,
-<strong><code>|</code></strong> such flags are not consistent between different C compilers.
-<strong><code>|</code></strong> Therefore we recommend that you consider one of several approaches:</p>
+<p>We applaud programs that do not issue warnings when compiled.
+To avoid warnings, you might be tempted to add various -Wno-foobar
+flags. Unfortunately such flags are NOT portable. Moreover,
+such flags are not consistent between different C compilers.
+Therefore we recommend that you consider one of several approaches:</p>
 <ol type="a">
-<li><strong><code>|</code></strong> Write code that does not generate compiler warnings</li>
-<li><strong><code>|</code></strong> Do not use flags that disable compiler warnings</li>
-<li><strong><code>|</code></strong> Provide instructions (such as in your Makefile) that
-<strong><code>|</code></strong> uses appropriate disable compiler warnings flags for
-<strong><code>|</code></strong> both clang and gcc</li>
-<li><strong><code>|</code></strong> Do something creative</li>
+<li>Write code that does not generate compiler warnings</li>
+<li>Do not use flags that disable compiler warnings</li>
+<li>Provide instructions (such as in your Makefile) that
+uses appropriate disable compiler warnings flags for
+both clang and gcc</li>
+<li>Do something creative</li>
 </ol>
 <h1 id="our-likes-and-dislikes">OUR LIKES AND DISLIKES:</h1>
 <p>Doing masses of #defines to obscure the source has become ‘old’. We
@@ -600,10 +596,10 @@ flags that would make the program less portable.</p>
 <p>One side effect of the above is that you cannot assume the use
 of nested functions such as:</p>
 <pre><code>    main() {
-|       void please_do_not_submit_this() {
-|           printf(&quot;The machine that goes BING!\n&quot;);
+|       void please_dont_submit_this() {
+|           printf(&quot;The machine that goes BING!!\n&quot;);
         }
-|       please_do_not_submit_this();
+|       please_dont_submit_this();
     }</code></pre>
 <p>This is because such nested functions often requires one to compile with
 a flag such as <code>-fnested-functions</code> that is not found on some compilers.</p>
@@ -611,8 +607,8 @@ a flag such as <code>-fnested-functions</code> that is not found on some compile
 nested functions. Such constructions, while interesting and sometimes
 amusing, will have to wait until they required by a C standard that are
 actually implemented in commonly used C compilers. Sorry!</p>
-<p><strong><code>|</code></strong> We prefer programs that do not require a fish license: crayons and
-<strong><code>|</code></strong> cat detector vans not withstanding.</p>
+<p>We prefer programs that do not require a fish license: crayons and
+cat detector vans not withstanding.</p>
 <p>If your entry uses functions that have a variable number of
 arguments, be careful. Systems implement <code>va_list</code> as a wide variety
 of ways. Because of this, a number of operations using <code>va_list</code> are
@@ -661,17 +657,17 @@ most POSIX P1003.1/P1003.2 like systems</li>
 <li>are “blob-ier” than they need to be</li>
 <li>are rather similar to previous winners :-(</li>
 <li>are too similar to previous losers :-)</li>
-<li><strong><code>|</code></strong> that mandate the exclusive the use of an specific Integrated</li>
-<li><strong><code>|</code></strong> Development Environment (IDE)</li>
+<li>that mandate the exclusive the use of an specific Integrated</li>
+<li>Development Environment (IDE)</li>
 </ul>
-<p><strong><code>|</code></strong> In order to encourage entry portability, we dislike entries that
-<strong><code>|</code></strong> fail to build unless one is using an IDE. For example, do not
-<strong><code>|</code></strong> mandate that one must use Microsoft Visual Studio to compile
-<strong><code>|</code></strong> your entry. Nevertheless some of the better IDEs have command-line
-<strong><code>|</code></strong> interfaces to their compilers, once one learns how to invoke a shell.</p>
-<p><strong><code>|</code></strong> The program must compile and link cleanly in a POSIX-like environment.
-<strong><code>|</code></strong> Therefore do not assume the system has a windows.h include file:</p>
-<pre><code>|   #include &lt;windows.h&gt;        /* we dislike this include */</code></pre>
+<p>In order to encourage entry portability, we dislike entries that
+fail to build unless one is using an IDE. For example, do not
+mandate that one must use Microsoft Visual Studio to compile
+your entry. Nevertheless some of the better IDEs have command-line
+interfaces to their compilers, once one learns how to invoke a shell.</p>
+<p>The program must compile and link cleanly in a POSIX-like environment.
+Therefore do not assume the system has a windows.h include file:</p>
+<pre><code>    #include &lt;windows.h&gt;        /* we dislike this include */</code></pre>
 <p>Unless you are cramped for space, or unless you are entering the
 ‘best one liner’ category, we suggest that you format your program
 in a more creative way than simply forming excessively long lines.</p>
@@ -682,10 +678,9 @@ time of day during a leap-second where the value in seconds
 after the minute mark is 60.</p>
 <p>The “how to build” make process should not be used to try and get
 around the size limit. It is one thing to make use of a several -D’s
-<strong><code>|</code></strong> on the compile line to help out, but it is quite another to use many
+on the compile line to help out, but it is quite another to use many
 bytes of -D’s in order to try and squeeze the source under the size limit.</p>
-<p><strong><code>|</code></strong> Your source code, post-pre-processing, should not exceed the size
-<strong><code>|</code></strong> of Windows. :-)</p>
+<p>Your source code, post-pre-processing, should not exceed the size of Windows. :-)</p>
 <p>The judges, as a group, have a history giving wide degree of latitude
 to reasonable entries. And recently they have had as much longitudinal
 variation as it is possible to have on Earth. :-)</p>
@@ -751,7 +746,7 @@ is NOT the smallest C source file that when compiled and run, dumps core:</p>
 However, initialized char arrays are OK to write over. This is OK:</p>
 <pre><code>    char b[] = &quot;Is this OK&quot;;
     b[9] = &#39;K&#39;;</code></pre>
-<p><strong><code>|</code></strong> There are more than one typos in this very sentence.</p>
+<p><strong><code>|</code></strong> There are more than 1 typos in this very sentence.</p>
 <p>X client entries should be as portable as possible. Entries that
 adapt to a wide collection of environments will be favored. For
 example, don’t depend on a particular type or size of display.
@@ -763,11 +758,12 @@ source program (one that actually works) to display audio/visual data.</p>
 <p>X client entries should avoid using X related libraries and
 software that is not in wide spread use.</p>
 <p>This is the only guideline that contains the word fizzbin.
-<strong><code>|</code></strong> However, do you know how to play fizzbin? You do?!? (Except on Tuesday)</p>
+<strong><code>|</code></strong> However, do you know how to play <a href="https://en.wikipedia.org/wiki/List_of_games_in_Star_Trek#Fizzbin">fizzbin</a>?
+You do?!? (Except on Tuesday)</p>
 <p>We don’t like entries that use proprietary toolkits such as the M<em>tif,
 Xv</em>ew, or OpenL*ok toolkits, since not everyone has them. Use of an
 open source toolkit that is widely and freely available instead.</p>
-<p><strong>NOTE</strong>: <strong><code>|</code></strong> The previous guideline in this spot has been replaced by this guideline:</p>
+<p><strong>NOTE</strong>: The previous guideline in this spot has been replaced by this guideline:</p>
 <p>X client entries should not to depend on particular items on
 .Xdefaults. If you must do so, be sure to note the required lines
 in the program “remarks”. They should also not depend on any
@@ -778,22 +774,18 @@ Happy Birthday song; music that some people believe is copyrighted
 the copyright system).</p>
 <p>While we recognize that UNIX is not a universal operating system, the
 contest does have a bias towards such systems. In an effort to expand
-the scope of the contest, we phrase our bias in terms of POSIX P1003.1
-and P1003.2 standards. This will allow certain non-UNIX OS users to
-submit entries. On the other hand, this is a guideline and not a rule.
-We will not reject an entry based on some POSIX technicality.</p>
-<p>When dealing with OS and application environments, we suggest that you
-be reasonable with a nod towards vanilla UNIX-like systems. POSIX will
-evolve but not as much as the contest.</p>
-<p>You very well might not be completely prohibited from failing to not
-partly misunderstand this particular guideline, but of course we could
-<strong><code>|</code></strong> not possibly comment. Nevertheless, you are neither prohibited, nor are
-<strong><code>|</code></strong> you required to determine that this or the previous sentence is either false
-<strong><code>|</code></strong> and/or misleading. Therefore, it might be wise for you to not fail to consider
-<strong><code>|</code></strong> to do so, accordingly. Thank you.</p>
+the scope of the contest, we phrase our bias to favor:</p>
+<p><strong><code>|</code></strong> <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">Single UNIX Specification</a>.</p>
+<p><strong><code>|</code></strong> You are <strong>well advised</strong> to submit entries that conform to the <a href="https://unix.org/version4/overview.html">Single UNIX Specification Version 4</a>.</p>
+<p><strong><code>|</code></strong> You very well might not be completely be prohibited from failing to not
+<strong><code>|</code></strong> partly misunderstand this particular guideline, but of course, we could
+<strong><code>|</code></strong> not possibly comment! :-) Nevertheless, you are neither prohibited, nor are
+<strong><code>|</code></strong> you fully required to determine that this or the previous sentence is either false
+<strong><code>|</code></strong> and/or perhaps misleading. Therefore, it might be wise for you to not fail to consider
+<strong><code>|</code></strong> to do so, accordingly. Thank you very much.</p>
 <p>Any complaints about the above guideline could be addressed to the
 Speaker of the House of Commons, or to the speaker of your national
-<strong><code>|</code></strong> parliament should you have one.</p>
+parliament should you have one.</p>
 <p>We like programs that:</p>
 <ul>
 <li>are as concise and small as they need to be</li>
@@ -810,7 +802,7 @@ areas really does help.</p>
 <p>You are better off explaining what your entry does in the program
 “remarks” section rather than leaving it obscure for the judges
 as we might miss something and/or be too tired to notice.</p>
-<p><strong><code>|</code></strong> Please avoid this specific individual guideline, if at all possible.</p>
+<p><strong><code>|</code></strong> Please avoid this specific individual guideline, if it at all possible.</p>
 <p>We freely admit that interesting, creative or humorous comments in
 the program “remarks” help your chances of winning. If you had to
 read so many twisted entries, you too would enjoy a good laugh or two.
@@ -853,10 +845,11 @@ However, it is unwise to assume it will run on an i386 or x86 architecture.</p>
 <p>We believe that Mark Twain’s remark:</p>
 <pre><code>    Get your facts first, then you can distort them as you please.</code></pre>
 <p>is a good guideline for those writing code for the IOCCC.</p>
-<p>The IOCCC size tool source, iocccsize.c, is not an original work,
-<strong><code>|</code></strong> unless you are Anthony C Howe, in which case it is original!
-<strong><code>|</code></strong> Submitting source that uses the content iocccsize.c, unless you are
-<strong><code>|</code></strong> Anthony C Howe, might run the risk of violating rule 7.</p>
+<p><strong><code>|</code></strong> The <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c">IOCCC size tool source</a>
+is not an original work,
+unless you are Anthony C Howe, in which case it is original!
+Submitting source that uses the content iocccsize.c, unless you are
+Anthony C Howe, might run the risk of violating rule 7.</p>
 <p>Rule 7 does not prohibit you from writing your own obfuscated IOCCC size tool.
 However if you do, you might wish to make your tool do something more
 interesting than simply implementing the IOCCC size tool algorithm.</p>
@@ -1004,7 +997,7 @@ the authors a chance to comment on the way we have presented their
 entry. They are given the chance to correct mistakes and typos. We
 often accept their suggestions/comments about our remarks as well.
 This is done prior to posting the winners to the wide world.</p>
-<h2 id="an-important-2023-update-to-how-winners-are-announced">An important 2023 update to how winners are announced</h2>
+<h2 id="an-important-update-to-how-winners-are-announced">An important update to how winners are announced</h2>
 <p>The IOCCC no longer uses twitter. IOCCC entries will be announced
 by a git commit to the <a href="https://github.com/ioccc-src/winner">IOCCC entries
 repo</a>.</p>
@@ -1092,34 +1085,14 @@ Winning source is called prog.c A compiled binary is called prog.</p>
 of their award, and a very brief description of the winning entry
 from the <span class="citation" data-cites="IOCCC">@IOCCC</span> twitter handle. Non-twitter users should visit:</p>
 <pre><code>    https://twitter.com/ioccc</code></pre>
-<h2 id="an-important-update-to-this-historic-note">An important update to this historic note</h2>
-<p><strong>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-</strong></p>
-<p><strong><code>|</code></strong> <strong>The IOCCC no longer uses twitter</strong>.</p>
-<p><strong><code>|</code></strong> Today the <a href="../contact.html#mastodon">IOCCC uses Mastodon</a>.</p>
-<p><strong><code>|</code></strong> For more information and to see our IOCCC Mastodon posts, see:</p>
-<pre><code>    https://fosstodon.org/@ioccc</code></pre>
-<p><strong>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-</strong></p>
-<p>Non-twitter users should force their browsers to reload the above URL
-to be sure they are seeing the most recent tweets.</p>
-<p>The judges will then post an initial announcement of who won, the name
-of their award, and a very brief description of the winning entry
-on the IOCCC website:</p>
-<pre><code>    https://www.ioccc.org/whowon.html</code></pre>
-<p>We will also attempt to submit a brief announcement story to /.:</p>
-<pre><code>    https://slashdot.org</code></pre>
-<p>that, depending on the willingness of the /. editors, may be posted
-to their site at the same time.</p>
-<p>Note that initial announcement will NOT contain source. This is because
-the winning authors are given a chance to review the judges comments,
-and test our Makefile. This review process typically takes a few weeks.</p>
-<p>Sometime after the initial announcement, and once the review
-by the winners has been completed, the winning source will be
-posted to the IOCCC website:</p>
-<pre><code>    https://www.ioccc.org/years.html
-
-    NOTE: previous winners are available at that URL</code></pre>
-<p>We will also tweet, via <span class="citation" data-cites="IOCCC">@IOCCC</span>, when the winning source is available.</p>
-<h2 id="an-important-2023-update-to-how-winners-are-announced-1">An important 2023 update to how winners are announced</h2>
+<h2 id="how-the-new-ioccc-winners-will-be-announced">How the new IOCCC winners will be announced</h2>
+<p><strong><code>|</code></strong> The <a href="../status.html">Current status of the IOCCC</a> will change from <strong>judging</strong> to <strong>closed</strong> .</p>
+<p><strong><code>|</code></strong> The <strong>contest_status</strong> in the <a href="../status.json">status.json</a> file will change from <strong>judging</strong> to <strong>closed</strong> as well.</p>
+<p><strong><code>|</code></strong> When the above happens, the winning entries have been selected by the <a href="../judges.html">IOCCC judges</a>.</p>
+<p><strong><code>|</code></strong> The <a href="../judges.html">IOCCC judges</a> will begin to prepare to release the source code of the new IOCCC winners.</p>
+<p><strong><code>|</code></strong> The <a href="../judges.html">IOCCC judges</a> will post the winning source to the <a href="https://github.com/ioccc-src/winner">IOCCC winner repo</a> as well as to the <a href="https://www.ioccc.org/index.html">Official IOCCC winner web site</a>.</p>
+<p><strong><code>|</code></strong> The <a href="../news.html">IOCCC news</a> will also contain an announcement of the winners.</p>
+<h2 id="an-important-update-to-how-winners-are-announced-1">An important update to how winners are announced</h2>
 <p>The IOCCC no longer uses twitter. IOCCC entries will be announced
 by a git commit to the IOCCC entries repo:</p>
 <pre><code>    https://github.com/ioccc-src/winner</code></pre>
@@ -1136,33 +1109,12 @@ the world. Winners have appeared in books (“The New Hackers Dictionary”)
 and on T-Shirts. More than one winner has been turned in a tattoo!</p>
 <p>Last, but not least, winners receive international fame and flames! :-)</p>
 <h1 id="for-more-information">FOR MORE INFORMATION:</h1>
-<p>You may contact the judges by sending email to the following address:</p>
-<pre><code>|   q.2024@ioccc.org        (do not submit entries to this address)</code></pre>
-<p><strong><code>|</code></strong> You must include the words ‘ioccc 2024 question’ in the subject of your
-email message when sending email to the judges.</p>
-<p>Questions and comments about the contest are welcome. Comments about
-confusing rules and guidelines are also welcome.</p>
-<p>The rules and the guidelines may (and often do) change from year to
-year. You should be sure you have the current rules and guidelines
-prior to submitting entries.</p>
-<p>Check out the IOCCC Web page:</p>
-<pre><code>    https://www.ioccc.org</code></pre>
-<p>It has rules, guidelines and winners of previous contests (1984 to date).</p>
-<p>For the updates and breaking IOCCC news, you are encouraged to follow
-the twitter handle:</p>
-<pre><code>    @IOCCC</code></pre>
-<p>You do not have to be a twitter user to follow <span class="citation" data-cites="IOCCC">@IOCCC</span>. Non-twitter
-users should access:</p>
-<pre><code>    https://twitter.com/ioccc</code></pre>
-<p>Non-twitter users should force their browsers to reload the above URL
-to be sure they are seeing the most recent tweets.</p>
-<h2 id="an-important-update-to-this-historic-note-1">An important update to this historic note</h2>
-<p><strong>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-</strong></p>
-<p><strong><code>|</code></strong> <strong>The IOCCC no longer uses twitter</strong>.</p>
-<p><strong><code>|</code></strong> Today the <a href="../contact.html#mastodon">IOCCC uses Mastodon</a>.</p>
-<p><strong><code>|</code></strong> For more information and to see our IOCCC Mastodon posts, see:</p>
-<pre><code>    https://fosstodon.org/@ioccc</code></pre>
-<p><strong>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-</strong></p>
+<p><strong><code>|</code></strong> For questions or comments about the contest, see <a href="../contact.html">Contacting the IOCCC</a>.</p>
+<p><strong><code>|</code></strong> Be sure to review the <a href="index.html">IOCCC Rules and Guidelines</a> as rules and the guidelines may (and often do) change from year to year.</p>
+<p><strong><code>|</code></strong> You should be sure you have the current rules and guidelines prior to submitting entries.</p>
+<p><strong><code>|</code></strong> See the <a href="../news.html">Official IOCCC website news</a> for additional information.</p>
+<p><strong><code>|</code></strong> For the updates and breaking IOCCC news, you are encouraged to follow the <a href="https://fosstodon.org/@ioccc">IOCCC on Mastodon</a> account. See our <a href="../faq.html#try_mastodon">FAQ</a> for more information.</p>
+<p><strong><code>|</code></strong> Check out the <a href="https://www.ioccc.org/index.html">Official IOCCC winner web site</a> in general.</p>
 <p>Leonid A. Broukhis<br>
 chongo (Landon Curt Noll) /\cc/\</p>
 <hr style="width:10%;text-align:left;margin-left:0">

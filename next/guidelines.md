@@ -32,14 +32,14 @@ writing by [contacting the judges](../contact.html).
 
 ## Guidelines version
 
-**`|`** This guidelines file is version **2023-04-04-v28**.
+**`|`**   This guidelines file is version **2024-06-11-v28**.
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
 
 
 ### Change marks
 
-**`|`** **&larr; Lines that start with this symbol indicate a change from the previous IOCCC**
+**`|`**   **&larr; Lines that start with this symbol indicate a change from the previous IOCCC**
 
 Most lines (we sometimes make mistakes) that were modified since the previous
 IOCCC start with the **`|`** symbol.
@@ -60,13 +60,13 @@ You should read the current [IOCCC rules](rules.html), prior to submitting entri
 The rules are typically sent out with these guidelines.
 
 
-# WHAT'S NEW IN 2019/2020
+# WHAT'S NEW THIS IOCCC
 
-**`|`** This IOCCC runs from **2019-Dec-26 06:01:41 UTC** to **2020-Mar-15 06:26:49 UTC**.
+**`|`**   This IOCCC runs from **2024-MMM-DD HH:MM:SS UTC** to **YYYY-MMM-DD HH:MM:SS UTC**.
+** XXX - This date and time is TDB - XXX **.
 
-**`|`**   The reason for the times of day are so that key IOCCC events occur during UTC
-**`|`**   "prime time".  Do you understand why we factored this into the rules and
-**`|`**   guidelines?  :-)
+**`|`**   The reason for the times of day are so that key IOCCC events are **calculated**
+for be a **fun**ctional UTC time.  :-)
 
 Until the start of this IOCCC, these rules, guidelines and iocccsize.c
 (contained in the [mkiocccentry
@@ -74,18 +74,16 @@ toolkit](https://github.com/ioccc-src/mkiocccentry))
 tool should be considered provisional **BETA** versions and may be
 adjusted **AT ANY TIME**.
 
-**`|`**   Even though the contest will start in 2019, because the contest will close
-**`|`**   in 2020, URLs, subject lines, and contest related email addresses use 2019.
-
 The IOCCC submission URL is <https://submit.ioccc.org/>.
 
-**`|`**   The submit URL should be active on or slightly before **2020-Jan-15 12:21:37 UTC**.
+**`|`**   The submit URL should be active on or slightly before **2024-MMM-DD HH:MM:SS UTC**.
+** XXX - This date and time is TDB - XXX **.
 
 Please wait to submit your entries until after that time.
 
 The official rules, guidelines and iocccsize.c (invoked by the mkiocccentry) tool will be available
 on the official IOCCC website on or slightly before start of this IOCCC.
-Please check the IOCCC FAQ [How to submit](../faq#submit).
+Please check the IOCCC FAQ [How to submit](../faq.html#submit).
 on or after the start of this IOCCC to be sure you are using the correct
 versions of these items before using the IOCCC entry submission URL.
 
@@ -130,10 +128,11 @@ rules' to an entry that illustrates this point in an ironic way.
 
 We do realize that there are holes in the rules, and invite entries
 to attempt to exploit them.  We will award 'worst abuse of the rules'
-and then plug the hole next year.  Even so, we will attempt to use
-**`|`**   the smallest plug needed, if not smaller.  Or, maybe not.  :-)
+and then plug the hole next year.
 
-**`|`**   There may be less than 2^7-1 reasons why these guidelines seem obfuscated.
+**`|`**   Even so, we will attempt to use the smallest plug needed, if not smaller.  Or, maybe not.  :-)
+
+**`|`**   There may be less than 2^7+1 reasons why these guidelines seem obfuscated.
 
 Check out your program and be sure that it works.  We sometimes make
 the effort to debug an entry that has a slight problem, particularly
@@ -163,22 +162,14 @@ When programs use VTxxx/ANSI sequences, they should NOT limited to a
 specific terminal brand.  Those programs that work in a standard xterm
 are considered more portable.
 
-**`|`**   Rule 2 (the size rule) refers to the use of an IOCCC size tool.
-**`|`**   The source for this tool is found at:
+**`|`**   Rule 2 (the size rule) refers to the use of the IOCCC size tool called `iocccsize`.
 
-```
-|    https://www.ioccc.org/2020/iocccsize.c
-```
+**`|`**   See the [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) for how to compile and `iocccsize`.
 
-To further clarify rule 2, we subdivided it into two parts, 2a and 2b.
+**`|`**   To further clarify rule 2, we subdivided it into two parts, 2a and 2b.
+
 **`|`**   Your entry must satisfy BOTH the maximum size rule 2a AND your entry
 must satisfy the IOCCC size tool rule 2b.
-
-The IOCCC size tool should be compiled as:
-
-```
-    cc -pedantic -Wall -Wextra -std=c11 iocccsize.c -o iocccsize
-```
 
 This tool imposes a 2nd limit on C code size (rule 2b).  To check your
 code against the 2nd limit of rule 2, use the -i command line option.
@@ -208,11 +199,11 @@ In cases where the above summary and the algorithm implemented by
 the IOCCC size tool source code conflict, the algorithm implemented
 by the IOCCC size tool source code is preferred by the judges.
 
-There are at least 2 other reasons for selecting 2053 as the 2nd limit
-besides the fact that 2053 is the next prime > 2048.  These reasons
-may be searched for and discovered if you are "Curios!" about 2053. :-)
-Moreover, 2053 was the number of the kernel disk pack of one of the
-judge's BESM-6.
+**`|`**   There are at least 2 other reasons for selecting 2503 as the 2nd limit
+**`|`**   besides the fact that 2053 is a prime.  These reasons
+**`|`**   may be searched for and discovered if you are ["Curios!" about 2503](https://t5k.org/curios/page.php/2503.html). :-)
+**`|`**   Moreover, 2053 was the number of the kernel disk pack of one of the
+**`|`**   judge's BESM-6, and 2503 is a decimal anagram of 2053.
 
 Take note that this secondary limit imposed by the IOCCC size tool
 obviates some of the need to #define C reserved words in an effort
@@ -220,18 +211,18 @@ to get around the size limits of rule 2.
 
 Yes Virginia, **that is a hint**!
 
-**`|`**   We applaud programs that do not issue warnings when compiled.
-**`|`**   To avoid warnings, you might be tempted to add various -Wno-foobar
-**`|`**   flags.  Unfortunately such flags are NOT portable.  Moreover,
-**`|`**   such flags are not consistent between different C compilers.
-**`|`**   Therefore we recommend that you consider one of several approaches:
+We applaud programs that do not issue warnings when compiled.
+To avoid warnings, you might be tempted to add various -Wno-foobar
+flags.  Unfortunately such flags are NOT portable.  Moreover,
+such flags are not consistent between different C compilers.
+Therefore we recommend that you consider one of several approaches:
 
-a) **`|`** Write code that does not generate compiler warnings
-b) **`|`** Do not use flags that disable compiler warnings
-c) **`|`** Provide instructions (such as in your Makefile) that
-   **`|`** uses appropriate disable compiler warnings flags for
-   **`|`** both clang and gcc
-d) **`|`** Do something creative
+a) Write code that does not generate compiler warnings
+b) Do not use flags that disable compiler warnings
+c) Provide instructions (such as in your Makefile) that
+   uses appropriate disable compiler warnings flags for
+   both clang and gcc
+d) Do something creative
 
 
 # OUR LIKES AND DISLIKES:
@@ -329,10 +320,10 @@ of nested functions such as:
 
 ```
     main() {
-|       void please_do_not_submit_this() {
-|           printf("The machine that goes BING!\n");
+|       void please_dont_submit_this() {
+|           printf("The machine that goes BING!!\n");
         }
-|       please_do_not_submit_this();
+|       please_dont_submit_this();
     }
 ```
 
@@ -344,8 +335,8 @@ nested functions.  Such constructions, while interesting and sometimes
 amusing, will have to wait until they required by a C standard that are
 actually implemented in commonly used C compilers.  Sorry!
 
-**`|`**   We prefer programs that do not require a fish license: crayons and
-**`|`**   cat detector vans not withstanding.
+We prefer programs that do not require a fish license: crayons and
+cat detector vans not withstanding.
 
 If your entry uses functions that have a variable number of
 arguments, be careful. Systems implement `va_list` as a wide variety
@@ -403,20 +394,20 @@ We tend to dislike programs that:
 * are "blob-ier" than they need to be
 * are rather similar to previous winners  :-(
 * are too similar to previous losers  :-)
-* **`|`** that mandate the exclusive the use of an specific Integrated
-* **`|`** Development Environment (IDE)
+* that mandate the exclusive the use of an specific Integrated
+* Development Environment (IDE)
 
-**`|`**   In order to encourage entry portability, we dislike entries that
-**`|`**   fail to build unless one is using an IDE. For example, do not
-**`|`**   mandate that one must use Microsoft Visual Studio to compile
-**`|`**   your entry.  Nevertheless some of the better IDEs have command-line
-**`|`**   interfaces to their compilers, once one learns how to invoke a shell.
+In order to encourage entry portability, we dislike entries that
+fail to build unless one is using an IDE. For example, do not
+mandate that one must use Microsoft Visual Studio to compile
+your entry.  Nevertheless some of the better IDEs have command-line
+interfaces to their compilers, once one learns how to invoke a shell.
 
-**`|`**   The program must compile and link cleanly in a POSIX-like environment.
-**`|`**   Therefore do not assume the system has a windows.h include file:
+The program must compile and link cleanly in a POSIX-like environment.
+Therefore do not assume the system has a windows.h include file:
 
 ```
-|   #include <windows.h>	/* we dislike this include */
+    #include <windows.h>	/* we dislike this include */
 ```
 
 Unless you are cramped for space, or unless you are entering the
@@ -431,11 +422,10 @@ after the minute mark is 60.
 
 The "how to build" make process should not be used to try and get
 around the size limit.  It is one thing to make use of a several -D's
-**`|`**   on the compile line to help out, but it is quite another to use many
+on the compile line to help out, but it is quite another to use many
 bytes of -D's in order to try and squeeze the source under the size limit.
 
-**`|`**   Your source code, post-pre-processing, should not exceed the size
-**`|`**   of Windows. :-)
+Your source code, post-pre-processing, should not exceed the size of Windows. :-)
 
 The judges, as a group, have a history giving wide degree of latitude
 to reasonable entries.  And recently they have had as much longitudinal
@@ -537,7 +527,7 @@ However, initialized char arrays are OK to write over.  This is OK:
     b[9] = 'K';
 ```
 
-**`|`**   There are more than one typos in this very sentence.
+**`|`**   There are more than 1 typos in this very sentence.
 
 X client entries should be as portable as possible.  Entries that
 adapt to a wide collection of environments will be favored.  For
@@ -552,13 +542,14 @@ X client entries should avoid using X related libraries and
 software that is not in wide spread use.
 
 This is the only guideline that contains the word fizzbin.
-**`|`**   However, do you know how to play fizzbin?  You do?!?  (Except on Tuesday)
+**`|`**   However, do you know how to play [fizzbin](https://en.wikipedia.org/wiki/List_of_games_in_Star_Trek#Fizzbin)?
+You do?!?  (Except on Tuesday)
 
 We don't like entries that use proprietary toolkits such as the M*tif,
 Xv*ew, or OpenL*ok toolkits, since not everyone has them.  Use of an
 open source toolkit that is widely and freely available instead.
 
-**NOTE**: **`|`** The previous guideline in this spot has been replaced by this guideline:
+**NOTE**: The previous guideline in this spot has been replaced by this guideline:
 
 X client entries should not to depend on particular items on
 .Xdefaults.  If you must do so, be sure to note the required lines
@@ -572,25 +563,22 @@ the copyright system).
 
 While we recognize that UNIX is not a universal operating system, the
 contest does have a bias towards such systems.  In an effort to expand
-the scope of the contest, we phrase our bias in terms of POSIX P1003.1
-and P1003.2 standards.  This will allow certain non-UNIX OS users to
-submit entries.  On the other hand, this is a guideline and not a rule.
-We will not reject an entry based on some POSIX technicality.
+the scope of the contest, we phrase our bias to favor:
 
-When dealing with OS and application environments, we suggest that you
-be reasonable with a nod towards vanilla UNIX-like systems.  POSIX will
-evolve but not as much as the contest.
+**`|`**   [Single UNIX Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification).
 
-You very well might not be completely prohibited from failing to not
-partly misunderstand this particular guideline, but of course we could
-**`|`**   not possibly comment.  Nevertheless, you are neither prohibited, nor are
-**`|`**   you required to determine that this or the previous sentence is either false
-**`|`**   and/or misleading.  Therefore, it might be wise for you to not fail to consider
-**`|`**   to do so, accordingly. Thank you.
+**`|`**   You are **well advised** to submit entries that conform to the [Single UNIX Specification Version 4](https://unix.org/version4/overview.html).
+
+**`|`**   You very well might not be completely be prohibited from failing to not
+**`|`**   partly misunderstand this particular guideline, but of course, we could
+**`|`**   not possibly comment!  :-)  Nevertheless, you are neither prohibited, nor are
+**`|`**   you fully required to determine that this or the previous sentence is either false
+**`|`**   and/or perhaps misleading.  Therefore, it might be wise for you to not fail to consider
+**`|`**   to do so, accordingly. Thank you very much.
 
 Any complaints about the above guideline could be addressed to the
 Speaker of the House of Commons, or to the speaker of your national
-**`|`**   parliament should you have one.
+parliament should you have one.
 
 We like programs that:
 
@@ -610,7 +598,7 @@ You are better off explaining what your entry does in the program
 "remarks" section rather than leaving it obscure for the judges
 as we might miss something and/or be too tired to notice.
 
-**`|`**   Please avoid this specific individual guideline, if at all possible.
+**`|`**   Please avoid this specific individual guideline, if it at all possible.
 
 We freely admit that interesting, creative or humorous comments in
 the program "remarks" help your chances of winning.  If you had to
@@ -670,10 +658,11 @@ We believe that Mark Twain's remark:
 
 is a good guideline for those writing code for the IOCCC.
 
-The IOCCC size tool source, iocccsize.c, is not an original work,
-**`|`**   unless you are Anthony C Howe, in which case it is original!
-**`|`**   Submitting source that uses the content iocccsize.c, unless you are
-**`|`**   Anthony C Howe, might run the risk of violating rule 7.
+**`|`**   The [IOCCC size tool source](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)
+is not an original work,
+unless you are Anthony C Howe, in which case it is original!
+Submitting source that uses the content iocccsize.c, unless you are
+Anthony C Howe, might run the risk of violating rule 7.
 
 Rule 7 does not prohibit you from writing your own obfuscated IOCCC size tool.
 However if you do, you might wish to make your tool do something more
@@ -887,7 +876,7 @@ often accept their suggestions/comments about our remarks as well.
 This is done prior to posting the winners to the wide world.
 
 
-## An important 2023 update to how winners are announced
+## An important update to how winners are announced
 
 The IOCCC no longer uses twitter.  IOCCC entries will be announced
 by a git commit to the [IOCCC entries
@@ -1000,60 +989,22 @@ from the @IOCCC twitter handle.  Non-twitter users should visit:
 ```
 
 
-## An important update to this historic note
+## How the new IOCCC winners will be announced
 
-**-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-**
+**`|`**   The [Current status of the IOCCC](../status.html) will change from **judging** to **closed** .
 
-**`|`** **The IOCCC no longer uses twitter**.
+**`|`**   The **contest_status** in the [status.json](../status.json) file will change from **judging** to **closed** as well.
 
-**`|`** Today the [IOCCC uses Mastodon](../contact.html#mastodon).
+**`|`**   When the above happens, the winning entries have been selected by the [IOCCC judges](../judges.html).
 
-**`|`** For more information and to see our IOCCC Mastodon posts, see:
+**`|`**   The [IOCCC judges](../judges.html) will begin to prepare to release the source code of the new IOCCC winners.
 
-```
-    https://fosstodon.org/@ioccc
-```
+**`|`**   The [IOCCC judges](../judges.html) will post the winning source to the [IOCCC winner repo](https://github.com/ioccc-src/winner) as well as to the [Official IOCCC winner web site](https://www.ioccc.org/index.html).
 
-**-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-**
-
-Non-twitter users should force their browsers to reload the above URL
-to be sure they are seeing the most recent tweets.
-
-The judges will then post an initial announcement of who won, the name
-of their award, and a very brief description of the winning entry
-on the IOCCC website:
-
-```
-    https://www.ioccc.org/whowon.html
-```
-
-We will also attempt to submit a brief announcement story to /.:
-
-```
-    https://slashdot.org
-```
-
-that, depending on the willingness of the /. editors, may be posted
-to their site at the same time.
-
-Note that initial announcement will NOT contain source.  This is because
-the winning authors are given a chance to review the judges comments,
-and test our Makefile.  This review process typically takes a few weeks.
-
-Sometime after the initial announcement, and once the review
-by the winners has been completed, the winning source will be
-posted to the IOCCC website:
-
-```
-    https://www.ioccc.org/years.html
-
-    NOTE: previous winners are available at that URL
-```
-
-We will also tweet, via @IOCCC, when the winning source is available.
+**`|`**   The [IOCCC news](../news.html) will also contain an announcement of the winners.
 
 
-## An important 2023 update to how winners are announced
+## An important update to how winners are announced
 
 The IOCCC no longer uses twitter.  IOCCC entries will be announced
 by a git commit to the IOCCC entries repo:
@@ -1090,63 +1041,17 @@ Last, but not least, winners receive international fame and flames!  :-)
 
 # FOR MORE INFORMATION:
 
-You may contact the judges by sending email to the following address:
+**`|`**   For questions or comments about the contest, see [Contacting the IOCCC](../contact.html).
 
-```
-|   q.2024@ioccc.org        (do not submit entries to this address)
-```
+**`|`**   Be sure to review the [IOCCC Rules and Guidelines](index.html) as rules and the guidelines may (and often do) change from year to year.
 
-**`|`**   You must include the words 'ioccc 2024 question' in the subject of your
-email message when sending email to the judges.
+**`|`**   You should be sure you have the current rules and guidelines prior to submitting entries.
 
-Questions and comments about the contest are welcome.  Comments about
-confusing rules and guidelines are also welcome.
+**`|`**   See the [Official IOCCC website news](../news.html) for additional information.
 
-The rules and the guidelines may (and often do) change from year to
-year.  You should be sure you have the current rules and guidelines
-prior to submitting entries.
+**`|`**   For the updates and breaking IOCCC news, you are encouraged to follow the [IOCCC on Mastodon](https://fosstodon.org/@ioccc) account.  See our [FAQ](../faq.html#try_mastodon) for more information.
 
-Check out the IOCCC Web page:
-
-```
-    https://www.ioccc.org
-```
-
-It has rules, guidelines and winners of previous contests (1984 to date).
-
-For the updates and breaking IOCCC news, you are encouraged to follow
-the twitter handle:
-
-```
-    @IOCCC
-```
-
-You do not have to be a twitter user to follow @IOCCC.  Non-twitter
-users should access:
-
-```
-    https://twitter.com/ioccc
-```
-
-Non-twitter users should force their browsers to reload the above URL
-to be sure they are seeing the most recent tweets.
-
-
-## An important update to this historic note
-
-**-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-**
-
-**`|`** **The IOCCC no longer uses twitter**.
-
-**`|`** Today the [IOCCC uses Mastodon](../contact.html#mastodon).
-
-**`|`** For more information and to see our IOCCC Mastodon posts, see:
-
-```
-    https://fosstodon.org/@ioccc
-```
-
-**-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-**
+**`|`**   Check out the [Official IOCCC winner web site](https://www.ioccc.org/index.html) in general.
 
 Leonid A. Broukhis<br>
 chongo (Landon Curt Noll) /\\cc/\\
