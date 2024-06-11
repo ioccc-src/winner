@@ -65,10 +65,10 @@ about any **changes**.
 When the IOCCC status is **_judging_**, the [rules](rules.html) and [guidelines](guidelines.html) are
 for the current IOCCC **that is _no longer open_ for new submissions**.
 
-See the [IOCCC news](../news.html) and well as the [IOCCC
+See the [IOCCC news](../news.html) as well as the [IOCCC
 Mastodon](https://fosstodon.org/@ioccc) feed for updates
 on the IOCCC judging process as well as for the announcement
-for [who won the IOCCC](../years.html).
+of [who won the IOCCC](../years.html).
 
 
 <!--
