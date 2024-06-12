@@ -4,10 +4,10 @@
 #
 # Find all markdown links to local files that do not exist.
 #
-# This tool does **NOT** check of a remote URL exists.
+# This tool does **NOT** check that a remote URL exists.
 # This tool only checks on links to local files.
 #
-# This tool does **NOT** check links into a given place in a file.
+# This tool does **NOT** check links in a given place in a file.
 # This tool only checks that local files linked by markdown exist.
 #
 # This tool does **NOT** check HTML file links.
