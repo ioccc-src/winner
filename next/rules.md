@@ -2,27 +2,29 @@
 
 # WARNING: These rules are OUT OF DATE
 
-These rules are a **very tentative proposal** for the next IOCCC
-that is **VERY LIKELY** to be updated before the next IOCCC.
-They are are provided as a **very tentative** hint at what
-might be used in a future IOCCC.
+These rules are a **VERY TENTATIVE proposal** for the next IOCCC
+and are **VERY LIKELY** to be updated before the next IOCCC.
+They are are provided as a **very tentative** hint at **what
+MIGHT** be used in the next IOCCC.
 
-Please regard these rules as a historic archive.
+Please regard these rules as a historical archive.
 
 
 # The IOCCC is closed
 
-The IOCCC is **NOT** accepting new submissions at this time.  See the
-[IOCCC winning entries page](../years.html) for the entries that have won the IOCCC.
+The IOCCC is **NOT** accepting new submissions at this time.  See the [IOCCC
+winning entries page](../years.html) for the entries that have won the IOCCC in
+the past.
 
 Watch both [the IOCCC status page](../status.html) and the
-[@IOCCC mastodon feed](https://fosstodon.org/@ioccc) for information about future IOCCC openings.
+[@IOCCC mastodon feed](https://fosstodon.org/@ioccc) for information about
+future IOCCC openings.
 
 <!-- END: the next line ends content from: inc/rules.closed.hdr -->
 <!-- This is the last line modified by the tool: bin/gen-status.sh -->
 # 28th International Obfuscated C Code Contest Official Rules
 
-**`|`**   Copyright &copy; 2024 Leonid A. Broukhis, Landon Curt Noll.
+**`|`**   Copyright &copy; 2024 Leonid A. Broukhis and Landon Curt Noll.
 
 All Rights Reserved.  Permission for personal, education or non-profit use is
 granted provided this this copyright and notice are included in its entirety
@@ -42,7 +44,7 @@ writing by [contacting the judges](../contact.html).
 **`|`**   **&larr; Lines that start with this symbol indicate a change from the previous IOCCC**
 
 Most lines (we sometimes make mistakes) that were modified since the previous
-IOCCC start the **`|`** symbol.
+IOCCC start with the **`|`** symbol.
 
 
 # Obfuscate defined:
@@ -61,7 +63,7 @@ tr.v. -cated, -cating, -cates.
 
 The goals of the IOCCC:
 
-*  To write the most Obscure/Obfuscated C program within the rules.
+*  To write the most Obscure/Obfuscated C program within the [rules](rules.html).
 *  To show the importance of programming style, in an ironic way.
 *  To stress C compilers with unusual code.
 *  To illustrate some of the subtleties of the C language.
@@ -72,27 +74,26 @@ The goals of the IOCCC:
 
 **`|`**   This IOCCC runs from **2019-Dec-26 06:01:41 UTC** to **2020-Mar-15 06:26:49 UTC**.
 
-Until the start of this IOCCC, these rules, guidelines and iocccsize.c
-(contained in the [mkiocccentry
+Until the start of this IOCCC, these [rules](rules.html),
+[guidelines](guidelines.html) and iocccsize.c (contained in the [mkiocccentry
 toolkit](https://github.com/ioccc-src/mkiocccentry) and invoked by the
-`mkiocccentry` tool)
-should be considered provisional **BETA** versions and may be
-adjusted **AT ANY TIME**.
+`mkiocccentry(1)` tool) should be considered provisional **BETA** versions and
+**may be adjusted _AT ANY TIME_**.
 
 When the IOCCC is open, the submission URL is:
 [https://submit.ioccc.org/](https://submit.ioccc.org/), at all other
 times that link is likely to be unresponsive.
 
-Please check the [How to enter link](../faq.html#submit) link
+Please check the [How to enter FAQ](../faq.html#submit)
 for **important information** on how to submit to the IOCCC.
 
 **`|`**   The submit URL should be active on or slightly before **2020-Jan-15 12:21:37 UTC**.
 Please wait to submit your entries until after that time.
 
-The official rules, guidelines will be available on the [official IOCCC
-website](../index.html) on or slightly before start of this IOCCC. The
-`mkiocccentry` toolkit may be obtained at any time at the
-[mkiocccentry toolkit repo](https://github.com/ioccc-src/mkiocccentry).
+The official [rules](rules.html) and [guidelines](guidelines.html) will be
+available on the [official IOCCC website](../index.html) on or slightly before
+the start of this IOCCC. The `mkiocccentry` toolkit may be obtained at any time
+at the [mkiocccentry toolkit repo](https://github.com/ioccc-src/mkiocccentry).
 
 Please recheck on or after the start of this IOCCC to be sure you
 are using the correct versions of these items before using the IOCCC
@@ -126,19 +127,19 @@ The size of your program source **MUST BE <= 4096 bytes**in length.
 ## Rule 2b
 
 **`|`**   When your program source is fed as input to the current IOCCC size
-tool, and the IOCCC size tool -i command line option is used, the
+tool, and the IOCCC size tool `-i` command line option is used, the
 value printed **shall not exceed 2503**.
 
 **`|`**   The source to the current IOCCC size tool is found in the
 [mkiocccentry tool repo](https://github.com/ioccc-src/mkiocccentry). If you use
-the `mkiocccentry` tool (which we **STRONGLY recommend you do**) will invoke
+the `mkiocccentry` tool (which we **STRONGLY recommend you do**) it will invoke
 this tool before packaging your entry for submission.
 
 
 ## Rule 3
 
 Submissions should be performed using the instructions outlined at:
-the [How to enter link](../faq.html#submit) link.
+the [How to enter FAQ](../faq.html#submit).
 
 To submit to an open IOCCC, you must use the [IOCCC submit server](https://submit.ioccc.org/).
 
@@ -171,10 +172,10 @@ file to a new filename and then modify that copy.
 
 ## Rule 6
 
-**`|`**   I am not a rule, I am a `free(void \*human)`!
+**`|`**   I am not a rule, I am a `free(void *human)`!
 
 ``` <!---c-->
-|       while (!understand(ioccc(rule(that(you(are(number(6)))))))) { ha_ha_ha(); }
+        while (!understand(ioccc(rule(that(you(are(number(6)))))))) { ha_ha_ha(); }
 ```
 
 
@@ -191,8 +192,8 @@ under the following license:
 See also Rule 18.
 
 If you submit any content that is owned by others, you **MUST**
-detail that ownership (i.e., who owns what) and document the
-permission you obtained.
+detail that ownership (i.e., who owns what) **AND document the
+permission you obtained**.
 
 Please note that the IOCCC size tool is **NOT** an original work.
 
@@ -200,7 +201,7 @@ Please note that the IOCCC size tool is **NOT** an original work.
 ## Rule 8
 
 **`|`**   Entries must be received prior to the end of this IOCCC which is
-**2024-MMM-DD HH:MM:SS UTC**.  ** XXX - This date and time is TDB - XXX **.
+**2024-MMM-DD HH:MM:SS UTC**.  **XXX - This date and time is TDB - XXX **.
 
 
 A confirmation of submission will be sent to the submitting email address
@@ -209,7 +210,7 @@ before the close of the contest.
 
 ## Rule 9
 
-**`|`**   Each person may submit up to and including 8.000000 entries per contest.
+**`|`**   Each person may submit up to and including 10.000000 entries per contest.
 
 Each entry must be submitted separately.
 
@@ -224,8 +225,8 @@ Entries requiring human interaction to be initially compiled are not permitted.
 Programs that require special privileges (`setuid(2)`, `setgid(2)`, super-user,
 special owner, special group, etc.) are still highly discouraged. We
 do not guarantee these functions will behave as you expect on our test
-platforms. If your program needs special permissions **please** document
-them in the remarks file.
+platforms. If your program needs special permissions **please document
+them** in the remarks file.
 
 
 ## Rule 12
@@ -277,7 +278,7 @@ See also [How may I submit to the IOCCC?](../faq.html#submit) in the
 
 ## Rule 16
 
-You are **STRONGLY** encouraged to submit a previously unpublished and
+You are **STRONGLY** encouraged to submit a previously unpublished _AND_
 original entry. Submissions that are similar to previous entries are
 discouraged. As we judge anonymously, submissions that have already
 been published may be disqualified.
@@ -292,8 +293,9 @@ to 28314624 octets (27651K) in size.
 **`|`**   When your submission is formed into a bzip2 compressed tarball file,
 that file must than or equal 3999971 octets in size.
 
-**`|`**   The [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) (see `mkiocccentry(1)` and `txzchk(1)`) will help you verify that your submission conforms to this rule.
-
+**`|`**   The [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
+(see `mkiocccentry(1)` and `txzchk(1)`) will help you verify that your
+submission conforms to this rule.
 
 ## Rule 18
 
@@ -302,7 +304,7 @@ The entirety of your entry must be submitted under the following license:
 **`|`**   **[CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)**
 
 You (the author(s)) **MUST** own the contents of your submission **OR**
-you **MUST** have permission from the owner(s) to submit their content.
+you **MUST HAVE PERMISSION** from the owner(s) to submit their content.
 
 You must not submit anything that cannot be submitted under that license.
 
@@ -318,9 +320,9 @@ for more information.
 
 ## Rule 20
 
-The how to build instructions must be in Makefile format. See [What kind of
-make&#x28;1&#x29; compatibility does the IOCCC support and will it support other
-kinds?](../faq.html#make_compatibility) for more details on what we support.
+The how to build instructions must be in Makefile format. See [the FAQ about
+make&#x28;1&#x29; compatibility the IOCCC
+supports](../faq.html#make_compatibility) for more details.
 
 The target of the Makefile must be called `prog`.  The original
 C source file must be called `prog.c`.
@@ -351,7 +353,7 @@ detect if required rules exist in your Makefile.
 Your entry must not create or modify files above the current directory
 with the exception of the `/tmp` and the `/var/tmp` directories.  Your entry
 **MAY** create subdirectories below the current directory, or in `/tmp`,
-or in `/var/tmp` provided that "**.**" is **NOT** the first octet in any
+or in `/var/tmp` provided that `.` is **NOT** the first octet in any
 directory name or filename you submit.
 
 
@@ -370,7 +372,7 @@ within your code, data, remarks or program output (unless you are
 _Peter Honeyman_ or pretending to be _Peter Honeyman_) will be grounds
 for disqualification of your entry.
 
-Yes, Virginia, **we REALLY mean it**!
+Yes, Virginia, **WE REALLY MEAN IT!**
 
 
 ## Rule 23
@@ -402,13 +404,19 @@ Rule 26 is also a rule.
 
 **`|`**   For questions or comments about the contest, see [Contacting the IOCCC](../contact.html).
 
-**`|`**   Be sure to review the [IOCCC Rules and Guidelines](index.html) as rules and the guidelines may (and often do) change from year to year.
+**`|`**   Be sure to review the [IOCCC Rules and Guidelines](index.html) as
+[rules](rules.html) and the [guidelines](guidelines.html) may (and often do) change from year to year.
 
-**`|`**   You should be sure you have the current rules and guidelines prior to submitting entries.
+**`|`**   You should be sure you have the current [rules](rules.html) and
+[guidelines](guidelines.html) prior to submitting entries.
 
 **`|`**   See the [Official IOCCC website news](../news.html) for additional information.
 
-**`|`**   For the updates and breaking IOCCC news, you are encouraged to follow the [IOCCC on Mastodon](https://fosstodon.org/@ioccc) account.  See our [FAQ](../faq.html#try_mastodon) for more information.
+**`|`**   For the updates and breaking IOCCC news, you are encouraged to follow
+the [IOCCC on Mastodon](https://fosstodon.org/@ioccc) account.  See our
+[FAQ](../faq.html#try_mastodon) for more information. Please do note that unless
+you are mentioned by us you will **NOT** get a notification from the app so you
+should refresh the page even if you do follow us.
 
 **`|`**   Check out the [Official IOCCC winner web site](https://www.ioccc.org/index.html) in general.
 

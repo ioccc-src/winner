@@ -1,28 +1,28 @@
-<!-- START: this line starts content from: inc/guidelines.closed.hdr -->
-
 # WARNING: These guidelines are OUT OF DATE
 
-These guidelines are a **very tentative proposal** for the next IOCCC
-that is **VERY LIKELY** to be updated before the next IOCCC.
-They are are provided as a **very tentative** hint at what
-might be used in a future IOCCC.
+These guidelines are a **VERY TENTATIVE proposal** for the next IOCCC
+and are **VERY LIKELY** to be updated before the next IOCCC.
+They are are provided as a **VERY TENTATIVE** hint at **what
+MIGHT** be used in the next IOCCC.
 
-Please regard these guidelines as a historic archive.
+Please regard these guidelines as a historical archive.
 
 
 # The IOCCC is closed
 
 The IOCCC is **NOT** accepting new submissions at this time.  See the
-[IOCCC winning entries page](../years.html) for the entries that have won the IOCCC.
+[IOCCC winning entries page](../years.html) for the entries that have won the
+IOCCC in the past.
 
 Watch both [the IOCCC status page](../status.html) and the
-[@IOCCC mastodon feed](https://fosstodon.org/@ioccc) for information about future IOCCC openings.
+[@IOCCC mastodon feed](https://fosstodon.org/@ioccc) for information about
+future IOCCC openings.
 
 <!-- END: the next line ends content from: inc/guidelines.closed.hdr -->
 <!-- This is the last line modified by the tool: bin/gen-status.sh -->
 # 28th International Obfuscated C Code Contest Official Guidelines
 
-Copyright &copy; 2024 Leonid A. Broukhis, Landon Curt Noll.
+Copyright &copy; 2024 Leonid A. Broukhis and Landon Curt Noll.
 
 All Rights Reserved.  Permission for personal, education or non-profit use is
 granted provided this this copyright and notice are included in its entirety
@@ -53,11 +53,11 @@ submit entries to the [International Obfuscated C Code Contest
 
 These are not the IOCCC rules, though it does contain comments about
 them.  The guidelines should be viewed as _hints_ and _suggestions_.
-Entries that violate the guidelines but remain within the rules are
-allowed.  Even so, you are safer if you remain within the guidelines.
+Entries that violate the guidelines but remain within the rules _are
+allowed_.  Even so, you are safer if you remain within the guidelines.
 
 You should read the current [IOCCC rules](rules.html), prior to submitting entries.
-The rules are typically sent out with these guidelines.
+The rules are typically published along with these guidelines.
 
 
 # WHAT'S NEW THIS IOCCC
@@ -71,21 +71,22 @@ for be a **fun**ctional UTC time.  :-)
 Until the start of this IOCCC, these rules, guidelines and iocccsize.c
 (contained in the [mkiocccentry
 toolkit](https://github.com/ioccc-src/mkiocccentry))
-tool should be considered provisional **BETA** versions and may be
-adjusted **AT ANY TIME**.
+tool should be considered provisional **BETA** versions and **may be
+adjusted _AT ANY TIME_**.
 
 The IOCCC submission URL is <https://submit.ioccc.org/>.
 
 **`|`**   The submit URL should be active on or slightly before **2024-MMM-DD HH:MM:SS UTC**.
-** XXX - This date and time is TDB - XXX **.
+**XXX - This date and time is TDB - XXX **.
 
 Please wait to submit your entries until after that time.
 
-The official rules, guidelines and iocccsize.c (invoked by the mkiocccentry) tool will be available
-on the official IOCCC website on or slightly before start of this IOCCC.
-Please check the IOCCC FAQ [How to submit](../faq.html#submit).
-on or after the start of this IOCCC to be sure you are using the correct
-versions of these items before using the IOCCC entry submission URL.
+The official rules, guidelines and iocccsize.c (invoked by the mkiocccentry)
+tool will be available on the official IOCCC website on or slightly before start
+of this IOCCC.  Please check the IOCCC [FAQ about how to submit](../faq.html#submit)
+to see how to submit entries, on or after the start of this IOCCC, to be sure
+you are using the correct versions of these items before using the IOCCC entry
+submission URL.
 
 
 # HINTS AND SUGGESTIONS:
@@ -94,16 +95,16 @@ You are encouraged to examine the winners of previous contests.  See
 **FOR MORE INFORMATION** for details on how to get previous winners.
 
 Keep in mind that rules change from year to year, so some winning entries
-may not be valid entries this year.  What was unique and novel one year
-might be 'old' the next year.
+might not be valid entries this year.  What _was_ unique and novel one year
+_might be 'old' the next year_.
 
 An entry is usually examined in a number of ways.  We typically apply
 a number of tests to an entry:
 
 * look at the original source
 * convert ANSI trigraphs to ASCII
-* C pre-process the source ignoring '#include' lines
-* C pre-process the source ignoring '#define' and '#include' lines
+* C pre-process the source ignoring `#include` lines
+* C pre-process the source ignoring `#define` _and_ `#include` lines
 * run it through a C beautifier
 * examine the algorithm
 * compile it (with flags to enable all warnings)
@@ -115,20 +116,22 @@ You should ask yourself if your entry remains obscure after it has been
 
 Your entry need not pass all of the above tests.  In certain
 cases, a test is not important.  Entries that compete for the
-'strangest/most creative source layout' need not do as well as
+'_strangest/most creative source layout_' need not do as well as
 others in terms of their algorithm.  On the other hand, given
 two such entries, we are more inclined to pick the entry that
 does something interesting when you run it.
 
 We try to avoid limiting creativity in our rules.  As such, we leave
-the contest open for creative rule interpretation.  As in real life
+the contest open for creative rule interpretation.  As in [real
+life](https://en.wikipedia.org/wiki/Real_life)
 programming, interpreting a requirements document or a customer request
-is important.  For this reason, we often award 'worst abuse of the
-rules' to an entry that illustrates this point in an ironic way.
+is important.  For this reason, we often award '_Best abuse of the
+rules_' or '_Worst abuse of the rules_' to an entry that illustrates this point
+in an ironic way.
 
 We do realize that there are holes in the rules, and invite entries
-to attempt to exploit them.  We will award 'worst abuse of the rules'
-and then plug the hole next year.
+to attempt to exploit them.  We will award '_Worst abuse of the rules_' or
+'_Best abuse of the rules_' and then plug the hole next year.
 
 **`|`**   Even so, we will attempt to use the smallest plug needed, if not smaller.  Or, maybe not.  :-)
 
@@ -139,18 +142,19 @@ the effort to debug an entry that has a slight problem, particularly
 in or near the final round.  On the other hand, we have seen some
 of the best entries fall down because they didn't work.
 
-We tend to look down on a prime number printer that claims that
+We tend to look down on a [prime
+number](https://en.wikipedia.org/wiki/Prime_number) printer that claims that
 16 is a prime number.  If you do have a bug, you are better off
-documenting it.  Noting "this entry sometimes prints the 4th power
-of a prime by mistake" would save the above entry.  And sometimes,
+documenting it.  Noting "_this entry sometimes prints the 4th power
+of a prime by mistake_" would save the above entry.  And sometimes,
 a strange bug/feature can even help the entry!  Of course, a correctly
 working entry is best.  Clever people will note that 16 might be prime
 under certain conditions.  Wise people, when submitting something clever
 will fully explain such cleverness in their entry's remarks file.
 
 People who are considering to just use some complex mathematical
-function or state machine to spell out something such as "hello,
-world!" really really, and we do mean really, do need to be more creative.
+function or state machine to spell out something such as "_hello,
+world!_" really really, and we do mean really, do need to be more creative.
 
 Ultra-obfuscated programs are, in some cases, easier to
 deobfuscate than subtly-obfuscated programs.  Consider using
@@ -158,13 +162,13 @@ misleading or subtle tricks layered on top of or under an
 appropriate level of obfuscation.  A clean looking program with
 misleading comments and variable names might be a good start.
 
-When programs use VTxxx/ANSI sequences, they should NOT limited to a
+When programs use VTxxx/ANSI sequences, they should NOT be limited to a
 specific terminal brand.  Those programs that work in a standard xterm
 are considered more portable.
 
 **`|`**   Rule 2 (the size rule) refers to the use of the IOCCC size tool called `iocccsize`.
 
-**`|`**   See the [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) for how to compile and `iocccsize`.
+**`|`**   See the [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) for how to compile `iocccsize.c`.
 
 **`|`**   To further clarify rule 2, we subdivided it into two parts, 2a and 2b.
 
@@ -200,48 +204,53 @@ the IOCCC size tool source code conflict, the algorithm implemented
 by the IOCCC size tool source code is preferred by the judges.
 
 **`|`**   There are at least 2 other reasons for selecting 2503 as the 2nd limit
-**`|`**   besides the fact that 2053 is a prime.  These reasons
+
+**`|`**   besides the fact that 2503 is a prime.  These reasons
+
 **`|`**   may be searched for and discovered if you are ["Curios!" about 2503](https://t5k.org/curios/page.php/2503.html). :-)
+
 **`|`**   Moreover, 2053 was the number of the kernel disk pack of one of the
+
 **`|`**   judge's BESM-6, and 2503 is a decimal anagram of 2053.
 
 Take note that this secondary limit imposed by the IOCCC size tool
-obviates some of the need to #define C reserved words in an effort
+obviates some of the need to `#define` C reserved words in an effort
 to get around the size limits of rule 2.
 
 Yes Virginia, **that is a hint**!
 
 We applaud programs that do not issue warnings when compiled.
-To avoid warnings, you might be tempted to add various -Wno-foobar
+To avoid warnings, you might be tempted to add various `-Wno-foobar`
 flags.  Unfortunately such flags are NOT portable.  Moreover,
 such flags are not consistent between different C compilers.
 Therefore we recommend that you consider one of several approaches:
 
-a) Write code that does not generate compiler warnings
+a) Write code that does not generate compiler warnings (but see [the FAQ about
+clang -Weverything](../faq.html#faq3_11))
 b) Do not use flags that disable compiler warnings
 c) Provide instructions (such as in your Makefile) that
-   uses appropriate disable compiler warnings flags for
+   use the appropriate disable compiler warnings flags for
    both clang and gcc
 d) Do something creative
 
 
 # OUR LIKES AND DISLIKES:
 
-Doing masses of #defines to obscure the source has become 'old'.  We
-tend to 'see thru' masses of #defines due to our pre-processor tests
-that we apply.  Simply abusing #defines or -Dfoo=bar won't go as far
+Doing masses of `#defines` to obscure the source has become 'old'.  We
+tend to 'see thru' masses of `#defines` due to our pre-processor tests
+that we apply.  Simply abusing `#defines` or `-Dfoo=bar` won't go as far
 as a program that is more well rounded in confusion.
 
 Many C compilers dislike the following code, and so do we:
 
-```
+``` <!---c-->
     #define d define
     #d foo             /* <-- don't expect this to turn into #define foo */
 ```
 
 When declaring local or global variables, you should declare the type:
 
-```
+``` <!---c-->
     int this_is_fine;
     this_is_not;       /* <-- Try to avoid implicit type declarations */
 ```
@@ -273,8 +282,8 @@ to make your code compile warning free using:
     -Wall -Wextra -Weverything -pedantic
 ```
 
-.. though see [Why do Makefiles use -Weverything with
-clang?](../faq.html#faq3_11) in the [FAQ](../faq.html).
+.. though, again, see [the FAQ about clang -Weverything](../faq.html#faq3_11) in
+the [FAQ](../faq.html).
 
 
 If you must turn off various warnings on the compile line such as:
@@ -283,13 +292,13 @@ If you must turn off various warnings on the compile line such as:
     ... -Wno-empty-body -Wno-return-type ...
 ```
 
-be sure to clearly state so in your remarks AS WELL AS in
+be sure to clearly state so in your remarks **AS WELL AS** in
 your "how to build" / Makefile.
 
 All other things being equal, a program that must turn off fewer
 warnings will be considered better, for certain values of better.
 
-Unless you clearly state otherwise in your remarks AS WELL AS in
+Unless you clearly state otherwise in your remarks **AS WELL AS** in
 your "how to build" / Makefile we will compile using:
 
 ```
@@ -318,12 +327,12 @@ flags that would make the program less portable.
 One side effect of the above is that you cannot assume the use
 of nested functions such as:
 
-```
+``` <!---c-->
     main() {
-|       void please_dont_submit_this() {
-|           printf("The machine that goes BING!!\n");
+        void please_dont_submit_this() {
+            printf("The machine that goes BING!!\n");
         }
-|       please_dont_submit_this();
+        please_dont_submit_this();
     }
 ```
 
@@ -357,7 +366,7 @@ Avoid using `varargs.h`.  Use `stdarg.h` instead.
 On 28 January 2007, the Judges rescinded the requirement that the
 `#` in a C preprocessor directive must be the 1st non-whitespace octet.
 
-The `exit(3)` function returns void.  Some broken systems have `exit(3)`
+The `exit(3)` function returns `void`.  Some broken systems have `exit(3)`
 return `int`, your entry should assume that `exit(3)` returns a `void`.
 
 **`|`**   This guideline has a change mark at the very start of this line.
@@ -368,8 +377,10 @@ serve a useful purpose.  They are often the only program that people
 attempt to completely understand.  For this reason, we look for
 programs that are compact, and are instructional.
 
-While those who are used to temperatures found on dwarf planet,
-(yes Virginia, dwarf planets are planets) such as Pluto might be able to
+While those who are used to temperatures found on [dwarf
+planet](https://science.nasa.gov/dwarf-planets/),
+(**yes Virginia, dwarf planets are planets**) such as
+[Pluto](https://science.nasa.gov/dwarf-planets/pluto/) might be able to
 explain to the Walrus why our seas are boiling hot, the question of
 whether pigs have wings is likely to remain a debatable point to most.
 
@@ -404,28 +415,31 @@ your entry.  Nevertheless some of the better IDEs have command-line
 interfaces to their compilers, once one learns how to invoke a shell.
 
 The program must compile and link cleanly in a POSIX-like environment.
-Therefore do not assume the system has a windows.h include file:
+Therefore do not assume the system has a
+[windows.h](https://en.wikipedia.org/wiki/Windows.h) include file:
 
-```
+``` <!---c-->
     #include <windows.h>	/* we dislike this include */
 ```
 
 Unless you are cramped for space, or unless you are entering the
-'best one liner' category, we suggest that you format your program
+'_Best one liner_' category, we suggest that you format your program
 in a more creative way than simply forming excessively long lines.
 
-At least one judge prefers to maintain the use of the leap-second
+At least one judge prefers to maintain the use of the
+[leap-second](https://en.wikipedia.org/wiki/Leap_second)
 as part of the world's time standard.  If your code prints time
 with seconds, we prefer that your code be capable of printing the
 time of day during a leap-second where the value in seconds
 after the minute mark is 60.
 
-The "how to build" make process should not be used to try and get
-around the size limit.  It is one thing to make use of a several -D's
+The "_how to build_" make process should not be used to try and get
+around the size limit.  It is one thing to make use of a several `-D`s
 on the compile line to help out, but it is quite another to use many
-bytes of -D's in order to try and squeeze the source under the size limit.
+bytes of `-D`s in order to try and squeeze the source under the size limit.
 
-Your source code, post-pre-processing, should not exceed the size of Windows. :-)
+Your source code, post-pre-processing, should not exceed the size of
+[Windows](https://en.wikipedia.org/wiki/Microsoft_Windows). :-)
 
 The judges, as a group, have a history giving wide degree of latitude
 to reasonable entries.  And recently they have had as much longitudinal
@@ -471,7 +485,7 @@ and then include special notes in the program "remarks" for
 alternate / human intervention based building.
 
 We want to get away from source that is simply a compact blob of
-octets.   Really try to be more creative than blob coding. *HINT!*
+octets.   Really try to be more creative than blob coding. **HINT!**
 
 Please do not use things like `gzip(1)` to get around the size limit.
 Please try to be much more creative.
@@ -507,13 +521,13 @@ they do not work as documented.
 Please note that the C source below, besides lacking in obfuscation,
 is NOT the smallest C source file that when compiled and run, dumps core:
 
-```
+``` <!---c-->
     main;
 ```
 
 We do not like writable strings.  That is, we don't want stuff like:
 
-```
+``` <!---c-->
     char *T = "So many primes, so little time!";
     ...
     T[14] = ';';
@@ -522,7 +536,7 @@ We do not like writable strings.  That is, we don't want stuff like:
 Please don't make use of this feature, even if your system allows it.
 However, initialized char arrays are OK to write over.  This is OK:
 
-```
+``` <!---c-->
     char b[] = "Is this OK";
     b[9] = 'K';
 ```
@@ -545,14 +559,14 @@ This is the only guideline that contains the word fizzbin.
 **`|`**   However, do you know how to play [fizzbin](https://en.wikipedia.org/wiki/List_of_games_in_Star_Trek#Fizzbin)?
 You do?!?  (Except on Tuesday)
 
-We don't like entries that use proprietary toolkits such as the M*tif,
-Xv*ew, or OpenL*ok toolkits, since not everyone has them.  Use of an
+We don't like entries that use proprietary toolkits such as the `M*tif`,
+`Xv*ew`, or `OpenL*ok` toolkits, since not everyone has them.  Use an
 open source toolkit that is widely and freely available instead.
 
 **NOTE**: The previous guideline in this spot has been replaced by this guideline:
 
 X client entries should not to depend on particular items on
-.Xdefaults.  If you must do so, be sure to note the required lines
+`.Xdefaults`.  If you must do so, be sure to note the required lines
 in the program "remarks".  They should also not depend on any
 particular window manager.
 
@@ -586,7 +600,7 @@ We like programs that:
 * do something at least quasi-interesting
 * are portable
 * are unique or novel in their obfuscation style
-* MAKE USE OF A NUMBER OF DIFFERENT TYPES OF OBFUSCATION  <== HINT!!
+* MAKE USE OF A NUMBER OF DIFFERENT TYPES OF OBFUSCATION  **<== HINT!!**
 * make us laugh and/or throw up  :-)  (humor really helps!)
 * make us want to eat good chocolate.
 
@@ -621,7 +635,8 @@ Rule 13 states any C source that fails to compile because of unescaped
 octets with the high bit set (octet value >= 128) will be rejected.
 Instead of unescaped octets, you should use \octal or \hex escapes:
 
-```
+``` <!---c-->
+
 	      /* 123456789 123456789 123456789 123456 */
     char *foo = "This string is 36 octets in length \263";
 	  /* This octet requires 4 octets of source ^^^^ */
@@ -638,14 +653,14 @@ Anyone can format their code into a dense blob.  A really clever
 author will try format their entry using a "normal" formatting style
 such that at first glance (if you squint and don't look at the details)
 the code might pass for non-obfuscated C.  Deceptive comments,
-and mis-leading formatting, in some cases, may be a plus.  On the
+and misleading formatting, in some cases, may be a plus.  On the
 other hand, a misleading code style requires more source bytes.
 
 If you do elect to use misleading formatting and comments, we
 suggest you remark on this point in your remarks where you talk
 about why you think your entry is obfuscated.  On the other hand,
 if you are pushing up against the size limits, you may be forced
-into creating a dense blob. Such are the trade offs that obfuscators face!
+into creating a dense blob. Such are the trade-offs that obfuscators face!
 
 We prefer code that can run on either a 64-bit or 32-bit processor.
 However, it is unwise to assume it will run on an i386 or x86 architecture.
@@ -661,7 +676,7 @@ is a good guideline for those writing code for the IOCCC.
 **`|`**   The [IOCCC size tool source](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)
 is not an original work,
 unless you are Anthony C Howe, in which case it is original!
-Submitting source that uses the content iocccsize.c, unless you are
+Submitting source that uses the content of iocccsize.c, unless you are
 Anthony C Howe, might run the risk of violating rule 7.
 
 Rule 7 does not prohibit you from writing your own obfuscated IOCCC size tool.
@@ -753,52 +768,53 @@ and state:
 
 # ABUSING THE RULES:
 
-Legal abuse of the rules is somewhat encouraged.  Legal rule abuse may
-involve, but is not limited to, doing things that are technically
-allowed by the rules and yet do not fit the spirit of what we intended
-to be submitted.
+Legal abuse of the [rules](rules.html) is somewhat encouraged.  Legal rule abuse
+may involve, but is not limited to, doing things that are technically allowed by
+the [rules](rules.html) and yet do not fit the spirit of what we intended to be
+submitted.
 
 Legal rule abuse is encouraged to help promote creativity.  Rule abuse
 entries, regardless of if they receive an award, result in changes to
-the next year's rules and guidelines.
+the next year's [rules](rules.html) and [guidelines](guidelines.html).
 
-Legal abuse of the rules is NOT an invitation to violate the rules.
-An entry that violates the rules in the opinion of the judges, WILL be
-disqualified.  RULE ABUSE CARRIES A CERTAIN LEVEL OF RISK!  If you
+Legal abuse of the [rules](rules.html) is NOT an invitation to violate the
+[rules](rules.html). An entry that violates the [rules](rules.html) in the
+opinion of the judges, **WILL** be
+disqualified.  **_RULE ABUSE CARRIES A CERTAIN LEVEL OF RISK!_**  If you
 have an entry that might otherwise be interesting, you might want to
-submit two versions; one that does not abuse the rules and one that
+submit two versions; one that does not abuse the [rules](rules.html) and one that
 does.
 
-If you intend to abuse the rules, indicate so in the program
-"remarks".  You must try to justify why you consider your rule abuse
-to be allowed under the rules.  That is, you must plead your case as
-to why your entry is valid.  Humor and/or creativity help plead a
-case.
+If you intend to abuse the [rules](rules.html), indicate so in the program
+"remarks".  You must try to justify why you consider your rule abuse to be
+allowed under the [rules](rules.html).  That is, you must plead your case as to
+why your entry is valid.  Humor and/or creativity help plead a case.
 
 Abusing the web submission procedure tends to annoy us more
 than amuse us.  Spend your creative energy on content of your
 entry rather than on the submission process itself.
 
-We are often asked why the contest rules and guidelines seem too
+We are often asked why the contest [rules](rules.html) and
+[guidelines](guidelines.html) seem too
 strange or contain mistakes, flaws or grammatical errors.  One reason
 is that we sometimes make genuine mistakes.  But in many cases such
 problems, flaws or areas of confusion are deliberate.  Changes to
-rules and guidelines in response to rule abuses, are done in a minimal
+[rules](rules.html) and [guidelines](guidelines.html) in response to rule abuses, are done in a minimal
 fashion.  Often we will deliberately leave behind holes (or introduce
 new ones) so that future rule abuse may continue.  A cleaver author
 should be able to read them and "drive a truck through the holes" in
-the rules and guidelines.
+the [rules](rules.html) and [guidelines](guidelines.html).
 
-At the risk of stating the obvious, this contest is a parody of the
-software development process.  The rules and guidelines are only a
-small part of the overall contest.  Even so, one may think the contest
-rules and guideline process as a parody of the sometimes tragic
-mismatch between what a customer (or marketing) wants and what
-engineering delivers.  Real programmers must face obfuscated
-and sometimes conflicting specifications and requirements from marketing,
-sales, product management an even from customers themselves on a
-all too regular basis.  This is one of the reasons why the rules and
-guidelines are written in obfuscated form.
+At the risk of stating the obvious, this contest is a parody of the software
+development process.  The [rules](rules.html) and [guidelines](guidelines.html)
+are only a small part of the overall contest.  Even so, one may think the
+contest [rules](rules.html) and [guideline](guidelines.html) process as a parody
+of the sometimes tragic mismatch between what a customer (or marketing) wants
+and what engineering delivers.  Real programmers must face obfuscated and
+sometimes conflicting specifications and requirements from marketing, sales,
+product management an even from customers themselves on a all too regular basis.
+This is one of the reasons why the [rules](rules.html) and
+[guidelines](guidelines.html) are written in obfuscated form.
 
 
 # JUDGING PROCESS:
@@ -817,7 +833,7 @@ won an award.  Because we do not read this information for entries that
 do not win, we do not know who did not win.
 
 The above process helps keep us biased for/against any one particular
-individual.  Therefore you MUST refrain from putting any information
+individual.  Therefore you **MUST** refrain from putting any information
 that reveals your identity in your entry.
 
 Now some people point out that coding style might reveal the information
@@ -825,15 +841,14 @@ about the others.  However we consider this to be simply circumstantial
 and outside the scope of the above paragraph.
 
 Some people, in the past, have attempted to obfuscate their identity by
-including comments of famous Internet personalities such as Peter Honeyman
-(<http://www.citi.umich.edu/u/honey/>).  The judges are on to this
-trick and therefore consider any obfuscated source or data file
-claiming to be from Honeyman to not be form Honeyman.  This of course
-creates an interesting paradox known as the "obfuscated Peter Honeyman
-paradox".  Should Peter Honeyman actually submit an obfuscated entry,
-he alone is excluded from the above, as we will likely believe
-it just another attempt at confusion.  This guideline is known
-as the "Peter Honeyman is exempt" guideline.
+including comments of famous Internet personalities such as [Peter
+Honeyman](http://www.citi.umich.edu/u/honey).  The judges are on to this trick
+and therefore consider any obfuscated source or data file claiming to be from
+Honeyman to not be form Honeyman.  This of course creates an interesting paradox
+known as the "obfuscated Peter Honeyman paradox".  Should Peter Honeyman
+actually submit an obfuscated entry, he alone is excluded from the above, as we
+will likely believe it just another attempt at confusion.  This guideline is
+known as the "Peter Honeyman is exempt" guideline.
 
 BTW: None of the entries claiming to be from Peter Honeyman have ever
 won an award.  So it is theoretically possible that Peter Honeyman
@@ -842,9 +857,9 @@ submitting anything to the IOCCC.  Perhaps those entries were
 submitted by one of his students?
 
 Hopefully we are **VERY CLEAR** on this point!  The rules now strongly state:
-PLEASE DO NOT put a name of an author, in an obvious way, into your
+**PLEASE _DO NOT_ put a name of an author**, in an obvious way, into your
 source code, remarks, data files, etc.  The above "Peter Honeyman is
-exempt" not withstanding.
+exempt" notwithstanding.
 
 We seemed to have digressed again ... :-)  Returning to the judging process:
 
@@ -859,7 +874,8 @@ files, and shred all related paper.  By tradition, we do not even
 reveal the number of entries that we received.
 
 During the judging process, a process that spans multiple sessions
-over a few weeks, post general updates from our @IOCCC twitter account.
+over a few weeks, post general updates from our [Mastodon
+account](https://fosstodon.org/@ioccc).
 
 Once we have selected the winners, for each category we will tweet:
 
@@ -878,12 +894,9 @@ This is done prior to posting the winners to the wide world.
 
 ## An important update to how winners are announced
 
-The IOCCC no longer uses twitter.  IOCCC entries will be announced
-by a git commit to the [IOCCC entries
-repo](https://github.com/ioccc-src/winner).
-
-that, in turn, updates the [official IOCCC
-website](https://www.ioccc.org/index.html).
+The IOCCC no longer uses twitter.  IOCCC entries will be announced by a git
+commit to the [IOCCC entries repo](https://github.com/ioccc-src/winner) that, in
+turn, updates the [official IOCCC website](https://www.ioccc.org/index.html).
 
 In addition a note is posted to the IOCCC Mastodon account
 (<https://fosstodon.org/@ioccc>).
@@ -980,13 +993,11 @@ Winning source is called prog.c  A compiled binary is called prog.
 
 # ANNOUNCEMENT OF WINNERS:
 
-The judges will tweet initial announcement of who won, the name
+The judges will toot initial announcement of who won, the name
 of their award, and a very brief description of the winning entry
-from the @IOCCC twitter handle.  Non-twitter users should visit:
-
-```
-    https://twitter.com/ioccc
-```
+from the [@IOCCC Mastodon account](https://fosstodon.org/@ioccc). You should
+follow us on Mastodon and refresh the page (even if you do follow us) as unless
+you are mentioned you will not get a notification.
 
 
 ## How the new IOCCC winners will be announced
@@ -1043,13 +1054,19 @@ Last, but not least, winners receive international fame and flames!  :-)
 
 **`|`**   For questions or comments about the contest, see [Contacting the IOCCC](../contact.html).
 
-**`|`**   Be sure to review the [IOCCC Rules and Guidelines](index.html) as rules and the guidelines may (and often do) change from year to year.
+**`|`**   Be sure to review the [IOCCC Rules and Guidelines](index.html) as
+[rules](rules.html) and the [guidelines](guidelines.html) may (and often do) change from year to year.
 
-**`|`**   You should be sure you have the current rules and guidelines prior to submitting entries.
+**`|`**   You should be sure you have the current [rules](rules.html) and
+[guidelines](guidelines.html) prior to submitting entries.
 
 **`|`**   See the [Official IOCCC website news](../news.html) for additional information.
 
-**`|`**   For the updates and breaking IOCCC news, you are encouraged to follow the [IOCCC on Mastodon](https://fosstodon.org/@ioccc) account.  See our [FAQ](../faq.html#try_mastodon) for more information.
+**`|`**   For the updates and breaking IOCCC news, you are encouraged to follow
+the [IOCCC on Mastodon](https://fosstodon.org/@ioccc) account.  See our
+[FAQ](../faq.html#try_mastodon) for more information. Please be aware that
+unless you are mentioned you most likely will **NOT** get a notification from
+the app so you should make sure to check the page.
 
 **`|`**   Check out the [Official IOCCC winner web site](https://www.ioccc.org/index.html) in general.
 
