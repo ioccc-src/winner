@@ -45,7 +45,7 @@ Or for example:
     bin/all-years.sh -v 1 bin/chk-entry.sh
 ```
 
-We recommend that this tool be invoked via the top level `Makefile`:
+We recommend that this tool be invoked via the top level `Makefile` by:
 
 ``` <!---sh-->
     make verify_entry_files
@@ -54,8 +54,8 @@ We recommend that this tool be invoked via the top level `Makefile`:
 
 ### [chk-entry.sh](%%DOCROOT_SLASH%%bin/chk-entry.sh)
 
-Check that files required by an entry match the entry's manifest as found in
-`.entry.json`.
+Check an entry directory to verify that both the files in its manifest
+(`.entry.json`) exist and that no other files exist.
 
 For example:
 
@@ -66,7 +66,7 @@ For example:
 
 ### [filelist.entry.json.awk](%%DOCROOT_SLASH%%bin/filelist.entry.json.awk)
 
-Generate the list of files in the entry's manifest, `.entry.json`.
+Generate a list of files in an entry's manifest (the `.entry.json` file).
 
 For example:
 
@@ -79,10 +79,10 @@ For example:
 
 Find all markdown links to local files that do not exist.
 
-This tool does **NOT** check of a remote URL exists.
+This tool does **NOT** check that a remote URL exists.
 This tool only checks on links to local files.
 
-This tool does **NOT** check links into a given place in a file.
+This tool does **NOT** check links in a given place in a file.
 This tool only checks that local files linked by markdown exist.
 
 This tool does **NOT** check HTML file links.
@@ -103,12 +103,12 @@ If this tool claims that a file is missing that does exist,
 look for a malformed markdown line and/or use of markdown
 that is **NOT** an IOCCC markdown best practice.
 
-See [IOCCC markdown best practices](../markdown.html) for more info.
+See [IOCCC markdown best practices](../markdown.html) for more details.
 
 
 ### [gen-authors.sh](%%DOCROOT_SLASH%%bin/gen-authors.sh)
 
-Generate the top level `/authors.html` page.
+Generate the top level `./authors.html` page.
 
 Usage:
 
@@ -119,7 +119,7 @@ Usage:
 
 ### [gen-location.sh](%%DOCROOT_SLASH%%bin/gen-location.sh)
 
-Generate the top level `/location.html` page.
+Generate the top level `./location.html` page.
 
 Usage:
 
@@ -130,8 +130,8 @@ Usage:
 
 ### [gen-other-html.sh](%%DOCROOT_SLASH%%bin/gen-other-html.sh)
 
-Generate entry HTML files (other than README.md to index.html) from markdown
-files.
+Generate entry HTML files (other than the README.md to index.html files) from
+markdown files.
 
 Usage:
 
@@ -150,7 +150,7 @@ Usage:
     bin/gen-sitemap.sh -v 1
 ```
 
-We recommend that this tool be invoked via the top level `Makefile`:
+We recommend that this tool be invoked via the top level `Makefile` by:
 
 ``` <!---sh-->
     make gen_sitemap
@@ -160,9 +160,9 @@ We recommend that this tool be invoked via the top level `Makefile`:
 ### [gen-status.sh](%%DOCROOT_SLASH%%bin/gen-status.sh)
 
 Generate `status.json` according to the modification dates of `status.json`
-and `news.html`.
+and `news.md`.
 
-Without argument, the `contest_status` is unchanged.
+Without an argument, the `contest_status` is unchanged.
 
 Usage:
 
@@ -170,13 +170,13 @@ Usage:
     bin/gen-status.sh -v 1
 ```
 
-To force the  `contest_status` to be closed:
+To force the `contest_status` to be closed:
 
 ``` <!---sh-->
     bin/gen-status.sh -v 1 closed
 ```
 
-To force the  `contest_status` to be open:
+To force the `contest_status` to be open:
 
 ``` <!---sh-->
     bin/gen-status.sh -v 1 open
@@ -188,7 +188,7 @@ To see other valid statuses:
     bin/gen-status -h
 ```
 
-We recommend that this tool be invoked via the top level `Makefile`:
+We recommend that this tool be invoked via the top level `Makefile` by:
 
 ``` <!---sh-->
     make gen_status
@@ -220,7 +220,7 @@ Examples of top level HTML pages built by this tool include:
 - [news.html](../news.html)
 - [thanks-for-help.html](../thanks-for-help.html)
 
-We recommend that this tool be invoked via the top level `Makefile`:
+We recommend that this tool be invoked via the top level `Makefile` by:
 
 ``` <!---sh-->
     make gen_top_html
@@ -229,7 +229,7 @@ We recommend that this tool be invoked via the top level `Makefile`:
 
 ### [gen-year-index.sh](%%DOCROOT_SLASH%%bin/gen-year-index.sh)
 
-Generate an `index.html` page for an given IOCCC year.
+Generate an `index.html` page for a given IOCCC year.
 
 Usage:
 
@@ -237,7 +237,7 @@ Usage:
     bin/gen-year-index.sh -v 1 2020
 ```
 
-We recommend that this tool be invoked via the top level `Makefile`:
+We recommend that this tool be invoked via the top level `Makefile` by:
 
 ``` <!---sh-->
     make gen_year_index
@@ -246,7 +246,7 @@ We recommend that this tool be invoked via the top level `Makefile`:
 
 ### [gen-years.sh](%%DOCROOT_SLASH%%bin/gen-years.sh)
 
-Generate the top level `/years.html` page.
+Generate the top level `./years.html` page.
 
 Usage:
 
@@ -254,7 +254,7 @@ Usage:
     bin/gen-years.sh -v 1
 ```
 
-We recommend that this tool be invoked via the top level `Makefile`:
+We recommend that this tool be invoked via the top level `Makefile` by:
 
 ``` <!---sh-->
     make gen_years
@@ -268,7 +268,7 @@ markdown files (permanent markdown files or temporarily generated
 markdown files) and HTML fragments from the [inc directory](../inc/index.html).
 
 The [../inc/md2html.cfg](../inc/md2html.cfg) configuration file is
-used by [md2html.sh](md2html.sh) to drive the generation process.
+used by [md2html.sh](%%DOCROOT_SLASH%%bin/md2html.sh) to drive the generation process.
 
 
 ### [output-index-author.sh](%%DOCROOT_SLASH%%bin/output-index-author.sh)
@@ -284,12 +284,12 @@ Output the inventory in HTML form for an entry's index.html page.
 
 ### [output-year-index.sh](%%DOCROOT_SLASH%%bin/output-year-index.sh)
 
-Output markdown of wining entry links for a given year.
+Output markdown of a winning entry links for a given year.
 
 
 ### [pandoc-wrapper.sh](%%DOCROOT_SLASH%%bin/pandoc-wrapper.sh)
 
-Wrapper tool to run pandoc.
+Wrapper tool to run `pandoc(1)`.
 
 
 ### [quick-readme2index.sh](%%DOCROOT_SLASH%%bin/quick-readme2index.sh)

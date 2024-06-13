@@ -402,22 +402,22 @@ repo</a>.</p>
 <pre><code>    bin/all-years.sh -v 1 bin/gen-year-index.sh -v 1</code></pre>
 <p>Or for example:</p>
 <pre><code>    bin/all-years.sh -v 1 bin/chk-entry.sh</code></pre>
-<p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
+<p>We recommend that this tool be invoked via the top level <code>Makefile</code> by:</p>
 <pre><code>    make verify_entry_files</code></pre>
 <h3 id="chk-entry.sh"><a href="../bin/chk-entry.sh">chk-entry.sh</a></h3>
-<p>Check that files required by an entry match the entry’s manifest as found in
-<code>.entry.json</code>.</p>
+<p>Check an entry directory to verify that both the files in its manifest
+(<code>.entry.json</code>) exist and that no other files exist.</p>
 <p>For example:</p>
 <pre><code>    bin/chk-entry.sh 2020/ferguson1</code></pre>
 <h3 id="filelist.entry.json.awk"><a href="../bin/filelist.entry.json.awk">filelist.entry.json.awk</a></h3>
-<p>Generate the list of files in the entry’s manifest, <code>.entry.json</code>.</p>
+<p>Generate a list of files in an entry’s manifest (the <code>.entry.json</code> file).</p>
 <p>For example:</p>
 <pre><code>    awk -f bin/filelist.entry.json.awk 2020/ferguson1/.entry.json</code></pre>
 <h3 id="find-missing-links.sh"><a href="../bin/find-missing-links.sh">find-missing-links.sh</a></h3>
 <p>Find all markdown links to local files that do not exist.</p>
-<p>This tool does <strong>NOT</strong> check of a remote URL exists.
+<p>This tool does <strong>NOT</strong> check that a remote URL exists.
 This tool only checks on links to local files.</p>
-<p>This tool does <strong>NOT</strong> check links into a given place in a file.
+<p>This tool does <strong>NOT</strong> check links in a given place in a file.
 This tool only checks that local files linked by markdown exist.</p>
 <p>This tool does <strong>NOT</strong> check HTML file links.
 This tool only checks markdown based links.</p>
@@ -430,30 +430,30 @@ might generate an error about a file that does exist.
 If this tool claims that a file is missing that does exist,
 look for a malformed markdown line and/or use of markdown
 that is <strong>NOT</strong> an IOCCC markdown best practice.</p>
-<p>See <a href="../markdown.html">IOCCC markdown best practices</a> for more info.</p>
+<p>See <a href="../markdown.html">IOCCC markdown best practices</a> for more details.</p>
 <h3 id="gen-authors.sh"><a href="../bin/gen-authors.sh">gen-authors.sh</a></h3>
-<p>Generate the top level <code>/authors.html</code> page.</p>
+<p>Generate the top level <code>./authors.html</code> page.</p>
 <p>Usage:</p>
 <pre><code>    bin/gen-authors.sh -v 1</code></pre>
 <h3 id="gen-location.sh"><a href="../bin/gen-location.sh">gen-location.sh</a></h3>
-<p>Generate the top level <code>/location.html</code> page.</p>
+<p>Generate the top level <code>./location.html</code> page.</p>
 <p>Usage:</p>
 <pre><code>    bin/gen-location.sh -v 1</code></pre>
 <h3 id="gen-other-html.sh"><a href="../bin/gen-other-html.sh">gen-other-html.sh</a></h3>
-<p>Generate entry HTML files (other than README.md to index.html) from markdown
-files.</p>
+<p>Generate entry HTML files (other than the README.md to index.html files) from
+markdown files.</p>
 <p>Usage:</p>
 <pre><code>    bin/gen-other-html.sh -v 1</code></pre>
 <h3 id="gen-sitemap.sh"><a href="../bin/gen-sitemap.sh">gen-sitemap.sh</a></h3>
 <p>Generate an XML sitemap for the IOCCC website.</p>
 <p>Usage:</p>
 <pre><code>    bin/gen-sitemap.sh -v 1</code></pre>
-<p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
+<p>We recommend that this tool be invoked via the top level <code>Makefile</code> by:</p>
 <pre><code>    make gen_sitemap</code></pre>
 <h3 id="gen-status.sh"><a href="../bin/gen-status.sh">gen-status.sh</a></h3>
 <p>Generate <code>status.json</code> according to the modification dates of <code>status.json</code>
-and <code>news.html</code>.</p>
-<p>Without argument, the <code>contest_status</code> is unchanged.</p>
+and <code>news.md</code>.</p>
+<p>Without an argument, the <code>contest_status</code> is unchanged.</p>
 <p>Usage:</p>
 <pre><code>    bin/gen-status.sh -v 1</code></pre>
 <p>To force the <code>contest_status</code> to be closed:</p>
@@ -462,7 +462,7 @@ and <code>news.html</code>.</p>
 <pre><code>    bin/gen-status.sh -v 1 open</code></pre>
 <p>To see other valid statuses:</p>
 <pre><code>    bin/gen-status -h</code></pre>
-<p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
+<p>We recommend that this tool be invoked via the top level <code>Makefile</code> by:</p>
 <pre><code>    make gen_status</code></pre>
 <h3 id="gen-top-html.sh"><a href="../bin/gen-top-html.sh">gen-top-html.sh</a></h3>
 <p>Generate a number of top level HTML pages for the IOCCC websites.</p>
@@ -483,35 +483,35 @@ and <code>news.html</code>.</p>
 <li><a href="../news.html">news.html</a></li>
 <li><a href="../thanks-for-help.html">thanks-for-help.html</a></li>
 </ul>
-<p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
+<p>We recommend that this tool be invoked via the top level <code>Makefile</code> by:</p>
 <pre><code>    make gen_top_html</code></pre>
 <h3 id="gen-year-index.sh"><a href="../bin/gen-year-index.sh">gen-year-index.sh</a></h3>
-<p>Generate an <code>index.html</code> page for an given IOCCC year.</p>
+<p>Generate an <code>index.html</code> page for a given IOCCC year.</p>
 <p>Usage:</p>
 <pre><code>    bin/gen-year-index.sh -v 1 2020</code></pre>
-<p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
+<p>We recommend that this tool be invoked via the top level <code>Makefile</code> by:</p>
 <pre><code>    make gen_year_index</code></pre>
 <h3 id="gen-years.sh"><a href="../bin/gen-years.sh">gen-years.sh</a></h3>
-<p>Generate the top level <code>/years.html</code> page.</p>
+<p>Generate the top level <code>./years.html</code> page.</p>
 <p>Usage:</p>
 <pre><code>    bin/gen-years.sh -v 1</code></pre>
-<p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
+<p>We recommend that this tool be invoked via the top level <code>Makefile</code> by:</p>
 <pre><code>    make gen_years</code></pre>
 <h3 id="md2html.sh"><a href="../bin/md2html.sh">md2html.sh</a></h3>
 <p>This is the primary tool that forms IOCCC generated HTML content from
 markdown files (permanent markdown files or temporarily generated
 markdown files) and HTML fragments from the <a href="../inc/index.html">inc directory</a>.</p>
 <p>The <a href="../inc/md2html.cfg">../inc/md2html.cfg</a> configuration file is
-used by <a href="md2html.sh">md2html.sh</a> to drive the generation process.</p>
+used by <a href="../bin/md2html.sh">md2html.sh</a> to drive the generation process.</p>
 <h3 id="output-index-author.sh"><a href="../bin/output-index-author.sh">output-index-author.sh</a></h3>
 <p>Output author’s or authors’ related HTML details for an entry’s index.html
 page.</p>
 <h3 id="output-index-inventory.sh"><a href="../bin/output-index-inventory.sh">output-index-inventory.sh</a></h3>
 <p>Output the inventory in HTML form for an entry’s index.html page.</p>
 <h3 id="output-year-index.sh"><a href="../bin/output-year-index.sh">output-year-index.sh</a></h3>
-<p>Output markdown of wining entry links for a given year.</p>
+<p>Output markdown of a winning entry links for a given year.</p>
 <h3 id="pandoc-wrapper.sh"><a href="../bin/pandoc-wrapper.sh">pandoc-wrapper.sh</a></h3>
-<p>Wrapper tool to run pandoc.</p>
+<p>Wrapper tool to run <code>pandoc(1)</code>.</p>
 <h3 id="quick-readme2index.sh"><a href="../bin/quick-readme2index.sh">quick-readme2index.sh</a></h3>
 <p>Builds an entry’s <code>index.html</code> file if the entry directory
 does not have a non-empty <code>index.hmtl</code> file, or if either
