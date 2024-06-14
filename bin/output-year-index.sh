@@ -127,6 +127,7 @@ export TOPDIR
 export DOCROOT_SLASH="../../"
 export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc/blob/master"
 export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
+export PANDOC_WRAPPER="bin/pandoc-wrapper.sh"
 
 # set usage message
 #
