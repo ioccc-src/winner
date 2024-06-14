@@ -11,8 +11,67 @@ repo](https://github.com/ioccc-src/temp-test-ioccc).
 
 ## [bin/](index.html) tools
 
+All tools in this directory support a number of options that can be used to get
+help, diagnose problems, see progress etc. These options are as follows:
 
-### [all-run.sh](%%DOCROOT_SLASH%%bin/all-run.sh)
+### Get help / usage string of a tool
+
+If you need to remember the syntax of the tool or get certain notes about
+different options, you can use the `-h` option.
+
+For instance if you want help on the [all-run.sh](index.html#all-run) tool
+from the root directory, you would do:
+
+
+``` <!---sh-->
+    bin/all-run.sh -h
+```
+
+
+### Set verbosity level of a tool
+
+If, however, you want verbosity, say for debugging purposes or to see what is
+going on more, you should use the `-v level` option. For instance if you wish to
+see what is going on with the
+[quick-readme2index.sh](index.html#quick-readme2index) tool, you might do:
+
+
+``` <!---sh-->
+	bin/quick-readme2index.sh -v 3
+```
+
+to set the verbosity level to `3`. The default for verbosity is `0`, no
+verbosity, though using the [top level Makefile](%%REPO_URL%%/Makefile) will,
+for some tools, set a verbosity level.
+
+### Get version string of a tool
+
+If you just want to know what version the tool is, you can use the `-V` option.
+For instance to see what version the [chk-entry.sh](index.html#chk-entry) tool
+is, you would do:
+
+``` <!---sh-->
+	bin/chk-entry.sh -V
+```
+
+
+### Other notes
+
+These options, and especially `-h` and `-v level`, can be very useful to get
+basic usage information and to see what is going on when the tool is running.
+For more details on each tool, including the ones mentioned above, see below. As
+you go through each tool, if you need to understand more of it, we recommend
+that you use the `-h` option on it first.
+
+There are some scripts that are invoked by the
+[inc/md2html.cfg](%%REPO_URL%%/inc/md2html.cfg) file but some of these tools can be directly
+invoked as well, should you wish to see their output or if you have some odd
+need to do so.
+
+
+<div id="all-run">
+### [all-run.sh](%%REPO_URL%%/bin/all-run.sh)
+</div>
 
 Run a command on all winning entries.
 
@@ -29,7 +88,9 @@ Or for example:
 ```
 
 
-### [all-years.sh](%%DOCROOT_SLASH%%bin/all-years.sh)
+<div id="all-years">
+### [all-years.sh](%%REPO_URL%%/bin/all-years.sh)
+</div>
 
 Run a command on all IOCCC years.
 
@@ -45,14 +106,9 @@ Or for example:
     bin/all-years.sh -v 1 bin/chk-entry.sh
 ```
 
-We recommend that this tool be invoked via the top level `Makefile` by:
-
-``` <!---sh-->
-    make verify_entry_files
-```
-
-
-### [chk-entry.sh](%%DOCROOT_SLASH%%bin/chk-entry.sh)
+<div id="chk-entry">
+### [chk-entry.sh](%%REPO_URL%%/bin/chk-entry.sh)
+</div>
 
 Check an entry directory to verify that both the files in its manifest
 (`.entry.json`) exist and that no other files exist.
@@ -63,8 +119,16 @@ For example:
     bin/chk-entry.sh 2020/ferguson1
 ```
 
+If you wish to run it on all entries, we recommend that this tool be invoked via
+the top level `Makefile` by:
 
-### [filelist.entry.json.awk](%%DOCROOT_SLASH%%bin/filelist.entry.json.awk)
+``` <!---sh-->
+    make verify_entry_files
+```
+
+<div id="filelist-entry-json-awk">
+### [filelist.entry.json.awk](%%REPO_URL%%/bin/filelist.entry.json.awk)
+</div>
 
 Generate a list of files in an entry's manifest (the `.entry.json` file).
 
@@ -74,8 +138,13 @@ For example:
     awk -f bin/filelist.entry.json.awk 2020/ferguson1/.entry.json
 ```
 
+In this case the command will list all the files of the
+[2020/ferguson1](../2020/ferguson1/index.html) winning entry.
 
-### [find-missing-links.sh](%%DOCROOT_SLASH%%bin/find-missing-links.sh)
+
+<div id="find-missing-links">
+### [find-missing-links.sh](%%REPO_URL%%/bin/find-missing-links.sh)
+</div>
 
 Find all markdown links to local files that do not exist.
 
@@ -103,12 +172,20 @@ If this tool claims that a file is missing that does exist,
 look for a malformed markdown line and/or use of markdown
 that is **NOT** an IOCCC markdown best practice.
 
-See [IOCCC markdown best practices](../markdown.html) for more details.
+See also the [IOCCC markdown best practices](../markdown.html) document for more
+details.
 
+We recommend that this tool be invoked via the top level `Makefile` by:
 
-### [gen-authors.sh](%%DOCROOT_SLASH%%bin/gen-authors.sh)
+``` <!---sh-->
+    make find_missing_links
+```
 
-Generate the top level `./authors.html` page.
+<div id="gen-authors">
+### [gen-authors.sh](%%REPO_URL%%/bin/gen-authors.sh)
+</div>
+
+Generate the top level [authors.html](../authors.html) page.
 
 Usage:
 
@@ -116,10 +193,18 @@ Usage:
     bin/gen-authors.sh -v 1
 ```
 
+We recommend that this tool be invoked via the top level `Makefile` by:
 
-### [gen-location.sh](%%DOCROOT_SLASH%%bin/gen-location.sh)
+``` <!---sh-->
+    make gen_authors
+```
 
-Generate the top level `./location.html` page.
+
+<div id="gen-location">
+### [gen-location.sh](%%REPO_URL%%/bin/gen-location.sh)
+</div>
+
+Generate the top level [location.html](../location.html) page.
 
 Usage:
 
@@ -127,11 +212,18 @@ Usage:
     bin/gen-location.sh -v 1
 ```
 
+We recommend that this tool be invoked via the top level `Makefile` by:
 
-### [gen-other-html.sh](%%DOCROOT_SLASH%%bin/gen-other-html.sh)
+``` <!---sh-->
+    make gen_location
+```
 
-Generate entry HTML files (other than the README.md to index.html files) from
-markdown files.
+<div id="gen-other-html">
+### [gen-other-html.sh](%%REPO_URL%%/bin/gen-other-html.sh)
+</div>
+
+Generate the HTML files (other than the README.md to index.html files) from
+markdown files, of all entries.
 
 Usage:
 
@@ -139,8 +231,15 @@ Usage:
     bin/gen-other-html.sh -v 1
 ```
 
+We recommend that this tool be invoked via the top level `Makefile` by:
 
-### [gen-sitemap.sh](%%DOCROOT_SLASH%%bin/gen-sitemap.sh)
+``` <!---sh-->
+    make gen_other_html
+```
+
+<div id="gen-sitemap">
+### [gen-sitemap.sh](%%REPO_URL%%/bin/gen-sitemap.sh)
+</div>
 
 Generate an XML sitemap for the IOCCC website.
 
@@ -150,17 +249,25 @@ Usage:
     bin/gen-sitemap.sh -v 1
 ```
 
+This would generate the [sitemap.xml](../sitemap.xml) file.
+
 We recommend that this tool be invoked via the top level `Makefile` by:
 
 ``` <!---sh-->
     make gen_sitemap
 ```
 
+**IMPORTANT NOTE**: if a file is open with vim or some editor that creates a swap
+file, this will cause a problem with the output.
 
-### [gen-status.sh](%%DOCROOT_SLASH%%bin/gen-status.sh)
 
-Generate `status.json` according to the modification dates of `status.json`
-and `news.md`.
+<div id="gen-status">
+### [gen-status.sh](%%REPO_URL%%/bin/gen-status.sh)
+</div>
+
+Generate [status.json](../status.json) according to the modification date of
+[news.md](%%REPO_URL%%/news.md) and/or whether the `contest_status` is changed
+at the command line.
 
 Without an argument, the `contest_status` is unchanged.
 
@@ -194,8 +301,12 @@ We recommend that this tool be invoked via the top level `Makefile` by:
     make gen_status
 ```
 
+unless the `contest_status` is to be changed, but since only the judges should
+do that that is not a problem.
 
-### [gen-top-html.sh](%%DOCROOT_SLASH%%bin/gen-top-html.sh)
+<div id="gen-top-html">
+### [gen-top-html.sh](%%REPO_URL%%/bin/gen-top-html.sh)
+</div>
 
 Generate a number of top level HTML pages for the IOCCC websites.
 
@@ -227,7 +338,9 @@ We recommend that this tool be invoked via the top level `Makefile` by:
 ```
 
 
-### [gen-year-index.sh](%%DOCROOT_SLASH%%bin/gen-year-index.sh)
+<div id="gen-year-index">
+### [gen-year-index.sh](%%REPO_URL%%/bin/gen-year-index.sh)
+</div>
 
 Generate an `index.html` page for a given IOCCC year.
 
@@ -237,16 +350,22 @@ Usage:
     bin/gen-year-index.sh -v 1 2020
 ```
 
+This would create the [2020/index.html](../2020/index.html) file.
+
 We recommend that this tool be invoked via the top level `Makefile` by:
 
 ``` <!---sh-->
     make gen_year_index
 ```
 
+which will create the `index.html` for every IOCCC year (`1984/index.html`,
+`1985/index.html` etc.).
 
-### [gen-years.sh](%%DOCROOT_SLASH%%bin/gen-years.sh)
+<div id="gen-years">
+### [gen-years.sh](%%REPO_URL%%/bin/gen-years.sh)
+</div>
 
-Generate the top level `./years.html` page.
+Generate the top level [years.html](../years.html) page.
 
 Usage:
 
@@ -261,76 +380,111 @@ We recommend that this tool be invoked via the top level `Makefile` by:
 ```
 
 
-### [md2html.sh](%%DOCROOT_SLASH%%bin/md2html.sh)
+<div id="md2html">
+### [md2html.sh](%%REPO_URL%%/bin/md2html.sh)
+</div>
 
 This is the primary tool that forms IOCCC generated HTML content from
 markdown files (permanent markdown files or temporarily generated
 markdown files) and HTML fragments from the [inc directory](../inc/index.html).
 
-The [../inc/md2html.cfg](../inc/md2html.cfg) configuration file is
-used by [md2html.sh](%%DOCROOT_SLASH%%bin/md2html.sh) to drive the generation process.
+The [inc/md2html.cfg](%%REPO_URL%%/inc/md2html.cfg) configuration file is
+used by [md2html.sh](%%REPO_URL%%/bin/md2html.sh) to drive the generation process.
 
 
-### [output-index-author.sh](%%DOCROOT_SLASH%%bin/output-index-author.sh)
+<div id="output-index-author">
+### [output-index-author.sh](%%REPO_URL%%/bin/output-index-author.sh)
+</div>
 
 Output author's or authors' related HTML details for an entry's index.html
 page.
 
+For an example, see the [author details in
+1984/anonymous](../1984/anonymous/index.html#author).
 
-### [output-index-inventory.sh](%%DOCROOT_SLASH%%bin/output-index-inventory.sh)
-
-Output the inventory in HTML form for an entry's index.html page.
-
-
-### [output-year-index.sh](%%DOCROOT_SLASH%%bin/output-year-index.sh)
-
-Output markdown of a winning entry links for a given year.
+This tool is used in the [inc/md2html.cfg](%%REPO_URL%%/inc/md2html.cfg) file as part of
+the [md2html tool](index.html#md2html).
 
 
-### [pandoc-wrapper.sh](%%DOCROOT_SLASH%%bin/pandoc-wrapper.sh)
+<div id="output-index-inventory">
+### [output-index-inventory.sh](%%REPO_URL%%/bin/output-index-inventory.sh)
+</div>
+
+Output the inventory in HTML form for an entry's index.html page. For an example
+inventory, see the [inventory in
+1984/anonymous](../1984/anonymous/index.html#inventory).
+
+This tool is used in the [inc/md2html.cfg](%%REPO_URL%%/inc/md2html.cfg) file as part of
+the [md2html tool](index.html#md2html).
+
+
+### [output-year-index.sh](%%REPO_URL%%/bin/output-year-index.sh)
+
+Output the inventory for a given year's winning entries in HTML form. In other
+words in [1984](../1984/index.html) it would list, as links, the four winning
+entries, which you can see directly at [1984
+inventory](../1984/index.html#inventory).
+
+This tool is used in the [inc/md2html.cfg](%%REPO_URLH%%/inc/md2html.cfg) file as part of
+the [md2html tool](index.html#md2html).
+
+
+### [pandoc-wrapper.sh](%%REPO_URL%%/bin/pandoc-wrapper.sh)
 
 Wrapper tool to run `pandoc(1)`.
 
 
-### [quick-readme2index.sh](%%DOCROOT_SLASH%%bin/quick-readme2index.sh)
+<div id="quick-readme2index">
+### [quick-readme2index.sh](%%REPO_URL%%/bin/quick-readme2index.sh)
+</div>
 
-Builds an entry's `index.html` file if the entry directory
+Build an entry's `index.html` file if the entry directory
 does not have a non-empty `index.hmtl` file, or if either
-`.entry.json` or `index.html` is newer than the `index.hmtl` file.
+`.entry.json` or `README.md` is newer than the `index.hmtl` file.
 
 This is useful when only a few entries have been
 modified (resulting in an updated `.entry.json` file)
-or if the `index.html` of a few entries has been changed.
-
-While the [readme2index.sh](%%DOCROOT_SLASH%%bin/readme2index.sh) take a few
-seconds to run, when applied to 300+ entries,
-the extra time can add up.
+or if the `README.md` of a few entries have been changed: while the
+[readme2index.sh](%%REPO_URL%%/bin/readme2index.sh) script takes a few seconds
+to run for a few entries, when applied to 300+ entries, the extra time can add
+up.
 
 If only a few `index.hmtl` files need updating, then
 this command will only briefly pause while the
-slightly longer [readme2index.sh](%%DOCROOT_SLASH%%bin/readme2index.sh) is run:
+[readme2index.sh](index.html#readme2index) can take much longer.
+
+Usage:
 
 ``` <!---sh-->
+	# For all entries:
     bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1
+
+	# For an individual entry:
+	bin/quick-readme2index.sh -v 1 2020/ferguson2
 ```
 
 **NOTE**: This command assumes that the relative
-modification times for `index.hmtl`, `.entry.json`,
-and `index.html` are correct.  If in doubt, use:
+modification times for `README.md`, `.entry.json`,
+and `index.html` are correct.  If in doubt, use
+[readme2index.sh](index.html#readme2index).
 
-We recommend that this tool be invoked via the top level `Makefile`:
+We recommend that this tool be invoked via the top level `Makefile` by:
 
 ``` <!---sh-->
     make quick_entry_index
 ```
 
 
-### [readme2index.sh](%%DOCROOT_SLASH%%bin/readme2index.sh)
+<div id="readme2index">
+### [readme2index.sh](%%REPO_URL%%/bin/readme2index.sh)
+</div>
 
-Convert an entry README.md into entry directory index.html.
+Convert an entry's `README.md` into its `index.html` file.
+
+Usage:
 
 ``` <!---sh-->
-    bin/all-run.sh -v 3 bin/readme2index.sh -v 1
+    bin/readme2index.sh -v 3 1984/mullender
 ```
 
 To build `index.html` files for all entries:
@@ -339,36 +493,42 @@ To build `index.html` files for all entries:
     bin/all-run.sh -v 3 bin/readme2index.sh -v 1
 ```
 
-We recommend that this tool be invoked via the top level `Makefile`:
+We recommend that this tool be invoked via the top level `Makefile` by:
 
 ``` <!---sh-->
     make entry_index
 ```
 
 
-### [status2html.sh](%%DOCROOT_SLASH%%bin/status2html.sh)
+<div id="status2html">
+### [status2html.sh](%%REPO_URL%%/bin/status2html.sh)
+</div>
 
-Convert `status.json` into HTML.
+Convert [status.json](../status.json) into HTML.
 
-This tool is a  'before tool' (-b tool) that is intended
-to be used by `bin/gen-status.sh`.
+This tool is a  'before tool' (`-b tool`) that is intended
+to be used by [gen-status.sh](index.html#gen-status).
 
 
-### [sgi.sh](%%DOCROOT_SLASH%%bin/sgi.sh)
+<div id="sgi">
+### [sgi.sh](%%REPO_URL%%/bin/sgi.sh)
+</div>
 
-Sort .gitignore content from `stdin` to `stdout`.
+Sort `.gitignore` content from `stdin` to `stdout`.
 
 We sort with lines starting with `#` first.
 We sort with lines starting with `*` second.
 We sort with lines that do not start with `[#!*]` third.
 We sort with lines starting with `!` fourth.
 
-This tool is used by [sort.gitignore.sh](%%DOCROOT_SLASH%%bin/sort.gitignore.sh).
+This tool is used by [sort.gitignore.sh](index.html#sort-gitignore).
 
 
-### [sort.gitignore.sh](%%DOCROOT_SLASH%%bin/sort.gitignore.sh)
+<div id="sort-gitignore">
+### [sort.gitignore.sh](%%REPO_URL%%/bin/sort.gitignore.sh)
+</div>
 
-Sort a .gitignore in a entry directory.
+Sort a `.gitignore` in a entry directory.
 
 Usage:
 
@@ -376,45 +536,63 @@ Usage:
     bin/sort.gitignore.sh -v 1 YYYY/dir
 ```
 
-Suggested usage:
+Suggested usage (for all `.gitignore` files):
 
 ``` <!---sh-->
     bin/all-run.sh bin/sort.gitignore.sh -v 1
 ```
 
-We recommend that this tool be invoked via the top level `Makefile`:
+We recommend that this tool be invoked via the top level `Makefile` by:
 
 ``` <!---sh-->
     make sort_gitignore
 ```
 
 
-### [subst.default.sh](%%DOCROOT_SLASH%%bin/subst.default.sh)
+<div id="subst-default">
+### [subst.default.sh](%%REPO_URL%%/bin/subst.default.sh)
+</div>
 
 Print default substitutions.
 
-
-### [subst.entry-index.sh](%%DOCROOT_SLASH%%bin/subst.entry-index.sh)
-
-Print substitutions for an entry index.html.
+This tool is used in the [inc/md2html.cfg](%%REPO_URL%%/inc/md2html.cfg) file.
 
 
-### [subst.entry-navbar.awk](%%DOCROOT_SLASH%%bin/subst.entry-navbar.awk)
+<div id="subst-entry-index">
+### [subst.entry-index.sh](%%REPO_URL%%/bin/subst.entry-index.sh)
 
-Output substitutions for navbar on behalf of an entry.
+Print substitutions for an entry's `index.html`.
+
+This tool is used in the [inc/md2html.cfg](%%REPO_URL%%/inc/md2html.cfg) file.
+
+<div id="subst-entry-navbar-awk">
+### [subst.entry-navbar.awk](%%REPO_URL%%/bin/subst.entry-navbar.awk)
+</div>
+
+Output substitutions for `navbar` on behalf of an entry.
+
+This tool is used in [subst.entry-index.sh](index.html#subst-entry-index).
 
 
-### [subst.year-index.sh](%%DOCROOT_SLASH%%bin/subst.year-index.sh)
+<div id="subst-year-index">
+### [subst.year-index.sh](%%REPO_URL%%/bin/subst.year-index.sh)
+</div>
 
-Print substitutions for a year level index.html.
+Print substitutions for a year level `index.html`.
 
+This tool is used in the [inc/md2html.cfg](%%REPO_URL%%/inc/md2html.cfg) file.
 
-### [subst.year-navbar.awk](%%DOCROOT_SLASH%%bin/subst.year-navbar.awk)
+<div id="subst-year-navbar-awk">
+### [subst.year-navbar.awk](%%REPO_URL%%/bin/subst.year-navbar.awk)
+</div>
 
-Output substitutions for navbar on behalf of a year level index.html.
+Output substitutions for `navbar` on behalf of a year level `index.html`.
 
+This tool is used in [subst.year-index.sh](index.html#subst-year-index).
 
-## [tar-entry.sh](%%DOCROOT_SLASH%%bin/tar-entry.sh)
+<div id="tar-entry">
+## [tar-entry.sh](%%REPO_URL%%/bin/tar-entry.sh)
+</div>
 
 Form a compressed tarball for an entry.
 
@@ -431,7 +609,9 @@ Suggested usage:
 ```
 
 
-## [tar-year.sh](%%DOCROOT_SLASH%%bin/tar-year.sh)
+<div id="tar-year">
+## [tar-year.sh](%%REPO_URL%%/bin/tar-year.sh)
+</div>
 
 Form a compressed tarball for an IOCCC year.
 
@@ -447,16 +627,18 @@ Suggested usage:
     bin/all-years.sh -v 3 bin/tar-year.sh -v 1 -W
 ```
 
-We recommend that this tool be invoked via the top level `Makefile`:
+We recommend that this tool be invoked via the top level `Makefile` by:
 
 ``` <!---sh-->
     make form_year_tarball
 ```
 
 
-## [untar-entry.sh](%%DOCROOT_SLASH%%bin/untar-entry.sh)
+<div id="untar-entry">
+## [untar-entry.sh](%%REPO_URL%%/bin/untar-entry.sh)
+</div>
 
-Untar an entry's a compressed tarball.
+Untar an entry's compressed tarball.
 
 Usage:
 
@@ -470,14 +652,16 @@ Suggested usage:
     bin/all-run.sh -v 3 bin/untar-entry.sh -v 1
 ```
 
-We recommend that this tool be invoked via the top level `Makefile`:
+We recommend that this tool be invoked via the top level `Makefile` by:
 
 ``` <!---sh-->
     make untar_entry_tarball
 ```
 
 
-## [untar-year.sh](%%DOCROOT_SLASH%%bin/untar-year.sh)
+<div id="untar-year">
+## [untar-year.sh](%%REPO_URL%%/bin/untar-year.sh)
+</div>
 
 Untar an IOCCC year's compressed tarball.
 
@@ -493,7 +677,7 @@ Suggested usage:
     bin/all-years.sh -v 3 bin/untar-year.sh -v 1
 ```
 
-We recommend that this tool be invoked via the top level `Makefile`:
+We recommend that this tool be invoked via the top level `Makefile` by:
 
 ``` <!---sh-->
     make untar_year_tarball
@@ -504,7 +688,7 @@ We recommend that this tool be invoked via the top level `Makefile`:
 # How IOCCC HTML content is built
 </div>
 
-The [md2html.sh](%%DOCROOT_SLASH%%bin/md2html.sh) tool is the primary tool that
+The [md2html.sh](%%REPO_URL%%/bin/md2html.sh) tool is the primary tool that
 is used to form all IOCCC related HTML pages for the [official IOCCC web
 site](https://www.ioccc.org).
 
@@ -559,13 +743,13 @@ will cause no HTML content to be produced during the `footer` HTML phase.
 
 The following HTML phase files are used to build HTML content:
 
-0. inc/top.default.html
-1. inc/head.default.html
-2. inc/body.default.html
-3. inc/topbar.default.html
-4. inc/header.default.html
-5. inc/navbar.default.html
-6. inc/before-content.default.html
+0. [inc/top.default.html](../inc/top.default.html)
+1. [inc/head.default.html](../inc/head.default.html)
+2. [inc/body.default.html](../inc/body.default.html)
+3. [inc/topbar.default.html](../inc/topbar.default.html)
+4. [inc/header.default.html](../inc/header.default.html)
+5. [inc/navbar.default.html](../inc/navbar.default.html)
+6. [inc/before-content.default.html](../inc/before-content.default.html)
 
 Phases 7-19 are reserved for future use.
 
@@ -575,24 +759,25 @@ Phases 7-19 are reserved for future use.
 
 Phases 23-29 are reserved for future use.
 
-30. inc/after-content.default.html
-31. inc/footer.default.html
-32. inc/bottom.default.html
+30. [inc/after-content.default.html](../inc/after-content.default.html)
+31. [inc/footer.default.html](../inc/footer.default.html)
+32. [inc/bottom.default.html](../inc/bottom.default.html)
 
 Phases 33-39 are reserved for future use.
 
-In all of the above HTML phase numbers, symbols of the form **%%TOKEN%%** are substituted.
+In all of the above HTML phase numbers, symbols of the form `%%TOKEN%%` are
+substituted.
 
-Substitutions of and **%%TOKEN%%** are performed on included HTML content,
+Substitutions of the form `%%TOKEN%%` are performed on included HTML content,
 content generated by the 'before tool' (`-b tool`),
 content generated by the 'after tool' (`-a tool`),
 as well as the markdown content given to the `pandoc wrapper tool` (`-p tool`).
 
 It is an error, unless `-S` is given, for any phase, except phases HTML
-20-29, to not substitute all **%%TOKEN%%**'s.  For phases HTML 20-29, any
-**%%TOKEN%%** that is not substituted are passed thru without substitution.
+20-29, to not substitute all `%%TOKEN%%`s.  For phases HTML 20-29, any
+`%%TOKEN%%` that is not substituted are passed thru without substitution.
 
-See the tool [readme2index.sh](%%DOCROOT_SLASH%%bin/readme2index.sh) for an example of
+See the tool [readme2index.sh](%%REPO_URL%%/bin/readme2index.sh) for an example of
 how HTML phases are implemented.
 
 
@@ -603,7 +788,9 @@ how HTML phases are implemented.
 The command options are evaluated in the following `getopt` phases:
 
 
+<div id="getopt-0">
 ### `getopt` phase 0
+</div>
 
 In `getopt` phase 0 we parse command line options and save all arguments for the
 end of the final command line.
@@ -614,8 +801,9 @@ it is a file under topdir.
 `getopt` phase 0 is the only `getopt` phase where `-d topdir` and `-c
 md2html.cfg` may be used.
 
-
+<div id="getopt-1">
 ### `getopt` phase 1
+</div>
 
 In `getopt` phase 1 we execute each `-o "output tool"` from `getopt` phase 0,
 parsing the output as a command line.
@@ -627,16 +815,18 @@ The `-o "output tool"` is not allowed to output another `"-o tool"` or a `"-O
 tool=optstr"`. Instead a `-o "output tool"` may execute another `-o "output
 tool"` and merge the output into its own.
 
-
+<div id="getopt-2">
 ### `getopt` phase 2
+</div>
 
 In `getopt` phase 2 we parse the `cfg_options` from the first `md2html.cfg` line
 matched by a saved argument.
 
 The match is made with the (possibly modified) phase 0 argument.
 
-
+<div id="getopt-3">
 ### `getopt` phase 3
+</div>
 
 In `getopt` phase 3 we execute each `-o "output tool"` from `getopt` phase 2,
 parsing the output as a command line.
@@ -648,8 +838,9 @@ The `-o "output tool"` is not allowed to output another `"-o tool"` or a `"-O
 tool=optstr"`.  Instead a `-o "output tool"` may execute another `-o "output
 tool"` and merge the output into its own.
 
-
+<div id="command-line-option-order">
 ### Command line option order
+</div>
 
 Most command line options override earlier copies of the same option.  However
 in the case of `-H phase=name`, a later `-H phase=name` only overrides an
@@ -658,11 +849,13 @@ token=value`, a later `-s token=value` only overrides an earlier use of `-s` for
 the same `token` _only_.
 
 
+<div id="output-tools">
 ### Output tools
+</div>
 
 An "output tool" may be used to add certain additional command line options to be processed.
 
-IMPORTANT: An "output tool" will print each command line option / argument on a separate line.
+**IMPORTANT**: An "output tool" will print each command line option / argument on a separate line.
 So for example, if an "output tool" wishes to convey:
 
 ```
@@ -680,7 +873,7 @@ The  "output tool" would output the following 4 lines:
 
 The command line options printed by an "output tool" are processed
 after all command line options, and all options from a matching
-line from the `md2html.cfg` file, and before any filename arguments
+line from the [md2html.cfg](%%REPO_URL%%/inc/md2html.cfg) file, and before any filename arguments
 on the command line.
 
 For example:
@@ -695,18 +888,22 @@ then it processes `output tool` (i.e., `-o tool`) options found in
 `command_options`, and `cfg_options`, then an optional `--` (end of all
 options), then zero of more `filename_arg` filename arguments.
 
-The `-o tool` must NOT output any `-o tool` options as `-o tool` is NOT
-RECURSIVE.  A `-o tool` is free, however, to execute other `-o tool` output
+The `-o tool` must **NOT** output any `-o tool` options as `-o tool` is **NOT
+RECURSIVE**.  A `-o tool` is free, however, to execute other `-o tool` output
 tools and merge the output from those tools into its own.
 
 
+<div id="special-exit-code">
 ### Special `-E exitcode` option
+</div>
 
 When `-E exitcode` is evaluated, the application will exit with the `exitcode`
 value.  If one wishes to also output a message to `stderr`, the `-e string` must
 come **BEFORE** any `-E exitcode` in the command line.
 
+<div id="substitution-tokens">
 ### Substitution tokens
+</div>
 
 All tokens (i.e., strings of the form `%%token%%`) **MUST** be substituted (by
 some `-s token=value`) in all HTML output, except during phase numbers 20-29
@@ -715,7 +912,7 @@ output), or the command will exit non-zero, unless `-S` is given.  If `-S` is
 given, only a warning about non-substituted tokens will be written to `stderr`.
 
 The command line of tools in the [bin directory](index.html), and perhaps
-modified via the [md2html config file](%%DOCROOT_SLASH%%inc/md2html.cfg) may change to using a
+modified via the [md2html config file](%%REPO_URL%%/inc/md2html.cfg) may change to using a
 different filename for a given phase.
 
 For example when forming the HTML from
@@ -724,7 +921,7 @@ a different `navbar` navigation bar is needed.  So instead of the
 usual top navigation bar that normally directs people to the previous
 entry for the year, or go up to the year page, or to the next entry
 for the year, a top navigation bar to just go up to the entry's
-main page is needed.   A line in the [md2html config file](%%DOCROOT_SLASH%%inc/md2html.cfg)
+main page is needed. A line in the [md2html config file](%%DOCROOT_SLASH%%inc/md2html.cfg)
 that refers to
 [2020/ferguson1/chocolate-cake.md](%%DOCROOT_SLASH%%2020/ferguson1/chocolate-cake.md) may
 specify use of `navbar.up2index.html` (as `navbar.up2index`)instead of using the
@@ -733,8 +930,8 @@ specify use of `navbar.up2index.html` (as `navbar.up2index`)instead of using the
 The HTML phase may be skipped resulting in no HTML output during a given phase
 and furthermore, forming no HTML content from a given markdown file altogether.
 
-See comments in the [md2html config file](../inc/md2html.cfg) for details.
-See also, the tool [readme2index.sh](%%DOCROOT_SLASH%%bin/readme2index.sh) for an example of
+See comments in the [md2html config file](%%REPO_URL%%/inc/md2html.cfg) for details.
+See also, the tool [readme2index.sh](%%REPO_URL%%/bin/readme2index.sh) for an example of
 how such command lines are used.
 
 
@@ -757,7 +954,7 @@ on the [experimental website](https://ioccc-src.github.io/temp-test-ioccc/).
 
 Instead of editing the default HTML files in order to fix a special web page,
 consider making a copy of the default file and modifying the [md2html config
-file](%%DOCROOT_SLASH%%inc/md2html.cfg) to refer to the copy instead.  That way your special case
+file](%%REPO_URL%%/inc/md2html.cfg) to refer to the copy instead.  That way your special case
 situation will not impact **MOST** of the HTML content.
 
 
@@ -785,13 +982,13 @@ static web pages are supported**.
 We use [static web pages](#static-only), so use of "server side include" is not
 available to the IOCCC.
 
-For example, Apache SSI "#include" does not work on [GitHub
+For example, Apache SSI `#include` does not work on [GitHub
 pages](https://pages.github.com).
 
 
 ## We cannot use a back-end database
 
-We use [static web pages](#static-only), so use of a "back-end database" is not
+We use [static web pages](index.html#static-only), so use of a "back-end database" is not
 available to the IOCCC.
 
 
@@ -823,8 +1020,8 @@ a natural fit for GitHub and [GitHub pages](https://pages.github.com).
 The `<object>` HTML element does not work for our needs.
 
 HTML elements do not extend into the content that they include.
-For example, menu bars [ioccc.css](%%DOCROOT_SLASH%%ioccc.css) will not operate
-under an HTML element.
+For example, menu bars (see the [ioccc.css](%%DOCROOT_SLASH%%ioccc.css)
+stylesheet) will not operate under an HTML element.
 
 
 ## We cannot use the HTML `<embed>` element
@@ -833,7 +1030,8 @@ The `<embed>` HTML element does not work for our needs.
 
 This element wants one to specify the `width` and `height` in pixels.
 Use of a percentage is not officially supported even if some browsers
-might do so.  Our Responsive Web Design in the [ioccc.css](%%DOCROOT_SLASH%%ioccc.css)
+might do so.  Our Responsive Web Design in the
+[ioccc.css](%%DOCROOT_SLASH%%ioccc.css) stylesheet
 needs to be responsive to small-sized cell phone-like screens,
 mid-sized table-like screens, as well as large-sized desktop-like screens.
 Specifying a `width` and `height` in pixels will not work well in
@@ -844,13 +1042,13 @@ all of those screen size contexts.
 
 The `<iframe>` HTML element does not work for our needs.
 
-This element wants one to specify the `width` and `height` in pixels.
-Use of a percentage is not officially supported even if some browsers
-might do so.  Our Responsive Web Design in the [ioccc.css](%%DOCROOT_SLASH%%ioccc.css)
-needs to be responsive to small-sized cell phone-like screens,
-mid-sized table-like screens, as well as large-sized desktop-like screens.
-Specifying a `width` and `height` in pixels will not work well in
-all of those screen size contexts.
+This element wants one to specify the `width` and `height` in pixels.  Use of a
+percentage is not officially supported even if some browsers might do so.  Our
+Responsive Web Design in the [ioccc.css](%%DOCROOT_SLASH%%ioccc.css) stylesheet
+needs to be responsive to small-sized cell phone-like screens, mid-sized
+table-like screens, as well as large-sized desktop-like screens.  Specifying a
+`width` and `height` in pixels will not work well in all of those screen size
+contexts.
 
 
 ## We cannot use JavaScript to include content
@@ -863,7 +1061,8 @@ C source code, we will do so in such a way that someone will be able to view
 disabled.
 
 The IOCCC will **NOT MANDATE USE OF JavaScript** to view [official IOCCC web
-site](https://www.ioccc.org).
+site](https://www.ioccc.org) (except for some mobile devices where it would
+otherwise not work).
 
 For this reason, we cannot use JavaScript include HTML content.
 
@@ -875,7 +1074,9 @@ For this reason, we cannot use JavaScript include HTML content.
 The following IOCCC terms apply to tools, JSON files, and the directory structure of this repo.
 
 
+<div id="author">
 ## `author`
+</div>
 
 An individual who was an `author` of at least one winning IOCCC entry.
 
@@ -884,7 +1085,9 @@ IOCCC entries have more than one author. In that case we might use the word
 `authors`.
 
 
+<div id="author-handle">
 ## `author_handle`
+</div>
 
 An `author_handle` is string that refers to a given author and is unique to the
 IOCCC.  Each author has **EXACTLY ONE** `author_handle`.
@@ -906,7 +1109,7 @@ string that matches this regexp:
     ^[0-9A-Za-z][0-9A-Za-z._+-]*$"
 ```
 
-Default `author_handle`'s do not have multiple consecutive `_` (underscore)
+Default `author_handle`s do not have multiple consecutive `_` (underscore)
 characters.  Nevertheless, multiple consecutive `_` (underscore) characters are
 allowed. Contest submitters who wish to override the `author_handle` may do so.
 
@@ -937,7 +1140,7 @@ The latter form is in case there are more than one anonymous author in a given
 year.
 
 NOTE: even if the directory name is not `anonymous` the above rules apply as in
-in the case of [2005/anon](%%DOCROOT_SLASH%%2005/anon/anon.c).
+in the case of [2005/anon](../2005/anon/index.html).
 
 Anonymous `author_handle`'s match this regexp:
 
@@ -946,11 +1149,13 @@ Anonymous `author_handle`'s match this regexp:
 ```
 
 
+<div id="entry">
 ## `entry`
+</div>
 
 An IOCCC entry that won an award for a given IOCCC.
 
-An `entry` has one more more `author`s.
+An `entry` has one or more `author`s.
 
 Each `entry` is contained under its own directory.  The parent of the entry
 directory is the year's directory.
@@ -965,7 +1170,9 @@ NOTE: In the past, the term `winner` was used in instead of today's term of
 `entry`.
 
 
+<div id="year">
 ## `year`
+</div>
 
 A `year` is a 4 character string.  Most years are 4-digit strings that
 represent the year.  Some special `year` strings are possible, such as `mock`.
@@ -980,7 +1187,9 @@ A `year` string matches this regexp:
 The `year` directories reside directly below the top level directory.
 
 
+<div id="dot-year">
 ## `.year`
+</div>
 
 Each `year` directory will have a file under it named:
 
@@ -992,7 +1201,9 @@ The contents of the `.year` file is the year string of the directory. For
 instance, [2020/.year](%%DOCROOT_SLASH%%2020/.year) has the string: `2020`.
 
 
+<div id="dir">
 ## `dir`
+</div>
 
 A `dir` is a POSIX safe string that holds an entry.
 
@@ -1006,7 +1217,9 @@ Each `entry` is under its own individual directory.  This directory
 is directly under a `year` directory.
 
 
+<div id="entry-id">
 ### `entry_id`
+</div>
 
 A string that identifies the winning entry.  The string is of the form:
 
