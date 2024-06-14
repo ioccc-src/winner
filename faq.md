@@ -1808,7 +1808,7 @@ In some cases there is an alternate version of the IOCCC entry
 that you may wish to try.
 
 It also possible that you may have discovered a bug in an winning IOCCC
-entry.  If so, you are invited to try an fix the IOCCC entry and
+entry.  If so, you are invited to try and fix the IOCCC entry and
 submit that fix by way of a [GitHub pull
 request](https://github.com/ioccc-src/winner/pulls).
 Please see [FAQ 5.2](#fix_an_entry) for how to submit a fix to an IOCCC entry.
