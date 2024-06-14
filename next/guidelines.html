@@ -601,12 +601,12 @@ you can help it. We want to discourage the use of obscure compiler
 flags that would make the program less portable.</p>
 <p>One side effect of the above is that you cannot assume the use
 of nested functions such as:</p>
-<pre><code>    main() {
-        void please_dont_submit_this() {
-            printf(&quot;The machine that goes BING!!\n&quot;);
-        }
-        please_dont_submit_this();
-    }</code></pre>
+<pre><code>     main() {
+|        void please_dont_submit_this() {
+|           printf(&quot;The machine that goes BING!!\n&quot;);
+         }
+|        please_dont_submit_this();
+     }</code></pre>
 <p>This is because such nested functions often requires one to compile with
 a flag such as <code>-fnested-functions</code> that is not found on some compilers.</p>
 <p>On 2012 July 20, the judges rescinded the encouragement of
