@@ -328,12 +328,12 @@ One side effect of the above is that you cannot assume the use
 of nested functions such as:
 
 ``` <!---c-->
-    main() {
-        void please_dont_submit_this() {
-            printf("The machine that goes BING!!\n");
-        }
-        please_dont_submit_this();
-    }
+     main() {
+|        void please_dont_submit_this() {
+|           printf("The machine that goes BING!!\n");
+         }
+|        please_dont_submit_this();
+     }
 ```
 
 This is because such nested functions often requires one to compile with
