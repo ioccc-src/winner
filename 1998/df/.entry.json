@@ -1,7 +1,7 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
     "entry_JSON_format_version" : "1.1 2024-02-11",
-    "award" : "Best Data Hiding",
+    "award" : "Best data hiding",
     "year" : 1998,
     "dir" : "df",
     "entry_id" : "1998_df",
