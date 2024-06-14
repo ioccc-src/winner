@@ -1,7 +1,7 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
     "entry_JSON_format_version" : "1.1 2024-02-11",
-    "award" : "Best X11 Program",
+    "award" : "Best X11 program",
     "year" : 1994,
     "dir" : "tvr",
     "entry_id" : "1994_tvr",

@@ -1,7 +1,7 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
     "entry_JSON_format_version" : "1.1 2024-02-11",
-    "award" : "Most Specific Output",
+    "award" : "Most specific output",
     "year" : 2000,
     "dir" : "bellard",
     "entry_id" : "2000_bellard",

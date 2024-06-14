@@ -1,7 +1,7 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
     "entry_JSON_format_version" : "1.1 2024-02-11",
-    "award" : "Best RFC Obfuscation",
+    "award" : "Best RFC obfuscation",
     "year" : 1996,
     "dir" : "rcm",
     "entry_id" : "1996_rcm",

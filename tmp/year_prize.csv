@@ -1,12 +1,12 @@
 # year_handle,award name
-1984_anonymous,Dishonorable mention
-1984_decot,Second place
-1984_laman,Third place
+1984_anonymous,Dishonorable Mention
+1984_decot,Second Place
+1984_laman,Third Place
 1984_mullender,Grand Prize
 1985_applin,Best one liner
 1985_august,Most obscure program
 1985_lycklama,Strangest appearing program
-1985_shapiro,Grand prize for most well-rounded in confusion
+1985_shapiro,Grand Prize - Most well rounded in confusion
 1985_sicherman,Worst abuse of the C preprocessor
 1986_applin,Most adaptable program
 1986_august,Best complex task done in a complex way
@@ -16,20 +16,20 @@
 1986_marshall,Best layout
 1986_pawka,Most illegible code
 1986_stein,Best one liner
-1986_wall,Grand prize in most well-rounded in confusion
-1987_biggar,Best Abuse of the Rules
-1987_heckbert,Best Obfuscator of Programs
-1987_hines,Worst Style
-1987_korn,Best One Liner
+1986_wall,Grand Prize - Most well rounded in confusion
+1987_biggar,Best abuse of the rules
+1987_heckbert,Best obfuscator of programs
+1987_hines,Worst style
+1987_korn,Best one liner
 1987_lievaart,Grand Prize
-1987_wall,Most Useful Obfuscation
-1987_westley,Best Layout
+1987_wall,Most useful obfuscation
+1987_westley,Best layout
 1988_applin,Best of Show
 1988_dale,Best abuse of system calls
 1988_isaak,Best visuals
 1988_litmaath,Best small program
 1988_phillipps,Least likely to compile successfully
-1988_reddy,Most useful Obfuscated C program
+1988_reddy,Most useful obfuscated C program
 1988_robison,Best abuse of C constructs
 1988_spinellis,Best abuse of the rules
 1988_westley,Best layout
@@ -43,142 +43,142 @@
 1989_tromp,Best game
 1989_vanb,Best one liner
 1989_westley,Most algorithms in one program
-1990_baruch,Best Small Program
-1990_cmills,Best Game
-1990_dds,Best Language Tool
-1990_dg,Best Abuse of the C Preprocessor
-1990_jaw,Best Entropy-reducer
-1990_pjr,Most Unusual Data Structure
-1990_scjones,ANSI Committee's Worst Abuse of C
-1990_stig,Strangest Abuse of the Rules
-1990_tbr,Best Utility
+1990_baruch,Best small program
+1990_cmills,Best game
+1990_dds,Best language tool
+1990_dg,Best abuse of the C preprocessor
+1990_jaw,Best entropy-reducer
+1990_pjr,Most unusual data structure
+1990_scjones,ANSI Committee's worst abuse of C
+1990_stig,Strangest abuse of the rules
+1990_tbr,Best utility
 1990_theorem,Best of Show
-1990_westley,Best Layout
-1991_ant,Best Utility
+1990_westley,Best layout
+1991_ant,Best utility
 1991_brnstnd,Best of Show
-1991_buzzard,Best Output
-1991_cdupont,Most Useful Label
-1991_davidguy,Best X11 Graphics
-1991_dds,Most Well Rounded
-1991_fine,Best One Liner
-1991_rince,Best Game
+1991_buzzard,Best output
+1991_cdupont,Most useful label
+1991_davidguy,Best X11 graphics
+1991_dds,Most well rounded
+1991_fine,Best one liner
+1991_rince,Best game
 1991_westley,Grand Prize
-1992_adrian,Most Educational
-1992_albert,Most Useful Program
-1992_ant,Best Utility
-1992_buzzard.1,Most Obfuscated Algorithm
-1992_buzzard.2,Best Language Tool
-1992_gson,Most Humorous Output
-1992_imc,Best Output
-1992_kivinen,Best X Program
-1992_lush,Worst Abuse of the C Preprocessor
-1992_marangon,Best Game
-1992_nathan,Worst Abuse of the Rules
+1992_adrian,Most educational
+1992_albert,Most useful program
+1992_ant,Best utility
+1992_buzzard.1,Most obfuscated algorithm
+1992_buzzard.2,Best language tool
+1992_gson,Most humorous output
+1992_imc,Best output
+1992_kivinen,Best X program
+1992_lush,Worst abuse of the C preprocessor
+1992_marangon,Best game
+1992_nathan,Worst abuse of the rules
 1992_vern,Best of Show
-1992_westley,Best Small Program
-1993_ant,Best Utility
+1992_westley,Best small program
+1993_ant,Best utility
 1993_cmills,Bill Gates Award
-1993_dgibson,Best Abuse of the C Preprocessor
-1993_ejb,Best Obfuscated Algorithm
-1993_jonth,Most Obfuscated X Program
-1993_leo,Best Game
-1993_lmfjyh,Most Versatile Source
-1993_plummer,Best One Liner
-1993_rince,Most Well Rounded
+1993_dgibson,Best abuse of the C preprocessor
+1993_ejb,Best obfuscated algorithm
+1993_jonth,Most obfuscated X program
+1993_leo,Best game
+1993_lmfjyh,Most versatile source
+1993_plummer,Best one liner
+1993_rince,Most well rounded
 1993_schnitzi,Obfuscated Intelligence Award
-1993_vanb,Most Irregular Expression
-1994_dodsond1,Best Game
-1994_dodsond2,Most Obfuscated Packaging
-1994_horton,Best Utility
-1994_imc,Most Obfuscated Algorithm
-1994_ldb,Best One-liner
-1994_schnitzi,Best Layout
-1994_shapiro,Most Well Rounded Obfuscation
-1994_smr,Worst Abuse of the Rules
-1994_tvr,Best X11 Program
-1994_weisberg,Best Short Program
-1994_westley,Worst Abuse of the C Preprocessor
-1995_cdua,Best Output
-1995_dodsond1,Most Humorous
-1995_dodsond2,Best Game
-1995_esde,Interesting Algorithm
-1995_garry,Best Utility
-1995_heathbar,Best Layout
-1995_leo,Best Use of Obfuscation
-1995_makarios,Best Short Program
-1995_savastio,Most Obfuscated Syntax
-1995_schnitzi,Best One Liner
-1995_spinellis,Abusing The Rules
-1995_vanschnitz,Worst Abuse of the C Preprocessor and Most Likely to Amaze
+1993_vanb,Most irregular expression
+1994_dodsond1,Best game
+1994_dodsond2,Most obfuscated packaging
+1994_horton,Best utility
+1994_imc,Most obfuscated algorithm
+1994_ldb,Best one liner
+1994_schnitzi,Best layout
+1994_shapiro,Most well rounded obfuscation
+1994_smr,Worst abuse of the rules
+1994_tvr,Best X11 program
+1994_weisberg,Best short program
+1994_westley,Worst abuse of the C preprocessor
+1995_cdua,Best output
+1995_dodsond1,Most humorous
+1995_dodsond2,Best game
+1995_esde,Interesting algorithm
+1995_garry,Best utility
+1995_heathbar,Best layout
+1995_leo,Best use of obfuscation
+1995_makarios,Best short program
+1995_savastio,Most obfuscated syntax
+1995_schnitzi,Best one liner
+1995_spinellis,Abusing the rules
+1995_vanschnitz,Worst abuse of the C preprocessor and most likely to amaze
 1996_august,Best of Show
-1996_dalbec,Best Numerical Obfuscation
-1996_eldby,Best Output
-1996_gandalf,Best Layout
-1996_huffman,Best Obfuscated Character Set Utility
-1996_jonth,Best X11 Entry
-1996_rcm,Best RFC Obfuscation
-1996_schweikh1,Worst Abuse of the C Preprocessor
-1996_schweikh2,Best Algorithm
-1996_schweikh3,Best Utility
-1996_westley,Best One Liner
+1996_dalbec,Best numerical obfuscation
+1996_eldby,Best output
+1996_gandalf,Best layout
+1996_huffman,Best obfuscated character set utility
+1996_jonth,Best X11 entry
+1996_rcm,Best RFC obfuscation
+1996_schweikh1,Worst abuse of the C preprocessor
+1996_schweikh2,Best algorithm
+1996_schweikh3,Best utility
+1996_westley,Best one liner
 1998_banks,Best of Show
-1998_bas1,Best Encapsulation
-1998_bas2,Best Small Program
-1998_chaos,Best Object Orientation
-1998_df,Best Data Hiding
-1998_dlowe,Best Utility
-1998_dloweneil,Most Fun
-1998_dorssel,Obsolescent Feature
-1998_fanf,Most Obfuscated Translator
-1998_schnitzi,Best Flow Control
-1998_schweikh1,CPP Abuse
-1998_schweikh2,Most Erratic Behavior
-1998_schweikh3,Most Space Efficient
-1998_tomtorfs,Best Self-Documenting
-2000_anderson,Best Use of Flags
-2000_bellard,Most Specific Output
-2000_bmeyer,Best Utility
-2000_briddlebane,Best Abuse of User
-2000_dhyang,Best Layout
-2000_dlowe,Worst Abuse of the Rules
+1998_bas1,Best encapsulation
+1998_bas2,Best small program
+1998_chaos,Best object orientation
+1998_df,Best data hiding
+1998_dlowe,Best utility
+1998_dloweneil,Most fun
+1998_dorssel,Obsolescent feature
+1998_fanf,Most obfuscated translator
+1998_schnitzi,Best flow control
+1998_schweikh1,CPP abuse
+1998_schweikh2,Most erratic behavior
+1998_schweikh3,Most space efficient
+1998_tomtorfs,Best self-documenting
+2000_anderson,Best use of flags
+2000_bellard,Most specific output
+2000_bmeyer,Best utility
+2000_briddlebane,Best abuse of user
+2000_dhyang,Best layout
+2000_dlowe,Worst abuse of the rules
 2000_jarijyrki,Best of Show
-2000_natori,Best Small Program
-2000_primenum,Best Abuse of CPP
-2000_rince,Astronomically Obfuscated
+2000_natori,Best small program
+2000_primenum,Best abuse of CPP
+2000_rince,Astronomically obfuscated
 2000_robison,Best game
-2000_schneiderwent,Most Timely Output
-2000_thadgavin,Most Portable Output
-2000_tomx,Most Complete Program
+2000_schneiderwent,Most timely output
+2000_thadgavin,Most portable output
+2000_tomx,Most complete program
 2001_anonymous,Dishonorable mention
 2001_bellard,Best abuse of the rules
 2001_cheong,Best short program
 2001_coupard,Most obfuscated sound
-2001_ctk,Worst Driver
+2001_ctk,Worst driver
 2001_dgbeards,Best AI
 2001_herrmann1,Best abuse of the C preprocessor
 2001_herrmann2,Most eye-crossing
 2001_jason,Best of Show
-2001_kev,Best Curses Game
+2001_kev,Best curses game
 2001_ollinger,Best of Show
 2001_rosten,Best abuse of the user
-2001_schweikh,Best one-liner
+2001_schweikh,Best one liner
 2001_westley,Best position-independent code
-2001_williams,Best Graphic Game
+2001_williams,Best graphic game
 2004_anonymous,Best use of 'Precious' Lines
-2004_arachnid,Best use of Vision
-2004_burley,Best Calculated Risk
-2004_gavare,Best Use of Light and Spheres
+2004_arachnid,Best use of vision
+2004_burley,Best calculated risk
+2004_gavare,Best use of light and spheres
 2004_gavin,Best of Show
-2004_hibachi,Best Abuse of the Guidelines
-2004_hoyle,Most Functional Output
-2004_jdalbec,Best Abuse of the Periodic Table
-2004_kopczynski,Best One-Liner
-2004_newbern,Best Font Engine
-2004_omoikane,Best Utility
-2004_schnitzi,Best Non-Use of Curses
-2004_sds,Best Abuse of Indentation
-2004_vik1,Best X11 Game
-2004_vik2,Best Abuse of CPP
+2004_hibachi,Best abuse of the guidelines
+2004_hoyle,Most functional output
+2004_jdalbec,Best abuse of the periodic table
+2004_kopczynski,Best one liner
+2004_newbern,Best font engine
+2004_omoikane,Best utility
+2004_schnitzi,Best non-use of curses
+2004_sds,Best abuse of indentation
+2004_vik1,Best X11 game
+2004_vik2,Best abuse of CPP
 2005_aidan,Most ingenious puzzle solution
 2005_anon,Best 3D puzzle
 2005_boutines,Most superfluous output
@@ -189,25 +189,25 @@
 2005_mikeash,Best use of parenthesis
 2005_mynx,Best use of the WWW
 2005_persano,Best of Show
-2005_sykes,Best Emulator
+2005_sykes,Best emulator
 2005_timwi,Most discourteous interpreter
-2005_toledo,Best Game
+2005_toledo,Best game
 2005_vik,Most circuitous walk
 2005_vince,Most beauteous visuals
 2006_birken,EDAMAME Award
-2006_borsanyi,Most Useful
-2006_grothe,Most Obfuscated Audio
-2006_hamre,Most Irrational
-2006_meyer,Best Game
-2006_monge,Best Compiled Graphics
-2006_night,Best Abuse of Computation
-2006_sloane,Homer's Favorite
-2006_stewart,Best Computed Graphics
-2006_sykes1,Best Assembler
-2006_sykes2,Best One Liner
-2006_toledo1,Best Small Program
+2006_borsanyi,Most useful
+2006_grothe,Most obfuscated audio
+2006_hamre,Most irrational
+2006_meyer,Best game
+2006_monge,Best compiled graphics
+2006_night,Best abuse of computation
+2006_sloane,Homer's favorite
+2006_stewart,Best computed graphics
+2006_sykes1,Best assembler
+2006_sykes2,Best one liner
+2006_toledo1,Best small program
 2006_toledo2,Best of Show
-2006_toledo3,Most Portable Chess Set
+2006_toledo3,Most portable chess set
 2011_akari,Best of Show - Most Shrinkable
 2011_blakely,Most devolving
 2011_borsanyi,Best data utility
@@ -228,24 +228,24 @@
 2012_endoh1,Most complex ASCII fluid - Honorable mention
 2012_endoh2,PiE in the sky award
 2012_grothe,Most conspiratorial
-2012_hamano,Most elementary use of C - Silver award
+2012_hamano,Most elementary use of C - Silver Award
 2012_hou,Most useful obfuscation
 2012_kang,Best short program
 2012_konno,Best one liner
 2012_omoikane,Most surreptitious
 2012_tromp,Most functional
-2012_vik,Best use of cocoa - Bronze award
-2012_zeitak,Balanced use of obfuscation - Gold award
+2012_vik,Best use of cocoa - Bronze Award
+2012_zeitak,Balanced use of obfuscation - Gold Award
 2013_birken,Best painting tool
-2013_cable1,Most partisan 1-liner
+2013_cable1,Most partisan one liner
 2013_cable2,Best of Show
 2013_cable3,Largest small system emulator
 2013_dlowe,Best sparkling utility
 2013_endoh1,Most lazy SKIer
 2013_endoh2,Most recyclable
-2013_endoh3,Most tweetable 1-liner
+2013_endoh3,Most tweetable one liner
 2013_endoh4,Most solid
-2013_hou,Best use of 1 Infinite Loop
+2013_hou,Best use of one infinite loop
 2013_mills,Most timely rendered
 2013_misaka,Most catty
 2013_morgan1,Smallest large system simulator
@@ -253,7 +253,7 @@
 2013_robison,Most poetic use of strings
 2014_birken,Best use of port 1701
 2014_deak,Most underscored argument
-2014_endoh1,Most square (YODA award)
+2014_endoh1,Most square (YODA Award)
 2014_endoh2,Best use of bioinformatics
 2014_maffiodo1,Homage to a classic game
 2014_maffiodo2,Most tweetable entry
@@ -262,24 +262,24 @@
 2014_skeggs,Most dynamic
 2014_vik,Best handling of beeps
 2014_wiedijk,Most functional
-2015_burton,Most Useful
-2015_dogon,Most Crafty
-2015_duble,Best Handwriting
-2015_endoh1,Most Diffused Reaction
-2015_endoh2,Most Overlooked Obfuscation
+2015_burton,Most useful
+2015_dogon,Most crafty
+2015_duble,Best handwriting
+2015_endoh1,Most diffused reaction
+2015_endoh2,Most overlooked obfuscation
 2015_endoh3,Back to the Future Award
-2015_endoh4,Best One-liner
-2015_hou,Most Well-rounded Hash
-2015_howe,Most Different
+2015_endoh4,Best one liner
+2015_hou,Most well rounded hash
+2015_howe,Most different
 2015_mills1,For the Birds! Award
-2015_mills2,Most Compact
-2015_muth,Most Complete Use of CPP
-2015_schweikhardt,Best Documented
-2015_yang,Most Pointed Reaction
+2015_mills2,Most compact
+2015_muth,Most complete use of CPP
+2015_schweikhardt,Best documented
+2015_yang,Most pointed reaction
 2018_algmyr,Most cacophonic
 2018_anderson,Most able to divine code gaps
 2018_bellard,Most inflationary
-2018_burton1,Best one-liner
+2018_burton1,Best one liner
 2018_burton2,Best abuse of the rules
 2018_ciura,Most likely to be awarded
 2018_endoh1,Best tool to reveal holes
@@ -292,7 +292,7 @@
 2018_vokes,Most connected
 2018_yang,Most shifty
 2019_adamovsky,Most functional interpreter
-2019_burton,Best one-liner
+2019_burton,Best one liner
 2019_ciura,Most alphabetic
 2019_diels-grabsch1,Best small program
 2019_diels-grabsch2,Most self-aware
@@ -305,7 +305,7 @@
 2019_mills,Most in need to be tweeted
 2019_poikola,Most calendrical
 2019_yang,Most in need of transparency
-2020_burton,Best one-liner
+2020_burton,Best one liner
 2020_carlini,Best of Show - abuse of libc
 2020_endoh1,Most explosive
 2020_endoh2,Best perspective
