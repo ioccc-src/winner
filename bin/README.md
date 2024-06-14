@@ -54,14 +54,14 @@ is, you would do:
 	bin/chk-entry.sh -V
 ```
 
+
+### Other notes
+
 These options, and especially `-h` and `-v level`, can be very useful to get
 basic usage information and to see what is going on when the tool is running.
 For more details on each tool, including the ones mentioned above, see below. As
 you go through each tool, if you need to understand more of it, we recommend
 that you use the `-h` option on it first.
-
-
-### Other notes
 
 There are some scripts that are invoked by the
 [inc/md2html.cfg](%%REPO_URL%%/inc/md2html.cfg) file but some of these tools can be directly
