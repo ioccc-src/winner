@@ -432,7 +432,7 @@ esac
 	echo "Comments and suggestions on these preliminary items are welcome, see [FAQ 0.5](faq.html#feedback)" \
 	     "for information on how."
 	;;
-    open) echo "# The IOCCC open for submissions"
+    open) echo "# The IOCCC is open for submissions"
 	echo
 	echo "See the [IOCCC news](news.html) page for possible updates to rules, guidelines, tools and deadlines."
 	echo
@@ -463,12 +463,12 @@ esac
 	echo "The IOCCC status is an unexpected status value: $CONTEST_STATUS"
         echo
         echo "This is a **BUG**, not a feature.  Feel free to report it!" 1>&2
-		echo "See the [GitHub issues page](https://github.com/ioccc-src/temp-test-ioccc/issues/new/choose}." 1>&2
+		echo "See the [GitHub issues page](https://github.com/ioccc-src/temp-test-ioccc/issues/new/choose)." 1>&2
 	;;
     esac
     echo
 
-    # write status.json content
+    # write status.json content to status.html
     #
     echo '# status.json'
     echo '```'

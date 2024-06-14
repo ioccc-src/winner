@@ -212,7 +212,7 @@ function output_modtime
 
 # output_status_json
 #
-# write an status.json file to standard output (stdout)
+# write a status.json file to standard output (stdout)
 #
 # usage:
 #	output_status_json contest_status news.md status.json
@@ -261,19 +261,19 @@ function output_status_json
     fi
     STATUS_PATH="$3"
     if [[ ! -e $STATUS_PATH ]]; then
-	echo "$0: ERROR: in output_status_json: status.json.html arg does not exist: $STATUS_PATH" 1>&2
+	echo "$0: ERROR: in output_status_json: status.json arg does not exist: $STATUS_PATH" 1>&2
 	return 6
     fi
     if [[ ! -f $STATUS_PATH ]]; then
-	echo "$0: ERROR: in output_status_json: status.json.html arg is not a file: $STATUS_PATH" 1>&2
+	echo "$0: ERROR: in output_status_json: status.json arg is not a file: $STATUS_PATH" 1>&2
 	return 7
     fi
     if [[ ! -r $STATUS_PATH ]]; then
-	echo "$0: ERROR: in output_status_json: status.json.html arg is not a readable file: $STATUS_PATH" 1>&2
+	echo "$0: ERROR: in output_status_json: status.json arg is not a readable file: $STATUS_PATH" 1>&2
 	return 8
     fi
 
-    # obtain news.md.html file modification date
+    # obtain news.md file modification date
     #
     NEWS_MD_MOD_DATE=$(output_modtime "$NEWS_MD_PATH")
     status="$?"
