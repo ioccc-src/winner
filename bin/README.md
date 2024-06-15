@@ -559,6 +559,7 @@ This tool is used in the [bin/md2html.cfg](%%REPO_URL%%/bin/md2html.cfg) file.
 
 <div id="subst-entry-index">
 ### [subst.entry-index.sh](%%REPO_URL%%/bin/subst.entry-index.sh)
+</div>
 
 Print substitutions for an entry's `index.html`.
 
