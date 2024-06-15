@@ -431,6 +431,12 @@ thanks: ${GEN_TOP_HTML} thanks-for-help.md
 	@${GEN_TOP_HTML} thanks-for-help
 	@echo "... and thanks for all the fish :-)"
 
+# Bugs Bunny rule
+bugs: ${GEN_TOP_HTML} bugs.md
+	@echo "Shhh. Be vewy vewy quiet, I'm hunting wabbits .. and bugs."
+	@${GEN_TOP_HTML} bugs
+	@echo "Eh, what's up, doc?"
+
 # build entry HTML files from markdown other than README.md to index.html
 #
 gen_other_html: ${GEN_OTHER_HTML}
