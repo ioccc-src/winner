@@ -3,7 +3,7 @@
 # status2html.sh - output status.json HTML for the status.html page
 #
 # This tool is intended to be used as a "before tool" during HTML phase number 20.
-# In particular, lines in the inc/md2html.cfg configuration file of the form:
+# In particular, lines in the bin/md2html.cfg configuration file of the form:
 #
 #	-b
 #	bin/status2html.sh

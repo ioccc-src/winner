@@ -2,7 +2,7 @@
 #
 # subst.default.sh - print default substitutions
 #
-# This tool is used in conjunction with the inc/md2html.cfg configuration
+# This tool is used in conjunction with the bin/md2html.cfg configuration
 # file, and the tools that use that use that configuration file such as "bin/md2html.sh".
 #
 # It is usually invoked by:

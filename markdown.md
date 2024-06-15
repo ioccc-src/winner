@@ -24,7 +24,7 @@ markdown files for the IOCCC:
 Please do **NOT** use the HTML construct:
 
 ```
-    <a name="string">...</a>                                  <!-- no thank you -->
+    <a name="string">...</a>                                  <=== no thank you
 ```
 
 as those are **NOT** part of the HTML 5 standard.
@@ -46,7 +46,7 @@ id="string">...</div>`.
 For example:
 
 ```
-    # <div id="string">THIS WILL NOT WORK!</div>              <!-- this will not work -->
+    # <div id="string">THIS WILL NOT WORK!</div>              <=== this will not work
 ```
 
 For things like headings, you have to surround them, as in:
@@ -66,8 +66,8 @@ name="string">...</a>`, it is possible they might NOT in the future.
 Please NOT use the obsolete `<strike>` or `<s>` (<del>_strikeout_</del>) HTML elements:
 
 ```
-    <strike>...</strike>                                      <!-- no thank you -->
-    <s>...</s>                                                <!-- no thank you -->
+    <strike>...</strike>                                      <=== no thank you
+    <s>...</s>                                                <=== no thank you
 ```
 
 Use instead:
@@ -82,7 +82,7 @@ Use instead:
 Please NOT use the obsolete `<u>` (<ins>_underline_</ins>) HTML element:
 
 ```
-    <u>...</u>                                                <!-- no thank you -->
+    <u>...</u>                                                <=== no thank you
 ```
 
 Use instead:
@@ -97,7 +97,7 @@ Use instead:
 Please do **NOT** use the obsolete `<tt>` (<span style="font-family: monospace;">_teletype_</span>) HTML element:
 
 ```
-    <tt>The obsolete tt element is obsolete</tt>              <!-- no thank you -->
+    <tt>The obsolete tt element is obsolete</tt>              <=== no thank you
 ```
 
 Instead use either a monospaced span:
@@ -119,7 +119,7 @@ Please do **NOT** start code blocks at the left-hand edge.
 
 ````
 ```
-This code block is NOT indented                   <!-- no thank you -->
+This code block is NOT indented                   <=== no thank you
 ```
 ````
 

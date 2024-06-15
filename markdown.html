@@ -399,7 +399,7 @@ into the markdown file.</p>
 markdown files for the IOCCC:</p>
 <h2 id="please-do-not-use-name-attributes-in-html-a-..-hyperlink-elements">Please do NOT use name attributes in HTML <code>&lt;a ..&gt;</code> hyperlink elements</h2>
 <p>Please do <strong>NOT</strong> use the HTML construct:</p>
-<pre><code>    &lt;a name=&quot;string&quot;&gt;...&lt;/a&gt;                                  &lt;!-- no thank you --&gt;</code></pre>
+<pre><code>    &lt;a name=&quot;string&quot;&gt;...&lt;/a&gt;                                  &lt;=== no thank you</code></pre>
 <p>as those are <strong>NOT</strong> part of the HTML 5 standard.</p>
 <p>Instead use:</p>
 <pre><code>    &lt;div id=&quot;string&quot;&gt;...&lt;/div&gt;</code></pre>
@@ -409,7 +409,7 @@ encapsulates the HTML you want to name: i.e., the target of some
 for the given page URL.</p>
 <p>There are certain HTML Elements that cannot have internal <code>&lt;div id="string"&gt;...&lt;/div&gt;</code>.</p>
 <p>For example:</p>
-<pre><code>    # &lt;div id=&quot;string&quot;&gt;THIS WILL NOT WORK!&lt;/div&gt;              &lt;!-- this will not work --&gt;</code></pre>
+<pre><code>    # &lt;div id=&quot;string&quot;&gt;THIS WILL NOT WORK!&lt;/div&gt;              &lt;=== this will not work</code></pre>
 <p>For things like headings, you have to surround them, as in:</p>
 <pre><code>    &lt;div id=&quot;string&quot;&gt;
     # This will work
@@ -417,18 +417,18 @@ for the given page URL.</p>
 <p>While some browsers will still recognize the HTML construct <code>&lt;a name="string"&gt;...&lt;/a&gt;</code>, it is possible they might NOT in the future.</p>
 <h2 id="please-do-not-use-the-strike-or-s-html-element">Please do NOT use the <code>&lt;strike&gt;</code> or <code>&lt;s&gt;</code> HTML element</h2>
 <p>Please NOT use the obsolete <code>&lt;strike&gt;</code> or <code>&lt;s&gt;</code> (<del><em>strikeout</em></del>) HTML elements:</p>
-<pre><code>    &lt;strike&gt;...&lt;/strike&gt;                                      &lt;!-- no thank you --&gt;
-    &lt;s&gt;...&lt;/s&gt;                                                &lt;!-- no thank you --&gt;</code></pre>
+<pre><code>    &lt;strike&gt;...&lt;/strike&gt;                                      &lt;=== no thank you
+    &lt;s&gt;...&lt;/s&gt;                                                &lt;=== no thank you</code></pre>
 <p>Use instead:</p>
 <pre><code>    &lt;del&gt;...&lt;/del&gt;</code></pre>
 <h2 id="please-do-not-use-the-u-html-element">Please do NOT use the <code>&lt;u&gt;</code> HTML element</h2>
 <p>Please NOT use the obsolete <code>&lt;u&gt;</code> (<ins><em>underline</em></ins>) HTML element:</p>
-<pre><code>    &lt;u&gt;...&lt;/u&gt;                                                &lt;!-- no thank you --&gt;</code></pre>
+<pre><code>    &lt;u&gt;...&lt;/u&gt;                                                &lt;=== no thank you</code></pre>
 <p>Use instead:</p>
 <pre><code>    &lt;ins&gt;...&lt;/ins&gt;</code></pre>
 <h2 id="please-do-not-use-the-tt-html-element">Please do NOT use the <code>&lt;tt&gt;</code> HTML element</h2>
 <p>Please do <strong>NOT</strong> use the obsolete <code>&lt;tt&gt;</code> (<span style="font-family: monospace;"><em>teletype</em></span>) HTML element:</p>
-<pre><code>    &lt;tt&gt;The obsolete tt element is obsolete&lt;/tt&gt;              &lt;!-- no thank you --&gt;</code></pre>
+<pre><code>    &lt;tt&gt;The obsolete tt element is obsolete&lt;/tt&gt;              &lt;=== no thank you</code></pre>
 <p>Instead use either a monospaced span:</p>
 <pre><code>    &lt;span style=&quot;font-family: monospace;&quot;&gt;Use of monospaced font is one option&lt;/span&gt;</code></pre>
 <p>Or better and easier still, use an inline markdown code block:</p>
@@ -436,7 +436,7 @@ for the given page URL.</p>
 <h2 id="please-do-not-use-unindented-code-blocks">Please do NOT use unindented code blocks</h2>
 <p>Please do <strong>NOT</strong> start code blocks at the left-hand edge.</p>
 <pre><code>```
-This code block is NOT indented                   &lt;!-- no thank you --&gt;
+This code block is NOT indented                   &lt;=== no thank you
 ```</code></pre>
 <p>We request that you indent the code block by 4 spaces:</p>
 <pre><code>```

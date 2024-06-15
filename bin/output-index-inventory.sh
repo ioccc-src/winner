@@ -3,7 +3,7 @@
 # output-index-inventory.sh - output the inventory in HTML form for an entry's index.html page
 #
 # This tool is intended to be used as an "after tool" during HTML phase number 22.
-# In particular, lines in the inc/md2html.cfg configuration file of the form:
+# In particular, lines in the bin/md2html.cfg configuration file of the form:
 #
 #	-a
 #	bin/output-index-inventory.sh

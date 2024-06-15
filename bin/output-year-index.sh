@@ -2,7 +2,7 @@
 #
 # output-year-index.sh - output markdown of winning entry links for a given year
 #
-# This tool is used in conjunction with the inc/md2html.cfg configuration
+# This tool is used in conjunction with the bin/md2html.cfg configuration
 # file, and the tools that use that use that configuration file such as "bin/md2html.sh".
 #
 # It is usually invoked by:
@@ -10,7 +10,7 @@
 #	bin/output-year-index.sh
 #
 # This tool is intended to be used as an "after tool" during HTML phase number 22.
-# In particular, lines in the inc/md2html.cfg configuration file of the form:
+# In particular, lines in the bin/md2html.cfg configuration file of the form:
 #
 #	-a
 #	bin/output-year-index.sh
