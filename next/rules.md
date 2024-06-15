@@ -194,7 +194,7 @@ under the following license:
 
 **`|`**   **[CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)**
 
-See also Rule 18.
+See also rule 18.
 
 If you submit any content that is owned by others, you **MUST**
 detail that ownership (i.e., who owns what) **AND document the
@@ -407,7 +407,7 @@ Even though 24 is not prime, you should still see rule #23.
 
 ## Rule 27
 
-**`|`**   Unless otherwise needed, Rule 27 is reserved for something cubic.  :-)
+**`|`**   Unless otherwise needed, rule 27 is reserved for something cubic.  :-)
 
 
 ## Rule 28
