@@ -165,7 +165,7 @@ unquoted attribute values.
 For example, please do NOT use:
 
 ```
-    <br/>                                                     <=== no thank you
+    <br/>                                                     <!-- no thank you -->
 ```
 
 Instead use just:
@@ -177,7 +177,7 @@ Instead use just:
 And for example, please do NOT use:
 
 ```
-    <hr/>                                                     <=== no thank you
+    <hr/>                                                     <!-- no thank you -->
 ```
 
 Instead use just:
@@ -191,7 +191,7 @@ And for example, please do NOT use:
 ```
     <img src="1984-anonymous-tattoo.jpg"
      alt="image of a tattoo of the 1984 anonymous C code"
-     width=600 height=401 />                                  <=== no thank you
+     width=600 height=401 />                                  <!-- no thank you -->
 ```
 
 Instead use just:
@@ -214,7 +214,7 @@ a trailing `<br>`.
 Instead of:
 
 ```
-    In markdown,\                                             <=== no thank you
+    In markdown,\                                             <!-- no thank you -->
     do NOT use trailing\
     backslashes outside of\
     a code block
@@ -251,7 +251,7 @@ Please do **NOT** use the markdown embedded image element.
 Instead of using this markdown element to embed an image:
 
 ```
-    ![alt text](filename.png "Title")                         <=== no thank you
+    ![alt text](filename.png "Title")                         <!-- no thank you -->
 ```
 
 Use an `<img ..>` HTML element with `alt=`, `width=` and `length=`
@@ -266,7 +266,7 @@ attributes:
 For example, instead of:
 
 ```
-    ![1984-anonymous-tattoo.jpg](1984-anonymous-tattoo.jpg)   <=== no thank you
+    ![1984-anonymous-tattoo.jpg](1984-anonymous-tattoo.jpg)   <!-- no thank you -->
 ```
 
 use this HTML:
@@ -318,7 +318,7 @@ to incorrect URLs or file paths.
 Instead of:
 
 ```
-    [some text](https://example.com/foo_(bar))                <=== no thank you
+    [some text](https://example.com/foo_(bar))                <!-- no thank you -->
 ```
 
 Use:
@@ -330,7 +330,7 @@ Use:
 Instead of:
 
 ```
-    This thing, ([some text](some/path)), is NOT ideal.       <=== no thank you
+    This thing, ([some text](some/path)), is NOT ideal.       <!-- no thank you -->
 ```
 
 Use:
@@ -357,7 +357,7 @@ Instead of:
         return foo;
     }
 ```
-C compilers cannot be given a -Wno-main-arg-errors flag.      <=== no thank you
+C compilers cannot be given a -Wno-main-arg-errors flag.      <!-- no thank you -->
 ````
 
 Use:
@@ -384,7 +384,7 @@ Please do **NOT** use parenthesis inside the markdown link titles.
 Instead of:
 
 ```
-    [some (text)](https://example.com/cyrds)                  <=== no thank you
+    [some (text)](https://example.com/cyrds)                  <!-- no thank you -->
 ```
 
 Use:
@@ -396,7 +396,7 @@ Use:
 Instead of:
 
 ```
-    [ls(1)](https://example.com/ls-man-page.1)                <=== no thank you
+    [ls(1)](https://example.com/ls-man-page.1)                <-- no thank you -->
 ```
 
 Use:

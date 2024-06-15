@@ -462,17 +462,17 @@ tags</a>.</p>
 <p>The trailing slash on void HTML elements has no effect and interacts badly with
 unquoted attribute values.</p>
 <p>For example, please do NOT use:</p>
-<pre><code>    &lt;br/&gt;                                                     &lt;=== no thank you</code></pre>
+<pre><code>    &lt;br/&gt;                                                     &lt;!-- no thank you --&gt;</code></pre>
 <p>Instead use just:</p>
 <pre><code>    &lt;br&gt;</code></pre>
 <p>And for example, please do NOT use:</p>
-<pre><code>    &lt;hr/&gt;                                                     &lt;=== no thank you</code></pre>
+<pre><code>    &lt;hr/&gt;                                                     &lt;!-- no thank you --&gt;</code></pre>
 <p>Instead use just:</p>
 <pre><code>    &lt;hr&gt;</code></pre>
 <p>And for example, please do NOT use:</p>
 <pre><code>    &lt;img src=&quot;1984-anonymous-tattoo.jpg&quot;
      alt=&quot;image of a tattoo of the 1984 anonymous C code&quot;
-     width=600 height=401 /&gt;                                  &lt;=== no thank you</code></pre>
+     width=600 height=401 /&gt;                                  &lt;!-- no thank you --&gt;</code></pre>
 <p>Instead use just:</p>
 <pre><code>    &lt;img src=&quot;1984-anonymous-tattoo.jpg&quot;
      alt=&quot;image of a tattoo of the 1984 anonymous C code&quot;
@@ -483,7 +483,7 @@ unquoted attribute values.</p>
 end a markdown line with a trailing backslash (<code>\</code>). Instead use
 a trailing <code>&lt;br&gt;</code>.</p>
 <p>Instead of:</p>
-<pre><code>    In markdown,\                                             &lt;=== no thank you
+<pre><code>    In markdown,\                                             &lt;!-- no thank you --&gt;
     do NOT use trailing\
     backslashes outside of\
     a code block</code></pre>
@@ -504,14 +504,14 @@ a trailing <code>&lt;br&gt;</code>.</p>
 <h2 id="please-do-not-use-markdown-style-images">Please do NOT use markdown style images</h2>
 <p>Please do <strong>NOT</strong> use the markdown embedded image element.</p>
 <p>Instead of using this markdown element to embed an image:</p>
-<pre><code>    ![alt text](filename.png &quot;Title&quot;)                         &lt;=== no thank you</code></pre>
+<pre><code>    ![alt text](filename.png &quot;Title&quot;)                         &lt;!-- no thank you --&gt;</code></pre>
 <p>Use an <code>&lt;img ..&gt;</code> HTML element with <code>alt=</code>, <code>width=</code> and <code>length=</code>
 attributes:</p>
 <pre><code>    &lt;img src=&quot;filename.png&quot;
      alt=&quot;describe the filename.png image for someone who cannot view it&quot;
      width=PIXEL_WIDTH height=PIXEL_HEIGHT&gt;</code></pre>
 <p>For example, instead of:</p>
-<pre><code>    ![1984-anonymous-tattoo.jpg](1984-anonymous-tattoo.jpg)   &lt;=== no thank you</code></pre>
+<pre><code>    ![1984-anonymous-tattoo.jpg](1984-anonymous-tattoo.jpg)   &lt;!-- no thank you --&gt;</code></pre>
 <p>use this HTML:</p>
 <pre><code>    &lt;img src=&quot;1984-anonymous-tattoo.jpg&quot;
      alt=&quot;image of a tattoo of the 1984 anonymous C code&quot;
@@ -537,11 +537,11 @@ standard HTML 5 and interacts badly with unquoted attribute values.</p>
 <p>Markdown links that end in “))” complicate parsing and sometimes lead
 to incorrect URLs or file paths.</p>
 <p>Instead of:</p>
-<pre><code>    [some text](https://example.com/foo_(bar))                &lt;=== no thank you</code></pre>
+<pre><code>    [some text](https://example.com/foo_(bar))                &lt;!-- no thank you --&gt;</code></pre>
 <p>Use:</p>
 <pre><code>    [some text](https://example.com/foo_&amp;#x28;bar&amp;#x29;)</code></pre>
 <p>Instead of:</p>
-<pre><code>    This thing, ([some text](some/path)), is NOT ideal.       &lt;=== no thank you</code></pre>
+<pre><code>    This thing, ([some text](some/path)), is NOT ideal.       &lt;!-- no thank you --&gt;</code></pre>
 <p>Use:</p>
 <pre><code>    This thing, [some text](some/path), is better.</code></pre>
 <h2 id="please-do-not-place-text-on-the-next-line-after-a-markdown-code-block">Please do NOT place text on the next line after a markdown code block</h2>
@@ -557,7 +557,7 @@ NOT properly indented.</p>
         return foo;
     }
 ```
-C compilers cannot be given a -Wno-main-arg-errors flag.      &lt;=== no thank you</code></pre>
+C compilers cannot be given a -Wno-main-arg-errors flag.      &lt;!-- no thank you --&gt;</code></pre>
 <p>Use:</p>
 <pre><code>```
     int
@@ -572,11 +572,11 @@ C compilers cannot be given a -Wno-main-arg-errors flag.</code></pre>
 <h2 id="please-do-not-put-s-nor-s-in-markdown-link-titles">Please do NOT put “(”s nor “)”s in markdown link titles</h2>
 <p>Please do <strong>NOT</strong> use parenthesis inside the markdown link titles.</p>
 <p>Instead of:</p>
-<pre><code>    [some (text)](https://example.com/cyrds)                  &lt;=== no thank you</code></pre>
+<pre><code>    [some (text)](https://example.com/cyrds)                  &lt;!-- no thank you --&gt;</code></pre>
 <p>Use:</p>
 <pre><code>    [some &amp;#x28;text&amp;#x29;](https://example.com/cyrds)</code></pre>
 <p>Instead of:</p>
-<pre><code>    [ls(1)](https://example.com/ls-man-page.1)                &lt;=== no thank you</code></pre>
+<pre><code>    [ls(1)](https://example.com/ls-man-page.1)                &lt;-- no thank you --&gt;</code></pre>
 <p>Use:</p>
 <pre><code>    [ls&amp;#x28;1&amp;#x29;](https://example.com/ls-man-page.1)</code></pre>
 <!-- AFTER: last line of markdown file: markdown.md -->
