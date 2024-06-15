@@ -3,7 +3,7 @@
 # md2html.sh - convert markdown into an IOCCC HTML file via config file
 #
 # Convert a markdown file into a HTML file for the IOCCC website,
-# using the inc/md2html.cfg configuration file.  Conversion from
+# using the bin/md2html.cfg configuration file.  Conversion from
 # markdown to HTML is performed via the 'pandoc wrapper tool'.
 #
 # For general information on how IOCCC HTML files are generated, see:
@@ -191,7 +191,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	-n		go thru the actions, but do not update any files (def: do the action)
 	-N		do not process file, just parse arguments and ignore the file (def: process the file)
 
-	-c md2html.cfg	Use md2html.cfg as the configuration file (def: use topdir/inc/md2html.cfg)
+	-c md2html.cfg	Use md2html.cfg as the configuration file (def: use topdir/bin/md2html.cfg)
 			NOTE: -c may only be used in command_options (getopt phase 0)
 
 	-H phase=name	use 'phase.name.html' file for HTML phase named 'phase' (def: use 'phase.default.html')
@@ -251,7 +251,7 @@ Exit codes:
      8	       HTML phase file not found or not readable
  >= 10  < 39   internal error
  >= 40  < 200  HTML phase error
- >= 200	       error generated via -e exit_code, or via inc/md2html.cfg, or awk script error
+ >= 200	       error generated via -e exit_code, or via bin/md2html.cfg, or awk script error
 
 $NAME version: $VERSION"
 
@@ -1096,7 +1096,7 @@ fi
 # determine working directory
 #
 # We will use the dirname of match.md as our working directory.  This is path from
-# topdir, that is to be used to match an entry in the inc/md2html.cfg configuration file.
+# topdir, that is to be used to match an entry in the md2html.cfg configuration file.
 # In the case of a entry directory, this will be a YYYY/dir working directory.
 # In the case of a year level directory, this will be a YYYY working directory.
 # In the case of a top level directory, this will be just a . working directory.
@@ -1147,7 +1147,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
-# verify that we have a inc subdirectory
+# verify that we have an inc subdirectory
 #
 export INC_PATH="$TOPDIR/inc"
 if [[ ! -d $INC_PATH ]]; then
@@ -1155,6 +1155,16 @@ if [[ ! -d $INC_PATH ]]; then
     exit 6
 fi
 export INC_DIR="inc"
+
+# verify that we have a bin subdirectory
+#
+export BIN_PATH="$TOPDIR/bin"
+if [[ ! -d $BIN_PATH ]]; then
+    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
+    exit 6
+fi
+export BIN_DIR="bin"
+
 
 # verify that we have a readable .top file
 #
@@ -1175,7 +1185,7 @@ fi
 # verify we have a readable md2html.cfg file
 #
 if [[ -z $MD2HTML_CFG ]]; then
-    MD2HTML_CFG="$INC_DIR/md2html.cfg"
+    MD2HTML_CFG="$BIN_DIR/md2html.cfg"
 fi
 if [[ ! -e $MD2HTML_CFG ]]; then
     echo "$0: ERROR: md2html.cfg does not exist: $MD2HTML_CFG" 1>&2
@@ -1778,7 +1788,7 @@ fi
 # HTML phase 0: inc/top.__name__.html #
 #######################################
 
-# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+# NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
 export CUR_PHASE_NUM=0
 export CUR_PHASE_NAME="top"
@@ -1797,7 +1807,7 @@ fi
 # HTML phase 1: inc/head.__name__.html #
 ########################################
 
-# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+# NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
 CUR_PHASE_NUM=1
 CUR_PHASE_NAME="head"
@@ -1847,7 +1857,7 @@ fi
 # HTML phase 2: inc/body.__name__.html #
 ########################################
 
-# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+# NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
 CUR_PHASE_NUM=2
 CUR_PHASE_NAME="body"
@@ -1866,7 +1876,7 @@ fi
 # HTML phase 3: inc/topbar.__name__.html #
 ########################################
 
-# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+# NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
 CUR_PHASE_NUM=3
 CUR_PHASE_NAME="topbar"
@@ -1885,7 +1895,7 @@ fi
 # HTML phase 4: inc/header.__name__.html #
 ##########################################
 
-# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+# NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
 CUR_PHASE_NUM=4
 CUR_PHASE_NAME="header"
@@ -1904,7 +1914,7 @@ fi
 # HTML phase 5: inc/navbar.__name__.html #
 ##########################################
 
-# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+# NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
 CUR_PHASE_NUM=5
 CUR_PHASE_NAME="navbar"
@@ -1923,7 +1933,7 @@ fi
 # HTML phase 6: inc/before-content.__name__.html #
 ###################################################
 
-# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+# NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
 CUR_PHASE_NUM=6
 CUR_PHASE_NAME="before-content"
@@ -1942,7 +1952,7 @@ fi
 # HTML phase 20: before tool #
 ##############################
 
-# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+# NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
 CUR_PHASE_NUM=20
 CUR_PHASE_NAME="before-tool"
@@ -2002,7 +2012,7 @@ fi
 # HTML phase 21: pandoc wrapper tool #
 ######################################
 
-# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+# NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
 CUR_PHASE_NUM=21
 CUR_PHASE_NAME="pandoc-wrapper-tool"
@@ -2107,7 +2117,7 @@ fi
 # HTML phase 22: after tool #
 #############################
 
-# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+# NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
 CUR_PHASE_NUM=22
 CUR_PHASE_NAME="after-tool"
@@ -2167,7 +2177,7 @@ fi
 # HTML phase 30: inc/after-content.__name__.html #
 ##################################################
 
-# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+# NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
 CUR_PHASE_NUM=30
 CUR_PHASE_NAME="after-content"
@@ -2186,7 +2196,7 @@ fi
 # HTML phase 31: inc/footer.__name__.html #
 ###########################################
 
-# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+# NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
 CUR_PHASE_NUM=31
 CUR_PHASE_NAME="footer"
@@ -2205,7 +2215,7 @@ fi
 # HTML phase 32: inc/bottom.__name__.html #
 ###########################################
 
-# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+# NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
 CUR_PHASE_NUM=32
 CUR_PHASE_NAME="bottom"

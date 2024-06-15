@@ -64,7 +64,7 @@ you go through each tool, if you need to understand more of it, we recommend
 that you use the `-h` option on it first.
 
 There are some scripts that are invoked by the
-[inc/md2html.cfg](%%REPO_URL%%/inc/md2html.cfg) file but some of these tools can be directly
+[bin/md2html.cfg](%%REPO_URL%%/bin/md2html.cfg) file but some of these tools can be directly
 invoked as well, should you wish to see their output or if you have some odd
 need to do so.
 
@@ -387,7 +387,7 @@ This is the primary tool that forms IOCCC generated HTML content from
 markdown files (permanent markdown files or temporarily generated
 markdown files) and HTML fragments from the [inc directory](../inc/index.html).
 
-The [inc/md2html.cfg](%%REPO_URL%%/inc/md2html.cfg) configuration file is
+The [bin/md2html.cfg](%%REPO_URL%%/bin/md2html.cfg) configuration file is
 used by [md2html.sh](%%REPO_URL%%/bin/md2html.sh) to drive the generation process.
 
 
@@ -401,7 +401,7 @@ page.
 For an example, see the [author details in
 1984/anonymous](../1984/anonymous/index.html#author).
 
-This tool is used in the [inc/md2html.cfg](%%REPO_URL%%/inc/md2html.cfg) file as part of
+This tool is used in the [bin/md2html.cfg](%%REPO_URL%%/bin/md2html.cfg) file as part of
 the [md2html tool](index.html#md2html).
 
 
@@ -413,7 +413,7 @@ Output the inventory in HTML form for an entry's index.html page. For an example
 inventory, see the [inventory in
 1984/anonymous](../1984/anonymous/index.html#inventory).
 
-This tool is used in the [inc/md2html.cfg](%%REPO_URL%%/inc/md2html.cfg) file as part of
+This tool is used in the [bin/md2html.cfg](%%REPO_URL%%/bin/md2html.cfg) file as part of
 the [md2html tool](index.html#md2html).
 
 
@@ -424,7 +424,7 @@ words in [1984](../1984/index.html) it would list, as links, the four winning
 entries, which you can see directly at [1984
 inventory](../1984/index.html#inventory).
 
-This tool is used in the [inc/md2html.cfg](%%REPO_URL%%/inc/md2html.cfg) file as part of
+This tool is used in the [bin/md2html.cfg](%%REPO_URL%%/bin/md2html.cfg) file as part of
 the [md2html tool](index.html#md2html).
 
 
@@ -554,7 +554,7 @@ We recommend that this tool be invoked via the top level `Makefile` by:
 
 Print default substitutions.
 
-This tool is used in the [inc/md2html.cfg](%%REPO_URL%%/inc/md2html.cfg) file.
+This tool is used in the [bin/md2html.cfg](%%REPO_URL%%/bin/md2html.cfg) file.
 
 
 <div id="subst-entry-index">
@@ -562,7 +562,7 @@ This tool is used in the [inc/md2html.cfg](%%REPO_URL%%/inc/md2html.cfg) file.
 
 Print substitutions for an entry's `index.html`.
 
-This tool is used in the [inc/md2html.cfg](%%REPO_URL%%/inc/md2html.cfg) file.
+This tool is used in the [bin/md2html.cfg](%%REPO_URL%%/bin/md2html.cfg) file.
 
 <div id="subst-entry-navbar-awk">
 ### [subst.entry-navbar.awk](%%REPO_URL%%/bin/subst.entry-navbar.awk)
@@ -579,7 +579,7 @@ This tool is used in [subst.entry-index.sh](index.html#subst-entry-index).
 
 Print substitutions for a year level `index.html`.
 
-This tool is used in the [inc/md2html.cfg](%%REPO_URL%%/inc/md2html.cfg) file.
+This tool is used in the [bin/md2html.cfg](%%REPO_URL%%/bin/md2html.cfg) file.
 
 <div id="subst-year-navbar-awk">
 ### [subst.year-navbar.awk](%%REPO_URL%%/bin/subst.year-navbar.awk)
@@ -872,7 +872,7 @@ The  "output tool" would output the following 4 lines:
 
 The command line options printed by an "output tool" are processed
 after all command line options, and all options from a matching
-line from the [md2html.cfg](%%REPO_URL%%/inc/md2html.cfg) file, and before any filename arguments
+line from the [md2html.cfg](%%REPO_URL%%/bin/md2html.cfg) file, and before any filename arguments
 on the command line.
 
 For example:
@@ -911,7 +911,7 @@ output), or the command will exit non-zero, unless `-S` is given.  If `-S` is
 given, only a warning about non-substituted tokens will be written to `stderr`.
 
 The command line of tools in the [bin directory](index.html), and perhaps
-modified via the [md2html config file](%%REPO_URL%%/inc/md2html.cfg) may change to using a
+modified via the [md2html config file](%%REPO_URL%%/bin/md2html.cfg) may change to using a
 different filename for a given phase.
 
 For example when forming the HTML from
@@ -920,7 +920,7 @@ a different `navbar` navigation bar is needed.  So instead of the
 usual top navigation bar that normally directs people to the previous
 entry for the year, or go up to the year page, or to the next entry
 for the year, a top navigation bar to just go up to the entry's
-main page is needed. A line in the [md2html config file](%%REPO_URL%%/inc/md2html.cfg)
+main page is needed. A line in the [md2html config file](%%REPO_URL%%/bin/md2html.cfg)
 that refers to
 [2020/ferguson1/chocolate-cake.md](%%REPO_URL%%/2020/ferguson1/chocolate-cake.md) may
 specify use of `navbar.up2index.html` (as `navbar.up2index`)instead of using the
@@ -929,7 +929,7 @@ specify use of `navbar.up2index.html` (as `navbar.up2index`)instead of using the
 The HTML phase may be skipped resulting in no HTML output during a given phase
 and furthermore, forming no HTML content from a given markdown file altogether.
 
-See comments in the [md2html config file](%%REPO_URL%%/inc/md2html.cfg) for details.
+See comments in the [md2html config file](%%REPO_URL%%/bin/md2html.cfg) for details.
 See also, the tool [readme2index.sh](index.html#readme2index) for an example of
 how such command lines are used.
 
@@ -953,7 +953,7 @@ on the [experimental website](https://ioccc-src.github.io/temp-test-ioccc/).
 
 Instead of editing the default HTML files in order to fix a special web page,
 consider making a copy of the default file and modifying the [md2html config
-file](%%REPO_URL%%/inc/md2html.cfg) to refer to the copy instead.  That way your special case
+file](%%REPO_URL%%/bin/md2html.cfg) to refer to the copy instead.  That way your special case
 situation will not impact **MOST** of the HTML content.
 
 

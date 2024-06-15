@@ -3,7 +3,7 @@
 # output-index-author.sh - output author(s) related HTML for an entry's index.html page
 #
 # This tool is intended to be used as a "before tool" during HTML phase number 20.
-# In particular, lines in the inc/md2html.cfg configuration file of the form:
+# In particular, lines in the bin/md2html.cfg configuration file of the form:
 #
 #	-b
 #	bin/output-index-author.sh

@@ -396,7 +396,7 @@ Use:
 Instead of:
 
 ```
-    [ls(1)](https://example.com/ls-man-page.1)                <-- no thank you -->
+    [ls(1)](https://example.com/ls-man-page.1)                <!-- no thank you -->
 ```
 
 Use:

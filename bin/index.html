@@ -419,7 +419,7 @@ For more details on each tool, including the ones mentioned above, see below. As
 you go through each tool, if you need to understand more of it, we recommend
 that you use the <code>-h</code> option on it first.</p>
 <p>There are some scripts that are invoked by the
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/inc/md2html.cfg">inc/md2html.cfg</a> file but some of these tools can be directly
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.cfg">bin/md2html.cfg</a> file but some of these tools can be directly
 invoked as well, should you wish to see their output or if you have some odd
 need to do so.</p>
 <div id="all-run">
@@ -581,7 +581,7 @@ do that, that is not a problem.</p>
 <p>This is the primary tool that forms IOCCC generated HTML content from
 markdown files (permanent markdown files or temporarily generated
 markdown files) and HTML fragments from the <a href="../inc/index.html">inc directory</a>.</p>
-<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/inc/md2html.cfg">inc/md2html.cfg</a> configuration file is
+<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.cfg">bin/md2html.cfg</a> configuration file is
 used by <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.sh">md2html.sh</a> to drive the generation process.</p>
 <div id="output-index-author">
 <h3 id="output-index-author.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/output-index-author.sh">output-index-author.sh</a></h3>
@@ -590,7 +590,7 @@ used by <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md
 page.</p>
 <p>For an example, see the <a href="../1984/anonymous/index.html#author">author details in
 1984/anonymous</a>.</p>
-<p>This tool is used in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/inc/md2html.cfg">inc/md2html.cfg</a> file as part of
+<p>This tool is used in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.cfg">bin/md2html.cfg</a> file as part of
 the <a href="index.html#md2html">md2html tool</a>.</p>
 <div id="output-index-inventory">
 <h3 id="output-index-inventory.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/output-index-inventory.sh">output-index-inventory.sh</a></h3>
@@ -598,14 +598,14 @@ the <a href="index.html#md2html">md2html tool</a>.</p>
 <p>Output the inventory in HTML form for an entry’s index.html page. For an example
 inventory, see the <a href="../1984/anonymous/index.html#inventory">inventory in
 1984/anonymous</a>.</p>
-<p>This tool is used in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/inc/md2html.cfg">inc/md2html.cfg</a> file as part of
+<p>This tool is used in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.cfg">bin/md2html.cfg</a> file as part of
 the <a href="index.html#md2html">md2html tool</a>.</p>
 <h3 id="output-year-index.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/output-year-index.sh">output-year-index.sh</a></h3>
 <p>Output the inventory for a given year’s winning entries in HTML form. In other
 words in <a href="../1984/index.html">1984</a> it would list, as links, the four winning
 entries, which you can see directly at <a href="../1984/index.html#inventory">1984
 inventory</a>.</p>
-<p>This tool is used in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/inc/md2html.cfg">inc/md2html.cfg</a> file as part of
+<p>This tool is used in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.cfg">bin/md2html.cfg</a> file as part of
 the <a href="index.html#md2html">md2html tool</a>.</p>
 <h3 id="pandoc-wrapper.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/pandoc-wrapper.sh">pandoc-wrapper.sh</a></h3>
 <p>Wrapper tool to run <code>pandoc(1)</code>.</p>
@@ -675,11 +675,11 @@ We sort with lines starting with <code>!</code> fourth.</p>
 <h3 id="subst.default.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/subst.default.sh">subst.default.sh</a></h3>
 </div>
 <p>Print default substitutions.</p>
-<p>This tool is used in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/inc/md2html.cfg">inc/md2html.cfg</a> file.</p>
+<p>This tool is used in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.cfg">bin/md2html.cfg</a> file.</p>
 <div id="subst-entry-index">
 <h3 id="subst.entry-index.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/subst.entry-index.sh">subst.entry-index.sh</a></h3>
 <p>Print substitutions for an entry’s <code>index.html</code>.</p>
-<p>This tool is used in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/inc/md2html.cfg">inc/md2html.cfg</a> file.</p>
+<p>This tool is used in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.cfg">bin/md2html.cfg</a> file.</p>
 <div id="subst-entry-navbar-awk">
 <h3 id="subst.entry-navbar.awk"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/subst.entry-navbar.awk">subst.entry-navbar.awk</a></h3>
 </div>
@@ -689,7 +689,7 @@ We sort with lines starting with <code>!</code> fourth.</p>
 <h3 id="subst.year-index.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/subst.year-index.sh">subst.year-index.sh</a></h3>
 </div>
 <p>Print substitutions for a year level <code>index.html</code>.</p>
-<p>This tool is used in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/inc/md2html.cfg">inc/md2html.cfg</a> file.</p>
+<p>This tool is used in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.cfg">bin/md2html.cfg</a> file.</p>
 <div id="subst-year-navbar-awk">
 <h3 id="subst.year-navbar.awk"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/subst.year-navbar.awk">subst.year-navbar.awk</a></h3>
 </div>
@@ -850,7 +850,7 @@ So for example, if an “output tool” wishes to convey:</p>
     navbar=top-of-site</code></pre>
 <p>The command line options printed by an “output tool” are processed
 after all command line options, and all options from a matching
-line from the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/inc/md2html.cfg">md2html.cfg</a> file, and before any filename arguments
+line from the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.cfg">md2html.cfg</a> file, and before any filename arguments
 on the command line.</p>
 <p>For example:</p>
 <pre><code>    command [command_options ..] [cfg_options ..] [output_tool_options ..] [--] [filename_arg ..]</code></pre>
@@ -875,7 +875,7 @@ some <code>-s token=value</code>) in all HTML output, except during phase number
 output), or the command will exit non-zero, unless <code>-S</code> is given. If <code>-S</code> is
 given, only a warning about non-substituted tokens will be written to <code>stderr</code>.</p>
 <p>The command line of tools in the <a href="index.html">bin directory</a>, and perhaps
-modified via the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/inc/md2html.cfg">md2html config file</a> may change to using a
+modified via the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.cfg">md2html config file</a> may change to using a
 different filename for a given phase.</p>
 <p>For example when forming the HTML from
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/chocolate-cake.md">2020/ferguson1/chocolate-cake.md</a>,
@@ -883,14 +883,14 @@ a different <code>navbar</code> navigation bar is needed. So instead of the
 usual top navigation bar that normally directs people to the previous
 entry for the year, or go up to the year page, or to the next entry
 for the year, a top navigation bar to just go up to the entry’s
-main page is needed. A line in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/inc/md2html.cfg">md2html config file</a>
+main page is needed. A line in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.cfg">md2html config file</a>
 that refers to
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/chocolate-cake.md">2020/ferguson1/chocolate-cake.md</a> may
 specify use of <code>navbar.up2index.html</code> (as <code>navbar.up2index</code>)instead of using the
 <code>navbar.default.html</code> (<code>navbar.default.html</code>) default.</p>
 <p>The HTML phase may be skipped resulting in no HTML output during a given phase
 and furthermore, forming no HTML content from a given markdown file altogether.</p>
-<p>See comments in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/inc/md2html.cfg">md2html config file</a> for details.
+<p>See comments in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.cfg">md2html config file</a> for details.
 See also, the tool <a href="index.html#readme2index">readme2index.sh</a> for an example of
 how such command lines are used.</p>
 <h1 id="use-caution-when-modifying-inc-files">Use CAUTION when modifying <code>inc/</code> files</h1>
@@ -903,7 +903,7 @@ on the <a href="https://ioccc-src.github.io/temp-test-ioccc/">experimental websi
 <pre><code>    *.default.html</code></pre>
 <p>… contain default content used to form IOCCC HTML / IOCCC web pages.</p>
 <p>Instead of editing the default HTML files in order to fix a special web page,
-consider making a copy of the default file and modifying the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/inc/md2html.cfg">md2html config
+consider making a copy of the default file and modifying the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.cfg">md2html config
 file</a> to refer to the copy instead. That way your special case
 situation will not impact <strong>MOST</strong> of the HTML content.</p>
 <h1 id="why-we-do-not-use-certain-well-known-html-technologies">Why we do not use certain well-known HTML technologies</h1>

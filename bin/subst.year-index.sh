@@ -3,7 +3,7 @@
 # subst.year-index.sh - print substitutions for a year's index.html
 #
 # This tool is intended to be used as a "output tool" during getopt phases 1 and 3.
-# In particular, lines in the inc/md2html.cfg configuration file of the form:
+# In particular, lines in the bin/md2html.cfg configuration file of the form:
 #
 #	-o
 #	bin/subst.year-index.sh
