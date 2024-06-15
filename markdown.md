@@ -1,21 +1,21 @@
 # IOCCC markdown best practices
 
 The IOCCC makes extensive use of [markdown](https://daringfireball.net/projects/markdown/).
-For example, we [submitting to the IOCCC](faq.html#submit), we have people
-to submit remarks about entry in markdown format.  Every
+For example, when [submitting to the IOCCC](faq.html#submit), we have people
+submit remarks about their entry in markdown format.  Every
 [winning IOCCC entry](years.html) uses a `README.md` markdown file
 as the basis for forming the `index.html` web page for that entry.
 All generated HTML pages on the [Official IOCCC website](https://www.ioccc.org/index.html)
 start with some markdown content.
 
 See the [markdown syntax](https://www.markdownguide.org/basic-syntax) guide.
-See also [CommonMark Spec](https://spec.commonmark.org/current/).
+See also the [CommonMark Spec](https://spec.commonmark.org/current/).
 
 Nevertheless, the IOCCC does have certain practices that we ask authors to follow.
-Some these relate to use of markdown directly, others relate to injecting HTML
+Some of these relate to use of markdown directly and others relate to injecting HTML
 into the markdown file.
 
-In particular there are things we ask people to please do **NOT** use in
+In particular there are things we ask people to please **NOT** use in
 markdown files for the IOCCC:
 
 
@@ -24,7 +24,7 @@ markdown files for the IOCCC:
 Please do **NOT** use the HTML construct:
 
 ```
-    <a name="string">...</a>                                  <=== no thank you
+    <a name="string">...</a>                                  <!-- no thank you -->
 ```
 
 as those are **NOT** part of the HTML 5 standard.
@@ -46,10 +46,10 @@ id="string">...</div>`.
 For example:
 
 ```
-    # <div id="string">THIS WILL NOT WORK!</div>              <=== this will not work
+    # <div id="string">THIS WILL NOT WORK!</div>              <!-- this will not work -->
 ```
 
-For things like headings, you have to surround them as in:
+For things like headings, you have to surround them, as in:
 
 ```
     <div id="string">
@@ -61,13 +61,13 @@ While some browsers will still recognize the HTML construct `<a
 name="string">...</a>`, it is possible they might NOT in the future.
 
 
-## Please do NOT use the `<strike>` nor `<s>` HTML element
+## Please do NOT use the `<strike>` or `<s>` HTML element
 
-Please NOT use the obsolete `<strike>` nor `<s>` (<del> _strikeout_ </del>) HTML elements:
+Please NOT use the obsolete `<strike>` or `<s>` (<del>_strikeout_</del>) HTML elements:
 
 ```
-    <strike>...</strike>                                      <=== no thank you
-    <s>...</s>                                                <=== no thank you
+    <strike>...</strike>                                      <!-- no thank you -->
+    <s>...</s>                                                <!-- no thank you -->
 ```
 
 Use instead:
@@ -82,7 +82,7 @@ Use instead:
 Please NOT use the obsolete `<u>` (<ins>_underline_</ins>) HTML element:
 
 ```
-    <u>...</u>                                                <=== no thank you
+    <u>...</u>                                                <!-- no thank you -->
 ```
 
 Use instead:
@@ -97,7 +97,7 @@ Use instead:
 Please do **NOT** use the obsolete `<tt>` (<span style="font-family: monospace;">_teletype_</span>) HTML element:
 
 ```
-    <tt>The obsolete tt element is obsolete</tt>              <=== no thank you
+    <tt>The obsolete tt element is obsolete</tt>              <!-- no thank you -->
 ```
 
 Instead use either a monospaced span:
@@ -119,8 +119,7 @@ Please do **NOT** start code blocks at the left-hand edge.
 
 ````
 ```
-This code block                                               <=== no thank you
-is NOT indented
+This code block is NOT indented                   <!-- no thank you -->
 ```
 ````
 

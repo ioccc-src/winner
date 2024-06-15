@@ -5,18 +5,18 @@
 * [Winning Entries](years.html)
 * [People who have won](authors.html)
 * [Location of authors](location.html)
-* [Bugs &amp; Misfeatures](bugs.html)
+* [Bugs and (mis)features](bugs.html)
 
 ## Status
 
 * [IOCCC News](news.html)
 * [Contest status](status.html)
-* [Rules &amp; Guidelines](next/index.html)
+* [Rules and Guidelines](next/index.html)
 
 ## FAQ
 
 * [FAQ](faq.html)
-* [How to enter the IOCCC](faq.html#fix_an_entry)
+* [How to enter the IOCCC](faq.html#submit)
 * [Fixing IOCCC entries](faq.html#fix_an_entry)
 * [Fixing the website](faq.html#fix_web_site)
 * [Fixing author info](faq.html#fix_author)
