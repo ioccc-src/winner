@@ -1010,7 +1010,7 @@ you are mentioned you will not get a notification.
 
 **`|`**   The [IOCCC judges](../judges.html) will begin to prepare to release the source code of the new IOCCC winners.
 
-**`|`**   The [IOCCC judges](../judges.html) will post the winning source to the [IOCCC winner repo](https://github.com/ioccc-src/winner) as well as to the [Official IOCCC winner web site](https://www.ioccc.org/index.html).
+**`|`**   The [IOCCC judges](../judges.html) will post the winning source to the [IOCCC winner repo](https://github.com/ioccc-src/winner) as well as to the [Official IOCCC winner website](https://www.ioccc.org/index.html).
 
 **`|`**   The [IOCCC news](../news.html) will also contain an announcement of the winners.
 
@@ -1068,7 +1068,7 @@ the [IOCCC on Mastodon](https://fosstodon.org/@ioccc) account.  See our
 unless you are mentioned you most likely will **NOT** get a notification from
 the app so you should make sure to check the page.
 
-**`|`**   Check out the [Official IOCCC winner web site](https://www.ioccc.org/index.html) in general.
+**`|`**   Check out the [Official IOCCC winner website](https://www.ioccc.org/index.html) in general.
 
 Leonid A. Broukhis<br>
 chongo (Landon Curt Noll) /\\cc/\\

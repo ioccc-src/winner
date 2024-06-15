@@ -418,7 +418,7 @@ the [IOCCC on Mastodon](https://fosstodon.org/@ioccc) account.  See our
 you are mentioned by us you will **NOT** get a notification from the app so you
 should refresh the page even if you do follow us.
 
-**`|`**   Check out the [Official IOCCC winner web site](https://www.ioccc.org/index.html) in general.
+**`|`**   Check out the [Official IOCCC winner website](https://www.ioccc.org/index.html) in general.
 
 
 Leonid A. Broukhis<br>

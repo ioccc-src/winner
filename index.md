@@ -1,5 +1,5 @@
 <!-- XXX - This entire section goes away during the final stages of the Great Fork Merge -->
-# THIS IS AN EXPERIMENTAL IOCCC WEB SITE
+# THIS IS AN EXPERIMENTAL IOCCC WEBSITE
 
 **IMPORTANT: This is NOT the official IOCCC website!**
 
