@@ -32,7 +32,7 @@ writing by [contacting the judges](../contact.html).
 
 ## Guidelines version
 
-**`|`**   This guidelines file is version **2024-06-11-v28**.
+**`|`**   This guidelines file is version **2024-06-15-v28**.
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
 
@@ -62,8 +62,8 @@ The rules are typically published along with these guidelines.
 
 # WHAT'S NEW THIS IOCCC
 
-**`|`**   This IOCCC runs from **2024-MMM-DD HH:MM:SS UTC** to **YYYY-MMM-DD HH:MM:SS UTC**.
-** XXX - This date and time is TDB - XXX **.
+**`|`**   This IOCCC runs from **2024-MMM-DD HH:MM:SS UTC** to **YYYY-MMM-DD HH:MM:SS UTC**.<br>
+**`|`**   **XXX - date/time is TBD - XXX**
 
 **`|`**   The reason for the times of day are so that key IOCCC events are **calculated**
 for be a **fun**ctional UTC time.  :-)
@@ -76,8 +76,8 @@ adjusted _AT ANY TIME_**.
 
 The IOCCC submission URL is <https://submit.ioccc.org/>.
 
-**`|`**   The submit URL should be active on or slightly before **2024-MMM-DD HH:MM:SS UTC**.
-**XXX - This date and time is TDB - XXX **.
+**`|`**   The submit URL should be active on or slightly before **2024-MMM-DD HH:MM:SS UTC**.<br>
+**`|`**   **XXX - date/time is TBD - XXX**
 
 Please wait to submit your entries until after that time.
 
@@ -876,33 +876,6 @@ reveal the number of entries that we received.
 During the judging process, a process that spans multiple sessions
 over a few weeks, post general updates from our [Mastodon
 account](https://fosstodon.org/@ioccc).
-
-Once we have selected the winners, for each category we will tweet:
-
-* category name
-* name(s) of the authors (or anonymous if requested)
-* twitter handle(s) (if provided and if anonymity was not requested)
-* country code(s) of the author(s)
-
-After the initial announcement, we attempt to send email to the
-authors of the winning entries.  One reason we do this is to give
-the authors a chance to comment on the way we have presented their
-entry.  They are given the chance to correct mistakes and typos.  We
-often accept their suggestions/comments about our remarks as well.
-This is done prior to posting the winners to the wide world.
-
-
-## An important update to how winners are announced
-
-The IOCCC no longer uses twitter.  IOCCC entries will be announced by a git
-commit to the [IOCCC entries repo](https://github.com/ioccc-src/winner) that, in
-turn, updates the [official IOCCC website](https://www.ioccc.org/index.html).
-
-In addition a note is posted to the IOCCC Mastodon account
-(<https://fosstodon.org/@ioccc>).
-
-
-## Back to the Judging process
 
 Judging consists of a number of elimination rounds.  During a round,
 the collection of entries are divided into two roughly equal piles;

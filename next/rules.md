@@ -34,7 +34,7 @@ writing by [contacting the judges](../contact.html).
 
 ## Rules version
 
-**`|`**   These rules are version **2024-04-04-v28**.
+**`|`**   These rules are version **2024-06-15-v28**.
 
 **IMPORTANT**: Be sure to read the [IOCCC guidelines](guidelines.html).
 
@@ -72,7 +72,8 @@ The goals of the IOCCC:
 
 # Important IOCCC dates
 
-**`|`**   This IOCCC runs from **2019-Dec-26 06:01:41 UTC** to **2020-Mar-15 06:26:49 UTC**.
+**`|`**   This IOCCC runs from **2024-MMM-DD HH:MM:SS UTC** to **202x-MMM-DD HH:MM:SS UTC**.<br>
+**`|`**   **XXX - date/time is TBD - XXX**
 
 Until the start of this IOCCC, these [rules](rules.html),
 [guidelines](guidelines.html) and iocccsize.c (contained in the [mkiocccentry
@@ -87,7 +88,9 @@ times that link is likely to be unresponsive.
 Please check the [How to enter FAQ](../faq.html#submit)
 for **important information** on how to submit to the IOCCC.
 
-**`|`**   The submit URL should be active on or slightly before **2020-Jan-15 12:21:37 UTC**.
+**`|`**   The submit URL should be active on or slightly before **2024-MMM-DD HH:MM:SS UTC**.<br>
+**`|`**   **XXX - date/time is TBD - XXX**
+
 Please wait to submit your entries until after that time.
 
 The official [rules](rules.html) and [guidelines](guidelines.html) will be
@@ -122,7 +125,7 @@ The size rule requires your entry to satisfy **BOTH** rule 2a and rule 2b:
 
 ## Rule 2a
 
-The size of your program source **MUST BE <= 4096 bytes**in length.
+The size of your program source **MUST BE <= 4096 bytes** in length.
 
 ## Rule 2b
 
@@ -145,7 +148,9 @@ To submit to an open IOCCC, you must use the [IOCCC submit server](https://submi
 
 When the IOCCC is not open, that link will likely be unresponsive.
 
-**`|`**   The submit URL should be active on or slightly before **2020-Jan-15 12:21:37 UTC**.
+**`|`**   The submit URL should be active on or slightly before **2024-MMM-DD HH:MM:SS UTC**.<br>
+**`|`**   **XXX - date/time is TBD - XXX**
+
 Please wait to submit your entries until after that time.
 
 
@@ -175,7 +180,7 @@ file to a new filename and then modify that copy.
 **`|`**   I am not a rule, I am a `free(void *human)`!
 
 ``` <!---c-->
-        while (!understand(ioccc(rule(that(you(are(number(6)))))))) { ha_ha_ha(); }
+|       while (!understand(ioccc(rule(that(you(are(number(6)))))))) { ha_ha_ha(); }
 ```
 
 
@@ -200,8 +205,8 @@ Please note that the IOCCC size tool is **NOT** an original work.
 
 ## Rule 8
 
-**`|`**   Entries must be received prior to the end of this IOCCC which is
-**2024-MMM-DD HH:MM:SS UTC**.  **XXX - This date and time is TDB - XXX **.
+**`|`**   Entries must be received prior to the end of this IOCCC which is **2024-MMM-DD HH:MM:SS UTC**.<br>
+**`|`**   **XXX - date/time is TBD - XXX**
 
 
 A confirmation of submission will be sent to the submitting email address
@@ -387,17 +392,28 @@ Even though 24 is not prime, you should still see rule #23.
 
 ## Rule 25
 
-The IOCCC rule set consists of at least 26 rules.
+**`|`**   The IOCCC rule set needs more than 5^2 rules: see rule #26.
 
 
 ## Rule 26
 
-Rule 26 is also a rule.
+**`|`**   "The quick brown fox jumps over the lazy dog".<br>
+**`|`**   "Pack my box with five dozen liquor jugs."<br>
+**`|`**   "How vexingly quick daft zebras jump!"<br>
+**`|`**   "Sphinx of black quartz, judge my vow."<br>
+**`|`**   "Waltz, bad nymph, for quick jigs vex."<br>
+**`|`**   "Mr. Jock, TV quiz PhD, bags few lynx."
 
 
 ## Rule 27
 
-**`|`**   Rule 27 is reserved for something cubic.  :-)
+**`|`**   Unless otherwise needed, Rule 27 is reserved for something cubic.  :-)
+
+
+## Rule 28
+
+**`|`**   Rule 28 is a perfect way end to the list of rules as we do not plan to have 496 rules.
+
 
 
 # FOR MORE INFORMATION:
