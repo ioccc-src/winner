@@ -326,7 +326,6 @@ Examples of top level HTML pages built by this tool include:
 - [faq.html](../faq.html)
 - [inc/index.html](../inc/index.html)
 - [index.html](../index.html)
-- [thanks-for-help.html](../thanks-for-help.html)
 - [judges.html](../judges.html)
 - [news.html](../news.html)
 - [thanks-for-help.html](../thanks-for-help.html)
@@ -425,7 +424,7 @@ words in [1984](../1984/index.html) it would list, as links, the four winning
 entries, which you can see directly at [1984
 inventory](../1984/index.html#inventory).
 
-This tool is used in the [inc/md2html.cfg](%%REPO_URLH%%/inc/md2html.cfg) file as part of
+This tool is used in the [inc/md2html.cfg](%%REPO_URL%%/inc/md2html.cfg) file as part of
 the [md2html tool](index.html#md2html).
 
 
@@ -445,7 +444,7 @@ does not have a non-empty `index.hmtl` file, or if either
 This is useful when only a few entries have been
 modified (resulting in an updated `.entry.json` file)
 or if the `README.md` of a few entries have been changed: while the
-[readme2index.sh](%%REPO_URL%%/bin/readme2index.sh) script takes a few seconds
+[readme2index.sh](index.html#readme2index) script takes a few seconds
 to run for a few entries, when applied to 300+ entries, the extra time can add
 up.
 
@@ -688,7 +687,7 @@ We recommend that this tool be invoked via the top level `Makefile` by:
 # How IOCCC HTML content is built
 </div>
 
-The [md2html.sh](%%REPO_URL%%/bin/md2html.sh) tool is the primary tool that
+The [md2html.sh](index.html#md2html) tool is the primary tool that
 is used to form all IOCCC related HTML pages for the [official IOCCC web
 site](https://www.ioccc.org).
 
@@ -777,7 +776,7 @@ It is an error, unless `-S` is given, for any phase, except phases HTML
 20-29, to not substitute all `%%TOKEN%%`s.  For phases HTML 20-29, any
 `%%TOKEN%%` that is not substituted are passed thru without substitution.
 
-See the tool [readme2index.sh](%%REPO_URL%%/bin/readme2index.sh) for an example of
+See the tool [readme2index.sh](index.html#readme2index) for an example of
 how HTML phases are implemented.
 
 
@@ -916,14 +915,14 @@ modified via the [md2html config file](%%REPO_URL%%/inc/md2html.cfg) may change 
 different filename for a given phase.
 
 For example when forming the HTML from
-[2020/ferguson1/chocolate-cake.md](%%DOCROOT_SLASH%%2020/ferguson1/chocolate-cake.md),
+[2020/ferguson1/chocolate-cake.md](%%REPO_URL%%/2020/ferguson1/chocolate-cake.md),
 a different `navbar` navigation bar is needed.  So instead of the
 usual top navigation bar that normally directs people to the previous
 entry for the year, or go up to the year page, or to the next entry
 for the year, a top navigation bar to just go up to the entry's
-main page is needed. A line in the [md2html config file](%%DOCROOT_SLASH%%inc/md2html.cfg)
+main page is needed. A line in the [md2html config file](%%REPO_URL%%/inc/md2html.cfg)
 that refers to
-[2020/ferguson1/chocolate-cake.md](%%DOCROOT_SLASH%%2020/ferguson1/chocolate-cake.md) may
+[2020/ferguson1/chocolate-cake.md](%%REPO_URL%%/2020/ferguson1/chocolate-cake.md) may
 specify use of `navbar.up2index.html` (as `navbar.up2index`)instead of using the
 `navbar.default.html` (`navbar.default.html`) default.
 
@@ -931,11 +930,11 @@ The HTML phase may be skipped resulting in no HTML output during a given phase
 and furthermore, forming no HTML content from a given markdown file altogether.
 
 See comments in the [md2html config file](%%REPO_URL%%/inc/md2html.cfg) for details.
-See also, the tool [readme2index.sh](%%REPO_URL%%/bin/readme2index.sh) for an example of
+See also, the tool [readme2index.sh](index.html#readme2index) for an example of
 how such command lines are used.
 
 
-# Use CAUTION when modifying inc files
+# Use CAUTION when modifying `inc/` files
 
 Some of the files under this directory are used to form **MOST** of the HTML content
 on the [official IOCCC website](https://www.ioccc.org).
@@ -1061,8 +1060,7 @@ C source code, we will do so in such a way that someone will be able to view
 disabled.
 
 The IOCCC will **NOT MANDATE USE OF JavaScript** to view [official IOCCC web
-site](https://www.ioccc.org) (except for some mobile devices where it would
-otherwise not work).
+site](https://www.ioccc.org) (except for some mobile devices for the menu).
 
 For this reason, we cannot use JavaScript include HTML content.
 
@@ -1191,14 +1189,30 @@ The `year` directories reside directly below the top level directory.
 ## `.year`
 </div>
 
-Each `year` directory will have a file under it named:
-
-```
-    .year
-```
+Each `year` directory will have a file under it named `.year`.
 
 The contents of the `.year` file is the year string of the directory. For
-instance, [2020/.year](%%DOCROOT_SLASH%%2020/.year) has the string: `2020`.
+instance, [2020/.year](%%REPO_URL%%/2020/.year) lists, one directory per line,
+the directories of the winning entries of that year. For instance, for 2020:
+
+``` <!--sh-->
+	$ cat 2020/.year
+	2020/burton
+	2020/carlini
+	2020/endoh1
+	2020/endoh2
+	2020/endoh3
+	2020/ferguson1
+	2020/ferguson2
+	2020/giles
+	2020/kurdyukov1
+	2020/kurdyukov2
+	2020/kurdyukov3
+	2020/kurdyukov4
+	2020/otterness
+	2020/tsoj
+	2020/yang
+```
 
 
 <div id="dir">

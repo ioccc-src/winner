@@ -550,7 +550,6 @@ do that, that is not a problem.</p>
 <li><a href="../faq.html">faq.html</a></li>
 <li><a href="../inc/index.html">inc/index.html</a></li>
 <li><a href="../index.html">index.html</a></li>
-<li><a href="../thanks-for-help.html">thanks-for-help.html</a></li>
 <li><a href="../judges.html">judges.html</a></li>
 <li><a href="../news.html">news.html</a></li>
 <li><a href="../thanks-for-help.html">thanks-for-help.html</a></li>
@@ -606,7 +605,7 @@ the <a href="index.html#md2html">md2html tool</a>.</p>
 words in <a href="../1984/index.html">1984</a> it would list, as links, the four winning
 entries, which you can see directly at <a href="../1984/index.html#inventory">1984
 inventory</a>.</p>
-<p>This tool is used in the <a href="%%REPO_URLH%%/inc/md2html.cfg">inc/md2html.cfg</a> file as part of
+<p>This tool is used in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/inc/md2html.cfg">inc/md2html.cfg</a> file as part of
 the <a href="index.html#md2html">md2html tool</a>.</p>
 <h3 id="pandoc-wrapper.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/pandoc-wrapper.sh">pandoc-wrapper.sh</a></h3>
 <p>Wrapper tool to run <code>pandoc(1)</code>.</p>
@@ -619,7 +618,7 @@ does not have a non-empty <code>index.hmtl</code> file, or if either
 <p>This is useful when only a few entries have been
 modified (resulting in an updated <code>.entry.json</code> file)
 or if the <code>README.md</code> of a few entries have been changed: while the
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/readme2index.sh">readme2index.sh</a> script takes a few seconds
+<a href="index.html#readme2index">readme2index.sh</a> script takes a few seconds
 to run for a few entries, when applied to 300+ entries, the extra time can add
 up.</p>
 <p>If only a few <code>index.hmtl</code> files need updating, then
@@ -737,7 +736,7 @@ We sort with lines starting with <code>!</code> fourth.</p>
 <div id="how">
 <h1 id="how-ioccc-html-content-is-built">How IOCCC HTML content is built</h1>
 </div>
-<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.sh">md2html.sh</a> tool is the primary tool that
+<p>The <a href="index.html#md2html">md2html.sh</a> tool is the primary tool that
 is used to form all IOCCC related HTML pages for the <a href="https://www.ioccc.org">official IOCCC web
 site</a>.</p>
 <p>Nearly all IOCCC related HTML pages are built from markdown files,
@@ -798,7 +797,7 @@ as well as the markdown content given to the <code>pandoc wrapper tool</code> (<
 <p>It is an error, unless <code>-S</code> is given, for any phase, except phases HTML
 20-29, to not substitute all <code>%%TOKEN%%</code>s. For phases HTML 20-29, any
 <code>%%TOKEN%%</code> that is not substituted are passed thru without substitution.</p>
-<p>See the tool <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/readme2index.sh">readme2index.sh</a> for an example of
+<p>See the tool <a href="index.html#readme2index">readme2index.sh</a> for an example of
 how HTML phases are implemented.</p>
 <div id="getopt">
 <h2 id="getopt-phase-processing-of-the-command-line">getopt phase processing of the command line</h2>
@@ -879,22 +878,22 @@ given, only a warning about non-substituted tokens will be written to <code>stde
 modified via the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/inc/md2html.cfg">md2html config file</a> may change to using a
 different filename for a given phase.</p>
 <p>For example when forming the HTML from
-<a href="../2020/ferguson1/chocolate-cake.md">2020/ferguson1/chocolate-cake.md</a>,
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/chocolate-cake.md">2020/ferguson1/chocolate-cake.md</a>,
 a different <code>navbar</code> navigation bar is needed. So instead of the
 usual top navigation bar that normally directs people to the previous
 entry for the year, or go up to the year page, or to the next entry
 for the year, a top navigation bar to just go up to the entry’s
-main page is needed. A line in the <a href="../inc/md2html.cfg">md2html config file</a>
+main page is needed. A line in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/inc/md2html.cfg">md2html config file</a>
 that refers to
-<a href="../2020/ferguson1/chocolate-cake.md">2020/ferguson1/chocolate-cake.md</a> may
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/chocolate-cake.md">2020/ferguson1/chocolate-cake.md</a> may
 specify use of <code>navbar.up2index.html</code> (as <code>navbar.up2index</code>)instead of using the
 <code>navbar.default.html</code> (<code>navbar.default.html</code>) default.</p>
 <p>The HTML phase may be skipped resulting in no HTML output during a given phase
 and furthermore, forming no HTML content from a given markdown file altogether.</p>
 <p>See comments in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/inc/md2html.cfg">md2html config file</a> for details.
-See also, the tool <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/readme2index.sh">readme2index.sh</a> for an example of
+See also, the tool <a href="index.html#readme2index">readme2index.sh</a> for an example of
 how such command lines are used.</p>
-<h1 id="use-caution-when-modifying-inc-files">Use CAUTION when modifying inc files</h1>
+<h1 id="use-caution-when-modifying-inc-files">Use CAUTION when modifying <code>inc/</code> files</h1>
 <p>Some of the files under this directory are used to form <strong>MOST</strong> of the HTML content
 on the <a href="https://www.ioccc.org">official IOCCC website</a>.</p>
 <p>These files are used to form <strong>MOST</strong> of the HTML content
@@ -975,8 +974,7 @@ C source code, we will do so in such a way that someone will be able to view
 <a href="https://www.ioccc.org">official IOCCC website</a> content with JavaScript
 disabled.</p>
 <p>The IOCCC will <strong>NOT MANDATE USE OF JavaScript</strong> to view <a href="https://www.ioccc.org">official IOCCC web
-site</a> (except for some mobile devices where it would
-otherwise not work).</p>
+site</a> (except for some mobile devices for the menu).</p>
 <p>For this reason, we cannot use JavaScript include HTML content.</p>
 <div id="terms">
 <h1 id="ioccc-terms">IOCCC terms</h1>
@@ -1042,10 +1040,26 @@ Non-numeric <code>year</code> strings are lower case.</p>
 <div id="dot-year">
 <h2 id="year-1"><code>.year</code></h2>
 </div>
-<p>Each <code>year</code> directory will have a file under it named:</p>
-<pre><code>    .year</code></pre>
+<p>Each <code>year</code> directory will have a file under it named <code>.year</code>.</p>
 <p>The contents of the <code>.year</code> file is the year string of the directory. For
-instance, <a href="../2020/.year">2020/.year</a> has the string: <code>2020</code>.</p>
+instance, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/.year">2020/.year</a> lists, one directory per line,
+the directories of the winning entries of that year. For instance, for 2020:</p>
+<pre class="&lt;!--sh--&gt;"><code>        $ cat 2020/.year
+        2020/burton
+        2020/carlini
+        2020/endoh1
+        2020/endoh2
+        2020/endoh3
+        2020/ferguson1
+        2020/ferguson2
+        2020/giles
+        2020/kurdyukov1
+        2020/kurdyukov2
+        2020/kurdyukov3
+        2020/kurdyukov4
+        2020/otterness
+        2020/tsoj
+        2020/yang</code></pre>
 <h2 id="dir"><code>dir</code></h2>
 <p>A <code>dir</code> is a POSIX safe string that holds an entry.</p>
 <p>A <code>dir</code> is a string that matches this regexp:</p>
