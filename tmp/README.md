@@ -3,12 +3,12 @@
 The tools under this directory are an alpha release.
 The [bin directory](bin/index.html)
 holds the formal release of tools that will
-maintain the [official IOCCC web site](https://www.ioccc.org).
+maintain the [official IOCCC website](https://www.ioccc.org).
 
-Currently these tools maintain the [experimental web site](https://ioccc-src.github.io/temp-test-ioccc/)
+Currently these tools maintain the [experimental website](https://ioccc-src.github.io/temp-test-ioccc/)
 by default, via the  [temp-test-ioccc GitHub repo](https://github.com/ioccc-src/temp-test-ioccc).
-These tools will default to using the temp-test-ioccc repo and the experimental web site
-until the [official IOCCC web site](https://www.ioccc.org), via the
+These tools will default to using the temp-test-ioccc repo and the experimental website
+until the [official IOCCC website](https://www.ioccc.org), via the
 [IOCCC winner repo](https://github.com/ioccc-src/winner) is ready for the mass pull request/merge.
 
 **IMPORTANT**: The purpose of the `tmp` directory is to hold temporary files.
@@ -436,7 +436,7 @@ Lines printed are of the form:
 ### [src](src)
 
 This is a temporary location for potential tools that are used to
-build and maintain the www.ioccc.org web site.
+build and maintain the www.ioccc.org website.
 
 
 ### [things-todo.md](things-todo.md)

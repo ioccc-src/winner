@@ -302,7 +302,7 @@ We recommend that this tool be invoked via the top level `Makefile` by:
 ```
 
 unless the `contest_status` is to be changed, but since only the judges should
-do that that is not a problem.
+do that, that is not a problem.
 
 <div id="gen-top-html">
 ### [gen-top-html.sh](%%REPO_URL%%/bin/gen-top-html.sh)
