@@ -3,8 +3,8 @@
 ## Entries
 
 * [Winning Entries](years.html)
-* [People who have won](authors.html)
-* [Location of authors](location.html)
+* [Winning Authors](authors.html)
+* [Location of winning  authors](location.html)
 * [Bugs and &#x28;mis&#x29;features](bugs.html)
 
 ## Status
@@ -19,7 +19,7 @@
 * [How to enter the IOCCC](faq.html#submit)
 * [Fixing IOCCC entries](faq.html#fix_an_entry)
 * [Fixing the website](faq.html#fix_web_site)
-* [Fixing author info](faq.html#fix_author)
+* [Updating author info](faq.html#fix_author)
 
 ## About
 

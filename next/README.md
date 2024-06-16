@@ -1,4 +1,4 @@
-# IOCCC Rules and Guidelines
+# Rules and Guidelines
 
 **IMPORTANT**: Did you read the **Important disclaimers about scope**
 and did you check the current **[IOCCC status](../status.html)**?

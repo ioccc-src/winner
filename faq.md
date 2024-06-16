@@ -2,7 +2,7 @@
 
 
 ## Section  0 - [Submitting entries to a new IOCCC](#faq0)
-- [0.0  - How may I submit to the IOCCC?](#faq0_0)
+- [0.0  - How may I enter the IOCCC?](#faq0_0)
 - [0.1  - What types of entries have been frequently submitted to the IOCCC?](#faq0_1)
 - [0.2  - What should I put in my entry's Makefile?](#faq0_2)
 - [0.3  - May I use a different source or compiled filename than prog.c or prog?](#faq0_3)
@@ -102,7 +102,7 @@ other inconsistencies with the original entry?](#faq4_3)
 
 <div id="faq0_0">
 <div id="submit">
-### FAQ 0.0: How may I submit to the IOCCC?
+### FAQ 0.0: How may I enter the IOCCC?
 </div>
 </div>
 
@@ -2727,7 +2727,10 @@ For example, in [contact.html](contact.html), one may read:
 ```
 
 This means that you could consider editing the referenced markdown file
-in your [IOCCC pull request](#pull_request).
+AND then run `make www` from the top level directory in your [IOCCC pull
+request](#pull_request). There are quicker ways but to be sure you get
+everything built you should do this. If you modified a markdown and you do not
+see the same file as a html file then you did not complete the fix.
 
 Please see [FAQ 5.2 How may I submit a fix to an IOCCC
 entry](#fix_an_entry).  See also the [FAQ 6.10 How does someone

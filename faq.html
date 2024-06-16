@@ -68,13 +68,13 @@
 
             <div class="outfit-font">
               <a href="./authors.html" class="sub-item-link">
-                People who have won
+                Winning Authors
               </a>
             </div>
 
             <div class="outfit-font">
               <a href="./location.html" class="sub-item-link">
-                Location of authors
+                Location of winning  authors
               </a>
             </div>
 
@@ -144,7 +144,7 @@
 
             <div class="outfit-font">
               <a href="./faq.html#fix_author" class="sub-item-link">
-                Fixing author info
+                Updating author info
               </a>
             </div>
           </div>
@@ -182,7 +182,7 @@
 
             <div class="outfit-font">
               <a href="./markdown.html" class="sub-item-link">
-                IOCCC markdown
+                IOCCC markdown guidelines
               </a>
             </div>
           </div>
@@ -228,7 +228,7 @@
             </a>
 
             <a class="mobile-submenu-item" href="./authors.html">
-              People who have won
+              Authors of winning IOCCC entries
             </a>
 
             <a class="mobile-submenu-item" href="./location.html">
@@ -385,7 +385,7 @@
 <h1 id="faq-table-of-contents">FAQ Table of Contents</h1>
 <h2 id="section-0---submitting-entries-to-a-new-ioccc">Section 0 - <a href="#faq0">Submitting entries to a new IOCCC</a></h2>
 <ul>
-<li><a href="#faq0_0">0.0 - How may I submit to the IOCCC?</a></li>
+<li><a href="#faq0_0">0.0 - How may I enter the IOCCC?</a></li>
 <li><a href="#faq0_1">0.1 - What types of entries have been frequently submitted to the IOCCC?</a></li>
 <li><a href="#faq0_2">0.2 - What should I put in my entry’s Makefile?</a></li>
 <li><a href="#faq0_3">0.3 - May I use a different source or compiled filename than prog.c or prog?</a></li>
@@ -480,7 +480,7 @@ other inconsistencies with the original entry?</a></li>
 </div>
 <div id="faq0_0">
 <div id="submit">
-<h3 id="faq-0.0-how-may-i-submit-to-the-ioccc">FAQ 0.0: How may I submit to the IOCCC?</h3>
+<h3 id="faq-0.0-how-may-i-enter-the-ioccc">FAQ 0.0: How may I enter the IOCCC?</h3>
 </div>
 </div>
 <p>To submit your code to the IOCCC, you <strong>MUST</strong> follow these steps:</p>
@@ -2259,7 +2259,10 @@ For example, in <a href="contact.html">contact.html</a>, one may read:</p>
     &lt;!-- !!! Do not modify this web page, instead modify the file: contact.md --&gt;
     &lt;!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --&gt;</code></pre>
 <p>This means that you could consider editing the referenced markdown file
-in your <a href="#pull_request">IOCCC pull request</a>.</p>
+AND then run <code>make www</code> from the top level directory in your <a href="#pull_request">IOCCC pull
+request</a>. There are quicker ways but to be sure you get
+everything built you should do this. If you modified a markdown and you do not
+see the same file as a html file then you did not complete the fix.</p>
 <p>Please see <a href="#fix_an_entry">FAQ 5.2 How may I submit a fix to an IOCCC
 entry</a>. See also the <a href="#ull_request">FAQ 6.10 How does someone
 make a change to a file and submit that change as a GitHub pull
