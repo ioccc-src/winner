@@ -31,7 +31,8 @@ If you see this icon <a href="nojs-menu.html"> <img src="png/hamburger-icon-open
       width=24 height=24></a> in the upper right corner, click on it to display the menu.
 
 On a **touchscreen mobile device** browser **wider than 1024 pixels**,
-**press and hold** words in the upper right corner to activate the pull-down menu.
+**press and hold** the menu you wish to activate (in the upper right corner) in
+order to activate the pull-down.
 
 
 # Obfuscate defined:
