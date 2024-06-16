@@ -2824,7 +2824,7 @@ If wish to fix such links, you may open a GitHub pull request as described in
 if it's a specific winner or not; the procedure is the same: open a pull request
 to fix the problem.  See also the [FAQ 6.10 How does someone
 make a change to a file and submit that change as a GitHub pull
-request](#ull_request) for more information about pull requests.
+request](#pull_request) for more information about pull requests.
 
 As far as how to find the updated link you can try using the [Internet Wayback
 Machine](https://web.archive.org) and see if you can find the last non 4xx non
