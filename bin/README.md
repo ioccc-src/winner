@@ -379,6 +379,31 @@ We recommend that this tool be invoked via the top level `Makefile` by:
 ```
 
 
+<div id="md2html_cfg">
+### [md2html.cfg](%%REPO_URL%%/bin/md2html.cfg)
+</div>
+
+This is a configuration file for the [md2html](index.html#md2html) tool.
+Although a configuration file it is also something of a script file.
+
+To not down descend into the depths of `pandoc(1)` and to have to explain how
+this file can change all the HTML files, we advise you to let
+[Smaug](https://www.glyphweb.com/arda/s/smaug.html) (the dragon of
+[Erebor](https://www.glyphweb.com/arda/e/erebor.html)), famously visited by a
+[Hobbit](https://www.glyphweb.com/arda/h/hobbits.html) and 13
+[Dwarves](https://www.glyphweb.com/arda/d/dwarves.html) in the
+[T.A.](https://www.glyphweb.com/arda/t/thirdage.html) 2941 or 1341
+in the [Shire-reckoning](https://www.glyphweb.com/arda/s/shirereckoning.html), slumber as
+"here be dragons". If you still need convincing, we wish to remind you of [Bilbo
+Baggins](https://www.glyphweb.com/arda/b/bilbobaggins.html)' famous words:
+
+
+```
+	"Never laugh at live dragons, Bilbo you fool!" he said to himself, and it
+	became a favourite saying of his later, and passed into a proverb.
+```
+
+
 <div id="md2html">
 ### [md2html.sh](%%REPO_URL%%/bin/md2html.sh)
 </div>
@@ -387,7 +412,7 @@ This is the primary tool that forms IOCCC generated HTML content from
 markdown files (permanent markdown files or temporarily generated
 markdown files) and HTML fragments from the [inc directory](../inc/index.html).
 
-The [bin/md2html.cfg](%%REPO_URL%%/bin/md2html.cfg) configuration file is
+The [md2html.cfg](index.html#md2html_cfg) configuration file is
 used by [md2html.sh](%%REPO_URL%%/bin/md2html.sh) to drive the generation process.
 
 
