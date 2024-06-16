@@ -3,11 +3,11 @@
 
 Please visit [www.ioccc.org](https://www.ioccc.org) for the official **IOCCC** website.
 
-Please do NOT bookmark or link to this [experimental website](https://ioccc-src.github.io/temp-test-ioccc/).
+Please do NOT bookmark nor link to this [experimental website](https://ioccc-src.github.io/temp-test-ioccc/).
 
 When this experiment is finished, this site will go away and its associated [temp-test-ioccc GitHub repo](https://github.com/ioccc-src/temp-test-ioccc) will go into read-only archival mode.
 
-This test web tree is part of the [temp-test-ioccc GitHub repo](https://github.com/ioccc-src/temp-test-ioccc).
+The [experimental website](https://ioccc-src.github.io/temp-test-ioccc/) is associated with the [temp-test-ioccc GitHub repo](https://github.com/ioccc-src/temp-test-ioccc).
 
 This website will be undergoing major changes, so expect many
 broken links, typos and other problems. If you wish to recommend
