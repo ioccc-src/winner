@@ -8,7 +8,7 @@ If you are trying to:
 
 Instead of sending us Email, **Please** consider using the [GitHub
 pull request](https://github.com/ioccc-src/winner/pulls) process
-against the master [branch](https://github.com/ioccc-src/winner/branches)
+against the [master branch](https://github.com/ioccc-src/winner/branches)
 of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner).
 
 If you are trying to:
@@ -17,12 +17,12 @@ If you are trying to:
 * **Report an IOCCC website problem** - See [FAQ 5.3](faq.html#report_web_problem)
 * **Report a broken or wrong web link** - See [FAQ 5.6](faq.html#fix_link)
 
-Instead first look at the [IOCCC
+In general, unless you have a fix, if you want to report something, you should instead first look at the [IOCCC
 issues](https://github.com/ioccc-src/winner/issues) to see if the
 problem has already been reported.  If it has been reported, feel
-free to add a comment to the issue.  If you do not find an it has
-been reported, then feel free to open a [new IOCCC
-issue](https://github.com/ioccc-src/winner/issues).
+free to add a comment to the issue.  Otherwise, if you do not see the same issue
+reported, then feel free to [open a new IOCCC
+issue](https://github.com/ioccc-src/winner/issues/new).
 
 If you are trying to:
 
