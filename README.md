@@ -5,7 +5,7 @@ Please visit [www.ioccc.org](https://www.ioccc.org) for the official **IOCCC** w
 
 Please do NOT bookmark or link to this [experimental website](https://ioccc-src.github.io/temp-test-ioccc/).
 
-When this experiment is finished, this site will go away!
+When this experiment is finished, this site will go away and its associated [temp-test-ioccc GitHub repo](https://github.com/ioccc-src/temp-test-ioccc) will go into read-only archival mode.
 
 This test web tree is part of the [temp-test-ioccc GitHub repo](https://github.com/ioccc-src/temp-test-ioccc).
 
