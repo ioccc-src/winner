@@ -1,4 +1,4 @@
-# IOCCC markdown best practices
+# IOCCC markdown guidelines
 
 The IOCCC makes extensive use of [markdown](https://daringfireball.net/projects/markdown/).
 For example, when [submitting to the IOCCC](faq.html#submit), we have people
