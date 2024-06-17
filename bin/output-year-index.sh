@@ -555,7 +555,7 @@ fi
     echo "# Winning Entries of $YYYY - The $ORDINAL IOCCC"
     echo '</div></div>'
     echo
-    echo "**Download** all [$YYYY IOCCC entry source]($YYYY/$YYYY.tar.bz2)"
+    echo "[**Download all winning entries from $YYYY**]($YYYY.tar.bz2)"
     echo
 } | if [[ -z $NOOP ]]; then
     cat >> "$TMP_FILE"
