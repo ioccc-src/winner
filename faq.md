@@ -31,7 +31,7 @@
 ## Section  3 - [Compiling and running IOCCC entries](#faq3)
 - [3.0  - What Makefile rules are available to build or clean up IOCCC entries?](#faq3_0)
 - [3.1  - Why doesn't an IOCCC entry compile?](#faq3_1)
-- [3.2  - Why does a IOCCC entry fail on my 64-bit system?](#faq3_2)
+- [3.2  - Why does an IOCCC entry fail on my 64-bit system?](#faq3_2)
 - [3.3  - Why do some IOCCC entries fail to compile under macOS?](#faq3_3)
 - [3.4  - Why does clang or gcc fail to compile an IOCCC entry?](#faq3_4)
 - [3.5  - What is this cb tool that is mentioned in the IOCCC?](#faq3_5)
@@ -1085,7 +1085,7 @@ compiles does not mean it will run on your specific system.
 
 
 <div id="faq3_2">
-### FAQ 3.2: Why does a IOCCC entry fail on my 64-bit system?
+### FAQ 3.2: Why does an IOCCC entry fail on my 64-bit system?
 </div>
 
 Unfortunately some older entries are non-portable and require 32-bit support or
@@ -2670,13 +2670,12 @@ to a particular IOCCC entry**, the best way you can help is to submit a fix to
 the IOCCC website.  See [FAQ 5.4](#fix_web_site) for information on submitting fixes
 to the IOCCC website.
 
-If you do not have a IOCCC website fix, and just wish to report a
-general IOCCC website problem, we ask that you first look at the
-[IOCCC issues](https://github.com/ioccc-src/winner/issues) to see
-if the problem has already been reported.  If it has been reported,
-feel free to add a comment to the issue.  If you do not find an it
-has been reported, then fee free to open a [new IOCCC
-issue](https://github.com/ioccc-src/winner/issues).
+If you do not have an IOCCC website fix, and just wish to report a general IOCCC
+website problem, we ask that you first look at the [IOCCC
+issues](https://github.com/ioccc-src/winner/issues) to see if the problem has
+already been reported.  If it has been reported, feel free to add a comment to
+the issue. Otherwise, if you do not see the same issue reported, then feel free
+to [open a new IOCCC issue](https://github.com/ioccc-src/winner/issues/new).
 
 
 <div id="faq5_4">
@@ -3059,7 +3058,7 @@ use the content of these JSON files to generate the `index.html` files for each 
 winning entry.
 
 Moreover, should the [IOCCC judges](judges.html) need to
-contact an authors of a IOCCC entry, they will consult the contents
+contact an authors of an IOCCC entry, they will consult the contents
 of the author's JSON file for ways to contact them.
 
 Each author of an IOCCC winning entry has their own `author_handle.json` file
