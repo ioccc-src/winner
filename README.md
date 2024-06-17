@@ -139,9 +139,9 @@ convince yourself of why the program does what it does.
 
 ## Regarding the source archive:
 
-Each sub-directory contains all the entries for a single year.  Often the file
-names match one of the last names of the author.  Judges' hints are given in
-files of the form `index.html`.
+Each subdirectory contains all the entries for a single year.  Often the file
+names match one of the last names of the author.  Judges' hints and/or comments
+are given in each entry's `index.html` file under the section `Judges' remarks`.
 
 You may need to tweak the Makefile to get everything to compile correctly.  Read
 the index.html files for suggestions.
@@ -206,7 +206,7 @@ Internet's oldest ongoing contest.
 
 **IMPORTANT NOTE**: See [contact.html](contact.html) for up to date contact details
 as well as details on how to provide fixes to any of the entries.
-See also [the IOCCC FAQ](faq.html) for additional information on the IOCCC.
+See also the [IOCCC FAQ](faq.html) for additional information on the IOCCC.
 
 
 <!--
