@@ -785,7 +785,7 @@ ANNOUNCEMENT OF WINNERS:
     and test our Makefile.  This review process typically takes a few weeks.   |
 									       |
     Sometime after the initial announcement, and once the review by	       |
-    the winners has been completed (perhaps Feb or Mar 2002), the winning      |
+    the winners has been completed (perhaps Feb or Mar 2002), the winning     |
     source will be posted to the IOCCC website:		               |
 									       |
 	    https://www.ioccc.org/years.html				       |
