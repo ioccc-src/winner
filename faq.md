@@ -1072,12 +1072,14 @@ please consider submitting that change in the form of a pull request.
 Please see [FAQ 5.2 How may I submit a fix to an IOCCC
 entry](#fix_an_entry).  See also the [FAQ 6.10 How does someone
 make a change to a file and submit that change as a GitHub pull
-request](#ull_request) for more information about pull requests.
+request](#pull_request) for more information about pull requests.
 
-In some cases alternative code has been added that does compile on some or most systems.  Check the write up for the entry for "alt" code and possible ways to compile and run that code.  In some cases we replaced the original code (but not the `.orig.c` file!) with code
-that works for modern systems but one can view the original code in the
-`.orig.c` files (sometimes the original code is also in the directory as a
-`dirname.alt.c` or `prog.alt.c`).
+In some cases alternative code has been added that does compile on some or most
+systems.  Check the write up for the entry for "alt" code and possible ways to
+compile and run that code.  In some cases we replaced the original code (but not
+the `.orig.c` file!) with code that works for modern systems but one can view
+the original code in the `.orig.c` files (sometimes the original code is also in
+the directory as a `dirname.alt.c` or `prog.alt.c`).
 
 It might also be worth noting that almost all entries, have been
 fixed so that they can compile in modern systems though just because an entry
@@ -1114,7 +1116,7 @@ while trying to minimize the impact of any changes and preserving
 the spirit of the original code are very welcome!  Please see [FAQ
 5.2 How may I submit a fix to an IOCCC entry](#fix_an_entry) for
 details.  See also the [FAQ 6.10 How does someone make a change to
-a file and submit that change as a GitHub pull request](#ull_request)
+a file and submit that change as a GitHub pull request](#pull_request)
 for more information about pull requests.
 
 
@@ -1161,7 +1163,7 @@ negatively impact the entry too much, consider submitting that change in the
 form of a pull request.  Please see [FAQ 5.2 How may I submit a fix to an IOCCC
 entry](#fix_an_entry).  See also the [FAQ 6.10 How does someone
 make a change to a file and submit that change as a GitHub pull
-request](#ull_request) for more information about pull requests.
+request](#pull_request) for more information about pull requests.
 
 
 <div id="faq3_5">
@@ -1497,10 +1499,10 @@ We recommend trying a method suitable for your environment first, if possible.
 In the case that some entries do not work even with SDL1/SDL2 installed it might
 be that you need additional SDL libraries. See the entry's index.html for
 details. If something is not noted you're welcome to report it as an issue or
-fix it and make a new pull request.
+fix it and make a pull request.
 
 See the [FAQ 6.10 How does someone make a change to a file and submit that change
-as a GitHub pull request](#ull_request) for more information about pull requests.
+as a GitHub pull request](#pull_request) for more information about pull requests.
 
 
 <div id="faq3_9">
@@ -2601,7 +2603,7 @@ link to your entries; if you're not we can link to your website if you wish.
 Please see [FAQ 5.2 How may I submit a fix to an IOCCC
 entry](#fix_an_entry) for information on how to submit a fix to an
 IOCCC entry.  See also the [FAQ 6.10 How does someone make a change
-to a file and submit that change as a GitHub pull request](#ull_request)
+to a file and submit that change as a GitHub pull request](#pull_request)
 for more information about pull requests.
 
 
@@ -2626,7 +2628,7 @@ BTW: A **problem** is not limited to the code itself.  Fixing typos in files
 such as "_index.html_" files, fixing issues in a "_Makefile_", or otherwise
 correcting an IOCCC entry is **VERY MUCH WELCOME**!  Please use the same
 [GitHub pull request](https://github.com/ioccc-src/winner/pulls) process against
-the master [branch](https://github.com/ioccc-src/winner/branches) of the
+the [master branch](https://github.com/ioccc-src/winner/branches) of the
 [ioccc-src/winner repo](https://github.com/ioccc-src/winner).
 
 NOTE: some of the issues in the [bugs.html](bugs.html) file includes just missing
@@ -2641,13 +2643,13 @@ In any event we will happily add you to the
 And of course, an IOCCC author may update their own entries
 (metadata as well as source code and any extra files) by opening a
 [GitHub pull request](https://github.com/ioccc-src/winner/pulls)
-against the master [branch](https://github.com/ioccc-src/winner/branches)
+against the [master branch](https://github.com/ioccc-src/winner/branches)
 of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner).
 
 Please see [FAQ 5.2 How may I submit a fix to an IOCCC
 entry](#fix_an_entry).  See also the [FAQ 6.10 How does someone
 make a change to a file and submit that change as a GitHub pull
-request](#ull_request) for more information about pull requests.
+request](#pull_request) for more information about pull requests.
 
 Note that we're much more inclined to accept an author's fixes but the judges
 have the final say in the matter.
@@ -2688,14 +2690,14 @@ For IOCCC website problems that relate to a particular IOCCC entry, please
 see [FAQ 5.2](#fix_an_entry) for information on how submit a fix to an IOCCC entry.
 
 You may open a [GitHub pull request](https://github.com/ioccc-src/winner/pulls)
-against the master [branch](https://github.com/ioccc-src/winner/branches)
+against the [master branch](https://github.com/ioccc-src/winner/branches)
 of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner)
 to submit a fix.
 
 Please see [FAQ 5.2 How may I submit a fix to an IOCCC
 entry](#fix_an_entry).  See also the [FAQ 6.10 How does someone
 make a change to a file and submit that change as a GitHub pull
-request](#ull_request) for more information about pull requests.
+request](#pull_request) for more information about pull requests.
 
 #### Some HTML files should NOT be directly modified
 
@@ -2734,7 +2736,7 @@ see the same file as a html file then you did not complete the fix.
 Please see [FAQ 5.2 How may I submit a fix to an IOCCC
 entry](#fix_an_entry).  See also the [FAQ 6.10 How does someone
 make a change to a file and submit that change as a GitHub pull
-request](#ull_request) for more information about pull requests.
+request](#pull_request) for more information about pull requests.
 
 In some cases, the HTML file is **NOT** based on markdown content, but instead
 came from JSON and other data files.  So instead of the above reference to a
@@ -2794,23 +2796,71 @@ about the contents of these JSON file and how they are used.
 
 You may update IOCCC author information in a `author_handle.json` file
 by [submitting  a pull request](faq.html#pull_request)
-against the master [branch](https://github.com/ioccc-src/winner/branches)
+against the [master branch](https://github.com/ioccc-src/winner/branches)
 of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner).
 
-Please see [FAQ 5.2 How may I submit a fix to an IOCCC entry](#fix_an_entry).
+As these files are JSON you should verify that they are validly formed (e.g. you
+didn't make a typo).
+
+Please make sure that you run `make www` after updating the file or files. This unfortunately
+takes quite a while but it is the safest way to do it. There are other ways to go
+about this that can speed things up. Here is one such way which was done when
+fixing two authors in 1995 (in one commit as they were the authors of the same
+two entries):
+
+First, the two files, [author/Heather_Downs.json](author/Heather_Downs.json) and
+[author/Selene_Makarios.json](author/Selene_Makarios.json) were fixed (the
+location was set as `ZZ` but Cody Boone Ferguson knew from the archive that it
+was the US for both of them and he also noticed that the URL, the same for
+both, was no longer valid and it was also known that the email was no longer
+valid as it referred to the same domain). Thus the `location_code`, `url` (it was on the Internet Wayback Machine) and
+in one case the `email` lines to look like:
+
+``` <--json-->
+    "location_code" : "US",
+    "email" : null,
+    "url" : "https://web.archive.org/web/19961019045145/http://www.bungalow.com/",
+```
+
+Now since only two entries (the same entries) were won by these two individuals
+it means that only two index.html files had to be updated, besides the
+[authors.html](authors.html) and [location.html](location.html) files. These
+are: [1995/heathbar/index.html](1995/heathbar/index.html) and
+[1995/makarios/index.html](1995/makarios/index.html). Thus the following
+procedure was done:
+
+``` <!--sh-->
+	touch 1995/heathbar/README.md 1995/makarios/README.md
+	make quick_www
+```
+
+That works because the `quick_www` rule will update the `authors.html` and
+`location.html` pages and it will also check the timestamps of the `index.html`
+files versus the `README.md` files. Since they were touched and thus the
+timestamp was updated, the
+[bin/quick-readme2index.sh](%%REPO_URL%%/bin/quick-readme2index.sh) tool would
+only worry about those two files. This greatly speeds things along.
+
+Once that command finishes a proper `git status` and `git diff` shows that
+everything is in order. In the end the safest way is to run `make www`, however.
+
+Please see [FAQ 5.2 How may I submit a fix to an IOCCC entry?](#fix_an_entry).
 
 See also the [FAQ 6.10 How does someone
 make a change to a file and submit that change as a GitHub pull
-request](#ull_request) for more information about pull requests.
+request](#pull_request) for more information about pull requests.
 
 **FYI**: The [ZZ - Unknown location](location.html#ZZ) is used for
 historic winning authors whose location or country is not known,
 whereas the [XX - Anonymous location](location.html#XX) is used when the
 winning author does **not wish to disclose their location**.
 
+### Important note about **XX - Anonymous location**:
+
 Unless you are the author who originally selected the **XX - Anonymous
 location**, please do not attempt to change an **XX - Anonymous
-location**, without the permission of the original author.
+location** without the permission of the original author, as sometimes they
+want to have the location known but not their name and/or other details.
 
 
 <div id="faq5_6">
@@ -3125,6 +3175,55 @@ As of _Thu Nov 30 23:51:12 UTC 2023_, the contents was as follows:
     }
 ```
 
+Before we walk you through the above JSON document, we will show you how to
+validate that the JSON is validly formed.
+
+<div id="validating_json">
+##### Validating JSON documents
+</div>
+
+Although special tools (that will validate `author_handle.json` files) are in
+the works (which will be documented here after they are developed) there is a
+way to validate all JSON documents including these files. Until those special
+tools are developed (which will do the same as this next tool but more) we
+request that you validate the JSON with this tool that we co-developed with Cody
+Boone Ferguson. This tool, `jparse(1)`, for the time being is in the
+[mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry) but will later be
+in a separate repo. In any case you need to download the repo or `git clone` it
+and then compile it (cd to the directory and then run `make`). If you wish to
+make it easier you can do `make install` so you can run the tool from any path
+but in any case the syntax is:
+
+``` <!--sh-->
+	jparse foo.json
+```
+
+If the tool exits 0 (and shows no output) then the JSON is valid. If it is
+invalid you should get an error but for more details you can increase the
+verbosity with the `-v` flag like:
+
+``` <!--sh-->
+	jparse -v 3 foo.json
+```
+
+If the tool is not installed then you will obviously have to specify the path of
+the tool.
+
+If you wish to validate every JSON file in `author/` then you could do so like:
+
+``` <!--sh-->
+	for auth in *.json; do jparse 2>/dev/null "$auth" || echo "$auth is invalid JSON" ; done
+```
+
+If you see any output then it will say which file or files are invalid JSON
+(this should not actually happen).
+
+
+
+<div id="walk_through_author_json">
+##### Walk through of an `author_handle.json` file
+</div>
+
 We now will walk thru the above JSON document looking at various JSON members:
 
 
@@ -3348,6 +3447,10 @@ For example:
 ``` <!---json-->
     "deprecated_twitter_handle" : null,
 ```
+
+Of course in the future we will not be asking for twitter handles so this means
+that unless the winner is a previous winner (before we moved to mastodon) this
+will always be `null` anyway.
 
 NOTE: The _JSON null_ is **NOT** enclosed in quotes!
 
