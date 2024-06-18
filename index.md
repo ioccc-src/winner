@@ -32,7 +32,9 @@ If you see this icon <a href="nojs-menu.html"> <img src="png/hamburger-icon-open
 
 On a **touchscreen mobile device** browser **wider than 1024 pixels**,
 **press and hold** the menu you wish to activate (in the upper right corner) in
-order to activate the pull-down.
+order to activate the pull-down. If this does not work or you prefer to use a
+plaintext menu even with JavaScript enabled, you can do so
+[here](nojs-menu.html). See also the [FAQ on menus](faq.html#menus).
 
 
 # Obfuscate defined:

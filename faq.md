@@ -90,6 +90,7 @@ other inconsistencies with the original entry?](#faq4_3)
 - [6.12 - What is Mastodon and why does IOCCC use it?](#faq6_12)
 - [6.13 - How may I find my author handle?](#faq6_13)
 - [6.14 - How do I set certain tabstops for viewing source code in vi&#x28;m&#x29;?](#faq6_14)
+- [6.15 - How do the menus on the website work and what can I do if they don't work?](#faq6_15)
 
 
 # The IOCCC FAQ
@@ -364,7 +365,7 @@ entry's `Makefile`.
 The `Makefile` is a file used by the `make(1)` command that contains
 rules and UNIX shell-style commands.
 
-The first and default rule should be the "all" rule and should build your entry's executable file.
+The first and default rule should be the `all` rule and should build your entry's executable file.
 
 If your entry depends on a particular source file name during compilation or execution,
 your `Makefile` should copy `prog.c` into the desired filename.  For example:
@@ -2781,7 +2782,7 @@ Authors of IOCCC winning entries are kept in JSON files of the form:
     author/author_handle.json
 ```
 
-where _author_handle_ is an author handle.
+where `author_handle` is an author handle.
 
 See [FAQ 6.5](#author_handle_faq) for more information about author handles.
 
@@ -4112,6 +4113,128 @@ can hit ESC to do this) and then type the command:
 ```
 
 where `4` is the value you wish to set the tabstop to.
+
+
+<div id="faq6_15">
+<div id="menus">
+### FAQ 6.15 - How do the menus on the website work and what can I do if they don't work?
+</div>
+</div>
+
+<div id="desktop_menu">
+#### Menu on desktops or laptop computers
+</div>
+
+The way the menu works on desktops or laptops is that you should simply see the
+menu directly without the need of JavaScript or any intervention on your part.
+It should look something like:
+
+<img src="png/ioccc-menu-desktop.png"
+ alt="screenshot of IOCCC menu on desktops"
+ width=912 height=160>
+
+Simply move your mouse cursor over the category you want and then click on the
+item you wish to view that drops down from the category.
+
+This is likely how it will appear with a [tablet device in landscape
+mode](faq.html#tablet_menu), too, unless [JavaScript is
+disabled](faq.html#no_javascript_menu).
+
+
+<div id="mobile_menus">
+#### Mobile menus
+</div>
+
+If, however, you're on a mobile device, it can vary, depending on the dimensions
+and whether or not you have JavaScript enabled.
+
+<div id="mobile_phone_menu">
+##### Menus on mobile phones
+</div>
+
+For instance, on an iPhone 14
+Pro Max or similar device (in dimensions), you should see at the top right of
+every page, something that looks like:
+
+
+<img src="png/ioccc-menu-mobile-phone.png"
+ alt="screenshot of IOCCC menu on iPhone 14 Pro Max"
+ width=1290 height=527>
+
+In this case click on the icon at the top right corner that looks like:
+
+<img src="png/hamburger-icon-open.png"
+ alt="menu open icon"
+ width=24 height=24>
+
+to activate the menu.
+
+<div id="no_javascript_menu">
+##### Menu on mobile devices if JavaScript is disabled
+</div>
+
+If JavaScript is disabled on any mobile device, tablet or phone, you should see
+the words:
+
+```
+	Please Enable JavaScript
+```
+
+at the top right corner; clicking on this will take you to the [no JavaScript
+menu](nojs-menu.html) which is a plaintext menu. You of course can use this if
+you like, even if you do not have JavaScript enabled, by pointing your browser
+to <https://ioccc-src.github.io/temp-test-ioccc/nojs-menu.html>.
+
+<div id="tablet_menu">
+##### Menus on tablet devices (e.g. iPads)
+</div>
+
+With tablets, it likely depends on the orientation you have your device in. If it's
+in portrait mode you likely will see the [menu that one will get on a mobile
+phone](faq.html#mobile_phone_menu).
+
+If, on the other hand, you are using landscape mode, say on an iPad Pro 11 inch
+4th generation, then you will likely see the [menu as you would on a desktop or
+laptop](faq.html#desktop_menu).
+
+
+<div id="1024px_menu">
+##### Menus on mobile devices wider than 1024 pixels
+</div>
+
+Finally, if you're on a mobile device that is wider than 1024 pixels, you will
+very possibly have to **press and hold** the menu icon:
+
+<img src="png/hamburger-icon-open.png"
+ alt="menu open icon"
+ width=24 height=24>
+
+to activate it. You can then use it [as you would on a mobile
+phone](faq.html#mobile_phone_menu).
+
+
+<div id="browser_bug_menu">
+##### Browsing the website on mobile devices with a browser bug
+</div>
+
+It was noticed that in iOS 16 Safari (both on an iPhone 8 Plus and in simulation
+mode in macOS) the menu does not work at all. That is to say one might see:
+
+<img src="png/ioccc-menu-browser-bug.png"
+ alt="browser bug where menu icon does not show up"
+ width=1242 height=531>
+
+Notice how the menu icon is not even there! This happens in both portrait mode
+and landscape mode.
+
+In this case one will have to use the [no JavaScript
+menu](faq.html#no_javascript_menu). If you have a fix for this that **does NOT
+affect the usability of desktops, laptops or other mobile devices**, please
+consider fixing it and [opening a pull request](faq.html#pull_request) or at
+least [report it as an
+issue](https://github.com/ioccc-src/temp-test-ioccc/issues/new/choose) (choose
+the category _Website issue_).
+
 
 
 <hr style="width:10%;text-align:left;margin-left:0">
