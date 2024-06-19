@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "script to try alternate source code"
+	    "entry_text" : "script to try alternate code"
 	},
 	{
 	    "file_path" : "try.sh",
@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "input data for try.sh"
+	    "entry_text" : "input file used by try.sh"
 	},
 	{
 	    "file_path" : "1994_schnitzi.tar.bz2",

@@ -263,7 +263,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "script to try alternate source code"
+	    "entry_text" : "script to try alternate code"
 	},
 	{
 	    "file_path" : "try.sh",
@@ -319,7 +319,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "stages of multi-square emitters"
+	    "entry_text" : "image showing Tetris multi-square emitters"
 	},
 	{
 	    "file_path" : "multi3.gif",
@@ -327,7 +327,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "stages showing multi-square emitters"
+	    "entry_text" : "image showing Tetris multi-square emitters"
 	},
 	{
 	    "file_path" : "multi4.gif",
@@ -335,7 +335,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "stages showing multi-square emitters"
+	    "entry_text" : "image showing Tetris multi-square emitters"
 	},
 	{
 	    "file_path" : "multi5.gif",
@@ -343,7 +343,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "stages of multi-square emitters"
+	    "entry_text" : "image showing Tetris multi-square emitters"
 	},
 	{
 	    "file_path" : "pen0.gif",
@@ -351,7 +351,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "stages of single square rotruding from the bottom"
+	    "entry_text" : "animated gif - bottom layers of a Tetris game being cleared"
 	},
 	{
 	    "file_path" : "pen1.gif",
@@ -359,7 +359,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "stages of single square rotruding from the bottom"
+	    "entry_text" : "animated gif - bottom layers of a Tetris game being cleared"
 	},
 	{
 	    "file_path" : "pen2.gif",
@@ -367,7 +367,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "stages of single square rotruding from the bottom"
+	    "entry_text" : "animated gif - bottom layers of a Tetris game being cleared"
 	},
 	{
 	    "file_path" : "pen4.gif",
@@ -375,7 +375,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "stages of single square rotruding from the bottom"
+	    "entry_text" : "animated gif - bottom layers of a Tetris game being cleared"
 	},
 	{
 	    "file_path" : "pen5.gif",
@@ -383,7 +383,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "stages of single square rotruding from the bottom"
+	    "entry_text" : "animated gif - bottom layers of a Tetris game being cleared"
 	},
 	{
 	    "file_path" : "pen6.gif",
@@ -391,7 +391,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "stages of single square rotruding from the bottom"
+	    "entry_text" : "animated gif - bottom layers of a Tetris game being cleared"
 	},
 	{
 	    "file_path" : "pen7.gif",
@@ -399,7 +399,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "stages of single square rotruding from the bottom"
+	    "entry_text" : "animated gif - bottom layers of a Tetris game being cleared"
 	},
 	{
 	    "file_path" : "pen8.gif",
@@ -407,7 +407,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "stages of single square rotruding from the bottom"
+	    "entry_text" : "animated gif - bottom layers of a Tetris game being cleared"
 	},
 	{
 	    "file_path" : "platform0.gif",
@@ -415,7 +415,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "stages of 5 red squares above a row of 3 red squares"
+	    "entry_text" : "image showing Tetris triple patterns"
 	},
 	{
 	    "file_path" : "platform1.gif",
@@ -423,7 +423,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "stages of 5 red squares above a row of 3 red squares"
+	    "entry_text" : "image showing Tetris triple patterns"
 	},
 	{
 	    "file_path" : "platform2.gif",
@@ -431,7 +431,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "stages of 5 red squares above a row of 3 red squares"
+	    "entry_text" : "image showing Tetris triple patterns"
 	},
 	{
 	    "file_path" : "triple0.gif",
@@ -439,7 +439,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "stages of constructed of rectangular regions"
+	    "entry_text" : "image showing Tetris triple patterns"
 	},
 	{
 	    "file_path" : "triple1.gif",
@@ -447,7 +447,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "stages of constructed of rectangular regions"
+	    "entry_text" : "image showing Tetris triple patterns"
 	},
 	{
 	    "file_path" : "index.html",

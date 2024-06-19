@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "tex",
 	    "display_via_github" : true,
-	    "entry_text" : "supplied documentation"
+	    "entry_text" : "supplied documentation in TeX format"
 	},
 	{
 	    "file_path" : "prog-doc.c",

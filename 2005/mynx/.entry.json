@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "Autoconf input file"
+	    "entry_text" : "GNU Autoconf script"
 	},
 	{
 	    "file_path" : "source/makefile.in",
@@ -79,7 +79,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "makefile template"
+	    "entry_text" : "GNU Automake script"
 	},
 	{
 	    "file_path" : "2005_mynx.tar.bz2",

@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "author supplied script to make a dictionary"
+	    "entry_text" : "author supplied obfuscated script to make a dictionary"
 	},
 	{
 	    "file_path" : "1992_gson.tar.bz2",

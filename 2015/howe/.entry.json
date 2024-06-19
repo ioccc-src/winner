@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "script to try entry"
+	    "entry_text" : "support script"
 	},
 	{
 	    "file_path" : "makeholes.c",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "add random holes to a file"
+	    "entry_text" : "C code to add random holes to a file"
 	},
 	{
 	    "file_path" : "prog-test.sh",
@@ -63,7 +63,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "script to try entry"
+	    "entry_text" : "script to run test suite"
 	},
 	{
 	    "file_path" : "try.sh",

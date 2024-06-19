@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "input maze map"
+	    "entry_text" : "example input file - maze map"
 	},
 	{
 	    "file_path" : "try.sh",

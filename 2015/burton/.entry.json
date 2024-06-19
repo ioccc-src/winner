@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "try.sh input"
+	    "entry_text" : "input file used by try.sh"
 	},
 	{
 	    "file_path" : "calc.1",
@@ -79,7 +79,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "iocccsize reformatted to exactly 4096 octets"
+	    "entry_text" : "iocccsize.c reformatted to exactly 4096 octets"
 	},
 	{
 	    "file_path" : "test.in",
@@ -111,7 +111,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "web page with spoiler about this entry"
+	    "entry_text" : "spoiler web page"
 	},
 	{
 	    "file_path" : "src.doc.txt",

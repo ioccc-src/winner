@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "on writing an IOCCC one-liner"
+	    "entry_text" : "on writing a winning IOCCC one-liner"
 	},
 	{
 	    "file_path" : "try.sh",
@@ -127,7 +127,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "more useful interface."
+	    "entry_text" : "more useful interface"
 	},
 	{
 	    "file_path" : "index.html",

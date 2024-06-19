@@ -63,7 +63,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "perl",
 	    "display_via_github" : true,
-	    "entry_text" : "convert raw format to wav format"
+	    "entry_text" : "convert raw format to WAV format"
 	},
 	{
 	    "file_path" : "try.sh",

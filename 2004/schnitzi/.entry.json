@@ -38,7 +38,7 @@
 	    "inventory_order" : 100,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "animated scene input file"
 	},
 	{
@@ -46,7 +46,7 @@
 	    "inventory_order" : 100,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
-	    "display_via_github" : true,
+	    "display_via_github" : false,
 	    "entry_text" : "animated scene input file"
 	},
 	{

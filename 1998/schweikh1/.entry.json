@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "perl",
 	    "display_via_github" : true,
-	    "entry_text" : "character counter"
+	    "entry_text" : "character counter in perl"
 	},
 	{
 	    "file_path" : "macos.html",
@@ -63,7 +63,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "file for standards conformance test"
+	    "entry_text" : "file for C standards conformance test"
 	},
 	{
 	    "file_path" : "1998_schweikh1.tar.bz2",
@@ -111,7 +111,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
-	    "entry_text" : "markdown source for marcos.html"
+	    "entry_text" : "markdown source for macos.html"
 	},
 	{
 	    "file_path" : "index.html",
