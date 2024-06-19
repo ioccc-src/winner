@@ -125,7 +125,7 @@ PROG= ${ENTRY}
 OBJ= ${PROG}.o
 DATA= bios fd.img cable3.sh sc-ioccc.terminal screenshot_autocad.png \
 	screenshot_flightsim4.png screenshot_lotus123.png screenshot_qbasic.png \
-	screenshot_simcity.png screenshot_win3_on_macosx.png
+	screenshot_simcity.png screenshot_win3.png
 TARGET= ${PROG}
 #
 ALT_OBJ= ${PROG}.alt.o
