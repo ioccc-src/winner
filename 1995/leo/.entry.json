@@ -34,7 +34,7 @@
 	    "entry_text" : "original source code"
 	},
 	{
-	    "file_path" : "spoiler1.html",
+	    "file_path" : "spoiler.html",
 	    "inventory_order" : 100,
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
@@ -90,12 +90,12 @@
 	    "entry_text" : "markdown source for this web page"
 	},
 	{
-	    "file_path" : "spoiler1.md",
+	    "file_path" : "spoiler.md",
 	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
-	    "entry_text" : "markdown source for spoiler1.html"
+	    "entry_text" : "markdown source for spoiler.html"
 	},
 	{
 	    "file_path" : "index.html",
