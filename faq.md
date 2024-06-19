@@ -49,8 +49,7 @@
 - [3.17 - How do I compile and install ImageMagick for entries that require it?](#faq3_17)
 - [3.18 - How do I compile and install OpenGL for entries that require it?](#faq3_18)
 - [3.19 - What kind of make&#x28;1&#x29; compatibility does the IOCCC support and will it support other kinds?](#faq3_19)
-- [3.20 - How do I download individual winning entries or all winning entries of
-a given year?](#faq3_20)
+- [3.20 - How do I download individual winning entries or all winning entries of a given year?](#faq3_20)
 
 
 ## Section  4 - [Changes made to IOCCC entries](#faq4)
@@ -80,9 +79,9 @@ other inconsistencies with the original entry?](#faq4_3)
 - [6.2  - May I mirror the IOCCC website?](#faq6_2)
 - [6.3  - May I use parts of the IOCCC in an article, book, newsletter, or instructional material?](#faq6_3)
 - [6.4  - Why do you sometimes use the first person plural?](#faq6_4)
-- [6.5  - What is an author handle?](#faq6_5)
-- [6.6  - What is a author_handle.json file and how are they used?](#faq6_6)
-- [6.7  - What is a entry_id?](#faq6_7)
+- [6.5  - What is an `author handle`?](#faq6_5)
+- [6.6  - What is an author_handle.json file and how are they used?](#faq6_6)
+- [6.7  - What is an `entry_id`?](#faq6_7)
 - [6.8 -  What is the purpose of the .top, .year and .path files?](#faq6_8)
 - [6.9 -  What is the current meaning of the IOCCC terms Author, Entry, and Submission?](#faq6_9)
 - [6.10 - How does someone make a change to a file and submit that change as a GitHub pull request?](#faq6_10)
@@ -3093,7 +3092,7 @@ Anonymous `author_handle`'s match this regexp:
 
 <div id="faq6_6">
 <div id="author_json">
-### FAQ 6.6: What is a author_handle.json file and how are they used?
+### FAQ 6.6: What is an author_handle.json file and how are they used?
 </div>
 </div>
 
@@ -3633,7 +3632,7 @@ and/or correct IOCCC author information.
 <div id="faq6_7">
 <!-- we cannot use id="entry_id" because of a header in FAQ 6.6 -->
 <div id="entry_id_faq">
-### FAQ 6.7: What is a entry_id?
+### FAQ 6.7: What is an `entry_id`?
 </div>
 </div>
 
