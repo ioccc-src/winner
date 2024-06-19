@@ -1167,8 +1167,8 @@
 1995/leo/index.html
 1995/leo/leo.c
 1995/leo/leo.orig.c
-1995/leo/spoiler1.html
-1995/leo/spoiler1.md
+1995/leo/spoiler.html
+1995/leo/spoiler.md
 1995/leo/try.sh
 1995/makarios/.entry.json
 1995/makarios/.gitignore
@@ -2977,7 +2977,7 @@
 2013/cable3/screenshot_lotus123.png
 2013/cable3/screenshot_qbasic.png
 2013/cable3/screenshot_simcity.png
-2013/cable3/screenshot_win3_on_macosx.png
+2013/cable3/screenshot_win3.png
 2013/dlowe/.entry.json
 2013/dlowe/.gitignore
 2013/dlowe/.path

@@ -397,7 +397,7 @@
 1995/leo/1995_leo.tar.bz2
 1995/leo/index.html
 1995/leo/leo.orig.c
-1995/leo/spoiler1.html
+1995/leo/spoiler.html
 1995/makarios/.path
 1995/makarios/1995_makarios.tar.bz2
 1995/makarios/index.html
