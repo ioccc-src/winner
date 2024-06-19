@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "ruby",
 	    "display_via_github" : true,
-	    "entry_text" : "Ruby makefile"
+	    "entry_text" : "Ruby Makefile"
 	},
 	{
 	    "file_path" : "rake.sh",

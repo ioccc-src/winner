@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "image of tweet by Landon about MS being dead"
+	    "entry_text" : "screenshot of Landon's tweet about MS being dead"
 	},
 	{
 	    "file_path" : "try.sh",

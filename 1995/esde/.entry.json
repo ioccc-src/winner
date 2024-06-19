@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "example argument file"
+	    "entry_text" : "example input file"
 	},
 	{
 	    "file_path" : "esde.data2",
@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "example argument file"
+	    "entry_text" : "example input file"
 	},
 	{
 	    "file_path" : "try.sh",

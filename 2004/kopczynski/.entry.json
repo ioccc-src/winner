@@ -143,7 +143,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "ASCII file with letter A drawn to see what it recognizes"
+	    "entry_text" : "ASCII file with letter A drawn to recognize"
 	},
 	{
 	    "file_path" : "kopczynski-a-rev",
@@ -151,7 +151,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "ASCII file with letter A reversed to see what it recognizes"
+	    "entry_text" : "ASCII file with letter A reversed to to recognize"
 	},
 	{
 	    "file_path" : "try.sh",

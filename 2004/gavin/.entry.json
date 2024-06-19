@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "tarball",
 	    "display_via_github" : false,
-	    "entry_text" : "tar of root file system"
+	    "entry_text" : "tarball of root file system"
 	},
 	{
 	    "file_path" : "img/kernel",
@@ -79,7 +79,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "kernel",
 	    "display_via_github" : false,
-	    "entry_text" : "Linux kernel x86 boot executable zImage"
+	    "entry_text" : "x86 linux boot executable zImage"
 	},
 	{
 	    "file_path" : "prim",
@@ -87,7 +87,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
-	    "entry_text" : "prime number printing program"
+	    "entry_text" : "prime number printing program from judges"
 	},
 	{
 	    "file_path" : "2004_gavin.tar.bz2",

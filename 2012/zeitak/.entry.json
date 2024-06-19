@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "1984/anonymous source"
+	    "entry_text" : "1984/anonymous fixed for macOS source"
 	},
 	{
 	    "file_path" : "zeitak.alt.c",
@@ -79,7 +79,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "example C source with incorrect quote"
+	    "entry_text" : "example C source with incorrect quotation marks"
 	},
 	{
 	    "file_path" : "incorrect.3.quotes.c",
@@ -87,7 +87,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "example C source with incorrect quote"
+	    "entry_text" : "example C source with incorrect quotation marks"
 	},
 	{
 	    "file_path" : "incorrect.brace.c",
@@ -95,7 +95,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "example C source with incorrect brace"
+	    "entry_text" : "example C source with incorrect braces"
 	},
 	{
 	    "file_path" : "incorrect.bracket.c",
@@ -103,7 +103,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "example C source with incorrect bracket"
+	    "entry_text" : "example C source with incorrect brackets"
 	},
 	{
 	    "file_path" : "incorrect.java",
@@ -111,7 +111,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "java",
 	    "display_via_github" : true,
-	    "entry_text" : "example Java source with incorrect brace"
+	    "entry_text" : "example Java source with incorrect braces"
 	},
 	{
 	    "file_path" : "incorrect.paren.c",
@@ -119,7 +119,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "example C source with incorrect parenthesis"
+	    "entry_text" : "example C source with incorrect parentheses"
 	},
 	{
 	    "file_path" : "incorrect.quote-esc.c",
@@ -127,7 +127,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "example C source with incorrect quote escape"
+	    "entry_text" : "example C source with incorrect quotation mark escaped"
 	},
 	{
 	    "file_path" : "incorrect.single.quote.c",
@@ -135,7 +135,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "example C source with incorrect single quote"
+	    "entry_text" : "example C source with incorrect single quotation mark"
 	},
 	{
 	    "file_path" : "incorrect.txt",

@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "lazy input"
+	    "entry_text" : "lazy input file"
 	},
 	{
 	    "file_path" : "hello.lazy",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "lazy input"
+	    "entry_text" : "lazy input file"
 	},
 	{
 	    "file_path" : "rot13.ed",
@@ -63,7 +63,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "ed script"
+	    "entry_text" : "rot13 ed script"
 	},
 	{
 	    "file_path" : "tac.lazy",
@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "lazy input"
+	    "entry_text" : "lazy input file"
 	},
 	{
 	    "file_path" : "2013_endoh1.tar.bz2",

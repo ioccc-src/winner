@@ -87,7 +87,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "recode configurator documentation"
+	    "entry_text" : "Enigma configurator documentation"
 	},
 	{
 	    "file_path" : "try.alt.sh",
@@ -95,7 +95,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "script to try alternate source code"
+	    "entry_text" : "script to try alternate code"
 	},
 	{
 	    "file_path" : "try.sh",
@@ -127,7 +127,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "example key to decipher or encipher the letters IOCCC"
+	    "entry_text" : "key to decipher/encipher the word 'IOCCC'"
 	},
 	{
 	    "file_path" : "obfuscation.key",

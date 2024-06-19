@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "script to try entry"
+	    "entry_text" : "script to run entry"
 	},
 	{
 	    "file_path" : "screenshot_autocad.png",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "Screenshots of some applications running on macOS"
+	    "entry_text" : "screenshot of AUTOCAD running on macOS"
 	},
 	{
 	    "file_path" : "screenshot_flightsim4.png",
@@ -63,7 +63,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "Screenshots of some applications running on macOS"
+	    "entry_text" : "screenshot of Flight Sim 4 running on macOS"
 	},
 	{
 	    "file_path" : "screenshot_lotus123.png",
@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "Screenshots of some applications running on macOS"
+	    "entry_text" : "screenshot of Lotus123 running on macOS"
 	},
 	{
 	    "file_path" : "screenshot_qbasic.png",
@@ -79,7 +79,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "Screenshots of some applications running on macOS"
+	    "entry_text" : "screenshot of QBasic running on macOS"
 	},
 	{
 	    "file_path" : "screenshot_simcity.png",
@@ -87,15 +87,15 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "Screenshots of some applications running on macOS"
+	    "entry_text" : "screenshot of SimCity running on macOS"
 	},
 	{
-	    "file_path" : "screenshot_win3_on_macosx.png",
+	    "file_path" : "screenshot_win3.png",
 	    "inventory_order" : 100,
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "Screenshots of some applications running on macOS"
+	    "entry_text" : "screenshot of Win3 running on macOS"
 	},
 	{
 	    "file_path" : "sc-ioccc.terminal",

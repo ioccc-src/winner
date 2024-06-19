@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "show how each character is drawn"
+	    "entry_text" : "shows how each character is drawn"
 	},
 	{
 	    "file_path" : "lorem-ipsum.txt",

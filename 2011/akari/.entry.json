@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "example input file"
+	    "entry_text" : "example input ppm file"
 	},
 	{
 	    "file_path" : "try.sh",

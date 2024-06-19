@@ -39,7 +39,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "field-by-field difference between iocccsize and ioc"
+	    "entry_text" : "field-by-field difference between iocccsize and entry's ioc"
 	},
 	{
 	    "file_path" : "freqcount.sh",
@@ -79,7 +79,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "iocccsize with patch applied"
+	    "entry_text" : "iocccsize.c with author patch applied"
 	},
 	{
 	    "file_path" : "ioc_without_quote",
@@ -95,7 +95,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "iocccsize keywords: sorted by 201x frequency"
+	    "entry_text" : "C keywords sorted by 201x frequency"
 	},
 	{
 	    "file_path" : "iocccbug01.c",
@@ -159,7 +159,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "reads a file from variations produces string for prog.c"
+	    "entry_text" : "reads a file from variations - produces string for prog.c"
 	},
 	{
 	    "file_path" : "results.k",
@@ -167,7 +167,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "results with -k"
+	    "entry_text" : "results with -k option"
 	},
 	{
 	    "file_path" : "tac.c",
@@ -311,7 +311,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "reserved words for a given C standard"
+	    "entry_text" : "reserved words for ANSI C standard"
 	},
 	{
 	    "file_path" : "author-README.txt",
@@ -327,7 +327,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "reserved words for a given C standard"
+	    "entry_text" : "reserved words for C++11 standard"
 	},
 	{
 	    "file_path" : "c++14",
@@ -335,7 +335,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "reserved words for a given C standard"
+	    "entry_text" : "reserved words for C++14 standard"
 	},
 	{
 	    "file_path" : "c++98",
@@ -343,7 +343,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "reserved words for a given C standard"
+	    "entry_text" : "reserved words for C++98 standard"
 	},
 	{
 	    "file_path" : "c11",
@@ -351,7 +351,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "reserved words for a given C standard"
+	    "entry_text" : "reserved words for C11 standard"
 	},
 	{
 	    "file_path" : "c99",
@@ -359,7 +359,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "reserved words for a given C standard"
+	    "entry_text" : "reserved words for C99 standard"
 	},
 	{
 	    "file_path" : "java8",
@@ -367,7 +367,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "reserved words for a Java v8"
+	    "entry_text" : "reserved words for Java v8"
 	},
 	{
 	    "file_path" : "kandr",
@@ -375,7 +375,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "reserved words for a given C standard"
+	    "entry_text" : "reserved words for K&R C"
 	},
 	{
 	    "file_path" : "kandr2",
@@ -383,7 +383,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "reserved words for a given C standard"
+	    "entry_text" : "reserved words for K&R2 C"
 	},
 	{
 	    "file_path" : "patch",
@@ -391,7 +391,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "patch",
 	    "display_via_github" : true,
-	    "entry_text" : "patch to fix iocccsize source"
+	    "entry_text" : "author supplied patch to fix iocccsize.c source"
 	},
 	{
 	    "file_path" : "results",
@@ -423,7 +423,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "reserved words for a given C standard"
+	    "entry_text" : "reserved words for a v7 UNIX C standard"
 	},
 	{
 	    "file_path" : "spotdiff.sh",

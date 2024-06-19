@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "example input"
+	    "entry_text" : "example input file"
 	},
 	{
 	    "file_path" : "input2.txt",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "example input"
+	    "entry_text" : "example input file"
 	},
 	{
 	    "file_path" : "1988_spinellis.tar.bz2",

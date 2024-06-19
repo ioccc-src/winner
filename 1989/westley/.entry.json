@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "generate and compile versions"
+	    "entry_text" : "generate and compile entry generated versions"
 	},
 	{
 	    "file_path" : "try.sh",

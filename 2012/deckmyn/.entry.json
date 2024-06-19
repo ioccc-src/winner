@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "music notation"
+	    "entry_text" : "music notation for Beethoven"
 	},
 	{
 	    "file_path" : "example_greensleeves",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "music notation"
+	    "entry_text" : "music notation for Greensleeves"
 	},
 	{
 	    "file_path" : "try.sh",

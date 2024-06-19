@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "pdf",
 	    "display_via_github" : false,
-	    "entry_text" : "instructions on how to make your own cube"
+	    "entry_text" : "how to make your own Bedlam cube"
 	},
 	{
 	    "file_path" : "solving-bedlam-cube.mp4",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "video showing the solution of the real puzzle"
+	    "entry_text" : "video showing the solution of to the Bedlam cube"
 	},
 	{
 	    "file_path" : "try.sh",

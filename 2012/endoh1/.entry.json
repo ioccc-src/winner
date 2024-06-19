@@ -63,7 +63,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "fluid initial state as text"
+	    "entry_text" : "fluid simulator initial state as text"
 	},
 	{
 	    "file_path" : "column.txt",
@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "fluid initial state as text"
+	    "entry_text" : "fluid simulator initial state as text"
 	},
 	{
 	    "file_path" : "column2.txt",
@@ -79,7 +79,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "fluid initial state as text"
+	    "entry_text" : "fluid simulator initial state as text"
 	},
 	{
 	    "file_path" : "column3.txt",
@@ -87,7 +87,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "fluid initial state as text"
+	    "entry_text" : "fluid simulator initial state as text"
 	},
 	{
 	    "file_path" : "corners.txt",
@@ -95,7 +95,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "fluid initial state as text"
+	    "entry_text" : "fluid simulator initial state as text"
 	},
 	{
 	    "file_path" : "dripping-pan.txt",
@@ -103,7 +103,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "fluid initial state as text"
+	    "entry_text" : "fluid simulator initial state as text"
 	},
 	{
 	    "file_path" : "evaporation.txt",
@@ -111,7 +111,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "fluid initial state as text"
+	    "entry_text" : "fluid simulator initial state as text"
 	},
 	{
 	    "file_path" : "flat.txt",
@@ -119,7 +119,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "fluid initial state as text"
+	    "entry_text" : "fluid simulator initial state as text"
 	},
 	{
 	    "file_path" : "fountain.txt",
@@ -127,7 +127,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "fluid initial state as text"
+	    "entry_text" : "fluid simulator initial state as text"
 	},
 	{
 	    "file_path" : "funnel.txt",
@@ -135,7 +135,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "fluid initial state as text"
+	    "entry_text" : "fluid simulator initial state as text"
 	},
 	{
 	    "file_path" : "funnel2.txt",
@@ -143,7 +143,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "fluid initial state as text"
+	    "entry_text" : "fluid simulator initial state as text"
 	},
 	{
 	    "file_path" : "funnel3.txt",
@@ -151,7 +151,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "fluid initial state as text"
+	    "entry_text" : "fluid simulator initial state as text"
 	},
 	{
 	    "file_path" : "glass-half-empty.txt",
@@ -159,7 +159,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "fluid initial state as text"
+	    "entry_text" : "fluid simulator initial state as text"
 	},
 	{
 	    "file_path" : "leidenfrost.txt",
@@ -167,7 +167,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "fluid initial state as text"
+	    "entry_text" : "fluid simulator initial state as text"
 	},
 	{
 	    "file_path" : "logo.txt",
@@ -175,7 +175,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "fluid initial state as text"
+	    "entry_text" : "fluid simulator initial state as text"
 	},
 	{
 	    "file_path" : "pour-out.txt",
@@ -183,7 +183,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "fluid initial state as text"
+	    "entry_text" : "fluid simulator initial state as text"
 	},
 	{
 	    "file_path" : "tanada.txt",
@@ -191,7 +191,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "fluid initial state as text"
+	    "entry_text" : "fluid simulator initial state as text"
 	},
 	{
 	    "file_path" : "try.alt.bw.sh",
@@ -199,7 +199,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "script to try alternate source code in black and white"
+	    "entry_text" : "script to try alternate code in black and white"
 	},
 	{
 	    "file_path" : "try.alt.sh",
@@ -207,7 +207,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "script to try alternate source code"
+	    "entry_text" : "script to try alternate code"
 	},
 	{
 	    "file_path" : "try.bw.sh",
@@ -215,7 +215,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "try black and white version"
+	    "entry_text" : "script to try black and white version"
 	},
 	{
 	    "file_path" : "try.sh",

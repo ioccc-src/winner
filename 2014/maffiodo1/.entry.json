@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "demonstrate The Great Giana Sisters"
+	    "entry_text" : "script to play The Great Giana Sisters"
 	},
 	{
 	    "file_path" : "mario.sh",
@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "demonstrate Super Mario Brothers"
+	    "entry_text" : "script to play Super Mario Brothers"
 	},
 	{
 	    "file_path" : "screenshot-giana.png",

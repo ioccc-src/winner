@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "script to try entry"
+	    "entry_text" : "script to run entry"
 	},
 	{
 	    "file_path" : "try.sh",

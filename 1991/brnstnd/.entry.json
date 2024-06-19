@@ -39,7 +39,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "SORTA language infomation"
+	    "entry_text" : "SORTA language README"
 	},
 	{
 	    "file_path" : "try.sh",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "input data for try.sh"
+	    "entry_text" : "input file used by try.sh"
 	},
 	{
 	    "file_path" : "sorta.i2+2",

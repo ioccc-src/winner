@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "check the operating system for compatibility"
+	    "entry_text" : "script to check OS compatibility"
 	},
 	{
 	    "file_path" : "fullscreen.sh",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "determine full screen size for make fullscreen"
+	    "entry_text" : "script to determine full screen size for make fullscreen"
 	},
 	{
 	    "file_path" : "2019_duble.tar.bz2",

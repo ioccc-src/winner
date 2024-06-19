@@ -482,7 +482,7 @@ the impatient:
  alt="screenshot image from the Sim City game"
  width=748 height=400>
 
-<img src="screenshot_win3_on_macosx.png"
+<img src="screenshot_win3.png"
  alt="screenshot image of Windows 3.00a under macOS"
  width=748 height=400>
 

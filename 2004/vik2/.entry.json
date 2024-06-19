@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "include file for entry source code"
+	    "entry_text" : "special source file for special make rule"
 	},
 	{
 	    "file_path" : "vik2_1.c",

@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "GNU autoconf script"
+	    "entry_text" : "GNU Autoconf script"
 	},
 	{
 	    "file_path" : "src/localhost/index.html",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "obfuscated change log for code"
+	    "entry_text" : "obfuscated changelog for code"
 	},
 	{
 	    "file_path" : "src/localhost/reference/rfc2616.html",
@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "perl home page"
+	    "entry_text" : "perl test page of HIBACHI server"
 	},
 	{
 	    "file_path" : "src/localhost/test/php/index.php",
@@ -119,7 +119,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "authconf declarations"
+	    "entry_text" : "GNU Autoconf script"
 	},
 	{
 	    "file_path" : "src/hibachi-start.sh.in",
@@ -135,7 +135,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "spoiler change log"
+	    "entry_text" : "spoiler changelog"
 	},
 	{
 	    "file_path" : "2004_hibachi.tar.bz2",
@@ -311,7 +311,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "PHP example page support file"
+	    "entry_text" : "php example page support file"
 	},
 	{
 	    "file_path" : "src/localhost/test/php/sendform.php",
@@ -351,7 +351,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "POSIX shell page support file"
+	    "entry_text" : "POSIX shell script support file"
 	},
 	{
 	    "file_path" : "src/localhost/test/shell/test1.sh",
@@ -359,7 +359,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "POSIX shell page support file"
+	    "entry_text" : "POSIX shell script support file"
 	},
 	{
 	    "file_path" : "src/localhost/test/shell/test2.sh",
@@ -367,7 +367,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "POSIX shell page support file"
+	    "entry_text" : "POSIX shell script support file"
 	},
 	{
 	    "file_path" : "src/makefile.in",

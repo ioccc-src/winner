@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : true,
-	    "entry_text" : "maze map"
+	    "entry_text" : "maze map input file"
 	},
 	{
 	    "file_path" : "a.bmp",

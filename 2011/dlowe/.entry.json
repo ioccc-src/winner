@@ -431,7 +431,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "bz2",
 	    "display_via_github" : false,
-	    "entry_text" : "IOCCC win lose trained network"
+	    "entry_text" : "tarball of IOCCC win lose trained network"
 	},
 	{
 	    "file_path" : "dlowe-aux-data/english-trained.net",
@@ -447,7 +447,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
-	    "entry_text" : "trained neural network for C code from 20Th IOCCC"
+	    "entry_text" : "trained neural network for C code from 20th IOCCC"
 	},
 	{
 	    "file_path" : "dlowe-aux-data/png-trained.net",

@@ -95,7 +95,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
-	    "entry_text" : "filesystem image"
+	    "entry_text" : "v0 UNIX filesystem"
 	},
 	{
 	    "file_path" : "v6.tape.gz",
@@ -103,7 +103,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "gzip",
 	    "display_via_github" : false,
-	    "entry_text" : "compressed filesystem image"
+	    "entry_text" : "compressed v6 UNIX filesystem"
 	},
 	{
 	    "file_path" : "index.html",

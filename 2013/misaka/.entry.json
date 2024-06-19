@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "perl",
 	    "display_via_github" : true,
-	    "entry_text" : "BF interpreter"
+	    "entry_text" : "brainfuck interpreter in perl"
 	},
 	{
 	    "file_path" : "try.sh",

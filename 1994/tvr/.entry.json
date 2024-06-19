@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "demonstrate alternate source code in black and white mode"
+	    "entry_text" : "script to try alternate code in black and white mode"
 	},
 	{
 	    "file_path" : "try.alt.color.sh",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "demonstrate alternate source code in colour mode"
+	    "entry_text" : "script to try alternate code in colour mode"
 	},
 	{
 	    "file_path" : "try.bw.sh",
@@ -63,7 +63,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "demonstrate code in black and white mode"
+	    "entry_text" : "script to try in black and white mode"
 	},
 	{
 	    "file_path" : "try.color.sh",
@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "demonstrate alternate source code in colour mode"
+	    "entry_text" : "script to try in colour mode"
 	},
 	{
 	    "file_path" : "tvr.bw",

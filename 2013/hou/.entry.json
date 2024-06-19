@@ -39,7 +39,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "detailed information about entry"
+	    "entry_text" : "scene format documentation"
 	},
 	{
 	    "file_path" : "old_default.scene",

@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "midi",
 	    "display_via_github" : false,
-	    "entry_text" : "sample input sound"
+	    "entry_text" : "sample MIDI file"
 	},
 	{
 	    "file_path" : "entertainer.mid",
@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "midi",
 	    "display_via_github" : false,
-	    "entry_text" : "sample input sound"
+	    "entry_text" : "sample MIDI file"
 	},
 	{
 	    "file_path" : "2020_otterness.tar.bz2",

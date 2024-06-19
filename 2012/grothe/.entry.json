@@ -128,7 +128,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "unencoded cookie recipe"
+	    "entry_text" : "decoded cookie recipe"
 	},
 	{
 	    "file_path" : "index.html",

@@ -63,7 +63,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "current bugs and things that look like bugs but are not"
+	    "entry_text" : "things that look like bugs but are not"
 	},
 	{
 	    "file_path" : "cannibalism.log.html",
@@ -79,7 +79,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "double-layered chocolate fudge cake recipe"
+	    "entry_text" : "Double-layered Chocolate Fudge Cake Recipe"
 	},
 	{
 	    "file_path" : "crazy.log.html",
@@ -95,7 +95,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "many different gameplay modes explained"
+	    "entry_text" : "many different gameplay modes described"
 	},
 	{
 	    "file_path" : "play.sh",
@@ -135,7 +135,7 @@
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "troubleshooting the game"
+	    "entry_text" : "troubleshooting Snake"
 	},
 	{
 	    "file_path" : "prog.2.c",
@@ -247,7 +247,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "image for double-layered chocolate fudge cake"
+	    "entry_text" : "image of Double-layered Chocolate Fudge Cake"
 	},
 	{
 	    "file_path" : "cannibalism.log.md",
@@ -287,7 +287,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "double-layered chocolate fudge cake with IOCCC"
+	    "entry_text" : "image of Double-layered Chocolate Fudge Cake with 'IOCCC'"
 	},
 	{
 	    "file_path" : "spoilers.md",

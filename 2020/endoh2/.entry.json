@@ -159,7 +159,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
-	    "entry_text" : "markdown source for spoiler/spoiler.html"
+	    "entry_text" : "markdown source for spoiler/index.html"
 	},
 	{
 	    "file_path" : "index.html",
