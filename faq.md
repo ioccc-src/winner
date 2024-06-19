@@ -90,6 +90,7 @@ other inconsistencies with the original entry?](#faq4_3)
 - [6.13 - How may I find my author handle?](#faq6_13)
 - [6.14 - How do I set certain tabstops for viewing source code in vi&#x28;m&#x29;?](#faq6_14)
 - [6.15 - How do the menus on the website work and what can I do if they don't work?](#faq6_15)
+- [6.16 - How do I find more information about a winning author of an entry?](#faq6_16)
 
 
 # The IOCCC FAQ
@@ -4234,6 +4235,28 @@ least [report it as an
 issue](https://github.com/ioccc-src/temp-test-ioccc/issues/new/choose) (choose
 the category _Website issue_).
 
+
+<div id="faq6_16">
+<div id="author-information">
+### FAQ 6.16 - How do I find more information about a winning author of an entry?
+</div>
+</div>
+
+At the top of the index.html file of a winning entry with the author you want
+information on, you should see a section called `Author`. All you have to do is
+click on the author's name (it's a link) and it will take you to their
+information in the [authors.html](authors.html) page.
+
+There you will find various information, sometimes just location (if that's
+known) and other times their mastodon handle (as a link), a link to their
+website (and sometimes an alt website), their GitHub handle (as a link) and a
+link to their `author.json` file (the link title is their name). That
+`author.json` file might have additional information. In all cases there is a
+link to each of their winning entries.
+
+Of course if you know the author's name you can go directly to
+[authors.html](authors.html) and click on their surname's/last name's/second
+name's initial and then scroll down (if necessary) to the author in question.
 
 
 <hr style="width:10%;text-align:left;margin-left:0">
