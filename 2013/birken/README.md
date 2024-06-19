@@ -136,15 +136,15 @@ are cleared, leaving behind the protruding square. Three examples of the process
 appear below:
 
 <img src="pen0.gif"
- alt="animated gif the bottom layers of a Tetris game being cleared #0"
+ alt="animated gif of bottom layers of a Tetris game being cleared #0"
  width=528 height=132>
 
 <img src="pen1.gif"
- alt="animated gif the bottom layers of a Tetris game being cleared #1"
+ alt="animated gif of bottom layers of a Tetris game being cleared #1"
  width=528 height=204>
 
 <img src="pen2.gif"
- alt="animated gif the bottom layers of a Tetris game being cleared #2"
+ alt="animated gif of bottom layers of a Tetris game being cleared #2"
  width=528 height=228>
 
 During construction of a row, all of the squares produced by this method must be
@@ -169,7 +169,7 @@ opposite order (a row of 3 red squares above a row of 5 red squares), a platform
 would not be necessary:
 
 <img src="platform1.gif"
- alt="animated gif the bottom layers of a Tetris game showing a platforms forming going away #1"
+ alt="animated gif the bottom layers of a Tetris game showing a platform formed going away #1"
  width=528 height=324>
 
 
