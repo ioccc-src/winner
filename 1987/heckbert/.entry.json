@@ -42,6 +42,14 @@
 	    "entry_text" : "script to try entry"
 	},
 	{
+	    "file_path" : "FoldSpindleMutilate.pdf",
+	    "inventory_order" : 125,
+	    "OK_to_edit" : false,
+	    "display_as" : "pdf",
+	    "display_via_github" : false,
+	    "entry_text" : "cultural history of the punch card"
+	},
+	{
 	    "file_path" : "1987_heckbert.tar.bz2",
 	    "inventory_order" : 1415926535,
 	    "OK_to_edit" : false,

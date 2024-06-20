@@ -73,6 +73,7 @@
 1987/biggar/index.html
 1987/heckbert/.path
 1987/heckbert/1987_heckbert.tar.bz2
+1987/heckbert/FoldSpindleMutilate.pdf
 1987/heckbert/heckbert.orig.c
 1987/heckbert/index.html
 1987/hines/.path

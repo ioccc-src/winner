@@ -198,6 +198,7 @@
 1987/heckbert/.gitignore
 1987/heckbert/.path
 1987/heckbert/1987_heckbert.tar.bz2
+1987/heckbert/FoldSpindleMutilate.pdf
 1987/heckbert/Makefile
 1987/heckbert/README.md
 1987/heckbert/heckbert.c
