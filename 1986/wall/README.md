@@ -4,12 +4,32 @@
     make all
 ```
 
+There is an alternate version for those with a compiler that support
+`-traditional-cpp`. See [Alternate code](#alternate-code) below.
+
 
 ## To use:
 
 ``` <!---sh-->
     ./wall
 ```
+
+
+## Alternate code:
+
+This version is the original but which can be used if you have a compiler that
+supports the `-traditional-cpp` option.
+
+
+### Alternate build:
+
+``` <!--sh-->
+	make alt
+```
+
+### Alternate use:
+
+Use `wall.alt` as you would `wall` above.
 
 
 ## Judges' remarks:

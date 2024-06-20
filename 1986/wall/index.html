@@ -403,8 +403,17 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- BEFORE: 1st line of markdown file: 1986/wall/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make all</code></pre>
+<p>There is an alternate version for those with a compiler that support
+<code>-traditional-cpp</code>. See <a href="#alternate-code">Alternate code</a> below.</p>
 <h2 id="to-use">To use:</h2>
 <pre><code>    ./wall</code></pre>
+<h2 id="alternate-code">Alternate code:</h2>
+<p>This version is the original but which can be used if you have a compiler that
+supports the <code>-traditional-cpp</code> option.</p>
+<h3 id="alternate-build">Alternate build:</h3>
+<pre class="&lt;!--sh--&gt;"><code>        make alt</code></pre>
+<h3 id="alternate-use">Alternate use:</h3>
+<p>Use <code>wall.alt</code> as you would <code>wall</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The original version did not have a ‘;’ character in the first line.
 This caused a number of System V C pre-preprocessors to gripe about a
@@ -444,6 +453,7 @@ compiler documents the program.</p>
 <ul>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/wall/wall.c">wall.c</a> - entry source code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/wall/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/wall/wall.alt.c">wall.alt.c</a> - alternate source code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/wall/wall.orig.c">wall.orig.c</a> - original source code</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>

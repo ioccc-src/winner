@@ -121,8 +121,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= wall.alt.o
+ALT_TARGET= ${PROG}.alt
 
 #################
 # build the entry
@@ -143,6 +143,9 @@ ${PROG}: ${PROG}.c
 #
 alt: ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} -traditional-cpp $< -o $@ ${LDFLAGS}
 
 # data files
 #
