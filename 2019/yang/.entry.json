@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "sample input"
+	    "entry_text" : "input file used by try.sh"
 	},
 	{
 	    "file_path" : "sample_input.txt",

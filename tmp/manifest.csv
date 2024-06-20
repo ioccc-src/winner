@@ -127,7 +127,7 @@
 1986,hague,hague.c,20,true,c,true,entry source code
 1986,hague,Makefile,30,true,makefile,true,entry Makefile
 1986,hague,hague.orig.c,50,false,c,true,original source code
-1986,hague,input.txt,100,true,text,false,sample input
+1986,hague,input.txt,100,true,text,false,input file used by try.sh
 1986,hague,try.sh,100,true,shellscript,true,script to try entry
 1986,hague,1986_hague.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1986,hague,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -2070,7 +2070,7 @@
 2005,boutines,boutines.orig.c,50,false,c,true,original source code
 2005,boutines,Voronoi.png,100,true,image,false,output example
 2005,boutines,eqn.png,100,true,image,false,equation limit for entry in png file
-2005,boutines,input.txt,100,true,text,false,sample input
+2005,boutines,input.txt,100,true,text,false,input file used by try.sh
 2005,boutines,try.sh,100,true,shellscript,true,script to try entry
 2005,boutines,2005_boutines.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2005,boutines,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -4044,7 +4044,7 @@
 2019,yang,prog.c,20,true,c,true,entry source code
 2019,yang,Makefile,30,true,makefile,true,entry Makefile
 2019,yang,prog.orig.c,50,false,c,true,original source code
-2019,yang,ioccc.txt,100,true,text,false,sample input
+2019,yang,ioccc.txt,100,true,text,false,input file used by try.sh
 2019,yang,sample_input.txt,100,true,text,false,sample input
 2019,yang,try.sh,100,true,shellscript,true,script to try entry
 2019,yang,violet.c,150,true,c,true,source formatter as ASCII Violet Evergarden
@@ -4235,7 +4235,7 @@
 2020,kurdyukov3,Makefile,30,true,makefile,true,entry Makefile
 2020,kurdyukov3,prog.alt.c,40,true,c,true,alternate source code
 2020,kurdyukov3,prog.orig.c,50,false,c,true,original source code
-2020,kurdyukov3,input.txt,100,true,text,false,sample input
+2020,kurdyukov3,input.txt,100,true,text,false,input file used by try.sh
 2020,kurdyukov3,prog.extra.c,100,true,c,true,alternate source code with extra functionality
 2020,kurdyukov3,try.sh,100,true,shellscript,true,script to try entry
 2020,kurdyukov3,2020_kurdyukov3.tar.bz2,1415926535,false,tbz2,false,download entry tarball
