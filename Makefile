@@ -260,7 +260,7 @@ indent.c:
 help:
 	@echo '# Rules for those who wish to expore the winning IOCCC entries:'
 	@echo
-	@echo 'make clobber		 - Remove all temprary, compiled and constructed files from all winning IOCCC entries'
+	@echo 'make clobber		 - Remove all temporary, compiled and constructed files from all winning IOCCC entries'
 	@echo 'make all		 - Compile all winning IOCCC entries'
 	@echo
 	@echo 'make alt		 - Compile all alternative executables for winning IOCCC entries'
@@ -285,7 +285,7 @@ help:
 	@echo 'make gen_years		 - generate the top level years.html page'
 	@echo 'make entry_index	 - force the build of ALL winner index.html files'
 	@echo 'make gen_other_html	 - build entry HTML files from markdown other than README.md'
-	@echo 'make gen_year_index	 - generate year level index.html files using the'
+	@echo 'make gen_year_index	 - generate year level index.html files using from README.md files'
 	@echo 'make gen_top_html	 - generate a number of the top level HTML files from markdown'
 	@echo 'make quick_entry_index	 - build winner index.html files that might be out of date'
 	@echo 'make find_missing_links	 - find markdown links to missing local files'
