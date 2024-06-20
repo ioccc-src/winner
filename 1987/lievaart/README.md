@@ -28,8 +28,8 @@ To see what it would have looked like without the size restrictions:
 We believe that you too will be amazed at just how much power Mr. Lievaart
 packed into 1024 bytes!
 
-This Plays the game of [Reversi
-[Othello](https://en.wikipedia.org/wiki/Reversi)!  Compile and run.  It then
+This Plays the game of Reversi
+([Othello](https://en.wikipedia.org/wiki/Reversi))!  Compile and run.  It then
 asks for a playing level. Enter 0-10 (easy-hard).  It then asks for
 your move. A move is a number within 11-88, or 99 to pass.  Illegal
 moves (except for an illegal pass) are rejected.  Then the computer
