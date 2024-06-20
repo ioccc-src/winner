@@ -91,7 +91,7 @@ And that is the tale of a little <del>engine</del> train that
 could...eventually! Or perhaps it's the compilers, optimisers and OSes that
 eventually could?
 
-Whichever you wish it to be, it now works with both `clang` and `cc` Choo choo!
+Whichever you wish it to be, it now works with both `clang` and `cc`. Choo choo!
 
 
 <hr style="width:10%;text-align:left;margin-left:0">
