@@ -303,6 +303,10 @@ read -r -n 1 -p "Press any key to continue: "
 echo 1>&2
 
 echo "$(basename "$0"): will now update index.html files." 1>&2
+echo "NOTE: quick-readme2index.sh will not create all index.html" 1>&2
+echo "files: it checks the timestamp of README.md and the respective" 1>&2
+echo "index.html files. Thus if you have not modified all the necessary" 1>&2
+echo "README.md files then you should not use the quick option!" 1>&2
 read -r -p "Do you wish to use quick-readme2index.sh (Y/N)? "
 if [[ "$REPLY" != "Y" && "$REPLY" != "y" ]]; then
     echo "$(basename "$0"): now will run: bin/all-run.sh -v $CAP_D_FLAG bin/readme2index.sh -v $CAP_D_FLAG" 1>&2
@@ -326,7 +330,6 @@ if ! bin/gen-other-html.sh -v "$CAP_D_FLAG"; then
     exit 5
 fi
 
-
 read -r -n 1 -p "Press any key to run: $GIT diff: "
 echo 1>&2
 "$GIT" diff
@@ -335,6 +338,22 @@ read -r -p "Does everything look okay (Y/N)? "
 if [[ "$REPLY" != "Y" && "$REPLY" != "y" ]]; then
     echo "$0: exiting 4 due to user telling us git diff DOES NOT LOOK OKAY." 1>&2
     exit 4
+fi
+
+echo "$(basename "$0"): now will run: make find_missing_links"
+echo "NOTE: this can take a little while." 1>&2
+if ! make find_missing_links; then
+    echo "problem running make find_missing_links, fix and try again." 1>&2
+	echo "NOTE: since everything else was updated, you can just fix the links" 1>&2
+	echo "and then run the appropriate make rules to fix just the affected html" 1>&2
+	echo "files rather than run this script all over again. If you're in doubt," 1>&2
+	echo "you can run:" 1>&2
+	echo
+	echo "		make www" 1>&2
+	echo
+	echo "to be absolutely sure that every html file is updated but this is likely" 1>&2
+	echo "not needed unless a lot of files had broken links." 1>&2
+    exit 5
 fi
 
 if [[ -n "$A_FLAG" ]]; then
