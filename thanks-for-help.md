@@ -2537,7 +2537,7 @@ added.
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1995/leo/try.sh) script.
 
 At our change in how to deal with spoilers, Cody also uudecoded the spoiler provided
-by the author, putting it in [spoiler1.html](1995/leo/spoiler1.html).
+by the author, putting it in [spoiler.html](1995/leo/spoiler.html).
 
 
 <div id="1995_makarios">
