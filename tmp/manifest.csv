@@ -177,6 +177,7 @@
 1986,stein,index.html,4294967295,false,html,false,this web page
 1986,wall,wall.c,20,true,c,true,entry source code
 1986,wall,Makefile,30,true,makefile,true,entry Makefile
+1986,wall,wall.alt.c,40,true,c,true,alternate source code
 1986,wall,wall.orig.c,50,true,c,true,original source code
 1986,wall,1986_wall.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1986,wall,README.md,4000000000,true,markdown,true,markdown source for this web page

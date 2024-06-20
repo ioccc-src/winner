@@ -181,6 +181,7 @@
 1986/wall/Makefile
 1986/wall/README.md
 1986/wall/index.html
+1986/wall/wall.alt.c
 1986/wall/wall.c
 1986/wall/wall.orig.c
 1987/biggar/.entry.json

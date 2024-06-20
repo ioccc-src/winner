@@ -6,4 +6,5 @@ indent.c
 indent.o
 prog.orig
 wall
+wall.alt
 wall.orig
