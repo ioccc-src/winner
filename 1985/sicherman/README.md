@@ -31,10 +31,7 @@ See [Alternate code](#alternate-code) below for more details on it.
 
 The [sicherman.alt.c](%%REPO_URL%%/1985/sicherman/sicherman.alt.c) is a slight change in the fixed version
 (fixed so it does not require `-traditional-cpp`) in that it has two args to
-`main()` as some compilers object to certain number of args in `main()`. This
-will be built in the case of the [sicherman.c](%%REPO_URL%%/1985/sicherman/sicherman.c) failing to compile.
-In this case it'll be compiled to `sicherman` to simplify it for the larger
-audience.
+`main()` as some compilers object to certain number of args in `main()`.
 
 
 ### Alternate build:
@@ -63,7 +60,7 @@ audience.
 
 This program abuses the C preprocessor so much that some `cpp`s fail to strip
 out all of the comments on the first pass!  If you were able to understand
-[Decot's](../../authors.html#Dave_Decot) [entry in 1984](../../1984/decot/index.html), you
+[Dave Decot's](../../authors.html#Dave_Decot) [entry in 1984](../../1984/decot/index.html), you
 will have a head start on this one.
 
 Be sure to run this program through lint!  If your lint works
