@@ -443,12 +443,11 @@ code, to see what had to be done.</p>
 <p><code>Clang</code> is also more strict about the type of args in <code>main()</code> and this was also a
 problem that Cody fixed, making it work with both <code>clang</code> and <code>gcc</code>.</p>
 <p>These fixes worked fine in macOS but it turned out that in some cases with
-<code>clang</code>
-in Linux it did not work so this had to be further fixed which Cody also did. It
-is no longer clear what the problem was as in fedora 38 with <code>clang</code> 16.0.6; the
-only difference is it causes additional warnings but it seems to work just fine.
-It seems unlikely that a fix was made just for warnings so it is presumed that
-there was another problem and thus the change is kept in place.</p>
+<code>clang</code> in Linux it did not work so this had to be further fixed which Cody also
+did. It is no longer clear what the problem was as in fedora 38 with <code>clang</code>
+16.0.6; the only difference is it causes additional warnings but it seems to
+work just fine. It seems unlikely that a fix was made just for warnings so it
+is presumed that there was another problem and thus the change is kept in place.</p>
 <p>A note about the fix is that the <code>#define</code>d macros that were used still exist
 but most are not used; they are left in just to make it look more like the
 original entry. Nevertheless those cannot be used.</p>
@@ -478,10 +477,15 @@ the others are <code>char **</code>s. This is why the arg was removed and the ca
 do not support <code>-traditional-cpp</code>.</p>
 <p>If the ANSI C committee or a new version of <code>clang</code> messes this up (both of which
 seem possible) it is easy to fix but it is hoped that this won’t happen.</p>
-<p>Originally <a href="#yusuke">Yusuke</a> supplied a patch so that this entry would compile with <code>gcc</code> -
-but not <code>clang</code> - or at least some versions.</p>
+<p>Originally <a href="#yusuke">Yusuke</a> supplied a patch so that this entry would compile
+with <code>gcc</code> - but not <code>clang</code> - or at least some versions.</p>
 <p>To see the difference from start to fixed:</p>
 <pre><code>    cd 1984/decot ; make diff_orig_prog</code></pre>
+<p>Cody later discovered that the <code>make alt</code> rule does not work as the
+<code>-traditional-cpp</code> option conflicts with some of the other options. Thus the
+<code>make alt</code> rule only uses <code>-traditional-cpp</code>.</p>
+<p>To see the diff between the original and the alternate code, try:</p>
+<pre class="&lt;!--sh--&gt;"><code>        cd 1984/decot ; make diff_orig_alt</code></pre>
 <div id="1984_laman">
 <h2 id="winning-entry-1984laman">Winning entry: <a href="1984/laman/index.html">1984/laman</a></h2>
 <h3 id="winning-entry-source-code-laman.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/laman/laman.c">laman.c</a></h3>

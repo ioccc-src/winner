@@ -79,12 +79,11 @@ code, to see what had to be done.
 problem that Cody fixed, making it work with both `clang` and `gcc`.
 
 These fixes worked fine in macOS but it turned out that in some cases with
-`clang`
-in Linux it did not work so this had to be further fixed which Cody also did. It
-is no longer clear what the problem was as in fedora 38 with `clang` 16.0.6; the
-only difference is it causes additional warnings but it seems to work just fine.
-It seems unlikely that a fix was made just for warnings so it is presumed that
-there was another problem and thus the change is kept in place.
+`clang` in Linux it did not work so this had to be further fixed which Cody also
+did. It is no longer clear what the problem was as in fedora 38 with `clang`
+16.0.6; the only difference is it causes additional warnings but it seems to
+work just fine.  It seems unlikely that a fix was made just for warnings so it
+is presumed that there was another problem and thus the change is kept in place.
 
 A note about the fix is that the `#define`d macros that were used still exist
 but most are not used; they are left in just to make it look more like the
@@ -123,13 +122,23 @@ do not support `-traditional-cpp`.
 If the ANSI C committee or a new version of `clang` messes this up (both of which
 seem possible) it is easy to fix but it is hoped that this won't happen.
 
-Originally [Yusuke](#yusuke) supplied a patch so that this entry would compile with `gcc` -
-but not `clang` - or at least some versions.
+Originally [Yusuke](#yusuke) supplied a patch so that this entry would compile
+with `gcc` - but not `clang` - or at least some versions.
 
 To see the difference from start to fixed:
 
 ``` <!---sh-->
     cd 1984/decot ; make diff_orig_prog
+```
+
+Cody later discovered that the `make alt` rule does not work as the
+`-traditional-cpp` option conflicts with some of the other options. Thus the
+`make alt` rule only uses `-traditional-cpp`.
+
+To see the diff between the original and the alternate code, try:
+
+``` <!--sh-->
+	cd 1984/decot ; make diff_orig_alt
 ```
 
 

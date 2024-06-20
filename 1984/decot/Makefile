@@ -144,9 +144,11 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-
+# We CANNOT have the ${CFLAGS} here as -traditional-cpp conflicts with them,
+# causing a compilation error in at least some versions of gcc.
 ${PROG}.alt: ${PROG}.alt.c
-	${CC} ${CFLAGS} -traditional-cpp $< -o $@ ${LDFLAGS}
+	${CC} -traditional-cpp $< -o $@ ${LDFLAGS}
+
 # data files
 #
 data: ${DATA}
