@@ -418,6 +418,9 @@ The original code was fixed in 2023 to not require this.</p>
 can use this version.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <pre><code>    make alt</code></pre>
+<p>Notice that one <strong>CANNOT</strong> have the usual <code>${CFLAGS}</code> along with the
+<code>-traditional-cpp</code> in all systems. This is why the Makefile only has the latter
+option as the others conflict with it.</p>
 <h3 id="alternate-use">Alternate use:</h3>
 <pre><code>    ./decot.alt</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -430,10 +433,14 @@ changed it from:</p>
 <pre><code>    for(signal=0;*k * x * __FILE__ *i;) do {</code></pre>
 <p>to:</p>
 <pre><code>    for(signal=0;*k *x * __FILE__ *i;) do {</code></pre>
-<p>To see what we mean look at the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/decot/decot.orig.c">original source file</a>. The
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/decot/decot.alt.c">alternate code</a> is the version that has this modification. The
+<p>To see what we mean look at the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/decot/decot.orig.c">original source
+file</a> at <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/decot/decot.orig.c#L15">line
+15</a> which has the way it once was. The
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/decot/decot.alt.c">alternate code</a> is the version that has
+this modification but at <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/decot/decot.alt.c#L16">line 16</a>. The
 fixed version has instead:</p>
 <pre><code>    for(signal=0;*k *= * __FILE__ *i;) do {</code></pre>
+<p>plus a line above it that had to be added.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>No remarks were provided by the author.</p>
 <!--

@@ -40,6 +40,10 @@ can use this version.
     make alt
 ```
 
+Notice that one **CANNOT** have the usual `${CFLAGS}` along with the
+`-traditional-cpp` in all systems. This is why the Makefile only has the latter
+option as the others conflict with it.
+
 
 ### Alternate use:
 
@@ -71,13 +75,18 @@ to:
     for(signal=0;*k *x * __FILE__ *i;) do {
 ```
 
-To see what we mean look at the [original source file](%%REPO_URL%%/1984/decot/decot.orig.c). The
-[alternate code](%%REPO_URL%%/1984/decot/decot.alt.c) is the version that has this modification. The
+To see what we mean look at the [original source
+file](%%REPO_URL%%/1984/decot/decot.orig.c) at [line
+15](%%REPO_URL%%/1984/decot/decot.orig.c#L15) which has the way it once was. The
+[alternate code](%%REPO_URL%%/1984/decot/decot.alt.c) is the version that has
+this modification but at [line 16](%%REPO_URL%%/1984/decot/decot.alt.c#L16). The
 fixed version has instead:
 
 ``` <!---c-->
     for(signal=0;*k *= * __FILE__ *i;) do {
 ```
+
+plus a line above it that had to be added.
 
 
 ## Author's remarks:
