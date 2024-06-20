@@ -19,7 +19,7 @@
 ```
 
 If you have the `primes(6)` tool (sometimes part of
-([BSD](https://github.com/vattam/BSDGames) Games) you can see
+[BSD Games](https://github.com/vattam/BSDGames)) you can see
 what of the output in the first `N` (say `15` or `25`) lines are primes:
 
 ``` <!---sh-->

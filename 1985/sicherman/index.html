@@ -417,10 +417,7 @@ See <a href="#alternate-code">Alternate code</a> below for more details on it.</
 <h2 id="alternate-code">Alternate code:</h2>
 <p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/sicherman/sicherman.alt.c">sicherman.alt.c</a> is a slight change in the fixed version
 (fixed so it does not require <code>-traditional-cpp</code>) in that it has two args to
-<code>main()</code> as some compilers object to certain number of args in <code>main()</code>. This
-will be built in the case of the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/sicherman/sicherman.c">sicherman.c</a> failing to compile.
-In this case it’ll be compiled to <code>sicherman</code> to simplify it for the larger
-audience.</p>
+<code>main()</code> as some compilers object to certain number of args in <code>main()</code>.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
@@ -430,7 +427,7 @@ audience.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This program abuses the C preprocessor so much that some <code>cpp</code>s fail to strip
 out all of the comments on the first pass! If you were able to understand
-<a href="../../authors.html#Dave_Decot">Decot’s</a> <a href="../../1984/decot/index.html">entry in 1984</a>, you
+<a href="../../authors.html#Dave_Decot">Dave Decot’s</a> <a href="../../1984/decot/index.html">entry in 1984</a>, you
 will have a head start on this one.</p>
 <p>Be sure to run this program through lint! If your lint works
 correctly, it should warn you that the argument ‘Manual’ isn’t used.
