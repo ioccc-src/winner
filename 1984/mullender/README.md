@@ -245,7 +245,7 @@ with the `calls` instruction. This instruction uses the first (2-byte)
 [word](https://en.wikipedia.org/wiki/Word_&#x28;computer_architecture&#x29;) of the called
 routine as a mask of
 [registers](https://en.wikipedia.org/wiki/Processor_register) that are to be
-saved on the [stack](https://en.wikipedia.org/wiki/Stack&#x28;abstract_data_type&#x29;).
+saved on the [stack](https://en.wikipedia.org/wiki/Call_stack).
 In other words, on the VAX the first word can be anything. On the
 [PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor), the first word
 is a [branch](https://en.wikipedia.org/wiki/Branch_&#x28;computer_science&#x29;)
