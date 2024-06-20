@@ -455,7 +455,7 @@ own fix or suggest that they're fixed!
 ### Information: [1984/decot/index.html](1984/decot/index.html)
 
 The purpose of this program is to print out what looks like a fragment of C
-code.. In particular you should see something like:
+code. In particular you should see something like:
 
 ``` <!---sh-->
     $ ./decot
