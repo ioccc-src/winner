@@ -420,7 +420,7 @@ See the <a href="#alternate-code">Alternate code</a> section below for more deta
 <code>/dev/tty</code>. The author suggested:</p>
 <pre><code>    cc -c -o /dev/tty jar.1.c</code></pre>
 <p>As a last resort the <code>jar.1.sh</code> script provided simulates
-writing the raw binary of the .o file to the terminal.</p>
+writing the raw binary of the <code>.o</code> object file to the terminal.</p>
 <p>Abuse of the rules winning entry usually result in a change of the rules.
 Starting in 1990, compiling entries must result an regular file
 which can be executed.</p>
@@ -446,8 +446,8 @@ to standard output, the original shell command that once wrote raw
 binary to the <code>/dev/tty</code> special file.</p>
 <p>The use of piping raw binary thru stings makes the original 1989 output
 more apparent, as was the case when using dumb CRT terminals (some
-do dumb that they couldn’t even process simple ANSI escape sequences)
-were more common.</p>
+so dumb that they couldn’t even process simple ANSI escape sequences)
+was more common.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>This program is (supposedly) the smallest C program able to print “Hello
 world.”. The compilation itself produces the desired printout and the program

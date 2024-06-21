@@ -409,11 +409,12 @@ out. See <a href="#alternate-code">alternate code</a> below for more details.</p
 <pre><code>    ./paul</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This version was described by the author like:</p>
-<p>I could have squeezed the program under 1024 bytes without the
-trace subroutine, but I felt it was important for understanding
-the program. Besides it is fun to watch the tape zooming back
-and forth as the program runs. A much better debugger or trace
-could easily be added.</p>
+<blockquote>
+<p>I could have squeezed the program under 1024 bytes without the trace
+subroutine, but I felt it was important for understanding the program. Besides
+it is fun to watch the tape zooming back and forth as the program runs. A much
+better debugger or trace could easily be added.</p>
+</blockquote>
 <h3 id="alternate-build">Alternate build:</h3>
 <pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
@@ -482,15 +483,15 @@ with step 1. A call to the trace routine is just before step
 <h3 id="quick-outline-of-the-turing-program">Quick outline of the Turing program:</h3>
 <p>The previous and current Fibonacci numbers are kept in base
 1 form with the current on the right. The first three
-steps set up the first two numbers, <code>1</code> and <code>1</code>. Then
-[beginning with <code>@ (</code>] a marker of <code>III</code> is created and
+steps set up the first two numbers, <code>1</code> and <code>1</code>. Then,
+beginning with ‘<code>@ (</code>’, a marker of ‘<code>III</code>’ is created and
 the current number is copied to the right of the
-marker. Then (beginning with <code>OV</code>) the number is
+marker. Then, beginning with ‘<code>OV</code>’, the number is
 converted to binary by repeatedly dividing by 2 leaving I
-for remainder <code>1</code>, and II for remainder <code>0</code>. Next
-(beginning with <code>WV</code>) the binary representation is
+for remainder <code>1</code>, and II for remainder ‘<code>0</code>’. Next,
+beginning with ‘<code>WV</code>’, the binary representation is
 printed and its symbols and the marker are erased.
-Finally (beginning with <code>EEn</code>) the two numbers are
+Finally, beginning with ‘<code>EEn</code>’, the two numbers are
 added and the current number copied to the left to
 become the previous. Then the cycle repeats.</p>
 <h3 id="portability">Portability</h3>

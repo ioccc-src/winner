@@ -48,7 +48,7 @@ On many systems the compiler will not allow you to send the object file to
 ```
 
 As a last resort the `jar.1.sh` script provided simulates
-writing the raw binary of the .o file to the terminal.
+writing the raw binary of the `.o` object file to the terminal.
 
 Abuse of the rules winning entry usually result in a change of the rules.
 Starting in 1990, compiling entries must result an regular file
@@ -78,8 +78,8 @@ binary to the `/dev/tty` special file.
 
 The use of piping raw binary thru stings makes the original 1989 output
 more apparent, as was the case when using dumb CRT terminals (some
-do dumb that they couldn't even process simple ANSI escape sequences)
-were more common.
+so dumb that they couldn't even process simple ANSI escape sequences)
+was more common.
 
 
 ## Author's remarks:

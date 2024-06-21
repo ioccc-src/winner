@@ -947,7 +947,10 @@ not strictly necessary but nonetheless more correct, even if not warned against.
 [Cody](#cody) got this to work with modern systems. The main issues were that an
 `#include` had to be added along with fixing the path (due to `.` not being in
 `$PATH`) to files referred to in the code. The path problem was also fixed in
-[fubar.sh](%%REPO_URL%%/1989/fubar/fubar.sh).
+[fubar.sh](%%REPO_URL%%/1989/fubar/fubar.sh). Another problem that showed up
+later is that there was no `int` for `main` and implicit `int`s are not
+supported in ISO C99 and later but since it does not use `make` the warning was
+not being disabled. To fix this the `main` was set to return `int` explicitly.
 
 A strange problem occurred where if one made modifications to the C file it
 might end up failing to work even after changing it back. This was resolved by:

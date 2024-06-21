@@ -19,11 +19,10 @@ out. See [alternate code](#alternate-code) below for more details.
 
 This version was described by the author like:
 
-I could have squeezed the program under 1024 bytes without the
-trace subroutine, but I felt it was important for understanding
-the program.  Besides it is fun to watch the tape zooming back
-and forth as the program runs.  A much better debugger or trace
-could easily be added.
+> I could have squeezed the program under 1024 bytes without the trace
+subroutine, but I felt it was important for understanding the program.  Besides
+it is fun to watch the tape zooming back and forth as the program runs.  A much
+better debugger or trace could easily be added.
 
 
 ### Alternate build:
@@ -117,15 +116,15 @@ with step 1.  A call to the trace routine is just before step
 
 The previous and current Fibonacci numbers are kept in base
 1 form with the current on the right.  The first three
-steps set up the first two numbers, `1` and `1`.  Then
-[beginning with `@ (`] a marker of `III` is created and
+steps set up the first two numbers, `1` and `1`.  Then,
+beginning with '`@ (`', a marker of '`III`' is created and
 the current number is copied to the right of the
-marker.  Then (beginning with `OV `) the number is
+marker.  Then, beginning with '`OV `', the number is
 converted to binary by repeatedly dividing by 2 leaving I
-for remainder `1`, and II for remainder `0`.  Next
-(beginning with `WV `) the binary representation is
+for remainder `1`, and II for remainder '`0`'.  Next,
+beginning with '`WV `', the binary representation is
 printed and its symbols and the marker are erased.
-Finally (beginning with `EEn`) the two numbers are
+Finally, beginning with '`EEn`', the two numbers are
 added and the current number copied to the left to
 become the previous.  Then the cycle repeats.
 

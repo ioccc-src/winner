@@ -125,18 +125,17 @@ system-wide high-score allowing a competition between users.
 The author provided us with the following notes and new version of
 the program:
 
-Here is a somewhat improved version of my tetris entry.  All the
-changes are in the `popen()` at the end.  Formerly a move was done
-to the HI score file which is not permitted for other users. Now
-other users can change the `HI` score file.  The extra option `-m` is
-passed to sort, so that it knows that its input files are already
-sorted.  The `-o` output option of sort is used instead of a
-temporary file.
-
-You may also want to consider giving just the raw option to `stty`
-at the start and `-raw` at the end. This further reduces the size of
-the program, but has the possible disadvantage that the program
-can only by stopped by 'q' or by the `kill -9' command.
+> Here is a somewhat improved version of my tetris entry.  All the changes are
+in the `popen(3)` at the end.  Formerly a move was done to the HI score file
+which is not permitted for other users. Now other users can change the `HI`
+score file.  The extra option `-m` is passed to sort, so that it knows that its
+input files are already sorted.  The `-o` output option of sort is used instead
+of a temporary file.
+>
+> You may also want to consider giving just the raw option to `stty` at the
+start and `-raw` at the end. This further reduces the size of the program, but
+has the possible disadvantage that the program can only by stopped by 'q' or by
+the `kill -9` command.
 
 ``` <!---c-->
     long h[4];t(){h[3]-=h[3]/3000;setitimer(0,h,0);}c,d,l,v[]={(int)t,0,2},w,s,I,K

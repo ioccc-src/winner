@@ -1042,7 +1042,10 @@ not strictly necessary but nonetheless more correct, even if not warned against.
 <p><a href="#cody">Cody</a> got this to work with modern systems. The main issues were that an
 <code>#include</code> had to be added along with fixing the path (due to <code>.</code> not being in
 <code>$PATH</code>) to files referred to in the code. The path problem was also fixed in
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/fubar/fubar.sh">fubar.sh</a>.</p>
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/fubar/fubar.sh">fubar.sh</a>. Another problem that showed up
+later is that there was no <code>int</code> for <code>main</code> and implicit <code>int</code>s are not
+supported in ISO C99 and later but since it does not use <code>make</code> the warning was
+not being disabled. To fix this the <code>main</code> was set to return <code>int</code> explicitly.</p>
 <p>A strange problem occurred where if one made modifications to the C file it
 might end up failing to work even after changing it back. This was resolved by:</p>
 <pre><code>    --- i/1989/fubar/fubar.sh
