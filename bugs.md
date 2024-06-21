@@ -567,16 +567,14 @@ and does not crash.
 ## 1989/fubar
 </div>
 
-### STATUS: known bug - please help us fix
+### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1989/fubar/fubar.c](%%REPO_URL%%/1989/fubar/fubar.c)
 ### Information: [1989/fubar/index.html](1989/fubar/index.html)
 
 If you use either `fubar` or `ouroboros.c` (it's executable, see index.html for
 details) with a number < 0 or larger than, say 20, it's very likely that the
-program will turn into an infinite loop trying to compile code with syntax
-errors.
-
-If you want to try and fix this (mis)feature, you are welcome to try.
+program will turn into an infinite loop trying to compile code and end up with
+with syntax errors. As this was documented it is not a bug to be fixed.
 
 
 <div id="1989_robison">
