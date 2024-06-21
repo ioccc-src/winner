@@ -199,6 +199,7 @@
 1987,heckbert,Makefile,30,true,makefile,true,entry Makefile
 1987,heckbert,heckbert.orig.c,50,false,c,true,original source code
 1987,heckbert,try.sh,100,true,shellscript,true,script to try entry
+1987,heckbert,FoldSpindleMutilate.pdf,125,false,pdf,false,cultural history of the punch card
 1987,heckbert,1987_heckbert.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1987,heckbert,README.md,4000000000,true,markdown,true,markdown source for this web page
 1987,heckbert,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
