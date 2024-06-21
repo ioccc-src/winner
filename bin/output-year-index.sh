@@ -29,6 +29,8 @@
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
+# .. with very minor improvements in June 2024 by Cody Boone Ferguson.
+#
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
 # provided that the above copyright, this permission notice and text
@@ -220,7 +222,7 @@ function output_award
 	echo "$0: ERROR: in output_award: no award found in .entry.json file: $ENTRY_JSON_PATH" 1>&2
 	return 5
     fi
-    echo "$AWARD_STRING"
+    echo "**$AWARD_STRING**"
     return 0
 }
 
@@ -429,7 +431,7 @@ if [[ ! -x $PANDOC_WRAPPER ]]; then
     exit 5
 fi
 
-# verify that YYYY is a entry directory
+# verify that YYYY is an entry directory
 #
 if [[ ! -d $YYYY ]]; then
     echo "$0: ERROR: arg is not a directory: $YYYY" 1>&2
@@ -646,7 +648,7 @@ for YYYY_DIR in $(< "$YEAR_FILE"); do
     #
     ENTRY_NAME=$(basename "$YYYY_DIR")
     export ENTRY_NAME
-    echo "* [$YYYY_DIR]($ENTRY_NAME/index.html) - $AWARD"
+    echo "* [**$YYYY_DIR**]($ENTRY_NAME/index.html) - $AWARD"
 done | if [[ -z $NOOP ]]; then
     cat >> "$TMP_FILE"
 else
