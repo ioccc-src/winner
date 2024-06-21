@@ -421,15 +421,15 @@ with this entry.</p>
 Dhyrstone/sec/cpu machine) using the System V <code>cpp</code>. (The GNU <code>cpp</code> when defined as
 <code>BIG_CPP</code> took only 45 seconds.)</p>
 <p>Your <code>cpp</code> may not be able to compile it due to a common bug that results in
-<code>cpp</code> running out of space. The routine
+<code>cpp</code> running out of space. The alternate code
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/applin.alt.c">zsmall</a> is a smaller version
-of the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/applin.c">applin.c</a> entry.</p>
+of the entry <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/applin.c">applin.c</a>.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This entry is by far the most unusual abuse of the C preprocessor that
 we have received thus far. Nearly all of the real work is done in the
 C preprocessor!</p>
 <p>When we compiled <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/applin.c">applin.c</a> on an
-<a href="https://en.wikipedia.org/wiki/Amdahl_Corporation">Amdahl</a> 5890-300E, we found that it
+<a href="https://en.wikipedia.org/wiki/Amdahl_Corporation#580_series">Amdahl 5890-300E</a>, we found that it
 spent over 75 minutes in the System V C preprocessor! Besides showing that the
 standard System V <code>cpp</code> is slow, it showed that it contained a memory usage
 problem. The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/applin.c">applin.c</a> only uses 29 different preprocessor symbols
