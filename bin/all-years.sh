@@ -385,7 +385,7 @@ if [[ ! -x $TOOL ]]; then
     exit 5
 fi
 
-# verify that the md2html.sh is executable
+# verify that the md2html.sh is an executable file
 #
 if [[ ! -e $MD2HTML_SH ]]; then
     echo  "$0: ERROR: md2html.sh does not exist: $MD2HTML_SH" 1>&2
