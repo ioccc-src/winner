@@ -419,7 +419,8 @@ it’s a <code>#define</code> it’s easy to set up.</p>
 <p>You do not have to define <code>P</code> but if you do you can replace the value with
 whatever you wish, as long as it’s a positive <code>int</code> (or evaluates to a positive
 <code>int</code> like the default <code>(A&lt;&lt;AP)</code> does). Too high a value will likely cause the
-program to fail and a negative value will cause a compilation error.</p>
+program to fail and a negative value will cause a compilation error as will a
+value that’s not a number.</p>
 <h3 id="alternate-use">Alternate use:</h3>
 <pre><code>    ./ovdluhe.alt</code></pre>
 <h3 id="alternate-try">Alternate try:</h3>
@@ -439,14 +440,14 @@ is read through stdin. The larger the template, the better the
 result. A maximum of <code>2**12</code> chars are used. From the template,
 the program calculates the statistics of chars that immediately
 follow a given string (correlator string) of a certain length
-(currently 4 - can be varied by changing the definition for P
+(currently 4 - can be varied by changing the definition for <code>P</code>
 accordingly). A character is randomly chosen, weighted by its
 probability to occur after the correlator string. That
 character is printed to stdout and placed at the end of the
 correlator string, whose first character is discarded.
 Meaningful words are therefore usually preserved, the effect on
 sentences can be dramatically random.</p>
-<p>You might want to vary the definition of P between 2 and 10 and
+<p>You might want to vary the definition of <code>P</code> between 2 and 10 and
 observe the result.</p>
 <!--
 

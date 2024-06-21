@@ -31,11 +31,11 @@ NOTE: this entry will likely segfault on invalid input.
 ## Judges' remarks:
 
 This is the most useful program submitted this year. It is a
-rather large subset of lisp.  It has no error recovery, and
-performs rather poorly in a number of cases.  Even so, placing
-all this functionality in such a small, densely packed program,
-is impressive enough to win the Best of Show award.
-
+rather large subset of
+[lisp](https://en.wikipedia.org/wiki/Lisp_&#x28;programming_language&#x29;).
+It has no error recovery, and performs rather poorly in a number of cases.  Even
+so, placing all this functionality in such a small, densely packed program, is
+impressive enough to win the `Best of Show` award.
 
 ## Author's remarks:
 

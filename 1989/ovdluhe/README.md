@@ -41,7 +41,8 @@ it's a `#define` it's easy to set up.
 You do not have to define `P` but if you do you can replace the value with
 whatever you wish, as long as it's a positive `int` (or evaluates to a positive
 `int` like the default `(A<<AP)` does). Too high a value will likely cause the
-program to fail and a negative value will cause a compilation error.
+program to fail and a negative value will cause a compilation error as will a
+value that's not a number.
 
 
 ### Alternate use:
@@ -78,7 +79,7 @@ is read through stdin.  The larger the template, the better the
 result.  A maximum of `2**12` chars are used. From the template,
 the program calculates the statistics of chars that immediately
 follow a given string (correlator string) of a certain length
-(currently 4 - can be varied by changing the definition for P
+(currently 4 - can be varied by changing the definition for `P`
 accordingly).  A character is randomly chosen, weighted by its
 probability to occur after the correlator string.  That
 character is printed to stdout and placed at the end of the
@@ -86,7 +87,7 @@ correlator string, whose first character is discarded.
 Meaningful words are therefore usually preserved, the effect on
 sentences can be dramatically random.
 
-You might want to vary the definition of P between 2 and 10 and
+You might want to vary the definition of `P` between 2 and 10 and
 observe the result.
 
 

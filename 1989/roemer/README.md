@@ -21,7 +21,7 @@ than meets the PI.
 ## Author's remarks:
 
 Passes lint, but not with the strictest options, for it contains some
-"null-statements", as well two identifiers which are, if compilers only take 6
+"null-statements", as well as two identifiers which are, if compilers only take 6
 characters, the same.  It also uses `write(2)`, so not totally system
 independent.
 

@@ -481,17 +481,18 @@ system-wide high-score allowing a competition between users.</p>
 <h3 id="additional-remarks-from-the-judges">Additional remarks from the judges:</h3>
 <p>The author provided us with the following notes and new version of
 the program:</p>
-<p>Here is a somewhat improved version of my tetris entry. All the
-changes are in the <code>popen()</code> at the end. Formerly a move was done
-to the HI score file which is not permitted for other users. Now
-other users can change the <code>HI</code> score file. The extra option <code>-m</code> is
-passed to sort, so that it knows that its input files are already
-sorted. The <code>-o</code> output option of sort is used instead of a
-temporary file.</p>
-<p>You may also want to consider giving just the raw option to <code>stty</code>
-at the start and <code>-raw</code> at the end. This further reduces the size of
-the program, but has the possible disadvantage that the program
-can only by stopped by ‘q’ or by the `kill -9’ command.</p>
+<blockquote>
+<p>Here is a somewhat improved version of my tetris entry. All the changes are
+in the <code>popen(3)</code> at the end. Formerly a move was done to the HI score file
+which is not permitted for other users. Now other users can change the <code>HI</code>
+score file. The extra option <code>-m</code> is passed to sort, so that it knows that its
+input files are already sorted. The <code>-o</code> output option of sort is used instead
+of a temporary file.</p>
+<p>You may also want to consider giving just the raw option to <code>stty</code> at the
+start and <code>-raw</code> at the end. This further reduces the size of the program, but
+has the possible disadvantage that the program can only by stopped by ‘q’ or by
+the <code>kill -9</code> command.</p>
+</blockquote>
 <pre><code>    long h[4];t(){h[3]-=h[3]/3000;setitimer(0,h,0);}c,d,l,v[]={(int)t,0,2},w,s,I,K
     =0,i=276,j,k,q[276],Q[276],*n=q,*m,x=17,f[]={7,-13,-12,1,8,-11,-12,-1,9,-1,1,
     12,3,-13,-12,-1,12,-1,11,1,15,-1,13,1,18,-1,1,2,0,-12,-1,11,1,-12,1,13,10,-12,
