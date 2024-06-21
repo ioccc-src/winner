@@ -115,7 +115,7 @@ ENTRY= isaak
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
-DATA= isaak.encode
+DATA=
 TARGET= ${PROG}
 #
 ALT_OBJ= ${PROG}.alt.o
@@ -143,7 +143,7 @@ alt: data ${ALT_TARGET}
 	@${TRUE}
 
 ${PROG}.alt: ${PROG}.alt.c
-	@echo "NOTE: The original source might not compile using modern compilers."
+	@echo "NOTE: this original source will likely not work in modern systems."
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # data files
