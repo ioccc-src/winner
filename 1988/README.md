@@ -6,20 +6,21 @@ Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
 The maximum size of entries was raised from 1024 to 1536 bytes, however smaller
-entries were encouraged.  Due to the ["Best Abuse of the Rules" entry of
+entries were encouraged.  Due to the [Best abuse of the rules entry of
 1987](../1987/biggar/index.html), a limit of 160 chars in the compile line was introduced.
 
-This year, the Grand Prize was given to the most unusual entry and best
-abuse of the C Preprocessor rather than the most well rounded entry.
+This year, the [Best of Show](applin/index.html) was given to the most unusual
+entry and the `best abuse of the C Preprocessor` rather than the most well rounded
+entry.
 
-[Rules](rules.txt) and [results](../years.html#1988) were posted to comp.lang.c,
-comp.sources.unix and alt.sources.  The 1988 winning entries will be published
-in the [Micro/Systems
+[Rules](rules.txt) and [results](../years.html#1988) were posted to _comp.lang.c_,
+_comp.sources.unix_ and _alt.sources_. The [1988 winning
+entries](../years.html#1988) will be published in the [Micro/Systems
 Journal](https://www.vintage-computer.com/publications.php?microsystemsjournal).
 
 Winning entries for previous years were repackaged with each year
 being in its own directory.  Makefiles and hints were also provided.
-The package was posted to the comp.sources.unix newsgroup.  They are
+The package was posted to the _comp.sources.unix_ newsgroup.  They are
 also available on a wide number of USENET archive sites.
 
 

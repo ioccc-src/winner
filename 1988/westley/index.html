@@ -427,12 +427,15 @@ try:</p>
 <p>as <code>--a</code> and not <code>-(-a)</code> or some other tokenized form. Some strictly
 conforming ANSI C Preprocessors may object to this: for such
 compilers, you can elide the non-standard token-pasting requirement
-by changing the #define line to:</p>
+by changing the <code>#define</code> line to:</p>
 <pre><code>    #define _ F--&gt;00||F-OO--;</code></pre>
-<p>This is what the modified code in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/westley/westley.c">westley.c</a> does whereas the alt
-code is the original.</p>
+<p>This is what the modified code in
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/westley/westley.c">westley.c</a> does whereas the alternate code
+is the original.</p>
 <p>You might enjoy looking at the output of:</p>
-<pre><code>    cc -E westley.alt.c</code></pre>
+<pre><code>    cc -E westley.alt.c
+
+    cc -E westley.c</code></pre>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>No remarks were provided by the author.</p>
 <!--

@@ -40,9 +40,9 @@ Dhyrstone/sec/cpu machine) using the System V `cpp`.  (The GNU `cpp` when define
 `BIG_CPP` took only 45 seconds.)
 
 Your `cpp` may not be able to compile it due to a common bug that results in
-`cpp` running out of space.  The routine
+`cpp` running out of space.  The alternate code
 [zsmall](%%REPO_URL%%/1988/applin/applin.alt.c) is a smaller version
-of the [applin.c](%%REPO_URL%%/1988/applin/applin.c) entry.
+of the entry [applin.c](%%REPO_URL%%/1988/applin/applin.c).
 
 
 ## Judges' remarks:
@@ -52,7 +52,7 @@ we have received thus far.  Nearly all of the real work is done in the
 C preprocessor!
 
 When we compiled [applin.c](%%REPO_URL%%/1988/applin/applin.c) on an
-[Amdahl](https://en.wikipedia.org/wiki/Amdahl_Corporation) 5890-300E, we found that it
+[Amdahl 5890-300E](https://en.wikipedia.org/wiki/Amdahl_Corporation#580_series), we found that it
 spent over 75 minutes in the System V C preprocessor!  Besides showing that the
 standard System V `cpp` is slow, it showed that it contained a memory usage
 problem.  The [applin.c](%%REPO_URL%%/1988/applin/applin.c) only uses 29 different preprocessor symbols

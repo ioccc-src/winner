@@ -69,10 +69,9 @@ from a single macro (e.g., `"O/**/O"` creates either `++` or `--` by defining
 NOTE: Most System V machines were not be able to execute this program correctly
 due to the fact that BSD style systems have an `sprintf(3)` that returns a `char
 *`.  Due to the above problems, we placed the output of this program in the
-file [isaak.output.txt](isaak.output.txt).
-
-Since this was fixed, this file is not strictly necessary, but we keep it for
-historical purposes (decoded as it used to be uuencoded). See the
+file [isaak.output.txt](isaak.output.txt). Since this was fixed, this file is
+not strictly necessary, but we keep it for historical purposes (decoded as it
+used to be uuencoded). See the
 [isaak.orig.c](%%REPO_URL%%/1988/isaak/isaak.orig.c) for the original source.
 
 FYI: We are likely to be more strict about portability in the future.

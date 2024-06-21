@@ -60,19 +60,22 @@ Your compiler must parse
 as `--a` and not `-(-a)` or some other tokenized form.  Some strictly
 conforming ANSI C Preprocessors may object to this: for such
 compilers, you can elide the non-standard token-pasting requirement
-by changing the #define line to:
+by changing the `#define` line to:
 
 ``` <!---c-->
     #define _ F-->00||F-OO--;
 ```
 
-This is what the modified code in [westley.c](%%REPO_URL%%/1988/westley/westley.c) does whereas the alt
-code is the original.
+This is what the modified code in
+[westley.c](%%REPO_URL%%/1988/westley/westley.c) does whereas the alternate code
+is the original.
 
 You might enjoy looking at the output of:
 
 ``` <!---sh-->
     cc -E westley.alt.c
+
+    cc -E westley.c
 ```
 
 
