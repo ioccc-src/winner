@@ -4,6 +4,8 @@
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
+# .. with very minor improvements in June 2024 by Cody Boone Ferguson.
+#
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
 # provided that the above copyright, this permission notice and text
@@ -1332,7 +1334,7 @@ EOF
 
 		# output the YYYY/dir entry for this author
 		#
-		echo "* <a href=\"$YYYY_DIR/index.html\">$YYYY_DIR</a> - $AWARD"
+		echo "* **<a href=\"$YYYY_DIR/index.html\">$YYYY_DIR</a>** - **$AWARD**"
 	    done
 	    echo
 	fi
