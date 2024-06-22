@@ -827,7 +827,6 @@
 1992,westley,westley.orig.c,50,true,c,true,original source code
 1992,westley,try.sh,100,true,shellscript,true,script to try entry
 1992,westley,whereami.alt.sh,100,true,shellscript,true,alternate whereami tool
-1992,westley,whereami.c,100,true,c,true,tool to show your location on the map
 1992,westley,whereami.sh,100,true,shellscript,true,script to show where you are on the map
 1992,westley,1992_westley.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1992,westley,README.md,4000000000,true,markdown,true,markdown source for this web page

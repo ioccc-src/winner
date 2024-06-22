@@ -543,7 +543,6 @@
 1992/westley/westley.c
 1992/westley/westley.orig.c
 1992/westley/whereami.alt.sh
-1992/westley/whereami.c
 1992/westley/whereami.sh
 1993/ant/.entry.json
 1993/ant/.gitignore
