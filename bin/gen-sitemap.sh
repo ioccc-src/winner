@@ -104,9 +104,16 @@ export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc/blob/master"
 export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 export CAP_W_FLAG_FOUND=
 export MODTIME_METHOD=""
+#
 STAT_TOOL=$(type -P stat)
 if [[ -z "$STAT_TOOL" ]]; then
     STAT_TOOL="false"	# we have no stat tool
+fi
+#
+LS_TOOL=$(type -P ls)
+if [[ -z "$LS_TOOL" ]]; then
+    echo "$0: FATAL: ls tool is not installed or not in \$PATH" 1>&2
+    exit 5
 fi
 
 
@@ -168,12 +175,12 @@ function output_modtime
 	# SC2012 (info): Use find instead of ls to better handle non-alphanumeric filenames.
 	# https://www.shellcheck.net/wiki/SC2012
 	# shellcheck disable=SC2012
-	TZ=UTZ ls -D '%FT%T+00:00' -ld "$FILENAME" | awk '{print $6;}'
+	TZ=UTZ "$LS_TOOL" -D '%FT%T+00:00' -ld "$FILENAME" | awk '{print $6;}'
 	status0="${PIPESTATUS[0]}"
 	status1="${PIPESTATUS[1]}"
 	if [[ $status0 -ne 0 || $status1 -ne 0 ]]; then
 	    echo "$0: ERROR: in output_modtime:" \
-		 "TZ=UTZ ls -D '%FT%T+00:00' -ld $FILENAME | awk .. failed, error codes: $status0 and $status1" 1>&2
+		 "TZ=UTZ $LS_TOOL -D '%FT%T+00:00' -ld $FILENAME | awk .. failed, error codes: $status0 and $status1" 1>&2
 	    exit 1
 	fi
 	;;
@@ -452,12 +459,12 @@ else
 
 	# Try ls -D:
 	#
-	TZ=UTZ ls -D '%FT%T+00:00' -ld "$TOP_FILE" > /dev/null 2>&1
+	TZ=UTZ "$LS_TOOL" -D '%FT%T+00:00' -ld "$TOP_FILE" > /dev/null 2>&1
 	status="$?"
 	if [[ $status -eq 0 ]]; then
 	    MODTIME_METHOD="ls_D"
 	    if [[ $V_FLAG -ge 5 ]]; then
-		echo "$0: debug[5]: TZ=UTZ ls -D '%FT%T+00:00' -ld works, MODTIME_METHOD: $MODTIME_METHOD" 1>&2
+		echo "$0: debug[5]: TZ=UTZ $LS_TOOL -D '%FT%T+00:00' -ld works, MODTIME_METHOD: $MODTIME_METHOD" 1>&2
 	    fi
 
 	else
@@ -479,6 +486,8 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
     echo "$0: debug[3]: CAP_W_FLAG_FOUND=$CAP_W_FLAG_FOUND" 1>&2
     echo "$0: debug[3]: MODTIME_METHOD=$MODTIME_METHOD" 1>&2
+    echo "$0: debug[3]: STAT_TOOL=$STAT_TOOL" 1>&2
+    echo "$0: debug[3]: LS_TOOL=$LS_TOOL" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2

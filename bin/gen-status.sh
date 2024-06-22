@@ -111,11 +111,12 @@ if [[ -z "$JPARSE_TOOL" ]]; then
     echo "$0: FATAL: jparse tool is not installed or not in \$PATH" 1>&2
     exit 5
 fi
+#
 STAT_TOOL=$(type -P stat)
 if [[ -z "$STAT_TOOL" ]]; then
     STAT_TOOL="false"	# we have no stat tool
 fi
-
+#
 LS_TOOL=$(type -P ls)
 if [[ -z "$LS_TOOL" ]]; then
     echo "$0: FATAL: ls tool is not installed or not in \$PATH" 1>&2
