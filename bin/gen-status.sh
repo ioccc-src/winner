@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.5.2 2024-04-30"
+export VERSION="1.5.3 2024-06-21"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -113,8 +113,7 @@ if [[ -z "$JPARSE_TOOL" ]]; then
 fi
 STAT_TOOL=$(type -P stat)
 if [[ -z "$STAT_TOOL" ]]; then
-    echo "$0: FATAL: stat tool is not installed or not in \$PATH" 1>&2
-    exit 5
+    STAT_TOOL="false"	# we have no stat tool
 fi
 
 LS_TOOL=$(type -P ls)
@@ -697,8 +696,6 @@ export NEXT_DIR="next"
 #
 # Try macOS stat:
 #
-#	TZ=UTC stat -f '%Sm' -t '%FT%T+00:00' filename
-#
 TZ=UTC "$STAT_TOOL" -f '%Sm' -t '%FT%T+00:00' "$TOP_FILE" > /dev/null 2>&1
 status="$?"
 if [[ $status -eq 0 ]]; then
@@ -710,8 +707,6 @@ if [[ $status -eq 0 ]]; then
 else
 
     # Try RHEL Linux stat:
-    #
-    #	TZ=UTC stat -c '%y' faq.md | sed -e 's/ /T/' -e 's/\.[0-9]* //' -e 's/\([0-9][0-9]\)$/:&/'
     #
     # NOTE: We only need to test the stat command.
     #
@@ -726,8 +721,6 @@ else
     else
 
 	# Try ls -D:
-	#
-	#	TZ=UTZ ls -D '%FT%T+00:00' -ld
 	#
 	TZ=UTZ "$LS_TOOL" -D '%FT%T+00:00' -ld "$TOP_FILE" > /dev/null 2>&1
 	status="$?"

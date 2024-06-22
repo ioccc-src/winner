@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.8 2024-04-28"
+export VERSION="1.3.9 2024-06-21"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -104,6 +104,10 @@ export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc/blob/master"
 export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 export CAP_W_FLAG_FOUND=
 export MODTIME_METHOD=""
+STAT_TOOL=$(type -P stat)
+if [[ -z "$STAT_TOOL" ]]; then
+    STAT_TOOL="false"	# we have no stat tool
+fi
 
 
 # output_modtime - file modification time in W3C Datetime format:
@@ -136,11 +140,11 @@ function output_modtime
     # macOS stat
     #
     macos_stat)
-	TZ=UTC stat -f '%Sm' -t '%FT%T+00:00' "$FILENAME"
+	TZ=UTC "$STAT_TOOL" -f '%Sm' -t '%FT%T+00:00' "$FILENAME"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: in output_modtime:" \
-		 "TZ=UTC stat -f '%Sm' -t '%FT%T+00:00' $FILENAME failed, error code: $status" 1>&2
+		 "TZ=UTC $STAT_TOOL -f '%Sm' -t '%FT%T+00:00' $FILENAME failed, error code: $status" 1>&2
 	    exit 1
 	fi
 	;;
@@ -148,12 +152,12 @@ function output_modtime
     # RHEL Linux stat
     #
     RHEL_stat)
-	TZ=UTC stat -c '%y' "$FILENAME" | sed -e 's/ /T/' -e 's/\.[0-9]* //' -e 's/\([0-9][0-9]\)$/:&/'
+	TZ=UTC "$STAT_TOOL" -c '%y' "$FILENAME" | sed -e 's/ /T/' -e 's/\.[0-9]* //' -e 's/\([0-9][0-9]\)$/:&/'
 	status0="${PIPESTATUS[0]}"
 	status1="${PIPESTATUS[1]}"
 	if [[ $status0 -ne 0 || $status1 -ne 0 ]]; then
 	    echo "$0: ERROR: in output_modtime:" \
-		 "TZ=UTC stat -c '%y' $FILENAME | sed .. failed, error codes: $status0 and $status1" 1>&2
+		 "TZ=UTC $STAT_TOOL -c '%y' $FILENAME | sed .. failed, error codes: $status0 and $status1" 1>&2
 	    exit 1
 	fi
 	;;
@@ -422,37 +426,31 @@ fi
 #
 # Try macOS stat:
 #
-#	TZ=UTC stat -f '%Sm' -t '%FT%T+00:00' filename
-#
-TZ=UTC stat -f '%Sm' -t '%FT%T+00:00' "$TOP_FILE" > /dev/null 2>&1
+TZ=UTC "$STAT_TOOL" -f '%Sm' -t '%FT%T+00:00' "$TOP_FILE" > /dev/null 2>&1
 status="$?"
 if [[ $status -eq 0 ]]; then
     MODTIME_METHOD="macos_stat"
     if [[ $V_FLAG -ge 5 ]]; then
-        echo "$0: debug[5]: TZ=UTC stat -f '%Sm' -t '%FT%T+00:00' works, MODTIME_METHOD: $MODTIME_METHOD" 1>&2
+        echo "$0: debug[5]: TZ=UTC $STAT_TOOL -f '%Sm' -t '%FT%T+00:00' works, MODTIME_METHOD: $MODTIME_METHOD" 1>&2
     fi
 
 else
 
     # Try RHEL Linux stat:
     #
-    #	TZ=UTC stat -c '%y' faq.md | sed -e 's/ /T/' -e 's/\.[0-9]* //' -e 's/\([0-9][0-9]\)$/:&/'
-    #
     # NOTE: We only need to test the stat command.
     #
-    TZ=UTC stat -c '%y' "$TOP_FILE" > /dev/null 2>&1
+    TZ=UTC "$STAT_TOOL" -c '%y' "$TOP_FILE" > /dev/null 2>&1
     status="$?"
     if [[ $status -eq 0 ]]; then
 	MODTIME_METHOD="RHEL_stat"
 	if [[ $V_FLAG -ge 5 ]]; then
-	    echo "$0: debug[5]: TZ=UTC stat -c '%y' works, MODTIME_METHOD: $MODTIME_METHOD" 1>&2
+	    echo "$0: debug[5]: TZ=UTC $STAT_TOOL -c '%y' works, MODTIME_METHOD: $MODTIME_METHOD" 1>&2
 	fi
 
     else
 
 	# Try ls -D:
-	#
-	#	TZ=UTZ ls -D '%FT%T+00:00' -ld
 	#
 	TZ=UTZ ls -D '%FT%T+00:00' -ld "$TOP_FILE" > /dev/null 2>&1
 	status="$?"
