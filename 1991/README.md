@@ -14,10 +14,10 @@ all of the other entries this year:
 
 - [Grand Prize](westley/index.html) by [Brian
 Westley](../authors.html#Brian_Westley)
-- [Most Well Rounded](dds/index.html) by [Diomidis
+- [Most well rounded](dds/index.html) by [Diomidis
 Spinellis](../authors.html#Diomidis_Spinellis)
-- [Best Of Show](brnstnd/index.html) by [Daniel J.
-Bernstein](../authors.html#Daniel_J._Bernstein)
+- [Best of Show](brnstnd/index.html) by [Daniel J.
+Bernstein](../authors.html#Daniel_J_Bernstein)
 
 Name and address information are separated from the actual program
 prior to judging.  This eliminates any chance that we would bias our
@@ -29,7 +29,7 @@ a winning entry for the past 5 years!
 ## A few notes regarding possible changes to the contest:
 
 We did not give awards to some traditional contest categories such as
-"Best Layout" or "Worst Abuse of the Rules".  We felt that to do so
+"_Best Layout_" or "_Worst Abuse of the Rules_".  We felt that to do so
 would deny awards to more deserving entries.  These categories have not
 been eliminated, and will likely be considered in future years.
 
@@ -52,7 +52,7 @@ programs that use these are now portable enough to be valid entries.
 
 We may allow programs to make use of the X Window System libs and include
 files, provided that they can operate with a system running at the level
-of at least X11r4.  Requiring the use of imake, a specific window manager,
+of at least X11r4.  Requiring the use of `imake`, a specific window manager,
 specific display hardware, or a specific user interface (`Openl**k`,
 `M*tif`, ...) is likely not to be allowed.  We will provide a more detailed
 explanation of our viewpoint in next year's rules.
@@ -60,12 +60,10 @@ explanation of our viewpoint in next year's rules.
 In order to encourage more 'normal' looking C programs, we are considering
 the following change to the maximum size rule:
 
-```
-    Your source, not counting any <space>, <tab>, and a <newline> character,
-    and not counting any ';', '{' and '}' character followed by a <newline>
-    character, must be 1536 bytes or less.  The entire source, counting all
-    characters, be 4096 bytes or less.
-```
+> Your source, not counting any `<space>`, `<tab>`, and a `<newline>` character, and
+not counting any '`;`', '`{`' and '`}`' character followed by a `<newline>` character,
+must be 1536 bytes or less.  The entire source, counting all characters, be 4096
+bytes or less.
 
 Some thought has been given to adding some C++ categories, however this
 is not likely to happen soon.  We are waiting until C++ compilers become
