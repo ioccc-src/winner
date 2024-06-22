@@ -42,6 +42,22 @@
 	    "entry_text" : "original source code"
 	},
 	{
+	    "file_path" : "snake-colours.sh",
+	    "inventory_order" : 60,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "script to configure colours of game"
+	},
+	{
+	    "file_path" : "play.sh",
+	    "inventory_order" : 61,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "like snake-colours.sh with pre-configured gameplay modes"
+	},
+	{
 	    "file_path" : "COMPILING.html",
 	    "inventory_order" : 100,
 	    "OK_to_edit" : false,
@@ -96,22 +112,6 @@
 	    "display_as" : "html",
 	    "display_via_github" : false,
 	    "entry_text" : "many different gameplay modes described"
-	},
-	{
-	    "file_path" : "play.sh",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "like snake-colours.sh with pre-configured gameplay modes"
-	},
-	{
-	    "file_path" : "snake-colours.sh",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "script to configure colours of game"
 	},
 	{
 	    "file_path" : "spoilers.html",
