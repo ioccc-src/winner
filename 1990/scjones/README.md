@@ -28,12 +28,10 @@ ISO character set.
 
 The Author sent us this note after he was informed that he won:
 
-```
-    Although I am quite grateful for the "ANSI Committee's Worst Abuse of C" title
-    (were you aware that I am a member of the committee or is the double meaning
-    unintentional?), I was really hoping for something more along the lines of
-    "Closest Resemblance to Line Noise."  :-)
-```
+> Although I am quite grateful for the "`ANSI Committee's Worst Abuse of C`" title
+(were you aware that I am a member of the committee or is the double meaning
+unintentional?), I was really hoping for something more along the lines of
+"`Closest Resemblance to Line Noise`."  :-)
 
 ... it was unintentional.
 

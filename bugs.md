@@ -892,7 +892,10 @@ where this occurred was fixed but this one should not be fixed. Thank you.
 
 Although Cody fixed this to not enter an infinite loop if the arg (converted to
 a number) is < 0 the lack of an arg check at all was kept in to make it like the
-original. The reason for the < 0 check is it floods the screen.
+original. The reason for the < 0 check is it floods the screen (yes this is
+indeed inconsistent with some other entries but it is not worth the time spent,
+maybe, to change it back, especially as it is annoying to have the screen
+flooded).
 
 
 

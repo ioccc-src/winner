@@ -4,6 +4,10 @@
     make all
 ```
 
+There is an alternate version for those with an old enough compiler or for those
+who wish to see how C changed over the years. See [Alternate
+code](#alternate-code) below.
+
 
 ### Bugs and (Mis)features:
 
@@ -40,7 +44,8 @@ The alternate code is provided to show how C changed.
 
 ### Alternate build:
 
-If you have an old enough compiler try and to see how C has changed over the years:
+If you have an old enough compiler or if you want to see how C changed over the
+years:
 
 ``` <!---sh-->
     make alt
@@ -48,6 +53,8 @@ If you have an old enough compiler try and to see how C has changed over the yea
 
 
 ### Alternate use:
+
+Assuming that `westley.alt` compiles:
 
 ``` <!---sh-->
     ./westley.alt <number>
@@ -88,7 +95,7 @@ Lint complains about everything - null effect, xxx may be used before
 set, statement not reached, return(e) and return.  Lint dumps core
 on some systems.  My personal favorite lint complaint is
 
-**_"warning: eroticism unused in function main"._**
+> warning: eroticism unused in function `main`.
 
 Also obviously, `(char)lotte` and `(char*)lie` are incompatible types...
 

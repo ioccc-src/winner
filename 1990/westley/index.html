@@ -403,6 +403,9 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- BEFORE: 1st line of markdown file: 1990/westley/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make all</code></pre>
+<p>There is an alternate version for those with an old enough compiler or for those
+who wish to see how C changed over the years. See <a href="#alternate-code">Alternate
+code</a> below.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please **DO NOT** fix</code></pre>
@@ -415,9 +418,11 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <h2 id="alternate-code">Alternate code:</h2>
 <p>The alternate code is provided to show how C changed.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<p>If you have an old enough compiler try and to see how C has changed over the years:</p>
+<p>If you have an old enough compiler or if you want to see how C changed over the
+years:</p>
 <pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
+<p>Assuming that <code>westley.alt</code> compiles:</p>
 <pre><code>    ./westley.alt &lt;number&gt;</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>If you would rather “Daisy” someone other than Westley, rename
@@ -441,7 +446,9 @@ have an “English-like” syntax.</p>
 <p>Lint complains about everything - null effect, xxx may be used before
 set, statement not reached, return(e) and return. Lint dumps core
 on some systems. My personal favorite lint complaint is</p>
-<p><strong><em>“warning: eroticism unused in function main”.</em></strong></p>
+<blockquote>
+<p>warning: eroticism unused in function <code>main</code>.</p>
+</blockquote>
 <p>Also obviously, <code>(char)lotte</code> and <code>(char*)lie</code> are incompatible types…</p>
 <!--
 
