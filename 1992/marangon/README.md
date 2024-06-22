@@ -22,10 +22,11 @@ NOTE: Some compilers have had trouble optimizing this entry.
 
 NOTE: Some systems need to compile with `-ltermcap` as well as `-lcurses`.
 
-NOTE: The original winning source [marangon.orig.c](%%REPO_URL%%/1992/marangon/marangon.orig.c), found in
-the archive directory, assumed that `exit(3)` returns a value which cause
-problems for some systems where `exit(3)` returns a `void`.  The file
-[marangon.c](%%REPO_URL%%/1992/marangon/marangon.c) avoids this problem.
+NOTE: The original winning source
+[marangon.orig.c](%%REPO_URL%%/1992/marangon/marangon.orig.c) assumed that
+`exit(3)` returns a value which cause problems for some systems where `exit(3)`
+returns a `void`.  The file [marangon.c](%%REPO_URL%%/1992/marangon/marangon.c)
+avoids this problem.
 
 
 ## Author's remarks:

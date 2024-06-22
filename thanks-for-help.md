@@ -1841,6 +1841,8 @@ Cody also added the [try.sh](%%REPO_URL%%/1992/albert/try.sh) and
 [try.alt.sh](%%REPO_URL%%/1992/albert/try.alt.sh) scripts that correspond to the entry and
 the alternate code.
 
+Even so, check [1992/albert in bugs.html](bugs.html#1992_albert).
+
 
 <div id="1992_ant">
 ## Winning entry: [1992/ant](1992/ant/index.html)
@@ -1960,7 +1962,8 @@ entries?](faq.html#faq4_6) for more details.
 
 
 Yusuke also noted that there is a bug in the program where right after starting
-it moves towards the right but if you click the mouse it goes back.
+it moves towards the right but if you click the mouse it goes back. See
+[1992/kivinen in bugs.html](bugs.html#1992_kivinen) for more details.
 
 
 <div id="1992_lush">
@@ -2035,8 +2038,8 @@ it used to be.
 </div>
 
 [Cody](#cody) fixed this to work for `clang` by changing the third and fourth arg of
-`main()` to be `char ** inside `main()`; `clang` requires args 2 - 4 to be `char
-** and some versions do not even allow a fourth arg.
+`main()` to be `char **` inside `main()`; `clang` requires args 2 - 4 to be `char
+**` and some versions do not even allow a fourth arg.
 
 He also added the alternate version that the author gave in the remarks that is
 specifically for the USA rather than the world. This had to be fixed for `clang`

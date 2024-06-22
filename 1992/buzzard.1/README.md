@@ -228,7 +228,7 @@ to be executed, set the temporary to `1`.
 Thanks to Bill Pugh for bringing the loop-ability of the AE to
 my attention.
 
-`buzzard.1` was originally named 'cb', for obvious reasons, and is
+`buzzard.1` was originally named `cb`, for obvious reasons, and is
 dedicated to the memory of Charles Barrett.
 
 

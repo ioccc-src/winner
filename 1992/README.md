@@ -27,9 +27,9 @@ high quality.
 
 FYI: By tradition, we do not record the count of the number entries,
 nor do we give our our guess as to the number of entries
-received.  For folks who wonder, we can say that we consumed
-about 2000 pages of output (printing between 2 and 4 normal
-pages per side) during the judging process this year.
+received.  For folks who wonder, we can say that **we consumed
+about _2000 pages of output_ (printing between 2 and 4 normal
+pages per side)** during the judging process this year.
 
 The new instructions for submitting entries worked well - we were
 able to write scripts to unpack them and eliminate duplicates.
@@ -49,7 +49,7 @@ a winning entry for the past 6 years!
 ## A few notes regarding future contests:
 
 We did not give awards to some traditional contest categories such as
-"Best Layout".  We felt that to do so would deny awards to more
+"_Best Layout_".  We felt that to do so would deny awards to more
 deserving entries.  These categories have not been eliminated.  We will
 likely be awarding them in future years.
 
@@ -59,10 +59,11 @@ judging process a little harder, so we may request that this not
 be done this in the future.
 
 Some thought has been given to a separate obfuscated perl contest.
-Watch comp.lang.perl for details!
+Watch _comp.lang.perl_ for details!
 
-Be sure to wait until the 1993 rules are posted before submitting entries.
-We may fine tune the rules to reflect the some ideas above.
+Be sure to wait until the [1993 rules](../1993/rules.txt) are posted before
+submitting entries.  We may fine tune the rules to reflect some of the ideas
+above.
 
 Please send us comments and suggestions what we have expressed above.
 Also include anything else that you would like to see in future contests.
