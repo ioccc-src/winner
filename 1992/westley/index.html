@@ -413,9 +413,9 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <pre><code>    ./whereami.sh lat long</code></pre>
 <p>Where <code>lat</code> and <code>long</code> correspond to your latitude and longitude.</p>
 <p>NOTE: you <strong>MUST</strong> have a terminal that is at least 80 columns for this to show
-properly. The <code>whereami</code> and <code>whereami.alt</code> code checks this but it is not
-prohibitive if it cannot be compiled and linked (it uses curses); instead one
-should just use the <code>westley</code> and <code>westley.alt</code> programs directly.</p>
+properly. The <code>whereami.sh</code> and <code>whereami.alt.sh</code> scripts check this but if you
+do not have such a terminal you can run the <code>whereami</code> (or for the alternate code
+described below, <code>whereami.alt</code>) directly.</p>
 <h2 id="try">Try:</h2>
 <pre><code>    ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
@@ -424,17 +424,26 @@ should just use the <code>westley</code> and <code>westley.alt</code> programs d
 <pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <pre><code>    ./whereami.alt.sh lat long</code></pre>
-<p>NOTE: this alternative version also needs a terminal with at least 80 columns.</p>
+<p>NOTE: this alternative version also needs a terminal with at least 80 columns
+but if you do not have such a terminal you can run <code>whereami.alt</code> directly.</p>
 <h3 id="alternate-try">Alternate try:</h3>
-<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/westley/try.sh">try.sh</a> script uses both the original entry and the alternate code
-so one can try the same script for both:</p>
+<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/westley/try.sh">try.sh</a> script uses both the original
+entry and the alternate code so one can try the same script for both:</p>
 <pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>To find the approximate place where this entry was judged, type:</p>
-<pre><code>    ./whereami 37 -122  # NOTE: - means west of meridian
+<pre><code>    ./whereami.sh 37 -122       # NOTE: - means west of meridian
 
-    # or if you don&#39;t have curses installed:
-    ./westley 37 -122   # NOTE: - means west of meridian</code></pre>
+        # or if you don&#39;t have at least 80 columns and want to see what it
+        # looks like anyway:
+    ./whereami 37 -122  # NOTE: - means west of meridian</code></pre>
+<p>If you wish to see this on the US map:</p>
+<pre><code>        make alt
+    ./whereami.alt.sh 37 -122   # NOTE: - means west of meridian
+
+        # or if you don&#39;t have at least 80 columns and want to see what it
+        # looks like anyway:
+    ./whereami.alt.sh 37 -122   # NOTE: - means west of meridian</code></pre>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>Run the program with your latitude &amp; longitude as integer
 arguments; it will produce a map made up of <code>'!'</code> with the given
@@ -487,16 +496,16 @@ blank line. It’s just for show, really.</p>
 be just off the map; this is an unavoidable artifact. The map
 is reasonably accurate.</p>
 <h3 id="here-are-some-cities-you-might-like-to-try">Here are some cities you might like to try:</h3>
-<pre><code>    New York         41  -74
-    London           52   0
-    Moscow           56   38
-    New Delhi        29   77
-    Sydney          -34   151
-    Los Angeles      34  -118
-    Paris            45   2
+<pre><code>    New York        41  -74
+    London                      52   0
+    Moscow                      56   38
+    New Delhi       29   77
+    Sydney                      -34   151
+    Los Angeles     34  -118
+    Paris                       45   2
     Rio de Janeiro  -23  -43
-    Beijing          40   116
-    Tokyo            36   140</code></pre>
+    Beijing                     40   116
+    Tokyo                       36   140</code></pre>
 <p>For a domestic (US) version with higher resolution, try:</p>
 <pre><code>    main(l,a,n,d)char**a;{for(d=atoi(a[1])/2*80-atoi(a[2])-2043;
     n=&quot;bnaBCOCXdBBHGYdAP[A M E R I C A].AqandkmavX|ELC}BOCd&quot;

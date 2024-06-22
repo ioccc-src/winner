@@ -134,6 +134,7 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	${LN} -sf ${PROG} whereami
 	@echo "NOTE: your terminal must be at least 80 columns wide for this to work right"
 
 # alternative executable
@@ -143,6 +144,7 @@ alt: data ${ALT_TARGET}
 
 ${PROG}.alt: ${PROG}.alt.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	${LN} -sf ${PROG}.alt whereami.alt
 	@echo "NOTE: your terminal must be at least 80 columns wide for this to work right"
 
 
