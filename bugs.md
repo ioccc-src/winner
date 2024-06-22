@@ -1221,7 +1221,7 @@ for modern systems as it doesn't work for gcc either, even before any changes.
 This might be a misunderstanding or it might be that having 80 columns (resized)
 does not count (though the output before the fix of the 80 column requirement
 showed was correct when at 80-columns so it seems like this could be a bug if
-not a misunderstanding).
+it's not a misunderstanding).
 
 
 <hr style="width:10%;text-align:left;margin-left:0">

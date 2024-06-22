@@ -43,7 +43,7 @@ described below, `whereami.alt`) directly.
 
 ## Alternate code:
 
-The author provided a version for the US which we added. To build:
+The author provided a version for the US which we added.
 
 
 ### Alternate build:
@@ -110,14 +110,14 @@ vertically.  The map is a Mercator projection with equal spacing
 of the latitudes, so the areas near the poles are very distorted.
 Latitudes near the poles and Antarctica are not shown.
 
-The program requires the ASCII character set, `putchar()`, `atoi()`,
+The program requires the ASCII character set, `putchar(3)`, `atoi(3)`,
 and a display that auto-wraps at 80 characters(!).  If your display
 does not work this way, you will have to massage the output;
 for example, you can redirect it to a file and edit it with vi,
 which will do auto-wrap for you.
 
 Lint complains that `main()` returns a random value and I'm not
-checking the value that `putchar()` returns.  Scandalous!
+checking the value that `putchar(3)` returns.  Scandalous!
 
 If you run it with fewer than 2 arguments, it will likely
 give you an exception, as it will access arguments that
@@ -132,7 +132,7 @@ a string; the first character is how many `!`s are printed
 (`'A'`=1, `'B'`=2, etc), the second character is how many `' '`s, the
 third is how many `!`s, etc.  ASCII characters less than `'A'`
 print no characters but still change the polarity, so any map
-of `' '`s and `'!'`s is possible.  This is done in the `putchar()`
+of `' '`s and `'!'`s is possible.  This is done in the `putchar(3)`
 argument as `33^l&1`, where `l` is the character `position+4`; if
 `l` is odd, `' '` is printed, if `l` is even, `'!'` is printed.
 
@@ -148,7 +148,7 @@ are opposite because latitude is decreasing and longitude is
 increasing as you go from upper left to lower right.  The offset
 is where the origin (latitude=0, longitude=0) is found.
 
-The position counting down to zero changes the `putchar()` from
+The position counting down to zero changes the `putchar(3)` from
 printing (`'!'` or `' '`) to printing (`'"'` or `'#'`).
 
 The `"H E L L O,   W O R L D!"` string inside the data string

@@ -419,7 +419,7 @@ described below, <code>whereami.alt</code>) directly.</p>
 <h2 id="try">Try:</h2>
 <pre><code>    ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
-<p>The author provided a version for the US which we added. To build:</p>
+<p>The author provided a version for the US which we added.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
@@ -455,13 +455,13 @@ resolution of the map is five degrees horizontally, ten degrees
 vertically. The map is a Mercator projection with equal spacing
 of the latitudes, so the areas near the poles are very distorted.
 Latitudes near the poles and Antarctica are not shown.</p>
-<p>The program requires the ASCII character set, <code>putchar()</code>, <code>atoi()</code>,
+<p>The program requires the ASCII character set, <code>putchar(3)</code>, <code>atoi(3)</code>,
 and a display that auto-wraps at 80 characters(!). If your display
 does not work this way, you will have to massage the output;
 for example, you can redirect it to a file and edit it with vi,
 which will do auto-wrap for you.</p>
 <p>Lint complains that <code>main()</code> returns a random value and I’m not
-checking the value that <code>putchar()</code> returns. Scandalous!</p>
+checking the value that <code>putchar(3)</code> returns. Scandalous!</p>
 <p>If you run it with fewer than 2 arguments, it will likely
 give you an exception, as it will access arguments that
 don’t exist and characters before a string constant.</p>
@@ -472,7 +472,7 @@ a string; the first character is how many <code>!</code>s are printed
 (<code>'A'</code>=1, <code>'B'</code>=2, etc), the second character is how many <code>' '</code>s, the
 third is how many <code>!</code>s, etc. ASCII characters less than <code>'A'</code>
 print no characters but still change the polarity, so any map
-of <code>' '</code>s and <code>'!'</code>s is possible. This is done in the <code>putchar()</code>
+of <code>' '</code>s and <code>'!'</code>s is possible. This is done in the <code>putchar(3)</code>
 argument as <code>33^l&amp;1</code>, where <code>l</code> is the character <code>position+4</code>; if
 <code>l</code> is odd, <code>' '</code> is printed, if <code>l</code> is even, <code>'!'</code> is printed.</p>
 <p>The position of latitude &amp; longitude is changed into a single
@@ -486,7 +486,7 @@ five degrees of change moves the location one character. The signs
 are opposite because latitude is decreasing and longitude is
 increasing as you go from upper left to lower right. The offset
 is where the origin (latitude=0, longitude=0) is found.</p>
-<p>The position counting down to zero changes the <code>putchar()</code> from
+<p>The position counting down to zero changes the <code>putchar(3)</code> from
 printing (<code>'!'</code> or <code>' '</code>) to printing (<code>'"'</code> or <code>'#'</code>).</p>
 <p>The <code>"H E L L O,   W O R L D!"</code> string inside the data string
 prints the line of blanks past <a href="https://en.wikipedia.org/wiki/Tierra_del_Fuego">Tierra del
