@@ -754,6 +754,8 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
     echo "$0: debug[3]: JPARSE_TOOL=$JPARSE_TOOL" 1>&2
+    echo "$0: debug[3]: STAT_TOOL=$STAT_TOOL" 1>&2
+    echo "$0: debug[3]: LS_TOOL=$LS_TOOL" 1>&2
     echo "$0: debug[3]: IOCCC_STATUS_VERSION=$IOCCC_STATUS_VERSION" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
