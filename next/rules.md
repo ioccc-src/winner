@@ -177,12 +177,12 @@ file to a new filename and then modify that copy.
 
 ## Rule 6
 
-**`|`**   I am not a rule, I am a `free(void *human)`!
+**`|`**   I am not a rule, I am a `free(void *human);` ‼️
 
+**`|`**   while (!(ioccc(rule(you(are(number(6)))))) {<br>
+**`|`**       ha_ha_ha();<br>
+**`|`**   }
 
-``` <!---c-->
-|   while (!understand(ioccc(rule(that(you(are(number(6)))))))) { ha_ha_ha(); }
-```
 
 
 ## Rule 7
