@@ -449,7 +449,7 @@ just <code>exit</code> or <code>logout</code>? Hint: see the authors’ remarks.
 documented, are not considered bugs as such in the context of the contest.</p>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>The authors supplied us with a slightly smaller unformatted version
-of the program which we include below:</p>
+of the program:</p>
 <pre><code>    #define D ,close(
     char*c,q[512],m[256],*v[99],**u,*i[3];int f[2],p;main(){for(m[m[60]=m[62]=
     32]=m[*m=124[m]=9]=6;e(-8),gets(1+(c=q))||(exit(0),0);r(0,0))for(;*++c;);}
@@ -460,9 +460,10 @@ of the program which we include below:</p>
     0),e(open(*i,0)):5,t?dup2(t,1)D t):i[2]?9 D
     1),e(creat(i[2],438)):2,e(execvp(*u,u))):e(chdir(u[1])*2):6;}
     e(x){x&lt;0?write(2,&quot;?\n$ &quot;-x/4,2),x+1||(exit(1),0):5;}</code></pre>
-<p>and in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/tbr/tbr.alt.c">alternate source</a>. It has the <code>exit()</code> returns <code>void</code> fix
-as well as the <code>gets()</code> to <code>fgets()</code> fix applied to it to make it functionally
-equivalent like the authors intended.</p>
+<p>This is the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/tbr/tbr.alt.c">alternate source</a> except that it
+has the <code>exit()</code> returns <code>void</code> fix as well as the <code>gets(3)</code> to <code>fgets(3)</code> fix
+applied to it to make it functionally equivalent like the authors intended. The
+above code is their original alternate code.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>

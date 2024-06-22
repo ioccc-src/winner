@@ -7,8 +7,9 @@ You may then wish to look at the Author's remarks for even more details.
 
 This year, the Grand Prize won a standing ovation at USENIX.
 
-The ["Strangest abuse of the rules"](stig/index.html) award was given this
-year to stress the fact that starting in 1991, entries should be shell-specific.
+The [Strangest abuse of the rules](stig/index.html) award was given this
+year to stress the fact that starting in [1991](../years.html#1991), entries
+should be shell-specific.
 
 This year was the first year that we accepted ANSI C entries.  It was
 interesting to note that the ANSI C entries were as a whole less portable than
@@ -20,7 +21,7 @@ her role as official chef of the contest.  Her opinions regarding
 some of the contest entries were appreciated.
 
 [Rules](rules.txt) and [results](../years.html#1990) were
-posted to comp.lang.c, comp.sources.unix, and alt.sources.  They have been made
+posted to _comp.lang.c_, _comp.sources.unix_, and _alt.sources_.  They have been made
 available on a wide number of USENET archive sites such as uunet.
 
 

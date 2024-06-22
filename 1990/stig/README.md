@@ -11,7 +11,7 @@
     make all
 ```
 
-NOTE: that's not a typo or mistake but one can also do:
+**NOTE**: that's not a typo or mistake but one can also do:
 
 ``` <!---sh-->
     ./o
@@ -25,7 +25,7 @@ C-shell alias to a Bourne-like shell alias.
 
 Note that `shst.c` is renamed to [stig.c](%%REPO_URL%%/1990/stig/stig.c) in the distribution.
 
-WARNING: This program's `how to compile` is too specific to a particular shell.
+**WARNING**: This program's `how to compile` is too specific to a particular shell.
 The obfuscation of this program is more related to shell obfuscation than C
 obfuscation.  This type of entry will not be permitted in future contests.
 

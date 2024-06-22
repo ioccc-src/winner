@@ -419,8 +419,12 @@ pre, code {
 blockquote {
     margin: 1em 0 1em 1.7em;
     padding-left: 1em;
-    border-left: 2px solid #e6e6e6;
-    color: inherit;
+    border-left: 4px solid darkgrey;
+    font-style: italic;
+}
+
+blockquote p {
+    color: blue;
 }
 
 a {

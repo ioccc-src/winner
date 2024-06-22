@@ -4132,6 +4132,8 @@
 2020,ferguson1,Makefile,30,true,makefile,true,entry Makefile
 2020,ferguson1,prog.alt.c,40,true,c,true,alternate source code
 2020,ferguson1,prog.orig.c,50,false,c,true,original source code
+2020,ferguson1,snake-colours.sh,60,true,shellscript,true,script to configure colours of game
+2020,ferguson1,play.sh,61,true,shellscript,true,like snake-colours.sh with pre-configured gameplay modes
 2020,ferguson1,COMPILING.html,100,false,html,false,about compiling
 2020,ferguson1,HACKING.html,100,false,html,false,how one might add to or modify code
 2020,ferguson1,bugs.html,100,false,html,false,things that look like bugs but are not
@@ -4139,8 +4141,6 @@
 2020,ferguson1,chocolate-cake.html,100,false,html,false,Double-layered Chocolate Fudge Cake Recipe
 2020,ferguson1,crazy.log.html,100,false,html,false,explains various odd screen dumps
 2020,ferguson1,gameplay.html,100,false,html,false,many different gameplay modes described
-2020,ferguson1,play.sh,100,true,shellscript,true,like snake-colours.sh with pre-configured gameplay modes
-2020,ferguson1,snake-colours.sh,100,true,shellscript,true,script to configure colours of game
 2020,ferguson1,spoilers.html,100,false,html,false,spoilers about the code
 2020,ferguson1,terminals.html,100,false,html,false,terminal capabilities and dimensions and colours
 2020,ferguson1,troubleshooting.html,100,false,html,false,troubleshooting Snake

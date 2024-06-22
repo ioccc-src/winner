@@ -45,7 +45,7 @@ than 4, but when I do that I get a complaint "defines nested too deeply".
 
 ### Obfuscation spoiler:
 
-This is another rot13 job (believe it or not) - the `#defines` are a
+This is another rot13 job (believe it or not) - the `#define`s are a
 novel way of adding tokens: `#define b12(x) 12 x` means that at
 some point in the source a `12` is followed by the compressed nested
 `#define`s. The `b12` gets the previous compression as an argument, and
