@@ -423,10 +423,6 @@ blockquote {
     font-style: italic;
 }
 
-blockquote p {
-    color: blue;
-}
-
 a {
     outline-color: transparent;
     text-decoration: none;
@@ -731,6 +727,10 @@ transition: all .3s ease;
     padding-top: 0;
     padding-bottom: 0;
     color: black;
+}
+
+.content blockquote p {
+    color: blue;
 }
 
 /* content links */
