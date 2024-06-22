@@ -1231,6 +1231,10 @@ it's not a misunderstanding).
 <hr style="width:10%;text-align:left;margin-left:0">
 
 
+<div id="1993_ant">
+## 1993/ant
+</div>
+
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1993/ant/ant.c](%%REPO_URL%%/1993/ant/ant.c)
 ### Information: [1993/ant/index.html](1993/ant/index.html)
@@ -1246,13 +1250,16 @@ The author stated that:
     will generate a "Pattern too long" error, which is not the real error.
 ```
 
-
 ### STATUS: missing file - please provide it
 
 The author wrote in the documentation file [ant.txt](1993/ant/ant.txt) that
 there is a version of the code that is not obfuscated. This file, `agag.c` does
 not exist in the archive. Do you have it? Please provide it!
 
+
+<div id="1993_cmills">
+## 1993/cmills
+</div>
 
 ### STATUS: known bug - please help us fix
 ### Source code: [1993/cmills/cmills.c](%%REPO_URL%%/1993/cmills/cmills.c)
@@ -1340,6 +1347,10 @@ Of course if you do something like:
 
 it will work fine.
 
+
+<div id="1993_vanb">
+## 1993/vanb
+</div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1993/vanb/vanb.c](%%REPO_URL%%/1993/vanb/vanb.c)
@@ -1493,6 +1504,8 @@ If you join the lines you end up with:
 ``` <!---c-->
     #include <stdio.h>
 ```
+
+(well, you get `include <stdio.h>` but it ends up as `#include <stdio.h>`.)
 
 If you look at column 25 which is the end of the word 'mh111' and you go down to
 the next row you'll see a 0 and if you go one row down another 0. This is the
