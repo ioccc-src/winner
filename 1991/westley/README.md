@@ -157,7 +157,7 @@ Why is win better than draw? Because everyone knows how to draw:
 >
 > **Falken**: Exactly. There's no way to win. The game itself is pointless.  But
 back at the [International Obfuscated C Code Contest judges' room](../../judges.html) they believe
-that you can win tic-tac-toe, that there can be acceptable draws.
+that you can win **tic-tac-toe**, that there can be acceptable draws.
 
 Try not to cheat (even though it's very easy :-) ), the computer has not learned
 how to catch you doing it.
