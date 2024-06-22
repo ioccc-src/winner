@@ -179,9 +179,9 @@ file to a new filename and then modify that copy.
 
 **`|`**   I am not a rule, I am a `free(void *human);` ‼️
 
-**`|`**   while (!(ioccc(rule(you(are(number(6)))))) {<br>
-**`|`**       ha_ha_ha();<br>
-**`|`**   }
+**`|`**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`while (!(ioccc(rule(you(are(number(6)))))) {`<br>
+**`|`**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`ha_ha_ha();`<br>
+**`|`**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`}`
 
 
 
