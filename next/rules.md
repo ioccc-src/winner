@@ -179,8 +179,9 @@ file to a new filename and then modify that copy.
 
 **`|`**   I am not a rule, I am a `free(void *human)`!
 
+
 ``` <!---c-->
-|       while (!understand(ioccc(rule(that(you(are(number(6)))))))) { ha_ha_ha(); }
+|   while (!understand(ioccc(rule(that(you(are(number(6)))))))) { ha_ha_ha(); }
 ```
 
 
