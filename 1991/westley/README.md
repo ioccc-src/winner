@@ -51,7 +51,7 @@ next move, recompile `nextmove.c` and play it again:
 
 ## Try:
 
-We have provided the shell script, [ttt](%%REPO_URL%%/1991/westley/ttt.sh), to make it easier to play the
+We have provided the shell script, [ttt.sh](%%REPO_URL%%/1991/westley/ttt.sh), to make it easier to play the
 game:
 
 ``` <!---sh-->
@@ -143,18 +143,21 @@ What happens if you make a move already made?
 Now go try and draw or better yet win (without cheating which is very easy :-) )!
 Why is win better than draw? Because everyone knows how to draw:
 
-```
-    Professor Falken: Did you ever play tic-tac-toe?
-    Jennifer Mack: Yeah. Of course.
-    Falken: But you don't any more.
-    Jennifer: No.
-    Falken: Why?
-    Jennifer: Because it's a boring game. It's always a tie.
-    Falken: Exactly. There's no way to win. The game itself is pointless.
-	    But back at the International Obfuscated C Code Contest judges'
-	    room they believe that you can win tic-tac-toe, that there can
-	    be acceptable draws.
-```
+> **Professor Falken**: Did you ever play **tic-tac-toe**?
+>
+> **Jennifer Mack**: Yeah. Of course.
+>
+> **Falken**: But you don't any more.
+>
+> **Jennifer**: No.
+>
+> **Falken**: Why?
+>
+> **Jennifer**: Because it's a boring game. It's always a tie.
+>
+> **Falken**: Exactly. There's no way to win. The game itself is pointless.  But
+back at the [International Obfuscated C Code Contest judges' room](../../judges.html) they believe
+that you can win tic-tac-toe, that there can be acceptable draws.
 
 Try not to cheat (even though it's very easy :-) ), the computer has not learned
 how to catch you doing it.

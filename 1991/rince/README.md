@@ -104,7 +104,7 @@ Key to map:
 
 The general idea of the game is to collect all the diamonds. This must
 be done in the minimum amount of moves. I've allowed a margin of 5
-moves which brings the moves allowed to `484`. (alter the value of `u` in
+moves which brings the moves allowed to `484` (alter the value of `u` in
 the program to set the max moves allowed).
 
 There are two types of boulders. Both can be pushed around, but only

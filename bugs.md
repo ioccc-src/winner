@@ -930,8 +930,8 @@ This is a feature, not a bug.
 ### Information: [1991/westley/index.html](1991/westley/index.html)
 
 There is a very simple way to always win. The program doesn't catch you and as
-someone called Cody's late grandmother said to him: 'it's not cheating unless
-you're caught'. :-)
+someone called Cody's late grandmother said to him: '_it's not cheating unless
+you're caught_'. :-)
 
 Please don't try and fix it as it's not a bug and was actually documented as a
 possibility. Can you find out how? There's also a way to make it so that even
