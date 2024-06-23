@@ -15,7 +15,7 @@ code](#alternate-code) section below.
 The current status of this entry is:
 
 ```
-    STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please DO NOT fix
 ```
 
 For more detailed information see [1994/dodsond2 in bugs.html](../../bugs.html#1994_dodsond2).

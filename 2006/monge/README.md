@@ -16,7 +16,7 @@ The current status of this entry is:
 
 ```
     STATUS: doesn't work with some platforms - please help us fix
-    STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please DO NOT fix
 ```
 
 For more detailed information see [2006/monge in bugs.html](../../bugs.html#2006_monge).

@@ -11,7 +11,7 @@ The current status of this entry is:
 
 ```
     STATUS: missing file - please provide it
-    STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please DO NOT fix
 ```
 
 For more detailed information see [1994/shapiro in bugs.html](../../bugs.html#1994_shapiro).

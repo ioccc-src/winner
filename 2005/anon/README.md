@@ -20,7 +20,7 @@ This will compile [anon.c](%%REPO_URL%%/2005/anon/anon.c) as `anon` to not use `
 The current status of this entry is:
 
 ```
-    STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please DO NOT fix
 ```
 
 For more detailed information see [2005/anon in bugs.html](../../bugs.html#2005_anon).

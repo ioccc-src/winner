@@ -23,7 +23,7 @@ The current status of this entry is:
 
 ```
     STATUS: known bug - please help us fix
-    STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please DO NOT fix
 ```
 
 For more detailed information see [2018/mills in bugs.html](../../bugs.html#2018_mills).
