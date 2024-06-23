@@ -729,8 +729,37 @@ transition: all .3s ease;
     color: black;
 }
 
+/* This rule makes sure that text in <blockquote><p>..</p></blockquote> is
+ * coloured right. Note that this MUST BE HERE and not earlier where the
+ * 'blockquote' rule is as otherwise the above '.content p' rule would
+ * override it.
+ *
+ * The following rationale with the blockquote rule above (in particular
+ * with italics) and the dark green selection, so that this is understood
+ * better:
+ *
+ *	 0.	Purple should NOT be used as this is being used for visited links.
+ *	 1.	Blue should NOT be used as this is being used for non-visited links.
+ *
+ * Now with context this might be okay but links can also be in blockquotes
+ * so this alone is reason not to: even if there are underlines in most
+ * links. Additionally:
+ *
+ *	 2. Bold seems to be too strong, especially when used for with a bright
+ *	 colour.
+ *
+ * Bold is used in headings (h1, h2, ..). A bold heading is not too much
+ * text (as headings tend to be short single lines): one does not become
+ * too tired looking at TOO MANY SHOUTING BOLD LETTERS. It seems preferable
+ * to reserve bold for those headings.
+ *
+ * Conclusions: dark blue seems to be slightly better but unfortunately the
+ * headings (h1, h2, ...) is too similar so we use dark green with italics
+ * as the choice.
+ */
 .content blockquote p {
-    color: blue;
+    color: darkgreen;
+    font-style: italic;
 }
 
 /* content links */
