@@ -10,7 +10,7 @@
 The current status of this entry is:
 
 ```
-    STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please DO NOT fix
 ```
 
 For more detailed information see [2006/borsanyi in bugs.html](../../bugs.html#2006_borsanyi).

@@ -13,7 +13,7 @@ this entry because it is SUPPOSED to crash and it needs debugging symbols.
 The current status of this entry is:
 
 ```
-    STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please DO NOT fix
 ```
 
 For more detailed information see [2019/endoh in bugs.html](../../bugs.html#2019_endoh).

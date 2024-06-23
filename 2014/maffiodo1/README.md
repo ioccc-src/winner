@@ -13,7 +13,7 @@ don't know how to do this for your system.
 The current status of this entry is:
 
 ```
-    STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please DO NOT fix
 ```
 
 For more detailed information see [2014/maffiodo1 in bugs.html](../../bugs.html#2014_maffiodo1).

@@ -14,7 +14,7 @@ that it should be fine, after the proper header files were added.
 The current status of this entry is:
 
 ```
-    STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please DO NOT fix
 ```
 
 For more detailed information see [2006/toledo2 in bugs.html](../../bugs.html#2006_toledo2).

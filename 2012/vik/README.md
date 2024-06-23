@@ -15,7 +15,7 @@ code](#alternate-code) section below.
 The current status of this entry is:
 
 ```
-    STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please DO NOT fix
 ```
 
 For more detailed information see [2012/vik in bugs.html](../../bugs.html#2012_vik).

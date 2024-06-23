@@ -15,7 +15,7 @@ entry.
 The current status of this entry is:
 
 ```
-    STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please DO NOT fix
     STATUS: missing or dead link - please provide them
 ```
 

@@ -10,7 +10,7 @@
 The current status of this entry is:
 
 ```
-    STATUS: INABIAF - please **DO NOT** fix
+    STATUS: INABIAF - please DO NOT fix
     STATUS: doesn't work with some platforms - please help us fix
 ```
 
