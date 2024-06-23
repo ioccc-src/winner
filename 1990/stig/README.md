@@ -54,10 +54,10 @@ K&R support nested comments when properly implemented, but what the heck.
 
     You are free to share and adapt this file under the terms of this license:
 
-	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
     For more information, see:
 
-	https://creativecommons.org/licenses/by-sa/4.0/
+        https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
