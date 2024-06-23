@@ -402,14 +402,14 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 
 <!-- BEFORE: 1st line of markdown file: 1993/cmills/README.md -->
 <h2 id="to-build">To build:</h2>
-<p>We recommend you try the alt version first so you can get a better idea of what
-this entry was like back in 1993. See the <a href="#original-code">original code</a>
-section below to run the original.</p>
+<p>We recommend you try the alternate version first so you can get a better idea of what
+this entry was like back in 1993 (though see the <a href="../../bugs.html#1993_cmills">known bug in
+bugs.html</a>). See the <a href="#original-code">original code</a>
+section below to run the original (the bug also exists here).</p>
 <pre><code>    make alt</code></pre>
 <p>NOTE: this entry requires the <code>X11/Xlib.h</code> header file and the X11 library to
-compile. If you’re under macOS and do not know how to install and use X11
-programs see <a href="../../faq.html#X11macos">FAQ 3.7 - How do I compile and use on macOS, an IOCCC entry that
-requires X11?</a>.</p>
+compile. If you don’t have the X11 installed see the <a href="../../faq.html#X11">FAQ on how to compile and
+run an entry that requires X11</a>.</p>
 <p>To configure how many microseconds to sleep before updates try:</p>
 <pre><code>    make clobber SLEEP=200 alt</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
@@ -433,14 +433,15 @@ on but you can use the original without any delays if you wish.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>From the San Jose Mercury News (May 15, 1993 page 20A “West Hackers
 trounce East in computer quiz game”):</p>
-<pre><code>    &quot;Since 1984, a contest has been held on Usenet for the most
-    unreadable, creative, bizarre but working C program&quot;, Gates
-    said. &quot;What is the name of this contest&quot;
-
-    &quot;Windows,&quot; shot back Gassee, naming Microsoft&#39;s premier product
-    - a product over which Apple sued Microsoft five years ago. Not
-    the right answer - it&#39;s &quot;The Obfuscated C Contest [sic]&quot; - but
-    it brought down the house of Apple partisans...</code></pre>
+<blockquote>
+<p>“Since 1984, a contest has been held on Usenet for the most unreadable,
+creative, bizarre but working C program”, Gates said. “What is the name of this
+contest?”</p>
+<p>“<strong>Windows</strong>,” shot back <em>Gassee</em>, naming Microsoft’s premier product - a
+product over which Apple sued Microsoft five years ago. Not the right answer -
+it’s “<strong>The Obfuscated C Contest</strong> [sic]” - but it brought down the house of Apple
+partisans…</p>
+</blockquote>
 <p>[The expression on Bill Gates’ face was a sight to behold, as reported
 to us by several who were there].</p>
 <p>You must set <code>$DISPLAY</code> in your environment or the program will

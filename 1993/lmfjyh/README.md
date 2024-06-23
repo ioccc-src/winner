@@ -28,9 +28,8 @@ _a long time ago_ (.. _in a galaxy far, far away_?).
 
 If `make all` fails to compile, a suggestion of compiling and running
 the alternate version is printed.  This alternate version is a variant
-for [those of us](https://www.collinsdictionary.com/dictionary/english/everyone)
-with gcc >= 2.3.3 or using clang. See [Alternate code](#alternate-code)
-section below for more details.
+for those of us with gcc >= 2.3.3 or using clang. See [Alternate
+code](#alternate-code) section below for more details.
 
 
 ### Bugs and (Mis)features:
@@ -57,7 +56,6 @@ If you have gcc < 2.3.3 (i.e. the entry can compile):
 
 This version does what the code did but in a way that will work with modern
 compilers. We'd like to say there's something special about it but there isn't.
-Nonetheless it will be compiled in case the original entry fails to compile.
 
 
 ### Alternate build:
@@ -201,7 +199,7 @@ These failed miserably:
 - `dbx`   - Quit with a very 'informative' error message:
 	    `"dbx: fatal error: Is a directory"`
 
-- gdb   - Printed almost the same error message `": Is a directory"`.
+- `gdb`   - Printed almost the same error message `": Is a directory"`.
 	It was, however, possible to step through the code but
 	not list it.
 

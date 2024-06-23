@@ -1,9 +1,9 @@
 ## To build:
 
-NOTE: this entry requires `X11/Xlib.h` header file and the X11 library to
-compile. macOS users running Mountain Lion and later will need to download and
-install [XQuartz](https://www.xquartz.org) in order to compile and run this
-entry.
+NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
+compile. See [the FAQ on how to run entries that require X11](../../faq.html#X11) if
+you need help.
+
 
 ``` <!---sh-->
     make all
@@ -30,7 +30,7 @@ on inverse video.  :-)
 
 This is `jonth` (`jon's t(h)etris`) for the X Window System.
 
-This program is also an example of data abstraction.  The X array is
+This program is also an example of data abstraction.  The `X` array is
 after initialization hidden by the well defined macros `t`, `u` and `F`.
 
 This program is highly portable as it runs on a "Notebook" size SPARC.

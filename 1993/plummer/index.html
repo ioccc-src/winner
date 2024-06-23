@@ -441,8 +441,7 @@ bypass</a>.</p>
     SLEEP=1200 ./try.alt.sh xyzzyzzyx 5555</code></pre>
 <h2 id="original-code">Original code:</h2>
 <p>This version, the original, does not sleep in between writes, and is thus much
-faster (depending on the <code>SLEEP</code> parameter specified in the build of <code>alt</code>, of
-course).</p>
+faster, at least with modern systems.</p>
 <h3 id="original-build">Original build:</h3>
 <pre><code>    make all</code></pre>
 <h3 id="original-use">Original use:</h3>
@@ -474,7 +473,7 @@ but must be present.</p>
 <p>Variable names are single characters chosen for their similarity to other
 characters (<code>O</code> for <code>0</code> (zero), <code>l</code> for <code>1</code> (one), <code>S</code> for <code>5</code> (five) in some
 fonts, and <code>_</code> for … well nothing really, but it is easy to miss). To
-prevent the need for <code>strlen()</code>, the fact that argv is laid out sequentially is
+prevent the need for <code>strlen(3)</code>, the fact that argv is laid out sequentially is
 exploited (i.e. <code>argv[i + 1] == argv[i] + strlen(argv[i]) + 1</code>). This is not
 portable (by the books), but it seems to work everywhere I try (actually, for
 VMS, that only holds for <code>i &gt; 1</code>). Also, I depend on the fact that a carriage
@@ -486,11 +485,11 @@ who don’t mind ruining our eyes with 132 column screens).</p>
 <p>The first statement points the base of <code>l</code> (the argument vector) to
 be the first argument by incrementing it. It then assigns <code>O</code> to
 point to the character before the first character of the second
-argument which also happens to be the NUL termination of the first
+argument which also happens to be the <code>NUL</code> termination of the first
 argument. <code>*O</code> gets a <code>\r</code> assigned to it. Finally <code>0</code> is assigned to
 the first character of the second argument which has the effect of
-NUL terminating the first argument after the carriage return had
-removed its NUL termination. I really tried to make the last part
+<code>NUL</code> terminating the first argument after the carriage return had
+removed its <code>NUL</code> termination. I really tried to make the last part
 of that statement part of the original expression, but the best I
 could do was attach it with a comma (against the advice of K&amp;R).
 The for loop runs the next for loop continuously (actually until

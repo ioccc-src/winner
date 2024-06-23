@@ -79,7 +79,7 @@ The author suggests the following questions when using
 - Do colorless green ideas sleep furiously?
 
 We suggest you try using the body (minus the header and signature line)
-of a Usenet article.  You might want to try something from alt.flame.  :-)
+of a Usenet article.  You might want to try something from _alt.flame_.  :-)
 
 NOTE: If you have certain  `'` in the question this entry might fail.
 

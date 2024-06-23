@@ -11,11 +11,7 @@
     ./ejb level
 ```
 
-where:
-
-``` <!---sh-->
-    level   a value from -128 to 127
-```
+where `level` is a value from `-128` to `127`.
 
 
 ## Try:
@@ -88,8 +84,8 @@ reasonably, however.)
 
 Although this program has only been tested on UNIX systems it will probably run
 on just about any machine with an ANSI C compiler.  It does not use the C
-preprocessor at all.  The only functions it uses are `atoi()`, `malloc()`,
-`memset()`, `printf()`, and `puts()`.  It does, however, require that the
+preprocessor at all.  The only functions it uses are `atoi(3)`, `malloc(3)`,
+`memset(3)`, `printf(3)`, and `puts(3)`.  It does, however, require that the
 architecture it runs on have bytes that are at least eight bits long and
 pointers that are at least four bytes long.  In addition, it requires an ANSI
 compiler since it uses `signed char` and ANSI-style function declarations.

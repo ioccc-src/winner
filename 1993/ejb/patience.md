@@ -139,7 +139,7 @@ restoration of ring 1 and the removal of ring 3.  This is
 because ring 1 is always movable, and ring 3 is currently
 the second ring still attached to the `U`.  This constraint
 leads to a recursive solution to the puzzle.  Like the
-[Towers of Hanoi](%%REPO_URL%%/1993/ejb/hanoi.md), the number of steps to solve this puzzle is
+[Towers of Hanoi](hanoi.html), the number of steps to solve this puzzle is
 exponential in the number of rings.
 
 
