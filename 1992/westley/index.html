@@ -412,7 +412,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <p>If lost:</p>
 <pre><code>    ./whereami.sh lat long</code></pre>
 <p>Where <code>lat</code> and <code>long</code> correspond to your latitude and longitude.</p>
-<p>NOTE: you <strong>MUST</strong> have a terminal that is at least 80 columns for this to show
+<p><strong>NOTE</strong>: you <strong>MUST</strong> have a terminal that is at least 80 columns for this to show
 properly. The <code>whereami.sh</code> and <code>whereami.alt.sh</code> scripts check this but if you
 do not have such a terminal you can run the <code>whereami</code> (or for the alternate code
 described below, <code>whereami.alt</code>) directly.</p>
@@ -424,30 +424,29 @@ described below, <code>whereami.alt</code>) directly.</p>
 <pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <pre><code>    ./whereami.alt.sh lat long</code></pre>
-<p>NOTE: this alternative version also needs a terminal with at least 80 columns
+<p><strong>NOTE</strong>: this alternative version also needs a terminal with at least 80 columns
 but if you do not have such a terminal you can run <code>whereami.alt</code> directly.</p>
 <h3 id="alternate-try">Alternate try:</h3>
 <p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/westley/try.sh">try.sh</a> script uses both the original
 entry and the alternate code so one can try the same script for both:</p>
 <pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
-<p>To find the approximate place where this entry was judged, type:</p>
-<pre><code>    # NOTE: Use - for south of the equator and/or west of the meridian
-
+<p>Use <code>-</code> (negative number) for the south of the equator and/or west of the
+meridian.</p>
+<p>To find the approximate place where this entry was judged:</p>
+<pre><code>    # If you have at least 80 columns:
     ./whereami.sh 37 -122
 
     # If you don&#39;t have at least 80 columns, try:
-
     ./whereami 37 -122</code></pre>
 <p>If you wish to see this on the US map:</p>
-<pre><code>    make alt
+<pre><code>    # Make sure the alt version is built:
+    make alt
 
-    # NOTE: Use - for south of the equator and/or west of the meridian
-
+    # If you have at least 80 columns:
     ./whereami.alt.sh 37 -122
 
     # If you don&#39;t have at least 80 columns, try:
-
     ./whereami.alt 37 -122</code></pre>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>Run the program with your latitude &amp; longitude as integer
