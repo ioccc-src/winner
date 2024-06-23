@@ -78,22 +78,27 @@ entry and the alternate code so one can try the same script for both:
 To find the approximate place where this entry was judged, type:
 
 ``` <!---sh-->
-    ./whereami.sh 37 -122	# NOTE: - means west of meridian
+    # NOTE: Use - for south of the equator and/or west of the meridian
 
-    # or if you don't have at least 80 columns and want to see what it
-    # looks like anyway:
-    ./whereami 37 -122	# NOTE: - means west of meridian
+    ./whereami.sh 37 -122
+
+    # If you don't have at least 80 columns, try:
+
+    ./whereami 37 -122
 ```
 
 If you wish to see this on the US map:
 
 ``` <!---sh-->
     make alt
-    ./whereami.alt.sh 37 -122	# NOTE: - means west of meridian
 
-    # or if you don't have at least 80 columns and want to see what it
-    # looks like anyway:
-    ./whereami.alt.sh 37 -122	# NOTE: - means west of meridian
+    # NOTE: Use - for south of the equator and/or west of the meridian
+
+    ./whereami.alt.sh 37 -122
+
+    # If you don't have at least 80 columns, try:
+
+    ./whereami.alt 37 -122
 ```
 
 
@@ -164,16 +169,16 @@ is reasonably accurate.
 ### Here are some cities you might like to try:
 
 ```
-    New York	    41  -74
-    London			52   0
-    Moscow			56   38
-    New Delhi	    29   77
-    Sydney			-34   151
-    Los Angeles	    34  -118
-    Paris			45   2
-    Rio de Janeiro  -23  -43
-    Beijing			40   116
-    Tokyo			36   140
+    New York		41  -74
+    London		52   0
+    Moscow		56   38
+    New Delhi		29   77
+    Sydney		-34   151
+    Los Angeles		34  -118
+    Paris		45   2
+    Rio de Janeiro	-23  -43
+    Beijing		40   116
+    Tokyo		36   140
 ```
 
 
