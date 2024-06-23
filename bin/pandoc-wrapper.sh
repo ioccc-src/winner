@@ -99,7 +99,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.6.2 2024-04-18"
+export VERSION="1.6.3 2024-06-22"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -413,9 +413,11 @@ else
 fi
 if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: pandoc: $PANDOC_TOOL exited non-zero: $status" 1>&2
-    cp -f "$MARKDOWN_INPUT" XXX # XXX
     if [[ -n $NOOP ]]; then
-	cp -f "$HTML_OUTPUT" YYY # XXX
+	echo "$0: Warning: forming debug.input.md from: $MARKDOWN_INPUT" 1>&2
+	cp -v -f "$MARKDOWN_INPUT" debug.input.md
+	echo "$0: Warning: forming debug.output.html from: $HTML_OUTPUT" 1>&2
+	cp -v -f "$HTML_OUTPUT" debug.output.html
     fi
     exit 1
 fi
