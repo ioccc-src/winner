@@ -161,11 +161,11 @@ For example:
 
 ````
 ```
-	Please do **NOT** indent with ASCII tabs.		<=== no thank you
+        Please do **NOT** indent with ASCII tabs.		<=== no thank you
 
     The top level starts with a 4 ASCII space indent.
 
-    Only indend with multiples of 4 ASCII spaces.
+    Only indent with multiples of 4 ASCII spaces.
         2nd level indent needs 8 ASCII spaces (no tabs).
             3rd level indent needs 12 ASCII spaces (no tabs).
                 etc.
