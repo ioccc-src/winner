@@ -29,9 +29,9 @@ If lost:
 Where `lat` and `long` correspond to your latitude and longitude.
 
 NOTE: you **MUST** have a terminal that is at least 80 columns for this to show
-properly. The `whereami` and `whereami.alt` code checks this but it is not
-prohibitive if it cannot be compiled and linked (it uses curses); instead one
-should just use the `westley` and `westley.alt` programs directly.
+properly. The `whereami.sh` and `whereami.alt.sh` scripts check this but if you
+do not have such a terminal you can run the `whereami` (or for the alternate code
+described below, `whereami.alt`) directly.
 
 
 ## Try:
@@ -59,13 +59,14 @@ The author provided a version for the US which we added. To build:
     ./whereami.alt.sh lat long
 ```
 
-NOTE: this alternative version also needs a terminal with at least 80 columns.
+NOTE: this alternative version also needs a terminal with at least 80 columns
+but if you do not have such a terminal you can run `whereami.alt` directly.
 
 
 ### Alternate try:
 
-The [try.sh](%%REPO_URL%%/1992/westley/try.sh) script uses both the original entry and the alternate code
-so one can try the same script for both:
+The [try.sh](%%REPO_URL%%/1992/westley/try.sh) script uses both the original
+entry and the alternate code so one can try the same script for both:
 
 ``` <!---sh-->
     ./try.sh
@@ -77,10 +78,22 @@ so one can try the same script for both:
 To find the approximate place where this entry was judged, type:
 
 ``` <!---sh-->
-    ./whereami 37 -122	# NOTE: - means west of meridian
+    ./whereami.sh 37 -122	# NOTE: - means west of meridian
 
-    # or if you don't have curses installed:
-    ./westley 37 -122	# NOTE: - means west of meridian
+	# or if you don't have at least 80 columns and want to see what it
+	# looks like anyway:
+    ./whereami 37 -122	# NOTE: - means west of meridian
+```
+
+If you wish to see this on the US map:
+
+``` <!---sh-->
+	make alt
+    ./whereami.alt.sh 37 -122	# NOTE: - means west of meridian
+
+	# or if you don't have at least 80 columns and want to see what it
+	# looks like anyway:
+    ./whereami.alt.sh 37 -122	# NOTE: - means west of meridian
 ```
 
 
@@ -151,16 +164,16 @@ is reasonably accurate.
 ### Here are some cities you might like to try:
 
 ```
-    New York	     41  -74
-    London	     52   0
-    Moscow	     56   38
-    New Delhi	     29   77
-    Sydney	    -34   151
-    Los Angeles	     34  -118
-    Paris	     45   2
+    New York	    41  -74
+    London			52   0
+    Moscow			56   38
+    New Delhi	    29   77
+    Sydney			-34   151
+    Los Angeles	    34  -118
+    Paris			45   2
     Rio de Janeiro  -23  -43
-    Beijing	     40   116
-    Tokyo	     36   140
+    Beijing			40   116
+    Tokyo			36   140
 ```
 
 
