@@ -155,7 +155,7 @@ For example, `next/guidelines.md` uses this markdown code block:
 
 When indenting a code block in markdown, indent 4 ASCII spaces per level.
 If you need to indent 2 or more levels, use multiples of 4 ASCII spaces.
-Please do **NOT** intend with ASCII tabs!
+Please do **NOT** indent with ASCII tabs!
 
 For example:
 
