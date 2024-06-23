@@ -1,5 +1,21 @@
 # Bugs and (mis)features
 
+## Table of Contents
+
+If you are going to try and fix any bugs **PLEASE READ THE NEXT SECTIONS _FIRST_**.
+If however you want to jump to a specific year or you have already read the
+below and you wish to help with a year, you can use these links:
+
+- [1984 entries](#1984)	|	[1985 entries](#1985)	|	[1986 entries](#1986)	|	[1987 entries](#1987)
+- [1988 entries](#1988)	|	[1989 entries](#1989)	|	[1990 entries](#1990)	|	[1991 entries](#1991)
+- [1992 entries](#1992)	|	[1993 entries](#1993)	|	[1994 entries](#1994)	|	[1995 entries](#1995)
+- [1996 entries](#1996)	|	[1998 entries](#1998)	|	[2000 entries](#2000)	|	[2001 entries](#2001)
+- [2004 entries](#2004)	|	[2005 entries](#2005)	|	[2006 entries](#2006)	|	[2011 entries](#2011)
+- [2012 entries](#2012)	|	[2013 entries](#2013)	|	[2014 entries](#2014)	|	[2015 entries](#2015)
+- [2018 entries](#2018)	|	[2019 entries](#2019)	|	[2020 entries](#2020)
+
+## PLEASE read the next sections if you wish to help
+
 There are a number of known problems with IOCCC entries: many of
 which have to do with differences between today's compiler environments
 and those of today. In some cases the original code has a bug, some
