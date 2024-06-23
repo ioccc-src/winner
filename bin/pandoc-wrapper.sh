@@ -99,11 +99,17 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.6.3 2024-06-22"
+export VERSION="1.7 2024-06-22"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
 export PANDOC_TOOL
+EXPAND_TOOL=$(type -P expand)
+export EXPAND_TOOL
+if [[ -z "$EXPAND_TOOL" ]]; then
+    echo "$0: FATAL: expand tool is not installed or not in \$PATH" 1>&2
+    exit 5
+fi
 GIT_TOOL=$(type -P git)
 export GIT_TOOL
 if [[ -z "$GIT_TOOL" ]]; then
@@ -351,8 +357,9 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: VERSION=$VERSION" 1>&2
     echo "$0: debug[3]: NAME=$NAME" 1>&2
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
-    echo "$0: debug[3]: PANDOC_TOOL=$PANDOC_TOOL" 1>&2
+    echo "$0: debug[3]: EXPAND_TOOL=$EXPAND_TOOL" 1>&2
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
+    echo "$0: debug[3]: PANDOC_TOOL=$PANDOC_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: PANDOC_TOOL=$PANDOC_TOOL" 1>&2
     for index in "${!PANDOC_OPTION[@]}"; do
@@ -400,16 +407,16 @@ fi
 #
 if [[ -z $NOOP ]]; then
     if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[1]: will execute pandoc as: $PANDOC_TOOL ${PANDOC_OPTION[*]} -o $HTML_OUTPUT $MARKDOWN_INPUT" 1>&2
+	echo "$0: debug[1]: will execute pandoc as: $EXPAND_TOOL -t 8 -- $MARKDOWN_INPUT | $PANDOC_TOOL ${PANDOC_OPTION[*]} -o $HTML_OUTPUT" 1>&2
     fi
-    "$PANDOC_TOOL" "${PANDOC_OPTION[@]}" -o "$HTML_OUTPUT" "$MARKDOWN_INPUT"
-    status="$?"
+    "$EXPAND_TOOL" -t 8 -- "$MARKDOWN_INPUT" | "$PANDOC_TOOL" "${PANDOC_OPTION[@]}" -o "$HTML_OUTPUT"
+    status="${PIPESTATUS[1]}"
 else
     if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[3]: will execute pandoc as: $PANDOC_TOOL ${PANDOC_OPTION[*]} -o /dev/null $MARKDOWN_INPUT" 1>&2
+	echo "$0: debug[3]: will execute pandoc as: $EXPAND_TOOL -t 8 -- $MARKDOWN_INPUT | $PANDOC_TOOL ${PANDOC_OPTION[*]} -o /dev/null" 1>&2
     fi
-    "$PANDOC_TOOL" "${PANDOC_OPTION[*]}" -o /dev/null "$MARKDOWN_INPUT"
-    status="$?"
+    "$EXPAND_TOOL" -t 8 -- "$MARKDOWN_INPUT" | "$PANDOC_TOOL" "${PANDOC_OPTION[*]}" -o /dev/null "$MARKDOWN_INPUT"
+    status="${PIPESTATUS[1]}"
 fi
 if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: pandoc: $PANDOC_TOOL exited non-zero: $status" 1>&2
