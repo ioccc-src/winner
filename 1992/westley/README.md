@@ -28,7 +28,7 @@ If lost:
 
 Where `lat` and `long` correspond to your latitude and longitude.
 
-NOTE: you **MUST** have a terminal that is at least 80 columns for this to show
+**NOTE**: you **MUST** have a terminal that is at least 80 columns for this to show
 properly. The `whereami.sh` and `whereami.alt.sh` scripts check this but if you
 do not have such a terminal you can run the `whereami` (or for the alternate code
 described below, `whereami.alt`) directly.
@@ -59,7 +59,7 @@ The author provided a version for the US which we added.
     ./whereami.alt.sh lat long
 ```
 
-NOTE: this alternative version also needs a terminal with at least 80 columns
+**NOTE**: this alternative version also needs a terminal with at least 80 columns
 but if you do not have such a terminal you can run `whereami.alt` directly.
 
 
@@ -75,29 +75,29 @@ entry and the alternate code so one can try the same script for both:
 
 ## Judges' remarks:
 
-To find the approximate place where this entry was judged, type:
+Use `-` (negative number) for the south of the equator and/or west of the
+meridian.
+
+To find the approximate place where this entry was judged:
 
 ``` <!---sh-->
-    # NOTE: Use - for south of the equator and/or west of the meridian
-
+    # If you have at least 80 columns:
     ./whereami.sh 37 -122
 
     # If you don't have at least 80 columns, try:
-
     ./whereami 37 -122
 ```
 
 If you wish to see this on the US map:
 
 ``` <!---sh-->
+    # Make sure the alt version is built:
     make alt
 
-    # NOTE: Use - for south of the equator and/or west of the meridian
-
+    # If you have at least 80 columns:
     ./whereami.alt.sh 37 -122
 
     # If you don't have at least 80 columns, try:
-
     ./whereami.alt 37 -122
 ```
 
