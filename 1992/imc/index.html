@@ -413,7 +413,7 @@ Location: <a href="../../location.html#GB">GB</a> - <em>United Kingdom of Great 
 <pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The program is more interesting to run on workstations that can make use of a
-Sun raster file. Others can make use of the -text flag for character oriented
+Sun raster file. Others can make use of the <code>-text</code> flag for character oriented
 output.</p>
 <p>Of course, the source (layout) is self-documenting! :-)</p>
 <p>NOTE: The original winning source assumed that <code>exit(3)</code> returned a value which
@@ -468,20 +468,20 @@ with small characters having a square aspect ratio.</p>
 may be preceded with a minus sign (or any character in <code>[!-/]</code>) and may be
 followed by other letters, so for example:</p>
 <ul>
-<li>m</li>
-<li>-m</li>
-<li>mask</li>
-<li>*mail</li>
+<li><code>m</code></li>
+<li><code>-m</code></li>
+<li><code>mask</code></li>
+<li><code>*mail</code></li>
 </ul>
 <p>all mean the same thing. Most options may be followed by one or two
 numbers. These numbers may be separated from each other and from the
 option by a space, or may be joined to each other with a comma, or may
 be appended to the single-letter option, so</p>
 <ul>
-<li>-s100,200</li>
-<li>size 100,200</li>
-<li>-size123 100 200</li>
-<li>s100 200</li>
+<li><code>-s100,200</code></li>
+<li><code>size 100,200</code></li>
+<li><code>-size123 100 200</code></li>
+<li><code>s100 200</code></li>
 </ul>
 <p>all mean the same (note that in <code>-size123</code> all characters following the
 initial <code>s</code> are ignored). Numbers need not be specified, as each has a

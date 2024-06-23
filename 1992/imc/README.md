@@ -27,7 +27,7 @@ To see a number of options and configurations:
 ## Judges' remarks:
 
 The program is more interesting to run on workstations that can make use of a
-Sun raster file.  Others can make use of the -text flag for character oriented
+Sun raster file.  Others can make use of the `-text` flag for character oriented
 output.
 
 Of course, the source (layout) is self-documenting!  :-)
@@ -97,10 +97,10 @@ may be preceded with a minus sign (or any character in `[!-/]`) and may be
 followed by other letters, so for example:
 
 
-- m
-- \-m
-- mask
-- \*mail
+- `m`
+- `-m`
+- `mask`
+- `*mail`
 
 
 all mean the same thing. Most options may be followed by one or two
@@ -108,10 +108,10 @@ numbers. These numbers may be separated from each other and from the
 option by a space, or may be joined to each other with a comma, or may
 be appended to the single-letter option, so
 
-- \-s100,200
-- size 100,200
-- \-size123 100 200
-- s100 200
+- `-s100,200`
+- `size 100,200`
+- `-size123 100 200`
+- `s100 200`
 
 all mean the same (note that in `-size123` all characters following the
 initial `s` are ignored). Numbers need not be specified, as each has a

@@ -4,8 +4,8 @@
     make all
 ```
 
-NOTE: we DISABLE the optimiser because having it enabled causes some invocations
-to crash in some systems.
+**NOTE**: we **FORCE DISABLE** the optimiser because having it enabled causes
+some invocations to crash in some systems.
 
 
 ### Bugs and (Mis)features:

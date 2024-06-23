@@ -10,7 +10,6 @@
 The current status of this entry is:
 
 ```
-    STATUS: known bug - please help us fix
     STATUS: INABIAF - please **DO NOT** fix
 ```
 
@@ -262,7 +261,7 @@ the program will print the error message:
 ```
 
 (The exact text of the above error messages varies from machine to
-machine.)  The four programs which read from stdin require lines
+machine.)  The four programs which read from `stdin` require lines
 shorter than 999 characters.
 
 The other info files are `adrian.grep.[1-6]` which contain the six

@@ -1668,6 +1668,7 @@ return <code>void</code>.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/albert/try.sh">try.sh</a> and
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/albert/try.alt.sh">try.alt.sh</a> scripts that correspond to the entry and
 the alternate code.</p>
+<p>Even so, check <a href="bugs.html#1992_albert">1992/albert in bugs.html</a>.</p>
 <div id="1992_ant">
 <h2 id="winning-entry-1992ant">Winning entry: <a href="1992/ant/index.html">1992/ant</a></h2>
 <h3 id="winning-entry-source-code-ant.c-1">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/ant/ant.c">ant.c</a></h3>
@@ -1756,7 +1757,8 @@ changing this. See <a href="faq.html#faq4_6">FAQ 4.6 - Why was arg
 count and/or type changed in main() in some older
 entries?</a> for more details.</p>
 <p>Yusuke also noted that there is a bug in the program where right after starting
-it moves towards the right but if you click the mouse it goes back.</p>
+it moves towards the right but if you click the mouse it goes back. See
+<a href="bugs.html#1992_kivinen">1992/kivinen in bugs.html</a> for more details.</p>
 <div id="1992_lush">
 <h2 id="winning-entry-1992lush">Winning entry: <a href="1992/lush/index.html">1992/lush</a></h2>
 <h3 id="winning-entry-source-code-lush.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/lush/lush.c">lush.c</a></h3>
@@ -1809,8 +1811,7 @@ it used to be.</p>
 <h3 id="winning-entry-source-code-westley.c-5">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/westley/westley.c">westley.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> fixed this to work for <code>clang</code> by changing the third and fourth arg of
-<code>main()</code> to be <code>char ** inside</code>main()<code>;</code>clang<code>requires args 2 - 4 to be</code>char
-** and some versions do not even allow a fourth arg.</p>
+<code>main()</code> to be <code>char **</code> inside <code>main()</code>; <code>clang</code> requires args 2 - 4 to be <code>char **</code> and some versions do not even allow a fourth arg.</p>
 <p>He also added the alternate version that the author gave in the remarks that is
 specifically for the USA rather than the world. This had to be fixed for <code>clang</code>
 as well to make the args of <code>main()</code> be the correct type and by moving the body

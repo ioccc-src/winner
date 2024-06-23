@@ -39,22 +39,20 @@ An alternate version of this entry, [albert.alt.c](%%REPO_URL%%/1992/albert/albe
 Leo Broukhis, before he was an IOCCC judge, sent the IOCCC
 judges this Email message:
 
-```
-    From: leo _at_ zycad -dot- com (Leo Broukhis)
-    Date: Tue, 30 Jan 96 17:37:51 PST
-    To: judges _at_ toad -dot- com
-    Subject: IOCCC 1992 - a bug
-
-    Dear Judges,
-
-    albert.c (even in its fixed form) still has a bug. Although I don't
-    remember the number that exposed the bug (afair, resulting in coredump)
-    in albert.orig.c that has been fixed in albert.c,
-
-    I've found a number exposing another bug: 10000000001 (that's 9 0's).
-    Both albert and albert.orig loop without printing anything, although
-    the first factor is 101 and is usually found in an instant.
-```
+> From: leo _at_ zycad -dot- com (Leo Broukhis)<br>
+> Date: Tue, 30 Jan 96 17:37:51 PST<br>
+> To: judges _at_ toad -dot- com<br>
+> Subject: IOCCC 1992 - a bug<br>
+>
+> Dear Judges,
+>
+> `albert.c` (even in its fixed form) still has a bug. Although I don't
+> remember the number that exposed the bug (afair, resulting in coredump)
+> in `albert.orig.c` that has been fixed in `albert.c`,
+>
+> I've found a number exposing another bug: 10000000001 (that's 9 0's).
+> Both albert and albert.orig loop without printing anything, although
+> the first factor is 101 and is usually found in an instant.
 
 The [albert.alt.c](%%REPO_URL%%/1992/albert/albert.alt.c) file is the fixed file, whereas the
 [albert.c](%%REPO_URL%%/1992/albert/albert.c) is the file before applying Leo Broukhis' fix.
@@ -155,7 +153,7 @@ for some years.
 recursion and is quite jumpy.  This program shares these disadvantages in a
 modified form.
 4. The Conversion is to be found in Knuth, not so the Observation.  The
-Observation: "if it ends in a zero, it is divisible by ten".
+Observation: "_if it ends in a zero, it is divisible by ten_".
 
 
 <!--

@@ -66,14 +66,6 @@
 	    "entry_text" : "alternate whereami tool"
 	},
 	{
-	    "file_path" : "whereami.c",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "tool to show your location on the map"
-	},
-	{
 	    "file_path" : "whereami.sh",
 	    "inventory_order" : 100,
 	    "OK_to_edit" : true,

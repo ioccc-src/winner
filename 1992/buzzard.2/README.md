@@ -10,14 +10,14 @@ code](#alternate-code) below for details.
 
 ## To use:
 
-First, you must make sure that `first` is made first (even though `make all`
-should make first first :-) ):
+**First**, you must make sure that `first` is made **first** (even though `make all`
+should make **first _first_** :-) ):
 
 ``` <!---sh-->
     make first
 ```
 
-Second:
+**Second**:
 
 ``` <!---sh-->
     # get help:
@@ -27,13 +27,13 @@ Second:
     cat third demo5.th | ./first
 ```
 
-Third:
+**Third**:
 
 ``` <!---sh-->
     cat third help.th - | ./first
 ```
 
-NOTE: Wait until 'Ok' is printed and the type:
+**NOTE**: Wait until `Ok` is printed and the type:
 
 ```
     2 3 + . cr
@@ -41,7 +41,7 @@ NOTE: Wait until 'Ok' is printed and the type:
 
 Yes you should really type the 2 letters: `cr`.
 
-Fourth:
+**Fourth**:
 
 ```
     Sorry, this is third!

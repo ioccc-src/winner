@@ -1063,7 +1063,7 @@ changes it to use <code>fprintf()</code> on the file (which, incidentally, is op
 read only mode which is another reason) with the <code>%s</code> specifier it will make
 <code>adhead</code> not work: it’ll print nothing at all! So this code should not be
 changed either even if it appears to be wrong. Notice too a curious thing: if
-you did change it to fprintf, even if you have the right number of args, you’d
+you did change it to <code>fprintf()</code>, even if you have the right number of args, you’d
 have to remove the outer <code>()</code> pair.</p>
 <div id="1992_albert">
 <h2 id="albert">1992/albert</h2>
@@ -1072,20 +1072,19 @@ have to remove the outer <code>()</code> pair.</p>
 <h3 id="source-code-1992albertalbert.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/albert/albert.c">1992/albert/albert.c</a></h3>
 <h3 id="information-1992albertindex.html">Information: <a href="1992/albert/index.html">1992/albert/index.html</a></h3>
 <p>Leo Broukhis, before he was an IOCCC judge, sent the IOCCC judges an email:</p>
-<pre><code>    From: leo _at_ zycad -dot- com (Leo Broukhis)
-    Date: Tue, 30 Jan 96 17:37:51 PST
-    To: judges _at_ toad -dot- com
-    Subject: IOCCC 1992 - a bug
-
-    Dear Judges,
-
-    albert.c (even in its fixed form) still has a bug. Although I don&#39;t
-    remember the number that exposed the bug (afair, resulting in coredump)
-    in albert.orig.c that has been fixed in albert.c,
-
-     &#39;ve found a number exposing another bug: 10000000001 (that&#39;s 9 0&#39;s).
-    Both albert and albert.orig loop without printing anything, although
-    the first factor is 101 and is usually found in an instant.</code></pre>
+<blockquote>
+<p>From: leo <em>at</em> zycad -dot- com (Leo Broukhis)<br>
+Date: Tue, 30 Jan 96 17:37:51 PST<br>
+To: judges <em>at</em> toad -dot- com<br>
+Subject: IOCCC 1992 - a bug<br></p>
+<p>Dear Judges,</p>
+<p><code>albert.c</code> (even in its fixed form) still has a bug. Although I don’t
+remember the number that exposed the bug (afair, resulting in coredump)
+in <code>albert.orig.c</code> that has been fixed in <code>albert.c</code>,</p>
+<p>I’ve found a number exposing another bug: 10000000001 (that’s 9 0’s).
+Both albert and albert.orig loop without printing anything, although
+the first factor is 101 and is usually found in an instant.</p>
+</blockquote>
 <p>A quick debugging session from Cody suggests that the problem with this value
 is that:</p>
 <pre><code>    if ( ppp-&gt;qq!=48 ) return;</code></pre>
@@ -1116,8 +1115,7 @@ entry itself. Can you fix the actual entry? You are welcome to try and do so.</p
 <h3 id="information-1992gsonindex.html">Information: <a href="1992/gson/index.html">1992/gson/index.html</a></h3>
 <p>Cody changed it so that the buffer size is <code>ARG_MAX+1</code> to try and get past the
 problem of <code>gets()</code> being used in a more complex way.</p>
-<p>It would be ideal if it were to use <code>fgets()</code> though. This will probably be
-looked at later but you’re welcome to try and fix this too! A tip on how
+<p>It would be ideal if it were to use <code>fgets()</code> though. A tip on how
 <code>gets()</code> is being used from Cody:</p>
 <p>Previously it had a buffer size of 256 which could easily overflow. In this
 entry <code>gets(3)</code> is used in a more complicated way: first <code>m</code> is set to <code>*++p</code> in
@@ -1210,7 +1208,7 @@ than that. For instance this is what it looks like with clang:</p>
 <h3 id="source-code-1992vernvern.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/vern/vern.c">1992/vern/vern.c</a></h3>
 <h3 id="information-1992vernindex.html">Information: <a href="1992/vern/index.html">1992/vern/index.html</a></h3>
 <p>When your own checkmate is imminent it prints <code>"Har har"</code> but does not exit so
-it can ‘rub your nose in defeat’, as the author puts it. You will have to exit
+it can ‘<em>rub your nose in defeat</em>’, as the author puts it. You will have to exit
 it yourself through ctrl-c or killing it in some other fashion.</p>
 <div id="1992_westley">
 <h2 id="westley-3">1992/westley</h2>

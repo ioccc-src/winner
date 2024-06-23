@@ -975,7 +975,7 @@ changes it to use `fprintf()` on the file (which, incidentally, is opened in
 read only mode which is another reason) with the `%s` specifier it will make
 `adhead` not work: it'll print nothing at all! So this code should not be
 changed either even if it appears to be wrong. Notice too a curious thing: if
-you did change it to fprintf, even if you have the right number of args, you'd
+you did change it to `fprintf()`, even if you have the right number of args, you'd
 have to remove the outer `()` pair.
 
 
@@ -990,22 +990,22 @@ have to remove the outer `()` pair.
 
 Leo Broukhis, before he was an IOCCC judge, sent the IOCCC judges an email:
 
-```
-    From: leo _at_ zycad -dot- com (Leo Broukhis)
-    Date: Tue, 30 Jan 96 17:37:51 PST
-    To: judges _at_ toad -dot- com
-    Subject: IOCCC 1992 - a bug
 
-    Dear Judges,
+> From: leo _at_ zycad -dot- com (Leo Broukhis)<br>
+> Date: Tue, 30 Jan 96 17:37:51 PST<br>
+> To: judges _at_ toad -dot- com<br>
+> Subject: IOCCC 1992 - a bug<br>
+>
+> Dear Judges,
+>
+> `albert.c` (even in its fixed form) still has a bug. Although I don't
+> remember the number that exposed the bug (afair, resulting in coredump)
+> in `albert.orig.c` that has been fixed in `albert.c`,
+>
+> I've found a number exposing another bug: 10000000001 (that's 9 0's).
+> Both albert and albert.orig loop without printing anything, although
+> the first factor is 101 and is usually found in an instant.
 
-    albert.c (even in its fixed form) still has a bug. Although I don't
-    remember the number that exposed the bug (afair, resulting in coredump)
-    in albert.orig.c that has been fixed in albert.c,
-
-     've found a number exposing another bug: 10000000001 (that's 9 0's).
-    Both albert and albert.orig loop without printing anything, although
-    the first factor is 101 and is usually found in an instant.
-```
 
 
 A quick debugging session from Cody suggests that the problem with this value
@@ -1057,8 +1057,7 @@ entry itself. Can you fix the actual entry? You are welcome to try and do so.
 Cody changed it so that the buffer size is `ARG_MAX+1` to try and get past the
 problem of `gets()` being used in a more complex way.
 
-It would be ideal if it were to use `fgets()` though. This will probably be
-looked at later but you're welcome to try and fix this too! A tip on how
+It would be ideal if it were to use `fgets()` though. A tip on how
 `gets()` is being used from Cody:
 
 Previously it had a buffer size of 256 which could easily overflow. In this
@@ -1182,7 +1181,7 @@ Can you help us?
 ### Information: [1992/vern/index.html](1992/vern/index.html)
 
 When your own checkmate is imminent it prints `"Har har"` but does not exit so
-it can 'rub your nose in defeat', as the author puts it. You will have to exit
+it can '_rub your nose in defeat_', as the author puts it. You will have to exit
 it yourself through ctrl-c or killing it in some other fashion.
 
 

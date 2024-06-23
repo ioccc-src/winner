@@ -411,10 +411,11 @@ numbers as needed. It is the side effects that get you into trouble. If you
 are not careful, you may find things “at 6’s and 7’s”. :-)</p>
 <p>NOTE: Some compilers have had trouble optimizing this entry.</p>
 <p>NOTE: Some systems need to compile with <code>-ltermcap</code> as well as <code>-lcurses</code>.</p>
-<p>NOTE: The original winning source <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/marangon/marangon.orig.c">marangon.orig.c</a>, found in
-the archive directory, assumed that <code>exit(3)</code> returns a value which cause
-problems for some systems where <code>exit(3)</code> returns a <code>void</code>. The file
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/marangon/marangon.c">marangon.c</a> avoids this problem.</p>
+<p>NOTE: The original winning source
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/marangon/marangon.orig.c">marangon.orig.c</a> assumed that
+<code>exit(3)</code> returns a value which cause problems for some systems where <code>exit(3)</code>
+returns a <code>void</code>. The file <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/marangon/marangon.c">marangon.c</a>
+avoids this problem.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>It starts off by creating a table with number 5 in all places. The CPU melts
 the numbers and you must return them in original state. When you increase a
