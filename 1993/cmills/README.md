@@ -1,18 +1,17 @@
 ## To build:
 
-We recommend you try the alt version first so you can get a better idea of what
-this entry was like back in 1993. See the [original code](#original-code)
-section below to run the original.
+We recommend you try the alternate version first so you can get a better idea of what
+this entry was like back in 1993 (though see the [known bug in
+bugs.html](../../bugs.html#1993_cmills)). See the [original code](#original-code)
+section below to run the original (the bug also exists here).
 
 ``` <!---sh-->
     make alt
 ```
 
 NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
-compile. If you're under macOS and do not know how to install and use X11
-programs see [FAQ 3.7  - How do I compile and use on macOS, an IOCCC entry that
-requires X11?](../../faq.html#X11macos).
-
+compile. If you don't have the X11 installed see the [FAQ on how to compile and
+run an entry that requires X11](../../faq.html#X11).
 
 To configure how many microseconds to sleep before updates try:
 
@@ -71,16 +70,14 @@ Use `cmills` as you would `cmills.alt` above.
 From the San Jose Mercury News (May 15, 1993 page 20A "West Hackers
 trounce East in computer quiz game"):
 
-```
-    "Since 1984, a contest has been held on Usenet for the most
-    unreadable, creative, bizarre but working C program", Gates
-    said. "What is the name of this contest"
-
-    "Windows," shot back Gassee, naming Microsoft's premier product
-    - a product over which Apple sued Microsoft five years ago. Not
-    the right answer - it's "The Obfuscated C Contest [sic]" - but
-    it brought down the house of Apple partisans...
-```
+> "Since 1984, a contest has been held on Usenet for the most unreadable,
+creative, bizarre but working C program", Gates said. "What is the name of this
+contest?"
+>
+> "**Windows**," shot back _Gassee_, naming Microsoft's premier product - a
+product over which Apple sued Microsoft five years ago. Not the right answer -
+it's "**The Obfuscated C Contest** [sic]" - but it brought down the house of Apple
+partisans...
 
 [The expression on Bill Gates' face was a sight to behold, as reported
 to us by several who were there].

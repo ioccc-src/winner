@@ -402,10 +402,9 @@ Location: <a href="../../location.html#NO">NO</a> - <em>Kingdom of Norway</em> (
 
 <!-- BEFORE: 1st line of markdown file: 1993/jonth/README.md -->
 <h2 id="to-build">To build:</h2>
-<p>NOTE: this entry requires <code>X11/Xlib.h</code> header file and the X11 library to
-compile. macOS users running Mountain Lion and later will need to download and
-install <a href="https://www.xquartz.org">XQuartz</a> in order to compile and run this
-entry.</p>
+<p>NOTE: this entry requires the <code>X11/Xlib.h</code> header file and the X11 library to
+compile. See <a href="../../faq.html#X11">the FAQ on how to run entries that require X11</a> if
+you need help.</p>
 <pre><code>    make all</code></pre>
 <h2 id="to-use">To use:</h2>
 <pre><code>    ./jonth     # must be run on an X11 server</code></pre>
@@ -416,7 +415,7 @@ rotate and press SPACE to drop.</p>
 on inverse video. :-)</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>This is <code>jonth</code> (<code>jon's t(h)etris</code>) for the X Window System.</p>
-<p>This program is also an example of data abstraction. The X array is
+<p>This program is also an example of data abstraction. The <code>X</code> array is
 after initialization hidden by the well defined macros <code>t</code>, <code>u</code> and <code>F</code>.</p>
 <p>This program is highly portable as it runs on a “Notebook” size SPARC.
 This program will not work on machines where <code>sizeof(int)!=sizeof(void *)</code>.</p>

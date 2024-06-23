@@ -1313,7 +1313,7 @@ the index.html file for details.
 Although the code checks if the file can be opened or not, badly formatted files
 will cause problems. No other checks are performed either.
 
-There is no end of game checking method so you will have to quit the game
+There is no end of game checking function so you will have to quit the game
 through ctrl-c or such.
 
 

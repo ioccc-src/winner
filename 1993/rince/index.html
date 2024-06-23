@@ -437,7 +437,8 @@ changed).</p>
 <a href="https://en.wikipedia.org/wiki/Breakout_(video_game)">Breakout</a>. Keys are <code>,</code>
 for left, <code>/</code> for right, and <code>.</code> for ‘fire the ball’.</p></li>
 <li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/rince/rince.data2">rince.data2</a> plays the old <a href="../../authors.html#James_Bonfield">James Bonfield</a>’s
-(<a href="../../1991/rince/index.html">1991/rince</a> game from IOCCC 1991.</p></li>
+(<a href="../../1991/rince/index.html">1991/rince</a> game from <a href="../../1991/index.html">IOCCC
+1991</a>).</p></li>
 <li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/rince/rince.data3">rince.data3</a> Sokoban screen 11. You are the <code>o</code> character.
 You must push the money <code>m</code> into the dotted region of the screen. The game is
 considered finished when all the <code>m</code>s are then <code>M</code>s.</p></li>
@@ -496,16 +497,16 @@ conflict of the two).</p>
 <p>The use of <code>select(2)</code> no doubt makes it less portable to STRICT SysV machines.
 However I have tested this on several so-called SysV machines, and all of them
 support <code>select(2)</code>. In fact, the <code>select(2)</code> they support appears to be more
-portable between them than their <code>poll()</code> call.</p>
+portable between them than their <code>poll(2)</code> call.</p>
 <h3 id="obfuscation">Obfuscation</h3>
 <p>I have tried to use as many different obfuscation techniques, including
 some of which (such as <code>sizeof</code> confusion) I have not seen in any entries
 (hmmm - perhaps there’s a reason for that…) so far. Also, very poor
-structure (yes, I use <code>goto</code>’s) has led to apparently having an <code>fgets()</code> as
+structure (yes, I use <code>goto</code>’s) has led to apparently having an <code>fgets(3)</code> as
 the last line of main. Note that I have still tried to aim at least some
 efficiency (provided it makes things slightly more obfuscated of course).
 One such thing is the way I dynamically allocate a 2-dimensional array
-using only ONE <code>malloc()</code>. Hence this program could be used as a tutorial
+using only ONE <code>malloc(3)</code>. Hence this program could be used as a tutorial
 for all those people who consistently ask this question in the C
 newsgroups.</p>
 <p>Also, the program does require a volatile type (especially when

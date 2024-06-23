@@ -38,7 +38,7 @@ International Internet community.
 
 This program plays
 [Mastermind](https://en.wikipedia.org/wiki/Mastermind_&#x28;board_game&#x29;), if you call
-it by a name ending by 'd', otherwise it _solves_ Mastermind. Call it without
+it by a name ending by `d`, otherwise it _solves_ Mastermind. Call it without
 parameters to use 6 digits (colors), or indicate the number of possible digits
 (you cannot change the number of positions so easily).
 
@@ -66,7 +66,7 @@ backspaces. Do "disable scrolling" on cmdtool or similar emulators.
 
 #### Bugs
 
-Please don't type ^D at the prompt!!
+Please don't type `^D` at the prompt!!
 
 
 ##### EXAMPLE: Suppose we think of 1234

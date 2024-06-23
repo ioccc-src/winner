@@ -78,7 +78,8 @@ The author has provided several CABBAGE files for your amusement:
 for left, `/` for right, and `.` for 'fire the ball'.
 
 - [rince.data2](%%REPO_URL%%/1993/rince/rince.data2) plays the old [James Bonfield](../../authors.html#James_Bonfield)'s
-([1991/rince](../../1991/rince/index.html) game from IOCCC 1991.
+([1991/rince](../../1991/rince/index.html) game from [IOCCC
+1991](../../1991/index.html)).
 
 - [rince.data3](%%REPO_URL%%/1993/rince/rince.data3) Sokoban screen 11. You are the `o` character.
 You must push the money `m` into the dotted region of the screen. The game is
@@ -166,7 +167,7 @@ conflict of the two).
 The use of `select(2)` no doubt makes it less portable to STRICT SysV machines.
 However I have tested this on several so-called SysV machines, and all of them
 support `select(2)`. In fact, the `select(2)` they support appears to be more
-portable between them than their `poll()` call.
+portable between them than their `poll(2)` call.
 
 
 ### Obfuscation
@@ -174,11 +175,11 @@ portable between them than their `poll()` call.
 I have tried to use as many different obfuscation techniques, including
 some of which (such as `sizeof` confusion) I have not seen in any entries
 (hmmm - perhaps there's a reason for that...) so far. Also, very poor
-structure (yes, I use `goto`'s) has led to apparently having an `fgets()` as
+structure (yes, I use `goto`'s) has led to apparently having an `fgets(3)` as
 the last line of main. Note that I have still tried to aim at least some
 efficiency (provided it makes things slightly more obfuscated of course).
 One such thing is the way I dynamically allocate a 2-dimensional array
-using only ONE `malloc()`. Hence this program could be used as a tutorial
+using only ONE `malloc(3)`. Hence this program could be used as a tutorial
 for all those people who consistently ask this question in the C
 newsgroups.
 

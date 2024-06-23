@@ -64,8 +64,7 @@ bypass](https://hitchhikers.fandom.com/wiki/Bypass).
 ## Original code:
 
 This version, the original, does not sleep in between writes, and is thus much
-faster (depending on the `SLEEP` parameter specified in the build of `alt`, of
-course).
+faster, at least with modern systems.
 
 
 ### Original build:
@@ -117,7 +116,7 @@ but must be present.
 Variable names are single characters chosen for their similarity to other
 characters (`O` for `0` (zero), `l` for `1` (one), `S` for `5` (five) in some
 fonts, and `_` for ...  well nothing really, but it is easy to miss).  To
-prevent the need for `strlen()`, the fact that argv is laid out sequentially is
+prevent the need for `strlen(3)`, the fact that argv is laid out sequentially is
 exploited (i.e.  `argv[i + 1] == argv[i] + strlen(argv[i]) + 1`).  This is not
 portable (by the books), but it seems to work everywhere I try (actually, for
 VMS, that only holds for `i > 1`).  Also, I depend on the fact that a carriage
@@ -131,11 +130,11 @@ who don't mind ruining our eyes with 132 column screens).
 The first statement points the base of `l` (the argument vector) to
 be the first argument by incrementing it.  It then assigns `O` to
 point to the character before the first character of the second
-argument which also happens to be the NUL termination of the first
+argument which also happens to be the `NUL` termination of the first
 argument.  `*O` gets a `\r` assigned to it.  Finally `0` is assigned to
 the first character of the second argument which has the effect of
-NUL terminating the first argument after the carriage return had
-removed its NUL termination.  I really tried to make the last part
+`NUL` terminating the first argument after the carriage return had
+removed its `NUL` termination.  I really tried to make the last part
 of that statement part of the original expression, but the best I
 could do was attach it with a comma (against the advice of K&R).
 The for loop runs the next for loop continuously (actually until

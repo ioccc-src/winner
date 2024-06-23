@@ -25,15 +25,15 @@ not be able to compile the entry, sorry!
 
 ## A few notes regarding future contests:
 
-Be sure to wait until the 1994 rules are posted before submitting entries.
-Rules differ from year to year, sometimes in significant ways.
+Be sure to wait until the [1994 rules](../1994/rules.txt) are posted before
+submitting entries.  Rules differ from year to year, sometimes in significant
+ways.
 
-In 1994, we will retract the guideline that discouraged the use of C
-constructs such as `3["curds"]`.  At one time, certain ANSI compilers did
-not consider such expressions to be valid ANSI C.  Alert readers noted
-that the current ANSI standard considered them to be valid.  We were
-unable to find an ANSI C compiler that flagged such expressions as
-errors.
+In [1994](../1994/index.html), we will retract the guideline that discouraged
+the use of C constructs such as `3["curds"]`.  At one time, certain ANSI
+compilers did not consider such expressions to be valid ANSI C.  Alert readers
+noted that the current ANSI standard considered them to be valid.  We were
+unable to find an ANSI C compiler that flagged such expressions as errors.
 
 Please send us comments and suggestions what we have expressed above.
 Also include anything else that you would like to see in future contests.
