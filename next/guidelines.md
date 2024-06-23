@@ -30,9 +30,9 @@ and remains unaltered.  All other uses must receive prior permission in
 writing by [contacting the judges](../contact.html).
 
 
-## Guidelines version
+## IOCCC Guidelines version
 
-**`|`**   This guidelines file is version **2024-06-15-v28**.
+**`|`**   These [IOCCC guidelines](guidelines.html) are version **2024-06-25-v28**.
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
 
@@ -52,12 +52,12 @@ submit entries to the [International Obfuscated C Code Contest
 &#x28;IOCCC&#x29;](https://www.ioccc.org).
 
 These are not the IOCCC rules, though it does contain comments about
-them.  The guidelines should be viewed as _hints_ and _suggestions_.
-Entries that violate the guidelines but remain within the rules _are
-allowed_.  Even so, you are safer if you remain within the guidelines.
+them.  The [IOCCC guidelines](guidelines.html) should be viewed as _hints_ and _suggestions_.
+Entries that violate the _guidelines_ but remain within the rules _are
+allowed_.  Even so, you are safer if you remain within the [IOCCC guidelines](guidelines.html).
 
 You should read the current [IOCCC rules](rules.html), prior to submitting entries.
-The rules are typically published along with these guidelines.
+The rules are typically published along with the [IOCCC guidelines](guidelines.html).
 
 
 # WHAT'S NEW THIS IOCCC
@@ -68,7 +68,7 @@ The rules are typically published along with these guidelines.
 **`|`**   The reason for the times of day are so that key IOCCC events are **calculated**
 for be a **fun**ctional UTC time.  :-)
 
-Until the start of this IOCCC, these rules, guidelines and iocccsize.c
+Until the start of this IOCCC, the [IOCCC rules](rules.html), [IOCCC guidelines](guidelines.html) and `iocccsize.c`
 (contained in the [mkiocccentry
 toolkit](https://github.com/ioccc-src/mkiocccentry))
 tool should be considered provisional **BETA** versions and **may be
@@ -81,7 +81,7 @@ The IOCCC submission URL is <https://submit.ioccc.org/>.
 
 Please wait to submit your entries until after that time.
 
-The official rules, guidelines and iocccsize.c (invoked by the mkiocccentry)
+The [IOCCC rules](rules.html), [IOCCC guidelines](guidelines.html) and iocccsize.c (invoked by the mkiocccentry)
 tool will be available on the official IOCCC website on or slightly before start
 of this IOCCC.  Please check the IOCCC [FAQ about how to submit](../faq.html#submit)
 to see how to submit entries, on or after the start of this IOCCC, to be sure
@@ -135,7 +135,7 @@ to attempt to exploit them.  We will award '_Worst abuse of the rules_' or
 
 **`|`**   Even so, we will attempt to use the smallest plug needed, if not smaller.  Or, maybe not.  :-)
 
-**`|`**   There may be less than 2^7+1 reasons why these guidelines seem obfuscated.
+**`|`**   There may be less than 2^7+1 reasons why these [IOCCC guidelines](guidelines.html) seem obfuscated.
 
 Check out your program and be sure that it works.  We sometimes make
 the effort to debug an entry that has a slight problem, particularly
@@ -166,17 +166,19 @@ When programs use VTxxx/ANSI sequences, they should NOT be limited to a
 specific terminal brand.  Those programs that work in a standard xterm
 are considered more portable.
 
-**`|`**   Rule 2 (the size rule) refers to the use of the IOCCC size tool called `iocccsize`.
+**`|`**   [Rule 2](rules.html#rule2) (the size rule) refers to the use of the IOCCC size tool called `iocccsize`.
 
-**`|`**   See the [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) for how to compile `iocccsize.c`.
+**`|`**   See the [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) for the `iocccsize` tool.
 
-**`|`**   To further clarify rule 2, we subdivided it into two parts, 2a and 2b.
+**`|`**   To further clarify [Rule 2](rules.html#rule2), we subdivided it into two parts, 2a and 2b.
 
-**`|`**   Your entry must satisfy BOTH the maximum size rule 2a AND your entry
-must satisfy the IOCCC size tool rule 2b.
+**`|`**   The overall size limit (see [Rule 2a](rules.html#rule2a)) on `prog.c` is now 4993 bytes
 
-This tool imposes a 2nd limit on C code size (rule 2b).  To check your
-code against the 2nd limit of rule 2, use the -i command line option.
+**`|`**   Your entry must satisfy BOTH the maximum size [Rule 2a](rules.html#rule2a) AND your entry
+must satisfy the IOCCC size tool [Rule 2b](rules.html#rule2b).
+
+This tool imposes a 2nd limit on C code size (see [Rule 2a](rules.html#rule2a).  To check your
+code against the 2nd limit of [Rule 2](rules.html#rule2), use the -i command line option.
 For example:
 
 ```
@@ -185,13 +187,11 @@ For example:
 
 The IOCCC size tool, when using the -i option, may be summarized as:
 
-```
-    The size tool counts most C reserved words (keyword, secondary,
-    and selected preprocessor keywords) as 1.  The size tool counts all
-    other octets as 1 excluding ASCII whitespace, and excluding any
-    ';', '{' or '}' followed by ASCII whitespace, and excluding any
-    ';', '{' or '}' octet immediately before the end of file.
-```
+>   The size tool counts most C reserved words (keyword, secondary,<br>
+>   and selected preprocessor keywords) as 1.  The size tool counts all<br>
+>   other octets as 1 excluding ASCII whitespace, and excluding any<br>
+>   ';', '{' or '}' followed by ASCII whitespace, and excluding any<br>
+>   ';', '{' or '}' octet immediately before the end of file.
 
 ASCII whitespace includes ASCII tab, ASCII space, ASCII newline,
 ASCII formfeed, and ASCII carriage return.
@@ -215,9 +215,11 @@ by the IOCCC size tool source code is preferred by the judges.
 
 Take note that this secondary limit imposed by the IOCCC size tool
 obviates some of the need to `#define` C reserved words in an effort
-to get around the size limits of rule 2.
+to get around the size limits of [Rule 2](rules.html#rule2).
 
 Yes Virginia, **that is a hint**!
+
+**`|`**   The [Rule 2a](rules.html#rule2a) size was changed from 4096 to 4993: a change that keeps the "2b to 2a" size ratio to a value similar to the [2001-2020 IOCCC era](../faq.html#size_rule).
 
 We applaud programs that do not issue warnings when compiled.
 To avoid warnings, you might be tempted to add various `-Wno-foobar`
@@ -369,7 +371,7 @@ On 28 January 2007, the Judges rescinded the requirement that the
 The `exit(3)` function returns `void`.  Some broken systems have `exit(3)`
 return `int`, your entry should assume that `exit(3)` returns a `void`.
 
-**`|`**   This guideline has a change mark at the very start of this line.
+**`|`**   This _guideline_ has a change mark at the very start of this line.
 
 Small programs are best when they are short, obscure and concise.
 While such programs are not as complex as other winners, they do
@@ -455,7 +457,7 @@ program is reasonably portable.
 We prefer programs that are portable across a wide variety of Unix-like
 operating systems (i.e., Linux, GNU Hurd, BSD, Unix, etc.).
 
-You are in a maze of twisty guidelines, all different.
+You are in a maze of twisty _guidelines_, all different.
 
 There are at least zero judges who think that Fideism has little
 or nothing to do with the IOCCC judging process.
@@ -509,7 +511,7 @@ of code, and the other that is formatted more like a typical C
 program, we tend to favor the second version.  Of course, a third
 version of the same program that is formatted in an interesting
 and/or obfuscated way, would definitely win over the first two!
-Remember, you can submit more than one entry.  See the rules for details.
+Remember, you can submit more than one entry.  See the [IOCCC rules](rules.html) for details.
 
 We suggest that you avoid trying for the 'smallest self-replicating'
 source.  The smallest, a zero byte entry, [won in 1994](../1994/smr/index.html).
@@ -555,15 +557,18 @@ source program (one that actually works) to display audio/visual data.
 X client entries should avoid using X related libraries and
 software that is not in wide spread use.
 
-This is the only guideline that contains the word fizzbin.
+This is the only _guideline_ that contains the word fizzbin.
+
 **`|`**   However, do you know how to play [fizzbin](https://en.wikipedia.org/wiki/List_of_games_in_Star_Trek#Fizzbin)?
-You do?!?  (Except on Tuesday)
+You do?!?  (Except on Tuesday?)
+
+**`|`**   OK, there are actually 3 _guidelines_ that contain the word fizzbin.
 
 We don't like entries that use proprietary toolkits such as the `M*tif`,
 `Xv*ew`, or `OpenL*ok` toolkits, since not everyone has them.  Use an
 open source toolkit that is widely and freely available instead.
 
-**NOTE**: The previous guideline in this spot has been replaced by this guideline:
+**NOTE**: The previous _guideline_ in this spot has been replaced by this _guideline_:
 
 X client entries should not to depend on particular items on
 `.Xdefaults`.  If you must do so, be sure to note the required lines
@@ -584,13 +589,13 @@ the scope of the contest, we phrase our bias to favor:
 **`|`**   You are **well advised** to submit entries that conform to the [Single UNIX Specification Version 4](https://unix.org/version4/overview.html).
 
 **`|`**   You very well might not be completely be prohibited from failing to not
-**`|`**   partly misunderstand this particular guideline, but of course, we could
+**`|`**   partly misunderstand this particular _guideline_, but of course, we could
 **`|`**   not possibly comment!  :-)  Nevertheless, you are neither prohibited, nor are
 **`|`**   you fully required to determine that this or the previous sentence is either false
 **`|`**   and/or perhaps misleading.  Therefore, it might be wise for you to not fail to consider
 **`|`**   to do so, accordingly. Thank you very much.
 
-Any complaints about the above guideline could be addressed to the
+Any complaints about the above _guideline_ could be addressed to the
 Speaker of the House of Commons, or to the speaker of your national
 parliament should you have one.
 
@@ -612,7 +617,7 @@ You are better off explaining what your entry does in the program
 "remarks" section rather than leaving it obscure for the judges
 as we might miss something and/or be too tired to notice.
 
-**`|`**   Please avoid this specific individual guideline, if it at all possible.
+**`|`**   Please avoid this specific individual _guideline_, if it at all possible.
 
 We freely admit that interesting, creative or humorous comments in
 the program "remarks" help your chances of winning.  If you had to
@@ -631,7 +636,7 @@ prevent such trailing control-M's being added.
 One should restrict libcurses to portable features found on BSD
 or Linux curses.
 
-Rule 13 states any C source that fails to compile because of unescaped
+[Rule 13](rules.html#rule13)  states any C source that fails to compile because of unescaped
 octets with the high bit set (octet value >= 128) will be rejected.
 Instead of unescaped octets, you should use \octal or \hex escapes:
 
@@ -671,15 +676,15 @@ We believe that Mark Twain's remark:
     Get your facts first, then you can distort them as you please.
 ```
 
-is a good guideline for those writing code for the IOCCC.
+is a good motto for those writing code for the IOCCC.
 
 **`|`**   The [IOCCC size tool source](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)
 is not an original work,
 unless you are Anthony C Howe, in which case it is original!
 Submitting source that uses the content of iocccsize.c, unless you are
-Anthony C Howe, might run the risk of violating rule 7.
+Anthony C Howe, might run the risk of violating [Rule 7](rules.html#rule7).
 
-Rule 7 does not prohibit you from writing your own obfuscated IOCCC size tool.
+[Rule 7](rules.html#rule7) does not prohibit you from writing your own obfuscated IOCCC size tool.
 However if you do, you might wish to make your tool do something more
 interesting than simply implementing the IOCCC size tool algorithm.
 
@@ -768,53 +773,53 @@ and state:
 
 # ABUSING THE RULES:
 
-Legal abuse of the [rules](rules.html) is somewhat encouraged.  Legal rule abuse
+Legal abuse of the [IOCCC rules](rules.html) is somewhat encouraged.  Legal rule abuse
 may involve, but is not limited to, doing things that are technically allowed by
-the [rules](rules.html) and yet do not fit the spirit of what we intended to be
+the [IOCCC rules](rules.html) and yet do not fit the spirit of what we intended to be
 submitted.
 
 Legal rule abuse is encouraged to help promote creativity.  Rule abuse
 entries, regardless of if they receive an award, result in changes to
-the next year's [rules](rules.html) and [guidelines](guidelines.html).
+the next year's [IOCCC rules](rules.html) and [IOCCC guidelines](guidelines.html).
 
-Legal abuse of the [rules](rules.html) is NOT an invitation to violate the
-[rules](rules.html). An entry that violates the [rules](rules.html) in the
+Legal abuse of the [IOCCC rules](rules.html) is NOT an invitation to violate the
+[IOCCC rules](rules.html). An entry that violates the [rules](rules.html) in the
 opinion of the judges, **WILL** be
 disqualified.  **_RULE ABUSE CARRIES A CERTAIN LEVEL OF RISK!_**  If you
 have an entry that might otherwise be interesting, you might want to
-submit two versions; one that does not abuse the [rules](rules.html) and one that
+submit two versions; one that does not abuse the [IOCCC rules](rules.html) and one that
 does.
 
-If you intend to abuse the [rules](rules.html), indicate so in the program
+If you intend to abuse the [IOCCC rules](rules.html), indicate so in the program
 "remarks".  You must try to justify why you consider your rule abuse to be
-allowed under the [rules](rules.html).  That is, you must plead your case as to
+allowed under the [IOCCC rules](rules.html).  That is, you must plead your case as to
 why your entry is valid.  Humor and/or creativity help plead a case.
 
 Abusing the web submission procedure tends to annoy us more
 than amuse us.  Spend your creative energy on content of your
 entry rather than on the submission process itself.
 
-We are often asked why the contest [rules](rules.html) and
-[guidelines](guidelines.html) seem too
+We are often asked why the contest [IOCCC rules](rules.html) and
+[IOCCC guidelines](guidelines.html) seem too
 strange or contain mistakes, flaws or grammatical errors.  One reason
 is that we sometimes make genuine mistakes.  But in many cases such
 problems, flaws or areas of confusion are deliberate.  Changes to
-[rules](rules.html) and [guidelines](guidelines.html) in response to rule abuses, are done in a minimal
+[IOCCC rules](rules.html) and [IOCCC guidelines](guidelines.html) in response to rule abuses, are done in a minimal
 fashion.  Often we will deliberately leave behind holes (or introduce
 new ones) so that future rule abuse may continue.  A cleaver author
 should be able to read them and "drive a truck through the holes" in
-the [rules](rules.html) and [guidelines](guidelines.html).
+the [IOCCC rules](rules.html) and [IOCCC guidelines](guidelines.html).
 
 At the risk of stating the obvious, this contest is a parody of the software
-development process.  The [rules](rules.html) and [guidelines](guidelines.html)
+development process.  The [IOCCC rules](rules.html) and [IOCCC guidelines](guidelines.html)
 are only a small part of the overall contest.  Even so, one may think the
-contest [rules](rules.html) and [guideline](guidelines.html) process as a parody
+contest [IOCCC rules](rules.html) and [IOCCC guidelines](guidelines.html) process as a parody
 of the sometimes tragic mismatch between what a customer (or marketing) wants
 and what engineering delivers.  Real programmers must face obfuscated and
 sometimes conflicting specifications and requirements from marketing, sales,
 product management an even from customers themselves on a all too regular basis.
-This is one of the reasons why the [rules](rules.html) and
-[guidelines](guidelines.html) are written in obfuscated form.
+This is one of the reasons why the [IOCCC rules](rules.html) and
+[IOCCC guidelines](guidelines.html) are written in obfuscated form.
 
 
 # JUDGING PROCESS:
@@ -847,8 +852,8 @@ and therefore consider any obfuscated source or data file claiming to be from
 Honeyman to not be form Honeyman.  This of course creates an interesting paradox
 known as the "obfuscated Peter Honeyman paradox".  Should Peter Honeyman
 actually submit an obfuscated entry, he alone is excluded from the above, as we
-will likely believe it just another attempt at confusion.  This guideline is
-known as the "Peter Honeyman is exempt" guideline.
+will likely believe it just another attempt at confusion.  This _guideline_ is
+known as the "Peter Honeyman is exempt" _guideline_.
 
 BTW: None of the entries claiming to be from Peter Honeyman have ever
 won an award.  So it is theoretically possible that Peter Honeyman
@@ -901,7 +906,7 @@ A reading consists of a number of actions:
 In later rounds, other actions are performed including performing
 miscellaneous tests on the source and binary.
 
-**`|`**   This is the very guideline that goes, BING!
+**`|`**   This is the very _guideline_ that goes, BING!
 
 Until we reduce the stack of entries down to about 25 entries, entries
 are judged on an individual basis.  An entry is set aside because it
@@ -951,7 +956,7 @@ This technique is highly discouraged for use by non-IOCCC judges.
 
 More often than not, we select a small entry (usually one line), a
 strange/creative layout entry.  We sometimes also select an
-entry that abuses the contest guidelines in an interesting way,
+entry that abuses the [IOCCC guidelines](guidelines.html) in an interesting way,
 or that stretches the content rules that while legal, is
 nevertheless goes against the intent of the rules.
 
@@ -1027,11 +1032,11 @@ Last, but not least, winners receive international fame and flames!  :-)
 
 **`|`**   For questions or comments about the contest, see [Contacting the IOCCC](../contact.html).
 
-**`|`**   Be sure to review the [IOCCC Rules and Guidelines](index.html) as
-[rules](rules.html) and the [guidelines](guidelines.html) may (and often do) change from year to year.
+**`|`**   Be sure to review the [IOCCC Rules and Guidelines](index.html) as the
+[IOCCC rules](rules.html) and the [IOCCC guidelines](guidelines.html) may (and often do) change from year to year.
 
-**`|`**   You should be sure you have the current [rules](rules.html) and
-[guidelines](guidelines.html) prior to submitting entries.
+**`|`**   You should be sure you have the current [IOCCC rules](rules.html) and
+[IOCCC guidelines](guidelines.html) prior to submitting entries.
 
 **`|`**   See the [Official IOCCC website news](../news.html) for additional information.
 

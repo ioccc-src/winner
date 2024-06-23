@@ -404,8 +404,10 @@ future IOCCC openings.</p>
 granted provided this this copyright and notice are included in its entirety
 and remains unaltered. All other uses must receive prior permission in
 writing by <a href="../contact.html">contacting the judges</a>.</p>
-<h2 id="rules-version">Rules version</h2>
-<p><strong><code>|</code></strong> These rules are version <strong>2024-06-15-v28</strong>.</p>
+<div id="rule_version">
+<h2 id="ioccc-rules-version">IOCCC Rules version</h2>
+</div>
+<p><strong><code>|</code></strong> These <a href="rules.html">IOCCC rules</a> are version <strong>2024-06-23-v28</strong>.</p>
 <p><strong>IMPORTANT</strong>: Be sure to read the <a href="guidelines.html">IOCCC guidelines</a>.</p>
 <h3 id="change-marks">Change marks</h3>
 <p><strong><code>|</code></strong> <strong>← Lines that start with this symbol indicate a change from the previous IOCCC</strong></p>
@@ -423,7 +425,7 @@ IOCCC start with the <strong><code>|</code></strong> symbol.</p>
 <h1 id="goals-of-the-contest">Goals of the Contest</h1>
 <p>The goals of the IOCCC:</p>
 <ul>
-<li>To write the most Obscure/Obfuscated C program within the <a href="rules.html">rules</a>.</li>
+<li>To write the most Obscure/Obfuscated C program within the <a href="rules.html">IOCCC rules</a>.</li>
 <li>To show the importance of programming style, in an ironic way.</li>
 <li>To stress C compilers with unusual code.</li>
 <li>To illustrate some of the subtleties of the C language.</li>
@@ -432,8 +434,8 @@ IOCCC start with the <strong><code>|</code></strong> symbol.</p>
 <h1 id="important-ioccc-dates">Important IOCCC dates</h1>
 <p><strong><code>|</code></strong> This IOCCC runs from <strong>2024-MMM-DD HH:MM:SS UTC</strong> to <strong>202x-MMM-DD HH:MM:SS UTC</strong>.<br>
 <strong><code>|</code></strong> <strong>XXX - date/time is TBD - XXX</strong></p>
-<p>Until the start of this IOCCC, these <a href="rules.html">rules</a>,
-<a href="guidelines.html">guidelines</a> and iocccsize.c (contained in the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
+<p>Until the start of this IOCCC, these <a href="rules.html">IOCCC rules</a>,
+<a href="guidelines.html">IOCCC guidelines</a> and iocccsize.c (contained in the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
 toolkit</a> and invoked by the
 <code>mkiocccentry(1)</code> tool) should be considered provisional <strong>BETA</strong> versions and
 <strong>may be adjusted <em>AT ANY TIME</em></strong>.</p>
@@ -445,24 +447,32 @@ for <strong>important information</strong> on how to submit to the IOCCC.</p>
 <p><strong><code>|</code></strong> The submit URL should be active on or slightly before <strong>2024-MMM-DD HH:MM:SS UTC</strong>.<br>
 <strong><code>|</code></strong> <strong>XXX - date/time is TBD - XXX</strong></p>
 <p>Please wait to submit your entries until after that time.</p>
-<p>The official <a href="rules.html">rules</a> and <a href="guidelines.html">guidelines</a> will be
+<p>The official <a href="rules.html">IOCCC rules</a> and <a href="guidelines.html">IOCCC guidelines</a> will be
 available on the <a href="../index.html">official IOCCC website</a> on or slightly before
 the start of this IOCCC. The <code>mkiocccentry</code> toolkit may be obtained at any time
 at the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit repo</a>.</p>
 <p>Please recheck on or after the start of this IOCCC to be sure you
 are using the correct versions of these items before using the IOCCC
 entry submission URL.</p>
-<h1 id="rules">RULES</h1>
+<h1 id="ioccc-rules">IOCCC RULES</h1>
 <p>To help us with the volume of entries, we ask that you follow these rules:</p>
 <h2 id="rule-0">Rule 0</h2>
 <p>We need a rule 0. :-)</p>
+<div id="rule1">
 <h2 id="rule-1">Rule 1</h2>
+</div>
 <p>Your entry must be a complete program.</p>
+<div id="rule2">
 <h2 id="rule-2">Rule 2</h2>
-<p>The size rule requires your entry to satisfy <strong>BOTH</strong> rule 2a and rule 2b:</p>
+</div>
+<p>The size rule requires your entry to satisfy <strong>BOTH</strong> <a href="#rule2a">Rule 2a</a> and <a href="#rule2b">Rule 2b</a>:</p>
+<div id="rule2a">
 <h2 id="rule-2a">Rule 2a</h2>
+</div>
 <p><strong><code>|</code></strong> The size of your program source <strong>MUST BE &lt;= 4993 bytes</strong> in length.</p>
+<div id="rule2b">
 <h2 id="rule-2b">Rule 2b</h2>
+</div>
 <p><strong><code>|</code></strong> When your program source is fed as input to the current IOCCC size
 tool, and the IOCCC size tool <code>-i</code> command line option is used, the
 value printed <strong>shall not exceed 2503</strong>.</p>
@@ -470,7 +480,9 @@ value printed <strong>shall not exceed 2503</strong>.</p>
 <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry tool repo</a>. If you use
 the <code>mkiocccentry</code> tool (which we <strong>STRONGLY recommend you do</strong>) it will invoke
 this tool before packaging your entry for submission.</p>
+<div id="rule3">
 <h2 id="rule-3">Rule 3</h2>
+</div>
 <p>Submissions should be performed using the instructions outlined at:
 the <a href="../faq.html#submit">How to enter FAQ</a>.</p>
 <p>To submit to an open IOCCC, you must use the <a href="https://submit.ioccc.org/">IOCCC submit server</a>.</p>
@@ -478,65 +490,89 @@ the <a href="../faq.html#submit">How to enter FAQ</a>.</p>
 <p><strong><code>|</code></strong> The submit URL should be active on or slightly before <strong>2024-MMM-DD HH:MM:SS UTC</strong>.<br>
 <strong><code>|</code></strong> <strong>XXX - date/time is TBD - XXX</strong></p>
 <p>Please wait to submit your entries until after that time.</p>
+<div id="rule4">
 <h2 id="rule-4">Rule 4</h2>
+</div>
 <p>If your entry is selected as a winner, it will be modified as follows:</p>
 <p>Your ‘build’ instructions will be incorporated into a Makefile.</p>
 <p>Your source code will be the file <strong>prog.c</strong>. The compiled binary
 will be called <strong>prog</strong>.</p>
+<div id="rule5">
 <h2 id="rule-5">Rule 5</h2>
+</div>
 <p>Your entry <strong>MUST</strong> not modify the content or filename of any part of your
 original entry including, but not limited to <strong>prog.c</strong>, the <strong>Makefile</strong>
 (that we create from your how to build instructions), as well as any data
 files you submit.</p>
 <p>If you entry wishes to modify such content, it <strong>MUST</strong> first copy the
 file to a new filename and then modify that copy.</p>
+<div id="rule6">
 <h2 id="rule-6">Rule 6</h2>
+</div>
 <p><strong><code>|</code></strong> I am not a rule, I am a <code>free(void *human);</code> ‼️</p>
 <p><strong><code>|</code></strong>        <code>while (!(ioccc(rule(you(are(number(6)))))) {</code><br>
 <strong><code>|</code></strong>                <code>ha_ha_ha();</code><br>
 <strong><code>|</code></strong>        <code>}</code></p>
+<div id="rule7">
 <h2 id="rule-7">Rule 7</h2>
+</div>
 <p>The obfuscated C program must be an original work that you own.</p>
 <p>You (the author(s)) must own the contents of your submission OR
 you must have permission from the owner(s) to submit their content
 under the following license:</p>
 <p><strong><code>|</code></strong> <strong><a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0 International</a></strong></p>
-<p>See also rule 18.</p>
+<p>See also <a href="#rule18">Rule 18</a>.</p>
 <p>If you submit any content that is owned by others, you <strong>MUST</strong>
 detail that ownership (i.e., who owns what) <strong>AND document the
 permission you obtained</strong>.</p>
 <p>Please note that the IOCCC size tool is <strong>NOT</strong> an original work.</p>
+<div id="rule8">
 <h2 id="rule-8">Rule 8</h2>
+</div>
 <p><strong><code>|</code></strong> Entries must be received prior to the end of this IOCCC which is <strong>2024-MMM-DD HH:MM:SS UTC</strong>.<br>
 <strong><code>|</code></strong> <strong>XXX - date/time is TBD - XXX</strong></p>
 <p>A confirmation of submission will be sent to the submitting email address
 before the close of the contest.</p>
+<div id="rule9">
 <h2 id="rule-9">Rule 9</h2>
+</div>
 <p><strong><code>|</code></strong> Each person may submit up to and including 10.000000 entries per contest.</p>
 <p>Each entry must be submitted separately.</p>
+<div id="rule10">
 <h2 id="rule-10">Rule 10</h2>
+</div>
 <p>Entries requiring human interaction to be initially compiled are not permitted.</p>
+<div id="rule11">
 <h2 id="rule-11">Rule 11</h2>
+</div>
 <p>Programs that require special privileges (<code>setuid(2)</code>, <code>setgid(2)</code>, super-user,
 special owner, special group, etc.) are still highly discouraged. We
 do not guarantee these functions will behave as you expect on our test
 platforms. If your program needs special permissions <strong>please document
 them</strong> in the remarks file.</p>
+<div id="rule12">
 <h2 id="rule-12">Rule 12</h2>
+</div>
 <p>Legal abuse of the rules is somewhat encouraged. An entry that, in
 the opinion of the judges, violates the rules will be disqualified.
 Entries that attempt to abuse the rules <strong>MUST</strong> try to justify why
 their rule abuse is legal, in the remarks file.</p>
+<div id="rule13">
 <h2 id="rule-13">Rule 13</h2>
+</div>
 <p>Any C source that fails to compile because of unescaped octets with
 the high bit set (octet value &gt;= 128) will be rejected.</p>
+<div id="rule14">
 <h2 id="rule-14">Rule 14</h2>
+</div>
 <p>Any C source that fails to compile because of lines with trailing
 control-M’s (i.e., lines with a tailing octet <code>015</code>) will be rejected.</p>
 <p>Please do not put trailing control-M’s on remarks file lines.
 Please check to be sure, before submitting, that you have removed
 any control-M at the end of remark file lines.</p>
+<div id="rule15">
 <h2 id="rule-15">Rule 15</h2>
+</div>
 <p>When you submit your entry you must have a valid email address
 that can both send and receive email. The online submission
 method is a two phase process that requires the use of an
@@ -552,12 +588,16 @@ be valid for submitting and editing the entry for the lifetime of the
 competition.</p>
 <p>See also <a href="../faq.html#submit">How may I submit to the IOCCC?</a> in the
 <a href="../faq.html">FAQ</a>.</p>
+<div id="rule16">
 <h2 id="rule-16">Rule 16</h2>
+</div>
 <p>You are <strong>STRONGLY</strong> encouraged to submit a previously unpublished <em>AND</em>
 original entry. Submissions that are similar to previous entries are
 discouraged. As we judge anonymously, submissions that have already
 been published may be disqualified.</p>
+<div id="rule17">
 <h2 id="rule-17">Rule 17</h2>
+</div>
 <p><strong><code>|</code></strong> The total size of your submission: the sum of the size of the program,
 hints, comments, build and info files <strong>MUST</strong> be less than or equal
 to 28314624 octets (27651K) in size.</p>
@@ -565,19 +605,25 @@ to 28314624 octets (27651K) in size.</p>
 that file must than or equal 3999971 octets in size.</p>
 <p><strong><code>|</code></strong> The <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a>
 (see <code>mkiocccentry(1)</code> and <code>txzchk(1)</code>) will help you verify that your
-submission conforms to this rule.</p>
+submission conforms to this <a href="#rule17">Rule 17</a>.</p>
+<div id="rule18">
 <h2 id="rule-18">Rule 18</h2>
+</div>
 <p>The entirety of your entry must be submitted under the following license:</p>
 <p><strong><code>|</code></strong> <strong><a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0 International</a></strong></p>
 <p>You (the author(s)) <strong>MUST</strong> own the contents of your submission <strong>OR</strong>
 you <strong>MUST HAVE PERMISSION</strong> from the owner(s) to submit their content.</p>
 <p>You must not submit anything that cannot be submitted under that license.</p>
+<div id="rule19">
 <h2 id="rule-19">Rule 19</h2>
+</div>
 <p>The remarks file must be written in markdown format. See
 the Daring Fireball <a href="http://daringfireball.net/projects/markdown/basics">Markdown: Basics</a>
 for more information.</p>
 <p><strong><code>|</code></strong> We currently use <a href="https://pandoc.org">pandoc</a> to convert markdown to HTML.</p>
+<div id="rule20">
 <h2 id="rule-20">Rule 20</h2>
+</div>
 <p>The how to build instructions must be in Makefile format. See <a href="../faq.html#make_compatibility">the FAQ about
 make(1) compatibility the IOCCC
 supports</a> for more details.</p>
@@ -597,13 +643,17 @@ to use.</p>
 for help in constructing your Makefile. The <code>mkiocccentry</code>, which can be found
 at the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>, tries to
 detect if required rules exist in your Makefile.</p>
+<div id="rule21">
 <h2 id="rule-21">Rule 21</h2>
+</div>
 <p>Your entry must not create or modify files above the current directory
 with the exception of the <code>/tmp</code> and the <code>/var/tmp</code> directories. Your entry
 <strong>MAY</strong> create subdirectories below the current directory, or in <code>/tmp</code>,
 or in <code>/var/tmp</code> provided that <code>.</code> is <strong>NOT</strong> the first octet in any
 directory name or filename you submit.</p>
+<div id="rule22">
 <h2 id="rule-22">Rule 22</h2>
+</div>
 <p>Catch 22:</p>
 <p>Your source code, data files, remarks and program output must <strong>NOT</strong>
 identify the authors of your code. The judges <strong>STRONGLY prefer</strong> to
@@ -614,29 +664,41 @@ within your code, data, remarks or program output (unless you are
 <em>Peter Honeyman</em> or pretending to be <em>Peter Honeyman</em>) will be grounds
 for disqualification of your entry.</p>
 <p>Yes, Virginia, <strong>WE REALLY MEAN IT!</strong></p>
+<div id="rule23">
 <h2 id="rule-23">Rule 23</h2>
+</div>
 <p>This prime rule number is reserved for future use.</p>
+<div id="rule24">
 <h2 id="rule-24">Rule 24</h2>
-<p>Even though 24 is not prime, you should still see rule #23.</p>
+</div>
+<p>Even though 24 is not prime, you should still see <a href="#rule23">Rule 23</a>.</p>
+<div id="rule25">
 <h2 id="rule-25">Rule 25</h2>
-<p><strong><code>|</code></strong> The IOCCC rule set needs more than 5^2 rules: see rule #26.</p>
+</div>
+<p><strong><code>|</code></strong> The <a href="rules.html">IOCCC rule set</a> needs more than 5^2 rules: see <a href="#rule26">Rule 26</a>.</p>
+<div id="rule26">
 <h2 id="rule-26">Rule 26</h2>
+</div>
 <p><strong><code>|</code></strong> “The quick brown fox jumps over the lazy dog”.<br>
 <strong><code>|</code></strong> “Pack my box with five dozen liquor jugs.”<br>
 <strong><code>|</code></strong> “How vexingly quick daft zebras jump!”<br>
 <strong><code>|</code></strong> “Sphinx of black quartz, judge my vow.”<br>
 <strong><code>|</code></strong> “Waltz, bad nymph, for quick jigs vex.”<br>
 <strong><code>|</code></strong> “Mr. Jock, TV quiz PhD, bags few lynx.”</p>
+<div id="rule27">
 <h2 id="rule-27">Rule 27</h2>
-<p><strong><code>|</code></strong> Unless otherwise needed, rule 27 is reserved for something cubic. :-)</p>
+</div>
+<p><strong><code>|</code></strong> Unless otherwise needed, <a href="#rule27">Rule 27</a> is reserved for something cubic. :-)</p>
+<div id="rule28">
 <h2 id="rule-28">Rule 28</h2>
-<p><strong><code>|</code></strong> Rule 28 is a perfect way end to the list of rules as we do not plan to have 496 rules.</p>
+</div>
+<p><strong><code>|</code></strong> <a href="#rule28">Rule 28</a> is a perfect way end to the list of <a href="rules.html">IOCCC rules</a> as we do not plan to have 496 rules. :-)</p>
 <h1 id="for-more-information">FOR MORE INFORMATION:</h1>
 <p><strong><code>|</code></strong> For questions or comments about the contest, see <a href="../contact.html">Contacting the IOCCC</a>.</p>
 <p><strong><code>|</code></strong> Be sure to review the <a href="index.html">IOCCC Rules and Guidelines</a> as
-<a href="rules.html">rules</a> and the <a href="guidelines.html">guidelines</a> may (and often do) change from year to year.</p>
-<p><strong><code>|</code></strong> You should be sure you have the current <a href="rules.html">rules</a> and
-<a href="guidelines.html">guidelines</a> prior to submitting entries.</p>
+<a href="rules.html">IOCCC rules</a> and the <a href="guidelines.html">IOCCC guidelines</a> may (and often do) change from year to year.</p>
+<p><strong><code>|</code></strong> You should be sure you have the current <a href="rules.html">IOCCC rules</a> and
+<a href="guidelines.html">IOCCC guidelines</a> prior to submitting entries.</p>
 <p><strong><code>|</code></strong> See the <a href="../news.html">Official IOCCC website news</a> for additional information.</p>
 <p><strong><code>|</code></strong> For the updates and breaking IOCCC news, you are encouraged to follow
 the <a href="https://fosstodon.org/@ioccc">IOCCC on Mastodon</a> account. See our

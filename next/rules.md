@@ -32,9 +32,11 @@ and remains unaltered.  All other uses must receive prior permission in
 writing by [contacting the judges](../contact.html).
 
 
-## Rules version
+<div id="rule_version">
+## IOCCC Rules version
+</div>
 
-**`|`**   These rules are version **2024-06-15-v28**.
+**`|`**   These [IOCCC rules](rules.html) are version **2024-06-23-v28**.
 
 **IMPORTANT**: Be sure to read the [IOCCC guidelines](guidelines.html).
 
@@ -63,7 +65,7 @@ tr.v. -cated, -cating, -cates.
 
 The goals of the IOCCC:
 
-*  To write the most Obscure/Obfuscated C program within the [rules](rules.html).
+*  To write the most Obscure/Obfuscated C program within the [IOCCC rules](rules.html).
 *  To show the importance of programming style, in an ironic way.
 *  To stress C compilers with unusual code.
 *  To illustrate some of the subtleties of the C language.
@@ -75,8 +77,8 @@ The goals of the IOCCC:
 **`|`**   This IOCCC runs from **2024-MMM-DD HH:MM:SS UTC** to **202x-MMM-DD HH:MM:SS UTC**.<br>
 **`|`**   **XXX - date/time is TBD - XXX**
 
-Until the start of this IOCCC, these [rules](rules.html),
-[guidelines](guidelines.html) and iocccsize.c (contained in the [mkiocccentry
+Until the start of this IOCCC, these [IOCCC rules](rules.html),
+[IOCCC guidelines](guidelines.html) and iocccsize.c (contained in the [mkiocccentry
 toolkit](https://github.com/ioccc-src/mkiocccentry) and invoked by the
 `mkiocccentry(1)` tool) should be considered provisional **BETA** versions and
 **may be adjusted _AT ANY TIME_**.
@@ -93,7 +95,7 @@ for **important information** on how to submit to the IOCCC.
 
 Please wait to submit your entries until after that time.
 
-The official [rules](rules.html) and [guidelines](guidelines.html) will be
+The official [IOCCC rules](rules.html) and [IOCCC guidelines](guidelines.html) will be
 available on the [official IOCCC website](../index.html) on or slightly before
 the start of this IOCCC. The `mkiocccentry` toolkit may be obtained at any time
 at the [mkiocccentry toolkit repo](https://github.com/ioccc-src/mkiocccentry).
@@ -103,7 +105,7 @@ are using the correct versions of these items before using the IOCCC
 entry submission URL.
 
 
-# RULES
+# IOCCC RULES
 
 To help us with the volume of entries, we ask that you follow these rules:
 
@@ -113,22 +115,30 @@ To help us with the volume of entries, we ask that you follow these rules:
 We need a rule 0.  :-)
 
 
+<div id="rule1">
 ## Rule 1
+</div>
 
 Your entry must be a complete program.
 
 
+<div id="rule2">
 ## Rule 2
+</div>
 
-The size rule requires your entry to satisfy **BOTH** rule 2a and rule 2b:
+The size rule requires your entry to satisfy **BOTH** [Rule 2a](#rule2a) and [Rule 2b](#rule2b):
 
 
+<div id="rule2a">
 ## Rule 2a
+</div>
 
 **`|`**   The size of your program source **MUST BE <= 4993 bytes** in length.
 
 
+<div id="rule2b">
 ## Rule 2b
+</div>
 
 **`|`**   When your program source is fed as input to the current IOCCC size
 tool, and the IOCCC size tool `-i` command line option is used, the
@@ -140,7 +150,9 @@ the `mkiocccentry` tool (which we **STRONGLY recommend you do**) it will invoke
 this tool before packaging your entry for submission.
 
 
+<div id="rule3">
 ## Rule 3
+</div>
 
 Submissions should be performed using the instructions outlined at:
 the [How to enter FAQ](../faq.html#submit).
@@ -155,7 +167,9 @@ When the IOCCC is not open, that link will likely be unresponsive.
 Please wait to submit your entries until after that time.
 
 
+<div id="rule4">
 ## Rule 4
+</div>
 
 If your entry is selected as a winner, it will be modified as follows:
 
@@ -165,7 +179,9 @@ Your source code will be the file **prog.c**.  The compiled binary
 will be called **prog**.
 
 
+<div id="rule5">
 ## Rule 5
+</div>
 
 Your entry **MUST** not modify the content or filename of any part of your
 original entry including, but not limited to **prog.c**, the **Makefile**
@@ -176,7 +192,9 @@ If you entry wishes to modify such content, it **MUST** first copy the
 file to a new filename and then modify that copy.
 
 
+<div id="rule6">
 ## Rule 6
+</div>
 
 **`|`**   I am not a rule, I am a `free(void *human);` ‼️
 
@@ -185,8 +203,9 @@ file to a new filename and then modify that copy.
 **`|`**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`}`
 
 
-
+<div id="rule7">
 ## Rule 7
+</div>
 
 The obfuscated C program must be an original work that you own.
 
@@ -196,7 +215,7 @@ under the following license:
 
 **`|`**   **[CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)**
 
-See also rule 18.
+See also [Rule 18](#rule18).
 
 If you submit any content that is owned by others, you **MUST**
 detail that ownership (i.e., who owns what) **AND document the
@@ -205,7 +224,9 @@ permission you obtained**.
 Please note that the IOCCC size tool is **NOT** an original work.
 
 
+<div id="rule8">
 ## Rule 8
+</div>
 
 **`|`**   Entries must be received prior to the end of this IOCCC which is **2024-MMM-DD HH:MM:SS UTC**.<br>
 **`|`**   **XXX - date/time is TBD - XXX**
@@ -215,19 +236,25 @@ A confirmation of submission will be sent to the submitting email address
 before the close of the contest.
 
 
+<div id="rule9">
 ## Rule 9
+</div>
 
 **`|`**   Each person may submit up to and including 10.000000 entries per contest.
 
 Each entry must be submitted separately.
 
 
+<div id="rule10">
 ## Rule 10
+</div>
 
 Entries requiring human interaction to be initially compiled are not permitted.
 
 
+<div id="rule11">
 ## Rule 11
+</div>
 
 Programs that require special privileges (`setuid(2)`, `setgid(2)`, super-user,
 special owner, special group, etc.) are still highly discouraged. We
@@ -236,7 +263,9 @@ platforms. If your program needs special permissions **please document
 them** in the remarks file.
 
 
+<div id="rule12">
 ## Rule 12
+</div>
 
 Legal abuse of the rules is somewhat encouraged.  An entry that, in
 the opinion of the judges, violates the rules will be disqualified.
@@ -244,13 +273,17 @@ Entries that attempt to abuse the rules **MUST** try to justify why
 their rule abuse is legal, in the remarks file.
 
 
+<div id="rule13">
 ## Rule 13
+</div>
 
 Any C source that fails to compile because of unescaped octets with
 the high bit set (octet value >= 128) will be rejected.
 
 
+<div id="rule14">
 ## Rule 14
+</div>
 
 Any C source that fails to compile because of lines with trailing
 control-M's (i.e., lines with a tailing octet `015`) will be rejected.
@@ -260,7 +293,9 @@ Please check to be sure, before submitting, that you have removed
 any control-M at the end of remark file lines.
 
 
+<div id="rule15">
 ## Rule 15
+</div>
 
 When you submit your entry you must have a valid email address
 that can both send and receive email.  The online submission
@@ -283,7 +318,9 @@ See also [How may I submit to the IOCCC?](../faq.html#submit) in the
 [FAQ](../faq.html).
 
 
+<div id="rule16">
 ## Rule 16
+</div>
 
 You are **STRONGLY** encouraged to submit a previously unpublished _AND_
 original entry. Submissions that are similar to previous entries are
@@ -291,7 +328,9 @@ discouraged. As we judge anonymously, submissions that have already
 been published may be disqualified.
 
 
+<div id="rule17">
 ## Rule 17
+</div>
 
 **`|`**   The total size of your submission: the sum of the size of the program,
 hints, comments, build and info files **MUST** be less than or equal
@@ -302,9 +341,12 @@ that file must than or equal 3999971 octets in size.
 
 **`|`**   The [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
 (see `mkiocccentry(1)` and `txzchk(1)`) will help you verify that your
-submission conforms to this rule.
+submission conforms to this [Rule 17](#rule17).
 
+
+<div id="rule18">
 ## Rule 18
+</div>
 
 The entirety of your entry must be submitted under the following license:
 
@@ -316,7 +358,9 @@ you **MUST HAVE PERMISSION** from the owner(s) to submit their content.
 You must not submit anything that cannot be submitted under that license.
 
 
+<div id="rule19">
 ## Rule 19
+</div>
 
 The remarks file must be written in markdown format. See
 the Daring Fireball [Markdown: Basics](http://daringfireball.net/projects/markdown/basics)
@@ -325,7 +369,9 @@ for more information.
 **`|`**   We currently use [pandoc](https://pandoc.org) to convert markdown to HTML.
 
 
+<div id="rule20">
 ## Rule 20
+</div>
 
 The how to build instructions must be in Makefile format. See [the FAQ about
 make&#x28;1&#x29; compatibility the IOCCC
@@ -355,7 +401,9 @@ at the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry), tries to
 detect if required rules exist in your Makefile.
 
 
+<div id="rule21">
 ## Rule 21
+</div>
 
 Your entry must not create or modify files above the current directory
 with the exception of the `/tmp` and the `/var/tmp` directories.  Your entry
@@ -364,7 +412,9 @@ or in `/var/tmp` provided that `.` is **NOT** the first octet in any
 directory name or filename you submit.
 
 
+<div id="rule22">
 ## Rule 22
+</div>
 
 Catch 22:
 
@@ -382,22 +432,30 @@ for disqualification of your entry.
 Yes, Virginia, **WE REALLY MEAN IT!**
 
 
+<div id="rule23">
 ## Rule 23
+</div>
 
 This prime rule number is reserved for future use.
 
 
+<div id="rule24">
 ## Rule 24
+</div>
 
-Even though 24 is not prime, you should still see rule #23.
+Even though 24 is not prime, you should still see [Rule 23](#rule23).
 
 
+<div id="rule25">
 ## Rule 25
+</div>
 
-**`|`**   The IOCCC rule set needs more than 5^2 rules: see rule #26.
+**`|`**   The [IOCCC rule set](rules.html) needs more than 5^2 rules: see [Rule 26](#rule26).
 
 
+<div id="rule26">
 ## Rule 26
+</div>
 
 **`|`**   "The quick brown fox jumps over the lazy dog".<br>
 **`|`**   "Pack my box with five dozen liquor jugs."<br>
@@ -407,14 +465,18 @@ Even though 24 is not prime, you should still see rule #23.
 **`|`**   "Mr. Jock, TV quiz PhD, bags few lynx."
 
 
+<div id="rule27">
 ## Rule 27
+</div>
 
-**`|`**   Unless otherwise needed, rule 27 is reserved for something cubic.  :-)
+**`|`**   Unless otherwise needed, [Rule 27](#rule27) is reserved for something cubic.  :-)
 
 
+<div id="rule28">
 ## Rule 28
+</div>
 
-**`|`**   Rule 28 is a perfect way end to the list of rules as we do not plan to have 496 rules.
+**`|`**   [Rule 28](#rule28) is a perfect way end to the list of [IOCCC rules](rules.html) as we do not plan to have 496 rules. :-)
 
 
 
@@ -423,10 +485,10 @@ Even though 24 is not prime, you should still see rule #23.
 **`|`**   For questions or comments about the contest, see [Contacting the IOCCC](../contact.html).
 
 **`|`**   Be sure to review the [IOCCC Rules and Guidelines](index.html) as
-[rules](rules.html) and the [guidelines](guidelines.html) may (and often do) change from year to year.
+[IOCCC rules](rules.html) and the [IOCCC guidelines](guidelines.html) may (and often do) change from year to year.
 
-**`|`**   You should be sure you have the current [rules](rules.html) and
-[guidelines](guidelines.html) prior to submitting entries.
+**`|`**   You should be sure you have the current [IOCCC rules](rules.html) and
+[IOCCC guidelines](guidelines.html) prior to submitting entries.
 
 **`|`**   See the [Official IOCCC website news](../news.html) for additional information.
 
