@@ -6155,27 +6155,29 @@ helped improve the presentation of their fellow IOCCC entries.
 </div>
 
 We call out the extensive contributions of [Cody Boone
-Ferguson](authors.html#Cody_Boone_Ferguson) who is
-responsible for most of the improvements and fixes including many **EXTREMELY
-HARD bug fixes** like [1988/phillipps](thanks-for-help.html#1988_phillipps),
+Ferguson](authors.html#Cody_Boone_Ferguson) who is responsible for most of the
+improvements and fixes including many **EXTREMELY HARD bug fixes** (for certain
+definitions of **_HARD_** :-) ) like
+[1988/phillipps](thanks-for-help.html#1988_phillipps),
 [1992/vern](thanks-for-help.html#1992_vern),
 [2001/anonymous](thanks-for-help.html#2001_anonymous),
 [2004/burley](thanks-for-help.html#2004_burley) and
 [2005/giljade](thanks-for-help.html#2005_giljade), making all entries such as
 [1985/sicherman](thanks-for-help.html#1985_sicherman) and
 [1986/wall](thanks-for-help.html#1986_wall) not need `-traditional-cpp` (all
-**EXTREMELY HARD**), fixing entries to work with `clang`, some **EXTREMELY HARD**
-like [1991/dds](thanks-for-help.html#1991_dds), or as much as possible
+**EXTREMELY HARD**), fixing entries to work with `clang`, some **EXTREMELY
+HARD** like [1991/dds](thanks-for-help.html#1991_dds), or as much as possible
 ([1989/westley](thanks-for-help.html#1989_westley), a true masterpiece that is
 **INCREDIBLY HARD, *MUCH MORE SO* than any other fix!**), porting entries to
 macOS (some **EXTREMELY HARD** like
 [1998/schweikh1](thanks-for-help.html#1998_schweikh1), fixing code like
 [2001/herrmann2](thanks-for-help.html#2001_herrmann2) to work in both
 32-bit/64-bit which *can be* **EXTREMELY HARD**, providing alternate code where
-useful/necessary, improving **ALL _Makefiles_**, writing scripts to
-greatly simplify running many of the entries and writing
-[sgit](https://github.com/xexyl/sgit) to easily run
-`sed(1)` on files in the repo to help build the website.
+useful/necessary, improving **ALL _Makefiles_** and writing scripts to greatly
+simplify running many of the entries.
+
+He also wrote [sgit](https://github.com/xexyl/sgit) to easily run
+`sed(1)` on files in the repo which we used to help build the website.
 
 Cody Boone Ferguson also used one of his own tools to detect many dead links.
 While the tool was not perfect it went a long way to uncover a good number of
@@ -6190,8 +6192,8 @@ from the SQL file).
 
 Additionally Cody greatly improved the manifest of the winning entries and
 checked that the generated html files, index.html and otherwise, look well and
-presentable and suggested a CSS rule for `<img>` to  make images more responsive
-on smaller screens.
+presentable and suggested some CSS rules for image responsiveness on smaller
+screens and other improvements.
 
 **THANK YOU VERY MUCH** for your extensive efforts in helping improve the IOCCC
 presentation of past IOCCC entries and fixing almost all past entries for modern
