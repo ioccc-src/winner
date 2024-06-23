@@ -80,19 +80,19 @@ To find the approximate place where this entry was judged, type:
 ``` <!---sh-->
     ./whereami.sh 37 -122	# NOTE: - means west of meridian
 
-	# or if you don't have at least 80 columns and want to see what it
-	# looks like anyway:
+    # or if you don't have at least 80 columns and want to see what it
+    # looks like anyway:
     ./whereami 37 -122	# NOTE: - means west of meridian
 ```
 
 If you wish to see this on the US map:
 
 ``` <!---sh-->
-	make alt
+    make alt
     ./whereami.alt.sh 37 -122	# NOTE: - means west of meridian
 
-	# or if you don't have at least 80 columns and want to see what it
-	# looks like anyway:
+    # or if you don't have at least 80 columns and want to see what it
+    # looks like anyway:
     ./whereami.alt.sh 37 -122	# NOTE: - means west of meridian
 ```
 

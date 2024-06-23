@@ -438,7 +438,7 @@ for the given page URL.</p>
 <pre><code>```
 This code block is NOT indented                                 &lt;=== no thank you
 ```</code></pre>
-<p>We request that you indent the code block by 4 spaces:</p>
+<p>We request that you indent the code block by 4 ASCII spaces</p>
 <pre><code>```
     This code block
     is indented 4 spaces
@@ -454,6 +454,34 @@ those used in <code>next/rules.md</code> and in <code>next/guidelines.md</code>.
 |       please_do_not_submit_this();
     }
 ```</code></pre>
+<h2 id="please-do-not-use-ascii-tabs-to-indent-text">Please do NOT use ASCII tabs to indent text</h2>
+<p>When indenting a code block in markdown, indent 4 ASCII spaces per level.
+If you need to indent 2 or more levels, use multiples of 4 ASCII spaces.
+Please do <strong>NOT</strong> intend with ASCII tabs!</p>
+<p>For example:</p>
+<pre><code>```
+        Please do **NOT** indent with ASCII tabs.               &lt;=== no thank you
+
+    The top level starts with a 4 ASCII space indent.
+
+    Only indend with multiples of 4 ASCII spaces.
+        2nd level indent needs 8 ASCII spaces (no tabs).
+            3rd level indent needs 12 ASCII spaces (no tabs).
+                etc.
+```</code></pre>
+<h2 id="please-do-not-specify-a-language-for-a-code-block">Please do NOT specify a language for a code block</h2>
+<p>We request that (fenced) markdown code blocks <strong>NOT</strong> specify a language.</p>
+<p>For example:</p>
+<pre><code>```c                                                            &lt;=== no thank you
+    int main(void) {return 0;}
+```</code></pre>
+<p>Instead, put the language inside an HTML comment, separated from the
+markdown code block starting fence by a space:</p>
+<pre><code>``` &lt;!---c--&gt;
+    int main(void) {return 0;}
+```</code></pre>
+<p><strong>IMPORTANT</strong>: The <strong>initial</strong>   <strong>` ` `</strong>   must be followed by an <strong><code>ASCII space</code></strong>,
+then by an <strong>opening</strong> <strong><code>&lt;!---</code></strong>, then by the <strong>language</strong>, then by a <strong>closing</strong> <strong><code>--&gt;</code></strong>.</p>
 <h2 id="please-do-not-add-trailing-slash-to-html-elements">Please do NOT add trailing slash to HTML elements</h2>
 <p>Please do <strong>NOT</strong> use a trailing slash on <a href="https://github.com/validator/validator/wiki/Markup-»-Void-elements">void HTML
 elements</a>.</p>

@@ -124,7 +124,7 @@ This code block is NOT indented                   		<=== no thank you
 ````
 
 
-We request that you indent the code block by 4 spaces:
+We request that you indent the code block by 4 ASCII spaces
 
 ````
 ```
@@ -149,6 +149,54 @@ For example, `next/guidelines.md` uses this markdown code block:
     }
 ```
 ````
+
+
+## Please do NOT use ASCII tabs to indent text
+
+When indenting a code block in markdown, indent 4 ASCII spaces per level.
+If you need to indent 2 or more levels, use multiples of 4 ASCII spaces.
+Please do **NOT** intend with ASCII tabs!
+
+For example:
+
+````
+```
+	Please do **NOT** indent with ASCII tabs.		<=== no thank you
+
+    The top level starts with a 4 ASCII space indent.
+
+    Only indend with multiples of 4 ASCII spaces.
+        2nd level indent needs 8 ASCII spaces (no tabs).
+            3rd level indent needs 12 ASCII spaces (no tabs).
+                etc.
+```
+````
+
+
+## Please do NOT specify a language for a code block
+
+We request that (fenced) markdown code blocks **NOT** specify a language.
+
+For example:
+
+````
+```c								<=== no thank you
+    int main(void) {return 0;}
+```
+````
+
+Instead, put the language inside an HTML comment, separated from the
+markdown code block starting fence by a space:
+
+````
+``` <%%NO_COMMENT%%!---c-->
+    int main(void) {return 0;}
+```
+````
+
+**IMPORTANT**: The **initial** &nbsp; **\` \` \`** &nbsp; must be followed by an **`ASCII space`**,
+then by an **opening** **`<!---`**, then by the **language**, then by a **closing** **`-->`**.
+
 
 
 ## Please do NOT add trailing slash to HTML elements
