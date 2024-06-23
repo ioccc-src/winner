@@ -125,7 +125,8 @@ The size rule requires your entry to satisfy **BOTH** rule 2a and rule 2b:
 
 ## Rule 2a
 
-The size of your program source **MUST BE <= 4096 bytes** in length.
+**`|`**   The size of your program source **MUST BE <= 4993 bytes** in length.
+
 
 ## Rule 2b
 
