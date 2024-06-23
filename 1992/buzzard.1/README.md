@@ -33,7 +33,7 @@ Notice how many statements it takes to do anything useful?
 
 ## Author's remarks:
 
-What you shouldn't think about `buzzard.1`:
+### What you shouldn't think about `buzzard.1`:
 
 `buzzard.1` doesn't just do a mass of `#define`s as its obfuscation.
 
@@ -43,7 +43,7 @@ What you shouldn't think about `buzzard.1`:
 I didn't just submit the post-C-preprocessed output as an entry.
 
 
-#### Cute trick warning
+### Cute trick warning
 
 `buzzard.1` contains only a numeric `printf(3)`, yet sometimes it prints out
 short strings.
@@ -126,36 +126,74 @@ place to site some references on the AE, but I don't have any.
 [Don't read this unless you're stumped!]
 
 ```
-    MACRO		FUNCTION				MNEMONIC
+    MACRO     FUNCTION        MNEMONIC
 
-    V               begin variable declarations			Variable
-    C               begin program				Code
+    V         begin variable
+              declarations    Variable
 
-    Q(b,a)          let b = a					eQuals
-    A(c,a,b)        let c = a + b				Add
-    S(c,a,b)        let c = a - b				Subtract
-    D(c,a,b)        let c = a / b, where b is a *constant*  	Divide
-    U(c,a,b)        let c = a / b, where b is anything      	Unknown
-    M(c,a,b)        let c = a * b				Multiply
+    C         begin program   Code
 
-    O(c,a,b)        let c = a boolean-or b (a,b are 0 or 1) Or
-    B(b, a)         let b = boolean value of a			Boolean
-    P(b, a)         let b = 1 if a>0, else 0.			Positive
+    Q(b,a)    let b = a       eQuals
+    A(c,a,b)  let c = a + b   Add
+    S(c,a,b)  let c = a - b   Subtract
 
-    l               emit next sequential label			Label
-    J(x)            goto label #x				Jump
+    D(c,a,b)  let c = a / b,
+              where b is a    Divide
+              constant
 
-    Z(a,d)          if a is 0 goto d    (a is 0 or 1)		Zero
-    E(a,d)          if a is 1 goto d    (a is 0 or 1)		Else
+    U(c,a,b)  let c = a / b,
+              where b is      Unknown
+              anything
 
-    H               halt					Haly
+    M(c,a,b)  let c = a * b   Multiply
 
-    K(x)            let x = number of cmd line arguments	Kount
-    G(x,y)          let x = the value if the yth argument   	Get argument
+    O(c,a,b)  let c = a       Or
+              boolean-or
+              b (a,b are
+	      0 or 1)
 
-    T               end of code; begin output section		Terminate
-    X(y)            print out hexadecimal value of y		heXadecimal
-    T               end of output section and program		Terminate
+    B(b, a)   let             Boolean
+	      b = boolean
+	      value of a
+
+    P(b, a)   let b = 1 if
+              a>0, else 0.    Positive
+
+    l         emit next
+              sequential      Label
+              label
+
+    J(x)      goto label #x   Jump
+
+    Z(a,d)    if a is 0
+              goto d (a is    Zero
+              0 or 1)
+
+    E(a,d)    if a is 1
+              goto d          Else
+              (a is 0 or 1)
+
+    H         halt            Halt
+
+    K(x)      let x = number
+              of cmdline      Kount
+              arguments
+
+    G(x,y)    let x = the
+              value
+              of the yth      Get arg
+              argument
+
+    T         end of code;
+              begin output    Terminate
+              section
+
+    X(y)      print hex
+              value of y      heX
+
+    T         end of output   Terminate
+              section
+              and program
 ```
 
 You can figure out the other macros yourself.  In the sample program, I've
