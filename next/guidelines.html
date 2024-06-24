@@ -528,11 +528,11 @@ ASCII formfeed, and ASCII carriage return.</p>
 <p>In cases where the above summary and the algorithm implemented by
 the IOCCC size tool source code conflict, the algorithm implemented
 by the IOCCC size tool source code is preferred by the judges.</p>
-<p><strong><code>|</code></strong> There are at least 2 other reasons for selecting 2503 as the 2nd limit</p>
-<p><strong><code>|</code></strong> besides the fact that 2503 is a prime. These reasons</p>
-<p><strong><code>|</code></strong> may be searched for and discovered if you are <a href="https://t5k.org/curios/page.php/2503.html">“Curios!” about 2503</a>. :-)</p>
-<p><strong><code>|</code></strong> Moreover, 2053 was the number of the kernel disk pack of one of the</p>
-<p><strong><code>|</code></strong> judge’s BESM-6, and 2503 is a decimal anagram of 2053.</p>
+<p><strong><code>|</code></strong> There are at least 2 other reasons for selecting 2503 as the 2nd limit<br>
+<strong><code>|</code></strong> besides the fact that 2503 is a prime. These reasons<br>
+<strong><code>|</code></strong> may be searched for and discovered if you are <a href="https://t5k.org/curios/page.php/2503.html">“Curios!” about 2503</a>. :-)<br>
+<strong><code>|</code></strong> Moreover, 2053 was the number of the kernel disk pack of one of the<br>
+<strong><code>|</code></strong> judge’s BESM-6, and 2503 is a decimal anagram of 2053.</p>
 <p>Take note that this secondary limit imposed by the IOCCC size tool
 obviates some of the need to <code>#define</code> C reserved words in an effort
 to get around the size limits of <a href="rules.html#rule2">Rule 2</a>.</p>
@@ -860,8 +860,10 @@ into creating a dense blob. Such are the trade-offs that obfuscators face!</p>
 <p>We prefer code that can run on either a 64-bit or 32-bit processor.
 However, it is unwise to assume it will run on an i386 or x86 architecture.</p>
 <p>We believe that Mark Twain’s remark:</p>
-<pre><code>    Get your facts first, then you can distort them as you please.</code></pre>
-<p>is a good motto for those writing code for the IOCCC.</p>
+<blockquote>
+<p>Get your facts first, then you can distort them as you please.</p>
+</blockquote>
+<p>… is a good motto for those writing code for the IOCCC.</p>
 <p><strong><code>|</code></strong> The <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c">IOCCC size tool source</a>
 is not an original work,
 unless you are Anthony C Howe, in which case it is original!
@@ -886,33 +888,49 @@ following compiler flag:</p>
 <p>If there are limitations in your entry, you are highly encouraged
 to note such limitations in your remarks file. For example if your
 entry factors values up to a certain size, you might want to state:</p>
-<pre><code>    This entry factors values up 2305567963945518424753102147331756070.
-    Attempting to factor larger values will produce unpredictable results.</code></pre>
+<blockquote>
+<p>This entry factors values up 2305567963945518424753102147331756070.
+Attempting to factor larger values will produce unpredictable results.</p>
+</blockquote>
 <p>The judges might try to factor the value -5, so you want to might state:</p>
-<pre><code>    This entry factors positive values up 2305567963945518424753102147331756070.
-    Attempting to factor large values will produce unpredictable results.</code></pre>
+<blockquote>
+<p>This entry factors positive values up 2305567963945518424753102147331756070.
+Attempting to factor large values will produce unpredictable results.</p>
+</blockquote>
 <p>However the judges might try to also factor 0, so you want to might state:</p>
-<pre><code>    This entry factors values between 1 and 2305567963945518424753102147331756070.
-    Attempting to factor values outside that range will produce unpredictable results.</code></pre>
+<blockquote>
+<p>This entry factors values between 1 and 2305567963945518424753102147331756070.
+Attempting to factor values outside that range will produce unpredictable
+results.</p>
+</blockquote>
 <p>Moreover the try to also factor 3.5 or 0x7, or Fred, so you want to might state:</p>
-<pre><code>    This entry factors integers between 1 and 2305567963945518424753102147331756070.
-    Attempting to factor anything else will produce unpredictable results.</code></pre>
+<blockquote>
+<p>This entry factors integers between 1 and
+2305567963945518424753102147331756070. Attempting to factor anything else will
+produce unpredictable results.</p>
+</blockquote>
 <p>You entry might be better off catching the attempt to factor bogus values
 and doing something interesting. So you might want to code accordingly and state:</p>
-<pre><code>    This entry factors integers between 1 and 2305567963945518424753102147331756070.
-    Attempting to factor anything else will cause the program to insult your
-    pet fish Eric.</code></pre>
+<blockquote>
+<p>This entry factors integers between 1 and
+2305567963945518424753102147331756070. Attempting to factor anything else will
+cause the program to insult your pet fish Eric.</p>
+</blockquote>
 <p>The judges might not have a pet fish named Eric, so might want to state:</p>
-<pre><code>    This entry factors integers between 1 and 2305567963945518424753102147331756070.
-    Attempting to factor anything else will cause the program to insult your
-    pet fish Eric, or in the case that you lack such a pet, will insult the
-    pet that you do not have.</code></pre>
+<blockquote>
+<p>This entry factors integers between 1 and
+2305567963945518424753102147331756070. Attempting to factor anything else will
+cause the program to insult your pet fish Eric, or in the case that you lack
+such a pet, will insult the pet that you do not have.</p>
+</blockquote>
 <p>When all other things are equal, an entry with fewer limitation will be judged
 better than an entry with lots of limitations. So you might want to code accordingly
 and state:</p>
-<pre><code>    This entry attempts to a factor value of any size provided that the program
-    is given enough time and memory.  If the value is not a proper integer, the
-    program will insult a fish named Eric, even if such a fish does not exist.</code></pre>
+<blockquote>
+<p>This entry attempts to a factor value of any size provided that the program is
+given enough time and memory. If the value is not a proper integer, the program
+will insult a fish named Eric, even if such a fish does not exist.</p>
+</blockquote>
 <h1 id="abusing-the-rules">ABUSING THE RULES:</h1>
 <p>Legal abuse of the <a href="rules.html">IOCCC rules</a> is somewhat encouraged. Legal rule abuse
 may involve, but is not limited to, doing things that are technically allowed by
@@ -1091,12 +1109,11 @@ you are mentioned you will not get a notification.</p>
 <p><strong><code>|</code></strong> The <a href="../news.html">IOCCC news</a> will also contain an announcement of the winners.</p>
 <h2 id="an-important-update-to-how-winners-are-announced">An important update to how winners are announced</h2>
 <p>The IOCCC no longer uses twitter. IOCCC entries will be announced
-by a git commit to the IOCCC entries repo:</p>
-<pre><code>    https://github.com/ioccc-src/winner</code></pre>
-<p>that, in turn, updates the official IOCCC website:</p>
-<pre><code>    https://www.ioccc.org/index.html</code></pre>
-<p>In addition a note is posted to the IOCCC Mastodon account:</p>
-<pre><code>    https://fosstodon.org/@ioccc</code></pre>
+by a git commit to the <a href="https://github.com/ioccc-src/winner">IOCCC entries
+repo</a> that, in turn, updates the <a href="https://www.ioccc.org/index.html">official
+IOCCC website</a>.</p>
+<p>In addition a note is posted to the <a href="https://fosstodon.org/@ioccc">IOCCC Mastodon
+account</a>.</p>
 <h2 id="back-to-announcement-of-winners">Back to announcement of winners</h2>
 <p>It is pointless to ask the IOCCC judges how many entries we receive.
 Other government TLA or FLA snooping organizations are prohibited from
