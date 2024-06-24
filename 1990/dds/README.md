@@ -91,12 +91,12 @@ Boolean expressions evaluate to 0 for false and 1 for true.
 
 ### Limits:
 
-- Line numbers		1-10000
-- Line length		999 characters
-- FOR nesting		26
-- GOSUB			999 levels
-- Program		Dynamically allocated
-- Expressions		-32768 - 32767 for 16 bit machines, -2147483648 - 2147483647 for 32 bit machines
+- Line numbers          1-10000
+- Line length           999 characters
+- FOR nesting           26
+- GOSUB                 999 levels
+- Program               Dynamically allocated
+- Expressions           -32768 - 32767 for 16 bit machines, -2147483648 - 2147483647 for 32 bit machines
 
 ### Error checking / error reports:
 

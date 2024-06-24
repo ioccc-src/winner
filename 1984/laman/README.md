@@ -42,15 +42,15 @@ Some new compilers (in 1984) dislike lines 6 and 10 of the source, so we changed
 them from:
 
 ``` <!---c-->
-	;++f)a[		b<<5|c]		=d++,b+		=e;for(		f=0;f<O
-	<<5|c]^		a[b<<5		|c]^=a[		(k-(b+1		))<<5|c]
+        ;++f)a[         b<<5|c]         =d++,b+         =e;for(         f=0;f<O
+        <<5|c]^         a[b<<5          |c]^=a[         (k-(b+1         ))<<5|c]
 ```
 
 to:
 
 ``` <!---c-->
-	;++f)a[		b<<5|c]		=d++,b+=	e;for(		f=0;f<O
-	<<5|c]^=	a[b<<5		|c]^=a[		(k-(b+1		))<<5|c]
+        ;++f)a[         b<<5|c]         =d++,b+=        e;for(          f=0;f<O
+        <<5|c]^=        a[b<<5          |c]^=a[         (k-(b+1         ))<<5|c]
 ```
 
 I hope you have a C beautifier!

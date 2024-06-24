@@ -53,7 +53,7 @@ Use this to obfuscate your BF programs!
 
     For a challenge, figure out what this obfuscated BF program does:
 
-	    J4mzt?Vazexx-20d~&&~AxdUV!x(~Jz&V)x*(P=J)JUN(dizz)xx_!xx'0&{Vz;}&Jj
+            J4mzt?Vazexx-20d~&&~AxdUV!x(~Jz&V)x*(P=J)JUN(dizz)xx_!xx'0&{Vz;}&Jj
 
     It takes two integers as input and outputs one integer.
 

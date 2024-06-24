@@ -138,9 +138,9 @@ For example:
 
 ``` <!---json-->
     "winning_entry_set" : [
-	{ "entry_id" : "1987_somedir" },
-	{ "entry_id" : "2020_entrydir" },
-	{ "entry_id" : "2024_dirname" }
+        { "entry_id" : "1987_somedir" },
+        { "entry_id" : "2020_entrydir" },
+        { "entry_id" : "2024_dirname" }
     ]
 ```
 
@@ -150,26 +150,26 @@ Here is a fictitious author_handle.json example:
 
 ``` <!---json-->
     {
-	"no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-	"author_JSON_format_version" : "1.0 2023-06-10",
-	"author_handle" : "first0_last0",
-	"full_name" : "First Middle Last",
-	"sort_word" : "lowercaselast",
-	"location_code" : "AU",
-	"location_name" : "Australia",
-	"email" : "user0@example.com",
-	"url" : "https://a.host0.example.com/index.html",
-	"alt_url" : "https://b.host0.example.com/index.html",
-	"deprecated_twitter_handle" : "@something",
-	"mastodon" : "@mastodon0@example.com",
-	"mastodon_url" : "https://example.org/@mastodon0",
-	"github" : "@github0",
-	"affiliation" : "an affiliation group",
-	"winning_entry_set" : [
-	    { "entry_id" : "1987_somedir" },
-	    { "entry_id" : "2020_entrydir" },
-	    { "entry_id" : "2024_dirname" }
-	]
+        "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+        "author_JSON_format_version" : "1.0 2023-06-10",
+        "author_handle" : "first0_last0",
+        "full_name" : "First Middle Last",
+        "sort_word" : "lowercaselast",
+        "location_code" : "AU",
+        "location_name" : "Australia",
+        "email" : "user0@example.com",
+        "url" : "https://a.host0.example.com/index.html",
+        "alt_url" : "https://b.host0.example.com/index.html",
+        "deprecated_twitter_handle" : "@something",
+        "mastodon" : "@mastodon0@example.com",
+        "mastodon_url" : "https://example.org/@mastodon0",
+        "github" : "@github0",
+        "affiliation" : "an affiliation group",
+        "winning_entry_set" : [
+            { "entry_id" : "1987_somedir" },
+            { "entry_id" : "2020_entrydir" },
+            { "entry_id" : "2024_dirname" }
+        ]
     }
 ```
 
@@ -178,26 +178,26 @@ withheld are null:
 
 ``` <!---json-->
     {
-	"no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-	"author_JSON_format_version" : "1.0 2023-06-10",
-	"author_handle" : "first0_last0",
-	"full_name" : "First Middle Last",
-	"sort_word" : "lowercaselast",
-	"location_code" : "AU",
-	"location_name" : "Australia",
-	"email" : null,
-	"url" : null,
-	"alt_url" : null,
-	"deprecated_twitter_handle" : null,
-	"mastodon" : null,
-	"mastodon_url" : null,
-	"github" : null,
-	"affiliation" : null,
-	"winning_entry_set" : [
-	    { "entry_id" : "1987_somedir" },
-	    { "entry_id" : "2020_entrydir" },
-	    { "entry_id" : "2024_dirname" }
-	]
+        "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+        "author_JSON_format_version" : "1.0 2023-06-10",
+        "author_handle" : "first0_last0",
+        "full_name" : "First Middle Last",
+        "sort_word" : "lowercaselast",
+        "location_code" : "AU",
+        "location_name" : "Australia",
+        "email" : null,
+        "url" : null,
+        "alt_url" : null,
+        "deprecated_twitter_handle" : null,
+        "mastodon" : null,
+        "mastodon_url" : null,
+        "github" : null,
+        "affiliation" : null,
+        "winning_entry_set" : [
+            { "entry_id" : "1987_somedir" },
+            { "entry_id" : "2020_entrydir" },
+            { "entry_id" : "2024_dirname" }
+        ]
     }
 ```
 

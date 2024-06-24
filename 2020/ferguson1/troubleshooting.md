@@ -44,11 +44,11 @@ you shouldn't need it to be very wide.
 
 * **RESOLUTION #1**: open the [prog.c][] and change the line
 
-		#define J Z(X:%d/%d Y:%d/%d S:%zu/%zu B:%zu\n),Y,y[-2],X, *y, A, g, c );
+                #define J Z(X:%d/%d Y:%d/%d S:%zu/%zu B:%zu\n),Y,y[-2],X, *y, A, g, c );
 
     To be something like:
 
-		#define J Z(B:%zu\n), c);
+                #define J Z(B:%zu\n), c);
 
     Recompile and try again. That will then show only the number of bugs eaten.
     See the [HACKING.html][] file for other data you
@@ -76,7 +76,7 @@ e.g. when the snake is growing.
 
     If you want to see this in action try:
 
-	    SIZE=150 SHEDS=10 SHED=1 ./prog
+            SIZE=150 SHEDS=10 SHED=1 ./prog
 
     Once you start moving you'll see that the tail stays still for a while and
     when it does move you'll see it doesn't move for long.
@@ -174,11 +174,11 @@ snake. See below for some tests.
 
     I removed caps in a test and then:
 
-		GROW=1 COLUMNS=30 LINES=10 CANNIBAL=1 MAXSIZE=10000 ./prog
+                GROW=1 COLUMNS=30 LINES=10 CANNIBAL=1 MAXSIZE=10000 ./prog
 
     It froze at this point:
 
-		X:14/29 Y:5/9 S:323/10000 B:318
+                X:14/29 Y:5/9 S:323/10000 B:318
 
     This is because there was only one place for the bug - where the snake head
     was to be. With these parameters the limit is actually 189! This could
@@ -188,7 +188,7 @@ snake. See below for some tests.
 
     Another time I tried:
 
-		LINES=6 COLUMNS=6
+                LINES=6 COLUMNS=6
 
     And it also froze (as noted I impose a minimum of >= 10 for both LINES and
     COLUMNS).
@@ -203,25 +203,25 @@ snake. See below for some tests.
 
     For this information and more use the termcaps utility:
 
-		make test
+                make test
 
     An example:
 
-		terminal supports cursor movement
-		terminal supports making cursor invisible
-		terminal supports bold
-		terminal supports colours
+                terminal supports cursor movement
+                terminal supports making cursor invisible
+                terminal supports bold
+                terminal supports colours
 
-		terminal rows  41 (38  playable)
-		terminal cols 154 (152 playable)
+                terminal rows  41 (38  playable)
+                terminal cols 154 (152 playable)
 
-		snake size:   997 (max size: 5738)
-		      bugs:   199 (max size: 1147)
+                snake size:   997 (max size: 5738)
+                      bugs:   199 (max size: 1147)
 
-		at least 34 columns (currently 154) recommended for snake size 997
-		at least 37 columns (currently 154) recommended for capped snake size 5738
+                at least 34 columns (currently 154) recommended for snake size 997
+                at least 37 columns (currently 154) recommended for capped snake size 5738
 
-		No problems detected.
+                No problems detected.
 
     Why are there only 38 playable lines for 41 rows? The first row is the score
     line, the second is the top wall, the last is the bottom wall. For columns
@@ -230,7 +230,7 @@ snake. See below for some tests.
     The calculation for max size takes place after decrementing the max y/x;
     then it's `(maxy - 2) * (maxx - 2)`; above that would be:
 
-		(41 - 2) * (156 - 2) == 6006
+                (41 - 2) * (156 - 2) == 6006
 
     If for some reason the game were to stall for this purpose you would have to
     kill the game by e.g. ctrl-c since the bug placement is stuck in a loop.
@@ -266,7 +266,7 @@ is 0? The head is the obvious choice so once you do get to size 1 you will still
 only have the head. When you get to size 2 you'll have part of the body too.
 Try:
 
-		SIZE=1 GROW=1
+                SIZE=1 GROW=1
 
     And you will see that at one bug you'll have size two and just as if you had
     two bugs with the previous invocation.
@@ -299,7 +299,7 @@ so that's probably why; in CentOS I did have to install it specially.
 
 * **BOTTOM LINE**: try using a monochrome terminal for the game by e.g.:
 
-		TERM=linux-m ./prog
+                TERM=linux-m ./prog
 
     And then on your white background terminal the game should keep the
     background white and the foreground black. This will of course mean you have
@@ -326,9 +326,9 @@ out if enabling brighter colours is possible.
     you mess up your old one. FWIW I haven't had this problem on consoles only
     and in my systems I have the option to enable brighter colours for bold - it
     was only in testing that I came across this problem. Of course you might
-	also try changing the colours of the game. For that see
-	[snake-colours.sh](%%REPO_URL%%/2020/ferguson1/snake-colours.sh) and
-	[play.sh](%%REPO_URL%%/2020/ferguson1/play.sh).
+        also try changing the colours of the game. For that see
+        [snake-colours.sh](%%REPO_URL%%/2020/ferguson1/snake-colours.sh) and
+        [play.sh](%%REPO_URL%%/2020/ferguson1/play.sh).
 
 
 <div id="movefaster">

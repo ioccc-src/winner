@@ -184,8 +184,8 @@ rest of the snake has gone through). Doing `SHED=100 SHEDS=-1`:
 
 ```
     ooooooooo>ooo>
-	     ^
-	     >
+             ^
+             >
 ```
 
 The `^` points to the part that's split from the snake and which will be
@@ -194,8 +194,8 @@ it being `SHEDS=-3`:
 
 ```
     <ooo<ooooo
-	^^^
-	<oo
+        ^^^
+        <oo
 ```
 
 If you go through the part that has split (which for some might be difficult
@@ -258,7 +258,7 @@ adjusts the max snake size. For 10 lines and 10 columns you would see:
     terminal cols  10 (8   playable)
 
     snake size:    49 (max size: 49)
-	  bugs:     9 (max size: 9)
+          bugs:     9 (max size: 9)
 
     at least 28 columns recommended for snake size 49    (is 10)
     at least 28 columns recommended for snake size 49    (is 10)

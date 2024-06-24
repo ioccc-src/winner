@@ -88,23 +88,23 @@ results depending on the implementation of `curses`.
 ### Commands
 
 ```
-    h j k l	    left, down, up, right cursor movement
-    H J K L	    word left, page down, page up, word right
-    [ ]		    beginning and end of line
-    t b		    top and bottom of file
-    i		    enter insert mode, form-feed to quit
-    x		    delete character under the cursor
-    W		    write buffer to file
-    R		    refresh the screen
-    Q		    quit
+    h j k l         left, down, up, right cursor movement
+    H J K L         word left, page down, page up, word right
+    [ ]             beginning and end of line
+    t b             top and bottom of file
+    i               enter insert mode, form-feed to quit
+    x               delete character under the cursor
+    W               write buffer to file
+    R               refresh the screen
+    Q               quit
 ```
 
 
 ### Exit status
 
 ```
-    0		    success
-    2		    missing edit filename
+    0               success
+    2               missing edit filename
 ```
 
 
@@ -142,24 +142,24 @@ screen with long lines.  Paging up and down should work correctly, however.
 
 ### References:
 
-[Fin80]	Craig A. Finseth, "Theory and Practice of Text Editors or<br>
-	A Cookbook For An EMACS", TM-165, MIT Lab. for Computer<br>
-	Science
+[Fin80] Craig A. Finseth, "Theory and Practice of Text Editors or<br>
+        A Cookbook For An EMACS", TM-165, MIT Lab. for Computer<br>
+        Science
 
-[KeP81]	Kernighan & Plauger, "Software Tools in Pascal",<br>
-	Addison-Wesley, 81, chapter 6
+[KeP81] Kernighan & Plauger, "Software Tools in Pascal",<br>
+        Addison-Wesley, 81, chapter 6
 
-[Mil86]	Eugene W. Myers & Webb Miller, "Row-replacement Algorithms
-	for Screen Editors", TR 86-19, Dept. of Computer Science,<br>
-	U. of Arizona
+[Mil86] Eugene W. Myers & Webb Miller, "Row-replacement Algorithms
+        for Screen Editors", TR 86-19, Dept. of Computer Science,<br>
+        U. of Arizona
 
-[MyM86]	Eugene W. Myers & Webb Miller, "A simple row-replacement<br>
-	method", TR 86-28, Dept. of Computer Science, U. of Arizona
+[MyM86] Eugene W. Myers & Webb Miller, "A simple row-replacement<br>
+        method", TR 86-28, Dept. of Computer Science, U. of Arizona
 
-[Mil87]	Webb Miller, "A Software Tools Sampler", Prentice Hall, 87
-	ISBN 0-13-822305-X, chapter 5
+[Mil87] Webb Miller, "A Software Tools Sampler", Prentice Hall, 87
+        ISBN 0-13-822305-X, chapter 5
 
-[net90]	"Editor 101/102" articles from comp.editors
+[net90] "Editor 101/102" articles from comp.editors
 
 
 <!--

@@ -372,11 +372,11 @@ precise the following characters are acceptable; it equates to this in C (note
 it includes a literal space `' '` but it doesn't include other
 `isspace()` characters) and this is why some of the characters are escaped:
 
-	    const char keyboard[]=" !\"#$<%:>&'()*+,-./0123456789;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`{|}~";
+            const char keyboard[]=" !\"#$<%:>&'()*+,-./0123456789;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`{|}~";
 
 The simpler keyboard looks like:
 
-	    const char keyboard[]=" !\"&'(),.0123456789;?ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const char keyboard[]=" !\"&'(),.0123456789;?ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 The program makes sure that the target string only has characters the keyboard
 can actually produce but there is a certain type of input error that might

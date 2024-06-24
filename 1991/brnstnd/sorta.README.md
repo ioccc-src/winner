@@ -35,12 +35,12 @@ This is self-explanatory.
     [1D=d2/1=1ddd1 ]:!ld
     ["0"Td]:0ld
     [DD=!1_+=0]:@ld     [ input m, m assumed nonnegative, append
-			  binary representation of m to top of s stack ]ld
+                          binary representation of m to top of s stack ]ld
 
     ["-"T_]:+ld
     [D0 1s>=+1=@]:2ld   [ input m, append - to top of s stack if m is negative,
-			  then append binary representation of abs(m) to
-			  top of s stack ]ld
+                          then append binary representation of abs(m) to
+                          top of s stack ]ld
 
     [d1A:A2=A]:A 27182 a1>=A
     [d2A:A1=A]:A 3145 a2>=A
@@ -152,7 +152,7 @@ Notice that `"2 2+"` is a literal string inside the program.
     ["rot13: fatal: cannot open "1ST`q]:hld
     a2_+=g
     1A 0 [ that 0 is for RDONLY ]ld
-	 0 'o D0 1s>=hld
+         0 'o D0 1s>=hld
     0Ou1=x  [ in a more complex spawner, this would be done under a fork ]ld
 ```
 

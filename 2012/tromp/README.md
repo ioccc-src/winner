@@ -1,9 +1,9 @@
 ## To build:
 
 ``` <!---sh-->
-    make all		# On a 64-bit machine (default)
+    make all            # On a 64-bit machine (default)
 
-    make tromp32		# On a 32-bit machine
+    make tromp32                # On a 32-bit machine
 ```
 
 
@@ -371,7 +371,7 @@ and change it to BLC8 with
 ``` <!---sh-->
     $ cat deflate.Blc reverse.blc | ./tromp > rev.Blc
     $ wc rev.Blc
-	0 1 9 rev.Blc
+        0 1 9 rev.Blc
 ```
 
 and then try it out with:

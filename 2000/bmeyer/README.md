@@ -33,7 +33,7 @@ The author recommended on linux/x86, glibc 2.0, libc4/5:
 
 ``` <!---make-->
     bmeyer: bmeyer.c
-	    CC -DY="__setfpucw(0x127f)" -O6 $? -o $@ -lm
+            CC -DY="__setfpucw(0x127f)" -O6 $? -o $@ -lm
 ```
 
 However many compilers use `-O3` as the maximum level for `-O` optimization.
@@ -42,7 +42,7 @@ And on linux/x86, glibc 2.1:
 
 ``` <!---make-->
     bmeyer: bmeyer.c
-	    gcc -DY='int x=0x127f; __asm__ ("fldcw %0" : : "m" (*&x))'  $? -o $@ -lm
+            gcc -DY='int x=0x127f; __asm__ ("fldcw %0" : : "m" (*&x))'  $? -o $@ -lm
 ```
 
 Compile with the maximum possible optimization on your system.

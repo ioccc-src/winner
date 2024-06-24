@@ -124,38 +124,38 @@ numbers from 8 to 11.
 characteristics](https://en.wikipedia.org/wiki/Euler_characteristic) is the number of "vertexes"
 
 ```
-	    #
+            #
 ```
 
 minus the number of "edges"
 
 ```
-	   ## # #. .#
-	      # .# #.   ('.' must be empty)
+           ## # #. .#
+              # .# #.   ('.' must be empty)
 ```
 
 plus the number of "faces"
 
 ```
-	   ##
-	   ##
+           ##
+           ##
 ```
 
 3. If we fill all these patterns to 2x2 squares,
 
 ```
-	   #? ## #? #. .# ##
-	   ?? ?? #? .# #. ##
-	   +1 -1 -1 -1 -1 +1
+           #? ## #? #. .# ##
+           ?? ?? #? .# #. ##
+           +1 -1 -1 -1 -1 +1
 ```
 
 substitute all possible "values" of `?` and sum them up, we get that it is
 enough to calculate:
 
 ```
-	   #. .# ##
-	   .. #. #.
-	   +1 -1 -1
+           #. .# ##
+           .. #. #.
+           +1 -1 -1
 ```
 
 Note now it is simple and obfuscated enough to be used as

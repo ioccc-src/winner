@@ -203,61 +203,61 @@ Below is a description of the OC grammar.
 Terminals are in quotes, `()` is used for bracketing.
 
 ```
-    program:	decl*
+    program:    decl*
 
-    decl:	vardecl
-		    fundecl
+    decl:       vardecl
+                    fundecl
 
-    vardecl:	type NAME ;
-		    type NAME "[" INT "]" ;
+    vardecl:    type NAME ;
+                    type NAME "[" INT "]" ;
 
-    fundecl:	type NAME "(" args ")" "{" body "}"
+    fundecl:    type NAME "(" args ")" "{" body "}"
 
-    args:	/*empty*/
-		    ( arg "," )* arg
+    args:       /*empty*/
+                    ( arg "," )* arg
 
-    arg:	type NAME
+    arg:        type NAME
 
-    body:	vardecl* stmt*
+    body:       vardecl* stmt*
 
-    stmt:	ifstmt
-		    whilestmt
-		    dowhilestmt
-		    "return" expr ";"
-		    expr ";"
-		    "{" stmt* "}"
-		    ";"
+    stmt:       ifstmt
+                    whilestmt
+                    dowhilestmt
+                    "return" expr ";"
+                    expr ";"
+                    "{" stmt* "}"
+                    ";"
 
-    ifstmt:	"if" "(" expr ")" stmt
-		    "if" "(" expr ")" stmt "else" stmt
+    ifstmt:     "if" "(" expr ")" stmt
+                    "if" "(" expr ")" stmt "else" stmt
 
-    whilestmt:	"while" "(" expr ")" stmt
+    whilestmt:  "while" "(" expr ")" stmt
 
     dowhilestmt:"do" stmt "while" "(" expr ")" ";"
 
-    expr:	expr binop expr
-		    unop expr
-		    expr "[" expr "]"
-		    "(" expr ")"
-		    expr "(" exprs ")"
-		    NAME
-		    INT
-		    CHAR
-		    STRING
+    expr:       expr binop expr
+                    unop expr
+                    expr "[" expr "]"
+                    "(" expr ")"
+                    expr "(" exprs ")"
+                    NAME
+                    INT
+                    CHAR
+                    STRING
 
-    exprs:	/*empty*/
-		    (expr ",")* expr
+    exprs:      /*empty*/
+                    (expr ",")* expr
 
-    binop:	"+" | "-" | "*" | "/" | "%" |
-		    "=" |
-		    "<" | "==" | "!="
+    binop:      "+" | "-" | "*" | "/" | "%" |
+                    "=" |
+                    "<" | "==" | "!="
 
-    unop:	"!" | "-" | "*"
+    unop:       "!" | "-" | "*"
 
-    type:	"int" stars
-		    "char" stars
+    type:       "int" stars
+                    "char" stars
 
-    stars:	"*"*
+    stars:      "*"*
 ```
 
 <hr style="width:10%;text-align:left;margin-left:0">

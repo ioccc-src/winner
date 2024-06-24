@@ -45,7 +45,7 @@ is legal C, what type of value is `"have"`?
 3. Note that the following expressions yield the same value:
 
 ``` <!---c-->
-    x[3]	*(x+3)	  *(3+x)
+    x[3]        *(x+3)    *(3+x)
 ```
 
 since addition is commutative.  What can be said about this value?

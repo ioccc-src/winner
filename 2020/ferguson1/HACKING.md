@@ -29,7 +29,7 @@ snake's syllabary) for all snake and herpetologist programmers alike.
 * Modifications
 
     - Modifying the colours
-	- Background colour
+        - Background colour
     - Modifying the characters for the wall, bug and snake
     - Modifying input keys
     - Modifying the status/score line
@@ -40,7 +40,7 @@ snake's syllabary) for all snake and herpetologist programmers alike.
     - Health (and/or Lives)
     - Saving the game
     - Different types of walls
-	- Blockades
+        - Blockades
     - Diagonal movement
     - Special abilities
     - Obstacles
@@ -228,27 +228,27 @@ More generally the following expressions and data types (with format specifiers)
 come to mind as information that might be of interest.
 
 ```
-    DESCRIPTION		    EXPRESSION		TYPE	FORMAT SPECIFIER
+    DESCRIPTION             EXPRESSION          TYPE    FORMAT SPECIFIER
 
-    Snake size		    A			size_t		%zu
+    Snake size              A                   size_t          %zu
 
-    Y coordinate	    Y			int		%d
+    Y coordinate            Y                   int             %d
     of snake head
 
-    X coordinate	    X			int		%d
+    X coordinate            X                   int             %d
     of snake head
 
-    Max snake size	    g			size_t		%zu
+    Max snake size          g                   size_t          %zu
 
-    Bugs eaten		    c			size_t		%zu
+    Bugs eaten              c                   size_t          %zu
 
-    Bug line (Y)	    *U			int		%d
+    Bug line (Y)            *U                  int             %d
 
-    Bug column (X)	    *V			int		%d
+    Bug column (X)          *V                  int             %d
 
-    Snake size		    A			size_t		%zu
+    Snake size              A                   size_t          %zu
 
-    Growth size (per	    N			size_t		%zu
+    Growth size (per        N                   size_t          %zu
     bug)
 ```
 
@@ -398,10 +398,10 @@ coordinates. This of course is very different now but the idea remains the same:
 ``` <!---c-->
     if (p && !(*O>=O[1]||H>=M(1)))
     {
-	if (X<1||X>=H)
-	    X = X<1?H-1:1;
-	if (Y<2||Y>=*O)
-	    Y = Y<2?*O-1:2;
+        if (X<1||X>=H)
+            X = X<1?H-1:1;
+        if (Y<2||Y>=*O)
+            Y = Y<2?*O-1:2;
     }
 ```
 

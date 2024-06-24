@@ -60,7 +60,7 @@ Any of the following, though not required, would be a plus:
 If you think this may be you, send an email before 31 Dec 1995, to:
 
 ```
-    judges@toad.com		(use the Subject: 3rd judge)
+    judges@toad.com             (use the Subject: 3rd judge)
 ```
 
 Include in your message:
@@ -82,7 +82,7 @@ access to put up some IOCCC html pages, please send an email (say prior
 to 31 Dec 1995) to:
 
 ```
-    judges@toad.com		(use the Subject: www site)
+    judges@toad.com             (use the Subject: www site)
 ```
 
 describing your site and any other appropriate comments.  Thanks!

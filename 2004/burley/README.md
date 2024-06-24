@@ -25,15 +25,15 @@ start with $100.  Input alternates between your bet and which cards to keep.
 Example:
 
 ```
-    5		<== you enter a bet of $5 (defaults to $1)
-    J Q J 9 5	<== your hand is Jack of Clubs, Queen of Hearts,
-    C H D S C	    Jack of Diamonds, 9 of Spades, 5 of Clubs
-    123		<== you enter which cards you want to keep
-		    (enter 0 to 5 digits between 1 and 5)
-    J Q J J Q	<== your new hand is Jack of Clubs, Queen of Hearts,
-    C H D S C	    Jack of Diamonds, Jack of Spaces, Queen of clubs
-    $145 (45)	<== Your new balance is now $145.  You had a Full House
-		    so your payoff is 9 times your bet == 45
+    5           <== you enter a bet of $5 (defaults to $1)
+    J Q J 9 5   <== your hand is Jack of Clubs, Queen of Hearts,
+    C H D S C       Jack of Diamonds, 9 of Spades, 5 of Clubs
+    123         <== you enter which cards you want to keep
+                    (enter 0 to 5 digits between 1 and 5)
+    J Q J J Q   <== your new hand is Jack of Clubs, Queen of Hearts,
+    C H D S C       Jack of Diamonds, Jack of Spaces, Queen of clubs
+    $145 (45)   <== Your new balance is now $145.  You had a Full House
+                    so your payoff is 9 times your bet == 45
 ```
 
 The payout is according to "Vegas rules":

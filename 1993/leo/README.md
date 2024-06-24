@@ -74,15 +74,15 @@ Please don't type `^D` at the prompt!!
 ```
     $ ./leo
     (1296): 6433
-    ?? 12       	# one 3 is a bull, another is a cow, and 4 is a cow
+    ?? 12               # one 3 is a bull, another is a cow, and 4 is a cow
     (160): 5363
-    ?? 02       	# both 3's are cows
+    ?? 02               # both 3's are cows
     (21): 4231
-    ?? 22       	# 2 and 3 are bulls, 4 and 1 are cows
+    ?? 22               # 2 and 3 are bulls, 4 and 1 are cows
     (2): 4132
-    ?? 13       	# 3 is a bull; 1, 2 and 4 are cows
+    ?? 13               # 3 is a bull; 1, 2 and 4 are cows
     (1): 1234
-    ?? 40       	# you may enter everything there
+    ?? 40               # you may enter everything there
 ```
 
 ##### EXAMPLE: Guess the computer's number
@@ -100,7 +100,7 @@ Please don't type `^D` at the prompt!!
     (2): ???? 3355
     00
     (1): ???? 6444
-    40		   	# we have guessed the number
+    40                  # we have guessed the number
 ```
 
 

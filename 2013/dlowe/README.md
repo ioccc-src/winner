@@ -61,7 +61,7 @@ For extra fun, compile and run [fun.c](%%REPO_URL%%/2013/dlowe/fun.c):
 ``` <!---c-->
     #include <stdio.h>
     int main() {
-	printf("%d %d %d\n", (int)(-1.0/0.0), (int)(0.0/0.0), (int)(1.0/0.0));
+        printf("%d %d %d\n", (int)(-1.0/0.0), (int)(0.0/0.0), (int)(1.0/0.0));
     }
 ```
 

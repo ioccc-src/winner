@@ -119,7 +119,7 @@ Please do **NOT** start code blocks at the left-hand edge.
 
 ````
 ```
-This code block is NOT indented                   		<=== no thank you
+This code block is NOT indented                                 <=== no thank you
 ```
 ````
 
@@ -161,7 +161,7 @@ For example:
 
 ````
 ```
-        Please do **NOT** indent with ASCII tabs.		<=== no thank you
+        Please do **NOT** indent with ASCII tabs.               <=== no thank you
 
     The top level starts with a 4 ASCII space indent.
 
@@ -180,7 +180,7 @@ We request that (fenced) markdown code blocks **NOT** specify a language.
 For example:
 
 ````
-```c								<=== no thank you
+```c                                                            <=== no thank you
     int main(void) {return 0;}
 ```
 ````

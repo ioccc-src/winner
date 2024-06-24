@@ -137,7 +137,7 @@ The discrepancies found are documented and explained in the file
 
 ``` <!---sh-->
     find ~/src/obc -type f -a -name "*.c" | xargs ./spotcheck.sh ./prog | ./spotdiff.sh |
-	    grep -v keep | diff -bw - discrep* | grep "[<>] cl "
+            grep -v keep | diff -bw - discrep* | grep "[<>] cl "
 ```
 
 In summary, there are only 6 unique entries out of 366 that have any variation
@@ -228,38 +228,38 @@ language_.  It really is this easy with `tac`:
     #!/usr/bin/env bash
     script='
     BEGIN {
-	    last=nl="\n";
-	    f="c11"; while(getline <f > 0) kw[$0]++; close(f);
+            last=nl="\n";
+            f="c11"; while(getline <f > 0) kw[$0]++; close(f);
     }
 
     function iskw(a)   { return a in kw }
     function indent(a) { return sprintf("%*s", n*3, " ") }
     function newline() { if (!infor && last != nl) printf last=nl; }
     function show(a) {
-	    if (last==nl) printf "%s", indent()
-	    printf "%s%s", space(), a
-	    last=a
+            if (last==nl) printf "%s", indent()
+            printf "%s%s", space(), a
+            last=a
     }
     function space() {
-	    return iskw(last) ||
-	      (last ~ /[A-Za-z0-9_+-\/%^[&\]\)=:<>;]$/ && $0 !~ /[:;()\[\],]/) ? " " : ""
+            return iskw(last) ||
+              (last ~ /[A-Za-z0-9_+-\/%^[&\]\)=:<>;]$/ && $0 !~ /[:;()\[\],]/) ? " " : ""
     }
 
-    /^\(/	{ ++paren }
-    /^\)/	{ --paren }
+    /^\(/       { ++paren }
+    /^\)/       { --paren }
 
-    /^for/		    { newline(); infor=1 }
-    infor && /^;/	    { ++infor; show($0 " "); next }
+    /^for/                  { newline(); infor=1 }
+    infor && /^;/           { ++infor; show($0 " "); next }
     infor==1 && /^:/    { ++infor }
     infor>1 && paren==0 { infor=0 }
 
-    /^\?/		{ tern++; n++; newline(); show($0 " "); next }
-    tern && /^:/	{ newline(); show($0); --tern; --n; next }
+    /^\?/               { tern++; n++; newline(); show($0 " "); next }
+    tern && /^:/        { newline(); show($0); --tern; --n; next }
 
-    /^#/	{ newline(); show($0); newline(); next }
-    /^;/	{ show($0); newline(); next }
-    /^{/	{ show($0); ++n; newline(); next }
-    /^}/	{ n--; newline(); show($0); newline(); next }
+    /^#/        { newline(); show($0); newline(); next }
+    /^;/        { show($0); newline(); next }
+    /^{/        { show($0); ++n; newline(); next }
+    /^}/        { n--; newline(); show($0); newline(); next }
 
     { show($0) }
     '
@@ -329,9 +329,9 @@ The following reserved word files are included:
 * [kandr](%%REPO_URL%%/2018/burton2/kandr)    from my venerable 1978 18th printing "The C Programming Language"
 * [v7unix](%%REPO_URL%%/2018/burton2/v7unix)  7th edition Unix source code, extracted from c00.c
 * [kandr2](%%REPO_URL%%/2018/burton2/kandr2)  from my 1988 1st printing "The C Programming Language", 2e
-* [ansi](%%REPO_URL%%/2018/burton2/ansi)	    ANSI X3.159-1989
-* [c99](%%REPO_URL%%/2018/burton2/c99)	    ISO/IEC 9899:1999(E)
-* [c11](%%REPO_URL%%/2018/burton2/c11)	    ISO/IEC 9899:201x(E) N1570
+* [ansi](%%REPO_URL%%/2018/burton2/ansi)            ANSI X3.159-1989
+* [c99](%%REPO_URL%%/2018/burton2/c99)      ISO/IEC 9899:1999(E)
+* [c11](%%REPO_URL%%/2018/burton2/c11)      ISO/IEC 9899:201x(E) N1570
 * [c++98](%%REPO_URL%%/2018/burton2/c++98)    http://en.cppreference.com/w/cpp/keyword
 * [c++11](%%REPO_URL%%/2018/burton2/c++11)    ISO/IEC 14882:2011(E) N3337 2012-01-16
 * [c++14](%%REPO_URL%%/2018/burton2/c++14)    ISO/IEC 14882:2014(E) N4296 2014-11-09

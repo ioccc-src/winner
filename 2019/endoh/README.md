@@ -93,7 +93,7 @@ Okay, check the backtrace.
     #5  0x00005555555557ce in x69 () at prog.c:105
     #6  0x0000555555555828 in x6e () at prog.c:110
     #7  0x0000555555555747 in x65 () at prog.c:101
-	...
+        ...
 ```
 
 See the line numbers and lookup the ASCII table.

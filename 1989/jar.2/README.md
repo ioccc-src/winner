@@ -69,8 +69,8 @@ character.
     (+ 2.5 3.1)
     (defun fib (n)
        (if (< n 2)
-	   1
-	   (+ (fib (- n 2)) (fib (- n 1)))))
+           1
+           (+ (fib (- n 2)) (fib (- n 1)))))
     (fib 10)
     (defun ! (x) (if (equal x 0) 1 (* x (! (- x 1)))))
     (! 7)

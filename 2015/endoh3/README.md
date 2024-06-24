@@ -29,7 +29,7 @@ More generally use:
 ``` <!---sh-->
     cc -o prog prog.c foo.c
     ./prog
-    ^C	# if necessary, where ^C is ctrl-C, interrrupt
+    ^C  # if necessary, where ^C is ctrl-C, interrrupt
 ```
 
 to compile and run `prog` as whatever foo.c is in the joke PDP-11 emulator.

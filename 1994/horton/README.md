@@ -90,7 +90,7 @@ For more information, see my article
 [Using GraphTab; USENIX ;login: Sept/Oct 1992, pages 28-31](login_sept92-pp28-31.pdf).
 
 ```
-  	  MMMM,M,MM"MM,,,
+          MMMM,M,MM"MM,,,
          ,,MMMMMMMMM"""""""",
         ,MMMMM"""            ",
        ,MMM"                   "
@@ -106,7 +106,7 @@ For more information, see my article
         ",," , " "MMMMMMMM "   , "
          ,M , ""M,MMMMMMMM,M " ,,
          ,MM, MMMMMMMMMMMMMM,", M,
-  	M,M,MM"M"M" """M"MM,M M
+        M,M,MM"M"M" """M"MM,M M
          ,MMMMMM M,MMMMM"M MM""M
         M MMMMMM,M M"M"" M MMMM", ,
          "M"MMMMMMMMMM"M ,MMMMM M  ,,

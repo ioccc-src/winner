@@ -107,7 +107,7 @@ This code is an [enigma](https://youtu.be/ybkkiGtJmkM).  Try to decode it!
 
 There is a good deal of useful documentation that is provided with this entry:
 
-* [enigma.1](%%REPO_URL%%/2020/ferguson2/enigma.1)	-  A useful man page for this entry.  To render, try:
+* [enigma.1](%%REPO_URL%%/2020/ferguson2/enigma.1)      -  A useful man page for this entry.  To render, try:
 
 
 ``` <!---sh-->
@@ -160,7 +160,7 @@ I have more information on this entry like the testing procedure at
 -   [IOCCC: an Enigma?](#ioccc)
 -   [The 1992 Nathan Sidwell entry](#nathan)
 -   [Usage](#usage)
-    *	[Example run](#example)
+    *   [Example run](#example)
 -   [The recode.c configurator](#recode)
 -   [A parser subtlety that could cause confusion](#parsersubtlety)
 -   [On the source code layout](#layout)
@@ -548,8 +548,8 @@ ended his life. (I later made a bug fix but I consider this inconsequential).
 As for [recode.c][] though I really love this:
 
 ``` <!---c-->
-	      /\
-    /	       This is *not* what you think:
+              /\
+    /          This is *not* what you think:
 ```
 
 ...because it seems so wrong in C code at first glance. Also what does the

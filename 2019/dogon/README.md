@@ -53,7 +53,7 @@ We truly have not much more to add, except two things:
   model RAM, you'd want to reduce the value of the Z define in the Makefile
   to `0x10000000`, otherwise the entry will promptly crash. To do this you can do:
 
-	make clobber MEMORY=0x10000000 all
+        make clobber MEMORY=0x10000000 all
 
   Notice that that value must be a power of two!
 

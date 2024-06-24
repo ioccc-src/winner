@@ -181,7 +181,7 @@ flagged.
 ```
     ? ? ? ?      ! ? ? ?
     ? 3 1 2  =>  ! 3 1 2
-	2 2 . .      2 2 . .
+        2 2 . .      2 2 . .
 ```
 
 `A` and `B` are probed cells whose numbers are, respectively, 3 and 1.  The

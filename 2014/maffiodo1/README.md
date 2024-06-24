@@ -234,10 +234,10 @@ here:
 
 Each row has six columns:
 
-1. `Screen X`	: `x` position of the object in the level.
-2. `Screen Y`	: `y` position of the object in the level.
-3. `Sprite`	: `id` of the sprite to be used for the object.
-4. `CLASSFLAGS`	: a bitmask that describe how the object behaves.
+1. `Screen X`   : `x` position of the object in the level.
+2. `Screen Y`   : `y` position of the object in the level.
+3. `Sprite`     : `id` of the sprite to be used for the object.
+4. `CLASSFLAGS` : a bitmask that describe how the object behaves.
 5. `CLASSPARAM0`: a parameter that depends on `CLASSFLAGS`.
 6. `CLASSPARAM1`: a parameter that depends on `CLASSFLAGS`.
 
@@ -245,52 +245,52 @@ Each row has six columns:
 
 * `ENEMY` (`1`)
 
-	    An enemy. CLASSPARAM0 can be 0 if the enemies don't move, 1 if the
-	    initial move direction is right, -1 if that direction is left. All
-	    enemies that walk will change their direction after 20 steps. The
-	    sprite of an enemy must have 2 other adjacent sprites: SPRITE-1,
-	    used when the enemy dies, and SPRITE+1, used when it moves.
+            An enemy. CLASSPARAM0 can be 0 if the enemies don't move, 1 if the
+            initial move direction is right, -1 if that direction is left. All
+            enemies that walk will change their direction after 20 steps. The
+            sprite of an enemy must have 2 other adjacent sprites: SPRITE-1,
+            used when the enemy dies, and SPRITE+1, used when it moves.
 
 * `BLOCK` (`2`)
 
-	    A wall. Player can walk over the object but can not pass through it.
+            A wall. Player can walk over the object but can not pass through it.
 
 * `OBJECT BLOCK` (`4`)
 
-	    When the player hits the object from below, a new object is created.
-	    CLASSFLAGS of the new object is defined in CLASSPARAM0. The sprite
-	    used for the new object is defined in CLASSPARAM1. The sprite of the
-	    new object must have an adjacent sprite: SPRITE+1, used when the
-	    block is hit.
+            When the player hits the object from below, a new object is created.
+            CLASSFLAGS of the new object is defined in CLASSPARAM0. The sprite
+            used for the new object is defined in CLASSPARAM1. The sprite of the
+            new object must have an adjacent sprite: SPRITE+1, used when the
+            block is hit.
 
 * `POWERUP` (`8`)
 
-	    This is a power-up like the classic Mario mushroom. When the
-	    character hits the power-up object, the character becomes the Super
-	    character. If CLASSFLAGS has the bit ZOOM, the character height will
-	    be doubled.  The Super character can hit the enemies without dying,
-	    but when this happens, the Super character goes back to being
-	    normal.
+            This is a power-up like the classic Mario mushroom. When the
+            character hits the power-up object, the character becomes the Super
+            character. If CLASSFLAGS has the bit ZOOM, the character height will
+            be doubled.  The Super character can hit the enemies without dying,
+            but when this happens, the Super character goes back to being
+            normal.
 
 * `END` (`16`)
 
-	    When the player hits this object the level ends; the player wins.
+            When the player hits this object the level ends; the player wins.
 
 * `ZOOM` (`32`)
 
-	    This flag can be used with POWERUP to indicate a power-up that
-	    will double the size of the player (like the Mario mushroom).
+            This flag can be used with POWERUP to indicate a power-up that
+            will double the size of the player (like the Mario mushroom).
 
 * `DESTROY` (`64`)
 
-	    When the player hits the object (e.g. the classic Mario coin) the
-	    object disappears but the engine does not count the points, so,
-	    from the player point of view, this object is useless.
+            When the player hits the object (e.g. the classic Mario coin) the
+            object disappears but the engine does not count the points, so,
+            from the player point of view, this object is useless.
 
 * `DESTROYUP` (`128`)
 
-	    This object is like a BLOCK but when the player hits the object
-	    from below, the object disappears.
+            This object is like a BLOCK but when the player hits the object
+            from below, the object disappears.
 
 If `CLASSFLAGS` is `0` the object only has an aesthetic function.
 

@@ -66,9 +66,9 @@ You can use it for your shell scripting needs similar to a silent grep
 
 ``` <!---sh-->
     if prog "${VARIABLE}" '<glob>'; then
-	echo VARIABLE matches
+        echo VARIABLE matches
     else
-	echo no match
+        echo no match
     fi
 ```
 

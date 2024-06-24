@@ -414,7 +414,7 @@ is equivalent to:
 
 ``` <!---c-->
     for (i=0; i&lt;10; i++) {
-	    some_code;
+            some_code;
     }
     other_code;
 ```

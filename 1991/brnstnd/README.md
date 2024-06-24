@@ -77,9 +77,9 @@ delimiters.
 - `D`: dup (duplicate) top of `i` stack
 - `'`: dup top of `s` stack
 - `s`: pop top of `i` stack. If it is `n`, swap `(n+1)`th-top of `i` stack with top.
-	`1s`, for example, swaps the top two elements; `2s` swaps the top with the
-	third down; etc. This always pops the top of the `i` stack, even upon
-	failure.
+        `1s`, for example, swaps the top two elements; `2s` swaps the top with the
+        third down; etc. This always pops the top of the `i` stack, even upon
+        failure.
 - `S`: pop top of `i` stack, then act just like `s` but upon `s` stack
 - `l`: pop top of `s` stack, push its length onto `i` stack
 - `a`: push argc onto `i` stack
@@ -91,8 +91,8 @@ delimiters.
 - `/`: pop top two elements of `i` stack, divide, push back quotient
 - `>`: pop top two elements of `i` stack, compare, push back 1 or 0 as in C
 - `&`: pop top two elements of `i` stack, NAND, push back bitwise result
-	Note that NAND is sufficient to construct all bitwise operations, as
-	demonstrated by `icalc` in [sorta.README.html](sorta.README.html).
+        Note that NAND is sufficient to construct all bitwise operations, as
+        demonstrated by `icalc` in [sorta.README.html](sorta.README.html).
 
 ### System operations
 

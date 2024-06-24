@@ -126,9 +126,9 @@ must move after firing to be able to fire again.
 
 ### Keys
 
-- `j`	-	    Left
-- `l`	-	    Right
-- `k`	-	    Fire
+- `j`   -           Left
+- `l`   -           Right
+- `k`   -           Fire
 
 This is a new breed of generic games. For instance:
 

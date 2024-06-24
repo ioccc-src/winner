@@ -9,9 +9,9 @@ have to if you don't wish to.
 <div id="toc">
 -   [What is recode and why is it recommended?](#recode)
 -   [Options](#options)
-    *	[Protecting against the same I/O file](#samefile)
-    *	[File options parser limitation](#fileoptions)
-    *	[`-R` option validation?](#validation)
+    *   [Protecting against the same I/O file](#samefile)
+    *   [File options parser limitation](#fileoptions)
+    *   [`-R` option validation?](#validation)
 -   [Piping commands to recode](#pipingtorecode)
 -   [Piping recode to the Enigma simulator](#pipingtoenigma)
 -   [Manually test the recode program with the Enigma program](#manuallytest)
@@ -63,11 +63,11 @@ wonderful 'challenge' for everyone.
 ``` <!---sh-->
     ./recode -h
     usage: ./recode [options]
-    -v			display selected settings
-    -r			pseudo-randomly select settings
-    -f<input file>	read file for Enigma input
-    -R<string|file>	init settings from settings string or file
-    -o<output file>	write settings to file
+    -v                  display selected settings
+    -r                  pseudo-randomly select settings
+    -f<input file>      read file for Enigma input
+    -R<string|file>     init settings from settings string or file
+    -o<output file>     write settings to file
 ```
 
 

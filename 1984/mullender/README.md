@@ -51,11 +51,11 @@ which is probably not as uncommon as you think :-).
 ``` <!---sh-->
     ./mullender.alt
 
-    ./mullender.alt 5000	# wait for 5000 microseconds and see what happens
+    ./mullender.alt 5000        # wait for 5000 microseconds and see what happens
 
-    ./mullender.alt 20000	# wait for 20000 microseconds and see what happens
+    ./mullender.alt 20000       # wait for 20000 microseconds and see what happens
 
-    ./mullender.alt 100000	# wait for 100000 microseconds and see what happens
+    ./mullender.alt 100000      # wait for 100000 microseconds and see what happens
 ```
 
 What happens if you hit enter after it reaches the end of the line? Why? What
@@ -258,8 +258,8 @@ The [PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor) and
 
 ``` <!---c-->
     for (;;) {
-	write(1, "  :-)\b\b\b\b", 9);
-	delay();
+        write(1, "  :-)\b\b\b\b", 9);
+        delay();
     }
 ```
 
@@ -286,17 +286,17 @@ no problem. The assembly code we came up with is as follows:
 
 ``` <!---asm-->
     pdp:
-	mov pc,r4
-	tst -(r4)
-	sub $9, r4
-	mov r4,0f
-	mov $1, r0
-	sys 4; 0:0; 9
-	mov $1000, r2
+        mov pc,r4
+        tst -(r4)
+        sub $9, r4
+        mov r4,0f
+        mov $1, r0
+        sys 4; 0:0; 9
+        mov $1000, r2
     1:
-	sys 55
-	sob r2,1b
-	br pdp
+        sys 55
+        sob r2,1b
+        br pdp
 ```
 
 This is not the code we originally wrote, but it is the code that we ultimately
@@ -334,20 +334,20 @@ program that we came up with is as follows:
 ``` <!---asm-->
     vax: .word 0400 + (pdp - vax) / 2 - 1
     1:
-	pushl $9
-	pushal str
-	pushl $1
-	calls $3, write
-	cvtwl $32767, r2
+        pushl $9
+        pushal str
+        pushl $1
+        calls $3, write
+        cvtwl $32767, r2
 
     2:
-	decl r2
-	jneq 2b
-	jbr 1b
+        decl r2
+        jneq 2b
+        jbr 1b
 
     write: .word 0
-	chmk $4
-	ret
+        chmk $4
+        ret
 
     str: .ascii " :-)\b\b\b\b"
 
@@ -395,53 +395,53 @@ compiled in modern systems.
 
     main(argc, argv) char **argv;
     {
-	register FILE *fp;
-	register short pos = 0, c, n;
-	register char *fmt;
-	if (argc != 2) {
-	    fprintf (stderr, "Usage: %s file\n", argv[0]);
-	    exit (1);
-	}
+        register FILE *fp;
+        register short pos = 0, c, n;
+        register char *fmt;
+        if (argc != 2) {
+            fprintf (stderr, "Usage: %s file\n", argv[0]);
+            exit (1);
+        }
 
-	if ((fp = fopen(argv[1], "r")) == NULL) {
-	    fprintf(stderr, "%s: can't open %s\n", argv[0], argv[1]);
-	    exit(2);
-	}
+        if ((fp = fopen(argv[1], "r")) == NULL) {
+            fprintf(stderr, "%s: can't open %s\n", argv[0], argv[1]);
+            exit(2);
+        }
 
-	fseek (fp, (long) sizeof (struct exec), 0);
-	printf("/* portable between VAX and PDP11 */\n\n");
-	printf ("short main[] = {\n");
-	for (;;) {
-	    if (pos == 0)
-		printf("\t");
+        fseek (fp, (long) sizeof (struct exec), 0);
+        printf("/* portable between VAX and PDP11 */\n\n");
+        printf ("short main[] = {\n");
+        for (;;) {
+            if (pos == 0)
+                printf("\t");
 
-	    c=getc(fp) & 0377;
-	    if (feof(fp)) break;
-	    n = getc(fp) << 8|c;
+            c=getc(fp) & 0377;
+            if (feof(fp)) break;
+            n = getc(fp) << 8|c;
 
-	    switch (rand() % 5) {
-		case 0:
-		case 1:
-		    fmt = "%d"; break;
-		case 2:
-		    fmt = "%u"; break;
-		case 3:
-		    fmt = "0%o"; break;
-		case 4:
-		    fmt = "0x%x"; break;
-	    }
+            switch (rand() % 5) {
+                case 0:
+                case 1:
+                    fmt = "%d"; break;
+                case 2:
+                    fmt = "%u"; break;
+                case 3:
+                    fmt = "0%o"; break;
+                case 4:
+                    fmt = "0x%x"; break;
+            }
 
-	    if (32 <= n && n < 127 && (rand() % 4)) fmt = "'%c'";
-	    printf(n < 8 ? "%d" : fmt, n);
-	    printf(",");
-	    if (pos++ == 8) {
-		printf("\n");
-		pos = 0;
-	    }
-	    else printf(" ");
+            if (32 <= n && n < 127 && (rand() % 4)) fmt = "'%c'";
+            printf(n < 8 ? "%d" : fmt, n);
+            printf(",");
+            if (pos++ == 8) {
+                printf("\n");
+                pos = 0;
+            }
+            else printf(" ");
 
-	    printf("};\n");
-	}
+            printf("};\n");
+        }
     }
 ```
 

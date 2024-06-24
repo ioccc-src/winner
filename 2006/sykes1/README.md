@@ -60,17 +60,17 @@ This was done on a Rocky Linux 9.2 server with `Intel(R) Core(TM) i9-9900K CPU @
 3.60GHz` with 16 cores (via HyperThreading):
 
 ```
-    real	6m35.524s
-    user	6m35.159s
-    sys		0m0.002s
+    real        6m35.524s
+    user        6m35.159s
+    sys         0m0.002s
 ```
 
 and done with macOS Sonoma with the Max M1 chip:
 
 ```
-    real	7m10.786s
-    user	7m8.322s
-    sys		0m0.110s
+    real        7m10.786s
+    user        7m8.322s
+    sys         0m0.110s
 ```
 
 
@@ -180,8 +180,8 @@ the start of the program:
 
 ``` <!---c-->
     int s[ ] = { 186, 94, 1426, 3098
-	    ,1047 , 122 , 1082 , 3083 , 1039
-	    , 569 , 527 , 1054 , 531  }  ;
+            ,1047 , 122 , 1082 , 3083 , 1039
+            , 569 , 527 , 1054 , 531  }  ;
 ```
 
 Each piece is a bitmap, and represents a 3x3x3 cube.

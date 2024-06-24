@@ -46,12 +46,12 @@ Compile the program as follows:
 
 ``` <!---sh-->
     cc -O3 -std=c99 \
-	   -Wall -Wextra -pedantic -o prog prog.c \
-	   -Delta_u="Du*laplacian(u)-u*v*v+F*(1-u)" \
-	   -Delta_v="Dv*laplacian(v)+u*v*v-v*(F+K)" \
-	   -DF=0.040 -DK=0.060 -DDu=0.200 -DDv=0.100 \
-	   -DUV_BACKGROUND=1,0 -DUV_DROP=-0.5,0.5 \
-	   -DTIMESTEP=1.0 -DSPEED=2 -DRGB=255:128:192
+           -Wall -Wextra -pedantic -o prog prog.c \
+           -Delta_u="Du*laplacian(u)-u*v*v+F*(1-u)" \
+           -Delta_v="Dv*laplacian(v)+u*v*v-v*(F+K)" \
+           -DF=0.040 -DK=0.060 -DDu=0.200 -DDv=0.100 \
+           -DUV_BACKGROUND=1,0 -DUV_DROP=-0.5,0.5 \
+           -DTIMESTEP=1.0 -DSPEED=2 -DRGB=255:128:192
 ```
 
 Then, run it with the `tcpserver` command in the

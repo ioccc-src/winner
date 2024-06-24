@@ -83,7 +83,7 @@ E.g:
 
 
 ``` <!---c-->
-    main(){system("hd");}	// it's turtles all the way down!
+    main(){system("hd");}       // it's turtles all the way down!
 ```
 
 is not acceptable.

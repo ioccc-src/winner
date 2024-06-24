@@ -24,7 +24,7 @@ for the input keys.
     *   [**Photosensitive epilepsy/Stimulation overload trigger warnings**](#warning)
     *   [Drawing / Practice mode](#drawing)
     *   [Computer playing / Automatic mode &#x28;Photosensitive epilepsy/Stimulation overload trigger&#x29;](#auto)
-	    *	[Variations](#auto-variations)
+            *   [Variations](#auto-variations)
     *   [Grow-Shrink &#x28;Positive/Negative Winning&#x29; mode](#grow-shrink)
     *   [Hypnotic / Sleepy mode &#x28;Photosensitive epilepsy/Stimulation overload trigger&#x29;](#hypnotic)
     *   [Stimulation / Calming mode](#stim)
@@ -32,16 +32,16 @@ for the input keys.
 
 5.  [Scripts](#scripts)
 
-    *	[Colours selection](#colours)
-    *	[Automate the above gameplay modes](#preset)
+    *   [Colours selection](#colours)
+    *   [Automate the above gameplay modes](#preset)
 
 
 6.  [Other game variables](#variables)
 
-    * [WAIT		    -	Snake speed](#wait)
-    * [EVADE		    -	Bug evasion frequency](#evade)
-    * [SIZE / MAXSIZE	    -	Initial snake / max sizes](#sizes)
-    * [GROW / SHEDS	    -	Growth / Shedding sizes](#growth)
+    * [WAIT                 -   Snake speed](#wait)
+    * [EVADE                -   Bug evasion frequency](#evade)
+    * [SIZE / MAXSIZE       -   Initial snake / max sizes](#sizes)
+    * [GROW / SHEDS         -   Growth / Shedding sizes](#growth)
 
 
 7.  [Conclusion &#x28;and inspirational words for everyone&#x29;](#conclusions)
@@ -562,11 +562,11 @@ diagonal movement and I also made a mistake and had to modify what I was aiming
 for. But you can consider this mode drawing or practice mode.
 
 ```
-		   oooooooooo   ooooo    o  oo  ooooo
-		   o     o  oo  o   oo   o ooo  o
-		   oooo  o   oo ooooooo  oooo   ooooo
-		      o  o    ooo     oo o ooo  o
-		   oooo  o     oo      ooo  oooooooo>
+                   oooooooooo   ooooo    o  oo  ooooo
+                   o     o  oo  o   oo   o ooo  o
+                   oooo  o   oo ooooooo  oooo   ooooo
+                      o  o    ooo     oo o ooo  o
+                   oooo  o     oo      ooo  oooooooo>
 ```
 
 

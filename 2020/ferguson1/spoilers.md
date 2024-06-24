@@ -17,8 +17,8 @@ already knew that so no harm there, hey?
 -   [How does the snake movement work?](#movement)
 -   [Drawing &#x28;manual&#x29; and computer playing &#x28;automatic&#x29; modes](#manual-automatic)
 -   [Collision detection](#collision)
-    *	[Cannibal collision detection](#cannibalcollision)
-    *	[Collision detection when resizing the window of the game](#resizing)
+    *   [Cannibal collision detection](#cannibalcollision)
+    *   [Collision detection when resizing the window of the game](#resizing)
 -   [Obfuscation](#obfuscation)
 -   [Skinning the snake &#x28;i.e., decreasing the iocccsize&#x29;](#skinning)
 -   [A few more interesting size optimisations](#size)
@@ -216,11 +216,11 @@ in real life increases in size like that so suddenly? :)
 probably less known and either way it's not as simple as just having the code
 that it translates to. For example why have:
 
-		    attroff(COLOR_PAIR(L));
+                    attroff(COLOR_PAIR(L));
 
     When you can have instead:
 
-		    attroff(m(PAIR(L)));
+                    attroff(m(PAIR(L)));
 
     It's an extra layer of indirection. This used to be more used but when
     making it easier for users to change the colour pairs I no longer used it to
@@ -231,12 +231,12 @@ that it translates to. For example why have:
 
 - What is this block of code?
 
-		    F(MAXSIZE)g d g = f((a)((*y-2)*(y[-2]-2)),g);
-		    F(GROW)N d
-		    F(SIZE)A d
-		    F(WAIT)y[-3] = (int) strtol(z,NULL,0));
-		    F(EVADE)W d
-		    /* and so on */
+                    F(MAXSIZE)g d g = f((a)((*y-2)*(y[-2]-2)),g);
+                    F(GROW)N d
+                    F(SIZE)A d
+                    F(WAIT)y[-3] = (int) strtol(z,NULL,0));
+                    F(EVADE)W d
+                    /* and so on */
 
     There are several things going on here but I'll focus on the main one here and
     leave the others to their own: the `F` macro and the associated `d` macro are
@@ -252,7 +252,7 @@ that it translates to. For example why have:
     Now it might not defeat the cpp but can you tell me what this is even with the
     cpp?
 
-		    f((a)((*y-2)*(y[-2]-2)),g);
+                    f((a)((*y-2)*(y[-2]-2)),g);
 
     The cpp might get it closer to what you might expect in a normal program but I
     refer to the array offsets (below also).
@@ -266,7 +266,7 @@ much more than that (that is the `F` macro).
 
     As for the Z() macro it means that I could remove `"`s; for example:
 
-		    #define J Z(X:%d/%d Y:%d/%d S:%zu/%zu B:%zu\n), Y, y[-2], X,*y,A,g, c);
+                    #define J Z(X:%d/%d Y:%d/%d S:%zu/%zu B:%zu\n), Y, y[-2], X,*y,A,g, c);
 
     Which as I have discussed elsewhere is the entire set of parameters to both
 `mvprintw()` and `printf()` plus the end of the function call (i.e. `);`.
@@ -278,7 +278,7 @@ technique causes some beautifiers problems too.
 
 - Another use of the `Z` macro is this curious line:
 
-		    static  const char*s  =Z(	; +<>^v);
+                    static  const char*s  =Z(   ; +<>^v);
 
     There are a number of curious parts. First is the Z() part makes it look
     like a function call. Of course that wouldn't work as such because an array
@@ -302,7 +302,7 @@ technique causes some beautifiers problems too.
 
     Another example is using the `E()` function e.g.:
 
-		    E(Z(YOU WIN!));
+                    E(Z(YOU WIN!));
 
     Which happens to be in the same function the above char array is defined. Also
     it's more like a string than anything but yet it's not visibly a string.
@@ -347,12 +347,12 @@ things which reduced the number of keywords needed).
 (besides those in e.g. environmental variable processing) that's curious: I
 converted this:
 
-		    if (!P) P = 1;
-		    else P = 0;
+                    if (!P) P = 1;
+                    else P = 0;
 
     To this:
 
-		    (!P && (P = 1))||(P=0);
+                    (!P && (P = 1))||(P=0);
 
 
 - Makes use of the different namespaces to have variables and labels be the
@@ -371,13 +371,13 @@ it might be easy to miss.
 - Uses an unnamed array (compound literal) for several different game variables.
 The pointer to the first element is defined like `int *j`:
 
-		    static int Y,X,*j = (int[8]){231,0}, *U, *V, *e, *n, Q, P,x,*y,l=4,*D;
+                    static int Y,X,*j = (int[8]){231,0}, *U, *V, *e, *n, Q, P,x,*y,l=4,*D;
 
     Does the 231 seem familiar? It should: it's the default key delay for the
     `timeout()` call (which I will return to again). The rest are 0 default. But
     what about `j`? Is it even used? Actually in main:
 
-		    y = j+3;
+                    y = j+3;
 
     But aside from that `j` is not used. However...
 
@@ -386,24 +386,24 @@ this in two parts: the negative offsets and then the confusing names.
 
     Can you honestly tell me that this is easy to follow?
 
-		    if (Y < 1 || Y >= y[-2] || X < 2 || X >= *y || y[-2] >= y[-1] || *y >= 1[y])
-		    {
-			    if (*p && !(*y>=1[y]||y[-2]>=y[-1]))
-			    {
-				if (Y<1||Y>=y[-2])
-				    Y = Y<1?y[-2]-1:1;
-				if (X<2||X>=*y)
-				    X = X<2?*y-1:2;
-			    }
-			    /* ... */
-		    }
+                    if (Y < 1 || Y >= y[-2] || X < 2 || X >= *y || y[-2] >= y[-1] || *y >= 1[y])
+                    {
+                            if (*p && !(*y>=1[y]||y[-2]>=y[-1]))
+                            {
+                                if (Y<1||Y>=y[-2])
+                                    Y = Y<1?y[-2]-1:1;
+                                if (X<2||X>=*y)
+                                    X = X<2?*y-1:2;
+                            }
+                            /* ... */
+                    }
 
     That's not the only place negative offsets occur! Observe the ternary operators
     there too.
 
     I'll go back to the `F()` macro and in particular what follows one of them:
 
-		    g d g = f((a)((*y-2)*(y[-2]-2)),g);
+                    g d g = f((a)((*y-2)*(y[-2]-2)),g);
 
     To parse that at the very least you have to know that `y` points to `j + 3`.
     Then you have to know that `j` points to the first element of an unnamed
@@ -414,7 +414,7 @@ this in two parts: the negative offsets and then the confusing names.
     applies to the block above of course and maybe more so). Then you have to
     think of operator precedence etc. I mean what is:
 
-		    (*y-2) * (y[-2]-2])
+                    (*y-2) * (y[-2]-2])
 
     ...about? An offset of `-2` and subtract `-2` from that. Multiply that by the `*y`
     (which is `j[3]`) `- 2`.
@@ -425,10 +425,10 @@ this in two parts: the negative offsets and then the confusing names.
 - On the confusing names etc.: the `getmaxyx()` function gets the maximum Y, X
 dimensions. Now in the first call in `main()` I have the code and tests following:
 
-		    getmaxyx(v, *y, y[-2]);
-		    --*y; --y[-2];
-		    if (y[-2] < 9 || *y < 9)
-			    return E(Z(term too small));
+                    getmaxyx(v, *y, y[-2]);
+                    --*y; --y[-2];
+                    if (y[-2] < 9 || *y < 9)
+                            return E(Z(term too small));
 
     Clearly the `max x` must be stored in `*y` and the `max y` must be stored in ..
     `y[-2]`. After all anyone knows that the coordinates are in the order `(X,Y)`!
@@ -469,7 +469,7 @@ of the brain is to assume `Y` is what is really `X` and `X` is what is really `Y
 - More confusion with variable names: If you notice the `int *U, *V` they are
 also part of the compound literal: that is they point into it:
 
-		    U=y+2; V=U+1;
+                    U=y+2; V=U+1;
 
     Except that these two are done in two different places: away from the
     assignment of `y` to remove them further away from the contexts they are
@@ -485,15 +485,15 @@ also part of the compound literal: that is they point into it:
 
 - There's another array that holds a variety of data.
 
-		    static k p[5]={1,0},W=300;
+                    static k p[5]={1,0},W=300;
 
     It holds the following information (but not necessarily in this order):
 
-		    WALLS
-		    CANNIBAL
-		    SHED
-		    SHEDS
-		    EVADE
+                    WALLS
+                    CANNIBAL
+                    SHED
+                    SHEDS
+                    EVADE
 
     But how will you know that just looking at the declaration? Many variables
     and they're part of collections but the many layers of indirection cause
@@ -513,18 +513,18 @@ many other examples that I have already shown).
 
 - Expanding on referring to the same thing in more than one way take a look at:
 
-		    case KEY_LEFT:
-			    V[1] = l-3;
-			    break;
-		    case KEY_RIGHT:
-			    V[l/l] = l/2;
-			    break;
-		    case KEY_UP:
-			    V[l-3] = l-1;
-			    break;
-		    case KEY_DOWN:
-			    V[l/4] = l;
-			    break;
+                    case KEY_LEFT:
+                            V[1] = l-3;
+                            break;
+                    case KEY_RIGHT:
+                            V[l/l] = l/2;
+                            break;
+                    case KEY_UP:
+                            V[l-3] = l-1;
+                            break;
+                    case KEY_DOWN:
+                            V[l/4] = l;
+                            break;
 
     What's going on there? First of all the letter ell looks very much like the
     digit one but above there are only two references to the digit `1`; the
@@ -551,7 +551,7 @@ many other examples that I have already shown).
     other places! But even after all of that you still need to do the
     calculations when I could simply have had:
 
-		    V[1] = 1; V[1] = 2; ...
+                    V[1] = 1; V[1] = 2; ...
 
     Etc.
 
@@ -585,20 +585,20 @@ check if it's > than the current?
 - More confusion with the max x/y dimensions: Going back to max x/y dimensions
 and coordinates of the snake; I showed this code before:
 
-		    if (Y < 1 || Y >= y[-2] || X < 2 || X >= *y || y[-2] >= y[-1] || *y >= 1[y])
-		    {
-			    if (*p && !(*y>=1[y]||y[-2]>=y[-1]))
-			    {
-				if (Y<1||Y>=y[-2])
-				    Y = Y<1?y[-2]-1:1;
-				if (X<2||X>=*y)
-				    X = X<2?*y-1:2;
-			    }
-			    else
-			    {
-				/* ... */
-			    }
-		    }
+                    if (Y < 1 || Y >= y[-2] || X < 2 || X >= *y || y[-2] >= y[-1] || *y >= 1[y])
+                    {
+                            if (*p && !(*y>=1[y]||y[-2]>=y[-1]))
+                            {
+                                if (Y<1||Y>=y[-2])
+                                    Y = Y<1?y[-2]-1:1;
+                                if (X<2||X>=*y)
+                                    X = X<2?*y-1:2;
+                            }
+                            else
+                            {
+                                /* ... */
+                            }
+                    }
 
     I asked if you could honestly figure that out easily. But here's a bit more
     elaboration. I already talked about the negative offsets - and they should
@@ -630,10 +630,10 @@ there's at least one negative offset.
 
 - A note on the many `#define`s in my entry. You say you dislike them:
 
-		    Doing masses of #defines to obscure the source has become 'old'.  We
-		    tend to 'see thru' masses of #defines due to our pre-processor tests
-		    that we apply.  Simply abusing #defines or -Dfoo=bar won't go as far
-		    as a program that is more well rounded in confusion.
+                    Doing masses of #defines to obscure the source has become 'old'.  We
+                    tend to 'see thru' masses of #defines due to our pre-processor tests
+                    that we apply.  Simply abusing #defines or -Dfoo=bar won't go as far
+                    as a program that is more well rounded in confusion.
 
     As I have noted though many of these save quite a lot of bytes too. It's
     true that they might aid (but barely) in obfuscation but I think that my
@@ -654,30 +654,30 @@ magical about the number 7 isn't there? I do not refer to primes although
 certainly one could say that primes have a magic to them. No. I'm instead
 referring to another property: bitwise AND. For example consider the following:
 
-		    7 & 0
-		    7 & 1
-		    7 & 2
-		    7 & 3
-		    7 & 4
-		    7 & 5
-		    7 & 6
-		    7 & 7
+                    7 & 0
+                    7 & 1
+                    7 & 2
+                    7 & 3
+                    7 & 4
+                    7 & 5
+                    7 & 6
+                    7 & 7
 
     What is the result of each operation? Quite simply it's the number itself!
     How does this relate to the `s` array though? Let me back up. Is there any
     place in the code that has the number 7 (by itself - 997 doesn't count)? A
     quick check will answer that: no. But here's a curious thing:
 
-		    q X, Y, s[*D+2&(1<<3)-!Q]);
+                    q X, Y, s[*D+2&(1<<3)-!Q]);
 
     We KNOW that at this place `Q` is 0 so the `!Q` has to be 1. Now `1 << 3` is 8. Therefore
 
-		    (1 << 3) - !Q == 7
+                    (1 << 3) - !Q == 7
 
     But what's `*D`? If the snake hasn't moved once yet it's 0; otherwise it's the number
     of the direction the snake is currently facing. Thus
 
-		    *D&(1<<3)-!Q
+                    *D&(1<<3)-!Q
 
     ...refers to `*D`. However if I were to have that be the element it wouldn't
     work right: I wanted the semicolon in there but the space was needed to

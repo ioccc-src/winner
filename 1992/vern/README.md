@@ -19,7 +19,7 @@ For more detailed information see [1992/vern in bugs.html](../../bugs.html#1992_
 ## To use:
 
 ``` <!---sh-->
-    ./vern 3	# <-- default is 2
+    ./vern 3    # <-- default is 2
 ```
 
 
@@ -31,7 +31,7 @@ You might start off by giving the following input:
     63 43
     76 55
     71 52
-    67 57		# <-- this may take a while
+    67 57               # <-- this may take a while
 ```
 
 
@@ -126,7 +126,7 @@ does:
 
 ``` <!---sh-->
     sed <vern.c 's/{ /(/g;s/} /)/g;s/;       /#define /' |
-	sed 's/}      /=/g;s/{        /i/g' >vern.tmp.c
+        sed 's/}      /=/g;s/{        /i/g' >vern.tmp.c
 ```
 
 and compiles `vern.tmp.c`.

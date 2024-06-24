@@ -193,7 +193,7 @@ shifts mod 32:
 
 ```
     1<<48
-    65536	0x00010000
+    65536       0x00010000
 ```
 
 gcc 4.2.1 without arguments compiles cleanly (e.g. `cc prog.c -o prog`).

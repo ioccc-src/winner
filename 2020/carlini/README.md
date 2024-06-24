@@ -102,7 +102,7 @@ The entirety of the program consists of a single iterated call to `printf(3)`.
 
 ``` <!---c-->
     int main() {
-	while(*d) printf(fmt, arg);
+        while(*d) printf(fmt, arg);
     }
 ```
 
@@ -316,8 +316,8 @@ One option would be to implement the logic as
 ``` <!---c-->
     printf()
     while (*ok) {
-	scanf();
-	printf();
+        scanf();
+        printf();
 }
 ```
 
@@ -326,8 +326,8 @@ implement it like this
 
 ``` <!---c-->
     while (*ok) {
-	scanf();
-	printf();
+        scanf();
+        printf();
     }
 ```
 

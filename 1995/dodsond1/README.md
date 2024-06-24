@@ -27,7 +27,7 @@ You might consider giving the following input:
     ... a male (who) gets very, very frustrated sitting in a chair all
     the time because males are biologically driven to go out and hunt
     giraffes.
-	    -- Adjunct Professor Newt Gingrich, Reinhardt College, 1/7/95
+            -- Adjunct Professor Newt Gingrich, Reinhardt College, 1/7/95
 ```
 
 ... which can be done like:

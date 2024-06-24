@@ -23,9 +23,9 @@ For more detailed information see [2018/algmyr in bugs.html](../../bugs.html#201
 ## To use:
 
 ``` <!---sh-->
-    ./prog < prog.c			# Print garbage: might mess up your terminal
+    ./prog < prog.c                     # Print garbage: might mess up your terminal
     ./prog <file1> <file2> > out.raw
-    ./prog -d 2 0 out.raw		# Decode the first (0th) channel out of two
+    ./prog -d 2 0 out.raw               # Decode the first (0th) channel out of two
 ```
 
 

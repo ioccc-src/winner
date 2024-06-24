@@ -53,7 +53,7 @@ The 'expression' `f(x,y)` is any function of `x` and `y` with the
 operators:
 
 ```
-    +	-	*	/	^
+    +   -       *       /       ^
 ```
 
 The symbol `^` is the power operator.  Note that it only supports

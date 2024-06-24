@@ -113,14 +113,14 @@ following meanings:
     A = argv
 
     b = array of unsigned long variables
-	b[0] = bit-width of the CRC (argv[2])
-	b[1] = CRC polynomial (argv[3])
-	b[2] = nonzero if CRC is reflected (argv[4])
-	b[3] = initial value of CRC (argv[5])
-	b[4] = value final CRC is XORed with (argv[6])
-	b[5] = CRC value
-	b[6] = byte from file
-	b[7] = counter
+        b[0] = bit-width of the CRC (argv[2])
+        b[1] = CRC polynomial (argv[3])
+        b[2] = nonzero if CRC is reflected (argv[4])
+        b[3] = initial value of CRC (argv[5])
+        b[4] = value final CRC is XORed with (argv[6])
+        b[5] = CRC value
+        b[6] = byte from file
+        b[7] = counter
 
     B = FILE * through which the file argv[1] is opened
 

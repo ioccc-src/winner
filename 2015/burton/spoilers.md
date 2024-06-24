@@ -14,10 +14,10 @@ proceeds from there, using some identities that are confusingly similar and
 interestingly combined (increasing obfuscation):
 
 ```
-    obc	   clr
-    ---	   ---
-    -~x	   x+1
-    ~-x	   x-1
+    obc    clr
+    ---    ---
+    -~x    x+1
+    ~-x    x-1
     y-~x   y+x+1
 ```
 

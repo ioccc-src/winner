@@ -53,7 +53,7 @@ Shortly below that you will see, as noted above, the numbers:
 ``` <!---c-->
     if ((H = fopen (__FILE__+43, 43+__FILE__)))
     while ((fgets (L, (int)sizeof L, H)) != 0) {
-	    I[strcspn (I, 45+__FILE__)] = O = 0;
+            I[strcspn (I, 45+__FILE__)] = O = 0;
 ```
 
 The first number in the above C means the length starting from 0 up through the

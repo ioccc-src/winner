@@ -17,11 +17,11 @@ were added over time.
 dance began (this is called foreshadowing):
 
 ```
-    ()		forced precedence
-    - ~ ?		unary minus, compl, byteswap
-    * / % & << >>	mul, div, mod, bitand, shift: left, right
-    + - | ^		add, sub, bitor, xor
-    NUM		0-9
+    ()          forced precedence
+    - ~ ?               unary minus, compl, byteswap
+    * / % & << >>       mul, div, mod, bitand, shift: left, right
+    + - | ^             add, sub, bitor, xor
+    NUM         0-9
 ```
 
 This seemed like a reasonable candidate to experiment with obfuscation; perhaps
@@ -34,39 +34,39 @@ The algorithm was and is rather straightforward:
 
 ```
     expr() {
-	    n = term()
-	    t = token()
-	    if (t == ADD) return n += expr()
-	    if (t == SUB) return n -= expr()
-	    if (t == BOR) return n |= expr()
-	    if (t == XOR) return n ^= expr()
-	    ungettoken(t)
-	    return n
+            n = term()
+            t = token()
+            if (t == ADD) return n += expr()
+            if (t == SUB) return n -= expr()
+            if (t == BOR) return n |= expr()
+            if (t == XOR) return n ^= expr()
+            ungettoken(t)
+            return n
     }
     term() {
-	    n = factor()
-	    t = token()
-	    if (t == MUL) return n *= term()
-	    if (t == DIV) return n /= term()
-	    if (t == AND) return n &= term()
-	    if (t == RSH) return n >> term()
-	    if (t == LSH) return n << term()
-	    ungettoken(t)
-	    return n
+            n = factor()
+            t = token()
+            if (t == MUL) return n *= term()
+            if (t == DIV) return n /= term()
+            if (t == AND) return n &= term()
+            if (t == RSH) return n >> term()
+            if (t == LSH) return n << term()
+            ungettoken(t)
+            return n
     }
     factor() {
-	    t = token()
-	    if (t == LPAREN) {
-		    n = expr()
-		    if token() == RPAREN
-			    return n
-		    error()
-	    }
-	    if (t == SUB) return -factor()
-	    if (t == CMP) return ~factor()
-	    if (t == QUE) return byteswap(factor())
-	    if (t == DIG) return strtol()
-	    error()
+            t = token()
+            if (t == LPAREN) {
+                    n = expr()
+                    if token() == RPAREN
+                            return n
+                    error()
+            }
+            if (t == SUB) return -factor()
+            if (t == CMP) return ~factor()
+            if (t == QUE) return byteswap(factor())
+            if (t == DIG) return strtol()
+            error()
     }
 ```
 

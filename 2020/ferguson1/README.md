@@ -161,8 +161,8 @@ Here are some other features of the game:
 *   A drawing/practising mode (**WAIT** < 0 makes `timeout()` block).
 
 *   Computer plays the game (**WAIT=0**).<br>
-	- **EPILEPSY/STIMULATION OVERLOAD WARNING** included in the relevant
-	section (this goes for a low **EVADE** value too).
+        - **EPILEPSY/STIMULATION OVERLOAD WARNING** included in the relevant
+        section (this goes for a low **EVADE** value too).
 
 *   Grow-Shrink mode (Positive and Negative Winning) mode (see
     [gameplay.html](gameplay.html) for more details).
@@ -234,15 +234,15 @@ very important.
 <div id="toc">
 *   ['Bugs'](#bugs)
 *   [NAQs/IAQs - Never/Infrequently Asked Questions](#naqs)
-    -	[Do I have any inspirations for this entry?](#inspirations)
-    -	[Are there any features I thought of that I wanted to implement but did not get to for some reason or another?](#features)
-    -	[Are there ways that one can make this game easier?](#easier)
-    -	[Are there ways to make it harder?](#harder)
-    -	[How do snakes grow in real life?](#moult)
-    -	[Any other interesting things about snakes?](#other)
-    -	[Why can you go the opposite direction and so immediately die when not cannibalising?](#opposite)
-    -	[Do you have any **DELICIOUS CHOCOLATE CAKE** recipes?](#chocolatecake)
-    -	[What are the files prog.alt.c, prog.2.c, prog-j.c and prog.alt.c ?](#alt)
+    -   [Do I have any inspirations for this entry?](#inspirations)
+    -   [Are there any features I thought of that I wanted to implement but did not get to for some reason or another?](#features)
+    -   [Are there ways that one can make this game easier?](#easier)
+    -   [Are there ways to make it harder?](#harder)
+    -   [How do snakes grow in real life?](#moult)
+    -   [Any other interesting things about snakes?](#other)
+    -   [Why can you go the opposite direction and so immediately die when not cannibalising?](#opposite)
+    -   [Do you have any **DELICIOUS CHOCOLATE CAKE** recipes?](#chocolatecake)
+    -   [What are the files prog.alt.c, prog.2.c, prog-j.c and prog.alt.c ?](#alt)
 
 
 *   [Winning thoughts, dedications and thanks](#winning)

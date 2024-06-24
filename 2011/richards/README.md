@@ -71,7 +71,7 @@ You will probably get warnings while compiling the code. In particular:
 * I don't include any headers I don't strictly need to, so you'll get warnings
   about (at least) `memcpy()`, `isdigit()`, `atoi()`, `calloc()`, `malloc()`
   and `alloca()` if you didn't use `-DAH`.
-	- NOTE from judges: we added these includes in 2023.
+        - NOTE from judges: we added these includes in 2023.
 
 * GCC likes to complain about `while (a = b)` (assignments as a condition).
 

@@ -62,21 +62,21 @@ The ALU has six instructions:
 - `CLR_Y` - Clear [register](https://en.wikipedia.org/wiki/Processor_register) `Y`.
 
 - `ADD`   - Calculates `X` + `Y` and stores the result in `X`. If the result
-	    is larger than 11 bits, the [CARRY
-	    bit](https://en.wikipedia.org/wiki/Carry_flag) in `SR` is set otherwise
-	    the `CARRY` bit is cleared.
+            is larger than 11 bits, the [CARRY
+            bit](https://en.wikipedia.org/wiki/Carry_flag) in `SR` is set otherwise
+            the `CARRY` bit is cleared.
 
 - `SUB`   - Calculates `X` - `Y` and stores the result in `X`. If `Y` was larger
-	    than `X`, the [CARRY bit](https://en.wikipedia.org/wiki/Carry_flag)
-	    in `SR` is set otherwise the `CARRY` bit is cleared.
+            than `X`, the [CARRY bit](https://en.wikipedia.org/wiki/Carry_flag)
+            in `SR` is set otherwise the `CARRY` bit is cleared.
 
 - `TST`   - If `X` == `Y` the `EQ` bit in `SR` is set, otherwise the `EQ` bit is
-	    cleared. If `X` < `Y` the `LT` bit in `SR` is set, otherwise the `LT`
-	    bit is cleared.
+            cleared. If `X` < `Y` the `LT` bit in `SR` is set, otherwise the `LT`
+            bit is cleared.
 
 - `INC2`  - Calculates `X` + 2 and stores the result in `X`. The [CARRY
-	    bit](https://en.wikipedia.org/wiki/Carry_flag) is handled as in the
-	    `ADD` instruction.
+            bit](https://en.wikipedia.org/wiki/Carry_flag) is handled as in the
+            `ADD` instruction.
 
 Internally the [ALU](https://en.wikipedia.org/wiki/Arithmetic_logic_unit)
 implements a one bit adder with a carry in and carry out. This adder is the core
@@ -209,7 +209,7 @@ taken to pre-process the program were measured using GNU `cpp` on my 2.0MHz P4
 with 512Mb ram and a lot of disk.
 
 ```
-	    Generated   Recursive  Max nest  Intermediate
+            Generated   Recursive  Max nest  Intermediate
     Level   prime nrs   includes   count     file size          Time
 
       _3     < 8           2 322       9         74 748            4"
@@ -221,7 +221,7 @@ with 512Mb ram and a lot of disk.
       _9     < 512     1 920 272      38     65 527 808(*)  1h 42'19"(*)
      _10     < 1024    6 826 389     114     63 782 912(*)  2h 47'58"(*)
 
-	 (*) Before cpp crashed.
+         (*) Before cpp crashed.
 ```
 
 

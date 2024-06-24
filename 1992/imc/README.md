@@ -126,23 +126,23 @@ The options of this program are:
 
 ```
     -centre x y  (float x,y) Centre the picture at x+iy in the complex
-			     plane (default x=0 y=0)
+                             plane (default x=0 y=0)
 
 
     -factor f    (float f)   Use f pixels per unit of the plane (default
-			     f=x/4 where x is the width)
+                             f=x/4 where x is the width)
 
 
     -julia  x y  (float x,y) Draw a julia set. Use x+iy as the constant
-			     to add after squaring (default x=0 y=0)
+                             to add after squaring (default x=0 y=0)
 
     -limit  l    (int l)     Use l iterations maximum (default l=128)
 
     -mask   m    (int m)     Use m as a mask in deciding the colour of each
-			     pixel (see below) (default m=1)
+                             pixel (see below) (default m=1)
 
     -size   x y  (int x,y)   Produce an x-by-y output (default for raster
-			     x=768 y=768; default for text x=63 y=23)
+                             x=768 y=768; default for text x=63 y=23)
 
     -text                    Produce text instead of raster.
 ```

@@ -154,8 +154,8 @@ Supported operations and functions are:
 
      +,-,*,/  | Arithmetic operations, priority of  * , /  over  +,-  is respected.
      <,>      | Compares the real parts of two complex numbers (the imaginary part
-     	      | is ignored). Any number of conditions is allowed, the iteration will
-	      | just stop as soon as one of them fails.
+              | is ignored). Any number of conditions is allowed, the iteration will
+              | just stop as soon as one of them fails.
      Abs2     | Calculates the squared norm, i.e.: Abs2(a+b*i) is (a*a+b*b)+0*i.
      Re       | Extract the real part, i.e.: Re(a+b*i) is a+0*i.
      Im       | Extract the imaginary part, i.e.: Im(a+b*i) is b+0*i.

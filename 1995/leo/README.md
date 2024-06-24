@@ -78,7 +78,7 @@ You take a big sheet of "arithmetic" paper and draw a line
 of length 1 (between 2 crossings) at the center of the sheet:
 
 ```
-				|
+                                |
 ```
 
 This makes 2 open ends (I think the notion of an "open end" doesn't
@@ -123,15 +123,15 @@ Step 4:
 Step 5:
 
 ```
-			  ._|   .   |_.
-			__|  \./ \./  |__
-			   \__|   |__/
-			__./   \./   \.__
-			__I     |     I__
-			   \__./ \.__/
-			__./  |   |  \.__
-			  |_./ \./ \._|
-			    |       |
+                          ._|   .   |_.
+                        __|  \./ \./  |__
+                           \__|   |__/
+                        __./   \./   \.__
+                        __I     |     I__
+                           \__./ \.__/
+                        __./  |   |  \.__
+                          |_./ \./ \._|
+                            |       |
 
 ```
 
@@ -252,7 +252,7 @@ even want to explain what it does. You've been warned!
 
 
 ```
-	    *               *               *
+            *               *               *
 ```
 
 Special thanks:

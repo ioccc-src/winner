@@ -56,7 +56,7 @@ game:
 
 ``` <!---sh-->
     make ttt
-    ./ttt [first_move]	# <- omit first arg to have it move first
+    ./ttt [first_move]  # <- omit first arg to have it move first
     ./ttt next_move
 ```
 
@@ -65,8 +65,8 @@ The shell script determines when the game is over, and automatically replaces
 loss).  The [ttt](%%REPO_URL%%/1991/westley/ttt.sh) script has two other modes:
 
 ``` <!---sh-->
-    ./ttt quitgame	# cancel any game in progress, revert to merlyn.c
-    ./ttt clobber	# remove all game files, revert to original source
+    ./ttt quitgame      # cancel any game in progress, revert to merlyn.c
+    ./ttt clobber       # remove all game files, revert to original source
 ```
 
 For example here is a potentially losing game:
@@ -81,9 +81,9 @@ The final might look like:
 
 
 ``` <!---c-->
-		    a(X){/*/X=-		a(X){/*/X=-
-	    X	    -1;F;X=-	 	-1;F;X=-
-		    -1;F;}/*/		-1;F;}/*/
+                    a(X){/*/X=-         a(X){/*/X=-
+            X       -1;F;X=-            -1;F;X=-
+                    -1;F;}/*/           -1;F;}/*/
     char z[][100]={"char z[][100]={","a(X){/*/X=-","-1;F;X=-","-1;F;}/*/","1999999999  :-) ",
     "int q,i,j,k,X,O=0,H;S(x)int*x;{X+=X;O+=O;*x+1?*x+2||X++:O++;*x=1;}L(n){for(*",
     "z[i=1]=n+97;i<4;i++)M(256),s(i),M(128),s(i),M(64),N;X*=8;O*=8;}s(R){char*r=z",
@@ -93,9 +93,9 @@ The final might look like:
     "c(1);*J=--u?O?*J:*v[1]:53;X|=u<<57-*v[u];y(X);K=40+q;q?e(O,X),q&&(K='|'),e(X",
     ",O),R(),O|=1<<--i:J[*J-48+(X=O=0)]--;L(q=0);for(s(i=0);q=i<12;)s(i++),i>4&&N",
     ";s(q=12);P(48);P('}');P(59);N;q=0;L(1);for(i=5;i<13;)s(i++),N;L(2);}",0};
-		    b(X){/*/X=-		b(X){/*/X=-
-	    X	    -1;F;X=-	 	-1;F;X=-	X
-		    -1;F;}/*/		-1;F;}/*/
+                    b(X){/*/X=-         b(X){/*/X=-
+            X       -1;F;X=-            -1;F;X=-        X
+                    -1;F;}/*/           -1;F;}/*/
     int q,i,j,k,X,O=0,H;S(x)int*x;{X+=X;O+=O;*x+1?*x+2||X++:O++;*x=1;}L(n){for(*
     z[i=1]=n+97;i<4;i++)M(256),s(i),M(128),s(i),M(64),N;X*=8;O*=8;}s(R){char*r=z
     [R];for(q&&Q;*r;)P(*r++);q&&(Q,P(44));}M(m){P(9);i-2||P(X&m?88:O&m?48:32);P(
@@ -104,9 +104,9 @@ The final might look like:
     c(1);*J=--u?O?*J:*v[1]:53;X|=u<<57-*v[u];y(X);K=40+q;q?e(O,X),q&&(K='|'),e(X
     ,O),R(),O|=1<<--i:J[*J-48+(X=O=0)]--;L(q=0);for(s(i=0);q=i<12;)s(i++),i>4&&N
     ;s(q=12);P(48);P('}');P(59);N;q=0;L(1);for(i=5;i<13;)s(i++),N;L(2);}
-		    c(X){/*/X=-		c(X){/*/X=-
-	    0	    -1;F;X=-	  0	-1;F;X=-	0
-		    -1;F;}/*/		-1;F;}/*/
+                    c(X){/*/X=-         c(X){/*/X=-
+            0       -1;F;X=-      0     -1;F;X=-        0
+                    -1;F;}/*/           -1;F;}/*/
 
     ttt: I win!
 ```

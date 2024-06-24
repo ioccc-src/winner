@@ -180,8 +180,8 @@ with one shell cmd at the far end.
     p=0
     for f in `ls /tmp/shark$$*`
     do
-	 p=`expr $p + 1`
-	 mail -s "bundle ($p of $n) from '`whoami`'" $m < $f
+         p=`expr $p + 1`
+         mail -s "bundle ($p of $n) from '`whoami`'" $m < $f
     done
     rm /tmp/shark$$*
 ```
@@ -190,33 +190,33 @@ with one shell cmd at the far end.
 ### Shark history:
 
 - May 1987: Karl Fox introduces 1023-byte `zcat.c` to USENET.
-	     It's too late for the 4th IOCCC.
+             It's too late for the 4th IOCCC.
 
 - May 21, 1987: James A. Woods extends idea to construct self
-	     decompressing `shar` Trojan horse, utilizing `cc`, `shar`,
-	     `zcat`, & `btoa`; size: 2303 bytes.
+             decompressing `shar` Trojan horse, utilizing `cc`, `shar`,
+             `zcat`, & `btoa`; size: 2303 bytes.
 
 - May 23, 1987: `jaw` trims 250 bytes without much thought.
 
 - June 2, 1987: 52 lines of shell, 1991 bytes, now made with `tar`,
-	     short-circuit C-compile at far end, dual-use main.c,
-	     portability mods. (jaw)
+             short-circuit C-compile at far end, dual-use main.c,
+             portability mods. (jaw)
 
 - Mar-May 1988: abortive run at 5th IOCCC.
-	     `jaw.c` - 1529 bytes. compile line: 152 bytes.
-	     generated funny code with `execvp()` to invoke shell.
+             `jaw.c` - 1529 bytes. compile line: 152 bytes.
+             generated funny code with `execvp()` to invoke shell.
 
 - Aug 29, 1988: production version, now at 1830 bytes.
 
 - Jan 1990: Paul Eggert does tour-de-force shark re-engineering.
 
 - May 24, 1990: collaboration yields 999-byte `jaw.c` core (see above)
-	     and 1530-byte production shell code (w/comments).
-	     Eggert comes through with lion's share of improvements.
-	     7th IOCCC code now faster than the `btoa`/`zcat` it replaces.
+             and 1530-byte production shell code (w/comments).
+             Eggert comes through with lion's share of improvements.
+             7th IOCCC code now faster than the `btoa`/`zcat` it replaces.
 
 - May 1990: `jaw` develops experimental replacement using
-	     Dan Bernstein's high-compression 'squeeze'.
+             Dan Bernstein's high-compression 'squeeze'.
 
 
 To which we add:

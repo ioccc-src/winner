@@ -75,7 +75,7 @@ disable the optimiser we might get something like:
 
 ``` <!---sh-->
     $ ./marshall
-	  choo choo
+          choo choo
     Segmentation fault: 11
 ```
 

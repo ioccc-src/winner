@@ -3,9 +3,9 @@
 - [prog.c](prog.c)
     *   This is the source file to the `weasel` program [1].
 - [prog.alt.c](prog.alt.c)
-    *	This is the source code file to the `weasel.alt` program [1].
+    *   This is the source code file to the `weasel.alt` program [1].
 - [test.sh](test.sh)
-    *	Script provided to test the weasel program [1].
+    *   Script provided to test the weasel program [1].
 - [test-strings.txt](test-strings.txt)
     * The `test.sh` script reads from this file and runs the program with these
     target strings.
@@ -47,18 +47,18 @@ remarks I have kept it in place. Please note that the paths below are dependent
 on the prefix used in installation; where I suggest `/usr` it is equally
 possible it could be under '/usr/local', for example.
 
-[1]			    Note that [prog.c](prog.c) and
-			    [prog.alt.c](prog.alt.c) would be
-			    linked to `weasel.c` and `weasel.alt.c`
-			    (respectively) in the `/usr/src/weasel`
-			    subdirectory.
+[1]                         Note that [prog.c](prog.c) and
+                            [prog.alt.c](prog.alt.c) would be
+                            linked to `weasel.c` and `weasel.alt.c`
+                            (respectively) in the `/usr/src/weasel`
+                            subdirectory.
 
-[2]			    The file would most likely be compressed as
-			    `weasel.1.gz` under the `/usr/share/man/man1`
-			    subdirectory.
+[2]                         The file would most likely be compressed as
+                            `weasel.1.gz` under the `/usr/share/man/man1`
+                            subdirectory.
 
-[3]			    These files would be in the `/usr/share/doc/weasel`
-			    subdirectory.
+[3]                         These files would be in the `/usr/share/doc/weasel`
+                            subdirectory.
 
 <hr style="width:10%;text-align:left;margin-left:0">
 

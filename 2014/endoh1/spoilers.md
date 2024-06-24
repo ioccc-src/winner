@@ -101,14 +101,14 @@ The compiler tool chain is the following.
     raw.txt               |
       |                   |
       +---------+---------+
-		|
-		| [link.rb]
-		V
-	      main.c
-		|
-		| [gen-prog.c]
-		V
-	      prog.c
+                |
+                | [link.rb]
+                V
+              main.c
+                |
+                | [gen-prog.c]
+                V
+              prog.c
 ```
 
 * [parse.rb](%%REPO_URL%%/2014/endoh1/parse.rb) converts Ruby to AST.

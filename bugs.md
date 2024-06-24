@@ -6,13 +6,13 @@ If you are going to try and fix any bugs **PLEASE READ THE NEXT SECTIONS _FIRST_
 If however you want to jump to a specific year or you have already read the
 below and you wish to help with a year, you can use these links:
 
-- [1984 entries](#1984)	|	[1985 entries](#1985)	|	[1986 entries](#1986)	|	[1987 entries](#1987)
-- [1988 entries](#1988)	|	[1989 entries](#1989)	|	[1990 entries](#1990)	|	[1991 entries](#1991)
-- [1992 entries](#1992)	|	[1993 entries](#1993)	|	[1994 entries](#1994)	|	[1995 entries](#1995)
-- [1996 entries](#1996)	|	[1998 entries](#1998)	|	[2000 entries](#2000)	|	[2001 entries](#2001)
-- [2004 entries](#2004)	|	[2005 entries](#2005)	|	[2006 entries](#2006)	|	[2011 entries](#2011)
-- [2012 entries](#2012)	|	[2013 entries](#2013)	|	[2014 entries](#2014)	|	[2015 entries](#2015)
-- [2018 entries](#2018)	|	[2019 entries](#2019)	|	[2020 entries](#2020)
+- [1984 entries](#1984) |       [1985 entries](#1985)   |       [1986 entries](#1986)   |       [1987 entries](#1987)
+- [1988 entries](#1988) |       [1989 entries](#1989)   |       [1990 entries](#1990)   |       [1991 entries](#1991)
+- [1992 entries](#1992) |       [1993 entries](#1993)   |       [1994 entries](#1994)   |       [1995 entries](#1995)
+- [1996 entries](#1996) |       [1998 entries](#1998)   |       [2000 entries](#2000)   |       [2001 entries](#2001)
+- [2004 entries](#2004) |       [2005 entries](#2005)   |       [2006 entries](#2006)   |       [2011 entries](#2011)
+- [2012 entries](#2012) |       [2013 entries](#2013)   |       [2014 entries](#2014)   |       [2015 entries](#2015)
+- [2018 entries](#2018) |       [2019 entries](#2019)   |       [2020 entries](#2020)
 
 ## PLEASE read the next sections if you wish to help
 
@@ -138,8 +138,8 @@ warning in [1985/applin](%%REPO_URL%%/1985/applin/applin.c) with gcc:
 
 ```
     applin.c:1:78: warning: incompatible implicit declaration of built-in function 'execlp' [-Wbuiltin-declaration-mismatch]
-	1 | main(v,c)char**c;{for(v[c++]=strdup("Hello, world!\n");(!!c)[*c]&&(v--||--c&&execlp(*c,*c,c[!!c]+!!c,!c));**c=!c)write(!!*c,*c,!!**c);}
-	  |                                                                              ^~~~~~
+        1 | main(v,c)char**c;{for(v[c++]=strdup("Hello, world!\n");(!!c)[*c]&&(v--||--c&&execlp(*c,*c,c[!!c]+!!c,!c));**c=!c)write(!!*c,*c,!!**c);}
+          |                                                                              ^~~~~~
 ```
 
 and this reminded him of his fix to
@@ -475,7 +475,7 @@ code. In particular you should see something like:
 
 ``` <!---sh-->
     $ ./decot
-    '",x);	/*
+    '",x);      /*
     \
 ```
 
@@ -642,8 +642,8 @@ bounds by the int `gnat`. For instance:
 ```
     Program terminated with signal SIGSEGV, Segmentation fault.
     #0  0x0000000000401335 in main (ABBA@entry=<optimized out>, tang@entry=<optimized out>, gnat@entry=<optimized out>, Near@entry=<optimized out>)
-	at ver2.c:23
-    23	&&gnat!({)Near,noon,/*krelc*/)<0&&(Near= -  	irk[-gnat--]-2)))&&main(ABBA,
+        at ver2.c:23
+    23  &&gnat!({)Near,noon,/*krelc*/)<0&&(Near= -      irk[-gnat--]-2)))&&main(ABBA,
     (gdb) p gnat
     $1 = -518733305
 ```
@@ -669,7 +669,7 @@ becomes the first and the first line becomes the last! Now if you look at the
 code you'll see on the first line:
 
 ``` <!---c-->
-    /**//*/};)/**/pain(*//**/tang 	  ,gnat/**//*/,ABBA~,0-0(avnz;)0-0,tang,raeN
+    /**//*/};)/**/pain(*//**/tang         ,gnat/**//*/,ABBA~,0-0(avnz;)0-0,tang,raeN
 ```
 
 In `ver0` it'll be the same but the others are more interesting.
@@ -677,13 +677,13 @@ In `ver0` it'll be the same but the others are more interesting.
 In `ver1` you'll see on the last line:
 
 ``` <!---c-->
-    cnva((vag)NOON&2/*//*\\**/,gnat,tang	,NOON/**//*/(niam/**/);}/*//**/
+    cnva((vag)NOON&2/*//*\\**/,gnat,tang        ,NOON/**//*/(niam/**/);}/*//**/
 ```
 
 and on the first line:
 
 ``` <!---c-->
-    /**//*/};)/**/cnva(*//**/gnat 	  ,tang/**//*/,NOON~,0-0(niam;)0-0,gnat,enrA
+    /**//*/};)/**/cnva(*//**/gnat         ,tang/**//*/,NOON~,0-0(niam;)0-0,gnat,enrA
 ```
 
 Observe that the ROT13 of `pain` is `cnva` and the ROT13 of `main` is `znva`.
@@ -1038,9 +1038,9 @@ lines of code are:
 ``` <!---c-->
     while ( ppp->qq==48 )
     {
-	printf("%ld\n",qqq-45);
-	*pp = ppp;
-	ppp = ppp->p;
+        printf("%ld\n",qqq-45);
+        *pp = ppp;
+        ppp = ppp->p;
     }
 ```
 
@@ -1129,34 +1129,34 @@ like:
     lush.c: In function 'main':
     lush.c:40: warning: "f" redefined
        40 |           main
-	  |
+          |
     lush.c:1: note: this is the location of the previous definition
-	1 | #define gets(_) fgets((_),999,stdin)
-	  |
+        1 | #define gets(_) fgets((_),999,stdin)
+          |
     lush.c:42: warning: "f" redefined
        42 | #define f 001:
-	  |
+          |
     lush.c:40: note: this is the location of the previous definition
        40 |           main
-	  |
+          |
     lush.c:44: warning: "f" redefined
        44 | #define f 100:
-	  |
+          |
     lush.c:42: note: this is the location of the previous definition
        42 | #define f 001:
-	  |
+          |
     lush.c:45: warning: "f" redefined
        45 |          _[i--
-	  |
+          |
     lush.c:44: note: this is the location of the previous definition
        44 | #define f 100:
-	  |
+          |
     lush.c:46: warning: "f" redefined
        46 | #define f 126:
-	  |
+          |
     lush.c:45: note: this is the location of the previous definition
        45 |          _[i--
-	  |
+          |
 ```
 
 Now one can use `sed` to get the `warning:` line correct but there is more to it
@@ -1165,16 +1165,16 @@ than that. For instance this is what it looks like with clang:
 ```
     lush.c:40:9: warning: 'f' macro redefined [-Wmacro-redefined]
     #define f 001:
-	    ^
+            ^
     lush.c:1:9: note: previous definition is here
     #define f 000:
-	    ^
+            ^
     lush.c:42:9: warning: 'f' macro redefined [-Wmacro-redefined]
     #define f 100:
-	    ^
+            ^
     lush.c:40:9: note: previous definition is here
     #define f 001:
-	    ^
+            ^
 ```
 
 As you might see the part under the `warning:` line is different.
@@ -1973,22 +1973,22 @@ Anyway:
     #include <stdio.h>
     int main(void)
     {
-	printf("#!/usr/bin/env perl\nuse warnings;_:$_=               <> ; defined               or exit; @ARGV"
-	    "=split; __:$_=             shift;defined or             goto _; chomp "
-	    ";(m*^\\x70oO"              "\\x74$*i)?(pri"              "nt \"$_ w\\x"
-	    "61s h\\145r\\x"            "65!\\n\"):((m*"            "^\\s\\*(-?\\d+"
-	    "(\\.\\d+)?)\\s"            "\\*$*)?(push@SS            ,$1):(&{chr(((o"
-	    "rd)%%39)+3**4)x2             } )); goto __;             sub ff { @SS= ("
-	    ")} sub __{print            \"stack empty\\"            "n\"} sub ss{$#"
-	    "SS<0 and goto &            __; print $SS[$"            "#SS].\"\\n\"} "
-	    "sub SS{ $#SS<0              and goto &__ ;              print pop @SS}"
-	    "sub _ { print              \"divide by zer"            "o\\n\"}sub ii{"
-	    "map{ print\"$_"            "\\n\" } reverse            @SS} sub AUTOLO"
-	    "AD { print\"un"            "implemented\\n"            "\"} sub gg{ $#"
-	    "SS<0 and goto              &__;push@SS,$SS[            $#SS]} sub uu{ "
-	    "$#SS<1 and goto            &__;$SS[ $#SS]+=            $SS[$#SS-1];$SS"
-	    "[$#SS-1]=$SS[$"            "#SS]-$SS[$#SS-"            "1]; $SS[$#SS]-"
-	    "=$SS[$#SS-1]}");
+        printf("#!/usr/bin/env perl\nuse warnings;_:$_=               <> ; defined               or exit; @ARGV"
+            "=split; __:$_=             shift;defined or             goto _; chomp "
+            ";(m*^\\x70oO"              "\\x74$*i)?(pri"              "nt \"$_ w\\x"
+            "61s h\\145r\\x"            "65!\\n\"):((m*"            "^\\s\\*(-?\\d+"
+            "(\\.\\d+)?)\\s"            "\\*$*)?(push@SS            ,$1):(&{chr(((o"
+            "rd)%%39)+3**4)x2             } )); goto __;             sub ff { @SS= ("
+            ")} sub __{print            \"stack empty\\"            "n\"} sub ss{$#"
+            "SS<0 and goto &            __; print $SS[$"            "#SS].\"\\n\"} "
+            "sub SS{ $#SS<0              and goto &__ ;              print pop @SS}"
+            "sub _ { print              \"divide by zer"            "o\\n\"}sub ii{"
+            "map{ print\"$_"            "\\n\" } reverse            @SS} sub AUTOLO"
+            "AD { print\"un"            "implemented\\n"            "\"} sub gg{ $#"
+            "SS<0 and goto              &__;push@SS,$SS[            $#SS]} sub uu{ "
+            "$#SS<1 and goto            &__;$SS[ $#SS]+=            $SS[$#SS-1];$SS"
+            "[$#SS-1]=$SS[$"            "#SS]-$SS[$#SS-"            "1]; $SS[$#SS]-"
+            "=$SS[$#SS-1]}");
     }
 ```
 
@@ -2536,8 +2536,8 @@ When trying to link `gavin.o` to produce `sh`, the linker generates:
 ```
     Undefined symbols for architecture arm64:
       "start", referenced from:
-	 -u command line option
-	 (maybe you meant: __start)
+         -u command line option
+         (maybe you meant: __start)
     ld: symbol(s) not found for architecture arm64
 ```
 
@@ -2585,36 +2585,36 @@ The original Makefile from 2004 had the following to say about this entry:
     #
     GAVIN_OPT= -O1
     GAVIN_FLAGS=\
-	    '-DY(m)=*((int*)(m))'\
-	    '-DE(f,a,b,c)=((G((*)))(f))(a,b,c)'\
-	    '-DM=for(D=0;D<786432;D++)'\
-	    '-DZ=int i=0,j=0,h,n,p=393728,s=26739,C,D'\
-	    '-DV=0x90200'\
-	    '-DK=0'\
-	    '-DR=while((C=E(V-8,100,0,0))&3&&(D=E(V-8,96,0,0))|3){'\
-	    '-DL(c,d)=E(V+8,100,c,0);R}E(V+8,96,d,0);R}'
+            '-DY(m)=*((int*)(m))'\
+            '-DE(f,a,b,c)=((G((*)))(f))(a,b,c)'\
+            '-DM=for(D=0;D<786432;D++)'\
+            '-DZ=int i=0,j=0,h,n,p=393728,s=26739,C,D'\
+            '-DV=0x90200'\
+            '-DK=0'\
+            '-DR=while((C=E(V-8,100,0,0))&3&&(D=E(V-8,96,0,0))|3){'\
+            '-DL(c,d)=E(V+8,100,c,0);R}E(V+8,96,d,0);R}'
 
     # ...
 
     # Best of Show
     #
     gavin: gavin.c
-	    ${CC} ${GAVIN_OPT} -o gavin ${GAVIN_FLAGS} gavin.c
-	    ${RM} -f kernel
-	    ./gavin > kernel
-	    ${CC} ${GAVIN_OPT} -c ${GAVIN_FLAGS} -DB=_start '-Dputchar(a)=' gavin.c
-	    ${RM} -f sh
-	    ${LD} -s -o sh gavin.o
-	    ${RM} -f vi
-	    ${CP} sh vi
-	    ${RM} -f fs.tar
-	    ${TAR} -cvf fs.tar sh vi gavin.c index.html prim
+            ${CC} ${GAVIN_OPT} -o gavin ${GAVIN_FLAGS} gavin.c
+            ${RM} -f kernel
+            ./gavin > kernel
+            ${CC} ${GAVIN_OPT} -c ${GAVIN_FLAGS} -DB=_start '-Dputchar(a)=' gavin.c
+            ${RM} -f sh
+            ${LD} -s -o sh gavin.o
+            ${RM} -f vi
+            ${CP} sh vi
+            ${RM} -f fs.tar
+            ${TAR} -cvf fs.tar sh vi gavin.c index.html prim
 
     gavin_clean:
-	    ${RM} -f sh vi kernel gavin.o
+            ${RM} -f sh vi kernel gavin.o
 
     gavin_clobber: gavin_clean
-	    ${RM} -f gavin fs.tar
+            ${RM} -f gavin fs.tar
 
     gavin_files: boot.b lilo.conf prim gavin_install.txt
 ```
@@ -3144,9 +3144,9 @@ Under macOS (with the arm64 chip) we get:
     UndefinedBehaviorSanitizer:DEADLYSIGNAL
     ==10834==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0xffffffffffffffff (pc 0x00019f446748 bp 0x00016f353100 sp 0x00016f352b90 T139066)
     ==10834==The signal is caused by a WRITE memory access.
-	#0 0x19f446748 in _platform_memmove+0xa8 (libsystem_platform.dylib:arm64e+0x3748) (BuildId: 756cd10d62a032839e57cbaa810c95ac32000000200000000100000000030d00)
-	#1 0x100c33c2c in main richards.c:202
-	#2 0x19f0bff24  (<unknown module>)
+        #0 0x19f446748 in _platform_memmove+0xa8 (libsystem_platform.dylib:arm64e+0x3748) (BuildId: 756cd10d62a032839e57cbaa810c95ac32000000200000000100000000030d00)
+        #1 0x100c33c2c in main richards.c:202
+        #2 0x19f0bff24  (<unknown module>)
 
     ==10834==Register values:
      x[0] = 0xffffffffffffffff   x[1] = 0x0000000100ab18c1   x[2] = 0x00000000000000cf   x[3] = 0x0000000000000000
@@ -3174,20 +3174,20 @@ Now with `address` sanitiser both linux and macOS crash at:
     =================================================================
     ==10983==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x00016f8d5e78 at pc 0x0001005dd910 bp 0x00016f8d5cd0 sp 0x00016f8d5cc8
     READ of size 8 at 0x00016f8d5e78 thread T0
-	#0 0x1005dd90c in rd richards.c:132
-	#1 0x1005ddf8c in re richards.c:149
-	#2 0x1005110a0 in t richards.c:108
-	#3 0x1005df72c in main richards.c:189
-	#4 0x19f0bff24  (<unknown module>)
+        #0 0x1005dd90c in rd richards.c:132
+        #1 0x1005ddf8c in re richards.c:149
+        #2 0x1005110a0 in t richards.c:108
+        #3 0x1005df72c in main richards.c:189
+        #4 0x19f0bff24  (<unknown module>)
 
     Address 0x00016f8d5e78 is located in stack of thread T0 at offset 56 in frame
-	#0 0x1005dd678 in rd richards.c:129
+        #0 0x1005dd678 in rd richards.c:129
 
       This frame has 2 object(s):
-	[32, 36) 'v.addr'
-	[48, 56) 'a' (line 130) <== Memory access at offset 56 overflows this variable
+        [32, 36) 'v.addr'
+        [48, 56) 'a' (line 130) <== Memory access at offset 56 overflows this variable
     HINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork
-	  (longjmp and C++ exceptions *are* supported)
+          (longjmp and C++ exceptions *are* supported)
     SUMMARY: AddressSanitizer: stack-buffer-overflow richards.c:132 in rd
     Shadow bytes around the buggy address:
       0x00702df3ab70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
@@ -3229,9 +3229,9 @@ which corresponds to the code:
 ``` <!---c-->
     o rd(u v)
     {
-	o *a = 0, **b = &a, **c = b + 32;
-	x[v] = w;
-	for (; b < c && (*b < (o *)w || *b > (o *) T || *b == &v); b++); /* LINE 132 */
+        o *a = 0, **b = &a, **c = b + 32;
+        x[v] = w;
+        for (; b < c && (*b < (o *)w || *b > (o *) T || *b == &v); b++); /* LINE 132 */
 ```
 
 but this seems to not necessarily be relevant since without it it works in
@@ -3247,19 +3247,19 @@ A warning of interest when compiling is:
 
     richards.c:170:15: warning: incompatible pointer types initializing 'f *' (aka 'void (**)(volatile void *)') with an expression of type 'o ()' (aka 'void ()') [-Wincompatible-pointer-types]
     f *lib2[] = { T, ld, lp, lx, l1 } ;
-		  ^
+                  ^
     richards.c:170:18: warning: incompatible pointer types initializing 'f *' (aka 'void (**)(volatile void *)') with an expression of type 'void (volatile dt)' (aka 'void (struct (unnamed at richards.c:36:3) *volatile)') [-Wincompatible-pointer-types]
     f *lib2[] = { T, ld, lp, lx, l1 } ;
-		     ^~
+                     ^~
     richards.c:170:22: warning: incompatible pointer types initializing 'f *' (aka 'void (**)(volatile void *)') with an expression of type 'void (volatile dt)' (aka 'void (struct (unnamed at richards.c:36:3) *volatile)') [-Wincompatible-pointer-types]
     f *lib2[] = { T, ld, lp, lx, l1 } ;
-			 ^~
+                         ^~
     richards.c:170:26: warning: incompatible pointer types initializing 'f *' (aka 'void (**)(volatile void *)') with an expression of type 'void (volatile dt)' (aka 'void (struct (unnamed at richards.c:36:3) *volatile)') [-Wincompatible-pointer-types]
     f *lib2[] = { T, ld, lp, lx, l1 } ;
-			     ^~
+                             ^~
     richards.c:170:30: warning: incompatible pointer types initializing 'f *' (aka 'void (**)(volatile void *)') with an expression of type 'void (volatile dt)' (aka 'void (struct (unnamed at richards.c:36:3) *volatile)') [-Wincompatible-pointer-types]
     f *lib2[] = { T, ld, lp, lx, l1 } ;
-				 ^~
+                                 ^~
 ```
 
 This can be fixed easily enough however but it doesn't appear to matter in this
@@ -3409,14 +3409,14 @@ The author stated:
     if the interpreter reaches end-of-file during program parsing,
     it will crash in some way. E.g. the following might dump core:
 
-	echo -n "U" | ./tromp
+        echo -n "U" | ./tromp
 
     Furthermore, the interpreter requires the initial encoded lambda term to be closed,
     that is, variable n can only appear within at least 'n' enclosing lambdas.
     For instance, here the term '\ 5' is not closed, causing the interpreter to crash when
     looking into a null-pointer environment:
 
-	echo ">Hello, world" | ./tromp
+        echo ">Hello, world" | ./tromp
 
     will likely dump core.
 ```
@@ -3848,7 +3848,7 @@ likely see:
 
 ```
     >bootT5pw
-	     ]h_	8D3[]
+             ]h_        8D3[]
 ```
 
 where `[]` is the cursor. When this happens if you hit enter (this is necessary

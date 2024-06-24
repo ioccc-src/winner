@@ -76,9 +76,9 @@ This program understands the following `dc(1)` commands:
 ```
     p   prints the top stack value without altering the stack.
     P   prints the top stack value, removing it from the stack, and
-	doesn't print a trailing newline.
+        doesn't print a trailing newline.
     f   prints the contents of the stack, one number per line,
-	without modifying it.
+        without modifying it.
     c   clears the stack.
     d   pushes a copy of the top stack value onto the stack.
     r   reverses the order of the top two stack values.
@@ -89,14 +89,14 @@ And the following arithmetic operators are supported:
 ```
     +   Pops 2 values and pushes their sum.
     -   Pops 2 values and pushes the result of subtracting the first
-	from the second.
+        from the second.
     *   Pops 2 values and pushes their product.
     /   Pops 2 values and pushes the result of dividing the second
-	by the first.
+        by the first.
     ^   Pops 2 values and pushes the result of raising the second
-	to the power of the first.
+        to the power of the first.
     %   Pops 2 values and pushes the remainder of the division that
-	/ would do.
+        / would do.
 ```
 
 The precision and range are double, like it or not, except that the
@@ -113,14 +113,14 @@ or EOF is encountered.
 ### Diagnostics:
 
 ```
-    "stack empty"	Not enough on the stack for the requested command
-    "divide by zero"	Attempt to divide by zero
-    "unimplemented"	Invalid input
+    "stack empty"       Not enough on the stack for the requested command
+    "divide by zero"    Attempt to divide by zero
+    "unimplemented"     Invalid input
 
     Floating point exception (core dumped) (or something to that effect)
-			Bug in Perl_sv_upgrade causes this in some cases when
-			the results of an operation are really huge (> 10^308)
-			This bug appears to be fixed in perl5.6.0
+                        Bug in Perl_sv_upgrade causes this in some cases when
+                        the results of an operation are really huge (> 10^308)
+                        This bug appears to be fixed in perl5.6.0
 ```
 
 

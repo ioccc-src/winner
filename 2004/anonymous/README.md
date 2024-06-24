@@ -128,7 +128,7 @@ the file `ring.pgm`:
 
 ``` <!---sh-->
     ./anonymous "ash nazg durhbatuluhk, ash nazg gimbatul, \
-	ash nazg thrakatuluhk, agh burzhumh-ishi krimpatul." >ring.pgm
+        ash nazg thrakatuluhk, agh burzhumh-ishi krimpatul." >ring.pgm
 ```
 
 The source code assumes the ASCII character set; also, due to space

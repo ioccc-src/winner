@@ -10,9 +10,9 @@ For instance, assume you wish to make a boulder `o` roll off a hill `/`
 A standard automata would have 2 rules something like this:
 
 ```
-    o..			...
-    \..  -->  'o'		.o.  -->  '.'
-    ...			.\.
+    o..                 ...
+    \..  -->  'o'               .o.  -->  '.'
+    ...                 .\.
 ```
 
 However, the system I devised, in order to keep things small and neat(!),
@@ -20,9 +20,9 @@ was to define a 3x3 to 3x3 map (instead of the 3x3 to 1x1 shown above).
 Hence:
 
 ```
-    .o.	  ...
+    .o.   ...
     .\.  -->  .\o
-    ...	  ...
+    ...   ...
 ```
 
 This does of course have the odd problem with clashes. What if we want to roll
@@ -32,9 +32,9 @@ transition has priority win. Such a case may produce the following change of
 maps (depending on which 'roll' transition is used first).
 
 ```
-    o.o			..o	    o..
-    \./	  changes to	\o/  or to  \o/
-    ...			...	    ...
+    o.o                 ..o         o..
+    \./   changes to    \o/  or to  \o/
+    ...                 ...         ...
 ```
 
 I claim that it is possible to perform all of the 3x3 to 1x1 transitions in a
@@ -59,9 +59,9 @@ is hit we have a transition like:
 ## Key: l
 
 ```
-    * * *		* * *
-    * @ .		* . @
-    * * *		* * *
+    * * *               * * *
+    * @ .               * . @
+    * * *               * * *
 ```
 
 Here I also use wildcards. On the match side (left) of the transition, an
@@ -73,9 +73,9 @@ purposes of space saving, this transition is shrunk to a single line.
 ## Key: K
 
 ```
-    a b c		1 2 3
-    d e f		4 5 6
-    g h i		7 8 9
+    a b c               1 2 3
+    d e f               4 5 6
+    g h i               7 8 9
 ```
 
 is written as: `eabcdfghi512346789K`.

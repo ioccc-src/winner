@@ -120,9 +120,9 @@ I claim, by letters patently absurd:
     operations.
 
 6.  The method of claim 1, further comprising a method where
-	* strings are encrypted in a manner suitable as C strings, and
-	* 7-bit ASCII characters with uniform distribution are maximally packed
-	subject to the restriction that each byte is not countable
+        * strings are encrypted in a manner suitable as C strings, and
+        * 7-bit ASCII characters with uniform distribution are maximally packed
+        subject to the restriction that each byte is not countable
 
 7.  A method for a computer-based system that uses a single shared code
     sequence to either sum a plurality of bits in an N-bit word or reverses
@@ -134,46 +134,46 @@ I claim, by letters patently absurd:
 #### FIG 1.
 
 ```
-	+--+--+--+--+--+--+--+--+
-	|32|  |31|  |30|  |29|  |
-	+--+--+--+--+--+--+--+--+
-	|  |28|  |27|  |26|  |25|
-	+--+--+--+--+--+--+--+--+
-	|24|  |23|  |22|  |21|  |
-	+--+--+--+--+--+--+--+--+
-	|  |20|  |19|  |18|  |17|
-	+--+--+--+--+--+--+--+--+
-	|16|  |15|  |14|  |13|  |
-	+--+--+--+--+--+--+--+--+
-	|  |12|  |11|  |10|  | 9|
-	+--+--+--+--+--+--+--+--+
-	| 8|  | 7|  | 6|  | 5|  |
-	+--+--+--+--+--+--+--+--+
-	|  | 4|  | 3|  | 2|  | 1|
-	+--+--+--+--+--+--+--+--+
+        +--+--+--+--+--+--+--+--+
+        |32|  |31|  |30|  |29|  |
+        +--+--+--+--+--+--+--+--+
+        |  |28|  |27|  |26|  |25|
+        +--+--+--+--+--+--+--+--+
+        |24|  |23|  |22|  |21|  |
+        +--+--+--+--+--+--+--+--+
+        |  |20|  |19|  |18|  |17|
+        +--+--+--+--+--+--+--+--+
+        |16|  |15|  |14|  |13|  |
+        +--+--+--+--+--+--+--+--+
+        |  |12|  |11|  |10|  | 9|
+        +--+--+--+--+--+--+--+--+
+        | 8|  | 7|  | 6|  | 5|  |
+        +--+--+--+--+--+--+--+--+
+        |  | 4|  | 3|  | 2|  | 1|
+        +--+--+--+--+--+--+--+--+
 ```
 
 #### FIG. 2.
 
 ```
-	1   0
-	 \ /
-	  .
-	 / \
-	3   2
+        1   0
+         \ /
+          .
+         / \
+        3   2
 ```
 
 #### FIG. 3.
 
 ```
-	o o X .  29
-	 o . . . 25
-	o . . o  21
-	 . o . o 17
-	x . . .  13
-	 . . x .  9
-	x x . .   5
-	 x x O x  1
+        o o X .  29
+         o . . . 25
+        o . . o  21
+         . o . o 17
+        x . . .  13
+         . . x .  9
+        x x . .   5
+         x x O x  1
 ```
 
 #### FIG. 4

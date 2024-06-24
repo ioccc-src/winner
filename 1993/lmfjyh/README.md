@@ -197,11 +197,11 @@ These failed miserably:
 #### Debuggers: (tested at SunOS 4.1.2)
 
 - `dbx`   - Quit with a very 'informative' error message:
-	    `"dbx: fatal error: Is a directory"`
+            `"dbx: fatal error: Is a directory"`
 
 - `gdb`   - Printed almost the same error message `": Is a directory"`.
-	It was, however, possible to step through the code but
-	not list it.
+        It was, however, possible to step through the code but
+        not list it.
 
 
 #### Lints

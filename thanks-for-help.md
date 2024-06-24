@@ -14,13 +14,13 @@ on an IOCCC entry by entry basis.
 
 ## IOCCC thank you table of contents
 
-- [1984 entries](#1984)	|	[1985 entries](#1985)	|	[1986 entries](#1986)	|	[1987 entries](#1987)
-- [1988 entries](#1988)	|	[1989 entries](#1989)	|	[1990 entries](#1990)	|	[1991 entries](#1991)
-- [1992 entries](#1992)	|	[1993 entries](#1993)	|	[1994 entries](#1994)	|	[1995 entries](#1995)
-- [1996 entries](#1996)	|	[1998 entries](#1998)	|	[2000 entries](#2000)	|	[2001 entries](#2001)
-- [2004 entries](#2004)	|	[2005 entries](#2005)	|	[2006 entries](#2006)	|	[2011 entries](#2011)
-- [2012 entries](#2012)	|	[2013 entries](#2013)	|	[2014 entries](#2014)	|	[2015 entries](#2015)
-- [2018 entries](#2018)	|	[2019 entries](#2019)	|	[2020 entries](#2020)
+- [1984 entries](#1984) |       [1985 entries](#1985)   |       [1986 entries](#1986)   |       [1987 entries](#1987)
+- [1988 entries](#1988) |       [1989 entries](#1989)   |       [1990 entries](#1990)   |       [1991 entries](#1991)
+- [1992 entries](#1992) |       [1993 entries](#1993)   |       [1994 entries](#1994)   |       [1995 entries](#1995)
+- [1996 entries](#1996) |       [1998 entries](#1998)   |       [2000 entries](#2000)   |       [2001 entries](#2001)
+- [2004 entries](#2004) |       [2005 entries](#2005)   |       [2006 entries](#2006)   |       [2011 entries](#2011)
+- [2012 entries](#2012) |       [2013 entries](#2013)   |       [2014 entries](#2014)   |       [2015 entries](#2015)
+- [2018 entries](#2018) |       [2019 entries](#2019)   |       [2020 entries](#2020)
 - [General thanks](#general_thanks)
 - [Makefiles fixes and improvements](#makefiles_fixes_improvements)
 - [Consistency improvements](#consistency_improvements)
@@ -98,7 +98,7 @@ be kept in:
 ``` <!---c-->
     #define char k['a']
     char x {sizeof(
-	 double(%s,%D)(*)())
+         double(%s,%D)(*)())
 ```
 
 This does mean that there cannot be a second arg to `main()`
@@ -138,7 +138,7 @@ Cody later discovered that the `make alt` rule does not work as the
 To see the diff between the original and the alternate code, try:
 
 ``` <!--sh-->
-	cd 1984/decot ; make diff_orig_alt
+        cd 1984/decot ; make diff_orig_alt
 ```
 
 
@@ -295,9 +295,9 @@ were actually not what they appear: the only arg that existed in `main()` was
 
 ``` <!---c-->
     main(
-    /*	C program. (If you don't
-     *	understand it look it
-     *	up.) (In the C*/ Manual)
+    /*  C program. (If you don't
+     *  understand it look it
+     *  up.) (In the C*/ Manual)
     {
 ```
 
@@ -469,7 +469,7 @@ which gave:
 ```
     marshall.alt.c:13:55: warning: ordered comparison between pointer and integer ('char' and 'char *')
       P  (    a  )   char a   ;  {    a  ;   while(    a  >      "  B   "
-						       ~  ^      ~~~~~~~~
+                                                       ~  ^      ~~~~~~~~
     1 warning generated.
 ```
 
@@ -484,7 +484,7 @@ which gave:
 ```
     marshall.alt.c:13:48: warning: cast to 'char *' from smaller integer type 'char' [-Wint-to-pointer-cast]
       P  (    a  )   char a   ;  {    a  ;   while((char *)a  >   "  B   "
-						   ^~~~~~~~~
+                                                   ^~~~~~~~~
     1 warning generated.
 ```
 
@@ -959,7 +959,7 @@ might end up failing to work even after changing it back. This was resolved by:
     --- i/1989/fubar/fubar.sh
     +++ w/1989/fubar/fubar.sh
     @@ -7,13 +7,12 @@ if [[ $# -ne 1 ]]; then
-	 exit 1
+         exit 1
      fi
 
      # run/compile it
@@ -1750,7 +1750,7 @@ should have been removed.
 </div>
 
 [Cody](#cody) fixed the code so that it will try opening the file the code was compiled
-from (`__FILE__`), not	`adgrep.c`, as the latter does not exist: `adgrep` is
+from (`__FILE__`), not  `adgrep.c`, as the latter does not exist: `adgrep` is
 simply a link to `adrian` as `adgrep` is what the program was submitted as but
 the entry's winning source file is `adrian.c`.
 
@@ -3243,17 +3243,17 @@ changed. As was noted in the log at the time:
     program that uses SDL1 has to have the same args as their definition.
     This program had 'main()' so the error message was:
 
-	thadgavin.c:60:1: error: conflicting types for 'SDL_main'
-	main()
-	^
-	/opt/local/include/SDL/SDL_main.h:34:14: note: expanded from macro 'main'
-	#define main SDL_main
-		     ^
-	/opt/local/include/SDL/SDL_main.h:35:12: note: previous declaration is here
-	extern int SDL_main(int argc, char *argv[]);
-		   ^
-	1 warning and 1 error generated.
-	make: *** [thadgavin_sdl] Error 1
+        thadgavin.c:60:1: error: conflicting types for 'SDL_main'
+        main()
+        ^
+        /opt/local/include/SDL/SDL_main.h:34:14: note: expanded from macro 'main'
+        #define main SDL_main
+                     ^
+        /opt/local/include/SDL/SDL_main.h:35:12: note: previous declaration is here
+        extern int SDL_main(int argc, char *argv[]);
+                   ^
+        1 warning and 1 error generated.
+        make: *** [thadgavin_sdl] Error 1
 
     Thus main() was changed to 'int main(int argc, char **argv)'.
 ```
@@ -3445,10 +3445,10 @@ support implicit int:
 ``` <!---c-->
     coupard.c:31:10: error: parameter 'h' was not declared, defaults to 'int'; ISO C99 and later do not support implicit int [-Wimplicit-int]
     void e(n,h){
-	     ^
+             ^
     coupard.c:31:8: error: parameter 'n' was not declared, defaults to 'int'; ISO C99 and later do not support implicit int [-Wimplicit-int]
     void e(n,h){
-	   ^
+           ^
 ```
 
 and for some reason it was being reported as an error.
@@ -3734,18 +3734,18 @@ this ended up with a number of errors like:
 ``` <!---c-->
     jdalbec.c:64:5: error: stray '##' in program
        64 | B N##B (I) ; \
-	  |     ^~
+          |     ^~
 
 
     ..
 
     jdalbec.c:65:5: error: stray '##' in program
        65 | V F##B (B) ; \
-	  |     ^~
+          |     ^~
     jdalbec.c:65:5: error: expected ';' before 'B'
        65 | V F##B (B) ; \
-	  |     ^ ~
-	  |     ;
+          |     ^ ~
+          |     ;
 ```
 
 and various other problems. However there does seem to be a problem at least
@@ -3842,24 +3842,24 @@ BSD?) the code failed to compile at all in Linux due to:
 ``` <!---c-->
     cc -E vik2_1.c > vik2_2.c
     In file included from vik2.c:945,
-		     from vik2.c:959,
-		     from vik2.c:972,
-		     from vik2.c:1025:
+                     from vik2.c:959,
+                     from vik2.c:972,
+                     from vik2.c:1025:
     vik2.c:383:8: error: no macro name given in #ifdef directive
       383 | O  \
-	  |        ^
+          |        ^
     In file included from vik2.c:946:
     vik2.c:383:8: error: no macro name given in #ifdef directive
       383 | O  \
-	  |        ^
+          |        ^
     In file included from vik2.c:947:
     vik2.c:383:8: error: no macro name given in #ifdef directive
       383 | O  \
-	  |        ^
+          |        ^
     In file included from vik2.c:948:
     vik2.c:383:8: error: no macro name given in #ifdef directive
       383 | O  \
-	  |        ^
+          |        ^
 
     ...
 
@@ -3867,7 +3867,7 @@ BSD?) the code failed to compile at all in Linux due to:
 
     vik2.c:992:85: error: #include nested depth 201 exceeds maximum of 200 (use -fmax-include-depth=DEPTH to increase the maximum)
       992 | I
-	  |                                                                                     ^
+          |                                                                                     ^
     vik2.c:1497:21: error: #include nested depth 200 exceeds maximum of 200 (use -fmax-include-depth=DEPTH to increase the maximum)
     vik2.c:1498:21: error: #include nested depth 200 exceeds maximum of 200 (use -fmax-include-depth=DEPTH to increase the maximum)
     vik2.c:1499:21: error: #include nested depth 200 exceeds maximum of 200 (use -fmax-include-depth=DEPTH to increase the maximum)
@@ -4049,8 +4049,8 @@ unknown escape sequence, `\N`, which caused a funny compiler error:
     };n b[2048];int i
     mikeash.c: In function 'R':
     mikeash.c:7:1: error: '\N' not followed by '{'
-	7 | ;C!='\n';A()
-	  | ^
+        7 | ;C!='\n';A()
+          | ^
     mikeash.c:7:1: error: incomplete universal character name \Ne
 ```
 
@@ -4981,8 +4981,8 @@ program to be used. Thus the `Makefile` rule looks like:
 
 ``` <!---makefile-->
     ${PROG}: ${PROG}.c
-	    ${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
-	./${PROG} | ${CC} ${CFLAGS} -xc - -o $@ ${LDFLAGS}
+            ${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+        ./${PROG} | ${CC} ${CFLAGS} -xc - -o $@ ${LDFLAGS}
 ```
 
 

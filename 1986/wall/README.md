@@ -24,7 +24,7 @@ supports the `-traditional-cpp` option.
 ### Alternate build:
 
 ``` <!--sh-->
-	make alt
+        make alt
 ```
 
 ### Alternate use:

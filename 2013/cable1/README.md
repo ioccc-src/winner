@@ -75,7 +75,7 @@ Why late? Because:
     The IOCCC no longer uses twitter.  Today the IOCCC uses Mastodon.
     For more information and to see our IOCCC Mastodon posts, see:
 
-	https://fosstodon.org/@ioccc
+        https://fosstodon.org/@ioccc
 
     End of important 2023 update to this historic note.
 ```

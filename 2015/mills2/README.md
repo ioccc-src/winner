@@ -40,7 +40,7 @@ for a `compress(1)`-like compressor using a similar idea.
 Why is the sad smiley on line 12 in that particular place?
 
 ``` <!---c-->
-    c=0)			    :( O
+    c=0)                            :( O
 ```
 
 

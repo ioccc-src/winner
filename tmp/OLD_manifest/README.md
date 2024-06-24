@@ -489,10 +489,10 @@ following fields:
 
    This field indicates if the file main program.  This filed is one of:
 
-   main		The main source code to display.
-   alt		The alternative source code.
-   orig		The original version of the source code (may be the same as main).
-   null		Not a primary, nor alternative, nor original source code file.
+   main         The main source code to display.
+   alt          The alternative source code.
+   orig         The original version of the source code (may be the same as main).
+   null         Not a primary, nor alternative, nor original source code file.
 
 7. filetype:
 
@@ -516,14 +516,14 @@ following fields:
    A string indicating how the file is to be displayed from `winners.html`.
    Possible files include:
 
-   browser	The file is to be displayed directly from the browser.
-   github	The file should be linked to the GitHub repo so that
-		it may be rendered directly by GitHub.  In the future
-		this may changed to allow a suitable browser to
-		directly display this file instead of via GitHub.
-   download	The file is intended to be downloaded from the browser
-		instead of being displayed.
-   null		This file not listed in `winners.html`.
+   browser      The file is to be displayed directly from the browser.
+   github       The file should be linked to the GitHub repo so that
+                it may be rendered directly by GitHub.  In the future
+                this may changed to allow a suitable browser to
+                directly display this file instead of via GitHub.
+   download     The file is intended to be downloaded from the browser
+                instead of being displayed.
+   null         This file not listed in `winners.html`.
 
    NOTE: When display_via is null, winners_show MUST be false.
 

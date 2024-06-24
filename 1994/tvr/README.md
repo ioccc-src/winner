@@ -32,8 +32,8 @@ Mode may be a value from 0 to 12.
 ## Try:
 
 ``` <!---sh-->
-    ./try.color.sh		# for colour displays
-    ./try.bw.sh			# for Black & White displays
+    ./try.color.sh              # for colour displays
+    ./try.bw.sh                 # for Black & White displays
 ```
 
 
@@ -62,8 +62,8 @@ where `altmode` `1` - `4` correspond to mode `0` - `3` in the original entry and
 ### Alternate try:
 
 ``` <!---sh-->
-    ./try.alt.color.sh		# for colour displays
-    ./try.alt.bw.sh		# for Black & White displays
+    ./try.alt.color.sh          # for colour displays
+    ./try.alt.bw.sh             # for Black & White displays
 ```
 
 
@@ -169,15 +169,15 @@ compatible compiler (`gcc -ansi -pedantic` will do fine).
 This entry has been tested on wide variety of machines including:
 
 ```
-    Machine			OS
-    -------			--
-    Decstation 5000/240	Ultrix 4.3A
-    DECAlpha 3000/300	OSF/1 v1.3 and v2.0
-    IBM RS6000		AIX v3
-    SPARCStation IPX	SunOS 4.1.3
-    i486			Linux v1.1.8  (binarysize 3576 bytes
-					  using `gcc -O6 -s -N` ;)
-    HP 9000/730		HP-UX
+    Machine                     OS
+    -------                     --
+    Decstation 5000/240 Ultrix 4.3A
+    DECAlpha 3000/300   OSF/1 v1.3 and v2.0
+    IBM RS6000          AIX v3
+    SPARCStation IPX    SunOS 4.1.3
+    i486                        Linux v1.1.8  (binarysize 3576 bytes
+                                          using `gcc -O6 -s -N` ;)
+    HP 9000/730         HP-UX
 ```
 
 Also, many of the X server and X library versions have been tested and the
@@ -205,7 +205,7 @@ Well, obfuscated or not, some of the effects are very nice ;)
 Mandelbrot set is calculated from the formula
 
 ```
-  	 2
+         2
     Z   = Z  + Z
      n+1   n    0
 ```
@@ -213,7 +213,7 @@ Mandelbrot set is calculated from the formula
 and the Julia set is calculated from the formula
 
 ```
-  	 2
+         2
     Z   = Z  + C
      n+1   n
 ```

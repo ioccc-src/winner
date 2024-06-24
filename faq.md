@@ -392,14 +392,14 @@ may copy `prog.c` to a different filename as part of the compiling/building proc
     all: desired_name
 
     desired_name: desired_name.c
-	    cc desired_name.c -o $@
+            cc desired_name.c -o $@
 
     desired_name.c: prog.c
-	    rm -f $@
-	    cp -f prog.c $@
+            rm -f $@
+            cp -f prog.c $@
 
     clobber:
-	    rm -f desired_name.c desired_name
+            rm -f desired_name.c desired_name
 ```
 
 We recommend that the `make clobber` rule remove files that your entry
@@ -410,8 +410,8 @@ For example:
 
 ``` <!---make-->
     different_name: prog
-	    rm -f $@
-	    cp -f prog $@
+            rm -f $@
+            cp -f prog $@
 ```
 
 
@@ -2225,11 +2225,11 @@ _Secondary files_ list.
 
 These tarballs will have the following files:
 
-- `ioccc.css`					- stylesheet for the html files
-- `var.mk`						- the top level Makefile included by all the other Makefiles that holds variables used by the Makefiles
-- `YYYY/winner/.path`			- directory path from top level directory
-- `YYYY/winner/.entry.json`		- entry summary and manifest in JSON
-- `YYYY/winner/.gitignore`		- list of files that should not be committed under git
+- `ioccc.css`                                   - stylesheet for the html files
+- `var.mk`                                              - the top level Makefile included by all the other Makefiles that holds variables used by the Makefiles
+- `YYYY/winner/.path`                   - directory path from top level directory
+- `YYYY/winner/.entry.json`             - entry summary and manifest in JSON
+- `YYYY/winner/.gitignore`              - list of files that should not be committed under git
 
 plus the winning entry files like source code, the Makefile, supplementary data
 provided by the author and any other file in the winning entry, found under the
@@ -2239,9 +2239,9 @@ If you downloaded `1984/mullender/1984_mullender.tar.bz2`, for instance, you mig
 then do:
 
 ```sh
-	cd 1984/mullender
-	make everything
-	./mullender.alt
+        cd 1984/mullender
+        make everything
+        ./mullender.alt
 ```
 
 to compile all versions and then run the alternate version (if you have
@@ -2267,21 +2267,21 @@ These tarballs have, along with each entry's directory and their respective
 files (as if you downloaded each entry tarball of the year individually as
 described above), the following files:
 
-- `.filelist`		- list of files in the year that are not part of a winning entry of the year, including the `YYYY.tar.bz2` tarball
-- `index.html`		- the `YYYY/index.html` file rendered from the `YYYY/README.md` file
-- `Makefile`		- Makefile for the year to compile etc. all entries of the year
-- `README.md`		- the source of the `YYYY/index.html` file
-- `rules.txt`		- rules of the year's contest
-- `.year`			- text file that has a list of the winning entries' directories of the year
+- `.filelist`           - list of files in the year that are not part of a winning entry of the year, including the `YYYY.tar.bz2` tarball
+- `index.html`          - the `YYYY/index.html` file rendered from the `YYYY/README.md` file
+- `Makefile`            - Makefile for the year to compile etc. all entries of the year
+- `README.md`           - the source of the `YYYY/index.html` file
+- `rules.txt`           - rules of the year's contest
+- `.year`                       - text file that has a list of the winning entries' directories of the year
 
 
 Additionally, some will have extra files like:
 
-- `.gitignore`			- list of files that should not be committed under git
-- `guidelines.txt`		- the guidelines of the year
-- `iocccsize.c`			- `iocccsize` tool of the year
-- `iocccsize.mk`		- Makefile to compile the `iocccsize` tool of the year
-- `iocccsize-test.sh`	- test suite for the `iocccsize` tool
+- `.gitignore`                  - list of files that should not be committed under git
+- `guidelines.txt`              - the guidelines of the year
+- `iocccsize.c`                 - `iocccsize` tool of the year
+- `iocccsize.mk`                - Makefile to compile the `iocccsize` tool of the year
+- `iocccsize-test.sh`   - test suite for the `iocccsize` tool
 
 .. and perhaps some others we have neglected to mention as well.
 
@@ -2294,8 +2294,8 @@ extract it and then switch to the directory and compile everything of each
 entry:
 
 ```sh
-	cd 1984
-	make everything
+        cd 1984
+        make everything
 ```
 
 For more help on compiling entries, see also [3.0  - What Makefile rules are
@@ -2831,8 +2831,8 @@ are: [1995/heathbar/index.html](1995/heathbar/index.html) and
 procedure was done:
 
 ``` <!--sh-->
-	touch 1995/heathbar/README.md 1995/makarios/README.md
-	make quick_www
+        touch 1995/heathbar/README.md 1995/makarios/README.md
+        make quick_www
 ```
 
 That works because the `quick_www` rule will update the `authors.html` and
@@ -3139,40 +3139,40 @@ As of _Thu Nov 30 23:51:12 UTC 2023_, the contents was as follows:
 
 ``` <!---json-->
     {
-	"no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-	"author_JSON_format_version" : "1.0 2023-06-10",
-	"author_handle" : "Yusuke_Endoh",
-	"full_name" : "Yusuke Endoh",
-	"sort_word" : "endoh",
-	"location_code" : "JP",
-	"email" : "mame@ruby-lang.org",
-	"url" : "https://mametter.hatenablog.com",
-	"alt_url" : null,
-	"deprecated_twitter_handle" : null,
-	"mastodon" : "@mame@ruby.social",
-	"mastodon_url" : "https://ruby.social/@mame",
-	"github" : "@mame",
-	"affiliation" : null,
-	"winning_entry_set" : [
-	    { "entry_id" : "2012_endoh1" },
-	    { "entry_id" : "2012_endoh2" },
-	    { "entry_id" : "2013_endoh1" },
-	    { "entry_id" : "2013_endoh2" },
-	    { "entry_id" : "2013_endoh3" },
-	    { "entry_id" : "2013_endoh4" },
-	    { "entry_id" : "2014_endoh1" },
-	    { "entry_id" : "2014_endoh2" },
-	    { "entry_id" : "2015_endoh1" },
-	    { "entry_id" : "2015_endoh2" },
-	    { "entry_id" : "2015_endoh3" },
-	    { "entry_id" : "2015_endoh4" },
-	    { "entry_id" : "2018_endoh1" },
-	    { "entry_id" : "2018_endoh2" },
-	    { "entry_id" : "2019_endoh" },
-	    { "entry_id" : "2020_endoh1" },
-	    { "entry_id" : "2020_endoh2" },
-	    { "entry_id" : "2020_endoh3" }
-	]
+        "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+        "author_JSON_format_version" : "1.0 2023-06-10",
+        "author_handle" : "Yusuke_Endoh",
+        "full_name" : "Yusuke Endoh",
+        "sort_word" : "endoh",
+        "location_code" : "JP",
+        "email" : "mame@ruby-lang.org",
+        "url" : "https://mametter.hatenablog.com",
+        "alt_url" : null,
+        "deprecated_twitter_handle" : null,
+        "mastodon" : "@mame@ruby.social",
+        "mastodon_url" : "https://ruby.social/@mame",
+        "github" : "@mame",
+        "affiliation" : null,
+        "winning_entry_set" : [
+            { "entry_id" : "2012_endoh1" },
+            { "entry_id" : "2012_endoh2" },
+            { "entry_id" : "2013_endoh1" },
+            { "entry_id" : "2013_endoh2" },
+            { "entry_id" : "2013_endoh3" },
+            { "entry_id" : "2013_endoh4" },
+            { "entry_id" : "2014_endoh1" },
+            { "entry_id" : "2014_endoh2" },
+            { "entry_id" : "2015_endoh1" },
+            { "entry_id" : "2015_endoh2" },
+            { "entry_id" : "2015_endoh3" },
+            { "entry_id" : "2015_endoh4" },
+            { "entry_id" : "2018_endoh1" },
+            { "entry_id" : "2018_endoh2" },
+            { "entry_id" : "2019_endoh" },
+            { "entry_id" : "2020_endoh1" },
+            { "entry_id" : "2020_endoh2" },
+            { "entry_id" : "2020_endoh3" }
+        ]
     }
 ```
 
@@ -3196,7 +3196,7 @@ make it easier you can do `make install` so you can run the tool from any path
 but in any case the syntax is:
 
 ``` <!--sh-->
-	jparse foo.json
+        jparse foo.json
 ```
 
 If the tool exits 0 (and shows no output) then the JSON is valid. If it is
@@ -3204,7 +3204,7 @@ invalid you should get an error but for more details you can increase the
 verbosity with the `-v` flag like:
 
 ``` <!--sh-->
-	jparse -v 3 foo.json
+        jparse -v 3 foo.json
 ```
 
 If the tool is not installed then you will obviously have to specify the path of
@@ -3213,7 +3213,7 @@ the tool.
 If you wish to validate every JSON file in `author/` then you could do so like:
 
 ``` <!--sh-->
-	for auth in *.json; do jparse 2>/dev/null "$auth" || echo "$auth is invalid JSON" ; done
+        for auth in *.json; do jparse 2>/dev/null "$auth" || echo "$auth is invalid JSON" ; done
 ```
 
 If you see any output then it will say which file or files are invalid JSON
@@ -3606,9 +3606,9 @@ NOTE: The _JSON null_ is **NOT** enclosed in quotes!
     "winning_entry_set" : [
         { "entry_id" : "2012_endoh1" },
         { "entry_id" : "2012_endoh2" },
-	{ "entry_id" : "2013_endoh1" },
+        { "entry_id" : "2013_endoh1" },
     ...
-	{ "entry_id" : "2020_endoh1" },
+        { "entry_id" : "2020_endoh1" },
         { "entry_id" : "2020_endoh2" },
         { "entry_id" : "2020_endoh3" }
     ]
@@ -3939,7 +3939,7 @@ This might show:
     remote:      https://github.com/xexyl/winner/pull/new/human-snakes
     remote:
     To github.com:xexyl/winner.git
-     * [new branch]	human-snakes -> human-snakes
+     * [new branch]     human-snakes -> human-snakes
     branch 'human-snakes' set up to track 'origin/human-snakes'.
 ```
 
@@ -4177,7 +4177,7 @@ If JavaScript is disabled on any mobile device, tablet or phone, you should see
 the words:
 
 ```
-	Please Enable JavaScript
+        Please Enable JavaScript
 ```
 
 at the top right corner; clicking on this will take you to the [no JavaScript

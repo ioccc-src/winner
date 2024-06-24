@@ -45,8 +45,8 @@ counter before shifting out each symbol, such as
 ``` <!---c-->
     length = (encoding & 96) >> 5;
     do {
-	    putchar(encoding & 1 ? '-' : '.');
-	    encoding >>= 1;
+            putchar(encoding & 1 ? '-' : '.');
+            encoding >>= 1;
     } while (length--);
 ```
 
@@ -64,8 +64,8 @@ with 1 bit still to be chosen freely (let's assume it is 0).  Now we can do
 
 ``` <!---c-->
     do {
-	    putchar(encoding & 1 ? '-' : '.');
-	    encoding >>= 1;
+            putchar(encoding & 1 ? '-' : '.');
+            encoding >>= 1;
     while (encoding > 1);
 ```
 
@@ -89,8 +89,8 @@ is encoded still allows the encoding to be its own counter:
 
 ``` <!---c-->
     do {
-	    putchar(encoding & 1 ? '-' : '.');
-	    encoding = (encoding + 32) >> 1;
+            putchar(encoding & 1 ? '-' : '.');
+            encoding = (encoding + 32) >> 1;
     } while (encoding > 35);
 ```
 
@@ -145,21 +145,21 @@ The outline of the program is roughly as follows
 
 ```
     while (more lines) {
-	    if (line is in morse) {
-		    while (more characters) {
-			    skip next sequence
-			    if (' ')
-				    putchar(' ');
-			    else
-				    decode_sequence; /* backwards */
-		    }
-	    } else {
-		    while (more characters) {
-			    if (isalnum)
-				    encode_character;
-			    putchar(' ');
-		    }
-	    }
+            if (line is in morse) {
+                    while (more characters) {
+                            skip next sequence
+                            if (' ')
+                                    putchar(' ');
+                            else
+                                    decode_sequence; /* backwards */
+                    }
+            } else {
+                    while (more characters) {
+                            if (isalnum)
+                                    encode_character;
+                            putchar(' ');
+                    }
+            }
 ```
 
 Because of the *two* `while(more characters)` loops are the same, I've

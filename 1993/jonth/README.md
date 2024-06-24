@@ -13,7 +13,7 @@ you need help.
 ## To use:
 
 ``` <!---sh-->
-    ./jonth	# must be run on an X11 server
+    ./jonth     # must be run on an X11 server
 ```
 
 

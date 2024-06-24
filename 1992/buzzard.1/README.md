@@ -150,11 +150,11 @@ place to site some references on the AE, but I don't have any.
     O(c,a,b)  let c = a       Or
               boolean-or
               b (a,b are
-	      0 or 1)
+              0 or 1)
 
     B(b, a)   let             Boolean
-	      b = boolean
-	      value of a
+              b = boolean
+              value of a
 
     P(b, a)   let b = 1 if
               a>0, else 0.    Positive
@@ -228,8 +228,8 @@ ourselves to two operand operations:
     temp -= y;                      (temp == z-y)
     temp *= x;                      (temp == (z-y)*x)
     y += temp;                      (y    == (z-y)*x + y)
-				    (     == z*x - y*x + y)
-				    (     == z*x + y*(1-x))
+                                    (     == z*x - y*x + y)
+                                    (     == z*x + y*(1-x))
 ```
 
 Next we imagine we have a [pc](https://en.wikipedia.org/wiki/Program_counter).

@@ -36,7 +36,7 @@ For more detailed information see [1993/cmills in bugs.html](../../bugs.html#199
 ``` <!---sh-->
     DISPLAY="your_X_server_display"
     export DISPLAY
-    ./cmills.alt [speed]	# must be run on an X11 server
+    ./cmills.alt [speed]        # must be run on an X11 server
 ```
 
 where:

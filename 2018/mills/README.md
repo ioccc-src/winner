@@ -311,7 +311,7 @@ Assuming you're more careful than that, we can try a few commands:
     # cat > foo.c
     main()
     {
-	printf("Hello, World!\n");
+        printf("Hello, World!\n");
     }
     ^D
     # cc foo.c

@@ -97,10 +97,10 @@ Dessert: Chocolate torte
 Antipasti: crudites, olives, roasted red peppers, cheese selection
 Salad: Mixed greens with vinaigrette
 Main Course: Spaghetti with tomato sauce containing mushrooms and black olives
-	     selection of hot and mild Italian sausages
+             selection of hot and mild Italian sausages
 Bread: Fresh French bread
 Dessert: Cookie selection, featuring chocolate chocolate chip cookies and
-	 chocolate butter cookies
+         chocolate butter cookies
 
 
 ### Session Three
@@ -108,7 +108,7 @@ Dessert: Cookie selection, featuring chocolate chocolate chip cookies and
 Antipasti: Crudites, olive selection
 Salad: Mixed greens with mustard vinaigrette
 Main Course: Broiled salmon with lemon pepper mayonnaise, chard, mixture
-	of white and wild rices
+        of white and wild rices
 Bread: Cheese bread with herbs
 Dessert: Chocolate cheesecake (Courtesy of Elizabeth Watson)
 
@@ -119,8 +119,8 @@ Antipasti: Crudites, olive selection, roasted red peppers, cheese selection
 Bread: Sourdough
 Salad: Mixed spring greens with flowers, and mustard vinaigrette
 Main Course: Surf and Turf--Grilled steaks of salmon and New York steak
-	grilled vegetables--onions, peppers, portobello mushrooms
-	wild rice
+        grilled vegetables--onions, peppers, portobello mushrooms
+        wild rice
 Dessert: Chocolate mousse
 
 
@@ -142,7 +142,7 @@ Bread: Focaccia with black olives and mozzarella cheeses
 Salad: Mixed spring greens with flowers and mustard vinaigrette
 Soup: Homemade butternut squash soup with mushrooms
 Main Course: Cracked Dungeness crab with lemon mayonnaise, broccoli,
-	mixture of white and brown rice
+        mixture of white and brown rice
 Dessert: Key lime pie
 
 

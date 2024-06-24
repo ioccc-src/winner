@@ -78,12 +78,12 @@ A: Yes, there are types of entries that show up over and over again.
 
     generating small primes (below is the list of all prime related entries)
 
-	    1985/august
-	    1988/applin
-	    1994/weisberg
-	    1995/makarios
-	    1996/dalbec
-	    2000/bellard
+            1985/august
+            1988/applin
+            1994/weisberg
+            1995/makarios
+            1996/dalbec
+            2000/bellard
 
     As you can see, just a list of primes (let alone small primes)
     does not cut it anymore.
@@ -92,8 +92,8 @@ A: Yes, there are types of entries that show up over and over again.
 
     entries that use some complex state machine/table to print something
 
-	      1988/isaak
-	      1988/phillipps
+              1988/isaak
+              1988/phillipps
 
     Unbeaten for 12 years and counting...
 ```

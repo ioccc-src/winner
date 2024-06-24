@@ -45,35 +45,35 @@ From the Makefile:
     # Game parameters
     #
     DU=99999        # Time between steps in microseconds.
-		    # Make it larger if the game is too fast for you.
+                    # Make it larger if the game is too fast for you.
 
     DW=28           # Pipe-to-pipe spacing, in columns.
-		    # Farther apart is easier.
+                    # Farther apart is easier.
 
     DD=20           # Space between pipes.
-		    # The difference between DD and DW is the width of a pipe.
-		    # Narrow pipes are easier to fly though.
+                    # The difference between DD and DW is the width of a pipe.
+                    # Narrow pipes are easier to fly though.
 
     DH=8            # Height of gap in pipe.
-		    # Make this larger to make the game easier.
+                    # Make this larger to make the game easier.
 
     DA=100          # Acceleration due to gravity (scaled by 256).
-		    # Smaller values make you glide slower.
+                    # Smaller values make you glide slower.
 
     DI=-200         # Impulse velocity of a flap (scaled by 256).
-		    # Make larger if you want a less intense tapping experience!
+                    # Make larger if you want a less intense tapping experience!
 
     DB='"<o^="'     # Sprite for player when gliding.
-		    # HINT: Try using various emojis.
-		    # NOTE: The string MUST be enclosed inside double quotes.
+                    # HINT: Try using various emojis.
+                    # NOTE: The string MUST be enclosed inside double quotes.
 
     DF='"<ov="'     # Sprite for player when flapping.
-		    # HINT: Try using various emojis.
-		    # NOTE: The string MUST be enclosed inside double quotes.
+                    # HINT: Try using various emojis.
+                    # NOTE: The string MUST be enclosed inside double quotes.
 
     DG='"Tap to Flap!"'     # Instruction text.
-			    # Change to your native tongue.
-		    # NOTE: The string MUST be enclosed inside double quotes.
+                            # Change to your native tongue.
+                    # NOTE: The string MUST be enclosed inside double quotes.
 ```
 
 WARNING: if you have good eye-hand coordination and too much time on your hands

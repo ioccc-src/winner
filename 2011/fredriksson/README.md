@@ -62,32 +62,32 @@ To search regexp from file, do:
 Pipes might not work, see the section Limitations.
 The options `-i`, `-c`, `-v` and `-n` are the classic ones:
 
-* `-i`	Ignore case.
+* `-i`  Ignore case.
 
-* `-c`	Count only, prints the number of matches, but not the matching lines.
+* `-c`  Count only, prints the number of matches, but not the matching lines.
 
-* `-v`	Invert match.
+* `-v`  Invert match.
 
-* `-n`	Prefixes each printed line by its line number (only if
-	`-c` was not given).
+* `-n`  Prefixes each printed line by its line number (only if
+        `-c` was not given).
 
 This version of `grep` recognizes two more options, not present in normal
 `grep` implementations:
 
-* `-kN`	Permit `N` insertions, deletions or mismatches of characters in the
-	matches, aka
-	[edit-distance](https://en.wikipedia.org/wiki/Edit_distance). E.g.,
-	"`obfuscated`" matches "`obfuscation`"
-	with one deletion and two mismatches. Likewise, "`obfuscate`" and
-	"`oversimplify`" match with 7
-	[edit operations](https://en.wikipedia.org/wiki/Edit_distance#Formal_definition_and_properties).
-	The default is `-k0` (i.e. exact match).
+* `-kN` Permit `N` insertions, deletions or mismatches of characters in the
+        matches, aka
+        [edit-distance](https://en.wikipedia.org/wiki/Edit_distance). E.g.,
+        "`obfuscated`" matches "`obfuscation`"
+        with one deletion and two mismatches. Likewise, "`obfuscate`" and
+        "`oversimplify`" match with 7
+        [edit operations](https://en.wikipedia.org/wiki/Edit_distance#Formal_definition_and_properties).
+        The default is `-k0` (i.e. exact match).
 
-* `-t`	Add local transpositions to the set of allowed
-	[edit-operations](https://en.wikipedia.org/wiki/Edit_distance#Formal_definition_and_properties).
-	That is, "`ab`" matches "`ba`" with one transposition (swap), and
-	"`obfuscated`" matches "`bofsuact`" with three swaps and two insertions,
-	i.e. use `-tk5` to find this.
+* `-t`  Add local transpositions to the set of allowed
+        [edit-operations](https://en.wikipedia.org/wiki/Edit_distance#Formal_definition_and_properties).
+        That is, "`ab`" matches "`ba`" with one transposition (swap), and
+        "`obfuscated`" matches "`bofsuact`" with three swaps and two insertions,
+        i.e. use `-tk5` to find this.
 
 Of course, one could construct a standard
 [regexp](https://www.regular-expressions.info) that matches the same

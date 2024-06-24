@@ -115,7 +115,7 @@ To stop the server:
 
 *  Supports multiple `index.*` file extensions and types:
 
-	index.htm, index.html, index.php, index.pl, index.sh, index.rb, index.py
+        index.htm, index.html, index.php, index.pl, index.sh, index.rb, index.py
 
 *  Supports subset of [RFC 2616](https://datatracker.ietf.org/doc/html/rfc2616)
 [HTTP/1.1](https://en.wikipedia.org/wiki/HTTP) methods: `GET`, `HEAD`, and

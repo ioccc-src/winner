@@ -104,16 +104,16 @@ A CGI script such as:
     ${ECHO} "Content-type: text/html"
     ${ECHO}
     if [ -z "${QUERY_STRING}" ]; then
-	${ECHO} "QUERY_STRING not found"
+        ${ECHO} "QUERY_STRING not found"
     else
-	URL=`${EXPR} "$QUERY_STRING" : '[Uu][Rr][Ll]=\(.*\)'`
-	if [ -z "${URL}" ]; then
-	    ${ECHO} "No URL given in QUERY_STRING"
-	elif [ X`${EXPR} "${URL}" : '[Ff][Ii][Ll][Ee]:'` != X0 ]; then
-	    ${ECHO} "file: based URLs are not allowed"
-	else
-	    ${LYNX} -restrictions=all -source "${URL}" | ${POOT}
-	fi
+        URL=`${EXPR} "$QUERY_STRING" : '[Uu][Rr][Ll]=\(.*\)'`
+        if [ -z "${URL}" ]; then
+            ${ECHO} "No URL given in QUERY_STRING"
+        elif [ X`${EXPR} "${URL}" : '[Ff][Ii][Ll][Ee]:'` != X0 ]; then
+            ${ECHO} "file: based URLs are not allowed"
+        else
+            ${LYNX} -restrictions=all -source "${URL}" | ${POOT}
+        fi
     fi
 ```
 

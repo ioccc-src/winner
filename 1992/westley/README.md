@@ -169,16 +169,16 @@ is reasonably accurate.
 ### Here are some cities you might like to try:
 
 ```
-    New York		41  -74
-    London		52   0
-    Moscow		56   38
-    New Delhi		29   77
-    Sydney		-34   151
-    Los Angeles		34  -118
-    Paris		45   2
-    Rio de Janeiro	-23  -43
-    Beijing		40   116
-    Tokyo		36   140
+    New York            41  -74
+    London              52   0
+    Moscow              56   38
+    New Delhi           29   77
+    Sydney              -34   151
+    Los Angeles         34  -118
+    Paris               45   2
+    Rio de Janeiro      -23  -43
+    Beijing             40   116
+    Tokyo               36   140
 ```
 
 

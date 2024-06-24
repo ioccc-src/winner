@@ -113,9 +113,9 @@ type `./herrmann1` to see the final result. The output will be
 Final tape:
 
 ```
-		      *
+                      *
     ..OOIIIIIIIIIIIIIIIIOOOO..
-		      *
+                      *
 ```
 
 (Note that the last frame of the animation is _not_ the final
@@ -217,9 +217,9 @@ Undefined state start.
 Tape:
 
 ```
-	    *
+            *
     ..OOOOOOOOIIIIOO..
-	    *
+            *
 ```
 
 and the return code will be 1. As you can see, the Turing machine
@@ -320,8 +320,8 @@ to use many variables more than once.
 
 - I couldn't refrain from doing a little bit of nasty stuff like
 
-		#define a 0&0
-		#if !a
+                #define a 0&0
+                #if !a
 
     Of course, it is a bit more subtle, and even useful.
 
@@ -363,15 +363,15 @@ the insertion of `#line` directives. If your compiler doesn't
 support this option (and does insert `#line` directives), you
 should change the call to `sed` to remove them, too: Add
 
-	    -e "/^#line/ d"
+            -e "/^#line/ d"
 
     to the sed parameters. Or, if your `#line` directives look like
 
-	    # 15 "filename"
+            # 15 "filename"
 
     add
 
-	    -e "/^# [0-9]/ d"
+            -e "/^# [0-9]/ d"
 
     instead.
 

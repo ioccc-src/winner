@@ -53,13 +53,13 @@ characters (semaphore smileys, if you will).  For example, given the
 input "Hello, world!", the output will be:
 
 ```
-		  <>       <>       <>    <>                  <>     <>
+                  <>       <>       <>    <>                  <>     <>
       _()       ()/      ()/      ()/     _\)       ()       (/_     _\)
     [] /^      |^^      /^^      /^^    [] ^^      |^^|      ^^ [] [] ^^
       <>[      [][     <>][     <>][       ][      [][]      ][       ][
 
 
-		  <>    []
+                  <>    []
       _()_      ()/     |()       ()
     [] ^^ []   /^^       ^^|     |^^|
        ][     <>][       ][]     [][]

@@ -71,10 +71,10 @@ For example, the first block of code would read:
 
 ```
     charlie,
-	    doubletime me, OXFACE!
-	    not interested, get out
-	    mainly die, charly, *die*
-		    signed charlotte
+            doubletime me, OXFACE!
+            not interested, get out
+            mainly die, charly, *die*
+                    signed charlotte
 ```
 
 The original source had control-L's after each code block.  To

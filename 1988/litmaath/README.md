@@ -52,7 +52,7 @@ Note the unusual structure:
 
 ``` <!---c-->
     while (<condition>)
-	 ;
+         ;
 ```
 
 Did you notice that the body is empty?
@@ -68,9 +68,9 @@ variables like:
 
 ``` <!---c-->
     fprintf(stderr,
-	 "argv=%lo *argv=%lo **argv=%c argv[1]=%lo *argv[1]=%c argc=%d\n",
-	 (long) argv, (long) *argv, *argv && **argv ? **argv : '@',
-	 (long) argv[1], argv[1] && *argv[1] ? *argv[1] : '@', argc);
+         "argv=%lo *argv=%lo **argv=%c argv[1]=%lo *argv[1]=%c argc=%d\n",
+         (long) argv, (long) *argv, *argv && **argv ? **argv : '@',
+         (long) argv[1], argv[1] && *argv[1] ? *argv[1] : '@', argc);
 ```
 
 ... which is what the [alternate code](#alternate-code) is.

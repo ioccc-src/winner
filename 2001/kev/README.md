@@ -33,9 +33,9 @@ NOTE: each player's paddle is at the bottom and the opponent at the top.
 ## Try:
 
 ``` <!---sh-->
-    ./kev		    # in one terminal
+    ./kev                   # in one terminal
 
-    ./kev localhost	    # in another terminal on the same host
+    ./kev localhost         # in another terminal on the same host
 ```
 
 If you need to change the speed you can reconfigure it like (say

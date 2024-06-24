@@ -73,15 +73,15 @@ Notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation) with the
 following characters recognised:
 
 ```
-    +, -, *, /	    - usual arithmetic operations
-    ^		    - Exponentiation; valid for constant exponent only
-    s		    - sin
-    c		    - cos
-    0-9		    - single digit integers
-    d		    - duplicate number on stack
-    t		    - transpose top two elements on stack
-    x		    - x coordinate value
-    y		    - y coordinate value
+    +, -, *, /      - usual arithmetic operations
+    ^               - Exponentiation; valid for constant exponent only
+    s               - sin
+    c               - cos
+    0-9             - single digit integers
+    d               - duplicate number on stack
+    t               - transpose top two elements on stack
+    x               - x coordinate value
+    y               - y coordinate value
 ```
 
 NB: all arithmetic is done in double precision, so `23/` is two-thirds, rather

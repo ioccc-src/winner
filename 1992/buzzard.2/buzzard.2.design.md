@@ -87,15 +87,15 @@ means that by default FIRST simply compiles things.
 ####  Integer Operations
 
 ```
-	SYMBOL	NAME		FUNCTION
+        SYMBOL  NAME            FUNCTION
 
-	  -	binary minus	pop top 2 elements of stack, subtract, push
+          -     binary minus    pop top 2 elements of stack, subtract, push
 
-	  *	multiply	pop top 2 elements of stack, multiply, push
+          *     multiply        pop top 2 elements of stack, multiply, push
 
-	  /	divide		pop top 2 elements of stack, divide, push
+          /     divide          pop top 2 elements of stack, divide, push
 
-	  <0	less than 0	pop top element of stack, push 1 if < 0 else 0
+          <0    less than 0     pop top element of stack, push 1 if < 0 else 0
 ```
 
 Note that we can synthesize addition and negation from binary minus,
@@ -106,28 +106,28 @@ but we cannot synthesize a time efficient divide or multiply from it.
 ####  Memory Operations
 
 ```
-	SYMBOL	NAME		FUNCTION
+        SYMBOL  NAME            FUNCTION
 
-	  @	fetch		pop top of stack, treat as address to push contents of
+          @     fetch           pop top of stack, treat as address to push contents of
 
-	  !	store		top of stack is address, 2nd is value; store to memory
-				and pop both off the stack
+          !     store           top of stack is address, 2nd is value; store to memory
+                                and pop both off the stack
 ```
 
 
 ####  Input/Output Operations
 
 ```
-	NAME			FUNCTION
+        NAME                    FUNCTION
 
-	echo			output top of stack through C's putchar()
+        echo                    output top of stack through C's putchar()
 
-	key			push C's getchar() onto top of stack
+        key                     push C's getchar() onto top of stack
 
-	_read			read a space-delimited word, find it in the
-				dictionary, and compile a pointer to
-				that word's code pointer onto the
-				current end of the dictionary
+        _read                   read a space-delimited word, find it in the
+                                dictionary, and compile a pointer to
+                                that word's code pointer onto the
+                                current end of the dictionary
 ```
 
 Although `_read` could be synthesized from key, we need `_read` to be able
@@ -137,27 +137,27 @@ to compile words to be able to start any syntheses.
 ####  Execution Operations
 
 ```
-	NAME			FUNCTION
+        NAME                    FUNCTION
 
-	exit			leave the current function: pop the return stack
-				into the program counter
+        exit                    leave the current function: pop the return stack
+                                into the program counter
 ```
 
 
 ####  Immediate (compilation) Operations
 
 ```
-	SYMBOL	NAME		FUNCTION
+        SYMBOL  NAME            FUNCTION
 
-	  :	define		read in the next space-delimited word, add it to
-				the end of our string storage, and generate
-				a header for the new word so that when it
-				is typed it compiles a pointer to itself
-				so that it can be executed.
+          :     define          read in the next space-delimited word, add it to
+                                the end of our string storage, and generate
+                                a header for the new word so that when it
+                                is typed it compiles a pointer to itself
+                                so that it can be executed.
 
-	immediate immediate	when used immediately after a name following a ':',
-				it makes the word being defined run whenever
-				it is typed.
+        immediate immediate     when used immediately after a name following a ':',
+                                it makes the word being defined run whenever
+                                it is typed.
 ```
 
 `:` cannot be synthesized, because we could not synthesize anything.
@@ -169,10 +169,10 @@ would preclude our being able to do any useful compilation.
 ####  Stack Operations
 
 ```
-	NAME			FUNCTION
+        NAME                    FUNCTION
 
-	pick			pop top of stack, use as index into stack and copy up
-				that element
+        pick                    pop top of stack, use as index into stack and copy up
+                                that element
 ```
 
 If the data stack were stored in main memory, we could synthesize `pick`;
@@ -199,16 +199,16 @@ This is discussed some more in section 2.
 Here's a handy summary of all the FIRST words:
 
 ```
-	WORD		DESCRIPTION
+        WORD            DESCRIPTION
 
-	- * /		binary integer operations on the stack
-	<0		is top of stack less than 0?
-	@ !		read from or write to memory
-	echo key	output or input one character
-	_read		read a word from input and compile a pointer to it
-	exit		stop running the current function
-	:		compile the header of a definition
-	immediate	modify the header to create an immediate word
+        - * /           binary integer operations on the stack
+        <0              is top of stack less than 0?
+        @ !             read from or write to memory
+        echo key        output or input one character
+        _read           read a word from input and compile a pointer to it
+        exit            stop running the current function
+        :               compile the header of a definition
+        immediate       modify the header to create an immediate word
 ```
 
 Here is a sample FIRST program.  I'm assuming you're using
@@ -226,33 +226,33 @@ some device to indicate what's going on.  (THIRD programs are an entirely
 different subject.)
 
 ```
-		( Our first line gives the symbols for the built-ins )
-	: immediate _read @ ! - * / <0 exit echo key _pick
+                ( Our first line gives the symbols for the built-ins )
+        : immediate _read @ ! - * / <0 exit echo key _pick
 
-		( now we define a simple word that will print out a couple characters )
+                ( now we define a simple word that will print out a couple characters )
 
-	: L			( define a word named 'L' )
-	  108 echo		( output an ascii 'l' )
-	  exit
+        : L                     ( define a word named 'L' )
+          108 echo              ( output an ascii 'l' )
+          exit
 
-	: hello			( define a word named 'hello')
-	  72 echo		( output an ascii 'H' )
-	  101 echo		( output an ascii 'e' )
-	  111			( push ascii 'o' onto the stack )
-	  L L			( output two ascii 'l's )
-	  echo			( output the 'o' we pushed on the stack before )
-	  10 echo		( print a newline )
-	  exit			( stop running this routine )
+        : hello                 ( define a word named 'hello')
+          72 echo               ( output an ascii 'H' )
+          101 echo              ( output an ascii 'e' )
+          111                   ( push ascii 'o' onto the stack )
+          L L                   ( output two ascii 'l's )
+          echo                  ( output the 'o' we pushed on the stack before )
+          10 echo               ( print a newline )
+          exit                  ( stop running this routine )
 
-	: test immediate	( define a word named 'test' that runs whenever typed )
-	  hello			( call hello )
-	  exit
+        : test immediate        ( define a word named 'test' that runs whenever typed )
+          hello                 ( call hello )
+          exit
 
-	test
+        test
 
-	( The result of running this program should be:
-	Hello
-	)
+        ( The result of running this program should be:
+        Hello
+        )
 ```
 
 ## Section 2: Motivating THIRD
@@ -306,7 +306,7 @@ In this section we'll eventually have real comments.
 The first thing we have to do is give the symbols for our built-ins.
 
 ```
-	: immediate _read @ ! - * / < exit echo key _pick
+        : immediate _read @ ! - * / < exit echo key _pick
 ```
 
 Next we want to be mildly self commenting, so we define the word `r` to push
@@ -315,7 +315,7 @@ return stack pointer.  (In fact, when we run `r`, the value of the return stack
 pointer is temporarily changed.)
 
 ```
-	: r 1 exit
+        : r 1 exit
 ```
 
 Next, we're currently executing a short loop that contains `_read` and
@@ -325,12 +325,12 @@ the return stack, calls `_read`, then calls itself.  Because it kills the top of
 the return stack, it can recurse indefinitely.
 
 ```
-	: ]
-	  r @			Get the value of the return stack pointer
-	  1 -			Subtract one
-	  r !			Store it back into the return stack pointer
-	  _read			Read and compile one word
-	  ]			Start over
+        : ]
+          r @                   Get the value of the return stack pointer
+          1 -                   Subtract one
+          r !                   Store it back into the return stack pointer
+          _read                 Read and compile one word
+          ]                     Start over
 ```
 
 Notice that we don't need to exit, since we never come back.  Also, it's
@@ -340,8 +340,8 @@ will never return!
 Now let's get compile running.
 
 ```
-	: main immediate ]
-	main
+        : main immediate ]
+        main
 ```
 
 Next off, I'm going to do this the easy but non-portable way, and put some
@@ -349,14 +349,14 @@ character constant definitions in.  I wanted them at the top of the file, but
 that would have burned too much of the return stack.
 
 ```
-	: '"'	34	exit
-	: ')'	41	exit
-	: '\n'	10	exit
-	: 'space' 32	exit
-	: '0'	48	exit
-	: '-'	45	exit
+        : '"'   34      exit
+        : ')'   41      exit
+        : '\n'  10      exit
+        : 'space' 32    exit
+        : '0'   48      exit
+        : '-'   45      exit
 
-	: cr '\n' echo exit
+        : cr '\n' echo exit
 ```
 
 Next, we want to define some temporary variables for locations `3`, `4`, and
@@ -364,10 +364,10 @@ Next, we want to define some temporary variables for locations `3`, `4`, and
 
 
 ```
-	: _x 3 @ exit
-	: _x! 3 ! exit
-	: _y 4 @ exit
-	: _y! 4 ! exit
+        : _x 3 @ exit
+        : _x! 3 ! exit
+        : _y 4 @ exit
+        : _y! 4 ! exit
 ```
 
 OK.  Now, we want to make THIRD look vaguely like FORTH,
@@ -381,7 +381,7 @@ Swap by writing out the top two elements into temps, and
 then reading them back in the other order.
 
 ```
-	: swap _x! _y! _x _y exit
+        : swap _x! _y! _x _y exit
 ```
 
 Take another look and make sure you see why that works,
@@ -393,23 +393,23 @@ negate the top element of the stack, and then subtract.
 To negate, we subtract from `0`.
 
 ```
-	: +
-	  0 swap -
-	  -
-	  exit
+        : +
+          0 swap -
+          -
+          exit
 ```
 
 Create a copy of the top of stack.
 
 ```
-	: dup _x! _x _x exit
+        : dup _x! _x _x exit
 ```
 
 Get a mnemonic name for our dictionary pointer--we need
 to compile stuff, so it goes through this.
 
 ```
-	: h 0 exit
+        : h 0 exit
 ```
 
 We're going to need to advance that pointer, so let's
@@ -418,23 +418,23 @@ Given a pointer to a memory location, increment the value
 at that memory location.
 
 ```
-	: inc
-	  dup @			Get another copy of the address, and get the value
-				so now we have value, address on top of stack.
-	  1 +			Add one to the value
-	  swap			Swap to put the address on top of the stack
-	  ! exit		Write it to memory
+        : inc
+          dup @                 Get another copy of the address, and get the value
+                                so now we have value, address on top of stack.
+          1 +                   Add one to the value
+          swap                  Swap to put the address on top of the stack
+          ! exit                Write it to memory
 ```
 
 `,` is a standard FORTH word.  It should write the top of
 stack into the dictionary, and advance the pointer
 
 ```
-	: ,
-	  h @			Get the value of the dictionary pointer
-	  !			Write the top of stack there
-	  h inc			And increment the dictionary pointer
-	  exit
+        : ,
+          h @                   Get the value of the dictionary pointer
+          !                     Write the top of stack there
+          h inc                 And increment the dictionary pointer
+          exit
 ```
 
 `'` is a standard FORTH word.  It should push the address
@@ -447,41 +447,41 @@ after the `'`.  We push the word there, and advance the
 return stack pointer so that we don't execute it.
 
 ```
-	: '
-	  r @			Get the address of the top of return stack
-				We currently have a pointer to the top of return stack
-	  @			Get the value from there
-				We currently have a pointer to the instruction stream
-	  dup			Get another copy of it--the bottom copy will stick
-				around until the end of this word
-	  1 +			Increment the pointer, pointing to the NEXT instruction
-	  r @ !			Write it back onto the top of the return stack
-				We currently have our first copy of the old pointer
-				to the instruction stream
-	  @			Get the value there--the address of the "next word"
-	  exit
+        : '
+          r @                   Get the address of the top of return stack
+                                We currently have a pointer to the top of return stack
+          @                     Get the value from there
+                                We currently have a pointer to the instruction stream
+          dup                   Get another copy of it--the bottom copy will stick
+                                around until the end of this word
+          1 +                   Increment the pointer, pointing to the NEXT instruction
+          r @ !                 Write it back onto the top of the return stack
+                                We currently have our first copy of the old pointer
+                                to the instruction stream
+          @                     Get the value there--the address of the "next word"
+          exit
 ```
 
 Now we're set.  `;` should be an immediate word that pushes
 the address of `exit` onto the stack, then writes it out.
 
 ```
-	: ; immediate
-	  ' exit 		Get the address of exit
-	  ,			Compile it
-	  exit			And we should return
+        : ; immediate
+          ' exit                Get the address of exit
+          ,                     Compile it
+          exit                  And we should return
 ```
 
 Now let's test out `;` by defining a useful word:
 
 ```
-	: drop 0 * + ;
+        : drop 0 * + ;
 ```
 
 Since we have `inc`, we ought to make `dec`:
 
 ```
-	: dec dup @ 1 - swap ! ;
+        : dec dup @ 1 - swap ! ;
 ```
 
 Our next goal, now that we have `;`, is to implement
@@ -499,26 +499,26 @@ code it out--but we can't really break it into smaller
 words, because that'll trash the return stack.
 
 ```
-	: tor
-	  r @ @			Get the value off the top of the return stack
-	  swap			Bring the value to be pushed to the top of stack
-	  r @ !			Write it over the current top of return stack
-	  r @ 1 + r !		Increment the return stack pointer--but can't use inc
-	  r @ !			Store our return address back on the return stack
-	;
+        : tor
+          r @ @                 Get the value off the top of the return stack
+          swap                  Bring the value to be pushed to the top of stack
+          r @ !                 Write it over the current top of return stack
+          r @ 1 + r !           Increment the return stack pointer--but can't use inc
+          r @ !                 Store our return address back on the return stack
+        ;
 ```
 
 Next we want the opposite routine, which pops the top
 of the return stack, and puts it on the normal stack.
 
 ```
-	: fromr
-	  r @ @			Save old value
-	  r @ 1 - r !		Decrement pointer
-	  r @ @			Get value that we want off
-	  swap			Bring return address to top
-	  r @ !			Store it and return
-	;
+        : fromr
+          r @ @                 Save old value
+          r @ 1 - r !           Decrement pointer
+          r @ @                 Get value that we want off
+          swap                  Bring return address to top
+          r @ !                 Store it and return
+        ;
 ```
 
 Now, if we have a routine that's recursing, and we
@@ -532,7 +532,7 @@ however, it's more complex since there's a new value on
 top of the return stack.
 
 ```
-	: tail fromr fromr drop tor ;
+        : tail fromr fromr drop tor ;
 ```
 
 Now, we want to do `if`.  To do this, we need to convert
@@ -542,43 +542,43 @@ up.
 `minus` gives us unary negation.
 
 ```
-	: minus 0 swap - ;
+        : minus 0 swap - ;
 ```
 
 If top of stack is boolean, `bnot` gives us inverse
 
 ```
-	: bnot 1 swap - ;
+        : bnot 1 swap - ;
 ```
 
 To compare two numbers, subtract and compare to `0`.
 
 ```
-	: < - <0 ;
+        : < - <0 ;
 ```
 
 `logical` turns the top of stack into either `0` or `1`.
 
 ```
-	: logical
-	  dup			Get two copies of it
-	  0 <			1 if < 0, 0 otherwise
-	  swap minus		Swap number back up, and take negative
-	  0 <			1 if original was > 0, 0 otherwise
-	  +			Add them up--has to be 0 or 1!
-	;
+        : logical
+          dup                   Get two copies of it
+          0 <                   1 if < 0, 0 otherwise
+          swap minus            Swap number back up, and take negative
+          0 <                   1 if original was > 0, 0 otherwise
+          +                     Add them up--has to be 0 or 1!
+        ;
 ```
 
 `not` returns 1 if top of stack is 0, and 0 otherwise
 
 ```
-	: not logical bnot ;
+        : not logical bnot ;
 ```
 
 We can test equality by subtracting and comparing to `0`.
 
 ```
-	: = - not ;
+        : = - not ;
 ```
 
 Just to show how you compute a branch:  Suppose you've
@@ -588,14 +588,14 @@ To branch, we use the return stack to read the offset, and
 add that on to the top of the return stack, and return.
 
 ```
-	: branch
-	  r @			Address of top of return stack
-	  @			Our return address
-	  @			Value from there: the branch offset
-	  r @ @			Our return address again
-	  +			The address we want to execute at
-	  r @ !			Store it back onto the return stack
-	;
+        : branch
+          r @                   Address of top of return stack
+          @                     Our return address
+          @                     Value from there: the branch offset
+          r @ @                 Our return address again
+          +                     The address we want to execute at
+          r @ !                 Store it back onto the return stack
+        ;
 ```
 
 For conditional branches, we want to branch by a certain
@@ -606,19 +606,19 @@ on the stack is `1` if we should branch, and `0` if not, the
 following computes the correct branch offset.
 
 ```
-	: computebranch 1 - * 1 + ;
+        : computebranch 1 - * 1 + ;
 ```
 
 Branch if the value on top of the stack is `0`.
 
 ```
-	: notbranch
-	  not
-	  r @ @ @		Get the branch offset
-	  computebranch		Adjust as necessary
-	  r @ @ +		Calculate the new address
-	  r @ !			Store it
-	;
+        : notbranch
+          not
+          r @ @ @               Get the branch offset
+          computebranch         Adjust as necessary
+          r @ @ +               Calculate the new address
+          r @ !                 Store it
+        ;
 ```
 
 `here` is a standard FORTH word which returns a pointer to
@@ -626,7 +626,7 @@ the current dictionary address--that is, the value of
 the dictionary pointer.
 
 ```
-	: here h @ ;
+        : here h @ ;
 ```
 
 We're ALL SET to compile `if...else...then` constructs!
@@ -637,22 +637,22 @@ we leave the address where we compiled the dummy offset.
 `then` will calculate the offset and fill it in for us.
 
 ```
-	: if immediate
-	  ' notbranch ,		Compile notbranch
-	  here			Save the current dictionary address
-	  0 ,			Compile a dummy value
-	;
+        : if immediate
+          ' notbranch ,         Compile notbranch
+          here                  Save the current dictionary address
+          0 ,                   Compile a dummy value
+        ;
 ```
 
 `then` expects the address to `fixup` to be on the stack.
 
 ```
-	: then immediate
-	  dup			Make another copy of the address
-	  here			Find the current location, where to branch to
-	  swap -		Calculate the difference between them
-	  swap !		Bring the address to the top, and store it.
-	;
+        : then immediate
+          dup                   Make another copy of the address
+          here                  Find the current location, where to branch to
+          swap -                Calculate the difference between them
+          swap !                Bring the address to the top, and store it.
+        ;
 ```
 
 Now that we can do `if...then` statements, we can do
@@ -661,248 +661,248 @@ some parsing!  Let's introduce real FORTH comments.
 exit.
 
 ```
-	: find-)
-	  key			Read in a character
-	  ')' =			Compare it to close parentheses
-	  not if		If it's not equal
-	    tail find-)		repeat (popping R stack)
-	  then			Otherwise branch here and exit
-	;
+        : find-)
+          key                   Read in a character
+          ')' =                 Compare it to close parentheses
+          not if                If it's not equal
+            tail find-)         repeat (popping R stack)
+          then                  Otherwise branch here and exit
+        ;
 
-	: ( immediate
-	  find-)
-	;
+        : ( immediate
+          find-)
+        ;
 
-	( we should be able to do FORTH-style comments now )
+        ( we should be able to do FORTH-style comments now )
 
-	( now that we've got comments, we can comment the rest of the code
-	  in a legitimate [self parsing] fashion.  Note that you can't
-	  nest parentheses... )
+        ( now that we've got comments, we can comment the rest of the code
+          in a legitimate [self parsing] fashion.  Note that you can't
+          nest parentheses... )
 
-	: else immediate
-	  ' branch ,		( compile a definite branch )
-	  here			( push the backpatching address )
-	  0 ,			( compile a dummy offset for branch )
-	  swap			( bring old backpatch address to top )
-	  dup here swap -	( calculate the offset from old address )
-	  swap !		( put the address on top and store it )
-	;
+        : else immediate
+          ' branch ,            ( compile a definite branch )
+          here                  ( push the backpatching address )
+          0 ,                   ( compile a dummy offset for branch )
+          swap                  ( bring old backpatch address to top )
+          dup here swap -       ( calculate the offset from old address )
+          swap !                ( put the address on top and store it )
+        ;
 
-	: over _x! _y! _y _x _y ;
+        : over _x! _y! _y _x _y ;
 
-	: add
-	  _x!			( save the pointer in a temp variable )
-	  _x @			( get the value pointed to )
-	  +			( add the incremement from on top of the stack )
-	  _x !			( and save it )
-	;
+        : add
+          _x!                   ( save the pointer in a temp variable )
+          _x @                  ( get the value pointed to )
+          +                     ( add the incremement from on top of the stack )
+          _x !                  ( and save it )
+        ;
 
-	: allot	h add ;
+        : allot h add ;
 
-	: maybebranch
-	  logical		( force the TOS to be 0 or 1 )
-	  r @ @ @		( load the branch offset )
-	  computebranch		( calculate the condition offset [either TOS or 1])
-	  r @ @ +		( add it to the return address )
-	  r @ !			( store it to our return address and return )
-	;
+        : maybebranch
+          logical               ( force the TOS to be 0 or 1 )
+          r @ @ @               ( load the branch offset )
+          computebranch         ( calculate the condition offset [either TOS or 1])
+          r @ @ +               ( add it to the return address )
+          r @ !                 ( store it to our return address and return )
+        ;
 
-	: mod _x! _y!		( get x then y off of stack )
-	  _y _y _x / _x *	( y - y / x * x )
-	  -
-	;
+        : mod _x! _y!           ( get x then y off of stack )
+          _y _y _x / _x *       ( y - y / x * x )
+          -
+        ;
 
-	: printnum
-	  dup
-	  10 mod '0' +
-	  swap 10 / dup
-	  if
-	    printnum
-	    echo
-	  else
-	    drop
-	    echo
-	  then
-	;
+        : printnum
+          dup
+          10 mod '0' +
+          swap 10 / dup
+          if
+            printnum
+            echo
+          else
+            drop
+            echo
+          then
+        ;
 
-	: .
-	  dup 0 <
-	  if
-	    '-' echo minus
-	  then
-	  printnum
-	  'space' echo
-	;
+        : .
+          dup 0 <
+          if
+            '-' echo minus
+          then
+          printnum
+          'space' echo
+        ;
 
-	: debugprint dup . cr ;
+        : debugprint dup . cr ;
 
-	( the following routine takes a pointer to a string, and prints it,
-	  except for the trailing quote.  returns a pointer to the next word
-	  after the trailing quote )
+        ( the following routine takes a pointer to a string, and prints it,
+          except for the trailing quote.  returns a pointer to the next word
+          after the trailing quote )
 
-	: _print
-	  dup 1 +
-	  swap @
-	  dup '"' =
-	  if
-	    drop exit
-	  then
-	  echo
-	  tail _print
-	;
+        : _print
+          dup 1 +
+          swap @
+          dup '"' =
+          if
+            drop exit
+          then
+          echo
+          tail _print
+        ;
 
-	: print _print ;
+        : print _print ;
 
-	  ( print the next thing from the instruction stream )
-	: immprint
-	  r @ @
-	  print
-	  r @ !
-	;
+          ( print the next thing from the instruction stream )
+        : immprint
+          r @ @
+          print
+          r @ !
+        ;
 
-	: find-"
-	  key dup ,
-	  '"' =
-	  if
-	    exit
-	  then
-	  tail find-"
-	;
+        : find-"
+          key dup ,
+          '"' =
+          if
+            exit
+          then
+          tail find-"
+        ;
 
-	: " immediate
-	  key drop
-	  ' immprint ,
-	  find-"
-	;
+        : " immediate
+          key drop
+          ' immprint ,
+          find-"
+        ;
 
-	: do immediate
-	  ' swap ,		( compile 'swap' to swap the limit and start )
-	  ' tor ,		( compile to push the limit onto the return stack )
-	  ' tor ,		( compile to push the start on the return stack )
-	  here			( save this address so we can branch back to it )
-	;
+        : do immediate
+          ' swap ,              ( compile 'swap' to swap the limit and start )
+          ' tor ,               ( compile to push the limit onto the return stack )
+          ' tor ,               ( compile to push the start on the return stack )
+          here                  ( save this address so we can branch back to it )
+        ;
 
-	: i r @ 1 - @ ;
-	: j r @ 3 - @ ;
+        : i r @ 1 - @ ;
+        : j r @ 3 - @ ;
 
-	: > swap < ;
-	: <= 1 + < ;
-	: >= swap <= ;
+        : > swap < ;
+        : <= 1 + < ;
+        : >= swap <= ;
 
-	: inci
-	  r @ 1 - 	( get the pointer to i )
-	  inc		( add one to it )
-	  r @ 1 - @ 	( find the value again )
-	  r @ 2 - @	( find the limit value )
-	  <=
-	  if
-	    r @ @ @ r @ @ + r @ ! exit		( branch )
-	  then
-	  fromr 1 +
-	  fromr drop
-	  fromr drop
-	  tor
-	;
+        : inci
+          r @ 1 -       ( get the pointer to i )
+          inc           ( add one to it )
+          r @ 1 - @     ( find the value again )
+          r @ 2 - @     ( find the limit value )
+          <=
+          if
+            r @ @ @ r @ @ + r @ ! exit          ( branch )
+          then
+          fromr 1 +
+          fromr drop
+          fromr drop
+          tor
+        ;
 
-	: loop immediate ' inci @ here - , ;
+        : loop immediate ' inci @ here - , ;
 
-	: loopexit
+        : loopexit
 
-	  fromr drop		( pop off our return address )
-	  fromr drop		( pop off i )
-	  fromr drop		( pop off the limit of i )
-	;			( and return to the caller's caller routine )
+          fromr drop            ( pop off our return address )
+          fromr drop            ( pop off i )
+          fromr drop            ( pop off the limit of i )
+        ;                       ( and return to the caller's caller routine )
 
-	: execute
-	  8 !
-	  ' exit 9 !
-	  8 tor
-	;
+        : execute
+          8 !
+          ' exit 9 !
+          8 tor
+        ;
 
-	: :: ;          ( :: is going to be a word that does ':' at runtime )
+        : :: ;          ( :: is going to be a word that does ':' at runtime )
 
-	: fix-:: immediate 3 ' :: ! ;
-	fix-::
+        : fix-:: immediate 3 ' :: ! ;
+        fix-::
 
-		( Override old definition of ':' with a new one that invokes ] )
-	: : immediate :: ] ;
+                ( Override old definition of ':' with a new one that invokes ] )
+        : : immediate :: ] ;
 
-	: command
-	  here 5 !              ( store dict pointer in temp variable )
-	  _read                 ( compile a word )
-				( if we get control back: )
-	  here 5 @
-	  = if
-	    tail command        ( we didn't compile anything )
-	  then
-	  here 1 - h !          ( decrement the dictionary pointer )
-	  here 5 @              ( get the original value )
-	  = if
-	    here @              ( get the word that was compiled )
-	    execute             ( and run it )
-	  else
-	    here @              ( else it was an integer constant, so push it )
-	    here 1 - h !        ( and decrement the dictionary pointer again )
-	  then
-	  tail command
-	;
+        : command
+          here 5 !              ( store dict pointer in temp variable )
+          _read                 ( compile a word )
+                                ( if we get control back: )
+          here 5 @
+          = if
+            tail command        ( we didn't compile anything )
+          then
+          here 1 - h !          ( decrement the dictionary pointer )
+          here 5 @              ( get the original value )
+          = if
+            here @              ( get the word that was compiled )
+            execute             ( and run it )
+          else
+            here @              ( else it was an integer constant, so push it )
+            here 1 - h !        ( and decrement the dictionary pointer again )
+          then
+          tail command
+        ;
 
-	: make-immediate        ( make a word just compiled immediate )
-	  here 1 -              ( back up a word in the dictionary )
-	  dup dup               ( save the pointer to here )
-	  h !                   ( store as the current dictionary pointer )
-	  @                     ( get the run-time code pointer )
-	  swap                  ( get the dict pointer again )
-	  1 -                   ( point to the compile-time code pointer )
-	  !                     ( write run-time code pointer on compile-time pointer )
-	;
+        : make-immediate        ( make a word just compiled immediate )
+          here 1 -              ( back up a word in the dictionary )
+          dup dup               ( save the pointer to here )
+          h !                   ( store as the current dictionary pointer )
+          @                     ( get the run-time code pointer )
+          swap                  ( get the dict pointer again )
+          1 -                   ( point to the compile-time code pointer )
+          !                     ( write run-time code pointer on compile-time pointer )
+        ;
 
-	: <build immediate
-	  make-immediate        ( make the word compiled so far immediate )
-	  ' :: ,                ( compile '::', so we read next word )
-	  2 ,                   ( compile 'pushint' )
-	  here 0 ,              ( write out a 0 but save address for does> )
-	  ' , ,                 ( compile a push that address onto dictionary )
-	;
+        : <build immediate
+          make-immediate        ( make the word compiled so far immediate )
+          ' :: ,                ( compile '::', so we read next word )
+          2 ,                   ( compile 'pushint' )
+          here 0 ,              ( write out a 0 but save address for does> )
+          ' , ,                 ( compile a push that address onto dictionary )
+        ;
 
-	: does> immediate
-	  ' command ,           ( jump back into command mode at runtime )
-	  here swap !           ( backpatch the build> to point to here )
-	  2 ,                   ( compile run-code primitive so we look like a word )
-	  ' fromr ,             ( compile fromr, which leaves var address on stack )
-	;
+        : does> immediate
+          ' command ,           ( jump back into command mode at runtime )
+          here swap !           ( backpatch the build> to point to here )
+          2 ,                   ( compile run-code primitive so we look like a word )
+          ' fromr ,             ( compile fromr, which leaves var address on stack )
+        ;
 
 
-	: _dump                 ( dump out the definition of a word, sort of )
-	  dup " (" . " , "
-	  dup @                 ( save the pointer and get the contents )
-	  dup ' exit
-	  = if
-		" ;)" cr exit
-	  then
-	  . " ), "
-	  1 +
-	  tail _dump
-	;
+        : _dump                 ( dump out the definition of a word, sort of )
+          dup " (" . " , "
+          dup @                 ( save the pointer and get the contents )
+          dup ' exit
+          = if
+                " ;)" cr exit
+          then
+          . " ), "
+          1 +
+          tail _dump
+        ;
 
-	: dump _dump ;
+        : dump _dump ;
 
-	: # . cr ;
+        : # . cr ;
 
-	: var <build , does> ;
-	: constant <build , does> @ ;
-	: array <build allot does> + ;
+        : var <build , does> ;
+        : constant <build , does> @ ;
+        : array <build allot does> + ;
 
-	: [ immediate command ;
-	: _welcome " Welcome to THIRD.
-	Ok.
-	" ;
+        : [ immediate command ;
+        : _welcome " Welcome to THIRD.
+        Ok.
+        " ;
 
-	: ; immediate ' exit , command exit
+        : ; immediate ' exit , command exit
 
-	[
+        [
 
-	_welcome
+        _welcome
 ```
 
 

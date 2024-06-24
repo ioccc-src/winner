@@ -20,17 +20,17 @@ Y<:19:><:27:> but it's not the only example. Here the compound literal of 13
 ints:
 
 ``` <!---c-->
-	    int *z=(int[13]) { 0 } , *e, *g;
+            int *z=(int[13]) { 0 } , *e, *g;
 ```
 
     Then in main:
 
 ``` <!---c-->
-	    e = z + 10;
-	    g = e + 1;
+            e = z + 10;
+            g = e + 1;
 
-	    for (j=-3; j < 0; ++j)
-		e<:j:> = j+3;
+            for (j=-3; j < 0; ++j)
+                e<:j:> = j+3;
 ```
 
 Which I think is more confusing: when one is iterating an array you don't
@@ -40,31 +40,31 @@ more confusing still. There are at least two other ways that are much easier
 to read that could accomplish the same thing. It continues on:
 
 ``` <!---c-->
-	    /* ... */
-	    e<:i-3:> = (j < 1 ? 1 : (j > 5 ? 5 : j))-1;
+            /* ... */
+            e<:i-3:> = (j < 1 ? 1 : (j > 5 ? 5 : j))-1;
 ```
 
 *   Observe these two functions:
 
 ``` <!---c-->
-	    void w(char *s, int k, int v)
-	    {
-		    for(e<:2:> = 0; s<:*P:>; ++e<:2:>)
-		    {
-			    v = s<:e<:2:>:>;
-			    if(v > 64 && v < 91)
-				s<:e<:2:>:> = (((v - 65 + k) % 26) + 65);
-		    }
-	    }
-	    void Q(void)
-	    {
-		    for(*g = 0; *g < 3; ++*g)
-		    {
-			    *Y<:16+e<:1:>:>=S<:e<:e<:1:>-3:>:>;
-			    R<:e<:1:>:>=Y<:e<:-3+e<:1:>:>:>;
-			    w(R[*g],*(e+e<:1:>-6)=q(Y<:8:>,*Y<:7:>),*g);
-		    }
-	    }
+            void w(char *s, int k, int v)
+            {
+                    for(e<:2:> = 0; s<:*P:>; ++e<:2:>)
+                    {
+                            v = s<:e<:2:>:>;
+                            if(v > 64 && v < 91)
+                                s<:e<:2:>:> = (((v - 65 + k) % 26) + 65);
+                    }
+            }
+            void Q(void)
+            {
+                    for(*g = 0; *g < 3; ++*g)
+                    {
+                            *Y<:16+e<:1:>:>=S<:e<:e<:1:>-3:>:>;
+                            R<:e<:1:>:>=Y<:e<:-3+e<:1:>:>:>;
+                            w(R[*g],*(e+e<:1:>-6)=q(Y<:8:>,*Y<:7:>),*g);
+                    }
+            }
 ```
 
 First of all: why do I set `e[2]` to 0 and increment it for each pass in the
@@ -97,14 +97,14 @@ and (2) I didn't want to risk changing all the offsets: thus I just made that
 address `e[1]`. Thus I also have:
 
 ``` <!---c-->
-	    for (*g = 0 ; *g < 10; ++*g)
-	    {
-		r<:-2:> = Y<:14:><:*(e+1):>; r<:-3:> = Y<:15:><:1<:e:>:>;
-		if (r<:-3:> && r<:-2:> == r<:-1:>)
-		    return r<:-3:>;
-		if (r<:-2:> && r<:-3:> == r<:-1:>)
-		    return r<:-2:>;
-	    }
+            for (*g = 0 ; *g < 10; ++*g)
+            {
+                r<:-2:> = Y<:14:><:*(e+1):>; r<:-3:> = Y<:15:><:1<:e:>:>;
+                if (r<:-3:> && r<:-2:> == r<:-1:>)
+                    return r<:-3:>;
+                if (r<:-2:> && r<:-3:> == r<:-1:>)
+                    return r<:-2:>;
+            }
 ```
 
 This `e[1]` of course is the same as `*g` as above and as you can see has
@@ -118,7 +118,7 @@ which I use as the two chars to compare (this is the plugboard function).
 at all. Why? In fact I call it like so:
 
 ``` <!---c-->
-		k = Z(r<:-1:>=k);
+                k = Z(r<:-1:>=k);
 ```
 
 The char is just used as a way to be able to call the function and assign to
@@ -133,7 +133,7 @@ refer to the same variable in more than one way (or in some cases maybe more
 correct to say 'same location'). In the Z() function for example:
 
 ``` <!---c-->
-		r<:-2:> = Y<:14:><:*(e+1):>; r<:-3:> = Y<:15:><:1<:e:>:>;
+                r<:-2:> = Y<:14:><:*(e+1):>; r<:-3:> = Y<:15:><:1<:e:>:>;
 ```
 
     I refer to e[1] as both: *(e+1) and 1[e].
@@ -154,7 +154,7 @@ index (sort of).
 reflectors in one `char [][27]`. This makes for some fun code like:
 
 ``` <!---c-->
-	    (Y<:e<:-10:>+5:><:k-'A':>) && (k = Y<:e<:-10:>+5:><:k-'A':>);
+            (Y<:e<:-10:>+5:><:k-'A':>) && (k = Y<:e<:-10:>+5:><:k-'A':>);
 ```
 
     (Of course this also removes an if statement by joining with a &&).
@@ -195,7 +195,7 @@ itself. But although I have quite a few cpp directives I am not using them for
 obfuscation but rather to save bytes. For examples:
 
 ``` <!---c-->
-	    %:define J(x)		  do(*x)=getchar(); while((*x)=='\n')
+            %:define J(x)                 do(*x)=getchar(); while((*x)=='\n')
 ```
 
 Is used quite a number of times and although it could be a function that
@@ -206,7 +206,7 @@ particular I want to bring up though because I think it's a curious one and
 it ties in to another point above:
 
 ``` <!---c-->
-	    %:define A(y)				  *(&Y<:7:><:1:>+(y))
+            %:define A(y)                                 *(&Y<:7:><:1:>+(y))
 ```
 
 What is special about this one: Above I noted how I sort of refer directly
@@ -214,7 +214,7 @@ to the notch settings (I think it was the notch settings anyway). Now I
 could have done say
 
 ``` <!---c-->
-	    char a = Y[7][1], b = Y[7][3], c = Y[7][5];
+            char a = Y[7][1], b = Y[7][3], c = Y[7][5];
 ```
 
 But I felt that doing instead the pointer arithmetic was worth doing.
@@ -249,9 +249,9 @@ variables in recode.c, move them to prog.c, compile and expect it to work right.
 * Also what is this about ?
 
 ``` <!---c-->
-				/\
-		    /		This is	    *not* what you think:
-			    void D(char*x){ /* ... */ }
+                                /\
+                    /           This is     *not* what you think:
+                            void D(char*x){ /* ... */ }
 ```
 
 

@@ -115,13 +115,13 @@ from inside the monitor whilst standing on your head. In case of
 confusion, please consult the following chart (\*):
 
 ```
-	       N
-	       ^
-	       |
-	 E <---+---> W
-	       |
-	       v
-	       S
+               N
+               ^
+               |
+         E <---+---> W
+               |
+               v
+               S
 ```
 
 (\*) Not to scale.
@@ -316,7 +316,7 @@ common tricks. Taken through the standard rounds listed in the
     `select()`, the following may suffice as an additional compiler argument:
 
     ```
-	-Dusleep={time_t v[2]={0,10000};select(0,0,0,0,v);}
+        -Dusleep={time_t v[2]={0,10000};select(0,0,0,0,v);}
     ```
 
     `gcc` complains about "unreachable code at beginning of switch

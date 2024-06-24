@@ -8,13 +8,13 @@ sanity if it causes any problems) as well as colours (limitations etc.).
 <div id="toc">
 -   [Capabilities support testing program](#termcaps)
 -   [Setting the game dimensions](#dimensions)
-    *	[The LINES and COLUMNS environmental variables](#linescolumns)
-    *	[Terminal insanity](#insanity)
-    *	[Restoring the terminal](#restore)
-    *	[Terminal size abuse](#abuse)
+    *   [The LINES and COLUMNS environmental variables](#linescolumns)
+    *   [Terminal insanity](#insanity)
+    *   [Restoring the terminal](#restore)
+    *   [Terminal size abuse](#abuse)
 -   [Terminal limitations](#termlimitations)
 -   [Terminal colours](#colours)
-    *	[Curses background](#background)
+    *   [Curses background](#background)
     *   [Monochrome terminals](#monochrome)
     *   [Colour limitations](#colourlimitations)
     *   [Disabling colour](#disablecolour)
@@ -49,7 +49,7 @@ This compiles the program [termcaps.c](%%REPO_URL%%/2020/ferguson1/termcaps.c) a
     terminal cols 155 (153 playable)
 
     snake size:   997 (max size: 5776)
-	  bugs:   199 (max size: 1155)
+          bugs:   199 (max size: 1155)
 
     at least 34 columns (currently 155) recommended for snake size 997
     at least 37 columns (currently 155) recommended for capped snake size 5776
@@ -79,7 +79,7 @@ example:
     terminal cols 155 (153 playable)
 
     snake size:  5776 (max size: 5776)
-	  bugs:  5771 (max size: 5771)
+          bugs:  5771 (max size: 5771)
 
     at least 37 columns (currently 155) recommended for snake size 5776
     at least 37 columns (currently 155) recommended for capped snake size 5776
@@ -153,7 +153,7 @@ Say you want 55 columns:
 This will force curses to detect the max columns (X) of your terminal (for the
 game dimensions) - to be 55; it might look like this instead:
 
-	    X:27/54 Y:20/41 S:5/997 B:0
+            X:27/54 Y:20/41 S:5/997 B:0
 
 But problems can arise with messing with dimensions: in my tests this held only
 to lines.
@@ -194,10 +194,10 @@ The Linux man page says:
 ```
     You might have to run the `reset` tool like:
 
-		   <LF>reset<LF>
+                   <LF>reset<LF>
 
-	       (the line-feed character is normally control-J) to get the terminal
-	       to work, as carriage-return may no longer work in the abnormal state.
+               (the line-feed character is normally control-J) to get the terminal
+               to work, as carriage-return may no longer work in the abnormal state.
 ```
 
 If you don't have the reset utility you can try:
@@ -320,7 +320,7 @@ The manpage for `init_pair()` says this:
 
     [...]
 
-	COLOR_PAIRS corresponds to the terminal database's max_pairs capability, (see terminfo(5)).
+        COLOR_PAIRS corresponds to the terminal database's max_pairs capability, (see terminfo(5)).
 ```
 
 Based on the two as well as the fact that monochrome terminals (I've tried under
@@ -332,11 +332,11 @@ confirm this I wrote the following code with the output below:
 
     int main()
     {
-	initscr();
-	start_color();
-	printw("COLORS: %d\nCOLOR_PAIRS: %d\n", COLORS, COLOR_PAIRS);
-	getch();
-	endwin();
+        initscr();
+        start_color();
+        printw("COLORS: %d\nCOLOR_PAIRS: %d\n", COLORS, COLOR_PAIRS);
+        getch();
+        endwin();
     }
 ```
 
@@ -361,17 +361,17 @@ number is out of the range? To try and figure this out I did another test:
 ``` <!---c-->
     int main()
     {
-	initscr();
-	start_color();
+        initscr();
+        start_color();
 
-	init_pair(COLOR_PAIRS+1, COLOR_WHITE, COLOR_GREEN);
-	bkgd(COLOR_PAIR(COLOR_PAIRS+1));
-	init_pair(1, COLOR_WHITE, COLOR_BLACK);
-	attron(COLOR_PAIR(1));
-	printw("COLORS: %d\nCOLOR_PAIRS: %d\n", COLORS, COLOR_PAIRS);
+        init_pair(COLOR_PAIRS+1, COLOR_WHITE, COLOR_GREEN);
+        bkgd(COLOR_PAIR(COLOR_PAIRS+1));
+        init_pair(1, COLOR_WHITE, COLOR_BLACK);
+        attron(COLOR_PAIR(1));
+        printw("COLORS: %d\nCOLOR_PAIRS: %d\n", COLORS, COLOR_PAIRS);
 
-	getch();
-	endwin();
+        getch();
+        endwin();
     }
 ```
 

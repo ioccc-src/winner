@@ -23,12 +23,12 @@
 The second command, `./tromp 10 "hkl jq"`, will set up the keys kind of like
 vim:
 
-- h	    - left (left)
-- k	    - rotate (up)
-- l	    - right (right)
-- j	    - drop (down)
-- space	    - pause (space)
-- q	    - quit (:q)
+- h         - left (left)
+- k         - rotate (up)
+- l         - right (right)
+- j         - drop (down)
+- space     - pause (space)
+- q         - quit (:q)
 
 NOTE: after the game ends a file called `HI` will be in the directory with the
 high scores (up to 20 runs saved) so one can see who has the highest score. The
@@ -80,12 +80,12 @@ will drop in a second, is 2.  The default `cmd_string` is
 `jkl pq`.  The first 6 characters of `cmd_string` relate
 to the following 6 game commands:
 
-- j		- left
-- k		- rotate
-- l		- right
-- space		- drop
-- p		- pause
-- q		- quit
+- j             - left
+- k             - rotate
+- l             - right
+- space         - drop
+- p             - pause
+- q             - quit
 
 Specifying `cmd_string` allows one to redefine the commands.
 The pause command pauses the game, clears the screen and

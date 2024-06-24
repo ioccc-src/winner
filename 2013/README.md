@@ -44,14 +44,14 @@ Several people discovered an undocumented feature in that
 certain comments such as:
 
 ``` <!---c-->
-	///*
+        ///*
 ```
 
 or:
 
 ``` <!---c-->
-	*\
-	/
+        *\
+        /
 ```
 
 were not correctly parsed by the tool.  The guidelines stated:

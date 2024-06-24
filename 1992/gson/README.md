@@ -40,19 +40,19 @@ following locations though the last one is more ironic:
     /usr/share/dict/words
     /usr/share/lib/spell/words
     /usr/ucblib/dict/words
-    /dev/null			# <-- for machines with nothing to say
+    /dev/null                   # <-- for machines with nothing to say
 ```
 
 Then using the proper dictionary file it does:
 
 ``` <!---sh-->
-    ./ag free software foundation	< /usr/share/dict/words
-    ./ag obfuscated c contest	< /usr/share/dict/words
-    ./ag unix international		< /usr/share/dict/words
-    ./ag george bush		< /usr/share/dict/words
-    ./ag bill clinton		< /usr/share/dict/words
-    ./ag ross perot			< /usr/share/dict/words
-    ./ag paul e tsongas		< /usr/share/dict/words
+    ./ag free software foundation       < /usr/share/dict/words
+    ./ag obfuscated c contest   < /usr/share/dict/words
+    ./ag unix international             < /usr/share/dict/words
+    ./ag george bush            < /usr/share/dict/words
+    ./ag bill clinton           < /usr/share/dict/words
+    ./ag ross perot                     < /usr/share/dict/words
+    ./ag paul e tsongas         < /usr/share/dict/words
 ```
 
 where `/usr/share/dict/words` is the dictionary file.

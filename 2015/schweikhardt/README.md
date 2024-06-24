@@ -58,9 +58,9 @@ Bell](http://members.tip.net.au/~dbell/) once described
 as having one of the largest "yummo quotients" in number theory:
 
 ```
-			 complexity of the solution
+                         complexity of the solution
     yummo quotient = -----------------------------------
-		     complexity of the problem statement
+                     complexity of the problem statement
 ```
 
 [Erdős](https://en.wikipedia.org/wiki/Paul_Erdős) privately told one of the IOCCC judges:
@@ -261,31 +261,31 @@ built. In biochemistry, each is assigned a TLI (see [Proteinogenic amino
 acid](https://en.wikipedia.org/wiki/Proteinogenic_amino_acid) for more info):
 
 ```
-    ala	Alanine
-    cys	Cysteine
-    asp	Aspartic acid
-    glu	Glutamic acid
-    phe	Phenylalanine
-    gly	Glycine
-    his	Histidine
-    ile	Isoleucine
-    lys	Lysine
-    leu	Leucine
-    met	Methionine
-    asn	Asparagine
-    pyl	Pyrrolysine
-    pro	Proline
-    gln	Glutamine
-    arg	Arginine
-    ser	Serine
-    thr	Threonine
-    sec	Selenocysteine
-    val	Valine
-    trp	Tryptophan
-	tyr	Tyrosine
-	asx	Asparagine or Aspartic acid
-	glx	Glutamic acid or Glutamine
-	xle	Leucine or Isoleucine
+    ala Alanine
+    cys Cysteine
+    asp Aspartic acid
+    glu Glutamic acid
+    phe Phenylalanine
+    gly Glycine
+    his Histidine
+    ile Isoleucine
+    lys Lysine
+    leu Leucine
+    met Methionine
+    asn Asparagine
+    pyl Pyrrolysine
+    pro Proline
+    gln Glutamine
+    arg Arginine
+    ser Serine
+    thr Threonine
+    sec Selenocysteine
+    val Valine
+    trp Tryptophan
+        tyr     Tyrosine
+        asx     Asparagine or Aspartic acid
+        glx     Glutamic acid or Glutamine
+        xle     Leucine or Isoleucine
     unk Unknown
 ```
 
@@ -294,10 +294,10 @@ the rule "[No original
 research](https://en.wikipedia.org/wiki/Wikipedia:No_original_research)"):
 
 ```
-    and	Androgynine
-    xor	Xenoricine
-    not	Notanamine
-    tla	Triletramine
+    and Androgynine
+    xor Xenoricine
+    not Notanamine
+    tla Triletramine
 ```
 
 Interestingly, the TLI are the perfect mnemonics for C language source.
@@ -336,23 +336,23 @@ Another identity operation. I've done it for you already. Use this
 
 ``` <!---sh-->
     $ cat .indent.pro
-	-bad   /* blank line after decls */
-	-bap   /* blank line after functions */
-	-br    /* braces on if line */
-	-i8    /* indent */
-	-l999  /* line length */
-	-npcs  /* no space after function call names */
-	-npsl  /* don't break procedure type */
-	-ut    /* use tabs */
-	-ce    /* cuddle else */
-	-nip   /* no parameter indentation */
-	-di1   /* declaration indent */
-	-Tand
-	-Tmet
-	-Tthr
-	-Tpro
-	-Tser
-	-Tala
+        -bad   /* blank line after decls */
+        -bap   /* blank line after functions */
+        -br    /* braces on if line */
+        -i8    /* indent */
+        -l999  /* line length */
+        -npcs  /* no space after function call names */
+        -npsl  /* don't break procedure type */
+        -ut    /* use tabs */
+        -ce    /* cuddle else */
+        -nip   /* no parameter indentation */
+        -di1   /* declaration indent */
+        -Tand
+        -Tmet
+        -Tthr
+        -Tpro
+        -Tser
+        -Tala
 ```
 
 It looks like a perfect program should have:
@@ -390,15 +390,15 @@ Pseudocode, with comments matching those in the C source:
        n = convert(argv[1])
        print n                       /* 2hx */
        while (n != 1) {              /* one */
-	  if (n is odd) {            /* odd */
-	     m = deep copy of n      /* cpy */
-	     n <<= 1                 /* shl */
-	     n += m                  /* add */
-	     increment n             /* inc */
-	  } else {                   /* eve */
-	     n >>= 1                 /* shr */
-	  }
-	  print n                    /* 2hx */
+          if (n is odd) {            /* odd */
+             m = deep copy of n      /* cpy */
+             n <<= 1                 /* shl */
+             n += m                  /* add */
+             increment n             /* inc */
+          } else {                   /* eve */
+             n >>= 1                 /* shr */
+          }
+          print n                    /* 2hx */
       }
     }
 ```
@@ -407,8 +407,8 @@ Pseudocode, with comments matching those in the C source:
 
 ``` <!---c-->
     typedef struct {
-	 size_t places;   /* number of places in base 2 to the power of (8*sizeof(type)) */
-	 type  *number;   /* dynamically allocated memory for number */
+         size_t places;   /* number of places in base 2 to the power of (8*sizeof(type)) */
+         type  *number;   /* dynamically allocated memory for number */
     } bignum
 ```
 

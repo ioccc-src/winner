@@ -37,7 +37,7 @@ see what is going on with the
 
 
 ``` <!---sh-->
-	bin/quick-readme2index.sh -v 3
+        bin/quick-readme2index.sh -v 3
 ```
 
 to set the verbosity level to `3`. The default for verbosity is `0`, no
@@ -51,7 +51,7 @@ For instance to see what version the [chk-entry.sh](index.html#chk-entry) tool
 is, you would do:
 
 ``` <!---sh-->
-	bin/chk-entry.sh -V
+        bin/chk-entry.sh -V
 ```
 
 
@@ -399,8 +399,8 @@ Baggins](https://www.glyphweb.com/arda/b/bilbobaggins.html)' famous words:
 
 
 ```
-	"Never laugh at live dragons, Bilbo you fool!" he said to himself, and it
-	became a favourite saying of his later, and passed into a proverb.
+        "Never laugh at live dragons, Bilbo you fool!" he said to himself, and it
+        became a favourite saying of his later, and passed into a proverb.
 ```
 
 
@@ -480,11 +480,11 @@ this command will only briefly pause while the
 Usage:
 
 ``` <!---sh-->
-	# For all entries:
+        # For all entries:
     bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1
 
-	# For an individual entry:
-	bin/quick-readme2index.sh -v 1 2020/ferguson2
+        # For an individual entry:
+        bin/quick-readme2index.sh -v 1 2020/ferguson2
 ```
 
 **NOTE**: This command assumes that the relative
@@ -1222,22 +1222,22 @@ instance, [2020/.year](%%REPO_URL%%/2020/.year) lists, one directory per line,
 the directories of the winning entries of that year. For instance, for 2020:
 
 ``` <!--sh-->
-	$ cat 2020/.year
-	2020/burton
-	2020/carlini
-	2020/endoh1
-	2020/endoh2
-	2020/endoh3
-	2020/ferguson1
-	2020/ferguson2
-	2020/giles
-	2020/kurdyukov1
-	2020/kurdyukov2
-	2020/kurdyukov3
-	2020/kurdyukov4
-	2020/otterness
-	2020/tsoj
-	2020/yang
+        $ cat 2020/.year
+        2020/burton
+        2020/carlini
+        2020/endoh1
+        2020/endoh2
+        2020/endoh3
+        2020/ferguson1
+        2020/ferguson2
+        2020/giles
+        2020/kurdyukov1
+        2020/kurdyukov2
+        2020/kurdyukov3
+        2020/kurdyukov4
+        2020/otterness
+        2020/tsoj
+        2020/yang
 ```
 
 

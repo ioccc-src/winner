@@ -92,10 +92,10 @@ has the value `a`. Another function called `K` is defined as `\x\y(x)`
 and it evaluates as follows:
 
 ```
-    	K p q
-    ->	\x\y(x) p q
-    ->	\y(p) q
-    ->	p
+        K p q
+    ->  \x\y(x) p q
+    ->  \y(p) q
+    ->  p
 ```
 
 Another function of interest is `S`, defined as `\f\g\x((f x) (g x))`.
@@ -106,15 +106,15 @@ variables or lambda abstractions. In fact, even `I` is unnecessary,
 since it is equivalent to `S K K`:
 
 ```
-    	I z
-    ->	\a(a) z
-    ->	z
+        I z
+    ->  \a(a) z
+    ->  z
 
-    	S K K z
-    ->	\f\g\x((f x) (g x)) K K z
-    ->	(K z) (K z)
-    ->	\x\y(x) z (K z)
-    ->	z
+        S K K z
+    ->  \f\g\x((f x) (g x)) K K z
+    ->  (K z) (K z)
+    ->  \x\y(x) z (K z)
+    ->  z
 ```
 
 The algorithm for translating lambda expressions into combinator
@@ -122,9 +122,9 @@ expressions works as follows. There are three forms of lambda expression
 to consider: variables, applications, and abstractions.
 
 ```
-    trans v 	-> v				(variable)
-    trans a b	-> (trans a) (trans  b )	(application)
-    trans \ab	-> abs a (trans b)		(abstraction)
+    trans v     -> v                            (variable)
+    trans a b   -> (trans a) (trans  b )        (application)
+    trans \ab   -> abs a (trans b)              (abstraction)
 ```
 
 There are a further three cases to consider for the body of lambda
@@ -132,33 +132,33 @@ expressions, where we need to do the magic that transforms away the
 variables.
 
 ```
-    abs a f x	-> S (abs a f) (abs a x)
-    abs a b 	-> K b	       (b != a)
-    abs a a		-> I
+    abs a f x   -> S (abs a f) (abs a x)
+    abs a b     -> K b         (b != a)
+    abs a a             -> I
 ```
 
 E.g. suppose we had combinator expressions for `+` and `3` and we wanted
 to see what the combinator expression for doubling 3 looked like:
 
 ```
-	trans \x(+ x x) 3
-    ->	(trans \x(+ x x)) (trans 3)
-    ->	(abs x (trans + x x)) 3
-    ->	(abs x + x x) 3
-    ->	S (abs x + x) (abs x x) 3
-    ->	S (S (abs x +) (abs x x)) I 3
-    ->	S (S (K +) I) I 3
-    ->	S (S (K +) I) I 3
+        trans \x(+ x x) 3
+    ->  (trans \x(+ x x)) (trans 3)
+    ->  (abs x (trans + x x)) 3
+    ->  (abs x + x x) 3
+    ->  S (abs x + x) (abs x x) 3
+    ->  S (S (abs x +) (abs x x)) I 3
+    ->  S (S (K +) I) I 3
+    ->  S (S (K +) I) I 3
 ```
 
 We can then check that this evaluates to the expected result:
 
 ```
-	S (S (K +) I) I 3
-    ->	S (K +) I 3 (I 3)
-    ->	K + 3 (I 3) (I 3)
-    ->	+ (I 3) (I 3)
-    ->	+ 3 3
+        S (S (K +) I) I 3
+    ->  S (K +) I 3 (I 3)
+    ->  K + 3 (I 3) (I 3)
+    ->  + (I 3) (I 3)
+    ->  + 3 3
 ```
 
 It is possible to perform a slightly more compact translation with a
@@ -166,24 +166,24 @@ couple of simple optimisations. For example, note that `K (a b)` is the
 same as `S (K a) (K b)`, because
 
 ```
-	K (a b) x
-    ->	a b
+        K (a b) x
+    ->  a b
 ```
 
 and
 
 ```
-	S (K a) (K b) x
-    ->	K a x (K b x)
-    ->	a b
+        S (K a) (K b) x
+    ->  K a x (K b x)
+    ->  a b
 ```
 
 Also, `S (K a) I` is the same as just `a` because
 
 ```
-	S (K a) I x
-    ->	K a x (I x)
-    ->	a x
+        S (K a) I x
+    ->  K a x (I x)
+    ->  a x
 ```
 
 The program simply reads a lambda expression from the standard input,

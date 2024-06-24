@@ -421,7 +421,7 @@ Therefore do not assume the system has a
 [windows.h](https://en.wikipedia.org/wiki/Windows.h) include file:
 
 ``` <!---c-->
-    #include <windows.h>	/* we dislike this include */
+    #include <windows.h>        /* we dislike this include */
 ```
 
 Unless you are cramped for space, or unless you are entering the
@@ -467,9 +467,9 @@ Don't forget that the building of your program should be done
 
 ```
     prog: prog.c
-	#echo this next line requires data from standard input
-	cat > prog.c
-	${CC} prog.c -o prog
+        #echo this next line requires data from standard input
+        cat > prog.c
+        ${CC} prog.c -o prog
 ```
 
 However, you can do something cute such as making your program
@@ -479,8 +479,8 @@ For example, one could use the build instructions:
 
 ```
     prog: prog.c
-	${CC} prog.c -DNON_HUMAN_COMPILE -o prog
-	@echo "See remarks section about alternate ways to compile"
+        ${CC} prog.c -DNON_HUMAN_COMPILE -o prog
+        @echo "See remarks section about alternate ways to compile"
 ```
 
 and then include special notes in the program "remarks" for
@@ -642,9 +642,9 @@ Instead of unescaped octets, you should use \octal or \hex escapes:
 
 ``` <!---c-->
 
-	      /* 123456789 123456789 123456789 123456 */
+              /* 123456789 123456789 123456789 123456 */
     char *foo = "This string is 36 octets in length \263";
-	  /* This octet requires 4 octets of source ^^^^ */
+          /* This octet requires 4 octets of source ^^^^ */
     if (strlen(foo) == 36) printf("foo is 36 octets plus a final NUL\n");
     else printf("This code should not print this message\n");
 ```
@@ -707,7 +707,7 @@ to your "how to build" make compile line.  For example:
 
 ```
     prog: prog.c
-	${CC} prog.c -arch i386 -o prog
+        ${CC} prog.c -arch i386 -o prog
 ```
 
 Be even more creative!

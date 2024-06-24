@@ -532,8 +532,8 @@ assignments.  For example, the simple one-layer RNN could be defined like
 
 ``` <!---make-->
     -DNW=' x  = I(n), hp = I(128),                  \
-	   h  = C(hp, T(A(L(128, x), L(128, hp)))), \
-	   y  = L(n, h)'
+           h  = C(hp, T(A(L(128, x), L(128, hp)))), \
+           y  = L(n, h)'
 ```
 
 The network declares `x` as an input vector (there must be a declaration for
@@ -578,14 +578,14 @@ GRU network:
 ``` <!---make-->
     -DHS=128,                                 \
     -DNW=' x  = I(n),                         \
-	   y  = L(n, MD(MD(x)))'              \
+           y  = L(n, MD(MD(x)))'              \
     -DBK=' hp = I(HS),                        \
-	   z  = S(A(L(HS, x), L(HS, hp))),    \
-	   r  = S(A(L(HS, x), L(HS, hp))),    \
-	   c  = T(A(L(HS, x), L(HS, hp))),    \
-	   zc = OG(1, -1, z),                 \
-	   h  = C(hp, A(M(zc, hp), M(z, c))), \
-	   y  = h'
+           z  = S(A(L(HS, x), L(HS, hp))),    \
+           r  = S(A(L(HS, x), L(HS, hp))),    \
+           c  = T(A(L(HS, x), L(HS, hp))),    \
+           zc = OG(1, -1, z),                 \
+           h  = C(hp, A(M(zc, hp), M(z, c))), \
+           y  = h'
 ```
 
 We are using a few new tricks here -- first, we are defining `HS` as the size

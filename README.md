@@ -68,8 +68,8 @@ is lost when a program is written in an unstructured fashion.  IOCCC winning ent
 help do this by what I call *satirical programming*.  To see why, observe one of
 the definitions of *satire*:
 
->	Keen or energetic activity of the mind used for the purpose
->	of exposing and discrediting vice or folly.
+>       Keen or energetic activity of the mind used for the purpose
+>       of exposing and discrediting vice or folly.
 
 The authors of the winning entries placed a great deal of thought into their
 programs.  These programs in turn exposed and discredited what I considered to
