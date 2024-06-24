@@ -39,14 +39,12 @@ What happens if you use something other than valid digits?
 
 The octal expression may contain:
 
-```
-    unary operators:    +, -
-    binary operators    +, -, *, /, %
-    hex numbers:        x or X followed by hex digits
-    decimal numbers:    d or D followed by decimal digits
-    octal numbers:      octal digits
-    grouping:           ()
-```
+- unary operators:     `+`, `-`
+- binary operators:    `+`, `-`, `*`, `/`, `%`
+- hex numbers:         `x` or `X` followed by hex digits
+- decimal numbers:     `d` or `D` followed by decimal digits
+- octal numbers:       octal digits
+- grouping:            `()`
 
 No spaces are allowed in the expression.  To avoid shell expansion,
 one should surround the expression in single quotes.
@@ -105,14 +103,29 @@ Here's the grammar (`'e'` denotes the empty string) :
 
 ```
     <E>  ::=  <T><E'>
-    <E'> ::=  +<T><E'> | -<T><E'> | e
+    <E'> ::=  +<T><E'> |
+              -<T><E'> | e
     <T>  ::=  <F><T'>
-    <T'> ::=  *<F><T'> | /<F><T'> | %<F><T'> | e
-    <F>  ::=  +<F> | -<F> | (<E><C> | d<D> | D<D> |  x<X> | X<X> | <O>
+    <T'> ::=  *<F><T'> |
+              /<F><T'> |
+              %<F><T'> | e
+    <F>  ::=  +<F> |
+              -<F> |
+              (<E><C> |
+              d<D> |
+              D<D> |
+              x<X> |
+              X<X> |
+              <O>
     <C>  ::=  )
-    <D>  ::=  [0-9]<D> | e
-    <X>  ::=  [0-9]<X> | [A-F]<X> | [a-f]<X> | e
-    <O>  ::=  [0-7]<O> | e
+    <D>  ::=  [0-9]<D> |
+              e
+    <X>  ::=  [0-9]<X> |
+              [A-F]<X> |
+              [a-f]<X> |
+              e
+    <O>  ::=  [0-7]<O> |
+              e
 ```
 
 Here's how the grammar nonterminals map to octal state numbers:
