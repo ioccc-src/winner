@@ -277,6 +277,7 @@ help:
 	@echo
 	@echo '# Rules for building a local copy of the IOCCC website:'
 	@echo
+	@echo 'make tab_check		 - check for leading ASCII tabs in leading whitespace in markdown files'
 	@echo 'make genpath		 - form top level .top, YYYY level .year and winner .path files'
 	@echo 'make genfilelist	 - generate YYYY level .filelist'
 	@echo 'make verify_entry_files	 - check to be sure all files in all entries exist'
@@ -312,6 +313,20 @@ help:
 	@echo 'make timestamp		 - generate things with timestamps (status, sitemap etc.)'
 	@echo
 	@echo 'make update		 - update everything in a local copy of the website'
+
+# verify that there are no leading ASCII tabs in leading whitespace in markdown files
+tab_check:
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@LEADING_TAB_LIST="$$(find * \( -name NOTES -o -name tmp \) -prune -o -type f -name '*.md' -print0 | \
+			      xargs -0 grep -E -l '^ *\t')"; \
+	    if [[ -n $$LEADING_TAB_LIST ]]; then \
+	        echo "$@: ERROR: leading ASCII tab found in leading whitespace in markdown file(s)" 1>&2 ; \
+		echo "$0: Warning: list of offending markdown file(s) starts below" 1>&2 ; \
+		echo "$${LEADING_TAB_LIST}" 1>&2 ; \
+		echo "$0: Warning: list of offending markdown file(s) ends above" 1>&2 ; \
+		exit 1; \
+	    fi
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # form the top level .top, YYYY level .year and winner level .path files
 #
@@ -408,25 +423,10 @@ gen_top_html: ${GEN_TOP_HTML}
 	${GEN_TOP_HTML} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-#   Say, can you see
-#   By the dawn's early light
-#   What so proudly we hailed
-#   At the twilight's last gleaming?
+# generate thanks-for-help.html
 #
-#   Whose broad stripes and bright stars
-#   Through the perilous fight
-#   O'er the ramparts we watched
-#   Were so gallantly, yeah, streaming?
+# So Long, and Thanks for All the Fish :-)
 #
-#   And the rockets' red glare
-#   The bombs bursting in air
-#   Gave proof through the night
-#   That our flag was still there
-#
-#   O say, does that star-spangled banner yet wave
-#   O'er the land of the free and the home of the brave
-#
-# Just kidding .. So Long, and Thanks for All the Fish :-)
 thanks: ${GEN_TOP_HTML} thanks-for-help.md
 	@echo "Thanks for all the help ..."
 	@${GEN_TOP_HTML} thanks-for-help
@@ -491,6 +491,7 @@ quick_www:
 	@echo '... hiding verbose output on stdout ...'
 	@${MAKE} clobber >/dev/null
 	@echo '=-=-=-=-= IOCCC complete make clobber =-=-=-=-='
+	@${MAKE} tab_check
 	@echo '=-=-=-=-= IOCCC begin make genpath =-=-=-=-='
 	@echo '... hiding verbose output on stdout ...'
 	@${MAKE} genpath >/dev/null
@@ -517,6 +518,7 @@ www:
 	@echo '... hiding verbose output on stdout ...'
 	@${MAKE} clobber >/dev/null
 	@echo '=-=-=-=-= IOCCC complete make clobber =-=-=-=-='
+	@${MAKE} tab_check
 	@echo '=-=-=-=-= IOCCC begin make genpath =-=-=-=-='
 	@echo '... hiding verbose output on stdout ...'
 	@${MAKE} genpath >/dev/null
