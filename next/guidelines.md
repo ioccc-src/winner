@@ -500,7 +500,7 @@ Did we remember to indicate that programs that blatantly use
 some complex state machine to do something simple are boring?
 We think we did.  :-)
 
-All generalizations are false, including this one. -- Mark Twain
+> All generalizations are false, including this one. -- Mark Twain
 
 Given two versions of the same program, one that is a compact blob
 of code, and the other that is formatted more like a typical C
@@ -979,8 +979,7 @@ you are mentioned you will not get a notification.
 
 The IOCCC no longer uses twitter.  IOCCC entries will be announced
 by a git commit to the [IOCCC entries
-repo](https://github.com/ioccc-src/winner) that, in turn, updates the [official
-IOCCC website](https://www.ioccc.org/index.html).
+repo](https://github.com/ioccc-src/winner) that, in turn, updates the [official IOCCC website](https://www.ioccc.org/index.html).
 
 In addition a note is posted to the [IOCCC Mastodon
 account](https://fosstodon.org/@ioccc).
