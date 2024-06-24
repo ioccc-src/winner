@@ -287,6 +287,7 @@ help:
 	@echo 'make gen_other_html	 - build entry HTML files from markdown other than README.md'
 	@echo 'make gen_year_index	 - generate year level index.html files using from README.md files'
 	@echo 'make gen_top_html	 - generate a number of the top level HTML files from markdown'
+	@echo 'make gen_next		 - generate the HTML files in next/'
 	@echo 'make quick_entry_index	 - build winner index.html files that might be out of date'
 	@echo 'make find_missing_links	 - find markdown links to missing local files'
 	@echo
@@ -436,6 +437,11 @@ bugs: ${GEN_TOP_HTML} bugs.md
 	@echo "Shhh. Be vewy vewy quiet, I'm hunting wabbits .. and bugs."
 	@${GEN_TOP_HTML} bugs
 	@echo "Eh, what's up, doc?"
+
+gen_next: ${GEN_TOP_HTML} next/README.md next/guidelines.md next/rules.md
+	${GEN_TOP_HTML} -v 1 next/README
+	${GEN_TOP_HTML} -v 1 next/guidelines
+	${GEN_TOP_HTML} -v 1 next/rules
 
 # build entry HTML files from markdown other than README.md to index.html
 #
