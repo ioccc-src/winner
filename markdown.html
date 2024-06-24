@@ -415,8 +415,8 @@ for the given page URL.</p>
     # This will work
     &lt;/div&gt;</code></pre>
 <p>While some browsers will still recognize the HTML construct <code>&lt;a name="string"&gt;...&lt;/a&gt;</code>, it is possible they might NOT in the future.</p>
-<h2 id="please-do-not-use-the-strike-or-s-html-element">Please do NOT use the <code>&lt;strike&gt;</code> or <code>&lt;s&gt;</code> HTML element</h2>
-<p>Please NOT use the obsolete <code>&lt;strike&gt;</code> or <code>&lt;s&gt;</code> (<del><em>strikeout</em></del>) HTML elements:</p>
+<h2 id="please-do-not-use-the-strike-nor-the-s-html-element">Please do NOT use the <code>&lt;strike&gt;</code> nor the <code>&lt;s&gt;</code> HTML element</h2>
+<p>Please NOT use the obsolete <code>&lt;strike&gt;</code> nor the obsolete <code>&lt;s&gt;</code> (<del><em>strikeout</em></del>) HTML elements:</p>
 <pre><code>    &lt;strike&gt;...&lt;/strike&gt;                                      &lt;=== no thank you
     &lt;s&gt;...&lt;/s&gt;                                                &lt;=== no thank you</code></pre>
 <p>Use instead:</p>
@@ -430,45 +430,58 @@ for the given page URL.</p>
 <p>Please do <strong>NOT</strong> use the obsolete <code>&lt;tt&gt;</code> (<span style="font-family: monospace;"><em>teletype</em></span>) HTML element:</p>
 <pre><code>    &lt;tt&gt;The obsolete tt element is obsolete&lt;/tt&gt;              &lt;=== no thank you</code></pre>
 <p>Instead use either a monospaced span:</p>
-<pre><code>    &lt;span style=&quot;font-family: monospace;&quot;&gt;Use of monospaced font is one option&lt;/span&gt;</code></pre>
-<p>Or better and easier still, use an inline markdown code block:</p>
-<pre><code>    `inline markdown code block is easier and much better`</code></pre>
+<pre><code>    &lt;span style=&quot;font-family: monospace;&quot;&gt;Use of a monospaced font
+                                          is one option,
+                                          however ... &lt;/span&gt;</code></pre>
+<p>We recommend using the inline markdown code block method instead:</p>
+<pre><code>    Using the `inline markdown code block` is easier and is `preferred`.</code></pre>
 <h2 id="please-do-not-use-unindented-code-blocks">Please do NOT use unindented code blocks</h2>
 <p>Please do <strong>NOT</strong> start code blocks at the left-hand edge.</p>
-<pre><code>```
-This code block is NOT indented                                 &lt;=== no thank you
+<p>For example:</p>
+<pre><code>``` &lt;!---sh--&gt;
+echo &quot;This code block is NOT indented\&quot;                       &lt;=== no thank you
 ```</code></pre>
-<p>We request that you indent the code block by 4 ASCII spaces</p>
-<pre><code>```
-    This code block
-    is indented 4 spaces
+<p>We request that you indent the code block by multiples of 4 ASCII spaces:</p>
+<pre><code>``` &lt;!---sh--&gt;
+    echo &quot;This code block is intended by mutiples of 4 spaces&quot;
+
+    # The top level starts with a 4 ASCII space indent.
+    #
+    # Only indent with multiples of 4 ASCII spaces.
+        # 2nd level indent needs 8 ASCII spaces (no tabs).
+            # 3rd level indent needs 12 ASCII spaces (no tabs).
+                # etc.
 ```</code></pre>
-<p>One exception is where change bars are needed, such as
-those used in <code>next/rules.md</code> and in <code>next/guidelines.md</code>.</p>
-<p>For example, <code>next/guidelines.md</code> uses this markdown code block:</p>
+<p>Moreover:</p>
 <pre><code>```
-    main() {
-|       void please_do_not_submit_this() {
-|           printf(&quot;The machine that goes BING!\n&quot;);
-        }
-|       please_do_not_submit_this();
-    }
+    The same thing applies to any markdown block surrounded by ``` lines.
 ```</code></pre>
-<h2 id="please-do-not-use-ascii-tabs-to-indent-text">Please do NOT use ASCII tabs to indent text</h2>
-<p>When indenting a code block in markdown, indent 4 ASCII spaces per level.
-If you need to indent 2 or more levels, use multiples of 4 ASCII spaces.
-Please do <strong>NOT</strong> indent with ASCII tabs!</p>
+<p>Please do <strong>NOT</strong> indent using ASCII tab characters in markdown files.</p>
+<h2 id="please-do-not-use-ascii-tabs-in-markdown-files">Please do NOT use ASCII tabs in markdown files</h2>
+<p>While we have nothing against the ASCII tab character in general,
+we have discovered that ASCII tab characters create problems when
+used as part of the leading whitespace within a markdown file.</p>
+<p>If you need to indent 2 or more levels, use multiples of 4 ASCII
+spaces. Please do <strong>NOT</strong> indent with ASCII tabs, <strong>NOR</strong> use any
+ASCII tab characters anywhere inside a markdown file:</p>
 <p>For example:</p>
 <pre><code>```
-        Please do **NOT** indent with ASCII tabs.               &lt;=== no thank you
+    Please do **NOT**   use ASCII tabs  in markdown files.      &lt;=== no thank you
+        Please do **NOT** indent markdown with ASCII tabs.      &lt;=== no thank you
 
-    The top level starts with a 4 ASCII space indent.
-
-    Only indent with multiples of 4 ASCII spaces.
-        2nd level indent needs 8 ASCII spaces (no tabs).
-            3rd level indent needs 12 ASCII spaces (no tabs).
-                etc.
+        We      don&#39;t   mind    tabs    in      general,        &lt;=== no thank you
+     We just ask that you NOT use them in markdown files.
 ```</code></pre>
+<p>And to clarify, we are only talking about markdown files,
+not C code nor any other non-markdown content:</p>
+<pre><code>        printf(&quot;Is is fine      to      use tabs in Obfucated C code.\n&quot;);
+                /*      if      you     wish    */
+
+    // We ask that you to NOT use ASCII tab characters in your remarks.md writeup,
+    // nor in any other markdown files within your entry, please.</code></pre>
+<p><strong>NOTE</strong>: Again, you are <strong>perfectly welcome</strong> to use ASCII tab characters in
+your C code and other non-markdown files. We simply ask that you <strong>NOT</strong> use any
+ASCII tab characters in markdown files.</p>
 <h2 id="please-do-not-specify-a-language-for-a-code-block">Please do NOT specify a language for a code block</h2>
 <p>We request that (fenced) markdown code blocks <strong>NOT</strong> specify a language.</p>
 <p>For example:</p>

@@ -277,7 +277,7 @@ help:
 	@echo
 	@echo '# Rules for building a local copy of the IOCCC website:'
 	@echo
-	@echo 'make tab_check		 - check for leading ASCII tabs in leading whitespace in markdown files'
+	@echo 'make tab_check		 - check for ASCII tabs in markdown files'
 	@echo 'make genpath		 - form top level .top, YYYY level .year and winner .path files'
 	@echo 'make genfilelist	 - generate YYYY level .filelist'
 	@echo 'make verify_entry_files	 - check to be sure all files in all entries exist'
@@ -317,12 +317,13 @@ help:
 # verify that there are no leading ASCII tabs in leading whitespace in markdown files
 tab_check:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@LEADING_TAB_LIST="$$(find * \( -name NOTES -o -name tmp \) -prune -o -type f -name '*.md' -print0 | \
-			      xargs -0 grep -E -l '^ *\t')"; \
-	    if [[ -n $$LEADING_TAB_LIST ]]; then \
-	        echo "$@: ERROR: leading ASCII tab found in leading whitespace in markdown file(s)" 1>&2 ; \
+	@TAB_LIST="$$(find * \( -name NOTES -o -name tmp -o -name markdown.md \) -prune -o \
+				     -type f -name '*.md' -print0 | \
+			      xargs -0 grep -E -l '\t')"; \
+	    if [[ -n $$TAB_LIST ]]; then \
+	        echo "$@: ERROR: ASCII tab found in markdown file(s)" 1>&2 ; \
 		echo "$0: Warning: list of offending markdown file(s) starts below" 1>&2 ; \
-		echo "$${LEADING_TAB_LIST}" 1>&2 ; \
+		echo "$${TAB_LIST}" 1>&2 ; \
 		echo "$0: Warning: list of offending markdown file(s) ends above" 1>&2 ; \
 		exit 1; \
 	    fi

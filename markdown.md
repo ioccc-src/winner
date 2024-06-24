@@ -61,9 +61,9 @@ While some browsers will still recognize the HTML construct `<a
 name="string">...</a>`, it is possible they might NOT in the future.
 
 
-## Please do NOT use the `<strike>` or `<s>` HTML element
+## Please do NOT use the `<strike>` nor the `<s>` HTML element
 
-Please NOT use the obsolete `<strike>` or `<s>` (<del>_strikeout_</del>) HTML elements:
+Please NOT use the obsolete `<strike>` nor the obsolete `<s>` (<del>_strikeout_</del>) HTML elements:
 
 ```
     <strike>...</strike>                                      <=== no thank you
@@ -103,13 +103,15 @@ Please do **NOT** use the obsolete `<tt>` (<span style="font-family: monospace;"
 Instead use either a monospaced span:
 
 ```
-    <span style="font-family: monospace;">Use of monospaced font is one option</span>
+    <span style="font-family: monospace;">Use of a monospaced font
+                                          is one option,
+                                          however ... </span>
 ```
 
-Or better and easier still, use an inline markdown code block:
+We recommend using the inline markdown code block method instead:
 
 ```
-    `inline markdown code block is easier and much better`
+    Using the `inline markdown code block` is easier and is `preferred`.
 ```
 
 
@@ -117,60 +119,76 @@ Or better and easier still, use an inline markdown code block:
 
 Please do **NOT** start code blocks at the left-hand edge.
 
-````
-```
-This code block is NOT indented                                 <=== no thank you
-```
-````
-
-
-We request that you indent the code block by 4 ASCII spaces
+For example:
 
 ````
-```
-    This code block
-    is indented 4 spaces
+``` <%%NO_COMMENT%%!---sh-->
+echo "This code block is NOT indented\"                       <=== no thank you
 ```
 ````
 
-
-One exception is where change bars are needed, such as
-those used in `next/rules.md` and in `next/guidelines.md`.
-
-For example, `next/guidelines.md` uses this markdown code block:
+We request that you indent the code block by multiples of 4 ASCII spaces:
 
 ````
-```
-    main() {
-|       void please_do_not_submit_this() {
-|           printf("The machine that goes BING!\n");
-        }
-|       please_do_not_submit_this();
-    }
+``` <%%NO_COMMENT%%!---sh-->
+    echo "This code block is intended by mutiples of 4 spaces"
+
+    # The top level starts with a 4 ASCII space indent.
+    #
+    # Only indent with multiples of 4 ASCII spaces.
+        # 2nd level indent needs 8 ASCII spaces (no tabs).
+            # 3rd level indent needs 12 ASCII spaces (no tabs).
+                # etc.
 ```
 ````
 
+Moreover:
 
-## Please do NOT use ASCII tabs to indent text
+````
+```
+    The same thing applies to any markdown block surrounded by ``` lines.
+```
+````
 
-When indenting a code block in markdown, indent 4 ASCII spaces per level.
-If you need to indent 2 or more levels, use multiples of 4 ASCII spaces.
-Please do **NOT** indent with ASCII tabs!
+Please do **NOT** indent using ASCII tab characters in markdown files.
+
+
+## Please do NOT use ASCII tabs in markdown files
+
+While we have nothing against the ASCII tab character in general,
+we have discovered that ASCII tab characters create problems when
+used as part of the leading whitespace within a markdown file.
+
+If you need to indent 2 or more levels, use multiples of 4 ASCII
+spaces.  Please do **NOT** indent with ASCII tabs, **NOR** use any
+ASCII tab characters anywhere inside a markdown file:
 
 For example:
 
 ````
 ```
-        Please do **NOT** indent with ASCII tabs.               <=== no thank you
+    Please do **NOT**	use ASCII tabs	in markdown files.      <=== no thank you
+	Please do **NOT** indent markdown with ASCII tabs.      <=== no thank you
 
-    The top level starts with a 4 ASCII space indent.
-
-    Only indent with multiples of 4 ASCII spaces.
-        2nd level indent needs 8 ASCII spaces (no tabs).
-            3rd level indent needs 12 ASCII spaces (no tabs).
-                etc.
+	We	don't	mind	tabs	in	general,        <=== no thank you
+     We just ask that you NOT use them in markdown files.
 ```
 ````
+
+And to clarify, we are only talking about markdown files,
+not C code nor any other non-markdown content:
+
+````
+	printf("Is is fine	to	use tabs in Obfucated C code.\n");
+		/*	if	you	wish	*/
+
+    // We ask that you to NOT use ASCII tab characters in your remarks.md writeup,
+    // nor in any other markdown files within your entry, please.
+````
+
+**NOTE**: Again, you are **perfectly welcome** to use ASCII tab characters in
+your C code and other non-markdown files.  We simply ask that you **NOT** use any
+ASCII tab characters in markdown files.
 
 
 ## Please do NOT specify a language for a code block

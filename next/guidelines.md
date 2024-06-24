@@ -752,6 +752,18 @@ and state:
 given enough time and memory.  If the value is not a proper integer, the program
 will insult a fish named Eric, even if such a fish does not exist.
 
+**`|`**   We **DISLIKE** the use of use ASCII tab characters in markdown files, such as in the required `remarks.md` file.
+
+**`|`**   We don't mind the use ASCII tab characters in your C code.  Feel free to use ASCII tab characters if that suits your obfuscation needs.  If is perfectly **OK** to use tab characters elsewhere in your submission, just not in markdown files as this tends complicate and annoys us when be comes to rendering your markdown content.
+
+**`|`**   If you do use ASCII tab characters in your non-markdown files, be aware that some people may use tab stop that is different than the common 8 character tab stop.
+
+**`|`**   We enjoy a reading `remarks.md` files, especially if they contain useful, informative, and even humorous content about your entry.
+
+**`|`**   We **RECOMMEND** you put a reasonable amount effort into the content of the `remarks.md` file: it is a required for for a reason.  :-)
+
+
+
 
 # ABUSING THE RULES:
 
