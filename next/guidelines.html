@@ -514,13 +514,11 @@ code against the 2nd limit of <a href="rules.html#rule2">Rule 2</a>, use the -i 
 For example:</p>
 <pre><code>    ./iocccsize -i &lt; prog.c</code></pre>
 <p>The IOCCC size tool, when using the -i option, may be summarized as:</p>
-<blockquote>
-<p>The size tool counts most C reserved words (keyword, secondary,<br>
-and selected preprocessor keywords) as 1. The size tool counts all<br>
-other octets as 1 excluding ASCII whitespace, and excluding any<br>
-‘<code>;</code>’, ‘<code>{</code>’ or ‘<code>}</code>’ followed by ASCII whitespace, and excluding any<br>
-‘<code>;</code>’, ‘<code>{</code>’ or ‘<code>}</code>’ octet immediately before the end of file.</p>
-</blockquote>
+<pre><code>    The size tool counts most C reserved words (keyword, secondary,
+    and selected preprocessor keywords) as 1.  The size tool counts all
+    other octets as 1 excluding ASCII whitespace, and excluding any
+    &#39;`;`&#39;, &#39;`{`&#39; or &#39;`}`&#39; followed by ASCII whitespace, and excluding any
+    &#39;`;`&#39;, &#39;`{`&#39; or &#39;`}`&#39; octet immediately before the end of file.</code></pre>
 <p>ASCII whitespace includes ASCII tab, ASCII space, ASCII newline,
 ASCII formfeed, and ASCII carriage return.</p>
 <p><strong><code>|</code></strong> When ‘<code>;</code>’, ‘<code>{</code>’ or ‘<code>}</code>’ are within a C string, they may still not be
@@ -890,49 +888,36 @@ following compiler flag:</p>
 <p>If there are limitations in your entry, you are highly encouraged
 to note such limitations in your remarks file. For example if your
 entry factors values up to a certain size, you might want to state:</p>
-<blockquote>
-<p>This entry factors values up 2305567963945518424753102147331756070.
-Attempting to factor larger values will produce unpredictable results.</p>
-</blockquote>
+<pre><code>This entry factors values up 2305567963945518424753102147331756070.
+Attempting to factor larger values will produce unpredictable results.</code></pre>
 <p>The judges might try to factor the value -5, so you want to might state:</p>
-<blockquote>
-<p>This entry factors positive values up 2305567963945518424753102147331756070.
-Attempting to factor large values will produce unpredictable results.</p>
-</blockquote>
+<pre><code>This entry factors positive values up 2305567963945518424753102147331756070.
+Attempting to factor large values will produce unpredictable results.</code></pre>
 <p>However the judges might try to also factor 0, so you want to might state:</p>
-<blockquote>
-<p>This entry factors values between 1 and 2305567963945518424753102147331756070.
+<pre><code>This entry factors values between 1 and 2305567963945518424753102147331756070.
 Attempting to factor values outside that range will produce unpredictable
-results.</p>
-</blockquote>
+results.</code></pre>
 <p>Moreover the try to also factor 3.5 or 0x7, or Fred, so you want to might state:</p>
-<blockquote>
-<p>This entry factors integers between 1 and
-2305567963945518424753102147331756070. Attempting to factor anything else will
-produce unpredictable results.</p>
-</blockquote>
+<pre><code>This entry factors integers between 1 and 2305567963945518424753102147331756070.
+Attempting to factor anything else will produce unpredictable results.</code></pre>
 <p>You entry might be better off catching the attempt to factor bogus values
 and doing something interesting. So you might want to code accordingly and state:</p>
-<blockquote>
-<p>This entry factors integers between 1 and
-2305567963945518424753102147331756070. Attempting to factor anything else will
-cause the program to insult your pet fish Eric.</p>
-</blockquote>
+<pre><code>This entry factors integers between 1 and 2305567963945518424753102147331756070.
+Attempting to factor anything else will cause the program to insult your pet fish Eric.</code></pre>
 <p>The judges might not have a pet fish named Eric, so might want to state:</p>
-<blockquote>
-<p>This entry factors integers between 1 and
-2305567963945518424753102147331756070. Attempting to factor anything else will
-cause the program to insult your pet fish Eric, or in the case that you lack
-such a pet, will insult the pet that you do not have.</p>
-</blockquote>
-<p>When all other things are equal, an entry with fewer limitation will be judged
-better than an entry with lots of limitations. So you might want to code accordingly
-and state:</p>
-<blockquote>
+<p>``
+This entry factors integers between 1 and 2305567963945518424753102147331756070.
+Attempting to factor anything else will cause the program to insult your pet fish Eric,
+or in the case that you lack such a pet, will insult the pet that you do not have.</p>
+<pre><code>
+When all other things are equal, an entry with fewer limitation will be judged
+better than an entry with lots of limitations.  So you might want to code accordingly
+and state:
+</code></pre>
 <p>This entry attempts to a factor value of any size provided that the program is
 given enough time and memory. If the value is not a proper integer, the program
-will insult a fish named Eric, even if such a fish does not exist.</p>
-</blockquote>
+will insult a fish named Eric, even if such a fish does not exist.
+```</p>
 <p><strong><code>|</code></strong> We <strong>DISLIKE</strong> the use of use ASCII tab characters in markdown files, such as in the required <code>remarks.md</code> file.</p>
 <p><strong><code>|</code></strong> We don’t mind the use ASCII tab characters in your C code. Feel free to use ASCII tab characters if that suits your obfuscation needs. If is perfectly <strong>OK</strong> to use tab characters elsewhere in your submission, just not in markdown files as this tends complicate and annoys us when be comes to rendering your markdown content.</p>
 <p><strong><code>|</code></strong> If you do use ASCII tab characters in your non-markdown files, be aware that some people may use tab stop that is different than the common 8 character tab stop.</p>
