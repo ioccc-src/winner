@@ -190,13 +190,13 @@ The IOCCC size tool, when using the -i option, may be summarized as:
 >   The size tool counts most C reserved words (keyword, secondary,<br>
 >   and selected preprocessor keywords) as 1.  The size tool counts all<br>
 >   other octets as 1 excluding ASCII whitespace, and excluding any<br>
->   ';', '{' or '}' followed by ASCII whitespace, and excluding any<br>
->   ';', '{' or '}' octet immediately before the end of file.
+>   '`;`', '`{`' or '`}`' followed by ASCII whitespace, and excluding any<br>
+>   '`;`', '`{`' or '`}`' octet immediately before the end of file.
 
 ASCII whitespace includes ASCII tab, ASCII space, ASCII newline,
 ASCII formfeed, and ASCII carriage return.
 
-**`|`**   When ';', '{' or '}' are within a C string, they may still not be
+**`|`**   When '`;`', '`{`' or '`}`' are within a C string, they may still not be
 **`|`**   counted by the IOCCC size tool.  This is a feature, not a bug!
 
 In cases where the above summary and the algorithm implemented by

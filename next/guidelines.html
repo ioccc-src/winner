@@ -518,12 +518,12 @@ For example:</p>
 <p>The size tool counts most C reserved words (keyword, secondary,<br>
 and selected preprocessor keywords) as 1. The size tool counts all<br>
 other octets as 1 excluding ASCII whitespace, and excluding any<br>
-‘;’, ‘{’ or ‘}’ followed by ASCII whitespace, and excluding any<br>
-‘;’, ‘{’ or ‘}’ octet immediately before the end of file.</p>
+‘<code>;</code>’, ‘<code>{</code>’ or ‘<code>}</code>’ followed by ASCII whitespace, and excluding any<br>
+‘<code>;</code>’, ‘<code>{</code>’ or ‘<code>}</code>’ octet immediately before the end of file.</p>
 </blockquote>
 <p>ASCII whitespace includes ASCII tab, ASCII space, ASCII newline,
 ASCII formfeed, and ASCII carriage return.</p>
-<p><strong><code>|</code></strong> When ‘;’, ‘{’ or ‘}’ are within a C string, they may still not be
+<p><strong><code>|</code></strong> When ‘<code>;</code>’, ‘<code>{</code>’ or ‘<code>}</code>’ are within a C string, they may still not be
 <strong><code>|</code></strong> counted by the IOCCC size tool. This is a feature, not a bug!</p>
 <p>In cases where the above summary and the algorithm implemented by
 the IOCCC size tool source code conflict, the algorithm implemented
