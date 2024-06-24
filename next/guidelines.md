@@ -713,46 +713,45 @@ to note such limitations in your remarks file.  For example if your
 entry factors values up to a certain size, you might want to state:
 
 ```
-This entry factors values up 2305567963945518424753102147331756070.
-Attempting to factor larger values will produce unpredictable results.
+    This entry factors values up 2305567963945518424753102147331756070.
+    Attempting to factor larger values will produce unpredictable results.
 ```
 
 The judges might try to factor the value -5, so you want to might state:
 
 ```
-This entry factors positive values up 2305567963945518424753102147331756070.
-Attempting to factor large values will produce unpredictable results.
+    This entry factors positive values up 2305567963945518424753102147331756070.
+    Attempting to factor large values will produce unpredictable results.
 ```
 
 However the judges might try to also factor 0, so you want to might state:
 
 ```
-This entry factors values between 1 and 2305567963945518424753102147331756070.
-Attempting to factor values outside that range will produce unpredictable
-results.
-```
+    This entry factors values between 1 and 2305567963945518424753102147331756070.
+    Attempting to factor values outside that range will produce unpredictable results.
+    ```
 
 Moreover the try to also factor 3.5 or 0x7, or Fred, so you want to might state:
 
 ```
-This entry factors integers between 1 and 2305567963945518424753102147331756070.
-Attempting to factor anything else will produce unpredictable results.
-```
+    This entry factors integers between 1 and 2305567963945518424753102147331756070.
+    Attempting to factor anything else will produce unpredictable results.
+    ```
 
 You entry might be better off catching the attempt to factor bogus values
 and doing something interesting.  So you might want to code accordingly and state:
 
 ```
-This entry factors integers between 1 and 2305567963945518424753102147331756070.
-Attempting to factor anything else will cause the program to insult your pet fish Eric.
-```
+    This entry factors integers between 1 and 2305567963945518424753102147331756070.
+    Attempting to factor anything else will cause the program to insult your pet fish Eric.
+    ```
 
 The judges might not have a pet fish named Eric, so might want to state:
 
-``
-This entry factors integers between 1 and 2305567963945518424753102147331756070.
-Attempting to factor anything else will cause the program to insult your pet fish Eric,
-or in the case that you lack such a pet, will insult the pet that you do not have.
+```
+    This entry factors integers between 1 and 2305567963945518424753102147331756070.
+    Attempting to factor anything else will cause the program to insult your pet fish Eric,
+    or in the case that you lack such a pet, will insult the pet that you do not have.
 ```
 
 When all other things are equal, an entry with fewer limitation will be judged
@@ -760,9 +759,9 @@ better than an entry with lots of limitations.  So you might want to code accord
 and state:
 
 ```
-This entry attempts to a factor value of any size provided that the program is
-given enough time and memory.  If the value is not a proper integer, the program
-will insult a fish named Eric, even if such a fish does not exist.
+    This entry attempts to a factor value of any size provided that the program is
+    given enough time and memory.  If the value is not a proper integer, the program
+    will insult a fish named Eric, even if such a fish does not exist.
 ```
 
 **`|`**   We **DISLIKE** the use of use ASCII tab characters in markdown files, such as in the required `remarks.md` file.

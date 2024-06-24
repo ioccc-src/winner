@@ -888,36 +888,31 @@ following compiler flag:</p>
 <p>If there are limitations in your entry, you are highly encouraged
 to note such limitations in your remarks file. For example if your
 entry factors values up to a certain size, you might want to state:</p>
-<pre><code>This entry factors values up 2305567963945518424753102147331756070.
-Attempting to factor larger values will produce unpredictable results.</code></pre>
+<pre><code>    This entry factors values up 2305567963945518424753102147331756070.
+    Attempting to factor larger values will produce unpredictable results.</code></pre>
 <p>The judges might try to factor the value -5, so you want to might state:</p>
-<pre><code>This entry factors positive values up 2305567963945518424753102147331756070.
-Attempting to factor large values will produce unpredictable results.</code></pre>
+<pre><code>    This entry factors positive values up 2305567963945518424753102147331756070.
+    Attempting to factor large values will produce unpredictable results.</code></pre>
 <p>However the judges might try to also factor 0, so you want to might state:</p>
-<pre><code>This entry factors values between 1 and 2305567963945518424753102147331756070.
-Attempting to factor values outside that range will produce unpredictable
-results.</code></pre>
+<pre><code>    This entry factors values between 1 and 2305567963945518424753102147331756070.
+    Attempting to factor values outside that range will produce unpredictable results.</code></pre>
 <p>Moreover the try to also factor 3.5 or 0x7, or Fred, so you want to might state:</p>
-<pre><code>This entry factors integers between 1 and 2305567963945518424753102147331756070.
-Attempting to factor anything else will produce unpredictable results.</code></pre>
+<pre><code>    This entry factors integers between 1 and 2305567963945518424753102147331756070.
+    Attempting to factor anything else will produce unpredictable results.</code></pre>
 <p>You entry might be better off catching the attempt to factor bogus values
 and doing something interesting. So you might want to code accordingly and state:</p>
-<pre><code>This entry factors integers between 1 and 2305567963945518424753102147331756070.
-Attempting to factor anything else will cause the program to insult your pet fish Eric.</code></pre>
+<pre><code>    This entry factors integers between 1 and 2305567963945518424753102147331756070.
+    Attempting to factor anything else will cause the program to insult your pet fish Eric.</code></pre>
 <p>The judges might not have a pet fish named Eric, so might want to state:</p>
-<p>``
-This entry factors integers between 1 and 2305567963945518424753102147331756070.
-Attempting to factor anything else will cause the program to insult your pet fish Eric,
-or in the case that you lack such a pet, will insult the pet that you do not have.</p>
-<pre><code>
-When all other things are equal, an entry with fewer limitation will be judged
-better than an entry with lots of limitations.  So you might want to code accordingly
-and state:
-</code></pre>
-<p>This entry attempts to a factor value of any size provided that the program is
-given enough time and memory. If the value is not a proper integer, the program
-will insult a fish named Eric, even if such a fish does not exist.
-```</p>
+<pre><code>    This entry factors integers between 1 and 2305567963945518424753102147331756070.
+    Attempting to factor anything else will cause the program to insult your pet fish Eric,
+    or in the case that you lack such a pet, will insult the pet that you do not have.</code></pre>
+<p>When all other things are equal, an entry with fewer limitation will be judged
+better than an entry with lots of limitations. So you might want to code accordingly
+and state:</p>
+<pre><code>    This entry attempts to a factor value of any size provided that the program is
+    given enough time and memory.  If the value is not a proper integer, the program
+    will insult a fish named Eric, even if such a fish does not exist.</code></pre>
 <p><strong><code>|</code></strong> We <strong>DISLIKE</strong> the use of use ASCII tab characters in markdown files, such as in the required <code>remarks.md</code> file.</p>
 <p><strong><code>|</code></strong> We don’t mind the use ASCII tab characters in your C code. Feel free to use ASCII tab characters if that suits your obfuscation needs. If is perfectly <strong>OK</strong> to use tab characters elsewhere in your submission, just not in markdown files as this tends complicate and annoys us when be comes to rendering your markdown content.</p>
 <p><strong><code>|</code></strong> If you do use ASCII tab characters in your non-markdown files, be aware that some people may use tab stop that is different than the common 8 character tab stop.</p>
