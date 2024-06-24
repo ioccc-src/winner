@@ -169,14 +169,18 @@ compatible compiler (`gcc -ansi -pedantic` will do fine).
 This entry has been tested on wide variety of machines including:
 
 ```
-    Machine                     OS
-    -------                     --
+    Machine             OS
+    -------             --
     Decstation 5000/240 Ultrix 4.3A
-    DECAlpha 3000/300   OSF/1 v1.3 and v2.0
+    DECAlpha 3000/300   OSF/1 v1.3
+                        and v2.0
     IBM RS6000          AIX v3
     SPARCStation IPX    SunOS 4.1.3
-    i486                        Linux v1.1.8  (binarysize 3576 bytes
-                                          using `gcc -O6 -s -N` ;)
+    i486                Linux v1.1.8
+                        (binarysize
+                        3576 bytes
+                        using
+                        `gcc -O6 -s -N` ;)
     HP 9000/730         HP-UX
 ```
 
@@ -228,7 +232,7 @@ why ;)
 
 ### Bugs
 
-- No error checking. If DISPLAY is not set program dumps core.  This may also
+- No error checking. If `DISPLAY` is not set program dumps core.  This may also
 happen if a request of some of the resources fails e.g. getting colors.
 - No expose event handling.
 - It may be possible that the program starts drawing before window is mapped as

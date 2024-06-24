@@ -466,10 +466,12 @@ to the string we just put there.</li>
 (<code>"\0337\033[%d;65;H%s\0338"</code>) If you can read VTxxx (and I read books printed
 as ANSI/VTxxx codes for fun :-) ) you know this is the sequence for:</li>
 </ol>
-<pre><code>    remember where we are,
-    go somewhere else,
-    print the message,
-    and return to where we started.</code></pre>
+<blockquote>
+<p>remember where we are,<br>
+go somewhere else,<br>
+print the message,<br>
+and return to where we started.</p>
+</blockquote>
 <p>Line 22 says if this message is not for us (the number is bigger than ours)
 send it to <code>h</code> (up).</p>
 <p>Lines 24 to 27 are the master code. Here we get the time and convert it

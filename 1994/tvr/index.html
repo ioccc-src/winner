@@ -499,14 +499,18 @@ display).</p>
 highest level of optimization possible. You will also need an ANSI
 compatible compiler (<code>gcc -ansi -pedantic</code> will do fine).</p>
 <p>This entry has been tested on wide variety of machines including:</p>
-<pre><code>    Machine                     OS
-    -------                     --
+<pre><code>    Machine             OS
+    -------             --
     Decstation 5000/240 Ultrix 4.3A
-    DECAlpha 3000/300   OSF/1 v1.3 and v2.0
+    DECAlpha 3000/300   OSF/1 v1.3
+                        and v2.0
     IBM RS6000          AIX v3
     SPARCStation IPX    SunOS 4.1.3
-    i486                        Linux v1.1.8  (binarysize 3576 bytes
-                                          using `gcc -O6 -s -N` ;)
+    i486                Linux v1.1.8
+                        (binarysize
+                        3576 bytes
+                        using
+                        `gcc -O6 -s -N` ;)
     HP 9000/730         HP-UX</code></pre>
 <p>Also, many of the X server and X library versions have been tested and the
 program should be highly portable. The program may slow down considerably on
@@ -539,7 +543,7 @@ the formula is different (look at the source ;) )</p>
 why ;)</p>
 <h3 id="bugs">Bugs</h3>
 <ul>
-<li>No error checking. If DISPLAY is not set program dumps core. This may also
+<li>No error checking. If <code>DISPLAY</code> is not set program dumps core. This may also
 happen if a request of some of the resources fails e.g. getting colors.</li>
 <li>No expose event handling.</li>
 <li>It may be possible that the program starts drawing before window is mapped as

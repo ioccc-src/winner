@@ -24,9 +24,9 @@ unable to find an ANSI C compiler that flagged such expressions as
 errors.
 
 Rule abuse was encouraged this year - two of this year's winning entries found
-new and interesting abuses of the rules. Next year's rules will change
-due to these [smr](smr/index.html) and [dodsond2](dodsond2/index.html) entries'
-forms of abuse.
+new and interesting abuses of the [rules](rules.txt). [Next year's
+rules](../1995/rules.txt) will change due to these ([smr](smr/index.html) and
+[dodsond2](dodsond2/index.html)) entries' forms of abuse.
 
 
 ## Want to be an IOCCC Judge?
@@ -130,15 +130,15 @@ See also [the IOCCC FAQ](../faq.html) for additional information on the IOCCC.
 We would like to thank Barbara Frezza for her role as official chef
 of the contest.  Landon Curt Noll and Larry Bassel appreciated the opportunity
 to serve as official taste testers.  And as usual, the food was excellent.
-The official menu of the 1994 Obfuscated C Contest dinner:
+The official menu of the [1994 Obfuscated C Contest](index.html) dinner:
 
-Antipasto: meats, cheeses, olives, peppers, pickles, artichokes
-Soup: Cream of tomato
-Salad: spring mix
-Pasta: Linguine with wild mushrooms and Reggiano Parmesan
-Seafood: Salmon in cream sauce or lobster claws
-Vegetable: Zucchini
-Dessert: Homemade chocolate/pecan brownies, fruit
+**Antipasto**: meats, cheeses, olives, peppers, pickles, artichokes<br>
+**Soup**: Cream of tomato<br>
+**Salad**: spring mix<br>
+**Pasta**: Linguine with wild mushrooms and Reggiano Parmesan<br>
+**Seafood**: Salmon in cream sauce or lobster claws<br>
+**Vegetable**: Zucchini<br>
+**Dessert**: Homemade chocolate/pecan brownies, fruit<br>
 
 
 <!--

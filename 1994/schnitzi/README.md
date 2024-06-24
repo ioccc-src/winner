@@ -44,7 +44,7 @@ compile. Other functionality works fine.
 The second version, `schnitzi.alt2.c`, has an increased buffer size but when fed
 its own source code it will generate code that can compile but with the original
 buffer size. This is due to a comment which is explained in more detail in
-[1994/schnitzi bugs](../../bugs.html#1994_schnitzi).
+[1994/schnitzi in bugs.html](../../bugs.html#1994_schnitzi).
 
 
 ### Alternate build:
