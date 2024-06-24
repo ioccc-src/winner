@@ -416,13 +416,6 @@ pre, code {
     color: Indigo;
 }
 
-blockquote {
-    margin: 1em 0 1em 1.7em;
-    padding-left: 1em;
-    border-left: 4px solid darkgrey;
-    font-style: italic;
-}
-
 a {
     outline-color: transparent;
     text-decoration: none;
@@ -729,10 +722,16 @@ transition: all .3s ease;
     color: black;
 }
 
+blockquote {
+    margin: 1em 0 1em 1.7em;
+    padding-left: 1em;
+    border-left: 4px solid darkgrey;
+    font-style: italic;
+}
+
 /* This rule makes sure that text in <blockquote><p>..</p></blockquote> is
- * coloured right. Note that this MUST BE HERE and not earlier where the
- * 'blockquote' rule is as otherwise the above '.content p' rule would
- * override it.
+ * coloured right. Note that this MUST BE HERE because otherwise the rule
+ * '.content p' would override it.
  *
  * The following rationale with the blockquote rule above (in particular
  * with italics) and the dark green selection, so that this is understood
