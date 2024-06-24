@@ -754,14 +754,14 @@ The judges might not have a pet fish named Eric, so might want to state:
     or in the case that you lack such a pet, will insult the pet that you do not have.
 ```
 
-When all other things are equal, an entry with fewer limitation will be judged
+When all other things are equal, an entry with fewer limitations will be judged
 better than an entry with lots of limitations.  So you might want to code accordingly
 and state:
 
 ```
     This entry attempts to a factor value of any size provided that the program is
     given enough time and memory.  If the value is not a proper integer, the program
-    will insult a fish named Eric, even if such a fish does not exist.
+    might insult a fish named Eric.
 ```
 
 **`|`**   We **DISLIKE** the use of use ASCII tab characters in markdown files, such as in the required `remarks.md` file.
