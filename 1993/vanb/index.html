@@ -416,12 +416,14 @@ hexadecimal and decimal numbers.</p>
 <p>What happens if you use something other than valid digits?</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The octal expression may contain:</p>
-<pre><code>    unary operators:    +, -
-    binary operators    +, -, *, /, %
-    hex numbers:        x or X followed by hex digits
-    decimal numbers:    d or D followed by decimal digits
-    octal numbers:      octal digits
-    grouping:           ()</code></pre>
+<ul>
+<li>unary operators: <code>+</code>, <code>-</code></li>
+<li>binary operators: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code></li>
+<li>hex numbers: <code>x</code> or <code>X</code> followed by hex digits</li>
+<li>decimal numbers: <code>d</code> or <code>D</code> followed by decimal digits</li>
+<li>octal numbers: octal digits</li>
+<li>grouping: <code>()</code></li>
+</ul>
 <p>No spaces are allowed in the expression. To avoid shell expansion,
 one should surround the expression in single quotes.</p>
 <p>It is a good thing that this program consists of only one
@@ -457,14 +459,29 @@ what grammar non-terminal to parse. <code>**O7</code> is the next character.
 involving <code>**O7</code> and octal constants are looking for certain characters.</p>
 <p>Here’s the grammar (<code>'e'</code> denotes the empty string) :</p>
 <pre><code>    &lt;E&gt;  ::=  &lt;T&gt;&lt;E&#39;&gt;
-    &lt;E&#39;&gt; ::=  +&lt;T&gt;&lt;E&#39;&gt; | -&lt;T&gt;&lt;E&#39;&gt; | e
+    &lt;E&#39;&gt; ::=  +&lt;T&gt;&lt;E&#39;&gt; |
+              -&lt;T&gt;&lt;E&#39;&gt; | e
     &lt;T&gt;  ::=  &lt;F&gt;&lt;T&#39;&gt;
-    &lt;T&#39;&gt; ::=  *&lt;F&gt;&lt;T&#39;&gt; | /&lt;F&gt;&lt;T&#39;&gt; | %&lt;F&gt;&lt;T&#39;&gt; | e
-    &lt;F&gt;  ::=  +&lt;F&gt; | -&lt;F&gt; | (&lt;E&gt;&lt;C&gt; | d&lt;D&gt; | D&lt;D&gt; |  x&lt;X&gt; | X&lt;X&gt; | &lt;O&gt;
+    &lt;T&#39;&gt; ::=  *&lt;F&gt;&lt;T&#39;&gt; |
+              /&lt;F&gt;&lt;T&#39;&gt; |
+              %&lt;F&gt;&lt;T&#39;&gt; | e
+    &lt;F&gt;  ::=  +&lt;F&gt; |
+              -&lt;F&gt; |
+              (&lt;E&gt;&lt;C&gt; |
+              d&lt;D&gt; |
+              D&lt;D&gt; |
+              x&lt;X&gt; |
+              X&lt;X&gt; |
+              &lt;O&gt;
     &lt;C&gt;  ::=  )
-    &lt;D&gt;  ::=  [0-9]&lt;D&gt; | e
-    &lt;X&gt;  ::=  [0-9]&lt;X&gt; | [A-F]&lt;X&gt; | [a-f]&lt;X&gt; | e
-    &lt;O&gt;  ::=  [0-7]&lt;O&gt; | e</code></pre>
+    &lt;D&gt;  ::=  [0-9]&lt;D&gt; |
+              e
+    &lt;X&gt;  ::=  [0-9]&lt;X&gt; |
+              [A-F]&lt;X&gt; |
+              [a-f]&lt;X&gt; |
+              e
+    &lt;O&gt;  ::=  [0-7]&lt;O&gt; |
+              e</code></pre>
 <p>Here’s how the grammar nonterminals map to octal state numbers:</p>
 <pre><code>    &lt;E&gt;  is  012
     &lt;E&#39;&gt; is  011
