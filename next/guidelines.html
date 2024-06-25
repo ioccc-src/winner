@@ -561,18 +561,10 @@ as a program that is more well rounded in confusion.</p>
 <p>When declaring local or global variables, you should declare the type:</p>
 <pre><code>    int this_is_fine;
     this_is_not;       /* &lt;-- Try to avoid implicit type declarations */</code></pre>
-<p>We suggest that you compile your entry with a commonly available
-c11 (formerly C1X) C compiler (ISO/IEC 9899:2011).</p>
-<p>Do not assume that optional c11 features are supported. If you
-must use an optional c11 feature, use feature test macros so
-that implementations without such optional c11 features will see
-an entry that is both functional and interesting.</p>
-<p>We <strong>LIKE</strong> entries that have workarounds that allow someone with
-nean older c99 (ISO/IEC 9899:1999) compiler to be able to compile
-and enjoy your entry.</p>
-<p>We really <strong>LIKE</strong> “lint free” code. However lint is a toll of the past.
-So try to ensure that your entry compiles warning free. If possible,
-to compile compile your code using:</p>
+<p><strong><code>|</code></strong> We suggest that you compile your entry with a commonly available
+gnu17 (ISO C 2017 with GNU extensions) C compiler.</p>
+<p>We really <strong>LIKE</strong> code that has a minimum of warnings, especially under the
+more strict <code>-Wall -Wextra -pedantic</code> mode:</p>
 <pre><code>    -Wall -Wextra -pedantic</code></pre>
 <p>For compilers, such as clang, that have the <code>-Weverything</code> option, try
 to make your code compile warning free using:</p>
@@ -587,17 +579,11 @@ your <code>Makefile</code>.</p>
 warnings will be considered better, for certain values of better.</p>
 <p><strong><code>|</code></strong> Unless you clearly state otherwise in your <code>remarks.md</code> file <strong>AS WELL AS</strong> in
 your “how to build” / Makefile we will compile using:</p>
-<pre><code>    -O3 -std=c11</code></pre>
-<p>Anyone care to submit an entry that makes gratuitous use of all
-of the c11 reserved words in their intended C language contexts?
-NOTE: As with the use of the word Belgium, the use of certain gratuitous
-c11 reserved words may be completely banned in all parts of the Galaxy,
-except in one small part (ISO/IEC 9899:2011) where they might not truly
-understand the implications of such words.</p>
-<pre><code>    http://hitchhikers.wikia.com/wiki/Belgium
-    http://www.bezem.de/pdf/ReservedWordsInC.pdf</code></pre>
-<p><strong>DO NOT</strong> assume that we will use gcc to compile your program.
-We will first try to compile your program using Clang.</p>
+<pre><code>    -O3 -std=gnu17</code></pre>
+<p><strong><code>|</code></strong> There is no real penalty for compiler warnings. Sometimes compiler warnings cannot be helped: especially in the case of obfuscated C. :-) So if you cannot easily get rid of a compiler warning, try not fret too much. Just add the needed “<code>-Wno-somethings</code>” to your Makefile. We suggest you add then to the <code>CSILENCE=</code> line, if you use some variant of the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example">example Makefile</a> from the <a href="https://github.com/ioccc-src/mkiocccentry">IOCCC mkiocccentry repo</a>.</p>
+<p><strong><code>|</code></strong> If you do add “<code>-Wno-somethings</code>” to your Makefile, consider also adding <code>-Wno-unknown-warning-option</code> just in case the warning you use is not available in the compilers we use test your submission.</p>
+<p><strong><code>|</code></strong> <strong>DO NOT</strong> assume that we will use <strong>gcc</strong> to compile your program.
+We will first try to compile your program using <strong>clang</strong>.</p>
 <p>It is much better to not use any obscure compiler flags if
 you can help it. We want to discourage the use of obscure compiler
 flags that would make the program less portable.</p>

@@ -255,21 +255,11 @@ When declaring local or global variables, you should declare the type:
     this_is_not;       /* <-- Try to avoid implicit type declarations */
 ```
 
-We suggest that you compile your entry with a commonly available
-c11 (formerly C1X) C compiler (ISO/IEC 9899:2011).
+**`|`**   We suggest that you compile your entry with a commonly available
+gnu17 (ISO C 2017 with GNU extensions) C compiler.
 
-Do not assume that optional c11 features are supported.  If you
-must use an optional c11 feature, use feature test macros so
-that implementations without such optional c11 features will see
-an entry that is both functional and interesting.
-
-We **LIKE** entries that have workarounds that allow someone with
-nean older c99 (ISO/IEC 9899:1999) compiler to be able to compile
-and enjoy your entry.
-
-We really **LIKE** "lint free" code.  However lint is a toll of the past.
-So try to ensure that your entry compiles warning free.  If possible,
-to compile compile your code using:
+We really **LIKE** code that has a minimum of warnings, especially under the
+more strict ` -Wall -Wextra -pedantic` mode:
 
 ```
     -Wall -Wextra -pedantic
@@ -302,23 +292,15 @@ warnings will be considered better, for certain values of better.
 your "how to build" / Makefile we will compile using:
 
 ```
-    -O3 -std=c11
+    -O3 -std=gnu17
 ```
 
-Anyone care to submit an entry that makes gratuitous use of all
-of the c11 reserved words in their intended C language contexts?
-NOTE: As with the use of the word Belgium, the use of certain gratuitous
-c11 reserved words may be completely banned in all parts of the Galaxy,
-except in one small part (ISO/IEC 9899:2011) where they might not truly
-understand the implications of such words.
+**`|`**   There is no real penalty for compiler warnings.  Sometimes compiler warnings cannot be helped: especially in the case of obfuscated C.  :-)  So if you cannot easily get rid of a compiler warning, try not fret too much.  Just add the needed "`-Wno-somethings`" to your Makefile.  We suggest you add then to the `CSILENCE=` line, if you use some variant of the [example Makefile](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example) from the [IOCCC mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry).
 
-```
-    http://hitchhikers.wikia.com/wiki/Belgium
-    http://www.bezem.de/pdf/ReservedWordsInC.pdf
-```
+**`|`**   If you do add "`-Wno-somethings`" to your Makefile, consider also adding `-Wno-unknown-warning-option` just in case the warning you use is not available in the compilers we use test your submission.
 
-**DO NOT** assume that we will use gcc to compile your program.
-We will first try to compile your program using Clang.
+**`|`**   **DO NOT** assume that we will use **gcc** to compile your program.
+We will first try to compile your program using **clang**.
 
 It is much better to not use any obscure compiler flags if
 you can help it.  We want to discourage the use of obscure compiler
