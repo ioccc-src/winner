@@ -1,4 +1,4 @@
-%%REPO_URL%%/## To build:
+## To build:
 
 ``` <!---sh-->
     make
@@ -122,8 +122,12 @@ There is a good deal of useful documentation that is provided with this entry:
 * [enigma.html][]
     - NOTE: see [recode.html][] (or [recode.html](recode.html) for details about how to decrypt this!
 
+* [testing-procedure][]
+	- How the author tested the code and why it was necessary to do it in the way it was
 
 [recode.html]: recode.html
+[enigma.html]: enigma.html
+[testing-procedure]: testing-procedure.html
 
 
 ## Author's remarks:
@@ -838,6 +842,13 @@ did not implement this in the recode program but what would it be anyway? If the
 user here wants to they could add three letters to their message beginning. I
 don't think there need be any addition to the recode program - at least not
 that.
+
+
+### Testing procedure
+
+There was a need for a testing procedure as a single character difference will
+change the rest of the text. If you wish to see how I went about this see
+[testing-procedure.html](testing-procedure.html).
 
 
 [1992 Worst Abuse of the Rules]: ../../1992/nathan/index.html

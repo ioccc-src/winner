@@ -4176,6 +4176,7 @@
 2020,ferguson2,obfuscation.txt,100,true,text,false,about the obfuscation of this entry - encrypted with entry
 2020,ferguson2,recode.c,100,true,c,true,Enigma machine configurator source code
 2020,ferguson2,recode.html,100,true,html,false,Enigma configurator documentation
+2020,ferguson2,testing-procedure.html,100,false,html,false,details about the author's testing procedure
 2020,ferguson2,try.alt.sh,100,true,shellscript,true,script to try alternate code
 2020,ferguson2,try.sh,100,true,shellscript,true,script to try entry
 2020,ferguson2,try.this.txt,100,true,text,false,sample input
@@ -4190,6 +4191,7 @@
 2020,ferguson2,obfuscation.md,4000000000,true,markdown,true,markdown source for obfuscation.html
 2020,ferguson2,.path,4000000000,false,path,true,directory path from top level directory
 2020,ferguson2,recode.md,4000000000,true,markdown,true,markdown source for recode.html
+2020,ferguson2,testing-procedure.md,4000000000,true,markdown,true,markdown source for testing-procedure.html
 2020,ferguson2,index.html,4294967295,false,html,false,this web page
 2020,giles,prog.c,20,true,c,true,entry source code
 2020,giles,Makefile,30,true,makefile,true,entry Makefile
