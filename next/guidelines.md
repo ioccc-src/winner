@@ -796,10 +796,19 @@ have an entry that might otherwise be interesting, you might want to
 submit two versions; one that does not abuse the [IOCCC rules](rules.html) and one that
 does.
 
-**`|`**   If you intend to abuse the [IOCCC rules](rules.html), indicate so in the program
-`remarks.md` file.  You must try to justify why you consider your rule abuse to be
-allowed under the [IOCCC rules](rules.html).  That is, you must plead your case as to
-why your entry is valid.  Humor and/or creativity help plead a case.
+**`|`**   If you intend to abuse the [IOCCC rules](rules.html),
+indicate so in your `remarks.md` file.  You **MUST** try to justify
+why you consider your rule abuse to be allowed under the
+[IOCCC rules](rules.html).  That is, you must plead your case as to why
+your entry is valid.  Humor and/or creativity help plead a case.
+As there is no guarantee that you will succeed, you might consider
+submitting an alternate version that conforms to the
+[IOCCC rules](rules.html).
+
+**`|`**   If do bypass the `mkiocccentry(1)` warnings about [Rule
+2a](rules.html#rule2a) and/or about [Rule 2b](rules.html#rule2b)
+and submit an entry anyway, you **MUST** try to justify why the IOCCC
+judges should not reject your entry due to a rule violation.
 
 Abusing the web submission procedure tends to annoy us more
 than amuse us.  Spend your creative energy on content of your
