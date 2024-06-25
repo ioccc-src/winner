@@ -2980,6 +2980,7 @@
 2020/ferguson2/recode.c
 2020/ferguson2/recode.html
 2020/ferguson2/recode.md
+2020/ferguson2/testing-procedure.md
 2020/ferguson2/try.alt.sh
 2020/ferguson2/try.sh
 2020/ferguson2/try.this.txt

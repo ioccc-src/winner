@@ -649,10 +649,15 @@ the key you wish to select is
 you can do:
 
 ``` <!---sh-->
-    ./recode -R0EZ4PC1CC0PGTAQSOXWNMDRYKFUZEI -fenigma.html | ./prog - 2>/dev/null > decrypted.html
+    ./recode -R0EZ4PC1CC0PGTAQSOXWNMDRYKFUZEI -fenigma.html | ./prog - 2>/dev/null > enigma.deciphered.html
 ```
 
-Then open `decrypted.html` in your browser.
+Then open `enigma.deciphered.html` in your browser. A command is provided in
+[testing-procedure.html](testing-procedure.html) that does this too but it
+shows how you can use a file as input for the key instead as well as how I
+tested the code.
+
+
 
 
 <hr style="width:10%;text-align:left;margin-left:0">

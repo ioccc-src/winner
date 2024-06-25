@@ -90,6 +90,14 @@
 	    "entry_text" : "Enigma configurator documentation"
 	},
 	{
+	    "file_path" : "testing-procedure.html",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "details about the author's testing procedure"
+	},
+	{
 	    "file_path" : "try.alt.sh",
 	    "inventory_order" : 100,
 	    "OK_to_edit" : true,
@@ -200,6 +208,14 @@
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
 	    "entry_text" : "markdown source for recode.html"
+	},
+	{
+	    "file_path" : "testing-procedure.md",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "markdown",
+	    "display_via_github" : true,
+	    "entry_text" : "markdown source for testing-procedure.html"
 	},
 	{
 	    "file_path" : "index.html",

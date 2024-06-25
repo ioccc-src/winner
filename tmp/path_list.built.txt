@@ -1205,6 +1205,7 @@
 2020/ferguson2/2020_ferguson2.tar.bz2
 2020/ferguson2/index.html
 2020/ferguson2/prog.orig.c
+2020/ferguson2/testing-procedure.html
 2020/giles/.path
 2020/giles/2020_giles.tar.bz2
 2020/giles/index.html
