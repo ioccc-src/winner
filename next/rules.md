@@ -1,4 +1,4 @@
-<!-- START: this line starts content from: inc/rules.closed.hdr -->
+repo START: this line starts content from: inc/rules.closed.hdr -->
 
 # WARNING: These rules are OUT OF DATE
 
@@ -6,8 +6,6 @@ These rules are a **VERY TENTATIVE proposal** for the next IOCCC
 and are **VERY LIKELY** to be updated before the next IOCCC.
 They are are provided as a **very tentative** hint at **what
 MIGHT** be used in the next IOCCC.
-
-Please regard these rules as a historical archive.
 
 
 # The IOCCC is closed
@@ -77,9 +75,9 @@ The goals of the IOCCC:
 **`|`**   This IOCCC runs from **2024-MMM-DD HH:MM:SS UTC** to **202x-MMM-DD HH:MM:SS UTC**.<br>
 **`|`**   **XXX - date/time is TBD - XXX**
 
-Until the start of this IOCCC, these [IOCCC rules](rules.html),
+**`|`**   Until the start of this IOCCC, these [IOCCC rules](rules.html),
 [IOCCC guidelines](guidelines.html) and iocccsize.c (contained in the [mkiocccentry
-toolkit](https://github.com/ioccc-src/mkiocccentry) and invoked by the
+repo](https://github.com/ioccc-src/mkiocccentry) and invoked by the
 `mkiocccentry(1)` tool) should be considered provisional **BETA** versions and
 **may be adjusted _AT ANY TIME_**.
 
@@ -98,11 +96,11 @@ Please wait to submit your entries until after that time.
 The official [IOCCC rules](rules.html) and [IOCCC guidelines](guidelines.html) will be
 available on the [official IOCCC website](../index.html) on or slightly before
 the start of this IOCCC. The `mkiocccentry` toolkit may be obtained at any time
-at the [mkiocccentry toolkit repo](https://github.com/ioccc-src/mkiocccentry).
+at the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry).
 
 Please recheck on or after the start of this IOCCC to be sure you
 are using the correct versions of these items before using the IOCCC
-entry submission URL.
+submission URL.
 
 
 # IOCCC RULES
@@ -119,14 +117,14 @@ We need a rule 0.  :-)
 ## Rule 1
 </div>
 
-Your entry must be a complete program.
+Your submission must be a complete program.
 
 
 <div id="rule2">
 ## Rule 2
 </div>
 
-The size rule requires your entry to satisfy **BOTH** [Rule 2a](#rule2a) and [Rule 2b](#rule2b):
+The size rule requires your submission to satisfy **BOTH** [Rule 2a](#rule2a) and [Rule 2b](#rule2b):
 
 
 <div id="rule2a">
@@ -165,10 +163,10 @@ as a command like argument to the `iocccsize(1)` tool. For example:
 of the official IOCCC size tool (hereby referred to as `iocccsize(1)`), the value printed **should not exceed 2503**.
 
 **`|`**   The source to `iocccsize(1)` may be found in the
-[mkiocccentry tool repo](https://github.com/ioccc-src/mkiocccentry).
+[mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry).
 
 **`|`**   If you use the `mkiocccentry(1)` tool, which we **STRONGLY recommend you use**,
-then `mkiocccentry(1)` will invoke `iocccsize(1)` before packaging your entry for submission.
+then `mkiocccentry(1)` will invoke `iocccsize(1)` before packaging your submission.
 
 **`|`**   The `mkiocccentry(1)` tool will give you the option of overriding the [Rule 2b](#rule2b) warning.
 Overriding a [Rule 2b](#rule2b) warning carries a **fair amount of risk** that your submission
@@ -208,24 +206,29 @@ Please wait to submit your entries until after that time.
 ## Rule 4
 </div>
 
-If your entry is selected as a winner, it will be modified as follows:
+**`|`**   If your submission is selected as a winner, it may be modified in order
+for into the Makefile structure of the [Official IOCCC winner website](https://www.ioccc.org/index.html).
 
-Your 'build' instructions will be incorporated into a Makefile.
+**`|`**   For example, your submission's 'Makefile' maybe be modified.
 
-Your source code will be the file **prog.c**.  The compiled binary
-will be called **prog**.
+**`|`**   Your source code will be the file **prog.c**.  The compiled binary
+will be called **prog**.  If you submission requires different filenames,
+then modify your submission's 'Makefile' to **COPY** (**NOT** move)
+the files accordingly.
+
+**`|`**   See also [Rule 5](#rile5), [Rule 18](#rule18) and [Rule 21](#rule21).
 
 
 <div id="rule5">
 ## Rule 5
 </div>
 
-Your entry **MUST** not modify the content or filename of any part of your
-original entry including, but not limited to **prog.c**, the **Makefile**
+Your submission **MUST** not modify the content or filename of any part of your
+original submission including, but not limited to **prog.c**, the **Makefile**
 (that we create from your how to build instructions), as well as any data
 files you submit.
 
-If you entry wishes to modify such content, it **MUST** first copy the
+If you submission wishes to modify such content, it **MUST** first copy the
 file to a new filename and then modify that copy.
 
 
@@ -252,8 +255,6 @@ under the following license:
 
 **`|`**   **[CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)**
 
-See also [Rule 18](#rule18).
-
 If you submit any content that is owned by others, you **MUST**
 detail that ownership (i.e., who owns what) **AND document the
 permission you obtained**.
@@ -279,7 +280,7 @@ before the close of the contest.
 
 **`|`**   Each person may submit up to and including 10.000000 entries per contest.
 
-Each entry must be submitted separately.
+Each submission must be submitted separately.
 
 
 <div id="rule10">
@@ -304,28 +305,28 @@ them** in the remarks file.
 ## Rule 12
 </div>
 
-Legal abuse of the rules is somewhat encouraged.  An entry that, in
+Legal abuse of the rules is somewhat encouraged.  An submission that, in
 the opinion of the judges, violates the rules will be disqualified.
 Entries that attempt to abuse the rules **MUST** try to justify why
-their rule abuse is legal, in the remarks file.
+their rule abuse is legal, in the submission's `remarks.md` file.
 
 
 <div id="rule13">
 ## Rule 13
 </div>
 
-Any C source that fails to compile because of unescaped octets with
-the high bit set (octet value >= 128) will be rejected.
+**`|`**   Any C source that fails to compile because of unescaped octets with
+the high bit set (octet value >= 128) might be rejected.
 
 
 <div id="rule14">
 ## Rule 14
 </div>
 
-Any C source that fails to compile because of lines with trailing
-control-M's (i.e., lines with a tailing octet `015`) will be rejected.
+**`|`**   Any C source that fails to compile because of lines with trailing
+control-M's (i.e., lines with a tailing octet `015`) might be rejected.
 
-Please do not put trailing control-M's on remarks file lines.
+Please do **NOT** put trailing control-M's on remarks file lines.
 Please check to be sure, before submitting, that you have removed
 any control-M at the end of remark file lines.
 
@@ -334,25 +335,14 @@ any control-M at the end of remark file lines.
 ## Rule 15
 </div>
 
-When you submit your entry you must have a valid email address
-that can both send and receive email.  The online submission
-method is a two phase process that requires the use of an
-approval code. This code will be emailed to you as part of
-phase 1.
-
-Entries submitted without a working or valid email address will
-be disqualified.
+**`|`**   In order to register for the IOCCC, you **MUST** have a valid Email address.
 
 The judges are not responsible for delays in email, please plan
 enough time for one automated exchange of email as part of your
 submission.
 
-After your email address has been confirmed, the submission code will
-be valid for submitting and editing the entry for the lifetime of the
-competition.
-
-See also [How may I submit to the IOCCC?](../faq.html#submit) in the
-[FAQ](../faq.html).
+**`|`**  See [How may I register for the IOCCC?](../faq.html#register) in the
+[FAQ](../faq.html) for details.
 
 
 <div id="rule16">
@@ -360,7 +350,7 @@ See also [How may I submit to the IOCCC?](../faq.html#submit) in the
 </div>
 
 You are **STRONGLY** encouraged to submit a previously unpublished _AND_
-original entry. Submissions that are similar to previous entries are
+original submission. Submissions that are similar to previous entries are
 discouraged. As we judge anonymously, submissions that have already
 been published may be disqualified.
 
@@ -369,23 +359,120 @@ been published may be disqualified.
 ## Rule 17
 </div>
 
-**`|`**   The total size of your submission: the sum of the size of the program,
+
+### TL;DR Rule 17 - Use `mkiocccentry(1)`
+
+**`|`**   This is a **COMPLEX** rule.  Violating this rule will cause your submission to **REJECTED**.
+To help you avoid such a rejection, you are **HIGHLY ENCOURAGED** to use the `mkiocccentry(1)` tool,
+based on the latest release of the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry),
+to form your submission's bzip2 compressed tarball.
+
+**`|`**   The [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)
+contains **IMPORTANT** tools such as:
+
+* `chkentry(1)`
+* `iocccsize(1)`
+* `mkiocccentry(1)`
+* `txzchk(1)`
+
+**`|`**   The above mentioned tools will help you verify that your submission
+conforms to [Rule 17](#rule17).
+
+**`|`**   Each above mentioned tools has a **`-h`** that provides command line help.  For additional details, see the tool man pages.
+
+
+### Rule 17 - The COMPLEX details
+
+**`|`**   Each submission **MUST** be in the form of a bzip2 compressed tarball file.
+
+**`|`**   The bzip2 compressed tarball filename must be of the form:
+
+*  ^submit\." + _username_ + - + _slot_num_ + \.[1-9][0-9]{9,}\.txz$
+
+where _`username`_ is the your IOCCC registration username in the form of a
+[UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) (see
+[RFC 9562](https://datatracker.ietf.org/doc/html/rfc9562) for
+details), and where _`slot_num`_ is a single decimal digit integer
+(i.e., >= 0 and < 9), and where _`+`_ is the concatenation operator,
+
+**`|`**   Your bzip2 compressed tarball file **MUST** contain, at a minimum,
+the following files:
+
+* `Makefile`
+* `prog.c`
+* `remarks.md`
+* `.info.json`
+* `.auth.json`
+
+**`|`**   The `.info.json` must be valid JSON and pass the `chkentry(1)` test.
+
+**`|`**   The `.auth.json` must be valid JSON and pass the `chkentry(1)` test.
+
+**`|`**   You submission may have additional files, however `basename(1)` of the filenames of those additional files **MUST**:
+
+* Be less than **100** characters in length
+* Match the regular expression: `^[0-9A-Za-z][0-9A-Za-z._+-]*$`
+
+**`|`**   The `Makefile` must be a non-empty file in [Gnu Makefile](https://www.gnu.org/software/make/manual/make.html) form.
+
+**`|`**   The `remarks.md` must be a non-empty file in markdown form.  See also [Rule 18](#rule18).
+
+**`|`**   The bzip2 compressed tarball file **MUST** be less than
+or equal **3999971** octets in size.
+
+**`|`**   When your submission's bzip2 compressed tarball is uncompressed,
+the total size of your submission: the sum of the size of the program,
 hints, comments, build and info files **MUST** be less than or equal
 to 28314624 octets (27651K) in size.
 
-**`|`**   When your submission is formed into a bzip2 compressed tarball file,
-that file must than or equal 3999971 octets in size.
+**`|`**   You are **HIGHLY ENCOURAGED** to use the `mkiocccentry(1)`
+tool to form your submission's bzip2 compressed tarball.  The
 
-**`|`**   The [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
-(see `mkiocccentry(1)` and `txzchk(1)`) will help you verify that your
-submission conforms to this [Rule 17](#rule17).
+**`|`**   You submission may have additional files, however filenames of those additional files **MUST**:
+
+* be less than **100** characters in length
+* conform to the regular expression: `^[0-9A-Za-z][0-9A-Za-z._+-]*$`
+
+**`|`**   Your entry may have sub-directories, however the sub-directories **MUST** only
+reside under the submission's top level directory.
+
+**`|`**   The directory names of sub-directories path, **MUST**:
+
+* Be less than **100** characters in length
+* **NOT** start with: **`/`**
+* **NOT** contain a path component of: **`.`**
+* **NOT** contain a path component of: **`..`**
+* Match the regular expression `^[0-9A-Za-z][0-9A-Za-z._+-]*$`.
+
+**`|`**   The `Makefile` must be a non-empty file.
+
+**`|`**   The `remarks.md` must be a non-empty file in markdown form.  See also [Rule 18](#rule18).
+
+**`|`**   The bzip2 compressed tarball file **MUST** be less than
+or equal **3999971** octets in size.
+
+**`|`**   When your submission's bzip2 compressed tarball is uncompressed,
+the total size of your submission: the sum of the size of the program,
+hints, comments, build and info files **MUST** be less than or equal
+to 28314624 octets (27651K) in size.
+
+**`|`**  Your submission's bzip2 compressed tarball **MUST** pass the `txzchk(1)` test.
+
+**`|`**  Where [Rule 17](#rule17) and the tools from the latest
+release of the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)
+conflict, the [IOCCC Judges](../judges.html) will use their best judgment which
+is likely to favor [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry) code.
+
+**`|`**  To state the obvious: submissions that violate [Rule 17](#rule17) **will be rejected**,
+so be sure to use the latest release of the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry),
+to form and test your submission's bzip2 compressed tarball.
 
 
 <div id="rule18">
 ## Rule 18
 </div>
 
-The entirety of your entry must be submitted under the following license:
+The entirety of your submission must be submitted under the following license:
 
 **`|`**   **[CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)**
 
@@ -399,11 +486,13 @@ You must not submit anything that cannot be submitted under that license.
 ## Rule 19
 </div>
 
-The remarks file must be written in markdown format. See
+**`|`**  The `remarks.md` file, a required non-empty file, must be written in markdown format. See
 the Daring Fireball [Markdown: Basics](http://daringfireball.net/projects/markdown/basics)
 for more information.
 
 **`|`**   We currently use [pandoc](https://pandoc.org) to convert markdown to HTML.
+
+**`|`**   Please see our [IOCCC markdown guidelines](../markdown.html) for additional markdown guidance.
 
 
 <div id="rule20">
@@ -414,6 +503,10 @@ The how to build instructions must be in Makefile format. See [the FAQ about
 make&#x28;1&#x29; compatibility the IOCCC
 supports](../faq.html#make_compatibility) for more details.
 
+**`|`**   You are **ENCOURAGED** to use
+[Makefile.example](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example),
+renamed as `Makefile` of course, for help in constructing your Makefile.
+
 The target of the Makefile must be called `prog`.  The original
 C source file must be called `prog.c`.
 
@@ -422,7 +515,7 @@ To invoke the C preprocessor use `${CPP}`.
 
 Do not assume that `.` (the current directory) is in the `$PATH`.
 
-Use a shell command syntax that is compatible with bash.
+**`|`**   Your `Makefile` **MUST** use a syntax that is compatible with bash.  You are **ENCOURAGED** to use set `SHELL= bash` in your `Makefile.`
 
 **`|`**   Assume that commands commonly found in [Single UNIX
 Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
@@ -430,23 +523,13 @@ environments and systems that conform to the [Single UNIX
 Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification) are
 available in the `$PATH` search path.
 
-Do not assume any particular given value of `${CFLAGS}` or other
-commonly used make variables. In other words you **MUST** specify the `CFLAGS`
-to use.
-
-See also the
-[Makefile.example](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example)
-for help in constructing your Makefile. The `mkiocccentry`, which can be found
-at the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry), tries to
-detect if required rules exist in your Makefile.
-
 
 <div id="rule21">
 ## Rule 21
 </div>
 
-Your entry must not create or modify files above the current directory
-with the exception of the `/tmp` and the `/var/tmp` directories.  Your entry
+Your submission must not create or modify files above the current directory
+with the exception of the `/tmp` and the `/var/tmp` directories.  Your submission
 **MAY** create subdirectories below the current directory, or in `/tmp`,
 or in `/var/tmp` provided that `.` is **NOT** the first octet in any
 directory name or filename you submit.
@@ -464,10 +547,10 @@ NOT know who is submitting entries to the IOCCC.
 
 Even if you are a previous IOCCC winner, catch 22 still applies.
 
-Identifying the author(s) of your entry in an obvious way anywhere
+Identifying the author(s) of your submission in an obvious way anywhere
 within your code, data, remarks or program output (unless you are
 _Peter Honeyman_ or pretending to be _Peter Honeyman_) will be grounds
-for disqualification of your entry.
+for disqualification of your submission.
 
 Yes, Virginia, **WE REALLY MEAN IT!**
 
@@ -502,7 +585,8 @@ Even though 24 is not prime, you should still see [Rule 23](#rule23).
 **`|`**   "How vexingly quick daft zebras jump!"<br>
 **`|`**   "Sphinx of black quartz, judge my vow."<br>
 **`|`**   "Waltz, bad nymph, for quick jigs vex."<br>
-**`|`**   "Mr. Jock, TV quiz PhD, bags few lynx."
+**`|`**   "Mr. Jock, TV quiz PhD, bags few lynx."<br>
+**`|`**   "abcdefg, hijklmnop, qrstu&v, wxy&z."
 
 
 <div id="rule27">
@@ -516,7 +600,7 @@ Even though 24 is not prime, you should still see [Rule 23](#rule23).
 ## Rule 28
 </div>
 
-**`|`**   [Rule 28](#rule28) is a perfect way end to the list of [IOCCC rules](rules.html) as we do not plan to have 496 rules. :-)
+**`|`**   [Rule 28](#rule28) is a perfect way end to the list of [IOCCC rules](rules.html) as we do **NOT** plan to have **496** rules. :-)
 
 
 

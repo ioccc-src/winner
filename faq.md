@@ -103,7 +103,9 @@ other inconsistencies with the original entry?](#faq4_3)
 
 <div id="faq0_0">
 <div id="submit">
+<div id="register">
 ### FAQ 0.0: How may I enter the IOCCC?
+</div>
 </div>
 </div>
 
@@ -1636,7 +1638,9 @@ include this here, at least for now.
 
 
 <div id="faq3_11">
+<div id="weverything">
 ### FAQ 3.11: Why do Makefiles use -Weverything with clang?
+</div>
 </div>
 
 While we know that use of `-Weverything` is generally not recommended
