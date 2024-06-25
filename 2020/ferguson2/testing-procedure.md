@@ -65,9 +65,9 @@ to try and find the right key.
     while [ "${n}" -lt 100 ]; do
 
     for f in ../input.txt ../prog.c ../README.md ../recode.md ../recode.1 ../enigma.1; do
-    	../recode -r -oconfig -f"${f}" | ../prog - 2>/dev/null > out
-    	../recode -Rconfig -fout | ../prog - 2>/dev/null > out2
-    	diff out2 "${f}" || echo "Failed randomised test for file: ${f}"
+        ../recode -r -oconfig -f"${f}" | ../prog - 2>/dev/null > out
+        ../recode -Rconfig -fout | ../prog - 2>/dev/null > out2
+        diff out2 "${f}" || echo "Failed randomised test for file: ${f}"
     done
     let n=n+1
     done
@@ -120,7 +120,7 @@ provide the key file (or the key as a string) with the correct key (see
 output:
 
 ``` <!---sh-->
-	./recode -Renigma.dat -fenigma.html | ./prog - 2>/dev/null > enigma.deciphered.html
+        ./recode -Renigma.dat -fenigma.html | ./prog - 2>/dev/null > enigma.deciphered.html
 ```
 
 Enjoy!
