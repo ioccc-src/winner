@@ -1397,10 +1397,11 @@ not `d-46`.
 ### Information: [1994/dodsond2/index.html](1994/dodsond2/index.html)
 
 When you initiate shooting via the `s` command you immediately lose an arrow
-_before you choose where to shoot_.
+**before you choose _where to_ shoot**.
 
-When you shoot it will move you to that room so if you end up shooting into a
-pit room you will end up dying even though you didn't explicitly move there.
+Also, when you shoot it will move you to that room so if you end up shooting
+into a pit room you will end up dying even though you didn't explicitly move
+there.
 
 
 <div id="1994_ldb">
@@ -1412,8 +1413,7 @@ pit room you will end up dying even though you didn't explicitly move there.
 ### Information: [1994/ldb/index.html](1994/ldb/index.html)
 
 [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed this to compile
-with modern systems (see the [thanks](thanks-for-help.html) file for
-what had to change) but the entry also used `gets()` which in some systems would
+with modern systems but the entry also used `gets()` which in some systems would
 print out a warning along with the output of the program. Naturally it could
 also overflow long lines.  Cody changed it to `fgets()` to prevent the display
 problem but this introduces another problem namely that newlines can be printed
@@ -1611,11 +1611,9 @@ Since it works there is no need to fix this except for a challenge to yourself.
 
 The judges said the following in their remarks:
 
-```
-    The fractally minded may be able to detect that mode 0 does not calculate
-    Mandelbrot/Julian sets correctly.  Can you find the bug?  Better still, can you
-    fix it without breaking something else?
-```
+> The fractally minded may be able to detect that mode 0 does not calculate
+Mandelbrot/Julian sets correctly.  Can you find the bug?  Better still, can you
+fix it without breaking something else?
 
 You are welcome to try and fix it and open a pull request, providing that it
 doesn't break something else.

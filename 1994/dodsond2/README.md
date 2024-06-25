@@ -71,18 +71,15 @@ the contest!
 The original source code was submitted as a GZIP compressed file
 that the _file(1)_ command reports as:
 
-```
-    dodsond2.gz: gzip compressed data, last modified: Mon Aug 29 21:54:39 1994, max compression, from Unix, original size modulo 2^32 2652
-```
+> dodsond2.gz: gzip compressed data, last modified: Mon Aug 29 21:54:39 1994,
+max compression, from Unix, original size modulo 2^32 2652
 
 The [dodsond2.gz](dodsond2.gz) file was submitted as source
 in an effort to get around the 1994 version of Rule 2:
 
-```
-    2) Your entry must be <= 3217 bytes in length.  The number of characters
-       excluding whitespace (tab, space, newline), and excluding any ; { or }
-       followed by either whitespace or end of file, must be <= 1536.
-```
+> 2) Your entry must be <= 3217 bytes in length.  The number of characters
+excluding whitespace (tab, space, newline), and excluding any ; { or } followed
+by either whitespace or end of file, must be <= 1536.
 
 Indeed the [dodsond2.c](%%REPO_URL%%/1994/dodsond2/dodsond2.c) file is
 what you find today.

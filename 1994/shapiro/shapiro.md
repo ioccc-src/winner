@@ -97,12 +97,10 @@ to the string we just put there.
 (`"\0337\033[%d;65;H%s\0338"`) If you can read VTxxx (and I read books printed
 as ANSI/VTxxx codes for fun :-) ) you know this is the sequence for:
 
-```
-    remember where we are,
-    go somewhere else,
-    print the message,
-    and return to where we started.
-```
+> remember where we are,<br>
+> go somewhere else,<br>
+> print the message,<br>
+> and return to where we started.
 
 Line 22 says if this message is not for us (the number is bigger than ours)
 send it to `h` (up).

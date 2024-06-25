@@ -1351,9 +1351,10 @@ not <code>d-46</code>.</p>
 <h3 id="source-code-1994dodsond2dodsond2.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/dodsond2/dodsond2.c">1994/dodsond2/dodsond2.c</a></h3>
 <h3 id="information-1994dodsond2index.html">Information: <a href="1994/dodsond2/index.html">1994/dodsond2/index.html</a></h3>
 <p>When you initiate shooting via the <code>s</code> command you immediately lose an arrow
-<em>before you choose where to shoot</em>.</p>
-<p>When you shoot it will move you to that room so if you end up shooting into a
-pit room you will end up dying even though you didn’t explicitly move there.</p>
+<strong>before you choose <em>where to</em> shoot</strong>.</p>
+<p>Also, when you shoot it will move you to that room so if you end up shooting
+into a pit room you will end up dying even though you didn’t explicitly move
+there.</p>
 <div id="1994_ldb">
 <h2 id="ldb">1994/ldb</h2>
 </div>
@@ -1361,8 +1362,7 @@ pit room you will end up dying even though you didn’t explicitly move there.</
 <h3 id="source-code-1994ldbldb.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/ldb/ldb.c">1994/ldb/ldb.c</a></h3>
 <h3 id="information-1994ldbindex.html">Information: <a href="1994/ldb/index.html">1994/ldb/index.html</a></h3>
 <p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> fixed this to compile
-with modern systems (see the <a href="thanks-for-help.html">thanks</a> file for
-what had to change) but the entry also used <code>gets()</code> which in some systems would
+with modern systems but the entry also used <code>gets()</code> which in some systems would
 print out a warning along with the output of the program. Naturally it could
 also overflow long lines. Cody changed it to <code>fgets()</code> to prevent the display
 problem but this introduces another problem namely that newlines can be printed
@@ -1495,9 +1495,11 @@ if it checked for <code>!= EOF</code>.</p>
 <h3 id="source-code-1994tvrtvr.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/tvr/tvr.c">1994/tvr/tvr.c</a></h3>
 <h3 id="information-1994tvrindex.html">Information: <a href="1994/tvr/index.html">1994/tvr/index.html</a></h3>
 <p>The judges said the following in their remarks:</p>
-<pre><code>    The fractally minded may be able to detect that mode 0 does not calculate
-    Mandelbrot/Julian sets correctly.  Can you find the bug?  Better still, can you
-    fix it without breaking something else?</code></pre>
+<blockquote>
+<p>The fractally minded may be able to detect that mode 0 does not calculate
+Mandelbrot/Julian sets correctly. Can you find the bug? Better still, can you
+fix it without breaking something else?</p>
+</blockquote>
 <p>You are welcome to try and fix it and open a pull request, providing that it
 doesn’t break something else.</p>
 <hr style="width:10%;text-align:left;margin-left:0">
