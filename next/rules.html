@@ -407,7 +407,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 <div id="rule_version">
 <h2 id="ioccc-rules-version">IOCCC Rules version</h2>
 </div>
-<p><strong><code>|</code></strong> These <a href="rules.html">IOCCC rules</a> are version <strong>2024-06-23-v28</strong>.</p>
+<p><strong><code>|</code></strong> These <a href="rules.html">IOCCC rules</a> are version <strong>2024-06-25-v28</strong>.</p>
 <p><strong>IMPORTANT</strong>: Be sure to read the <a href="guidelines.html">IOCCC guidelines</a>.</p>
 <h3 id="change-marks">Change marks</h3>
 <p><strong><code>|</code></strong> <strong>← Lines that start with this symbol indicate a change from the previous IOCCC</strong></p>
@@ -469,17 +469,41 @@ entry submission URL.</p>
 <div id="rule2a">
 <h2 id="rule-2a">Rule 2a</h2>
 </div>
-<p><strong><code>|</code></strong> The size of your program source <strong>MUST BE &lt;= 4993 bytes</strong> in length.</p>
+<p><strong><code>|</code></strong> The size of your program source <strong>should not exceed 4993 bytes</strong>.</p>
+<p><strong><code>|</code></strong> If you use the most recently released official IOCCC submission packaging tool
+(hereby referred to as <code>mkiocccentry(1)</code>), which we <strong>STRONGLY recommend you use</strong>,
+then the <code>mkiocccentry(1)</code> tool will warn you if there appears to be a <a href="#rule2a">Rule 2a</a> violation.</p>
+<p><strong><code>|</code></strong> The <code>mkiocccentry(1)</code> tool will give you the option of overriding the <a href="#rule2a">Rule 2a</a> warning.
+Overriding a <a href="#rule2a">Rule 2a</a> warning carries a <strong>fair amount of risk</strong> that your submission
+will be <strong>rejected</strong>. Be sure to consult the <a href="guidelines.html">IOCCC guidelines</a>
+ahead of time if you plan to override the <a href="#rule2a">Rule 2a</a> warning.</p>
+<p><strong><code>|</code></strong> If you do override the <a href="#rule2a">Rule 2a</a> warning from the <code>mkiocccentry(1)</code> tool,
+or otherwise plan to violate <a href="#rule2a">Rule 2a</a>, then you <strong>must clearly explain the rationale</strong>
+of why you are doing so in your <code>remarks.md</code> file. Even if you do explain this in your <code>remarks.md</code> file
+your submission may still be rejected.</p>
+<p><strong><code>|</code></strong> You may check your code prior to submission by giving the filename
+as a command like argument to the <code>iocccsize(1)</code> tool. For example:</p>
+<pre><code>    ./iocccsize prog.c</code></pre>
 <div id="rule2b">
 <h2 id="rule-2b">Rule 2b</h2>
 </div>
-<p><strong><code>|</code></strong> When your program source is fed as input to the current IOCCC size
-tool, and the IOCCC size tool <code>-i</code> command line option is used, the
-value printed <strong>shall not exceed 2503</strong>.</p>
-<p><strong><code>|</code></strong> The source to the current IOCCC size tool is found in the
-<a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry tool repo</a>. If you use
-the <code>mkiocccentry</code> tool (which we <strong>STRONGLY recommend you do</strong>) it will invoke
-this tool before packaging your entry for submission.</p>
+<p><strong><code>|</code></strong> When the filename of your program source is given as a command line argument to the latest version
+of the official IOCCC size tool (hereby referred to as <code>iocccsize(1)</code>), the value printed <strong>should not exceed 2503</strong>.</p>
+<p><strong><code>|</code></strong> The source to <code>iocccsize(1)</code> may be found in the
+<a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry tool repo</a>.</p>
+<p><strong><code>|</code></strong> If you use the <code>mkiocccentry(1)</code> tool, which we <strong>STRONGLY recommend you use</strong>,
+then <code>mkiocccentry(1)</code> will invoke <code>iocccsize(1)</code> before packaging your entry for submission.</p>
+<p><strong><code>|</code></strong> The <code>mkiocccentry(1)</code> tool will give you the option of overriding the <a href="#rule2b">Rule 2b</a> warning.
+Overriding a <a href="#rule2b">Rule 2b</a> warning carries a <strong>fair amount of risk</strong> that your submission
+will be <strong>rejected</strong>. Be sure to consult the <a href="guidelines.html">IOCCC guidelines</a>
+ahead of time if you plan to override the <a href="#rule2b">Rule 2b</a> warning.</p>
+<p><strong><code>|</code></strong> If you do override the <a href="#rule2b">Rule 2b</a> warning from the <code>mkiocccentry(1)</code> tool,
+or otherwise plan to violate <a href="#rule2b">Rule 2a</a>, then you <strong>must clearly explain the rationale</strong>
+of why you are doing so in your <code>remarks.md</code> file. Even if you do explain this in your <code>remarks.md</code> file
+your submission may still be rejected.</p>
+<p><strong><code>|</code></strong> You may check your code prior to submission by giving the filename
+as a command like argument to the <code>iocccsize(1)</code> tool. For example:</p>
+<pre><code>    ./iocccsize prog.c</code></pre>
 <div id="rule3">
 <h2 id="rule-3">Rule 3</h2>
 </div>
@@ -633,8 +657,11 @@ C source file must be called <code>prog.c</code>.</p>
 To invoke the C preprocessor use <code>${CPP}</code>.</p>
 <p>Do not assume that <code>.</code> (the current directory) is in the <code>$PATH</code>.</p>
 <p>Use a shell command syntax that is compatible with bash.</p>
-<p>Assume that commands commonly found in POSIX-like / Linux-like systems
-are available in the search path.</p>
+<p><strong><code>|</code></strong> Assume that commands commonly found in <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">Single UNIX
+Specification</a>
+environments and systems that conform to the <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">Single UNIX
+Specification</a> are
+available in the <code>$PATH</code> search path.</p>
 <p>Do not assume any particular given value of <code>${CFLAGS}</code> or other
 commonly used make variables. In other words you <strong>MUST</strong> specify the <code>CFLAGS</code>
 to use.</p>

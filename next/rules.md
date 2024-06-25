@@ -36,7 +36,7 @@ writing by [contacting the judges](../contact.html).
 ## IOCCC Rules version
 </div>
 
-**`|`**   These [IOCCC rules](rules.html) are version **2024-06-23-v28**.
+**`|`**   These [IOCCC rules](rules.html) are version **2024-06-25-v28**.
 
 **IMPORTANT**: Be sure to read the [IOCCC guidelines](guidelines.html).
 
@@ -133,22 +133,59 @@ The size rule requires your entry to satisfy **BOTH** [Rule 2a](#rule2a) and [Ru
 ## Rule 2a
 </div>
 
-**`|`**   The size of your program source **MUST BE <= 4993 bytes** in length.
+**`|`**   The size of your program source **should not exceed 4993 bytes**.
+
+**`|`**   If you use the most recently released official IOCCC submission packaging tool
+(hereby referred to as `mkiocccentry(1)`), which we **STRONGLY recommend you use**,
+then the `mkiocccentry(1)` tool will warn you if there appears to be a [Rule 2a](#rule2a) violation.
+
+**`|`**   The `mkiocccentry(1)` tool will give you the option of overriding the [Rule 2a](#rule2a) warning.
+Overriding a [Rule 2a](#rule2a) warning carries a **fair amount of risk** that your submission
+will be **rejected**.  Be sure to consult the [IOCCC guidelines](guidelines.html)
+ahead of time if you plan to override the [Rule 2a](#rule2a) warning.
+
+**`|`**   If you do override the [Rule 2a](#rule2a) warning from the `mkiocccentry(1)` tool,
+or otherwise plan to violate [Rule 2a](#rule2a), then you **must clearly explain the rationale**
+of why you are doing so in your `remarks.md` file.  Even if you do explain this in your `remarks.md` file
+your submission may still be rejected.
+
+**`|`**   You may check your code prior to submission by giving the filename
+as a command like argument to the `iocccsize(1)` tool. For example:
+
+``` <!---sh-->
+    ./iocccsize prog.c
+```
 
 
 <div id="rule2b">
 ## Rule 2b
 </div>
 
-**`|`**   When your program source is fed as input to the current IOCCC size
-tool, and the IOCCC size tool `-i` command line option is used, the
-value printed **shall not exceed 2503**.
+**`|`**   When the filename of your program source is given as a command line argument to the latest version
+of the official IOCCC size tool (hereby referred to as `iocccsize(1)`), the value printed **should not exceed 2503**.
 
-**`|`**   The source to the current IOCCC size tool is found in the
-[mkiocccentry tool repo](https://github.com/ioccc-src/mkiocccentry). If you use
-the `mkiocccentry` tool (which we **STRONGLY recommend you do**) it will invoke
-this tool before packaging your entry for submission.
+**`|`**   The source to `iocccsize(1)` may be found in the
+[mkiocccentry tool repo](https://github.com/ioccc-src/mkiocccentry).
 
+**`|`**   If you use the `mkiocccentry(1)` tool, which we **STRONGLY recommend you use**,
+then `mkiocccentry(1)` will invoke `iocccsize(1)` before packaging your entry for submission.
+
+**`|`**   The `mkiocccentry(1)` tool will give you the option of overriding the [Rule 2b](#rule2b) warning.
+Overriding a [Rule 2b](#rule2b) warning carries a **fair amount of risk** that your submission
+will be **rejected**.  Be sure to consult the [IOCCC guidelines](guidelines.html)
+ahead of time if you plan to override the [Rule 2b](#rule2b) warning.
+
+**`|`**   If you do override the [Rule 2b](#rule2b) warning from the `mkiocccentry(1)` tool,
+or otherwise plan to violate [Rule 2a](#rule2b), then you **must clearly explain the rationale**
+of why you are doing so in your `remarks.md` file.  Even if you do explain this in your `remarks.md` file
+your submission may still be rejected.
+
+**`|`**   You may check your code prior to submission by giving the filename
+as a command like argument to the `iocccsize(1)` tool. For example:
+
+``` <!---sh-->
+    ./iocccsize prog.c
+```
 
 <div id="rule3">
 ## Rule 3
@@ -387,8 +424,11 @@ Do not assume that `.` (the current directory) is in the `$PATH`.
 
 Use a shell command syntax that is compatible with bash.
 
-Assume that commands commonly found in POSIX-like / Linux-like systems
-are available in the search path.
+**`|`**   Assume that commands commonly found in [Single UNIX
+Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
+environments and systems that conform to the [Single UNIX
+Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification) are
+available in the `$PATH` search path.
 
 Do not assume any particular given value of `${CFLAGS}` or other
 commonly used make variables. In other words you **MUST** specify the `CFLAGS`

@@ -142,7 +142,7 @@ the effort to debug an entry that has a slight problem, particularly
 in or near the final round.  On the other hand, we have seen some
 of the best entries fall down because they didn't work.
 
-We tend to look down on a [prime
+**`|`**   We tend to look down on a [prime
 number](https://en.wikipedia.org/wiki/Prime_number) printer that claims that
 16 is a prime number.  If you do have a bug, you are better off
 documenting it.  Noting "_this entry sometimes prints the 4th power
@@ -150,7 +150,7 @@ of a prime by mistake_" would save the above entry.  And sometimes,
 a strange bug/feature can even help the entry!  Of course, a correctly
 working entry is best.  Clever people will note that 16 might be prime
 under certain conditions.  Wise people, when submitting something clever
-will fully explain such cleverness in their entry's remarks file.
+will fully explain such cleverness in their entry's `remarks.md` file.
 
 People who are considering to just use some complex mathematical
 function or state machine to spell out something such as "_hello,
@@ -166,13 +166,13 @@ When programs use VTxxx/ANSI sequences, they should NOT be limited to a
 specific terminal brand.  Those programs that work in a standard xterm
 are considered more portable.
 
-**`|`**   [Rule 2](rules.html#rule2) (the size rule) refers to the use of the IOCCC size tool called `iocccsize`.
+**`|`**   [Rule 2](rules.html#rule2) (the size rule) refers to the use of the IOCCC size tool called `iocccsize(1)`.
 
-**`|`**   See the [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) for the `iocccsize` tool.
+**`|`**   See the [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) for the `iocccsize(1)` tool.
 
-**`|`**   To further clarify [Rule 2](rules.html#rule2), we subdivided it into two parts, 2a and 2b.
+**`|`**   To further clarify [Rule 2](rules.html#rule2), we subdivided it into two parts, **2a** and **2b**.
 
-**`|`**   The overall size limit (see [Rule 2a](rules.html#rule2a)) on `prog.c` is now 4993 bytes
+**`|`**   The overall size limit (see [Rule 2a](rules.html#rule2a)) on `prog.c` is now **4993 bytes**.
 
 **`|`**   Your entry must satisfy BOTH the maximum size [Rule 2a](rules.html#rule2a) AND your entry
 must satisfy the IOCCC size tool [Rule 2b](rules.html#rule2b).
@@ -182,10 +182,10 @@ code against the 2nd limit of [Rule 2](rules.html#rule2), use the -i command lin
 For example:
 
 ```
-    ./iocccsize -i < prog.c
+    ./iocccsize prog.c
 ```
 
-The IOCCC size tool, when using the -i option, may be summarized as:
+**`|`**   The IOCCC size tool algorithm may be summarized as follows:
 
 ```
     The size tool counts most C reserved words (keyword, secondary,
@@ -241,7 +241,7 @@ tend to 'see thru' masses of `#defines` due to our pre-processor tests
 that we apply.  Simply abusing `#defines` or `-Dfoo=bar` won't go as far
 as a program that is more well rounded in confusion.
 
-Many C compilers dislike the following code, and so do we:
+Many C compilers **DISLIKE** the following code, and so do we:
 
 ``` <!---c-->
     #define d define
@@ -263,11 +263,11 @@ must use an optional c11 feature, use feature test macros so
 that implementations without such optional c11 features will see
 an entry that is both functional and interesting.
 
-We like entries that have workarounds that allow someone with
-an older c99 (ISO/IEC 9899:1999) compiler to be able to compile
+We **LIKE** entries that have workarounds that allow someone with
+nean older c99 (ISO/IEC 9899:1999) compiler to be able to compile
 and enjoy your entry.
 
-We really like "lint free" code.  However lint is a toll of the past.
+We really **LIKE** "lint free" code.  However lint is a toll of the past.
 So try to ensure that your entry compiles warning free.  If possible,
 to compile compile your code using:
 
@@ -292,13 +292,13 @@ If you must turn off various warnings on the compile line such as:
     ... -Wno-empty-body -Wno-return-type ...
 ```
 
-be sure to clearly state so in your remarks **AS WELL AS** in
-your "how to build" / Makefile.
+**`|`**   be sure to clearly state so in your `remarks.md` file **AS WELL AS** in
+your `Makefile`.
 
 All other things being equal, a program that must turn off fewer
 warnings will be considered better, for certain values of better.
 
-Unless you clearly state otherwise in your remarks **AS WELL AS** in
+**`|`**   Unless you clearly state otherwise in your `remarks.md` file **AS WELL AS** in
 your "how to build" / Makefile we will compile using:
 
 ```
@@ -388,38 +388,34 @@ One line programs should be short one line programs: say around 80 to 120
 octets long.  Going well beyond 140 octets is a bit too long to be called
 a one-liner in our vague opinion.
 
-We tend to dislike programs that:
+We tend to **DISLIKE** programs that:
 
 * are very hardware specific
-* are very OS version specific
-     (index/strchr differences are OK, but socket/streams specific
-      code is likely not to be)
-* dump core or have compiler warnings
-     (it is OK only if you warn us in the 'remark' header item)
-* won't compile or run under a POSIX P1003.1/P1003.2 like systems
-* depend on a utility or application not normally found on most
-  most POSIX P1003.1/P1003.2 like systems
-* abuse the build file to get around the size limit
-* obfuscate by excessive use of ANSI trigraphs
-* are longer than they need to be
-* are "blob-ier" than they need to be
-* are rather similar to previous winners  :-(
-* are too similar to previous losers  :-)
+* are very OS version specific (index/strchr differences are OK, but socket/streams specific code is likely not to be)<br>
+**`|`**   * dump core or have compiler warnings (it is OK only if you warn us in your 'remark,md' file)<br>
+**`|`**   * won't compile or run a [Single UNIX Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification) environment
+* depend on a utility or application not normally found systems that conform to the [Single UNIX Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
+* abuse the build file to get around the size limit<br>
+**`|`**   * obfuscate by use of ANSI trigraphs<br>
+**`|`**   * are larger than they need to be<br>
+**`|`**   * have more lines than they need to have<br>
+**`|`**   * are "blob-ier" (just a pile of unformatted C code) than they need to be
+* are rather similar to **previous winners** :-(
+* are identical to **previous losers** :-)
 * that mandate the exclusive the use of an specific Integrated
 * Development Environment (IDE)
 
-In order to encourage entry portability, we dislike entries that
+In order to encourage entry portability, we **DISLIKE** entries that
 fail to build unless one is using an IDE. For example, do not
 mandate that one must use Microsoft Visual Studio to compile
 your entry.  Nevertheless some of the better IDEs have command-line
 interfaces to their compilers, once one learns how to invoke a shell.
 
-The program must compile and link cleanly in a POSIX-like environment.
-Therefore do not assume the system has a
+**`|`**   The program must compile and link cleanly in a [Single UNIX Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification) environment Therefore do not assume the system has a
 [windows.h](https://en.wikipedia.org/wiki/Windows.h) include file:
 
 ``` <!---c-->
-    #include <windows.h>        /* we dislike this include */
+    #include <windows.h>        /* we DISLIKE this include */
 ```
 
 Unless you are cramped for space, or unless you are entering the
@@ -445,9 +441,11 @@ The judges, as a group, have a history giving wide degree of latitude
 to reasonable entries.  And recently they have had as much longitudinal
 variation as it is possible to have on Earth.  :-)
 
-You should try to restrict commands used on the build file to
-POSIX-like or common Unix-like commands.  You can also compile
-and use your own programs.  If you do, try to build and execute
+**`|`**   You should try to restrict commands used on the build file to
+commands found in [Single UNIX Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification) environments
+and systems that conform to the [Single UNIX Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification).
+
+**`|`**   You may compile and use your own programs.  If you do, try to build and execute
 from the current directory.  This restriction is not a hard and
 absolute one.  The intent is to ensure that the building if your
 program is reasonably portable.
@@ -481,7 +479,7 @@ For example, one could use the build instructions:
         @echo "See remarks section about alternate ways to compile"
 ```
 
-and then include special notes in the program "remarks" for
+and then include special notes in tour `remarks.md` file for
 alternate / human intervention based building.
 
 We want to get away from source that is simply a compact blob of
@@ -490,7 +488,7 @@ octets.   Really try to be more creative than blob coding. **HINT!**
 Please do not use things like `gzip(1)` to get around the size limit.
 Please try to be much more creative.
 
-We really dislike entries that make blatant use of including
+We really **DISLIKE** entries that make blatant use of including
 large data files to get around the source code size limit.
 
 We do not recommend submitting [systemd](https://systemd.io) source code to the IOCCC,
@@ -525,7 +523,7 @@ is NOT the smallest C source file that when compiled and run, dumps core:
     main;
 ```
 
-We do not like writable strings.  That is, we don't want stuff like:
+We do **DISLIKE** writable strings.  That is, we don't want stuff such as:
 
 ``` <!---c-->
     char *T = "So many primes, so little time!";
@@ -562,15 +560,15 @@ You do?!?  (Except on Tuesday?)
 
 **`|`**   OK, there are actually 3 _guidelines_ that contain the word fizzbin.
 
-We don't like entries that use proprietary toolkits such as the `M*tif`,
+We **DISLIKE** entries that use proprietary toolkits such as the `M*tif`,
 `Xv*ew`, or `OpenL*ok` toolkits, since not everyone has them.  Use an
 open source toolkit that is widely and freely available instead.
 
 **NOTE**: The previous _guideline_ in this spot has been replaced by this _guideline_:
 
-X client entries should not to depend on particular items on
+**`|`**   X client entries should not to depend on particular items on
 `.Xdefaults`.  If you must do so, be sure to note the required lines
-in the program "remarks".  They should also not depend on any
+in the your `remarks.md` file.  They should also not depend on any
 particular window manager.
 
 Try to avoid entries that play silent sound segments or play the
@@ -597,7 +595,7 @@ Any complaints about the above _guideline_ could be addressed to the
 Speaker of the House of Commons, or to the speaker of your national
 parliament should you have one.
 
-We like programs that:
+We **LIKE** programs that:
 
 * are as concise and small as they need to be
 * do something at least quasi-interesting
@@ -611,20 +609,20 @@ Some types of programs can't excel (anti-tm) in some areas.  Your
 program doesn't have to excel in all areas, but doing well in several
 areas really does help.
 
-You are better off explaining what your entry does in the program
-"remarks" section rather than leaving it obscure for the judges
+**`|`**   You are better off explaining what your entry does in your
+`remarks.md` file section rather than leaving it obscure for the judges
 as we might miss something and/or be too tired to notice.
 
 **`|`**   Please avoid this specific individual _guideline_, if it at all possible.
 
-We freely admit that interesting, creative or humorous comments in
-the program "remarks" help your chances of winning.  If you had to
+**`|`**   We freely admit that interesting, creative or humorous comments in
+your `remarks.md` file help your chances of winning.  If you had to
 read so many twisted entries, you too would enjoy a good laugh or two.
 We think the readers of the contest winners do as well.  We do read
-the program "remarks" during the judging process, so it is worth your
-while to write remarkable program "remarks".
+the your `remarks.md` content during the judging process, so it is worth your
+while to write remarkable `remarks.md` file.
 
-We dislike C code with trailing control-M's (`\r` or `\015`) that results
+We **DISLIKE** C code with trailing control-M's (`\r` or `\015`) that results
 in compilation failures.  Some non-Unix/non-Linux tools such as
 MS Visual C and MS Visual C++ leave trailing control-M's on lines.
 Users of such tools should strip off such control-M's before submitting
@@ -647,7 +645,7 @@ Instead of unescaped octets, you should use \octal or \hex escapes:
     else printf("This code should not print this message\n");
 ```
 
-It is a very good idea to, in your remarks file, tell us why you
+**`|`**   It is a very good idea to, in your `remarks.md` file, tell us why you
 think your entry is obfuscated.  This is particularly true if
 your entry is has some very subtle obfuscations that we might
 otherwise overlook.  **<<-- Hint!**
@@ -668,7 +666,7 @@ into creating a dense blob. Such are the trade-offs that obfuscators face!
 We prefer code that can run on either a 64-bit or 32-bit processor.
 However, it is unwise to assume it will run on an i386 or x86 architecture.
 
-We believe that Mark Twain's remark:
+We believe that Mark Twain's once wrote:
 
 > Get your facts first, then you can distort them as you please.
 
@@ -689,8 +687,8 @@ to pick, choose a 64-bit word size.
 
 If we are feeling ornery we might choose to compile your program
 for running on an Arduino or a PDP-11.  Heck, should we ever find
-an emulator of 60-bit CDC Cyber CPU running a POSIX-like OS, we
-might just try your entry on that emulator as well :-)
+an emulator of 60-bit CDC Cyber CPU, we might just try your entry
+on that emulator as well :-)
 
 If your entry MUST run only in 32-bit mode on an Intel processor, add the
 following compiler flag:
@@ -708,8 +706,8 @@ to your "how to build" make compile line.  For example:
 
 Be even more creative!
 
-If there are limitations in your entry, you are highly encouraged
-to note such limitations in your remarks file.  For example if your
+**`|`**   If there are limitations in your entry, you are highly encouraged
+to note such limitations in your `remarks.md` file.  For example if your
 entry factors values up to a certain size, you might want to state:
 
 ```
@@ -764,13 +762,15 @@ and state:
     might insult a fish named Eric.
 ```
 
+**`|`**   Do not fear if you not 100% sure of the significance of `2305567963945518424753102147331756070` as it is not of prime importance: or is it?  :-)
+
 **`|`**   We **DISLIKE** the use of use ASCII tab characters in markdown files, such as in the required `remarks.md` file.
 
 **`|`**   We don't mind the use ASCII tab characters in your C code.  Feel free to use ASCII tab characters if that suits your obfuscation needs.  If is perfectly **OK** to use tab characters elsewhere in your submission, just not in markdown files as this tends complicate and annoys us when be comes to rendering your markdown content.
 
 **`|`**   If you do use ASCII tab characters in your non-markdown files, be aware that some people may use tab stop that is different than the common 8 character tab stop.
 
-**`|`**   We enjoy a reading `remarks.md` files, especially if they contain useful, informative, and even humorous content about your entry.
+**`|`**   We **LIKE** a reading `remarks.md` files, especially if they contain useful, informative, and even humorous content about your entry.  Yes, this is a **hint**.  :-)
 
 **`|`**   We **RECOMMEND** you put a reasonable amount effort into the content of the `remarks.md` file: it is a required for for a reason.  :-)
 
@@ -796,8 +796,8 @@ have an entry that might otherwise be interesting, you might want to
 submit two versions; one that does not abuse the [IOCCC rules](rules.html) and one that
 does.
 
-If you intend to abuse the [IOCCC rules](rules.html), indicate so in the program
-"remarks".  You must try to justify why you consider your rule abuse to be
+**`|`**   If you intend to abuse the [IOCCC rules](rules.html), indicate so in the program
+`remarks.md` file.  You must try to justify why you consider your rule abuse to be
 allowed under the [IOCCC rules](rules.html).  That is, you must plead your case as to
 why your entry is valid.  Humor and/or creativity help plead a case.
 
@@ -867,9 +867,9 @@ did submit an entry in the past.  In the past, Peter had denied
 submitting anything to the IOCCC.  Perhaps those entries were
 submitted by one of his students?
 
-Hopefully we are **VERY CLEAR** on this point!  The rules now strongly state:
+**`|`**   Hopefully we are **VERY CLEAR** on this point!  The rules now strongly state:
 **PLEASE _DO NOT_ put a name of an author**, in an obvious way, into your
-source code, remarks, data files, etc.  The above "Peter Honeyman is
+source code, `remarks.md`, data files, etc.  The above "Peter Honeyman is
 exempt" notwithstanding.
 
 We seemed to have digressed again ... :-)  Returning to the judging process:
@@ -898,7 +898,7 @@ A reading consists of a number of actions:
 
 * reading the "how to build" information and forming a Makefile
 * reading prog.c, the C source
-* reviewing the "remarks" information
+**`|`**   * reviewing the `remarks.md` information
 * briefly looking any any supplied data files
 * passing the source thru the C pre-processor
     skipping over any #include files
