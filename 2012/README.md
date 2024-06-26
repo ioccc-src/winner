@@ -46,8 +46,8 @@ This year we selected the top 4 entries for particularly high honors:
 
     When you see this program in action, you too will
     very likely say
-	[wow](https://web.archive.org/web/20240626134108/https://twitter.com/ioccc/status/247140812683628545)
-	as we did!
+        [wow](https://web.archive.org/web/20240626134108/https://twitter.com/ioccc/status/247140812683628545)
+        as we did!
 
 But don't ignore the other winning entries!  There are games, utilities,
 eye candy, calculators and graphical tools to explore.
