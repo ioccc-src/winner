@@ -40,11 +40,11 @@ The number of judges now is only 2, Landon Curt Noll and Leonid A. Broukhis.
 ## Remarks on some of the entries
 
 This year, [Jens
-Schweikhardt](../../authors.html#Jens_Schweikhardt) won 3 times
+Schweikhardt](../authors.html#Jens_Schweikhardt) won 3 times
 ... AGAIN!  He is the only person who was able to do this, let alone do it in
 two contests in a row. [Bas de
-Bakker](../../authors.html#Bas_de_Bakker) and [David
-Lowe](../../authors.html#J_David_Lowe) won twice this year as
+Bakker](../authors.html#Bas_de_Bakker) and [David
+Lowe](../authors.html#J_David_Lowe) won twice this year as
 well.
 
 As we stated in the [guidelines](guidelines.txt), the authors of the winning entries are
