@@ -8,21 +8,15 @@ on how to compile the entry and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
-The IOCCC has a website and now has a number of international mirrors.
-The primary site can be found at <https://www.ioccc.org/>.
-
-Use `make(1)` to compile entries.  It is possible that on non-Unix / non-Linux
-systems the `Makefile` needs to be changed.  See the `Makefile` for details.
+Some ANSI C compilers are not quite as good as they should be.  If
+yours is lacking, you may need to compile using `gcc` instead of your
+local compiler.
 
 This year we included most of the information included by the submitters
 in the `README.md` files (that were used to build the `index.html` web pages).
 
-Read over the `Makefile` for compile/build issues.  Your system may require
-certain changes (add or remove a library, add or remove a `#define`).
-
-Some ANSI C compilers are not quite as good as they should be.  If
-yours is lacking, you may need to compile using `gcc` instead of your
-local compiler.
+The IOCCC has a website and now has a number of international mirrors.
+The primary website can be found at <https://www.ioccc.org/>.
 
 
 ## Remarks on some of the entries
@@ -52,7 +46,7 @@ parenthesis](mikeash/index.html) is self reproducing).
 + The [Most sonorous output - 2005/jetro](jetro/index.html) might `sound` :-) like a good idea.
 
 + The [Best 2D puzzle - 2005/giljade](giljade/index.html) takes editorial license with expressions as well as the
-with the [vi editor](https://en.wikipedia.org/wiki/Vi).
+with the [vi editor](https://en.wikipedia.org/wiki/Vi_&#x28;text_editor&#x29;).
 
 + The [Most ambiguous language - 2005/chia](chia/index.html) entry is really a C program.
 
@@ -68,6 +62,7 @@ discourteous interpreter - 2005/timwi](timwi/index.html) entry.
 
 + The [Most ingenious puzzle solution - 2005/aidan](aidan/index.html) might puzzle you more while it
 puzzles out some puzzles: all in a puzzling way!  :-)
+
 
 ### Remarks on some of the losing entries
 

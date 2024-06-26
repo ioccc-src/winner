@@ -8,23 +8,12 @@ compile the entry and how to run the winning program.  Look at the winning
 source and try to figure how it does what it does!  You may then wish to look at
 the Author's remarks for even more details.
 
-The IOCCC has a website and now has a number of international mirrors.
-The primary site can be found at [www.ioccc.org](https://www.ioccc.org).
-
-Use make to compile entries.  It is possible that on non-Unix / non-Linux
-systems the Makefile needs to be changed.  See the Makefile for details.
-
-Look at the source and try to figure out what the programs do, and run
-them with various inputs.  If you want to, look at the hints files for
-spoilers - this year we included most of the information included
-by the submitter.
-
-Read over the README.md for compile/build issues.  Your system may require
-certain changes (add or remove a library, add or remove a `#define`).
-
 Some ANSI C compilers are not quite as good as they should be.  If
 yours is lacking, you may need to compile using gcc instead of your
 local compiler.
+
+The IOCCC has a website and now has a number of international mirrors.
+The primary website can be found at [www.ioccc.org](https://www.ioccc.org).
 
 
 ## Remarks on some of the entries
@@ -36,7 +25,8 @@ This year, 2014:
 We, the judges, were very surprised by this as many of the multiple
 authors submitted very different styles of entries.
 
-This year was the second time the IOCCC size tool was used. Rule 2
+This [year](index.html) was the second time [the IOCCC size
+tool](%%REPO_URL%%/2014/iocccsize.c) was used. Rule 2
 required that when program source is fed as input to the current IOCCC size
 tool, and the IOCCC size tool `-i` command line option is used, the value
 printed should be less than or equal to 2053.
@@ -80,7 +70,7 @@ and to post the edited entries to the website.  It is our intent that
 these changes made during those delays will make releasing future winning IOCCC
 entries a faster procedure.
 
-p.s. The final advice given to Landon by his mom: "Have fun."
+p.s. The final advice given to Landon by his mom: "_Have fun._"
 We recommend following this advice where possible.
 
 

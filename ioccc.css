@@ -756,7 +756,7 @@ blockquote {
  * headings (h1, h2, ...) is too similar so we use dark green with italics
  * as the choice.
  */
-.content blockquote p {
+.content blockquote p, blockquote ol li {
     color: darkgreen;
     font-style: italic;
 }

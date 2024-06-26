@@ -392,27 +392,23 @@
 compile the entry and how to run the winning program. Look at the winning
 source and try to figure how it does what it does! You may then wish to look at
 the Author’s remarks for even more details.</p>
-<p>The IOCCC has a website and now has a number of international mirrors.
-The primary site can be found at <a href="https://www.ioccc.org">www.ioccc.org</a>.</p>
-<p>Use <code>make</code> to compile entries. It is possible that on non-Unix / non-Linux
-systems the Makefile needs to be changed. See the Makefile for details.</p>
-<p>Read over the Makefile for compile/build issues. Your system might require
-certain changes (add or remove a library, add or remove a <code>#define</code> i.e. <code>-D</code>
-flag).</p>
 <p>Some ANSI C compilers are not quite as good as they should be. If
 yours is lacking, you may need to compile using gcc instead of your
 local compiler.</p>
+<p>The IOCCC has a website and now has a number of international mirrors.
+The primary website can be found at <a href="https://www.ioccc.org">www.ioccc.org</a>.</p>
 <h2 id="remarks-on-some-of-the-entries">Remarks on some of the entries</h2>
 <p>We believe you will again be impressed with this year’s winning entries.</p>
 <p>This year, 9 won 15 awards. For the first time in the history of the contest,
 one person, <a href="../authors.html#Yusuke_Endoh">Yusuke Endoh</a> won
 4 times while <a href="../authors.html#Adrian_Cable">Adrian Cable</a>
 won 3 times! It is also worth noting that <a href="../authors.html#Christopher_Mills">Chris
-Mills</a> last win was in 1993.
+Mills</a>’ last win was in
+<a href="../years.html#1993">1993</a>.
 Welcome back Chris!</p>
 <p>We, the judges, were very surprised by this as many of the multiple
 authors submitted very different styles of entries.</p>
-<p>This year was the first time the IOCCC size tool was used. Entries
+<p>This year was the first time the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/iocccsize.c">IOCCC size tool</a> was used. Entries
 had to print a value 2053 or less when the <code>-i</code> flag was used.</p>
 <p>Several people discovered an undocumented feature in that
 certain comments such as:</p>
@@ -421,10 +417,12 @@ certain comments such as:</p>
 <pre><code>        *\
         /</code></pre>
 <p>were not correctly parsed by the tool. The guidelines stated:</p>
-<pre><code>    In cases where the above summary and the algorithm implemented by
-    the IOCCC size tool source code conflict, the algorithm implemented
-    by the IOCCC size tool source code is preferred by the judges.</code></pre>
-<p>so this abuse was allowed (and encouraged). The judges hope that
+<blockquote>
+<p>In cases where the above summary and the algorithm implemented by the IOCCC
+size tool source code conflict, the algorithm implemented by the IOCCC size tool
+source code is preferred by the judges.</p>
+</blockquote>
+<p>… so this abuse was allowed (and encouraged). The judges hope that
 the IOCCC size tool author will patch the tool to block this kind
 of size abuse in future contests.</p>
 <p>There were some outstanding entries that did not win. Unfortunately

@@ -4797,7 +4797,6 @@ it easier for those who do not know how, and to make it more obvious to try it.
 # [2013 - The 22nd IOCCC](2013/index.html)
 </div>
 
-
 <div id="2013_birken">
 ## Winning entry: [2013/birken](2013/birken/index.html)
 ### Winning entry source code: [birken.c](%%REPO_URL%%/2013/birken//birken.c)
@@ -5052,6 +5051,9 @@ Cody also added the [try.sh](%%REPO_URL%%/2013/morgan1/try.sh) script.
 <div id="2014">
 # [2014 - The 23rd IOCCC](2014/index.html)
 </div>
+
+[Yusuke](#yusuke) added the missing `rules.txt`, `iocccsize.c` and `
+iocccsize.mk` files.
 
 
 <div id="2014_birken">

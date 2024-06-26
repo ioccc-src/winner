@@ -5,9 +5,6 @@ on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
-Instructions for use: Run `make` to compile entries (it is possible that on
-System V or non-Unix systems the Makefile needs to be changed).
-
 The Makefile for [Best self modifying program](fubar/index.html) always uses
 the most portable version because there is no loss of functionality in
 using it.  In the case of the [Best game](tromp/index.html) entry, however, some

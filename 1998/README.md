@@ -8,19 +8,11 @@ on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
-The IOCCC has its own domain.  The IOCCC has an official home page:
-[www.ioccc.org](https://www.ioccc.org).
-
-Use `make` to compile entries.  It is possible that on BSD or non-Unix
-systems the Makefile needs to be changed.  See the Makefile for details.
-
-Read over the Makefile for compile/build issues.  Your system may
-require certain changes (add or remove a library, add or remove a
-`#define` i.e. the `-D` flag).
-
 Some ANSI C compilers are not quite as good as they should be.  If
 yours is lacking, you may need to compile using gcc instead of your
 local compiler.
+
+The IOCCC has an official home page: [www.ioccc.org](https://www.ioccc.org).
 
 
 ## New Judges
@@ -48,11 +40,11 @@ The number of judges now is only 2, Landon Curt Noll and Leonid A. Broukhis.
 ## Remarks on some of the entries
 
 This year, [Jens
-Schweikhardt](https://www.ioccc.org/authors.html#Jens_Schweikhardt) won 3 times
+Schweikhardt](../../authors.html#Jens_Schweikhardt) won 3 times
 ... AGAIN!  He is the only person who was able to do this, let alone do it in
 two contests in a row. [Bas de
-Bakker](https://www.ioccc.org/authors.html#Bas_de_Bakker) and [David
-Lowe](https://www.ioccc.org/authors.html#J_David_Lowe) won twice this year as
+Bakker](../../authors.html#Bas_de_Bakker) and [David
+Lowe](../../authors.html#J_David_Lowe) won twice this year as
 well.
 
 As we stated in the [guidelines](guidelines.txt), the authors of the winning entries are
@@ -68,13 +60,15 @@ look at all of the winning entries.  The list of winning entries is a bit too lo
 say something about every entry.  On the other hand a partial mention
 of a few is in order:
 
-- Audiences were very impressed with the Best of Show entry.
+- Audiences were very impressed with the [Best of Show
+entry](banks/index.html).
 - The judges were amused that for the first time we received an entry
   that caused gcc to give the assembler bad input in some cases.
-- The poot entries got a good laugh from the USENIX IOCCC BOF (Birds Of a Feather) crowd.
+- The `poot` entries ([dlowe](dlowe/index.html),
+[dloweneil](dloweneil/index.html) got a good laugh from the USENIX IOCCC BOF (Birds Of a Feather) crowd.
 - Those with Functional Programming knowledge as well as those
-  impressed with CPP code expansion liked the entry that translated
-  lambda expressions into combinator expressions.
+  impressed with CPP code expansion like [the entry that translates
+  lambda expressions into combinator expressions](fanf/index.html).
 - Logic minded folks will get somewhat twisted up while following the
   flow of the [Best Flow Control entry](schnitzi/index.html).
 - Those who know the PostScript language will be 'bemused' by
