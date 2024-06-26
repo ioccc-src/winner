@@ -5,12 +5,7 @@ on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
-Use `make` to compile entries.  It is possible that on BSD or non-Unix
-systems the Makefile needs to be changed.  See the Makefile for details.
-
-Read over the Makefile for compile/build issues.  Your system may require
-certain changes (add or remove a library, add or remove a `#define` i.e. the
-`-D` flag).  A number of compilers had problems optimizing certain entries.
+A number of compilers had problems optimizing certain entries.
 Some compilers do optimize, but the resulting program does not work.  By default
 we have left off `-O` from compile lines.  You might want to add `-O` back, or
 add it back for certain entries where performance is important. (This was

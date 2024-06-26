@@ -5,9 +5,6 @@ on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
-Instructions for use: Run `make` to compile entries.  It is possible that
-on BSD or non-Unix systems the Makefile needs to be changed.
-
 This year, we did not single out an entry that was better than all of
 the rest.  We selected 3 entries that, in our opinion, went beyond
 all of the other entries this year:

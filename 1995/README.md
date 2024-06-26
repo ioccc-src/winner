@@ -9,13 +9,6 @@ The IOCCC has an official home page, [www.ioccc.org](https://www.ioccc.org), whi
 previous winning entries, information about the judges, announcements and much
 more.
 
-Use `make` to compile entries.  It is possible that on BSD or non-Unix
-systems the `Makefile` needs to be changed.  See the `Makefile` for details.
-
-Read over the `Makefile` for compile/build issues.  Your system may
-require certain changes (add or remove a library, add or remove a
-`#define` i.e. the `-D` flag).
-
 This year [Sriram Srinivasan](http://www.malhar.net/sriram/) joined the judging.
 
 The moderator of
@@ -84,66 +77,61 @@ Obfuscated C Contest dinners were:
 
 ### Session One:
 
-Antipasti: Crudites, olive selection, pickles, cheese selection
-Soup: Homemade mushroom and green onion soup
-Salad: artichoke, red bell peppers, Italian onions, cucumbers
-       and Greek olives with mustard vinaigrette
-Main Course: Pizzas, with a variety of toppings
-Dessert: Chocolate torte
+**Antipasti**: Crudites, olive selection, pickles, cheese selection<br>
+**Soup**: Homemade mushroom and green onion soup<br>
+**Salad**: artichoke, red bell peppers, Italian onions, cucumbers and Greek olives with mustard vinaigrette<br>
+**Main Course**: Pizzas, with a variety of toppings<br>
+**Dessert**: Chocolate torte
 
 
 ### Session Two:
 
-Antipasti: crudites, olives, roasted red peppers, cheese selection
-Salad: Mixed greens with vinaigrette
-Main Course: Spaghetti with tomato sauce containing mushrooms and black olives
-             selection of hot and mild Italian sausages
-Bread: Fresh French bread
-Dessert: Cookie selection, featuring chocolate chocolate chip cookies and
-         chocolate butter cookies
+**Antipasti**: crudites, olives, roasted red peppers, cheese selection<br>
+**Salad**: Mixed greens with vinaigrette<br>
+**Main Course**: Spaghetti with tomato sauce containing mushrooms and black olives selection of hot and mild Italian sausages<br>
+**Bread**: Fresh French bread<br>
+**Dessert**: Cookie selection, featuring chocolate chocolate chip cookies and chocolate butter cookies
 
 
 ### Session Three
 
-Antipasti: Crudites, olive selection
-Salad: Mixed greens with mustard vinaigrette
-Main Course: Broiled salmon with lemon pepper mayonnaise, chard, mixture
-        of white and wild rices
-Bread: Cheese bread with herbs
-Dessert: Chocolate cheesecake (Courtesy of Elizabeth Watson)
+**Antipasti**: Crudites, olive selection<br>
+**Salad**: Mixed greens with mustard vinaigrette<br>
+**Main Course**: Broiled salmon with lemon pepper mayonnaise, chard, mixture of white and wild rices<br>
+**Bread**: Cheese bread with herbs<br>
+**Dessert**: Chocolate cheesecake (Courtesy of Elizabeth Watson)
 
 
 ### Session Four:
 
-Antipasti: Crudites, olive selection, roasted red peppers, cheese selection
-Bread: Sourdough
-Salad: Mixed spring greens with flowers, and mustard vinaigrette
-Main Course: Surf and Turf--Grilled steaks of salmon and New York steak
-        grilled vegetables--onions, peppers, portobello mushrooms
-        wild rice
-Dessert: Chocolate mousse
+**Antipasti**: Crudites, olive selection, roasted red peppers, cheese selection<br>
+**Bread**: Sourdough<br>
+**Salad**: Mixed spring greens with flowers, and mustard vinaigrette<br>
+**Main Course**: Surf and Turf--Grilled steaks of salmon and New York steak grilled
+vegetables--onions, peppers, portobello mushrooms wild rice<br>
+**Dessert**: Chocolate mousse
 
 
 ### Session Five:
 
-Antipasti: Crudites, olive selection, pickles
-Salad: Mixed spring greens with mustard vinaigrette
-Main Course: Linguini with a cream sauce of shiitake mushrooms and smoked
-salmon
-Bread: Garlic bread
-Dessert: Flour-less chocolate torte
+**Antipasti**: Crudites, olive selection, pickles<br>
+**Salad**: Mixed spring greens with mustard vinaigrette<br>
+**Main Course**: Linguini with a cream sauce of shiitake mushrooms and smoked
+salmon<br>
+**Bread**: Garlic bread<br>
+**Dessert**: Flour-less chocolate torte
 
 
 ### Session Six:
 
-Antipasti: Carrot and celery sticks with cheese spread, olive selection,
-pickles
-Bread: Focaccia with black olives and mozzarella cheeses
-Salad: Mixed spring greens with flowers and mustard vinaigrette
-Soup: Homemade butternut squash soup with mushrooms
-Main Course: Cracked Dungeness crab with lemon mayonnaise, broccoli,
-        mixture of white and brown rice
-Dessert: Key lime pie
+**Antipasti**: Carrot and celery sticks with cheese spread, olive selection,
+pickles<br>
+**Bread**: Focaccia with black olives and mozzarella cheeses<br>
+**Salad**: Mixed spring greens with flowers and mustard vinaigrette<br>
+**Soup**: Homemade butternut squash soup with mushrooms<br>
+**Main Course**: Cracked Dungeness crab with lemon mayonnaise, broccoli, mixture of
+white and brown rice<br>
+**Dessert**: Key lime pie
 
 
 <!--

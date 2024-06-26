@@ -8,23 +8,15 @@ on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
-The primary site can be found at [www.ioccc.org](https://www.ioccc.org).
-
-Use `make` to compile entries.  It is possible that on non-Unix / non-Linux
-systems the Makefile needs to be changed.  See the Makefile for details.
-
-Read over the Makefile and index.html files for compile/build issues.  Your
-system may require certain changes (add or remove a library, add or remove a
-`#define`).
-
 Some C compilers are not quite as good as they should be.  If yours is
 lacking, you may need to compile using clang or gcc instead of your local
 compiler.
 
+The primary website can be found at [www.ioccc.org](https://www.ioccc.org).
 
 ## Remarks on some of the winning entries
 
-This year's [Best of Show - 2020/carlini](carlini/index.html) is such a novel way of
+This year's [Best of Show - abuse of libc - 2020/carlini](carlini/index.html) is such a novel way of
 obfuscation that it would be worth of a special mention in the (future) Best of
 IOCCC list!
 
@@ -32,7 +24,7 @@ For some reason, this year's set of winning entries contains three nostalgic gam
 [Asteroids - 2020/tsoj](tsoj/index.html), [Minesweeper - 2020/endoh1](endoh1/index.html),
 and [Snake - 2020/ferguson1](ferguson1/index.html).
 
-An entry, [kurdyukov1](kurdyukov1/index.html), pays homage to previous entry
+An entry, [kurdyukov1](kurdyukov1/index.html), pays homage to the previous entry
 [2015/hou](../2015/hou/index.html).
 
 ...We'll stop spouting spoilers now. Have fun exploring all the entries!

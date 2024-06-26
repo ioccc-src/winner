@@ -12,12 +12,6 @@ The IOCCC has an official home page: [www.ioccc.org](https://www.ioccc.org),
 containing previous winning entries, information about the judges,
 announcements and much more.
 
-Use `make` to compile entries.  It is possible that on BSD or non-Unix
-systems the Makefile needs to be changed.  See the Makefile for details.
-
-Read over the Makefile for compile/build issues.  Your system may
-require certain changes (add or remove a library, add or remove a
-`#define` i.e. the `-D` flag).
 
 
 ## Where are Larry Bassel and Barbara Frezza?
@@ -50,7 +44,7 @@ Schweikhardt around, this lead could fall fast.
 
 As we stated in the [guidelines](guidelines.txt), the authors of the winning entries are
 as much news to us as they are to you because we keep authorship separate from
-rest of the entry.  Some people have it, we guess!
+the rest of the entry.  Some people have it, we guess!
 
 There were a few very good entries that might have won if it were not
 for the fact that they didn't work.  If you didn't win, but think you
@@ -62,15 +56,15 @@ had a chance: test your program, fix it and submit it next year!
 There will be no 1997 contest.
 
 The next contest will not open until sometime in March 1998, and will
-close sometime around the end of May 1998.  The rules for the 1998
-contest have not been formed at this time and are not expected to be
+close sometime around the end of May 1998.  The [rules for the 1998
+contest](../1998/rules.txt) have not been formed at this time and are not expected to be
 ready for distribution until late February 1998.
 
 So what happened to 1997?  Well the next USENIX Technical Conference
 will be held Jun 15-19, 1998 (in New Orleans, US).  The 18 month
 span between conferences will cause the IOCCC to skip over 1997.
 
-Be sure to wait until the 1998 rules are posted before submitting entries.
+Be sure to wait until the [1998 rules](../1998/rules.txt) are posted before submitting entries.
 Rules differ from year to year, sometimes in significant ways.
 
 Please send us comments and suggestions what we have expressed above.

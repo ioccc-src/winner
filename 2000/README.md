@@ -8,13 +8,6 @@ on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
-Use `make` to compile entries.  It is possible that on non-Unix / non-Linux
-systems the Makefile needs to be changed.  See the Makefile for details.
-
-Read over the Makefile for compile/build issues.  Your system may
-require certain changes (add or remove a library, add or remove a
-`#define`).
-
 Some ANSI C compilers are not quite as good as they should be.  If
 yours is lacking, you may need to compile using gcc instead of your
 local compiler.
@@ -44,17 +37,17 @@ them for the next IOCCC.
 
 We believe you will be impressed with this year's winning entries.  The [Best of
 Show](jarijyrki/index.html) is a fine example of compact obfuscation. But don't
-ignore the shorter entries.  The [Best Small Program](natori/index.html), [Best
-Abuse of User](briddlebane/index.html) and [Most Complete Program](tomx/index.html)
+ignore the shorter entries.  The [Best small program](natori/index.html), [Best
+abuse of user](briddlebane/index.html) and [Most complete program](tomx/index.html)
 are well worth studying in detail.
 
-The [Worst Abuse of the Rules](dlowe/index.html) is technically allowed by the
+The [Worst abuse of the rules](dlowe/index.html) is technically allowed by the
 rules.  We gave it an award this year, but don't assume you can get away with
 using it next time ... :-)
 
 Speaking of time, be sure to check out the [Astronomically
-Obfuscated](rince/index.html) and the [Most Timely
-Output](schneiderwent/index.html) entries.
+obfuscated](rince/index.html) and the [Most timely
+output](schneiderwent/index.html) entries.
 
 
 ## There was no 1999 contest
@@ -74,7 +67,7 @@ scheduled start of the contest).  That is why there is no 1999 contest.
 
 **NOTE**: The above has been mentioned in an Amici Curiae for the
 DeCSS case.  See [BRIEF OF AMICI CURIAE N SUPPORT OF APPELLANTS AND
-REVERSAL ..](https://web.archive.org/web/20231021211330/http://cryptome.org/mpaa-v-2600-bac.htm).
+REVERSAL](https://web.archive.org/web/20231021211330/http://cryptome.org/mpaa-v-2600-bac.htm).
 
 
 ## Final Comments

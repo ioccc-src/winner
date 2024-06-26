@@ -8,29 +8,22 @@ on how to compile the entry and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
-The IOCCC has a website and now has a number of international mirrors.
-The primary site can be found at <https://www.ioccc.org/>.
-
-Use `make(1)` to compile entries.  It is possible that on non-Unix / non-Linux
-systems the `Makefile` needs to be changed.  See the `Makefile` for details.
-
-Read over the `Makefile` for compile/build issues.  Your system may
-require certain changes (add or remove a library, add or remove a
-`#define`).
-
 Some ANSI C compilers are not quite as good as they should be.  If
 yours is lacking, you may need to compile using `gcc` instead of your
 local compiler.
+
+The IOCCC has a website and now has a number of international mirrors.
+The primary website can be found at <https://www.ioccc.org/>.
 
 
 ## Remarks on some of the entries
 
 We believe you will be impressed with this year's winning entries.  The [Best of
-Show](%%REPO_URL%%/2004/gavin/gavin.c) is a fine example of obfuscation.  But don't ignore the
+Show](gavin/index.html) is a fine example of obfuscation.  But don't ignore the
 other entries!  There are games, utilities, programs that output images and a
 one-liner that is incredibly compact for what it can do.
 
-The [Best Abuse of the Guidelines](%%REPO_URL%%/2004/hibachi/hibachi.c) is technically allowed by
+The [Best abuse of the guidelines](hibachi/index.html) is technically allowed by
 the rules.  This year we allowed it due to the functionality of the program.
 This entry is one of the easiest to read!  Don't assume you can win using
 similar techniques next time ... :-)

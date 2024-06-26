@@ -8,19 +8,13 @@ compile the entry and how to run the winning program.  Look at the winning
 source and try to figure how it does what it does!  You may then wish to look at
 the Author's remarks for even more details.
 
-The IOCCC has a website and now has a number of international mirrors.
-The primary site can be found at [www.ioccc.org](https://www.ioccc.org).
-
-Use `make` to compile entries.  It is possible that on non-Unix / non-Linux
-systems the Makefile needs to be changed.  See the Makefile for details.
-
-Read over the Makefile for compile/build issues.  Your system might require
-certain changes (add or remove a library, add or remove a `#define` i.e. `-D`
-flag).
-
 Some ANSI C compilers are not quite as good as they should be.  If
 yours is lacking, you may need to compile using gcc instead of your
 local compiler.
+
+The IOCCC has a website and now has a number of international mirrors.
+The primary website can be found at [www.ioccc.org](https://www.ioccc.org).
+
 
 
 ## Remarks on some of the entries
@@ -31,13 +25,14 @@ This year, 9 won 15 awards.  For the first time in the history of the contest,
 one person, [Yusuke Endoh](../authors.html#Yusuke_Endoh) won
 4 times while [Adrian Cable](../authors.html#Adrian_Cable)
 won 3 times!  It is also worth noting that [Chris
-Mills](../authors.html#Christopher_Mills) last win was in 1993.
+Mills](../authors.html#Christopher_Mills)' last win was in
+[1993](../years.html#1993).
 Welcome back Chris!
 
 We, the judges, were very surprised by this as many of the multiple
 authors submitted very different styles of entries.
 
-This year was the first time the IOCCC size tool was used.  Entries
+This year was the first time the [IOCCC size tool](%%REPO_URL%%/2013/iocccsize.c) was used.  Entries
 had to print a value 2053 or less when the `-i` flag was used.
 
 Several people discovered an undocumented feature in that
@@ -57,13 +52,11 @@ or:
 were not correctly parsed by the tool.  The guidelines stated:
 
 
-```
-    In cases where the above summary and the algorithm implemented by
-    the IOCCC size tool source code conflict, the algorithm implemented
-    by the IOCCC size tool source code is preferred by the judges.
-```
+> In cases where the above summary and the algorithm implemented by the IOCCC
+size tool source code conflict, the algorithm implemented by the IOCCC size tool
+source code is preferred by the judges.
 
-so this abuse was allowed (and encouraged).  The judges hope that
+... so this abuse was allowed (and encouraged).  The judges hope that
 the IOCCC size tool author will patch the tool to block this kind
 of size abuse in future contests.
 

@@ -11,13 +11,6 @@ You may then wish to look at the Author's remarks for even more details.
 The IOCCC has a website and now has a number of international mirrors.  The
 primary site can be found at [www.ioccc.org](https://www.ioccc.org).
 
-Use `make` to compile entries.  It is possible that on non-Unix / non-Linux
-systems the Makefile needs to be changed.  See the Makefile for details.
-
-Read over the Makefile for compile/build issues.  Your system may
-require certain changes (add or remove a library, add or remove a
-`#define` i.e. the `-D` flag).
-
 Some ANSI C compilers are not quite as good as they should be.  If
 yours is lacking, you may need to compile using gcc instead of your
 local compiler.
@@ -41,7 +34,7 @@ Show](ollinger/index.html) is a fine example of obfuscation.  But don't ignore
 the other entries!  There are games, programs that speak, ones that compile code
 and [one that _might_ run binaries you already have](anonymous/index.html).
 
-The [Best/Worst Abuse of the Rules](bellard/index.html) is technically allowed by the
+The [Best abuse of the rules](bellard/index.html) is technically allowed by the
 [rules](rules.txt).  This year we awarded it again, but don't assume you can get
 away with using the same technique next time ... :-)
 

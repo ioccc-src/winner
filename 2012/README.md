@@ -8,18 +8,13 @@ on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
-The IOCCC has a website and now has a number of international mirrors.
-The primary site can be found at [www.ioccc.org](https://www.ioccc.org).
-
-Use `make` to compile entries.  It is possible that on non-Unix / non-Linux
-systems the Makefile needs to be changed.  See the Makefile for details.
-
-Read over the Makefile for compile/build issues.  Your system may require
-certain changes (add or remove a library, add or remove a `#define`).
-
 Some ANSI C compilers are not quite as good as they should be.  If
 yours is lacking, you may need to compile using gcc instead of your
 local compiler.
+
+The IOCCC has a website and now has a number of international mirrors.
+The primary website can be found at [www.ioccc.org](https://www.ioccc.org).
+
 
 
 ## Remarks on some of the entries
@@ -30,40 +25,45 @@ because the overall quality of the submissions were so high.
 
 This year we selected the top 4 entries for particularly high honors:
 
-*   Gold award - Balanced use of obfuscation
+*   [Balanced use of obfuscation - Gold Award](zeitak/index.html)
 
     A very extremely subtle and twisted piece of source code!
     Even if you start with the zeitak.alt.c source,
     you will still have a very challenging time to understand it!
 
-*   Silver award - Most elementary use of C
+*   [Most elementary use of C - Silver Award](hamano/index.html)
 
     A fun program that could also have won "Best abuse of
     Ghostscript" because it managed to create some PDF files
     that Ghostscript could not read.
 
-*   Bronze award - Best use of cocoa
+*   [Best use of cocoa - Bronze Award](vik/index.html)
 
     A picture within a picture is worth more than a
     thousand (4 byte) words. :-)
 
-*   Honorable mention - Most complex ASCII fluid
+*   [Most complex ASCII fluid - Honorable mention](endoh1/index.html)
 
     When you see this program in action, you too will
-    very likely say [wow](http://bit.ly/R6ALpK) as we did!
+    very likely say
+	[wow](https://web.archive.org/web/20240626134108/https://twitter.com/ioccc/status/247140812683628545)
+	as we did!
 
 But don't ignore the other winning entries!  There are games, utilities,
 eye candy, calculators and graphical tools to explore.
 
-This year, Yusuke Endoh won with two entries, one of which
-([endoh1](endoh1/index.html) entry) won the special Honorable mention award.  Eight of
+This year, [Yusuke Endoh](../authors.html#Yusuke_Endoh) won with two entries, one of which
+([endoh1](endoh1/index.html)) won the special [Honorable
+mention](endoh1/index.html) award.  Eight of
 the winning entries were from people who won in previous years.
 
-This year we had a number of authors from Asia.  We saw our second
-authors from China and first from Korea.  We are pleased to see
+This year we had a number of authors from Asia.  We saw [our second
+entry from China](hou/index.html) and [our first from Korea](kang/index.html).  We are pleased to see
 outstanding entries from areas of the world that have not been
-active in past contests.  Will we see an upswing of entries
-from South America, Africa and Antarctica next year? :-)
+active [in past contests](../years.html).  Will we see an upswing of entries
+from [South America](https://en.wikipedia.org/wiki/South_America),
+[Africa](https://en.wikipedia.org/wiki/Africa) and
+[Antarctica](https://en.wikipedia.org/wiki/Antarctica) next year? :-)
 
 Please note that judging is done completely anonymously.  Please
 do NOT reveal your identity in your source code.  In the future we

@@ -8,19 +8,11 @@ on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
-The primary site can be found at [www.ioccc.org](https://www.ioccc.org).
-
-Use `make` to compile entries.  It is possible that on non-Unix / non-Linux
-systems the Makefile needs to be changed.  See the Makefile for details.
-
-Read over the Makefile and index.html files for compile/build issues.  Your
-system may require certain changes (add or remove a library, add or remove a
-`#define`).
-
 Some C compilers are not quite as good as they should be.  If yours is
 lacking, you may need to compile using clang or gcc instead of your local
 compiler.
 
+The primary website can be found at [www.ioccc.org](https://www.ioccc.org).
 
 ## Remarks on some of the winning entries
 
@@ -29,7 +21,7 @@ This year's winning entries are impressive!
 The [Most in need of debugging - 2019/endoh](endoh/index.html) is very inventive in
 a way it produces its own text!
 
-The [Most likely to be awarded - 2019/ciura](ciura/index.html) has an amazing
+The [Most alphabetic- 2019/ciura](ciura/index.html) has an amazing
 vocabulary!
 
 There are again nods to entries of the years:
@@ -39,11 +31,9 @@ There are again nods to entries of the years:
 
 These nods to not run afoul of the guideline:
 
-```
-    We tend to dislike programs that:
-    ...
-    are rather similar to previous entries
-```
+> We tend to dislike programs that:
+> ...
+> are rather similar to previous entries
 
 because the entry [2019/dogon](dogon/index.html) appropriately pays homage
 to past entries without blatantly reusing their code.

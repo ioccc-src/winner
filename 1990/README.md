@@ -5,7 +5,7 @@ on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
-This year, the Grand Prize won a standing ovation at USENIX.
+This year, the [Best of Show](theorem/index.html) won a standing ovation at USENIX.
 
 The [Strangest abuse of the rules](stig/index.html) award was given this
 year to stress the fact that starting in [1991](../years.html#1991), entries
