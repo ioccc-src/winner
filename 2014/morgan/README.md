@@ -51,8 +51,7 @@ of rule targets).
 
 It should be able to build programs of previous years with the provided `Makefile`
 found in previous contest archives. Simply use this program instead of `make`.
-It will recursively use itself for sub-make (the `MAKE=` assignment inside
-`Makefile` will be ignored to continue using itself).
+It will recursively use itself for sub-make.
 
 
 ## Limitations / Known issues
