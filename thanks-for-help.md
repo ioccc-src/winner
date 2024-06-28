@@ -5419,6 +5419,9 @@ He also added the [try.sh](%%REPO_URL%%/2015/yang/try.sh) script.
 # [2018 - The 25th IOCCC](2018/index.html)
 </div>
 
+[Cody](#cody) added the missing `README.md` file from the winner archive back to
+the repo.
+
 
 <div id="2018_anderson">
 ## Winning entry: [2018/anderson](2018/anderson/index.html)
