@@ -74,13 +74,11 @@ directory it is run from.
 
 #### Minimal, Universal File Bundling (or, Functional Obfuscation in a Self-Decoding Unix Shell Archive)
 
-```
-    "Use an algorithm, go to jail."
+> "Use an algorithm, go to jail."
+>
+>    -- anon., circa 1988
 
-    -- anon., circa 1988
-```
-
-**HISTORICAL NOTE**: This entry was submitted just before the
+**HISTORICAL NOTE**: We started working on this just before the
 [Morris worm](https://en.wikipedia.org/wiki/Morris_worm) era.
 
 Myriad formats have been proposed for network-mailable data. A major difficulty
@@ -113,14 +111,12 @@ within a modified Shannon model of communication, the 'shark' effort aims to
 construct a "shortest program" for source decoding in the Turing-universal Unix
 environment.
 
-```
-    Oh, the shark has pretty teeth, dear--
-    And he shows them pearly white
-    Just a jackknife has Macheath, dear--
-    And he keeps it out of sight.
-
-    -- Bertolt Brecht, Threepenny Opera
-```
+>    Oh, the shark has pretty teeth, dear--<br>
+>    And he shows them pearly white<br>
+>    Just a jackknife has Macheath, dear--<br>
+>    And he keeps it out of sight.<br>
+>
+>    -- Bertolt Brecht, Threepenny Opera
 
 
 ### Portability
