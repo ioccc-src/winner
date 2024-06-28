@@ -63,26 +63,20 @@ the code, this is what it looks like:
 Some years after this entry was published we asked the author if they still
 wished to remain anonymous and they said:
 
-```
-    Yes, I want to keep my anonymity.  But you can tell them that I am well known
-    for my connection to the C language.
-```
+> Yes, I want to keep my anonymity.  But you can tell them that I am well known
+for my connection to the C language.
 
 
 ### On the famous tattoo (see above):
 
 The author, when told about this tattoo, said:
 
-```
-    I feel honored that my entry will be the first IOCCC winning entry to become a
-    tattoo. It is the first entry to become a tattoo isn't it?
-```
+> I feel honored that my entry will be the first IOCCC winning entry to become a
+tattoo. It is the first entry to become a tattoo isn't it?
 
 Landon Curt Noll, the one who told the author about the tattoo, wrote back:
 
-```
-    Yes, to our knowledge it is.
-```
+> Yes, to our knowledge it is.
 
 
 ### Regrets:
