@@ -725,17 +725,21 @@ transition: all .3s ease;
 blockquote {
     margin: 1em 0 1em 1.7em;
     padding-left: 1em;
-    border-left: 4px solid darkgrey;
+    border-top: 4px solid darkgreen;
+    border-left: 4px solid darkgreen;
+    border-bottom: 4px solid darkgreen;
+    border-right: 4px solid darkgreen;
     font-style: italic;
 }
 
 /* This rule makes sure that text in <blockquote><p>..</p></blockquote> is
- * coloured right. Note that this MUST BE HERE because otherwise the rule
- * '.content p' would override it.
+ * formatted right. Note that this MUST BE HERE because otherwise the rule
+ * '.content p' could override it, if the formatting is ever changed there.
  *
- * The following rationale with the blockquote rule above (in particular
- * with italics) and the dark green selection, so that this is understood
- * better:
+ * ## Historical remarks
+ *
+ * We tried to change the colour and we went with dark green with the
+ * following rationale:
  *
  *	 0.	Purple should NOT be used as this is being used for visited links.
  *	 1.	Blue should NOT be used as this is being used for non-visited links.
@@ -755,9 +759,14 @@ blockquote {
  * Conclusions: dark blue seems to be slightly better but unfortunately the
  * headings (h1, h2, ...) is too similar so we use dark green with italics
  * as the choice.
+ *
+ * ... However, it was hard to find a good shade of green that would stand out
+ * against the white background and other colours did not do so well. Thus,
+ * the blockquote border was changed from just on the left side to make it into
+ * a box and went from grey (or actually dark grey) to dark green.
  */
 .content blockquote p, blockquote ol li {
-    color: darkgreen;
+    color: black;
     font-style: italic;
 }
 
