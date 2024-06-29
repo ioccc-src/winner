@@ -1,4 +1,4 @@
-repo START: this line starts content from: inc/rules.closed.hdr -->
+<!-- START: this line starts content from: inc/rules.closed.hdr -->
 
 # WARNING: These rules are OUT OF DATE
 
