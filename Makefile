@@ -319,7 +319,7 @@ tab_check:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	@TAB_LIST="$$(${FIND} * \( -name NOTES -o -name tmp -o -name markdown.md \) -prune -o \
 				     -type f -name '*.md' -print0 | \
-			      ${XARGS} -0 ${GREP} -E -l '\t')"; \
+			      ${XARGS} -0 ${GREP} -E -l '	')"; \
 	    if [[ -n $$TAB_LIST ]]; then \
 	        echo "$@: ERROR: ASCII tab found in markdown file(s)" 1>&2 ; \
 		echo "$0: Warning: list of offending markdown file(s) starts below" 1>&2 ; \

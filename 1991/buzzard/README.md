@@ -91,7 +91,7 @@ Usage:
 
 ``` <!---sh-->
     ./buzzard [filename [escape-char \
-	    [start-x start-yNNN
+            [start-x start-yNNN
 ```
 
 Filename is the name of the file containing the maze.  This
