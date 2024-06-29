@@ -50,6 +50,14 @@
 	    "entry_text" : "original source code"
 	},
 	{
+	    "file_path" : "map-key.jpg",
+	    "inventory_order" : 60,
+	    "OK_to_edit" : false,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "key to map image"
+	},
+	{
 	    "file_path" : "1991_rince.tar.bz2",
 	    "inventory_order" : 1415926535,
 	    "OK_to_edit" : false,

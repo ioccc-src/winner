@@ -448,18 +448,31 @@ Carriage return is mapped to newline on input and ignored on output. Tab stops
 are every eight columns. Non-printable characters may have unpredictable
 results depending on the implementation of <code>curses</code>.</p>
 <h3 id="commands">Commands</h3>
-<pre><code>    h j k l         left, down, up, right cursor movement
-    H J K L         word left, page down, page up, word right
-    [ ]             beginning and end of line
-    t b             top and bottom of file
-    i               enter insert mode, form-feed to quit
-    x               delete character under the cursor
+<pre><code>    h j k l         left,
+                    down,
+                    up,
+                    right
+                    cursor movement
+    H J K L         word left,
+                    page down,
+                    page up,
+                    word right
+    [ ]             beginning and
+                    end of line
+    t b             top and bottom
+                    of file
+    i               enter insert
+                    mode, form-feed
+                    to quit
+    x               delete character
+                    under the cursor
     W               write buffer to file
     R               refresh the screen
     Q               quit</code></pre>
 <h3 id="exit-status">Exit status</h3>
 <pre><code>    0               success
-    2               missing edit filename</code></pre>
+    2               missing edit
+                    filename</code></pre>
 <h3 id="about-this-entry">About this entry</h3>
 <p>The <code>BUF</code> size should be set at compile time to 32767. This value was used
 because the Sozobon C compiler for the Atari ST has 16 bit ints and a limit on

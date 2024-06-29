@@ -80,27 +80,12 @@ enjoyment high.
 
 ### Instructions:
 
-Key to map:
+**Key to map**:
 
-```
-                            |
-     ######                 | | | /\   /--\  ==|    /\ | |  Directonal keys
-     ######  Solid Wall     | ----||    \/     /\   ||----  (unlock doors of
-     ######                 |     \/  ==|     \--/  \/       the same direction)
-                            |
-                            |   <<                    >>    Doors. Unlocked by
-             Blank space    |   <<   vvvvvv  ^^^^^^   >>    the above keys.
-                            |   <<                    >>
-                            |
-       ___                  | o__O\   O__O   ^__^   /O__o\
-      /   \  'Crushable'    | \___/  /----\ /----\  \___/  The four sprites for
-      \___/    boulder      |  _/_\  _/  \_ _/  \_  /_\_   your character :-)
-                            |
-       ___   uncrushable    |   /\   Diamonds. They can either be found lying
-      /@@@\    boulder      |  <  >  around (if only!) or manufacture by pushing
-      \@@@/                 |   \/   two 'crushable' rocks together.
-                            |
-```
+<img src="map-key.jpg"
+ alt="map to key"
+ width=800 height=400>
+
 
 The general idea of the game is to collect all the diamonds. This must
 be done in the minimum amount of moves. I've allowed a margin of 5

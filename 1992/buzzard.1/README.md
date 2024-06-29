@@ -224,12 +224,12 @@ This is more obscured by factoring out common terms and restricting
 ourselves to two operand operations:
 
 ``` <!---c-->
-    temp = z;                       (temp == z)
-    temp -= y;                      (temp == z-y)
-    temp *= x;                      (temp == (z-y)*x)
-    y += temp;                      (y    == (z-y)*x + y)
-                                    (     == z*x - y*x + y)
-                                    (     == z*x + y*(1-x))
+    temp = z;       (temp == z)
+    temp -= y;      (temp == z-y)
+    temp *= x;      (temp == (z-y)*x)
+    y += temp;      (y    == (z-y)*x + y)
+                    (     == z*x - y*x + y)
+                    (     == z*x + y*(1-x))
 ```
 
 Next we imagine we have a [pc](https://en.wikipedia.org/wiki/Program_counter).

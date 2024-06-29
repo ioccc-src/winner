@@ -549,12 +549,12 @@ simply compute:</p>
 <pre><code>    y = (z * x) + (y * (1-x));</code></pre>
 <p>This is more obscured by factoring out common terms and restricting
 ourselves to two operand operations:</p>
-<pre><code>    temp = z;                       (temp == z)
-    temp -= y;                      (temp == z-y)
-    temp *= x;                      (temp == (z-y)*x)
-    y += temp;                      (y    == (z-y)*x + y)
-                                    (     == z*x - y*x + y)
-                                    (     == z*x + y*(1-x))</code></pre>
+<pre><code>    temp = z;       (temp == z)
+    temp -= y;      (temp == z-y)
+    temp *= x;      (temp == (z-y)*x)
+    y += temp;      (y    == (z-y)*x + y)
+                    (     == z*x - y*x + y)
+                    (     == z*x + y*(1-x))</code></pre>
 <p>Next we imagine we have a <a href="https://en.wikipedia.org/wiki/Program_counter">pc</a>.
 “I’m supposed to execute statement pc next”, says our emulator. But suppose
 we’re not currently coming up on statement pc. To handle this, we simply make

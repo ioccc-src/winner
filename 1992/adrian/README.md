@@ -71,7 +71,9 @@ significant to only eight characters like `chars1`.
 ### Example 1: matches `^abc$`
 
 ```
-    <q0> a <q1>          The first state to appear is the start state
+    <q0> a <q1>   The first state to
+                  appear is the
+                  start state
     <q1> b <q2>
     <q2> c [q3]
     [q3]
