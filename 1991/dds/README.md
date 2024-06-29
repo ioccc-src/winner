@@ -53,7 +53,7 @@ of the DDS-BASIC interpreter.  The program needs an executable C compiler called
 ### Program commands:
 
 
-- variable names `A` to `Z`
+- variable names A to Z
 - FOR var = exp TO exp
 - GOSUB exp
 - GOTO exp

@@ -1713,6 +1713,10 @@ remove the maximum number of moves you may make and another to let you configure
 the maximum number of moves, even if that is making it harder to win. Naturally
 the above fix was applied to these versions too.
 
+The file `map-key.jpg` was added to help those with smaller screens as
+unfortunately the formatting of the key to the map was not easy to change in a
+way without ruining how it looks (beyond making it one column only).
+
 
 <div id="1991_westley">
 ## Winning entry: [1991/westley](1991/westley/index.html)

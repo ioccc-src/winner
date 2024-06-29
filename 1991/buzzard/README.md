@@ -53,7 +53,7 @@ code directly so the keys are not made a `-D` at the compiler.
 
 You will be A-mazed.
 
-You are invited to try to cheat, ... if you can figure out how!  :-)
+You are invited to try to cheat ... if you can figure out how!  :-)
 
 
 ## Author's remarks:
@@ -90,7 +90,8 @@ so make sure to convert tabs to spaces before using it.
 Usage:
 
 ``` <!---sh-->
-    ./buzzard [filename [escape-char [start-x start-yNNN
+    ./buzzard [filename [escape-char \
+	    [start-x start-yNNN
 ```
 
 Filename is the name of the file containing the maze.  This

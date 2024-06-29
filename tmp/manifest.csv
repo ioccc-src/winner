@@ -657,6 +657,7 @@
 1991,rince,rince.alt2.c,40,true,c,true,second alternate source code
 1991,rince,rince.alt.c,40,true,c,true,alternate source code
 1991,rince,rince.orig.c,50,true,c,true,original source code
+1991,rince,map-key.jpg,60,false,image,false,key to map image
 1991,rince,1991_rince.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1991,rince,README.md,4000000000,true,markdown,true,markdown source for this web page
 1991,rince,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON

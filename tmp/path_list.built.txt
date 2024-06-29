@@ -233,6 +233,7 @@
 1991/rince/.path
 1991/rince/1991_rince.tar.bz2
 1991/rince/index.html
+1991/rince/map-key.jpg
 1991/westley/.path
 1991/westley/1991_westley.tar.bz2
 1991/westley/index.html
