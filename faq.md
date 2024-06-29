@@ -2484,8 +2484,8 @@ To use these rules but provide a different `diff`, for instance `colordiff`,
 just do:
 
 ``` <!---sh-->
-    make DIFF=colordiff diff_orig_prog # for orig to prog diff
-    make DIFF=colordiff diff_alt_prog # for alt to prog diff
+    make DIFF=colordiff diff_orig_prog          # for orig to prog diff
+    make DIFF=colordiff diff_alt_prog           # for alt to prog diff
 ```
 
 Obviously if you want to view the alternate code or the orig code you can just open

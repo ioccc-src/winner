@@ -387,7 +387,8 @@
 <p>These rules are a <strong>VERY TENTATIVE proposal</strong> for the next IOCCC
 and are <strong>VERY LIKELY</strong> to be updated before the next IOCCC.
 They are are provided as a <strong>very tentative</strong> hint at <strong>what
-MIGHT</strong> be used in the next IOCCC.</p>
+MIGHT</strong> be used in the next IOCCC. In some cases they might
+even be a copy of the rules from the previous IOCCC.</p>
 <h1 id="the-ioccc-is-closed">The IOCCC is closed</h1>
 <p>The IOCCC is <strong>NOT</strong> accepting new submissions at this time. See the <a href="../years.html">IOCCC
 winning entries page</a> for the entries that have won the IOCCC in
@@ -406,7 +407,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 <div id="rule_version">
 <h2 id="ioccc-rules-version">IOCCC Rules version</h2>
 </div>
-<p><strong><code>|</code></strong> These <a href="rules.html">IOCCC rules</a> are version <strong>2024-06-25-v28</strong>.</p>
+<p><strong><code>|</code></strong> These <a href="rules.html">IOCCC rules</a> are version <strong>28.1 2024-06-29</strong>.</p>
 <p><strong>IMPORTANT</strong>: Be sure to read the <a href="guidelines.html">IOCCC guidelines</a>.</p>
 <h3 id="change-marks">Change marks</h3>
 <p><strong><code>|</code></strong> <strong>← Lines that start with this symbol indicate a change from the previous IOCCC</strong></p>
@@ -571,11 +572,12 @@ before the close of the contest.</p>
 <div id="rule11">
 <h2 id="rule-11">Rule 11</h2>
 </div>
-<p>Programs that require special privileges (<code>setuid(2)</code>, <code>setgid(2)</code>, super-user,
-special owner, special group, etc.) are still highly discouraged. We
-do not guarantee these functions will behave as you expect on our test
-platforms. If your program needs special permissions <strong>please document
-them</strong> in the remarks file.</p>
+<p>Programs that require special privileges (<code>setuid(2)</code>, <code>setgid(2)</code>,
+super-user, special owner, special group, etc.) are still <strong>HIGHLY
+DISCOURAGED</strong>. We do not guarantee these functions will behave as
+you expect on our test platforms. If your program needs special
+permissions you <strong>MUST</strong> document this fact, and explain why
+it is needed in your submissions <code>remarks.md</code> file.</p>
 <div id="rule12">
 <h2 id="rule-12">Rule 12</h2>
 </div>
@@ -587,12 +589,12 @@ their rule abuse is legal, in the submission’s <code>remarks.md</code> file.</
 <h2 id="rule-13">Rule 13</h2>
 </div>
 <p><strong><code>|</code></strong> Any C source that fails to compile because of unescaped octets with
-the high bit set (octet value &gt;= 128) might be rejected.</p>
+the high bit set (octet value &gt;= 128) <strong><em>might</em></strong> be rejected.</p>
 <div id="rule14">
 <h2 id="rule-14">Rule 14</h2>
 </div>
 <p><strong><code>|</code></strong> Any C source that fails to compile because of lines with trailing
-control-M’s (i.e., lines with a tailing octet <code>015</code>) might be rejected.</p>
+control-M’s (i.e., lines with a tailing octet <code>015</code>) <strong><em>might</em></strong> be rejected.</p>
 <p>Please do <strong>NOT</strong> put trailing control-M’s on remarks file lines.
 Please check to be sure, before submitting, that you have removed
 any control-M at the end of remark file lines.</p>

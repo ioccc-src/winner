@@ -5,7 +5,8 @@
 These rules are a **VERY TENTATIVE proposal** for the next IOCCC
 and are **VERY LIKELY** to be updated before the next IOCCC.
 They are are provided as a **very tentative** hint at **what
-MIGHT** be used in the next IOCCC.
+MIGHT** be used in the next IOCCC.  In some cases they might
+even be a copy of the rules from the previous IOCCC.
 
 
 # The IOCCC is closed
@@ -34,7 +35,7 @@ writing by [contacting the judges](../contact.html).
 ## IOCCC Rules version
 </div>
 
-**`|`**   These [IOCCC rules](rules.html) are version **2024-06-25-v28**.
+**`|`**   These [IOCCC rules](rules.html) are version **28.1 2024-06-29**.
 
 **IMPORTANT**: Be sure to read the [IOCCC guidelines](guidelines.html).
 
@@ -294,11 +295,12 @@ Entries requiring human interaction to be initially compiled are not permitted.
 ## Rule 11
 </div>
 
-Programs that require special privileges (`setuid(2)`, `setgid(2)`, super-user,
-special owner, special group, etc.) are still highly discouraged. We
-do not guarantee these functions will behave as you expect on our test
-platforms. If your program needs special permissions **please document
-them** in the remarks file.
+Programs that require special privileges (`setuid(2)`, `setgid(2)`,
+super-user, special owner, special group, etc.) are still **HIGHLY
+DISCOURAGED**. We do not guarantee these functions will behave as
+you expect on our test platforms. If your program needs special
+permissions you **MUST** document this fact, and explain why
+it is needed in your submissions `remarks.md` file.
 
 
 <div id="rule12">
@@ -316,7 +318,7 @@ their rule abuse is legal, in the submission's `remarks.md` file.
 </div>
 
 **`|`**   Any C source that fails to compile because of unescaped octets with
-the high bit set (octet value >= 128) might be rejected.
+the high bit set (octet value >= 128) **_might_** be rejected.
 
 
 <div id="rule14">
@@ -324,7 +326,7 @@ the high bit set (octet value >= 128) might be rejected.
 </div>
 
 **`|`**   Any C source that fails to compile because of lines with trailing
-control-M's (i.e., lines with a tailing octet `015`) might be rejected.
+control-M's (i.e., lines with a tailing octet `015`) **_might_** be rejected.
 
 Please do **NOT** put trailing control-M's on remarks file lines.
 Please check to be sure, before submitting, that you have removed

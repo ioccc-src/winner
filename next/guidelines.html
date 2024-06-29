@@ -382,12 +382,13 @@
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <!-- BEFORE: 1st line of markdown file: next/guidelines.md -->
+<!-- START: this line starts content from: inc/guidelines.closed.hdr -->
 <h1 id="warning-these-guidelines-are-out-of-date">WARNING: These guidelines are OUT OF DATE</h1>
 <p>These guidelines are a <strong>VERY TENTATIVE proposal</strong> for the next IOCCC
 and are <strong>VERY LIKELY</strong> to be updated before the next IOCCC.
 They are are provided as a <strong>VERY TENTATIVE</strong> hint at <strong>what
-MIGHT</strong> be used in the next IOCCC.</p>
-<p>Please regard these guidelines as a historical archive.</p>
+MIGHT</strong> be used in the next IOCCC. In some cases they might
+even be a copy of the guidelines from the previous IOCCC.</p>
 <h1 id="the-ioccc-is-closed">The IOCCC is closed</h1>
 <p>The IOCCC is <strong>NOT</strong> accepting new submissions at this time. See the
 <a href="../years.html">IOCCC winning entries page</a> for the entries that have won the
@@ -404,7 +405,7 @@ granted provided this this copyright and notice are included in its entirety
 and remains unaltered. All other uses must receive prior permission in
 writing by <a href="../contact.html">contacting the judges</a>.</p>
 <h2 id="ioccc-guidelines-version">IOCCC Guidelines version</h2>
-<p><strong><code>|</code></strong> These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>2024-06-25-v28</strong>.</p>
+<p><strong><code>|</code></strong> These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.1 2024-06-29</strong>.</p>
 <p><strong>IMPORTANT</strong>: Be <strong>SURE</strong> to read the <a href="rules.html">IOCCC rules</a>.</p>
 <h3 id="change-marks">Change marks</h3>
 <p><strong><code>|</code></strong> <strong>← Lines that start with this symbol indicate a change from the previous IOCCC</strong></p>
@@ -487,7 +488,9 @@ in an ironic way.</p>
 <p>We do realize that there are holes in the rules, and invite entries
 to attempt to exploit them. We will award ‘<em>Worst abuse of the rules</em>’ or
 ‘<em>Best abuse of the rules</em>’ and then plug the hole next year.</p>
-<p><strong><code>|</code></strong> Even so, we will attempt to use the smallest plug needed, if not smaller. Or, maybe not. :-)</p>
+<p><strong><code>|</code></strong> When we do need to plug a hole in the <a href="rules.html">IOCCC rules</a>
+or <a href="guidelines.html">IOCCC guidelines</a>, we will attempt to use a very
+small plug, if not smaller. Or, maybe not. :-)</p>
 <p><strong><code>|</code></strong> There may be less than 2^7+1 reasons why these <a href="guidelines.html">IOCCC guidelines</a> seem obfuscated.</p>
 <p>Check out your program and be sure that it works. We sometimes make
 the effort to debug an submission that has a slight problem, particularly
@@ -656,7 +659,8 @@ not portable and must not be used:</p>
 <li>using <code>va_list</code> as a structure or union</li>
 </ul>
 <p>In particular, do not treat <code>va_list</code> variables as if they were a <code>char **</code>s.</p>
-<p>Avoid using <code>varargs.h</code>. Use <code>stdarg.h</code> instead.</p>
+<p><strong><code>|</code></strong> We <strong>DISLIKE</strong> the use of <code>varargs.h</code>. Use <code>stdarg.h</code> instead.</p>
+<p><strong><code>|</code></strong> We <strong>DISLIKE</strong> the use of <code>gets(3)</code>. Use <code>fgets(3)</code> instead.</p>
 <p>On 28 January 2007, the Judges rescinded the requirement that the
 <code>#</code> in a C preprocessor directive must be the 1st non-whitespace octet.</p>
 <p>The <code>exit(3)</code> function returns <code>void</code>. Some broken systems have <code>exit(3)</code>
@@ -816,7 +820,7 @@ partly misunderstand this particular <em>guideline</em>, but of course, we could
 not possibly comment! :-) Nevertheless, you are neither prohibited, nor are<br>
 you fully required to determine that this or the previous sentence is either false<br>
 and/or perhaps misleading. Therefore, it might be wise for you to not fail to<br>
-consider to do so, accordingly. Thank you very much.</p>
+consider to not do so, accordingly. Thank you very much.</p>
 </blockquote>
 <p>Any complaints about the above <em>guideline</em> could be addressed to the
 Speaker of the House of Commons, or to the speaker of your national
@@ -899,8 +903,8 @@ a PDP-11. Heck, should we ever find an emulator of 60-bit CDC Cyber
 CPU, we might just try your submission on that emulator as well :-)</p>
 <p><strong><code>|</code></strong> If your submission <strong>MUST</strong> run only on a 64-bit or 32-bit architecture,
 then you <strong>MUST</strong> specify the <code>-arch</code> on your command line
-(see <code>CARCH</code> in the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example">example Makefile</a>. Do not assume a processor word size without specifying <code>-arch</code>. For example:</p>
-<pre><code>    CARCH= -m64</code></pre>
+(see <code>ARCH</code> in the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example">example Makefile</a>. Do not assume a processor word size without specifying <code>-arch</code>. For example:</p>
+<pre><code>    ARCH= -m64</code></pre>
 <p><strong><code>|</code></strong> Try to be even more creative!</p>
 <p><strong><code>|</code></strong> If there are limitations in your submission, you are highly encouraged
 to note such limitations in your <code>remarks.md</code> file. For example if your

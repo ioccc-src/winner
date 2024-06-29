@@ -1,11 +1,12 @@
+<!-- START: this line starts content from: inc/guidelines.closed.hdr -->
+
 # WARNING: These guidelines are OUT OF DATE
 
 These guidelines are a **VERY TENTATIVE proposal** for the next IOCCC
 and are **VERY LIKELY** to be updated before the next IOCCC.
 They are are provided as a **VERY TENTATIVE** hint at **what
-MIGHT** be used in the next IOCCC.
-
-Please regard these guidelines as a historical archive.
+MIGHT** be used in the next IOCCC.  In some cases they might
+even be a copy of the guidelines from the previous IOCCC.
 
 
 # The IOCCC is closed
@@ -32,7 +33,7 @@ writing by [contacting the judges](../contact.html).
 
 ## IOCCC Guidelines version
 
-**`|`**   These [IOCCC guidelines](guidelines.html) are version **2024-06-25-v28**.
+**`|`**   These [IOCCC guidelines](guidelines.html) are version **28.1 2024-06-29**.
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
 
@@ -149,7 +150,9 @@ We do realize that there are holes in the rules, and invite entries
 to attempt to exploit them.  We will award '_Worst abuse of the rules_' or
 '_Best abuse of the rules_' and then plug the hole next year.
 
-**`|`**   Even so, we will attempt to use the smallest plug needed, if not smaller.  Or, maybe not.  :-)
+**`|`**   When we do need to plug a hole in the [IOCCC rules](rules.html)
+or [IOCCC guidelines](guidelines.html), we will attempt to use a very
+small plug, if not smaller.  Or, maybe not.  :-)
 
 **`|`**   There may be less than 2^7+1 reasons why these [IOCCC guidelines](guidelines.html) seem obfuscated.
 
@@ -264,7 +267,7 @@ compiler!  We often start by compiling using the **clang** C compiler instead.
 **`|`**   You may change the standard under which your submission is compiled
 by modifying the `CSTD` Makefile variable.  For example, to use `c17` instead:
 
-```
+``` <!---make-->
     CSTD= -std=c17
 ```
 
@@ -277,7 +280,7 @@ your submission's `Makefile`.
 which your submission is compiled by modifying the `COPT` Makefile variable.
 For example, to compile without optimization:
 
-```
+``` <!---make-->
     COPT= -O0 -g3
 ```
 
@@ -289,7 +292,7 @@ warning, try not fret too much.
 **`|`**   To turn off a compiler warning, to your submission's `Makefile`,
 try something such as:
 
-```
+``` <!---make-->
     CSILENCE= -Wno-some-thing -Wno-another-thing -Wno-unknown-warning-option
 ```
 
@@ -301,14 +304,14 @@ submission.
 **`|`**   If you need to define something on the compile line, use
 the `CDEFINE` Makefile variable.  For example:
 
-```
+``` <!---make-->
     CDEFINE= -Dfoo -Dbar=baz
 ```
 
 **`|`**   If you need to include a file on the command line, use
 the `CINCLUDE` Makefile variable.  For example:
 
-```
+``` <!---make-->
     CINCLUDE= -include stdio.h
 ```
 
@@ -316,7 +319,7 @@ the `CINCLUDE` Makefile variable.  For example:
 **`|`**   If need add other "_magic_" flags to your compile line,
 use the `COTHER` Makefile variable.  For example:
 
-```
+``` <!---make-->
     COTHER= -fno-math-errno
 ```
 
@@ -354,7 +357,7 @@ When declaring local or global variables, you should declare the type:
 **`|`**   We **LIKE** code that has a minimum of warnings, especially under the
 more strict ` -Wall -Wextra -pedantic` mode:
 
-```
+``` <!---make-->
     CWARN= -Wall -Wextra -pedantic
 ```
 
@@ -408,7 +411,9 @@ not portable and must not be used:
 
 In particular, do not treat `va_list` variables as if they were a `char **`s.
 
-Avoid using `varargs.h`.  Use `stdarg.h` instead.
+**`|`**   We **DISLIKE** the use of `varargs.h`.  Use `stdarg.h` instead.
+
+**`|`**   We **DISLIKE** the use of `gets(3)`.  Use `fgets(3)` instead.
 
 On 28 January 2007, the Judges rescinded the requirement that the
 `#` in a C preprocessor directive must be the 1st non-whitespace octet.
@@ -630,7 +635,7 @@ particular window manager.
 > not possibly comment!  :-)  Nevertheless, you are neither prohibited, nor are<br>
 > you fully required to determine that this or the previous sentence is either false<br>
 > and/or perhaps misleading.  Therefore, it might be wise for you to not fail to<br>
-> consider to do so, accordingly. Thank you very much.
+> consider to not do so, accordingly. Thank you very much.
 
 Any complaints about the above _guideline_ could be addressed to the
 Speaker of the House of Commons, or to the speaker of your national
@@ -733,10 +738,10 @@ CPU, we might just try your submission on that emulator as well :-)
 
 **`|`**   If your submission **MUST** run only on a 64-bit or 32-bit architecture,
 then you **MUST** specify the `-arch` on your command line
-(see `CARCH` in the [example Makefile](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example).  Do not assume a processor word size without specifying `-arch`.  For example:
+(see `ARCH` in the [example Makefile](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example).  Do not assume a processor word size without specifying `-arch`.  For example:
 
-```
-    CARCH= -m64
+``` <!---make-->
+    ARCH= -m64
 ```
 
 **`|`**   Try to be even more creative!
