@@ -305,12 +305,23 @@ the `CDEFINE` Makefile variable.  For example:
     CDEFINE= -Dfoo -Dbar=baz
 ```
 
+**`|`**   If you need to include a file on the command line, use
+the `CINCLUDE` Makefile variable.  For example:
+
+```
+    CINCLUDE= -include stdio.h
+```
+
+
 **`|`**   If need add other "_magic_" flags to your compile line,
 use the `COTHER` Makefile variable.  For example:
 
 ```
-    COTHER= -include stdio.h
+    COTHER= -fno-math-errno
 ```
+
+**NOTE**: We recommend using only  "_magic_" flags that both **gcc**
+and **clang** support.
 
 
 # OUR LIKES AND DISLIKES:
@@ -559,20 +570,19 @@ is NOT the smallest C source file that when compiled and run, dumps core:
     main;
 ```
 
-We do **DISLIKE** writable strings.  That is, we don't want stuff such as:
+**`|`**   Unless you specify `-fwritable-strings` (see `COTHER` in the [example Makefile](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example) do not assume this sort of code will work:
 
 ``` <!---c-->
     char *T = "So many primes, so little time!";
     ...
-    T[14] = ';';
+    T[14] = ';';    /* modifying a string requires: -fwritable-strings */
 ```
 
-Please don't make use of this feature, even if your system allows it.
-However, initialized char arrays are OK to write over.  This is OK:
+**`|`**   Initialized char arrays are OK to write over.  This is OK:
 
 ``` <!---c-->
     char b[] = "Is this OK";
-    b[9] = 'K';
+    b[9] = 'k';     /* modifying an initialized char array is OK */
 ```
 
 **`|`**   There are more than 1 typos in this very sentence.
@@ -602,30 +612,25 @@ open source toolkit that is widely and freely available instead.
 
 **NOTE**: The previous _guideline_ in this spot has been replaced by this _guideline_:
 
-**`|`**   X client entries should not to depend on particular items on
+**`|`**   X client entries should try to not to depend on particular items on
 `.Xdefaults`.  If you must do so, be sure to note the required lines
 in the your `remarks.md` file.  They should also not depend on any
 particular window manager.
 
-Try to avoid entries that play silent sound segments or play the
-Happy Birthday song; music that some people believe is copyrighted
-(even if such copyrights appear to be bogus and/or blatant abuses of
-the copyright system).
+**`|`**   Try to avoid entries that play some people believe is copyrighted music.
 
-While we recognize that UNIX is not a universal operating system, the
-contest does have a bias towards such systems.  In an effort to expand
-the scope of the contest, we phrase our bias to favor:
-
-**`|`**   [Single UNIX Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification).
+**`|`**   While we recognize that UNIX is not a universal operating system, the contest does have a bias towards such systems.  In an effort to expand the scope of the contest, we phrase our bias to favor the [Single UNIX Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification).
 
 **`|`**   You are **well advised** to submit entries that conform to the [Single UNIX Specification Version 4](https://unix.org/version4/overview.html).
 
-**`|`**   You very well might not be completely be prohibited from failing to not
-**`|`**   partly misunderstand this particular _guideline_, but of course, we could
-**`|`**   not possibly comment!  :-)  Nevertheless, you are neither prohibited, nor are
-**`|`**   you fully required to determine that this or the previous sentence is either false
-**`|`**   and/or perhaps misleading.  Therefore, it might be wise for you to not fail to consider
-**`|`**   to do so, accordingly. Thank you very much.
+**`|`**   To quote the [IOCCC judges](../judges.html):
+
+> You very well might not be completely be prohibited from failing to not<br>
+> partly misunderstand this particular _guideline_, but of course, we could<br>
+> not possibly comment!  :-)  Nevertheless, you are neither prohibited, nor are<br>
+> you fully required to determine that this or the previous sentence is either false<br>
+> and/or perhaps misleading.  Therefore, it might be wise for you to not fail to<br>
+> consider to do so, accordingly. Thank you very much.
 
 Any complaints about the above _guideline_ could be addressed to the
 Speaker of the House of Commons, or to the speaker of your national
@@ -637,9 +642,9 @@ We **LIKE** programs that:
 * do something at least quasi-interesting
 * are portable
 * are unique or novel in their obfuscation style
-* MAKE USE OF A NUMBER OF DIFFERENT TYPES OF OBFUSCATION  **<== HINT!!**
+* make use of a **NUMBER OF DIFFERENT TYPES OF OBFUSCATIONS!**  **<== HINT!!**
 * make us laugh and/or throw up  :-)  (humor really helps!)
-* make us want to eat good chocolate.
+* make us want to eat good chocolate
 
 Some types of programs can't excel (anti-tm) in some areas.  Your
 program doesn't have to excel in all areas, but doing well in several
@@ -699,8 +704,9 @@ about why you think your submission is obfuscated.  On the other hand,
 if you are pushing up against the size limits, you may be forced
 into creating a dense blob. Such are the trade-offs that obfuscators face!
 
-We prefer code that can run on either a 64-bit or 32-bit processor.
-However, it is unwise to assume it will run on an i386 or x86 architecture.
+**`|`**   We prefer code that can run on either a 64-bit or 32-bit
+processor.  However, it is **UNWISE **to assume it will run on an
+some Intel-like x86 architecture.
 
 We believe that Mark Twain's once wrote:
 
@@ -709,8 +715,7 @@ We believe that Mark Twain's once wrote:
 ... is a good motto for those writing code for the IOCCC.
 
 **`|`**   The [IOCCC size tool source](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)
-is not an original work,
-unless you are Anthony C Howe, in which case it is original!
+is not an original work, unless you are Anthony C Howe, in which case it is original!  :-)
 Submitting source that uses the content of iocccsize.c, unless you are
 Anthony C Howe, might run the risk of violating [Rule 7](rules.html#rule7).
 
@@ -721,82 +726,62 @@ interesting than simply implementing the IOCCC size tool algorithm.
 While programs that only run in a specific word size are OK.  If you have
 to pick, choose a 64-bit word size.
 
-If we are feeling ornery we might choose to compile your program
-for running on an Arduino or a PDP-11.  Heck, should we ever find
-an emulator of 60-bit CDC Cyber CPU, we might just try your submission
-on that emulator as well :-)
+**`|`**   If [IOCCC judges](../judges.html) are feeling ornery we
+might choose to compile your program for running on an Arduino or
+a PDP-11.  Heck, should we ever find an emulator of 60-bit CDC Cyber
+CPU, we might just try your submission on that emulator as well :-)
 
-If your submission MUST run only in 32-bit mode on an Intel processor, add the
-following compiler flag:
-
-```
-    -arch i386
-```
-
-to your "how to build" make compile line.  For example:
+**`|`**   If your submission **MUST** run only on a 64-bit or 32-bit architecture,
+then you **MUST** specify the `-arch` on your command line
+(see `CARCH` in the [example Makefile](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example).  Do not assume a processor word size without specifying `-arch`.  For example:
 
 ```
-    prog: prog.c
-        ${CC} prog.c -arch i386 -o prog
+    CARCH= -m64
 ```
 
-Be even more creative!
+**`|`**   Try to be even more creative!
 
 **`|`**   If there are limitations in your submission, you are highly encouraged
 to note such limitations in your `remarks.md` file.  For example if your
 submission factors values up to a certain size, you might want to state:
 
-```
-    This submission factors values up 2305567963945518424753102147331756070.
-    Attempting to factor larger values will produce unpredictable results.
-```
+>   This submission factors values up 2305567963945518424753102147331756070.<br>
+>   Attempting to factor larger values will produce unpredictable results.
 
 The judges might try to factor the value -5, so you want to might state:
 
-```
-    This submission factors positive values up 2305567963945518424753102147331756070.
-    Attempting to factor large values will produce unpredictable results.
-```
+>   This submission factors positive values up 2305567963945518424753102147331756070.<br>
+>   Attempting to factor large values will produce unpredictable results.
 
 However the judges might try to also factor 0, so you want to might state:
 
-```
-    This submission factors values between 1 and 2305567963945518424753102147331756070.
-    Attempting to factor values outside that range will produce unpredictable results.
-    ```
+>   This submission factors values between 1 and 2305567963945518424753102147331756070.<br>
+>   Attempting to factor values outside that range will produce unpredictable results.
 
 Moreover the try to also factor 3.5 or 0x7, or Fred, so you want to might state:
 
-```
-    This submission factors integers between 1 and 2305567963945518424753102147331756070.
-    Attempting to factor anything else will produce unpredictable results.
-    ```
+>   This submission factors integers between 1 and 2305567963945518424753102147331756070.<br>
+>   Attempting to factor anything else will produce unpredictable results.
 
 You submission might be better off catching the attempt to factor bogus values
 and doing something interesting.  So you might want to code accordingly and state:
 
-```
-    This submission factors integers between 1 and 2305567963945518424753102147331756070.
-    Attempting to factor anything else will cause the program to insult your pet fish Eric.
-    ```
+>   This submission factors integers between 1 and 2305567963945518424753102147331756070.<br>
+>   Attempting to factor anything else will cause the program to insult your pet fish Eric.
 
 The judges might not have a pet fish named Eric, so might want to state:
 
-```
-    This submission factors integers between 1 and 2305567963945518424753102147331756070.
-    Attempting to factor anything else will cause the program to insult your pet fish Eric,
-    or in the case that you lack such a pet, will insult the pet that you do not have.
-```
+>   This submission factors integers between 1 and 2305567963945518424753102147331756070.<br>
+>   Attempting to factor anything else will cause the program to insult your pet fish Eric,<br>
+>   or in the case that you lack such a pet, will insult the pet that you do not have.
 
 When all other things are equal, an submission with fewer limitations will be judged
 better than an submission with lots of limitations.  So you might want to code accordingly
 and state:
 
-```
-    This submission attempts to a factor value of any size provided that the program is
-    given enough time and memory.  If the value is not a proper integer, the program
-    might insult a fish named Eric.
-```
+>   This submission attempts to a factor value of any size provided that the program is<br>
+>   given enough time and memory.  If the value is not a proper integer, the program<br>
+>   might insult a fish named Eric.
 
 **`|`**   Do not fear if you not 100% sure of the significance of `2305567963945518424753102147331756070` as it is not of prime importance: or is it?  :-)
 
@@ -944,7 +929,7 @@ previous round.  Thus, an submission gets at least two readings.
 A reading consists of a number of actions:
 
 * reading the "how to build" information and forming a Makefile
-* reading prog.c, the C source
+* reading prog.c, the C source<br>
 **`|`**   * reviewing the `remarks.md` information
 * briefly looking any any supplied data files
 * passing the source thru the C pre-processor
@@ -954,7 +939,7 @@ A reading consists of a number of actions:
     skipping over any #include files
 * compiling/building the source
 * running the program
-* Doing other things that only IOCCC judges know about :-)
+* Doing other things that only [IOCCC judges](../judges.html) know about :-)
 
 In later rounds, other actions are performed including performing
 miscellaneous tests on the source and binary.
@@ -1003,9 +988,29 @@ sometimes worthwhile to re-enter an improved version of an submission
 that failed to win in a previous year.  This assumes, of course,
 that the submission is worth improving in the first place!
 
-More than one IOCCC judge has been known to bribe another IOCCC judge
-into voting for a winning submission by offering a bit high quality chocolate.
-This technique is highly discouraged for use by non-IOCCC judges.
+**`|`**   Over the years, more than one [IOCCC judge](../judges.html)
+has been known to _bribe_ another IOCCC judge into voting for a
+winning submission by offering a bit high quality chocolate, or
+other fun item.
+
+**`|`**   One **should not** attempt to _bribe_ an [IOCCC
+judge](../judges.html), unless you are an [IOCCC judge](../judges.html),
+because _bribing_ a [IOCCC judge](../judges.html) by a non-judge
+has been shown to **NOT** be effective when the **person attempting
+the bribe is made known** to the [IOCCC judges](../judges.html)
+(i.e., they are not anonymous) AND/OR the _bribe_ is otherwise
+associated with a submission to the IOCCC.
+
+**`|`**   With the previous guideline in mind: **anonymous** gifts
+for the [IOCCC judges](../judges.html) that are **NOT** associated
+with a submission to the IOCCC may be sent to the
+[IOCCC judges](../judges.html) via the
+[IOCCC Amazon wishlist](https://www.amazon.com/hz/wishlist/ls/3HSNTEL8RQ1M0?ref_=wl_share).
+It has been shown that receiving  **anonymous** gifts provides the
+[IOCCC judges](../judges.html) with a nice dopamine boost, and happy
+[IOCCC judges](../judges.html) help make the IOCCC better for everyone. :-)
+
+**`|`**   See [FAQ: How may I support the IOCCC?](../faq.html#support).
 
 More often than not, we select a small submission (usually one line), a
 strange/creative layout submission.  We sometimes also select an
@@ -1058,9 +1063,7 @@ account](https://fosstodon.org/@ioccc).
 
 ## Back to announcement of winners
 
-It is pointless to ask the IOCCC judges how many entries we receive.
-Other government TLA or FLA snooping organizations are prohibited from
-either confirming, denying or revealing any knowledge of this data point.
+**`|`**   It is pointless to ask the [IOCCC judges](../judges.html) how many entries we receive.  See [How many entries do the judges receive for a given IOCCC](../faq.html#how_many).
 
 Often, winning entries are published in selected magazines from around
 the world.  Winners have appeared in books ("The New Hackers Dictionary")

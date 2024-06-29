@@ -591,9 +591,14 @@ submission.</p>
 <p><strong><code>|</code></strong> If you need to define something on the compile line, use
 the <code>CDEFINE</code> Makefile variable. For example:</p>
 <pre><code>    CDEFINE= -Dfoo -Dbar=baz</code></pre>
+<p><strong><code>|</code></strong> If you need to include a file on the command line, use
+the <code>CINCLUDE</code> Makefile variable. For example:</p>
+<pre><code>    CINCLUDE= -include stdio.h</code></pre>
 <p><strong><code>|</code></strong> If need add other “<em>magic</em>” flags to your compile line,
 use the <code>COTHER</code> Makefile variable. For example:</p>
-<pre><code>    COTHER= -include stdio.h</code></pre>
+<pre><code>    COTHER= -fno-math-errno</code></pre>
+<p><strong>NOTE</strong>: We recommend using only “<em>magic</em>” flags that both <strong>gcc</strong>
+and <strong>clang</strong> support.</p>
 <h1 id="our-likes-and-dislikes">OUR LIKES AND DISLIKES:</h1>
 <p><strong><code>|</code></strong> We <strong>LIKE</strong> entries that use an edited variant of the
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example">example Makefile</a>,
@@ -771,14 +776,13 @@ they do not work as documented.</p>
 <p>Please note that the C source below, besides lacking in obfuscation,
 is NOT the smallest C source file that when compiled and run, dumps core:</p>
 <pre><code>    main;</code></pre>
-<p>We do <strong>DISLIKE</strong> writable strings. That is, we don’t want stuff such as:</p>
+<p><strong><code>|</code></strong> Unless you specify <code>-fwritable-strings</code> (see <code>COTHER</code> in the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example">example Makefile</a> do not assume this sort of code will work:</p>
 <pre><code>    char *T = &quot;So many primes, so little time!&quot;;
     ...
-    T[14] = &#39;;&#39;;</code></pre>
-<p>Please don’t make use of this feature, even if your system allows it.
-However, initialized char arrays are OK to write over. This is OK:</p>
+    T[14] = &#39;;&#39;;    /* modifying a string requires: -fwritable-strings */</code></pre>
+<p><strong><code>|</code></strong> Initialized char arrays are OK to write over. This is OK:</p>
 <pre><code>    char b[] = &quot;Is this OK&quot;;
-    b[9] = &#39;K&#39;;</code></pre>
+    b[9] = &#39;k&#39;;     /* modifying an initialized char array is OK */</code></pre>
 <p><strong><code>|</code></strong> There are more than 1 typos in this very sentence.</p>
 <p>X client entries should be as portable as possible. Entries that
 adapt to a wide collection of environments will be favored. For
@@ -798,25 +802,22 @@ You do?!? (Except on Tuesday?)</p>
 <code>Xv*ew</code>, or <code>OpenL*ok</code> toolkits, since not everyone has them. Use an
 open source toolkit that is widely and freely available instead.</p>
 <p><strong>NOTE</strong>: The previous <em>guideline</em> in this spot has been replaced by this <em>guideline</em>:</p>
-<p><strong><code>|</code></strong> X client entries should not to depend on particular items on
+<p><strong><code>|</code></strong> X client entries should try to not to depend on particular items on
 <code>.Xdefaults</code>. If you must do so, be sure to note the required lines
 in the your <code>remarks.md</code> file. They should also not depend on any
 particular window manager.</p>
-<p>Try to avoid entries that play silent sound segments or play the
-Happy Birthday song; music that some people believe is copyrighted
-(even if such copyrights appear to be bogus and/or blatant abuses of
-the copyright system).</p>
-<p>While we recognize that UNIX is not a universal operating system, the
-contest does have a bias towards such systems. In an effort to expand
-the scope of the contest, we phrase our bias to favor:</p>
-<p><strong><code>|</code></strong> <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">Single UNIX Specification</a>.</p>
+<p><strong><code>|</code></strong> Try to avoid entries that play some people believe is copyrighted music.</p>
+<p><strong><code>|</code></strong> While we recognize that UNIX is not a universal operating system, the contest does have a bias towards such systems. In an effort to expand the scope of the contest, we phrase our bias to favor the <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">Single UNIX Specification</a>.</p>
 <p><strong><code>|</code></strong> You are <strong>well advised</strong> to submit entries that conform to the <a href="https://unix.org/version4/overview.html">Single UNIX Specification Version 4</a>.</p>
-<p><strong><code>|</code></strong> You very well might not be completely be prohibited from failing to not
-<strong><code>|</code></strong> partly misunderstand this particular <em>guideline</em>, but of course, we could
-<strong><code>|</code></strong> not possibly comment! :-) Nevertheless, you are neither prohibited, nor are
-<strong><code>|</code></strong> you fully required to determine that this or the previous sentence is either false
-<strong><code>|</code></strong> and/or perhaps misleading. Therefore, it might be wise for you to not fail to consider
-<strong><code>|</code></strong> to do so, accordingly. Thank you very much.</p>
+<p><strong><code>|</code></strong> To quote the <a href="../judges.html">IOCCC judges</a>:</p>
+<blockquote>
+<p>You very well might not be completely be prohibited from failing to not<br>
+partly misunderstand this particular <em>guideline</em>, but of course, we could<br>
+not possibly comment! :-) Nevertheless, you are neither prohibited, nor are<br>
+you fully required to determine that this or the previous sentence is either false<br>
+and/or perhaps misleading. Therefore, it might be wise for you to not fail to<br>
+consider to do so, accordingly. Thank you very much.</p>
+</blockquote>
 <p>Any complaints about the above <em>guideline</em> could be addressed to the
 Speaker of the House of Commons, or to the speaker of your national
 parliament should you have one.</p>
@@ -826,9 +827,9 @@ parliament should you have one.</p>
 <li>do something at least quasi-interesting</li>
 <li>are portable</li>
 <li>are unique or novel in their obfuscation style</li>
-<li>MAKE USE OF A NUMBER OF DIFFERENT TYPES OF OBFUSCATION <strong>&lt;== HINT!!</strong></li>
+<li>make use of a <strong>NUMBER OF DIFFERENT TYPES OF OBFUSCATIONS!</strong> <strong>&lt;== HINT!!</strong></li>
 <li>make us laugh and/or throw up :-) (humor really helps!)</li>
-<li>make us want to eat good chocolate.</li>
+<li>make us want to eat good chocolate</li>
 </ul>
 <p>Some types of programs can’t excel (anti-tm) in some areas. Your
 program doesn’t have to excel in all areas, but doing well in several
@@ -875,16 +876,16 @@ suggest you remark on this point in your remarks where you talk
 about why you think your submission is obfuscated. On the other hand,
 if you are pushing up against the size limits, you may be forced
 into creating a dense blob. Such are the trade-offs that obfuscators face!</p>
-<p>We prefer code that can run on either a 64-bit or 32-bit processor.
-However, it is unwise to assume it will run on an i386 or x86 architecture.</p>
+<p><strong><code>|</code></strong> We prefer code that can run on either a 64-bit or 32-bit
+processor. However, it is <strong>UNWISE </strong>to assume it will run on an
+some Intel-like x86 architecture.</p>
 <p>We believe that Mark Twain’s once wrote:</p>
 <blockquote>
 <p>Get your facts first, then you can distort them as you please.</p>
 </blockquote>
 <p>… is a good motto for those writing code for the IOCCC.</p>
 <p><strong><code>|</code></strong> The <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c">IOCCC size tool source</a>
-is not an original work,
-unless you are Anthony C Howe, in which case it is original!
+is not an original work, unless you are Anthony C Howe, in which case it is original! :-)
 Submitting source that uses the content of iocccsize.c, unless you are
 Anthony C Howe, might run the risk of violating <a href="rules.html#rule7">Rule 7</a>.</p>
 <p><a href="rules.html#rule7">Rule 7</a> does not prohibit you from writing your own obfuscated IOCCC size tool.
@@ -892,45 +893,57 @@ However if you do, you might wish to make your tool do something more
 interesting than simply implementing the IOCCC size tool algorithm.</p>
 <p>While programs that only run in a specific word size are OK. If you have
 to pick, choose a 64-bit word size.</p>
-<p>If we are feeling ornery we might choose to compile your program
-for running on an Arduino or a PDP-11. Heck, should we ever find
-an emulator of 60-bit CDC Cyber CPU, we might just try your submission
-on that emulator as well :-)</p>
-<p>If your submission MUST run only in 32-bit mode on an Intel processor, add the
-following compiler flag:</p>
-<pre><code>    -arch i386</code></pre>
-<p>to your “how to build” make compile line. For example:</p>
-<pre><code>    prog: prog.c
-        ${CC} prog.c -arch i386 -o prog</code></pre>
-<p>Be even more creative!</p>
+<p><strong><code>|</code></strong> If <a href="../judges.html">IOCCC judges</a> are feeling ornery we
+might choose to compile your program for running on an Arduino or
+a PDP-11. Heck, should we ever find an emulator of 60-bit CDC Cyber
+CPU, we might just try your submission on that emulator as well :-)</p>
+<p><strong><code>|</code></strong> If your submission <strong>MUST</strong> run only on a 64-bit or 32-bit architecture,
+then you <strong>MUST</strong> specify the <code>-arch</code> on your command line
+(see <code>CARCH</code> in the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example">example Makefile</a>. Do not assume a processor word size without specifying <code>-arch</code>. For example:</p>
+<pre><code>    CARCH= -m64</code></pre>
+<p><strong><code>|</code></strong> Try to be even more creative!</p>
 <p><strong><code>|</code></strong> If there are limitations in your submission, you are highly encouraged
 to note such limitations in your <code>remarks.md</code> file. For example if your
 submission factors values up to a certain size, you might want to state:</p>
-<pre><code>    This submission factors values up 2305567963945518424753102147331756070.
-    Attempting to factor larger values will produce unpredictable results.</code></pre>
+<blockquote>
+<p>This submission factors values up 2305567963945518424753102147331756070.<br>
+Attempting to factor larger values will produce unpredictable results.</p>
+</blockquote>
 <p>The judges might try to factor the value -5, so you want to might state:</p>
-<pre><code>    This submission factors positive values up 2305567963945518424753102147331756070.
-    Attempting to factor large values will produce unpredictable results.</code></pre>
+<blockquote>
+<p>This submission factors positive values up 2305567963945518424753102147331756070.<br>
+Attempting to factor large values will produce unpredictable results.</p>
+</blockquote>
 <p>However the judges might try to also factor 0, so you want to might state:</p>
-<pre><code>    This submission factors values between 1 and 2305567963945518424753102147331756070.
-    Attempting to factor values outside that range will produce unpredictable results.</code></pre>
+<blockquote>
+<p>This submission factors values between 1 and 2305567963945518424753102147331756070.<br>
+Attempting to factor values outside that range will produce unpredictable results.</p>
+</blockquote>
 <p>Moreover the try to also factor 3.5 or 0x7, or Fred, so you want to might state:</p>
-<pre><code>    This submission factors integers between 1 and 2305567963945518424753102147331756070.
-    Attempting to factor anything else will produce unpredictable results.</code></pre>
+<blockquote>
+<p>This submission factors integers between 1 and 2305567963945518424753102147331756070.<br>
+Attempting to factor anything else will produce unpredictable results.</p>
+</blockquote>
 <p>You submission might be better off catching the attempt to factor bogus values
 and doing something interesting. So you might want to code accordingly and state:</p>
-<pre><code>    This submission factors integers between 1 and 2305567963945518424753102147331756070.
-    Attempting to factor anything else will cause the program to insult your pet fish Eric.</code></pre>
+<blockquote>
+<p>This submission factors integers between 1 and 2305567963945518424753102147331756070.<br>
+Attempting to factor anything else will cause the program to insult your pet fish Eric.</p>
+</blockquote>
 <p>The judges might not have a pet fish named Eric, so might want to state:</p>
-<pre><code>    This submission factors integers between 1 and 2305567963945518424753102147331756070.
-    Attempting to factor anything else will cause the program to insult your pet fish Eric,
-    or in the case that you lack such a pet, will insult the pet that you do not have.</code></pre>
+<blockquote>
+<p>This submission factors integers between 1 and 2305567963945518424753102147331756070.<br>
+Attempting to factor anything else will cause the program to insult your pet fish Eric,<br>
+or in the case that you lack such a pet, will insult the pet that you do not have.</p>
+</blockquote>
 <p>When all other things are equal, an submission with fewer limitations will be judged
 better than an submission with lots of limitations. So you might want to code accordingly
 and state:</p>
-<pre><code>    This submission attempts to a factor value of any size provided that the program is
-    given enough time and memory.  If the value is not a proper integer, the program
-    might insult a fish named Eric.</code></pre>
+<blockquote>
+<p>This submission attempts to a factor value of any size provided that the program is<br>
+given enough time and memory. If the value is not a proper integer, the program<br>
+might insult a fish named Eric.</p>
+</blockquote>
 <p><strong><code>|</code></strong> Do not fear if you not 100% sure of the significance of <code>2305567963945518424753102147331756070</code> as it is not of prime importance: or is it? :-)</p>
 <p><strong><code>|</code></strong> We <strong>DISLIKE</strong> the use of use ASCII tab characters in markdown files, such as in the required <code>remarks.md</code> file.</p>
 <p><strong><code>|</code></strong> We don’t mind the use ASCII tab characters in your C code. Feel free to use ASCII tab characters if that suits your obfuscation needs. If is perfectly <strong>OK</strong> to use tab characters elsewhere in your submission, just not in markdown files as this tends complicate and annoys us when be comes to rendering your markdown content.</p>
@@ -1043,7 +1056,7 @@ previous round. Thus, an submission gets at least two readings.</p>
 <p>A reading consists of a number of actions:</p>
 <ul>
 <li>reading the “how to build” information and forming a Makefile</li>
-<li>reading prog.c, the C source
+<li>reading prog.c, the C source<br>
 <strong><code>|</code></strong> * reviewing the <code>remarks.md</code> information</li>
 <li>briefly looking any any supplied data files</li>
 <li>passing the source thru the C pre-processor
@@ -1053,7 +1066,7 @@ skipping over any #include files</li>
 skipping over any #include files</li>
 <li>compiling/building the source</li>
 <li>running the program</li>
-<li>Doing other things that only IOCCC judges know about :-)</li>
+<li>Doing other things that only <a href="../judges.html">IOCCC judges</a> know about :-)</li>
 </ul>
 <p>In later rounds, other actions are performed including performing
 miscellaneous tests on the source and binary.</p>
@@ -1095,9 +1108,26 @@ by a similar, but slightly better submission. For this reason, it is
 sometimes worthwhile to re-enter an improved version of an submission
 that failed to win in a previous year. This assumes, of course,
 that the submission is worth improving in the first place!</p>
-<p>More than one IOCCC judge has been known to bribe another IOCCC judge
-into voting for a winning submission by offering a bit high quality chocolate.
-This technique is highly discouraged for use by non-IOCCC judges.</p>
+<p><strong><code>|</code></strong> Over the years, more than one <a href="../judges.html">IOCCC judge</a>
+has been known to <em>bribe</em> another IOCCC judge into voting for a
+winning submission by offering a bit high quality chocolate, or
+other fun item.</p>
+<p><strong><code>|</code></strong> One <strong>should not</strong> attempt to <em>bribe</em> an <a href="../judges.html">IOCCC
+judge</a>, unless you are an <a href="../judges.html">IOCCC judge</a>,
+because <em>bribing</em> a <a href="../judges.html">IOCCC judge</a> by a non-judge
+has been shown to <strong>NOT</strong> be effective when the <strong>person attempting
+the bribe is made known</strong> to the <a href="../judges.html">IOCCC judges</a>
+(i.e., they are not anonymous) AND/OR the <em>bribe</em> is otherwise
+associated with a submission to the IOCCC.</p>
+<p><strong><code>|</code></strong> With the previous guideline in mind: <strong>anonymous</strong> gifts
+for the <a href="../judges.html">IOCCC judges</a> that are <strong>NOT</strong> associated
+with a submission to the IOCCC may be sent to the
+<a href="../judges.html">IOCCC judges</a> via the
+<a href="https://www.amazon.com/hz/wishlist/ls/3HSNTEL8RQ1M0?ref_=wl_share">IOCCC Amazon wishlist</a>.
+It has been shown that receiving <strong>anonymous</strong> gifts provides the
+<a href="../judges.html">IOCCC judges</a> with a nice dopamine boost, and happy
+<a href="../judges.html">IOCCC judges</a> help make the IOCCC better for everyone. :-)</p>
+<p><strong><code>|</code></strong> See <a href="../faq.html#support">FAQ: How may I support the IOCCC?</a>.</p>
 <p>More often than not, we select a small submission (usually one line), a
 strange/creative layout submission. We sometimes also select an
 submission that abuses the <a href="guidelines.html">IOCCC guidelines</a> in an interesting way,
@@ -1129,9 +1159,7 @@ repo</a> that, in turn, updates the <a href="https://www.ioccc.org/index.html">o
 <p>In addition a note is posted to the <a href="https://fosstodon.org/@ioccc">IOCCC Mastodon
 account</a>.</p>
 <h2 id="back-to-announcement-of-winners">Back to announcement of winners</h2>
-<p>It is pointless to ask the IOCCC judges how many entries we receive.
-Other government TLA or FLA snooping organizations are prohibited from
-either confirming, denying or revealing any knowledge of this data point.</p>
+<p><strong><code>|</code></strong> It is pointless to ask the <a href="../judges.html">IOCCC judges</a> how many entries we receive. See <a href="../faq.html#how_many">How many entries do the judges receive for a given IOCCC</a>.</p>
 <p>Often, winning entries are published in selected magazines from around
 the world. Winners have appeared in books (“The New Hackers Dictionary”)
 and on T-Shirts. More than one winner has been turned in a tattoo!</p>

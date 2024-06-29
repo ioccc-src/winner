@@ -71,6 +71,7 @@ other inconsistencies with the original entry?](#faq4_3)
 - [5.4  - How may I submit a fix to the IOCCC website?](#faq5_4)
 - [5.5  - How may I correct or update IOCCC author information?](#faq5_5)
 - [5.6  - What should I do if I find a broken or wrong web link?](#faq5_6)
+- [5.7  - How may I support the IOCCC?](#faq5_7)
 
 
 ## Section  6 - [Miscellaneous IOCCC](#faq6)
@@ -829,7 +830,9 @@ NOTE: The size rule was actually rule 1.
 
 
 <div id="faq2_0">
+<div id="how_many">
 ### FAQ 2.0: How many entries do the judges receive for a given IOCCC?
+</div>
 </div>
 
 By tradition, we do not say.
@@ -2919,6 +2922,26 @@ replace that text with:
 ```
 
 If you just wish to report the bad link issue, see [FAQ 5.3](#report_web_problem).
+
+
+<div id="faq5_7">
+<div id="support">
+### FAQ 5.7: How may I support the IOCCC?
+</div>
+</div>
+
+The [IOCCC judges](judges.html) run the IOCCC entirely out of
+their own funds.  This includes paying for IOCCC related hardware,
+services, registration, software and related technical items.
+
+There is **NO** requirement for anyone to support the IOCCC.
+Nevertheless, it has been shown that receiving  **anonymous** gifts
+provides the [IOCCC judges](judges.html) with a nice dopamine
+boost, and happy [IOCCC judges](judges.html) help make the IOCCC
+better for everyone. :-)
+
+If you wish to express your support, we suggest making an **Anonymous** gift
+via the [IOCCC Amazon wishlist](https://www.amazon.com/hz/wishlist/ls/3HSNTEL8RQ1M0?ref_=wl_share).
 
 
 <div id="faq6">
