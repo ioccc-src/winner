@@ -72,12 +72,14 @@ We may fine tune the rules to reflect the some ideas above.
 
 Please send us comments and suggestions what we have expressed above.
 Also include anything else that you would like to see in future contests.
-Send such email to:
+See [How to contact the IOCCC](../contact.html) for how to provide
+us with your comments and suggestions today.
 
-```
-    ...!{sun,pacbell,uunet,pyramid}!hoptoad!judges
-    judges@toad.com
-```
+For those who appreciate a bit of Internet history, this is how
+people used to contact the IOCCC in this given year:
+
+>   ...!{sun,pacbell,uunet,pyramid}!hoptoad!judges<br>
+>   judges@toad.com
 
 
 ## Final Comments
