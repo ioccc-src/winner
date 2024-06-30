@@ -4,16 +4,20 @@
 
 These rules are a **VERY TENTATIVE proposal** for the next IOCCC
 and are **VERY LIKELY** to be updated before the next IOCCC.
-They are are provided as a **very tentative** hint at **what
+They are are provided as a **VERY TENTATIVE** hint at **what
 MIGHT** be used in the next IOCCC.  In some cases they might
 even be a copy of the rules from the previous IOCCC.
+
+See our [FAQ about providing feedback](../faq.html#feedback) as well
+as our [FAQ about asking questions](../faq.html#question) about
+these rules.
 
 
 # The IOCCC is closed
 
-The IOCCC is **NOT** accepting new submissions at this time.  See the [IOCCC
-winning entries page](../years.html) for the entries that have won the IOCCC in
-the past.
+The IOCCC is **NOT** accepting new submissions at this time.  See the
+[IOCCC winning entries page](../years.html) for the entries that have won the
+IOCCC in the past.
 
 Watch both [the IOCCC status page](../status.html) and the
 [@IOCCC mastodon feed](https://fosstodon.org/@ioccc) for information about

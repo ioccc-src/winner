@@ -8,14 +8,25 @@ Unless some significant problem turns up (such as a need to delay
 in when the IOCCC will close, or some major bug is discovered) they
 will remain **OFFICIAL** for this IOCCC.
 
-**SUGGESTION**: Watch both the [IOCCC news](../news.html) and the [IOCCC
-Mastodon](https://fosstodon.org/@ioccc) feed for the latest news
+See our [FAQ about providing feedback](../faq.html#feedback) as well
+as our [FAQ about asking questions](../faq.html#question) about
+these quidelines.
+
+**SUGGESTION**: Watch both the [IOCCC news](../news.html) and the
+[IOCCC Mastodon](https://fosstodon.org/@ioccc) feed for the latest news
 about any _mentions_ changes.
+
+**HINT to mastodon users**: You may wish to refresh the [@IOCCC
+mastodon feed](https://fosstodon.org/@ioccc) page and/or mastodon
+app from time to time to view IOCCC mastodon updates.
 
 
 # The IOCCC open for submissions
 
-See the [IOCCC news](../news.html) page for possible news about updates to these rules.
+See "[FAQ - How may I enter the IOCCC](https://www.ioccc.org/faq.html#submit)"
+for information on how to register for the IOCCC, how to create a proper
+bzip2 compressed tarball of your submission, and how to upload your
+bzip2 compressed tarball to the IOCCC submit server.
 
 <!-- END: the next line ends content from: inc/rules.open.hdr -->
 <!-- This is the last line modified by the tool: bin/gen-status.sh -->

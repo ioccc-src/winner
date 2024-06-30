@@ -8,6 +8,10 @@ They are are provided as a **VERY TENTATIVE** hint at **what
 MIGHT** be used in the next IOCCC.  In some cases they might
 even be a copy of the guidelines from the previous IOCCC.
 
+See our [FAQ about providing feedback](../faq.html#feedback) as well
+as our [FAQ about asking questions](../faq.html#question) about
+these quidelines.
+
 
 # The IOCCC is closed
 
@@ -18,6 +22,10 @@ IOCCC in the past.
 Watch both [the IOCCC status page](../status.html) and the
 [@IOCCC mastodon feed](https://fosstodon.org/@ioccc) for information about
 future IOCCC openings.
+
+**HINT to mastodon users**: You may wish to refresh the [@IOCCC
+mastodon feed](https://fosstodon.org/@ioccc) page and/or mastodon
+app from time to time to view IOCCC mastodon updates.
 
 <!-- END: the next line ends content from: inc/guidelines.closed.hdr -->
 <!-- This is the last line modified by the tool: bin/gen-status.sh -->
