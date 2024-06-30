@@ -8,7 +8,7 @@ body:
     label: Is there an existing issue for this?
     description: Please search to see if an issue already exists for the problem you're reporting.
     options:
-    - label: I have searched for existing issues and did not find anything like it
+    - label: I have searched for existing issues and did not find anything like this
       required: true
 - type: textarea
   attributes:
