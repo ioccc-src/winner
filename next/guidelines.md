@@ -43,7 +43,7 @@ writing by [contacting the judges](../contact.html).
 ## IOCCC Guidelines version
 </div>
 
-**`|`**   These [IOCCC guidelines](guidelines.html) are version **28.1 2024-06-29**.
+**`|`**   These [IOCCC guidelines](guidelines.html) are version **28.2 2024-06-30**.
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
 
