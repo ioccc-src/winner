@@ -454,7 +454,7 @@ We tend to **DISLIKE** programs that:
 **`|`**   * are "blob-ier" (just a pile of unformatted C code) than they need to be
 * are rather similar to **previous winners** :-(
 * are identical to **previous losers** :-)
-* that mandate the exclusive the use of an specific Integrated Development Environment (IDE)
+* that mandate the exclusive use of a specific Integrated Development Environment (IDE)
 
 In order to encourage submission portability, we **DISLIKE** entries that
 fail to build unless one is using an IDE. For example, do not
