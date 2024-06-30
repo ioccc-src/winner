@@ -444,6 +444,21 @@ gen_next: ${GEN_TOP_HTML} next/README.md next/guidelines.md next/rules.md
 	${GEN_TOP_HTML} -v 1 next/guidelines
 	${GEN_TOP_HTML} -v 1 next/rules
 
+rules: ${GEN_TOP_HTML} next/rules.md
+	@echo "Making rules ..."
+	@${GEN_TOP_HTML} next/rules
+	@echo "Rules? We don't need no stinking rules!"
+
+guidelines: ${GEN_TOP_HTML} next/guidelines.md
+	@echo "Making guidelines ..."
+	@${GEN_TOP_HTML} next/guidelines
+	@echo "Guidelines? We don't need no stinking guidelines!"
+
+faq: ${GEN_TOP_HTML} faq.md
+	@echo "Wait, you have questions? Uh oh!"
+	@${GEN_TOP_HTML} next/guidelines
+	@echo "Well, okay then!"
+
 # build entry HTML files from markdown other than README.md to index.html
 #
 gen_other_html: ${GEN_OTHER_HTML}
