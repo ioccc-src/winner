@@ -516,9 +516,9 @@ guidelines: ${GEN_TOP_HTML} next/guidelines.md
 
 faq: ${GEN_TOP_HTML} faq.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@echo "Wait, you have questions? Uh oh!"
+	@echo "You have a question?"
 	@${GEN_TOP_HTML} faq
-	@echo "Well, okay then!"
+	@echo "Perhaps the FAQ might help."
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 

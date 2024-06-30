@@ -8,7 +8,8 @@
 - [0.3  - May I use a different source or compiled filename than prog.c or prog?](#faq0_3)
 - [0.4  - What platform should I assume for my entry?](#faq0_4)
 - [0.5  - How may I comment or make a suggestion on IOCCC rules, guidelines and tools?](#faq0_5)
-- [0.6  - What are the IOCCC best practices for using markdown?](#faq0_6)
+- [0.6  - What is the best way to ask a question about the IOCCC rules, guideline and tools?](#faq0_6)
+- [0.7  - What are the IOCCC best practices for using markdown?](#faq0_7)
 
 
 ## Section  1 - [History of the IOCCC](#faq1)
@@ -457,14 +458,66 @@ have to say, consider adding comments to that particular discussion.
 Otherwise consider opening a [new mkiocccentry
 discussion](https://github.com/ioccc-src/mkiocccentry/discussions/new/choose).
 
-As a very last resort and/or if you feel the need to engage in a private
-discussion with the [IOCCC judges](judges.html), then see
-[How to contact the IOCCC](contact.html).
-
 
 <div id="faq0_6">
+<div id="question">
+### FAQ 0.6: What is the best way to ask a question about the IOCCC rules, guideline and tools?
+</div>
+</div>
+
+We realise that the [IOCCC rules](next/rules.html), [IOCCC guidelines](next/guidelines.html)
+and the [IOCCC mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry)
+can be confusing or even seem overwhelming to some people.
+
+The [IOCCC judges](judges.html) to welcomes questions about the IOCCC
+and will be **happy to help**.
+
+Chances are, if you have a question, there are a number of other people who
+have similar questions.  So we recommend first view the
+[GitHub discussions for this repo](https://github.com/ioccc-src/winner/discussions)
+so see if someone else asked already.  Feel free to join in on such a discussion,
+even if to just say:
+
+> I have this question too.
+
+Feel free to provide additional feedback in the existing discussion as needed.
+
+**BTW**: If your question just about the
+[IOCCC mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry), please
+view the [mkiocccentry repo discussions](https://github.com/ioccc-src/mkiocccentry/discussions)
+instead.
+
+If you do not find an suitable open discussion, please consider opening a
+[new IOCCC repo discussion](https://github.com/ioccc-src/winner/discussions/new/choose) with
+your question.  Doing this may be of help to others with a question similar to yours.
+
+**BTW**: If your question just about the
+[IOCCC mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry/discussions), please
+and suitable open discussion over there, then please consider opening a
+[new mkiocccentry discussion](https://github.com/ioccc-src/mkiocccentry/discussions/new/choose)
+over there.
+
+If you do not feel, for some reason, comfortable asking your question in public
+(although we hope you consider asking it in public for the benefit of others),
+then use the [How to contact the IOCCC](contact.html) information to ask
+a private question.
+
+**IMPORTANT**: When you ask your question (in public or as a private question)
+**PLEASE** try to **NOT** spoil the surprise of your pending submission.
+Try to ask for question in a more generic way as this will help others
+with a similar question and this will not **give away** what you might be doing
+with your submission.  If the [IOCCC judges](judges.html) truly need more
+information, they will ask (either in public or suggest a private conversation).
+
+Again, **please** don't hesitate to ask: Your question may be something that
+others are wondering about as well.
+
+See also [FAQ about making suggestions)(#faq0_5).
+
+
+<div id="faq0_7">
 <div id="markdown">
-### FAQ 0.6: - What are the IOCCC best practices for using markdown?
+### FAQ 0.7: - What are the IOCCC best practices for using markdown?
 </div>
 </div>
 
@@ -481,6 +534,7 @@ as it lists things you **should not use** in markdown files.
 
 See the [markdown syntax](https://www.markdownguide.org/basic-syntax) guide.
 See also [CommonMark Spec](https://spec.commonmark.org/current/).
+
 
 
 <div id="faq1">
