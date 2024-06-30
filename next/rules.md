@@ -31,7 +31,7 @@ and remains unaltered.  All other uses must receive prior permission in
 writing by [contacting the judges](../contact.html).
 
 
-<div id="rule_version">
+<div id="rules_version">
 ## IOCCC Rules version
 </div>
 
@@ -40,7 +40,9 @@ writing by [contacting the judges](../contact.html).
 **IMPORTANT**: Be sure to read the [IOCCC guidelines](guidelines.html).
 
 
+<div id="change_marks">
 ### Change marks
+</div>
 
 **`|`**   **&larr; Lines that start with this symbol indicate a change from the previous IOCCC**
 
@@ -48,19 +50,23 @@ Most lines (we sometimes make mistakes) that were modified since the previous
 IOCCC start with the **`|`** symbol.
 
 
+<div id="obfuscate">
 # Obfuscate defined:
+</div>
 
 tr.v. -cated, -cating, -cates.
-<BR><BR>
-**1a.** To render obscure.<BR>
+<br><br>
+**1a.** To render obscure.<br>
 **1b.** To darken.
-<BR><BR>
-**2.** To confuse: his emotions obfuscated his judgment.<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;[LLat. obfuscare, to darken : ob(intensive) + Lat. fuscare,<BR>
+<br><br>
+**2.** To confuse: his emotions obfuscated his judgment.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[LLat. obfuscare, to darken : ob(intensive) + Lat. fuscare,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;to darken &lt; fuscus, dark.] -obfuscation n. obfuscatory adj.
 
 
+<div id="goals">
 # Goals of the Contest
+</div>
 
 The goals of the IOCCC:
 
@@ -71,7 +77,9 @@ The goals of the IOCCC:
 *  To provide a safe forum for poor C code. :-)
 
 
+<div id="dates">
 # Important IOCCC dates
+</div>
 
 **`|`**   This IOCCC runs from **2024-MMM-DD HH:MM:SS UTC** to **202x-MMM-DD HH:MM:SS UTC**.<br>
 **`|`**   **XXX - date/time is TBD - XXX**
@@ -103,9 +111,11 @@ are using the correct versions of these items _before using the IOCCC
 submission URL_**.
 
 
+<div id="rules">
 # IOCCC RULES
+</div>
 
-To help us with the volume of entries, we ask that you follow these rules:
+To help us with the volume of submissions, we ask that you follow these rules:
 
 
 <div id="rule0">
@@ -313,7 +323,7 @@ it is needed in your submissions `remarks.md` file.
 ## Rule 12
 </div>
 
-Legal abuse of the rules is somewhat encouraged.  An submission that, in
+Legal abuse of the rules is somewhat encouraged.  A submission that, in
 the opinion of the judges, violates the rules will be disqualified.
 Entries that attempt to abuse the rules **MUST** try to justify why
 their rule abuse is legal, in the submission's `remarks.md` file.
@@ -637,8 +647,11 @@ Even though 24 is not prime, you should still see [Rule 23](#rule23).
 **`|`**   [Rule 28](#rule28) is a perfect way end to the list of [IOCCC rules](rules.html) as we do **NOT** plan to have **496** rules. :-)
 
 
-
+<div id="more-information">
+<div id="information">
 # FOR MORE INFORMATION:
+</div>
+</div>
 
 **`|`**   For questions or comments about the contest, see [Contacting the IOCCC](../contact.html).
 
