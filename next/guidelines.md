@@ -17,7 +17,11 @@ IOCCC in the past.
 
 Watch both [the IOCCC status page](../status.html) and the
 [@IOCCC mastodon feed](https://fosstodon.org/@ioccc) for information about
-future IOCCC openings.
+future IOCCC openings. **Please note** that unless you are mentioned you will
+**NOT** get a push notification with the app so you should refresh the feed from
+time to time.
+
+
 
 <!-- END: the next line ends content from: inc/guidelines.closed.hdr -->
 <!-- This is the last line modified by the tool: bin/gen-status.sh -->
@@ -31,14 +35,18 @@ and remains unaltered.  All other uses must receive prior permission in
 writing by [contacting the judges](../contact.html).
 
 
+<div id="guidelines_version">
 ## IOCCC Guidelines version
+</div>
 
 **`|`**   These [IOCCC guidelines](guidelines.html) are version **28.1 2024-06-29**.
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
 
 
+<div id="change_marks">
 ### Change marks
+</div>
 
 **`|`**   **&larr; Lines that start with this symbol indicate a change from the previous IOCCC**
 
@@ -46,32 +54,39 @@ Most lines (we sometimes make mistakes) that were modified since the previous
 IOCCC start with the **`|`** symbol.
 
 
+<div id="about_guidelines">
 # ABOUT THIS FILE:
+</div>
 
 This file contains _guidelines_ intended to help people who wish to
-submit entries to the [International Obfuscated C Code Contest
+participate in the [International Obfuscated C Code Contest
 &#x28;IOCCC&#x29;](https://www.ioccc.org).
 
-These are not the IOCCC rules, though it does contain comments about
-them.  The [IOCCC guidelines](guidelines.html) should be viewed as _hints_ and _suggestions_.
-Entries that violate the _guidelines_ but remain within the rules _are
-allowed_.  Even so, you are safer if you remain within the [IOCCC guidelines](guidelines.html).
+These are **NOT the [IOCCC rules](rules.html)**, though it does contain comments
+about them.  The [IOCCC guidelines](guidelines.html) should be viewed as
+**hints** and **suggestions**.  **Entries that violate the
+[guidelines](guidelines.html) _but remain within the [rules](rules.html)_** _are
+allowed_.  Even so, you are safer if you remain within the [IOCCC
+guidelines](guidelines.html).
 
-You should read the current [IOCCC rules](rules.html), prior to submitting entries.
-The rules are typically published along with the [IOCCC guidelines](guidelines.html).
+**You should read the current [IOCCC rules](rules.html), prior to submitting
+entries**. The [rules](rules.html) are typically published along with the [IOCCC
+guidelines](guidelines.html)..
 
 
+<div id="new">
 # WHAT'S NEW THIS IOCCC
+</div>
 
 **`|`**   This IOCCC runs from **2024-MMM-DD HH:MM:SS UTC** to **YYYY-MMM-DD HH:MM:SS UTC**.<br>
 **`|`**   **XXX - date/time is TBD - XXX**
 
 **`|`**   The reason for the times of day are so that key IOCCC events are **calculated**
-for be a **fun**ctional UTC time.  :-)
+to be a **fun**ctional UTC time.  :-)
 
 **`|`**   Until the start of this IOCCC, the [IOCCC rules](rules.html),
-[IOCCC guidelines](guidelines.html) tools in the
-[mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry), tool should be
+[IOCCC guidelines](guidelines.html) and the tools in the
+[mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry), should be
 considered provisional **BETA** versions and **may be adjusted _AT
 ANY TIME_**.
 
@@ -79,9 +94,9 @@ ANY TIME_**.
 **`|`**   **XXX - date/time is TBD - XXX**
 
 **`|`**   The [IOCCC rules](rules.html), [IOCCC
-guidelines](guidelines.html) will be available on the official IOCCC
-website on or slightly before start of this IOCCC.  Please check
-the IOCCC [FAQ about how to submit](../faq.html#submit) to see how
+guidelines](guidelines.html) will be available on the [official IOCCC
+website](https://www.ioccc.org) on or slightly before start of this IOCCC.  Please check
+[the IOCCC FAQ about how to submit](../faq.html#submit) to see how
 to submit entries, on or after the start of this IOCCC, to be sure
 you are using the correct versions of these items before using the
 IOCCC submission URL.
@@ -90,33 +105,39 @@ IOCCC submission URL.
 
 **`|`**   The [Rule 2b](rules.html#rule2b) size has **increased from 2053 to 2503** bytes.
 
-**`|`**   Use default way to compile submissions is now `-std=gnu17 -O3 -g3 -Wall -Wextra -pedantic`.
+**`|`**   The default way to compile submissions is now `-std=gnu17 -O3 -g3 -Wall -Wextra -pedantic`.
 
-**`|`**   Submissions are in the form of a single bzip2 compressed tarball.
+**`|`**   Submissions are in the form of a single xz compressed tarball.
 
-**`|`**   To assist in the formation of the bzip2 compressed tarball for submission, use the
+**`|`**   To assist in the formation of the xz compressed tarball for submission, use the
 `mkiocccentry(1)` tool as found in the  [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry).
 
-**`|`**   [Rule 17](rules.html#rule17) as been significantly modified
+**`|`**   [Rule 17](rules.html#rule17) has been **significantly modified**
 to account for the new [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry) tools.
 
-**`|`**   An [example Makefile](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example)
-is now available from the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry).
+**`|`**   An [example
+Makefile](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example)
+is now available from the [mkiocccentry
+repo](https://github.com/ioccc-src/mkiocccentry) and you are encouraged to use
+it.
 
-**`|`**   The IOCCC submission URL, [when the IOCCC is open](../status.html), is [submit.ioccc.org](https://submit.ioccc.org/).
+**`|`**   The IOCCC submission URL, [when the IOCCC is open](../status.html#open), is [submit.ioccc.org](https://submit.ioccc.org/).
 
 
+<div id="hints">
+<div id="suggestions">
 # HINTS AND SUGGESTIONS:
+</div>
+</div>
 
-You are encouraged to examine the winners of previous contests.  See
-**FOR MORE INFORMATION** for details on how to get previous winners.
+You are encouraged to examine the [winners of previous contests](../years.html).
 
-Keep in mind that rules change from year to year, so some winning entries
-might not be valid entries this year.  What _was_ unique and novel one year
-_might be 'old' the next year_.
+Keep in mind that [rules](rules.html) change from year to year, so some [winning
+entries](../years.html) might not be valid submissions this year; what _was_ unique
+and novel one year _might be 'old' the next year_.
 
-An submission is usually examined in a number of ways.  We typically apply
-a number of tests to an submission:
+A submission is usually examined in a number of ways.  We typically apply
+a number of tests to a submission:
 
 * look at the original source
 * convert ANSI trigraphs to ASCII
@@ -133,22 +154,23 @@ You should ask yourself if your submission remains obscure after it has been
 
 Your submission need not pass all of the above tests.  In certain
 cases, a test is not important.  Entries that compete for the
-'_strangest/most creative source layout_' need not do as well as
+'**strangest/most creative source layout**' need not do as well as
 others in terms of their algorithm.  On the other hand, given
 two such entries, we are more inclined to pick the submission that
 does something interesting when you run it.
 
-We try to avoid limiting creativity in our rules.  As such, we leave
-the contest open for creative rule interpretation.  As in [real
-life](https://en.wikipedia.org/wiki/Real_life)
-programming, interpreting a requirements document or a customer request
-is important.  For this reason, we often award '_Best abuse of the
-rules_' or '_Worst abuse of the rules_' to an submission that illustrates this point
-in an ironic way.
+We try to avoid limiting creativity in our [rules](rules.html).  As such, we
+leave the contest open for creative rule interpretation.  As in [real
+life](https://en.wikipedia.org/wiki/Real_life) programming, interpreting a
+requirements document or a customer request is important.  For this reason, we
+often award '**Best abuse of the [rules](rules.html)**' or '**Worst abuse of the
+[rules](rules.html)**' or some variation to a submission that illustrates this
+point in an ironic way.
 
-We do realize that there are holes in the rules, and invite entries
-to attempt to exploit them.  We will award '_Worst abuse of the rules_' or
-'_Best abuse of the rules_' and then plug the hole next year.
+We do realize that there are holes in the [rules](rules.html), and invite
+entries to attempt to exploit them.  We will award '**Worst abuse of the
+[rules](rules.html)**' or '**Best abuse of the [rules](rules.html)**' or some
+variation and then plug the hole next year.
 
 **`|`**   When we do need to plug a hole in the [IOCCC rules](rules.html)
 or [IOCCC guidelines](guidelines.html), we will attempt to use a very
@@ -157,7 +179,7 @@ small plug, if not smaller.  Or, maybe not.  :-)
 **`|`**   There may be less than 2^7+1 reasons why these [IOCCC guidelines](guidelines.html) seem obfuscated.
 
 Check out your program and be sure that it works.  We sometimes make
-the effort to debug an submission that has a slight problem, particularly
+the effort to debug a submission that has a slight problem, particularly
 in or near the final round.  On the other hand, we have seen some
 of the best entries fall down because they didn't work.
 
@@ -173,7 +195,7 @@ will fully explain such cleverness in their submission's `remarks.md` file.
 
 People who are considering to just use some complex mathematical
 function or state machine to spell out something such as "_hello,
-world!_" really really, and we do mean really, do need to be more creative.
+world!_" **really really, _and we do mean REALLY_, do need to be more creative**.
 
 Ultra-obfuscated programs are, in some cases, easier to
 deobfuscate than subtly-obfuscated programs.  Consider using
@@ -197,10 +219,9 @@ are considered more portable.
 must satisfy the IOCCC size tool [Rule 2b](rules.html#rule2b).
 
 **`|`**   This IOCCC size tool imposes a 2nd limit on C code size (see [Rule 2a](rules.html#rule2a).  To check your
-code against the 2nd limit of [Rule 2](rules.html#rule2), use the -i command line option.
-For example:
+code against the 2nd limit of [Rule 2](rules.html#rule2):
 
-```
+``` <!---sh-->
     ./iocccsize prog.c
 ```
 
@@ -217,7 +238,7 @@ For example:
 ASCII whitespace includes ASCII tab, ASCII space, ASCII newline,
 ASCII formfeed, and ASCII carriage return.
 
-**`|`**   When '`;`', '`{`' or '`}`' are within a C string, they may still not be
+**`|`**   When '`;`', '`{`' or '`}`' are within a C string, they may still not be<br>
 **`|`**   counted by the IOCCC size tool.  This is a feature, not a bug!
 
 In cases where the above summary and the algorithm implemented by
@@ -272,16 +293,18 @@ by modifying the `CSTD` Makefile variable.  For example, to use `c17` instead:
 ```
 
 **`|`**   For compilers, such as clang, that have the `-Weverything` option,
-while you try wish it, **HOWEVER** see the [FAQ about clang -Weverything](../faq.html#weverything).
-Thus, we do **NOT** recommend that you put the use of `-Weverything` into
-your submission's `Makefile`.
+while you may wish to try it, you should look at [the FAQ about clang
+-Weverything](../faq.html#weverything).  We do **NOT** recommend that you put
+the use of `-Weverything` into your submission's `Makefile` for the reasons
+cited there. This goes even if your version does not trigger a warning as some
+other version might.
 
 **`|`**   You may change the level of optimization and compiler debug level
-which your submission is compiled by modifying the `COPT` Makefile variable.
-For example, to compile without optimization:
+that your submission is compiled with, by modifying the `OPT` Makefile variable.
+For example, to compile without optimization and debug symbols:
 
 ``` <!---make-->
-    COPT= -O0 -g3
+    OPT= -O0 -g3
 ```
 
 **`|`**   There is no real penalty for compiler warnings.  Sometimes
@@ -299,7 +322,9 @@ try something such as:
 **`|`**   If you do add "`-Wno-some-thing`" to your Makefile,
 consider also adding `-Wno-unknown-warning-option` just in case the
 warning you use is not available in the compilers we use test your
-submission.
+submission. Observe, however, that some compilers **DO NOT** have that option so
+you might wish to note this in your **remarks.md** as it can be a command line
+error.
 
 **`|`**   If you need to define something on the compile line, use
 the `CDEFINE` Makefile variable.  For example:
@@ -323,11 +348,15 @@ use the `COTHER` Makefile variable.  For example:
     COTHER= -fno-math-errno
 ```
 
-**NOTE**: We recommend using only  "_magic_" flags that both **gcc**
-and **clang** support.
+**NOTE**: We recommend using "_magic_" flags **only if BOTH _gcc_
+and _clang_** support it.
 
 
+<div id="likes">
+<div id="dislikes">
 # OUR LIKES AND DISLIKES:
+</div>
+</div>
 
 **`|`**   We **LIKE** entries that use an edited variant of the
 [example Makefile](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example),
@@ -543,8 +572,8 @@ We really **DISLIKE** entries that make blatant use of including
 large data files to get around the source code size limit.
 
 We do not recommend submitting [systemd](https://systemd.io) source code to the IOCCC,
-if nothing else because that code is likely to exceed the source code
-size limit.  This isn't to say that another highly compact and obfuscated
+if nothing else because that code is likely to exceed [the source code
+size limit](rules.html#rule2).  This isn't to say that another highly compact and obfuscated
 replacement of `init` would not be an interesting submission.
 
 Did we remember to indicate that programs that blatantly use
@@ -779,8 +808,8 @@ The judges might not have a pet fish named Eric, so might want to state:
 >   Attempting to factor anything else will cause the program to insult your pet fish Eric,<br>
 >   or in the case that you lack such a pet, will insult the pet that you do not have.
 
-When all other things are equal, an submission with fewer limitations will be judged
-better than an submission with lots of limitations.  So you might want to code accordingly
+When all other things are equal, a submission with fewer limitations will be judged
+better than a submission with lots of limitations.  So you might want to code accordingly
 and state:
 
 >   This submission attempts to a factor value of any size provided that the program is<br>
@@ -804,7 +833,11 @@ and state:
 
 
 
+<div id="rules_abuse">
+<div id="abusing_rules">
 # ABUSING THE RULES:
+</div>
+</div>
 
 Legal abuse of the [IOCCC rules](rules.html) is somewhat encouraged.  Legal rule abuse
 may involve, but is not limited to, doing things that are technically allowed by
@@ -816,10 +849,10 @@ entries, regardless of if they receive an award, result in changes to
 the next year's [IOCCC rules](rules.html) and [IOCCC guidelines](guidelines.html).
 
 Legal abuse of the [IOCCC rules](rules.html) is NOT an invitation to violate the
-[IOCCC rules](rules.html). An submission that violates the [rules](rules.html) in the
+[IOCCC rules](rules.html). A submission that violates the [rules](rules.html) in the
 opinion of the judges, **WILL** be
 disqualified.  **_RULE ABUSE CARRIES A CERTAIN LEVEL OF RISK!_**  If you
-have an submission that might otherwise be interesting, you might want to
+have a submission that might otherwise be interesting, you might want to
 submit two versions; one that does not abuse the [IOCCC rules](rules.html) and one that
 does.
 
@@ -834,7 +867,7 @@ submitting an alternate version that conforms to the
 
 **`|`**   If do bypass the `mkiocccentry(1)` warnings about [Rule
 2a](rules.html#rule2a) and/or about [Rule 2b](rules.html#rule2b)
-and submit an submission anyway, you **MUST** try to justify why the IOCCC
+and submit a submission anyway, you **MUST** try to justify why the IOCCC
 judges should not reject your submission due to a rule violation.
 
 Abusing the web submission procedure tends to annoy us more
@@ -864,7 +897,9 @@ This is one of the reasons why the [IOCCC rules](rules.html) and
 [IOCCC guidelines](guidelines.html) are written in obfuscated form.
 
 
+<div id="judging">
 # JUDGING PROCESS:
+</div>
 
 Entries are judged by Leonid A. Broukhis and Landon Curt Noll.
 
@@ -899,7 +934,7 @@ known as the "Peter Honeyman is exempt" _guideline_.
 
 BTW: None of the entries claiming to be from Peter Honeyman have ever
 won an award.  So it is theoretically possible that Peter Honeyman
-did submit an submission in the past.  In the past, Peter had denied
+did submit a submission in the past.  In the past, Peter had denied
 submitting anything to the IOCCC.  Perhaps those entries were
 submitted by one of his students?
 
@@ -921,14 +956,23 @@ files, and shred all related paper.  By tradition, we do not even
 reveal the number of entries that we received.
 
 During the judging process, a process that spans multiple sessions
-over a few weeks, post general updates from our [Mastodon
-account](https://fosstodon.org/@ioccc).
+over a few weeks, we post general updates from our [Mastodon
+account](https://fosstodon.org/@ioccc). Make sure you reload the feed every so
+often as unless you are mentioned you will not get a push notification.
+
+<div id="rounds">
+## JUDGING ROUNDS:
+</div>
 
 Judging consists of a number of elimination rounds.  During a round,
 the collection of entries are divided into two roughly equal piles;
 the pile that advances on to the next round, and the pile that does
 not.  We also re-examine the entries that were eliminated in the
-previous round.  Thus, an submission gets at least two readings.
+previous round.  Thus, a submission gets at least two readings.
+
+<div id="readings">
+## JUDGING READINGS:
+</div>
 
 A reading consists of a number of actions:
 
@@ -951,11 +995,11 @@ miscellaneous tests on the source and binary.
 **`|`**   This is the very _guideline_ that goes, BING!
 
 Until we reduce the stack of entries down to about 25 entries, entries
-are judged on an individual basis.  An submission is set aside because it
+are judged on an individual basis.  A submission is set aside because it
 does not, in our opinion, meet the standard established by the round.
 When the number of entries thins to about 25 entries, we begin to form
 award categories.  Entries begin to compete with each other for awards.
-An submission will often compete in several categories.
+A submission will often compete in several categories.
 
 The actual award category list will vary depending on the types of entries
 we receive.  A typical category list might be:
@@ -988,7 +1032,7 @@ less clear cut.
 
 Sometimes a final round submission is good enough to win, but is beat out
 by a similar, but slightly better submission.  For this reason, it is
-sometimes worthwhile to re-enter an improved version of an submission
+sometimes worthwhile to re-enter an improved version of a submission
 that failed to win in a previous year.  This assumes, of course,
 that the submission is worth improving in the first place!
 
@@ -1023,7 +1067,7 @@ or that stretches the content rules that while legal, is
 nevertheless goes against the intent of the rules.
 
 In the end, we traditionally pick one submission as 'best'.  Sometimes such
-an submission simply far exceeds any of the other entries.  More often, the
+a submission simply far exceeds any of the other entries.  More often, the
 'best' is picked because it does well in a number of categories.
 
 In years past, we renamed the winning submission from prog.c to a
@@ -1031,7 +1075,9 @@ name related to the submitter(s) names.  This is no longer done.
 Winning source is called prog.c  A compiled binary is called prog.
 
 
+<div id="announcements">
 # ANNOUNCEMENT OF WINNERS:
+</div>
 
 The judges will toot initial announcement of who won, the name
 of their award, and a very brief description of the winning submission
@@ -1040,9 +1086,12 @@ follow us on Mastodon and refresh the page (even if you do follow us) as unless
 you are mentioned you will not get a notification.
 
 
+<div id="winners">
 ## How the new IOCCC winners will be announced
+</div>
 
-**`|`**   The [Current status of the IOCCC](../status.html) will change from **judging** to **closed** .
+**`|`**   The [Current status of the IOCCC](../status.html) will change from
+**[judging](../status.html#judging)** to **[closed](../status.html#closed)** .
 
 **`|`**   The **contest_status** in the [status.json](../status.json) file will change from **judging** to **closed** as well.
 
@@ -1055,28 +1104,37 @@ you are mentioned you will not get a notification.
 **`|`**   The [IOCCC news](../news.html) will also contain an announcement of the winners.
 
 
+<div id="mastodon">
 ## An important update to how winners are announced
+</div>
 
-The IOCCC no longer uses twitter.  IOCCC entries will be announced
-by a git commit to the [IOCCC entries
-repo](https://github.com/ioccc-src/winner) that, in turn, updates the [official IOCCC website](https://www.ioccc.org/index.html).
+**`|`** The IOCCC no longer uses twitter.  IOCCC entries will be announced by a
+git commit to the [IOCCC entries repo](https://github.com/ioccc-src/winner)
+that, in turn, updates the [official IOCCC
+website](https://www.ioccc.org/index.html).
 
-In addition a note is posted to the [IOCCC Mastodon
-account](https://fosstodon.org/@ioccc).
+**`|`** In addition a note is posted to the [IOCCC Mastodon account](https://fosstodon.org/@ioccc).
 
 
+<div id="entries">
 ## Back to announcement of winners
+</div>
 
-**`|`**   It is pointless to ask the [IOCCC judges](../judges.html) how many entries we receive.  See [How many entries do the judges receive for a given IOCCC](../faq.html#how_many).
+**`|`**   It is pointless to ask the [IOCCC judges](../judges.html) how many
+submissions we receive.  See [How many submissions do the judges receive for a given IOCCC](../faq.html#how_many).
 
 Often, winning entries are published in selected magazines from around
 the world.  Winners have appeared in books ("The New Hackers Dictionary")
-and on T-Shirts.  More than one winner has been turned in a tattoo!
+and on T-Shirts.  More than one winner has been turned into a tattoo!
 
 Last, but not least, winners receive international fame and flames!  :-)
 
 
+<div id="more-information">
+<div id="information">
 # FOR MORE INFORMATION:
+</div>
+</div>
 
 **`|`**   For questions or comments about the contest, see [Contacting the IOCCC](../contact.html).
 
@@ -1088,13 +1146,13 @@ Last, but not least, winners receive international fame and flames!  :-)
 
 **`|`**   See the [Official IOCCC website news](../news.html) for additional information.
 
-**`|`**   For the updates and breaking IOCCC news, you are encouraged to follow
-the [IOCCC on Mastodon](https://fosstodon.org/@ioccc) account.  See our
-[FAQ](../faq.html#try_mastodon) for more information. Please be aware that
-unless you are mentioned you most likely will **NOT** get a notification from
-the app so you should make sure to check the page.
+**`|`**   For the updates and breaking [IOCCC news](../news.html), you are encouraged to follow
+the [IOCCC on Mastodon](https://fosstodon.org/@ioccc).  See our
+[FAQ on Mastodon](../faq.html#try_mastodon) for more information. Please be aware that
+unless you are mentioned you most likely will **NOT** get a notification
+so you should make sure to check the page.
 
-**`|`**   Check out the [Official IOCCC winner website](https://www.ioccc.org/index.html) in general.
+**`|`**   Check out the [Official IOCCC website](https://www.ioccc.org/index.html) in general.
 
 Leonid A. Broukhis<br>
 chongo (Landon Curt Noll) /\\cc/\\
