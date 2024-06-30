@@ -17,9 +17,11 @@ the past.
 
 Watch both [the IOCCC status page](../status.html) and the
 [@IOCCC mastodon feed](https://fosstodon.org/@ioccc) for information about
-future IOCCC openings. **Please note** that unless you are mentioned you will
-**NOT** get a push notification with the app so you should refresh the feed from
-time to time.
+future IOCCC openings.
+
+**HINT to mastodon users**: You may wish to refresh the [@IOCCC
+mastodon feed](https://fosstodon.org/@ioccc) page and/or mastodon
+app from time to time to view IOCCC mastodon updates.
 
 <!-- END: the next line ends content from: inc/rules.closed.hdr -->
 <!-- This is the last line modified by the tool: bin/gen-status.sh -->

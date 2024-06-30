@@ -4090,6 +4090,10 @@ from the App Store or whatever equivalent your device has. Please note that the
 app does not at this time seem to give push notifications when someone you
 follow posts something so you will have to check the IOCCC feed manually.
 
+**HINT to mastodon users**: You may wish to refresh the [@IOCCC
+mastodon feed](https://fosstodon.org/@ioccc) page and/or mastodon
+app from time to time to view IOCCC mastodon updates.
+
 
 <div id="faq6_13">
 <div id="find_author_handle">
