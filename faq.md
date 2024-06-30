@@ -4,9 +4,9 @@
 ## Section  0 - [Submitting entries to a new IOCCC](#faq0)
 - [0.0  - How may I enter the IOCCC?](#faq0_0)
 - [0.1  - What types of entries have been frequently submitted to the IOCCC?](#faq0_1)
-- [0.2  - What should I put in my entry's Makefile?](#faq0_2)
+- [0.2  - What should I put in my submission's Makefile?](#faq0_2)
 - [0.3  - May I use a different source or compiled filename than prog.c or prog?](#faq0_3)
-- [0.4  - What platform should I assume for my entry?](#faq0_4)
+- [0.4  - What platform should I assume for my submission?](#faq0_4)
 - [0.5  - How may I comment or make a suggestion on IOCCC rules, guidelines and tools?](#faq0_5)
 - [0.6  - What are the IOCCC best practices for using markdown?](#faq0_6)
 
@@ -20,12 +20,12 @@
 
 ## Section  2 - [IOCCC Judging process](#faq2)
 - [2.0  - How many entries do the judges receive for a given IOCCC?](#faq2_0)
-- [2.1  - What should I put in the remarks.md file of my entry?](#faq2_1)
+- [2.1  - What should I put in the remarks.md file of my submission?](#faq2_1)
 - [2.2  - Why don't you publish entries that do not win?](#faq2_2)
 - [2.3  - How much time does it take to judge the contest?](#faq2_3)
 - [2.4  - How many judging rounds do you have?](#faq2_4)
 - [2.5  - Why do some IOCCC entries receive the Grand Prize or Best of Show award?](#faq2_5)
-- [2.6  - How are IOCCC entries announced?](#faq2_6)
+- [2.6  - How are winning IOCCC entries announced?](#faq2_6)
 
 
 ## Section  3 - [Compiling and running IOCCC entries](#faq3)
@@ -55,7 +55,7 @@
 ## Section  4 - [Changes made to IOCCC entries](#faq4)
 - [4.0  - Why are some winning author remarks incongruent with the winning IOCCC code?](#faq4_0)
 - [4.1  - Why were some calls to the libc function gets&#x28;3&#x29; changed to use fgets&#x28;3&#x29;?](#faq4_1)
-- [4.2  - What was changed in an IOCCC entry source code?](#faq4_2)
+- [4.2  - What was changed in an IOCCC entry's source code?](#faq4_2)
 - [4.3  - Why do author remarks sometimes not match the source and/or why are there
 other inconsistencies with the original entry?](#faq4_3)
 - [4.4  - What is the meaning of the file ending in .orig.c in IOCCC entries?](#faq4_4)
@@ -171,7 +171,7 @@ If you already have an mkiocccentry tool directory:
     make clobber all
 ```
 
-#### 5. Run the mkiocccentry tool to form your entry tarball
+#### 5. Run the mkiocccentry tool to form your submission tarball
 
 ```sh
     mkiocccentry work_dir prog.c Makefile remarks.md [file ...]
@@ -181,11 +181,11 @@ where:
 
 * work_dir
 
-    directory where the entry directory and tarball are formed
+    directory where the submission directory and tarball are formed
 
 * prog.c
 
-    path to the C source for your entry
+    path to the C source for your submission
 
 * Makefile
 
@@ -193,31 +193,31 @@ where:
 
 * remarks.md
 
-    Remarks about your entry in markdown format: see [FAQ 2.1](#remarks_md) for more info.
+    Remarks about your submission in markdown format: see [FAQ 2.1](#remarks_md) for more info.
 
 * [file ...]
 
-    Optional extra data files to include with your entry
+    Optional extra data files to include with your submission
 
 NOTE: Please see our [IOCCC markdown guide](markdown.html) for **important information** on using markdown in the IOCCC.
 
 NOTE: It is *NOT* necessary to install the tools to use them as you can run
 the tools from the top of the _mkiocccentry repo_ directory just fine.
 
-If `mkiocccentry` tool indicates that there is a problem with your entry,
+If `mkiocccentry` tool indicates that there is a problem with your submission,
 especially if it identifies a [rule 2](next/rules.html#2) related problem,
-you are **strongly** encouraged to revise and correct your entry and
+you are **strongly** encouraged to revise and correct your submission and
 then re-run the `mkiocccentry` tool.
 
 If you choose to risk violating rules, be sure an explain your reason
 for doing so in your `remarks.md` file.
 
 
-#### 6. Upload your entry to the IOCCC submit server
+#### 6. Upload your submission tarball to the IOCCC submit server
 
 The **IOCCC submit server** is still being written.
 <!--XXX--> As such, we do not yet have instructions
-on how upload your entry to the **IOCCC submit server**.  Once
+on how upload your submission tarball to the **IOCCC submit server**.  Once
 **IOCCC submit server** is ready, we will update this section
 with the proper instructions.  Watch the [IOCCC news](news.html)
 for an announcement of the availability of the **IOCCC submit server**.
@@ -349,28 +349,31 @@ state something along the lines of:
 
 **FAIR WARNING**: Be sure to **clearly explain** near the beginning
 of your `remarks.md` file, see [FAQ 2.1](#remarks_md),
-**why you are submitting a entry based on a frequently
+**why you are submitting an entry based on a frequently
 submitted theme** and **how compares with previous IOCCC winners**
 of the same theme.
 
 
 
 <div id="faq0_2">
-### FAQ 0.2: What should I put in my entry's Makefile?
+<div id="submission_makefiles">
+### FAQ 0.2: What should I put in my submissions's Makefile?
+</div>
 </div>
 
 We recommend starting with the [sample
 Makefile](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example)
 as found in the [mkiocccentry GitHub repo](https://github.com/ioccc-src/mkiocccentry),
 (renamed as `Makefile` of course) as a starting point for your
-entry's `Makefile`.
+submission's `Makefile`.
 
 The `Makefile` is a file used by the `make(1)` command that contains
 rules and UNIX shell-style commands.
 
-The first and default rule should be the `all` rule and should build your entry's executable file.
+The first and default rule should be the `all` rule and should build your
+submission's executable file.
 
-If your entry depends on a particular source file name during compilation or execution,
+If your submission depends on a particular source file name during compilation or execution,
 your `Makefile` should copy `prog.c` into the desired filename.  For example:
 
 If you are not familiar `Makefile`s, you might consider the following tutorials:
@@ -388,7 +391,8 @@ command that is compatible with GNU Make version 3.81.
 ### FAQ 0.3: May I use a different source or compiled filename than prog.c or prog?
 </div>
 
-While your entry's source filename, as submitted, must be `prog.c`, your entry's `Makefile`
+While your submission's source filename, as submitted, must be `prog.c`, your
+submission's `Makefile`
 may copy `prog.c` to a different filename as part of the compiling/building process.  For example:
 
 ``` <!---make-->
@@ -405,7 +409,7 @@ may copy `prog.c` to a different filename as part of the compiling/building proc
             rm -f desired_name.c desired_name
 ```
 
-We recommend that the `make clobber` rule remove files that your entry
+We recommend that the `make clobber` rule remove files that your submission
 creates as part of the compiling/building process.
 
 You may also copy the compiled `prog` into a different file as part of compiling process.
@@ -420,11 +424,11 @@ For example:
 
 <div id="faq0_4">
 <div id="SUS">
-### FAQ 0.4: What platform should I assume for my entry?
+### FAQ 0.4: What platform should I assume for my submission?
 </div>
 </div>
 
-Your entry must compile with **clang** or **gcc** and run under at least one flavor of a UNIX
+Your submission must compile with **clang** or **gcc** and run under at least one flavor of a UNIX
 system that conforms to the [SUS](https://en.wikipedia.org/wiki/Single_UNIX_Specification),
 otherwise known as the [The Single UNIX Specification Version 4](https://unix.org/version4/)
 or [later SUS](https://unix.org/online.html).
@@ -467,8 +471,8 @@ discussion with the [IOCCC judges](judges.html), then see
 </div>
 
 The IOCCC makes extensive use of [markdown](https://daringfireball.net/projects/markdown/).
-For example, we [submitting to the IOCCC](faq.html#submit), we have people
-to submit remarks about entry in markdown format.  Every
+For example, when [submitting to the IOCCC](faq.html#submit), we have people
+submit remarks about submissions in markdown format.  Every
 [winning IOCCC entry](years.html) uses a `README.md` markdown file
 as the basis for forming the `index.html` web page for that entry.
 All generated HTML pages on the [Official IOCCC website](https://www.ioccc.org/index.html)
@@ -831,7 +835,7 @@ NOTE: The size rule was actually rule 1.
 
 <div id="faq2_0">
 <div id="how_many">
-### FAQ 2.0: How many entries do the judges receive for a given IOCCC?
+### FAQ 2.0: How many submissions do the judges receive for a given IOCCC?
 </div>
 </div>
 
@@ -840,21 +844,21 @@ By tradition, we do not say.
 
 <div id="faq2_1">
 <div id="remarks_md">
-### FAQ 2.1: What should I put in the remarks.md file of my entry?
+### FAQ 2.1: What should I put in the remarks.md file of my submission?
 </div>
 </div>
 
-While you may put in as much or as little as you wish into your entry's
+While you may put in as much or as little as you wish into your submission's
 `remarks.md` file, we do have few important suggestions:
 
-We recommend that you explain how to use your entry.  Explain the
+We recommend that you explain how to use your submission.  Explain the
 command line (if any command line options and arguments are used)
 and any input or actions if applicable.
 
-We highly recommend that you explain why you think your entry is
+We highly recommend that you explain why you think your submission is
 well obfuscated.
 
-For those entries that win the IOCCC, we often use much of text from the
+For those submission that win the IOCCC, we often use much of text from the
 `remarks.md` file in the _Author's remarks_ section of the `index.html` file.
 For this reason, a well written `remarks.md` file is considered a plus.
 
@@ -862,51 +866,53 @@ While not required, consider adding bit of humor to your `remarks.md`
 as most people who are not humor impaired, as well as the IOCCC judges
 appreciate the opportunity for a fun read as well as a chuckle or two.
 
+**PLEASE** also look at [markdown.html](markdown.html) for the IOCCC markdown
+guidelines.
+
 
 #### What helps:
 
-- explaining what your entry does
+- explaining what your submission does
 - how to entice it to do what it is supposed to do
 - what obfuscations are used
-- what are the limitations of your entry in respect of portability and/or input data
+- what are the limitations of your submission in respect of portability and/or input data
 - how it works (if you are really condescending)
 
 
 #### What does not help:
 
-- admitting that your entry is not very obfuscated (you see, the contest is
+- admitting that your submission is not very obfuscated (you see, the contest is
 called the **IOCCC**, not the **INVOCCC** :-) ); but even if you do not admit
-it, not very obfuscated entries have a minuscule chance to win (although
+it, not very obfuscated submission have a minuscule chance to win (although
 [2000/tomx](2000/tomx/index.html) is a notable counterexample).
 - mentioning your name or any identifying information in the remark section (or
 in the C code for that matter) - we like to be unbiased during the judging
-rounds; we look at the author name only if an entry wins. See the guidelines if
+rounds; we look at the author name only if a submission wins. See the guidelines if
 this is not clear!
 - leaving the remark section empty.
 
 
-%%REPO_URL%%/<div id="faq2_2">
-### FAQ 2.2: Why don't you publish entries that do not win?
+### FAQ 2.2: Why don't you publish submissions that do not win?
 </div>
 
 Because the publication on the IOCCC site **_IS_** the award!
 Anyone is free to put their IOCCC hopefuls, lookalikes and/or
-entries that do not win on their web page for everyone to see.
+submissions that do not win on their web page for everyone to see.
 
 
 <div id="faq2_3">
 ### FAQ 2.3: How much time does it take to judge the contest?
 </div>
 
-It takes a fair amount of time to setup, run, answer email, process entries,
-review entries, trim down the set entries to a set of winning entries, doing the
+It takes a fair amount of time to setup, run, answer email, process submissions,
+review submissions, trim down the set submissions to a set of winning entries, doing the
 write-up of the entries, announcing the entries, reviewing final edits of the
 winning entry set, posting the winning entries, being flamed :-), tell folks who send in
 late entries to wait until the next contest, etc... It takes a few weekends and
 a number nights of study and work ... which is hard given that we are busy with
 many other activities as well.
 
-Note that we do not contact the author if an entry does not compile or does not
+Note that **we do not** contact the author if a submission does not compile or does not
 work as advertised, we might attempt to fix obvious compilation problems or
 incompatibilities, but no more than that - so be sure that your entry does work
 on at least a couple different platforms, at least one of them being UNIX or
@@ -969,7 +975,7 @@ more other entries that came in close behind.
 
 
 <div id="faq2_6">
-### FAQ 2.6: How are IOCCC entries announced?
+### FAQ 2.6: How are winning IOCCC entries announced?
 </div>
 
 Once the [IOCCC](index.html) closes, the judges will:
@@ -1149,7 +1155,7 @@ for details.
 ### FAQ 3.4: Why does clang or gcc fail to compile an IOCCC entry?
 </div>
 
-Although we have fixed numerous entries to work with clang (sometimes in an alt
+Although we have fixed most entries to work with clang (sometimes in an alt
 version but usually in the program itself) there are some that simply cannot be
 fixed or if they are fixable they have not yet been fixed (we are working on
 this but other things have to be done too and all on free time).
@@ -1691,7 +1697,7 @@ if you're running out of bytes due to rule 2[ab] one might not have much choice.
 This is something that obfuscation authors simply sometimes have to deal with!
 
 If you try to minimize the number of `-Wno-foo` options needed with
-`-Weverything`, please mention this in your remarks about the entry, as the
+`-Weverything`, please mention this in your remarks about the submission, as the
 judges note you attempt to honor it (see also below). In some cases your
 obfuscated code will issue warnings with `-Weverything` no matter what: the
 `-Wno-poison-system-directories` is a common example of this but there are
@@ -1703,12 +1709,12 @@ different build environment might still have warnings. For instance the warning
 set is different in macOS (which by default is `clang`: even when run as `gcc`!)
 than Linux (due to versions and possibly other things)!
 
-Given that your entry **MUST** work as documented, you may be safer to
-say that your entry keeps the number of warnings and `-Wno-foo` options while
+Given that your submission **MUST** work as documented, you may be safer to
+say that your submission keeps the number of warnings and `-Wno-foo` options while
 compiling with `clang -Weverything` at a minimum. You might want to say the
 version number and platform too as an extra safety net. Because if you claim zero
 warnings, and we find a warning situation, this may diminish the value of your
-entry as it is not as documented. Thus it might be wise to point this out and
+submission as it is not as documented. Thus it might be wise to point this out and
 if you can test it in multiple platforms (or versions of `clang`, see
 below note) this would be advisable.
 
@@ -1744,8 +1750,8 @@ Alternatively you can try:
 ```
 
 As you can see, using `clang` has some additional problems to work out but if
-you can get your entry to work well in `clang` it might very well be considered
-better than other entries.
+you can get your submission to work well in `clang` it might very well be considered
+better than other submissions.
 
 
 <div id="faq3_12">
@@ -2300,7 +2306,7 @@ If you download the 1984 tarball, i.e. `1984/1984.tar.bz2`, then you might
 extract it and then switch to the directory and compile everything of each
 entry:
 
-```sh
+``` <!---sh-->
         cd 1984
         make everything
 ```
