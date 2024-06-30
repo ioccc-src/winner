@@ -517,7 +517,7 @@ guidelines: ${GEN_TOP_HTML} next/guidelines.md
 faq: ${GEN_TOP_HTML} faq.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	@echo "Wait, you have questions? Uh oh!"
-	@${GEN_TOP_HTML} faq
+	@${GEN_TOP_HTML} next/guidelines
 	@echo "Well, okay then!"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
@@ -665,8 +665,11 @@ update:
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 
-# NOTE: Don't worry if you don't understand stuff below
-#
+###########################################################
+# NOTE: Don't worry if you don't understand the stuff below
+###########################################################
+
+
 ##################
 # 133t hacker rulz
 ##################
