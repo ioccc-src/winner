@@ -292,12 +292,20 @@ help:
 	@echo 'make quick_entry_index	 - build winner index.html files that might be out of date'
 	@echo 'make find_missing_links	 - find markdown links to missing local files'
 	@echo
+	@echo '# Rules for building specific web pages - a subset of rules mentioned above:'
+	@echo
+	@echo 'make thanks		 - generqte thanks-for-help.html'
+	@echo 'make bugs		 - generqte bugs.html'
+	@echo 'make rules		 - generqte next/rules.hmtl'
+	@echo 'make guidelines		 - generqte next/guidelines.hmtl'
+	@echo 'make faq		 - generqte faq.html'
+	@echo
 	@echo '# Compound make rules for building a local copy of the IOCCC website:'
 	@echo
 	@echo 'make quick_www		 - generate html files more quickly, checking timestamps'
 	@echo 'make www		 - build html pages for website'
 	@echo
-	@echo '# Rules that are useful only for those IOCCC judges who mainain the official IOCCC website:'
+	@echo '# Rules that are useful only for those IOCCC judges who maintain the official IOCCC website:'
 	@echo
 	@echo 'make sort_gitignore	 - sort .gitignore files according to rules in bin/sgi.sh'
 	@echo
@@ -313,6 +321,11 @@ help:
 	@echo 'make timestamp		 - generate things with timestamps (status, sitemap etc.)'
 	@echo
 	@echo 'make update		 - update everything in a local copy of the website'
+
+
+######################################################
+# Rules for building a local copy of the IOCCC website
+######################################################
 
 # verify that there are no leading ASCII tabs in leading whitespace in markdown files
 tab_check:
@@ -424,41 +437,6 @@ gen_top_html: ${GEN_TOP_HTML}
 	${GEN_TOP_HTML} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-# generate thanks-for-help.html
-#
-# So Long, and Thanks for All the Fish :-)
-#
-thanks: ${GEN_TOP_HTML} thanks-for-help.md
-	@echo "Thanks for all the help ..."
-	@${GEN_TOP_HTML} thanks-for-help
-	@echo "... and thanks for all the fish :-)"
-
-# Bugs Bunny rule
-bugs: ${GEN_TOP_HTML} bugs.md
-	@echo "Shhh. Be vewy vewy quiet, I'm hunting wabbits .. and bugs."
-	@${GEN_TOP_HTML} bugs
-	@echo "Eh, what's up, doc?"
-
-gen_next: ${GEN_TOP_HTML} next/README.md next/guidelines.md next/rules.md
-	${GEN_TOP_HTML} -v 1 next/README
-	${GEN_TOP_HTML} -v 1 next/guidelines
-	${GEN_TOP_HTML} -v 1 next/rules
-
-rules: ${GEN_TOP_HTML} next/rules.md
-	@echo "Making rules ..."
-	@${GEN_TOP_HTML} next/rules
-	@echo "Rules? We don't need no stinking rules!"
-
-guidelines: ${GEN_TOP_HTML} next/guidelines.md
-	@echo "Making guidelines ..."
-	@${GEN_TOP_HTML} next/guidelines
-	@echo "Guidelines? We don't need no stinking guidelines!"
-
-faq: ${GEN_TOP_HTML} faq.md
-	@echo "Wait, you have questions? Uh oh!"
-	@${GEN_TOP_HTML} next/guidelines
-	@echo "Well, okay then!"
-
 # build entry HTML files from markdown other than README.md to index.html
 #
 gen_other_html: ${GEN_OTHER_HTML}
@@ -492,6 +470,61 @@ find_missing_links:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${FIND_MISSING_LINKS} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+
+###########################################################################
+# Rules for building specific web pages - a subset of rules mentioned above
+###########################################################################
+
+.PHONY: thanks bugs gen_next rules guidelines faq
+
+# generate thanks-for-help.html
+#
+# So Long, and Thanks for All the Fish :-)
+#
+thanks: ${GEN_TOP_HTML} thanks-for-help.md
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo "Thanks for all the help ..."
+	@${GEN_TOP_HTML} thanks-for-help
+	@echo "... and thanks for all the fish :-)"
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# Bugs Bunny rule
+bugs: ${GEN_TOP_HTML} bugs.md
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo "Shhh. Be vewy vewy quiet, I'm hunting wabbits .. and bugs."
+	@${GEN_TOP_HTML} bugs
+	@echo "Eh, what's up, doc?"
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+gen_next: ${GEN_TOP_HTML} next/README.md next/guidelines.md next/rules.md
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${GEN_TOP_HTML} -v 1 next/README
+	${GEN_TOP_HTML} -v 1 next/guidelines
+	${GEN_TOP_HTML} -v 1 next/rules
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+rules: ${GEN_TOP_HTML} next/rules.md
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@${GEN_TOP_HTML} next/rules
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+guidelines: ${GEN_TOP_HTML} next/guidelines.md
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@${GEN_TOP_HTML} next/guidelines
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+faq: ${GEN_TOP_HTML} faq.md
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo "Wait, you have questions? Uh oh!"
+	@${GEN_TOP_HTML} next/guidelines
+	@echo "Well, okay then!"
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+
+####################################################################
+# Compound make rules for building a local copy of the IOCCC website
+####################################################################
 
 # do work to build HTML content for the website
 #
@@ -550,6 +583,11 @@ www:
 	${MAKE} gen_other_html
 	${MAKE} find_missing_links
 	@echo '=-=-=-=-=-= IOCCC complete make $@ =-=-=-=-=-='
+
+
+###########################################################################################
+# Rules that are useful only for those IOCCC judges who maintain the official IOCCC website
+###########################################################################################
 
 # untar all entry tarballs
 #
@@ -626,6 +664,9 @@ update:
 	${MAKE} timestamp
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
+
+# NOTE: Don't worry if you don't understand stuff below
+#
 ##################
 # 133t hacker rulz
 ##################
