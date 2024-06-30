@@ -637,7 +637,7 @@ tar:
 gen_status: ${GEN_STATUS}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${GEN_STATUS} -v 1
-	${MAKE} gen_top_html
+	${MAKE} gen_next
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # generate the XML sitemap
