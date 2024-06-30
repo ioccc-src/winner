@@ -665,8 +665,11 @@ update:
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 
-# NOTE: Don't worry if you don't understand stuff below
-#
+###########################################################
+# NOTE: Don't worry if you don't understand the stuff below
+###########################################################
+
+
 ##################
 # 133t hacker rulz
 ##################
