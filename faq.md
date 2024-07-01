@@ -73,6 +73,7 @@ other inconsistencies with the original entry?](#faq4_3)
 - [5.5  - How may I correct or update IOCCC author information?](#faq5_5)
 - [5.6  - What should I do if I find a broken or wrong web link?](#faq5_6)
 - [5.7  - How may I support the IOCCC?](#faq5_7)
+- [5.8 - I deobfuscated some entry code, how may I contribute the source?](#faq5_8)
 
 
 ## Section  6 - [Miscellaneous IOCCC](#faq6)
@@ -2996,8 +2997,81 @@ provides the [IOCCC judges](judges.html) with a nice dopamine
 boost, and happy [IOCCC judges](judges.html) help make the IOCCC
 better for everyone. :-)
 
-If you wish to express your support, we suggest making an **Anonymous** gift
-via the [IOCCC Amazon wishlist](https://www.amazon.com/hz/wishlist/ls/3HSNTEL8RQ1M0?ref_=wl_share).
+If you wish to express your support and/or appreication or our
+efforts, we suggest making an **Anonymous** gift via the
+[IOCCC Amazon wishlist](https://www.amazon.com/hz/wishlist/ls/3HSNTEL8RQ1M0?ref_=wl_share).
+
+
+<div id="faq5_8">
+<div id="deobfuscated">
+### FAQ 5.8: I deobfuscated some entry code, how may I contribute the source?
+</div>
+</div>
+
+The [IOCCC judges](judges.html) welcome those who wish to contribute
+a **deobfuscated** version of a winning IOCCC entry: from either
+the [author&#x28;s&#x29;](authors.html) or from people such as
+yourself who are willing to contribute **deobfuscated** code.
+We also welcome contributions to improve existing **deobfuscated** code.
+
+**HISTORICAL NOTE**: The IOCCC web site has shifted to a more
+educational theme: preferring to explain entries rather than hiding
+things under the guise of such information being a "_spoiler_".  We
+now use the term **deobfuscated** instead of "_spoiler_" for this reason.
+
+We ask that the **deobfuscated** code be identical to the
+functionality of the winning IOCCC entry code.
+
+**NOTE**: Be aware that IOCCC entry code may contain **extremely
+subtle and obscure side effects** (i.e., features).  Those wishing
+to contribute a **deobfuscated** version of code should **strive
+to mimic** the original (or existing `prog.c`code) IOCCC entry
+code as much as possible.
+
+To contribute your **deobfuscated** code, please open up a
+[Show and tell new discussion](https://github.com/ioccc-src/temp-test-ioccc/discussions/new?category=show-and-tell).
+with a title of the form:
+
+```
+    Enhancement: deobfuscated code for YYYY/dirname
+```
+
+where "_YYYY/dirname_" refers to the winning IOCCC entry for which you are de-obfuscating.
+
+In the **body** of your new discussion, **PLEASE** provide us with a **URL** of
+your **deobfuscated** code, along with whatever notes and/or comments you
+think might be helpful.
+
+If you are providing an improved version of some existing **deobfuscated** code, please
+mention that in the **body** of your new discussion as well.
+
+If there are **limitations** to how well the your **deobfuscated** code minics
+the original (or existing `prog.c`code) IOCCC entry code, **PLEASE** mention those **limitations**
+in the **body** of your new discussion as well.
+
+Any questions that may arise arise will be added as comments to the discussion.
+
+**SUGGESTION**: **PLEASE** try to make your **deobfuscated** code readable.  **PLEASE**
+add comments as needed to help the reader of your **deobfuscated** code understand it.
+
+**SUGGESTION**: Where useful, consider providing, as **C comments**,
+code fragments of from the original (or existing `prog.c`code) IOCCC
+entry code.  While it is **NOT** necessary to include the entire
+original code as **C comments**, including key parts from the
+original (or existing `prog.c`code) IOCCC entry code may be helpful
+to others who wish to read your **deobfuscated** code.
+
+If your **deobfuscated** is accepted (in some form), the [IOCCC judges](judges.html)
+will be happy to **thank you** for your contribution in the
+[Thanking people for their help](thanks-for-help.html) file.
+
+The [IOCCC judges](judges.html) will do the rest of the work in integrate your
+ **deobfuscated** code as an "_alt_" code for the entry **AND** will reference
+ your **deobfuscated** code in the entry's `index.html` file.  We will be
+ happy to include any whatever notes and/or comments from your new discussion
+ that be prove helpful.
+
+ **THANK YOU** in advance for your willingness to assist!
 
 
 <div id="faq6">
