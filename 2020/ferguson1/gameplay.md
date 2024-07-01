@@ -554,7 +554,7 @@ could also set the max size to be the highest possible by saying
 
 Which I've done in the [play.sh][] script.
 
-I discuss how this mode works in [deobfuscation.html][].
+I discuss how this mode works in [obfuscation.html][].
 
 Here's an example run where I spelt 'SNAKE'. As you can see it's far from
 perfect: the snake after all does not leave gaps and the game does not support
@@ -913,7 +913,7 @@ years ago but I know it's true now. **Believe in yourself. Always.**
 [terminals.html]: terminals.html
 [troubleshooting.html]: troubleshooting.html
 [bugs.html]: bugs.html
-[deobfuscation.html]: deobfuscation.html
+[obfuscation.html]: obfuscation.html
 [snake-colours.sh]: %%REPO_URL%%/2020/ferguson1/snake-colours.sh
 [number of hertz (flashes) per second triggering seizures]: https://www.epilepsysociety.org.uk/photosensitive-epilepsy#.Xjgpwi2ZOgQ
 [termcaps.c]: %%REPO_URL%%/2020/ferguson1/termcaps.c

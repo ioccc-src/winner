@@ -20,7 +20,7 @@ already knew that so no harm there, hey?
     *   [Cannibal collision detection](#cannibalcollision)
     *   [Collision detection when resizing the window of the game](#resizing)
 -   [Obfuscation](#obfuscation)
--   [Skinning the snake &#x28;i.e., decreasing the iocccsize&#x29;](#skinning)
+-   [Skinning the snake &#x28;i.e. decreasing the iocccsize&#x29;](#skinning)
 -   [A few more interesting size optimisations](#size)
 </div>
 
@@ -711,7 +711,7 @@ referring to another property: bitwise AND. For example consider the following:
     in this part alone (not to mention other places)!
 
 
-# Obfuscation in prog.3.c and prog.3-j.c
+# Obfuscation in [prog.3.c](%%REPO_URL%%/2020/ferguson1/prog.3.c) and [prog.3-j.c](%%REPO_URL%%/2020/ferguson1/prog.3-j.c)
 
 There are a few differences in this version that are worth noting. First of all
 is a define that's in the compiler invocation Makefile is in the source file
@@ -891,7 +891,7 @@ But I then saved an extra byte by making it:
 
 That saved two bytes.
 
-Second let's look at the `B()` function: there were two things I thought of that
+Next let's look at the `B()` function: there were two things I thought of that
 would save some bytes (I no longer know how many but a few at least possibly six
 or even more). I had the following code:
 
