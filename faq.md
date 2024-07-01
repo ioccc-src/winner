@@ -839,43 +839,57 @@ In later years, Rule 2 was split into two parts.  These two parts of Rule 2 are:
 * Rule 2a: Overall size limit of "prog.c"
 * Rule 2b: Size of "prog.c", w/o counting certain types of characters
 
+<div id="size_rule1984-1985">
 #### IOCCC 1984-1985
+</div>
 
 NOTE: The size rule was actually rule 1.
 
 * Rule 2a: 512
 * Rule 2b: n/a
 
+<div id="size_rule1986-1987">
 #### IOCCC 1986-1987
+</div>
 
 NOTE: The size rule was actually rule 1.
 
 * Rule 2a: 1024
 * Rule 2b: n/a
 
+<div id="size_rule1988-1991">
 #### IOCCC 1988-1991
+</div>
 
 NOTE: The size rule was actually rule 1.
 
 * Rule 2a: 1536
 * Rule 2b: n/a
 
+<div id="size_rule1992-2000">
 ### IOCCC 1992-2000
+</div>
 
 * Rule 2a: 3217
 * Rule 2b: 1536
 
+<div id="size_rule2001-2012">
 ### IOCCC: 2001-2012
+</div>
 
 * Rule 2a: 4096
 * Rule 2b: 2048
 
+<div id="size_rule2013-2020">
 ### IOCCC 2013-2020
+</div>
 
 * Rule 2a: 4096
 * Rule 2b: 2053
 
+<div id="size_rule2024-xxxx">
 ### IOCCC 2024-date
+</div>
 
 * Rule 2a: 4993
 * Rule 2b: 2503
@@ -2991,13 +3005,14 @@ The [IOCCC judges](judges.html) run the IOCCC entirely out of
 their own funds.  This includes paying for IOCCC related hardware,
 services, registration, software and related technical items.
 
-There is **NO** requirement for anyone to support the IOCCC.
+There is **NO** requirement for anyone to support the [IOCCC](index.html).
 Nevertheless, it has been shown that receiving  **anonymous** gifts
-provides the [IOCCC judges](judges.html) with a nice dopamine
+provides the [IOCCC judges](judges.html) with a nice
+[dopamine](https://en.wikipedia.org/wiki/Dopamine)
 boost, and happy [IOCCC judges](judges.html) help make the IOCCC
 better for everyone. :-)
 
-If you wish to express your support and/or appreication or our
+If you wish to express your support and/or appreciation for our
 efforts, we suggest making an **Anonymous** gift via the
 [IOCCC Amazon wishlist](https://www.amazon.com/hz/wishlist/ls/3HSNTEL8RQ1M0?ref_=wl_share).
 
