@@ -578,6 +578,99 @@ to get around the size limits of <a href="rules.html#rule2">Rule 2</a>.</p>
 4096 to 4993: a change that keeps the “2b to 2a” size ratio to a
 value similar to the <a href="../faq.html#size_rule2001-2012">2001-2012</a> and
 <a href="../faq.html#size_rule2013-2020">2013-2020</a> IOCCC eras.</p>
+<p><strong><code>|</code></strong> <a href="rules.html#rule17">Rule 17</a> (the <code>mkiocccentry(1)</code> rule) states that
+you <strong>MUST</strong> use the <code>mkiocccentry(1)</code> tool to package your submission tarball.</p>
+<p><strong><code>|</code></strong> See the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>
+for the <code>mkiocccentry(1)</code> tool.</p>
+<p><strong><code>|</code></strong> This tool invokes a number of other tools and one, <code>txzchk(1)</code>,
+invokes another, <code>fnamchk(1)</code>.</p>
+<p><strong><code>|</code></strong> Although the <code>mkiocccentry(1)</code> tool will verify everything for you,
+you may wish to validate each part individually. As the <a href="rules.html">rules</a>
+state, each of these tools have a <code>-h</code> option. However, to help simplify
+matters, we give you a brief overview below.</p>
+<p><strong><code>|</code></strong> The synopsis of the <code>mkiocccentry(1)</code> tool is:</p>
+<pre><code>    ./mkiocccentry [options] work_dir prog.c Makefile remarks.md [file ...]</code></pre>
+<p><strong><code>|</code></strong> where the <code>work_dir</code> is a directory that is used to form the
+xz compressed tarball that <code>txzchk(1)</code> validates, <code>prog.c</code> is your submission
+source code, <code>Makefile</code> is your <code>Makefile</code>, <code>remarks.md</code> is your remarks and
+<code>[file ...]</code> are any additional files you wish to provide.</p>
+<p><strong><code>|</code></strong> If the <code>work_dir</code> already exists it is an error.</p>
+<p><strong><code>|</code></strong> The <code>mkiocccentry(1)</code> tool will ask you for information about your
+submission as well as author details and it will run the <code>iocccsize(1)</code> tool; if
+either <a href="rules.html#rule2a">Rule 2a</a> or <a href="rules.html#rule2b">Rule 2b</a> are broken,
+it will give you the option to ignore them, if you are willing to risk this. The
+tool will also do a rudimentary check on the <code>Makefile</code> and run other checks as
+well. You can override warnings but doing so puts you at risk of violating
+<a href="rules.html">rules</a>.</p>
+<p><strong><code>|</code></strong> On the other hand, some <strong>issues are an error</strong> and the xz compressed
+tarball <strong>will not be formed</strong>. For instance, if <code>chkentry(1)</code> fails to validate the
+<code>.auth.json</code> or <code>.info.json</code> JSON files that <code>mkiocccentry(1)</code> creates, it is an error and
+possibly a bug that you should report at the <a href="https://github.com/ioccc-src/mkiocccentry/issues">mkiocccentry issues
+page</a>.</p>
+<p><strong><code>|</code></strong> Assuming that <code>chkentry(1)</code> passes for both <code>.auth.json</code> and
+<code>.info.json</code> then the tarball will be formed and then <code>txzchk(1)</code> will be
+executed. In this case, there should be no problems as <code>mkiocccentry(1)</code> should
+<strong>NOT</strong> form a tarball if there are any issues.</p>
+<p><strong><code>|</code></strong> <code>txzchk(1)</code> performs a wide number of sanity checks on the xz
+compressed tarball and if any issues (<code>feathers</code> :-) ) are found then it is very
+possibly a bug in one of the tools and you should report it at the <a href="https://github.com/ioccc-src/mkiocccentry/issues">mkiocccentry
+issues page</a>.</p>
+<p><strong><code>|</code></strong> As part of its sanity checks, <code>txzchk(1)</code> will run <code>fnamchk(1)</code> on the
+<em>filename</em> to verify that the name is valid. If this test does not pass, then it
+is flagged by <code>txzchk(1)</code> but it is not an error if you wish to ignore it.
+Ignoring this, however, risks violating <a href="rules.html#rule17">Rule 17</a> which is a
+big risk.</p>
+<p><strong><code>|</code></strong> <code>txzchk(1)</code> will show the contents of the tarball which is how the
+<code>mkiocccentry(1)</code> shows you the tarball contents for you to review.</p>
+<p><strong><code>|</code></strong> To help you with editing a submission, the <code>mkiocccentry(1)</code> tool has
+some options to write <em>OR</em> read from an answers file so you do not have to input
+the information again. To write to answers.txt try:</p>
+<pre><code>    ./mkiocccentry -a answers.txt ...</code></pre>
+<p><strong><code>|</code></strong> Alternatively, if you wish to overwrite a file, you can use the <code>-A</code>
+flag with the same option argument. Be careful that you do not accidentally
+overwrite your <code>prog.c</code>!</p>
+<p><strong><code>|</code></strong> To make use of the answers file, use the <code>-i answers</code> option like:</p>
+<pre><code>    ./mkiocccentry -i answers.txt ...</code></pre>
+<p><strong><code>|</code></strong> If you wish to manually run the commands you can do so. For instance, to
+check the validity of the tarball
+<code>submit.12345678-1234-4321-abcd-1234567890ab-2.1719574527.txz</code> you can do:</p>
+<pre><code>    ./txzchk submit.12345678-1234-4321-abcd-1234567890ab-2.1719574527.txz</code></pre>
+<p><strong><code>|</code></strong> Assuming that the tarball exists and is valid, you should see the
+contents of the tarball and the words:</p>
+<blockquote>
+<p>No feathers stuck in tarball.</p>
+</blockquote>
+<p><strong><code>|</code></strong> If you give the option <code>-q</code> it will not report anything unless there
+are certain error conditions, for instance <code>fnamchk(1)</code> reports there is a
+problem with the filename; if <code>txzchk(1)</code> exits 0 then there are no problems
+detected.</p>
+<p><strong><code>|</code></strong> If you wish to run <code>fnamchk(1)</code> directly you can do so like:</p>
+<pre><code>    ./fnamchk submit.12345678-1234-4321-abcd-1234567890ab-2.1719574527.txz</code></pre>
+<p><strong><code>|</code></strong> Assuming everything is OK, it would show:</p>
+<blockquote>
+<p><code>12345678-1234-4321-abcd-1234567890ab-2</code></p>
+</blockquote>
+<p><strong><code>|</code></strong> … which <code>txzchk(1)</code> uses.</p>
+<p><strong><code>|</code></strong> If you want to validate the <code>.auth.json</code> or <code>.info.json</code> files you
+should use <code>chkentry(1)</code>. <code>chkentry(1)</code> accepts more than one command line form.
+If you pass a single argument, it is expected to be a directory that has both
+<code>.auth.json</code> and <code>.info.json</code> in it. You can also specify a <code>.auth.json</code> and/or
+<code>.info.json</code> file. An argument of <code>.</code> will skip that file. For instance:</p>
+<pre><code>    ./chkentry test_work   # tests entry directory test_work
+
+    ./chkentry .info.json .  # run checks on .info.json file
+
+    ./chkentry . .auth.json  # run checks on .auth.json
+
+    ./chkentry .info.json .auth.json  # run check on both files</code></pre>
+<p><strong><code>|</code></strong> If there is a JSON error detected by <code>jparse(8)</code>, then it is an error
+and <code>chkentry(1)</code> will report this. If an issue is found in one or both of the
+JSON files it will also report this.</p>
+<p><strong><code>|</code></strong> At the risk of stating the obvious: you run a very big risk of having
+your submission rejected if you package your own tarball and there are any
+problems. Even if everything checks out OK you should not expect that everything
+<strong>IS</strong> OK.</p>
+<p><strong><code>|</code></strong> As you can see, the use of <code>mkiocccentry(1)</code> is <strong>HIGHLY RECOMMENDED</strong>.</p>
 <p><strong><code>|</code></strong> We recommend that you use the
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example">example Makefile</a>
 from the <a href="https://github.com/ioccc-src/mkiocccentry">IOCCC mkiocccentry repo</a>.
