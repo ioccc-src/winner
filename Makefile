@@ -485,7 +485,7 @@ find_missing_links:
 thanks: ${GEN_TOP_HTML} thanks-for-help.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	@echo "Thanks for all the help ..."
-	@${GEN_TOP_HTML} thanks-for-help
+	@${GEN_TOP_HTML} -v 1 thanks-for-help
 	@echo "... and thanks for all the fish :-)"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
@@ -506,18 +506,18 @@ gen_next: ${GEN_TOP_HTML} next/README.md next/guidelines.md next/rules.md
 
 rules: ${GEN_TOP_HTML} next/rules.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@${GEN_TOP_HTML} next/rules
+	${GEN_TOP_HTML} -v 1 next/rules
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 guidelines: ${GEN_TOP_HTML} next/guidelines.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@${GEN_TOP_HTML} next/guidelines
+	${GEN_TOP_HTML} -v 1 next/guidelines
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 faq: ${GEN_TOP_HTML} faq.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	@echo "You have a question?"
-	@${GEN_TOP_HTML} faq
+	${GEN_TOP_HTML} -v 1 faq
 	@echo "Perhaps the FAQ might help."
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
