@@ -504,7 +504,7 @@ then use the [How to contact the IOCCC](contact.html) information to ask
 a private question.
 
 **IMPORTANT**: When you ask your question (in public or as a private question)
-**PLEASE** try to **NOT** spoil the surprise of your pending submission.
+**PLEASE** try to **NOT** discuss detailed about your pending submission.
 Try to ask for question in a more generic way as this will help others
 with a similar question and this will not **give away** what you might be doing
 with your submission.  If the [IOCCC judges](judges.html) truly need more

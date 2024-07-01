@@ -2455,9 +2455,9 @@ primes.
 ### Winning entry source code: [westley.c](%%REPO_URL%%/1994/westley/westley.c)
 </div>
 
-[Cody](#cody) converted the spoiler compiler options (provided by the author) to be
+[Cody](#cody) converted the deobfuscation compiler options (provided by the author) to be
 compiler commands and added a script [try.sh](%%REPO_URL%%/1994/westley/try.sh) to
-automate the spoiler commands to make it easier to see the game in action from
+automate the deobfuscation commands to make it easier to see the game in action from
 start to finish.
 
 Cody also added the [alternate version](%%REPO_URL%%/1994/westley/westley.alt.c)
@@ -2546,7 +2546,7 @@ added.
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1995/leo/try.sh) script.
 
-At our change in how to deal with spoilers, Cody also uudecoded the spoiler provided
+At our change in how to deal with deobfuscation, Cody also uudecoded the deobfuscation inforation provided
 by the author, putting it in [spoiler.html](1995/leo/spoiler.html).
 
 
@@ -2582,8 +2582,8 @@ calls which has the four args.
 ### Winning entry source code: [vanschnitz.c](%%REPO_URL%%/1995/vanschnitz/vanschnitz.c)
 </div>
 
-[Cody](#cody) added the authors' [spoiler as a C
-file](%%REPO_URL%%/1995/vanschnitz/vanschnitz.alt.c) as in 2023 we have decided that in most
+[Cody](#cody) added the authors' [deobfuscation source code](%%REPO_URL%%/1995/vanschnitz/vanschnitz.alt.c)
+as in 2023 we have decided that in most
 cases all the code should be available for the wider audience, without having to
 extract it. The exception is when the files are created by the entry or the
 entry decrypts the text or something like that.
@@ -2940,7 +2940,7 @@ exist but is actually `clang`) as `cc` always should.
 Getting this entry to work was quite complicated but is also very interesting.
 
 To see how the macOS fixes works, see the [macos.html](1998/schweikh1/macos.html)
-file but do note that this includes spoilers for both versions! The fixes to get
+file but do note that this includes deobfuscation information for both versions! The fixes to get
 it to work at all are described next.
 
 So what was wrong with the original?
@@ -5123,7 +5123,7 @@ symbols from being built with `rake` Cody also updated the
 
 **_Barely_** worth noting but done nonetheless, Cody renamed the `read_me.html`
 file to [spoilers.html](2014/endoh1/spoilers.html) to be clearer in its purpose as
-it is a file with spoilers (and too close to index.html?).
+it is a file with deobfuscation information.
 
 
 <div id="2014_endoh2">
@@ -5606,7 +5606,7 @@ configuration).
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2018/yang/try.sh) script. This script will ask
-if the user wants to see some of the spoilers and only show them if they type
+if the user wants to see some of the deobfuscation information and only show them if they type
 `y` or `Y`.
 
 
@@ -5717,7 +5717,7 @@ He also added the [try.sh](%%REPO_URL%%/2019/dogon/try.sh) script.
 He also made it possible to easily redefine the memory macro `Z` at compilation
 time by improving the `Makefile`.
 
-He fixed a link in the spoiler source code. As a spoiler it felt more important
+He fixed a link in the deobfuscation source code. It felt more important
 that this was done (some typos were fixed as well but only some - the purpose
 was to only correct spelling and only some, not to change wording or anything
 else).

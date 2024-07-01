@@ -152,7 +152,7 @@ unaware of how to do so.
 
 ## Modifying the status/score line (table of variables/stats below)
 
-### SPOILER WARNING
+### DEOBFUSCATION NOTICE
 
 Below I give a table of some variables/expressions along with the data types and
 their respective format specifiers of the data. Originally it was a lot more

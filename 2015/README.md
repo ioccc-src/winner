@@ -46,7 +46,7 @@ one of the all time best IOCCC entries from 1984.
 We also suggest that you take a very good look at how the
 [muth](muth/index.html) code makes full use of the C Pre-Processor.
 
-...We'll stop spouting spoilers now. Have fun exploring all the entries!
+...We'll stop spouting deobfuscation information now. Have fun exploring all the entries!
 
 
 ## Remarks on some of submissions that did not win

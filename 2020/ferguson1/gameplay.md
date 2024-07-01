@@ -554,7 +554,7 @@ could also set the max size to be the highest possible by saying
 
 Which I've done in the [play.sh][] script.
 
-I discuss how this mode works in [spoilers.markdown][].
+I discuss how this mode works in [spoilers.html][].
 
 Here's an example run where I spelt 'SNAKE'. As you can see it's far from
 perfect: the snake after all does not leave gaps and the game does not support

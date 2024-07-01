@@ -27,7 +27,7 @@ and [Snake - 2020/ferguson1](ferguson1/index.html).
 An entry, [kurdyukov1](kurdyukov1/index.html), pays homage to the previous entry
 [2015/hou](../2015/hou/index.html).
 
-...We'll stop spouting spoilers now. Have fun exploring all the entries!
+...We'll stop spouting deobfuscation information now. Have fun exploring all the entries!
 
 
 ## Remarks on some of submissions that did not win

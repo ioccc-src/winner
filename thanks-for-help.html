@@ -2118,9 +2118,9 @@ primes.</p>
 <h2 id="winning-entry-1994westley">Winning entry: <a href="1994/westley/index.html">1994/westley</a></h2>
 <h3 id="winning-entry-source-code-westley.c-6">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/westley/westley.c">westley.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> converted the spoiler compiler options (provided by the author) to be
+<p><a href="#cody">Cody</a> converted the deobfuscation compiler options (provided by the author) to be
 compiler commands and added a script <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/westley/try.sh">try.sh</a> to
-automate the spoiler commands to make it easier to see the game in action from
+automate the deobfuscation commands to make it easier to see the game in action from
 start to finish.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/westley/westley.alt.c">alternate version</a>
 that will look fine on terminals not set to 80 columns and the
@@ -2183,7 +2183,7 @@ added.</p>
 <h3 id="winning-entry-source-code-leo.c-1">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/leo/leo.c">leo.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/leo/try.sh">try.sh</a> script.</p>
-<p>At our change in how to deal with spoilers, Cody also uudecoded the spoiler provided
+<p>At our change in how to deal with deobfuscation, Cody also uudecoded the deobfuscation inforation provided
 by the author, putting it in <a href="1995/leo/spoiler.html">spoiler.html</a>.</p>
 <div id="1995_makarios">
 <h2 id="winning-entry-1995makarios">Winning entry: <a href="1995/makarios/index.html">1995/makarios</a></h2>
@@ -2207,8 +2207,8 @@ calls which has the four args.</p>
 <h2 id="winning-entry-1995vanschnitz">Winning entry: <a href="1995/vanschnitz/index.html">1995/vanschnitz</a></h2>
 <h3 id="winning-entry-source-code-vanschnitz.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/vanschnitz/vanschnitz.c">vanschnitz.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> added the authors’ <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/vanschnitz/vanschnitz.alt.c">spoiler as a C
-file</a> as in 2023 we have decided that in most
+<p><a href="#cody">Cody</a> added the authors’ <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/vanschnitz/vanschnitz.alt.c">deobfuscation source code</a>
+as in 2023 we have decided that in most
 cases all the code should be available for the wider audience, without having to
 extract it. The exception is when the files are created by the entry or the
 entry decrypts the text or something like that.</p>
@@ -2466,7 +2466,7 @@ this not only lets it work with systems without <code>gcc</code> (though in macO
 exist but is actually <code>clang</code>) as <code>cc</code> always should.
 Getting this entry to work was quite complicated but is also very interesting.</p>
 <p>To see how the macOS fixes works, see the <a href="1998/schweikh1/macos.html">macos.html</a>
-file but do note that this includes spoilers for both versions! The fixes to get
+file but do note that this includes deobfuscation information for both versions! The fixes to get
 it to work at all are described next.</p>
 <p>So what was wrong with the original?</p>
 <p>The call to <code>freopen(3)</code> was incorrect with the second arg (the mode) being
@@ -4012,7 +4012,7 @@ symbols from being built with <code>rake</code> Cody also updated the
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/Rakefile">Rakefile</a> slightly.</p>
 <p><strong><em>Barely</em></strong> worth noting but done nonetheless, Cody renamed the <code>read_me.html</code>
 file to <a href="2014/endoh1/spoilers.html">spoilers.html</a> to be clearer in its purpose as
-it is a file with spoilers (and too close to index.html?).</p>
+it is a file with deobfuscation information.</p>
 <div id="2014_endoh2">
 <h2 id="winning-entry-2014endoh2">Winning entry: <a href="2014/endoh2/index.html">2014/endoh2</a></h2>
 <h3 id="winning-entry-source-code-prog.c-3">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh2//prog.c">prog.c</a></h3>
@@ -4347,7 +4347,7 @@ configuration).</p>
 <h3 id="winning-entry-source-code-prog.c-36">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang//prog.c">prog.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/try.sh">try.sh</a> script. This script will ask
-if the user wants to see some of the spoilers and only show them if they type
+if the user wants to see some of the deobfuscation information and only show them if they type
 <code>y</code> or <code>Y</code>.</p>
 <div id="2019">
 <h1 id="the-26th-ioccc"><a href="2019/index.html">2019 - The 26th IOCCC</a></h1>
@@ -4424,7 +4424,7 @@ own sha512sum value.</p>
 <p>He also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/dogon/try.sh">try.sh</a> script.</p>
 <p>He also made it possible to easily redefine the memory macro <code>Z</code> at compilation
 time by improving the <code>Makefile</code>.</p>
-<p>He fixed a link in the spoiler source code. As a spoiler it felt more important
+<p>He fixed a link in the deobfuscation source code. It felt more important
 that this was done (some typos were fixed as well but only some - the purpose
 was to only correct spelling and only some, not to change wording or anything
 else).</p>
