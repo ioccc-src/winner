@@ -44,18 +44,19 @@ CSILENCE= -Wno-bitwise-op-parentheses -Wno-dollar-in-identifier-extension \
 	  -Wno-shift-op-parentheses -Wno-unsequenced -Wno-misleading-indentation \
 	  -Wno-sequence-point -Wno-unused-value
 
+# Attempt to silence unknown warnings
+#
+CUNKNOWN= -Wno-unknown-warning-option
+
 # Common C compiler warning flags
 #
-CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+CWARN= -Wall -Wextra ${CSILENCE} ${CUNKNOWN}
 
 # Compiler standard
 #
 CSTD= -std=gnu11
 
 # Compiler bit architecture
-#
-# Some entries require 32-bitness: ARCH= -m32
-# Some entries require 64-bitness: ARCH= -m64
 #
 ARCH=
 

@@ -42,21 +42,21 @@ CSILENCE= -Wno-comment -Wno-deprecated-non-prototype -Wno-main -Wno-pedantic \
 	  -Wno-return-type -Wno-strict-prototypes -Wno-unused-parameter \
 	  -Wno-implicit-int -Wno-implicit-function-declaration -Wno-unused-value \
 	  -Wno-multichar -Wno-uninitialized -Wno-unused-but-set-parameter \
-	  -Wno-parentheses -Wno-int-conversion -Wno-missing-parameter-type \
-	  -Wno-unknown-warning-option
+	  -Wno-parentheses -Wno-int-conversion -Wno-missing-parameter-type
+
+# Attempt to silence unknown warnings
+#
+CUNKNOWN= -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #
-CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+CWARN= -Wall -Wextra ${CSILENCE} ${CUNKNOWN}
 
 # Compiler standard
 #
 CSTD= -std=gnu89
 
 # Compiler bit architecture
-#
-# Some entries require 32-bitness: ARCH= -m32
-# Some entries require 64-bitness: ARCH= -m64
 #
 ARCH=
 
@@ -90,8 +90,7 @@ ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
 #
 CSILENCE+= -Wno-poison-system-directories -Wno-comma -Wno-missing-prototypes \
 	   -Wno-unused-macros -Wno-missing-variable-declarations -Wno-shadow \
-	   -Wno-reserved-identifier -Wno-reserved-macro-identifier \
-	   -Wno-unknown-warning-option
+	   -Wno-reserved-identifier -Wno-reserved-macro-identifier
 #
 CWARN+= -Weverything
 #

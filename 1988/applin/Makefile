@@ -41,18 +41,19 @@ include ../../var.mk
 CSILENCE= -Wno-expansion-to-defined -Wno-implicit-int -Wno-strict-prototypes \
 	  -Wno-gnu-line-marker -Wno-return-type
 
+# Attempt to silence unknown warnings
+#
+CUNKNOWN= -Wno-unknown-warning-option
+
 # Common C compiler warning flags
 #
-CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+CWARN= -Wall -Wextra ${CSILENCE} ${CUNKNOWN}
 
 # Compiler standard
 #
 CSTD= -std=gnu89
 
 # Compiler bit architecture
-#
-# Some entries require 32-bitness: ARCH= -m32
-# Some entries require 64-bitness: ARCH= -m64
 #
 ARCH=
 

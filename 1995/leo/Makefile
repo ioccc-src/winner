@@ -42,18 +42,19 @@ CSILENCE= -Wno-bitwise-op-parentheses -Wno-error \
 	  -Wno-implicit-function-declaration -Wno-main-return-type \
 	  -Wno-sign-compare -Wno-main -Wno-parentheses -Wno-unused-value
 
+# Attempt to silence unknown warnings
+#
+CUNKNOWN= -Wno-unknown-warning-option
+
 # Common C compiler warning flags
 #
-CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+CWARN= -Wall -Wextra ${CSILENCE} ${CUNKNOWN}
 
 # Compiler standard
 #
 CSTD= -std=gnu90
 
 # Compiler bit architecture
-#
-# Some entries require 32-bitness: ARCH= -m32
-# Some entries require 64-bitness: ARCH= -m64
 #
 ARCH=
 

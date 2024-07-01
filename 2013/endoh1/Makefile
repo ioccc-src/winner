@@ -39,20 +39,21 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-deprecated-non-prototype -Wno-strict-prototypes \
-	  -Wno-maybe-uninitialized -Wno-unknown-warning-option
+	  -Wno-maybe-uninitialized
+
+# Attempt to silence unknown warnings
+#
+CUNKNOWN= -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #
-CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+CWARN= -Wall -Wextra ${CSILENCE} ${CUNKNOWN}
 
 # Compiler standard
 #
 CSTD= -std=gnu11
 
 # Compiler bit architecture
-#
-# Some entries require 32-bitness: ARCH= -m32
-# Some entries require 64-bitness: ARCH= -m64
 #
 ARCH=
 
@@ -89,8 +90,8 @@ CSILENCE+= -Wno-comma -Wno-conditional-uninitialized -Wno-missing-prototypes \
 	   -Wno-redundant-parens -Wno-shorten-64-to-32 -Wno-strict-prototypes \
 	   -Wno-cast-function-type-strict -Wno-extra-semi-stmt \
 	   -Wno-incompatible-function-pointer-types-strict \
-	   -Wno-misleading-indentation -Wno-unknown-warning-option \
-	   -Wno-unsafe-buffer-usage -Wno-unreachable-code
+	   -Wno-misleading-indentation -Wno-unsafe-buffer-usage \
+	   -Wno-unreachable-code
 #
 CWARN+= -Weverything
 #

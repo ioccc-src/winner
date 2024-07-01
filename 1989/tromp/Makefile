@@ -40,23 +40,23 @@ include ../../var.mk
 #
 CSILENCE= -Wno-error -Wno-pointer-to-int-cast -Wno-no-return-type -Wno-empty-body \
 	  -Wno-implicit-function-declaration -Wno-string-plus-int -Wno-return-type \
-	  -Wno-unknown-warning-option -Wno-deprecated-non-prototype \
-	  -Wno-shorten-64-to-32 -Wno-int-conversion -Wno-implicit-int \
-	  -Wno-format -Wno-misleading-indentation -Wno-missing-parameter-type \
-          -Wno-unused-value
+	  -Wno-deprecated-non-prototype -Wno-shorten-64-to-32 -Wno-int-conversion \
+	  -Wno-implicit-int -Wno-format -Wno-misleading-indentation \
+	  -Wno-missing-parameter-type -Wno-unused-value
+
+# Attempt to silence unknown warnings
+#
+CUNKNOWN= -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #
-CWARN= -Wall -Wextra ${CSILENCE}
+CWARN= -Wall -Wextra ${CSILENCE} ${CUNKNOWN}
 
 # Compiler standard
 #
 CSTD= -std=gnu89
 
 # Compiler bit architecture
-#
-# Some entries require 32-bitness: ARCH= -m32
-# Some entries require 64-bitness: ARCH= -m64
 #
 ARCH=
 

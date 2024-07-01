@@ -41,20 +41,21 @@ include ../../var.mk
 CSILENCE= -Wno-implicit-function-declaration -Wno-missing-braces -Wno-parentheses \
 	  -Wno-deprecated-non-prototype -Wno-pedantic -Wno-strict-prototypes \
 	  -Wno-implicit-int -Wno-builtin-declaration-mismatch \
-	  -Wno-misleading-indentation -Wno-return-type -Wno-unknown-warning-option
+	  -Wno-misleading-indentation -Wno-return-type
+
+# Attempt to silence unknown warnings
+#
+CUNKNOWN= -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #
-CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+CWARN= -Wall -Wextra ${CSILENCE} ${CUNKNOWN}
 
 # Compiler standard
 #
 CSTD= -std=gnu89
 
 # Compiler bit architecture
-#
-# Some entries require 32-bitness: ARCH= -m32
-# Some entries require 64-bitness: ARCH= -m64
 #
 ARCH=
 
@@ -89,7 +90,7 @@ ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
 CSILENCE+= -Wno-cast-align -Wno-comma -Wno-float-equal -Wno-implicit-int-conversion \
 	   -Wno-missing-prototypes -Wno-missing-variable-declarations \
 	   -Wno-poison-system-directories -Wno-shorten-64-to-32 -Wno-unused-macros \
-	   -Wno-sign-conversion -Wno-unsafe-buffer-usage -Wno-unknown-warning-option
+	   -Wno-sign-conversion -Wno-unsafe-buffer-usage
 #
 CWARN+= -Weverything
 #

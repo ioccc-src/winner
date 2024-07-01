@@ -40,18 +40,19 @@ include ../../var.mk
 #
 CSILENCE= -Wno-empty-body -Wno-strict-prototypes -Wno-misleading-indentation
 
+# Attempt to silence unknown warnings
+#
+CUNKNOWN= -Wno-unknown-warning-option
+
 # Common C compiler warning flags
 #
-CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+CWARN= -Wall -Wextra ${CSILENCE} ${CUNKNOWN}
 
 # Compiler standard
 #
 CSTD= -std=gnu11
 
 # Compiler bit architecture
-#
-# Some entries require 32-bitness: ARCH= -m32
-# Some entries require 64-bitness: ARCH= -m64
 #
 ARCH=
 
@@ -224,8 +225,8 @@ clean:
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
 	${RM} -rf *.dSYM
-	${RM} -f main.c treacle.c 
-	${RM} -f alpha.txt ast.txt raw.txt reg.txt seq.txt 
+	${RM} -f main.c treacle.c
+	${RM} -f alpha.txt ast.txt raw.txt reg.txt seq.txt
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \

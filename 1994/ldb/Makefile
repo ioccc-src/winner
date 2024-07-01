@@ -42,18 +42,19 @@ CSILENCE= -Wno-trigraphs -Wno-incompatible-pointer-types -Wno-int-conversion \
 	  -Wno-strict-prototypes -Wno-implicit-int -Wno-int-to-pointer-cast \
 	  -Wno-return-type
 
+# Attempt to silence unknown warnings
+#
+CUNKNOWN= -Wno-unknown-warning-option
+
 # Common C compiler warning flags
 #
-CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+CWARN= -Wall -Wextra ${CSILENCE} ${CUNKNOWN}
 
 # Compiler standard
 #
 CSTD= -std=gnu90
 
 # Compiler bit architecture
-#
-# Some entries require 32-bitness: ARCH= -m32
-# Some entries require 64-bitness: ARCH= -m64
 #
 ARCH=
 

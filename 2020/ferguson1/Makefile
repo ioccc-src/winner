@@ -40,22 +40,22 @@ include ../../var.mk
 #
 CSILENCE= -Wno-unused-value -Wno-implicit-fallthrough -Wno-parentheses \
 	  -Wno-binding-in-condition -Wno-binding-in-condition \
-	  -Wno-misleading-indentation -Wno-unknown-warning-option \
-	  -Wno-comment -Wno-implicit-function-declaration \
+	  -Wno-misleading-indentation -Wno-comment -Wno-implicit-function-declaration \
           -Wno-misleading-indentation -Wno-unused-value
+
+# Attempt to silence unknown warnings
+#
+CUNKNOWN= -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #
-CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+CWARN= -Wall -Wextra ${CSILENCE} ${CUNKNOWN}
 
 # Compiler standard
 #
 CSTD= -std=gnu17
 
 # Compiler bit architecture
-#
-# Some entries require 32-bitness: ARCH= -m32
-# Some entries require 64-bitness: ARCH= -m64
 #
 ARCH=
 
@@ -90,9 +90,9 @@ CC= cc
 ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
 #
 CSILENCE= -Wno-unused-value -Wno-misleading-indentation -Wno-parentheses \
-	  -Wno-unknown-warning-option -Wno-poison-system-directories \
-	  -Wno-declaration-after-statement -Wno-padded \
-	  -Wno-extra-semi-stmt -Wno-implicit-fallthrough -Wno-unsafe-buffer-usage
+	  -Wno-poison-system-directories -Wno-declaration-after-statement \
+	  -Wno-padded -Wno-extra-semi-stmt -Wno-implicit-fallthrough \
+	  -Wno-unsafe-buffer-usage
 #
 CWARN+= -Weverything
 #

@@ -44,21 +44,21 @@ CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-implicit-int \
 	  -Wno-tautological-bitwise-compare -Wno-unused-label \
 	  -Wno-unused-variable -Wno-strict-prototypes \
 	  -Wno-builtin-declaration-mismatch -Wno-incompatible-pointer-types \
-          -Wno-misleading-indentation -Wno-parentheses -Wno-unused-value \
-	  -Wno-unknown-warning-option
+          -Wno-misleading-indentation -Wno-parentheses -Wno-unused-value
+
+# Attempt to silence unknown warnings
+#
+CUNKNOWN= -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #
-CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+CWARN= -Wall -Wextra ${CSILENCE} ${CUNKNOWN}
 
 # Compiler standard
 #
 CSTD= -std=gnu17
 
 # Compiler bit architecture
-#
-# Some entries require 32-bitness: ARCH= -m32
-# Some entries require 64-bitness: ARCH= -m64
 #
 ARCH=
 
@@ -95,7 +95,7 @@ CSILENCE+= -Wno-conditional-uninitialized -Wno-missing-variable-declarations \
 	   -Wno-poison-system-directories -Wno-shadow -Wno-shorten-64-to-32 \
 	   -Wno-sign-conversion -Wno-declaration-after-statement \
 	   -Wno-incompatible-function-pointer-types-strict -Wno-reserved-identifier \
-	   -Wno-unknown-warning-option -Wno-unsafe-buffer-usage
+	   -Wno-unsafe-buffer-usage
 #
 CWARN+= -Weverything
 #
