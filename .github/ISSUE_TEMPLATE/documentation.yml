@@ -1,0 +1,56 @@
+name: Documentation issue
+description: Report a problem with documentation
+title: "[Documentation] <title>"
+labels: ["documentation"]
+body:
+- type: checkboxes
+  attributes:
+    label: Is there an existing issue for this?
+    description: Please search to see if an issue already exists for the problem you're reporting.
+    options:
+    - label: I have searched for existing issues and did not find anything like it
+      required: true
+- type: textarea
+  attributes:
+    label: Describe the problem with or missing documentation
+    description: Please let us know what documentation problem there is.
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: Relevant files
+    description: |
+       Do you have any **relevant** files? This **can** be **EXTREMELY** helpful, if you do.
+
+       Tip: you can attach files by clicking the text area to highlight it and then click the link that says paste, drop or click to add files.
+  validations:
+    required: false
+
+- type: textarea
+  attributes:
+    label: What you expect
+    description: |
+        Please describe what you think is missing or is incorrect and why, as best you can (the more details you provide the better). If you have images or other files that will help explain what you're getting at, this can also be **EXTREMELY** helpful.
+
+        Tip: you can attach files by clicking the text area to highlight it and then click the link that says paste, drop or click to add files.
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: Relevant links or files
+    description: Please provide us with a list of relevant links or files, if applicable.
+  validations:
+    required: false
+
+- type: textarea
+  attributes:
+    label: Anything else?
+    description: |
+      Do you have any additional context or information?
+
+      Tip: you can attach files by clicking the text area to highlight it and then click the link that says paste, drop or click to add files.
+  validations:
+    required: false
+

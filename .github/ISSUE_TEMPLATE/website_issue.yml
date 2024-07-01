@@ -1,7 +1,7 @@
 name: Website issue
 description: Report a problem with the website
 title: "[Website] <title>"
-labels: ["Website"]
+labels: ["website"]
 body:
 - type: checkboxes
   attributes:

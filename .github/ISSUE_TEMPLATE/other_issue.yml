@@ -1,6 +1,7 @@
 name: Other issue
 description: Some problem not listed
 title: "[Other] <title>"
+labels: ["other"]
 body:
 - type: checkboxes
   attributes:
