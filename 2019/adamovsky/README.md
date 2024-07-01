@@ -199,7 +199,7 @@ since it was developed using `char`s it should be always used safely.
 
 ### Deobfuscation:
 
-- You can examine the [progSpoiler.c](%%REPO_URL%%/2019/adamovsky/progSpoiler.c) file. It is the original
+- You can examine the [deobfuscation.c](%%REPO_URL%%/2019/adamovsky/deobfuscation.c) file. It is the original
 final version of the interpreter, before I started the downsizing. It accepts
 one more optional parameter that specifies a filename for the output Unlambda
 function (it's the Unlambda function that remains after all function

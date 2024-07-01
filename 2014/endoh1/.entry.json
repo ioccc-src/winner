@@ -42,20 +42,20 @@
 	    "entry_text" : "Ruby Makefile"
 	},
 	{
+	    "file_path" : "deobfuscation.html",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "Deobfuscation information about Q(uine)R code generator"
+	},
+	{
 	    "file_path" : "rake.sh",
 	    "inventory_order" : 100,
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
 	    "entry_text" : "make rake script"
-	},
-	{
-	    "file_path" : "spoilers.html",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "spoilers about Q(uine)R code generator"
 	},
 	{
 	    "file_path" : "try.sh",
@@ -218,12 +218,12 @@
 	    "entry_text" : "markdown source for this web page"
 	},
 	{
-	    "file_path" : "spoilers.md",
+	    "file_path" : "deobfuscation.md",
 	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
-	    "entry_text" : "markdown source for spoilers.html"
+	    "entry_text" : "markdown source for deobfuscation.html"
 	},
 	{
 	    "file_path" : "index.html",

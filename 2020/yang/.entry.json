@@ -50,12 +50,12 @@
 	    "entry_text" : "encode large file C Pre-PreProcessor source"
 	},
 	{
-	    "file_path" : "spoiler.html",
+	    "file_path" : "deobfuscation.html",
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "spoiler web page"
+	    "entry_text" : "Deobfuscation information web page"
 	},
 	{
 	    "file_path" : "2020_yang.tar.bz2",

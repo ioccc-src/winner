@@ -83,7 +83,7 @@ from hearing. But even without training you can easily read along with the
 printed characters and have the sound make sense with the look of the
 characters.
 
-See image [spoiler.png](spoiler.png) for an example spectrogram.
+See image [deobfuscation.png](deobfuscation.png) for an example spectrogram.
 
 
 ### Limitations

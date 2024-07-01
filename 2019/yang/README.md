@@ -45,6 +45,9 @@ For more detailed information see [2019/yang in bugs.html](../../bugs.html#2019_
 Do you understand how this program works?  You may have to go over and over the
 output again.
 
+If you run into difficultly in understanding the code, you may wish
+to review the [deobfuscation.html](deobfuscation.html) web page.
+
 
 ## Author's remarks:
 

@@ -1164,14 +1164,14 @@
 1995,leo,leo.c,20,true,c,true,entry source code
 1995,leo,Makefile,30,true,makefile,true,entry Makefile
 1995,leo,leo.orig.c,50,false,c,true,original source code
-1995,leo,spoiler.html,100,false,html,false,spoiler web page
+1995,leo,deobfuscation.html,100,false,html,false,deobfuscation information web page
 1995,leo,try.sh,100,true,shellscript,true,script to try entry
 1995,leo,1995_leo.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1995,leo,README.md,4000000000,true,markdown,true,markdown source for this web page
+1995,leo,deobfuscation.md,4000000000,true,markdown,true,markdown source for deobfuscation.html
 1995,leo,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
 1995,leo,.gitignore,4000000000,true,gitignore,true,list of files that should not be committed under git
 1995,leo,.path,4000000000,false,path,true,directory path from top level directory
-1995,leo,spoiler.md,4000000000,true,markdown,true,markdown source for spoiler.html
 1995,leo,index.html,4294967295,false,html,false,this web page
 1995,makarios,makarios.c,20,true,c,true,entry source code
 1995,makarios,Makefile,30,true,makefile,true,entry Makefile
@@ -1891,7 +1891,7 @@
 2004,hibachi,src/localhost/test/perl/yahoo-ticker.pl,150,true,perl,true,stock price fetch example in Perl
 2004,hibachi,src/configure.in,200,true,shellscript,true,GNU Autoconf script
 2004,hibachi,src/hibachi-start.sh.in,200,true,shellscript,true,hibachi-start.sh declarations
-2004,hibachi,src/localhost/CHANGES-SPOILER.TXT,200,true,text,false,spoiler changelog
+2004,hibachi,src/localhost/CHANGES-DEOBFUSCATED.TXT,200,true,text,false,Debofuscation change log
 2004,hibachi,2004_hibachi.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2004,hibachi,README.md,4000000000,true,markdown,true,markdown source for this web page
 2004,hibachi,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -2809,7 +2809,7 @@
 2012,omoikane,omoikane.c,100,true,c,true,entry source code
 2012,omoikane,try.alt.sh,100,true,shellscript,true,script to try alternate code
 2012,omoikane,try.sh,100,true,shellscript,true,script to try entry
-2012,omoikane,spoiler.html,200,true,html,false,Spoiler web page
+2012,omoikane,deobfuscation.html,200,true,html,false,Deobfuscation information web page
 2012,omoikane,2012_omoikane.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2012,omoikane,README.md,4000000000,true,markdown,true,markdown source for this web page
 2012,omoikane,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -2819,7 +2819,7 @@
 2012,tromp,tromp.c,20,true,c,true,entry source code
 2012,tromp,Makefile,30,true,makefile,true,entry Makefile
 2012,tromp,tromp.orig.c,50,true,c,true,original source code
-2012,tromp,how.html,100,false,html,false,author supplied spoiler
+2012,tromp,how.html,100,false,html,false,author supplied debofuscation information
 2012,tromp,primes.pl,100,true,perl,true,post process entry output to print primes
 2012,tromp,try.sh,100,true,shellscript,true,script to try entry
 2012,tromp,hw.bf,150,true,bf,true,hello world brainfuck source code
@@ -3226,7 +3226,7 @@
 2013,misaka,misaka.orig.c,50,false,c,true,original source code
 2013,misaka,bf.pl,100,true,perl,true,brainfuck interpreter in perl
 2013,misaka,try.sh,100,true,shellscript,true,script to try entry
-2013,misaka,spoiler.html,200,true,html,false,spoiler web page
+2013,misaka,deobfuscation.html,200,true,html,false,Deobfuscation information web page
 2013,misaka,2013_misaka.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2013,misaka,README.md,4000000000,true,markdown,true,markdown source for this web page
 2013,misaka,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -3287,8 +3287,8 @@
 2014,endoh1,Makefile,30,true,makefile,true,entry Makefile
 2014,endoh1,prog.orig.c,50,false,c,true,original source code
 2014,endoh1,Rakefile,100,true,ruby,true,Ruby Makefile
+2014,endoh1,deobfuscation.html,100,false,html,false,Deobfuscation information about Q(uine)R code generator
 2014,endoh1,rake.sh,100,true,shellscript,true,make rake script
-2014,endoh1,spoilers.html,100,false,html,false,spoilers about Q(uine)R code generator
 2014,endoh1,try.sh,100,true,shellscript,true,script to try entry
 2014,endoh1,alpha.rb,150,true,ruby,true,support program for Rakefile
 2014,endoh1,assemble.rb,150,true,ruby,true,support program for Rakefile
@@ -3306,10 +3306,10 @@
 2014,endoh1,vm.c,150,true,c,true,source code of the VM
 2014,endoh1,2014_endoh1.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2014,endoh1,README.md,4000000000,true,markdown,true,markdown source for this web page
+2014,endoh1,deobfuscation.md,4000000000,true,markdown,true,markdown source for deobfuscation.html
 2014,endoh1,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
 2014,endoh1,.gitignore,4000000000,true,gitignore,true,list of files that should not be committed under git
 2014,endoh1,.path,4000000000,false,path,true,directory path from top level directory
-2014,endoh1,spoilers.md,4000000000,true,markdown,true,markdown source for spoilers.html
 2014,endoh1,index.html,4294967295,false,html,false,this web page
 2014,endoh2,prog.c,20,true,c,true,entry source code
 2014,endoh2,Makefile,30,true,makefile,true,entry Makefile
@@ -3368,7 +3368,7 @@
 2014,sinon,glock.sh,100,true,shellscript,true,script to run entry
 2014,sinon,hecate.sh,100,true,shellscript,true,script to run entry
 2014,sinon,try.sh,100,true,shellscript,true,script to try entry
-2014,sinon,spoiler.html,200,true,html,false,spoiler web page
+2014,sinon,deobfuscation.html,200,true,html,false,Deobfuscation information web page
 2014,sinon,2014_sinon.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2014,sinon,README.md,4000000000,true,markdown,true,markdown source for this web page
 2014,sinon,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -3417,15 +3417,15 @@
 2015,burton,test32.out,150,true,text,true,test suite comparison data for 32-bit systems
 2015,burton,test.in,150,true,text,true,test suite input data
 2015,burton,test.out,150,true,text,true,test suite comparison data
-2015,burton,spoilers.html,200,false,html,false,spoiler web page
+2015,burton,deobfuscation.html,200,false,html,false,Deobfuscation information web page
 2015,burton,src.doc.txt,200,true,text,false,hints about the source code
 2015,burton,2015_burton.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2015,burton,README.md,4000000000,true,markdown,true,markdown source for this web page
+2015,burton,deobfuscation.md,4000000000,true,markdown,true,markdown source for deobfuscation.html
 2015,burton,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
 2015,burton,.gitignore,4000000000,true,gitignore,true,list of files that should not be committed under git
 2015,burton,.path,4000000000,false,path,true,directory path from top level directory
 2015,burton,road.to.obscurity.md,4000000000,true,markdown,true,markdown source for road.to.obscurity.html
-2015,burton,spoilers.md,4000000000,true,markdown,true,markdown source for spoilers.html
 2015,burton,index.html,4294967295,false,html,false,this web page
 2015,dogon,prog.c,20,true,c,true,entry source code
 2015,dogon,Makefile,30,true,makefile,true,entry Makefile
@@ -3516,9 +3516,9 @@
 2015,howe,prog-test.sh,100,true,shellscript,true,script to run test suite
 2015,howe,try.sh,100,true,shellscript,true,script to try entry
 2015,howe,cc.1,159,true,man,true,cc man page
-2015,howe,spoiler/Makefile,200,true,makefile,true,spoiler Makefile
-2015,howe,spoiler/err.h,210,true,c,true,spoiler err.h header file
-2015,howe,spoiler/prog.c,210,true,c,true,spoiler source code
+2015,howe,deobfuscation/Makefile,200,true,makefile,true,Deobfuscation Makefile
+2015,howe,deobfuscation/err.h,210,true,c,true,Deobfuscation err.h header file
+2015,howe,deobfuscation/prog.c,210,true,c,true,Deobfuscatied source code
 2015,howe,war-and-peace.txt,250,true,text,false,War and Peace translated to English
 2015,howe,2015_howe.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2015,howe,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -3587,7 +3587,7 @@
 2015,yang,Makefile,30,true,makefile,true,entry Makefile
 2015,yang,prog.orig.c,50,false,c,true,original source code
 2015,yang,try.sh,100,true,shellscript,true,script to try entry
-2015,yang,spoiler.html,200,true,html,false,spoiler web page
+2015,yang,deobfuscation.html,200,true,html,false,Deobfuscation information web page
 2015,yang,2015_yang.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2015,yang,README.md,4000000000,true,markdown,true,markdown source for this web page
 2015,yang,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -3598,7 +3598,7 @@
 2018,algmyr,Makefile,30,true,makefile,true,entry Makefile
 2018,algmyr,prog.orig.c,50,false,c,true,original source code
 2018,algmyr,try.sh,100,true,shellscript,true,script to try entry
-2018,algmyr,spoiler.png,200,true,image,false,spoiler image
+2018,algmyr,deobfuscation.png,200,true,image,false,Deobfuscation image
 2018,algmyr,2018_algmyr.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2018,algmyr,README.md,4000000000,true,markdown,true,markdown source for this web page
 2018,algmyr,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -3697,7 +3697,7 @@
 2018,burton2,spotcheck.sh,200,true,shellscript,true,script to test a lot of files vs iocccsize
 2018,burton2,v7unix,200,true,text,false,reserved words for a v7 UNIX C standard
 2018,burton2,spotdiff.sh,250,true,shellscript,true,summarize the results of spotcheck
-2018,burton2,src.doc.txt,300,true,text,false,spoiler - hints about the source code
+2018,burton2,src.doc.txt,300,true,text,false,deobfuscation hints about the source code
 2018,burton2,2018_burton2.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2018,burton2,README.md,4000000000,true,markdown,true,markdown source for this web page
 2018,burton2,discrepancies.md,4000000000,true,markdown,true,markdown source for discrepancies.html
@@ -3835,7 +3835,7 @@
 2018,yang,Makefile,30,true,makefile,true,entry Makefile
 2018,yang,prog.orig.c,50,false,c,true,original source code
 2018,yang,try.sh,100,true,shellscript,true,script to try entry
-2018,yang,spoiler.html,200,true,html,false,spoiler web page
+2018,yang,deobfuscation.html,200,true,html,false,Deobfuscation information web page
 2018,yang,2018_yang.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2018,yang,README.md,4000000000,true,markdown,true,markdown source for this web page
 2018,yang,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -3848,8 +3848,8 @@
 2019,adamovsky,try.sh,100,true,shellscript,true,script to try entry
 2019,adamovsky,advent.unl,200,true,text,true,unlambda script
 2019,adamovsky,crash.unl,200,true,text,true,unlambda script
+2019,adamovsky,deobfuscation.c,200,true,c,true,Deobfuscated source code
 2019,adamovsky,iocccsize_2018.c,200,true,c,true,2018 iocccsize.c source
-2019,adamovsky,progSpoiler.c,200,true,c,true,spoiler source code
 2019,adamovsky,sierpinski.unl,200,true,text,true,unlambda code
 2019,adamovsky,spam.unl,200,true,text,true,unlambda code
 2019,adamovsky,2019_adamovsky.tar.bz2,1415926535,false,tbz2,false,download entry tarball
@@ -4049,7 +4049,7 @@
 2019,yang,sample_input.txt,100,true,text,false,sample input
 2019,yang,try.sh,100,true,shellscript,true,script to try entry
 2019,yang,violet.c,150,true,c,true,source formatter as ASCII Violet Evergarden
-2019,yang,spoiler.html,200,true,html,false,spoiler web page
+2019,yang,deobfuscation.html,200,true,html,false,Deobfuscation information web page
 2019,yang,2019_yang.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2019,yang,README.md,4000000000,true,markdown,true,markdown source for this web page
 2019,yang,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -4103,18 +4103,18 @@
 2020,endoh2,hello.txt,100,true,text,false,sample input
 2020,endoh2,try.sh,100,true,shellscript,true,script to try entry
 2020,endoh2,yoda.txt,100,true,text,false,sample input
-2020,endoh2,spoiler/code.c,200,true,c,true,spoiler code main logic
-2020,endoh2,spoiler/gen.rb,200,true,ruby,true,ruby code to compose items and prog.c in artistic way
-2020,endoh2,spoiler/glyphs.txt,200,true,text,false,glyphs data for spoiler/gen.rb
-2020,endoh2,spoiler/index.html,200,true,html,false,spoiler index.html web page
-2020,endoh2,spoiler/prog.c,200,true,c,true,spoiler source code
-2020,endoh2,spoiler/tmpl.txt,200,true,text,false,template for spoiler/gen.rb output
+2020,endoh2,deobfuscation/code.c,200,true,c,true,debofuscated code main logic
+2020,endoh2,deobfuscation/gen.rb,200,true,ruby,true,ruby code to compose items and prog.c in artistic way
+2020,endoh2,deobfuscation/glyphs.txt,200,true,text,false,glyphs data for deobfuscation/gen.rb
+2020,endoh2,deobfuscation/index.html,200,true,html,false,deobfuscation information web page
+2020,endoh2,deobfuscation/prog.c,200,true,c,true,deobfuscated source code
+2020,endoh2,deobfuscation/tmpl.txt,200,true,text,false,template for deobfuscation/gen.rb output
 2020,endoh2,2020_endoh2.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2020,endoh2,README.md,4000000000,true,markdown,true,markdown source for this web page
+2020,endoh2,deobfuscation/index.md,4000000000,true,markdown,true,markdown source for deobfuscationr/index.html
 2020,endoh2,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
 2020,endoh2,.gitignore,4000000000,true,gitignore,true,list of files that should not be committed under git
 2020,endoh2,.path,4000000000,false,path,true,directory path from top level directory
-2020,endoh2,spoiler/index.md,4000000000,true,markdown,true,markdown source for spoiler/index.html
 2020,endoh2,index.html,4294967295,false,html,false,this web page
 2020,endoh3,prog.c,20,true,c,true,entry source code
 2020,endoh3,Makefile,30,true,makefile,true,entry Makefile
@@ -4140,8 +4140,8 @@
 2020,ferguson1,cannibalism.log.html,100,false,html,false,shows extreme cannibalism mode output
 2020,ferguson1,chocolate-cake.html,100,false,html,false,Double-layered Chocolate Fudge Cake Recipe
 2020,ferguson1,crazy.log.html,100,false,html,false,explains various odd screen dumps
+2020,ferguson1,deobfuscation.html,100,false,html,false,Deobfuscation information about the code
 2020,ferguson1,gameplay.html,100,false,html,false,many different gameplay modes described
-2020,ferguson1,spoilers.html,100,false,html,false,spoilers about the code
 2020,ferguson1,terminals.html,100,false,html,false,terminal capabilities and dimensions and colours
 2020,ferguson1,troubleshooting.html,100,false,html,false,troubleshooting Snake
 2020,ferguson1,prog.2.c,150,true,c,true,source code with more digraphs
@@ -4158,12 +4158,12 @@
 2020,ferguson1,cannibalism.log.md,4000000000,true,markdown,true,markdown source for cannibalism.log.html
 2020,ferguson1,chocolate-cake.md,4000000000,true,markdown,true,markdown source for chocolate-cake.html
 2020,ferguson1,crazy.log.md,4000000000,true,markdown,true,markdown source for crazy.log.html
+2020,ferguson1,deobfuscation.md,4000000000,true,markdown,true,markdown source for deobfuscation.html
 2020,ferguson1,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
 2020,ferguson1,gameplay.md,4000000000,true,markdown,true,markdown source for gameplay.html
 2020,ferguson1,.gitignore,4000000000,true,gitignore,true,list of files that should not be committed under git
 2020,ferguson1,ioccc-cake.jpg,4000000000,true,image,false,image of Double-layered Chocolate Fudge Cake with 'IOCCC'
 2020,ferguson1,.path,4000000000,false,path,true,directory path from top level directory
-2020,ferguson1,spoilers.md,4000000000,true,markdown,true,markdown source for spoilers.html
 2020,ferguson1,terminals.md,4000000000,true,markdown,true,markdown source for terminals.html
 2020,ferguson1,troubleshooting.md,4000000000,true,markdown,true,markdown source for troubleshooting.html
 2020,ferguson1,index.html,4294967295,false,html,false,this web page
@@ -4287,7 +4287,7 @@
 2020,yang,prog.orig.c,50,false,c,true,original source code
 2020,yang,try.sh,100,true,shellscript,true,script to try entry
 2020,yang,cppp.cc,150,true,c,true,encode large file C Pre-PreProcessor source
-2020,yang,spoiler.html,200,true,html,false,spoiler web page
+2020,yang,deobfuscation.html,200,true,html,false,Deobfuscation information web page
 2020,yang,2020_yang.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2020,yang,README.md,4000000000,true,markdown,true,markdown source for this web page
 2020,yang,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON

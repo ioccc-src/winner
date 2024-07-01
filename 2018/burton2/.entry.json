@@ -439,7 +439,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "spoiler - hints about the source code"
+	    "entry_text" : "deobfuscation hints about the source code"
 	},
 	{
 	    "file_path" : "2018_burton2.tar.bz2",

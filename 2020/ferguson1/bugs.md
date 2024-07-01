@@ -294,7 +294,7 @@ a bug and I prefer putting in restrictions to try and make it very unlikely.
 [gameplay.html]: gameplay.html
 [cannibalism.log.html]: cannibalism.log.html
 [https://en.wikipedia.org/wiki/Halfwidth_and_fullwidth_forms]: https://en.wikipedia.org/wiki/Halfwidth_and_fullwidth_forms
-[spoilers.html]: spoilers.html
+[deobfuscation.html]: deobfuscation.html
 
 
 <hr style="width:10%;text-align:left;margin-left:0">

@@ -1,4 +1,4 @@
-### Spoilers
+### Deobfuscation
 
 
 `calc` is a recursive-descent parser.  It allocates from the stack deep enough

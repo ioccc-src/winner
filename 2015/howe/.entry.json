@@ -82,28 +82,28 @@
 	    "entry_text" : "cc man page"
 	},
 	{
-	    "file_path" : "spoiler/Makefile",
+	    "file_path" : "deobfuscation/Makefile",
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "makefile",
 	    "display_via_github" : true,
-	    "entry_text" : "spoiler Makefile"
+	    "entry_text" : "Deobfuscation Makefile"
 	},
 	{
-	    "file_path" : "spoiler/err.h",
+	    "file_path" : "deobfuscation/err.h",
 	    "inventory_order" : 210,
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "spoiler err.h header file"
+	    "entry_text" : "Deobfuscation err.h header file"
 	},
 	{
-	    "file_path" : "spoiler/prog.c",
+	    "file_path" : "deobfuscation/prog.c",
 	    "inventory_order" : 210,
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "spoiler source code"
+	    "entry_text" : "Deobfuscatied source code"
 	},
 	{
 	    "file_path" : "war-and-peace.txt",

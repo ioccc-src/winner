@@ -130,12 +130,12 @@
 	    "entry_text" : "hibachi-start.sh declarations"
 	},
 	{
-	    "file_path" : "src/localhost/CHANGES-SPOILER.TXT",
+	    "file_path" : "src/localhost/CHANGES-DEOBFUSCATED.TXT",
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "spoiler changelog"
+	    "entry_text" : "Debofuscation change log"
 	},
 	{
 	    "file_path" : "2004_hibachi.tar.bz2",

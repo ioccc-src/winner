@@ -112,7 +112,7 @@ PROG= prog
 #
 OBJ= ${PROG}.o
 CSRC= ${PROG}.o
-DATA= spoiler.html
+DATA= deobfuscation.html
 TARGET= left right shift msg0 msg1 msg2
 #
 ALT_OBJ=
@@ -169,17 +169,17 @@ generated5.c: ${PROG}.c right shift
 	@${RM} -f $@
 	./shift < $< | ./right > $@
 
-############
-# spoilers #
-############
+#################
+# deobfuscation #
+#################
 
-spoiler: spoilers
+deobfuscation: deobfuscations
 
-spoilers:
-	@echo "Really show spoilers?  Please build this target to confirm:"
-	@echo "   i_give_up_show_me_the_spoilers"
+deobfuscations:
+	@echo "Really show deobfuscation information?  Please build this target to confirm:"
+	@echo "   i_give_up_show_me_the_deobfuscation"
 
-i_give_up_show_me_the_spoilers: msg3 msg4 msg5 msg6 msg7 msg8 msg9
+i_give_up_show_me_the_deobfuscation: msg3 msg4 msg5 msg6 msg7 msg8 msg9
 
 msg3: generated6.c
 	$(CC) $(CFLAGS) $< -o $@
@@ -229,11 +229,11 @@ generated11.c: generated10.c right shift
 generated12.c: msg7
 	./msg7 > $@
 
-####################################
-# spoilers for the truly_impatient #
-####################################
+#########################################
+# deobfuscation for the truly_impatient #
+#########################################
 
-spoiler_for_the_truly_impatient: i_just_want_to_see_the_final_message
+deobfuscation_for_the_truly_impatient: i_just_want_to_see_the_final_message
 
 i_just_want_to_see_the_final_message: msg11.txt
 	@${CAT} $<

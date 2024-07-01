@@ -120,7 +120,7 @@ OBJ= ${PROG}.o
 DATA= COMPILING.md HACKING.md bugs.md cake.jpg cannibalism.log.md \
 	chocolate-cake.md crazy.log.md gameplay.md \
 	halfwidth_vs_fullwidth.png ioccc-cake.jpg play.sh prog.2.c prog.3-j.c \
-	prog.3.c snake-colours.sh snake.1  spoilers.md \
+	prog.3.c snake-colours.sh snake.1 deobfuscation.md \
 	termcaps.c terminals.md troubleshooting.md
 TARGET= ${PROG} termcaps play snake-colours
 #

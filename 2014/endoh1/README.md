@@ -64,7 +64,7 @@ You may want to use a large display with a very small terminal font.
 
 ### Deobfuscation
 
-See [spoilers.html](spoilers.html).
+See [deobfuscation.html](deobfuscation.html).
 
 
 <!--

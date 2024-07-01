@@ -2547,7 +2547,7 @@ added.
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1995/leo/try.sh) script.
 
 At our change in how to deal with deobfuscation, Cody also uudecoded the deobfuscation inforation provided
-by the author, putting it in [spoiler.html](1995/leo/spoiler.html).
+by the author, putting it in [deobfuscation.html](1995/leo/deobfuscation.html).
 
 
 <div id="1995_makarios">
@@ -5122,7 +5122,7 @@ symbols from being built with `rake` Cody also updated the
 [Rakefile](%%REPO_URL%%/2014/endoh1/Rakefile) slightly.
 
 **_Barely_** worth noting but done nonetheless, Cody renamed the `read_me.html`
-file to [spoilers.html](2014/endoh1/spoilers.html) to be clearer in its purpose as
+file to [deobfuscation.html](2014/endoh1/deobfuscation.html) to be clearer in its purpose as
 it is a file with deobfuscation information.
 
 

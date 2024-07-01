@@ -106,12 +106,12 @@
 	    "entry_text" : "test suite comparison data for 32-bit systems"
 	},
 	{
-	    "file_path" : "spoilers.html",
+	    "file_path" : "deobfuscation.html",
 	    "inventory_order" : 200,
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "spoiler web page"
+	    "entry_text" : "Deobfuscation information web page"
 	},
 	{
 	    "file_path" : "src.doc.txt",
@@ -162,20 +162,20 @@
 	    "entry_text" : "markdown source for this web page"
 	},
 	{
+	    "file_path" : "deobfuscation.md",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "markdown",
+	    "display_via_github" : true,
+	    "entry_text" : "markdown source for deobfuscation.html"
+	},
+	{
 	    "file_path" : "road.to.obscurity.md",
 	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
 	    "entry_text" : "markdown source for road.to.obscurity.html"
-	},
-	{
-	    "file_path" : "spoilers.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for spoilers.html"
 	},
 	{
 	    "file_path" : "index.html",

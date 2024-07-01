@@ -1,11 +1,11 @@
-# Introduction (SPOILER ALERT)
+# Introduction and Deobfuscation
 
 In the [gameplay.html][] file I have given enough
 information to know how the game looks, how to move the snake, how to pause etc.
 In this file I am including (some) information on how the game actually works:
 the technical details as it were, obfuscation techniques and also some of the
 ways I reduced the iocccsize so I could do more with the code. Probably this
-file causes more spoilage than the other files though that's not to say
+file causes more deobfuscation information than the other files though that's not to say
 everything will be answered here.
 
 If you're still interested in this file (i.e. you're a judge or someone who
@@ -443,7 +443,7 @@ dimensions. Now in the first call in `main()` I have the code and tests followin
     BTW: Some of these are not in the table of expressions in the
     [HACKING.html][] file.  Also there might be some
     code in there that is no longer correct (it was before I started
-    obfuscation) though it might be able to give an idea.  Spoilers abound in
+    obfuscation) though it might be able to give an idea.  Deobfuscation inforation abound in
     that file (in addition to this file) but the [HACKING.html][]
     file states things that are no longer true: a way of obfuscation
     itself! Instead of misleading comments it's misleading statements in the

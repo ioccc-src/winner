@@ -12,8 +12,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>The International Obfuscated C Code Contest</title>
 <link rel="icon" type="image/x-icon" href="../../favicon.ico">
-<meta name="description" content="spoilers.md for 2015/burton">
-<meta name="keywords" content="IOCCC, 2015/burton, spoilers.md">
+<meta name="description" content="deobfuscation.md for 1995/leo">
+<meta name="keywords" content="IOCCC, 1995/leo, deobfuscation.md">
 </head>
 
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
@@ -26,13 +26,13 @@
 
 <!-- -->
 <!-- This web page was formed via the tool: bin/gen-other-html.sh -->
-<!-- The content of main section of this web page came from: 2015/burton/spoilers.md -->
+<!-- The content of main section of this web page came from: 1995/leo/deobfuscation.md -->
 <!-- -->
 
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!! Do not modify this web page, instead modify the file: 2015/burton/spoilers.md !!! -->
-<!-- !!! Do not modify this web page, instead modify the file: 2015/burton/spoilers.md !!! -->
-<!-- !!! Do not modify this web page, instead modify the file: 2015/burton/spoilers.md !!! -->
+<!-- !!! Do not modify this web page, instead modify the file: 1995/leo/deobfuscation.md !!! -->
+<!-- !!! Do not modify this web page, instead modify the file: 1995/leo/deobfuscation.md !!! -->
+<!-- !!! Do not modify this web page, instead modify the file: 1995/leo/deobfuscation.md !!! -->
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 
 <!-- Markdown content was converted into HTML via the tool: bin/md2html.sh -->
@@ -363,7 +363,7 @@
 	   height=110>
   </a>
   <h1>The International Obfuscated C Code Contest</h1>
-  <h2>spoilers.html for 2015/burton</h2>
+  <h2>deobfuscation.html for 1995/leo</h2>
 </div>
 
 <!-- END: this line ends content from: inc/header.default.html -->
@@ -371,7 +371,7 @@
 
 <div class="navbar">
   <a class="Left" href="index.html">&uarr; jump to index.html &uarr;</a>
-  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2015%2Fburton%2Fspoilers.html">&#x2713;</a>
+  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F1995%2Fleo%2Fdeobfuscation.html">&#x2713;</a>
 </div>
 
 <!-- END: this line ends content from: inc/navbar.up2index.html -->
@@ -382,37 +382,8 @@
 <!-- END: this line ends content from: inc/before-content.default.html -->
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
-<!-- BEFORE: 1st line of markdown file: 2015/burton/spoilers.md -->
-<h3 id="spoilers">Spoilers</h3>
-<p><code>calc</code> is a recursive-descent parser. It allocates from the stack deep enough
-that all expressions are exhausted before the recursion stack depth reaches the
-allocations. The memory map and source is documented in
-<a href="src.doc.txt">src.doc.txt</a>. Tokens are encoded using values 0-20, where 0 is an
-invalid token, 1 is minus, 2 is space, 3 is plus, etc. The necessary constants
-are derived at the start of the program, using the guarantee that globals are
-initialized to zero; so a correct NULL pointer is obtained from an uninitialized
-global pointer variable, and the integers from uninitialized global <code>int</code>
-variables. If <code>x</code> is a global <code>int</code>, then <code>!x</code> is <code>1</code>, and the derivation
-proceeds from there, using some identities that are confusingly similar and
-interestingly combined (increasing obfuscation):</p>
-<pre><code>    obc    clr
-    ---    ---
-    -~x    x+1
-    ~-x    x-1
-    y-~x   y+x+1</code></pre>
-<p>The derived constants are a compromise between simple expressions, maximum utility,
-and minimum number of variables used.</p>
-<p>Command line arguments are copied into the upper half of the input buffer,
-separated by a space. This allows the code to have a single input parser by using
-a pointer-to-func to either <code>getchar(3)</code> if live, or a <code>getchar(3)</code> simulator.</p>
-<p>A small amount of obfuscation comes from <code>void</code> functions declared <code>int</code>, but
-missing <code>return</code>. This is necessary to allow these functions in ternary <code>?:</code>
-expressions and paired with <code>&amp;&amp;</code> and <code>||</code>; but the requisite returns would add
-symbol count at no benefit to obscurity or functionality. Function
-decomposition was mostly chosen to avoid curly braces: if a <code>for</code>-loop required
-multiple statements, the body became a new function. Last, but not least:
-sharing state via global variables is an ancient and honored form of
-obfuscation, and remarkably effective.</p>
+<!-- BEFORE: 1st line of markdown file: 1995/leo/deobfuscation.md -->
+<p>(The colon <em>is</em> the secret switch - the space before it is not a mistake)</p>
 <hr style="width:10%;text-align:left;margin-left:0">
 <p>Jump to: <a href="#">top</a></p>
 <!--
@@ -428,7 +399,7 @@ obfuscation, and remarkably effective.</p>
         https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
-<!-- AFTER: last line of markdown file: 2015/burton/spoilers.md -->
+<!-- AFTER: last line of markdown file: 1995/leo/deobfuscation.md -->
 
 <!-- END: this line ends content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 <!-- START: this line starts content from: inc/after-content.default.html -->
@@ -488,7 +459,7 @@ obfuscation, and remarkably effective.</p>
 
     <div id="coda"><h3>Coda</h3>
 	<p>
-	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2015%2Fburton%2Fspoilers.html" rel="nofollow">Nu HTML check this web page</a><br>
+	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F1995%2Fleo%2Fdeobfuscation.html" rel="nofollow">Nu HTML check this web page</a><br>
 	<a href="#top">Jump to top</a> <a href="#content">Jump to Content</a>
 	</p>
     </div>

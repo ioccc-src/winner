@@ -62,13 +62,13 @@ read -r -n 1 -p "Press any key to run: ./msg2: "
 echo 1>&2
 ./msg2
 
-read -r -p "Do you wish to see some of the spoilers (Y/N)? "
+read -r -p "Do you wish to see some of the deobfuscation information (Y/N)? "
 if [[ "$REPLY" == "Y" || "$REPLY" == "y" ]]; then
-    echo "$ make spoilers" 1>&2
-    make spoilers
+    echo "$ make deobfuscations" 1>&2
+    make deobfuscations
     rm -f generated*.c msg*.c
-    echo "$ make i_give_up_show_me_the_spoilers"
-    make i_give_up_show_me_the_spoilers
+    echo "$ make i_give_up_show_me_the_deobfuscation"
+    make i_give_up_show_me_the_deobfuscation
     echo 1>&2
     for i in 0 1 2 3 4 5 6 7 8; do
 	read -r -n 1 -p "Press any key to run: ./msg$i: "

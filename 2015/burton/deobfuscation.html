@@ -12,8 +12,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>The International Obfuscated C Code Contest</title>
 <link rel="icon" type="image/x-icon" href="../../favicon.ico">
-<meta name="description" content="spoilers.md for 2014/endoh1">
-<meta name="keywords" content="IOCCC, 2014/endoh1, spoilers.md">
+<meta name="description" content="deobfuscation.md for 2015/burton">
+<meta name="keywords" content="IOCCC, 2015/burton, deobfuscation.md">
 </head>
 
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
@@ -26,13 +26,13 @@
 
 <!-- -->
 <!-- This web page was formed via the tool: bin/gen-other-html.sh -->
-<!-- The content of main section of this web page came from: 2014/endoh1/spoilers.md -->
+<!-- The content of main section of this web page came from: 2015/burton/deobfuscation.md -->
 <!-- -->
 
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!! Do not modify this web page, instead modify the file: 2014/endoh1/spoilers.md !!! -->
-<!-- !!! Do not modify this web page, instead modify the file: 2014/endoh1/spoilers.md !!! -->
-<!-- !!! Do not modify this web page, instead modify the file: 2014/endoh1/spoilers.md !!! -->
+<!-- !!! Do not modify this web page, instead modify the file: 2015/burton/deobfuscation.md !!! -->
+<!-- !!! Do not modify this web page, instead modify the file: 2015/burton/deobfuscation.md !!! -->
+<!-- !!! Do not modify this web page, instead modify the file: 2015/burton/deobfuscation.md !!! -->
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 
 <!-- Markdown content was converted into HTML via the tool: bin/md2html.sh -->
@@ -363,7 +363,7 @@
 	   height=110>
   </a>
   <h1>The International Obfuscated C Code Contest</h1>
-  <h2>spoilers.html for 2014/endoh1</h2>
+  <h2>deobfuscation.html for 2015/burton</h2>
 </div>
 
 <!-- END: this line ends content from: inc/header.default.html -->
@@ -371,7 +371,7 @@
 
 <div class="navbar">
   <a class="Left" href="index.html">&uarr; jump to index.html &uarr;</a>
-  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2014%2Fendoh1%2Fspoilers.html">&#x2713;</a>
+  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2015%2Fburton%2Fdeobfuscation.html">&#x2713;</a>
 </div>
 
 <!-- END: this line ends content from: inc/navbar.up2index.html -->
@@ -382,142 +382,37 @@
 <!-- END: this line ends content from: inc/before-content.default.html -->
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
-<!-- BEFORE: 1st line of markdown file: 2014/endoh1/spoilers.md -->
-<h1 id="quiner-code-generator">Q(uine)R code generator</h1>
-<h2 id="what-is-difficult">What is difficult?</h2>
-<p>As you may know, QR code (specification: ISO/IEC 18004) is quite complex. It
-requires a bit stream, Reed-Solomon codes, BCH codes, data relocation, big (and
-irregular!) numerical tables, human-oriented pattern arrangement (difficult to
-implement by a small program), etc.</p>
-<p>On the other hand, a quine has a big restriction: it needs to have two copies of
-the program!</p>
-<p>Do you think that it is possible to write QR code encoder in C within <em>1kB</em>?</p>
-<h2 id="how-did-i-achieve-that">How did I achieve that?</h2>
-<p>It is known that we can mitigate the quine restriction by <code>eval</code>.
-For example, this is a quine written in Ruby:</p>
-<pre><code>    eval s=&quot;print &#39;eval s=&#39;; p s&quot;</code></pre>
-<p>Note that <code>print</code> appears just once in the program.</p>
-<p>To emulate this approach in C, I adopted the following structure.</p>
-<pre><code>    char s[]=&quot;&lt;main code&gt;int main() { &lt;VM code&gt; }&quot;;
-    int main() { &lt;VM code&gt;; }</code></pre>
-<ul>
-<li><code>&lt;VM code&gt;</code> : An own VM implementation (written in C) that executes the main
-code.</li>
-<li><code>&lt;main code&gt;</code> : An object code of quine and QR code encoder (written in the
-assembly language of the VM).</li>
-</ul>
-<p><code>&lt;main code&gt;</code> (about 1100 bytes) appears once and <code>&lt;VM code&gt;</code> (about 450 bytes)
-appears twice. So the whole code is about 1100 + 450 * 2 = 2000 bytes. Hooray!</p>
-<h2 id="what-sort-of-vm-is-that">What sort of VM is that?</h2>
-<p>The VM is a kind of stack machine which makes the object code compact. The
-instruction set is carefully selected to minimize the sizes of both <code>&lt;main code&gt;</code> and <code>&lt;VM code&gt;</code>.</p>
-<ul>
-<li>21 integer registers access
-<ul>
-<li>read, write, inc-and-read, dec-and-read</li>
-</ul></li>
-<li>Binary operations
-<ul>
-<li>add, sub, mul, div, mod, xor, less than, equal, right shift</li>
-</ul></li>
-<li>Stack operation
-<ul>
-<li>push (an immediate value)</li>
-</ul></li>
-<li>Heap access
-<ul>
-<li>load, store</li>
-</ul></li>
-<li>If-Then-Else</li>
-<li>While-Loop</li>
-<li>Misc.
-<ul>
-<li>putchar, exit</li>
-</ul></li>
-</ul>
-<p>The instructions have variable lengths, but many of them are represented as one
-printable character. (See <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/machine.rb">machine.rb</a> and
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/assemble.rb">assemble.rb</a> in detail.) The mapping between instructions and
-characters is also carefully designed to minimize <code>&lt;VM code&gt;</code>, which makes the
-resulted program non-human-readable.</p>
-<h2 id="how-did-i-create-the-main-code">How did I create the main code?</h2>
-<p>It is too tedious to write the machine language directly. So I wrote the source
-code in Ruby syntax and created a Ruby-to-VM compiler that involves alpha
-renaming and automatic register allocation only for this purpose.</p>
-<ul>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/src.rb">src.rb</a>: the source code of QR code encoder written in Ruby syntax.</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/vm.c">vm.c</a>: the source code of the VM.</li>
-</ul>
-<p>The compiler tool chain is the following.</p>
-<pre><code>    src.rb              interp.c
-      |                   |
-      | [parse.rb]        |
-      V                   |
-    ast.txt               |
-      |                   |
-      | [serialize.rb]    |
-      V                   |
-    seq.txt               |
-      |                   |
-      | [alpha.rb]        |
-      V                   |
-    alpha.txt             |
-      |                   |
-      | [register.rb]     |
-      V                   |
-    reg.txt               |
-      |                   |
-      | [assemble.rb]     |
-      V                   |
-    raw.txt               |
-      |                   |
-      +---------+---------+
-                |
-                | [link.rb]
-                V
-              main.c
-                |
-                | [gen-prog.c]
-                V
-              prog.c</code></pre>
-<ul>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/parse.rb">parse.rb</a> converts Ruby to AST.</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/serialize.rb">serialize.rb</a> converts AST to intermediate instruction sequence.</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/alpha.rb">alpha.rb</a> applies “alpha-renaming” to the instruction sequence.</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/register.rb">register.rb</a> applies “register allocation”.</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/assemble.rb">assemble.rb</a> converts the sequence to the final stack-machine instructions.</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/vm.c">vm.c</a> is an implementation of the VM.</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/link.rb">link.rb</a> generates <code>main.c</code> by linking the instructions and interpreter source.</li>
-<li><code>gen-prog.rb</code> generates <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/prog.c">prog.c</a> based on <code>main.c</code>.</li>
-</ul>
-<p>You can run the process by <code>rake</code> command. <code>ruby-minisat</code> gem is needed.</p>
-<pre><code>    $ gem install ruby-minisat
-    $ rake</code></pre>
-<h2 id="tools">Tools</h2>
-<p>I checked that the following QR code readers can read the output of my program.</p>
-<ul>
-<li>Linux: <a href="http://zbar.sourceforge.net/">ZBar bar code reader</a>.</li>
-</ul>
-<h3 id="a-note-from-the-judges-in-2023">A note from the judges in 2023:</h3>
-<p>The author also tested an Android app called Barcode Scanner which used to be
-found at
-<code>https://play.google.com/store/apps/details?id=com.google.zxing.client.android</code>
-but it appears to no longer exist.</p>
-<p>You can use <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/endoh1/tool.rb">tool.rb</a> to convert the output to a png file.</p>
-<pre><code>    ./main Hello | ruby tool.rb &gt; hello.png
-
-    $ zbarimg -q hello.png
-    QR-Code:Hello
-
-    $ ruby tool.rb prog.c
-    $ ruby tool.rb prog.c | ruby tool.rb</code></pre>
-<h2 id="limitations">Limitations</h2>
-<ul>
-<li>QR code error correction level is fixed to L (Low).</li>
-<li>It supports only byte mode (not numeric, alphanumeric, kanji mode…).</li>
-<li>The mask pattern is fixed to 4.</li>
-<li>The mask is not applied to the remained bits.</li>
-</ul>
+<!-- BEFORE: 1st line of markdown file: 2015/burton/deobfuscation.md -->
+<h3 id="deobfuscation">Deobfuscation</h3>
+<p><code>calc</code> is a recursive-descent parser. It allocates from the stack deep enough
+that all expressions are exhausted before the recursion stack depth reaches the
+allocations. The memory map and source is documented in
+<a href="src.doc.txt">src.doc.txt</a>. Tokens are encoded using values 0-20, where 0 is an
+invalid token, 1 is minus, 2 is space, 3 is plus, etc. The necessary constants
+are derived at the start of the program, using the guarantee that globals are
+initialized to zero; so a correct NULL pointer is obtained from an uninitialized
+global pointer variable, and the integers from uninitialized global <code>int</code>
+variables. If <code>x</code> is a global <code>int</code>, then <code>!x</code> is <code>1</code>, and the derivation
+proceeds from there, using some identities that are confusingly similar and
+interestingly combined (increasing obfuscation):</p>
+<pre><code>    obc    clr
+    ---    ---
+    -~x    x+1
+    ~-x    x-1
+    y-~x   y+x+1</code></pre>
+<p>The derived constants are a compromise between simple expressions, maximum utility,
+and minimum number of variables used.</p>
+<p>Command line arguments are copied into the upper half of the input buffer,
+separated by a space. This allows the code to have a single input parser by using
+a pointer-to-func to either <code>getchar(3)</code> if live, or a <code>getchar(3)</code> simulator.</p>
+<p>A small amount of obfuscation comes from <code>void</code> functions declared <code>int</code>, but
+missing <code>return</code>. This is necessary to allow these functions in ternary <code>?:</code>
+expressions and paired with <code>&amp;&amp;</code> and <code>||</code>; but the requisite returns would add
+symbol count at no benefit to obscurity or functionality. Function
+decomposition was mostly chosen to avoid curly braces: if a <code>for</code>-loop required
+multiple statements, the body became a new function. Last, but not least:
+sharing state via global variables is an ancient and honored form of
+obfuscation, and remarkably effective.</p>
 <hr style="width:10%;text-align:left;margin-left:0">
 <p>Jump to: <a href="#">top</a></p>
 <!--
@@ -533,7 +428,7 @@ but it appears to no longer exist.</p>
         https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
-<!-- AFTER: last line of markdown file: 2014/endoh1/spoilers.md -->
+<!-- AFTER: last line of markdown file: 2015/burton/deobfuscation.md -->
 
 <!-- END: this line ends content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 <!-- START: this line starts content from: inc/after-content.default.html -->
@@ -593,7 +488,7 @@ but it appears to no longer exist.</p>
 
     <div id="coda"><h3>Coda</h3>
 	<p>
-	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2014%2Fendoh1%2Fspoilers.html" rel="nofollow">Nu HTML check this web page</a><br>
+	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2015%2Fburton%2Fdeobfuscation.html" rel="nofollow">Nu HTML check this web page</a><br>
 	<a href="#top">Jump to top</a> <a href="#content">Jump to Content</a>
 	</p>
     </div>

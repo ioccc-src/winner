@@ -230,7 +230,7 @@ This allows for a convenient test suite:
 
 ### Deobfuscation:
 
-If you do not want to puzzle out how it works, see [spoilers.html](spoilers.html).
+If you do not want to puzzle out how it works, see [deobfuscation.html](deobfuscation.html).
 
 <!--
 

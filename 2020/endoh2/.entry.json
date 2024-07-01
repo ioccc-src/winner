@@ -66,15 +66,15 @@
 	    "entry_text" : "sample input"
 	},
 	{
-	    "file_path" : "spoiler/code.c",
+	    "file_path" : "deobfuscation/code.c",
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "spoiler code main logic"
+	    "entry_text" : "debofuscated code main logic"
 	},
 	{
-	    "file_path" : "spoiler/gen.rb",
+	    "file_path" : "deobfuscation/gen.rb",
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "ruby",
@@ -82,36 +82,36 @@
 	    "entry_text" : "ruby code to compose items and prog.c in artistic way"
 	},
 	{
-	    "file_path" : "spoiler/glyphs.txt",
+	    "file_path" : "deobfuscation/glyphs.txt",
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "glyphs data for spoiler/gen.rb"
+	    "entry_text" : "glyphs data for deobfuscation/gen.rb"
 	},
 	{
-	    "file_path" : "spoiler/index.html",
+	    "file_path" : "deobfuscation/index.html",
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "spoiler index.html web page"
+	    "entry_text" : "deobfuscation information web page"
 	},
 	{
-	    "file_path" : "spoiler/prog.c",
+	    "file_path" : "deobfuscation/prog.c",
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "spoiler source code"
+	    "entry_text" : "deobfuscated source code"
 	},
 	{
-	    "file_path" : "spoiler/tmpl.txt",
+	    "file_path" : "deobfuscation/tmpl.txt",
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "template for spoiler/gen.rb output"
+	    "entry_text" : "template for deobfuscation/gen.rb output"
 	},
 	{
 	    "file_path" : "2020_endoh2.tar.bz2",
@@ -154,12 +154,12 @@
 	    "entry_text" : "markdown source for this web page"
 	},
 	{
-	    "file_path" : "spoiler/index.md",
+	    "file_path" : "deobfuscation/index.md",
 	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",
 	    "display_via_github" : true,
-	    "entry_text" : "markdown source for spoiler/index.html"
+	    "entry_text" : "markdown source for deobfuscationr/index.html"
 	},
 	{
 	    "file_path" : "index.html",

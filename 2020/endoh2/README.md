@@ -29,11 +29,11 @@ What happens if you do
 
 ## Judges' remarks:
 
-Clever use of the C99 complex data type. The [spoiler](spoiler/index.html) directory
+Clever use of the C99 complex data type. The [deobfuscation](deobfuscation/index.html) directory
 contains clues as to how some winning authors create / edit programs into ASCII
 shapes.
 
-With the source from the [spoiler](spoiler/index.html) directory could you make the code
+With the source from the [deobfuscation](deobfuscation/index.html) directory could you make the code
 render for a larger terminal window?  How about adding more glyphs?
 
 
@@ -48,11 +48,6 @@ No!  Try not.  Do, or do not.  There is no try.
     ./a.out yoda.txt
     ./a.out bear.txt
 ```
-
-See spoiler.zip for the source code.
-[The 16th most common password on the Internet in 2017 (according to Splash Data)][1] the password is.
-
-[1]: https://en.wikipedia.org/wiki/List_of_the_most_common_passwords
 
 <!--
 

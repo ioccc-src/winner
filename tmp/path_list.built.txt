@@ -397,9 +397,9 @@
 1995/heathbar/index.html
 1995/leo/.path
 1995/leo/1995_leo.tar.bz2
+1995/leo/deobfuscation.html
 1995/leo/index.html
 1995/leo/leo.orig.c
-1995/leo/spoiler.html
 1995/makarios/.path
 1995/makarios/1995_makarios.tar.bz2
 1995/makarios/index.html
@@ -956,9 +956,9 @@
 2014/deak/prog.orig.c
 2014/endoh1/.path
 2014/endoh1/2014_endoh1.tar.bz2
+2014/endoh1/deobfuscation.html
 2014/endoh1/index.html
 2014/endoh1/prog.orig.c
-2014/endoh1/spoilers.html
 2014/endoh2/.path
 2014/endoh2/2014_endoh2.tar.bz2
 2014/endoh2/index.html
@@ -993,10 +993,10 @@
 2014/wiedijk/prog.orig.c
 2015/burton/.path
 2015/burton/2015_burton.tar.bz2
+2015/burton/deobfuscation.html
 2015/burton/index.html
 2015/burton/prog.orig.c
 2015/burton/road.to.obscurity.html
-2015/burton/spoilers.html
 2015/dogon/.path
 2015/dogon/2015_dogon.tar.bz2
 2015/dogon/index.html
@@ -1196,10 +1196,10 @@
 2020/ferguson1/cannibalism.log.html
 2020/ferguson1/chocolate-cake.html
 2020/ferguson1/crazy.log.html
+2020/ferguson1/deobfuscation.html
 2020/ferguson1/gameplay.html
 2020/ferguson1/index.html
 2020/ferguson1/prog.orig.c
-2020/ferguson1/spoilers.html
 2020/ferguson1/terminals.html
 2020/ferguson1/troubleshooting.html
 2020/ferguson2/.path

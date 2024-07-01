@@ -42,12 +42,12 @@
 	    "entry_text" : "script to try entry"
 	},
 	{
-	    "file_path" : "spoiler.png",
+	    "file_path" : "deobfuscation.png",
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "image",
 	    "display_via_github" : false,
-	    "entry_text" : "spoiler image"
+	    "entry_text" : "Deobfuscation image"
 	},
 	{
 	    "file_path" : "2018_algmyr.tar.bz2",
