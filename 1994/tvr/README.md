@@ -5,7 +5,7 @@
 ```
 
 
-The author provided a spoiler version as alternate code. See [Alternate
+The author provided a deobfuscated version as alternate code. See [Alternate
 code](#alternate-code) below.
 
 
@@ -39,7 +39,7 @@ Mode may be a value from 0 to 12.
 
 ## Alternate code:
 
-The author provided us a spoiler version that might be of interest to some.
+The author provided us a deobfuscated version that might be of interest to some.
 
 
 ### Alternate build:

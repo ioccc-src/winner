@@ -228,7 +228,7 @@ compilers. Small change in code can produce really unexpected results, i.e. the
 compiler can skip a few expressions or statements without obvious reason.
 
 
-### Major spoilers
+### Major deobfuscation
 
 It is commonly believed that [Mike Keith's
 algorithm](http://www.cadaeic.net/calendar.htm) published in _Journal of

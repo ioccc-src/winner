@@ -198,7 +198,8 @@ Just say
 
   (Btw, tcc has its roots in IOCCC...)
 
-### Obfuscations (a.k.a. spoilers...)
+
+### Deobfuscation
 
 * The initialized char array includes the source code of the real program,
   as well as its name and commands to build and run it, all

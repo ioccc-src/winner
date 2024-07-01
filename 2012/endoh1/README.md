@@ -259,7 +259,7 @@ a usage of `I` (complex's imaginary unit), but I bet this is cygwin's issue;
 it is surely a C99 feature.
 
 
-### Obfuscation w/ Spoiler
+### Deobfuscation
 
 First of all, the source code itself serves as an initial configuration.
 Preprocessing directives (such as `#include`)'s `#` serve as walls.

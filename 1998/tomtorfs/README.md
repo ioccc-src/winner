@@ -99,7 +99,7 @@ Count the number of non-whitespace characters in the source
 file to find out what dark force drove me to write this ;-).
 
 
-### Spoiler
+### Deobfuscation
 
 First of all, if you run a C beautifier on the program (thereby of course losing
 the nice code shape I worked so hard on ;-) ) the code will become a bit more

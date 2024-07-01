@@ -214,15 +214,9 @@ enjoy randomly changing patterns (the delay is 3 seconds),
 but there is a secret switch to suppress looping: useful
 if you want to pipe the output to a printer.
 
-`uudecode` the spoiler below if you really want to know.
+Here is a but of deobfuscation:
 
-```
-    begin 664 spoiler
-    M*%1H92!C;VQO;B J:7,J('1H92!S96-R970@<W=I=&-H("T@=&AE('-P86-E
-    =(&)E9F]R92!I="!I<R!N;W0@82!M:7-T86ME*0II
-
-    end
-```
+> The colon **is** the secret switch - the space before it is not a mistake.
 
 If `Variable` is used, the actual value of `cycle` doesn't matter,
 as far as it is > 1. To figure out what difference

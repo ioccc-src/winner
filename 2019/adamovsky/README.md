@@ -162,7 +162,7 @@ and the call with current continuation `c`.
 is, how the state of the program is stored and how the Unlambda functions are
 implemented.
 
-More on this in the **Spoilers** section.
+More on this in the **Deobfuscation** section.
 
 
 ### Build notes:
@@ -197,7 +197,7 @@ for storing `char`s for later printing. This might produce some warnings, but
 since it was developed using `char`s it should be always used safely.
 
 
-### Spoilers:
+### Deobfuscation:
 
 - You can examine the [progSpoiler.c](%%REPO_URL%%/2019/adamovsky/progSpoiler.c) file. It is the original
 final version of the interpreter, before I started the downsizing. It accepts
@@ -254,13 +254,13 @@ were shuffled both for `S` functions and Apply functions in the same way to hide
 the meaning of `f` and `r` prefixes.
 
 
-### Identification spoiler:
+### Identification deobfuscation:
 
 The alternative build path `make identify` output commemorates a [previous IOCCC
 winning entry][9] which uses similar methods to mess with the size tool.
 
 
-### Judges' spoilers:
+### Judges' debobfuscaiton:
 
 It is not a bug, it is a feature. :)
 

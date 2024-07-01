@@ -225,7 +225,7 @@ character juxtaposed against a very ancient one, not to mention the program
 includes some famous name dropping and documents itself as usual.
 
 
-### Further spoilers, engineering, and obfuscation galore:
+### Further deobfuscation, engineering, and obfuscation galore:
 
 Those wait for you, curious and intrepid reader, in the attached
 [apholife.c](%%REPO_URL%%/2019/dogon/apholife.c) file, which is a partially obfuscated version of the

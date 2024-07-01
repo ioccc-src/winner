@@ -64,7 +64,7 @@ the source code from all angles..
 * Find `main()` function.
 
 
-### Spoiler
+### Deobfuscation
 
 This program is a joke PDP-11 emulator.  ("ll-dpd" is embedded in the code.
 Read it upside down.)

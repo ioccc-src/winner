@@ -150,7 +150,7 @@ The design of the program explicitly allows for `EOF` even if it does not equal
 endian-independent.
 
 
-### Obfuscations (SPOILERS!)
+### Debfuscation
 
 Many obfuscations used are typical for standard IOCCC entries:
 
@@ -218,7 +218,8 @@ Having said this important trick, other details should be relatively easier to
 follow. The order of lookup table, for example, is very important,
 and the biggest constant 6177 is not arbitrarily chosen.
 
-More spoilers can be found at <https://gist.github.com/lifthrasiir/3909337>
+Even [more deobfuscation information](https://gist.github.com/lifthrasiir/3909337) is available.
+
 
 ### Acknowledgement
 

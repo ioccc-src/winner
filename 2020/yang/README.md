@@ -37,7 +37,7 @@ What is compiling this entry about?
 [Having a good .. time](https://southpark.fandom.com/wiki/Asspen/Script)!
 
 This winning entry also comes with a [JavaScript timelapse
-spoiler](spoiler.html) that shows how this entry was written.
+deobfuscation](spoiler.html) that shows how this entry was written.
 
 
 ## Author's remarks:

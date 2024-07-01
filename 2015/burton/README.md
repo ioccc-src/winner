@@ -227,7 +227,8 @@ This allows for a convenient test suite:
     PATH=. eprog < test.in | diff - test.out
 ```
 
-### Spoilers:
+
+### Deobfuscation:
 
 If you do not want to puzzle out how it works, see [spoilers.html](spoilers.html).
 

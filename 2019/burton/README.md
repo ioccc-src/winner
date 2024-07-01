@@ -61,13 +61,13 @@ Compiles cleanly with:
 Included is a test script, useful for the corner cases.  As in all good Unix
 programs, it is silent upon success; any output demonstrates an error.  Instead
 of checking correctness, the [check.sh](%%REPO_URL%%/2019/burton/check.sh) script can simply output the
-results:   (The Makefile contains the spoiler):
+results:   (The Makefile contains some deobfuscation information):
 
 ``` <!---sh-->
     out=cat ./check.sh ./prog
 ```
 
-Interestingly, and a spoiler here: macOS and FreeBSD implement the common
+Interestingly, and a bit of deobfuscation here: macOS and FreeBSD implement the common
 utility "correctly".  CentOS and Ubuntu both share a "flawed" utility that
 changes output format based upon input redirection or pipeline(!).  As well, the
 latter two also behave slightly differently on what they count as whitespace:

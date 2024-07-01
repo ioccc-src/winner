@@ -62,7 +62,7 @@ terminal supports bold.
 
 Hint 2: Do `wc -c prog.c`.  This is very long one-liner.
 
-Spoiler: Open the source with an editor like `vim` or `emacs`.
+Deobfuscation hint: Open the source with an editor like `vim` or `emacs`.
 
 <!--
 

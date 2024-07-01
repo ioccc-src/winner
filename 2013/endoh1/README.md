@@ -106,7 +106,7 @@ and to satisfy IOCCC's size rule.
 
 These led to the good obfuscation.
 
-See [Spoiler section](#spoiler) in detail, if you need.
+See the [deobfuscation section](#Deobfuscation) in detail, if you need.
 
 
 ### Limitation
@@ -119,8 +119,8 @@ Also, it requires a space between identifiers.  In short, use `(S K)` instead of
 
 Huge memory may be required to compile the program (about 300 MB on my machine).
 
-In addition, there are some limitations (and workarounds) mentioned in [Spoiler
-section](#spoiler).
+In addition, there are some limitations (and workarounds) mentioned in
+the [deobfuscation section](#Deobfuscation).
 
 But I think it would only matter when you run the attached programs.
 
@@ -156,7 +156,7 @@ run it as a standalone program, at least.  In fact, tcc does not support the
 macro, but does work.
 
 
-### Spoiler
+### Deobfuscation
 
 The whole program is interpreted by macro expansion.
 For example, `S (K I)` is translated to a normal C code, `(s)((k)(i))`, or

@@ -62,7 +62,7 @@ more than 1000 words.
 You may want to use a large display with a very small terminal font.
 
 
-### Spoiler
+### Deobfuscation
 
 See [spoilers.html](spoilers.html).
 

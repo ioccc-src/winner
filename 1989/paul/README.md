@@ -41,7 +41,7 @@ better debugger or trace could easily be added.
 
 ## Judges' remarks:
 
-The author's comments is a detailed program explanation and spoiler.  If you
+The author's comments contains detailed deobfuscation information.  If you
 want a real challenge, don't read any further and try to understand the program
 via the source.
 

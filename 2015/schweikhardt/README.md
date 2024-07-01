@@ -380,7 +380,7 @@ to be.
 
 ### Examine the algorithm
 
-Spoilers ahead. Duh!
+Deobfuscation information ahead. Duh!
 
 Pseudocode, with comments matching those in the C source:
 

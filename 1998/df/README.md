@@ -111,20 +111,20 @@ I decided it would be better this way...
 These restrictions have been removed for your convenience.
 
 The following lines describe how this program works; if you don't
-want to know it at this time, please skip them. If this entry would
-by some mistake win the contest, please do not rot13 this - I hate
-rot13 spoilers since it is somewhat complicated on a Mac to
-reverse them. Anyone out there should have enough discipline and
-rot13 shouldn't be required, really. After all, we are not children
-anymore :-)
+want to know it at this time, please skip them.
+
+You should have enough discipline to make an effort to understand
+the code without reading the deobfuscation information below.
+After all, we are not children anymore :-)
+
+## Deobfuscation information
 
 <hr style="width:10%;text-align:left;margin-left:0">
 
 This paragraph is not part of the author's remarks, but is a helpful
 gift from the judges; if you read too fast to stop yourself, this should
 give you enough time to stop, which you really need to do RIGHT NOW if
-you don't want to read the spoilers, which really do spoil everything,
-we mean it.
+you don't want to read the deobfuscation information: we mean it.
 
 <hr style="width:10%;text-align:left;margin-left:0">
 

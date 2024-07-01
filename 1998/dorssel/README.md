@@ -112,7 +112,7 @@ is the same as
 ```
 
 - The file [dorssel.html](dorssel.html) contains all the information needed to
-understand this program.  For an obfuscated spoiler, try
+understand this program.  For deobfuscation information, try:
 
 ``` <!---sh-->
     ./dorssel < dorssel.md

@@ -185,7 +185,7 @@ The gameplay file is long but it includes game printouts as well as explaining
 the many different gameplay modes.  The [play.sh][] script automates most (if
 not all) of the gameplay modes described in the gameplay file (it also
 allows you to change colours like [snake-colours.sh][]) as well as the judges'
-suggestions (that I don't document so as to not spoil them). You can pass in
+suggestions (that I don't document so as to not deobfuscate them). You can pass in
 environmental variables to both scripts though obviously some will conflict with
 different options in play.sh.
 
@@ -519,7 +519,7 @@ I submitted three Snake versions; these are the other layouts for those few
 The [prog.2.c](%%REPO_URL%%/2020/ferguson1/prog.2.c) has more digraphs but I think no other significant differences.
 
 The [prog.3.c](%%REPO_URL%%/2020/ferguson1/prog.3.c) is in a more artistic layout (a backwards S), has at least one
-additional obfuscation technique (see spoilers) but it also has more digraphs
+additional obfuscation technique (see deobfuscation information) but it also has more digraphs
 and as the judges said they feel that digraphs are dated so that's probably why
 they chose the first layout. The [prog.3-j.c](%%REPO_URL%%/2020/ferguson1/prog.3-j.c) version is
 [prog.3.c](%%REPO_URL%%/2020/ferguson1/prog.3.c) with a shorter `J` macro.

@@ -111,7 +111,7 @@ To see the game from start to complete, try:
 
 Not all compiler errors are bad.
 
-For spoilers see the end of the notes from the author below.
+For deobfuscation information see the end of the notes from the author below.
 
 To use:
 
@@ -174,7 +174,7 @@ The goal of the game is to escape the dungeon.
 Here is a walk-through for the game, including a few dead-ends:
 
 
-### SPOILER
+### DEOBFUSCATION
 
 ``` <!---sh-->
     cc -Describe -Door westley.c

@@ -86,7 +86,7 @@ In other words, even if we took steps to present the algorithm clearly, (we
 haven't) the relation of the computation performed to the specification of what
 the program was supposed to do would still be hard to understand.
 
-### Quasi-spoiler on internals:
+### Quasi-deobfuscation on internals:
 
 The program plays [Conway's Game of
 Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) in the root window's

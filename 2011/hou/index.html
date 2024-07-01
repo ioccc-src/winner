@@ -462,7 +462,7 @@ the actual <code>argv</code> strings to be writable, though.</li>
 <li>This program doesn’t work with <code>%e</code> style numbers like <code>1e-4</code>.</li>
 <li>Some seemingly redundant code works to eliminate warnings and evade a gcc bug.</li>
 </ul>
-<h3 id="spoilers">Spoilers</h3>
+<h3 id="deobfuscation">Deobfuscation</h3>
 <p>The parser parses function names, subtraction, and division as single-letter
 unary operators. A bitmask encoded hash table is used to check no-ops/digits
 and another hash function maps the ASCII to a function ordinal, which is then

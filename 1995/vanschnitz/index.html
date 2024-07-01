@@ -408,7 +408,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- BEFORE: 1st line of markdown file: 1995/vanschnitz/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make all</code></pre>
-<p>The authors provided a spoiler version, originally uuencoded but uudecoded by us
+<p>The authors provided a deobfuscated version, originally uuencoded but uudecoded by us
 in 2023. See <a href="#alternate-code">Alternate code</a> below.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
@@ -419,10 +419,9 @@ in 2023. See <a href="#alternate-code">Alternate code</a> below.</p>
 <h2 id="try">Try:</h2>
 <pre><code>    ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
-<p>The authors provided a spoiler version of the program. Originally uuencoded we
-have decoded it for the wider audience in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/vanschnitz/vanschnitz.alt.c">vanschnitz.alt.c</a>. The
-<code>uuencode</code>d blob is still available in their remarks below. They encourage you
-to first try and figure out the program without the spoiler.</p>
+<p>The authors provided a deobfuscated version of the program. Originally uuencoded we
+have decoded it for the wider audience in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/vanschnitz/vanschnitz.alt.c">vanschnitz.alt.c</a>.</p>
+<p>They encourage you to first try and figure out the program without reading the deobfuscated version,</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
@@ -476,86 +475,9 @@ the resulting program (on a Unix system) is to do the command</p>
 solution wherein the disks end up on peg 2; for an even
 number of disks, they will end on peg 3. This should
 provide some hint as to what sort of algorithm is used.</p>
-<p>We have included a <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/vanschnitz/vanschnitz.alt.c">spoiler</a> version of the program, with
+<p>We have included a <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/vanschnitz/vanschnitz.alt.c">deobfuscated</a> version of the program, with
 meaningful symbol names and comments, but we encourage you
 to try to decipher the program without it…</p>
-<pre><code>    begin 444 spoiler.c
-    M(VEF;F1E9B`@24Y)5$E!3$E:140*&quot;B\J&quot;B`J(&quot;!)9B!N(&amp;ES;B=T(&amp;1E9FEN
-    M960L(&amp;UA:V4@:70@-0H@*B\*(VEF;F1E9B`@;@HC9&amp;5F:6YE(&quot;!N(#`U&quot;B-E
-    M;F1I9@H*+RH*(&quot;H@4V]M92!U&lt;V5F=6P@=F%R:6%B;&amp;5S&quot;B`J+PHC9&amp;5F:6YE
-    M(&quot;!42$E37T9)3$4@7U]&amp;24Q%7U\@&quot;B-D969I;F4@($9/4DU!5%]35%))3D&lt;@
-    M(DUO=F4@9&amp;ES:R`E9&quot;!F&lt;F]M(&#39;!E9R`E9&quot;!T;R!P96&lt;@)61&lt;;B(*(V1E9FEN
-    M92`@24Y)5$E!3$E:140*&quot;B\J&quot;B`J(%1R86YS;&amp;%T92!N(&amp;EN=&amp;\@8FET&lt;PH@
-    M*B\*(VEF(&quot;`@(&quot;`@;B8P,0HC9&amp;5F:6YE(&quot;!B:70P&quot;B-E;F1I9@HC:68@(&quot;`@
-    M(&quot;!N)C`R&quot;B-D969I;F4@(&amp;)I=#$*(V5N9&amp;EF&quot;B-I9B`@(&quot;`@(&amp;XF,#0*(V1E
-    M9FEN92`@8FET,@HC96YD:68*(VEF(&quot;`@(&quot;`@;CX^,PHC9&amp;5F:6YE(&quot;!B:70S
-    M&quot;B-E;F1I9@H*+RH*(&quot;H@2&amp;5R92=S(&#39;1H92!P&lt;F]G&lt;F%M(0H@*B\*;6%I;B@I
-    M&gt;PIP&lt;FEN=&amp;8H&quot;B-I;F-L=61E(%1(25-?1DE,10HC9&amp;5F:6YE(&quot;!.3U=?1$]?
-    M5$A%7TY534)%4E,*(VEN8VQU9&amp;4@5$A)4U]&amp;24Q%&quot;BD[?0H*(V5L&lt;V4*&quot;B\J
-    M&quot;B`J($-H96-K(&#39;1O(&#39;-E92!I9B!T:&amp;4@;G5M8F5R(&amp;ES(&#39;IE&lt;F\@*&amp;)O=&#39;1O
-    M;2!O9B!R96-U&lt;G-I;VXI&quot;B`J+PHC:69D968@(&quot;!B:70P&quot;B-D969I;F4@($Y?
-    M25-?3D]47UI%4D\*(V5N9&amp;EF&quot;B-I9F1E9B`@(&amp;)I=#$*(V1E9FEN92`@3E])
-    M4U].3U1?6D523PHC96YD:68*(VEF9&amp;5F(&quot;`@8FET,@HC9&amp;5F:6YE(&quot;!.7TE3
-    M7TY/5%]:15)/&quot;B-E;F1I9@HC:69D968@(&quot;!B:70S&quot;B-D969I;F4@($Y?25-?
-    M3D]47UI%4D\*(V5N9&amp;EF&quot;@HC:69D968@(&quot;!.7TE37TY/5%]:15)/&quot;B-U;F1E
-    M9B`@($Y?25-?3D]47UI%4D\*&quot;B\J&quot;B`J($1E8W)E;65N=&quot;!N&quot;B`J+PHC:69N
-    M9&amp;5F(&quot;!B:70P&quot;B-D969I;F4@(&amp;)I=#`*(VEF;F1E9B`@8FET,0HC9&amp;5F:6YE
-    M(&quot;!B:70Q&quot;B-I9FYD968@(&amp;)I=#(*(V1E9FEN92`@8FET,@HC:69N9&amp;5F(&quot;!B
-    M:70S&quot;B-D969I;F4@(&amp;)I=#,*(V5L&lt;V4*(W5N9&amp;5F(&quot;`@8FET,PHC96YD:68*
-    M(V5L&lt;V4*(W5N9&amp;5F(&quot;`@8FET,@HC96YD:68*(V5L&lt;V4*(W5N9&amp;5F(&quot;`@8FET
-    M,0HC96YD:68*(V5L&lt;V4*(W5N9&amp;5F(&quot;`@8FET,`HC96YD:68*&quot;B\J&quot;B`J(&quot;!(
-    M97)E)W,@&lt;F5C=7)S:6]N&quot;B`J+PHC:6YC;&#39;5D92!42$E37T9)3$4*&quot;B\J&quot;B`J
-    M(&quot;!.;W1E.B!/9&amp;0@;G5M8F5R960@9&amp;ES:W,@86QW87ES(&amp;-Y8VQE(&amp;9R;VT@
-    M,2`]/B`R(#T^(#,@/3X@,2`]/B`R(#T^(#,*(&quot;H@($5V96X@;G5M8F5R960@
-    M9&amp;ES:W,@86QW87ES(&amp;-Y8VQE(&amp;9R;VT@,2`]/B`S(#T^(#(@/3X@,2`]/B`S
-    M(#T^(#(*(&quot;HO&quot;@HO*@H@*B!#:&amp;5C:R!T;R!S964@:68@;B!I&lt;R!Z97)O+B!)
-    M9B!S;RP@=V4G&lt;F4@;6]V:6YG(&amp;1I&lt;VL@,2X*(&quot;H@26X@9V5N97)A;&quot;P@9F]R
-    M(&amp;%N&gt;2!N(&#39;=E)W)E(&amp;UO=FEN9R!D:7-K(&amp;XK,2X@5&amp;AA=&quot;!M96%N&lt;R!T:&amp;%T
-    M&quot;B`J(&#39;=H96X@;B!I&lt;R!O9&amp;0L(&#39;=E)W)E(&amp;UO=FEN9R!A;B!E=F5N(&amp;1I&lt;VLL
-    M(&amp;%N9&quot;!V:6-E(&#39;9E&lt;G-A+@H@*B\*(VEF;F1E9B`@8FET,`HC:69N9&amp;5F(&quot;!B
-    M:70Q&quot;B-I9FYD968@(&amp;)I=#(*(VEF;F1E9B`@8FET,PHC9&amp;5F:6YE(&quot;!.7TE3
-    M7UI%4D\*(V5N9&amp;EF&quot;B-E;F1I9@HC96YD:68*(V5N9&amp;EF&quot;@HC:69D968@(&quot;!.
-    M7TE37UI%4D\*(W5N9&amp;5F(&quot;`@3E])4U]:15)/&quot;@HC:69N9&amp;5F(&quot;!.3U=?1$]?
-    M5$A%7TY534)%4E,*1D]234%47U-44DE.1PHC96QS90H*+RH*(&quot;H@($EF(&amp;1I
-    M&lt;VL@,2!I&lt;R!O;B!P96&lt;@,BP@;6]V92!I=&quot;`R(#T^(#,*(&quot;HO&quot;B-I9F1E9B`@
-    M($1)4TM?3TY%7TE37T].7U!%1U]45T\*+#$L,BPS&quot;B-U;F1E9B`@($1)4TM?
-    M3TY%7TE37T].7U!%1U]45T\*(V1E9FEN92`@1$E32U]/3D5?25-?3TY?4$5&#39;
-    M7U1(4D5%&quot;B-E;&#39;-E&quot;@HO*@H@*B`@268@9&amp;ES:R`Q(&amp;ES(&amp;]N(&#39;!E9R`S+&quot;!M
-    M;W9E(&amp;ET(#,@/3X@,0H@*B\*(VEF9&amp;5F(&quot;`@1$E32U]/3D5?25-?3TY?4$5&#39;
-    M7U1(4D5%&quot;BPQ+#,L,0HC=6YD968@(&quot;!$25-+7T].15])4U]/3E]014=?5$A2
-    M144*(V5L&lt;V4*&quot;B\J&quot;B`J(&quot;!$:7-K(#$@;75S=&quot;!B92!O;B!P96&lt;@,2X@36]V
-    M92!I=&quot;`Q(#T^(#(*(&quot;HO&quot;BPQ+#$L,@HC9&amp;5F:6YE(&quot;!$25-+7T].15])4U]/
-    M3E]014=?5%=/&quot;B-E;F1I9@HC96YD:68*(V5N9&amp;EF&quot;B-E;&#39;-E&quot;@HO*@H@*B`@
-    M2&amp;5R92P@=V4@:&amp;%N9&amp;QE(&amp;1I&lt;VMS(#XQ+B!296UE;6)E&lt;B!T:&amp;%T(&amp;]D9&#39;,@
-    M8WEC;&amp;4@,2`]/B`R(#T^(#,@/3X@,2P*(&quot;H@(&amp;%N9&quot;!E=F5N&lt;R!C&gt;6-L92`Q
-    M(#T^(#(@/3X@,R`]/B`Q+B!#;VUB:6YE(&#39;1H:7,@=VET:&quot;!T:&amp;4@:VYO=VQE
-    M9&amp;=E&quot;B`J(&quot;!O9B!W:&amp;5R92!D:7-K(#$@:7,L(&amp;%N9&quot;!W92!C86X@9&amp;5T97)M
-    M:6YE(&amp;AO=R!T;R!M;W9E(&amp;%N&gt;2!D:7-K+@H@*B\*(VEF;F1E9B`@3D]77T1/
-    M7U1(15].54U&quot;15)3&quot;D9/4DU!5%]35%))3D&lt;*(V5L&lt;V4*&quot;B\J&quot;B`J(&quot;!0&lt;FEN
-    M=&quot;!T:&amp;4@9&amp;ES:R!N=6UB97(N(%)E;65M8F5R+&quot;!D:7-K(&amp;YU;6)E&lt;B`](&amp;XK
-    M,0H@*B\*+#$*(VEF9&amp;5F(&quot;`@8FET,`HK,0HC96YD:68*(VEF9&amp;5F(&quot;`@8FET
-    M,0HK,@HC96YD:68*(VEF9&amp;5F(&quot;`@8FET,@HK-`HC96YD:68*(VEF9&amp;5F(&quot;`@
-    M8FET,PHK.`HC96YD:68*&quot;B\J&quot;B`J(&quot;!$:7-K(#$@;VX@&lt;&amp;5G(#(@&quot;B`J+PHC
-    M:69D968@(&quot;!$25-+7T].15])4U]/3E]014=?5%=/&quot;B-I9F1E9B`@(&amp;)I=#`*
-    M+#$L,R`@(&quot;`O*B!%=F5N.B`Q(#T^(#,@(&quot;AN(&amp;ES(&amp;]D9&quot;P@&lt;V\@=&amp;AE(&amp;1I
-    M&lt;VL@:7,@979E;BD@*B\*(V5L&lt;V4*+#,L,2`@(&quot;`O*B`@3V1D.B`S(#T^(#$@
-    M(&quot;HO&quot;B-E;F1I9@HC96QS90H*+RH*(&quot;H@($1I&lt;VL@,2!O;B!P96&lt;@,R`*(&quot;HO
-    M&quot;B-I9F1E9B`@($1)4TM?3TY%7TE37T].7U!%1U]42%)%10HC:69D968@(&quot;!B
-    M:70P&quot;BPR+#$@(&quot;`@+RH@179E;CH@,B`]/B`Q(&quot;HO&quot;B-E;&#39;-E&quot;BPQ+#(@(&quot;`@
-    M+RH@($]D9#H@,2`]/B`R(&quot;HO&quot;B-E;F1I9@HC96QS90H*+RH*(&quot;H@($1I&lt;VL@
-    M,2!O;B!P96&lt;@,2`*(&quot;HO&quot;B-I9F1E9B`@(&amp;)I=#`*+#,L,B`@(&quot;`O*B!%=F5N
-    M.B`S(#T^(#(@*B\*(V5L&lt;V4*+#(L,R`@(&quot;`O*B`@3V1D.B`R(#T^(#,@*B\*
-    M(V5N9&amp;EF&quot;B-E;F1I9@HC96YD:68*(V5N9&amp;EF&quot;B-E;F1I9@H*+RH*(&quot;H@($UO
-    M&lt;F4@&lt;F5C=7)S:6]N&quot;B`J+PHC:6YC;&#39;5D92!42$E37T9)3$4*&quot;B\J&quot;B`J(&quot;!)
-    M;F-R96UE;G0@;@H@*B\*(VEF9&amp;5F(&quot;`@8FET,`HC=6YD968@(&quot;!B:70P&quot;B-I
-    M9F1E9B`@(&amp;)I=#$*(W5N9&amp;5F(&quot;`@8FET,0HC:69D968@(&quot;!B:70R&quot;B-U;F1E
-    M9B`@(&amp;)I=#(*(VEF9&amp;5F(&quot;`@8FET,PHC=6YD968@(&quot;!B:70S&quot;B-E;&#39;-E&quot;B-D
-    M969I;F4@(&amp;)I=#,*(V5N9&amp;EF&quot;B-E;&#39;-E&quot;B-D969I;F4@(&amp;)I=#(*(V5N9&amp;EF
-    M&quot;B-E;&#39;-E&quot;B-D969I;F4@(&amp;)I=#$*(V5N9&amp;EF&quot;B-E;&#39;-E&quot;B-D969I;F4@(&amp;)I
-    M=#`*(V5N9&amp;EF&quot;@HC96YD:68@(&quot;\J(&quot;-I9F1E9B!.7TE37TY/5%]:15)/(&quot;HO
-    M&quot;@HC96YD:68@(&quot;\J(&quot;-E;&#39;-E(&amp;]F(&quot;-I9FYD968@24Y)5$E!3$E:140@*B\*
-    `
-    end</code></pre>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

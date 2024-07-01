@@ -248,7 +248,7 @@ changing the definitions of `W`, `H` and `I` at the beginning of the code.
   parameter.
 
 
-### Spoiler
+### Deobfuscation
 
 Sure, I don't want to deprive you of the pleasure of digging
 into the infernal mess created by my corrupted mind (writing

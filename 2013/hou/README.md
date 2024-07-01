@@ -192,7 +192,7 @@ quite memory consuming, requires IEEE754-compliant `double`, and assumes `int` t
 doesn't copy saved sessions across different endianness.
 
 
-### Spoiler
+### Deobfuscation
 
 ```
     3225  3225  3225  9  9    3225  3225

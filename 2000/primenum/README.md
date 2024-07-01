@@ -34,7 +34,7 @@ NOTE: `n` is an integer.
 
 ## Judges' remarks:
 
-Don't read the author remarks until you're ready for the spoiler.
+Don't read the author remarks until you're ready for some obfuscation information.
 Just stop and read the program; it won't take long.  Once you've figured
 out what it does, run it.  It may surprise you.
 

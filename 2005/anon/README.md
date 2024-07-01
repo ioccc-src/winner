@@ -202,7 +202,7 @@ hit enter after every key), but it works.
 The game requires lots of space on the runtime stack space due to deep
 recursion, among other things. :-)
 
-See spoilers below for more notes about portability.
+See the "**DEOBFUSCATION**" section below for more notes about portability.
 
 
 ### ABOUT THE CODE
@@ -280,7 +280,7 @@ It probably will also compile and work on many (all?) other \*nix platforms as
 well. How does it achieve this incredible feat?
 
 
-### SPOILER
+### DEOBFUSCATION
 
 Read the following only if you give up figuring it out :-)
 

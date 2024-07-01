@@ -117,7 +117,7 @@ If you find yourself in an evolutionary dead end, try:
 0. Preface
 1. What it is
 2. How it works
-3. Hints (Keyboards, Options, Spoilers, Example Invocations)
+3. Hints (Keyboards, Options, Deobfuscation, Example Invocations)
 4. Obfuscation (Techniques, Beauty)
 5. How to build (S and N Constants, Compilation, Portability, Installing)
 6. Final thoughts
@@ -125,10 +125,10 @@ If you find yourself in an evolutionary dead end, try:
 
 ## **0. Preface**
 
-**SPOILER WARNING: A great deal of this document and the man page is full of
-spoilers of different types; as such I would recommend that you try running the
+**DEOBFUSCATION NOTES: A great deal of this document and the man page is full of
+deobfuscation information of different types; as such I would recommend that you try running the
 judges suggested invocations as well as running `make test` before you get into
-the document or the man page, unless you don't mind any spoilers. I don't reveal
+the document or the man page, unless you don't mind reading deobfuscation information. I don't reveal
 much in the way of obfuscation however so if you just want documentation on the
 program, how to compile, etc. then there isn't need to heed this note.**
 
@@ -165,7 +165,7 @@ thoroughly in **[Hints](#hints)**).
 **[Hints](#hints):** Perhaps the longest part of this document because in it I
 document the [keyboards](#keyboards), [options](#options), subtleties, including
 features that might appear to be bugs but aren't - including an
-[input error](#error), an [Easter egg spoiler](#spoiler) and quite a few
+[input error](#error), an [Easter egg obfuscation](#obfuscation) and quite a few
 [example invocations](#invocations). If you've read the man page you probably
 don't need this unless there is something specific you're after.
 
@@ -263,7 +263,7 @@ try and show the way they work) for those interested I will cite the summary:
     the fittest individuals dominating over the weaker ones.
 ```
 
-**SPOILER WARNING: Some of the below might help you follow the code more
+**DEOBFUSCATION NOTE: Some of the below might help you follow the code more
 easily.**
 
 For each *generation* there is a total of `N` *offspring*; generation 0 is
@@ -387,7 +387,7 @@ can actually produce but there is a certain type of input error that might
 ### Options
 </div>
 
-Skip to [Spoilers](#spoiler).
+Skip to the [deobfuscation section](#deobfuscation).
 
 There are a number of options you can pass to the program besides the target
 string; some I will document here (the summary being in the man page). You can
@@ -453,7 +453,7 @@ decent parameters - come to an answer here but if necessary kill the program.
 
 4. Repeat the steps only this time don't enable quiet mode. Look at the
 offspring output. If you still don't see what it is and want to know see
-**[Spoilers](#spoiler)** below.
+**[Deobfuscation information](#deobfuscation)** below.
 
 Finally any argument that doesn't start with a `-` passed into the program
 will become the target string. The same rule applies to the number for `-r`:
@@ -558,8 +558,8 @@ it no longer cares about the `-` for option parsing. In other words options
 are only parsed if the first character is `-` and if the parser hasn't seen
 the `-` - *in an earlier element of `argv`. This is not a bug!*
 
-<div id="spoiler">
-### Spoilers
+<div id="deobfuscation">
+### Deobfuscation
 </div>
 
 Skip to [Example Invocations](#invocations).
@@ -981,7 +981,7 @@ implementation of the Weasel program otherwise).
 There is obviously a reason `38` is the chosen size but the only hints I
 provide are those in **[How it works](#how)** and specifically an Easter egg I
 referenced there (it's *not the only Easter egg* but it's the only Easter egg I
-won't spoil; yes this ironically and amusingly means I've left a rotten egg
+won't deobfuscate; yes this ironically and amusingly means I've left a rotten egg
 somewhere!).
 
 The Makefile simplifies how to reconfigure this value with the variable
