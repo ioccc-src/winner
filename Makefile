@@ -518,7 +518,7 @@ faq: ${GEN_TOP_HTML} faq.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	@echo "You have a question?"
 	${GEN_TOP_HTML} -v 1 faq
-	@echo "Perhaps the FAQ might help."
+	@echo "Perhaps the FAQ might help!"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 

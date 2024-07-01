@@ -43,7 +43,7 @@ writing by [contacting the judges](../contact.html).
 ## IOCCC Rules version
 </div>
 
-**`|`**   These [IOCCC rules](rules.html) are version **28.2 2024-06-30**.
+**`|`**   These [IOCCC rules](rules.html) are version **28.3 2024-07-01**.
 
 **IMPORTANT**: Be sure to read the [IOCCC guidelines](guidelines.html).
 
@@ -331,10 +331,10 @@ it is needed in your submissions `remarks.md` file.
 ## Rule 12
 </div>
 
-Legal abuse of the rules is somewhat encouraged.  A submission that, in
-the opinion of the judges, violates the rules will be disqualified.
-Entries that attempt to abuse the rules **MUST** try to justify why
-their rule abuse is legal, in the submission's `remarks.md` file.
+**Legal** abuse of the rules is somewhat encouraged.  **A submission that, in
+the opinion of the judges, **violates the rules will be disqualified**.
+Submissions that attempt to abuse the rules **MUST** try to justify why
+their rule abuse is legal, in the `remarks.md` file.
 
 
 <div id="rule13">
@@ -401,12 +401,16 @@ contains **IMPORTANT** tools such as:
 * `mkiocccentry(1)`
 * `txzchk(1)`
 * `fnamchk(1)`
+* `jparse(1)` and `jparse(8)` (which `chkentry(1)` uses)
 
 **`|`**   The above mentioned tools will help you verify that your submission
 conforms to [Rule 17](#rule17).
 
 **`|`**   Each above mentioned tools has a `-h` option that provides command
 line help.  For additional details, see the tools' man pages.
+
+**`|`**   You do not explicitly need to invoke `jparse(1)` but the `jparse(8)`
+library will be used when compiling various tools.
 
 
 ### Rule 17 - The COMPLEX details

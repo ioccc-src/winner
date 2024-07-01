@@ -413,7 +413,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 <div id="rules_version">
 <h2 id="ioccc-rules-version">IOCCC Rules version</h2>
 </div>
-<p><strong><code>|</code></strong> These <a href="rules.html">IOCCC rules</a> are version <strong>28.2 2024-06-30</strong>.</p>
+<p><strong><code>|</code></strong> These <a href="rules.html">IOCCC rules</a> are version <strong>28.3 2024-07-01</strong>.</p>
 <p><strong>IMPORTANT</strong>: Be sure to read the <a href="guidelines.html">IOCCC guidelines</a>.</p>
 <div id="change_marks">
 <h3 id="change-marks">Change marks</h3>
@@ -604,10 +604,10 @@ it is needed in your submissions <code>remarks.md</code> file.</p>
 <div id="rule12">
 <h2 id="rule-12">Rule 12</h2>
 </div>
-<p>Legal abuse of the rules is somewhat encouraged. A submission that, in
-the opinion of the judges, violates the rules will be disqualified.
-Entries that attempt to abuse the rules <strong>MUST</strong> try to justify why
-their rule abuse is legal, in the submission’s <code>remarks.md</code> file.</p>
+<p><strong>Legal</strong> abuse of the rules is somewhat encouraged. <strong>A submission that, in
+the opinion of the judges, </strong>violates the rules will be disqualified<strong>.
+Submissions that attempt to abuse the rules </strong>MUST** try to justify why
+their rule abuse is legal, in the <code>remarks.md</code> file.</p>
 <div id="rule13">
 <h2 id="rule-13">Rule 13</h2>
 </div>
@@ -653,11 +653,14 @@ contains <strong>IMPORTANT</strong> tools such as:</p>
 <li><code>mkiocccentry(1)</code></li>
 <li><code>txzchk(1)</code></li>
 <li><code>fnamchk(1)</code></li>
+<li><code>jparse(1)</code> and <code>jparse(8)</code> (which <code>chkentry(1)</code> uses)</li>
 </ul>
 <p><strong><code>|</code></strong> The above mentioned tools will help you verify that your submission
 conforms to <a href="#rule17">Rule 17</a>.</p>
 <p><strong><code>|</code></strong> Each above mentioned tools has a <code>-h</code> option that provides command
 line help. For additional details, see the tools’ man pages.</p>
+<p><strong><code>|</code></strong> You do not explicitly need to invoke <code>jparse(1)</code> but the <code>jparse(8)</code>
+library will be used when compiling various tools.</p>
 <h3 id="rule-17---the-complex-details">Rule 17 - The COMPLEX details</h3>
 <p><strong><code>|</code></strong> Each submission <strong>MUST</strong> be in the form of a xz compressed tarball.</p>
 <p><strong><code>|</code></strong> The xz compressed tarball filename must be of the form:</p>
