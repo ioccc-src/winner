@@ -1,4 +1,4 @@
-# Spoiler
+# Deobfuscation
 
 The program implements a so called [Krivine
 machine](https://en.wikipedia.org/wiki/Krivine_machine), enhanced with a [basic

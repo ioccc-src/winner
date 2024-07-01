@@ -192,12 +192,9 @@ dirtiest IF`:
 
 They can be mixed, of course!
 
-8. NOTE: item 8 was removed by the judges so as to not spoil the challenge of
-figuring how arguments can be used to alter the exit value.
+8. The variable names are confusing.
 
-9. The variable names are confusing.
-
-10. Finally, the program tries to be as concise as possible. Some obfuscation
+9. Finally, the program tries to be as concise as possible. Some obfuscation
 comes from this. For additional obfuscation and conciseness, `if` means `while`.
 
 

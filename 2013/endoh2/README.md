@@ -62,7 +62,7 @@ I believe that the JPEG encoder is the world's smallest ever.
 Nevertheless, the program was too big to meet the IOCCC's size rule.  So I
 created a smaller bootstrap program that generates the main program.  `endoh2.c`
 contains fragments of the main program *as a comment* which `iocccsize -i` does
-*not* count.  I gratefully thank the judges for spoiling the size rule this
+*not* count.  I gratefully thank the judges for deobfuscating the size rule this
 year.
 
 I think the program will work on any major platforms and compilers.
