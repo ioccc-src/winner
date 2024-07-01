@@ -266,6 +266,142 @@ Yes Virginia, **that is a hint**!
 value similar to the [2001-2012](../faq.html#size_rule2001-2012) and
 [2013-2020](../faq.html#size_rule2013-2020) IOCCC eras.
 
+**`|`**   [Rule 17](rules.html#rule17) (the `mkiocccentry(1)` rule) states that
+you **MUST** use the `mkiocccentry(1)` tool to package your submission tarball.
+
+**`|`**   See the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)
+for the `mkiocccentry(1)` tool.
+
+**`|`**   This tool invokes a number of other tools and one, `txzchk(1)`,
+invokes another, `fnamchk(1)`.
+
+**`|`**   Although the `mkiocccentry(1)` tool will verify everything for you,
+you may wish to validate each part individually. As the [rules](rules.html)
+state, each of these tools have a `-h` option. However, to help simplify
+matters, we give you a brief overview below.
+
+**`|`**   The synopsis of the `mkiocccentry(1)` tool is:
+
+``` <!---sh-->
+    ./mkiocccentry [options] work_dir prog.c Makefile remarks.md [file ...]
+```
+
+**`|`** where the `work_dir` is a directory that is used to form the
+xz compressed tarball that `txzchk(1)` validates, `prog.c` is your submission
+source code, `Makefile` is your `Makefile`, `remarks.md` is your remarks and
+`[file ...]` are any additional files you wish to provide.
+
+**`|`**   If the `work_dir` already exists it is an error.
+
+**`|`**   The `mkiocccentry(1)` tool will ask you for information about your
+submission as well as author details and it will run the `iocccsize(1)` tool; if
+either [Rule 2a](rules.html#rule2a) or [Rule 2b](rules.html#rule2b) are broken,
+it will give you the option to ignore them, if you are willing to risk this. The
+tool will also do a rudimentary check on the `Makefile` and run other checks as
+well. You can override warnings but doing so puts you at risk of violating
+[rules](rules.html).
+
+**`|`**   On the other hand, some **issues are an error** and the xz compressed
+tarball **will not be formed**. For instance, if `chkentry(1)` fails to validate the
+`.auth.json` or `.info.json` JSON files that `mkiocccentry(1)` creates, it is an error and
+possibly a bug that you should report at the [mkiocccentry issues
+page](https://github.com/ioccc-src/mkiocccentry/issues).
+
+**`|`**   Assuming that `chkentry(1)` passes for both `.auth.json` and
+`.info.json` then the tarball will be formed and then `txzchk(1)` will be
+executed. In this case, there should be no problems as `mkiocccentry(1)` should
+**NOT** form a tarball if there are any issues.
+
+**`|`**  `txzchk(1)` performs a wide number of sanity checks on the xz
+compressed tarball and if any issues (`feathers` :-) ) are found then it is very
+possibly a bug in one of the tools and you should report it at the [mkiocccentry
+issues page](https://github.com/ioccc-src/mkiocccentry/issues).
+
+**`|`**  As part of its sanity checks, `txzchk(1)` will run `fnamchk(1)` on the
+_filename_ to verify that the name is valid. If this test does not pass, then it
+is flagged by `txzchk(1)` but it is not an error if you wish to ignore it.
+Ignoring this, however, risks violating [Rule 17](rules.html#rule17) which is a
+big risk.
+
+**`|`**  `txzchk(1)` will show the contents of the tarball which is how the
+`mkiocccentry(1)` shows you the tarball contents for you to review.
+
+**`|`**  To help you with editing a submission, the `mkiocccentry(1)` tool has
+some options to write _OR_ read from an answers file so you do not have to input
+the information again. To write to answers.txt try:
+
+``` <!---sh-->
+    ./mkiocccentry -a answers.txt ...
+```
+
+**`|`**  Alternatively, if you wish to overwrite a file, you can use the `-A`
+flag with the same option argument. Be careful that you do not accidentally
+overwrite your `prog.c`!
+
+**`|`**   To make use of the answers file, use the `-i answers` option like:
+
+``` <!---sh-->
+    ./mkiocccentry -i answers.txt ...
+```
+
+**`|`** If you wish to manually run the commands you can do so. For instance, to
+check the validity of the tarball
+`submit.12345678-1234-4321-abcd-1234567890ab-2.1719574527.txz ` you can do:
+
+``` <!---sh-->
+    ./txzchk submit.12345678-1234-4321-abcd-1234567890ab-2.1719574527.txz
+```
+
+**`|`** Assuming that the tarball exists and is valid, you should see the
+contents of the tarball and the words:
+
+> No feathers stuck in tarball.
+
+**`|`**  If you give the option `-q` it will not report anything unless there
+are certain error conditions, for instance `fnamchk(1)` reports there is a
+problem with the filename; if `txzchk(1)` exits 0 then there are no problems
+detected.
+
+**`|`**  If you wish to run `fnamchk(1)` directly you can do so like:
+
+``` <!---sh-->
+    ./fnamchk submit.12345678-1234-4321-abcd-1234567890ab-2.1719574527.txz
+```
+
+**`|`** Assuming everything is OK, it would show:
+
+> `12345678-1234-4321-abcd-1234567890ab-2`
+
+**`|`** ... which `txzchk(1)` uses.
+
+**`|`**  If you want to validate the `.auth.json` or `.info.json` files you
+should use `chkentry(1)`. `chkentry(1)` accepts more than one command line form.
+If you pass a single argument, it is expected to be a directory that has both
+`.auth.json` and `.info.json` in it. You can also specify a `.auth.json` and/or
+`.info.json` file. An argument of `.` will skip that file. For instance:
+
+``` <!---sh-->
+    ./chkentry test_work   # tests entry directory test_work
+
+    ./chkentry .info.json .  # run checks on .info.json file
+
+    ./chkentry . .auth.json  # run checks on .auth.json
+
+    ./chkentry .info.json .auth.json  # run check on both files
+```
+
+**`|`**  If there is a JSON error detected by `jparse(8)`, then it is an error
+and `chkentry(1)` will report this. If an issue is found in one or both of the
+JSON files it will also report this.
+
+**`|`** At the risk of stating the obvious: you run a very big risk of having
+your submission rejected if you package your own tarball and there are any
+problems. Even if everything checks out OK you should not expect that everything
+**IS** OK.
+
+**`|`** As you can see, the use of `mkiocccentry(1)` is **HIGHLY RECOMMENDED**.
+
+
 **`|`**   We recommend that you use the
 [example Makefile](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example)
 from the [IOCCC mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry).
