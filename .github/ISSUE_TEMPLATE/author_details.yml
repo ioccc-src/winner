@@ -1,7 +1,7 @@
 name: Author details
 description: Report a problem with information about a winning author
 title: "[Author] <title>"
-labels: ["Author"]
+labels: ["author"]
 body:
 - type: checkboxes
   attributes:
