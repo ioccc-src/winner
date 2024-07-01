@@ -4140,8 +4140,8 @@
 2020,ferguson1,cannibalism.log.html,100,false,html,false,shows extreme cannibalism mode output
 2020,ferguson1,chocolate-cake.html,100,false,html,false,Double-layered Chocolate Fudge Cake Recipe
 2020,ferguson1,crazy.log.html,100,false,html,false,explains various odd screen dumps
-2020,ferguson1,deobfuscation.html,100,false,html,false,Deobfuscation information about the code
 2020,ferguson1,gameplay.html,100,false,html,false,many different gameplay modes described
+2020,ferguson1,obfuscation.html,100,false,html,false,detailed information about the obfuscation of the code
 2020,ferguson1,terminals.html,100,false,html,false,terminal capabilities and dimensions and colours
 2020,ferguson1,troubleshooting.html,100,false,html,false,troubleshooting Snake
 2020,ferguson1,prog.2.c,150,true,c,true,source code with more digraphs
@@ -4158,11 +4158,11 @@
 2020,ferguson1,cannibalism.log.md,4000000000,true,markdown,true,markdown source for cannibalism.log.html
 2020,ferguson1,chocolate-cake.md,4000000000,true,markdown,true,markdown source for chocolate-cake.html
 2020,ferguson1,crazy.log.md,4000000000,true,markdown,true,markdown source for crazy.log.html
-2020,ferguson1,deobfuscation.md,4000000000,true,markdown,true,markdown source for deobfuscation.html
 2020,ferguson1,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
 2020,ferguson1,gameplay.md,4000000000,true,markdown,true,markdown source for gameplay.html
 2020,ferguson1,.gitignore,4000000000,true,gitignore,true,list of files that should not be committed under git
 2020,ferguson1,ioccc-cake.jpg,4000000000,true,image,false,image of Double-layered Chocolate Fudge Cake with 'IOCCC'
+2020,ferguson1,obfuscation.md,4000000000,true,markdown,true,markdown source for obfuscation.html
 2020,ferguson1,.path,4000000000,false,path,true,directory path from top level directory
 2020,ferguson1,terminals.md,4000000000,true,markdown,true,markdown source for terminals.html
 2020,ferguson1,troubleshooting.md,4000000000,true,markdown,true,markdown source for troubleshooting.html

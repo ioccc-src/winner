@@ -106,20 +106,20 @@
 	    "entry_text" : "explains various odd screen dumps"
 	},
 	{
-	    "file_path" : "deobfuscation.html",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "Deobfuscation information about the code"
-	},
-	{
 	    "file_path" : "gameplay.html",
 	    "inventory_order" : 100,
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
 	    "entry_text" : "many different gameplay modes described"
+	},
+	{
+	    "file_path" : "obfuscation.html",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "detailed information about the obfuscation of the code"
 	},
 	{
 	    "file_path" : "terminals.html",
@@ -274,14 +274,6 @@
 	    "entry_text" : "markdown source for crazy.log.html"
 	},
 	{
-	    "file_path" : "deobfuscation.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for deobfuscation.html"
-	},
-	{
 	    "file_path" : "gameplay.md",
 	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
@@ -296,6 +288,14 @@
 	    "display_as" : "image",
 	    "display_via_github" : false,
 	    "entry_text" : "image of Double-layered Chocolate Fudge Cake with 'IOCCC'"
+	},
+	{
+	    "file_path" : "obfuscation.md",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "markdown",
+	    "display_via_github" : true,
+	    "entry_text" : "markdown source for obfuscation.html"
 	},
 	{
 	    "file_path" : "terminals.md",

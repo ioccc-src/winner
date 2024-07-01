@@ -1196,9 +1196,9 @@
 2020/ferguson1/cannibalism.log.html
 2020/ferguson1/chocolate-cake.html
 2020/ferguson1/crazy.log.html
-2020/ferguson1/deobfuscation.html
 2020/ferguson1/gameplay.html
 2020/ferguson1/index.html
+2020/ferguson1/obfuscation.html
 2020/ferguson1/prog.orig.c
 2020/ferguson1/terminals.html
 2020/ferguson1/troubleshooting.html

@@ -2948,9 +2948,9 @@
 2020/ferguson1/cannibalism.log.md
 2020/ferguson1/chocolate-cake.md
 2020/ferguson1/crazy.log.md
-2020/ferguson1/deobfuscation.md
 2020/ferguson1/gameplay.md
 2020/ferguson1/ioccc-cake.jpg
+2020/ferguson1/obfuscation.md
 2020/ferguson1/play.sh
 2020/ferguson1/prog.2.c
 2020/ferguson1/prog.3-j.c

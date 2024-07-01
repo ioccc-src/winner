@@ -137,7 +137,7 @@ Bugs and things that might seem like bugs but are not.
 
 Because most of us could use some *Double-layered Chocolate Fudge Cake*!
 
-* [deobfuscation.html](deobfuscation.html)
+* [obfuscation.html](obfuscation.html)
 
 Read ***ONLY*** if you really must give up trying to de-obfuscate!
 
@@ -201,7 +201,7 @@ The [terminals.html](terminals.html) has a variety of information
 specific to terminals from input/directions, dimensions, sanity and colours: a
 sort of troubleshooting guide for terminals with some additional information.
 
-The [deobfuscation.html](deobfuscation.html) has a variety of information
+The [obfuscation.html](obfuscation.html) has a variety of information
 including some of the obfuscation techniques and a bit of how it works.
 
 The [bugs.html](bugs.html) has a list of known bugs and things that
@@ -594,7 +594,7 @@ email but I'm more likely to respond to mastodon messages.
 [troubleshooting.html]: troubleshooting.html
 [human snakes]: http://www.macroevolution.net/snake-human-hybrids.html
 [chocolate-cake.html]: chocolate-cake.html
-[deobfuscation.html]: deobfuscation.html
+[obfuscation.html]: obfuscation.html
 [Surround]: https://en.wikipedia.org/wiki/Surround_(video_game)
 [Snake walk: The physics of slithering]: https://www.bbc.co.uk/news/science-environment-35563941
 [snake-colours.sh]: snake-colours.sh

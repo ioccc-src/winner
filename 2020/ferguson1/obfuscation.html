@@ -12,8 +12,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>The International Obfuscated C Code Contest</title>
 <link rel="icon" type="image/x-icon" href="../../favicon.ico">
-<meta name="description" content="deobfuscation.md for 2020/ferguson1">
-<meta name="keywords" content="IOCCC, 2020/ferguson1, deobfuscation.md">
+<meta name="description" content="obfuscation.md for 2020/ferguson1">
+<meta name="keywords" content="IOCCC, 2020/ferguson1, obfuscation.md">
 </head>
 
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
@@ -26,13 +26,13 @@
 
 <!-- -->
 <!-- This web page was formed via the tool: bin/gen-other-html.sh -->
-<!-- The content of main section of this web page came from: 2020/ferguson1/deobfuscation.md -->
+<!-- The content of main section of this web page came from: 2020/ferguson1/obfuscation.md -->
 <!-- -->
 
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!! Do not modify this web page, instead modify the file: 2020/ferguson1/deobfuscation.md !!! -->
-<!-- !!! Do not modify this web page, instead modify the file: 2020/ferguson1/deobfuscation.md !!! -->
-<!-- !!! Do not modify this web page, instead modify the file: 2020/ferguson1/deobfuscation.md !!! -->
+<!-- !!! Do not modify this web page, instead modify the file: 2020/ferguson1/obfuscation.md !!! -->
+<!-- !!! Do not modify this web page, instead modify the file: 2020/ferguson1/obfuscation.md !!! -->
+<!-- !!! Do not modify this web page, instead modify the file: 2020/ferguson1/obfuscation.md !!! -->
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 
 <!-- Markdown content was converted into HTML via the tool: bin/md2html.sh -->
@@ -363,7 +363,7 @@
 	   height=110>
   </a>
   <h1>The International Obfuscated C Code Contest</h1>
-  <h2>deobfuscation.html for 2020/ferguson1</h2>
+  <h2>obfuscation.html for 2020/ferguson1</h2>
 </div>
 
 <!-- END: this line ends content from: inc/header.default.html -->
@@ -371,7 +371,7 @@
 
 <div class="navbar">
   <a class="Left" href="index.html">&uarr; jump to index.html &uarr;</a>
-  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2020%2Fferguson1%2Fdeobfuscation.html">&#x2713;</a>
+  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2020%2Fferguson1%2Fobfuscation.html">&#x2713;</a>
 </div>
 
 <!-- END: this line ends content from: inc/navbar.up2index.html -->
@@ -382,7 +382,7 @@
 <!-- END: this line ends content from: inc/before-content.default.html -->
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
-<!-- BEFORE: 1st line of markdown file: 2020/ferguson1/deobfuscation.md -->
+<!-- BEFORE: 1st line of markdown file: 2020/ferguson1/obfuscation.md -->
 <h1 id="introduction-and-deobfuscation">Introduction and Deobfuscation</h1>
 <p>In the <a href="gameplay.html">gameplay.html</a> file I have given enough
 information to know how the game looks, how to move the snake, how to pause etc.
@@ -405,7 +405,7 @@ already knew that so no harm there, hey?</p>
 <li><a href="#resizing">Collision detection when resizing the window of the game</a></li>
 </ul></li>
 <li><a href="#obfuscation">Obfuscation</a></li>
-<li><a href="#skinning">Skinning the snake (i.e., decreasing the iocccsize)</a></li>
+<li><a href="#skinning">Skinning the snake (i.e. decreasing the iocccsize)</a></li>
 <li><a href="#size">A few more interesting size optimisations</a></li>
 </ul>
 </div>
@@ -933,7 +933,7 @@ then what is <code>V</code> anyway? It’s <code>U + 1</code>; and <code>U</code
 of the compound literal! So there are quite a lot of levels of indirection
 in this part alone (not to mention other places)!</p></li>
 </ul>
-<h1 id="obfuscation-in-prog.3.c-and-prog.3-j.c">Obfuscation in prog.3.c and prog.3-j.c</h1>
+<h1 id="obfuscation-in-prog.3.c-and-prog.3-j.c">Obfuscation in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/prog.3.c">prog.3.c</a> and <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/prog.3-j.c">prog.3-j.c</a></h1>
 <p>There are a few differences in this version that are worth noting. First of all
 is a define that’s in the compiler invocation Makefile is in the source file
 itself. Second are the following obfuscation techniques. To simplify integrating
@@ -1069,7 +1069,7 @@ done elsewhere? I had:</p>
 <pre><code>    attroff(m(PAIR(L)));
     h &amp;&amp; attron(m(PAIR(L)));</code></pre>
 <p>That saved two bytes.</p>
-<p>Second let’s look at the <code>B()</code> function: there were two things I thought of that
+<p>Next let’s look at the <code>B()</code> function: there were two things I thought of that
 would save some bytes (I no longer know how many but a few at least possibly six
 or even more). I had the following code:</p>
 <pre><code>    if (V &amp;&amp; U &amp;&amp; o) { S(N); b(1); }</code></pre>
@@ -1132,7 +1132,7 @@ matter having a ‘o’ at 0,0 isn’t either).</p>
         https://creativecommons.org/licenses/by-sa/4.0/
 
 -->
-<!-- AFTER: last line of markdown file: 2020/ferguson1/deobfuscation.md -->
+<!-- AFTER: last line of markdown file: 2020/ferguson1/obfuscation.md -->
 
 <!-- END: this line ends content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 <!-- START: this line starts content from: inc/after-content.default.html -->
@@ -1192,7 +1192,7 @@ matter having a ‘o’ at 0,0 isn’t either).</p>
 
     <div id="coda"><h3>Coda</h3>
 	<p>
-	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2020%2Fferguson1%2Fdeobfuscation.html" rel="nofollow">Nu HTML check this web page</a><br>
+	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2020%2Fferguson1%2Fobfuscation.html" rel="nofollow">Nu HTML check this web page</a><br>
 	<a href="#top">Jump to top</a> <a href="#content">Jump to Content</a>
 	</p>
     </div>
