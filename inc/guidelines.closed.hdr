@@ -10,7 +10,7 @@ even be a copy of the guidelines from the previous IOCCC.
 
 See our [FAQ about providing feedback](../faq.html#feedback) as well
 as our [FAQ about asking questions](../faq.html#question) about
-these quidelines.
+these guidelines.
 
 
 # The IOCCC is closed
