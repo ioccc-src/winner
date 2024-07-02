@@ -42,7 +42,7 @@
 	    "entry_text" : "sample input"
 	},
 	{
-	    "file_path" : "olympics.txt",
+	    "file_path" : "olympic.txt",
 	    "inventory_order" : 100,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",

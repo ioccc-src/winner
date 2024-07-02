@@ -1521,7 +1521,7 @@
 2006/grothe/README.md
 2006/grothe/arabian.txt
 2006/grothe/grothe.c
-2006/grothe/olympics.txt
+2006/grothe/olympic.txt
 2006/grothe/test.txt
 2006/grothe/try.sh
 2006/grothe/twinkle.txt

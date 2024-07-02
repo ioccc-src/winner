@@ -2262,7 +2262,7 @@
 2006/grothe/grothe.c
 2006/grothe/grothe.orig.c
 2006/grothe/index.html
-2006/grothe/olympics.txt
+2006/grothe/olympic.txt
 2006/grothe/test.txt
 2006/grothe/try.sh
 2006/grothe/twinkle.txt
