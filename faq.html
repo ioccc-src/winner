@@ -393,6 +393,7 @@
 <li><a href="#faq0_5">0.5 - How may I comment or make a suggestion on IOCCC rules, guidelines and tools?</a></li>
 <li><a href="#faq0_6">0.6 - What is the best way to ask a question about the IOCCC rules, guideline and tools?</a></li>
 <li><a href="#faq0_7">0.7 - What are the IOCCC best practices for using markdown?</a></li>
+<li><a href="#faq0_8">0.8 - How do I report bugs in a <code>mkiocccentry</code> tool?</a></li>
 </ul>
 <h2 id="section-1---history-of-the-ioccc">Section 1 - <a href="#faq1">History of the IOCCC</a></h2>
 <ul>
@@ -790,6 +791,32 @@ start with some markdown content.</p>
 as it lists things you <strong>should not use</strong> in markdown files.</p>
 <p>See the <a href="https://www.markdownguide.org/basic-syntax">markdown syntax</a> guide.
 See also <a href="https://spec.commonmark.org/current/">CommonMark Spec</a>.</p>
+<div id="faq0_8">
+<div id="mkiocccentry_bugs">
+<h3 id="faq-0.8---how-do-i-report-bugs-in-a-mkiocccentry-tool">FAQ 0.8: - How do I report bugs in a <code>mkiocccentry</code> tool?</h3>
+</div>
+</div>
+<p>As the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a> is
+crucial in the contest, both for submitters and the judges, if you find a bug
+(or you think you find a bug) we would be grateful if you were to report it at
+the <a href="https://github.com/ioccc-src/mkiocccentry/issues">mkiocccentry issues
+page</a>.</p>
+<p>When opening an issue for what you think is a bug, <strong>PLEASE</strong> use the <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">‘Bug report’
+option</a>
+and <strong>PLEASE state in the <em>title</em> what tool you think has a bug</strong>.</p>
+<p>When reporting a bug, <strong>PLEASE make sure to run the <code>bug_report.sh</code> script</strong>.
+<strong>This is extremely helpful</strong> and without it it makes it much harder to determine
+the problem (at least in some cases :-) ). Describing the problem in as much
+detail as you can and attaching any relevant screenshots, other files (in
+addition to the bug report log file) and so on will also be very helpful.</p>
+<p>To run the <code>bug_report.sh</code> script, switch to the <code>mkiocccentry</code> directory and
+then run:</p>
+<pre><code>     ./bug_report.sh</code></pre>
+<p>Let it do its thing and when it’s done it will tell you the name of the log
+file. If it does not find a problem but you think there is a problem, please
+still do feel free to report it and do make sure you attach the log nonetheless.
+If it does find problems, it will give you a summary of the problems and when
+you attach the log file we will see those too.</p>
 <div id="faq1">
 <h2 id="section-1-history-of-the-ioccc">Section 1: History of the IOCCC</h2>
 </div>
@@ -1092,7 +1119,8 @@ to the <a href="https://www.ioccc.org">official IOCCC website</a>.</p>
 <h3 id="faq-2.1-what-should-i-put-in-the-remarks.md-file-of-my-entry">FAQ 2.1: What should I put in the remarks.md file of my entry?</h3>
 </div>
 </div>
-<p>While you may put in as much or as little as you wish into your entry’s
+<p>First, <strong>PLEASE</strong> read the <a href="markdown.html">IOCCC markdown guidelines</a>.</p>
+<p>Next, while you may put in as much or as little as you wish into your entry’s
 <code>remarks.md</code> file, we do have few important suggestions:</p>
 <p>We recommend that you explain how to use your entry. Explain the
 command line (if any command line options and arguments are used)
@@ -1125,7 +1153,6 @@ rounds; we look at the author name only if an entry wins. See the guidelines if
 this is not clear!</li>
 <li>leaving the remark section empty.</li>
 </ul>
-https://github.com/ioccc-src/temp-test-ioccc/blob/master/
 <div id="faq2_2">
 <h3 id="faq-2.2-why-dont-you-publish-entries-that-do-not-win">FAQ 2.2: Why don’t you publish entries that do not win?</h3>
 </div>
@@ -1960,9 +1987,9 @@ provided by the author and any other file in the winning entry, found under the
 entry’s subdirectory.</p>
 <p>If you downloaded <code>1984/mullender/1984_mullender.tar.bz2</code>, for instance, you might
 then do:</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984/mullender</span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>        <span class="ex">./mullender.alt</span></span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984/mullender</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>        <span class="ex">./mullender.alt</span></span></code></pre></div>
 <p>to compile all versions and then run the alternate version (if you have
 a PDP-11 or VAX-11 you would be able to run the original version). For more help
 on compiling entries, see also <a href="#faq3_0">3.0 - What Makefile rules are available to
@@ -2003,8 +2030,8 @@ if you switched to each entry’s directory and ran <code>make everything</code>
 <p>If you download the 1984 tarball, i.e. <code>1984/1984.tar.bz2</code>, then you might
 extract it and then switch to the directory and compile everything of each
 entry:</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984</span>
-<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span></code></pre></div>
 <p>For more help on compiling entries, see also <a href="#faq3_0">3.0 - What Makefile rules are
 available to build or clean up IOCCC entries?</a>.</p>
 <p>Of course in this case you can also switch to individual entries and look at the

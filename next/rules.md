@@ -43,7 +43,7 @@ writing by [contacting the judges](../contact.html).
 ## IOCCC Rules version
 </div>
 
-**`|`**   These [IOCCC rules](rules.html) are version **28.3 2024-07-01**.
+**`|`**   These [IOCCC rules](rules.html) are version **28.4 2024-07-02**.
 
 **IMPORTANT**: Be sure to read the [IOCCC guidelines](guidelines.html).
 
@@ -443,14 +443,17 @@ the following files:
 * `.info.json`
 * `.auth.json`
 
-**`|`**   The `.info.json` must be valid JSON and pass the `chkentry(1)` test.
+**`|`**   The `.info.json` must be valid JSON and pass the `chkentry(1)` tests.
 
-**`|`**   The `.auth.json` must be valid JSON and pass the `chkentry(1)` test.
+**`|`**   The `.auth.json` must be valid JSON and pass the `chkentry(1)` tests.
 
 **`|`**   You submission may have additional files, however the filenames of those additional files **MUST**:
 
-* Be less than **100** characters in length
-* Match the regular expression: `^[0-9A-Za-z][0-9A-Za-z._+-]*$`
+**`|`** * Be less than **100** characters in length<br>
+**`|`** * Match the regular expression: `^[0-9A-Za-z][0-9A-Za-z._+-]*$`
+
+**`|`**   The `mkiocccentry(1)` tool will not package any files that do not meet
+those requirements.
 
 **`|`**   The `Makefile` must be a non-empty file in [GNU
 Makefile](https://www.gnu.org/software/make/manual/make.html) form. See the
@@ -496,13 +499,17 @@ by the `mkiocccentry(1)` tool):
 only be looked at if the submission wins).
 * `.info.json` which contains information about the entry.
 
-**`|`** The `txzchk(1)` tool will verify these for you and the `chkentry(1)`
-tool will do additional checks on the contents of the `.auth.json` and
-`.info.json` files.
+**`|`** The `txzchk(1)` tool will verify these (and other things) for you and
+the `chkentry(1)` tool will do additional checks on the contents of the
+`.auth.json` and `.info.json` files.
 
 **`|`** The tarball filename **MUST** pass `fnamchk(1)`; the tool `txzchk(1)`
-which is run by `mkiocccentry(1)` **before packaging your tarball** will run
-`fnamchk(1)`.
+will run `fnamchk(1)` as part of its algorithm. If you use `mkiocccentry(1)`
+there should be no problem but if you were to package things manually it is
+possible there could be a problem.
+
+**`|`** The `fnamchk(1)`, which `txzchk(1)` executes, will verify that the
+filename is correct.
 
 **`|`** These checks **MUST PASS**.
 
@@ -511,9 +518,22 @@ release of the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)
 conflict, the [IOCCC Judges](../judges.html) will use their best judgment which
 is likely to favor [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry) code.
 
-**`|`** This means you **MAKE SURE** that you use `mkiocccentry(1)` to
+**`|`** This means you should **MAKE SURE** that you use `mkiocccentry(1)` to
 package your submission; `mkiocccentry(1)` will run the above mentioned tools
-**before** creating the tarball.
+(that do not act on the tarball) **before** creating the tarball and after the
+tarball is created it will then verify that the tarball is okay by running
+`txzchk(1)` on it.
+
+**`|`** These tools will link in the `jparse(8)` library and `chkentry(1)`
+actually uses the parser to validate the
+[JSON](https://www.json.org/json-en.html).
+
+**`|`** If you run into a problem with one or more of these tools, **PLEASE**
+report it at the [mkiocccentry issues
+page](https://github.com/ioccc-src/mkiocccentry/issues), **making sure to run
+`bug_report.sh`**. See the [guidelines](guidelines.html) for help here and also
+read [the FAQ about reporting bugs in the mkiocccentry
+repo](../faq.html#mkiocccentry_bugs).
 
 **`|`**  To state the obvious: submissions that violate [Rule 17](#rule17) **will be rejected**,
 so be sure to use the latest release of the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry),

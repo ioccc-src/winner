@@ -10,6 +10,8 @@
 - [0.5  - How may I comment or make a suggestion on IOCCC rules, guidelines and tools?](#faq0_5)
 - [0.6  - What is the best way to ask a question about the IOCCC rules, guideline and tools?](#faq0_6)
 - [0.7  - What are the IOCCC best practices for using markdown?](#faq0_7)
+- [0.8  - How do I report bugs in a `mkiocccentry` tool?](#faq0_8)
+
 
 
 ## Section  1 - [History of the IOCCC](#faq1)
@@ -538,6 +540,42 @@ See also [CommonMark Spec](https://spec.commonmark.org/current/).
 
 
 
+<div id="faq0_8">
+<div id="mkiocccentry_bugs">
+### FAQ 0.8: - How do I report bugs in a `mkiocccentry` tool?
+</div>
+</div>
+
+As the [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) is
+crucial in the contest, both for submitters and the judges, if you find a bug
+(or you think you find a bug) we would be grateful if you were to report it at
+the [mkiocccentry issues
+page](https://github.com/ioccc-src/mkiocccentry/issues).
+
+When opening an issue for what you think is a bug, **PLEASE** use the ['Bug report'
+option](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E)
+and **PLEASE state in the _title_ what tool you think has a bug**.
+
+When reporting a bug, **PLEASE make sure to run the `bug_report.sh` script**.
+**This is extremely helpful** and without it it makes it much harder to determine
+the problem (at least in some cases :-) ). Describing the problem in as much
+detail as you can and attaching any relevant screenshots, other files (in
+addition to the bug report log file) and so on will also be very helpful.
+
+To run the `bug_report.sh` script, switch to the `mkiocccentry` directory and
+then run:
+
+``` <!---sh-->
+     ./bug_report.sh
+```
+
+Let it do its thing and when it's done it will tell you the name of the log
+file. If it does not find a problem but you think there is a problem, please
+still do feel free to report it and do make sure you attach the log nonetheless.
+If it does find problems, it will give you a summary of the problems and when
+you attach the log file we will see those too.
+
+
 <div id="faq1">
 ## Section 1: History of the IOCCC
 </div>
@@ -915,7 +953,9 @@ By tradition, we do not say.
 </div>
 </div>
 
-While you may put in as much or as little as you wish into your entry's
+First, **PLEASE** read the [IOCCC markdown guidelines](markdown.html).
+
+Next, while you may put in as much or as little as you wish into your entry's
 `remarks.md` file, we do have few important suggestions:
 
 We recommend that you explain how to use your entry.  Explain the
@@ -956,7 +996,7 @@ this is not clear!
 - leaving the remark section empty.
 
 
-%%REPO_URL%%/<div id="faq2_2">
+<div id="faq2_2">
 ### FAQ 2.2: Why don't you publish entries that do not win?
 </div>
 

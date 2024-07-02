@@ -43,7 +43,7 @@ writing by [contacting the judges](../contact.html).
 ## IOCCC Guidelines version
 </div>
 
-**`|`**   These [IOCCC guidelines](guidelines.html) are version **28.3 2024-07-01**.
+**`|`**   These [IOCCC guidelines](guidelines.html) are version **28.4 2024-07-02**.
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
 
@@ -109,7 +109,7 @@ IOCCC submission URL.
 
 **`|`**   The [Rule 2b](rules.html#rule2b) size has **increased from 2053 to 2503** bytes.
 
-**`|`**   The default way to compile submissions is now `-std=gnu17 -O3 -g3
+**`|`**   The new default way to compile submissions: `-std=gnu17 -O3 -g3
 -Wall -Wextra -pedantic`. See below for more details about the example Makefile
 for more help.
 
@@ -249,11 +249,13 @@ In cases where the above summary and the algorithm implemented by
 the IOCCC size tool source code conflict, the algorithm implemented
 by the IOCCC size tool source code is preferred by the judges.
 
-**`|`**   There are at least 2 other reasons for selecting 2503 as the 2nd limit<br>
-**`|`**   besides the fact that 2503 is a prime.  These reasons<br>
-**`|`**   may be searched for and discovered if you are ["Curios!" about 2503](https://t5k.org/curios/page.php/2503.html). :-)<br>
-**`|`**   Moreover, 2053 was the number of the kernel disk pack of one of the<br>
-**`|`**   judge's BESM-6, and 2503 is a decimal anagram of 2053.
+**`|`**   There are at least 2 other reasons for selecting<br>
+**`|`**   2503 as the 2nd limit besides the fact that 2503<br>
+**`|`**   is a prime. These reasons may be searched for<br>
+**`|`**   and discovered if you are ["Curios!" about 2503](https://t5k.org/curios/page.php/2503.html). :-)<br>
+**`|`**   Moreover, 2053 was the number of the kernel disk<br>
+**`|`**   pack of one of the judge's BESM-6, and 2503 is a<br>
+**`|`**   decimal anagram of 2053.
 
 Take note that this secondary limit imposed by the IOCCC size tool
 obviates some of the need to `#define` C reserved words in an effort
@@ -283,7 +285,8 @@ matters, we give you a brief overview below.
 **`|`**   The synopsis of the `mkiocccentry(1)` tool is:
 
 ``` <!---sh-->
-    ./mkiocccentry [options] work_dir prog.c Makefile remarks.md [file ...]
+    ./mkiocccentry [options] work_dir prog.c \
+         Makefile remarks.md [file ...]
 ```
 
 **`|`** where the `work_dir` is a directory that is used to form the
@@ -302,33 +305,40 @@ well. You can override warnings but doing so puts you at risk of violating
 [rules](rules.html).
 
 **`|`**   On the other hand, some **issues are an error** and the xz compressed
-tarball **will not be formed**. For instance, if `chkentry(1)` fails to validate the
-`.auth.json` or `.info.json` JSON files that `mkiocccentry(1)` creates, it is an error and
-possibly a bug that you should report at the [mkiocccentry issues
-page](https://github.com/ioccc-src/mkiocccentry/issues).
+tarball **will not be formed**. For instance, if `chkentry(1)` fails to validate
+the `.auth.json` or `.info.json` [JSON](https://www.json.org/json-en.html) files
+that `mkiocccentry(1)` creates, it is an error and possibly a bug that you
+should report at the [mkiocccentry issues
+page](https://github.com/ioccc-src/mkiocccentry/issues). **PLEASE run the
+`bug_report.sh` script to help us out here!** See the [the FAQ about reporting
+bugs in the mkiocccentry repo](../faq.html#mkiocccentry_bugs).
+
 
 **`|`**   Assuming that `chkentry(1)` passes for both `.auth.json` and
 `.info.json` then the tarball will be formed and then `txzchk(1)` will be
-executed. In this case, there should be no problems as `mkiocccentry(1)` should
+executed. In this case, there should be no problems as `mkiocccentry(1)` would
 **NOT** form a tarball if there are any issues.
 
 **`|`**  `txzchk(1)` performs a wide number of sanity checks on the xz
-compressed tarball and if any issues (`feathers` :-) ) are found then it is very
-possibly a bug in one of the tools and you should report it at the [mkiocccentry
-issues page](https://github.com/ioccc-src/mkiocccentry/issues).
+compressed tarball and if any issues (`feathers` :-) ) are found and if you used
+`mkiocccentry(1)`, then it is very possibly a bug in one of the tools and you
+should report it at the [mkiocccentry issues
+page](https://github.com/ioccc-src/mkiocccentry/issues). **PLEASE run the
+`bug_report.sh` script to help us out here!** See [the FAQ about reporting bugs
+in the mkiocccentry repo](../faq.html#mkiocccentry_bugs).
 
 **`|`**  As part of its sanity checks, `txzchk(1)` will run `fnamchk(1)` on the
 _filename_ to verify that the name is valid. If this test does not pass, then it
 is flagged by `txzchk(1)` but it is not an error if you wish to ignore it.
 Ignoring this, however, risks violating [Rule 17](rules.html#rule17) which is a
-big risk.
+big risk. Of course, using `mkiocccentry(1)` would prevent this from happening.
 
-**`|`**  `txzchk(1)` will show the contents of the tarball which is how the
-`mkiocccentry(1)` shows you the tarball contents for you to review.
+**`|`**  By default, `txzchk(1)` will show the contents of the tarball which is
+how the `mkiocccentry(1)` shows you the tarball contents for you to review.
 
 **`|`**  To help you with editing a submission, the `mkiocccentry(1)` tool has
 some options to write _OR_ read from an answers file so you do not have to input
-the information again. To write to answers.txt try:
+the information again. To write to `answers.txt` try:
 
 ``` <!---sh-->
     ./mkiocccentry -a answers.txt ...
@@ -358,7 +368,7 @@ contents of the tarball and the words:
 > No feathers stuck in tarball.
 
 **`|`**  If you give the option `-q` it will not report anything unless there
-are certain error conditions, for instance `fnamchk(1)` reports there is a
+are certain error conditions, for instance if `fnamchk(1)` reports there is a
 problem with the filename; if `txzchk(1)` exits 0 then there are no problems
 detected.
 
@@ -381,26 +391,35 @@ If you pass a single argument, it is expected to be a directory that has both
 `.info.json` file. An argument of `.` will skip that file. For instance:
 
 ``` <!---sh-->
-    ./chkentry test_work   # tests entry directory test_work
+    # test entry directory test_work:
+    ./chkentry test_work
 
-    ./chkentry .info.json .  # run checks on .info.json file
+    # run checks on .info.json:
+    ./chkentry .info.json .
 
-    ./chkentry . .auth.json  # run checks on .auth.json
+    # run checks on .auth.json:
+    ./chkentry . .auth.json
 
-    ./chkentry .info.json .auth.json  # run check on both files
+    # run checks on .info.json and .auth.json:
+    ./chkentry .info.json .auth.json
 ```
 
-**`|`**  If there is a JSON error detected by `jparse(8)`, then it is an error
-and `chkentry(1)` will report this. If an issue is found in one or both of the
-JSON files it will also report this.
+**`|`**  If there is a [JSON](https://www.json.org/json-en.html) issue detected
+by `jparse(8)`, **then there is a [JSON](https://www.json.org/json-en.html)
+error and `chkentry(1)` will report it as an _error_**. If the parsing is OK **but
+there _is an issue_ in one or both of the
+[JSON](https://www.json.org/json-en.html)** files **in the context of the IOCCC**,
+_it will **report this as an error**_. Thus, if you were to package this manually
+then you would be violating [Rule 17](rules.html#rule17).
 
-**`|`** At the risk of stating the obvious: you run a very big risk of having
-your submission rejected if you package your own tarball and there are any
-problems. Even if everything checks out OK you should not expect that everything
-**IS** OK.
+**`|`** At the risk of stating the obvious: you run **a very big risk** of having
+your submission rejected if you package your own tarball and there are **any
+problems**. For instance, if `chkentry(1)` found a problem in your `.info.json`
+file, the `mkiocccentry(1)` tool would not package it. But if you were to package
+it manually, you would be violating [Rule 17](rules.html#rule17). But even if
+everything checks out OK you should not expect that everything **IS** OK.
 
 **`|`** As you can see, the use of `mkiocccentry(1)` is **HIGHLY RECOMMENDED**.
-
 
 **`|`**   We recommend that you use the
 [example Makefile](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example)
@@ -671,8 +690,9 @@ Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
 environment. Therefore do not assume the system has a
 [windows.h](https://en.wikipedia.org/wiki/Windows.h) include file:
 
+
 ``` <!---c-->
-    #include <windows.h>        /* we DISLIKE this include */
+    #include <windows.h>  /* we DISLIKE this */
 ```
 
 Unless you are cramped for space, or unless you are entering the
@@ -714,7 +734,7 @@ program is reasonably portable.
 We prefer programs that are portable across a wide variety of Unix-like
 operating systems (e.g., Linux, GNU Hurd, BSD, Unix, etc.).
 
-You are in a maze of twisty _guidelines_, all different.
+> You are in a maze of twisty _guidelines_, all different.
 
 There are at least zero judges who think that
 [Fideism](https://en.wikipedia.org/wiki/Fideism) has little
@@ -846,12 +866,12 @@ particular window manager.
 
 **`|`**   To quote the [IOCCC judges](../judges.html):
 
-> You very well might not be completely be prohibited from failing to not<br>
-> partly misunderstand this particular _guideline_, but of course, we could<br>
-> not possibly comment!  :-)  Nevertheless, you are neither prohibited, nor are<br>
-> you fully required to determine that this or the previous sentence is either false<br>
-> and/or perhaps misleading.  Therefore, it might be wise for you to not fail to<br>
-> consider to not do so, accordingly. Thank you very much.
+> You very well might not be completely be prohibited from failing to not partly
+misunderstand this particular _guideline_, but of course, we could not possibly
+comment!  :-)  Nevertheless, you are neither prohibited, nor are you fully
+required to determine that this or the previous sentence is either false and/or
+perhaps misleading.  Therefore, it might be wise for you to not fail to consider
+to not do so, accordingly. Thank you very much.
 
 Any complaints about the above _guideline_ could be addressed to the
 Speaker of the House of Commons, or to the speaker of your national
@@ -1153,10 +1173,9 @@ This is one of the reasons why the [IOCCC rules](rules.html) and
 Entries are judged by Leonid A. Broukhis and Landon Curt Noll.
 
 Each submission submitted is given a random id number and subdirectory.  The
-submission files including, but not limited to `prog.c`, `Makefile` (that we
-form from your submitted `Makefile` and any additional "**how to build**"
-information you provide), as well as any data files that you submit are all
-placed under their own directory and stored and judged from this directory.
+submission files including, but not limited to `prog.c`, `Makefile`,
+`remarks.md` as well as any data files that you submit, are all placed under
+their own directory and stored and judged from this directory.
 
 Any information about the authors is not read by the judges until
 the judging process is complete, and then only from entries that have
