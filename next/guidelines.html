@@ -413,7 +413,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 <div id="guidelines_version">
 <h2 id="ioccc-guidelines-version">IOCCC Guidelines version</h2>
 </div>
-<p><strong><code>|</code></strong> These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.3 2024-07-01</strong>.</p>
+<p><strong><code>|</code></strong> These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.4 2024-07-02</strong>.</p>
 <p><strong>IMPORTANT</strong>: Be <strong>SURE</strong> to read the <a href="rules.html">IOCCC rules</a>.</p>
 <div id="change_marks">
 <h3 id="change-marks">Change marks</h3>
@@ -603,28 +603,34 @@ tool will also do a rudimentary check on the <code>Makefile</code> and run other
 well. You can override warnings but doing so puts you at risk of violating
 <a href="rules.html">rules</a>.</p>
 <p><strong><code>|</code></strong> On the other hand, some <strong>issues are an error</strong> and the xz compressed
-tarball <strong>will not be formed</strong>. For instance, if <code>chkentry(1)</code> fails to validate the
-<code>.auth.json</code> or <code>.info.json</code> JSON files that <code>mkiocccentry(1)</code> creates, it is an error and
-possibly a bug that you should report at the <a href="https://github.com/ioccc-src/mkiocccentry/issues">mkiocccentry issues
-page</a>.</p>
+tarball <strong>will not be formed</strong>. For instance, if <code>chkentry(1)</code> fails to validate
+the <code>.auth.json</code> or <code>.info.json</code> <a href="https://www.json.org/json-en.html">JSON</a> files
+that <code>mkiocccentry(1)</code> creates, it is an error and possibly a bug that you
+should report at the <a href="https://github.com/ioccc-src/mkiocccentry/issues">mkiocccentry issues
+page</a>. <strong>PLEASE run the
+<code>bug_report.sh</code> script to help us out here!</strong> See the <a href="../faq.html#mkiocccentry_bugs">the FAQ about reporting
+bugs in the mkiocccentry repo</a>.</p>
 <p><strong><code>|</code></strong> Assuming that <code>chkentry(1)</code> passes for both <code>.auth.json</code> and
 <code>.info.json</code> then the tarball will be formed and then <code>txzchk(1)</code> will be
-executed. In this case, there should be no problems as <code>mkiocccentry(1)</code> should
+executed. In this case, there should be no problems as <code>mkiocccentry(1)</code> would
 <strong>NOT</strong> form a tarball if there are any issues.</p>
 <p><strong><code>|</code></strong> <code>txzchk(1)</code> performs a wide number of sanity checks on the xz
-compressed tarball and if any issues (<code>feathers</code> :-) ) are found then it is very
-possibly a bug in one of the tools and you should report it at the <a href="https://github.com/ioccc-src/mkiocccentry/issues">mkiocccentry
-issues page</a>.</p>
+compressed tarball and if any issues (<code>feathers</code> :-) ) are found and if you used
+<code>mkiocccentry(1)</code>, then it is very possibly a bug in one of the tools and you
+should report it at the <a href="https://github.com/ioccc-src/mkiocccentry/issues">mkiocccentry issues
+page</a>. <strong>PLEASE run the
+<code>bug_report.sh</code> script to help us out here!</strong> See <a href="../faq.html#mkiocccentry_bugs">the FAQ about reporting bugs
+in the mkiocccentry repo</a>.</p>
 <p><strong><code>|</code></strong> As part of its sanity checks, <code>txzchk(1)</code> will run <code>fnamchk(1)</code> on the
 <em>filename</em> to verify that the name is valid. If this test does not pass, then it
 is flagged by <code>txzchk(1)</code> but it is not an error if you wish to ignore it.
 Ignoring this, however, risks violating <a href="rules.html#rule17">Rule 17</a> which is a
-big risk.</p>
-<p><strong><code>|</code></strong> <code>txzchk(1)</code> will show the contents of the tarball which is how the
-<code>mkiocccentry(1)</code> shows you the tarball contents for you to review.</p>
+big risk. Of course, using <code>mkiocccentry(1)</code> would prevent this from happening.</p>
+<p><strong><code>|</code></strong> By default, <code>txzchk(1)</code> will show the contents of the tarball which is
+how the <code>mkiocccentry(1)</code> shows you the tarball contents for you to review.</p>
 <p><strong><code>|</code></strong> To help you with editing a submission, the <code>mkiocccentry(1)</code> tool has
 some options to write <em>OR</em> read from an answers file so you do not have to input
-the information again. To write to answers.txt try:</p>
+the information again. To write to <code>answers.txt</code> try:</p>
 <pre><code>    ./mkiocccentry -a answers.txt ...</code></pre>
 <p><strong><code>|</code></strong> Alternatively, if you wish to overwrite a file, you can use the <code>-A</code>
 flag with the same option argument. Be careful that you do not accidentally
@@ -641,7 +647,7 @@ contents of the tarball and the words:</p>
 <p>No feathers stuck in tarball.</p>
 </blockquote>
 <p><strong><code>|</code></strong> If you give the option <code>-q</code> it will not report anything unless there
-are certain error conditions, for instance <code>fnamchk(1)</code> reports there is a
+are certain error conditions, for instance if <code>fnamchk(1)</code> reports there is a
 problem with the filename; if <code>txzchk(1)</code> exits 0 then there are no problems
 detected.</p>
 <p><strong><code>|</code></strong> If you wish to run <code>fnamchk(1)</code> directly you can do so like:</p>
@@ -656,20 +662,30 @@ should use <code>chkentry(1)</code>. <code>chkentry(1)</code> accepts more than 
 If you pass a single argument, it is expected to be a directory that has both
 <code>.auth.json</code> and <code>.info.json</code> in it. You can also specify a <code>.auth.json</code> and/or
 <code>.info.json</code> file. An argument of <code>.</code> will skip that file. For instance:</p>
-<pre><code>    ./chkentry test_work   # tests entry directory test_work
+<pre><code>    # test entry directory test_work:
+    ./chkentry test_work
 
-    ./chkentry .info.json .  # run checks on .info.json file
+    # run checks on .info.json:
+    ./chkentry .info.json .
 
-    ./chkentry . .auth.json  # run checks on .auth.json
+    # run checks on .auth.json:
+    ./chkentry . .auth.json
 
-    ./chkentry .info.json .auth.json  # run check on both files</code></pre>
-<p><strong><code>|</code></strong> If there is a JSON error detected by <code>jparse(8)</code>, then it is an error
-and <code>chkentry(1)</code> will report this. If an issue is found in one or both of the
-JSON files it will also report this.</p>
-<p><strong><code>|</code></strong> At the risk of stating the obvious: you run a very big risk of having
-your submission rejected if you package your own tarball and there are any
-problems. Even if everything checks out OK you should not expect that everything
-<strong>IS</strong> OK.</p>
+    # run checks on both .info.json and .auth.json:
+    ./chkentry .info.json .auth.json</code></pre>
+<p><strong><code>|</code></strong> If there is a <a href="https://www.json.org/json-en.html">JSON</a> issue detected
+by <code>jparse(8)</code>, <strong>then there is a <a href="https://www.json.org/json-en.html">JSON</a>
+error and <code>chkentry(1)</code> will report it as an <em>error</em></strong>. If the parsing is OK <strong>but
+there <em>is an issue</em> in one or both of the
+<a href="https://www.json.org/json-en.html">JSON</a></strong> files <strong>in the context of the IOCCC</strong>,
+<em>it will <strong>report this as an error</strong></em>. Thus, if you were to package this manually
+then you would be violating <a href="rules.html#rule17">Rule 17</a>.</p>
+<p><strong><code>|</code></strong> At the risk of stating the obvious: you run <strong>a very big risk</strong> of having
+your submission rejected if you package your own tarball and there are <strong>any
+problems</strong>. For instance, if <code>chkentry(1)</code> found a problem in your <code>.info.json</code>
+file, the <code>mkiocccentry(1)</code> tool would not package it. But if you were to package
+it manually, you would be violating <a href="rules.html#rule17">Rule 17</a>. But even if
+everything checks out OK you should not expect that everything <strong>IS</strong> OK.</p>
 <p><strong><code>|</code></strong> As you can see, the use of <code>mkiocccentry(1)</code> is <strong>HIGHLY RECOMMENDED</strong>.</p>
 <p><strong><code>|</code></strong> We recommend that you use the
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example">example Makefile</a>

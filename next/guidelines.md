@@ -43,7 +43,7 @@ writing by [contacting the judges](../contact.html).
 ## IOCCC Guidelines version
 </div>
 
-**`|`**   These [IOCCC guidelines](guidelines.html) are version **28.3 2024-07-01**.
+**`|`**   These [IOCCC guidelines](guidelines.html) are version **28.4 2024-07-02**.
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
 
@@ -302,33 +302,40 @@ well. You can override warnings but doing so puts you at risk of violating
 [rules](rules.html).
 
 **`|`**   On the other hand, some **issues are an error** and the xz compressed
-tarball **will not be formed**. For instance, if `chkentry(1)` fails to validate the
-`.auth.json` or `.info.json` JSON files that `mkiocccentry(1)` creates, it is an error and
-possibly a bug that you should report at the [mkiocccentry issues
-page](https://github.com/ioccc-src/mkiocccentry/issues).
+tarball **will not be formed**. For instance, if `chkentry(1)` fails to validate
+the `.auth.json` or `.info.json` [JSON](https://www.json.org/json-en.html) files
+that `mkiocccentry(1)` creates, it is an error and possibly a bug that you
+should report at the [mkiocccentry issues
+page](https://github.com/ioccc-src/mkiocccentry/issues). **PLEASE run the
+`bug_report.sh` script to help us out here!** See the [the FAQ about reporting
+bugs in the mkiocccentry repo](../faq.html#mkiocccentry_bugs).
+
 
 **`|`**   Assuming that `chkentry(1)` passes for both `.auth.json` and
 `.info.json` then the tarball will be formed and then `txzchk(1)` will be
-executed. In this case, there should be no problems as `mkiocccentry(1)` should
+executed. In this case, there should be no problems as `mkiocccentry(1)` would
 **NOT** form a tarball if there are any issues.
 
 **`|`**  `txzchk(1)` performs a wide number of sanity checks on the xz
-compressed tarball and if any issues (`feathers` :-) ) are found then it is very
-possibly a bug in one of the tools and you should report it at the [mkiocccentry
-issues page](https://github.com/ioccc-src/mkiocccentry/issues).
+compressed tarball and if any issues (`feathers` :-) ) are found and if you used
+`mkiocccentry(1)`, then it is very possibly a bug in one of the tools and you
+should report it at the [mkiocccentry issues
+page](https://github.com/ioccc-src/mkiocccentry/issues). **PLEASE run the
+`bug_report.sh` script to help us out here!** See [the FAQ about reporting bugs
+in the mkiocccentry repo](../faq.html#mkiocccentry_bugs).
 
 **`|`**  As part of its sanity checks, `txzchk(1)` will run `fnamchk(1)` on the
 _filename_ to verify that the name is valid. If this test does not pass, then it
 is flagged by `txzchk(1)` but it is not an error if you wish to ignore it.
 Ignoring this, however, risks violating [Rule 17](rules.html#rule17) which is a
-big risk.
+big risk. Of course, using `mkiocccentry(1)` would prevent this from happening.
 
-**`|`**  `txzchk(1)` will show the contents of the tarball which is how the
-`mkiocccentry(1)` shows you the tarball contents for you to review.
+**`|`**  By default, `txzchk(1)` will show the contents of the tarball which is
+how the `mkiocccentry(1)` shows you the tarball contents for you to review.
 
 **`|`**  To help you with editing a submission, the `mkiocccentry(1)` tool has
 some options to write _OR_ read from an answers file so you do not have to input
-the information again. To write to answers.txt try:
+the information again. To write to `answers.txt` try:
 
 ``` <!---sh-->
     ./mkiocccentry -a answers.txt ...
@@ -358,7 +365,7 @@ contents of the tarball and the words:
 > No feathers stuck in tarball.
 
 **`|`**  If you give the option `-q` it will not report anything unless there
-are certain error conditions, for instance `fnamchk(1)` reports there is a
+are certain error conditions, for instance if `fnamchk(1)` reports there is a
 problem with the filename; if `txzchk(1)` exits 0 then there are no problems
 detected.
 
@@ -381,26 +388,35 @@ If you pass a single argument, it is expected to be a directory that has both
 `.info.json` file. An argument of `.` will skip that file. For instance:
 
 ``` <!---sh-->
-    ./chkentry test_work   # tests entry directory test_work
+    # test entry directory test_work:
+    ./chkentry test_work
 
-    ./chkentry .info.json .  # run checks on .info.json file
+    # run checks on .info.json:
+    ./chkentry .info.json .
 
-    ./chkentry . .auth.json  # run checks on .auth.json
+    # run checks on .auth.json:
+    ./chkentry . .auth.json
 
-    ./chkentry .info.json .auth.json  # run check on both files
+    # run checks on both .info.json and .auth.json:
+    ./chkentry .info.json .auth.json
 ```
 
-**`|`**  If there is a JSON error detected by `jparse(8)`, then it is an error
-and `chkentry(1)` will report this. If an issue is found in one or both of the
-JSON files it will also report this.
+**`|`**  If there is a [JSON](https://www.json.org/json-en.html) issue detected
+by `jparse(8)`, **then there is a [JSON](https://www.json.org/json-en.html)
+error and `chkentry(1)` will report it as an _error_**. If the parsing is OK **but
+there _is an issue_ in one or both of the
+[JSON](https://www.json.org/json-en.html)** files **in the context of the IOCCC**,
+_it will **report this as an error**_. Thus, if you were to package this manually
+then you would be violating [Rule 17](rules.html#rule17).
 
-**`|`** At the risk of stating the obvious: you run a very big risk of having
-your submission rejected if you package your own tarball and there are any
-problems. Even if everything checks out OK you should not expect that everything
-**IS** OK.
+**`|`** At the risk of stating the obvious: you run **a very big risk** of having
+your submission rejected if you package your own tarball and there are **any
+problems**. For instance, if `chkentry(1)` found a problem in your `.info.json`
+file, the `mkiocccentry(1)` tool would not package it. But if you were to package
+it manually, you would be violating [Rule 17](rules.html#rule17). But even if
+everything checks out OK you should not expect that everything **IS** OK.
 
 **`|`** As you can see, the use of `mkiocccentry(1)` is **HIGHLY RECOMMENDED**.
-
 
 **`|`**   We recommend that you use the
 [example Makefile](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example)

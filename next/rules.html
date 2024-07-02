@@ -413,7 +413,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 <div id="rules_version">
 <h2 id="ioccc-rules-version">IOCCC Rules version</h2>
 </div>
-<p><strong><code>|</code></strong> These <a href="rules.html">IOCCC rules</a> are version <strong>28.3 2024-07-01</strong>.</p>
+<p><strong><code>|</code></strong> These <a href="rules.html">IOCCC rules</a> are version <strong>28.4 2024-07-02</strong>.</p>
 <p><strong>IMPORTANT</strong>: Be sure to read the <a href="guidelines.html">IOCCC guidelines</a>.</p>
 <div id="change_marks">
 <h3 id="change-marks">Change marks</h3>
@@ -683,13 +683,13 @@ the following files:</p>
 <li><code>.info.json</code></li>
 <li><code>.auth.json</code></li>
 </ul>
-<p><strong><code>|</code></strong> The <code>.info.json</code> must be valid JSON and pass the <code>chkentry(1)</code> test.</p>
-<p><strong><code>|</code></strong> The <code>.auth.json</code> must be valid JSON and pass the <code>chkentry(1)</code> test.</p>
+<p><strong><code>|</code></strong> The <code>.info.json</code> must be valid JSON and pass the <code>chkentry(1)</code> tests.</p>
+<p><strong><code>|</code></strong> The <code>.auth.json</code> must be valid JSON and pass the <code>chkentry(1)</code> tests.</p>
 <p><strong><code>|</code></strong> You submission may have additional files, however the filenames of those additional files <strong>MUST</strong>:</p>
-<ul>
-<li>Be less than <strong>100</strong> characters in length</li>
-<li>Match the regular expression: <code>^[0-9A-Za-z][0-9A-Za-z._+-]*$</code></li>
-</ul>
+<p><strong><code>|</code></strong> * Be less than <strong>100</strong> characters in length<br>
+<strong><code>|</code></strong> * Match the regular expression: <code>^[0-9A-Za-z][0-9A-Za-z._+-]*$</code></p>
+<p><strong><code>|</code></strong> The <code>mkiocccentry(1)</code> tool will not package any files that do not meet
+those requirements.</p>
 <p><strong><code>|</code></strong> The <code>Makefile</code> must be a non-empty file in <a href="https://www.gnu.org/software/make/manual/make.html">GNU
 Makefile</a> form. See the
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example">Makefile.example</a>,
@@ -727,20 +727,34 @@ by the <code>mkiocccentry(1)</code> tool):</p>
 only be looked at if the submission wins).</li>
 <li><code>.info.json</code> which contains information about the entry.</li>
 </ul>
-<p><strong><code>|</code></strong> The <code>txzchk(1)</code> tool will verify these for you and the <code>chkentry(1)</code>
-tool will do additional checks on the contents of the <code>.auth.json</code> and
-<code>.info.json</code> files.</p>
+<p><strong><code>|</code></strong> The <code>txzchk(1)</code> tool will verify these (and other things) for you and
+the <code>chkentry(1)</code> tool will do additional checks on the contents of the
+<code>.auth.json</code> and <code>.info.json</code> files.</p>
 <p><strong><code>|</code></strong> The tarball filename <strong>MUST</strong> pass <code>fnamchk(1)</code>; the tool <code>txzchk(1)</code>
-which is run by <code>mkiocccentry(1)</code> <strong>before packaging your tarball</strong> will run
-<code>fnamchk(1)</code>.</p>
+will run <code>fnamchk(1)</code> as part of its algorithm. If you use <code>mkiocccentry(1)</code>
+there should be no problem but if you were to package things manually it is
+possible there could be a problem.</p>
+<p><strong><code>|</code></strong> The <code>fnamchk(1)</code>, which <code>txzchk(1)</code> executes, will verify that the
+filename is correct.</p>
 <p><strong><code>|</code></strong> These checks <strong>MUST PASS</strong>.</p>
 <p><strong><code>|</code></strong> Where <a href="#rule17">Rule 17</a> and the tools from the latest
 release of the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>
 conflict, the <a href="../judges.html">IOCCC Judges</a> will use their best judgment which
 is likely to favor <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a> code.</p>
-<p><strong><code>|</code></strong> This means you <strong>MAKE SURE</strong> that you use <code>mkiocccentry(1)</code> to
+<p><strong><code>|</code></strong> This means you should <strong>MAKE SURE</strong> that you use <code>mkiocccentry(1)</code> to
 package your submission; <code>mkiocccentry(1)</code> will run the above mentioned tools
-<strong>before</strong> creating the tarball.</p>
+(that do not act on the tarball) <strong>before</strong> creating the tarball and after the
+tarball is created it will then verify that the tarball is okay by running
+<code>txzchk(1)</code> on it.</p>
+<p><strong><code>|</code></strong> These tools will link in the <code>jparse(8)</code> library and <code>chkentry(1)</code>
+actually uses the parser to validate the
+<a href="https://www.json.org/json-en.html">JSON</a>.</p>
+<p><strong><code>|</code></strong> If you run into a problem with one or more of these tools, <strong>PLEASE</strong>
+report it at the <a href="https://github.com/ioccc-src/mkiocccentry/issues">mkiocccentry issues
+page</a>, <strong>making sure to run
+<code>bug_report.sh</code></strong>. See the <a href="guidelines.html">guidelines</a> for help here and also
+read <a href="../faq.html#mkiocccentry_bugs">the FAQ about reporting bugs in the mkiocccentry
+repo</a>.</p>
 <p><strong><code>|</code></strong> To state the obvious: submissions that violate <a href="#rule17">Rule 17</a> <strong>will be rejected</strong>,
 so be sure to use the latest release of the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>,
 to form and test your submission’s xz compressed tarball.</p>
