@@ -109,7 +109,7 @@ IOCCC submission URL.
 
 **`|`**   The [Rule 2b](rules.html#rule2b) size has **increased from 2053 to 2503** bytes.
 
-**`|`**   The default way to compile submissions is now `-std=gnu17 -O3 -g3
+**`|`**   The new default way to compile submissions: `-std=gnu17 -O3 -g3
 -Wall -Wextra -pedantic`. See below for more details about the example Makefile
 for more help.
 
@@ -249,11 +249,13 @@ In cases where the above summary and the algorithm implemented by
 the IOCCC size tool source code conflict, the algorithm implemented
 by the IOCCC size tool source code is preferred by the judges.
 
-**`|`**   There are at least 2 other reasons for selecting 2503 as the 2nd limit<br>
-**`|`**   besides the fact that 2503 is a prime.  These reasons<br>
-**`|`**   may be searched for and discovered if you are ["Curios!" about 2503](https://t5k.org/curios/page.php/2503.html). :-)<br>
-**`|`**   Moreover, 2053 was the number of the kernel disk pack of one of the<br>
-**`|`**   judge's BESM-6, and 2503 is a decimal anagram of 2053.
+**`|`**   There are at least 2 other reasons for selecting<br>
+**`|`**   2503 as the 2nd limit besides the fact that 2503<br>
+**`|`**   is a prime. These reasons may be searched for<br>
+**`|`**   and discovered if you are ["Curios!" about 2503](https://t5k.org/curios/page.php/2503.html). :-)<br>
+**`|`**   Moreover, 2053 was the number of the kernel disk<br>
+**`|`**   pack of one of the judge's BESM-6, and 2503 is a<br>
+**`|`**   decimal anagram of 2053.
 
 Take note that this secondary limit imposed by the IOCCC size tool
 obviates some of the need to `#define` C reserved words in an effort
@@ -283,7 +285,8 @@ matters, we give you a brief overview below.
 **`|`**   The synopsis of the `mkiocccentry(1)` tool is:
 
 ``` <!---sh-->
-    ./mkiocccentry [options] work_dir prog.c Makefile remarks.md [file ...]
+    ./mkiocccentry [options] work_dir prog.c \
+         Makefile remarks.md [file ...]
 ```
 
 **`|`** where the `work_dir` is a directory that is used to form the
@@ -397,7 +400,7 @@ If you pass a single argument, it is expected to be a directory that has both
     # run checks on .auth.json:
     ./chkentry . .auth.json
 
-    # run checks on both .info.json and .auth.json:
+    # run checks on .info.json and .auth.json:
     ./chkentry .info.json .auth.json
 ```
 
@@ -687,8 +690,9 @@ Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
 environment. Therefore do not assume the system has a
 [windows.h](https://en.wikipedia.org/wiki/Windows.h) include file:
 
+
 ``` <!---c-->
-    #include <windows.h>        /* we DISLIKE this include */
+    #include <windows.h>  /* we DISLIKE this */
 ```
 
 Unless you are cramped for space, or unless you are entering the
@@ -730,7 +734,7 @@ program is reasonably portable.
 We prefer programs that are portable across a wide variety of Unix-like
 operating systems (e.g., Linux, GNU Hurd, BSD, Unix, etc.).
 
-You are in a maze of twisty _guidelines_, all different.
+> You are in a maze of twisty _guidelines_, all different.
 
 There are at least zero judges who think that
 [Fideism](https://en.wikipedia.org/wiki/Fideism) has little
@@ -862,12 +866,12 @@ particular window manager.
 
 **`|`**   To quote the [IOCCC judges](../judges.html):
 
-> You very well might not be completely be prohibited from failing to not<br>
-> partly misunderstand this particular _guideline_, but of course, we could<br>
-> not possibly comment!  :-)  Nevertheless, you are neither prohibited, nor are<br>
-> you fully required to determine that this or the previous sentence is either false<br>
-> and/or perhaps misleading.  Therefore, it might be wise for you to not fail to<br>
-> consider to not do so, accordingly. Thank you very much.
+> You very well might not be completely be prohibited from failing to not partly
+misunderstand this particular _guideline_, but of course, we could not possibly
+comment!  :-)  Nevertheless, you are neither prohibited, nor are you fully
+required to determine that this or the previous sentence is either false and/or
+perhaps misleading.  Therefore, it might be wise for you to not fail to consider
+to not do so, accordingly. Thank you very much.
 
 Any complaints about the above _guideline_ could be addressed to the
 Speaker of the House of Commons, or to the speaker of your national
@@ -1169,10 +1173,9 @@ This is one of the reasons why the [IOCCC rules](rules.html) and
 Entries are judged by Leonid A. Broukhis and Landon Curt Noll.
 
 Each submission submitted is given a random id number and subdirectory.  The
-submission files including, but not limited to `prog.c`, `Makefile` (that we
-form from your submitted `Makefile` and any additional "**how to build**"
-information you provide), as well as any data files that you submit are all
-placed under their own directory and stored and judged from this directory.
+submission files including, but not limited to `prog.c`, `Makefile`,
+`remarks.md` as well as any data files that you submit, are all placed under
+their own directory and stored and judged from this directory.
 
 Any information about the authors is not read by the judges until
 the judging process is complete, and then only from entries that have

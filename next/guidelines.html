@@ -459,7 +459,7 @@ you are using the correct versions of these items before using the
 IOCCC submission URL.</p>
 <p><strong><code>|</code></strong> The <a href="rules.html#rule2a">Rule 2a</a> size has <strong>increased from 4096 to 4993</strong> bytes.</p>
 <p><strong><code>|</code></strong> The <a href="rules.html#rule2b">Rule 2b</a> size has <strong>increased from 2053 to 2503</strong> bytes.</p>
-<p><strong><code>|</code></strong> The default way to compile submissions is now <code>-std=gnu17 -O3 -g3 -Wall -Wextra -pedantic</code>. See below for more details about the example Makefile
+<p><strong><code>|</code></strong> The new default way to compile submissions: <code>-std=gnu17 -O3 -g3 -Wall -Wextra -pedantic</code>. See below for more details about the example Makefile
 for more help.</p>
 <p><strong><code>|</code></strong> Submissions are in the form of a single xz compressed tarball.</p>
 <p><strong><code>|</code></strong> To assist in the formation of the xz compressed tarball for submission, use the
@@ -565,11 +565,13 @@ ASCII formfeed, and ASCII carriage return.</p>
 <p>In cases where the above summary and the algorithm implemented by
 the IOCCC size tool source code conflict, the algorithm implemented
 by the IOCCC size tool source code is preferred by the judges.</p>
-<p><strong><code>|</code></strong> There are at least 2 other reasons for selecting 2503 as the 2nd limit<br>
-<strong><code>|</code></strong> besides the fact that 2503 is a prime. These reasons<br>
-<strong><code>|</code></strong> may be searched for and discovered if you are <a href="https://t5k.org/curios/page.php/2503.html">“Curios!” about 2503</a>. :-)<br>
-<strong><code>|</code></strong> Moreover, 2053 was the number of the kernel disk pack of one of the<br>
-<strong><code>|</code></strong> judge’s BESM-6, and 2503 is a decimal anagram of 2053.</p>
+<p><strong><code>|</code></strong> There are at least 2 other reasons for selecting<br>
+<strong><code>|</code></strong> 2503 as the 2nd limit besides the fact that 2503<br>
+<strong><code>|</code></strong> is a prime. These reasons may be searched for<br>
+<strong><code>|</code></strong> and discovered if you are <a href="https://t5k.org/curios/page.php/2503.html">“Curios!” about 2503</a>. :-)<br>
+<strong><code>|</code></strong> Moreover, 2053 was the number of the kernel disk<br>
+<strong><code>|</code></strong> pack of one of the judge’s BESM-6, and 2503 is a<br>
+<strong><code>|</code></strong> decimal anagram of 2053.</p>
 <p>Take note that this secondary limit imposed by the IOCCC size tool
 obviates some of the need to <code>#define</code> C reserved words in an effort
 to get around the size limits of <a href="rules.html#rule2">Rule 2</a>.</p>
@@ -589,7 +591,8 @@ you may wish to validate each part individually. As the <a href="rules.html">rul
 state, each of these tools have a <code>-h</code> option. However, to help simplify
 matters, we give you a brief overview below.</p>
 <p><strong><code>|</code></strong> The synopsis of the <code>mkiocccentry(1)</code> tool is:</p>
-<pre><code>    ./mkiocccentry [options] work_dir prog.c Makefile remarks.md [file ...]</code></pre>
+<pre><code>    ./mkiocccentry [options] work_dir prog.c \
+         Makefile remarks.md [file ...]</code></pre>
 <p><strong><code>|</code></strong> where the <code>work_dir</code> is a directory that is used to form the
 xz compressed tarball that <code>txzchk(1)</code> validates, <code>prog.c</code> is your submission
 source code, <code>Makefile</code> is your <code>Makefile</code>, <code>remarks.md</code> is your remarks and
@@ -671,7 +674,7 @@ If you pass a single argument, it is expected to be a directory that has both
     # run checks on .auth.json:
     ./chkentry . .auth.json
 
-    # run checks on both .info.json and .auth.json:
+    # run checks on .info.json and .auth.json:
     ./chkentry .info.json .auth.json</code></pre>
 <p><strong><code>|</code></strong> If there is a <a href="https://www.json.org/json-en.html">JSON</a> issue detected
 by <code>jparse(8)</code>, <strong>then there is a <a href="https://www.json.org/json-en.html">JSON</a>
@@ -870,7 +873,7 @@ interfaces to their compilers, once one learns how to invoke a shell.</p>
 Specification</a>
 environment. Therefore do not assume the system has a
 <a href="https://en.wikipedia.org/wiki/Windows.h">windows.h</a> include file:</p>
-<pre><code>    #include &lt;windows.h&gt;        /* we DISLIKE this include */</code></pre>
+<pre><code>    #include &lt;windows.h&gt;  /* we DISLIKE this */</code></pre>
 <p>Unless you are cramped for space, or unless you are entering the
 ‘<strong>Best one liner</strong>’ category, we suggest that you format your program
 in a more creative way than simply forming excessively long lines.</p>
@@ -901,7 +904,9 @@ absolute one. The intent is to ensure that the building if your
 program is reasonably portable.</p>
 <p>We prefer programs that are portable across a wide variety of Unix-like
 operating systems (e.g., Linux, GNU Hurd, BSD, Unix, etc.).</p>
+<blockquote>
 <p>You are in a maze of twisty <em>guidelines</em>, all different.</p>
+</blockquote>
 <p>There are at least zero judges who think that
 <a href="https://en.wikipedia.org/wiki/Fideism">Fideism</a> has little
 or nothing to do with the IOCCC judging process.</p>
@@ -991,12 +996,12 @@ particular window manager.</p>
 <p><strong><code>|</code></strong> You are <strong>well advised</strong> to submit entries that conform to the <a href="https://unix.org/version4/overview.html">Single UNIX Specification Version 4</a>.</p>
 <p><strong><code>|</code></strong> To quote the <a href="../judges.html">IOCCC judges</a>:</p>
 <blockquote>
-<p>You very well might not be completely be prohibited from failing to not<br>
-partly misunderstand this particular <em>guideline</em>, but of course, we could<br>
-not possibly comment! :-) Nevertheless, you are neither prohibited, nor are<br>
-you fully required to determine that this or the previous sentence is either false<br>
-and/or perhaps misleading. Therefore, it might be wise for you to not fail to<br>
-consider to not do so, accordingly. Thank you very much.</p>
+<p>You very well might not be completely be prohibited from failing to not partly
+misunderstand this particular <em>guideline</em>, but of course, we could not possibly
+comment! :-) Nevertheless, you are neither prohibited, nor are you fully
+required to determine that this or the previous sentence is either false and/or
+perhaps misleading. Therefore, it might be wise for you to not fail to consider
+to not do so, accordingly. Thank you very much.</p>
 </blockquote>
 <p>Any complaints about the above <em>guideline</em> could be addressed to the
 Speaker of the House of Commons, or to the speaker of your national
@@ -1247,10 +1252,9 @@ This is one of the reasons why the <a href="rules.html">IOCCC rules</a> and
 </div>
 <p>Entries are judged by Leonid A. Broukhis and Landon Curt Noll.</p>
 <p>Each submission submitted is given a random id number and subdirectory. The
-submission files including, but not limited to <code>prog.c</code>, <code>Makefile</code> (that we
-form from your submitted <code>Makefile</code> and any additional “<strong>how to build</strong>”
-information you provide), as well as any data files that you submit are all
-placed under their own directory and stored and judged from this directory.</p>
+submission files including, but not limited to <code>prog.c</code>, <code>Makefile</code>,
+<code>remarks.md</code> as well as any data files that you submit, are all placed under
+their own directory and stored and judged from this directory.</p>
 <p>Any information about the authors is not read by the judges until
 the judging process is complete, and then only from entries that have
 won an award. Because we do not read this information for entries that
