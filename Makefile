@@ -241,7 +241,7 @@ indent.c:
 #	   simple want to examine, run / test winning IOCCC entries.
 
 .PHONY: help genpath genfilelist verify_entry_files gen_authors gen_location gen_years \
-	find_missing_links entry_index gen_top_html thanks gen_other_html quick_entry_index \
+	find_missing_links test entry_index gen_top_html thanks gen_other_html quick_entry_index \
 	gen_year_index quick_www www \
 	untar_entry_tarball untar_year_tarball \
 	form_entry_tarball form_year_tarball tar \
@@ -291,6 +291,8 @@ help:
 	@echo 'make gen_next		 - generate the HTML files in next/'
 	@echo 'make quick_entry_index	 - build winner index.html files that might be out of date'
 	@echo 'make find_missing_links	 - find markdown links to missing local files'
+	@echo
+	@echo 'make test		 - a summary of mostly harmless tests'
 	@echo
 	@echo '# Rules for building specific web pages - a subset of rules mentioned above:'
 	@echo
@@ -469,6 +471,24 @@ quick_entry_index quick_readme2index: ${ALL_RUN} ${QUICK_README2INDEX}
 find_missing_links:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${FIND_MISSING_LINKS} -v 1
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# mostly harmless tests
+#
+test:
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin make clobber =-=-=-=-='
+	@echo '... hiding verbose output on stdout ...'
+	@${MAKE} clobber >/dev/null
+	@echo '=-=-=-=-= IOCCC complete make clobber =-=-=-=-='
+	@${MAKE} tab_check
+	@echo '=-=-=-=-= IOCCC begin make genpath =-=-=-=-='
+	@echo '... hiding verbose output on stdout ...'
+	@${MAKE} genpath >/dev/null
+	@echo '=-=-=-=-= IOCCC complete make genpath =-=-=-=-='
+	${MAKE} genfilelist
+	${MAKE} verify_entry_files
+	${MAKE} find_missing_links
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 
