@@ -59,7 +59,8 @@ The [IOCCC](index.html) is [open](#open) for [submissions](faq.html#submit).
 See the [IOCCC news](news.html) page for details on rules, guidelines, tools and deadlines.
 
 Be sure to review the official [IOCCC](index.html) rules, guidelines, and tools
-for any changes that may have been made while the [IOCCC](index.html) was "**pending**".
+for any changes that may have been made while the [IOCCC](index.html) was
+"**[pending](#pending)**".
 
 <div id="judging">
 #### "**judging**"
