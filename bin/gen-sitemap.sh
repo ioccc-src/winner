@@ -940,7 +940,7 @@ elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary file manifest list was not formed: $TMP_MANIFEST_LIST" 1>&2
 fi
 
-# All Done!!! -- Jessica Noll, Age 2
+# All Done!!! All Done!!! -- Jessica Noll, Age 2
 #
 if [[ -z $NOOP ]]; then
     rm -f "$TMP_MANIFEST_LIST" "$TMP_EXIT_CODE" "$TMP_SITEMAP"

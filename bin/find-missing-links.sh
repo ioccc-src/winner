@@ -517,7 +517,7 @@ if [[ -s $TMP_MISSING_LINK ]]; then
     sed -e "s;^$TOPDIR/;;" "$TMP_MISSING_LINK" 1>&2
 fi
 
-# All Done!!! -- Jessica Noll, Age 2
+# All Done!!! All Done!!! -- Jessica Noll, Age 2
 #
 if [[ -s $TMP_MISSING_LINK ]]; then
     echo "$0: ERROR: $MISSING_LINK_COUNT missing link(s) found" 1>&2

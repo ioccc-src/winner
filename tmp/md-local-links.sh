@@ -338,6 +338,6 @@ find . -name '*.md' ! -name markdown.md ! -path './tmp/*' -print |
      done |
      grep -E -v '^\S+ \[[^]]*\]\(http:|^\S+ \[[^]]*\]\(https:|^\S+ \[[^]]*\]\(mailto:|^\S+ \[[^]]*\]\(#'
 
-# All Done!!! -- Jessica Noll, Age 2
+# All Done!!! All Done!!! -- Jessica Noll, Age 2
 #
 exit 0

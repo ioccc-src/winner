@@ -210,7 +210,7 @@ for dir in $(< "$ENTRY_DIR_TXT"); do
     fi
 done
 
-# All Done!!! -- Jessica Noll, Age 2
+# All Done!!! All Done!!! -- Jessica Noll, Age 2
 #
 if [[ $V_FLAG -ge 1 ]]; then
     echo "$0: debug[0]: about to exit $EXIT_CODE" 1>&2

@@ -892,7 +892,7 @@ elif [[ $V_FLAG -ge 1 ]]; then
     echo  "$0: debug[1]: -n disabled execution of: $PANDOC_WRAPPER $TMP_FILE -" 1>&2
 fi
 
-# All Done!!! -- Jessica Noll, Age 2
+# All Done!!! All Done!!! -- Jessica Noll, Age 2
 #
 if [[ -z $NOOP ]]; then
     rm -f "$TMP_FILE"

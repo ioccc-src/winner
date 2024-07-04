@@ -326,6 +326,6 @@ find . -name '*.md' ! -name markdown.md ! -path './tmp/*' -print |
 	    -e 's/  +/ /g'
      done
 
-# All Done!!! -- Jessica Noll, Age 2
+# All Done!!! All Done!!! -- Jessica Noll, Age 2
 #
 exit 0

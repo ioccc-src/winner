@@ -528,7 +528,7 @@ elif [[ $V_FLAG -ge 5 ]]; then
          "$README_PATH $INDEX_PATH" 1>&2
 fi
 
-# All Done!!! -- Jessica Noll, Age 2
+# All Done!!! All Done!!! -- Jessica Noll, Age 2
 #
 if [[ $EXIT_CODE -ne 0 ]]; then
     echo "$0: Warning: about to exit non-zero: $EXIT_CODE" 1>&2

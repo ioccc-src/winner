@@ -81,7 +81,7 @@ if [[ -s $TMP_FILE ]]; then
 fi
 rm -f "$TMP_FILE"
 
-# All Done!!! -- Jessica Noll, Age 2
+# All Done!!! All Done!!! -- Jessica Noll, Age 2
 #
 if [[ $EXIT_CODE -ne 0 ]]; then
     echo "$0: Warning: about to exit: $EXIT_CODE" 1>&2
