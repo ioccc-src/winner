@@ -3509,7 +3509,7 @@ Also, it requires a space between identifiers.  In short, use `(S K)` instead of
 Huge memory may be required to compile the program (about 300 MB on my machine).
 
 In addition, there are some limitations (and workarounds) mentioned in the
-[Deobfuscation section](2013/endoh1/index.html#deobfuscation).
+[obfuscation section](2013/endoh1/index.html#obfuscation).
 
 --
 

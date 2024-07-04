@@ -553,7 +553,7 @@ numbers.</li>
 <li>There should be some way to switch from Mandelbrot to Julia with chosen
 parameter.</li>
 </ul>
-<h3 id="deobfuscation">Deobfuscation</h3>
+<h3 id="obfuscation">Obfuscation</h3>
 <p>Sure, I don’t want to deprive you of the pleasure of digging
 into the infernal mess created by my corrupted mind (writing
 this remark I noticed that I was ending sentences with ‘;’ instead
@@ -564,9 +564,9 @@ are different from the tricks used in most common IOCCC program
 of how all the program works to be worked out).</p>
 <p>This program is a formula parser that outputs machine code that
 calculates the formula and check the given conditions. The
-machine code targets the x87 stack based
+machine code targets the <code>x87</code> stack based
 <a href="https://en.wikipedia.org/wiki/Floating-point_unit">FPU</a>, and it is almost
-identical for x86 and x86_64 (except for the comparison
+identical for <code>x86</code> and <code>x86_64</code> (except for the comparison
 instructions, that have to be generated differently). The
 program keeps track of the FPU stack (the FPU has a cyclic stack
 of 8 registers) and will automatically swap to and from the

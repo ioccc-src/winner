@@ -142,7 +142,7 @@ eliminated.  As AG also refrains from abusing the preprocessor, it
 doesn't really have much to offer in terms of "surface obfuscation".
 Instead, it tries to achieve both its speed and its obscurity through a
 careful choice of algorithms.  Some of the finer points of those
-algorithms are outlined in the deobfuscation information below.
+algorithms are outlined in the spoiler below.
 
 
 ### How it works:

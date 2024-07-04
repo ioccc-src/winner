@@ -214,10 +214,6 @@ enjoy randomly changing patterns (the delay is 3 seconds),
 but there is a secret switch to suppress looping: useful
 if you want to pipe the output to a printer.
 
-Here is a but of deobfuscation:
-
-> The colon **is** the secret switch - the space before it is not a mistake.
-
 If `Variable` is used, the actual value of `cycle` doesn't matter,
 as far as it is > 1. To figure out what difference
 `cycle` makes when `Variable` is not used, try

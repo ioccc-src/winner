@@ -66,7 +66,7 @@
 	    "entry_text" : "sample input"
 	},
 	{
-	    "file_path" : "deobfuscation/code.c",
+	    "file_path" : "obfuscation/code.c",
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
@@ -74,7 +74,7 @@
 	    "entry_text" : "debofuscated code main logic"
 	},
 	{
-	    "file_path" : "deobfuscation/gen.rb",
+	    "file_path" : "obfuscation/gen.rb",
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "ruby",
@@ -82,7 +82,7 @@
 	    "entry_text" : "ruby code to compose items and prog.c in artistic way"
 	},
 	{
-	    "file_path" : "deobfuscation/glyphs.txt",
+	    "file_path" : "obfuscation/glyphs.txt",
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
@@ -90,7 +90,7 @@
 	    "entry_text" : "glyphs data for deobfuscation/gen.rb"
 	},
 	{
-	    "file_path" : "deobfuscation/index.html",
+	    "file_path" : "obfuscation/index.html",
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "html",
@@ -98,7 +98,7 @@
 	    "entry_text" : "deobfuscation information web page"
 	},
 	{
-	    "file_path" : "deobfuscation/prog.c",
+	    "file_path" : "obfuscation/prog.c",
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
@@ -106,7 +106,7 @@
 	    "entry_text" : "deobfuscated source code"
 	},
 	{
-	    "file_path" : "deobfuscation/tmpl.txt",
+	    "file_path" : "obfuscation/tmpl.txt",
 	    "inventory_order" : 200,
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
@@ -154,7 +154,7 @@
 	    "entry_text" : "markdown source for this web page"
 	},
 	{
-	    "file_path" : "deobfuscation/index.md",
+	    "file_path" : "obfuscation/index.md",
 	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",

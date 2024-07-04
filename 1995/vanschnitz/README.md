@@ -38,7 +38,8 @@ For more detailed information see [1995/vanschnitz in bugs.html](../../bugs.html
 The authors provided a deobfuscated version of the program. Originally uuencoded we
 have decoded it for the wider audience in [vanschnitz.alt.c](%%REPO_URL%%/1995/vanschnitz/vanschnitz.alt.c).
 
-They encourage you to first try and figure out the program without reading the deobfuscated version,
+They encourage you to first try and figure out the program without reading the
+deobfuscated version.
 
 
 ### Alternate build:
@@ -120,7 +121,7 @@ solution wherein the disks end up on peg 2; for an even
 number of disks, they will end on peg 3.  This should
 provide some hint as to what sort of algorithm is used.
 
-We have included a [deobfuscated](%%REPO_URL%%/1995/vanschnitz/vanschnitz.alt.c) version of the program, with
+We have included a [deobfuscated version](%%REPO_URL%%/1995/vanschnitz/vanschnitz.alt.c) of the program, with
 meaningful symbol names and comments, but we encourage you
 to try to decipher the program without it...
 

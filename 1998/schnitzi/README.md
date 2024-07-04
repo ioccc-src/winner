@@ -116,7 +116,7 @@ looping.  To see the resulting program run, redirect the output from
 and then compile it.
 
 
-### Deobfuscation And Hints:
+### Obfuscation hints:
 
 The big key to this program is figuring out what the names of the
 functions ought to be; a bit of research may allow you to guess at

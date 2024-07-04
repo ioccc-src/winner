@@ -201,7 +201,7 @@ Those techniques are about the use of 64 bit integers in order to do SIMD work,
 in a portable way without ever using any SSE/AVX or other non-portable compiler
 inline functions! The irony though, is that when compiling the program on modern
 X86 architectures indeed SSE/AVX is used for the long longs.  Following is some
-deobfuscation information, So if you want to play tough, stop reading at this point.
+obfuscation information, So if you want to play tough, stop reading at this point.
 
 
 ### Portable SIMD programming:

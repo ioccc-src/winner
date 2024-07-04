@@ -111,13 +111,7 @@ To see the game from start to complete, try:
 
 Not all compiler errors are bad.
 
-For deobfuscation information see the end of the notes from the author below.
-
-To use:
-
-``` <!---sh-->
-    ./try.sh
-```
+For spoilers see the end of the notes from the author below.
 
 
 ## Author's remarks:
@@ -174,7 +168,7 @@ The goal of the game is to escape the dungeon.
 Here is a walk-through for the game, including a few dead-ends:
 
 
-### DEOBFUSCATION
+### SPOILER (HOW TO WIN):
 
 ``` <!---sh-->
     cc -Describe -Door westley.c

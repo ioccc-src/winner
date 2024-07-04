@@ -42,12 +42,12 @@
 	    "entry_text" : "Ruby Makefile"
 	},
 	{
-	    "file_path" : "deobfuscation.html",
+	    "file_path" : "quine-qr.html",
 	    "inventory_order" : 100,
 	    "OK_to_edit" : false,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "Deobfuscation information about Q(uine)R code generator"
+	    "entry_text" : "information about Q(uine)R code generator"
 	},
 	{
 	    "file_path" : "rake.sh",
@@ -218,7 +218,7 @@
 	    "entry_text" : "markdown source for this web page"
 	},
 	{
-	    "file_path" : "deobfuscation.md",
+	    "file_path" : "quine-qr.md",
 	    "inventory_order" : 4000000000,
 	    "OK_to_edit" : true,
 	    "display_as" : "markdown",

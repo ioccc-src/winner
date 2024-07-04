@@ -68,7 +68,7 @@ numbers to get a pleasing result, or use it for your high school algebra
 class.
 
 
-### DEOBFUSCATION:
+### SPOILER:
 
 As should be obvious from 20 feet away, the program is a cubic plotter.
 It plots against certain artists, splattering their cubes with graphs

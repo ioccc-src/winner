@@ -62,9 +62,9 @@ more than 1000 words.
 You may want to use a large display with a very small terminal font.
 
 
-### Deobfuscation
+### Q(uine)R code generator
 
-See [deobfuscation.html](deobfuscation.html).
+See [quine-qr.html](quine-qr.html).
 
 
 <!--

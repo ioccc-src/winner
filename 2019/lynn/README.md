@@ -89,7 +89,7 @@ and shows GHC also accepts our subset of Haskell:
 
 #### Self-hosting compiler:
 
-To avoid deobfuscating this entry by revealing the original Haskell source, we
+To avoid spoiling this entry by revealing the original Haskell source, we
 instead provide [hint.hs](%%REPO_URL%%/2019/lynn/hint.hs), the output of a certain stage of the
 compiler when run on itself. This intermediate output is hopefully difficult to
 understand, yet is accepted by our compiler:

@@ -128,13 +128,13 @@ often have bugs, or features which result the program failing to compile.  You
 may have to do some syntax changing as we did to get old programs to compile on
 strict ANSI C compilers.
 
-Last, read the judges' remarks and deobfuscation information on the program.  Hints for `foo.c` are
+Last, read the judges' remarks (and sometimes spoilers) on the program.  Hints for `foo.c` are
 given in `index.html`.  Often they will contain suggested arguments or
-recommended data to use. Authors also sometimes provide deobfuscation information
+recommended data to use. Authors also sometimes provide obfuscation information
 about their entries.
 
 If you do gain some understanding of how a program works, go back to the source
-and reexamine it using some of the techniques outlined above.  See if you can
+and re-examine it using some of the techniques outlined above.  See if you can
 convince yourself of why the program does what it does.
 
 

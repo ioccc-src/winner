@@ -407,7 +407,8 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 version</a> below. If your terminal has problems with the
 <code>stty(1)</code> commands try:</p>
 <pre><code>    make anon-no_stty</code></pre>
-<p>This will compile <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/anon/anon.c">anon.c</a> as <code>anon</code> to not use <code>stty(1)</code>.</p>
+<p>This will compile <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/anon/anon.c">anon.c</a> as <code>anon</code> to not use
+<code>stty(1)</code>, with the support of an <code>#ifdef..#endif</code> added by the author.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please DO NOT fix</code></pre>
@@ -514,7 +515,7 @@ with <code>-DNO_STTY</code>. The game interface will be a bit annoying (you will
 hit enter after every key), but it works.</p>
 <p>The game requires lots of space on the runtime stack space due to deep
 recursion, among other things. :-)</p>
-<p>See the “<strong>DEOBFUSCATION</strong>” section below for more notes about portability.</p>
+<p>See the “<strong>OBFUSCATION</strong>” section below for more notes about portability.</p>
 <h3 id="about-the-code">ABOUT THE CODE</h3>
 <p>Clearly, the author is very, very confused. Although he has broken up the file
 into sections labelled with helpful headings, and although he has left ample
@@ -577,7 +578,7 @@ on the following architectures:</p>
 </ul>
 <p>It probably will also compile and work on many (all?) other *nix platforms as
 well. How does it achieve this incredible feat?</p>
-<h3 id="deobfuscation">DEOBFUSCATION</h3>
+<h3 id="obfuscation">OBFUSCATION</h3>
 <p>Read the following only if you give up figuring it out :-)</p>
 <h4 id="the-evil-hack">The Evil Hack</h4>
 <p>The program (ab)uses an implicit assumption underlying practically all

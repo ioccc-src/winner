@@ -228,9 +228,9 @@ This allows for a convenient test suite:
 ```
 
 
-### Deobfuscation:
+### Obfuscation:
 
-If you do not want to puzzle out how it works, see [deobfuscation.html](deobfuscation.html).
+If you do not want to puzzle out how it works, see [obfuscation.html](obfuscation.html).
 
 <!--
 

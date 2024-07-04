@@ -36,8 +36,8 @@ If you use the wrong code, you're gonna have a bad time.
 What is compiling this entry about?
 [Having a good .. time](https://southpark.fandom.com/wiki/Asspen/Script)!
 
-This winning entry also comes with a [JavaScript timelapse
-deobfuscation](deobfuscation.html) that shows how this entry was written.
+This winning entry also comes with a [JavaScript time-lapse
+obfuscation](obfuscation.html) that shows how this entry was written.
 
 
 ## Author's remarks:

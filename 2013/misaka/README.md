@@ -263,7 +263,7 @@ needed for the program to work.
 
 * [bf.pl](%%REPO_URL%%/2013/misaka/bf.pl) - a perl brainfuck interpreter, in case you don't have one
 handy.
-* [deobfuscation.html](deobfuscation.html) - making of this program.
+* [obfuscation.html](obfuscation.html) - making of this program.
 
 
 ### About `Misaka`

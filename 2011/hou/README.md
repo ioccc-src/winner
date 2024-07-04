@@ -110,7 +110,7 @@ the actual `argv` strings to be writable, though.
 - Some seemingly redundant code works to eliminate warnings and evade a gcc bug.
 
 
-### Deobfuscation
+### Spoilers
 
 The parser parses function names, subtraction, and division as single-letter
 unary operators. A bitmask encoded hash table is used to check no-ops/digits

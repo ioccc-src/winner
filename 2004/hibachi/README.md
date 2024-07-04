@@ -159,7 +159,7 @@ style](https://wiki.c2.com/?OneTrueBraceStyle).
 
 *  `Hibachi` can serve [www.ioccc.org](https://www.ioccc.org).
 
-*  Commented deobfuscation information available.
+*  Commented spoiler information available.
 
 ### Known Issues
 

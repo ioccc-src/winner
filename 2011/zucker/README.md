@@ -153,7 +153,7 @@ reflection ray at an object's surface, given the incoming
 direction and surface normal.
 
 
-#### Further deobfuscation:
+#### Further details:
 
 The program is not quite a traditional [ray
 tracer](https://en.wikipedia.org/wiki/Ray_tracing_&#x28;graphics&#x29;), but a "[sphere

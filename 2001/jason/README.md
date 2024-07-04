@@ -117,7 +117,7 @@ the game entertaining, see if you can find
 in the source code.)
 
 
-### GAME STRATEGY DEOBFUSCATION
+### GAME STRATEGY SPOILER
 
 The trick, of course, is to drop items in empty rooms to mark them.  That way
 you usually know if you're in a room you've seen before.  It greatly aids

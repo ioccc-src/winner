@@ -12,7 +12,8 @@ version](#alternate-code) below. If your terminal has problems with the
     make anon-no_stty
 ```
 
-This will compile [anon.c](%%REPO_URL%%/2005/anon/anon.c) as `anon` to not use `stty(1)`.
+This will compile [anon.c](%%REPO_URL%%/2005/anon/anon.c) as `anon` to not use
+`stty(1)`, with the support of an `#ifdef..#endif` added by the author.
 
 
 ### Bugs and (Mis)features:
@@ -202,7 +203,7 @@ hit enter after every key), but it works.
 The game requires lots of space on the runtime stack space due to deep
 recursion, among other things. :-)
 
-See the "**DEOBFUSCATION**" section below for more notes about portability.
+See the "**OBFUSCATION**" section below for more notes about portability.
 
 
 ### ABOUT THE CODE
@@ -280,7 +281,7 @@ It probably will also compile and work on many (all?) other \*nix platforms as
 well. How does it achieve this incredible feat?
 
 
-### DEOBFUSCATION
+### OBFUSCATION
 
 Read the following only if you give up figuring it out :-)
 

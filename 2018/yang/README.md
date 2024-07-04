@@ -143,7 +143,7 @@ but not limited to the "1125" at line 4 as opposed to "1025", to satisfy
 - CRC32 of the code is embedded in the code itself.
 
 - Process for writing [prog.c](%%REPO_URL%%/2018/yang/prog.c) is available in
-[deobfuscation.html](deobfuscation.html).
+[obfuscation.html](obfuscation.html).
 
 
 ### Compatibility:

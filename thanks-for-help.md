@@ -2546,8 +2546,9 @@ added.
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1995/leo/try.sh) script.
 
-At our change in how to deal with deobfuscation, Cody also uudecoded the deobfuscation inforation provided
-by the author, putting it in [deobfuscation.html](1995/leo/deobfuscation.html).
+At our change in how to deal with spoilers, Cody also uudecoded the spoiler
+information about the secret switch, provided by the author, putting it in
+[secret.html](1995/leo/secret.html).
 
 
 <div id="1995_makarios">
@@ -5121,10 +5122,6 @@ To silence the annoying misleading indentation warning and to prevent debug
 symbols from being built with `rake` Cody also updated the
 [Rakefile](%%REPO_URL%%/2014/endoh1/Rakefile) slightly.
 
-**_Barely_** worth noting but done nonetheless, Cody renamed the `read_me.html`
-file to [deobfuscation.html](2014/endoh1/deobfuscation.html) to be clearer in its purpose as
-it is a file with deobfuscation information.
-
 
 <div id="2014_endoh2">
 ## Winning entry: [2014/endoh2](2014/endoh2/index.html)
@@ -5872,7 +5869,9 @@ a friend, whether that's real or imagined.
 
 [Cody](#cody) copied the files from the `spoiler.zip` file (from his copy during
 the preview period) that was password protected with a password that was no
-longer known (but fortunately was already extracted).
+longer known (but fortunately was already extracted). These files, originally
+put in `spoiler/` were moved to
+[obfuscation/](2020/endoh2/obfuscation/index.html).
 
 He also added the [try.sh](%%REPO_URL%%/2020/endoh2/try.sh) script.
 

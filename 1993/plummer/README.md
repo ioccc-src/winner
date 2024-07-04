@@ -125,7 +125,7 @@ compilers) complain that there is no control path leading to a return from
 `main()`.  At 125 characters, it still fits on a single line (for those of us
 who don't mind ruining our eyes with 132 column screens).
 
-### Deobfuscation:
+### Obfuscation:
 
 The first statement points the base of `l` (the argument vector) to
 be the first argument by incrementing it.  It then assigns `O` to

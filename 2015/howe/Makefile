@@ -112,7 +112,7 @@ PROG= prog
 #
 OBJ= ${PROG}.o
 CSRC= ${PROG}.o
-DATA= deobfuscation/Makefile deobfuscation/err.h deobfuscation/prog.c
+DATA= deobfuscated/Makefile deobfuscated/err.h deobfuscated/prog.c
 TARGET= ${PROG}
 #
 ALT_OBJ= ${PROG}.alt.o
