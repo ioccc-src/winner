@@ -85,8 +85,6 @@ compile it and compare how it works to the original code.
 
 ## Author's remarks:
 
-### DEOBFUSCATION:
-
 This is a program which takes any text file as input and 'flips'
 the input file along a diagonal running from the top left corner
 down to the bottom right.  In other words, the first row in the

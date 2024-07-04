@@ -31,8 +31,6 @@ The [Best one-liner - 2018/burton1](burton1/index.html), at 109 characters, is a
 short and sweet implementation of a classic utility and a nod to a winning entry
 from 1986.  Sometimes it takes 20 some years to do things the true IOCCC way.
 
-The color of the remarks text this year was inspired by one of the stars
-of the [Most stellar - 2018/poikola](poikola/index.html).
 
 The [Best use of python - 2018/endoh2](endoh2/index.html) is not what you might think it is.
 It is something completely different.
@@ -42,7 +40,16 @@ The [Most likely to be awarded - 2018/ciura](ciura/index.html) has an amazing vo
 There are also nods to entries of the years [2000/bellard](../2000/bellard/index.html),
 [2015/yang](../2015/yang/index.html), ...
 
-...We'll stop spouting deobfuscation information now. Have fun exploring all the entries!
+...We'll stop spouting spoilers now. Have fun exploring all the entries!
+
+### Historical note:
+
+In 2023-2024 the IOCCC website was drastically changed with the same look for
+every year and this changed the styling as well. But in 2018 different years had
+different stylesheets and we noted that:
+
+> The color of the remarks text this year was inspired by one of the stars of
+the [Most stellar - 2018/poikola](poikola/index.html).
 
 
 ## Remarks on some of submissions that did not win

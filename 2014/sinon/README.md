@@ -112,7 +112,7 @@ that there are no files named "run" and "run.c" in current directory
 
 File size and CRC32 of [prog.c](%%REPO_URL%%/2014/sinon/prog.c) are embedded in line 7.
 
-Process for making `Sinon` is included in [deobfuscation.html](deobfuscation.html).
+Process for making `Sinon` is included in [obfuscation.html](obfuscation.html).
 
 Layout of this code is based on Asada Shino, also known as "`Sinon`",
 from Sword Art Online.

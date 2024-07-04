@@ -506,16 +506,16 @@ then use the [How to contact the IOCCC](contact.html) information to ask
 a private question.
 
 **IMPORTANT**: When you ask your question (in public or as a private question)
-**PLEASE** try to **NOT** discuss detailed about your pending submission.
+**PLEASE** try to **NOT** discuss detailed information about any pending submission.
 Try to ask for question in a more generic way as this will help others
 with a similar question and this will not **give away** what you might be doing
 with your submission.  If the [IOCCC judges](judges.html) truly need more
 information, they will ask (either in public or suggest a private conversation).
 
 Again, **please** don't hesitate to ask: Your question may be something that
-others are wondering about as well.
+others are wondering about as well!
 
-See also [FAQ about making suggestions)(#faq0_5).
+See also [FAQ about making suggestions](#faq0_5).
 
 
 <div id="faq0_7">

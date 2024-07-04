@@ -112,7 +112,7 @@ PROG= prog
 #
 OBJ= ${PROG}.o
 DATA= Rakefile alpha.rb assemble.rb ast-def.rb gen-prog.rb gen-table.rb link.rb \
-	machine.rb main.c parse.rb prog-tmpl.c deobfuscation.md register.rb \
+	machine.rb main.c parse.rb prog-tmpl.c quine-qr.md register.rb \
 	serialize.rb src.rb tool.rb vm.c
 TARGET= ${PROG} main treacle
 #

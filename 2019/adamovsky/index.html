@@ -496,7 +496,7 @@ and the call with current continuation <code>c</code>.</li>
 is, how the state of the program is stored and how the Unlambda functions are
 implemented.</li>
 </ul>
-<p>More on this in the <strong>Deobfuscation</strong> section.</p>
+<p>More on this in the <strong>Obfuscation</strong> section.</p>
 <h3 id="build-notes">Build notes:</h3>
 <p>The program does not require any special treatment by compilers. Some warnings
 had to be suppressed when compiling with <code>-Wall -Wextra -pedantic</code>. Those were
@@ -524,9 +524,9 @@ world situation even when <code>size_t</code> is bigger than <code>long long</co
 for storing <code>char</code>s for later printing. This might produce some warnings, but
 since it was developed using <code>char</code>s it should be always used safely.</li>
 </ul>
-<h3 id="deobfuscation">Deobfuscation:</h3>
+<h3 id="obfuscation">Obfuscation:</h3>
 <ul>
-<li><p>You can examine the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/deobfuscation.c">deobfuscation.c</a> file. It is the original
+<li><p>You can examine the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/deobfuscated.c">deobfuscated.c</a> file. It is the original
 final version of the interpreter, before I started the downsizing. It accepts
 one more optional parameter that specifies a filename for the output Unlambda
 function (it’s the Unlambda function that remains after all function
@@ -570,10 +570,10 @@ continuation and exit functions were swapped. The names of <code>S</code> and Ap
 were shuffled both for <code>S</code> functions and Apply functions in the same way to hide
 the meaning of <code>f</code> and <code>r</code> prefixes.</p></li>
 </ul>
-<h3 id="identification-deobfuscation">Identification deobfuscation:</h3>
+<h3 id="identification-spoiler">Identification spoiler:</h3>
 <p>The alternative build path <code>make identify</code> output commemorates a <a href="../../2014/birken/index.html" title="Best use of port 1701">previous IOCCC
 winning entry</a> which uses similar methods to mess with the size tool.</p>
-<h3 id="judges-debobfuscaiton">Judges’ debobfuscaiton:</h3>
+<h3 id="judges-spoiler">Judges’ spoiler:</h3>
 <p>It is not a bug, it is a feature. :)</p>
 <p>The crash is caused by a stack overflow. Conventional Unlabmda interpreters
 implement the Unlambda execution stack using data structures on the heap. This
@@ -623,7 +623,7 @@ be applied.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/try.sh">try.sh</a> - script to try entry</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/advent.unl">advent.unl</a> - unlambda script</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/crash.unl">crash.unl</a> - unlambda script</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/deobfuscation.c">deobfuscation.c</a> - Deobfuscated source code</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/deobfuscated.c">deobfuscated.c</a> - deobfuscated source code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/iocccsize_2018.c">iocccsize_2018.c</a> - 2018 iocccsize.c source</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/sierpinski.unl">sierpinski.unl</a> - unlambda code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/spam.unl">spam.unl</a> - unlambda code</li>

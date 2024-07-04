@@ -222,7 +222,7 @@ In Unix the min 0 on `stty` is required but circa 2001
 it was not required.
 
 
-### How it works (deobfuscation)
+### How it works (obfuscation)
 
 The `l` array contains the 64K memory; it is initialized with a boot image
 loaded from the `C` file. The [program

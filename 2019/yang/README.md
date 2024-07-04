@@ -46,7 +46,7 @@ Do you understand how this program works?  You may have to go over and over the
 output again.
 
 If you run into difficultly in understanding the code, you may wish
-to review the [deobfuscation.html](deobfuscation.html) web page.
+to review the [obfuscation.html](obfuscation.html) web page.
 
 
 ## Author's remarks:

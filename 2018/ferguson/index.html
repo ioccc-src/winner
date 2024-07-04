@@ -470,17 +470,17 @@ while using more Cenozoic minded code migration, read <a href="rpm.html">rpm.htm
 <li>Preface</li>
 <li>What it is</li>
 <li>How it works</li>
-<li>Hints (Keyboards, Options, Deobfuscation, Example Invocations)</li>
+<li>Hints (Keyboards, Options, Obfuscation, Example Invocations)</li>
 <li>Obfuscation (Techniques, Beauty)</li>
 <li>How to build (S and N Constants, Compilation, Portability, Installing)</li>
 <li>Final thoughts</li>
 <li>Winning comments, thanks, dedications, links, etc.</li>
 </ol>
 <h2 id="preface"><strong>0. Preface</strong></h2>
-<p><strong>DEOBFUSCATION NOTES: A great deal of this document and the man page is full of
-deobfuscation information of different types; as such I would recommend that you try running the
+<p><strong>OBFUSCATION NOTES: A great deal of this document and the man page is full of
+obfuscation information of different types; as such I would recommend that you try running the
 judges suggested invocations as well as running <code>make test</code> before you get into
-the document or the man page, unless you don’t mind reading deobfuscation information. I don’t reveal
+the document or the man page, unless you don’t mind reading obfuscation information. I don’t reveal
 much in the way of obfuscation however so if you just want documentation on the
 program, how to compile, etc. then there isn’t need to heed this note.</strong></p>
 <p>I was at a loss on how to present my remarks; on the one hand I wanted to give
@@ -580,7 +580,7 @@ try and show the way they work) for those interested I will cite the summary:</p
     principles first laid down by Charles Darwin of &quot;survival of the fittest.&quot;.
     Since in nature, competition among individuals for scanty resources results in
     the fittest individuals dominating over the weaker ones.</code></pre>
-<p><strong>DEOBFUSCATION NOTE: Some of the below might help you follow the code more
+<p><strong>OBFUSCATION NOTE: Some of the below might help you follow the code more
 easily.</strong></p>
 <p>For each <em>generation</em> there is a total of <code>N</code> <em>offspring</em>; generation 0 is
 the pseudo-randomly initialised array <em>without parents.</em> Each offspring has its
@@ -664,7 +664,7 @@ it includes a literal space <code>' '</code> but it doesn’t include other
 can actually produce but there is a certain type of input error that might
 <em>appear</em> to be a bug; see specifically <a href="#error">Input Error Example</a>.</p>
 <h3 id="options">Options</h3>
-<p>Skip to the <a href="#deobfuscation">deobfuscation section</a>.</p>
+<p>Skip to the <a href="#obfuscation">obfuscation section</a>.</p>
 <p>There are a number of options you can pass to the program besides the target
 string; some I will document here (the summary being in the man page). You can
 join options but there is a caveat with spaces and <code>-r</code> option as well as
@@ -708,7 +708,7 @@ With the default string most modern systems shouldn’t take much time to - give
 decent parameters - come to an answer here but if necessary kill the program.</p></li>
 <li><p>Repeat the steps only this time don’t enable quiet mode. Look at the
 offspring output. If you still don’t see what it is and want to know see
-<strong><a href="#deobfuscation">Deobfuscation information</a></strong> below.</p></li>
+<strong><a href="#obfuscation">obfuscation information</a></strong> below.</p></li>
 </ol>
 <p>Finally any argument that doesn’t start with a <code>-</code> passed into the program
 will become the target string. The same rule applies to the number for <code>-r</code>:
@@ -770,7 +770,7 @@ itself) and then the target string would <em>literally</em> be set to <code>-r</
 it no longer cares about the <code>-</code> for option parsing. In other words options
 are only parsed if the first character is <code>-</code> and if the parser hasn’t seen
 the <code>-</code> - <em>in an earlier element of <code>argv</code>. This is not a bug!</em></p>
-<h3 id="deobfuscation">Deobfuscation</h3>
+<h3 id="obfuscation">Obfuscation</h3>
 <p>Skip to <a href="#invocations">Example Invocations</a>.</p>
 <p>The Easter egg: Since Dawkins references the <a href="https://en.wikipedia.org/wiki/Infinite_monkey_theorem">Infinite Monkey Theorem</a> it
 simulates a monkey using a typewriter! This mode has the following changes:</p>
@@ -990,7 +990,9 @@ invalid character (<code>'\n'</code> itself which means another line break) and 
 finally the closing <code>'</code>. Specifically <code>isspace()</code> characters aren’t
 distinctly seen like a letter, digit or symbol is: <code>isprint('\n') == 0 &amp;&amp; isspace('\n') == 1</code>. You can add these characters but the output will be
 rather confusing and hard to read.</p>
-<h2 id="obfuscation"><strong>4. Obfuscation</strong></h2>
+<div id="obfuscation">
+<h2 id="obfuscation-1"><strong>4. Obfuscation</strong></h2>
+</div>
 <h3 id="techniques">Techniques</h3>
 <p>Skip to <a href="#beauty">Beauty</a>.</p>
 <p>The following might be some of the techniques used in this entry:</p>
@@ -1069,7 +1071,7 @@ implementation of the Weasel program otherwise).</p>
 <p>There is obviously a reason <code>38</code> is the chosen size but the only hints I
 provide are those in <strong><a href="#how">How it works</a></strong> and specifically an Easter egg I
 referenced there (it’s <em>not the only Easter egg</em> but it’s the only Easter egg I
-won’t deobfuscate; yes this ironically and amusingly means I’ve left a rotten egg
+won’t spoil; yes this ironically and amusingly means I’ve left a rotten egg
 somewhere!).</p>
 <p>The Makefile simplifies how to reconfigure this value with the variable
 <code>MAX_SIZE</code>:</p>

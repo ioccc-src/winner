@@ -161,7 +161,7 @@ determine which tool was correct when there were differences.
 >   is presented for the Judge's consideration as a more accurate replacement for `iocccsize`.<br>
 >   This obfuscated entry is derived from (and compatible with) that code,<br>
 >   but due to obfuscation, has had some significant, deep changes for the contest.<br>
->   Nevertheless, the more clearly written code remains deobfuscation information about this entry.
+>   Nevertheless, the more clearly written code remains a spoiler for this entry.
 
 NB: `iocccsize` gets a different answer from `tac` on its own
 [iocccsize.c](%%REPO_URL%%/2018/iocccsize.c) source code;

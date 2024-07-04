@@ -32,12 +32,12 @@ For more detailed information see [1996/huffman in bugs.html](../../bugs.html#19
 
 ## Judges' remarks:
 
-If you are still confused and want to run the deobfuscation command, check out
+If you are still confused and want to read a spoiler, check out
 the source and it will be clear as mud!
 
 And for a misleading hint, consider who won!  :-)
 
-And if you really can't see what is going on, try this deobfuscation command:
+And if you really can't see what is going on, here is an extra spoiler:
 
 ``` <!---sh-->
     ./huffman < huffman.c 2>/dev/null

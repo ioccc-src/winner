@@ -152,7 +152,7 @@ unaware of how to do so.
 
 ## Modifying the status/score line (table of variables/stats below)
 
-### DEOBFUSCATION NOTICE
+### OBFUSCATION NOTICE
 
 Below I give a table of some variables/expressions along with the data types and
 their respective format specifiers of the data. Originally it was a lot more
@@ -170,7 +170,7 @@ enough (it amounts to the parameters to a printf call):
     #define J " " );
 ```
 
-If you don't care about brief displays of 'o' at 0,0 you can just have:
+If you don't care about brief displays of '`o`' at `0,0` you can just have:
 
 ``` <!---c-->
     #define J "");
@@ -284,17 +284,19 @@ instead. Here are some ideas on how one might choose to implement something like
 this. Or maybe it's more like what sorts of things do you have to consider and
 answer?
 
-0. If the snake runs back into itself - thus dying - the snake would actually be
-slithering inside itself (a rather creepy thought - though they sort of do when
-they shed their skin). How then would the lives be of any value? If that would
-constitute as running into itself wouldn't it very quickly lose all lives?
+0. If the snake runs back into itself - thus dying (at least without
+`CANNIBAL=1`) - the snake would actually be slithering inside itself (a rather
+creepy thought - though they sort of do when they shed their skin). How then
+would the lives be of any value? If that would constitute as running into itself
+wouldn't it very quickly lose all lives?
 
     I can think of a number of ways to answer this question: by defining
     specific rules (as in what would be allowed and what wouldn't be) and also
     by when to decrement the lives.
 
-1. If the snake hits a wall and it's not allowed to where would the snake be
-placed? This is similar to (1) but maybe not as many things to consider.
+1. If the snake hits a wall and it's not allowed (`WALLS=0`) to where would the
+snake be placed? This is similar to (1) but maybe not as many things to
+consider.
 
 2. Should the snake lose its size? WHAT does having another life even MEAN?
 
@@ -341,7 +343,7 @@ the number of bugs eaten so far. Alternatively you could have the bug simply be
 placed somewhere where the snake isn't after replacing (can you replace
 something with itself?) the snake.
 
-Question: do you have to save the WALLS and other environmental variables?
+Question: do you have to save the `WALLS` and other environmental variables?
 You wouldn't have to but you could: if you didn't it would mean that the player
 could change the growth size on another run for example, or they could disable
 or enable a feature.
@@ -423,7 +425,7 @@ this instead (omitting the inner if statements here):
 Again though that's just the idea; the code is dramatically different. The above
 incidentally is not even complete.
 
-You could also have it so depending on the WALLS value have it go through
+You could also have it so depending on the `WALLS` value have it go through
 walls, end game or act as a blockade. If you really wanted you could have some
 walls you can go through and some you can't (maybe different colours would be
 needed?).

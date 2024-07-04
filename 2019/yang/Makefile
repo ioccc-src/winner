@@ -112,7 +112,7 @@ PROG= prog
 #
 OBJ= ${PROG}.o
 CSRC= ${PROG}.o
-DATA= sample_input.txt
+DATA= sample_input.txt obfuscation.html
 TARGET= ${PROG}
 #
 ALT_OBJ=

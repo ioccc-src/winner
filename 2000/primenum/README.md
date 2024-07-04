@@ -34,7 +34,7 @@ NOTE: `n` is an integer.
 
 ## Judges' remarks:
 
-Don't read the author remarks until you're ready for some obfuscation information.
+Don't read the author's remarks until you're ready for the spoiler.
 Just stop and read the program; it won't take long.  Once you've figured
 out what it does, run it.  It may surprise you.
 
@@ -69,7 +69,7 @@ running the program a second time.  Try:
     diff textfile textfile2
 ```
 
-where n is the same number (modulo 64).  So, the prime number generator
+where `n` is the same number (modulo 64).  So, the prime number generator
 is actually a simple text encoder/decoder!  Of course, don't forget that
 argument, otherwise the "bugs" in the program will cause it to crash!
 

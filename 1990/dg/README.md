@@ -43,7 +43,7 @@ which we have done for the wider audience.
 If my preprocessor could hack it, I could write this as one single line rather
 than 4, but when I do that I get a complaint "defines nested too deeply".
 
-### Debfuscation:
+### Obfuscation spoiler:
 
 This is another rot13 job (believe it or not) - the `#define`s are a
 novel way of adding tokens: `#define b12(x) 12 x` means that at

@@ -397,9 +397,9 @@
 1995/heathbar/index.html
 1995/leo/.path
 1995/leo/1995_leo.tar.bz2
-1995/leo/deobfuscation.html
 1995/leo/index.html
 1995/leo/leo.orig.c
+1995/leo/secret.html
 1995/makarios/.path
 1995/makarios/1995_makarios.tar.bz2
 1995/makarios/index.html
@@ -956,9 +956,9 @@
 2014/deak/prog.orig.c
 2014/endoh1/.path
 2014/endoh1/2014_endoh1.tar.bz2
-2014/endoh1/deobfuscation.html
 2014/endoh1/index.html
 2014/endoh1/prog.orig.c
+2014/endoh1/quine-qr.html
 2014/endoh2/.path
 2014/endoh2/2014_endoh2.tar.bz2
 2014/endoh2/index.html
@@ -993,8 +993,8 @@
 2014/wiedijk/prog.orig.c
 2015/burton/.path
 2015/burton/2015_burton.tar.bz2
-2015/burton/deobfuscation.html
 2015/burton/index.html
+2015/burton/obfuscation.html
 2015/burton/prog.orig.c
 2015/burton/road.to.obscurity.html
 2015/dogon/.path

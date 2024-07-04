@@ -115,7 +115,7 @@ PROG= ${ENTRY}
 #
 OBJ= misaka.o misaka2.o misaka3.o misaka4.o misaka5.o \
         misaka6.o misaka7.o misaka8.o misaka9.o
-DATA= bf.pl deobfuscation.html
+DATA= bf.pl obfuscation.html
 TARGET= ${PROG} horizontal_cat vertical_cat long_cat loong_cat \
 	loooong_cat loooooooong_cat long_fat_cat \
 	long_faat_cat same_as_long_cat

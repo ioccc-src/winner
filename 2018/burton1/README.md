@@ -62,12 +62,12 @@ This code has been compiled and tested on:
 * X86-FreeBSD 10.3, clang 3.4.1, -O0 and -O3
 * TCC 0.9.26 (x86-64), used as a proxy for [2001/bellard](../../2001/bellard/index.html)
 * UNIX V7 pcc (Johnson's C compiler) on a [simulated PDP-11/45](http://simh.trailing-edge.com/)
-  (see the "**DEOBFUSCATION** section below for further detail)
+  (see the "**SPOILER** section below for further detail)
 
-<div style="margin-bottom:60em;margin-top:4em"><strong>Deobfuscation information below; scroll down.</strong></div>
+<div style="margin-bottom:60em;margin-top:4em"><strong>Spoiler below; scroll down.</strong></div>
 
 
-### DEOBFUSCATION:
+### SPOILER:
 
 This started life as a personal challenge: write the shortest hex dump utility
 in C.
@@ -172,7 +172,7 @@ but it uses more characters in just setting up its obfuscation than this entire
 solution!
 
 
-### MORE DEOBFUSCATION:
+### BIGGER SPOILER:
 
 If you are unhappy with the way DEL (character 127) is handled,
 replace the cryptic expression `4<(4^l>>5)?l:46` with `32>l|l>126?46:l`.
@@ -180,7 +180,7 @@ Both take the same number of characters, but the former is a bit more interestin
 Bonus question: how does the first expression work?
 
 
-### EVEN MORE DEOBFUSCATION (and some history):
+### BIGGEST SPOILER (and some history):
 
 Technically, `char o[0];` is illegal (SS 6.7.6.2) according to ISO (N1570).  And
 `char o[];` is a conditionally supported feature (SS 6.7.6.2, 6.10.8.3).

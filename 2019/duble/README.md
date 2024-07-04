@@ -184,9 +184,7 @@ You will probably have a hard time analyzing this entry, because:
 ### A few more things:
 
 Did you notice the `enum` declaration? Could it be just an `int` or `const int`
-variable, instead?
-
-See also this [deobfuscation page](http://c-faq.com/ansi/constasconst.html>).
+variable, instead? (spoiler: <http://c-faq.com/ansi/constasconst.html>)
 
 If your keyboard has no arrow keys, you can probably find alternate keys by
 reading the source code.

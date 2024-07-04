@@ -55,7 +55,7 @@ By use of pointers to functions returning a struct of pointers
 to functions!
 
 
-### Deobfuscation:
+### Spoiler:
 
 This program prints out the string:
 

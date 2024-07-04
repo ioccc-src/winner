@@ -123,7 +123,7 @@ of ~1MB, and take ~500MB of RAM to compile.
 of source code is embedded in the source code itself.
 
 The process of writing this program can be seen by opening
-[deobfuscation.html](deobfuscation.html) in a browser that supports JavaScript.
+[obfuscation.html](obfuscation.html) in a browser that supports JavaScript.
 
 Code layout is inspired by [Ibuki
 Fuuko](https://clannad.fandom.com/wiki/Fuko_Ibuki), for her love of sea stars.

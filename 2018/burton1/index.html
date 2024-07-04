@@ -432,12 +432,12 @@ It adds several nice-to-have features, and allows salt-to-taste customizability.
 <li>X86-FreeBSD 10.3, clang 3.4.1, -O0 and -O3</li>
 <li>TCC 0.9.26 (x86-64), used as a proxy for <a href="../../2001/bellard/index.html">2001/bellard</a></li>
 <li>UNIX V7 pcc (Johnson’s C compiler) on a <a href="http://simh.trailing-edge.com/">simulated PDP-11/45</a>
-(see the “<strong>DEOBFUSCATION</strong> section below for further detail)</li>
+(see the “<strong>SPOILER</strong> section below for further detail)</li>
 </ul>
 <div style="margin-bottom:60em;margin-top:4em">
-<strong>Deobfuscation information below; scroll down.</strong>
+<strong>Spoiler below; scroll down.</strong>
 </div>
-<h3 id="deobfuscation">DEOBFUSCATION:</h3>
+<h3 id="spoiler">SPOILER:</h3>
 <p>This started life as a personal challenge: write the shortest hex dump utility
 in C.</p>
 <p>The self-imposed ground rules in the hunt for shortest:</p>
@@ -514,12 +514,12 @@ and it is more interesting to remove characters by changing code than by filteri
 <a href="../../1986/bright/index.html">1986/bright</a> is similar in function,
 but it uses more characters in just setting up its obfuscation than this entire
 solution!</p>
-<h3 id="more-deobfuscation">MORE DEOBFUSCATION:</h3>
+<h3 id="bigger-spoiler">BIGGER SPOILER:</h3>
 <p>If you are unhappy with the way DEL (character 127) is handled,
 replace the cryptic expression <code>4&lt;(4^l&gt;&gt;5)?l:46</code> with <code>32&gt;l|l&gt;126?46:l</code>.
 Both take the same number of characters, but the former is a bit more interesting.
 Bonus question: how does the first expression work?</p>
-<h3 id="even-more-deobfuscation-and-some-history">EVEN MORE DEOBFUSCATION (and some history):</h3>
+<h3 id="biggest-spoiler-and-some-history">BIGGEST SPOILER (and some history):</h3>
 <p>Technically, <code>char o[0];</code> is illegal (SS 6.7.6.2) according to ISO (N1570). And
 <code>char o[];</code> is a conditionally supported feature (SS 6.7.6.2, 6.10.8.3).
 However, it works in modern C implementations as an extension, including GCC,

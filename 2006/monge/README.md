@@ -248,7 +248,7 @@ changing the definitions of `W`, `H` and `I` at the beginning of the code.
   parameter.
 
 
-### Deobfuscation
+### Obfuscation
 
 Sure, I don't want to deprive you of the pleasure of digging
 into the infernal mess created by my corrupted mind (writing
@@ -262,9 +262,9 @@ of how all the program works to be worked out).
 
 This program is a formula parser that outputs machine code that
 calculates the formula and check the given conditions. The
-machine code targets the x87 stack based
+machine code targets the `x87` stack based
 [FPU](https://en.wikipedia.org/wiki/Floating-point_unit), and it is almost
-identical for x86 and x86_64 (except for the comparison
+identical for `x86` and `x86_64` (except for the comparison
 instructions, that have to be generated differently).  The
 program keeps track of the FPU stack (the FPU has a cyclic stack
 of 8 registers) and will automatically swap to and from the

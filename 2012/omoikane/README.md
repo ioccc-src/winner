@@ -83,7 +83,7 @@ We have no way to test the second version, sorry (tm Canada :-) )!
 ## Judges' remarks:
 
 The judges have nothing to add that has not already been written about in the
-[deobfuscation.html](deobfuscation.html) (requires JavaScript) file!  :-)
+[obfuscation.html](obfuscation.html) (requires JavaScript) file!  :-)
 
 
 ## Author's remarks:
@@ -195,7 +195,7 @@ default, this means `Nyaruko` may not faithfully encode files on MingW.
 
 ### Extra files
 
-[deobfuscation.html](deobfuscation.html) - Contains full recording of how the code went from
+[obfuscation.html](obfuscation.html) - Contains full recording of how the code went from
 blank state to an obfuscated program, gzipped to fit under 1MB. Requires
 JavaScript.
 
