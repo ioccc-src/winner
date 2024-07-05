@@ -403,6 +403,8 @@ Location: <a href="../../location.html#CA">CA</a> - <em>Canada</em></li>
 <!-- BEFORE: 1st line of markdown file: 1993/ant/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make all</code></pre>
+<p>The author provided a deobfuscated version. See <a href="#alternate-code">Alternate
+code</a> below.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please DO NOT fix
@@ -412,6 +414,17 @@ Location: <a href="../../location.html#CA">CA</a> - <em>Canada</em></li>
 <pre><code>    ./ant &#39;ERE&#39; [file ...]</code></pre>
 <h2 id="try">Try:</h2>
 <pre><code>    ./try.sh</code></pre>
+<h2 id="alternate-code">Alternate code:</h2>
+<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/ant/deobfuscated/ant.c">ant.c in deobfuscated/</a> is a
+deobfuscated version provided by the author. You can look at this code if you
+want some clues in how it works.</p>
+<h2 id="alternate-build">Alternate build:</h2>
+<p>If you wish to build this deobfuscated version, you can do so like:</p>
+<pre><code>    make alt</code></pre>
+<h2 id="alternate-use">Alternate use:</h2>
+<p>Use <code>ant.alt</code> like you would <code>ant</code> above.</p>
+<h2 id="alternate-try">Alternate try:</h2>
+<pre><code>    ./try.alt.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>See the author’s POSIX P1003.2-like documentation file <a href="ant.txt">ant.txt</a> for
 more information.</p>
@@ -459,8 +472,14 @@ more information.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/ant/ant.orig.c">ant.orig.c</a> - original source code</li>
 <li><a href="ant.txt">ant.txt</a> - ag man page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/ant/try.sh">try.sh</a> - script to try entry</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/ant/deobfuscated/ant-c89.c">deobfuscated/ant-c89.c</a> - author provided deobfuscated code converted from K&amp;R</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/ant/deobfuscated/ant.c">deobfuscated/ant.c</a> - author provided deobfuscated code</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/ant/try.alt.sh">try.alt.sh</a> - script to try deobfuscated code</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/ant/deobfuscated/Makefile">deobfuscated/Makefile</a> - author provided Makefile for deobfuscated code</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/ant/deobfuscated/test.mk">deobfuscated/test.mk</a> - author provided test suite Makefile for deobfuscated code</li>
 <li><a href="ants.txt">ants.txt</a> - lyrics of the Ants Go Marching song</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/ant/ant.test.mk">ant.test.mk</a> - test suite Makefile</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/ant/ant.alt.test.mk">ant.alt.test.mk</a> - test suite Makefile for deobfuscated code</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>

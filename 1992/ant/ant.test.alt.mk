@@ -170,9 +170,9 @@ split.cmd:
 #  Test AM error reports and exit statuses.
 #
 errors:
-	-./am test.mk error.1
-	-./am test.mk error.2
-	-./am test.mk error.3
+	-./am.alt test.mk error.1
+	-./am.alt test.mk error.2
+	-./am.alt test.mk error.3
 	
 #  Target that does not exist, has no dependencies, and no commands.
 error.1:

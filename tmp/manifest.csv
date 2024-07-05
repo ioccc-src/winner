@@ -572,6 +572,9 @@
 1991,ant,Makefile,30,true,makefile,true,entry Makefile
 1991,ant,ant.alt.c,40,true,c,true,alternate source code
 1991,ant,ant.orig.c,50,false,c,true,original source code
+1991,ant,deobfuscated/ant.c,140,true,c,true,author provided deobfuscated code
+1991,ant,deobfuscated/ant-c89.c,140,true,c,true,author provided deobfuscated code converted from K&R
+1991,ant,deobfuscated/Makefile,150,true,c,true,author provided Makefile for deobfuscated code
 1991,ant,1991_ant.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1991,ant,README.md,4000000000,true,markdown,true,markdown source for this web page
 1991,ant,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -709,8 +712,13 @@
 1992,ant,Makefile,30,true,makefile,true,entry Makefile
 1992,ant,ant.orig.c,50,false,c,true,original source code
 1992,ant,try.sh,100,true,shellscript,true,script to try entry
+1992,ant,deobfuscated/ant.c,140,true,c,true,author provided deobfuscated code
+1992,ant,deobfuscated/sleep.c,140,true,c,true,author provided code for those who need a nap
 1992,ant,ant.README.txt,150,true,text,true,am man page
 1992,ant,ant.test.mk,150,true,makefile,true,Makefile to demonstrate entry
+1992,ant,deobfuscated/Makefile,150,true,makefile,true,author provided Makefile for deobfuscated code
+1992,ant,try.alt.sh,150,true,shellscript,true,script to try deobfuscated code
+1992,ant,ant.test.alt.mk,160,true,makefile,true,Makefile to demonstrate deobfuscated code
 1992,ant,1992_ant.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1992,ant,README.md,4000000000,true,markdown,true,markdown source for this web page
 1992,ant,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -840,8 +848,14 @@
 1993,ant,ant.orig.c,50,false,c,true,original source code
 1993,ant,ant.txt,100,true,text,false,ag man page
 1993,ant,try.sh,100,true,shellscript,true,script to try entry
-1993,ant,ants.txt,150,true,text,false,lyrics of the Ants Go Marching song
+1993,ant,deobfuscated/ant.c,120,true,c,true,author provided deobfuscated code
+1993,ant,deobfuscated/ant-c89.c,120,true,c,true,author provided deobfuscated code converted from K&R
+1993,ant,try.alt.sh,130,true,shellscript,true,script to try deobfuscated code
+1993,ant,deobfuscated/Makefile,140,true,makefile,true,author provided Makefile for deobfuscated code
+1993,ant,deobfuscated/test.mk,140,true,makefile,true,author provided test suite Makefile for deobfuscated code
+1993,ant,ants.txt,150,false,text,false,lyrics of the Ants Go Marching song
 1993,ant,ant.test.mk,150,true,makefile,true,test suite Makefile
+1993,ant,ant.alt.test.mk,160,true,makefile,true,test suite Makefile for deobfuscated code
 1993,ant,1993_ant.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1993,ant,README.md,4000000000,true,markdown,true,markdown source for this web page
 1993,ant,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON

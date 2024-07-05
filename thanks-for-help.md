@@ -1459,9 +1459,23 @@ Cody also added the [try.sh](%%REPO_URL%%/1990/westley/try.sh) script.
 ### Winning entry source code: [ant.c](%%REPO_URL%%/1991/ant/ant.c)
 </div>
 
-[Cody](#cody) added [alternate code](%%REPO_URL%%/1991/ant/ant.alt.c) that will be a bit easier to use for
-those familiar with vim in the following ways (we don't want vi users to also
-not be able to use it or exit it, now do we ? :-) ):
+
+The author, [Anthony C Howe](authors.html#Anthony_C_Howe), provided a
+deobfuscated version which was put in by [Cody](#cody) with thanks to Anthony!
+The `deobfuscated` directory has the code and Makefile. The entry's Makefile was
+updated to compile the alt code, if `make alt` is used, but in a way that keeps
+both directories clean (the deobfuscated version will not be in the entry's
+directory and vice versa) but also allowing one to just do `./ant.alt2` (see
+below for why `alt2`). There are two versions here,
+[deobfuscated/ant.c](%%REPO_URL%%/1991/ant/deobfuscated/ant.c) and
+[deobfuscated/ant-c89.c](%%REPO_URL%%/1991/ant/deobfuscated/ant-c89.c) along
+with the `Makefile`. The latter C file was converted from `K&R` by Anthony (the
+other one did not compile without a few fixes made by Cody).
+
+[Cody](#cody) also added [alternate code](%%REPO_URL%%/1991/ant/ant.alt.c) that
+will be a bit easier to use for those familiar with vim in the following ways
+(we don't want vi users to also not be able to use it or exit it, now do we ?
+:-) ):
 
 - Use `0` to go to first column.
 - Use `$` to go to last column.
@@ -1471,6 +1485,8 @@ not be able to use it or exit it, now do we ? :-) ):
 - Use `q` to exit.
 
 The other keys were left unchanged.
+
+(As this was done first it was left as `alt` and not changed to `alt2`.)
 
 
 <div id="1991_brnstnd">
@@ -1872,6 +1888,16 @@ systems too.
 
 Cody also added the [try.sh](%%REPO_URL%%/1992/ant/try.sh) script.
 
+The author, [Anthony C Howe](authors.html#Anthony_C_Howe), provided a
+deobfuscated version that Cody added in, with thanks to Anthony! The source code
+and the `Makefile` as well as `sleep.c` are in the `deobfuscated/` directory.
+The entry's Makefile was updated in a way that keeps the deobfuscated code
+separate from the entry's code but which allows one to use the deobfuscated
+Makefile when compiling the alt code (via `make alt`). For this version,
+[try.alt.sh](%%REPO_URL%%/1992/ant/try.alt.sh) was added and an alternate test
+Makefile (along the lines of the author's provided test Makefile) was added,
+updated to use `ant.alt`.
+
 
 <div id="1992_buzzard.1">
 ## Winning entry: [1992/buzzard.1](1992/buzzard.1/index.html)
@@ -2095,6 +2121,14 @@ encourage you to try the original without two args :-)
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1993/ant/try.sh) script and a data file,
 [ants.txt](1993/ant/ants.txt), full of ants for the script.
+
+The author, [Anthony C Howe](authors.html#Anthony_C_Howe), provided a
+deobfuscated version that Cody added in, with thanks to Anthony! The source code
+(which might have had to be fixed to compile with modern compilers whereas the
+`-c89` version was converted from `K&R` and worked without any fixes) and its
+Makefile was put in the `deobfuscated` subdirectory to keep them separate. The
+entry's Makefile was updated so that it uses the deobfuscated version's Makefile
+but allowing one to run `./ant.alt`.
 
 
 <div id="1993_cmills">

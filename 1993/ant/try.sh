@@ -36,6 +36,6 @@ echo 1>&2
 ./ant ant ants.txt | cut -d: -f2 | less -rEXF
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run the test suite (make -f ant.test.mk) (space = next page, q = quit): "
+read -r -n 1 -p "Press any key to run the test suite (make -f ant.test.mk): "
 echo 1>&2
-make -f ant.test.mk | less -rEXF
+make -f ant.test.mk

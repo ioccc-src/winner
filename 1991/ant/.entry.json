@@ -42,6 +42,30 @@
 	    "entry_text" : "original source code"
 	},
 	{
+	    "file_path" : "deobfuscated/ant-c89.c",
+	    "inventory_order" : 140,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "author provided deobfuscated code converted from K&R"
+	},
+	{
+	    "file_path" : "deobfuscated/ant.c",
+	    "inventory_order" : 140,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "author provided deobfuscated code"
+	},
+	{
+	    "file_path" : "deobfuscated/Makefile",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "author provided Makefile for deobfuscated code"
+	},
+	{
 	    "file_path" : "1991_ant.tar.bz2",
 	    "inventory_order" : 1415926535,
 	    "OK_to_edit" : false,

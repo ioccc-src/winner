@@ -291,6 +291,7 @@
 1993/ant/.path
 1993/ant/1993_ant.tar.bz2
 1993/ant/ant.orig.c
+1993/ant/ants.txt
 1993/ant/index.html
 1993/cmills/.path
 1993/cmills/1993_cmills.tar.bz2

@@ -3,6 +3,8 @@
 *.dSYM
 ant
 ant.alt
+ant.alt2
+ant.alt2-c89
 ant.orig
 hill
 indent

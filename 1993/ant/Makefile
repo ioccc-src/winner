@@ -116,8 +116,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= deobfuscated/${PROG}.o
+ALT_TARGET= deobfuscated/${PROG}
 
 
 #################
@@ -145,8 +145,29 @@ ag.txt: ${PROG}.txt
 
 # alternative executable
 #
-alt: data ${ALT_TARGET}
+alt: data ${PROG}.alt
 	@${TRUE}
+
+# We keep the alternate code, the deobfuscated code, and its Makefile, in the
+# deobfuscated directory but copy the compiled binaries to the entry directory,
+# to keep both directories clean, separating the two. The reason we copy the
+# binary to the entry directory is so one does not have to do:
+#
+#	./deobfuscated/ant
+# 
+# but instead just:
+#
+#	./ant.alt
+# 
+# while still using the Makefile provided with the deobfuscated code.
+#
+${PROG}.alt: deobfuscated/ant.c
+	${MAKE} -C deobfuscated ant
+	${CP} -v -f deobfuscated/ant ant.alt
+
+ag.alt: ${PROG}.alt
+	${RM} -f $@
+	${CP} -f $< $@
 
 # data files
 #
@@ -155,7 +176,7 @@ data: ${DATA}
 
 # both all and alt
 #
-everything: all alt
+everything: all alt ag ag.alt
 	@${TRUE}
 
 
@@ -215,7 +236,7 @@ clean:
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
 	${RM} -rf *.dSYM
-	${RM} -f ag ag.txt
+	${RM} -f ag ag.txt ant.alt ag.alt deobfuscated/ant deobfuscated/ant-c89 deobfuscated/ag deobfuscated/ag-c89
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \

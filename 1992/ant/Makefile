@@ -117,8 +117,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= deobfuscated/${PROG}.o
+ALT_TARGET= deobfuscated/${PROG}
 
 
 #################
@@ -146,8 +146,32 @@ am: ant
 
 # alternative executable
 #
-alt: data ${ALT_TARGET}
+alt: data ${PROG}.alt
 	@${TRUE}
+
+# We keep the alternate code, the deobfuscated code, and its Makefile, in the
+# deobfuscated directory but copy the compiled binaries to the entry directory,
+# to keep both directories clean, separating the two. The reason we copy the
+# binary to the entry directory is so one does not have to do:
+#
+#	./deobfuscated/ant
+# 
+# but instead just:
+#
+#	./ant.alt
+# 
+# while still using the Makefile provided with the deobfuscated code.
+#
+${PROG}.alt: deobfuscated/ant.c
+	${MAKE} -C deobfuscated ant
+	${CP} -v -f deobfuscated/ant ant.alt
+
+am.alt: ant.alt
+	rm -f am.alt
+	ln deobfuscated/ant am.alt
+	cp am.alt am.safe.alt
+	cp am.safe.alt am.alt
+	rm -f am.safe.alt
 
 # data files
 #
@@ -156,7 +180,7 @@ data: ${DATA}
 
 # both all and alt
 #
-everything: all alt
+everything: all alt am am.alt
 	@${TRUE}
 
 
@@ -216,7 +240,8 @@ clean:
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
 	${RM} -rf *.dSYM
-	${RM} -f am am.safe
+	${RM} -f am am.safe am.alt am.safe.alt deobfuscated/ant ${PROG}.alt
+	${RM} -f node.* leaf.*
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
@@ -229,9 +254,11 @@ am_clean:
 	    ${RM} -f indent.c; \
 	fi
 
-
 am_clobber: am_clean
 	rm -f am.safe
+
+am_alt_clobber:
+	rm -f am.safe.alt
 
 install:
 	@echo "Dr. Spock says that is not logical!"
