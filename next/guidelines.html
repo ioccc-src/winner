@@ -1135,44 +1135,47 @@ architectures. For instance, more recent versions of <code>macOS</code> do <stro
 to note such limitations in your <code>remarks.md</code> file. For example if your
 submission factors values up to a certain size, you might want to state:</p>
 <blockquote>
-<p>This submission factors values up <code>2305567963945518424753102147331756070</code>.<br>
+<p>This submission factors values up <code>2305567963945518424753102147331756070</code>.
 Attempting to factor larger values will produce unpredictable results.</p>
 </blockquote>
 <p>The <a href="../judges.html">judges</a> might try to factor the value -5, so you want to might state:</p>
 <blockquote>
-<p>This submission factors positive values up <code>2305567963945518424753102147331756070</code>.<br>
-Attempting to factor large values will produce unpredictable results.</p>
+<p>This submission factors positive values up
+<code>2305567963945518424753102147331756070</code>. Attempting to factor large values will
+produce unpredictable results.</p>
 </blockquote>
 <p>However the <a href="../judges.html">judges</a> might try to also factor 0, so you want to might state:</p>
 <blockquote>
-<p>This submission factors values between 1 and <code>2305567963945518424753102147331756070</code>.<br>
-Attempting to factor values outside that range will produce unpredictable results.</p>
+<p>This submission factors values between 1 and
+<code>2305567963945518424753102147331756070</code>. Attempting to factor values outside
+that range will produce unpredictable results.</p>
 </blockquote>
 <p>Moreover the try to also factor 3.5 or 0x7, or Fred, so you want to might state:</p>
 <blockquote>
-<p>This submission factors integers between 1 and <code>2305567963945518424753102147331756070</code>.<br>
-Attempting to factor anything else will produce unpredictable results.</p>
+<p>This submission factors integers between 1 and
+<code>2305567963945518424753102147331756070</code>. Attempting to factor anything else
+will produce unpredictable results.</p>
 </blockquote>
 <p>You submission might be better off catching the attempt to factor bogus values
 and doing something interesting. So you might want to code accordingly and state:</p>
 <blockquote>
-<p>This submission factors integers between 1 and <code>2305567963945518424753102147331756070</code>.<br>
+<p>This submission factors integers between 1 and <code>2305567963945518424753102147331756070</code>.
 Attempting to factor anything else will cause the program to insult your pet fish Eric.</p>
 </blockquote>
 <p>The <a href="../judges.html">judges</a> might not have a pet fish named Eric, so might want to state:</p>
 <blockquote>
 <p>This submission factors integers between 1 and
-<code>2305567963945518424753102147331756070</code>.<br>
-Attempting to factor anything else will cause the program to insult your pet fish Eric,<br>
-or in the case that you lack such a pet, will insult the pet that you do not have.</p>
+<code>2305567963945518424753102147331756070</code>. Attempting to factor anything else
+will cause the program to insult your pet fish Eric, or in the case that you
+lack such a pet, will insult the pet that you do not have.</p>
 </blockquote>
 <p>When all other things are equal, a submission with fewer limitations will be judged
 better than a submission with lots of limitations. So you might want to code accordingly
 and state:</p>
 <blockquote>
-<p>This submission attempts to a factor value of any size provided that the program is<br>
-given enough time and memory. If the value is not a proper integer, the program<br>
-might insult a fish named Eric.</p>
+<p>This submission attempts to a factor value of any size provided that the
+program is given enough time and memory. If the value is not a proper integer,
+the program might insult a fish named Eric.</p>
 </blockquote>
 <p><strong><code>|</code></strong> Do not fear if you’re not 100% sure of the significance of <code>2305567963945518424753102147331756070</code> as it is not of prime importance: or is it? :-)</p>
 <p><strong><code>|</code></strong> We <strong>DISLIKE</strong> the use of use ASCII tab characters in markdown files, such as in the required <code>remarks.md</code> file.</p>
