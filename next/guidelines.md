@@ -43,7 +43,7 @@ writing by [contacting the judges](../contact.html).
 ## IOCCC Guidelines version
 </div>
 
-**`|`**   These [IOCCC guidelines](guidelines.html) are version **28.5 2024-07-05**.
+**`|`**   These [IOCCC guidelines](guidelines.html) are version **28.6 2024-07-06**.
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
 
@@ -956,7 +956,7 @@ We believe that Mark Twain's quote:
 
 ... is a good motto for those writing code for the IOCCC.
 
-**`|`**   The [IOCCC size tool source](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)
+The [IOCCC size tool source](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)
 is not an original work, unless you are [Anthony C
 Howe](../authors.html#Anthony_C_Howe), in which case it is original!  :-)
 Submitting source that uses the content of iocccsize.c, unless you are
