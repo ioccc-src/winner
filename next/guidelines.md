@@ -985,7 +985,7 @@ Submitting source that uses the content of these tools, unless you are
 [Landon Curt Noll](http://www.isthe.com/chongo/index.html), might run the risk of
 violating [Rule 7](rules.html#rule7).
 
-**`|`**   Neither the [jparse tool and
+**`|`**   Neither the [JSON parser and
 library](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/README.md)
 nor [jstrencode](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jstrencode.c)
 nor [jstrdecode](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jstrdecode.c)
@@ -1061,7 +1061,7 @@ and doing something interesting.  So you might want to code accordingly and stat
 >   This submission factors integers between 1 and `2305567963945518424753102147331756070`.
 >   Attempting to factor anything else will cause the program to insult your pet fish Eric.
 
-The [judges](../judges.html) might not have a pet fish named Eric, so might want to state:
+The [judges](../judges.html) might not have a pet fish named Eric, so you might want to state:
 
 >   This submission factors integers between 1 and
 `2305567963945518424753102147331756070`.  Attempting to factor anything else
