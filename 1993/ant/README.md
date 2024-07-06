@@ -4,6 +4,9 @@
     make all
 ```
 
+The author provided a deobfuscated version. See [Alternate
+code](#alternate-code) below.
+
 
 ### Bugs and (Mis)features:
 
@@ -28,6 +31,35 @@ For more detailed information see [1993/ant in bugs.html](../../bugs.html#1993_a
 
 ``` <!---sh-->
     ./try.sh
+```
+
+
+## Alternate code:
+
+The [ant.c in deobfuscated/](%%REPO_URL%%/1993/ant/deobfuscated/ant.c) is a
+deobfuscated version provided by the author. You can look at this code if you
+want some clues in how it works.
+
+
+## Alternate build:
+
+If you wish to build this deobfuscated version, you can do so like:
+
+
+``` <!---sh-->
+    make alt
+```
+
+
+## Alternate use:
+
+Use `ant.alt` like you would `ant` above.
+
+
+## Alternate try:
+
+``` <!---sh-->
+    ./try.alt.sh
 ```
 
 

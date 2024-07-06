@@ -2,8 +2,10 @@
 # sort with: ../../bin/sgi.sh
 *.dSYM
 ag
+ag.alt
 ag.txt
 ant
+ant.alt
 ant.orig
 indent
 indent.c

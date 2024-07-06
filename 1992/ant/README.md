@@ -5,6 +5,10 @@
 ```
 
 
+The author provided us with an unobfuscated version. See [Alternate
+code](#alternate-code) below.
+
+
 ## To use:
 
 ``` <!---sh-->
@@ -20,6 +24,31 @@ where `Makefile` is a Makefile to use and `rule` is an optional rule to use.
 
 ``` <!---sh-->
     ./try.sh
+```
+
+
+## Alternate code:
+
+This version, [ant.c in deobfuscated/](%%REPO_URL%%/1992/ant/deobfuscated/ant.c), was provided by the
+author in 2024, and is a deobfuscated version.
+
+
+## Alternate build:
+
+``` <!---sh-->
+    make alt
+```
+
+
+## Alternate use:
+
+Use `ant.alt` as you would `ant` above.
+
+
+## Try:
+
+``` <!---sh-->
+    ./try.alt.sh
 ```
 
 

@@ -403,8 +403,9 @@ Location: <a href="../../location.html#CA">CA</a> - <em>Canada</em></li>
 <!-- BEFORE: 1st line of markdown file: 1991/ant/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make all</code></pre>
-<p>There is an <a href="#alternate-code">alternate version</a> that might feel a bit more
-familiar to vi(m) users.</p>
+<p>There is an alternate version that might feel a bit more familiar to vi(m)
+users. Additionally, the author provided deobfuscated versions including one for
+C89. See <a href="#alternate-code">Alternate code</a> below.</p>
 <h2 id="to-use">To use:</h2>
 <pre><code>    ./ant some_file</code></pre>
 <p>NOTE: the file must already exist and not specifying any arg will make the
@@ -415,19 +416,28 @@ program exit without doing anything.</p>
 <pre><code>    make mole
     ./ant mole</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
-<p>This version changes the commands slightly so that to go to the first column you
-should enter <code>0</code>, to go to the last column you should enter <code>$</code>, to quit you
-should enter <code>q</code>, to go back a word you should enter <code>b</code> and to go forwards a
-word you should enter <code>w</code>. Also, and perhaps most useful, rather than having to
-hit ctrl-L (form-feed, <code>\f</code>) to get back to command mode you can use the usual
-ESC (<code>\x1b</code>).</p>
+<p>The author provided us with deobfuscated versions including one for C89. The two
+C files in <code>deobfuscated</code>,
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/ant/deobfuscated/ant.c">deobfuscated/ant.c</a> and
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/ant/deobfuscated/ant-c89.c">deobfuscated/ant-c89.c</a> and the
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/ant/deobfuscated/Makefile">deobfuscated/Makefile</a> will allow
+you to look at them and compile them if you wish. These are exactly like the
+original in every way, including in use, except they are deobfuscated.</p>
+<p>The other version, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/ant/ant.alt.c">ant.alt.c</a> changes the
+commands slightly so that to go to the first column you should enter <code>0</code>, to go
+to the last column you should enter <code>$</code>, to quit you should enter <code>q</code>, to go
+back a word you should enter <code>b</code> and to go forwards a word you should enter <code>w</code>.
+Also, and perhaps most useful, rather than having to hit ctrl-L (form-feed,
+<code>\f</code>) to get back to command mode you can use the usual ESC (<code>\x1b</code>).</p>
 <p>These will make it slightly less unwieldy for those familiar with vi(m); the
 rest was unchanged.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
-<p>Use <code>ant.alt</code> as you would <code>ant</code> above with the changes in the input keys. See
-the author’s remarks for the remaining keys.</p>
+<p>For the deobfuscated versions, use <code>ant.alt2</code> and <code>ant.alt2-c89</code> as you would
+<code>ant</code> above; for the other one, <code>ant.alt</code>, use it as you would <code>ant</code> above but
+with the changes in the input keys described above. See the author’s remarks for
+the remaining commands.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The author was kind enough to supply a list of references below,
 in case you are still confused after read the source! :-)</p>
@@ -540,6 +550,9 @@ ISBN 0-13-822305-X, chapter 5</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/ant/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/ant/ant.alt.c">ant.alt.c</a> - alternate source code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/ant/ant.orig.c">ant.orig.c</a> - original source code</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/ant/deobfuscated/ant-c89.c">deobfuscated/ant-c89.c</a> - author provided deobfuscated code converted from K&amp;R</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/ant/deobfuscated/ant.c">deobfuscated/ant.c</a> - author provided deobfuscated code</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/ant/deobfuscated/Makefile">deobfuscated/Makefile</a> - author provided Makefile for deobfuscated code</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>

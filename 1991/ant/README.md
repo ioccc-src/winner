@@ -4,8 +4,9 @@
     make all
 ```
 
-There is an [alternate version](#alternate-code) that might feel a bit more
-familiar to vi(m) users.
+There is an alternate version that might feel a bit more familiar to vi(m)
+users. Additionally, the author provided deobfuscated versions including one for
+C89. See [Alternate code](#alternate-code) below.
 
 
 ## To use:
@@ -33,12 +34,20 @@ program exit without doing anything.
 
 ## Alternate code:
 
-This version changes the commands slightly so that to go to the first column you
-should enter `0`, to go to the last column you should enter `$`, to quit you
-should enter `q`, to go back a word you should enter `b` and to go forwards a
-word you should enter `w`. Also, and perhaps most useful, rather than having to
-hit ctrl-L (form-feed, `\f`) to get back to command mode you can use the usual
-ESC (`\x1b`).
+The author provided us with deobfuscated versions including one for C89. The two
+C files in `deobfuscated`,
+[deobfuscated/ant.c](%%REPO_URL%%/1991/ant/deobfuscated/ant.c) and
+[deobfuscated/ant-c89.c](%%REPO_URL%%/1991/ant/deobfuscated/ant-c89.c) and the
+[deobfuscated/Makefile](%%REPO_URL%%/1991/ant/deobfuscated/Makefile) will allow
+you to look at them and compile them if you wish. These are exactly like the
+original in every way, including in use, except they are deobfuscated.
+
+The other version, [ant.alt.c](%%REPO_URL%%/1991/ant/ant.alt.c) changes the
+commands slightly so that to go to the first column you should enter `0`, to go
+to the last column you should enter `$`, to quit you should enter `q`, to go
+back a word you should enter `b` and to go forwards a word you should enter `w`.
+Also, and perhaps most useful, rather than having to hit ctrl-L (form-feed,
+`\f`) to get back to command mode you can use the usual ESC (`\x1b`).
 
 These will make it slightly less unwieldy for those familiar with vi(m); the
 rest was unchanged.
@@ -53,8 +62,10 @@ rest was unchanged.
 
 ### Alternate use:
 
-Use `ant.alt` as you would `ant` above with the changes in the input keys. See
-the author's remarks for the remaining keys.
+For the deobfuscated versions, use `ant.alt2` and `ant.alt2-c89` as you would
+`ant` above; for the other one, `ant.alt`, use it as you would `ant` above but
+with the changes in the input keys described above. See the author's remarks for
+the remaining commands.
 
 
 ## Judges' remarks:
