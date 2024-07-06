@@ -956,18 +956,18 @@ We believe that Mark Twain's quote:
 
 ... is a good motto for those writing code for the IOCCC.
 
-The [IOCCC size tool source](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)
-is not an original work, unless you are [Anthony C
+The IOCCC size tool source is not an original work, unless you are [Anthony C
 Howe](../authors.html#Anthony_C_Howe), in which case it is original!  :-)
-Submitting source that uses the content of iocccsize.c, unless you are
+Submitting source that uses the content of
+[iocccsize.c](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c), unless you are
 [Anthony C Howe](../authors.html#Anthony_C_Howe), might run the risk of
 violating [Rule 7](rules.html#rule7).
 
-**`|`**   The [txzchk
-tool source](https://github.com/ioccc-src/mkiocccentry/blob/master/txzchk.c)
-is not an original work, unless you are [Cody Boone
+**`|`**   The `txzchk`
+tool source is not an original work, unless you are [Cody Boone
 Ferguson](../authors.html#Cody_Boone_Ferguson), in which case it is original!  :-)
-Submitting source that uses the content of txzchk.c, unless you are
+Submitting source that uses the content of
+[txzchk.c](https://github.com/ioccc-src/mkiocccentry/blob/master/txzchk.c), unless you are
 [Cody Boone Ferguson](../authors.html#Cody_Boone_Ferguson), might run the risk of
 violating [Rule 7](rules.html#rule7).
 
