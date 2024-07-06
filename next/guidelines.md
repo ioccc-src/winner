@@ -43,7 +43,7 @@ writing by [contacting the judges](../contact.html).
 ## IOCCC Guidelines version
 </div>
 
-**`|`**   These [IOCCC guidelines](guidelines.html) are version **28.4 2024-07-02**.
+**`|`**   These [IOCCC guidelines](guidelines.html) are version **28.5 2024-07-05**.
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
 
@@ -986,29 +986,28 @@ Submitting source that uses the content of these tools, unless you are
 violating [Rule 7](rules.html#rule7).
 
 **`|`**   Neither the [jparse tool and
-library](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/README.md) nor the
-[jstrencode
-tool](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jstrencode.c) nor
-[jstrdecode
-tool](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jstrdecode.c)
-are original works, unless you are [Cody Boone Ferguson](../authors.html#Cody_Boone_Ferguson) or
-[Landon Curt
-Noll](http://www.isthe.com/chongo/index.html), in which case they are original!  :-)
-Submitting source that uses the code of these tools or libraries, unless you are
-[Cody Boone Ferguson](../authors.html#Cody_Boone_Ferguson)
-or [Landon Curt Noll](http://www.isthe.com/chongo/index.html), might run the risk of
-violating [Rule 7](rules.html#rule7).
+library](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/README.md)
+nor [jstrencode](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jstrencode.c)
+nor [jstrdecode](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jstrdecode.c)
+nor any of the other [jparse
+tools](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse) are original works, unless you are [Cody
+Boone Ferguson](../authors.html#Cody_Boone_Ferguson) or [Landon Curt
+Noll](http://www.isthe.com/chongo/index.html), in which case they are original!
+:-) Submitting source that uses the code of these tools or library, unless you
+are [Cody Boone Ferguson](../authors.html#Cody_Boone_Ferguson) or [Landon Curt
+Noll](http://www.isthe.com/chongo/index.html), might run the risk of violating
+[Rule 7](rules.html#rule7).
 
 **`|`** [Rule 7](rules.html#rule7) does not prohibit you from writing your own
 obfuscated versions of these tools, unless of course you are [Landon Curt
-Noll](http://www.isthe.com/chongo/index.html), in which case you probably won't
+Noll](http://www.isthe.com/chongo/index.html), in which case you _probably_ won't
 win since judges are disqualified! :-)
-However, if you do write your own version, you might wish to make it do something more
-interesting than simply implementing the IOCCC tools' algorithms. On the other
+However, _**if you do** write your own version, **you might wish** to make it do something more
+interesting_ than simply implementing the [IOCCC](../index.html) tools' algorithms. On the other
 hand, writing an obfuscated version of a library runs the risk of violating
 [Rule 1](rules.html#rule1) as it is likely not a complete program.
 
-While programs that only run in a specific word size are OK.  If you have
+While programs that only run in a specific word size are OK, if you have
 to pick, choose a 64-bit word size.
 
 **`|`**   If [IOCCC judges](../judges.html) are feeling ornery we
