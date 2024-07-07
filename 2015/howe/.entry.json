@@ -47,7 +47,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "support script"
+	    "entry_text" : "report average time running a command N times"
 	},
 	{
 	    "file_path" : "makeholes.c",
